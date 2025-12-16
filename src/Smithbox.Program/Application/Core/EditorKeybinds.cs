@@ -475,9 +475,17 @@ public class ModelEditorKeybindTab
                 KeyBindings.Current.MODEL_MultiselectRange,
                 KeyBindings.Default.MODEL_MultiselectRange);
 
-            KeyBindings.Current.MODEL_ExportModel = InputTracker.KeybindLine(3,
-                KeyBindings.Current.MODEL_ExportModel,
-                KeyBindings.Default.MODEL_ExportModel);
+            KeyBindings.Current.MODEL_FrameSelection = InputTracker.KeybindLine(3,
+                KeyBindings.Current.MODEL_FrameSelection,
+                KeyBindings.Default.MODEL_FrameSelection);
+
+            KeyBindings.Current.MODEL_GoToInList = InputTracker.KeybindLine(4,
+                KeyBindings.Current.MODEL_GoToInList,
+                KeyBindings.Default.MODEL_GoToInList);
+
+            KeyBindings.Current.MODEL_MoveToCamera = InputTracker.KeybindLine(5,
+                KeyBindings.Current.MODEL_MoveToCamera,
+                KeyBindings.Default.MODEL_MoveToCamera);
         }
     }
 }

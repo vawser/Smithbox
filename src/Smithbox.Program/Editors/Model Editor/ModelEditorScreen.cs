@@ -48,8 +48,12 @@ public class ModelEditorScreen : EditorScreen
     public ModelGridConfiguration ModelGridTool;
     public ModelInsight ModelInsightTool;
 
+    public CreateAction CreateAction;
     public DuplicateAction DuplicateAction;
     public DeleteAction DeleteAction;
+    public FrameAction FrameAction;
+    public GotoAction GotoAction;
+    public PullToCameraAction PullToCameraAction;
 
     public ModelEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
@@ -81,8 +85,12 @@ public class ModelEditorScreen : EditorScreen
         ModelGridTool = new ModelGridConfiguration(this, Project);
         ModelInsightTool = new ModelInsight(this, Project);
 
+        CreateAction = new CreateAction(this, Project);
         DuplicateAction = new DuplicateAction(this, Project);
         DeleteAction = new DeleteAction(this, Project);
+        FrameAction = new FrameAction(this, Project);
+        GotoAction = new GotoAction(this, Project);
+        PullToCameraAction = new PullToCameraAction(this, Project);
 
         ModelInsightHelper.Setup(this, Project);
 
@@ -270,9 +278,13 @@ public class ModelEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            // TODO: actions
+            // Actions
+            CreateAction.OnMenu();
             DuplicateAction.OnMenu();
             DeleteAction.OnMenu();
+            FrameAction.OnMenu();
+            GotoAction.OnMenu();
+            PullToCameraAction.OnMenu();
 
             ImGui.EndMenu();
         }

@@ -44,7 +44,7 @@ public static class PropInfo_ReferencedBy
                     box = nodeBox;
                 }
 
-                _viewport.FrameBox(box);
+                _viewport.FrameBox(box, new Vector3());
             }
 
             // Change Selection to Reference

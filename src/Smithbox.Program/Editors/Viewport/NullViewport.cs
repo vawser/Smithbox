@@ -103,7 +103,7 @@ public class NullViewport : IViewport
     {
     }
 
-    public void FrameBox(BoundingBox box)
+    public void FrameBox(BoundingBox box, Vector3 offset, float distance = 5)
     {
     }
 

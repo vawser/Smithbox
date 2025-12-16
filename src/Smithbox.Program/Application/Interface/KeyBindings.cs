@@ -779,11 +779,20 @@ public class KeyBindings
             false, 
             true);
 
-        public KeyBind MODEL_ExportModel = new(
-            "Export Model", 
-            "Export the currently loaded model.", 
-            Key.K, 
-            true);
+        public KeyBind MODEL_FrameSelection = new(
+            "Frame Selection",
+            "Frames the current selection within the viewport.",
+            Key.F);
+
+        public KeyBind MODEL_GoToInList = new(
+            "Go to in List",
+            "Go to the selection within the Model Object List.",
+            Key.G);
+
+        public KeyBind MODEL_MoveToCamera = new(
+            "Move Selection to Camera",
+            "Moves the current selection to the camera's position.",
+            Key.X);
 
         //-----------------------------
         // Param Editor

@@ -102,6 +102,9 @@ public class ModelSelectView
                     }
 
                     Editor.Selection.SelectedModelWrapper = wrapper;
+
+                    Editor.EditorActionManager.Clear();
+
                     wrapper.Load();
                 }
             }
@@ -126,6 +129,9 @@ public class ModelSelectView
                     }
 
                     Editor.Selection.SelectedModelWrapper = wrapper;
+
+                    Editor.EditorActionManager.Clear();
+
                     wrapper.Load();
                 }
             }
@@ -144,6 +150,9 @@ public class ModelSelectView
                 }
 
                 Editor.Selection.SelectedModelWrapper = wrapper;
+
+                Editor.EditorActionManager.Clear();
+
                 wrapper.Load();
             }
 

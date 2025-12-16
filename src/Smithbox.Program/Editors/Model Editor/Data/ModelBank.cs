@@ -1,16 +1,17 @@
 ﻿using Andre.IO.VFS;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using StudioCore.Application;
-using StudioCore.Editors.Common;
-using StudioCore.Renderer;
-using StudioCore.Utilities;
-using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -459,6 +460,7 @@ public class ModelWrapper
 
     public void Unload()
     {
+        Parent.Project.ModelEditor.EditorActionManager.Clear();
         Parent.Project.ModelEditor.EntityTypeCache.InvalidateCache();
 
         Parent.Project.ModelEditor.Universe.UnloadModel(this);

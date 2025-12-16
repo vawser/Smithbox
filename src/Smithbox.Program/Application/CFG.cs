@@ -366,6 +366,7 @@ public class CFG
 
     public bool Interface_ModelEditor_Tool_ModelGridConfiguration = true;
     public bool Interface_ModelEditor_Tool_ModelInsight = true;
+    public bool Interface_ModelEditor_Tool_CreateAction = true;
 
     public bool ModelEditor_AutoLoadSingles = true;
 
@@ -772,6 +773,10 @@ public class CFG
     public float ModelEditor_TertiaryGrid_Rotation_X = 0;
     public float ModelEditor_TertiaryGrid_Rotation_Y = 0;
     public float ModelEditor_TertiaryGrid_Rotation_Z = 90;
+
+    public Vector3 ModelEditor_FrameInViewport_Offset = new Vector3();
+    public float ModelEditor_FrameInViewport_Distance = 1f;
+    public float ModelEditor_PullToCamera_Offset = 3f;
 
     //****************************
     // Settings: Viewport

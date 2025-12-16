@@ -504,12 +504,12 @@ public class Viewport : IViewport
     ///     bounding box. Camera will face the same direction as before.
     /// </summary>
     /// <param name="box">The bounding box to frame</param>
-    public void FrameBox(BoundingBox box)
+    public void FrameBox(BoundingBox box, Vector3 offset, float distance = 5)
     {
         Vector3 camdir = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
         Vector3 pos = box.GetCenter();
         float radius = Vector3.Distance(box.Max, box.Min);
-        ViewportCamera.CameraTransform.Position = pos - camdir * (radius + 5); 
+        ViewportCamera.CameraTransform.Position = pos - camdir * (radius + distance) + offset; 
         // 5 here is a offset so entities with 0 radius have a decent framing
     }
 

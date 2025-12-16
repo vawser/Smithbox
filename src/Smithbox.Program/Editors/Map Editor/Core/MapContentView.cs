@@ -548,7 +548,7 @@ public class MapContentView
             {
                 if (e.RenderSceneMesh != null)
                 {
-                    Editor.MapViewportView.Viewport.FrameBox(e.RenderSceneMesh.GetBounds());
+                    Editor.MapViewportView.Viewport.FrameBox(e.RenderSceneMesh.GetBounds(), new Vector3());
                 }
             }
             if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
@@ -597,7 +597,7 @@ public class MapContentView
                 {
                     if (e.RenderSceneMesh != null)
                     {
-                        Editor.MapViewportView.Viewport.FrameBox(e.RenderSceneMesh.GetBounds());
+                        Editor.MapViewportView.Viewport.FrameBox(e.RenderSceneMesh.GetBounds(), new Vector3());
                     }
                 }
             }

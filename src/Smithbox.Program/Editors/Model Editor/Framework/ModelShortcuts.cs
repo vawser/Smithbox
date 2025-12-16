@@ -45,15 +45,15 @@ public class ModelShortcuts
             }
 
             // Actions
+            Editor.CreateAction.OnShortcut();
             Editor.DuplicateAction.OnShortcut();
             Editor.DeleteAction.OnShortcut();
+            Editor.FrameAction.OnShortcut();
+            Editor.GotoAction.OnShortcut();
+            Editor.PullToCameraAction.OnShortcut();
 
-            // Editor.DuplicateAction.OnShortcut();
-            // Editor.DeleteAction.OnShortcut();
             // Editor.RotateAction.OnShortcut();
             // Editor.ReorderAction.OnShortcut();
-            // Editor.GotoAction.OnShortcut();
-            // Editor.FrameAction.OnShortcut();
             // Editor.PullToCameraAction.OnShortcut();
 
             // Gizmos

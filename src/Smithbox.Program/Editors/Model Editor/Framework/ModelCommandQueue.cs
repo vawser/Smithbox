@@ -47,6 +47,9 @@ public class ModelCommandQueue
                     }
 
                     Editor.Selection.SelectedModelWrapper = firstEntry;
+
+                    Editor.EditorActionManager.Clear();
+
                     firstEntry.Load();
                 }
             }

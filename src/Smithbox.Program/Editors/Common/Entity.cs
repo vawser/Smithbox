@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Crypto;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.MapEditor;
@@ -2391,6 +2392,27 @@ public class ModelEntity : Entity
         {
             return;
         }
+
+        //if(RenderSceneMesh == null)
+        //{
+        //    var modelContainer = (ModelContainer)Container;
+        //    var wrapper = modelContainer.Editor.Selection.SelectedModelWrapper;
+
+        //    if (WrappedObject is FLVER.Dummy)
+        //    {
+        //        modelContainer.AssignDummyDrawable(this, wrapper);
+        //    }
+
+        //    if (WrappedObject is FLVER.Node)
+        //    {
+        //        modelContainer.AssignNodeDrawable(this, wrapper);
+        //    }
+
+        //    if (WrappedObject is FLVER2.Mesh)
+        //    {
+        //        modelContainer.AssignMeshDrawable(this, wrapper);
+        //    }
+        //}
 
         base.UpdateRenderModel(editor);
     }

@@ -43,7 +43,7 @@ public static class PropInfo_ParamJumps
                     box = nodeBox;
                 }
 
-                _viewport.FrameBox(box);
+                _viewport.FrameBox(box, new Vector3());
             }
 
             if (firstEnt is Entity e)
@@ -107,7 +107,7 @@ public static class PropInfo_ParamJumps
                     box = nodeBox;
                 }
 
-                _viewport.FrameBox(box);
+                _viewport.FrameBox(box, new Vector3());
             }
 
             if (firstEnt is Entity e)

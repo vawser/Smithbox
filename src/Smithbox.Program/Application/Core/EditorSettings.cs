@@ -520,14 +520,29 @@ public class ModelEditorTab
 
     public void Display()
     {
-        // Scene View
-        if (ImGui.CollapsingHeader("Model Hierarchy", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Display material names with meshes", ref CFG.Current.ModelEditor_DisplayMatNameOnMesh);
-            UIHelper.Tooltip("Display the material name that a mesh uses by the scene tree name.");
 
-            ImGui.Checkbox("Display dummy polygon reference ids", ref CFG.Current.ModelEditor_DisplayDmyPolyReferenceID);
-            UIHelper.Tooltip("Display the reference ID of a dummy polygon by the scene tree name.");
+        // Actions
+        if (ImGui.CollapsingHeader("Actions", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            UIHelper.SimpleHeader("frameActionHeader", "Frame", "", UI.Current.ImGui_Default_Text_Color);
+
+            ImGui.DragFloat3("Offset##frameOffset", ref CFG.Current.ModelEditor_FrameInViewport_Offset);
+            UIHelper.Tooltip("Determine the offset applied to the camera when framing a selection in the viewport.");
+
+            ImGui.DragFloat("Distance##frameDist", ref CFG.Current.ModelEditor_FrameInViewport_Distance);
+            UIHelper.Tooltip("Determine the distance the camera is placed at when framing a selection in the viewport.");
+
+            UIHelper.SimpleHeader("pullCameraHeader", "Pull to Camera", "", UI.Current.ImGui_Default_Text_Color);
+
+            if (ImGui.SliderFloat("Distance##pullToCameraDist", ref CFG.Current.ModelEditor_PullToCamera_Offset, 0, 100))
+            {
+                if (CFG.Current.ModelEditor_PullToCamera_Offset < 0)
+                    CFG.Current.ModelEditor_PullToCamera_Offset = 0;
+
+                if (CFG.Current.ModelEditor_PullToCamera_Offset > 100)
+                    CFG.Current.ModelEditor_PullToCamera_Offset = 100;
+            }
+            UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the distance at which the current selection is offset from the camera when this action is used.");
         }
 
         // Property View

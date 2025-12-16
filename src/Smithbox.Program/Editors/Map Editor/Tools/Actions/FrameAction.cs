@@ -116,7 +116,7 @@ public class FrameAction
 
             if (first)
             {
-                Editor.MapViewportView.Viewport.FrameBox(box);
+                Editor.MapViewportView.Viewport.FrameBox(box, new Vector3());
             }
         }
         else
@@ -127,6 +127,6 @@ public class FrameAction
 
     public void ApplyViewportFrameWithBox(BoundingBox box)
     {
-        Editor.MapViewportView.Viewport.FrameBox(box);
+        Editor.MapViewportView.Viewport.FrameBox(box, new Vector3());
     }
 }

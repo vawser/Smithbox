@@ -43,6 +43,11 @@ public class ModelToolWindow
             {
                 Editor.ModelInsightTool.OnToolWindow();
             }
+
+            if (CFG.Current.Interface_ModelEditor_Tool_CreateAction)
+            {
+                Editor.CreateAction.OnToolWindow();
+            }
         }
 
         ImGui.End();
@@ -64,6 +69,12 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_ModelInsight = !CFG.Current.Interface_ModelEditor_Tool_ModelInsight;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInsight);
+
+            if (ImGui.MenuItem("Create"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_CreateAction = !CFG.Current.Interface_ModelEditor_Tool_CreateAction;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_CreateAction);
 
             ImGui.EndMenu();
         }

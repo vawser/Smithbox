@@ -404,10 +404,7 @@ public class ModelContentView : IActionEventHandler
             nodeopen = ImGui.TreeNodeEx(e.PrettyName, treeflags);
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(0))
             {
-                if (e.RenderSceneMesh != null)
-                {
-                    Editor.ModelViewportView.Viewport.FrameBox(e.RenderSceneMesh.GetBounds());
-                }
+                Editor.FrameAction.FrameCurrentEntity(e);
             }
             if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
             {
@@ -431,7 +428,7 @@ public class ModelContentView : IActionEventHandler
                 {
                     if (e.RenderSceneMesh != null)
                     {
-                        Editor.ModelViewportView.Viewport.FrameBox(e.RenderSceneMesh.GetBounds());
+                        Editor.FrameAction.FrameCurrentEntity(e);
                     }
                 }
             }
@@ -505,6 +502,8 @@ public class ModelContentView : IActionEventHandler
         {
             Editor.DuplicateAction.OnContext();
             Editor.DeleteAction.OnContext();
+            Editor.FrameAction.OnContext();
+            Editor.PullToCameraAction.OnContext();
 
             ImGui.EndPopup();
         }

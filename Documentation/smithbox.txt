@@ -31,6 +31,6 @@
  - Add alias to the search filter for the Source List
  - Fix property editing for the sub-classes (FaceSet, Texture, etc)
  - Add simple JSON export/import for elements of FLVER
- - Implement delete/duplicate/frame/goto/pull to camera/reorder/rotate/select all actions
+ - Implement /goto/pull to camera/reorder/rotate/select all actions
  - Restore 'Global Model Search' tool
  - Restore 'Model Mask Toggler'

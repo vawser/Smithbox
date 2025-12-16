@@ -22,6 +22,6 @@ public interface IViewport
     public bool Update(Sdl2Window window, float dt);
     public void Draw(GraphicsDevice device, CommandList cl);
     public void SetEnvMap(uint index);
-    public void FrameBox(BoundingBox box);
+    public void FrameBox(BoundingBox box, Vector3 offset, float distance = 5);
     public void FramePosition(Vector3 pos, float dist);
 }
