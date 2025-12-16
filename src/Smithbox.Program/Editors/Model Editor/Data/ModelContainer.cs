@@ -185,11 +185,15 @@ public class ModelContainer : ObjectContainer
             resource = ModelLocator.GetEneModel(Project, modelName);
         }
         else if (modelName.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || 
-            modelName.StartsWith("aeg"))
+            (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
         {
             resource = ModelLocator.GetObjModel(Project, modelName, modelName);
         }
-        else if (modelName.StartsWith("am") || modelName.StartsWith("lg") || modelName.StartsWith("bd") || modelName.StartsWith("hd") || modelName.StartsWith("wp"))
+        else if (modelName.StartsWith("am") || modelName.StartsWith("AM") || 
+            modelName.StartsWith("lg") || modelName.StartsWith("LG") || 
+            modelName.StartsWith("bd") || modelName.StartsWith("BD") || 
+            modelName.StartsWith("hd") || modelName.StartsWith("HD") || 
+            modelName.StartsWith("wp") || modelName.StartsWith("WP"))
         {
             resource = ModelLocator.GetPartsModel(Editor.Project, modelName, modelName);
         }

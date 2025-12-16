@@ -146,7 +146,7 @@ public class ModelUniverse
         }
 
         // Object / Asset
-        if (modelName.StartsWith('o') || modelName.StartsWith("aeg"))
+        if (modelName.StartsWith('o') || (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
         {
             var modelAsset = ModelLocator.GetObjModel(Editor.Project, modelName, modelName);
 
@@ -155,7 +155,11 @@ public class ModelUniverse
         }
 
         // Part
-        if (modelName.StartsWith("am") || modelName.StartsWith("lg") || modelName.StartsWith("bd") || modelName.StartsWith("hd") || modelName.StartsWith("wp"))
+        if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
+            modelName.StartsWith("lg") || modelName.StartsWith("LG") ||
+            modelName.StartsWith("bd") || modelName.StartsWith("BD") ||
+            modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
+            modelName.StartsWith("wp") || modelName.StartsWith("WP"))
         {
             var modelAsset = ModelLocator.GetPartsModel(Editor.Project, modelName, modelName);
 
@@ -230,7 +234,7 @@ public class ModelUniverse
         }
 
         // Assets
-        if (modelName.StartsWith("aeg"))
+        if (modelName.StartsWith("AEG") || modelName.StartsWith("aeg"))
         {
             var textureAsset = ResourceLocator.GetAssetTextureVP(Editor.Project, modelName);
 
@@ -239,7 +243,11 @@ public class ModelUniverse
         }
 
         // Part
-        if (modelName.StartsWith("am") || modelName.StartsWith("lg") || modelName.StartsWith("bd") || modelName.StartsWith("hd") || modelName.StartsWith("wp"))
+        if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
+            modelName.StartsWith("lg") || modelName.StartsWith("LG") ||
+            modelName.StartsWith("bd") || modelName.StartsWith("BD") ||
+            modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
+            modelName.StartsWith("wp") || modelName.StartsWith("WP"))
         {
             var textureAsset = ResourceLocator.GetPartTextureVP(Editor.Project, modelName);
 
