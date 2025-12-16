@@ -84,8 +84,6 @@ public class MapActionGroupCompoundAction : ViewportAction
             PostExecutionAction.Invoke(true);
         }
 
-        Editor.MassEditTool.ClearLogSource();
-
         return evt;
     }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -17,7 +18,8 @@ public static class MassEditUtils
             valueType == typeof(uint) ||
             valueType == typeof(long) ||
             valueType == typeof(float) ||
-            valueType == typeof(double))
+            valueType == typeof(double) ||
+            valueType == typeof(Vector3))
         {
             return true;
         }

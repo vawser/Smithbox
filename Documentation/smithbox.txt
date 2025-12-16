@@ -2,9 +2,7 @@
 - Viewport: add ability to change viewport background color
 - Viewport: implement orthographic view
 - Viewport: add track selection camera toggle - camera locks onto selection and moves in-line with any movement to the selection
-
 - Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
-- Map Editor: Add Vector3 support to MSB Mass Edit
 - Map Editor: implement Edge support for SDT
 - Map Editor: improve ER NVA so saves are BP correct (currently the Write side is quite off)
 - Map Editor: improve texture lookup
@@ -31,4 +29,3 @@
 # TODO NOW
 
  
-- Map Editor: add toggle for the increment tool shortcut behavior (per-frame, per press) + cooldown between frame applications

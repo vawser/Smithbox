@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
@@ -67,6 +68,10 @@ public class MassEditTool
 
             ConfigureEdit();
 
+            UIHelper.SimpleHeader("Variance", "Variance", "If enabled, adds random ranges to the edit commands.", UI.Current.ImGui_Default_Text_Color);
+
+            ConfigureVariance();
+
             if (MayRunEdit)
             {
                 if (ImGui.Button("Apply", DPI.StandardButtonSize))
@@ -86,18 +91,7 @@ public class MassEditTool
 
             ImGui.Separator();
 
-            if (MassEditActions != null)
-            {
-                if (ImGui.Button($"{Icons.Eye}##previousEditLog", DPI.IconButtonSize))
-                {
-                    ShowMassEditLog = !ShowMassEditLog;
-                    ClearLogSource();
-                }
-                UIHelper.Tooltip("Toggle visibility of the edit log.");
-            }
-
             DisplayHintPopups();
-            DisplayLog();
         }
     }
 
@@ -302,6 +296,38 @@ public class MassEditTool
             "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
             "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
 
+
+        ImGui.SameLine();
+
+        // Select
+        if (ImGui.Button($"{Icons.MousePointer}##selectInputSelection", DPI.IconButtonSize))
+        {
+            Editor.ViewportSelection.ClearSelection(Editor);
+
+            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+            {
+                var wrapper = entry.Value;
+
+                if (wrapper.MapContainer != null)
+                {
+                    if(wrapper.MapContainer.Name.Contains(entry.Key.Filename))
+                    {
+                        foreach (var obj in wrapper.MapContainer.Objects)
+                        {
+                            if (obj is MsbEntity mEnt)
+                            {
+                                if (IsValidMapObject(wrapper.MapContainer, mEnt))
+                                {
+                                    Editor.ViewportSelection.AddSelection(Editor, mEnt);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        UIHelper.Tooltip("Select the targets of this select criteria (for the local map).");
+
         //--------------
         // Selection Inputs
         //--------------
@@ -396,6 +422,27 @@ public class MassEditTool
         }
     }
 
+    private bool EnableVariance = false;
+    private float VarianceMin = 0.0f;
+    private float VarianceMax = 1.0f;
+
+    /// <summary>
+    /// Handles the variance section
+    /// </summary>
+    private void ConfigureVariance()
+    {
+        var windowWidth = ImGui.GetWindowWidth();
+
+        ImGui.Checkbox("Enable Random Spread", ref EnableVariance);
+        UIHelper.Tooltip("If enabled, random spread will be applied to numeric edit commands when possible.");
+
+        ImGui.InputFloat("Minimum##varianceMin", ref VarianceMin);
+        UIHelper.Tooltip("The minimum value to apply when determining the random spread for a number.");
+
+        ImGui.InputFloat("Maximum##varianceMax", ref VarianceMax);
+        UIHelper.Tooltip("The maximum value to apply when determining the random spread for a number.");
+    }
+
     private bool MayRunEdit = true;
 
     private async void StartMassEdit()
@@ -465,7 +512,6 @@ public class MassEditTool
 
             if (actionGroups.Count > 0)
             {
-                UpdateLogSource(actionGroups);
                 var compoundAction = new MapActionGroupCompoundAction(Editor, actionGroups);
                 Editor.EditorActionManager.ExecuteAction(compoundAction);
             }
@@ -510,7 +556,6 @@ public class MassEditTool
 
             if (actionGroups.Count > 0)
             {
-                UpdateLogSource(actionGroups);
                 var compoundAction = new MapActionGroupCompoundAction(Editor, actionGroups);
                 Editor.EditorActionManager.ExecuteAction(compoundAction);
             }
@@ -726,7 +771,7 @@ public class MassEditTool
     {
         bool isValid = false;
 
-        var input = cmd.Replace("prop:", "");
+        var input = cmd.Replace("prop:", "").TrimStart();
 
         var segments = input.Split(" ");
         if (segments.Length >= 3)
@@ -787,12 +832,12 @@ public class MassEditTool
                 // Do numeric comparison if compare str is < or >
                 if (MassEditUtils.IsNumericType(valueType) && compare != "=")
                 {
-                    isValid = PerformNumericComparison(compare, targetValue, targetProp_Value, valueType);
+                    isValid = MassEditPropertyHelper.PerformNumericComparison(curEnt, compare, targetValue, targetProp_Value, valueType);
                 }
                 // Otherwise do string comparison
                 else
                 {
-                    if (targetValue == $"{targetProp_Value}")
+                    if (targetValue.ToLower() == $"{targetProp_Value}".ToLower())
                     {
                         isValid = true;
                     }
@@ -804,220 +849,6 @@ public class MassEditTool
         return isValid;
     }
 
-
-    /// <summary>
-    /// Performs the mathematical condition check
-    /// </summary>
-    public bool PerformNumericComparison(string comparator, string targetVal, object propValue, Type valueType)
-    {
-        // LONG
-        if (valueType == typeof(long))
-        {
-            var tPropValue = (long)propValue;
-            var tTargetValue = (long)propValue;
-
-            var res = long.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // UINT
-        if (valueType == typeof(uint))
-        {
-            var tPropValue = (uint)propValue;
-            var tTargetValue = (uint)propValue;
-
-            var res = uint.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // INT
-        if (valueType == typeof(int))
-        {
-            var tPropValue = (int)propValue;
-            var tTargetValue = (int)propValue;
-
-            var res = int.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // USHORT
-        if (valueType == typeof(ushort))
-        {
-            var tPropValue = (ushort)propValue;
-            var tTargetValue = (ushort)propValue;
-
-            var res = ushort.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // SHORT
-        if (valueType == typeof(short))
-        {
-            var tPropValue = (short)propValue;
-            var tTargetValue = (short)propValue;
-
-            var res = short.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // SBYTE
-        if (valueType == typeof(sbyte))
-        {
-            var tPropValue = (sbyte)propValue;
-            var tTargetValue = (sbyte)propValue;
-
-            var res = sbyte.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // BYTE
-        if (valueType == typeof(byte))
-        {
-            var tPropValue = (byte)propValue;
-            var tTargetValue = (byte)propValue;
-
-            var res = byte.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // FLOAT
-        if (valueType == typeof(float))
-        {
-            var tPropValue = (float)propValue;
-            var tTargetValue = (float)propValue;
-
-            var res = float.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // VECTOR 3
-        if (valueType == typeof(Vector3))
-        {
-            var tPropValue = (Vector3)propValue;
-            var tTargetValue = (Vector3)propValue;
-
-            var parts = targetVal.Split(",");
-            if (parts.Length >= 2)
-            {
-                var x = parts[0];
-                var y = parts[1];
-                var z = parts[2];
-
-                float tX = 0.0f;
-                float tY = 0.0f;
-                float tZ = 0.0f;
-
-                var resX = float.TryParse(x, out tX);
-                var resY = float.TryParse(y, out tY);
-                var resZ = float.TryParse(z, out tZ);
-
-                if (resX && resY && resZ)
-                {
-                    if (comparator == "<")
-                    {
-                        if (tPropValue.X < tX && tPropValue.Y < tY && tPropValue.Z < tZ)
-                            return true;
-                    }
-                    if (comparator == ">")
-                    {
-                        if (tPropValue.X > tX && tPropValue.Y > tY && tPropValue.Z > tZ)
-                            return true;
-                    }
-                }
-            }
-        }
-
-
-        return false;
-    }
 
     /// <summary>
     /// Handles the edit command process
@@ -1039,1296 +870,13 @@ public class MassEditTool
             // Default to <prop> <operation> <value>
             else
             {
-                var action = PropertyValueOperation(map, mEnt, cmd);
+                var action = MassEditPropertyHelper.PropertyValueOperation(Editor, map, mEnt, cmd, EnableVariance, VarianceMin, VarianceMax);
                 if (action != null)
                     actions.Add(action);
             }
         }
 
         return actions;
-    }
-
-    /// <summary>
-    /// Handles the property value operation edits
-    /// TODO: adjust how this is done so we don't need to duplicate the operation logic so much
-    /// </summary>
-    private ViewportAction PropertyValueOperation(MapContainer map, MsbEntity curEnt, string cmd)
-    {
-        var input = cmd.Replace("prop:", "");
-
-        var segments = input.Split(" ");
-        if (segments.Length >= 3)
-        {
-            var prop = segments[0];
-            var compare = segments[1].Trim().ToLower();
-            var newValue = segments[2].Trim().ToLower();
-
-            var index = -1;
-
-            if (prop.Contains("[") && prop.Contains("]"))
-            {
-                var match = new Regex(@"\[(.*?)\]").Match(prop);
-
-                if (match.Success)
-                {
-                    var val = match.Value.Replace("[", "").Replace("]", "");
-
-                    int.TryParse(val, out index);
-                    prop = prop.Replace($"{match.Value}", "");
-                }
-            }
-
-            Type targetObj = curEnt.WrappedObject.GetType();
-
-            PropertyInfo targetProp = null;
-            object targetProp_Value = null;
-
-            // Get the actual property from within the array
-            if (index != -1)
-            {
-                targetProp = targetObj.GetProperty(prop);
-
-                if (targetProp != null)
-                {
-                    object collection = targetProp.GetValue(curEnt.WrappedObject);
-
-                    if (collection is Array arr && index >= 0 && index < arr.Length)
-                    {
-                        targetProp_Value = arr.GetValue(index);
-
-                        if (targetProp_Value == null)
-                            return null;
-
-                        var valueType = targetProp_Value.GetType();
-
-                        // If numeric operation is not supported, force set operation
-                        if (!MassEditUtils.IsNumericType(valueType))
-                        {
-                            compare = "=";
-                        }
-
-                        // LONG
-                        if (valueType == typeof(long))
-                        {
-                            long tNewValue = 0;
-                            long tExistingValue = (long)targetProp_Value;
-
-                            var res = long.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                        }
-                        // UINT
-                        if (valueType == typeof(uint))
-                        {
-                            uint tNewValue = 0;
-                            uint tExistingValue = (uint)targetProp_Value;
-
-                            var res = uint.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                        }
-                        // INT
-                        if (valueType == typeof(int))
-                        {
-                            int tNewValue = 0;
-                            int tExistingValue = (int)targetProp_Value;
-
-                            var res = int.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                        }
-                        // USHORT
-                        if (valueType == typeof(ushort))
-                        {
-                            ushort tNewValue = 0;
-                            ushort tExistingValue = (ushort)targetProp_Value;
-
-                            var res = ushort.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                        }
-                        // SHORT
-                        if (valueType == typeof(short))
-                        {
-                            short tNewValue = 0;
-                            short tExistingValue = (short)targetProp_Value;
-
-                            var res = short.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                        }
-                        // SBYTE
-                        if (valueType == typeof(sbyte))
-                        {
-                            sbyte tNewValue = 0;
-                            sbyte tExistingValue = (sbyte)targetProp_Value;
-
-                            var res = sbyte.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                        }
-                        // BYTE
-                        if (valueType == typeof(byte))
-                        {
-                            byte tNewValue = 0;
-                            byte tExistingValue = (byte)targetProp_Value;
-
-                            var res = byte.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                        }
-                        // FLOAT
-                        if (valueType == typeof(float))
-                        {
-                            float tNewValue = 0;
-                            float tExistingValue = (float)targetProp_Value;
-
-                            var res = float.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                        }
-                        // STRING
-                        if (valueType == typeof(string))
-                        {
-                            string result = newValue;
-
-                            return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                targetProp = curEnt.GetProperty(prop);
-                targetProp_Value = curEnt.GetPropertyValue(prop);
-
-                if (targetProp_Value == null)
-                    return null;
-
-                var valueType = targetProp_Value.GetType();
-
-                // If numeric operation is not supported, force set operation
-                if (!MassEditUtils.IsNumericType(valueType))
-                {
-                    compare = "=";
-                }
-
-                // LONG
-                if (valueType == typeof(long))
-                {
-                    long tNewValue = 0;
-                    long tExistingValue = (long)targetProp_Value;
-
-                    var res = long.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                }
-                // UINT
-                if (valueType == typeof(uint))
-                {
-                    uint tNewValue = 0;
-                    uint tExistingValue = (uint)targetProp_Value;
-
-                    var res = uint.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                }
-                // INT
-                if (valueType == typeof(int))
-                {
-                    int tNewValue = 0;
-                    int tExistingValue = (int)targetProp_Value;
-
-                    var res = int.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                }
-                // USHORT
-                if (valueType == typeof(ushort))
-                {
-                    ushort tNewValue = 0;
-                    ushort tExistingValue = (ushort)targetProp_Value;
-
-                    var res = ushort.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                }
-                // SHORT
-                if (valueType == typeof(short))
-                {
-                    short tNewValue = 0;
-                    short tExistingValue = (short)targetProp_Value;
-
-                    var res = short.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                }
-                // SBYTE
-                if (valueType == typeof(sbyte))
-                {
-                    sbyte tNewValue = 0;
-                    sbyte tExistingValue = (sbyte)targetProp_Value;
-
-                    var res = sbyte.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                }
-                // BYTE
-                if (valueType == typeof(byte))
-                {
-                    byte tNewValue = 0;
-                    byte tExistingValue = (byte)targetProp_Value;
-
-                    var res = byte.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                }
-                // FLOAT
-                if (valueType == typeof(float))
-                {
-                    float tNewValue = 0;
-                    float tExistingValue = (float)targetProp_Value;
-
-                    var res = float.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                }
-                // STRING
-                if (valueType == typeof(string))
-                {
-                    string result = newValue;
-
-                    return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                }
-            }
-        }
-
-        return null;
-    }
-
-    public void DisplayLog()
-    {
-        if (ShowMassEditLog)
-        {
-            var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
-            var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
-            var sectionHeight = windowSize.Y * 0.3f;
-            var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
-
-            ImGui.BeginChild("massEditLogSection", sectionSize, ImGuiChildFlags.Borders);
-
-            if (MassEditActions != null)
-            {
-                if (ShowMassEditLog)
-                {
-                    foreach (var entry in MassEditActions)
-                    {
-                        var displayName = entry.MapID;
-                        var alias = AliasHelper.GetMapNameAlias(Editor.Project, entry.MapID);
-                        if (alias != null)
-                            displayName = $"{displayName} {alias}";
-
-                        if (ImGui.CollapsingHeader($"{displayName}##mapTab_{entry.MapID}"))
-                        {
-                            var changes = entry.Actions;
-
-                            foreach (var change in changes)
-                            {
-                                if (change is PropertiesChangedAction propChange)
-                                {
-                                    UIHelper.WrappedText($"{propChange.GetEditMessage()}");
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            ImGui.EndChild();
-        }
-    }
-    public void UpdateLogSource(List<MapActionGroup> actionGroups)
-    {
-        MassEditActions = actionGroups;
-    }
-
-    public void ClearLogSource()
-    {
-        MassEditActions = new List<MapActionGroup>();
     }
 
     #region Hints
@@ -2677,6 +1225,20 @@ public class MassEditTool
                     ImGui.AlignTextToFramePadding();
                     ImGui.Text("EntityID + 999" +
                         "\nAdds 999 to the existing Entity ID field value of all the map objects that " +
+                        "\nmeet the selection criteria.");
+
+                    // Example 3
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Position + 0,3,0" +
+                        "\nAdds <0,3,0> vector to the Position vector of all the map objects that" +
                         "\nmeet the selection criteria.");
 
                     ImGui.EndTable();
