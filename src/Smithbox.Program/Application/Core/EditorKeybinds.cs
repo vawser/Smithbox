@@ -331,6 +331,10 @@ public class MapEditorKeybindTab
             KeyBindings.Current.MAP_KeyboardMove_CycleMovementIncrementBackward = InputTracker.KeybindLine(77,
                 KeyBindings.Current.MAP_KeyboardMove_CycleMovementIncrementBackward,
                 KeyBindings.Default.MAP_KeyboardMove_CycleMovementIncrementBackward);
+
+            KeyBindings.Current.MAP_KeyboardMove_ToggleDiscreteMovement = InputTracker.KeybindLine(78,
+                KeyBindings.Current.MAP_KeyboardMove_ToggleDiscreteMovement,
+                KeyBindings.Default.MAP_KeyboardMove_ToggleDiscreteMovement);
         }
 
         if (ImGui.CollapsingHeader("Order", ImGuiTreeNodeFlags.DefaultOpen))

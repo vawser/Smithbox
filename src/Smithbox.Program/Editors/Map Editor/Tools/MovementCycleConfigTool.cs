@@ -2,9 +2,11 @@
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Threading;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -12,6 +14,9 @@ public class MovementCycleConfigTool
 {
     public MapEditorScreen Editor;
     public ProjectEntry Project;
+
+    public bool InCooldownMode = false;
+    public Timer CooldownModeTimer;
 
     public MovementCycleConfigTool(MapEditorScreen editor, ProjectEntry project)
     {
@@ -24,6 +29,11 @@ public class MovementCycleConfigTool
     /// </summary>
     public void OnShortcut()
     {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_ToggleDiscreteMovement))
+        {
+            CFG.Current.MapEditor_Selection_Movement_DiscreteApplication = !CFG.Current.MapEditor_Selection_Movement_DiscreteApplication;
+        }
+
         if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_CycleMovementIncrement) || InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_CycleMovementIncrementBackward))
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_CycleMovementIncrement))
@@ -80,31 +90,61 @@ public class MovementCycleConfigTool
             bool yMovement_Negative = false;
             bool zMovement_Positive = false;
             bool zMovement_Negative = false;
+            bool applyCooldown = false;
 
-            // TODO: Determine 'direction' based on camera position, e.g. if to the side of element, switch x and y
-            if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_PositiveX))
+            if (CFG.Current.MapEditor_Selection_Movement_DiscreteApplication)
             {
-                xMovement_Positive = true;
+                if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_PositiveX))
+                {
+                    xMovement_Positive = true;
+                }
+                if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_NegativeX))
+                {
+                    xMovement_Negative = true;
+                }
+                if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_PositiveY))
+                {
+                    yMovement_Positive = true;
+                }
+                if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_NegativeY))
+                {
+                    yMovement_Negative = true;
+                }
+                if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_PositiveZ))
+                {
+                    zMovement_Positive = true;
+                }
+                if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_NegativeZ))
+                {
+                    zMovement_Negative = true;
+                }
             }
-            if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_NegativeX))
+            else
             {
-                xMovement_Negative = true;
-            }
-            if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_PositiveY))
-            {
-                yMovement_Positive = true;
-            }
-            if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_NegativeY))
-            {
-                yMovement_Negative = true;
-            }
-            if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_PositiveZ))
-            {
-                zMovement_Positive = true;
-            }
-            if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_NegativeZ))
-            {
-                zMovement_Negative = true;
+                if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_PositiveX))
+                {
+                    xMovement_Positive = true;
+                }
+                if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_NegativeX))
+                {
+                    xMovement_Negative = true;
+                }
+                if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_PositiveY))
+                {
+                    yMovement_Positive = true;
+                }
+                if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_NegativeY))
+                {
+                    yMovement_Negative = true;
+                }
+                if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_PositiveZ))
+                {
+                    zMovement_Positive = true;
+                }
+                if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_NegativeZ))
+                {
+                    zMovement_Negative = true;
+                }
             }
 
             Transform localT = sel.GetLocalTransform();
@@ -163,6 +203,11 @@ public class MovementCycleConfigTool
             ViewportCompoundAction action = new(actlist);
             Editor.EditorActionManager.ExecuteAction(action);
         }
+    }
+
+    private void Tick(object state)
+    {
+        InCooldownMode = false;
     }
 
     /// <summary>
@@ -236,6 +281,9 @@ public class MovementCycleConfigTool
                 CFG.Current.MapEditor_Selection_Movement_Increment_4 = unit4;
             }
             UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
+            ImGui.Checkbox("Enable discrete movement", ref CFG.Current.MapEditor_Selection_Movement_DiscreteApplication);
+            UIHelper.Tooltip($"If enabled, the key must be pressed and released for each application.\nShortcut: {KeyBindings.Current.MAP_KeyboardMove_ToggleDiscreteMovement.HintText}");
         }
     }
 

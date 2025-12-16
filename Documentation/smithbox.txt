@@ -6,13 +6,14 @@
 - Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor: Add Vector3 support to MSB Mass Edit
 - Map Editor: implement Edge support for SDT
-- Map Editor: add toggle for the increment tool shortcut behavior (per-frame, per press) + cooldown between frame applications
 - Map Editor: improve ER NVA so saves are BP correct (currently the Write side is quite off)
 - Map Editor: improve texture lookup
 
 - Model Editor: apply proper transform inheritance for dummies/nodes
 - Model Editor: Add simple JSON export/import for elements of FLVER
 - Model Editor: Make the mesh entries use the sub-meshes properly
+- Model Editor: Fix part texture lookup (doesn't seem to apply them)
+- Model Editor: Fix property editing for the sub-classes (FaceSet, Texture, etc)
 
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
 - Param Editor: adjust the difference checker to account for row index
@@ -28,8 +29,6 @@
 - File Browser: add category that represents the project's file dictionary in filesystem form, to allow for natural browsing and then direct extraction from the VFS. Mainly so the game doesn't ever need to be unpacked personally
 
 # TODO NOW
-- Model Editor: 
- - Fix part texture lookup (doesn't seem to apply them)
- - Fix property editing for the sub-classes (FaceSet, Texture, etc)
+
  
- 
+- Map Editor: add toggle for the increment tool shortcut behavior (per-frame, per press) + cooldown between frame applications

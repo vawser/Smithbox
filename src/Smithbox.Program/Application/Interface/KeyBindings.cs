@@ -590,6 +590,13 @@ public class KeyBindings
             "Cycles the increment used when moving via Keyboard Move.",
             Key.Unknown);
 
+        public KeyBind MAP_KeyboardMove_ToggleDiscreteMovement = new(
+            "Keyboard Move: Toggle Discrete Movement",
+            "Toggle whether discrete movement is used.",
+            Key.P,
+            true,
+            true);
+
         // Render Groups
         public KeyBind MAP_GetDisplayGroup = new(
             "View Display Group", 

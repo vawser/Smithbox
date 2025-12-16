@@ -961,6 +961,7 @@ public class CFG
     public float MapEditor_Selection_Movement_Increment_3 { get; set; } = 0.5f;
     public float MapEditor_Selection_Movement_Increment_4 { get; set; } = 1.0f;
 
+    public bool MapEditor_Selection_Movement_DiscreteApplication = false;
 
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
