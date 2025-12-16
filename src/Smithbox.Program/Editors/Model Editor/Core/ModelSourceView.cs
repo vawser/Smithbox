@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
@@ -61,7 +62,7 @@ public class ModelSourceView
                 }
 
                 var name = "Objects";
-                if(Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                if (Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                 {
                     name = "Assets";
                 }
@@ -195,7 +196,7 @@ public class ModelSourceView
     {
         var filteredEntries = new List<FileDictionaryEntry>();
 
-        foreach(var entry in fileDictionary.Entries)
+        foreach (var entry in fileDictionary.Entries)
         {
             var modelName = entry.Filename;
 
@@ -235,7 +236,7 @@ public class ModelSourceView
                     if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
                     {
                         var entry = Project.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
-                        if(entry.Value != null)
+                        if (entry.Value != null)
                         {
                             Editor.Selection.SelectedModelContainerWrapper = entry.Value;
 
@@ -247,20 +248,20 @@ public class ModelSourceView
                     }
                 }
 
-                if(alias != "")
+                if (alias != "")
                 {
                     UIHelper.DisplayAlias(alias);
                 }
 
                 // Context Menu
-                DisplayContextMenu(fileEntry);
+                DisplayContextMenu(fileEntry, modelListType);
             }
         }
 
         clipper.End();
     }
 
-    private void DisplayContextMenu(FileDictionaryEntry fileEntry)
+    private void DisplayContextMenu(FileDictionaryEntry fileEntry, ModelListType modelListType)
     {
         if (ImGui.BeginPopupContextItem($@"modelSourceListEntryContext_{fileEntry.Filename}"))
         {
@@ -283,7 +284,131 @@ public class ModelSourceView
                 PlatformUtils.Instance.SetClipboardText($"{fileEntry.Filename}");
             }
 
+            // Action to quickly update the alias JSON, makes sense here since you can view model -> decide alias
+            if (ImGui.BeginMenu("Update Alias"))
+            {
+                DisplayAliasUpdateMenu(fileEntry, modelListType);
+
+                ImGui.EndMenu();
+            }
+
             ImGui.EndPopup();
+        }
+    }
+
+    private string CurrentAliasName = "";
+
+    private void DisplayAliasUpdateMenu(FileDictionaryEntry fileEntry, ModelListType modelListType)
+    {
+        var newAlias = true;
+
+        List<AliasEntry> checkedEntries = new();
+
+        if (modelListType is ModelListType.Character)
+        {
+            checkedEntries = Project.Aliases[AliasType.Characters];
+        }
+
+        if (modelListType is ModelListType.Asset)
+        {
+            checkedEntries = Project.Aliases[AliasType.Assets];
+        }
+
+        if (modelListType is ModelListType.Part)
+        {
+            checkedEntries = Project.Aliases[AliasType.Parts];
+        }
+
+        if (modelListType is ModelListType.MapPiece)
+        {
+            checkedEntries = Project.Aliases[AliasType.MapPieces];
+        }
+
+        if (checkedEntries.Any(e => e.ID == fileEntry.Filename))
+        {
+            newAlias = false;
+        }
+
+        // Name
+        ImGui.InputText("##aliasName", ref CurrentAliasName, 255);
+
+        // Commit
+        if(ImGui.Button("Commit##commitAlias", DPI.WholeWidthButton(300f * DPI.UIScale(), 24)))
+        {
+            List<AliasEntry> entries = new();
+
+            if (modelListType is ModelListType.Character)
+            {
+                entries = Project.Aliases[AliasType.Characters];
+            }
+
+            if (modelListType is ModelListType.Asset)
+            {
+                entries = Project.Aliases[AliasType.Assets];
+            }
+
+            if (modelListType is ModelListType.Part)
+            {
+                entries = Project.Aliases[AliasType.Parts];
+            }
+
+            if (modelListType is ModelListType.MapPiece)
+            {
+                entries = Project.Aliases[AliasType.MapPieces];
+            }
+
+            if (!newAlias)
+            {
+                if (entries.Any(e => e.ID == fileEntry.Filename))
+                {
+                    var curAlias = entries.FirstOrDefault(e => e.ID == fileEntry.Filename);
+                    var index = entries.IndexOf(curAlias);
+
+                    entries[index].Name = CurrentAliasName;
+
+                }
+            }
+            else
+            {
+                var newAliasEntry = new AliasEntry();
+                newAliasEntry.ID = fileEntry.Filename;
+                newAliasEntry.Name = CurrentAliasName;
+                newAliasEntry.Tags = new List<string>();
+
+                if (!entries.Any(e => e.ID == newAliasEntry.ID))
+                    entries.Add(newAliasEntry);
+
+            }
+
+            if (modelListType is ModelListType.Character)
+            {
+                Project.Aliases[AliasType.Characters] = entries;
+
+                ProjectAliasEditor.SaveIndividual(Project, AliasType.Characters);
+            }
+
+            if (modelListType is ModelListType.Asset)
+            {
+                Project.Aliases[AliasType.Assets] = entries;
+
+                ProjectAliasEditor.SaveIndividual(Project, AliasType.Assets);
+            }
+
+            if (modelListType is ModelListType.Part)
+            {
+                Project.Aliases[AliasType.Parts] = entries;
+
+                ProjectAliasEditor.SaveIndividual(Project, AliasType.Parts);
+            }
+
+            if (modelListType is ModelListType.MapPiece)
+            {
+                Project.Aliases[AliasType.MapPieces] = entries;
+
+                ProjectAliasEditor.SaveIndividual(Project, AliasType.MapPieces);
+            }
+
+            TaskLogs.AddLog("[Smithbox] Updated aliases.");
         }
     }
 }

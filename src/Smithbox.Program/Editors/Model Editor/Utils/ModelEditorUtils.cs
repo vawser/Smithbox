@@ -32,6 +32,11 @@ public static class ModelEditorUtils
             alias = AliasHelper.GetPartAlias(project, filename);
         }
 
+        if (type is ModelListType.MapPiece)
+        {
+            alias = AliasHelper.GetMapPieceAlias(project, filename);
+        }
+
         return alias;
     }
 

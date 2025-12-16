@@ -334,18 +334,21 @@ public class ViewportMenu
             }
             UIHelper.Tooltip($"Whether to cull objects in the viewport outside of the camera frustum.");
 
-            if (ImGui.MenuItem("Enable model masks", CFG.Current.Viewport_Enable_Model_Masks))
+            if (Parent.ViewportType is ViewportType.MapEditor)
             {
-                CFG.Current.Viewport_Enable_Model_Masks = !CFG.Current.Viewport_Enable_Model_Masks;
+                if (ImGui.MenuItem("Enable model masks", CFG.Current.Viewport_Enable_Model_Masks))
+                {
+                    CFG.Current.Viewport_Enable_Model_Masks = !CFG.Current.Viewport_Enable_Model_Masks;
+                }
+                UIHelper.Tooltip($"Whether to attempt to hide model masks based on entity NpcParam flags.");
             }
-            UIHelper.Tooltip($"Whether to attempt to hide model masks based on entity NpcParam flags.");
 
             if (Parent.ViewportType is ViewportType.MapEditor)
             {
                 ImGui.Separator();
 
-                ModelLoadMenu();
-                TextureLoadMenu();
+                MapModelLoadMenu();
+                MapTextureLoadMenu();
 
                 ImGui.Separator();
 
@@ -365,11 +368,42 @@ public class ViewportMenu
                 }
             }
 
+            if (Parent.ViewportType is ViewportType.ModelEditor)
+            {
+                ImGui.Separator();
+
+                ModelModelLoadMenu();
+                ModelTextureLoadMenu();
+
+                ImGui.Separator();
+
+                if (ImGui.BeginMenu("Display Nodes"))
+                {
+                    ImGui.DragFloat("Dummy Size", ref CFG.Current.DummyMeshSize, 0.1f, 0.0001f, 1f);
+                    UIHelper.Tooltip($"Determines the radius of the dummy polygon mesh.");
+                    if(ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        RenderableHelper.UpdateProxySizes();
+                        Parent.ModelEditor.UpdateDisplayNodes();
+                    }
+
+                    ImGui.DragFloat("Node Size", ref CFG.Current.NodeMeshSize, 0.1f, 0.0001f, 1f);
+                    UIHelper.Tooltip($"Determines the radius of the node mesh.");
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        RenderableHelper.UpdateProxySizes();
+                        Parent.ModelEditor.UpdateDisplayNodes();
+                    }
+
+                    ImGui.EndMenu();
+                }
+            }
+
             ImGui.EndMenu();
         }
     }
 
-    public void ModelLoadMenu()
+    public void MapModelLoadMenu()
     {
         bool ticked;
 
@@ -418,7 +452,7 @@ public class ViewportMenu
         UIHelper.Tooltip("Toggle which models are loaded during a map load.");
     }
 
-    public void TextureLoadMenu()
+    public void MapTextureLoadMenu()
     {
         bool ticked;
 
@@ -453,6 +487,106 @@ public class ViewportMenu
                 CFG.Current.MapEditor_TextureLoad_Misc = !CFG.Current.MapEditor_TextureLoad_Misc;
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Misc);
+
+            ImGui.EndMenu();
+        }
+        UIHelper.Tooltip("Toggle which textures are loaded during a map load.");
+    }
+
+    public void ModelModelLoadMenu()
+    {
+        bool ticked;
+
+        if (ImGui.BeginMenu("Model Load"))
+        {
+            if (ImGui.MenuItem("Map Pieces"))
+            {
+                CFG.Current.ModelEditor_ModelLoad_MapPieces = !CFG.Current.ModelEditor_ModelLoad_MapPieces;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
+
+            var name = "Objects";
+            if (Parent.ModelEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            {
+                name = "Assets";
+            }
+
+            if (ImGui.MenuItem(name))
+            {
+                CFG.Current.ModelEditor_ModelLoad_Objects = !CFG.Current.ModelEditor_ModelLoad_Objects;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
+
+            if (ImGui.MenuItem("Characters"))
+            {
+                CFG.Current.ModelEditor_ModelLoad_Characters = !CFG.Current.ModelEditor_ModelLoad_Characters;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Characters);
+
+            if (ImGui.MenuItem("Parts"))
+            {
+                CFG.Current.ModelEditor_ModelLoad_Parts = !CFG.Current.ModelEditor_ModelLoad_Parts;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Parts);
+
+            //if (ImGui.MenuItem("Collisions"))
+            //{
+            //    CFG.Current.ModelEditor_ModelLoad_Collisions = !CFG.Current.ModelEditor_ModelLoad_Collisions;
+            //}
+            //UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Collisions);
+
+            //if (ImGui.MenuItem("Navmeshes"))
+            //{
+            //    CFG.Current.ModelEditor_ModelLoad_Navmeshes = !CFG.Current.ModelEditor_ModelLoad_Navmeshes;
+            //}
+            //UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Navmeshes);
+
+            ImGui.EndMenu();
+        }
+        UIHelper.Tooltip("Toggle which models are loaded during a map load.");
+    }
+
+    public void ModelTextureLoadMenu()
+    {
+        bool ticked;
+
+        if (ImGui.BeginMenu("Texture Load"))
+        {
+            if (ImGui.MenuItem("Map Pieces"))
+            {
+                CFG.Current.ModelEditor_TextureLoad_MapPieces = !CFG.Current.ModelEditor_TextureLoad_MapPieces;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_MapPieces);
+
+            var name = "Objects";
+            if (Parent.ModelEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            {
+                name = "Assets";
+            }
+
+            if (ImGui.MenuItem(name))
+            {
+                CFG.Current.ModelEditor_TextureLoad_Objects = !CFG.Current.ModelEditor_TextureLoad_Objects;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Objects);
+
+            if (ImGui.MenuItem("Characters"))
+            {
+                CFG.Current.ModelEditor_TextureLoad_Characters = !CFG.Current.ModelEditor_TextureLoad_Characters;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Characters);
+
+            if (ImGui.MenuItem("Parts"))
+            {
+                CFG.Current.ModelEditor_TextureLoad_Parts = !CFG.Current.ModelEditor_TextureLoad_Parts;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Parts);
+
+            if (ImGui.MenuItem("Miscellaneous"))
+            {
+                CFG.Current.ModelEditor_TextureLoad_Misc = !CFG.Current.ModelEditor_TextureLoad_Misc;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Misc);
 
             ImGui.EndMenu();
         }

@@ -53,6 +53,11 @@ public class ModelToolWindow
             {
                 Editor.ModelInstanceFinder.OnToolWindow();
             }
+
+            if (CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler)
+            {
+                Editor.ModelMaskToggler.OnToolWindow();
+            }
         }
 
         ImGui.End();
@@ -86,6 +91,12 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder = !CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder);
+
+            if (ImGui.MenuItem("Model Mask Toggler"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler = !CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler);
 
             ImGui.EndMenu();
         }

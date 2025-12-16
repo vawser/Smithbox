@@ -368,6 +368,7 @@ public class CFG
     public bool Interface_ModelEditor_Tool_ModelGridConfiguration = true;
     public bool Interface_ModelEditor_Tool_ModelInsight = true;
     public bool Interface_ModelEditor_Tool_ModelInstanceFinder = true;
+    public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
 
     public bool ModelEditor_AutoLoadSingles = true;
     public bool ModelEditor_IncludeAliasInSearch = true;
@@ -1041,6 +1042,9 @@ public class CFG
     public bool ModelEditor_TextureLoad_Parts = true;
     public bool ModelEditor_TextureLoad_Characters = true;
     public bool ModelEditor_TextureLoad_Misc = true;
+
+    public float DummyMeshSize = 0.05f;
+    public float NodeMeshSize = 0.05f;
 
     //****************************
     // Settings: Param Editor

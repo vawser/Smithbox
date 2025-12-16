@@ -110,14 +110,18 @@ public class ModelContainer : ObjectContainer
         }
 
         // Meshes
+        int index = 0;
         foreach (var entry in flver.Meshes)
         {
             var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Mesh);
+
             AssignMeshDrawable(newObject, wrapper);
 
             Meshes.Add(newObject);
             Objects.Add(newObject);
             RootObject.AddChild(newObject);
+
+            index++;
         }
 
         // Buffer Layouts
@@ -248,6 +252,7 @@ public class ModelContainer : ObjectContainer
     {
         MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
                 Editor.ModelViewportView.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None, null);
+
 
         mesh.DrawFilter = RenderFilter.Meshes;
         mesh.World = ent.GetWorldMatrix();

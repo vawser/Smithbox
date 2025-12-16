@@ -11,6 +11,8 @@
 - Map Editor: improve texture lookup
 
 - Model Editor: apply proper transform inheritance for dummies/nodes
+- Model Editor: Add simple JSON export/import for elements of FLVER
+- Model Editor: Make the mesh entries use the sub-meshes properly
 
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
 - Param Editor: adjust the difference checker to account for row index
@@ -27,12 +29,7 @@
 
 # TODO NOW
 - Model Editor: 
- - Test custom asset/chr lookup, namely textures
  - Fix part texture lookup (doesn't seem to apply them)
- 
  - Fix property editing for the sub-classes (FaceSet, Texture, etc)
- - Add simple JSON export/import for elements of FLVER
- 
- - Restore 'Model Mask Toggler'
  
  

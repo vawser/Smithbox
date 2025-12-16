@@ -10,6 +10,7 @@ using System;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -48,6 +49,7 @@ public class ModelEditorScreen : EditorScreen
     public ModelGridConfiguration ModelGridTool;
     public ModelInsight ModelInsightTool;
     public ModelInstanceFinder ModelInstanceFinder;
+    public ModelMaskToggler ModelMaskToggler;
 
     public CreateAction CreateAction;
     public DuplicateAction DuplicateAction;
@@ -87,6 +89,7 @@ public class ModelEditorScreen : EditorScreen
         ModelGridTool = new ModelGridConfiguration(this, Project);
         ModelInsightTool = new ModelInsight(this, Project);
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
+        ModelMaskToggler = new ModelMaskToggler(this, Project);
 
         CreateAction = new CreateAction(this, Project);
         DuplicateAction = new DuplicateAction(this, Project);
@@ -381,5 +384,32 @@ public class ModelEditorScreen : EditorScreen
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
+    }
+
+    /// <summary>
+    /// Re-assigns the drawable meshes for Dummy/Node objects when the sizing changes via the Viewport menu
+    /// </summary>
+    public void UpdateDisplayNodes()
+    {
+        var wrapper = Selection.SelectedModelWrapper;
+        if (wrapper != null)
+        {
+            var container = wrapper.Container;
+
+            if (container != null)
+            {
+                foreach (var obj in container.Dummies)
+                {
+                    obj.RenderSceneMesh.Dispose();
+                    container.AssignDummyDrawable(obj, wrapper);
+                }
+
+                foreach (var obj in container.Nodes)
+                {
+                    obj.RenderSceneMesh.Dispose();
+                    container.AssignNodeDrawable(obj, wrapper);
+                }
+            }
+        }
     }
 }

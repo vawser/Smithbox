@@ -138,14 +138,14 @@ public static class RenderableHelper
         // DUMMY POLYGON
         _dmyPoint = new DbgPrimWireSphere(
             Transform.Default,
-            0.05f,
+            CFG.Current.DummyMeshSize,
             Color.Blue,
-            1,
-            4);
+            6,
+            6);
 
         _dmySphereFwdUp = new DbgPrimWireSphereForwardUp(
             Transform.Default,
-            0.05f,
+            CFG.Current.DummyMeshSize,
             Color.Yellow,
             Color.Blue,
             Color.White,
@@ -155,7 +155,7 @@ public static class RenderableHelper
         // BONE
         _jointSphere = new DbgPrimWireSphere(
             Transform.Default,
-            0.05f,
+            CFG.Current.NodeMeshSize,
             Color.Blue,
             6,
             6);
@@ -241,6 +241,25 @@ public static class RenderableHelper
             Transform.Default,
             0.1f,
             Color.Blue);
+    }
+
+    public static void UpdateProxySizes()
+    {
+        // DUMMY POLYGON
+        _dmyPoint = new DbgPrimWireSphere(
+            Transform.Default,
+            CFG.Current.DummyMeshSize,
+            Color.Blue,
+            6,
+            6);
+
+        // BONE
+        _jointSphere = new DbgPrimWireSphere(
+            Transform.Default,
+            CFG.Current.NodeMeshSize,
+            Color.Blue,
+            6,
+            6);
     }
 
     // BOX REGION

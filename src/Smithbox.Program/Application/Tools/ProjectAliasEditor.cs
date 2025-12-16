@@ -13,7 +13,7 @@ namespace StudioCore.Application;
 public static class ProjectAliasEditor
 {
     private static Smithbox BaseEditor;
-    private static ProjectEntry TargetProject;
+    public static ProjectEntry TargetProject;
     private static AliasStore? BaseAliases = null;
 
     private static bool Display = false;
@@ -453,7 +453,46 @@ public static class ProjectAliasEditor
             {
                 var baseA = baseAliases.FirstOrDefault(b => b.ID == a.ID);
 
-                if (baseA == null) return true;
+                if (baseA == null) 
+                    return true;
+
+                return baseA.Name != a.Name || !baseA.Tags.SequenceEqual(a.Tags);
+            }).ToList();
+
+            if (!diffAliases.Any()) continue;
+
+            var json = JsonSerializer.Serialize(diffAliases, SmithboxSerializerContext.Default.ListAliasEntry);
+
+            File.WriteAllText(path, json);
+        }
+    }
+
+    public static void SaveIndividual(ProjectEntry project, AliasType targetType)
+    {
+        TargetProject = project;
+
+        var projectFolder = Path.Join(TargetProject.ProjectPath, ".smithbox", "Assets", "Aliases");
+
+        if (!Directory.Exists(projectFolder))
+            Directory.CreateDirectory(projectFolder);
+
+        foreach ((AliasType aliasType, List<AliasEntry> aliases) in TargetProject.Aliases)
+        {
+            if(targetType != aliasType) 
+                continue;
+
+            string path = Path.Combine(projectFolder, $"{aliasType}.json");
+
+            List<AliasEntry> baseAliases =
+                (BaseAliases != null && BaseAliases.TryGetValue(aliasType, out List<AliasEntry> bAliases)) ? bAliases : new();
+
+            List<AliasEntry> diffAliases = aliases.Where(a =>
+            {
+                var baseA = baseAliases.FirstOrDefault(b => b.ID == a.ID);
+
+                if (baseA == null)
+                    return true;
+
                 return baseA.Name != a.Name || !baseA.Tags.SequenceEqual(a.Tags);
             }).ToList();
 

@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using HKLib.hk2018.hkHashMapDetail;
+using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Crypto;
+using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
@@ -101,6 +105,21 @@ public class ModelUniverse
 
         if (CFG.Current.Viewport_Enable_Rendering)
         {
+            // FIXME: sub-meshes aren't associated with the individual mesh entries yet
+            //int index = 0;
+            //foreach (var ent in newContainer.Meshes)
+            //{
+            //    if (ent.RenderSceneMesh is MeshRenderableProxy meshProxy)
+            //    {
+            //        if (meshProxy.Submeshes.Count > 0 && index < meshProxy.Submeshes.Count)
+            //        {
+            //            ent.RenderSceneMesh = meshProxy.Submeshes[index];
+            //            meshProxy.Submeshes[index].SetSelectable(ent);
+            //        }
+            //    }
+            //    index++;
+            //}
+
             foreach (Entity obj in newContainer.Objects)
             {
                 obj.UpdateRenderModel(Editor);
@@ -119,68 +138,83 @@ public class ModelUniverse
         var loadList = new List<ResourceDescriptor>();
 
         // MapPiece
-        if (modelName.StartsWith('m'))
+        if (CFG.Current.ModelEditor_ModelLoad_MapPieces)
         {
-            if (parent != null)
+            if (modelName.StartsWith('m'))
             {
-                var mapID = parent.MapID;
-
-                if (mapID != null)
+                if (parent != null)
                 {
-                    var name = ModelLocator.GetMapModelName(Editor.Project, mapID, modelName);
-                    var modelAsset = ModelLocator.GetMapModel(Editor.Project, mapID, name, name);
+                    var mapID = parent.MapID;
 
-                    if (modelAsset.IsValid())
-                        LoadList_MapPiece_Model.Add(modelAsset);
+                    if (mapID != null)
+                    {
+                        var name = ModelLocator.GetMapModelName(Editor.Project, mapID, modelName);
+                        var modelAsset = ModelLocator.GetMapModel(Editor.Project, mapID, name, name);
+
+                        if (modelAsset.IsValid())
+                            LoadList_MapPiece_Model.Add(modelAsset);
+                    }
                 }
             }
         }
 
         // Character
-        if (modelName.StartsWith('c'))
+        if (CFG.Current.ModelEditor_ModelLoad_Characters)
         {
-            var modelAsset = ModelLocator.GetChrModel(Editor.Project, modelName, modelName);
+            if (modelName.StartsWith('c'))
+            {
+                var modelAsset = ModelLocator.GetChrModel(Editor.Project, modelName, modelName);
 
-            if (modelAsset.IsValid())
-                LoadList_Character_Model.Add(modelAsset);
+                if (modelAsset.IsValid())
+                    LoadList_Character_Model.Add(modelAsset);
+            }
         }
 
         // Object / Asset
-        if (modelName.StartsWith('o') || (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
+        if (CFG.Current.ModelEditor_TextureLoad_Objects)
         {
-            var modelAsset = ModelLocator.GetObjModel(Editor.Project, modelName, modelName);
+            if (modelName.StartsWith('o') || (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
+            {
+                var modelAsset = ModelLocator.GetObjModel(Editor.Project, modelName, modelName);
 
-            if (modelAsset.IsValid())
-                LoadList_Asset_Model.Add(modelAsset);
+                if (modelAsset.IsValid())
+                    LoadList_Asset_Model.Add(modelAsset);
+            }
         }
 
         // Part
-        if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
+        if (CFG.Current.ModelEditor_ModelLoad_Parts)
+        {
+            if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
             modelName.StartsWith("lg") || modelName.StartsWith("LG") ||
             modelName.StartsWith("bd") || modelName.StartsWith("BD") ||
             modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
             modelName.StartsWith("wp") || modelName.StartsWith("WP"))
-        {
-            var modelAsset = ModelLocator.GetPartsModel(Editor.Project, modelName, modelName);
+            {
+                var modelAsset = ModelLocator.GetPartsModel(Editor.Project, modelName, modelName);
 
-            if (modelAsset.IsValid())
-                LoadList_Part_Model.Add(modelAsset);
+                if (modelAsset.IsValid())
+                    LoadList_Part_Model.Add(modelAsset);
+            }
         }
 
         // Collision
-        if (modelName.StartsWith('h'))
+        if (CFG.Current.ModelEditor_ModelLoad_Collisions)
         {
-            if (parent != null)
+            if (modelName.StartsWith('h'))
             {
-                var mapID = parent.MapID;
-
-                if (mapID != null)
+                if (parent != null)
                 {
-                    var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, mapID,
-                    ModelLocator.GetMapModelName(Editor.Project, mapID, modelName), false);
+                    var mapID = parent.MapID;
 
-                    if (modelAsset.IsValid())
-                        LoadList_Collision.Add(modelAsset);
+                    if (mapID != null)
+                    {
+                        var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, mapID,
+                        ModelLocator.GetMapModelName(Editor.Project, mapID, modelName), false);
+
+                        if (modelAsset.IsValid())
+                            LoadList_Collision.Add(modelAsset);
+                    }
                 }
             }
         }
@@ -194,83 +228,98 @@ public class ModelUniverse
         LoadList_Map_Texture.Clear();
 
         // MAP
-        if (parent != null)
+        if (CFG.Current.ModelEditor_TextureLoad_MapPieces)
         {
-            var mapID = parent.MapID;
-
-            if (mapID != null)
+            if (parent != null)
             {
-                foreach (ResourceDescriptor asset in ResourceLocator.GetMapTextureVPs(Editor.Project, mapID))
+                var mapID = parent.MapID;
+
+                if (mapID != null)
                 {
-                    if (asset.IsValid())
-                        LoadList_Map_Texture.Add(asset);
+                    foreach (ResourceDescriptor asset in ResourceLocator.GetMapTextureVPs(Editor.Project, mapID))
+                    {
+                        if (asset.IsValid())
+                            LoadList_Map_Texture.Add(asset);
+                    }
                 }
             }
         }
 
         // Character
-        if (modelName.StartsWith('c'))
+        if (CFG.Current.ModelEditor_TextureLoad_Characters)
         {
-            // TPF
-            var textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, modelName, false);
+            if (modelName.StartsWith('c'))
+            {
+                // TPF
+                var textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, modelName, false);
 
-            if (textureAsset.IsValid())
-                LoadList_Character_Texture.Add(textureAsset);
+                if (textureAsset.IsValid())
+                    LoadList_Character_Texture.Add(textureAsset);
 
-            // BND
-            textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, modelName, true);
+                // BND
+                textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, modelName, true);
 
-            if (textureAsset.IsValid())
-                LoadList_Character_Texture.Add(textureAsset);
+                if (textureAsset.IsValid())
+                    LoadList_Character_Texture.Add(textureAsset);
+            }
         }
 
         // Object
-        if (modelName.StartsWith('o'))
+        if (CFG.Current.ModelEditor_TextureLoad_Objects)
         {
-            var textureAsset = ResourceLocator.GetObjectTextureVP(Editor.Project, modelName);
+            if (modelName.StartsWith('o'))
+            {
+                var textureAsset = ResourceLocator.GetObjectTextureVP(Editor.Project, modelName);
 
-            if (textureAsset.IsValid())
-                LoadList_Asset_Texture.Add(textureAsset);
-        }
+                if (textureAsset.IsValid())
+                    LoadList_Asset_Texture.Add(textureAsset);
+            }
 
-        // Assets
-        if (modelName.StartsWith("AEG") || modelName.StartsWith("aeg"))
-        {
-            var textureAsset = ResourceLocator.GetAssetTextureVP(Editor.Project, modelName);
+            // Assets
+            if (modelName.StartsWith("AEG") || modelName.StartsWith("aeg"))
+            {
+                var textureAsset = ResourceLocator.GetAssetTextureVP(Editor.Project, modelName);
 
-            if (textureAsset.IsValid())
-                LoadList_Asset_Texture.Add(textureAsset);
+                if (textureAsset.IsValid())
+                    LoadList_Asset_Texture.Add(textureAsset);
+            }
         }
 
         // Part
-        if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
+        if (CFG.Current.ModelEditor_TextureLoad_Parts)
+        {
+            if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
             modelName.StartsWith("lg") || modelName.StartsWith("LG") ||
             modelName.StartsWith("bd") || modelName.StartsWith("BD") ||
             modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
             modelName.StartsWith("wp") || modelName.StartsWith("WP"))
-        {
-            var textureAsset = ResourceLocator.GetPartTextureVP(Editor.Project, modelName);
+            {
+                var textureAsset = ResourceLocator.GetPartTextureVP(Editor.Project, modelName);
 
-            if (textureAsset.IsValid())
-                LoadList_Part_Texture.Add(textureAsset);
+                if (textureAsset.IsValid())
+                    LoadList_Part_Texture.Add(textureAsset);
+            }
         }
 
         // AAT
-        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (CFG.Current.ModelEditor_TextureLoad_Misc)
         {
-            var textureAsset = ResourceLocator.GetCommonCharacterTextureVP(Editor.Project, "common_body");
+            if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            {
+                var textureAsset = ResourceLocator.GetCommonCharacterTextureVP(Editor.Project, "common_body");
 
-            if (textureAsset.IsValid())
-                LoadList_Asset_Texture.Add(textureAsset);
-        }
+                if (textureAsset.IsValid())
+                    LoadList_Asset_Texture.Add(textureAsset);
+            }
 
-        // SYSTEX
-        if (Editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
-        {
-            var textureAsset = ResourceLocator.GetSystemTextureVP(Editor.Project, "systex");
+            // SYSTEX
+            if (Editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
+            {
+                var textureAsset = ResourceLocator.GetSystemTextureVP(Editor.Project, "systex");
 
-            if (textureAsset.IsValid())
-                LoadList_Asset_Texture.Add(textureAsset);
+                if (textureAsset.IsValid())
+                    LoadList_Asset_Texture.Add(textureAsset);
+            }
         }
     }
 
