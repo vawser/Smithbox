@@ -54,6 +54,7 @@ public class ModelEditorScreen : EditorScreen
     public FrameAction FrameAction;
     public GotoAction GotoAction;
     public PullToCameraAction PullToCameraAction;
+    public ReorderAction ReorderAction;
 
     public ModelEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
@@ -91,6 +92,7 @@ public class ModelEditorScreen : EditorScreen
         FrameAction = new FrameAction(this, Project);
         GotoAction = new GotoAction(this, Project);
         PullToCameraAction = new PullToCameraAction(this, Project);
+        ReorderAction = new ReorderAction(this, Project);
 
         ModelInsightHelper.Setup(this, Project);
 
@@ -282,9 +284,16 @@ public class ModelEditorScreen : EditorScreen
             CreateAction.OnMenu();
             DuplicateAction.OnMenu();
             DeleteAction.OnMenu();
+
+            ImGui.Separator();
+
             FrameAction.OnMenu();
             GotoAction.OnMenu();
             PullToCameraAction.OnMenu();
+
+            ImGui.Separator();
+
+            ReorderAction.OnMenu();
 
             ImGui.EndMenu();
         }

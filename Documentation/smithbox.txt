@@ -34,7 +34,6 @@
  - Fix property editing for the sub-classes (FaceSet, Texture, etc)
  - Add simple JSON export/import for elements of FLVER
  
- - Implement reorder actions
  - Restore 'Global Model Search' tool
  - Restore 'Model Mask Toggler'
  

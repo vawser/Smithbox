@@ -502,8 +502,15 @@ public class ModelContentView : IActionEventHandler
         {
             Editor.DuplicateAction.OnContext();
             Editor.DeleteAction.OnContext();
+
+            ImGui.Separator();
+
             Editor.FrameAction.OnContext();
             Editor.PullToCameraAction.OnContext();
+
+            ImGui.Separator();
+
+            Editor.ReorderAction.OnContext();
 
             ImGui.EndPopup();
         }

@@ -487,6 +487,25 @@ public class ModelEditorKeybindTab
                 KeyBindings.Current.MODEL_MoveToCamera,
                 KeyBindings.Default.MODEL_MoveToCamera);
         }
+
+        if (ImGui.CollapsingHeader("Order", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MODEL_MoveObjectUp = InputTracker.KeybindLine(20,
+                KeyBindings.Current.MODEL_MoveObjectUp,
+                KeyBindings.Default.MODEL_MoveObjectUp);
+
+            KeyBindings.Current.MODEL_MoveObjectDown = InputTracker.KeybindLine(21,
+                KeyBindings.Current.MODEL_MoveObjectDown,
+                KeyBindings.Default.MODEL_MoveObjectDown);
+
+            KeyBindings.Current.MODEL_MoveObjectTop = InputTracker.KeybindLine(22,
+                KeyBindings.Current.MODEL_MoveObjectTop,
+                KeyBindings.Default.MODEL_MoveObjectTop);
+
+            KeyBindings.Current.MODEL_MoveObjectBottom = InputTracker.KeybindLine(23,
+                KeyBindings.Current.MODEL_MoveObjectBottom,
+                KeyBindings.Default.MODEL_MoveObjectBottom);
+        }
     }
 }
 #endregion

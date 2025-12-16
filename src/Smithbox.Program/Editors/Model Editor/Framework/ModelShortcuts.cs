@@ -51,6 +51,7 @@ public class ModelShortcuts
             Editor.FrameAction.OnShortcut();
             Editor.GotoAction.OnShortcut();
             Editor.PullToCameraAction.OnShortcut();
+            Editor.ReorderAction.OnShortcut();
 
             // Editor.RotateAction.OnShortcut();
             // Editor.ReorderAction.OnShortcut();

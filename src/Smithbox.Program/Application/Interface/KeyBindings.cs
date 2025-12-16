@@ -794,6 +794,35 @@ public class KeyBindings
             "Moves the current selection to the camera's position.",
             Key.X);
 
+        // Order
+        public KeyBind MODEL_MoveObjectUp = new(
+            "Move Model Object Up in List",
+            "Moves the selected model object up on the Model Object List order.",
+            Key.U,
+            true,
+            false);
+
+        public KeyBind MODEL_MoveObjectDown = new(
+            "Move Model Object Down in List",
+            "Moves the selected model object down on the Model Object List order.",
+            Key.J,
+            true,
+            false);
+
+        public KeyBind MODEL_MoveObjectTop = new(
+            "Move Model Object to Top in List",
+            "Moves the selected model object to the top of the Model Object List order.",
+            Key.U,
+            true,
+            true);
+
+        public KeyBind MODEL_MoveObjectBottom = new(
+            "Move Model Object to Bottom in List",
+            "Moves the selected model object to the bottom of the Model Object List order.",
+            Key.J,
+            true,
+            true);
+
         //-----------------------------
         // Param Editor
         //-----------------------------
