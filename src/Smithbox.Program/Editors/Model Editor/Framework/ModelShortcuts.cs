@@ -45,6 +45,7 @@ public class ModelShortcuts
             }
 
             // Actions
+            Editor.DuplicateAction.OnShortcut();
             Editor.DeleteAction.OnShortcut();
 
             // Editor.DuplicateAction.OnShortcut();

@@ -19,8 +19,6 @@ public class DeleteModelObjectAction : ViewportAction
     private readonly List<ModelEntity> RemoveParent = new();
     private readonly List<int> RemoveParentIndex = new();
 
-    private readonly bool SetSelection;
-
     public DeleteModelObjectAction(ModelEditorScreen editor, ProjectEntry project, ModelContainer container, List<ModelEntity> objects)
     {
         Editor = editor;
@@ -95,14 +93,11 @@ public class DeleteModelObjectAction : ViewportAction
             }
         }
 
-        if (SetSelection)
-        {
-            Editor.ViewportSelection.ClearSelection(Editor);
+        Editor.ViewportSelection.ClearSelection(Editor);
 
-            foreach (ModelEntity d in Deletables)
-            {
-                Editor.ViewportSelection.AddSelection(Editor, d);
-            }
+        foreach (ModelEntity d in Deletables)
+        {
+            Editor.ViewportSelection.AddSelection(Editor, d);
         }
 
         return ActionEvent.ObjectAddedRemoved;

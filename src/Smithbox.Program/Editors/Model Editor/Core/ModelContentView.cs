@@ -503,6 +503,7 @@ public class ModelContentView : IActionEventHandler
     {
         if (ImGui.BeginPopupContextItem($@"modelObjectContext_{container.Name}_{imguiID}"))
         {
+            Editor.DuplicateAction.OnContext();
             Editor.DeleteAction.OnContext();
 
             ImGui.EndPopup();
