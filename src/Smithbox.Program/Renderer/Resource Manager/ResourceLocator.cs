@@ -788,6 +788,10 @@ public class ResourceLocator
         ad.AssetArchiveVirtualPath = null;
 
         var name = id.Replace("AEG", "AET");
+        if(name.Contains("aeg"))
+        {
+            name = id.Replace("aeg", "aet");
+        }
 
         ad.AssetVirtualPath = $@"aet/{name}/tex";
 

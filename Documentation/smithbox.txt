@@ -1,7 +1,8 @@
 # TODO LIST
 - Viewport: add ability to change viewport background color
+- Viewport: implement orthographic view
+- Viewport: add track selection camera toggle - camera locks onto selection and moves in-line with any movement to the selection
 
-- Map Editor: implement orthographic view
 - Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor: Add Vector3 support to MSB Mass Edit
 - Map Editor: implement Edge support for SDT
@@ -26,11 +27,15 @@
 
 # TODO NOW
 - Model Editor: 
+ - Test custom asset/chr lookup, namely textures
  - Fix part texture lookup (doesn't seem to apply them)
  
  - Add alias to the search filter for the Source List
  - Fix property editing for the sub-classes (FaceSet, Texture, etc)
  - Add simple JSON export/import for elements of FLVER
- - Implement /goto/pull to camera/reorder/rotate/select all actions
+ 
+ - Implement reorder actions
  - Restore 'Global Model Search' tool
  - Restore 'Model Mask Toggler'
+ 
+ 

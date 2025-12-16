@@ -91,7 +91,7 @@ public class MapResourceHandler
             }
 
             // Object / Asset
-            if (model.Name.StartsWith('o') || model.Name.StartsWith("AEG"))
+            if (model.Name.StartsWith('o') || (model.Name.StartsWith("AEG") || model.Name.StartsWith("aeg")))
             {
                 var modelAsset = ModelLocator.GetObjModel(Editor.Project, model.Name, model.Name);
 
@@ -166,7 +166,7 @@ public class MapResourceHandler
             }
 
             // Assets
-            if (model.Name.StartsWith("AEG"))
+            if (model.Name.StartsWith("AEG") || model.Name.StartsWith("aeg"))
             {
                 var textureAsset = ResourceLocator.GetAssetTextureVP(Editor.Project, model.Name);
 

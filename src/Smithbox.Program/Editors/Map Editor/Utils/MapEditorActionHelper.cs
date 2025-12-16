@@ -314,7 +314,8 @@ public static class MapEditorActionHelper
                         continue;
 
                     // Name is a AEG reference
-                    if (name.Contains(modelName) && name.Contains("AEG"))
+                    if (name.Contains(modelName) && 
+                        (name.Contains("AEG") || name.Contains("aeg")))
                     {
                         name = partName;
                     }
@@ -328,7 +329,8 @@ public static class MapEditorActionHelper
 
                 if (unkPartName != null)
                 {
-                    if (unkPartName.Contains(modelName) && unkPartName.Contains("AEG"))
+                    if (unkPartName.Contains(modelName) && 
+                        (unkPartName.Contains("AEG") || unkPartName.Contains("aeg")))
                     {
                         sel.SetPropertyValue("UnkT54PartName", partName);
                     }
@@ -365,7 +367,8 @@ public static class MapEditorActionHelper
                         continue;
 
                     // Name is a AEG reference
-                    if (name.Contains(modelName) && name.Contains("AEG"))
+                    if (name.Contains(modelName) && 
+                        (name.Contains("AEG") || name.Contains("aeg")))
                     {
                         name = partName;
                     }
@@ -395,7 +398,8 @@ public static class MapEditorActionHelper
 
                 if (partName1 != null)
                 {
-                    if (partName1.Contains(modelName) && partName1.Contains("AEG"))
+                    if (partName1.Contains(modelName) &&
+                        (partName1.Contains("AEG") || partName1.Contains("aeg")))
                     {
                         sel.SetPropertyValue("PartName1", partName);
                     }
@@ -405,7 +409,8 @@ public static class MapEditorActionHelper
 
                 if (partName2 != null)
                 {
-                    if (partName2.Contains(modelName) && partName2.Contains("AEG"))
+                    if (partName2.Contains(modelName) &&
+                        (partName2.Contains("AEG") || partName2.Contains("aeg")))
                     {
                         sel.SetPropertyValue("PartName2", partName);
                     }
@@ -415,7 +420,8 @@ public static class MapEditorActionHelper
 
                 if (partName3 != null)
                 {
-                    if (partName3.Contains(modelName) && partName3.Contains("AEG"))
+                    if (partName3.Contains(modelName) &&
+                        (partName3.Contains("AEG") || partName3.Contains("aeg")))
                     {
                         sel.SetPropertyValue("PartName3", partName);
                     }
@@ -425,7 +431,8 @@ public static class MapEditorActionHelper
 
                 if (partName4 != null)
                 {
-                    if (partName4.Contains(modelName) && partName4.Contains("AEG"))
+                    if (partName4.Contains(modelName) &&
+                        (partName4.Contains("AEG") || partName4.Contains("aeg")))
                     {
                         sel.SetPropertyValue("PartName4", partName);
                     }
@@ -435,7 +442,8 @@ public static class MapEditorActionHelper
 
                 if (partName5 != null)
                 {
-                    if (partName5.Contains(modelName) && partName5.Contains("AEG"))
+                    if (partName5.Contains(modelName) &&
+                        (partName5.Contains("AEG") || partName5.Contains("aeg")))
                     {
                         sel.SetPropertyValue("PartName5", partName);
                     }
@@ -445,7 +453,8 @@ public static class MapEditorActionHelper
 
                 if (partName6 != null)
                 {
-                    if (partName6.Contains(modelName) && partName6.Contains("AEG"))
+                    if (partName6.Contains(modelName) &&
+                        (partName6.Contains("AEG") || partName6.Contains("aeg")))
                     {
                         sel.SetPropertyValue("PartName6", partName);
                     }

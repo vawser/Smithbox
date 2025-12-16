@@ -57,7 +57,8 @@ public static class DrawableHelper
             asset = ModelLocator.GetEneModel(curProject, modelname);
             filt = RenderFilter.Character;
         }
-        else if (modelname.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || modelname.StartsWith("AEG"))
+        else if (modelname.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || 
+            (modelname.StartsWith("AEG") || modelname.StartsWith("aeg")))
         {
             loadflver = true;
             asset = ModelLocator.GetObjModel(curProject, modelname, modelname);

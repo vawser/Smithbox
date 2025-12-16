@@ -1,15 +1,11 @@
 ﻿using Hexa.NET.ImGui;
-using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
 
