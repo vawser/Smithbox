@@ -364,11 +364,13 @@ public class CFG
     /// </summary>
     public bool Interface_ModelEditor_ResourceList = true;
 
+    public bool Interface_ModelEditor_Tool_CreateAction = true;
     public bool Interface_ModelEditor_Tool_ModelGridConfiguration = true;
     public bool Interface_ModelEditor_Tool_ModelInsight = true;
-    public bool Interface_ModelEditor_Tool_CreateAction = true;
+    public bool Interface_ModelEditor_Tool_ModelInstanceFinder = true;
 
     public bool ModelEditor_AutoLoadSingles = true;
+    public bool ModelEditor_IncludeAliasInSearch = true;
 
     ///------------------------------------------------------------
     /// Text Editor

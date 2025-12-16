@@ -47,6 +47,7 @@ public class ModelEditorScreen : EditorScreen
 
     public ModelGridConfiguration ModelGridTool;
     public ModelInsight ModelInsightTool;
+    public ModelInstanceFinder ModelInstanceFinder;
 
     public CreateAction CreateAction;
     public DuplicateAction DuplicateAction;
@@ -85,6 +86,7 @@ public class ModelEditorScreen : EditorScreen
 
         ModelGridTool = new ModelGridConfiguration(this, Project);
         ModelInsightTool = new ModelInsight(this, Project);
+        ModelInstanceFinder = new ModelInstanceFinder(this, Project);
 
         CreateAction = new CreateAction(this, Project);
         DuplicateAction = new DuplicateAction(this, Project);

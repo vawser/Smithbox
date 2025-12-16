@@ -34,6 +34,11 @@ public class ModelToolWindow
                 ImGui.EndMenuBar();
             }
 
+            if (CFG.Current.Interface_ModelEditor_Tool_CreateAction)
+            {
+                Editor.CreateAction.OnToolWindow();
+            }
+
             if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
             {
                 Editor.ModelGridTool.OnToolWindow();
@@ -44,9 +49,9 @@ public class ModelToolWindow
                 Editor.ModelInsightTool.OnToolWindow();
             }
 
-            if (CFG.Current.Interface_ModelEditor_Tool_CreateAction)
+            if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
             {
-                Editor.CreateAction.OnToolWindow();
+                Editor.ModelInstanceFinder.OnToolWindow();
             }
         }
 
@@ -58,6 +63,12 @@ public class ModelToolWindow
     {
         if (ImGui.BeginMenu("View"))
         {
+            if (ImGui.MenuItem("Create"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_CreateAction = !CFG.Current.Interface_ModelEditor_Tool_CreateAction;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_CreateAction);
+
             if (ImGui.MenuItem("Model Grid Configuration"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration = !CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration;
@@ -70,11 +81,11 @@ public class ModelToolWindow
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInsight);
 
-            if (ImGui.MenuItem("Create"))
+            if (ImGui.MenuItem("Model Instance Finder"))
             {
-                CFG.Current.Interface_ModelEditor_Tool_CreateAction = !CFG.Current.Interface_ModelEditor_Tool_CreateAction;
+                CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder = !CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_CreateAction);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder);
 
             ImGui.EndMenu();
         }

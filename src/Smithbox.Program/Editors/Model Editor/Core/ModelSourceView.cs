@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -21,8 +22,6 @@ public class ModelSourceView
     private string _lastSearchText = "";
 
     private HashSet<string> _cachedSearchMatches = new HashSet<string>();
-    private Dictionary<string, string> _cachedAliases = new Dictionary<string, string>();
-    private Dictionary<string, List<string>> _cachedTags = new Dictionary<string, List<string>>();
 
     private bool _updateModelSourceList = true;
 
@@ -46,13 +45,19 @@ public class ModelSourceView
                 Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelSourceList);
 
                 DisplayMenubar();
-                DisplaySearchbar();
 
-                ImGui.BeginChild($"modelSourceListSection");
+                ImGui.BeginTabBar("sourceTabs");
 
-                if (ImGui.CollapsingHeader("Characters", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.BeginTabItem("Characters"))
                 {
+                    DisplaySearchbar(ModelListType.Character);
+
+                    ImGui.BeginChild($"characterSourceList");
+
                     DisplayModelSourceList(ModelListType.Character, Project.ModelData.ChrFiles);
+
+                    ImGui.EndChild();
+                    ImGui.EndTabItem();
                 }
 
                 var name = "Objects";
@@ -61,27 +66,43 @@ public class ModelSourceView
                     name = "Assets";
                 }
 
-                if (ImGui.CollapsingHeader(name))
+                if (ImGui.BeginTabItem($"{name}"))
                 {
+                    DisplaySearchbar(ModelListType.Asset);
+
+                    ImGui.BeginChild($"assetSourceList");
+
                     DisplayModelSourceList(ModelListType.Asset, Project.ModelData.AssetFiles);
+
+                    ImGui.EndChild();
+                    ImGui.EndTabItem();
                 }
 
-                if (ImGui.CollapsingHeader("Parts"))
+                if (ImGui.BeginTabItem("Parts"))
                 {
+                    DisplaySearchbar(ModelListType.Part);
+
+                    ImGui.BeginChild($"partsSourceList");
+
                     DisplayModelSourceList(ModelListType.Part, Project.ModelData.PartFiles);
+
+                    ImGui.EndChild();
+                    ImGui.EndTabItem();
                 }
 
-                if (ImGui.CollapsingHeader("Map Pieces"))
+                if (ImGui.BeginTabItem("Map Pieces"))
                 {
+                    DisplaySearchbar(ModelListType.MapPiece);
+
+                    ImGui.BeginChild($"mapPieceSourceList");
+
                     DisplayModelSourceList(ModelListType.MapPiece, Project.ModelData.MapPieceFiles);
+
+                    ImGui.EndChild();
+                    ImGui.EndTabItem();
                 }
 
-                //if (ImGui.CollapsingHeader("Collisions"))
-                //{
-                //    DisplayModelSourceList(ModelListType.Collision, Project.ModelData.CollisionFiles);
-                //}
-
-                ImGui.EndChild();
+                ImGui.EndTabBar();
             }
 
             ImGui.End();
@@ -93,19 +114,29 @@ public class ModelSourceView
     {
         if (ImGui.BeginMenuBar())
         {
+            if (ImGui.BeginMenu("Options"))
+            {
+                if (ImGui.MenuItem("Include Alias in Search"))
+                {
+                    CFG.Current.ModelEditor_IncludeAliasInSearch = !CFG.Current.ModelEditor_IncludeAliasInSearch;
+                }
+                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_IncludeAliasInSearch);
+                UIHelper.Tooltip($"If enabled, when filtering the source list, alias will be included. Can be slower than normal.");
 
+                ImGui.EndMenu();
+            }
 
             ImGui.EndMenuBar();
         }
     }
 
-    public void DisplaySearchbar()
+    public void DisplaySearchbar(ModelListType type)
     {
         var windowWidth = ImGui.GetWindowWidth();
 
         DPI.ApplyInputWidth(windowWidth * 0.75f);
         ImGui.InputText($"##modelListSearch{ImguiID}", ref SearchBarText, 255);
-        if (ImGui.IsItemEdited())
+        if (ImGui.IsItemDeactivatedAfterEdit())
         {
             if (_lastSearchText != SearchBarText)
             {
@@ -120,21 +151,37 @@ public class ModelSourceView
             _updateModelSourceList = false;
 
             _cachedSearchMatches.Clear();
-            _cachedAliases.Clear();
-            _cachedTags.Clear();
 
             foreach (var entry in Project.ModelData.PrimaryBank.Models)
             {
                 var modelName = entry.Key.Filename;
+                var nameAlias = "";
 
-                // TODO
-                //var nameAlias = AliasUtils.GetMapNameAlias(Editor.Project, mapID);
-                //var tags = AliasUtils.GetMapTags(Editor.Project, mapID);
+                if (CFG.Current.ModelEditor_IncludeAliasInSearch)
+                {
+                    if (type is ModelListType.Character)
+                    {
+                        nameAlias = AliasHelper.GetCharacterAlias(Project, modelName);
+                    }
 
-                //_cachedAliases[mapID] = nameAlias;
-                //_cachedTags[mapID] = tags;
+                    if (type is ModelListType.Asset)
+                    {
+                        nameAlias = AliasHelper.GetAssetAlias(Project, modelName);
+                    }
 
-                bool isMatch = SearchFilters.IsMapSearchMatch(_lastSearchText, modelName, "", new List<string>());
+                    if (type is ModelListType.Part)
+                    {
+                        nameAlias = AliasHelper.GetPartAlias(Project, modelName);
+                    }
+
+                    if (type is ModelListType.MapPiece)
+                    {
+                        nameAlias = AliasHelper.GetMapPieceAlias(Project, modelName);
+
+                    }
+                }
+
+                bool isMatch = SearchFilters.IsMapSearchMatch(_lastSearchText, modelName, nameAlias, new List<string>());
 
                 if (isMatch || _lastSearchText == "")
                 {
@@ -168,7 +215,6 @@ public class ModelSourceView
             for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
             {
                 var fileEntry = filteredEntries[i];
-
 
                 bool selected = false;
                 if (Editor.Selection.SelectedModelContainerWrapper != null)
@@ -230,6 +276,11 @@ public class ModelSourceView
 
                     Editor.ModelSelectView.ApplyAutoSelectPass = true;
                 }
+            }
+
+            if (ImGui.Selectable("Copy Name"))
+            {
+                PlatformUtils.Instance.SetClipboardText($"{fileEntry.Filename}");
             }
 
             ImGui.EndPopup();
