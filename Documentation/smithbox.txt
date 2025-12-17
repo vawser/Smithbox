@@ -29,4 +29,3 @@
 
 - File Browser: add category that represents the project's file dictionary in filesystem form, to allow for natural browsing and then direct extraction from the VFS. Mainly so the game doesn't ever need to be unpacked personally
 
-8981400 applyIdOnKillSp 8981402
