@@ -293,6 +293,10 @@
     <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." FlagAlias="" />
     <reserve3 AltName="" Padding=""/>
 	
+	<useItemConferBullets
+	AltName="Use Item Confer Bullets"
+	Wiki="Set to 1 to have goods use Item Confer bullets when the relic effect is equipped" />
+	
 	<carrySpEffectId
 	AltName="Carry SpEffect ID"
 	Wiki="SpEffect applied when carrying at least 1 of this item.\nNote that it is not automatically removed when lacking the item."
@@ -332,6 +336,11 @@
     Wiki="Bullet to emit with 'Items confer effects to allies' effect."
     Refs="Bullet" />
 	
+	<itemConferBulletId_1
+    AltName="Item Confer Bullet ID Left"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect."
+    Refs="Bullet" />
+	
 	<sparringGroundsEventFlagId
 	AltName="Appearance Event Flag ID"
 	Wiki="Event flag that determines if goods will appear in Sparring Grounds/Visual Codex" />
@@ -360,9 +369,19 @@
 	AltName="Item Confer Bullet ID: Level 2"
     Wiki="Bullet to emit with 'Items confer effects to allies' effect and category is level 2."
     Refs="Bullet" />
+	
+	<level2_itemConferBulletId_1
+	AltName="Item Confer Bullet ID Left: Level 2"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect and category is level 2."
+    Refs="Bullet" />
     
     <level3_itemConferBulletId
 	AltName="Item Confer Bullet ID: Level 3"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect and category is level 3."
+    Refs="Bullet" />
+    
+    <level3_itemConferBulletId_1
+	AltName="Item Confer Bullet ID Left: Level 3"
     Wiki="Bullet to emit with 'Items confer effects to allies' effect and category is level 3."
     Refs="Bullet" />
 	
