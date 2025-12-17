@@ -435,11 +435,10 @@
     <Field Def="s32 analyzeSelfLevel2_effectId" FirstVersion="10310025"/>
     <Field Def="s32 analyzeSelfLevel3_effectId" FirstVersion="10310025"/>
     <Field Def="s32 startMagicId" FirstVersion="10310025"/>
-    <Field Def="f32 frostInflictRate" FirstVersion="10310025"/>
-    <Field Def="f32 sleepInflictRate" FirstVersion="10310025"/>
-    <Field Def="f32 madnessInflictRate" FirstVersion="10310025"/>
-    <Field Def="s32 applyIdOnKillSp" FirstVersion="10310025"/>
     
-    
+    <Field Def="f32 frostInflictRate" FirstVersion="10310025" RemovedVersion="10320000"/>
+    <Field Def="f32 sleepInflictRate" FirstVersion="10310025" RemovedVersion="10320000"/>
+    <Field Def="f32 madnessInflictRate" FirstVersion="10310025" RemovedVersion="10320000"/>
+    <Field Def="s32 applyIdOnKillSp" FirstVersion="10310025" RemovedVersion="10320000"/>
   </Fields>
 </PARAMDEF>

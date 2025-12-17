@@ -48,6 +48,8 @@ public class ProjectEntry
 
     public bool EnableExternalMaterialData;
 
+    public string FolderTag = "";
+
     // Legacy
     public List<string> PinnedParams { get; set; } = new();
     public Dictionary<string, List<int>> PinnedRows { get; set; } = new();

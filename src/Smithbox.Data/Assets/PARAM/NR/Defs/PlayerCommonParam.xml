@@ -613,5 +613,7 @@
     <Field Def="s32 fh_unknown_77" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_78" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_79" FirstVersion="10310025"/>
+    
+    <Field Def="f32 fh_unknown_80" FirstVersion="10320000"/>
   </Fields>
 </PARAMDEF>

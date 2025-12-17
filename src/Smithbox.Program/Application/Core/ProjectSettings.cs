@@ -17,6 +17,9 @@ public static class ProjectSettings
     public static string ProjectPath = "";
     public static string DataPath = "";
     public static ProjectType ProjectType = ProjectType.Undefined;
+
+    public static string FolderTag = "";
+
     public static bool AutoSelect = false;
 
     public static bool EnableMapEditor = true;
@@ -42,6 +45,7 @@ public static class ProjectSettings
         DataPath = curProject.DataPath;
         ProjectType = curProject.ProjectType;
         AutoSelect = curProject.AutoSelect;
+        FolderTag = curProject.FolderTag;
 
         EnableMapEditor = curProject.EnableMapEditor;
         EnableModelEditor = curProject.EnableModelEditor;
@@ -110,6 +114,7 @@ public static class ProjectSettings
                 TargetProject.DataPath = DataPath;
                 TargetProject.ProjectType = ProjectType;
                 TargetProject.AutoSelect = AutoSelect;
+                TargetProject.FolderTag = FolderTag;
 
                 TargetProject.EnableMapEditor = EnableMapEditor;
                 TargetProject.EnableModelEditor = EnableModelEditor;
@@ -250,6 +255,21 @@ public static class ProjectSettings
 
             DPI.ApplyInputWidth();
             ImGui.Checkbox("##projectAutoLoad", ref AutoSelect);
+
+            ImGui.TableSetColumnIndex(2);
+
+            // Folder Tag
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Folder Tag");
+            UIHelper.Tooltip("A tag to apply to this project. Used to group the project under a folder in the selection list.");
+
+            ImGui.TableSetColumnIndex(1);
+
+            DPI.ApplyInputWidth();
+            ImGui.InputText("##folderTagInput", ref FolderTag, 255);
 
             ImGui.TableSetColumnIndex(2);
 

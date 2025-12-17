@@ -1,5 +1,5 @@
 {
-  "MaxVersion": "1_03_1_0025L",
+  "MaxVersion": "1_03_2_0000L",
   "RegulationEntries": [
     {
       "Version": "1.01.1.0019",
@@ -52,6 +52,10 @@
     {
       "Version": "1.03.1.0025",
       "Folder": "1.03.1 (10310025)"
+    },
+    {
+      "Version": "1.03.2.0000",
+      "Folder": "1.03.2 (10320000)"
     }
   ],
   "UpgradeCommands": [
@@ -568,12 +572,12 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: unk_00: = vanillafield unk_00"
+      "Command": "param PlayerCommonParam: modified && !added: tenacityRelicAddEffectId: = vanillafield tenacityRelicAddEffectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: unk_00: = vanillafield unk_00"
+      "Command": "param PlayerCommonParam: added: tenacityRelicAddEffectId: = vanillafield tenacityRelicAddEffectId"
     },
     {
       "Version": "10200000",
@@ -618,42 +622,42 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: unk_05: = vanillafield unk_05"
+      "Command": "param PlayerCommonParam: modified && !added: analyseTarget_Level1EffectId: = vanillafield analyseTarget_Level1EffectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: unk_05: = vanillafield unk_05"
+      "Command": "param PlayerCommonParam: added: analyseTarget_Level1EffectId: = vanillafield analyseTarget_Level1EffectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: unk_06: = vanillafield unk_06"
+      "Command": "param PlayerCommonParam: modified && !added: analyseTarget_Level2EffectId: = vanillafield analyseTarget_Level2EffectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: unk_06: = vanillafield unk_06"
+      "Command": "param PlayerCommonParam: added: analyseTarget_Level2EffectId: = vanillafield analyseTarget_Level2EffectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: unk_07: = vanillafield unk_07"
+      "Command": "param PlayerCommonParam: modified && !added: analyseTarget_Level3EffectId: = vanillafield analyseTarget_Level3EffectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: unk_07: = vanillafield unk_07"
+      "Command": "param PlayerCommonParam: added: analyseTarget_Level3EffectId: = vanillafield analyseTarget_Level3EffectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: unk_08: = vanillafield unk_08"
+      "Command": "param PlayerCommonParam: modified && !added: analyseTarget_AllyEffectId: = vanillafield analyseTarget_AllyEffectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: unk_08: = vanillafield unk_08"
+      "Command": "param PlayerCommonParam: added: analyseTarget_AllyEffectId: = vanillafield analyseTarget_AllyEffectId"
     },
     {
       "Version": "10200000",
@@ -678,12 +682,12 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: abilityActivationSpEffectId: = vanillafield abilityActivationSpEffectId"
+      "Command": "param SpEffectParam: modified && !added: necromancyActivationSpEffectId: = vanillafield necromancyActivationSpEffectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: added: abilityActivationSpEffectId: = vanillafield abilityActivationSpEffectId"
+      "Command": "param SpEffectParam: added: necromancyActivationSpEffectId: = vanillafield necromancyActivationSpEffectId"
     },
     {
       "Version": "10200000",
@@ -718,6 +722,26 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: poisonDamageRate: = vanillafield poisonDamageRate"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: poisonDamageRate: = vanillafield poisonDamageRate"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: diseaseDamageRate: = vanillafield diseaseDamageRate"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: diseaseDamageRate: = vanillafield diseaseDamageRate"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
       "Command": "param SpEffectParam: modified && !added: unk_05: = vanillafield unk_05"
     },
     {
@@ -728,12 +752,12 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: unk_06: = vanillafield unk_06"
+      "Command": "param SpEffectParam: modified && !added: rainDamageCorrection: = vanillafield rainDamageCorrection"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: added: unk_06: = vanillafield unk_06"
+      "Command": "param SpEffectParam: added: rainDamageCorrection: = vanillafield rainDamageCorrection"
     },
     {
       "Version": "10200000",
@@ -748,22 +772,22 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: applyHeroStatusChange: = vanillafield applyHeroStatusChange"
+      "Command": "param SpEffectParam: modified && !added: heroStatusModifier: = vanillafield heroStatusModifier"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: added: applyHeroStatusChange: = vanillafield applyHeroStatusChange"
+      "Command": "param SpEffectParam: added: heroStatusModifier: = vanillafield heroStatusModifier"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: unknown_10: = vanillafield unknown_10"
+      "Command": "param SpEffectParam: modified && !added: analyzeAcquire_effectId: = vanillafield analyzeAcquire_effectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: added: unknown_10: = vanillafield unknown_10"
+      "Command": "param SpEffectParam: added: analyzeAcquire_effectId: = vanillafield analyzeAcquire_effectId"
     },
     {
       "Version": "10200000",
@@ -808,102 +832,102 @@
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: modified && !added: fh_unknown_00: = vanillafield fh_unknown_00"
+      "Command": "param EquipParamGoods: modified && !added: sparringGroundsEventFlagId: = vanillafield sparringGroundsEventFlagId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: added: fh_unknown_00: = vanillafield fh_unknown_00"
+      "Command": "param EquipParamGoods: added: sparringGroundsEventFlagId: = vanillafield sparringGroundsEventFlagId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: modified && !added: fh_unknown_01: = vanillafield fh_unknown_01"
+      "Command": "param EquipParamGoods: modified && !added: level2RefId: = vanillafield level2RefId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: added: fh_unknown_01: = vanillafield fh_unknown_01"
+      "Command": "param EquipParamGoods: added: level2RefId: = vanillafield level2RefId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: modified && !added: fh_unknown_02: = vanillafield fh_unknown_02"
+      "Command": "param EquipParamGoods: modified && !added: level2RefId_1: = vanillafield level2RefId_1"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: added: fh_unknown_02: = vanillafield fh_unknown_02"
+      "Command": "param EquipParamGoods: added: level2RefId_1: = vanillafield level2RefId_1"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: modified && !added: fh_unknown_03: = vanillafield fh_unknown_03"
+      "Command": "param EquipParamGoods: modified && !added: level3RefId: = vanillafield level3RefId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: added: fh_unknown_03: = vanillafield fh_unknown_03"
+      "Command": "param EquipParamGoods: added: level3RefId: = vanillafield level3RefId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: modified && !added: fh_unknown_04: = vanillafield fh_unknown_04"
+      "Command": "param EquipParamGoods: modified && !added: level3RefId_1: = vanillafield level3RefId_1"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: added: fh_unknown_04: = vanillafield fh_unknown_04"
+      "Command": "param EquipParamGoods: added: level3RefId_1: = vanillafield level3RefId_1"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: modified && !added: fh_unknown_05_bulletId: = vanillafield fh_unknown_05_bulletId"
+      "Command": "param EquipParamGoods: modified && !added: level2_itemConferBulletId: = vanillafield level2_itemConferBulletId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: added: fh_unknown_05_bulletId: = vanillafield fh_unknown_05_bulletId"
+      "Command": "param EquipParamGoods: added: level2_itemConferBulletId: = vanillafield level2_itemConferBulletId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: modified && !added: fh_unknown_06: = vanillafield fh_unknown_06"
+      "Command": "param EquipParamGoods: modified && !added: level2_itemConferBulletId_1: = vanillafield level2_itemConferBulletId_1"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: added: fh_unknown_06: = vanillafield fh_unknown_06"
+      "Command": "param EquipParamGoods: added: level2_itemConferBulletId_1: = vanillafield level2_itemConferBulletId_1"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: modified && !added: fh_unknown_07_bulletId: = vanillafield fh_unknown_07_bulletId"
+      "Command": "param EquipParamGoods: modified && !added: level3_itemConferBulletId: = vanillafield level3_itemConferBulletId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: added: fh_unknown_07_bulletId: = vanillafield fh_unknown_07_bulletId"
+      "Command": "param EquipParamGoods: added: level3_itemConferBulletId: = vanillafield level3_itemConferBulletId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: modified && !added: fh_unknown_08: = vanillafield fh_unknown_08"
+      "Command": "param EquipParamGoods: modified && !added: level3_itemConferBulletId_1: = vanillafield level3_itemConferBulletId_1"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: added: fh_unknown_08: = vanillafield fh_unknown_08"
+      "Command": "param EquipParamGoods: added: level3_itemConferBulletId_1: = vanillafield level3_itemConferBulletId_1"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: modified && !added: fh_unknown_09a: = vanillafield fh_unknown_09a"
+      "Command": "param EquipParamGoods: modified && !added: bagcraftCategoryXp: = vanillafield bagcraftCategoryXp"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - EquipParamGoods",
-      "Command": "param EquipParamGoods: added: fh_unknown_09a: = vanillafield fh_unknown_09a"
+      "Command": "param EquipParamGoods: added: bagcraftCategoryXp: = vanillafield bagcraftCategoryXp"
     },
     {
       "Version": "10310025",
@@ -1498,22 +1522,22 @@
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_14: = vanillafield fh_unknown_14"
+      "Command": "param PlayerCommonParam: modified && !added: tranceDuration: = vanillafield tranceDuration"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_14: = vanillafield fh_unknown_14"
+      "Command": "param PlayerCommonParam: added: tranceDuration: = vanillafield tranceDuration"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_15: = vanillafield fh_unknown_15"
+      "Command": "param PlayerCommonParam: modified && !added: tranceEnhanceDuration: = vanillafield tranceEnhanceDuration"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_15: = vanillafield fh_unknown_15"
+      "Command": "param PlayerCommonParam: added: tranceEnhanceDuration: = vanillafield tranceEnhanceDuration"
     },
     {
       "Version": "10310025",
@@ -1528,22 +1552,22 @@
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_17: = vanillafield fh_unknown_17"
+      "Command": "param PlayerCommonParam: modified && !added: tranceEffectId: = vanillafield tranceEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_17: = vanillafield fh_unknown_17"
+      "Command": "param PlayerCommonParam: added: tranceEffectId: = vanillafield tranceEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_18: = vanillafield fh_unknown_18"
+      "Command": "param PlayerCommonParam: modified && !added: tranceRemoveEffectId: = vanillafield tranceRemoveEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_18: = vanillafield fh_unknown_18"
+      "Command": "param PlayerCommonParam: added: tranceRemoveEffectId: = vanillafield tranceRemoveEffectId"
     },
     {
       "Version": "10310025",
@@ -1598,72 +1622,72 @@
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_24: = vanillafield fh_unknown_24"
+      "Command": "param PlayerCommonParam: modified && !added: tranceSuccessiveThreshold: = vanillafield tranceSuccessiveThreshold"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_24: = vanillafield fh_unknown_24"
+      "Command": "param PlayerCommonParam: added: tranceSuccessiveThreshold: = vanillafield tranceSuccessiveThreshold"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_25: = vanillafield fh_unknown_25"
+      "Command": "param PlayerCommonParam: modified && !added: tranceSuccessiveThreshold_unk: = vanillafield tranceSuccessiveThreshold_unk"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_25: = vanillafield fh_unknown_25"
+      "Command": "param PlayerCommonParam: added: tranceSuccessiveThreshold_unk: = vanillafield tranceSuccessiveThreshold_unk"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_26: = vanillafield fh_unknown_26"
+      "Command": "param PlayerCommonParam: modified && !added: tranceEnhanceEffectId: = vanillafield tranceEnhanceEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_26: = vanillafield fh_unknown_26"
+      "Command": "param PlayerCommonParam: added: tranceEnhanceEffectId: = vanillafield tranceEnhanceEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_27: = vanillafield fh_unknown_27"
+      "Command": "param PlayerCommonParam: modified && !added: tranceEnhanceRemoveEffectId: = vanillafield tranceEnhanceRemoveEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_27: = vanillafield fh_unknown_27"
+      "Command": "param PlayerCommonParam: added: tranceEnhanceRemoveEffectId: = vanillafield tranceEnhanceRemoveEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_28: = vanillafield fh_unknown_28"
+      "Command": "param PlayerCommonParam: modified && !added: tranceBuffEffectId: = vanillafield tranceBuffEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_28: = vanillafield fh_unknown_28"
+      "Command": "param PlayerCommonParam: added: tranceBuffEffectId: = vanillafield tranceBuffEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_29: = vanillafield fh_unknown_29"
+      "Command": "param PlayerCommonParam: modified && !added: tranceRemoveBuffEffectId: = vanillafield tranceRemoveBuffEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_29: = vanillafield fh_unknown_29"
+      "Command": "param PlayerCommonParam: added: tranceRemoveBuffEffectId: = vanillafield tranceRemoveBuffEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_30: = vanillafield fh_unknown_30"
+      "Command": "param PlayerCommonParam: modified && !added: tranceSuccessiveEffectId: = vanillafield tranceSuccessiveEffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_30: = vanillafield fh_unknown_30"
+      "Command": "param PlayerCommonParam: added: tranceSuccessiveEffectId: = vanillafield tranceSuccessiveEffectId"
     },
     {
       "Version": "10310025",
@@ -1698,102 +1722,202 @@
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_34: = vanillafield fh_unknown_34"
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level2_Dart: = vanillafield bagcraftXp_Level2_Dart"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_34: = vanillafield fh_unknown_34"
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level2_Dart: = vanillafield bagcraftXp_Level2_Dart"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_35: = vanillafield fh_unknown_35"
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level3_Dart: = vanillafield bagcraftXp_Level3_Dart"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_35: = vanillafield fh_unknown_35"
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level3_Dart: = vanillafield bagcraftXp_Level3_Dart"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_36: = vanillafield fh_unknown_36"
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level2_Pot: = vanillafield bagcraftXp_Level2_Pot"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_36: = vanillafield fh_unknown_36"
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level2_Pot: = vanillafield bagcraftXp_Level2_Pot"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_37: = vanillafield fh_unknown_37"
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level3_Pot: = vanillafield bagcraftXp_Level3_Pot"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_37: = vanillafield fh_unknown_37"
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level3_Pot: = vanillafield bagcraftXp_Level3_Pot"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_38: = vanillafield fh_unknown_38"
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level2_Bolus: = vanillafield bagcraftXp_Level2_Bolus"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_38: = vanillafield fh_unknown_38"
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level2_Bolus: = vanillafield bagcraftXp_Level2_Bolus"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_39: = vanillafield fh_unknown_39"
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level3_Bolus: = vanillafield bagcraftXp_Level3_Bolus"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_39: = vanillafield fh_unknown_39"
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level3_Bolus: = vanillafield bagcraftXp_Level3_Bolus"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_40: = vanillafield fh_unknown_40"
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level2_Stone: = vanillafield bagcraftXp_Level2_Stone"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_40: = vanillafield fh_unknown_40"
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level2_Stone: = vanillafield bagcraftXp_Level2_Stone"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_41: = vanillafield fh_unknown_41"
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level3_Stone: = vanillafield bagcraftXp_Level3_Stone"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_41: = vanillafield fh_unknown_41"
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level3_Stone: = vanillafield bagcraftXp_Level3_Stone"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_42: = vanillafield fh_unknown_42"
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level2_Tear: = vanillafield bagcraftXp_Level2_Tear"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_42: = vanillafield fh_unknown_42"
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level2_Tear: = vanillafield bagcraftXp_Level2_Tear"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_43: = vanillafield fh_unknown_43"
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level3_Tear: = vanillafield bagcraftXp_Level3_Tear"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_43: = vanillafield fh_unknown_43"
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level3_Tear: = vanillafield bagcraftXp_Level3_Tear"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level2_Perfume: = vanillafield bagcraftXp_Level2_Perfume"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level2_Perfume: = vanillafield bagcraftXp_Level2_Perfume"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level3_Perfume: = vanillafield bagcraftXp_Level3_Perfume"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level3_Perfume: = vanillafield bagcraftXp_Level3_Perfume"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level2_Grease: = vanillafield bagcraftXp_Level2_Grease"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level2_Grease: = vanillafield bagcraftXp_Level2_Grease"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level3_Grease: = vanillafield bagcraftXp_Level3_Grease"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level3_Grease: = vanillafield bagcraftXp_Level3_Grease"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level2_Food: = vanillafield bagcraftXp_Level2_Food"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level2_Food: = vanillafield bagcraftXp_Level2_Food"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level3_Food: = vanillafield bagcraftXp_Level3_Food"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level3_Food: = vanillafield bagcraftXp_Level3_Food"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level2_Tool: = vanillafield bagcraftXp_Level2_Tool"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level2_Tool: = vanillafield bagcraftXp_Level2_Tool"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: bagcraftXp_Level3_Tool: = vanillafield bagcraftXp_Level3_Tool"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: bagcraftXp_Level3_Tool: = vanillafield bagcraftXp_Level3_Tool"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_43a: = vanillafield fh_unknown_43a"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_43a: = vanillafield fh_unknown_43a"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_43b: = vanillafield fh_unknown_43b"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_43b: = vanillafield fh_unknown_43b"
     },
     {
       "Version": "10310025",
@@ -1848,32 +1972,32 @@
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_49: = vanillafield fh_unknown_49"
+      "Command": "param PlayerCommonParam: modified && !added: analyseSelf_Level1EffectId: = vanillafield analyseSelf_Level1EffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_49: = vanillafield fh_unknown_49"
+      "Command": "param PlayerCommonParam: added: analyseSelf_Level1EffectId: = vanillafield analyseSelf_Level1EffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_50: = vanillafield fh_unknown_50"
+      "Command": "param PlayerCommonParam: modified && !added: analyseSelf_Level2EffectId: = vanillafield analyseSelf_Level2EffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_50: = vanillafield fh_unknown_50"
+      "Command": "param PlayerCommonParam: added: analyseSelf_Level2EffectId: = vanillafield analyseSelf_Level2EffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_51: = vanillafield fh_unknown_51"
+      "Command": "param PlayerCommonParam: modified && !added: analyseSelf_Level3EffectId: = vanillafield analyseSelf_Level3EffectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - PlayerCommonParam",
-      "Command": "param PlayerCommonParam: added: fh_unknown_51: = vanillafield fh_unknown_51"
+      "Command": "param PlayerCommonParam: added: analyseSelf_Level3EffectId: = vanillafield analyseSelf_Level3EffectId"
     },
     {
       "Version": "10310025",
@@ -2158,82 +2282,82 @@
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: fh_unknown_00: = vanillafield fh_unknown_00"
+      "Command": "param SpEffectParam: modified && !added: analyzeSelfLevel1_effectId: = vanillafield analyzeSelfLevel1_effectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: added: fh_unknown_00: = vanillafield fh_unknown_00"
+      "Command": "param SpEffectParam: added: analyzeSelfLevel1_effectId: = vanillafield analyzeSelfLevel1_effectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: fh_unknown_01: = vanillafield fh_unknown_01"
+      "Command": "param SpEffectParam: modified && !added: analyzeSelfLevel2_effectId: = vanillafield analyzeSelfLevel2_effectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: added: fh_unknown_01: = vanillafield fh_unknown_01"
+      "Command": "param SpEffectParam: added: analyzeSelfLevel2_effectId: = vanillafield analyzeSelfLevel2_effectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: fh_unknown_02: = vanillafield fh_unknown_02"
+      "Command": "param SpEffectParam: modified && !added: analyzeSelfLevel3_effectId: = vanillafield analyzeSelfLevel3_effectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: added: fh_unknown_02: = vanillafield fh_unknown_02"
+      "Command": "param SpEffectParam: added: analyzeSelfLevel3_effectId: = vanillafield analyzeSelfLevel3_effectId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: fh_unknown_03: = vanillafield fh_unknown_03"
+      "Command": "param SpEffectParam: modified && !added: startMagicId: = vanillafield startMagicId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: added: fh_unknown_03: = vanillafield fh_unknown_03"
+      "Command": "param SpEffectParam: added: startMagicId: = vanillafield startMagicId"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: fh_unknown_04: = vanillafield fh_unknown_04"
+      "Command": "param SpEffectParam: modified && !added: frostInflictRate: = vanillafield frostInflictRate"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: added: fh_unknown_04: = vanillafield fh_unknown_04"
+      "Command": "param SpEffectParam: added: frostInflictRate: = vanillafield frostInflictRate"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: fh_unknown_05: = vanillafield fh_unknown_05"
+      "Command": "param SpEffectParam: modified && !added: sleepInflictRate: = vanillafield sleepInflictRate"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: added: fh_unknown_05: = vanillafield fh_unknown_05"
+      "Command": "param SpEffectParam: added: sleepInflictRate: = vanillafield sleepInflictRate"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: fh_unknown_06: = vanillafield fh_unknown_06"
+      "Command": "param SpEffectParam: modified && !added: madnessInflictRate: = vanillafield madnessInflictRate"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: added: fh_unknown_06: = vanillafield fh_unknown_06"
+      "Command": "param SpEffectParam: added: madnessInflictRate: = vanillafield madnessInflictRate"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: fh_unknown_07: = vanillafield fh_unknown_07"
+      "Command": "param SpEffectParam: modified && !added: applyIdOnKillSp: = vanillafield applyIdOnKillSp"
     },
     {
       "Version": "10310025",
       "Message": "1.03.1 - SpEffectParam",
-      "Command": "param SpEffectParam: added: fh_unknown_07: = vanillafield fh_unknown_07"
+      "Command": "param SpEffectParam: added: applyIdOnKillSp: = vanillafield applyIdOnKillSp"
     },
     {
       "Version": "10310025",

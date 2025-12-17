@@ -16,6 +16,8 @@ public static class ProjectCreation
     public static string DataPath = "";
     public static ProjectType ProjectType = ProjectType.Undefined;
 
+    public static string FolderTag = "";
+
     // These are the automatic Data directory assignments (if they exist on the user's machine)
     private static string SteamExecutable_DS1 = "";
     private static string SteamExecutable_DS1R = "";
@@ -62,6 +64,7 @@ public static class ProjectCreation
         ProjectName = "";
         ProjectPath = "";
         DataPath = "";
+        FolderTag = "";
         ProjectType = ProjectType.Undefined;
     }
 
@@ -306,6 +309,21 @@ public static class ProjectCreation
 
                     DPI.ApplyInputWidth();
                     ImGui.Checkbox("##projectParamRowNameImport", ref RowNameImport);
+
+                    ImGui.TableSetColumnIndex(2);
+
+                    // Folder Tag
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Folder Tag");
+                    UIHelper.Tooltip("A tag to apply to this project. Used to group the project under a folder in the selection list.");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    DPI.ApplyInputWidth();
+                    ImGui.InputText("##folderTagInput", ref FolderTag, 255);
 
                     ImGui.TableSetColumnIndex(2);
 

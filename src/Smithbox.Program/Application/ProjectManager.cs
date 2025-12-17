@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Utilities;
 using System;
@@ -211,6 +212,58 @@ public class ProjectManager
 
     private void DisplayProjectList(List<ProjectEntry> projectList)
     {
+        Dictionary<string, List<ProjectEntry>> _projectFolders = new();
+
+        if (projectList.Count > 0)
+        {
+            foreach (var project in projectList)
+            {
+                if (project == SelectedProject)
+                    continue;
+
+                if(project.FolderTag != "")
+                {
+                    if (_projectFolders.ContainsKey(project.FolderTag))
+                    {
+                        _projectFolders[project.FolderTag].Add(project);
+                    }
+                    else
+                    {
+                        _projectFolders.Add(project.FolderTag, new List<ProjectEntry>() { project });
+                    }
+                }
+            }
+        }
+
+        // Associated Projects
+        foreach(var folder in _projectFolders)
+        {
+            var name = folder.Key;
+            var projects = folder.Value;
+
+            if (ImGui.BeginMenu($"{name}##projectFolder_{name}"))
+            {
+                foreach (var project in projects)
+                {
+                    if (project == SelectedProject)
+                        continue;
+
+                    if (!FilterProjectEntry(project))
+                        continue;
+
+                    DisplayProjectListEntry(project);
+                }
+
+                ImGui.EndMenu();
+            }
+        }
+
+        if(_projectFolders.Count > 0 && projectList.Any(e => e.FolderTag == ""))
+        {
+            ImGui.Separator();
+        }
+
+        // Unassociated Projects
         if (projectList.Count > 0)
         {
             foreach (var project in projectList)
@@ -221,22 +274,31 @@ public class ProjectManager
                 if (!FilterProjectEntry(project))
                     continue;
 
-                var imGuiID = project.ProjectGUID;
-                var projectName = $"{project.ProjectName}";
+                // Skip these as they are handled above
+                if (project.FolderTag != "")
+                    continue;
 
-                // Only display type prefix if user is not using the categories
-                if (CFG.Current.DisplayProjectPrefix && !CFG.Current.DisplayCollapsibleProjectCategories)
-                {
-                    projectName = $"[{project.ProjectType}] {projectName}";
-                }
-
-                if (ImGui.BeginMenu($"{projectName}##projectEntry_{imGuiID}"))
-                {
-                    DisplayProjectActions(project);
-
-                    ImGui.EndMenu();
-                }
+                DisplayProjectListEntry(project);
             }
+        }
+    }
+
+    private void DisplayProjectListEntry(ProjectEntry project)
+    {
+        var imGuiID = project.ProjectGUID;
+        var projectName = $"{project.ProjectName}";
+
+        // Only display type prefix if user is not using the categories
+        if (CFG.Current.DisplayProjectPrefix && !CFG.Current.DisplayCollapsibleProjectCategories)
+        {
+            projectName = $"[{project.ProjectType}] {projectName}";
+        }
+
+        if (ImGui.BeginMenu($"{projectName}##projectEntry_{project.FolderTag}_{imGuiID}"))
+        {
+            DisplayProjectActions(project);
+
+            ImGui.EndMenu();
         }
     }
 
@@ -257,6 +319,8 @@ public class ProjectManager
 
     private void DisplayProjectActions(ProjectEntry curProject)
     {
+        ImGui.PushID(curProject.ProjectGUID.ToString());
+
         if (!curProject.Initialized)
         {
             if (ImGui.MenuItem("Load"))
@@ -409,6 +473,8 @@ public class ProjectManager
                 }
             }
         }
+
+        ImGui.PopID();
     }
 
     /// <summary>

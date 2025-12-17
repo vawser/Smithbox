@@ -2,6 +2,7 @@
 - Viewport: add ability to change viewport background color
 - Viewport: implement orthographic view
 - Viewport: add track selection camera toggle - camera locks onto selection and moves in-line with any movement to the selection
+
 - Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor: implement Edge support for SDT
 - Map Editor: improve ER NVA so saves are BP correct (currently the Write side is quite off)
@@ -24,8 +25,13 @@
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 
-- File Browser: add category that represents the project's file dictionary in filesystem form, to allow for natural browsing and then direct extraction from the VFS. Mainly so the game doesn't ever need to be unpacked personally
-
 # TODO NOW
 
- 
+- File Browser: add category that represents the project's file dictionary in filesystem form, to allow for natural browsing and then direct extraction from the VFS. Mainly so the game doesn't ever need to be unpacked personally
+
+- Project: add folder tag to project settings, have the project list check if any tags exist, and if so, add a menu with that tag name and list all the projects with that tag under it
+
+    <Field Def="f32 frostInflictRate" FirstVersion="10310025"/>
+    <Field Def="f32 sleepInflictRate" FirstVersion="10310025"/>
+    <Field Def="f32 madnessInflictRate" FirstVersion="10310025"/>
+    <Field Def="s32 applyIdOnKillSp" FirstVersion="10310025"/>
