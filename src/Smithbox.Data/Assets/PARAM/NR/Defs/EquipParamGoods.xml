@@ -189,12 +189,7 @@
       <SortID>600</SortID>
     </Field>
     
-    <Field Def="dummy8 pad3[1]" >
-      <DisplayName>pad</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>100003</SortID>
-    </Field>
+    <Field Def="s8 useItemConferBullets" />
     
     <Field Def="u8 goodsUseAnim">
       <DisplayName>道具使用時アニメ</DisplayName>
@@ -770,9 +765,9 @@
     </Field>
     
     <Field Def="s32 characterInitId" />
+	
     <Field Def="s32 itemConferBulletId" />
-    
-    <Field Def="s32 unknown_3" />
+    <Field Def="s32 itemConferBulletId_1" />
     
     <Field Def="dummy8 reserve3[12]" RemovedVersion="10310025">
       <DisplayName>予約領域</DisplayName>
@@ -781,17 +776,18 @@
     </Field>
     
     <Field Def="s32 sparringGroundsEventFlagId" FirstVersion="10310025"/>
+	
     <Field Def="s32 level2RefId" FirstVersion="10310025"/>
     <Field Def="s32 level2RefId_1" FirstVersion="10310025"/>
+	
     <Field Def="s32 level3RefId" FirstVersion="10310025"/>
     <Field Def="s32 level3RefId_1" FirstVersion="10310025"/>
+	
     <Field Def="s32 level2_itemConferBulletId" FirstVersion="10310025"/>
-    
-    <Field Def="s32 fh_unknown_06" FirstVersion="10310025"/>
+    <Field Def="s32 level2_itemConferBulletId_1" FirstVersion="10310025"/>
     
     <Field Def="s32 level3_itemConferBulletId" FirstVersion="10310025"/>
-    
-    <Field Def="s32 fh_unknown_08" FirstVersion="10310025"/>
+    <Field Def="s32 level3_itemConferBulletId_1" FirstVersion="10310025"/>
     
     <Field Def="u16 bagcraftCategoryXp" FirstVersion="10310025"/>
     <Field Def="u16 fh_unknown_09c" FirstVersion="10310025"/>

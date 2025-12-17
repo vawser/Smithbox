@@ -54,7 +54,10 @@
     
     <Field Def="s32 shortcutNameId" />
     <Field Def="s32 shortcutHelpID" />
-    <Field Def="f32 unknown_3" />
+    <Field Def="s8 unknown_3a" />
+	<Field Def="s8 unknown_3b" />
+	<Field Def="s8 unknown_3c" />
+	<Field Def="s8 unknown_3d" />
     <Field Def="s32 unknown_4" />
     <Field Def="s32 unknown_5" />
     
