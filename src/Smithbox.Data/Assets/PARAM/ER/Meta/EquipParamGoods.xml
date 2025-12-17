@@ -178,8 +178,8 @@
 
     <enable_live AltName="Enable Host Player" Wiki="Is it possible to use a surviving player?" IsBool="" />
     <enable_gray AltName="Enable as Gray Phantom" Wiki="Can Gray Ghost be used?" IsBool="" />
-    <enable_white AltName="Enable as White Phantom" Wiki="Can white ghost be used?" IsBool="" />
-    <enable_black AltName="Enable as Black Phantom" Wiki="Is it possible to do a black ghost?" IsBool="" />
+    <enable_friendly AltName="Enable as friendly phantom" Wiki="Is it possible to use this item as a friendly phantom? (Furled Finger, Hunter, Npc Furled Finger)" IsBool="" />
+    <enable_hostile AltName="Enable as Black Phantom" Wiki="Is it possible to use this item as a hostile phantom? (All types of Invaders, Duelist, Npc Invaders, Npc's, etc...)" IsBool="" />
     <enable_multi AltName="Enable in Multiplayer" Wiki="Can it be used during multiplayer?" IsBool="" />
     <disable_offline AltName="Enable Online Only" Wiki="Is it unavailable while offline?" IsBool="" />
     <isEquip AltName="Is Equippable" Wiki="Whether it can be equipped" IsBool="" />
@@ -288,7 +288,7 @@ isSummonHorse,enableRiding,disableRiding,-,
 
 isDisableHand,isRemoveItem_forGameClear,isApplySpecialEffect,-,
 
-enable_live,enable_gray,enable_white,enable_black,enable_multi,disable_offline,disableUseAtColiseum,disableUseAtOutOfColiseum,disableMultiDropShare,-,
+enable_live,enable_gray,enable_friendly,enable_hostile,enable_multi,disable_offline,disableUseAtColiseum,disableUseAtOutOfColiseum,disableMultiDropShare,-,
 
 itemGetTutorialFlagId,-,
 compTrophySedId,trophySeqId,-,
