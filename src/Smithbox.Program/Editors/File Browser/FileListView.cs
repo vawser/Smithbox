@@ -12,6 +12,7 @@ public class FileListView
 {
     public FileBrowserScreen Editor;
     public ProjectEntry Project;
+
     public FileListView(FileBrowserScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -28,12 +29,21 @@ public class FileListView
             return;
         }
 
+        // VFS
+        DisplayVFS();
+
+        // File Roots
         foreach (var root in Project.FileData.Roots)
         {
             Traverse(root, $"File Browser");
         }
 
         ImGui.End();
+    }
+
+    private void DisplayVFS()
+    {
+
     }
 
     /// <summary>

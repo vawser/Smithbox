@@ -56,7 +56,7 @@
     <Field Def="s32 staminaRecoverChangeSpeed"/>
     <Field Def="f32 magicEffectTimeChange"/>
     <Field Def="f32 diseaseInflictRate"/>
-    <Field Def="s32 maxDurability"/>
+    <Field Def="f32 frostInflictRate"/>
     <Field Def="f32 staminaAttackRate"/>
     <Field Def="s32 poizonAttackPower"/>
     <Field Def="s32 diseaseAttackPower"/>
@@ -64,15 +64,15 @@
     <Field Def="s32 curseAttackPower"/>
     <Field Def="f32 fallDamageRate"/>
     <Field Def="f32 soulRate"/>
-    <Field Def="f32 equipWeightChangeRate"/>
-    <Field Def="f32 allItemWeightChangeRate"/>
+    <Field Def="f32 sleepInflictRate"/>
+    <Field Def="f32 madnessInflictRate"/>
     <Field Def="s32 soul"/>
     <Field Def="s32 animIdOffset"/>
     <Field Def="f32 haveSoulRate"/>
     <Field Def="f32 targetPriority"/>
     <Field Def="f32 sightSearchEnemyRate"/>
     <Field Def="f32 hearingSearchEnemyRate"/>
-    <Field Def="f32 grabityRate"/>
+    <Field Def="s32 applyIdOnKillSp"/>
     <Field Def="f32 registPoizonChangeRate"/>
     <Field Def="f32 registDiseaseChangeRate"/>
     <Field Def="f32 registBloodChangeRate"/>
@@ -436,9 +436,9 @@
     <Field Def="s32 analyzeSelfLevel3_effectId" FirstVersion="10310025"/>
     <Field Def="s32 startMagicId" FirstVersion="10310025"/>
     
-    <Field Def="f32 frostInflictRate" FirstVersion="10310025" RemovedVersion="10320000"/>
-    <Field Def="f32 sleepInflictRate" FirstVersion="10310025" RemovedVersion="10320000"/>
-    <Field Def="f32 madnessInflictRate" FirstVersion="10310025" RemovedVersion="10320000"/>
-    <Field Def="s32 applyIdOnKillSp" FirstVersion="10310025" RemovedVersion="10320000"/>
+    <Field Def="f32 frostInflictRate_old" FirstVersion="10310025" RemovedVersion="10320000"/>
+    <Field Def="f32 sleepInflictRate_old" FirstVersion="10310025" RemovedVersion="10320000"/>
+    <Field Def="f32 madnessInflictRate_old" FirstVersion="10310025" RemovedVersion="10320000"/>
+    <Field Def="s32 applyIdOnKillSp_old" FirstVersion="10310025" RemovedVersion="10320000"/>
   </Fields>
 </PARAMDEF>

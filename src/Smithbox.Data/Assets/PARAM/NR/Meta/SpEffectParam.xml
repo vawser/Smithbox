@@ -2248,6 +2248,26 @@
     Refs="SpEffectParam" 
     DefaultValue="-1" />
     
+	<frostInflictRate_old 
+    AltName="Inflict %: Frostbite" 
+    Wiki="Adjusts outgoing frostbite inflict."
+    DefaultValue="1" />
+	
+	<sleepInflictRate_old 
+    AltName="Inflict %: Sleep" 
+    Wiki="Adjusts outgoing Sleep inflict."
+    DefaultValue="1" />
+	
+	<madnessInflictRate_old 
+    AltName="Inflict %: Madness" 
+    Wiki="Adjusts outgoing Madness inflict."
+    DefaultValue="1" />
+	
+	<applyIdOnKillSp_old
+    AltName="Kill SpEffect ID Special"
+    Wiki="In certain special cases, the original Kill SpEffect ID is disabled and this one is activated instead." 
+    Refs="SpEffectParam" 
+    DefaultValue="-1" />
   </Field>
   <Enums>
     <Enum Name="PLAYER_HAND" type="u8">

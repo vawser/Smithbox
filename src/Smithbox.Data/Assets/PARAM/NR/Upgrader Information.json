@@ -2398,6 +2398,46 @@
       "Version": "10310025",
       "Message": "1.03.1 - WorldMapPointParam",
       "Command": "param WorldMapPointParam: added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10320000",
+      "Message": "1.03.2 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: applyIdOnKillSp: = vanillafield applyIdOnKillSp"
+    },
+    {
+      "Version": "10320000",
+      "Message": "1.03.2 - SpEffectParam",
+      "Command": "param SpEffectParam: added: applyIdOnKillSp: = vanillafield applyIdOnKillSp"
+    },
+    {
+      "Version": "10320000",
+      "Message": "1.03.2 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: sleepInflictRate: = vanillafield sleepInflictRate"
+    },
+    {
+      "Version": "10320000",
+      "Message": "1.03.2 - SpEffectParam",
+      "Command": "param SpEffectParam: added: sleepInflictRate: = vanillafield sleepInflictRate"
+    },
+    {
+      "Version": "10320000",
+      "Message": "1.03.2 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: frostInflictRate: = vanillafield frostInflictRate"
+    },
+    {
+      "Version": "10320000",
+      "Message": "1.03.2 - SpEffectParam",
+      "Command": "param SpEffectParam: added: frostInflictRate: = vanillafield frostInflictRate"
+    },
+    {
+      "Version": "10320000",
+      "Message": "1.03.2 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: madnessInflictRate: = vanillafield madnessInflictRate"
+    },
+    {
+      "Version": "10320000",
+      "Message": "1.03.2 - SpEffectParam",
+      "Command": "param SpEffectParam: added: madnessInflictRate: = vanillafield madnessInflictRate"
     }
   ]
 }

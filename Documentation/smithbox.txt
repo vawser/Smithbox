@@ -29,9 +29,4 @@
 
 - File Browser: add category that represents the project's file dictionary in filesystem form, to allow for natural browsing and then direct extraction from the VFS. Mainly so the game doesn't ever need to be unpacked personally
 
-- Project: add folder tag to project settings, have the project list check if any tags exist, and if so, add a menu with that tag name and list all the projects with that tag under it
-
-    <Field Def="f32 frostInflictRate" FirstVersion="10310025"/>
-    <Field Def="f32 sleepInflictRate" FirstVersion="10310025"/>
-    <Field Def="f32 madnessInflictRate" FirstVersion="10310025"/>
-    <Field Def="s32 applyIdOnKillSp" FirstVersion="10310025"/>
+8981400 applyIdOnKillSp 8981402
