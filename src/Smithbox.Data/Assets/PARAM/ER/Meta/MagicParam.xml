@@ -103,12 +103,12 @@
     <refCategory4 AltName="Reference Category [4]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
     <hasSpEffectType AltName="Has SpEffect Type" Wiki="Specify the state change that needs to replace the magic ID" ProjectEnum="SP_EFFECT_TYPE" />
     <replaceCategory AltName="Replace Category" Wiki="Additional conditions when replacing the magic ID" Enum="REPLACE_CATEGORY" />
-    
-    <useLimitCategory 
-    AltName="Use Limit Category" 
-    Wiki="This item is usable if any active spEffect with the following spCategories are active." 
+
+    <useLimitCategory
+    AltName="Use Limit Category"
+    Wiki="This item is usable if any active spEffect with the following spCategories are active."
     Enum="SP_EFFECT_USELIMIT_CATEGORY" />
-    
+
     <vowType0 AltName="Vow Type [0]" Wiki="Pledge 0" IsBool="" />
     <vowType1 AltName="Vow Type [1]" Wiki="Pledge 1" IsBool="" />
     <vowType2 AltName="Vow Type [2]" Wiki="Pledge 2" IsBool="" />
@@ -123,8 +123,8 @@
     <isShieldEnchant AltName="Is Shield Enchantment" Wiki="Is it magic to enchant guards and shields?" IsBool="" />
     <enable_live AltName="Enable Live" Wiki="Can surviving characters be used?" IsBool="" />
     <enable_gray AltName="Enable Gray" Wiki="Can gray characters be used?" IsBool="" />
-    <enable_white AltName="Enable White" Wiki="Can white ghost characters be used?" IsBool="" />
-    <enable_black AltName="Enable Black" Wiki="Can black ghost characters be used?" IsBool="" />
+    <enable_friendly AltName="Enable as friendly phantom" Wiki="Is it possible to use this magic as a friendly phantom? (Furled Finger, Hunter, Npc Furled Finger)" IsBool="" />
+    <enable_hostile AltName="Enable as Black Phantom" Wiki="Is it possible to use this magic as a hostile phantom? (All types of Invaders, Duelist, Npc Invaders, Npc's, etc...)" IsBool="" />
     <disableOffline AltName="Disable Offline" Wiki="Is it unavailable offline?" IsBool="" />
     <castResonanceMagic AltName="Cast Resonance Magic" Wiki="Do you deliver resonance magic?" IsBool="" />
     <isValidTough_ProtSADmg AltName="Is Toughness Perfomed if Poise is Initial Value" Wiki="Whether the toughness calculation is performed even if the armor SA is the initial value. Check the toughness specification .xlsx for details" IsBool="" />
@@ -211,7 +211,7 @@ refId8,refCategory8,consumeType8,-,
 refId9,refCategory9,consumeType9,-,
 refId10,refCategory10,consumeType10,-,
 vowType0,vowType1,vowType2,vowType3,vowType4,vowType5,vowType6,vowType7,vowType8,vowType9,vowType10,vowType11,vowType12,vowType13,vowType14,vowType15,-,
-enable_multi,enable_multi_only,enable_live,enable_gray,enable_white,enable_black,disableOffline,-,
+enable_multi,enable_multi_only,enable_live,enable_gray,enable_friendly,enable_hostile,disableOffline,-,
 isEnchant,isShieldEnchant,-,
 castResonanceMagic,isValidTough_ProtSADmg,isWarpMagic,-,
 enableRiding,disableRiding,-,
