@@ -314,6 +314,8 @@ public class CFG
 
     public bool Interface_MapEditor_Tool_EntityIdentifier = true;
 
+    public bool Interface_MapEditor_Tool_MapValidator = true;
+
     /// <summary>
     /// If true, the shortcuts for the Selection Groups will be detected.
     /// </summary>

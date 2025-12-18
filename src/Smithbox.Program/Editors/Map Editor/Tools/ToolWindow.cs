@@ -132,6 +132,12 @@ public class ToolWindow
                 Editor.EntityIdentifierTool.OnToolWindow();
             }
 
+            if (CFG.Current.Interface_MapEditor_Tool_MapValidator)
+            {
+                Editor.MapValidatorTool.OnToolWindow();
+            }
+            
+
 #if DEBUG
             if (FeatureFlags.EnableNavmeshBuilder)
             {
@@ -265,6 +271,12 @@ public class ToolWindow
                 CFG.Current.Interface_MapEditor_Tool_EntityIdentifier = !CFG.Current.Interface_MapEditor_Tool_EntityIdentifier;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_EntityIdentifier);
+
+            if (ImGui.MenuItem("Map Validator"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_MapValidator = !CFG.Current.Interface_MapEditor_Tool_MapValidator;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_MapValidator);
 
 #if DEBUG
             if (ImGui.MenuItem("Treasure Maker"))

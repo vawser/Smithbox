@@ -98,6 +98,7 @@ public class MapEditorScreen : EditorScreen
     public MapGridTool MapGridTool;
     public WorldMapLayoutTool WorldMapLayoutTool;
     public MapListFilterTool MapListFilterTool;
+    public MapValidatorTool MapValidatorTool;
 
     // Special Tools
     public AutomaticPreviewTool AutomaticPreviewTool;
@@ -180,6 +181,7 @@ public class MapEditorScreen : EditorScreen
         WorldMapTool = new WorldMapTool(this, project);
         WorldMapLayoutTool = new WorldMapLayoutTool(this, project);
         MapListFilterTool = new MapListFilterTool(this, project);
+        MapValidatorTool = new MapValidatorTool(this, project);
 
         // Focus
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
