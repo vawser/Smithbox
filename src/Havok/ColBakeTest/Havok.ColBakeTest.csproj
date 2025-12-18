@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <Content Include="NavGen.dll">
-      <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

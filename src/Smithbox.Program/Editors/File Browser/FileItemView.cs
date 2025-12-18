@@ -6,12 +6,8 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Numerics;
-using static Andre.IO.VFS.VirtualFileSystem;
-using static SoulsFormats.NVA;
 
 
 namespace StudioCore.Editors.FileBrowser;
@@ -220,7 +216,7 @@ public class FileItemView
         }
         UIHelper.Tooltip("Extract the main file. Creates the folder structure it should reside in if missing.");
 
-        if (Editor.Selection.SelectedInternalFile != "")
+        if (Editor.Selection.SelectedInternalFile != "" || Editor.Selection.SelectedInternalTexFile != "")
         {
             ImGui.SameLine();
 
