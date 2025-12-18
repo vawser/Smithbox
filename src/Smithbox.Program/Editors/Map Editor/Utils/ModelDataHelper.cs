@@ -414,17 +414,3 @@ public class TextureDataEntry
     public MATBIN MATBIN { get; set; }
 }
 
-public enum ExtractionType
-{
-    [Display(Name = "Loose")]
-    Loose,
-    [Display(Name = "Contained")]
-    Contained
-}
-
-public enum ResourceContainerType
-{
-    None,
-    BND,
-    BXF
-}

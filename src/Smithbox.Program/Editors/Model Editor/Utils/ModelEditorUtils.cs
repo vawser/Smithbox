@@ -90,6 +90,10 @@ public static class ModelEditorUtils
         {
             containerType = ResourceContainerType.BND;
         }
+        else if (relPath.EndsWith("tpfbhd"))
+        {
+            containerType = ResourceContainerType.BXF;
+        }
 
         return containerType;
     }

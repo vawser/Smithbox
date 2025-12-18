@@ -62,14 +62,6 @@ public class FileToolView
             }
         }
 
-        if (CFG.Current.Interface_FileBrowser_Tool_IndividualUnpacker)
-        {
-            if (ImGui.CollapsingHeader("Individual Unpack"))
-            {
-                DisplayIndividualUnpacker();
-            }
-        }
-
         ImGui.End();
     }
 
@@ -82,12 +74,6 @@ public class FileToolView
                 CFG.Current.Interface_FileBrowser_Tool_GameUnpacker = !CFG.Current.Interface_FileBrowser_Tool_GameUnpacker;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_GameUnpacker);
-
-            if (ImGui.MenuItem("Individual Unpacker"))
-            {
-                CFG.Current.Interface_FileBrowser_Tool_IndividualUnpacker = !CFG.Current.Interface_FileBrowser_Tool_IndividualUnpacker;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_IndividualUnpacker);
 
             ImGui.EndMenu();
         }
@@ -273,64 +259,6 @@ public class FileToolView
         }
 
         return anyExist;
-    }
-
-    private string IndividualFolder = "";
-    private string IndividualFilename = "";
-
-    public void DisplayIndividualUnpacker()
-    {
-        var windowWidth = ImGui.GetWindowWidth() * 0.95f;
-
-        UIHelper.WrappedText("This is a tool to unpack the an individual file from the game data.");
-        UIHelper.WrappedText("");
-
-        UIHelper.WrappedText("Target Folder");
-        DPI.ApplyInputWidth(windowWidth * 0.75f);
-        ImGui.InputText("##individualFolder", ref IndividualFolder, 255);
-        UIHelper.WrappedText("");
-
-        UIHelper.WrappedText("Target Filename");
-        DPI.ApplyInputWidth(windowWidth * 0.75f);
-        ImGui.InputText("##individualFilename", ref IndividualFilename, 255);
-        UIHelper.WrappedText("");
-
-        if (ImGui.Button("Unpack File", DPI.WholeWidthButton(windowWidth, 24)))
-        {
-            var filePath = Path.Join(IndividualFolder, IndividualFilename);
-
-            try
-            {
-                var data = Project.VanillaFS.ReadFile(filePath);
-                var rawData = (Memory<byte>)data;
-
-                var unpackPath = Project.DataPath;
-                if (UnpackDirectory != "")
-                    unpackPath = UnpackDirectory;
-
-                var absFolder = $@"{unpackPath}/{IndividualFolder}";
-                var absPath = $@"{unpackPath}/{IndividualFolder}/{IndividualFilename}";
-
-                if (!Directory.Exists(absFolder))
-                {
-                    Directory.CreateDirectory(absFolder);
-                }
-
-                if (!File.Exists(absPath))
-                {
-                    File.WriteAllBytes(absPath, rawData.ToArray());
-
-                    TaskLogs.AddLog($"[Smithbox] Extracted {absPath}");
-
-                    data = null;
-                    rawData = null;
-                }
-            }
-            catch(Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to write file: {filePath}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
     }
 
     public async Task UnpackGameAsync(FileDictionary targetFileDictionary)

@@ -11,10 +11,26 @@
           "SubTexturePrefix": "MENU_ItemIcon_"
         },
         {
+          "Name": "Item-DLC01",
+          "File": "21_common_dlc01_h",
+          "InternalFiles": [
+            "SB_ItemIcon_DLC01_0"
+          ],
+          "SubTexturePrefix": "MENU_ItemIcon_"
+        },
+        {
           "Name": "Status",
           "File": "01_common_h",
           "InternalFiles": [
             "SB_StatusIcon_0"
+          ],
+          "SubTexturePrefix": "MENU_StatusIcon_"
+        },
+        {
+          "Name": "Status-DLC01",
+          "File": "21_common_dlc01_h",
+          "InternalFiles": [
+            "SB_StatusIcon_DLC01_0"
           ],
           "SubTexturePrefix": "MENU_StatusIcon_"
         },
@@ -28,6 +44,14 @@
           "SubTexturePrefix": "MENU_MAP_"
         },
         {
+          "Name": "MapIcon-DLC01",
+          "File": "21_common_dlc01_h",
+          "InternalFiles": [
+            "SB_MapIcon_DLC01_0"
+          ],
+          "SubTexturePrefix": "MENU_MAP_"
+        },
+        {
           "Name": "Menu",
           "File": "01_common_h",
           "InternalFiles": [
@@ -37,10 +61,26 @@
           "SubTexturePrefix": "MENU_MenuIcon_"
         },
         {
+          "Name": "Menu-DLC01",
+          "File": "21_common_dlc01_h",
+          "InternalFiles": [
+            "SB_MenuIcon_DLC01_0"
+          ],
+          "SubTexturePrefix": "MENU_MenuIcon_"
+        },
+        {
           "Name": "MenuProperty",
           "File": "01_common_h",
           "InternalFiles": [
             "SB_PropertyIcon_0"
+          ],
+          "SubTexturePrefix": "MENU_PropertyIcon_"
+        },
+        {
+          "Name": "MenuProperty-DLC01",
+          "File": "21_common_dlc01_h",
+          "InternalFiles": [
+            "SB_PropertyIcon_DLC01_0"
           ],
           "SubTexturePrefix": "MENU_PropertyIcon_"
         }
