@@ -10,7 +10,7 @@
 
     <ItemGroup>
         <Content Include="Res\*.*">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 

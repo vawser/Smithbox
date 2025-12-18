@@ -46,7 +46,7 @@
 
       <_ExistingAssets Include="@(_NativeAssetName)" Condition="Exists('$(NativeAssetsPath)/%(Identity)')" />
 
-      <Content Include="@(_ExistingAssets-&gt;'$(NativeAssetsPath)/%(Identity)')" CopyToOutputDirectory="PreserveNewest" PackagePath="%(PackagePath)" Pack="true" />
+      <Content Include="@(_ExistingAssets-&gt;'$(NativeAssetsPath)/%(Identity)')" CopyToOutputDirectory="IfDifferent" PackagePath="%(PackagePath)" Pack="true" />
     </ItemGroup>
   </Target>
 

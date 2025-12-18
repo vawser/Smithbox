@@ -35,7 +35,7 @@
     <ProjectReference Include="..\Andre.Core\Andre.Core.csproj" />
     <None Remove="bhd5_decrypt_rust.dll" />
     <AdditionalFiles Include="bhd5_decrypt_rust.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
     </AdditionalFiles>
   </ItemGroup>
 </Project>

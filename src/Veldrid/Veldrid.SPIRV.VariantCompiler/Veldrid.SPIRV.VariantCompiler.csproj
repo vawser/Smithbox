@@ -14,9 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="$(RepositoryRootDirectory)/build/win-x64/$(Configuration)/libveldrid-spirv.dll" Condition="Exists('$(RepositoryRootDirectory)/build/win-x64/$(Configuration)/libveldrid-spirv.dll')" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="$(RepositoryRootDirectory)/build/$(Configuration)/libveldrid-spirv.dylib" Condition="Exists('$(RepositoryRootDirectory)/build/$(Configuration)/libveldrid-spirv.dylib')" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="$(RepositoryRootDirectory)/build/$(Configuration)/libveldrid-spirv.so" Condition="Exists('$(RepositoryRootDirectory)/build/$(Configuration)/libveldrid-spirv.so')" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="$(RepositoryRootDirectory)/build/win-x64/$(Configuration)/libveldrid-spirv.dll" Condition="Exists('$(RepositoryRootDirectory)/build/win-x64/$(Configuration)/libveldrid-spirv.dll')" CopyToOutputDirectory="IfDifferent" />
+    <Content Include="$(RepositoryRootDirectory)/build/$(Configuration)/libveldrid-spirv.dylib" Condition="Exists('$(RepositoryRootDirectory)/build/$(Configuration)/libveldrid-spirv.dylib')" CopyToOutputDirectory="IfDifferent" />
+    <Content Include="$(RepositoryRootDirectory)/build/$(Configuration)/libveldrid-spirv.so" Condition="Exists('$(RepositoryRootDirectory)/build/$(Configuration)/libveldrid-spirv.so')" CopyToOutputDirectory="IfDifferent" />
   </ItemGroup>
 
   <ItemGroup>
