@@ -45,10 +45,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Smithbox.Program\Smithbox.Program.csproj" />
     <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
   </ItemGroup>

@@ -31,10 +31,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
     <ProjectReference Include="..\Andre.Core\Andre.Core.csproj" />
     <None Remove="bhd5_decrypt_rust.dll" />
