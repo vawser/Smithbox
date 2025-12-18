@@ -2,22 +2,27 @@ name: .NET
 
 on:
   push:
+    branches:
+      - main
   pull_request:
 jobs:
   build:
     runs-on: windows-latest
     name: "Build"
+    env:
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v6
         with:
-          submodules: true
-      - uses: actions/setup-dotnet@v4
+          submodules: false
+      - uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '8.0.x' # SDK Version to use;
-        
+          dotnet-version: "9.0.x" # SDK Version to use;
+          cache: true
+
       - name: Restore
         run: dotnet restore /p:Configuration=Release-win
-        
+
       - name: Build
         run: dotnet build --configuration Release-win --no-restore
 
@@ -25,7 +30,7 @@ jobs:
         run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release-win -o deploy
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
-          name: 'Smithbox-SHA${{ github.sha }}'
-          path: '${{ runner.workspace }}/Smithbox/deploy'
+          name: "Smithbox-SHA${{ github.sha }}"
+          path: "${{ runner.workspace }}/Smithbox/deploy"
