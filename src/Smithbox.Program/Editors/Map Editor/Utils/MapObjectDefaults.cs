@@ -103,6 +103,7 @@ public class MapObjectDefaults
         newAsset.EntityGroupIDs[7] = 0;
         newAsset.UnkE3C = -1;
         newAsset.UnkE3E = 0;
+        newAsset.DisableRTAO = false;
 
         // Display Data
         newAsset.DisplayDataStruct.DisplayGroups[0] = 0;
