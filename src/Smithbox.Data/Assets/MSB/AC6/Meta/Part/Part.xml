@@ -145,8 +145,8 @@
     AltName="Unknown: 0x3C"
     Wiki="" />
     
-    <UnkE3F
-    AltName="Unknown: 0x3F"
+    <DisableRTAO
+    AltName="Disable RTAO"
     Wiki="" />
     
     

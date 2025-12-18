@@ -140,6 +140,10 @@
     <UnkE3E
     AltName="Unknown: 0x3E"
     Wiki="" />  
+
+    <DisableRTAO
+    AltName="Disable RTAO"
+    Wiki="" />
     
     <DisplayDataStruct
     AltName="Display Data"

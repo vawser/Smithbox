@@ -309,7 +309,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public short UnkE3E { get; set; }
+            public byte UnkE3E { get; set; }
+
+            /// <summary>
+            /// Disables Ray Traced Ambient Occlusion on this part.
+            /// </summary>
+            public bool DisableRTAO { get; set; }
 
             private protected Part(string name)
             {
@@ -486,7 +491,8 @@ namespace SoulsFormats
                 UnkE18 = br.ReadInt32();
                 EntityGroupIDs = br.ReadUInt32s(8);
                 UnkE3C = br.ReadInt16();
-                UnkE3E = br.ReadInt16();
+                UnkE3E = br.ReadByte();
+                DisableRTAO = br.ReadBoolean();
                 //br.AssertPattern(0x10, 0x00);
             }
 
@@ -678,7 +684,8 @@ namespace SoulsFormats
                 bw.WriteInt32(UnkE18);
                 bw.WriteUInt32s(EntityGroupIDs);
                 bw.WriteInt16(UnkE3C);
-                bw.WriteInt16(UnkE3E);
+                bw.WriteByte(UnkE3E);
+                bw.WriteBoolean(DisableRTAO);
                 //bw.WritePattern(0x10, 0x00);
                 bw.Pad(8);
             }
