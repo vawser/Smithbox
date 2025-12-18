@@ -45,18 +45,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Hexa.NET.ImGuiNodeEditor\Hexa.NET.ImGuiNodeEditor.csproj" />
-    <ProjectReference Include="..\Hexa.NET.ImGuizmo\Hexa.NET.ImGuizmo.csproj" />
-    <ProjectReference Include="..\Hexa.NET.ImGui\Hexa.NET.ImGui.csproj" />
-    <ProjectReference Include="..\Hexa.NET.ImNodes\Hexa.NET.ImNodes.csproj" />
-    <ProjectReference Include="..\Hexa.NET.ImPlot\Hexa.NET.ImPlot.csproj" />
     <ProjectReference Include="..\Smithbox.Program\Smithbox.Program.csproj" />
     <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
-    <ProjectReference Include="..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
   </ItemGroup>
 
   <Target Name="CopyDataProjectOutput" AfterTargets="Build">

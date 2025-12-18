@@ -7,31 +7,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="Assets\**" CopyToOutputDirectory="Always" />
-    <None Update="Licenses\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\**" CopyToOutputDirectory="IfDifferent" />
+    <None Update="Licenses\**" CopyToOutputDirectory="IfDifferent" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Content Include="imgui.ini">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
     </Content>
     <Content Include="imgui.default">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
     </Content>
     <Content Include="SDL2.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
     </Content>
     <Content Include="Veldrid.ImGui.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
     </Content>
     <Content Include="libveldrid-spirv.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
     </Content>
     <Content Include="tracy.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
     </Content>
     <Content Include="NavGen.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

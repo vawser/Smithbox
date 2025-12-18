@@ -22,16 +22,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andre.Core", "src\Andre\And
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andre.IO", "src\Andre\Andre.IO\Andre.IO.csproj", "{9E5E426C-567D-45F3-9198-5280A4569B80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexa.NET.ImGui", "src\Hexa.NET.ImGui\Hexa.NET.ImGui.csproj", "{B5625AF3-B34C-3343-ADDE-9B4783D23D09}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexa.NET.ImGuiNodeEditor", "src\Hexa.NET.ImGuiNodeEditor\Hexa.NET.ImGuiNodeEditor.csproj", "{BCD8EB08-B040-8644-4243-58D903734ED9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexa.NET.ImGuizmo", "src\Hexa.NET.ImGuizmo\Hexa.NET.ImGuizmo.csproj", "{B51DB43A-ACBD-C5DA-0954-86188303D94D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexa.NET.ImNodes", "src\Hexa.NET.ImNodes\Hexa.NET.ImNodes.csproj", "{A14E7ED4-C857-61ED-1E57-2212FEB76BA1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexa.NET.ImPlot", "src\Hexa.NET.ImPlot\Hexa.NET.ImPlot.csproj", "{8B232724-E0F2-1312-7B72-8D429CC41587}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Program", "src\Smithbox.Program\Smithbox.Program.csproj", "{FD73CB42-214B-BCE4-E634-77E4D1ED3BEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Data", "src\Smithbox.Data\Smithbox.Data.csproj", "{4687FDA1-67FC-3A6D-3D82-C3C95BE30040}"

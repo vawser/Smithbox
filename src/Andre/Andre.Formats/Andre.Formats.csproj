@@ -31,15 +31,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
     <ProjectReference Include="..\Andre.Core\Andre.Core.csproj" />
     <None Remove="bhd5_decrypt_rust.dll" />
     <AdditionalFiles Include="bhd5_decrypt_rust.dll">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToOutputDirectory>IfDifferent</CopyToOutputDirectory>
     </AdditionalFiles>
   </ItemGroup>
 </Project>

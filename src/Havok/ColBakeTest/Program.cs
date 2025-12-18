@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
-using ObjLoader;
 using ObjLoader.Loader.Loaders;
 
 namespace ColBakeTest
