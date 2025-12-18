@@ -154,7 +154,7 @@
     {
       "ID": 17002,
       "Entries": [
-        "Character Relic: Recluse: Suffer blood loss and increase attack power upon Art activation"
+        "Character Relic: [Recluse] Suffer blood loss and increase attack power upon Art activation"
       ]
     },
     {
@@ -178,7 +178,7 @@
     {
       "ID": 19001,
       "Entries": [
-        "Character Relic: Scholar: Allies targeted by Character Skill gain boosted attack"
+        "Character Relic: [Scholar] Allies targeted by Character Skill gain boosted attack"
       ]
     },
     {
@@ -656,6 +656,42 @@
       ]
     },
     {
+      "ID": 6000800,
+      "Entries": [
+        "Relic: Character Skill Cooldown Reduction +4"
+      ]
+    },
+    {
+      "ID": 6000801,
+      "Entries": [
+        "Relic: Character Skill Cooldown Reduction +5"
+      ]
+    },
+    {
+      "ID": 6000900,
+      "Entries": [
+        "Relic: Ultimate Art Auto Charge +4"
+      ]
+    },
+    {
+      "ID": 6000901,
+      "Entries": [
+        "Relic: Ultimate Art Auto Charge +5"
+      ]
+    },
+    {
+      "ID": 6001000,
+      "Entries": [
+        "Relic: Poise +4"
+      ]
+    },
+    {
+      "ID": 6001001,
+      "Entries": [
+        "Relic: Poise +5"
+      ]
+    },
+    {
       "ID": 6001400,
       "Entries": [
         "Relic: Physical Attack Up +3"
@@ -860,9 +896,51 @@
       ]
     },
     {
+      "ID": 6006000,
+      "Entries": [
+        "Relic: Improved Stance-Breaking when Two-Handing +1"
+      ]
+    },
+    {
+      "ID": 6006001,
+      "Entries": [
+        "Relic: Improved Stance-Breaking when Two-Handing +2"
+      ]
+    },
+    {
+      "ID": 6006100,
+      "Entries": [
+        "Relic: Improved Stance-Breaking when Wielding Two Armaments +1"
+      ]
+    },
+    {
+      "ID": 6006101,
+      "Entries": [
+        "Relic: Improved Stance-Breaking when Wielding Two Armaments +2"
+      ]
+    },
+    {
+      "ID": 6012300,
+      "Entries": [
+        "Relic: Improved Damage Negation at Low HP +1"
+      ]
+    },
+    {
+      "ID": 6012301,
+      "Entries": [
+        "Relic: Improved Damage Negation at Low HP +2"
+      ]
+    },
+    {
       "ID": 6030200,
       "Entries": [
         "Relic: HP restored when using medicinal boluses, etc. +1"
+      ]
+    },
+    {
+      "ID": 6030201,
+      "Entries": [
+        "Relic: HP restored when using medicinal boluses, etc. +2"
       ]
     },
     {
@@ -872,9 +950,21 @@
       ]
     },
     {
+      "ID": 6030601,
+      "Entries": [
+        "Relic: Successful guarding fills more of the Art gauge +2"
+      ]
+    },
+    {
       "ID": 6030800,
       "Entries": [
         "Relic: Art gauge fills moderately upon critical hit +1"
+      ]
+    },
+    {
+      "ID": 6030801,
+      "Entries": [
+        "Relic: Critical hits fill more of the Art gauge +2"
       ]
     },
     {
@@ -890,9 +980,51 @@
       ]
     },
     {
+      "ID": 6031900,
+      "Entries": [
+        "Relic: Critical Hits Earn Runes +1"
+      ]
+    },
+    {
+      "ID": 6031901,
+      "Entries": [
+        "Relic: Critical Hits Earn Runes +2"
+      ]
+    },
+    {
+      "ID": 6032200,
+      "Entries": [
+        "Relic: Taking attacks improves attack power +1"
+      ]
+    },
+    {
+      "ID": 6032201,
+      "Entries": [
+        "Relic: Taking attacks improves attack power +2"
+      ]
+    },
+    {
       "ID": 6035100,
       "Entries": [
         "Relic: Critical Hit Boosts Stamina Recovery Speed +1"
+      ]
+    },
+    {
+      "ID": 6035101,
+      "Entries": [
+        "Relic: Critical Hit Boosts Stamina Recovery Speed +2"
+      ]
+    },
+    {
+      "ID": 6040000,
+      "Entries": [
+        "Relic: Improved Initial Standard Attack +1"
+      ]
+    },
+    {
+      "ID": 6040001,
+      "Entries": [
+        "Relic: Improved Initial Standard Attack +2"
       ]
     },
     {
@@ -914,9 +1046,21 @@
       ]
     },
     {
+      "ID": 6040301,
+      "Entries": [
+        "Relic: Improved Throwing Pot Damage +2"
+      ]
+    },
+    {
       "ID": 6040400,
       "Entries": [
         "Relic: Improved Throwing Knife Damage +1"
+      ]
+    },
+    {
+      "ID": 6040401,
+      "Entries": [
+        "Relic: Improved Throwing Knife Damage +2"
       ]
     },
     {
@@ -926,9 +1070,33 @@
       ]
     },
     {
+      "ID": 6040501,
+      "Entries": [
+        "Relic: Improved Glintstone and Gravity Stone Damage +2"
+      ]
+    },
+    {
+      "ID": 6043000,
+      "Entries": [
+        "Relic: Improved Roar & Breath Attacks +1"
+      ]
+    },
+    {
+      "ID": 6043001,
+      "Entries": [
+        "Relic: Improved Roar & Breath Attacks +2"
+      ]
+    },
+    {
       "ID": 6043100,
       "Entries": [
         "Relic: Improved Perfuming Arts +1"
+      ]
+    },
+    {
+      "ID": 6043101,
+      "Entries": [
+        "Relic: Improved Perfuming Arts +2"
       ]
     },
     {
@@ -962,9 +1130,21 @@
       ]
     },
     {
+      "ID": 6090001,
+      "Entries": [
+        "Relic: Defeating enemies fills more of the Art gauge +2"
+      ]
+    },
+    {
       "ID": 6160000,
       "Entries": [
         "Relic: HP Restoration upon Thrusting Counterattack +1"
+      ]
+    },
+    {
+      "ID": 6160001,
+      "Entries": [
+        "Relic: HP Restoration upon Thrusting Counterattack +2"
       ]
     },
     {
@@ -1076,6 +1256,12 @@
       ]
     },
     {
+      "ID": 6600002,
+      "Entries": [
+        "Relic: Sleep in Vicinity Improves Attack Power +2"
+      ]
+    },
+    {
       "ID": 6600100,
       "Entries": [
         "Relic: Madness in Vicinity Improves Attack Power"
@@ -1085,6 +1271,12 @@
       "ID": 6600101,
       "Entries": [
         "Relic: Madness in Vicinity Improves Attack Power +1"
+      ]
+    },
+    {
+      "ID": 6600102,
+      "Entries": [
+        "Relic: Madness in Vicinity Improves Attack Power +2"
       ]
     },
     {
@@ -1112,6 +1304,18 @@
       ]
     },
     {
+      "ID": 6610701,
+      "Entries": [
+        "Relic: Reduced FP Consumption +1"
+      ]
+    },
+    {
+      "ID": 6610702,
+      "Entries": [
+        "Relic: Reduced FP Consumption +2"
+      ]
+    },
+    {
       "ID": 6610800,
       "Entries": [
         "Relic: Improved Affinity Attack Power"
@@ -1127,6 +1331,12 @@
       "ID": 6610802,
       "Entries": [
         "Relic: Improved Affinity Attack Power +2"
+      ]
+    },
+    {
+      "ID": 6611000,
+      "Entries": [
+        "Relic: Improved Physical Damage Negation"
       ]
     },
     {
@@ -1694,6 +1904,24 @@
       ]
     },
     {
+      "ID": 6800000,
+      "Entries": [
+        "Relic: Reduced Vigor"
+      ]
+    },
+    {
+      "ID": 6800200,
+      "Entries": [
+        "Relic: Reduced Endurance"
+      ]
+    },
+    {
+      "ID": 6810100,
+      "Entries": [
+        "Relic: Impaired Damage Negation"
+      ]
+    },
+    {
       "ID": 6820000,
       "Entries": [
         "Relic: Taking Damage Causes Poison Buildup"
@@ -1784,15 +2012,45 @@
       ]
     },
     {
+      "ID": 6850000,
+      "Entries": [
+        "Relic: Impaired Physical Damage Negation"
+      ]
+    },
+    {
+      "ID": 6850100,
+      "Entries": [
+        "Relic: Impaired Affinity Damage Negation"
+      ]
+    },
+    {
       "ID": 6850200,
       "Entries": [
         "Relic: All Resistances Down"
       ]
     },
     {
+      "ID": 6850300,
+      "Entries": [
+        "Relic: Reduced Flask HP Restoration"
+      ]
+    },
+    {
+      "ID": 6850400,
+      "Entries": [
+        "Relic: Surge Sprinting Drains More Stamina"
+      ]
+    },
+    {
       "ID": 6850500,
       "Entries": [
         "Relic: Continuous HP Loss"
+      ]
+    },
+    {
+      "ID": 6850600,
+      "Entries": [
+        "Relic: Increased Drain on Stamina for Evasion"
       ]
     },
     {
@@ -1814,6 +2072,18 @@
       ]
     },
     {
+      "ID": 6851000,
+      "Entries": [
+        "Relic: Sleep Buildup for Flask Usages"
+      ]
+    },
+    {
+      "ID": 6851100,
+      "Entries": [
+        "Relic: Madness Buildup for Flask Usages"
+      ]
+    },
+    {
       "ID": 6851200,
       "Entries": [
         "Relic: Lower Attack When Below Max HP"
@@ -1829,6 +2099,18 @@
       "ID": 6851400,
       "Entries": [
         "Relic: Rot Buildup When Below Max HP"
+      ]
+    },
+    {
+      "ID": 6851500,
+      "Entries": [
+        "Relic: Max HP Reduces Attack Power"
+      ]
+    },
+    {
+      "ID": 6851600,
+      "Entries": [
+        "Relic: Near Death Spills Flask"
       ]
     },
     {
@@ -2078,6 +2360,12 @@
       ]
     },
     {
+      "ID": 7001403,
+      "Entries": [
+        "Relic: Physical Attack Up +3"
+      ]
+    },
+    {
       "ID": 7001500,
       "Entries": [
         "Relic: Magic Attack Power Up"
@@ -2147,6 +2435,120 @@
       "ID": 7001802,
       "Entries": [
         "Relic: Holy Attack Power Up +2"
+      ]
+    },
+    {
+      "ID": 7001900,
+      "Entries": [
+        "Relic: Attacks Inflict Poison"
+      ]
+    },
+    {
+      "ID": 7001901,
+      "Entries": [
+        "Relic: Attacks Inflict Poison +1"
+      ]
+    },
+    {
+      "ID": 7001902,
+      "Entries": [
+        "Relic: Attacks Inflict Poison +2"
+      ]
+    },
+    {
+      "ID": 7002000,
+      "Entries": [
+        "Relic: Attacks Inflict Blood Loss"
+      ]
+    },
+    {
+      "ID": 7002001,
+      "Entries": [
+        "Relic: Attacks Inflict Blood Loss +1"
+      ]
+    },
+    {
+      "ID": 7002002,
+      "Entries": [
+        "Relic: Attacks Inflict Blood Loss +2"
+      ]
+    },
+    {
+      "ID": 7002100,
+      "Entries": [
+        "Relic: Attacks Inflict Sleep"
+      ]
+    },
+    {
+      "ID": 7002101,
+      "Entries": [
+        "Relic: Attacks Inflict Sleep +1"
+      ]
+    },
+    {
+      "ID": 7002102,
+      "Entries": [
+        "Relic: Attacks Inflict Sleep +2"
+      ]
+    },
+    {
+      "ID": 7002103,
+      "Entries": [
+        "Relic: Attacks Inflict Sleep +3"
+      ]
+    },
+    {
+      "ID": 7002200,
+      "Entries": [
+        "Relic: Attacks Inflict Death Blight"
+      ]
+    },
+    {
+      "ID": 7002300,
+      "Entries": [
+        "Relic: Attacks Inflict Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 7002301,
+      "Entries": [
+        "Relic: Attacks Inflict Scarlet Rot +1"
+      ]
+    },
+    {
+      "ID": 7002302,
+      "Entries": [
+        "Relic: Attacks Inflict Scarlet Rot +2"
+      ]
+    },
+    {
+      "ID": 7002400,
+      "Entries": [
+        "Relic: Attacks Inflict Frost"
+      ]
+    },
+    {
+      "ID": 7002401,
+      "Entries": [
+        "Relic: Attacks Inflict Frost +1"
+      ]
+    },
+    {
+      "ID": 7002402,
+      "Entries": [
+        "Relic: Attacks Inflict Frost +2"
+      ]
+    },
+    {
+      "ID": 7002403,
+      "Entries": [
+        "Relic: Attacks Inflict Frost +3"
+      ]
+    },
+    {
+      "ID": 7002500,
+      "Entries": [
+        "Relic: Attacks Inflict Madness"
       ]
     },
     {
@@ -2282,6 +2684,12 @@
       ]
     },
     {
+      "ID": 7010000,
+      "Entries": [
+        "Relic: [Guardian] Improved Character Skill range"
+      ]
+    },
+    {
       "ID": 7010200,
       "Entries": [
         "Relic: Flask Also Heals Allies"
@@ -2290,49 +2698,79 @@
     {
       "ID": 7010500,
       "Entries": [
-        "Relic: Wylder: Art activation spreads fire in area"
+        "Relic: [Wylder] Art activation spreads fire in area"
       ]
     },
     {
       "ID": 7010700,
       "Entries": [
-        "Relic: Duchess: Dagger chain attack reprises event upon nearby enemies"
+        "Relic: [Duchess] Dagger chain attack reprises event upon nearby enemies"
+      ]
+    },
+    {
+      "ID": 7010800,
+      "Entries": [
+        "Relic: [Raider] Character Skill damage up, damage negation impaired during use"
       ]
     },
     {
       "ID": 7010900,
       "Entries": [
-        "Relic: Revenant: Expend own HP to fully heal nearby allies when activating Art"
+        "Relic: [Revenant] Expend own HP to fully heal nearby allies when activating Art"
       ]
     },
     {
       "ID": 7011000,
       "Entries": [
-        "Relic: Guardian: Increased duration for Character Skill"
+        "Relic: [Guardian] Increased duration for Character Skill"
+      ]
+    },
+    {
+      "ID": 7011100,
+      "Entries": [
+        "Relic: [Guardian] Damage negation for allies improved when using Ultimate Art"
       ]
     },
     {
       "ID": 7011200,
       "Entries": [
-        "Relic: Revenant: Trigger ghostflame explosion during Ultimate Art activation"
+        "Relic: [Revenant] Trigger ghostflame explosion during Ultimate Art activation"
+      ]
+    },
+    {
+      "ID": 7011400,
+      "Entries": [
+        "Relic: [Guardian] Restores allies' HP when Character Skill is used"
+      ]
+    },
+    {
+      "ID": 7011500,
+      "Entries": [
+        "Relic: [Wylder] Character Skill inflicts Blood Loss"
       ]
     },
     {
       "ID": 7011600,
       "Entries": [
-        "Relic: Guardian: Creates whirlwind when charging halberd attacks"
+        "Relic: [Guardian] Creates whirlwind when charging halberd attacks"
       ]
     },
     {
       "ID": 7011700,
       "Entries": [
-        "Relic: Executor: Roaring restores HP while Art is active"
+        "Relic: [Executor] Roaring restores HP while Art is active"
+      ]
+    },
+    {
+      "ID": 7011900,
+      "Entries": [
+        "Relic: [Guardian] Character Skill inflicts Holy damage"
       ]
     },
     {
       "ID": 7012000,
       "Entries": [
-        "Relic: Guardian: Slowly restores nearby allies' HP while Art is active"
+        "Relic: [Guardian] Slowly restores nearby allies' HP while Art is active"
       ]
     },
     {
@@ -2348,21 +2786,51 @@
       ]
     },
     {
+      "ID": 7012400,
+      "Entries": [
+        "Relic: Strong Attack Creates Wide Wave of Heat"
+      ]
+    },
+    {
+      "ID": 7012500,
+      "Entries": [
+        "Relic: Jumping Conjures Magic Projectiles"
+      ]
+    },
+    {
+      "ID": 7012600,
+      "Entries": [
+        "Relic: Attack Boost from Nearby Allies"
+      ]
+    },
+    {
+      "ID": 7012700,
+      "Entries": [
+        "Relic: Guard Counters Cast Light Pillar"
+      ]
+    },
+    {
       "ID": 7020000,
       "Entries": [
-        "Relic: Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
+        "Relic: [Wylder] Follow-up attacks possible when using Character Skill (greatsword only)"
       ]
     },
     {
       "ID": 7030000,
       "Entries": [
-        "Relic: Raider: Improved Poise Near Totem Stela"
+        "Relic: [Raider] Improved Poise Near Totem Stela"
       ]
     },
     {
       "ID": 7030200,
       "Entries": [
         "Relic: HP restored when using cured meats, medicinal boluses, etc."
+      ]
+    },
+    {
+      "ID": 7030500,
+      "Entries": [
+        "Relic: [Wylder] Impaired damage negation, improved attack power & stamina after Art activation"
       ]
     },
     {
@@ -2392,19 +2860,37 @@
     {
       "ID": 7031200,
       "Entries": [
-        "Relic: Revenant: Strengthens family and allies when Ultimate Art is activated"
+        "Relic: [Revenant] Strengthens family and allies when Ultimate Art is activated"
       ]
     },
     {
       "ID": 7031300,
       "Entries": [
-        "Relic: Raider: Damage taken while using Character Skill improves attack power and stamina"
+        "Relic: [Raider] Damage taken while using Character Skill improves attack power and stamina"
+      ]
+    },
+    {
+      "ID": 7031400,
+      "Entries": [
+        "Relic: [Wylder] Reduced cooldown time for Character Skill"
+      ]
+    },
+    {
+      "ID": 7031600,
+      "Entries": [
+        "Relic: Performing consecutive successful guards improves guard ability and deflects big attacks"
+      ]
+    },
+    {
+      "ID": 7031700,
+      "Entries": [
+        "Relic: Shockwave Produced From Successful Guarding"
       ]
     },
     {
       "ID": 7031800,
       "Entries": [
-        "Relic: Duchess: Become difficult to spot and silence footsteps after landing critical from behind"
+        "Relic: [Duchess] Become difficult to spot and silence footsteps after landing critical from behind"
       ]
     },
     {
@@ -2420,33 +2906,51 @@
       ]
     },
     {
+      "ID": 7032300,
+      "Entries": [
+        "Relic: [Wylder] Improved attack power when Character Skill is activated"
+      ]
+    },
+    {
       "ID": 7032400,
       "Entries": [
-        "Relic: Wylder: Art gauge greatly filled when ability is activated"
+        "Relic: [Wylder] Art gauge greatly filled when ability is activated"
       ]
     },
     {
       "ID": 7032700,
       "Entries": [
-        "Relic: Duchess: Defeating enemies while Art is active ups attack power"
+        "Relic: [Duchess] Defeating enemies while Art is active ups attack power"
       ]
     },
     {
       "ID": 7032800,
       "Entries": [
-        "Relic: Recluse: Collecting affinity residue activates Terra Magica"
+        "Relic: [Recluse] Collecting affinity residue activates Terra Magica"
       ]
     },
     {
       "ID": 7032900,
       "Entries": [
-        "Relic: Recluse: Suffer blood loss and increase attack power upon Art activation"
+        "Relic: [Recluse] Suffer blood loss and increase attack power upon Art activation"
+      ]
+    },
+    {
+      "ID": 7033000,
+      "Entries": [
+        "Relic: [Wylder] Improved attack power when ability is activated"
       ]
     },
     {
       "ID": 7033200,
       "Entries": [
-        "Relic: Wylder: +1 additional Character Skill use"
+        "Relic: [Wylder] +1 additional Character Skill use"
+      ]
+    },
+    {
+      "ID": 7033300,
+      "Entries": [
+        "Relic: [Guardian] Become the target of enemy aggression when ability is activated"
       ]
     },
     {
@@ -2456,9 +2960,51 @@
       ]
     },
     {
+      "ID": 7033600,
+      "Entries": [
+        "Relic: [Duchess] Duration of Ultimate Art extended"
+      ]
+    },
+    {
+      "ID": 7033700,
+      "Entries": [
+        "Relic: Colossal armaments are coated in rock when performing charged attacks"
+      ]
+    },
+    {
+      "ID": 7033800,
+      "Entries": [
+        "Relic: [Raider] Permanently increase attack power when performing Character Skill's final attack"
+      ]
+    },
+    {
+      "ID": 7033900,
+      "Entries": [
+        "Relic: [Recluse] Extends duration of blood sigils"
+      ]
+    },
+    {
+      "ID": 7034000,
+      "Entries": [
+        "Relic: [Recluse] Collecting 4 Affinity Residues Improves Affinity Attack Power"
+      ]
+    },
+    {
       "ID": 7034100,
       "Entries": [
         "Relic: [Recluse] Activating Ultimate Art raises Max HP"
+      ]
+    },
+    {
+      "ID": 7034200,
+      "Entries": [
+        "Relic: [Executor] Attack power up while Ultimate Art is active"
+      ]
+    },
+    {
+      "ID": 7034300,
+      "Entries": [
+        "Relic: [Executor] Improves effect of ability but lowers resistance to status ailments"
       ]
     },
     {
@@ -2486,9 +3032,39 @@
       ]
     },
     {
+      "ID": 7034800,
+      "Entries": [
+        "Relic: Fire Critical Hit Grants Max Stamina Boost"
+      ]
+    },
+    {
+      "ID": 7034900,
+      "Entries": [
+        "Relic: Critical Hit HP Restoration"
+      ]
+    },
+    {
+      "ID": 7035000,
+      "Entries": [
+        "Relic: Critical Hit Adds Lightning Effect"
+      ]
+    },
+    {
       "ID": 7035100,
       "Entries": [
         "Relic: Critical Hit Boosts Stamina Recovery Speed"
+      ]
+    },
+    {
+      "ID": 7035200,
+      "Entries": [
+        "Relic: Consecutive Guards Harden Skin"
+      ]
+    },
+    {
+      "ID": 7035300,
+      "Entries": [
+        "Relic: Critical Hit Creates Sleep Mist"
       ]
     },
     {
@@ -2513,6 +3089,12 @@
       "ID": 7035510,
       "Entries": [
         "Relic: Madness Continually Recovers FP"
+      ]
+    },
+    {
+      "ID": 7035600,
+      "Entries": [
+        "Relic: Surge Sprint Landings Split Earth"
       ]
     },
     {
@@ -2548,91 +3130,91 @@
     {
       "ID": 7036200,
       "Entries": [
-        "Relic: Scholar: Prevent slowing of Character Skill progress"
+        "Relic: [Scholar] Prevent slowing of Character Skill progress"
       ]
     },
     {
       "ID": 7036300,
       "Entries": [
-        "Relic: Scholar: Allies targeted by Character Skill gain boosted attack"
+        "Relic: [Scholar] Allies targeted by Character Skill gain boosted attack"
       ]
     },
     {
       "ID": 7036301,
       "Entries": [
-        "Relic: Scholar: Allies targeted by Character Skill gain boosted attack"
+        "Relic: [Scholar] Allies targeted by Character Skill gain boosted attack"
       ]
     },
     {
       "ID": 7036400,
       "Entries": [
-        "Relic: Scholar: Continuous damage inflicted on targets threaded by Ultimate Art"
+        "Relic: [Scholar] Continuous damage inflicted on targets threaded by Ultimate Art"
       ]
     },
     {
       "ID": 7036401,
       "Entries": [
-        "Relic: Scholar: Continuous damage inflicted on targets threaded by Ultimate Art"
+        "Relic: [Scholar] Continuous damage inflicted on targets threaded by Ultimate Art"
       ]
     },
     {
       "ID": 7036500,
       "Entries": [
-        "Relic: Scholar: Earn runes for each additional specimen acquired with Character Skill"
+        "Relic: [Scholar] Earn runes for each additional specimen acquired with Character Skill"
       ]
     },
     {
       "ID": 7036501,
       "Entries": [
-        "Relic: Scholar: Earn runes for each additional specimen acquired with Character Skill"
+        "Relic: [Scholar] Earn runes for each additional specimen acquired with Character Skill"
       ]
     },
     {
       "ID": 7036800,
       "Entries": [
-        "Relic: Undertaker: Activating Ultimate Art increases attack power"
+        "Relic: [Undertaker] Activating Ultimate Art increases attack power"
       ]
     },
     {
       "ID": 7036801,
       "Entries": [
-        "Relic: Undertaker: Activating Ultimate Art increases attack power"
+        "Relic: [Undertaker] Activating Ultimate Art increases attack power"
       ]
     },
     {
       "ID": 7036900,
       "Entries": [
-        "Relic: Undertaker: Attack power increased by landing the final blow of a chain attack"
+        "Relic: [Undertaker] Attack power increased by landing the final blow of a chain attack"
       ]
     },
     {
       "ID": 7036901,
       "Entries": [
-        "Relic: Undertaker: Attack power increased by landing the final blow of a chain attack"
+        "Relic: [Undertaker] Attack power increased by landing the final blow of a chain attack"
       ]
     },
     {
       "ID": 7037000,
       "Entries": [
-        "Relic: Undertaker: Physical attacks boosted while assist effect from incantation is active for self"
+        "Relic: [Undertaker] Physical attacks boosted while assist effect from incantation is active for self"
       ]
     },
     {
       "ID": 7037001,
       "Entries": [
-        "Relic: Undertaker: Physical attacks boosted while assist effect from incantation is active for self"
+        "Relic: [Undertaker] Physical attacks boosted while assist effect from incantation is active for self"
       ]
     },
     {
       "ID": 7037300,
       "Entries": [
-        "Relic: Undertaker: Contact with allies restores their HP while Ultimate Art is activated"
+        "Relic: [Undertaker] Contact with allies restores their HP while Ultimate Art is activated"
       ]
     },
     {
       "ID": 7037301,
       "Entries": [
-        "Relic: Undertaker: Contact with allies restores their HP while Ultimate Art is activated"
+        "Relic: [Undertaker] Contact with allies restores their HP while Ultimate Art is activated"
       ]
     },
     {
@@ -2679,6 +3261,12 @@
     },
     {
       "ID": 7040201,
+      "Entries": [
+        "Relic: Improved Critical Hits +1"
+      ]
+    },
+    {
+      "ID": 7040290,
       "Entries": [
         "Relic: Improved Critical Hits +1"
       ]
@@ -2753,6 +3341,12 @@
       "ID": 7043800,
       "Entries": [
         "Relic: Improved Thorn Sorcery"
+      ]
+    },
+    {
+      "ID": 7043900,
+      "Entries": [
+        "Relic: Improved Night Sorcery"
       ]
     },
     {
@@ -3026,6 +3620,12 @@
       ]
     },
     {
+      "ID": 7100000,
+      "Entries": [
+        "Relic: Critical hits deal huge damage on poisoned enemies"
+      ]
+    },
+    {
       "ID": 7100100,
       "Entries": [
         "Relic: Stamina Recovery upon Landing Attacks"
@@ -3033,6 +3633,12 @@
     },
     {
       "ID": 7100110,
+      "Entries": [
+        "Relic: Stamina Recovery upon Landing Attacks +1"
+      ]
+    },
+    {
+      "ID": 7100190,
       "Entries": [
         "Relic: Stamina Recovery upon Landing Attacks +1"
       ]
@@ -3053,6 +3659,12 @@
       "ID": 7120100,
       "Entries": [
         "Relic: Starting armament deals fire damage"
+      ]
+    },
+    {
+      "ID": 7120101,
+      "Entries": [
+        "Relic: Armament deals fire damage +1 at start of expedition"
       ]
     },
     {
@@ -3083,6 +3695,12 @@
       "ID": 7120600,
       "Entries": [
         "Relic: Starting armament inflicts blood loss"
+      ]
+    },
+    {
+      "ID": 7120700,
+      "Entries": [
+        "Relic: Starting armament inflicts scarlet rot"
       ]
     },
     {
@@ -3356,6 +3974,18 @@
       ]
     },
     {
+      "ID": 7200000,
+      "Entries": [
+        "Relic: HP Restoration with Head Shots"
+      ]
+    },
+    {
+      "ID": 7200100,
+      "Entries": [
+        "Relic: Improved Stance-Breaking with Head Shots"
+      ]
+    },
+    {
       "ID": 7220000,
       "Entries": [
         "Relic: [Revenant] Power up while fighting alongside family"
@@ -3386,6 +4016,12 @@
       ]
     },
     {
+      "ID": 7260200,
+      "Entries": [
+        "Relic: Attack power up when facing sleep-afflicted enemy"
+      ]
+    },
+    {
       "ID": 7260300,
       "Entries": [
         "Relic: Attack power up when facing scarlet rot-afflicted enemy"
@@ -3398,9 +4034,21 @@
       ]
     },
     {
+      "ID": 7260600,
+      "Entries": [
+        "Relic: Attacks Create Magic Bursts Versus Sleeping Enemies"
+      ]
+    },
+    {
       "ID": 7260700,
       "Entries": [
         "Relic: Frostbite in Vicinity Conceals Self"
+      ]
+    },
+    {
+      "ID": 7260710,
+      "Entries": [
+        "Relic: Poison & Rot in Vicinity Increases Attack Power"
       ]
     },
     {
@@ -3434,9 +4082,21 @@
       ]
     },
     {
+      "ID": 7300000,
+      "Entries": [
+        "Relic: [Duchess] Character Skill inflicts sleep upon enemies"
+      ]
+    },
+    {
       "ID": 7310000,
       "Entries": [
         "Relic: [Raider] Duration of Ultimate Art extended"
+      ]
+    },
+    {
+      "ID": 7320000,
+      "Entries": [
+        "Relic: [Revenant] Ability activation chance increased"
       ]
     },
     {
@@ -3536,6 +4196,12 @@
       ]
     },
     {
+      "ID": 7331600,
+      "Entries": [
+        "Relic: Improved Pike Attack Power"
+      ]
+    },
+    {
       "ID": 7331700,
       "Entries": [
         "Relic: Improved Great Spear Attack Power"
@@ -3581,6 +4247,24 @@
       "ID": 7332400,
       "Entries": [
         "Relic: Improved Bow Attack Power"
+      ]
+    },
+    {
+      "ID": 7332500,
+      "Entries": [
+        "Relic: Improved Greatbow Attack Power"
+      ]
+    },
+    {
+      "ID": 7332600,
+      "Entries": [
+        "Relic: Improved Crossbow Attack Power"
+      ]
+    },
+    {
+      "ID": 7332700,
+      "Entries": [
+        "Relic: Improved Ballista Attack Power"
       ]
     },
     {
@@ -3680,6 +4364,12 @@
       ]
     },
     {
+      "ID": 7341600,
+      "Entries": [
+        "Relic: HP Restoration upon Pike Attacks"
+      ]
+    },
+    {
       "ID": 7341700,
       "Entries": [
         "Relic: HP Restoration upon Great Spear Attacks"
@@ -3725,6 +4415,24 @@
       "ID": 7342400,
       "Entries": [
         "Relic: HP Restoration upon Bow Attacks"
+      ]
+    },
+    {
+      "ID": 7342500,
+      "Entries": [
+        "Relic: HP Restoration upon Greatbow Attacks"
+      ]
+    },
+    {
+      "ID": 7342600,
+      "Entries": [
+        "Relic: HP Restoration upon Crossbow Attacks"
+      ]
+    },
+    {
+      "ID": 7342700,
+      "Entries": [
+        "Relic: HP Restoration upon Ballista Attacks"
       ]
     },
     {
@@ -3824,6 +4532,12 @@
       ]
     },
     {
+      "ID": 7351600,
+      "Entries": [
+        "Relic: FP Restoration upon Pike Attacks"
+      ]
+    },
+    {
       "ID": 7351700,
       "Entries": [
         "Relic: FP Restoration upon Great Spear Attacks"
@@ -3869,6 +4583,24 @@
       "ID": 7352400,
       "Entries": [
         "Relic: FP Restoration upon Bow Attacks"
+      ]
+    },
+    {
+      "ID": 7352500,
+      "Entries": [
+        "Relic: FP Restoration upon Greatbow Attacks"
+      ]
+    },
+    {
+      "ID": 7352600,
+      "Entries": [
+        "Relic: FP Restoration upon Crossbow Attacks"
+      ]
+    },
+    {
+      "ID": 7352700,
+      "Entries": [
+        "Relic: FP Restoration upon Ballista Attacks"
       ]
     },
     {
@@ -3920,7 +4652,7 @@
       ]
     },
     {
-      "ID": 7370000,
+      "ID": 7370200,
       "Entries": [
         "Relic: Changes compatible armament's incantation to Aspects of the Crucible: Horns at start of expedition"
       ]
@@ -4019,6 +4751,12 @@
       "ID": 8020001,
       "Entries": [
         "Weapon Effect: Increased Maximum Stamina"
+      ]
+    },
+    {
+      "ID": 8020100,
+      "Entries": [
+        "Weapon Effect: Reduced Stamina Consumption"
       ]
     },
     {
@@ -4238,6 +4976,12 @@
       ]
     },
     {
+      "ID": 8110300,
+      "Entries": [
+        "Weapon Effect: Attacks Inflict Death Blight"
+      ]
+    },
+    {
       "ID": 8110400,
       "Entries": [
         "Weapon Effect: Attacks Inflict Rot"
@@ -4307,6 +5051,12 @@
       "ID": 8110512,
       "Entries": [
         "Weapon Effect: Attacks Inflict Frost"
+      ]
+    },
+    {
+      "ID": 8110600,
+      "Entries": [
+        "Weapon Effect: Attacks Inflict Madness"
       ]
     },
     {
@@ -4451,6 +5201,24 @@
       "ID": 8140002,
       "Entries": [
         "Weapon Effect: Improved Guard Breaking"
+      ]
+    },
+    {
+      "ID": 8150000,
+      "Entries": [
+        "Weapon Effect: Attack Boost [Lifeforms Born of Falling Stars]"
+      ]
+    },
+    {
+      "ID": 8150100,
+      "Entries": [
+        "Weapon Effect: Attack Boost [Those Who Live in Death]"
+      ]
+    },
+    {
+      "ID": 8150300,
+      "Entries": [
+        "Weapon Effect: Attack Boost [Dragons]"
       ]
     },
     {
@@ -4736,6 +5504,12 @@
       ]
     },
     {
+      "ID": 8300100,
+      "Entries": [
+        "Weapon Effect: Improved Stance-Breaking when Two-Handing"
+      ]
+    },
+    {
       "ID": 8310000,
       "Entries": [
         "Weapon Effect: Attack Up when Wielding Two Armaments"
@@ -4751,6 +5525,12 @@
       "ID": 8310002,
       "Entries": [
         "Weapon Effect: Attack Up when Wielding Two Armaments"
+      ]
+    },
+    {
+      "ID": 8310100,
+      "Entries": [
+        "Weapon Effect: Improved Stance-Breaking when Wielding Two Armaments"
       ]
     },
     {
@@ -4787,6 +5567,12 @@
       "ID": 8320102,
       "Entries": [
         "Weapon Effect: Improved Charge Attacks"
+      ]
+    },
+    {
+      "ID": 8320200,
+      "Entries": [
+        "Weapon Effect: Strong Attacks Improve Poise"
       ]
     },
     {
@@ -5078,6 +5864,12 @@
       ]
     },
     {
+      "ID": 8350100,
+      "Entries": [
+        "Weapon Effect: Improved Charged Skill Attack Power"
+      ]
+    },
+    {
       "ID": 8350200,
       "Entries": [
         "Weapon Effect: Reduced Skill FP Cost"
@@ -5096,6 +5888,12 @@
       ]
     },
     {
+      "ID": 8350300,
+      "Entries": [
+        "Weapon Effect: Skill Activation Improves Poise"
+      ]
+    },
+    {
       "ID": 8350400,
       "Entries": [
         "Weapon Effect: Parries Activate Golden Retaliation"
@@ -5111,6 +5909,24 @@
       "ID": 8370000,
       "Entries": [
         "Weapon Effect: Character Skill Cooldown Reduction"
+      ]
+    },
+    {
+      "ID": 8380000,
+      "Entries": [
+        "Weapon Effect: Improved Roar & Breath Attacks"
+      ]
+    },
+    {
+      "ID": 8390000,
+      "Entries": [
+        "Weapon Effect: Improved Throwing Pots"
+      ]
+    },
+    {
+      "ID": 8400000,
+      "Entries": [
+        "Weapon Effect: Improved Perfuming Arts"
       ]
     },
     {
@@ -5174,6 +5990,12 @@
       ]
     },
     {
+      "ID": 8440100,
+      "Entries": [
+        "Weapon Effect: Flask Also Heals Allies"
+      ]
+    },
+    {
       "ID": 8440200,
       "Entries": [
         "Weapon Effect: Gradual Restoration by Flask"
@@ -5189,6 +6011,12 @@
       "ID": 8450100,
       "Entries": [
         "Weapon Effect: Ice Storm Surge Sprint"
+      ]
+    },
+    {
+      "ID": 8460000,
+      "Entries": [
+        "Weapon Effect: Darkness Conceals Caster While Walking"
       ]
     },
     {
@@ -5360,6 +6188,12 @@
       ]
     },
     {
+      "ID": 8610200,
+      "Entries": [
+        "Weapon Effect: Successive Attacks Boost Attack Power"
+      ]
+    },
+    {
       "ID": 8610300,
       "Entries": [
         "Weapon Effect: Magic Attack Follows Charge Attacks that Land"
@@ -5528,6 +6362,72 @@
       ]
     },
     {
+      "ID": 8640200,
+      "Entries": [
+        "Weapon Effect: Increased Damage After Critical Hit"
+      ]
+    },
+    {
+      "ID": 8640300,
+      "Entries": [
+        "Weapon Effect: Sacred Order upon Holy Critical Hit"
+      ]
+    },
+    {
+      "ID": 8640400,
+      "Entries": [
+        "Weapon Effect: Magma upon Fire Critical Hit"
+      ]
+    },
+    {
+      "ID": 8640500,
+      "Entries": [
+        "Weapon Effect: Lightning Critical Hit Imbues Armament"
+      ]
+    },
+    {
+      "ID": 8640600,
+      "Entries": [
+        "Weapon Effect: Crystal Shards upon Magic Critical Hit"
+      ]
+    },
+    {
+      "ID": 8640700,
+      "Entries": [
+        "Weapon Effect: Poison Mist upon Poison Critical Hit"
+      ]
+    },
+    {
+      "ID": 8640800,
+      "Entries": [
+        "Weapon Effect: Blood Loss Crit: Briars of Punishment"
+      ]
+    },
+    {
+      "ID": 8640900,
+      "Entries": [
+        "Weapon Effect: Rot Critical Hit Fires Pest Threads"
+      ]
+    },
+    {
+      "ID": 8641000,
+      "Entries": [
+        "Weapon Effect: Ice Storm upon Critical Hit with Frost"
+      ]
+    },
+    {
+      "ID": 8641100,
+      "Entries": [
+        "Weapon Effect: Madness Crit. Hit Fires Frenzied Flame"
+      ]
+    },
+    {
+      "ID": 8641200,
+      "Entries": [
+        "Weapon Effect: Death Crit. Hit Calls Death Lightning"
+      ]
+    },
+    {
       "ID": 8642000,
       "Entries": [
         "Weapon Effect: Damage Boosted after Critical Hit"
@@ -5630,6 +6530,12 @@
       ]
     },
     {
+      "ID": 8660400,
+      "Entries": [
+        "Weapon Effect: Low HP Crit. Hit Fully Restores HP"
+      ]
+    },
+    {
       "ID": 8670000,
       "Entries": [
         "Weapon Effect: Improved Attack Power at Full HP"
@@ -5696,15 +6602,45 @@
       ]
     },
     {
+      "ID": 8700000,
+      "Entries": [
+        "Weapon Effect: Poison Increases Attack Power"
+      ]
+    },
+    {
       "ID": 8700002,
       "Entries": [
         "Weapon Effect: Poison Increases Attack Power"
       ]
     },
     {
+      "ID": 8710000,
+      "Entries": [
+        "Weapon Effect: Blood Loss Increases Attack Power"
+      ]
+    },
+    {
       "ID": 8710002,
       "Entries": [
         "Weapon Effect: Blood Loss Increases Attack Power"
+      ]
+    },
+    {
+      "ID": 8720000,
+      "Entries": [
+        "Weapon Effect: Sleep Increases Attack Power"
+      ]
+    },
+    {
+      "ID": 8740000,
+      "Entries": [
+        "Weapon Effect: Frostbite Increases Attack Power"
+      ]
+    },
+    {
+      "ID": 8750000,
+      "Entries": [
+        "Weapon Effect: Madness Increases Attack Power"
       ]
     },
     {
@@ -5792,6 +6728,18 @@
       ]
     },
     {
+      "ID": 8764000,
+      "Entries": [
+        "Weapon Effect: Surge Sprinting Drains More Stamina"
+      ]
+    },
+    {
+      "ID": 8765000,
+      "Entries": [
+        "Weapon Effect: Ultimate Art Charging Impaired"
+      ]
+    },
+    {
       "ID": 8766000,
       "Entries": [
         "Weapon Effect: Continuous HP Loss"
@@ -5828,6 +6776,12 @@
       ]
     },
     {
+      "ID": 8800000,
+      "Entries": [
+        "Weapon Effect: Increased Drain on Stamina for Evasion"
+      ]
+    },
+    {
       "ID": 8800100,
       "Entries": [
         "Weapon Effect: More Damage Taken After Evasion"
@@ -5861,6 +6815,18 @@
       "ID": 8801050,
       "Entries": [
         "Weapon Effect: Reduced Damage Negation for Flask Usages"
+      ]
+    },
+    {
+      "ID": 8801100,
+      "Entries": [
+        "Weapon Effect: Sleep Buildup for Flask Usages"
+      ]
+    },
+    {
+      "ID": 8801200,
+      "Entries": [
+        "Weapon Effect: Madness Buildup for Flask Usages"
       ]
     },
     {
@@ -5912,6 +6878,18 @@
       ]
     },
     {
+      "ID": 8811000,
+      "Entries": [
+        "Weapon Effect: Max HP Reduces Attack Power"
+      ]
+    },
+    {
+      "ID": 8811200,
+      "Entries": [
+        "Weapon Effect: Max HP Slows Ultimate Art Gauge"
+      ]
+    },
+    {
       "ID": 8813100,
       "Entries": [
         "Weapon Effect: Lower Stamina Impairs Dmg Negation"
@@ -5936,6 +6914,18 @@
       ]
     },
     {
+      "ID": 8821100,
+      "Entries": [
+        "Weapon Effect: Landed Attacks Build Up Frost"
+      ]
+    },
+    {
+      "ID": 8821200,
+      "Entries": [
+        "Weapon Effect: Landed Attacks Build Up Blood Loss"
+      ]
+    },
+    {
       "ID": 8830000,
       "Entries": [
         "Weapon Effect: Ailments Cause Increased Damage"
@@ -5957,6 +6947,12 @@
       "ID": 8831050,
       "Entries": [
         "Weapon Effect: Near Death Reduces Art Gauge"
+      ]
+    },
+    {
+      "ID": 8831100,
+      "Entries": [
+        "Weapon Effect: Near Death Spills Flask"
       ]
     },
     {
@@ -6182,6 +7178,12 @@
       ]
     },
     {
+      "ID": 8880100,
+      "Entries": [
+        "Weapon Effect: Ring of Light upon Charged Slash"
+      ]
+    },
+    {
       "ID": 8880200,
       "Entries": [
         "Weapon Effect: Black Flames upon Charge Attacks"
@@ -6194,9 +7196,21 @@
       ]
     },
     {
+      "ID": 8880400,
+      "Entries": [
+        "Weapon Effect: Roaring Flames upon Charged Slash"
+      ]
+    },
+    {
       "ID": 8881000,
       "Entries": [
         "Weapon Effect: Holy Shockwave upon Charge Attacks"
+      ]
+    },
+    {
+      "ID": 8881100,
+      "Entries": [
+        "Weapon Effect: Projectiles upon Charged Strike"
       ]
     },
     {
@@ -6206,15 +7220,57 @@
       ]
     },
     {
+      "ID": 8881300,
+      "Entries": [
+        "Weapon Effect: Shockwave upon Charged Strike"
+      ]
+    },
+    {
+      "ID": 8881400,
+      "Entries": [
+        "Weapon Effect: Phantom Attack upon Charged Strike"
+      ]
+    },
+    {
       "ID": 8881500,
       "Entries": [
         "Weapon Effect: Magma upon Charge Attacks"
       ]
     },
     {
+      "ID": 8881600,
+      "Entries": [
+        "Weapon Effect: Magic Bubbles upon Charged Strike"
+      ]
+    },
+    {
+      "ID": 8882000,
+      "Entries": [
+        "Weapon Effect: Phantom Attack upon Charged Thrust"
+      ]
+    },
+    {
       "ID": 8882100,
       "Entries": [
         "Weapon Effect: Lightning upon Charge Attacks"
+      ]
+    },
+    {
+      "ID": 8882200,
+      "Entries": [
+        "Weapon Effect: Acid Mist upon Charged Thrust"
+      ]
+    },
+    {
+      "ID": 8882300,
+      "Entries": [
+        "Weapon Effect: Pest Threads upon Charged Thrust"
+      ]
+    },
+    {
+      "ID": 8882400,
+      "Entries": [
+        "Weapon Effect: Poison Mist upon Charged Thrust"
       ]
     },
     {
@@ -6254,6 +7310,18 @@
       ]
     },
     {
+      "ID": 8884000,
+      "Entries": [
+        "Weapon Effect: Shielding Improves Damage Negation"
+      ]
+    },
+    {
+      "ID": 8884100,
+      "Entries": [
+        "Weapon Effect: Shielding Invokes Indomitable Vow"
+      ]
+    },
+    {
       "ID": 8884200,
       "Entries": [
         "Weapon Effect: Shielding Creates Holy Ground"
@@ -6281,6 +7349,30 @@
       "ID": 8885200,
       "Entries": [
         "Weapon Effect: Guarding Ups Sorceries & Incantations"
+      ]
+    },
+    {
+      "ID": 8920100,
+      "Entries": [
+        "Weapon Effect: Improved Affinity Attack Power"
+      ]
+    },
+    {
+      "ID": 8921400,
+      "Entries": [
+        "Weapon Effect: Critical Hits Boost Attack Power"
+      ]
+    },
+    {
+      "ID": 8960100,
+      "Entries": [
+        "Weapon Effect: Changed Strong Attacks"
+      ]
+    },
+    {
+      "ID": 8960200,
+      "Entries": [
+        "Weapon Effect: Strong Jump Attacks Create Shockwave"
       ]
     },
     {

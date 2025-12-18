@@ -98,6 +98,12 @@
       ]
     },
     {
+      "ID": 4140,
+      "Entries": [
+        "[Sorcery] Starlight"
+      ]
+    },
+    {
       "ID": 4200,
       "Entries": [
         "[Sorcery] Comet Azur"
@@ -224,6 +230,12 @@
       ]
     },
     {
+      "ID": 4480,
+      "Entries": [
+        "[Sorcery] Lucidity"
+      ]
+    },
+    {
       "ID": 4490,
       "Entries": [
         "[Sorcery] Frozen Armament"
@@ -293,6 +305,18 @@
       "ID": 4650,
       "Entries": [
         "[Sorcery] Eternal Darkness"
+      ]
+    },
+    {
+      "ID": 4660,
+      "Entries": [
+        "[Sorcery] Unseen Blade"
+      ]
+    },
+    {
+      "ID": 4670,
+      "Entries": [
+        "[Sorcery] Unseen Form"
       ]
     },
     {
@@ -380,6 +404,12 @@
       ]
     },
     {
+      "ID": 5020,
+      "Entries": [
+        "[Sorcery] Fia's Mist"
+      ]
+    },
+    {
       "ID": 5030,
       "Entries": [
         "[Sorcery] Tibia's Summons"
@@ -431,6 +461,12 @@
       "ID": 6030,
       "Entries": [
         "[Incantation] Whirl, O Flame!"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "[Incantation] Flame, Cleanse Me"
       ]
     },
     {
@@ -590,6 +626,18 @@
       ]
     },
     {
+      "ID": 6440,
+      "Entries": [
+        "[Incantation] Cure Poison"
+      ]
+    },
+    {
+      "ID": 6441,
+      "Entries": [
+        "[Incantation] Lord's Aid"
+      ]
+    },
+    {
       "ID": 6450,
       "Entries": [
         "[Incantation] Flame Fortification"
@@ -623,6 +671,12 @@
       "ID": 6500,
       "Entries": [
         "[Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "[Incantation] Assassin's Approach"
       ]
     },
     {
@@ -698,6 +752,12 @@
       ]
     },
     {
+      "ID": 6780,
+      "Entries": [
+        "[Incantation] Order Healing"
+      ]
+    },
+    {
       "ID": 6800,
       "Entries": [
         "[Incantation] Bestial Sling"
@@ -725,6 +785,12 @@
       "ID": 6840,
       "Entries": [
         "[Incantation] Bestial Vitality"
+      ]
+    },
+    {
+      "ID": 6850,
+      "Entries": [
+        "[Incantation] Bestial Constitution"
       ]
     },
     {
@@ -779,6 +845,12 @@
       "ID": 6960,
       "Entries": [
         "[Incantation] Electrify Armament"
+      ]
+    },
+    {
+      "ID": 6970,
+      "Entries": [
+        "[Incantation] Vyke's Dragonbolt"
       ]
     },
     {
@@ -899,6 +971,12 @@
       "ID": 7240,
       "Entries": [
         "[Incantation] Scarlet Aeonia"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "[Incantation] Inescapable Frenzy"
       ]
     },
     {
@@ -1048,13 +1126,19 @@
     {
       "ID": 8100,
       "Entries": [
-        ""
+        "Storm Ruler"
       ]
     },
     {
       "ID": 8101,
       "Entries": [
-        ""
+        "Storm Ruler"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Test"
       ]
     },
     {

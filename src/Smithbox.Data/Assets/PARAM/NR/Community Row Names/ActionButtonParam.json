@@ -56,21 +56,189 @@
       ]
     },
     {
+      "ID": 1851,
+      "Entries": [
+        "Level up"
+      ]
+    },
+    {
+      "ID": 1852,
+      "Entries": [
+        "Add charge to flask"
+      ]
+    },
+    {
+      "ID": 1853,
+      "Entries": [
+        "Already at highest level"
+      ]
+    },
+    {
+      "ID": 1855,
+      "Entries": [
+        "Purchase"
+      ]
+    },
+    {
+      "ID": 1870,
+      "Entries": [
+        "Learn about locale"
+      ]
+    },
+    {
+      "ID": 1882,
+      "Entries": [
+        "Commence expedition"
+      ]
+    },
+    {
+      "ID": 1883,
+      "Entries": [
+        "Change character"
+      ]
+    },
+    {
+      "ID": 1884,
+      "Entries": [
+        "Perform Relic Rites"
+      ]
+    },
+    {
+      "ID": 1885,
+      "Entries": [
+        "Open Visual Codex"
+      ]
+    },
+    {
+      "ID": 1886,
+      "Entries": [
+        "Open journal"
+      ]
+    },
+    {
+      "ID": 1887,
+      "Entries": [
+        "Change sparring equipment"
+      ]
+    },
+    {
+      "ID": 1888,
+      "Entries": [
+        "Replicate armament"
+      ]
+    },
+    {
+      "ID": 1889,
+      "Entries": [
+        "Change sparring settings"
+      ]
+    },
+    {
+      "ID": 1890,
+      "Entries": [
+        "Take hold of Spectral Hawk"
+      ]
+    },
+    {
+      "ID": 1891,
+      "Entries": [
+        "Change garb"
+      ]
+    },
+    {
+      "ID": 1892,
+      "Entries": [
+        "Examine sign"
+      ]
+    },
+    {
+      "ID": 1893,
+      "Entries": [
+        "Change skill"
+      ]
+    },
+    {
+      "ID": 1894,
+      "Entries": [
+        "Revert skill"
+      ]
+    },
+    {
       "ID": 2000,
       "Entries": [
-        ""
+        "Pick up item"
       ]
     },
     {
       "ID": 2001,
       "Entries": [
-        ""
+        "Acquire runes"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Gain power"
       ]
     },
     {
       "ID": 2010,
       "Entries": [
-        ""
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Take armament"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Take staff"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Take sacred seal"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Gain the power of the mountains"
+      ]
+    },
+    {
+      "ID": 2075,
+      "Entries": [
+        "Gain the power of the forest"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Gain the power of the city"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "OK"
       ]
     },
     {
@@ -83,6 +251,96 @@
       "ID": 2501,
       "Entries": [
         "View victor's record for <?codenameIcon?>"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "Hold <?keyicon@123?>"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "Gain effect of materials"
+      ]
+    },
+    {
+      "ID": 2811,
+      "Entries": [
+        "Restore HP"
+      ]
+    },
+    {
+      "ID": 2812,
+      "Entries": [
+        "Heal ailments"
+      ]
+    },
+    {
+      "ID": 2813,
+      "Entries": [
+        "Summon foe-chasing vengeful spirits"
+      ]
+    },
+    {
+      "ID": 2814,
+      "Entries": [
+        "Restore FP"
+      ]
+    },
+    {
+      "ID": 2815,
+      "Entries": [
+        "Boost rune acquisition"
+      ]
+    },
+    {
+      "ID": 2816,
+      "Entries": [
+        "Boost damage negation"
+      ]
+    },
+    {
+      "ID": 2817,
+      "Entries": [
+        "Boost physical and fire damage"
+      ]
+    },
+    {
+      "ID": 2818,
+      "Entries": [
+        "Cure rot"
+      ]
+    },
+    {
+      "ID": 2819,
+      "Entries": [
+        "Restore HP"
+      ]
+    },
+    {
+      "ID": 2820,
+      "Entries": [
+        "Boost physical and scarlet rot damage"
+      ]
+    },
+    {
+      "ID": 2821,
+      "Entries": [
+        "Restore FP"
+      ]
+    },
+    {
+      "ID": 2822,
+      "Entries": [
+        "Create arch of magic glintblades"
+      ]
+    },
+    {
+      "ID": 2823,
+      "Entries": [
+        "Restore HP"
       ]
     },
     {
@@ -101,6 +359,18 @@
       "ID": 3020,
       "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Sit"
       ]
     },
     {
@@ -932,6 +1202,168 @@
       ]
     },
     {
+      "ID": 7030,
+      "Entries": [
+        "Strengthen armament"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "Strengthen armament"
+      ]
+    },
+    {
+      "ID": 7080,
+      "Entries": [
+        "Gain effect of materials"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7310,
+      "Entries": [
+        "Paint picture"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "Inspect Vestige of Night"
+      ]
+    },
+    {
+      "ID": 7330,
+      "Entries": [
+        "Hold up earring"
+      ]
+    },
+    {
+      "ID": 7340,
+      "Entries": [
+        "Hold up both earrings"
+      ]
+    },
+    {
+      "ID": 7360,
+      "Entries": [
+        "Sit"
+      ]
+    },
+    {
+      "ID": 7370,
+      "Entries": [
+        "Touch monument"
+      ]
+    },
+    {
+      "ID": 7380,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7390,
+      "Entries": [
+        "Sit"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "Pick up"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7420,
+      "Entries": [
+        "Offer"
+      ]
+    },
+    {
+      "ID": 7430,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7440,
+      "Entries": [
+        "Pick up"
+      ]
+    },
+    {
+      "ID": 7450,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 7460,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7470,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7480,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 7490,
+      "Entries": [
+        "Bless iron coin"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 7520,
+      "Entries": [
+        "Touch memory"
+      ]
+    },
+    {
+      "ID": 7530,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7540,
+      "Entries": [
+        "Touch phantom"
+      ]
+    },
+    {
       "ID": 7800,
       "Entries": [
         ""
@@ -992,6 +1424,174 @@
       ]
     },
     {
+      "ID": 7900,
+      "Entries": [
+        "Obtain whetstone"
+      ]
+    },
+    {
+      "ID": 7901,
+      "Entries": [
+        "Obtain tear of silver"
+      ]
+    },
+    {
+      "ID": 7902,
+      "Entries": [
+        "Obtain golden dew"
+      ]
+    },
+    {
+      "ID": 7903,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7904,
+      "Entries": [
+        "Obtain blessed flowers"
+      ]
+    },
+    {
+      "ID": 7905,
+      "Entries": [
+        "Obtain golden sprout"
+      ]
+    },
+    {
+      "ID": 7906,
+      "Entries": [
+        "Obtain golden seeds"
+      ]
+    },
+    {
+      "ID": 7907,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7908,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7910,
+      "Entries": [
+        "Take primal core"
+      ]
+    },
+    {
+      "ID": 7911,
+      "Entries": [
+        "Pick up journal"
+      ]
+    },
+    {
+      "ID": 7950,
+      "Entries": [
+        "Touch Nightlord"
+      ]
+    },
+    {
+      "ID": 7951,
+      "Entries": [
+        "Lay hand upon infant"
+      ]
+    },
+    {
+      "ID": 7961,
+      "Entries": [
+        "Animate"
+      ]
+    },
+    {
+      "ID": 7970,
+      "Entries": [
+        "Pass time"
+      ]
+    },
+    {
+      "ID": 7980,
+      "Entries": [
+        "Open door"
+      ]
+    },
+    {
+      "ID": 7981,
+      "Entries": [
+        "Touch light"
+      ]
+    },
+    {
+      "ID": 7982,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7983,
+      "Entries": [
+        "Smash"
+      ]
+    },
+    {
+      "ID": 7984,
+      "Entries": [
+        "Absorb Night's power"
+      ]
+    },
+    {
+      "ID": 7985,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7986,
+      "Entries": [
+        "Offer prayer"
+      ]
+    },
+    {
+      "ID": 7987,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 7988,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7989,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 7990,
+      "Entries": [
+        "Rewrite"
+      ]
+    },
+    {
+      "ID": 7991,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 7992,
+      "Entries": [
+        "Look at self in mirror"
+      ]
+    },
+    {
       "ID": 8000,
       "Entries": [
         "Open"
@@ -1022,6 +1622,18 @@
       ]
     },
     {
+      "ID": 8200,
+      "Entries": [
+        "View victor's record"
+      ]
+    },
+    {
+      "ID": 8201,
+      "Entries": [
+        "View victor's record for <?codenameIcon?>"
+      ]
+    },
+    {
       "ID": 9000,
       "Entries": [
         "Examine"
@@ -1043,6 +1655,48 @@
       "ID": 9030,
       "Entries": [
         "Cure rot"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Travel into the Spirit Shelter"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Resonate"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "Gain the power of the great crystal"
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        "Travel to another location"
+      ]
+    },
+    {
+      "ID": 9203,
+      "Entries": [
+        "Break seal"
+      ]
+    },
+    {
+      "ID": 9204,
+      "Entries": [
+        "Touch false vision of a Great Rune"
       ]
     },
     {
@@ -1094,6 +1748,30 @@
       ]
     },
     {
+      "ID": 9790,
+      "Entries": [
+        "Conclude remembrance"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "Touch corpse"
+      ]
+    },
+    {
+      "ID": 9810,
+      "Entries": [
+        "Open Evergaol"
+      ]
+    },
+    {
+      "ID": 9820,
+      "Entries": [
+        "Light flame"
+      ]
+    },
+    {
       "ID": 10000,
       "Entries": [
         ""
@@ -1109,6 +1787,24 @@
       "ID": 10010,
       "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "Acquire belongings"
+      ]
+    },
+    {
+      "ID": 50000101,
+      "Entries": [
+        "Acquire belongings of <?codenameIcon?>"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "Retrieve lost runes"
       ]
     }
   ]

@@ -1532,6 +1532,42 @@
       ]
     },
     {
+      "ID": 3010500,
+      "Entries": [
+        "[Uncommon] Fire Forked Greatsword"
+      ]
+    },
+    {
+      "ID": 3010600,
+      "Entries": [
+        "[Uncommon] Lightning Forked Greatsword"
+      ]
+    },
+    {
+      "ID": 3010700,
+      "Entries": [
+        "[Uncommon] Sacred Forked Greatsword"
+      ]
+    },
+    {
+      "ID": 3010800,
+      "Entries": [
+        "[Uncommon] Magic Forked Greatsword"
+      ]
+    },
+    {
+      "ID": 3010900,
+      "Entries": [
+        "[Uncommon] Cold Forked Greatsword"
+      ]
+    },
+    {
+      "ID": 3011000,
+      "Entries": [
+        "[Uncommon] Poison Forked Greatsword"
+      ]
+    },
+    {
       "ID": 3011100,
       "Entries": [
         "[Uncommon] Blood Forked Greatsword"
@@ -5348,6 +5384,12 @@
       ]
     },
     {
+      "ID": 14111200,
+      "Entries": [
+        "[Rare] Occult Sacrificial Axe"
+      ]
+    },
+    {
       "ID": 14120000,
       "Entries": [
         "[Rare] Rosus' Axe"
@@ -6308,6 +6350,12 @@
       ]
     },
     {
+      "ID": 16160800,
+      "Entries": [
+        "[Uncommon] Magic Rotten Crystal Spear"
+      ]
+    },
+    {
       "ID": 17010000,
       "Entries": [
         "[Legendary] Mohgwyn's Sacred Spear"
@@ -6731,6 +6779,12 @@
       "ID": 18080000,
       "Entries": [
         "[Rare] Golden Halberd"
+      ]
+    },
+    {
+      "ID": 18080700,
+      "Entries": [
+        "[Rare] Sacred Golden Halberd"
       ]
     },
     {
@@ -10406,6 +10460,12 @@
       ]
     },
     {
+      "ID": 32140700,
+      "Entries": [
+        "[Uncommon] Sacred Icon Shield"
+      ]
+    },
+    {
       "ID": 32150000,
       "Entries": [
         "[Rare] One-Eyed Shield"
@@ -13901,6 +13961,12 @@
       "ID": 99060000,
       "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 99999999,
+      "Entries": [
+        "Test"
       ]
     }
   ]
