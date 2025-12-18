@@ -305,10 +305,11 @@ public class EntityIdentifierTool
                 break;
 
             case ProjectType.ER:
+            case ProjectType.NR:
                 topID = $"{baseIdStr.Substring(0, 2)}";
-                midID = $"{baseIdStr.Substring(3, 1)}0"; // Grab the fourth digit, then swap to third digit position
+                midID = $"{baseIdStr.Substring(2, 2)}"; // Grab the fourth digit, then swap to third digit position
 
-                baseIdStr = $"{topID}{midID}000";
+                baseIdStr = $"{topID}{midID}0000";
 
                 // Different arrangement for open-world tiles
                 if(topID == "60" || topID == "61")
@@ -316,7 +317,7 @@ public class EntityIdentifierTool
                     var secondId = $"{baseIdStr.Substring(2, 2)}";
                     var thirdId = $"{baseIdStr.Substring(4, 2)}";
 
-                    baseIdStr = $"10{midID}{secondId}{thirdId}000";
+                    baseIdStr = $"10{midID}{secondId}{thirdId}0000";
                 }
 
                 int.TryParse(baseIdStr, out baseId);
