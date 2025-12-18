@@ -522,7 +522,10 @@ public class ResourceLocator
 
                 if (project.ProjectType is ProjectType.ER or ProjectType.NR)
                 {
-                    relPath = Path.Combine("asset", "aet", containerName.Substring(0, 6), $"{containerName}.tpf.dcx");
+                    if (containerName.Length > 5)
+                    {
+                        relPath = Path.Combine("asset", "aet", containerName.Substring(0, 6), $"{containerName}.tpf.dcx");
+                    }
                 }
             }
         }
@@ -817,8 +820,15 @@ public class ResourceLocator
     /// </summary>
     /// <param name="texpath"></param>
     /// <returns></returns>
-    public static string GetTextureVP(string texpath)
+    public static string GetTextureVP(string virtPath, string texpath)
     {
+        var type = "";
+
+        if (virtPath.Contains("/"))
+        {
+            type = virtPath.Split("/")[0];
+        }
+
         // Usage of the global BaseEditor here:
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
         texpath = texpath.Replace('\\', sl);
@@ -843,6 +853,12 @@ public class ResourceLocator
         {
             var splits = texpath.Split(sl);
             var chrid = splits[splits.Length - 3];
+            return $@"chr/{chrid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+        else if (type == "chr")
+        {
+            var splits = virtPath.Split("/");
+            var chrid = splits[1];
             return $@"chr/{chrid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
         }
 
@@ -879,7 +895,7 @@ public class ResourceLocator
         }
 
         // PARTS Texture
-        if (texpath.Contains($"{sl}parts{sl}"))
+        if (texpath.Contains($"{sl}parts{sl}") || virtPath.StartsWith("parts"))
         {
             var splits = texpath.Split(sl);
             var partsId = splits[splits.Length - 4]; //! FIXME is this wrong?
