@@ -72,9 +72,18 @@ public class MapValidatorTool
                     ValidateReferenceProperty(mapContainer, "WalkRouteName", 
                         MapValidationType.WalkRoute, true);
 
+                    // Part Names
+                    if (Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                    {
+                        ValidateStringArrayReferenceProperty(mapContainer, "PartNames", MapValidationType.PartNames, true);
+
+                        ValidateReferenceProperty(mapContainer, "UnkT54PartName",
+                            MapValidationType.PartNames, true);
+                    }
+
                     // Params
                     ValidateParamProperty(mapContainer, "NpcThinkParam", "ThinkParamID",
-                        MapValidationType.ThinkParamID, [-1]);
+                    MapValidationType.ThinkParamID, [-1]);
 
                     ValidateParamProperty(mapContainer, "NpcParam", "NPCParamID",
                         MapValidationType.NPCParamID, [-1]);
@@ -104,6 +113,11 @@ public class MapValidatorTool
                     "Walk Route", "walkRoute",
                     "refers to a walk route name that doesn't exist:",
                     MapValidationType.WalkRoute);
+
+                DisplayCommonMatches(
+                    "Part Name", "partName",
+                    "refers to a part name entry that doesn't exist:",
+                    MapValidationType.PartNames);
 
                 DisplayCommonMatches(
                     "NPC Think", "npcThink",
@@ -270,6 +284,41 @@ public class MapValidatorTool
         }
     }
 
+    public void ValidateStringArrayReferenceProperty(MapContainer map, string propName, MapValidationType type, bool ignoreEmpty = false)
+    {
+        foreach (Entity obj in map.Objects)
+        {
+            var prop = PropFinderUtil.FindProperty(propName, obj.WrappedObject);
+
+            if (prop == null)
+                continue;
+
+            var entResult = (string[])PropFinderUtil.FindPropertyValue(prop, obj.WrappedObject);
+
+            foreach (var entry in entResult)
+            {
+                if (ignoreEmpty)
+                {
+                    if (entry == null || entry == "")
+                        continue;
+                }
+
+                var colNameEnt = map.GetObjectByName(entry);
+
+                if (colNameEnt == null)
+                {
+                    var validationEntry = new MapValidationEntry();
+                    validationEntry.AssociatedEntity = obj;
+                    validationEntry.Type = type;
+                    validationEntry.Name = obj.Name;
+                    validationEntry.Value = $"{entry}";
+
+                    ValidationEntries.Add(validationEntry);
+                }
+            }
+        }
+    }
+
     public void ValidateParamProperty(MapContainer map, string paramName, string propName, MapValidationType type, int[] defaultValues)
     {
         if (Project.ParamEditor == null)
@@ -344,5 +393,6 @@ public enum MapValidationType
     ThinkParamID,
     NPCParamID,
     CharaInitID,
-    ChameleonParamID
+    ChameleonParamID,
+    PartNames
 }
