@@ -17,8 +17,16 @@ jobs:
           submodules: false
       - uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: "9.0.x" # SDK Version to use;
-          cache: true
+          dotnet-version: "9.0.x"
+          cache: false
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v5.0.1
+        with:
+          path: ${{ env.NUGET_PACKAGES }}
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            nuget-${{ runner.os }}-
 
       - name: Restore
         run: dotnet restore /p:Configuration=Release-win
