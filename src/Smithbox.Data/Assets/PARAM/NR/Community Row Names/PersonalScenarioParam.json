@@ -1104,6 +1104,156 @@
       "Entries": [
         "Revenant: Chapter 8"
       ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Scholar: Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Scholar: Search the underground chamber below the marsh.\nN.B. Only occurs with <?sysmsg@40000?> targets."
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Scholar: Talk to the Undertaker"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "Scholar: Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "Scholar: Talk to the Undertaker"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Scholar: Conclude the remembrance"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "Scholar: Talk to the Small Jar Merchant"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "Scholar: Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "Scholar: Talk to the Undertaker"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "Scholar: Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Scholar: Defeat the Dreglord in Limveld"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "Scholar: Talk to the Undertaker"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "Scholar: Check dresser mirror"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "Scholar: Rewrite copy of research"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Undertaker: Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Undertaker: Check disturbance in chapel"
+      ]
+    },
+    {
+      "ID": 9102,
+      "Entries": [
+        "Undertaker: Check disturbance in chapel"
+      ]
+    },
+    {
+      "ID": 9103,
+      "Entries": [
+        "Undertaker: Talk to the Scholar"
+      ]
+    },
+    {
+      "ID": 9104,
+      "Entries": [
+        "Undertaker: Conclude the remembrance"
+      ]
+    },
+    {
+      "ID": 9105,
+      "Entries": [
+        "Undertaker: Talk to the Priestess"
+      ]
+    },
+    {
+      "ID": 9106,
+      "Entries": [
+        "Undertaker: Offer prayer in chapel"
+      ]
+    },
+    {
+      "ID": 9107,
+      "Entries": [
+        "Undertaker: Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 9108,
+      "Entries": [
+        "Undertaker: Search for the Scholar in Limveld\nN.B. Only occurs with <?sysmsg@40000?> targets"
+      ]
+    },
+    {
+      "ID": 9109,
+      "Entries": [
+        "Undertaker: Talk to the Scholar"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Undertaker: Determine source of footsteps"
+      ]
     }
   ]
 }
