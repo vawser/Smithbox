@@ -2446,7 +2446,7 @@
     {
       "ID": 1100,
       "Entries": [
-        "Sleep - Apply Behavior Effect"
+        "Sleep - Spawn Proximity Bullet"
       ]
     },
     {
@@ -2458,7 +2458,7 @@
     {
       "ID": 1110,
       "Entries": [
-        "Madness - Apply Behavior Effect"
+        "Madness - Spawn Proximity Bullet"
       ]
     },
     {
@@ -2470,13 +2470,13 @@
     {
       "ID": 1120,
       "Entries": [
-        ""
+        "Scarlet Rot - Spawn Proximity Bullet"
       ]
     },
     {
       "ID": 1121,
       "Entries": [
-        ""
+        "Scarlet Rot - Apply State Info"
       ]
     },
     {
@@ -4552,13 +4552,13 @@
     {
       "ID": 3140,
       "Entries": [
-        "Freezing Grease"
+        "[Item] Freezing Grease (Right)"
       ]
     },
     {
       "ID": 3141,
       "Entries": [
-        "Freezing Grease - Frostbite"
+        "[Item] Freezing Grease (Right) - Frostbite"
       ]
     },
     {
@@ -4576,13 +4576,13 @@
     {
       "ID": 3144,
       "Entries": [
-        ""
+        "[Item] Freezing Grease (Left)"
       ]
     },
     {
       "ID": 3145,
       "Entries": [
-        ""
+        "[Item] Freezing Grease (Left) - Frostbite"
       ]
     },
     {
@@ -4600,13 +4600,13 @@
     {
       "ID": 3150,
       "Entries": [
-        "Soporific Grease"
+        "[Item] Soporific Grease (Right)"
       ]
     },
     {
       "ID": 3151,
       "Entries": [
-        "Soporific Grease - Sleep"
+        "[Item] Soporific Grease (Right) - Sleep"
       ]
     },
     {
@@ -4624,13 +4624,13 @@
     {
       "ID": 3154,
       "Entries": [
-        ""
+        "[Item] Soporific Grease (Left)"
       ]
     },
     {
       "ID": 3155,
       "Entries": [
-        ""
+        "[Item] Soporific Grease (Left) - Sleep"
       ]
     },
     {
@@ -4648,7 +4648,7 @@
     {
       "ID": 3160,
       "Entries": [
-        "Fire Grease"
+        "[Item] Fire Grease (Right)"
       ]
     },
     {
@@ -4660,7 +4660,7 @@
     {
       "ID": 3162,
       "Entries": [
-        ""
+        "[Item] Fire Grease (Left)"
       ]
     },
     {
@@ -4672,7 +4672,7 @@
     {
       "ID": 3165,
       "Entries": [
-        "Lightning Grease"
+        "[Item] Lightning Grease (Right)"
       ]
     },
     {
@@ -4684,7 +4684,7 @@
     {
       "ID": 3167,
       "Entries": [
-        ""
+        "[Item] Lightning Grease (Left)"
       ]
     },
     {
@@ -4696,7 +4696,7 @@
     {
       "ID": 3170,
       "Entries": [
-        "Magic Grease"
+        "[Item] Magic Grease (Right)"
       ]
     },
     {
@@ -4708,7 +4708,7 @@
     {
       "ID": 3172,
       "Entries": [
-        ""
+        "[Item] Magic Grease (Left)"
       ]
     },
     {
@@ -4720,13 +4720,13 @@
     {
       "ID": 3175,
       "Entries": [
-        "Poison Grease"
+        "[Item] Poison Grease (Right)"
       ]
     },
     {
       "ID": 3176,
       "Entries": [
-        "Poison Grease - Poison"
+        "[Item] Poison Grease (Right) - Poison"
       ]
     },
     {
@@ -4744,13 +4744,13 @@
     {
       "ID": 3179,
       "Entries": [
-        ""
+        "[Item] Poison Grease (Left)"
       ]
     },
     {
       "ID": 3180,
       "Entries": [
-        ""
+        "[Item] Poison Grease (Left) - Poison"
       ]
     },
     {
@@ -4768,7 +4768,7 @@
     {
       "ID": 3185,
       "Entries": [
-        "Holy Grease"
+        "[Item] Holy Grease (Right)"
       ]
     },
     {
@@ -4780,7 +4780,7 @@
     {
       "ID": 3187,
       "Entries": [
-        ""
+        "[Item] Holy Grease (Left)"
       ]
     },
     {
@@ -4792,13 +4792,13 @@
     {
       "ID": 3190,
       "Entries": [
-        "Blood Grease"
+        "[Item] Blood Grease (Right)"
       ]
     },
     {
       "ID": 3191,
       "Entries": [
-        "Blood Grease - Blood Loss"
+        "[Item] Blood Grease (Right) - Blood Loss"
       ]
     },
     {
@@ -4816,13 +4816,13 @@
     {
       "ID": 3194,
       "Entries": [
-        ""
+        "[Item] Blood Grease (Left)"
       ]
     },
     {
       "ID": 3195,
       "Entries": [
-        ""
+        "[Item] Blood Grease (Left) - Blood Loss"
       ]
     },
     {
@@ -4930,13 +4930,13 @@
     {
       "ID": 3260,
       "Entries": [
-        "Dragonwound Grease"
+        "[Item] Dragonwound Grease (Right)"
       ]
     },
     {
       "ID": 3262,
       "Entries": [
-        ""
+        "[Item] Dragonwound Grease (Left)"
       ]
     },
     {
@@ -5086,13 +5086,13 @@
     {
       "ID": 3310,
       "Entries": [
-        "Rot Grease"
+        "[Item] Rot Grease (Right)"
       ]
     },
     {
       "ID": 3311,
       "Entries": [
-        "Rot Grease - Scarlet Rot"
+        "[Item] Rot Grease (Right) - Scarlet Rot"
       ]
     },
     {
@@ -5110,13 +5110,13 @@
     {
       "ID": 3314,
       "Entries": [
-        ""
+        "[Item] Rot Grease (Left)"
       ]
     },
     {
       "ID": 3315,
       "Entries": [
-        ""
+        "[Item] Rot Grease (Left) - Scarlet Rot"
       ]
     },
     {
@@ -60766,13 +60766,13 @@
     {
       "ID": 501690,
       "Entries": [
-        "Shield Grease"
+        "[Item] Shield Grease (Right)"
       ]
     },
     {
       "ID": 501691,
       "Entries": [
-        ""
+        "[Item] Shield Grease (Left)"
       ]
     },
     {
