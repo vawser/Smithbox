@@ -1494,7 +1494,7 @@
     <wepTypeTrigger
     AltName="Weapon Type Trigger"
     Wiki="Trigger this SpEffect when this weapon type is present." 
-    Enum="WEP_TYPE" 
+    ProjectEnum="WEP_TYPE" 
     DefaultValue="1"/>
     
     <wepTypeTriggerCount
@@ -2093,7 +2093,7 @@
     <triggerOnWepType
     AltName="Trigger on Held Weapon Type" 
     Wiki="Trigger this SpEffect only if the specified held weapon type is present." 
-    Enum="WEP_TYPE" 
+    ProjectEnum="WEP_TYPE" 
     DefaultValue="0"/>
 	
 	<triggerAttachedWeapon
@@ -2192,7 +2192,7 @@
     <weaponTypeDiscovery
     AltName="Weapon Type Discovery"
     Wiki="Weapons of this type show up in class weapon rolls."
-    Enum="WEP_TYPE" 
+    ProjectEnum="WEP_TYPE" 
     DefaultValue="-1" />
     
     <heroStatusModifier

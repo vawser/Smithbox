@@ -34,9 +34,9 @@
 	Wiki="The number of stacks the player picks up." />
 
     <onlyForClass
-    AltName="Only For Class"
-    Wiki="Only roll this entry if the player's class matches."
-    Enum="CHARACTER_CLASS" />
+    AltName="Only For Hero"
+    Wiki="Only roll this entry if the player's hero matches."
+    ProjectEnum="HERO" />
     
     <eventFlagId
     AltName="Acquisition Flag"
@@ -49,7 +49,7 @@
     <weaponTypeDiscovery
     AltName="Weapon Type Discovery"
     Wiki="Only roll this entry if the player has a matching weaponTypeDiscovery. Related relic SpEffect will overwrite the default one. "
-    Enum="WEP_TYPE" />
+    ProjectEnum="WEP_TYPE" />
   </Field>
   
   <Enums>
