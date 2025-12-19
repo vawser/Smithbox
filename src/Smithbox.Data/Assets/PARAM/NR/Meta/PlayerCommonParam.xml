@@ -76,7 +76,7 @@
     <reserved_123 AltName="" Padding=""/>
     <resistCurseItemSpEffectBaseId AltName="Resist Death Blight Item - Base SpEffect ID" Wiki="Abnormal condition_Instant death_Instant death Item possession Special effect base ID" Refs="SpEffectParam"/>
     <resistCurseItemLotParamId_map AltName="Resist Death Blight Item - Map Item Lot ID" Wiki="Abnormal condition_immediate death_immediate death item lottery ID_for map" Refs="ItemLotParam_map"/>
-    
+	
     <revenantSummon1_BuddyParamId
     AltName="Revenant Summon 1: Buddy ID"
     Wiki="The buddy param ID for the slot 1 revenant summon."
@@ -118,6 +118,9 @@
     
     <tenacityEffectId
 	AltName="Tenacity Effect"
+    Refs="SpEffectParam" />
+	
+	<unknown_49
     Refs="SpEffectParam" />
     
     <tenacityRelicAddEffectId
@@ -293,6 +296,21 @@
 	<analyseSelf_Level3EffectId
 	AltName="Analyse Self - Level 3 Effect"
     Refs="SpEffectParam" />
+	
+	<fh_unknown_61
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_62
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_63
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_64
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_65
+    Refs="SpEffectParam" />
     
     <fh_unknown_67
     Refs="SpEffectParam" />
@@ -301,6 +319,18 @@
     Refs="SpEffectParam" />
     
     <fh_unknown_69
+    Refs="SpEffectParam" />
+	
+	<statusGaugeStackEffectId
+    Refs="SpEffectParam" />
+	
+	<statusGaugeEffectId_unk
+    Refs="SpEffectParam" />
+	
+	<attackNullifyEffectId_unk
+    Refs="SpEffectParam" />
+	
+	<attackNullifyIconEffectId
     Refs="SpEffectParam" />
     
   </Field>

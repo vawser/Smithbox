@@ -52,12 +52,11 @@
 
     <weaponLevel
     AltName="Weapon Reinforcement Level" 
-    Wiki="The adjusted power level of the weapon"
-    Enum="WEAPON_LEVEL" />
+    Wiki="The adjusted power level of the weapon" />
 	
 	<isCursed
-	AltName="Is Cursed Weapon"
-	Wiki="Changes weapon color to red if true"
+	AltName="Is Unique Weapon"
+	Wiki="Changes weapon color to red if true, and grants a slight damage increase"
 	IsBool="" />
     
     <magicTableId_1 

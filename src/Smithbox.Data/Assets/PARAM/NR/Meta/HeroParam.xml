@@ -127,7 +127,7 @@
 	<defaultWeaponTypeDiscovery
     AltName="Default Weapon Type Discovery"
     Wiki="Default weaponTypeDiscovery for each character." 
-    Enum="WEP_TYPE" />
+    ProjectEnum="WEP_TYPE" />
     
     <unknown_39
     FmgRef="Modern_Menu_Text" />

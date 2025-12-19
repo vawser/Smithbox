@@ -494,7 +494,7 @@
     <arrowBoltEquipId AltName="Ammunition Equip ID" Wiki="Equipment number of the quiver (magazine) display model. In the case of a bow, it is displayed as a quiver, and in the case of a crossbow, it is displayed as a magazine." />
     <DerivationLevelType AltName="Derivation Level Type" Wiki="Type of how to set the enhancement level when returning or deriving a weapon" Enum="WEAPON_DERIVATION_LEVEL_TYPE" />
     <enchantSfxSize AltName="Enchantment SFX Size" Wiki="Value offset to enchantment SfxId" Enum="WEP_ENCHANT_SFX_SIZE" />
-    <wepType AltName="Weapon Type" Wiki="Weapon type. Used for linking text and magic stones (* It is now used for other than text)" Enum="WEP_TYPE" />
+    <wepType AltName="Weapon Type" Wiki="Weapon type. Used for linking text and magic stones (* It is now used for other than text)" ProjectEnum="WEP_TYPE" />
     <physGuardCutRate_MaxCorrect AltName="Max Correction: Physical Guard Absorption" Wiki="Maximum damage physical cut rate correction value when guarding" />
     <magGuardCutRate_MaxCorrect AltName="Max Correction: Magic Guard Absorption" Wiki="Maximum value of correction value of damage magic cut rate when guarding" />
     <fireGuardCutRate_MaxCorrect AltName="Max Correction: Fire Guard Absorption" Wiki="Maximum value of correction value of damage flame cut rate when guarding" />
@@ -600,12 +600,13 @@
 	
 	<heroMovesetOverrideID
 	AltName="Hero Moveset Override ID"
-	Wiki="TAE ID for weapon moveset override when used by specific hero" />
+	Wiki="TAE ID for weapon moveset override when used by specific hero" 
+	ProjectEnum="WEPMOTION_HERO_OVERRIDE_CATEGORY" />
 	
 	<heroID
 	AltName="Hero ID"
 	Wiki="Determines what hero has a special moveset for this weapon"
-	Refs="HeroParam" />
+	ProjectEnum="HERO" />
 	
 	<spAttributeMixcraft
 	AltName="Special Attribute for Magic Cocktail"
