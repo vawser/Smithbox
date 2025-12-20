@@ -442,7 +442,7 @@
     {
       "ID": 321700,
       "Entries": [
-        "Talisman: Poison & Rot Improves Attack Power"
+        "Talisman: Poison & Rot in Vicinity Increases Attack Power"
       ]
     },
     {
@@ -508,7 +508,7 @@
     {
       "ID": 330801,
       "Entries": [
-        "Talisman: Maximum HP Down"
+        "Talisman: Reduced Maximum HP"
       ]
     },
     {
@@ -550,7 +550,7 @@
     {
       "ID": 340500,
       "Entries": [
-        "Talisman: Improved Non-Physical Damage Negation"
+        "Talisman: Improved Affinity Damage Negation"
       ]
     },
     {
@@ -946,7 +946,7 @@
     {
       "ID": 6030600,
       "Entries": [
-        "Relic: Art gauge charged from successful guarding +1"
+        "Relic: Successful guarding fills more of the Art gauge +1"
       ]
     },
     {
@@ -958,7 +958,7 @@
     {
       "ID": 6030800,
       "Entries": [
-        "Relic: Art gauge fills moderately upon critical hit +1"
+        "Relic: Critical hits fill more of the Art gauge +1"
       ]
     },
     {
@@ -1882,7 +1882,7 @@
     {
       "ID": 6647200,
       "Entries": [
-        "Relic: [Scholar]  Improved Mind, Reduced Vigor"
+        "Relic: [Scholar] Improved Mind, Reduced Vigor"
       ]
     },
     {
@@ -2056,7 +2056,7 @@
     {
       "ID": 6850700,
       "Entries": [
-        "Relic: More Damage Taken After Evasion"
+        "Relic: Reduced Damage Negation After Evading"
       ]
     },
     {
@@ -2302,19 +2302,19 @@
     {
       "ID": 7000900,
       "Entries": [
-        "Relic: Ultimate Art Gauge +1"
+        "Relic: Ultimate Art Auto Charge +1"
       ]
     },
     {
       "ID": 7000901,
       "Entries": [
-        "Relic: Ultimate Art Gauge +2"
+        "Relic: Ultimate Art Auto Charge +2"
       ]
     },
     {
       "ID": 7000902,
       "Entries": [
-        "Relic: Ultimate Art Gauge +3"
+        "Relic: Ultimate Art Auto Charge +3"
       ]
     },
     {
@@ -2363,6 +2363,12 @@
       "ID": 7001403,
       "Entries": [
         "Relic: Physical Attack Up +3"
+      ]
+    },
+    {
+      "ID": 7001409,
+      "Entries": [
+        "Relic: Physical Attack Up +2"
       ]
     },
     {
@@ -2674,13 +2680,13 @@
     {
       "ID": 7006600,
       "Entries": [
-        "Weapon Effect: Improved Melee Attack Power"
+        "Relic: Improved Melee Attack Power"
       ]
     },
     {
       "ID": 7006700,
       "Entries": [
-        "Weapon Effect: Improved Skill Attack Power"
+        "Relic: Improved Skill Attack Power"
       ]
     },
     {
@@ -2704,7 +2710,7 @@
     {
       "ID": 7010700,
       "Entries": [
-        "Relic: [Duchess] Dagger chain attack reprises event upon nearby enemies"
+        "Relic: [Duchess] Reprise events upon nearby enemies by landing the final blow of a chain attack with dagger"
       ]
     },
     {
@@ -2812,19 +2818,19 @@
     {
       "ID": 7020000,
       "Entries": [
-        "Relic: [Wylder] Follow-up attacks possible when using Character Skill (greatsword only)"
+        "Relic: [Wylder] Standard attacks enhanced with fiery follow-ups when using Character Skill (greatsword only)"
       ]
     },
     {
       "ID": 7030000,
       "Entries": [
-        "Relic: [Raider] Improved Poise Near Totem Stela"
+        "Relic: Improved Poise Near Totem Stela"
       ]
     },
     {
       "ID": 7030200,
       "Entries": [
-        "Relic: HP restored when using cured meats, medicinal boluses, etc."
+        "Relic: HP restored when using medicinal boluses, etc."
       ]
     },
     {
@@ -2836,7 +2842,7 @@
     {
       "ID": 7030600,
       "Entries": [
-        "Relic: Art gauge charged from successful guarding"
+        "Relic: Successful guarding fills more of the Art gauge"
       ]
     },
     {
@@ -2848,13 +2854,13 @@
     {
       "ID": 7030800,
       "Entries": [
-        "Relic: Art gauge fills moderately upon critical hit"
+        "Relic: Critical hits fill more of the Art gauge"
       ]
     },
     {
       "ID": 7030900,
       "Entries": [
-        "Relic: Attack power increases after using grease items"
+        "Relic: Physical attack power increases after using grease items"
       ]
     },
     {
@@ -5464,13 +5470,13 @@
     {
       "ID": 8220001,
       "Entries": [
-        "Weapon Effect: Improved Guarding Ability"
+        "Weapon Effect: Improved Guarding Ability +1"
       ]
     },
     {
       "ID": 8220002,
       "Entries": [
-        "Weapon Effect: Improved Guarding Ability"
+        "Weapon Effect: Improved Guarding Ability +2"
       ]
     },
     {
@@ -5902,7 +5908,7 @@
     {
       "ID": 8360000,
       "Entries": [
-        "Weapon Effect: Ultimate Art Gauge Charge Speed Up"
+        "Weapon Effect: Faster Art Gauge Buildup"
       ]
     },
     {
@@ -6430,7 +6436,7 @@
     {
       "ID": 8642000,
       "Entries": [
-        "Weapon Effect: Damage Boosted after Critical Hit"
+        "Weapon Effect: Increased Damage After Critical Hit"
       ]
     },
     {
@@ -6790,7 +6796,7 @@
     {
       "ID": 8800150,
       "Entries": [
-        "Weapon Effect: More Damage Taken After Evasion"
+        "Weapon Effect: Reduced Damage Negation After Evading"
       ]
     },
     {
@@ -7174,7 +7180,7 @@
     {
       "ID": 8880000,
       "Entries": [
-        "Weapon Effect: Ice Storm upon Charged Slash"
+        "Weapon Effect: Ice Storm upon Charge Attacks"
       ]
     },
     {
@@ -13643,6 +13649,258 @@
       "ID": 9991099,
       "Entries": [
         "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 18000000,
+      "Entries": [
+        "Filter: Increased Maximum HP"
+      ]
+    },
+    {
+      "ID": 18010000,
+      "Entries": [
+        "Filter: Increased Maximum FP"
+      ]
+    },
+    {
+      "ID": 18010100,
+      "Entries": [
+        "Filter: Reduced FP Consumption"
+      ]
+    },
+    {
+      "ID": 18020000,
+      "Entries": [
+        "Filter: Increased Maximum Stamina"
+      ]
+    },
+    {
+      "ID": 18020200,
+      "Entries": [
+        "Filter: Improved Stamina Recovery"
+      ]
+    },
+    {
+      "ID": 18100000,
+      "Entries": [
+        "Filter: Physical Attack Up"
+      ]
+    },
+    {
+      "ID": 18100500,
+      "Entries": [
+        "Filter: Improved Affinity Attack Power"
+      ]
+    },
+    {
+      "ID": 18120000,
+      "Entries": [
+        "Filter: Improved Stance-Breaking"
+      ]
+    },
+    {
+      "ID": 18200000,
+      "Entries": [
+        "Filter: Improved Physical Damage Negation"
+      ]
+    },
+    {
+      "ID": 18200500,
+      "Entries": [
+        "Filter: Improved Affinity Damage Negation"
+      ]
+    },
+    {
+      "ID": 18210700,
+      "Entries": [
+        "Filter: All Resistances Up"
+      ]
+    },
+    {
+      "ID": 18230000,
+      "Entries": [
+        "Filter: Improved Poise"
+      ]
+    },
+    {
+      "ID": 18330103,
+      "Entries": [
+        "Filter: Improved Sorceries & Incantations"
+      ]
+    },
+    {
+      "ID": 18330500,
+      "Entries": [
+        "Filter: Increased Sorcery & Incantation Duration"
+      ]
+    },
+    {
+      "ID": 18330700,
+      "Entries": [
+        "Filter: Communion Grants Anti-Dragon Effect"
+      ]
+    },
+    {
+      "ID": 18350400,
+      "Entries": [
+        "Filter: Successful Parries Activate Golden Retaliation"
+      ]
+    },
+    {
+      "ID": 18420100,
+      "Entries": [
+        "Filter: Guard Counters Activate Holy Attacks"
+      ]
+    },
+    {
+      "ID": 18420200,
+      "Entries": [
+        "Filter: Guard Counters Launch Summoning Attack"
+      ]
+    },
+    {
+      "ID": 18430000,
+      "Entries": [
+        "Filter: Improved Thrusting Counterattack"
+      ]
+    },
+    {
+      "ID": 18440000,
+      "Entries": [
+        "Filter: Improved Flask HP Restoration"
+      ]
+    },
+    {
+      "ID": 18500000,
+      "Entries": [
+        "Filter: More Runes From Defeated Enemies"
+      ]
+    },
+    {
+      "ID": 18640000,
+      "Entries": [
+        "Filter: Critical Hit HP Restoration"
+      ]
+    },
+    {
+      "ID": 18640100,
+      "Entries": [
+        "Filter: Critical Hit FP Restoration"
+      ]
+    },
+    {
+      "ID": 18640200,
+      "Entries": [
+        "Filter: Increased Damage After Critical Hit"
+      ]
+    },
+    {
+      "ID": 18650000,
+      "Entries": [
+        "Filter: HP Recovery From Successful Guarding"
+      ]
+    },
+    {
+      "ID": 18650100,
+      "Entries": [
+        "Filter: FP Recovery From Successful Guarding"
+      ]
+    },
+    {
+      "ID": 18660200,
+      "Entries": [
+        "Filter: Critical Hits Inflict Blood Loss"
+      ]
+    },
+    {
+      "ID": 18660300,
+      "Entries": [
+        "Filter: Creates Holy Ground at Low HP"
+      ]
+    },
+    {
+      "ID": 18700000,
+      "Entries": [
+        "Filter: Poison & Rot Trigger Continuous HP Recovery"
+      ]
+    },
+    {
+      "ID": 18710000,
+      "Entries": [
+        "Filter: Blood Loss in Vicinity Increases Attack Power"
+      ]
+    },
+    {
+      "ID": 19700000,
+      "Entries": [
+        "Filter: Vigor"
+      ]
+    },
+    {
+      "ID": 19700010,
+      "Entries": [
+        "Filter: Mind"
+      ]
+    },
+    {
+      "ID": 19700020,
+      "Entries": [
+        "Filter: Endurance"
+      ]
+    },
+    {
+      "ID": 19700030,
+      "Entries": [
+        "Filter: Strength"
+      ]
+    },
+    {
+      "ID": 19700040,
+      "Entries": [
+        "Filter: Dexterity"
+      ]
+    },
+    {
+      "ID": 19700050,
+      "Entries": [
+        "Filter: Intelligence"
+      ]
+    },
+    {
+      "ID": 19700060,
+      "Entries": [
+        "Filter: Faith"
+      ]
+    },
+    {
+      "ID": 19700070,
+      "Entries": [
+        "Filter: Arcane"
+      ]
+    },
+    {
+      "ID": 19700080,
+      "Entries": [
+        "Filter: Character Skill Cooldown Reduction"
+      ]
+    },
+    {
+      "ID": 19700090,
+      "Entries": [
+        "Filter: Ultimate Art Auto Charge"
+      ]
+    },
+    {
+      "ID": 19700100,
+      "Entries": [
+        "Filter: Poise"
+      ]
+    },
+    {
+      "ID": 19799999,
+      "Entries": [
+        "Filter: All Options"
       ]
     },
     {

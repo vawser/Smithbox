@@ -794,6 +794,12 @@
       ]
     },
     {
+      "ID": 9025,
+      "Entries": [
+        "[Gesture] The Carian Oath"
+      ]
+    },
+    {
       "ID": 9026,
       "Entries": [
         "[Gesture] Bravo!"
@@ -866,6 +872,12 @@
       ]
     },
     {
+      "ID": 9038,
+      "Entries": [
+        "[Gesture] Fetal Position"
+      ]
+    },
+    {
       "ID": 9039,
       "Entries": [
         "[Gesture] Balled Up"
@@ -917,6 +929,12 @@
       "ID": 9048,
       "Entries": [
         "[Gesture] Golden Order Totality"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "[Gesture] The Ring"
       ]
     },
     {
@@ -1148,9 +1166,33 @@
       ]
     },
     {
+      "ID": 9701,
+      "Entries": [
+        "[Vessel] Soot-Covered Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 9702,
+      "Entries": [
+        "[Vessel] Soot-Covered Wylder's Chalice"
+      ]
+    },
+    {
       "ID": 9703,
       "Entries": [
         "[Vessel] Soot-Covered Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 9704,
+      "Entries": [
+        "[Vessel] Soot-Covered Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 9705,
+      "Entries": [
+        "[Vessel] Soot-Covered Guardian's Chalice"
       ]
     },
     {
@@ -1160,9 +1202,33 @@
       ]
     },
     {
+      "ID": 9707,
+      "Entries": [
+        "[Vessel] Soot-Covered Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 9708,
+      "Entries": [
+        "[Vessel] Soot-Covered Ironeye's Chalice"
+      ]
+    },
+    {
       "ID": 9709,
       "Entries": [
         "[Vessel] Soot-Covered Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 9710,
+      "Entries": [
+        "[Vessel] Soot-Covered Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 9711,
+      "Entries": [
+        "[Vessel] Soot-Covered Duchess' Chalice"
       ]
     },
     {
@@ -1172,9 +1238,33 @@
       ]
     },
     {
+      "ID": 9713,
+      "Entries": [
+        "[Vessel] Soot-Covered Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 9714,
+      "Entries": [
+        "[Vessel] Soot-Covered Raider's Chalice"
+      ]
+    },
+    {
       "ID": 9715,
       "Entries": [
         "[Vessel] Soot-Covered Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 9716,
+      "Entries": [
+        "[Vessel] Soot-Covered Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 9717,
+      "Entries": [
+        "[Vessel] Soot-Covered Revenant's Chalice"
       ]
     },
     {
@@ -1184,9 +1274,33 @@
       ]
     },
     {
+      "ID": 9719,
+      "Entries": [
+        "[Vessel] Soot-Covered Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 9720,
+      "Entries": [
+        "[Vessel] Soot-Covered Recluse's Chalice"
+      ]
+    },
+    {
       "ID": 9721,
       "Entries": [
         "[Vessel] Soot-Covered Executor's Urn"
+      ]
+    },
+    {
+      "ID": 9722,
+      "Entries": [
+        "[Vessel] Soot-Covered Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 9723,
+      "Entries": [
+        "[Vessel] Soot-Covered Executor's Chalice"
       ]
     },
     {
@@ -1196,9 +1310,33 @@
       ]
     },
     {
+      "ID": 9801,
+      "Entries": [
+        "[Vessel] Sealed Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 9802,
+      "Entries": [
+        "[Vessel] Sealed Wylder's Chalice"
+      ]
+    },
+    {
       "ID": 9803,
       "Entries": [
         "[Vessel] Sealed Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 9804,
+      "Entries": [
+        "[Vessel] Sealed Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 9805,
+      "Entries": [
+        "[Vessel] Sealed Guardian's Chalice"
       ]
     },
     {
@@ -1208,9 +1346,33 @@
       ]
     },
     {
+      "ID": 9807,
+      "Entries": [
+        "[Vessel] Sealed Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 9808,
+      "Entries": [
+        "[Vessel] Sealed Ironeye's Chalice"
+      ]
+    },
+    {
       "ID": 9809,
       "Entries": [
         "[Vessel] Sealed Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 9810,
+      "Entries": [
+        "[Vessel] Sealed Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 9811,
+      "Entries": [
+        "[Vessel] Sealed Duchess' Chalice"
       ]
     },
     {
@@ -1220,9 +1382,33 @@
       ]
     },
     {
+      "ID": 9813,
+      "Entries": [
+        "[Vessel] Sealed Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 9814,
+      "Entries": [
+        "[Vessel] Sealed Raider's Chalice"
+      ]
+    },
+    {
       "ID": 9815,
       "Entries": [
         "[Vessel] Sealed Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 9816,
+      "Entries": [
+        "[Vessel] Sealed Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 9817,
+      "Entries": [
+        "[Vessel] Sealed Revenant's Chalice"
       ]
     },
     {
@@ -1232,9 +1418,33 @@
       ]
     },
     {
+      "ID": 9819,
+      "Entries": [
+        "[Vessel] Sealed Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 9820,
+      "Entries": [
+        "[Vessel] Sealed Recluse's Chalice"
+      ]
+    },
+    {
       "ID": 9821,
       "Entries": [
         "[Vessel] Sealed Executor's Urn"
+      ]
+    },
+    {
+      "ID": 9822,
+      "Entries": [
+        "[Vessel] Sealed Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 9823,
+      "Entries": [
+        "[Vessel] Sealed Executor's Chalice"
       ]
     },
     {
@@ -1472,7 +1682,19 @@
       ]
     },
     {
+      "ID": 11003,
+      "Entries": [
+        "[Rare] Crimson Crystal Tear"
+      ]
+    },
+    {
       "ID": 11004,
+      "Entries": [
+        "[Rare] Cerulean Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11005,
       "Entries": [
         "[Rare] Cerulean Crystal Tear"
       ]
@@ -1514,6 +1736,12 @@
       ]
     },
     {
+      "ID": 11012,
+      "Entries": [
+        "[Rare] Winged Crystal Tear"
+      ]
+    },
+    {
       "ID": 11013,
       "Entries": [
         "[Rare] Thorny Cracked Tear"
@@ -1538,6 +1766,12 @@
       ]
     },
     {
+      "ID": 11017,
+      "Entries": [
+        "[Rare] Ruptured Crystal Tear"
+      ]
+    },
+    {
       "ID": 11018,
       "Entries": [
         "[Rare] Leaden Hardtear"
@@ -1553,6 +1787,30 @@
       "ID": 11020,
       "Entries": [
         "[Rare] Crimsonwhorl Bubbletear"
+      ]
+    },
+    {
+      "ID": 11021,
+      "Entries": [
+        "[Rare] Strength-knot Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11022,
+      "Entries": [
+        "[Rare] Dexterity-knot Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11023,
+      "Entries": [
+        "[Rare] Intelligence-knot Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11024,
+      "Entries": [
+        "[Rare] Faith-knot Crystal Tear"
       ]
     },
     {
@@ -2234,6 +2492,234 @@
       ]
     },
     {
+      "ID": 1000000,
+      "Entries": [
+        "Slate Whetstone"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "Silver Tear"
+      ]
+    },
+    {
+      "ID": 1000002,
+      "Entries": [
+        "Golden Dew"
+      ]
+    },
+    {
+      "ID": 1000003,
+      "Entries": [
+        "Weathervane's Words"
+      ]
+    },
+    {
+      "ID": 1000004,
+      "Entries": [
+        "Blessed Flowers"
+      ]
+    },
+    {
+      "ID": 1000005,
+      "Entries": [
+        "Golden Seed"
+      ]
+    },
+    {
+      "ID": 1000006,
+      "Entries": [
+        "Golden Sprout"
+      ]
+    },
+    {
+      "ID": 1000007,
+      "Entries": [
+        "Night Shard"
+      ]
+    },
+    {
+      "ID": 1000008,
+      "Entries": [
+        "Vestige of Night"
+      ]
+    },
+    {
+      "ID": 1000009,
+      "Entries": [
+        "Fine Arrowhead"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "Traitor's Letter"
+      ]
+    },
+    {
+      "ID": 1000011,
+      "Entries": [
+        "Edge of Order"
+      ]
+    },
+    {
+      "ID": 1000012,
+      "Entries": [
+        "Ragged Doll"
+      ]
+    },
+    {
+      "ID": 1000013,
+      "Entries": [
+        "Stone Stake"
+      ]
+    },
+    {
+      "ID": 1000014,
+      "Entries": [
+        "Third Volume"
+      ]
+    },
+    {
+      "ID": 1000015,
+      "Entries": [
+        "Witch's Brooch"
+      ]
+    },
+    {
+      "ID": 1000016,
+      "Entries": [
+        "Blade of Night Fragment"
+      ]
+    },
+    {
+      "ID": 1000017,
+      "Entries": [
+        "Dried Droplet"
+      ]
+    },
+    {
+      "ID": 1000018,
+      "Entries": [
+        "Mended Earring"
+      ]
+    },
+    {
+      "ID": 1000019,
+      "Entries": [
+        "Faded Iron Coins"
+      ]
+    },
+    {
+      "ID": 1000020,
+      "Entries": [
+        "Eerie Charm"
+      ]
+    },
+    {
+      "ID": 1000021,
+      "Entries": [
+        "Merchant's Ledger"
+      ]
+    },
+    {
+      "ID": 1000022,
+      "Entries": [
+        "Torn Braided Cord"
+      ]
+    },
+    {
+      "ID": 1000024,
+      "Entries": [
+        "Black Claw Necklace"
+      ]
+    },
+    {
+      "ID": 1000025,
+      "Entries": [
+        "Double Sided Coin"
+      ]
+    },
+    {
+      "ID": 1000026,
+      "Entries": [
+        "Crown Medal"
+      ]
+    },
+    {
+      "ID": 1000027,
+      "Entries": [
+        "Pita Bread"
+      ]
+    },
+    {
+      "ID": 1000028,
+      "Entries": [
+        "Second Volume"
+      ]
+    },
+    {
+      "ID": 1000030,
+      "Entries": [
+        "Iron Menial's Scrawl"
+      ]
+    },
+    {
+      "ID": 1000031,
+      "Entries": [
+        "Blessed Iron Coin"
+      ]
+    },
+    {
+      "ID": 1000032,
+      "Entries": [
+        "Cracked Witch's Brooch"
+      ]
+    },
+    {
+      "ID": 1000033,
+      "Entries": [
+        "Virtuous Thief's Key"
+      ]
+    },
+    {
+      "ID": 1000034,
+      "Entries": [
+        "Torn-Out Paper Scrap"
+      ]
+    },
+    {
+      "ID": 1000035,
+      "Entries": [
+        "The Wylder's Earring"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "Primordial Nightlord's Rune"
+      ]
+    },
+    {
+      "ID": 1000101,
+      "Entries": [
+        "Trace of Night"
+      ]
+    },
+    {
+      "ID": 1000102,
+      "Entries": [
+        "Trace of Night"
+      ]
+    },
+    {
+      "ID": 1000103,
+      "Entries": [
+        "Trace of Night"
+      ]
+    },
+    {
       "ID": 6000500,
       "Entries": [
         "[Great Hollow (L)] False vision of a Great Rune"
@@ -2591,6 +3077,60 @@
       "ID": 8710002,
       "Entries": [
         "[Permanent Buff (R)] Blood Loss in Vicinity Increases Attack Power (+20%)"
+      ]
+    },
+    {
+      "ID": 9999099,
+      "Entries": [
+        "Localization test_99"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "Leather Monocle Case"
+      ]
+    },
+    {
+      "ID": 10001001,
+      "Entries": [
+        "Scholar's Primal Core"
+      ]
+    },
+    {
+      "ID": 10001002,
+      "Entries": [
+        "Night-Hued Glass"
+      ]
+    },
+    {
+      "ID": 10001003,
+      "Entries": [
+        "Vassal's Journal"
+      ]
+    },
+    {
+      "ID": 10001004,
+      "Entries": [
+        "Cleansing Tear"
+      ]
+    },
+    {
+      "ID": 10001005,
+      "Entries": [
+        "Returned Leather Case"
+      ]
+    },
+    {
+      "ID": 10001006,
+      "Entries": [
+        "Headband of the Golden Ones"
+      ]
+    },
+    {
+      "ID": 10001007,
+      "Entries": [
+        "Bundled Paper"
       ]
     },
     {

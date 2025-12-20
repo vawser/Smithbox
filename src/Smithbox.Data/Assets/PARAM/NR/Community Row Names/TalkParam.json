@@ -80,18 +80,6 @@
       ]
     },
     {
-      "ID": 2003010,
-      "Entries": [
-        "And let any who dare disturb such peace..."
-      ]
-    },
-    {
-      "ID": 2003011,
-      "Entries": [
-        "...face my blade."
-      ]
-    },
-    {
       "ID": 2004000,
       "Entries": [
         "You are awake."
@@ -272,12 +260,6 @@
       ]
     },
     {
-      "ID": 2010000,
-      "Entries": [
-        "The odious thirst of vengeance..."
-      ]
-    },
-    {
       "ID": 2010001,
       "Entries": [
         "We must bring an end to it ourselves..."
@@ -290,19 +272,19 @@
       ]
     },
     {
-      "ID": 2011000,
+      "ID": 2011100,
       "Entries": [
         "Another substantial threat subdued."
       ]
     },
     {
-      "ID": 2011001,
+      "ID": 2011101,
       "Entries": [
         "Perhaps this was an act of penance."
       ]
     },
     {
-      "ID": 2011002,
+      "ID": 2011102,
       "Entries": [
         "We are condemned, after all."
       ]
@@ -776,48 +758,6 @@
       ]
     },
     {
-      "ID": 10200105,
-      "Entries": [
-        "\"On the third night, this land will fall.\""
-      ]
-    },
-    {
-      "ID": 10200106,
-      "Entries": [
-        "\"Band together, and prepare to claim...\""
-      ]
-    },
-    {
-      "ID": 10200107,
-      "Entries": [
-        "\"The life of the Nightlord.\""
-      ]
-    },
-    {
-      "ID": 10200108,
-      "Entries": [
-        "That is all."
-      ]
-    },
-    {
-      "ID": 10200109,
-      "Entries": [
-        "The Nightlord is a living cataclysm, bent on laying waste to the very land that anchors us."
-      ]
-    },
-    {
-      "ID": 10200110,
-      "Entries": [
-        "Unless we bring its end, our world will be undone."
-      ]
-    },
-    {
-      "ID": 10200111,
-      "Entries": [
-        "And for this, I need your help."
-      ]
-    },
-    {
       "ID": 10200200,
       "Entries": [
         "What is it? I will do my utmost to aid you."
@@ -845,18 +785,6 @@
       "ID": 10200303,
       "Entries": [
         "...But he is worthy of trust. Speak to him, if you please."
-      ]
-    },
-    {
-      "ID": 10200304,
-      "Entries": [
-        "The coming war cannot be won with determination alone."
-      ]
-    },
-    {
-      "ID": 10200305,
-      "Entries": [
-        "Thus we are well-provisioned. Ensure you have all you need before leaving for battle."
       ]
     },
     {
@@ -1172,12 +1100,6 @@
       ]
     },
     {
-      "ID": 10201009,
-      "Entries": [
-        "Once we're done, it will be goodbye."
-      ]
-    },
-    {
       "ID": 10201100,
       "Entries": [
         "The Roundtable Hold and I are one and the same."
@@ -1208,12 +1130,6 @@
       ]
     },
     {
-      "ID": 10201105,
-      "Entries": [
-        "We will win this war. I promise."
-      ]
-    },
-    {
       "ID": 10201200,
       "Entries": [
         "What do you mean to say?"
@@ -1233,12 +1149,6 @@
     },
     {
       "ID": 10201203,
-      "Entries": [
-        "Then allow me to give you a token of my favour, gallant sir knight."
-      ]
-    },
-    {
-      "ID": 10201205,
       "Entries": [
         "Then allow me to give you a token of my favour, gallant sir knight."
       ]
@@ -1514,24 +1424,6 @@
       ]
     },
     {
-      "ID": 10203102,
-      "Entries": [
-        "Now. About the traitor from your Fellowship."
-      ]
-    },
-    {
-      "ID": 10203103,
-      "Entries": [
-        "We know very little. But we will find out more soon enough."
-      ]
-    },
-    {
-      "ID": 10203104,
-      "Entries": [
-        "In the meantime I have another task for you to perform. Come to me again when you're ready."
-      ]
-    },
-    {
       "ID": 10203110,
       "Entries": [
         "Now. About the traitor from your Fellowship."
@@ -1676,36 +1568,6 @@
       ]
     },
     {
-      "ID": 10204305,
-      "Entries": [
-        "We must stop them before it's too late."
-      ]
-    },
-    {
-      "ID": 10204306,
-      "Entries": [
-        "Ahh, yes."
-      ]
-    },
-    {
-      "ID": 10204307,
-      "Entries": [
-        "As you may have surmised, versions of you from other worlds are found among their number."
-      ]
-    },
-    {
-      "ID": 10204308,
-      "Entries": [
-        "And we might just learn something from them."
-      ]
-    },
-    {
-      "ID": 10204309,
-      "Entries": [
-        "Best of luck."
-      ]
-    },
-    {
       "ID": 10204310,
       "Entries": [
         "Ahh, yes."
@@ -1739,12 +1601,6 @@
       "ID": 10204401,
       "Entries": [
         "Please, accept this token of thanks."
-      ]
-    },
-    {
-      "ID": 10204402,
-      "Entries": [
-        "Now then, have you any news to report?"
       ]
     },
     {
@@ -1785,18 +1641,6 @@
     },
     {
       "ID": 10204603,
-      "Entries": [
-        "You must conquer this. This fear of the Night."
-      ]
-    },
-    {
-      "ID": 10204604,
-      "Entries": [
-        "If it continues, you'll be swallowed by the Night again."
-      ]
-    },
-    {
-      "ID": 10204605,
       "Entries": [
         "You must conquer this. This fear of the Night."
       ]
@@ -1880,12 +1724,6 @@
       ]
     },
     {
-      "ID": 10205106,
-      "Entries": [
-        "It is good to have you. Once again."
-      ]
-    },
-    {
       "ID": 10205200,
       "Entries": [
         "What's this? Ah, it must be repaired already."
@@ -1928,18 +1766,6 @@
       ]
     },
     {
-      "ID": 10205207,
-      "Entries": [
-        "...Forgive me, I've likely talked your ear off."
-      ]
-    },
-    {
-      "ID": 10205208,
-      "Entries": [
-        "We must prepare for the next battle."
-      ]
-    },
-    {
       "ID": 10205300,
       "Entries": [
         "Won't you please part with the pocketwatch?"
@@ -1965,12 +1791,6 @@
     },
     {
       "ID": 10205403,
-      "Entries": [
-        "As unsettling as your talents might seem to an outsider, in service to our cause they are reassuring indeed."
-      ]
-    },
-    {
-      "ID": 10205404,
       "Entries": [
         "As unsettling as your talents might seem to an outsider, in service to our cause they are reassuring indeed."
       ]
@@ -2096,12 +1916,6 @@
       ]
     },
     {
-      "ID": 10205904,
-      "Entries": [
-        "Your search should begin with them."
-      ]
-    },
-    {
       "ID": 10206000,
       "Entries": [
         "I am surprised to learn the truth of your natures."
@@ -2126,12 +1940,6 @@
       ]
     },
     {
-      "ID": 10206004,
-      "Entries": [
-        "...But in the end, he chose to be a monster."
-      ]
-    },
-    {
       "ID": 10206100,
       "Entries": [
         "You've returned."
@@ -2147,12 +1955,6 @@
       "ID": 10206102,
       "Entries": [
         "Would you mind taking them to the Iron Menial?"
-      ]
-    },
-    {
-      "ID": 10206103,
-      "Entries": [
-        "He's just putting the finishing touches on some flower beds, in fact."
       ]
     },
     {
@@ -2397,12 +2199,6 @@
     },
     {
       "ID": 10207104,
-      "Entries": [
-        "For now, let us bury this devourer of worlds."
-      ]
-    },
-    {
-      "ID": 10207105,
       "Entries": [
         "For now, let us bury this devourer of worlds."
       ]
@@ -2894,24 +2690,6 @@
       ]
     },
     {
-      "ID": 10211801,
-      "Entries": [
-        "Brave Nightfarers."
-      ]
-    },
-    {
-      "ID": 10211802,
-      "Entries": [
-        "Travel to the land of Limveld."
-      ]
-    },
-    {
-      "ID": 10211803,
-      "Entries": [
-        "There, in the dead of the third night,\nthis dread Lord will await you."
-      ]
-    },
-    {
       "ID": 10211900,
       "Entries": [
         "The Nightlord takes the form of a three-headed beast."
@@ -2939,30 +2717,6 @@
       "ID": 10212000,
       "Entries": [
         "Have you found any Traces of Night?"
-      ]
-    },
-    {
-      "ID": 10212001,
-      "Entries": [
-        "That reveals a larger truth."
-      ]
-    },
-    {
-      "ID": 10212002,
-      "Entries": [
-        "Defeat the Nightlords, as you did the beast, to claim four Traces of Night."
-      ]
-    },
-    {
-      "ID": 10212003,
-      "Entries": [
-        "Only then..."
-      ]
-    },
-    {
-      "ID": 10212004,
-      "Entries": [
-        "Will the light reveal what lies beyond."
       ]
     },
     {
@@ -3035,12 +2789,6 @@
       "ID": 10220201,
       "Entries": [
         "How should we even begin to seek the signs to guide us..."
-      ]
-    },
-    {
-      "ID": 10220202,
-      "Entries": [
-        "Our rediscovered allies encountered the Dreglord once before."
       ]
     },
     {
@@ -3218,36 +2966,6 @@
       ]
     },
     {
-      "ID": 10300313,
-      "Entries": [
-        "When you let your passions get the best of you, things have an awful way of going south."
-      ]
-    },
-    {
-      "ID": 10300314,
-      "Entries": [
-        "Keep your cool, lest you do anything you come to regret."
-      ]
-    },
-    {
-      "ID": 10300315,
-      "Entries": [
-        "Alright, a meagre lesson it might have been, but perhaps you'll glean something from it."
-      ]
-    },
-    {
-      "ID": 10300316,
-      "Entries": [
-        "Worry not, that's all I've a mind to teach right now. Thanks for letting me bend your ear."
-      ]
-    },
-    {
-      "ID": 10300317,
-      "Entries": [
-        "Hah hah..."
-      ]
-    },
-    {
       "ID": 10300400,
       "Entries": [
         "Are you sure of this?"
@@ -3281,30 +2999,6 @@
       "ID": 10300405,
       "Entries": [
         "That settles it—now I'm sure. Take this, would you?"
-      ]
-    },
-    {
-      "ID": 10300406,
-      "Entries": [
-        "You said you were on the fence. Well, my advice has changed."
-      ]
-    },
-    {
-      "ID": 10300407,
-      "Entries": [
-        "I say refuse the choice."
-      ]
-    },
-    {
-      "ID": 10300408,
-      "Entries": [
-        "Who says that when you choose one path, you forego the other?"
-      ]
-    },
-    {
-      "ID": 10300409,
-      "Entries": [
-        "It's your journey. Take all the paths you like."
       ]
     },
     {
@@ -3356,48 +3050,6 @@
       ]
     },
     {
-      "ID": 10300501,
-      "Entries": [
-        "Hm? Perfect timing, actually. Have a seat."
-      ]
-    },
-    {
-      "ID": 10300502,
-      "Entries": [
-        "Look at you! A glorious knight, hailing from some far-away kingdom."
-      ]
-    },
-    {
-      "ID": 10300503,
-      "Entries": [
-        "Do I have a surprise for you. Close your eyes."
-      ]
-    },
-    {
-      "ID": 10300504,
-      "Entries": [
-        "Ta-dah!"
-      ]
-    },
-    {
-      "ID": 10300505,
-      "Entries": [
-        "Found this beauty just lying about, and thought I'd patch it up."
-      ]
-    },
-    {
-      "ID": 10300506,
-      "Entries": [
-        "And now it's all yours! Every knight needs a helmet!"
-      ]
-    },
-    {
-      "ID": 10300507,
-      "Entries": [
-        "..."
-      ]
-    },
-    {
       "ID": 10300510,
       "Entries": [
         "Look at you! A glorious knight, hailing from some far-away kingdom."
@@ -3412,7 +3064,7 @@
     {
       "ID": 10300600,
       "Entries": [
-        "No need to give me the eye, brother."
+        ""
       ]
     },
     {
@@ -3425,12 +3077,6 @@
       "ID": 10300602,
       "Entries": [
         "And now it's all yours! Every knight needs a helmet!"
-      ]
-    },
-    {
-      "ID": 10300603,
-      "Entries": [
-        "Helloooo?"
       ]
     },
     {
@@ -3676,7 +3322,7 @@
     {
       "ID": 10302101,
       "Entries": [
-        "(hearty laugh)"
+        "Hah hah..."
       ]
     },
     {
@@ -3736,7 +3382,7 @@
     {
       "ID": 10302900,
       "Entries": [
-        "The night is nothing to be afraid of. "
+        "The night is nothing to be afraid of."
       ]
     },
     {
@@ -4160,24 +3806,6 @@
       ]
     },
     {
-      "ID": 10501305,
-      "Entries": [
-        "..."
-      ]
-    },
-    {
-      "ID": 10501306,
-      "Entries": [
-        "This might come as a surprise to the others..."
-      ]
-    },
-    {
-      "ID": 10501307,
-      "Entries": [
-        "So I shall wait without. Till next we meet..."
-      ]
-    },
-    {
       "ID": 10501600,
       "Entries": [
         "..."
@@ -4235,36 +3863,6 @@
       "ID": 10501800,
       "Entries": [
         "..."
-      ]
-    },
-    {
-      "ID": 10501801,
-      "Entries": [
-        "What is thy purpose?"
-      ]
-    },
-    {
-      "ID": 10501802,
-      "Entries": [
-        "..."
-      ]
-    },
-    {
-      "ID": 10501803,
-      "Entries": [
-        "I see..."
-      ]
-    },
-    {
-      "ID": 10501804,
-      "Entries": [
-        "I will do my utmost to make amends..."
-      ]
-    },
-    {
-      "ID": 10501805,
-      "Entries": [
-        "My thanks, good sir knight."
       ]
     },
     {
@@ -4383,12 +3981,6 @@
     },
     {
       "ID": 10502203,
-      "Entries": [
-        "For the fortitude required is a rare thing indeed..."
-      ]
-    },
-    {
-      "ID": 10502204,
       "Entries": [
         "For the fortitude required is a rare thing indeed..."
       ]
@@ -4520,36 +4112,6 @@
       ]
     },
     {
-      "ID": 10502900,
-      "Entries": [
-        "Remembrest thou the charm thou wert given?"
-      ]
-    },
-    {
-      "ID": 10502901,
-      "Entries": [
-        "Indeed. The cause..."
-      ]
-    },
-    {
-      "ID": 10502902,
-      "Entries": [
-        "was immaturity. A wish became a curse..."
-      ]
-    },
-    {
-      "ID": 10502903,
-      "Entries": [
-        "I doubt there was any malice involved, but..."
-      ]
-    },
-    {
-      "ID": 10502904,
-      "Entries": [
-        "If it had happened in the midst of battle...danger would have abounded."
-      ]
-    },
-    {
       "ID": 10503000,
       "Entries": [
         "A demon..."
@@ -4601,12 +4163,6 @@
       "ID": 10503300,
       "Entries": [
         "Close thine eyes..."
-      ]
-    },
-    {
-      "ID": 10503301,
-      "Entries": [
-        "Find the thing of which thou art afeared."
       ]
     },
     {
@@ -4700,12 +4256,6 @@
       ]
     },
     {
-      "ID": 10504101,
-      "Entries": [
-        "Have our mechanical menial aid thee in finding the answer."
-      ]
-    },
-    {
       "ID": 10504200,
       "Entries": [
         "Protection alone will not grant salvation."
@@ -4757,12 +4307,6 @@
       "ID": 10504900,
       "Entries": [
         "Close thine eyes..."
-      ]
-    },
-    {
-      "ID": 10504901,
-      "Entries": [
-        "Find the thing thou hast hidden..."
       ]
     },
     {
@@ -4853,12 +4397,6 @@
       "ID": 10505900,
       "Entries": [
         "I believe myself skilled...in my craft..."
-      ]
-    },
-    {
-      "ID": 10505901,
-      "Entries": [
-        "Perhaps thou mightst furnish me with a staff?"
       ]
     },
     {
@@ -5018,12 +4556,6 @@
       ]
     },
     {
-      "ID": 10601304,
-      "Entries": [
-        "That's just the kind of place this is."
-      ]
-    },
-    {
       "ID": 10601400,
       "Entries": [
         "You'll come face to face with that old foe of yours soon enough."
@@ -5049,12 +4581,6 @@
     },
     {
       "ID": 10601502,
-      "Entries": [
-        "but whatever you do, don't get cocky."
-      ]
-    },
-    {
-      "ID": 10601503,
       "Entries": [
         "but whatever you do, don't get cocky."
       ]
@@ -5163,18 +4689,6 @@
     },
     {
       "ID": 10602202,
-      "Entries": [
-        "Well done. You've proved you are peerless in your strength."
-      ]
-    },
-    {
-      "ID": 10602203,
-      "Entries": [
-        "Maybe now isn't the time, but..."
-      ]
-    },
-    {
-      "ID": 10602204,
       "Entries": [
         "Well done. You've proved you are peerless in your strength."
       ]
@@ -5408,12 +4922,6 @@
       ]
     },
     {
-      "ID": 10700404,
-      "Entries": [
-        "Did you ever see it for yourself?"
-      ]
-    },
-    {
       "ID": 10700500,
       "Entries": [
         "What a sight it must have been."
@@ -5498,30 +5006,6 @@
       ]
     },
     {
-      "ID": 10700700,
-      "Entries": [
-        "I must say, where we are headed there shall be no such tree."
-      ]
-    },
-    {
-      "ID": 10700701,
-      "Entries": [
-        "But if we can repulse the Night, it may yet be restored."
-      ]
-    },
-    {
-      "ID": 10700702,
-      "Entries": [
-        "Oh, I should mention..."
-      ]
-    },
-    {
-      "ID": 10700703,
-      "Entries": [
-        "The Priestess was looking for you. Perhaps she wants a word."
-      ]
-    },
-    {
       "ID": 10700800,
       "Entries": [
         "How are you feeling?"
@@ -5564,12 +5048,6 @@
       ]
     },
     {
-      "ID": 10700807,
-      "Entries": [
-        "I may be old-fashioned, but actions speak louder than words. What do you say?"
-      ]
-    },
-    {
       "ID": 10700900,
       "Entries": [
         "Will you hear my request?"
@@ -5607,12 +5085,6 @@
     },
     {
       "ID": 10701005,
-      "Entries": [
-        "I leave it in your hands."
-      ]
-    },
-    {
-      "ID": 10701006,
       "Entries": [
         "I leave it in your hands."
       ]
@@ -5834,19 +5306,7 @@
       ]
     },
     {
-      "ID": 10800104,
-      "Entries": [
-        "...We'll need more room."
-      ]
-    },
-    {
       "ID": 10800200,
-      "Entries": [
-        "Shall we?"
-      ]
-    },
-    {
-      "ID": 10800201,
       "Entries": [
         "Shall we?"
       ]
@@ -5879,42 +5339,6 @@
       "ID": 10800500,
       "Entries": [
         "I yield."
-      ]
-    },
-    {
-      "ID": 10800501,
-      "Entries": [
-        "Do you see now? You are strong."
-      ]
-    },
-    {
-      "ID": 10800502,
-      "Entries": [
-        "And only the strong can wield true power. The weak have no such privilege."
-      ]
-    },
-    {
-      "ID": 10800503,
-      "Entries": [
-        "But with strength comes the burden of duty."
-      ]
-    },
-    {
-      "ID": 10800504,
-      "Entries": [
-        "Did it never occur to you that this is precisely why you are here?"
-      ]
-    },
-    {
-      "ID": 10800505,
-      "Entries": [
-        "Take this, if you understand me."
-      ]
-    },
-    {
-      "ID": 10800506,
-      "Entries": [
-        "Now. Not a word of this to anyone."
       ]
     },
     {
@@ -6236,61 +5660,61 @@
       ]
     },
     {
-      "ID": 10900100,
-      "Entries": [
-        "The Dreglord..."
-      ]
-    },
-    {
-      "ID": 10900101,
-      "Entries": [
-        "Truth be told, we know very little."
-      ]
-    },
-    {
-      "ID": 10900102,
-      "Entries": [
-        "Only that this threat, this distortion, is distinct from the Nightlord."
-      ]
-    },
-    {
-      "ID": 10900200,
+      "ID": 10900103,
       "Entries": [
         "Even in its nascent state, we could not defeat it."
       ]
     },
     {
-      "ID": 10900201,
+      "ID": 10900104,
       "Entries": [
         "But we must not let it roam free."
       ]
     },
     {
-      "ID": 10900202,
+      "ID": 10900105,
       "Entries": [
         "It seems the world faces more than one threat."
       ]
     },
     {
-      "ID": 10900300,
+      "ID": 10900200,
+      "Entries": [
+        "The Dreglord..."
+      ]
+    },
+    {
+      "ID": 10900201,
+      "Entries": [
+        "Truth be told, we know very little."
+      ]
+    },
+    {
+      "ID": 10900202,
+      "Entries": [
+        "Only that this threat, this distortion, is distinct from the Nightlord."
+      ]
+    },
+    {
+      "ID": 10900203,
       "Entries": [
         "It is only because of its nascent state that we were able to defeat it."
       ]
     },
     {
-      "ID": 10900301,
+      "ID": 10900204,
       "Entries": [
         "This is a fragile victory at best."
       ]
     },
     {
-      "ID": 10900302,
+      "ID": 10900205,
       "Entries": [
         "To achieve a lasting peace, we must bring an end to the Night."
       ]
     },
     {
-      "ID": 10900303,
+      "ID": 10900206,
       "Entries": [
         "It seems the world faces more than one threat."
       ]
@@ -6326,37 +5750,37 @@
       ]
     },
     {
-      "ID": 10900501,
+      "ID": 10900510,
       "Entries": [
         "A mass of the flesh, blood, and souls of the fallen."
       ]
     },
     {
-      "ID": 10900502,
+      "ID": 10900511,
       "Entries": [
         "Bound together in the form of the Dreglord, whose stature rivals even that of the Nightlord."
       ]
     },
     {
-      "ID": 10900503,
+      "ID": 10900512,
       "Entries": [
         "Had you not heard? Of the odious thirst for vengeance, the determination of a wounded soul."
       ]
     },
     {
-      "ID": 10900504,
+      "ID": 10900513,
       "Entries": [
         "When morality and reason are surely cast aside."
       ]
     },
     {
-      "ID": 10900505,
+      "ID": 10900514,
       "Entries": [
         "And such a force, driven by a singular will, does not rest until it is made whole."
       ]
     },
     {
-      "ID": 10900506,
+      "ID": 10900515,
       "Entries": [
         "We must bring an end to it ourselves."
       ]
@@ -6518,21 +5942,21 @@
       ]
     },
     {
-      "ID": 10902100,
+      "ID": 10902102,
+      "Entries": [
+        "No matter what."
+      ]
+    },
+    {
+      "ID": 10902110,
       "Entries": [
         "Now I've set eyes upon things that were only known to me in books."
       ]
     },
     {
-      "ID": 10902101,
+      "ID": 10902111,
       "Entries": [
         "As our forebears did for us, I will share their stories with those who shall follow."
-      ]
-    },
-    {
-      "ID": 10902102,
-      "Entries": [
-        "No matter what."
       ]
     },
     {
@@ -6586,41 +6010,47 @@
     {
       "ID": 10910000,
       "Entries": [
-        "We are equals, and as such I cannot force you, but, would you indulge me in something?"
+        "Why, yes, the great noise caught my attention."
       ]
     },
     {
       "ID": 10910001,
       "Entries": [
+        "We are equals, and as such I cannot force you, but, would you indulge me in something?"
+      ]
+    },
+    {
+      "ID": 10910010,
+      "Entries": [
         "I intend to leave the Roundtable Hold."
       ]
     },
     {
-      "ID": 10910002,
+      "ID": 10910011,
       "Entries": [
         "I've located the thing I am looking for. It is not far, in fact."
       ]
     },
     {
-      "ID": 10910003,
+      "ID": 10910012,
       "Entries": [
         "But I do not wish to be an imposition. I need you to tell everyone..."
       ]
     },
     {
-      "ID": 10910004,
+      "ID": 10910013,
       "Entries": [
         "That I died...and did not reawaken."
       ]
     },
     {
-      "ID": 10910005,
+      "ID": 10910014,
       "Entries": [
         "To lend weight to your claim, I give you this."
       ]
     },
     {
-      "ID": 10910006,
+      "ID": 10910015,
       "Entries": [
         "You are the only one I dare depend on."
       ]
@@ -6668,31 +6098,31 @@
       ]
     },
     {
-      "ID": 10910302,
+      "ID": 10910310,
       "Entries": [
         "This is a crystal found below Limveld."
       ]
     },
     {
-      "ID": 10910303,
+      "ID": 10910311,
       "Entries": [
         "A special object that yields power by catalysing one's thoughts."
       ]
     },
     {
-      "ID": 10910304,
+      "ID": 10910312,
       "Entries": [
         "Most of them were ruined through exposure to the Night,"
       ]
     },
     {
-      "ID": 10910305,
+      "ID": 10910313,
       "Entries": [
         "but this crystal is stabilised, churned by Night to a state of equilibrium."
       ]
     },
     {
-      "ID": 10910306,
+      "ID": 10910314,
       "Entries": [
         "It's not much, but it will sate your thirst."
       ]
@@ -6716,19 +6146,19 @@
       ]
     },
     {
-      "ID": 10910403,
+      "ID": 10910410,
       "Entries": [
         "Please, stand witness to our legacy."
       ]
     },
     {
-      "ID": 10910404,
+      "ID": 10910420,
       "Entries": [
         "I don't know when the chance will come. But one day my kind will ask you for answers."
       ]
     },
     {
-      "ID": 10910405,
+      "ID": 10910421,
       "Entries": [
         "You are the only one I dare depend on."
       ]
@@ -6758,15 +6188,9 @@
       ]
     },
     {
-      "ID": 10910700,
+      "ID": 10910710,
       "Entries": [
         "..."
-      ]
-    },
-    {
-      "ID": 10910800,
-      "Entries": [
-        "Why, yes, the great noise caught my attention."
       ]
     },
     {
@@ -6797,6 +6221,12 @@
       "ID": 10911100,
       "Entries": [
         "..."
+      ]
+    },
+    {
+      "ID": 10911200,
+      "Entries": [
+        "The odious thirst of vengeance..."
       ]
     },
     {
@@ -6848,31 +6278,31 @@
       ]
     },
     {
-      "ID": 11000201,
+      "ID": 11000210,
       "Entries": [
         "It is...a great heap of cast-away things. The aftermath of the long night..."
       ]
     },
     {
-      "ID": 11000202,
+      "ID": 11000211,
       "Entries": [
         "In this land now spilling over with rubble and dead."
       ]
     },
     {
-      "ID": 11000203,
+      "ID": 11000212,
       "Entries": [
         "But my opinion counts for little in this matter."
       ]
     },
     {
-      "ID": 11000204,
+      "ID": 11000213,
       "Entries": [
         "The corpses are piled high—a truth undeniable. We are duty-bound to act."
       ]
     },
     {
-      "ID": 11000205,
+      "ID": 11000214,
       "Entries": [
         "There is no other choice."
       ]
@@ -7052,7 +6482,7 @@
       ]
     },
     {
-      "ID": 11002101,
+      "ID": 11002100,
       "Entries": [
         "I wonder if I could attain your calm, if I were to take up the brush..."
       ]
@@ -7079,12 +6509,6 @@
       "ID": 11010102,
       "Entries": [
         "..."
-      ]
-    },
-    {
-      "ID": 11010103,
-      "Entries": [
-        "I don't like this..."
       ]
     },
     {
@@ -7118,12 +6542,6 @@
       ]
     },
     {
-      "ID": 11020400,
-      "Entries": [
-        "..."
-      ]
-    },
-    {
       "ID": 11020500,
       "Entries": [
         "Yes? What is it...?"
@@ -7142,12 +6560,6 @@
       ]
     },
     {
-      "ID": 11020602,
-      "Entries": [
-        "But... I've never really made a promise before..."
-      ]
-    },
-    {
       "ID": 11020700,
       "Entries": [
         "You must have your reasons..."
@@ -7157,12 +6569,6 @@
       "ID": 11020701,
       "Entries": [
         "I shall trust in your judgement."
-      ]
-    },
-    {
-      "ID": 11020702,
-      "Entries": [
-        "Though... I've never really made a promise before..."
       ]
     },
     {
@@ -7180,11 +6586,17 @@
     {
       "ID": 11020802,
       "Entries": [
-        "I didn't think for a moment that revival was on the cards..."
+        "..."
       ]
     },
     {
       "ID": 11020803,
+      "Entries": [
+        "I didn't think for a moment that revival was on the cards..."
+      ]
+    },
+    {
+      "ID": 11020804,
       "Entries": [
         "But never mind that—I don't need to hold on to this anymore. Please, have it back."
       ]
@@ -7232,21 +6644,21 @@
       ]
     },
     {
-      "ID": 11021501,
+      "ID": 11021510,
       "Entries": [
         "Very well..."
-      ]
-    },
-    {
-      "ID": 11021600,
-      "Entries": [
-        "This time I will ensure my promise is kept."
       ]
     },
     {
       "ID": 11021601,
       "Entries": [
         "Perhaps you should resume your work?"
+      ]
+    },
+    {
+      "ID": 11021610,
+      "Entries": [
+        "This time I will ensure my promise is kept."
       ]
     },
     {
@@ -7286,55 +6698,37 @@
       ]
     },
     {
-      "ID": 20990000,
-      "Entries": [
-        "sex"
-      ]
-    },
-    {
-      "ID": 20990001,
-      "Entries": [
-        "quīnque"
-      ]
-    },
-    {
-      "ID": 20990002,
-      "Entries": [
-        "quattuor"
-      ]
-    },
-    {
-      "ID": 20990003,
+      "ID": 20990030,
       "Entries": [
         "trēs"
       ]
     },
     {
-      "ID": 20990004,
+      "ID": 20990040,
       "Entries": [
         "duo"
       ]
     },
     {
-      "ID": 20990005,
+      "ID": 20990050,
       "Entries": [
         "ūnus"
       ]
     },
     {
-      "ID": 20990006,
+      "ID": 20990060,
       "Entries": [
         "nihil"
       ]
     },
     {
-      "ID": 20990007,
+      "ID": 20990070,
       "Entries": [
         "nihil"
       ]
     },
     {
-      "ID": 20990008,
+      "ID": 20990080,
       "Entries": [
         "nihil"
       ]
@@ -7622,18 +7016,6 @@
       ]
     },
     {
-      "ID": 30900706,
-      "Entries": [
-        "But the Priestess has accepted her fate."
-      ]
-    },
-    {
-      "ID": 30900707,
-      "Entries": [
-        "As I'm sure you well know, having fought by her side all this time."
-      ]
-    },
-    {
       "ID": 30900800,
       "Entries": [
         "It appears you have unearthed some old history."
@@ -7667,18 +7049,6 @@
       "ID": 30900805,
       "Entries": [
         "In a ritual required to draw the minds of their descendants here."
-      ]
-    },
-    {
-      "ID": 30900808,
-      "Entries": [
-        "...Oh, and one more thing."
-      ]
-    },
-    {
-      "ID": 30900809,
-      "Entries": [
-        "The Priestess was here long before the rest of you."
       ]
     },
     {
@@ -7791,18 +7161,6 @@
     },
     {
       "ID": 30900903,
-      "Entries": [
-        "Who provided you with the food in question?"
-      ]
-    },
-    {
-      "ID": 30900905,
-      "Entries": [
-        "I believe you said you were an orphan."
-      ]
-    },
-    {
-      "ID": 30900906,
       "Entries": [
         "Who provided you with the food in question?"
       ]
@@ -8078,36 +7436,6 @@
       ]
     },
     {
-      "ID": 30902205,
-      "Entries": [
-        "..."
-      ]
-    },
-    {
-      "ID": 30902206,
-      "Entries": [
-        "Good champion, we must pursue this further."
-      ]
-    },
-    {
-      "ID": 30902207,
-      "Entries": [
-        "We must determine the origin of the curse, to keep history from repeating itself."
-      ]
-    },
-    {
-      "ID": 30902208,
-      "Entries": [
-        "The books might yet be found in the Lands Between."
-      ]
-    },
-    {
-      "ID": 30902209,
-      "Entries": [
-        "And I too would be most gladdened if you were to find them."
-      ]
-    },
-    {
       "ID": 30902210,
       "Entries": [
         "..."
@@ -8180,24 +7508,6 @@
       ]
     },
     {
-      "ID": 30902405,
-      "Entries": [
-        "The terrible thing is a product of war."
-      ]
-    },
-    {
-      "ID": 30902406,
-      "Entries": [
-        "However, the origin of the curse is still frustratingly opaque."
-      ]
-    },
-    {
-      "ID": 30902407,
-      "Entries": [
-        "Perhaps we shall discover it in the remaining volume..."
-      ]
-    },
-    {
       "ID": 30902500,
       "Entries": [
         "One volume remains."
@@ -8205,12 +7515,6 @@
     },
     {
       "ID": 30902501,
-      "Entries": [
-        "Brave champion. Should you retrieve the book, do be so kind as to inform me."
-      ]
-    },
-    {
-      "ID": 30902502,
       "Entries": [
         "Brave champion. Should you retrieve the book, do be so kind as to inform me."
       ]
@@ -8247,24 +7551,6 @@
     },
     {
       "ID": 30902702,
-      "Entries": [
-        "You have my deepest gratitude for your efforts, brave champion."
-      ]
-    },
-    {
-      "ID": 30902708,
-      "Entries": [
-        "It appears the curse itself was brought from afar."
-      ]
-    },
-    {
-      "ID": 30902712,
-      "Entries": [
-        "Well, even if we weren't able to unravel the mystery to its fullest extent..."
-      ]
-    },
-    {
-      "ID": 30902713,
       "Entries": [
         "You have my deepest gratitude for your efforts, brave champion."
       ]
@@ -8330,12 +7616,6 @@
       ]
     },
     {
-      "ID": 30902810,
-      "Entries": [
-        "Take the path that does not lead to regret."
-      ]
-    },
-    {
       "ID": 30902900,
       "Entries": [
         "I see you've made your choice."
@@ -8345,42 +7625,6 @@
       "ID": 30902901,
       "Entries": [
         "I am certain you will not regret it."
-      ]
-    },
-    {
-      "ID": 30902902,
-      "Entries": [
-        "Brave champion, please take this."
-      ]
-    },
-    {
-      "ID": 30902903,
-      "Entries": [
-        "I found it discarded, but I've given it a nice polish."
-      ]
-    },
-    {
-      "ID": 30902904,
-      "Entries": [
-        "The new path you have chosen is of your own making."
-      ]
-    },
-    {
-      "ID": 30902905,
-      "Entries": [
-        "Your values do not emanate from a common good. They are your own innate beliefs."
-      ]
-    },
-    {
-      "ID": 30902906,
-      "Entries": [
-        "Stay true to them, and I have no doubt you will dispatch the dire Lord you face."
-      ]
-    },
-    {
-      "ID": 30902907,
-      "Entries": [
-        "I pray for your success in battle."
       ]
     },
     {
@@ -8501,24 +7745,6 @@
       "ID": 30903300,
       "Entries": [
         "Please. Tell me how to help."
-      ]
-    },
-    {
-      "ID": 30903301,
-      "Entries": [
-        "...You're looking for someone close to you?"
-      ]
-    },
-    {
-      "ID": 30903302,
-      "Entries": [
-        "Yes, of course. I will assist in whatever capacity I am able."
-      ]
-    },
-    {
-      "ID": 30903303,
-      "Entries": [
-        "What shall I do first?"
       ]
     },
     {
@@ -9056,12 +8282,6 @@
       ]
     },
     {
-      "ID": 30906707,
-      "Entries": [
-        "My lady, I shall accompany you till the very end."
-      ]
-    },
-    {
       "ID": 30906800,
       "Entries": [
         "What have we here...?"
@@ -9083,36 +8303,6 @@
       "ID": 30906803,
       "Entries": [
         "It is much too cruel. Much too cruel..."
-      ]
-    },
-    {
-      "ID": 30906804,
-      "Entries": [
-        "It is much too cruel. Much too cruel..."
-      ]
-    },
-    {
-      "ID": 30906805,
-      "Entries": [
-        "..."
-      ]
-    },
-    {
-      "ID": 30906806,
-      "Entries": [
-        "Apologies for my petulance just now."
-      ]
-    },
-    {
-      "ID": 30906807,
-      "Entries": [
-        "I should respect your wishes, of course."
-      ]
-    },
-    {
-      "ID": 30906808,
-      "Entries": [
-        "I will see the task is done."
       ]
     },
     {
@@ -9218,18 +8408,6 @@
       ]
     },
     {
-      "ID": 30907206,
-      "Entries": [
-        "In the midst of all this chaos, I wonder who it might pit you against..."
-      ]
-    },
-    {
-      "ID": 30907207,
-      "Entries": [
-        "I must admit, my heart is quite aflutter!"
-      ]
-    },
-    {
       "ID": 30907216,
       "Entries": [
         "In the midst of all this chaos, I wonder who it might pit you against..."
@@ -9311,42 +8489,6 @@
       "ID": 30907702,
       "Entries": [
         "Have a look for yourself."
-      ]
-    },
-    {
-      "ID": 30907703,
-      "Entries": [
-        "\"The White Horn ruled the west waters, while the Black Claw presided over the eastern seas.\""
-      ]
-    },
-    {
-      "ID": 30907704,
-      "Entries": [
-        "The pattern of the braid is proof enough..."
-      ]
-    },
-    {
-      "ID": 30907705,
-      "Entries": [
-        "It is the mark of the very same White Horn."
-      ]
-    },
-    {
-      "ID": 30907706,
-      "Entries": [
-        "Which, if I'm not mistaken...is you!"
-      ]
-    },
-    {
-      "ID": 30907707,
-      "Entries": [
-        "You were searching for the Black Claw, were you not?"
-      ]
-    },
-    {
-      "ID": 30907708,
-      "Entries": [
-        "The ancient enemy with whom you could finally settle your business."
       ]
     },
     {
@@ -9495,12 +8637,6 @@
     },
     {
       "ID": 30908303,
-      "Entries": [
-        "You should take a look at the monument yourself..."
-      ]
-    },
-    {
-      "ID": 30908304,
       "Entries": [
         "You should take a look at the monument yourself..."
       ]
@@ -9740,18 +8876,6 @@
       ]
     },
     {
-      "ID": 30909400,
-      "Entries": [
-        "I have informed everyone who received a charm to dispose of it."
-      ]
-    },
-    {
-      "ID": 30909401,
-      "Entries": [
-        "There is nothing more to worry about."
-      ]
-    },
-    {
       "ID": 30909410,
       "Entries": [
         "I have informed everyone who received a charm to dispose of it."
@@ -9881,24 +9005,6 @@
       "ID": 30910102,
       "Entries": [
         "I shall begin forthwith. Though I warn you, it may take some time."
-      ]
-    },
-    {
-      "ID": 30910103,
-      "Entries": [
-        "Ah, now, while I have you..."
-      ]
-    },
-    {
-      "ID": 30910104,
-      "Entries": [
-        "If you need to keep track of the investigation, feel free to make use of the study."
-      ]
-    },
-    {
-      "ID": 30910105,
-      "Entries": [
-        "Always helps to have your mind in order, I say."
       ]
     },
     {
@@ -10076,54 +9182,6 @@
       ]
     },
     {
-      "ID": 30911202,
-      "Entries": [
-        "Oh...what's this?"
-      ]
-    },
-    {
-      "ID": 30911203,
-      "Entries": [
-        "Brave champion, perhaps you should take it."
-      ]
-    },
-    {
-      "ID": 30911204,
-      "Entries": [
-        "While unconscious, I had a dream."
-      ]
-    },
-    {
-      "ID": 30911205,
-      "Entries": [
-        "I was handed this...by the Nightlord."
-      ]
-    },
-    {
-      "ID": 30911206,
-      "Entries": [
-        "Well, I didn't see our foe, per se, but I know it to be true."
-      ]
-    },
-    {
-      "ID": 30911207,
-      "Entries": [
-        "I sense a great power within. Power enough to change a person's fate, I do believe."
-      ]
-    },
-    {
-      "ID": 30911208,
-      "Entries": [
-        "..."
-      ]
-    },
-    {
-      "ID": 30911209,
-      "Entries": [
-        "Perhaps we need to put all the parts together."
-      ]
-    },
-    {
       "ID": 30911210,
       "Entries": [
         "While unconscious, I had a dream."
@@ -10286,12 +9344,6 @@
       ]
     },
     {
-      "ID": 30911910,
-      "Entries": [
-        "There are whetstones to be found there, I'm certain."
-      ]
-    },
-    {
       "ID": 30912000,
       "Entries": [
         "Please, if anything strikes your fancy, consider it yours."
@@ -10400,12 +9452,6 @@
       ]
     },
     {
-      "ID": 30913304,
-      "Entries": [
-        "...Allow me to help you in paying your respects."
-      ]
-    },
-    {
       "ID": 30913400,
       "Entries": [
         "Brave champion, how would you like to preserve this scene upon a canvas?"
@@ -10449,18 +9495,6 @@
     },
     {
       "ID": 30913505,
-      "Entries": [
-        "Perhaps it is because I too reside in a frame inanimate."
-      ]
-    },
-    {
-      "ID": 30913506,
-      "Entries": [
-        "I wonder why I feel so strongly this must be true..."
-      ]
-    },
-    {
-      "ID": 30913507,
       "Entries": [
         "Perhaps it is because I too reside in a frame inanimate."
       ]
@@ -10934,12 +9968,6 @@
       ]
     },
     {
-      "ID": 30916904,
-      "Entries": [
-        "...Pardon me, I've said rather too much. Please, let's keep this amongst ourselves, shall we?"
-      ]
-    },
-    {
       "ID": 30917000,
       "Entries": [
         "The choice is yours, brave champion."
@@ -11144,19 +10172,19 @@
       ]
     },
     {
-      "ID": 30921901,
+      "ID": 30921910,
       "Entries": [
         "...I'm glad. I thought you might have gone plumb mad, brave champion."
       ]
     },
     {
-      "ID": 30921902,
+      "ID": 30921911,
       "Entries": [
         "But now all is well. I managed to get through to you. This is a place of safety."
       ]
     },
     {
-      "ID": 30921903,
+      "ID": 30921912,
       "Entries": [
         "Please, be at your leisure. I'll be over yonder, should you have any need of me."
       ]
@@ -11260,12 +10288,6 @@
     {
       "ID": 30922800,
       "Entries": [
-        "Very good, I'm glad to hear it."
-      ]
-    },
-    {
-      "ID": 30922801,
-      "Entries": [
         "Could it have been a cave-in? I'll check the other rooms."
       ]
     },
@@ -11330,24 +10352,6 @@
       ]
     },
     {
-      "ID": 31100802,
-      "Entries": [
-        "It might seem a little worse for wear, but trust me, it remains as potent as ever. It will protect you, my saviour."
-      ]
-    },
-    {
-      "ID": 31100803,
-      "Entries": [
-        "I shall share them out amongst your comrades later."
-      ]
-    },
-    {
-      "ID": 31100804,
-      "Entries": [
-        "Now please, do take a look at my wares."
-      ]
-    },
-    {
       "ID": 31100810,
       "Entries": [
         "It might seem a little worse for wear, but trust me, it remains as potent as ever. It will protect you, my saviour."
@@ -11372,12 +10376,6 @@
       ]
     },
     {
-      "ID": 31100901,
-      "Entries": [
-        "All you could ever need, at a fair price."
-      ]
-    },
-    {
       "ID": 31100902,
       "Entries": [
         "All you could ever need, at a fair price."
@@ -11390,12 +10388,6 @@
       ]
     },
     {
-      "ID": 31101001,
-      "Entries": [
-        "Very good. You have...exquisite taste... Hee..."
-      ]
-    },
-    {
       "ID": 31101002,
       "Entries": [
         "Very good. You have...exquisite taste... Hee..."
@@ -11405,12 +10397,6 @@
       "ID": 31101100,
       "Entries": [
         "Sometimes merely browsing is nice, isn't it... Hee hee..."
-      ]
-    },
-    {
-      "ID": 31101101,
-      "Entries": [
-        "Come back at your convenience, I never stray far... Hee hee..."
       ]
     },
     {
@@ -11429,30 +10415,6 @@
       "ID": 31101300,
       "Entries": [
         "Argh! What are you doing!?"
-      ]
-    },
-    {
-      "ID": 31101302,
-      "Entries": [
-        "Why...my sav...iour?"
-      ]
-    },
-    {
-      "ID": 31101303,
-      "Entries": [
-        "Tell me...why...?"
-      ]
-    },
-    {
-      "ID": 31101304,
-      "Entries": [
-        "I don't want...to..."
-      ]
-    },
-    {
-      "ID": 31101305,
-      "Entries": [
-        "..."
       ]
     },
     {
@@ -11756,30 +10718,6 @@
       ]
     },
     {
-      "ID": 31400202,
-      "Entries": [
-        "...Didn't quite manage it, did we..."
-      ]
-    },
-    {
-      "ID": 31400203,
-      "Entries": [
-        "You should know as well as anyone, we can't be killed so easily..."
-      ]
-    },
-    {
-      "ID": 31400204,
-      "Entries": [
-        "Find an Edge of Order..."
-      ]
-    },
-    {
-      "ID": 31400205,
-      "Entries": [
-        "And I'll let you in on a little secret."
-      ]
-    },
-    {
       "ID": 31400210,
       "Entries": [
         "...Didn't quite manage it, did we..."
@@ -11867,54 +10805,6 @@
       "ID": 31400701,
       "Entries": [
         "..."
-      ]
-    },
-    {
-      "ID": 31400702,
-      "Entries": [
-        "I-I can feel it... I'm certain...this is the real thing."
-      ]
-    },
-    {
-      "ID": 31400703,
-      "Entries": [
-        "I'll tell you what you want to know..."
-      ]
-    },
-    {
-      "ID": 31400704,
-      "Entries": [
-        "You and I...all of us...are already dead. But our curse does not allow us...to rest."
-      ]
-    },
-    {
-      "ID": 31400705,
-      "Entries": [
-        "As Those Who Live in Death... We could not rest until the Nightlord was defeated..."
-      ]
-    },
-    {
-      "ID": 31400706,
-      "Entries": [
-        "Battle...was not suffering...but pleasure...until..."
-      ]
-    },
-    {
-      "ID": 31400707,
-      "Entries": [
-        "You have undergone...the same... You have...the same eyes."
-      ]
-    },
-    {
-      "ID": 31400708,
-      "Entries": [
-        "What...will you do?"
-      ]
-    },
-    {
-      "ID": 31400709,
-      "Entries": [
-        "My heart...I finally feel...it beat...its last..."
       ]
     },
     {
@@ -12110,45 +11000,9 @@
       ]
     },
     {
-      "ID": 91757001,
-      "Entries": [
-        "Half-wit."
-      ]
-    },
-    {
-      "ID": 91757002,
-      "Entries": [
-        "Unwise."
-      ]
-    },
-    {
-      "ID": 91757003,
-      "Entries": [
-        "Cower."
-      ]
-    },
-    {
       "ID": 91757010,
       "Entries": [
         "Half-wit."
-      ]
-    },
-    {
-      "ID": 91757011,
-      "Entries": [
-        "You shall know struggle."
-      ]
-    },
-    {
-      "ID": 91757012,
-      "Entries": [
-        "I have your measure."
-      ]
-    },
-    {
-      "ID": 91757013,
-      "Entries": [
-        "Have you the mettle?"
       ]
     },
     {
@@ -12158,45 +11012,9 @@
       ]
     },
     {
-      "ID": 91757021,
-      "Entries": [
-        "A bargain shall be struck."
-      ]
-    },
-    {
-      "ID": 91757022,
-      "Entries": [
-        "The time is ripe."
-      ]
-    },
-    {
-      "ID": 91757023,
-      "Entries": [
-        "Decide, now."
-      ]
-    },
-    {
       "ID": 91757030,
       "Entries": [
         "Cower."
-      ]
-    },
-    {
-      "ID": 91757031,
-      "Entries": [
-        "The die is cast."
-      ]
-    },
-    {
-      "ID": 91757032,
-      "Entries": [
-        "Go forth."
-      ]
-    },
-    {
-      "ID": 91757033,
-      "Entries": [
-        "Wise."
       ]
     },
     {
