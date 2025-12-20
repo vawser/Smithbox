@@ -895,10 +895,16 @@ public class ResourceLocator
         }
 
         // PARTS Texture
-        if (texpath.Contains($"{sl}parts{sl}") || virtPath.StartsWith("parts"))
+        if (texpath.Contains($"{sl}parts{sl}"))
         {
             var splits = texpath.Split(sl);
             var partsId = splits[splits.Length - 4]; //! FIXME is this wrong?
+            return $@"parts/{partsId}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+        else if (virtPath.StartsWith("parts"))
+        {
+            var splits = virtPath.Split("/");
+            var partsId = splits[1];
             return $@"parts/{partsId}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
         }
 

@@ -11,9 +11,6 @@
 - Model Editor: apply proper transform inheritance for dummies/nodes
 - Model Editor: Add simple JSON export/import for elements of FLVER
 - Model Editor: Make the mesh entries use the sub-meshes properly
-- Model Editor: Fix part texture lookup (doesn't seem to apply them)
-- Model Editor: Fix property editing for the sub-classes (FaceSet, Texture, etc)
-- Model Editor: Fix part models for NR (not showing)
 
 - Param Editor: rethink how the Upgrader works, currently method is fragile and allows data loss
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
@@ -26,9 +23,10 @@
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
- 
-# TODO NOW
-
 - Texture Editor: adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
  (i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
 
+ 
+# TODO NOW
+
+- Model Editor: Fix property editing for the sub-classes (FaceSet, Texture, etc)
