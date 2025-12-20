@@ -104,7 +104,8 @@
 	
 	<sparringGroundsEventFlagId
 	AltName="Appearance Event Flag ID"
-	Wiki="Event flag that determines if skill will appear in Sparring Grounds/Visual Codex" />
+	Wiki="Event flag that determines if skill will appear in Sparring Grounds/Visual Codex" 
+	FlagAlias="" />
 	
 	<isRefRightArts
 	AltName="Use Right Skill"

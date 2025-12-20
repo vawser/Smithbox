@@ -238,7 +238,7 @@
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
     <disableParamReserve1 AltName="" Padding=""/>
     <disableParamReserve2 AltName="" Padding=""/>
-    <behaviorVariationId AltName="Behavior Variation ID" Wiki="Variation ID used when calculating the action ID." />
+    <behaviorVariationId AltName="Behavior Variation ID" Wiki="Variation ID used when calculating the action ID." ProjectEnum="BEHAVIOR_VARIATION" />
     <resistCorrectId_poison AltName="Resist Correction - Poison" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
     <nameId AltName="Name ID" Wiki="NPC Name Message Parameter ID" FmgRef="Title_Characters" />
     <turnVellocity AltName="Turn Velocity" Wiki="Rotational speed [degrees / second] that can turn in 1 second." />
