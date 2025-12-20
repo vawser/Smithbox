@@ -306,22 +306,22 @@ public class ModelSourceView
 
         if (modelListType is ModelListType.Character)
         {
-            checkedEntries = Project.Aliases[AliasType.Characters];
+            checkedEntries = Project.CommonData.Aliases[AliasType.Characters];
         }
 
         if (modelListType is ModelListType.Asset)
         {
-            checkedEntries = Project.Aliases[AliasType.Assets];
+            checkedEntries = Project.CommonData.Aliases[AliasType.Assets];
         }
 
         if (modelListType is ModelListType.Part)
         {
-            checkedEntries = Project.Aliases[AliasType.Parts];
+            checkedEntries = Project.CommonData.Aliases[AliasType.Parts];
         }
 
         if (modelListType is ModelListType.MapPiece)
         {
-            checkedEntries = Project.Aliases[AliasType.MapPieces];
+            checkedEntries = Project.CommonData.Aliases[AliasType.MapPieces];
         }
 
         if (checkedEntries.Any(e => e.ID == fileEntry.Filename))
@@ -339,22 +339,22 @@ public class ModelSourceView
 
             if (modelListType is ModelListType.Character)
             {
-                entries = Project.Aliases[AliasType.Characters];
+                entries = Project.CommonData.Aliases[AliasType.Characters];
             }
 
             if (modelListType is ModelListType.Asset)
             {
-                entries = Project.Aliases[AliasType.Assets];
+                entries = Project.CommonData.Aliases[AliasType.Assets];
             }
 
             if (modelListType is ModelListType.Part)
             {
-                entries = Project.Aliases[AliasType.Parts];
+                entries = Project.CommonData.Aliases[AliasType.Parts];
             }
 
             if (modelListType is ModelListType.MapPiece)
             {
-                entries = Project.Aliases[AliasType.MapPieces];
+                entries = Project.CommonData.Aliases[AliasType.MapPieces];
             }
 
             if (!newAlias)
@@ -382,28 +382,28 @@ public class ModelSourceView
 
             if (modelListType is ModelListType.Character)
             {
-                Project.Aliases[AliasType.Characters] = entries;
+                Project.CommonData.Aliases[AliasType.Characters] = entries;
 
                 ProjectAliasEditor.SaveIndividual(Project, AliasType.Characters);
             }
 
             if (modelListType is ModelListType.Asset)
             {
-                Project.Aliases[AliasType.Assets] = entries;
+                Project.CommonData.Aliases[AliasType.Assets] = entries;
 
                 ProjectAliasEditor.SaveIndividual(Project, AliasType.Assets);
             }
 
             if (modelListType is ModelListType.Part)
             {
-                Project.Aliases[AliasType.Parts] = entries;
+                Project.CommonData.Aliases[AliasType.Parts] = entries;
 
                 ProjectAliasEditor.SaveIndividual(Project, AliasType.Parts);
             }
 
             if (modelListType is ModelListType.MapPiece)
             {
-                Project.Aliases[AliasType.MapPieces] = entries;
+                Project.CommonData.Aliases[AliasType.MapPieces] = entries;
 
                 ProjectAliasEditor.SaveIndividual(Project, AliasType.MapPieces);
             }

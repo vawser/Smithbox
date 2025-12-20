@@ -190,7 +190,7 @@ public class UI
             try
             {
                 var filestring = File.ReadAllText(file);
-                var options = new JsonSerializerOptions();
+
                 Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.UI);
 
                 if (Current == null)
@@ -223,7 +223,7 @@ public class UI
             try
             {
                 var filestring = File.ReadAllText(file);
-                var options = new JsonSerializerOptions();
+
                 Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.UI);
 
                 if (Current == null)

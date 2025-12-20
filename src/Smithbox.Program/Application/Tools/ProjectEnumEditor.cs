@@ -25,7 +25,7 @@ public class ProjectEnumEditor
         if (TargetProject == null)
             return;
 
-        if (TargetProject.Aliases == null)
+        if (TargetProject.CommonData.Aliases == null)
             return;
 
         Display = true;
@@ -40,7 +40,7 @@ public class ProjectEnumEditor
         if (TargetProject == null)
             return;
 
-        if (TargetProject.Aliases == null)
+        if (TargetProject.CommonData.Aliases == null)
             return;
 
         var windowSize = DPI.GetWindowSize(BaseEditor._context);
@@ -121,7 +121,7 @@ public class ProjectEnumEditor
 
     private static void DisplayEnumEntries()
     {
-        foreach(var entry in TargetProject.ProjectEnums.List)
+        foreach(var entry in TargetProject.CommonData.ProjectEnums.List)
         {
             if (ImGui.Selectable($"{entry.Name}##enumEntry_{entry.Name}", entry == CurrentEnum))
             {
@@ -329,7 +329,7 @@ public class ProjectEnumEditor
         var projectFolder = Path.Join(TargetProject.ProjectPath, ".smithbox", "Project");
         var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
 
-        var json = JsonSerializer.Serialize(TargetProject.ProjectEnums, SmithboxSerializerContext.Default.ProjectEnumResource);
+        var json = JsonSerializer.Serialize(TargetProject.CommonData.ProjectEnums, SmithboxSerializerContext.Default.ProjectEnumResource);
 
         if (!Directory.Exists(projectFolder))
         {

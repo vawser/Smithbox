@@ -235,9 +235,9 @@ public partial class ParamTools
 
                 Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
 
-                if (Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).Any())
+                if (Editor.Project.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).Any())
                 {
-                    var targetGroup = Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
+                    var targetGroup = Editor.Project.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
 
                     if (targetGroup == null)
                         return;
@@ -279,10 +279,10 @@ public partial class ParamTools
 
         Param param = Editor.Project.ParamData.PrimaryBank.Params[paramName];
 
-        if (Editor.Project.CommutativeParamGroups.Groups == null)
+        if (Editor.Project.ParamData.CommutativeParamGroups.Groups == null)
             return false;
 
-        if (Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).Any())
+        if (Editor.Project.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).Any())
         {
             isValid = true;
         }
@@ -302,9 +302,9 @@ public partial class ParamTools
 
         Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
 
-        if (Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).Any())
+        if (Editor.Project.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).Any())
         {
-            var targetGroup = Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
+            var targetGroup = Editor.Project.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
 
             if (targetGroup == null)
                 return;

@@ -1,10 +1,11 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.GparamEditor;
 
-public class GparamEditorStub
+public class GparamEditorStub : IEditorStub
 {
     public Smithbox BaseEditor;
     public ProjectEntry Project;

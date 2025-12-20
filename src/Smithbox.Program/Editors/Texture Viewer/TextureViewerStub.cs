@@ -1,10 +1,11 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TextureViewerStub
+public class TextureViewerStub : IEditorStub
 {
     public Smithbox BaseEditor;
     public ProjectEntry Project;

@@ -23,7 +23,7 @@ public static class AliasHelper
 
     public static string GetAliasName(this ProjectEntry project, AliasType aliasType, string id)
     {
-        if (!project.Aliases.TryGetValue(aliasType, out var aliases)) return string.Empty;
+        if (!project.CommonData.Aliases.TryGetValue(aliasType, out var aliases)) return string.Empty;
         var alias = aliases.FirstOrDefault(e => e.ID == id);
         return alias?.Name ?? string.Empty;
     }
@@ -55,13 +55,13 @@ public static class AliasHelper
 
     public static string GetMapNameAlias(ProjectEntry project, string name)
     {
-        project.Aliases.TryGetValue(AliasType.MapNames, out var aliases);
+        project.CommonData.Aliases.TryGetValue(AliasType.MapNames, out var aliases);
         return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
 
     public static List<string> GetMapTags(ProjectEntry project, string name)
     {
-        project.Aliases.TryGetValue(AliasType.MapNames, out var aliases);
+        project.CommonData.Aliases.TryGetValue(AliasType.MapNames, out var aliases);
 
         var alias = aliases?.FirstOrDefault(e => e.ID == name);
         if (alias != null)
@@ -72,23 +72,23 @@ public static class AliasHelper
 
     public static string GetCharacterAlias(ProjectEntry project, string name)
     {
-        project.Aliases.TryGetValue(AliasType.Characters, out var aliases);
+        project.CommonData.Aliases.TryGetValue(AliasType.Characters, out var aliases);
         return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
     public static string GetAssetAlias(ProjectEntry project, string name)
     {
-        project.Aliases.TryGetValue(AliasType.Assets, out var aliases);
+        project.CommonData.Aliases.TryGetValue(AliasType.Assets, out var aliases);
         return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
 
     public static string GetPartAlias(ProjectEntry project, string name)
     {
-        project.Aliases.TryGetValue(AliasType.Parts, out var aliases);
+        project.CommonData.Aliases.TryGetValue(AliasType.Parts, out var aliases);
         return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
     public static string GetMapPieceAlias(ProjectEntry project, string name)
     {
-        project.Aliases.TryGetValue(AliasType.MapPieces, out var aliases);
+        project.CommonData.Aliases.TryGetValue(AliasType.MapPieces, out var aliases);
         return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
 
@@ -132,7 +132,7 @@ public static class AliasHelper
     // Gparam Editor
     public static string GetGparamAliasName(ProjectEntry project, string gparamName)
     {
-        if (!project.Aliases.TryGetValue(AliasType.Gparams, out var aliases)) return string.Empty;
+        if (!project.CommonData.Aliases.TryGetValue(AliasType.Gparams, out var aliases)) return string.Empty;
 
         var mPrefix = gparamName;
         var sPrefix = gparamName;

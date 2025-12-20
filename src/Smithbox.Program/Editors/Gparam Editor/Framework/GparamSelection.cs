@@ -8,6 +8,7 @@ namespace StudioCore.Editors.GparamEditor;
 public class GparamSelection
 {
     private GparamEditorScreen Editor;
+    private ProjectEntry Project;
 
     public FileDictionaryEntry SelectedFileEntry;
 
@@ -29,11 +30,10 @@ public class GparamSelection
     public bool SelectGparamGroup = false;
     public bool SelectGparamField = false;
 
-
-
-    public GparamSelection(GparamEditorScreen screen)
+    public GparamSelection(GparamEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
+        Editor = editor;
+        Project = project;
     }
 
     public bool CanAffectSelection()
@@ -94,10 +94,10 @@ public class GparamSelection
         ResetGparamFieldSelection();
         ResetGparamFieldValueSelection();
 
-        await Editor.Project.GparamData.PrimaryBank.LoadGraphicsParam(entry);
+        await Project.GparamData.PrimaryBank.LoadGraphicsParam(entry);
 
         SelectedFileEntry = entry;
-        var targetEntry = Editor.Project.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename
+        var targetEntry = Project.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename
          == entry.Filename);
 
         _selectedGparamKey = targetEntry.Key.Filename;

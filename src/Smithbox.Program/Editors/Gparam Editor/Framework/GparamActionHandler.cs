@@ -1,31 +1,33 @@
-﻿using StudioCore.Editors.Common;
+﻿using StudioCore.Application;
 
 namespace StudioCore.Editors.GparamEditor;
 
 public class GparamActionHandler
 {
-    private GparamEditorScreen Screen;
-    private ActionManager EditorActionManager;
+    private GparamEditorScreen Editor;
+    private ProjectEntry Project;
 
-    public GparamActionHandler(GparamEditorScreen screen)
+    public GparamActionHandler(GparamEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        EditorActionManager = screen.EditorActionManager;
+        Editor = editor;
+        Project = project;
     }
+
     public void DeleteValueRow()
     {
-        if (Screen.Selection.CanAffectSelection())
+        if (Editor.Selection.CanAffectSelection())
         {
-            var action = new GparamRemoveValueRow(Screen);
-            EditorActionManager.ExecuteAction(action);
+            var action = new GparamRemoveValueRow(Editor);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
     }
+
     public void DuplicateValueRow()
     {
-        if (Screen.Selection.CanAffectSelection())
+        if (Editor.Selection.CanAffectSelection())
         {
-            var action = new GparamDuplicateValueRow(Screen);
-            EditorActionManager.ExecuteAction(action);
+            var action = new GparamDuplicateValueRow(Editor);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
     }
 }

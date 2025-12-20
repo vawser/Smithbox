@@ -1,8 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -21,6 +24,9 @@ public class ModelData
     public FileDictionary CollisionFiles = new();
 
     public FileDictionary MapFiles = new();
+
+    public FormatResource FlverInformation;
+    public FormatEnum FlverEnums;
 
     public ModelData(Smithbox baseEditor, ProjectEntry project)
     {
@@ -42,6 +48,19 @@ public class ModelData
         SetupFileDictionaries();
 
         PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
+
+        // FLVER Information
+        Task<bool> flverInfoTask = SetupFlverInfo();
+        bool flverInfoResult = await flverInfoTask;
+
+        if (flverInfoResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Model Editor] Setup FLVER information.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Model Editor] Failed to setup FLVER information.");
+        }
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Setup();
@@ -250,5 +269,87 @@ public class ModelData
                 MapPieceFiles.Entries.Add(entry);
             }
         }
+    }
+
+    /// <summary>
+    /// Setup the FLVER information for this project
+    /// </summary>
+    /// <returns></returns>
+    public async Task<bool> SetupFlverInfo()
+    {
+        await Task.Yield();
+
+        FlverInformation = new();
+        FlverEnums = new();
+
+        // Information
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "FLVER");
+        var sourceFile = Path.Combine(sourceFolder, "Core.json");
+
+        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "FLVER");
+        var projectFile = Path.Combine(projectFolder, "Core.json");
+
+        var targetFile = sourceFile;
+
+        if (File.Exists(projectFile))
+        {
+            targetFile = projectFile;
+        }
+
+        if (File.Exists(targetFile))
+        {
+            try
+            {
+                var filestring = await File.ReadAllTextAsync(targetFile);
+
+                try
+                {
+                    FlverInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FLVER information: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the FLVER information: {targetFile}", LogLevel.Error, LogPriority.High, e);
+            }
+        }
+
+        // Enums
+        sourceFile = Path.Combine(sourceFolder, "Enums.json");
+
+        projectFile = Path.Combine(projectFolder, "Enums.json");
+
+        targetFile = sourceFile;
+
+        if (File.Exists(projectFile))
+        {
+            targetFile = projectFile;
+        }
+
+        if (File.Exists(targetFile))
+        {
+            try
+            {
+                var filestring = await File.ReadAllTextAsync(targetFile);
+
+                try
+                {
+                    FlverEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FLVER enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the FLVER enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
+            }
+        }
+
+        return true;
     }
 }

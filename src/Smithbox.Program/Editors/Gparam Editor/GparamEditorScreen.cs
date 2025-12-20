@@ -21,35 +21,34 @@ public class GparamEditorScreen : EditorScreen
     public GparamFilters Filters;
     public GparamContextMenu ContextMenu;
 
-    public GparamToolView ToolView;
-
     public GparamQuickEdit QuickEditHandler;
     public GparamCommandQueue CommandQueue;
 
-    public GparamFileListView FileList;
-    public GparamGroupListView GroupList;
-    public GparamFieldListView FieldList;
-    public GparamValueListView FieldValueList;
+    public GparamFileListView FileListView;
+    public GparamGroupListView GroupListView;
+    public GparamFieldListView FieldListView;
+    public GparamValueListView FieldValueListView;
+    public GparamToolView ToolView;
 
     public GparamEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
         Project = project;
 
-        Selection = new GparamSelection(this);
-        ActionHandler = new GparamActionHandler(this);
-        CommandQueue = new GparamCommandQueue(this);
-        Filters = new GparamFilters(this);
-        ContextMenu = new GparamContextMenu(this);
+        Selection = new GparamSelection(this, Project);
+        ActionHandler = new GparamActionHandler(this, Project);
+        CommandQueue = new GparamCommandQueue(this, Project);
+        Filters = new GparamFilters(this, Project);
+        ContextMenu = new GparamContextMenu(this, Project);
 
-        PropertyEditor = new GparamPropertyEditor(this);
-        ToolView = new GparamToolView(this);
-        QuickEditHandler = new GparamQuickEdit(this);
+        PropertyEditor = new GparamPropertyEditor(this, Project);
+        QuickEditHandler = new GparamQuickEdit(this, Project);
 
-        FileList = new GparamFileListView(this);
-        GroupList = new GparamGroupListView(this);
-        FieldList = new GparamFieldListView(this);
-        FieldValueList = new GparamValueListView(this);
+        FileListView = new GparamFileListView(this, Project);
+        GroupListView = new GparamGroupListView(this, Project);
+        FieldListView = new GparamFieldListView(this, Project);
+        FieldValueListView = new GparamValueListView(this, Project);
+        ToolView = new GparamToolView(this, Project);
     }
 
     public string EditorName => "Gparam Editor##GparamEditor";
@@ -93,19 +92,19 @@ public class GparamEditorScreen : EditorScreen
 
         if (CFG.Current.Interface_GparamEditor_FileList)
         {
-            FileList.Display();
+            FileListView.Display();
         }
         if (CFG.Current.Interface_GparamEditor_GroupList)
         {
-            GroupList.Display();
+            GroupListView.Display();
         }
         if (CFG.Current.Interface_GparamEditor_FieldList)
         {
-            FieldList.Display();
+            FieldListView.Display();
         }
         if (CFG.Current.Interface_GparamEditor_FieldValues)
         {
-            FieldValueList.Display();
+            FieldValueListView.Display();
         }
         if (CFG.Current.Interface_GparamEditor_ToolWindow)
         {

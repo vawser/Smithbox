@@ -499,7 +499,7 @@ public partial class ParamTools
 
             if(fieldMeta.ShowCharacterEnumList)
             {
-                foreach(var entry in Editor.Project.Aliases[AliasType.Characters])
+                foreach(var entry in Editor.Project.CommonData.Aliases[AliasType.Characters])
                 {
                     var text = entry.ID.Substring(1);
                     if (text == $"{targetCell.Value}")
@@ -512,7 +512,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowCutsceneEnumList)
             {
-                foreach (var entry in Editor.Project.Aliases[AliasType.Cutscenes])
+                foreach (var entry in Editor.Project.CommonData.Aliases[AliasType.Cutscenes])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -524,7 +524,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowFlagEnumList)
             {
-                foreach (var entry in Editor.Project.Aliases[AliasType.EventFlags])
+                foreach (var entry in Editor.Project.CommonData.Aliases[AliasType.EventFlags])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -536,7 +536,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowMovieEnumList)
             {
-                foreach (var entry in Editor.Project.Aliases[AliasType.Movies])
+                foreach (var entry in Editor.Project.CommonData.Aliases[AliasType.Movies])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -548,7 +548,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowParticleEnumList)
             {
-                foreach (var entry in Editor.Project.Aliases[AliasType.Particles])
+                foreach (var entry in Editor.Project.CommonData.Aliases[AliasType.Particles])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -560,7 +560,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowSoundEnumList)
             {
-                foreach (var entry in Editor.Project.Aliases[AliasType.Sounds])
+                foreach (var entry in Editor.Project.CommonData.Aliases[AliasType.Sounds])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {

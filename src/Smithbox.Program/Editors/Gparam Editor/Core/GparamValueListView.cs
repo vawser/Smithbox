@@ -8,27 +8,15 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamValueListView
 {
-    private GparamEditorScreen Screen;
-    private GparamFilters Filters;
-    private GparamSelection Selection;
-    private GparamContextMenu ContextMenu;
+    private GparamEditorScreen Editor;
+    private ProjectEntry Project;
 
     private bool[] displayTruth;
 
-    public GparamValueListView(GparamEditorScreen screen)
+    public GparamValueListView(GparamEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Filters = screen.Filters;
-        Selection = screen.Selection;
-        ContextMenu = screen.ContextMenu;
-    }
-
-    /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -37,13 +25,13 @@ public class GparamValueListView
     public void Display()
     {
         ImGui.Begin("Values##GparamValues");
-        Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
+        Editor.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
 
-        Filters.DisplayFieldValueFilterSearch();
+        Editor.Filters.DisplayFieldValueFilterSearch();
 
-        if (Selection.IsGparamFieldSelected())
+        if (Editor.Selection.IsGparamFieldSelected())
         {
-            GPARAM.IField field = Selection.GetSelectedGparamField();
+            GPARAM.IField field = Editor.Selection.GetSelectedGparamField();
 
             ResetDisplayTruth(field);
 
@@ -51,7 +39,7 @@ public class GparamValueListView
 
             // ID
             ImGui.BeginChild("IdList##GparamPropertyIds");
-            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
+            Editor.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"ID");
             ImGui.Separator();
 
@@ -59,7 +47,7 @@ public class GparamValueListView
             {
                 GPARAM.IFieldValue entry = field.Values[i];
 
-                displayTruth[i] = Filters.IsFieldValueFilterMatch(entry.Id.ToString(), "");
+                displayTruth[i] = Editor.Filters.IsFieldValueFilterMatch(entry.Id.ToString(), "");
 
                 if (displayTruth[i])
                 {
@@ -72,7 +60,7 @@ public class GparamValueListView
             {
                 if (ImGui.Button("Add", DPI.StandardButtonSize))
                 {
-                    Screen.PropertyEditor.AddValueField(field);
+                    Editor.PropertyEditor.AddValueField(field);
                     ResetDisplayTruth(field);
                 }
             }
@@ -83,7 +71,7 @@ public class GparamValueListView
 
             // Time of Day
             ImGui.BeginChild("IdList##GparamTimeOfDay");
-            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
+            Editor.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"Time of Day");
             ImGui.Separator();
 
@@ -102,7 +90,7 @@ public class GparamValueListView
 
             // Value
             ImGui.BeginChild("ValueList##GparamPropertyValues");
-            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
+            Editor.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"Value");
             ImGui.Separator();
 
@@ -122,7 +110,7 @@ public class GparamValueListView
 
             // Value
             ImGui.BeginChild("InfoList##GparamPropertyInfo");
-            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
+            Editor.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"Information");
             ImGui.Separator();
 
@@ -188,12 +176,12 @@ public class GparamValueListView
 
         string name = value.Id.ToString();
 
-        if (ImGui.Selectable($"{name}##{index}", index == Selection._selectedFieldValueKey))
+        if (ImGui.Selectable($"{name}##{index}", index == Editor.Selection._selectedFieldValueKey))
         {
-            Selection.SetGparamFieldValue(index, value);
+            Editor.Selection.SetGparamFieldValue(index, value);
         }
 
-        ContextMenu.FieldValueContextMenu(index);
+        Editor.ContextMenu.FieldValueContextMenu(index);
     }
 
     /// <summary>
@@ -205,7 +193,7 @@ public class GparamValueListView
     public void GparamProperty_TimeOfDay(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
-        Screen.PropertyEditor.TimeOfDayField(index, field, value);
+        Editor.PropertyEditor.TimeOfDayField(index, field, value);
     }
 
     /// <summary>
@@ -217,7 +205,7 @@ public class GparamValueListView
     public void GparamProperty_Value(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
-        Screen.PropertyEditor.ValueField(index, field, value);
+        Editor.PropertyEditor.ValueField(index, field, value);
     }
 
     /// <summary>
@@ -228,7 +216,7 @@ public class GparamValueListView
     {
         ImGui.AlignTextToFramePadding();
 
-        string desc = FormatInformationUtils.GetReferenceDescription(Screen.Project.GparamInformation, Selection._selectedParamGroup.Key, Selection._selectedParamField.Key);
+        string desc = FormatInformationUtils.GetReferenceDescription(Project.GparamData.GparamInformation, Editor.Selection._selectedParamGroup.Key, Editor.Selection._selectedParamField.Key);
 
         UIHelper.WrappedText($"Type: {GparamUtils.GetReadableObjectTypeName(field)}");
         UIHelper.WrappedText($"");
@@ -240,7 +228,7 @@ public class GparamValueListView
         }
 
         // Show enum list if they exist
-        var propertyEnum = FormatInformationUtils.GetEnumForProperty(Screen.Project.GparamInformation, Screen.Project.GparamEnums, field.Key);
+        var propertyEnum = FormatInformationUtils.GetEnumForProperty(Project.GparamData.GparamInformation, Project.GparamData.GparamEnums, field.Key);
 
         if (propertyEnum != null)
         {

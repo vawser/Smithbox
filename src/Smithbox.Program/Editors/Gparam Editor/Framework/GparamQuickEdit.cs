@@ -14,6 +14,9 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamQuickEdit
 {
+    private GparamEditorScreen Editor;
+    private ProjectEntry Project;
+
     private string _targetFileString = "";
     private string _targetGroupString = "";
     private string _targetFieldString = "";
@@ -24,8 +27,6 @@ public class GparamQuickEdit
 
     public List<GparamValueChangeAction> actions = new List<GparamValueChangeAction>();
 
-    public GparamEditorScreen Screen;
-
     public FileDictionaryEntry TargetFile;
     public GPARAM targetGparam;
     public GPARAM.Param targetParamGroup;
@@ -33,9 +34,11 @@ public class GparamQuickEdit
 
     public RandomNumberGenerator RandomSource;
 
-    public GparamQuickEdit(GparamEditorScreen screen)
+    public GparamQuickEdit(GparamEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
+        Editor = editor;
+        Project = project;
+
         RandomSource = RandomNumberGenerator.Create();
     }
 
@@ -248,39 +251,39 @@ public class GparamQuickEdit
         _targetFieldString = "";
         _valueFilterString = "";
 
-        if (Screen.Selection._selectedGparamKey != null)
+        if (Editor.Selection._selectedGparamKey != null)
         {
-            UpdateFileFilter(Screen.Selection._selectedGparamKey);
+            UpdateFileFilter(Editor.Selection._selectedGparamKey);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Screen.Selection._selectedParamGroup != null)
+        if (Editor.Selection._selectedParamGroup != null)
         {
-            UpdateGroupFilter(Screen.Selection._selectedParamGroup.Key);
+            UpdateGroupFilter(Editor.Selection._selectedParamGroup.Key);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Screen.Selection._selectedParamField != null)
+        if (Editor.Selection._selectedParamField != null)
         {
-            UpdateFieldFilter(Screen.Selection._selectedParamField.Key);
+            UpdateFieldFilter(Editor.Selection._selectedParamField.Key);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Screen.Selection._selectedParamField != null)
+        if (Editor.Selection._selectedParamField != null)
         {
             var fieldIndex = -1;
-            for (int i = 0; i < Screen.Selection._selectedParamField.Values.Count; i++)
+            for (int i = 0; i < Editor.Selection._selectedParamField.Values.Count; i++)
             {
-                if (Screen.Selection._selectedParamField.Values[i] == Screen.Selection._selectedFieldValue)
+                if (Editor.Selection._selectedParamField.Values[i] == Editor.Selection._selectedFieldValue)
                 {
                     fieldIndex = i;
                     break;
@@ -307,7 +310,7 @@ public class GparamQuickEdit
 
         List<EditorAction> actionList = new();
 
-        foreach (var entry in Screen.Project.GparamData.PrimaryBank.Entries)
+        foreach (var entry in Project.GparamData.PrimaryBank.Entries)
         {
             if (IsTargetFile(entry.Key))
             {
@@ -356,7 +359,7 @@ public class GparamQuickEdit
             {
 
                 var compoundAction = new CompoundAction(actionList);
-                Screen.EditorActionManager.ExecuteAction(compoundAction);
+                Editor.EditorActionManager.ExecuteAction(compoundAction);
             }
         }
         else
@@ -380,7 +383,7 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Screen.Selection._selectedGparamKey == entry.Filename)
+                if (Editor.Selection._selectedGparamKey == entry.Filename)
                 {
                     match = true;
                     continue;
@@ -418,7 +421,7 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Screen.Selection._selectedParamGroup.Key == entry.Key || Screen.Selection._selectedParamGroup.Name == entry.Name)
+                if (Editor.Selection._selectedParamGroup.Key == entry.Key || Editor.Selection._selectedParamGroup.Name == entry.Name)
                 {
                     match = true;
                     continue;
@@ -456,7 +459,7 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Screen.Selection._selectedParamField.Key == entry.Key)
+                if (Editor.Selection._selectedParamField.Key == entry.Key)
                 {
                     match = true;
                     continue;
@@ -575,17 +578,17 @@ public class GparamQuickEdit
         bool foundValue = false;
 
         // Find vanilla value
-        foreach (var entry in Screen.Project.GparamData.VanillaBank.Entries)
+        foreach (var entry in Project.GparamData.VanillaBank.Entries)
         {
-            if (entry.Key.Filename == Screen.Selection._selectedGparamKey)
+            if (entry.Key.Filename == Editor.Selection._selectedGparamKey)
             {
                 foreach (var paramGroup in entry.Value.Params)
                 {
-                    if (paramGroup.Key == Screen.Selection._selectedParamGroup.Key)
+                    if (paramGroup.Key == Editor.Selection._selectedParamGroup.Key)
                     {
                         foreach (var paramField in paramGroup.Fields)
                         {
-                            if (paramField.Key == Screen.Selection._selectedParamField.Key)
+                            if (paramField.Key == Editor.Selection._selectedParamField.Key)
                             {
                                 if (paramField.Values.Count > index)
                                 {
@@ -1498,7 +1501,7 @@ public class GparamQuickEdit
         {
             for (int i = 0; i < targetField.Values.Count; i++)
             {
-                if (Screen.Selection._selectedFieldValueKey == i)
+                if (Editor.Selection._selectedFieldValueKey == i)
                 {
                     filterTruth[i] = true;
                 }

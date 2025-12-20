@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.FileBrowser;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -40,6 +41,11 @@ public class ParamData
 
     public TableParams TableParamList;
     public TableGroupNameStore TableGroupNames;
+
+
+    public GameOffsetResource ParamMemoryOffsets;
+    public ParamCategoryResource ParamCategories;
+    public ParamCommutativeResource CommutativeParamGroups;
 
     public ParamData(Smithbox baseEditor, ProjectEntry project)
     {
@@ -132,6 +138,44 @@ public class ParamData
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup table group name bank.");
         }
 
+        // Game Offsets (per project)
+        Task<bool> gameOffsetTask = SetupParamMemoryOffsets();
+        bool gameOffsetResult = await gameOffsetTask;
+
+        if (gameOffsetResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Param Memory Offsets.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Param Memory Offsets.");
+        }
+
+        // Param Categories (per project)
+        Task<bool> paramCategoryTask = SetupParamCategories();
+        bool paramCategoryResult = await paramCategoryTask;
+
+        if (paramCategoryResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Param Categories.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Param Categories.");
+        }
+
+        // Commutative Param Groups (per project)
+        Task<bool> commutativeParamGroupTask = SetupCommutativeParamGroups();
+        bool commutativeParamGroupResult = await commutativeParamGroupTask;
+
+        if (commutativeParamGroupResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Commutative Param Groups.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Commutative Param Groups.");
+        }
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Load();
@@ -313,12 +357,10 @@ public class ParamData
 
             try
             {
-                var filestring = File.ReadAllText(paramTypeInfoPath);
+                var filestring = await File.ReadAllTextAsync(paramTypeInfoPath);
 
                 try
                 {
-                    var options = new JsonSerializerOptions();
-
                     paramTypeInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamTypeInfo);
                     ParamTypeInfo = paramTypeInfo;
                 }
@@ -436,11 +478,10 @@ public class ParamData
         {
             try
             {
-                var filestring = File.ReadAllText(file);
+                var filestring = await File.ReadAllTextAsync(file);
 
                 try
                 {
-                    var options = new JsonSerializerOptions();
                     GraphLegends = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.GraphLegends);
                 }
                 catch (Exception e)
@@ -480,11 +521,10 @@ public class ParamData
         {
             try
             {
-                var filestring = File.ReadAllText(file);
+                var filestring = await File.ReadAllTextAsync(file);
 
                 try
                 {
-                    var options = new JsonSerializerOptions();
                     IconConfigurations = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.IconConfigurations);
                 }
                 catch (Exception e)
@@ -524,8 +564,8 @@ public class ParamData
         {
             try
             {
-                var filestring = File.ReadAllText(file);
-                var options = new JsonSerializerOptions();
+                var filestring = await File.ReadAllTextAsync(file);
+
                 var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.TableGroupParamEntry);
 
                 if (item == null)
@@ -555,8 +595,8 @@ public class ParamData
             {
                 try
                 {
-                    var filestring = File.ReadAllText(file);
-                    var options = new JsonSerializerOptions();
+                    var filestring = await File.ReadAllTextAsync(file);
+
                     var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.TableGroupParamEntry);
 
                     if (item == null)
@@ -643,8 +683,8 @@ public class ParamData
 
         try
         {
-            var filestring = File.ReadAllText(srcFile);
-            var options = new JsonSerializerOptions();
+            var filestring = await File.ReadAllTextAsync(srcFile);
+
             var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.TableParams);
 
             if (item == null)
@@ -767,4 +807,135 @@ public class ParamData
         }
     }
 
+    /// <summary>
+    /// Setup the PARAM memory offsets for this project
+    /// </summary>
+    /// <returns></returns>
+    public async Task<bool> SetupParamMemoryOffsets()
+    {
+        await Task.Yield();
+
+        ParamMemoryOffsets = new();
+
+        // Information
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFile = Path.Combine(sourceFolder, "Param Reload Offsets.json");
+
+        var targetFile = sourceFile;
+
+        if (File.Exists(targetFile))
+        {
+            try
+            {
+                var filestring = await File.ReadAllTextAsync(targetFile);
+
+                try
+                {
+                    ParamMemoryOffsets = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.GameOffsetResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Param Reload offsets: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Param Reload offsets: {targetFile}", LogLevel.Error, LogPriority.High, e);
+            }
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Setup the param categories for this project
+    /// </summary>
+    /// <returns></returns>
+    public async Task<bool> SetupParamCategories()
+    {
+        await Task.Yield();
+
+        ParamCategories = new();
+
+        // Information
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
+
+        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var projectFile = Path.Combine(projectFolder, "Param Categories.json");
+
+        var targetFile = sourceFile;
+
+        if (File.Exists(projectFile))
+        {
+            targetFile = projectFile;
+        }
+
+        if (File.Exists(targetFile))
+        {
+            try
+            {
+                var filestring = await File.ReadAllTextAsync(targetFile);
+
+                try
+                {
+                    ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Param Categories: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Param Categories: {targetFile}", LogLevel.Error, LogPriority.High, e);
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupCommutativeParamGroups()
+    {
+        await Task.Yield();
+
+        CommutativeParamGroups = new();
+
+        // Information
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFile = Path.Combine(sourceFolder, "Commutative Params.json");
+
+        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var projectFile = Path.Combine(projectFolder, "Commutative Params.json");
+
+        var targetFile = sourceFile;
+
+        if (File.Exists(projectFile))
+        {
+            targetFile = projectFile;
+        }
+
+        if (File.Exists(targetFile))
+        {
+            try
+            {
+                var filestring = await File.ReadAllTextAsync(targetFile);
+
+                try
+                {
+                    CommutativeParamGroups = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCommutativeResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Commutative Param Groups: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Commutative Param Groups: {targetFile}", LogLevel.Error, LogPriority.High, e);
+            }
+        }
+
+        return true;
+    }
 }

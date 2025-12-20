@@ -7,16 +7,12 @@ namespace StudioCore.Editors.GparamEditor;
 public class GparamFileListView
 {
     private GparamEditorScreen Editor;
-    private GparamFilters Filters;
-    private GparamSelection Selection;
-    private GparamContextMenu ContextMenu;
+    private ProjectEntry Project;
 
-    public GparamFileListView(GparamEditorScreen screen)
+    public GparamFileListView(GparamEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Filters = screen.Filters;
-        Selection = screen.Selection;
-        ContextMenu = screen.ContextMenu;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -25,37 +21,37 @@ public class GparamFileListView
     public void Display()
     {
         ImGui.Begin("Files##GparamFileList");
-        Selection.SwitchWindowContext(GparamEditorContext.File);
+        Editor.Selection.SwitchWindowContext(GparamEditorContext.File);
 
-        Filters.DisplayFileFilterSearch();
+        Editor.Filters.DisplayFileFilterSearch();
 
         ImGui.BeginChild("GparamFileSection");
-        Selection.SwitchWindowContext(GparamEditorContext.File);
+        Editor.Selection.SwitchWindowContext(GparamEditorContext.File);
 
         foreach (var entry in Editor.Project.GparamData.PrimaryBank.Entries)
         {
             var alias = AliasHelper.GetGparamAliasName(Editor.Project, entry.Key.Filename);
 
-            if (Filters.IsFileFilterMatch(entry.Key.Filename, alias))
+            if (Editor.Filters.IsFileFilterMatch(entry.Key.Filename, alias))
             {
                 ImGui.BeginGroup();
 
                 // File row
-                if (ImGui.Selectable($@" {entry.Key.Filename}", entry.Key.Filename == Selection._selectedGparamKey))
+                if (ImGui.Selectable($@" {entry.Key.Filename}", entry.Key.Filename == Editor.Selection._selectedGparamKey))
                 {
-                    Selection.SetFileSelection(entry.Key);
+                    Editor.Selection.SetFileSelection(entry.Key);
                 }
 
                 // Arrow Selection
-                if (ImGui.IsItemHovered() && Selection.SelectGparamFile)
+                if (ImGui.IsItemHovered() && Editor.Selection.SelectGparamFile)
                 {
-                    Selection.SelectGparamFile = false;
+                    Editor.Selection.SelectGparamFile = false;
 
-                    Selection.SetFileSelection(entry.Key);
+                    Editor.Selection.SetFileSelection(entry.Key);
                 }
                 if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                 {
-                    Selection.SelectGparamFile = true;
+                    Editor.Selection.SelectGparamFile = true;
                 }
 
                 if (CFG.Current.Interface_Display_Alias_for_Gparam)
@@ -66,7 +62,7 @@ public class GparamFileListView
                 ImGui.EndGroup();
             }
 
-            ContextMenu.FileContextMenu(entry.Key);
+            Editor.ContextMenu.FileContextMenu(entry.Key);
         }
 
         ImGui.EndChild();

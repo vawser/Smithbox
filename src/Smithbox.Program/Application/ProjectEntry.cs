@@ -13,7 +13,6 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -112,6 +111,8 @@ public class ProjectEntry
 
     // Data Banks
     [JsonIgnore]
+    public CommonData CommonData;
+    [JsonIgnore]
     public FileData FileData;
     [JsonIgnore]
     public MapData MapData;
@@ -133,45 +134,6 @@ public class ProjectEntry
     /// </summary>
     [JsonIgnore]
     public ActionManager ActionManager;
-
-    // Additional Data
-    [JsonIgnore]
-    public AliasStore Aliases;
-
-    [JsonIgnore]
-    public ProjectEnumResource ProjectEnums;
-
-    [JsonIgnore]
-    public FormatResource MsbInformation;
-    [JsonIgnore]
-    public FormatEnum MsbEnums;
-    [JsonIgnore]
-    public FormatMask MsbMasks;
-
-    [JsonIgnore]
-    public FormatResource FlverInformation;
-    [JsonIgnore]
-    public FormatEnum FlverEnums;
-
-    [JsonIgnore]
-    public FormatResource GparamInformation;
-    [JsonIgnore]
-    public FormatEnum GparamEnums;
-
-    [JsonIgnore]
-    public GameOffsetResource ParamMemoryOffsets;
-
-    [JsonIgnore]
-    public ParamCategoryResource ParamCategories;
-
-    [JsonIgnore]
-    public ParamCommutativeResource CommutativeParamGroups;
-
-    [JsonIgnore]
-    public SpawnStateResource MapSpawnStates;
-
-    [JsonIgnore]
-    public MaterialDisplayConfiguration MaterialDisplayConfiguration;
 
     [JsonIgnore]
     public bool Initialized = false;
@@ -288,40 +250,26 @@ public class ProjectEntry
             }
         }
 
-        // Aliases
-        Task<bool> aliasesTask = SetupAliases();
-        bool aliasesSetup = await aliasesTask;
+        CommonData = new(BaseEditor, this);
+
+        // Common Data
+        Task<bool> commonDataTask = CommonData.Setup();
+        bool commonDataResult = await commonDataTask;
 
         if (!silent)
         {
-            if (aliasesSetup)
+            if (commonDataResult)
             {
-                TaskLogs.AddLog($"[{ProjectName}] Setup aliases.");
+                TaskLogs.AddLog($"[{ProjectName}] Setup Common Data.");
             }
             else
             {
-                TaskLogs.AddLog($"[{ProjectName}] Failed to setup aliases.");
-            }
-        }
-
-        // Project Enums (per project)
-        Task<bool> projectParamEnumTask = SetupProjectEnums();
-        bool projectParamEnumResult = await projectParamEnumTask;
-
-        if (!silent)
-        {
-            if (projectParamEnumResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}] Setup Project Param Enums.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}] Failed to setup Project Param Enums.");
+                TaskLogs.AddLog($"[{ProjectName}] Failed to setup Common Data.");
             }
         }
 
         ClearEditors();
-        InitializeEditors(initType, silent);
+        await InitializeEditors(initType, silent);
 
         Initialized = true;
         IsInitializing = false;
@@ -365,7 +313,7 @@ public class ProjectEntry
 
     }
 
-    public async void InitializeEditors(InitType initType, bool silent = false)
+    public async Task InitializeEditors(InitType initType, bool silent = false)
     {
         List<Task> initTasks = [];
 
@@ -433,7 +381,7 @@ public class ProjectEntry
             initTasks.Add(InitializeFileBrowser(silent));
         }
 
-        await initTasks.ParallelForEachAsync(Task.FromResult, Environment.ProcessorCount);
+        await Task.WhenAll(initTasks);
     }
 
     private async Task InitializeFileBrowser(bool silent)
@@ -484,22 +432,6 @@ public class ProjectEntry
 
     private async Task InitializeMaterialEditor(bool silent)
     {
-        // Material Display Configuration
-        Task<bool> matDispTask = SetupMaterialDisplayConfiguration();
-        bool matDispTaskResult = await matDispTask;
-
-        if (!silent)
-        {
-            if (matDispTaskResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Material Editor] Setup Material Display Configuration.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Material Editor] Failed to setup Material Display Configuration.");
-            }
-        }
-
         // Only do this once, as 3 editors may invoke this.
         if (MaterialData == null)
         {
@@ -526,22 +458,6 @@ public class ProjectEntry
 
     private async Task InitializeGparamEditor(bool silent)
     {
-        // GPARAM Information
-        Task<bool> gparamInfoTask = SetupGparamInfo();
-        bool gparamInfoResult = await gparamInfoTask;
-
-        if (!silent)
-        {
-            if (gparamInfoResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM information.");
-            }
-        }
-
         GparamData = new(BaseEditor, this);
 
         // Gparam Bank
@@ -565,53 +481,6 @@ public class ProjectEntry
 
     private async Task InitializeParamEditor(bool silent)
     {
-        // Game Offsets (per project)
-        Task<bool> gameOffsetTask = SetupParamMemoryOffsets();
-        bool gameOffsetResult = await gameOffsetTask;
-
-        if (!silent)
-        {
-            if (gameOffsetResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Memory Offsets.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Memory Offsets.");
-            }
-        }
-
-        // Param Categories (per project)
-        Task<bool> paramCategoryTask = SetupParamCategories();
-        bool paramCategoryResult = await paramCategoryTask;
-
-        if (!silent)
-        {
-            if (paramCategoryResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Categories.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Categories.");
-            }
-        }
-
-        // Commutative Param Groups (per project)
-        Task<bool> commutativeParamGroupTask = SetupCommutativeParamGroups();
-        bool commutativeParamGroupResult = await commutativeParamGroupTask;
-
-        if (!silent)
-        {
-            if (commutativeParamGroupResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Commutative Param Groups.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Commutative Param Groups.");
-            }
-        }
 
         ParamData = new(BaseEditor, this);
 
@@ -672,22 +541,6 @@ public class ProjectEntry
     }
     private async Task InitializeModelEditor(bool silent)
     {
-        // FLVER Information
-        Task<bool> flverInfoTask = SetupFlverInfo();
-        bool flverInfoResult = await flverInfoTask;
-
-        if (!silent)
-        {
-            if (flverInfoResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Model Editor] Setup FLVER information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Model Editor] Failed to setup FLVER information.");
-            }
-        }
-
         ModelData = new(BaseEditor, this);
 
         // Model Data
@@ -732,38 +585,6 @@ public class ProjectEntry
 
     private async Task InitializeMapEditor(bool silent)
     {
-        // MSB Information
-        Task<bool> msbInfoTask = SetupMsbInfo();
-        bool msbInfoResult = await msbInfoTask;
-
-        if (!silent)
-        {
-            if (msbInfoResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup MSB information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup MSB information.");
-            }
-        }
-
-        // Spawn States (per project) -- DS2 specific
-        Task<bool> mapSpawnStatesTask = SetupMapSpawnStates();
-        bool mapSpawnStatesResult = await mapSpawnStatesTask;
-
-        if (!silent)
-        {
-            if (mapSpawnStatesResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Spawn States information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Spawn States information.");
-            }
-        }
-
         MapData = new(BaseEditor, this);
 
         // Map Data
@@ -831,8 +652,6 @@ public class ProjectEntry
         TextData = null;
         TextureData = null;
         FileData = null;
-
-        GC.Collect();
     }
 
     /// <summary>
@@ -1174,11 +993,10 @@ public class ProjectEntry
         {
             try
             {
-                var filestring = File.ReadAllText(filepath);
+                var filestring = await File.ReadAllTextAsync(filepath);
 
                 try
                 {
-                    var options = new JsonSerializerOptions();
                     FileDictionary = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FileDictionary);
                 }
                 catch (Exception e)
@@ -1199,657 +1017,6 @@ public class ProjectEntry
         return true;
     }
 
-    #endregion
-
-    #region Setup Aliases
-    /// <summary>
-    /// Setup the alias store for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupAliases()
-    {
-        await Task.Yield();
-
-        Aliases = new();
-
-        HashSet<string> sourceDirectories =
-        [
-            Path.Join(AppContext.BaseDirectory,"Assets","Aliases",ProjectUtils.GetGameDirectory(ProjectType)),
-            Path.Join(ProjectPath,".smithbox","Assets","Aliases")
-        ];
-
-        List<string> sourceFiles = sourceDirectories.Where(Directory.Exists).Select(dir => Directory.GetFiles(dir, "*.json")).SelectMany(f => f).ToList();
-
-        foreach (string sourceFile in sourceFiles)
-        {
-            try
-            {
-                if (!Enum.TryParse(Path.GetFileNameWithoutExtension(sourceFile), out AliasType type)) continue;
-                string text = File.ReadAllText(sourceFile);
-                try
-                {
-                    // var options = new JsonSerializerOptions();
-                    var entries = JsonSerializer.Deserialize(text, SmithboxSerializerContext.Default.ListAliasEntry);
-                    if (!Aliases.ContainsKey(type))
-                    {
-                        Aliases.TryAdd(type, entries);
-                        continue;
-                    }
-                    Aliases[type] = entries.UnionBy(Aliases[type], e => e.ID).ToList();
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the aliases: {sourceFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the aliases: {sourceFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        foreach ((AliasType type, List<AliasEntry> entries) in Aliases)
-        {
-            Aliases[type] = entries.OrderBy(e => e.ID).ToList();
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup MSB Information
-    /// <summary>
-    /// Setup the MSB information for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupMsbInfo()
-    {
-        await Task.Yield();
-
-        MsbInformation = new();
-        MsbEnums = new();
-        MsbMasks = new();
-
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Core.json");
-
-        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Core.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    MsbInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the MSB information: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the MSB information: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        // Enums
-        sourceFile = Path.Combine(sourceFolder, "Enums.json");
-
-        projectFile = Path.Combine(projectFolder, "Enums.json");
-
-        targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    MsbEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the MSB enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the MSB enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        // Masks
-        sourceFile = Path.Combine(sourceFolder, "Masks.json");
-
-        projectFile = Path.Combine(projectFolder, "Masks.json");
-
-        targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    MsbMasks = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatMask);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the MSB masks: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the MSB masks: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup FLVER Information
-    /// <summary>
-    /// Setup the FLVER information for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupFlverInfo()
-    {
-        await Task.Yield();
-
-        FlverInformation = new();
-        FlverEnums = new();
-
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","FLVER");
-        var sourceFile = Path.Combine(sourceFolder, "Core.json");
-
-        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","FLVER");
-        var projectFile = Path.Combine(projectFolder, "Core.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    FlverInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FLVER information: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the FLVER information: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        // Enums
-        sourceFile = Path.Combine(sourceFolder, "Enums.json");
-
-        projectFile = Path.Combine(projectFolder, "Enums.json");
-
-        targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    FlverEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FLVER enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the FLVER enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup GPARAM Information
-    /// <summary>
-    /// Setup the GPARAM information for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupGparamInfo()
-    {
-        await Task.Yield();
-
-        GparamInformation = new();
-        GparamEnums = new();
-
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","GPARAM",ProjectUtils.GetGameDirectory(ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Core.json");
-
-        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","GPARAM",ProjectUtils.GetGameDirectory(ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Core.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    GparamInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the GPARAM information: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the GPARAM information: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        // Enums
-        sourceFile = Path.Combine(sourceFolder, "Enums.json");
-
-        projectFile = Path.Combine(projectFolder, "Enums.json");
-
-        targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    GparamEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the GPARAM enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the GPARAM enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup Param Reloader Offsets
-    /// <summary>
-    /// Setup the PARAM memory offsets for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupParamMemoryOffsets()
-    {
-        await Task.Yield();
-
-        ParamMemoryOffsets = new();
-
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Param Reload Offsets.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    ParamMemoryOffsets = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.GameOffsetResource);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Param Reload offsets: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Param Reload offsets: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup Project Enums
-    /// <summary>
-    /// Setup the project-specific PARAM enums for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupProjectEnums()
-    {
-        await Task.Yield();
-
-        ProjectEnums = new();
-
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
-
-        var projectFolder = Path.Join(ProjectPath,".smithbox","Project");
-        var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
-
-        var targetFile = sourceFile;
-
-        if (CFG.Current.Param_UseProjectMeta)
-        {
-            if (File.Exists(projectFile))
-            {
-                targetFile = projectFile;
-            }
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    ProjectEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectEnumResource);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Project Enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Project Enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup Param Categories
-    /// <summary>
-    /// Setup the param categories for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupParamCategories()
-    {
-        await Task.Yield();
-
-        ParamCategories = new();
-
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
-
-        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Param Categories.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Param Categories: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Param Categories: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup Commutative Param Groups
-
-    /// <summary>
-    /// Setup the param categories for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupCommutativeParamGroups()
-    {
-        await Task.Yield();
-
-        CommutativeParamGroups = new();
-
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Commutative Params.json");
-
-        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Commutative Params.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    CommutativeParamGroups = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCommutativeResource);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Commutative Param Groups: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Commutative Param Groups: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup Map Spawn States
-    /// <summary>
-    /// Setup the map spawn states for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupMapSpawnStates()
-    {
-        await Task.Yield();
-
-        MapSpawnStates = new();
-
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "SpawnStates.json");
-
-        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
-        var projectFile = Path.Combine(projectFolder, "SpawnStates.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    MapSpawnStates = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.SpawnStateResource);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Map Spawn States: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Map Spawn States: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup Material Display Configuration
-    /// <summary>
-    /// Setup the material display configuration for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupMaterialDisplayConfiguration()
-    {
-        await Task.Yield();
-
-        MaterialDisplayConfiguration = new();
-
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","MATERIAL",ProjectUtils.GetGameDirectory(ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Display Configuration.json");
-
-        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","MATERIAL",ProjectUtils.GetGameDirectory(ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Display Configuration.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    MaterialDisplayConfiguration = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.MaterialDisplayConfiguration);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Material Display Configuration: {targetFile}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Material Display Configuration: {targetFile}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
     #endregion
 }
 

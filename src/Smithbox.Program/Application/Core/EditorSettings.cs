@@ -1087,7 +1087,7 @@ public class ParamEditorTab
             }
 
             // Ignore if no game offsets exist for the project type
-            if (curProject.ParamMemoryOffsets != null && curProject.ParamMemoryOffsets.list != null)
+            if (curProject.ParamData.ParamMemoryOffsets != null && curProject.ParamData.ParamMemoryOffsets.list != null)
             {
                 // Auto-set to the latest version
                 if (ImGui.CollapsingHeader("Param Reloader", ImGuiTreeNodeFlags.DefaultOpen))
@@ -1099,7 +1099,7 @@ public class ParamEditorTab
                     UIHelper.Tooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");
 
                     var index = CFG.Current.SelectedGameOffsetData;
-                    string[] options = curProject.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
+                    string[] options = curProject.ParamData.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
 
                     if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
                     {

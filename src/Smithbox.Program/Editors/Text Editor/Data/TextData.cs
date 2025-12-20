@@ -151,7 +151,6 @@ public class TextData
 
                 try
                 {
-                    var options = new JsonSerializerOptions();
                     def = JsonSerializer.Deserialize(filestring, FmgJsonSerializerContext.Default.LanguageDef);
                 }
                 catch (Exception e)
@@ -183,7 +182,6 @@ public class TextData
 
                 try
                 {
-                    var options = new JsonSerializerOptions();
                     def = JsonSerializer.Deserialize(filestring, FmgJsonSerializerContext.Default.ContainerDef);
                 }
                 catch (Exception e)
@@ -216,7 +214,6 @@ public class TextData
 
                 try
                 {
-                    var options = new JsonSerializerOptions();
                     def = JsonSerializer.Deserialize(filestring, FmgJsonSerializerContext.Default.AssociationDef);
                 }
                 catch (Exception e)

@@ -217,8 +217,8 @@ public class ParamView
         });
 
 
-        var categoryObj = Editor.Project.ParamCategories;
-        var categories = Editor.Project.ParamCategories.Categories;
+        var categoryObj = Editor.Project.ParamData.ParamCategories;
+        var categories = Editor.Project.ParamData.ParamCategories.Categories;
 
         if (categories != null && CFG.Current.Param_DisplayParamCategories)
         {

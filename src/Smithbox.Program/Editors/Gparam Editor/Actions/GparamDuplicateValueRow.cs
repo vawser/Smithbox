@@ -23,7 +23,7 @@ public class GparamDuplicateValueRow : EditorAction
 
     public override ActionEvent Execute()
     {
-        Screen.FieldValueList.ExtendDisplayTruth(SelectedField);
+        Screen.FieldValueListView.ExtendDisplayTruth(SelectedField);
 
         Screen.PropertyEditor.AddPropertyValueRow(SelectedField, SelectedFieldValue, NewRowID);
 
@@ -35,7 +35,7 @@ public class GparamDuplicateValueRow : EditorAction
 
     public override ActionEvent Undo()
     {
-        Screen.FieldValueList.ReduceDisplayTruth(SelectedField);
+        Screen.FieldValueListView.ReduceDisplayTruth(SelectedField);
 
         Screen.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, NewRowID);
 

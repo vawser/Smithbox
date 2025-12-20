@@ -435,7 +435,6 @@ public class FileToolView
 
                 try
                 {
-                    var options = new JsonSerializerOptions();
                     baseFileDictionary = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FileDictionary);
                 }
                 catch (Exception e)

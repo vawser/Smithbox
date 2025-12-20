@@ -112,9 +112,9 @@ public class MaterialFileList
     {
         var newName = path;
 
-        if(Project.MaterialDisplayConfiguration != null && Project.MaterialDisplayConfiguration.FileListConfigurations != null)
+        if (Project.MaterialData.MaterialDisplayConfiguration != null && Project.MaterialData.MaterialDisplayConfiguration.FileListConfigurations != null)
         {
-            var curConfig = Project.MaterialDisplayConfiguration.FileListConfigurations
+            var curConfig = Project.MaterialData.MaterialDisplayConfiguration.FileListConfigurations
                 .Where(e => e.SourceType == $"{Editor.Selection.SourceType}")
                 .Where(e => e.Binder == Editor.Selection.SelectedBinderEntry.Filename)
                 .FirstOrDefault();

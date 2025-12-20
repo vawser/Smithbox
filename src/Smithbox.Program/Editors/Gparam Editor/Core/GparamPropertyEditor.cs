@@ -10,9 +10,11 @@ using System.Numerics;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
+
 public class GparamPropertyEditor
 {
     private GparamEditorScreen Editor;
+    private ProjectEntry Project;
 
     private object _editedValueCache;
 
@@ -28,9 +30,10 @@ public class GparamPropertyEditor
     private bool _isHoldingColor;
     private Vector4 _heldColor;
 
-    public GparamPropertyEditor(GparamEditorScreen editor)
+    public GparamPropertyEditor(GparamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
+        Project = project;
     }
 
     public unsafe void ValueField(int idx, IField field, IFieldValue value)
@@ -51,7 +54,7 @@ public class GparamPropertyEditor
             int intInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Editor.Project.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -95,7 +98,7 @@ public class GparamPropertyEditor
 
             var strval = $@"{uintInput}";
 
-            if (FormatInformationUtils.IsBooleanProperty(Editor.Project.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -139,7 +142,7 @@ public class GparamPropertyEditor
             int shortInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Editor.Project.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -178,7 +181,7 @@ public class GparamPropertyEditor
             int sbyteInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Editor.Project.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -219,7 +222,7 @@ public class GparamPropertyEditor
 
             var strval = $@"{byteInput}";
 
-            if (FormatInformationUtils.IsBooleanProperty(Editor.Project.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)

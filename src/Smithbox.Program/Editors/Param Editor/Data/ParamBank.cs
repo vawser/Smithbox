@@ -2233,7 +2233,7 @@ public class ParamBank
             if (File.Exists(importFile))
             {
                 var filestring = File.ReadAllText(importFile);
-                var options = new JsonSerializerOptions();
+
                 RowNameStoreLegacy legacyStore = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStoreLegacy);
 
                 if (legacyStore == null)
@@ -2272,7 +2272,7 @@ public class ParamBank
                 try
                 {
                     var filestring = File.ReadAllText(file);
-                    var options = new JsonSerializerOptions();
+
                     RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
 
                     if (item == null)
@@ -2403,7 +2403,7 @@ public class ParamBank
                 try
                 {
                     var filestring = File.ReadAllText(sourceFile);
-                    var options = new JsonSerializerOptions();
+
                     RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
 
                     if (item == null)
@@ -2428,7 +2428,7 @@ public class ParamBank
                 try
                 {
                     var filestring = File.ReadAllText(file);
-                    var options = new JsonSerializerOptions();
+
                     RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
 
                     if (item == null)

@@ -121,7 +121,7 @@ public class KeyBindings
             try
             {
                 var filestring = File.ReadAllText(file);
-                var options = new JsonSerializerOptions();
+
                 Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.Bindings);
 
                 if (Current == null)

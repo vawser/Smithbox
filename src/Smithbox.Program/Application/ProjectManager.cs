@@ -582,7 +582,6 @@ public class ProjectManager
                 try
                 {
                     var filestring = File.ReadAllText(entry);
-                    var options = new JsonSerializerOptions();
 
                     var curProject =
                         JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectEntry);

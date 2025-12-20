@@ -24,7 +24,7 @@ public class GparamRemoveValueRow : EditorAction
 
     public override ActionEvent Execute()
     {
-        Screen.FieldValueList.ReduceDisplayTruth(SelectedField);
+        Screen.FieldValueListView.ReduceDisplayTruth(SelectedField);
 
         RemovedRowIndex = Screen.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, SelectedFieldValue.Id);
 
@@ -35,7 +35,7 @@ public class GparamRemoveValueRow : EditorAction
 
     public override ActionEvent Undo()
     {
-        Screen.FieldValueList.ExtendDisplayTruth(SelectedField);
+        Screen.FieldValueListView.ExtendDisplayTruth(SelectedField);
 
         Screen.PropertyEditor.AddPropertyValueRowAtIndex(SelectedField, SelectedFieldValue, RemovedRowID, RemovedRowIndex);
 

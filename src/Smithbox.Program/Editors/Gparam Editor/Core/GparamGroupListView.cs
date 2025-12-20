@@ -8,17 +8,13 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamGroupListView
 {
-    private GparamEditorScreen Screen;
-    private GparamFilters Filters;
-    private GparamSelection Selection;
-    private GparamContextMenu ContextMenu;
+    private GparamEditorScreen Editor;
+    private ProjectEntry Project;
 
-    public GparamGroupListView(GparamEditorScreen screen)
+    public GparamGroupListView(GparamEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Filters = screen.Filters;
-        Selection = screen.Selection;
-        ContextMenu = screen.ContextMenu;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -27,9 +23,9 @@ public class GparamGroupListView
     public void Display()
     {
         ImGui.Begin("Groups##GparamGroups");
-        Selection.SwitchWindowContext(GparamEditorContext.Group);
+        Editor.Selection.SwitchWindowContext(GparamEditorContext.Group);
 
-        Filters.DisplayGroupFilterSearch();
+        Editor.Filters.DisplayGroupFilterSearch();
 
         ImGui.SameLine();
 
@@ -48,11 +44,11 @@ public class GparamGroupListView
         UIHelper.Tooltip("Toggle the display of the add group buttons.");
 
         ImGui.BeginChild("GparamGroupsSection");
-        Selection.SwitchWindowContext(GparamEditorContext.Group);
+        Editor.Selection.SwitchWindowContext(GparamEditorContext.Group);
 
-        if (Selection.IsFileSelected())
+        if (Editor.Selection.IsFileSelected())
         {
-            GPARAM data = Selection.GetSelectedGparam();
+            GPARAM data = Editor.Selection.GetSelectedGparam();
 
             // Available groups
             for (int i = 0; i < data.Params.Count; i++)
@@ -61,7 +57,7 @@ public class GparamGroupListView
 
                 var name = entry.Key;
                 if (CFG.Current.Gparam_DisplayParamGroupAlias)
-                    name = FormatInformationUtils.GetReferenceName(Screen.Project.GparamInformation, entry.Key, entry.Name);
+                    name = FormatInformationUtils.GetReferenceName(Project.GparamData.GparamInformation, entry.Key, entry.Name);
 
                 var display = false;
 
@@ -80,30 +76,30 @@ public class GparamGroupListView
                     display = true;
                 }
 
-                if (Filters.IsGroupFilterMatch(entry.Name, ""))
+                if (Editor.Filters.IsGroupFilterMatch(entry.Name, ""))
                 {
                     if (display)
                     {
                         // Group row
-                        if (ImGui.Selectable($@" {name}##{entry.Key}", i == Selection._selectedParamGroupKey))
+                        if (ImGui.Selectable($@" {name}##{entry.Key}", i == Editor.Selection._selectedParamGroupKey))
                         {
-                            Selection.SetGparamGroup(i, entry);
+                            Editor.Selection.SetGparamGroup(i, entry);
                         }
 
                         // Arrow Selection
-                        if (ImGui.IsItemHovered() && Selection.SelectGparamGroup)
+                        if (ImGui.IsItemHovered() && Editor.Selection.SelectGparamGroup)
                         {
-                            Selection.SelectGparamGroup = false;
-                            Selection.SetGparamGroup(i, entry);
+                            Editor.Selection.SelectGparamGroup = false;
+                            Editor.Selection.SetGparamGroup(i, entry);
                         }
                         if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                         {
-                            Selection.SelectGparamGroup = true;
+                            Editor.Selection.SelectGparamGroup = true;
                         }
                     }
                 }
 
-                ContextMenu.GroupContextMenu(i);
+                Editor.ContextMenu.GroupContextMenu(i);
             }
 
             if (CFG.Current.Gparam_DisplayAddGroups)
@@ -124,15 +120,15 @@ public class GparamGroupListView
     /// </summary>
     public void AddMissingGroupSection()
     {
-        GPARAM data = Selection.GetSelectedGparam();
+        GPARAM data = Editor.Selection.GetSelectedGparam();
 
         List<FormatReference> missingGroups = new List<FormatReference>();
 
-        if (Screen.Project.GparamInformation.list == null)
+        if (Project.GparamData.GparamInformation.list == null)
             return;
 
         // Get source Format Reference
-        foreach (var entry in Screen.Project.GparamInformation.list)
+        foreach (var entry in Project.GparamData.GparamInformation.list)
         {
             bool isPresent = false;
 
@@ -172,6 +168,6 @@ public class GparamGroupListView
         newGroup.Name = missingGroup.name;
         newGroup.Fields = new List<GPARAM.IField>();
 
-        Selection._selectedGparam.Params.Add(newGroup);
+        Editor.Selection._selectedGparam.Params.Add(newGroup);
     }
 }

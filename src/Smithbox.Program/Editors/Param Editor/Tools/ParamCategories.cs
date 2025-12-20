@@ -27,7 +27,7 @@ public static class ParamCategories
 
     public static void Display(ParamEditorScreen editor)
     {
-        var categories = editor.Project.ParamCategories;
+        var categories = editor.Project.ParamData.ParamCategories;
 
         if (categories == null)
         {
@@ -75,7 +75,7 @@ public static class ParamCategories
         ImGui.SameLine();
         if (ImGui.Button("Delete Selected Entry", DPI.HalfWidthButton(windowWidth, 24)))
         {
-            editor.Project.ParamCategories.Categories.Remove(_selectedUserCategory);
+            editor.Project.ParamData.ParamCategories.Categories.Remove(_selectedUserCategory);
             _selectedUserCategory = null;
             isNewEntryMode = false;
             isEditEntryMode = false;
@@ -98,7 +98,7 @@ public static class ParamCategories
         // List
         ImGui.Separator();
 
-        foreach(var category in editor.Project.ParamCategories.Categories)
+        foreach(var category in editor.Project.ParamData.ParamCategories.Categories)
         {
             if (ImGui.Selectable($"{category.DisplayName}##userCategory_{category.DisplayName}", category == _selectedUserCategory, ImGuiSelectableFlags.AllowDoubleClick))
             {
@@ -169,7 +169,7 @@ public static class ParamCategories
                 newCategoryEntry.DisplayName = NewEntryName;
                 newCategoryEntry.Params = NewEntryParams;
 
-                editor.Project.ParamCategories.Categories.Add(newCategoryEntry);
+                editor.Project.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
             }
         }
 
@@ -219,7 +219,7 @@ public static class ParamCategories
                 {
                     isEditEntryMode = false;
 
-                    var curEntry = editor.Project.ParamCategories.Categories.Where(e => e.DisplayName == NewEntryName).FirstOrDefault();
+                    var curEntry = editor.Project.ParamData.ParamCategories.Categories.Where(e => e.DisplayName == NewEntryName).FirstOrDefault();
 
                     if (curEntry != null)
                     {
@@ -264,8 +264,7 @@ public static class ParamCategories
 
                 try
                 {
-                    var options = new JsonSerializerOptions();
-                    editor.Project.ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
+                    editor.Project.ParamData.ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
                 }
                 catch (Exception e)
                 {
@@ -298,7 +297,7 @@ public static class ParamCategories
 
         try
         {
-            string jsonString = JsonSerializer.Serialize(editor.Project.ParamCategories, typeof(ParamCategoryResource), SmithboxSerializerContext.Default);
+            string jsonString = JsonSerializer.Serialize(editor.Project.ParamData.ParamCategories, typeof(ParamCategoryResource), SmithboxSerializerContext.Default);
             var fs = new FileStream(modResourcePath, System.IO.FileMode.Create);
             var data = Encoding.ASCII.GetBytes(jsonString);
             fs.Write(data, 0, data.Length);

@@ -463,7 +463,7 @@ public static class MapEditorDecorations
         bool display = false;
         List<AliasEntry> options = null;
 
-        var aliases = editor.Project.Aliases;
+        var aliases = editor.Project.CommonData.Aliases;
 
         if (meta != null && meta.ShowParticleList && aliases.TryGetValue(AliasType.Particles, out List<AliasEntry> particleAliases))
         {
@@ -599,7 +599,7 @@ public static class MapEditorDecorations
             {
                 matchId = $"{rowID}".Substring(0, 3);
 
-                var states = editor.Project.MapSpawnStates.list;
+                var states = editor.Project.MapData.MapSpawnStates.list;
                 var matchedState = states.Where(e => e.id == matchId).FirstOrDefault();
                 if (matchedState != null)
                 {
@@ -718,7 +718,7 @@ public static class MapEditorDecorations
             FormatMaskEntry targetEntry = null;
 
             // Get the entry for the current model
-            foreach (var entry in editor.Project.MsbMasks.list)
+            foreach (var entry in editor.Project.MapData.MsbMasks.list)
             {
                 if (assetEnt.ModelName == entry.model)
                 {

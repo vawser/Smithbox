@@ -5,13 +5,13 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamContextMenu
 {
-    private GparamEditorScreen Screen;
-    public GparamSelection Selection;
+    private GparamEditorScreen Editor;
+    private ProjectEntry Project;
 
-    public GparamContextMenu(GparamEditorScreen screen)
+    public GparamContextMenu(GparamEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -19,13 +19,13 @@ public class GparamContextMenu
     /// </summary>
     public void FileContextMenu(FileDictionaryEntry entry)
     {
-        if (entry.Filename == Selection._selectedGparamKey)
+        if (entry.Filename == Editor.Selection._selectedGparamKey)
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
             {
                 if (ImGui.Selectable("Target in Quick Edit"))
                 {
-                    Screen.QuickEditHandler.UpdateFileFilter(entry.Filename);
+                    Editor.QuickEditHandler.UpdateFileFilter(entry.Filename);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -41,13 +41,13 @@ public class GparamContextMenu
     /// </summary>
     public void GroupContextMenu(int index)
     {
-        if (index == Selection._selectedParamGroupKey)
+        if (index == Editor.Selection._selectedParamGroupKey)
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_Group_Context"))
             {
                 if (ImGui.Selectable("Target in Quick Edit"))
                 {
-                    Screen.QuickEditHandler.UpdateGroupFilter(Selection._selectedParamGroup.Key);
+                    Editor.QuickEditHandler.UpdateGroupFilter(Editor.Selection._selectedParamGroup.Key);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -55,7 +55,7 @@ public class GparamContextMenu
 
                 if (ImGui.Selectable("Remove"))
                 {
-                    Selection._selectedGparam.Params.Remove(Selection._selectedParamGroup);
+                    Editor.Selection._selectedGparam.Params.Remove(Editor.Selection._selectedParamGroup);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -71,13 +71,13 @@ public class GparamContextMenu
     /// </summary>
     public void FieldContextMenu(int index)
     {
-        if (index == Selection._selectedParamFieldKey)
+        if (index == Editor.Selection._selectedParamFieldKey)
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
             {
                 if (ImGui.Selectable("Target in Quick Edit"))
                 {
-                    Screen.QuickEditHandler.UpdateFieldFilter(Selection._selectedParamField.Key);
+                    Editor.QuickEditHandler.UpdateFieldFilter(Editor.Selection._selectedParamField.Key);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -85,7 +85,7 @@ public class GparamContextMenu
 
                 if (ImGui.Selectable("Remove"))
                 {
-                    Selection._selectedParamGroup.Fields.Remove(Selection._selectedParamField);
+                    Editor.Selection._selectedParamGroup.Fields.Remove(Editor.Selection._selectedParamField);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -101,16 +101,16 @@ public class GparamContextMenu
     /// </summary>
     public void FieldValueContextMenu(int index)
     {
-        if (index == Selection._selectedFieldValueKey)
+        if (index == Editor.Selection._selectedFieldValueKey)
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_PropId_Context"))
             {
                 if (ImGui.Selectable("Target in Quick Edit"))
                 {
                     var fieldIndex = -1;
-                    for (int i = 0; i < Selection._selectedParamField.Values.Count; i++)
+                    for (int i = 0; i < Editor.Selection._selectedParamField.Values.Count; i++)
                     {
-                        if (Selection._selectedParamField.Values[i] == Selection._selectedFieldValue)
+                        if (Editor.Selection._selectedParamField.Values[i] == Editor.Selection._selectedFieldValue)
                         {
                             fieldIndex = i;
                             break;
@@ -119,7 +119,7 @@ public class GparamContextMenu
 
                     if (fieldIndex != -1)
                     {
-                        Screen.QuickEditHandler.UpdateValueRowFilter(fieldIndex);
+                        Editor.QuickEditHandler.UpdateValueRowFilter(fieldIndex);
                     }
 
                     ImGui.CloseCurrentPopup();
@@ -128,7 +128,7 @@ public class GparamContextMenu
 
                 if (ImGui.Selectable("Remove"))
                 {
-                    Screen.ActionHandler.DeleteValueRow();
+                    Editor.ActionHandler.DeleteValueRow();
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -136,17 +136,17 @@ public class GparamContextMenu
 
                 if (ImGui.Selectable("Duplicate"))
                 {
-                    Screen.ActionHandler.DuplicateValueRow();
+                    Editor.ActionHandler.DuplicateValueRow();
 
                     ImGui.CloseCurrentPopup();
                 }
                 UIHelper.Tooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
 
-                ImGui.InputInt("##valueIdInput", ref Selection._duplicateValueRowId);
+                ImGui.InputInt("##valueIdInput", ref Editor.Selection._duplicateValueRowId);
 
-                if (Selection._duplicateValueRowId < 0)
+                if (Editor.Selection._duplicateValueRowId < 0)
                 {
-                    Selection._duplicateValueRowId = 0;
+                    Editor.Selection._duplicateValueRowId = 0;
                 }
 
                 ImGui.EndPopup();

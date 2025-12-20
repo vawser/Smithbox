@@ -1,14 +1,17 @@
 ﻿using SoulsFormats;
+using StudioCore.Application;
 
 namespace StudioCore.Editors.GparamEditor;
 
 public class GparamCommandQueue
 {
     private GparamEditorScreen Editor;
+    private ProjectEntry Project;
 
-    public GparamCommandQueue(GparamEditorScreen screen)
+    public GparamCommandQueue(GparamEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
+        Editor = editor;
+        Project = project;
     }
 
     public void Parse(string[] initcmd)
@@ -20,7 +23,7 @@ public class GparamCommandQueue
             if (initcmd[0] == "view" && initcmd.Length >= 2)
             {
                 // Gparam
-                foreach (var entry in Editor.Project.GparamData.PrimaryBank.Entries)
+                foreach (var entry in Project.GparamData.PrimaryBank.Entries)
                 {
                     if (initcmd[1] == entry.Key.Filename)
                     {

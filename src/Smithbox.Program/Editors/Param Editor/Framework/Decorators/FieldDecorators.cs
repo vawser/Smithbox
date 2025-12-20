@@ -50,44 +50,44 @@ public class FieldDecorators
 
         if (cellMeta != null)
         {
-            if (cellMeta.ShowParticleEnumList && editor.Project.Aliases.TryGetValue(AliasType.Particles, out List<AliasEntry> particles))
+            if (cellMeta.ShowParticleEnumList && editor.Project.CommonData.Aliases.TryGetValue(AliasType.Particles, out List<AliasEntry> particles))
             {
                 result |= AliasEnum_ContextMenuItems(particles, oldval, ref newval);
             }
 
-            if (cellMeta.ShowSoundEnumList && editor.Project.Aliases.TryGetValue(AliasType.Sounds, out List<AliasEntry> sounds))
+            if (cellMeta.ShowSoundEnumList && editor.Project.CommonData.Aliases.TryGetValue(AliasType.Sounds, out List<AliasEntry> sounds))
             {
                 result |= AliasEnum_ContextMenuItems(sounds, oldval, ref newval);
             }
 
-            if (cellMeta.ShowFlagEnumList && editor.Project.Aliases.TryGetValue(AliasType.EventFlags, out List<AliasEntry> eventFlags))
+            if (cellMeta.ShowFlagEnumList && editor.Project.CommonData.Aliases.TryGetValue(AliasType.EventFlags, out List<AliasEntry> eventFlags))
             {
                 result |= AliasEnum_ContextMenuItems(eventFlags, oldval, ref newval);
             }
 
-            if (cellMeta.ShowCutsceneEnumList && editor.Project.Aliases.TryGetValue(AliasType.Cutscenes, out List<AliasEntry> cutscenes))
+            if (cellMeta.ShowCutsceneEnumList && editor.Project.CommonData.Aliases.TryGetValue(AliasType.Cutscenes, out List<AliasEntry> cutscenes))
             {
                 result |= AliasEnum_ContextMenuItems(cutscenes, oldval, ref newval);
             }
 
-            if (cellMeta.ShowMovieEnumList && editor.Project.Aliases.TryGetValue(AliasType.Movies, out List<AliasEntry> movies))
+            if (cellMeta.ShowMovieEnumList && editor.Project.CommonData.Aliases.TryGetValue(AliasType.Movies, out List<AliasEntry> movies))
             {
                 result |= AliasEnum_ContextMenuItems(movies, oldval, ref newval);
             }
 
-            if (cellMeta.ShowCharacterEnumList && editor.Project.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characters))
+            if (cellMeta.ShowCharacterEnumList && editor.Project.CommonData.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characters))
             {
                 result |= CharacterAliasEnum_ContextMenuItems(characters, oldval, ref newval);
             }
 
-            if (cellMeta.TileRef != null && editor.Project.Aliases.TryGetValue(AliasType.MapNames, out List<AliasEntry> mapNames))
+            if (cellMeta.TileRef != null && editor.Project.CommonData.Aliases.TryGetValue(AliasType.MapNames, out List<AliasEntry> mapNames))
             {
                 result |= TileRef_ContextMenuItems(mapNames, oldval, ref newval);
             }
 
             if (cellMeta.ShowProjectEnumList && cellMeta.ProjectEnumType != null)
             {
-                var optionList = editor.Project.ProjectEnums.List.Where(e => e.Name == cellMeta.ProjectEnumType).FirstOrDefault();
+                var optionList = editor.Project.CommonData.ProjectEnums.List.Where(e => e.Name == cellMeta.ProjectEnumType).FirstOrDefault();
 
                 if (optionList != null)
                 {
@@ -187,7 +187,7 @@ public class FieldDecorators
             return;
         }
 
-        var enumEntry = editor.Project.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+        var enumEntry = editor.Project.CommonData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
         if (enumEntry != null)
         {
@@ -212,7 +212,7 @@ public class FieldDecorators
     {
         if (CFG.Current.Param_HideEnums == false) //Move preference
         {
-            var enumEntry = editor.Project.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+            var enumEntry = editor.Project.CommonData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
             if (enumEntry != null)
             {
@@ -1631,7 +1631,7 @@ public class FieldDecorators
     /// <param name="value"></param>
     public static void TileRef_Value(ParamEditorScreen editor, string enumType, string value)
     {
-        if (CFG.Current.Param_HideEnums == false && editor.Project.Aliases.TryGetValue(AliasType.MapNames, out List<AliasEntry> mapNames))
+        if (CFG.Current.Param_HideEnums == false && editor.Project.CommonData.Aliases.TryGetValue(AliasType.MapNames, out List<AliasEntry> mapNames))
         {
             var resultID = "";
             var resultName = "";

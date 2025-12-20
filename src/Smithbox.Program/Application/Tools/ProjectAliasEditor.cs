@@ -29,7 +29,7 @@ public static class ProjectAliasEditor
         if (TargetProject == null)
             return;
 
-        if (TargetProject.Aliases == null)
+        if (TargetProject.CommonData.Aliases == null)
             return;
 
         if (BaseAliases == null)
@@ -57,8 +57,8 @@ public static class ProjectAliasEditor
                 string text = File.ReadAllText(sourceFile);
                 try
                 {
-                    // var options = new JsonSerializerOptions();
                     var entries = JsonSerializer.Deserialize(text, SmithboxSerializerContext.Default.ListAliasEntry);
+
                     if (!BaseAliases.ContainsKey(type))
                     {
                         BaseAliases.TryAdd(type, entries);
@@ -87,7 +87,7 @@ public static class ProjectAliasEditor
         if (TargetProject == null)
             return;
 
-        if (TargetProject.Aliases == null)
+        if (TargetProject.CommonData.Aliases == null)
             return;
 
         var flags = ImGuiWindowFlags.None;
@@ -408,8 +408,8 @@ public static class ProjectAliasEditor
     {
         var source = new List<AliasEntry>();
 
-        if (TargetProject.Aliases.ContainsKey(CurrentAliasEditor))
-            source = TargetProject.Aliases[CurrentAliasEditor];
+        if (TargetProject.CommonData.Aliases.ContainsKey(CurrentAliasEditor))
+            source = TargetProject.CommonData.Aliases[CurrentAliasEditor];
 
         return source;
     }
@@ -442,7 +442,7 @@ public static class ProjectAliasEditor
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
 
-        foreach ((AliasType aliasType, List<AliasEntry> aliases) in TargetProject.Aliases)
+        foreach ((AliasType aliasType, List<AliasEntry> aliases) in TargetProject.CommonData.Aliases)
         {
             string path = Path.Combine(projectFolder, $"{aliasType}.json");
 
@@ -476,7 +476,7 @@ public static class ProjectAliasEditor
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
 
-        foreach ((AliasType aliasType, List<AliasEntry> aliases) in TargetProject.Aliases)
+        foreach ((AliasType aliasType, List<AliasEntry> aliases) in TargetProject.CommonData.Aliases)
         {
             if(targetType != aliasType) 
                 continue;

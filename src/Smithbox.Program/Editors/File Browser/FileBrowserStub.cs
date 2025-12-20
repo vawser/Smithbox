@@ -1,10 +1,11 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.FileBrowser;
 
-public class FileBrowserStub
+public class FileBrowserStub : IEditorStub
 {
     public Smithbox BaseEditor;
     public ProjectEntry Project;

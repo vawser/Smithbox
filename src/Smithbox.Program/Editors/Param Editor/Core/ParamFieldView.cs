@@ -982,37 +982,37 @@ public class ParamFieldView
                 }
 
                 // ParticleAlias
-                if (showParticleEnum && Editor.Project.Aliases.TryGetValue(AliasType.Particles, out List<AliasEntry> particles))
+                if (showParticleEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Particles, out List<AliasEntry> particles))
                 {
                     FieldDecorators.AliasEnum_Value(particles, oldval.ToString());
                 }
 
                 // SoundAlias
-                if (showSoundEnum && Editor.Project.Aliases.TryGetValue(AliasType.Sounds, out List<AliasEntry> sounds))
+                if (showSoundEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Sounds, out List<AliasEntry> sounds))
                 {
                     FieldDecorators.AliasEnum_Value(sounds, oldval.ToString());
                 }
 
                 // FlagAlias
-                if (showFlagEnum && Editor.Project.Aliases.TryGetValue(AliasType.EventFlags, out List<AliasEntry> eventFlags))
+                if (showFlagEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.EventFlags, out List<AliasEntry> eventFlags))
                 {
                     FieldDecorators.ConditionalAliasEnum_Value(eventFlags, oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
                 }
 
                 // CutsceneAlias
-                if (showCutsceneEnum && Editor.Project.Aliases.TryGetValue(AliasType.Cutscenes, out List<AliasEntry> cutscenes))
+                if (showCutsceneEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Cutscenes, out List<AliasEntry> cutscenes))
                 {
                     FieldDecorators.AliasEnum_Value(cutscenes, oldval.ToString());
                 }
 
                 // MovieAlias
-                if (showMovieEnum && Editor.Project.Aliases.TryGetValue(AliasType.Movies, out List<AliasEntry> movies))
+                if (showMovieEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Movies, out List<AliasEntry> movies))
                 {
                     FieldDecorators.ConditionalAliasEnum_Value(movies, oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
                 }
 
                 // CharacterAlias
-                if (showCharacterEnum && Editor.Project.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characters))
+                if (showCharacterEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characters))
                 {
                     FieldDecorators.AliasEnum_Value(characters, oldval.ToString(), true);
                 }
@@ -1278,37 +1278,37 @@ public class ParamFieldView
             }
 
             // ParticleAlias
-            if (showParticleEnum && Editor.Project.Aliases.TryGetValue(AliasType.Particles, out List<AliasEntry> particles))
+            if (showParticleEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Particles, out List<AliasEntry> particles))
             {
                 FieldDecorators.AliasEnum_Value(particles, colVal.ToString());
             }
 
             // SoundAlias
-            if (showSoundEnum && Editor.Project.Aliases.TryGetValue(AliasType.Sounds, out List<AliasEntry> sounds))
+            if (showSoundEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Sounds, out List<AliasEntry> sounds))
             {
                 FieldDecorators.AliasEnum_Value(sounds, colVal.ToString());
             }
 
             // FlagAlias
-            if (showFlagEnum && Editor.Project.Aliases.TryGetValue(AliasType.EventFlags, out List<AliasEntry> eventFlags))
+            if (showFlagEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.EventFlags, out List<AliasEntry> eventFlags))
             {
                 FieldDecorators.ConditionalAliasEnum_Value(eventFlags, colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
             }
 
             // CutsceneAlias
-            if (showCutsceneEnum && Editor.Project.Aliases.TryGetValue(AliasType.Cutscenes, out List<AliasEntry> cutscenes))
+            if (showCutsceneEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Cutscenes, out List<AliasEntry> cutscenes))
             {
                 FieldDecorators.AliasEnum_Value(cutscenes, colVal.ToString());
             }
 
             // MovieAlias
-            if (showMovieEnum && Editor.Project.Aliases.TryGetValue(AliasType.Movies, out List<AliasEntry> movies))
+            if (showMovieEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Movies, out List<AliasEntry> movies))
             {
                 FieldDecorators.ConditionalAliasEnum_Value(movies, colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
             }
 
             // CharacterAlias
-            if (showCharacterEnum && Editor.Project.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characters))
+            if (showCharacterEnum && Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characters))
             {
                 FieldDecorators.AliasEnum_Value(characters, colVal.ToString(), true);
             }

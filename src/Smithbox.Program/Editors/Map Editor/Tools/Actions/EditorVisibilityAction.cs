@@ -228,7 +228,7 @@ public class EditorVisibilityAction
             {
                 if (obj.IsPart())
                 {
-                    if (Project.Aliases.TryGetValue(AliasType.Assets, out List<AliasEntry> assetAliases))
+                    if (Project.CommonData.Aliases.TryGetValue(AliasType.Assets, out List<AliasEntry> assetAliases))
                     {
                         foreach (var assetEntry in assetAliases)
                         {
@@ -259,7 +259,7 @@ public class EditorVisibilityAction
                         }
                     }
 
-                    if (Project.Aliases.TryGetValue(AliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
+                    if (Project.CommonData.Aliases.TryGetValue(AliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
                     {
                         foreach (var mapPieceEntry in mapPieceAliases)
                         {

@@ -6,15 +6,13 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamToolView
 {
-    private GparamEditorScreen Screen;
-    private GparamSelection Selection;
-    public GparamActionHandler ActionHandler;
+    private GparamEditorScreen Editor;
+    private ProjectEntry Project;
 
-    public GparamToolView(GparamEditorScreen screen)
+    public GparamToolView(GparamEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Selection = screen.Selection;
-        ActionHandler = new GparamActionHandler(screen);
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -22,7 +20,7 @@ public class GparamToolView
     /// </summary>
     public void Display()
     {
-        if (Screen.Project.ProjectType == ProjectType.Undefined)
+        if (Project.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
@@ -30,7 +28,7 @@ public class GparamToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_GparamEditor", ImGuiWindowFlags.MenuBar))
         {
-            Selection.SwitchWindowContext(GparamEditorContext.ToolWindow);
+            Editor.Selection.SwitchWindowContext(GparamEditorContext.ToolWindow);
 
             var windowWidth = ImGui.GetWindowWidth();
 
@@ -45,12 +43,12 @@ public class GparamToolView
             {
                 if (ImGui.CollapsingHeader("Quick Edit"))
                 {
-                    Screen.QuickEditHandler.DisplayInputWindow();
+                    Editor.QuickEditHandler.DisplayInputWindow();
                 }
 
                 if (ImGui.CollapsingHeader("Quick Edit Commands"))
                 {
-                    Screen.QuickEditHandler.DisplayCheatSheet();
+                    Editor.QuickEditHandler.DisplayCheatSheet();
                 }
             }
 

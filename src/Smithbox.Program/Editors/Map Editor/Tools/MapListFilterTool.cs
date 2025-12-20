@@ -327,7 +327,6 @@ public class MapListFilterTool
 
                 try
                 {
-                    var options = new JsonSerializerOptions();
                     QuickFilterCollection = JsonSerializer.Deserialize(filestring, MapEditorJsonSerializerContext.Default.MapListFilterCollection);
                 }
                 catch (Exception e)
@@ -345,7 +344,6 @@ public class MapListFilterTool
             var stub = new MapListFilterCollection();
             stub.Entries = new();
 
-            var options = new JsonSerializerOptions();
             var jsonString = JsonSerializer.Serialize(stub, (System.Text.Json.Serialization.Metadata.JsonTypeInfo<MapListFilterCollection>)MapEditorJsonSerializerContext.Default.MapListFilterCollection);
 
             File.WriteAllText(filterFile, jsonString);
@@ -364,7 +362,6 @@ public class MapListFilterTool
             Directory.CreateDirectory(filterFolder);
         }
 
-        var options = new JsonSerializerOptions();
         var jsonString = JsonSerializer.Serialize(QuickFilterCollection, MapEditorJsonSerializerContext.Default.MapListFilterCollection);
 
         File.WriteAllText(filterFile, jsonString);

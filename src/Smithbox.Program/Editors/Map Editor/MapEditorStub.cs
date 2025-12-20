@@ -1,12 +1,13 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MapEditorStub
+public class MapEditorStub : IEditorStub
 {
     public Smithbox BaseEditor;
     public ProjectEntry Project;

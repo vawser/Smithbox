@@ -5,7 +5,8 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamFilters
 {
-    private GparamEditorScreen Screen;
+    private GparamEditorScreen Editor;
+    private ProjectEntry Project;
 
     public string FileFilterInput = "";
     public string GroupFilterInput = "";
@@ -17,9 +18,10 @@ public class GparamFilters
     private bool FieldFilterExactMatch = false;
     private bool FieldValueFilterExactMatch = false;
 
-    public GparamFilters(GparamEditorScreen screen)
+    public GparamFilters(GparamEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>

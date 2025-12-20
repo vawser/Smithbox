@@ -13,8 +13,8 @@ public static class PropInfo_MapObjectType
         var name = "";
         var desc = "";
 
-        name = FormatInformationUtils.GetClassReferenceName(editor.Project.MsbInformation, typ.Name);
-        desc = FormatInformationUtils.GetClassReferenceDescription(editor.Project.MsbInformation, typ.Name);
+        name = FormatInformationUtils.GetClassReferenceName(editor.Project.MapData.MsbInformation, typ.Name);
+        desc = FormatInformationUtils.GetClassReferenceDescription(editor.Project.MapData.MsbInformation, typ.Name);
 
         if (name != "")
         {

@@ -1496,7 +1496,6 @@ public class CFG
             try
             {
                 var filestring = File.ReadAllText(file);
-                var options = new JsonSerializerOptions();
                 Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.CFG);
 
                 if (Current == null)
