@@ -343,7 +343,8 @@
 	
 	<sparringGroundsEventFlagId
 	AltName="Appearance Event Flag ID"
-	Wiki="Event flag that determines if goods will appear in Sparring Grounds/Visual Codex" />
+	Wiki="Event flag that determines if goods will appear in Sparring Grounds/Visual Codex"
+	FlagAlias="" />
 	
 	<level2RefId
 	AltName="Reference ID: Level 2"

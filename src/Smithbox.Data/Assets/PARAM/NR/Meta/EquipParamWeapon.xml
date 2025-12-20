@@ -296,7 +296,7 @@
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
     <disableParamReserve1 AltName="" Padding=""/>
     <disableParamReserve2 AltName="" Padding=""/>
-    <behaviorVariationId AltName="Behavior Variation ID" Wiki="Used when determining the action parameter ID to be referenced during an attack" VRef="behaviorVariation" />
+    <behaviorVariationId AltName="Behavior Variation ID" Wiki="Used when determining the action parameter ID to be referenced during an attack" ProjectEnum="BEHAVIOR_VARIATION" />
     <sortId AltName="Sort ID" Wiki="Sort ID (-1: Do not collect) (7 digits is the limit in s32 to add the enhancement level in the program)" />
     <wanderingEquipId AltName="Wandering Equip ID" Wiki="Replacement equipment ID for wandering ghosts." />
     <weight AltName="Weight" Wiki="Weight [kg]." />
@@ -596,7 +596,8 @@
 	
 	<sparringGroundsEventFlagId
 	AltName="Appearance Event Flag ID"
-	Wiki="Event flag that determines if weapon will appear in Sparring Grounds/Visual Codex" />
+	Wiki="Event flag that determines if weapon will appear in Sparring Grounds/Visual Codex"
+	FlagAlias="" />
 	
 	<heroMovesetOverrideID
 	AltName="Hero Moveset Override ID"
@@ -615,7 +616,8 @@
     
 	<heroBehaviorVariationID
 	AltName="Hero Behavior Variation ID"
-	Wiki="Behavior variation ID used when wielded by specified hero" />
+	Wiki="Behavior variation ID used when wielded by specified hero"
+	ProjectEnum="BEHAVIOR_VARIATION" />
 	
     <criticalAtkRate
     AltName="Critical Hit Multiplier"
