@@ -15,9 +15,6 @@ public class MovementCycleConfigTool
     public MapEditorScreen Editor;
     public ProjectEntry Project;
 
-    public bool InCooldownMode = false;
-    public Timer CooldownModeTimer;
-
     public MovementCycleConfigTool(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -90,7 +87,6 @@ public class MovementCycleConfigTool
             bool yMovement_Negative = false;
             bool zMovement_Positive = false;
             bool zMovement_Negative = false;
-            bool applyCooldown = false;
 
             if (CFG.Current.MapEditor_Selection_Movement_DiscreteApplication)
             {
@@ -203,11 +199,6 @@ public class MovementCycleConfigTool
             ViewportCompoundAction action = new(actlist);
             Editor.EditorActionManager.ExecuteAction(action);
         }
-    }
-
-    private void Tick(object state)
-    {
-        InCooldownMode = false;
     }
 
     /// <summary>

@@ -58,7 +58,6 @@ public partial class ParamTools
             if (CFG.Current.Interface_ParamEditor_Tool_ParamReloader)
             {
                 Editor.ParamReloader.DisplayParamReloader();
-                Editor.DrawParamReloader.DisplayDrawParamReloader();
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_ItemGib)

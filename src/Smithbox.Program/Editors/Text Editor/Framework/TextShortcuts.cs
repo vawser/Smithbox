@@ -10,16 +10,12 @@ namespace StudioCore.Editors.TextEditor;
 public class TextShortcuts
 {
     private TextEditorScreen Editor;
-    private TextPropertyDecorator Decorator;
-    private TextSelectionManager Selection;
-    private ActionManager EditorActionManager;
+    private ProjectEntry Project;
 
-    public TextShortcuts(TextEditorScreen screen)
+    public TextShortcuts(TextEditorScreen editor, ProjectEntry project)
     {
-        EditorActionManager = screen.EditorActionManager;
-        Editor = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     public void Monitor()
@@ -34,24 +30,24 @@ public class TextShortcuts
             Editor.SaveAll();
         }
 
-        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
         {
-            EditorActionManager.UndoAction();
+            Editor.EditorActionManager.UndoAction();
         }
 
-        if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+        if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
         {
-            EditorActionManager.UndoAction();
+            Editor.EditorActionManager.UndoAction();
         }
 
-        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+        if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
         {
-            EditorActionManager.RedoAction();
+            Editor.EditorActionManager.RedoAction();
         }
 
-        if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+        if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
         {
-            EditorActionManager.RedoAction();
+            Editor.EditorActionManager.RedoAction();
         }
 
         if (Editor.Selection.CurrentWindowContext is TextEditorContext.FmgEntry)
@@ -93,13 +89,13 @@ public class TextShortcuts
     /// </summary>
     public void HandleSelectAll()
     {
-        var selectionContext = Selection.CurrentWindowContext;
-        var multiselect = Selection.FmgEntryMultiselect;
+        var selectionContext = Editor.Selection.CurrentWindowContext;
+        var multiselect = Editor.Selection.FmgEntryMultiselect;
 
-        if (Selection.SelectedFmgWrapper == null)
+        if (Editor.Selection.SelectedFmgWrapper == null)
             return;
 
-        var fmg = Selection.SelectedFmgWrapper.File;
+        var fmg = Editor.Selection.SelectedFmgWrapper.File;
 
         // Select All
         if (selectionContext is TextEditorContext.FmgEntry)
@@ -129,7 +125,7 @@ public class TextShortcuts
     /// </summary>
     public void HandleCopyEntryText()
     {
-        var selectionContext = Selection.CurrentWindowContext;
+        var selectionContext = Editor.Selection.CurrentWindowContext;
 
         // Copy Entry Contents
         if (selectionContext is TextEditorContext.FmgEntry)

@@ -13,6 +13,7 @@ namespace StudioCore.Editors.TextEditor;
 public class TextNamingTemplateManager
 {
     private TextEditorScreen Editor;
+    private ProjectEntry Project;
 
     public string RootPath = "";
     public string ProjectPath = "";
@@ -23,9 +24,11 @@ public class TextNamingTemplateManager
 
     public FmgEntryGeneratorBase SelectedGenerateBase;
 
-    public TextNamingTemplateManager(TextEditorScreen editor)
+    public TextNamingTemplateManager(TextEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
+        Project = project;
+
         RootPath = Path.Join(AppContext.BaseDirectory, "Assets", "Workflow", "Naming Templates");
         ProjectPath = Path.Join(editor.Project.ProjectPath, ".smithbox", "Workflow", "Naming Templates");
     }

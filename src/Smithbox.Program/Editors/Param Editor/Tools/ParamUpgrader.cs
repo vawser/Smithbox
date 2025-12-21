@@ -123,16 +123,15 @@ public class ParamUpgrader
     }
 
     private bool UpgraderInfoSetup = false;
-    private ParamUpgraderInfo UpgraderInfo;
-
-    private BND4 OldRegulationBinder;
     private bool OldRegulationSetup = false;
-
     private bool ConflictsChecked = false;
-    private Dictionary<string, HashSet<int>> ConflictParams;
 
     private bool UpgradePerformed = false;
 
+    private ParamUpgraderInfo UpgraderInfo;
+    private BND4 OldRegulationBinder;
+
+    private Dictionary<string, HashSet<int>> ConflictParams;
     private Dictionary<string, Param> OldRegulationParams;
     private Dictionary<string, Param> NewParams;
 

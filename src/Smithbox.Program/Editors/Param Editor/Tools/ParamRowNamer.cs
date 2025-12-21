@@ -245,9 +245,6 @@ public class ParamRowNamer
 
     public string GetName_EquipParam(Param.Row row, int itemCateogry)
     {
-        var newName = "";
-        var prefix = "";
-
         var rowID = int.Parse($"{row.ID}");
         var name = GetItemName(rowID, itemCateogry);
 

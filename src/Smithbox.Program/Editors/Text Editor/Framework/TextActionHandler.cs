@@ -9,16 +9,13 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextActionHandler
 {
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
+    private ProjectEntry Project;
 
-    public TextActionHandler(TextEditorScreen screen)
+    public TextActionHandler(TextEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-    }
-
-    public void OnProjectChanged()
-    {
-
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -26,9 +23,9 @@ public class TextActionHandler
     /// </summary>
     public void AddTitleEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
     {
-        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
+        var selectedContainer = Editor.Selection.SelectedContainerWrapper;
 
-        var wrapper = Screen.EntryGroupManager.GetAssociatedTitleWrapper(curFmgWrapper.ID);
+        var wrapper = Editor.EntryGroupManager.GetAssociatedTitleWrapper(curFmgWrapper.ID);
 
         if (wrapper != null)
         {
@@ -36,8 +33,8 @@ public class TextActionHandler
 
             newEntry.ID = curEntry.ID;
 
-            var action = new AddAssociatedEntry(Screen, selectedContainer, wrapper.File, newEntry);
-            Screen.EditorActionManager.ExecuteAction(action);
+            var action = new AddAssociatedEntry(Editor, selectedContainer, wrapper.File, newEntry);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
     }
 
@@ -46,9 +43,9 @@ public class TextActionHandler
     /// </summary>
     public void AddSummaryEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
     {
-        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
+        var selectedContainer = Editor.Selection.SelectedContainerWrapper;
 
-        var wrapper = Screen.EntryGroupManager.GetAssociatedSummaryWrapper(curFmgWrapper.ID);
+        var wrapper = Editor.EntryGroupManager.GetAssociatedSummaryWrapper(curFmgWrapper.ID);
 
         if (wrapper != null)
         {
@@ -56,8 +53,8 @@ public class TextActionHandler
 
             newEntry.ID = curEntry.ID;
 
-            var action = new AddAssociatedEntry(Screen, selectedContainer, wrapper.File, newEntry);
-            Screen.EditorActionManager.ExecuteAction(action);
+            var action = new AddAssociatedEntry(Editor, selectedContainer, wrapper.File, newEntry);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
     }
 
@@ -66,9 +63,9 @@ public class TextActionHandler
     /// </summary>
     public void AddDescriptionEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
     {
-        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
+        var selectedContainer = Editor.Selection.SelectedContainerWrapper;
 
-        var wrapper = Screen.EntryGroupManager.GetAssociatedDescriptionWrapper(curFmgWrapper.ID);
+        var wrapper = Editor.EntryGroupManager.GetAssociatedDescriptionWrapper(curFmgWrapper.ID);
 
         if (wrapper != null)
         {
@@ -76,8 +73,8 @@ public class TextActionHandler
 
             newEntry.ID = curEntry.ID;
 
-            var action = new AddAssociatedEntry(Screen, selectedContainer, wrapper.File, newEntry);
-            Screen.EditorActionManager.ExecuteAction(action);
+            var action = new AddAssociatedEntry(Editor, selectedContainer, wrapper.File, newEntry);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
     }
 
@@ -86,9 +83,9 @@ public class TextActionHandler
     /// </summary>
     public void AddEffectEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
     {
-        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
+        var selectedContainer = Editor.Selection.SelectedContainerWrapper;
 
-        var wrapper = Screen.EntryGroupManager.GetAssociatedEffectWrapper(curFmgWrapper.ID);
+        var wrapper = Editor.EntryGroupManager.GetAssociatedEffectWrapper(curFmgWrapper.ID);
 
         if (wrapper != null)
         {
@@ -96,8 +93,8 @@ public class TextActionHandler
 
             newEntry.ID = curEntry.ID;
 
-            var action = new AddAssociatedEntry(Screen, selectedContainer, wrapper.File, newEntry);
-            Screen.EditorActionManager.ExecuteAction(action);
+            var action = new AddAssociatedEntry(Editor, selectedContainer, wrapper.File, newEntry);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
     }
 
@@ -106,16 +103,16 @@ public class TextActionHandler
     /// </summary>
     public void DuplicateEntries()
     {
-        if (Screen.Selection.CurrentWindowContext is not TextEditorContext.FmgEntry)
+        if (Editor.Selection.CurrentWindowContext is not TextEditorContext.FmgEntry)
             return;
 
-        if (Screen.Selection._selectedFmgEntry == null)
+        if (Editor.Selection._selectedFmgEntry == null)
             return;
 
-        if (Screen.Selection._selectedFmgEntryIndex == -1)
+        if (Editor.Selection._selectedFmgEntryIndex == -1)
             return;
 
-        SortedDictionary<int, FMG.Entry> storedEntries = Screen.Selection.FmgEntryMultiselect.StoredEntries;
+        SortedDictionary<int, FMG.Entry> storedEntries = Editor.Selection.FmgEntryMultiselect.StoredEntries;
 
         List<EditorAction> actions = new List<EditorAction>();
 
@@ -153,21 +150,21 @@ public class TextActionHandler
         actions.Reverse();
 
         var groupAction = new FmgGroupedAction(actions);
-        Screen.EditorActionManager.ExecuteAction(groupAction);
+        Editor.EditorActionManager.ExecuteAction(groupAction);
     }
 
     public void DuplicateEntriesPopup(int offset, int amount, bool autoAdjust)
     {
-        if (Screen.Selection.CurrentWindowContext is not TextEditorContext.FmgEntry)
+        if (Editor.Selection.CurrentWindowContext is not TextEditorContext.FmgEntry)
             return;
 
-        if (Screen.Selection._selectedFmgEntry == null)
+        if (Editor.Selection._selectedFmgEntry == null)
             return;
 
-        if (Screen.Selection._selectedFmgEntryIndex == -1)
+        if (Editor.Selection._selectedFmgEntryIndex == -1)
             return;
 
-        SortedDictionary<int, FMG.Entry> storedEntries = Screen.Selection.FmgEntryMultiselect.StoredEntries;
+        SortedDictionary<int, FMG.Entry> storedEntries = Editor.Selection.FmgEntryMultiselect.StoredEntries;
 
         List<EditorAction> actions = new List<EditorAction>();
 
@@ -197,16 +194,16 @@ public class TextActionHandler
         actions.Reverse();
 
         var groupAction = new FmgGroupedAction(actions);
-        Screen.EditorActionManager.ExecuteAction(groupAction);
+        Editor.EditorActionManager.ExecuteAction(groupAction);
     }
 
     private List<EditorAction> ProcessDuplicate(FMG.Entry curEntry, int newId)
     {
         List<EditorAction> actions = new List<EditorAction>();
 
-        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
+        var selectedContainer = Editor.Selection.SelectedContainerWrapper;
         var selectedFmg = curEntry.Parent;
-        var fmgEntryGroup = Screen.EntryGroupManager.GetEntryGroup(curEntry);
+        var fmgEntryGroup = Editor.EntryGroupManager.GetEntryGroup(curEntry);
 
         if (newId != -1)
         {
@@ -218,7 +215,7 @@ public class TextActionHandler
                     var titleEntry = fmgEntryGroup.Title;
                     var titleFmg = titleEntry.Parent;
 
-                    actions.Add(new DuplicateFmgEntry(Screen, selectedContainer, titleFmg, titleEntry, newId));
+                    actions.Add(new DuplicateFmgEntry(Editor, selectedContainer, titleFmg, titleEntry, newId));
                 }
 
                 if (fmgEntryGroup.Summary != null)
@@ -226,7 +223,7 @@ public class TextActionHandler
                     var summaryEntry = fmgEntryGroup.Summary;
                     var summaryFmg = summaryEntry.Parent;
 
-                    actions.Add(new DuplicateFmgEntry(Screen, selectedContainer, summaryFmg, summaryEntry, newId));
+                    actions.Add(new DuplicateFmgEntry(Editor, selectedContainer, summaryFmg, summaryEntry, newId));
                 }
 
                 if (fmgEntryGroup.Description != null)
@@ -234,7 +231,7 @@ public class TextActionHandler
                     var descriptionEntry = fmgEntryGroup.Description;
                     var descriptionFmg = descriptionEntry.Parent;
 
-                    actions.Add(new DuplicateFmgEntry(Screen, selectedContainer, descriptionFmg, descriptionEntry, newId));
+                    actions.Add(new DuplicateFmgEntry(Editor, selectedContainer, descriptionFmg, descriptionEntry, newId));
                 }
 
                 if (fmgEntryGroup.Effect != null)
@@ -242,13 +239,13 @@ public class TextActionHandler
                     var effectEntry = fmgEntryGroup.Effect;
                     var effectFmg = effectEntry.Parent;
 
-                    actions.Add(new DuplicateFmgEntry(Screen, selectedContainer, effectFmg, effectEntry, newId));
+                    actions.Add(new DuplicateFmgEntry(Editor, selectedContainer, effectFmg, effectEntry, newId));
                 }
             }
             // Otherwise just duplicate selection
             else
             {
-                actions.Add(new DuplicateFmgEntry(Screen, selectedContainer, selectedFmg, curEntry, newId));
+                actions.Add(new DuplicateFmgEntry(Editor, selectedContainer, selectedFmg, curEntry, newId));
             }
         }
 
@@ -260,19 +257,19 @@ public class TextActionHandler
     /// </summary>
     public void DeleteEntries()
     {
-        if(Screen.Selection.CurrentWindowContext is not TextEditorContext.FmgEntry)
+        if(Editor.Selection.CurrentWindowContext is not TextEditorContext.FmgEntry)
             return;
 
-        if (Screen.Selection._selectedFmgEntry == null)
+        if (Editor.Selection._selectedFmgEntry == null)
             return;
 
-        if (Screen.Selection._selectedFmgEntryIndex == -1)
+        if (Editor.Selection._selectedFmgEntryIndex == -1)
             return;
 
-        if (Screen.Selection.FmgEntryMultiselect.StoredEntries.Count <= 0)
+        if (Editor.Selection.FmgEntryMultiselect.StoredEntries.Count <= 0)
             return;
 
-        SortedDictionary<int, FMG.Entry> storedEntries = Screen.Selection.FmgEntryMultiselect.StoredEntries;
+        SortedDictionary<int, FMG.Entry> storedEntries = Editor.Selection.FmgEntryMultiselect.StoredEntries;
 
         List<EditorAction> actions = new List<EditorAction>();
 
@@ -292,18 +289,18 @@ public class TextActionHandler
         actions.Reverse();
 
         var groupAction = new FmgGroupedAction(actions);
-        Screen.EditorActionManager.ExecuteAction(groupAction);
+        Editor.EditorActionManager.ExecuteAction(groupAction);
 
-        Screen.Selection.FmgEntryMultiselect.StoredEntries.Clear();
+        Editor.Selection.FmgEntryMultiselect.StoredEntries.Clear();
     }
 
     private List<EditorAction> ProcessDelete(FMG.Entry curEntry)
     {
         List<EditorAction> actions = new List<EditorAction>();
 
-        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
+        var selectedContainer = Editor.Selection.SelectedContainerWrapper;
         var selectedFmg = curEntry.Parent;
-        var fmgEntryGroup = Screen.EntryGroupManager.GetEntryGroup(curEntry);
+        var fmgEntryGroup = Editor.EntryGroupManager.GetEntryGroup(curEntry);
 
         // Delete all related entries together based on selection
         if (fmgEntryGroup.SupportsGrouping)
@@ -313,7 +310,7 @@ public class TextActionHandler
                 var titleEntry = fmgEntryGroup.Title;
                 var titleFmg = titleEntry.Parent;
 
-                actions.Add(new DeleteFmgEntry(Screen, selectedContainer, titleFmg, titleEntry));
+                actions.Add(new DeleteFmgEntry(Editor, selectedContainer, titleFmg, titleEntry));
             }
 
             if (fmgEntryGroup.Summary != null)
@@ -321,7 +318,7 @@ public class TextActionHandler
                 var summaryEntry = fmgEntryGroup.Summary;
                 var summaryFmg = summaryEntry.Parent;
 
-                actions.Add(new DeleteFmgEntry(Screen, selectedContainer, summaryFmg, summaryEntry));
+                actions.Add(new DeleteFmgEntry(Editor, selectedContainer, summaryFmg, summaryEntry));
             }
 
             if (fmgEntryGroup.Description != null)
@@ -329,7 +326,7 @@ public class TextActionHandler
                 var descriptionEntry = fmgEntryGroup.Description;
                 var descriptionFmg = descriptionEntry.Parent;
 
-                actions.Add(new DeleteFmgEntry(Screen, selectedContainer, descriptionFmg, descriptionEntry));
+                actions.Add(new DeleteFmgEntry(Editor, selectedContainer, descriptionFmg, descriptionEntry));
             }
 
             if (fmgEntryGroup.Effect != null)
@@ -337,13 +334,13 @@ public class TextActionHandler
                 var effectEntry = fmgEntryGroup.Effect;
                 var effectFmg = effectEntry.Parent;
 
-                actions.Add(new DeleteFmgEntry(Screen, selectedContainer, effectFmg, effectEntry));
+                actions.Add(new DeleteFmgEntry(Editor, selectedContainer, effectFmg, effectEntry));
             }
         }
         // Otherwise just duplicate selection
         else
         {
-            actions.Add(new DeleteFmgEntry(Screen, selectedContainer, selectedFmg, curEntry));
+            actions.Add(new DeleteFmgEntry(Editor, selectedContainer, selectedFmg, curEntry));
         }
 
         return actions;
@@ -378,7 +375,7 @@ public class TextActionHandler
     /// </summary>
     public void CopyEntryTextToClipboard(bool includeID)
     {
-        var editor = Screen;
+        var editor = Editor;
 
         if (!IsCurrentlyCopyingContents)
         {

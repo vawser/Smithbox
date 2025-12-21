@@ -7,6 +7,7 @@ namespace StudioCore.Editors.TextEditor;
 public class TextSelectionManager
 {
     private TextEditorScreen Editor;
+    private ProjectEntry Project;
 
     public FileDictionaryEntry SelectedFileDictionaryEntry;
     public int SelectedContainerKey;
@@ -32,9 +33,10 @@ public class TextSelectionManager
 
     public TextEditorContext CurrentWindowContext = TextEditorContext.None;
 
-    public TextSelectionManager(TextEditorScreen screen)
+    public TextSelectionManager(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
+        Editor = editor;
+        Project = project;
 
         FmgEntryMultiselect = new TextMultiselection(Editor, MultiSelectKey);
     }

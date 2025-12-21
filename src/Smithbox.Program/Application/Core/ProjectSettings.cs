@@ -132,7 +132,7 @@ public static class ProjectSettings
                 if (EditorStateChanged)
                 {
                     TargetProject.ClearEditors();
-                    TargetProject.InitializeEditors(InitType.ProjectDefined);
+                    using var _ = TargetProject.InitializeEditors(InitType.ProjectDefined);
                 }
             }
             UIHelper.Tooltip("Updates the project settings.");

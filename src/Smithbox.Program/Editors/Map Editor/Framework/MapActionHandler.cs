@@ -1,13 +1,10 @@
 ﻿using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using static SoulsFormats.MSBE.Part;
-using StudioCore.Application;
-using StudioCore.Editors.Common;
-using StudioCore.Utilities;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -16,9 +13,9 @@ public class MapActionHandler
     private MapEditorScreen Editor;
     private ProjectEntry Project;
 
-    public MapActionHandler(MapEditorScreen baseEditor, ProjectEntry project)
+    public MapActionHandler(MapEditorScreen editor, ProjectEntry project)
     {
-        Editor = baseEditor;
+        Editor = editor;
         Project = project;
     }
 

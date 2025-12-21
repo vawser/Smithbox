@@ -68,7 +68,7 @@ public class HavokCollisionManager
 
     private void LoadMapCollision(string mapId, string type)
     {
-        byte[]? CompendiumBytes = null;
+        byte[] CompendiumBytes = null;
 
         var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
         var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
@@ -84,7 +84,7 @@ public class HavokCollisionManager
             var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
             HavokBinarySerializer serializer = new HavokBinarySerializer();
-            HavokXmlSerializer? xmlSerializer = null;
+            HavokXmlSerializer xmlSerializer = null;
 
             // Get compendium
             foreach (var file in packedBinder.Files)
@@ -124,7 +124,7 @@ public class HavokCollisionManager
                         {
                             fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
                         }
-                        catch (InvalidDataException e)
+                        catch (InvalidDataException)
                         {
                             if (xmlSerializer == null)
                                 xmlSerializer = new HavokXmlSerializer();

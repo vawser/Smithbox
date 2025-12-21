@@ -405,8 +405,6 @@ public class ViewportMenu
 
     public void MapModelLoadMenu()
     {
-        bool ticked;
-
         if (ImGui.BeginMenu("Model Load"))
         {
             if (ImGui.MenuItem("Map Pieces"))
@@ -454,8 +452,6 @@ public class ViewportMenu
 
     public void MapTextureLoadMenu()
     {
-        bool ticked;
-
         if (ImGui.BeginMenu("Texture Load"))
         {
             if (ImGui.MenuItem("Map Pieces"))
@@ -495,8 +491,6 @@ public class ViewportMenu
 
     public void ModelModelLoadMenu()
     {
-        bool ticked;
-
         if (ImGui.BeginMenu("Model Load"))
         {
             if (ImGui.MenuItem("Map Pieces"))
@@ -548,8 +542,6 @@ public class ViewportMenu
 
     public void ModelTextureLoadMenu()
     {
-        bool ticked;
-
         if (ImGui.BeginMenu("Texture Load"))
         {
             if (ImGui.MenuItem("Map Pieces"))

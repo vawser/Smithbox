@@ -8,14 +8,12 @@ namespace StudioCore.Editors.TextEditor;
 public class TextFilters
 {
     private TextEditorScreen Editor;
-    private TextPropertyDecorator Decorator;
-    private TextSelectionManager Selection;
+    private ProjectEntry Project;
 
-    public TextFilters(TextEditorScreen screen)
+    public TextFilters(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     public string FileFilterInput = "";

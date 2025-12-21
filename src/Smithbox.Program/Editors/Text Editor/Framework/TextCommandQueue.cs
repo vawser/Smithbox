@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Application;
 using System;
 using System.Linq;
 
@@ -7,10 +8,12 @@ namespace StudioCore.Editors.TextEditor;
 public class TextCommandQueue
 {
     private TextEditorScreen Editor;
+    private ProjectEntry Project;
 
-    public TextCommandQueue(TextEditorScreen screen)
+    public TextCommandQueue(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
+        Editor = editor;
+        Project = project;
     }
 
     public void Parse(string[] initcmd)
@@ -32,7 +35,7 @@ public class TextCommandQueue
                 foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
                 {
                     bool found = false;
-                    FMG.Entry? entry = null;
+                    FMG.Entry entry = null;
                     int index = -1;
 
                     if (info.ContainerDisplayCategory.ToString() == category &&

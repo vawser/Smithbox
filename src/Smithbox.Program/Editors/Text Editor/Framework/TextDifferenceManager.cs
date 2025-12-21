@@ -9,12 +9,12 @@ namespace StudioCore.Editors.TextEditor;
 public class TextDifferenceManager
 {
     private TextEditorScreen Editor;
-    public TextSelectionManager Selection;
+    private ProjectEntry Project;
 
-    public TextDifferenceManager(TextEditorScreen screen)
+    public TextDifferenceManager(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -38,7 +38,7 @@ public class TextDifferenceManager
         AdditionCache = new();
         DifferenceCache = new();
 
-        if (Selection.SelectedContainerWrapper == null)
+        if (Editor.Selection.SelectedContainerWrapper == null)
             return;
 
         // Leave empty if disabled
@@ -47,12 +47,12 @@ public class TextDifferenceManager
             return;
         }
 
-        var containerCategory = Selection.SelectedContainerWrapper.ContainerDisplayCategory;
-        var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
-        var containerName = Selection.SelectedContainerWrapper.FileEntry.Filename;
+        var containerCategory = Editor.Selection.SelectedContainerWrapper.ContainerDisplayCategory;
+        var containerSubCategory = Editor.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
+        var containerName = Editor.Selection.SelectedContainerWrapper.FileEntry.Filename;
 
         // Fmg ID for comparison is selected FMG
-        var fmgID = Selection.SelectedFmgWrapper.ID;
+        var fmgID = Editor.Selection.SelectedFmgWrapper.ID;
 
         // Set the ID to passed instead of selected if called from the FmgExporter
         if(setFmgId != -1)
@@ -251,10 +251,10 @@ public class TextDifferenceManager
         // DS2
         if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            if (Selection.SelectedContainerWrapper == null)
+            if (Editor.Selection.SelectedContainerWrapper == null)
                 return false;
 
-            var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
+            var containerSubCategory = Editor.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
             entryId = $"{entryId}{entry.Parent.Name}{containerSubCategory}";
 
@@ -288,10 +288,10 @@ public class TextDifferenceManager
         // DS2
         if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            if (Selection.SelectedContainerWrapper == null)
+            if (Editor.Selection.SelectedContainerWrapper == null)
                 return false;
 
-            var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
+            var containerSubCategory = Editor.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
             entryId = $"{entryId}{entry.Parent.Name}{containerSubCategory}";
 

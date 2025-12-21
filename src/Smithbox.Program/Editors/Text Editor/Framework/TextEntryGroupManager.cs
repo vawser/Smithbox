@@ -11,13 +11,13 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextEntryGroupManager
 {
-    public TextEditorScreen Editor;
-    public TextSelectionManager Selection;
+    private TextEditorScreen Editor;
+    private ProjectEntry Project;
 
-    public TextEntryGroupManager(TextEditorScreen screen)
+    public TextEntryGroupManager(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -25,7 +25,7 @@ public class TextEntryGroupManager
     /// </summary>
     public TextFmgWrapper GetAssociatedTitleWrapper(int parentFmgID)
     {
-        var fmgWrappers = Selection.SelectedContainerWrapper.FmgWrappers;
+        var fmgWrappers = Editor.Selection.SelectedContainerWrapper.FmgWrappers;
         var groupings = GetGroupings();
 
         foreach (var group in groupings)
@@ -50,7 +50,7 @@ public class TextEntryGroupManager
     /// </summary>
     public TextFmgWrapper GetAssociatedSummaryWrapper(int parentFmgID)
     {
-        var fmgWrappers = Selection.SelectedContainerWrapper.FmgWrappers;
+        var fmgWrappers = Editor.Selection.SelectedContainerWrapper.FmgWrappers;
         var groupings = GetGroupings();
 
         foreach(var group in groupings)
@@ -75,7 +75,7 @@ public class TextEntryGroupManager
     /// </summary>
     public TextFmgWrapper GetAssociatedDescriptionWrapper(int parentFmgID)
     {
-        var fmgWrappers = Selection.SelectedContainerWrapper.FmgWrappers;
+        var fmgWrappers = Editor.Selection.SelectedContainerWrapper.FmgWrappers;
         var groupings = GetGroupings();
 
         foreach (var group in groupings)
@@ -100,7 +100,7 @@ public class TextEntryGroupManager
     /// </summary>
     public TextFmgWrapper GetAssociatedEffectWrapper(int parentFmgID)
     {
-        var fmgWrappers = Selection.SelectedContainerWrapper.FmgWrappers;
+        var fmgWrappers = Editor.Selection.SelectedContainerWrapper.FmgWrappers;
         var groupings = GetGroupings();
 
         foreach (var group in groupings)
@@ -122,7 +122,9 @@ public class TextEntryGroupManager
 
     public FmgEntryGroup GetEntryGroup(FMG.Entry entry)
     {
-        return new FmgEntryGroup(this, Selection.SelectedContainerWrapper, Selection.SelectedFmgWrapper, entry);
+        return new FmgEntryGroup(this, 
+            Editor.Selection.SelectedContainerWrapper, 
+            Editor.Selection.SelectedFmgWrapper, entry);
     }
 
     /// <summary>

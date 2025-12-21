@@ -260,12 +260,6 @@ public class ParamEditorShortcuts
             {
                 Editor.ParamReloader.ReloadMemoryParam(Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam());
             }
-
-            // Reload Current DrawParam
-            else if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadDrawParam) && Editor._activeView.Selection.GetActiveParam() != null)
-            {
-                Editor.DrawParamReloader.ReloadDrawParam(Editor);
-            }
         }
     }
 }

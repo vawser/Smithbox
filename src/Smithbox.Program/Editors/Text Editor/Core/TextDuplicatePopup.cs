@@ -6,26 +6,22 @@ namespace StudioCore.Editors.TextEditor;
 public class TextDuplicatePopup
 {
     private TextEditorScreen Editor;
-    private TextSelectionManager Selection;
-
-    private bool DuplicatePopupOpen = false;
+    private ProjectEntry Project;
 
     private string DuplicateOffset = "";
     private int DuplicateAmount = 1;
     private bool AutoAdjustOffset = true;
 
-    public TextDuplicatePopup(TextEditorScreen screen)
+    public TextDuplicatePopup(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     public void Display()
     {
         if (ImGui.BeginPopup("textDuplicatePopup"))
         {
-            DuplicatePopupOpen = true;
-
             ImGui.InputText("Offset", ref DuplicateOffset, 255);
             UIHelper.Tooltip("The offset to apply to the entry ID per duplicate instance.");
 
@@ -51,15 +47,9 @@ public class TextDuplicatePopup
                 {
                     Editor.ActionHandler.DuplicateEntriesPopup(offset, DuplicateAmount, AutoAdjustOffset);
                 }
-
-                DuplicatePopupOpen = false;
             }
 
             ImGui.EndPopup();
-        }
-        else
-        {
-            DuplicatePopupOpen = false;
         }
     }
 }

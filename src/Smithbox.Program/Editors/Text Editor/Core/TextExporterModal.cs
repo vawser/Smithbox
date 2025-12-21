@@ -6,16 +6,16 @@ namespace StudioCore.Editors.TextEditor;
 public class TextExporterModal
 {
     private TextEditorScreen Editor;
-    private TextSelectionManager Selection;
+    private ProjectEntry Project;
 
     public bool ShowModal = false;
 
     public string WrapperName = "";
 
-    public TextExporterModal(TextEditorScreen screen)
+    public TextExporterModal(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     public void Display()

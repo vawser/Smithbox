@@ -8,21 +8,13 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextFmgEntryView
 {
-    public TextEditorScreen Editor;
-    public TextPropertyDecorator Decorator;
-    public TextSelectionManager Selection;
-    public TextFilters Filters;
-    public TextContextMenu ContextMenu;
-    public TextDifferenceManager DifferenceManager;
+    private TextEditorScreen Editor;
+    private ProjectEntry Project;
 
-    public TextFmgEntryView(TextEditorScreen screen)
+    public TextFmgEntryView(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        Filters = screen.Filters;
-        ContextMenu = screen.ContextMenu;
-        DifferenceManager = screen.DifferenceManager;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -32,31 +24,31 @@ public class TextFmgEntryView
     {
         if (ImGui.Begin("Text Entries##fmgEntryList"))
         {
-            Selection.SwitchWindowContext(TextEditorContext.FmgEntry);
+            Editor.Selection.SwitchWindowContext(TextEditorContext.FmgEntry);
 
-            Filters.DisplayFmgEntryFilterSearch();
+            Editor.Filters.DisplayFmgEntryFilterSearch();
 
             ImGui.SameLine();
 
             if(ImGui.Button($"{Icons.Eye}##fmgFocusSelection", DPI.IconButtonSize))
             {
-                Selection.FocusFmgEntrySelection = true;
+                Editor.Selection.FocusFmgEntrySelection = true;
             }
             UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {KeyBindings.Current.TEXT_FocusSelectedEntry.HintText}");
 
             ImGui.BeginChild("FmgEntriesList");
-            Selection.SwitchWindowContext(TextEditorContext.FmgEntry);
+            Editor.Selection.SwitchWindowContext(TextEditorContext.FmgEntry);
 
-            if (Selection.SelectedFmgWrapper != null && Selection.SelectedFmgWrapper.File != null)
+            if (Editor.Selection.SelectedFmgWrapper != null && Editor.Selection.SelectedFmgWrapper.File != null)
             {
                 // Categories
-                for (int i = 0; i < Selection.SelectedFmgWrapper.File.Entries.Count; i++)
+                for (int i = 0; i < Editor.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
                 {
-                    var entry = Selection.SelectedFmgWrapper.File.Entries[i];
+                    var entry = Editor.Selection.SelectedFmgWrapper.File.Entries[i];
                     var id = entry.ID;
                     var contents = entry.Text;
 
-                    if (Filters.IsFmgEntryFilterMatch(entry))
+                    if (Editor.Filters.IsFmgEntryFilterMatch(entry))
                     {
                         var displayedText = contents;
 
@@ -81,52 +73,52 @@ public class TextFmgEntryView
                         }
 
                         // Unique rows
-                        if (DifferenceManager.IsUniqueToProject(entry))
+                        if (Editor.DifferenceManager.IsUniqueToProject(entry))
                         {
                             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueTextEntry_Text);
                         }
                         // Modified rows
-                        else if (DifferenceManager.IsDifferentToVanilla(entry))
+                        else if (Editor.DifferenceManager.IsDifferentToVanilla(entry))
                         {
                             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text);
                         }
 
                         // Script row
-                        if (ImGui.Selectable($"{id} {displayedText}##fmgEntry{id}{i}", Selection.IsFmgEntrySelected(i)))
+                        if (ImGui.Selectable($"{id} {displayedText}##fmgEntry{id}{i}", Editor.Selection.IsFmgEntrySelected(i)))
                         {
-                            Selection.SelectFmgEntry(i, entry);
+                            Editor.Selection.SelectFmgEntry(i, entry);
                         }
 
-                        if (DifferenceManager.IsUniqueToProject(entry) || 
-                            DifferenceManager.IsDifferentToVanilla(entry))
+                        if (Editor.DifferenceManager.IsUniqueToProject(entry) ||
+                            Editor.DifferenceManager.IsDifferentToVanilla(entry))
                         {
                             ImGui.PopStyleColor(1);
                         }
 
                         // Arrow Selection
-                        if (ImGui.IsItemHovered() && Selection.SelectNextFmgEntry)
+                        if (ImGui.IsItemHovered() && Editor.Selection.SelectNextFmgEntry)
                         {
-                            Selection.SelectNextFmgEntry = false;
-                            Selection.SelectFmgEntry(i, entry);
+                            Editor.Selection.SelectNextFmgEntry = false;
+                            Editor.Selection.SelectFmgEntry(i, entry);
                         }
                         if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                         {
-                            Selection.SelectNextFmgEntry = true;
+                            Editor.Selection.SelectNextFmgEntry = true;
                         }
 
                         // Context Menu / Shortcuts
-                        if (Selection.IsFmgEntrySelected(i))
+                        if (Editor.Selection.IsFmgEntrySelected(i))
                         {
-                            ContextMenu.FmgEntryContextMenu(i, Selection.SelectedFmgWrapper, entry, Selection.IsFmgEntrySelected(i));
+                            Editor.ContextMenu.FmgEntryContextMenu(i, Editor.Selection.SelectedFmgWrapper, entry, Editor.Selection.IsFmgEntrySelected(i));
 
                             Editor.EditorShortcuts.HandleSelectAll();
                             Editor.EditorShortcuts.HandleCopyEntryText();
                         }
 
                         // Focus Selection
-                        if (Selection.FocusFmgEntrySelection && Selection.IsFmgEntrySelected(i))
+                        if (Editor.Selection.FocusFmgEntrySelection && Editor.Selection.IsFmgEntrySelected(i))
                         {
-                            Selection.FocusFmgEntrySelection = false;
+                            Editor.Selection.FocusFmgEntrySelection = false;
                             ImGui.SetScrollHereY();
                         }
 

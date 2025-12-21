@@ -14,7 +14,7 @@ public static class ProjectAliasEditor
 {
     private static Smithbox BaseEditor;
     public static ProjectEntry TargetProject;
-    private static AliasStore? BaseAliases = null;
+    private static AliasStore BaseAliases = null;
 
     private static bool Display = false;
 

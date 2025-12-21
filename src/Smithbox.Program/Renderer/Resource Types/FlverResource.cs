@@ -1,4 +1,5 @@
 ﻿#nullable enable
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.Utilities;
 using StudioCore.Application;
@@ -80,7 +81,7 @@ public class FlverResource : IResource, IDisposable
 
     public GPUBufferAllocator.GPUBufferHandle? StaticBoneBuffer { get; private set; }
 
-    public string VirtPath { get; set; }
+    public string? VirtPath { get; set; }
 
     /// <summary>
     /// Bytes
@@ -107,9 +108,6 @@ public class FlverResource : IResource, IDisposable
                     curProject.ProjectType != ProjectType.DS1)
                 {
                     BinaryReaderEx br = new(false, bytes);
-                    DCX.Type ctype;
-
-
                     Flver = FLVER2.Read(bytes);
 
                     ret = LoadInternal(al, virtPath);
@@ -193,7 +191,7 @@ public class FlverResource : IResource, IDisposable
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during FlverResource load.", Microsoft.Extensions.Logging.LogLevel.Error);
+            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during FlverResource load.", LogLevel.Error, LogPriority.High, e);
         }
 
         return false;
@@ -214,8 +212,8 @@ public class FlverResource : IResource, IDisposable
 
         var path = mpath;
 
-        MTD material = null;
-        MATBIN matbin = null;
+        MTD? material = null;
+        MATBIN? matbin = null;
 
         if (mpath == "")
         {

@@ -70,7 +70,6 @@ public class ParamEditorScreen : EditorScreen
     public ParamRowNamer RowNamer;
     public ParamComparisonReport ComparisonReport;
     public ParamReloader ParamReloader;
-    public DrawParamReloader DrawParamReloader;
     public ItemGib ItemGib;
     public ParamUpgrader ParamUpgrader;
 
@@ -103,7 +102,6 @@ public class ParamEditorScreen : EditorScreen
         PinGroupHandler = new(this);
         ComparisonReport = new ParamComparisonReport(this, project);
         ParamReloader = new(this, Project);
-        DrawParamReloader = new(this, Project);
         ItemGib = new(this, Project);
         ParamUpgrader = new(this, Project);
 
@@ -928,9 +926,6 @@ public class ParamEditorScreen : EditorScreen
         {
             // Param Reloader
             ParamReloader.DisplayParamReloaderMenu();
-
-            // Draw Param Reloader
-            DrawParamReloader.DisplayDrawParamReloaderMenu();
 
             // Item Gib
             ItemGib.DisplayItemGibMenu();

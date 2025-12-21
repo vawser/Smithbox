@@ -37,8 +37,6 @@ public class WorldMapTool : IResourceEventListener
     private List<string> HoveredMapTiles = new List<string>();
     private List<string> SelectedMapTiles = new List<string>();
 
-    private bool HasSetupMaps = false;
-
     private bool _isDraggingMap = false;
     private Vector2 _lastMousePos = Vector2.Zero;
 
@@ -446,8 +444,6 @@ public class WorldMapTool : IResourceEventListener
             IsMapWindowOpen = false;
         }
     }
-
-    private bool RegisteredListeners = false;
 
     private void RegisterWorldMapListeners()
     {

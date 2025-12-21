@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -81,7 +82,7 @@ public class LoadBinderResourcesAction
                         catch (Exception e)
                         {
                             load = false;
-                            ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error);
+                            ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error, LogPriority.High, e);
                         }
 
                         break;
@@ -99,7 +100,7 @@ public class LoadBinderResourcesAction
                         catch (Exception e)
                         {
                             load = false;
-                            ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error);
+                            ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error, LogPriority.High, e);
                         }
 
                         break;
@@ -135,7 +136,7 @@ public class LoadBinderResourcesAction
                         catch (Exception e)
                         {
                             load = false;
-                            ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error);
+                            ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error, LogPriority.High, e);
                         }
 
                         break;

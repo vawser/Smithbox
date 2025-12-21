@@ -80,7 +80,7 @@ public class HavokNavmeshManager
             var binder = new BND4Reader(binderData.Value);
 
             HavokBinarySerializer serializer = new HavokBinarySerializer();
-            HavokXmlSerializer? xmlSerializer = null;
+            HavokXmlSerializer xmlSerializer = null;
 
             foreach (var file in binder.Files)
             {
@@ -97,7 +97,7 @@ public class HavokNavmeshManager
                         {
                             fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
                         }
-                        catch (InvalidDataException e)
+                        catch (InvalidDataException)
                         {
                             if (xmlSerializer == null)
                                 xmlSerializer = new HavokXmlSerializer();

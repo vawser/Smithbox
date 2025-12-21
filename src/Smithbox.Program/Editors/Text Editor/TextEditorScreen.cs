@@ -15,7 +15,6 @@ public class TextEditorScreen : EditorScreen
     public ActionManager EditorActionManager = new();
 
     public TextSelectionManager Selection;
-    public TextPropertyDecorator Decorator;
     public TextContextMenu ContextMenu;
     public TextShortcuts EditorShortcuts;
     public TextActionHandler ActionHandler;
@@ -26,9 +25,6 @@ public class TextEditorScreen : EditorScreen
 
     public TextCommandQueue CommandQueue;
 
-    public TextToolView ToolView;
-    public TextToolMenubar ToolMenubar;
-
     public TextFileView FileView;
     public TextFmgView FmgView;
     public TextFmgEntryView FmgEntryView;
@@ -36,6 +32,7 @@ public class TextEditorScreen : EditorScreen
     public TextNewEntryCreationModal EntryCreationModal;
     public TextExporterModal TextExportModal;
     public TextDuplicatePopup TextDuplicatePopup;
+    public TextToolView ToolView;
 
     public FmgExporter FmgExporter;
     public FmgImporter FmgImporter;
@@ -48,34 +45,31 @@ public class TextEditorScreen : EditorScreen
         BaseEditor = baseEditor;
         Project = project;
 
-        Selection = new TextSelectionManager(this);
-        Decorator = new TextPropertyDecorator(this);
-        ContextMenu = new TextContextMenu(this);
-        ActionHandler = new TextActionHandler(this);
-        EditorShortcuts = new TextShortcuts(this);
-        CommandQueue = new TextCommandQueue(this);
-        Filters = new TextFilters(this);
-        EntryGroupManager = new TextEntryGroupManager(this);
-        DifferenceManager = new TextDifferenceManager(this);
-        NamingTemplateManager = new TextNamingTemplateManager(this);
+        Selection = new TextSelectionManager(this, Project);
+        ContextMenu = new TextContextMenu(this, Project);
+        ActionHandler = new TextActionHandler(this, Project);
+        EditorShortcuts = new TextShortcuts(this, Project);
+        CommandQueue = new TextCommandQueue(this, Project);
+        Filters = new TextFilters(this, Project);
+        EntryGroupManager = new TextEntryGroupManager(this, Project);
+        DifferenceManager = new TextDifferenceManager(this, Project);
+        NamingTemplateManager = new TextNamingTemplateManager(this, Project);
 
-        ToolView = new TextToolView(this);
-        ToolMenubar = new TextToolMenubar(this);
+        FileView = new TextFileView(this, Project);
+        FmgView = new TextFmgView(this, Project);
+        FmgEntryView = new TextFmgEntryView(this, Project);
+        FmgEntryPropertyEditor = new TextFmgEntryPropertyEditor(this, Project);
+        ToolView = new TextToolView(this, Project);
 
-        FileView = new TextFileView(this);
-        FmgView = new TextFmgView(this);
-        FmgEntryView = new TextFmgEntryView(this);
-        FmgEntryPropertyEditor = new TextFmgEntryPropertyEditor(this);
+        EntryCreationModal = new TextNewEntryCreationModal(this, Project);
+        TextExportModal = new TextExporterModal(this, Project);
+        TextDuplicatePopup = new TextDuplicatePopup(this, Project);
 
-        EntryCreationModal = new TextNewEntryCreationModal(this);
-        TextExportModal = new TextExporterModal(this);
-        TextDuplicatePopup = new TextDuplicatePopup(this);
+        FmgExporter = new FmgExporter(this, Project);
+        FmgImporter = new FmgImporter(this, Project);
+        LanguageSync = new LanguageSync(this, Project);
 
-        FmgExporter = new FmgExporter(this, project);
-        FmgImporter = new FmgImporter(this, project);
-        LanguageSync = new LanguageSync(this, project);
-
-        FmgDumper = new FmgDumper(this, project);
+        FmgDumper = new FmgDumper(this, Project);
     }
 
     public string EditorName => "Text Editor";

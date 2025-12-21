@@ -11,8 +11,8 @@
 - Model Editor: apply proper transform inheritance for dummies/nodes
 - Model Editor: Add simple JSON export/import for elements of FLVER
 - Model Editor: Make the mesh entries use the sub-meshes properly
+- Model Editor: Fix property editing for the sub-classes (FaceSet, Texture, etc)
 
-- Param Editor: rethink how the Upgrader works, currently method is fragile and allows data loss
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: Table Group column should have difference highlighting if any of the internal rows are highlighted as different
@@ -29,4 +29,4 @@
  
 # TODO NOW
 
-- Model Editor: Fix property editing for the sub-classes (FaceSet, Texture, etc)
+- Param Editor: rethink how the Upgrader works, currently method is fragile and allows data loss

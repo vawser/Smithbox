@@ -11,19 +11,13 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextFileView
 {
-    public TextEditorScreen Editor;
-    public TextPropertyDecorator Decorator;
-    public TextSelectionManager Selection;
-    public TextFilters Filters;
-    public TextContextMenu ContextMenu;
+    private TextEditorScreen Editor;
+    private ProjectEntry Project;
 
-    public TextFileView(TextEditorScreen screen)
+    public TextFileView(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        Filters = screen.Filters;
-        ContextMenu = screen.ContextMenu;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -33,14 +27,14 @@ public class TextFileView
     {
         if (ImGui.Begin("Files##FmgContainerFileList"))
         {
-            Selection.SwitchWindowContext(TextEditorContext.File);
+            Editor.Selection.SwitchWindowContext(TextEditorContext.File);
 
-            Filters.DisplayFileFilterSearch();
+            Editor.Filters.DisplayFileFilterSearch();
 
             int index = 0;
 
             ImGui.BeginChild("CategoryList");
-            Selection.SwitchWindowContext(TextEditorContext.File);
+            Editor.Selection.SwitchWindowContext(TextEditorContext.File);
 
             // Categories
             foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
@@ -192,36 +186,36 @@ public class TextFileView
             }
         }
 
-        if (Filters.IsFileFilterMatch(displayName, "", wrapper))
+        if (Editor.Filters.IsFileFilterMatch(displayName, "", wrapper))
         {
             // Script row
-            if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Filename}{index}", index == Selection.SelectedContainerKey))
+            if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Filename}{index}", index == Editor.Selection.SelectedContainerKey))
             {
-                Selection.SelectFileContainer(entry, wrapper, index);
+                Editor.Selection.SelectFileContainer(entry, wrapper, index);
             }
 
             // Arrow Selection
-            if (ImGui.IsItemHovered() && Selection.SelectNextFileContainer)
+            if (ImGui.IsItemHovered() && Editor.Selection.SelectNextFileContainer)
             {
-                Selection.SelectNextFileContainer = false;
-                Selection.SelectFileContainer(entry, wrapper, index);
+                Editor.Selection.SelectNextFileContainer = false;
+                Editor.Selection.SelectFileContainer(entry, wrapper, index);
             }
             if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
             {
-                Selection.SelectNextFileContainer = true;
+                Editor.Selection.SelectNextFileContainer = true;
             }
 
             // Only apply to selection
-            if (Selection.SelectedContainerKey != -1)
+            if (Editor.Selection.SelectedContainerKey != -1)
             {
-                if (Selection.SelectedContainerKey == index)
+                if (Editor.Selection.SelectedContainerKey == index)
                 {
-                    ContextMenu.FileContextMenu(wrapper);
+                    Editor.ContextMenu.FileContextMenu(wrapper);
                 }
 
-                if (Selection.FocusFileSelection && Selection.SelectedContainerKey == index)
+                if (Editor.Selection.FocusFileSelection && Editor.Selection.SelectedContainerKey == index)
                 {
-                    Selection.FocusFileSelection = false;
+                    Editor.Selection.FocusFileSelection = false;
                     ImGui.SetScrollHereY();
                 }
             }

@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Microsoft.Extensions.Logging;
+using SoulsFormats;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ public class NVMNavmeshResource : IResource, IDisposable
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during NVMNavmeshResource load.");
+            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during NVMNavmeshResource load.", LogLevel.Error, LogPriority.High, e);
         }
 
         return false;

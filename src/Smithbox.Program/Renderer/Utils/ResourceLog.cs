@@ -1,4 +1,6 @@
-﻿using StudioCore.Utilities;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Utilities;
+using System;
 
 namespace StudioCore.Renderer;
 
@@ -13,10 +15,18 @@ public static class ResourceLog
         TaskLogs.AddLog(text);
 #endif
     }
-    public static void AddLog(string text, Microsoft.Extensions.Logging.LogLevel level)
+
+    public static void AddLog(string text, LogLevel level)
     {
 #if DEBUG
         TaskLogs.AddLog(text, level);
+#endif
+    }
+
+    public static void AddLog(string text, LogLevel level, LogPriority priority, Exception e)
+    {
+#if DEBUG
+        TaskLogs.AddLog(text, level, priority, e);
 #endif
     }
 }

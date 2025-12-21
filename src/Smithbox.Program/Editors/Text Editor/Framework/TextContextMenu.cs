@@ -1,17 +1,18 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Application;
 
 namespace StudioCore.Editors.TextEditor;
 
 public class TextContextMenu
 {
     private TextEditorScreen Editor;
-    public TextEntryGroupManager EntryGroupManager;
+    private ProjectEntry Project;
 
-    public TextContextMenu(TextEditorScreen screen)
+    public TextContextMenu(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        EntryGroupManager = screen.EntryGroupManager;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>

@@ -43,12 +43,10 @@ public class CreateAction
     /// </summary>
     public void OnShortcut()
     {
-        return;
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateMapObject) && Editor.ViewportSelection.IsSelection())
-        {
-            ApplyObjectCreation();
-        }
+        //if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateMapObject) && Editor.ViewportSelection.IsSelection())
+        //{
+        //    ApplyObjectCreation();
+        //}
     }
 
     /// <summary>
@@ -56,15 +54,13 @@ public class CreateAction
     /// </summary>
     public void OnMenu()
     {
-        return;
+        //if (ImGui.BeginMenu("Create New Object"))
+        //{
+        //    DisplayMenu();
 
-        if (ImGui.BeginMenu("Create New Object"))
-        {
-            DisplayMenu();
-
-            ImGui.EndMenu();
-        }
-        UIHelper.Tooltip($"Create a new model object.");
+        //    ImGui.EndMenu();
+        //}
+        //UIHelper.Tooltip($"Create a new model object.");
     }
 
     /// <summary>
@@ -72,12 +68,10 @@ public class CreateAction
     /// </summary>
     public void OnToolWindow()
     {
-        return;
-
-        if (ImGui.CollapsingHeader("Create"))
-        {
-            DisplayMenu();
-        }
+        //if (ImGui.CollapsingHeader("Create"))
+        //{
+        //    DisplayMenu();
+        //}
     }
 
     /// <summary>

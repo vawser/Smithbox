@@ -1680,49 +1680,50 @@ public class MsbEntity : Entity
     {
         get
         {
-            var icon = "";
-            if (Type == MsbEntityType.Part)
-            {
-                icon = Icons.PuzzlePiece;
-            }
-            else if (Type == MsbEntityType.Event)
-            {
-                icon = Icons.Flag;
-            }
-            else if (Type == MsbEntityType.Region)
-            {
-                icon = Icons.LocationArrow;
-            }
-            else if (Type == MsbEntityType.MapRoot)
-            {
-                icon = Icons.Cube;
-            }
-            else if (Type == MsbEntityType.Light)
-            {
-                icon = Icons.LightbulbO;
-            }
-            else if (Type == MsbEntityType.DS2Generator)
-            {
-                icon = Icons.Male;
-            }
-            else if (Type == MsbEntityType.DS2GeneratorRegist)
-            {
-                icon = Icons.UserCircleO;
-            }
-            else if (Type == MsbEntityType.DS2EventLocation)
-            {
-                icon = Icons.FlagO;
-            }
-            else if (Type == MsbEntityType.DS2Event)
-            {
-                icon = Icons.FlagCheckered;
-            }
-            else if (Type == MsbEntityType.DS2ObjectInstance)
-            {
-                icon = Icons.Database;
-            }
+            //var icon = "";
 
+            //if (Type == MsbEntityType.Part)
+            //{
+            //    icon = Icons.PuzzlePiece;
+            //}
+            //else if (Type == MsbEntityType.Event)
+            //{
+            //    icon = Icons.Flag;
+            //}
+            //else if (Type == MsbEntityType.Region)
+            //{
+            //    icon = Icons.LocationArrow;
+            //}
+            //else if (Type == MsbEntityType.MapRoot)
+            //{
+            //    icon = Icons.Cube;
+            //}
+            //else if (Type == MsbEntityType.Light)
+            //{
+            //    icon = Icons.LightbulbO;
+            //}
+            //else if (Type == MsbEntityType.DS2Generator)
+            //{
+            //    icon = Icons.Male;
+            //}
+            //else if (Type == MsbEntityType.DS2GeneratorRegist)
+            //{
+            //    icon = Icons.UserCircleO;
+            //}
+            //else if (Type == MsbEntityType.DS2EventLocation)
+            //{
+            //    icon = Icons.FlagO;
+            //}
+            //else if (Type == MsbEntityType.DS2Event)
+            //{
+            //    icon = Icons.FlagCheckered;
+            //}
+            //else if (Type == MsbEntityType.DS2ObjectInstance)
+            //{
+            //    icon = Icons.Database;
+            //}
             //return $@"{icon} {Utils.ImGuiEscape(Name, null)}";
+
             return $@"{Utils.ImGuiEscape(Name, null)}";
         }
     }

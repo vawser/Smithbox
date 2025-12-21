@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -114,7 +115,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                     break;
@@ -132,7 +133,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                     break;
@@ -150,7 +151,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                     break;
@@ -167,7 +168,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                     break;
@@ -184,7 +185,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                     break;
@@ -201,7 +202,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                     break;
@@ -218,7 +219,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                     break;
@@ -235,7 +236,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                     break;
@@ -252,7 +253,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                     break;

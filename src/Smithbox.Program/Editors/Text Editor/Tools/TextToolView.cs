@@ -7,14 +7,12 @@ namespace StudioCore.Editors.TextEditor;
 public class TextToolView
 {
     private TextEditorScreen Editor;
-    public TextSelectionManager Selection;
-    private TextActionHandler ActionHandler;
+    private ProjectEntry Project;
 
-    public TextToolView(TextEditorScreen screen)
+    public TextToolView(TextEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
-        ActionHandler = screen.ActionHandler;
+        Editor = editor;
+        Project = project;
     }
 
     public void Display()
@@ -24,7 +22,7 @@ public class TextToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextEditor", ImGuiWindowFlags.MenuBar))
         {
-            Selection.SwitchWindowContext(TextEditorContext.ToolWindow);
+            Editor.Selection.SwitchWindowContext(TextEditorContext.ToolWindow);
 
             if (ImGui.BeginMenuBar())
             {

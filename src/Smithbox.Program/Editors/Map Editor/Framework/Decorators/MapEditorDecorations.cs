@@ -391,8 +391,6 @@ public static class MapEditorDecorations
         return false;
     }
 
-    static string autocomplete = "";
-
     public static bool PropertyRowMsbRefContextItems(
         MapEditorScreen editor,
         MapEntityPropertyFieldMeta meta,
