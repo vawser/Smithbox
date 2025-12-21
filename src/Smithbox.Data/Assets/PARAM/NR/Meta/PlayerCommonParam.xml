@@ -127,6 +127,15 @@
 	AltName="Tenacity Relic Additional Effect"
     Refs="SpEffectParam" />
 	
+	<analyseProgressTrigger_Level1
+	AltName="Analyse Progress - Level 1" />
+	
+	<analyseProgressTrigger_Level2
+	AltName="Analyse Progress - Level 2" />
+	
+	<analyseProgressTrigger_Level3
+	AltName="Analyse Progress - Level 3" />
+	
 	<analyseTarget_Level1EffectId
 	AltName="Analyse Target - Level 1 Effect"
     Refs="SpEffectParam" />
@@ -321,16 +330,31 @@
     <fh_unknown_69
     Refs="SpEffectParam" />
 	
+	<statusGaugeStackTriggerInterval
+	AltName="Status Gauges Increase Attack Trigger Interval"
+	Wiki="Set how many seconds it takes to increase a stack." />
+	
+	<statusGaugeMaxStack
+	AltName="Status Gauges Increase Attack Max Stacks" />
+	
 	<statusGaugeStackEffectId
+	AltName="Status Gauges Increase Attack Buff SpEffect ID"
     Refs="SpEffectParam" />
 	
-	<statusGaugeEffectId_unk
+	<statusGaugeEffectId_Vfx
+	AltName="Status Gauges Increase Attack VFX SpEffect ID"
     Refs="SpEffectParam" />
 	
-	<attackNullifyEffectId_unk
+	<attackNullifyChance
+	AltName="Nullify Attacks Chance Value"
+	Wiki="Chance for the related balancer relic effect." />
+	
+	<attackNullifyEffectId_Vfx
+	AltName="Nullify Attacks VFX SpEffect ID"
     Refs="SpEffectParam" />
 	
 	<attackNullifyIconEffectId
+	AltName="Nullify Attacks Icon SpEffect ID"
     Refs="SpEffectParam" />
     
   </Field>

@@ -45508,7 +45508,7 @@
     {
       "ID": 49066,
       "Entries": [
-        ""
+        "[Libra] Madness Resistance Reduction Debuff"
       ]
     },
     {
@@ -49132,7 +49132,7 @@
     {
       "ID": 60545,
       "Entries": [
-        ""
+        "[Straghess] Phase 2 Buff"
       ]
     },
     {
@@ -49258,13 +49258,13 @@
     {
       "ID": 60578,
       "Entries": [
-        ""
+        "[Straghess] Putrid Corpse Absorption Buff"
       ]
     },
     {
       "ID": 60579,
       "Entries": [
-        ""
+        "[Straghess] Wormface? Absorption Buff"
       ]
     },
     {
@@ -50158,13 +50158,13 @@
     {
       "ID": 60747,
       "Entries": [
-        ""
+        "[ED Balancer] Death Bullet"
       ]
     },
     {
       "ID": 60748,
       "Entries": [
-        ""
+        "[ED Balancer] Death Bullet"
       ]
     },
     {
@@ -53722,7 +53722,7 @@
     {
       "ID": 62842,
       "Entries": [
-        ""
+        "[ED Balancer] Revival Buff"
       ]
     },
     {
@@ -56158,25 +56158,25 @@
     {
       "ID": 99610,
       "Entries": [
-        ""
+        "[Interactable Effect] Redflesh Mushroom - Restore HP"
       ]
     },
     {
       "ID": 99615,
       "Entries": [
-        ""
+        "[Interactable Effect] Little Crystal - Create Arch of Magic Glintblades"
       ]
     },
     {
       "ID": 99620,
       "Entries": [
-        ""
+        "[Interactable Effect] Aeonian Butterfly - Improved Physical Attack Power & Strengthen Scarlet Rot Effect"
       ]
     },
     {
       "ID": 99625,
       "Entries": [
-        ""
+        "[Interactable Effect] Nectarblood Burgeon - Continuous FP Recovery & Strengthen Sleep Effect"
       ]
     },
     {
@@ -69184,13 +69184,13 @@
     {
       "ID": 7037701,
       "Entries": [
-        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power"
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - VFX"
       ]
     },
     {
       "ID": 7037702,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Apply StateInfo 2209"
       ]
     },
     {
@@ -69202,73 +69202,73 @@
     {
       "ID": 7037805,
       "Entries": [
-        ""
+        "[Relic Effect] Occasionally Nullify Attacks When Damage Negation is Lowered - VFX"
       ]
     },
     {
       "ID": 7037806,
       "Entries": [
-        ""
+        "[Relic Effect] Occasionally Nullify Attacks When Damage Negation is Lowered - Icon"
       ]
     },
     {
       "ID": 7039900,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Stack 1"
       ]
     },
     {
       "ID": 7039901,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Stack 2"
       ]
     },
     {
       "ID": 7039902,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Stack 3"
       ]
     },
     {
       "ID": 7039903,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Stack 4"
       ]
     },
     {
       "ID": 7039904,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Stack 5"
       ]
     },
     {
       "ID": 7039905,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Stack 6"
       ]
     },
     {
       "ID": 7039906,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Stack 7"
       ]
     },
     {
       "ID": 7039907,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Stack 8"
       ]
     },
     {
       "ID": 7039908,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Stack 9"
       ]
     },
     {
       "ID": 7039909,
       "Entries": [
-        ""
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - Stack 10"
       ]
     },
     {
