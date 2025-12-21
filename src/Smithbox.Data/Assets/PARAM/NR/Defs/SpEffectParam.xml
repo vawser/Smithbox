@@ -225,7 +225,7 @@
     <Field Def="f32 weakDmgRateF"/>
     <Field Def="f32 darkDamageCutRate"/>
     <Field Def="f32 darkDiffenceRate"/>
-    <Field Def="s32 darkDiffence"/>
+    <Field Def="s32 quaternaryIconId"/>
     <Field Def="f32 darkAttackRate"/>
     <Field Def="f32 darkAttackPowerRate"/>
     <Field Def="s32 darkAttackPower"/>
@@ -411,7 +411,12 @@
     <Field Def="u8 unknown_241a"/>
     <Field Def="u8 unknown_241b_1:1"/>
 	<Field Def="u8 isSubSaUseMultiplayCorrect:1"/>
-	<Field Def="u8 unknown_241b_3:6"/>
+	<Field Def="u8 unknown_241b_3:1"/>
+	<Field Def="u8 unknown_241b_4:1"/>
+	<Field Def="u8 unknown_241b_5:1"/>
+	<Field Def="u8 unknown_241b_6:1"/>
+	<Field Def="u8 dispDartDebuffStacks:1"/>
+	<Field Def="u8 unknown_241b_8:1"/>
     <Field Def="u8 randomChanceValue"/>
     <Field Def="u8 unknown_241d"/>
     

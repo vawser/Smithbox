@@ -1212,9 +1212,10 @@
     Wiki="Multiply the darkness defense by the set value" 
     DefaultValue="1" />
     
-    <darkDiffence 
-    AltName="Defence +: Holy" 
-    Wiki="Add or subtract the value set for darkness defense" 
+    <quaternaryIconId
+    AltName="Quaternary Icon ID" 
+    Wiki="Icon ID (When -1, no icon is required)" 
+    IconConfig="Status" 
     DefaultValue="-1" />
     
     <darkAttackRate 
@@ -2152,6 +2153,12 @@
     Wiki="If set to 0, temporary poise will not apply multiplayer correction."
     IsBool="" 
     DefaultValue="1" />
+	
+	<dispDartDebuffStacks 
+    AltName="Display Dart Debuff Stacks" 
+    Wiki="Displays the number of stacks on the Scholar's dart debuff icon."
+    IsBool="" 
+    DefaultValue="0" />
 	
     <randomChanceValue
     AltName="Random Chance Value"
