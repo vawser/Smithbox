@@ -1,7 +1,7 @@
 {
     "List": [
         {
-            "DisplayName": "ATK_SUB_CATEGORY",
+            "DisplayName": "Attack Category",
             "Name": "ATK_SUB_CATEGORY",
             "Description": "These are categories used by SpEffects to filter when they are applied.",
             "Options": [
@@ -63,7 +63,7 @@
             ]
         },
         {
-            "DisplayName": "ATKPARAM_ATKATTR_TYPE",
+            "DisplayName": "AtkAttribute Type",
             "Name": "ATKPARAM_ATKATTR_TYPE",
             "Description": "Determines the physical attack \"element\" of an attack.",
             "Options": [
@@ -78,7 +78,7 @@
             ]
         },
         {
-            "DisplayName": "ATKPARAM_SPATTR_TYPE",
+            "DisplayName": "SpAttribute Type",
             "Name": "ATKPARAM_SPATTR_TYPE",
             "Description": "Determines the non-physical attack \"element\" of an attack.",
             "Options": [
@@ -103,7 +103,7 @@
             ]
         },
         {
-            "DisplayName": "ATKPARAM_DMGTYPE_NEW",
+            "DisplayName": "Damage Level",
             "Name": "ATKPARAM_DMGTYPE_NEW",
             "Description": "These are categories used to determine the type of stagger the player or enemy takes. (AtkParam version)",
             "Options": [
@@ -122,7 +122,7 @@
             ]
         },
         {
-            "DisplayName": "SPEFFECT_DMGTYPE_NEW",
+            "DisplayName": "Damage Level Replacement",
             "Name": "SPEFFECT_DMGTYPE_NEW",
             "Description": "These are categories used to determine the type of stagger the player or enemy takes. (SpEffect version)",
             "Options": [
@@ -142,7 +142,7 @@
             ]
         },
         {
-            "DisplayName": "GOODS_USE_ANIM",
+            "DisplayName": "Goods Anim ID",
             "Name": "GOODS_USE_ANIM",
             "Description": "These are TAE motion types used to determine item use animations.",
             "Options": [
@@ -201,7 +201,7 @@
             ]
         },
         {
-            "DisplayName": "MAGIC_MOTION_TYPE",
+            "DisplayName": "Magic Anim ID",
             "Name": "MAGIC_MOTION_TYPE",
             "Description": "These are TAE motion types used to determine spell casting animations.",
             "Options": [
@@ -310,7 +310,7 @@
             ]
         },
         {
-            "DisplayName": "SP_EFFECT_TYPE",
+            "DisplayName": "StateInfo / SpEffect Type",
             "Name": "SP_EFFECT_TYPE",
             "Description": "These are state info IDs, which can trigger internal scripts, or are simply used as markers.",
             "Options": [
@@ -1081,7 +1081,7 @@
             ]
         },
         {
-            "DisplayName": "WEPMOTION_CATEGORY",
+            "DisplayName": "Moveset ID",
             "Name": "WEPMOTION_CATEGORY",
             "Description": "These are TAE motion types used to determine weapon base animations.",
             "Options": [
@@ -1122,7 +1122,7 @@
             ]
         },
         {
-            "DisplayName": "WEPMOTION_OVERRIDE_CATEGORY",
+            "DisplayName": "Override Moveset ID",
             "Name": "WEPMOTION_OVERRIDE_CATEGORY",
             "Description": "These are TAE motion types used to determine weapon override animations.",
             "Options": [
@@ -1210,7 +1210,7 @@
             ]
         },
 		{
-            "DisplayName": "WEPMOTION_HERO_OVERRIDE_CATEGORY",
+            "DisplayName": "Hero Moveset ID",
             "Name": "WEPMOTION_HERO_OVERRIDE_CATEGORY",
             "Description": "These are TAE motion types used to determine weapon override animations for specfic heros.",
             "Options": [
@@ -1230,7 +1230,7 @@
             ]
         },
 		{
-            "DisplayName": "HERO",
+            "DisplayName": "Hero",
             "Name": "HERO",
             "Description": "IDs for the different heroes.",
             "Options": [
@@ -1249,7 +1249,7 @@
             ]
         },
 		{
-            "DisplayName": "BEHAVIOR_VARIATION",
+            "DisplayName": "Behavior Variation ID",
             "Name": "BEHAVIOR_VARIATION",
             "Description": "Behavior Variation IDs, used for determining which sets of BehaviorParams to use.",
             "Options": [
@@ -1556,7 +1556,7 @@
             ]
         },
         {
-            "DisplayName": "GEM_WEP_ATTR",
+            "DisplayName": "Skill Affinity",
             "Name": "GEM_WEP_ATTR",
             "Description": "Affinity IDs for Gems (Ashes of War).",
             "Options": [
@@ -1595,6 +1595,18 @@
                 { "ID": "1", "Name": "+1", "Description": ""},
                 { "ID": "2", "Name": "+2", "Description": ""},
                 { "ID": "3", "Name": "+3", "Description": ""}
+            ]
+        },
+		{
+            "DisplayName": "Rarity",
+            "Name": "RARITY",
+            "Description": "Rarity for various forms of equipment, primarily used for the color.",
+            "Options": [
+                { "ID": "0", "Name": "Common / White", "Description": ""},
+                { "ID": "1", "Name": "Uncommon / Blue", "Description": ""},
+                { "ID": "2", "Name": "Rare / Purple", "Description": ""},
+                { "ID": "3", "Name": "Legendary / Gold", "Description": ""},
+                { "ID": "9", "Name": "Unique / Red", "Description": ""}
             ]
         },
         {

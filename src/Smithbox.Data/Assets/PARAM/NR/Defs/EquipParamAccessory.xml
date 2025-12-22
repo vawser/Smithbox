@@ -23,7 +23,7 @@
     <Field Def="s8 unknown_4"/>
     <Field Def="u8 unknown_5a:1"/> <!-- 1 for all used talismans-->
 	<Field Def="u8 unknown_5b:1"/>
-	<Field Def="u8 isDiscard:1"/>
+	<Field Def="u8 isDrop:1"/>
 	<Field Def="u8 unknown_5d:1"/>
 	<Field Def="u8 unknown_5e:1"/>
 	<Field Def="u8 unknown_5f:1"/>
