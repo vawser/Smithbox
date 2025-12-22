@@ -29,7 +29,7 @@ public class ModelCommandQueue
                 var filename = initcmd[1];
 
                 var entry = Project.ModelData.PrimaryBank.Models
-                    .FirstOrDefault(e => e.Key.Filename == filename);
+                    .FirstOrDefault(e => e.Key.Filename.ToLower() == filename.ToLower());
 
                 if (entry.Value != null)
                 {
@@ -37,20 +37,23 @@ public class ModelCommandQueue
                     entry.Value.PopulateModelList();
                 }
 
-                var firstEntry = Editor.Selection.SelectedModelContainerWrapper.Models.FirstOrDefault();
-
-                if (firstEntry != null)
+                if (Editor.Selection.SelectedModelContainerWrapper != null)
                 {
-                    if (Editor.Selection.SelectedModelWrapper != null)
+                    var firstEntry = Editor.Selection.SelectedModelContainerWrapper.Models.FirstOrDefault();
+
+                    if (firstEntry != null)
                     {
-                        Editor.Selection.SelectedModelWrapper.Unload();
+                        if (Editor.Selection.SelectedModelWrapper != null)
+                        {
+                            Editor.Selection.SelectedModelWrapper.Unload();
+                        }
+
+                        Editor.Selection.SelectedModelWrapper = firstEntry;
+
+                        Editor.EditorActionManager.Clear();
+
+                        firstEntry.Load();
                     }
-
-                    Editor.Selection.SelectedModelWrapper = firstEntry;
-
-                    Editor.EditorActionManager.Clear();
-
-                    firstEntry.Load();
                 }
             }
 

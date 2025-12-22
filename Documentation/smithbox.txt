@@ -2,11 +2,11 @@
 - Viewport: add ability to change viewport background color
 - Viewport: implement orthographic view
 - Viewport: add track selection camera toggle - camera locks onto selection and moves in-line with any movement to the selection
+- Viewport: DES models aren't displaying, look into why.
 
 - Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor: implement Edge support for SDT
-- Map Editor: improve ER NVA so saves are BP correct (currently the Write side is quite off)
-- Map Editor: improve texture lookup
+- Map Editor: fix ER NVA so saves are BP correct (currently the Write side is quite off)
 
 - Model Editor: apply proper transform inheritance for dummies/nodes
 - Model Editor: Add simple JSON export/import for elements of FLVER
@@ -20,11 +20,15 @@
  - Makes it a lot more feasible to filter to ALL instances of X item within the itemlots without a 8 term search filter
  - Only works with the itemlot params (obviously)
 - Param Editor: add param port tool: select base row in existing project + target project -> bring up selection window that displays the target project's params (of the currently selected param), allow user to select which to port over. Use the selected base row as the base for the ported rows, and then copy values over based on field name matching (perhaps add some heuristics too for minor deviations)
+- Param Editor: finish syncing the AC6 meta to the leaked paramdefs (was around NpcParam)
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 - Texture Editor: adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
  (i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
-
+ 
 # TODO NOW
+- Map Editor: add BTAB handling (in same way as AIP is displayed)
+- Map Editor: add BTPB handling (in same way as AIP is displayed)
 
+- Check MSB and BTL saving (occuring outside of explicit saving)
