@@ -1,5 +1,5 @@
 # Smithbox
-Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3, Dark Souls 2, Dark Souls 1, Bloodborne and Demon's Souls.
+Smithbox is a modding tool for Elden Ring, Elden Ring: Nightreign, Armored Core VI, Sekiro, Dark Souls 3, Dark Souls 2, Dark Souls 1, Bloodborne and Demon's Souls.
 
 [![GitHub release](https://img.shields.io/github/release/vawser/Smithbox.svg)](https://github.com/vawser/Smithbox/releases/latest)
 [![Github All Releases](https://img.shields.io/github/downloads/vawser/Smithbox/total.svg)](https://github.com/vawser/Smithbox/releases/latest)
@@ -12,6 +12,8 @@ Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3
 - Text Editor: an editor for editing text localization.
 - Gparam Editor: an editor for quickly creating and editing GPARAM files.
 - Texture Viewer: a simple to use viewer for looking and extracting textures.
+
+You no longer need to unpack a game for any of the editors.
 
 ## Links
 Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
@@ -66,28 +68,4 @@ If you enjoy Smithbox, feel free to support me via [Ko-fi](https://ko-fi.com/vaw
 * A Vulkan 1.3 compatible graphics card with up to date graphics drivers: NVIDIA Maxwell (900 series) and newer or AMD Polaris (Radeon 400 series) and newer
 * Intel GPUs currently don't seem to be working properly. At the moment you will need a dedicated NVIDIA or AMD GPU
 * A 4GB (8GB recommended) of VRAM if modding DS3/BB/Sekiro/ER maps due to huge map sizes
-
-## Usage Instructions
-You no longer need to unpack your game unless you are using the Map or Model Editor.
-
-#### Dark Souls: Prepare to Die Edition
-* Game must be unpacked with [UDSFM](https://www.nexusmods.com/darksouls/mods/1304) before usage with Smithbox.
-
-#### Dark Souls: Remastered
-* Game is unpacked by default and requires no other tools.
-
-#### Dark Souls II: Scholar of the First Sin
-* Use [UXM](https://www.nexusmods.com/sekiro/mods/26) to unpack the game. Vanilla Dark Souls 2 is not supported.
-
-#### Dark Souls III
-* Use [UXM](https://www.nexusmods.com/sekiro/mods/26) to unpack the game.
-
-#### Sekiro: Shadows Die Twice
-* Use [UXM](https://www.nexusmods.com/sekiro/mods/26) to unpack the game.
-
-#### Elden Ring
-* Use [UXM Selective Unpack](https://github.com/Nordgaren/UXM-Selective-Unpack) to extract the game files.
-
-#### Armored Core VI
-* Use [UXM Selective Unpack](https://github.com/Nordgaren/UXM-Selective-Unpack) to extract the game files.
 
