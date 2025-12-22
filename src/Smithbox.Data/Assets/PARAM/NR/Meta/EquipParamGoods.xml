@@ -245,7 +245,7 @@
     <isUseMultiPenaltyOnly AltName="Usable if Disconnect Penalty is Active" Wiki="A flag that allows you to determine if an item is only available when a client disconnect penalty is incurred." IsBool="" />
     <suppleType AltName="Regenerative Item Type" Wiki="Replenishment item / Replenishment type when replenishing a replenished item." Enum="GOODS_SUPPLE_TYPE" />
     <autoReplenishType AltName="Auto Replenishment Type" Wiki="Controls whether or not to automatically replenish and default settings" Enum="AUTO_REPLENISH_TYPE" />
-    <isDrop AltName="Can be Dropped" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
+    <isDrop AltName="Can be Dropped" Wiki="Allows goods to be dropped from inventory" IsBool="" />
     <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered )" IsBool="" />
     <isSummonHorse AltName="Is Horse Summon" Wiki="Is it an item that summons a horse? Cannot be used if the horse died or the PC is in a horse-prohibited area" IsBool="" />
     <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
@@ -258,7 +258,7 @@
     <quickMatchReplenish AltName="Replenish after quick match" Wiki="Should amount of this item be stored and replenished after quick match?" IsBool="" />
     <pad1 AltName="" Padding=""/>
     <saleValue AltName="Sale Value" Wiki="Selling price" />
-    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
+    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" ProjectEnum="RARITY" />
     
     <useLimitSummonBuddy 
     AltName="Use Limit Category (Spirit Summon)" 

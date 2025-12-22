@@ -58,16 +58,16 @@
     <rarity
     AltName="Rarity"
     Wiki="Rarity used in item acquisition logs"
-    Enum="RARITY" />
+    ProjectEnum="RARITY" />
 
     <sortGroupId
     AltName="Sort Group ID"
     Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
     Enum="DISPLAY_CATEGORY_ID" />
 	
-	<isDiscard
-	AltName="Can Discard"
-	Wiki="Allows talisman to be discarded"
+	<isDrop
+	AltName="Can Drop"
+	Wiki="Allows talisman to be dropped from inventory"
 	IsBool="" />
 	
 	<enableVisualCodex

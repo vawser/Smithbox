@@ -428,7 +428,7 @@
     <isDeposit AltName="Can Deposit" Wiki="Can you leave it in the warehouse?" IsBool="" />
     <disableMultiDropShare AltName="Cannot Drop in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
     <isDiscard AltName="Can Discard" Wiki="Can you throw away the item? TRUE = thrown away" IsBool="" />
-    <isDrop AltName="Can Drop" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
+    <isDrop AltName="Can Drop" Wiki="Allows weapon to be dropped from inventory" IsBool="" />
     <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
     <enableThrow AltName="Enable Throw" Wiki="Whether it is a throwable weapon" IsBool="" />
     <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
@@ -545,7 +545,7 @@
     <levelSyncCorrectId AltName="Level Sync Correction ID" Wiki="Level sync correction ID" />
     <correctType_Sleep AltName="Correction Type: Sleep" Wiki="Determine the type of sleep attack correction graph with primary parameters" Refs="CalcCorrectGraph" />
     <correctType_Madness AltName="Correction Type: Mandesss" Wiki="Determining the type of mad attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
-    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
+    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" ProjectEnum="RARITY" />
     <gemMountType AltName="Ash of War Type" Wiki="Is it possible to attach magic stones?" Enum="GEM_MOUNT_TYPE" />
     <wepRegainHp AltName="Weapon Regain HP Amount" Wiki="Weapon regain amount" />
     <spEffectMsgId0 AltName="SpEffect Message ID [0]" Wiki="Effect text ID 00 (Weapon_Effect). Weapon-specific effect text to display in status" FmgRef="Effect_Weapons" />
