@@ -229,7 +229,7 @@ public class MultiStageSearchEngine<A, B, C, D> : SearchEngine<A, B>
     }
 }
 
-public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamSelection, (MassEditRowSource,
+public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamSelection, (ParamMassEditRowSource,
     Param.Row), (ParamBank, Param), Param.Row>
 {
     public ProjectEntry Project;
@@ -246,24 +246,24 @@ public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamSelection, (M
         {
             var pBank = Project.ParamData.PrimaryBank;
 
-            List<(MassEditRowSource, Param.Row)> list = new();
-            list.AddRange(selection.GetSelectedRows().Select((x, i) => (MassEditRowSource.Selection, x)));
-            list.AddRange(pBank.ClipboardRows.Select((x, i) => (MassEditRowSource.Clipboard, x)));
+            List<(ParamMassEditRowSource, Param.Row)> list = new();
+            list.AddRange(selection.GetSelectedRows().Select((x, i) => (ParamMassEditRowSource.Selection, x)));
+            list.AddRange(pBank.ClipboardRows.Select((x, i) => (ParamMassEditRowSource.Clipboard, x)));
             return list;
         };
 
         filterList.Add("selection",
             newCmd(new string[0], "Selects the current param selection and selected rows in that param",
-                noArgs(noContext(row => row.Item1 == MassEditRowSource.Selection))));
+                noArgs(noContext(row => row.Item1 == ParamMassEditRowSource.Selection))));
 
         filterList.Add("clipboard",
             newCmd(new string[0], "Selects the param of the clipboard and the rows in the clipboard",
-                noArgs(noContext(row => row.Item1 == MassEditRowSource.Clipboard)),
+                noArgs(noContext(row => row.Item1 == ParamMassEditRowSource.Clipboard)),
                 () => Project.ParamData.PrimaryBank.ClipboardRows?.Count > 0));
 
         contextGetterForMultiStage = (state, exampleItem) => (Project.ParamData.PrimaryBank,
             Project.ParamData.PrimaryBank.Params[
-                exampleItem.Item1 == MassEditRowSource.Selection
+                exampleItem.Item1 == ParamMassEditRowSource.Selection
                     ? state.GetActiveParam()
                     : Project.ParamData.PrimaryBank.ClipboardParam]);
 
@@ -271,12 +271,6 @@ public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamSelection, (M
         searchEngineForMultiStage = Project.ParamEditor.MassEditHandler.rse;
         resultRetrieverForMultiStage = (row, exampleItem) => (exampleItem.Item1, row);
     }
-}
-
-public enum MassEditRowSource
-{
-    Selection,
-    Clipboard
 }
 
 public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
@@ -582,12 +576,12 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     var paramName = context.Item1.GetKeyForParam(context.Item2);
                     IReadOnlyList<Param.Column> cols = context.Item2.Columns;
-                    (PseudoColumn, Param.Column) testCol = context.Item2.GetCol(field);
+                    (ParamEditorPseudoColumn, Param.Column) testCol = context.Item2.GetCol(field);
                     return row =>
                     {
                         (string paramName, Param.Row row) cseSearchContext = (paramName, row);
-                        List<(PseudoColumn, Param.Column)> res = Project.ParamEditor.MassEditHandler.cse.Search(cseSearchContext,
-                            new List<(PseudoColumn, Param.Column)> { testCol }, args[1], lenient, false);
+                        List<(ParamEditorPseudoColumn, Param.Column)> res = Project.ParamEditor.MassEditHandler.cse.Search(cseSearchContext,
+                            new List<(ParamEditorPseudoColumn, Param.Column)> { testCol }, args[1], lenient, false);
                         return res.Contains(testCol);
                     };
                 };
@@ -770,7 +764,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
 
                     List<Param.Row> rows = Project.ParamEditor.MassEditHandler.rse.Search((pBank, otherParamReal), otherSearchTerm,
                         lenient, false);
-                    (PseudoColumn, Param.Column) otherFieldReal = otherParamReal.GetCol(otherField);
+                    (ParamEditorPseudoColumn, Param.Column) otherFieldReal = otherParamReal.GetCol(otherField);
                     if (!otherFieldReal.IsColumnValid())
                     {
                         throw new Exception("Could not find field " + otherField);
@@ -780,7 +774,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         .Distinct().ToHashSet();
                     return param =>
                     {
-                        (PseudoColumn, Param.Column) thisFieldReal = param.Item2.GetCol(thisField);
+                        (ParamEditorPseudoColumn, Param.Column) thisFieldReal = param.Item2.GetCol(thisField);
                         if (!thisFieldReal.IsColumnValid())
                         {
                             throw new Exception("Could not find field " + thisField);
@@ -867,7 +861,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
     }
 }
 
-public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)>
+public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPseudoColumn, Param.Column)>
 {
     public ProjectEntry Project;
 
@@ -886,10 +880,10 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
             var metaDict = Project.ParamData.ParamMeta;
             pMeta = metaDict[row.Item2.Def];
 
-            List<(PseudoColumn, Param.Column)> list = new();
-            list.Add((PseudoColumn.ID, null));
-            list.Add((PseudoColumn.Name, null));
-            list.AddRange(row.Item2.Columns.Select((cell, i) => (PseudoColumn.None, cell)));
+            List<(ParamEditorPseudoColumn, Param.Column)> list = new();
+            list.Add((ParamEditorPseudoColumn.ID, null));
+            list.Add((ParamEditorPseudoColumn.Name, null));
+            list.AddRange(row.Item2.Columns.Select((cell, i) => (ParamEditorPseudoColumn.None, cell)));
             return list;
         };
         defaultFilter = newCmd(new[] { "field internalName (regex)" },
@@ -900,12 +894,12 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return noContext(cell =>
                 {
-                    if (matchID && cell.Item1 == PseudoColumn.ID)
+                    if (matchID && cell.Item1 == ParamEditorPseudoColumn.ID)
                     {
                         return true;
                     }
 
-                    if (matchName && cell.Item1 == PseudoColumn.Name)
+                    if (matchName && cell.Item1 == ParamEditorPseudoColumn.Name)
                     {
                         return true;
                     }
@@ -957,7 +951,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
 
                     return col =>
                     {
-                        (PseudoColumn, Param.Column) curCol = col.GetAs(curParam);
+                        (ParamEditorPseudoColumn, Param.Column) curCol = col.GetAs(curParam);
                         var curValue = r.Get(curCol);
 
                         if (curCol.Item2 == null)
@@ -1005,7 +999,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
 
                     return col =>
                     {
-                        (PseudoColumn, Param.Column) curCol = col.GetAs(curParam);
+                        (ParamEditorPseudoColumn, Param.Column) curCol = col.GetAs(curParam);
                         var curValue = r.Get(curCol);
 
                         if (curCol.Item2 == null)
@@ -1047,7 +1041,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
 
                 return col =>
                 {
-                    (PseudoColumn, Param.Column) vcol = col.GetAs(vParam);
+                    (ParamEditorPseudoColumn, Param.Column) vcol = col.GetAs(vParam);
                     var valA = row.Item2.Get(col);
                     var valB = r.Get(vcol);
                     return ParamUtils.IsValueDiff(ref valA, ref valB, col.GetColumnType());
@@ -1099,8 +1093,8 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
 
                     return col =>
                     {
-                        (PseudoColumn, Param.Column) auxcol = col.GetAs(auxParam);
-                        (PseudoColumn, Param.Column) vcol = col.GetAs(vParam);
+                        (ParamEditorPseudoColumn, Param.Column) auxcol = col.GetAs(auxParam);
+                        (ParamEditorPseudoColumn, Param.Column) vcol = col.GetAs(vParam);
                         var valA = r.Get(auxcol);
                         var valB = r2.Get(vcol);
                         return ParamUtils.IsValueDiff(ref valA, ref valB, col.GetColumnType());
@@ -1145,7 +1139,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
 
                     return col =>
                     {
-                        (PseudoColumn, Param.Column) curCol = col.GetAs(curParam);
+                        (ParamEditorPseudoColumn, Param.Column) curCol = col.GetAs(curParam);
                         var curValue = $"{r.Get(curCol)}" as object;
 
                         if (curCol.Item2 == null)

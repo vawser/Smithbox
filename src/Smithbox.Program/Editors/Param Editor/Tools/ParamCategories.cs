@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -264,7 +265,7 @@ public static class ParamCategories
 
                 try
                 {
-                    editor.Project.ParamData.ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
+                    editor.Project.ParamData.ParamCategories = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCategoryResource);
                 }
                 catch (Exception e)
                 {
@@ -297,7 +298,7 @@ public static class ParamCategories
 
         try
         {
-            string jsonString = JsonSerializer.Serialize(editor.Project.ParamData.ParamCategories, typeof(ParamCategoryResource), SmithboxSerializerContext.Default);
+            string jsonString = JsonSerializer.Serialize(editor.Project.ParamData.ParamCategories, typeof(ParamCategoryResource), ProjectJsonSerializerContext.Default);
             var fs = new FileStream(modResourcePath, System.IO.FileMode.Create);
             var data = Encoding.ASCII.GetBytes(jsonString);
             fs.Write(data, 0, data.Length);

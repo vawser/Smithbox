@@ -198,7 +198,7 @@ public class ParamRowNamer
 
     public void HandleNpcParam(string activeParam, string targetParam, List<Param.Row> rows)
     {
-        Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characters);
+        Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters);
 
         if (activeParam == targetParam)
         {
@@ -284,7 +284,7 @@ public class ParamRowNamer
     {
         if (activeParam == "BehaviorParam" || activeParam == "BehaviorParam_PC")
         {
-            Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characterAliases);
+            Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases);
             foreach (var row in rows)
             {
                 var refID = $"{row["refId"].Value.Value}";
@@ -460,7 +460,7 @@ public class ParamRowNamer
 
     public string GetName_ItemLotParamMap(Param.Row row)
     {
-        Editor.Project.CommonData.Aliases.TryGetValue(AliasType.MapNames, out List<AliasEntry> mapNames);
+        Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapNames, out List<AliasEntry> mapNames);
 
         var newName = "";
         var prefix = "";
@@ -643,7 +643,7 @@ public class ParamRowNamer
 
     public string GetName_ItemLotParamEnemy(Param.Row row)
     {
-        Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Characters, out var characterAliases);
+        Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out var characterAliases);
 
         var newName = "";
         var prefix = "";

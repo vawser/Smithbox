@@ -2234,7 +2234,7 @@ public class ParamBank
             {
                 var filestring = File.ReadAllText(importFile);
 
-                RowNameStoreLegacy legacyStore = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStoreLegacy);
+                RowNameStoreLegacy legacyStore = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.RowNameStoreLegacy);
 
                 if (legacyStore == null)
                 {
@@ -2273,7 +2273,7 @@ public class ParamBank
                 {
                     var filestring = File.ReadAllText(file);
 
-                    RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
+                    RowNameParam item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.RowNameParam);
 
                     if (item == null)
                     {
@@ -2332,7 +2332,7 @@ public class ParamBank
     /// <param name="importType"></param>
     /// <param name="sourceType"></param>
     /// <param name="filepath"></param>
-    public async void ImportRowNames(ImportRowNameSourceType sourceType, string filepath = "")
+    public async void ImportRowNames(ParamImportRowNameSourceType sourceType, string filepath = "")
     {
         Task<bool> importRowNameTask = ImportRowNamesTask(sourceType, filepath, "");
         bool rowNamesImported = await importRowNameTask;
@@ -2347,7 +2347,7 @@ public class ParamBank
         }
     }
 
-    public async void ImportRowNamesForParam(ImportRowNameSourceType sourceType, string targetParam = "", string filepath = "")
+    public async void ImportRowNamesForParam(ParamImportRowNameSourceType sourceType, string targetParam = "", string filepath = "")
     {
         Task<bool> importRowNameTask = ImportRowNamesTask(sourceType, filepath, targetParam);
         bool rowNamesImported = await importRowNameTask;
@@ -2362,7 +2362,7 @@ public class ParamBank
         }
     }
 
-    public async Task<bool> ImportRowNamesTask(ImportRowNameSourceType sourceType, string filepath = "", string targetParam = "")
+    public async Task<bool> ImportRowNamesTask(ParamImportRowNameSourceType sourceType, string filepath = "", string targetParam = "")
     {
         await Task.Yield();
 
@@ -2371,10 +2371,10 @@ public class ParamBank
 
         switch (sourceType)
         {
-            case ImportRowNameSourceType.Community:
+            case ParamImportRowNameSourceType.Community:
                 sourceDirectory = Path.Combine(folder, "Community Row Names");
                 break;
-            case ImportRowNameSourceType.Developer:
+            case ParamImportRowNameSourceType.Developer:
                 sourceDirectory = Path.Combine(folder, "Developer Row Names");
                 break;
         }
@@ -2404,7 +2404,7 @@ public class ParamBank
                 {
                     var filestring = File.ReadAllText(sourceFile);
 
-                    RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
+                    RowNameParam item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.RowNameParam);
 
                     if (item == null)
                     {
@@ -2429,7 +2429,7 @@ public class ParamBank
                 {
                     var filestring = File.ReadAllText(file);
 
-                    RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
+                    RowNameParam item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.RowNameParam);
 
                     if (item == null)
                     {
@@ -2549,7 +2549,7 @@ public class ParamBank
     /// <param name="exportType"></param>
     /// <param name="filepath"></param>
     /// <param name="paramName"></param>
-    public async void ExportRowNames(ExportRowNameType exportType, string filepath, string paramName = "")
+    public async void ExportRowNames(ParamExportRowNameType exportType, string filepath, string paramName = "")
     {
         var exportDir = Path.Combine(filepath, "Row Name Export");
 
@@ -2572,7 +2572,7 @@ public class ParamBank
         }
     }
 
-    public async Task<bool> ExportRowNamesTask(string exportDir, ExportRowNameType exportType, string filepath, string paramName = "")
+    public async Task<bool> ExportRowNamesTask(string exportDir, ParamExportRowNameType exportType, string filepath, string paramName = "")
     {
         await Task.Yield();
 
@@ -2602,7 +2602,7 @@ public class ParamBank
             }).ToList();
 
             // JSON
-            if (exportType is ExportRowNameType.JSON)
+            if (exportType is ParamExportRowNameType.JSON)
             {
                 var fullPath = Path.Combine(exportDir, $"{p.Key}.json");
 
@@ -2619,14 +2619,14 @@ public class ParamBank
                 TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Exported row names to {fullPath}");
             }
 
-            if (exportType is ExportRowNameType.Text)
+            if (exportType is ParamExportRowNameType.Text)
             {
                 store.Params.Add(paramEntry);
             }
         }
 
         // Text
-        if (exportType is ExportRowNameType.Text)
+        if (exportType is ParamExportRowNameType.Text)
         {
             var textOuput = "";
 
@@ -2660,34 +2660,7 @@ public class ParamBank
 
     #endregion
 
-    public enum ParamUpgradeResult
-    {
-        Success = 0,
-        RowConflictsFound = -1,
-        OldRegulationNotFound = -2,
-        OldRegulationVersionMismatch = -3,
-        OldRegulationMatchesCurrent = -4
-    }
 
-    public enum RowGetType
-    {
-        [Display(Name = "All Rows")] AllRows = 0,
-        [Display(Name = "Modified Rows")] ModifiedRows = 1,
-        [Display(Name = "Selected Rows")] SelectedRows = 2
-    }
-
-    public enum ImportRowNameSourceType
-    {
-        Community,
-        Developer,
-        External
-    }
-
-    public enum ExportRowNameType
-    {
-        JSON,
-        Text
-    }
 
     /// <summary>
     ///     Map related params.

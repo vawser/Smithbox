@@ -262,10 +262,3 @@ public class MapGridTool
         }
     }
 }
-
-public enum TargetMapGridType
-{
-    Primary,
-    Secondary,
-    Tertiary
-}

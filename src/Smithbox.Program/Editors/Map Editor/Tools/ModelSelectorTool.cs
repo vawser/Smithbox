@@ -79,7 +79,7 @@ public class ModelSelectorTool
     private void DisplayCharacterList()
     {
         // TODO: this needs to draw from a scanned list of characters, not the alias list
-        if (Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characterAliases))
+        if (Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases))
         {
             var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
@@ -126,7 +126,7 @@ public class ModelSelectorTool
     private void DisplayAssetList()
     {
         // TODO: this needs to draw from a scanned list of assets, not the alias list
-        if (Editor.Project.CommonData.Aliases.TryGetValue(AliasType.Assets, out List<AliasEntry> assetAliases))
+        if (Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
         {
             var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
@@ -175,7 +175,7 @@ public class ModelSelectorTool
         var maps = MsbUtils.GetFullMapList(Editor.Project);
 
         // TODO: this needs to draw from a scanned list of map pieces, not the alias list
-        if (Editor.Project.CommonData.Aliases.TryGetValue(AliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
+        if (Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
         {
             var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;

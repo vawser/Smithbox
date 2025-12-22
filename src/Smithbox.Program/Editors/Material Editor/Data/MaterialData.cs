@@ -127,7 +127,7 @@ public class MaterialData
 
                 try
                 {
-                    MaterialDisplayConfiguration = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.MaterialDisplayConfiguration);
+                    MaterialDisplayConfiguration = JsonSerializer.Deserialize(filestring, MaterialEditorJsonSerializerContext.Default.MaterialDisplayConfiguration);
                 }
                 catch (Exception e)
                 {

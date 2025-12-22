@@ -82,11 +82,11 @@ public class CommonData
         {
             try
             {
-                if (!Enum.TryParse(Path.GetFileNameWithoutExtension(sourceFile), out AliasType type)) continue;
+                if (!Enum.TryParse(Path.GetFileNameWithoutExtension(sourceFile), out ProjectAliasType type)) continue;
                 string text = await File.ReadAllTextAsync(sourceFile);
                 try
                 {
-                    var entries = JsonSerializer.Deserialize(text, SmithboxSerializerContext.Default.ListAliasEntry);
+                    var entries = JsonSerializer.Deserialize(text, ProjectJsonSerializerContext.Default.ListAliasEntry);
                     if (!Aliases.ContainsKey(type))
                     {
                         Aliases.TryAdd(type, entries);
@@ -105,7 +105,7 @@ public class CommonData
             }
         }
 
-        foreach ((AliasType type, List<AliasEntry> entries) in Aliases)
+        foreach ((ProjectAliasType type, List<AliasEntry> entries) in Aliases)
         {
             Aliases[type] = entries.OrderBy(e => e.ID).ToList();
         }
@@ -148,7 +148,7 @@ public class CommonData
 
                 try
                 {
-                    ProjectEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectEnumResource);
+                    ProjectEnums = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.ProjectEnumResource);
                 }
                 catch (Exception e)
                 {

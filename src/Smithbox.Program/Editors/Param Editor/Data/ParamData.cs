@@ -200,7 +200,7 @@ public class ParamData
             var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog is DialogResult.OK)
             {
-                PrimaryBank.ImportRowNames(ImportRowNameSourceType.Community);
+                PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Community);
             }
 
             Project.ImportedParamRowNames = true;
@@ -279,13 +279,13 @@ public class ParamData
 
         if (reloadProject)
         {
-            await targetProject.Init(silent: true, InitType.ParamEditorOnly);
+            await targetProject.Init(silent: true, ProjectInitType.ParamEditorOnly);
         }
         else
         {
             if (!targetProject.Initialized)
             {
-                await targetProject.Init(silent: true, InitType.ParamEditorOnly);
+                await targetProject.Init(silent: true, ProjectInitType.ParamEditorOnly);
             }
         }
 
@@ -361,7 +361,7 @@ public class ParamData
 
                 try
                 {
-                    paramTypeInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamTypeInfo);
+                    paramTypeInfo = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamTypeInfo);
                     ParamTypeInfo = paramTypeInfo;
                 }
                 catch (Exception e)
@@ -482,7 +482,7 @@ public class ParamData
 
                 try
                 {
-                    GraphLegends = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.GraphLegends);
+                    GraphLegends = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.GraphLegends);
                 }
                 catch (Exception e)
                 {
@@ -525,7 +525,7 @@ public class ParamData
 
                 try
                 {
-                    IconConfigurations = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.IconConfigurations);
+                    IconConfigurations = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.IconConfigurations);
                 }
                 catch (Exception e)
                 {
@@ -566,7 +566,7 @@ public class ParamData
             {
                 var filestring = await File.ReadAllTextAsync(file);
 
-                var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.TableGroupParamEntry);
+                var item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.TableGroupParamEntry);
 
                 if (item == null)
                 {
@@ -597,7 +597,7 @@ public class ParamData
                 {
                     var filestring = await File.ReadAllTextAsync(file);
 
-                    var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.TableGroupParamEntry);
+                    var item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.TableGroupParamEntry);
 
                     if (item == null)
                     {
@@ -685,7 +685,7 @@ public class ParamData
         {
             var filestring = await File.ReadAllTextAsync(srcFile);
 
-            var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.TableParams);
+            var item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.TableParams);
 
             if (item == null)
             {
@@ -831,7 +831,7 @@ public class ParamData
 
                 try
                 {
-                    ParamMemoryOffsets = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.GameOffsetResource);
+                    ParamMemoryOffsets = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.GameOffsetResource);
                 }
                 catch (Exception e)
                 {
@@ -879,7 +879,7 @@ public class ParamData
 
                 try
                 {
-                    ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
+                    ParamCategories = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCategoryResource);
                 }
                 catch (Exception e)
                 {
@@ -923,7 +923,7 @@ public class ParamData
 
                 try
                 {
-                    CommutativeParamGroups = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCommutativeResource);
+                    CommutativeParamGroups = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCommutativeResource);
                 }
                 catch (Exception e)
                 {

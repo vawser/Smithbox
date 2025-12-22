@@ -15,11 +15,11 @@ public partial class ParamTools
         {
                 if (ImGui.MenuItem($"Selected Param"))
                 {
-                    Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameSourceType.Community, Editor._activeView.Selection.GetActiveParam());
+                    Project.ParamData.PrimaryBank.ImportRowNamesForParam(ParamImportRowNameSourceType.Community, Editor._activeView.Selection.GetActiveParam());
                 }
                 if (ImGui.MenuItem($"All"))
                 {
-                    Project.ParamData.PrimaryBank.ImportRowNames( ImportRowNameSourceType.Community);
+                    Project.ParamData.PrimaryBank.ImportRowNames( ParamImportRowNameSourceType.Community);
                 }
 
                 ImGui.EndMenu();
@@ -31,11 +31,11 @@ public partial class ParamTools
                 {
                     if (ImGui.MenuItem($"Selected Param"))
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameSourceType.Developer, Editor._activeView.Selection.GetActiveParam());
+                        Project.ParamData.PrimaryBank.ImportRowNamesForParam(ParamImportRowNameSourceType.Developer, Editor._activeView.Selection.GetActiveParam());
                     }
                     if (ImGui.MenuItem($"All"))
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameSourceType.Developer);
+                        Project.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Developer);
                     }
                     ImGui.EndMenu();
                 }
@@ -50,7 +50,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameSourceType.External, Editor._activeView.Selection.GetActiveParam(), filePath);
+                        Project.ParamData.PrimaryBank.ImportRowNamesForParam(ParamImportRowNameSourceType.External, Editor._activeView.Selection.GetActiveParam(), filePath);
                     }
                 }
 
@@ -61,7 +61,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameSourceType.External, filePath);
+                        Project.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.External, filePath);
                     }
                 }
                 ImGui.EndMenu();

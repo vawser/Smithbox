@@ -85,7 +85,6 @@ public class MapEditorScreen : EditorScreen
     public MassEditTool MassEditTool;
     public RotationCycleConfigTool RotationCycleConfigTool;
     public MovementCycleConfigTool MovementCycleConfigTool;
-    public TreasureMakerTool TreasureMakerTool;
     public ModelSelectorTool ModelSelectorTool;
     public DisplayGroupTool DisplayGroupTool;
     public SelectionGroupTool SelectionGroupTool;
@@ -167,7 +166,6 @@ public class MapEditorScreen : EditorScreen
         MassEditTool = new MassEditTool(this, project);
         RotationCycleConfigTool = new RotationCycleConfigTool(this, project);
         MovementCycleConfigTool = new MovementCycleConfigTool(this, project);
-        TreasureMakerTool = new TreasureMakerTool(this, project);
         AutomaticPreviewTool = new AutomaticPreviewTool(this, project);
         DisplayGroupTool = new DisplayGroupTool(this, project);
         GlobalSearchTool = new GlobalSearchTool(this, project);

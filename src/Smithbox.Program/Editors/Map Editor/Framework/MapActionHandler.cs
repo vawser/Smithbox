@@ -66,17 +66,6 @@ public class MapActionHandler
         TaskLogs.AddLog("Navigation Data generated.");
     }
 
-    /// <summary>
-    /// Entity ID Assigner
-    /// </summary>
-    public enum EntityFilterType
-    {
-        [Display(Name = "None")] None,
-        [Display(Name = "Character ID")] ChrID,
-        [Display(Name = "NPC Param ID")] NpcParamID,
-        [Display(Name = "NPC Think Param ID")] NpcThinkParamID
-    }
-
     public EntityFilterType SelectedFilter = EntityFilterType.None;
 
     public string SelectedMapFilter = "All";

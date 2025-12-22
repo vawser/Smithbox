@@ -20,7 +20,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.JSON, filePath);
+                        Project.ParamData.PrimaryBank.ExportRowNames(ParamExportRowNameType.JSON, filePath);
                     }
                 }
                 UIHelper.Tooltip("Export the row names for your project to the selected folder.");
@@ -33,7 +33,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.JSON, filePath, Editor._activeView.Selection.GetActiveParam());
+                        Project.ParamData.PrimaryBank.ExportRowNames(ParamExportRowNameType.JSON, filePath, Editor._activeView.Selection.GetActiveParam());
                     }
                 }
                 UIHelper.Tooltip("Export the row names for the currently selected param to the selected folder.");
@@ -52,7 +52,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.Text, filePath);
+                        Project.ParamData.PrimaryBank.ExportRowNames(ParamExportRowNameType.Text, filePath);
                     }
                 }
                 UIHelper.Tooltip("Export the row names for your project to the selected folder.");
@@ -65,7 +65,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.Text, filePath, Editor._activeView.Selection.GetActiveParam());
+                        Project.ParamData.PrimaryBank.ExportRowNames(ParamExportRowNameType.Text, filePath, Editor._activeView.Selection.GetActiveParam());
                     }
 
                 }

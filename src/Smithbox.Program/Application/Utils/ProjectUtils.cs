@@ -282,7 +282,7 @@ public class ProjectUtils
 
     public static void CreateBackupFolder(ProjectEntry curProject)
     {
-        if(CFG.Current.BackupProcessType is BackupType.Complete)
+        if(CFG.Current.BackupProcessType is ProjectBackupBehaviorType.Complete)
         {
             var folderPath = Path.Combine(curProject.ProjectPath, ".backup");
 
@@ -453,14 +453,4 @@ public class ProjectUtils
     {
         return true;
     }
-}
-
-public enum BackupType
-{
-    [Display(Name = "None")]
-    None = 0,
-    [Display(Name = "Simple")]
-    Simple = 1,
-    [Display(Name = "Complete")]
-    Complete = 2
 }

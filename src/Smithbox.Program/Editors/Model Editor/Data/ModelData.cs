@@ -304,7 +304,7 @@ public class ModelData
 
                 try
                 {
-                    FlverInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
+                    FlverInformation = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatResource);
                 }
                 catch (Exception e)
                 {
@@ -337,7 +337,7 @@ public class ModelData
 
                 try
                 {
-                    FlverEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
+                    FlverEnums = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatEnum);
                 }
                 catch (Exception e)
                 {

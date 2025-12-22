@@ -20,10 +20,10 @@ public class OrderModelObjectAction : ViewportAction
     private List<ModelEntity> Selection = new();
     private List<Entity> StoredObjectOrder = new();
 
-    private OrderMoveDir MoveSelectionDir;
+    private TreeObjectOrderMovementType MoveSelectionDir;
 
     public OrderModelObjectAction(ModelEditorScreen editor, ProjectEntry project, 
-       ModelContainer container, List<ModelEntity> objects, OrderMoveDir moveDir)
+       ModelContainer container, List<ModelEntity> objects, TreeObjectOrderMovementType moveDir)
     {
         Editor = editor;
         Project = project;
@@ -104,7 +104,7 @@ public class OrderModelObjectAction : ViewportAction
                     }
 
                     // Move Up
-                    if (MoveSelectionDir == OrderMoveDir.Up)
+                    if (MoveSelectionDir == TreeObjectOrderMovementType.Up)
                     {
                         for (int i = indexStart; i <= indexEnd; i++)
                         {
@@ -129,7 +129,7 @@ public class OrderModelObjectAction : ViewportAction
                     }
 
                     // Move Down
-                    if (MoveSelectionDir == OrderMoveDir.Down)
+                    if (MoveSelectionDir == TreeObjectOrderMovementType.Down)
                     {
                         for (int i = indexStart; i <= indexEnd; i++)
                         {
@@ -154,7 +154,7 @@ public class OrderModelObjectAction : ViewportAction
                     }
 
                     // Move to Top
-                    if (MoveSelectionDir == OrderMoveDir.Top)
+                    if (MoveSelectionDir == TreeObjectOrderMovementType.Top)
                     {
                         int rootIndex = 0;
 
@@ -180,7 +180,7 @@ public class OrderModelObjectAction : ViewportAction
                     }
 
                     // Move to Bottom
-                    if (MoveSelectionDir == OrderMoveDir.Bottom)
+                    if (MoveSelectionDir == TreeObjectOrderMovementType.Bottom)
                     {
                         int rootIndex = 0;
 

@@ -29,15 +29,7 @@ public class ReplicateMapObjectsAction : ViewportAction
     private float squareLeftCount;
     private float squareBottomCount;
 
-    public enum SquareSide
-    {
-        Top,
-        Left,
-        Right,
-        Bottom
-    }
-
-    private SquareSide currentSquareSide;
+    private ReplicateSquareSideType currentSquareSide;
 
     public ReplicateMapObjectsAction(MapEditorScreen editor, List<MsbEntity> objects)
     {
@@ -65,7 +57,7 @@ public class ReplicateMapObjectsAction : ViewportAction
         if (CFG.Current.Replicator_Mode_Square)
         {
             iterationCount = CFG.Current.Replicator_Square_Size * 4 - 1;
-            currentSquareSide = SquareSide.Bottom;
+            currentSquareSide = ReplicateSquareSideType.Bottom;
 
             squareTopCount = CFG.Current.Replicator_Square_Size;
             squareLeftCount = CFG.Current.Replicator_Square_Size - 1;
@@ -267,24 +259,24 @@ public class ReplicateMapObjectsAction : ViewportAction
 
         if (CFG.Current.Replicator_Mode_Square)
         {
-            if (currentSquareSide == SquareSide.Bottom && squareBottomCount <= 0)
+            if (currentSquareSide == ReplicateSquareSideType.Bottom && squareBottomCount <= 0)
             {
-                currentSquareSide = SquareSide.Left;
+                currentSquareSide = ReplicateSquareSideType.Left;
             }
-            else if (currentSquareSide == SquareSide.Left && squareLeftCount <= 0)
+            else if (currentSquareSide == ReplicateSquareSideType.Left && squareLeftCount <= 0)
             {
-                currentSquareSide = SquareSide.Top;
+                currentSquareSide = ReplicateSquareSideType.Top;
             }
-            else if (currentSquareSide == SquareSide.Top && squareTopCount <= 0)
+            else if (currentSquareSide == ReplicateSquareSideType.Top && squareTopCount <= 0)
             {
-                currentSquareSide = SquareSide.Right;
+                currentSquareSide = ReplicateSquareSideType.Right;
             }
-            else if (currentSquareSide == SquareSide.Right && squareRightCount <= 0)
+            else if (currentSquareSide == ReplicateSquareSideType.Right && squareRightCount <= 0)
             {
             }
 
             // Bottom
-            if (currentSquareSide == SquareSide.Bottom)
+            if (currentSquareSide == ReplicateSquareSideType.Bottom)
             {
                 float width_increment = CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size * squareBottomCount;
                 float x = newPos[0] - width_increment;
@@ -295,7 +287,7 @@ public class ReplicateMapObjectsAction : ViewportAction
             }
 
             // Left
-            if (currentSquareSide == SquareSide.Left)
+            if (currentSquareSide == ReplicateSquareSideType.Left)
             {
                 float width_increment = CFG.Current.Replicator_Square_Width;
                 float x = newPos[0] - width_increment;
@@ -309,7 +301,7 @@ public class ReplicateMapObjectsAction : ViewportAction
             }
 
             // Top
-            if (currentSquareSide == SquareSide.Top)
+            if (currentSquareSide == ReplicateSquareSideType.Top)
             {
                 float width_increment = CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size * squareTopCount;
                 float x = newPos[0] - width_increment;
@@ -323,7 +315,7 @@ public class ReplicateMapObjectsAction : ViewportAction
             }
 
             // Right
-            if (currentSquareSide == SquareSide.Right)
+            if (currentSquareSide == ReplicateSquareSideType.Right)
             {
                 float height_increment = CFG.Current.Replicator_Square_Depth / CFG.Current.Replicator_Square_Size * squareRightCount;
                 float z = newPos[2] + height_increment;

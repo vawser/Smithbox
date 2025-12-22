@@ -2,7 +2,6 @@
 using DotNext.Collections.Generic;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Program.Editors.MapEditor;
 using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
@@ -83,7 +82,7 @@ internal class MapConnections_ER
         return closestMap.RootObject.GetLocalTransform() + targetOffset;
     }
 
-    public static IReadOnlyDictionary<string, RelationType> GetRelatedMaps(
+    public static IReadOnlyDictionary<string, MapConnectionRelationType> GetRelatedMaps(
         MapEditorScreen editor,
         string mapid,
         List<byte[]> connectColMaps = null)
@@ -91,7 +90,7 @@ internal class MapConnections_ER
         var allMapIds = editor.Project.MapData.MapFiles.Entries.Select(e => e.Filename).ToList();
 
         connectColMaps ??= new List<byte[]>();
-        SortedDictionary<string, RelationType> relations = new();
+        SortedDictionary<string, MapConnectionRelationType> relations = new();
         if (!MapConnectionsUtil.TryParseMap(mapid, out var parts))
         {
             return relations;
@@ -115,7 +114,7 @@ internal class MapConnections_ER
 
                 if (allMapIds.Contains(parent))
                 {
-                    relations[parent] = RelationType.Parent;
+                    relations[parent] = MapConnectionRelationType.Parent;
                     if (scale == 0)
                     {
                         tileX /= 2;
@@ -123,7 +122,7 @@ internal class MapConnections_ER
                         var ancestor = MapConnectionsUtil.FormatMap(new byte[] { topIndex, tileX, tileZ, (byte)(parts[3] + 2) });
                         if (allMapIds.Contains(ancestor))
                         {
-                            relations[ancestor] = RelationType.Ancestor;
+                            relations[ancestor] = MapConnectionRelationType.Ancestor;
                         }
                     }
                 }
@@ -143,7 +142,7 @@ internal class MapConnections_ER
                         var child = MapConnectionsUtil.FormatMap(new byte[] { topIndex, childX, childZ, (byte)(parts[3] - 1) });
                         if (allMapIds.Contains(child))
                         {
-                            relations[child] = RelationType.Child;
+                            relations[child] = MapConnectionRelationType.Child;
                             if (scale != 2)
                             {
                                 continue;
@@ -158,7 +157,7 @@ internal class MapConnections_ER
                                     var desc = MapConnectionsUtil.FormatMap(new byte[] { topIndex, descX, descZ, (byte)(parts[3] - 2) });
                                     if (allMapIds.Contains(desc))
                                     {
-                                        relations[desc] = RelationType.Descendant;
+                                        relations[desc] = MapConnectionRelationType.Descendant;
                                     }
                                 }
                             }
@@ -188,7 +187,7 @@ internal class MapConnections_ER
             {
                 if (allMapIds.Contains(connectMapId))
                 {
-                    relations[connectMapId] = RelationType.Connection;
+                    relations[connectMapId] = MapConnectionRelationType.Connection;
                 }
 
                 continue;
@@ -240,7 +239,7 @@ internal class MapConnections_ER
                 // Add all matching maps, aside from skyboxes
                 foreach (var matchingMap in allMapIds.Where(m => re.IsMatch(m) && !m.EndsWith("_99")))
                 {
-                    relations[matchingMap] = RelationType.Connection;
+                    relations[matchingMap] = MapConnectionRelationType.Connection;
                 }
             }
         }

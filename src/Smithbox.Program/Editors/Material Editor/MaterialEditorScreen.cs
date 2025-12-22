@@ -93,14 +93,14 @@ public class MaterialEditorScreen : EditorScreen
             ImGui.End();
         }
 
-        if (Selection.SourceType is SourceType.MTD)
+        if (Selection.SourceType is MaterialSourceType.MTD)
         {
             ImGui.Begin("MTD Entry##material_MTD_entry", ImGuiWindowFlags.MenuBar);
             MTDView.Draw();
             ImGui.End();
         }
 
-        if (Selection.SourceType is SourceType.MATBIN)
+        if (Selection.SourceType is MaterialSourceType.MATBIN)
         {
             if (MaterialUtils.SupportsMATBIN(Project))
             {
@@ -212,7 +212,7 @@ public class MaterialEditorScreen : EditorScreen
         if (Selection.SelectedFileKey == "")
             return;
 
-        if(Selection.SourceType is SourceType.MTD)
+        if(Selection.SourceType is MaterialSourceType.MTD)
         {
             if (Selection.MTDWrapper == null)
                 return;
@@ -221,7 +221,7 @@ public class MaterialEditorScreen : EditorScreen
                 return;
         }
 
-        if (Selection.SourceType is SourceType.MATBIN)
+        if (Selection.SourceType is MaterialSourceType.MATBIN)
         {
             if (Selection.MATBINWrapper == null)
                 return;

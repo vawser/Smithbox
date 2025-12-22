@@ -210,7 +210,7 @@ public class ParamEditorScreen : EditorScreen
                 }
                 else if (initcmd[1] == "massEditCSVExport")
                 {
-                    IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamBank.RowGetType>(initcmd[2]));
+                    IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamUpgradeRowGetType>(initcmd[2]));
 
                     MassEditHandler.ME_CSV_Output = ParamIO.GenerateCSV(Project, rows,
                         Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
@@ -224,7 +224,7 @@ public class ParamEditorScreen : EditorScreen
                 else if (initcmd[1] == "massEditSingleCSVExport")
                 {
                     MassEditHandler.ME_Single_CSV_Field = initcmd[2];
-                    IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamBank.RowGetType>(initcmd[3]));
+                    IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamUpgradeRowGetType>(initcmd[3]));
 
                     MassEditHandler.ME_CSV_Output = ParamIO.GenerateSingleCSV(rows,
                         Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
@@ -242,7 +242,7 @@ public class ParamEditorScreen : EditorScreen
                 {
                     Param p = Project.ParamData.PrimaryBank.GetParamFromName(_activeView.Selection.GetActiveParam());
 
-                    (PseudoColumn, Param.Column) col = p.GetCol(initcmd[2]);
+                    (ParamEditorPseudoColumn, Param.Column) col = p.GetCol(initcmd[2]);
                     _distributionOutput =
                         ParamUtils.GetParamValueDistribution(_activeView.Selection.GetSelectedRows(), col);
 
@@ -592,7 +592,7 @@ public class ParamEditorScreen : EditorScreen
 
                 if (ImGui.BeginMenu("All rows"))
                 {
-                    CsvExportDisplay(ParamBank.RowGetType.AllRows);
+                    CsvExportDisplay(ParamUpgradeRowGetType.AllRows);
                     ImGui.EndMenu();
                 }
 
@@ -628,13 +628,13 @@ public class ParamEditorScreen : EditorScreen
 
                 if (ImGui.BeginMenu("Modified rows", Project.ParamData.PrimaryBank.GetVanillaDiffRows(_activeView.Selection.GetActiveParam()).Any()))
                 {
-                    CsvExportDisplay(ParamBank.RowGetType.ModifiedRows);
+                    CsvExportDisplay(ParamUpgradeRowGetType.ModifiedRows);
                     ImGui.EndMenu();
                 }
 
                 if (ImGui.BeginMenu("Selected rows", _activeView.Selection.RowSelectionExists()))
                 {
-                    CsvExportDisplay(ParamBank.RowGetType.SelectedRows);
+                    CsvExportDisplay(ParamUpgradeRowGetType.SelectedRows);
                     ImGui.EndMenu();
                 }
 
@@ -956,7 +956,7 @@ public class ParamEditorScreen : EditorScreen
                 {
                     if (_activeView.Selection.ActiveParamExists())
                     {
-                        ParamTools.TrimRowNames(RowTrimType.NewLines);
+                        ParamTools.TrimRowNames(ParamRowTrimType.NewLines);
                     }
                 }
 
@@ -1033,25 +1033,25 @@ public class ParamEditorScreen : EditorScreen
         Save();
     }
 
-    private IReadOnlyList<Param.Row> CsvExportGetRows(ParamBank.RowGetType rowType)
+    private IReadOnlyList<Param.Row> CsvExportGetRows(ParamUpgradeRowGetType rowType)
     {
         IReadOnlyList<Param.Row> rows;
 
         var activeParam = _activeView.Selection.GetActiveParam();
 
-        if (rowType == ParamBank.RowGetType.AllRows)
+        if (rowType == ParamUpgradeRowGetType.AllRows)
         {
             // All rows
             rows = Project.ParamData.PrimaryBank.Params[activeParam].Rows;
         }
-        else if (rowType == ParamBank.RowGetType.ModifiedRows)
+        else if (rowType == ParamUpgradeRowGetType.ModifiedRows)
         {
             // Modified rows
             HashSet<int> vanillaDiffCache = Project.ParamData.PrimaryBank.GetVanillaDiffRows(activeParam);
             rows = Project.ParamData.PrimaryBank.Params[activeParam].Rows.Where(p => vanillaDiffCache.Contains(p.ID))
                 .ToList();
         }
-        else if (rowType == ParamBank.RowGetType.SelectedRows)
+        else if (rowType == ParamUpgradeRowGetType.SelectedRows)
         {
             // Selected rows
             rows = _activeView.Selection.GetSelectedRows();
@@ -1067,7 +1067,7 @@ public class ParamEditorScreen : EditorScreen
     /// <summary>
     ///     CSV Export DIsplay
     /// </summary>
-    private void CsvExportDisplay(ParamBank.RowGetType rowType)
+    private void CsvExportDisplay(ParamUpgradeRowGetType rowType)
     {
         if (ImGui.BeginMenu("Export to window..."))
         {

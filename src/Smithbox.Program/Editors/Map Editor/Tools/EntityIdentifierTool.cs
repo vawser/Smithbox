@@ -15,7 +15,7 @@ public class EntityIdentifierTool
 
     private string SearchText = "";
     private bool HideUnassigned = false;
-    private BlockSeperatorType BlockSeperatorType = BlockSeperatorType.None;
+    private EntityIdBlockSeperatorType BlockSeperatorType = EntityIdBlockSeperatorType.None;
 
     private string SelectedIdentifier = "";
 
@@ -60,17 +60,17 @@ public class EntityIdentifierTool
 
             if (ImGui.Button($"{Icons.Bars}##toggleBlockSeperators", DPI.IconButtonSize))
             {
-                if (BlockSeperatorType is BlockSeperatorType.None)
+                if (BlockSeperatorType is EntityIdBlockSeperatorType.None)
                 {
-                    BlockSeperatorType = BlockSeperatorType.Thousands;
+                    BlockSeperatorType = EntityIdBlockSeperatorType.Thousands;
                 }
-                else if (BlockSeperatorType is BlockSeperatorType.Thousands)
+                else if (BlockSeperatorType is EntityIdBlockSeperatorType.Thousands)
                 {
-                    BlockSeperatorType = BlockSeperatorType.Hundreds;
+                    BlockSeperatorType = EntityIdBlockSeperatorType.Hundreds;
                 }
-                else if (BlockSeperatorType is BlockSeperatorType.Hundreds)
+                else if (BlockSeperatorType is EntityIdBlockSeperatorType.Hundreds)
                 {
-                    BlockSeperatorType = BlockSeperatorType.None;
+                    BlockSeperatorType = EntityIdBlockSeperatorType.None;
                 }
             }
             UIHelper.Tooltip("Toggle the block separator display within the list (none, every 1000, every 100).");
@@ -162,7 +162,7 @@ public class EntityIdentifierTool
                 var id = cacheEntry.Key;
                 var entity = cacheEntry.Value;
 
-                if (BlockSeperatorType != BlockSeperatorType.None)
+                if (BlockSeperatorType != EntityIdBlockSeperatorType.None)
                 {
                     var curId = 0;
                     int.TryParse(id, out curId);
@@ -172,7 +172,7 @@ public class EntityIdentifierTool
                         ImGui.Separator();
                     }
 
-                    if (BlockSeperatorType is BlockSeperatorType.Hundreds)
+                    if (BlockSeperatorType is EntityIdBlockSeperatorType.Hundreds)
                     {
                         if (curId != 0 && curId % 100 == 0)
                         {
@@ -331,11 +331,4 @@ public class EntityIdentifierTool
 
         return baseId;
     }
-}
-
-public enum BlockSeperatorType
-{
-    None = 0,
-    Thousands = 1,
-    Hundreds = 2,
 }

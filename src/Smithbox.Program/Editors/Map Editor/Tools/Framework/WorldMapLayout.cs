@@ -31,7 +31,7 @@ public class WorldMapLayout
         return num.ToString();
     }
 
-    public void GenerateTiles(List<int> rows, List<int> cols, int tileOffset, float increment, MapTileType type, List<int> tileIdVariants = null,
+    public void GenerateTiles(List<int> rows, List<int> cols, int tileOffset, float increment, WorldMapTileType type, List<int> tileIdVariants = null,
         int xLargeOffset = -1, int yLargeOffset = -1, 
         int xMediumOffset = -1, int yMediumOffset = -1, 
         int xSmallOffset = -1, int ySmallOffset = -1)
@@ -41,7 +41,7 @@ public class WorldMapLayout
         float CurX = XOffset;
         float CurY = YOffset;
 
-        if(type is MapTileType.Large)
+        if(type is WorldMapTileType.Large)
         {
             if(xLargeOffset != -1)
             {
@@ -53,7 +53,7 @@ public class WorldMapLayout
             }
         }
 
-        if (type is MapTileType.Medium)
+        if (type is WorldMapTileType.Medium)
         {
             if (xMediumOffset != -1)
             {
@@ -65,7 +65,7 @@ public class WorldMapLayout
             }
         }
 
-        if (type is MapTileType.Small)
+        if (type is WorldMapTileType.Small)
         {
             if (xSmallOffset != -1)
             {
@@ -150,7 +150,7 @@ public class WorldMapLayout
 
             CurX = CurX + increment;
 
-            if (type is MapTileType.Large)
+            if (type is WorldMapTileType.Large)
             {
                 if (yLargeOffset != -1)
                 {
@@ -162,7 +162,7 @@ public class WorldMapLayout
                 }
             }
 
-            if (type is MapTileType.Medium)
+            if (type is WorldMapTileType.Medium)
             {
                 if (yMediumOffset != -1)
                 {
@@ -174,7 +174,7 @@ public class WorldMapLayout
                 }
             }
 
-            if (type is MapTileType.Small)
+            if (type is WorldMapTileType.Small)
             {
                 if (ySmallOffset != -1)
                 {
@@ -197,9 +197,9 @@ public class WorldMapTile
     public float Width { get; set; }
     public float Height { get; set; }
 
-    public MapTileType TileType { get; set; }
+    public WorldMapTileType TileType { get; set; }
 
-    public WorldMapTile(string name, float curX, float curY, float width, float height, MapTileType type)
+    public WorldMapTile(string name, float curX, float curY, float width, float height, WorldMapTileType type)
     {
         Name = name;
         X = curX;
@@ -208,11 +208,4 @@ public class WorldMapTile
         Height = height;
         TileType = type;
     }
-}
-
-public enum MapTileType
-{
-    Small,
-    Medium,
-    Large
 }

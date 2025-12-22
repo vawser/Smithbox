@@ -18,7 +18,7 @@ public class PinGroups
 
     private ParamEditorScreen Editor;
 
-    private PinGroupDisplayState CurrentDisplayState = PinGroupDisplayState.Param;
+    private ParamPinGroupDisplayState CurrentDisplayState = ParamPinGroupDisplayState.Param;
 
     private string _newGroupName;
 
@@ -27,13 +27,6 @@ public class PinGroups
     public List<string> ParamGroupFiles = new List<string>();
     public List<string> RowGroupFiles = new List<string>();
     public List<string> FieldGroupFiles = new List<string>();
-
-    private enum PinGroupDisplayState
-    {
-        Param,
-        Row,
-        Field
-    }
 
     public PinGroups(ParamEditorScreen screen)
     {
@@ -125,32 +118,32 @@ public class PinGroups
 
         if (ImGui.Button("View Param Groups", DPI.ThirdWidthButton(windowWidth, 24)))
         {
-            CurrentDisplayState = PinGroupDisplayState.Param;
+            CurrentDisplayState = ParamPinGroupDisplayState.Param;
         }
         ImGui.SameLine();
         if (ImGui.Button("View Row Groups", DPI.ThirdWidthButton(windowWidth, 24)))
         {
-            CurrentDisplayState = PinGroupDisplayState.Row;
+            CurrentDisplayState = ParamPinGroupDisplayState.Row;
         }
         ImGui.SameLine();
         if (ImGui.Button("View Field Groups", DPI.ThirdWidthButton(windowWidth, 24)))
         {
-            CurrentDisplayState = PinGroupDisplayState.Field;
+            CurrentDisplayState = ParamPinGroupDisplayState.Field;
         }
 
-        if (CurrentDisplayState == PinGroupDisplayState.Param)
+        if (CurrentDisplayState == ParamPinGroupDisplayState.Param)
         {
             ImGui.Separator();
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Param Groups:");
             ImGui.Separator();
         }
-        if (CurrentDisplayState == PinGroupDisplayState.Row)
+        if (CurrentDisplayState == ParamPinGroupDisplayState.Row)
         {
             ImGui.Separator();
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Row Groups:");
             ImGui.Separator();
         }
-        if (CurrentDisplayState == PinGroupDisplayState.Field)
+        if (CurrentDisplayState == ParamPinGroupDisplayState.Field)
         {
             ImGui.Separator();
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Field Groups:");
@@ -161,15 +154,15 @@ public class PinGroups
 
         ImGui.BeginChild("##groupSelectionList");
 
-        if (CurrentDisplayState == PinGroupDisplayState.Param)
+        if (CurrentDisplayState == ParamPinGroupDisplayState.Param)
         {
             DisplayParamGroups();
         }
-        if (CurrentDisplayState == PinGroupDisplayState.Row)
+        if (CurrentDisplayState == ParamPinGroupDisplayState.Row)
         {
             DisplayRowGroups();
         }
-        if (CurrentDisplayState == PinGroupDisplayState.Field)
+        if (CurrentDisplayState == ParamPinGroupDisplayState.Field)
         {
             DisplayFieldGroups();
         }
@@ -178,15 +171,15 @@ public class PinGroups
 
         ImGui.NextColumn();
 
-        if (CurrentDisplayState == PinGroupDisplayState.Param)
+        if (CurrentDisplayState == ParamPinGroupDisplayState.Param)
         {
             DisplayParamGroupContent();
         }
-        if (CurrentDisplayState == PinGroupDisplayState.Row)
+        if (CurrentDisplayState == ParamPinGroupDisplayState.Row)
         {
             DisplayRowGroupContent();
         }
-        if (CurrentDisplayState == PinGroupDisplayState.Field)
+        if (CurrentDisplayState == ParamPinGroupDisplayState.Field)
         {
             DisplayFieldGroupContent();
         }

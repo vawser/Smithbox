@@ -8,10 +8,10 @@ public class ChangeEnumList : EditorAction
     private readonly ProjectEnumOption CurrentEntry;
     private readonly ProjectEnumOption NewEntry;
     private readonly ProjectEnumOption StoredEntry;
-    private readonly EnumListChange ChangeType;
+    private readonly ProjectEnumListOperation ChangeType;
     private readonly int Index;
 
-    public ChangeEnumList(ProjectEnumEntry enumSource, ProjectEnumOption curEntry, ProjectEnumOption newEntry, EnumListChange changeType, int index = 0)
+    public ChangeEnumList(ProjectEnumEntry enumSource, ProjectEnumOption curEntry, ProjectEnumOption newEntry, ProjectEnumListOperation changeType, int index = 0)
     {
         EnumSource = enumSource;
         CurrentEntry = curEntry;
@@ -29,10 +29,10 @@ public class ChangeEnumList : EditorAction
     {
         switch (ChangeType)
         {
-            case EnumListChange.Add:
+            case ProjectEnumListOperation.Add:
                 EnumSource.Options.Insert(Index, NewEntry);
                 break;
-            case EnumListChange.Remove:
+            case ProjectEnumListOperation.Remove:
                 EnumSource.Options.RemoveAt(Index);
                 break;
         }
@@ -44,20 +44,14 @@ public class ChangeEnumList : EditorAction
     {
         switch (ChangeType)
         {
-            case EnumListChange.Add:
+            case ProjectEnumListOperation.Add:
                 EnumSource.Options.RemoveAt(Index);
                 break;
-            case EnumListChange.Remove:
+            case ProjectEnumListOperation.Remove:
                 EnumSource.Options.Insert(Index, StoredEntry);
                 break;
         }
 
         return ActionEvent.NoEvent;
-    }
-
-    public enum EnumListChange
-    {
-        Add,
-        Remove
     }
 }

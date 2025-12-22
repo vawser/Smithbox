@@ -36,12 +36,3 @@ public class ParamContextManager
         }
     }
 }
-
-public enum ParamEditorContext
-{
-    [Display(Name = "None")] None,
-    [Display(Name = "Param List")] ParamList,
-    [Display(Name = "Table Group List")] TableGroupList,
-    [Display(Name = "Row List")] RowList,
-    [Display(Name = "Field List")] FieldList,
-}

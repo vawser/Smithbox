@@ -117,7 +117,7 @@ public class GparamData
 
                 try
                 {
-                    GparamInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
+                    GparamInformation = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatResource);
                 }
                 catch (Exception e)
                 {
@@ -162,7 +162,7 @@ public class GparamData
 
                 try
                 {
-                    GparamEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
+                    GparamEnums = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatEnum);
                 }
                 catch (Exception e)
                 {

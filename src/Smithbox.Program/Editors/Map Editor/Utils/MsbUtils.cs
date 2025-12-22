@@ -11,20 +11,6 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MsbUtils
 {
-    public enum NameDisplayType
-    {
-        [Display(Name = "Name: Internal")]
-        Internal = 0,
-        [Display(Name = "Name: Community")]
-        Community = 1,
-        [Display(Name = "Name: Internal, Alias: Community")]
-        Internal_Community = 2,
-        [Display(Name = "Name: Internal, Alias: FMG")]
-        Internal_FMG = 3,
-        [Display(Name = "Name: Community, Alias: FMG")]
-        Community_FMG = 4
-    }
-
     static bool Matches(string? name, Type refType, IMsbEntry entry) => entry.Name == name && refType.IsAssignableFrom(entry.GetType());
     /// <summary>
     /// This will yield the value and a setter for that value for each field in `entry` that's a MSBReference

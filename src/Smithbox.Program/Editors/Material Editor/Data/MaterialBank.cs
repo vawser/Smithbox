@@ -80,12 +80,12 @@ public class MaterialBank
     {
         await Task.Yield();
 
-        if(editor.Selection.SourceType is SourceType.MTD)
+        if(editor.Selection.SourceType is MaterialSourceType.MTD)
         {
             await editor.Selection.MTDWrapper.Save(editor);
         }
 
-        if (editor.Selection.SourceType is SourceType.MATBIN)
+        if (editor.Selection.SourceType is MaterialSourceType.MATBIN)
         {
             await editor.Selection.MATBINWrapper.Save(editor);
         }

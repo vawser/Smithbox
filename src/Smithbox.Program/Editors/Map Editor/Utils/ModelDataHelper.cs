@@ -107,13 +107,13 @@ public static class ModelDataHelper
             }
         }
 
-        if (CFG.Current.MapEditor_ModelDataExtraction_Type is ExtractionType.Contained)
+        if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
         {
             var writePath = Path.Combine(writeDir, fileName);
             File.WriteAllBytes(writePath, fileData.Value.ToArray());
         }
 
-        if (CFG.Current.MapEditor_ModelDataExtraction_Type is ExtractionType.Loose)
+        if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
         {
             var containerType = ModelEditorUtils.GetContainerTypeFromVirtualPath(project, entry.VirtualPath);
 
@@ -260,7 +260,7 @@ public static class ModelDataHelper
                 }
             }
 
-            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ExtractionType.Contained)
+            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
             {
                 if (!writtenFiles.Contains(fileName))
                 {
@@ -272,7 +272,7 @@ public static class ModelDataHelper
                 }
             }
 
-            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ExtractionType.Loose)
+            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
             {
                 var containerType = ModelEditorUtils.GetContainerTypeFromVirtualPath(project, tex.VirtualPath);
 

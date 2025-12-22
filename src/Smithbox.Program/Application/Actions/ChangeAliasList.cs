@@ -9,10 +9,10 @@ public class ChangeAliasList : EditorAction
     private readonly AliasEntry CurrentEntry;
     private readonly AliasEntry NewEntry;
     private readonly AliasEntry StoredEntry;
-    private readonly AliasListChange ChangeType;
+    private readonly ProjectAliasListOperation ChangeType;
     private readonly int Index;
 
-    public ChangeAliasList(List<AliasEntry> aliasSource, AliasEntry curEntry, AliasEntry newEntry, AliasListChange changeType, int index = 0)
+    public ChangeAliasList(List<AliasEntry> aliasSource, AliasEntry curEntry, AliasEntry newEntry, ProjectAliasListOperation changeType, int index = 0)
     {
         AliasSource = aliasSource;
         CurrentEntry = curEntry;
@@ -30,10 +30,10 @@ public class ChangeAliasList : EditorAction
     {
         switch (ChangeType)
         {
-            case AliasListChange.Add:
+            case ProjectAliasListOperation.Add:
                 AliasSource.Insert(Index, NewEntry);
                 break;
-            case AliasListChange.Remove:
+            case ProjectAliasListOperation.Remove:
                 AliasSource.RemoveAt(Index);
                 break;
         }
@@ -45,20 +45,14 @@ public class ChangeAliasList : EditorAction
     {
         switch (ChangeType)
         {
-            case AliasListChange.Add:
+            case ProjectAliasListOperation.Add:
                 AliasSource.RemoveAt(Index);
                 break;
-            case AliasListChange.Remove:
+            case ProjectAliasListOperation.Remove:
                 AliasSource.Insert(Index, StoredEntry);
                 break;
         }
 
         return ActionEvent.NoEvent;
-    }
-
-    public enum AliasListChange
-    {
-        Add,
-        Remove
     }
 }

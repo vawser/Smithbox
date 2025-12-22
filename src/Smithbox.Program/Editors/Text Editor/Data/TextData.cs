@@ -72,13 +72,13 @@ public class TextData
 
         if (reloadProject)
         {
-            await targetProject.Init(silent: true, InitType.TextEditorOnly);
+            await targetProject.Init(silent: true, ProjectInitType.TextEditorOnly);
         }
         else
         {
             if (!targetProject.Initialized)
             {
-                await targetProject.Init(silent: true, InitType.TextEditorOnly);
+                await targetProject.Init(silent: true, ProjectInitType.TextEditorOnly);
             }
         }
 

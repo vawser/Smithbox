@@ -384,15 +384,3 @@ public class MapValidationEntry
 
     public MapValidationEntry() { }
 }
-
-public enum MapValidationType
-{
-    EntityID,
-    CollisionName,
-    WalkRoute,
-    ThinkParamID,
-    NPCParamID,
-    CharaInitID,
-    ChameleonParamID,
-    PartNames
-}

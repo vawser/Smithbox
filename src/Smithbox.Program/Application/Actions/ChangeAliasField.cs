@@ -7,10 +7,10 @@ public class ChangeAliasField : EditorAction
     private readonly AliasEntry AliasEntry;
     private readonly object NewValue;
     private readonly object OldValue;
-    private readonly AliasField ChangeType;
+    private readonly ProjectAliasFieldType ChangeType;
     private readonly int TagIndex;
 
-    public ChangeAliasField(AliasEntry curEntry, object oldValue, object newValue, AliasField changeType, int tagIndex = -1)
+    public ChangeAliasField(AliasEntry curEntry, object oldValue, object newValue, ProjectAliasFieldType changeType, int tagIndex = -1)
     {
         AliasEntry = curEntry;
         NewValue = newValue;
@@ -23,13 +23,13 @@ public class ChangeAliasField : EditorAction
     {
         switch(ChangeType)
         {
-            case AliasField.ID:
+            case ProjectAliasFieldType.ID:
                 AliasEntry.ID = $"{NewValue}";
                 break;
-            case AliasField.Name:
+            case ProjectAliasFieldType.Name:
                 AliasEntry.Name = $"{NewValue}";
                 break;
-            case AliasField.Tags:
+            case ProjectAliasFieldType.Tags:
                 AliasEntry.Tags[TagIndex] = $"{NewValue}";
                 break;
         }
@@ -41,24 +41,17 @@ public class ChangeAliasField : EditorAction
     {
         switch (ChangeType)
         {
-            case AliasField.ID:
+            case ProjectAliasFieldType.ID:
                 AliasEntry.ID = $"{OldValue}";
                 break;
-            case AliasField.Name:
+            case ProjectAliasFieldType.Name:
                 AliasEntry.Name = $"{OldValue}";
                 break;
-            case AliasField.Tags:
+            case ProjectAliasFieldType.Tags:
                 AliasEntry.Tags[TagIndex] = $"{OldValue}";
                 break;
         }
 
         return ActionEvent.NoEvent;
-    }
-
-    public enum AliasField
-    {
-        ID = 0,
-        Name = 1,
-        Tags = 2
     }
 }

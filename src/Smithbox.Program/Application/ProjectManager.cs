@@ -548,7 +548,7 @@ public class ProjectManager
             // Update the legacy project.json
             CreateLegacyProjectJSON(curProject, firstCreated);
 
-            var json = JsonSerializer.Serialize(curProject, SmithboxSerializerContext.Default.ProjectEntry);
+            var json = JsonSerializer.Serialize(curProject, ProjectJsonSerializerContext.Default.ProjectEntry);
 
             File.WriteAllText(file, json);
         }
@@ -584,7 +584,7 @@ public class ProjectManager
                     var filestring = File.ReadAllText(entry);
 
                     var curProject =
-                        JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectEntry);
+                        JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.ProjectEntry);
 
                     if (curProject == null)
                     {
@@ -745,7 +745,7 @@ public class ProjectManager
                 try
                 {
                     LegacyProjectJSON project =
-                        JsonSerializer.Deserialize(json, SmithboxSerializerContext.Default.LegacyProjectJSON);
+                        JsonSerializer.Deserialize(json, ProjectJsonSerializerContext.Default.LegacyProjectJSON);
                     curProject.PinnedRows = project.PinnedRows;
                     curProject.PinnedFields = project.PinnedFields;
                     curProject.PinnedParams = project.PinnedParams;
@@ -764,7 +764,7 @@ public class ProjectManager
             var legacyProjectJson = new LegacyProjectJSON(curProject);
 
             var json = JsonSerializer.Serialize(legacyProjectJson,
-                SmithboxSerializerContext.Default.LegacyProjectJSON);
+                ProjectJsonSerializerContext.Default.LegacyProjectJSON);
 
             File.WriteAllText(jsonPath, json);
         }

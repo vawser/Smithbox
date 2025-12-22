@@ -185,7 +185,7 @@ public class ProjectEntry
     /// Setup project
     /// </summary>
     /// <returns></returns>
-    public async Task<bool> Init(bool silent = false, InitType initType = InitType.ProjectDefined)
+    public async Task<bool> Init(bool silent = false, ProjectInitType initType = ProjectInitType.ProjectDefined)
     {
         // Sanity checks
         if(ProjectType is ProjectType.Undefined)
@@ -313,13 +313,13 @@ public class ProjectEntry
 
     }
 
-    public async Task InitializeEditors(InitType initType, bool silent = false)
+    public async Task InitializeEditors(ProjectInitType initType, bool silent = false)
     {
         List<Task> initTasks = [];
 
         // ---- Map Editor ----
         if (EnableMapEditor
-            && initType is InitType.ProjectDefined or InitType.MapEditorOnly
+            && initType is ProjectInitType.ProjectDefined or ProjectInitType.MapEditorOnly
             && ProjectUtils.SupportsMapEditor(ProjectType))
         {
             initTasks.Add(InitializeMapEditor(silent));
@@ -327,7 +327,7 @@ public class ProjectEntry
 
         // ---- Model Editor ----
         if (EnableModelEditor
-            && initType is InitType.ProjectDefined
+            && initType is ProjectInitType.ProjectDefined
             && ProjectUtils.SupportsModelEditor(ProjectType))
         {
             initTasks.Add(InitializeModelEditor(silent));
@@ -335,7 +335,7 @@ public class ProjectEntry
 
         // ---- Text Editor ----
         if (EnableTextEditor
-            && initType is InitType.ProjectDefined or InitType.TextEditorOnly
+            && initType is ProjectInitType.ProjectDefined or ProjectInitType.TextEditorOnly
             && ProjectUtils.SupportsTextEditor(ProjectType))
         {
             initTasks.Add(InitializeTextEditor(silent));
@@ -343,7 +343,7 @@ public class ProjectEntry
 
         // ---- Param Editor ----
         if (EnableParamEditor
-            && initType is InitType.ProjectDefined or InitType.ParamEditorOnly
+            && initType is ProjectInitType.ProjectDefined or ProjectInitType.ParamEditorOnly
             && ProjectUtils.SupportsParamEditor(ProjectType))
         {
             initTasks.Add(InitializeParamEditor(silent));
@@ -351,7 +351,7 @@ public class ProjectEntry
 
         // ---- Graphics Param Editor ----
         if (EnableGparamEditor
-            && initType is InitType.ProjectDefined
+            && initType is ProjectInitType.ProjectDefined
             && ProjectUtils.SupportsGraphicsParamEditor(ProjectType))
         {
             initTasks.Add(InitializeGparamEditor(silent));
@@ -359,7 +359,7 @@ public class ProjectEntry
 
         // ---- Material Editor ----
         if (EnableMaterialEditor
-            && initType is InitType.ProjectDefined
+            && initType is ProjectInitType.ProjectDefined
             && ProjectUtils.SupportsMaterialEditor(ProjectType))
         {
             initTasks.Add(InitializeMaterialEditor(silent));
@@ -367,7 +367,7 @@ public class ProjectEntry
 
         // ---- Texture Viewer ----
         if (EnableTextureViewer
-            && initType is InitType.ProjectDefined
+            && initType is ProjectInitType.ProjectDefined
             && ProjectUtils.SupportsTextureViewer(ProjectType))
         {
             initTasks.Add(InitializeTextureViewer(silent));
@@ -375,7 +375,7 @@ public class ProjectEntry
 
         // ---- File Browser ----
         if (EnableFileBrowser
-            && initType is InitType.ProjectDefined
+            && initType is ProjectInitType.ProjectDefined
             && ProjectUtils.SupportsFileBrowser(ProjectType))
         {
             initTasks.Add(InitializeFileBrowser(silent));
@@ -997,7 +997,7 @@ public class ProjectEntry
 
                 try
                 {
-                    FileDictionary = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FileDictionary);
+                    FileDictionary = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FileDictionary);
                 }
                 catch (Exception e)
                 {
@@ -1018,15 +1018,4 @@ public class ProjectEntry
     }
 
     #endregion
-}
-
-/// <summary>
-/// This is used to control which editors are loaded when initing a project via aux bank functions
-/// </summary>
-public enum InitType
-{
-    ProjectDefined,
-    MapEditorOnly,
-    ParamEditorOnly,
-    TextEditorOnly
 }

@@ -4,7 +4,6 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
-using StudioCore.Program.Editors.MapEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -696,10 +695,10 @@ public class Universe
 
     public void LoadRelatedMapsER(string mapid)
     {
-        IReadOnlyDictionary<string, RelationType> relatedMaps =
+        IReadOnlyDictionary<string, MapConnectionRelationType> relatedMaps =
             MapConnections_ER.GetRelatedMaps(Editor, mapid);
 
-        foreach (KeyValuePair<string, RelationType> map in relatedMaps)
+        foreach (KeyValuePair<string, MapConnectionRelationType> map in relatedMaps)
         {
             Editor.Universe.LoadMap(map.Key);
         }

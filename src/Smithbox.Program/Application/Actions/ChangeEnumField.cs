@@ -8,9 +8,9 @@ public class ChangeEnumField : EditorAction
     private readonly ProjectEnumEntry Entry;
     private readonly object NewValue;
     private readonly object OldValue;
-    private readonly EnumField ChangeType;
+    private readonly ProjectEnumFieldType ChangeType;
 
-    public ChangeEnumField(ProjectEnumEntry curEntry, object oldValue, object newValue, EnumField changeType)
+    public ChangeEnumField(ProjectEnumEntry curEntry, object oldValue, object newValue, ProjectEnumFieldType changeType)
     {
         Entry = curEntry;
         NewValue = newValue;
@@ -22,13 +22,13 @@ public class ChangeEnumField : EditorAction
     {
         switch (ChangeType)
         {
-            case EnumField.DisplayName:
+            case ProjectEnumFieldType.DisplayName:
                 Entry.DisplayName = $"{NewValue}";
                 break;
-            case EnumField.Name:
+            case ProjectEnumFieldType.Name:
                 Entry.Name = $"{NewValue}";
                 break;
-            case EnumField.Description:
+            case ProjectEnumFieldType.Description:
                 Entry.Description = $"{NewValue}";
                 break;
         }
@@ -40,24 +40,17 @@ public class ChangeEnumField : EditorAction
     {
         switch (ChangeType)
         {
-            case EnumField.DisplayName:
+            case ProjectEnumFieldType.DisplayName:
                 Entry.DisplayName = $"{OldValue}";
                 break;
-            case EnumField.Name:
+            case ProjectEnumFieldType.Name:
                 Entry.Name = $"{OldValue}";
                 break;
-            case EnumField.Description:
+            case ProjectEnumFieldType.Description:
                 Entry.Description = $"{OldValue}";
                 break;
         }
 
         return ActionEvent.NoEvent;
-    }
-
-    public enum EnumField
-    {
-        DisplayName = 0,
-        Name = 1,
-        Description = 2
     }
 }

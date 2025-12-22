@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Utilities;
 using System;

@@ -53,11 +53,11 @@ public static class ProjectAliasEditor
         {
             try
             {
-                if (!Enum.TryParse(Path.GetFileNameWithoutExtension(sourceFile), out AliasType type)) continue;
+                if (!Enum.TryParse(Path.GetFileNameWithoutExtension(sourceFile), out ProjectAliasType type)) continue;
                 string text = File.ReadAllText(sourceFile);
                 try
                 {
-                    var entries = JsonSerializer.Deserialize(text, SmithboxSerializerContext.Default.ListAliasEntry);
+                    var entries = JsonSerializer.Deserialize(text, ProjectJsonSerializerContext.Default.ListAliasEntry);
 
                     if (!BaseAliases.ContainsKey(type))
                     {
@@ -160,7 +160,7 @@ public static class ProjectAliasEditor
         }
     }
 
-    private static AliasType CurrentAliasEditor = AliasType.None;
+    private static ProjectAliasType CurrentAliasEditor = ProjectAliasType.None;
     private static string AliasEntryFilter = "";
     private static AliasEntry CurrentAliasEntry;
 
@@ -169,9 +169,9 @@ public static class ProjectAliasEditor
     /// </summary>
     private static void DisplayAliasSelection()
     {
-        foreach(var entry in Enum.GetValues<AliasType>())
+        foreach(var entry in Enum.GetValues<ProjectAliasType>())
         {
-            if (entry == AliasType.None)
+            if (entry == ProjectAliasType.None)
                 continue;
 
             if(ImGui.Selectable($"{entry.GetDisplayName()}##aliasType_{entry}", entry == CurrentAliasEditor))
@@ -230,7 +230,7 @@ public static class ProjectAliasEditor
     /// </summary>
     private static void DisplayAliasEntryList()
     {
-        if (CurrentAliasEditor == AliasType.None)
+        if (CurrentAliasEditor == ProjectAliasType.None)
             return;
 
         var columnWidth = ImGui.GetColumnWidth() * DPI.UIScale();
@@ -288,13 +288,13 @@ public static class ProjectAliasEditor
                         duplicateEntry.Name = $"{entry.Name}_1";
                         duplicateEntry.Tags = entry.Tags;
 
-                        var action = new ChangeAliasList(source, entry, duplicateEntry, ChangeAliasList.AliasListChange.Add, i+1);
+                        var action = new ChangeAliasList(source, entry, duplicateEntry, ProjectAliasListOperation.Add, i+1);
                         TargetProject.ActionManager.ExecuteAction(action);
                     }
 
                     if (ImGui.Selectable($"Remove##removeEntry_{entryImGuiID}"))
                     {
-                        var action = new ChangeAliasList(source, entry, null, ChangeAliasList.AliasListChange.Remove, i);
+                        var action = new ChangeAliasList(source, entry, null, ProjectAliasListOperation.Remove, i);
                         TargetProject.ActionManager.ExecuteAction(action);
                     }
 
@@ -323,7 +323,7 @@ public static class ProjectAliasEditor
     /// </summary>
     private static void DisplayAliasEditor()
     {
-        if (CurrentAliasEditor == AliasType.None)
+        if (CurrentAliasEditor == ProjectAliasType.None)
             return;
 
         if (CurrentAliasEntry == null)
@@ -343,7 +343,7 @@ public static class ProjectAliasEditor
         if(ImGui.IsItemDeactivatedAfterEdit())
         {
             var action = new ChangeAliasField(
-                CurrentAliasEntry, CurrentAliasEntry.ID, curID, ChangeAliasField.AliasField.ID);
+                CurrentAliasEntry, CurrentAliasEntry.ID, curID, ProjectAliasFieldType.ID);
             
             TargetProject.ActionManager.ExecuteAction(action);
         }
@@ -356,7 +356,7 @@ public static class ProjectAliasEditor
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
             var action = new ChangeAliasField(
-                CurrentAliasEntry, CurrentAliasEntry.Name, curName, ChangeAliasField.AliasField.Name);
+                CurrentAliasEntry, CurrentAliasEntry.Name, curName, ProjectAliasFieldType.Name);
 
             TargetProject.ActionManager.ExecuteAction(action);
         }
@@ -373,7 +373,7 @@ public static class ProjectAliasEditor
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeAliasField(
-                    CurrentAliasEntry, tag, curTag, ChangeAliasField.AliasField.Tags, i);
+                    CurrentAliasEntry, tag, curTag, ProjectAliasFieldType.Tags, i);
 
                 TargetProject.ActionManager.ExecuteAction(action);
             }
@@ -383,7 +383,7 @@ public static class ProjectAliasEditor
 
             if (ImGui.Button($"{Icons.Minus}##tagRemove{i}", DPI.IconButtonSize))
             {
-                var action = new ChangeAliasTagList(CurrentAliasEntry.Tags, tag, tag, ChangeAliasTagList.TagListChange.Remove, i);
+                var action = new ChangeAliasTagList(CurrentAliasEntry.Tags, tag, tag, ProjectAliasTagListOperation.Remove, i);
 
                 TargetProject.ActionManager.ExecuteAction(action);
             }
@@ -393,7 +393,7 @@ public static class ProjectAliasEditor
 
             if (ImGui.Button($"{Icons.Plus}##tagAdd{i}", DPI.IconButtonSize))
             {
-                var action = new ChangeAliasTagList(CurrentAliasEntry.Tags, tag, tag, ChangeAliasTagList.TagListChange.Add, i + 1);
+                var action = new ChangeAliasTagList(CurrentAliasEntry.Tags, tag, tag, ProjectAliasTagListOperation.Add, i + 1);
                 TargetProject.ActionManager.ExecuteAction(action);
             }
             UIHelper.Tooltip("Duplicate this tag.");
@@ -442,7 +442,7 @@ public static class ProjectAliasEditor
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
 
-        foreach ((AliasType aliasType, List<AliasEntry> aliases) in TargetProject.CommonData.Aliases)
+        foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in TargetProject.CommonData.Aliases)
         {
             string path = Path.Combine(projectFolder, $"{aliasType}.json");
 
@@ -461,13 +461,13 @@ public static class ProjectAliasEditor
 
             if (!diffAliases.Any()) continue;
 
-            var json = JsonSerializer.Serialize(diffAliases, SmithboxSerializerContext.Default.ListAliasEntry);
+            var json = JsonSerializer.Serialize(diffAliases, ProjectJsonSerializerContext.Default.ListAliasEntry);
 
             File.WriteAllText(path, json);
         }
     }
 
-    public static void SaveIndividual(ProjectEntry project, AliasType targetType)
+    public static void SaveIndividual(ProjectEntry project, ProjectAliasType targetType)
     {
         TargetProject = project;
 
@@ -476,7 +476,7 @@ public static class ProjectAliasEditor
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
 
-        foreach ((AliasType aliasType, List<AliasEntry> aliases) in TargetProject.CommonData.Aliases)
+        foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in TargetProject.CommonData.Aliases)
         {
             if(targetType != aliasType) 
                 continue;
@@ -498,7 +498,7 @@ public static class ProjectAliasEditor
 
             if (!diffAliases.Any()) continue;
 
-            var json = JsonSerializer.Serialize(diffAliases, SmithboxSerializerContext.Default.ListAliasEntry);
+            var json = JsonSerializer.Serialize(diffAliases, ProjectJsonSerializerContext.Default.ListAliasEntry);
 
             File.WriteAllText(path, json);
         }

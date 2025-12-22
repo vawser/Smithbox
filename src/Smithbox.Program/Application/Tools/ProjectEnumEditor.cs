@@ -172,14 +172,14 @@ public class ProjectEnumEditor
                             duplicateEntry.Description = option.Description;
 
                             var action = new ChangeEnumList(CurrentEnum, CurrentOption, duplicateEntry, 
-                                EnumListChange.Add, i + 1);
+                                ProjectEnumListOperation.Add, i + 1);
                             TargetProject.ActionManager.ExecuteAction(action);
                         }
 
                         if (ImGui.Selectable($"Remove##removeEntry_{option.Name}"))
                         {
                             var action = new ChangeEnumList(CurrentEnum, CurrentOption, null,
-                                EnumListChange.Remove, i);
+                                ProjectEnumListOperation.Remove, i);
 
                             TargetProject.ActionManager.ExecuteAction(action);
                         }
@@ -231,7 +231,7 @@ public class ProjectEnumEditor
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeEnumField(
-                    CurrentEnum, CurrentEnum.DisplayName, curDisplayName, ChangeEnumField.EnumField.DisplayName);
+                    CurrentEnum, CurrentEnum.DisplayName, curDisplayName, ProjectEnumFieldType.DisplayName);
 
                 TargetProject.ActionManager.ExecuteAction(action);
             }
@@ -245,7 +245,7 @@ public class ProjectEnumEditor
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeEnumField(
-                    CurrentEnum, CurrentEnum.Description, curDescription, ChangeEnumField.EnumField.Description);
+                    CurrentEnum, CurrentEnum.Description, curDescription, ProjectEnumFieldType.Description);
 
                 TargetProject.ActionManager.ExecuteAction(action);
             }
@@ -267,7 +267,7 @@ public class ProjectEnumEditor
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeEnumOptionField(
-                    CurrentOption, CurrentOption.ID, curID, ChangeEnumOptionField.EnumOptionField.ID);
+                    CurrentOption, CurrentOption.ID, curID, ProjectEnumOptionFieldType.ID);
 
                 TargetProject.ActionManager.ExecuteAction(action);
             }
@@ -281,7 +281,7 @@ public class ProjectEnumEditor
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeEnumOptionField(
-                    CurrentOption, CurrentOption.Name, curName, ChangeEnumOptionField.EnumOptionField.Name);
+                    CurrentOption, CurrentOption.Name, curName, ProjectEnumOptionFieldType.Name);
 
                 TargetProject.ActionManager.ExecuteAction(action);
             }
@@ -295,7 +295,7 @@ public class ProjectEnumEditor
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeEnumOptionField(
-                    CurrentOption, CurrentOption.Description, curDescription, ChangeEnumOptionField.EnumOptionField.Description);
+                    CurrentOption, CurrentOption.Description, curDescription, ProjectEnumOptionFieldType.Description);
 
                 TargetProject.ActionManager.ExecuteAction(action);
             }
@@ -329,7 +329,7 @@ public class ProjectEnumEditor
         var projectFolder = Path.Join(TargetProject.ProjectPath, ".smithbox", "Project");
         var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
 
-        var json = JsonSerializer.Serialize(TargetProject.CommonData.ProjectEnums, SmithboxSerializerContext.Default.ProjectEnumResource);
+        var json = JsonSerializer.Serialize(TargetProject.CommonData.ProjectEnums, ProjectJsonSerializerContext.Default.ProjectEnumResource);
 
         if (!Directory.Exists(projectFolder))
         {

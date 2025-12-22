@@ -8,19 +8,12 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public enum MassEditResultType
-{
-    SUCCESS,
-    PARSEERROR,
-    OPERATIONERROR
-}
-
 public class MassEditResult
 {
     public string Information;
-    public MassEditResultType Type;
+    public ParamMassEditResultType Type;
 
-    public MassEditResult(MassEditResultType result, string info)
+    public MassEditResult(ParamMassEditResultType result, string info)
     {
         Type = result;
         Information = info;
@@ -51,16 +44,16 @@ public static class MassParamEdit
     }
 
     public static void AppendParamEditAction(this List<EditorAction> actions, Param.Row row,
-        (PseudoColumn, Param.Column) col, object newval)
+        (ParamEditorPseudoColumn, Param.Column) col, object newval)
     {
-        if (col.Item1 == PseudoColumn.ID)
+        if (col.Item1 == ParamEditorPseudoColumn.ID)
         {
             if (!row.ID.Equals(newval))
             {
                 actions.Add(new PropertiesChangedAction(row.GetType().GetProperty("ID"), -1, row, newval));
             }
         }
-        else if (col.Item1 == PseudoColumn.Name)
+        else if (col.Item1 == ParamEditorPseudoColumn.Name)
         {
             if (row.Name == null || !row.Name.Equals(newval))
             {
@@ -97,7 +90,7 @@ public class MassParamEditRegex
     private Func<ParamSelection, string[], bool> globalFunc;
 
     private string globalOperation;
-    private Func<int, Param, Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>>[] paramArgFuncs;
+    private Func<int, Param, Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>>[] paramArgFuncs;
     private string paramRowSelector;
 
     private string paramSelector;
@@ -105,7 +98,7 @@ public class MassParamEditRegex
     private string rowOperation;
 
 
-    private Func<int, Func<int, (PseudoColumn, Param.Column), string>[], string, Param.Row, List<EditorAction>,
+    private Func<int, Func<int, (ParamEditorPseudoColumn, Param.Column), string>[], string, Param.Row, List<EditorAction>,
         MassEditResult> rowOpOrCellStageFunc;
 
     private string rowSelector;
@@ -166,7 +159,7 @@ public class MassParamEditRegex
                     (result, actions) = ParseParamStep(currentLine, command);
                 }
 
-                if (result.Type != MassEditResultType.SUCCESS)
+                if (result.Type != ParamMassEditResultType.SUCCESS)
                 {
                     return (result, null);
                 }
@@ -175,11 +168,11 @@ public class MassParamEditRegex
                 childManager.ExecuteAction(new CompoundAction(actions));
             }
 
-            return (new MassEditResult(MassEditResultType.SUCCESS, $@"{changeCount} cells affected"), childManager);
+            return (new MassEditResult(ParamMassEditResultType.SUCCESS, $@"{changeCount} cells affected"), childManager);
         }
         catch (Exception e)
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Unknown parsing error on line {currentLine}: " + e.ToString()), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Unknown parsing error on line {currentLine}: " + e.ToString()), null);
         }
     }
 
@@ -189,7 +182,7 @@ public class MassParamEditRegex
         globalOperation = opStage[0].Trim();
         if (!Project.ParamEditor.MassEditHandler.GlobalOps.operations.ContainsKey(globalOperation))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Unknown global operation {globalOperation} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Unknown global operation {globalOperation} (line {currentLine})"), null);
         }
 
         string wiki;
@@ -197,7 +190,7 @@ public class MassParamEditRegex
         ExecParamOperationArguments(currentLine, opStage.Length > 1 ? opStage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {globalOperation} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {globalOperation} (line {currentLine})"), null);
         }
 
         return SandboxMassEditExecution(currentLine, partials => ExecGlobalOp(currentLine));
@@ -209,12 +202,12 @@ public class MassParamEditRegex
         varSelector = varstage[0].Trim();
         if (varSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find variable filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.vse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find variable filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.vse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (varstage.Length < 2)
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find var operation. Check your colon placement. (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find var operation. Check your colon placement. (line {currentLine})"), null);
         }
 
         return ParseVarOpStep(currentLine, varstage[1]);
@@ -226,7 +219,7 @@ public class MassParamEditRegex
         varOperation = operationstage[0].Trim();
         if (varOperation.Equals("") || !Project.ParamEditor.MassEditHandler.FieldOps.operations.ContainsKey(varOperation))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find operation to perform. Add : and one of + - * / replace (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find operation to perform. Add : and one of + - * / replace (line {currentLine})"), null);
         }
 
         string wiki;
@@ -234,7 +227,7 @@ public class MassParamEditRegex
         ExecParamOperationArguments(currentLine, operationstage.Length > 1 ? operationstage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {varOperation} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {varOperation} (line {currentLine})"), null);
         }
 
         return SandboxMassEditExecution(currentLine, partials => ExecVarStage(currentLine));
@@ -246,12 +239,12 @@ public class MassParamEditRegex
         paramRowSelector = paramrowstage[0].Trim();
         if (paramRowSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find paramrow filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.parse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find paramrow filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.parse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (paramrowstage.Length < 2)
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find cell filter or row operation. Check your colon placement. (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find cell filter or row operation. Check your colon placement. (line {currentLine})"), null);
         }
 
         if (Project.ParamEditor.MassEditHandler.RowOps.HandlesCommand(paramrowstage[1].Trim().Split(" ", 2)[0]))
@@ -268,12 +261,12 @@ public class MassParamEditRegex
         paramSelector = paramstage[0].Trim();
         if (paramSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find param filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.pse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find param filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.pse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (paramstage.Length < 2)
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find row filter. Check your colon placement. (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find row filter. Check your colon placement. (line {currentLine})"), null);
         }
 
         return ParseRowStep(currentLine, paramstage[1]);
@@ -285,12 +278,12 @@ public class MassParamEditRegex
         rowSelector = rowstage[0].Trim();
         if (rowSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find row filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.rse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find row filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.rse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (rowstage.Length < 2)
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find cell filter or row operation to perform. Check your colon placement. (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find cell filter or row operation to perform. Check your colon placement. (line {currentLine})"), null);
         }
 
         if (Project.ParamEditor.MassEditHandler.RowOps.HandlesCommand(rowstage[1].Trim().Split(" ", 2)[0]))
@@ -307,12 +300,12 @@ public class MassParamEditRegex
         cellSelector = cellstage[0].Trim();
         if (cellSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find cell/property filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.cse.AvailableCommandsForHelpText())} or Name (0 args) (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find cell/property filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.cse.AvailableCommandsForHelpText())} or Name (0 args) (line {currentLine})"), null);
         }
 
         if (cellstage.Length < 2)
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find operation to perform. Check your colon placement. (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find operation to perform. Check your colon placement. (line {currentLine})"), null);
         }
 
         rowOpOrCellStageFunc = ExecCellStage;
@@ -325,7 +318,7 @@ public class MassParamEditRegex
         rowOperation = operationstage[0].Trim();
         if (!Project.ParamEditor.MassEditHandler.RowOps.operations.ContainsKey(rowOperation))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Unknown row operation {rowOperation} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Unknown row operation {rowOperation} (line {currentLine})"), null);
         }
 
         string wiki;
@@ -333,7 +326,7 @@ public class MassParamEditRegex
         ExecParamOperationArguments(currentLine, operationstage.Length > 1 ? operationstage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {rowOperation} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {rowOperation} (line {currentLine})"), null);
         }
 
         rowOpOrCellStageFunc = ExecRowOp;
@@ -348,12 +341,12 @@ public class MassParamEditRegex
 
         if (cellOperation.Equals("") || !Project.ParamEditor.MassEditHandler.FieldOps.operations.ContainsKey(cellOperation))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find operation to perform. Add : and one of + - * / replace (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find operation to perform. Add : and one of + - * / replace (line {currentLine})"), null);
         }
 
         if (!Project.ParamEditor.MassEditHandler.FieldOps.operations.ContainsKey(cellOperation))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Unknown cell operation {cellOperation} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Unknown cell operation {cellOperation} (line {currentLine})"), null);
         }
 
         string wiki;
@@ -361,7 +354,7 @@ public class MassParamEditRegex
         ExecParamOperationArguments(currentLine, operationstage.Length > 1 ? operationstage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {cellOperation} (line {currentLine})"), null);
+            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {cellOperation} (line {currentLine})"), null);
         }
 
         return SandboxMassEditExecution(currentLine, partials =>
@@ -385,38 +378,38 @@ public class MassParamEditRegex
         }
         catch (Exception e)
         {
-            return (new MassEditResult(MassEditResultType.OPERATIONERROR, @$"Error on line {currentLine}" + '\n' + e.ToString()), null);
+            return (new MassEditResult(ParamMassEditResultType.OPERATIONERROR, @$"Error on line {currentLine}" + '\n' + e.ToString()), null);
         }
     }
 
     private MassEditResult ExecGlobalOp(int currentLine)
     {
-        var globalArgValues = paramArgFuncs.Select(f => f(-1, null)(-1, null)(-1, (PseudoColumn.None, null)))
+        var globalArgValues = paramArgFuncs.Select(f => f(-1, null)(-1, null)(-1, (ParamEditorPseudoColumn.None, null)))
             .ToArray();
         var result = globalFunc(context, globalArgValues);
         if (!result)
         {
-            return new MassEditResult(MassEditResultType.OPERATIONERROR, $@"Error performing global operation {globalOperation} (line {currentLine})");
+            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Error performing global operation {globalOperation} (line {currentLine})");
         }
 
-        return new MassEditResult(MassEditResultType.SUCCESS, "");
+        return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
     }
 
     private MassEditResult ExecVarStage(int currentLine)
     {
         ;
         var varArgs = paramArgFuncs
-            .Select((func, i) => func(-1, null)(-1, null)(-1, (PseudoColumn.None, null))).ToArray();
+            .Select((func, i) => func(-1, null)(-1, null)(-1, (ParamEditorPseudoColumn.None, null))).ToArray();
         foreach (var varName in Project.ParamEditor.MassEditHandler.vse.Search(false, varSelector, false, false))
         {
             MassEditResult res = ExecVarOpStage(currentLine, varName, varArgs);
-            if (res.Type != MassEditResultType.SUCCESS)
+            if (res.Type != ParamMassEditResultType.SUCCESS)
             {
                 return res;
             }
         }
 
-        return new MassEditResult(MassEditResultType.SUCCESS, "");
+        return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
     }
 
     private MassEditResult ExecVarOpStage(int currentLine, string var, string[] args)
@@ -425,35 +418,35 @@ public class MassParamEditRegex
         var result = true; // Anything that practicably can go wrong 
         if (!result)
         {
-            return new MassEditResult(MassEditResultType.OPERATIONERROR, $@"Error performing var operation {varOperation} (line {currentLine})");
+            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Error performing var operation {varOperation} (line {currentLine})");
         }
 
-        return new MassEditResult(MassEditResultType.SUCCESS, "");
+        return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
     }
 
     private MassEditResult ExecParamRowStage(int currentLine, List<EditorAction> partialActions)
     {
         Param activeParam = bank.Params[context.GetActiveParam()];
-        IEnumerable<Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>> paramArgFunc =
+        IEnumerable<Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>> paramArgFunc =
             paramArgFuncs.Select((func, i) => func(0, activeParam)); // technically invalid for clipboard
         var rowEditCount = -1;
-        foreach ((MassEditRowSource source, Param.Row row) in Project.ParamEditor.MassEditHandler.parse.Search(context,
+        foreach ((ParamMassEditRowSource source, Param.Row row) in Project.ParamEditor.MassEditHandler.parse.Search(context,
                      paramRowSelector, false, false))
         {
             rowEditCount++;
-            Func<int, (PseudoColumn, Param.Column), string>[] rowArgFunc =
+            Func<int, (ParamEditorPseudoColumn, Param.Column), string>[] rowArgFunc =
                 paramArgFunc.Select((rowFunc, i) => rowFunc(rowEditCount, row)).ToArray();
-            var paramname = source == MassEditRowSource.Selection
+            var paramname = source == ParamMassEditRowSource.Selection
                 ? context.GetActiveParam()
                 : Project.ParamData.PrimaryBank.ClipboardParam;
             MassEditResult res = rowOpOrCellStageFunc(currentLine, rowArgFunc, paramname, row, partialActions);
-            if (res.Type != MassEditResultType.SUCCESS)
+            if (res.Type != ParamMassEditResultType.SUCCESS)
             {
                 return res;
             }
         }
 
-        return new MassEditResult(MassEditResultType.SUCCESS, "");
+        return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
     }
 
     private MassEditResult ExecParamStage(int currentLine, List<EditorAction> partialActions)
@@ -463,53 +456,53 @@ public class MassParamEditRegex
         foreach ((ParamBank b, Param p) in Project.ParamEditor.MassEditHandler.pse.Search(false, paramSelector, false, false))
         {
             paramEditCount++;
-            IEnumerable<Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>> paramArgFunc =
+            IEnumerable<Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>> paramArgFunc =
                 paramArgFuncs.Select((func, i) => func(paramEditCount, p));
             if (argc != paramArgFuncs.Length)
             {
-                return new MassEditResult(MassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {operationForPrint} (line {currentLine})");
+                return new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {operationForPrint} (line {currentLine})");
             }
 
             var paramname = b.GetKeyForParam(p);
             MassEditResult res = ExecRowStage(currentLine, paramArgFunc, paramname, b, p, partialActions);
-            if (res.Type != MassEditResultType.SUCCESS)
+            if (res.Type != ParamMassEditResultType.SUCCESS)
             {
                 return res;
             }
         }
 
-        return new MassEditResult(MassEditResultType.SUCCESS, "");
+        return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
     }
 
     private MassEditResult ExecRowStage(int currentLine,
-        IEnumerable<Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>> paramArgFunc,
+        IEnumerable<Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>> paramArgFunc,
         string paramname, ParamBank b, Param p, List<EditorAction> partialActions)
     {
         var rowEditCount = -1;
         foreach (Param.Row row in Project.ParamEditor.MassEditHandler.rse.Search((b, p), rowSelector, false, false))
         {
             rowEditCount++;
-            Func<int, (PseudoColumn, Param.Column), string>[] rowArgFunc =
+            Func<int, (ParamEditorPseudoColumn, Param.Column), string>[] rowArgFunc =
                 paramArgFunc.Select((rowFunc, i) => rowFunc(rowEditCount, row)).ToArray();
             MassEditResult res = rowOpOrCellStageFunc(currentLine, rowArgFunc, paramname, row, partialActions);
-            if (res.Type != MassEditResultType.SUCCESS)
+            if (res.Type != ParamMassEditResultType.SUCCESS)
             {
                 return res;
             }
         }
 
-        return new MassEditResult(MassEditResultType.SUCCESS, "");
+        return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
     }
 
-    private MassEditResult ExecRowOp(int currentLine, Func<int, (PseudoColumn, Param.Column), string>[] rowArgFunc, string paramname,
+    private MassEditResult ExecRowOp(int currentLine, Func<int, (ParamEditorPseudoColumn, Param.Column), string>[] rowArgFunc, string paramname,
         Param.Row row, List<EditorAction> partialActions)
     {
-        var rowArgValues = rowArgFunc.Select((argV, i) => argV(-1, (PseudoColumn.None, null))).ToArray();
+        var rowArgValues = rowArgFunc.Select((argV, i) => argV(-1, (ParamEditorPseudoColumn.None, null))).ToArray();
         (Param p2, Param.Row rs) = rowFunc((paramname, row), rowArgValues);
 
         if (p2 == null)
         {
-            return new MassEditResult(MassEditResultType.OPERATIONERROR, $@"Could not perform operation {rowOperation} {String.Join(' ', rowArgValues)} on row (line {currentLine})");
+            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Could not perform operation {rowOperation} {String.Join(' ', rowArgValues)} on row (line {currentLine})");
         }
 
         if (rs != null)
@@ -518,30 +511,30 @@ public class MassParamEditRegex
             partialActions.Add(new AddParamsAction(editor, p2, "FromMassEdit", new List<Param.Row> { rs }, false, true));
         }
 
-        return new MassEditResult(MassEditResultType.SUCCESS, "");
+        return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
     }
 
-    private MassEditResult ExecCellStage(int currentLine, Func<int, (PseudoColumn, Param.Column), string>[] rowArgFunc,
+    private MassEditResult ExecCellStage(int currentLine, Func<int, (ParamEditorPseudoColumn, Param.Column), string>[] rowArgFunc,
         string paramname, Param.Row row, List<EditorAction> partialActions)
     {
         var cellEditCount = -1;
-        foreach ((PseudoColumn, Param.Column) col in Project.ParamEditor.MassEditHandler.cse.Search((paramname, row), cellSelector,
+        foreach ((ParamEditorPseudoColumn, Param.Column) col in Project.ParamEditor.MassEditHandler.cse.Search((paramname, row), cellSelector,
                      false, false))
         {
             cellEditCount++;
             var cellArgValues = rowArgFunc.Select((argV, i) => argV(cellEditCount, col)).ToArray();
             MassEditResult res = ExecCellOp(currentLine, cellArgValues, paramname, row, col, partialActions);
-            if (res.Type != MassEditResultType.SUCCESS)
+            if (res.Type != ParamMassEditResultType.SUCCESS)
             {
                 return res;
             }
         }
 
-        return new MassEditResult(MassEditResultType.SUCCESS, "");
+        return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
     }
 
     private MassEditResult ExecCellOp(int currentLine, string[] cellArgValues, string paramname, Param.Row row,
-        (PseudoColumn, Param.Column) col, List<EditorAction> partialActions)
+        (ParamEditorPseudoColumn, Param.Column) col, List<EditorAction> partialActions)
     {
         object res = null;
         string errHelper = null;
@@ -562,23 +555,23 @@ public class MassParamEditRegex
             errHelper = $"Unknown error: {e}";
         }
 
-        if (res == null && col.Item1 == PseudoColumn.ID)
+        if (res == null && col.Item1 == ParamEditorPseudoColumn.ID)
         {
-            return new MassEditResult(MassEditResultType.OPERATIONERROR, $@"Could not perform operation {cellOperation} {String.Join(' ', cellArgValues)} on ID ({errHelper}) (line {currentLine})");
+            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Could not perform operation {cellOperation} {String.Join(' ', cellArgValues)} on ID ({errHelper}) (line {currentLine})");
         }
 
-        if (res == null && col.Item1 == PseudoColumn.Name)
+        if (res == null && col.Item1 == ParamEditorPseudoColumn.Name)
         {
-            return new MassEditResult(MassEditResultType.OPERATIONERROR, $@"Could not perform operation {cellOperation} {String.Join(' ', cellArgValues)} on Name ({errHelper}) (line {currentLine})");
+            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Could not perform operation {cellOperation} {String.Join(' ', cellArgValues)} on Name ({errHelper}) (line {currentLine})");
         }
 
         if (res == null)
         {
-            return new MassEditResult(MassEditResultType.OPERATIONERROR, $@"Could not perform operation {cellOperation} {String.Join(' ', cellArgValues)} on field {col.Item2.Def.InternalName} ({errHelper}) (line {currentLine})");
+            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Could not perform operation {cellOperation} {String.Join(' ', cellArgValues)} on field {col.Item2.Def.InternalName} ({errHelper}) (line {currentLine})");
         }
 
         partialActions.AppendParamEditAction(row, col, res);
-        return new MassEditResult(MassEditResultType.SUCCESS, "");
+        return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
     }
 }
 
@@ -883,7 +876,7 @@ public class MEOperationArgument
     private OperationArgumentGetter defaultGetter;
 
     private OperationArgumentGetter newGetter(string[] args, string wiki,
-        Func<string[], Func<int, Param, Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>>>
+        Func<string[], Func<int, Param, Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>>>
             func, Func<bool> shouldShow = null)
     {
         return new OperationArgumentGetter(args, wiki, func, shouldShow);
@@ -902,7 +895,7 @@ public class MEOperationArgument
             "Gives the value of the given cell/field for the currently selected row and param", field =>
                 (i, param) =>
                 {
-                    (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
+                    (ParamEditorPseudoColumn, Param.Column) col = param.GetCol(field[0]);
                     if (!col.IsColumnValid())
                     {
                         throw new Exception($@"Could not locate field {field[0]}");
@@ -941,7 +934,7 @@ public class MEOperationArgument
 
                         return (k, col) =>
                         {
-                            if (col.Item1 == PseudoColumn.None && col.Item2 == null)
+                            if (col.Item1 == ParamEditorPseudoColumn.None && col.Item2 == null)
                             {
                                 throw new Exception(@"Could not locate given field or property");
                             }
@@ -1007,7 +1000,7 @@ public class MEOperationArgument
                     throw new Exception($@"Could not locate vanilla param for {param.ParamType}");
                 }
 
-                (PseudoColumn, Param.Column) col = vParam.GetCol(field[0]);
+                (ParamEditorPseudoColumn, Param.Column) col = vParam.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
                     throw new Exception($@"Could not locate field {field[0]}");
@@ -1047,7 +1040,7 @@ public class MEOperationArgument
                     }
 
                     Param vParam = bank.Params[paramName];
-                    (PseudoColumn, Param.Column) col = vParam.GetCol(bankAndField[1]);
+                    (ParamEditorPseudoColumn, Param.Column) col = vParam.GetCol(bankAndField[1]);
                     if (!col.IsColumnValid())
                     {
                         throw new Exception($@"Could not locate field {bankAndField[1]}");
@@ -1075,7 +1068,7 @@ public class MEOperationArgument
                 if (param == null)
                     throw new Exception($@"Could not find param {address[0]}");
                 var id = int.Parse(address[1]);
-                (PseudoColumn, Param.Column) field = param.GetCol(address[2]);
+                (ParamEditorPseudoColumn, Param.Column) field = param.GetCol(address[2]);
                 if (!field.IsColumnValid())
                     throw new Exception($@"Could not find field {address[2]} in param {address[0]}");
                 var row = param[id];
@@ -1090,7 +1083,7 @@ public class MEOperationArgument
             {
                 var pBank = Project.ParamData.PrimaryBank;
 
-                (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
+                (ParamEditorPseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
                     throw new Exception($@"Could not locate field {field[0]}");
@@ -1118,7 +1111,7 @@ public class MEOperationArgument
             {
                 var pBank = Project.ParamData.PrimaryBank;
 
-                (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
+                (ParamEditorPseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
                     throw new Exception($@"Could not locate field {field[0]}");
@@ -1139,7 +1132,7 @@ public class MEOperationArgument
             {
                 var pBank = Project.ParamData.PrimaryBank;
 
-                (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
+                (ParamEditorPseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
                     throw new Exception($@"Could not locate field {field[0]}");
@@ -1159,7 +1152,7 @@ public class MEOperationArgument
             {
                 var pBank = Project.ParamData.PrimaryBank;
 
-                (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
+                (ParamEditorPseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
                     throw new Exception($@"Could not locate field {field[0]}");
@@ -1178,7 +1171,7 @@ public class MEOperationArgument
             {
                 var pBank = Project.ParamData.PrimaryBank;
 
-                (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
+                (ParamEditorPseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
                     throw new Exception($@"Could not locate field {field[0]}");
@@ -1287,12 +1280,12 @@ public class MEOperationArgument
         return options;
     }
 
-    internal Func<int, Param, Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>>[]
+    internal Func<int, Param, Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>>[]
         getContextualArguments(int argumentCount, string opData)
     {
         var opArgs = opData == null ? new string[0] : opData.Split(':', argumentCount);
         var contextualArgs =
-            new Func<int, Param, Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>>[opArgs
+            new Func<int, Param, Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>>[opArgs
                 .Length];
         for (var i = 0; i < opArgs.Length; i++)
         {
@@ -1302,7 +1295,7 @@ public class MEOperationArgument
         return contextualArgs;
     }
 
-    internal Func<int, Param, Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>>
+    internal Func<int, Param, Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>>
         getContextualArgument(string opArg)
     {
         if (opArg.StartsWith('"') && opArg.EndsWith('"'))
@@ -1345,14 +1338,14 @@ internal class OperationArgumentGetter
 {
     public string[] args;
 
-    internal Func<string[], Func<int, Param, Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>>>
+    internal Func<string[], Func<int, Param, Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>>>
         func;
 
     internal Func<bool> shouldShow;
     public string wiki;
 
     internal OperationArgumentGetter(string[] args, string wiki,
-        Func<string[], Func<int, Param, Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>>>
+        Func<string[], Func<int, Param, Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>>>
             func, Func<bool> shouldShow)
     {
         this.args = args;

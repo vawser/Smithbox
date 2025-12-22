@@ -9,10 +9,10 @@ public class ChangeAliasTagList : EditorAction
     private readonly string CurrentEntry;
     private readonly string NewEntry;
     private readonly string StoredEntry;
-    private readonly TagListChange ChangeType;
+    private readonly ProjectAliasTagListOperation ChangeType;
     private readonly int Index;
 
-    public ChangeAliasTagList(List<string> tagSource, string curEntry, string newEntry, TagListChange changeType, int index = 0)
+    public ChangeAliasTagList(List<string> tagSource, string curEntry, string newEntry, ProjectAliasTagListOperation changeType, int index = 0)
     {
         TagSource = tagSource;
         CurrentEntry = curEntry;
@@ -27,10 +27,10 @@ public class ChangeAliasTagList : EditorAction
     {
         switch (ChangeType)
         {
-            case TagListChange.Add:
+            case ProjectAliasTagListOperation.Add:
                 TagSource.Insert(Index, NewEntry);
                 break;
-            case TagListChange.Remove:
+            case ProjectAliasTagListOperation.Remove:
                 TagSource.RemoveAt(Index);
                 break;
         }
@@ -42,20 +42,14 @@ public class ChangeAliasTagList : EditorAction
     {
         switch (ChangeType)
         {
-            case TagListChange.Add:
+            case ProjectAliasTagListOperation.Add:
                 TagSource.RemoveAt(Index);
                 break;
-            case TagListChange.Remove:
+            case ProjectAliasTagListOperation.Remove:
                 TagSource.Insert(Index, StoredEntry);
                 break;
         }
 
         return ActionEvent.NoEvent;
-    }
-
-    public enum TagListChange
-    {
-        Add,
-        Remove
     }
 }

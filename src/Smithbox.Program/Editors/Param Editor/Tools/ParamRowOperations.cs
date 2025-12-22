@@ -14,7 +14,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public partial class ParamTools
 {
-    public TargetType CurrentTargetCategory = TargetType.SelectedParam;
+    public ParamOperationTargetType CurrentTargetCategory = ParamOperationTargetType.SelectedParam;
 
     #region Row Name Trimmer
     public void DisplayRowNameTrimmer()
@@ -44,13 +44,7 @@ public partial class ParamTools
         }
     }
 
-    public enum RowTrimType
-    {
-        Whitespace,
-        NewLines
-    }
-
-    public void TrimRowNames(RowTrimType trimType = RowTrimType.Whitespace)
+    public void TrimRowNames(ParamRowTrimType trimType = ParamRowTrimType.Whitespace)
     {
         var selectedParam = Editor._activeView.Selection;
         var curParamKey = selectedParam.GetActiveParam();
@@ -58,7 +52,7 @@ public partial class ParamTools
         if (curParamKey == null)
             return;
 
-        if (trimType is RowTrimType.Whitespace)
+        if (trimType is ParamRowTrimType.Whitespace)
         {
             if (selectedParam.ActiveParamExists())
             {
@@ -68,16 +62,16 @@ public partial class ParamTools
                     var rows = selectedParam.GetSelectedRows();
                     switch (CurrentTargetCategory)
                     {
-                        case TargetType.SelectedRows:
+                        case ParamOperationTargetType.SelectedRows:
                             if (!rows.Any()) return;
                             TrimRowNameHelper(rows);
                             PlatformUtils.Instance.MessageBox($"Row names for {rows.Count} selected rows have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
-                        case TargetType.SelectedParam:
+                        case ParamOperationTargetType.SelectedParam:
                             TrimRowNameHelper(activeParam);
                             PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
-                        case TargetType.AllParams:
+                        case ParamOperationTargetType.AllParams:
                             foreach (var param in Editor.Project.ParamData.PrimaryBank.Params)
                             {
                                 TrimRowNameHelper(param.Key);
@@ -91,7 +85,7 @@ public partial class ParamTools
             }
         }
 
-        if (trimType is RowTrimType.NewLines)
+        if (trimType is ParamRowTrimType.NewLines)
         {
             var activeParam = selectedParam.GetActiveParam();
             var rows = selectedParam.GetSelectedRows();
@@ -118,7 +112,7 @@ public partial class ParamTools
         TrimRowNameHelper(p.Rows);
     }
 
-    public void ParamTargetElement(ref TargetType currentTarget, string tooltip, Vector2 size)
+    public void ParamTargetElement(ref ParamOperationTargetType currentTarget, string tooltip, Vector2 size)
     {
         var inputWidth = size.X;
 
@@ -126,7 +120,7 @@ public partial class ParamTools
         DPI.ApplyInputWidth(inputWidth);
         if (ImGui.BeginCombo("##Target", currentTarget.GetDisplayName()))
         {
-            foreach (TargetType e in Enum.GetValues<TargetType>())
+            foreach (ParamOperationTargetType e in Enum.GetValues<ParamOperationTargetType>())
             {
                 var name = e.GetDisplayName();
                 if (ImGui.Selectable(name))
@@ -499,7 +493,7 @@ public partial class ParamTools
 
             if(fieldMeta.ShowCharacterEnumList)
             {
-                foreach(var entry in Editor.Project.CommonData.Aliases[AliasType.Characters])
+                foreach(var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Characters])
                 {
                     var text = entry.ID.Substring(1);
                     if (text == $"{targetCell.Value}")
@@ -512,7 +506,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowCutsceneEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[AliasType.Cutscenes])
+                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Cutscenes])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -524,7 +518,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowFlagEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[AliasType.EventFlags])
+                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.EventFlags])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -536,7 +530,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowMovieEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[AliasType.Movies])
+                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Movies])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -548,7 +542,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowParticleEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[AliasType.Particles])
+                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Particles])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -560,7 +554,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowSoundEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[AliasType.Sounds])
+                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Sounds])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -579,7 +573,7 @@ public partial class ParamTools
     #endregion
 
     #region Adjust Row Name
-    public void AdjustRowName(string adjustment, RowNameAdjustType type)
+    public void AdjustRowName(string adjustment, ParamRowNameAdjustType type)
     {
         if (string.IsNullOrEmpty(adjustment))
             return;
@@ -602,15 +596,15 @@ public partial class ParamTools
 
         foreach (Param.Row row in rows)
         {
-            if (type is RowNameAdjustType.Prepend)
+            if (type is ParamRowNameAdjustType.Prepend)
             {
                 row.Name = $"{adjustment}{row.Name}";
             }
-            if (type is RowNameAdjustType.Postpend)
+            if (type is ParamRowNameAdjustType.Postpend)
             {
                 row.Name = $"{row.Name}{adjustment}";
             }
-            if (type is RowNameAdjustType.Remove)
+            if (type is ParamRowNameAdjustType.Remove)
             {
                 row.Name = row.Name.Replace(adjustment, "");
             }
@@ -619,16 +613,3 @@ public partial class ParamTools
     #endregion
 }
 
-public enum TargetType
-{
-    [Display(Name = "Selected Rows")] SelectedRows,
-    [Display(Name = "Selected Param")] SelectedParam,
-    [Display(Name = "All Params")] AllParams
-}
-
-public enum RowNameAdjustType
-{
-    Prepend,
-    Postpend,
-    Remove
-}

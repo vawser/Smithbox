@@ -18,15 +18,15 @@ public class MassEditTool
     private MapEditorScreen Editor;
     public ProjectEntry Project;
 
-    private MapListType MapTarget;
+    private QueryMapListType MapTarget;
 
     public List<string> MapInputs = new List<string>() { "" };
 
-    public SelectionConditionLogic MapSelectionLogic;
+    public QuerySelectionConditionLogic MapSelectionLogic;
 
     public List<string> SelectionInputs = new List<string>() { "" };
 
-    public SelectionConditionLogic MapObjectSelectionLogic;
+    public QuerySelectionConditionLogic MapObjectSelectionLogic;
 
     public List<string> EditInputs = new List<string>() { "" };
 
@@ -160,9 +160,9 @@ public class MassEditTool
         DPI.ApplyInputWidth(windowWidth * 0.3f);
         if (ImGui.BeginCombo($"##mapSelectionCommandLogic", MapSelectionLogic.GetDisplayName()))
         {
-            foreach (var entry in Enum.GetValues(typeof(SelectionConditionLogic)))
+            foreach (var entry in Enum.GetValues(typeof(QuerySelectionConditionLogic)))
             {
-                var curEnum = (SelectionConditionLogic)entry;
+                var curEnum = (QuerySelectionConditionLogic)entry;
 
                 if (ImGui.Selectable($"{curEnum.GetDisplayName()}", MapSelectionLogic == curEnum))
                 {
@@ -182,9 +182,9 @@ public class MassEditTool
         DPI.ApplyInputWidth(windowWidth * 0.3f);
         if (ImGui.BeginCombo("##mapTargetCombo", MapTarget.GetDisplayName()))
         {
-            foreach (var entry in Enum.GetValues(typeof(MapListType)))
+            foreach (var entry in Enum.GetValues(typeof(QueryMapListType)))
             {
-                var curEnum = (MapListType)entry;
+                var curEnum = (QueryMapListType)entry;
 
                 if (ImGui.Selectable($"{curEnum.GetDisplayName()}", MapTarget == curEnum))
                 {
@@ -280,9 +280,9 @@ public class MassEditTool
         ImGui.SetNextItemWidth(windowWidth * 0.3f);
         if (ImGui.BeginCombo($"##selectionCommandLogic", MapObjectSelectionLogic.GetDisplayName()))
         {
-            foreach (var entry in Enum.GetValues(typeof(SelectionConditionLogic)))
+            foreach (var entry in Enum.GetValues(typeof(QuerySelectionConditionLogic)))
             {
-                var curEnum = (SelectionConditionLogic)entry;
+                var curEnum = (QuerySelectionConditionLogic)entry;
 
                 if (ImGui.Selectable($"{curEnum.GetDisplayName()}", MapObjectSelectionLogic == curEnum))
                 {
@@ -492,7 +492,7 @@ public class MassEditTool
         }
 
         // Local
-        if (MapTarget is MapListType.Local)
+        if (MapTarget is QueryMapListType.Local)
         {
             foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
             {
@@ -522,7 +522,7 @@ public class MassEditTool
         }
 
         // Global
-        if (MapTarget is MapListType.Global)
+        if (MapTarget is QueryMapListType.Global)
         {
             var restoreRendering = false;
 
@@ -589,7 +589,7 @@ public class MassEditTool
     {
         var isValid = true;
 
-        if (MapSelectionLogic is SelectionConditionLogic.OR)
+        if (MapSelectionLogic is QuerySelectionConditionLogic.OR)
         {
             isValid = false;
         }
@@ -627,12 +627,12 @@ public class MassEditTool
 
         foreach (bool entry in partTruth)
         {
-            if (MapSelectionLogic is SelectionConditionLogic.AND)
+            if (MapSelectionLogic is QuerySelectionConditionLogic.AND)
             {
                 if (!entry)
                     isValid = false;
             }
-            else if (MapSelectionLogic is SelectionConditionLogic.OR)
+            else if (MapSelectionLogic is QuerySelectionConditionLogic.OR)
             {
                 if (entry)
                     isValid = true;
@@ -679,7 +679,7 @@ public class MassEditTool
         var invertTruth = false;
         var isValid = true;
 
-        if (MapObjectSelectionLogic is SelectionConditionLogic.OR)
+        if (MapObjectSelectionLogic is QuerySelectionConditionLogic.OR)
         {
             isValid = false;
         }
@@ -713,12 +713,12 @@ public class MassEditTool
 
         foreach (bool entry in partTruth)
         {
-            if (MapObjectSelectionLogic is SelectionConditionLogic.AND)
+            if (MapObjectSelectionLogic is QuerySelectionConditionLogic.AND)
             {
                 if (!entry)
                     isValid = false;
             }
-            else if (MapObjectSelectionLogic is SelectionConditionLogic.OR)
+            else if (MapObjectSelectionLogic is QuerySelectionConditionLogic.OR)
             {
                 if (entry)
                     isValid = true;

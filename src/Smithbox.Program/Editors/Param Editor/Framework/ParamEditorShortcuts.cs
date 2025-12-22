@@ -203,7 +203,7 @@ public class ParamEditorShortcuts
             Editor._activeView.Selection.ActiveParamExists() &&
             InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV))
         {
-            EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{ParamBank.RowGetType.AllRows}");
+            EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{ParamUpgradeRowGetType.AllRows}");
         }
 
         // Export CSV: Names

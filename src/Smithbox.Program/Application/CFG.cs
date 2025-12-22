@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -93,7 +94,7 @@ public class CFG
     /// <summary>
     /// The current backup process to use.
     /// </summary>
-    public BackupType BackupProcessType = BackupType.Simple;
+    public ProjectBackupBehaviorType BackupProcessType = ProjectBackupBehaviorType.Simple;
 
     ///------------------------------------------------------------
     /// Interface
@@ -678,7 +679,7 @@ public class CFG
     public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_Y = true;
     public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_Z = true;
 
-    public RootAxis MapEditor_PrimaryGrid_Configure_RootAxis = RootAxis.Y;
+    public ViewportGridRootAxis MapEditor_PrimaryGrid_Configure_RootAxis = ViewportGridRootAxis.Y;
 
     // Map Editor: Secondary Grid
     public bool MapEditor_DisplaySecondaryGrid = false;
@@ -703,7 +704,7 @@ public class CFG
     public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_Y = true;
     public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_Z = true;
 
-    public RootAxis MapEditor_SecondaryGrid_Configure_RootAxis = RootAxis.X;
+    public ViewportGridRootAxis MapEditor_SecondaryGrid_Configure_RootAxis = ViewportGridRootAxis.X;
 
     // Map Editor: Tertiary Grid
     public bool MapEditor_DisplayTertiaryGrid = false;
@@ -728,7 +729,7 @@ public class CFG
     public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_Y = true;
     public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_Z = true;
 
-    public RootAxis MapEditor_TertiaryGrid_Configure_RootAxis = RootAxis.Z;
+    public ViewportGridRootAxis MapEditor_TertiaryGrid_Configure_RootAxis = ViewportGridRootAxis.Z;
 
     // Model Editor: Primary Grid
     public bool ModelEditor_DisplayPrimaryGrid = false;
@@ -903,7 +904,7 @@ public class CFG
 
     public bool MapEditor_DisplayMapCategories = true;
 
-    public NameDisplayType MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Internal_FMG;
+    public EntityNameDisplayType MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal_FMG;
 
     public bool MapEditor_LoadMapQueryData = true;
 
@@ -1011,7 +1012,7 @@ public class CFG
     public bool MapEditor_TextureLoad_Misc = true;
 
     public bool MapEditor_ModelDataExtraction_IncludeFolder = true;
-    public ExtractionType MapEditor_ModelDataExtraction_Type = ExtractionType.Loose;
+    public ResourceExtractionType MapEditor_ModelDataExtraction_Type = ResourceExtractionType.Loose;
     public string MapEditor_ModelDataExtraction_DefaultOutputFolder = ".output";
 
     //****************************
@@ -1496,7 +1497,7 @@ public class CFG
             try
             {
                 var filestring = File.ReadAllText(file);
-                Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.CFG);
+                Current = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.CFG);
 
                 if (Current == null)
                 {
@@ -1523,7 +1524,7 @@ public class CFG
             Directory.CreateDirectory(folder);
         }
 
-        var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.CFG);
+        var json = JsonSerializer.Serialize(Current, ProjectJsonSerializerContext.Default.CFG);
 
         File.WriteAllText(file, json);
     }

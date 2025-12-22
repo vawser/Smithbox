@@ -15,12 +15,6 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-public enum HavokCollisionType
-{
-    Low,
-    High
-}
-
 public class HavokCollisionManager
 {
     public EditorScreen Editor;

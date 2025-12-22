@@ -20,7 +20,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public TexCommandQueue CommandQueue;
 
     public TexToolView ToolWindow;
-    public TexToolMenubar ToolMenubar;
 
     public TexTools Tools;
 
@@ -48,7 +47,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         EditorShortcuts = new TexShortcuts(this, Project);
 
         ToolWindow = new TexToolView(this, Project);
-        ToolMenubar = new TexToolMenubar(this, Project);
 
         BinderView = new TexBinderView(this, Project);
         TpfView = new TexTpfView(this, Project);
@@ -244,7 +242,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     /// </summary>
     public void ToolMenu()
     {
-        ToolMenubar.Display();
+        ToolWindow.DisplayMenubar();
     }
 
     public void Save()

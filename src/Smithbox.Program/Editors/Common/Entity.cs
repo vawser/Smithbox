@@ -1921,12 +1921,6 @@ public class MsbEntity : Entity
         return null;
     }
 
-    public enum RenderModelType
-    {
-        Solid,
-        Wireframe
-    }
-
     public bool IsSwitchingRenderType = false;
     private RenderModelType EntityRenderType = RenderModelType.Wireframe;
 

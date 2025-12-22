@@ -10,23 +10,6 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamUtils
 {
-    public enum ParamRowCopyBehavior
-    {
-        [Display(Name = "ID")]
-        ID = 0,
-        [Display(Name = "Name")]
-        Name = 1,
-        [Display(Name = "ID and Name")]
-        ID_Name = 2
-    }
-    public enum ParamTableGroupRowDisplayType
-    {
-        [Display(Name = "ID")]
-        ID = 0,
-        [Display(Name = "None")]
-        None = 1
-    }
-
     public static string ParseRegulationVersion(ulong version)
     {
         string verStr = version.ToString();
@@ -133,14 +116,14 @@ public static class ParamUtils
         return val.GetType() == typeof(byte[]) ? Dummy8Write((byte[])val) : val.ToString();
     }
 
-    public static object Get(this Param.Row row, (PseudoColumn, Param.Column) col)
+    public static object Get(this Param.Row row, (ParamEditorPseudoColumn, Param.Column) col)
     {
-        if (col.Item1 == PseudoColumn.ID)
+        if (col.Item1 == ParamEditorPseudoColumn.ID)
         {
             return row.ID;
         }
 
-        if (col.Item1 == PseudoColumn.Name)
+        if (col.Item1 == ParamEditorPseudoColumn.Name)
         {
             return row.Name == null ? "" : row.Name;
         }
@@ -148,15 +131,15 @@ public static class ParamUtils
         return row[col.Item2].Value;
     }
 
-    public static (PseudoColumn, Param.Column) GetCol(this Param param, string field)
+    public static (ParamEditorPseudoColumn, Param.Column) GetCol(this Param param, string field)
     {
-        PseudoColumn pc = field.Equals("ID") ? PseudoColumn.ID :
-            field.Equals("Name") ? PseudoColumn.Name : PseudoColumn.None;
+        ParamEditorPseudoColumn pc = field.Equals("ID") ? ParamEditorPseudoColumn.ID :
+            field.Equals("Name") ? ParamEditorPseudoColumn.Name : ParamEditorPseudoColumn.None;
         Param.Column col = param?[field];
         return (pc, col);
     }
 
-    public static (PseudoColumn, Param.Column) GetAs(this (PseudoColumn, Param.Column) col, Param newParam)
+    public static (ParamEditorPseudoColumn, Param.Column) GetAs(this (ParamEditorPseudoColumn, Param.Column) col, Param newParam)
     {
         return (col.Item1,
             col.Item2 == null || newParam == null
@@ -166,19 +149,19 @@ public static class ParamUtils
                     x.GetByteOffset() == col.Item2.GetByteOffset()));
     }
 
-    public static bool IsColumnValid(this (PseudoColumn, Param.Column) col)
+    public static bool IsColumnValid(this (ParamEditorPseudoColumn, Param.Column) col)
     {
-        return col.Item1 != PseudoColumn.None || col.Item2 != null;
+        return col.Item1 != ParamEditorPseudoColumn.None || col.Item2 != null;
     }
 
-    public static Type GetColumnType(this (PseudoColumn, Param.Column) col)
+    public static Type GetColumnType(this (ParamEditorPseudoColumn, Param.Column) col)
     {
-        if (col.Item1 == PseudoColumn.ID)
+        if (col.Item1 == ParamEditorPseudoColumn.ID)
         {
             return typeof(int);
         }
 
-        if (col.Item1 == PseudoColumn.Name)
+        if (col.Item1 == ParamEditorPseudoColumn.Name)
         {
             return typeof(string);
         }
@@ -186,14 +169,14 @@ public static class ParamUtils
         return col.Item2.ValueType;
     }
 
-    public static string GetColumnSfType(this (PseudoColumn, Param.Column) col)
+    public static string GetColumnSfType(this (ParamEditorPseudoColumn, Param.Column) col)
     {
-        if (col.Item1 == PseudoColumn.ID)
+        if (col.Item1 == ParamEditorPseudoColumn.ID)
         {
             return "_int";
         }
 
-        if (col.Item1 == PseudoColumn.Name)
+        if (col.Item1 == ParamEditorPseudoColumn.Name)
         {
             return "_string";
         }
@@ -202,7 +185,7 @@ public static class ParamUtils
     }
 
     public static IEnumerable<(object, int)> GetParamValueDistribution(IEnumerable<Param.Row> rows,
-        (PseudoColumn, Param.Column) col)
+        (ParamEditorPseudoColumn, Param.Column) col)
     {
         IEnumerable<object> vals = rows.Select((row, i) => row.Get(col));
         return vals.GroupBy(val => val).Select(g => (g.Key, g.Count()));
@@ -361,11 +344,4 @@ public static class ParamUtils
 
         return false;
     }
-}
-
-public enum PseudoColumn
-{
-    None,
-    ID,
-    Name
 }

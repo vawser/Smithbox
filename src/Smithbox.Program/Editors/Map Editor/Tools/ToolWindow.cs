@@ -144,11 +144,6 @@ public class ToolWindow
                 Editor.NavmeshBuilderTool.OnToolWindow();
             }
 
-            if (CFG.Current.Interface_MapEditor_Tool_TreasureMaker)
-            {
-                Editor.TreasureMakerTool.OnToolWindow();
-            }
-
             if (CFG.Current.Interface_MapEditor_Tool_WorldMapLayoutGenerator)
             {
                 Editor.WorldMapLayoutTool.OnToolWindow();

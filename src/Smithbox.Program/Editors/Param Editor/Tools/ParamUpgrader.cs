@@ -255,7 +255,7 @@ public class ParamUpgrader
 
             try
             {
-                UpgraderInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamUpgraderInfo);
+                UpgraderInfo = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamUpgraderInfo);
             }
             catch (Exception e)
             {
@@ -641,7 +641,7 @@ public class ParamUpgrader
         Dictionary<int, List<Param.Row>> renamedRows = new(source.Rows.Count);
 
         // List of ordered edit operations for each ID
-        Dictionary<int, List<EditOperation>> editOperations = new(source.Rows.Count);
+        Dictionary<int, List<ParamUpgradeEditOperation>> editOperations = new(source.Rows.Count);
 
         // First off we go through source and everything starts as an added param
         foreach (Param.Row row in source.Rows)
@@ -669,10 +669,10 @@ public class ParamUpgrader
 
                 if (!editOperations.ContainsKey(row.ID))
                 {
-                    editOperations.Add(row.ID, new List<EditOperation>());
+                    editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
                 }
 
-                editOperations[row.ID].Add(EditOperation.Delete);
+                editOperations[row.ID].Add(ParamUpgradeEditOperation.Delete);
 
                 continue;
             }
@@ -692,19 +692,19 @@ public class ParamUpgrader
 
                 if (!editOperations.ContainsKey(row.ID))
                 {
-                    editOperations.Add(row.ID, new List<EditOperation>());
+                    editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
                 }
 
                 // See if the name was not updated
                 if (modrow.Name == null && row.Name == null ||
                     modrow.Name != null && row.Name != null && modrow.Name == row.Name)
                 {
-                    editOperations[row.ID].Add(EditOperation.Match);
+                    editOperations[row.ID].Add(ParamUpgradeEditOperation.Match);
                     continue;
                 }
 
                 // Name was updated
-                editOperations[row.ID].Add(EditOperation.NameChange);
+                editOperations[row.ID].Add(ParamUpgradeEditOperation.NameChange);
 
                 if (!renamedRows.ContainsKey(row.ID))
                 {
@@ -731,10 +731,10 @@ public class ParamUpgrader
 
             if (!editOperations.ContainsKey(row.ID))
             {
-                editOperations.Add(row.ID, new List<EditOperation>());
+                editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
             }
 
-            editOperations[row.ID].Add(EditOperation.Modify);
+            editOperations[row.ID].Add(ParamUpgradeEditOperation.Modify);
         }
 
         // Mark all remaining rows as added
@@ -742,12 +742,12 @@ public class ParamUpgrader
         {
             if (!editOperations.ContainsKey(entry.Key))
             {
-                editOperations.Add(entry.Key, new List<EditOperation>());
+                editOperations.Add(entry.Key, new List<ParamUpgradeEditOperation>());
             }
 
-            foreach (List<EditOperation> k in editOperations.Values)
+            foreach (List<ParamUpgradeEditOperation> k in editOperations.Values)
             {
-                editOperations[entry.Key].Add(EditOperation.Add);
+                editOperations[entry.Key].Add(ParamUpgradeEditOperation.Add);
             }
         }
 
@@ -789,7 +789,7 @@ public class ParamUpgrader
             }
 
             // Pop the latest operation we need to do
-            EditOperation operation = editOperations[row.ID][0];
+            ParamUpgradeEditOperation operation = editOperations[row.ID][0];
             editOperations[row.ID].RemoveAt(0);
 
             if (editOperations[row.ID].Count == 0)
@@ -797,7 +797,7 @@ public class ParamUpgrader
                 editOperations.Remove(row.ID);
             }
 
-            if (operation == EditOperation.Add)
+            if (operation == ParamUpgradeEditOperation.Add)
             {
                 // Getting here means both the mod and the updated regulation added a row. Our current strategy is
                 // to overwrite the new vanilla row with the modded one and add to the conflict log to give the user
@@ -812,12 +812,12 @@ public class ParamUpgrader
                     addedRows.Remove(row.ID);
                 }
             }
-            else if (operation == EditOperation.Match)
+            else if (operation == ParamUpgradeEditOperation.Match)
             {
                 // Match means we inherit updated param
                 // INHERIT NEW ROW
             }
-            else if (operation == EditOperation.Delete)
+            else if (operation == ParamUpgradeEditOperation.Delete)
             {
                 // deleted means we don't add anything
                 deletedRows[row.ID].RemoveAt(0);
@@ -826,7 +826,7 @@ public class ParamUpgrader
                     deletedRows.Remove(row.ID);
                 }
             }
-            else if (operation == EditOperation.Modify)
+            else if (operation == ParamUpgradeEditOperation.Modify)
             {
                 // Modified means we use the modded regulation's param
                 // MODIFIED PARAM
@@ -836,7 +836,7 @@ public class ParamUpgrader
                     modifiedRows.Remove(row.ID);
                 }
             }
-            else if (operation == EditOperation.NameChange)
+            else if (operation == ParamUpgradeEditOperation.NameChange)
             {
                 // Inherit name
                 // INHERIT ROW NAME
@@ -876,7 +876,7 @@ public class ParamUpgrader
         Dictionary<int, List<Param.Row>> renamedRows = new(source.Rows.Count);
 
         // List of ordered edit operations for each ID
-        Dictionary<int, List<EditOperation>> editOperations = new(source.Rows.Count);
+        Dictionary<int, List<ParamUpgradeEditOperation>> editOperations = new(source.Rows.Count);
 
         // First off we go through source and everything starts as an added param
         foreach (Param.Row row in source.Rows)
@@ -905,10 +905,10 @@ public class ParamUpgrader
 
                 if (!editOperations.ContainsKey(row.ID))
                 {
-                    editOperations.Add(row.ID, new List<EditOperation>());
+                    editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
                 }
 
-                editOperations[row.ID].Add(EditOperation.Delete);
+                editOperations[row.ID].Add(ParamUpgradeEditOperation.Delete);
                 //TargetLog(source, $"oldVanilla - EditOperation.Delete: {row.ID}");
 
                 continue;
@@ -929,20 +929,20 @@ public class ParamUpgrader
 
                 if (!editOperations.ContainsKey(row.ID))
                 {
-                    editOperations.Add(row.ID, new List<EditOperation>());
+                    editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
                 }
 
                 // See if the name was not updated
                 if (modrow.Name == null && row.Name == null ||
                     modrow.Name != null && row.Name != null && modrow.Name == row.Name)
                 {
-                    editOperations[row.ID].Add(EditOperation.Match);
+                    editOperations[row.ID].Add(ParamUpgradeEditOperation.Match);
                     //TargetLog(source, $"oldVanilla - EditOperation.Match: {row.ID}");
                     continue;
                 }
 
                 // Name was updated
-                editOperations[row.ID].Add(EditOperation.NameChange);
+                editOperations[row.ID].Add(ParamUpgradeEditOperation.NameChange);
                 //TargetLog(source, $"oldVanilla - EditOperation.NameChange: {row.ID}");
 
                 if (!renamedRows.ContainsKey(row.ID))
@@ -970,10 +970,10 @@ public class ParamUpgrader
 
             if (!editOperations.ContainsKey(row.ID))
             {
-                editOperations.Add(row.ID, new List<EditOperation>());
+                editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
             }
 
-            editOperations[row.ID].Add(EditOperation.Modify);
+            editOperations[row.ID].Add(ParamUpgradeEditOperation.Modify);
             //TargetLog(source, $"oldVanilla - EditOperation.Modify: {row.ID}");
         }
 
@@ -982,12 +982,12 @@ public class ParamUpgrader
         {
             if (!editOperations.ContainsKey(entry.Key))
             {
-                editOperations.Add(entry.Key, new List<EditOperation>());
+                editOperations.Add(entry.Key, new List<ParamUpgradeEditOperation>());
             }
 
-            foreach (List<EditOperation> k in editOperations.Values)
+            foreach (List<ParamUpgradeEditOperation> k in editOperations.Values)
             {
-                editOperations[entry.Key].Add(EditOperation.Add);
+                editOperations[entry.Key].Add(ParamUpgradeEditOperation.Add);
                 //TargetLog(source, $"oldVanilla - EditOperation.Add: {entry.Key}");
             }
         }
@@ -1036,7 +1036,7 @@ public class ParamUpgrader
             }
 
             // Pop the latest operation we need to do
-            EditOperation operation = editOperations[row.ID][0];
+            ParamUpgradeEditOperation operation = editOperations[row.ID][0];
             editOperations[row.ID].RemoveAt(0);
 
             if (editOperations[row.ID].Count == 0)
@@ -1044,7 +1044,7 @@ public class ParamUpgrader
                 editOperations.Remove(row.ID);
             }
 
-            if (operation == EditOperation.Add)
+            if (operation == ParamUpgradeEditOperation.Add)
             {
                 // Getting here means both the mod and the updated regulation added a row. Our current strategy is
                 // to overwrite the new vanilla row with the modded one and add to the conflict log to give the user
@@ -1057,12 +1057,12 @@ public class ParamUpgrader
                     addedRows.Remove(row.ID);
                 }
             }
-            else if (operation == EditOperation.Match)
+            else if (operation == ParamUpgradeEditOperation.Match)
             {
                 // Match means we inherit updated param
                 dest.AddRow(new Param.Row(row, dest));
             }
-            else if (operation == EditOperation.Delete)
+            else if (operation == ParamUpgradeEditOperation.Delete)
             {
                 // deleted means we don't add anything
                 deletedRows[row.ID].RemoveAt(0);
@@ -1071,7 +1071,7 @@ public class ParamUpgrader
                     deletedRows.Remove(row.ID);
                 }
             }
-            else if (operation == EditOperation.Modify)
+            else if (operation == ParamUpgradeEditOperation.Modify)
             {
                 // Modified means we use the modded regulation's param
                 dest.AddRow(new Param.Row(modifiedRows[row.ID][0], dest));
@@ -1081,7 +1081,7 @@ public class ParamUpgrader
                     modifiedRows.Remove(row.ID);
                 }
             }
-            else if (operation == EditOperation.NameChange)
+            else if (operation == ParamUpgradeEditOperation.NameChange)
             {
                 // Inherit name
                 Param.Row newRow = new(row, dest);
@@ -1114,14 +1114,5 @@ public class ParamUpgrader
         }
 
         return dest;
-    }
-
-    private enum EditOperation
-    {
-        Add,
-        Delete,
-        Modify,
-        NameChange,
-        Match
     }
 }

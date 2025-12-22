@@ -7,9 +7,9 @@ public class ChangeEnumOptionField : EditorAction
     private readonly ProjectEnumOption OptionEntry;
     private readonly object NewValue;
     private readonly object OldValue;
-    private readonly EnumOptionField ChangeType;
+    private readonly ProjectEnumOptionFieldType ChangeType;
 
-    public ChangeEnumOptionField(ProjectEnumOption curEntry, object oldValue, object newValue, EnumOptionField changeType)
+    public ChangeEnumOptionField(ProjectEnumOption curEntry, object oldValue, object newValue, ProjectEnumOptionFieldType changeType)
     {
         OptionEntry = curEntry;
         NewValue = newValue;
@@ -21,13 +21,13 @@ public class ChangeEnumOptionField : EditorAction
     {
         switch (ChangeType)
         {
-            case EnumOptionField.ID:
+            case ProjectEnumOptionFieldType.ID:
                 OptionEntry.ID = $"{NewValue}";
                 break;
-            case EnumOptionField.Name:
+            case ProjectEnumOptionFieldType.Name:
                 OptionEntry.Name = $"{NewValue}";
                 break;
-            case EnumOptionField.Description:
+            case ProjectEnumOptionFieldType.Description:
                 OptionEntry.Description = $"{NewValue}";
                 break;
         }
@@ -39,24 +39,17 @@ public class ChangeEnumOptionField : EditorAction
     {
         switch (ChangeType)
         {
-            case EnumOptionField.ID:
+            case ProjectEnumOptionFieldType.ID:
                 OptionEntry.ID = $"{OldValue}";
                 break;
-            case EnumOptionField.Name:
+            case ProjectEnumOptionFieldType.Name:
                 OptionEntry.Name = $"{OldValue}";
                 break;
-            case EnumOptionField.Description:
+            case ProjectEnumOptionFieldType.Description:
                 OptionEntry.Description = $"{OldValue}";
                 break;
         }
 
         return ActionEvent.NoEvent;
-    }
-
-    public enum EnumOptionField
-    {
-        ID = 0,
-        Name = 1,
-        Description = 2
     }
 }

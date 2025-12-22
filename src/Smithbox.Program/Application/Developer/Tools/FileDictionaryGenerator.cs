@@ -118,7 +118,7 @@ public static class FileDictionaryGenerator
             }
         }
 
-        var json = JsonSerializer.Serialize(curDictionary, SmithboxSerializerContext.Default.FileDictionary);
+        var json = JsonSerializer.Serialize(curDictionary, ProjectJsonSerializerContext.Default.FileDictionary);
 
         File.WriteAllText(writePath, json);
     }

@@ -38,6 +38,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Editors\Map Editor\Enums\**" />
+    <EmbeddedResource Remove="Editors\Map Editor\Enums\**" />
+    <None Remove="Editors\Map Editor\Enums\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AssimpNet" Version="4.1.0" />
     <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.2" />
     <PackageReference Include="CsvHelper" Version="33.0.1" />
@@ -78,6 +84,19 @@
     <ProjectReference Include="..\Veldrid\Veldrid.StartupUtilities\Veldrid.StartupUtilities.csproj" />
     <ProjectReference Include="..\Veldrid\Veldrid.Utilities\Veldrid.Utilities.csproj" />
     <ProjectReference Include="..\Veldrid\Veldrid\Veldrid.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Editors\File Browser\Data\Enums\" />
+    <Folder Include="Editors\File Browser\Data\Models\" />
+    <Folder Include="Editors\File Browser\Actions\" />
+    <Folder Include="Editors\File Browser\Utils\" />
+    <Folder Include="Editors\File Browser\Tools\" />
+    <Folder Include="Editors\Gparam Editor\Data\Models\" />
+    <Folder Include="Editors\Gparam Editor\Tools\" />
+    <Folder Include="Editors\Material Editor\Actions\" />
+    <Folder Include="Editors\Material Editor\Tools\" />
+    <Folder Include="Editors\Model Editor\Data\Models\" />
   </ItemGroup>
 
 </Project>

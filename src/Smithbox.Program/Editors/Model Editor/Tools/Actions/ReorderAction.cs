@@ -30,25 +30,25 @@ public class ReorderAction
     {
         if (InputTracker.GetKeyDown(KeyBindings.Current.MODEL_MoveObjectUp) && Editor.ViewportSelection.IsSelection())
         {
-            ApplyReorder(OrderMoveDir.Up);
+            ApplyReorder(TreeObjectOrderMovementType.Up);
         }
 
         // Order (Down)
         if (InputTracker.GetKeyDown(KeyBindings.Current.MODEL_MoveObjectDown) && Editor.ViewportSelection.IsSelection())
         {
-            ApplyReorder(OrderMoveDir.Down);
+            ApplyReorder(TreeObjectOrderMovementType.Down);
         }
 
         // Order (Top)
         if (InputTracker.GetKeyDown(KeyBindings.Current.MODEL_MoveObjectTop) && Editor.ViewportSelection.IsSelection())
         {
-            ApplyReorder(OrderMoveDir.Top);
+            ApplyReorder(TreeObjectOrderMovementType.Top);
         }
 
         // Order (Bottom)
         if (InputTracker.GetKeyDown(KeyBindings.Current.MODEL_MoveObjectBottom) && Editor.ViewportSelection.IsSelection())
         {
-            ApplyReorder(OrderMoveDir.Bottom);
+            ApplyReorder(TreeObjectOrderMovementType.Bottom);
         }
     }
 
@@ -60,28 +60,28 @@ public class ReorderAction
         // Move Up
         if (ImGui.Selectable("Move Up"))
         {
-            ApplyReorder(OrderMoveDir.Up);
+            ApplyReorder(TreeObjectOrderMovementType.Up);
         }
         UIHelper.Tooltip($"Move the currently selected map objects up by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectUp.HintText}");
 
         // Move Down
         if (ImGui.Selectable("Move Down"))
         {
-            ApplyReorder(OrderMoveDir.Down);
+            ApplyReorder(TreeObjectOrderMovementType.Down);
         }
         UIHelper.Tooltip($"Move the currently selected map objects down by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectDown.HintText}");
 
         // Move Top
         if (ImGui.Selectable("Move to Top"))
         {
-            ApplyReorder(OrderMoveDir.Top);
+            ApplyReorder(TreeObjectOrderMovementType.Top);
         }
         UIHelper.Tooltip($"Move the currently selected map objects to the top of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectTop.HintText}");
 
         // Move Bottom
         if (ImGui.Selectable("Move to Bottom"))
         {
-            ApplyReorder(OrderMoveDir.Bottom);
+            ApplyReorder(TreeObjectOrderMovementType.Bottom);
         }
         UIHelper.Tooltip($"Move the currently selected map objects to the bottom of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectBottom.HintText}");
     }
@@ -93,22 +93,22 @@ public class ReorderAction
     {
         if (ImGui.MenuItem("Move Selected Up in List", KeyBindings.Current.MAP_MoveObjectUp.HintText))
         {
-            ApplyReorder(OrderMoveDir.Up);
+            ApplyReorder(TreeObjectOrderMovementType.Up);
         }
 
         if (ImGui.MenuItem("Move Selected Down in List", KeyBindings.Current.MAP_MoveObjectDown.HintText))
         {
-            ApplyReorder(OrderMoveDir.Down);
+            ApplyReorder(TreeObjectOrderMovementType.Down);
         }
 
         if (ImGui.MenuItem("Move Selected to the List Top", KeyBindings.Current.MAP_MoveObjectTop.HintText))
         {
-            ApplyReorder(OrderMoveDir.Top);
+            ApplyReorder(TreeObjectOrderMovementType.Top);
         }
 
         if (ImGui.MenuItem("Move Selected to the List Bottom", KeyBindings.Current.MAP_MoveObjectBottom.HintText))
         {
-            ApplyReorder(OrderMoveDir.Bottom);
+            ApplyReorder(TreeObjectOrderMovementType.Bottom);
         }
     }
 
@@ -124,7 +124,7 @@ public class ReorderAction
     /// <summary>
     /// Effect
     /// </summary>
-    public void ApplyReorder(OrderMoveDir direction)
+    public void ApplyReorder(TreeObjectOrderMovementType direction)
     {
         if (Editor.ViewportSelection.IsSelection())
         {

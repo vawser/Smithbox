@@ -14,9 +14,9 @@ public class OrderMapObjectsAction : ViewportAction
     private List<MsbEntity> selection = new();
     private List<Entity> storedObjectOrder = new();
 
-    private OrderMoveDir MoveSelectionDir;
+    private TreeObjectOrderMovementType MoveSelectionDir;
 
-    public OrderMapObjectsAction(MapEditorScreen editor, List<MsbEntity> objects, OrderMoveDir moveDir)
+    public OrderMapObjectsAction(MapEditorScreen editor, List<MsbEntity> objects, TreeObjectOrderMovementType moveDir)
     {
         Editor = editor;
         selection.AddRange(objects);
@@ -101,7 +101,7 @@ public class OrderMapObjectsAction : ViewportAction
                     }
 
                     // Move Up
-                    if (MoveSelectionDir == OrderMoveDir.Up)
+                    if (MoveSelectionDir == TreeObjectOrderMovementType.Up)
                     {
                         for (int i = indexStart; i <= indexEnd; i++)
                         {
@@ -126,7 +126,7 @@ public class OrderMapObjectsAction : ViewportAction
                     }
 
                     // Move Down
-                    if (MoveSelectionDir == OrderMoveDir.Down)
+                    if (MoveSelectionDir == TreeObjectOrderMovementType.Down)
                     {
                         for (int i = indexStart; i <= indexEnd; i++)
                         {
@@ -151,7 +151,7 @@ public class OrderMapObjectsAction : ViewportAction
                     }
 
                     // Move to Top
-                    if (MoveSelectionDir == OrderMoveDir.Top)
+                    if (MoveSelectionDir == TreeObjectOrderMovementType.Top)
                     {
                         int rootIndex = 0;
 
@@ -177,7 +177,7 @@ public class OrderMapObjectsAction : ViewportAction
                     }
 
                     // Move to Bottom
-                    if (MoveSelectionDir == OrderMoveDir.Bottom)
+                    if (MoveSelectionDir == TreeObjectOrderMovementType.Bottom)
                     {
                         int rootIndex = 0;
 
@@ -224,12 +224,4 @@ public class OrderMapObjectsAction : ViewportAction
     {
         return "";
     }
-}
-
-public enum OrderMoveDir
-{
-    Up,
-    Down,
-    Top,
-    Bottom
 }

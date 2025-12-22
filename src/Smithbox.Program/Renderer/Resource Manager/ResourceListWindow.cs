@@ -311,23 +311,23 @@ public static class ResourceListWindow
 
             if (ImGui.BeginCombo("Extraction Type##extractTypeSelect", CFG.Current.MapEditor_ModelDataExtraction_Type.GetDisplayName()))
             {
-                foreach (var typ in Enum.GetValues(typeof(ExtractionType)))
+                foreach (var typ in Enum.GetValues(typeof(ResourceExtractionType)))
                 {
-                    var curEntry = (ExtractionType)typ;
+                    var curEntry = (ResourceExtractionType)typ;
 
                     if (ImGui.Selectable(curEntry.GetDisplayName()))
                     {
-                        CFG.Current.MapEditor_ModelDataExtraction_Type = (ExtractionType)typ;
+                        CFG.Current.MapEditor_ModelDataExtraction_Type = (ResourceExtractionType)typ;
                     }
                 }
 
                 ImGui.EndCombo();
             }
-            if(CFG.Current.MapEditor_ModelDataExtraction_Type is ExtractionType.Loose)
+            if(CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
             {
                 UIHelper.Tooltip("Files when extracted will be extracted loose and outside of the container files they normally reside in.");
             }
-            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ExtractionType.Contained)
+            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
             {
                 UIHelper.Tooltip("Files when extracted will be contained with the container files they belong to.");
             }

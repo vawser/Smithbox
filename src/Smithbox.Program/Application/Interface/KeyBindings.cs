@@ -10,18 +10,6 @@ using Veldrid;
 
 namespace StudioCore.Application;
 
-public enum KeybindCategory
-{
-    Core,
-    Window,
-    MapEditor,
-    ModelEditor,
-    ParamEditor,
-    TextEditor,
-    Viewport,
-    TextureViewer
-}
-
 public class KeyBind
 {
     public bool Alt_Pressed;
@@ -122,7 +110,7 @@ public class KeyBindings
             {
                 var filestring = File.ReadAllText(file);
 
-                Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.Bindings);
+                Current = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.Bindings);
 
                 if (Current == null)
                 {
@@ -144,7 +132,7 @@ public class KeyBindings
         var folder = ProjectUtils.GetConfigurationFolder();
         var file = Path.Combine(folder, "Key Bindings.json");
 
-        var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.Bindings);
+        var json = JsonSerializer.Serialize(Current, ProjectJsonSerializerContext.Default.Bindings);
 
         File.WriteAllText(file, json);
     }

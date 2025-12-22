@@ -18,7 +18,7 @@ public class SelectAllAction
 
     public List<string> SelectionInputs = new List<string>() { "" };
 
-    public SelectionConditionLogic MapObjectSelectionLogic;
+    public QuerySelectionConditionLogic MapObjectSelectionLogic;
 
     private bool DisplayHelp = false;
 
@@ -474,9 +474,9 @@ public class SelectAllAction
         // Conditional Logic
         if (ImGui.BeginCombo($"##selectionCommandLogic", MapObjectSelectionLogic.GetDisplayName()))
         {
-            foreach (var entry in Enum.GetValues(typeof(SelectionConditionLogic)))
+            foreach (var entry in Enum.GetValues(typeof(QuerySelectionConditionLogic)))
             {
-                var curEnum = (SelectionConditionLogic)entry;
+                var curEnum = (QuerySelectionConditionLogic)entry;
 
                 if (ImGui.Selectable($"{curEnum.GetDisplayName()}", MapObjectSelectionLogic == curEnum))
                 {
@@ -511,7 +511,7 @@ public class SelectAllAction
         var invertTruth = false;
         var isValid = true;
 
-        if (MapObjectSelectionLogic is SelectionConditionLogic.OR)
+        if (MapObjectSelectionLogic is QuerySelectionConditionLogic.OR)
         {
             isValid = false;
         }
@@ -545,12 +545,12 @@ public class SelectAllAction
 
         foreach (bool entry in partTruth)
         {
-            if (MapObjectSelectionLogic is SelectionConditionLogic.AND)
+            if (MapObjectSelectionLogic is QuerySelectionConditionLogic.AND)
             {
                 if (!entry)
                     isValid = false;
             }
-            else if (MapObjectSelectionLogic is SelectionConditionLogic.OR)
+            else if (MapObjectSelectionLogic is QuerySelectionConditionLogic.OR)
             {
                 if (entry)
                     isValid = true;

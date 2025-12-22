@@ -191,7 +191,7 @@ public class UI
             {
                 var filestring = File.ReadAllText(file);
 
-                Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.UI);
+                Current = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.UI);
 
                 if (Current == null)
                 {
@@ -224,7 +224,7 @@ public class UI
             {
                 var filestring = File.ReadAllText(file);
 
-                Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.UI);
+                Current = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.UI);
 
                 if (Current == null)
                 {
@@ -252,14 +252,14 @@ public class UI
 
             if(result  == DialogResult.OK)
             {
-                var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.UI);
+                var json = JsonSerializer.Serialize(Current, ProjectJsonSerializerContext.Default.UI);
 
                 File.WriteAllText(file, json);
             }
         }
         else if (name != "" && FilePathUtils.IsValidFileName(name))
         {
-            var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.UI);
+            var json = JsonSerializer.Serialize(Current, ProjectJsonSerializerContext.Default.UI);
 
             File.WriteAllText(file, json);
         }
@@ -274,7 +274,7 @@ public class UI
         var folder = ProjectUtils.GetConfigurationFolder();
         var file = Path.Combine(folder, "Interface.json");
 
-        var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.UI);
+        var json = JsonSerializer.Serialize(Current, ProjectJsonSerializerContext.Default.UI);
 
         File.WriteAllText(file, json);
     }

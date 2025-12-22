@@ -185,13 +185,13 @@ public class MapData
 
         if (reloadProject)
         {
-            await targetProject.Init(silent: true, InitType.MapEditorOnly);
+            await targetProject.Init(silent: true, ProjectInitType.MapEditorOnly);
         }
         else
         {
             if (!targetProject.Initialized)
             {
-                await targetProject.Init(silent: true, InitType.MapEditorOnly);
+                await targetProject.Init(silent: true, ProjectInitType.MapEditorOnly);
             }
         }
 
@@ -243,7 +243,7 @@ public class MapData
                 {
                     var filestring = await File.ReadAllTextAsync(file);
 
-                    var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.MapObjectNameMapEntry);
+                    var item = JsonSerializer.Deserialize(filestring, MapEditorJsonSerializerContext.Default.MapObjectNameMapEntry);
 
                     if (item == null)
                     {
@@ -292,7 +292,7 @@ public class MapData
 
                 try
                 {
-                    MapObjectSelections = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.EntitySelectionGroupList);
+                    MapObjectSelections = JsonSerializer.Deserialize(filestring, MapEditorJsonSerializerContext.Default.EntitySelectionGroupList);
                 }
                 catch (Exception e)
                 {
@@ -351,7 +351,7 @@ public class MapData
             projectFolder,
             "Selection Groups.json");
 
-        string jsonString = JsonSerializer.Serialize(MapObjectSelections, SmithboxSerializerContext.Default.EntitySelectionGroupList);
+        string jsonString = JsonSerializer.Serialize(MapObjectSelections, MapEditorJsonSerializerContext.Default.EntitySelectionGroupList);
 
         try
         {
@@ -401,7 +401,7 @@ public class MapData
 
                 try
                 {
-                    MsbInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
+                    MsbInformation = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatResource);
                 }
                 catch (Exception e)
                 {
@@ -434,7 +434,7 @@ public class MapData
 
                 try
                 {
-                    MsbEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
+                    MsbEnums = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatEnum);
                 }
                 catch (Exception e)
                 {
@@ -467,7 +467,7 @@ public class MapData
 
                 try
                 {
-                    MsbMasks = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatMask);
+                    MsbMasks = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatMask);
                 }
                 catch (Exception e)
                 {
@@ -515,7 +515,7 @@ public class MapData
 
                 try
                 {
-                    MapSpawnStates = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.SpawnStateResource);
+                    MapSpawnStates = JsonSerializer.Deserialize(filestring, MapEditorJsonSerializerContext.Default.SpawnStateResource);
                 }
                 catch (Exception e)
                 {

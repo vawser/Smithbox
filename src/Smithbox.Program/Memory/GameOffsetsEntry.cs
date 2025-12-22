@@ -1,4 +1,5 @@
 ﻿using StudioCore.Application;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 

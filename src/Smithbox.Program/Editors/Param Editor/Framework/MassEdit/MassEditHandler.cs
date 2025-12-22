@@ -39,7 +39,7 @@ public class MassEditHandler
     public MassEditScript Current_ME_Script;
 
     // These are created here so the Mass Edit systems are local to the current project
-    public SearchEngine<ParamSelection, (MassEditRowSource, Param.Row)> parse;
+    public SearchEngine<ParamSelection, (ParamMassEditRowSource, Param.Row)> parse;
     public ParamSearchEngine pse;
     public RowSearchEngine rse;
     public CellSearchEngine cse;
@@ -104,7 +104,7 @@ public class MassEditHandler
             Editor.EditorActionManager.PushSubManager(child);
         }
 
-        if (r.Type == MassEditResultType.SUCCESS)
+        if (r.Type == ParamMassEditResultType.SUCCESS)
         {
             Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
         }

@@ -55,19 +55,19 @@ public class ParamComparisonReport
 
         if (ImportNamesOnGeneration_Primary)
         {
-            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameSourceType.Community);
+            Project.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Community);
         }
 
         if (ImportNamesOnGeneration_Compare)
         {
             if(TargetProjectName == "Vanilla")
             {
-                Project.ParamData.VanillaBank.ImportRowNames(ImportRowNameSourceType.Community);
+                Project.ParamData.VanillaBank.ImportRowNames(ParamImportRowNameSourceType.Community);
             }
             else
             {
                 var auxBank = Project.ParamData.AuxBanks.Where(e => e.Key == TargetProjectName).FirstOrDefault();
-                Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameSourceType.Community);
+                Project.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Community);
             }
         }
 

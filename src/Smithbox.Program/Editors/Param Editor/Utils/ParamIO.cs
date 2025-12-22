@@ -138,18 +138,18 @@ public class ParamIO
                             return ($@"Could not assign {v} to field {col.Def.InternalName}", null);
                         }
 
-                        actions.AppendParamEditAction(row, (PseudoColumn.None, col), newval);
+                        actions.AppendParamEditAction(row, (ParamEditorPseudoColumn.None, col), newval);
                     }
                     else
                     {
-                        var newval = Convert.ChangeType(v, row.Get((PseudoColumn.None, col)).GetType());
+                        var newval = Convert.ChangeType(v, row.Get((ParamEditorPseudoColumn.None, col)).GetType());
 
                         if (newval == null)
                         {
                             return ($@"Could not assign {v} to field {col.Def.InternalName}", null);
                         }
 
-                        actions.AppendParamEditAction(row, (PseudoColumn.None, col), newval);
+                        actions.AppendParamEditAction(row, (ParamEditorPseudoColumn.None, col), newval);
                     }
                 }
             }
@@ -313,17 +313,17 @@ public class ParamIO
                             return ($@"Could not assign {value} to field {col.Def.InternalName}", null);
                         }
 
-                        actions.AppendParamEditAction(row, (PseudoColumn.None, col), newval);
+                        actions.AppendParamEditAction(row, (ParamEditorPseudoColumn.None, col), newval);
                     }
                     else
                     {
-                        var newval = Convert.ChangeType(value, row.Get((PseudoColumn.None, col)).GetType());
+                        var newval = Convert.ChangeType(value, row.Get((ParamEditorPseudoColumn.None, col)).GetType());
                         if (newval == null)
                         {
                             return ($@"Could not assign {value} to field {col.Def.InternalName}", null);
                         }
 
-                        actions.AppendParamEditAction(row, (PseudoColumn.None, col), newval);
+                        actions.AppendParamEditAction(row, (ParamEditorPseudoColumn.None, col), newval);
                     }
                 }
             }
