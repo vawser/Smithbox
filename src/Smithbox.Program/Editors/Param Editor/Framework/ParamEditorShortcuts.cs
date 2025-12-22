@@ -95,7 +95,7 @@ public class ParamEditorShortcuts
             {
                 if (Editor.ContextManager.CurrentContext is not ParamEditorContext.TableGroupList)
                 {
-                    Editor.ParamTools.DuplicateRow();
+                    Editor.ParamToolView.DuplicateRow();
                 }
             }
 
@@ -175,7 +175,7 @@ public class ParamEditorShortcuts
         // Sort Rows
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SortRows))
         {
-            Editor.ParamTools.SortRows();
+            Editor.ParamToolView.SortRows();
         }
 
         // Execute Mass Editor

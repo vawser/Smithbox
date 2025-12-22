@@ -720,7 +720,7 @@ public class ParamRowView
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                     {
-                        Editor.ParamTools.DuplicateRow();
+                        Editor.ParamToolView.DuplicateRow();
                     }
                     UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}\n\n" +
                         "Duplicate the current row selection, automatically incrementing the row ID.");
@@ -729,9 +729,9 @@ public class ParamRowView
                 }
 
                 // Duplicate To
-                if (ImGui.BeginMenu("Duplicate To", Editor.ParamTools.IsCommutativeParam()))
+                if (ImGui.BeginMenu("Duplicate To", Editor.ParamToolView.IsCommutativeParam()))
                 {
-                    Editor.ParamTools.DisplayCommutativeDropDownMenu();
+                    Editor.ParamToolView.DisplayCommutativeDropDownMenu();
 
                     ImGui.EndMenu();
                 }
@@ -743,7 +743,7 @@ public class ParamRowView
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    Editor.ParamTools.SetRowToDefault();
+                    Editor.ParamToolView.SetRowToDefault();
                 }
                 UIHelper.Tooltip($"Revert the current row selection field values to the vanilla field values.");
 
@@ -837,7 +837,7 @@ public class ParamRowView
                                 ? ImGuiSelectableFlags.None
                                 : ImGuiSelectableFlags.Disabled))
                     {
-                        Editor.ParamTools.ProliferateRowName(TargetField);
+                        Editor.ParamToolView.ProliferateRowName(TargetField);
                     }
                     UIHelper.Tooltip($"Proliferate the name of this row to the references pointed to by the named field within this row.");
                 }
@@ -850,7 +850,7 @@ public class ParamRowView
                                 ? ImGuiSelectableFlags.None
                                 : ImGuiSelectableFlags.Disabled))
                     {
-                        Editor.ParamTools.InheritRowName(TargetField);
+                        Editor.ParamToolView.InheritRowName(TargetField);
                     }
                     UIHelper.Tooltip($"Inherit the name of the referenced row connected to via the target field.");
 
@@ -859,7 +859,7 @@ public class ParamRowView
                                 ? ImGuiSelectableFlags.None
                                 : ImGuiSelectableFlags.Disabled))
                     {
-                        Editor.ParamTools.InheritRowNameFromFMG(TargetField);
+                        Editor.ParamToolView.InheritRowNameFromFMG(TargetField);
                     }
                     UIHelper.Tooltip($"Inherit the name of the referenced FMG connected to via the target field.");
 
@@ -868,7 +868,7 @@ public class ParamRowView
                                 ? ImGuiSelectableFlags.None
                                 : ImGuiSelectableFlags.Disabled))
                     {
-                        Editor.ParamTools.InheritRowNameFromAlias(TargetField);
+                        Editor.ParamToolView.InheritRowNameFromAlias(TargetField);
                     }
                     UIHelper.Tooltip($"Inherit the name of the referenced Alias connected to via the target field.");
                 }
@@ -886,7 +886,7 @@ public class ParamRowView
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    Editor.ParamTools.AdjustRowName(NameAdjustment, ParamRowNameAdjustType.Prepend);
+                    Editor.ParamToolView.AdjustRowName(NameAdjustment, ParamRowNameAdjustType.Prepend);
                 }
                 UIHelper.Tooltip($"Prepend text to the names of all currently selected rows.");
 
@@ -895,7 +895,7 @@ public class ParamRowView
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    Editor.ParamTools.AdjustRowName(NameAdjustment, ParamRowNameAdjustType.Postpend);
+                    Editor.ParamToolView.AdjustRowName(NameAdjustment, ParamRowNameAdjustType.Postpend);
                 }
                 UIHelper.Tooltip($"Postpend text to the names of all currently selected rows.");
 
@@ -904,7 +904,7 @@ public class ParamRowView
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    Editor.ParamTools.AdjustRowName(NameAdjustment, ParamRowNameAdjustType.Remove);
+                    Editor.ParamToolView.AdjustRowName(NameAdjustment, ParamRowNameAdjustType.Remove);
                 }
                 UIHelper.Tooltip($"Remove text from the names of all currently selected rows.");
 

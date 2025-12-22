@@ -267,7 +267,7 @@ public class ParamTableGroupView
 
             CurrentTableGroups.Clear();
 
-            Editor.ParamTools.DuplicateRow(true);
+            Editor.ParamToolView.DuplicateRow(true);
 
             UpdateTableSelection(curParamKey);
         }

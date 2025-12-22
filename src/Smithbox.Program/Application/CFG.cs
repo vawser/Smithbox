@@ -481,6 +481,8 @@ public class CFG
     /// </summary>
     public bool Interface_ParamEditor_Tool_ParamMerge = true;
 
+    public bool Interface_ParamEditor_Tool_ParamUpgrader = true;
+
     /// <summary>
     /// If true, the Param Reloader tool collapsible is visible in the Param Editor Tool window.
     /// </summary>

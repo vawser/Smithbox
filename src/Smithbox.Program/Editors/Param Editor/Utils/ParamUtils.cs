@@ -128,6 +128,11 @@ public static class ParamUtils
             return row.Name == null ? "" : row.Name;
         }
 
+        if (col.Item2 == null)
+        {
+            return row.ID;
+        }
+
         return row[col.Item2].Value;
     }
 

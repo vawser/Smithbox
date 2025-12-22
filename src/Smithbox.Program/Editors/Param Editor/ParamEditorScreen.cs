@@ -56,7 +56,7 @@ public class ParamEditorScreen : EditorScreen
 
     public DecoratorHandler DecoratorHandler;
 
-    public ParamTools ParamTools;
+    public ParamTools ParamToolView;
     public MassEditHandler MassEditHandler;
     public PinGroups PinGroupHandler;
 
@@ -90,7 +90,7 @@ public class ParamEditorScreen : EditorScreen
         DecoratorHandler = new(this, Project);
         ContextManager = new(this, Project);
 
-        ParamTools = new(this, Project);
+        ParamToolView = new(this, Project);
         FieldNameFinder = new(this);
         FieldValueFinder = new(this);
         RowNameFinder = new(this);
@@ -357,7 +357,7 @@ public class ParamEditorScreen : EditorScreen
         // Toolbar
         if (CFG.Current.Interface_ParamEditor_ToolWindow)
         {
-            ParamTools.DisplayToolList();
+            ParamToolView.Display();
         }
 
         if (CFG.Current.UI_CompactParams)
@@ -368,8 +368,6 @@ public class ParamEditorScreen : EditorScreen
         {
             ImGui.PopStyleVar();
         }
-
-        ParamUpgrader.Draw();
     }
     public void FileMenu()
     {
@@ -378,14 +376,6 @@ public class ParamEditorScreen : EditorScreen
             if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
             {
                 Save();
-            }
-
-            if (ParamUpgrader.SupportsParamUpgrading(Project) && ParamUpgrader.IsParamUpgradeValid(Project))
-            {
-                if (ImGui.MenuItem("Upgrade"))
-                {
-                    ParamUpgrader.Start(Project);
-                }
             }
 
             ImGui.EndMenu();
@@ -427,13 +417,13 @@ public class ParamEditorScreen : EditorScreen
 
             if (ImGui.MenuItem("Duplicate Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
-                ParamTools.DuplicateRow();
+                ParamToolView.DuplicateRow();
             }
             UIHelper.Tooltip($"Duplicates current selection.");
 
-            if (ImGui.BeginMenu("Duplicate Row to Commutative Param", ParamTools.IsCommutativeParam()))
+            if (ImGui.BeginMenu("Duplicate Row to Commutative Param", ParamToolView.IsCommutativeParam()))
             {
-                ParamTools.DisplayCommutativeDropDownMenu();
+                ParamToolView.DisplayCommutativeDropDownMenu();
 
                 ImGui.EndMenu();
             }
@@ -915,8 +905,8 @@ public class ParamEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Names"))
         {
-            ParamTools.DisplayRowNameImportMenu();
-            ParamTools.DisplayRowNameExportMenu();
+            ParamToolView.DisplayRowNameImportMenu();
+            ParamToolView.DisplayRowNameExportMenu();
         }
     }
 
@@ -943,20 +933,22 @@ public class ParamEditorScreen : EditorScreen
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
 
+            ImGui.Separator();
+
             if (ImGui.BeginMenu("Trim Row Names"))
             {
                 if (ImGui.MenuItem("Trim Whitespace"))
                 {
                     if (_activeView.Selection.ActiveParamExists())
                     {
-                        ParamTools.TrimRowNames();
+                        ParamToolView.TrimRowNames();
                     }
                 }
                 if (ImGui.MenuItem("Trim New Lines"))
                 {
                     if (_activeView.Selection.ActiveParamExists())
                     {
-                        ParamTools.TrimRowNames(ParamRowTrimType.NewLines);
+                        ParamToolView.TrimRowNames(ParamRowTrimType.NewLines);
                     }
                 }
 
@@ -968,7 +960,7 @@ public class ParamEditorScreen : EditorScreen
             {
                 if (_activeView.Selection.ActiveParamExists())
                 {
-                    ParamTools.SortRows();
+                    ParamToolView.SortRows();
                 }
             }
             UIHelper.Tooltip("This will sort the rows by ID. WARNING: this is not recommended as row index can be important.");

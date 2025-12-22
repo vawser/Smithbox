@@ -24,7 +24,7 @@ public partial class ParamTools
         var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
 
         // Merge Params
-        if (ImGui.CollapsingHeader("Merge Params"))
+        if (ImGui.CollapsingHeader("Param Merger"))
         {
             UIHelper.WrappedText("Select a compatible project below to merge into your current project.");
             UIHelper.WrappedText("");

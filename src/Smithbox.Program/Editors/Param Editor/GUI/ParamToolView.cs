@@ -15,7 +15,7 @@ public partial class ParamTools
         Project = project;
     }
 
-    public void DisplayToolList()
+    public void Display()
     {
         if (Editor.Project.ProjectType == ProjectType.Undefined)
             return;
@@ -52,12 +52,17 @@ public partial class ParamTools
 
             if (CFG.Current.Interface_ParamEditor_Tool_ParamMerge)
             {
-                Editor.ParamTools.DisplayParamMerge();
+                Editor.ParamToolView.DisplayParamMerge();
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_ParamReloader)
             {
                 Editor.ParamReloader.DisplayParamReloader();
+            }
+
+            if (CFG.Current.Interface_ParamEditor_Tool_ParamUpgrader)
+            {
+                Editor.ParamUpgrader.Display();
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_ItemGib)
@@ -77,22 +82,22 @@ public partial class ParamTools
 
             if (CFG.Current.Interface_ParamEditor_Tool_Duplicate)
             {
-                Editor.ParamTools.DisplayRowDuplicate();
+                Editor.ParamToolView.DisplayRowDuplicate();
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_CommutativeDuplicate)
             {
-                Editor.ParamTools.DisplayCommutativeRowDuplicate();
+                Editor.ParamToolView.DisplayCommutativeRowDuplicate();
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_RowNameTrimmer)
             {
-                Editor.ParamTools.DisplayRowNameTrimmer();
+                Editor.ParamToolView.DisplayRowNameTrimmer();
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_RowNameSorter)
             {
-                Editor.ParamTools.DisplayRowSorter();
+                Editor.ParamToolView.DisplayRowSorter();
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_FieldInstanceFinder)
@@ -168,6 +173,12 @@ public partial class ParamTools
                 CFG.Current.Interface_ParamEditor_Tool_ParamReloader = !CFG.Current.Interface_ParamEditor_Tool_ParamReloader;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_ParamReloader);
+
+            if (ImGui.MenuItem("Param Upgrader"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_ParamUpgrader = !CFG.Current.Interface_ParamEditor_Tool_ParamUpgrader;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_ParamUpgrader);
 
             if (ImGui.MenuItem("Item Gib"))
             {
