@@ -334,6 +334,8 @@ public class CFG
     public bool MsbReference_DisplayEntityID = true;
     public bool MsbReference_DisplayAlias = true;
 
+    public bool Interface_MapEditor_WrapAliasDisplay = true;
+
     ///------------------------------------------------------------
     /// Model Editor
     ///------------------------------------------------------------
@@ -375,6 +377,8 @@ public class CFG
 
     public bool ModelEditor_AutoLoadSingles = true;
     public bool ModelEditor_IncludeAliasInSearch = true;
+
+    public bool Interface_ModelEditor_WrapAliasDisplay = true;
 
     ///------------------------------------------------------------
     /// Text Editor

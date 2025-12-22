@@ -21,6 +21,8 @@ public class MapValidatorTool
 
     private List<MapValidationEntry> ValidationEntries;
 
+    private bool FirstValidate = false;
+
     public MapValidatorTool(MapEditorScreen screen, ProjectEntry project)
     {
         Editor = screen;
@@ -57,15 +59,15 @@ public class MapValidatorTool
                     // Collision Name
                     if (Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                     {
-                        ValidateReferenceProperty(mapContainer, "CollisionPartName", MapValidationType.CollisionName);
+                        ValidateReferenceProperty(mapContainer, "CollisionPartName", MapValidationType.CollisionName, true);
 
-                        ValidateReferenceProperty(mapContainer, "CollisionName", MapValidationType.CollisionName);
+                        ValidateReferenceProperty(mapContainer, "CollisionName", MapValidationType.CollisionName, true);
                     }
                     else
                     {
-                        ValidateReferenceProperty(mapContainer, "CollisionName", MapValidationType.CollisionName);
+                        ValidateReferenceProperty(mapContainer, "CollisionName", MapValidationType.CollisionName, true);
 
-                        ValidateReferenceProperty(mapContainer, "UnkHitName", MapValidationType.CollisionName);
+                        ValidateReferenceProperty(mapContainer, "UnkHitName", MapValidationType.CollisionName, true);
                     }
 
                     // Walk Route
@@ -94,9 +96,11 @@ public class MapValidatorTool
                     ValidateParamProperty(mapContainer, "MapMimicryEstablishmentParam", "ChameleonParamID",
                         MapValidationType.ChameleonParamID, [-1]);
                 }
+
+                FirstValidate = true;
             }
 
-            if(ValidationEntries.Count > 0)
+            if (ValidationEntries.Count > 0)
             {
                 ImGui.BeginChild("ValidationTabs");
 
@@ -142,6 +146,10 @@ public class MapValidatorTool
                 ImGui.EndTabBar();
 
                 ImGui.EndChild();
+            }
+            else if(FirstValidate && ValidationEntries.Count == 0)
+            {
+                UIHelper.WrappedText("No issues found.");
             }
         }
     }

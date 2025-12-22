@@ -331,6 +331,10 @@ public class MapEditorTab
 
             ImGui.Checkbox("Enable global property search", ref CFG.Current.MapEditor_LoadMapQueryData);
             UIHelper.Tooltip("This option will allow the global property search to be used. Note, this will load all map files into memory.\nYou need to restart Smithbox after enabling this.");
+
+            ImGui.Checkbox("Wrap alias text", ref CFG.Current.Interface_MapEditor_WrapAliasDisplay);
+            UIHelper.Tooltip("Makes the alias text display wrap instead of being cut off within the Map Editor.");
+
         }
 
         // Map Collision
@@ -520,6 +524,12 @@ public class ModelEditorTab
 
     public void Display()
     {
+        // General
+        if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Wrap alias text", ref CFG.Current.Interface_ModelEditor_WrapAliasDisplay);
+            UIHelper.Tooltip("Makes the alias text display wrap instead of being cut off within the Model Editor.");
+        }
 
         // Actions
         if (ImGui.CollapsingHeader("Actions", ImGuiTreeNodeFlags.DefaultOpen))

@@ -250,7 +250,7 @@ public class ModelSourceView
 
                 if (alias != "")
                 {
-                    UIHelper.DisplayAlias(alias);
+                    UIHelper.DisplayAlias(alias, CFG.Current.Interface_ModelEditor_WrapAliasDisplay);
                 }
 
                 // Context Menu

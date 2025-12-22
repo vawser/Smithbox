@@ -177,12 +177,48 @@ public static class UIHelper
         }
     }
 
+    public static void DisplayAlias(string aliasName, bool customWrapBool)
+    {
+        if (aliasName != "")
+        {
+            ImGui.SameLine();
+            if (customWrapBool)
+            {
+                ImGui.PushTextWrapPos();
+                ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{aliasName}");
+                ImGui.PopTextWrapPos();
+            }
+            else
+            {
+                ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{aliasName}");
+            }
+        }
+    }
+
     public static void DisplayColoredAlias(string aliasName, Vector4 color)
     {
         if (aliasName != "")
         {
             ImGui.SameLine();
             if (CFG.Current.System_WrapAliasDisplay)
+            {
+                ImGui.PushTextWrapPos();
+                ImGui.TextColored(color, @$"{aliasName}");
+                ImGui.PopTextWrapPos();
+            }
+            else
+            {
+                ImGui.TextColored(color, @$"{aliasName}");
+            }
+        }
+    }
+
+    public static void DisplayColoredAlias(string aliasName, Vector4 color, bool customWrapBool)
+    {
+        if (aliasName != "")
+        {
+            ImGui.SameLine();
+            if (customWrapBool)
             {
                 ImGui.PushTextWrapPos();
                 ImGui.TextColored(color, @$"{aliasName}");

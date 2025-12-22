@@ -30,5 +30,3 @@
 # TODO NOW
 - Map Editor: add BTAB handling (in same way as AIP is displayed)
 - Map Editor: add BTPB handling (in same way as AIP is displayed)
-
-- Check MSB and BTL saving (occuring outside of explicit saving)
