@@ -26,7 +26,5 @@
 - Texture Editor: adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
  (i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
 
- 
 # TODO NOW
 
-- Param Editor: rethink how the Upgrader works, currently method is fragile and allows data loss
