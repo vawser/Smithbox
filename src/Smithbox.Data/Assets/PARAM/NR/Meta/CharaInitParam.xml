@@ -125,7 +125,7 @@
     Wiki="The weapon data used during the ultimate art." 
     Refs="EquipParamWeapon" />
     
-    <passiveAbilityWeapon
+    <extraHelperWeapon
     AltName="Extra Helper Weapon Data" 
     Wiki="The weapon data present for extra needs, such as models or hitboxes." 
     Refs="EquipParamWeapon" />
