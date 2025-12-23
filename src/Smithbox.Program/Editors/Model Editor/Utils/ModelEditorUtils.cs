@@ -361,6 +361,10 @@ public static class ModelEditorUtils
                         {
                             containerType = ResourceContainerType.BND;
                         }
+                        else
+                        {
+                            containerType = ResourceContainerType.BND;
+                        }
                     }
 
                     if (partsId == "common_body")
@@ -380,6 +384,10 @@ public static class ModelEditorUtils
                         else if (p[i].Equals("tpf"))
                         {
                             containerType = ResourceContainerType.None;
+                        }
+                        else
+                        {
+                            containerType = ResourceContainerType.BND;
                         }
                     }
                 }

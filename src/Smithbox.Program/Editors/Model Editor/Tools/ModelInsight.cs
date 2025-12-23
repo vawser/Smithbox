@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using Andre.IO.VFS;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.MapEditor;
@@ -182,7 +183,15 @@ public class ModelInsight
         var relativePath = ResourceLocator.GetRelativePath(project, entry.VirtualPath);
 
         var fileName = Path.GetFileName(relativePath);
-        var fileData = project.FS.ReadFile(relativePath);
+
+        VirtualFile virtFile;
+        var readFile = project.FS.TryGetFile(relativePath, out virtFile);
+
+        if(!readFile)
+        {
+            TaskLogs.AddLog($"Failed to read {relativePath}");
+            return;
+        }
 
         var writeDir = outputDirectory;
 
@@ -199,7 +208,7 @@ public class ModelInsight
         if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
         {
             var writePath = Path.Combine(writeDir, fileName);
-            File.WriteAllBytes(writePath, fileData.Value.ToArray());
+            File.WriteAllBytes(writePath, virtFile.GetData().ToArray());
         }
 
         if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
@@ -209,23 +218,23 @@ public class ModelInsight
             if (containerType is ResourceContainerType.None)
             {
                 var writePath = Path.Combine(writeDir, fileName);
-                File.WriteAllBytes(writePath, fileData.Value.ToArray());
+                File.WriteAllBytes(writePath, virtFile.GetData().ToArray());
             }
 
             if (containerType is ResourceContainerType.BND)
             {
                 if (project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                 {
-                    var reader = new BND3Reader(fileData.Value);
+                    var reader = new BND3Reader(virtFile.GetData());
                     foreach (var file in reader.Files)
                     {
                         if (file.Name.Contains(entry.Name))
                         {
-                            fileData = reader.ReadFile(file);
+                            var fileData = reader.ReadFile(file);
 
                             var rawFileName = Path.GetFileName(file.Name);
                             var writePath = Path.Combine(writeDir, rawFileName);
-                            File.WriteAllBytes(writePath, fileData.Value.ToArray());
+                            File.WriteAllBytes(writePath, virtFile.GetData().ToArray());
                             successful = true;
 
                             break;
@@ -234,16 +243,16 @@ public class ModelInsight
                 }
                 else
                 {
-                    var reader = new BND4Reader(fileData.Value);
+                    var reader = new BND4Reader(virtFile.GetData());
                     foreach (var file in reader.Files)
                     {
                         if (file.Name.Contains(entry.Name))
                         {
-                            fileData = reader.ReadFile(file);
+                            var fileData = reader.ReadFile(file);
 
                             var rawFileName = Path.GetFileName(file.Name);
                             var writePath = Path.Combine(writeDir, rawFileName);
-                            File.WriteAllBytes(writePath, fileData.Value.ToArray());
+                            File.WriteAllBytes(writePath, virtFile.GetData().ToArray());
                             successful = true;
 
                             break;

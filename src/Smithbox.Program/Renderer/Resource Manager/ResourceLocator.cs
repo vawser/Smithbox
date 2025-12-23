@@ -401,6 +401,10 @@ public class ResourceLocator
                         {
                             relPath = Path.Combine("parts", $"{partsId}_l.partsbnd.dcx");
                         }
+                        else
+                        {
+                            relPath = Path.Combine("parts", $"{partsId}.partsbnd.dcx");
+                        }
                     }
                     else
                     {
@@ -441,6 +445,10 @@ public class ResourceLocator
                             {
                                 relPath = Path.Combine("parts", $"{partsId}_u.tpf.dcx");
                             }
+                        }
+                        else
+                        {
+                            relPath = Path.Combine("parts", $"{partsId}.partsbnd.dcx");
                         }
                     }
                 }
