@@ -91,7 +91,8 @@ public class MapPropertyView
         }
 
         var unkFieldDisplayMode = "Hidden";
-        if (!CFG.Current.MapEditor_DisplayUnknownFields)
+
+        if (CFG.Current.MapEditor_DisplayUnknownFields)
             unkFieldDisplayMode = "Visible";
 
         UIHelper.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
