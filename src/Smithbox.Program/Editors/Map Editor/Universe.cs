@@ -260,6 +260,8 @@ public class Universe
                     }
                 }
 
+                newMap.LightAtlasResolver.BuildReferenceMaps();
+
                 // Check for duplicate EntityIDs
                 CheckDupeEntityIDs(newMap);
 
@@ -374,162 +376,188 @@ public class Universe
         return btl;
     }
 
-    public void SaveMap(MapContainer map)
+    public void SaveMap(MapContainer map, bool autoSave = false)
     {
-        SaveBTL(Editor, map);
-
-        Editor.AutoInvadeBank.SaveAIP(Editor, map);
-        Editor.LightAtlasBank.SaveBTAB(Editor, map);
-        Editor.LightProbeBank.SaveBTPB(Editor, map);
-
-        Editor.HavokNavmeshBank.SaveHavokNVA(Editor, map);
-
-        try
+        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeBTL ||
+            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeBTL)
         {
-            var curEntry = Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
-            var mapData = (Memory<byte>)Project.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
+            SaveBTL(Editor, map);
+        }
 
-            IMsb msb;
-            DCX.Type compressionType = GetCompressionType();
-            if (Editor.Project.ProjectType == ProjectType.DS3)
-            {
-                var prev = MSB3.Read(mapData);
-                MSB3 n = new();
-                n.PartsPoses = prev.PartsPoses;
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                msb = n;
-            }
-            else if (Editor.Project.ProjectType == ProjectType.ER)
-            {
-                var prev = MSBE.Read(mapData);
-                MSBE n = new();
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                msb = n;
-            }
-            else if (Editor.Project.ProjectType == ProjectType.NR)
-            {
-                var prev = MSB_NR.Read(mapData);
-                MSB_NR n = new();
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                msb = n;
-            }
-            else if (Editor.Project.ProjectType == ProjectType.AC6)
-            {
-                var prev = MSB_AC6.Read(mapData);
-                MSB_AC6 n = new();
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                msb = n;
-            }
-            else if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
-            {
-                var prev = MSB2.Read(mapData);
-                MSB2 n = new();
-                n.PartPoses = prev.PartPoses;
-                msb = n;
-            }
-            else if (Editor.Project.ProjectType == ProjectType.SDT)
-            {
-                var prev = MSBS.Read(mapData);
-                MSBS n = new();
-                n.PartsPoses = prev.PartsPoses;
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                msb = n;
-            }
-            else if (Editor.Project.ProjectType == ProjectType.BB)
-            {
-                msb = new MSBB();
-            }
-            else if (Editor.Project.ProjectType == ProjectType.DES)
-            {
-                var prev = MSBD.Read(mapData);
-                MSBD n = new();
-                n.Trees = prev.Trees;
-                msb = n;
-            }
-            //TODO ACFA
-            else if (Editor.Project.ProjectType == ProjectType.ACFA)
-            {
-                MSBFA prev = MSBFA.Read(mapData);
-                MSBFA n = new();
-                n.Models.Version = prev.Models.Version;
-                n.Events.Version = prev.Events.Version;
-                n.Parts.Version = prev.Parts.Version;
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                n.DrawingTree = prev.DrawingTree;
-                n.CollisionTree = prev.CollisionTree;
-                msb = n;
-            }
-            else if (Editor.Project.ProjectType == ProjectType.ACV)
-            {
-                MSBV prev = MSBV.Read(mapData);
-                MSBV n = new();
-                n.Models.Version = prev.Models.Version;
-                n.Events.Version = prev.Events.Version;
-                n.Parts.Version = prev.Parts.Version;
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                n.DrawingTree = prev.DrawingTree;
-                n.CollisionTree = prev.CollisionTree;
-                msb = n;
-            }
-            else if (Editor.Project.ProjectType == ProjectType.ACVD)
-            {
-                MSBVD prev = MSBVD.Read(mapData);
-                MSBVD n = new();
-                n.Models.Version = prev.Models.Version;
-                n.Events.Version = prev.Events.Version;
-                n.Parts.Version = prev.Parts.Version;
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                n.DrawingTree = prev.DrawingTree;
-                n.CollisionTree = prev.CollisionTree;
-                msb = n;
-            }
-            else
-            {
-                msb = new MSB1();
-                //var t = MSB1.Read(ad.AssetPath);
-                //((MSB1)msb).Models = t.Models;
-            }
+        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeAIP ||
+            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeAIP)
+        {
+            Editor.AutoInvadeBank.SaveAIP(Editor, map);
+        }
 
-            map.SerializeToMSB(msb, Editor.Project.ProjectType);
+        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeBTAB ||
+            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeBTAB)
+        {
+            Editor.LightAtlasBank.SaveBTAB(Editor, map);
+        }
 
+        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeBTPB ||
+            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeBTPB)
+        {
+            Editor.LightProbeBank.SaveBTPB(Editor, map);
+        }
+
+        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeNVA ||
+            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeNVA)
+        {
+            Editor.HavokNavmeshBank.SaveHavokNVA(Editor, map);
+        }
+
+        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeMSB ||
+            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeMSB)
+        {
             try
             {
-                var newMapData = msb.Write(compressionType);
-                Project.ProjectFS.WriteFile(curEntry.Path, newMapData);
+                var curEntry = Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
+                var mapData = (Memory<byte>)Project.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
 
-                if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
+                IMsb msb;
+                DCX.Type compressionType = GetCompressionType();
+                if (Editor.Project.ProjectType == ProjectType.DS3)
                 {
-                    SaveDS2Generators(map);
+                    var prev = MSB3.Read(mapData);
+                    MSB3 n = new();
+                    n.PartsPoses = prev.PartsPoses;
+                    n.Layers = prev.Layers;
+                    n.Routes = prev.Routes;
+                    msb = n;
+                }
+                else if (Editor.Project.ProjectType == ProjectType.ER)
+                {
+                    var prev = MSBE.Read(mapData);
+                    MSBE n = new();
+                    n.Layers = prev.Layers;
+                    n.Routes = prev.Routes;
+                    msb = n;
+                }
+                else if (Editor.Project.ProjectType == ProjectType.NR)
+                {
+                    var prev = MSB_NR.Read(mapData);
+                    MSB_NR n = new();
+                    n.Layers = prev.Layers;
+                    n.Routes = prev.Routes;
+                    msb = n;
+                }
+                else if (Editor.Project.ProjectType == ProjectType.AC6)
+                {
+                    var prev = MSB_AC6.Read(mapData);
+                    MSB_AC6 n = new();
+                    n.Layers = prev.Layers;
+                    n.Routes = prev.Routes;
+                    msb = n;
+                }
+                else if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
+                {
+                    var prev = MSB2.Read(mapData);
+                    MSB2 n = new();
+                    n.PartPoses = prev.PartPoses;
+                    msb = n;
+                }
+                else if (Editor.Project.ProjectType == ProjectType.SDT)
+                {
+                    var prev = MSBS.Read(mapData);
+                    MSBS n = new();
+                    n.PartsPoses = prev.PartsPoses;
+                    n.Layers = prev.Layers;
+                    n.Routes = prev.Routes;
+                    msb = n;
+                }
+                else if (Editor.Project.ProjectType == ProjectType.BB)
+                {
+                    msb = new MSBB();
+                }
+                else if (Editor.Project.ProjectType == ProjectType.DES)
+                {
+                    var prev = MSBD.Read(mapData);
+                    MSBD n = new();
+                    n.Trees = prev.Trees;
+                    msb = n;
+                }
+                //TODO ACFA
+                else if (Editor.Project.ProjectType == ProjectType.ACFA)
+                {
+                    MSBFA prev = MSBFA.Read(mapData);
+                    MSBFA n = new();
+                    n.Models.Version = prev.Models.Version;
+                    n.Events.Version = prev.Events.Version;
+                    n.Parts.Version = prev.Parts.Version;
+                    n.Layers = prev.Layers;
+                    n.Routes = prev.Routes;
+                    n.DrawingTree = prev.DrawingTree;
+                    n.CollisionTree = prev.CollisionTree;
+                    msb = n;
+                }
+                else if (Editor.Project.ProjectType == ProjectType.ACV)
+                {
+                    MSBV prev = MSBV.Read(mapData);
+                    MSBV n = new();
+                    n.Models.Version = prev.Models.Version;
+                    n.Events.Version = prev.Events.Version;
+                    n.Parts.Version = prev.Parts.Version;
+                    n.Layers = prev.Layers;
+                    n.Routes = prev.Routes;
+                    n.DrawingTree = prev.DrawingTree;
+                    n.CollisionTree = prev.CollisionTree;
+                    msb = n;
+                }
+                else if (Editor.Project.ProjectType == ProjectType.ACVD)
+                {
+                    MSBVD prev = MSBVD.Read(mapData);
+                    MSBVD n = new();
+                    n.Models.Version = prev.Models.Version;
+                    n.Events.Version = prev.Events.Version;
+                    n.Parts.Version = prev.Parts.Version;
+                    n.Layers = prev.Layers;
+                    n.Routes = prev.Routes;
+                    n.DrawingTree = prev.DrawingTree;
+                    n.CollisionTree = prev.CollisionTree;
+                    msb = n;
+                }
+                else
+                {
+                    msb = new MSB1();
+                    //var t = MSB1.Read(ad.AssetPath);
+                    //((MSB1)msb).Models = t.Models;
                 }
 
-                CheckDupeEntityIDs(map);
+                map.SerializeToMSB(msb, Editor.Project.ProjectType);
 
-                map.HasUnsavedChanges = false;
-                TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Saved map: {curEntry.Filename}");
+                try
+                {
+                    var newMapData = msb.Write(compressionType);
+                    Project.ProjectFS.WriteFile(curEntry.Path, newMapData);
+
+                    if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
+                    {
+                        SaveDS2Generators(map);
+                    }
+
+                    CheckDupeEntityIDs(map);
+
+                    map.HasUnsavedChanges = false;
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Saved map: {curEntry.Filename}");
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to save map: {curEntry.Filename}", LogLevel.Error, LogPriority.High, e);
+
+                    if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
+                    {
+                        throw new SavingFailedException(Path.GetFileName(map.Name), e);
+                    }
+                }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to save map: {curEntry.Filename}", LogLevel.Error, LogPriority.High, e);
-
                 if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
                 {
                     throw new SavingFailedException(Path.GetFileName(map.Name), e);
                 }
-            }
-        }
-        catch (Exception e)
-        {
-            if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
-            {
-                throw new SavingFailedException(Path.GetFileName(map.Name), e);
             }
         }
 
@@ -1101,13 +1129,13 @@ public class Universe
     }
 
 
-    public void SaveAllMaps()
+    public void SaveAllMaps(bool autoSave = false)
     {
         foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer != null)
             {
-                SaveMap(entry.Value.MapContainer);
+                SaveMap(entry.Value.MapContainer, autoSave);
             }
         }
     }

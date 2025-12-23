@@ -248,6 +248,36 @@ public class ModelEditorScreen : EditorScreen
                 Save();
             }
 
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Output on Manual Save"))
+            {
+                if (ImGui.MenuItem($"FLVER"))
+                {
+                    CFG.Current.ModelEditor_ManualSave_IncludeFLVER = !CFG.Current.ModelEditor_ManualSave_IncludeFLVER;
+                }
+                UIHelper.Tooltip("If enabled, the model container files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ManualSave_IncludeFLVER);
+
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+
+            if (ImGui.BeginMenu("Output on Automatic Save"))
+            {
+                if (ImGui.MenuItem($"FLVER"))
+                {
+                    CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER = !CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER;
+                }
+                UIHelper.Tooltip("If enabled, the model container files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
+
+
             ImGui.EndMenu();
         }
     }
@@ -369,7 +399,7 @@ public class ModelEditorScreen : EditorScreen
         return ModelViewportView.InputCaptured();
     }
 
-    public void Save()
+    public void Save(bool autoSave = false)
     {
         if (Project.ProjectType == ProjectType.DES)
         {
@@ -377,9 +407,13 @@ public class ModelEditorScreen : EditorScreen
             return;
         }
 
-        if(Selection.SelectedModelWrapper != null)
+        if (!autoSave && CFG.Current.ModelEditor_ManualSave_IncludeFLVER ||
+            autoSave && CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER)
         {
-            Selection.SelectedModelWrapper.Save();
+            if (Selection.SelectedModelWrapper != null)
+            {
+                Selection.SelectedModelWrapper.Save();
+            }
         }
 
         // Save the configuration JSONs

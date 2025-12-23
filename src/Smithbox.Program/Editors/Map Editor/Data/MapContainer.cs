@@ -55,10 +55,15 @@ public class MapContainer : ObjectContainer
     public List<Entity> Layers;
     public List<Entity> Routes;
 
+    [XmlIgnore]
+    public LightAtlasResolver LightAtlasResolver;
+
     public MapContainer(MapEditorScreen editor, string mapid)
     {
         Editor = editor;
         Name = mapid;
+
+        LightAtlasResolver = new LightAtlasResolver(Editor, Editor.Project, this);
 
         LoadedModels = new();
 

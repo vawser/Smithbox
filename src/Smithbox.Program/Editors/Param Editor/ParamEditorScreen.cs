@@ -378,6 +378,35 @@ public class ParamEditorScreen : EditorScreen
                 Save();
             }
 
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Output on Manual Save"))
+            {
+                if (ImGui.MenuItem($"PARAM"))
+                {
+                    CFG.Current.ParamEditor_ManualSave_IncludePARAM = !CFG.Current.ParamEditor_ManualSave_IncludePARAM;
+                }
+                UIHelper.Tooltip("If enabled, the param files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_ManualSave_IncludePARAM);
+
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+
+            if (ImGui.BeginMenu("Output on Automatic Save"))
+            {
+                if (ImGui.MenuItem($"PARAM"))
+                {
+                    CFG.Current.ParamEditor_AutomaticSave_IncludePARAM = !CFG.Current.ParamEditor_AutomaticSave_IncludePARAM;
+                }
+                UIHelper.Tooltip("If enabled, the param files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_AutomaticSave_IncludePARAM);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
+
             ImGui.EndMenu();
         }
     }
@@ -973,7 +1002,7 @@ public class ParamEditorScreen : EditorScreen
 
     public bool SaveLock = false;
 
-    public async void Save()
+    public async void Save(bool autoSave = false)
     {
         await Task.Yield();
 
@@ -981,10 +1010,14 @@ public class ParamEditorScreen : EditorScreen
         {
             SaveLock = true;
 
-            _activeView.TableGroupView.WriteTableGroupNames();
+            if (!autoSave && CFG.Current.ParamEditor_ManualSave_IncludePARAM ||
+                autoSave && CFG.Current.ParamEditor_AutomaticSave_IncludePARAM)
+            {
+                _activeView.TableGroupView.WriteTableGroupNames();
 
-            Task<bool> paramSaveTask = SaveParams();
-            Task.WaitAll(paramSaveTask);
+                Task<bool> paramSaveTask = SaveParams();
+                Task.WaitAll(paramSaveTask);
+            }
 
             SaveLock = false;
         }

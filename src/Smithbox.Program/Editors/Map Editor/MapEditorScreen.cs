@@ -350,10 +350,127 @@ public class MapEditorScreen : EditorScreen
                 Save();
             }
 
-            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Output on Manual Save"))
             {
-                SaveAll();
+                if (ImGui.MenuItem($"MSB"))
+                {
+                    CFG.Current.MapEditor_ManualSave_IncludeMSB = !CFG.Current.MapEditor_ManualSave_IncludeMSB;
+                }
+                UIHelper.Tooltip("If enabled, the map files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeMSB);
+
+                if (ImGui.MenuItem($"BTL"))
+                {
+                    CFG.Current.MapEditor_ManualSave_IncludeBTL = !CFG.Current.MapEditor_ManualSave_IncludeBTL;
+                }
+                UIHelper.Tooltip("If enabled, the light files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTL);
+
+                if (AutoInvadeBank.CanUse())
+                {
+                    if (ImGui.MenuItem($"AIP"))
+                    {
+                        CFG.Current.MapEditor_ManualSave_IncludeAIP = !CFG.Current.MapEditor_ManualSave_IncludeAIP;
+                    }
+                    UIHelper.Tooltip("If enabled, the auto invade point files are outputted on save.");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeAIP);
+                }
+
+                if (HavokNavmeshBank.CanUse())
+                {
+                    if (ImGui.MenuItem($"NVA"))
+                    {
+                        CFG.Current.MapEditor_ManualSave_IncludeNVA = !CFG.Current.MapEditor_ManualSave_IncludeNVA;
+                    }
+                    UIHelper.Tooltip("If enabled, the navmesh configuration files are outputted on save.");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeNVA);
+                }
+
+                if (LightAtlasBank.CanUse())
+                {
+                    if (ImGui.MenuItem($"BTAB"))
+                    {
+                        CFG.Current.MapEditor_ManualSave_IncludeBTAB = !CFG.Current.MapEditor_ManualSave_IncludeBTAB;
+                    }
+                    UIHelper.Tooltip("If enabled, the light atlas files are outputted on save.");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTAB);
+                }
+
+                if (LightProbeBank.CanUse())
+                {
+                    if (ImGui.MenuItem($"BTPB"))
+                    {
+                        CFG.Current.MapEditor_ManualSave_IncludeBTPB = !CFG.Current.MapEditor_ManualSave_IncludeBTPB;
+                    }
+                    UIHelper.Tooltip("If enabled, the light probe files are outputted on save.");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTPB);
+                }
+
+                ImGui.EndMenu();
             }
+            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+
+            if (ImGui.BeginMenu("Output on Automatic Save"))
+            {
+                if (ImGui.MenuItem($"MSB"))
+                {
+                    CFG.Current.MapEditor_AutomaticSave_IncludeMSB = !CFG.Current.MapEditor_AutomaticSave_IncludeMSB;
+                }
+                UIHelper.Tooltip("If enabled, the map files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeMSB);
+
+                if (ImGui.MenuItem($"BTL"))
+                {
+                    CFG.Current.MapEditor_AutomaticSave_IncludeBTL = !CFG.Current.MapEditor_AutomaticSave_IncludeBTL;
+                }
+                UIHelper.Tooltip("If enabled, the light files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTL);
+
+                if (AutoInvadeBank.CanUse())
+                {
+                    if (ImGui.MenuItem($"AIP"))
+                    {
+                        CFG.Current.MapEditor_AutomaticSave_IncludeAIP = !CFG.Current.MapEditor_AutomaticSave_IncludeAIP;
+                    }
+                    UIHelper.Tooltip("If enabled, the auto invade point files are outputted on save.");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeAIP);
+                }
+
+                if (HavokNavmeshBank.CanUse())
+                {
+                    if (ImGui.MenuItem($"NVA"))
+                    {
+                        CFG.Current.MapEditor_AutomaticSave_IncludeNVA = !CFG.Current.MapEditor_AutomaticSave_IncludeNVA;
+                    }
+                    UIHelper.Tooltip("If enabled, the navmesh configuration files are outputted on save.");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeNVA);
+                }
+
+                if (LightAtlasBank.CanUse())
+                {
+                    if (ImGui.MenuItem($"BTAB"))
+                    {
+                        CFG.Current.MapEditor_AutomaticSave_IncludeBTAB = !CFG.Current.MapEditor_AutomaticSave_IncludeBTAB;
+                    }
+                    UIHelper.Tooltip("If enabled, the light atlas files are outputted on save.");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTAB);
+                }
+
+                if (LightProbeBank.CanUse())
+                {
+                    if (ImGui.MenuItem($"BTPB"))
+                    {
+                        CFG.Current.MapEditor_AutomaticSave_IncludeBTPB = !CFG.Current.MapEditor_AutomaticSave_IncludeBTPB;
+                    }
+                    UIHelper.Tooltip("If enabled, the light probe files are outputted on save.");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTPB);
+                }
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
 
             ImGui.EndMenu();
         }
@@ -602,32 +719,14 @@ public class MapEditorScreen : EditorScreen
         return MapViewportView.InputCaptured();
     }
 
-    public void Save()
+    public void Save(bool autoSave = false)
     {
         if (Project.ProjectType == ProjectType.Undefined)
             return;
 
         try
         {
-            Universe.SaveAllMaps();
-        }
-        catch (SavingFailedException e)
-        {
-            HandleSaveException(e);
-        }
-
-        // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
-    }
-
-    public void SaveAll()
-    {
-        if (Project.ProjectType == ProjectType.Undefined)
-            return;
-
-        try
-        {
-            Universe.SaveAllMaps();
+            Universe.SaveAllMaps(autoSave);
         }
         catch (SavingFailedException e)
         {

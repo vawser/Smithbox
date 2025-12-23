@@ -123,6 +123,49 @@ public class MaterialEditorScreen : EditorScreen
                 Save();
             }
 
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Output on Manual Save"))
+            {
+                if (ImGui.MenuItem($"MTD"))
+                {
+                    CFG.Current.MaterialEditor_ManualSave_IncludeMTD = !CFG.Current.MaterialEditor_ManualSave_IncludeMTD;
+                }
+                UIHelper.Tooltip("If enabled, the material files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.MaterialEditor_ManualSave_IncludeMTD);
+
+                if (ImGui.MenuItem($"MATBIN"))
+                {
+                    CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN = !CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN;
+                }
+                UIHelper.Tooltip("If enabled, the material bin files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+
+            if (ImGui.BeginMenu("Output on Automatic Save"))
+            {
+                if (ImGui.MenuItem($"MTD"))
+                {
+                    CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD = !CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD;
+                }
+                UIHelper.Tooltip("If enabled, the material files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD);
+
+                if (ImGui.MenuItem($"MATBIN"))
+                {
+                    CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN = !CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN;
+                }
+                UIHelper.Tooltip("If enabled, the material bin files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
+
+
             ImGui.EndMenu();
         }
     }
@@ -204,7 +247,7 @@ public class MaterialEditorScreen : EditorScreen
         }
     }
 
-    public async void Save()
+    public async void Save(bool autoSave = false)
     {
         if (Selection.SelectedBinderEntry == null)
             return;
@@ -219,6 +262,12 @@ public class MaterialEditorScreen : EditorScreen
 
             if (Selection.SelectedMTD == null)
                 return;
+
+            if (!autoSave && !CFG.Current.MaterialEditor_ManualSave_IncludeMTD)
+                return;
+
+            if (autoSave && !CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD)
+                return;
         }
 
         if (Selection.SourceType is MaterialSourceType.MATBIN)
@@ -227,6 +276,12 @@ public class MaterialEditorScreen : EditorScreen
                 return;
 
             if (Selection.SelectedMATBIN == null)
+                return;
+
+            if (!autoSave && !CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN)
+                return;
+
+            if (autoSave && !CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN)
                 return;
         }
 

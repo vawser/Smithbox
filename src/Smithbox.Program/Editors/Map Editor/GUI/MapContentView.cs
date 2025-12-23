@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Veldrid;
+using static Google.Protobuf.Reflection.FieldOptions.Types;
 using static StudioCore.Editors.MapEditor.MsbUtils;
 
 namespace StudioCore.Editors.MapEditor;
@@ -50,7 +51,6 @@ public class MapContentView
             Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapContents);
 
             DisplayMenubar();
-
 
             if (Editor.Selection.SelectedMapContainer != null)
             {
@@ -115,6 +115,36 @@ public class MapContentView
                 UIHelper.ShowActiveStatus(curType == EntityNameDisplayType.Internal_FMG);
 
                 ImGui.EndMenu();
+            }
+
+            if(Editor.LightAtlasBank.CanUse())
+            {
+                if (ImGui.BeginMenu("Light Atlases"))
+                {
+                    if (ImGui.MenuItem("Automatically adjust entries"))
+                    {
+                        CFG.Current.MapEditor_LightAtlas_AutomaticAdjust = !CFG.Current.MapEditor_LightAtlas_AutomaticAdjust;
+                    }
+                    UIHelper.Tooltip("If enabled, when a part is renamed, if a light atlas entry points to it, the name reference within the entry is updated to the new name.");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdjust);
+
+
+                    if (ImGui.MenuItem("Automatically add entries"))
+                    {
+                        CFG.Current.MapEditor_LightAtlas_AutomaticAdd = !CFG.Current.MapEditor_LightAtlas_AutomaticAdd;
+                    }
+                    UIHelper.Tooltip("If enabled, when new parts are duplicated, the a new light atlas entry pointing to the newly duplicated part is created (deriving the other properties from the source part).");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdd);
+
+                    if (ImGui.MenuItem("Automatically delete entries"))
+                    {
+                        CFG.Current.MapEditor_LightAtlas_AutomaticDelete = !CFG.Current.MapEditor_LightAtlas_AutomaticDelete;
+                    }
+                    UIHelper.Tooltip("If enabled, when parts are deleted, if there is a light atlas entry pointing to that part, the entry is deleted.");
+                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticDelete);
+
+                    ImGui.EndMenu();
+                }
             }
 
             ImGui.EndMenuBar();

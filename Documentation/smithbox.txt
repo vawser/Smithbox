@@ -7,6 +7,7 @@
 - Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor: implement Edge support for SDT
 - Map Editor: fix ER NVA so saves are BP correct (currently the Write side is quite off)
+- Map Editor: look into a AABB bounding box gizmo mode where the centre is placed based on the model (for baked offset models where the position is normally 0,0,0)
 
 - Model Editor: apply proper transform inheritance for dummies/nodes
 - Model Editor: Add simple JSON export/import for elements of FLVER

@@ -154,6 +154,34 @@ public class TextEditorScreen : EditorScreen
                 SaveAll();
             }
 
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Output on Manual Save"))
+            {
+                if (ImGui.MenuItem($"FMG"))
+                {
+                    CFG.Current.TextEditor_ManualSave_IncludeFMG = !CFG.Current.TextEditor_ManualSave_IncludeFMG;
+                }
+                UIHelper.Tooltip("If enabled, the text files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.TextEditor_ManualSave_IncludeFMG);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+
+            if (ImGui.BeginMenu("Output on Automatic Save"))
+            {
+                if (ImGui.MenuItem($"FMG"))
+                {
+                    CFG.Current.TextEditor_AutomaticSave_IncludeFMG = !CFG.Current.TextEditor_AutomaticSave_IncludeFMG;
+                }
+                UIHelper.Tooltip("If enabled, the text files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.TextEditor_AutomaticSave_IncludeFMG);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
+
             ImGui.EndMenu();
         }
     }
@@ -287,7 +315,7 @@ public class TextEditorScreen : EditorScreen
     /// <summary>
     /// Save currently selected FMG container
     /// </summary>
-    public async void Save()
+    public async void Save(bool autoSave = false)
     {
         var fileEntry = Selection.SelectedFileDictionaryEntry;
         var wrapper = Selection.SelectedContainerWrapper;
@@ -302,24 +330,27 @@ public class TextEditorScreen : EditorScreen
             return;
         }
 
-        try
+        if (!autoSave && CFG.Current.TextEditor_ManualSave_IncludeFMG ||
+            autoSave && CFG.Current.TextEditor_AutomaticSave_IncludeFMG)
         {
-            if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+            try
             {
-                await Project.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
+                if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                {
+                    await Project.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
+                }
+                else
+                {
+                    await Project.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
+                }
+
+                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Saved {fileEntry.Path}");
             }
-            else
+            catch (Exception ex)
             {
-                await Project.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
+                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to save {fileEntry.Path}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
             }
-
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Saved {fileEntry.Path}");
         }
-        catch(Exception ex)
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to save {fileEntry.Path}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
-        }
-
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
@@ -328,17 +359,21 @@ public class TextEditorScreen : EditorScreen
     /// <summary>
     /// Save all modified FMG containers
     /// </summary>
-    public async void SaveAll()
+    public async void SaveAll(bool autoSave = false)
     {
-        try
+        if (!autoSave && CFG.Current.TextEditor_ManualSave_IncludeFMG ||
+            autoSave && CFG.Current.TextEditor_AutomaticSave_IncludeFMG)
         {
-            await Project.TextData.PrimaryBank.SaveTextFiles();
+            try
+            {
+                await Project.TextData.PrimaryBank.SaveTextFiles();
 
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Saved all modified text files.");
-        }
-        catch (Exception ex)
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to save all modified text files", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Saved all modified text files.");
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to save all modified text files", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+            }
         }
 
         // Save the configuration JSONs

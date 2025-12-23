@@ -32,30 +32,65 @@ public class CFG
     public string SmithboxBuildFolder = "";
 
     ///------------------------------------------------------------
-    /// Project
+    /// Saving
     ///------------------------------------------------------------
-    /// <summary>
-    /// If enabled, automatic saving occurs.
-    /// </summary>
     public bool EnableAutomaticSave = true;
+    public bool EnableBackupSaves = true;
 
-    /// <summary>
-    /// The rate at which automatic saving occurs (in seconds)
-    /// </summary>
     public float AutomaticSaveIntervalTime = 300;
 
     public bool AutomaticSave_MapEditor = true;
+    public bool AutomaticSave_ModelEditor = true;
     public bool AutomaticSave_ParamEditor = true;
     public bool AutomaticSave_TextEditor = true;
     public bool AutomaticSave_GparamEditor = false;
     public bool AutomaticSave_MaterialEditor = false;
 
+    // Map Editor
+    public bool MapEditor_AutomaticSave_IncludeMSB = true;
+    public bool MapEditor_AutomaticSave_IncludeBTL = false;
+    public bool MapEditor_AutomaticSave_IncludeAIP = false;
+    public bool MapEditor_AutomaticSave_IncludeNVA = false;
+    public bool MapEditor_AutomaticSave_IncludeBTAB = false;
+    public bool MapEditor_AutomaticSave_IncludeBTPB = false;
 
-    /// <summary>
-    /// If enabled, include backup saves.
-    /// </summary>
-    public bool EnableBackupSaves = true;
+    public bool MapEditor_ManualSave_IncludeMSB = true;
+    public bool MapEditor_ManualSave_IncludeBTL = true;
+    public bool MapEditor_ManualSave_IncludeAIP = true;
+    public bool MapEditor_ManualSave_IncludeNVA = true;
+    public bool MapEditor_ManualSave_IncludeBTAB = true;
+    public bool MapEditor_ManualSave_IncludeBTPB = true;
 
+    // Model Editor
+    public bool ModelEditor_AutomaticSave_IncludeFLVER = true;
+
+    public bool ModelEditor_ManualSave_IncludeFLVER = true;
+
+    // Param Editor
+    public bool ParamEditor_AutomaticSave_IncludePARAM = true;
+
+    public bool ParamEditor_ManualSave_IncludePARAM = true;
+
+    // Text Editor
+    public bool TextEditor_AutomaticSave_IncludeFMG = true;
+
+    public bool TextEditor_ManualSave_IncludeFMG = true;
+
+    // Graphics Param Editor
+    public bool GparamEditor_AutomaticSave_IncludeGPARAM = true;
+
+    public bool GparamEditor_ManualSave_IncludeGPARAM = true;
+
+    // Material Editor
+    public bool MaterialEditor_AutomaticSave_IncludeMTD = true;
+    public bool MaterialEditor_AutomaticSave_IncludeMATBIN = true;
+
+    public bool MaterialEditor_ManualSave_IncludeMTD  = true;
+    public bool MaterialEditor_ManualSave_IncludeMATBIN = true;
+
+    ///------------------------------------------------------------
+    /// Project
+    ///------------------------------------------------------------
     /// <summary>
     /// If enabled, the project type is prefixed to the project name.
     /// </summary>
@@ -1023,6 +1058,10 @@ public class CFG
     public bool MapEditor_ModelDataExtraction_IncludeFolder = true;
     public ResourceExtractionType MapEditor_ModelDataExtraction_Type = ResourceExtractionType.Loose;
     public string MapEditor_ModelDataExtraction_DefaultOutputFolder = ".output";
+
+    public bool MapEditor_LightAtlas_AutomaticAdd = true;
+    public bool MapEditor_LightAtlas_AutomaticDelete = false;
+    public bool MapEditor_LightAtlas_AutomaticAdjust = true;
 
     //****************************
     // Settings: Model Editor

@@ -129,6 +129,36 @@ public class GparamEditorScreen : EditorScreen
                 SaveAll();
             }
 
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Output on Manual Save"))
+            {
+                if (ImGui.MenuItem($"GPARAM"))
+                {
+                    CFG.Current.GparamEditor_ManualSave_IncludeGPARAM = !CFG.Current.GparamEditor_ManualSave_IncludeGPARAM;
+                }
+                UIHelper.Tooltip("If enabled, the graphical param files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.GparamEditor_ManualSave_IncludeGPARAM);
+
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+
+            if (ImGui.BeginMenu("Output on Automatic Save"))
+            {
+                if (ImGui.MenuItem($"GPARAM"))
+                {
+                    CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM = !CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM;
+                }
+                UIHelper.Tooltip("If enabled, the graphical param files are outputted on save.");
+                UIHelper.ShowActiveStatus(CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
+
+
             ImGui.EndMenu();
         }
     }
@@ -218,28 +248,38 @@ public class GparamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
     }
-    public async void Save()
+
+    public async void Save(bool autoSave = false)
     {
-        var targetScript = Project.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == Selection.SelectedFileEntry.Filename);
-
-        if (targetScript.Key != null)
+        if (!autoSave && CFG.Current.GparamEditor_ManualSave_IncludeGPARAM ||
+            autoSave && CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM)
         {
-            await Project.GparamData.PrimaryBank.SaveGraphicsParam(targetScript.Key, targetScript.Value);
+            var targetScript = Project.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == Selection.SelectedFileEntry.Filename);
 
-            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Saved {Selection.SelectedFileEntry.Filename}.gparam.dcx");
+            if (targetScript.Key != null)
+            {
+                await Project.GparamData.PrimaryBank.SaveGraphicsParam(targetScript.Key, targetScript.Value);
+
+                TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Saved {Selection.SelectedFileEntry.Filename}.gparam.dcx");
+            }
         }
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
     }
 
-    public async void SaveAll()
+    public async void SaveAll(bool autoSave = false)
     {
-        await Project.GparamData.PrimaryBank.SaveAllGraphicsParams();
+        if (!autoSave && CFG.Current.GparamEditor_ManualSave_IncludeGPARAM ||
+            autoSave && CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM)
+        {
+            await Project.GparamData.PrimaryBank.SaveAllGraphicsParams();
+        }
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
     }
+
     public void Shortcuts()
     {
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))

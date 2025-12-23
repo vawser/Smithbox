@@ -724,7 +724,15 @@ public class ProjectEntry
                 {
                     if (MapEditor != null)
                     {
-                        MapEditor.Save();
+                        MapEditor.Save(true);
+                    }
+                }
+
+                if (CFG.Current.AutomaticSave_ModelEditor)
+                {
+                    if (ModelEditor != null)
+                    {
+                        ModelEditor.Save(true);
                     }
                 }
 
@@ -732,28 +740,28 @@ public class ProjectEntry
                 {
                     if (ParamEditor != null)
                     {
-                        ParamEditor.Save();
+                        ParamEditor.Save(true);
                     }
                 }
                 if (CFG.Current.AutomaticSave_TextEditor)
                 {
                     if (TextEditor != null)
                     {
-                        TextEditor.Save();
+                        TextEditor.Save(true);
                     }
                 }
                 if (CFG.Current.AutomaticSave_GparamEditor)
                 {
                     if (GparamEditor != null)
                     {
-                        GparamEditor.Save();
+                        GparamEditor.Save(true);
                     }
                 }
                 if (CFG.Current.AutomaticSave_MaterialEditor)
                 {
                     if (MaterialEditor != null)
                     {
-                        MaterialEditor.Save();
+                        MaterialEditor.Save(true);
                     }
                 }
             }
