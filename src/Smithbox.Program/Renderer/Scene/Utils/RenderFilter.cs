@@ -21,5 +21,7 @@ public enum RenderFilter
     Dummies = 4096,
     Nodes = 8192,
 
+    LightProbe = 16384,
+
     All = 0xFFFFFFF
 }

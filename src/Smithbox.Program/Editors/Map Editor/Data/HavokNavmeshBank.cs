@@ -14,7 +14,7 @@ using static SoulsFormats.NVA;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class HavokNavmeshManager
+public class HavokNavmeshBank
 {
     public MapEditorScreen Editor;
     public ProjectEntry Project;
@@ -23,7 +23,7 @@ public class HavokNavmeshManager
 
     public Dictionary<string, hkRootLevelContainer> HKX3_Containers = new Dictionary<string, hkRootLevelContainer>();
 
-    public HavokNavmeshManager(MapEditorScreen editor, ProjectEntry project)
+    public HavokNavmeshBank(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;

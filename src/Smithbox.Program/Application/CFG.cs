@@ -877,6 +877,9 @@ public class CFG
     public Vector3 GFX_Renderable_AutoInvadeSphere_BaseColor = Utils.GetDecimalColor(Color.Red);
     public Vector3 GFX_Renderable_AutoInvadeSphere_HighlightColor = Utils.GetDecimalColor(Color.DarkRed);
 
+    public Vector3 GFX_Renderable_LightProbeSphere_BaseColor = Utils.GetDecimalColor(Color.Yellow);
+    public Vector3 GFX_Renderable_LightProbeSphere_HighlightColor = Utils.GetDecimalColor(Color.YellowGreen);
+
     public Vector3 GFX_Renderable_LevelConnectorSphere_BaseColor = Utils.GetDecimalColor(Color.Turquoise);
     public Vector3 GFX_Renderable_LevelConnectorSphere_HighlightColor = Utils.GetDecimalColor(Color.DarkTurquoise);
 

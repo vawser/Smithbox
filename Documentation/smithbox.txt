@@ -28,7 +28,5 @@
  (i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
  
 # TODO NOW
-- Interface: add hint text to important inputs to help guide the user (i.e. project creation)
-
 - Map Editor: add BTAB handling (in same way as AIP is displayed)
 - Map Editor: add BTPB handling (in same way as AIP is displayed)

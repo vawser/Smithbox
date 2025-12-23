@@ -39,9 +39,11 @@ public class MapEditorScreen : EditorScreen
     public MapCommandQueue CommandQueue;
     public MapShortcuts Shortcuts;
 
-    public HavokCollisionManager CollisionManager;
-    public AutoInvadeManager AutoInvadeManager;
-    public HavokNavmeshManager HavokNavmeshManager;
+    public AutoInvadeBank AutoInvadeBank;
+    public HavokCollisionBank HavokCollisionBank;
+    public HavokNavmeshBank HavokNavmeshBank;
+    public LightAtlasBank LightAtlasBank;
+    public LightProbeBank LightProbeBank;
 
     // Core
     public MapViewportView MapViewportView;
@@ -131,9 +133,11 @@ public class MapEditorScreen : EditorScreen
         CommandQueue = new MapCommandQueue(this);
         Shortcuts = new MapShortcuts(this);
 
-        CollisionManager = new HavokCollisionManager(this, project);
-        AutoInvadeManager = new AutoInvadeManager(this, project);
-        HavokNavmeshManager = new HavokNavmeshManager(this, project);
+        HavokCollisionBank = new HavokCollisionBank(this, project);
+        HavokNavmeshBank = new HavokNavmeshBank(this, project);
+        AutoInvadeBank = new AutoInvadeBank(this, project);
+        LightAtlasBank = new LightAtlasBank(this, project);
+        LightProbeBank = new LightProbeBank(this, project);
 
         // Tools
         ToolWindow = new ToolWindow(this, ActionHandler);
@@ -566,17 +570,17 @@ public class MapEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Low"))
             {
-                CollisionManager.VisibleCollisionType = HavokCollisionType.Low;
+                HavokCollisionBank.VisibleCollisionType = HavokCollisionType.Low;
             }
             UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.\nMap must be reloaded after change to see difference.");
-            UIHelper.ShowActiveStatus(CollisionManager.VisibleCollisionType == HavokCollisionType.Low);
+            UIHelper.ShowActiveStatus(HavokCollisionBank.VisibleCollisionType == HavokCollisionType.Low);
 
             if (ImGui.MenuItem("High"))
             {
-                CollisionManager.VisibleCollisionType = HavokCollisionType.High;
+                HavokCollisionBank.VisibleCollisionType = HavokCollisionType.High;
             }
             UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.\nMap must be reloaded after change to see difference.");
-            UIHelper.ShowActiveStatus(CollisionManager.VisibleCollisionType == HavokCollisionType.High);
+            UIHelper.ShowActiveStatus(HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
 
             ImGui.EndMenu();
         }

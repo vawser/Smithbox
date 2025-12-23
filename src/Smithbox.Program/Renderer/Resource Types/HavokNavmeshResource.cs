@@ -56,9 +56,9 @@ public class HavokNavmeshResource : IResource, IDisposable
                 var pathElements = virtPath.Split('/');
                 var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
 
-                if (curProject.MapEditor.HavokNavmeshManager.HKX3_Containers.ContainsKey(filename))
+                if (curProject.MapEditor.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
                 {
-                    Root_HKX3 = curProject.MapEditor.HavokNavmeshManager.HKX3_Containers[filename];
+                    Root_HKX3 = curProject.MapEditor.HavokNavmeshBank.HKX3_Containers[filename];
                 }
                 else
                 {
@@ -90,9 +90,9 @@ public class HavokNavmeshResource : IResource, IDisposable
                     var pathElements = virtPath.Split('/');
                     var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
 
-                    if (curProject.MapEditor.HavokNavmeshManager.HKX3_Containers.ContainsKey(filename))
+                    if (curProject.MapEditor.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
                     {
-                        Root_HKX3 = curProject.MapEditor.HavokNavmeshManager.HKX3_Containers[filename];
+                        Root_HKX3 = curProject.MapEditor.HavokNavmeshBank.HKX3_Containers[filename];
                     }
                     else
                     {

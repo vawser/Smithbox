@@ -37,6 +37,12 @@ public class MapContainer : ObjectContainer
     public Entity AutoInvadeParent = null;
 
     [XmlIgnore]
+    public List<Entity> LightAtlasParents;
+
+    [XmlIgnore]
+    public List<Entity> LightProbeParents;
+
+    [XmlIgnore]
     public Entity NavmeshParent = null;
 
     public Entity MapOffsetNode { get; set; }
@@ -57,6 +63,8 @@ public class MapContainer : ObjectContainer
         LoadedModels = new();
 
         BTLParents = new();
+        LightAtlasParents = new();
+        LightProbeParents = new();
 
         Parts = new();
         Events = new();
@@ -203,6 +211,52 @@ public class MapContainer : ObjectContainer
         }
 
         AutoInvadeParent = autoInvadeParent;
+    }
+
+    public void LoadBTAB(string mapName, BTAB btab)
+    {
+        var lightAtlasParent = new MsbEntity(Editor, this, mapName, MsbEntityType.Editor);
+
+        MapOffsetNode.AddChild(lightAtlasParent);
+
+        foreach (var entry in btab.Entries)
+        {
+            var newEntity = new MsbEntity(Editor, this, entry, MsbEntityType.LightAtlasEntry);
+
+            newEntity.SupportsName = false;
+
+            Objects.Add(newEntity);
+            lightAtlasParent.AddChild(newEntity);
+        }
+
+        LightAtlasParents.Add(lightAtlasParent);
+    }
+
+    public void LoadBTPB(string mapName, BTPB btpb)
+    {
+        var lightProbeParent = new MsbEntity(Editor, this, mapName, MsbEntityType.Editor);
+
+        MapOffsetNode.AddChild(lightProbeParent);
+
+        foreach (var volume in btpb.Groups)
+        {
+            var newEntity = new MsbEntity(Editor, this, volume, MsbEntityType.LightProbeVolume);
+            newEntity.SupportsName = false;
+
+            Objects.Add(newEntity);
+            lightProbeParent.AddChild(newEntity);
+
+            foreach(var probe in volume.Probes)
+            {
+                var newProbe = new MsbEntity(Editor, this, probe, MsbEntityType.LightProbePoint);
+                newProbe.SupportsName = false;
+
+                Objects.Add(newProbe);
+                newEntity.AddChild(newProbe);
+            }
+        }
+
+        LightProbeParents.Add(lightProbeParent);
     }
 
     public void LoadHavokNVA(string mapName, NVA nva)

@@ -10,14 +10,14 @@ using static SoulsFormats.AIP;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class AutoInvadeManager
+public class AutoInvadeBank
 {
     public MapEditorScreen Editor;
     public ProjectEntry Project;
 
     public Dictionary<string, AIP> Files = new();
 
-    public AutoInvadeManager(MapEditorScreen editor, ProjectEntry project)
+    public AutoInvadeBank(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
@@ -156,33 +156,4 @@ public class AutoInvadeManager
             }
         }
     }
-
-    public Quaternion FromEulerDegrees(float pitchDeg, float yawDeg, float rollDeg)
-    {
-        float pitch = MathF.PI / 180f * pitchDeg;
-        float yaw = MathF.PI / 180f * yawDeg;
-        float roll = MathF.PI / 180f * rollDeg;
-
-        float cy = MathF.Cos(yaw * 0.5f);
-        float sy = MathF.Sin(yaw * 0.5f);
-        float cp = MathF.Cos(pitch * 0.5f);
-        float sp = MathF.Sin(pitch * 0.5f);
-        float cr = MathF.Cos(roll * 0.5f);
-        float sr = MathF.Sin(roll * 0.5f);
-
-        Quaternion q;
-        q.W = cr * cp * cy + sr * sp * sy;
-        q.X = sr * cp * cy - cr * sp * sy;
-        q.Y = cr * sp * cy + sr * cp * sy;
-        q.Z = cr * cp * sy - sr * sp * cy;
-
-        return q;
-    }
-
-    public void OnUnloadMap(string mapId)
-    {
-        if (Project.ProjectType != ProjectType.ER)
-            return;
-    }
-
 }

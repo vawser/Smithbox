@@ -108,6 +108,18 @@ public class BasicFilters
             UIHelper.Tooltip($"Toggle the display of map objects classified as 'Invasion Points'.");
         }
 
+        // Light Probe
+        if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        {
+            if (ImGui.MenuItem("Light Probes"))
+            {
+                RenderScene.ToggleDrawFilter(RenderFilter.LightProbe);
+            }
+            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.LightProbe);
+            UIHelper.ShowActiveStatus(ticked);
+            UIHelper.Tooltip($"Toggle the display of map objects classified as 'Light Probes'.");
+        }
+
         // Debug
         //if (ImGui.MenuItem("Debug"))
         //{

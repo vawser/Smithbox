@@ -91,13 +91,26 @@ public class MapEntityTypeCache
         }
 
         // External: AIP
-        if (Editor.AutoInvadeManager.CanUse())
+        if (Editor.AutoInvadeBank.CanUse())
         {
             mapcache.Add(MsbEntityType.AutoInvadePoint, new Dictionary<Type, List<MsbEntity>>());
         }
 
+        // External: BTAB
+        if (Editor.LightAtlasBank.CanUse())
+        {
+            mapcache.Add(MsbEntityType.LightAtlasEntry, new Dictionary<Type, List<MsbEntity>>());
+        }
+
+        // External: BTPB
+        if (Editor.LightProbeBank.CanUse())
+        {
+            mapcache.Add(MsbEntityType.LightProbeVolume, new Dictionary<Type, List<MsbEntity>>());
+            mapcache.Add(MsbEntityType.LightProbePoint, new Dictionary<Type, List<MsbEntity>>());
+        }
+
         // External: NVA
-        if (Editor.HavokNavmeshManager.CanUse())
+        if (Editor.HavokNavmeshBank.CanUse())
         {
             mapcache.Add(MsbEntityType.Navmesh, new Dictionary<Type, List<MsbEntity>>());
         }

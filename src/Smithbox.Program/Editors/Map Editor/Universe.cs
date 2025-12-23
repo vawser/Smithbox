@@ -109,9 +109,8 @@ public class Universe
 
                 Editor.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
 
-                Editor.CollisionManager.OnUnloadMap(curMapID);
-                Editor.AutoInvadeManager.OnUnloadMap(curMapID);
-                Editor.HavokNavmeshManager.OnUnloadMap(curMapID);
+                Editor.HavokCollisionBank.OnUnloadMap(curMapID);
+                Editor.HavokNavmeshBank.OnUnloadMap(curMapID);
 
                 if (Editor.Selection.SelectedMapContainer == wrapper.MapContainer)
                 {
@@ -150,8 +149,8 @@ public class Universe
 
         if (!fastLoad)
         {
-            Editor.CollisionManager.OnLoadMap(mapid);
-            Editor.HavokNavmeshManager.OnLoadMap(mapid);
+            Editor.HavokCollisionBank.OnLoadMap(mapid);
+            Editor.HavokNavmeshBank.OnLoadMap(mapid);
         }
 
         try
@@ -187,8 +186,12 @@ public class Universe
                 }
 
                 LoadLights(newMap);
-                Editor.AutoInvadeManager.LoadAIP(newMap);
-                Editor.HavokNavmeshManager.LoadHavokNVA(newMap, resourceHandler);
+
+                Editor.AutoInvadeBank.LoadAIP(newMap);
+                Editor.LightAtlasBank.LoadBTAB(newMap);
+                Editor.LightProbeBank.LoadBTPB(newMap);
+
+                Editor.HavokNavmeshBank.LoadHavokNVA(newMap, resourceHandler);
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
@@ -374,8 +377,12 @@ public class Universe
     public void SaveMap(MapContainer map)
     {
         SaveBTL(Editor, map);
-        Editor.AutoInvadeManager.SaveAIP(Editor, map);
-        Editor.HavokNavmeshManager.SaveHavokNVA(Editor, map);
+
+        Editor.AutoInvadeBank.SaveAIP(Editor, map);
+        Editor.LightAtlasBank.SaveBTAB(Editor, map);
+        Editor.LightProbeBank.SaveBTPB(Editor, map);
+
+        Editor.HavokNavmeshBank.SaveHavokNVA(Editor, map);
 
         try
         {

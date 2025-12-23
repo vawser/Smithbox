@@ -15,7 +15,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class HavokCollisionManager
+public class HavokCollisionBank
 {
     public EditorScreen Editor;
     public ProjectEntry Project;
@@ -24,7 +24,7 @@ public class HavokCollisionManager
 
     public HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
 
-    public HavokCollisionManager(EditorScreen editor, ProjectEntry project)
+    public HavokCollisionBank(EditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;

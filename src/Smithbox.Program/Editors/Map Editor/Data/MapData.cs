@@ -32,13 +32,14 @@ public class MapData
     public FileDictionary LightFiles = new();
     public FileDictionary DS2_LightFiles = new();
     public FileDictionary NavmeshFiles = new();
-    public FileDictionary LightAtlasFiles = new();
     public FileDictionary CollisionFiles = new();
 
     public FileDictionary AutoInvadeBinders = new();
 
-    public Dictionary<string, MapObjectNameMapEntry> MapObjectNameLists = new();
+    public FileDictionary LightAtlasFiles = new();
+    public FileDictionary LightProbeFiles = new();
 
+    public Dictionary<string, MapObjectNameMapEntry> MapObjectNameLists = new();
     public FormatResource MsbInformation;
     public FormatEnum MsbEnums;
     public FormatMask MsbMasks;
@@ -160,12 +161,6 @@ public class MapData
             .Where(e => e.Extension == "nva")
             .ToList();
 
-        // BTAB
-        LightAtlasFiles.Entries = Project.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "btab")
-            .ToList();
-
         // Collision
         CollisionFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
@@ -176,6 +171,18 @@ public class MapData
         AutoInvadeBinders.Entries = Project.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/other"))
             .Where(e => e.Extension == "aipbnd")
+            .ToList();
+
+        // Light Atlases
+        LightAtlasFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Folder.StartsWith("/map"))
+            .Where(e => e.Extension == "btab")
+            .ToList();
+
+        // Light Probes
+        LightProbeFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Folder.StartsWith("/map"))
+            .Where(e => e.Extension == "btpb")
             .ToList();
     }
 

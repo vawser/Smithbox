@@ -42,6 +42,7 @@ public static class RenderableHelper
     private static DbgPrimTree _modelMarkerBush;
 
     private static DbgPrimWireSphere _autoInvadeSphere;
+    private static DbgPrimWireSphere _lightProbe;
 
     public static DbgPrimSolidSphere _placementOrb;
 
@@ -241,6 +242,14 @@ public static class RenderableHelper
             Transform.Default,
             0.1f,
             Color.Blue);
+
+        // LIGHT PROBE
+        _lightProbe = new DbgPrimWireSphere(
+            Transform.Default,
+            0.1f,
+            Color.Yellow,
+            2,
+            2);
     }
 
     public static void UpdateProxySizes()
@@ -639,6 +648,22 @@ public static class RenderableHelper
         var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
+
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+
+    // LIGHT PROBE SPHERE REGION
+    public static DebugPrimitiveRenderableProxy GetLightProbeSphereProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.GFX_Renderable_LightProbeSphere_BaseColor;
+        var highlightColor = CFG.Current.GFX_Renderable_LightProbeSphere_HighlightColor;
+        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _lightProbe);
 
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);

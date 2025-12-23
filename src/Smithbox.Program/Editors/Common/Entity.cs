@@ -2002,6 +2002,15 @@ public class MsbEntity : Entity
 
                 _renderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
             }
+            else if (Type == MsbEntityType.LightProbePoint && _renderSceneMesh == null)
+            {
+                if (_renderSceneMesh != null)
+                {
+                    _renderSceneMesh.Dispose();
+                }
+
+                _renderSceneMesh = DrawableHelper.GetLightProbeDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
+            }
             else
             {
                 PropertyInfo modelProp = GetProperty("ModelName");
@@ -2195,6 +2204,11 @@ public class MsbEntity : Entity
             }
         }
         else if (Type == MsbEntityType.AutoInvadePoint)
+        {
+            // t.Position = (Vector3)GetPropertyValue("Position");
+            // TODO: rotation
+        }
+        else if (Type == MsbEntityType.LightProbePoint)
         {
             // t.Position = (Vector3)GetPropertyValue("Position");
             // TODO: rotation

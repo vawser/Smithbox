@@ -119,7 +119,7 @@ public class MapResourceHandler
                         LoadList_Navmesh.Add(modelAsset);
                 }
             }
-            else if (Editor.HavokNavmeshManager.CanUse())
+            else if (Editor.HavokNavmeshBank.CanUse())
             {
                 ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(Editor.Project, AdjustedMapID);
 

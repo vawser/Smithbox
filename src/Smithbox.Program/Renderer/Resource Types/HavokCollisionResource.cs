@@ -42,7 +42,7 @@ public class HavokCollisionResource : IResource, IDisposable
                 var pathElements = virtPath.Split('/');
                 var filename = pathElements[4];
 
-                if (curProject.MapEditor.CollisionManager.VisibleCollisionType is HavokCollisionType.High)
+                if (curProject.MapEditor.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.High)
                 {
                     filename = $"h{filename.Substring(1)}";
                 }
@@ -50,9 +50,9 @@ public class HavokCollisionResource : IResource, IDisposable
                 // HKX for ER is loaded directly in HavokCollisionManager
                 // This is required since the parallel nature of the
                 // Resource Manager doesn't work with the HavokBinarySerializer
-                if (curProject.MapEditor.CollisionManager.HavokContainers.ContainsKey(filename))
+                if (curProject.MapEditor.HavokCollisionBank.HavokContainers.ContainsKey(filename))
                 {
-                    ER_HKX = curProject.MapEditor.CollisionManager.HavokContainers[filename];
+                    ER_HKX = curProject.MapEditor.HavokCollisionBank.HavokContainers[filename];
                 }
                 else
                 {
@@ -125,7 +125,7 @@ public class HavokCollisionResource : IResource, IDisposable
                     // HKX for ER is loaded directly in HavokCollisionManager
                     // This is required since the parallel nature of the
                     // Resource Manager doesn't work with the HavokBinarySerializer
-                    return curProject.MapEditor.CollisionManager.HavokContainers.TryGetValue(filename, out ER_HKX);
+                    return curProject.MapEditor.HavokCollisionBank.HavokContainers.TryGetValue(filename, out ER_HKX);
                 }
                 // Fallback for map collision
                 else
@@ -135,9 +135,9 @@ public class HavokCollisionResource : IResource, IDisposable
                     // HKX for ER is loaded directly in HavokCollisionManager
                     // This is required since the parallel nature of the
                     // Resource Manager doesn't work with the HavokBinarySerializer
-                    if (curProject.MapEditor.CollisionManager.HavokContainers.ContainsKey(filename))
+                    if (curProject.MapEditor.HavokCollisionBank.HavokContainers.ContainsKey(filename))
                     {
-                        ER_HKX = curProject.MapEditor.CollisionManager.HavokContainers[filename];
+                        ER_HKX = curProject.MapEditor.HavokCollisionBank.HavokContainers[filename];
                     }
                     else
                     {
@@ -960,13 +960,13 @@ public class HavokCollisionResource : IResource, IDisposable
 
                         if (bodyInfo.m_shape is HKLib.hk2018.fsnpCustomParamCompressedMeshShape shape2)
                         {
-                            (mesh, vertices, indices) = HavokCollisionManager.ProcessColData(
+                            (mesh, vertices, indices) = HavokCollisionBank.ProcessColData(
                                 (HKLib.hk2018.hknpCompressedMeshShapeData)shape2.m_data, bodyInfo, mesh);
                             RenderHKX2018(mesh, vertices, indices);
                         }
                         else if (bodyInfo.m_shape is HKLib.hk2018.hknpCompressedMeshShape shape1)
                         {
-                            (mesh, vertices, indices) = HavokCollisionManager.ProcessColData(
+                            (mesh, vertices, indices) = HavokCollisionBank.ProcessColData(
                                 (HKLib.hk2018.hknpCompressedMeshShapeData)shape1.m_data, bodyInfo, mesh);
                             RenderHKX2018(mesh, vertices, indices);
                         }

@@ -218,7 +218,7 @@ public static class ModelEditorUtils
                     {
                         containerType = ResourceContainerType.BND;
                     }
-                    else if (project.MapEditor != null && project.MapEditor.HavokNavmeshManager.CanUse())
+                    else if (project.MapEditor != null && project.MapEditor.HavokNavmeshBank.CanUse())
                     {
                         containerType = ResourceContainerType.BND;
                     }

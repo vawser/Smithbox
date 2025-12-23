@@ -384,6 +384,24 @@ public static class DrawableHelper
     }
 
     /// <summary>
+    /// The drawable proxies for a LightProbe map object
+    /// </summary>
+    public static RenderableProxy GetLightProbeDrawable(RenderScene scene, MapContainer map, Entity obj, RenderModelType renderType)
+    {
+        var lightProbe = (BTPB.Probe)obj.WrappedObject;
+
+        DebugPrimitiveRenderableProxy mesh = null;
+
+        mesh = RenderableHelper.GetLightProbeSphereProxy(scene);
+
+        mesh.World = obj.GetWorldMatrix();
+        mesh.SetSelectable(obj);
+        mesh.DrawFilter = RenderFilter.LightProbe;
+
+        return mesh;
+    }
+
+    /// <summary>
     /// The drawable proxies for a DS2 EventLocation map object
     /// </summary>
     public static RenderableProxy GetDS2EventLocationDrawable(RenderScene scene, MapContainer map, Entity obj)
