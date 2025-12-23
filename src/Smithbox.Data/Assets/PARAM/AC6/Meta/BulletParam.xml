@@ -198,7 +198,7 @@
     <HitBulletID 
     AltName="Hit Bullet ID" 
     Wiki="The bullet to generate when the projectile expires, or conditionally according to some launchConditionType values." 
-    Refs="Bullet" 
+    Refs="Bullet,Bullet_Npc" 
     DeepCopyTarget="Bullet" />
     
     <spEffectId0 
@@ -454,7 +454,7 @@
     <intervalCreateBulletId  
     AltName="Interval Emitter: Bullet ID" 
     Wiki="Bullet ID used when creating bullets at regular intervals" 
-    Refs="Bullet" 
+    Refs="Bullet,Bullet_Npc" 
     DeepCopyTarget="Bullet" />
     
     <intervalCreateTimeMin 
