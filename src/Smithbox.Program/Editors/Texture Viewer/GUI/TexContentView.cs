@@ -4,12 +4,12 @@ using StudioCore.Renderer;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexTextureView
+public class TexContentView
 {
     public TextureViewerScreen Editor;
     public ProjectEntry Project;
 
-    public TexTextureView(TextureViewerScreen editor, ProjectEntry project)
+    public TexContentView(TextureViewerScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;

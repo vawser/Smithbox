@@ -349,19 +349,19 @@ public class GparamPropertyEditor
                 _heldColor = (Vector4)oldValue;
             }
 
-            var flags = ImGuiColorEditFlags.None;
+            var flags = ImGuiColorEditFlags.AlphaOpaque;
 
             if (CFG.Current.Gparam_ColorEdit_RGB)
             {
-                flags = ImGuiColorEditFlags.DisplayRgb;
+                flags = flags | ImGuiColorEditFlags.DisplayRgb;
             }
             if (CFG.Current.Gparam_ColorEdit_Decimal)
             {
-                flags = ImGuiColorEditFlags.Float;
+                flags = flags | ImGuiColorEditFlags.Float;
             }
             if (CFG.Current.Gparam_ColorEdit_HSV)
             {
-                flags = ImGuiColorEditFlags.DisplayHsv;
+                flags = flags | ImGuiColorEditFlags.DisplayHsv;
             }
 
             if (ImGui.ColorEdit4($"##value{idx}", ref colorInput, flags))
@@ -388,7 +388,9 @@ public class GparamPropertyEditor
             Vector4 colorInput = fieldValue;
             oldValue = fieldValue;
 
-            if (ImGui.ColorEdit4($"##value{idx}", ref colorInput))
+            var flags = ImGuiColorEditFlags.AlphaOpaque;
+
+            if (ImGui.ColorEdit4($"##value{idx}", ref colorInput, flags))
             {
                 Color trueColorInput = Color.FromArgb(
                     (int)(colorInput.W * 255.0f),

@@ -3,12 +3,12 @@ using StudioCore.Application;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexTpfView
+public class TexSelectView
 {
     public TextureViewerScreen Editor;
     public ProjectEntry Project;
 
-    public TexTpfView(TextureViewerScreen editor, ProjectEntry project)
+    public TexSelectView(TextureViewerScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;

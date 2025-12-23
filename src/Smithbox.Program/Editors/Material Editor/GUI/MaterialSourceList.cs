@@ -8,12 +8,12 @@ namespace StudioCore.Editors.MaterialEditor;
 /// <summary>
 /// The list of binders for the source type.
 /// </summary>
-public class MaterialBinderList
+public class MaterialSourceList
 {
     public MaterialEditorScreen Editor;
     public ProjectEntry Project;
 
-    public MaterialBinderList(MaterialEditorScreen editor, ProjectEntry project)
+    public MaterialSourceList(MaterialEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
@@ -24,31 +24,38 @@ public class MaterialBinderList
         if (Project.MaterialData.PrimaryBank == null)
             return;
 
-        // Source Type
-        if (MaterialUtils.SupportsMATBIN(Project))
-        {
-            if (ImGui.BeginCombo("##sourceTypeCombo", Editor.Selection.SourceType.GetDisplayName()))
-            {
-                if (ImGui.Selectable("MTD"))
-                {
-                    Editor.Selection.SourceType = MaterialSourceType.MTD;
-                }
+        ImGui.BeginTabBar("sourceTabs");
 
-                if (ImGui.Selectable("MATBIN"))
-                {
-                    Editor.Selection.SourceType = MaterialSourceType.MATBIN;
-                }
-                ImGui.EndCombo();
-            }
-        }
-        else
+
+        if (ImGui.BeginTabItem($"MTD"))
         {
             Editor.Selection.SourceType = MaterialSourceType.MTD;
+
+            Editor.Filters.DisplayBinderFilterSearch();
+
+            DisplayMtdList();
+
+            ImGui.EndTabItem();
         }
 
-        Editor.Filters.DisplayBinderFilterSearch();
 
-        ImGui.BeginChild("BinderList");
+        if (ImGui.BeginTabItem($"MATBIN"))
+        {
+            Editor.Selection.SourceType = MaterialSourceType.MATBIN;
+
+            Editor.Filters.DisplayBinderFilterSearch();
+
+            DisplayMatbinList();
+
+            ImGui.EndTabItem();
+        }
+
+        ImGui.EndTabBar();
+    }
+
+    public void DisplayMtdList()
+    {
+        ImGui.BeginChild("mtdListSection");
 
         if (Editor.Selection.SourceType is MaterialSourceType.MTD)
         {
@@ -92,6 +99,13 @@ public class MaterialBinderList
                 clipper.End();
             }
         }
+
+        ImGui.EndChild();
+    }
+
+    public void DisplayMatbinList()
+    {
+        ImGui.BeginChild("mtdListSection");
 
         if (MaterialUtils.SupportsMATBIN(Project))
         {

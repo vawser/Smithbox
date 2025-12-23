@@ -870,7 +870,10 @@ public class ModelPropertyView
                 {
                     var color = (Color)oldval;
                     Vector4 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
-                    if (ImGui.ColorEdit4("##value", ref val))
+
+                    var flags = ImGuiColorEditFlags.AlphaOpaque;
+
+                    if (ImGui.ColorEdit4("##value", ref val, flags))
                     {
                         Color newColor = Color.FromArgb((int)(val.W * 255.0f), (int)(val.X * 255.0f),
                             (int)(val.Y * 255.0f), (int)(val.Z * 255.0f));
@@ -888,7 +891,10 @@ public class ModelPropertyView
 
                 var color = (Color)oldval;
                 Vector4 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
-                if (ImGui.ColorEdit4("##value", ref val))
+
+                var flags = ImGuiColorEditFlags.AlphaOpaque;
+
+                if (ImGui.ColorEdit4("##value", ref val, flags))
                 {
                     Color newColor = Color.FromArgb((int)(val.W * 255.0f), (int)(val.X * 255.0f),
                         (int)(val.Y * 255.0f), (int)(val.Z * 255.0f));

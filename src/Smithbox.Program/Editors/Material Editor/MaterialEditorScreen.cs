@@ -18,7 +18,7 @@ public class MaterialEditorScreen : EditorScreen
     public MaterialSelection Selection;
     public MaterialFilters Filters;
 
-    public MaterialBinderList BinderList;
+    public MaterialSourceList BinderList;
     public MaterialFileList FileList;
 
     public MaterialMTDView MTDView;

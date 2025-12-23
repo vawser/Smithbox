@@ -31,17 +31,28 @@ public class FileListView
             return;
         }
 
-        // VFS
         BuildFolderNodes();
-        DisplayVFS();
 
-        // File Roots
-#if DEBUG
-        foreach (var root in Project.FileData.Roots)
+        ImGui.BeginTabBar("sourceTabs");
+
+        if (ImGui.BeginTabItem($"VFS"))
         {
-            Traverse(root, $"File Browser");
+            DisplayVFS();
+
+            ImGui.EndTabItem();
         }
-#endif
+
+        //foreach (var root in Project.FileData.Roots)
+        //{
+        //    if (ImGui.BeginTabItem($"{root.Name}"))
+        //    {
+        //        Traverse(root, $"File Browser");
+
+        //        ImGui.EndTabItem();
+        //    }
+        //}
+
+        ImGui.EndTabBar();
 
         ImGui.End();
     }
@@ -63,8 +74,8 @@ public class FileListView
         string id = $"{parentIdStr}##{e.Name}";
         var flags = ImGuiTreeNodeFlags.OpenOnDoubleClick;
 
-        if (e is VirtualFileSystemFsEntry)
-            flags |= ImGuiTreeNodeFlags.CollapsingHeader;
+        //if (e is VirtualFileSystemFsEntry)
+        //    flags |= ImGuiTreeNodeFlags.CollapsingHeader;
 
         if (!e.CanHaveChildren)
             flags |= ImGuiTreeNodeFlags.Leaf;
@@ -184,19 +195,15 @@ public class FileListView
 
     private void DisplayVFS()
     {
-        if (ImGui.CollapsingHeader("VFS", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.InputTextWithHint(
-                "##FileSearch",
-                "Search files...",
-                ref _search,
-                256
-            );
+        ImGui.InputText("Search##FileSearch",  ref _search, 256);
 
-            if (BuiltFolderNodes)
-            {
-                DrawFolderNode(_root);
-            }
+        if (BuiltFolderNodes)
+        {
+            ImGui.BeginChild($"vfsList");
+
+            DrawFolderNode(_root);
+
+            ImGui.EndChild();
         }
     }
 

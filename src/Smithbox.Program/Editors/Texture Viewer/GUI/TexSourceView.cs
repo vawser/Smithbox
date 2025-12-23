@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexBinderView
+public class TexSourceView
 {
     public TextureViewerScreen Editor;
     public ProjectEntry Project;
 
-    public TexBinderView(TextureViewerScreen editor, ProjectEntry project)
+    public TexSourceView(TextureViewerScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
@@ -24,12 +24,10 @@ public class TexBinderView
     public void Display()
     {
         ImGui.Begin("Files##TextureContainerList");
+
         Editor.Selection.SwitchWindowContext(TextureViewerContext.BinderList);
 
-        Editor.Filters.DisplayFileFilterSearch();
-
-        ImGui.BeginChild("TextureFileCategories");
-        Editor.Selection.SwitchWindowContext(TextureViewerContext.BinderList);
+        ImGui.BeginTabBar("sourceTabs");
 
         //DisplayDebugSection();
         DisplayFileCategories_DES();
@@ -42,7 +40,7 @@ public class TexBinderView
         DisplayFileCategories_AC6();
         DisplayFileCategories_NR();
 
-        ImGui.EndChild();
+        ImGui.EndTabBar();
 
         ImGui.End();
     }
@@ -54,8 +52,12 @@ public class TexBinderView
     /// </summary>
     private void DisplayFileSection(string title, TextureViewCategory displayCategory, List<string> pathFilter, Dictionary<FileDictionaryEntry, BinderContents> dict)
     {
-        if (ImGui.CollapsingHeader($"{title}"))
+        if (ImGui.BeginTabItem($"{title}"))
         {
+            Editor.Filters.DisplayFileFilterSearch();
+
+            ImGui.BeginChild($"texSourceList_{title}");
+
             var filteredEntries = new Dictionary<FileDictionaryEntry, BinderContents>();
 
             // Helper to get alias with caching
@@ -174,6 +176,9 @@ public class TexBinderView
             }
 
             clipper.End();
+
+            ImGui.EndChild();
+            ImGui.EndTabItem();
         }
     }
 

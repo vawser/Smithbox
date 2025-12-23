@@ -19,17 +19,16 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public TexFilters Filters;
     public TexCommandQueue CommandQueue;
 
-    public TexToolView ToolWindow;
-
     public TexTools Tools;
 
     public TexImagePreview ImagePreview;
 
-    public TexBinderView BinderView;
-    public TexTpfView TpfView;
-    public TexTextureView TextureView;
+    public TexSourceView SourceView;
+    public TexSelectView TpfSelectView;
+    public TexContentView TpfContentView;
     public TexDisplayView DisplayView;
     public TexPropertyView PropertyView;
+    public TexToolView ToolWindow;
 
     public TextureViewerScreen(Smithbox baseEditor, ProjectEntry project)
     {
@@ -48,9 +47,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         ToolWindow = new TexToolView(this, Project);
 
-        BinderView = new TexBinderView(this, Project);
-        TpfView = new TexTpfView(this, Project);
-        TextureView = new TexTextureView(this, Project);
+        SourceView = new TexSourceView(this, Project);
+        TpfSelectView = new TexSelectView(this, Project);
+        TpfContentView = new TexContentView(this, Project);
         DisplayView = new TexDisplayView(this, Project);
         PropertyView = new TexPropertyView(this, Project);
     }
@@ -110,13 +109,13 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         if (CFG.Current.Interface_TextureViewer_Files)
         {
-            BinderView.Display();
+            SourceView.Display();
         }
         if (CFG.Current.Interface_TextureViewer_Textures)
         {
-            TpfView.Display();
+            TpfSelectView.Display();
 
-            TextureView.Display();
+            TpfContentView.Display();
         }
 
         if (CFG.Current.Interface_TextureViewer_Viewer)
@@ -133,8 +132,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             ToolWindow.Display();
         }
 
-        BinderView.Update();
-        TextureView.Update();
+        SourceView.Update();
+        TpfContentView.Update();
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
@@ -147,11 +146,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
             {
                 Save();
-            }
-
-            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
-            {
-                SaveAll();
             }
 
             ImGui.EndMenu();
@@ -246,14 +240,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     }
 
     public void Save()
-    {
-        // Nothing
-
-        // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
-    }
-
-    public void SaveAll()
     {
         // Nothing
 

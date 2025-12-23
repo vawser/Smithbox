@@ -119,7 +119,7 @@ public static class ProjectCreation
                     ImGui.TableSetColumnIndex(1);
 
                     DPI.ApplyInputWidth();
-                    ImGui.InputText("##projectNameInput", ref ProjectName, 255);
+                    ImGui.InputTextWithHint("##projectNameInput", "The name of your project.", ref ProjectName, 255);
 
                     ImGui.TableSetColumnIndex(2);
 
@@ -201,7 +201,7 @@ public static class ProjectCreation
                     ImGui.TableSetColumnIndex(1);
 
                     DPI.ApplyInputWidth();
-                    ImGui.InputText("##projectPathInput", ref ProjectPath, 255);
+                    ImGui.InputTextWithHint("##projectPathInput", "The folder directory that your project is stored in.", ref ProjectPath, 255);
 
                     ImGui.TableSetColumnIndex(2);
 
@@ -254,7 +254,7 @@ public static class ProjectCreation
                     ImGui.TableSetColumnIndex(1);
 
                     DPI.ApplyInputWidth();
-                    ImGui.InputText("##dataPathInput", ref DataPath, 255);
+                    ImGui.InputTextWithHint("##dataPathInput", "The folder directory the game data is stored in.", ref DataPath, 255);
 
                     ImGui.TableSetColumnIndex(2);
 
@@ -323,7 +323,7 @@ public static class ProjectCreation
                     ImGui.TableSetColumnIndex(1);
 
                     DPI.ApplyInputWidth();
-                    ImGui.InputText("##folderTagInput", ref FolderTag, 255);
+                    ImGui.InputTextWithHint("##folderTagInput", "A tag to associate this project with.", ref FolderTag, 255);
 
                     ImGui.TableSetColumnIndex(2);
 

@@ -24,6 +24,7 @@ public class TexFilters
     public void DisplayFileFilterSearch()
     {
         ImGui.InputText($"Search##textureFileFilterSearch", ref FileFilterSearchStr, 255);
+
         UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 
