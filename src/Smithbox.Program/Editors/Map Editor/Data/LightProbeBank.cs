@@ -69,15 +69,16 @@ public class LightProbeBank
             // File will be: m30_00_00_00_0001, so we match loosely
             if (entry.Key.Contains(map.Name))
             {
-                var btab = entry.Value;
+                var btpb = entry.Value;
 
-                if (btab != null)
+                if (btpb != null)
                 {
-                    map.LoadBTPB(map.Name, btab);
+                    map.LoadBTPB(entry.Key, btpb);
                 }
             }
         }
     }
+
     public void SaveBTPB(MapEditorScreen editor, MapContainer map)
     {
         if (!CanUse())

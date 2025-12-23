@@ -213,16 +213,15 @@ public class MapContainer : ObjectContainer
         AutoInvadeParent = autoInvadeParent;
     }
 
-    public void LoadBTAB(string mapName, BTAB btab)
+    public void LoadBTAB(string fileName, BTAB btab)
     {
-        var lightAtlasParent = new MsbEntity(Editor, this, mapName, MsbEntityType.Editor);
+        var lightAtlasParent = new MsbEntity(Editor, this, fileName, MsbEntityType.Editor);
 
         MapOffsetNode.AddChild(lightAtlasParent);
 
         foreach (var entry in btab.Entries)
         {
-            var newEntity = new MsbEntity(Editor, this, entry, MsbEntityType.LightAtlasEntry);
-
+            var newEntity = new MsbEntity(Editor, this, entry, MsbEntityType.LightAtlas);
             newEntity.SupportsName = false;
 
             Objects.Add(newEntity);
@@ -232,9 +231,9 @@ public class MapContainer : ObjectContainer
         LightAtlasParents.Add(lightAtlasParent);
     }
 
-    public void LoadBTPB(string mapName, BTPB btpb)
+    public void LoadBTPB(string fileName, BTPB btpb)
     {
-        var lightProbeParent = new MsbEntity(Editor, this, mapName, MsbEntityType.Editor);
+        var lightProbeParent = new MsbEntity(Editor, this, fileName, MsbEntityType.Editor);
 
         MapOffsetNode.AddChild(lightProbeParent);
 
@@ -245,15 +244,6 @@ public class MapContainer : ObjectContainer
 
             Objects.Add(newEntity);
             lightProbeParent.AddChild(newEntity);
-
-            foreach(var probe in volume.Probes)
-            {
-                var newProbe = new MsbEntity(Editor, this, probe, MsbEntityType.LightProbePoint);
-                newProbe.SupportsName = false;
-
-                Objects.Add(newProbe);
-                newEntity.AddChild(newProbe);
-            }
         }
 
         LightProbeParents.Add(lightProbeParent);

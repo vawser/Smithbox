@@ -83,6 +83,16 @@ public class CloneMapObjectsAction : ViewportAction
                 // actions that follow this may reference the previously cloned object
                 MsbEntity newobj = clonesCached ? Clones[i] : (MsbEntity)Clonables[i].Clone();
 
+                // Persist the supports name bool so duplicates don't show null names when the source ent has it set to false
+                if(!clonesCached && !Clonables[i].SupportsName)
+                {
+                    newobj.SupportsName = false;
+                }
+                else if(clonesCached && !Clones[i].SupportsName)
+                {
+                    newobj.SupportsName = false;
+                }
+
                 // Use pattern matching to attempt renames based on appended ID
                 Match idmatch = TrailIDRegex.Match(Clonables[i].Name);
                 if (idmatch.Success)

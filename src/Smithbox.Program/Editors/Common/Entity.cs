@@ -687,11 +687,16 @@ public class Entity : ISelectable, IDisposable
                 // Iterate through each property
                 foreach (PropertyInfo p in props)
                 {
+                    var valid = false;
+
                     // [MSBReference] attribute in the MSB formats
                     var att = p.GetCustomAttribute<MSBReference>();
 
-                    // If this property has the [MSBReference] attribute
                     if (att != null)
+                        valid = true;
+
+                    // If this property has the [MSBReference] attribute
+                    if (valid)
                     {
                         string[] array;
                         var value = p.GetValue(WrappedObject);
@@ -2002,15 +2007,6 @@ public class MsbEntity : Entity
 
                 _renderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
             }
-            else if (Type == MsbEntityType.LightProbePoint && _renderSceneMesh == null)
-            {
-                if (_renderSceneMesh != null)
-                {
-                    _renderSceneMesh.Dispose();
-                }
-
-                _renderSceneMesh = DrawableHelper.GetLightProbeDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
-            }
             else
             {
                 PropertyInfo modelProp = GetProperty("ModelName");
@@ -2202,16 +2198,6 @@ public class MsbEntity : Entity
                     t.Scale = new Vector3(rad);
                 }
             }
-        }
-        else if (Type == MsbEntityType.AutoInvadePoint)
-        {
-            // t.Position = (Vector3)GetPropertyValue("Position");
-            // TODO: rotation
-        }
-        else if (Type == MsbEntityType.LightProbePoint)
-        {
-            // t.Position = (Vector3)GetPropertyValue("Position");
-            // TODO: rotation
         }
         // DS2 event regions
         else if (Type == MsbEntityType.DS2EventLocation)

@@ -99,14 +99,13 @@ public class MapEntityTypeCache
         // External: BTAB
         if (Editor.LightAtlasBank.CanUse())
         {
-            mapcache.Add(MsbEntityType.LightAtlasEntry, new Dictionary<Type, List<MsbEntity>>());
+            mapcache.Add(MsbEntityType.LightAtlas, new Dictionary<Type, List<MsbEntity>>());
         }
 
         // External: BTPB
         if (Editor.LightProbeBank.CanUse())
         {
             mapcache.Add(MsbEntityType.LightProbeVolume, new Dictionary<Type, List<MsbEntity>>());
-            mapcache.Add(MsbEntityType.LightProbePoint, new Dictionary<Type, List<MsbEntity>>());
         }
 
         // External: NVA

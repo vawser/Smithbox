@@ -414,7 +414,57 @@ public class MapContentView
 
                                             if (Editor.MapContentFilter.ContentFilter(map, curObj))
                                             {
-                                                MapObjectSelectable(map, curObj, true);
+                                                MapObjectSelectable(map, curObj, true, i);
+                                            }
+                                        }
+
+                                        ImGui.TreePop();
+                                    }
+                                }
+                            }
+                            else if (cats.Key == MsbEntityType.LightAtlas)
+                            {
+                                foreach (Entity parent in map.LightAtlasParents)
+                                {
+                                    var parentName = parent.WrappedObject;
+
+                                    if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
+                                            treeflags))
+                                    {
+                                        for (int i = 0; i < parent.Children.Count; i++)
+                                        {
+                                            var curObj = parent.Children[i];
+
+                                            AliasHelper.UpdateEntityAliasName(Editor.Project, curObj);
+
+                                            if (Editor.MapContentFilter.ContentFilter(map, curObj))
+                                            {
+                                                MapObjectSelectable(map, curObj, true, i);
+                                            }
+                                        }
+
+                                        ImGui.TreePop();
+                                    }
+                                }
+                            }
+                            else if (cats.Key == MsbEntityType.LightProbeVolume)
+                            {
+                                foreach (Entity parent in map.LightProbeParents)
+                                {
+                                    var parentName = parent.WrappedObject;
+
+                                    if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
+                                            treeflags))
+                                    {
+                                        for (int i = 0; i < parent.Children.Count; i++)
+                                        {
+                                            var curObj = parent.Children[i];
+
+                                            AliasHelper.UpdateEntityAliasName(Editor.Project, curObj);
+
+                                            if (Editor.MapContentFilter.ContentFilter(map, curObj))
+                                            {
+                                                MapObjectSelectable(map, curObj, true, i);
                                             }
                                         }
 
@@ -564,7 +614,7 @@ public class MapContentView
 
             var displayName = key;
 
-            if (e.PrettyName != null && e.PrettyName != "null")
+            if (e.SupportsName && e.PrettyName != null && e.PrettyName != "null")
             {
                 if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is EntityNameDisplayType.Internal or EntityNameDisplayType.Internal_FMG or EntityNameDisplayType.Internal_Community)
                 {

@@ -70,11 +70,12 @@ public class LightAtlasBank
 
                 if (btab != null)
                 {
-                    map.LoadBTAB(map.Name, btab);
+                    map.LoadBTAB(entry.Key, btab);
                 }
             }
         }
     }
+
     public void SaveBTAB(MapEditorScreen editor, MapContainer map)
     {
         if (!CanUse())
