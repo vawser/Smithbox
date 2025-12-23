@@ -276,6 +276,9 @@ public class ResourceJobBuilder
     {
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
 
+        if (curProject == null)
+            return;
+
         foreach (KeyValuePair<string, IResourceHandle> r in ResourceManager.ResourceDatabase)
         {
             if (!r.Value.IsLoaded())

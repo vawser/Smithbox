@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.TextEditor;
@@ -216,6 +217,20 @@ public class SystemTab
             DPI.ApplyInputWidth();
             ImGui.InputText("ME2 DLL Entries##modEngineDllEntries", ref CFG.Current.ModEngine2Dlls, 255);
             UIHelper.Tooltip("The relative paths of the DLLs to include in the 'Launch Mod' action. Separate them by a space if using multiple.");
+
+
+            ImGui.Separator();
+
+            if (ImGui.Button("Clear Auto-Load##clearProjectAutoload", DPI.StandardButtonSize))
+            {
+                foreach (var project in BaseEditor.ProjectManager.Projects)
+                {
+                    project.AutoSelect = false;
+
+                    BaseEditor.ProjectManager.SaveProject(project);
+                }
+            }
+            UIHelper.Tooltip("Clear the project that has been set as primary, so no project is loaded on Smithbox start.");
         }
 
         if (ImGui.CollapsingHeader("Loggers"))

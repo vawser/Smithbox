@@ -51,7 +51,6 @@ public class ProjectManager
             {
                 ProjectCreation.Show();
             }
-
             UIHelper.Tooltip($"Add a new project to the project list.");
 
             UIHelper.SimpleHeader("selectedProjectHeader", "Selected Project",
