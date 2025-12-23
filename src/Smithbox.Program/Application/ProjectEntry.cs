@@ -147,12 +147,6 @@ public class ProjectEntry
     [JsonIgnore]
     public DateTime _nextAutoSaveTime = DateTime.MinValue;
 
-    public void UpdateAutoSaveInterval(int newInterval)
-    {
-        AutomaticSaveInterval = newInterval;
-        _nextAutoSaveTime = DateTime.UtcNow.AddSeconds(AutomaticSaveInterval);
-    }
-
     public ProjectEntry() { }
 
     public ProjectEntry(Smithbox baseEditor, Guid newGuid, string projectName, string projectPath, string dataPath, ProjectType projectType)
@@ -706,12 +700,21 @@ public class ProjectEntry
         // Auto-Save
         AutomaticSaveInterval = (int)CFG.Current.AutomaticSaveIntervalTime;
 
-        if (AutomaticSaveInterval > 0 && DateTime.UtcNow >= _nextAutoSaveTime)
+        // Do this so we don't auto-save at init
+        if (!AutomaticSaveSetup)
+        {
+            AutomaticSaveSetup = true;
+            _nextAutoSaveTime = DateTime.UtcNow.AddSeconds(AutomaticSaveInterval);
+        }
+        else if (AutomaticSaveInterval > 0 && DateTime.UtcNow >= _nextAutoSaveTime)
         {
             PerformAutoSave();
             _nextAutoSaveTime = DateTime.UtcNow.AddSeconds(AutomaticSaveInterval);
         }
     }
+
+    private bool AutomaticSaveSetup = false;
+
     private void PerformAutoSave()
     {
         if (CFG.Current.EnableAutomaticSave)
