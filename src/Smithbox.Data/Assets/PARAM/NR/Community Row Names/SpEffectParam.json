@@ -24922,7 +24922,7 @@
     {
       "ID": 14404,
       "Entries": [
-        ""
+        "[Skill - Revenant] Helen StateInfo 415"
       ]
     },
     {
@@ -25108,7 +25108,7 @@
     {
       "ID": 14449,
       "Entries": [
-        ""
+        "[Page] StateInfo 366"
       ]
     },
     {
@@ -37712,6 +37712,54 @@
       ]
     },
     {
+      "ID": 22150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 22207,
       "Entries": [
         ""
@@ -47194,73 +47242,73 @@
     {
       "ID": 49980,
       "Entries": [
-        ""
+        "[Scholar] Skin - Default"
       ]
     },
     {
       "ID": 49981,
       "Entries": [
-        ""
+        "[Scholar] Skin - Dawn"
       ]
     },
     {
       "ID": 49982,
       "Entries": [
-        ""
+        "[Scholar] Skin - Darkness"
       ]
     },
     {
       "ID": 49983,
       "Entries": [
-        ""
+        "[Scholar] Skin - Remembrance"
       ]
     },
     {
       "ID": 49984,
       "Entries": [
-        ""
+        "[Scholar] Skin - Pardoner"
       ]
     },
     {
       "ID": 49985,
       "Entries": [
-        ""
+        "[Scholar] Skin - Xanthous"
       ]
     },
     {
       "ID": 49990,
       "Entries": [
-        ""
+        "[Undertaker] Skin - Default"
       ]
     },
     {
       "ID": 49991,
       "Entries": [
-        ""
+        "[Undertaker] Skin - Dawn"
       ]
     },
     {
       "ID": 49992,
       "Entries": [
-        ""
+        "[Undertaker] Skin - Darkness"
       ]
     },
     {
       "ID": 49993,
       "Entries": [
-        ""
+        "[Undertaker] Skin - Remembrance"
       ]
     },
     {
       "ID": 49994,
       "Entries": [
-        ""
+        "[Undertaker] Skin - Brass"
       ]
     },
     {
       "ID": 49995,
       "Entries": [
-        ""
+        "[Undertaker] Skin - Lord's Blade"
       ]
     },
     {
@@ -56008,13 +56056,13 @@
     {
       "ID": 99321,
       "Entries": [
-        ""
+        "[Executor's Cry] Stat Change"
       ]
     },
     {
       "ID": 99322,
       "Entries": [
-        ""
+        "[Night Hunter] Stat Change"
       ]
     },
     {
@@ -59470,25 +59518,25 @@
     {
       "ID": 296400,
       "Entries": [
-        "Night's Tide Damage?"
+        "[Skill - Revenant] Spirit Night's Tide Damage?"
       ]
     },
     {
       "ID": 296500,
       "Entries": [
-        ""
+        "[Skill - Revenant] Helen - Ultimate Power Adjust"
       ]
     },
     {
       "ID": 296510,
       "Entries": [
-        ""
+        "[Skill - Revenant] Frederick - Ultimate Power Adjust"
       ]
     },
     {
       "ID": 296520,
       "Entries": [
-        ""
+        "[Skill - Revenant] Sebastian - Ultimate Power Adjust"
       ]
     },
     {
@@ -61880,6 +61928,12 @@
       ]
     },
     {
+      "ID": 602992,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 603040,
       "Entries": [
         ""
@@ -62464,7 +62518,7 @@
     {
       "ID": 705012,
       "Entries": [
-        "[Hero] Apply StateInfo 624"
+        "[Hero] Flag as Hero/Player Character"
       ]
     },
     {
@@ -62530,7 +62584,7 @@
     {
       "ID": 705085,
       "Entries": [
-        ""
+        "[Skill - Revenant] Sebastian - Aggro Roar"
       ]
     },
     {
@@ -62572,7 +62626,7 @@
     {
       "ID": 705200,
       "Entries": [
-        ""
+        "[Passive - Revenant] Raised Ghost Added Effect"
       ]
     },
     {
@@ -62626,13 +62680,13 @@
     {
       "ID": 706110,
       "Entries": [
-        "[Ultimate - Recluse] Soulblood Song (VFX)"
+        "[Ultimate - Recluse] Soulblood Song (Apply to Attacker)"
       ]
     },
     {
       "ID": 706120,
       "Entries": [
-        "[Ultimate - Recluse] Soulblood Song (Unk)"
+        "[Ultimate - Recluse] Soulblood Song (Initial Application)"
       ]
     },
     {
@@ -62734,7 +62788,7 @@
     {
       "ID": 707060,
       "Entries": [
-        ""
+        "[Skill - Executor] Cursed Sword Active"
       ]
     },
     {
@@ -62746,7 +62800,7 @@
     {
       "ID": 707065,
       "Entries": [
-        "[Executor] Move Cursed Sword to Left Hand"
+        "[Skill - Executor] Move Cursed Sword to Left Hand"
       ]
     },
     {
@@ -63028,31 +63082,31 @@
     {
       "ID": 708150,
       "Entries": [
-        ""
+        "[Ultimate - Scholar] Communion (Self Apply Start)"
       ]
     },
     {
       "ID": 708151,
       "Entries": [
-        ""
+        "[Ultimate - Scholar] Communion (Self Apply)"
       ]
     },
     {
       "ID": 708160,
       "Entries": [
-        "[Ultimate - Scholar] Communion (Icon)"
+        "[Ultimate - Scholar] Communion (Icon Start)"
       ]
     },
     {
       "ID": 708161,
       "Entries": [
-        ""
+        "[Ultimate - Scholar] Communion (Icon)"
       ]
     },
     {
       "ID": 708200,
       "Entries": [
-        ""
+        "[Scholar] Rapier 1H Backstep Cancel"
       ]
     },
     {
@@ -67196,6 +67250,18 @@
       ]
     },
     {
+      "ID": 6999600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6999601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 6999602,
       "Entries": [
         ""
@@ -69682,13 +69748,13 @@
     {
       "ID": 7060300,
       "Entries": [
-        ""
+        "[Relic] Max HP increased for each great enemy defeated at a Great Church"
       ]
     },
     {
       "ID": 7060301,
       "Entries": [
-        ""
+        "[Relic] Max HP increased for each great enemy defeated at a Great Church - Stack 1"
       ]
     },
     {
@@ -69766,73 +69832,73 @@
     {
       "ID": 7060500,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin"
       ]
     },
     {
       "ID": 7060501,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin - Stack 1 (+4)"
       ]
     },
     {
       "ID": 7060502,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin - Stack 2 (+8)"
       ]
     },
     {
       "ID": 7060503,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin - Stack 3 (+12)"
       ]
     },
     {
       "ID": 7060504,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin - Stack 4 (+16)"
       ]
     },
     {
       "ID": 7060505,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin - Stack 5 (+20)"
       ]
     },
     {
       "ID": 7060506,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin - Stack 6 (+24)"
       ]
     },
     {
       "ID": 7060507,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin - Stack 7 (+28)"
       ]
     },
     {
       "ID": 7060508,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin - Stack 8 (+32)"
       ]
     },
     {
       "ID": 7060509,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin - Stack 9 (+36)"
       ]
     },
     {
       "ID": 7060510,
       "Entries": [
-        ""
+        "[Relic] Arcane increased for each great enemy defeated at a Ruin - Stack 10 (+40)"
       ]
     },
     {
       "ID": 7060600,
       "Entries": [
-        ""
+        "[Relic] Max stamina increased for each great enemy defeated at a Great Encampment"
       ]
     },
     {

@@ -328,43 +328,85 @@
     {
       "ID": 2050,
       "Entries": [
-        ""
+        "[Vessel] Hero Icon (DoN)"
       ]
     },
     {
       "ID": 2051,
       "Entries": [
-        ""
+        "[Vessel] Slot 1 Color (DoN)"
       ]
     },
     {
       "ID": 2052,
       "Entries": [
-        ""
+        "[Vessel] Slot 2 Color (DoN)"
       ]
     },
     {
       "ID": 2053,
       "Entries": [
-        ""
+        "[Vessel] Slot 3 Color (DoN)"
       ]
     },
     {
       "ID": 2054,
       "Entries": [
-        ""
+        "[Vessel] Slot 4 Color (DoN)"
       ]
     },
     {
       "ID": 2055,
       "Entries": [
-        ""
+        "[Vessel] Slot 5 Color (DoN)"
       ]
     },
     {
       "ID": 2056,
       "Entries": [
-        ""
+        "[Vessel] Slot 6 Color (DoN)"
+      ]
+    },
+    {
+      "ID": 2057,
+      "Entries": [
+        "[Item] Item Category (Bagcraft)"
+      ]
+    },
+    {
+      "ID": 2058,
+      "Entries": [
+        "[Item] Category Icon"
+      ]
+    },
+    {
+      "ID": 2059,
+      "Entries": [
+        "[Item] Category XP Progress"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "[Item] Category Level"
+      ]
+    },
+    {
+      "ID": 2061,
+      "Entries": [
+        "[Item] Max no. per slot (Standard)"
+      ]
+    },
+    {
+      "ID": 2062,
+      "Entries": [
+        "[Item] Max no. per slot (Bagcraft)"
+      ]
+    },
+    {
+      "ID": 2063,
+      "Entries": [
+        "[Item] Category XP (Maxed)"
       ]
     },
     {
@@ -838,25 +880,25 @@
     {
       "ID": 3130,
       "Entries": [
-        "[Weapon] Status Ailment"
+        "[Weapon] Status Ailment 1 Value"
       ]
     },
     {
       "ID": 3131,
       "Entries": [
-        ""
+        "[Weapon] Status Ailment 2 Value"
       ]
     },
     {
       "ID": 3132,
       "Entries": [
-        ""
+        "[Weapon] Status Ailment Bonus"
       ]
     },
     {
       "ID": 3133,
       "Entries": [
-        "[Weapon] Status Ailment"
+        "[Weapon] Status Ailments (Icons Only)"
       ]
     },
     {
@@ -941,6 +983,12 @@
       "ID": 3222,
       "Entries": [
         "[Weapon] Skill (Attack Power)"
+      ]
+    },
+    {
+      "ID": 3223,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -3302,6 +3350,24 @@
       ]
     },
     {
+      "ID": 12020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 13000,
       "Entries": [
         "[Expedition] Boss Title"
@@ -3405,6 +3471,12 @@
     },
     {
       "ID": 20401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500,
       "Entries": [
         ""
       ]
@@ -3860,6 +3932,12 @@
       ]
     },
     {
+      "ID": 22103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 22300,
       "Entries": [
         "[Battle Record - Character Usage] Wylder (Name)"
@@ -4205,6 +4283,12 @@
       "ID": 30001,
       "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "[Caption] Scholar: Bagcraft"
       ]
     },
     {

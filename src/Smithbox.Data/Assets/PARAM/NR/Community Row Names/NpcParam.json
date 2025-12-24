@@ -58,7 +58,7 @@
     {
       "ID": 100000,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Aspect of the Crucible: Beast"
       ]
     },
     {
@@ -567,6 +567,12 @@
     },
     {
       "ID": 21500610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21500620,
       "Entries": [
         ""
       ]
@@ -16456,7 +16462,7 @@
     {
       "ID": 75800000,
       "Entries": [
-        ""
+        "Heolstor (Shape of Night)"
       ]
     },
     {
@@ -16486,7 +16492,7 @@
     {
       "ID": 75809000,
       "Entries": [
-        ""
+        "Heolstor (Phase 2)"
       ]
     },
     {
@@ -16540,7 +16546,7 @@
     {
       "ID": 76100000,
       "Entries": [
-        ""
+        "Traitorous Straghess"
       ]
     },
     {
@@ -16558,13 +16564,13 @@
     {
       "ID": 76109000,
       "Entries": [
-        ""
+        "Pure Impulse Straghess"
       ]
     },
     {
       "ID": 76200000,
       "Entries": [
-        ""
+        "Weapon-Bequeathed Harmonia"
       ]
     },
     {
@@ -16653,6 +16659,48 @@
     },
     {
       "ID": 76200270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 76200310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 76200320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 76200330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 76200340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 76200350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 76200360,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 76200370,
       "Entries": [
         ""
       ]
@@ -17230,7 +17278,7 @@
     {
       "ID": 137030000,
       "Entries": [
-        ""
+        "[Revenant] Helen (Page)"
       ]
     },
     {
@@ -17248,7 +17296,7 @@
     {
       "ID": 143400000,
       "Entries": [
-        ""
+        "[Revenant] Frederick (Pumpkin Head)"
       ]
     },
     {
@@ -17266,7 +17314,7 @@
     {
       "ID": 149610000,
       "Entries": [
-        ""
+        "[Revenant] Sebastian (Giant Skeleton Torso)"
       ]
     },
     {
@@ -17374,7 +17422,7 @@
     {
       "ID": 521030700,
       "Entries": [
-        "Night Huntsman (Remembrance)"
+        "Night Hunter (Remembrance)"
       ]
     },
     {
