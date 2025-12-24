@@ -474,21 +474,21 @@
     <Field Def="s32 revenantSummon1_BuddyParamId" />
     <Field Def="s32 revenantSummon2_BuddyParamId" />
     <Field Def="s32 revenantSummon3_BuddyParamId" />
-    <Field Def="f32 unknown_18" />
+    <Field Def="f32 revenantDesummonDistance" />
     <Field Def="s32 unknown_19" />
     <Field Def="f32 unknown_20" />
     <Field Def="f32 unknown_21" />
-    <Field Def="s32 unknown_22" />
-    <Field Def="s32 unknown_23" />
+    <Field Def="s32 executorBeastEffect_unk1" />
+    <Field Def="s32 executorBeastEffect_unk2" />
     
     <Field Def="f32 unknown_24" />
-    <Field Def="f32 unknown_25" />
+    <Field Def="s32 markingAtkParamId" />
     <Field Def="s32 unknown_26" />
-    <Field Def="s32 unknown_27" />
-    <Field Def="s32 unknown_28" />
+    <Field Def="s32 sixthSenseEffectId_Active" />
+    <Field Def="s32 sixthSenseEffectId_Inactive" />
     <Field Def="f32 unknown_29" />
     <Field Def="f32 unknown_30" />
-    <Field Def="s32 unknown_31" />
+    <Field Def="s32 soulbloodSongAttacker_EffectId" />
     <Field Def="f32 unknown_32" />
     <Field Def="f32 unknown_33" />
     
@@ -499,11 +499,10 @@
     <Field Def="f32 unknown_38" />
     <Field Def="f32 unknown_39" />
     <Field Def="f32 unknown_40" />
-    <Field Def="f32 unknown_41" />
-    <Field Def="s32 unknown_42" />
-    <Field Def="s32 unknown_43" />
-    
-    <Field Def="s32 unknown_44" />
+    <Field Def="f32 necromancyTriggerRate" />
+    <Field Def="s32 necromancyEffectId_1" />
+    <Field Def="s32 necromancyEffectId_2" />
+    <Field Def="s32 necromancyEffectId_3" />
     <Field Def="f32 unknown_45" />
     <Field Def="s32 unknown_46" />
     <Field Def="f32 unknown_47" />

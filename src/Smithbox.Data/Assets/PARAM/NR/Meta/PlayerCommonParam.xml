@@ -91,29 +91,52 @@
     AltName="Revenant Summon 3: Buddy ID"
     Wiki="The buddy param ID for the slot 3 revenant summon."
     Refs="BuddyParam" />
+	
+	<revenantDesummonDistance
+	AltName="Revenant Summon Desummon Distance"
+	Wiki="Distance for summon to automatically desummon." />
     
-    <unknown_22
+    <executorBeastEffect_unk1
     Refs="SpEffectParam" />
     
-    <unknown_23
+    <executorBeastEffect_unk2
+    Refs="SpEffectParam" />
+	
+	<markingAtkParamId
+	AltName="Marking AtkParam ID"
+	Wiki="Attack param that triggers Ironeye's marking effect.\nSeems to be only when used by the player."
+	Refs="AtkParam_Pc"/>
+    
+    <sixthSenseEffectId_Active
+	AltName="Sixth Sense Active Effect ID"
     Refs="SpEffectParam" />
     
-    <unknown_27
+    <sixthSenseEffectId_Inactive
+	AltName="Sixth Sense Inactive Effect ID"
     Refs="SpEffectParam" />
     
-    <unknown_28
+    <soulbloodSongAttacker_EffectId
+	AltName="Soulblood Song Attacker Effect ID"
+	Wiki="Effect applied to the attacker of an enemy affected by Soulblood Song."
     Refs="SpEffectParam" />
     
-    <unknown_31
+	<necromancyTriggerRate
+	AltName="Necromancy Trigger Rate"
+	Wiki="Chance for Necromancy to trigger when an enemy is killed by Revenant or the family." />
+	
+    <necromancyEffectId_1
+	AltName="Necromancy Effect ID 1"
+	Wiki="Effect added to ghost raised by Necromancy."
     Refs="SpEffectParam" />
     
-    <unknown_42
+    <necromancyEffectId_2
+	AltName="Necromancy Effect ID 2"
+	Wiki="Effect added to ghost raised by Necromancy."
     Refs="SpEffectParam" />
     
-    <unknown_43
-    Refs="SpEffectParam" />
-    
-    <unknown_44
+    <necromancyEffectId_3
+	AltName="Necromancy Effect ID 3"
+	Wiki="Effect added to ghost raised by Necromancy."
     Refs="SpEffectParam" />
     
     <tenacityEffectId

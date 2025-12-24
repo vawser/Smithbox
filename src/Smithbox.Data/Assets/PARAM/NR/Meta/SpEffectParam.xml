@@ -1962,6 +1962,32 @@
     AltName="Is Periodic Effect"
     Wiki="Appears to related to the periodic spawning of orb attacks."
     DefaultValue="0" />
+	
+	<unknown_239a
+	IsBool="" />
+	
+	<unknown_239b
+	IsBool="" />
+	
+	<unknown_239c
+	IsBool="" />
+	
+	<displayIconForPermamentEffect
+	AltName="Display Icon for Permanent Effect"
+	Wiki="If on, permanent effects (such as from talismans or passives) will appear under the health bars."
+	IsBool="" />
+	
+	<unknown_239e
+	IsBool="" />
+	
+	<unknown_239f
+	IsBool="" />
+	
+	<unknown_239g
+	IsBool="" />
+	
+	<unknown_239h
+	IsBool="" />
     
     <changeSuperArmorPoint 
     AltName="Poise +" 

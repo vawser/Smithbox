@@ -4,347 +4,365 @@
     {
       "ID": 10000,
       "Entries": [
-        ""
+        "[Character-specific] Wylder"
       ]
     },
     {
       "ID": 10010,
       "Entries": [
-        ""
+        "[Character-specific] Guardian"
       ]
     },
     {
       "ID": 10020,
       "Entries": [
-        ""
+        "[Character-specific] Ironeye"
       ]
     },
     {
       "ID": 10030,
       "Entries": [
-        ""
+        "[Character-specific] Duchess"
       ]
     },
     {
       "ID": 10040,
       "Entries": [
-        ""
+        "[Character-specific] Raider"
       ]
     },
     {
       "ID": 10050,
       "Entries": [
-        ""
+        "[Character-specific] Revenant"
       ]
     },
     {
       "ID": 10060,
       "Entries": [
-        ""
+        "[Character-specific] Recluse"
       ]
     },
     {
       "ID": 10070,
       "Entries": [
-        ""
+        "[Character-specific] Executor"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "[Character-specific] Scholar"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "[Character-specific] Undertaker"
       ]
     },
     {
       "ID": 20000,
       "Entries": [
-        ""
+        "[Armament-specific] Dagger"
       ]
     },
     {
       "ID": 20010,
       "Entries": [
-        ""
+        "[Armament-specific] Straight Sword"
       ]
     },
     {
       "ID": 20020,
       "Entries": [
-        ""
+        "[Armament-specific] Greatsword"
       ]
     },
     {
       "ID": 20030,
       "Entries": [
-        ""
+        "[Armament-specific] Colossal Sword"
       ]
     },
     {
       "ID": 20040,
       "Entries": [
-        ""
+        "[Armament-specific] Curved Sword"
       ]
     },
     {
       "ID": 20050,
       "Entries": [
-        ""
+        "[Armament-specific] Curved Greatsword"
       ]
     },
     {
       "ID": 20060,
       "Entries": [
-        ""
+        "[Armament-specific] Katana"
       ]
     },
     {
       "ID": 20070,
       "Entries": [
-        ""
+        "[Armament-specific] Twinblade"
       ]
     },
     {
       "ID": 20080,
       "Entries": [
-        ""
+        "[Armament-specific] Thrusting Sword"
       ]
     },
     {
       "ID": 20090,
       "Entries": [
-        ""
+        "[Armament-specific] Heavy Thrusting Sword"
       ]
     },
     {
       "ID": 20100,
       "Entries": [
-        ""
+        "[Armament-specific] Axe"
       ]
     },
     {
       "ID": 20110,
       "Entries": [
-        ""
+        "[Armament-specific] Greataxe"
       ]
     },
     {
       "ID": 20120,
       "Entries": [
-        ""
+        "[Armament-specific] Hammer"
       ]
     },
     {
       "ID": 20130,
       "Entries": [
-        ""
+        "[Armament-specific] Great Hammer"
       ]
     },
     {
       "ID": 20140,
       "Entries": [
-        ""
+        "[Armament-specific] Flail"
       ]
     },
     {
       "ID": 20150,
       "Entries": [
-        ""
+        "[Armament-specific] Spear"
       ]
     },
     {
       "ID": 20160,
       "Entries": [
-        ""
+        "[Armament-specific] Great Spear"
       ]
     },
     {
       "ID": 20170,
       "Entries": [
-        ""
+        "[Armament-specific] Halberd"
       ]
     },
     {
       "ID": 20180,
       "Entries": [
-        ""
+        "[Armament-specific] Reaper"
       ]
     },
     {
       "ID": 20190,
       "Entries": [
-        ""
+        "[Armament-specific] Fist"
       ]
     },
     {
       "ID": 20200,
       "Entries": [
-        ""
+        "[Armament-specific] Claw"
       ]
     },
     {
       "ID": 20210,
       "Entries": [
-        ""
+        "[Armament-specific] Whip"
       ]
     },
     {
       "ID": 20220,
       "Entries": [
-        ""
+        "[Armament-specific] Colossal Weapon"
       ]
     },
     {
       "ID": 20230,
       "Entries": [
-        ""
+        "[Armament-specific] Bow"
       ]
     },
     {
       "ID": 20240,
       "Entries": [
-        ""
+        "[Armament-specific] Glintstone Staff"
       ]
     },
     {
       "ID": 20250,
       "Entries": [
-        ""
+        "[Armament-specific] Sacred Seal"
       ]
     },
     {
       "ID": 20260,
       "Entries": [
-        ""
+        "[Armament-specific] Greatbow"
       ]
     },
     {
       "ID": 20270,
       "Entries": [
-        ""
+        "[Armament-specific] Crossbow"
       ]
     },
     {
       "ID": 20280,
       "Entries": [
-        ""
-      ]
-    },
-    {
-      "ID": 20290,
-      "Entries": [
-        ""
+        "[Armament-specific] Ballista"
       ]
     },
     {
       "ID": 20300,
       "Entries": [
-        ""
+        "[Armament-specific] Small Shield"
       ]
     },
     {
       "ID": 20310,
       "Entries": [
-        ""
+        "[Armament-specific] Medium Shield"
       ]
     },
     {
       "ID": 20320,
       "Entries": [
-        ""
+        "[Armament-specific] Greatshield"
       ]
     },
     {
       "ID": 30000,
       "Entries": [
-        ""
+        "[General] Attributes"
       ]
     },
     {
       "ID": 30010,
       "Entries": [
-        ""
+        "[General] Character Skills / Ultimate Arts"
       ]
     },
     {
       "ID": 30020,
       "Entries": [
-        ""
+        "[General] Attack Power"
       ]
     },
     {
       "ID": 30030,
       "Entries": [
-        ""
+        "[General] Sorceries / Incantations"
       ]
     },
     {
       "ID": 30040,
       "Entries": [
-        ""
+        "[General] Damage Negation"
       ]
     },
     {
       "ID": 30050,
       "Entries": [
-        ""
+        "[General] Status Ailment Resistances"
       ]
     },
     {
       "ID": 30060,
       "Entries": [
-        ""
+        "[General] Restoration"
       ]
     },
     {
       "ID": 30070,
       "Entries": [
-        ""
+        "[General] Actions"
       ]
     },
     {
       "ID": 30080,
       "Entries": [
-        ""
+        "[General] Starting Armaments (Skill)"
       ]
     },
     {
       "ID": 30090,
       "Entries": [
-        ""
+        "[General] Starting Armaments (Imbue)"
       ]
     },
     {
       "ID": 30100,
       "Entries": [
-        ""
+        "[General] Starting Armaments (Spell)"
       ]
     },
     {
       "ID": 30110,
       "Entries": [
-        ""
+        "[General] Starting Item"
       ]
     },
     {
       "ID": 30120,
       "Entries": [
-        ""
+        "[General] Starting Item (Tear)"
       ]
     },
     {
       "ID": 30130,
       "Entries": [
-        ""
+        "[General] Environment"
+      ]
+    },
+    {
+      "ID": 30140,
+      "Entries": [
+        "[General] Team members"
       ]
     },
     {
       "ID": 40000,
       "Entries": [
-        ""
+        "[Demerits] Demerits (Attributes)"
       ]
     },
     {
       "ID": 40010,
       "Entries": [
-        ""
+        "[Demerits] Demerits (Damage Negation)"
       ]
     },
     {
       "ID": 40020,
+      "Entries": [
+        "[Demerits] Demerits (Action)"
+      ]
+    },
+    {
+      "ID": 100000,
       "Entries": [
         ""
       ]

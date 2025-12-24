@@ -364,7 +364,14 @@
     <Field Def="u8 isHpBurnEffect:1"/>
     <Field Def="u8 unknown_0x352_6:1"/>
     <Field Def="u8 isPeriodicEffect:1"/>
-    <Field Def="dummy8 pad2[1]"/>
+    <Field Def="u8 unknown_239a:1"/> <!-- On for starting weapon imbue -->
+	<Field Def="u8 unknown_239b:1"/> <!-- On for Night's Tide stuff -->
+	<Field Def="u8 unknown_239c:1"/> <!-- Removed on Death? -->
+	<Field Def="u8 displayIconForPermamentEffect:1"/>
+	<Field Def="u8 unknown_239e:1"/> <!-- On for Spirit level stat change effects -->
+	<Field Def="u8 unknown_239f:1"/> <!-- On for some accumulators -->
+	<Field Def="u8 unknown_239g:1"/> <!-- On for some auto-buff effects -->
+	<Field Def="u8 unknown_239h:1"/> <!-- Potentially disable when near death -->
     
     <Field Def="f32 changeSuperArmorPoint"/>
     <Field Def="f32 changeSaPoint"/>
