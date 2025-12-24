@@ -556,14 +556,25 @@
     <pad12 AltName="" Padding=""/>
     
     <rewardItemLot_1
-    AltName="Reward Itemlot ID: 1"
-    Wiki="The item lot that determines the rewards upon this enemies defeat. Includes the Dormant Power roll."
+    AltName="Dormant Power ItemLot ID: Cataclysm"
+    Wiki="The item lot that determines the rewards upon this enemies defeat. Includes the Dormant Power roll.\nUsed during a Cataclysm."
     Refs="ItemLotParam_enemy" />
     
     <rewardItemLot_2
-    AltName="Reward Itemlot ID: 2"
+    AltName="Dormant Power ItemLot ID"
     Wiki="The item lot that determines the rewards upon this enemies defeat. Includes the Dormant Power roll."
     Refs="ItemLotParam_enemy" />
+	
+	<affectedByNecromancy
+	AltName="Affected By Necromancy"
+	Wiki="Allows NPC to be raised as a ghost when killed by Revenant or her family"
+	IsBool="" />
+	
+	<unknown_20b
+	IsBool="" />
+	
+	<unknown_20c
+	IsBool="" />
     
     <poiseBonusRate_Magic
     AltName="Poise Bonus %: Magic"
@@ -590,7 +601,7 @@
     Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
     
     <poiseBonusRate_Bleed
-    AltName="Poise Bonus %: Bleed"
+    AltName="Poise Bonus %: Blood Loss"
     Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
     
     <poiseBonusRate_Blight
@@ -630,7 +641,7 @@
     Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
     
     <poiseBonusRate_WeakF
-    AltName="Poise Bonus %: Weak D"
+    AltName="Poise Bonus %: Weak F"
     Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
     
     <poiseBonusRate_Unk
