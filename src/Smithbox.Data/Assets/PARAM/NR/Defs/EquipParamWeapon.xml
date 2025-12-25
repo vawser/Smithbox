@@ -1215,12 +1215,9 @@
       <SortID>2530</SortID>
     </Field>
     
-    <Field Def="dummy8 unk1:3">
-      <DisplayName>pad</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>30103</SortID>
-    </Field>
+    <Field Def="u8 unk1a:1" />
+	<Field Def="u8 unk1b:1" /> <!-- On for character ability weapons -->
+	<Field Def="u8 unk1c:1" /> <!-- Seems to be off for weapons with fixed skills -->
     
     <Field Def="u8 correctType_Magic">
       <DisplayName>補正タイプ（魔法攻撃力）</DisplayName>

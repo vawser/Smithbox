@@ -4,241 +4,601 @@
     {
       "ID": 0,
       "Entries": [
-        ""
+        "[Gladius] Standard Map"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        ""
+        "[Gladius] Shifting Earth: Mountaintop"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        ""
+        "[Gladius] Shifting Earth: The Crater"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        ""
+        "[Gladius] Shifting Earth: Rotted Woods"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        ""
+        "[Gladius] Shifting Earth: Shrouded City"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        ""
+        "[Adel] Standard Map"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        ""
+        "[Adel] Shifting Earth: Mountaintop"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        ""
+        "[Adel] Shifting Earth: The Crater"
       ]
     },
     {
       "ID": 13,
       "Entries": [
-        ""
+        "[Adel] Shifting Earth: Rotted Woods"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        ""
+        "[Adel] Shifting Earth: Shrouded City"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        ""
+        "[Gnoster] Standard Map"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        ""
+        "[Gnoster] Shifting Earth: Mountaintop"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        ""
+        "[Gnoster] Shifting Earth: The Crater"
       ]
     },
     {
       "ID": 23,
       "Entries": [
-        ""
+        "[Gnoster] Shifting Earth: Rotted Woods"
       ]
     },
     {
       "ID": 25,
       "Entries": [
-        ""
+        "[Gnoster] Shifting Earth: Shrouded City"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        ""
+        "[Maris] Standard Map"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        ""
+        "[Maris] Shifting Earth: Mountaintop"
       ]
     },
     {
       "ID": 32,
       "Entries": [
-        ""
+        "[Maris] Shifting Earth: The Crater"
       ]
     },
     {
       "ID": 33,
       "Entries": [
-        ""
+        "[Maris] Shifting Earth: Rotted Woods"
       ]
     },
     {
       "ID": 35,
       "Entries": [
-        ""
+        "[Maris] Shifting Earth: Shrouded City"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        ""
+        "[Libra] Standard Map"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        ""
+        "[Libra] Shifting Earth: Mountaintop"
       ]
     },
     {
       "ID": 42,
       "Entries": [
-        ""
+        "[Libra] Shifting Earth: The Crater"
       ]
     },
     {
       "ID": 43,
       "Entries": [
-        ""
+        "[Libra] Shifting Earth: Rotted Woods"
       ]
     },
     {
       "ID": 45,
       "Entries": [
-        ""
+        "[Libra] Shifting Earth: Shrouded City"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        ""
+        "[Fulghor] Standard Map"
       ]
     },
     {
       "ID": 51,
       "Entries": [
-        ""
+        "[Fulghor] Shifting Earth: Mountaintop"
       ]
     },
     {
       "ID": 52,
       "Entries": [
-        ""
+        "[Fulghor] Shifting Earth: The Crater"
       ]
     },
     {
       "ID": 53,
       "Entries": [
-        ""
+        "[Fulghor] Shifting Earth: Rotted Woods"
       ]
     },
     {
       "ID": 55,
       "Entries": [
-        ""
+        "[Fulghor] Shifting Earth: Shrouded City"
       ]
     },
     {
       "ID": 60,
       "Entries": [
-        ""
+        "[Caligo] Standard Map"
       ]
     },
     {
       "ID": 61,
       "Entries": [
-        ""
+        "[Caligo] Shifting Earth: Mountaintop"
       ]
     },
     {
       "ID": 62,
       "Entries": [
-        ""
+        "[Caligo] Shifting Earth: The Crater"
       ]
     },
     {
       "ID": 63,
       "Entries": [
-        ""
+        "[Caligo] Shifting Earth: Rotted Woods"
       ]
     },
     {
       "ID": 65,
       "Entries": [
-        ""
+        "[Caligo] Shifting Earth: Shrouded City"
       ]
     },
     {
       "ID": 70,
       "Entries": [
-        ""
+        "[Heolstor] Standard Map"
       ]
     },
     {
       "ID": 71,
       "Entries": [
-        ""
+        "[Heolstor] Shifting Earth: Mountaintop"
       ]
     },
     {
       "ID": 72,
       "Entries": [
-        ""
+        "[Heolstor] Shifting Earth: The Crater"
       ]
     },
     {
       "ID": 73,
       "Entries": [
-        ""
+        "[Heolstor] Shifting Earth: Rotted Woods"
       ]
     },
     {
       "ID": 75,
       "Entries": [
+        "[Heolstor] Shifting Earth: Shrouded City"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1033,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1034,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1044,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1045,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1054,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1061,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1062,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1063,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1064,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1071,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1072,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1073,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1074,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1075,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "[Harmonia] Standard"
+      ]
+    },
+    {
+      "ID": 1081,
+      "Entries": [
+        "[Harmonia] Shifting Earth: Mountaintop"
+      ]
+    },
+    {
+      "ID": 1082,
+      "Entries": [
+        "[Harmonia] Shifting Earth: The Crater"
+      ]
+    },
+    {
+      "ID": 1083,
+      "Entries": [
+        "[Harmonia] Shifting Earth: Rotted Woods"
+      ]
+    },
+    {
+      "ID": 1084,
+      "Entries": [
+        "[Harmonia] Shifting Earth: Great Hollow"
+      ]
+    },
+    {
+      "ID": 1085,
+      "Entries": [
+        "[Harmonia] Shifting Earth: Shrouded City"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "[Straghess] Standard"
+      ]
+    },
+    {
+      "ID": 1091,
+      "Entries": [
+        "[Straghess] Shifting Earth: Mountaintop"
+      ]
+    },
+    {
+      "ID": 1092,
+      "Entries": [
+        "[Straghess] Shifting Earth: The Crater"
+      ]
+    },
+    {
+      "ID": 1093,
+      "Entries": [
+        "[Straghess] Shifting Earth: Rotted Woods"
+      ]
+    },
+    {
+      "ID": 1094,
+      "Entries": [
+        "[Straghess] Shifting Earth: Great Hollow"
+      ]
+    },
+    {
+      "ID": 1095,
+      "Entries": [
+        "[Straghess] Shifting Earth: Shrouded City"
       ]
     }
   ]
