@@ -294,6 +294,42 @@
       "Entries": [
         ""
       ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Blood Loss Swamp"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Blood Loss Swamp - Slowing"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Madness Swamp"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Madness Swamp - Slowing"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Sleep Swamp"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Sleep Swamp - Slowing"
+      ]
     }
   ]
 }

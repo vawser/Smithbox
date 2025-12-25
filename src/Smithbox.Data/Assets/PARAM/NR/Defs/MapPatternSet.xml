@@ -11,7 +11,8 @@
     <Field Def="s32 unknown_1"/>
     <Field Def="s16 unknown_2a"/>
     <Field Def="s16 unknown_2b"/>
-    <Field Def="s32 unknown_3"/>
+    <Field Def="s16 unknown_3a"/>
+    <Field Def="s16 unknown_3b"/> <!-- Deep of Night Weight? -->
     <Field Def="s32 unknown_4"/>
     <Field Def="s32 modifier1"/>
     <Field Def="s32 modifier2"/>
@@ -20,10 +21,14 @@
     <Field Def="s32 modifier5"/>
     <Field Def="s32 unknown_10"/>
     <Field Def="s32 unknown_11"/>
-    <Field Def="s32 unknown_12"/>
-    <Field Def="s32 unknown_13"/>
-    <Field Def="s32 unknown_14"/>
-    <Field Def="s32 unknown_15"/>
+    <Field Def="s16 unknown_12a"/>
+    <Field Def="s16 unknown_12b"/>
+    <Field Def="s16 unknown_13a"/>
+    <Field Def="s16 unknown_13b"/>
+    <Field Def="s16 unknown_14a"/>
+    <Field Def="s16 unknown_14b"/>
+    <Field Def="s16 unknown_15a"/>
+    <Field Def="s16 unknown_15b"/>
     <Field Def="s32 unknown_16"/>
     <Field Def="s32 unknown_17"/>
     <Field Def="s32 modifier6"/>
@@ -93,31 +98,36 @@
     
     <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_02" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_02a" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_02b" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_03" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_04" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_05" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_06" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_07" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_08" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_08a" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_08b" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_09" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_10" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_11" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_12" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_13" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_14" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_14a" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_14b" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_15" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_16" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_17" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_18" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_19" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_20" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_20a" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_20b" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_21" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_22" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_23" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_24" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_25" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_26" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_26a" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_26b" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_27" FirstVersion="10310025"/>
   </Fields>
 </PARAMDEF>
