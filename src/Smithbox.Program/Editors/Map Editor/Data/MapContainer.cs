@@ -55,6 +55,8 @@ public class MapContainer : ObjectContainer
     public List<Entity> Layers;
     public List<Entity> Routes;
 
+    public List<Entity> PartPoses;
+
     [XmlIgnore]
     public LightAtlasResolver LightAtlasResolver;
 
@@ -78,6 +80,8 @@ public class MapContainer : ObjectContainer
         Models = new();
         Layers = new();
         Routes = new();
+
+        PartPoses = new();
 
         var t = new MapTransformNode(mapid);
         RootObject = new MsbEntity(Editor, this, t, MsbEntityType.MapRoot);
@@ -174,6 +178,21 @@ public class MapContainer : ObjectContainer
 
             Objects.Add(n);
             RootObject.AddChild(n);
+        }
+
+        // Part Poses
+        if(Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            if(msb is MSB2 msb2)
+            {
+                foreach(var entry in msb2.PartPoses)
+                {
+                    var n = new MsbEntity(Editor, this, entry, MsbEntityType.DS2PartPose);
+                    PartPoses.Add(n);
+                    Objects.Add(n);
+                    RootObject.AddChild(n);
+                }
+            }
         }
 
         foreach (Entity m in Objects)
@@ -989,6 +1008,13 @@ public class MapContainer : ObjectContainer
             else if (m.WrappedObject != null && m.WrappedObject is IMsbEvent e)
             {
                 msb.Events.Add(e);
+            }
+            else if (m.WrappedObject != null && m.WrappedObject is MSB2.PartPose pp)
+            {
+                if (msb is MSB2 msb2)
+                {
+                    msb2.PartPoses.Add(pp);
+                }
             }
         }
 

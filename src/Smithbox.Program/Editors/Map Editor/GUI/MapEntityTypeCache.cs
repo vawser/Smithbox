@@ -120,6 +120,8 @@ public class MapEntityTypeCache
         {
             mapcache.Add(MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
 
+            mapcache.Add(MsbEntityType.DS2PartPose, new Dictionary<Type, List<MsbEntity>>());
+
             mapcache.Add(MsbEntityType.DS2Event, new Dictionary<Type, List<MsbEntity>>());
 
             mapcache.Add(MsbEntityType.DS2EventLocation, new Dictionary<Type, List<MsbEntity>>());

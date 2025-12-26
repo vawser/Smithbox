@@ -455,7 +455,7 @@ public class Universe
                 {
                     var prev = MSB2.Read(mapData);
                     MSB2 n = new();
-                    n.PartPoses = prev.PartPoses;
+                    //n.PartPoses = prev.PartPoses;
                     msb = n;
                 }
                 else if (Editor.Project.ProjectType == ProjectType.SDT)
