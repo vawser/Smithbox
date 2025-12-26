@@ -193,6 +193,7 @@ public class MapObjectDefaults
         newAsset.GrassConfigStruct.GrassParamId4 = 0;
         newAsset.GrassConfigStruct.GrassParamId5 = 0;
         newAsset.GrassConfigStruct.GrassConfigStruct_Unk18 = -1;
+        newAsset.GrassConfigStruct.GrassConfigStruct_Unk1a = -1;
 
         // Unk 8
         newAsset.UnkStruct8.UnkStruct8_Unk00 = 0;

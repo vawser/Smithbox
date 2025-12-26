@@ -1125,7 +1125,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int GrassConfigStruct_Unk18 { get; set; }
+                public short GrassConfigStruct_Unk18 { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
+                public short GrassConfigStruct_Unk1a { get; set; }
 
                 /// <summary>
                 /// Creates an UnkStruct7 with default values.
@@ -1148,7 +1153,8 @@ namespace SoulsFormats
                     GrassParamId3 = br.ReadInt32();
                     GrassParamId4 = br.ReadInt32();
                     GrassParamId5 = br.ReadInt32();
-                    GrassConfigStruct_Unk18 = br.ReadInt32();
+                    GrassConfigStruct_Unk18 = br.ReadInt16();
+                    GrassConfigStruct_Unk1a = br.ReadInt16();
                     br.AssertInt32(0);
                 }
 
@@ -1160,7 +1166,8 @@ namespace SoulsFormats
                     bw.WriteInt32(GrassParamId3);
                     bw.WriteInt32(GrassParamId4);
                     bw.WriteInt32(GrassParamId5);
-                    bw.WriteInt32(GrassConfigStruct_Unk18);
+                    bw.WriteInt16(GrassConfigStruct_Unk18);
+                    bw.WriteInt16(GrassConfigStruct_Unk1a);
                     bw.WriteInt32(0);
                 }
             }
