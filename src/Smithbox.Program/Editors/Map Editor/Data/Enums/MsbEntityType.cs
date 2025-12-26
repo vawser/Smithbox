@@ -13,7 +13,7 @@ public enum MsbEntityType
     Routes,
     Layers,
     Light,
-    DS2PartPose,
+    PartPose,
     DS2Generator,
     DS2GeneratorRegist,
     DS2Event,

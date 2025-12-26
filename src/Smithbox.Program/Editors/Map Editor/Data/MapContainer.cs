@@ -181,13 +181,24 @@ public class MapContainer : ObjectContainer
         }
 
         // Part Poses
-        if(Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if(Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.DS3)
         {
             if(msb is MSB2 msb2)
             {
                 foreach(var entry in msb2.PartPoses)
                 {
-                    var n = new MsbEntity(Editor, this, entry, MsbEntityType.DS2PartPose);
+                    var n = new MsbEntity(Editor, this, entry, MsbEntityType.PartPose);
+                    PartPoses.Add(n);
+                    Objects.Add(n);
+                    RootObject.AddChild(n);
+                }
+            }
+
+            if (msb is MSB3 msb3)
+            {
+                foreach (var entry in msb3.PartsPoses)
+                {
+                    var n = new MsbEntity(Editor, this, entry, MsbEntityType.PartPose);
                     PartPoses.Add(n);
                     Objects.Add(n);
                     RootObject.AddChild(n);
@@ -1009,11 +1020,18 @@ public class MapContainer : ObjectContainer
             {
                 msb.Events.Add(e);
             }
-            else if (m.WrappedObject != null && m.WrappedObject is MSB2.PartPose pp)
+            else if (m.WrappedObject != null && m.WrappedObject is MSB2.PartPose pp2)
             {
                 if (msb is MSB2 msb2)
                 {
-                    msb2.PartPoses.Add(pp);
+                    msb2.PartPoses.Add(pp2);
+                }
+            }
+            else if (m.WrappedObject != null && m.WrappedObject is MSB3.PartsPose pp3)
+            {
+                if (msb is MSB3 msb3)
+                {
+                    msb3.PartsPoses.Add(pp3);
                 }
             }
         }

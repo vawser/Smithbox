@@ -79,6 +79,13 @@ public class MapEntityTypeCache
         }
         */
 
+        // Part Pose
+        if (Editor.Project.ProjectType is ProjectType.DS2S
+            or ProjectType.DS2 or ProjectType.DS3)
+        {
+            mapcache.Add(MsbEntityType.PartPose, new Dictionary<Type, List<MsbEntity>>());
+        }
+
         // External: BTL
         if (Editor.Project.ProjectType is ProjectType.BB
             or ProjectType.DS3
@@ -120,7 +127,6 @@ public class MapEntityTypeCache
         {
             mapcache.Add(MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
 
-            mapcache.Add(MsbEntityType.DS2PartPose, new Dictionary<Type, List<MsbEntity>>());
 
             mapcache.Add(MsbEntityType.DS2Event, new Dictionary<Type, List<MsbEntity>>());
 

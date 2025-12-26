@@ -422,7 +422,7 @@ public class Universe
                 {
                     var prev = MSB3.Read(mapData);
                     MSB3 n = new();
-                    n.PartsPoses = prev.PartsPoses;
+                    //n.PartsPoses = prev.PartsPoses;
                     n.Layers = prev.Layers;
                     n.Routes = prev.Routes;
                     msb = n;
