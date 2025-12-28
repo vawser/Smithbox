@@ -1638,6 +1638,33 @@ public static class MassEditPropertyHelper
                         return new MapObjectPropertyChangeAction(editor, curEnt, targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                     }
                 }
+                // BOOL
+                if (valueType == typeof(bool))
+                {
+                    bool tNewValue = false;
+                    bool tExistingValue = (bool)targetProp_Value;
+
+                    var res = bool.TryParse(newValue, out tNewValue);
+
+                    if (res)
+                    {
+                        var result = tExistingValue;
+
+                        if (compare == "=")
+                        {
+                            try
+                            {
+                                result = tNewValue;
+                            }
+                            catch (Exception e)
+                            {
+                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                            }
+                        }
+
+                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
+                    }
+                }
                 // STRING
                 if (valueType == typeof(string))
                 {
