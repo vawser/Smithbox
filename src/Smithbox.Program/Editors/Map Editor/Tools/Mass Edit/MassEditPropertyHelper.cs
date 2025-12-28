@@ -1,4 +1,5 @@
-﻿using StudioCore.Editors.Common;
+﻿using HKLib.hk2018.hkHashMapDetail;
+using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -232,9 +233,8 @@ public static class MassEditPropertyHelper
 
     /// <summary>
     /// Handles the property value operation edits
-    /// TODO: adjust how this is done so we don't need to duplicate the operation logic so much
     /// </summary>
-    public static ViewportAction PropertyValueOperation(MapEditorScreen editor, MsbMassEditResult currentResult, MapContainer map, MsbEntity curEnt, string cmd,
+    public static ViewportAction PropertyValueOperation(MapEditorScreen editor, MsbMassEditLog currentResult, MapContainer map, MsbEntity curEnt, string cmd,
         bool enableRandomSpread, float minRandom, float maxRandom)
     {
         var input = cmd.Replace("prop:", "");
@@ -261,7 +261,7 @@ public static class MassEditPropertyHelper
                 }
                 else
                 {
-                    currentResult.EditMessages.Add($"Failed to determine property index in edit command: {input}");
+                    currentResult.EditLog.Add($"Failed to determine property index in edit command: {input}");
                 }
             }
 
@@ -285,787 +285,18 @@ public static class MassEditPropertyHelper
 
                         if (targetProp_Value == null)
                         {
-                            currentResult.EditMessages.Add($"Failed to find value in property array in edit command: {input}");
+                            currentResult.EditLog.Add($"Failed to find value in property array in edit command: {input}");
                             return null;
                         }
 
                         var valueType = targetProp_Value.GetType();
 
-                        // If numeric operation is not supported, force set operation
-                        if (!MassEditUtils.IsNumericType(valueType))
-                        {
-                            compare = "=";
-                        }
-
-                        // LONG
-                        if (valueType == typeof(long))
-                        {
-                            long tNewValue = 0;
-                            long tExistingValue = (long)targetProp_Value;
-
-                            var res = long.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-
-                                var result = tExistingValue;
-
-                                if (enableRandomSpread)
-                                {
-                                    result = (long)GetRandomValue(result, minRandom, maxRandom, valueType);
-                                }
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                            else
-                            {
-                                currentResult.EditMessages.Add($"Failed to parse {newValue} as LONG in edit command: {input}");
-                            }
-                        }
-                        // UINT
-                        if (valueType == typeof(uint))
-                        {
-                            uint tNewValue = 0;
-                            uint tExistingValue = (uint)targetProp_Value;
-
-                            var res = uint.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (enableRandomSpread)
-                                {
-                                    result = (uint)GetRandomValue(result, minRandom, maxRandom, valueType);
-                                }
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                            else
-                            {
-                                currentResult.EditMessages.Add($"Failed to parse {newValue} as UINT in edit command: {input}");
-                            }
-                        }
-                        // INT
-                        if (valueType == typeof(int))
-                        {
-                            int tNewValue = 0;
-                            int tExistingValue = (int)targetProp_Value;
-
-                            var res = int.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (enableRandomSpread)
-                                {
-                                    result = (int)GetRandomValue(result, minRandom, maxRandom, valueType);
-                                }
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                            else
-                            {
-                                currentResult.EditMessages.Add($"Failed to parse {newValue} as INT in edit command: {input}");
-                            }
-                        }
-                        // USHORT
-                        if (valueType == typeof(ushort))
-                        {
-                            ushort tNewValue = 0;
-                            ushort tExistingValue = (ushort)targetProp_Value;
-
-                            var res = ushort.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (enableRandomSpread)
-                                {
-                                    result = (ushort)GetRandomValue(result, minRandom, maxRandom, valueType);
-                                }
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                            else
-                            {
-                                currentResult.EditMessages.Add($"Failed to parse {newValue} as USHORT in edit command: {input}");
-                            }
-                        }
-                        // SHORT
-                        if (valueType == typeof(short))
-                        {
-                            short tNewValue = 0;
-                            short tExistingValue = (short)targetProp_Value;
-
-                            var res = short.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (enableRandomSpread)
-                                {
-                                    result = (short)GetRandomValue(result, minRandom, maxRandom, valueType);
-                                }
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                            else
-                            {
-                                currentResult.EditMessages.Add($"Failed to parse {newValue} as SHORT in edit command: {input}");
-                            }
-                        }
-                        // SBYTE
-                        if (valueType == typeof(sbyte))
-                        {
-                            sbyte tNewValue = 0;
-                            sbyte tExistingValue = (sbyte)targetProp_Value;
-
-                            var res = sbyte.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (enableRandomSpread)
-                                {
-                                    result = (sbyte)GetRandomValue(result, minRandom, maxRandom, valueType);
-                                }
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                            else
-                            {
-                                currentResult.EditMessages.Add($"Failed to parse {newValue} as SBYTE in edit command: {input}");
-                            }
-                        }
-                        // BYTE
-                        if (valueType == typeof(byte))
-                        {
-                            byte tNewValue = 0;
-                            byte tExistingValue = (byte)targetProp_Value;
-
-                            var res = byte.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (enableRandomSpread)
-                                {
-                                    result = (byte)GetRandomValue(result, minRandom, maxRandom, valueType);
-                                }
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                            else
-                            {
-                                currentResult.EditMessages.Add($"Failed to parse {newValue} as BYTE in edit command: {input}");
-                            }
-                        }
-                        // FLOAT
-                        if (valueType == typeof(float))
-                        {
-                            float tNewValue = 0;
-                            float tExistingValue = (float)targetProp_Value;
-
-                            var res = float.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (enableRandomSpread)
-                                {
-                                    result = (float)GetRandomValue(result, minRandom, maxRandom, valueType);
-                                }
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                            else
-                            {
-                                currentResult.EditMessages.Add($"Failed to parse {newValue} as FLOAT in edit command: {input}");
-                            }
-                        }
-                        // VECTOR3
-                        if (valueType == typeof(Vector3))
-                        {
-                            Vector3 tNewValue = new Vector3();
-                            Vector3 tExistingValue = (Vector3)targetProp_Value;
-
-                            var res = VectorExtensions.TryParseVector3(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (enableRandomSpread)
-                                {
-                                    result = (Vector3)GetRandomValue(result, minRandom, maxRandom, valueType);
-                                }
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "+")
-                                {
-                                    try
-                                    {
-                                        result += tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "-")
-                                {
-                                    try
-                                    {
-                                        result -= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "*")
-                                {
-                                    try
-                                    {
-                                        result *= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-                                if (compare == "/")
-                                {
-                                    try
-                                    {
-                                        result /= tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                            else
-                            {
-                                currentResult.EditMessages.Add($"Failed to parse {newValue} as VECTOR3 in edit command: {input}");
-                            }
-                        }
-                        // BOOL
-                        if (valueType == typeof(bool))
-                        {
-                            bool tNewValue = false;
-                            bool tExistingValue = (bool)targetProp_Value;
-
-                            var res = bool.TryParse(newValue, out tNewValue);
-
-                            if (res)
-                            {
-                                var result = tExistingValue;
-
-                                if (enableRandomSpread)
-                                {
-                                    result = (bool)GetRandomValue(result, minRandom, maxRandom, valueType);
-                                }
-
-                                if (compare == "=")
-                                {
-                                    try
-                                    {
-                                        result = tNewValue;
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                                    }
-                                }
-
-                                return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                            }
-                            else
-                            {
-                                currentResult.EditMessages.Add($"Failed to parse {newValue} as BOOL in edit command: {input}");
-                            }
-                        }
-                        // STRING
-                        if (valueType == typeof(string))
-                        {
-                            string result = newValue;
-
-                            return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                        }
+                        return HandlePropertyInput(currentResult, curEnt, targetProp, index, input, compare, valueType, targetProp_Value, newValue, enableRandomSpread, minRandom, maxRandom);
                     }
                 }
                 else
                 {
-                    currentResult.EditMessages.Add($"Failed to find property in edit command: {input}");
+                    currentResult.EditLog.Add($"Failed to find property in edit command: {input}");
                 }
             }
             else
@@ -1075,786 +306,18 @@ public static class MassEditPropertyHelper
 
                 if (targetProp_Value == null)
                 {
-                    currentResult.EditMessages.Add($"Failed to find property in edit command: {input}");
+                    currentResult.EditLog.Add($"Failed to find property in edit command: {input}");
                     return null;
                 }
 
                 var valueType = targetProp_Value.GetType();
 
-                // If numeric operation is not supported, force set operation
-                if (!MassEditUtils.IsNumericType(valueType))
-                {
-                    compare = "=";
-                }
-
-                // LONG
-                if (valueType == typeof(long))
-                {
-                    long tNewValue = 0;
-                    long tExistingValue = (long)targetProp_Value;
-
-                    var res = long.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if(enableRandomSpread)
-                        {
-                            result = (long)GetRandomValue(result, minRandom, maxRandom, valueType);
-                        }
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                    else
-                    {
-                        currentResult.EditMessages.Add($"Failed to parse {newValue} as LONG in edit command: {input}");
-                    }
-                }
-                // UINT
-                if (valueType == typeof(uint))
-                {
-                    uint tNewValue = 0;
-                    uint tExistingValue = (uint)targetProp_Value;
-
-                    var res = uint.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (enableRandomSpread)
-                        {
-                            result = (uint)GetRandomValue(result, minRandom, maxRandom, valueType);
-                        }
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                    else
-                    {
-                        currentResult.EditMessages.Add($"Failed to parse {newValue} as UINT in edit command: {input}");
-                    }
-                }
-                // INT
-                if (valueType == typeof(int))
-                {
-                    int tNewValue = 0;
-                    int tExistingValue = (int)targetProp_Value;
-
-                    var res = int.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (enableRandomSpread)
-                        {
-                            result = (int)GetRandomValue(result, minRandom, maxRandom, valueType);
-                        }
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                    else
-                    {
-                        currentResult.EditMessages.Add($"Failed to parse {newValue} as INT in edit command: {input}");
-                    }
-                }
-                // USHORT
-                if (valueType == typeof(ushort))
-                {
-                    ushort tNewValue = 0;
-                    ushort tExistingValue = (ushort)targetProp_Value;
-
-                    var res = ushort.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (enableRandomSpread)
-                        {
-                            result = (ushort)GetRandomValue(result, minRandom, maxRandom, valueType);
-                        }
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                    else
-                    {
-                        currentResult.EditMessages.Add($"Failed to parse {newValue} as USHORT in edit command: {input}");
-                    }
-                }
-                // SHORT
-                if (valueType == typeof(short))
-                {
-                    short tNewValue = 0;
-                    short tExistingValue = (short)targetProp_Value;
-
-                    var res = short.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (enableRandomSpread)
-                        {
-                            result = (short)GetRandomValue(result, minRandom, maxRandom, valueType);
-                        }
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                    else
-                    {
-                        currentResult.EditMessages.Add($"Failed to parse {newValue} as SHORT in edit command: {input}");
-                    }
-                }
-                // SBYTE
-                if (valueType == typeof(sbyte))
-                {
-                    sbyte tNewValue = 0;
-                    sbyte tExistingValue = (sbyte)targetProp_Value;
-
-                    var res = sbyte.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (enableRandomSpread)
-                        {
-                            result = (sbyte)GetRandomValue(result, minRandom, maxRandom, valueType);
-                        }
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                    else
-                    {
-                        currentResult.EditMessages.Add($"Failed to parse {newValue} as SBYTE in edit command: {input}");
-                    }
-                }
-                // BYTE
-                if (valueType == typeof(byte))
-                {
-                    byte tNewValue = 0;
-                    byte tExistingValue = (byte)targetProp_Value;
-
-                    var res = byte.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (enableRandomSpread)
-                        {
-                            result = (byte)GetRandomValue(result, minRandom, maxRandom, valueType);
-                        }
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                    else
-                    {
-                        currentResult.EditMessages.Add($"Failed to parse {newValue} as BYTE in edit command: {input}");
-                    }
-                }
-                // FLOAT
-                if (valueType == typeof(float))
-                {
-                    float tNewValue = 0;
-                    float tExistingValue = (float)targetProp_Value;
-
-                    var res = float.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (enableRandomSpread)
-                        {
-                            result = (float)GetRandomValue(result, minRandom, maxRandom, valueType);
-                        }
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                    else
-                    {
-                        currentResult.EditMessages.Add($"Failed to parse {newValue} as FLOAT in edit command: {input}");
-                    }
-                }
-                // VECTOR3
-                if (valueType == typeof(Vector3))
-                {
-                    Vector3 tNewValue = new Vector3();
-                    Vector3 tExistingValue = (Vector3)targetProp_Value;
-
-                    var res = VectorExtensions.TryParseVector3(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (enableRandomSpread)
-                        {
-                            result = (Vector3)GetRandomValue(result, minRandom, maxRandom, valueType);
-                        }
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "+")
-                        {
-                            try
-                            {
-                                result += tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "-")
-                        {
-                            try
-                            {
-                                result -= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "*")
-                        {
-                            try
-                            {
-                                result *= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-                        if (compare == "/")
-                        {
-                            try
-                            {
-                                result /= tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new MapObjectPropertyChangeAction(editor, curEnt, targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                    else
-                    {
-                        currentResult.EditMessages.Add($"Failed to parse {newValue} as VECTOR3 in edit command: {input}");
-                    }
-                }
-                // BOOL
-                if (valueType == typeof(bool))
-                {
-                    bool tNewValue = false;
-                    bool tExistingValue = (bool)targetProp_Value;
-
-                    var res = bool.TryParse(newValue, out tNewValue);
-
-                    if (res)
-                    {
-                        var result = tExistingValue;
-
-                        if (enableRandomSpread)
-                        {
-                            result = (bool)GetRandomValue(result, minRandom, maxRandom, valueType);
-                        }
-
-                        if (compare == "=")
-                        {
-                            try
-                            {
-                                result = tNewValue;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
-                            }
-                        }
-
-                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
-                    }
-                    else
-                    {
-                        currentResult.EditMessages.Add($"Failed to parse {newValue} as BOOL in edit command: {input}");
-                    }
-                }
-                // STRING
-                if (valueType == typeof(string))
-                {
-                    string result = newValue;
-
-                    return new MapObjectPropertyChangeAction(editor, curEnt, targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
-                }
+                return HandlePropertyInput(currentResult, curEnt, targetProp, -1, input, compare, valueType, targetProp_Value, newValue, enableRandomSpread, minRandom, maxRandom);
             }
         }
         else
         {
-            currentResult.EditMessages.Add($"Failed to split edit command into valid parameters: {input}");
+            currentResult.EditLog.Add($"Failed to split edit command into valid parameters: {input}");
         }
 
         return null;
@@ -1932,5 +395,781 @@ public static class MassEditPropertyHelper
     private static bool GetRandomBool()
     {
         return _random.Next(2) == 0;
+    }
+
+    private static ViewportAction HandlePropertyInput(MsbMassEditLog currentResult, MsbEntity curEnt, PropertyInfo targetProp, int index, string input, string compare, Type valueType, object targetProp_Value, string newValue, bool enableRandomSpread, float minRandom, float maxRandom)
+    {
+        // If numeric operation is not supported, force set operation
+        if (!MassEditUtils.IsNumericType(valueType))
+        {
+            compare = "=";
+        }
+
+        // LONG
+        if (valueType == typeof(long))
+        {
+            long tNewValue = 0;
+            long tExistingValue = (long)targetProp_Value;
+
+            var res = long.TryParse(newValue, out tNewValue);
+
+            if (res)
+            {
+
+                var result = tExistingValue;
+
+                if (enableRandomSpread)
+                {
+                    result = (long)GetRandomValue(result, minRandom, maxRandom, valueType);
+                }
+
+                if (compare == "=")
+                {
+                    try
+                    {
+                        result = tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "+")
+                {
+                    try
+                    {
+                        result += tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "-")
+                {
+                    try
+                    {
+                        result -= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "*")
+                {
+                    try
+                    {
+                        result *= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "/")
+                {
+                    try
+                    {
+                        result /= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+
+                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+            }
+            else
+            {
+                currentResult.EditLog.Add($"Failed to parse {newValue} as LONG in edit command: {input}");
+            }
+        }
+        // UINT
+        if (valueType == typeof(uint))
+        {
+            uint tNewValue = 0;
+            uint tExistingValue = (uint)targetProp_Value;
+
+            var res = uint.TryParse(newValue, out tNewValue);
+
+            if (res)
+            {
+                var result = tExistingValue;
+
+                if (enableRandomSpread)
+                {
+                    result = (uint)GetRandomValue(result, minRandom, maxRandom, valueType);
+                }
+
+                if (compare == "=")
+                {
+                    try
+                    {
+                        result = tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "+")
+                {
+                    try
+                    {
+                        result += tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "-")
+                {
+                    try
+                    {
+                        result -= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "*")
+                {
+                    try
+                    {
+                        result *= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "/")
+                {
+                    try
+                    {
+                        result /= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+
+                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+            }
+            else
+            {
+                currentResult.EditLog.Add($"Failed to parse {newValue} as UINT in edit command: {input}");
+            }
+        }
+        // INT
+        if (valueType == typeof(int))
+        {
+            int tNewValue = 0;
+            int tExistingValue = (int)targetProp_Value;
+
+            var res = int.TryParse(newValue, out tNewValue);
+
+            if (res)
+            {
+                var result = tExistingValue;
+
+                if (enableRandomSpread)
+                {
+                    result = (int)GetRandomValue(result, minRandom, maxRandom, valueType);
+                }
+
+                if (compare == "=")
+                {
+                    try
+                    {
+                        result = tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "+")
+                {
+                    try
+                    {
+                        result += tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "-")
+                {
+                    try
+                    {
+                        result -= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "*")
+                {
+                    try
+                    {
+                        result *= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "/")
+                {
+                    try
+                    {
+                        result /= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+
+                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+            }
+            else
+            {
+                currentResult.EditLog.Add($"Failed to parse {newValue} as INT in edit command: {input}");
+            }
+        }
+        // USHORT
+        if (valueType == typeof(ushort))
+        {
+            ushort tNewValue = 0;
+            ushort tExistingValue = (ushort)targetProp_Value;
+
+            var res = ushort.TryParse(newValue, out tNewValue);
+
+            if (res)
+            {
+                var result = tExistingValue;
+
+                if (enableRandomSpread)
+                {
+                    result = (ushort)GetRandomValue(result, minRandom, maxRandom, valueType);
+                }
+
+                if (compare == "=")
+                {
+                    try
+                    {
+                        result = tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "+")
+                {
+                    try
+                    {
+                        result += tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "-")
+                {
+                    try
+                    {
+                        result -= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "*")
+                {
+                    try
+                    {
+                        result *= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "/")
+                {
+                    try
+                    {
+                        result /= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+
+                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+            }
+            else
+            {
+                currentResult.EditLog.Add($"Failed to parse {newValue} as USHORT in edit command: {input}");
+            }
+        }
+        // SHORT
+        if (valueType == typeof(short))
+        {
+            short tNewValue = 0;
+            short tExistingValue = (short)targetProp_Value;
+
+            var res = short.TryParse(newValue, out tNewValue);
+
+            if (res)
+            {
+                var result = tExistingValue;
+
+                if (enableRandomSpread)
+                {
+                    result = (short)GetRandomValue(result, minRandom, maxRandom, valueType);
+                }
+
+                if (compare == "=")
+                {
+                    try
+                    {
+                        result = tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "+")
+                {
+                    try
+                    {
+                        result += tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "-")
+                {
+                    try
+                    {
+                        result -= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "*")
+                {
+                    try
+                    {
+                        result *= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "/")
+                {
+                    try
+                    {
+                        result /= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+
+                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+            }
+            else
+            {
+                currentResult.EditLog.Add($"Failed to parse {newValue} as SHORT in edit command: {input}");
+            }
+        }
+        // SBYTE
+        if (valueType == typeof(sbyte))
+        {
+            sbyte tNewValue = 0;
+            sbyte tExistingValue = (sbyte)targetProp_Value;
+
+            var res = sbyte.TryParse(newValue, out tNewValue);
+
+            if (res)
+            {
+                var result = tExistingValue;
+
+                if (enableRandomSpread)
+                {
+                    result = (sbyte)GetRandomValue(result, minRandom, maxRandom, valueType);
+                }
+
+                if (compare == "=")
+                {
+                    try
+                    {
+                        result = tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "+")
+                {
+                    try
+                    {
+                        result += tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "-")
+                {
+                    try
+                    {
+                        result -= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "*")
+                {
+                    try
+                    {
+                        result *= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "/")
+                {
+                    try
+                    {
+                        result /= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+
+                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+            }
+            else
+            {
+                currentResult.EditLog.Add($"Failed to parse {newValue} as SBYTE in edit command: {input}");
+            }
+        }
+        // BYTE
+        if (valueType == typeof(byte))
+        {
+            byte tNewValue = 0;
+            byte tExistingValue = (byte)targetProp_Value;
+
+            var res = byte.TryParse(newValue, out tNewValue);
+
+            if (res)
+            {
+                var result = tExistingValue;
+
+                if (enableRandomSpread)
+                {
+                    result = (byte)GetRandomValue(result, minRandom, maxRandom, valueType);
+                }
+
+                if (compare == "=")
+                {
+                    try
+                    {
+                        result = tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "+")
+                {
+                    try
+                    {
+                        result += tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "-")
+                {
+                    try
+                    {
+                        result -= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "*")
+                {
+                    try
+                    {
+                        result *= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "/")
+                {
+                    try
+                    {
+                        result /= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+
+                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+            }
+            else
+            {
+                currentResult.EditLog.Add($"Failed to parse {newValue} as BYTE in edit command: {input}");
+            }
+        }
+        // FLOAT
+        if (valueType == typeof(float))
+        {
+            float tNewValue = 0;
+            float tExistingValue = (float)targetProp_Value;
+
+            var res = float.TryParse(newValue, out tNewValue);
+
+            if (res)
+            {
+                var result = tExistingValue;
+
+                if (enableRandomSpread)
+                {
+                    result = (float)GetRandomValue(result, minRandom, maxRandom, valueType);
+                }
+
+                if (compare == "=")
+                {
+                    try
+                    {
+                        result = tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "+")
+                {
+                    try
+                    {
+                        result += tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "-")
+                {
+                    try
+                    {
+                        result -= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "*")
+                {
+                    try
+                    {
+                        result *= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "/")
+                {
+                    try
+                    {
+                        result /= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+
+                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+            }
+            else
+            {
+                currentResult.EditLog.Add($"Failed to parse {newValue} as FLOAT in edit command: {input}");
+            }
+        }
+        // VECTOR3
+        if (valueType == typeof(Vector3))
+        {
+            Vector3 tNewValue = new Vector3();
+            Vector3 tExistingValue = (Vector3)targetProp_Value;
+
+            var res = VectorExtensions.TryParseVector3(newValue, out tNewValue);
+
+            if (res)
+            {
+                var result = tExistingValue;
+
+                if (enableRandomSpread)
+                {
+                    result = (Vector3)GetRandomValue(result, minRandom, maxRandom, valueType);
+                }
+
+                if (compare == "=")
+                {
+                    try
+                    {
+                        result = tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "+")
+                {
+                    try
+                    {
+                        result += tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "-")
+                {
+                    try
+                    {
+                        result -= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "*")
+                {
+                    try
+                    {
+                        result *= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+                if (compare == "/")
+                {
+                    try
+                    {
+                        result /= tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+
+                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+            }
+            else
+            {
+                currentResult.EditLog.Add($"Failed to parse {newValue} as VECTOR3 in edit command: {input}");
+            }
+        }
+        // BOOL
+        if (valueType == typeof(bool))
+        {
+            bool tNewValue = false;
+            bool tExistingValue = (bool)targetProp_Value;
+
+            var res = bool.TryParse(newValue, out tNewValue);
+
+            if (res)
+            {
+                var result = tExistingValue;
+
+                if (enableRandomSpread)
+                {
+                    result = (bool)GetRandomValue(result, minRandom, maxRandom, valueType);
+                }
+
+                if (compare == "=")
+                {
+                    try
+                    {
+                        result = tNewValue;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                    }
+                }
+
+                return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
+            }
+            else
+            {
+                currentResult.EditLog.Add($"Failed to parse {newValue} as BOOL in edit command: {input}");
+            }
+        }
+        // STRING
+        if (valueType == typeof(string))
+        {
+            string result = newValue;
+
+            return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+        }
+
+        return null;
     }
 }

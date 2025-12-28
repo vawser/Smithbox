@@ -35,7 +35,7 @@ public class MassEditTool
 
     public bool ShowMassEditLog = true;
 
-    public MsbMassEditResult CurrentResult;
+    public MsbMassEditLog CurrentResult;
 
     public MassEditTool(MapEditorScreen editor, ProjectEntry project)
     {
@@ -464,12 +464,12 @@ public class MassEditTool
         }
         else
         {
-            foreach (var msg in CurrentResult.EditMessages)
+            foreach (var msg in CurrentResult.EditLog)
             {
                 TaskLogs.AddLog(msg, LogLevel.Error, LogPriority.High);
             }
 
-            foreach (var msg in CurrentResult.SelectionMessages)
+            foreach (var msg in CurrentResult.SelectionLog)
             {
                 TaskLogs.AddLog(msg, LogLevel.Error, LogPriority.High);
             }
@@ -690,7 +690,7 @@ public class MassEditTool
 
         if(!anyValidMatch)
         {
-            CurrentResult.SelectionMessages.Add("Failed to match any map objects with the specified selection criteria.");
+            CurrentResult.SelectionLog.Add("Failed to match any map objects with the specified selection criteria.");
         }
 
         return actions;
