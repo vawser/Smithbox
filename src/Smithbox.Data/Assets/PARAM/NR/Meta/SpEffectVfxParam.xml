@@ -119,6 +119,7 @@
     <materialParamTargetValue AltName="Material Param - End Fade" Wiki="The value at the end of the fade of the material parameter. The target is specified by the material parameter ID. If the material parameter ID is -1, do nothing" />
     <materialParamFadeTime AltName="Material Param - Fade Time" Wiki="Fade time for material parameter values. Gradually reach the target value over this time. If the material parameter ID is -1, do nothing" />
     <footDecalMaterialOffsetOverwriteId AltName="Foot Decal Material Offset Overwrite ID" Wiki="Forcibly rewrite the floor material ID offset of the foot decal (-1 unused)" />
+    <overlayMaterialParamId Refs="OverlayMaterialParam" />
     <pad AltName="" Padding=""/>
   </Field>
   <Self Wiki="" />

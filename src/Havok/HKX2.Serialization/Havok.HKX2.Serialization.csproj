@@ -10,10 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\HKX2\Havok.HKX2.csproj" />
   </ItemGroup>
 

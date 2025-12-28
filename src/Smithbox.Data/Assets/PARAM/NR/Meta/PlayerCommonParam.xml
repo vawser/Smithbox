@@ -12,6 +12,10 @@
     <defaultNumberOfItemSlots
     AltName="Base Item Slot Count"
     Wiki="The default number of item slots a player has." />
+	
+	<maxNumberOfItemSlots
+    AltName="Max Item Slot Count"
+    Wiki="The max number of item slots a player can have." />
     
     <reserved02 AltName="" Padding=""/>
     <animeID_DropItemPick AltName="Item Pick-up - Animation ID" Wiki="Animation ID when picking up a drop item" />
@@ -72,7 +76,7 @@
     <reserved_123 AltName="" Padding=""/>
     <resistCurseItemSpEffectBaseId AltName="Resist Death Blight Item - Base SpEffect ID" Wiki="Abnormal condition_Instant death_Instant death Item possession Special effect base ID" Refs="SpEffectParam"/>
     <resistCurseItemLotParamId_map AltName="Resist Death Blight Item - Map Item Lot ID" Wiki="Abnormal condition_immediate death_immediate death item lottery ID_for map" Refs="ItemLotParam_map"/>
-    
+	
     <revenantSummon1_BuddyParamId
     AltName="Revenant Summon 1: Buddy ID"
     Wiki="The buddy param ID for the slot 1 revenant summon."
@@ -87,35 +91,293 @@
     AltName="Revenant Summon 3: Buddy ID"
     Wiki="The buddy param ID for the slot 3 revenant summon."
     Refs="BuddyParam" />
+	
+	<revenantDesummonDistance
+	AltName="Revenant Summon Desummon Distance"
+	Wiki="Distance for summon to automatically desummon." />
     
-    <unknown_22
+    <executorBeastEffect_unk1
     Refs="SpEffectParam" />
     
-    <unknown_23
+    <executorBeastEffect_unk2
+    Refs="SpEffectParam" />
+	
+	<markingAtkParamId
+	AltName="Marking AtkParam ID"
+	Wiki="Attack param that triggers Ironeye's marking effect.\nSeems to be only when used by the player."
+	Refs="AtkParam_Pc"/>
+    
+    <sixthSenseEffectId_Active
+	AltName="Sixth Sense Active Effect ID"
     Refs="SpEffectParam" />
     
-    <unknown_27
+    <sixthSenseEffectId_Inactive
+	AltName="Sixth Sense Inactive Effect ID"
     Refs="SpEffectParam" />
     
-    <unknown_28
+    <soulbloodSongAttacker_EffectId
+	AltName="Soulblood Song Attacker Effect ID"
+	Wiki="Effect applied to the attacker of an enemy affected by Soulblood Song."
     Refs="SpEffectParam" />
     
-    <unknown_31
+	<necromancyTriggerRate
+	AltName="Necromancy Trigger Rate"
+	Wiki="Chance for Necromancy to trigger when an enemy is killed by Revenant or the family." />
+	
+    <necromancyEffectId_1
+	AltName="Necromancy Effect ID 1"
+	Wiki="Effect added to ghost raised by Necromancy."
     Refs="SpEffectParam" />
     
-    <unknown_42
+    <necromancyEffectId_2
+	AltName="Necromancy Effect ID 2"
+	Wiki="Effect added to ghost raised by Necromancy."
     Refs="SpEffectParam" />
     
-    <unknown_43
+    <necromancyEffectId_3
+	AltName="Necromancy Effect ID 3"
+	Wiki="Effect added to ghost raised by Necromancy."
     Refs="SpEffectParam" />
     
-    <unknown_44
+    <tenacityEffectId
+	AltName="Tenacity Effect"
+    Refs="SpEffectParam" />
+	
+	<unknown_49
     Refs="SpEffectParam" />
     
-    <unknown_48
+    <tenacityRelicAddEffectId
+	AltName="Tenacity Relic Additional Effect"
+    Refs="SpEffectParam" />
+	
+	<analyseProgressTrigger_Level1
+	AltName="Analyse Progress - Level 1" />
+	
+	<analyseProgressTrigger_Level2
+	AltName="Analyse Progress - Level 2" />
+	
+	<analyseProgressTrigger_Level3
+	AltName="Analyse Progress - Level 3" />
+	
+	<analyseTarget_Level1EffectId
+	AltName="Analyse Target - Level 1 Effect"
+    Refs="SpEffectParam" />
+	
+	<analyseTarget_Level2EffectId
+	AltName="Analyse Target - Level 2 Effect"
+    Refs="SpEffectParam" />
+	
+	<analyseTarget_Level3EffectId
+	AltName="Analyse Target - Level 3 Effect"
+    Refs="SpEffectParam" />
+	
+	<analyseTarget_AllyEffectId
+	AltName="Analyse Target - Ally Effect"
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_00
+	Refs="BehaviorParam_PC" />
+	
+	<fh_unknown_07
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_08
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_09
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_10
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_11
+    Refs="SpEffectParam" />
+	
+	<tranceDuration
+	AltName="Trance Duration" />
+	
+	<tranceEnhanceDuration
+	AltName="Enhanced Trance Duration" />
+	
+	<tranceEffectId
+	AltName="Trance Effect ID" 
+    Refs="SpEffectParam" />
+	
+	<tranceRemoveEffectId
+	AltName="Trance Remove Effect ID" 
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_22
+	Refs="BehaviorParam_PC" />
+	
+	<tranceSuccessiveThreshold
+	AltName="Trance Successive Atk Threshold" />
+	
+	<tranceSuccessiveThreshold_unk
+	AltName="Trance Successive Unknown Threshold" />
+	
+	<tranceEnhanceEffectId
+	AltName="Enhanced Trance Effect ID" 
+    Refs="SpEffectParam" />
+	
+	<tranceEnhanceRemoveEffectId
+	AltName="Enhanced Trance Remove Effect ID" 
+    Refs="SpEffectParam" />
+	
+	<tranceBuffEffectId
+	AltName="Trance Buff Effect ID" 
+    Refs="SpEffectParam" />
+	
+	<tranceRemoveBuffEffectId
+	AltName="Trance Remove Buff Effect ID" 
+    Refs="SpEffectParam" />
+	
+	<tranceSuccessiveEffectId
+	AltName="Trance Successive Atk Effect ID" 
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_31
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_32
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_33
+    Refs="SpEffectParam" />
+	
+	<bagcraftXp_Level2_Dart
+	AltName="Item Category XP: Level 2 Darts"
+	Wiki="Amount of xp required for level 2 category darts" />
+	
+	<bagcraftXp_Level3_Dart
+	AltName="Item Category XP: Level 3 Darts"
+	Wiki="Amount of xp required for level 3 category darts" />
+	
+	<bagcraftXp_Level2_Pot
+	AltName="Item Category XP: Level 2 Pots"
+	Wiki="Amount of xp required for level 2 category pots" />
+	
+	<bagcraftXp_Level3_Pot
+	AltName="Item Category XP: Level 3 Pots"
+	Wiki="Amount of xp required for level 3 category pots" />
+	
+	<bagcraftXp_Level2_Bolus
+	AltName="Item Category XP: Level 2 Boluses"
+	Wiki="Amount of xp required for level 2 category boluses" />
+	
+	<bagcraftXp_Level3_Bolus
+	AltName="Item Category XP: Level 3 Boluses"
+	Wiki="Amount of xp required for level 3 category boluses" />
+	
+	<bagcraftXp_Level2_Stone
+	AltName="Item Category XP: Level 2 Stones"
+	Wiki="Amount of xp required for level 2 category stones" />
+	
+	<bagcraftXp_Level3_Stone
+	AltName="Item Category XP: Level 3 Stones"
+	Wiki="Amount of xp required for level 3 category stones" />
+	
+	<bagcraftXp_Level2_Tear
+	AltName="Item Category XP: Level 2 Tears"
+	Wiki="Amount of xp required for level 2 category crystal tears" />
+	
+	<bagcraftXp_Level3_Tear
+	AltName="Item Category XP: Level 3 Tears"
+	Wiki="Amount of xp required for level 3 category crystal tears" />
+	
+	<bagcraftXp_Level2_Perfume
+	AltName="Item Category XP: Level 2 Perfumes"
+	Wiki="Amount of xp required for level 2 category perfuming arts" />
+	
+	<bagcraftXp_Level3_Perfume
+	AltName="Item Category XP: Level 3 Perfumes"
+	Wiki="Amount of xp required for level 3 category perfuming arts" />
+	
+	<bagcraftXp_Level2_Grease
+	AltName="Item Category XP: Level 2 Greases"
+	Wiki="Amount of xp required for level 2 category greases" />
+	
+	<bagcraftXp_Level3_Grease
+	AltName="Item Category XP: Level 3 Greases"
+	Wiki="Amount of xp required for level 3 category greases" />
+	
+	<bagcraftXp_Level2_Food
+	AltName="Item Category XP: Level 2 Food"
+	Wiki="Amount of xp required for level 2 category food" />
+	
+	<bagcraftXp_Level3_Food
+	AltName="Item Category XP: Level 3 Food"
+	Wiki="Amount of xp required for level 3 category food" />
+	
+	<bagcraftXp_Level2_Tool
+	AltName="Item Category XP: Level 2 Tools"
+	Wiki="Amount of xp required for level 2 category special tools" />
+	
+	<bagcraftXp_Level3_Tool
+	AltName="Item Category XP: Level 3 Tools"
+	Wiki="Amount of xp required for level 3 category special tools" />
+	
+	<analyseSelf_Level1EffectId
+	AltName="Analyse Self - Level 1 Effect"
+    Refs="SpEffectParam" />
+	
+	<analyseSelf_Level2EffectId
+	AltName="Analyse Self - Level 2 Effect"
+    Refs="SpEffectParam" />
+	
+	<analyseSelf_Level3EffectId
+	AltName="Analyse Self - Level 3 Effect"
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_61
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_62
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_63
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_64
+    Refs="SpEffectParam" />
+	
+	<fh_unknown_65
     Refs="SpEffectParam" />
     
-    <unk_00
+    <fh_unknown_67
+    Refs="SpEffectParam" />
+    
+    <fh_unknown_68
+    Refs="SpEffectParam" />
+    
+    <fh_unknown_69
+    Refs="SpEffectParam" />
+	
+	<statusGaugeStackTriggerInterval
+	AltName="Status Gauges Increase Attack Trigger Interval"
+	Wiki="Set how many seconds it takes to increase a stack." />
+	
+	<statusGaugeMaxStack
+	AltName="Status Gauges Increase Attack Max Stacks" />
+	
+	<statusGaugeStackEffectId
+	AltName="Status Gauges Increase Attack Buff SpEffect ID"
+    Refs="SpEffectParam" />
+	
+	<statusGaugeEffectId_Vfx
+	AltName="Status Gauges Increase Attack VFX SpEffect ID"
+    Refs="SpEffectParam" />
+	
+	<attackNullifyChance
+	AltName="Nullify Attacks Chance Value"
+	Wiki="Chance for the related balancer relic effect." />
+	
+	<attackNullifyEffectId_Vfx
+	AltName="Nullify Attacks VFX SpEffect ID"
+    Refs="SpEffectParam" />
+	
+	<attackNullifyIconEffectId
+	AltName="Nullify Attacks Icon SpEffect ID"
     Refs="SpEffectParam" />
     
   </Field>

@@ -12,7 +12,7 @@ Unk08:                      Should match the postfix ID
 SibPath:                    Path for the .sib file used
 Position:                   Position of the entity
 Rotation:                   Rotation of the entity
-Scale:                      Scale of the entity. 
+Scale:                      Scale of the entity.
                             - Note collision does not scale to match.
 Unk44:                      ?
 MapStudioLayer:             Layer the entity is on
@@ -38,6 +38,7 @@ UnkE18:                     ?
 EntityGroupIDs[]:           Entity Group IDs used by this entity
 UnkE3C:                     ?
 UnkE3E:                     ?
+DisableRTAO:                Disables Ray Traced Ambient Occlusion on this part.
 
 #-------------------------
 # Structs

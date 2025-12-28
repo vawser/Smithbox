@@ -77,9 +77,9 @@
     Wiki=""
     Refs="HeroStatusParam" />
     
-    <heroUltimateCooldown
-    AltName="Ultimate Art Cooldown"
-    Wiki="In seconds." />
+    <ultimateArtCharge
+    AltName="Ultimate Art Charge"
+    Wiki="Amount of ultimate charge required to perform ultimate art" />
     
     <characterAbilityCooldown
     AltName="Character Ability Cooldown"
@@ -127,7 +127,16 @@
 	<defaultWeaponTypeDiscovery
     AltName="Default Weapon Type Discovery"
     Wiki="Default weaponTypeDiscovery for each character." 
-    Enum="WEP_TYPE" />
+    ProjectEnum="WEP_TYPE" />
+    
+    <unknown_39
+    FmgRef="Modern_Menu_Text" />
+    
+    <fh_unknown_00
+    FmgRef="Modern_Menu_Text" />
+    
+    <fh_unknown_01
+    FmgRef="Modern_Menu_Text" />
     
   </Field>
   

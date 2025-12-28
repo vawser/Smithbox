@@ -48,6 +48,18 @@
       "Entries": [
         "Executor"
       ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Scholar"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Undertaker"
+      ]
     }
   ]
 }

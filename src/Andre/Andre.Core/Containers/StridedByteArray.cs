@@ -178,6 +178,37 @@ public class StridedByteArray
             dstArray._backing, (int)dstindex * (int)dstArray.Stride, (int)Stride);
     }
 
+    public bool UseClippedCopy(StridedByteArray dstArray, uint dstindex, uint srcindex)
+    {
+        if (Stride > dstArray.Stride)
+            return true;
+
+        return false;
+    }
+
+    // Version that clips the array (needed for NR 1.03.2 where the param size reduces from 1.03.1
+    public void CopyDataClipped(StridedByteArray dstArray, uint dstindex, uint srcindex)
+    {
+        if (dstindex >= dstArray.Count || srcindex >= Count)
+            throw new IndexOutOfRangeException();
+
+        if (dstArray._freeEntries.Contains(dstindex) || _freeEntries.Contains(srcindex))
+            throw new IndexOutOfRangeException();
+
+        int srcStride = (int)Stride;
+        int dstStride = (int)dstArray.Stride;
+
+        int bytesToCopy = Math.Min(srcStride, dstStride);
+
+        Array.Copy(
+            _backing,
+            (int)srcindex * srcStride,
+            dstArray._backing,
+            (int)dstindex * dstStride,
+            bytesToCopy
+        );
+    }
+
     public bool DataEquals(StridedByteArray dstArray, uint dstindex, uint srcindex)
     {
         if (dstindex >= dstArray.Count || srcindex >= Count)

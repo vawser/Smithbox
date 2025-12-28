@@ -1104,6 +1104,264 @@
       "Entries": [
         "Revenant: Chapter 8"
       ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Scholar: Chapter 1"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Scholar: Chapter 2"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Scholar: Chapter 3"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "Scholar: [Obj] Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "Scholar: [Obj] Search the underground chamber below the marsh. N.B. Only occurs with Downloadable content targets."
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "Scholar: [Obj] Search the underground chamber below the marsh. N.B. Only occurs with Downloadable content targets."
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "Scholar: [Obj] Check disturbance in chapel"
+      ]
+    },
+    {
+      "ID": 9071,
+      "Entries": [
+        "Scholar: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "Scholar: [Obj] Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9090,
+      "Entries": [
+        "Scholar: [Obj] Talk to the Undertaker"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Scholar: Chapter 4"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Scholar: Chapter 5"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Scholar: [Obj] Talk to the Small Jar Merchant"
+      ]
+    },
+    {
+      "ID": 9130,
+      "Entries": [
+        "Scholar: [Obj] Conclude the remembrance"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "Scholar: Chapter 6"
+      ]
+    },
+    {
+      "ID": 9141,
+      "Entries": [
+        "Scholar: Chapter 7"
+      ]
+    },
+    {
+      "ID": 9150,
+      "Entries": [
+        "Scholar: Chapter 8"
+      ]
+    },
+    {
+      "ID": 9170,
+      "Entries": [
+        "Scholar: [Obj] Talk to the Undertaker"
+      ]
+    },
+    {
+      "ID": 9171,
+      "Entries": [
+        "Scholar: [Obj] Check dresser mirror"
+      ]
+    },
+    {
+      "ID": 9180,
+      "Entries": [
+        "Scholar: [Obj] Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9190,
+      "Entries": [
+        "Scholar: [Obj] Defeat the Dreglord in Limveld"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Scholar: [Obj] Defeat the Dreglord in Limveld"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "Scholar: [Obj] Talk to the Undertaker"
+      ]
+    },
+    {
+      "ID": 9211,
+      "Entries": [
+        "Scholar: [Obj] Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "Scholar: [Obj] Conclude the remembrance"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Undertaker: Chapter 1"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Undertaker: Chapter 2"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "Undertaker: [Obj] Check disturbance in chapel"
+      ]
+    },
+    {
+      "ID": 10061,
+      "Entries": [
+        "Undertaker: [Obj] Determine source of footsteps"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Scholar"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "Undertaker: Chapter 4"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "Undertaker: Chapter 5"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Priestess"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "Undertaker: [Obj] Offer prayer in chapel"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 10130,
+      "Entries": [
+        "Undertaker: [Obj] Search for the Scholar in Limveld N.B. Only occurs with Downloadable content targets"
+      ]
+    },
+    {
+      "ID": 10140,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Scholar"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "Undertaker: Chapter 6"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "Undertaker: Chapter 7"
+      ]
     }
   ]
 }

@@ -47,6 +47,15 @@ namespace SoulsFormats
                     }
                 }
             }
+
+            /// <summary>
+            /// Returns a string representation of the <see cref="VertexBoneIndices"/>.
+            /// </summary>
+            /// <returns>A string representation of the <see cref="VertexBoneIndices"/>.</returns>
+            public override string ToString()
+            {
+                return $"<{A}, {B}, {C}, {D}>";
+            }
         }
     }
 }

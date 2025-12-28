@@ -364,79 +364,79 @@
     {
       "ID": 300,
       "Entries": [
-        ""
+        "Multiplayer correction - HP"
       ]
     },
     {
       "ID": 301,
       "Entries": [
-        ""
+        "Multiplayer correction - FP"
       ]
     },
     {
       "ID": 302,
       "Entries": [
-        ""
+        "Multiplayer correction - Stamina"
       ]
     },
     {
       "ID": 303,
       "Entries": [
-        ""
+        "Multiplayer correction - Defense"
       ]
     },
     {
       "ID": 304,
       "Entries": [
-        ""
+        "Multiplayer correction - Resistance"
       ]
     },
     {
       "ID": 310,
       "Entries": [
-        ""
+        "Multiplayer correction - Regular Weapons Damage"
       ]
     },
     {
       "ID": 320,
       "Entries": [
-        ""
+        "Multiplayer correction - Daggers/Throwing Blades Damage"
       ]
     },
     {
       "ID": 330,
       "Entries": [
-        ""
+        "Multiplayer correction - Colossal Weapons/Greatshields Damage"
       ]
     },
     {
       "ID": 340,
       "Entries": [
-        ""
+        "Multiplayer correction - Bows/Bolts/Arrows Damage"
       ]
     },
     {
       "ID": 341,
       "Entries": [
-        ""
+        "Multiplayer correction - Greatbows Damage"
       ]
     },
     {
       "ID": 342,
       "Entries": [
-        ""
+        "Multiplayer correction - Crossbows Damage"
       ]
     },
     {
       "ID": 350,
       "Entries": [
-        ""
+        "Multiplayer correction - Staffs Damage"
       ]
     },
     {
       "ID": 351,
       "Entries": [
-        ""
+        "Multiplayer correction - Seals Damage"
       ]
     },
     {
@@ -448,13 +448,13 @@
     {
       "ID": 400,
       "Entries": [
-        ""
+        "Multiplayer correction - Throwing Items Damage"
       ]
     },
     {
       "ID": 401,
       "Entries": [
-        ""
+        "Multiplayer correction - Consumable Items Damage"
       ]
     },
     {

@@ -69,6 +69,7 @@ namespace SoulsFormats
             RespawnOverride = 57,
             UserEdgeRemovalInner = 58,
             UserEdgeRemovalOuter = 59,
+            BigJumpSealable = 60,
             Other = 0xFFFFFFFF,
         }
 
@@ -126,6 +127,7 @@ namespace SoulsFormats
             public List<Region.RespawnOverride> RespawnOverrides { get; set; }
             public List<Region.UserEdgeRemovalInner> UserEdgeRemovalInners { get; set; }
             public List<Region.UserEdgeRemovalOuter> UserEdgeRemovalOuters { get; set; }
+            public List<Region.BigJumpSealable> BigJumpSealables { get; set; }
             public List<Region.Other> Others { get; set; }
 
             public PointParam() : base(78, "POINT_PARAM_ST")
@@ -173,6 +175,7 @@ namespace SoulsFormats
                 RespawnOverrides = new List<Region.RespawnOverride>();
                 UserEdgeRemovalInners = new List<Region.UserEdgeRemovalInner>();
                 UserEdgeRemovalOuters = new List<Region.UserEdgeRemovalOuter>();
+                BigJumpSealables = new List<Region.BigJumpSealable>();
 
                 Others = new List<Region.Other>();
             }
@@ -227,6 +230,7 @@ namespace SoulsFormats
                     case Region.RespawnOverride r: RespawnOverrides.Add(r); break;
                     case Region.UserEdgeRemovalInner r: UserEdgeRemovalInners.Add(r); break;
                     case Region.UserEdgeRemovalOuter r: UserEdgeRemovalOuters.Add(r); break;
+                    case Region.BigJumpSealable r: BigJumpSealables.Add(r); break;
                     case Region.Other r: Others.Add(r); break;
 
                     default:
@@ -252,11 +256,12 @@ namespace SoulsFormats
                     BigJumps, SoundDummys, FallPreventionOverrides, NavmeshCuttings, MapNameOverrides,
                     BigJumpExits, MountOverrides, SmallBaseAttachs, BirdRoutes,
                      ClearInfos, RespawnOverrides, UserEdgeRemovalInners, UserEdgeRemovalOuters,
+                     BigJumpSealables,
                     Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
 
-            internal override Region ReadEntry(BinaryReaderEx br)
+            internal override Region ReadEntry(BinaryReaderEx br, int version)
             {
                 RegionType type = br.GetEnum32<RegionType>(br.Position + 8);
                 switch (type)
@@ -389,6 +394,9 @@ namespace SoulsFormats
 
                     case RegionType.UserEdgeRemovalOuter:
                         return UserEdgeRemovalOuters.EchoAdd(new Region.UserEdgeRemovalOuter(br));
+
+                    case RegionType.BigJumpSealable:
+                        return BigJumpSealables.EchoAdd(new Region.BigJumpSealable(br));
 
                     case RegionType.Other:
                         return Others.EchoAdd(new Region.Other(br));
@@ -2259,6 +2267,44 @@ namespace SoulsFormats
                 // Layout
                 public int Unk00 { get; set; } = 0;
                 public int Unk04 { get; set; } = 0;
+            }
+
+            public class BigJumpSealable : Region
+            {
+                private protected override RegionType Type => RegionType.BigJumpSealable;
+                private protected override bool HasTypeData => true;
+
+                public BigJumpSealable() : base($"{nameof(Region)}: {nameof(BigJumpSealable)}") { }
+
+                internal BigJumpSealable(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    Unk00 = br.ReadSingle();
+                    Unk04 = br.ReadInt32();
+                    Unk08 = br.ReadInt32();
+                    Unk0C = br.ReadInt32();
+                    Unk10 = br.ReadInt32();
+                    Unk14 = br.ReadInt32();
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteSingle(Unk00);
+                    bw.WriteInt32(Unk04);
+                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(Unk0C);
+                    bw.WriteInt32(Unk10);
+                    bw.WriteInt32(Unk14);
+                }
+
+                // Layout
+                public float Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
+                public int Unk08 { get; set; } = 0;
+                public int Unk0C { get; set; } = 0;
+                public int Unk10 { get; set; } = 0;
+                public int Unk14 { get; set; } = 0;
             }
 
             public class Other : Region

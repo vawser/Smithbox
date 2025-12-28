@@ -182,6 +182,11 @@
     Wiki="" 
     FlagAlias="" />
     
+    <fh_unknown_00 
+    AltName="Event Flag ID: 9"
+    Wiki="" 
+    FlagAlias="" />
+    
   </Field>
   <Enums>
     <Enum Name="SOUND_BGM_MAP_PLACE_TYPE" type="s16">

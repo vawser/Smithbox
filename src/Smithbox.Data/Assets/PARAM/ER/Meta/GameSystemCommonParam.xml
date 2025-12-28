@@ -317,6 +317,8 @@
     <matchingWeaponLevelUpperArena_24 AltName="Arena - Max Reinforcement Coefficient 24" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
     <matchingWeaponLevelUpperArena_25 AltName="Arena - Max Reinforcement Coefficient 25" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
 
+    <summonDataCoopMatchingSpiritAshLevelMul AltName="Coop - Maximum Spirit Ash Reinforcement Correction" Wiki="Weakened stats when multiplayer. Maximum spirit ash level correction" />
+
     <matchingSpiritAshLevelUpper_0 AltName="Spirit Ash - Max Level Coefficient 0" Wiki="Maximum Spirit Ash level factor for whether to apply level sync" />
     <matchingSpiritAshLevelUpper_1 AltName="Spirit Ash - Max Level Coefficient 1" Wiki="Maximum Spirit Ash level factor for whether to apply level sync" />
     <matchingSpiritAshLevelUpper_2 AltName="Spirit Ash - Max Level Coefficient 2" Wiki="Maximum Spirit Ash level factor for whether to apply level sync" />

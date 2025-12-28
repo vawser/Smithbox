@@ -394,12 +394,9 @@
       <Maximum>999</Maximum>
       <SortID>3200</SortID>
     </Field>
-    <Field Def="u16 durabilityMax = 100">
-      <DisplayName>耐久度最大値</DisplayName>
-      <Description>新品耐久度.</Description>
-      <Maximum>999</Maximum>
-      <SortID>3300</SortID>
-    </Field>
+    <Field Def="u8 ultCharge"/>
+	<Field Def="u8 ultCharge2:1"/>
+    <Field Def="dummy8 unknown_ult:7" />
     <Field Def="u16 attackThrowEscape">
       <DisplayName>投げ抜け攻撃力基本値</DisplayName>
       <Description>投げ抜け攻撃力の基本値</Description>
@@ -910,13 +907,7 @@
       <Maximum>1</Maximum>
       <SortID>1956</SortID>
     </Field>
-    <Field Def="u8 showLogCondType:1 = 1">
-      <DisplayName>取得ログ表示条件</DisplayName>
-      <Enum>EQUIP_BOOL</Enum>
-      <Description>アイテム取得時にアイテム取得ログに表示するか（未入力: ○）</Description>
-      <Maximum>1</Maximum>
-      <SortID>25000</SortID>
-    </Field>
+    <Field Def="u8 affectedByCharacterScale:1 = 1" />
     <Field Def="u8 enableThrow:1">
       <DisplayName>投げ可能</DisplayName>
       <Enum>EQUIP_BOOL</Enum>
@@ -931,13 +922,7 @@
       <Maximum>2</Maximum>
       <SortID>24900</SortID>
     </Field>
-    <Field Def="u8 disableGemAttr:1">
-      <DisplayName>魔石属性変更禁止か</DisplayName>
-      <Enum>EQUIP_BOOL</Enum>
-      <Description>魔石属性変更禁止か</Description>
-      <Maximum>1</Maximum>
-      <SortID>30100</SortID>
-    </Field>
+    <Field Def="u8 enableSparringGrounds:1" />
     <Field Def="u16 defSfxMaterial1">
       <DisplayName>防御SFX材質1</DisplayName>
       <Enum>WEP_MATERIAL_DEF_SFX</Enum>
@@ -1230,12 +1215,9 @@
       <SortID>2530</SortID>
     </Field>
     
-    <Field Def="dummy8 unk1:3">
-      <DisplayName>pad</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>30103</SortID>
-    </Field>
+    <Field Def="u8 unk1a:1" />
+	<Field Def="u8 unk1b:1" /> <!-- On for character ability weapons -->
+	<Field Def="u8 unk1c:1" /> <!-- Seems to be off for weapons with fixed skills -->
     
     <Field Def="u8 correctType_Magic">
       <DisplayName>補正タイプ（魔法攻撃力）</DisplayName>
@@ -1880,13 +1862,18 @@
     <Field Def="s32 equippedSpell_R1" />
     <Field Def="s32 equippedSpell_R2" />
     <Field Def="f32 unknown_3" />
-    <Field Def="s32 unknown_4" />
+    <Field Def="s8 unknown_4" />
+    <Field Def="s8 spAttributeVariationValue" />
+    <Field Def="s16 unknown_5" />
     
-    <Field Def="dummy8 midPadding[8]" />
+    <Field Def="s32 swordArtsTableId" />
+    <Field Def="s32 sparringGroundsEventFlagId" />
     
-    <Field Def="s32 unknown_7"/>
-    <Field Def="s32 unknown_8"/>
-    <Field Def="f32 criticalMultiplier"/>
+    <Field Def="s16 heroMovesetOverrideID"/>
+    <Field Def="s8 heroID"/>
+    <Field Def="s8 spAttributeMixcraft"/>
+    <Field Def="s32 heroBehaviorVariationID"/>
+    <Field Def="f32 criticalAtkRate"/>
     <Field Def="s32 attachEffectId"/>
     <Field Def="f32 reviveDamage"/>
     <Field Def="s32 unknown_11"/>

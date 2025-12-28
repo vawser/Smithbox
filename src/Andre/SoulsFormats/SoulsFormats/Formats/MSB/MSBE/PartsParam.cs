@@ -309,7 +309,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public short UnkE3E { get; set; }
+            public byte UnkE3E { get; set; }
+
+            /// <summary>
+            /// Disables Ray Traced Ambient Occlusion on this part.
+            /// </summary>
+            public bool DisableRTAO { get; set; }
 
             private protected Part(string name)
             {
@@ -486,7 +491,8 @@ namespace SoulsFormats
                 UnkE18 = br.ReadInt32();
                 EntityGroupIDs = br.ReadUInt32s(8);
                 UnkE3C = br.ReadInt16();
-                UnkE3E = br.ReadInt16();
+                UnkE3E = br.ReadByte();
+                DisableRTAO = br.ReadBoolean();
                 //br.AssertPattern(0x10, 0x00);
             }
 
@@ -678,7 +684,8 @@ namespace SoulsFormats
                 bw.WriteInt32(UnkE18);
                 bw.WriteUInt32s(EntityGroupIDs);
                 bw.WriteInt16(UnkE3C);
-                bw.WriteInt16(UnkE3E);
+                bw.WriteByte(UnkE3E);
+                bw.WriteBoolean(DisableRTAO);
                 //bw.WritePattern(0x10, 0x00);
                 bw.Pad(8);
             }
@@ -1118,7 +1125,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int GrassConfigStruct_Unk18 { get; set; }
+                public short GrassConfigStruct_Unk18 { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
+                public short GrassConfigStruct_Unk1a { get; set; }
 
                 /// <summary>
                 /// Creates an UnkStruct7 with default values.
@@ -1141,7 +1153,8 @@ namespace SoulsFormats
                     GrassParamId3 = br.ReadInt32();
                     GrassParamId4 = br.ReadInt32();
                     GrassParamId5 = br.ReadInt32();
-                    GrassConfigStruct_Unk18 = br.ReadInt32();
+                    GrassConfigStruct_Unk18 = br.ReadInt16();
+                    GrassConfigStruct_Unk1a = br.ReadInt16();
                     br.AssertInt32(0);
                 }
 
@@ -1153,7 +1166,8 @@ namespace SoulsFormats
                     bw.WriteInt32(GrassParamId3);
                     bw.WriteInt32(GrassParamId4);
                     bw.WriteInt32(GrassParamId5);
-                    bw.WriteInt32(GrassConfigStruct_Unk18);
+                    bw.WriteInt16(GrassConfigStruct_Unk18);
+                    bw.WriteInt16(GrassConfigStruct_Unk1a);
                     bw.WriteInt32(0);
                 }
             }

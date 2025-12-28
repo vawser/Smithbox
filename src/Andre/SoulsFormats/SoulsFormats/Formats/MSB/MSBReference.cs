@@ -21,4 +21,34 @@ namespace SoulsFormats
     public class MSBEntityReference : Attribute
     {
     }
+
+    // Model Editor
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class DummyReference : Attribute
+    {
+        public Type ReferenceType;
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class NodeReference : Attribute
+    {
+        public Type ReferenceType;
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class MeshReference : Attribute
+    {
+        public Type ReferenceType;
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class MaterialReference : Attribute
+    {
+        public Type ReferenceType;
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class IgnoreInModelEditor : Attribute
+    {
+    }
 }

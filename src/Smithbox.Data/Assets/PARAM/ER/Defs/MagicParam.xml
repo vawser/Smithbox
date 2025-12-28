@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>MAGIC_PARAM_ST</ParamType>
+  <Index>134</Index>
   <DataVersion>6</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
@@ -314,14 +315,14 @@
       <Maximum>1</Maximum>
       <SortID>2200</SortID>
     </Field>
-    <Field Def="u8 enable_white:1">
+    <Field Def="u8 enable_friendly:1">
       <DisplayName>白使用可</DisplayName>
       <Enum>MAGIC_BOOL</Enum>
       <Description>白ゴーストキャラが使用可能か</Description>
       <Maximum>1</Maximum>
       <SortID>2300</SortID>
     </Field>
-    <Field Def="u8 enable_black:1">
+    <Field Def="u8 enable_hostile:1">
       <DisplayName>黒使用可</DisplayName>
       <Enum>MAGIC_BOOL</Enum>
       <Description>黒ゴーストキャラが使用可能か</Description>

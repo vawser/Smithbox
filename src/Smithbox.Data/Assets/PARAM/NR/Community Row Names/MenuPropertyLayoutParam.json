@@ -5098,7 +5098,7 @@
     {
       "ID": 17005,
       "Entries": [
-        "[Status - Relics] Slot 1 Effect 1 (Icon Unk)"
+        "[Status - Relics] Slot 1 Effect 1 (Stacks)"
       ]
     },
     {
@@ -5128,7 +5128,7 @@
     {
       "ID": 17010,
       "Entries": [
-        "[Status - Relics] Slot 1 Effect 2 (Icon Unk)"
+        "[Status - Relics] Slot 1 Effect 2 (Stacks)"
       ]
     },
     {
@@ -5158,7 +5158,7 @@
     {
       "ID": 17015,
       "Entries": [
-        "[Status - Relics] Slot 1 Effect 3 (Icon Unk)"
+        "[Status - Relics] Slot 1 Effect 3 (Stacks)"
       ]
     },
     {
@@ -5194,7 +5194,7 @@
     {
       "ID": 17021,
       "Entries": [
-        "[Status - Relics] Slot 2 Effect 1 (Icon Unk)"
+        "[Status - Relics] Slot 2 Effect 1 (Stacks)"
       ]
     },
     {
@@ -5224,7 +5224,7 @@
     {
       "ID": 17026,
       "Entries": [
-        "[Status - Relics] Slot 2 Effect 2 (Icon Unk)"
+        "[Status - Relics] Slot 2 Effect 2 (Stacks)"
       ]
     },
     {
@@ -5254,7 +5254,7 @@
     {
       "ID": 17031,
       "Entries": [
-        "[Status - Relics] Slot 2 Effect 3 (Icon Unk)"
+        "[Status - Relics] Slot 2 Effect 3 (Stacks)"
       ]
     },
     {
@@ -5290,7 +5290,7 @@
     {
       "ID": 17037,
       "Entries": [
-        "[Status - Relics] Slot 3 Effect 1 (Icon Unk)"
+        "[Status - Relics] Slot 3 Effect 1 (Stacks)"
       ]
     },
     {
@@ -5320,7 +5320,7 @@
     {
       "ID": 17042,
       "Entries": [
-        "[Status - Relics] Slot 3 Effect 2 (Icon Unk)"
+        "[Status - Relics] Slot 3 Effect 2 (Stacks)"
       ]
     },
     {
@@ -5350,7 +5350,7 @@
     {
       "ID": 17047,
       "Entries": [
-        "[Status - Relics] Slot 3 Effect 3 (Icon Unk)"
+        "[Status - Relics] Slot 3 Effect 3 (Stacks)"
       ]
     },
     {
@@ -5398,7 +5398,7 @@
     {
       "ID": 17505,
       "Entries": [
-        "[Status - Relics] Slot 4 Effect 1 (Icon Unk)"
+        "[Status - Relics] Slot 4 Effect 1 (Stacks)"
       ]
     },
     {
@@ -5428,7 +5428,7 @@
     {
       "ID": 17510,
       "Entries": [
-        "[Status - Relics] Slot 4 Effect 2 (Icon Unk)"
+        "[Status - Relics] Slot 4 Effect 2 (Stacks)"
       ]
     },
     {
@@ -5458,7 +5458,7 @@
     {
       "ID": 17515,
       "Entries": [
-        "[Status - Relics] Slot 4 Effect 3 (Icon Unk)"
+        "[Status - Relics] Slot 4 Effect 3 (Stacks)"
       ]
     },
     {
@@ -5494,7 +5494,7 @@
     {
       "ID": 17521,
       "Entries": [
-        "[Status - Relics] Slot 5 Effect 1 (Icon Unk)"
+        "[Status - Relics] Slot 5 Effect 1 (Stacks)"
       ]
     },
     {
@@ -5524,7 +5524,7 @@
     {
       "ID": 17526,
       "Entries": [
-        "[Status - Relics] Slot 5 Effect 2 (Icon Unk)"
+        "[Status - Relics] Slot 5 Effect 2 (Stacks)"
       ]
     },
     {
@@ -5554,7 +5554,7 @@
     {
       "ID": 17531,
       "Entries": [
-        "[Status - Relics] Slot 5 Effect 3 (Icon Unk)"
+        "[Status - Relics] Slot 5 Effect 3 (Stacks)"
       ]
     },
     {
@@ -5590,7 +5590,7 @@
     {
       "ID": 17537,
       "Entries": [
-        "[Status - Relics] Slot 6 Effect 1 (Icon Unk)"
+        "[Status - Relics] Slot 6 Effect 1 (Stacks)"
       ]
     },
     {
@@ -5620,7 +5620,7 @@
     {
       "ID": 17542,
       "Entries": [
-        "[Status - Relics] Slot 6 Effect 2 (Icon Unk)"
+        "[Status - Relics] Slot 6 Effect 2 (Stacks)"
       ]
     },
     {
@@ -5650,7 +5650,7 @@
     {
       "ID": 17547,
       "Entries": [
-        "[Status - Relics] Slot 6 Effect 3 (Icon Unk)"
+        "[Status - Relics] Slot 6 Effect 3 (Stacks)"
       ]
     },
     {
@@ -6916,29 +6916,53 @@
     {
       "ID": 50001,
       "Entries": [
-        "[Item] Description"
+        "[Item] Category Icon"
       ]
     },
     {
       "ID": 50002,
       "Entries": [
-        "[Item] Current no. in slot"
+        "[Item] Category XP Progress"
       ]
     },
     {
       "ID": 50003,
       "Entries": [
-        "[Item] Max no. in slot"
+        "[Item] Category Level"
       ]
     },
     {
       "ID": 50004,
       "Entries": [
-        "[Item] Total carried"
+        "[Item] Category XP (Maxed)"
       ]
     },
     {
       "ID": 50005,
+      "Entries": [
+        "[Item] Description"
+      ]
+    },
+    {
+      "ID": 50006,
+      "Entries": [
+        "[Item] Current no. in slot"
+      ]
+    },
+    {
+      "ID": 50007,
+      "Entries": [
+        "[Item] Max no. in slot"
+      ]
+    },
+    {
+      "ID": 50008,
+      "Entries": [
+        "[Item] Total carried"
+      ]
+    },
+    {
+      "ID": 50009,
       "Entries": [
         ""
       ]
@@ -6975,6 +6999,30 @@
     },
     {
       "ID": 50055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50056,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50057,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50058,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50059,
       "Entries": [
         ""
       ]
@@ -7522,6 +7570,9 @@
     {
       "ID": 50507,
       "Entries": [
+        "",
+        "",
+        "",
         ""
       ]
     },
@@ -7569,6 +7620,24 @@
     },
     {
       "ID": 50515,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50516,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50517,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50518,
       "Entries": [
         ""
       ]
@@ -7678,43 +7747,43 @@
     {
       "ID": 50707,
       "Entries": [
-        "[Vessel] Unk 1"
+        "[Vessel] Hero Icon (DoN)"
       ]
     },
     {
       "ID": 50708,
       "Entries": [
-        "[Vessel] Unk 2"
+        "[Vessel] Slot 1 Color (DoN)"
       ]
     },
     {
       "ID": 50709,
       "Entries": [
-        "[Vessel] Unk 3"
+        "[Vessel] Slot 2 Color (DoN)"
       ]
     },
     {
       "ID": 50710,
       "Entries": [
-        ""
+        "[Vessel] Slot 3 Color (DoN)"
       ]
     },
     {
       "ID": 50711,
       "Entries": [
-        ""
+        "[Vessel] Slot 4 Color (DoN)"
       ]
     },
     {
       "ID": 50712,
       "Entries": [
-        ""
+        "[Vessel] Slot 5 Color (DoN)"
       ]
     },
     {
       "ID": 50713,
       "Entries": [
-        ""
+        "[Vessel] Slot 6 Color (DoN)"
       ]
     },
     {
@@ -8933,6 +9002,66 @@
       ]
     },
     {
+      "ID": 70010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 70020,
       "Entries": [
         "[Battle Record - Character Usage and Victories Achieved] (Caption)"
@@ -9128,18 +9257,6 @@
       "ID": 70052,
       "Entries": [
         "[Battle Record - Victories Achieved] Heolstor (Name)"
-      ]
-    },
-    {
-      "ID": 70053,
-      "Entries": [
-        "[Battle Record - Victories Achieved] Heolstor (Victories)"
-      ]
-    },
-    {
-      "ID": 70054,
-      "Entries": [
-        ""
       ]
     },
     {
@@ -10447,47 +10564,29 @@
     {
       "ID": 70404,
       "Entries": [
-        "[Visual Codex - Item] Strength Scaling"
+        "[Visual Codex - Item] Item Category (Bagcraft)"
       ]
     },
     {
       "ID": 70405,
       "Entries": [
-        "[Visual Codex - Item] Dexterity Scaling"
+        "[Visual Codex - Item] Max no. per slot (Bagcraft)"
       ]
     },
     {
       "ID": 70406,
       "Entries": [
-        "[Visual Codex - Item] Intelligence Scaling"
+        "[Visual Codex - Item] Base Properties (Caption)"
       ]
     },
     {
       "ID": 70407,
       "Entries": [
-        "[Visual Codex - Item] Faith Scaling"
+        "[Visual Codex - Item] Scholar: Bagcraft (Caption)"
       ]
     },
     {
       "ID": 70408,
-      "Entries": [
-        "[Visual Codex - Item] Arcane Scaling"
-      ]
-    },
-    {
-      "ID": 70409,
-      "Entries": [
-        "[Visual Codex - Item] Base Properties (Caption)"
-      ]
-    },
-    {
-      "ID": 70410,
-      "Entries": [
-        "[Visual Codex - Item] Attribute Scaling (Caption)"
-      ]
-    },
-    {
-      "ID": 70411,
       "Entries": [
         ""
       ]
@@ -10956,6 +11055,12 @@
     },
     {
       "ID": 70927,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70928,
       "Entries": [
         ""
       ]

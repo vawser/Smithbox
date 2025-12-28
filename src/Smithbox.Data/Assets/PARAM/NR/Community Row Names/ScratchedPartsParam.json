@@ -152,6 +152,18 @@
       ]
     },
     {
+      "ID": 306100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 308000,
       "Entries": [
         "[c3080] Imp"
@@ -191,6 +203,12 @@
       "ID": 318100,
       "Entries": [
         "[c3181] Red Wolf"
+      ]
+    },
+    {
+      "ID": 320100,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -374,6 +392,12 @@
       ]
     },
     {
+      "ID": 367000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 370000,
       "Entries": [
         "[c3700] Depraved Perfumer"
@@ -401,6 +425,24 @@
       "ID": 370400,
       "Entries": [
         "[c3704] Battlemage"
+      ]
+    },
+    {
+      "ID": 373000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 375000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -641,6 +683,12 @@
       "ID": 420100,
       "Entries": [
         "[c4201] Operatic Bat"
+      ]
+    },
+    {
+      "ID": 421000,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -932,9 +980,27 @@
       ]
     },
     {
+      "ID": 438500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 438600,
       "Entries": [
         "[c4386] Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 442000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 442100,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -1010,6 +1076,12 @@
       ]
     },
     {
+      "ID": 449100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 450000,
       "Entries": [
         "[c4500] Flying Dragon"
@@ -1064,6 +1136,12 @@
       ]
     },
     {
+      "ID": 456100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 457000,
       "Entries": [
         "[c4570] Wormface"
@@ -1091,6 +1169,12 @@
       "ID": 460200,
       "Entries": [
         "[c4602] Snowfield Troll"
+      ]
+    },
+    {
+      "ID": 460300,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -1160,6 +1244,18 @@
       ]
     },
     {
+      "ID": 480000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 480100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 481000,
       "Entries": [
         "[c4810] Erdtree Avatar"
@@ -1186,7 +1282,7 @@
     {
       "ID": 490100,
       "Entries": [
-        "[c4901] Caligo (Alt/Helper)"
+        "[c4901] Caligo, Miasma of Night (Everdark)"
       ]
     },
     {
@@ -1228,13 +1324,43 @@
     {
       "ID": 501000,
       "Entries": [
-        "[c5010] Golden Hippopotamus"
+        "[c5010] Golden Hippopotamus (Large)"
       ]
     },
     {
       "ID": 501100,
       "Entries": [
-        "[c5011] Small Golden Hippopotamus"
+        "[c5011] Golden Hippopotamus (Small)"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "[c5040] Curseblade"
+      ]
+    },
+    {
+      "ID": 507000,
+      "Entries": [
+        "[c5070] Death Knight"
+      ]
+    },
+    {
+      "ID": 508000,
+      "Entries": [
+        "[c5080] Bloodfiend"
+      ]
+    },
+    {
+      "ID": 508100,
+      "Entries": [
+        "[c5081] Chief Bloodfiend"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "[c5090] Gravebird"
       ]
     },
     {
@@ -1244,15 +1370,141 @@
       ]
     },
     {
+      "ID": 516000,
+      "Entries": [
+        "[c5160] Fire Knight"
+      ]
+    },
+    {
+      "ID": 519000,
+      "Entries": [
+        "[c5190] Spider Scorpion"
+      ]
+    },
+    {
+      "ID": 519200,
+      "Entries": [
+        "[c5192] Spider Scorpion (Large)"
+      ]
+    },
+    {
+      "ID": 519300,
+      "Entries": [
+        "[c5193] Spider Scorpion (Small)"
+      ]
+    },
+    {
+      "ID": 521000,
+      "Entries": [
+        "[c5120] Divine Beast Dancing Lion"
+      ]
+    },
+    {
+      "ID": 524000,
+      "Entries": [
+        "[c5240] Shadow Hornsent"
+      ]
+    },
+    {
+      "ID": 524100,
+      "Entries": [
+        "[c5241] Shadow Hornsent (Large)"
+      ]
+    },
+    {
+      "ID": 525000,
+      "Entries": [
+        "[c5250] Horned Warrior/Divine Warrior"
+      ]
+    },
+    {
+      "ID": 531000,
+      "Entries": [
+        "[c5310] Inquisitor (Base)"
+      ]
+    },
+    {
+      "ID": 531100,
+      "Entries": [
+        "[c5311] Inquisitor"
+      ]
+    },
+    {
+      "ID": 531200,
+      "Entries": [
+        "[c5312] Elder Inquisitor"
+      ]
+    },
+    {
+      "ID": 532000,
+      "Entries": [
+        "[c5320] Fat Inquisitor"
+      ]
+    },
+    {
+      "ID": 552300,
+      "Entries": [
+        "[c5523] Shadow Hound"
+      ]
+    },
+    {
+      "ID": 575000,
+      "Entries": [
+        "[c5750] Living Jar (Icy)"
+      ]
+    },
+    {
+      "ID": 575100,
+      "Entries": [
+        "[c5750] Living Jar (Small Icy)"
+      ]
+    },
+    {
       "ID": 581000,
       "Entries": [
         "[c5810] Demi-Human Swordmaster"
       ]
     },
     {
+      "ID": 582000,
+      "Entries": [
+        "[c5820] Great Red Bear"
+      ]
+    },
+    {
+      "ID": 583000,
+      "Entries": [
+        "[c5830] Messmer Soldier"
+      ]
+    },
+    {
+      "ID": 586000,
+      "Entries": [
+        "[c5860] Ghostflame Dragon"
+      ]
+    },
+    {
+      "ID": 587000,
+      "Entries": [
+        "[c5870] Lion-Headed Imp"
+      ]
+    },
+    {
+      "ID": 590000,
+      "Entries": [
+        "[c5900] Man-Fly"
+      ]
+    },
+    {
       "ID": 600100,
       "Entries": [
         "[c6001] Eagle"
+      ]
+    },
+    {
+      "ID": 606000,
+      "Entries": [
+        "[c6060] Ram"
       ]
     },
     {
@@ -1312,7 +1564,7 @@
     {
       "ID": 754100,
       "Entries": [
-        ""
+        "[c7541] Maris, Fathom of Night (Everdark)"
       ]
     },
     {
@@ -1324,7 +1576,7 @@
     {
       "ID": 756100,
       "Entries": [
-        ""
+        "[c7561] Libra, Creature of Night (Everdark)"
       ]
     },
     {
@@ -1343,6 +1595,36 @@
       "ID": 760000,
       "Entries": [
         "[c7600] Fulghor, Champion of Nightglow"
+      ]
+    },
+    {
+      "ID": 761000,
+      "Entries": [
+        "[c7610] Dreglord Straghess"
+      ]
+    },
+    {
+      "ID": 762000,
+      "Entries": [
+        "[c7620] Weapon-Bequeathed Harmonia"
+      ]
+    },
+    {
+      "ID": 765000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 765100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 766000,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -1373,6 +1655,12 @@
       "ID": 771200,
       "Entries": [
         "[c7712] Centipede Demon Arm"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "[c7720] Knight Artorias"
       ]
     },
     {
@@ -1409,6 +1697,12 @@
       "ID": 792000,
       "Entries": [
         "[c7920] Dancer of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 793000,
+      "Entries": [
+        "[c7930] Demon Prince"
       ]
     },
     {

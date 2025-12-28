@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="System.Text.Json" Version="8.0.5" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Andre.Core\Andre.Core.csproj" />
       <ProjectReference Include="..\Andre.Formats\Andre.Formats.csproj" />
     </ItemGroup>

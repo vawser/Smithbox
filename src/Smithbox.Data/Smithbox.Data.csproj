@@ -6,40 +6,41 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(DefineConstants.Contains(MACOS))">
-    <MSBuildDisableGetCopyToPublishDirectoryItemsOptimization>true</MSBuildDisableGetCopyToPublishDirectoryItemsOptimization>
-  </PropertyGroup>
-
   <ItemGroup>
-    <None Update="Assets\**" CopyToOutputDirectory="Always" PublishFolderType="Resource" />
-    <None Update="Licenses\**" CopyToOutputDirectory="Always" PublishFolderType="Resource" />
+    <None Update="Assets\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Licenses\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Content Include="imgui.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <PublishFolderType>Resource</PublishFolderType>
     </Content>
     <Content Include="imgui.default">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <PublishFolderType>Resource</PublishFolderType>
     </Content>
     <Content Include="SDL2.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Veldrid.ImGui.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <PublishFolderType>Assembly</PublishFolderType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="libveldrid-spirv.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="tracy.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="NavGen.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
+  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
+    <DefineConstants>RELEASE</DefineConstants>
+  </PropertyGroup>
 
 </Project>

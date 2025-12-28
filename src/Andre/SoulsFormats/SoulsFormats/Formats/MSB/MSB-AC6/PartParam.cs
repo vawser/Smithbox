@@ -362,12 +362,9 @@ namespace SoulsFormats
             public short UnkE3C { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// 0 or 1.  Boolean?
-            /// Only 1 in m50_30_00_00 (The Wall) on a culling asset.
-            /// Only 1 in m50_50_00_00 (BAWS Arsenal) on giant jigsaw asset.
+            /// Disables Ray Traced Ambient Occlusion on this part. 
             /// </summary>
-            public byte UnkE3F { get; set; }
+            public bool DisableRTAO { get; set; }
 
             private protected Part(string name)
             {
@@ -516,7 +513,7 @@ namespace SoulsFormats
                 EntityGroupIDs = br.ReadUInt32s(8);
                 UnkE3C = br.ReadInt16();
                 br.AssertByte(new byte[1]);
-                UnkE3F = br.ReadByte();
+                DisableRTAO = br.ReadBoolean();
             }
 
             private protected abstract void ReadTypeData(BinaryReaderEx br);
@@ -720,7 +717,7 @@ namespace SoulsFormats
                 bw.WriteUInt32s(EntityGroupIDs);
                 bw.WriteInt16(UnkE3C);
                 bw.WriteByte((byte)0);
-                bw.WriteByte(UnkE3F);
+                bw.WriteBoolean(DisableRTAO);
             }
 
             private protected abstract void WriteTypeData(BinaryWriterEx bw);

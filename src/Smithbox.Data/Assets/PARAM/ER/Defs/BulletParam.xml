@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>BULLET_PARAM_ST</ParamType>
+  <Index>93</Index>
   <DataVersion>4</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>

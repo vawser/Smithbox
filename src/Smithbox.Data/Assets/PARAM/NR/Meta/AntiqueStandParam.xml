@@ -23,7 +23,7 @@
     <heroType
     AltName="Hero Type"
     Wiki="Which heros can use this relic vessel."
-    Enum="HERO_TYPE" />
+    ProjectEnum="HERO" />
     
     <relicSlot1
     AltName="Relic Slot Color: 1"
@@ -71,6 +71,7 @@
   
   <Enums>
     <Enum Name="HERO_TYPE" type="u8">
+		<Option Value="0" Name="None" />
         <Option Value="1" Name="Wylder" />
         <Option Value="2" Name="Guardian" />
         <Option Value="3" Name="Ironeye" />
@@ -79,12 +80,15 @@
         <Option Value="6" Name="Revenant" />
         <Option Value="7" Name="Recluse" />
         <Option Value="8" Name="Executor" />
+        <Option Value="9" Name="Scholar" />
+        <Option Value="10" Name="Undertaker" />
         <Option Value="11" Name="All" />
     </Enum>
     <Enum Name="SLOT_COLOR" type="u8">
+		<Option Value="-1" Name="None" />
         <Option Value="0" Name="Red" />
         <Option Value="1" Name="Blue" />
-        <Option Value="2" Name="Orange" />
+        <Option Value="2" Name="Yellow" />
         <Option Value="3" Name="Green" />
         <Option Value="4" Name="White" />
     </Enum>

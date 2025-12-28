@@ -19,7 +19,7 @@
     AltName="Leader Entity ID" />
 
     <UnkItemLot
-    AltName="ItemLot - Unkown"
+    AltName="ItemLot - Unknown"
     ParamRef="ItemLotParam_enemy" />    
   </Field>
   

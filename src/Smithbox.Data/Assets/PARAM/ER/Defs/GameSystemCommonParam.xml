@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>GAME_SYSTEM_COMMON_PARAM_ST</ParamType>
+  <Index>35</Index>
   <DataVersion>3</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
@@ -2257,7 +2258,7 @@
 
     <Field Def="dummy8 pad_0x348[40]" FirstVersion="10701000" RemovedVersion="11210015"/>
 
-    <Field Def="s16 unknown_0x348" FirstVersion="11210015"/>
+    <Field Def="s16 summonDataCoopMatchingSpiritAshLevelMul" FirstVersion="11210015"/>
 
     <Field Def="u8 matchingSpiritAshLevelUpper_0" FirstVersion="11210015"/>
     <Field Def="u8 matchingSpiritAshLevelUpper_1" FirstVersion="11210015"/>

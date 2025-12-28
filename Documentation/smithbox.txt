@@ -1,29 +1,33 @@
 # TODO LIST
-- Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
 - Viewport: add ability to change viewport background color
+- Viewport: implement orthographic view
+- Viewport: add track selection camera toggle - camera locks onto selection and moves in-line with any movement to the selection
+- Viewport: DES models aren't displaying, look into why.
 
-- Map Editor: implement orthographic view
-- Map Editor: add JSON export for MSB
-- Map Editor: add special map connections for NR
 - Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
+- Map Editor: implement Edge support for SDT
+- Map Editor: fix ER NVA so saves are BP correct (currently the Write side is quite off)
+- Map Editor: look into a AABB bounding box gizmo mode where the centre is placed based on the model (for baked offset models where the position is normally 0,0,0)
 
-- Model Editor: implement VFS + data bank overhaul
-- Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
-- Model Editor: add simple JSON export/import for elements of FLVER
-- Model Editor: order dummy polygon list by parent bone (as option?)
+- Model Editor: apply proper transform inheritance for dummies/nodes
+- Model Editor: Add simple JSON export/import for elements of FLVER
+- Model Editor: Make the mesh entries use the sub-meshes properly
+- Model Editor: Fix property editing for the sub-classes (FaceSet, Texture, etc)
 
-- Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: Table Group column should have difference highlighting if any of the internal rows are highlighted as different
-
-- Gparam Editor: properly find out the new NR field type structures, so they can be edited.
-
-- Text Editor: FMG Export should include the associated-types (e.g. export for Title should include Desc and Summary) when in the default display mode
+- Param Editor: add a special-case mass edit search command "item:" which searches all of the itemlot item fields for a match
+ - Makes it a lot more feasible to filter to ALL instances of X item within the itemlots without a 8 term search filter
+ - Only works with the itemlot params (obviously)
+- Param Editor: add param port tool: select base row in existing project + target project -> bring up selection window that displays the target project's params (of the currently selected param), allow user to select which to port over. Use the selected base row as the base for the ported rows, and then copy values over based on field name matching (perhaps add some heuristics too for minor deviations)
+- Param Editor: finish syncing the AC6 meta to the leaked paramdefs (was around NpcParam)
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
-
+- Texture Editor: adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
+ (i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
+ 
 # TODO NOW
-- Map Editor: saving with empty Light entries in BTL causes corrupted BTL save?
-- Map Editor: Map Contents fails to populate properly?
+- Map Editor: add BTAB handling (in same way as AIP is displayed)
+- Map Editor: add BTPB handling (in same way as AIP is displayed)

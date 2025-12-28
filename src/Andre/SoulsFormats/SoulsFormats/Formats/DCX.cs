@@ -4,6 +4,7 @@ using System.IO.Compression;
 using System.IO.MemoryMappedFiles;
 using DotNext.IO.MemoryMappedFiles;
 using Org.BouncyCastle.Asn1.Cms;
+using Org.BouncyCastle.Tls.Crypto.Impl.BC;
 using ZstdNet;
 
 namespace SoulsFormats
@@ -57,6 +58,15 @@ namespace SoulsFormats
         public static Memory<byte> Decompress(Memory<byte> data)
         {
             return Decompress(data, out _);
+        }
+
+        /// <summary>
+        /// Decompress a DCX file from an array of bytes and return the detected DCX type.
+        /// </summary>
+        public static byte[] Decompress(byte[] data, out Type type)
+        {
+            BinaryReaderEx br = new BinaryReaderEx(true, data);
+            return Decompress(br, out type).ToArray();
         }
 
         /// <summary>

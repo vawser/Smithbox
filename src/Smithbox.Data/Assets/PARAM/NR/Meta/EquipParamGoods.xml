@@ -6,7 +6,7 @@
     <Enum Name="GOODS_TYPE" type="u8">
       <Option Value="0" Name="Normal Item" />
       <Option Value="1" Name="Key Item" />
-      <Option Value="2" Name="Crafting Material" />
+      <Option Value="2" Name="Non-usable Item" />
       <Option Value="3" Name="Remembrance" />
       <Option Value="4" Name="None" />
       <Option Value="5" Name="Sorcery" />
@@ -15,21 +15,23 @@
       <Option Value="8" Name="Spirit Summon - Greater" />
       <Option Value="9" Name="Wondrous Physick" />
       <Option Value="10" Name="Wondrous Physick Tear" />
-      <Option Value="11" Name="Regenerative Material" />
+      <Option Value="11" Name="Permanent Buff" />
       <Option Value="12" Name="Info Item" />
       <Option Value="13" Name="None" />
       <Option Value="14" Name="Reinforcement Material" />
       <Option Value="15" Name="Great Rune" />
-      <Option Value="16" Name="Wylder - Garb" />
-      <Option Value="17" Name="Guardian - Garb" />
-      <Option Value="18" Name="Ironeye - Garb" />
-      <Option Value="19" Name="Duchess - Garb" />
-      <Option Value="20" Name="Raider - Garb" />
-      <Option Value="21" Name="Revenant - Garb" />
-      <Option Value="22" Name="Recluse - Garb" />
-      <Option Value="23" Name="Executor - Garb" />
+      <Option Value="16" Name="Garb - Wylder" />
+      <Option Value="17" Name="Garb - Guardian" />
+      <Option Value="18" Name="Garb - Ironeye" />
+      <Option Value="19" Name="Garb - Duchess" />
+      <Option Value="20" Name="Garb - Raider" />
+      <Option Value="21" Name="Garb - Revenant" />
+      <Option Value="22" Name="Garb - Recluse" />
+      <Option Value="23" Name="Garb - Executor" />
       <Option Value="24" Name="Gestures" />
-      <Option Value="25" Name="Urns" />
+      <Option Value="25" Name="Relic Vessel" />
+	  <Option Value="26" Name="Garb - Scholar" />
+	  <Option Value="27" Name="Garb - Undertaker" />
     </Enum>
     <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
       <Option Value="0" Name="None" />
@@ -137,6 +139,18 @@
       <Option Value="120" Name="Group 120" />
       <Option Value="255" Name="None" />
     </Enum>
+	<Enum Name="BAGCRAFT_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+		<Option Value="1" Name="Darts" />
+		<Option Value="2" Name="Pots" />
+		<Option Value="3" Name="Boluses" />
+		<Option Value="4" Name="Stones" />
+		<Option Value="5" Name="Crystal Tears" />
+		<Option Value="6" Name="Perfuming Arts" />
+		<Option Value="7" Name="Greases" />
+		<Option Value="8" Name="Food" />
+		<Option Value="9" Name="Special Tools" />
+    </Enum>
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
@@ -231,7 +245,7 @@
     <isUseMultiPenaltyOnly AltName="Usable if Disconnect Penalty is Active" Wiki="A flag that allows you to determine if an item is only available when a client disconnect penalty is incurred." IsBool="" />
     <suppleType AltName="Regenerative Item Type" Wiki="Replenishment item / Replenishment type when replenishing a replenished item." Enum="GOODS_SUPPLE_TYPE" />
     <autoReplenishType AltName="Auto Replenishment Type" Wiki="Controls whether or not to automatically replenish and default settings" Enum="AUTO_REPLENISH_TYPE" />
-    <isDrop AltName="Can be Dropped" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
+    <isDrop AltName="Can be Dropped" Wiki="Allows goods to be dropped from inventory" IsBool="" />
     <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered )" IsBool="" />
     <isSummonHorse AltName="Is Horse Summon" Wiki="Is it an item that summons a horse? Cannot be used if the horse died or the PC is in a horse-prohibited area" IsBool="" />
     <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
@@ -244,7 +258,7 @@
     <quickMatchReplenish AltName="Replenish after quick match" Wiki="Should amount of this item be stored and replenished after quick match?" IsBool="" />
     <pad1 AltName="" Padding=""/>
     <saleValue AltName="Sale Value" Wiki="Selling price" />
-    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
+    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" ProjectEnum="RARITY" />
     
     <useLimitSummonBuddy 
     AltName="Use Limit Category (Spirit Summon)" 
@@ -278,15 +292,103 @@
     <reserve5 AltName="" Padding=""/>
     <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." FlagAlias="" />
     <reserve3 AltName="" Padding=""/>
+	
+	<useItemConferBullets
+	AltName="Use Item Confer Bullets"
+	Wiki="Set to 1 to have goods use Item Confer bullets when the relic effect is equipped" />
+	
+	<carrySpEffectId
+	AltName="Carry SpEffect ID"
+	Wiki="SpEffect applied when carrying at least 1 of this item.\nNote that it is not automatically removed when lacking the item."
+	Refs="SpEffectParam" />
+	
+	<emptySpEffectId
+	AltName="Empty SpEffect ID"
+	Wiki="SpEffect applied upon dropping the final instance of this item.\nTypically used to remove the carry SpEffect."
+	Refs="SpEffectParam" />
+	
+	<enableSparringGrounds
+	AltName="Enable Sparring Grounds"
+	Wiki="Allows goods to appear in Sparring Grounds"
+	IsBool="" />
+	
+	<enableVisualCodex
+	AltName="Enable Visual Codex"
+	Wiki="Allows goods to appear in Visual Codex"
+	IsBool="" />
+	
+	<bagcraftMaxNum
+	AltName="Scholar Max Amount"
+	Wiki="Max number carried when playing as Scholar" />
+	
+	<bagcraftCategory
+	AltName="Bagcraft Item Category"
+	Wiki="Item category leveled up when item is used"
+	Enum="BAGCRAFT_CATEGORY" />
     
     <characterInitId
     AltName="Skin: Character ID"
     Wiki="Determines the character setup to use for this skin item."
     Refs="CharaInitParam" />
     
-    <bulletId
-    AltName="Bullet ID"
-    Wiki=""
+    <itemConferBulletId
+    AltName="Item Confer Bullet ID"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect."
     Refs="Bullet" />
+	
+	<itemConferBulletId_1
+    AltName="Item Confer Bullet ID Left"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect."
+    Refs="Bullet" />
+	
+	<sparringGroundsEventFlagId
+	AltName="Appearance Event Flag ID"
+	Wiki="Event flag that determines if goods will appear in Sparring Grounds/Visual Codex"
+	FlagAlias="" />
+	
+	<level2RefId
+	AltName="Reference ID: Level 2"
+	Wiki="Reference ID when item category is level 2"
+	Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+	
+	<level2RefId_1
+	AltName="Reference ID Left: Level 2"
+	Wiki="Reference ID for left hand when item category is level 2"
+	Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+	
+	<level3RefId
+	AltName="Reference ID: Level 3"
+	Wiki="Reference ID when item category is level 3"
+	Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+	
+	<level3RefId_1
+	AltName="Reference ID Left: Level 3"
+	Wiki="Reference ID for left hand when item category is level 2"
+	Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    
+    <level2_itemConferBulletId
+	AltName="Item Confer Bullet ID: Level 2"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect and category is level 2."
+    Refs="Bullet" />
+	
+	<level2_itemConferBulletId_1
+	AltName="Item Confer Bullet ID Left: Level 2"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect and category is level 2."
+    Refs="Bullet" />
+    
+    <level3_itemConferBulletId
+	AltName="Item Confer Bullet ID: Level 3"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect and category is level 3."
+    Refs="Bullet" />
+    
+    <level3_itemConferBulletId_1
+	AltName="Item Confer Bullet ID Left: Level 3"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect and category is level 3."
+    Refs="Bullet" />
+	
+	<bagcraftCategoryXp
+	AltName="Bagcraft Item Category XP"
+	Wiki="Amount of XP that item grants to item category when successfully used" />
+    
   </Field>
 </PARAMMETA>

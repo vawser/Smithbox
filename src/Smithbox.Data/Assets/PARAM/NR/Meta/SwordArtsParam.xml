@@ -104,7 +104,8 @@
 	
 	<sparringGroundsEventFlagId
 	AltName="Appearance Event Flag ID"
-	Wiki="Event flag that determines if skill will appear in Sparring Grounds/Visual Codex" />
+	Wiki="Event flag that determines if skill will appear in Sparring Grounds/Visual Codex" 
+	FlagAlias="" />
 	
 	<isRefRightArts
 	AltName="Use Right Skill"
@@ -168,6 +169,16 @@
 	
 	<isStartSkill_Recluse
 	AltName="Starting Skill - Recluse"
+	Wiki="Allows skill from relic to apply to starting weapon for this hero"
+	IsBool="" />
+	
+	<isStartSkill_Scholar
+	AltName="Starting Skill - Scholar"
+	Wiki="Allows skill from relic to apply to starting weapon for this hero"
+	IsBool="" />
+	
+	<isStartSkill_Undertaker
+	AltName="Starting Skill - Undertaker"
 	Wiki="Allows skill from relic to apply to starting weapon for this hero"
 	IsBool="" />
     

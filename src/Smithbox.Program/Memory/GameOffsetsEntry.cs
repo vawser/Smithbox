@@ -1,11 +1,7 @@
-﻿using StudioCore.Core;
-using StudioCore.Formats.JSON;
-using System;
+﻿using StudioCore.Application;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Utilities;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Memory;
 
@@ -21,9 +17,9 @@ public class GameOffsetsEntry
 
     internal GameOffsetsEntry(ProjectEntry project)
     {
-        var data = project.ParamMemoryOffsets.list[CFG.Current.SelectedGameOffsetData];
+        var data = project.ParamData.ParamMemoryOffsets.list[CFG.Current.SelectedGameOffsetData];
 
-        exeName = project.ParamMemoryOffsets.exeName;
+        exeName = project.ParamData.ParamMemoryOffsets.exeName;
         Is64Bit = type != ProjectType.DS1;
         type = project.ProjectType;
 

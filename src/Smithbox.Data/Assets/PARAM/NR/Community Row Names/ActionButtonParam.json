@@ -628,19 +628,19 @@
     {
       "ID": 6850,
       "Entries": [
-        "Search for whetstone"
+        "Obtain whetstone"
       ]
     },
     {
       "ID": 6851,
       "Entries": [
-        "Search for tear of silver"
+        "Obtain tear of silver"
       ]
     },
     {
       "ID": 6852,
       "Entries": [
-        "Search for golden dew"
+        "Obtain golden dew"
       ]
     },
     {
@@ -652,13 +652,13 @@
     {
       "ID": 6854,
       "Entries": [
-        "Search for blessed flowers"
+        "Obtain blessed flowers"
       ]
     },
     {
       "ID": 6855,
       "Entries": [
-        "Search for golden sprout"
+        "Obtain golden sprout"
       ]
     },
     {
@@ -671,6 +671,12 @@
       "ID": 6860,
       "Entries": [
         "Examine"
+      ]
+    },
+    {
+      "ID": 6870,
+      "Entries": [
+        "Take primal core"
       ]
     },
     {
@@ -932,6 +938,108 @@
       ]
     },
     {
+      "ID": 7100,
+      "Entries": [
+        "Open door"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "Smash"
+      ]
+    },
+    {
+      "ID": 7102,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7103,
+      "Entries": [
+        "Offer prayer"
+      ]
+    },
+    {
+      "ID": 7104,
+      "Entries": [
+        "Absorb Night's power"
+      ]
+    },
+    {
+      "ID": 7105,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7109,
+      "Entries": [
+        "Touch light"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7121,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7122,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 7124,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 7125,
+      "Entries": [
+        "Look at self in mirror"
+      ]
+    },
+    {
+      "ID": 7126,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 7130,
+      "Entries": [
+        "Purchase"
+      ]
+    },
+    {
+      "ID": 7132,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Change skill"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "Revert skill"
+      ]
+    },
+    {
       "ID": 7800,
       "Entries": [
         ""
@@ -1094,6 +1202,12 @@
       ]
     },
     {
+      "ID": 9391,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
       "ID": 10000,
       "Entries": [
         ""
@@ -1109,6 +1223,72 @@
       "ID": 10010,
       "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 107800,
+      "Entries": [
+        "Resonate"
+      ]
+    },
+    {
+      "ID": 107801,
+      "Entries": [
+        "Gain the power of the great crystal"
+      ]
+    },
+    {
+      "ID": 107820,
+      "Entries": [
+        "Restore HP"
+      ]
+    },
+    {
+      "ID": 107821,
+      "Entries": [
+        "Create arch of magic glintblades"
+      ]
+    },
+    {
+      "ID": 107822,
+      "Entries": [
+        "Boost physical and scarlet rot damage"
+      ]
+    },
+    {
+      "ID": 107823,
+      "Entries": [
+        "Restore FP"
+      ]
+    },
+    {
+      "ID": 107901,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 109200,
+      "Entries": [
+        "Light flame"
+      ]
+    },
+    {
+      "ID": 109210,
+      "Entries": [
+        "Touch false vision of a Great Rune"
+      ]
+    },
+    {
+      "ID": 109211,
+      "Entries": [
+        "Travel to another location"
+      ]
+    },
+    {
+      "ID": 109212,
+      "Entries": [
+        "Break seal"
       ]
     }
   ]

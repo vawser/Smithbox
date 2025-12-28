@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>CHARACTER_INIT_PARAM</ParamType>
+  <Index>175</Index>
   <DataVersion>2</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
@@ -149,11 +150,11 @@
       <Maximum>999999</Maximum>
       <SortID>3100</SortID>
     </Field>
-    
+
     <Field Def="dummy8 pad8_old[4]" RemovedVersion="11210015" />
-    
-    <Field Def="u8 unknown_0x50" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x51" FirstVersion="11210015" />
+
+    <Field Def="u8 scadutreeBlessing" FirstVersion="11210015" />
+    <Field Def="u8 reveredSpiritAshBlessing" FirstVersion="11210015" />
     <Field Def="dummy8 pad8[2]" FirstVersion="11210015" >
       <DisplayName>pad</DisplayName>
       <Description>pad</Description>
@@ -161,7 +162,7 @@
       <EditFlags>Wrap</EditFlags>
       <SortID>10001</SortID>
     </Field>
-    
+
     <Field Def="s32 elixir_material00 = -1">
       <DisplayName>エリクサー用素材ID1</DisplayName>
       <Description>エリクサー用素材ID1</Description>

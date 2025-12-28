@@ -39,7 +39,7 @@ namespace SoulsFormats
                 LodLevelEx = 0x0400_0000,
 
                 /// <summary>
-                /// Not confirmed, but suspected to indicate when indices are edge-compressed.
+                /// Indexes are edge-compressed.
                 /// </summary>
                 EdgeCompressed = 0x4000_0000,
 
@@ -72,12 +72,16 @@ namespace SoulsFormats
             /// <summary>
             /// Indices to vertices in a mesh.
             /// </summary>
+
+            [IgnoreInModelEditor]
             public List<int> Indices { get; set; }
 
             /// <summary>
             /// Edge compression information useful for edge compressed vertex buffers.
             /// </summary>
-            internal EdgeMemberInfoGroup EdgeMembers { get; private set; }
+            
+            [IgnoreInModelEditor]
+            internal List<EdgeIndexGroup> EdgeIndexGroups { get; set; }
 
             /// <summary>
             /// Creates a new FaceSet with default values and no indices.
@@ -112,7 +116,7 @@ namespace SoulsFormats
                 int indicesOffset = br.ReadInt32();
 
                 int indexSize = 0;
-                if (header.Version > 0x20005)
+                if (header.Version > 0x20007)
                 {
                     br.ReadInt32(); // Indices length
                     br.AssertInt32(0);
@@ -123,9 +127,6 @@ namespace SoulsFormats
                 if (indexSize == 0)
                     indexSize = headerIndexSize;
 
-                if (indexSize == 8 ^ Flags.HasFlag(FSFlags.EdgeCompressed))
-                    throw new InvalidDataException("FSFlags.EdgeCompressed probably doesn't mean edge compression after all. Please investigate this.");
-
                 if (indexSize == 8)
                 {
                     if ((Flags & ~FSFlags.EdgeCompressed) == Flags)
@@ -133,9 +134,7 @@ namespace SoulsFormats
 
                     br.StepIn(dataOffset + indicesOffset);
                     {
-                        List<int> indices = [];
-                        EdgeMembers = new EdgeMemberInfoGroup(br, indices);
-                        Indices = [.. indices];
+                        ReadEdgeIndices(br, indexCount);
                     }
                     br.StepOut();
                 }
@@ -155,6 +154,40 @@ namespace SoulsFormats
                 }
             }
 
+            internal void ReadEdgeIndices(BinaryReaderEx br, int indexBufferLength)
+            {
+                int indexCount = 0;
+                EdgeIndexGroups = new List<EdgeIndexGroup>();
+
+                long start = br.Position;
+                long end = start + indexBufferLength;
+                bool hasNextGroup = true;
+                while (hasNextGroup)
+                {
+                    if (br.Position >= end)
+                        break;
+
+                    var group = new EdgeIndexGroup(br);
+                    EdgeIndexGroups.Add(group);
+                    hasNextGroup = group.HasNextGroup;
+                    if (hasNextGroup)
+                    {
+                        br.Position += group.NextGroupOffset;
+                    }
+
+                    foreach (var buffer in group.IndexBuffers)
+                    {
+                        indexCount += buffer.SpuConfigInfo.NumIndexes;
+                    }
+                }
+
+                Indices = new List<int>(indexCount);
+                foreach (var group in EdgeIndexGroups)
+                {
+                    group.ReadFaceIndices(br, Indices, start);
+                }
+            }
+
             internal void Write(BinaryWriterEx bw, FLVERHeader header, int indexSize, int index)
             {
                 bw.WriteUInt32((uint)Flags);
@@ -164,7 +197,7 @@ namespace SoulsFormats
                 bw.WriteInt32(Indices.Count);
                 bw.ReserveInt32($"FaceSetVertices{index}");
 
-                if (header.Version > 0x20005)
+                if (header.Version > 0x20007)
                 {
                     bw.WriteInt32(Indices.Count * (indexSize / 8));
                     bw.WriteInt32(0);
@@ -176,11 +209,7 @@ namespace SoulsFormats
             internal void WriteVertices(BinaryWriterEx bw, int indexSize, int index, int dataStart)
             {
                 bw.FillInt32($"FaceSetVertices{index}", (int)bw.Position - dataStart);
-                if (indexSize == 8 && (Flags & FSFlags.EdgeCompressed) != 0)
-                {
-                    throw new NotImplementedException($"Edge index compression is not yet supported.");
-                }
-                else if (indexSize == 16)
+                if (indexSize == 16)
                 {
                     foreach (int i in Indices)
                         bw.WriteUInt16((ushort)i);
@@ -277,11 +306,6 @@ namespace SoulsFormats
                 {
                     return new List<int>(Indices);
                 }
-            }
-
-            public FaceSet Clone()
-            {
-                return (FaceSet)MemberwiseClone();
             }
         }
     }

@@ -21,8 +21,7 @@
     
     <displayNumericValue
     AltName="Display Numeric Value"
-    Wiki="If enabled, the numeric value is displayed for this buff in the status menu."
-    IsBool="" />
+    Wiki="If enabled, the numeric value is displayed for this buff in the status menu." />
     
     <displayPercentageSymbol
     AltName="Display Percentage Symbol"

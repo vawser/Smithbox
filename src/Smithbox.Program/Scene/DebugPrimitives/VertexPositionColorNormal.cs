@@ -1,2 +1,0 @@
-﻿namespace StudioCore.Scene.DebugPrimitives;
-

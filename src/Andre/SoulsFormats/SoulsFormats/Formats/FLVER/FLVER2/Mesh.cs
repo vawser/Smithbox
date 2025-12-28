@@ -20,21 +20,29 @@ namespace SoulsFormats
             public bool UseBoneWeights { get; set; }
             
             /// <inheritdoc cref="IFlverMesh.Dynamic"/>
-            public byte Dynamic => (byte)(UseBoneWeights ? 1 : 0);
+            public byte Dynamic
+            {
+                get => (byte)(UseBoneWeights ? 1 : 0);
+                set => UseBoneWeights = value == 1;
+            }
 
             /// <summary>
             /// Index of the material used by all triangles in this mesh.
             /// </summary>
+            [MaterialReference(ReferenceType = typeof(FLVER2.Material))]
             public int MaterialIndex { get; set; }
 
             /// <summary>
-            /// Index of the node representing this mesh in the <see cref="FLVER2.Nodes"/> list.
+            /// Index of the node representing this mesh in the <see cref="Nodes"/> list.
             /// </summary>
+            [NodeReference(ReferenceType = typeof(FLVER.Node))]
             public int NodeIndex { get; set; }
 
             /// <summary>
             /// Indexes of bones in the bone collection which may be used by vertices in this mesh.
             /// </summary>
+
+            [IgnoreInModelEditor]
             public List<int> BoneIndices { get; set; }
 
             /// <summary>
@@ -45,11 +53,15 @@ namespace SoulsFormats
             /// <summary>
             /// Vertex buffers in this mesh.
             /// </summary>
+
+            [IgnoreInModelEditor]
             public List<VertexBuffer> VertexBuffers { get; set; }
 
             /// <summary>
             /// Vertices in this mesh.
             /// </summary>
+
+            [IgnoreInModelEditor]
             public List<FLVER.Vertex> Vertices { get; set; }
             IReadOnlyList<FLVER.Vertex> IFlverMesh.Vertices => Vertices;
 
@@ -111,10 +123,12 @@ namespace SoulsFormats
                 foreach (int i in faceSetIndices)
                 {
                     if (!faceSetDict.ContainsKey(i))
-                        throw new NotSupportedException("Face set not found or already taken: " + i);
+                        throw new NotSupportedException("Face set not found: " + i);
 
                     FaceSets.Add(faceSetDict[i]);
-                    faceSetDict.Remove(i);
+
+                    // Removed for shared meshes support
+                    //faceSetDict.Remove(i);
                 }
                 faceSetIndices = null;
             }
@@ -125,10 +139,12 @@ namespace SoulsFormats
                 foreach (int i in vertexBufferIndices)
                 {
                     if (!vertexBufferDict.ContainsKey(i))
-                        throw new NotSupportedException("Vertex buffer not found or already taken: " + i);
+                        throw new NotSupportedException("Vertex buffer not found: " + i);
 
                     VertexBuffers.Add(vertexBufferDict[i]);
-                    vertexBufferDict.Remove(i);
+
+                    // Removed for shared meshes support
+                    //vertexBufferDict.Remove(i);
                 }
                 vertexBufferIndices = null;
 
@@ -150,15 +166,6 @@ namespace SoulsFormats
                         }
                     }
                 }
-
-                for (int i = 0; i < VertexBuffers.Count; i++)
-                {
-                    VertexBuffer buffer = VertexBuffers[i];
-
-                    // This appears to be some kind of flag on edge-compressed vertex buffers
-                    //if ((buffer.BufferIndex & ~0x60000000) != i)
-                    //    throw new FormatException("Unexpected vertex buffer index.");
-                }
             }
 
             internal void ReadVertices(BinaryReaderEx br, int dataOffset, List<BufferLayout> layouts, FLVERHeader header)
@@ -167,6 +174,7 @@ namespace SoulsFormats
                 int uvCap = layoutMembers.Count(m => m.Semantic == FLVER.LayoutSemantic.UV);
                 int tanCap = layoutMembers.Count(m => m.Semantic == FLVER.LayoutSemantic.Tangent);
                 int colorCap = layoutMembers.Count(m => m.Semantic == FLVER.LayoutSemantic.VertexColor);
+                bool posfilled = layoutMembers.Any(m => m.Semantic == FLVER.LayoutSemantic.Position && m.Type != FLVER.LayoutType.EdgeCompressed);
 
                 int vertexCount = VertexBuffers.Count > 0 ? VertexBuffers[0].VertexCount : 0;
                 Vertices = new List<FLVER.Vertex>(vertexCount);
@@ -174,7 +182,19 @@ namespace SoulsFormats
                     Vertices.Add(new FLVER.Vertex(uvCap, tanCap, colorCap));
 
                 foreach (VertexBuffer buffer in VertexBuffers)
-                    buffer.ReadBuffer(br, layouts, Vertices, dataOffset, header);
+                {
+                    // TODO: EdgeGeom
+                    // The other facesets repeat the same edge vertex information so the first one may be all that is needed
+                    var edgeIndexGroups = FaceSets.Count > 0 ? FaceSets[0].EdgeIndexGroups : new List<EdgeIndexGroup>();
+                    buffer.ReadBuffer(br, layouts, Vertices, edgeIndexGroups, dataOffset, header.Version, posfilled);
+                }
+
+                // TODO: EdgeGeom
+                // Destroy unused edge index groups for now
+                foreach (var faceset in FaceSets)
+                {
+                    faceset.EdgeIndexGroups = null;
+                }
             }
 
             internal void Write(BinaryWriterEx bw, int index)
@@ -251,11 +271,6 @@ namespace SoulsFormats
                 }
             }
 
-            public Mesh Clone()
-            {
-                return (Mesh)MemberwiseClone();
-            }
-
             /// <summary>
             /// An optional bounding box for meshes added in DS2.
             /// </summary>
@@ -299,11 +314,6 @@ namespace SoulsFormats
                     bw.WriteVector3(Max);
                     if (header.Version >= 0x2001A)
                         bw.WriteVector3(Unk);
-                }
-
-                public BoundingBoxes Clone()
-                {
-                    return (BoundingBoxes)MemberwiseClone();
                 }
             }
         }

@@ -69,7 +69,7 @@ namespace SoulsFormats
                     MufflingPortalLinks, MufflingBoxLinks, Others);
             }
 
-            internal override Route ReadEntry(BinaryReaderEx br)
+            internal override Route ReadEntry(BinaryReaderEx br, int version)
             {
                 RouteType type = br.GetEnum32<RouteType>(br.Position + 0x10);
                 switch (type)

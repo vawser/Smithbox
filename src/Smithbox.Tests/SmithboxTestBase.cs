@@ -1,16 +1,6 @@
-﻿using Moq;
-using Octokit;
-using StudioCore;
-using StudioCore.Core;
-using StudioCore.Formats.JSON;
-using StudioCore.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Veldrid;
-using Veldrid.Sdl2;
+﻿using StudioCore;
+using StudioCore.Application;
+using StudioCore.Renderer;
 
 namespace SmithboxTests;
 

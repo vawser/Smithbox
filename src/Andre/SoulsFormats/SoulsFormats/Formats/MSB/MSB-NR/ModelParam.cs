@@ -104,7 +104,7 @@ namespace SoulsFormats
             }
             IReadOnlyList<IMsbModel> IMsbParam<IMsbModel>.GetEntries() => GetEntries();
 
-            internal override Model ReadEntry(BinaryReaderEx br)
+            internal override Model ReadEntry(BinaryReaderEx br, int version)
             {
                 ModelType type = br.GetEnum32<ModelType>(br.Position + 8);
                 switch (type)

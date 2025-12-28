@@ -116,7 +116,7 @@ namespace SoulsFormats
             }
             IReadOnlyList<IMsbPart> IMsbParam<IMsbPart>.GetEntries() => GetEntries();
 
-            internal override Part ReadEntry(BinaryReaderEx br)
+            internal override Part ReadEntry(BinaryReaderEx br, int version)
             {
                 PartType type = br.GetEnum32<PartType>(br.Position + 12);
                 switch (type)
@@ -1542,9 +1542,9 @@ namespace SoulsFormats
                 public short Unk3E { get; set; } = -1;
                 public int[] SpEffectSetParamIds { get; set; } = new int[4];
                 private int Unk50 { get; set; } = 0; // Hidden
-                private int Unk54 { get; set; } = 0; // Hidden
+                private int Unk54 { get; set; } = 0; // MODIFIED
                 private int Unk58 { get; set; } = 0; // Hidden
-                private int Unk5C { get; set; } = 0; // Hidden
+                private int Unk5C { get; set; } = 0; // MODIFIED
                 private int Unk60 { get; set; } = 0; // Hidden
                 private int Unk64 { get; set; } = 0; // Hidden
                 private int Unk68 { get; set; } = 0; // Hidden
@@ -2533,7 +2533,7 @@ namespace SoulsFormats
                 private int Unk30 { get; set; } = -1; // Hidden
                 public int ItemLotParamMapID { get; set; } = -1;
                 public int PartIndex1 { get; set; } = -1;
-                private int Unk3C { get; set; } = -1; // Hidden
+                public int Unk3C { get; set; } = -1; 
                 public int PartIndex2 { get; set; } = -1;
                 public int PartIndex3 { get; set; } = -1;
                 public int PartIndex4 { get; set; } = -1;

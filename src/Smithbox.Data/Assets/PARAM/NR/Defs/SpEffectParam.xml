@@ -43,7 +43,7 @@
     <Field Def="f32 thunderDiffence"/>
     <Field Def="f32 NoGuardDamageRate"/>
     <Field Def="f32 vitalSpotChangeRate"/>
-    <Field Def="f32 normalSpotChangeRate"/>
+    <Field Def="f32 poisonInflictRate"/>
     <Field Def="f32 lookAtTargetPosOffset"/>
     <Field Def="s32 behaviorId"/>
     <Field Def="f32 changeHpRate"/>
@@ -55,8 +55,8 @@
     <Field Def="s32 changeStaminaPoint"/>
     <Field Def="s32 staminaRecoverChangeSpeed"/>
     <Field Def="f32 magicEffectTimeChange"/>
-    <Field Def="s32 insideDurability"/>
-    <Field Def="s32 maxDurability"/>
+    <Field Def="f32 diseaseInflictRate"/>
+    <Field Def="f32 frostInflictRate"/>
     <Field Def="f32 staminaAttackRate"/>
     <Field Def="s32 poizonAttackPower"/>
     <Field Def="s32 diseaseAttackPower"/>
@@ -64,15 +64,15 @@
     <Field Def="s32 curseAttackPower"/>
     <Field Def="f32 fallDamageRate"/>
     <Field Def="f32 soulRate"/>
-    <Field Def="f32 equipWeightChangeRate"/>
-    <Field Def="f32 allItemWeightChangeRate"/>
+    <Field Def="f32 sleepInflictRate"/>
+    <Field Def="f32 madnessInflictRate"/>
     <Field Def="s32 soul"/>
     <Field Def="s32 animIdOffset"/>
     <Field Def="f32 haveSoulRate"/>
     <Field Def="f32 targetPriority"/>
     <Field Def="f32 sightSearchEnemyRate"/>
     <Field Def="f32 hearingSearchEnemyRate"/>
-    <Field Def="f32 grabityRate"/>
+    <Field Def="s32 applyIdOnKillSp"/>
     <Field Def="f32 registPoizonChangeRate"/>
     <Field Def="f32 registDiseaseChangeRate"/>
     <Field Def="f32 registBloodChangeRate"/>
@@ -225,12 +225,12 @@
     <Field Def="f32 weakDmgRateF"/>
     <Field Def="f32 darkDamageCutRate"/>
     <Field Def="f32 darkDiffenceRate"/>
-    <Field Def="s32 darkDiffence"/>
+    <Field Def="s32 quaternaryIconId"/>
     <Field Def="f32 darkAttackRate"/>
     <Field Def="f32 darkAttackPowerRate"/>
     <Field Def="s32 darkAttackPower"/>
-    <Field Def="f32 antiDarkSightRadius"/>
-    <Field Def="s32 antiDarkSightDmypolyId"/>
+    <Field Def="f32 bloodInflictRate"/>
+    <Field Def="f32 curseInflictRate"/>
     <Field Def="f32 conditionHpRate"/>
     <Field Def="f32 consumeStaminaRate"/>
     <Field Def="f32 itemDropRate"/>
@@ -251,11 +251,12 @@
     <Field Def="s32 blowAttackPower"/>
     <Field Def="s32 thrustAttackPower"/>
     <Field Def="s32 neutralAttackPower"/>
-    <Field Def="s32 unknown_144"/>
-    <Field Def="f32 unknown_145"/>
-    <Field Def="f32 unknown_146"/>
-    <Field Def="f32 unknown_147"/>
-    <Field Def="f32 unknown_148"/>
+    <Field Def="s16 subSa"/>
+	<Field Def="s16 subSaBonusMax"/>
+    <Field Def="f32 subSaBonusRate_Magic"/>
+    <Field Def="f32 subSaBonusRate_Fire"/>
+    <Field Def="f32 subSaBonusRate_Lightning"/>
+    <Field Def="f32 subSaBonusRate_Holy"/>
     <Field Def="s32 tertiaryIconId"/>
     
     <Field Def="u8 madnessDamageRate"/>
@@ -271,7 +272,7 @@
     
     <Field Def="f32 saReceiveDamageRate"/>
     
-    <Field Def="s16 unknown_old_1a"/>
+    <Field Def="s16 changeGuardAngle"/>
     <Field Def="s16 wepTypeTrigger"/>
     <Field Def="s8 wepTypeTriggerCount"/>
     <Field Def="s8 startingItemAmount"/>
@@ -287,17 +288,17 @@
     <Field Def="f32 defEnemyDmgCorrectRate_Dark"/>
     <Field Def="f32 defObjDmgCorrectRate"/>
     
-    <Field Def="f32 unknown_old_6"/>
-    <Field Def="f32 unknown_old_7"/>
-    <Field Def="f32 unknown_old_8"/>
-    <Field Def="f32 unknown_old_9"/>
-    <Field Def="f32 unknown_old_10"/>
+    <Field Def="f32 subSaBonusRate_Poison"/>
+    <Field Def="f32 subSaBonusRate_ScarletRot"/>
+    <Field Def="f32 subSaBonusRate_Bleed"/>
+    <Field Def="f32 subSaBonusRate_Blight"/>
+    <Field Def="f32 subSaBonusRate_Frostbite"/>
     
-    <Field Def="f32 unknown_old_11"/>
-    <Field Def="f32 unknown_old_12"/>
-    <Field Def="s32 spEffectTextId_1"/>
+    <Field Def="f32 subSaBonusRate_Sleep"/>
+    <Field Def="f32 subSaBonusRate_Madness"/>
     <Field Def="s32 spEffectTextId_2"/>
     <Field Def="s32 spEffectTextId_3"/>
+    <Field Def="s32 spEffectTextId_4"/>
     
     <Field Def="f32 registFreezeChangeRate"/>
     <Field Def="u16 invocationConditionsStateChange1"/>
@@ -363,7 +364,14 @@
     <Field Def="u8 isHpBurnEffect:1"/>
     <Field Def="u8 unknown_0x352_6:1"/>
     <Field Def="u8 isPeriodicEffect:1"/>
-    <Field Def="dummy8 pad2[1]"/>
+    <Field Def="u8 unknown_239a:1"/> <!-- On for starting weapon imbue -->
+	<Field Def="u8 unknown_239b:1"/> <!-- On for Night's Tide stuff -->
+	<Field Def="u8 unknown_239c:1"/> <!-- Removed on Death? -->
+	<Field Def="u8 displayIconForPermamentEffect:1"/>
+	<Field Def="u8 unknown_239e:1"/> <!-- On for Spirit level stat change effects -->
+	<Field Def="u8 unknown_239f:1"/> <!-- On for some accumulators -->
+	<Field Def="u8 unknown_239g:1"/> <!-- On for some auto-buff effects -->
+	<Field Def="u8 unknown_239h:1"/> <!-- Potentially disable when near death -->
     
     <Field Def="f32 changeSuperArmorPoint"/>
     <Field Def="f32 changeSaPoint"/>
@@ -383,15 +391,16 @@
     <Field Def="f32 guardStaminaMult"/>
     <Field Def="f32 ultimateArtGaugeRate"/>
     <Field Def="f32 characterSkillCooldownReduction"/>
-    <Field Def="f32 characterSkillGauge"/>
-    <Field Def="u16 ultimateArtGauge"/>
-    <Field Def="u8 auxAttribute"/>
+    <Field Def="f32 ultimateArtGauge"/>
+    <Field Def="u16 ultimateArtGaugeRecovery"/>
+    <Field Def="u8 arrowBehaviorOffset"/>
     <Field Def="u8 playerHandValue"/>
-    <Field Def="s32 permanentBuffTextId"/>
+    <Field Def="s32 spEffectTextId_1"/>
     
-    <Field Def="f32 guardCounterAttackRate"/>
+    <Field Def="f32 currentHealthAttackRate"/>
     
-    <Field Def="u16 triggerOnWepType"/>
+    <Field Def="u8 triggerOnWepType"/>
+	<Field Def="u8 triggerAttachedWeapon"/>
     <Field Def="u8 additionalCharacterSkillUse"/>
     <Field Def="s8 triggerEffectOnKnockback_unk"/>
     
@@ -400,21 +409,28 @@
     <Field Def="s8 modifyPlayerLevel"/>
     
     <Field Def="f32 ultimateArtDuration"/>
-    <Field Def="f32 characterSkillAttackRate"/>
+    <Field Def="f32 restageAttackRate"/>
     <Field Def="s32 unknown_240"/>
     <Field Def="s32 revenantFamily_spEffectId_1"/>
     <Field Def="s32 revenantFamily_spEffectId_2"/>
     <Field Def="s32 revenantFamily_spEffectId_3"/>
     
     <Field Def="u8 unknown_241a"/>
-    <Field Def="u8 unknown_241b"/>
+    <Field Def="u8 unknown_241b_1:1"/>
+	<Field Def="u8 isSubSaUseMultiplayCorrect:1"/>
+	<Field Def="u8 unknown_241b_3:1"/>
+	<Field Def="u8 unknown_241b_4:1"/>
+	<Field Def="u8 unknown_241b_5:1"/>
+	<Field Def="u8 unknown_241b_6:1"/>
+	<Field Def="u8 dispDartDebuffStacks:1"/>
+	<Field Def="u8 unknown_241b_8:1"/>
     <Field Def="u8 randomChanceValue"/>
     <Field Def="u8 unknown_241d"/>
     
     <Field Def="dummy8 endPadding[8]" RemovedVersion="10200000"/>
     
     <Field Def="s32 unk_00" FirstVersion="10200000"/>
-    <Field Def="s32 abilityActivationSpEffectId" FirstVersion="10200000"/>
+    <Field Def="s32 necromancyActivationSpEffectId" FirstVersion="10200000"/>
     <Field Def="f32 ultimateArtGaugeChargeRate" FirstVersion="10200000"/>
     <Field Def="f32 conditionStamina" FirstVersion="10200000"/>
     <Field Def="f32 unk_04" FirstVersion="10200000"/>
@@ -423,7 +439,18 @@
 	<Field Def="s16 unk_05" FirstVersion="10200000"/>
     <Field Def="f32 rainDamageCorrection" FirstVersion="10200000"/>
     <Field Def="s32 weaponTypeDiscovery" FirstVersion="10200000"/>
-    <Field Def="s32 applyHeroStatusChange" FirstVersion="10200000"/>
-    <Field Def="dummy8 endPadding[4]" FirstVersion="10200000"/>
+    <Field Def="s32 heroStatusModifier" FirstVersion="10200000"/>
+
+    <Field Def="s32 analyzeAcquire_effectId" FirstVersion="10200000"/>
+    
+    <Field Def="s32 analyzeSelfLevel1_effectId" FirstVersion="10310025"/>
+    <Field Def="s32 analyzeSelfLevel2_effectId" FirstVersion="10310025"/>
+    <Field Def="s32 analyzeSelfLevel3_effectId" FirstVersion="10310025"/>
+    <Field Def="s32 startMagicId" FirstVersion="10310025"/>
+    
+    <Field Def="f32 frostInflictRate_old" FirstVersion="10310025" RemovedVersion="10320000"/>
+    <Field Def="f32 sleepInflictRate_old" FirstVersion="10310025" RemovedVersion="10320000"/>
+    <Field Def="f32 madnessInflictRate_old" FirstVersion="10310025" RemovedVersion="10320000"/>
+    <Field Def="s32 applyIdOnKillSp_old" FirstVersion="10310025" RemovedVersion="10320000"/>
   </Fields>
 </PARAMDEF>

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>NETWORK_PARAM_ST</ParamType>
+  <Index>176</Index>
   <DataVersion>10</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
@@ -50,36 +51,9 @@
       <UnkC0>NET_SUMMON_SIGN_PARAM</UnkC0>
       <UnkC8>召喚サイン</UnkC8>
     </Field>
-    <Field Def="f32 keyGuideHeight_0 = 1">
-      <DisplayName>キーガイド垂直範囲[m]</DisplayName>
-      <Minimum>1</Minimum>
-      <Maximum>1000</Maximum>
-      <Increment>1</Increment>
-      <SortID>101</SortID>
-      <UnkB8>summonSign</UnkB8>
-      <UnkC0>NET_SUMMON_SIGN_PARAM</UnkC0>
-      <UnkC8>召喚サイン</UnkC8>
-    </Field>
-    <Field Def="f32 reloadSignIntervalTime1 = 1">
-      <DisplayName>召喚サイン再取得待機時間(過疎時)[秒]</DisplayName>
-      <Minimum>1</Minimum>
-      <Maximum>1000</Maximum>
-      <Increment>1</Increment>
-      <SortID>102</SortID>
-      <UnkB8>summonSign</UnkB8>
-      <UnkC0>NET_SUMMON_SIGN_PARAM</UnkC0>
-      <UnkC8>召喚サイン</UnkC8>
-    </Field>
-    <Field Def="f32 reloadSignIntervalTime2 = 1">
-      <DisplayName>召喚サイン再取得待機時間[秒]</DisplayName>
-      <Minimum>1</Minimum>
-      <Maximum>1000</Maximum>
-      <Increment>1</Increment>
-      <SortID>103</SortID>
-      <UnkB8>summonSign</UnkB8>
-      <UnkC0>NET_SUMMON_SIGN_PARAM</UnkC0>
-      <UnkC8>召喚サイン</UnkC8>
-    </Field>
+    <Field Def="f32 signPuddleSendInterval = 1" />
+    <Field Def="s32 signPuddleMatchAreasNum = 1" />
+    <Field Def="f32 signPuddleUpdateSignInterval = 1" />
     <Field Def="u32 reloadSignTotalCount_0 = 1">
       <DisplayName>召喚サイン所持可能数上限(全体)</DisplayName>
       <Description>本当はu8くらいで十分</Description>
@@ -309,20 +283,10 @@
       <UnkC0>NET_BREAKIN_PARAM</UnkC0>
       <UnkC8>乱入</UnkC8>
     </Field>
-    
-    <Field Def="dummy8 pad_1_old[4]" RemovedVersion="11210015" />
-    
-    <Field Def="u8 breakInRequestAreaCount" FirstVersion="11210015" />
-    <Field Def="dummy8 pad_1[3]" FirstVersion="11210015" >
-      <DisplayName>予約</DisplayName>
-      <DisplayFormat>%f</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>203</SortID>
-      <UnkB8>breakIn</UnkB8>
-      <UnkC0>NET_BREAKIN_PARAM</UnkC0>
-      <UnkC8>乱入</UnkC8>
-    </Field>
-    
+
+    <Field Def="u8 breakInRequestAreaCount" />
+    <Field Def="dummy8 pad_1[3]" />
+
     <Field Def="f32 keyGuideRange = 1">
       <DisplayName>キーガイド水平範囲[m]</DisplayName>
       <Minimum>0</Minimum>
@@ -448,16 +412,7 @@
       <UnkC0>NET_BLOOD_MESSAGE_PARAM</UnkC0>
       <UnkC8>血文字</UnkC8>
     </Field>
-    <Field Def="f32 reloadSignIntervalTime_0 = 1">
-      <DisplayName>血文字再取得待機時間[秒]</DisplayName>
-      <Minimum>0</Minimum>
-      <Maximum>1000</Maximum>
-      <Increment>1</Increment>
-      <SortID>313</SortID>
-      <UnkB8>bloodMessage</UnkB8>
-      <UnkC0>NET_BLOOD_MESSAGE_PARAM</UnkC0>
-      <UnkC8>血文字</UnkC8>
-    </Field>
+    <Field Def="f32 bloodMessageDownloadTime = 1" />
     <Field Def="u32 cellGroupHorizontalRange_1 = 1">
       <DisplayName>血文字取得セル範囲(水平)</DisplayName>
       <Description>本当はu8くらいで十分</Description>
@@ -607,16 +562,7 @@
       <UnkC0>NET_BLOODSTAIN_PARAM</UnkC0>
       <UnkC8>血痕</UnkC8>
     </Field>
-    <Field Def="f32 reloadSignIntervalTime_1 = 1">
-      <DisplayName>血痕再取得待機時間[秒]</DisplayName>
-      <Minimum>0</Minimum>
-      <Maximum>1000</Maximum>
-      <Increment>1</Increment>
-      <SortID>409</SortID>
-      <UnkB8>bloodstain</UnkB8>
-      <UnkC0>NET_BLOODSTAIN_PARAM</UnkC0>
-      <UnkC8>血痕</UnkC8>
-    </Field>
+    <Field Def="f32 bloodStainDownloadTime = 1" />
     <Field Def="f32 signVisibleRange_2 = 1">
       <DisplayName>血痕PC間描画距離[m]</DisplayName>
       <Minimum>0</Minimum>
@@ -1388,7 +1334,7 @@
       <UnkC0>QUICK_MATCH</UnkC0>
       <UnkC8>クイックマッチ</UnkC8>
     </Field>
-    <Field Def="u32 AvatarMatchSearchMax = 1">
+    <Field Def="u32 quickMatchSearchTimeout = 1">
       <DisplayName>アバター戦検索時の最大人数(未使用)</DisplayName>
       <Description>本当はu8くらいで十分</Description>
       <DisplayFormat>%u</DisplayFormat>
@@ -1445,7 +1391,7 @@
       <UnkC0>VISITOR</UnkC0>
       <UnkC8>訪問</UnkC8>
     </Field>
-    <Field Def="f32 DownloadSpan_2 = 1">
+    <Field Def="f32 VisitorDownloadSpan = 1">
       <DisplayName>訪問者リストダウンロード間隔[秒]</DisplayName>
       <Minimum>0</Minimum>
       <Maximum>10000</Maximum>

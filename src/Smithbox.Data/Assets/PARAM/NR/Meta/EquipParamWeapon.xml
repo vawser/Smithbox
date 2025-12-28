@@ -296,7 +296,7 @@
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
     <disableParamReserve1 AltName="" Padding=""/>
     <disableParamReserve2 AltName="" Padding=""/>
-    <behaviorVariationId AltName="Behavior Variation ID" Wiki="Used when determining the action parameter ID to be referenced during an attack" VRef="behaviorVariation" />
+    <behaviorVariationId AltName="Behavior Variation ID" Wiki="Used when determining the action parameter ID to be referenced during an attack" ProjectEnum="BEHAVIOR_VARIATION" />
     <sortId AltName="Sort ID" Wiki="Sort ID (-1: Do not collect) (7 digits is the limit in s32 to add the enhancement level in the program)" />
     <wanderingEquipId AltName="Wandering Equip ID" Wiki="Replacement equipment ID for wandering ghosts." />
     <weight AltName="Weight" Wiki="Weight [kg]." />
@@ -428,7 +428,7 @@
     <isDeposit AltName="Can Deposit" Wiki="Can you leave it in the warehouse?" IsBool="" />
     <disableMultiDropShare AltName="Cannot Drop in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
     <isDiscard AltName="Can Discard" Wiki="Can you throw away the item? TRUE = thrown away" IsBool="" />
-    <isDrop AltName="Can Drop" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
+    <isDrop AltName="Can Drop" Wiki="Allows weapon to be dropped from inventory" IsBool="" />
     <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
     <enableThrow AltName="Enable Throw" Wiki="Whether it is a throwable weapon" IsBool="" />
     <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
@@ -494,7 +494,7 @@
     <arrowBoltEquipId AltName="Ammunition Equip ID" Wiki="Equipment number of the quiver (magazine) display model. In the case of a bow, it is displayed as a quiver, and in the case of a crossbow, it is displayed as a magazine." />
     <DerivationLevelType AltName="Derivation Level Type" Wiki="Type of how to set the enhancement level when returning or deriving a weapon" Enum="WEAPON_DERIVATION_LEVEL_TYPE" />
     <enchantSfxSize AltName="Enchantment SFX Size" Wiki="Value offset to enchantment SfxId" Enum="WEP_ENCHANT_SFX_SIZE" />
-    <wepType AltName="Weapon Type" Wiki="Weapon type. Used for linking text and magic stones (* It is now used for other than text)" Enum="WEP_TYPE" />
+    <wepType AltName="Weapon Type" Wiki="Weapon type. Used for linking text and magic stones (* It is now used for other than text)" ProjectEnum="WEP_TYPE" />
     <physGuardCutRate_MaxCorrect AltName="Max Correction: Physical Guard Absorption" Wiki="Maximum damage physical cut rate correction value when guarding" />
     <magGuardCutRate_MaxCorrect AltName="Max Correction: Magic Guard Absorption" Wiki="Maximum value of correction value of damage magic cut rate when guarding" />
     <fireGuardCutRate_MaxCorrect AltName="Max Correction: Fire Guard Absorption" Wiki="Maximum value of correction value of damage flame cut rate when guarding" />
@@ -545,7 +545,7 @@
     <levelSyncCorrectId AltName="Level Sync Correction ID" Wiki="Level sync correction ID" />
     <correctType_Sleep AltName="Correction Type: Sleep" Wiki="Determine the type of sleep attack correction graph with primary parameters" Refs="CalcCorrectGraph" />
     <correctType_Madness AltName="Correction Type: Mandesss" Wiki="Determining the type of mad attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
-    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
+    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" ProjectEnum="RARITY" />
     <gemMountType AltName="Ash of War Type" Wiki="Is it possible to attach magic stones?" Enum="GEM_MOUNT_TYPE" />
     <wepRegainHp AltName="Weapon Regain HP Amount" Wiki="Weapon regain amount" />
     <spEffectMsgId0 AltName="SpEffect Message ID [0]" Wiki="Effect text ID 00 (Weapon_Effect). Weapon-specific effect text to display in status" FmgRef="Effect_Weapons" />
@@ -561,6 +561,16 @@
     <originEquipWep23 AltName="Origin Weapon +23" Wiki="This weapon's enhancement source weapon ID 23" Refs="EquipParamWeapon"/>
     <originEquipWep24 AltName="Origin Weapon +24" Wiki="This weapon's enhancement source weapon ID 24" Refs="EquipParamWeapon"/>
     <originEquipWep25 AltName="Origin Weapon +25" Wiki="This weapon's enhancement source weapon ID 25" Refs="EquipParamWeapon"/>
+	
+	<affectedByCharacterScale
+	AltName="Affected By Character Scale"
+	Wiki="Determines if weapon changes size with character"
+	IsBool="" />
+	
+	<enableSparringGrounds
+	AltName="Enable Sparring Grounds/Visual Codex"
+	Wiki="Allows weapon to appear in Sparring Grounds/Visual Codex"
+	IsBool="" />
     
     <equippedSpell_R1
     AltName="Equipped Spell: Primary"
@@ -571,11 +581,45 @@
     AltName="Equipped Spell: Secondary"
     Wiki="The spell cast with this weapon on R2 usage." 
     Refs="Magic" />
+	
+	<spAttributeVariationValue
+	AltName="Special Attribute Variation"
+	Wiki="Changes hit fx (ex. red lightning)" />
     
     <midPadding
     Padding="" />
+	
+	<swordArtsTableId
+	AltName="Skill Table ID"
+	Wiki="Skill table presumably used when rerolling skills"
+	Refs="SwordArtsTableParam" />
+	
+	<sparringGroundsEventFlagId
+	AltName="Appearance Event Flag ID"
+	Wiki="Event flag that determines if weapon will appear in Sparring Grounds/Visual Codex"
+	FlagAlias="" />
+	
+	<heroMovesetOverrideID
+	AltName="Hero Moveset Override ID"
+	Wiki="TAE ID for weapon moveset override when used by specific hero" 
+	ProjectEnum="WEPMOTION_HERO_OVERRIDE_CATEGORY" />
+	
+	<heroID
+	AltName="Hero ID"
+	Wiki="Determines what hero has a special moveset for this weapon"
+	ProjectEnum="HERO" />
+	
+	<spAttributeMixcraft
+	AltName="Special Attribute for Magic Cocktail"
+	Wiki="Override for purposes of Magic Cocktail affinity residue"
+	ProjectEnum="ATKPARAM_SPATTR_TYPE" />
     
-    <criticalMultiplier
+	<heroBehaviorVariationID
+	AltName="Hero Behavior Variation ID"
+	Wiki="Behavior variation ID used when wielded by specified hero"
+	ProjectEnum="BEHAVIOR_VARIATION" />
+	
+    <criticalAtkRate
     AltName="Critical Hit Multiplier"
     Wiki="The damage multiplier to apply to critical hit damage (backstabs and ripostes)." />
     

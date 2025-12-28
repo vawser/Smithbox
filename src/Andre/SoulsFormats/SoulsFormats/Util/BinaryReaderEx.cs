@@ -1276,6 +1276,18 @@ namespace SoulsFormats
         }
 
         /// <summary>
+        /// Reads a Quaternion of floating point numbers in XYZW order.
+        /// </summary>
+        public Quaternion ReadQuaternion()
+        {
+            float x = ReadSingle();
+            float y = ReadSingle();
+            float z = ReadSingle();
+            float w = ReadSingle();
+            return new Quaternion(x, y, z, w);
+        }
+
+        /// <summary>
         /// Read length number of bytes and assert that they all match the given value.
         /// </summary>
         public void AssertPattern(int length, byte pattern)

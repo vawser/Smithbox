@@ -1,52 +1,53 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
-    <Version>2.0.8</Version>
+    <Version>2.1.0</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <PackageVersion>2.0.6</PackageVersion>
-    <AssemblyVersion>2.0.8</AssemblyVersion>
+    <PackageVersion>2.1.0</PackageVersion>
+    <AssemblyVersion>2.1.0</AssemblyVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+    <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
+    <RootNamespace>StudioCore</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
+    <DefineConstants>DEBUG</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
+    <DefineConstants>RELEASE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  <PropertyGroup Condition="$(Configuration.EndsWith('-win')) Or !$(Configuration.Contains('-'))">
+    <OutputType>WinExe</OutputType>
     <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-    <PackageReference Include="Hexa.NET.ImGui" Version="2.2.7" />
-    <PackageReference Include="Hexa.NET.ImGuizmo" Version="2.2.7" />
-    <PackageReference Include="Hexa.NET.ImNodes" Version="2.2.7" />
-    <PackageReference Include="Hexa.NET.ImPlot" Version="2.2.7" />
-  </ItemGroup>
+  <PropertyGroup Condition="$(Configuration.EndsWith('-linux'))">
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(Configuration.EndsWith('-osx'))">
+    <PlatformTargets>arm64;x64</PlatformTargets>
+    <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
+  </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Smithbox.Program\Smithbox.Program.csproj" />
     <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
-    <ProjectReference Include="..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
   </ItemGroup>
-
-  <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences">
-      <Error Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'" Text="Pass Solution dir, i.e. run:
-            dotnet build $([System.IO.Path]::GetRelativePath('$(MSBuildStartupDirectory)', '$(MSBuildProjectFullPath)')) --no-restore /p:SolutionDir=$([System.IO.Path]::GetFullPath('$(ProjectDir)\..\..'))" />
-      <Copy SourceFiles="Windows.Build.props" DestinationFiles="../Directory.Build.props" SkipUnchangedFiles="true" />
-  </Target>
 
   <Target Name="CopyDataProjectOutput" AfterTargets="Build">
   <ItemGroup>

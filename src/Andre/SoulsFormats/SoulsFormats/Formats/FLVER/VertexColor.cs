@@ -102,6 +102,15 @@ namespace SoulsFormats
                 bw.WriteByte((byte)Math.Round(B * 255));
                 bw.WriteByte((byte)Math.Round(A * 255));
             }
+
+            /// <summary>
+            /// Returns a string representation of the <see cref="VertexColor"/>.
+            /// </summary>
+            /// <returns>A string representation of the <see cref="VertexColor"/>.</returns>
+            public override string ToString()
+            {
+                return $"<R:{R}, G:{G}, B:{B}, A:{A}>";
+            }
         }
     }
 }

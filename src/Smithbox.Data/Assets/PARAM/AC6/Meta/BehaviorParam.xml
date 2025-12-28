@@ -48,7 +48,7 @@
     <refId 
     AltName="Reference ID" 
     Wiki="ID of param to use for attack behavior. Param used determined by refType" 
-    Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" 
+    Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),Bullet_Npc(refType=1),SpEffectParam(refType=2)" 
     DeepCopyTarget="Behavior" />
     
     <sfxVariationId

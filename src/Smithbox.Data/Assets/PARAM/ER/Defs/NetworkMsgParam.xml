@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>NETWORK_MSG_PARAM_ST</ParamType>
+  <Index>87</Index>
   <DataVersion>3</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
@@ -305,15 +306,15 @@
       <Maximum>999999999</Maximum>
       <SortID>1030</SortID>
     </Field>
-    
+
     <Field Def="dummy8 pad2[28]" RemovedVersion="11210015" />
-    
-    <Field Def="s32 unknown_0xa4" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0xa8" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0xac" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0xb0" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0xb4" FirstVersion="11210015" />
-    
+
+    <Field Def="s32 npc17" FirstVersion="11210015" />
+    <Field Def="s32 npc18" FirstVersion="11210015" />
+    <Field Def="s32 npc19" FirstVersion="11210015" />
+    <Field Def="s32 npc20" FirstVersion="11210015" />
+    <Field Def="s32 npc21" FirstVersion="11210015" />
+
     <Field Def="dummy8 pad2_new[8]" FirstVersion="11210015" >
       <DisplayName>予約</DisplayName>
       <Description>予約</Description>

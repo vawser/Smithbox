@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>FACE_RANGE_PARAM_ST</ParamType>
+  <Index>23</Index>
   <DataVersion>3</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>

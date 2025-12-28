@@ -28,7 +28,7 @@ namespace SoulsFormats
             internal Cut(BinaryReaderEx br, MQBVersion version)
             {
                 Name = br.ReadFixStrW(0x40);
-                int disposCount = br.ReadInt32();
+                int eventCount = br.ReadInt32();
                 Unk44 = br.ReadInt32();
                 Duration = br.ReadInt32();
                 br.AssertInt32(0);
@@ -40,24 +40,24 @@ namespace SoulsFormats
                 if (version != MQBVersion.DarkSouls2Scholar)
                     br.AssertInt64(0);
 
-                var disposesByOffset = new Dictionary<long, Disposition>(disposCount);
-                for (int i = 0; i < disposCount; i++)
-                    disposesByOffset[br.Position] = new Disposition(br);
+                var eventsByOffset = new Dictionary<long, Event>(eventCount);
+                for (int i = 0; i < eventCount; i++)
+                    eventsByOffset[br.Position] = new Event(br);
 
                 br.StepIn(timelinesOffset);
                 {
                     Timelines = new List<Timeline>(timelineCount);
                     for (int i = 0; i < timelineCount; i++)
-                        Timelines.Add(new Timeline(br, version, disposesByOffset));
+                        Timelines.Add(new Timeline(br, version, eventsByOffset));
                 }
                 br.StepOut();
             }
 
-            internal void Write(BinaryWriterEx bw, MQBVersion version, Dictionary<Disposition, long> offsetsByDispos, int cutIndex, List<CustomData> allCustomData, List<long> customDataValueOffsets)
+            internal void Write(BinaryWriterEx bw, MQBVersion version, Dictionary<Event, long> offsetsByEvent, int cutIndex, List<Parameter> allParameters, List<long> parameterValueOffsets)
             {
-                int disposCount = Timelines.Sum(g => g.Dispositions.Count);
+                int eventCount = Timelines.Sum(g => g.Events.Count);
                 bw.WriteFixStrW(Name, 0x40, 0x00);
-                bw.WriteInt32(disposCount);
+                bw.WriteInt32(eventCount);
                 bw.WriteInt32(Unk44);
                 bw.WriteInt32(Duration);
                 bw.WriteInt32(0);
@@ -70,7 +70,7 @@ namespace SoulsFormats
                     bw.WriteInt64(0);
 
                 foreach (Timeline timeline in Timelines)
-                    timeline.WriteDispositions(bw, offsetsByDispos, allCustomData, customDataValueOffsets);
+                    timeline.WriteEvents(bw, offsetsByEvent, allParameters, parameterValueOffsets);
             }
 
             internal void WriteTimelines(BinaryWriterEx bw, MQBVersion version, int cutIndex)
@@ -80,16 +80,16 @@ namespace SoulsFormats
                     Timelines[i].Write(bw, version, cutIndex, i);
             }
 
-            internal void WriteTimelineCustomData(BinaryWriterEx bw, int cutIndex, List<CustomData> allCustomData, List<long> customDataValueOffsets)
+            internal void WriteTimelineParameters(BinaryWriterEx bw, int cutIndex, List<Parameter> allParameters, List<long> parameterValueOffsets)
             {
                 for (int i = 0; i < Timelines.Count; i++)
-                    Timelines[i].WriteCustomData(bw, cutIndex, i, allCustomData, customDataValueOffsets);
+                    Timelines[i].WriteParameters(bw, cutIndex, i, allParameters, parameterValueOffsets);
             }
 
-            internal void WriteDisposOffsets(BinaryWriterEx bw, Dictionary<Disposition, long> offsetsByDispos, int cutIndex)
+            internal void WriteEventOffsets(BinaryWriterEx bw, Dictionary<Event, long> offsetsByEvent, int cutIndex)
             {
                 for (int i = 0; i < Timelines.Count; i++)
-                    Timelines[i].WriteDisposOffsets(bw, offsetsByDispos, cutIndex, i);
+                    Timelines[i].WriteEventOffsets(bw, offsetsByEvent, cutIndex, i);
             }
         }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

@@ -47,6 +47,15 @@ namespace SoulsFormats
                     }
                 }
             }
+
+            /// <summary>
+            /// Returns a string representation of the <see cref="VertexBoneWeights"/>.
+            /// </summary>
+            /// <returns>A string representation of the <see cref="VertexBoneWeights"/>.</returns>
+            public override string ToString()
+            {
+                return $"<{A}, {B}, {C}, {D}>";
+            }
         }
     }
 }

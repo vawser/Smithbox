@@ -905,7 +905,16 @@ public class Param : SoulsFile<Param>
             ID = clone.ID;
             Name = clone.Name;
             DataIndex = Parent._paramData.AddZeroedElement();
-            clone.Parent._paramData.CopyData(Parent._paramData, DataIndex, clone.DataIndex);
+
+            // For NR 1.03.1 -> 1.03.2 upgrade
+            if (clone.Parent._paramData.UseClippedCopy(Parent._paramData, DataIndex, clone.DataIndex))
+            {
+                clone.Parent._paramData.CopyDataClipped(Parent._paramData, DataIndex, clone.DataIndex);
+            }
+            else
+            {
+                clone.Parent._paramData.CopyData(Parent._paramData, DataIndex, clone.DataIndex);
+            }
         }
 
         /// <summary>

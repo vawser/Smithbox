@@ -1967,12 +1967,14 @@
       <SortID>470010</SortID>
     </Field>
     
-    <Field Def="dummy8 pad7[1]" >
-      <DisplayName>pad</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>2000004</SortID>
-    </Field>
+    <Field Def="u8 affectedByNecromancy:1" /> <!-- Able to be raised as ghost? -->
+	<Field Def="u8 unknown_20b:1" />
+	<Field Def="u8 unknown_20c:1" />
+	<Field Def="u8 unknown_20d:1" />
+	<Field Def="u8 unknown_20e:1" />
+	<Field Def="u8 unknown_20f:1" />
+	<Field Def="u8 unknown_20g:1" />
+	<Field Def="u8 unknown_20h:1" />
     
     <Field Def="u8 wheelRotType">
       <DisplayName>車輪制御タイプ</DisplayName>
@@ -2213,7 +2215,8 @@
     <Field Def="f32 poiseBonusRate_WeakE" />
     <Field Def="f32 poiseBonusRate_WeakF" />
     <Field Def="f32 poiseBonusRate_Unk" />
-    <Field Def="s32 poiseBonusMax" />
+    <Field Def="s16 poiseBonusMax" />
+    <Field Def="s16 unknown_21" />
     <Field Def="f32 unknown_22" />
     
     <Field Def="s32 chaosMatchingCorrectParamId" FirstVersion="10200000"/>

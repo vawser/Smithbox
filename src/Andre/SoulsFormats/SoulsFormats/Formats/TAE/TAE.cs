@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Xml;
-using static SoulsFormats.TAE3;
 
 namespace SoulsFormats
 {
     /// <summary>
-    /// Controls when different events happen during animations; this specific version is used in DS3. Extension: .tae
+    /// Controls when different events happen during animations. Extension: .tae
+    /// Originally sourced from SoulsAssetPipeline by Meowmartius
     /// </summary>
     public partial class TAE : SoulsFile<TAE>
     {
+        /// <summary>
+        /// If disabled, will attempt to fetch event templates from any bank in the template.
+        /// </summary>
+        public static bool ValidateEventBank { get; set; } = true;
+
         /// <summary>
         /// Which format this file is.
         /// </summary>
@@ -73,7 +76,7 @@ namespace SoulsFormats
         /// <summary>
         /// Unknown flags.
         /// </summary>
-        public byte[] Flags { get; private set; }
+        public byte[] Flags { get; set; }
 
         /// <summary>
         /// Unknown .hkt file.
@@ -102,10 +105,10 @@ namespace SoulsFormats
         /// </summary>
         public Template AppliedTemplate { get; private set; }
 
-        public TAE Clone()
-        {
-            return (TAE)MemberwiseClone();
-        }
+        /// <summary>
+        /// Gets the current bank being used in the currently applied template, if a template is applied.
+        /// </summary>
+        public Template.BankTemplate BankTemplate => AppliedTemplate?[EventBank];
 
         /// <summary>
         /// Applies a template to this TAE for easier editing.
@@ -116,12 +119,19 @@ namespace SoulsFormats
             if (template.Game != Format)
                 throw new InvalidOperationException($"Template is for {template.Game} but this TAE is for {Format}.");
 
-            foreach (var anim in Animations)
+            if (template.ContainsKey(EventBank) || !ValidateEventBank)
             {
-                for (int i = 0; i < anim.Events.Count; i++)
+                foreach (var anim in Animations)
                 {
-                    anim.Events[i].ApplyTemplate(this, template, anim.ID, i, anim.Events[i].Type);
+                    for (int i = 0; i < anim.Events.Count; i++)
+                    {
+                        anim.Events[i].ApplyTemplate(this, template, anim.ID, i, anim.Events[i].Type);
+                    }
                 }
+            }
+            else
+            {
+                throw new InvalidOperationException($"This TAE uses event bank {EventBank} but no such bank exists in the template.");
             }
 
             AppliedTemplate = template;
@@ -138,12 +148,19 @@ namespace SoulsFormats
             if (bank >= 0)
                 EventBank = bank;
 
-            foreach (var anim in Animations)
+            if (template.ContainsKey(EventBank))
             {
-                for (int i = 0; i < anim.Events.Count; i++)
+                foreach (var anim in Animations)
                 {
-                    anim.Events[i].ChangeTemplateAfterLoading(this, template, anim.ID, i, anim.Events[i].Type);
+                    for (int i = 0; i < anim.Events.Count; i++)
+                    {
+                        anim.Events[i].ChangeTemplateAfterLoading(this, template, anim.ID, i, anim.Events[i].Type);
+                    }
                 }
+            }
+            else
+            {
+                throw new InvalidOperationException($"This TAE uses event bank {EventBank} but no such bank exists in the template.");
             }
 
             AppliedTemplate = template;
@@ -188,7 +205,7 @@ namespace SoulsFormats
             // 0x1000D: SDT, ER
             int version = br.AssertInt32([0x10000, 0x1000A, 0x1000B, 0x1000C, 0x1000D]);
 
-
+            
             if (version == 0x1000B && !is64Bit)
             {
                 Format = TAEFormat.DS1;
@@ -241,16 +258,16 @@ namespace SoulsFormats
             }
 
             br.ReadInt32(); // File size
-            br.AssertVarint(Format is TAEFormat.DESR ? 0x30 : 0x40);
+            br.AssertVarint(Format == TAEFormat.DESR ? 0x30 : 0x40);
             br.AssertVarint(1);
-            br.AssertVarint(Format is TAEFormat.DESR ? 0x40 : 0x50);
+            br.AssertVarint(Format == TAEFormat.DESR ? 0x40 : 0x50);
 
-            if (is64Bit && Format is not TAEFormat.DESR)
+            if (is64Bit && Format != TAEFormat.DESR)
                 br.AssertVarint(0x80);
             else
                 br.AssertVarint(0x70);
-
-            if (Format is not TAEFormat.DESR)
+            
+            if (Format != TAEFormat.DESR)
             {
                 if (Format == TAEFormat.DS1)
                 {
@@ -287,7 +304,7 @@ namespace SoulsFormats
                 }
             }
 
-
+            
 
             Flags = br.ReadBytes(8);
 
@@ -311,7 +328,7 @@ namespace SoulsFormats
             long animsOffset = br.ReadVarint();
             br.ReadVarint(); // Anim groups offset
 
-            br.AssertVarint((Format is TAEFormat.DES or TAEFormat.DS1 or TAEFormat.DESR) ? 0x90 : 0xA0);
+            br.AssertVarint((Format == TAEFormat.DES || Format == TAEFormat.DS1 || Format == TAEFormat.DESR) ? 0x90 : 0xA0);
             var animCount2 = br.ReadVarint();
             if (animCount2 == animCount)
             {
@@ -322,22 +339,22 @@ namespace SoulsFormats
                 AnimCount2Value = animCount2;
             }
             br.ReadVarint(); // First anim offset
-            if (Format is TAEFormat.DS1 or TAEFormat.DES)
+            if (Format == TAEFormat.DS1 || Format == TAEFormat.DES)
                 br.AssertInt32(0);
             br.AssertVarint(1);
-            br.AssertVarint(Format is TAEFormat.DES or TAEFormat.DS1 or TAEFormat.DESR ? 0x80 : 0x90);
-            if (Format is TAEFormat.DS1 or TAEFormat.DES)
+            br.AssertVarint(Format == TAEFormat.DES || Format == TAEFormat.DS1 || Format == TAEFormat.DESR ? 0x80 : 0x90);
+            if (Format == TAEFormat.DS1 || Format == TAEFormat.DES)
                 br.AssertInt64(0);
             br.AssertInt32(ID);
             br.AssertInt32(ID);
-            br.AssertVarint(Format is TAEFormat.DESR ? 0x40 : 0x50);
+            br.AssertVarint(Format == TAEFormat.DESR ? 0x40 : 0x50);
             br.AssertInt64(0);
 
 
 
-            if (Format is TAEFormat.DES or TAEFormat.DESR)
+            if (Format == TAEFormat.DES || Format == TAEFormat.DESR)
                 br.AssertVarint(0xA0);
-            else if (Format is TAEFormat.DS1)
+            else if (Format == TAEFormat.DS1)
                 br.AssertVarint(0x98);
             else
                 br.AssertVarint(0xB0);
@@ -345,7 +362,7 @@ namespace SoulsFormats
             long skeletonNameOffset = 0;
             long sibNameOffset = 0;
 
-            if (Format is TAEFormat.DESR)
+            if (Format == TAEFormat.DESR)
             {
                 br.AssertVarint(0xB0);
                 br.AssertInt32(0);
@@ -357,7 +374,7 @@ namespace SoulsFormats
             {
                 if (BigEndian)
                 {
-                    if (Format is not TAEFormat.SOTFS)
+                    if (Format != TAEFormat.SOTFS)
                     {
                         br.AssertVarint(0);
                         br.AssertVarint(0);
@@ -371,7 +388,7 @@ namespace SoulsFormats
                     skeletonNameOffset = br.ReadVarint();
                     sibNameOffset = br.ReadVarint();
 
-                    if (Format is not TAEFormat.SOTFS)
+                    if (Format != TAEFormat.SOTFS)
                     {
                         br.AssertVarint(0);
                         br.AssertVarint(0);
@@ -380,16 +397,16 @@ namespace SoulsFormats
 
 
 
-                if (Format is not TAEFormat.SOTFS)
+                if (Format != TAEFormat.SOTFS)
                 {
                     SkeletonName = skeletonNameOffset == 0 ? null : br.GetUTF16(skeletonNameOffset);
                     SibName = sibNameOffset == 0 ? null : br.GetUTF16(sibNameOffset);
                 }
             }
 
+           
 
-
-
+            
 
             br.StepIn(animsOffset);
             {
@@ -398,8 +415,8 @@ namespace SoulsFormats
                 long previousAnimParamStart = 0;
                 for (int i = 0; i < animCount; i++)
                 {
-                    Animations.Add(new Animation(br, Format,
-                        out bool lastEventNeedsParamGen,
+                    Animations.Add(new Animation(br, Format, 
+                        out bool lastEventNeedsParamGen, 
                         out long animFileOffset, out long lastEventParamOffset));
 
                     if (previousAnimNeedsParamGen)
@@ -430,18 +447,18 @@ namespace SoulsFormats
         {
             bw.WriteASCII("TAE ");
 
-            bw.BigEndian = (Format is TAEFormat.DESR) ? false : BigEndian;
+            bw.BigEndian = (Format == TAEFormat.DESR) ? false : BigEndian;
 
-            bw.WriteBoolean((Format is TAEFormat.DESR) ? true : BigEndian);
+            bw.WriteBoolean((Format == TAEFormat.DESR) ? true : BigEndian);
             bw.WriteByte(0);
             bw.WriteByte(0);
 
-            if (Format is TAEFormat.DESR)
+            if (Format == TAEFormat.DESR)
             {
                 bw.VarintLong = true;
                 bw.WriteByte(0);
             }
-            else if (Format is TAEFormat.DES or TAEFormat.DS1)
+            else if (Format == TAEFormat.DES || Format == TAEFormat.DS1)
             {
                 bw.VarintLong = false;
                 bw.WriteByte(0);
@@ -452,7 +469,7 @@ namespace SoulsFormats
                 bw.WriteByte(0xFF);
             }
 
-            if (Format is TAEFormat.DES or TAEFormat.DS1 or TAEFormat.DESR)
+            if (Format == TAEFormat.DES || Format == TAEFormat.DS1 || Format == TAEFormat.DESR)
             {
                 if (IsOldDemonsSoulsFormat_0x1000A)
                     bw.WriteInt32(0x1000A);
@@ -461,21 +478,21 @@ namespace SoulsFormats
                 else
                     bw.WriteInt32(0x1000B);
             }
-            else if (Format is TAEFormat.DS3 or TAEFormat.SOTFS)
+            else if (Format == TAEFormat.DS3 || Format == TAEFormat.SOTFS)
                 bw.WriteInt32(0x1000C);
-            else if (Format is TAEFormat.SDT)
+            else if (Format == TAEFormat.SDT)
                 bw.WriteInt32(0x1000D);
 
             bw.ReserveInt32("FileSize");
-            bw.WriteVarint(Format is TAEFormat.DESR ? 0x30 : 0x40);
+            bw.WriteVarint(Format == TAEFormat.DESR ? 0x30 : 0x40);
             bw.WriteVarint(1);
-            bw.WriteVarint(Format is TAEFormat.DESR ? 0x40 : 0x50);
-            bw.WriteVarint(bw.VarintLong && (Format is not TAEFormat.DESR) ? 0x80 : 0x70);
+            bw.WriteVarint(Format == TAEFormat.DESR ? 0x40 : 0x50);
+            bw.WriteVarint(bw.VarintLong && (Format != TAEFormat.DESR) ? 0x80 : 0x70);
 
-            if (Format is not TAEFormat.DESR)
+            if (Format != TAEFormat.DESR)
             {
 
-                if ((Format is TAEFormat.DES or TAEFormat.DS1))
+                if ((Format == TAEFormat.DES || Format == TAEFormat.DS1))
                 {
                     if (IsOldDemonsSoulsFormat_0x1000A || IsOldDemonsSoulsFormat_0x10000)
                     {
@@ -495,7 +512,7 @@ namespace SoulsFormats
 
                 bw.WriteVarint(0);
 
-                if (Format is TAEFormat.DES or TAEFormat.DS1)
+                if (Format == TAEFormat.DES || Format == TAEFormat.DS1)
                 {
                     bw.WriteInt64(0);
                     bw.WriteInt64(0);
@@ -505,7 +522,7 @@ namespace SoulsFormats
 
             bw.WriteBytes(Flags);
 
-            if (Format is TAEFormat.SOTFS)
+            if (Format == TAEFormat.SOTFS)
             {
                 bw.WriteByte(0);
                 bw.WriteByte(1);
@@ -523,23 +540,23 @@ namespace SoulsFormats
             bw.WriteInt32(Animations.Count);
             bw.ReserveVarint("AnimsOffset");
             bw.ReserveVarint("AnimGroupsOffset");
-            bw.WriteVarint((Format is TAEFormat.DES or TAEFormat.DS1 or TAEFormat.DESR) ? 0x90 : 0xA0);
+            bw.WriteVarint((Format == TAEFormat.DES || Format == TAEFormat.DS1 || Format == TAEFormat.DESR) ? 0x90 : 0xA0);
             bw.WriteVarint(AnimCount2Value ?? Animations.Count);
             bw.ReserveVarint("FirstAnimOffset");
-            if ((Format is TAEFormat.DES or TAEFormat.DS1))
+            if ((Format == TAEFormat.DES || Format == TAEFormat.DS1))
                 bw.WriteInt32(0);
             bw.WriteVarint(1);
-            bw.WriteVarint((Format is TAEFormat.DES or TAEFormat.DS1 or TAEFormat.DESR) ? 0x80 : 0x90);
-            if ((Format is TAEFormat.DES or TAEFormat.DS1))
+            bw.WriteVarint((Format == TAEFormat.DES || Format == TAEFormat.DS1 || Format == TAEFormat.DESR) ? 0x80 : 0x90);
+            if ((Format == TAEFormat.DES || Format == TAEFormat.DS1))
                 bw.WriteInt64(0);
             bw.WriteInt32(ID);
             bw.WriteInt32(ID);
-            bw.WriteVarint((Format is TAEFormat.DESR) ? 0x40 : 0x50);
+            bw.WriteVarint((Format == TAEFormat.DESR) ? 0x40 : 0x50);
             bw.WriteInt64(0);
 
-            if (Format is TAEFormat.DES or TAEFormat.DESR)
+            if (Format == TAEFormat.DES || Format == TAEFormat.DESR)
                 bw.WriteVarint(0xA0);
-            else if (Format is TAEFormat.DS1)
+            else if (Format == TAEFormat.DS1)
                 bw.WriteVarint(0x98);
             else
                 bw.WriteVarint(0xB0);
@@ -611,9 +628,9 @@ namespace SoulsFormats
             }
 
 
-
-
-            Animations.Sort((a1, a2) => a1.ID.CompareTo(a2.ID));
+            
+            // Commented this out cause it caused unnecessary file differences
+            //Animations.Sort((a1, a2) => a1.ID.CompareTo(a2.ID));
 
             var animOffsets = new List<long>(Animations.Count);
             if (Animations.Count == 0)

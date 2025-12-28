@@ -1,0 +1,221 @@
+//------------------------------------------------
+//--- 010 Editor v13.0.2 Binary Template
+//
+//      File: NVA.bt
+//   Authors: katalash, TKGP, horkrux, Dropoff
+//   Version: 
+//   Purpose: BB/DS3/SDT/ER navmesh configuration
+//  Category: Dantelion
+// File Mask: *.nva
+//  ID Bytes: 4E 56 4D 41
+//   History: 
+//------------------------------------------------
+#include "Util.bt"
+LittleEndian();
+//------------------------------------------------
+typedef struct {
+    char magic[4]; Assert(magic == "NVMA");
+    int nvaVersion; //Assert(version == 4 || version == 5);
+    int fileSize <format=hex>;
+    int sectionCount;
+} Header <bgcolor=cLtRed>;
+
+typedef struct (int version) {
+    Vector4 position; // Usually 0,0,0
+    Vector4 rotation;
+    Vector4 scaling;
+    
+    int nvaNameID; // i.e. 350000110 in int form
+    int navimeshModelID;
+    int faceDataIdx;
+    int unk3C; Assert(unk3C == 0);
+    int faceCount;
+    int connectedNavmeshesCount;
+    short gateNodeIndex;
+    short subNodesCount;
+    int unk4C;
+    
+    // Each array entry seems to either be a section reference or -1
+    if (version == 2 || version == 3) {
+        if (connectedNavmeshesCount > 0) {
+            int connectedNavmeshesArray[connectedNavmeshesCount];
+        }
+
+        local int i <hidden=true>;
+        for (i = 0; i < 16 - connectedNavmeshesCount; i++) {
+            int null <fgcolor=cRed, hidden=true>; Assert(null == -1);
+        }
+    } else {
+        int unkOffset <format=hex>;
+        int unk54; Assert(unk54 == 0);
+        int unk58; Assert(unk54 == 0);
+        int unk5C; Assert(unk54 == 0);
+        
+        if(unkOffset == 0xFF01) {
+            int unk60[12];
+        }
+        else if (connectedNavmeshesCount > 0) {
+            local quad pos <hidden=true> = FTell();
+            FSeek(unkOffset);
+            int connectedNavmeshArray[connectedNavmeshesCount];
+            FSeek(pos);
+        }
+    }
+} NavmeshInfo <optimize=false, bgcolor=cRed>;
+
+typedef struct {
+    int unk00 <fgcolor=cDkYellow>;
+    int unk04 <fgcolor=cDkYellow>; Assert(unk04 == 0);
+} FaceData <optimize=false, bgcolor=cDkYellow>;
+
+
+typedef struct {
+    int faceIdx; // Smallish ints
+    int collisionId; // map section in int form
+} NodeBankFace;
+
+typedef struct {
+    int bankIdx;
+    int faceNum;
+    int entityId; // Another map number-y thing, always -1 in DS3, not always in BB
+    int unk0C; Assert(unk0C == 0);
+    NodeBankFace nodeBankFaces[faceNum];
+    
+    local int i;
+    for (i = 0; i < 64 - faceNum; i++) {
+        quad zero <fgcolor=cYellow, hidden=true>; Assert(zero == 0);
+    }
+} NodeBank <optimize=false, bgcolor=cYellow>;
+
+typedef struct {
+    Vector4 unk00[10];
+} Entry3 <optimize=false, bgcolor=cLtGreen>;
+
+typedef struct {
+    int nvaModelNameMain;
+    int nvaModelNameConnectedPiece;
+    int navMeshConnectionCount;
+    int graphConnectionCount;
+    int navMeshConnectionIdx;
+    int unk14; Assert(unk14 == 0);
+    int graphConnectionIdx;
+    int unk1C; Assert(unk1C == 0);
+} Connector <optimize=false, bgcolor=cGreen>;
+
+typedef struct {
+    int faceIdx;
+    int edgeIdx;
+    int oppositeFaceIdx;
+    int oppositeEdgeIdx;
+} NavMeshConnection <optimize=false, bgcolor=cDkGreen>;
+
+typedef struct {
+    int nodeIdx;
+    int oppositeNodeIdx;
+} GraphConnection <optimize=false, bgcolor=cAqua>;
+
+typedef struct {
+    Vector4 position;
+    int navmeshId;
+    int unk14; Assert(unk14 == 0);
+    int unk18;
+    int unk1C; Assert(unk1C == 0);
+} LevelConnector <optimize=false, bgcolor=cLtBlue>;
+
+typedef struct (int version) {
+    Vector3 position;
+    short connectedNavmeshIdx;
+    short nodeSubId;
+    
+    if (version == 1) {
+        short neighbourGateNodeCosts[16];
+    } else if (version == 2) {
+        int neighbourGateNodeCostsCount;
+        int unk14; Assert(unk14 == -1);
+        int neighbourGateNodeCostsOffset <format=hex>;
+        int unk1C; Assert(unk1C == 0);
+        
+        if (neighbourGateNodeCostsCount > 0) {
+            local quad pos <hidden=true> = FTell();
+            FSeek(neighbourGateNodeCostsOffset);
+            short neighbourGateNodeCosts[neighbourGateNodeCostsCount];
+            FSeek(pos);
+        }
+    }
+} GateNode <optimize=false, bgcolor=cLtPurple>;
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int unk04; Assert(unk04 == 0);
+    int unk08; Assert(unk08 == 0);
+    int unk0C; Assert(unk0C == 0);
+} Entry9 <optimize=false, bgcolor=cPurple>;
+
+typedef struct {
+    Vector4 unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    int unk10;
+} Entry10 <optimize=false, bgcolor=cDkPurple>;
+
+typedef struct {
+    int unk00;
+    int unk04; Assert(unk04 == 0);
+    int unk08; Assert(unk08 == 0);
+    int unk0C; Assert(unk0C == 0);
+} Entry11 <optimize=false, bgcolor=cLtPurple>;
+
+typedef struct {
+    Vector4 unk00;
+    Vector4 unk04;
+    Vector4 unk08;
+    Vector4 unk0C;
+    Vector4 unk10;
+    Vector4 unk14;
+    int unk18;
+    int unk1c;
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    int unk30;
+    int unk34;
+} Entry13 <optimize=false, bgcolor=cLtGray>; 
+
+typedef struct {
+    int index;
+    int version;
+    int sectionSize <format=hex>;
+    int entryCount;
+    local int start<hidden=true> = FTell();
+    if(entryCount == 0) return;
+    switch(index) {
+        case 0: NavmeshInfo navmeshInfos(version)[entryCount]; break;
+        case 1: FaceData faceDatas[entryCount]; break;//one for every face
+        case 2: NodeBank nodeBanks[entryCount]; break;
+        case 3: Entry3 entries3[entryCount]; break;
+        case 4: Connector connectors[entryCount]; break;
+        case 5: NavMeshConnection navMeshConnections[entryCount]; break;
+        case 6: GraphConnection graphConnections[entryCount]; break;
+        case 7: LevelConnector levelConnectors[entryCount]; break;
+        case 8: GateNode gateNodes(version)[entryCount]; break;
+        case 9: Entry9 entries9[entryCount]; break;
+        case 10: Entry10 entries10[entryCount]; break;
+        case 11: Entry11 entries11[entryCount]; break;
+        case 12: Assert(entryCount == 0); break;
+        case 13: Entry13 entries13[entryCount]; break;
+        default: byte unk[sectionSize]<bgcolor=cBlack>;
+    }
+    FSeek(start + sectionSize);
+} Section <read=ReadSection, optimize=false, bgcolor=cDkRed>;
+
+string ReadSection(Section& header) {
+    string str;
+    SPrintf(str, "%i[%5i] %i %5X",
+        header.index, header.entryCount, header.version, header.sectionSize);
+    return str;
+}
+//------------------------------------------------
+Header header;
+Section sections[header.sectionCount];

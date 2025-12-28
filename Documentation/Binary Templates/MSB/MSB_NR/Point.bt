@@ -74,6 +74,7 @@ enum <int> PointType {
     PointTypeRespawnOverride = 57, // リスポンポイント無効領域
     PointTypeUserEdgeRemovalInner = 58, // ユーザーエッジ削除(内側)
     PointTypeUserEdgeRemovalOuter = 59, // ユーザーエッジ削除(外側)
+    PointTypeUnknown60 = 60,
     PointTypeOther = -1,
 };
 
@@ -106,6 +107,7 @@ struct PointBirdRoute;
 struct PointRespawnOverride;
 struct PointUserEdgeRemovalInner;
 struct PointUserEdgeRemovalOuter;
+struct PointUnknown60;
 
 //------------------------------------------------
 
@@ -173,7 +175,9 @@ typedef struct {
         case PointTypeBirdRoute:
         case PointTypeRespawnOverride:
         case PointTypeUserEdgeRemovalInner:
-        case PointTypeUserEdgeRemovalOuter: Assert(typeOffset); break;
+        case PointTypeUserEdgeRemovalOuter: 
+        case PointTypeUnknown60: 
+            Assert(typeOffset); break;
         
         case PointTypeMidRangeEnvMapOutput:
         case PointTypeClearInfo:
@@ -211,6 +215,7 @@ typedef struct {
             case PointTypeRespawnOverride: PointRespawnOverride respawnOverride; break;
             case PointTypeUserEdgeRemovalInner: PointUserEdgeRemovalInner userEdgeRemovalInner; break;
             case PointTypeUserEdgeRemovalOuter: PointUserEdgeRemovalOuter userEdgeRemovalOuter; break;
+            case PointTypeUnknown60: PointUnknown60 unknown60; break;
             default: Assert(false);
         }
     }
@@ -315,7 +320,7 @@ typedef struct {
 } PointReturnPoint;
 
 typedef struct {
-	float unk00 <hidden=true>; Assert(unk00 == 0.0);
+	float unk00;
     float unk04; // 0
     byte unk08; Assert(IsBool(unk08)); // 0
     byte unk09 <hidden=true>; Assert(unk09 == 10);
@@ -501,3 +506,12 @@ typedef struct {
 	int unk00 <hidden=true>; Assert(!unk00);
     int unk04 <hidden=true>; Assert(!unk04);
 } PointUserEdgeRemovalOuter;
+
+typedef struct {
+	int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    int unk10;
+    int unk14;
+} PointUnknown60;

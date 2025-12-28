@@ -44,6 +44,12 @@
       ]
     },
     {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 10,
       "Entries": [
         ""
@@ -320,6 +326,12 @@
       ]
     },
     {
+      "ID": 830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 900,
       "Entries": [
         ""
@@ -345,6 +357,18 @@
     },
     {
       "ID": 940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 950,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 960,
       "Entries": [
         ""
       ]
@@ -1204,7 +1228,6 @@
     {
       "ID": 3520,
       "Entries": [
-        "",
         ""
       ]
     },
@@ -2895,6 +2918,12 @@
       ]
     },
     {
+      "ID": 45008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 45100,
       "Entries": [
         "[Sorcery] Crystal Release"
@@ -3276,6 +3305,12 @@
       "ID": 50016,
       "Entries": [
         "[Sorcery] Ancient Death Rancor [Charged]"
+      ]
+    },
+    {
+      "ID": 50017,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -4062,6 +4097,12 @@
       "ID": 68206,
       "Entries": [
         "[Incantation] Beast Claw - UNUSED [Charged]"
+      ]
+    },
+    {
+      "ID": 68207,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -10857,6 +10898,354 @@
       ]
     },
     {
+      "ID": 550000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550045,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550116,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550141,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550175,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550176,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550316,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550325,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550341,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550375,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550376,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550445,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550509,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550515,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550516,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550531,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550561,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 550590,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 600000,
       "Entries": [
         ""
@@ -16780,6 +17169,282 @@
     },
     {
       "ID": 1107315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150325,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150506,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150509,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150515,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150517,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150518,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150531,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150561,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1150590,
       "Entries": [
         ""
       ]
@@ -37107,6 +37772,150 @@
       ]
     },
     {
+      "ID": 5050811,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050816,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050825,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050835,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050840,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050845,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050855,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050870,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050875,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051811,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051816,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051825,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051835,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051840,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051845,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051855,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051870,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051875,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 5099999,
       "Entries": [
         ""
@@ -37619,7 +38428,6 @@
     {
       "ID": 9999305,
       "Entries": [
-        "",
         ""
       ]
     },
@@ -37758,7 +38566,7 @@
     {
       "ID": 10030001,
       "Entries": [
-        "[Item] Fire Pot [Hit]"
+        "[Item] Fire Pot (Blast)"
       ]
     },
     {
@@ -37794,13 +38602,13 @@
     {
       "ID": 10032000,
       "Entries": [
-        "[Item] Lightning Pot [Hit]"
+        "[Item] Lightning Pot (Blast)"
       ]
     },
     {
       "ID": 10032001,
       "Entries": [
-        "[Item] Lightning Pot - Emitted [Hit]"
+        "[Item] Lightning Pot (Water Spread)"
       ]
     },
     {
@@ -37824,19 +38632,19 @@
     {
       "ID": 10033001,
       "Entries": [
-        "[Item] Fetid Pot [Hit]"
+        "[Item] Fetid Pot (Blast)"
       ]
     },
     {
       "ID": 10033002,
       "Entries": [
-        "[Item] Fetid Pot [Hit]"
+        "[Item] Fetid Pot (Emitter)"
       ]
     },
     {
       "ID": 10033003,
       "Entries": [
-        "[Item] Fetid Pot [Emitted]"
+        "[Item] Fetid Pot (Mist)"
       ]
     },
     {
@@ -37848,13 +38656,13 @@
     {
       "ID": 10034001,
       "Entries": [
-        "[Item] Swarm Pot [Hit]"
+        "[Item] Swarm Pot (Emitter)"
       ]
     },
     {
       "ID": 10034002,
       "Entries": [
-        "[Item] Swarm Pot [Hit]"
+        "[Item] Swarm Pot (Flies)"
       ]
     },
     {
@@ -37866,7 +38674,7 @@
     {
       "ID": 10035001,
       "Entries": [
-        "[Item] Holy Water Pot [Hit]"
+        "[Item] Holy Water Pot (Blast)"
       ]
     },
     {
@@ -37890,19 +38698,19 @@
     {
       "ID": 10036001,
       "Entries": [
-        "[Item] Freezing Pot [Hit]"
+        "[Item] Freezing Pot (Blast)"
       ]
     },
     {
       "ID": 10036002,
       "Entries": [
-        "[Item] Freezing Pot [Hit]"
+        "[Item] Freezing Pot (Emitter)"
       ]
     },
     {
       "ID": 10036003,
       "Entries": [
-        "[Item] Freezing Pot [Emitted]"
+        "[Item] Freezing Pot (Mist)"
       ]
     },
     {
@@ -37914,13 +38722,13 @@
     {
       "ID": 10037001,
       "Entries": [
-        "[Item] Poison Pot [Hit]"
+        "[Item] Poison Pot (Blast)"
       ]
     },
     {
       "ID": 10037002,
       "Entries": [
-        "[Item] Poison Pot [Emitted]"
+        "[Item] Poison Pot (Mist)"
       ]
     },
     {
@@ -37944,7 +38752,7 @@
     {
       "ID": 10039001,
       "Entries": [
-        "[Item] Alluring Pot [Hit]"
+        "[Item] Alluring Pot (Hit)"
       ]
     },
     {
@@ -38088,7 +38896,7 @@
     {
       "ID": 10060001,
       "Entries": [
-        "[Item] Volcano Pot [Hit]"
+        "[Item] Volcano Pot (Mist)"
       ]
     },
     {
@@ -38124,7 +38932,7 @@
     {
       "ID": 10064001,
       "Entries": [
-        "[Item] Sleep Pot [Hit]"
+        "[Item] Sleep Pot (Mist)"
       ]
     },
     {
@@ -38136,13 +38944,13 @@
     {
       "ID": 10065001,
       "Entries": [
-        "[Item] Rancor Pot [Hit]"
+        "[Item] Rancor Pot (Blast)"
       ]
     },
     {
       "ID": 10065002,
       "Entries": [
-        "[Item] Rancor Pot [Hit]"
+        "[Item] Rancor Pot (Spirit)"
       ]
     },
     {
@@ -38154,7 +38962,7 @@
     {
       "ID": 10066001,
       "Entries": [
-        "[Item] Magic Pot [Hit]"
+        "[Item] Magic Pot (Blast)"
       ]
     },
     {
@@ -38178,19 +38986,19 @@
     {
       "ID": 10067001,
       "Entries": [
-        "[Item] Rot Pot [Hit]"
+        "[Item] Rot Pot (Blast)"
       ]
     },
     {
       "ID": 10067002,
       "Entries": [
-        "[Item] Rot Pot [Hit]"
+        "[Item] Rot Pot (Emitter)"
       ]
     },
     {
       "ID": 10067003,
       "Entries": [
-        "[Item] Rot Pot [Emitted]"
+        "[Item] Rot Pot (Mist)"
       ]
     },
     {
@@ -38286,31 +39094,31 @@
     {
       "ID": 10300000,
       "Entries": [
-        "[Item] Ancestral Infant's Head [Hit]"
+        "[Item] Ancestral Infant's Head (Falling)"
       ]
     },
     {
       "ID": 10300001,
       "Entries": [
-        "[Item] Ancestral Infant's Head [Hit]"
+        "[Item] Ancestral Infant's Head (Ground)"
       ]
     },
     {
       "ID": 10301000,
       "Entries": [
-        "[Item] Omen Bairn - Emitted (1) - Emitter"
+        "[Item] Omen Bairn"
       ]
     },
     {
       "ID": 10301001,
       "Entries": [
-        "[Item] Omen Bairn - Emitted (2)"
+        "[Item] Omen Bairn (Blast)"
       ]
     },
     {
       "ID": 10301002,
       "Entries": [
-        "[Item] Omen Bairn - Emitted (1)"
+        "[Item] Omen Bairn (Wraith)"
       ]
     },
     {
@@ -38322,13 +39130,13 @@
     {
       "ID": 10301101,
       "Entries": [
-        "[Item] Regal Omen Bairn"
+        "[Item] Regal Omen Bairn (Blast)"
       ]
     },
     {
       "ID": 10301102,
       "Entries": [
-        "[Item] Regal Omen Bairn"
+        "[Item] Regal Omen Bairn (Wraith)"
       ]
     },
     {
@@ -38352,19 +39160,19 @@
     {
       "ID": 10303001,
       "Entries": [
-        "[Item] Cuckoo Glintstone"
+        "[Item] Cuckoo Glintstone (Waiting Bolt)"
       ]
     },
     {
       "ID": 10303002,
       "Entries": [
-        "[Item] Cuckoo Glintstone"
+        "[Item] Cuckoo Glintstone (Bolt)"
       ]
     },
     {
       "ID": 10303003,
       "Entries": [
-        ""
+        "[Item] Cuckoo Glintstone (Blast)"
       ]
     },
     {
@@ -38388,7 +39196,7 @@
     {
       "ID": 10306001,
       "Entries": [
-        "[Item] Gravity Stone Fan"
+        "[Item] Gravity Stone Fan (Rocks)"
       ]
     },
     {
@@ -38400,7 +39208,7 @@
     {
       "ID": 10307001,
       "Entries": [
-        "[Item] Gravity Stone Chunk"
+        "[Item] Gravity Stone Chunk (Blast)"
       ]
     },
     {
@@ -38448,7 +39256,7 @@
     {
       "ID": 10351000,
       "Entries": [
-        "[Item] Spark Aromatic [Hit]"
+        "[Item] Spark Aromatic"
       ]
     },
     {
@@ -38580,43 +39388,43 @@
     {
       "ID": 12036000,
       "Entries": [
-        "[Effect] Frostbite Produces a Mist of Frost"
+        ""
       ]
     },
     {
       "ID": 12036001,
       "Entries": [
-        "[Effect] Frostbite Produces a Mist of Frost"
+        ""
       ]
     },
     {
       "ID": 12036002,
       "Entries": [
-        "[Effect] Frostbite Produces a Mist of Frost"
+        ""
       ]
     },
     {
       "ID": 12036003,
       "Entries": [
-        "[Effect] Frostbite Produces a Mist of Frost"
+        ""
       ]
     },
     {
       "ID": 12037000,
       "Entries": [
-        "[Effect] Poison Produces a Mist of Poison"
+        ""
       ]
     },
     {
       "ID": 12037001,
       "Entries": [
-        "[Effect] Poison Produces a Mist of Poison"
+        ""
       ]
     },
     {
       "ID": 12037002,
       "Entries": [
-        "[Effect] Poison Produces a Mist of Poison"
+        ""
       ]
     },
     {
@@ -38628,235 +39436,235 @@
     {
       "ID": 12042100,
       "Entries": [
-        "[On-Walk Projectile] Violent Deluge of Star Rain"
+        "[Effect] Violent Deluge of Star Rain While Walking"
       ]
     },
     {
       "ID": 12044205,
       "Entries": [
-        "[On-Attack Projectile] Mist of Frost"
+        "[Effect] Defeating Group Releases Mist of Frost"
       ]
     },
     {
       "ID": 12048210,
       "Entries": [
-        "[On-Attack Projectile] Magma"
+        "[Effect] Magma upon Defeating Multiple Enemies"
       ]
     },
     {
       "ID": 12048211,
       "Entries": [
-        "[On-Attack Projectile] Magma"
+        "[Effect] Magma upon Defeating Multiple Enemies"
       ]
     },
     {
       "ID": 12048212,
       "Entries": [
-        "[On-Attack Projectile] Magma"
+        "[Effect] Magma upon Defeating Multiple Enemies"
       ]
     },
     {
       "ID": 12048213,
       "Entries": [
-        "[On-Attack Projectile] Magma"
+        "[Effect] Magma upon Defeating Multiple Enemies"
       ]
     },
     {
       "ID": 12048214,
       "Entries": [
-        "[On-Attack Projectile] Magma"
+        "[Effect] Magma upon Defeating Multiple Enemies"
       ]
     },
     {
       "ID": 12048215,
       "Entries": [
-        "[On-Attack Projectile] Magma"
+        "[Effect] Magma upon Defeating Multiple Enemies"
       ]
     },
     {
       "ID": 12048216,
       "Entries": [
-        "[On-Attack Projectile] Magma"
+        "[Effect] Magma upon Defeating Multiple Enemies"
       ]
     },
     {
       "ID": 12050005,
       "Entries": [
-        "[On-Attack Projectile] Vengeful Spirits"
+        "[Effect] Defeating Group Calls Vengeful Spirits"
       ]
     },
     {
       "ID": 12050100,
       "Entries": [
-        "[On-Attack Projectile] Vengeful Spirits"
+        "[Effect] Defeating Group Calls Vengeful Spirits"
       ]
     },
     {
       "ID": 12050101,
       "Entries": [
-        "[On-Attack Projectile] Vengeful Spirits"
+        ""
       ]
     },
     {
       "ID": 12050200,
       "Entries": [
-        "[Guard Counter Projectile] Holy Attacks (Spawn 12"
+        "[Effect] Guard Counters Activate Holy Attacks (Spawn 2)"
       ]
     },
     {
       "ID": 12050201,
       "Entries": [
-        "[Guard Counter Projectile] Holy Attacks (Spawn 1)"
+        "[Effect] Guard Counters Activate Holy Attacks (Spawn 1)"
       ]
     },
     {
       "ID": 12050300,
       "Entries": [
-        "[Guard Counter Projectile] Summoning Attack"
+        ""
       ]
     },
     {
       "ID": 12061203,
       "Entries": [
-        "[On-Walk Projectile] Savage Pillars of Flame "
+        ""
       ]
     },
     {
       "ID": 12064000,
       "Entries": [
-        "[Effect] Sleep Produces a Mist of Sleep"
+        ""
       ]
     },
     {
       "ID": 12064001,
       "Entries": [
-        "[Effect] Sleep Produces a Mist of Sleep"
+        ""
       ]
     },
     {
       "ID": 12064105,
       "Entries": [
-        "[Effect] Golden Shockwave"
+        "[Effect] Defeating Group Fires Golden Shockwave"
       ]
     },
     {
       "ID": 12067000,
       "Entries": [
-        "[Effect] Rot Produces a Mist of Scarlet Rot"
+        ""
       ]
     },
     {
       "ID": 12067001,
       "Entries": [
-        "[Effect] Rot Produces a Mist of Scarlet Rot"
+        ""
       ]
     },
     {
       "ID": 12067002,
       "Entries": [
-        "[Effect] Rot Produces a Mist of Scarlet Rot"
+        ""
       ]
     },
     {
       "ID": 12067003,
       "Entries": [
-        "[Effect] Rot Produces a Mist of Scarlet Rot"
+        ""
       ]
     },
     {
       "ID": 12069100,
       "Entries": [
-        "[On-Walk Projectile] Storm of Red Lightning"
+        ""
       ]
     },
     {
       "ID": 12069101,
       "Entries": [
-        "[On-Walk Projectile] Storm of Red Lightning"
+        ""
       ]
     },
     {
       "ID": 12301000,
       "Entries": [
-        "[On-Walk Projectile] Wraiths "
+        ""
       ]
     },
     {
       "ID": 12301001,
       "Entries": [
-        "[On-Walk Projectile] Wraiths "
+        ""
       ]
     },
     {
       "ID": 12301002,
       "Entries": [
-        "[On-Walk Projectile] Wraiths "
+        ""
       ]
     },
     {
       "ID": 12301100,
       "Entries": [
-        "[On-Attack Projectile] Wraiths"
+        "[Effect] Defeating Group Summons Wraiths"
       ]
     },
     {
       "ID": 12301101,
       "Entries": [
-        "[On-Attack Projectile] Wraiths"
+        "[Effect] Defeating Group Summons Wraiths"
       ]
     },
     {
       "ID": 12301102,
       "Entries": [
-        "[On-Attack Projectile] Wraiths"
+        "[Effect] Defeating Group Summons Wraiths"
       ]
     },
     {
       "ID": 12335000,
       "Entries": [
-        "[On-Attack Projectile] Mist of Charm"
+        "[Effect] Defeating Group Releases Mist of Charm"
       ]
     },
     {
       "ID": 12335001,
       "Entries": [
-        "[On-Attack Projectile] Mist of Charm"
+        "[Effect] Defeating Group Releases Mist of Charm"
       ]
     },
     {
       "ID": 12441000,
       "Entries": [
-        "[On-Sprint Projectile] Ice Storm"
+        ""
       ]
     },
     {
       "ID": 12441002,
       "Entries": [
-        "[On-Sprint Projectile] Ice Storm"
+        ""
       ]
     },
     {
       "ID": 12480001,
       "Entries": [
-        "[On-Sprint Projectile] Magma"
+        "[Effect] Magma Surge Sprint"
       ]
     },
     {
       "ID": 12480002,
       "Entries": [
-        "[On-Sprint Projectile] Magma"
+        "[Effect] Magma Surge Sprint"
       ]
     },
     {
       "ID": 12480004,
       "Entries": [
-        "[On-Sprint Projectile] Magma"
+        "[Effect] Magma Surge Sprint"
       ]
     },
     {
       "ID": 12692011,
       "Entries": [
-        "[On-Dodge Projectile] Lightning"
+        ""
       ]
     },
     {
@@ -38881,6 +39689,1092 @@
       "ID": 12732000,
       "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 13030000,
+      "Entries": [
+        "[Item - Level 2] Fire Pot"
+      ]
+    },
+    {
+      "ID": 13030001,
+      "Entries": [
+        "[Item - Level 2] Fire Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13030010,
+      "Entries": [
+        "[Item - Level 3] Fire Pot"
+      ]
+    },
+    {
+      "ID": 13030011,
+      "Entries": [
+        "[Item - Level 3] Fire Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13030012,
+      "Entries": [
+        "[Item - Level 3] Fire Pot (Spread Ground Fire)"
+      ]
+    },
+    {
+      "ID": 13030013,
+      "Entries": [
+        "[Item - Level 3] Fire Pot (Ground Fire)"
+      ]
+    },
+    {
+      "ID": 13032000,
+      "Entries": [
+        "[Item - Level 2] Lightning Pot"
+      ]
+    },
+    {
+      "ID": 13032001,
+      "Entries": [
+        "[Item - Level 2] Lightning Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13032002,
+      "Entries": [
+        "[Item - Level 2] Lightning Pot (Water Spread)"
+      ]
+    },
+    {
+      "ID": 13032050,
+      "Entries": [
+        "[Item - Level 3] Lightning Pot"
+      ]
+    },
+    {
+      "ID": 13032051,
+      "Entries": [
+        "[Item - Level 3] Lightning Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13032052,
+      "Entries": [
+        "[Item - Level 3] Lightning Pot (Followup Start)"
+      ]
+    },
+    {
+      "ID": 13032053,
+      "Entries": [
+        "[Item - Level 3] Lightning Pot (Followup Wait)"
+      ]
+    },
+    {
+      "ID": 13032054,
+      "Entries": [
+        "[Item - Level 3] Lightning Pot (Followup Strike)"
+      ]
+    },
+    {
+      "ID": 13033000,
+      "Entries": [
+        "[Item - Level 2] Fetid Pot"
+      ]
+    },
+    {
+      "ID": 13033001,
+      "Entries": [
+        "[Item - Level 2] Fetid Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13033002,
+      "Entries": [
+        "[Item - Level 2] Fetid Pot (Emitter)"
+      ]
+    },
+    {
+      "ID": 13033003,
+      "Entries": [
+        "[Item - Level 2] Fetid Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13033010,
+      "Entries": [
+        "[Item - Level 3] Fetid Pot"
+      ]
+    },
+    {
+      "ID": 13033011,
+      "Entries": [
+        "[Item - Level 3] Fetid Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13033012,
+      "Entries": [
+        "[Item - Level 3] Fetid Pot (Emitter)"
+      ]
+    },
+    {
+      "ID": 13033013,
+      "Entries": [
+        "[Item - Level 3] Fetid Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13034000,
+      "Entries": [
+        "[Item - Level 2] Swarm Pot"
+      ]
+    },
+    {
+      "ID": 13034002,
+      "Entries": [
+        "[Item - Level 2] Swarm Pot (Emitter)"
+      ]
+    },
+    {
+      "ID": 13034003,
+      "Entries": [
+        "[Item - Level 2] Swarm Pot (Flies)"
+      ]
+    },
+    {
+      "ID": 13034010,
+      "Entries": [
+        "[Item - Level 3] Swarm Pot"
+      ]
+    },
+    {
+      "ID": 13034012,
+      "Entries": [
+        "[Item - Level 3] Swarm Pot (Emitter)"
+      ]
+    },
+    {
+      "ID": 13034013,
+      "Entries": [
+        "[Item - Level 3] Swarm Pot (Flies)"
+      ]
+    },
+    {
+      "ID": 13034015,
+      "Entries": [
+        "[Item - Level 3] Swarm Pot (Blood Pool Start)"
+      ]
+    },
+    {
+      "ID": 13034016,
+      "Entries": [
+        "[Item - Level 3] Swarm Pot (Blood Pool)"
+      ]
+    },
+    {
+      "ID": 13035000,
+      "Entries": [
+        "[Item - Level 2] Holy Water Pot"
+      ]
+    },
+    {
+      "ID": 13035001,
+      "Entries": [
+        "[Item - Level 2] Holy Water Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13035010,
+      "Entries": [
+        "[Item - Level 3] Holy Water Pot"
+      ]
+    },
+    {
+      "ID": 13035011,
+      "Entries": [
+        "[Item - Level 3] Holy Water Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13035012,
+      "Entries": [
+        "[Item - Level 3] Holy Water Pot (Heal)"
+      ]
+    },
+    {
+      "ID": 13036000,
+      "Entries": [
+        "[Item - Level 2] Freezing Pot"
+      ]
+    },
+    {
+      "ID": 13036001,
+      "Entries": [
+        "[Item - Level 2] Freezing Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13036002,
+      "Entries": [
+        "[Item - Level 2] Freezing Pot (Emitter)"
+      ]
+    },
+    {
+      "ID": 13036003,
+      "Entries": [
+        "[Item - Level 2] Freezing Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13036010,
+      "Entries": [
+        "[Item - Level 3] Freezing Pot"
+      ]
+    },
+    {
+      "ID": 13036011,
+      "Entries": [
+        "[Item - Level 3] Freezing Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13036012,
+      "Entries": [
+        "[Item - Level 3] Freezing Pot (Emitter)"
+      ]
+    },
+    {
+      "ID": 13036013,
+      "Entries": [
+        "[Item - Level 3] Freezing Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13036014,
+      "Entries": [
+        "[Item - Level 3] Freezing Pot (Ground Start)"
+      ]
+    },
+    {
+      "ID": 13036015,
+      "Entries": [
+        "[Item - Level 3] Freezing Pot (Ground Ice)"
+      ]
+    },
+    {
+      "ID": 13036016,
+      "Entries": [
+        "[Item - Level 3] Freezing Pot (Ground Ice Blast)"
+      ]
+    },
+    {
+      "ID": 13037000,
+      "Entries": [
+        "[Item - Level 2] Poison Pot"
+      ]
+    },
+    {
+      "ID": 13037001,
+      "Entries": [
+        "[Item - Level 2] Poison Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13037002,
+      "Entries": [
+        "[Item - Level 2] Poison Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13037010,
+      "Entries": [
+        "[Item - Level 3] Poison Pot"
+      ]
+    },
+    {
+      "ID": 13037011,
+      "Entries": [
+        "[Item - Level 3] Poison Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13037012,
+      "Entries": [
+        "[Item - Level 3] Poison Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13039000,
+      "Entries": [
+        "[Item - Level 2] Alluring Pot"
+      ]
+    },
+    {
+      "ID": 13039001,
+      "Entries": [
+        "[Item - Level 2] Alluring Pot (Hit)"
+      ]
+    },
+    {
+      "ID": 13039010,
+      "Entries": [
+        "[Item - Level 3] Alluring Pot"
+      ]
+    },
+    {
+      "ID": 13039011,
+      "Entries": [
+        "[Item - Level 3] Alluring Pot (Hit)"
+      ]
+    },
+    {
+      "ID": 13039013,
+      "Entries": [
+        "[Item - Level 3] Alluring Pot (Damage)"
+      ]
+    },
+    {
+      "ID": 13039100,
+      "Entries": [
+        "[Item - Level 2] Beastlure Pot"
+      ]
+    },
+    {
+      "ID": 13039110,
+      "Entries": [
+        "[Item - Level 3] Beastlure Pot"
+      ]
+    },
+    {
+      "ID": 13039112,
+      "Entries": [
+        "[Item - Level 3] Beastlure Pot (Damage Start)"
+      ]
+    },
+    {
+      "ID": 13039113,
+      "Entries": [
+        "[Item - Level 3] Beastlure Pot (Damage)"
+      ]
+    },
+    {
+      "ID": 13060000,
+      "Entries": [
+        "[Item - Level 2] Volcano Pot"
+      ]
+    },
+    {
+      "ID": 13060001,
+      "Entries": [
+        "[Item - Level 2] Volcano Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13060010,
+      "Entries": [
+        "[Item - Level 3] Volcano Pot"
+      ]
+    },
+    {
+      "ID": 13060011,
+      "Entries": [
+        "[Item - Level 3] Volcano Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13060012,
+      "Entries": [
+        "[Item - Level 3] Volcano Pot (Lava Start)"
+      ]
+    },
+    {
+      "ID": 13060013,
+      "Entries": [
+        "[Item - Level 3] Volcano Pot (Lava Descend)"
+      ]
+    },
+    {
+      "ID": 13060014,
+      "Entries": [
+        "[Item - Level 3] Volcano Pot (Lava)"
+      ]
+    },
+    {
+      "ID": 13064000,
+      "Entries": [
+        "[Item - Level 2] Sleep Pot"
+      ]
+    },
+    {
+      "ID": 13064001,
+      "Entries": [
+        "[Item - Level 2] Sleep Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13064010,
+      "Entries": [
+        "[Item - Level 3] Sleep Pot"
+      ]
+    },
+    {
+      "ID": 13064011,
+      "Entries": [
+        "[Item - Level 3] Sleep Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13064012,
+      "Entries": [
+        "[Item - Level 3] Sleep Pot (FP Restore Start)"
+      ]
+    },
+    {
+      "ID": 13064013,
+      "Entries": [
+        "[Item - Level 3] Sleep Pot (FP Restore)"
+      ]
+    },
+    {
+      "ID": 13065000,
+      "Entries": [
+        "[Item - Level 2] Rancor Pot"
+      ]
+    },
+    {
+      "ID": 13065001,
+      "Entries": [
+        "[Item - Level 2] Rancor Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13065002,
+      "Entries": [
+        "[Item - Level 2] Rancor Pot (Spirit)"
+      ]
+    },
+    {
+      "ID": 13065010,
+      "Entries": [
+        "[Item - Level 3] Rancor Pot"
+      ]
+    },
+    {
+      "ID": 13065011,
+      "Entries": [
+        "[Item - Level 3] Rancor Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13065012,
+      "Entries": [
+        "[Item - Level 3] Rancor Pot (Spirit)"
+      ]
+    },
+    {
+      "ID": 13066000,
+      "Entries": [
+        "[Item - Level 2] Magic Pot"
+      ]
+    },
+    {
+      "ID": 13066001,
+      "Entries": [
+        "[Item - Level 2] Magic Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13066010,
+      "Entries": [
+        "[Item - Level 3] Magic Pot"
+      ]
+    },
+    {
+      "ID": 13066011,
+      "Entries": [
+        "[Item - Level 3] Magic Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13066012,
+      "Entries": [
+        "[Item - Level 3] Magic Pot (Bolts Spawn)"
+      ]
+    },
+    {
+      "ID": 13066015,
+      "Entries": [
+        "[Item - Level 3] Magic Pot (Bolts)"
+      ]
+    },
+    {
+      "ID": 13067000,
+      "Entries": [
+        "[Item - Level 2] Rot Pot"
+      ]
+    },
+    {
+      "ID": 13067001,
+      "Entries": [
+        "[Item - Level 2] Rot Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13067002,
+      "Entries": [
+        "[Item - Level 2] Rot Pot (Emitter)"
+      ]
+    },
+    {
+      "ID": 13067003,
+      "Entries": [
+        "[Item - Level 2] Rot Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13067010,
+      "Entries": [
+        "[Item - Level 3] Rot Pot"
+      ]
+    },
+    {
+      "ID": 13067011,
+      "Entries": [
+        "[Item - Level 3] Rot Pot (Blast)"
+      ]
+    },
+    {
+      "ID": 13067012,
+      "Entries": [
+        "[Item - Level 3] Rot Pot (Emitter)"
+      ]
+    },
+    {
+      "ID": 13067013,
+      "Entries": [
+        "[Item - Level 3] Rot Pot (Mist)"
+      ]
+    },
+    {
+      "ID": 13170000,
+      "Entries": [
+        "[Item - Level 2] Throwing Dagger"
+      ]
+    },
+    {
+      "ID": 13170010,
+      "Entries": [
+        "[Item - Level 3] Throwing Dagger"
+      ]
+    },
+    {
+      "ID": 13171000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13171010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13172000,
+      "Entries": [
+        "[Item - Level 2] Poisonbone Dart"
+      ]
+    },
+    {
+      "ID": 13172010,
+      "Entries": [
+        "[Item - Level 3] Poisonbone Dart"
+      ]
+    },
+    {
+      "ID": 13173000,
+      "Entries": [
+        "[Item - Level 2] Kukri"
+      ]
+    },
+    {
+      "ID": 13173010,
+      "Entries": [
+        "[Item - Level 3] Kukri"
+      ]
+    },
+    {
+      "ID": 13174000,
+      "Entries": [
+        "[Item - Level 2] Crystal Dart"
+      ]
+    },
+    {
+      "ID": 13174010,
+      "Entries": [
+        "[Item - Level 3] Crystal Dart"
+      ]
+    },
+    {
+      "ID": 13175000,
+      "Entries": [
+        "[Item - Level 2] Fan Daggers"
+      ]
+    },
+    {
+      "ID": 13175010,
+      "Entries": [
+        "[Item - Level 3] Fan Daggers"
+      ]
+    },
+    {
+      "ID": 13300000,
+      "Entries": [
+        "[Item - Level 2] Ancestral Infant's Head"
+      ]
+    },
+    {
+      "ID": 13300001,
+      "Entries": [
+        "[Item - Level 2] Ancestral Infant's Head (Ground)"
+      ]
+    },
+    {
+      "ID": 13300010,
+      "Entries": [
+        "[Item - Level 3] Ancestral Infant's Head"
+      ]
+    },
+    {
+      "ID": 13300011,
+      "Entries": [
+        "[Item - Level 3] Ancestral Infant's Head (Ground)"
+      ]
+    },
+    {
+      "ID": 13301000,
+      "Entries": [
+        "[Item - Level 2] Omen Bairn"
+      ]
+    },
+    {
+      "ID": 13301010,
+      "Entries": [
+        "[Item - Level 2] Omen Bairn (Blast)"
+      ]
+    },
+    {
+      "ID": 13301020,
+      "Entries": [
+        "[Item - Level 2] Omen Bairn (Wraith)"
+      ]
+    },
+    {
+      "ID": 13301050,
+      "Entries": [
+        "[Item - Level 3] Omen Bairn"
+      ]
+    },
+    {
+      "ID": 13301060,
+      "Entries": [
+        "[Item - Level 3] Omen Bairn (Blast)"
+      ]
+    },
+    {
+      "ID": 13301070,
+      "Entries": [
+        "[Item - Level 3] Omen Bairn (Wraith)"
+      ]
+    },
+    {
+      "ID": 13301100,
+      "Entries": [
+        "[Item - Level 2] Regal Omen Bairn"
+      ]
+    },
+    {
+      "ID": 13301110,
+      "Entries": [
+        "[Item - Level 2] Regal Omen Bairn (Blast)"
+      ]
+    },
+    {
+      "ID": 13301120,
+      "Entries": [
+        "[Item - Level 2] Regal Omen Bairn (Wraith)"
+      ]
+    },
+    {
+      "ID": 13301150,
+      "Entries": [
+        "[Item - Level 3] Regal Omen Bairn"
+      ]
+    },
+    {
+      "ID": 13301160,
+      "Entries": [
+        "[Item - Level 3] Regal Omen Bairn (Blast)"
+      ]
+    },
+    {
+      "ID": 13301170,
+      "Entries": [
+        "[Item - Level 3] Regal Omen Bairn (Wraith)"
+      ]
+    },
+    {
+      "ID": 13303000,
+      "Entries": [
+        "[Item - Level 2] Cuckoo Glintstone"
+      ]
+    },
+    {
+      "ID": 13303001,
+      "Entries": [
+        "[Item - Level 2] Cuckoo Glintstone (Waiting Bolt)"
+      ]
+    },
+    {
+      "ID": 13303002,
+      "Entries": [
+        "[Item - Level 2] Cuckoo Glintstone (Bolt)"
+      ]
+    },
+    {
+      "ID": 13303003,
+      "Entries": [
+        "[Item - Level 2] Cuckoo Glintstone (Blast)"
+      ]
+    },
+    {
+      "ID": 13303010,
+      "Entries": [
+        "[Item - Level 3] Cuckoo Glintstone"
+      ]
+    },
+    {
+      "ID": 13303011,
+      "Entries": [
+        "[Item - Level 3] Cuckoo Glintstone (Waiting Bolt)"
+      ]
+    },
+    {
+      "ID": 13303012,
+      "Entries": [
+        "[Item - Level 3] Cuckoo Glintstone (Bolt)"
+      ]
+    },
+    {
+      "ID": 13303013,
+      "Entries": [
+        "[Item - Level 3] Cuckoo Glintstone (Blast)"
+      ]
+    },
+    {
+      "ID": 13305000,
+      "Entries": [
+        "[Item - Level 2] Glintstone Scrap"
+      ]
+    },
+    {
+      "ID": 13305010,
+      "Entries": [
+        "[Item - Level 3] Glintstone Scrap"
+      ]
+    },
+    {
+      "ID": 13305100,
+      "Entries": [
+        "[Item - Level 2] Large Glintstone Scrap"
+      ]
+    },
+    {
+      "ID": 13305110,
+      "Entries": [
+        "[Item - Level 3] Large Glintstone Scrap"
+      ]
+    },
+    {
+      "ID": 13306000,
+      "Entries": [
+        "[Item - Level 2] Gravity Stone Fan"
+      ]
+    },
+    {
+      "ID": 13306001,
+      "Entries": [
+        "[Item - Level 2] Gravity Stone Fan (Rocks)"
+      ]
+    },
+    {
+      "ID": 13306050,
+      "Entries": [
+        "[Item - Level 3] Gravity Stone Fan"
+      ]
+    },
+    {
+      "ID": 13306051,
+      "Entries": [
+        "[Item - Level 3] Gravity Stone Fan (Rocks)"
+      ]
+    },
+    {
+      "ID": 13307000,
+      "Entries": [
+        "[Item - Level 2] Gravity Stone Chunk"
+      ]
+    },
+    {
+      "ID": 13307001,
+      "Entries": [
+        "[Item - Level 2] Gravity Stone Chunk (Blast)"
+      ]
+    },
+    {
+      "ID": 13307010,
+      "Entries": [
+        "[Item - Level 3] Gravity Stone Chunk"
+      ]
+    },
+    {
+      "ID": 13307011,
+      "Entries": [
+        "[Item - Level 3] Gravity Stone Chunk (Blast)"
+      ]
+    },
+    {
+      "ID": 13307016,
+      "Entries": [
+        "[Item - Level 3] Gravity Stone Chunk (Gravity Near)"
+      ]
+    },
+    {
+      "ID": 13307017,
+      "Entries": [
+        "[Item - Level 3] Gravity Stone Chunk (Gravity Mid)"
+      ]
+    },
+    {
+      "ID": 13307018,
+      "Entries": [
+        "[Item - Level 3] Gravity Stone Chunk (Gravity Far)"
+      ]
+    },
+    {
+      "ID": 13308000,
+      "Entries": [
+        "[Item - Level 2] Wraith Calling Bell"
+      ]
+    },
+    {
+      "ID": 13308010,
+      "Entries": [
+        "[Item - Level 3] Wraith Calling Bell"
+      ]
+    },
+    {
+      "ID": 13331001,
+      "Entries": [
+        "[Item - Level 2] Warming Stone"
+      ]
+    },
+    {
+      "ID": 13331011,
+      "Entries": [
+        "[Item - Level 3] Warming Stone (Heal)"
+      ]
+    },
+    {
+      "ID": 13331012,
+      "Entries": [
+        "[Item - Level 3] Warming Stone (Revive)"
+      ]
+    },
+    {
+      "ID": 13335000,
+      "Entries": [
+        "[Item - Level 2] Bewitching Branch"
+      ]
+    },
+    {
+      "ID": 13335001,
+      "Entries": [
+        "[Item - Level 2] Bewitching Branch (Mist)"
+      ]
+    },
+    {
+      "ID": 13335010,
+      "Entries": [
+        "[Item - Level 3] Bewitching Branch"
+      ]
+    },
+    {
+      "ID": 13335011,
+      "Entries": [
+        "[Item - Level 3] Bewitching Branch (Mist)"
+      ]
+    },
+    {
+      "ID": 13350000,
+      "Entries": [
+        "[Item - Level 2] Uplifting Aromatic"
+      ]
+    },
+    {
+      "ID": 13350010,
+      "Entries": [
+        "[Item - Level 3] Uplifting Aromatic"
+      ]
+    },
+    {
+      "ID": 13350050,
+      "Entries": [
+        "[Item - Level 3] Add Explosion to Perfuming Arts"
+      ]
+    },
+    {
+      "ID": 13351000,
+      "Entries": [
+        "[Item - Level 2] Spark Aromatic"
+      ]
+    },
+    {
+      "ID": 13351010,
+      "Entries": [
+        "[Item - Level 3] Spark Aromatic"
+      ]
+    },
+    {
+      "ID": 13352000,
+      "Entries": [
+        "[Item - Level 2] Ironjar Aromatic"
+      ]
+    },
+    {
+      "ID": 13352010,
+      "Entries": [
+        "[Item - Level 3] Ironjar Aromatic"
+      ]
+    },
+    {
+      "ID": 13355000,
+      "Entries": [
+        "[Item - Level 2] Bloodboil Aromatic"
+      ]
+    },
+    {
+      "ID": 13355010,
+      "Entries": [
+        "[Item - Level 3] Bloodboil Aromatic"
+      ]
+    },
+    {
+      "ID": 13358000,
+      "Entries": [
+        "[Item - Level 2] Poison Spraymist"
+      ]
+    },
+    {
+      "ID": 13358001,
+      "Entries": [
+        "[Item - Level 2] Poison Spraymist [Hit]"
+      ]
+    },
+    {
+      "ID": 13358002,
+      "Entries": [
+        "[Item - Level 2] Poison Spraymist (Emitted)"
+      ]
+    },
+    {
+      "ID": 13358010,
+      "Entries": [
+        "[Item - Level 3] Poison Spraymist"
+      ]
+    },
+    {
+      "ID": 13358011,
+      "Entries": [
+        "[Item - Level 3] Poison Spraymist [Hit]"
+      ]
+    },
+    {
+      "ID": 13358012,
+      "Entries": [
+        "[Item - Level 3] Poison Spraymist (Emitted)"
+      ]
+    },
+    {
+      "ID": 13358014,
+      "Entries": [
+        "[Item - Level 3] Poison Spraymist (Explosion)"
+      ]
+    },
+    {
+      "ID": 13361000,
+      "Entries": [
+        "[Item - Level 2] Acid Spraymist"
+      ]
+    },
+    {
+      "ID": 13361001,
+      "Entries": [
+        "[Item - Level 2] Acid Spraymist (Linger)"
+      ]
+    },
+    {
+      "ID": 13361010,
+      "Entries": [
+        "[Item - Level 3] Acid Spraymist"
+      ]
+    },
+    {
+      "ID": 13361011,
+      "Entries": [
+        "[Item - Level 3] Acid Spraymist (Linger)"
+      ]
+    },
+    {
+      "ID": 13361012,
+      "Entries": [
+        "[Item - Level 3] Acid Spraymist (Explosion)"
+      ]
+    },
+    {
+      "ID": 13370000,
+      "Entries": [
+        "[Item - Level 3] Boiled Crab"
+      ]
+    },
+    {
+      "ID": 13371000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13372000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13373000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13381000,
+      "Entries": [
+        "[Item - Level 3] Crystal Tear Improved Attributes"
+      ]
+    },
+    {
+      "ID": 14101600,
+      "Entries": [
+        "[Item - Level 2] Ruptured Crystal Tear"
       ]
     },
     {
@@ -39275,6 +41169,414 @@
     },
     {
       "ID": 20005590,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500155,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500165,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500170,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505155,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505165,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20505170,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510155,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510165,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510170,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515155,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515165,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20515170,
       "Entries": [
         ""
       ]
@@ -42667,6 +44969,12 @@
       "ID": 300310906,
       "Entries": [
         "[AoW Sacred Relic Sword] Wave of Gold"
+      ]
+    },
+    {
+      "ID": 300310907,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -49450,6 +51758,12 @@
       ]
     },
     {
+      "ID": 303400406,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 303400500,
       "Entries": [
         "[AoW Magma Blade] Magma Shower - L2 #1"
@@ -49836,49 +52150,49 @@
     {
       "ID": 400000200,
       "Entries": [
-        "[AoW - Default] Strom Ruler - Charged"
+        ""
       ]
     },
     {
       "ID": 400000205,
       "Entries": [
-        "[AoW - Default] Strom Ruler - No FP Charged"
+        ""
       ]
     },
     {
       "ID": 400000220,
       "Entries": [
-        "[AoW - Default] Strom Ruler - Light #1"
+        ""
       ]
     },
     {
       "ID": 400000225,
       "Entries": [
-        "[AoW - Default] Strom Ruler - No FP Light #1"
+        ""
       ]
     },
     {
       "ID": 400000230,
       "Entries": [
-        "[AoW - Default] Strom Ruler - Light #2"
+        ""
       ]
     },
     {
       "ID": 400000235,
       "Entries": [
-        "[AoW - Default] Strom Ruler - No FP Light #2"
+        ""
       ]
     },
     {
       "ID": 400000240,
       "Entries": [
-        "[AoW - Default] Strom Ruler - Light #3"
+        ""
       ]
     },
     {
       "ID": 400000245,
       "Entries": [
-        "[AoW - Default] Strom Ruler - No FP Light #3"
+        ""
       ]
     },
     {
@@ -49890,337 +52204,433 @@
     {
       "ID": 400100200,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - Charged"
+        ""
       ]
     },
     {
       "ID": 400100205,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - No FP Charged"
+        ""
       ]
     },
     {
       "ID": 400100220,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - Light #1"
+        ""
       ]
     },
     {
       "ID": 400100225,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - No FP Light #1"
+        ""
       ]
     },
     {
       "ID": 400100230,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - Light #2"
+        ""
       ]
     },
     {
       "ID": 400100235,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - No FP Light #2"
+        ""
       ]
     },
     {
       "ID": 400100240,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - Light #3"
+        ""
       ]
     },
     {
       "ID": 400100245,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - No FP Light #3"
+        ""
+      ]
+    },
+    {
+      "ID": 400500200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500225,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500235,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500245,
+      "Entries": [
+        ""
       ]
     },
     {
       "ID": 400900200,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - Charged"
+        ""
       ]
     },
     {
       "ID": 400900205,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - No FP Charged"
+        ""
       ]
     },
     {
       "ID": 400900220,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - Light #1"
+        ""
       ]
     },
     {
       "ID": 400900225,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - No FP Light #1"
+        ""
       ]
     },
     {
       "ID": 400900230,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - Light #2"
+        ""
       ]
     },
     {
       "ID": 400900235,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - No FP Light #2"
+        ""
       ]
     },
     {
       "ID": 400900240,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - Light #3"
+        ""
       ]
     },
     {
       "ID": 400900245,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - No FP Light #3"
+        ""
+      ]
+    },
+    {
+      "ID": 401100200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100225,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100235,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100245,
+      "Entries": [
+        ""
       ]
     },
     {
       "ID": 401102200,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - Charged"
+        ""
       ]
     },
     {
       "ID": 401102205,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - No FP Charged"
+        ""
       ]
     },
     {
       "ID": 401102220,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - Light #1"
+        ""
       ]
     },
     {
       "ID": 401102225,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - No FP Light #1"
+        ""
       ]
     },
     {
       "ID": 401102230,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - Light #2"
+        ""
       ]
     },
     {
       "ID": 401102235,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - No FP Light #2"
+        ""
       ]
     },
     {
       "ID": 401102240,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - Light #3"
+        ""
       ]
     },
     {
       "ID": 401102245,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - No FP Light #3"
+        ""
       ]
     },
     {
       "ID": 401800200,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - Charged"
+        ""
       ]
     },
     {
       "ID": 401800205,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - No FP Charged"
+        ""
       ]
     },
     {
       "ID": 401800220,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - Light #1"
+        ""
       ]
     },
     {
       "ID": 401800225,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - No FP Light #1"
+        ""
       ]
     },
     {
       "ID": 401800230,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - Light #2"
+        ""
       ]
     },
     {
       "ID": 401800235,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - No FP Light #2"
+        ""
       ]
     },
     {
       "ID": 401800240,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - Light #3"
+        ""
       ]
     },
     {
       "ID": 401800245,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - No FP Light #3"
+        ""
       ]
     },
     {
       "ID": 402100200,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - Charged"
+        ""
       ]
     },
     {
       "ID": 402100205,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - No FP Charged"
+        ""
       ]
     },
     {
       "ID": 402100220,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - Light #1"
+        ""
       ]
     },
     {
       "ID": 402100225,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - No FP Light #1"
+        ""
       ]
     },
     {
       "ID": 402100230,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - Light #2"
+        ""
       ]
     },
     {
       "ID": 402100235,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - No FP Light #2"
+        ""
       ]
     },
     {
       "ID": 402100240,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - Light #3"
+        ""
       ]
     },
     {
       "ID": 402100245,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - No FP Light #3"
+        ""
       ]
     },
     {
       "ID": 402300200,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - Charged"
+        ""
       ]
     },
     {
       "ID": 402300205,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - No FP Charged"
+        ""
       ]
     },
     {
       "ID": 402300220,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - Light #1"
+        ""
       ]
     },
     {
       "ID": 402300225,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - No FP Light #1"
+        ""
       ]
     },
     {
       "ID": 402300230,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - Light #2"
+        ""
       ]
     },
     {
       "ID": 402300235,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - No FP Light #2"
+        ""
       ]
     },
     {
       "ID": 402300240,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - Light #3"
+        ""
       ]
     },
     {
       "ID": 402300245,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - No FP Light #3"
+        ""
       ]
     },
     {
       "ID": 405000200,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - Charged"
+        ""
       ]
     },
     {
       "ID": 405000205,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - No FP Charged"
+        ""
       ]
     },
     {
       "ID": 405000220,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - Light #1"
+        ""
       ]
     },
     {
       "ID": 405000225,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - No FP Light #1"
+        ""
       ]
     },
     {
       "ID": 405000230,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - Light #2"
+        ""
       ]
     },
     {
       "ID": 405000235,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - No FP Light #2"
+        ""
       ]
     },
     {
       "ID": 405000240,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - Light #3"
+        ""
       ]
     },
     {
       "ID": 405000245,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - No FP Light #3"
+        ""
       ]
     },
     {
@@ -50548,6 +52958,12 @@
       ]
     },
     {
+      "ID": 600000400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 690000000,
       "Entries": [
         "Blank: Hit Enemy"
@@ -50800,6 +53216,42 @@
       ]
     },
     {
+      "ID": 700000400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000495,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 700000800,
       "Entries": [
         ""
@@ -50958,13 +53410,13 @@
     {
       "ID": 800000020,
       "Entries": [
-        "[On-Walk Projectile] Flame of Frenzy While Walking"
+        ""
       ]
     },
     {
       "ID": 800000021,
       "Entries": [
-        "[On-Walk Projectile] Flame of Frenzy While Walking"
+        ""
       ]
     },
     {
@@ -51096,37 +53548,37 @@
     {
       "ID": 878884200,
       "Entries": [
-        "[Effect] Shielding Creates Holy Ground - Holy Ground"
+        ""
       ]
     },
     {
       "ID": 878884201,
       "Entries": [
-        "[Effect] Shielding Creates Holy Ground - Holy Ground"
+        ""
       ]
     },
     {
       "ID": 878884202,
       "Entries": [
-        "[Effect] Shielding Creates Holy Ground - Holy Ground"
+        ""
       ]
     },
     {
       "ID": 878884203,
       "Entries": [
-        "[Effect] Shielding Creates Holy Ground - Holy Ground"
+        ""
       ]
     },
     {
       "ID": 880000000,
       "Entries": [
-        "[Weapon Effect] Power of the Omen King"
+        ""
       ]
     },
     {
       "ID": 880000001,
       "Entries": [
-        "[Weapon Effect] Power of the Omen King"
+        ""
       ]
     },
     {
@@ -51138,49 +53590,49 @@
     {
       "ID": 880000690,
       "Entries": [
-        "[Weapon Effect] Power of the Flying Dragon"
+        ""
       ]
     },
     {
       "ID": 880000691,
       "Entries": [
-        "[Weapon Effect] Power of the Flying Dragon"
+        ""
       ]
     },
     {
       "ID": 880000692,
       "Entries": [
-        "[Weapon Effect] Power of the Flying Dragon"
+        ""
       ]
     },
     {
       "ID": 880000693,
       "Entries": [
-        "[Weapon Effect] Power of the Flying Dragon"
+        ""
       ]
     },
     {
       "ID": 880000694,
       "Entries": [
-        "[Weapon Effect] Power of the Flying Dragon"
+        ""
       ]
     },
     {
       "ID": 880000695,
       "Entries": [
-        "[Weapon Effect] Power of the Flying Dragon"
+        ""
       ]
     },
     {
       "ID": 880000696,
       "Entries": [
-        "[Weapon Effect] Power of the Flying Dragon"
+        ""
       ]
     },
     {
       "ID": 880000700,
       "Entries": [
-        "[Weapon Effect] Power of the Golden Lineage"
+        ""
       ]
     },
     {
@@ -51204,19 +53656,19 @@
     {
       "ID": 880000705,
       "Entries": [
-        "[Weapon Effect] Power of the Giant"
+        ""
       ]
     },
     {
       "ID": 880000890,
       "Entries": [
-        "[Weapon Effect] Power of the General"
+        "[Greatarrow] Power of the General"
       ]
     },
     {
       "ID": 880000891,
       "Entries": [
-        "[Weapon Effect] Power of the General (Spread)"
+        "[Greatarrow] Power of the General (Spread)"
       ]
     },
     {
@@ -51228,31 +53680,31 @@
     {
       "ID": 880000901,
       "Entries": [
-        "[Weapon Effect] Power of the Dragonlord (Thundercloud)"
+        ""
       ]
     },
     {
       "ID": 880000902,
       "Entries": [
-        "[Weapon Effect] Power of the Dragonlord"
+        ""
       ]
     },
     {
       "ID": 880000905,
       "Entries": [
-        "[Weapon Effect] Power of the Greater Will"
+        ""
       ]
     },
     {
       "ID": 880000906,
       "Entries": [
-        "[Weapon Effect] Power of the Greater Will"
+        ""
       ]
     },
     {
       "ID": 880000910,
       "Entries": [
-        "[Weapon Effect] Power of the Starscourge"
+        ""
       ]
     },
     {
@@ -51270,37 +53722,49 @@
     {
       "ID": 880000920,
       "Entries": [
-        "[Weapon Effect] Power of the Queen"
+        ""
       ]
     },
     {
       "ID": 880000930,
       "Entries": [
-        "[Weapon Effect] Power of Full Moon"
+        ""
       ]
     },
     {
       "ID": 880000931,
       "Entries": [
-        "[Weapon Effect] Power of Full Moon"
+        ""
       ]
     },
     {
       "ID": 880000932,
       "Entries": [
-        "[Weapon Effect] Power of Full Moon (Glintblades)"
+        ""
       ]
     },
     {
       "ID": 880000933,
       "Entries": [
-        "[Weapon Effect] Power of Full Moon (Glintblades)"
+        ""
       ]
     },
     {
       "ID": 890000000,
       "Entries": [
-        "Gravestones - Summon foe-chasing vengeful spirits"
+        "[Material] Summon foe-chasing vengeful spirits"
+      ]
+    },
+    {
+      "ID": 890000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 890000011,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -51331,6 +53795,12 @@
       "ID": 900902000,
       "Entries": [
         "[Relic] Slowly restore HP for self and nearby allies when HP is low"
+      ]
+    },
+    {
+      "ID": 920970050,
+      "Entries": [
+        ""
       ]
     },
     {

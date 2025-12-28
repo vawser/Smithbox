@@ -36,6 +36,7 @@ namespace SoulsFormats
             /// <summary>
             /// The name of the part to be posed.
             /// </summary>
+            [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
             private short PartIndex;
 

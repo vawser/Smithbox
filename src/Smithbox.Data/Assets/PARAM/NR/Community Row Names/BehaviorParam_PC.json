@@ -398,6 +398,12 @@
       ]
     },
     {
+      "ID": 2108,
+      "Entries": [
+        "Scarlet Rot - Trigger Proximity Bullet"
+      ]
+    },
+    {
       "ID": 2110,
       "Entries": [
         ""
@@ -573,6 +579,24 @@
     },
     {
       "ID": 4120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4210,
       "Entries": [
         ""
       ]
@@ -6950,6 +6974,618 @@
       ]
     },
     {
+      "ID": 100550000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550045,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550116,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550141,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550175,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550176,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550316,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550325,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550341,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550375,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550376,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550445,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550509,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550515,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550516,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550531,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550561,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100550590,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551045,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551141,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551325,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551341,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551445,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551509,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551515,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551516,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551531,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551561,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100551590,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 100600000,
       "Entries": [
         ""
@@ -13191,6 +13827,282 @@
     },
     {
       "ID": 101117440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150325,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150506,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150509,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150515,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150517,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150518,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150531,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150561,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101150590,
       "Entries": [
         ""
       ]
@@ -40010,6 +40922,48 @@
       ]
     },
     {
+      "ID": 105130300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 105130850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 105130851,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 105130855,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 105130856,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 105130870,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 105130875,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 105200300,
       "Entries": [
         ""
@@ -41349,6 +42303,18 @@
     },
     {
       "ID": 105218430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 105231300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 105231400,
       "Entries": [
         ""
       ]
@@ -53060,6 +54026,54 @@
       ]
     },
     {
+      "ID": 400500200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500225,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500235,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400500245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 400900200,
       "Entries": [
         ""
@@ -53103,6 +54117,54 @@
     },
     {
       "ID": 400900245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100225,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100235,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401100245,
       "Entries": [
         ""
       ]
@@ -53300,13 +54362,31 @@
       ]
     },
     {
-      "ID": 405000200,
+      "ID": 404100205,
       "Entries": [
         ""
       ]
     },
     {
-      "ID": 405000205,
+      "ID": 404100225,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 404100235,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 404100245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 405000200,
       "Entries": [
         ""
       ]
@@ -53318,31 +54398,13 @@
       ]
     },
     {
-      "ID": 405000225,
-      "Entries": [
-        ""
-      ]
-    },
-    {
       "ID": 405000230,
       "Entries": [
         ""
       ]
     },
     {
-      "ID": 405000235,
-      "Entries": [
-        ""
-      ]
-    },
-    {
       "ID": 405000240,
-      "Entries": [
-        ""
-      ]
-    },
-    {
-      "ID": 405000245,
       "Entries": [
         ""
       ]
@@ -53780,6 +54842,12 @@
       ]
     },
     {
+      "ID": 600000400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 600000800,
       "Entries": [
         ""
@@ -53942,6 +55010,12 @@
       ]
     },
     {
+      "ID": 700000231,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 700000240,
       "Entries": [
         ""
@@ -53997,6 +55071,48 @@
     },
     {
       "ID": 700000350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000490,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700000495,
       "Entries": [
         ""
       ]
@@ -54143,6 +55259,294 @@
       "ID": 750000101,
       "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 760000000,
+      "Entries": [
+        "[Item - Level 3] Boiled Crab"
+      ]
+    },
+    {
+      "ID": 760000010,
+      "Entries": [
+        "[Item - Level 3] Boiled Prawn"
+      ]
+    },
+    {
+      "ID": 760000020,
+      "Entries": [
+        "[Item - Level 3] Silver-Pickled Fowl Foot"
+      ]
+    },
+    {
+      "ID": 760000030,
+      "Entries": [
+        "[Item - Level 3] Gold-Pickled Fowl Foot"
+      ]
+    },
+    {
+      "ID": 760000040,
+      "Entries": [
+        "[Relic - Level 2] Stanching Boluses"
+      ]
+    },
+    {
+      "ID": 760000041,
+      "Entries": [
+        "[Relic - Level 3] Stanching Boluses"
+      ]
+    },
+    {
+      "ID": 760000050,
+      "Entries": [
+        "[Relic - Level 2] Stimulating Boluses"
+      ]
+    },
+    {
+      "ID": 760000051,
+      "Entries": [
+        "[Relic - Level 3] Stimulating Boluses"
+      ]
+    },
+    {
+      "ID": 760000060,
+      "Entries": [
+        "[Relic - Level 2] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 760000061,
+      "Entries": [
+        "[Relic - Level 3] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 760000070,
+      "Entries": [
+        "[Relic - Level 2] Clarifying Boluses"
+      ]
+    },
+    {
+      "ID": 760000071,
+      "Entries": [
+        "[Relic - Level 3] Clarifying Boluses"
+      ]
+    },
+    {
+      "ID": 760000080,
+      "Entries": [
+        "[Relic - Level 2] Preserving Boluses"
+      ]
+    },
+    {
+      "ID": 760000081,
+      "Entries": [
+        "[Relic - Level 3] Preserving Boluses"
+      ]
+    },
+    {
+      "ID": 760000090,
+      "Entries": [
+        "[Relic - Level 2] Rejuvenating Boluses"
+      ]
+    },
+    {
+      "ID": 760000091,
+      "Entries": [
+        "[Relic - Level 3] Rejuvenating Boluses"
+      ]
+    },
+    {
+      "ID": 760000100,
+      "Entries": [
+        "[Relic - Level 2] Thawfrost Boluses"
+      ]
+    },
+    {
+      "ID": 760000101,
+      "Entries": [
+        "[Relic - Level 3] Thawfrost Boluses"
+      ]
+    },
+    {
+      "ID": 760000110,
+      "Entries": [
+        "[Item - Level 3] Add Explosion to Perfuming Arts"
+      ]
+    },
+    {
+      "ID": 760000120,
+      "Entries": [
+        "[Item - Level 3] Crimsonspill Crystal Tear"
+      ]
+    },
+    {
+      "ID": 760000130,
+      "Entries": [
+        "[Item - Level 3] Greenspill Crystal Tear"
+      ]
+    },
+    {
+      "ID": 760000140,
+      "Entries": [
+        "[Item - Level 3] Crimson Crystal Tear"
+      ]
+    },
+    {
+      "ID": 760000150,
+      "Entries": [
+        "[Item - Level 3] Cerulean Crystal Tear"
+      ]
+    },
+    {
+      "ID": 760000160,
+      "Entries": [
+        "[Item - Level 3] Speckled Hardtear"
+      ]
+    },
+    {
+      "ID": 760000170,
+      "Entries": [
+        "[Item - Level 3] Crimson Bubbletear"
+      ]
+    },
+    {
+      "ID": 760000180,
+      "Entries": [
+        "[Item - Level 3] Opaline Bubbletear"
+      ]
+    },
+    {
+      "ID": 760000190,
+      "Entries": [
+        "[Item - Level 3] Crimsonburst Crystal Tear"
+      ]
+    },
+    {
+      "ID": 760000200,
+      "Entries": [
+        "[Item - Level 3] Greenburst Crystal Tear"
+      ]
+    },
+    {
+      "ID": 760000210,
+      "Entries": [
+        "[Item - Level 3] Opaline Hardtear"
+      ]
+    },
+    {
+      "ID": 760000220,
+      "Entries": [
+        "[Item - Level 2] Thorny Cracked Tear"
+      ]
+    },
+    {
+      "ID": 760000221,
+      "Entries": [
+        "[Item - Level 3] Thorny Cracked Tear"
+      ]
+    },
+    {
+      "ID": 760000230,
+      "Entries": [
+        "[Item - Level 3] Spiked Cracked Tear"
+      ]
+    },
+    {
+      "ID": 760000240,
+      "Entries": [
+        "[Item - Level 3] Windy Crystal Tear"
+      ]
+    },
+    {
+      "ID": 760000250,
+      "Entries": [
+        "[Item - Level 3] Leaden Hardtear"
+      ]
+    },
+    {
+      "ID": 760000260,
+      "Entries": [
+        "[Item - Level 3] Twiggy Cracked Tear"
+      ]
+    },
+    {
+      "ID": 760000270,
+      "Entries": [
+        "[Item - Level 3] Crimsonwhorl Bubbletear"
+      ]
+    },
+    {
+      "ID": 760000280,
+      "Entries": [
+        "[Item - Level 3] Cerulean Hidden Tear"
+      ]
+    },
+    {
+      "ID": 760000290,
+      "Entries": [
+        "[Item - Level 3] Stonebarb Cracked Tear"
+      ]
+    },
+    {
+      "ID": 760000300,
+      "Entries": [
+        "[Item - Level 3] Flame-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 760000310,
+      "Entries": [
+        "[Item - Level 3] Magic-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 760000320,
+      "Entries": [
+        "[Item - Level 3] Lightning-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 760000330,
+      "Entries": [
+        "[Item - Level 3] Holy-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 760000340,
+      "Entries": [
+        "[Item - Level 2] Ruptured Crystal Tear"
+      ]
+    },
+    {
+      "ID": 760000345,
+      "Entries": [
+        "[Item - Level 3] Ruptured Crystal Tear"
+      ]
+    },
+    {
+      "ID": 760000350,
+      "Entries": [
+        "[Relic - Level 2] Starlight Shards"
+      ]
+    },
+    {
+      "ID": 760000351,
+      "Entries": [
+        "[Relic - Level 3] Starlight Shards"
+      ]
+    },
+    {
+      "ID": 760000360,
+      "Entries": [
+        "[Item - Level 2] Purifying Crystal Tear"
+      ]
+    },
+    {
+      "ID": 760000365,
+      "Entries": [
+        "[Item - Level 3] Purifying Crystal Tear"
       ]
     },
     {
@@ -54623,6 +56027,12 @@
       "ID": 890000000,
       "Entries": [
         "[Effect] Gravestones - Summon Foe-chasing Vengeful Spirits"
+      ]
+    },
+    {
+      "ID": 890000010,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -55280,6 +56690,102 @@
       ]
     },
     {
+      "ID": 900117000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117071,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117072,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900117085,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 900204000,
       "Entries": [
         ""
@@ -55851,6 +57357,102 @@
     },
     {
       "ID": 900215085,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300071,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300072,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900300085,
       "Entries": [
         ""
       ]
@@ -56816,6 +58418,102 @@
       ]
     },
     {
+      "ID": 900503000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503071,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503072,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900503085,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 900602000,
       "Entries": [
         ""
@@ -57626,6 +59324,102 @@
       ]
     },
     {
+      "ID": 900900000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900071,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900072,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900900085,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 900905000,
       "Entries": [
         ""
@@ -58101,6 +59895,102 @@
     },
     {
       "ID": 901005085,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100071,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100072,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100085,
       "Entries": [
         ""
       ]
@@ -61508,6 +63398,102 @@
       ]
     },
     {
+      "ID": 902304000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304071,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304072,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 902304085,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 902306000,
       "Entries": [
         ""
@@ -63056,6 +65042,12 @@
       ]
     },
     {
+      "ID": 920970050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 990315000,
       "Entries": [
         ""
@@ -63070,49 +65062,49 @@
     {
       "ID": 990501000,
       "Entries": [
-        ""
+        "[Relic] Starlight Shards"
       ]
     },
     {
       "ID": 990502010,
       "Entries": [
-        ""
+        "[Relic] Neutralizing Boluses"
       ]
     },
     {
       "ID": 990502040,
       "Entries": [
-        ""
+        "[Relic] Stanching Boluses"
       ]
     },
     {
       "ID": 990502070,
       "Entries": [
-        ""
+        "[Relic] Thawfrost Boluses"
       ]
     },
     {
       "ID": 990502100,
       "Entries": [
-        ""
+        "[Relic] Stimulating Boluses"
       ]
     },
     {
       "ID": 990502130,
       "Entries": [
-        ""
+        "[Relic] Preserving Boluses"
       ]
     },
     {
       "ID": 990502160,
       "Entries": [
-        ""
+        "[Relic] Rejuvenating Boluses"
       ]
     },
     {
       "ID": 990502180,
       "Entries": [
-        ""
+        "[Relic] Clarifying Boluses"
       ]
     },
     {

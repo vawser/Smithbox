@@ -33,11 +33,13 @@ namespace SoulsFormats
             /// <summary>
             /// Index of a bone that the dummy point is initially transformed to before binding to the attach bone.
             /// </summary>
+            [NodeReference(ReferenceType = typeof(FLVER.Node))]
             public short ParentBoneIndex { get; set; }
 
             /// <summary>
             /// Index of the bone that the dummy point follows physically.
             /// </summary>
+            [NodeReference(ReferenceType = typeof(FLVER.Node))]
             public short AttachBoneIndex { get; set; }
 
             /// <summary>
@@ -75,18 +77,26 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Returns a string representation of the dummy.
+            /// Clone an existing <see cref="Dummy"/>.
             /// </summary>
-            public override string ToString()
+            public Dummy(Dummy dummy)
             {
-                return $"{ReferenceID}";
+                Position = dummy.Position;
+                Forward = dummy.Forward;
+                Upward = dummy.Upward;
+                ReferenceID = dummy.ReferenceID;
+                ParentBoneIndex = dummy.ParentBoneIndex;
+                AttachBoneIndex = dummy.AttachBoneIndex;
+                Color = dummy.Color;
+                Flag1 = dummy.Flag1;
+                UseUpwardVector = dummy.UseUpwardVector;
+                Unk30 = dummy.Unk30;
+                Unk34 = dummy.Unk34;
             }
 
-            public Dummy Clone()
-            {
-                return (Dummy)MemberwiseClone();
-            }
-
+            /// <summary>
+            /// Read a new <see cref="Dummy"/> from a stream.
+            /// </summary>
             internal Dummy(BinaryReaderEx br, int version)
             {
                 Position = br.ReadVector3();
@@ -108,6 +118,9 @@ namespace SoulsFormats
                 br.AssertInt32(0);
             }
 
+            /// <summary>
+            /// Write this <see cref="Dummy"/> to a stream.
+            /// </summary>
             internal void Write(BinaryWriterEx bw, int version)
             {
                 bw.WriteVector3(Position);
@@ -126,6 +139,14 @@ namespace SoulsFormats
                 bw.WriteInt32(Unk34);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
+            }
+
+            /// <summary>
+            /// Returns a string representation of the <see cref="Dummy"/>.
+            /// </summary>
+            public override string ToString()
+            {
+                return ReferenceID.ToString();
             }
         }
     }

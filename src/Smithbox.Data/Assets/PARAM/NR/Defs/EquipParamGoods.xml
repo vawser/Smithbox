@@ -189,12 +189,7 @@
       <SortID>600</SortID>
     </Field>
     
-    <Field Def="dummy8 pad3[1]" >
-      <DisplayName>pad</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>100003</SortID>
-    </Field>
+    <Field Def="s8 useItemConferBullets" />
     
     <Field Def="u8 goodsUseAnim">
       <DisplayName>道具使用時アニメ</DisplayName>
@@ -304,13 +299,7 @@
       <Maximum>1</Maximum>
       <SortID>2900</SortID>
     </Field>
-    <Field Def="u8 isDiscard:1">
-      <DisplayName>捨てれるか</DisplayName>
-      <Enum>EQUIP_BOOL</Enum>
-      <Description>アイテムを捨てれるか？TRUE=捨てれる</Description>
-      <Maximum>1</Maximum>
-      <SortID>3100</SortID>
-    </Field>
+    <Field Def="u8 enableSparringGrounds:1" />
     <Field Def="u8 isDeposit:1">
       <DisplayName>預けれるか</DisplayName>
       <Enum>EQUIP_BOOL</Enum>
@@ -360,13 +349,7 @@
       <Maximum>1</Maximum>
       <SortID>3250</SortID>
     </Field>
-    <Field Def="u8 disableMultiDropShare:1">
-      <DisplayName>マルチドロップ共有禁止か</DisplayName>
-      <Enum>EQUIP_BOOL</Enum>
-      <Description>マルチドロップ共有禁止か</Description>
-      <Maximum>1</Maximum>
-      <SortID>3155</SortID>
-    </Field>
+    <Field Def="u8 enableVisualCodex:1" />
     <Field Def="u8 disableUseAtColiseum:1">
       <DisplayName>闘技場で使用禁止か</DisplayName>
       <Enum>EQUIP_BOOL</Enum>
@@ -422,22 +405,8 @@
       <Maximum>99999999</Maximum>
       <SortID>10000</SortID>
     </Field>
-    <Field Def="s32 vagrantBonusEneDropItemLotId">
-      <DisplayName>ベイグラントボーナス敵ドロップアイテム抽選ID_マップ用</DisplayName>
-      <Description>-1：ドロップなし 0：抽選なし 1～：抽選あり</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>99999999</Maximum>
-      <SortID>10000</SortID>
-    </Field>
-    <Field Def="s32 vagrantItemEneDropItemLotId">
-      <DisplayName>ベイグラントアイテム敵ドロップアイテム抽選ID_マップ用</DisplayName>
-      <Description>-1：ドロップなし 0：抽選なし 1～：抽選あり</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>99999999</Maximum>
-      <SortID>10000</SortID>
-    </Field>
+    <Field Def="s32 carrySpEffectId" />
+    <Field Def="s32 emptySpEffectId" />
     <Field Def="s32 castSfxId = -1">
       <DisplayName>手持ちSFXID</DisplayName>
       <Description>アイテムを使用しようとし、効果が発動するまでのSFXID</Description>
@@ -785,11 +754,8 @@
       <Maximum>999</Maximum>
       <SortID>1605</SortID>
     </Field>
-    <Field Def="dummy8 reserve5[2]">
-      <DisplayName>予約領域</DisplayName>
-      <Description>予約領域</Description>
-      <SortID>100006</SortID>
-    </Field>
+    <Field Def="s8 bagcraftMaxNum" />
+	<Field Def="u8 bagcraftCategory" />
     <Field Def="u32 itemGetTutorialFlagId">
       <DisplayName>アイテム入手チュートリアル判定フラグID</DisplayName>
       <Description>初めてアイテム入手した時のチュートリアル用のイベントフラグID。アイテム入手時にフラグON。</Description>
@@ -799,13 +765,33 @@
     </Field>
     
     <Field Def="s32 characterInitId" />
-    <Field Def="s32 bulletId" />
-    <Field Def="s32 unknown_3" />
+	
+    <Field Def="s32 itemConferBulletId" />
+    <Field Def="s32 itemConferBulletId_1" />
     
-    <Field Def="dummy8 reserve3[12]">
+    <Field Def="dummy8 reserve3[12]" RemovedVersion="10310025">
       <DisplayName>予約領域</DisplayName>
       <Description>予約領域</Description>
       <SortID>100007</SortID>
     </Field>
+    
+    <Field Def="s32 sparringGroundsEventFlagId" FirstVersion="10310025"/>
+	
+    <Field Def="s32 level2RefId" FirstVersion="10310025"/>
+    <Field Def="s32 level2RefId_1" FirstVersion="10310025"/>
+	
+    <Field Def="s32 level3RefId" FirstVersion="10310025"/>
+    <Field Def="s32 level3RefId_1" FirstVersion="10310025"/>
+	
+    <Field Def="s32 level2_itemConferBulletId" FirstVersion="10310025"/>
+    <Field Def="s32 level2_itemConferBulletId_1" FirstVersion="10310025"/>
+    
+    <Field Def="s32 level3_itemConferBulletId" FirstVersion="10310025"/>
+    <Field Def="s32 level3_itemConferBulletId_1" FirstVersion="10310025"/>
+    
+    <Field Def="u16 bagcraftCategoryXp" FirstVersion="10310025"/>
+    <Field Def="u16 fh_unknown_09c" FirstVersion="10310025"/>
+    
+    <Field Def="dummy8 fh_unknown_10[4]" FirstVersion="10310025"/>
   </Fields>
 </PARAMDEF>

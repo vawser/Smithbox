@@ -1532,6 +1532,42 @@
       ]
     },
     {
+      "ID": 3010500,
+      "Entries": [
+        "[Uncommon] Fire Forked Greatsword"
+      ]
+    },
+    {
+      "ID": 3010600,
+      "Entries": [
+        "[Uncommon] Lightning Forked Greatsword"
+      ]
+    },
+    {
+      "ID": 3010700,
+      "Entries": [
+        "[Uncommon] Sacred Forked Greatsword"
+      ]
+    },
+    {
+      "ID": 3010800,
+      "Entries": [
+        "[Uncommon] Magic Forked Greatsword"
+      ]
+    },
+    {
+      "ID": 3010900,
+      "Entries": [
+        "[Uncommon] Cold Forked Greatsword"
+      ]
+    },
+    {
+      "ID": 3011000,
+      "Entries": [
+        "[Uncommon] Poison Forked Greatsword"
+      ]
+    },
+    {
       "ID": 3011100,
       "Entries": [
         "[Uncommon] Blood Forked Greatsword"
@@ -2495,6 +2531,36 @@
       "ID": 5061100,
       "Entries": [
         "[Common] Noble's Blood Estoc"
+      ]
+    },
+    {
+      "ID": 5750000,
+      "Entries": [
+        "[Hero] Scholar's Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 5760000,
+      "Entries": [
+        "[Hero] Scholar's Thrusting Sword (Dawn)"
+      ]
+    },
+    {
+      "ID": 5770000,
+      "Entries": [
+        "[Hero] Scholar's Thrusting Sword (Darkness)"
+      ]
+    },
+    {
+      "ID": 5780000,
+      "Entries": [
+        "[Hero] Scholar's Thrusting Sword (Pardoner)"
+      ]
+    },
+    {
+      "ID": 5790000,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -4244,6 +4310,18 @@
       ]
     },
     {
+      "ID": 11750000,
+      "Entries": [
+        "[Hero] Undertaker's Hammer"
+      ]
+    },
+    {
+      "ID": 11750100,
+      "Entries": [
+        "[NPC] Undertaker's Hammer (Night Profaner)"
+      ]
+    },
+    {
       "ID": 12000000,
       "Entries": [
         "[Common] Large Club"
@@ -5306,6 +5384,12 @@
       ]
     },
     {
+      "ID": 14111200,
+      "Entries": [
+        "[Rare] Occult Sacrificial Axe"
+      ]
+    },
+    {
       "ID": 14120000,
       "Entries": [
         "[Rare] Rosus' Axe"
@@ -6266,6 +6350,12 @@
       ]
     },
     {
+      "ID": 16160800,
+      "Entries": [
+        "[Uncommon] Magic Rotten Crystal Spear"
+      ]
+    },
+    {
       "ID": 17010000,
       "Entries": [
         "[Legendary] Mohgwyn's Sacred Spear"
@@ -6689,6 +6779,12 @@
       "ID": 18080000,
       "Entries": [
         "[Rare] Golden Halberd"
+      ]
+    },
+    {
+      "ID": 18080700,
+      "Entries": [
+        "[Rare] Sacred Golden Halberd"
       ]
     },
     {
@@ -10364,6 +10460,12 @@
       ]
     },
     {
+      "ID": 32140700,
+      "Entries": [
+        "[Uncommon] Sacred Icon Shield"
+      ]
+    },
+    {
       "ID": 32150000,
       "Entries": [
         "[Rare] One-Eyed Shield"
@@ -11248,7 +11350,7 @@
     {
       "ID": 35170000,
       "Entries": [
-        ""
+        "[Libra Scholar 2] Carian Glintblade Staff w/ Glintblade Phalanx"
       ]
     },
     {
@@ -11326,7 +11428,7 @@
     {
       "ID": 36010000,
       "Entries": [
-        ""
+        "[Libra Undertaker 1] Godslayer's Seal w/ Black Flame Blade"
       ]
     },
     {
@@ -11356,7 +11458,7 @@
     {
       "ID": 36070000,
       "Entries": [
-        ""
+        "[Libra Undertaker 2] Erdtree Seal w/ Catch Flame"
       ]
     },
     {
@@ -12068,9 +12170,63 @@
       ]
     },
     {
+      "ID": 60800000,
+      "Entries": [
+        "[Skill - Scholar] Analyze"
+      ]
+    },
+    {
+      "ID": 60810000,
+      "Entries": [
+        "[Ultimate - Scholar] Communion"
+      ]
+    },
+    {
+      "ID": 60900000,
+      "Entries": [
+        "[Skill - Undertaker] Trance"
+      ]
+    },
+    {
+      "ID": 60910000,
+      "Entries": [
+        "[Skill - Undertaker] Trance (Dawn)"
+      ]
+    },
+    {
+      "ID": 60920000,
+      "Entries": [
+        "[Skill - Undertaker] Trance (Darkness)"
+      ]
+    },
+    {
+      "ID": 60930000,
+      "Entries": [
+        "[Skill - Undertaker] Trance (Brass)"
+      ]
+    },
+    {
+      "ID": 60940000,
+      "Entries": [
+        "[Skill - Undertaker] Trance (Lord's Blade)"
+      ]
+    },
+    {
+      "ID": 60950000,
+      "Entries": [
+        "[Ultimate - Undertaker] Loathsome Hex"
+      ]
+    },
+    {
       "ID": 65000000,
       "Entries": [
         "[Spectral Hawk] Spectral Hawk"
+      ]
+    },
+    {
+      "ID": 70011000,
+      "Entries": [
+        "[Libra Executor 1] Wakizashi"
       ]
     },
     {
@@ -12088,7 +12244,7 @@
     {
       "ID": 70110000,
       "Entries": [
-        "[Libra Executor 1] Wakizashi"
+        "[Libra Scholar 3] Unarmed"
       ]
     },
     {
@@ -12107,6 +12263,12 @@
       "ID": 70400000,
       "Entries": [
         "[Libra Revenant 1] Greatsword"
+      ]
+    },
+    {
+      "ID": 70503000,
+      "Entries": [
+        "[Libra Scholar 2] Rogier's Rapier w/ No Skill"
       ]
     },
     {
@@ -12146,15 +12308,39 @@
       ]
     },
     {
+      "ID": 71110000,
+      "Entries": [
+        "[Libra Undertaker 3] Envoy's Horn"
+      ]
+    },
+    {
       "ID": 71111000,
       "Entries": [
         "[Libra Wylder 1] Scepter of the All Knowing"
       ]
     },
     {
+      "ID": 71115000,
+      "Entries": [
+        "[Libra Undertaker 2] Marika's Hammer"
+      ]
+    },
+    {
+      "ID": 71216000,
+      "Entries": [
+        "[Libra Undertaker 3] Envoy's Long Horn"
+      ]
+    },
+    {
       "ID": 71218000,
       "Entries": [
         "[Libra Raider 2] Great Stars"
+      ]
+    },
+    {
+      "ID": 71405000,
+      "Entries": [
+        "[Libra Scholar 1] Ripple Blade w/ Hoarfrost Stomp"
       ]
     },
     {
@@ -12167,6 +12353,12 @@
       "ID": 71504000,
       "Entries": [
         "[Libra Unknown] Axe of Godrick"
+      ]
+    },
+    {
+      "ID": 71512000,
+      "Entries": [
+        "[Libra Undertaker 1] Butchering Knife w/ Wild Strikes"
       ]
     },
     {
@@ -12224,6 +12416,12 @@
       ]
     },
     {
+      "ID": 72303000,
+      "Entries": [
+        "[Libra Undertaker 3] Envoy's Greathorn"
+      ]
+    },
+    {
       "ID": 72305000,
       "Entries": [
         "[Libra Raider 1] Axe of Godfrey"
@@ -12239,6 +12437,12 @@
       "ID": 73014000,
       "Entries": [
         "[Libra Duchess 3] Ice Crest Shield w/ Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 73104000,
+      "Entries": [
+        "[Libra Scholar 1] Albinauric Shield w/ No Skill"
       ]
     },
     {
@@ -13757,6 +13961,12 @@
       "ID": 99060000,
       "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 99999999,
+      "Entries": [
+        "Test"
       ]
     }
   ]

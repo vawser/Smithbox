@@ -6,7 +6,9 @@ namespace SoulsFormats
 {
     public partial class FLVER0
     {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+        /// <summary>
+        /// Determines which properties of a vertex are read and written, and in what order and format.
+        /// </summary>
         public class BufferLayout : List<FLVER.LayoutMember>
         {
             /// <summary>
@@ -14,8 +16,26 @@ namespace SoulsFormats
             /// </summary>
             public int Size => this.Sum(member => member.Size);
 
-            public BufferLayout() { }
+            /// <summary>
+            /// Creates a new empty BufferLayout.
+            /// </summary>
+            public BufferLayout() : base() { }
 
+            /// <summary>
+            /// Clone an existing BufferLayout.
+            /// </summary>
+            public BufferLayout(BufferLayout bufferLayout)
+            {
+                Capacity = bufferLayout.Capacity;
+                foreach (var member in bufferLayout)
+                {
+                    Add(new FLVER.LayoutMember(member));
+                }
+            }
+
+            /// <summary>
+            /// Read a BufferLayout from a stream.
+            /// </summary>
             internal BufferLayout(BinaryReaderEx br) : base()
             {
                 short memberCount = br.ReadInt16();
@@ -28,7 +48,7 @@ namespace SoulsFormats
                 Capacity = memberCount;
                 for (int i = 0; i < memberCount; i++)
                 {
-                    var member = new FLVER.LayoutMember(br, structOffset);
+                    var member = new FLVER.LayoutMember(br, structOffset, false);
                     structOffset += member.Size;
                     Add(member);
                 }
@@ -37,6 +57,5 @@ namespace SoulsFormats
                     throw new InvalidDataException("Mismatched buffer layout size.");
             }
         }
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
 }

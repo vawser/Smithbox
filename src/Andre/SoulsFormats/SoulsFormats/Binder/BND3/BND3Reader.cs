@@ -25,9 +25,20 @@ namespace SoulsFormats
         /// </summary>
         public BND3Reader(string path)
         {
-            _mappedFile = MemoryMappedFile.CreateFromFile(path, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
+            var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            _mappedFile = MemoryMappedFile.CreateFromFile(fs, null, 0, MemoryMappedFileAccess.Read,
+                HandleInheritability.None, leaveOpen: false);
             _mappedAccessor = _mappedFile.CreateMemoryAccessor(0, 0, MemoryMappedFileAccess.Read);
             var br = new BinaryReaderEx(false, _mappedAccessor.Memory);
+            br = SFUtil.GetDecompressedBR(br, out DCX.Type compression);
+            if (compression != DCX.Type.None)
+            {
+                // We can safely dispose of the memory mapped file accessor,
+                // because decompression produced a new reader to use going forward.
+                // Keeping it open at this point only wastes RAM we'll never access.
+                _mappedAccessor.Dispose();
+                _mappedAccessor = null;
+            }
             Read(br);
         }
 
