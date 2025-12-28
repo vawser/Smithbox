@@ -234,7 +234,7 @@ public static class MassEditPropertyHelper
     /// Handles the property value operation edits
     /// TODO: adjust how this is done so we don't need to duplicate the operation logic so much
     /// </summary>
-    public static ViewportAction PropertyValueOperation(MapEditorScreen editor, MapContainer map, MsbEntity curEnt, string cmd,
+    public static ViewportAction PropertyValueOperation(MapEditorScreen editor, MsbMassEditResult currentResult, MapContainer map, MsbEntity curEnt, string cmd,
         bool enableRandomSpread, float minRandom, float maxRandom)
     {
         var input = cmd.Replace("prop:", "");
@@ -259,6 +259,10 @@ public static class MassEditPropertyHelper
                     int.TryParse(val, out index);
                     prop = prop.Replace($"{match.Value}", "");
                 }
+                else
+                {
+                    currentResult.EditMessages.Add($"Failed to determine property index in edit command: {input}");
+                }
             }
 
             Type targetObj = curEnt.WrappedObject.GetType();
@@ -280,7 +284,10 @@ public static class MassEditPropertyHelper
                         targetProp_Value = arr.GetValue(index);
 
                         if (targetProp_Value == null)
+                        {
+                            currentResult.EditMessages.Add($"Failed to find value in property array in edit command: {input}");
                             return null;
+                        }
 
                         var valueType = targetProp_Value.GetType();
 
@@ -300,7 +307,14 @@ public static class MassEditPropertyHelper
 
                             if (res)
                             {
+
                                 var result = tExistingValue;
+
+                                if (enableRandomSpread)
+                                {
+                                    result = (long)GetRandomValue(result, minRandom, maxRandom, valueType);
+                                }
+
                                 if (compare == "=")
                                 {
                                     try
@@ -358,6 +372,10 @@ public static class MassEditPropertyHelper
                                 }
 
                                 return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                            }
+                            else
+                            {
+                                currentResult.EditMessages.Add($"Failed to parse {newValue} as LONG in edit command: {input}");
                             }
                         }
                         // UINT
@@ -372,6 +390,11 @@ public static class MassEditPropertyHelper
                             {
                                 var result = tExistingValue;
 
+                                if (enableRandomSpread)
+                                {
+                                    result = (uint)GetRandomValue(result, minRandom, maxRandom, valueType);
+                                }
+
                                 if (compare == "=")
                                 {
                                     try
@@ -429,6 +452,10 @@ public static class MassEditPropertyHelper
                                 }
 
                                 return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                            }
+                            else
+                            {
+                                currentResult.EditMessages.Add($"Failed to parse {newValue} as UINT in edit command: {input}");
                             }
                         }
                         // INT
@@ -443,6 +470,11 @@ public static class MassEditPropertyHelper
                             {
                                 var result = tExistingValue;
 
+                                if (enableRandomSpread)
+                                {
+                                    result = (int)GetRandomValue(result, minRandom, maxRandom, valueType);
+                                }
+
                                 if (compare == "=")
                                 {
                                     try
@@ -500,6 +532,10 @@ public static class MassEditPropertyHelper
                                 }
 
                                 return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                            }
+                            else
+                            {
+                                currentResult.EditMessages.Add($"Failed to parse {newValue} as INT in edit command: {input}");
                             }
                         }
                         // USHORT
@@ -514,6 +550,11 @@ public static class MassEditPropertyHelper
                             {
                                 var result = tExistingValue;
 
+                                if (enableRandomSpread)
+                                {
+                                    result = (ushort)GetRandomValue(result, minRandom, maxRandom, valueType);
+                                }
+
                                 if (compare == "=")
                                 {
                                     try
@@ -571,6 +612,10 @@ public static class MassEditPropertyHelper
                                 }
 
                                 return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                            }
+                            else
+                            {
+                                currentResult.EditMessages.Add($"Failed to parse {newValue} as USHORT in edit command: {input}");
                             }
                         }
                         // SHORT
@@ -585,6 +630,11 @@ public static class MassEditPropertyHelper
                             {
                                 var result = tExistingValue;
 
+                                if (enableRandomSpread)
+                                {
+                                    result = (short)GetRandomValue(result, minRandom, maxRandom, valueType);
+                                }
+
                                 if (compare == "=")
                                 {
                                     try
@@ -642,6 +692,10 @@ public static class MassEditPropertyHelper
                                 }
 
                                 return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                            }
+                            else
+                            {
+                                currentResult.EditMessages.Add($"Failed to parse {newValue} as SHORT in edit command: {input}");
                             }
                         }
                         // SBYTE
@@ -656,6 +710,11 @@ public static class MassEditPropertyHelper
                             {
                                 var result = tExistingValue;
 
+                                if (enableRandomSpread)
+                                {
+                                    result = (sbyte)GetRandomValue(result, minRandom, maxRandom, valueType);
+                                }
+
                                 if (compare == "=")
                                 {
                                     try
@@ -713,6 +772,10 @@ public static class MassEditPropertyHelper
                                 }
 
                                 return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                            }
+                            else
+                            {
+                                currentResult.EditMessages.Add($"Failed to parse {newValue} as SBYTE in edit command: {input}");
                             }
                         }
                         // BYTE
@@ -727,6 +790,11 @@ public static class MassEditPropertyHelper
                             {
                                 var result = tExistingValue;
 
+                                if (enableRandomSpread)
+                                {
+                                    result = (byte)GetRandomValue(result, minRandom, maxRandom, valueType);
+                                }
+
                                 if (compare == "=")
                                 {
                                     try
@@ -784,6 +852,10 @@ public static class MassEditPropertyHelper
                                 }
 
                                 return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                            }
+                            else
+                            {
+                                currentResult.EditMessages.Add($"Failed to parse {newValue} as BYTE in edit command: {input}");
                             }
                         }
                         // FLOAT
@@ -798,6 +870,11 @@ public static class MassEditPropertyHelper
                             {
                                 var result = tExistingValue;
 
+                                if (enableRandomSpread)
+                                {
+                                    result = (float)GetRandomValue(result, minRandom, maxRandom, valueType);
+                                }
+
                                 if (compare == "=")
                                 {
                                     try
@@ -855,6 +932,10 @@ public static class MassEditPropertyHelper
                                 }
 
                                 return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                            }
+                            else
+                            {
+                                currentResult.EditMessages.Add($"Failed to parse {newValue} as FLOAT in edit command: {input}");
                             }
                         }
                         // VECTOR3
@@ -869,6 +950,11 @@ public static class MassEditPropertyHelper
                             {
                                 var result = tExistingValue;
 
+                                if (enableRandomSpread)
+                                {
+                                    result = (Vector3)GetRandomValue(result, minRandom, maxRandom, valueType);
+                                }
+
                                 if (compare == "=")
                                 {
                                     try
@@ -927,6 +1013,46 @@ public static class MassEditPropertyHelper
 
                                 return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                             }
+                            else
+                            {
+                                currentResult.EditMessages.Add($"Failed to parse {newValue} as VECTOR3 in edit command: {input}");
+                            }
+                        }
+                        // BOOL
+                        if (valueType == typeof(bool))
+                        {
+                            bool tNewValue = false;
+                            bool tExistingValue = (bool)targetProp_Value;
+
+                            var res = bool.TryParse(newValue, out tNewValue);
+
+                            if (res)
+                            {
+                                var result = tExistingValue;
+
+                                if (enableRandomSpread)
+                                {
+                                    result = (bool)GetRandomValue(result, minRandom, maxRandom, valueType);
+                                }
+
+                                if (compare == "=")
+                                {
+                                    try
+                                    {
+                                        result = tNewValue;
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                                    }
+                                }
+
+                                return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
+                            }
+                            else
+                            {
+                                currentResult.EditMessages.Add($"Failed to parse {newValue} as BOOL in edit command: {input}");
+                            }
                         }
                         // STRING
                         if (valueType == typeof(string))
@@ -937,6 +1063,10 @@ public static class MassEditPropertyHelper
                         }
                     }
                 }
+                else
+                {
+                    currentResult.EditMessages.Add($"Failed to find property in edit command: {input}");
+                }
             }
             else
             {
@@ -944,7 +1074,10 @@ public static class MassEditPropertyHelper
                 targetProp_Value = curEnt.GetPropertyValue(prop);
 
                 if (targetProp_Value == null)
+                {
+                    currentResult.EditMessages.Add($"Failed to find property in edit command: {input}");
                     return null;
+                }
 
                 var valueType = targetProp_Value.GetType();
 
@@ -1029,6 +1162,10 @@ public static class MassEditPropertyHelper
 
                         return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
+                    else
+                    {
+                        currentResult.EditMessages.Add($"Failed to parse {newValue} as LONG in edit command: {input}");
+                    }
                 }
                 // UINT
                 if (valueType == typeof(uint))
@@ -1104,6 +1241,10 @@ public static class MassEditPropertyHelper
                         }
 
                         return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
+                    }
+                    else
+                    {
+                        currentResult.EditMessages.Add($"Failed to parse {newValue} as UINT in edit command: {input}");
                     }
                 }
                 // INT
@@ -1181,6 +1322,10 @@ public static class MassEditPropertyHelper
 
                         return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
+                    else
+                    {
+                        currentResult.EditMessages.Add($"Failed to parse {newValue} as INT in edit command: {input}");
+                    }
                 }
                 // USHORT
                 if (valueType == typeof(ushort))
@@ -1256,6 +1401,10 @@ public static class MassEditPropertyHelper
                         }
 
                         return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
+                    }
+                    else
+                    {
+                        currentResult.EditMessages.Add($"Failed to parse {newValue} as USHORT in edit command: {input}");
                     }
                 }
                 // SHORT
@@ -1333,6 +1482,10 @@ public static class MassEditPropertyHelper
 
                         return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
+                    else
+                    {
+                        currentResult.EditMessages.Add($"Failed to parse {newValue} as SHORT in edit command: {input}");
+                    }
                 }
                 // SBYTE
                 if (valueType == typeof(sbyte))
@@ -1408,6 +1561,10 @@ public static class MassEditPropertyHelper
                         }
 
                         return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
+                    }
+                    else
+                    {
+                        currentResult.EditMessages.Add($"Failed to parse {newValue} as SBYTE in edit command: {input}");
                     }
                 }
                 // BYTE
@@ -1485,6 +1642,10 @@ public static class MassEditPropertyHelper
 
                         return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
+                    else
+                    {
+                        currentResult.EditMessages.Add($"Failed to parse {newValue} as BYTE in edit command: {input}");
+                    }
                 }
                 // FLOAT
                 if (valueType == typeof(float))
@@ -1560,6 +1721,10 @@ public static class MassEditPropertyHelper
                         }
 
                         return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
+                    }
+                    else
+                    {
+                        currentResult.EditMessages.Add($"Failed to parse {newValue} as FLOAT in edit command: {input}");
                     }
                 }
                 // VECTOR3
@@ -1637,6 +1802,10 @@ public static class MassEditPropertyHelper
 
                         return new MapObjectPropertyChangeAction(editor, curEnt, targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                     }
+                    else
+                    {
+                        currentResult.EditMessages.Add($"Failed to parse {newValue} as VECTOR3 in edit command: {input}");
+                    }
                 }
                 // BOOL
                 if (valueType == typeof(bool))
@@ -1649,6 +1818,11 @@ public static class MassEditPropertyHelper
                     if (res)
                     {
                         var result = tExistingValue;
+
+                        if (enableRandomSpread)
+                        {
+                            result = (bool)GetRandomValue(result, minRandom, maxRandom, valueType);
+                        }
 
                         if (compare == "=")
                         {
@@ -1664,6 +1838,10 @@ public static class MassEditPropertyHelper
 
                         return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
+                    else
+                    {
+                        currentResult.EditMessages.Add($"Failed to parse {newValue} as BOOL in edit command: {input}");
+                    }
                 }
                 // STRING
                 if (valueType == typeof(string))
@@ -1674,9 +1852,14 @@ public static class MassEditPropertyHelper
                 }
             }
         }
+        else
+        {
+            currentResult.EditMessages.Add($"Failed to split edit command into valid parameters: {input}");
+        }
 
         return null;
     }
+
     public static object GetRandomValue(object value, float valueMin, float valueMax, Type valueType)
     {
         if (value == null)
@@ -1695,6 +1878,11 @@ public static class MassEditPropertyHelper
                 RandomRange(mid.Y + valueMin, mid.Y + valueMax),
                 RandomRange(mid.Z + valueMin, mid.Z + valueMax)
             );
+        }
+
+        if(valueType == typeof(bool))
+        {
+            return GetRandomBool();
         }
 
         // Scalar types
@@ -1731,7 +1919,7 @@ public static class MassEditPropertyHelper
         if (valueType == typeof(sbyte))
             return (sbyte)Math.Clamp(Math.Round(randomFloat), sbyte.MinValue, sbyte.MaxValue);
 
-        throw new NotSupportedException($"Unsupported value type: {valueType}");
+        return value;
     }
 
     private static float RandomRange(float min, float max)
@@ -1740,5 +1928,9 @@ public static class MassEditPropertyHelper
             (min, max) = (max, min);
 
         return (float)(_random.NextDouble() * (max - min) + min);
+    }
+    private static bool GetRandomBool()
+    {
+        return _random.Next(2) == 0;
     }
 }

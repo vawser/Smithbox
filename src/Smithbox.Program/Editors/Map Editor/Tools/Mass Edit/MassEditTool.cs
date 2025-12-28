@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -33,6 +34,9 @@ public class MassEditTool
     private List<MapActionGroup> MassEditActions = new List<MapActionGroup>();
 
     public bool ShowMassEditLog = true;
+
+    public MsbMassEditResult CurrentResult;
+
     public MassEditTool(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -449,6 +453,8 @@ public class MassEditTool
     {
         MayRunEdit = false;
 
+        CurrentResult = new();
+
         Task<bool> applyEditTask = ProcessMassEdit();
         bool result = await applyEditTask;
 
@@ -458,7 +464,17 @@ public class MassEditTool
         }
         else
         {
-            TaskLogs.AddLog("Failed to apply MSB Mass Edit.");
+            foreach (var msg in CurrentResult.EditMessages)
+            {
+                TaskLogs.AddLog(msg, LogLevel.Error, LogPriority.High);
+            }
+
+            foreach (var msg in CurrentResult.SelectionMessages)
+            {
+                TaskLogs.AddLog(msg, LogLevel.Error, LogPriority.High);
+            }
+
+            TaskLogs.AddLog("Failed to apply MSB Mass Edit:", LogLevel.Error, LogPriority.High);
         }
 
         MayRunEdit = true;
@@ -649,6 +665,8 @@ public class MassEditTool
     {
         List<ViewportAction> actions = new List<ViewportAction>();
 
+        var anyValidMatch = false;
+
         if (map != null)
         {
             foreach (var entry in map.Objects)
@@ -657,6 +675,8 @@ public class MassEditTool
                 {
                     if (IsValidMapObject(map, mEnt))
                     {
+                        anyValidMatch = true;
+
                         var actionList = ProcessEditCommands(map, mEnt);
 
                         foreach (var actionEntry in actionList)
@@ -666,6 +686,11 @@ public class MassEditTool
                     }
                 }
             }
+        }
+
+        if(!anyValidMatch)
+        {
+            CurrentResult.SelectionMessages.Add("Failed to match any map objects with the specified selection criteria.");
         }
 
         return actions;
@@ -863,17 +888,9 @@ public class MassEditTool
         {
             var cmd = editCommands[i];
 
-            if (cmd.Contains("random:"))
-            {
-
-            }
-            // Default to <prop> <operation> <value>
-            else
-            {
-                var action = MassEditPropertyHelper.PropertyValueOperation(Editor, map, mEnt, cmd, EnableVariance, VarianceMin, VarianceMax);
-                if (action != null)
-                    actions.Add(action);
-            }
+            var action = MassEditPropertyHelper.PropertyValueOperation(Editor, CurrentResult, map, mEnt, cmd, EnableVariance, VarianceMin, VarianceMax);
+            if (action != null)
+                actions.Add(action);
         }
 
         return actions;
@@ -1240,6 +1257,19 @@ public class MassEditTool
                     ImGui.Text("Position + 0,3,0" +
                         "\nAdds <0,3,0> vector to the Position vector of all the map objects that" +
                         "\nmeet the selection criteria.");
+
+                    // Example 1
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("EntityGroups[1] = 999" +
+                        "\nSet the Entity ID Group 1 in all the map objects that meet the selection " + "\ncriteria to 999.");
 
                     ImGui.EndTable();
                 }
