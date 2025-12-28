@@ -928,7 +928,7 @@ public class ParamFieldView
             }
 
             // Property Editor UI
-            ParamFieldInput.DisplayFieldInput(Editor, propType, oldval, ref newval, IsBool, IsInvertedPercentage);
+            ParamFieldInput.DisplayFieldInput(Editor, propType, internalName, oldval, ref newval, IsBool, IsInvertedPercentage);
 
             if (isRef || matchDefault) //if diffVanilla, remove styling later
             {

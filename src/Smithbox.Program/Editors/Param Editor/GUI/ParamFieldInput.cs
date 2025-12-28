@@ -16,7 +16,7 @@ public class ParamFieldInput
     private static bool _changedCache;
     private static bool _committedCache;
 
-    public static unsafe void DisplayFieldInput(ParamEditorScreen editor, Type typ, object oldval, ref object newval, bool isBool, bool isInvertedPercentage)
+    public static unsafe void DisplayFieldInput(ParamEditorScreen editor, Type typ, string internalName, object oldval, ref object newval, bool isBool, bool isInvertedPercentage)
     {
         _changedCache = false;
         _committedCache = false;
@@ -53,6 +53,11 @@ public class ParamFieldInput
 
             if (input.Draw("##value", out string newValue))
             {
+                if(ParamUtils.IsFxrString(newValue))
+                {
+                    newValue = ParamUtils.GetFxrId(newValue);
+                }
+
                 var res = long.TryParse(newValue, out val);
                 if (res)
                 {
@@ -65,11 +70,24 @@ public class ParamFieldInput
         else if (typ == typeof(int))
         {
             var val = (int)oldval;
-            if (ImGui.InputInt("##value", ref val))
+            var strval = $@"{val}";
+
+            var input = new InputTextHandler(strval);
+
+            if (input.Draw("##value", out string newValue))
             {
-                newval = val;
-                _editedPropCache = newval;
-                _changedCache = true;
+                if (ParamUtils.IsFxrString(newValue))
+                {
+                    newValue = ParamUtils.GetFxrId(newValue);
+                }
+
+                var res = int.TryParse(newValue, out val);
+                if (res)
+                {
+                    newval = val;
+                    _editedPropCache = newval;
+                    _changedCache = true;
+                }
             }
         }
         else if (typ == typeof(uint))
@@ -81,6 +99,11 @@ public class ParamFieldInput
 
             if (input.Draw("##value", out string newValue))
             {
+                if (ParamUtils.IsFxrString(newValue))
+                {
+                    newValue = ParamUtils.GetFxrId(newValue);
+                }
+
                 var res = uint.TryParse(newValue, out val);
                 if (res)
                 {
@@ -92,12 +115,25 @@ public class ParamFieldInput
         }
         else if (typ == typeof(short))
         {
-            int val = (short)oldval;
-            if (ImGui.InputInt("##value", ref val))
+            var val = (short)oldval;
+            var strval = $@"{val}";
+
+            var input = new InputTextHandler(strval);
+
+            if (input.Draw("##value", out string newValue))
             {
-                newval = (short)val;
-                _editedPropCache = newval;
-                _changedCache = true;
+                if (ParamUtils.IsFxrString(newValue))
+                {
+                    newValue = ParamUtils.GetFxrId(newValue);
+                }
+
+                var res = short.TryParse(newValue, out val);
+                if (res)
+                {
+                    newval = val;
+                    _editedPropCache = newval;
+                    _changedCache = true;
+                }
             }
         }
         else if (typ == typeof(ushort))
@@ -109,6 +145,11 @@ public class ParamFieldInput
 
             if (input.Draw("##value", out string newValue))
             {
+                if (ParamUtils.IsFxrString(newValue))
+                {
+                    newValue = ParamUtils.GetFxrId(newValue);
+                }
+
                 var res = ushort.TryParse(newValue, out val);
                 if (res)
                 {
@@ -120,12 +161,25 @@ public class ParamFieldInput
         }
         else if (typ == typeof(sbyte))
         {
-            int val = (sbyte)oldval;
-            if (ImGui.InputInt("##value", ref val))
+            var val = (sbyte)oldval;
+            var strval = $@"{val}";
+
+            var input = new InputTextHandler(strval);
+
+            if (input.Draw("##value", out string newValue))
             {
-                newval = (sbyte)val;
-                _editedPropCache = newval;
-                _changedCache = true;
+                if (ParamUtils.IsFxrString(newValue))
+                {
+                    newValue = ParamUtils.GetFxrId(newValue);
+                }
+
+                var res = sbyte.TryParse(newValue, out val);
+                if (res)
+                {
+                    newval = val;
+                    _editedPropCache = newval;
+                    _changedCache = true;
+                }
             }
         }
         else if (typ == typeof(byte))
@@ -137,6 +191,11 @@ public class ParamFieldInput
 
             if (input.Draw("##value", out string newValue))
             {
+                if (ParamUtils.IsFxrString(newValue))
+                {
+                    newValue = ParamUtils.GetFxrId(newValue);
+                }
+
                 var res = byte.TryParse(newValue, out val);
                 if (res)
                 {
