@@ -71,7 +71,7 @@ public class CommonData
 
         HashSet<string> sourceDirectories =
         [
-            Path.Join(AppContext.BaseDirectory, "Assets", "Aliases", 
+            Path.Join(StudioCore.Common.FileLocations.Assets, "Aliases", 
             ProjectUtils.GetGameDirectory(Project.ProjectType)),
             Path.Join(Project.ProjectPath,".smithbox","Assets","Aliases")
         ];
@@ -124,7 +124,7 @@ public class CommonData
         ProjectEnums = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
 
         var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Project");

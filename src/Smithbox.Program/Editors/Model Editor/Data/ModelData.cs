@@ -283,7 +283,7 @@ public class ModelData
         FlverEnums = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "FLVER");
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "FLVER");
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
         var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "FLVER");

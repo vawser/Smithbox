@@ -28,14 +28,19 @@ jobs:
           restore-keys: |
             nuget-${{ runner.os }}-
 
+      - name: Remove extraneous platforms
+        run: |
+          dotnet sln remove '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.Mac.csproj'
+          dotnet sln remove '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.Linux.csproj'
+
       - name: Restore
-        run: dotnet restore /p:Configuration=Release-win
+        run: dotnet restore /p:Configuration=Release
 
       - name: Build
-        run: dotnet build --configuration Release-win --no-restore
+        run: dotnet build --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release-win -o deploy
+        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release -o deploy /p:SolutionDir='${{ runner.workspace }}/Smithbox'
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v6

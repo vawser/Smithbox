@@ -1457,8 +1457,8 @@ public class InterfaceTab
 
             if (ImGui.Button("Restore Default Fonts", DPI.StandardButtonSize))
             {
-                CFG.Current.System_English_Font = Path.Join(Common.FileLocations.Assets, "Fonts","RobotoMono-Light.ttf");
-                CFG.Current.System_Other_Font = Path.Join(Common.FileLocations.Assets, "Fonts","NotoSansCJKtc-Light.otf");
+                CFG.Current.System_English_Font = Path.Join(StudioCore.Common.FileLocations.Assets, "Fonts","RobotoMono-Light.ttf");
+                CFG.Current.System_Other_Font = Path.Join(StudioCore.Common.FileLocations.Assets, "Fonts","NotoSansCJKtc-Light.otf");
                 Smithbox.FontRebuildRequest = true;
             }
         }
@@ -1490,7 +1490,7 @@ public class InterfaceTab
         // ImGui
         if (ImGui.CollapsingHeader("Interface Layout", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            var storedDir = Common.FileLocations.StoreImgui;
+            var storedDir = StudioCore.Common.FileLocations.StoreImgui;
             var storedPath = Path.Join(storedDir,"imgui.ini");
 
             ImGui.AlignTextToFramePadding();
@@ -1499,7 +1499,7 @@ public class InterfaceTab
             ImGui.AlignTextToFramePadding();
             if (ImGui.Button("Store##storeImguiIni", DPI.StandardButtonSize))
             {
-                var curImgui = Path.Join(Common.FileLocations.CurImgui,"imgui.ini");
+                var curImgui = Path.Join(StudioCore.Common.FileLocations.CurImgui,"imgui.ini");
 
                 if (!Directory.Exists(storedDir) && new DirectoryInfo(storedDir).Parent.Exists)
                     Directory.CreateDirectory(storedDir);
@@ -1533,7 +1533,7 @@ public class InterfaceTab
 
                 if (ImGui.Button("Set##setImguiIni", DPI.StandardButtonSize))
                 {
-                    var curImgui = Path.Join(Common.FileLocations.CurImgui, "imgui.ini");
+                    var curImgui = Path.Join(StudioCore.Common.FileLocations.CurImgui, "imgui.ini");
 
                     if (File.Exists(storedPath))
                     {
@@ -1552,8 +1552,8 @@ public class InterfaceTab
             ImGui.AlignTextToFramePadding();
             if (ImGui.Button("Reset##resetImguiIni", DPI.StandardButtonSize))
             {
-                var curImgui = Path.Join(Common.FileLocations.CurImgui, "imgui.ini");
-                var defaultImgui = Path.Join(Common.FileLocations.Resources, "imgui.default");
+                var curImgui = Path.Join(StudioCore.Common.FileLocations.CurImgui, "imgui.ini");
+                var defaultImgui = Path.Join(StudioCore.Common.FileLocations.Resources, "imgui.default");
 
                 if (Directory.Exists(storedDir))
                 {
@@ -1602,11 +1602,11 @@ public class InterfaceTab
             if (ImGui.Button("Open Theme Folder", DPI.StandardButtonSize))
             {
 #if WINDOWS
-                Process.Start("explorer.exe", Path.Join(Common.FileLocations.Assets, "Themes"));
+                Process.Start("explorer.exe", Path.Join(StudioCore.Common.FileLocations.Assets, "Themes"));
 #elif MACOS
-                Process.Start("/usr/bin/open", Path.Join(Common.FileLocations.Assets, "Themes"));
+                Process.Start("/usr/bin/open", Path.Join(StudioCore.Common.FileLocations.Assets, "Themes"));
 #elif LINUX
-                Process.Start("xdg-open", Path.Join(Common.FileLocations.Assets, "Themes"));
+                Process.Start("xdg-open", Path.Join(StudioCore.Common.FileLocations.Assets, "Themes"));
 #endif
             }
             ImGui.SameLine();

@@ -81,7 +81,7 @@ public class ProjectUtils
     }
     public static string GetThemeFolder()
     {
-        return Path.Join(Common.FileLocations.Assets, "Themes");
+        return Path.Join(StudioCore.Common.FileLocations.Assets, "Themes");
     }
 
     public static string GetProjectsFolder()

@@ -146,7 +146,7 @@ public class Smithbox
         io.ConfigViewportsNoAutoMerge = false;
         io.ConfigViewportsNoTaskBarIcon = false;
 
-        byte[] iniFilename = Encoding.UTF8.GetBytes(Path.Combine(Common.FileLocations.CurImgui, "imgui.ini") + '\0');
+        byte[] iniFilename = Encoding.UTF8.GetBytes(Path.Combine(StudioCore.Common.FileLocations.CurImgui, "imgui.ini") + '\0');
         GCHandle handle = GCHandle.Alloc(iniFilename, GCHandleType.Pinned);
         io.Handle->IniFilename = (byte*)handle.AddrOfPinnedObject();
 
@@ -173,17 +173,17 @@ public class Smithbox
             NonEnglishFontRelPath = CFG.Current.System_Other_Font;
         }
 
-        var englishFontPath = Path.Combine(Common.FileLocations.Resources, EnglishFontRelPath);
+        var englishFontPath = Path.Combine(StudioCore.Common.FileLocations.Resources, EnglishFontRelPath);
         var englishFontData = File.ReadAllBytes(englishFontPath);
         var englishFontPtr = ImGui.MemAlloc((uint)englishFontData.Length);
         Marshal.Copy(englishFontData, 0, (nint)englishFontPtr, englishFontData.Length);
 
-        var nonEnglishFontPath = Path.Combine(Common.FileLocations.Resources, NonEnglishFontRelPath);
+        var nonEnglishFontPath = Path.Combine(StudioCore.Common.FileLocations.Resources, NonEnglishFontRelPath);
         var nonEnglishFontData = File.ReadAllBytes(nonEnglishFontPath);
         var nonEnglishFontPtr = ImGui.MemAlloc((uint)nonEnglishFontData.Length);
         Marshal.Copy(nonEnglishFontData, 0, (nint)nonEnglishFontPtr, nonEnglishFontData.Length);
 
-        var iconFontPath = Path.Combine(Common.FileLocations.Resources, IconFontRelPath);
+        var iconFontPath = Path.Combine(StudioCore.Common.FileLocations.Resources, IconFontRelPath);
         var iconFontData = File.ReadAllBytes(iconFontPath);
         var iconFontPtr = ImGui.MemAlloc((uint)iconFontData.Length);
         Marshal.Copy(iconFontData, 0, (nint)iconFontPtr, iconFontData.Length);

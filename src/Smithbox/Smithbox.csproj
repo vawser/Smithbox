@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
     <Version>2.1.0</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -12,42 +12,37 @@
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
-    <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
     <RootNamespace>StudioCore</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
-    <DefineConstants>DEBUG</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
-    <DefineConstants>RELEASE</DefineConstants>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.EndsWith('-win')) Or !$(Configuration.Contains('-'))">
-    <OutputType>WinExe</OutputType>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>x64</PlatformTarget>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.EndsWith('-linux'))">
-    <PlatformTarget>x64</PlatformTarget>
-    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.EndsWith('-osx'))">
-    <PlatformTargets>arm64;x64</PlatformTargets>
-    <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
-  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Smithbox.Program\Smithbox.Program.csproj" />
     <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
   </ItemGroup>
+
+  <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences">
+      <Error Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'" Text="Pass Solution dir, i.e. run:
+            dotnet build $([System.IO.Path]::GetRelativePath('$(MSBuildStartupDirectory)', '$(MSBuildProjectFullPath)')) --no-restore /p:SolutionDir=$([System.IO.Path]::GetFullPath('$(ProjectDir)\..\..'))" />
+      <Copy SourceFiles="Windows.Build.props" DestinationFiles="../Directory.Build.props" SkipUnchangedFiles="true" />
+  </Target>
 
   <Target Name="CopyDataProjectOutput" AfterTargets="Build">
   <ItemGroup>

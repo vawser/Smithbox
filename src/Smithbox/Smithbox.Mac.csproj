@@ -15,6 +15,7 @@
     <SelfContained>true</SelfContained>
     <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
     <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
+    <OodlePath>path/to/oodle.dylib</OodlePath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -29,7 +30,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
-  <!-- Required for XCode 16+ builds-->
+  <!-- Required for XCode 16+ builds -->
   <ItemGroup>
     <_CustomLinkFlags Include="-ld64;-undefined;dynamic_lookup" Visible="false" />
   </ItemGroup>
@@ -40,6 +41,8 @@
 
   <ItemGroup>
     <NativeReference Include="$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib" Kind="Dynamic" />
+    <NativeReference Include="$(OodlePath)" Condition="Exists('$(OodlePath)')" Kind="Dynamic" />
+    <NativeReference Include="path/to/libzstd.dylib" Kind="Dynamic" />
     <BundleResource Include="AppIcon.icns" />
   </ItemGroup>
 

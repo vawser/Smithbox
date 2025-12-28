@@ -338,7 +338,7 @@ public static class ParamUtils
 
     public static bool HasDeveloperRowNames(ProjectEntry curProject)
     {
-        var dir = Path.Combine(Common.FileLocations.Assets, 
+        var dir = Path.Combine(StudioCore.Common.FileLocations.Assets, 
             "PARAM",
             ProjectUtils.GetGameDirectory(curProject), "Developer Row Names");
 

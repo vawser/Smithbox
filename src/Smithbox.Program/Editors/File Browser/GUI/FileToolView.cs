@@ -392,7 +392,7 @@ public class FileToolView
     public void UpdateBaseFileDictionary()
     {
         // Get the unmerged base file dictionary
-        var folder = Path.Join(Common.FileLocations.Assets, "File Dictionaries");
+        var folder = Path.Join(StudioCore.Common.FileLocations.Assets, "File Dictionaries");
         var file = "";
 
         switch (Project.ProjectType)

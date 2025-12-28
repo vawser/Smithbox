@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Security.AccessControl;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -473,7 +474,7 @@ public class ParamUpgrader
     {
         await Task.Yield();
 
-        var oldRegInfoPath = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Upgrader Information.json");
+        var oldRegInfoPath = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Upgrader Information.json");
 
         try
         {
@@ -538,7 +539,7 @@ public class ParamUpgrader
 
         var oldRegulationPath = "";
 
-        var oldRegDirectory = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Regulations");
+        var oldRegDirectory = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Regulations");
 
         var targetRegInfo = UpgraderInfo.RegulationEntries.Where(e => e.Version == oldVersionString).FirstOrDefault();
 

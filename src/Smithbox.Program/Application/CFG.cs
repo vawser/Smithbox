@@ -187,12 +187,12 @@ public class CFG
     /// <summary>
     /// The relative path (from the Smithbox.exe) to the font used for English text.
     /// </summary>
-    public string System_English_Font = Path.Join(Common.FileLocations.Assets,"Fonts","RobotoMono-Light.ttf");
+    public string System_English_Font = Path.Join(StudioCore.Common.FileLocations.Assets,"Fonts","RobotoMono-Light.ttf");
 
     /// <summary>
     /// The relative path (from the Smithbox.exe) to the font used for non-English text.
     /// </summary>
-    public string System_Other_Font = Path.Join(Common.FileLocations.Assets, "Fonts","NotoSansCJKtc-Light.otf");
+    public string System_Other_Font = Path.Join(StudioCore.Common.FileLocations.Assets, "Fonts","NotoSansCJKtc-Light.otf");
 
     /// <summary>
     /// The current theme a user has selected to override the default.

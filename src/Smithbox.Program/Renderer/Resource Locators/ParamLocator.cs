@@ -70,12 +70,12 @@ public static class ParamLocator
 
     public static string GetGameOffsetsAssetsDir(ProjectEntry project)
     {
-        return Path.Join("Assets", "PARAM", ProjectUtils.GetGameDirectory(project));
+        return Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(project));
     }
 
     public static string GetParamAssetsDir(ProjectEntry project)
     {
-        return Path.Join("Assets", "PARAM", ProjectUtils.GetGameDirectory(project));
+        return Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(project));
     }
 
     public static string GetParamdefDir(ProjectEntry project)
@@ -123,11 +123,11 @@ public static class ParamLocator
 
     public static string GetMassEditScriptCommonDir()
     {
-        return Path.Join("Assets", "Scripts", "Common");
+        return Path.Join(StudioCore.Common.FileLocations.Assets, "Scripts", "Common");
     }
 
     public static string GetMassEditScriptGameDir(ProjectEntry project)
     {
-        return Path.Join("Assets", "Scripts", ProjectUtils.GetGameDirectory(project));
+        return Path.Join(StudioCore.Common.FileLocations.Assets, "Scripts", ProjectUtils.GetGameDirectory(project));
     }
 }

@@ -32,7 +32,7 @@ public class HelpBank
         List<HelpEntry> helpEntries = new();
 
         IEnumerable<string> articleDirFiles =
-            from file in Directory.EnumerateFiles(Path.Join(Common.FileLocations.Assets,"Help",directory))
+            from file in Directory.EnumerateFiles(Path.Join(StudioCore.Common.FileLocations.Assets,"Help",directory))
             select file;
         foreach (var file in articleDirFiles)
             helpEntries.Add(LoadHelpJSON(file));

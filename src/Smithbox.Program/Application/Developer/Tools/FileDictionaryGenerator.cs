@@ -63,10 +63,11 @@ public static class FileDictionaryGenerator
     public static void GenerateFileDictionaryFromUXM(string filepath)
     {
 #if MACOS
-        var writePath = $"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}/{Path.GetFileName(filepath)}.json";;
+        var writePath = $"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}/{Path.GetFileName(filepath)}.json";
 #else
         var writePath = $"{AppContext.BaseDirectory}/{Path.GetFileName(filepath)}.json";
 #endif
+
         var curDictionary = new FileDictionary();
         curDictionary.Entries = new();
 

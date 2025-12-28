@@ -823,12 +823,14 @@ public class ProjectEntry
 #if WINDOWS
             var rootDllPath = Path.Join(DataPath, "oo2core_6_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_6_win64.dll");
-#elif OSX
+#elif MACOS
             var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.6.dylib");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.6.dylib");
 #elif LINUX
             var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.6");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.6");
+#else
+            return false;
 #endif
 
             if (!File.Exists(rootDllPath))
@@ -849,12 +851,14 @@ public class ProjectEntry
 #if WINDOWS
             var rootDllPath = Path.Join(DataPath, "oo2core_8_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_8_win64.dll");
-#elif OSX
+#elif MACOS
             var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.8.dylib");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.8.dylib");
 #elif LINUX
             var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.8");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.8");
+#else
+            return false;
 #endif
 
             if (!File.Exists(rootDllPath))
@@ -876,12 +880,14 @@ public class ProjectEntry
 #if WINDOWS
             var rootDllPath = Path.Join(DataPath, "oo2core_9_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_9_win64.dll");
-#elif OSX
+#elif MACOS
             var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.9.dylib");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.9.dylib");
 #elif LINUX
             var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.9");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.9");
+#else
+            return false;
 #endif
 
             if (!File.Exists(rootDllPath))
@@ -964,7 +970,7 @@ public class ProjectEntry
         else
             FS = new CompundVirtualFileSystem(fileSystems);
 
-        var folder = Path.Join(AppContext.BaseDirectory,"Assets","File Dictionaries");
+        var folder = Path.Join(StudioCore.Common.FileLocations.Assets, "File Dictionaries");
         var file = "";
 
         // Build the file dictionary JSON objects here

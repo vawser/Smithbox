@@ -25,7 +25,7 @@ public class MsbMeta
 
         _MsbMetas = new();
 
-        var metaPath = Path.Join(Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(Project), "Meta");
+        var metaPath = Path.Join(StudioCore.Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(Project), "Meta");
 
         if (Path.Exists(metaPath))
         {

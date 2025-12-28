@@ -232,7 +232,7 @@ public class MapData
         await Task.Yield();
 
 
-        var srcDir = Path.Combine(Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(Project), "Community Map Object Names");
+        var srcDir = Path.Combine(StudioCore.Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(Project), "Community Map Object Names");
         var projDir = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Community Map Object Names");
 
         if (Directory.Exists(projDir))
@@ -387,7 +387,7 @@ public class MapData
         MsbMasks = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
         var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.ProjectType));
@@ -501,7 +501,7 @@ public class MapData
         MapSpawnStates = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "SpawnStates.json");
 
         var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.ProjectType));

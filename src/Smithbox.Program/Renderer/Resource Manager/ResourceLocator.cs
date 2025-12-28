@@ -632,7 +632,7 @@ public class ResourceLocator
             var containerName = p[i];
 
             absPath = Path.Combine(
-                AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(project.ProjectType),
+                StudioCore.Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(project.ProjectType),
                 "Maps", $"{containerName}.tpf.dcx");
         }
 

@@ -76,7 +76,7 @@ public class ShoeboxLayoutContainer
     {
         await Task.Yield();
 
-        var srcFolder = Path.Combine(Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Icon Layouts");
+        var srcFolder = Path.Combine(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Icon Layouts");
 
         foreach (var path in Directory.EnumerateFiles(srcFolder))
         {
