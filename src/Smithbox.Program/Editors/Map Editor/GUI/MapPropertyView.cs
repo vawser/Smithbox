@@ -784,6 +784,14 @@ public class MapPropertyView
         var id = 0;
         foreach (PropertyInfo prop in properties)
         {
+            var treeFlags = ImGuiTreeNodeFlags.DefaultOpen;
+
+            // If the property is the probe list for a BTPB entry, don't auto-open them, to prevent lag.
+            if (prop.GetCustomAttribute<MsbCollapsedList>() is MsbCollapsedList)
+            {
+                treeFlags = ImGuiTreeNodeFlags.None;
+            }
+
             var meta = Editor.Project.MapData.Meta.GetFieldMeta(prop.Name, type);
 
             // Field Name
@@ -849,7 +857,7 @@ public class MapPropertyView
             if (typ.IsArray)
             {
                 var a = (Array)prop.GetValue(obj);
-                var open = ImGui.TreeNodeEx($@"{fieldName}s", ImGuiTreeNodeFlags.DefaultOpen);
+                var open = ImGui.TreeNodeEx($@"{fieldName}s", treeFlags);
                 ShowFieldHint(obj, prop, fieldDescription);
                 ImGui.NextColumn();
                 ImGui.NextColumn();
@@ -861,7 +869,7 @@ public class MapPropertyView
                         Type arrtyp = typ.GetElementType();
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
-                            var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", ImGuiTreeNodeFlags.DefaultOpen);
+                            var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
                             ShowFieldHint(obj, prop, fieldDescription);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
@@ -900,7 +908,7 @@ public class MapPropertyView
                         Type arrtyp = typ.GetGenericArguments()[0];
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
-                            var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", ImGuiTreeNodeFlags.DefaultOpen);
+                            var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
                             ShowFieldHint(obj, prop, fieldDescription);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
@@ -927,7 +935,7 @@ public class MapPropertyView
             }
             else if (typ.IsClass && typ == typeof(MSB.Shape))
             {
-                var open = ImGui.TreeNodeEx($"{fieldName}", ImGuiTreeNodeFlags.DefaultOpen);
+                var open = ImGui.TreeNodeEx($"{fieldName}", treeFlags);
                 ShowFieldHint(obj, prop, fieldDescription);
                 ImGui.NextColumn();
                 ImGui.SetNextItemWidth(-1);
@@ -996,7 +1004,7 @@ public class MapPropertyView
             }
             else if (typ == typeof(BTL.LightType))
             {
-                var open = ImGui.TreeNodeEx($"{fieldName}", ImGuiTreeNodeFlags.DefaultOpen);
+                var open = ImGui.TreeNodeEx($"{fieldName}", treeFlags);
                 ShowFieldHint(obj, prop, fieldDescription);
                 ImGui.NextColumn();
                 ImGui.SetNextItemWidth(-1);
@@ -1054,7 +1062,7 @@ public class MapPropertyView
                 var o = prop.GetValue(obj);
                 if (o != null)
                 {
-                    var open = ImGui.TreeNodeEx($"{fieldName}", ImGuiTreeNodeFlags.DefaultOpen);
+                    var open = ImGui.TreeNodeEx($"{fieldName}", treeFlags);
                     ShowFieldHint(obj, prop, fieldDescription);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);

@@ -30,5 +30,3 @@
  
 # TODO NOW
 - Map Editor: add BTAB auto-tools 
-- Map Editor: add BTAB saving 
-- Map Editor: add BTPB saving 

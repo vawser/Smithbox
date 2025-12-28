@@ -4,6 +4,7 @@ using System.Text;
 
 namespace SoulsFormats
 {
+    // Map Editor
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class MSBReference : Attribute
     {
@@ -19,6 +20,11 @@ namespace SoulsFormats
 
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class MSBEntityReference : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class MsbCollapsedList : Attribute
     {
     }
 
