@@ -631,6 +631,7 @@ public class ProjectManager
 
         var newProject = new ProjectEntry(BaseEditor, guid, projectName, projectPath, dataPath, projectType);
 
+        newProject.FolderTag = ProjectCreation.FolderTag;
         newProject.AutoSelect = ProjectCreation.AutoSelect;
         newProject.ImportedParamRowNames = !ProjectCreation.RowNameImport;
 
