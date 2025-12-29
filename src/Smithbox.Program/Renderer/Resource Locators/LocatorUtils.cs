@@ -77,6 +77,14 @@ public static class LocatorUtils
             }
         }
 
+        if (virtPath.Contains(@"/connect"))
+        {
+            if (upperPath.EndsWith(".HKX") || upperPath.EndsWith(".HKX.DCX"))
+            {
+                success = true;
+            }
+        }
+
         return success;
     }
 

@@ -68,6 +68,8 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public bool UseTempTransform;
 
+    public bool ForceModelRefresh = false;
+
     /// <summary>
     /// Default constructor.
     /// </summary>
@@ -1569,24 +1571,6 @@ public class NamedEntity : Entity
 }
 
 /// <summary>
-/// Entity with a specific name.
-/// </summary>
-public class CollisionEntity : Entity
-{
-    public CollisionEntity(EditorScreen editor, ObjectContainer map, object msbo, string name, int idx, HavokCollisionType type) : base(editor, map, msbo)
-    {
-        Name = name;
-        Index = idx;
-        HavokCollisionType = type;
-    }
-
-    public override string Name { get; set; }
-    public int Index { get; set; }
-
-    public HavokCollisionType HavokCollisionType { get; set; }
-}
-
-/// <summary>
 /// Entity with a specific name that is transformable.
 /// </summary>
 public class TransformableNamedEntity : Entity
@@ -2023,12 +2007,15 @@ public class MsbEntity : Entity
 
                         if (CurrentNPCParamID != id)
                             modelChanged = true;
+
                         ModelMasks = GetModelMasks();
                         CurrentNPCParamID = id;
                     }
 
-                    if (modelChanged)
+                    if (modelChanged || ForceModelRefresh)
                     {
+                        ForceModelRefresh = false;
+
                         //model name has been changed or this is the initial check
                         if (_renderSceneMesh != null)
                         {

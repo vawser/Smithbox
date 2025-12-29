@@ -18,6 +18,7 @@ public class MapResourceHandler
     private HashSet<ResourceDescriptor> LoadList_Character_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Asset_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Collision = new();
+    private HashSet<ResourceDescriptor> LoadList_ConnectCollision = new();
     private HashSet<ResourceDescriptor> LoadList_Navmesh = new();
 
     private HashSet<ResourceDescriptor> LoadList_Character_Texture = new();
@@ -102,10 +103,23 @@ public class MapResourceHandler
             // Collision
             if (model.Name.StartsWith('h'))
             {
-                var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, model.Name), false);
+                var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, model.Name));
 
                 if (modelAsset.IsValid())
+                {
                     LoadList_Collision.Add(modelAsset);
+                }
+            }
+
+            // Connect Collision
+            if (model.Name.StartsWith('h'))
+            {
+                var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, model.Name), true);
+
+                if (modelAsset.IsValid())
+                {
+                    LoadList_ConnectCollision.Add(modelAsset);
+                }
             }
 
             // Navmesh
@@ -387,6 +401,36 @@ public class MapResourceHandler
             HashSet<string> collisionAssets = new();
 
             foreach (ResourceDescriptor asset in LoadList_Collision)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    archive = asset.AssetArchiveVirtualPath;
+                    collisionAssets.Add(asset.AssetVirtualPath);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            if (archive != null)
+            {
+                job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, collisionAssets);
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
+        
+        // Connect Collisions
+        if (CFG.Current.MapEditor_ModelLoad_Collisions)
+        {
+            var job = ResourceManager.CreateNewJob($@"Connect Collisions");
+
+            string archive = null;
+            HashSet<string> collisionAssets = new();
+
+            foreach (ResourceDescriptor asset in LoadList_ConnectCollision)
             {
                 if (asset.AssetArchiveVirtualPath != null)
                 {

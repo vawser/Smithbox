@@ -49,7 +49,6 @@ public class ModelViewportFilters
             UIHelper.ShowActiveStatus(ticked);
             UIHelper.Tooltip("Toggle the display of bones.");
 
-
             // Collision
             if (ImGui.MenuItem("Collision"))
             {

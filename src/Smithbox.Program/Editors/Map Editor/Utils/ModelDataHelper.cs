@@ -64,7 +64,7 @@ public static class ModelDataHelper
                 entry.Models.Add(newModel);
             }
 
-            if (entry.Models.Any(e => e.Name == flverName))
+            if (entry.Models.Any(e => e.Name != null && e.Name == flverName))
             {
                 var modelEntry = entry.Models.FirstOrDefault(e => e.Name == flverName);
 

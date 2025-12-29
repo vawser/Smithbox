@@ -33,6 +33,7 @@ public static class DrawableHelper
         var loadcol = false;
         var loadnav = false;
         var loadflver = false;
+        var isConnectCol = false;
         var filt = RenderFilter.All;
 
         var amapid = MapLocator.GetAssetMapID(curProject, map.Name);
@@ -64,15 +65,27 @@ public static class DrawableHelper
             asset = ModelLocator.GetObjModel(curProject, modelname, modelname);
             filt = RenderFilter.Object;
         }
-        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase))
+        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && obj.IsPartCollision())
         {
             loadcol = true;
             asset = ModelLocator.GetMapCollisionModel(curProject, amapid,
-                ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname), false);
+                ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname));
 
             if (asset == null || asset.AssetPath == null) loadcol = false;
 
             filt = RenderFilter.Collision;
+        }
+        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && obj.IsPartConnectCollision())
+        {
+            loadcol = true;
+            isConnectCol = true;
+
+            asset = ModelLocator.GetMapCollisionModel(curProject, amapid,
+                ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname), true);
+
+            if (asset == null || asset.AssetPath == null) loadcol = false;
+
+            filt = RenderFilter.ConnectCollision;
         }
         else if (modelname.StartsWith("n", StringComparison.CurrentCultureIgnoreCase))
         {
@@ -95,6 +108,12 @@ public static class DrawableHelper
             mesh.World = obj.GetWorldMatrix();
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Collision;
+
+            if(isConnectCol)
+            {
+                mesh.DrawFilter = RenderFilter.ConnectCollision;
+            }
+
             obj.RenderSceneMesh = mesh;
 
             if (load && !ResourceManager.IsResourceLoaded(asset.AssetVirtualPath,

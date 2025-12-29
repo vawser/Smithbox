@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
@@ -7,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Threading.Tasks;
+using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -206,7 +208,27 @@ public class ModelContainer : ObjectContainer
             loadCol = true;
 
             resource = ModelLocator.GetMapCollisionModel(Project, mapID,
-                ModelLocator.GetMapModelName(Project, mapID, modelName), false);
+                ModelLocator.GetMapModelName(Project, mapID, modelName));
+
+            if (resource == null || resource.AssetPath == null)
+                loadCol = false;
+        }
+        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && ent.IsPartCollision())
+        {
+            loadCol = true;
+
+            resource = ModelLocator.GetMapCollisionModel(Project, mapID,
+                ModelLocator.GetMapModelName(Project, mapID, modelName));
+
+            if (resource == null || resource.AssetPath == null)
+                loadCol = false;
+        }
+        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && ent.IsPartConnectCollision())
+        {
+            loadCol = true;
+
+            resource = ModelLocator.GetMapCollisionModel(Project, mapID,
+                ModelLocator.GetMapModelName(Project, mapID, modelName), true);
 
             if (resource == null || resource.AssetPath == null)
                 loadCol = false;

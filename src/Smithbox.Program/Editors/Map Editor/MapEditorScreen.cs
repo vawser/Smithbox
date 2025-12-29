@@ -10,6 +10,7 @@ using System;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -688,16 +689,35 @@ public class MapEditorScreen : EditorScreen
             if (ImGui.MenuItem("Low"))
             {
                 HavokCollisionBank.VisibleCollisionType = HavokCollisionType.Low;
+                CFG.Current.CurrentHavokCollisionType = HavokCollisionType.Low;
+
+                HavokCollisionBank.RefreshCollision();
             }
-            UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.\nMap must be reloaded after change to see difference.");
+            UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.");
             UIHelper.ShowActiveStatus(HavokCollisionBank.VisibleCollisionType == HavokCollisionType.Low);
 
             if (ImGui.MenuItem("High"))
             {
                 HavokCollisionBank.VisibleCollisionType = HavokCollisionType.High;
+                CFG.Current.CurrentHavokCollisionType = HavokCollisionType.High;
+
+                HavokCollisionBank.RefreshCollision();
             }
-            UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.\nMap must be reloaded after change to see difference.");
+            UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.");
             UIHelper.ShowActiveStatus(HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
+
+            if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
+            {
+                if (ImGui.MenuItem("Fall Protection"))
+                {
+                    HavokCollisionBank.VisibleCollisionType = HavokCollisionType.FallProtection;
+                    CFG.Current.CurrentHavokCollisionType = HavokCollisionType.FallProtection;
+
+                    HavokCollisionBank.RefreshCollision();
+                }
+                UIHelper.Tooltip("Visible collision will use the fall-protection mesh.\nUsed for enemy fall protection.");
+                UIHelper.ShowActiveStatus(HavokCollisionBank.VisibleCollisionType == HavokCollisionType.FallProtection);
+            }
 
             ImGui.EndMenu();
         }

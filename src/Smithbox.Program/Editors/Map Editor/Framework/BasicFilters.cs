@@ -78,6 +78,16 @@ public class BasicFilters
         UIHelper.ShowActiveStatus(ticked);
         UIHelper.Tooltip($"Toggle the display of map objects classified as 'Collisions'.");
 
+        // Collision
+        if (ImGui.MenuItem("Connect Collisions"))
+        {
+            RenderScene.ToggleDrawFilter(RenderFilter.ConnectCollision);
+        }
+        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.ConnectCollision);
+        UIHelper.ShowActiveStatus(ticked);
+        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Connect Collisions'.");
+
+
         // Navmesh
         if (ImGui.MenuItem("Navmeshes"))
         {

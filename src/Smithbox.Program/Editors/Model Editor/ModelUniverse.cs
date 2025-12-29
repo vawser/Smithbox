@@ -210,7 +210,7 @@ public class ModelUniverse
                     if (mapID != null)
                     {
                         var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, mapID,
-                        ModelLocator.GetMapModelName(Editor.Project, mapID, modelName), false);
+                        ModelLocator.GetMapModelName(Editor.Project, mapID, modelName));
 
                         if (modelAsset.IsValid())
                             LoadList_Collision.Add(modelAsset);

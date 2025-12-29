@@ -106,7 +106,7 @@ public class NavmeshBuilderTool
                     var buildverts = new List<Vector3>();
                     var buildindices = new List<int>();
                     var vbase = 0;
-                    foreach (HavokCollisionResource.CollisionSubmesh sm in col.Get().GPUMeshes)
+                    foreach (CollisionSubmesh sm in col.Get().GPUMeshes)
                     {
                         buildverts.AddRange(sm.PickingVertices);
                         foreach (var i in sm.PickingIndices)

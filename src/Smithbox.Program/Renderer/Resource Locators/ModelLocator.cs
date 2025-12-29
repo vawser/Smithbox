@@ -1,4 +1,6 @@
-﻿using StudioCore.Application;
+﻿using Octokit;
+using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.IO;
 
 namespace StudioCore.Renderer;
@@ -90,23 +92,34 @@ public static class ModelLocator
         return ret;
     }
 
-    public static ResourceDescriptor GetMapCollisionModel(ProjectEntry project, string mapid, string model, bool hi = true)
+    public static ResourceDescriptor GetMapCollisionModel(ProjectEntry project, string mapid, string model, bool isConnectCollision = false)
     {
         ResourceDescriptor ret = new();
 
+        var colType = "hit";
+        if (isConnectCollision)
+            colType = "connect";
+
+        var targetType = HavokCollisionType.Low;
+
+        if (project.MapEditor != null)
+        {
+            targetType = CFG.Current.CurrentHavokCollisionType;
+        }
+
         if (project.ProjectType == ProjectType.DS1 || project.ProjectType == ProjectType.DES)
         {
-            if (hi)
+            if (targetType is HavokCollisionType.High)
             {
                 ret.AssetPath = LocatorUtils.GetAssetPath(project, Path.Join("map", mapid, $"{model}.hkx"));
                 ret.AssetName = model;
-                ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/{model}.hkx";
+                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/{model}.hkx";
             }
-            else
+            else if (targetType is HavokCollisionType.Low)
             {
                 ret.AssetPath = LocatorUtils.GetAssetPath(project, Path.Join("map", mapid, $"l{model.Substring(1)}.hkx"));
                 ret.AssetName = model;
-                ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx";
+                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/lo/l{model.Substring(1)}.hkx";
             }
         }
         else if (project.ProjectType is ProjectType.DS1R)
@@ -115,17 +128,17 @@ public static class ModelLocator
             {
                 if (Directory.Exists(CFG.Current.PTDE_Collision_Root))
                 {
-                    if (hi)
+                    if (targetType is HavokCollisionType.High)
                     {
                         ret.AssetPath = LocatorUtils.GetAssetPath_CollisionHack(Path.Join("map", mapid, $"{model}.hkx"));
                         ret.AssetName = model;
-                        ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/{model}.hkx";
+                        ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/{model}.hkx";
                     }
-                    else
+                    else if (targetType is HavokCollisionType.Low)
                     {
                         ret.AssetPath = LocatorUtils.GetAssetPath_CollisionHack(Path.Join("map", mapid, $"l{model.Substring(1)}.hkx"));
                         ret.AssetName = model;
-                        ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx";
+                        ret.AssetVirtualPath = $@"map/{mapid}/{colType}/lo/l{model.Substring(1)}.hkx";
                     }
                 }
             }
@@ -134,41 +147,48 @@ public static class ModelLocator
         {
             ret.AssetPath = LocatorUtils.GetAssetPath(project, Path.Join("model", "map", $"h{mapid.Substring(1)}.hkxbhd"));
             ret.AssetName = model;
-            ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/{model}.hkx.dcx";
-            ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
+            ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/{model}.hkx.dcx";
+            ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/hi";
         }
         else if (project.ProjectType == ProjectType.DS3 || project.ProjectType == ProjectType.BB)
         {
-            if (hi)
+            if (targetType is HavokCollisionType.High)
             {
                 ret.AssetPath = LocatorUtils.GetAssetPath(project, Path.Join("map", mapid, $"h{mapid.Substring(1)}.hkxbhd"));
                 ret.AssetName = model;
-                ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/h{model.Substring(1)}.hkx.dcx";
-                ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
+                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/h{model.Substring(1)}.hkx.dcx";
+                ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/hi";
             }
-            else
+            else if (targetType is HavokCollisionType.Low)
             {
                 ret.AssetPath = LocatorUtils.GetAssetPath(project, Path.Join("map", mapid, $"l{mapid.Substring(1)}.hkxbhd"));
                 ret.AssetName = model;
-                ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx.dcx";
-                ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/lo";
+                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/lo/l{model.Substring(1)}.hkx.dcx";
+                ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/lo";
             }
         }
         else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
-            if (hi)
+            if (targetType is HavokCollisionType.High)
             {
                 ret.AssetPath = LocatorUtils.GetAssetPath(project, Path.Join("map", mapid.Substring(0, 3), mapid, $"h{mapid.Substring(1)}.hkxbhd"));
                 ret.AssetName = model;
-                ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/h{model.Substring(1)}.hkx.dcx";
-                ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
+                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/h{model.Substring(1)}.hkx.dcx";
+                ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/hi";
             }
-            else
+            else if(targetType is HavokCollisionType.Low)
             {
                 ret.AssetPath = LocatorUtils.GetAssetPath(project, Path.Join("map", mapid.Substring(0, 3), mapid, $"l{mapid.Substring(1)}.hkxbhd"));
                 ret.AssetName = model;
-                ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx.dcx";
-                ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/lo";
+                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/lo/l{model.Substring(1)}.hkx.dcx";
+                ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/lo";
+            }
+            else if (targetType is HavokCollisionType.FallProtection)
+            {
+                ret.AssetPath = LocatorUtils.GetAssetPath(project, Path.Join("map", mapid.Substring(0, 3), mapid, $"f{mapid.Substring(1)}.hkxbhd"));
+                ret.AssetName = model;
+                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/fa/f{model.Substring(1)}.hkx.dcx";
+                ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/fa";
             }
         }
         else

@@ -276,13 +276,6 @@ public class Universe
 
                 Editor.EditorActionManager.ExecuteAction(action);
 
-                // Might be this, test:
-                //foreach (Entity obj in newContainer.Objects)
-                //{
-                //      obj.RenderSceneMesh.AutoRegister = true;
-                //      obj.RenderSceneMesh.Register();
-                //}
-
                 if (selectOnLoad)
                 {
                     Editor.Selection.SelectedMapID = mapid;

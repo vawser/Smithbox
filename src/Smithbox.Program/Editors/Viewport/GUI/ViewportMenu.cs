@@ -31,11 +31,7 @@ public class ViewportMenu
         if (Parent.ViewportType is ViewportType.MapEditor)
         {
             Parent.MapEditor.FilterMenu();
-
-            if(Parent.MapEditor.Project.ProjectType is ProjectType.ER or ProjectType.NR)
-            {
-                Parent.MapEditor.CollisionMenu();
-            }
+            Parent.MapEditor.CollisionMenu();
 
             if (Parent.MapEditor.Project.ProjectType != ProjectType.DS2S && Parent.MapEditor.Project.ProjectType != ProjectType.DS2)
             {
