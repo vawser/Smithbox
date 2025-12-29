@@ -25,7 +25,8 @@
     
     <defaultSmallBase
     AltName="Default Small Base ID"
-    Wiki="" />
+    Wiki=""
+    TileRef="" />
     
     <posX
     AltName="Placement Location: X"

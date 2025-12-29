@@ -23,17 +23,28 @@
     
     <patternSetId
     AltName="Pattern Set ID"
-    Wiki="" />
+    Wiki=""
+	Refs="MapPatternSet" />
     
     <targetBoss
     AltName="Target Boss"
-    Wiki="" />
+    Wiki=""
+	Refs="NightBossMenuParam" />
     
     <rareMap
     AltName="Rare Map"
-    Wiki="" />
+    Wiki=""
+	Enum="RARE_MAP" />
   </Field>
   
   <Enums>
+	<Enum Name="RARE_MAP" type="u8">
+        <Option Value="0" Name="Limveld" />
+        <Option Value="1" Name="Mountaintops" />
+        <Option Value="2" Name="The Crater" />
+        <Option Value="3" Name="Rotted Woods" />
+        <Option Value="4" Name="Great Hollow" />
+        <Option Value="5" Name="Shrouded City" />
+    </Enum>
   </Enums>
 </PARAMMETA>

@@ -7,6 +7,10 @@
     <weight
     AltName="Weight"
     Wiki="" />
+	
+    <patternCount
+    AltName="Pattern Count"
+    Wiki="" />
     
     <modifier1
     AltName="Modifier: 1"
