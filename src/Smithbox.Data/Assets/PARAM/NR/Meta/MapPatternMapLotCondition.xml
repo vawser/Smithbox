@@ -14,11 +14,13 @@
     
     <targetBoss1
     AltName="Target Boss: 1"
-    Wiki="" />
+    Wiki=""
+    Refs="NightBossMenuParam" />
     
     <targetBoss2
     AltName="Target Boss: 2"
-    Wiki="" />
+    Wiki=""
+    Refs="NightBossMenuParam" />
   </Field>
   
   <Enums>
