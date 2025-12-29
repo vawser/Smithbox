@@ -156,7 +156,7 @@ public class HavokCollisionBank
             {
                 foreach(var ent in entry.Value.MapContainer.Objects)
                 {
-                    if(ent.IsPartCollision())
+                    if(ent.IsPartCollision() || ent.IsPartConnectCollision())
                     {
                         ent.ForceModelRefresh = true;
                         ent.UpdateRenderModel(Editor);

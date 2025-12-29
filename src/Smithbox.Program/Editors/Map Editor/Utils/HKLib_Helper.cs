@@ -82,7 +82,48 @@ public static class HKLib_Helper
                     }
                     else if (bodyInfo.m_shape is hknpExternMeshShape extern_ncol)
                     {
+                        try
+                        {
+                            var mesh = new CollisionSubmesh();
+                            var indices = new List<int>();
+                            var vertices = new List<Vector3>();
 
+                            if(extern_ncol.m_geometry is hknpDefaultExternMeshShapeGeometry meshShape)
+                            {
+                                if (meshShape.m_geometry is hkGeometry geo)
+                                {
+                                    vertices = geo.m_vertices
+                                        .Select(v => new Vector3(v.X, v.Y, v.Z))
+                                        .ToList();
+
+                                    foreach (var tri in geo.m_triangles)
+                                    {
+                                        indices.Add(tri.m_a);
+                                        indices.Add(tri.m_b);
+                                        indices.Add(tri.m_c);
+                                    }
+
+                                    RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+                                }
+                            }
+
+                            if (first)
+                            {
+                                resource.Bounds = mesh.Bounds;
+                                first = false;
+                            }
+                            else
+                            {
+                                resource.Bounds = BoundingBox.Combine(resource.Bounds, mesh.Bounds);
+                            }
+
+                            submeshes.Add(mesh);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to load HKLIB.",
+                                LogLevel.Error, LogPriority.High, e);
+                        }
                     }
                 }
             }
