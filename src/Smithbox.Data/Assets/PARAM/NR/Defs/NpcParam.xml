@@ -1969,7 +1969,7 @@
     
     <Field Def="u8 affectedByNecromancy:1" /> <!-- Able to be raised as ghost? -->
 	<Field Def="u8 unknown_20b:1" />
-	<Field Def="u8 unknown_20c:1" />
+	<Field Def="u8 enableSpKillId:1" />
 	<Field Def="u8 unknown_20d:1" />
 	<Field Def="u8 unknown_20e:1" />
 	<Field Def="u8 unknown_20f:1" />

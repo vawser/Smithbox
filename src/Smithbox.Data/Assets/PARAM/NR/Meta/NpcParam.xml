@@ -573,7 +573,9 @@
 	<unknown_20b
 	IsBool="" />
 	
-	<unknown_20c
+	<enableSpKillId
+	AltName="Enable Kill SpEffect ID Special"
+	Wiki="Whether to enable special kill ID and disable the original one."
 	IsBool="" />
     
     <poiseBonusRate_Magic
