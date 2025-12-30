@@ -39388,43 +39388,43 @@
     {
       "ID": 12036000,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12036001,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12036002,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12036003,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12037000,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
       "ID": 12037001,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
       "ID": 12037002,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
@@ -39502,7 +39502,7 @@
     {
       "ID": 12050101,
       "Entries": [
-        ""
+        "[Effect] Defeating Group Calls Vengeful Spirits"
       ]
     },
     {
@@ -39520,25 +39520,25 @@
     {
       "ID": 12050300,
       "Entries": [
-        ""
+        "[Effect] Guard Counters Launch Summoning Attack"
       ]
     },
     {
       "ID": 12061203,
       "Entries": [
-        ""
+        "[Effect] Savage Pillars of Flame Rise While Walking"
       ]
     },
     {
       "ID": 12064000,
       "Entries": [
-        ""
+        "[Effect] Sleep Produces a Mist of Sleep"
       ]
     },
     {
       "ID": 12064001,
       "Entries": [
-        ""
+        "[Effect] Sleep Produces a Mist of Sleep"
       ]
     },
     {
@@ -39550,55 +39550,55 @@
     {
       "ID": 12067000,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 12067001,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 12067002,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 12067003,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 12069100,
       "Entries": [
-        ""
+        "[Effect] Storm of Red Lightning While Walking"
       ]
     },
     {
       "ID": 12069101,
       "Entries": [
-        ""
+        "[Effect] Storm of Red Lightning While Walking"
       ]
     },
     {
       "ID": 12301000,
       "Entries": [
-        ""
+        "[Effect] Wraiths While Walking"
       ]
     },
     {
       "ID": 12301001,
       "Entries": [
-        ""
+        "[Effect] Wraiths While Walking"
       ]
     },
     {
       "ID": 12301002,
       "Entries": [
-        ""
+        "[Effect] Wraiths While Walking"
       ]
     },
     {
@@ -39634,13 +39634,13 @@
     {
       "ID": 12441000,
       "Entries": [
-        ""
+        "[Effect] Ice Storm Surge Sprint"
       ]
     },
     {
       "ID": 12441002,
       "Entries": [
-        ""
+        "[Effect] Ice Storm Surge Sprint"
       ]
     },
     {
@@ -39664,7 +39664,7 @@
     {
       "ID": 12692011,
       "Entries": [
-        ""
+        "[Effect] Lightning upon Dodging"
       ]
     },
     {
@@ -52150,49 +52150,49 @@
     {
       "ID": 400000200,
       "Entries": [
-        ""
+        "[AoW - Default] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 400000205,
       "Entries": [
-        ""
+        "[AoW - Default] Strom Ruler - No FP Charged"
       ]
     },
     {
       "ID": 400000220,
       "Entries": [
-        ""
+        "[AoW - Default] Strom Ruler - Light #1"
       ]
     },
     {
       "ID": 400000225,
       "Entries": [
-        ""
+        "[AoW - Default] Strom Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 400000230,
       "Entries": [
-        ""
+        "[AoW - Default] Strom Ruler - Light #2"
       ]
     },
     {
       "ID": 400000235,
       "Entries": [
-        ""
+        "[AoW - Default] Strom Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 400000240,
       "Entries": [
-        ""
+        "[AoW - Default] Strom Ruler - Light #3"
       ]
     },
     {
       "ID": 400000245,
       "Entries": [
-        ""
+        "[AoW - Default] Strom Ruler - No FP Light #3"
       ]
     },
     {
@@ -52204,433 +52204,433 @@
     {
       "ID": 400100200,
       "Entries": [
-        ""
+        "[AoW - Duchess] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 400100205,
       "Entries": [
-        ""
+        "[AoW - Duchess] Strom Ruler - No FP Charged"
       ]
     },
     {
       "ID": 400100220,
       "Entries": [
-        ""
+        "[AoW - Duchess] Strom Ruler - Light #1"
       ]
     },
     {
       "ID": 400100225,
       "Entries": [
-        ""
+        "[AoW - Duchess] Strom Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 400100230,
       "Entries": [
-        ""
+        "[AoW - Duchess] Strom Ruler - Light #2"
       ]
     },
     {
       "ID": 400100235,
       "Entries": [
-        ""
+        "[AoW - Duchess] Strom Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 400100240,
       "Entries": [
-        ""
+        "[AoW - Duchess] Strom Ruler - Light #3"
       ]
     },
     {
       "ID": 400100245,
       "Entries": [
-        ""
+        "[AoW - Duchess] Strom Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 400500200,
       "Entries": [
-        ""
+        "[AoW - Scholar] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 400500205,
       "Entries": [
-        ""
+        "[AoW - Scholar] Strom Ruler - No FP Charged"
       ]
     },
     {
       "ID": 400500220,
       "Entries": [
-        ""
+        "[AoW - Scholar] Strom Ruler - Light #1"
       ]
     },
     {
       "ID": 400500225,
       "Entries": [
-        ""
+        "[AoW - Scholar] Strom Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 400500230,
       "Entries": [
-        ""
+        "[AoW - Scholar] Strom Ruler - Light #2"
       ]
     },
     {
       "ID": 400500235,
       "Entries": [
-        ""
+        "[AoW - Scholar] Strom Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 400500240,
       "Entries": [
-        ""
+        "[AoW - Scholar] Strom Ruler - Light #3"
       ]
     },
     {
       "ID": 400500245,
       "Entries": [
-        ""
+        "[AoW - Scholar] Strom Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 400900200,
       "Entries": [
-        ""
+        "[AoW - Executor] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 400900205,
       "Entries": [
-        ""
+        "[AoW - Executor] Strom Ruler - No FP Charged"
       ]
     },
     {
       "ID": 400900220,
       "Entries": [
-        ""
+        "[AoW - Executor] Strom Ruler - Light #1"
       ]
     },
     {
       "ID": 400900225,
       "Entries": [
-        ""
+        "[AoW - Executor] Strom Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 400900230,
       "Entries": [
-        ""
+        "[AoW - Executor] Strom Ruler - Light #2"
       ]
     },
     {
       "ID": 400900235,
       "Entries": [
-        ""
+        "[AoW - Executor] Strom Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 400900240,
       "Entries": [
-        ""
+        "[AoW - Executor] Strom Ruler - Light #3"
       ]
     },
     {
       "ID": 400900245,
       "Entries": [
-        ""
+        "[AoW - Executor] Strom Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 401100200,
       "Entries": [
-        ""
+        "[AoW - Undertaker] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 401100205,
       "Entries": [
-        ""
+        "[AoW - Undertaker] Strom Ruler - No FP Charged"
       ]
     },
     {
       "ID": 401100220,
       "Entries": [
-        ""
+        "[AoW - Undertaker] Strom Ruler - Light #1"
       ]
     },
     {
       "ID": 401100225,
       "Entries": [
-        ""
+        "[AoW - Undertaker] Strom Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 401100230,
       "Entries": [
-        ""
+        "[AoW - Undertaker] Strom Ruler - Light #2"
       ]
     },
     {
       "ID": 401100235,
       "Entries": [
-        ""
+        "[AoW - Undertaker] Strom Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 401100240,
       "Entries": [
-        ""
+        "[AoW - Undertaker] Strom Ruler - Light #3"
       ]
     },
     {
       "ID": 401100245,
       "Entries": [
-        ""
+        "[AoW - Undertaker] Strom Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 401102200,
       "Entries": [
-        ""
+        "[AoW - Recluse] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 401102205,
       "Entries": [
-        ""
+        "[AoW - Recluse] Strom Ruler - No FP Charged"
       ]
     },
     {
       "ID": 401102220,
       "Entries": [
-        ""
+        "[AoW - Recluse] Strom Ruler - Light #1"
       ]
     },
     {
       "ID": 401102225,
       "Entries": [
-        ""
+        "[AoW - Recluse] Strom Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 401102230,
       "Entries": [
-        ""
+        "[AoW - Recluse] Strom Ruler - Light #2"
       ]
     },
     {
       "ID": 401102235,
       "Entries": [
-        ""
+        "[AoW - Recluse] Strom Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 401102240,
       "Entries": [
-        ""
+        "[AoW - Recluse] Strom Ruler - Light #3"
       ]
     },
     {
       "ID": 401102245,
       "Entries": [
-        ""
+        "[AoW - Recluse] Strom Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 401800200,
       "Entries": [
-        ""
+        "[AoW - Guardian] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 401800205,
       "Entries": [
-        ""
+        "[AoW - Guardian] Strom Ruler - No FP Charged"
       ]
     },
     {
       "ID": 401800220,
       "Entries": [
-        ""
+        "[AoW - Guardian] Strom Ruler - Light #1"
       ]
     },
     {
       "ID": 401800225,
       "Entries": [
-        ""
+        "[AoW - Guardian] Strom Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 401800230,
       "Entries": [
-        ""
+        "[AoW - Guardian] Strom Ruler - Light #2"
       ]
     },
     {
       "ID": 401800235,
       "Entries": [
-        ""
+        "[AoW - Guardian] Strom Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 401800240,
       "Entries": [
-        ""
+        "[AoW - Guardian] Strom Ruler - Light #3"
       ]
     },
     {
       "ID": 401800245,
       "Entries": [
-        ""
+        "[AoW - Guardian] Strom Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 402100200,
       "Entries": [
-        ""
+        "[AoW - Revenant] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 402100205,
       "Entries": [
-        ""
+        "[AoW - Revenant] Strom Ruler - No FP Charged"
       ]
     },
     {
       "ID": 402100220,
       "Entries": [
-        ""
+        "[AoW - Revenant] Strom Ruler - Light #1"
       ]
     },
     {
       "ID": 402100225,
       "Entries": [
-        ""
+        "[AoW - Revenant] Strom Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 402100230,
       "Entries": [
-        ""
+        "[AoW - Revenant] Strom Ruler - Light #2"
       ]
     },
     {
       "ID": 402100235,
       "Entries": [
-        ""
+        "[AoW - Revenant] Strom Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 402100240,
       "Entries": [
-        ""
+        "[AoW - Revenant] Strom Ruler - Light #3"
       ]
     },
     {
       "ID": 402100245,
       "Entries": [
-        ""
+        "[AoW - Revenant] Strom Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 402300200,
       "Entries": [
-        ""
+        "[AoW - Raider] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 402300205,
       "Entries": [
-        ""
+        "[AoW - Raider] Strom Ruler - No FP Charged"
       ]
     },
     {
       "ID": 402300220,
       "Entries": [
-        ""
+        "[AoW - Raider] Strom Ruler - Light #1"
       ]
     },
     {
       "ID": 402300225,
       "Entries": [
-        ""
+        "[AoW - Raider] Strom Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 402300230,
       "Entries": [
-        ""
+        "[AoW - Raider] Strom Ruler - Light #2"
       ]
     },
     {
       "ID": 402300235,
       "Entries": [
-        ""
+        "[AoW - Raider] Strom Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 402300240,
       "Entries": [
-        ""
+        "[AoW - Raider] Strom Ruler - Light #3"
       ]
     },
     {
       "ID": 402300245,
       "Entries": [
-        ""
+        "[AoW - Raider] Strom Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 405000200,
       "Entries": [
-        ""
+        "[AoW - Ironeye] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 405000205,
       "Entries": [
-        ""
+        "[AoW - Ironeye] Strom Ruler - No FP Charged"
       ]
     },
     {
       "ID": 405000220,
       "Entries": [
-        ""
+        "[AoW - Ironeye] Strom Ruler - Light #1"
       ]
     },
     {
       "ID": 405000225,
       "Entries": [
-        ""
+        "[AoW - Ironeye] Strom Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 405000230,
       "Entries": [
-        ""
+        "[AoW - Ironeye] Strom Ruler - Light #2"
       ]
     },
     {
       "ID": 405000235,
       "Entries": [
-        ""
+        "[AoW - Ironeye] Strom Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 405000240,
       "Entries": [
-        ""
+        "[AoW - Ironeye] Strom Ruler - Light #3"
       ]
     },
     {
       "ID": 405000245,
       "Entries": [
-        ""
+        "[AoW - Ironeye] Strom Ruler - No FP Light #3"
       ]
     },
     {
@@ -52960,7 +52960,7 @@
     {
       "ID": 600000400,
       "Entries": [
-        ""
+        "[Scholar Skill] Self Shield"
       ]
     },
     {
@@ -53098,37 +53098,37 @@
     {
       "ID": 700000100,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Charged) Arrow"
+        "[Ultimate - Ironeye] Single Shot (Charged/Uncharged) Arrow"
       ]
     },
     {
       "ID": 700000101,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Charged) Air Stream"
+        "[Ultimate - Ironeye] Single Shot (Charged/Uncharged) Air Stream"
       ]
     },
     {
       "ID": 700000102,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Charged) Arrow (Ground Hit)"
+        "[Ultimate - Ironeye] Single Shot (Charged/Uncharged) Arrow (Ground Hit)"
       ]
     },
     {
       "ID": 700000130,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Uncharged) Arrow"
+        "[Ultimate - Ironeye] Single Shot (Unused) Arrow"
       ]
     },
     {
       "ID": 700000131,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Uncharged) Air Stream"
+        "[Ultimate - Ironeye] Single Shot (Unused) Air Stream"
       ]
     },
     {
       "ID": 700000132,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Uncharged) Arrow (Ground Hit)"
+        "[Ultimate - Ironeye] Single Shot (Unused) Arrow (Ground Hit)"
       ]
     },
     {
@@ -53230,13 +53230,13 @@
     {
       "ID": 700000450,
       "Entries": [
-        ""
+        "[Undertaker Ultimate] Loathsome Hex"
       ]
     },
     {
       "ID": 700000460,
       "Entries": [
-        ""
+        "[Undertaker Ultimate] Loathsome Hex"
       ]
     },
     {
@@ -53410,13 +53410,13 @@
     {
       "ID": 800000020,
       "Entries": [
-        ""
+        "[Effect] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 800000021,
       "Entries": [
-        ""
+        "[Effect] Flame of Frenzy While Walking"
       ]
     },
     {
@@ -53548,37 +53548,37 @@
     {
       "ID": 878884200,
       "Entries": [
-        ""
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 878884201,
       "Entries": [
-        ""
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 878884202,
       "Entries": [
-        ""
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 878884203,
       "Entries": [
-        ""
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 880000000,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Omen King"
       ]
     },
     {
       "ID": 880000001,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Omen King"
       ]
     },
     {
@@ -53590,49 +53590,49 @@
     {
       "ID": 880000690,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Flying Dragon"
       ]
     },
     {
       "ID": 880000691,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Flying Dragon"
       ]
     },
     {
       "ID": 880000692,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Flying Dragon"
       ]
     },
     {
       "ID": 880000693,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Flying Dragon"
       ]
     },
     {
       "ID": 880000694,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Flying Dragon"
       ]
     },
     {
       "ID": 880000695,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Flying Dragon"
       ]
     },
     {
       "ID": 880000696,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Flying Dragon"
       ]
     },
     {
       "ID": 880000700,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Golden Lineage"
       ]
     },
     {
@@ -53656,19 +53656,19 @@
     {
       "ID": 880000705,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Giant"
       ]
     },
     {
       "ID": 880000890,
       "Entries": [
-        "[Greatarrow] Power of the General"
+        "[Weapon Effect] Power of the General"
       ]
     },
     {
       "ID": 880000891,
       "Entries": [
-        "[Greatarrow] Power of the General (Spread)"
+        "[Weapon Effect] Power of the General (Spread)"
       ]
     },
     {
@@ -53680,31 +53680,31 @@
     {
       "ID": 880000901,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Dragonlord (Thundercloud)"
       ]
     },
     {
       "ID": 880000902,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Dragonlord"
       ]
     },
     {
       "ID": 880000905,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Greater Will"
       ]
     },
     {
       "ID": 880000906,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Greater Will"
       ]
     },
     {
       "ID": 880000910,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Starscourge"
       ]
     },
     {
@@ -53722,31 +53722,31 @@
     {
       "ID": 880000920,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Queen"
       ]
     },
     {
       "ID": 880000930,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of Full Moon"
       ]
     },
     {
       "ID": 880000931,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of Full Moon"
       ]
     },
     {
       "ID": 880000932,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of Full Moon (Glintblades)"
       ]
     },
     {
       "ID": 880000933,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of Full Moon (Glintblades)"
       ]
     },
     {
@@ -53758,13 +53758,13 @@
     {
       "ID": 890000010,
       "Entries": [
-        ""
+        "[Material] Create arch of magic glintblades"
       ]
     },
     {
       "ID": 890000011,
       "Entries": [
-        ""
+        "[Material] Create arch of magic glintblades"
       ]
     },
     {
@@ -53800,7 +53800,7 @@
     {
       "ID": 920970050,
       "Entries": [
-        ""
+        "[Effect] Beast's Hunt - Trigger"
       ]
     },
     {
