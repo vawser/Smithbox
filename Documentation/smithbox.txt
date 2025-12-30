@@ -39,3 +39,4 @@
 - Param Editor BUG: adjust the difference checker to account for row index
 
 # TODO NOW
+- Map Editor: add havok collision map objects (like AIP), but they should associate with the MSB collision part for framing/selection

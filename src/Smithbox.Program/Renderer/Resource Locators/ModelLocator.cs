@@ -107,6 +107,12 @@ public static class ModelLocator
             targetType = CFG.Current.CurrentHavokCollisionType;
         }
 
+        // Always use low for connect collisions
+        if(isConnectCollision)
+        {
+            targetType = HavokCollisionType.Low;
+        }
+
         if (project.ProjectType == ProjectType.DS1 || project.ProjectType == ProjectType.DES)
         {
             if (targetType is HavokCollisionType.High)

@@ -182,33 +182,15 @@ public class ResourceLocator
                     }
                     else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                     {
-                        relPath = Path.Combine("model", "map", $"h{mapid.Substring(1)}.hkxbhd");
+                        relPath = Path.Combine("model", "map", $"l{mapid.Substring(1)}.hkxbhd");
                     }
                     else if (project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
                     {
-                        if (hittype == "lo")
-                        {
-                            relPath = Path.Combine("map", mapid, $"l{mapid.Substring(1)}.hkxbhd");
-                        }
-                        else
-                        {
-                            relPath = Path.Combine("map", mapid, $"h{mapid.Substring(1)}.hkxbhd");
-                        }
+                        relPath = Path.Combine("map", mapid, $"l{mapid.Substring(1)}.hkxbhd");
                     }
                     else if (project.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
                     {
-                        if (hittype == "lo")
-                        {
-                            relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"l{mapid.Substring(1)}.hkxbhd");
-                        }
-                        else if (hittype == "hi")
-                        {
-                            relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"h{mapid.Substring(1)}.hkxbhd");
-                        }
-                        else if (hittype == "fa")
-                        {
-                            relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"f{mapid.Substring(1)}.hkxbhd");
-                        }
+                        relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"l{mapid.Substring(1)}.hkxbhd");
                     }
                 }
                 // Navmesh

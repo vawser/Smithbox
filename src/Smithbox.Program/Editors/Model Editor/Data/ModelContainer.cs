@@ -203,16 +203,6 @@ public class ModelContainer : ObjectContainer
         {
             resource = ModelLocator.GetPartsModel(Editor.Project, modelName, modelName);
         }
-        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase))
-        {
-            loadCol = true;
-
-            resource = ModelLocator.GetMapCollisionModel(Project, mapID,
-                ModelLocator.GetMapModelName(Project, mapID, modelName));
-
-            if (resource == null || resource.AssetPath == null)
-                loadCol = false;
-        }
         else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && ent.IsPartCollision())
         {
             loadCol = true;
