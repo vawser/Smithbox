@@ -26,7 +26,7 @@ public class ModelViewportFilters
             {
                 Editor.ModelViewportView.RenderScene.ToggleDrawFilter(RenderFilter.Meshes);
             }
-            ticked = Editor.ModelViewportView.RenderScene.DrawFilter.HasFlag(RenderFilter.MapPiece);
+            ticked = Editor.ModelViewportView.RenderScene.DrawFilter.HasFlag(RenderFilter.Meshes);
             UIHelper.ShowActiveStatus(ticked);
             UIHelper.Tooltip("Toggle the display of meshes.");
 

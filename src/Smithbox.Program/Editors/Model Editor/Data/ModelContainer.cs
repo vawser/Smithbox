@@ -71,17 +71,6 @@ public class ModelContainer : ObjectContainer
 
     public void Load(FLVER2 flver, ModelWrapper wrapper)
     {
-        // Dummies
-        foreach (var entry in flver.Dummies)
-        {
-            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Dummy);
-            AssignDummyDrawable(newObject, wrapper);
-
-            Dummies.Add(newObject);
-            Objects.Add(newObject);
-            RootObject.AddChild(newObject);
-        }
-
         // Materials
         foreach (var entry in flver.Materials)
         {
@@ -108,7 +97,60 @@ public class ModelContainer : ObjectContainer
 
             Nodes.Add(newObject);
             Objects.Add(newObject);
-            RootObject.AddChild(newObject);
+        }
+
+        // Nodes - Parenting
+        foreach (var ent in Nodes)
+        {
+            var curNode = (FLVER.Node)ent.WrappedObject;
+
+            // Parent the node to its parent bone (if applicable)
+            if (curNode.ParentIndex != -1)
+            {
+                for (int i = 0; i < Nodes.Count; i++)
+                {
+                    var thisNode = Nodes[i];
+
+                    if (curNode.ParentIndex == i)
+                    {
+                        thisNode.AddChild(ent);
+                    }
+                }
+            }
+            // Other parent to the root object
+            else
+            {
+                RootObject.AddChild(ent);
+            }
+        }
+
+        // Dummies
+        foreach (var entry in flver.Dummies)
+        {
+            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Dummy);
+            AssignDummyDrawable(newObject, wrapper);
+
+            Dummies.Add(newObject);
+            Objects.Add(newObject);
+
+            // Parent the dummy to its parent bone (if applicable)
+            if (entry.ParentBoneIndex != -1)
+            {
+                for (int i = 0; i < Nodes.Count; i++)
+                {
+                    var curNode = Nodes[i];
+
+                    if (entry.ParentBoneIndex == i)
+                    {
+                        curNode.AddChild(newObject);
+                    }
+                }
+            }
+            // Other parent to the root object
+            else
+            {
+                RootObject.AddChild(newObject);
+            }
         }
 
         // Meshes
