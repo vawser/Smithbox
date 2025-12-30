@@ -54,7 +54,7 @@ public class LoadBinderResourcesAction
         // Read binder
         if (Binder == null)
         {
-            BinderRelativePath = ResourceLocator.GetRelativePath(curProject, BinderVirtualPath);
+            BinderRelativePath = PathBuilder.GetRelativePath(curProject, BinderVirtualPath);
 
             var load = true;
 

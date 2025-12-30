@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace StudioCore.Renderer;
 
-public class ResourceLocator
+public class PathBuilder
 {
     /// <summary>
     /// This transforms the virtual path into the relative path required for the VFS

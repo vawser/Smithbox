@@ -180,7 +180,7 @@ public class ModelInsight
     {
         var successful = false;
 
-        var relativePath = ResourceLocator.GetRelativePath(project, entry.VirtualPath);
+        var relativePath = PathBuilder.GetRelativePath(project, entry.VirtualPath);
 
         var fileName = Path.GetFileName(relativePath);
 
@@ -338,7 +338,7 @@ public class ModelInsight
 
         foreach (var tex in entry.Entries)
         {
-            var relativePath = ResourceLocator.GetRelativePath(project, tex.VirtualPath);
+            var relativePath = PathBuilder.GetRelativePath(project, tex.VirtualPath);
 
             var fileName = Path.GetFileName(relativePath);
             var fileData = project.FS.ReadFile(relativePath);

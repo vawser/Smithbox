@@ -145,7 +145,7 @@ public class MapResourceHandler
     public void SetupTexturelLoadLists()
     {
         // MAP
-        foreach (ResourceDescriptor asset in ResourceLocator.GetMapTextureVPs(Editor.Project, AdjustedMapID))
+        foreach (ResourceDescriptor asset in PathBuilder.GetMapTextureVPs(Editor.Project, AdjustedMapID))
         {
             if (asset.IsValid())
                 LoadList_Map_Texture.Add(asset);
@@ -158,13 +158,13 @@ public class MapResourceHandler
             if (model.Name.StartsWith('c'))
             {
                 // TPF
-                var textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, model.Name, false);
+                var textureAsset = PathBuilder.GetCharacterTextureVP(Editor.Project, model.Name, false);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
     
                 // BND
-                textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, model.Name, true);
+                textureAsset = PathBuilder.GetCharacterTextureVP(Editor.Project, model.Name, true);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
@@ -173,7 +173,7 @@ public class MapResourceHandler
             // Object
             if (model.Name.StartsWith('o'))
             {
-                var textureAsset = ResourceLocator.GetObjectTextureVP(Editor.Project, model.Name);
+                var textureAsset = PathBuilder.GetObjectTextureVP(Editor.Project, model.Name);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -182,7 +182,7 @@ public class MapResourceHandler
             // Assets
             if (model.Name.StartsWith("AEG") || model.Name.StartsWith("aeg"))
             {
-                var textureAsset = ResourceLocator.GetAssetTextureVP(Editor.Project, model.Name);
+                var textureAsset = PathBuilder.GetAssetTextureVP(Editor.Project, model.Name);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -192,7 +192,7 @@ public class MapResourceHandler
         // AAT
         if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
-            var textureAsset = ResourceLocator.GetCommonCharacterTextureVP(Editor.Project, "common_body");
+            var textureAsset = PathBuilder.GetCommonCharacterTextureVP(Editor.Project, "common_body");
 
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);
@@ -201,7 +201,7 @@ public class MapResourceHandler
         // SYSTEX
         if (Editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
         {
-            var textureAsset = ResourceLocator.GetSystemTextureVP(Editor.Project, "systex");
+            var textureAsset = PathBuilder.GetSystemTextureVP(Editor.Project, "systex");
 
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);

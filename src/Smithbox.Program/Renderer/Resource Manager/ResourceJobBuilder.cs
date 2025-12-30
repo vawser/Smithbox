@@ -97,7 +97,7 @@ public class ResourceJobBuilder
         ResourceManager.InFlightFiles.Add(virtualPath);
 
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
-        var relativePath = ResourceLocator.GetRelativePath(curProject, virtualPath);
+        var relativePath = PathBuilder.GetRelativePath(curProject, virtualPath);
 
         IResourceLoadPipeline pipeline;
 
@@ -162,7 +162,7 @@ public class ResourceJobBuilder
         ResourceManager.InFlightFiles.Add(virtualPath);
 
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
-        var absPath = ResourceLocator.GetAbsolutePath(curProject, virtualPath);
+        var absPath = PathBuilder.GetAbsolutePath(curProject, virtualPath);
 
         IResourceLoadPipeline pipeline;
 

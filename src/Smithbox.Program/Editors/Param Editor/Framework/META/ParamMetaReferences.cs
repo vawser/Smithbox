@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -362,7 +363,7 @@ public static class ParamMetaReferences
         UIHelper.Tooltip("View this model in the Model Editor, loading it automatically.");
     }
 
-    private static List<string> AssetList;
+    private static List<FileDictionaryEntry> AssetList;
 
     // Supports: ER, AC6
     public static void AssetGeometryParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
@@ -385,18 +386,54 @@ public static class ParamMetaReferences
 
             var columnWidth = ImGui.GetColumnWidth();
 
-            if(AssetList == null)
-                AssetList = ResourceListLocator.GetObjModels(editor.Project);
-
-            if (AssetList.Contains(assetID.ToLower()) && assetID != "")
+            if (AssetList == null)
             {
-                var aliasName = AliasHelper.GetAssetAlias(editor.Project, assetID.ToLower());
-
-                if (ImGui.Button($"View Model: {assetID}", DPI.WholeWidthButton(columnWidth, 24)))
+                if (editor.Project.ProjectType is ProjectType.DS1)
                 {
-                    EditorCommandQueue.AddCommand($"model/load/{assetID}/Asset");
+                    AssetList = editor.Project.FileDictionary.Entries
+                        .Where(e => e.Folder.StartsWith($"/obj"))
+                        .Where(e => e.Extension == "objbnd")
+                        .ToList();
                 }
-                UIHelper.WideTooltip($"{assetID}: {aliasName}");
+                else if (editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                {
+                    AssetList = editor.Project.FileDictionary.Entries
+                        .Where(e => e.Folder.StartsWith($"/model/obj"))
+                        .Where(e => e.Extension == "bnd")
+                        .ToList();
+                }
+                else if (editor.Project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+                {
+                    AssetList = editor.Project.FileDictionary.Entries
+                        .Where(e => e.Folder.StartsWith($"/obj"))
+                        .Where(e => e.Extension == "objbnd")
+                        .ToList();
+                }
+                else if (editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                {
+                    AssetList = editor.Project.FileDictionary.Entries
+                        .Where(e => e.Folder.StartsWith($"/asset"))
+                        .Where(e => e.Extension == "geombnd")
+                        .Where(e => !e.Archive.Contains("sd"))
+                        .ToList();
+                }
+            }
+
+            if (assetID != "")
+            {
+                foreach (var entry in AssetList)
+                {
+                    if (entry.Filename.ToLower() == assetID.ToLower())
+                    {
+                        var aliasName = AliasHelper.GetAssetAlias(editor.Project, assetID.ToLower());
+
+                        if (ImGui.Button($"View Model: {assetID}", DPI.WholeWidthButton(columnWidth, 24)))
+                        {
+                            EditorCommandQueue.AddCommand($"model/load/{assetID}/Asset");
+                        }
+                        UIHelper.WideTooltip($"{assetID}: {aliasName}");
+                    }
+                }
             }
         }
     }
