@@ -19,28 +19,27 @@ public static class ModelLocator
 
     public static string MapModelNameToAssetName(ProjectEntry project, string mapid, string modelname)
     {
-        if (project.ProjectType == ProjectType.DS1 || project.ProjectType == ProjectType.DS1R)
-            return $@"{modelname}A{mapid.Substring(1, 2)}";
-
-        if (project.ProjectType == ProjectType.DES)
+        if (project.ProjectType is ProjectType.DES)
             return $@"{modelname}";
 
-        if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2 || project.ProjectType == ProjectType.ACFA || project.ProjectType == ProjectType.ACV || project.ProjectType == ProjectType.ACVD)
+        if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            return $@"{modelname}A{mapid.Substring(1, 2)}";
+
+        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             return modelname;
 
         return $@"{mapid}_{modelname.Substring(1)}";
     }
 
-    // For Model Editor
     public static string GetMapModelName(ProjectEntry project, string mapid, string modelname)
     {
-        if (project.ProjectType == ProjectType.DS1 || project.ProjectType == ProjectType.DS1R)
-            return $@"{modelname}A{mapid.Substring(1, 2)}";
-
-        if (project.ProjectType == ProjectType.DES)
+        if (project.ProjectType is ProjectType.DES)
             return $@"{modelname}";
 
-        if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2 || project.ProjectType == ProjectType.ACFA || project.ProjectType == ProjectType.ACV || project.ProjectType == ProjectType.ACVD)
+        if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            return $@"{modelname}A{mapid.Substring(1, 2)}";
+
+        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             return modelname;
 
         return $@"m{modelname.Substring(1)}";
