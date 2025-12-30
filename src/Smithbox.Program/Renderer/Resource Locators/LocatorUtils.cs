@@ -88,52 +88,6 @@ public static class LocatorUtils
         return success;
     }
 
-    public static List<string> GetAssetFiles(ProjectEntry project, string paramDir, string paramExt, bool ignoreProject = false)
-    {
-        try
-        {
-            HashSet<string> fileList = new();
-            List<string> ret = new();
-
-            // ROOT
-            var paramFiles = Directory.GetFileSystemEntries(Path.Join(project.DataPath, paramDir), $@"*{paramExt}")
-                .ToList();
-            foreach (var f in paramFiles)
-            {
-                var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
-                ret.Add(name);
-                fileList.Add(name);
-            }
-
-            // PROJECT
-            if (!ignoreProject)
-            {
-                if (project.ProjectPath != null && Directory.Exists(Path.Join(project.ProjectPath, paramDir)))
-                {
-                    paramFiles = Directory.GetFileSystemEntries(Path.Join(project.ProjectPath, paramDir), $@"*{paramExt}").ToList();
-                    foreach (var f in paramFiles)
-                    {
-                        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
-                        if (!fileList.Contains(name))
-                        {
-                            ret.Add(name);
-                            fileList.Add(name);
-                        }
-                    }
-                }
-            }
-
-            return ret;
-        }
-        catch (DirectoryNotFoundException e)
-        {
-            TaskLogs.AddLog($"[Smithbox] Failed to find directory: {paramDir}", LogLevel.Error, LogPriority.High, e);
-
-            // Game likely isn't UXM unpacked
-            return new List<string>();
-        }
-    }
-
     public static string GetAssetPath(ProjectEntry project, string relpath)
     {
         if (project.ProjectPath != null)
@@ -144,62 +98,6 @@ public static class LocatorUtils
         }
 
         return Path.Join(project.DataPath, relpath);
-    }
-    public static string GetAssetPath_CollisionHack(string relpath)
-    {
-        return Path.Join(CFG.Current.PTDE_Collision_Root, relpath);
-    }
-
-    public static bool CheckFilesExpanded(string gamepath, ProjectType game)
-    {
-        if (game is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
-        {
-            if (!Directory.Exists(Path.Join(gamepath, "map")))
-                return false;
-
-            if (!Directory.Exists(Path.Join(gamepath, "asset")))
-                return false;
-        }
-
-        if (game is ProjectType.DS1 or ProjectType.DS3 or ProjectType.SDT)
-        {
-            if (!Directory.Exists(Path.Join(gamepath, "map")))
-                return false;
-
-            if (!Directory.Exists(Path.Join(gamepath, "obj")))
-                return false;
-        }
-
-        if (game is ProjectType.DS2S or ProjectType.DS2)
-        {
-            if (!Directory.Exists(Path.Join(gamepath, "map")))
-                return false;
-
-            if (!Directory.Exists(Path.Join(gamepath, "model", "obj")))
-                return false;
-        }
-
-        if (game is ProjectType.ACV or ProjectType.ACVD)
-        {
-            if (!Directory.Exists(Path.Join(gamepath, "model", "map")))
-                return false;
-
-            if (!Directory.Exists(Path.Join(gamepath, "model", "obj")))
-                return false;
-        }
-
-        return true;
-    }
-
-    public static bool FileExists(ProjectEntry project, string relpath)
-    {
-        if (project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, relpath)))
-            return true;
-
-        if (File.Exists(Path.Join(project.DataPath, relpath)))
-            return true;
-
-        return false;
     }
 
     public static string GetOverridenFilePath(ProjectEntry project, string relpath)
@@ -215,8 +113,4 @@ public static class LocatorUtils
 
         return null;
     }
-
-
-
-
 }

@@ -236,7 +236,7 @@ public class ModelUniverse
 
                 if (mapID != null)
                 {
-                    foreach (ResourceDescriptor asset in PathBuilder.GetMapTextureVPs(Editor.Project, mapID))
+                    foreach (ResourceDescriptor asset in TextureLocator.GetMapTextureVirtualPaths(Editor.Project, mapID))
                     {
                         if (asset.IsValid())
                             LoadList_Map_Texture.Add(asset);
@@ -251,13 +251,13 @@ public class ModelUniverse
             if (modelName.StartsWith('c'))
             {
                 // TPF
-                var textureAsset = PathBuilder.GetCharacterTextureVP(Editor.Project, modelName, false);
+                var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, modelName, false);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
 
                 // BND
-                textureAsset = PathBuilder.GetCharacterTextureVP(Editor.Project, modelName, true);
+                textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, modelName, true);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
@@ -269,7 +269,7 @@ public class ModelUniverse
         {
             if (modelName.StartsWith('o'))
             {
-                var textureAsset = PathBuilder.GetObjectTextureVP(Editor.Project, modelName);
+                var textureAsset = TextureLocator.GetObjectTextureVirtualPath(Editor.Project, modelName);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -278,7 +278,7 @@ public class ModelUniverse
             // Assets
             if (modelName.StartsWith("AEG") || modelName.StartsWith("aeg"))
             {
-                var textureAsset = PathBuilder.GetAssetTextureVP(Editor.Project, modelName);
+                var textureAsset = TextureLocator.GetAssetTextureVirtualPath(Editor.Project, modelName);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -294,7 +294,7 @@ public class ModelUniverse
             modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
             modelName.StartsWith("wp") || modelName.StartsWith("WP"))
             {
-                var textureAsset = PathBuilder.GetPartTextureVP(Editor.Project, modelName);
+                var textureAsset = TextureLocator.GetPartTextureVirtualPath(Editor.Project, modelName);
 
                 if (textureAsset.IsValid())
                     LoadList_Part_Texture.Add(textureAsset);
@@ -306,7 +306,7 @@ public class ModelUniverse
         {
             if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
-                var textureAsset = PathBuilder.GetCommonCharacterTextureVP(Editor.Project, "common_body");
+                var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(Editor.Project, "common_body");
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -315,7 +315,7 @@ public class ModelUniverse
             // SYSTEX
             if (Editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
             {
-                var textureAsset = PathBuilder.GetSystemTextureVP(Editor.Project, "systex");
+                var textureAsset = TextureLocator.GetSystexTextureVirtualPath(Editor.Project, "systex");
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);

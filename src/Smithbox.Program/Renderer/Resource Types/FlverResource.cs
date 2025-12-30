@@ -314,7 +314,7 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
-        string textureVirtPath = PathBuilder.GetTextureVP(VirtPath, path.ToLower());
+        string textureVirtPath = TextureLocator.GetFlverTextureVirtualPath(VirtPath, path.ToLower());
 
         if (!dest.TextureResourceFilled[(int)textureType])
         {

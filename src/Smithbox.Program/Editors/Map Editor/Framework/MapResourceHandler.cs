@@ -34,7 +34,7 @@ public class MapResourceHandler
     {
         Editor = editor;
         MapID = mapId;
-        AdjustedMapID = MapLocator.GetAssetMapID(Editor.Project, MapID);
+        AdjustedMapID = PathBuilder.GetAssetMapID(Editor.Project, MapID);
     }
 
     public async Task<bool> ReadMap(string mapid)
@@ -58,13 +58,21 @@ public class MapResourceHandler
             var chrId = CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID;
 
             var modelAsset = ModelLocator.GetChrModel(Editor.Project, chrId, chrId);
-            var textureAsset = TextureLocator.GetChrTextures(Editor.Project, chrId);
 
             if (modelAsset.IsValid())
                 LoadList_Character_Model.Add(modelAsset);
 
+            // TPF
+            var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, chrId, false);
+
             if (textureAsset.IsValid())
-                LoadList_Character_Texture.Add(textureAsset);
+                LoadList_Character_Model.Add(textureAsset);
+
+            // BND
+            textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, chrId, true);
+
+            if (textureAsset.IsValid())
+                LoadList_Character_Model.Add(textureAsset);
         }
     }
 
@@ -145,7 +153,7 @@ public class MapResourceHandler
     public void SetupTexturelLoadLists()
     {
         // MAP
-        foreach (ResourceDescriptor asset in PathBuilder.GetMapTextureVPs(Editor.Project, AdjustedMapID))
+        foreach (ResourceDescriptor asset in TextureLocator.GetMapTextureVirtualPaths(Editor.Project, AdjustedMapID))
         {
             if (asset.IsValid())
                 LoadList_Map_Texture.Add(asset);
@@ -158,13 +166,13 @@ public class MapResourceHandler
             if (model.Name.StartsWith('c'))
             {
                 // TPF
-                var textureAsset = PathBuilder.GetCharacterTextureVP(Editor.Project, model.Name, false);
+                var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, model.Name, false);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
     
                 // BND
-                textureAsset = PathBuilder.GetCharacterTextureVP(Editor.Project, model.Name, true);
+                textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, model.Name, true);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
@@ -173,7 +181,7 @@ public class MapResourceHandler
             // Object
             if (model.Name.StartsWith('o'))
             {
-                var textureAsset = PathBuilder.GetObjectTextureVP(Editor.Project, model.Name);
+                var textureAsset = TextureLocator.GetObjectTextureVirtualPath(Editor.Project, model.Name);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -182,7 +190,7 @@ public class MapResourceHandler
             // Assets
             if (model.Name.StartsWith("AEG") || model.Name.StartsWith("aeg"))
             {
-                var textureAsset = PathBuilder.GetAssetTextureVP(Editor.Project, model.Name);
+                var textureAsset = TextureLocator.GetAssetTextureVirtualPath(Editor.Project, model.Name);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -192,7 +200,7 @@ public class MapResourceHandler
         // AAT
         if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
-            var textureAsset = PathBuilder.GetCommonCharacterTextureVP(Editor.Project, "common_body");
+            var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(Editor.Project, "common_body");
 
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);
@@ -201,7 +209,7 @@ public class MapResourceHandler
         // SYSTEX
         if (Editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
         {
-            var textureAsset = PathBuilder.GetSystemTextureVP(Editor.Project, "systex");
+            var textureAsset = TextureLocator.GetSystexTextureVirtualPath(Editor.Project, "systex");
 
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);

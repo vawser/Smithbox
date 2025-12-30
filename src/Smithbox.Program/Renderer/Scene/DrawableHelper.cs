@@ -36,7 +36,7 @@ public static class DrawableHelper
         var isConnectCol = false;
         var filt = RenderFilter.All;
 
-        var amapid = MapLocator.GetAssetMapID(curProject, map.Name);
+        var amapid = PathBuilder.GetAssetMapID(curProject, map.Name);
 
         ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
         if (modelname.StartsWith("m", StringComparison.CurrentCultureIgnoreCase))

@@ -9,678 +9,279 @@ namespace StudioCore.Renderer;
 
 public static class TextureLocator
 {
+    public static readonly char sl = Path.DirectorySeparatorChar;
 
-
-    public static string GetChrTexturePath(ProjectEntry project, string chrid, bool isLowDetail = false)
+    // These are for getting the virtual pathes to feed into the resource manager.
+    // Remember: AssetVirtualPath is for tpf.dcx, AssetArchiveVirtualPath is for texbnd.dcx
+    public static List<ResourceDescriptor> GetMapTextureVirtualPaths(ProjectEntry project, string mapID)
     {
-        var overrideFilePath = "";
-
-        if (project.ProjectType is ProjectType.DES)
-        {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", chrid, $"{chrid}.tpf"));
-        }
-
-        if (project.ProjectType is ProjectType.DS1)
-        {
-            var path = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", chrid, $"{chrid}.tpf"));
-            if (path != null)
-                return path;
-
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrid}.chrbnd"));
-        }
+        List<ResourceDescriptor> ads = new();
 
         if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("model", "chr", $"{chrid}.texbnd"));
+            ResourceDescriptor t = new();
+            t.AssetArchiveVirtualPath = $@"map/tex/{mapID}/tex";
+            ads.Add(t);
         }
-
-        if (project.ProjectType is ProjectType.DS1R)
+        else if (project.ProjectType is ProjectType.DES)
         {
-            // TODO: Some textures require getting chrtpfbhd from chrbnd, then using it with chrtpfbdt in chr folder.
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrid}.chrbnd.dcx"));
+            //var mid = mapID.Substring(0, 3);
+            //var paths = Directory.GetFileSystemEntries(Path.Join(project.DataPath, "map", mid), "*.tpf.dcx");
+            //foreach (var path in paths)
+            //{
+            //    ResourceDescriptor ad = new();
+            //    ad.AssetPath = path;
+            //    var tid = Path.GetFileNameWithoutExtension(path).Substring(4, 4);
+            //    ad.AssetVirtualPath = $@"map/tex/{mid}/{tid}";
+            //    ads.Add(ad);
+            //}
         }
-
-        if (project.ProjectType is ProjectType.BB)
+        else
         {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrid}.chrbnd.dcx"));
-        }
+            var mid = mapID.Substring(0, 3);
 
-        if (project.ProjectType is ProjectType.DS3 or ProjectType.SDT)
-        {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrid}.texbnd.dcx"));
-        }
-
-        if (project.ProjectType is ProjectType.ER or ProjectType.NR)
-        {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrid}_h.texbnd.dcx"));
-
-            if (isLowDetail)
+            if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
-                overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrid}_l.texbnd.dcx"));
+
+            }
+            else
+            {
+                ResourceDescriptor t0000 = new();
+                t0000.AssetArchiveVirtualPath = $@"map/tex/{mid}/0000";
+                ads.Add(t0000);
+
+                ResourceDescriptor t0001 = new();
+                t0001.AssetArchiveVirtualPath = $@"map/tex/{mid}/0001";
+                ads.Add(t0001);
+
+                ResourceDescriptor t0002 = new();
+                t0002.AssetArchiveVirtualPath = $@"map/tex/{mid}/0002";
+                ads.Add(t0002);
+
+                ResourceDescriptor t0003 = new();
+                t0003.AssetArchiveVirtualPath = $@"map/tex/{mid}/0003";
+                ads.Add(t0003);
+            }
+
+            if (project.ProjectType is ProjectType.DS1R)
+            {
+                ResourceDescriptor env = new();
+                env.AssetArchiveVirtualPath = $@"map/tex/{mid}/env";
+                ads.Add(env);
+            }
+            else if (project.ProjectType is ProjectType.BB or ProjectType.DS3)
+            {
+                ResourceDescriptor env = new();
+                env.AssetVirtualPath = $@"map/tex/{mid}/env";
+                ads.Add(env);
             }
         }
 
-        if (project.ProjectType is ProjectType.AC6)
-        {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrid}.texbnd.dcx"));
-
-            if (isLowDetail)
-            {
-                overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrid}_l.texbnd.dcx"));
-            }
-        }
-
-        if (overrideFilePath != null)
-        {
-            return overrideFilePath;
-        }
-
-        return null;
+        return ads;
     }
 
-    public static ResourceDescriptor GetChrTextures(ProjectEntry project, string chrid, bool isLowDetail = false)
+
+    public static ResourceDescriptor GetCharacterTextureVirtualPath(ProjectEntry project, string id, bool binder = false, bool lowDetail = false)
     {
-        var path = "";
         ResourceDescriptor ad = new();
-        ad.AssetArchiveVirtualPath = null;
+
         ad.AssetPath = null;
+        ad.AssetVirtualPath = null;
+        ad.AssetArchiveVirtualPath = null;
 
         if (project.ProjectType is ProjectType.DES)
         {
-            path = GetChrTexturePath(project, chrid);
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetVirtualPath = $@"chr/{chrid}/tex";
-            }
+            ad.AssetVirtualPath = $@"chr/{id}/tex";
         }
-        else if (project.ProjectType is ProjectType.DS1)
+        else if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB)
         {
-            path = GetChrTexturePath(project, chrid);
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                if (path.EndsWith(".chrbnd"))
-                    ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
-                else
-                    ad.AssetVirtualPath = $@"chr/{chrid}/tex";
-            }
-        }
-        else if (project.ProjectType is ProjectType.DS1R)
-        {
-            // TODO: Some textures require getting chrtpfbhd from chrbnd, then using it with chrtpfbdt in chr folder.
-            path = GetChrTexturePath(project, chrid);
-            if (path != null)
-            {
-                ad = new ResourceDescriptor();
-                ad.AssetPath = path;
-
-                if (path.EndsWith(".chrbnd.dcx"))
-                    ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
-                else
-                    ad.AssetVirtualPath = $@"chr/{chrid}/tex";
-            }
-        }
-        else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            path = GetChrTexturePath(project, chrid);
-            if (path != null)
-            {
-                ad = new ResourceDescriptor();
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
-            }
-        }
-        else if (project.ProjectType is ProjectType.BB)
-        {
-            path = GetChrTexturePath(project, chrid);
-
-            if (path != null)
-            {
-                ad.AssetPath = path;
-
-                if (path.EndsWith(".chrbnd.dcx"))
-                    ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
-                else
-                    ad.AssetVirtualPath = $@"chr/{chrid}/tex";
-            }
-        }
-        else if (project.ProjectType is ProjectType.DS3 or ProjectType.SDT)
-        {
-            path = GetChrTexturePath(project, chrid);
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
-            }
-        }
-        else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
-        {
-            path = GetChrTexturePath(project, chrid);
-
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
-
-                if (isLowDetail)
-                {
-                    ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex/low";
-                }
-            }
-        }
-        else if (project.ProjectType is ProjectType.AC6)
-        {
-            path = GetChrTexturePath(project, chrid);
-
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
-
-                if (isLowDetail)
-                {
-                    ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex/low";
-                }
-            }
-        }
-
-        return ad;
-    }
-
-    public static ResourceDescriptor GetEneTextureContainer(ProjectEntry project, string ene)
-    {
-        ResourceDescriptor ad = new();
-        ad.AssetPath = null;
-        ad.AssetArchiveVirtualPath = null;
-        string path = null;
-
-        if (project.ProjectType == ProjectType.ACFA)
-        {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("model", "ene", ene, $"{ene}_t.bnd"));
-        }
-        else if (project.ProjectType == ProjectType.ACV || project.ProjectType == ProjectType.ACVD)
-        {
-            ad.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("model", "ene", ene, $"{ene}.tpf.dcx"));
-            ad.AssetVirtualPath = $@"ene/{ene}/tex";
-            return ad;
-        }
-
-        if (path != null)
-        {
-            ad.AssetPath = path;
-            ad.AssetArchiveVirtualPath = $@"ene/{ene}/tex";
-        }
-
-        return ad;
-    }
-
-    public static ResourceDescriptor GetObjTextureContainer(ProjectEntry project, string obj)
-    {
-        ResourceDescriptor ad = new();
-        ad.AssetPath = null;
-        ad.AssetArchiveVirtualPath = null;
-        string path = null;
-
-        if (project.ProjectType == ProjectType.DS1)
-        {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("obj", $"{obj}.objbnd"));
-        }
-        else if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
-        {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("model", "obj", $"{obj}.bnd"));
-        }
-        else if (project.ProjectType is ProjectType.DES or ProjectType.DS1R or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT)
-        {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("obj", $"{obj}.objbnd.dcx"));
-        }
-        else if (project.ProjectType is ProjectType.ACFA)
-        {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("model", "obj", obj, $"{obj}_t.bnd"));
-        }
-        else if (project.ProjectType is ProjectType.ACV or ProjectType.ACVD)
-        {
-            ad.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("model", "obj", obj, $"{obj}.tpf.dcx"));
-            ad.AssetVirtualPath = $@"obj/{obj}/tex";
-            return ad;
-        }
-
-        if (path != null)
-        {
-            ad.AssetPath = path;
-            ad.AssetArchiveVirtualPath = $@"obj/{obj}/tex";
-        }
-
-        return ad;
-    }
-
-    public static ResourceDescriptor GetAetTexture(ProjectEntry project, string aetid)
-    {
-        ResourceDescriptor ad = new();
-        ad.AssetPath = null;
-        ad.AssetArchiveVirtualPath = null;
-        string path;
-
-        if (project.ProjectType is ProjectType.ER or ProjectType.NR)
-        {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("asset", "aet", aetid.Substring(0, 6), $"{aetid}.tpf.dcx"));
-        }
-        else if (project.ProjectType is ProjectType.AC6)
-        {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("asset", "environment", "texture", $"{aetid}.tpf.dcx"));
-        }
-        else
-        {
-            throw new NotSupportedException();
-        }
-
-        ad.AssetPath = path;
-        ad.AssetVirtualPath = $@"aet/{aetid}/tex";
-
-        return ad;
-    }
-
-    public static ResourceDescriptor GetAatTexture(ProjectEntry project, string aatname)
-    {
-        ResourceDescriptor ad = new();
-        ad.AssetPath = null;
-        ad.AssetArchiveVirtualPath = null;
-        string path;
-
-        if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{aatname}.tpf.dcx"));
-        else
-            throw new NotSupportedException();
-
-        if (path != null)
-        {
-            ad.AssetPath = path;
-            ad.AssetVirtualPath = $@"aat/{aatname}/tex";
-        }
-
-        return ad;
-    }
-
-    public static ResourceDescriptor GetSystexTexture(ProjectEntry project, string systexname)
-    {
-        ResourceDescriptor ad = new();
-        ad.AssetPath = null;
-        ad.AssetArchiveVirtualPath = null;
-        string path;
-
-        if (project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
-        {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("other", $"{systexname}.tpf.dcx"));
-        }
-        else
-        {
-            throw new NotSupportedException();
-        }
-
-        if (path != null)
-        {
-            ad.AssetPath = path;
-            ad.AssetVirtualPath = $@"systex/{systexname}/tex";
-        }
-
-        return ad;
-    }
-
-    public static ResourceDescriptor GetPartTextureContainer(ProjectEntry project, string partsId, bool isLowDetail = false)
-    {
-        ResourceDescriptor ad = new();
-        ad.AssetArchiveVirtualPath = null;
-        ad.AssetPath = null;
-
-        if (project.ProjectType == ProjectType.AC6)
-        {
-            var path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{partsId}.partsbnd.dcx"));
-
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
-
-                if (isLowDetail)
-                {
-                    ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
-                }
-            }
-        }
-        else if (project.ProjectType is ProjectType.ER  or ProjectType.NR)
-        {
-            var path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{partsId}.partsbnd.dcx"));
-
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
-
-                if (isLowDetail)
-                {
-                    ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
-                }
-            }
-
-            if (partsId == "common_body")
-            {
-                path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{partsId}.tpf.dcx"));
-
-                if (path != null)
-                {
-                    ad.AssetPath = path;
-                    ad.AssetVirtualPath = $@"parts/{partsId}/tex";
-                    ad.AssetArchiveVirtualPath = null;
-                }
-            }
-        }
-        else if (project.ProjectType == ProjectType.DS3 || project.ProjectType == ProjectType.SDT)
-        {
-            var path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{partsId}.partsbnd.dcx"));
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
-
-                if (isLowDetail)
-                {
-                    ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
-                }
-            }
-        }
-        else if (project.ProjectType == ProjectType.BB)
-        {
-            var path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{partsId}.partsbnd.dcx"));
-            if (path != null)
-            {
-                ad.AssetPath = path;
-
-                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
-
-                if (isLowDetail)
-                {
-                    ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
-                }
-            }
-        }
-        else if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
-        {
-            var partType = "";
-            switch (partsId.Substring(0, 2))
-            {
-                case "as":
-                    partType = "accessories";
-                    break;
-                case "am":
-                    partType = "arm";
-                    break;
-                case "bd":
-                    partType = "body";
-                    break;
-                case "fa":
-                case "fc":
-                case "fg":
-                    partType = "face";
-                    break;
-                case "hd":
-                    partType = "head";
-                    break;
-                case "leg":
-                    partType = "leg";
-                    break;
-                case "sd":
-                    partType = "shield";
-                    break;
-                case "wp":
-                    partType = "weapon";
-                    break;
-            }
-
-            var path = LocatorUtils.GetOverridenFilePath(project, Path.Join("model", "parts", partType, $"{partsId}.bnd"));
-
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
-            }
-        }
-        else if (project.ProjectType == ProjectType.DS1R)
-        {
-            var path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{partsId}.partsbnd.dcx"));
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
-
-                if (isLowDetail)
-                {
-                    ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
-                }
-            }
-        }
-        else if (project.ProjectType == ProjectType.DS1)
-        {
-            var path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{partsId}.partsbnd"));
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
-            }
-        }
-        else if (project.ProjectType == ProjectType.DES)
-        {
-            var path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{partsId}.partsbnd.dcx"));
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
-            }
-        }
-
-        return ad;
-    }
-
-    // Special case for AC6 where the parts use both the partsbnd and a loose tpf for textures
-    public static ResourceDescriptor GetPartTpf_Ac6(ProjectEntry project, string partsId)
-    {
-        ResourceDescriptor ad = new();
-        ad.AssetArchiveVirtualPath = null;
-        ad.AssetPath = null;
-
-        if (project.ProjectType == ProjectType.AC6)
-        {
-            string path;
-            if (partsId.Length >= 2 && partsId.Substring(0, 2) == "wp")
-            {
-                string id;
-                if (partsId.EndsWith("_l"))
-                {
-                    id = partsId[..^2].Split("_").Last();
-                    path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"wp_{id}_l.tpf.dcx"));
-                }
-                else
-                {
-                    id = partsId.Split("_").Last();
-                    path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"wp_{id}.tpf.dcx"));
-                }
-            }
+            if (binder)
+                ad.AssetArchiveVirtualPath = $@"chr/{id}/tex";
             else
-            {
-                path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{partsId}_u.tpf.dcx"));
-            }
+                ad.AssetVirtualPath = $@"chr/{id}/tex";
+        }
+        else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.SDT)
+        {
+            ad.AssetArchiveVirtualPath = $@"chr/{id}/tex";
+        }
+        else if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        {
+            ad.AssetArchiveVirtualPath = $@"chr/{id}/tex";
 
-            if (path != null)
+            if (lowDetail)
             {
-                ad.AssetPath = path;
-                ad.AssetVirtualPath = $@"parts/{partsId}/tex/tpf";
+                ad.AssetArchiveVirtualPath = $@"chr/{id}/tex/low";
             }
         }
 
         return ad;
     }
 
-    // TPF
-    public static string GetAssetTextureContainerPath(ProjectEntry project, string resourceName)
+    public static ResourceDescriptor GetCharacterCommonTextureVirtualPath(ProjectEntry project, string id, bool binder = false, bool lowDetail = false)
     {
-        var overrideFilePath = "";
-
-        if (project.ProjectType is ProjectType.AC6)
-        {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("asset", "environment", "texture", $"{resourceName}.tpf.dcx"));
-        }
-
-        if (project.ProjectType is ProjectType.ER or ProjectType.NR)
-        {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("asset", "aet", resourceName.Substring(0, 6), $"{resourceName}.tpf.dcx"));
-        }
-
-        if (overrideFilePath != null)
-        {
-            return overrideFilePath;
-        }
-
-        return null;
-    }
-
-    public static ResourceDescriptor GetMenuTextureContainer(ProjectEntry project, string resourceName)
-    {
-        var path = "";
         ResourceDescriptor ad = new();
-        ad.AssetVirtualPath = null;
+
         ad.AssetPath = null;
+        ad.AssetVirtualPath = null;
+        ad.AssetArchiveVirtualPath = null;
 
-        path = GetMenuTextureContainerPath(project, resourceName);
-
-        if (path != null)
-        {
-            ad.AssetPath = path;
-
-            if (path.Contains(".tpfbhd"))
-            {
-                ad.AssetArchiveVirtualPath = $@"menu/{resourceName}/tex";
-            }
-            else
-            {
-                ad.AssetVirtualPath = $@"menu/{resourceName}/tex";
-            }
-        }
+        ad.AssetVirtualPath = $@"aat/{id}/tex";
 
         return ad;
     }
 
-    public static string GetMenuTextureContainerPath(ProjectEntry project, string resourceName)
+    public static ResourceDescriptor GetObjectTextureVirtualPath(ProjectEntry project, string id, bool binder = false, bool lowDetail = false)
     {
-        var overrideFilePath = "";
-
-        // TPF
-        if (project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.NR)
-        {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("menu", "hi", $"{resourceName}.tpf.dcx"));
-        }
-
-        if (project.ProjectType is ProjectType.DS3)
-        {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("menu", $"{resourceName}.tpf.dcx"));
-        }
-
-        if (project.ProjectType is ProjectType.DS1R)
-        {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("menu", $"{resourceName}.tpf.dcx"));
-        }
-
-        if (overrideFilePath != null)
-        {
-            return overrideFilePath;
-        }
-        // TPFBHD
-        else
-        {
-            if (project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.NR)
-            {
-                overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("menu", "hi", $"{resourceName}.tpfbhd"));
-            }
-
-            if (project.ProjectType is ProjectType.DS3)
-            {
-                overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("menu", $"{resourceName}.tpfbhd"));
-            }
-
-            if (overrideFilePath != null)
-            {
-                return overrideFilePath;
-            }
-        }
-
-        return null;
-    }
-
-    public static ResourceDescriptor GetOtherTextureContainer(ProjectEntry project, string resourceName)
-    {
-        var path = "";
         ResourceDescriptor ad = new();
-        ad.AssetVirtualPath = null;
+
         ad.AssetPath = null;
+        ad.AssetVirtualPath = null;
+        ad.AssetArchiveVirtualPath = null;
 
-        path = GetOtherTextureContainerPath(project, resourceName);
-
-        if (path != null)
-        {
-            ad.AssetPath = path;
-            ad.AssetVirtualPath = $@"other/{resourceName}/tex";
-        }
+        ad.AssetArchiveVirtualPath = $@"obj/{id}/tex";
 
         return ad;
     }
 
-    public static string GetOtherTextureContainerPath(ProjectEntry project, string resourceName)
+    public static ResourceDescriptor GetPartTextureVirtualPath(ProjectEntry project, string id, bool binder = false, bool lowDetail = false)
     {
-        var overrideFilePath = "";
-
-        overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("other", $"{resourceName}.tpf.dcx"));
-
-        if (overrideFilePath != null)
-        {
-            return overrideFilePath;
-        }
-
-        return null;
-    }
-
-    public static ResourceDescriptor GetParticleTextureContainer(ProjectEntry project, string resourceName)
-    {
-        var path = "";
         ResourceDescriptor ad = new();
-        ad.AssetVirtualPath = null;
+
         ad.AssetPath = null;
+        ad.AssetVirtualPath = null;
+        ad.AssetArchiveVirtualPath = null;
 
-        path = GetParticleTextureContainerPath(project, resourceName);
-
-        if (path != null)
-        {
-            ad.AssetPath = path;
-            ad.AssetArchiveVirtualPath = $@"sfx/{resourceName}/tex";
-        }
+        ad.AssetArchiveVirtualPath = $@"parts/{id}/tex";
 
         return ad;
     }
 
-    public static string GetParticleTextureContainerPath(ProjectEntry project, string resourceName)
+    public static ResourceDescriptor GetAssetTextureVirtualPath(ProjectEntry project, string id, bool binder = false, bool lowDetail = false)
     {
-        var overrideFilePath = "";
-        var fileExt = @".ffxbnd.dcx";
+        ResourceDescriptor ad = new();
 
-        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        ad.AssetPath = null;
+        ad.AssetVirtualPath = null;
+        ad.AssetArchiveVirtualPath = null;
+
+        var name = id.Replace("AEG", "AET");
+        if (name.Contains("aeg"))
         {
-            fileExt = @".ffxbnd";
+            name = id.Replace("aeg", "aet");
         }
 
-        overrideFilePath = LocatorUtils.GetOverridenFilePath(project, Path.Join("sfx", $"{resourceName}{fileExt}"));
+        ad.AssetVirtualPath = $@"aet/{name}/tex";
 
-        if (overrideFilePath != null)
-        {
-            return overrideFilePath;
-        }
-
-        return null;
+        return ad;
     }
+
+    public static ResourceDescriptor GetSystexTextureVirtualPath(ProjectEntry project, string id, bool binder = false, bool lowDetail = false)
+    {
+        ResourceDescriptor ad = new();
+
+        ad.AssetPath = null;
+        ad.AssetVirtualPath = null;
+        ad.AssetArchiveVirtualPath = null;
+
+        ad.AssetVirtualPath = $@"systex/{id}/tex";
+
+        return ad;
+    }
+
+    /// <summary>
+    /// Used in FlverResource
+    /// </summary>
+    /// <param name="texpath"></param>
+    /// <returns></returns>
+    public static string GetFlverTextureVirtualPath(string virtPath, string texpath)
+    {
+        var type = "";
+
+        if (virtPath.Contains("/"))
+        {
+            type = virtPath.Split("/")[0];
+        }
+
+        // Usage of the global BaseEditor here:
+        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        texpath = texpath.Replace('\\', sl);
+
+        // For these projects, return the texture name only
+        if (curProject.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        {
+            // HACK: Only include texture name and not full virtual path
+            return Path.GetFileNameWithoutExtension(texpath);
+        }
+
+        // MAP Texture
+        if (texpath.Contains($"{sl}map{sl}"))
+        {
+            var splits = texpath.Split(sl);
+            var mapid = splits[splits.Length - 3];
+            return $@"map/tex/{mapid}/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+
+        // CHR Texture
+        if (texpath.Contains($"{sl}chr{sl}"))
+        {
+            var splits = texpath.Split(sl);
+            var chrid = splits[splits.Length - 3];
+            return $@"chr/{chrid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+        else if (type == "chr")
+        {
+            var splits = virtPath.Split("/");
+            var chrid = splits[1];
+            return $@"chr/{chrid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+
+        // OBJ Texture
+        if (texpath.Contains($"{sl}obj{sl}"))
+        {
+            var splits = texpath.Split(sl);
+            var objid = splits[splits.Length - 3];
+            return $@"obj/{objid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+
+        // AET Texture
+        if (texpath.Contains($"{sl}aet") || texpath.StartsWith("aet"))
+        {
+            var splits = texpath.Split(sl);
+
+            var aetid = splits[splits.Length - 1].Substring(0, 10);
+
+            return $@"aet/{aetid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+
+        // AAT Texture
+        if (texpath.Contains($"{sl}aat") || texpath.StartsWith("aat"))
+        {
+            var name = Path.GetFileName(texpath);
+            return $@"aat/common_body/tex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+
+        // SYSTEX Texture
+        if (texpath.Contains($"{sl}systex") || texpath.StartsWith("systex"))
+        {
+            var name = Path.GetFileName(texpath);
+            return $@"systex/system/tex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+
+        // PARTS Texture
+        if (texpath.Contains($"{sl}parts{sl}"))
+        {
+            var splits = texpath.Split(sl);
+            var partsId = splits[splits.Length - 4]; //! FIXME is this wrong?
+            return $@"parts/{partsId}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+        else if (virtPath.StartsWith("parts"))
+        {
+            var splits = virtPath.Split("/");
+            var partsId = splits[1];
+            return $@"parts/{partsId}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+
+        return texpath;
+    }
+
 }

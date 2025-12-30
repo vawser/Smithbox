@@ -645,11 +645,17 @@ public class Universe
 
                     if (CFG.Current.Viewport_Enable_Texturing)
                     {
-                        ResourceDescriptor tasset = TextureLocator.GetChrTextures(Editor.Project, $@"c{chrid}");
-                        if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
-                        {
-                            chrsToLoad.Add(tasset);
-                        }
+                        // TPF
+                        var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, $@"c{chrid}", false);
+
+                        if (textureAsset.IsValid())
+                            chrsToLoad.Add(textureAsset);
+
+                        // BND
+                        textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, $@"c{chrid}", true);
+
+                        if (textureAsset.IsValid())
+                            chrsToLoad.Add(textureAsset);
                     }
                 }
             }

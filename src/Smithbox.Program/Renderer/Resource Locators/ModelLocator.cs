@@ -136,13 +136,18 @@ public static class ModelLocator
                 {
                     if (targetType is HavokCollisionType.High)
                     {
-                        ret.AssetPath = LocatorUtils.GetAssetPath_CollisionHack(Path.Join("map", mapid, $"{model}.hkx"));
+                        ret.AssetPath = Path.Join(
+                            CFG.Current.PTDE_Collision_Root, "map", mapid,
+                            $"{model}.hkx"); 
+
                         ret.AssetName = model;
                         ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/{model}.hkx";
                     }
                     else if (targetType is HavokCollisionType.Low)
                     {
-                        ret.AssetPath = LocatorUtils.GetAssetPath_CollisionHack(Path.Join("map", mapid, $"l{model.Substring(1)}.hkx"));
+                        ret.AssetPath = Path.Join(
+                            CFG.Current.PTDE_Collision_Root, "map", mapid, 
+                            $"l{model.Substring(1)}.hkx");
                         ret.AssetName = model;
                         ret.AssetVirtualPath = $@"map/{mapid}/{colType}/lo/l{model.Substring(1)}.hkx";
                     }
