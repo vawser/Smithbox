@@ -26,8 +26,6 @@
 - Param Editor DOC: finish syncing the AC6 meta to the leaked paramdefs (was around NpcParam)
 
 # TODO BUGS
-- Viewport BUG: DES models aren't displaying, look into why.
-
 - Map Editor BUG: fix ER NVA so saves are BP correct (currently the Write side is quite off)
 - Map Editor BUG: DS3 navmeshes position seems off in some maps (Undead Settlement)
 

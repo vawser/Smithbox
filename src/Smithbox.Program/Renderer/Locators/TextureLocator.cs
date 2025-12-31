@@ -25,16 +25,17 @@ public static class TextureLocator
         }
         else if (project.ProjectType is ProjectType.DES)
         {
-            //var mid = mapID.Substring(0, 3);
-            //var paths = Directory.GetFileSystemEntries(Path.Join(project.DataPath, "map", mid), "*.tpf.dcx");
-            //foreach (var path in paths)
-            //{
-            //    ResourceDescriptor ad = new();
-            //    ad.AssetPath = path;
-            //    var tid = Path.GetFileNameWithoutExtension(path).Substring(4, 4);
-            //    ad.AssetVirtualPath = $@"map/tex/{mid}/{tid}";
-            //    ads.Add(ad);
-            //}
+            var mid = mapID.Substring(0, 3);
+
+            foreach(var entry in project.FileDictionary.Entries)
+            {
+                if(entry.Folder == $"/map/{mid}" && entry.Extension == "tpf")
+                {
+                    ResourceDescriptor res = new();
+                    res.AssetVirtualPath = $@"map/tex/{mid}/{entry.Filename.Substring(4, 4)}";
+                    ads.Add(res);
+                }
+            }
         }
         else
         {

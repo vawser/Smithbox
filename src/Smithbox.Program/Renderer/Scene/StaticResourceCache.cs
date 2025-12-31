@@ -40,6 +40,7 @@ internal static class StaticResourceCache
         if (!s_layouts.TryGetValue(desc, out ResourceLayout p))
         {
             p = factory.CreateResourceLayout(ref desc);
+
             s_layouts.Add(desc, p);
         }
 
