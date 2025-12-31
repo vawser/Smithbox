@@ -106,7 +106,7 @@ public static class SteamGameLocator
             if (installdir != null)
             {
                 string gameFolder = Path.Combine(library, "steamapps", "common", installdir);
-                string exePath = Path.Combine(gameFolder, executableRelativePath);
+                string exePath = Path.Combine(gameFolder, executableRelativePath.Replace('\\',Path.DirectorySeparatorChar));
                 if (File.Exists(exePath))
                 {
                     // Only return the directory
