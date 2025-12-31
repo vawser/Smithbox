@@ -361,6 +361,9 @@ public class MapEditorTab
 
                 UIHelper.WrappedText("Select the install directory for your Dark Souls: Prepare to Die Edition. This will allow collision to be visible within a Dark Souls: Remastered project.");
 
+                ImGui.Checkbox("Use PTDE Collision Files", ref CFG.Current.PTDE_UseCollisionHack);
+                UIHelper.Tooltip("If enabled, and a PTDE install is set, the PTDE collision files will be loaded for collisions and navmeshes.");
+
                 ImGui.InputText("PTDE Game Directory##ptdeGameDirectory", ref CFG.Current.PTDE_Collision_Root, 255);
                 UIHelper.Tooltip("Select the directory of the Dark Souls: Prepare to Die Edition install.");
 
@@ -1817,10 +1820,6 @@ public class ViewportTab
         //---------------------------------------
         if (ImGui.CollapsingHeader("Visualization", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
-
-            ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
-
             ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
             UIHelper.Tooltip("Enabling this option will cause a selection outline to appear on selected objects.");
 
@@ -1830,7 +1829,64 @@ public class ViewportTab
             ImGui.SliderFloat("Box selection - distance threshold factor", ref CFG.Current.Viewport_BS_DistThresFactor, 1.0f, 2.0f);
             UIHelper.Tooltip("Lower = select objects closer to each other, higher = select objects farther from each other.");
 
-            ImGui.Separator();
+            ImGui.SliderFloat("Wireframe color variance", ref CFG.Current.GFX_Wireframe_Color_Variance, 0.0f, 1.0f);
+
+            if (ImGui.Button("Reset", DPI.StandardButtonSize))
+            {
+                ResetVisualisationCFG();
+            }
+            UIHelper.Tooltip("Resets all of the values within this section to their default values.");
+
+            // General
+            UIHelper.SimpleHeader("generalColoring", "General", "", UI.Current.ImGui_Default_Text_Color);
+
+            ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
+            UIHelper.Tooltip("Determine the color of the viewport background.");
+
+            ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
+            UIHelper.Tooltip("Determine the color of the selection outline.");
+
+            // Gizmos
+            UIHelper.SimpleHeader("gizmoColoring", "Gizmos", "", UI.Current.ImGui_Default_Text_Color);
+
+            ImGui.ColorEdit3("Gizmo: X Axis - base color", ref CFG.Current.GFX_Gizmo_X_BaseColor);
+            ImGui.ColorEdit3("Gizmo: X Axis - highlight color", ref CFG.Current.GFX_Gizmo_X_HighlightColor);
+
+            ImGui.ColorEdit3("Gizmo: Y Axis - base color", ref CFG.Current.GFX_Gizmo_Y_BaseColor);
+            ImGui.ColorEdit3("Gizmo: Y Axis - highlight color", ref CFG.Current.GFX_Gizmo_Y_HighlightColor);
+
+            ImGui.ColorEdit3("Gizmo: Z Axis - base color", ref CFG.Current.GFX_Gizmo_Z_BaseColor);
+            ImGui.ColorEdit3("Gizmo: Z Axis - highlight color", ref CFG.Current.GFX_Gizmo_Z_HighlightColor);
+
+            // Parts
+            UIHelper.SimpleHeader("partsColoring", "Parts", "", UI.Current.ImGui_Default_Text_Color);
+
+            var curColor = Utils.GetDecimalColor(CFG.Current.GFX_Renderable_Collision_Color);
+            if (ImGui.ColorEdit3("Collision - Color", ref curColor))
+            {
+                CFG.Current.GFX_Renderable_Collision_Color = Utils.GetRgbColor(curColor);
+            }
+
+            curColor = Utils.GetDecimalColor(CFG.Current.GFX_Renderable_ConnectCollision_Color);
+            if(ImGui.ColorEdit3("Connect Collision - Color", ref curColor))
+            {
+                CFG.Current.GFX_Renderable_ConnectCollision_Color = Utils.GetRgbColor(curColor);
+            }
+
+            curColor = Utils.GetDecimalColor(CFG.Current.GFX_Renderable_Navmesh_Color);
+            if(ImGui.ColorEdit3("Navmesh - Color", ref curColor))
+            {
+                CFG.Current.GFX_Renderable_Navmesh_Color = Utils.GetRgbColor(curColor);
+            }
+
+            curColor = Utils.GetDecimalColor(CFG.Current.GFX_Renderable_NavmeshGate_Color);
+            if(ImGui.ColorEdit3("Navmesh Gate - Color", ref curColor))
+            {
+                CFG.Current.GFX_Renderable_NavmeshGate_Color = Utils.GetRgbColor(curColor);
+            }
+
+            // Regions
+            UIHelper.SimpleHeader("regionColoring", "Regions", "", UI.Current.ImGui_Default_Text_Color);
 
             ImGui.ColorEdit3("Box region - base color", ref CFG.Current.GFX_Renderable_Box_BaseColor);
             ImGui.ColorEdit3("Box region - highlight color", ref CFG.Current.GFX_Renderable_Box_HighlightColor);
@@ -1889,25 +1945,6 @@ public class ViewportTab
 
             ImGui.ColorEdit3("Level Connector Sphere - base color", ref CFG.Current.GFX_Renderable_LevelConnectorSphere_BaseColor);
             ImGui.ColorEdit3("Level Connector - highlight color", ref CFG.Current.GFX_Renderable_LevelConnectorSphere_HighlightColor);
-
-
-            ImGui.ColorEdit3("Gizmo: X Axis - base color", ref CFG.Current.GFX_Gizmo_X_BaseColor);
-            ImGui.ColorEdit3("Gizmo: X Axis - highlight color", ref CFG.Current.GFX_Gizmo_X_HighlightColor);
-
-            ImGui.ColorEdit3("Gizmo: Y Axis - base color", ref CFG.Current.GFX_Gizmo_Y_BaseColor);
-            ImGui.ColorEdit3("Gizmo: Y Axis - highlight color", ref CFG.Current.GFX_Gizmo_Y_HighlightColor);
-
-            ImGui.ColorEdit3("Gizmo: Z Axis - base color", ref CFG.Current.GFX_Gizmo_Z_BaseColor);
-            ImGui.ColorEdit3("Gizmo: Z Axis - highlight color", ref CFG.Current.GFX_Gizmo_Z_HighlightColor);
-
-            ImGui.SliderFloat("Wireframe color variance", ref CFG.Current.GFX_Wireframe_Color_Variance, 0.0f, 1.0f);
-
-            if (ImGui.Button("Reset", DPI.StandardButtonSize))
-            {
-                ResetVisualisationCFG();
-            }
-            UIHelper.Tooltip("Resets all of the values within this section to their default values.");
-
         }
 
         //---------------------------------------
@@ -1998,6 +2035,11 @@ public class ViewportTab
         CFG.Current.Viewport_Enable_Selection_Outline = CFG.Default.Viewport_Enable_Selection_Outline;
         CFG.Current.Viewport_DefaultRender_SelectColor = CFG.Default.Viewport_DefaultRender_SelectColor;
         CFG.Current.GFX_Renderable_Default_Wireframe_Alpha = CFG.Default.GFX_Renderable_Default_Wireframe_Alpha;
+
+        CFG.Current.GFX_Renderable_Collision_Color = CFG.Default.GFX_Renderable_Collision_Color;
+        CFG.Current.GFX_Renderable_ConnectCollision_Color = CFG.Default.GFX_Renderable_ConnectCollision_Color;
+        CFG.Current.GFX_Renderable_Navmesh_Color = CFG.Default.GFX_Renderable_Navmesh_Color;
+        CFG.Current.GFX_Renderable_NavmeshGate_Color = CFG.Default.GFX_Renderable_NavmeshGate_Color;
 
         CFG.Current.GFX_Renderable_Box_BaseColor = CFG.Default.GFX_Renderable_Box_BaseColor;
         CFG.Current.GFX_Renderable_Box_HighlightColor = CFG.Default.GFX_Renderable_Box_HighlightColor;

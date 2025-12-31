@@ -63,6 +63,8 @@ public class HavokNavmeshCostGraphProvider : MeshProvider, IResourceEventListene
         _resource = (ResourceHandle<HavokNavmeshResource>)handle;
         _resource.Acquire();
         NotifyAvailable();
+
+        MeshProviderInspector.Add(_resourceName, this);
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
@@ -70,6 +72,8 @@ public class HavokNavmeshCostGraphProvider : MeshProvider, IResourceEventListene
         _resource?.Release();
         _resource = null;
         NotifyUnavailable();
+
+        MeshProviderInspector.Remove(_resourceName);
     }
 
     ~HavokNavmeshCostGraphProvider()

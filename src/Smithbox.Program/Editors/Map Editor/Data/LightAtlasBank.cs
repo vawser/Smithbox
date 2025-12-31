@@ -5,6 +5,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks.Dataflow;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -95,31 +96,33 @@ public class LightAtlasBank
 
                 try
                 {
-                    var btabData = BTAB.Read(fileData.Value);
-
-                    //btabData.Entries = new();
-
-                    foreach(var ent in map.LightAtlasParents)
+                    foreach(var parent in map.LightAtlasParents)
                     {
-                        if (ent.Name == entry.Filename)
+                        if (parent.WrappedObject.ToString() == entry.Filename)
                         {
-                            foreach (var btabEntry in ent.Children)
-                            {
+                            var btabData = BTAB.Read(fileData.Value);
 
+                            btabData.Entries.Clear();
+
+                            foreach (var btabEntry in parent.Children)
+                            {
+                                var curEntry = (BTAB.Entry)btabEntry.WrappedObject;
+
+                                btabData.Entries.Add(curEntry);
+                            }
+
+                            var fileOutput = btabData.Write();
+
+                            if (!BytePerfectHelper.Md5Equal(fileData.Value.Span, fileOutput))
+                            {
+                                applyEdit = true;
+                            }
+
+                            if (applyEdit)
+                            {
+                                Project.ProjectFS.WriteFile(entry.Path, fileOutput);
                             }
                         }
-                    }
-
-                    var fileOutput = btabData.Write();
-
-                    if (!BytePerfectHelper.Md5Equal(fileData.Value.Span, fileOutput))
-                    {
-                        applyEdit = true;
-                    }
-
-                    if (applyEdit)
-                    {
-                        Project.ProjectFS.WriteFile(entry.Path, fileOutput);
                     }
                 }
                 catch (Exception e)

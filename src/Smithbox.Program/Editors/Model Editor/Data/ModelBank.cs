@@ -1,11 +1,7 @@
 ﻿using Andre.IO.VFS;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
-using StudioCore.Editors.Common;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

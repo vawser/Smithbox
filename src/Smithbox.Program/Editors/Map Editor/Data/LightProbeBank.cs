@@ -98,31 +98,35 @@ public class LightProbeBank
 
                 try
                 {
-                    var btpbData = BTPB.Read(fileData.Value);
-
-                    //btpbData.Groups = new();
-
-                    foreach (var ent in map.LightProbeParents)
+                    foreach (var parent in map.LightProbeParents)
                     {
-                        if (ent.Name == entry.Filename)
+                        // Match the root object name to the filename
+                        if (parent.WrappedObject.ToString() == entry.Filename)
                         {
-                            foreach (var btabEntry in ent.Children)
-                            {
+                            var btpbData = BTPB.Read(fileData.Value);
 
+                            // Clear groups and then re-fill from the map container hierarchy
+                            btpbData.Groups.Clear();
+
+                            foreach (var btpbEntry in parent.Children)
+                            {
+                                var group = (BTPB.Group)btpbEntry.WrappedObject;
+
+                                btpbData.Groups.Add(group);
+                            }
+
+                            var fileOutput = btpbData.Write();
+
+                            if (!BytePerfectHelper.Md5Equal(fileData.Value.Span, fileOutput))
+                            {
+                                applyEdit = true;
+                            }
+
+                            if (applyEdit)
+                            {
+                                Project.ProjectFS.WriteFile(entry.Path, fileOutput);
                             }
                         }
-                    }
-
-                    var fileOutput = btpbData.Write();
-
-                    if (!BytePerfectHelper.Md5Equal(fileData.Value.Span, fileOutput))
-                    {
-                        applyEdit = true;
-                    }
-
-                    if (applyEdit)
-                    {
-                        Project.ProjectFS.WriteFile(entry.Path, fileOutput);
                     }
                 }
                 catch (Exception e)

@@ -1,4 +1,5 @@
 using Andre.Formats;
+using Octokit;
 using StudioCore.Application;
 using System;
 using System.Collections.Generic;
@@ -348,5 +349,31 @@ public static class ParamUtils
         }
 
         return false;
+    }
+
+    public static bool IsFxrString(string value)
+    {
+        if(value.StartsWith("f"))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static string GetFxrId(string value)
+    {
+        long newValue;
+
+        var curValue = value;
+        curValue = curValue.Replace("f", "");
+
+        var res = long.TryParse(curValue, out newValue);
+        if (res)
+        {
+            return newValue.ToString();
+        }
+
+        return value;
     }
 }

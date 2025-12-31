@@ -54,7 +54,7 @@ public class LoadBinderResourcesAction
         // Read binder
         if (Binder == null)
         {
-            BinderRelativePath = ResourceLocator.GetRelativePath(curProject, BinderVirtualPath);
+            BinderRelativePath = PathBuilder.GetRelativePath(curProject, BinderVirtualPath);
 
             var load = true;
 
@@ -233,7 +233,7 @@ public class LoadBinderResourcesAction
                 // NAVMESH
                 if (ResourceMask.HasFlag(ResourceType.Navmesh))
                 {
-                    if (LocatorUtils.IsNavmesh(curFileBinderPath))
+                    if (LocatorUtils.IsNavmesh(BinderVirtualPath, curFileBinderPath))
                     {
                         pipeline = _job.NVMNavmeshLoadPipeline;
 

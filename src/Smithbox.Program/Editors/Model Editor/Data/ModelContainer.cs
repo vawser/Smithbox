@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
@@ -7,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Threading.Tasks;
+using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -69,17 +71,6 @@ public class ModelContainer : ObjectContainer
 
     public void Load(FLVER2 flver, ModelWrapper wrapper)
     {
-        // Dummies
-        foreach (var entry in flver.Dummies)
-        {
-            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Dummy);
-            AssignDummyDrawable(newObject, wrapper);
-
-            Dummies.Add(newObject);
-            Objects.Add(newObject);
-            RootObject.AddChild(newObject);
-        }
-
         // Materials
         foreach (var entry in flver.Materials)
         {
@@ -106,7 +97,60 @@ public class ModelContainer : ObjectContainer
 
             Nodes.Add(newObject);
             Objects.Add(newObject);
-            RootObject.AddChild(newObject);
+        }
+
+        // Nodes - Parenting
+        foreach (var ent in Nodes)
+        {
+            var curNode = (FLVER.Node)ent.WrappedObject;
+
+            // Parent the node to its parent bone (if applicable)
+            if (curNode.ParentIndex != -1)
+            {
+                for (int i = 0; i < Nodes.Count; i++)
+                {
+                    var thisNode = Nodes[i];
+
+                    if (curNode.ParentIndex == i)
+                    {
+                        thisNode.AddChild(ent);
+                    }
+                }
+            }
+            // Other parent to the root object
+            else
+            {
+                RootObject.AddChild(ent);
+            }
+        }
+
+        // Dummies
+        foreach (var entry in flver.Dummies)
+        {
+            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Dummy);
+            AssignDummyDrawable(newObject, wrapper);
+
+            Dummies.Add(newObject);
+            Objects.Add(newObject);
+
+            // Parent the dummy to its parent bone (if applicable)
+            if (entry.ParentBoneIndex != -1)
+            {
+                for (int i = 0; i < Nodes.Count; i++)
+                {
+                    var curNode = Nodes[i];
+
+                    if (entry.ParentBoneIndex == i)
+                    {
+                        curNode.AddChild(newObject);
+                    }
+                }
+            }
+            // Other parent to the root object
+            else
+            {
+                RootObject.AddChild(newObject);
+            }
         }
 
         // Meshes
@@ -184,10 +228,6 @@ public class ModelContainer : ObjectContainer
         {
             resource = ModelLocator.GetChrModel(Project, modelName, modelName);
         }
-        else if (modelName.StartsWith("e", StringComparison.CurrentCultureIgnoreCase))
-        {
-            resource = ModelLocator.GetEneModel(Project, modelName);
-        }
         else if (modelName.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || 
             (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
         {
@@ -201,12 +241,22 @@ public class ModelContainer : ObjectContainer
         {
             resource = ModelLocator.GetPartsModel(Editor.Project, modelName, modelName);
         }
-        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase))
+        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && ent.IsPartCollision())
         {
             loadCol = true;
 
             resource = ModelLocator.GetMapCollisionModel(Project, mapID,
-                ModelLocator.GetMapModelName(Project, mapID, modelName), false);
+                ModelLocator.GetMapModelName(Project, mapID, modelName));
+
+            if (resource == null || resource.AssetPath == null)
+                loadCol = false;
+        }
+        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && ent.IsPartConnectCollision())
+        {
+            loadCol = true;
+
+            resource = ModelLocator.GetMapCollisionModel(Project, mapID,
+                ModelLocator.GetMapModelName(Project, mapID, modelName), true);
 
             if (resource == null || resource.AssetPath == null)
                 loadCol = false;

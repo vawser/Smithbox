@@ -491,8 +491,8 @@ namespace SoulsFormats
         public static BND4 DecryptDS2Regulation(string path)
         {
             byte[] bytes = File.ReadAllBytes(path);
-            if (BND4.IsRead(bytes, out BND4 bnd4)) 
-                return bnd4; 
+            if (BND4.IsRead(bytes, out BND4 bnd4))
+                return bnd4;
             byte[] iv = new byte[16];
             iv[0] = 0x80;
             Array.Copy(bytes, 0, iv, 1, 11);
@@ -529,8 +529,8 @@ namespace SoulsFormats
         public static BND4 DecryptDS3Regulation(string path)
         {
             byte[] bytes = File.ReadAllBytes(path);
-            if (BND4.IsRead(bytes, out BND4 bnd4)) 
-                return bnd4; 
+            if (BND4.IsRead(bytes, out BND4 bnd4))
+                return bnd4;
             bytes = DecryptByteArray(Keys.DS3_REGULATION_KEY, bytes);
             return BND4.Read(bytes);
         }
@@ -563,8 +563,8 @@ namespace SoulsFormats
         public static BND4 DecryptERRegulation(string path)
         {
             byte[] bytes = File.ReadAllBytes(path);
-            if (BND4.IsRead(bytes, out BND4 bnd4)) 
-                return bnd4; 
+            if (BND4.IsRead(bytes, out BND4 bnd4))
+                return bnd4;
             bytes = DecryptByteArray(Keys.ER_REGULATION_KEY, bytes);
             return BND4.Read(bytes);
         }
@@ -587,8 +587,8 @@ namespace SoulsFormats
         public static BND4 DecryptAC6Regulation(string path)
         {
             byte[] bytes = File.ReadAllBytes(path);
-            if (BND4.IsRead(bytes, out BND4 bnd4)) 
-                return bnd4; 
+            if (BND4.IsRead(bytes, out BND4 bnd4))
+                return bnd4;
             bytes = DecryptByteArray(Keys.AC6_REGULATION_KEY, bytes);
             return BND4.Read(bytes);
         }
@@ -664,6 +664,25 @@ namespace SoulsFormats
         }
 
         /// <summary>
+        /// Repacks and encrypts Nightreign's regulation BND4 with a fixed IV.
+        /// </summary>
+        public static byte[] EncryptNightreignRegulation(BND4 bnd, byte[] iv, DCX.Type compression = DCX.Type.Unknown)
+        {
+            byte[] bytes = null;
+            if (compression != DCX.Type.Unknown)
+            {
+                bytes = bnd.Write(compression);
+            }
+            else
+            {
+                bytes = bnd.Write();
+            }
+
+            bytes = EncryptByteArray(Keys.NR_REGULATION_KEY, bytes, iv);
+            return bytes;
+        }
+
+        /// <summary>
         /// Repacks and encrypts ER's regulation BND4 to the specified path.
         /// </summary>
         public static void EncryptERRegulation(string path, BND4 bnd, DCX.Type compression = DCX.Type.Unknown)
@@ -703,6 +722,25 @@ namespace SoulsFormats
         }
 
         /// <summary>
+        /// Repacks and encrypts ER's regulation BND4 with a fixed IV.
+        /// </summary>
+        public static byte[] EncryptERRegulation(BND4 bnd, byte[] iv, DCX.Type compression = DCX.Type.Unknown)
+        {
+            byte[] bytes = null;
+            if (compression != DCX.Type.Unknown)
+            {
+                bytes = bnd.Write(compression);
+            }
+            else
+            {
+                bytes = bnd.Write();
+            }
+
+            bytes = EncryptByteArray(Keys.ER_REGULATION_KEY, bytes, iv);
+            return bytes;
+        }
+
+        /// <summary>
         /// Repacks and encrypts ER's regulation BND4 to the specified path.
         /// </summary>
         public static void EncryptAC6Regulation(string path, BND4 bnd)
@@ -724,6 +762,16 @@ namespace SoulsFormats
         }
 
         /// <summary>
+        /// Repacks and encrypts AC6's regulation BND4 with a fixed IV.
+        /// </summary>
+        public static byte[] EncryptAC6Regulation(BND4 bnd, byte[] iv)
+        {
+            byte[] bytes = bnd.Write();
+            bytes = EncryptByteArray(Keys.AC6_REGULATION_KEY, bytes, iv);
+            return bytes;
+        }
+
+        /// <summary>
         /// Repacks and encrypts DS3's regulation BND4.
         /// </summary>
         public static byte[] EncryptDS3Regulation(BND4 bnd)
@@ -733,7 +781,17 @@ namespace SoulsFormats
             return bytes;
         }
 
-        private static byte[] EncryptByteArray(byte[] key, byte[] secret)
+        /// <summary>
+        /// Repacks and encrypts DS3's regulation BND4 with a fixed IV.
+        /// </summary>
+        public static byte[] EncryptDS3Regulation(BND4 bnd, byte[] iv)
+        {
+            byte[] bytes = bnd.Write();
+            bytes = EncryptByteArray(Keys.DS3_REGULATION_KEY, bytes, iv);
+            return bytes;
+        }
+
+        private static byte[] EncryptByteArray(byte[] key, byte[] secret, byte[] fixedIv = null)
         {
             using MemoryStream ms = new MemoryStream();
             using var cryptor = Aes.Create();
@@ -742,7 +800,7 @@ namespace SoulsFormats
             cryptor.KeySize = 256;
             cryptor.BlockSize = 128;
 
-            byte[] iv = cryptor.IV;
+            byte[] iv = fixedIv ?? cryptor.IV;
 
             using (CryptoStream cs = new CryptoStream(ms, cryptor.CreateEncryptor(key, iv), CryptoStreamMode.Write))
             {

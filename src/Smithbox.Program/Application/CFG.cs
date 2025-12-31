@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
@@ -352,6 +353,8 @@ public class CFG
 
     public bool Interface_MapEditor_Tool_MapValidator = true;
 
+    public bool Interface_MapEditor_Tool_MapModelInsight = true;
+
     /// <summary>
     /// If true, the shortcuts for the Selection Groups will be detected.
     /// </summary>
@@ -668,6 +671,7 @@ public class CFG
     //**************
     // Project
     //**************
+    public bool PTDE_UseCollisionHack = true;
     public string PTDE_Collision_Root = "";
     public bool PTDE_Collision_Root_Warning = true;
 
@@ -856,6 +860,12 @@ public class CFG
     public float GFX_Wireframe_Color_Variance = 0.11f;
 
     public float GFX_Renderable_Default_Wireframe_Alpha = 100.0f;
+
+
+    public Vector3 GFX_Renderable_Collision_Color = new Vector3(53, 157, 255);
+    public Vector3 GFX_Renderable_ConnectCollision_Color = new Vector3(146, 57, 158);
+    public Vector3 GFX_Renderable_Navmesh_Color = new Vector3(157, 53, 255);
+    public Vector3 GFX_Renderable_NavmeshGate_Color = new Vector3(50, 220, 0);
 
     public Vector3 GFX_Renderable_Box_BaseColor = Utils.GetDecimalColor(Color.Blue);
     public Vector3 GFX_Renderable_Box_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
@@ -1062,6 +1072,8 @@ public class CFG
     public bool MapEditor_LightAtlas_AutomaticAdd = true;
     public bool MapEditor_LightAtlas_AutomaticDelete = false;
     public bool MapEditor_LightAtlas_AutomaticAdjust = true;
+
+    public HavokCollisionType CurrentHavokCollisionType = HavokCollisionType.Low;
 
     //****************************
     // Settings: Model Editor

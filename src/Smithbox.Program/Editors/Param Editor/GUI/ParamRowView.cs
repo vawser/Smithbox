@@ -606,7 +606,7 @@ public class ParamRowView
                 ImGui.PushID("compareCol_" + selectionCacheIndex);
                 ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(0, 0));
 
-                ParamFieldInput.DisplayFieldInput(Editor, compareCol.ValueType, c.Value, ref newval, false, false);
+                ParamFieldInput.DisplayFieldInput(Editor, compareCol.ValueType, c.Def.InternalName, c.Value, ref newval, false, false);
 
                 if (ParamFieldInput.UpdateProperty(Editor, Editor.EditorActionManager, c, compareColProp,
                         c.Value))

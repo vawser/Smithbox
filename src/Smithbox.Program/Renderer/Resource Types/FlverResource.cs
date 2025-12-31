@@ -96,7 +96,7 @@ public class FlverResource : IResource, IDisposable
 
             bool ret;
 
-            if (curProject.ProjectType is ProjectType.DES or ProjectType.ACFA)
+            if (curProject.ProjectType is ProjectType.DES)
             {
                 FlverDeS = FLVER0.Read(bytes);
                 ret = LoadInternalDeS(al);
@@ -153,6 +153,10 @@ public class FlverResource : IResource, IDisposable
         if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
             return false;
 
+        // Small hack so the chrbnd's that are passed here are skipped.
+        if (!(relativePath.Contains(".flv")))
+            return false;
+
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
 
         try
@@ -163,7 +167,7 @@ public class FlverResource : IResource, IDisposable
 
             if (fileData != null && fileData.Value.Length > 1)
             {
-                if (curProject.ProjectType is ProjectType.DES or ProjectType.ACFA)
+                if (curProject.ProjectType is ProjectType.DES)
                 {
                     FlverDeS = FLVER0.Read(fileData.Value);
                     ret = LoadInternalDeS(al);
@@ -314,7 +318,7 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
-        string textureVirtPath = ResourceLocator.GetTextureVP(VirtPath, path.ToLower());
+        string textureVirtPath = TextureLocator.GetFlverTextureVirtualPath(VirtPath, path.ToLower());
 
         if (!dest.TextureResourceFilled[(int)textureType])
         {
@@ -323,7 +327,7 @@ public class FlverResource : IResource, IDisposable
             // Used to allow for association of models and textures
             if (ResourceManager.BaseEditor.ProjectManager.SelectedProject.FocusedEditor is MapEditorScreen)
             {
-                ModelDataHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+                MapModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
             }
 
             if (ResourceManager.BaseEditor.ProjectManager.SelectedProject.FocusedEditor is ModelEditorScreen)
@@ -449,7 +453,7 @@ public class FlverResource : IResource, IDisposable
         dest.SpecializationConstants = new List<SpecializationConstant>();
 
         //FLVER0 stores layouts directly in the material
-        if (curProject.ProjectType is ProjectType.DES or ProjectType.ACFA)
+        if (curProject.ProjectType is ProjectType.DES)
         {
             var desMat = (FLVER0.Material)mat;
             var foundBoneIndices = false;
@@ -1316,19 +1320,6 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
-        // Move NormalW local indices to global bone indices for shader
-        if (curProject.ProjectType is ProjectType.ACFA && mesh.Dynamic != 1)
-        {
-            for (int i = 0; i < mesh.Vertices.Count; i++)
-            {
-                var vert = mesh.Vertices[i];
-                if (vert.NormalW < mesh.BoneIndices.Length && vert.NormalW >= 0)
-                {
-                    mesh.Vertices[i].NormalW = mesh.BoneIndices[vert.NormalW];
-                }
-            }
-        }
-
         var vSize = dest.Material.VertexSize;
         dest.PickingVertices = Marshal.AllocHGlobal(mesh.Vertices.Count * sizeof(Vector3));
         Span<Vector3> pvhandle = new(dest.PickingVertices.ToPointer(), mesh.Vertices.Count);
@@ -1442,19 +1433,6 @@ public class FlverResource : IResource, IDisposable
             return;
 
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
-
-        // Move NormalW local indices to global bone indices for shader
-        if (curProject.ProjectType is ProjectType.ACV or ProjectType.ACVD && mesh.Dynamic != 1)
-        {
-            for (int i = 0; i < mesh.Vertices.Count; i++)
-            {
-                var vert = mesh.Vertices[i];
-                if (vert.NormalW < mesh.BoneIndices.Count && vert.NormalW >= 0)
-                {
-                    mesh.Vertices[i].NormalW = mesh.BoneIndices[vert.NormalW];
-                }
-            }
-        }
 
         if (Flver == null)
             return;
@@ -1987,9 +1965,6 @@ public class FlverResource : IResource, IDisposable
         if (FlverDeS == null)
             return false;
 
-        if (GPUMaterials == null)
-            return false;
-
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
             GPUMeshes = new FlverSubmesh[FlverDeS.Meshes.Count()];
@@ -2028,7 +2003,7 @@ public class FlverResource : IResource, IDisposable
             BoneTransforms.Clear();
         }
 
-        if (GPUMaterials.Any(e => e.GetNormalWBoneTransform()))
+        if (GPUMaterials != null && GPUMaterials.Any(e => e.GetNormalWBoneTransform()))
         {
             if (Bones != null)
             {

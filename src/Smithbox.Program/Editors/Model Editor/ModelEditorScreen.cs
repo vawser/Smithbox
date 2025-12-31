@@ -47,7 +47,7 @@ public class ModelEditorScreen : EditorScreen
     public ModelViewportFilters ViewportFilters;
 
     public ModelGridConfiguration ModelGridTool;
-    public ModelInsight ModelInsightTool;
+    public ModelInsightView ModelInsightTool;
     public ModelInstanceFinder ModelInstanceFinder;
     public ModelMaskToggler ModelMaskToggler;
 
@@ -87,7 +87,7 @@ public class ModelEditorScreen : EditorScreen
         Shortcuts = new ModelShortcuts(this, project);
 
         ModelGridTool = new ModelGridConfiguration(this, Project);
-        ModelInsightTool = new ModelInsight(this, Project);
+        ModelInsightTool = new ModelInsightView(this, Project);
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
         ModelMaskToggler = new ModelMaskToggler(this, Project);
 

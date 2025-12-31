@@ -18,6 +18,7 @@ public class MapResourceHandler
     private HashSet<ResourceDescriptor> LoadList_Character_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Asset_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Collision = new();
+    private HashSet<ResourceDescriptor> LoadList_ConnectCollision = new();
     private HashSet<ResourceDescriptor> LoadList_Navmesh = new();
 
     private HashSet<ResourceDescriptor> LoadList_Character_Texture = new();
@@ -33,7 +34,7 @@ public class MapResourceHandler
     {
         Editor = editor;
         MapID = mapId;
-        AdjustedMapID = MapLocator.GetAssetMapID(Editor.Project, MapID);
+        AdjustedMapID = PathBuilder.GetAssetMapID(Editor.Project, MapID);
     }
 
     public async Task<bool> ReadMap(string mapid)
@@ -57,13 +58,21 @@ public class MapResourceHandler
             var chrId = CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID;
 
             var modelAsset = ModelLocator.GetChrModel(Editor.Project, chrId, chrId);
-            var textureAsset = TextureLocator.GetChrTextures(Editor.Project, chrId);
 
             if (modelAsset.IsValid())
                 LoadList_Character_Model.Add(modelAsset);
 
+            // TPF
+            var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, chrId, false);
+
             if (textureAsset.IsValid())
-                LoadList_Character_Texture.Add(textureAsset);
+                LoadList_Character_Model.Add(textureAsset);
+
+            // BND
+            textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, chrId, true);
+
+            if (textureAsset.IsValid())
+                LoadList_Character_Model.Add(textureAsset);
         }
     }
 
@@ -102,14 +111,27 @@ public class MapResourceHandler
             // Collision
             if (model.Name.StartsWith('h'))
             {
-                var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, model.Name), false);
+                var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, model.Name));
 
                 if (modelAsset.IsValid())
+                {
                     LoadList_Collision.Add(modelAsset);
+                }
+            }
+
+            // Connect Collision
+            if (model.Name.StartsWith('h'))
+            {
+                var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, model.Name), true);
+
+                if (modelAsset.IsValid())
+                {
+                    LoadList_ConnectCollision.Add(modelAsset);
+                }
             }
 
             // Navmesh
-            if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 if (model.Name.StartsWith('n'))
                 {
@@ -131,7 +153,7 @@ public class MapResourceHandler
     public void SetupTexturelLoadLists()
     {
         // MAP
-        foreach (ResourceDescriptor asset in ResourceLocator.GetMapTextureVPs(Editor.Project, AdjustedMapID))
+        foreach (ResourceDescriptor asset in TextureLocator.GetMapTextureVirtualPaths(Editor.Project, AdjustedMapID))
         {
             if (asset.IsValid())
                 LoadList_Map_Texture.Add(asset);
@@ -144,13 +166,13 @@ public class MapResourceHandler
             if (model.Name.StartsWith('c'))
             {
                 // TPF
-                var textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, model.Name, false);
+                var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, model.Name, false);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
     
                 // BND
-                textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, model.Name, true);
+                textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, model.Name, true);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
@@ -159,7 +181,7 @@ public class MapResourceHandler
             // Object
             if (model.Name.StartsWith('o'))
             {
-                var textureAsset = ResourceLocator.GetObjectTextureVP(Editor.Project, model.Name);
+                var textureAsset = TextureLocator.GetObjectTextureVirtualPath(Editor.Project, model.Name);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -168,7 +190,7 @@ public class MapResourceHandler
             // Assets
             if (model.Name.StartsWith("AEG") || model.Name.StartsWith("aeg"))
             {
-                var textureAsset = ResourceLocator.GetAssetTextureVP(Editor.Project, model.Name);
+                var textureAsset = TextureLocator.GetAssetTextureVirtualPath(Editor.Project, model.Name);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -178,7 +200,7 @@ public class MapResourceHandler
         // AAT
         if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
-            var textureAsset = ResourceLocator.GetCommonCharacterTextureVP(Editor.Project, "common_body");
+            var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(Editor.Project, "common_body");
 
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);
@@ -187,7 +209,7 @@ public class MapResourceHandler
         // SYSTEX
         if (Editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
         {
-            var textureAsset = ResourceLocator.GetSystemTextureVP(Editor.Project, "systex");
+            var textureAsset = TextureLocator.GetSystexTextureVirtualPath(Editor.Project, "systex");
 
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);
@@ -407,6 +429,36 @@ public class MapResourceHandler
             task = job.Complete();
             tasks.Add(task);
         }
+        
+        // Connect Collisions
+        if (CFG.Current.MapEditor_ModelLoad_Collisions)
+        {
+            var job = ResourceManager.CreateNewJob($@"Connect Collisions");
+
+            string archive = null;
+            HashSet<string> collisionAssets = new();
+
+            foreach (ResourceDescriptor asset in LoadList_ConnectCollision)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    archive = asset.AssetArchiveVirtualPath;
+                    collisionAssets.Add(asset.AssetVirtualPath);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            if (archive != null)
+            {
+                job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, collisionAssets);
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
 
         // Navmesh
         if (CFG.Current.MapEditor_ModelLoad_Navmeshes)
@@ -417,8 +469,13 @@ public class MapResourceHandler
             {
                 if (asset.AssetArchiveVirtualPath != null)
                 {
+                    var type = ResourceType.NavmeshHKX;
+
+                    if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+                        type = ResourceType.Navmesh;
+
                     job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                        false, ResourceType.NavmeshHKX);
+                        false, type);
                 }
                 else if (asset.AssetVirtualPath != null)
                 {

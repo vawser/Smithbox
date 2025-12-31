@@ -338,18 +338,6 @@ public class ModelSelectorTool
                         if (s.WrappedObject is MSB_AC6.Part.Enemy)
                             isValidObjectType = true;
                         break;
-                    case ProjectType.ACFA:
-                        if (s.WrappedObject is MSBFA.Part.Enemy)
-                            isValidObjectType = true;
-                        break;
-                    case ProjectType.ACV:
-                        if (s.WrappedObject is MSBV.Part.Enemy)
-                            isValidObjectType = true;
-                        break;
-                    case ProjectType.ACVD:
-                        if (s.WrappedObject is MSBVD.Part.Enemy)
-                            isValidObjectType = true;
-                        break;
                     case ProjectType.NR:
                         if (s.WrappedObject is MSB_NR.Part.Enemy)
                             isValidObjectType = true;
@@ -400,18 +388,6 @@ public class ModelSelectorTool
                         if (s.WrappedObject is MSB_NR.Part.Asset)
                             isValidObjectType = true;
                         break;
-                    case ProjectType.ACFA:
-                        if (s.WrappedObject is MSBFA.Part.Object)
-                            isValidObjectType = true;
-                        break;
-                    case ProjectType.ACV:
-                        if (s.WrappedObject is MSBV.Part.Object)
-                            isValidObjectType = true;
-                        break;
-                    case ProjectType.ACVD:
-                        if (s.WrappedObject is MSBVD.Part.Object)
-                            isValidObjectType = true;
-                        break;
                     default:
                         throw new ArgumentException("Selected entity type must be Object/Asset");
                 }
@@ -456,18 +432,6 @@ public class ModelSelectorTool
                         break;
                     case ProjectType.NR:
                         if (s.WrappedObject is MSB_NR.Part.MapPiece)
-                            isValidObjectType = true;
-                        break;
-                    case ProjectType.ACFA:
-                        if (s.WrappedObject is MSBFA.Part.MapPiece)
-                            isValidObjectType = true;
-                        break;
-                    case ProjectType.ACV:
-                        if (s.WrappedObject is MSBV.Part.MapPiece)
-                            isValidObjectType = true;
-                        break;
-                    case ProjectType.ACVD:
-                        if (s.WrappedObject is MSBVD.Part.MapPiece)
                             isValidObjectType = true;
                         break;
                     default:

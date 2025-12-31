@@ -42,7 +42,6 @@ public class ParamData
     public TableParams TableParamList;
     public TableGroupNameStore TableGroupNames;
 
-
     public GameOffsetResource ParamMemoryOffsets;
     public ParamCategoryResource ParamCategories;
     public ParamCommutativeResource CommutativeParamGroups;

@@ -9,45 +9,49 @@
     Wiki="" />
   
     <playArea1
-    AltName="Play Area ID: 1"
+    AltName="Night 1 Play Area ID"
     Wiki=""
     Refs="PlayAreaCreateParam" />
   
     <playArea2
-    AltName="Play Area ID: 2"
+    AltName="Night 2 Play Area ID"
     Wiki=""
     Refs="PlayAreaCreateParam" />
     
     <bossId1
-    AltName="Boss ID: 1"
-    Wiki="" />
+    AltName="Night 1 Boss ID"
+    Wiki=""
+    TileRef="" />
     
     <bossId2
-    AltName="Boss ID: 2"
-    Wiki="" />
+    AltName="Night 2 Boss ID"
+    Wiki=""
+    TileRef="" />
     
     <extraBossId1
-    AltName="Extra Boss ID: 1" 
-    Wiki="" />
+    AltName="Extra Night 1 Boss ID" 
+    Wiki=""
+    TileRef="" />
     
     <extraBossId2
-    AltName="Extra Boss ID: 2" 
-    Wiki="" />
+    AltName="Extra Night 2 Boss ID" 
+    Wiki=""
+    TileRef="" />
     
     <bossModifier1
-    AltName="Boss Modifier: 1"
+    AltName="Night 1 Boss Modifier"
     Wiki="" />
     
     <bossModifier2
-    AltName="Boss Modifier: 2"
+    AltName="Night 2 Boss Modifier"
     Wiki="" />
     
     <extraBossModifier1
-    AltName="Extra Boss Modifier: 1"
+    AltName="Extra Night 1 Boss Modifier"
     Wiki="" />
     
     <extraBossModifier2
-    AltName="Extra Boss Modifier: 2"
+    AltName="Extra Night 2 Boss Modifier"
     Wiki="" />
   </Field>
   

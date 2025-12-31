@@ -10270,49 +10270,49 @@
     {
       "ID": 7390,
       "Entries": [
-        ""
+        "[DLC Scaling] Day 1 Night Boss"
       ]
     },
     {
       "ID": 7391,
       "Entries": [
-        ""
+        "[DLC Scaling] Day 2 Night Boss"
       ]
     },
     {
       "ID": 7392,
       "Entries": [
-        ""
+        "[DLC Scaling] Final Boss"
       ]
     },
     {
       "ID": 7393,
       "Entries": [
-        ""
+        "[DLC Scaling] Straghess Summons"
       ]
     },
     {
       "ID": 7395,
       "Entries": [
-        ""
+        "[DLC Deep of Night Scaling] Day 1 Night Boss"
       ]
     },
     {
       "ID": 7396,
       "Entries": [
-        ""
+        "[DLC Deep of Night Scaling] Day 2 Night Boss"
       ]
     },
     {
       "ID": 7397,
       "Entries": [
-        ""
+        "[DLC Deep of Night Scaling] Final Bos"
       ]
     },
     {
       "ID": 7398,
       "Entries": [
-        ""
+        "[DLC Deep of Night Scaling] Straghess Summons"
       ]
     },
     {
@@ -60034,13 +60034,13 @@
     {
       "ID": 350301,
       "Entries": [
-        "[Talisman] Defeating Enemies Restores HP"
+        "[Talisman] Defeating Enemies Restores HP - Restoration"
       ]
     },
     {
       "ID": 350302,
       "Entries": [
-        ""
+        "[Talisman] Defeating Enemies Restores HP - Restoration SP"
       ]
     },
     {
@@ -60124,13 +60124,13 @@
     {
       "ID": 361101,
       "Entries": [
-        "[Talisman] Defeating Enemies Restores FP"
+        "[Talisman] Defeating Enemies Restores FP - Restoration"
       ]
     },
     {
       "ID": 361102,
       "Entries": [
-        ""
+        "[Talisman] Defeating Enemies Restores FP - Restoration SP"
       ]
     },
     {
@@ -68578,13 +68578,13 @@
     {
       "ID": 7032705,
       "Entries": [
-        ""
+        "[Relic Effect] Duchess: Defeating enemies while Art is active ups attack power SP"
       ]
     },
     {
       "ID": 7032706,
       "Entries": [
-        ""
+        "[Relic Effect] Duchess: Defeating enemies while Art is active ups attack power SP"
       ]
     },
     {
@@ -69208,37 +69208,37 @@
     {
       "ID": 7037600,
       "Entries": [
-        ""
+        "[Relic Effect] Successive Attacks Boost Attack Power"
       ]
     },
     {
       "ID": 7037601,
       "Entries": [
-        ""
+        "[Relic Effect] Successive Attacks Boost Attack Power"
       ]
     },
     {
       "ID": 7037602,
       "Entries": [
-        ""
+        "[Relic Effect] Successive Attacks Boost Attack Power"
       ]
     },
     {
       "ID": 7037604,
       "Entries": [
-        ""
+        "[Relic Effect] Successive Attacks Boost Attack Power"
       ]
     },
     {
       "ID": 7037605,
       "Entries": [
-        ""
+        "[Relic Effect] Successive Attacks Boost Attack Power"
       ]
     },
     {
       "ID": 7037606,
       "Entries": [
-        ""
+        "[Relic Effect] Successive Attacks Boost Attack Power"
       ]
     },
     {
@@ -69352,13 +69352,13 @@
     {
       "ID": 7040101,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Guard Counters +1"
       ]
     },
     {
       "ID": 7040102,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Guard Counters +2"
       ]
     },
     {
@@ -69382,7 +69382,7 @@
     {
       "ID": 7040301,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Throwing Pot Damage +1"
       ]
     },
     {
@@ -69400,7 +69400,7 @@
     {
       "ID": 7040401,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Throwing Knife Damage +1"
       ]
     },
     {
@@ -69418,7 +69418,7 @@
     {
       "ID": 7040501,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Glintstone and Gravity Stone Damage +1"
       ]
     },
     {
@@ -70462,7 +70462,7 @@
     {
       "ID": 7090002,
       "Entries": [
-        ""
+        "[Relic Effect] Defeating enemies fills more of the Art gauge - Art Gauge Restore - Potency 1 SP"
       ]
     },
     {
@@ -70480,7 +70480,7 @@
     {
       "ID": 7090012,
       "Entries": [
-        ""
+        "[Relic Effect] Defeating enemies fills more of the Art gauge - Art Gauge Restore - Potency 2 SP"
       ]
     },
     {
@@ -70504,13 +70504,13 @@
     {
       "ID": 7090103,
       "Entries": [
-        ""
+        "[Relic Effect] Defeating enemies restores HP for allies but not for self - Apply Behavior Change SP"
       ]
     },
     {
       "ID": 7090104,
       "Entries": [
-        ""
+        "[Relic Effect] Defeating enemies restores HP for allies but not for self SP"
       ]
     },
     {
@@ -70522,7 +70522,7 @@
     {
       "ID": 7090301,
       "Entries": [
-        ""
+        "[Relic Effect] Defeating enemies near Totem Stela restores HP - Apply On-Kill Effect"
       ]
     },
     {
@@ -70552,13 +70552,13 @@
     {
       "ID": 7090306,
       "Entries": [
-        ""
+        "[Relic Effect] Defeating enemies near Totem Stela restores HP - HP Restore SP"
       ]
     },
     {
       "ID": 7090307,
       "Entries": [
-        ""
+        "[Relic Effect] Defeating enemies near Totem Stela restores HP - HP Restore SP"
       ]
     },
     {
@@ -70894,7 +70894,7 @@
     {
       "ID": 7121101,
       "Entries": [
-        ""
+        "[Relic Effect] Fire Pots in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -70906,7 +70906,7 @@
     {
       "ID": 7121201,
       "Entries": [
-        ""
+        "[Relic Effect] Magic Pots in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -70918,7 +70918,7 @@
     {
       "ID": 7121301,
       "Entries": [
-        ""
+        "[Relic Effect] Lightning Pots in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -70930,7 +70930,7 @@
     {
       "ID": 7121401,
       "Entries": [
-        ""
+        "[Relic Effect] Holy Water Pots in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -70942,7 +70942,7 @@
     {
       "ID": 7121501,
       "Entries": [
-        ""
+        "[Relic Effect] Poisonbone Darts in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -70954,7 +70954,7 @@
     {
       "ID": 7121601,
       "Entries": [
-        ""
+        "[Relic Effect] Crystal Darts in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -70966,7 +70966,7 @@
     {
       "ID": 7121701,
       "Entries": [
-        ""
+        "[Relic Effect] Throwing Daggers in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -70978,7 +70978,7 @@
     {
       "ID": 7121801,
       "Entries": [
-        ""
+        "[Relic Effect] Glintstone Scraps in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -70990,7 +70990,7 @@
     {
       "ID": 7121901,
       "Entries": [
-        ""
+        "[Relic Effect] Gravity Stone Chunks in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -71002,7 +71002,7 @@
     {
       "ID": 7122001,
       "Entries": [
-        ""
+        "[Relic Effect] Bewitching Branches in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -71020,7 +71020,7 @@
     {
       "ID": 7122201,
       "Entries": [
-        ""
+        "[Relic Effect] Fire Grease in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -71032,7 +71032,7 @@
     {
       "ID": 7122301,
       "Entries": [
-        ""
+        "[Relic Effect] Magic Grease in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -71044,7 +71044,7 @@
     {
       "ID": 7122401,
       "Entries": [
-        ""
+        "[Relic Effect] Lightning Grease in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -71056,7 +71056,7 @@
     {
       "ID": 7122501,
       "Entries": [
-        ""
+        "[Relic Effect] Holy Grease in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -71068,7 +71068,7 @@
     {
       "ID": 7122601,
       "Entries": [
-        ""
+        "[Relic Effect] Shield Grease in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -71200,7 +71200,7 @@
     {
       "ID": 7126001,
       "Entries": [
-        ""
+        "[Relic Effect] Starlight Shards in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72124,31 +72124,31 @@
     {
       "ID": 7500800,
       "Entries": [
-        ""
+        "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self"
       ]
     },
-    {
+	{
       "ID": 7500801,
       "Entries": [
-        ""
+        "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self - stack 1"
       ]
     },
-    {
+	{
       "ID": 7500802,
       "Entries": [
-        ""
+        "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self - stack 2"
       ]
     },
-    {
+	{
       "ID": 7500803,
       "Entries": [
-        ""
+        "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self - stack 3"
       ]
     },
     {
       "ID": 7500900,
       "Entries": [
-        ""
+        "[Relic Effect] Undertaker: Executing Art readies Character Skill"
       ]
     },
     {
@@ -72322,7 +72322,7 @@
     {
       "ID": 7621001,
       "Entries": [
-        ""
+        "[Relic Effect] Crimsonspill Crystal Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72334,7 +72334,7 @@
     {
       "ID": 7621101,
       "Entries": [
-        ""
+        "[Relic Effect] Crimson Crystal Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72346,7 +72346,7 @@
     {
       "ID": 7621201,
       "Entries": [
-        ""
+        "[Relic Effect] Cerulean Crystal Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72358,7 +72358,7 @@
     {
       "ID": 7621301,
       "Entries": [
-        ""
+        "[Relic Effect] Speckled Hardtear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72370,7 +72370,7 @@
     {
       "ID": 7621401,
       "Entries": [
-        ""
+        "[Relic Effect] Crimson Bubbletear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72382,7 +72382,7 @@
     {
       "ID": 7621501,
       "Entries": [
-        ""
+        "[Relic Effect] Opaline Bubbletear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72394,7 +72394,7 @@
     {
       "ID": 7621601,
       "Entries": [
-        ""
+        "[Relic Effect] Crimsonburst Crystal Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72406,7 +72406,7 @@
     {
       "ID": 7621701,
       "Entries": [
-        ""
+        "[Relic Effect] Greenburst Crystal Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72418,7 +72418,7 @@
     {
       "ID": 7621801,
       "Entries": [
-        ""
+        "[Relic Effect] Opaline Hardtear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72430,7 +72430,7 @@
     {
       "ID": 7621901,
       "Entries": [
-        ""
+        "[Relic Effect] Thorny Cracked Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72442,7 +72442,7 @@
     {
       "ID": 7622001,
       "Entries": [
-        ""
+        "[Relic Effect] Spiked Cracked Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72454,7 +72454,7 @@
     {
       "ID": 7622101,
       "Entries": [
-        ""
+        "[Relic Effect] Windy Crystal Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72466,7 +72466,7 @@
     {
       "ID": 7622201,
       "Entries": [
-        ""
+        "[Relic Effect] Ruptured Crystal Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72478,7 +72478,7 @@
     {
       "ID": 7622301,
       "Entries": [
-        ""
+        "[Relic Effect] Leaden Hardtear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72490,7 +72490,7 @@
     {
       "ID": 7622401,
       "Entries": [
-        ""
+        "[Relic Effect] Twiggy Cracked Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72502,7 +72502,7 @@
     {
       "ID": 7622501,
       "Entries": [
-        ""
+        "[Relic Effect] Crimsonwhorl Bubbletear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72514,7 +72514,7 @@
     {
       "ID": 7622601,
       "Entries": [
-        ""
+        "[Relic Effect] Cerulean Hidden Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72526,7 +72526,7 @@
     {
       "ID": 7622701,
       "Entries": [
-        ""
+        "[Relic Effect] Stonebarb Cracked Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72538,7 +72538,7 @@
     {
       "ID": 7622801,
       "Entries": [
-        ""
+        "[Relic Effect] Flame-Shrouding Cracked Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72550,7 +72550,7 @@
     {
       "ID": 7622901,
       "Entries": [
-        ""
+        "[Relic Effect] Magic-Shrouding Cracked Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72562,7 +72562,7 @@
     {
       "ID": 7623001,
       "Entries": [
-        ""
+        "[Relic Effect] Lightning-Shrouding Cracked Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72574,19 +72574,19 @@
     {
       "ID": 7623101,
       "Entries": [
-        ""
+        "[Relic Effect] Holy-Shrouding Cracked Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
       "ID": 7623200,
       "Entries": [
-        ""
+        "[Relic Effect] Greenspill Crystal Tear in possession at start of expedition"
       ]
     },
     {
       "ID": 7623201,
       "Entries": [
-        ""
+        "[Relic Effect] Greenspill Crystal Tear in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72598,7 +72598,7 @@
     {
       "ID": 7624001,
       "Entries": [
-        ""
+        "[Relic Effect] Uplifting Aromatic in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72610,7 +72610,7 @@
     {
       "ID": 7624101,
       "Entries": [
-        ""
+        "[Relic Effect] Spark Aromatic in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72622,7 +72622,7 @@
     {
       "ID": 7624201,
       "Entries": [
-        ""
+        "[Relic Effect] Ironjar Aromatic in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72634,7 +72634,7 @@
     {
       "ID": 7624301,
       "Entries": [
-        ""
+        "[Relic Effect] Bloodboil Aromatic in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72646,7 +72646,7 @@
     {
       "ID": 7624401,
       "Entries": [
-        ""
+        "[Relic Effect] Poison Spraymist in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72658,7 +72658,7 @@
     {
       "ID": 7624501,
       "Entries": [
-        ""
+        "[Relic Effect] Acid Spraymist in possession at start of expedition - Scholar +"
       ]
     },
     {
@@ -72958,25 +72958,25 @@
     {
       "ID": 7647200,
       "Entries": [
-        ""
+        "[Relic Effect] Scholar: Improved Mind, Reduced Vigor"
       ]
     },
     {
       "ID": 7647300,
       "Entries": [
-        ""
+        "[Relic Effect] Scholar: Improved Endurance and Dexterity, Reduced Intelligence and Arcane"
       ]
     },
     {
       "ID": 7647400,
       "Entries": [
-        ""
+        "[Relic Effect] Undertaker: Improved Dexterity, Reduced Vigor and Faith"
       ]
     },
     {
       "ID": 7647500,
       "Entries": [
-        ""
+        "[Relic Effect] Undertaker: Improved Mind and Faith, Reduced Strength"
       ]
     },
     {
@@ -73012,7 +73012,7 @@
     {
       "ID": 7998005,
       "Entries": [
-        ""
+        "On-Attack Projectile Accumulator - On-Kill Effect SP - Increment Accumulator 4 by 3"
       ]
     },
     {
@@ -74302,55 +74302,55 @@
     {
       "ID": 8320500,
       "Entries": [
-        "[Weapon Effect] Improved Melee Attack Power"
+        "[Weapon Effect] Improved Melee Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8320510,
       "Entries": [
-        ""
+        "[Weapon Effect] Improved Melee Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8320520,
       "Entries": [
-        ""
+        "[Weapon Effect] Improved Melee Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8320600,
       "Entries": [
-        "[Weapon Effect] Improved Dash Attacks"
+        "[Weapon Effect] Improved Dash Attacks - Potency 1"
       ]
     },
     {
       "ID": 8320610,
       "Entries": [
-        ""
+        "[Weapon Effect] Improved Dash Attacks - Potency 2"
       ]
     },
     {
       "ID": 8320620,
       "Entries": [
-        ""
+        "[Weapon Effect] Improved Dash Attacks - Potency 3"
       ]
     },
     {
       "ID": 8320700,
       "Entries": [
-        "[Weapon Effect] Improved Rolling Attacks"
+        "[Weapon Effect] Improved Rolling Attacks - Potency 1"
       ]
     },
     {
       "ID": 8320710,
       "Entries": [
-        ""
+        "[Weapon Effect] Improved Rolling Attacks - Potency 2"
       ]
     },
     {
       "ID": 8320720,
       "Entries": [
-        ""
+        "[Weapon Effect] Improved Rolling Attacks - Potency 3"
       ]
     },
     {
@@ -76102,7 +76102,7 @@
     {
       "ID": 8630002,
       "Entries": [
-        ""
+        "[Weapon Effect] Defeating Enemies Restores HP - HP Restore - Potency 1 SP"
       ]
     },
     {
@@ -76120,7 +76120,7 @@
     {
       "ID": 8630012,
       "Entries": [
-        ""
+        "[Weapon Effect] Defeating Enemies Restores HP - HP Restore - Potency 2 SP"
       ]
     },
     {
@@ -76138,7 +76138,7 @@
     {
       "ID": 8630022,
       "Entries": [
-        ""
+        "[Weapon Effect] Defeating Enemies Restores HP - HP Restore - Potency 3 SP"
       ]
     },
     {
@@ -76156,7 +76156,7 @@
     {
       "ID": 8630102,
       "Entries": [
-        ""
+        "[Weapon Effect] Defeating Enemies Restores FP - FP Restore - Potency 1 SP"
       ]
     },
     {
@@ -76174,7 +76174,7 @@
     {
       "ID": 8630112,
       "Entries": [
-        ""
+        "[Weapon Effect] Defeating Enemies Restores FP - FP Restore - Potency 2 SP"
       ]
     },
     {
@@ -76192,7 +76192,7 @@
     {
       "ID": 8630122,
       "Entries": [
-        ""
+        "[Weapon Effect] Defeating Enemies Restores FP - FP Restore - Potency 3 SP"
       ]
     },
     {
@@ -78466,7 +78466,7 @@
     {
       "ID": 8980302,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Blasphemous - HP Restore on Kill SP"
       ]
     },
     {
@@ -78652,7 +78652,7 @@
     {
       "ID": 8981402,
       "Entries": [
-        ""
+        "[Weapon Effect] Power of the Blasphemous - HP Restore on Kill SP"
       ]
     },
     {
@@ -79582,37 +79582,37 @@
     {
       "ID": 8990900,
       "Entries": [
-        ""
+        "[Weapon Effect] The Scholar's Grief - Potency 1"
       ]
     },
     {
       "ID": 8990901,
       "Entries": [
-        ""
+        "[Weapon Effect] The Scholar's Grief - Potency 2"
       ]
     },
     {
       "ID": 8990902,
       "Entries": [
-        ""
+        "[Weapon Effect] The Scholar's Grief - Potency 3"
       ]
     },
     {
       "ID": 8991000,
       "Entries": [
-        ""
+        "[Weapon Effect] The Undertaker's Grief - Potency 1"
       ]
     },
     {
       "ID": 8991001,
       "Entries": [
-        ""
+        "[Weapon Effect] The Undertaker's Grief - Potency 2"
       ]
     },
     {
       "ID": 8991002,
       "Entries": [
-        ""
+        "[Weapon Effect] The Undertaker's Grief - Potency 3"
       ]
     },
     {

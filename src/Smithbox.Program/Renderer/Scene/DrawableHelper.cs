@@ -13,10 +13,6 @@ namespace StudioCore.Renderer;
 
 public static class DrawableHelper
 {
-
-    /// <summary>
-    /// The drawable proxies for a Part map object
-    /// </summary>
     public static RenderableProxy GetModelDrawable(EditorScreen editor, RenderScene scene, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks, bool forceReload = false)
     {
         Universe curUniverse = null;
@@ -33,9 +29,10 @@ public static class DrawableHelper
         var loadcol = false;
         var loadnav = false;
         var loadflver = false;
+        var isConnectCol = false;
         var filt = RenderFilter.All;
 
-        var amapid = MapLocator.GetAssetMapID(curProject, map.Name);
+        var amapid = PathBuilder.GetAssetMapID(curProject, map.Name);
 
         ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
         if (modelname.StartsWith("m", StringComparison.CurrentCultureIgnoreCase))
@@ -51,12 +48,6 @@ public static class DrawableHelper
             asset = ModelLocator.GetChrModel(curProject, modelname, modelname);
             filt = RenderFilter.Character;
         }
-        else if (modelname.StartsWith("e", StringComparison.CurrentCultureIgnoreCase))
-        {
-            loadflver = true;
-            asset = ModelLocator.GetEneModel(curProject, modelname);
-            filt = RenderFilter.Character;
-        }
         else if (modelname.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || 
             (modelname.StartsWith("AEG") || modelname.StartsWith("aeg")))
         {
@@ -64,20 +55,38 @@ public static class DrawableHelper
             asset = ModelLocator.GetObjModel(curProject, modelname, modelname);
             filt = RenderFilter.Object;
         }
-        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase))
+        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && obj.IsPartCollision())
         {
             loadcol = true;
-            asset = ModelLocator.GetMapCollisionModel(curProject, amapid,
-                ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname), false);
 
-            if (asset == null || asset.AssetPath == null) loadcol = false;
+            asset = ModelLocator.GetMapCollisionModel(curProject, amapid,
+                ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname));
+
+            if (asset == null) 
+                loadcol = false;
 
             filt = RenderFilter.Collision;
+        }
+        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && obj.IsPartConnectCollision())
+        {
+            loadcol = true;
+
+            isConnectCol = true;
+
+            asset = ModelLocator.GetMapCollisionModel(curProject, amapid,
+                ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname), true);
+
+            if (asset == null) 
+                loadcol = false;
+
+            filt = RenderFilter.ConnectCollision;
         }
         else if (modelname.StartsWith("n", StringComparison.CurrentCultureIgnoreCase))
         {
             loadnav = true;
+
             asset = ModelLocator.GetMapNVMModel(curProject, amapid, ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname));
+
             filt = RenderFilter.Navmesh;
         }
         else
@@ -92,9 +101,16 @@ public static class DrawableHelper
         {
             MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
                 scene, asset.AssetVirtualPath, modelMarkerType);
+
             mesh.World = obj.GetWorldMatrix();
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Collision;
+
+            if(isConnectCol)
+            {
+                mesh.DrawFilter = RenderFilter.ConnectCollision;
+            }
+
             obj.RenderSceneMesh = mesh;
 
             if (load && !ResourceManager.IsResourceLoaded(asset.AssetVirtualPath,

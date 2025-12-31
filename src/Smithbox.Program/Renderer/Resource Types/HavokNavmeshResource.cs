@@ -78,6 +78,12 @@ public class HavokNavmeshResource : IResource, IDisposable
         {
             var fileData = curProject.FS.ReadFile(relativePath);
 
+            // Intercept and load the collision from PTDE FS for DS1R projects
+            if (CFG.Current.PTDE_UseCollisionHack && curProject.ProjectType is ProjectType.DS1R)
+            {
+                fileData = curProject.PTDE_FS.ReadFile(relativePath);
+            }
+
             if (curProject.ProjectType is ProjectType.DS3 or ProjectType.BB)
             {
                 var des = new PackFileDeserializer();
@@ -195,6 +201,11 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     private unsafe void ProcessMesh_HKX2(hkaiNavMesh mesh)
     {
+        byte navR = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.X;
+        byte navG = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.Y;
+        byte navB = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.Z;
+        byte navA = 255;
+
         List<Vector4> verts = mesh.m_vertices;
         var indexCount = 0;
         foreach (hkaiNavMeshFace f in mesh.m_faces)
@@ -268,18 +279,18 @@ public class HavokNavmeshResource : IResource, IDisposable
                 MeshVertices[idx + 2].Normal[1] = (sbyte)(n.Y * 127.0f);
                 MeshVertices[idx + 2].Normal[2] = (sbyte)(n.Z * 127.0f);
 
-                MeshVertices[idx].Color[0] = 157;
-                MeshVertices[idx].Color[1] = 53;
-                MeshVertices[idx].Color[2] = 255;
-                MeshVertices[idx].Color[3] = 255;
-                MeshVertices[idx + 1].Color[0] = 157;
-                MeshVertices[idx + 1].Color[1] = 53;
-                MeshVertices[idx + 1].Color[2] = 255;
-                MeshVertices[idx + 1].Color[3] = 255;
-                MeshVertices[idx + 2].Color[0] = 157;
-                MeshVertices[idx + 2].Color[1] = 53;
-                MeshVertices[idx + 2].Color[2] = 255;
-                MeshVertices[idx + 2].Color[3] = 255;
+                MeshVertices[idx].Color[0] = navR;
+                MeshVertices[idx].Color[1] = navG;
+                MeshVertices[idx].Color[2] = navB;
+                MeshVertices[idx].Color[3] = navA;
+                MeshVertices[idx + 1].Color[0] = navR;
+                MeshVertices[idx + 1].Color[1] = navG;
+                MeshVertices[idx + 1].Color[2] = navB;
+                MeshVertices[idx + 1].Color[3] = navA;
+                MeshVertices[idx + 2].Color[0] = navR;
+                MeshVertices[idx + 2].Color[1] = navG;
+                MeshVertices[idx + 2].Color[2] = navB;
+                MeshVertices[idx + 2].Color[3] = navA;
 
                 MeshVertices[idx].Barycentric[0] = 0;
                 MeshVertices[idx].Barycentric[1] = 0;

@@ -22,6 +22,7 @@ public enum RenderFilter
     Nodes = 8192,
 
     LightProbe = 16384,
+    ConnectCollision = 32768,
 
     All = 0xFFFFFFF
 }

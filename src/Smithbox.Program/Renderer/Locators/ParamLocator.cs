@@ -63,16 +63,6 @@ public static class ParamLocator
         return pd;
     }
 
-    public static string GetUpgraderAssetsDir(ProjectEntry project)
-    {
-        return Path.Join(GetParamAssetsDir(project), "Upgrader");
-    }
-
-    public static string GetGameOffsetsAssetsDir(ProjectEntry project)
-    {
-        return Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(project));
-    }
-
     public static string GetParamAssetsDir(ProjectEntry project)
     {
         return Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(project));
@@ -83,42 +73,9 @@ public static class ParamLocator
         return Path.Join(GetParamAssetsDir(project), "Defs");
     }
 
-    public static string GetTentativeParamTypePath(ProjectEntry project)
-    {
-        return Path.Join(GetParamAssetsDir(project), "Defs", "TentativeParamType.csv");
-    }
-
-    public static ulong[] GetParamdefPatches(ProjectEntry project)
-    {
-        if (Directory.Exists(Path.Join(GetParamAssetsDir(project), "DefsPatch")))
-        {
-            var entries = Directory.GetFileSystemEntries(Path.Join(GetParamAssetsDir(project), "DefsPatch"));
-            return entries.Select(e => ulong.Parse(Path.GetFileNameWithoutExtension(e))).ToArray();
-        }
-
-        return new ulong[] { };
-    }
-
-    public static string GetParamdefPatchDir(ProjectEntry project, ulong patch)
-    {
-        return Path.Join(GetParamAssetsDir(project), "DefsPatch", patch.ToString());
-    }
-
     public static string GetParammetaDir(ProjectEntry project)
     {
         return Path.Join(GetParamAssetsDir(project), "Meta");
-    }
-
-    public static string GetParamNamesDir(ProjectEntry project)
-    {
-        return Path.Join(GetParamAssetsDir(project), "Names");
-    }
-
-    public static string GetStrippedRowNamesPath(ProjectEntry project, string paramName)
-    {
-        var dir = Path.Join(project.ProjectPath, ".smithbox", "Workflow", "Stripped Row Names");
-
-        return Path.Join(dir, $"{paramName}.txt");
     }
 
     public static string GetMassEditScriptCommonDir()

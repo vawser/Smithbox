@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,12 @@ public class NVMNavmeshResource : IResource, IDisposable
         {
             var fileData = curProject.FS.ReadFile(relativePath);
 
+            // Intercept and load the collision from PTDE FS for DS1R projects
+            if (CFG.Current.PTDE_UseCollisionHack && curProject.ProjectType is ProjectType.DS1R)
+            {
+                fileData = curProject.PTDE_FS.ReadFile(relativePath);
+            }
+
             Nvm = NVM.Read(fileData.Value);
             return LoadInternal(al);
         }
@@ -55,6 +62,16 @@ public class NVMNavmeshResource : IResource, IDisposable
 
     private unsafe void ProcessMesh(NVM mesh)
     {
+        byte navR = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.X;
+        byte navG = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.Y;
+        byte navB = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.Z;
+        byte navA = 255;
+
+        byte navGateR = (byte)CFG.Current.GFX_Renderable_NavmeshGate_Color.X;
+        byte navGateG = (byte)CFG.Current.GFX_Renderable_NavmeshGate_Color.Y;
+        byte navGateB = (byte)CFG.Current.GFX_Renderable_NavmeshGate_Color.Z;
+        byte navGateA = 255;
+
         List<Vector3> verts = mesh.Vertices;
         VertexCount = mesh.Triangles.Count * 3;
         IndexCount = mesh.Triangles.Count * 3;
@@ -99,33 +116,33 @@ public class NVMNavmeshResource : IResource, IDisposable
 
             if ((mesh.Triangles[id].Flags & NVM.TriangleFlags.GATE) > 0)
             {
-                MeshVertices[i].Color[0] = 50;
-                MeshVertices[i].Color[1] = 220;
-                MeshVertices[i].Color[2] = 0;
-                MeshVertices[i].Color[3] = 255;
-                MeshVertices[i + 1].Color[0] = 50;
-                MeshVertices[i + 1].Color[1] = 220;
-                MeshVertices[i + 1].Color[2] = 0;
-                MeshVertices[i + 1].Color[3] = 255;
-                MeshVertices[i + 2].Color[0] = 50;
-                MeshVertices[i + 2].Color[1] = 220;
-                MeshVertices[i + 2].Color[2] = 0;
-                MeshVertices[i + 2].Color[3] = 255;
+                MeshVertices[i].Color[0] = navGateR;
+                MeshVertices[i].Color[1] = navGateG;
+                MeshVertices[i].Color[2] = navGateB;
+                MeshVertices[i].Color[3] = navGateA;
+                MeshVertices[i + 1].Color[0] = navGateR;
+                MeshVertices[i + 1].Color[1] = navGateG;
+                MeshVertices[i + 1].Color[2] = navGateB;
+                MeshVertices[i + 1].Color[3] = navGateA;
+                MeshVertices[i + 2].Color[0] = navGateR;
+                MeshVertices[i + 2].Color[1] = navGateG;
+                MeshVertices[i + 2].Color[2] = navGateB;
+                MeshVertices[i + 2].Color[3] = navGateA;
             }
             else
             {
-                MeshVertices[i].Color[0] = 157;
-                MeshVertices[i].Color[1] = 53;
-                MeshVertices[i].Color[2] = 255;
-                MeshVertices[i].Color[3] = 255;
-                MeshVertices[i + 1].Color[0] = 157;
-                MeshVertices[i + 1].Color[1] = 53;
-                MeshVertices[i + 1].Color[2] = 255;
-                MeshVertices[i + 1].Color[3] = 255;
-                MeshVertices[i + 2].Color[0] = 157;
-                MeshVertices[i + 2].Color[1] = 53;
-                MeshVertices[i + 2].Color[2] = 255;
-                MeshVertices[i + 2].Color[3] = 255;
+                MeshVertices[i].Color[0] = navR;
+                MeshVertices[i].Color[1] = navG;
+                MeshVertices[i].Color[2] = navB;
+                MeshVertices[i].Color[3] = navA;
+                MeshVertices[i + 1].Color[0] = navR;
+                MeshVertices[i + 1].Color[1] = navG;
+                MeshVertices[i + 1].Color[2] = navB;
+                MeshVertices[i + 1].Color[3] = navA;
+                MeshVertices[i + 2].Color[0] = navR;
+                MeshVertices[i + 2].Color[1] = navG;
+                MeshVertices[i + 2].Color[2] = navB;
+                MeshVertices[i + 2].Color[3] = navA;
             }
 
             MeshVertices[i].Barycentric[0] = 0;

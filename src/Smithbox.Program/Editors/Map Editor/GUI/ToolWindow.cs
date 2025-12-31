@@ -15,11 +15,6 @@ public class ToolWindow
         Handler = handler;
     }
 
-    public void OnProjectChanged()
-    {
-
-    }
-
     public void OnGui()
     {
         if (Editor.Project.ProjectType == ProjectType.Undefined)
@@ -136,7 +131,11 @@ public class ToolWindow
             {
                 Editor.MapValidatorTool.OnToolWindow();
             }
-            
+
+            if (CFG.Current.Interface_MapEditor_Tool_MapModelInsight)
+            {
+                Editor.MapModelInsightTool.OnToolWindow();
+            }
 
 #if DEBUG
             if (FeatureFlags.EnableNavmeshBuilder)
@@ -272,6 +271,12 @@ public class ToolWindow
                 CFG.Current.Interface_MapEditor_Tool_MapValidator = !CFG.Current.Interface_MapEditor_Tool_MapValidator;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_MapValidator);
+
+            if (ImGui.MenuItem("Map Model Insight"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_MapModelInsight = !CFG.Current.Interface_MapEditor_Tool_MapModelInsight;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_MapModelInsight);
 
 #if DEBUG
             if (ImGui.MenuItem("Treasure Maker"))

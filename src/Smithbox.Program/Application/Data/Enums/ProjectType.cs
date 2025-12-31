@@ -42,18 +42,6 @@ public enum ProjectType
     [Display(Name = "Dark Souls II")]
     DS2 = 10, // Dark Souls II
 
-    [Display(Name = "Armored Core 4")]
-    AC4 = 11, // Armored Core 4
-
-    [Display(Name = "Armored Core: For Answer")]
-    ACFA = 12, // Armored Core: For Answer
-
-    [Display(Name = "Armored Core V")]
-    ACV = 13, // Armored Core V
-
-    [Display(Name = "Armored Core: Verdict Day")]
-    ACVD = 14, // Armored Core: Verdict Day
-
     [Display(Name = "Elden Ring: Nightreign")]
     NR = 15, // Elden Ring
 }

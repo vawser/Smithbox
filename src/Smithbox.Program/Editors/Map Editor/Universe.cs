@@ -105,7 +105,7 @@ public class Universe
                 var wrapper = entry.Value;
 
                 ResourceManager.ClearUnusedResources();
-                ModelDataHelper.ClearEntry(Editor, wrapper.MapContainer);
+                MapModelInsightHelper.ClearEntry(wrapper.MapContainer);
 
                 Editor.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
 
@@ -160,7 +160,7 @@ public class Universe
             var newMap = new MapContainer(Editor, mapid);
 
             ModelDataMapID = newMap.Name;
-            ModelDataHelper.AddEntry(Editor, newMap);
+            MapModelInsightHelper.AddEntry(newMap);
 
             Editor.DisplayGroupTool.SetupDrawgroupCount();
 
@@ -174,12 +174,7 @@ public class Universe
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
-                    if (Editor.Project.ProjectType != ProjectType.AC4 &&
-                        Editor.Project.ProjectType != ProjectType.ACFA &&
-                        Editor.Project.ProjectType != ProjectType.ACV &&
-                        Editor.Project.ProjectType != ProjectType.ACVD)
-                        resourceHandler.SetupHumanEnemySubstitute();
-
+                    resourceHandler.SetupHumanEnemySubstitute();
                     resourceHandler.SetupModelLoadLists();
                     resourceHandler.SetupTexturelLoadLists();
                     resourceHandler.SetupModelMasks(newMap);
@@ -275,13 +270,6 @@ public class Universe
                     null, null, true);
 
                 Editor.EditorActionManager.ExecuteAction(action);
-
-                // Might be this, test:
-                //foreach (Entity obj in newContainer.Objects)
-                //{
-                //      obj.RenderSceneMesh.AutoRegister = true;
-                //      obj.RenderSceneMesh.Register();
-                //}
 
                 if (selectOnLoad)
                 {
@@ -478,46 +466,6 @@ public class Universe
                     n.Trees = prev.Trees;
                     msb = n;
                 }
-                //TODO ACFA
-                else if (Editor.Project.ProjectType == ProjectType.ACFA)
-                {
-                    MSBFA prev = MSBFA.Read(mapData);
-                    MSBFA n = new();
-                    n.Models.Version = prev.Models.Version;
-                    n.Events.Version = prev.Events.Version;
-                    n.Parts.Version = prev.Parts.Version;
-                    n.Layers = prev.Layers;
-                    n.Routes = prev.Routes;
-                    n.DrawingTree = prev.DrawingTree;
-                    n.CollisionTree = prev.CollisionTree;
-                    msb = n;
-                }
-                else if (Editor.Project.ProjectType == ProjectType.ACV)
-                {
-                    MSBV prev = MSBV.Read(mapData);
-                    MSBV n = new();
-                    n.Models.Version = prev.Models.Version;
-                    n.Events.Version = prev.Events.Version;
-                    n.Parts.Version = prev.Parts.Version;
-                    n.Layers = prev.Layers;
-                    n.Routes = prev.Routes;
-                    n.DrawingTree = prev.DrawingTree;
-                    n.CollisionTree = prev.CollisionTree;
-                    msb = n;
-                }
-                else if (Editor.Project.ProjectType == ProjectType.ACVD)
-                {
-                    MSBVD prev = MSBVD.Read(mapData);
-                    MSBVD n = new();
-                    n.Models.Version = prev.Models.Version;
-                    n.Events.Version = prev.Events.Version;
-                    n.Parts.Version = prev.Parts.Version;
-                    n.Layers = prev.Layers;
-                    n.Routes = prev.Routes;
-                    n.DrawingTree = prev.DrawingTree;
-                    n.CollisionTree = prev.CollisionTree;
-                    msb = n;
-                }
                 else
                 {
                     msb = new MSB1();
@@ -652,11 +600,17 @@ public class Universe
 
                     if (CFG.Current.Viewport_Enable_Texturing)
                     {
-                        ResourceDescriptor tasset = TextureLocator.GetChrTextures(Editor.Project, $@"c{chrid}");
-                        if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
-                        {
-                            chrsToLoad.Add(tasset);
-                        }
+                        // TPF
+                        var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, $@"c{chrid}", false);
+
+                        if (textureAsset.IsValid())
+                            chrsToLoad.Add(textureAsset);
+
+                        // BND
+                        textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, $@"c{chrid}", true);
+
+                        if (textureAsset.IsValid())
+                            chrsToLoad.Add(textureAsset);
                     }
                 }
             }

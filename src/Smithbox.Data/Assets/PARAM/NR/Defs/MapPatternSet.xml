@@ -8,7 +8,7 @@
   <Fields>
     
     <Field Def="s32 weight"/>
-    <Field Def="s32 unknown_1"/>
+    <Field Def="s32 patternCount"/>
     <Field Def="s16 unknown_2a"/>
     <Field Def="s16 unknown_2b"/>
     <Field Def="s16 unknown_3a"/>

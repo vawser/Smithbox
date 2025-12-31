@@ -12,6 +12,7 @@ namespace StudioCore.Application;
 
 public class ProjectUtils
 {
+    private static readonly byte[] ZeroIv = new byte[16];
     public static string GetGameDirectory(ProjectEntry curProject)
     {
         return GetGameDirectory(curProject.ProjectType);
@@ -316,19 +317,19 @@ public class ProjectUtils
 
             if (gameType == ProjectType.DS3 && item is BND4 bndDS3)
             {
-                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptDS3Regulation(bndDS3));
+                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptDS3Regulation(bndDS3, ZeroIv));
             }
             else if (gameType == ProjectType.ER && item is BND4 bndER)
             {
-                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptERRegulation(bndER));
+                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptERRegulation(bndER, ZeroIv));
             }
             else if (gameType == ProjectType.NR && item is BND4 bndNR)
             {
-                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptNightreignRegulation(bndNR));
+                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptNightreignRegulation(bndNR, ZeroIv));
             }
             else if (gameType == ProjectType.AC6 && item is BND4 bndAC6)
             {
-                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptAC6Regulation(bndAC6));
+                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptAC6Regulation(bndAC6, ZeroIv));
             }
             else if (item is BXF3 or BXF4)
             {
@@ -426,11 +427,11 @@ public class ProjectUtils
 
     public static bool SupportsGraphicsParamEditor(ProjectType curType)
     {
-        if (curType 
-            is ProjectType.DES 
-            or ProjectType.DS1 
-            or ProjectType.DS1R 
-            or ProjectType.DS2 
+        if (curType
+            is ProjectType.DES
+            or ProjectType.DS1
+            or ProjectType.DS1R
+            or ProjectType.DS2
             or ProjectType.DS2S)
         {
             return false;

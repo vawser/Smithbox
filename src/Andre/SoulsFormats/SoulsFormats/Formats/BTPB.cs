@@ -224,6 +224,7 @@ namespace SoulsFormats
             /// <summary>
             /// Light probes in this group.
             /// </summary>
+            [MsbCollapsedList]
             public List<Probe> Probes { get; set; }
 
             /// <summary>
