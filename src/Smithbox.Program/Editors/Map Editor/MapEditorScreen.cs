@@ -101,6 +101,7 @@ public class MapEditorScreen : EditorScreen
     public WorldMapLayoutTool WorldMapLayoutTool;
     public MapListFilterTool MapListFilterTool;
     public MapValidatorTool MapValidatorTool;
+    public MapModelInsightView MapModelInsightTool;
 
     // Special Tools
     public AutomaticPreviewTool AutomaticPreviewTool;
@@ -185,6 +186,9 @@ public class MapEditorScreen : EditorScreen
         WorldMapLayoutTool = new WorldMapLayoutTool(this, project);
         MapListFilterTool = new MapListFilterTool(this, project);
         MapValidatorTool = new MapValidatorTool(this, project);
+        MapModelInsightTool = new MapModelInsightView(this, project);
+
+        MapModelInsightHelper.Setup(this, project);
 
         // Focus
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");

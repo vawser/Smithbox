@@ -67,7 +67,7 @@ public static class ModelLocator
 
             if(project.ProjectType is ProjectType.DES)
             {
-                ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flver";
+                ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}";
             }
         }
 

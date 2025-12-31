@@ -13,16 +13,17 @@ using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelInsight
+public class ModelInsightView
 {
     public ModelEditorScreen Editor;
     public ProjectEntry Project;
 
-    public ModelInsight(ModelEditorScreen editor, ProjectEntry project)
+    public ModelInsightView(ModelEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
     }
+
     public void OnToolWindow()
     {
         if (ImGui.CollapsingHeader("Model Insight"))

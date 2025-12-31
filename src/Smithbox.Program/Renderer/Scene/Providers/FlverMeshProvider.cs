@@ -94,6 +94,8 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
         _resource.Acquire();
         CreateSubmeshes();
         NotifyAvailable();
+
+        MeshProviderInspector.Add(_resourceName, this);
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
@@ -107,6 +109,8 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
         _allSubmeshes.Clear();
         NotifyUnavailable();
+
+        MeshProviderInspector.Remove(_resourceName);
     }
 
     ~FlverMeshProvider()

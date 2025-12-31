@@ -105,7 +105,7 @@ public class Universe
                 var wrapper = entry.Value;
 
                 ResourceManager.ClearUnusedResources();
-                ModelDataHelper.ClearEntry(Editor, wrapper.MapContainer);
+                MapModelInsightHelper.ClearEntry(wrapper.MapContainer);
 
                 Editor.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
 
@@ -160,7 +160,7 @@ public class Universe
             var newMap = new MapContainer(Editor, mapid);
 
             ModelDataMapID = newMap.Name;
-            ModelDataHelper.AddEntry(Editor, newMap);
+            MapModelInsightHelper.AddEntry(newMap);
 
             Editor.DisplayGroupTool.SetupDrawgroupCount();
 

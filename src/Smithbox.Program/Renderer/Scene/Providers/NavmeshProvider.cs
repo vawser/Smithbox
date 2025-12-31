@@ -60,6 +60,8 @@ public class NavmeshProvider : MeshProvider, IResourceEventListener
         _resource = (ResourceHandle<NVMNavmeshResource>)handle;
         _resource.Acquire();
         NotifyAvailable();
+
+        MeshProviderInspector.Add(_resourceName, this);
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
@@ -67,6 +69,8 @@ public class NavmeshProvider : MeshProvider, IResourceEventListener
         _resource?.Release();
         _resource = null;
         NotifyUnavailable();
+
+        MeshProviderInspector.Remove(_resourceName);
     }
 
     public override bool TryLock()

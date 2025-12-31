@@ -65,6 +65,8 @@ public class HavokNavmeshProvider : MeshProvider, IResourceEventListener
         _resource = (ResourceHandle<HavokNavmeshResource>)handle;
         _resource.Acquire();
         NotifyAvailable();
+
+        MeshProviderInspector.Add(_resourceName, this);
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
@@ -72,6 +74,8 @@ public class HavokNavmeshProvider : MeshProvider, IResourceEventListener
         _resource?.Release();
         _resource = null;
         NotifyUnavailable();
+
+        MeshProviderInspector.Remove(_resourceName);
     }
 
     public override bool TryLock()

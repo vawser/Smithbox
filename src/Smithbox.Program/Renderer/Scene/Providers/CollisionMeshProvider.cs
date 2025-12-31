@@ -51,6 +51,8 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
         _resource.Acquire();
         CreateSubmeshes();
         NotifyAvailable();
+
+        MeshProviderInspector.Add(_resourceName, this);
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
@@ -64,6 +66,8 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
 
         _submeshes.Clear();
         NotifyUnavailable();
+
+        MeshProviderInspector.Remove(_resourceName);
     }
 
     ~CollisionMeshProvider()

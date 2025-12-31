@@ -327,7 +327,7 @@ public class FlverResource : IResource, IDisposable
             // Used to allow for association of models and textures
             if (ResourceManager.BaseEditor.ProjectManager.SelectedProject.FocusedEditor is MapEditorScreen)
             {
-                ModelDataHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+                MapModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
             }
 
             if (ResourceManager.BaseEditor.ProjectManager.SelectedProject.FocusedEditor is ModelEditorScreen)
@@ -1965,9 +1965,6 @@ public class FlverResource : IResource, IDisposable
         if (FlverDeS == null)
             return false;
 
-        if (GPUMaterials == null)
-            return false;
-
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
             GPUMeshes = new FlverSubmesh[FlverDeS.Meshes.Count()];
@@ -2006,7 +2003,7 @@ public class FlverResource : IResource, IDisposable
             BoneTransforms.Clear();
         }
 
-        if (GPUMaterials.Any(e => e.GetNormalWBoneTransform()))
+        if (GPUMaterials != null && GPUMaterials.Any(e => e.GetNormalWBoneTransform()))
         {
             if (Bones != null)
             {

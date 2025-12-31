@@ -85,7 +85,7 @@ public class PathBuilder
 
                     if (project.ProjectType is ProjectType.DES)
                     {
-                        relPath = Path.Combine("map", mapid, $"{p[i]}.flver.dcx");
+                        relPath = Path.Combine("map", mapid, $"{p[i]}.flver");
                     }
                     else if (project.ProjectType is ProjectType.DS1)
                     {
