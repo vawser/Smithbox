@@ -54,7 +54,7 @@ public static class ModelDataHelper
         {
             var entry = Entries[project.MapEditor.Universe.ModelDataMapID];
 
-            if(!entry.Models.Any(e => e.Name == flverName))
+            if(!entry.Models.Any(e => e.Name != null && e.Name == flverName))
             {
                 var newModel = new FlverDataEntry();
                 newModel.Name = flverName;

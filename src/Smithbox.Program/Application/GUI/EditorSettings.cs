@@ -361,6 +361,9 @@ public class MapEditorTab
 
                 UIHelper.WrappedText("Select the install directory for your Dark Souls: Prepare to Die Edition. This will allow collision to be visible within a Dark Souls: Remastered project.");
 
+                ImGui.Checkbox("Use PTDE Collision Files", ref CFG.Current.PTDE_UseCollisionHack);
+                UIHelper.Tooltip("If enabled, and a PTDE install is set, the PTDE collision files will be loaded for collisions and navmeshes.");
+
                 ImGui.InputText("PTDE Game Directory##ptdeGameDirectory", ref CFG.Current.PTDE_Collision_Root, 255);
                 UIHelper.Tooltip("Select the directory of the Dark Souls: Prepare to Die Edition install.");
 

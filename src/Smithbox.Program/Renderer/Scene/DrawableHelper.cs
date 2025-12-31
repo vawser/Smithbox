@@ -13,10 +13,6 @@ namespace StudioCore.Renderer;
 
 public static class DrawableHelper
 {
-
-    /// <summary>
-    /// The drawable proxies for a Part map object
-    /// </summary>
     public static RenderableProxy GetModelDrawable(EditorScreen editor, RenderScene scene, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks, bool forceReload = false)
     {
         Universe curUniverse = null;
@@ -68,29 +64,35 @@ public static class DrawableHelper
         else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && obj.IsPartCollision())
         {
             loadcol = true;
+
             asset = ModelLocator.GetMapCollisionModel(curProject, amapid,
                 ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname));
 
-            if (asset == null || asset.AssetPath == null) loadcol = false;
+            if (asset == null) 
+                loadcol = false;
 
             filt = RenderFilter.Collision;
         }
         else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && obj.IsPartConnectCollision())
         {
             loadcol = true;
+
             isConnectCol = true;
 
             asset = ModelLocator.GetMapCollisionModel(curProject, amapid,
                 ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname), true);
 
-            if (asset == null || asset.AssetPath == null) loadcol = false;
+            if (asset == null) 
+                loadcol = false;
 
             filt = RenderFilter.ConnectCollision;
         }
         else if (modelname.StartsWith("n", StringComparison.CurrentCultureIgnoreCase))
         {
             loadnav = true;
+
             asset = ModelLocator.GetMapNVMModel(curProject, amapid, ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname));
+
             filt = RenderFilter.Navmesh;
         }
         else
@@ -105,6 +107,7 @@ public static class DrawableHelper
         {
             MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
                 scene, asset.AssetVirtualPath, modelMarkerType);
+
             mesh.World = obj.GetWorldMatrix();
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Collision;

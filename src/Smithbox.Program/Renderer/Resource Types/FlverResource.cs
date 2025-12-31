@@ -153,6 +153,10 @@ public class FlverResource : IResource, IDisposable
         if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
             return false;
 
+        // Small hack so the chrbnd's that are passed here are skipped.
+        if (!(relativePath.Contains(".flv")))
+            return false;
+
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
 
         try

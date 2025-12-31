@@ -669,6 +669,7 @@ public class CFG
     //**************
     // Project
     //**************
+    public bool PTDE_UseCollisionHack = true;
     public string PTDE_Collision_Root = "";
     public bool PTDE_Collision_Root_Warning = true;
 

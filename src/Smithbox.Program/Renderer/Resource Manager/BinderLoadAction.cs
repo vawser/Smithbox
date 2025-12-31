@@ -233,7 +233,7 @@ public class LoadBinderResourcesAction
                 // NAVMESH
                 if (ResourceMask.HasFlag(ResourceType.Navmesh))
                 {
-                    if (LocatorUtils.IsNavmesh(curFileBinderPath))
+                    if (LocatorUtils.IsNavmesh(BinderVirtualPath, curFileBinderPath))
                     {
                         pipeline = _job.NVMNavmeshLoadPipeline;
 

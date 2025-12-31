@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Silk.NET.SDL;
 using StudioCore.Application;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -35,14 +36,17 @@ public static class LocatorUtils
         return success;
     }
 
-    public static bool IsNavmesh(string path)
+    public static bool IsNavmesh(string virtPath, string path)
     {
         string upperPath = path.ToUpper();
         bool success = false;
 
-        if (upperPath.EndsWith(".NVM"))
+        if (virtPath.Contains(@"/nav"))
         {
-            success = true;
+            if (upperPath.EndsWith(".NVM"))
+            {
+                success = true;
+            }
         }
 
         return success;
