@@ -469,8 +469,13 @@ public class MapResourceHandler
             {
                 if (asset.AssetArchiveVirtualPath != null)
                 {
+                    var type = ResourceType.NavmeshHKX;
+
+                    if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+                        type = ResourceType.Navmesh;
+
                     job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                        false, ResourceType.NavmeshHKX);
+                        false, type);
                 }
                 else if (asset.AssetVirtualPath != null)
                 {
