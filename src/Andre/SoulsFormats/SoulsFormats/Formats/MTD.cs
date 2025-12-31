@@ -306,6 +306,8 @@ namespace SoulsFormats
         // I believe the engine supports Bool2-4 and Int3-4 as well, but they're never used so I won't bother yet.
         public enum ParamType
         {
+            None,
+
             /// <summary>
             /// A one-byte boolean value.
             /// </summary>

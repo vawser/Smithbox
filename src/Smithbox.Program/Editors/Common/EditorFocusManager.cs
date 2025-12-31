@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
 
 namespace StudioCore.Editors.Common;
@@ -19,6 +20,8 @@ public class EditorFocusManager
     public MapEditorContext MapEditorContext = MapEditorContext.None;
 
     public ModelEditorContext ModelEditorContext = ModelEditorContext.None;
+
+    public MaterialEditorContext MaterialEditorContext = MaterialEditorContext.None;
 
     public EditorFocusManager(EditorScreen screen)
     {
@@ -67,6 +70,14 @@ public class EditorFocusManager
         if (ImGui.IsWindowHovered())
         {
             ModelEditorContext = newContext;
+        }
+    }
+
+    public void SwitchMaterialEditorContext(MaterialEditorContext newContext)
+    {
+        if (ImGui.IsWindowHovered())
+        {
+            MaterialEditorContext = newContext;
         }
     }
 }

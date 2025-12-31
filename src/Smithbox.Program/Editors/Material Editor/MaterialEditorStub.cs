@@ -69,6 +69,11 @@ public class MaterialEditorStub : IEditorStub
         }
         else
         {
+            if (Project.MaterialEditor != null)
+            {
+                Project.MaterialEditor.OnDefocus();
+            }
+
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
             ImGui.End();

@@ -20,6 +20,8 @@ public class MaterialFileList
     }
     public void Draw()
     {
+        Editor.FocusManager.SwitchMaterialEditorContext(MaterialEditorContext.FileList);
+
         Editor.Filters.DisplayFileFilterSearch();
 
         ImGui.BeginChild("FileList");
@@ -54,8 +56,20 @@ public class MaterialFileList
                     {
                         Editor.Selection.SelectedFileKey = key;
                         Editor.Selection.SelectedMTD = curFile;
+                    }
 
-                        Editor.Selection.SelectedTextureIndex = -1;
+                    // Arrow Selection
+                    if (ImGui.IsItemHovered() && Editor.Selection.SelectFileListEntry)
+                    {
+                        Editor.Selection.SelectFileListEntry = false;
+
+                        Editor.Selection.SelectedFileKey = key;
+                        Editor.Selection.SelectedMTD = curFile;
+                    }
+                    if (ImGui.IsItemFocused() && 
+                        (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                    {
+                        Editor.Selection.SelectFileListEntry = true;
                     }
                 }
             }
@@ -95,8 +109,20 @@ public class MaterialFileList
                         {
                             Editor.Selection.SelectedFileKey = key;
                             Editor.Selection.SelectedMATBIN = curFile;
+                        }
 
-                            Editor.Selection.SelectedTextureIndex = -1;
+                        // Arrow Selection
+                        if (ImGui.IsItemHovered() && Editor.Selection.SelectFileListEntry)
+                        {
+                            Editor.Selection.SelectFileListEntry = false;
+
+                            Editor.Selection.SelectedFileKey = key;
+                            Editor.Selection.SelectedMATBIN = curFile;
+                        }
+                        if (ImGui.IsItemFocused() &&
+                            (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                        {
+                            Editor.Selection.SelectFileListEntry = true;
                         }
                     }
                 }

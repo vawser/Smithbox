@@ -57,4 +57,11 @@ namespace SoulsFormats
     public class IgnoreInModelEditor : Attribute
     {
     }
+
+    // Material Editor
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class IgnoreInMaterialEditor : Attribute
+    {
+    }
 }

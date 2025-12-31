@@ -39,3 +39,55 @@
 
 # TODO NOW
 - DS2 Model Editor: chrs loading badly, parts + map pieces failed to find
+
+switch(actualParam.Type)
+{
+    case MTD.ParamType.Bool:
+        actualType = typeof(bool);
+        break;
+
+    case MTD.ParamType.Float:
+        actualType = typeof(float);
+        break;
+
+    case MTD.ParamType.Float2:
+        actualType = typeof(float[]);
+        o = new Vector2(((float[])o)[0], ((float[])o)[1]);
+        break;
+
+    case MTD.ParamType.Float3:
+        actualType = typeof(Vector3);
+        o = new Vector3(((float[])o)[0], ((float[])o)[1], ((float[])o)[2]);
+        break;
+
+    case MTD.ParamType.Float4:
+        actualType = typeof(Vector4);
+        var arr4 = (float[])o;
+        o = new Vector4(arr4[0], arr4[1], arr4[2], arr4[3]);
+        break;
+
+    case MTD.ParamType.Int:
+        actualType = typeof(int);
+        break;
+
+    case MTD.ParamType.Int2:
+        actualType = typeof(Vector2);
+        var arr2 = (int[])o;
+        o = new Vector2(arr2[0], arr2[1]); // int stored but editable as floats
+        break;
+}
+
+
+        // Convert the vectors back to arrays after editing occurs
+        if (newval is Vector2 v2 && oldval is float[] fa2)
+            newval = new float[] { v2.X, v2.Y };
+
+        if (newval is Vector3 v3 && oldval is float[] fa3)
+            newval = new float[] { v3.X, v3.Y, v3.Z };
+
+        if (newval is Vector4 v4 && oldval is float[] fa4)
+            newval = new float[] { v4.X, v4.Y, v4.Z, v4.W };
+
+        if (newval is Vector2 vi2 && oldval is int[] ia2)
+            newval = new int[] { (int)vi2.X, (int)vi2.Y };
+

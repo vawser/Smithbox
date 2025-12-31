@@ -24,6 +24,8 @@ public class MaterialSourceList
         if (Project.MaterialData.PrimaryBank == null)
             return;
 
+        Editor.FocusManager.SwitchMaterialEditorContext(MaterialEditorContext.SourceList);
+
         ImGui.BeginTabBar("sourceTabs");
 
         if (ImGui.BeginTabItem($"MTD"))

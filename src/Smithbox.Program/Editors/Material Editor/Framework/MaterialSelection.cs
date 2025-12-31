@@ -28,7 +28,6 @@ public class MaterialSelection
 
     public MATBIN SelectedMATBIN { get; set; }
 
-    // MTD
-    public int SelectedTextureIndex { get; set; } = -1;
-
+    // Focus
+    public bool SelectFileListEntry = false;
 }

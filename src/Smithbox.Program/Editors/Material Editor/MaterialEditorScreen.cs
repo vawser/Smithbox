@@ -14,34 +14,36 @@ public class MaterialEditorScreen : EditorScreen
     private ProjectEntry Project;
 
     public ActionManager EditorActionManager = new();
+    public MaterialPropertyCache MaterialPropertyCache = new();
 
+    public EditorFocusManager FocusManager;
     public MaterialSelection Selection;
     public MaterialFilters Filters;
+    public MaterialPropertyHandler PropertyHandler;
+    public MaterialCommandQueue CommandQueue;
+    public MaterialShortcuts Shortcuts;
 
     public MaterialSourceList BinderList;
     public MaterialFileList FileList;
-
-    public MaterialMTDView MTDView;
-    public MaterialMATBINView MATBINView;
-
-    public MaterialFieldInput FieldInput;
-
+    public MaterialPropertyView PropertyView;
+    public MaterialToolWindow ToolWindow;
 
     public MaterialEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
         Project = project;
 
+        FocusManager = new(this);
         Selection = new(this, project);
         Filters = new(this, project);
+        PropertyHandler = new(this, project);
+        CommandQueue = new(this, project);
+        Shortcuts = new(this, project);
 
         BinderList = new(this, project);
         FileList = new(this, project);
-
-        MTDView = new(this, project);
-        MATBINView = new(this, project);
-
-        FieldInput = new(this, project);
+        PropertyView = new(this, project);
+        ToolWindow = new(this, project);
     }
 
     public string EditorName => "Material Editor##MaterialEditor";
@@ -67,51 +69,51 @@ public class MaterialEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_MaterialEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        Shortucts();
+        Shortcuts.Monitor();
+        CommandQueue.Parse(initcmd);
 
         if (ImGui.BeginMenuBar())
         {
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu();
+            ToolWindow.ToolMenu();
 
             ImGui.EndMenuBar();
         }
 
-        if (true)
+        if (CFG.Current.Interface_MaterialEditor_SourceList)
         {
-            ImGui.Begin("Binders##materialBinderList", ImGuiWindowFlags.None);
+            ImGui.Begin("Source List##materialBinderList", ImGuiWindowFlags.None);
             BinderList.Draw();
             ImGui.End();
         }
 
-        if (true)
+        if (CFG.Current.Interface_MaterialEditor_FileList)
         {
-            ImGui.Begin("Files##materialFileList", ImGuiWindowFlags.None);
+            ImGui.Begin("File List##materialFileList", ImGuiWindowFlags.None);
             FileList.Draw();
             ImGui.End();
         }
 
-        if (Selection.SourceType is MaterialSourceType.MTD)
+        if (CFG.Current.Interface_MaterialEditor_PropertyView)
         {
-            ImGui.Begin("MTD Entry##material_MTD_entry", ImGuiWindowFlags.MenuBar);
-            MTDView.Draw();
+            ImGui.Begin("Properties##propertyView", ImGuiWindowFlags.MenuBar);
+            PropertyView.Draw();
             ImGui.End();
         }
 
-        if (Selection.SourceType is MaterialSourceType.MATBIN)
+        if (CFG.Current.Interface_MaterialEditor_ToolWindow)
         {
-            if (MaterialUtils.SupportsMATBIN(Project))
-            {
-                ImGui.Begin("MATBIN Entry##material_MATBIN_entry", ImGuiWindowFlags.MenuBar);
-                MATBINView.Draw();
-                ImGui.End();
-            }
+            ImGui.Begin("Tool Window##materialEditorTools", ImGuiWindowFlags.MenuBar);
+            ToolWindow.Draw();
+            ImGui.End();
         }
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
+
+        FocusManager.OnFocus();
     }
 
     public void FileMenu()
@@ -209,41 +211,31 @@ public class MaterialEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("View"))
         {
+            if (ImGui.MenuItem("Source List"))
+            {
+                CFG.Current.Interface_MaterialEditor_SourceList = !CFG.Current.Interface_MaterialEditor_SourceList;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_SourceList);
+
+            if (ImGui.MenuItem("File List"))
+            {
+                CFG.Current.Interface_MaterialEditor_FileList = !CFG.Current.Interface_MaterialEditor_FileList;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_FileList);
+
+            if (ImGui.MenuItem("Properties"))
+            {
+                CFG.Current.Interface_MaterialEditor_PropertyView = !CFG.Current.Interface_MaterialEditor_PropertyView;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_PropertyView);
+
+            if (ImGui.MenuItem("Tool Window"))
+            {
+                CFG.Current.Interface_MaterialEditor_ToolWindow = !CFG.Current.Interface_MaterialEditor_ToolWindow;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_ToolWindow);
 
             ImGui.EndMenu();
-        }
-    }
-
-    public void ToolMenu()
-    {
-
-    }
-
-    public void Shortucts()
-    {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
-        {
-            Save();
-        }
-
-        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
-        {
-            EditorActionManager.UndoAction();
-        }
-
-        if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
-        {
-            EditorActionManager.UndoAction();
-        }
-
-        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
-        {
-            EditorActionManager.RedoAction();
-        }
-
-        if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
-        {
-            EditorActionManager.RedoAction();
         }
     }
 
@@ -301,5 +293,9 @@ public class MaterialEditorScreen : EditorScreen
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
+    }
+    public void OnDefocus()
+    {
+        FocusManager.ResetFocus();
     }
 }

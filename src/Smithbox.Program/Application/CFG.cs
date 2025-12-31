@@ -651,6 +651,12 @@ public class CFG
     ///------------------------------------------------------------
     /// Material Editor
     ///------------------------------------------------------------
+    public bool Interface_MaterialEditor_SourceList = true;
+    public bool Interface_MaterialEditor_FileList = true;
+    public bool Interface_MaterialEditor_PropertyView = true;
+    public bool Interface_MaterialEditor_ToolWindow = true;
+
+    public bool MaterialEditor_DisplayCommunityFieldNames = false;
 
     ///------------------------------------------------------------
     /// File Browser
