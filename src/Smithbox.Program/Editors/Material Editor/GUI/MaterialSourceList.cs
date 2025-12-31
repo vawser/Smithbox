@@ -26,7 +26,6 @@ public class MaterialSourceList
 
         ImGui.BeginTabBar("sourceTabs");
 
-
         if (ImGui.BeginTabItem($"MTD"))
         {
             Editor.Selection.SourceType = MaterialSourceType.MTD;
@@ -38,16 +37,18 @@ public class MaterialSourceList
             ImGui.EndTabItem();
         }
 
-
-        if (ImGui.BeginTabItem($"MATBIN"))
+        if (MaterialUtils.SupportsMATBIN(Project))
         {
-            Editor.Selection.SourceType = MaterialSourceType.MATBIN;
+            if (ImGui.BeginTabItem($"MATBIN"))
+            {
+                Editor.Selection.SourceType = MaterialSourceType.MATBIN;
 
-            Editor.Filters.DisplayBinderFilterSearch();
+                Editor.Filters.DisplayBinderFilterSearch();
 
-            DisplayMatbinList();
+                DisplayMatbinList();
 
-            ImGui.EndTabItem();
+                ImGui.EndTabItem();
+            }
         }
 
         ImGui.EndTabBar();

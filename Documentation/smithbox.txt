@@ -22,6 +22,8 @@
 - Texture Editor FEAT: adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
  (i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
  
+- Material Editor FEAT: implement property editing
+ 
 # TODO DOCS
 - Param Editor DOC: finish syncing the AC6 meta to the leaked paramdefs (was around NpcParam)
 
@@ -36,3 +38,4 @@
 - Param Editor BUG: adjust the difference checker to account for row index
 
 # TODO NOW
+- DS2 Model Editor: chrs loading badly, parts + map pieces failed to find

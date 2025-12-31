@@ -43,7 +43,7 @@ public class MaterialData
             .ToList();
 
         // DS2 has it as a single .bnd file
-        if(Project.ProjectType is ProjectType.DS2 or ProjectType.DS2)
+        if(Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             MTD_Files.Entries = Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
