@@ -118,16 +118,9 @@ public class PathBuilder
                     {
                         relPath = Path.Combine("map", mapid, p[i]);
                     }
-                    else if (project.ProjectType == ProjectType.DS1R)
+                    else if (project.ProjectType is ProjectType.DS1R)
                     {
-                        if (CFG.Current.PTDE_Collision_Root != "")
-                        {
-                            if (Directory.Exists(CFG.Current.PTDE_Collision_Root))
-                            {
-                                relPath = Path.Join(
-                                    CFG.Current.PTDE_Collision_Root, "map", mapid, p[i]);
-                            }
-                        }
+                        relPath = Path.Combine("map", mapid, p[i].ToLower());
                     }
                     else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                     {
@@ -167,20 +160,9 @@ public class PathBuilder
                     var hittype = p[i];
                     i++;
 
-                    if (project.ProjectType is ProjectType.DS1 or ProjectType.DES)
+                    if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
                     {
                         relPath = Path.Combine("map", mapid, p[i]);
-                    }
-                    else if (project.ProjectType == ProjectType.DS1R)
-                    {
-                        if (CFG.Current.PTDE_Collision_Root != "")
-                        {
-                            if (Directory.Exists(CFG.Current.PTDE_Collision_Root))
-                            {
-                                relPath = Path.Join(
-                                    CFG.Current.PTDE_Collision_Root, "map", mapid, p[i]);
-                            }
-                        }
                     }
                     else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                     {

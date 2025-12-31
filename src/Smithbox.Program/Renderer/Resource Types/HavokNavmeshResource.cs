@@ -78,6 +78,12 @@ public class HavokNavmeshResource : IResource, IDisposable
         {
             var fileData = curProject.FS.ReadFile(relativePath);
 
+            // Intercept and load the collision from PTDE FS for DS1R projects
+            if (CFG.Current.PTDE_Collision_Root != "" && curProject.ProjectType is ProjectType.DS1R)
+            {
+                fileData = curProject.PTDE_FS.ReadFile(relativePath);
+            }
+
             if (curProject.ProjectType is ProjectType.DS3 or ProjectType.BB)
             {
                 var des = new PackFileDeserializer();

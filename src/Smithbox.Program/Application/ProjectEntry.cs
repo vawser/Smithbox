@@ -65,6 +65,12 @@ public class ProjectEntry
     public VirtualFileSystem VanillaRealFS = EmptyVirtualFileSystem.Instance;
     [JsonIgnore]
     public VirtualFileSystem VanillaFS = EmptyVirtualFileSystem.Instance;
+
+    // Special FS for DS1R projects so we can read the PTDE files for the collision hack
+    [JsonIgnore]
+    public VirtualFileSystem PTDE_FS = EmptyVirtualFileSystem.Instance;
+
+
     [JsonIgnore]
     public FileDictionary FileDictionary;
 
@@ -958,6 +964,16 @@ public class ProjectEntry
             VanillaFS = EmptyVirtualFileSystem.Instance;
         }
 
+        // PTDE File System
+        if (Directory.Exists(CFG.Current.PTDE_Collision_Root))
+        {
+            PTDE_FS = new RealVirtualFileSystem(CFG.Current.PTDE_Collision_Root, false);
+            fileSystems.Add(PTDE_FS);
+        }
+        else
+        {
+            PTDE_FS = EmptyVirtualFileSystem.Instance;
+        }
 
         if (fileSystems.Count == 0)
             FS = EmptyVirtualFileSystem.Instance;

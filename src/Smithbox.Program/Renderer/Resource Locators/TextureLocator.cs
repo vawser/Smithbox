@@ -85,7 +85,6 @@ public static class TextureLocator
     {
         ResourceDescriptor ad = new();
 
-        ad.AssetPath = null;
         ad.AssetVirtualPath = null;
         ad.AssetArchiveVirtualPath = null;
 
@@ -121,7 +120,6 @@ public static class TextureLocator
     {
         ResourceDescriptor ad = new();
 
-        ad.AssetPath = null;
         ad.AssetVirtualPath = null;
         ad.AssetArchiveVirtualPath = null;
 
@@ -134,7 +132,6 @@ public static class TextureLocator
     {
         ResourceDescriptor ad = new();
 
-        ad.AssetPath = null;
         ad.AssetVirtualPath = null;
         ad.AssetArchiveVirtualPath = null;
 
@@ -147,7 +144,6 @@ public static class TextureLocator
     {
         ResourceDescriptor ad = new();
 
-        ad.AssetPath = null;
         ad.AssetVirtualPath = null;
         ad.AssetArchiveVirtualPath = null;
 
@@ -160,7 +156,6 @@ public static class TextureLocator
     {
         ResourceDescriptor ad = new();
 
-        ad.AssetPath = null;
         ad.AssetVirtualPath = null;
         ad.AssetArchiveVirtualPath = null;
 
@@ -179,7 +174,6 @@ public static class TextureLocator
     {
         ResourceDescriptor ad = new();
 
-        ad.AssetPath = null;
         ad.AssetVirtualPath = null;
         ad.AssetArchiveVirtualPath = null;
 
