@@ -38,10 +38,6 @@ public class DisplayGroupTool
             case ProjectType.DS1R:
             case ProjectType.DS2:
             case ProjectType.DS2S:
-            case ProjectType.AC4: // TODO unsure if this is correct
-            case ProjectType.ACFA: // TODO unsure if this is correct
-            case ProjectType.ACV: // TODO unsure if this is correct
-            case ProjectType.ACVD: // TODO unsure if this is correct
                 _dispGroupCount = 4;
                 break;
             case ProjectType.BB:

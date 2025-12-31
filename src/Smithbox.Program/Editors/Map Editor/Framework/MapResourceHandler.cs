@@ -471,7 +471,7 @@ public class MapResourceHandler
                 {
                     var type = ResourceType.NavmeshHKX;
 
-                    if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+                    if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
                         type = ResourceType.Navmesh;
 
                     job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,

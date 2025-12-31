@@ -42,7 +42,15 @@ public class PathBuilder
             if (p[i].Equals("tex"))
             {
                 i++;
-                if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+
+                if (project.ProjectType is ProjectType.DES)
+                {
+                    var mid = p[i];
+                    i++;
+
+                    relPath = Path.Combine("map", mid, $"{mid}_{p[i]}.tpf.dcx");
+                }
+                else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     var mid = p[i];
 
@@ -54,13 +62,6 @@ public class PathBuilder
                     {
                         relPath = Path.Combine("model", "map", $"t{mid.Substring(1)}.tpfbhd");
                     }
-                }
-                else if (project.ProjectType is ProjectType.DES)
-                {
-                    var mid = p[i];
-                    i++;
-
-                    relPath = Path.Combine("map", mid, $"{mid}_{p[i]}.tpf.dcx");
                 }
                 else
                 {
@@ -82,7 +83,11 @@ public class PathBuilder
                 {
                     i++;
 
-                    if (project.ProjectType is ProjectType.DS1)
+                    if (project.ProjectType is ProjectType.DES)
+                    {
+                        relPath = Path.Combine("map", mapid, $"{p[i]}.flver.dcx");
+                    }
+                    else if (project.ProjectType is ProjectType.DS1)
                     {
                         relPath = Path.Combine("map", mapid, $"{p[i]}.flver");
                     }
@@ -94,7 +99,7 @@ public class PathBuilder
                     {
                         relPath = Path.Combine("model", "map", $"{mapid}.mapbhd");
                     }
-                    else if (project.ProjectType is ProjectType.BB or ProjectType.DES)
+                    else if (project.ProjectType is ProjectType.BB)
                     {
                         relPath = Path.Combine("map", mapid, $"{p[i]}.flver.dcx");
                     }
@@ -114,13 +119,9 @@ public class PathBuilder
                     var hittype = p[i];
                     i++;
 
-                    if (project.ProjectType is ProjectType.DS1 or ProjectType.DES)
+                    if (project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                     {
                         relPath = Path.Combine("map", mapid, p[i]);
-                    }
-                    else if (project.ProjectType is ProjectType.DS1R)
-                    {
-                        relPath = Path.Combine("map", mapid, p[i].ToLower());
                     }
                     else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                     {
@@ -160,7 +161,7 @@ public class PathBuilder
                     var hittype = p[i];
                     i++;
 
-                    if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+                    if (project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                     {
                         relPath = Path.Combine("map", mapid, p[i]);
                     }
@@ -182,7 +183,7 @@ public class PathBuilder
                 {
                     i++;
 
-                    if (project.ProjectType is ProjectType.DS1 or ProjectType.DES)
+                    if (project.ProjectType is ProjectType.DES or ProjectType.DS1)
                     {
                         relPath = Path.Combine("map", mapid, $"{mapid}.nvmbnd");
                     }
@@ -692,23 +693,6 @@ public class PathBuilder
                 // Special case for chalice dungeon assets
                 return "m29_00_00_00";
             }
-        }
-        else if (project.ProjectType is ProjectType.ACFA)
-        {
-            return mapid[..4];
-        }
-        else if (project.ProjectType is ProjectType.ACV)
-        {
-            return mapid[..5];
-        }
-        else if (project.ProjectType is ProjectType.ACVD)
-        {
-            if (mapid.Length == 12 && mapid.StartsWith("ch"))
-            {
-                return string.Concat(mapid.AsSpan(7, 4), "0");
-            }
-
-            return mapid[..4] + '0';
         }
 
         // Default

@@ -48,12 +48,6 @@ public static class DrawableHelper
             asset = ModelLocator.GetChrModel(curProject, modelname, modelname);
             filt = RenderFilter.Character;
         }
-        else if (modelname.StartsWith("e", StringComparison.CurrentCultureIgnoreCase))
-        {
-            loadflver = true;
-            asset = ModelLocator.GetEneModel(curProject, modelname);
-            filt = RenderFilter.Character;
-        }
         else if (modelname.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || 
             (modelname.StartsWith("AEG") || modelname.StartsWith("aeg")))
         {

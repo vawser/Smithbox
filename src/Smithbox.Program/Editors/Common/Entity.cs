@@ -1897,10 +1897,6 @@ public class MsbEntity : Entity
                 case ProjectType.DS2S:
                 case ProjectType.AC6:
                 case ProjectType.DS2:
-                case ProjectType.AC4:
-                case ProjectType.ACFA:
-                case ProjectType.ACV:
-                case ProjectType.ACVD:
                 case ProjectType.Undefined:
                 default:
                     return null;

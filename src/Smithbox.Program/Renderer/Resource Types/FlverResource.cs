@@ -96,7 +96,7 @@ public class FlverResource : IResource, IDisposable
 
             bool ret;
 
-            if (curProject.ProjectType is ProjectType.DES or ProjectType.ACFA)
+            if (curProject.ProjectType is ProjectType.DES)
             {
                 FlverDeS = FLVER0.Read(bytes);
                 ret = LoadInternalDeS(al);
@@ -167,7 +167,7 @@ public class FlverResource : IResource, IDisposable
 
             if (fileData != null && fileData.Value.Length > 1)
             {
-                if (curProject.ProjectType is ProjectType.DES or ProjectType.ACFA)
+                if (curProject.ProjectType is ProjectType.DES)
                 {
                     FlverDeS = FLVER0.Read(fileData.Value);
                     ret = LoadInternalDeS(al);
@@ -453,7 +453,7 @@ public class FlverResource : IResource, IDisposable
         dest.SpecializationConstants = new List<SpecializationConstant>();
 
         //FLVER0 stores layouts directly in the material
-        if (curProject.ProjectType is ProjectType.DES or ProjectType.ACFA)
+        if (curProject.ProjectType is ProjectType.DES)
         {
             var desMat = (FLVER0.Material)mat;
             var foundBoneIndices = false;
@@ -1320,19 +1320,6 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
-        // Move NormalW local indices to global bone indices for shader
-        if (curProject.ProjectType is ProjectType.ACFA && mesh.Dynamic != 1)
-        {
-            for (int i = 0; i < mesh.Vertices.Count; i++)
-            {
-                var vert = mesh.Vertices[i];
-                if (vert.NormalW < mesh.BoneIndices.Length && vert.NormalW >= 0)
-                {
-                    mesh.Vertices[i].NormalW = mesh.BoneIndices[vert.NormalW];
-                }
-            }
-        }
-
         var vSize = dest.Material.VertexSize;
         dest.PickingVertices = Marshal.AllocHGlobal(mesh.Vertices.Count * sizeof(Vector3));
         Span<Vector3> pvhandle = new(dest.PickingVertices.ToPointer(), mesh.Vertices.Count);
@@ -1446,19 +1433,6 @@ public class FlverResource : IResource, IDisposable
             return;
 
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
-
-        // Move NormalW local indices to global bone indices for shader
-        if (curProject.ProjectType is ProjectType.ACV or ProjectType.ACVD && mesh.Dynamic != 1)
-        {
-            for (int i = 0; i < mesh.Vertices.Count; i++)
-            {
-                var vert = mesh.Vertices[i];
-                if (vert.NormalW < mesh.BoneIndices.Count && vert.NormalW >= 0)
-                {
-                    mesh.Vertices[i].NormalW = mesh.BoneIndices[vert.NormalW];
-                }
-            }
-        }
 
         if (Flver == null)
             return;

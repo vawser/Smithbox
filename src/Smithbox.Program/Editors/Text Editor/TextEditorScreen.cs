@@ -335,7 +335,7 @@ public class TextEditorScreen : EditorScreen
         {
             try
             {
-                if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
                     await Project.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
                 }

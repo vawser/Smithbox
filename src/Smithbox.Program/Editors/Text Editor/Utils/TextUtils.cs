@@ -45,14 +45,6 @@ public static class TextUtils
                 return CategoryGroupings.NR_Languages.Contains(category);
             case ProjectType.AC6:
                 return CategoryGroupings.AC6_Languages.Contains(category);
-            case ProjectType.AC4:
-                return CategoryGroupings.AC4_Languages.Contains(category);
-            case ProjectType.ACFA:
-                return CategoryGroupings.ACFA_Languages.Contains(category);
-            case ProjectType.ACV:
-                return CategoryGroupings.ACV_Languages.Contains(category);
-            case ProjectType.ACVD:
-                return CategoryGroupings.ACVD_Languages.Contains(category);
             default: break;
         }
 
@@ -84,14 +76,6 @@ public static class TextUtils
                 return CategoryGroupings.NR_Languages;
             case ProjectType.AC6:
                 return CategoryGroupings.AC6_Languages;
-            case ProjectType.AC4:
-                return CategoryGroupings.AC4_Languages;
-            case ProjectType.ACFA:
-                return CategoryGroupings.ACFA_Languages;
-            case ProjectType.ACV:
-                return CategoryGroupings.ACV_Languages;
-            case ProjectType.ACVD:
-                return CategoryGroupings.ACVD_Languages;
             default: break;
         }
 

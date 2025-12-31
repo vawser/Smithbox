@@ -200,13 +200,6 @@ public static class TextureLocator
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
         texpath = texpath.Replace('\\', sl);
 
-        // For these projects, return the texture name only
-        if (curProject.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
-        {
-            // HACK: Only include texture name and not full virtual path
-            return Path.GetFileNameWithoutExtension(texpath);
-        }
-
         // MAP Texture
         if (texpath.Contains($"{sl}map{sl}"))
         {

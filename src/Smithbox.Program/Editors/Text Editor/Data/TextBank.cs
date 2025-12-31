@@ -274,7 +274,7 @@ public class TextBank
         {
             var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);
 
-            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES or ProjectType.ACFA)
+            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 using (IBinder binder = BND3.Read(containerBytes))
                 {

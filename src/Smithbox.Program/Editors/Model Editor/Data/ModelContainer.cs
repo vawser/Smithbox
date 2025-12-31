@@ -228,10 +228,6 @@ public class ModelContainer : ObjectContainer
         {
             resource = ModelLocator.GetChrModel(Project, modelName, modelName);
         }
-        else if (modelName.StartsWith("e", StringComparison.CurrentCultureIgnoreCase))
-        {
-            resource = ModelLocator.GetEneModel(Project, modelName);
-        }
         else if (modelName.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || 
             (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
         {

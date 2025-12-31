@@ -56,20 +56,19 @@ public static class ModelLocator
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/model";
             ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flv.dcx";
         }
-        else if (project.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
-        {
-            ret.AssetArchiveVirtualPath = $@"map/{mapid}/model";
-            ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flv";
-        }
         else
         {
-            if (project.ProjectType is not ProjectType.DES
-                and not ProjectType.DS1
-                and not ProjectType.DS1R
-                and not ProjectType.BB)
+            if (!(project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB))
+            {
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/model/{modelId}";
+            }
 
             ret.AssetVirtualPath = $@"map/{mapid}/model/{mapContainerId}/{modelId}.flver";
+
+            if(project.ProjectType is ProjectType.DES)
+            {
+                ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flver";
+            }
         }
 
         return ret;
@@ -210,23 +209,13 @@ public static class ModelLocator
         return ret;
     }
 
-    public static ResourceDescriptor GetEneModel(ProjectEntry project, string ene)
-    {
-        ResourceDescriptor ret = new();
-        ret.AssetName = ene;
-        ret.AssetArchiveVirtualPath = $@"ene/{ene}/model";
-        ret.AssetVirtualPath = $@"ene/{ene}/model/{ene}.flv";
-
-        return ret;
-    }
-
     public static ResourceDescriptor GetObjModel(ProjectEntry project, string objContainerId, string objId)
     {
         ResourceDescriptor ret = new();
         ret.AssetName = objId;
         ret.AssetArchiveVirtualPath = $@"obj/{objContainerId}/model";
 
-        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId}.flv";
         }
