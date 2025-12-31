@@ -71,14 +71,6 @@ public class Smithbox
         ResourceManager.BaseEditor = this;
 
         ProjectManager = new(this);
-        ProjectManager.Setup();
-
-        Settings = new(this);
-        Help = new(this);
-        Keybinds = new(this);
-        DebugTools = new(this);
-
-        _soapstoneService = new(this, version);
 
         DPI.UpdateDpi(_context);
         DPI.UIScaleChanged += (_, _) =>
@@ -89,6 +81,15 @@ public class Smithbox
         SetupFonts();
 
         _context.ImguiRenderer.OnSetupDone();
+
+        ProjectManager.Setup();
+
+        Settings = new(this);
+        Help = new(this);
+        Keybinds = new(this);
+        DebugTools = new(this);
+
+        _soapstoneService = new(this, version);
     }
 
     public void SetProgramName(ProjectEntry curProject)

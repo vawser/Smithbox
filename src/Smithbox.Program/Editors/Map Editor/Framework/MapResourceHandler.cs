@@ -131,7 +131,7 @@ public class MapResourceHandler
             }
 
             // Navmesh
-            if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 if (model.Name.StartsWith('n'))
                 {
