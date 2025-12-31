@@ -1,8 +1,9 @@
-<Project>
-    <PropertyGroup>
-        <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
-    </PropertyGroup>
-    <ItemGroup>
-        <Compile Include="$(SolutionDir)/src/Common/FileLocations.cs" Visible="false" />
+﻿<Project>
+    <Import Project="Platform.Build.props" />
+    <ItemGroup Condition="'$(MSBuildProjectName)' != 'Smithbox.Program'">
+        <Compile Include="$(MSBuildThisFileDirectory)Common/FileLocations.cs" Visible="false" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(MSBuildProjectName)' == 'Smithbox.Program'">
+        <Compile Include="$(MSBuildThisFileDirectory)Common/FileLocations.cs" Visible="true" />
     </ItemGroup>
 </Project>

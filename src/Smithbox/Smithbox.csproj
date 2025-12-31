@@ -38,10 +38,20 @@
     <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Props Include="&lt;Project&gt;" Visible="false"/>
+    <Props Include="  &lt;PropertyGroup&gt;" Visible="false"/>
+    <Props Include="    &lt;DefineConstants&gt;%24(DefineConstants)%3BWINDOWS&lt;/DefineConstants&gt;" Visible="false"/>
+    <Props Include="  &lt;/PropertyGroup&gt;" Visible="false"/>
+    <Props Include="&lt;/Project&gt;" Visible="false"/>
+  </ItemGroup>
+
   <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences">
-      <Error Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'" Text="Pass Solution dir, i.e. run:
-            dotnet build $([System.IO.Path]::GetRelativePath('$(MSBuildStartupDirectory)', '$(MSBuildProjectFullPath)')) --no-restore /p:SolutionDir=$([System.IO.Path]::GetFullPath('$(ProjectDir)\..\..'))" />
-      <Copy SourceFiles="Windows.Build.props" DestinationFiles="../Directory.Build.props" SkipUnchangedFiles="true" />
+      <WriteLinesToFile
+          File="../Platform.Build.props"
+          Lines="@(Props)"
+          Overwrite="true"
+          Encoding="UTF-8" />
   </Target>
 
   <Target Name="CopyDataProjectOutput" AfterTargets="Build">

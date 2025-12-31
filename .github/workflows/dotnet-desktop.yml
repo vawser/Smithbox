@@ -40,7 +40,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release -o deploy /p:SolutionDir='${{ runner.workspace }}/Smithbox'
+        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release -o deploy
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
