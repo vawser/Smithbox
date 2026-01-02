@@ -54544,13 +54544,13 @@
     {
       "ID": 91005,
       "Entries": [
-        ""
+        "Disable All Status (Temp) Except Blood Loss"
       ]
     },
     {
       "ID": 91006,
       "Entries": [
-        ""
+        "Disable Blood Loss (Temp)"
       ]
     },
     {
@@ -64564,61 +64564,61 @@
     {
       "ID": 709000,
       "Entries": [
-        "[Undertaker] Trance"
+        "[Skill - Undertaker] Trance"
       ]
     },
     {
       "ID": 709001,
       "Entries": [
-        "[Undertaker] Trance End"
+        "[Skill - Undertaker] Trance End"
       ]
     },
     {
       "ID": 709010,
       "Entries": [
-        "[Undertaker] Enhanced Trance"
+        "[Skill - Undertaker] Enhanced Trance"
       ]
     },
     {
       "ID": 709011,
       "Entries": [
-        "[Undertaker] Enhanced Trance End"
+        "[Skill - Undertaker] Enhanced Trance End"
       ]
     },
     {
       "ID": 709020,
       "Entries": [
-        ""
+        "[Skill - Undertaker] Turn off Trance Blend"
       ]
     },
     {
       "ID": 709021,
       "Entries": [
-        ""
+        "[Skill - Undertaker] End Trance Charge"
       ]
     },
     {
       "ID": 709030,
       "Entries": [
-        ""
+        "[Skill - Undertaker] Stamina Restore on Skill Use"
       ]
     },
     {
       "ID": 709050,
       "Entries": [
-        "[Undertaker] Trance Buff - Attack/Defense/Poise"
+        "[Skill - Undertaker] Trance Buff - Attack/Defense/Poise"
       ]
     },
     {
       "ID": 709051,
       "Entries": [
-        "[Undertaker] Trance Buff - Successive Attack Boost"
+        "[Skill - Undertaker] Trance Buff - Successive Attack Boost"
       ]
     },
     {
       "ID": 709055,
       "Entries": [
-        "[Undertaker] Trance Buff - Remove"
+        "[Skill - Undertaker] Trance Buff - Remove"
       ]
     },
     {
@@ -64648,13 +64648,13 @@
     {
       "ID": 709300,
       "Entries": [
-        ""
+        "[Passive - Undertaker] Grant Bonus Ult to Undertaker"
       ]
     },
     {
       "ID": 709301,
       "Entries": [
-        ""
+        "[Passive - Undertaker] Remove Bonus Ult"
       ]
     },
     {
@@ -67318,7 +67318,7 @@
     {
       "ID": 6999615,
       "Entries": [
-        ""
+        "Active during Ultimates"
       ]
     },
     {
@@ -72127,19 +72127,19 @@
         "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self"
       ]
     },
-	{
+    {
       "ID": 7500801,
       "Entries": [
         "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self - stack 1"
       ]
     },
-	{
+    {
       "ID": 7500802,
       "Entries": [
         "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self - stack 2"
       ]
     },
-	{
+    {
       "ID": 7500803,
       "Entries": [
         "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self - stack 3"

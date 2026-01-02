@@ -46,7 +46,7 @@
     {
       "ID": 8,
       "Entries": [
-        ""
+        "Friendly Target (Through I-Frames)"
       ]
     },
     {
@@ -52150,49 +52150,49 @@
     {
       "ID": 400000200,
       "Entries": [
-        "[AoW - Default] Strom Ruler - Charged"
+        "[AoW - Default] Storm Ruler - Charged"
       ]
     },
     {
       "ID": 400000205,
       "Entries": [
-        "[AoW - Default] Strom Ruler - No FP Charged"
+        "[AoW - Default] Storm Ruler - No FP Charged"
       ]
     },
     {
       "ID": 400000220,
       "Entries": [
-        "[AoW - Default] Strom Ruler - Light #1"
+        "[AoW - Default] Storm Ruler - Light #1"
       ]
     },
     {
       "ID": 400000225,
       "Entries": [
-        "[AoW - Default] Strom Ruler - No FP Light #1"
+        "[AoW - Default] Storm Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 400000230,
       "Entries": [
-        "[AoW - Default] Strom Ruler - Light #2"
+        "[AoW - Default] Storm Ruler - Light #2"
       ]
     },
     {
       "ID": 400000235,
       "Entries": [
-        "[AoW - Default] Strom Ruler - No FP Light #2"
+        "[AoW - Default] Storm Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 400000240,
       "Entries": [
-        "[AoW - Default] Strom Ruler - Light #3"
+        "[AoW - Default] Storm Ruler - Light #3"
       ]
     },
     {
       "ID": 400000245,
       "Entries": [
-        "[AoW - Default] Strom Ruler - No FP Light #3"
+        "[AoW - Default] Storm Ruler - No FP Light #3"
       ]
     },
     {
@@ -52204,433 +52204,433 @@
     {
       "ID": 400100200,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - Charged"
+        "[AoW - Duchess] Storm Ruler - Charged"
       ]
     },
     {
       "ID": 400100205,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - No FP Charged"
+        "[AoW - Duchess] Storm Ruler - No FP Charged"
       ]
     },
     {
       "ID": 400100220,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - Light #1"
+        "[AoW - Duchess] Storm Ruler - Light #1"
       ]
     },
     {
       "ID": 400100225,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - No FP Light #1"
+        "[AoW - Duchess] Storm Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 400100230,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - Light #2"
+        "[AoW - Duchess] Storm Ruler - Light #2"
       ]
     },
     {
       "ID": 400100235,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - No FP Light #2"
+        "[AoW - Duchess] Storm Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 400100240,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - Light #3"
+        "[AoW - Duchess] Storm Ruler - Light #3"
       ]
     },
     {
       "ID": 400100245,
       "Entries": [
-        "[AoW - Duchess] Strom Ruler - No FP Light #3"
+        "[AoW - Duchess] Storm Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 400500200,
       "Entries": [
-        "[AoW - Scholar] Strom Ruler - Charged"
+        "[AoW - Scholar] Storm Ruler - Charged"
       ]
     },
     {
       "ID": 400500205,
       "Entries": [
-        "[AoW - Scholar] Strom Ruler - No FP Charged"
+        "[AoW - Scholar] Storm Ruler - No FP Charged"
       ]
     },
     {
       "ID": 400500220,
       "Entries": [
-        "[AoW - Scholar] Strom Ruler - Light #1"
+        "[AoW - Scholar] Storm Ruler - Light #1"
       ]
     },
     {
       "ID": 400500225,
       "Entries": [
-        "[AoW - Scholar] Strom Ruler - No FP Light #1"
+        "[AoW - Scholar] Storm Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 400500230,
       "Entries": [
-        "[AoW - Scholar] Strom Ruler - Light #2"
+        "[AoW - Scholar] Storm Ruler - Light #2"
       ]
     },
     {
       "ID": 400500235,
       "Entries": [
-        "[AoW - Scholar] Strom Ruler - No FP Light #2"
+        "[AoW - Scholar] Storm Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 400500240,
       "Entries": [
-        "[AoW - Scholar] Strom Ruler - Light #3"
+        "[AoW - Scholar] Storm Ruler - Light #3"
       ]
     },
     {
       "ID": 400500245,
       "Entries": [
-        "[AoW - Scholar] Strom Ruler - No FP Light #3"
+        "[AoW - Scholar] Storm Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 400900200,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - Charged"
+        "[AoW - Executor] Storm Ruler - Charged"
       ]
     },
     {
       "ID": 400900205,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - No FP Charged"
+        "[AoW - Executor] Storm Ruler - No FP Charged"
       ]
     },
     {
       "ID": 400900220,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - Light #1"
+        "[AoW - Executor] Storm Ruler - Light #1"
       ]
     },
     {
       "ID": 400900225,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - No FP Light #1"
+        "[AoW - Executor] Storm Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 400900230,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - Light #2"
+        "[AoW - Executor] Storm Ruler - Light #2"
       ]
     },
     {
       "ID": 400900235,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - No FP Light #2"
+        "[AoW - Executor] Storm Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 400900240,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - Light #3"
+        "[AoW - Executor] Storm Ruler - Light #3"
       ]
     },
     {
       "ID": 400900245,
       "Entries": [
-        "[AoW - Executor] Strom Ruler - No FP Light #3"
+        "[AoW - Executor] Storm Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 401100200,
       "Entries": [
-        "[AoW - Undertaker] Strom Ruler - Charged"
+        "[AoW - Undertaker] Storm Ruler - Charged"
       ]
     },
     {
       "ID": 401100205,
       "Entries": [
-        "[AoW - Undertaker] Strom Ruler - No FP Charged"
+        "[AoW - Undertaker] Storm Ruler - No FP Charged"
       ]
     },
     {
       "ID": 401100220,
       "Entries": [
-        "[AoW - Undertaker] Strom Ruler - Light #1"
+        "[AoW - Undertaker] Storm Ruler - Light #1"
       ]
     },
     {
       "ID": 401100225,
       "Entries": [
-        "[AoW - Undertaker] Strom Ruler - No FP Light #1"
+        "[AoW - Undertaker] Storm Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 401100230,
       "Entries": [
-        "[AoW - Undertaker] Strom Ruler - Light #2"
+        "[AoW - Undertaker] Storm Ruler - Light #2"
       ]
     },
     {
       "ID": 401100235,
       "Entries": [
-        "[AoW - Undertaker] Strom Ruler - No FP Light #2"
+        "[AoW - Undertaker] Storm Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 401100240,
       "Entries": [
-        "[AoW - Undertaker] Strom Ruler - Light #3"
+        "[AoW - Undertaker] Storm Ruler - Light #3"
       ]
     },
     {
       "ID": 401100245,
       "Entries": [
-        "[AoW - Undertaker] Strom Ruler - No FP Light #3"
+        "[AoW - Undertaker] Storm Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 401102200,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - Charged"
+        "[AoW - Recluse] Storm Ruler - Charged"
       ]
     },
     {
       "ID": 401102205,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - No FP Charged"
+        "[AoW - Recluse] Storm Ruler - No FP Charged"
       ]
     },
     {
       "ID": 401102220,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - Light #1"
+        "[AoW - Recluse] Storm Ruler - Light #1"
       ]
     },
     {
       "ID": 401102225,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - No FP Light #1"
+        "[AoW - Recluse] Storm Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 401102230,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - Light #2"
+        "[AoW - Recluse] Storm Ruler - Light #2"
       ]
     },
     {
       "ID": 401102235,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - No FP Light #2"
+        "[AoW - Recluse] Storm Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 401102240,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - Light #3"
+        "[AoW - Recluse] Storm Ruler - Light #3"
       ]
     },
     {
       "ID": 401102245,
       "Entries": [
-        "[AoW - Recluse] Strom Ruler - No FP Light #3"
+        "[AoW - Recluse] Storm Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 401800200,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - Charged"
+        "[AoW - Guardian] Storm Ruler - Charged"
       ]
     },
     {
       "ID": 401800205,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - No FP Charged"
+        "[AoW - Guardian] Storm Ruler - No FP Charged"
       ]
     },
     {
       "ID": 401800220,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - Light #1"
+        "[AoW - Guardian] Storm Ruler - Light #1"
       ]
     },
     {
       "ID": 401800225,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - No FP Light #1"
+        "[AoW - Guardian] Storm Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 401800230,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - Light #2"
+        "[AoW - Guardian] Storm Ruler - Light #2"
       ]
     },
     {
       "ID": 401800235,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - No FP Light #2"
+        "[AoW - Guardian] Storm Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 401800240,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - Light #3"
+        "[AoW - Guardian] Storm Ruler - Light #3"
       ]
     },
     {
       "ID": 401800245,
       "Entries": [
-        "[AoW - Guardian] Strom Ruler - No FP Light #3"
+        "[AoW - Guardian] Storm Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 402100200,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - Charged"
+        "[AoW - Revenant] Storm Ruler - Charged"
       ]
     },
     {
       "ID": 402100205,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - No FP Charged"
+        "[AoW - Revenant] Storm Ruler - No FP Charged"
       ]
     },
     {
       "ID": 402100220,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - Light #1"
+        "[AoW - Revenant] Storm Ruler - Light #1"
       ]
     },
     {
       "ID": 402100225,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - No FP Light #1"
+        "[AoW - Revenant] Storm Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 402100230,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - Light #2"
+        "[AoW - Revenant] Storm Ruler - Light #2"
       ]
     },
     {
       "ID": 402100235,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - No FP Light #2"
+        "[AoW - Revenant] Storm Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 402100240,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - Light #3"
+        "[AoW - Revenant] Storm Ruler - Light #3"
       ]
     },
     {
       "ID": 402100245,
       "Entries": [
-        "[AoW - Revenant] Strom Ruler - No FP Light #3"
+        "[AoW - Revenant] Storm Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 402300200,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - Charged"
+        "[AoW - Raider] Storm Ruler - Charged"
       ]
     },
     {
       "ID": 402300205,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - No FP Charged"
+        "[AoW - Raider] Storm Ruler - No FP Charged"
       ]
     },
     {
       "ID": 402300220,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - Light #1"
+        "[AoW - Raider] Storm Ruler - Light #1"
       ]
     },
     {
       "ID": 402300225,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - No FP Light #1"
+        "[AoW - Raider] Storm Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 402300230,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - Light #2"
+        "[AoW - Raider] Storm Ruler - Light #2"
       ]
     },
     {
       "ID": 402300235,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - No FP Light #2"
+        "[AoW - Raider] Storm Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 402300240,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - Light #3"
+        "[AoW - Raider] Storm Ruler - Light #3"
       ]
     },
     {
       "ID": 402300245,
       "Entries": [
-        "[AoW - Raider] Strom Ruler - No FP Light #3"
+        "[AoW - Raider] Storm Ruler - No FP Light #3"
       ]
     },
     {
       "ID": 405000200,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - Charged"
+        "[AoW - Ironeye] Storm Ruler - Charged"
       ]
     },
     {
       "ID": 405000205,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - No FP Charged"
+        "[AoW - Ironeye] Storm Ruler - No FP Charged"
       ]
     },
     {
       "ID": 405000220,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - Light #1"
+        "[AoW - Ironeye] Storm Ruler - Light #1"
       ]
     },
     {
       "ID": 405000225,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - No FP Light #1"
+        "[AoW - Ironeye] Storm Ruler - No FP Light #1"
       ]
     },
     {
       "ID": 405000230,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - Light #2"
+        "[AoW - Ironeye] Storm Ruler - Light #2"
       ]
     },
     {
       "ID": 405000235,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - No FP Light #2"
+        "[AoW - Ironeye] Storm Ruler - No FP Light #2"
       ]
     },
     {
       "ID": 405000240,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - Light #3"
+        "[AoW - Ironeye] Storm Ruler - Light #3"
       ]
     },
     {
       "ID": 405000245,
       "Entries": [
-        "[AoW - Ironeye] Strom Ruler - No FP Light #3"
+        "[AoW - Ironeye] Storm Ruler - No FP Light #3"
       ]
     },
     {
@@ -52906,19 +52906,19 @@
     {
       "ID": 600000200,
       "Entries": [
-        "[Raider Skill] Retaliate"
+        "[Skill - Raider] Retaliate"
       ]
     },
     {
       "ID": 600000210,
       "Entries": [
-        "[Raider Skill] Retaliate (Full Power)"
+        "[Skill - Raider] Retaliate (Full Power)"
       ]
     },
     {
       "ID": 600000220,
       "Entries": [
-        "[Raider Skill] Retaliate (Initial Stomp)"
+        "[Skill - Raider] Retaliate (Initial Stomp)"
       ]
     },
     {
@@ -52948,19 +52948,19 @@
     {
       "ID": 600000350,
       "Entries": [
-        "[Executor Skill] Cursed Sword (Unlocked Skill)"
+        "[Skill - Executor] Cursed Sword (Unlocked Skill)"
       ]
     },
     {
       "ID": 600000355,
       "Entries": [
-        "[Executor Skill] Cursed Sword (Locked Skill)"
+        "[Skill - Executor] Cursed Sword (Locked Skill)"
       ]
     },
     {
       "ID": 600000400,
       "Entries": [
-        "[Scholar Skill] Self Shield"
+        "[Skill - Scholar] Analyse Shield Burst"
       ]
     },
     {
@@ -53218,13 +53218,13 @@
     {
       "ID": 700000400,
       "Entries": [
-        ""
+        "[Ultimate - Scholar] Communion"
       ]
     },
     {
       "ID": 700000410,
       "Entries": [
-        ""
+        "[Relic - Scholar] Continuous damage inflicted on targets threaded by Ultimate Art"
       ]
     },
     {
