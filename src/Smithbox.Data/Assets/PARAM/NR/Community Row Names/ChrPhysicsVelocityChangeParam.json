@@ -46,19 +46,19 @@
     {
       "ID": 50,
       "Entries": [
-        ""
+        "Stagger Falling"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        ""
+        "Standing Jump"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        ""
+        "Slow Jump Forward"
       ]
     },
     {
@@ -70,19 +70,19 @@
     {
       "ID": 103,
       "Entries": [
-        ""
+        "Slow Jump Back"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        ""
+        "Slow Jump Left"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        ""
+        "Slow Jump Right"
       ]
     },
     {
@@ -112,7 +112,7 @@
     {
       "ID": 111,
       "Entries": [
-        ""
+        "Jump Forward"
       ]
     },
     {
@@ -124,19 +124,19 @@
     {
       "ID": 113,
       "Entries": [
-        ""
+        "Jump Back"
       ]
     },
     {
       "ID": 114,
       "Entries": [
-        ""
+        "Jump Left"
       ]
     },
     {
       "ID": 115,
       "Entries": [
-        ""
+        "Jump Right"
       ]
     },
     {
@@ -166,25 +166,25 @@
     {
       "ID": 121,
       "Entries": [
-        ""
+        "Dash Jump"
       ]
     },
     {
       "ID": 131,
       "Entries": [
-        ""
+        "Surge Sprint Jump"
       ]
     },
     {
       "ID": 500,
       "Entries": [
-        ""
+        "Neutral Wall Jump"
       ]
     },
     {
       "ID": 501,
       "Entries": [
-        ""
+        "Moving Wall Jump"
       ]
     },
     {
@@ -202,55 +202,55 @@
     {
       "ID": 700,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Regular Jump"
       ]
     },
     {
       "ID": 701,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Moving Jump"
       ]
     },
     {
       "ID": 702,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Jump Attack Descent"
       ]
     },
     {
       "ID": 703,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Jump Attack Start"
       ]
     },
     {
       "ID": 704,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Air Transform"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        ""
+        "Spiritstream Jump? 1"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        ""
+        "Spiritstream Jump? 2"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        ""
+        "Spiritstream Jump? 3"
       ]
     },
     {
       "ID": 1011,
       "Entries": [
-        ""
+        "Spiritstream Jump? 4"
       ]
     },
     {
@@ -268,41 +268,65 @@
     {
       "ID": 3000,
       "Entries": [
-        ""
+        "Spiritstream Jump 1"
       ]
     },
     {
       "ID": 3001,
       "Entries": [
-        ""
+        "Spiritstream Jump 2"
       ]
     },
     {
       "ID": 3002,
       "Entries": [
-        ""
+        "Spiritstream Jump 3"
       ]
     },
     {
       "ID": 3003,
       "Entries": [
-        ""
+        "Spiritstream Jump 4"
       ]
     },
     {
       "ID": 3008,
       "Entries": [
-        ""
+        "Spiritstream Jump 5"
       ]
     },
     {
       "ID": 3009,
       "Entries": [
-        ""
+        "Spiritstream Jump 6"
       ]
     },
     {
       "ID": 3010,
+      "Entries": [
+        "Spiritstream Jump Apex"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3103,
       "Entries": [
         ""
       ]
@@ -310,7 +334,7 @@
     {
       "ID": 10000,
       "Entries": [
-        ""
+        "Jump Attack"
       ]
     },
     {
@@ -346,59 +370,71 @@
     {
       "ID": 10100,
       "Entries": [
-        ""
+        "Spiritstream Jump Attack? 1"
       ]
     },
     {
       "ID": 10101,
       "Entries": [
-        ""
+        "Spiritstream Jump Attack? 2"
       ]
     },
     {
       "ID": 11000,
       "Entries": [
-        ""
+        "[Ultimate - Wylder] Air Start"
       ]
     },
     {
       "ID": 11001,
       "Entries": [
-        ""
+        "[Ultimate - Wylder] Air Blast Back"
       ]
     },
     {
       "ID": 11002,
       "Entries": [
-        ""
+        "[Skill - Wylder] Claw Shot Jump"
       ]
     },
     {
       "ID": 11003,
       "Entries": [
-        ""
+        "[Skill - Wylder] Claw Shot Jump 2"
       ]
     },
     {
       "ID": 11004,
       "Entries": [
-        ""
+        "[Skill - Wylder] Claw Shot Jump 3"
       ]
     },
     {
       "ID": 11010,
       "Entries": [
-        ""
+        "[Ultimate - Guardian] Begin Ascending"
       ]
     },
     {
       "ID": 11011,
       "Entries": [
-        ""
+        "[Ultimate - Guardian] Begin Descending"
       ]
     },
     {
       "ID": 11020,
+      "Entries": [
+        "[Skill - Ironeye] Air Marking"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11031,
       "Entries": [
         ""
       ]
