@@ -80,6 +80,7 @@ public class ProjectUtils
 
         return Path.Join(localAppDataPath, "Smithbox", "Configuration");
     }
+
     public static string GetThemeFolder()
     {
         return Path.Join(AppContext.BaseDirectory, "Assets", "Themes");

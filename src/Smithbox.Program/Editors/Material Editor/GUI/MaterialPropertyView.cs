@@ -1,14 +1,11 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.ModelEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Numerics;
+using System.Linq;
 using System.Reflection;
 using static SoulsFormats.MTD;
 
@@ -61,38 +58,46 @@ public class MaterialPropertyView
 
         ImGui.Columns(2);
 
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Object Type");
+        // Header
+        {
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Object Type");
 
-        //if (meta != null)
-        //{
-        //    UIHelper.Tooltip(meta.Wiki);
-        //}
+            //if (meta != null)
+            //{
+            //    UIHelper.Tooltip(meta.Wiki);
+            //}
 
-        ImGui.NextColumn();
-        ImGui.NextColumn();
+            ImGui.NextColumn();
+            ImGui.NextColumn();
+        }
 
         ImGui.Separator();
 
-        if (Editor.Selection.SourceType is MaterialSourceType.MTD)
+        // Property Lines
         {
-            if (Editor.Selection.SelectedMTD != null)
+            if (Editor.Selection.SourceType is MaterialSourceType.MTD)
             {
-                PropertyHandler(Editor.Selection.SelectedMTD);
+                if (Editor.Selection.SelectedMTD != null)
+                {
+                    PropertyHandler(Editor.Selection.SelectedMTD);
+                }
             }
-        }
 
-        if (Editor.Selection.SourceType is MaterialSourceType.MATBIN)
-        {
-            if (Editor.Selection.SelectedMATBIN != null)
+            if (Editor.Selection.SourceType is MaterialSourceType.MATBIN)
             {
-                PropertyHandler(Editor.Selection.SelectedMATBIN);
+                if (Editor.Selection.SelectedMATBIN != null)
+                {
+                    PropertyHandler(Editor.Selection.SelectedMATBIN);
+                }
             }
         }
 
         ImGui.Columns(1);
 
         ImGui.EndChild();
+
+        ProcessListActions();
     }
 
     private void PropertyHandler(
@@ -100,6 +105,9 @@ public class MaterialPropertyView
         int classIndex = -1
     )
     {
+        if (ProcessingListActions)
+            return;
+
         var scale = DPI.UIScale();
         Type type = obj.GetType();
 
@@ -161,6 +169,7 @@ public class MaterialPropertyView
             ImGui.AlignTextToFramePadding();
             Type typ = prop.PropertyType;
 
+            // Array Line
             if (typ.IsArray)
             {
                 var a = (Array)prop.GetValue(obj);
@@ -170,6 +179,8 @@ public class MaterialPropertyView
 
                 ImGui.NextColumn();
                 ImGui.NextColumn();
+
+                // Array Element Lines
                 if (open)
                 {
                     for (var i = 0; i < a.Length; i++)
@@ -213,55 +224,87 @@ public class MaterialPropertyView
 
                 ImGui.PopID();
             }
+            // List Line
             else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
             {
                 var l = prop.GetValue(obj);
+
                 if (l != null)
                 {
                     PropertyInfo itemprop = l.GetType().GetProperty("Item");
                     var count = (int)l.GetType().GetProperty("Count").GetValue(l);
 
-                    for (var i = 0; i < count; i++)
+                    if(ImGui.CollapsingHeader($"{fieldName}##listHeader_{fieldName}", ImGuiTreeNodeFlags.DefaultOpen))
                     {
-                        ImGui.PushID(i);
+                        ImGui.NextColumn();
+                        ImGui.NextColumn();
 
-                        Type arrtyp = typ.GetGenericArguments()[0];
-
-                        if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
+                        // List Element Lines
+                        for (var i = 0; i < count; i++)
                         {
-                            var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", ImGuiTreeNodeFlags.DefaultOpen);
+                            ImGui.PushID(i);
 
-                            ShowFieldHint(obj, prop, fieldDescription);
+                            Type arrtyp = typ.GetGenericArguments()[0];
 
-                            ImGui.NextColumn();
-                            ImGui.SetNextItemWidth(-1);
-
-                            var o = itemprop.GetValue(l, new object[] { i });
-
-                            ImGui.Text(o.GetType().Name);
-
-                            ImGui.NextColumn();
-
-                            if (open)
+                            if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                             {
-                                PropertyHandler(o);
+                                var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", ImGuiTreeNodeFlags.DefaultOpen);
 
-                                ImGui.TreePop();
+                                ShowFieldHint(obj, prop, fieldDescription);
+
+                                ImGui.NextColumn();
+                                ImGui.SetNextItemWidth(-1);
+
+                                var o = itemprop.GetValue(l, new object[] { i });
+
+                                // Add the list adjustmnet action shere instead of the name
+                                //ImGui.Text(o.GetType().Name);
+                                if (arrtyp == typeof(MTD.Param) || arrtyp == typeof(MTD.Texture))
+                                {
+                                    if (ImGui.Button($"{Icons.Plus}##duplicateEntry{i}", DPI.IconButtonSize))
+                                    {
+                                        DuplicateListEntry(arrtyp, obj, i);
+                                    }
+                                    UIHelper.Tooltip("Duplicate this entry");
+
+                                    ImGui.SameLine();
+
+                                    if (ImGui.Button($"{Icons.Minus}##removeEntry{i}", DPI.IconButtonSize))
+                                    {
+                                        RemoveListEntry(arrtyp, obj, i);
+                                    }
+                                    UIHelper.Tooltip("Remove this entry");
+                                }
+
+                                ImGui.NextColumn();
+
+                                if (open)
+                                {
+                                    PropertyHandler(o);
+
+                                    ImGui.TreePop();
+                                }
+
+                                ImGui.PopID();
                             }
+                            else
+                            {
+                                DisplayModelPropertyLine(obj, prop, arrtyp, itemprop.GetValue(l, [i]), $@"{fieldName}[{i}]", i, classIndex);
 
-                            ImGui.PopID();
+                                ImGui.PopID();
+                            }
                         }
-                        else
-                        {
-                            DisplayModelPropertyLine(obj, prop, arrtyp, itemprop.GetValue(l, [i]), $@"{fieldName}[{i}]", i, classIndex);
-
-                            ImGui.PopID();
-                        }
+                    }
+                    else
+                    {
+                        ImGui.NextColumn();
+                        ImGui.NextColumn();
                     }
                 }
 
                 ImGui.PopID();
             }
+            // Material Param 'Value' line
             else if (Editor.Selection.SourceType is MaterialSourceType.MTD && 
                 prop.Name == "Value" && typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
@@ -272,12 +315,12 @@ public class MaterialPropertyView
 
                     var actualParam = (MTD.Param)obj;
 
-
                     DisplayModelPropertyLine(obj, prop, actualType, o, $"{fieldName}", classIndex, -1, actualParam.Type);
                 }
 
                 ImGui.PopID();
             }
+            // Class Line
             else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
                 var o = prop.GetValue(obj);
@@ -294,6 +337,7 @@ public class MaterialPropertyView
 
                     ImGui.NextColumn();
 
+                    // Class properties
                     if (open)
                     {
                         PropertyHandler(o);
@@ -303,6 +347,7 @@ public class MaterialPropertyView
 
                 ImGui.PopID();
             }
+            // Property Line
             else
             {
                 DisplayModelPropertyLine(obj, prop, typ, prop.GetValue(obj), $"{fieldName}", classIndex);
@@ -312,55 +357,6 @@ public class MaterialPropertyView
 
             id++;
         }
-    }
-
-    public void ShowFieldHint(object obj, PropertyInfo prop, string description)
-    {
-        var text = description;
-
-        // Property Details
-        var propType = prop.ReflectedType;
-
-        if (propType.IsArray)
-        {
-            var a = (Array)prop.GetValue(obj);
-
-            var str = $"Array Type: {prop.ReflectedType.Name}";
-            if (a.Length > 0)
-            {
-                str += $" (Length: {a.Length})";
-            }
-
-            text = $"{text}\n{str}";
-        }
-
-        if (propType.IsValueType)
-        {
-            var str = $"Value Type: {propType.Name}";
-            var min = propType.GetField("MinValue")?.GetValue(propType);
-            var max = propType.GetField("MaxValue")?.GetValue(propType);
-            if (min != null && max != null)
-            {
-                str += $" (Min {min}, Max {max})";
-            }
-
-            text = $"{text}\n{str}";
-        }
-        else if (propType == typeof(string))
-        {
-            var a = (Array)prop.GetValue(obj);
-
-            var str = $"String Type: {propType.Name}";
-            if (a.Length > 0)
-            {
-                str += $" (Length: {a.Length})";
-            }
-
-            text = $"{text}\n{str}";
-        }
-
-        // Final description
-        UIHelper.Tooltip(text);
     }
 
     private void DisplayModelPropertyLine(
@@ -374,7 +370,7 @@ public class MaterialPropertyView
         ParamType paramType = ParamType.None
     )
     {
-        OpenModelPropertyContextMenu();
+        OpenMaterialPropertyContextMenu();
 
         // var meta = Editor.Project.MapData.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
 
@@ -427,7 +423,56 @@ public class MaterialPropertyView
         ImGui.NextColumn();
     }
 
-    private static void OpenModelPropertyContextMenu()
+    public void ShowFieldHint(object obj, PropertyInfo prop, string description)
+    {
+        var text = description;
+
+        // Property Details
+        var propType = prop.ReflectedType;
+
+        if (propType.IsArray)
+        {
+            var a = (Array)prop.GetValue(obj);
+
+            var str = $"Array Type: {prop.ReflectedType.Name}";
+            if (a.Length > 0)
+            {
+                str += $" (Length: {a.Length})";
+            }
+
+            text = $"{text}\n{str}";
+        }
+
+        if (propType.IsValueType)
+        {
+            var str = $"Value Type: {propType.Name}";
+            var min = propType.GetField("MinValue")?.GetValue(propType);
+            var max = propType.GetField("MaxValue")?.GetValue(propType);
+            if (min != null && max != null)
+            {
+                str += $" (Min {min}, Max {max})";
+            }
+
+            text = $"{text}\n{str}";
+        }
+        else if (propType == typeof(string))
+        {
+            var a = (Array)prop.GetValue(obj);
+
+            var str = $"String Type: {propType.Name}";
+            if (a.Length > 0)
+            {
+                str += $" (Length: {a.Length})";
+            }
+
+            text = $"{text}\n{str}";
+        }
+
+        // Final description
+        UIHelper.Tooltip(text);
+    }
+
+    private static void OpenMaterialPropertyContextMenu()
     {
         ImGui.Selectable("", false, ImGuiSelectableFlags.AllowOverlap);
 
@@ -435,7 +480,7 @@ public class MaterialPropertyView
 
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
-            ImGui.OpenPopup("ModelPropContextMenu");
+            ImGui.OpenPopup("MaterialPropContextMenu");
         }
     }
 
@@ -466,6 +511,71 @@ public class MaterialPropertyView
             }
 
             ImGui.EndPopup();
+        }
+    }
+
+    public bool ProcessingListActions = false;
+    public List<EditorAction> ListActionsToProcess = new();
+
+    public void ProcessListActions()
+    {
+        if (ListActionsToProcess.Count > 0)
+        {
+            ProcessingListActions = true;
+
+            foreach(var action in ListActionsToProcess)
+            {
+                Editor.EditorActionManager.ExecuteAction(action);
+            }
+
+            ProcessingListActions = false;
+        }
+    }
+
+    // TODO: actionize them
+    public void DuplicateListEntry(Type arrType, object obj, int index)
+    {
+        if (arrType == typeof(MTD.Param))
+        {
+            var mtd = (MTD)obj;
+
+            var targetParam = mtd.Params.ElementAt(index);
+            var newParam = new MTD.Param(targetParam.Name, targetParam.Type, targetParam.Value);
+
+            mtd.Params.Insert(index + 1, newParam);
+        }
+
+        if (arrType == typeof(MTD.Texture))
+        {
+            var mtd = (MTD)obj;
+
+            var targetTex = mtd.Textures.ElementAt(index);
+            var newTex = new MTD.Texture();
+            newTex.Type = targetTex.Type;
+            newTex.Extended = targetTex.Extended;
+            newTex.UVNumber = targetTex.UVNumber;
+            newTex.ShaderDataIndex = targetTex.ShaderDataIndex;
+            newTex.Path = targetTex.Path;
+            newTex.UnkFloats = targetTex.UnkFloats;
+
+            mtd.Textures.Insert(index + 1, newTex);
+        }
+    }
+
+    public void RemoveListEntry(Type arrType, object obj, int index)
+    {
+        if (arrType == typeof(MTD.Param))
+        {
+            var mtd = (MTD)obj;
+
+            mtd.Params.RemoveAt(index);
+        }
+
+        if (arrType == typeof(MTD.Texture))
+        {
+            var mtd = (MTD)obj;
+
+            mtd.Textures.RemoveAt(index);
         }
     }
 }

@@ -4,10 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Application;
-
-public enum ProjectAliasListOperation
+namespace StudioCore.Editors.MaterialEditor;
+internal class MtdTextureRemove
 {
-    Add,
-    Remove
 }

@@ -84,7 +84,7 @@ public class ProjectEnumEditor
                 var tblFlags = ImGuiTableFlags.Resizable | ImGuiTableFlags.Borders;
 
                 ImGui.BeginChild("tableSection", new Vector2(windowWidth * 0.95f, windowHeight - 100f));
-                if (ImGui.BeginTable($"projectAliasTbl", 3, tblFlags))
+                if (ImGui.BeginTable($"projectEnumTbl", 3, tblFlags))
                 {
                     ImGui.TableSetupColumn("List", ImGuiTableColumnFlags.WidthStretch);
                     ImGui.TableSetupColumn("EntryList", ImGuiTableColumnFlags.WidthStretch);

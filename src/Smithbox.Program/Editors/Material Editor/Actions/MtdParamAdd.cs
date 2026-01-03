@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Application;
+namespace StudioCore.Editors.MaterialEditor;
 
-public enum ProjectAliasListOperation
+public class MtdParamAdd
 {
-    Add,
-    Remove
+
 }
