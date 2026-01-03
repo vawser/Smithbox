@@ -119,32 +119,32 @@ public class MapContentView
 
             if(Editor.LightAtlasBank.CanUse())
             {
-                if (ImGui.BeginMenu("Light Atlases"))
-                {
-                    if (ImGui.MenuItem("Automatically adjust entries"))
-                    {
-                        CFG.Current.MapEditor_LightAtlas_AutomaticAdjust = !CFG.Current.MapEditor_LightAtlas_AutomaticAdjust;
-                    }
-                    UIHelper.Tooltip("If enabled, when a part is renamed, if a light atlas entry points to it, the name reference within the entry is updated to the new name.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdjust);
+                //if (ImGui.BeginMenu("Light Atlases"))
+                //{
+                //    if (ImGui.MenuItem("Automatically adjust entries"))
+                //    {
+                //        CFG.Current.MapEditor_LightAtlas_AutomaticAdjust = !CFG.Current.MapEditor_LightAtlas_AutomaticAdjust;
+                //    }
+                //    UIHelper.Tooltip("If enabled, when a part is renamed, if a light atlas entry points to it, the name reference within the entry is updated to the new name.");
+                //    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdjust);
 
 
-                    if (ImGui.MenuItem("Automatically add entries"))
-                    {
-                        CFG.Current.MapEditor_LightAtlas_AutomaticAdd = !CFG.Current.MapEditor_LightAtlas_AutomaticAdd;
-                    }
-                    UIHelper.Tooltip("If enabled, when new parts are duplicated, the a new light atlas entry pointing to the newly duplicated part is created (deriving the other properties from the source part).");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdd);
+                //    if (ImGui.MenuItem("Automatically add entries"))
+                //    {
+                //        CFG.Current.MapEditor_LightAtlas_AutomaticAdd = !CFG.Current.MapEditor_LightAtlas_AutomaticAdd;
+                //    }
+                //    UIHelper.Tooltip("If enabled, when new parts are duplicated, the a new light atlas entry pointing to the newly duplicated part is created (deriving the other properties from the source part).");
+                //    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdd);
 
-                    if (ImGui.MenuItem("Automatically delete entries"))
-                    {
-                        CFG.Current.MapEditor_LightAtlas_AutomaticDelete = !CFG.Current.MapEditor_LightAtlas_AutomaticDelete;
-                    }
-                    UIHelper.Tooltip("If enabled, when parts are deleted, if there is a light atlas entry pointing to that part, the entry is deleted.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticDelete);
+                //    if (ImGui.MenuItem("Automatically delete entries"))
+                //    {
+                //        CFG.Current.MapEditor_LightAtlas_AutomaticDelete = !CFG.Current.MapEditor_LightAtlas_AutomaticDelete;
+                //    }
+                //    UIHelper.Tooltip("If enabled, when parts are deleted, if there is a light atlas entry pointing to that part, the entry is deleted.");
+                //    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticDelete);
 
-                    ImGui.EndMenu();
-                }
+                //    ImGui.EndMenu();
+                //}
             }
 
             ImGui.EndMenuBar();
