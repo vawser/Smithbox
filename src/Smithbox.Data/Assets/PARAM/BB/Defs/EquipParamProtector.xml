@@ -109,7 +109,7 @@
       <Maximum>99</Maximum>
       <SortID>1900</SortID>
     </Field>
-    <Field Def="f32 corectSARecover">
+    <Field Def="f32 correctSARecover">
       <DisplayName>SA回復時間補正値</DisplayName>
       <Description>スーパーアーマー回復時間の補正値</Description>
       <DisplayFormat>%0.3f</DisplayFormat>

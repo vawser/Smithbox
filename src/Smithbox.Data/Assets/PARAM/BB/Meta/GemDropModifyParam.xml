@@ -21,8 +21,8 @@
 	<affinityModifyRate_1 AltName="Compatibility Correction % [1]" Wiki="" />
 	<affinityCateId_2 AltName="Compatibility Category Group ID [2]" Wiki="" />
 	<affinityModifyRate_2 AltName="Compatibility Correction % [2]" Wiki="" />
-	<affinityCateId_3 AltName="Compatibility Category Group ID [3]" Wiki="" />
-	<affinityModifyRate_3 AltName="Compatibility Correction % [3]" Wiki="" />
+	<affinityCateId_3 AltName="Compatibility Holy Grail Type Group ID [3]" Wiki="" />
+	<affinityModifyRate_3 AltName="Compatibility Correction % [3]" Wiki="Appearance rate multiplier" />
 	<manifestRate_0 AltName="Appearance Rate by Category [0]" Wiki="" />
 	<manifestRate_1 AltName="Appearance Rate by Category [1]" Wiki="" />
 	<manifestRate_2 AltName="Appearance Rate by Category [2]" Wiki="" />

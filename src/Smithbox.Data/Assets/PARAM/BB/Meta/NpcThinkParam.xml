@@ -69,7 +69,7 @@
     <enableNaviFlg_Hole AltName="Navigation - Hole" Wiki="Can you go through the node hole? (def: 0)" IsBool="" />
     <enableNaviFlg_Door AltName="Navigation - Door" Wiki="Can you pass through the node door? (def: 0)" IsBool="" />
     <enableNaviFlg_InSideWall AltName="Navigation - Ignore Navmesh Wall" Wiki="Can you pass through the node in the wall? (def: 0)" IsBool="" />
-    <enableNaviFlg_EdgeOrdinary AltName="Navigation - Cliff Edge" Wiki="Can you pass the node cliff under normal / alert conditions? (def: 1)" IsBool="" />
+    <enableNaviFlg_Edge_Ordinary AltName="Navigation - Cliff Edge" Wiki="Can you pass the node cliff under normal / alert conditions? (def: 1)" IsBool="" />
     <enableNaviFlg_reserve0 Padding="" />
     <enableNaviFlg_reserve1 Padding="" />
     <eyeDist_forDark AltName="Vision Distance - In Darkness" />

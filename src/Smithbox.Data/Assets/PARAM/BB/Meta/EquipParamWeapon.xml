@@ -219,8 +219,8 @@
     <sellValue AltName="Sell Value" Wiki="The souls given when this item is sold." />
     <correctStrength AltName="Correction: Strength" Wiki="The base scaling value used for Strength.\nNote that this is multiplied by reinforcement (via ReinforceParamWeapon)." />
     <correctAgility AltName="Correction: Skill" Wiki=" 	The base scaling value used for Skill.\nNote that this is multiplied by reinforcement (via ReinforceParamWeapon)." />
-    <corretMagic AltName="Correction: Bloodtinge" Wiki="The base scaling value used for Bloodtinge.\nNote that this is multiplied by reinforcement (via ReinforceParamWeapon)." />
-    <corretFaith AltName="Correction: Arcane" Wiki="The base scaling value used for Arcane.\nNote that this is multiplied by reinforcement (via ReinforceParamWeapon)." />
+    <correctMagic AltName="Correction: Bloodtinge" Wiki="The base scaling value used for Bloodtinge.\nNote that this is multiplied by reinforcement (via ReinforceParamWeapon)." />
+    <correctFaith AltName="Correction: Arcane" Wiki="The base scaling value used for Arcane.\nNote that this is multiplied by reinforcement (via ReinforceParamWeapon)." />
     <physGuardCutRate AltName="Guard Absorption: Physical" Wiki="The Physical absorption to use when guarding." IsInvertedPercentage=""/>
     <magGuardCutRate AltName="Guard Absorption: Magic" Wiki="The Magic absorption to use when guarding." IsInvertedPercentage=""/>
     <fireGuardCutRate AltName="Guard Absorption: Fire" Wiki="The Fire absorption to use when guarding." IsInvertedPercentage=""/>
@@ -228,7 +228,7 @@
     <spEffectBehaviorId0 Refs="SpEffectParam" AltName="Behavior Speffect ID 0" Wiki="The SpEffect to apply to the enemy on hit." DeepCopyTarget="SpEffect" />
     <spEffectBehaviorId1 Refs="SpEffectParam" AltName="Behavior Speffect ID 1" Wiki="The SpEffect to apply to the enemy on hit." DeepCopyTarget="SpEffect" />
     <spEffectBehaviorId2 Refs="SpEffectParam" AltName="Behavior Speffect ID 2" Wiki="The SpEffect to apply to the enemy on hit." DeepCopyTarget="SpEffect" />
-    <residentSpEffectId0 Refs="SpEffectParam" AltName="Resident Speffect ID 0" Wiki="The SpEffect to apply passively to the player while holding the item in an active hand." DeepCopyTarget="SpEffect" />
+    <residentSpEffectId Refs="SpEffectParam" AltName="Resident Speffect ID 0" Wiki="The SpEffect to apply passively to the player while holding the item in an active hand." DeepCopyTarget="SpEffect" />
     <residentSpEffectId1 Refs="SpEffectParam" AltName="Resident Speffect ID 1" Wiki="The SpEffect to apply passively to the player while holding the item in an active hand." DeepCopyTarget="SpEffect" />
     <residentSpEffectId2 Refs="SpEffectParam" AltName="Resident Speffect ID 2" Wiki="The SpEffect to apply passively to the player while holding the item in an active hand." DeepCopyTarget="SpEffect" />
     <materialSetId Refs="EquipMtrlSetParam" AltName="Upgrade Material ID" Wiki="Determines the EquipMtrlSetParam row range used for reinforcement." />
