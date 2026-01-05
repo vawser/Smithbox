@@ -480,6 +480,7 @@
     <guardDefFlickPowerRate AltName="Guard Defense - Weapon Repel Power %" Wiki="Repellent defense correction value when guarding" />
     <guardStaminaCutRate AltName="Guard Stability %" Wiki="Stamina cut rate correction value when guarding" />
     <rayCastPassedTime AltName="Raycast Passed Time" Wiki="Passing the line of sight: Activation time [ms] (for evil eye)" />
+    <changeSuperArmorPoint AltName="Poise" Wiki="Value to add to the super armor value" />
     <bowDistRate AltName="Bow Distance %" Wiki="Correction value added to the flight distance correction of the weapon" />
     <spCategory AltName="Effect Category" Wiki="Categories that determine behavior such as overwriting special effects" Enum="SP_EFFECT_SPCATEGORY" />
     <categoryPriority AltName="Category Priority" Wiki="Priority within the same category (lower one has priority)" />
@@ -560,7 +561,7 @@
     <isExtendSpEffectLife AltName="Has Effect Duration Adjustment Applied" Wiki="Whether to be eligible for extension when the life extension effect is applied" IsBool="" />
     <hasTarget AltName="Has Target" Wiki="Do you know the enemy? : [Activation condition] (for evil eye users)" IsBool="" />
     <isFireDamageCancel AltName="Cancel on Fire Damage" Wiki="Whether to replan at the time of activation" IsBool="" />
-    <disableTherianthrope AltName="Disable Beasthood" Wiki="If this effect is applied, you will not be able to turn into a beast." />
+    <disableTherianthrope AltName="Disable Beasthood" Wiki="If this effect is applied, you will not be able to turn into a beast." IsBool="" />
     <vowType0 AltName="Trigger for Vow Type [0]" Wiki="Pledge 0" IsBool="" />
     <vowType1 AltName="Trigger for Vow Type [1]" Wiki="Pledge 1" IsBool="" />
     <vowType2 AltName="Trigger for Vow Type [2]" Wiki="Pledge 2" IsBool="" />

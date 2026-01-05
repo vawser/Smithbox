@@ -74,7 +74,7 @@
     <QWC_sb AltName="Trend Coefficient - Sword-Bow axis" />
     <QWC_mw AltName="Trend Coefficient - Mace-Wand axis" />
     <QWC_cd AltName="Basic QWC value" />
-    <soulLvl AltName="Soul Level" Wiki="Character's Starting Soul Level" />
+    <soulLv AltName="Soul Level" Wiki="Character's Starting Soul Level" />
     <baseVit AltName="Vigor" Wiki="Character's Starting Vigor Level" />
     <baseWil AltName="Attunement" Wiki="Character's Starting Attunement Level" />
     <baseEnd AltName="Endurance" Wiki="Character's Starting Endurance Level" />

@@ -18,7 +18,7 @@
     <lotItemId07 Refs="ItemLotLvdepParam(lotItemCategory07=15),GemGenParam(lotItemCategory07=8),EquipParamGoods(lotItemCategory07=4),EquipParamProtector(lotItemCategory07=1),EquipParamWeapon(lotItemCategory07=0)" AltName="Item ID 7" />
     <lotItemId08 Refs="ItemLotLvdepParam(lotItemCategory08=15),GemGenParam(lotItemCategory08=8),EquipParamGoods(lotItemCategory08=4),EquipParamProtector(lotItemCategory08=1),EquipParamWeapon(lotItemCategory08=0)" AltName="Item ID 8" />
     <lotItemCategory01 Enum="ITEMLOT_ITEMCATEGORY" />
-    <LotItemCategory02 Enum="ITEMLOT_ITEMCATEGORY" />
+    <lotItemCategory02 Enum="ITEMLOT_ITEMCATEGORY" />
     <lotItemCategory03 Enum="ITEMLOT_ITEMCATEGORY" />
     <lotItemCategory04 Enum="ITEMLOT_ITEMCATEGORY" />
     <lotItemCategory05 Enum="ITEMLOT_ITEMCATEGORY" />
