@@ -96,7 +96,7 @@ public class GparamData
         GparamEnums = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "GPARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
         var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
@@ -141,7 +141,7 @@ public class GparamData
         GparamEnums = new();
 
         // Enums
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "GPARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Enums.json");
 
         var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));

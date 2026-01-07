@@ -29,7 +29,7 @@ public class TextNamingTemplateManager
         Editor = editor;
         Project = project;
 
-        RootPath = Path.Join(AppContext.BaseDirectory, "Assets", "Workflow", "Naming Templates");
+        RootPath = Path.Join(StudioCore.Common.FileLocations.Assets, "Workflow", "Naming Templates");
         ProjectPath = Path.Join(editor.Project.ProjectPath, ".smithbox", "Workflow", "Naming Templates");
     }
 

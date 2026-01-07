@@ -11,6 +11,7 @@
         public static FixedUtf8String VK_KHR_SWAPCHAIN_EXTENSION_NAME { get; } = "VK_KHR_swapchain";
         public static FixedUtf8String VK_MVK_MACOS_SURFACE_EXTENSION_NAME { get; } = "VK_MVK_macos_surface";
         public static FixedUtf8String VK_EXT_METAL_SURFACE_EXTENSION_NAME { get; } = "VK_EXT_metal_surface";
+        public static FixedUtf8String VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME { get; } = "VK_KHR_portability_enumeration";
         public static FixedUtf8String VK_MVK_IOS_SURFACE_EXTENSION_NAME { get; } = "VK_MVK_ios_surface";
         public static FixedUtf8String VK_EXT_DEBUG_UTILS_EXTENSION_NAME { get; } = "VK_EXT_debug_utils";
         public static FixedUtf8String StandardValidationLayerName { get; } = "VK_LAYER_KHRONOS_validation";

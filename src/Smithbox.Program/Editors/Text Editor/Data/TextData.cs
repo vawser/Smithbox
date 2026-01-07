@@ -140,7 +140,7 @@ public class TextData
     {
         LanguageDef def = null;
 
-        var folder = Path.Join(AppContext.BaseDirectory, "Assets", "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var folder = Path.Join(StudioCore.Common.FileLocations.Assets, "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var file = Path.Combine(folder, "Languages.json");
 
         if (File.Exists(file))
@@ -171,7 +171,7 @@ public class TextData
     {
         ContainerDef def = null;
 
-        var folder = Path.Join(AppContext.BaseDirectory, "Assets", "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var folder = Path.Join(StudioCore.Common.FileLocations.Assets, "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var file = Path.Combine(folder, "Containers.json");
 
         if (File.Exists(file))
@@ -202,7 +202,7 @@ public class TextData
     {
         AssociationDef def = null;
 
-        var folder = Path.Join(AppContext.BaseDirectory, "Assets", "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var folder = Path.Join(StudioCore.Common.FileLocations.Assets, "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var file = Path.Combine(folder, "Associations.json");
 
 

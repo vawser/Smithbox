@@ -3,39 +3,22 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <LangVersion>12</LangVersion>
-    <Configurations>
-      Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
     <RootNamespace>StudioCore</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
-    <DefineConstants>DEBUG</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <NoWarn>1701;1702;0169</NoWarn>
   </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
-    <DefineConstants>RELEASE</DefineConstants>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <NoWarn>1701;1702;0169</NoWarn>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.EndsWith('-win')) Or !$(Configuration.Contains('-'))">
-    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
-    <PlatformTarget>x64</PlatformTarget>
-  </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.EndsWith('-linux'))">
-    <DefineConstants>$(DefineConstants);LINUX</DefineConstants>
-    <PlatformTarget>x64</PlatformTarget>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.EndsWith('-osx'))">
-    <DefineConstants>$(DefineConstants);OSX</DefineConstants>
-    <PlatformTargets>arm64;x64</PlatformTargets>
-  </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Editors\Map Editor\Enums\**" />
@@ -44,11 +27,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AssimpNet" Version="4.1.0" />
+    <PackageReference Include="AssimpNetter" Version="6.0.2.1" />
     <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.2" />
     <PackageReference Include="CsvHelper" Version="33.0.1" />
     <PackageReference Include="DirectXTexNet" Version="1.0.7" />
     <PackageReference Include="DotNext.IO" Version="4.15.0" />
+    <PackageReference Include="Hexa.NET.ImGui" Version="2.2.7" />
+    <PackageReference Include="Hexa.NET.ImGuizmo" Version="2.2.7" />
+    <PackageReference Include="Hexa.NET.ImNodes" Version="2.2.7" />
+    <PackageReference Include="Hexa.NET.ImPlot" Version="2.2.7" />
     <PackageReference Include="NativeFileDialogSharp" Version="0.6.0-alpha" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Octokit" Version="13.0.0" />
@@ -63,10 +50,6 @@
     <PackageReference Include="Veldrid.ImageSharp" Version="4.9.0" />
     <PackageReference Include="Vortice.Vulkan" Version="1.8.12" />
     <PackageReference Include="Vortice.VulkanMemoryAllocator" Version="1.4.6" />
-    <PackageReference Include="Hexa.NET.ImGuizmo" Version="2.2.7" />
-    <PackageReference Include="Hexa.NET.ImGui" Version="2.2.7" />
-    <PackageReference Include="Hexa.NET.ImNodes" Version="2.2.7" />
-    <PackageReference Include="Hexa.NET.ImPlot" Version="2.2.7" />
   </ItemGroup>
 
   <ItemGroup>
