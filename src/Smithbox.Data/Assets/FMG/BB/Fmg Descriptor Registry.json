@@ -79,11 +79,11 @@
         },
         {
             "Abbreviation": "zhocn",
-            "Language": "SimplifiedChinese"
+            "Language": "Simplified Chinese"
         },
         {
             "Abbreviation": "zhotw",
-            "Language": "TraditionalChinese"
+            "Language": "Traditional Chinese"
         }
     ],
     "Containers": [
