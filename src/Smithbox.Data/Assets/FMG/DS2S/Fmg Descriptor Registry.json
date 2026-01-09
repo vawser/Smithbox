@@ -1,0 +1,693 @@
+{
+    "ProjectType": 10,
+    "Languages": [
+        {
+            "Abbreviation": "english",
+            "Language": "English"
+        },
+        {
+            "Abbreviation": "french",
+            "Language": "French"
+        },
+        {
+            "Abbreviation": "germany",
+            "Language": "German"
+        },
+        {
+            "Abbreviation": "italian",
+            "Language": "Italian"
+        },
+        {
+            "Abbreviation": "japanese",
+            "Language": "Japanese"
+        },
+        {
+            "Abbreviation": "korean",
+            "Language": "Korean"
+        },
+        {
+            "Abbreviation": "polish",
+            "Language": "Polish"
+        },
+        {
+            "Abbreviation": "russian",
+            "Language": "Russian"
+        },
+        {
+            "Abbreviation": "spanish",
+            "Language": "Spanish"
+        },
+        {
+            "Abbreviation": "chinese",
+            "Language": "TraditionalChinese"
+        },
+        {
+            "Abbreviation": "neutralspanish",
+            "Language": "SpanishNeutral"
+        },
+        {
+            "Abbreviation": "portuguese",
+            "Language": "Portuguese"
+        }
+    ],
+    "Containers": [
+        {
+            "FileName": "",
+            "ContainerName": "",
+            "VariantName": "",
+            "DisplayName": ""
+        }
+    ],
+    "List": [
+        {
+            "ID": 0,
+            "Container": "bloodmessageconjunction",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blood Message Conjunctions",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Blood Message Conjunctions"
+        },
+        {
+            "ID": 0,
+            "Container": "bloodmessagesentence",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blood Message Sentences",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Blood Message Sentences"
+        },
+        {
+            "ID": 0,
+            "Container": "bloodmessageword",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blood Message Words",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Blood Message Words"
+        },
+        {
+            "ID": 0,
+            "Container": "bloodmessagewordcategory",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blood Message Word Categories",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Blood Message Word Categories"
+        },
+        {
+            "ID": 0,
+            "Container": "bofire",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Bonfire Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Bonfire Text"
+        },
+        {
+            "ID": 0,
+            "Container": "bonfirename",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Bonfire Names",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Bonfire Names"
+        },
+        {
+            "ID": 0,
+            "Container": "charamaking",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Character Maker Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Character Maker Text"
+        },
+        {
+            "ID": 0,
+            "Container": "common",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Common Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Common Text"
+        },
+        {
+            "ID": 0,
+            "Container": "dconlymessage",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Multiplayer Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Multiplayer Text"
+        },
+        {
+            "ID": 0,
+            "Container": "detailedexplanation",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Item Descriptions",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Item Descriptions"
+        },
+        {
+            "ID": 0,
+            "Container": "iconhelp",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Icon Help Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Icon Help Text"
+        },
+        {
+            "ID": 0,
+            "Container": "ingamemenu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "In-game Menu Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "In-game Menu Text"
+        },
+        {
+            "ID": 0,
+            "Container": "ingamesystem",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "In-game System Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "In-game System Text"
+        },
+        {
+            "ID": 0,
+            "Container": "itemname",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Item Names",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Item Names"
+        },
+        {
+            "ID": 0,
+            "Container": "keyguide",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Key Guide",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Key Guide"
+        },
+        {
+            "ID": 0,
+            "Container": "mapevent",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Map Event",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Map Event"
+        },
+        {
+            "ID": 0,
+            "Container": "mapname",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Map Name",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Map Name"
+        },
+        {
+            "ID": 0,
+            "Container": "npcmenu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "NPC Menu Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "NPC Menu Text"
+        },
+        {
+            "ID": 0,
+            "Container": "pluralselect",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Plural Select Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Plural Select Text"
+        },
+        {
+            "ID": 0,
+            "Container": "prologue",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Prologue Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Prologue Text"
+        },
+        {
+            "ID": 0,
+            "Container": "shop",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Shop Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Shop Text"
+        },
+        {
+            "ID": 0,
+            "Container": "simpleexplanation",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Item Summaries",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Item Summaries"
+        },
+        {
+            "ID": 0,
+            "Container": "staffroll",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Staff Roll",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Staff Roll"
+        },
+        {
+            "ID": 0,
+            "Container": "titleflow",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Title Flow Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Title Flow Text"
+        },
+        {
+            "ID": 0,
+            "Container": "titlemenu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Title Menu Text",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Title Menu Text"
+        },
+        {
+            "ID": 0,
+            "Container": "weapontype",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Weapon Types",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Weapon Types"
+        },
+        {
+            "ID": 0,
+            "Container": "win32onlymessage",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Messages",
+            "SecondaryDomain": "Common",
+            "DisplayName": "Messages"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_02_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Things Betwixt",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Things Betwixt"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_10_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Forest of Fallen Giants",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Forest of Fallen Giants"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_14_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Brightstone Cove Tseldora",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Brightstone Cove Tseldora"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_15_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Aldia's Kee",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Aldia's Kee"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_16_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "The Lost Bastille & Belfry Luna",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "The Lost Bastille & Belfry Luna"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_17_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Harvest Valley & Earthen Peak",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Harvest Valley & Earthen Peak"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_18_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "No-man's Wharf",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "No-man's Wharf"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_19_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Iron Keep & Belfry Sol",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Iron Keep & Belfry Sol"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_23_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Huntsman's Copse & Undead Purgatory",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Huntsman's Copse & Undead Purgatory"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_27_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Dragon Aerie & Dragon Shrine",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Dragon Aerie & Dragon Shrine"
+        },
+        {
+            "ID": 0,
+            "Container": "m20_10_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Memory of Vammar, Orro, and Jeigh",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Memory of Vammar, Orro, and Jeigh"
+        },
+        {
+            "ID": 0,
+            "Container": "m20_11_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Shrine of Amana",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Shrine of Amana"
+        },
+        {
+            "ID": 0,
+            "Container": "m20_21_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Drangleic Castle & Throne of Want",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Drangleic Castle & Throne of Want"
+        },
+        {
+            "ID": 0,
+            "Container": "m20_24_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Undead Crypt",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Undead Crypt"
+        },
+        {
+            "ID": 0,
+            "Container": "m50_35_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Shulva, Sanctum City",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Shulva, Sanctum City"
+        },
+        {
+            "ID": 0,
+            "Container": "m50_36_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Brume Tower",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Brume Tower"
+        },
+        {
+            "ID": 0,
+            "Container": "m50_37_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Frozen Eleum Loyce",
+            "SecondaryDomain": "Blood Messages",
+            "DisplayName": "Frozen Eleum Loyce"
+        },
+        {
+            "ID": 0,
+            "Container": "charaname",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Character Names",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Character Names"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_02_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Things Betwixt",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Things Betwixt"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_04_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Majula",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Majula"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_10_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Forest of Fallen Giants",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Forest of Fallen Giants"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_14_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Brightstone Cove Tseldora",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Brightstone Cove Tseldora"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_15_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Aldia's Keep",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Aldia's Keep"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_16_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "The Lost Bastille & Belfry Luna",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "The Lost Bastille & Belfry Luna"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_17_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Harvest Valley & Earthen Peak",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Harvest Valley & Earthen Peak"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_18_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "No-man's Wharf",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "No-man's Wharf"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_19_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Iron Keep & Belfry Sol",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Iron Keep & Belfry Sol"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_23_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Huntsman's Copse & Undead Purgatory",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Huntsman's Copse & Undead Purgatory"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_25_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "The Gutter & Black Gulch",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "The Gutter & Black Gulch"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_27_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Dragon Aerie & Dragon Shrine",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Dragon Aerie & Dragon Shrine"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_29_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Majula to Shaded Woods",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Majula to Shaded Woods"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_31_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Heide's Tower to No-man's Wharf",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Heide's Tower to No-man's Wharf"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_32_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Shaded Woods & Shrine of Winter",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Shaded Woods & Shrine of Winter"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_33_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Doors of Pharros",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Doors of Pharros"
+        },
+        {
+            "ID": 0,
+            "Container": "m10_34_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Grave of Saints",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Grave of Saints"
+        },
+        {
+            "ID": 0,
+            "Container": "m20_10_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Memory of Vammar, Orro, and Jeigh",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Memory of Vammar, Orro, and Jeigh"
+        },
+        {
+            "ID": 0,
+            "Container": "m20_11_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Shrine of Amana",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Shrine of Amana"
+        },
+        {
+            "ID": 0,
+            "Container": "m20_21_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Drangleic Castle & Throne of Want",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Drangleic Castle & Throne of Want"
+        },
+        {
+            "ID": 0,
+            "Container": "m20_24_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Undead Crypt",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Undead Crypt"
+        },
+        {
+            "ID": 0,
+            "Container": "m50_35_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Shulva, Sanctum City",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Shulva, Sanctum City"
+        },
+        {
+            "ID": 0,
+            "Container": "m50_36_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Brume Tower",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Brume Tower"
+        },
+        {
+            "ID": 0,
+            "Container": "m50_37_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Frozen Eleum Loyce",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Frozen Eleum Loyce"
+        },
+        {
+            "ID": 0,
+            "Container": "m50_38_00_00",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Memory of the King",
+            "SecondaryDomain": "Talk",
+            "DisplayName": "Memory of the King"
+        }
+    ]
+}

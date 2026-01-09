@@ -1,0 +1,1300 @@
+{
+    "ProjectType": 8,
+    "Languages": [
+        {
+            "Abbreviation": "engus",
+            "Language": "English"
+        },
+        {
+            "Abbreviation": "frafr",
+            "Language": "French"
+        },
+        {
+            "Abbreviation": "deude",
+            "Language": "German"
+        },
+        {
+            "Abbreviation": "itait",
+            "Language": "Italian"
+        },
+        {
+            "Abbreviation": "jpnjp",
+            "Language": "Japanese"
+        },
+        {
+            "Abbreviation": "korkr",
+            "Language": "Korean"
+        },
+        {
+            "Abbreviation": "polpl",
+            "Language": "Polish"
+        },
+        {
+            "Abbreviation": "rusru",
+            "Language": "Russian"
+        },
+        {
+            "Abbreviation": "spaes",
+            "Language": "Spanish"
+        },
+        {
+            "Abbreviation": "spaar",
+            "Language": "Spanish (Latin)"
+        },
+        {
+            "Abbreviation": "zhotw",
+            "Language": "Traditional Chinese"
+        },
+        {
+            "Abbreviation": "zhocn",
+            "Language": "Simplified Chinese"
+        },
+        {
+            "Abbreviation": "thath",
+            "Language": "Thai"
+        },
+        {
+            "Abbreviation": "porbr",
+            "Language": "Portuguese"
+        },
+        {
+            "Abbreviation": "araae",
+            "Language": "Arabic"
+        }
+    ],
+    "Containers": [
+        {
+            "FileName": "item.msgbnd.dcx",
+            "ContainerName": "Item",
+            "VariantName": "Stock",
+            "DisplayName": "Item"
+        },
+        {
+            "FileName": "item_dlc01.msgbnd.dcx",
+            "ContainerName": "Item",
+            "VariantName": "DLC1",
+            "DisplayName": "Item"
+        },
+        {
+            "FileName": "item_dlc02.msgbnd.dcx",
+            "ContainerName": "Item",
+            "VariantName": "DLC2",
+            "DisplayName": "Item"
+        },
+        {
+            "FileName": "menu.msgbnd.dcx",
+            "ContainerName": "Menu",
+            "VariantName": "Stock",
+            "DisplayName": "Menu"
+        },
+        {
+            "FileName": "menu_dlc01.msgbnd.dcx",
+            "ContainerName": "Menu",
+            "VariantName": "DLC1",
+            "DisplayName": "Menu"
+        },
+        {
+            "FileName": "menu_dlc02.msgbnd.dcx",
+            "ContainerName": "Menu",
+            "VariantName": "DLC2",
+            "DisplayName": "Menu"
+        },
+        {
+            "FileName": "ngword.msgbnd.dcx",
+            "ContainerName": "Blocked Words",
+            "VariantName": "Stock",
+            "DisplayName": "Blocked Words"
+        }
+    ],
+    "List": [
+        {
+            "ID": 10,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 11,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 12,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 13,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 14,
+            "Container": "Spells",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 18,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Characters",
+            "SecondaryDomain": "",
+            "DisplayName": "Characters"
+        },
+        {
+            "ID": 19,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Locations",
+            "SecondaryDomain": "",
+            "DisplayName": "Locations"
+        },
+        {
+            "ID": 20,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 21,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 22,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 23,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 28,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 24,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 25,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 26,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 27,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 28,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 35,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Ashes of War",
+            "SecondaryDomain": "",
+            "DisplayName": "Ashes of War"
+        },
+        {
+            "ID": 36,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Ashes of War",
+            "SecondaryDomain": "",
+            "DisplayName": "Ashes of War"
+        },
+        {
+            "ID": 37,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Ashes of War",
+            "SecondaryDomain": "",
+            "DisplayName": "Ashes of War"
+        },
+        {
+            "ID": 41,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Goods Dialog",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods Dialog"
+        },
+        {
+            "ID": 42,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 43,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 44,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Weapon Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapon Effects"
+        },
+        {
+            "ID": 45,
+            "Container": "Item",
+            "Role": "Effect",
+            "Variant": "Stock",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 46,
+            "Container": "Item",
+            "Role": "Effect",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+                {
+            "ID": 319,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 310,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 313,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 316,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 325,
+            "Container": "Spells",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 328,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Characters",
+            "SecondaryDomain": "",
+            "DisplayName": "Characters"
+        },
+        {
+            "ID": 329,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Locations",
+            "SecondaryDomain": "",
+            "DisplayName": "Locations"
+        },
+        {
+            "ID": 320,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 311,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 314,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 317,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 326,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 321,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 312,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 315,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 318,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 327,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 322,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Ashes of War",
+            "SecondaryDomain": "",
+            "DisplayName": "Ashes of War"
+        },
+        {
+            "ID": 323,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Ashes of War",
+            "SecondaryDomain": "",
+            "DisplayName": "Ashes of War"
+        },
+        {
+            "ID": 324,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Ashes of War",
+            "SecondaryDomain": "",
+            "DisplayName": "Ashes of War"
+        },
+        {
+            "ID": 330,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Goods Dialog",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods Dialog"
+        },
+        {
+            "ID": 331,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 332,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 333,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Weapon Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapon Effects"
+        },
+        {
+            "ID": 334,
+            "Container": "Item",
+            "Role": "Effect",
+            "Variant": "DLC1",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 335,
+            "Container": "Item",
+            "Role": "Effect",
+            "Variant": "DLC1",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+                {
+            "ID": 419,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC2",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 410,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC2",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 413,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC2",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 416,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC2",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 425,
+            "Container": "Spells",
+            "Role": "Title",
+            "Variant": "DLC2",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 428,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Characters",
+            "SecondaryDomain": "",
+            "DisplayName": "Characters"
+        },
+        {
+            "ID": 429,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Locations",
+            "SecondaryDomain": "",
+            "DisplayName": "Locations"
+        },
+        {
+            "ID": 420,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC2",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 411,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC2",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 414,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC2",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 417,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC2",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 426,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC2",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 421,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC2",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 412,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC2",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 415,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC2",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 418,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC2",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 427,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC2",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 422,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC2",
+            "Domain": "Ashes of War",
+            "SecondaryDomain": "",
+            "DisplayName": "Ashes of War"
+        },
+        {
+            "ID": 423,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC2",
+            "Domain": "Ashes of War",
+            "SecondaryDomain": "",
+            "DisplayName": "Ashes of War"
+        },
+        {
+            "ID": 424,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC2",
+            "Domain": "Ashes of War",
+            "SecondaryDomain": "",
+            "DisplayName": "Ashes of War"
+        },
+        {
+            "ID": 430,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Goods Dialog",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods Dialog"
+        },
+        {
+            "ID": 431,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC2",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 432,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC2",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 433,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC2",
+            "Domain": "Weapon Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapon Effects"
+        },
+        {
+            "ID": 434,
+            "Container": "Item",
+            "Role": "Effect",
+            "Variant": "DLC2",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 435,
+            "Container": "Item",
+            "Role": "Effect",
+            "Variant": "DLC2",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 1,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Talk Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages"
+        },
+        {
+            "ID": 2,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blood Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Messages"
+        },
+        {
+            "ID": 3,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Movie Subtitles",
+            "SecondaryDomain": "",
+            "DisplayName": "Movie Subtitles"
+        },
+        {
+            "ID": 4,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Talk Messages (Female)",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages (Female)"
+        },
+        {
+            "ID": 31,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Network Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Network Messages"
+        },
+        {
+            "ID": 32,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Action Button Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Action Button Text"
+        },
+        {
+            "ID": 33,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Event Text for Talk",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Talk"
+        },
+        {
+            "ID": 34,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Event Text for Map",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Map"
+        },
+        {
+            "ID": 200,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Menu Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Menu Text"
+        },
+        {
+            "ID": 201,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Line Help",
+            "SecondaryDomain": "",
+            "DisplayName": "Line Help"
+        },
+        {
+            "ID": 202,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Key Guide",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guide"
+        },
+        {
+            "ID": 203,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "System Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "System Messages"
+        },
+        {
+            "ID": 204,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Dialogue",
+            "SecondaryDomain": "",
+            "DisplayName": "Dialogue"
+        },
+        {
+            "ID": 205,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Loading Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Loading Text"
+        },
+        {
+            "ID": 206,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Loading Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Loading Text"
+        },
+        {
+            "ID": 207,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 208,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 209,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Text Embed Image Name",
+            "SecondaryDomain": "",
+            "DisplayName": "Text Embed Image Name"
+        },
+        {
+            "ID": 210,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Terms of Service",
+            "SecondaryDomain": "",
+            "DisplayName": "Terms of Service"
+        },
+        {
+            "ID": 360,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Talk Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages"
+        },
+        {
+            "ID": 361,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Blood Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Messages"
+        },
+        {
+            "ID": 362,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Movie Subtitles",
+            "SecondaryDomain": "",
+            "DisplayName": "Movie Subtitles"
+        },
+        {
+            "ID": 363,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Talk Messages (Female)",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages (Female)"
+        },
+        {
+            "ID": 364,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Network Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Network Messages"
+        },
+        {
+            "ID": 365,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Action Button Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Action Button Text"
+        },
+        {
+            "ID": 366,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Event Text for Talk",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Talk"
+        },
+        {
+            "ID": 367,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Event Text for Map",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Map"
+        },
+        {
+            "ID": 368,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Menu Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Menu Text"
+        },
+        {
+            "ID": 369,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Line Help",
+            "SecondaryDomain": "",
+            "DisplayName": "Line Help"
+        },
+        {
+            "ID": 370,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Key Guide",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guide"
+        },
+        {
+            "ID": 371,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "System Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "System Messages"
+        },
+        {
+            "ID": 372,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Dialogue",
+            "SecondaryDomain": "",
+            "DisplayName": "Dialogue"
+        },
+        {
+            "ID": 373,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Loading Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Loading Text"
+        },
+        {
+            "ID": 374,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Loading Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Loading Text"
+        },
+        {
+            "ID": 375,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 376,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        
+       {
+            "ID": 460,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Talk Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages"
+        },
+        {
+            "ID": 461,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Blood Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Messages"
+        },
+        {
+            "ID": 462,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Movie Subtitles",
+            "SecondaryDomain": "",
+            "DisplayName": "Movie Subtitles"
+        },
+        {
+            "ID": 463,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Talk Messages (Female)",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages (Female)"
+        },
+        {
+            "ID": 464,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Network Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Network Messages"
+        },
+        {
+            "ID": 465,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Action Button Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Action Button Text"
+        },
+        {
+            "ID": 466,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Event Text for Talk",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Talk"
+        },
+        {
+            "ID": 467,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Event Text for Map",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Map"
+        },
+        {
+            "ID": 468,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Menu Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Menu Text"
+        },
+        {
+            "ID": 469,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Line Help",
+            "SecondaryDomain": "",
+            "DisplayName": "Line Help"
+        },
+        {
+            "ID": 470,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Key Guide",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guide"
+        },
+        {
+            "ID": 471,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "System Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "System Messages"
+        },
+        {
+            "ID": 472,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC2",
+            "Domain": "Dialogue",
+            "SecondaryDomain": "",
+            "DisplayName": "Dialogue"
+        },
+        {
+            "ID": 473,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "DLC2",
+            "Domain": "Loading Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Loading Text"
+        },
+        {
+            "ID": 474,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "DLC2",
+            "Domain": "Loading Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Loading Text"
+        },
+        {
+            "ID": 475,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "DLC2",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 476,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "DLC2",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 1,
+            "Container": "NgWord",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blocked Words",
+            "SecondaryDomain": "",
+            "DisplayName": "Blocked Words"
+        }
+    ]
+}
