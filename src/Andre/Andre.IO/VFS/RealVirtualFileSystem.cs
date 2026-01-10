@@ -129,13 +129,13 @@ namespace Andre.IO.VFS
             {
                 fileName = fileName.TrimStart('/').TrimStart('\\');
                 string filePath = Path.Combine(path, fileName);
-                if (TryGetFile(filePath, out var file))
+                if (TryGetFile(fileName, out var file))
                 {
                     return file;
                 }
                 if (isReadOnly) throw ThrowWriteNotSupported();
                 File.Create(filePath).Dispose();
-                if (!TryGetFile(filePath, out file))
+                if (!TryGetFile(fileName, out file))
                 {
                     throw new($"Failed to create file \"{filePath}\"... somehow?");
                 }
