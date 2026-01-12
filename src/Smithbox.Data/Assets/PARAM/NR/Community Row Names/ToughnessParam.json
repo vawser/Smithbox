@@ -4,7 +4,7 @@
     {
       "ID": 0,
       "Entries": [
-        ""
+        "Player Base Toughness"
       ]
     },
     {
@@ -154,7 +154,7 @@
     {
       "ID": 100,
       "Entries": [
-        ""
+        "Light Attack"
       ]
     },
     {
@@ -166,7 +166,7 @@
     {
       "ID": 110,
       "Entries": [
-        ""
+        "Heavy Attack"
       ]
     },
     {
@@ -178,7 +178,7 @@
     {
       "ID": 120,
       "Entries": [
-        ""
+        "Charged Heavy Attack"
       ]
     },
     {
@@ -190,7 +190,7 @@
     {
       "ID": 130,
       "Entries": [
-        ""
+        "Dodge/Running Attack"
       ]
     },
     {
@@ -202,7 +202,7 @@
     {
       "ID": 135,
       "Entries": [
-        ""
+        "Heavy Running Attack"
       ]
     },
     {
@@ -214,7 +214,7 @@
     {
       "ID": 140,
       "Entries": [
-        ""
+        "Jump Attack"
       ]
     },
     {
@@ -226,7 +226,7 @@
     {
       "ID": 145,
       "Entries": [
-        ""
+        "Heavy Jump Attack"
       ]
     },
     {

@@ -94,7 +94,7 @@
     {
       "ID": 15,
       "Entries": [
-        ""
+        "Iron Menial (Remembrance?)"
       ]
     },
     {
@@ -202,25 +202,37 @@
     {
       "ID": 33,
       "Entries": [
-        ""
+        "Revenant (Rememembrance?)"
       ]
     },
     {
       "ID": 34,
       "Entries": [
-        ""
+        "Conclude Remembrance"
       ]
     },
     {
       "ID": 35,
       "Entries": [
-        ""
+        "Conclude Remembrance"
       ]
     },
     {
       "ID": 36,
       "Entries": [
-        ""
+        "Iron Menial (Remembrance?)"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Scholar"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Undertaker"
       ]
     }
   ]

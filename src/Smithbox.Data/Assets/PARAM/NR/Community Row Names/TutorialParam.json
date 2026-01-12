@@ -10,691 +10,739 @@
     {
       "ID": 100,
       "Entries": [
-        "Guide"
+        "[Guide] Guide"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Team Expeditions"
+        "[Guide] Team Expeditions"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Move"
+        "[Tutorial] Move"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "Using the Sacred Flask"
+        "[Tutorial] Using the Sacred Flask"
       ]
     },
     {
       "ID": 1020,
       "Entries": [
-        "Battle"
+        "[Tutorial] Battle"
       ]
     },
     {
       "ID": 1021,
       "Entries": [
-        "Battle"
+        "[Tutorial] Battle"
       ]
     },
     {
       "ID": 1030,
       "Entries": [
-        "Setting a Target"
+        "[Tutorial] Setting a Target"
       ]
     },
     {
       "ID": 1040,
       "Entries": [
-        "Jump"
+        "[Tutorial] Jump"
       ]
     },
     {
       "ID": 1050,
       "Entries": [
-        "Guarding and Dodging"
+        "[Tutorial] Guarding and Dodging"
       ]
     },
     {
       "ID": 1070,
       "Entries": [
-        "Dash"
+        "[Tutorial] Dash"
       ]
     },
     {
       "ID": 1080,
       "Entries": [
-        "Surge Sprint"
+        "[Tutorial] Surge Sprint"
       ]
     },
     {
       "ID": 1090,
       "Entries": [
-        "Wall Jump"
+        "[Tutorial] Wall Jump (Large)"
       ]
     },
     {
       "ID": 1095,
       "Entries": [
-        "Wall Jump"
+        "[Tutorial] Wall Jump"
       ]
     },
     {
       "ID": 1100,
       "Entries": [
-        "Using Items"
-      ]
-    },
-    {
-      "ID": 1110,
-      "Entries": [
-        "Wielding Armaments"
+        "[Tutorial] Using Items"
       ]
     },
     {
       "ID": 1120,
       "Entries": [
-        "Skills"
+        "[Handbook] Skills"
       ]
     },
     {
       "ID": 1125,
       "Entries": [
-        "Activating and Switching Skills"
+        "[Tutorial] Activating and Switching Skills"
       ]
     },
     {
       "ID": 1130,
       "Entries": [
-        "Character Skills"
+        "[Tutorial] Character Skills (Large)"
       ]
     },
     {
       "ID": 1135,
       "Entries": [
-        "Character Skills"
+        "[Tutorial] Character Skills"
       ]
     },
     {
       "ID": 1140,
       "Entries": [
-        "Rescuing from Near Death"
+        "[Guide] Rescuing from Near Death"
       ]
     },
     {
       "ID": 1145,
       "Entries": [
-        "Rescuing from Near Death"
+        "[Tutorial] Rescuing from Near Death"
       ]
     },
     {
       "ID": 1150,
       "Entries": [
-        "Death and Revival"
+        "[Guide] Death and Revival"
       ]
     },
     {
       "ID": 1160,
       "Entries": [
-        "Ultimate Arts"
+        "[Tutorial] Ultimate Arts"
       ]
     },
     {
       "ID": 1165,
       "Entries": [
-        "Ultimate Arts"
+        "[Tutorial] Ultimate Arts"
       ]
     },
     {
       "ID": 1170,
       "Entries": [
-        "Near Death"
+        "[Tutorial] Near Death"
       ]
     },
     {
       "ID": 1180,
       "Entries": [
-        "Sites of Grace"
+        "[Guide] Sites of Grace"
       ]
     },
     {
       "ID": 1190,
       "Entries": [
-        "Using the Map"
+        "[Guide] Using the Map"
       ]
     },
     {
       "ID": 1195,
       "Entries": [
-        "Using the Map"
+        "[Tutorial] Using the Map"
       ]
     },
     {
       "ID": 1200,
       "Entries": [
-        "Night's Tide"
+        "[Guide] Night's Tide"
       ]
     },
     {
       "ID": 1205,
       "Entries": [
-        ""
+        "[Tutorial] Night's Tide"
       ]
     },
     {
       "ID": 1210,
       "Entries": [
-        "Rarity and Passive Effects"
+        "[Guide] Rarity and Passive Effects"
       ]
     },
     {
       "ID": 1215,
       "Entries": [
-        "Changing Equipment"
+        "[Tutorial] Changing Equipment"
       ]
     },
     {
       "ID": 1220,
       "Entries": [
-        "Pins"
+        "[Tutorial] Pins"
       ]
     },
     {
       "ID": 1900,
       "Entries": [
-        "Roundtable Hold"
+        "[Guide] Roundtable Hold"
       ]
     },
     {
       "ID": 1905,
       "Entries": [
-        "Sparring Grounds"
+        "[Guide] Sparring Grounds"
       ]
     },
     {
       "ID": 1920,
       "Entries": [
-        ""
+        "[Guide] The Deep of Night"
       ]
     },
     {
       "ID": 1930,
       "Entries": [
-        "Change Garb"
+        "[Guide] Change Garb"
       ]
     },
     {
       "ID": 1940,
       "Entries": [
-        "Relic Rites"
+        "[Guide] Relic Rites"
       ]
     },
     {
       "ID": 1950,
       "Entries": [
-        ""
+        "[Guide] Depths Relics"
       ]
     },
     {
       "ID": 1960,
       "Entries": [
-        "New Character: The Duchess"
+        "[Guide] New Character: The Duchess"
       ]
     },
     {
       "ID": 1970,
       "Entries": [
-        "New Character: The Revenant"
+        "[Guide] New Character: The Revenant"
       ]
     },
     {
       "ID": 1980,
       "Entries": [
-        "When the Earth Shifts"
+        "[Guide] When the Earth Shifts"
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        "Partial Remembrances"
+        "[Guide] Partial Remembrances"
       ]
     },
     {
       "ID": 2010,
       "Entries": [
-        "Realm of Remembrance"
+        "[Guide] Realm of Remembrance"
       ]
     },
     {
       "ID": 2020,
       "Entries": [
-        "Concluding Remembrances"
+        "[Guide] Concluding Remembrances"
       ]
     },
     {
       "ID": 2030,
       "Entries": [
-        "Personal Objectives"
+        "[Guide] Personal Objectives"
       ]
     },
     {
       "ID": 2040,
       "Entries": [
-        "The World After Finishing the Game"
+        "[Guide] The World After Finishing the Game"
       ]
     },
     {
       "ID": 2060,
       "Entries": [
-        "Sovereign Sigil"
+        "[Guide] Sovereign Sigil"
       ]
     },
     {
       "ID": 2070,
       "Entries": [
-        "Helpful Hints"
+        "[Guide] Helpful Hints"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Guide] New Character: The Scholar"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "[Guide] New Character: The Undertaker"
       ]
     },
     {
       "ID": 2520,
       "Entries": [
-        "Guard Counters"
+        "[Handbook] Guard Counters"
       ]
     },
     {
       "ID": 2570,
       "Entries": [
-        "Sorceries and Incantations"
+        "[Handbook] Sorceries and Incantations"
       ]
     },
     {
       "ID": 2571,
       "Entries": [
-        "Sorceries and Incantations"
+        "[Tutorial] Sorceries and Incantations (Sparring Grounds)"
       ]
     },
     {
       "ID": 2580,
       "Entries": [
-        "Bows"
+        "[Handbook] Bows"
       ]
     },
     {
       "ID": 2581,
       "Entries": [
-        "Bows"
+        "[Tutorial] Bows (Sparring Grounds)"
       ]
     },
     {
       "ID": 2590,
       "Entries": [
-        "Nearby Item Shortcuts"
+        "[Guide] Nearby Item Shortcuts"
       ]
     },
     {
       "ID": 2591,
       "Entries": [
-        "Using Items"
+        "[Handbook] Using Items"
       ]
     },
     {
       "ID": 2595,
       "Entries": [
-        "Wielding Armaments"
+        "[Handbook] Wielding Armaments"
       ]
     },
     {
       "ID": 2600,
       "Entries": [
-        "Stance-Breaking"
+        "[Handbook] Stance-Breaking"
       ]
     },
     {
       "ID": 2610,
       "Entries": [
-        "Status Ailments"
+        "[Handbook] Status Ailments"
       ]
     },
     {
       "ID": 2620,
       "Entries": [
-        "Attack Affinities"
+        "[Handbook] Attack Affinities"
       ]
     },
     {
       "ID": 2640,
       "Entries": [
-        "HP"
+        "[Handbook] HP"
       ]
     },
     {
       "ID": 2650,
       "Entries": [
-        "Stamina"
+        "[Handbook] Stamina"
       ]
     },
     {
       "ID": 2660,
       "Entries": [
-        "FP"
+        "[Handbook] FP"
       ]
     },
     {
       "ID": 2670,
       "Entries": [
-        "Attributes"
+        "[Handbook] Attributes"
       ]
     },
     {
       "ID": 2680,
       "Entries": [
-        "Passive Abilities"
+        "[Handbook] Passive Abilities"
       ]
     },
     {
       "ID": 2681,
       "Entries": [
-        "Character Skills"
+        "[Handbook] Character Skills"
       ]
     },
     {
       "ID": 2682,
       "Entries": [
-        "Ultimate Arts"
+        "[Handbook] Ultimate Arts"
       ]
     },
     {
       "ID": 2690,
       "Entries": [
-        "Movement"
+        "[Handbook] Movement"
       ]
     },
     {
       "ID": 2700,
       "Entries": [
-        "The Camera"
+        "[Handbook] The Camera"
       ]
     },
     {
       "ID": 2710,
       "Entries": [
-        "Jumping"
+        "[Handbook] Jumping"
       ]
     },
     {
       "ID": 2720,
       "Entries": [
-        "The Sacred Flask"
+        "[Handbook] The Sacred Flask"
       ]
     },
     {
       "ID": 2730,
       "Entries": [
-        "Attacking"
+        "[Handbook] Attacking"
       ]
     },
     {
       "ID": 2740,
       "Entries": [
-        "Dodging"
+        "[Handbook] Dodging"
       ]
     },
     {
       "ID": 2750,
       "Entries": [
-        "Guarding"
+        "[Handbook] Guarding"
       ]
     },
     {
       "ID": 2900,
       "Entries": [
-        "Magic Cocktail: Single"
+        "[Handbook] Magic Cocktail: Single"
       ]
     },
     {
       "ID": 2903,
       "Entries": [
-        "Magic Cocktail: Double 1"
+        "[Handbook] Magic Cocktail: Double 1"
       ]
     },
     {
       "ID": 2904,
       "Entries": [
-        "Magic Cocktail: Double 2"
+        "[Handbook] Magic Cocktail: Double 2"
       ]
     },
     {
       "ID": 2907,
       "Entries": [
-        "Magic Cocktail: Mixed"
+        "[Handbook] Magic Cocktail: Mixed"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "[Handbook] Analyse"
       ]
     },
     {
       "ID": 3000,
       "Entries": [
-        "Equipment Menu"
+        "[Guide] Equipment Menu"
       ]
     },
     {
       "ID": 3010,
       "Entries": [
-        "Status Menu"
+        "[Guide] Status Menu"
       ]
     },
     {
       "ID": 3030,
       "Entries": [
-        "Level Up Menu"
+        "[Guide] Level Up Menu"
       ]
     },
     {
       "ID": 3040,
       "Entries": [
-        "Shops"
+        "[Guide] Shops"
       ]
     },
     {
       "ID": 3050,
       "Entries": [
-        "Strengthen Armament Menu"
+        "[Guide] Strengthen Armament Menu"
       ]
     },
     {
       "ID": 3060,
       "Entries": [
-        "Special Smithing Table"
+        "[Guide] Special Smithing Table"
       ]
     },
     {
       "ID": 3070,
       "Entries": [
-        "Expeditions"
+        "[Guide] Expeditions"
       ]
     },
     {
       "ID": 3080,
       "Entries": [
-        "Character Selection"
+        "[Guide] Character Selection"
       ]
     },
     {
       "ID": 3090,
       "Entries": [
-        "Change Garb Menu"
+        "[Guide] Change Garb Menu"
       ]
     },
     {
       "ID": 3100,
       "Entries": [
-        "Relic Rites Menu"
+        "[Guide] Relic Rites Menu"
       ]
     },
     {
       "ID": 3110,
       "Entries": [
-        "Visual Codex Menu"
+        "[Guide] Visual Codex Menu"
       ]
     },
     {
       "ID": 3120,
       "Entries": [
-        "Journal"
+        "[Guide] Journal"
       ]
     },
     {
       "ID": 3130,
       "Entries": [
-        "Small Jar Bazaar"
+        "[Guide] Small Jar Bazaar"
       ]
     },
     {
       "ID": 3180,
       "Entries": [
-        "Map Menu"
+        "[Guide] Map Menu"
       ]
     },
     {
       "ID": 3190,
       "Entries": [
-        "Map: Key Locations [1]"
+        "[Guide] Map: Key Locations [1]"
       ]
     },
     {
       "ID": 3191,
       "Entries": [
-        "Map: Key Locations [2]"
+        "[Guide] Map: Key Locations [2]"
       ]
     },
     {
       "ID": 3192,
       "Entries": [
-        "Map: Key Locations [3]"
+        "[Guide] Map: Key Locations [3]"
+      ]
+    },
+    {
+      "ID": 3193,
+      "Entries": [
+        "[Guide] Map: Key Locations [4]"
+      ]
+    },
+    {
+      "ID": 3194,
+      "Entries": [
+        "[Guide] Map: Key Locations [5]"
       ]
     },
     {
       "ID": 3200,
       "Entries": [
-        "Map: Environmental Information"
+        "[Guide] Map: Environmental Information"
       ]
     },
     {
       "ID": 3201,
       "Entries": [
-        "Map: Other Information"
+        "[Guide] Map: Other Information"
       ]
     },
     {
       "ID": 3210,
       "Entries": [
-        "Map: Finding Armaments and Items"
+        "[Guide] Map: Finding Armaments and Items"
+      ]
+    },
+    {
+      "ID": 3211,
+      "Entries": [
+        "[Guide] Map: Finding Armaments and Items [2]"
       ]
     },
     {
       "ID": 3220,
       "Entries": [
-        "Sparring Equipment Menu"
+        "[Guide] Sparring Equipment Menu"
       ]
     },
     {
       "ID": 3230,
       "Entries": [
-        "Sparring Settings Menu"
+        "[Guide] Sparring Settings Menu"
       ]
     },
     {
       "ID": 3250,
       "Entries": [
-        "Armament Replication Menu"
+        "[Guide] Armament Replication Menu"
       ]
     },
     {
       "ID": 3260,
       "Entries": [
-        "Victor's Record Menu "
+        "[Guide] Victor's Record Menu "
       ]
     },
     {
       "ID": 3270,
       "Entries": [
-        "Gestures"
+        "[Guide] Gestures"
       ]
     },
     {
       "ID": 3280,
       "Entries": [
-        "Runes and Murk"
+        "[Guide] Runes and Murk"
       ]
     },
     {
       "ID": 3290,
       "Entries": [
-        "Cataclysms"
+        "[Guide] Cataclysms"
       ]
     },
     {
       "ID": 3300,
       "Entries": [
-        "Item Pins"
+        "[Guide] Item Pins"
       ]
     },
     {
       "ID": 3310,
       "Entries": [
-        "Material Effects"
+        "[Guide] Material Effects"
       ]
     },
     {
       "ID": 3320,
       "Entries": [
-        "Ties to Other Worlds"
+        "[Guide] Ties to Other Worlds"
       ]
     },
     {
       "ID": 3340,
       "Entries": [
-        "Map: Show Tunnel"
+        "[Guide] Map: Show Tunnel"
       ]
     },
     {
       "ID": 3350,
       "Entries": [
-        "Using Pins"
+        "[Guide] Using Pins"
       ]
     },
     {
       "ID": 3400,
       "Entries": [
-        "Shifting Earth: Rotted Woods"
+        "[Guide] Shifting Earth: Rotted Woods"
       ]
     },
     {
       "ID": 3410,
       "Entries": [
-        "Shifting Earth: Noklateo, the Shrouded City"
+        "[Guide] Shifting Earth: Noklateo, the Shrouded City"
       ]
     },
     {
       "ID": 3420,
       "Entries": [
-        "Shifting Earth: Mountaintop"
+        "[Guide] Shifting Earth: Mountaintop"
       ]
     },
     {
       "ID": 3430,
       "Entries": [
-        "Shifting Earth: The Crater"
+        "[Guide] Shifting Earth: The Crater"
+      ]
+    },
+    {
+      "ID": 3440,
+      "Entries": [
+        "[Guide] Shifting Earth: The Great Hollow"
+      ]
+    },
+    {
+      "ID": 3460,
+      "Entries": [
+        "[Guide] Change Skill Menu"
+      ]
+    },
+    {
+      "ID": 3470,
+      "Entries": [
+        "[Guide] Dormant Power"
       ]
     },
     {
       "ID": 3500,
       "Entries": [
-        ""
+        "[Guide] The Deep of Night: Depth and Rating"
       ]
     }
   ]

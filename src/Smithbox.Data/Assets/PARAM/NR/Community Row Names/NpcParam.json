@@ -22,7 +22,7 @@
     {
       "ID": 110,
       "Entries": [
-        ""
+        "[Caligo Raid] Helper"
       ]
     },
     {
@@ -106,7 +106,7 @@
     {
       "ID": 10000000,
       "Entries": [
-        ""
+        "[Interactable Object] Generic"
       ]
     },
     {
@@ -346,7 +346,7 @@
     {
       "ID": 21400020,
       "Entries": [
-        "Omen (Night's Cavalry Entourage)"
+        "Omen (Night's Cavalry Prelude)"
       ]
     },
     {
@@ -382,7 +382,7 @@
     {
       "ID": 21400220,
       "Entries": [
-        "Omen (Morgott Entourage)"
+        "Omen (Morgott Prelude)"
       ]
     },
     {
@@ -424,7 +424,7 @@
     {
       "ID": 21401020,
       "Entries": [
-        "Omen (Night's Cavalry Entourage)"
+        "Omen (Night's Cavalry Prelude)"
       ]
     },
     {
@@ -454,7 +454,7 @@
     {
       "ID": 21401210,
       "Entries": [
-        "Omen (Morgott Entourage)"
+        "Omen (Morgott Prelude)"
       ]
     },
     {
@@ -1738,7 +1738,7 @@
     {
       "ID": 30500000,
       "Entries": [
-        "Battlefield Commander"
+        "Outland Commander"
       ]
     },
     {
@@ -2188,7 +2188,7 @@
     {
       "ID": 31800060,
       "Entries": [
-        ""
+        "Albinauric Archer's Wolf - Gladius Raid"
       ]
     },
     {
@@ -2482,7 +2482,7 @@
     {
       "ID": 32520000,
       "Entries": [
-        "Loretta"
+        "Royal Carian Knight"
       ]
     },
     {
@@ -2494,13 +2494,13 @@
     {
       "ID": 32520020,
       "Entries": [
-        "Loretta"
+        "Royal Carian Knight"
       ]
     },
     {
       "ID": 32520100,
       "Entries": [
-        "Loretta"
+        "Royal Carian Knight"
       ]
     },
     {
@@ -2512,7 +2512,7 @@
     {
       "ID": 33000010,
       "Entries": [
-        "Nox Swordstress/Monk/Nightmaiden (Dragonkin Soldier Entourage)"
+        "Nox Swordstress/Monk/Nightmaiden (Dragonkin Soldier Prelude)"
       ]
     },
     {
@@ -2542,7 +2542,7 @@
     {
       "ID": 33001010,
       "Entries": [
-        "Nox Swordstress/Monk/Nightmaiden (Dancer Entourage)"
+        "Nox Swordstress/Monk/Nightmaiden (Dancer Prelude)"
       ]
     },
     {
@@ -2578,7 +2578,7 @@
     {
       "ID": 33002010,
       "Entries": [
-        "Nox Swordstress/Monk/Nightmaiden (Dancer Entourage)"
+        "Nox Swordstress/Monk/Nightmaiden (Dancer Prelude)"
       ]
     },
     {
@@ -3826,7 +3826,7 @@
     {
       "ID": 34702410,
       "Entries": [
-        "Blood Albinauric - Club (Lord of Blood Entourage)"
+        "Blood Albinauric - Club (Lord of Blood Prelude)"
       ]
     },
     {
@@ -3970,7 +3970,7 @@
     {
       "ID": 34704230,
       "Entries": [
-        "Blood Albinauric - Halberd (Lord of Blood Entourage)"
+        "Blood Albinauric - Halberd (Lord of Blood Prelude)"
       ]
     },
     {
@@ -4024,7 +4024,7 @@
     {
       "ID": 34715210,
       "Entries": [
-        "Large Blood Albinauric (Lord of Blood Entourage)"
+        "Large Blood Albinauric (Lord of Blood Prelude)"
       ]
     },
     {
@@ -4522,7 +4522,7 @@
     {
       "ID": 35500020,
       "Entries": [
-        "Sanguine Noble (Lord of Blood Entourage)"
+        "Sanguine Noble (Lord of Blood Prelude)"
       ]
     },
     {
@@ -4666,7 +4666,7 @@
     {
       "ID": 36000010,
       "Entries": [
-        "Alabaster Lord (Fallingstar Beast Entourage)"
+        "Alabaster Lord (Fallingstar Beast Prelude)"
       ]
     },
     {
@@ -4684,7 +4684,7 @@
     {
       "ID": 36001010,
       "Entries": [
-        "Onyx Lord (Fallingstar Beast Entourage)"
+        "Onyx Lord (Fallingstar Beast Prelude)"
       ]
     },
     {
@@ -5068,7 +5068,7 @@
     {
       "ID": 36612020,
       "Entries": [
-        "Burning Corpse (Demon Prince Entourage)"
+        "Burning Corpse (Demon Prince Prelude)"
       ]
     },
     {
@@ -5458,7 +5458,7 @@
     {
       "ID": 36708100,
       "Entries": [
-        ""
+        "Aged Albinauric (Scholar Remembrance)"
       ]
     },
     {
@@ -5488,7 +5488,7 @@
     {
       "ID": 37000030,
       "Entries": [
-        "Depraved Perfumer"
+        "Depraved Perfumer (Bell Bearing Hunter Prelude)"
       ]
     },
     {
@@ -6052,19 +6052,19 @@
     {
       "ID": 38503100,
       "Entries": [
-        "Marionette Soldier"
+        "Marionette Soldier - Iron Menial"
       ]
     },
     {
       "ID": 38503110,
       "Entries": [
-        "Marionette Soldier"
+        "Marionette Soldier - Iron Menial"
       ]
     },
     {
       "ID": 38503120,
       "Entries": [
-        ""
+        "Marionette Soldier - Iron Menial (Undertaker Remembrance)"
       ]
     },
     {
@@ -6904,7 +6904,7 @@
     {
       "ID": 40700210,
       "Entries": [
-        ""
+        "Wolf - Gladius Raid (Dummied)"
       ]
     },
     {
@@ -7366,7 +7366,7 @@
     {
       "ID": 41500020,
       "Entries": [
-        "Basilisk (Death Knights Entourage)"
+        "Basilisk (Death Knights Prelude)"
       ]
     },
     {
@@ -7660,31 +7660,31 @@
     {
       "ID": 41810000,
       "Entries": [
-        "Spirit Jellyfish"
+        "Maris' Jellyfish"
       ]
     },
     {
       "ID": 41810010,
       "Entries": [
-        "Spirit Jellyfish"
+        "Maris' Jellyfish"
       ]
     },
     {
       "ID": 41810020,
       "Entries": [
-        "Spirit Jellyfish"
+        "Maris' Jellyfish"
       ]
     },
     {
       "ID": 41810100,
       "Entries": [
-        "Spirit Jellyfish"
+        "Maris' Jellyfish"
       ]
     },
     {
       "ID": 41810110,
       "Entries": [
-        "Spirit Jellyfish"
+        "Maris' Jellyfish"
       ]
     },
     {
@@ -8284,7 +8284,7 @@
     {
       "ID": 42600110,
       "Entries": [
-        "Erdtree Burial Watchdog (Smelter Demon Entourage)"
+        "Erdtree Burial Watchdog (Smelter Demon Prelude)"
       ]
     },
     {
@@ -8704,19 +8704,19 @@
     {
       "ID": 43001000,
       "Entries": [
-        "Wandering Noble"
+        "Wandering Noble - Estoc"
       ]
     },
     {
       "ID": 43001010,
       "Entries": [
-        "Wandering Noble"
+        "Wandering Noble - Estoc (Bell Bearing Hunter Prelude)"
       ]
     },
     {
       "ID": 43001100,
       "Entries": [
-        "Wandering Noble"
+        "Wandering Noble - Estoc"
       ]
     },
     {
@@ -8728,19 +8728,19 @@
     {
       "ID": 43002000,
       "Entries": [
-        "Wandering Noble"
+        "Wandering Noble - Sorcerer"
       ]
     },
     {
       "ID": 43002010,
       "Entries": [
-        "Wandering Noble"
+        "Wandering Noble - Sorcerer"
       ]
     },
     {
       "ID": 43002020,
       "Entries": [
-        "Wandering Noble"
+        "Wandering Noble - Sorcerer (Bell Bearing Hunter Prelude)"
       ]
     },
     {
@@ -8914,7 +8914,7 @@
     {
       "ID": 43009400,
       "Entries": [
-        "Wandering Noble"
+        "Wandering Noble - Wandering Merchant (Guardian Remembrance)"
       ]
     },
     {
@@ -9724,7 +9724,7 @@
     {
       "ID": 43150020,
       "Entries": [
-        "Mausoleum Soldier - Sword+Shield (Death Knights Entourage)"
+        "Mausoleum Soldier - Sword+Shield (Death Knights Prelude)"
       ]
     },
     {
@@ -9790,7 +9790,7 @@
     {
       "ID": 43152020,
       "Entries": [
-        "Mausoleum Soldier - Greatsword (Death Knights Entourage)"
+        "Mausoleum Soldier - Greatsword (Death Knights Prelude)"
       ]
     },
     {
@@ -10282,7 +10282,7 @@
     {
       "ID": 43529000,
       "Entries": [
-        ""
+        "Cuckoo Knight (Scholar Remembrance)"
       ]
     },
     {
@@ -10300,7 +10300,7 @@
     {
       "ID": 43530020,
       "Entries": [
-        "Leyndell Knight (Night Boss Entourage)"
+        "Leyndell Knight (Night Boss Prelude)"
       ]
     },
     {
@@ -10540,7 +10540,7 @@
     {
       "ID": 43550040,
       "Entries": [
-        "Mausoleum Knight - Sword (Death Knights Entourage)"
+        "Mausoleum Knight - Sword (Death Knights Prelude)"
       ]
     },
     {
@@ -11794,7 +11794,7 @@
     {
       "ID": 43779000,
       "Entries": [
-        ""
+        "Highwayman (Scholar Remembrance)"
       ]
     },
     {
@@ -11836,7 +11836,7 @@
     {
       "ID": 43810020,
       "Entries": [
-        "Guilty (Demon Prince Entourage)"
+        "Guilty (Demon Prince Prelude)"
       ]
     },
     {
@@ -11854,7 +11854,7 @@
     {
       "ID": 43810120,
       "Entries": [
-        "Guilty (Demon Duo Entourage)"
+        "Guilty (Demon Duo Prelude)"
       ]
     },
     {
@@ -11884,7 +11884,7 @@
     {
       "ID": 43811020,
       "Entries": [
-        "Guilty (Demon Duo/Demon Prince Entourage)"
+        "Guilty (Demon Duo/Demon Prince Prelude)"
       ]
     },
     {
@@ -12112,7 +12112,7 @@
     {
       "ID": 43850020,
       "Entries": [
-        "Mushroom Sorcerer (Demon Duo Entourage)"
+        "Mushroom Sorcerer (Demon Duo Prelude)"
       ]
     },
     {
@@ -12148,7 +12148,7 @@
     {
       "ID": 43850220,
       "Entries": [
-        "Mushroom Sorcerer (Demon Duo Entourage)"
+        "Mushroom Sorcerer (Demon Duo Prelude)"
       ]
     },
     {
@@ -12814,7 +12814,7 @@
     {
       "ID": 45050020,
       "Entries": [
-        "Flying Dragon (Small; Nameless King Entourage)"
+        "Flying Dragon (Small; Nameless King Prelude)"
       ]
     },
     {
@@ -13426,7 +13426,7 @@
     {
       "ID": 46300030,
       "Entries": [
-        "Runebear (Great Red Bear Entourage)"
+        "Runebear (Great Red Bear Prelude)"
       ]
     },
     {
@@ -14458,7 +14458,7 @@
     {
       "ID": 50900010,
       "Entries": [
-        "Gravebird (Divine Beast Dancing Lion Entourage)"
+        "Gravebird (Divine Beast Dancing Lion Prelude)"
       ]
     },
     {
@@ -14488,7 +14488,7 @@
     {
       "ID": 50900310,
       "Entries": [
-        "Gravebird - Spectral Rings (Divine Beast Dancing Lion Entourage)"
+        "Gravebird - Spectral Rings (Divine Beast Dancing Lion Prelude)"
       ]
     },
     {
@@ -14512,19 +14512,19 @@
     {
       "ID": 51100000,
       "Entries": [
-        "Spirit Eel"
+        "Maris' Tendril"
       ]
     },
     {
       "ID": 51108000,
       "Entries": [
-        "Spirit Eel"
+        "Maris' Tendril"
       ]
     },
     {
       "ID": 51108010,
       "Entries": [
-        "Spirit Eel"
+        "Maris' Tendril"
       ]
     },
     {
@@ -14902,7 +14902,7 @@
     {
       "ID": 52401810,
       "Entries": [
-        "Shadow Hornsent - Fly Mage (Curseblade+Divine Beast Warrior Entourage)"
+        "Shadow Hornsent - Fly Mage (Curseblade+Divine Beast Warrior Prelude)"
       ]
     },
     {
@@ -14968,7 +14968,7 @@
     {
       "ID": 52402210,
       "Entries": [
-        "Shadow Hornsent (Artorias Entourage)"
+        "Shadow Hornsent (Artorias Prelude)"
       ]
     },
     {
@@ -15004,7 +15004,7 @@
     {
       "ID": 52402420,
       "Entries": [
-        "Shadow Hornsent (Artorias Entourage)"
+        "Shadow Hornsent (Artorias Prelude)"
       ]
     },
     {
@@ -15604,7 +15604,7 @@
     {
       "ID": 59000010,
       "Entries": [
-        "Man-fly (Curseblade+Divine Beast Warrior Entourage)"
+        "Man-fly (Curseblade+Divine Beast Warrior Prelude)"
       ]
     },
     {
@@ -15640,7 +15640,7 @@
     {
       "ID": 59000210,
       "Entries": [
-        "Man-fly - Spitter(?) (Curseblade+Divine Beast Warrior Entourage) "
+        "Man-fly - Spitter(?) (Curseblade+Divine Beast Warrior Prelude)"
       ]
     },
     {
@@ -15658,7 +15658,7 @@
     {
       "ID": 60019000,
       "Entries": [
-        "Eagle"
+        "Eagle (Sparring Grounds)"
       ]
     },
     {
@@ -16102,7 +16102,7 @@
     {
       "ID": 75001110,
       "Entries": [
-        ""
+        "Gladius, Beast of Night - Sword Sundered (Raid)"
       ]
     },
     {
@@ -16132,7 +16132,7 @@
     {
       "ID": 75002110,
       "Entries": [
-        ""
+        "Gladius, Beast of Night - Sundered (Raid)"
       ]
     },
     {
@@ -17110,19 +17110,19 @@
     {
       "ID": 81300000,
       "Entries": [
-        ""
+        "Training Post - Small"
       ]
     },
     {
       "ID": 81310000,
       "Entries": [
-        ""
+        "Training Post - Medium"
       ]
     },
     {
       "ID": 81320000,
       "Entries": [
-        ""
+        "Training Post - Large"
       ]
     },
     {
@@ -17284,13 +17284,13 @@
     {
       "ID": 137030010,
       "Entries": [
-        ""
+        "[Revenant] Helen (Unlock Fight)"
       ]
     },
     {
       "ID": 137030020,
       "Entries": [
-        ""
+        "[Revenant] Helen (Duchess Remembrance)"
       ]
     },
     {
@@ -17302,13 +17302,13 @@
     {
       "ID": 143400010,
       "Entries": [
-        ""
+        "[Revenant] Frederick (Unlock Fight)"
       ]
     },
     {
       "ID": 143400020,
       "Entries": [
-        ""
+        "[Revenant] Frederick (Duchess Remembrance)"
       ]
     },
     {
@@ -17320,13 +17320,13 @@
     {
       "ID": 149610010,
       "Entries": [
-        ""
+        "[Revenant] Sebastian (Unlock Fight)"
       ]
     },
     {
       "ID": 149610020,
       "Entries": [
-        ""
+        "[Revenant] Sebastian (Duchess Remembrance)"
       ]
     },
     {
@@ -17344,7 +17344,7 @@
     {
       "ID": 500010100,
       "Entries": [
-        ""
+        "[Interactable Object] Roundtable Remembrance"
       ]
     },
     {
@@ -17356,19 +17356,19 @@
     {
       "ID": 500010300,
       "Entries": [
-        ""
+        "[Interactable Object] Roundtable Generic"
       ]
     },
     {
       "ID": 500010400,
       "Entries": [
-        ""
+        "[Interactable Object] Collector Signboard"
       ]
     },
     {
       "ID": 500010500,
       "Entries": [
-        ""
+        "[Interactable Object] Analyse (Scholar Remembrance)"
       ]
     },
     {
@@ -17398,115 +17398,115 @@
     {
       "ID": 521010000,
       "Entries": [
-        ""
+        "Wylder (Roundtable NPC)"
       ]
     },
     {
       "ID": 521020000,
       "Entries": [
-        ""
+        "Guardian (Roundtable NPC)"
       ]
     },
     {
       "ID": 521030000,
       "Entries": [
-        ""
+        "Ironeye (Roundtable NPC)"
       ]
     },
     {
       "ID": 521030100,
       "Entries": [
-        ""
+        "Traitor (Ironeye Remembrance)"
       ]
     },
     {
       "ID": 521030700,
       "Entries": [
-        "Night Hunter (Remembrance)"
+        "Night Hunter (Ironeye Remembrance)"
       ]
     },
     {
       "ID": 521040000,
       "Entries": [
-        ""
+        "Duchess (Roundtable NPC)"
       ]
     },
     {
       "ID": 521040010,
       "Entries": [
-        ""
+        "Duchess"
       ]
     },
     {
       "ID": 521050000,
       "Entries": [
-        ""
+        "Raider (Roundtable NPC)"
       ]
     },
     {
       "ID": 521050700,
       "Entries": [
-        "White Horn (Remembrance)"
+        "White Horn (Raider Remembrance)"
       ]
     },
     {
       "ID": 521060000,
       "Entries": [
-        ""
+        "Revenant (Roundtable NPC)"
       ]
     },
     {
       "ID": 521060100,
       "Entries": [
-        ""
+        "Revenant"
       ]
     },
     {
       "ID": 521060200,
       "Entries": [
-        ""
+        "Revenant (Unlock Fight Ghost)"
       ]
     },
     {
       "ID": 521060700,
       "Entries": [
-        ""
+        "Revenant (Duchess Remembrance)"
       ]
     },
     {
       "ID": 521060800,
       "Entries": [
-        ""
+        "Revenant"
       ]
     },
     {
       "ID": 521070000,
       "Entries": [
-        ""
+        "Recluse (Roundtable NPC)"
       ]
     },
     {
       "ID": 521080000,
       "Entries": [
-        ""
+        "Executor (Roundtable NPC)"
       ]
     },
     {
       "ID": 521080700,
       "Entries": [
-        "Executor's Cry (Remembrance)"
+        "Executor's Cry (Executor Remembrance)"
       ]
     },
     {
       "ID": 521090000,
       "Entries": [
-        ""
+        "Scholar (Roundtable NPC)"
       ]
     },
     {
       "ID": 521090100,
       "Entries": [
-        ""
+        "Scholar"
       ]
     },
     {
@@ -17518,13 +17518,13 @@
     {
       "ID": 521100000,
       "Entries": [
-        ""
+        "Undertaker (Roundtable NPC)"
       ]
     },
     {
       "ID": 521100100,
       "Entries": [
-        ""
+        "Undertaker"
       ]
     },
     {
@@ -17536,19 +17536,19 @@
     {
       "ID": 523090000,
       "Entries": [
-        ""
+        "Priestess (Duchess)"
       ]
     },
     {
       "ID": 523120000,
       "Entries": [
-        ""
+        "Witch of the Wheel (Recluse Remembrance)"
       ]
     },
     {
       "ID": 523130000,
       "Entries": [
-        ""
+        "Executor?"
       ]
     },
     {
@@ -17692,49 +17692,49 @@
     {
       "ID": 610030000,
       "Entries": [
-        ""
+        "Wylder (Undertaker Remembrance)"
       ]
     },
     {
       "ID": 610030100,
       "Entries": [
-        ""
+        "Guardian (Undertaker Remembrance)"
       ]
     },
     {
       "ID": 610030200,
       "Entries": [
-        ""
+        "Ironeye (Undertaker Remembrance)"
       ]
     },
     {
       "ID": 610030300,
       "Entries": [
-        ""
+        "Duchess (Undertaker Remembrance - Unused?)"
       ]
     },
     {
       "ID": 610030400,
       "Entries": [
-        ""
+        "Raider (Undertaker Remembrance)"
       ]
     },
     {
       "ID": 610030500,
       "Entries": [
-        ""
+        "Revenant (Undertaker Remembrance - Unused?)"
       ]
     },
     {
       "ID": 610030600,
       "Entries": [
-        ""
+        "Recluse (Undertaker Remembrance)"
       ]
     },
     {
       "ID": 610030700,
       "Entries": [
-        ""
+        "Executor (Undertaker Remembrance)"
       ]
     },
     {

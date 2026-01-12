@@ -106,223 +106,223 @@
     {
       "ID": 4000,
       "Entries": [
-        "Pick up item"
+        "[Weapon - Default] Pick up item"
       ]
     },
     {
       "ID": 4001,
       "Entries": [
-        "Pick up item"
+        "[Dagger] Pick up item"
       ]
     },
     {
       "ID": 4002,
       "Entries": [
-        "Pick up item"
+        "[Straight Sword] Pick up item"
       ]
     },
     {
       "ID": 4003,
       "Entries": [
-        "Pick up item"
+        "[Greatsword] Pick up item"
       ]
     },
     {
       "ID": 4004,
       "Entries": [
-        "Pick up item"
+        "[Colossal Sword] Pick up item"
       ]
     },
     {
       "ID": 4005,
       "Entries": [
-        "Pick up item"
+        "[Curved Sword] Pick up item"
       ]
     },
     {
       "ID": 4006,
       "Entries": [
-        "Pick up item"
+        "[Curved Greatsword] Pick up item"
       ]
     },
     {
       "ID": 4007,
       "Entries": [
-        "Pick up item"
+        "[Katana] Pick up item"
       ]
     },
     {
       "ID": 4008,
       "Entries": [
-        "Pick up item"
+        "[Twinblade] Pick up item"
       ]
     },
     {
       "ID": 4009,
       "Entries": [
-        "Pick up item"
+        "[Thrusting Sword] Pick up item"
       ]
     },
     {
       "ID": 4010,
       "Entries": [
-        "Pick up item"
+        "[Heavy Thrusting Sword] Pick up item"
       ]
     },
     {
       "ID": 4011,
       "Entries": [
-        "Pick up item"
+        "[Axe] Pick up item"
       ]
     },
     {
       "ID": 4012,
       "Entries": [
-        "Pick up item"
+        "[Greataxe] Pick up item"
       ]
     },
     {
       "ID": 4013,
       "Entries": [
-        "Pick up item"
+        "[Hammer] Pick up item"
       ]
     },
     {
       "ID": 4014,
       "Entries": [
-        "Pick up item"
+        "[Great Hammer] Pick up item"
       ]
     },
     {
       "ID": 4015,
       "Entries": [
-        "Pick up item"
+        "[Flail] Pick up item"
       ]
     },
     {
       "ID": 4016,
       "Entries": [
-        "Pick up item"
+        "[Spear] Pick up item"
       ]
     },
     {
       "ID": 4017,
       "Entries": [
-        "Pick up item"
+        "[Great Spear] Pick up item"
       ]
     },
     {
       "ID": 4018,
       "Entries": [
-        "Pick up item"
+        "[Halberd] Pick up item"
       ]
     },
     {
       "ID": 4019,
       "Entries": [
-        "Pick up item"
+        "[Reaper] Pick up item"
       ]
     },
     {
       "ID": 4020,
       "Entries": [
-        "Pick up item"
+        "[Fist] Pick up item"
       ]
     },
     {
       "ID": 4021,
       "Entries": [
-        "Pick up item"
+        "[Claw] Pick up item"
       ]
     },
     {
       "ID": 4022,
       "Entries": [
-        "Pick up item"
+        "[Whip] Pick up item"
       ]
     },
     {
       "ID": 4023,
       "Entries": [
-        "Pick up item"
+        "[Colossal Weapon] Pick up item"
       ]
     },
     {
       "ID": 4024,
       "Entries": [
-        "Pick up item"
+        "[Light Bow] Pick up item"
       ]
     },
     {
       "ID": 4025,
       "Entries": [
-        "Pick up item"
+        "[Bow] Pick up item"
       ]
     },
     {
       "ID": 4026,
       "Entries": [
-        "Pick up item"
+        "[Greatbow] Pick up item"
       ]
     },
     {
       "ID": 4027,
       "Entries": [
-        "Pick up item"
+        "[Crossbow] Pick up item"
       ]
     },
     {
       "ID": 4028,
       "Entries": [
-        "Pick up item"
+        "[Ballista] Pick up item"
       ]
     },
     {
       "ID": 4029,
       "Entries": [
-        "Pick up item"
+        "[Glintstone Staff] Pick up item"
       ]
     },
     {
       "ID": 4030,
       "Entries": [
-        "Pick up item"
+        "[Sacred Seal] Pick up item"
       ]
     },
     {
       "ID": 4031,
       "Entries": [
-        "Pick up item"
+        "[Small Shield] Pick up item"
       ]
     },
     {
       "ID": 4032,
       "Entries": [
-        "Pick up item"
+        "[Medium Shield] Pick up item"
       ]
     },
     {
       "ID": 4033,
       "Entries": [
-        "Pick up item"
+        "[Greatshield] Pick up item"
       ]
     },
     {
       "ID": 4034,
       "Entries": [
-        "Pick up item"
+        "[Torch] Pick up item"
       ]
     },
     {
       "ID": 4100,
       "Entries": [
-        "Pick up item"
+        "[Item] Pick up item"
       ]
     },
     {
       "ID": 4200,
       "Entries": [
-        "Pick up item"
+        "[Talisman] Pick up item"
       ]
     },
     {
@@ -628,19 +628,19 @@
     {
       "ID": 6850,
       "Entries": [
-        "Obtain whetstone"
+        "Search for whetstone"
       ]
     },
     {
       "ID": 6851,
       "Entries": [
-        "Obtain tear of silver"
+        "Search for tear of silver"
       ]
     },
     {
       "ID": 6852,
       "Entries": [
-        "Obtain golden dew"
+        "Search for golden dew"
       ]
     },
     {
@@ -652,13 +652,13 @@
     {
       "ID": 6854,
       "Entries": [
-        "Obtain blessed flowers"
+        "Search for blessed flowers"
       ]
     },
     {
       "ID": 6855,
       "Entries": [
-        "Obtain golden sprout"
+        "Search for golden sprout"
       ]
     },
     {
@@ -676,7 +676,7 @@
     {
       "ID": 6870,
       "Entries": [
-        "Take primal core"
+        ""
       ]
     },
     {
@@ -986,13 +986,31 @@
       ]
     },
     {
+      "ID": 7111,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 7120,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
       "ID": 7121,
       "Entries": [
-        "Examine"
+        "Read into"
       ]
     },
     {
       "ID": 7122,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 7123,
       "Entries": [
         "Read"
       ]
@@ -1019,6 +1037,12 @@
       "ID": 7130,
       "Entries": [
         "Purchase"
+      ]
+    },
+    {
+      "ID": 7131,
+      "Entries": [
+        "Talk"
       ]
     },
     {
@@ -1259,6 +1283,12 @@
       "ID": 107823,
       "Entries": [
         "Restore FP"
+      ]
+    },
+    {
+      "ID": 107900,
+      "Entries": [
+        "Loot items"
       ]
     },
     {
