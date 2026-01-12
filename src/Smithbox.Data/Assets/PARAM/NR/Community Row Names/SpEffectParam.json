@@ -1192,7 +1192,7 @@
     {
       "ID": 441,
       "Entries": [
-        ""
+        "Enemy Backstab/Riposte Defense Related"
       ]
     },
     {
@@ -8326,7 +8326,7 @@
     {
       "ID": 5801,
       "Entries": [
-        ""
+        "Poise Recovery Time Null (During Stance Break)"
       ]
     },
     {
@@ -8338,7 +8338,7 @@
     {
       "ID": 5805,
       "Entries": [
-        ""
+        "No Stagger at Start of Stance Break"
       ]
     },
     {
@@ -12976,7 +12976,7 @@
     {
       "ID": 9570,
       "Entries": [
-        ""
+        "[Dreglord Intro] Make Level 8"
       ]
     },
     {
@@ -13006,7 +13006,7 @@
     {
       "ID": 9575,
       "Entries": [
-        ""
+        "[Dreglord Intro] 2.5x Max HP for Scholar/Undertaker"
       ]
     },
     {
@@ -16396,103 +16396,103 @@
     {
       "ID": 10641,
       "Entries": [
-        ""
+        "[Lord of Blood] Apply Curse 1"
       ]
     },
     {
       "ID": 10642,
       "Entries": [
-        ""
+        "[Lord of Blood] Apply Curse 2"
       ]
     },
     {
       "ID": 10643,
       "Entries": [
-        ""
+        "[Lord of Blood] Apply Curse 2"
       ]
     },
     {
       "ID": 10645,
       "Entries": [
-        ""
+        "[Lord of Blood] Apply Nihil Effect 1"
       ]
     },
     {
       "ID": 10646,
       "Entries": [
-        ""
+        "[Lord of Blood] Apply Nihil Effect 2"
       ]
     },
     {
       "ID": 10647,
       "Entries": [
-        ""
+        "[Lord of Blood] Apply Nihil Effect 3"
       ]
     },
     {
       "ID": 10648,
       "Entries": [
-        ""
+        "[Lord of Blood] Apply Curse Removal"
       ]
     },
     {
       "ID": 10650,
       "Entries": [
-        ""
+        "[Lord of Blood] Curse 1"
       ]
     },
     {
       "ID": 10651,
       "Entries": [
-        ""
+        "[Lord of Blood] Curse 2"
       ]
     },
     {
       "ID": 10652,
       "Entries": [
-        ""
+        "[Lord of Blood] Curse 3"
       ]
     },
     {
       "ID": 10653,
       "Entries": [
-        ""
+        "[Lord of Blood] Remove Curse"
       ]
     },
     {
       "ID": 10655,
       "Entries": [
-        ""
+        "[Lord of Blood] Nihil Heal 1"
       ]
     },
     {
       "ID": 10656,
       "Entries": [
-        ""
+        "[Lord of Blood] Nihil Heal 2"
       ]
     },
     {
       "ID": 10657,
       "Entries": [
-        ""
+        "[Lord of Blood] Nihil Heal 3"
       ]
     },
     {
       "ID": 10660,
       "Entries": [
-        ""
+        "[Lord of Blood] Nihil Blood Loss 1"
       ]
     },
     {
       "ID": 10661,
       "Entries": [
-        ""
+        "[Lord of Blood] Nihil Blood Loss 2"
       ]
     },
     {
       "ID": 10662,
       "Entries": [
-        ""
+        "[Lord of Blood] Nihil Blood Loss 3"
       ]
     },
     {
@@ -16504,31 +16504,31 @@
     {
       "ID": 10665,
       "Entries": [
-        ""
+        "[Lord of Blood] Nihil Purifying 1"
       ]
     },
     {
       "ID": 10666,
       "Entries": [
-        ""
+        "[Lord of Blood] Nihil Purifying 2"
       ]
     },
     {
       "ID": 10667,
       "Entries": [
-        ""
+        "[Lord of Blood] Nihil Purifying 3"
       ]
     },
     {
       "ID": 10668,
       "Entries": [
-        ""
+        "[Lord of Blood] Remove Purifying Tear"
       ]
     },
     {
       "ID": 10669,
       "Entries": [
-        ""
+        "[Lord of Blood] Damage Reduction during Nihil"
       ]
     },
     {
@@ -45244,7 +45244,7 @@
     {
       "ID": 48002,
       "Entries": [
-        "[Libra Deal] Power of a Demon"
+        "[Libra Deal] Demon's Eye"
       ]
     },
     {
@@ -54328,25 +54328,25 @@
     {
       "ID": 63111,
       "Entries": [
-        ""
+        "[Harmonia Raid] Charmed Enemy Buffs"
       ]
     },
     {
       "ID": 63113,
       "Entries": [
-        ""
+        "[Harmonia Raid] Enemy Effect Stateinfo 2007"
       ]
     },
     {
       "ID": 63115,
       "Entries": [
-        ""
+        "[Harmonia Raid] Enemy vs Enemy Attack Reduction"
       ]
     },
     {
       "ID": 63116,
       "Entries": [
-        ""
+        "[Harmonia Raid] Enemy Debuff for Balancer Defeat"
       ]
     },
     {
@@ -61942,49 +61942,49 @@
     {
       "ID": 603050,
       "Entries": [
-        ""
+        "[Character Guide - Revenant] Skill Active"
       ]
     },
     {
       "ID": 603060,
       "Entries": [
-        "[Recluse] Has Three Affinity Residues"
+        "[Character Guide - Recluse] Has Three Affinity Residues"
       ]
     },
     {
       "ID": 603061,
       "Entries": [
-        ""
+        "[Character Guide - Recluse] Clear Previous"
       ]
     },
     {
       "ID": 603070,
       "Entries": [
-        "[Executor] Active During Cursed Sword"
+        "[Character Guide - Executor] Skill Active"
       ]
     },
     {
       "ID": 603071,
       "Entries": [
-        ""
+        "[Character Guide - Executor] Ult Active"
       ]
     },
     {
       "ID": 603080,
       "Entries": [
-        ""
+        "[Character Guide - Scholar] Skill Active"
       ]
     },
     {
       "ID": 603090,
       "Entries": [
-        ""
+        "[Character Guide - Undertaker] Skill Active"
       ]
     },
     {
       "ID": 603091,
       "Entries": [
-        ""
+        "[Character Guide - Undertaker] Clear Previous"
       ]
     },
     {
@@ -62380,7 +62380,7 @@
     {
       "ID": 703550,
       "Entries": [
-        ""
+        "[Duchess] 0.5 seconds of something on Dodge 1"
       ]
     },
     {
@@ -62392,7 +62392,7 @@
     {
       "ID": 703560,
       "Entries": [
-        ""
+        "[Duchess] 0.4 seconds of I-Frames on Dodge 1?"
       ]
     },
     {
@@ -62662,13 +62662,13 @@
     {
       "ID": 706010,
       "Entries": [
-        ""
+        "[Skill - Recluse] Elemental Absorption 2"
       ]
     },
     {
       "ID": 706011,
       "Entries": [
-        ""
+        "[Skill - Recluse] Elemental Absorption 3"
       ]
     },
     {
@@ -63106,7 +63106,7 @@
     {
       "ID": 708200,
       "Entries": [
-        "[Scholar] Rapier 1H Backstep Cancel"
+        "[Scholar] Thrusting Sword Backstep Cancel"
       ]
     },
     {
@@ -64642,7 +64642,7 @@
     {
       "ID": 709200,
       "Entries": [
-        ""
+        "[Undertaker] Perform Light 2 at Chain Finish"
       ]
     },
     {
@@ -68938,127 +68938,127 @@
     {
       "ID": 7035701,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Trigger"
       ]
     },
     {
       "ID": 7035702,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Right Magic"
       ]
     },
     {
       "ID": 7035703,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Right Magic Buff"
       ]
     },
     {
       "ID": 7035704,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Left Magic"
       ]
     },
     {
       "ID": 7035705,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Left Magic Buff"
       ]
     },
     {
       "ID": 7035706,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Right Fire"
       ]
     },
     {
       "ID": 7035707,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Right Fire Buff"
       ]
     },
     {
       "ID": 7035708,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Left Fire"
       ]
     },
     {
       "ID": 7035709,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Left Fire Buff"
       ]
     },
     {
       "ID": 7035710,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Right Lightning"
       ]
     },
     {
       "ID": 7035711,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Right Lightning Buff"
       ]
     },
     {
       "ID": 7035712,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Left Lightning"
       ]
     },
     {
       "ID": 7035713,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Left Lightning Buff"
       ]
     },
     {
       "ID": 7035714,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Right Holy"
       ]
     },
     {
       "ID": 7035715,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Right Holy Buff"
       ]
     },
     {
       "ID": 7035716,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Left Holy"
       ]
     },
     {
       "ID": 7035717,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Left Holy Buff"
       ]
     },
     {
       "ID": 7035718,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Magic Cooldown"
       ]
     },
     {
       "ID": 7035719,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Fire Cooldown"
       ]
     },
     {
       "ID": 7035720,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Lightning Cooldown"
       ]
     },
     {
       "ID": 7035721,
       "Entries": [
-        "[Relic Effect] Switching Weapons Adds an Affinity Attack"
+        "[Relic Effect] Switching Weapons Adds an Affinity Attack - Apply Holy Cooldown"
       ]
     },
     {
