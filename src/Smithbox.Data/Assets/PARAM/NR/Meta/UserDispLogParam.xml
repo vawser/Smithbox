@@ -5,14 +5,29 @@
   
   <Field>
     <textId_1
-    AltName="Text ID: 1"
-    Wiki=""
+    AltName="Text ID: Standard"
+    Wiki="Typically appears in the bottom right corner"
     FmgRef="Modern_Menu_Text" />
+	
+	<iconId
+	AltName="Icon ID"
+	Wiki="Icon to display next to message"
+	IconConfig="Menu" />
     
     <textId_2
-    AltName="Text ID: 2"
-    Wiki=""
+    AltName="Text ID: Results"
+    Wiki="Text displayed in result history"
     FmgRef="Modern_Menu_Text" />
+	
+	<seId_1
+	AltName="Sound ID: Self"
+	Wiki="Sound effect played with message to self"
+	SoundAlias="" />
+	
+	<seId_2
+	AltName="Sound ID: Others"
+	Wiki="Sound effect played with message from others"
+	SoundAlias="" />
   </Field>
   
   <Enums>

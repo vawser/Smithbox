@@ -9,30 +9,28 @@
     Wiki="The text to use for the name of this menu." 
     FmgRef="Modern_Menu_Text" />
     
-    <unknownEventFlag_1
-    AltName="Unknown Event Flag"
-    Wiki="If this event flag is on, ?" 
+    <warpPointEntityId
+    AltName="Warp Point Entity ID"
+    Wiki="Point Entity ID to warp to." />
+    
+    <menuAutoOpenEventFlag
+    AltName="Menu Auto Open Event Flag"
+    Wiki="Flag to automatically open menu upon warping." 
     FlagAlias="" />
     
-    <unknownEventFlag_2
-    AltName="Unknown Event Flag"
-    Wiki="If this event flag is on, ?" 
-    FlagAlias="" />
-    
-    <unknownEventFlag_3
-    AltName="Unknown Event Flag"
-    Wiki="If this event flag is on, ?" 
-    FlagAlias="" />
-    
-    <unknownEventFlag_4
-    AltName="Unknown Event Flag"
-    Wiki="If this event flag is on, ?" 
+    <appearanceEventFlag
+    AltName="Appearance Event Flag"
+    Wiki="Flag to display in Roundtable menu." 
     FlagAlias="" />
     
     <iconId
     AltName="Icon ID"
     Wiki="Icon ID"
     IconConfig="MapIcon" />
+	
+	<mapPositionEntityId
+    AltName="Map Position Entity ID"
+    Wiki="Point Entity ID to place the map icon at." />
   </Field>
   
   <Enums>

@@ -6,138 +6,554 @@
   <Field>
     <weight
     AltName="Weight"
-    Wiki="" />
+    Wiki="Chance that this pattern set is used compared to other sets for the expedition." />
 	
     <patternCount
     AltName="Pattern Count"
     Wiki="" />
+	
+	<chaosMatchWeight
+	AltName="Deep of Night Weight"
+	Wiki="Chance that this pattern set is used compared to other sets for the expedition during Deep of Night." />
     
-    <modifier1
-    AltName="Modifier: 1"
+    <eventModifier1
+    AltName="Event Modifier 1"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <eventModifier2
+    AltName="Event Modifier 2"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <eventModifier3
+    AltName="Event Modifier 3"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <eventModifier4
+    AltName="Event Modifier 4"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <eventModifier5
+    AltName="Event Modifier 5"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <eventModifier6
+    AltName="Event Modifier 6"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <eventModifier7
+    AltName="Event Modifier 7"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+    <eventModifier8
+    AltName="Event Modifier 8"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+	<eventModifier1_Count
+    AltName="Event Modifier 1 Count"
     Wiki="" />
     
-    <modifier2
-    AltName="Modifier: 2"
+    <eventModifier2_Count
+    AltName="Event Modifier 2 Count"
     Wiki="" />
     
-    <modifier3
-    AltName="Modifier: 3"
+    <eventModifier3_Count
+    AltName="Event Modifier 3 Count"
     Wiki="" />
     
-    <modifier4
-    AltName="Modifier: 4"
+    <eventModifier4_Count
+    AltName="Event Modifier 4 Count"
     Wiki="" />
     
-    <modifier5
-    AltName="Modifier: 5"
+    <eventModifier5_Count
+    AltName="Event Modifier 5 Count"
     Wiki="" />
     
-    <modifier6
-    AltName="Modifier: 6"
+    <eventModifier6_Count
+    AltName="Event Modifier 6 Count"
     Wiki="" />
     
-    <modifier7
-    AltName="Modifier: 7"
+    <eventModifier7_Count
+    AltName="Event Modifier 7 Count"
+    Wiki="" />
+	
+    <eventModifier8_Count
+    AltName="Event Modifier 8 Count"
     Wiki="" />
     
-    <modifier8
-    AltName="Modifier: 8"
+    <night1BossModifier1
+    AltName="Night 1 Boss Modifier 1"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier2
+    AltName="Night 1 Boss Modifier 2"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier3
+    AltName="Night 1 Boss Modifier 3"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier4
+    AltName="Night 1 Boss Modifier 4"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier5
+    AltName="Night 1 Boss Modifier 5"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier6
+    AltName="Night 1 Boss Modifier 6"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier7
+    AltName="Night 1 Boss Modifier 7"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier8
+    AltName="Night 1 Boss Modifier 8"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier9
+    AltName="Night 1 Boss Modifier 9"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier10
+    AltName="Night 1 Boss Modifier 10"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier11
+    AltName="Night 1 Boss Modifier 11"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier12
+    AltName="Night 1 Boss Modifier 12"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier13
+    AltName="Night 1 Boss Modifier 13"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier14
+    AltName="Night 1 Boss Modifier 14"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier15
+    AltName="Night 1 Boss Modifier 15"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night1BossModifier16
+    AltName="Night 1 Boss Modifier 16"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+	<night1BossModifier1_Count
+    AltName="Night 1 Boss Modifier 1 Count"
     Wiki="" />
     
-    <modifier9
-    AltName="Modifier: 9"
+    <night1BossModifier2_Count
+    AltName="Night 1 Boss Modifier 2 Count"
     Wiki="" />
     
-    <modifier10
-    AltName="Modifier: 10"
+    <night1BossModifier3_Count
+    AltName="Night 1 Boss Modifier 3 Count"
     Wiki="" />
     
-    <modifier11
-    AltName="Modifier: 11"
+    <night1BossModifier4_Count
+    AltName="Night 1 Boss Modifier 4 Count"
     Wiki="" />
     
-    <modifier12
-    AltName="Modifier: 12"
+    <night1BossModifier5_Count
+    AltName="Night 1 Boss Modifier 5 Count"
     Wiki="" />
     
-    <modifier13
-    AltName="Modifier: 13"
+    <night1BossModifier6_Count
+    AltName="Night 1 Boss Modifier 6 Count"
     Wiki="" />
     
-    <modifier14
-    AltName="Modifier: 14"
+    <night1BossModifier7_Count
+    AltName="Night 1 Boss Modifier 7 Count"
     Wiki="" />
     
-    <modifier15
-    AltName="Modifier: 15"
+    <night1BossModifier8_Count
+    AltName="Night 1 Boss Modifier 8 Count"
     Wiki="" />
     
-    <modifier16
-    AltName="Modifier: 16"
+    <night1BossModifier9_Count
+    AltName="Night 1 Boss Modifier 9 Count"
     Wiki="" />
     
-    <modifier17
-    AltName="Modifier: 17"
+    <night1BossModifier10_Count
+    AltName="Night 1 Boss Modifier 10 Count"
     Wiki="" />
     
-    <modifier18
-    AltName="Modifier: 18"
+    <night1BossModifier11_Count
+    AltName="Night 1 Boss Modifier 11 Count"
     Wiki="" />
     
-    <modifier19
-    AltName="Modifier: 19"
+    <night1BossModifier12_Count
+    AltName="Night 1 Boss Modifier 12 Count"
     Wiki="" />
     
-    <modifier20
-    AltName="Modifier: 20"
+    <night1BossModifier13_Count
+    AltName="Night 1 Boss Modifier 13 Count"
     Wiki="" />
     
-    <modifier21
-    AltName="Modifier: 21"
+    <night1BossModifier14_Count
+    AltName="Night 1 Boss Modifier 14 Count"
     Wiki="" />
     
-    <modifier22
-    AltName="Modifier: 22"
+    <night1BossModifier15_Count
+    AltName="Night 1 Boss Modifier 15 Count"
     Wiki="" />
     
-    <modifier23
-    AltName="Modifier: 23"
+    <night1BossModifier16_Count
+    AltName="Night 1 Boss Modifier 16 Count"
     Wiki="" />
     
-    <modifier24
-    AltName="Modifier: 24"
+    <night2BossModifier1
+    AltName="Night 2 Boss Modifier 1"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier2
+    AltName="Night 2 Boss Modifier 2"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier3
+    AltName="Night 2 Boss Modifier 3"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier4
+    AltName="Night 2 Boss Modifier 4"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier5
+    AltName="Night 2 Boss Modifier 5"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier6
+    AltName="Night 2 Boss Modifier 6"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier7
+    AltName="Night 2 Boss Modifier 7"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier8
+    AltName="Night 2 Boss Modifier 8"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier9
+    AltName="Night 2 Boss Modifier 9"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier10
+    AltName="Night 2 Boss Modifier 10"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier11
+    AltName="Night 2 Boss Modifier 11"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier12
+    AltName="Night 2 Boss Modifier 12"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier13
+    AltName="Night 2 Boss Modifier 13"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier14
+    AltName="Night 2 Boss Modifier 14"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier15
+    AltName="Night 2 Boss Modifier 15"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <night2BossModifier16
+    AltName="Night 2 Boss Modifier 16"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+	<night2BossModifier1_Count
+    AltName="Night 2 Boss Modifier 1 Count"
     Wiki="" />
     
-    <modifier25
-    AltName="Modifier: 25"
+    <night2BossModifier2_Count
+    AltName="Night 2 Boss Modifier 2 Count"
     Wiki="" />
     
-    <modifier26
-    AltName="Modifier: 26"
+    <night2BossModifier3_Count
+    AltName="Night 2 Boss Modifier 3 Count"
     Wiki="" />
     
-    <modifier27
-    AltName="Modifier: 27"
+    <night2BossModifier4_Count
+    AltName="Night 2 Boss Modifier 4 Count"
     Wiki="" />
     
-    <modifier28
-    AltName="Modifier: 28"
+    <night2BossModifier5_Count
+    AltName="Night 2 Boss Modifier 5 Count"
     Wiki="" />
     
-    <modifier29
-    AltName="Modifier: 29"
+    <night2BossModifier6_Count
+    AltName="Night 2 Boss Modifier 6 Count"
     Wiki="" />
     
-    <modifier30
-    AltName="Modifier: 30"
+    <night2BossModifier7_Count
+    AltName="Night 2 Boss Modifier 7 Count"
     Wiki="" />
     
-    <modifier31
-    AltName="Modifier: 31"
+    <night2BossModifier8_Count
+    AltName="Night 2 Boss Modifier 8 Count"
     Wiki="" />
     
-    <modifier32
-    AltName="Modifier: 32"
+    <night2BossModifier9_Count
+    AltName="Night 2 Boss Modifier 9 Count"
+    Wiki="" />
+    
+    <night2BossModifier10_Count
+    AltName="Night 2 Boss Modifier 10 Count"
+    Wiki="" />
+    
+    <night2BossModifier11_Count
+    AltName="Night 2 Boss Modifier 11 Count"
+    Wiki="" />
+    
+    <night2BossModifier12_Count
+    AltName="Night 2 Boss Modifier 12 Count"
+    Wiki="" />
+    
+    <night2BossModifier13_Count
+    AltName="Night 2 Boss Modifier 13 Count"
+    Wiki="" />
+    
+    <night2BossModifier14_Count
+    AltName="Night 2 Boss Modifier 14 Count"
+    Wiki="" />
+    
+    <night2BossModifier15_Count
+    AltName="Night 2 Boss Modifier 15 Count"
+    Wiki="" />
+    
+    <night2BossModifier16_Count
+    AltName="Night 2 Boss Modifier 16 Count"
+    Wiki="" />
+    
+    <greatHollowEastFortMainModifier1
+    AltName="Great Hollow East Fort Main Modifier 1"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowEastFortMainModifier2
+    AltName="Great Hollow East Fort Main Modifier 2"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowEastFortMainModifier3
+    AltName="Great Hollow East Fort Main Modifier 3"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowEastFortMainModifier4
+    AltName="Great Hollow East Fort Main Modifier 4"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+	<greatHollowEastFortMainModifier1_Count
+    AltName="Great Hollow East Fort Main Modifier 1 Count"
+    Wiki="" />
+    
+    <greatHollowEastFortMainModifier2_Count
+    AltName="Great Hollow East Fort Main Modifier 2 Count"
+    Wiki="" />
+    
+    <greatHollowEastFortMainModifier3_Count
+    AltName="Great Hollow East Fort Main Modifier 3 Count"
+    Wiki="" />
+    
+    <greatHollowEastFortMainModifier4_Count
+    AltName="Great Hollow East Fort Main Modifier 4 Count"
+    Wiki="" />
+    
+    <greatHollowEastFortInteriorModifier1
+    AltName="Great Hollow East Fort Interior Modifier 1"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowEastFortInteriorModifier2
+    AltName="Great Hollow East Fort Interior Modifier 2"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowEastFortInteriorModifier3
+    AltName="Great Hollow East Fort Interior Modifier 3"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowEastFortInteriorModifier4
+    AltName="Great Hollow East Fort Interior Modifier 4"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+	<greatHollowEastFortInteriorModifier1_Count
+    AltName="Great Hollow East Fort Interior Modifier 1 Count"
+    Wiki="" />
+    
+    <greatHollowEastFortInteriorModifier2_Count
+    AltName="Great Hollow East Fort Interior Modifier 2 Count"
+    Wiki="" />
+    
+    <greatHollowEastFortInteriorModifier3_Count
+    AltName="Great Hollow East Fort Interior Modifier 3 Count"
+    Wiki="" />
+    
+    <greatHollowEastFortInteriorModifier4_Count
+    AltName="Great Hollow East Fort Interior Modifier 4 Count"
+    Wiki="" />
+    
+    <greatHollowWestFortMainModifier1
+    AltName="Great Hollow West Fort Main Modifier 1"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowWestFortMainModifier2
+    AltName="Great Hollow West Fort Main Modifier 2"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowWestFortMainModifier3
+    AltName="Great Hollow West Fort Main Modifier 3"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowWestFortMainModifier4
+    AltName="Great Hollow West Fort Main Modifier 4"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+	<greatHollowWestFortMainModifier1_Count
+    AltName="Great Hollow West Fort Main Modifier 1 Count"
+    Wiki="" />
+    
+    <greatHollowWestFortMainModifier2_Count
+    AltName="Great Hollow West Fort Main Modifier 2 Count"
+    Wiki="" />
+    
+    <greatHollowWestFortMainModifier3_Count
+    AltName="Great Hollow West Fort Main Modifier 3 Count"
+    Wiki="" />
+    
+    <greatHollowWestFortMainModifier4_Count
+    AltName="Great Hollow West Fort Main Modifier 4 Count"
+    Wiki="" />
+	
+	<greatHollowWestFortUnderModifier1
+    AltName="Great Hollow West Fort Underground Modifier 1"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowWestFortUnderModifier2
+    AltName="Great Hollow West Fort Underground Modifier 2"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowWestFortUnderModifier3
+    AltName="Great Hollow West Fort Underground Modifier 3"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowWestFortUnderModifier4
+    AltName="Great Hollow West Fort Underground Modifier 4"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+	<greatHollowWestFortMainModifier1_Count
+    AltName="Great Hollow West Fort Underground Modifier 1 Count"
+    Wiki="" />
+    
+    <greatHollowWestFortUnderModifier2_Count
+    AltName="Great Hollow West Fort Underground Modifier 2 Count"
+    Wiki="" />
+    
+    <greatHollowWestFortUnderModifier3_Count
+    AltName="Great Hollow West Fort Underground Modifier 3 Count"
+    Wiki="" />
+    
+    <greatHollowWestFortUnderModifier4_Count
+    AltName="Great Hollow West Fort Underground Modifier 4 Count"
+    Wiki="" />
+	
+	<greatHollowWestFortLibraryModifier1
+    AltName="Great Hollow West Fort Library Modifier 1"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowWestFortLibraryModifier2
+    AltName="Great Hollow West Fort Library Modifier 2"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowWestFortLibraryModifier3
+    AltName="Great Hollow West Fort Library Modifier 3"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+    
+    <greatHollowWestFortLibraryModifier4
+    AltName="Great Hollow West Fort Library Modifier 4"
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+	<greatHollowWestFortLibraryModifier1_Count
+    AltName="Great Hollow West Fort Library Modifier 1 Count"
+    Wiki="" />
+    
+    <greatHollowWestFortLibraryModifier2_Count
+    AltName="Great Hollow West Fort Library Modifier 2 Count"
+    Wiki="" />
+    
+    <greatHollowWestFortLibraryModifier3_Count
+    AltName="Great Hollow West Fort Library Modifier 3 Count"
+    Wiki="" />
+    
+    <greatHollowWestFortLibraryModifier4_Count
+    AltName="Great Hollow West Fort Library Modifier 4 Count"
     Wiki="" />
   </Field>
   

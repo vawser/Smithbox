@@ -217,9 +217,9 @@
       <Increment>0.1</Increment>
       <SortID>1400</SortID>
     </Field>
-    <Field Def="f32 unknown_1"/>
-    <Field Def="f32 unknown_2"/>
-    <Field Def="f32 unknown_3"/>
+    <Field Def="f32 interactIconOffset_X"/>
+    <Field Def="f32 interactIconOffset_Y"/>
+    <Field Def="f32 interactIconOffset_Z"/>
     
     <Field Def="dummy8 padding6[28]">
       <DisplayName>パディング6</DisplayName>

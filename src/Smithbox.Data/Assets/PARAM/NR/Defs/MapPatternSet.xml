@@ -12,122 +12,127 @@
     <Field Def="s16 unknown_2a"/>
     <Field Def="s16 unknown_2b"/>
     <Field Def="s16 unknown_3a"/>
-    <Field Def="s16 unknown_3b"/> <!-- Deep of Night Weight? -->
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 modifier1"/>
-    <Field Def="s32 modifier2"/>
-    <Field Def="s32 modifier3"/>
-    <Field Def="s32 modifier4"/>
-    <Field Def="s32 modifier5"/>
-    <Field Def="s32 unknown_10"/>
-    <Field Def="s32 unknown_11"/>
-    <Field Def="s16 unknown_12a"/>
-    <Field Def="s16 unknown_12b"/>
-    <Field Def="s16 unknown_13a"/>
-    <Field Def="s16 unknown_13b"/>
-    <Field Def="s16 unknown_14a"/>
-    <Field Def="s16 unknown_14b"/>
-    <Field Def="s16 unknown_15a"/>
-    <Field Def="s16 unknown_15b"/>
-    <Field Def="s32 unknown_16"/>
-    <Field Def="s32 unknown_17"/>
-    <Field Def="s32 modifier6"/>
-    <Field Def="s32 modifier7"/>
-    <Field Def="s32 modifier8"/>
-    <Field Def="s32 modifier9"/>
-    <Field Def="s32 modifier10"/>
-    <Field Def="s32 modifier11"/>
-    <Field Def="s32 modifier12"/>
-    <Field Def="s32 modifier13"/>
-    <Field Def="s32 modifier14"/>
-    <Field Def="s32 modifier15"/>
-    <Field Def="s32 modifier16"/>
-    <Field Def="s32 modifier17"/>
-    <Field Def="s32 modifier18"/>
-    <Field Def="s32 modifier19"/>
-    <Field Def="s32 unknown_32"/>
-    <Field Def="s32 unknown_33"/>
-    <Field Def="s32 unknown_34"/>
-    <Field Def="s32 unknown_35"/>
-    <Field Def="s32 unknown_36"/>
-    <Field Def="s32 unknown_37"/>
-    <Field Def="s32 unknown_38"/>
-    <Field Def="s32 unknown_39"/>
-    <Field Def="s32 unknown_40"/>
-    <Field Def="s32 unknown_41"/>
-    <Field Def="s32 unknown_42"/>
-    <Field Def="s32 unknown_43"/>
-    <Field Def="s32 unknown_44"/>
-    <Field Def="s32 unknown_45"/>
-    <Field Def="s32 unknown_46"/>
-    <Field Def="s32 unknown_47"/>
-    <Field Def="s32 unknown_48"/>
-    <Field Def="s32 unknown_49"/>
-    <Field Def="s32 modifier20"/>
-    <Field Def="s32 modifier21"/>
-    <Field Def="s32 modifier22"/>
-    <Field Def="s32 modifier23"/>
-    <Field Def="s32 modifier24"/>
-    <Field Def="s32 modifier25"/>
-    <Field Def="s32 modifier26"/>
-    <Field Def="s32 modifier27"/>
-    <Field Def="s32 modifier28"/>
-    <Field Def="s32 modifier29"/>
-    <Field Def="s32 modifier30"/>
-    <Field Def="s32 modifier31"/>
-    <Field Def="s32 modifier32"/>
-    <Field Def="s32 unknown_63"/>
-    <Field Def="s32 unknown_64"/>
-    <Field Def="s32 unknown_65"/>
-    <Field Def="s32 unknown_66"/>
-    <Field Def="s32 unknown_67"/>
-    <Field Def="s32 unknown_68"/>
-    <Field Def="s32 unknown_69"/>
-    <Field Def="s32 unknown_70"/>
-    <Field Def="s32 unknown_71"/>
-    <Field Def="s32 unknown_72"/>
-    <Field Def="s32 unknown_73"/>
-    <Field Def="s32 unknown_74"/>
-    <Field Def="s32 unknown_75"/>
-    <Field Def="s32 unknown_76"/>
-    <Field Def="s32 unknown_77"/>
-    <Field Def="s32 unknown_78"/>
-    <Field Def="s32 unknown_79"/>
-    <Field Def="s32 unknown_80"/>
-    <Field Def="s32 unknown_81"/>
+    <Field Def="s16 chaosMatchWeight"/>
+    <Field Def="s32 eventModifier1"/>
+    <Field Def="s32 eventModifier2"/>
+    <Field Def="s32 eventModifier3"/>
+    <Field Def="s32 eventModifier4"/>
+    <Field Def="s32 eventModifier5"/>
+    <Field Def="s32 eventModifier6"/>
+    <Field Def="s32 eventModifier7"/>
+    <Field Def="s32 eventModifier8"/>
+    <Field Def="s16 eventModifier1_Count"/>
+    <Field Def="s16 eventModifier2_Count"/>
+    <Field Def="s16 eventModifier3_Count"/>
+    <Field Def="s16 eventModifier4_Count"/>
+    <Field Def="s16 eventModifier5_Count"/>
+    <Field Def="s16 eventModifier6_Count"/>
+    <Field Def="s16 eventModifier7_Count"/>
+    <Field Def="s16 eventModifier8_Count"/>
+    <Field Def="s32 night1BossModifier1"/>
+    <Field Def="s32 night1BossModifier2"/>
+    <Field Def="s32 night1BossModifier3"/>
+    <Field Def="s32 night1BossModifier4"/>
+    <Field Def="s32 night1BossModifier5"/>
+    <Field Def="s32 night1BossModifier6"/>
+    <Field Def="s32 night1BossModifier7"/>
+    <Field Def="s32 night1BossModifier8"/>
+    <Field Def="s32 night1BossModifier9"/>
+    <Field Def="s32 night1BossModifier10"/>
+    <Field Def="s32 night1BossModifier11"/>
+    <Field Def="s32 night1BossModifier12"/>
+    <Field Def="s32 night1BossModifier13"/>
+    <Field Def="s32 night1BossModifier14"/>
+    <Field Def="s32 night1BossModifier15"/>
+    <Field Def="s32 night1BossModifier16"/>
+    <Field Def="s32 night1BossModifier1_Count"/>
+    <Field Def="s32 night1BossModifier2_Count"/>
+    <Field Def="s32 night1BossModifier3_Count"/>
+    <Field Def="s32 night1BossModifier4_Count"/>
+    <Field Def="s32 night1BossModifier5_Count"/>
+    <Field Def="s32 night1BossModifier6_Count"/>
+    <Field Def="s32 night1BossModifier7_Count"/>
+    <Field Def="s32 night1BossModifier8_Count"/>
+    <Field Def="s32 night1BossModifier9_Count"/>
+    <Field Def="s32 night1BossModifier10_Count"/>
+    <Field Def="s32 night1BossModifier11_Count"/>
+    <Field Def="s32 night1BossModifier12_Count"/>
+    <Field Def="s32 night1BossModifier13_Count"/>
+    <Field Def="s32 night1BossModifier14_Count"/>
+    <Field Def="s32 night1BossModifier15_Count"/>
+    <Field Def="s32 night1BossModifier16_Count"/>
+    <Field Def="s32 night2BossModifier1"/>
+    <Field Def="s32 night2BossModifier2"/>
+    <Field Def="s32 night2BossModifier3"/>
+    <Field Def="s32 night2BossModifier4"/>
+    <Field Def="s32 night2BossModifier5"/>
+    <Field Def="s32 night2BossModifier6"/>
+    <Field Def="s32 night2BossModifier7"/>
+    <Field Def="s32 night2BossModifier8"/>
+    <Field Def="s32 night2BossModifier9"/>
+    <Field Def="s32 night2BossModifier10"/>
+    <Field Def="s32 night2BossModifier11"/>
+    <Field Def="s32 night2BossModifier12"/>
+    <Field Def="s32 night2BossModifier13"/>
+    <Field Def="s32 night2BossModifier14"/>
+    <Field Def="s32 night2BossModifier15"/>
+    <Field Def="s32 night2BossModifier16"/>
+    <Field Def="s32 night2BossModifier1_Count"/>
+    <Field Def="s32 night2BossModifier2_Count"/>
+    <Field Def="s32 night2BossModifier3_Count"/>
+    <Field Def="s32 night2BossModifier4_Count"/>
+    <Field Def="s32 night2BossModifier5_Count"/>
+    <Field Def="s32 night2BossModifier6_Count"/>
+    <Field Def="s32 night2BossModifier7_Count"/>
+    <Field Def="s32 night2BossModifier8_Count"/>
+    <Field Def="s32 night2BossModifier9_Count"/>
+    <Field Def="s32 night2BossModifier10_Count"/>
+    <Field Def="s32 night2BossModifier11_Count"/>
+    <Field Def="s32 night2BossModifier12_Count"/>
+    <Field Def="s32 night2BossModifier13_Count"/>
+    <Field Def="s32 night2BossModifier14_Count"/>
+    <Field Def="s32 night2BossModifier15_Count"/>
+    <Field Def="s32 night2BossModifier16_Count"/>
+    <Field Def="s32 greatHollowEastFortMainModifier1"/>
+    <Field Def="s32 greatHollowEastFortMainModifier2"/>
     
-    <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_02a" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_02b" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_03" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_04" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_05" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_06" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_07" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_08a" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_08b" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_09" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_10" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_11" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_12" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_13" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_14a" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_14b" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_15" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_16" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_17" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_18" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_19" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_20a" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_20b" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_21" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_22" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_23" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_24" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_25" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_26a" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_26b" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_27" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowEastFortMainModifier3" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowEastFortMainModifier4" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowEastFortMainModifier1_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowEastFortMainModifier2_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowEastFortMainModifier3_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowEastFortMainModifier4_Count" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowEastFortInteriorModifier1" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowEastFortInteriorModifier2" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowEastFortInteriorModifier3" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowEastFortInteriorModifier4" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowEastFortInteriorModifier1_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowEastFortInteriorModifier2_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowEastFortInteriorModifier3_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowEastFortInteriorModifier4_Count" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortMainModifier1" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortMainModifier2" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortMainModifier3" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortMainModifier4" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortMainModifier1_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortMainModifier2_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortMainModifier3_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortMainModifier4_Count" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortUnderModifier1" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortUnderModifier2" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortUnderModifier3" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortUnderModifier4" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortUnderModifier1_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortUnderModifier2_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortUnderModifier3_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortUnderModifier4_Count" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortLibraryModifier1" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortLibraryModifier2" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortLibraryModifier3" FirstVersion="10310025"/>
+    <Field Def="s32 greatHollowWestFortLibraryModifier4" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortLibraryModifier1_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortLibraryModifier2_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortLibraryModifier3_Count" FirstVersion="10310025"/>
+    <Field Def="s16 greatHollowWestFortLibraryModifier4_Count" FirstVersion="10310025"/>
   </Fields>
 </PARAMDEF>

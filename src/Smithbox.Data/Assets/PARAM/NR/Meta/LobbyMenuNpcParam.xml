@@ -10,8 +10,8 @@
     FlagAlias="" />
     
     <showMapIconEventFlag
-    AltName="Display Map Icon Flag"
-    Wiki="The event flag that triggers the display of the map icon." 
+    AltName="Use Alt Map Icon Flag"
+    Wiki="The event flag that triggers the display of the alternate map icon." 
     FlagAlias="" />
     
     <hideMapIconEventFlag
@@ -25,8 +25,8 @@
     IconConfig="MapIcon" />
 
     <iconId_2
-    AltName="Icon ID 2"
-    Wiki="Icon ID 2"
+    AltName="Alt Icon ID"
+    Wiki="Alt Icon ID"
     IconConfig="MapIcon" />
   </Field>
   

@@ -52,19 +52,19 @@
     {
       "ID": 1020,
       "Entries": [
-        ""
+        "[Spell] Large Spell"
       ]
     },
     {
       "ID": 1021,
       "Entries": [
-        ""
+        "[Spell] Very Large Spell"
       ]
     },
     {
       "ID": 1022,
       "Entries": [
-        ""
+        "[Spell] Tall Large Spell"
       ]
     },
     {
@@ -88,7 +88,7 @@
     {
       "ID": 1050,
       "Entries": [
-        ""
+        "[Crit] Vs Large Enemy"
       ]
     },
     {
@@ -106,19 +106,19 @@
     {
       "ID": 1062,
       "Entries": [
-        ""
+        "[Wylder] Ultimate"
       ]
     },
     {
       "ID": 1063,
       "Entries": [
-        ""
+        "[Wylder] Skill: Relic Followup"
       ]
     },
     {
       "ID": 1064,
       "Entries": [
-        ""
+        "Surge Sprint"
       ]
     },
     {
@@ -136,19 +136,19 @@
     {
       "ID": 1067,
       "Entries": [
-        ""
+        "[Guardian] Skill"
       ]
     },
     {
       "ID": 1068,
       "Entries": [
-        ""
+        "[Guardian] Ultimate"
       ]
     },
     {
       "ID": 1069,
       "Entries": [
-        ""
+        "Unused Special Jump Attacks"
       ]
     },
     {
@@ -202,13 +202,13 @@
     {
       "ID": 1080,
       "Entries": [
-        ""
+        "[Undertaker] Ultimate"
       ]
     },
     {
       "ID": 1081,
       "Entries": [
-        ""
+        "[Undertaker] Trance Running"
       ]
     },
     {
@@ -244,7 +244,7 @@
     {
       "ID": 1500,
       "Entries": [
-        "[Ultimate - Executor] As Beast Form"
+        "[Executor] Ultimate: As Beast Form"
       ]
     },
     {
