@@ -44,7 +44,7 @@ public static class ProjectAliasEditor
     {
         BaseAliases = new();
 
-        var dir = Path.Join(AppContext.BaseDirectory, "Assets", "Aliases",
+        var dir = Path.Join(StudioCore.Common.FileLocations.Assets, "Aliases",
             ProjectUtils.GetGameDirectory(TargetProject.ProjectType));
 
         List<string> sourceFiles = Directory.GetFiles(dir, "*.json").ToList();

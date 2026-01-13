@@ -5,13 +5,11 @@
     <LangVersion>12</LangVersion>
   </PropertyGroup>
 
-    <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
-    <DefineConstants>DEBUG</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
-    <DefineConstants>RELEASE</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugType>embedded</DebugType>
   </PropertyGroup>

@@ -344,7 +344,7 @@ public class ParamData
         }
 
         // Param Type Info
-        var paramTypeInfoPath = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Type Info.json");
+        var paramTypeInfoPath = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Type Info.json");
 
         if (File.Exists(paramTypeInfoPath))
         {
@@ -397,7 +397,7 @@ public class ParamData
     {
         await Task.Yield();
 
-        var rootMetaDir = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
+        var rootMetaDir = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
         var projectMetaDir = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
@@ -458,7 +458,7 @@ public class ParamData
     {
         await Task.Yield();
 
-        var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var folder = @$"{StudioCore.Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Graph Legends.json");
 
         if(CFG.Current.Param_UseProjectMeta)
@@ -501,7 +501,7 @@ public class ParamData
     {
         await Task.Yield();
 
-        var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var folder = @$"{StudioCore.Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Icon Configurations.json");
 
         if (CFG.Current.Param_UseProjectMeta)
@@ -544,7 +544,7 @@ public class ParamData
     {
         await Task.Yield();
 
-        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Community Table Names");
+        var srcDir = Path.Combine(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Community Table Names");
 
         if (!Directory.Exists(srcDir))
         {
@@ -664,7 +664,7 @@ public class ParamData
     {
         await Task.Yield();
 
-        var srcFile = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Table Params.json");
+        var srcFile = Path.Combine(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Table Params.json");
         var projFile = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Table Params.json");
 
         if (Directory.Exists(projFile))
@@ -707,7 +707,7 @@ public class ParamData
     {
         // META
         var metaDir = ParamLocator.GetParammetaDir(Project);
-        var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
+        var rootDir = Path.Combine(StudioCore.Common.FileLocations.Resources, metaDir);
         var projectDir = Path.Join(Project.ProjectPath, ".smithbox", metaDir);
 
         if (!Directory.Exists(projectDir))
@@ -734,7 +734,7 @@ public class ParamData
 
     public void CopyMetadataFile(string name)
     {
-        var srcFolder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var srcFolder = @$"{StudioCore.Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var srcFile = Path.Combine(srcFolder, name);
 
         var targetFolder = Path.Combine(Project.ProjectPath, ".smithbox", "Project");
@@ -817,7 +817,7 @@ public class ParamData
         ParamMemoryOffsets = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Reload Offsets.json");
 
         var targetFile = sourceFile;
@@ -857,7 +857,7 @@ public class ParamData
         ParamCategories = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
         var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
@@ -901,7 +901,7 @@ public class ParamData
         CommutativeParamGroups = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Commutative Params.json");
 
         var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
