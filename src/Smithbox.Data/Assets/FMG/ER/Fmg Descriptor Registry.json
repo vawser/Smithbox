@@ -67,13 +67,15 @@
             "FileName": "item.msgbnd.dcx",
             "ContainerName": "Item",
             "VariantName": "Stock",
-            "DisplayName": "Item"
+            "DisplayName": "Item",
+            "Obsolete": true
         },
         {
             "FileName": "item_dlc01.msgbnd.dcx",
             "ContainerName": "Item",
             "VariantName": "DLC1",
-            "DisplayName": "Item"
+            "DisplayName": "Item",
+            "Obsolete": true
         },
         {
             "FileName": "item_dlc02.msgbnd.dcx",
@@ -85,13 +87,15 @@
             "FileName": "menu.msgbnd.dcx",
             "ContainerName": "Menu",
             "VariantName": "Stock",
-            "DisplayName": "Menu"
+            "DisplayName": "Menu",
+            "Obsolete": true
         },
         {
             "FileName": "menu_dlc01.msgbnd.dcx",
             "ContainerName": "Menu",
             "VariantName": "DLC1",
-            "DisplayName": "Menu"
+            "DisplayName": "Menu",
+            "Obsolete": true
         },
         {
             "FileName": "menu_dlc02.msgbnd.dcx",
