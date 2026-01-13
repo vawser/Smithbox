@@ -15,23 +15,23 @@ namespace StudioCore.Utilities;
 /// </summary>
 public static class TaskLogs
 {
-    private static volatile List<LogEntry> _actionLog = new();
-    private static volatile List<LogEntry> _warningLog = new();
+    public static volatile List<LogEntry> _actionLog = new();
+    public static volatile List<LogEntry> _warningLog = new();
 
-    private static volatile HashSet<string> _warningList = new();
+    public static volatile HashSet<string> _warningList = new();
 
-    private static volatile LogEntry _lastActionLogEntry;
-    private static volatile LogEntry _lastWarningLogEntry;
+    public static volatile LogEntry _lastActionLogEntry;
+    public static volatile LogEntry _lastWarningLogEntry;
 
-    private static float _timerColorMult = 1.0f;
+    public static float _timerColorMult = 1.0f;
 
-    private static bool _actionLog_ScrollToEnd;
-    private static bool _warningLog_ScrollToEnd;
+    public static bool _actionLog_ScrollToEnd;
+    public static bool _warningLog_ScrollToEnd;
 
     private static SpinLock _spinLock = new(false);
 
-    private static int _actionShowTime = 0;
-    private static int _warningShowTime = 0;
+    public static int _actionShowTime = 0;
+    public static int _warningShowTime = 0;
 
     /// <summary>
     /// Adds a new entry to task logger.
@@ -173,106 +173,6 @@ public static class TaskLogs
         });
     }
 
-    private static ImGuiDir ActionLogger_CurrentDir = ImGuiDir.Right;
-    private static bool ActionLogger_WindowOpen = false;
-
-    /// <summary>
-    /// Top Bar Logger: Actions
-    /// </summary>
-    public static void DisplayActionLoggerBar()
-    {
-        if (CFG.Current.System_ShowActionLogger)
-        {
-            if (ImGui.ArrowButton("##actionLoggerToggle", ActionLogger_CurrentDir))
-            {
-                if (ActionLogger_CurrentDir == ImGuiDir.Right)
-                {
-                    ActionLogger_CurrentDir = ImGuiDir.Down;
-                    ActionLogger_WindowOpen = true;
-                }
-                else
-                {
-                    ActionLogger_CurrentDir = ImGuiDir.Right;
-                    ActionLogger_WindowOpen = false;
-                }
-            }
-            UIHelper.Tooltip("Toggle the display of the action logger.");
-
-            // Only show the warning for X frames in the menu bar
-            if (_lastActionLogEntry != null)
-            {
-                if (_actionShowTime > 0 || CFG.Current.System_ActionLogger_FadeTime < 0)
-                {
-                    if (CFG.Current.System_ActionLogger_FadeTime > 0)
-                    {
-                        _actionShowTime--;
-                    }
-
-                    Vector4 color = PickColor(_lastActionLogEntry.Level);
-                    ImGui.TextColored(color, _lastActionLogEntry.FormattedMessage);
-                }
-            }
-        }
-    }
-
-    /// <summary>
-    /// Action Logger window
-    /// </summary>
-    public static void DisplayActionLoggerWindow()
-    {
-        if (ActionLogger_WindowOpen)
-        {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
-            ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.Imgui_Moveable_TitleBg);
-            ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.Imgui_Moveable_TitleBg_Active);
-            ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBg);
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-            if (ImGui.Begin("Action Logs##actionTaskLogger", ref ActionLogger_WindowOpen, ImGuiWindowFlags.NoDocking))
-            {
-                var windowWidth = ImGui.GetWindowWidth();
-
-                if (ImGui.Button("Clear##actionTaskLogger", DPI.HalfWidthButton(windowWidth, 24)))
-                {
-                    _actionLog.Clear();
-                    _lastActionLogEntry = null;
-                }
-
-                ImGui.SameLine();
-                if (ImGui.Button("Copy to Clipboard##actionTaskLogger", DPI.HalfWidthButton(windowWidth, 24)))
-                {
-                    string contents = "";
-                    foreach (var entry in _actionLog)
-                    {
-                        contents = contents + $"{entry.FormattedMessage}\n";
-                    }
-
-                    PlatformUtils.Instance.SetClipboardText($"{contents}");
-                }
-
-                ImGui.BeginChild("##actionLogItems");
-                ImGui.Spacing();
-                for (var i = 0; i < _actionLog.Count; i++)
-                {
-                    ImGui.Indent();
-                    ImGui.TextColored(PickColor(_actionLog[i].Level), _actionLog[i].FormattedMessage);
-                    ImGui.Unindent();
-                }
-
-                if (_actionLog_ScrollToEnd)
-                {
-                    ImGui.SetScrollHereY();
-                    _actionLog_ScrollToEnd = false;
-                }
-
-                ImGui.Spacing();
-                ImGui.EndChild();
-            }
-
-            ImGui.End();
-            ImGui.PopStyleColor(5);
-        }
-    }
-
     private static ImGuiDir WarningLogger_CurrentDir = ImGuiDir.Right;
     private static bool WarningLogger_WindowOpen = false;
 
@@ -374,7 +274,7 @@ public static class TaskLogs
         }
     }
 
-    private static Vector4 PickColor(LogLevel? level)
+    public static Vector4 PickColor(LogLevel? level)
     {
         var mult = 0.0f;
         if (level == null)

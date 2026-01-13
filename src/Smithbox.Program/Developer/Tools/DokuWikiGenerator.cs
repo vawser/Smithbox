@@ -34,7 +34,7 @@ public static class DokuWikiGenerator
 
     public static void OutputParamTableInformation(Smithbox baseEditor, ProjectEntry curProject)
     {
-        var editor = baseEditor.ProjectManager.SelectedProject.ParamEditor;
+        var editor = Smithbox.ProjectManager.SelectedProject.ParamEditor;
 
         var output = "^ Param ^ Description ^\n";
 
@@ -52,7 +52,7 @@ public static class DokuWikiGenerator
 
     public static void OutputParamInformation(Smithbox baseEditor, ProjectEntry project, string paramKey)
     {
-        var editor = baseEditor.ProjectManager.SelectedProject.ParamEditor;
+        var editor = Smithbox.ProjectManager.SelectedProject.ParamEditor;
 
         var namespacePrefix = "XXX";
 

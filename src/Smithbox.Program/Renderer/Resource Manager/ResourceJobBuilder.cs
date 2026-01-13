@@ -96,7 +96,7 @@ public class ResourceJobBuilder
 
         ResourceManager.InFlightFiles.Add(virtualPath);
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
         var relativePath = PathBuilder.GetRelativePath(curProject, virtualPath);
 
         IResourceLoadPipeline pipeline;
@@ -161,7 +161,7 @@ public class ResourceJobBuilder
 
         ResourceManager.InFlightFiles.Add(virtualPath);
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
         var absPath = PathBuilder.GetAbsolutePath(curProject, virtualPath);
 
         IResourceLoadPipeline pipeline;
@@ -200,7 +200,7 @@ public class ResourceJobBuilder
     /// </summary>
     public void AddPostTextureLoadTask()
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         foreach (KeyValuePair<string, IResourceHandle> r in ResourceManager.ResourceDatabase)
         {
@@ -274,7 +274,7 @@ public class ResourceJobBuilder
 
     public void AddWorldMapLoadTask()
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         if (curProject == null)
             return;

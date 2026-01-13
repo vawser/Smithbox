@@ -198,7 +198,7 @@ public static class TextureLocator
         }
 
         // Usage of the global BaseEditor here:
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
         texpath = texpath.Replace('\\', sl);
 
         // MAP Texture

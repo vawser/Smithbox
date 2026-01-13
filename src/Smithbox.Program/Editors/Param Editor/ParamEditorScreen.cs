@@ -853,7 +853,7 @@ public class ParamEditorScreen : EditorScreen
             if (ImGui.BeginMenu("Select project for param comparison"))
             {
                 // Display compatible projects
-               foreach (var proj in Project.BaseEditor.ProjectManager.Projects)
+               foreach (var proj in Smithbox.ProjectManager.Projects)
                 {
                     if (proj == null)
                         continue;
@@ -861,7 +861,7 @@ public class ParamEditorScreen : EditorScreen
                     if (proj.ProjectType != Project.ProjectType)
                         continue;
 
-                    if (proj == Project.BaseEditor.ProjectManager.SelectedProject)
+                    if (proj == Smithbox.ProjectManager.SelectedProject)
                         continue;
 
                     var isSelected = false;

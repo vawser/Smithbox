@@ -203,7 +203,7 @@ public class ParamData
             }
 
             Project.ImportedParamRowNames = true;
-            BaseEditor.ProjectManager.SaveProject(Project);
+            Smithbox.ProjectManager.SaveProject(Project);
         }
 
         switch(Project.ProjectType)

@@ -86,7 +86,7 @@ public class ResourceJob
 
     public static LoadTPFTextureResourceRequest[] LoadTPFResources(LoadTPFResourcesAction action)
     {
-        var project = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var project = Smithbox.ProjectManager.SelectedProject;
 
         // If tpf is null this is a loose file load.
         if (action._tpf == null)

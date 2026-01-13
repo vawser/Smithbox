@@ -95,7 +95,7 @@ public class SystemTab
 
             if(ImGui.Button("Clear Backup Files", DPI.WholeWidthButton(width, 24)))
             {
-                var root = BaseEditor.ProjectManager.SelectedProject.ProjectPath;
+                var root = Smithbox.ProjectManager.SelectedProject.ProjectPath;
 
                 var filesToDelete = GetBackupFiles(root);
 
@@ -223,11 +223,11 @@ public class SystemTab
 
             if (ImGui.Button("Clear Auto-Load##clearProjectAutoload", DPI.StandardButtonSize))
             {
-                foreach (var project in BaseEditor.ProjectManager.Projects)
+                foreach (var project in Smithbox.ProjectManager.Projects)
                 {
                     project.AutoSelect = false;
 
-                    BaseEditor.ProjectManager.SaveProject(project);
+                    Smithbox.ProjectManager.SaveProject(project);
                 }
             }
             UIHelper.Tooltip("Clear the project that has been set as primary, so no project is loaded on Smithbox start.");
@@ -353,7 +353,7 @@ public class MapEditorTab
         }
 
         // Map Collision
-        if (BaseEditor.ProjectManager.SelectedProject.ProjectType is ProjectType.DS1R)
+        if (Smithbox.ProjectManager.SelectedProject.ProjectType is ProjectType.DS1R)
         {
             if (ImGui.CollapsingHeader("Map Collision", ImGuiTreeNodeFlags.DefaultOpen))
             {
@@ -622,9 +622,9 @@ public class TextEditorTab
         // Primary Category
         if (ImGui.CollapsingHeader("Primary Category", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            if (BaseEditor.ProjectManager.SelectedProject != null)
+            if (Smithbox.ProjectManager.SelectedProject != null)
             {
-                var curProject = BaseEditor.ProjectManager.SelectedProject;
+                var curProject = Smithbox.ProjectManager.SelectedProject;
 
                 if (ImGui.BeginCombo("Primary Category##primaryCategoryCombo", CFG.Current.TextEditor_PrimaryCategory.GetDisplayName()))
                 {
@@ -766,9 +766,9 @@ public class ParamEditorTab
 
     public void Display()
     {
-        if (BaseEditor.ProjectManager.SelectedProject != null)
+        if (Smithbox.ProjectManager.SelectedProject != null)
         {
-            var curProject = BaseEditor.ProjectManager.SelectedProject;
+            var curProject = Smithbox.ProjectManager.SelectedProject;
 
             // General
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))

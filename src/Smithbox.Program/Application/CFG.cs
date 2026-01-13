@@ -213,6 +213,8 @@ public class CFG
     /// </summary>
     public bool Viewport_Profiling = true;
 
+    public bool Allow_Window_Movement = true;
+
     ///------------------------------------------------------------
     /// Map Editor
     ///------------------------------------------------------------

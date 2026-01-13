@@ -297,6 +297,63 @@ public static class UIHelper
         int byteCount = Encoding.UTF8.GetByteCount(contents) + 1;
         return (nuint)byteCount;
     }
+
+
+    public static ImGuiWindowFlags GetMainWindowFlags()
+    {
+        var flags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
+
+        if (!CFG.Current.Allow_Window_Movement)
+        {
+            flags |= ImGuiWindowFlags.NoMove;
+        }
+
+        return flags;
+    }
+    public static ImGuiWindowFlags GetInnerWindowFlags()
+    {
+        var flags = ImGuiWindowFlags.None | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
+
+        if (!CFG.Current.Allow_Window_Movement)
+        {
+            flags |= ImGuiWindowFlags.NoMove;
+        }
+
+        return flags;
+    }
+
+    public static ImGuiWindowFlags GetPopupWindowFlags()
+    {
+        var flags = ImGuiWindowFlags.NoCollapse;
+
+        return flags;
+    }
+    public static ImGuiWindowFlags GetEditorPopupWindowFlags()
+    {
+        var flags = ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar;
+
+        return flags;
+    }
+
+    public static ImGuiWindowFlags GetToolPaletteWindowFlags()
+    {
+        var flags = ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
+
+        return flags;
+    }
+
+    public static void SetupPopupWindow()
+    {
+        var viewport = ImGui.GetMainViewport();
+        Vector2 center = viewport.Pos + viewport.Size / 2;
+
+        ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
+
+        var width = ImGui.GetIO().DisplaySize.X;
+        var height = ImGui.GetIO().DisplaySize.Y;
+        var size = new Vector2(width * 0.5f, height * 0.5f);
+        ImGui.SetNextWindowSize(size);
+    }
 }
 
 public class InputTextHandler

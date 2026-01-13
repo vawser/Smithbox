@@ -85,7 +85,7 @@ public partial class ParamTools
 
             UIHelper.SimpleHeader("availableProjects", "Compatible Projects:", "List of projects you can merge into your current project", UI.Current.ImGui_AliasName_Text);
 
-            foreach (var proj in Editor.Project.BaseEditor.ProjectManager.Projects)
+            foreach (var proj in Smithbox.ProjectManager.Projects)
             {
                 if (proj == null)
                     continue;
@@ -93,7 +93,7 @@ public partial class ParamTools
                 if (proj.ProjectType != Editor.Project.ProjectType)
                     continue;
 
-                if (proj == Editor.Project.BaseEditor.ProjectManager.SelectedProject)
+                if (proj == Smithbox.ProjectManager.SelectedProject)
                     continue;
 
                 var isSelected = false;

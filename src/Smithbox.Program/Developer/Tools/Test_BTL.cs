@@ -75,7 +75,7 @@ public static class Test_BTL
 
     public static bool Run(Smithbox baseEditor)
     {
-        var curProject = baseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         MismatchedBtls = Test_MSB_Util.GetBtlMismatches(curProject);
 

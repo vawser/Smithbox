@@ -30,10 +30,10 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
-        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.ProjectManager.SelectedProject == null)
             return false;
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         if(virtPath.Contains("connect"))
         {
@@ -75,10 +75,10 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
-        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.ProjectManager.SelectedProject == null)
             return false;
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         if (virtPath.Contains("connect"))
         {

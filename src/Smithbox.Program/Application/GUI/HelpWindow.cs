@@ -233,9 +233,9 @@ public class HelpWindow
 
             ProjectType curProjectType = ProjectType.Undefined;
 
-            if(BaseEditor.ProjectManager.SelectedProject != null)
+            if(Smithbox.ProjectManager.SelectedProject != null)
             {
-                curProjectType = BaseEditor.ProjectManager.SelectedProject.ProjectType;
+                curProjectType = Smithbox.ProjectManager.SelectedProject.ProjectType;
             }
 
             if (entry.ProjectType == (int)curProjectType || entry.ProjectType == 0)

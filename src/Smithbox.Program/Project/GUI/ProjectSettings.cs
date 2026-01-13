@@ -127,7 +127,7 @@ public static class ProjectSettings
 
                 TargetProject.EnableExternalMaterialData = EnableExternalMaterialData;
 
-                BaseEditor.ProjectManager.SaveProject(TargetProject);
+                Smithbox.ProjectManager.SaveProject(TargetProject);
 
                 if (EditorStateChanged)
                 {

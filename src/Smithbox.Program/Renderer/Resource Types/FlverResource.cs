@@ -90,9 +90,9 @@ public class FlverResource : IResource, IDisposable
     {
         VirtPath = virtPath;
 
-        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject != null)
+        if (Smithbox.ProjectManager.SelectedProject != null)
         {
-            var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+            var curProject = Smithbox.ProjectManager.SelectedProject;
 
             bool ret;
 
@@ -150,14 +150,14 @@ public class FlverResource : IResource, IDisposable
     {
         VirtPath = virtPath;
 
-        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.ProjectManager.SelectedProject == null)
             return false;
 
         // Small hack so the chrbnd's that are passed here are skipped.
         if (!(relativePath.Contains(".flv")))
             return false;
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         try
         {
@@ -204,10 +204,10 @@ public class FlverResource : IResource, IDisposable
     private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string? type, string mpath,
         string mtd)
     {
-        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.ProjectManager.SelectedProject == null)
             return;
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         if (curProject.MaterialData == null || curProject.MaterialData.PrimaryBank == null)
             return;
@@ -325,12 +325,12 @@ public class FlverResource : IResource, IDisposable
             //TaskLogs.AddLog($"[Smithbox] LISTENER for {virtualPath}");
 
             // Used to allow for association of models and textures
-            if (ResourceManager.BaseEditor.ProjectManager.SelectedProject.FocusedEditor is MapEditorScreen)
+            if (Smithbox.ProjectManager.SelectedProject.FocusedEditor is MapEditorScreen)
             {
                 MapModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
             }
 
-            if (ResourceManager.BaseEditor.ProjectManager.SelectedProject.FocusedEditor is ModelEditorScreen)
+            if (Smithbox.ProjectManager.SelectedProject.FocusedEditor is ModelEditorScreen)
             {
                 ModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
             }
@@ -347,7 +347,7 @@ public class FlverResource : IResource, IDisposable
     private void ProcessMaterialTexture(FlverMaterial dest, string texType, string mpath, string mtd,
         out bool blend, out bool hasNormal2, out bool hasSpec2, out bool hasShininess2, out bool blendMask)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         blend = false;
         blendMask = false;
@@ -438,7 +438,7 @@ public class FlverResource : IResource, IDisposable
 
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         dest.MaterialName = Path.GetFileNameWithoutExtension(mat.MTD);
         dest.MaterialBuffer = SceneRenderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
@@ -546,7 +546,7 @@ public class FlverResource : IResource, IDisposable
     private unsafe void ProcessMaterial(FlverMaterial dest, BinaryReaderEx br,
         ref FlverMaterialDef mat, Span<FlverTexture> textures, bool isUTF)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         var mtd = isUTF ? br.GetUTF16(mat.mtdOffset) : br.GetShiftJIS(mat.mtdOffset);
         var matName = isUTF ? br.GetUTF16(mat.nameOffset) : br.GetShiftJIS(mat.nameOffset);
@@ -1286,7 +1286,7 @@ public class FlverResource : IResource, IDisposable
 
     private unsafe void ProcessMesh(FLVER0.Mesh mesh, FlverSubmesh dest)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         ResourceFactory? factory = SceneRenderer.Factory;
 
@@ -1432,7 +1432,7 @@ public class FlverResource : IResource, IDisposable
         if (mesh.Vertices == null)
             return;
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         if (Flver == null)
             return;

@@ -16,7 +16,7 @@ public static class ParamUniqueInserter
 
     public static void Run(Smithbox baseEditor, ProjectEntry project)
     {
-        var curProject = baseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         var baseID = curProject.ParamData.PrimaryBank.Params.Values.Max(p => p.Rows.Max(r => r.ID)) + 1;
         var i = baseID;

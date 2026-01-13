@@ -21,6 +21,9 @@ namespace StudioCore;
 
 public class Smithbox
 {
+    public static Smithbox Instance { get; set; }
+    public static ProjectManager ProjectManager { get; set; }
+
     private static double _desiredFrameLengthSeconds = 1.0 / 20.0f;
     private static readonly bool _limitFrameRate = true;
 
@@ -40,12 +43,13 @@ public class Smithbox
 
     public SoapstoneService _soapstoneService;
 
-    public ProjectManager ProjectManager;
-
     public SettingsWindow Settings;
     public HelpWindow Help;
     public KeybindWindow Keybinds;
     public DeveloperTools DebugTools;
+
+    public ActionLogger ActionLogger;
+    public WarningLogger WarningLogger;
 
     public unsafe Smithbox(IGraphicsContext context, string version, bool isLowRequirements)
     {
@@ -71,6 +75,9 @@ public class Smithbox
         ResourceManager.BaseEditor = this;
 
         ProjectManager = new(this);
+
+        ActionLogger = new(ProjectManager);
+        WarningLogger = new(ProjectManager);
 
         DPI.UpdateDpi(_context);
         DPI.UIScaleChanged += (_, _) =>
@@ -451,6 +458,9 @@ public class Smithbox
         ProjectAliasEditor.Draw();
         ProjectEnumEditor.Draw();
 
+        ActionLogger.Draw();
+        WarningLogger.Draw();
+
         // Create new project if triggered to do so
         if (ProjectCreation.Create)
         {
@@ -631,12 +641,10 @@ public class Smithbox
 #endif
 
             // Action Logger
-            TaskLogs.DisplayActionLoggerBar();
-            TaskLogs.DisplayActionLoggerWindow();
+            ActionLogger.DisplayTopbarToggle();
 
             // Warning Logger
-            TaskLogs.DisplayWarningLoggerBar();
-            TaskLogs.DisplayWarningLoggerWindow();
+            WarningLogger.DisplayTopbarToggle();
 
             ImGui.EndMainMenuBar();
         }

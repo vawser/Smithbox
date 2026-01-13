@@ -473,9 +473,9 @@ public class TexturePool
                 "world_map_limveld_noklateo"
             };
 
-            if (ResourceManager.BaseEditor.ProjectManager.SelectedProject != null)
+            if (Smithbox.ProjectManager.SelectedProject != null)
             {
-                var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+                var curProject = Smithbox.ProjectManager.SelectedProject;
 
                 var checkPow = true;
 

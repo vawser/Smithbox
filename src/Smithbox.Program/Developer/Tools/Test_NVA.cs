@@ -75,7 +75,7 @@ public static class Test_NVA
 
     public static bool Run(Smithbox baseEditor)
     {
-        var curProject = baseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         MismatchedNvas = Test_MSB_Util.GetNvaMismatches(curProject);
 

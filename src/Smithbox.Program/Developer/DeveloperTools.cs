@@ -37,7 +37,7 @@ public class DeveloperTools
         {
             if (ImGui.MenuItem($"Execute Quick Script"))
             {
-                var curProject = BaseEditor.ProjectManager.SelectedProject;
+                var curProject = Smithbox.ProjectManager.SelectedProject;
 
                 QuickScript.ApplyQuickScript(BaseEditor, curProject);
             }
@@ -128,7 +128,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("Task Viewer", ImGuiWindowFlags.None))
             {
-                TaskViewer.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                TaskViewer.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -140,7 +140,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("Param Validation", ImGuiWindowFlags.None))
             {
-                ParamValidator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                ParamValidator.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -148,7 +148,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("FLVER Material Layout Dumper", ImGuiWindowFlags.None))
             {
-                FlverMaterialLayoutDumper.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                FlverMaterialLayoutDumper.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -156,7 +156,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("DokuWiki Generator", ImGuiWindowFlags.None))
             {
-                DokuWikiGenerator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                DokuWikiGenerator.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -164,7 +164,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("File Dictionary Generator", ImGuiWindowFlags.None))
             {
-                FileDictionaryGenerator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                FileDictionaryGenerator.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -172,7 +172,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("World Map Layout Generator", ImGuiWindowFlags.None))
             {
-                WorldMapLayoutGenerator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                WorldMapLayoutGenerator.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -180,7 +180,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("Unique Param Insertion", ImGuiWindowFlags.None))
             {
-                ParamUniqueInserter.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                ParamUniqueInserter.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -189,7 +189,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("MSB", ImGuiWindowFlags.None))
             {
-                Test_MSB.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                Test_MSB.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -197,7 +197,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("BTL", ImGuiWindowFlags.None))
             {
-                Test_BTL.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                Test_BTL.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -205,7 +205,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("NVA", ImGuiWindowFlags.None))
             {
-                Test_NVA.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                Test_NVA.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -214,7 +214,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("BHV", ImGuiWindowFlags.None))
             {
-                Test_BHV.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                Test_BHV.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -222,7 +222,7 @@ public class DeveloperTools
         {
             if (ImGui.Begin("FLVER2", ImGuiWindowFlags.None))
             {
-                Test_FLVER2.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                Test_FLVER2.Display(BaseEditor, Smithbox.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }

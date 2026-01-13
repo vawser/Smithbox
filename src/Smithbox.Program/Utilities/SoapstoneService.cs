@@ -68,9 +68,9 @@ public class SoapstoneService : SoapstoneServiceV1
             ServerPath = Process.GetCurrentProcess().MainModule?.FileName
         };
 
-        if (BaseEditor.ProjectManager.SelectedProject != null)
+        if (Smithbox.ProjectManager.SelectedProject != null)
         {
-            var curProject = BaseEditor.ProjectManager.SelectedProject;
+            var curProject = Smithbox.ProjectManager.SelectedProject;
 
             if (curProject.DataPath != null
                 && gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame gameType))
@@ -285,12 +285,12 @@ public class SoapstoneService : SoapstoneServiceV1
     {
         List<SoulsObject> results = new();
 
-        if (BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.ProjectManager.SelectedProject == null)
         {
             return results;
         }
 
-        var curProject = BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
@@ -427,12 +427,12 @@ public class SoapstoneService : SoapstoneServiceV1
     {
         List<SoulsObject> results = new();
 
-        if (BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.ProjectManager.SelectedProject == null)
         {
             return results;
         }
 
-        var curProject = BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
@@ -614,7 +614,7 @@ public class SoapstoneService : SoapstoneServiceV1
 
     public override async Task OpenResource(ServerCallContext context, EditorResource resource)
     {
-        var curProject = BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         // At the moment, only loading maps is supported.
         // This could be extended to switching FMG language, or adding a param view, or opening a model to view.
@@ -635,10 +635,10 @@ public class SoapstoneService : SoapstoneServiceV1
         EditorResource resource,
         SoulsKey key)
     {
-        if (BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.ProjectManager.SelectedProject == null)
             return;
 
-        var curProject = BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
@@ -704,10 +704,10 @@ public class SoapstoneService : SoapstoneServiceV1
         PropertySearch search,
         bool openFirstResult)
     {
-        if (BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.ProjectManager.SelectedProject == null)
             return;
 
-        var curProject = BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         // At the moment, just map properties, since there are some multi-keyed things like entity groups
         // Params are also possible; FMG might require a new command

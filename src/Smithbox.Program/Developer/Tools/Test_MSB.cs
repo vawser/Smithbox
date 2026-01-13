@@ -75,7 +75,7 @@ public static class Test_MSB
 
     public static bool Run(Smithbox baseEditor)
     {
-        var curProject = baseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         MismatchedMaps = Test_MSB_Util.GetMsbMismatches(curProject);
 

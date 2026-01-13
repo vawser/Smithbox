@@ -63,8 +63,8 @@ public class ProjectUtils
         }
 
         // Unload the project editor stuff
-        editor.ProjectManager.SelectedProject = null;
-        editor.ProjectManager.Projects.Remove(curProject);
+        Smithbox.ProjectManager.SelectedProject = null;
+        Smithbox.ProjectManager.Projects.Remove(curProject);
     }
 
     public static string GetBaseFolder()

@@ -223,7 +223,7 @@ public class ParamComparisonReport
         if (TargetProject == null)
             AllowGenerate = false;
 
-        var projectList = Editor.Project.BaseEditor.ProjectManager.Projects;
+        var projectList = Smithbox.ProjectManager.Projects;
   
         if (ImGui.BeginCombo("##targetProjectComparison", TargetProjectName))
         {
@@ -234,7 +234,7 @@ public class ParamComparisonReport
                 TargetProjectName = "Vanilla";
             }
 
-            foreach (var proj in Editor.Project.BaseEditor.ProjectManager.Projects)
+            foreach (var proj in Smithbox.ProjectManager.Projects)
             {
                 if (proj == null)
                     continue;

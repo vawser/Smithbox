@@ -145,9 +145,9 @@ public class ReferenceResolver
             {
                 uint tempVal = (uint)oldval;
 
-                if (editor.BaseEditor.ProjectManager.SelectedProject.TextEditor != null)
+                if (Smithbox.ProjectManager.SelectedProject.TextEditor != null)
                 {
-                    var textEditor = editor.BaseEditor.ProjectManager.SelectedProject.TextEditor;
+                    var textEditor = Smithbox.ProjectManager.SelectedProject.TextEditor;
 
                     TextResult result = TextFinder.GetTextResult(textEditor, entry.fmg, (int)tempVal, entry.offset);
 

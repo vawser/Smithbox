@@ -33,7 +33,7 @@ public static class TextMerge
 
         int index = 0;
 
-        foreach (var proj in editor.Project.BaseEditor.ProjectManager.Projects)
+        foreach (var proj in Smithbox.ProjectManager.Projects)
         {
             if (proj == null)
                 continue;
@@ -41,7 +41,7 @@ public static class TextMerge
             if (proj.ProjectType != editor.Project.ProjectType)
                 continue;
 
-            if (proj == editor.Project.BaseEditor.ProjectManager.SelectedProject)
+            if (proj == Smithbox.ProjectManager.SelectedProject)
                 continue;
 
             var isSelected = false;

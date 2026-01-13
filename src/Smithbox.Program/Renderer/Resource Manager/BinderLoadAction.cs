@@ -49,7 +49,7 @@ public class LoadBinderResourcesAction
 
     public void ProcessBinder()
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         // Read binder
         if (Binder == null)

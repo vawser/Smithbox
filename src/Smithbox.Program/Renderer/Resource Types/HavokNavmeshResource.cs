@@ -39,7 +39,7 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         BinaryReaderEx br = new(false, bytes);
 
@@ -72,7 +72,7 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         try
         {
@@ -117,7 +117,7 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     private bool LoadInternal(AccessLevel al)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.ProjectManager.SelectedProject;
 
         if (curProject.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
         {
