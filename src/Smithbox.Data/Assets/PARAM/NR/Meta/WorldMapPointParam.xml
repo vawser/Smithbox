@@ -97,7 +97,8 @@
     
     <worldMapPointIconId
     AltName="World Map Point Icon ID"
-    Wiki="" />
+    Wiki=""
+	Refs="WorldMapPointIconParam" />
     
     <dispMask00 
     AltName="Display Mask M00" 
@@ -157,15 +158,18 @@
     
     <detailIcon1
     AltName="Detail Icon ID: 1"
-    Wiki="" />
+    Wiki=""
+	IconConfig="Menu" />
     
     <detailIcon2
     AltName="Detail Icon ID: 2"
-    Wiki="" />
+    Wiki=""
+	IconConfig="Menu" />
     
     <variationIconId
     AltName="Variation Icon ID"
-    Wiki="" />
+    Wiki=""
+	IconConfig="Menu" />
     
     <eventFlagId6
     AltName="Event Flag ID: 6"

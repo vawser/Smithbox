@@ -5,27 +5,33 @@
   
   <Field>
     <modifierSet
-    AltName="Modifier Set" />
+    AltName="Modifier Set"
+	ProjectEnum="PATTERN_MODIFIER_SET" />
     
     <requireModifier1
     AltName="Required Modifier 1"
-    Wiki="" />
+    Wiki="" 
+	ProjectEnum="PATTERN_MODIFIER" />
     
     <requireModifier2
     AltName="Required Modifier 2"
-    Wiki=""  />
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
     
     <excludeModifier1
     AltName="Excluded Modifier 1"
-    Wiki="" />
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
     
     <excludeModifier2
     AltName="Excluded Modifier 2"
-    Wiki=""  />
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER"  />
     
     <modifier
     AltName="Modifier"
-    Wiki="" />
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
   
     <eventFlag
     AltName="Usage Event Flag"

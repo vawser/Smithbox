@@ -6,11 +6,13 @@
   <Field>
     <modifier1
     AltName="Modifier 1"
-    Wiki=""/>
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
     
     <modifier2
     AltName="Modifier 2"
-    Wiki=""/>
+    Wiki=""
+	ProjectEnum="PATTERN_MODIFIER" />
   </Field>
   
   <Enums>

@@ -8,13 +8,21 @@
   <Fields>
     
     <Field Def="s32 textId_1"/>
-    <Field Def="s32 unknown_1"/>
+    <Field Def="s32 iconId"/>
     <Field Def="s32 textId_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="u16 unknown_4a"/>
-    <Field Def="u16 unknown_4b"/>
-    <Field Def="s32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
+    <Field Def="u8 unknown_3a"/>
+    <Field Def="u8 unknown_3b"/>
+    <Field Def="u8 unknown_3c"/>
+    <Field Def="u8 unknown_3d"/>
+    <Field Def="u8 unknown_4a"/>
+    <Field Def="u8 unknown_4b"/>
+    <Field Def="u8 unknown_4c"/>
+    <Field Def="u8 unknown_4d"/>
+    <Field Def="u8 unknown_5a"/>
+    <Field Def="u8 unknown_5b"/>
+    <Field Def="u8 unknown_5c"/>
+    <Field Def="u8 unknown_5d"/>
+    <Field Def="s32 seId_1"/>
+    <Field Def="s32 seId_2"/>
   </Fields>
 </PARAMDEF>
