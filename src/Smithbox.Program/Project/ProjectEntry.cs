@@ -91,7 +91,7 @@ public class ProjectEntry
             Handler.ModelEditorStub.EditorResized(window, device);
     }
 
-    public async Task<bool> Init(bool silent = false, ProjectInitType initType = ProjectInitType.ProjectDefined)
+    public async Task<bool> Init(Action<ProjectLoadProgress> reportProgress, bool silent = false, ProjectInitType initType = ProjectInitType.ProjectDefined)
     {
         // Sanity checks
         if(Descriptor.ProjectType is ProjectType.Undefined)
@@ -118,30 +118,91 @@ public class ProjectEntry
         Initialized = false;
         IsInitializing = true;
 
+
         VFS = new(this);
         Locator = new(this);
         Handler = new(this);
 
         SetupDLLs();
 
+        if (!silent)
+        {
+            reportProgress?.Invoke(new()
+            {
+                PhaseLabel = "Initializing Project",
+                StepLabel = "Setting up VFS",
+                Percent = 0.05f
+            });
+        }
+
         VFS.Initialize();
+
+        if (!silent)
+        {
+            reportProgress?.Invoke(new()
+            {
+                PhaseLabel = "Initializing Project",
+                StepLabel = "Initializing editor stubs",
+                Percent = 0.1f
+            });
+        }
 
         Handler.InitStubs();
 
-        await Locator.Initialize();
+        if (!silent)
+        {
+            reportProgress?.Invoke(new()
+            {
+                PhaseLabel = "Initializing Project",
+                StepLabel = "Indexing project files",
+                Percent = 0.2f
+            });
+        }
+
+        await Locator.Initialize(reportProgress, silent);
 
         IsLoadingData = true;
+
+        if (!silent)
+        {
+            reportProgress?.Invoke(new()
+            {
+                PhaseLabel = "Initializing Project",
+                StepLabel = "Loading project data",
+                Percent = 0.4f
+            });
+        }
 
         await Handler.InitializeData(initType, silent);
 
         IsLoadingData = false;
         IsCreatingEditors = true;
 
+        if (!silent)
+        {
+            reportProgress?.Invoke(new()
+            {
+                PhaseLabel = "Initializing Project",
+                StepLabel = "Loading project editors",
+                Percent = 0.8f
+            });
+        }
+
         Handler.InitializeEditors(initType);
 
         IsCreatingEditors = false;
         Initialized = true;
         IsInitializing = false;
+
+        if (!silent)
+        {
+            reportProgress?.Invoke(new()
+            {
+                PhaseLabel = "Initializing Project",
+                StepLabel = "Finalizing",
+                Percent = 1.0f
+            });
+        }
 
         return true;
     }

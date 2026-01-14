@@ -73,13 +73,13 @@ public class TextData : IDisposable
 
         if (reloadProject)
         {
-            await targetProject.Init(silent: true, ProjectInitType.TextEditorOnly);
+            await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.TextEditorOnly);
         }
         else
         {
             if (!targetProject.Initialized)
             {
-                await targetProject.Init(silent: true, ProjectInitType.TextEditorOnly);
+                await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.TextEditorOnly);
             }
         }
 

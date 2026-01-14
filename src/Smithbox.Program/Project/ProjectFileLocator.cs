@@ -47,7 +47,7 @@ public class ProjectFileLocator : IDisposable
     }
 
     #region Init
-    public async Task Initialize()
+    public async Task Initialize(Action<ProjectLoadProgress> reportProgress, bool silent = false)
     {
         var projectLocalFolder = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox");
 
@@ -87,6 +87,16 @@ public class ProjectFileLocator : IDisposable
             default: break;
         }
 
+        if (!silent)
+        {
+            reportProgress?.Invoke(new()
+            {
+                PhaseLabel = "Initializing Project",
+                StepLabel = "Compiling root file directory",
+                Percent = 0.5f
+            });
+        }
+
         var filepath = Path.Join(folder, file);
 
         var jsonFileDictionary = new FileDictionary();
@@ -112,11 +122,30 @@ public class ProjectFileLocator : IDisposable
             }
         }
 
+        if (!silent)
+        {
+            reportProgress?.Invoke(new()
+            {
+                PhaseLabel = "Initializing Project",
+                StepLabel = "Compiling project file directory",
+                Percent = 0.25f
+            });
+        }
         var projectFileDictionary = BuildFromSource(
             Project.Descriptor.ProjectPath, 
             jsonFileDictionary, Project.Descriptor.ProjectType);
 
         FileDictionary = MergeFileDictionaries(jsonFileDictionary, projectFileDictionary);
+
+        if (!silent)
+        {
+            reportProgress?.Invoke(new()
+            {
+                PhaseLabel = "Initializing Project",
+                StepLabel = "Compiling editor file directories",
+                Percent = 0.3f
+            });
+        }
 
         CompileDictionaries();
 

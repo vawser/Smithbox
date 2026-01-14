@@ -20,11 +20,11 @@ public class ProjectOrchestrator : IDisposable
 
     public ProjectEntry SelectedProject;
 
-    public string ProjectListFilter = "";
-
     public bool IsProjectLoading = false;
 
-    private bool InitExistingProjects = false;
+    public ProjectLoadProgress LoadProgress;
+    public Action<ProjectLoadProgress> ReportProgress;
+    private readonly object _progressLock = new();
 
     public ActionManager ActionManager;
 
@@ -32,8 +32,13 @@ public class ProjectOrchestrator : IDisposable
     public ProjectEnumMenu EnumMenu;
     public ProjectAliasMenu AliasMenu;
 
+    public string ProjectListFilter = "";
+    private bool InitExistingProjects = false;
+
     public ProjectOrchestrator()
     {
+        ReportProgress = SetProgress;
+
         ActionManager = new();
 
         CreationMenu = new(this);
@@ -70,6 +75,8 @@ public class ProjectOrchestrator : IDisposable
                 _ = LoadExistingProjects();
             }
         }
+
+        DrawProjectLoadingUI();
     }
 
     public void DisplayMenuOptions()
@@ -135,8 +142,6 @@ public class ProjectOrchestrator : IDisposable
             }
         }
     }
-
-
     private void DisplayProjectSelectionMenu()
     {
         // Project Selection
@@ -646,10 +651,16 @@ public class ProjectOrchestrator : IDisposable
 
         IsProjectLoading = true;
 
-        if (!curProject.Initialized)
+        SetProgress(new ProjectLoadProgress
         {
-            await curProject.Init();
-        }
+            PhaseLabel = "Starting Project",
+            StepLabel = "Preparing",
+            Percent = 0f
+        });
+
+        LoadProgress = default;
+
+        await curProject.Init(ReportProgress);
 
         foreach (var tEntry in Projects)
         {
@@ -663,9 +674,16 @@ public class ProjectOrchestrator : IDisposable
         // Used for the DCX heuristic
         BinaryReaderEx.CurrentProjectType = $"{curProject.Descriptor.ProjectType}";
 
-        IsProjectLoading = false;
-
         SetAsAutoLoad(curProject);
+
+        SetProgress(new ProjectLoadProgress
+        {
+            PhaseLabel = "Complete",
+            StepLabel = "",
+            Percent = 1f
+        });
+
+        IsProjectLoading = false;
 
         return true;
     }
@@ -710,7 +728,16 @@ public class ProjectOrchestrator : IDisposable
 
         IsProjectLoading = true;
 
-        await curProject.Init();
+        SetProgress(new ProjectLoadProgress
+        {
+            PhaseLabel = "Starting Project",
+            StepLabel = "Preparing",
+            Percent = 0f
+        });
+
+        LoadProgress = default;
+
+        await curProject.Init(ReportProgress);
 
         foreach (var tEntry in Projects)
         {
@@ -723,6 +750,13 @@ public class ProjectOrchestrator : IDisposable
 
         // Used for the DCX heuristic
         BinaryReaderEx.CurrentProjectType = $"{curProject.Descriptor.ProjectType}";
+
+        SetProgress(new ProjectLoadProgress
+        {
+            PhaseLabel = "Complete",
+            StepLabel = "",
+            Percent = 1f
+        });
 
         IsProjectLoading = false;
     }
@@ -781,8 +815,58 @@ public class ProjectOrchestrator : IDisposable
         {
             TaskLogs.AddError("Failed to read legacy project.json", e);
         }
-    } 
-    
+    }
+
+    private void SetProgress(ProjectLoadProgress progress)
+    {
+        lock (_progressLock)
+        {
+            LoadProgress = progress;
+        }
+    }
+
+    private bool InitialLayout = false;
+
+    private void DrawProjectLoadingUI()
+    {
+        if (!IsProjectLoading)
+            return;
+
+        ImGui.OpenPopup("Loading Project##ProjectLoad");
+
+        if (!InitialLayout)
+        {
+            UIHelper.SetupPopupWindow();
+            InitialLayout = true;
+        }
+
+        if (ImGui.BeginPopupModal(
+            "Loading Project##ProjectLoad",
+            ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
+        {
+            ProjectLoadProgress progress;
+            lock (_progressLock)
+                progress = LoadProgress;
+
+            ImGui.Text(progress.PhaseLabel);
+            ImGui.Spacing();
+
+            ImGui.ProgressBar(
+                Math.Clamp(progress.Percent, 0f, 1f),
+                new System.Numerics.Vector2(400, 0),
+                $"{(int)(progress.Percent * 100)}%"
+            );
+
+            if (!string.IsNullOrEmpty(progress.StepLabel))
+            {
+                ImGui.Spacing();
+                ImGui.TextDisabled(progress.StepLabel);
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
     #region Dispose
     private bool _disposed;
 
@@ -802,4 +886,11 @@ public class ProjectOrchestrator : IDisposable
         _disposed = true;
     }
     #endregion
+}
+
+public struct ProjectLoadProgress
+{
+    public string PhaseLabel;
+    public string StepLabel;
+    public float Percent; 
 }

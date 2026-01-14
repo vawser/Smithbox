@@ -115,11 +115,11 @@ public class ParamData : IDisposable
 
         if (tableParamTaskResult)
         {
-            // TaskLogs.AddLog($"[Param Editor] Setup table param list.");
+            TaskLogs.AddLog($"[Param Editor] Setup table param list.");
         }
         else
         {
-            TaskLogs.AddError($"[Param Editor] Failed to setup table param list.");
+            //TaskLogs.AddError($"[Param Editor] Failed to setup table param list.");
         }
 
         // Table Group Names
@@ -128,11 +128,11 @@ public class ParamData : IDisposable
 
         if (tableGroupNameTaskResult)
         {
-            // TaskLogs.AddLog($"[Param Editor] Setup table group name bank.");
+            TaskLogs.AddLog($"[Param Editor] Setup table group name bank.");
         }
         else
         {
-            TaskLogs.AddError($"[Param Editor] Failed to setup table group name bank.");
+            // TaskLogs.AddError($"[Param Editor] Failed to setup table group name bank.");
         }
 
         // Game Offsets (per project)
@@ -277,13 +277,13 @@ public class ParamData : IDisposable
 
         if (reloadProject)
         {
-            await targetProject.Init(silent: true, ProjectInitType.ParamEditorOnly);
+            await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.ParamEditorOnly);
         }
         else
         {
             if (!targetProject.Initialized)
             {
-                await targetProject.Init(silent: true, ProjectInitType.ParamEditorOnly);
+                await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.ParamEditorOnly);
             }
         }
 

@@ -119,13 +119,13 @@ public class MapData : IDisposable
 
         if (reloadProject)
         {
-            await targetProject.Init(silent: true, ProjectInitType.MapEditorOnly);
+            await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.MapEditorOnly);
         }
         else
         {
             if (!targetProject.Initialized)
             {
-                await targetProject.Init(silent: true, ProjectInitType.MapEditorOnly);
+                await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.MapEditorOnly);
             }
         }
 
