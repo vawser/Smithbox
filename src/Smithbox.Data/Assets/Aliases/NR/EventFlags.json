@@ -196,37 +196,37 @@
   },
   {
     "ID": "170",
-    "Name": "Defeated Everdark Soverieign Gladius (Tricephalos)",
+    "Name": "Defeated Everdark Sovereign Gladius (Tricephalos)",
     "Tags": []
   },
   {
     "ID": "171",
-    "Name": "Defeated Everdark Soverieign Adel (Gaping Jaw)",
+    "Name": "Defeated Everdark Sovereign Adel (Gaping Jaw)",
     "Tags": []
   },
   {
     "ID": "172",
-    "Name": "Defeated Everdark Soverieign Gnoster (Sentient Pest)",
+    "Name": "Defeated Everdark Sovereign Gnoster (Sentient Pest)",
     "Tags": []
   },
   {
     "ID": "173",
-    "Name": "Defeated Everdark Soverieign Maris (Augur)",
+    "Name": "Defeated Everdark Sovereign Maris (Augur)",
     "Tags": []
   },
   {
     "ID": "174",
-    "Name": "Defeated Everdark Soverieign Libra (Equilibrious Beast)",
+    "Name": "Defeated Everdark Sovereign Libra (Equilibrious Beast)",
     "Tags": []
   },
   {
     "ID": "175",
-    "Name": "Defeated Everdark Soverieign Fulghor (Darkdrift Knight)",
+    "Name": "Defeated Everdark Sovereign Fulghor (Darkdrift Knight)",
     "Tags": []
   },
   {
     "ID": "176",
-    "Name": "Defeated Everdark Soverieign Caligo (Fissure in the Fog)",
+    "Name": "Defeated Everdark Sovereign Caligo (Fissure in the Fog)",
     "Tags": []
   },
   {
@@ -586,7 +586,7 @@
   },
   {
     "ID": "6031",
-    "Name": "Hero Unlock Flag_Lady",
+    "Name": "Hero Unlock: Duchess",
     "Tags": []
   },
   {
@@ -616,7 +616,17 @@
   },
   {
     "ID": "6037",
-    "Name": "Hero Unlock Flag_Avenger",
+    "Name": "Hero Unlock: Revenant",
+    "Tags": []
+  },
+  {
+    "ID": "6038",
+    "Name": "Hero Unlock: Scholar",
+    "Tags": []
+  },
+  {
+    "ID": "6039",
+    "Name": "Hero Unlock: Undertaker",
     "Tags": []
   },
   {
