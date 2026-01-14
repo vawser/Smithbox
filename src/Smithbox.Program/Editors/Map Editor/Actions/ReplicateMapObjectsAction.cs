@@ -344,7 +344,7 @@ public class ReplicateMapObjectsAction : ViewportAction
         newTransform.Rotation = newRot;
         newTransform.Scale = newScale;
 
-        if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
+        if (Editor.Project.Descriptor.ProjectType == ProjectType.DS2S || Editor.Project.Descriptor.ProjectType == ProjectType.DS2)
         {
             if (sel.Type == MsbEntityType.DS2Generator &&
                 sel.WrappedObject is MergedParamRow mp)
@@ -370,7 +370,7 @@ public class ReplicateMapObjectsAction : ViewportAction
         {
             Transform scrambledTransform = Editor.ScrambleAction.GetScrambledTransform(newobj);
 
-            if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
+            if (Editor.Project.Descriptor.ProjectType == ProjectType.DS2S || Editor.Project.Descriptor.ProjectType == ProjectType.DS2)
             {
                 if (newobj.Type == MsbEntityType.DS2Generator &&
                 newobj.WrappedObject is MergedParamRow mp)

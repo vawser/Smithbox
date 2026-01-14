@@ -107,11 +107,11 @@ public class ParamTableGroupView
 
             var activeParam = View.Selection.GetActiveParam();
 
-            if (Project.ParamData.TableGroupNames != null)
+            if (Project.Handler.ParamData.TableGroupNames != null)
             {
-                if (Project.ParamData.TableGroupNames.Groups.Any(e => e.Param == activeParam))
+                if (Project.Handler.ParamData.TableGroupNames.Groups.Any(e => e.Param == activeParam))
                 {
-                    var curGroup = Project.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == activeParam);
+                    var curGroup = Project.Handler.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == activeParam);
                     if (curGroup != null)
                     {
                         if (curGroup.Entries.Any(e => e.ID == group))
@@ -166,9 +166,9 @@ public class ParamTableGroupView
 
             var activeParam = View.Selection.GetActiveParam();
 
-            if (Project.ParamData.TableGroupNames != null)
+            if (Project.Handler.ParamData.TableGroupNames != null)
             {
-                var curTableGroup = Project.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == activeParam);
+                var curTableGroup = Project.Handler.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == activeParam);
 
                 var curName = "";
                 if (curTableGroup != null)
@@ -244,7 +244,7 @@ public class ParamTableGroupView
         if (curParamKey == null)
             return;
 
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param param = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
 
         var newId = -1;
 
@@ -280,7 +280,7 @@ public class ParamTableGroupView
         if (curParamKey == null)
             return;
 
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param param = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
 
         var targetRows = param.Rows.Where(e => e.ID == CurrentTableGroup).ToList();
 
@@ -311,7 +311,7 @@ public class ParamTableGroupView
 
             newTableGroup.Entries.Add(newTableEntry);
 
-            Project.ParamData.TableGroupNames.Groups.Add(newTableGroup);
+            Project.Handler.ParamData.TableGroupNames.Groups.Add(newTableGroup);
         }
         else
         {
@@ -351,7 +351,7 @@ public class ParamTableGroupView
 
         if (IsInTableGroupMode(activeParam))
         {
-            var curParam = Project.ParamData.PrimaryBank.Params[activeParam];
+            var curParam = Project.Handler.ParamData.PrimaryBank.Params[activeParam];
 
             foreach (var entry in curParam.Rows)
             {
@@ -373,7 +373,7 @@ public class ParamTableGroupView
         var fieldName = GetChanceFieldName();
 
         // Get overall roll chance total
-        foreach (var row in Project.ParamData.PrimaryBank.Params[curParam].Rows)
+        foreach (var row in Project.Handler.ParamData.PrimaryBank.Params[curParam].Rows)
         {
             if (row.ID != group)
                 continue;
@@ -389,7 +389,7 @@ public class ParamTableGroupView
         }
 
         // Construct list of the individual roll chances
-        foreach (var row in Project.ParamData.PrimaryBank.Params[curParam].Rows)
+        foreach (var row in Project.Handler.ParamData.PrimaryBank.Params[curParam].Rows)
         {
             if (row.ID != group)
                 continue;
@@ -463,10 +463,10 @@ public class ParamTableGroupView
         if (!CFG.Current.Param_DisplayTableGroupColumn)
             return false;
 
-        if (Project.ParamData.TableParamList.Params.Count == 0)
+        if (Project.Handler.ParamData.TableParamList.Params.Count == 0)
             return false;
 
-        if (Project.ParamData.TableParamList.Params.Contains(activeParam))
+        if (Project.Handler.ParamData.TableParamList.Params.Contains(activeParam))
         {
             return true;
         }
@@ -477,17 +477,17 @@ public class ParamTableGroupView
     public void WriteTableGroupNames(string writeDir = "")
     {
         // If the project type doesn't support table groups, don't attempt to write anything
-        if (Project.ParamData.TableGroupNames == null)
+        if (Project.Handler.ParamData.TableGroupNames == null)
             return;
 
-        if (Project.ParamData.TableParamList.Params.Count == 0)
+        if (Project.Handler.ParamData.TableParamList.Params.Count == 0)
             return;
 
         var targetDir = writeDir;
 
         if(writeDir == "")
         {
-            targetDir = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Community Table Names");
+            targetDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Community Table Names");
         }
 
         if (!Directory.Exists(targetDir))
@@ -495,7 +495,7 @@ public class ParamTableGroupView
             Directory.CreateDirectory(targetDir);
         }
 
-        foreach (var group in Project.ParamData.TableGroupNames.Groups)
+        foreach (var group in Project.Handler.ParamData.TableGroupNames.Groups)
         {
             var filePath = Path.Combine(targetDir, $"{group.Param}.json");
 

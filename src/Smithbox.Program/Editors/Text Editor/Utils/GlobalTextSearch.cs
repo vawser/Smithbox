@@ -24,7 +24,7 @@ public static class GlobalTextSearch
 
     public static void Display(TextEditorScreen editor)
     {
-        var windowSize = DPI.GetWindowSize(editor.BaseEditor._context);
+        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
 
         var resultSectionSize = new Vector2(sectionWidth * DPI.UIScale(), windowSize.Y * 0.6f * DPI.UIScale());

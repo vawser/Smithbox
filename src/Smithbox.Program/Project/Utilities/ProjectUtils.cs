@@ -15,7 +15,7 @@ public class ProjectUtils
     private static readonly byte[] ZeroIv = new byte[16];
     public static string GetGameDirectory(ProjectEntry curProject)
     {
-        return GetGameDirectory(curProject.ProjectType);
+        return GetGameDirectory(curProject.Descriptor.ProjectType);
     }
 
     public static string GetGameDirectory(ProjectType curProjectType)
@@ -51,20 +51,21 @@ public class ProjectUtils
         }
     }
 
-    public static void DeleteProject(Smithbox editor, ProjectEntry curProject)
+    public static void DeleteProject(ProjectEntry curProject)
     {
         string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
         // Delete the project file
-        var filename = Path.Join(localAppDataPath, "Smithbox", "Projects", $"{curProject.ProjectGUID}.json");
+        var filename = Path.Join(localAppDataPath, "Smithbox", "Projects", $"{curProject.Descriptor.ProjectGUID}.json");
+
         if (File.Exists(filename))
         {
             File.Delete(filename);
         }
 
         // Unload the project editor stuff
-        Smithbox.ProjectManager.SelectedProject = null;
-        Smithbox.ProjectManager.Projects.Remove(curProject);
+        Smithbox.Orchestrator.SelectedProject = null;
+        Smithbox.Orchestrator.Projects.Remove(curProject);
     }
 
     public static string GetBaseFolder()
@@ -95,7 +96,7 @@ public class ProjectUtils
 
     public static string GetLocalProjectFolder(ProjectEntry project)
     {
-        return Path.Join(project.ProjectPath, ".smithbox", "Project");
+        return Path.Join(project.Descriptor.ProjectPath, ".smithbox", "Project");
     }
 
     public static List<string> GetLooseParamsInDir(VirtualFileSystem fs, string dir)
@@ -273,11 +274,11 @@ public class ProjectUtils
     /// <returns></returns>
     public static VirtualFileSystem GetFilesystemForWrite(ProjectEntry curProject)
     {
-        if (curProject.ProjectFS is not EmptyVirtualFileSystem)
-            return curProject.ProjectFS;
+        if (curProject.VFS.ProjectFS is not EmptyVirtualFileSystem)
+            return curProject.VFS.ProjectFS;
 
-        if (curProject.VanillaRealFS is not EmptyVirtualFileSystem)
-            return curProject.VanillaRealFS;
+        if (curProject.VFS.VanillaRealFS is not EmptyVirtualFileSystem)
+            return curProject.VFS.VanillaRealFS;
 
         throw new InvalidOperationException("No suitable VFS was found for writes");
     }
@@ -286,7 +287,7 @@ public class ProjectUtils
     {
         if(CFG.Current.BackupProcessType is ProjectBackupBehaviorType.Complete)
         {
-            var folderPath = Path.Combine(curProject.ProjectPath, ".backup");
+            var folderPath = Path.Combine(curProject.Descriptor.ProjectPath, ".backup");
 
             if(!Directory.Exists(folderPath))
             {
@@ -298,8 +299,8 @@ public class ProjectUtils
     public static void WriteWithBackup<T>(ProjectEntry curProject, string assetPath, T item,
         params object[] writeparms) where T : SoulsFile<T>, new()
     {
-        WriteWithBackup(curProject, curProject.FS, curProject.ProjectFS, assetPath, item,
-            curProject.ProjectType, writeparms);
+        WriteWithBackup(curProject, curProject.VFS.FS, curProject.VFS.ProjectFS, assetPath, item,
+            curProject.Descriptor.ProjectType, writeparms);
     }
 
     public static void WriteWithBackup<T>(ProjectEntry curProject, VirtualFileSystem vanillaFs, VirtualFileSystem toFs, string assetPath,
@@ -308,7 +309,7 @@ public class ProjectUtils
         try
         {
             // Make a backup of the original file if a mod path doesn't exist
-            if (toFs != curProject.ProjectFS && !toFs.FileExists($"{assetPath}.bak") && toFs.FileExists(assetPath))
+            if (toFs != curProject.VFS.ProjectFS && !toFs.FileExists($"{assetPath}.bak") && toFs.FileExists(assetPath))
             {
                 if (CFG.Current.EnableBackupSaves)
                 {
@@ -388,7 +389,7 @@ public class ProjectUtils
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{curProject.ProjectName}] Failed to save: {Path.GetFileName(assetPath)} - {e}");
+            TaskLogs.AddLog($"[Smithbox] Failed to save: {Path.GetFileName(assetPath)} - {e}");
         }
     }
 

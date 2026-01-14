@@ -11,16 +11,11 @@ namespace StudioCore.Application;
 
 public class WarningLogger
 {
-    private ProjectManager ProjectManager;
-
     public bool IsDisplayed = false;
     private ImGuiDir CurrentDir = ImGuiDir.Right;
     private bool InitialLayout = false;
 
-    public WarningLogger(ProjectManager manager)
-    {
-        ProjectManager = manager;
-    }
+    public WarningLogger() { }
 
     public void DisplayTopbarToggle()
     {

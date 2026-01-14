@@ -28,7 +28,7 @@ public class GparamFileListView
         ImGui.BeginChild("GparamFileSection");
         Editor.Selection.SwitchWindowContext(GparamEditorContext.File);
 
-        foreach (var entry in Editor.Project.GparamData.PrimaryBank.Entries)
+        foreach (var entry in Editor.Project.Handler.GparamData.PrimaryBank.Entries)
         {
             var alias = AliasHelper.GetGparamAliasName(Editor.Project, entry.Key.Filename);
 

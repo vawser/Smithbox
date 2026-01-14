@@ -6,21 +6,21 @@ namespace StudioCore.Application;
 
 public static class ParamUniqueInserter
 {
-    public static void Display(Smithbox baseEditor, ProjectEntry project)
+    public static void Display(ProjectEntry project)
     {
         if (ImGui.Button("Run Test", DPI.StandardButtonSize))
         {
-            Run(baseEditor, project);
+            Run(project);
         }
     }
 
-    public static void Run(Smithbox baseEditor, ProjectEntry project)
+    public static void Run(ProjectEntry project)
     {
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        var baseID = curProject.ParamData.PrimaryBank.Params.Values.Max(p => p.Rows.Max(r => r.ID)) + 1;
+        var baseID = curProject.Handler.ParamData.PrimaryBank.Params.Values.Max(p => p.Rows.Max(r => r.ID)) + 1;
         var i = baseID;
-        foreach (var p in curProject.ParamData.PrimaryBank.Params.Values)
+        foreach (var p in curProject.Handler.ParamData.PrimaryBank.Params.Values)
         {
             Andre.Formats.Param.Row row = new(p.Rows.First());
             row.ID = i;

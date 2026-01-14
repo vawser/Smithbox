@@ -10,7 +10,7 @@ public static class FileDictionaryGenerator
 {
     public static string _filePath = "";
 
-    public static void Display(Smithbox baseEditor, ProjectEntry project)
+    public static void Display(ProjectEntry project)
     {
         if (ImGui.BeginTable($"generatorTable", 3, ImGuiTableFlags.SizingFixedFit))
         {

@@ -14,9 +14,9 @@ namespace StudioCore.Application;
 
 public class QuickScript
 {
-    public static void ApplyQuickScript(Smithbox baseEditor, ProjectEntry curProject)
+    public static void ApplyQuickScript(ProjectEntry curProject)
     {
-        var file = curProject.FS.ReadFile("/expression/menu.expb.dcx");
+        var file = curProject.VFS.FS.ReadFile("/expression/menu.expb.dcx");
         if(file != null)
         {
             var fmc = FMB.Read((Memory<byte>)file);

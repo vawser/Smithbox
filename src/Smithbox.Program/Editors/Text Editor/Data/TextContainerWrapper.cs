@@ -65,7 +65,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
     public bool IsContainerUnused()
     {
         // Hide Base and DLC1 containers as they are not used
-        if (Project.ProjectType is ProjectType.ER)
+        if (Project.Descriptor.ProjectType is ProjectType.ER)
         {
             if (FileEntry.Filename == "item" ||
                 FileEntry.Filename == "menu" ||
@@ -76,7 +76,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
             }
         }
         // Hide Base and DLC1 containers as they are not used
-        if (Project.ProjectType is ProjectType.DS3)
+        if (Project.Descriptor.ProjectType is ProjectType.DS3)
         {
             if (FileEntry.Filename == "item_dlc1" ||
                 FileEntry.Filename == "menu_dlc1")
@@ -118,7 +118,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
                 prettyName = $"{prettyName} - DLC 2";
         }
 
-        if (Project.ProjectType is ProjectType.DES)
+        if (Project.Descriptor.ProjectType is ProjectType.DES)
         {
             if (name.Contains("sample"))
                 prettyName = "Sample";

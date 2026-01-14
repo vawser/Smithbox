@@ -200,12 +200,12 @@ public class TexSourceView
 
             if (TargetTextureBinderEntry.Extension == "tpfbhd")
             {
-                Task<bool> loadTask = Project.TextureData.PrimaryBank.LoadPackedTextureBinder(TargetTextureBinderEntry);
+                Task<bool> loadTask = Project.Handler.TextureData.PrimaryBank.LoadPackedTextureBinder(TargetTextureBinderEntry);
                 Task.WaitAll(loadTask);
             }
             else
             {
-                Task<bool> loadTask = Project.TextureData.PrimaryBank.LoadTextureBinder(TargetTextureBinderEntry);
+                Task<bool> loadTask = Project.Handler.TextureData.PrimaryBank.LoadTextureBinder(TargetTextureBinderEntry);
                 Task.WaitAll(loadTask);
             }
 
@@ -227,7 +227,7 @@ public class TexSourceView
     {
         if (ImGui.CollapsingHeader("Texture Files"))
         {
-            foreach (var entry in Project.TextureData.TextureFiles.Entries)
+            foreach (var entry in Project.Handler.TextureData.TextureFiles.Entries)
             {
                 ImGui.Text($"{entry.Path}");
             }
@@ -235,7 +235,7 @@ public class TexSourceView
 
         if (ImGui.CollapsingHeader("Packed Texture Files"))
         {
-            foreach (var entry in Project.TextureData.TexturePackedFiles.Entries)
+            foreach (var entry in Project.Handler.TextureData.TexturePackedFiles.Entries)
             {
                 ImGui.Text($"{entry.Path}");
             }
@@ -244,587 +244,587 @@ public class TexSourceView
 
     public void DisplayFileCategories_DES()
     {
-        if (Project.ProjectType is ProjectType.DES)
+        if (Project.Descriptor.ProjectType is ProjectType.DES)
         {
             // Chr
             DisplayFileSection(
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Object
             DisplayFileSection(
                 "Objects",
                 TextureViewCategory.Assets,
                 new List<string>() { "/obj" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Parts
             DisplayFileSection(
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Map
             DisplayFileSection(
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Other
             DisplayFileSection(
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Menu
             DisplayFileSection(
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // SFX
             DisplayFileSection(
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Font
             DisplayFileSection(
                 "Fonts",
                 TextureViewCategory.Particles,
                 new List<string>() { "/font" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Facegen
             DisplayFileSection(
                 "Facegen",
                 TextureViewCategory.Particles,
                 new List<string>() { "/facegen" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Item
             DisplayFileSection(
                 "Items",
                 TextureViewCategory.Particles,
                 new List<string>() { "/item" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
         }
     }
 
     public void DisplayFileCategories_DS1()
     {
-        if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
             // Chr
             DisplayFileSection(
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Object
             DisplayFileSection(
                 "Objects",
                 TextureViewCategory.Assets,
                 new List<string>() { "/obj" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Parts
             DisplayFileSection(
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Map
             DisplayFileSection(
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Other
             DisplayFileSection(
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Menu
             DisplayFileSection(
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // SFX
             DisplayFileSection(
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Font
             DisplayFileSection(
                 "Fonts",
                 TextureViewCategory.Particles,
                 new List<string>() { "/font" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Packed: Map
             DisplayFileSection(
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
         }
     }
 
     public void DisplayFileCategories_DS2()
     {
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             // Chr
             DisplayFileSection(
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/model/chr", "/model_lq/chr" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Object (model/object)
             DisplayFileSection(
                 "Objects",
                 TextureViewCategory.Objects,
                 new List<string>() { "/model/object", "/model_lq/object" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Parts (model/parts)
             DisplayFileSection(
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/model/parts", "/model_lq/parts" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Menu (menu)
             DisplayFileSection(
                 "Menu",
                 TextureViewCategory.Map,
                 new List<string>() { "/menu" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // SFX (sfx)
             DisplayFileSection(
                 "Particles",
                 TextureViewCategory.Map,
                 new List<string>() { "/sfx" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Packed: Map (model/map)
             DisplayFileSection(
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/model/map", "/model_lq/map" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
         }
     }
 
     public void DisplayFileCategories_DS3()
     {
-        if (Project.ProjectType is ProjectType.DS3)
+        if (Project.Descriptor.ProjectType is ProjectType.DS3)
         {
             // Chr
             DisplayFileSection(
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Object
             DisplayFileSection(
                 "Objects",
                 TextureViewCategory.Assets,
                 new List<string>() { "/obj" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Parts
             DisplayFileSection(
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Map
             DisplayFileSection(
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Other
             DisplayFileSection(
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Menu
             DisplayFileSection(
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // SFX
             DisplayFileSection(
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Font
             DisplayFileSection(
                 "Fonts",
                 TextureViewCategory.Particles,
                 new List<string>() { "/font" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Adhoc
             DisplayFileSection(
                 "Adhoc",
                 TextureViewCategory.Adhoc,
                 new List<string>() { "/adhoc" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Packed: Map
             DisplayFileSection(
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
         }
     }
 
     public void DisplayFileCategories_BB()
     {
-        if (Project.ProjectType is ProjectType.BB)
+        if (Project.Descriptor.ProjectType is ProjectType.BB)
         {
             // Chr
             DisplayFileSection(
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Object
             DisplayFileSection(
                 "Objects",
                 TextureViewCategory.Assets,
                 new List<string>() { "/obj" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Parts
             DisplayFileSection(
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Menu
             DisplayFileSection(
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // SFX
             DisplayFileSection(
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Packed: Map
             DisplayFileSection(
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
         }
     }
 
     public void DisplayFileCategories_SDT()
     {
-        if (Project.ProjectType is ProjectType.SDT)
+        if (Project.Descriptor.ProjectType is ProjectType.SDT)
         {
             // Chr
             DisplayFileSection(
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Object
             DisplayFileSection(
                 "Objects",
                 TextureViewCategory.Assets,
                 new List<string>() { "/obj" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Parts
             DisplayFileSection(
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Map
             DisplayFileSection(
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Menu
             DisplayFileSection(
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // SFX
             DisplayFileSection(
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Font
             DisplayFileSection(
                 "Fonts",
                 TextureViewCategory.Particles,
                 new List<string>() { "/font" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Packed: Map
             DisplayFileSection(
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
         }
     }
 
     public void DisplayFileCategories_ER()
     {
-        if (Project.ProjectType is ProjectType.ER)
+        if (Project.Descriptor.ProjectType is ProjectType.ER)
         {
             // Chr
             DisplayFileSection(
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Assets
             DisplayFileSection(
                 "Asset",
                 TextureViewCategory.Assets,
                 new List<string>() { "/asset" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Parts
             DisplayFileSection(
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Map
             DisplayFileSection(
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Menu
             DisplayFileSection(
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Other
             DisplayFileSection(
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // SFX
             DisplayFileSection(
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // High Definition Icons
             DisplayFileSection(
                 "HD Icons",
                 TextureViewCategory.HighDefinitionIcons,
                 new List<string>() { "solo" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
 
             // Map Tiles
             DisplayFileSection(
                 "Map Tiles",
                 TextureViewCategory.MapTiles,
                 new List<string>() { "maptile" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
         }
     }
 
     public void DisplayFileCategories_AC6()
     {
-        if (Project.ProjectType is ProjectType.AC6)
+        if (Project.Descriptor.ProjectType is ProjectType.AC6)
         {
             // Chr
             DisplayFileSection(
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Assets
             DisplayFileSection(
                 "Asset",
                 TextureViewCategory.Assets,
                 new List<string>() { "/asset" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             /// Parts
             DisplayFileSection(
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Map
             DisplayFileSection(
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Menu
             DisplayFileSection(
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Other
             DisplayFileSection(
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             /// SFX
             DisplayFileSection(
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Map Textures
             DisplayFileSection(
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
 
             // High Definition Icons
             DisplayFileSection(
                 "HD Icons",
                 TextureViewCategory.HighDefinitionIcons,
                 new List<string>() { "solo" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
 
             // Terms of Service
             DisplayFileSection(
                 "Terms of Service",
                 TextureViewCategory.TOS,
                 new List<string>() { "_tos_" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
         }
     }
 
     public void DisplayFileCategories_NR()
     {
-        if (Project.ProjectType is ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.NR)
         {
             // Chr
             DisplayFileSection(
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Assets
             DisplayFileSection(
                 "Asset",
                 TextureViewCategory.Assets,
                 new List<string>() { "/asset" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Parts
             DisplayFileSection(
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Map
             DisplayFileSection(
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Menu
             DisplayFileSection(
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // Other
             DisplayFileSection(
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // SFX
             DisplayFileSection(
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
-                Editor.Project.TextureData.PrimaryBank.Entries);
+                Editor.Project.Handler.TextureData.PrimaryBank.Entries);
 
             // High Definition Icons
             DisplayFileSection(
                 "HD Icons",
                 TextureViewCategory.HighDefinitionIcons,
                 new List<string>() { "solo" },
-                Editor.Project.TextureData.PrimaryBank.PackedEntries);
+                Editor.Project.Handler.TextureData.PrimaryBank.PackedEntries);
         }
     }
 }

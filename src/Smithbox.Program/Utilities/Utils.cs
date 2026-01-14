@@ -292,14 +292,14 @@ public static class Utils
 
     public static string GetLocalAssetPath(ProjectEntry project, string assetPath)
     {
-        if (assetPath.StartsWith(project.ProjectPath))
+        if (assetPath.StartsWith(project.Descriptor.ProjectPath))
         {
-            return assetPath.Replace(project.ProjectPath, "");
+            return assetPath.Replace(project.Descriptor.ProjectPath, "");
         }
 
-        if (assetPath.StartsWith(project.DataPath))
+        if (assetPath.StartsWith(project.Descriptor.DataPath))
         {
-            return assetPath.Replace(project.DataPath, "");
+            return assetPath.Replace(project.Descriptor.DataPath, "");
         }
 
         throw new DirectoryNotFoundException(

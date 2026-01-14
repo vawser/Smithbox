@@ -38,9 +38,47 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Editors\File Browser\Data\Enums\**" />
+    <Compile Remove="Editors\File Browser\Data\Models\**" />
+    <Compile Remove="Editors\Gparam Editor\Data\Models\**" />
     <Compile Remove="Editors\Map Editor\Enums\**" />
+    <Compile Remove="Editors\Model Editor\Data\Models\**" />
+    <EmbeddedResource Remove="Editors\File Browser\Data\Enums\**" />
+    <EmbeddedResource Remove="Editors\File Browser\Data\Models\**" />
+    <EmbeddedResource Remove="Editors\Gparam Editor\Data\Models\**" />
     <EmbeddedResource Remove="Editors\Map Editor\Enums\**" />
+    <EmbeddedResource Remove="Editors\Model Editor\Data\Models\**" />
+    <None Remove="Editors\File Browser\Data\Enums\**" />
+    <None Remove="Editors\File Browser\Data\Models\**" />
+    <None Remove="Editors\Gparam Editor\Data\Models\**" />
     <None Remove="Editors\Map Editor\Enums\**" />
+    <None Remove="Editors\Model Editor\Data\Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Editors\Map Editor\Enums\EditorVisibilityState.cs" />
+    <Compile Include="Editors\Map Editor\Enums\EditorVisibilityType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\EntityFilterType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\EntityIdBlockSeperatorType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\EntityNameDisplayType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\FileSelectionType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\GameVisibilityState.cs" />
+    <Compile Include="Editors\Map Editor\Enums\GameVisibilityType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\MapConnectionRelationType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\MapContentLoadState.cs" />
+    <Compile Include="Editors\Map Editor\Enums\MapContentViewType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\MapDuplicateToMapType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\MapEditorContext.cs" />
+    <Compile Include="Editors\Map Editor\Enums\MapValidationType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\MsbEntityType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\QueryMapListType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\QuerySelectionConditionLogic.cs" />
+    <Compile Include="Editors\Map Editor\Enums\ReplicateSquareSideType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\TargetMapGridType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\ViewportGridRootAxis.cs" />
+    <Compile Include="Editors\Map Editor\Enums\ViewportTargetGridType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\WorldMapImageSource.cs" />
+    <Compile Include="Editors\Map Editor\Enums\WorldMapTileType.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -87,15 +125,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Editors\File Browser\Data\Enums\" />
-    <Folder Include="Editors\File Browser\Data\Models\" />
     <Folder Include="Editors\File Browser\Actions\" />
+    <Folder Include="Editors\File Browser\Data\" />
     <Folder Include="Editors\File Browser\Utils\" />
     <Folder Include="Editors\File Browser\Tools\" />
-    <Folder Include="Editors\Gparam Editor\Data\Models\" />
     <Folder Include="Editors\Gparam Editor\Tools\" />
     <Folder Include="Editors\Material Editor\Tools\" />
-    <Folder Include="Editors\Model Editor\Data\Models\" />
   </ItemGroup>
 
 </Project>

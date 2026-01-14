@@ -79,15 +79,15 @@ public class ItemGib
         FieldDecorators.ParamReference_Title(refs, row);
         ParamFieldDecoratorRegisterRightClick($"ItemGib{paramName}ContextMenu");
         ImGui.SameLine();
-        FieldDecorators.ParamReference_Value(Editor.Project.ParamEditor, Editor.Project.ParamData.PrimaryBank, refs, row, value);
+        FieldDecorators.ParamReference_Value(Editor.Project.Handler.ParamEditor, Editor.Project.Handler.ParamData.PrimaryBank, refs, row, value);
         ParamFieldDecoratorRegisterRightClick($"ItemGib{paramName}ContextMenu");
 
         if (ImGui.BeginPopup($"ItemGib{paramName}ContextMenu"))
         {
             object newValue = value;
             if (FieldDecorators.Decorator_ContextMenuItems(
-                Editor.Project.ParamEditor,
-                Editor.Project.ParamData.PrimaryBank,
+                Editor.Project.Handler.ParamEditor,
+                Editor.Project.Handler.ParamData.PrimaryBank,
                 null,
                 value,
                 ref newValue,
@@ -110,7 +110,7 @@ public class ItemGib
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (!ItemGibSupported(Editor.Project.ProjectType))
+        if (!ItemGibSupported(Editor.Project.Descriptor.ProjectType))
         {
             return;
         }
@@ -174,7 +174,7 @@ public class ItemGib
                     }
 
                     // check if gem can be changed
-                    if (Project.ProjectType == ProjectType.ER && activeRow["gemMountType"].Value.Value as byte? == 2)
+                    if (Project.Descriptor.ProjectType == ProjectType.ER && activeRow["gemMountType"].Value.Value as byte? == 2)
                     {
                         ParamReferenceField(activeRow, "EquipParamGem", ref props.GemId);
                     }
@@ -183,7 +183,7 @@ public class ItemGib
                         props.ReinforceLvl = Math.Clamp(props.ReinforceLvl, 0, 10);
                     }
 
-                    if (Project.ProjectType == ProjectType.DS3)
+                    if (Project.Descriptor.ProjectType == ProjectType.DS3)
                     {
                         UIHelper.WrappedText("Durability");
                         ImGui.InputInt("##durability", ref props.Durability);
@@ -195,7 +195,7 @@ public class ItemGib
 
                     if (paramChanged) props.ReinforceLvl = 0;
 
-                    if (Project.ProjectType == ProjectType.DS3)
+                    if (Project.Descriptor.ProjectType == ProjectType.DS3)
                     {
                         UIHelper.WrappedText("Reinforcement Level");
                         ImGui.InputInt("##durability", ref props.ReinforceLvl);
@@ -250,7 +250,7 @@ public class ItemGib
         var gameOffsets = offsets.Bases.Find(x =>
         {
             var result = x.itemIDCategories.ContainsKey(paramType);
-            if (Project.ProjectType == ProjectType.ER)
+            if (Project.Descriptor.ProjectType == ProjectType.ER)
             {
                 result = result && x.ERItemGiveFuncOffset.HasValue && x.ERMapItemManOffset.HasValue;
             }
@@ -275,11 +275,11 @@ public class ItemGib
         }
 
 
-        if (Project.ProjectType == ProjectType.DS3)
+        if (Project.Descriptor.ProjectType == ProjectType.DS3)
         {
             memoryHandler.PlayerItemGive_DS3(finalItemIds, props.Quantity, props.Durability);
         }
-        else if (Project.ProjectType == ProjectType.ER)
+        else if (Project.Descriptor.ProjectType == ProjectType.ER)
         {
             memoryHandler.PlayerItemGive_ER(gameOffsets, finalItemIds, props.Quantity, props.GemId);
         }
@@ -330,7 +330,7 @@ public class ItemGib
                     TaskLogs.AddLog("No base weapon ID found for EquipParamCustomWeapon.");
                     return;
                 }
-                var equipParamWeapon = Editor.Project.ParamData.PrimaryBank.GetParamFromName("EquipParamWeapon")[equipParamWeaponId];
+                var equipParamWeapon = Editor.Project.Handler.ParamData.PrimaryBank.GetParamFromName("EquipParamWeapon")[equipParamWeaponId];
                 if (equipParamWeapon == null)
                 {
                     TaskLogs.AddLog($"EquipParamWeapon with ID {equipParamWeaponId} not found.");
@@ -348,7 +348,7 @@ public class ItemGib
 
     public GameOffsetsEntry GetGameOffsets()
     {
-        ProjectType game = Project.ProjectType;
+        ProjectType game = Project.Descriptor.ProjectType;
         if (!GameOffsetsEntry.GameOffsetBank.ContainsKey(game))
         {
             try

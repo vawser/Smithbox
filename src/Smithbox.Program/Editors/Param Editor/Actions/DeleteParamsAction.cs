@@ -58,7 +58,7 @@ public class DeleteParamsAction : EditorAction
         {
         }
 
-        Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
+        Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
 
         var curParam = Editor._activeView.Selection.GetActiveParam();
 

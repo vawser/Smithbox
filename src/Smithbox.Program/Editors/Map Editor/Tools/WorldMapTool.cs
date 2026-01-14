@@ -53,14 +53,14 @@ public class WorldMapTool : IResourceEventListener
             MapZoomFactor = GetDefaultZoomLevel();
         };
 
-        if (Editor.Project.ProjectType is ProjectType.ER)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER)
         {
             CurrentMapSource = WorldMapImageSource.LandsBetween;
 
             RegisterWorldMapListeners();
         }
 
-        if (Editor.Project.ProjectType is ProjectType.NR)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.NR)
         {
             CurrentMapSource = WorldMapImageSource.Limveld;
 
@@ -102,7 +102,7 @@ public class WorldMapTool : IResourceEventListener
         if (!IsMapWindowOpen)
             return;
 
-        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             DisplayMap();
         }
@@ -130,7 +130,7 @@ public class WorldMapTool : IResourceEventListener
     {
         if (ImGui.BeginMenu("Map Source"))
         {
-            if (Project.ProjectType is ProjectType.ER)
+            if (Project.Descriptor.ProjectType is ProjectType.ER)
             {
                 if (ImGui.MenuItem("Lands Between", KeyBindings.Current.MAP_ToggleWorldMap.HintText))
                 {
@@ -145,7 +145,7 @@ public class WorldMapTool : IResourceEventListener
                 UIHelper.Tooltip($"Switch the map image to this.");
             }
 
-            if (Project.ProjectType is ProjectType.NR)
+            if (Project.Descriptor.ProjectType is ProjectType.NR)
             {
                 if (ImGui.MenuItem("Limveld", KeyBindings.Current.MAP_ToggleWorldMap.HintText))
                 {
@@ -451,14 +451,14 @@ public class WorldMapTool : IResourceEventListener
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Project.ProjectType is ProjectType.ER)
+        if (Project.Descriptor.ProjectType is ProjectType.ER)
         {
             ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_vanilla", this, AccessLevel.AccessGPUOptimizedOnly);
 
             ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_sote", this, AccessLevel.AccessGPUOptimizedOnly);
         }
 
-        if (Project.ProjectType is ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.NR)
         {
             ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld", this, AccessLevel.AccessGPUOptimizedOnly);
 

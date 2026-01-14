@@ -22,7 +22,7 @@ public static class TextUtils
     /// </summary>
     public static bool IsSupportedLanguage(ProjectEntry project, TextContainerCategory category)
     {
-        switch (project.ProjectType)
+        switch (project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 return CategoryGroupings.DES_Languages.Contains(category);
@@ -53,7 +53,7 @@ public static class TextUtils
 
     public static List<TextContainerCategory> GetSupportedLanguages(ProjectEntry project)
     {
-        switch (project.ProjectType)
+        switch (project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 return CategoryGroupings.DES_Languages;
@@ -89,7 +89,7 @@ public static class TextUtils
     {
         var name = $"Unknown";
 
-        switch(project.ProjectType)
+        switch(project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -440,7 +440,7 @@ public static class TextUtils
     {
         var name = $"";
 
-        switch (project.ProjectType)
+        switch (project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -764,7 +764,7 @@ public static class TextUtils
     {
         var name = $"Unknown";
 
-        switch (project.ProjectType)
+        switch (project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -1114,7 +1114,7 @@ public static class TextUtils
     {
         var name = $"Unknown";
 
-        switch (project.ProjectType)
+        switch (project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -1619,7 +1619,7 @@ public static class TextUtils
         string pathLower = path.ToLowerInvariant();
 
         // Special-case: DES the msg folder has Japanese, so default to Japanese.
-        if(project.ProjectType is ProjectType.DES)
+        if(project.Descriptor.ProjectType is ProjectType.DES)
         {
             group = TextContainerCategory.Japanese;
         }
@@ -1840,7 +1840,7 @@ public static class TextUtils
     {
         if (!CFG.Current.TextEditor_EnableObsoleteContainerLoad)
         {
-            switch (project.ProjectType)
+            switch (project.Descriptor.ProjectType)
             {
                 // NR DLC update means these containers are no longer present
                 case ProjectType.NR:
@@ -1855,7 +1855,7 @@ public static class TextUtils
 
     public static string GetStoredTextDirectory(ProjectEntry project)
     {
-        return Path.Join(project.ProjectPath, ".smithbox", "Workflow", "Exported Text");
+        return Path.Join(project.Descriptor.ProjectPath, ".smithbox", "Workflow", "Exported Text");
     }
 
     public static List<string> GetStoredContainerWrappers(ProjectEntry project)

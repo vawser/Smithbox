@@ -11,7 +11,6 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class ShoeboxLayoutContainer
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public FileDictionaryEntry FileEntry;
@@ -20,9 +19,8 @@ public class ShoeboxLayoutContainer
 
     public Dictionary<string, List<SubTexture>> Textures = new Dictionary<string, List<SubTexture>>();
 
-    public ShoeboxLayoutContainer(Smithbox baseEditor, ProjectEntry project, FileDictionaryEntry fileEntry)
+    public ShoeboxLayoutContainer(ProjectEntry project, FileDictionaryEntry fileEntry)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
         FileEntry = fileEntry;
@@ -34,7 +32,7 @@ public class ShoeboxLayoutContainer
 
         try
         {
-            var shoeboxData = Project.FS.ReadFile(FileEntry.Path);
+            var shoeboxData = Project.VFS.FS.ReadFile(FileEntry.Path);
 
             LoadLayouts(FileEntry, (Memory<byte>)shoeboxData);
             BuildTextureDictionary();

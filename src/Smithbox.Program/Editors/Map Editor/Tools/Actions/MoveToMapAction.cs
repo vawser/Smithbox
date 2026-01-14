@@ -84,7 +84,7 @@ public class MoveToMapAction
 
         ImGui.BeginChild("##mapMoveSelectionSection", sectionSize, ImGuiChildFlags.Borders);
 
-        foreach (var entry in Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
         {
             var mapID = entry.Key.Filename;
             var map = entry.Value.MapContainer;

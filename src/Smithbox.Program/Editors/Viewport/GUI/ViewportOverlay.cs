@@ -6,11 +6,9 @@ namespace StudioCore.Editors.Viewport;
 public class ViewportOverlay
 {
     public Viewport Parent;
-    public Smithbox BaseEditor;
 
-    public ViewportOverlay(Smithbox baseEditor, Viewport parent)
+    public ViewportOverlay(Viewport parent)
     {
-        this.BaseEditor = baseEditor;
         Parent = parent;
     }
 

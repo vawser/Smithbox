@@ -66,9 +66,9 @@ public class TexPropertyView
                 ImGui.Text("");
                 ImGui.Text($"Relative Position: {relativePos}");
 
-                if (Editor.Project.TextureData.PrimaryBank.ShoeboxEntries != null)
+                if (Editor.Project.Handler.TextureData.PrimaryBank.ShoeboxEntries != null)
                 {
-                    var shoeboxEntry = Editor.Project.TextureData.PrimaryBank.ShoeboxEntries.FirstOrDefault();
+                    var shoeboxEntry = Editor.Project.Handler.TextureData.PrimaryBank.ShoeboxEntries.FirstOrDefault();
 
                     if (shoeboxEntry.Value != null)
                     {

@@ -7,11 +7,11 @@ public static class Test_FLVER2
 {
     public static List<string> Output = new List<string>();
 
-    public static void Display(Smithbox baseEditor, ProjectEntry project)
+    public static void Display(ProjectEntry project)
     {
         if (ImGui.Button("Check Loaded Model for Byte Perfectness", DPI.StandardButtonSize))
         {
-            Run(baseEditor);
+            Run();
         }
 
         ImGui.Separator();
@@ -23,7 +23,7 @@ public static class Test_FLVER2
         }
     }
 
-    public static void Run(Smithbox baseEditor)
+    public static void Run()
     {
 
     }

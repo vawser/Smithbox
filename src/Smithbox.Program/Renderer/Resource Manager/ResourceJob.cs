@@ -86,7 +86,7 @@ public class ResourceJob
 
     public static LoadTPFTextureResourceRequest[] LoadTPFResources(LoadTPFResourcesAction action)
     {
-        var project = Smithbox.ProjectManager.SelectedProject;
+        var project = Smithbox.Orchestrator.SelectedProject;
 
         // If tpf is null this is a loose file load.
         if (action._tpf == null)
@@ -112,11 +112,11 @@ public class ResourceJob
             // VFS
             else
             {
-                if (project.FS.FileExists(action._filePath))
+                if (project.VFS.FS.FileExists(action._filePath))
                 {
                     try
                     {
-                        var fileData = project.FS.ReadFile(action._filePath);
+                        var fileData = project.VFS.FS.ReadFile(action._filePath);
                         action._tpf = TPF.Read(fileData.Value);
                     }
                     catch (Exception e)

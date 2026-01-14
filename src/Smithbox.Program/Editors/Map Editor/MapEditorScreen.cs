@@ -19,7 +19,6 @@ namespace StudioCore.Editors.MapEditor;
 /// </summary>
 public class MapEditorScreen : EditorScreen
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     /// <summary>
@@ -106,12 +105,11 @@ public class MapEditorScreen : EditorScreen
     // Special Tools
     public AutomaticPreviewTool AutomaticPreviewTool;
 
-    public MapEditorScreen(Smithbox baseEditor, ProjectEntry project)
+    public MapEditorScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
-        MapViewportView = new MapViewportView(this, project, baseEditor);
+        MapViewportView = new MapViewportView(this, project);
         MapViewportView.Setup();
 
         Universe = new Universe(this, project);
@@ -710,7 +708,7 @@ public class MapEditorScreen : EditorScreen
             UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.");
             UIHelper.ShowActiveStatus(HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
 
-            if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             {
                 if (ImGui.MenuItem("Fall Protection"))
                 {
@@ -745,7 +743,7 @@ public class MapEditorScreen : EditorScreen
 
     public void Save(bool autoSave = false)
     {
-        if (Project.ProjectType == ProjectType.Undefined)
+        if (Project.Descriptor.ProjectType == ProjectType.Undefined)
             return;
 
         try
@@ -758,7 +756,7 @@ public class MapEditorScreen : EditorScreen
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
 
 
@@ -786,7 +784,7 @@ public class MapEditorScreen : EditorScreen
                 MessageBoxIcon.Error);
             if (result == DialogResult.Yes)
             {
-                foreach (var entry in Project.MapData.MapFiles.Entries)
+                foreach (var entry in Project.Handler.MapData.MapFiles.Entries)
                 {
                     var currentContainer = Selection.GetMapContainerFromMapID(entry.Filename);
 

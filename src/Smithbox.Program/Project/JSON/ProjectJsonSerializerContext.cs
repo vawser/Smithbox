@@ -15,8 +15,8 @@ namespace StudioCore.Application;
 [JsonSerializable(typeof(KeyBind))]
 
 // Project
-[JsonSerializable(typeof(ProjectEntry))]
-[JsonSerializable(typeof(LegacyProjectJSON))]
+[JsonSerializable(typeof(ProjectDescriptor))]
+[JsonSerializable(typeof(LegacyProjectDescriptor))]
 
 [JsonSerializable(typeof(FileDictionary))]
 [JsonSerializable(typeof(FileDictionaryEntry))]

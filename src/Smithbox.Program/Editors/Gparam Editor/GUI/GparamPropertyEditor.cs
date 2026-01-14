@@ -54,7 +54,7 @@ public class GparamPropertyEditor
             int intInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -98,7 +98,7 @@ public class GparamPropertyEditor
 
             var strval = $@"{uintInput}";
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -142,7 +142,7 @@ public class GparamPropertyEditor
             int shortInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -181,7 +181,7 @@ public class GparamPropertyEditor
             int sbyteInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -222,7 +222,7 @@ public class GparamPropertyEditor
 
             var strval = $@"{byteInput}";
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)

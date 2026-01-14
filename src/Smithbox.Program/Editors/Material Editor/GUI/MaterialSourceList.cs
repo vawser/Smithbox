@@ -21,7 +21,7 @@ public class MaterialSourceList
 
     public void Draw()
     {
-        if (Project.MaterialData.PrimaryBank == null)
+        if (Project.Handler.MaterialData.PrimaryBank == null)
             return;
 
         Editor.FocusManager.SwitchMaterialEditorContext(MaterialEditorContext.SourceList);
@@ -62,7 +62,7 @@ public class MaterialSourceList
 
         if (Editor.Selection.SourceType is MaterialSourceType.MTD)
         {
-            var wrappers = Project.MaterialData.PrimaryBank.MTDs;
+            var wrappers = Project.Handler.MaterialData.PrimaryBank.MTDs;
 
             if (wrappers != null)
             {
@@ -83,7 +83,7 @@ public class MaterialSourceList
                     for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
                     {
                         var key = filteredEntries[i];
-                        var curWrapper = Project.MaterialData.PrimaryBank.MTDs[key];
+                        var curWrapper = Project.Handler.MaterialData.PrimaryBank.MTDs[key];
 
                         var displayName = $"{key.Filename}";
 
@@ -114,7 +114,7 @@ public class MaterialSourceList
         {
             if (Editor.Selection.SourceType is MaterialSourceType.MATBIN)
             {
-                var wrappers = Project.MaterialData.PrimaryBank.MATBINs;
+                var wrappers = Project.Handler.MaterialData.PrimaryBank.MATBINs;
 
                 if (wrappers != null)
                 {
@@ -135,7 +135,7 @@ public class MaterialSourceList
                         for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
                         {
                             var key = filteredEntries[i];
-                            var curWrapper = Project.MaterialData.PrimaryBank.MATBINs[key];
+                            var curWrapper = Project.Handler.MaterialData.PrimaryBank.MATBINs[key];
 
                             var displayName = $"{key.Filename}";
 

@@ -15,11 +15,11 @@ public partial class ParamTools
         {
                 if (ImGui.MenuItem($"Selected Param"))
                 {
-                    Project.ParamData.PrimaryBank.ImportRowNamesForParam(ParamImportRowNameSourceType.Community, Editor._activeView.Selection.GetActiveParam());
+                    Project.Handler.ParamData.PrimaryBank.ImportRowNamesForParam(ParamImportRowNameSourceType.Community, Editor._activeView.Selection.GetActiveParam());
                 }
                 if (ImGui.MenuItem($"All"))
                 {
-                    Project.ParamData.PrimaryBank.ImportRowNames( ParamImportRowNameSourceType.Community);
+                    Project.Handler.ParamData.PrimaryBank.ImportRowNames( ParamImportRowNameSourceType.Community);
                 }
 
                 ImGui.EndMenu();
@@ -31,11 +31,11 @@ public partial class ParamTools
                 {
                     if (ImGui.MenuItem($"Selected Param"))
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNamesForParam(ParamImportRowNameSourceType.Developer, Editor._activeView.Selection.GetActiveParam());
+                        Project.Handler.ParamData.PrimaryBank.ImportRowNamesForParam(ParamImportRowNameSourceType.Developer, Editor._activeView.Selection.GetActiveParam());
                     }
                     if (ImGui.MenuItem($"All"))
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Developer);
+                        Project.Handler.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Developer);
                     }
                     ImGui.EndMenu();
                 }
@@ -50,7 +50,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNamesForParam(ParamImportRowNameSourceType.External, Editor._activeView.Selection.GetActiveParam(), filePath);
+                        Project.Handler.ParamData.PrimaryBank.ImportRowNamesForParam(ParamImportRowNameSourceType.External, Editor._activeView.Selection.GetActiveParam(), filePath);
                     }
                 }
 
@@ -61,7 +61,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.External, filePath);
+                        Project.Handler.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.External, filePath);
                     }
                 }
                 ImGui.EndMenu();
@@ -77,7 +77,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNamesForParam_CSV(filePath, Editor._activeView.Selection.GetActiveParam());
+                        Project.Handler.ParamData.PrimaryBank.ImportRowNamesForParam_CSV(filePath, Editor._activeView.Selection.GetActiveParam());
                     }
                 }
                 UIHelper.Tooltip("This will import the external names from a CSV file, matching via row ID.");
@@ -94,7 +94,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNamesForParam_Legacy(folderPath);
+                        Project.Handler.ParamData.PrimaryBank.ImportRowNamesForParam_Legacy(folderPath);
                     }
                 }
                 UIHelper.Tooltip("This will import the external names from a legacy row name file (older Stripped Row Name folder), matching via row index.");
@@ -106,7 +106,7 @@ public partial class ParamTools
 
                     if (result)
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNamesForParam_Legacy(folderPath, Editor._activeView.Selection.GetActiveParam());
+                        Project.Handler.ParamData.PrimaryBank.ImportRowNamesForParam_Legacy(folderPath, Editor._activeView.Selection.GetActiveParam());
                     }
                 }
                 UIHelper.Tooltip("This will import the external names from a legacy row name file (Stripped Row Name folder), matching via row index.");

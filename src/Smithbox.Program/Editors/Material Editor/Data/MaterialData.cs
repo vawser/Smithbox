@@ -13,9 +13,8 @@ namespace StudioCore.Editors.MaterialEditor;
 /// Holds the data banks for Materials.
 /// Data Flow: Full Load
 /// </summary>
-public class MaterialData
+public class MaterialData : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public FileDictionary MTD_Files = new();
@@ -26,9 +25,8 @@ public class MaterialData
 
     public MaterialDisplayConfiguration MaterialDisplayConfiguration;
 
-    public MaterialData(Smithbox baseEditor, ProjectEntry project)
+    public MaterialData(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -36,30 +34,30 @@ public class MaterialData
     {
         await Task.Yield();
 
-        MTD_Files.Entries =  Project.FileDictionary.Entries
+        MTD_Files.Entries =  Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Folder.StartsWith("/mtd"))
             .Where(e => e.Extension == "mtdbnd")
             .ToList();
 
         // DS2 has it as a single .bnd file
-        if(Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if(Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            MTD_Files.Entries = Project.FileDictionary.Entries
+            MTD_Files.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Folder.StartsWith("/material"))
             .Where(e => e.Filename == "allmaterialbnd")
             .ToList();
         }
 
-        MATBIN_Files.Entries = Project.FileDictionary.Entries
+        MATBIN_Files.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Folder.StartsWith("/material"))
             .Where(e => e.Extension == "matbinbnd")
             .ToList();
 
-        PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
-        VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);
+        PrimaryBank = new("Primary", Project, Project.VFS.FS);
+        VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
 
         // Material Display Configuration
         Task<bool> matDispTask = SetupMaterialDisplayConfiguration();
@@ -67,11 +65,11 @@ public class MaterialData
 
         if (matDispTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Setup Material Display Configuration.");
+            TaskLogs.AddLog($"[Material Editor] Setup Material Display Configuration.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to setup Material Display Configuration.");
+            TaskLogs.AddError($"[Material Editor] Failed to setup Material Display Configuration.");
         }
 
         // Primary Bank
@@ -80,7 +78,7 @@ public class MaterialData
 
         if (!primaryBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to fully setup Primary Bank.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Material Editor] Failed to fully setup Primary Bank.");
         }
 
         // Vanilla Bank
@@ -89,7 +87,7 @@ public class MaterialData
 
         if (!vanillaBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to fully setup Vanilla Bank.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Material Editor] Failed to fully setup Vanilla Bank.");
         }
 
         return true;
@@ -106,10 +104,10 @@ public class MaterialData
         MaterialDisplayConfiguration = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MATERIAL", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MATERIAL", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Display Configuration.json");
 
-        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "MATERIAL", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "MATERIAL", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var projectFile = Path.Combine(projectFolder, "Display Configuration.json");
 
         var targetFile = sourceFile;
@@ -142,4 +140,20 @@ public class MaterialData
 
         return true;
     }
+
+    #region Dispose
+    public void Dispose()
+    {
+        MTD_Files = null;
+        MATBIN_Files = null;
+
+        PrimaryBank?.Dispose();
+        VanillaBank?.Dispose();
+
+        PrimaryBank = null;
+        VanillaBank = null;
+
+        MaterialDisplayConfiguration = null;
+    }
+    #endregion
 }

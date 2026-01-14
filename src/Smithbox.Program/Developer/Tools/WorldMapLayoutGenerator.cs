@@ -127,7 +127,7 @@ public static class WorldMapLayoutGenerator
 
     public static bool GenerateDLC = false;
 
-    public static void Display(Smithbox baseEditor, ProjectEntry project)
+    public static void Display(ProjectEntry project)
     {
         if (ImGui.BeginTable($"worldMapGenTable", 3, ImGuiTableFlags.SizingFixedFit))
         {

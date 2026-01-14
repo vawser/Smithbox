@@ -72,7 +72,7 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
             ColorSpaceHandling.Legacy);
     }
 
-    public void Draw(ProjectManager projectManager)
+    public void Draw(ProjectOrchestrator projectManager)
     {
         var width = Window.Width;
         var height = Window.Height;

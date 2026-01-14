@@ -119,7 +119,7 @@ public class LocalSearchTool
             // Find the first property that matches the given name.
             // Definitely replace this (along with everything else, really).
             HashSet<Type> typeCache = new();
-            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 if (entry.Value.MapContainer == null)
                 {
@@ -165,7 +165,7 @@ public class LocalSearchTool
             if (SearchValue(newSearch))
             {
                 FoundObjects.Clear();
-                foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+                foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
                 {
                     if (entry.Value.MapContainer == null)
                     {
@@ -224,7 +224,7 @@ public class LocalSearchTool
 
         ImGui.Columns(1);
 
-        var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
         var sectionHeight = windowSize.Y * 0.3f;
         var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());

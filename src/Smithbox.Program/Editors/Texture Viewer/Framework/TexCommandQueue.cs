@@ -36,16 +36,16 @@ public class TexCommandQueue
 
     public void HandleView(string filename, string textureName)
     {
-        var targetFile = Project.TextureData.TextureFiles.Entries.FirstOrDefault(e => e.Filename == filename);
+        var targetFile = Project.Handler.TextureData.TextureFiles.Entries.FirstOrDefault(e => e.Filename == filename);
 
         if (targetFile == null)
             return;
 
-        Task<bool> loadTask = Project.TextureData.PrimaryBank.LoadTextureBinder(targetFile);
+        Task<bool> loadTask = Project.Handler.TextureData.PrimaryBank.LoadTextureBinder(targetFile);
 
         Task.WaitAll(loadTask);
 
-        var targetBinder = Project.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == targetFile.Filename);
+        var targetBinder = Project.Handler.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == targetFile.Filename);
 
         if (targetBinder.Key != null)
         {

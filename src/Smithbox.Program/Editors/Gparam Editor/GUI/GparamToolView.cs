@@ -20,7 +20,7 @@ public class GparamToolView
     /// </summary>
     public void Display()
     {
-        if (Project.ProjectType == ProjectType.Undefined)
+        if (Project.Descriptor.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

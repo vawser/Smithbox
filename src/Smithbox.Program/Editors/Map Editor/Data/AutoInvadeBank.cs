@@ -27,7 +27,7 @@ public class AutoInvadeBank
 
     public bool CanUse()
     {
-        if (Project.ProjectType is ProjectType.ER)
+        if (Project.Descriptor.ProjectType is ProjectType.ER)
             return true;
 
         return false;
@@ -38,11 +38,11 @@ public class AutoInvadeBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.MapData.AutoInvadeBinders.Entries)
+        foreach (var entry in Project.Handler.MapData.AutoInvadeBinders.Entries)
         {
             try
             {
-                var binderData = Project.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
+                var binderData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
 
                 try
                 {
@@ -58,18 +58,18 @@ public class AutoInvadeBank
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {file.Name} as AIP", LogLevel.Error, LogPriority.High, e);
+                            TaskLogs.AddLog($"[Map Editor] Failed to read {file.Name} as AIP", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {entry.Path} as AIPBND", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} as AIPBND", LogLevel.Error, LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {entry.Path} from VFS", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} from VFS", LogLevel.Error, LogPriority.High, e);
             }
         }
     }
@@ -97,12 +97,12 @@ public class AutoInvadeBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.MapData.AutoInvadeBinders.Entries)
+        foreach (var entry in Project.Handler.MapData.AutoInvadeBinders.Entries)
         {
             // File
             try
             {
-                var binderData = Project.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
+                var binderData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
 
                 try
                 {
@@ -142,17 +142,17 @@ public class AutoInvadeBank
                     if (applyEdit)
                     {
                         var binderOutput = binder.Write();
-                        Project.ProjectFS.WriteFile(entry.Path, binderOutput);
+                        Project.VFS.ProjectFS.WriteFile(entry.Path, binderOutput);
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to write {entry.Path} as AIPBND", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddLog($"[Map Editor] Failed to write {entry.Path} as AIPBND", LogLevel.Error, LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {entry.Path} from VFS", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} from VFS", LogLevel.Error, LogPriority.High, e);
             }
         }
     }

@@ -11,16 +11,11 @@ namespace StudioCore.Application;
 
 public class ActionLogger
 {
-    private ProjectManager ProjectManager;
-
     public bool IsDisplayed = false;
     private ImGuiDir CurrentDir = ImGuiDir.Right;
     private bool InitialLayout = false;
 
-    public ActionLogger(ProjectManager manager)
-    {
-        ProjectManager = manager;
-    }
+    public ActionLogger() { }
 
     public void DisplayTopbarToggle()
     {

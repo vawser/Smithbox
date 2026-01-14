@@ -23,7 +23,7 @@ public static class AliasHelper
 
     public static string GetAliasName(this ProjectEntry project, ProjectAliasType aliasType, string id)
     {
-        if (!project.CommonData.Aliases.TryGetValue(aliasType, out var aliases)) return string.Empty;
+        if (!project.Handler.ProjectData.Aliases.TryGetValue(aliasType, out var aliases)) return string.Empty;
         var alias = aliases.FirstOrDefault(e => e.ID == id);
         return alias?.Name ?? string.Empty;
     }
@@ -55,13 +55,13 @@ public static class AliasHelper
 
     public static string GetMapNameAlias(ProjectEntry project, string name)
     {
-        project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapNames, out var aliases);
+        project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapNames, out var aliases);
         return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
 
     public static List<string> GetMapTags(ProjectEntry project, string name)
     {
-        project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapNames, out var aliases);
+        project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapNames, out var aliases);
 
         var alias = aliases?.FirstOrDefault(e => e.ID == name);
         if (alias != null)
@@ -72,23 +72,23 @@ public static class AliasHelper
 
     public static string GetCharacterAlias(ProjectEntry project, string name)
     {
-        project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out var aliases);
+        project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out var aliases);
         return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
     public static string GetAssetAlias(ProjectEntry project, string name)
     {
-        project.CommonData.Aliases.TryGetValue(ProjectAliasType.Assets, out var aliases);
+        project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Assets, out var aliases);
         return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
 
     public static string GetPartAlias(ProjectEntry project, string name)
     {
-        project.CommonData.Aliases.TryGetValue(ProjectAliasType.Parts, out var aliases);
+        project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Parts, out var aliases);
         return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
     public static string GetMapPieceAlias(ProjectEntry project, string name)
     {
-        project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out var aliases);
+        project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out var aliases);
         return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
 
@@ -132,7 +132,7 @@ public static class AliasHelper
     // Gparam Editor
     public static string GetGparamAliasName(ProjectEntry project, string gparamName)
     {
-        if (!project.CommonData.Aliases.TryGetValue(ProjectAliasType.Gparams, out var aliases)) return string.Empty;
+        if (!project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Gparams, out var aliases)) return string.Empty;
 
         var mPrefix = gparamName;
         var sPrefix = gparamName;
@@ -373,10 +373,10 @@ public static class AliasHelper
 
     public static string FindPlayerCharacterName(ProjectEntry project, Entity e, string modelName)
     {
-        if (project.ParamEditor == null)
+        if (project.Handler.ParamEditor == null)
             return "";
 
-        if (project.TextEditor == null)
+        if (project.Handler.TextEditor == null)
             return "";
 
         var aliasName = "";
@@ -384,7 +384,7 @@ public static class AliasHelper
         int npcId = e.GetPropertyValue<int>("NPCParamID");
         try
         {
-            var param = project.ParamData.PrimaryBank.GetParamFromName("NpcParam");
+            var param = project.Handler.ParamData.PrimaryBank.GetParamFromName("NpcParam");
             if (param != null)
             {
                 Param.Row row = param[npcId];
@@ -402,7 +402,7 @@ public static class AliasHelper
                         var result = term;
 
                         var searchValue = int.Parse(term);
-                        var textResult = TextFinder.GetTextResult(project.TextEditor, "Title_Characters", searchValue);
+                        var textResult = TextFinder.GetTextResult(project.Handler.TextEditor, "Title_Characters", searchValue);
 
                         if (textResult != null)
                         {
@@ -428,7 +428,7 @@ public static class AliasHelper
 
     public static string FindSystemCharacterName(ProjectEntry project, Entity e, string modelName)
     {
-        if (project.ParamEditor == null)
+        if (project.Handler.ParamEditor == null)
             return "";
 
         var aliasName = "";
@@ -436,7 +436,7 @@ public static class AliasHelper
         int npcId = e.GetPropertyValue<int>("NPCParamID");
         try
         {
-            var param = project.ParamData.PrimaryBank.GetParamFromName("NpcParam");
+            var param = project.Handler.ParamData.PrimaryBank.GetParamFromName("NpcParam");
             if (param != null)
             {
                 Param.Row row = param[npcId];
@@ -451,24 +451,24 @@ public static class AliasHelper
 
     public static string FindTreasureName(ProjectEntry project, Entity e)
     {
-        if (project.ParamEditor == null)
+        if (project.Handler.ParamEditor == null)
             return "";
 
         var aliasName = "";
 
         int itemlotId = e.GetPropertyValue<int>("ItemLotID");
 
-        if (project.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
             itemlotId = e.GetPropertyValue<int>("ItemLot1");
 
-        if (project.ProjectType is ProjectType.DES)
+        if (project.Descriptor.ProjectType is ProjectType.DES)
         {
             var treasureObject = (MSBD.Event.Treasure)e.WrappedObject;
 
             itemlotId = treasureObject.ItemLots[0];
         }
 
-        if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
             var treasureObject = (MSB1.Event.Treasure)e.WrappedObject;
 
@@ -479,12 +479,12 @@ public static class AliasHelper
         {
             var paramName = "ItemLotParam";
 
-            if (project.ProjectType is ProjectType.ER or ProjectType.NR)
+            if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             {
                 paramName = "ItemLotParam_map";
             }
 
-            var param = project.ParamData.PrimaryBank.GetParamFromName(paramName);
+            var param = project.Handler.ParamData.PrimaryBank.GetParamFromName(paramName);
             if (param != null)
             {
                 Param.Row row = param[itemlotId];

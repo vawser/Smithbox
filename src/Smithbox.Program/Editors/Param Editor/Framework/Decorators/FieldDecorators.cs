@@ -50,44 +50,44 @@ public class FieldDecorators
 
         if (cellMeta != null)
         {
-            if (cellMeta.ShowParticleEnumList && editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry>? particles))
+            if (cellMeta.ShowParticleEnumList && editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry>? particles))
             {
                 result |= AliasEnum_ContextMenuItems(particles, oldval, ref newval);
             }
 
-            if (cellMeta.ShowSoundEnumList && editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry>? sounds))
+            if (cellMeta.ShowSoundEnumList && editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry>? sounds))
             {
                 result |= AliasEnum_ContextMenuItems(sounds, oldval, ref newval);
             }
 
-            if (cellMeta.ShowFlagEnumList && editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry>? eventFlags))
+            if (cellMeta.ShowFlagEnumList && editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry>? eventFlags))
             {
                 result |= AliasEnum_ContextMenuItems(eventFlags, oldval, ref newval);
             }
 
-            if (cellMeta.ShowCutsceneEnumList && editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Cutscenes, out List<AliasEntry>? cutscenes))
+            if (cellMeta.ShowCutsceneEnumList && editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Cutscenes, out List<AliasEntry>? cutscenes))
             {
                 result |= AliasEnum_ContextMenuItems(cutscenes, oldval, ref newval);
             }
 
-            if (cellMeta.ShowMovieEnumList && editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Movies, out List<AliasEntry>? movies))
+            if (cellMeta.ShowMovieEnumList && editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Movies, out List<AliasEntry>? movies))
             {
                 result |= AliasEnum_ContextMenuItems(movies, oldval, ref newval);
             }
 
-            if (cellMeta.ShowCharacterEnumList && editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry>? characters))
+            if (cellMeta.ShowCharacterEnumList && editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry>? characters))
             {
                 result |= CharacterAliasEnum_ContextMenuItems(characters, oldval, ref newval);
             }
 
-            if (cellMeta.TileRef != null && editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapNames, out List<AliasEntry>? mapNames))
+            if (cellMeta.TileRef != null && editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapNames, out List<AliasEntry>? mapNames))
             {
                 result |= TileRef_ContextMenuItems(mapNames, oldval, ref newval);
             }
 
             if (cellMeta.ShowProjectEnumList && cellMeta.ProjectEnumType != null)
             {
-                var optionList = editor.Project.CommonData.ProjectEnums.List.Where(e => e.Name == cellMeta.ProjectEnumType).FirstOrDefault();
+                var optionList = editor.Project.Handler.ProjectData.ProjectEnums.List.Where(e => e.Name == cellMeta.ProjectEnumType).FirstOrDefault();
 
                 if (optionList != null)
                 {
@@ -187,7 +187,7 @@ public class FieldDecorators
             return;
         }
 
-        var enumEntry = editor.Project.CommonData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+        var enumEntry = editor.Project.Handler.ProjectData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
         if (enumEntry != null)
         {
@@ -212,7 +212,7 @@ public class FieldDecorators
     {
         if (CFG.Current.Param_HideEnums == false) //Move preference
         {
-            var enumEntry = editor.Project.CommonData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+            var enumEntry = editor.Project.Handler.ProjectData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
             if (enumEntry != null)
             {
@@ -802,7 +802,7 @@ public class FieldDecorators
                     continue;
                 }
 
-                var meta = editor.Project.ParamData.GetParamMeta(bank.Params[rt].AppliedParamdef);
+                var meta = editor.Project.Handler.ParamData.GetParamMeta(bank.Params[rt].AppliedParamdef);
                 var maxResultsPerRefType = 15 / reftypes.Count;
                 List<Param.Row> rows = editor.MassEditHandler.rse.Search((bank, bank.Params[rt]),
                     _refContextCurrentAutoComplete, true, true);
@@ -855,7 +855,7 @@ public class FieldDecorators
         {
             foreach (KeyValuePair<string, Param> param in bank.Params)
             {
-                var curMeta = editor.Project.ParamData.GetParamMeta(param.Value.AppliedParamdef);
+                var curMeta = editor.Project.Handler.ParamData.GetParamMeta(param.Value.AppliedParamdef);
 
                 var paramdef = param.Value.AppliedParamdef;
 
@@ -864,7 +864,7 @@ public class FieldDecorators
 
                 foreach (PARAMDEF.Field f in paramdef.Fields)
                 {
-                    var curFieldMeta = editor.Project.ParamData.GetParamFieldMeta(curMeta, f);
+                    var curFieldMeta = editor.Project.Handler.ParamData.GetParamFieldMeta(curMeta, f);
 
                     if (curFieldMeta != null)
                     {
@@ -895,11 +895,11 @@ public class FieldDecorators
             {
                 List<string> matchedExtRefPath =
                     currentRef.paths.Select(x => string.Format(x, searchValue)).ToList();
-                ExtRefItem(context, fieldName, $"modded {currentRef.name}", matchedExtRefPath, editor.Project.ProjectPath,
+                ExtRefItem(context, fieldName, $"modded {currentRef.name}", matchedExtRefPath, editor.Project.Descriptor.ProjectPath,
                     editor);
 
                 ExtRefItem(context, fieldName, $"vanilla {currentRef.name}", matchedExtRefPath,
-                    editor.Project.DataPath, editor);
+                    editor.Project.Descriptor.DataPath, editor);
             }
         }
     }
@@ -1181,7 +1181,7 @@ public class FieldDecorators
     /// <param name="oldval"></param>
     public static void FieldIcon_Display(ParamEditorScreen editor, TextureViewerScreen textureViewer, IconConfig fieldIcon, Param.Row context, dynamic oldval, string fieldName, int columnIndex)
     {
-        if (editor.Project.TextureViewer == null)
+        if (editor.Project.Handler.TextureViewer == null)
             return;
 
         // Required to stop the LowRequirements build from failing
@@ -1320,11 +1320,11 @@ public class FieldDecorators
                     break;
             }
 
-            var firstRow = editor.Project.ParamData.PrimaryBank.Params[paramString].Rows.First();
+            var firstRow = editor.Project.Handler.ParamData.PrimaryBank.Params[paramString].Rows.First();
             var internalName = "";
             var displayName = "";
 
-            var targetMeta = editor.Project.ParamData.GetParamMeta(firstRow.Def);
+            var targetMeta = editor.Project.Handler.ParamData.GetParamMeta(firstRow.Def);
 
             foreach (var col in firstRow.Columns)
             {
@@ -1334,7 +1334,7 @@ public class FieldDecorators
                 {
                     internalName = col.Def.InternalName;
 
-                    var cellmeta = editor.Project.ParamData.GetParamFieldMeta(targetMeta, col.Def);
+                    var cellmeta = editor.Project.Handler.ParamData.GetParamFieldMeta(targetMeta, col.Def);
                     displayName = cellmeta.AltName;
                 }
             }
@@ -1416,7 +1416,7 @@ public class FieldDecorators
         {
             List<(string, ParamRef)> paramitems = new();
 
-            var curMeta = editor.Project.ParamData.GetParamMeta(param.Value.AppliedParamdef);
+            var curMeta = editor.Project.Handler.ParamData.GetParamMeta(param.Value.AppliedParamdef);
 
             if (param.Value.AppliedParamdef == null)
                 continue;
@@ -1424,7 +1424,7 @@ public class FieldDecorators
             //get field
             foreach (PARAMDEF.Field f in param.Value.AppliedParamdef.Fields)
             {
-                var meta = editor.Project.ParamData.GetParamFieldMeta(curMeta, f);
+                var meta = editor.Project.Handler.ParamData.GetParamFieldMeta(curMeta, f);
                 if (meta == null || meta.RefTypes == null)
                 {
                     continue;
@@ -1473,9 +1473,9 @@ public class FieldDecorators
             var xAxisTitle = "";
             var yAxisTitle = "";
 
-            if (editor.Project.ParamData.GraphLegends != null && editor.Project.ParamData.GraphLegends.Entries != null)
+            if (editor.Project.Handler.ParamData.GraphLegends != null && editor.Project.Handler.ParamData.GraphLegends.Entries != null)
             {
-                var entry = editor.Project.ParamData.GraphLegends.Entries
+                var entry = editor.Project.Handler.ParamData.GraphLegends.Entries
                     .FirstOrDefault(e => e.RowID == $"{row.ID}");
                 if (entry != null)
                 {
@@ -1558,11 +1558,11 @@ public class FieldDecorators
                         {
                             string fileName = $"graph_export_{row.ID}.csv";
                             ExportGraphDataToCsv(Path.Join(exportPath, fileName), xValues, values);
-                            TaskLogs.AddLog($"[{editor.Project.ProjectName}:Param Editor] Exported graph data for row {row.ID}.");
+                            TaskLogs.AddLog($"[{editor.Project.Descriptor.ProjectName}:Param Editor] Exported graph data for row {row.ID}.");
                         }
                         catch (Exception ex)
                         {
-                            TaskLogs.AddLog($"[{editor.Project.ProjectName}:Param Editor] Failed to export graph data for row {row.ID}.", LogLevel.Error, LogPriority.High, ex);
+                            TaskLogs.AddLog($"[{editor.Project.Descriptor.ProjectName}:Param Editor] Failed to export graph data for row {row.ID}.", LogLevel.Error, LogPriority.High, ex);
                         }
                     }
                 }
@@ -1631,7 +1631,7 @@ public class FieldDecorators
     /// <param name="value"></param>
     public static void TileRef_Value(ParamEditorScreen editor, string enumType, string value)
     {
-        if (CFG.Current.Param_HideEnums == false && editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapNames, out List<AliasEntry>? mapNames))
+        if (CFG.Current.Param_HideEnums == false && editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapNames, out List<AliasEntry>? mapNames))
         {
             var resultID = "";
             var resultName = "";

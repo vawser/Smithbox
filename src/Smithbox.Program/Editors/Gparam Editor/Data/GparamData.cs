@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
-public class GparamData
+public class GparamData : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public FileDictionary GparamFiles = new();
@@ -22,9 +21,8 @@ public class GparamData
     public FormatResource GparamInformation;
     public FormatEnum GparamEnums;
 
-    public GparamData(Smithbox baseEditor, ProjectEntry project)
+    public GparamData(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -32,14 +30,14 @@ public class GparamData
     {
         await Task.Yield();
 
-        GparamFiles.Entries = Project.FileDictionary.Entries
+        GparamFiles.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Folder.StartsWith("/param/drawparam"))
             .Where(e => e.Extension == "gparam")
             .ToList();
 
-        PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
-        VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);
+        PrimaryBank = new("Primary", Project, Project.VFS.FS);
+        VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Setup();
@@ -47,7 +45,7 @@ public class GparamData
 
         if (!primaryBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to fully setup Primary Bank.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Graphics Param Editor] Failed to fully setup Primary Bank.");
         }
 
         // Vanilla Bank
@@ -56,7 +54,7 @@ public class GparamData
 
         if (!vanillaBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to fully setup Primary Bank.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Graphics Param Editor] Failed to fully setup Primary Bank.");
         }
 
         // GPARAM Information
@@ -65,11 +63,11 @@ public class GparamData
 
         if (gparamInfoResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Setup GPARAM information.");
+            TaskLogs.AddLog($"[Graphics Param Editor] Setup GPARAM information.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to setup GPARAM information.");
+            TaskLogs.AddError($"[Graphics Param Editor] Failed to setup GPARAM information.");
         }
 
         // GPARAM Enums
@@ -78,11 +76,11 @@ public class GparamData
 
         if (gparamEnumResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Setup GPARAM enums.");
+            TaskLogs.AddLog($"[Graphics Param Editor] Setup GPARAM enums.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to setup GPARAM enums.");
+            TaskLogs.AddError($"[Graphics Param Editor] Failed to setup GPARAM enums.");
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
@@ -96,10 +94,10 @@ public class GparamData
         GparamEnums = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
-        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var projectFile = Path.Combine(projectFolder, "Core.json");
 
         var targetFile = sourceFile;
@@ -141,10 +139,10 @@ public class GparamData
         GparamEnums = new();
 
         // Enums
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Enums.json");
 
-        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var projectFile = Path.Combine(projectFolder, "Enums.json");
 
         var targetFile = sourceFile;
@@ -177,4 +175,19 @@ public class GparamData
 
         return true;
     }
+
+    #region Dispose
+    public void Dispose()
+    {
+        PrimaryBank?.Dispose();
+        VanillaBank?.Dispose();
+
+        PrimaryBank = null;
+        VanillaBank = null;
+
+        GparamFiles = null;
+        GparamInformation = null;
+        GparamEnums = null;
+    }
+    #endregion
 }

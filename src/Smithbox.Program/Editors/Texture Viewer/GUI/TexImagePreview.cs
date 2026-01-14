@@ -46,17 +46,17 @@ public class TexImagePreview : IResourceEventListener
     {
         var resourceKey = $"{fieldName}_{columnIndex}";
 
-        if (Project.ParamData.IconConfigurations == null)
+        if (Project.Handler.ParamData.IconConfigurations == null)
             return false;
 
         // Check Icon Config, if not present then don't attempt to load or display anything
         if (iconConfig == null)
             return false;
 
-        if (Project.ParamData.IconConfigurations.Configurations == null)
+        if (Project.Handler.ParamData.IconConfigurations.Configurations == null)
             return false;
 
-        var iconEntry = Project.ParamData.IconConfigurations.Configurations.Where(e => e.Name == iconConfig.TargetConfiguration).FirstOrDefault();
+        var iconEntry = Project.Handler.ParamData.IconConfigurations.Configurations.Where(e => e.Name == iconConfig.TargetConfiguration).FirstOrDefault();
 
         if (iconEntry == null)
             return false;
@@ -64,16 +64,16 @@ public class TexImagePreview : IResourceEventListener
         // If icon texture resource doesn't exist yet, load it
         if (!LoadedResources.ContainsKey(resourceKey))
         {
-            var targetFile = Project.TextureData.TextureFiles.Entries.FirstOrDefault(e => e.Filename == iconEntry.File);
+            var targetFile = Project.Handler.TextureData.TextureFiles.Entries.FirstOrDefault(e => e.Filename == iconEntry.File);
 
             if(targetFile == null)
                 return false;
 
-            Task<bool> loadTask = Project.TextureData.PrimaryBank.LoadTextureBinder(targetFile);
+            Task<bool> loadTask = Project.Handler.TextureData.PrimaryBank.LoadTextureBinder(targetFile);
 
             Task.WaitAll(loadTask);
 
-            var targetBinder = Project.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == targetFile.Filename);
+            var targetBinder = Project.Handler.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == targetFile.Filename);
 
             int index = 0;
 
@@ -243,13 +243,13 @@ public class TexImagePreview : IResourceEventListener
 
     public SubTexture GetMatchingSubTexture(string currentTextureName, string imageIndex, string namePrepend)
     {
-        if (Editor.Project.TextureData.ShoeboxFiles == null)
+        if (Editor.Project.Handler.TextureData.ShoeboxFiles == null)
             return null;
 
-        if (Editor.Project.TextureData.ShoeboxFiles.Entries == null)
+        if (Editor.Project.Handler.TextureData.ShoeboxFiles.Entries == null)
             return null;
 
-        var shoeboxEntry = Editor.Project.TextureData.PrimaryBank.ShoeboxEntries.FirstOrDefault();
+        var shoeboxEntry = Editor.Project.Handler.TextureData.PrimaryBank.ShoeboxEntries.FirstOrDefault();
 
         if(shoeboxEntry.Value == null)
             return null;

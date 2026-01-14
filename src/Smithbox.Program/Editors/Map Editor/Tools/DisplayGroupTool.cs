@@ -30,7 +30,7 @@ public class DisplayGroupTool
 
     public void SetupDrawgroupCount()
     {
-        switch (Editor.Project.ProjectType)
+        switch (Editor.Project.Descriptor.ProjectType)
         {
             // imgui checkbox click seems to break at some point after 8 (8*32) checkboxes, so let's just hope that never happens, yeah?
             case ProjectType.DES:
@@ -51,7 +51,7 @@ public class DisplayGroupTool
                 _dispGroupCount = 8; //?
                 break;
             default:
-                throw new Exception($"Error: Did not expect Gametype {Editor.Project.ProjectType}");
+                throw new Exception($"Error: Did not expect Gametype {Editor.Project.Descriptor.ProjectType}");
                 //break;
         }
     }

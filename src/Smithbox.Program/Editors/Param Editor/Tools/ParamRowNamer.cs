@@ -22,7 +22,7 @@ public class ParamRowNamer
 
     public void RowNamerMenu()
     {
-        if (!Editor.Project.EnableTextEditor)
+        if (!Editor.Project.Descriptor.EnableTextEditor)
             return;
 
         if (!Editor._activeView.Selection.ActiveParamExists())
@@ -33,13 +33,13 @@ public class ParamRowNamer
             var selectedParam = Editor._activeView.Selection;
             var activeParam = selectedParam.GetActiveParam();
 
-            if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.NR)
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             {
                 if (activeParam == "BehaviorParam" || activeParam == "BehaviorParam_PC")
                 {
                     if (ImGui.MenuItem("Behavior"))
                     {
-                        if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                        if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                         {
                             var rows = selectedParam.GetSelectedRows();
 
@@ -53,7 +53,7 @@ public class ParamRowNamer
                 {
                     if (ImGui.MenuItem("Item Lots: Map"))
                     {
-                        if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                        if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                         {
                             var rows = selectedParam.GetSelectedRows();
 
@@ -68,7 +68,7 @@ public class ParamRowNamer
                 {
                     if (ImGui.MenuItem("Item Lots: Enemy"))
                     {
-                        if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                        if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                         {
                             var rows = selectedParam.GetSelectedRows();
 
@@ -84,7 +84,7 @@ public class ParamRowNamer
             {
                 if (ImGui.MenuItem("Weapons"))
                 {
-                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
@@ -97,7 +97,7 @@ public class ParamRowNamer
             {
                 if (ImGui.MenuItem("Goods"))
                 {
-                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
@@ -110,7 +110,7 @@ public class ParamRowNamer
             {
                 if (ImGui.MenuItem("Armor"))
                 {
-                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
@@ -123,7 +123,7 @@ public class ParamRowNamer
             {
                 if (ImGui.MenuItem("Accessories"))
                 {
-                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
@@ -136,7 +136,7 @@ public class ParamRowNamer
             {
                 if (ImGui.MenuItem("Attach Effects"))
                 {
-                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
@@ -149,7 +149,7 @@ public class ParamRowNamer
             {
                 if (ImGui.MenuItem("Non-Player Characters"))
                 {
-                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
@@ -162,7 +162,7 @@ public class ParamRowNamer
             {
                 if (ImGui.MenuItem("Non-Player Character Thinks"))
                 {
-                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
@@ -178,7 +178,7 @@ public class ParamRowNamer
     }
     public void HandleGenericParam(string activeParam, string targetParam, string fmgName, List<Param.Row> rows)
     {
-        var fmgs = Editor.Project.TextData.PrimaryBank.Entries;
+        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Entries;
 
         if (activeParam == targetParam)
         {
@@ -198,7 +198,7 @@ public class ParamRowNamer
 
     public void HandleNpcParam(string activeParam, string targetParam, List<Param.Row> rows)
     {
-        Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters);
+        Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters);
 
         if (activeParam == targetParam)
         {
@@ -225,7 +225,7 @@ public class ParamRowNamer
 
     public void HandleEquipParam(string activeParam, string targetParam, int itemCategory, List<Param.Row> rows)
     {
-        var fmgs = Editor.Project.TextData.PrimaryBank.Entries;
+        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Entries;
 
         if (activeParam == targetParam)
         {
@@ -284,7 +284,7 @@ public class ParamRowNamer
     {
         if (activeParam == "BehaviorParam" || activeParam == "BehaviorParam_PC")
         {
-            Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases);
+            Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases);
             foreach (var row in rows)
             {
                 var refID = $"{row["refId"].Value.Value}";
@@ -298,7 +298,7 @@ public class ParamRowNamer
                     {
                         if (activeParam == "BehaviorParam")
                         {
-                            var AtkParam_Npc = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Npc").FirstOrDefault();
+                            var AtkParam_Npc = Editor.Project.Handler.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Npc").FirstOrDefault();
 
                             if (AtkParam_Npc.Value != null)
                             {
@@ -308,7 +308,7 @@ public class ParamRowNamer
                         }
                         else if (activeParam == "BehaviorParam_PC")
                         {
-                            var AtkParam_PC = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").FirstOrDefault();
+                            var AtkParam_PC = Editor.Project.Handler.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").FirstOrDefault();
                             if (AtkParam_PC.Value != null)
                             {
                                 var param = AtkParam_PC.Value;
@@ -319,7 +319,7 @@ public class ParamRowNamer
                     // Bullet 
                     if (equipType == "1")
                     {
-                        var Bullet = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "Bullet").FirstOrDefault();
+                        var Bullet = Editor.Project.Handler.ParamData.PrimaryBank.Params.Where(e => e.Key == "Bullet").FirstOrDefault();
                         if (Bullet.Value != null)
                         {
                             var param = Bullet.Value;
@@ -329,7 +329,7 @@ public class ParamRowNamer
                     // SpEffect 
                     if (equipType == "2")
                     {
-                        var SpEffectParam = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").FirstOrDefault();
+                        var SpEffectParam = Editor.Project.Handler.ParamData.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").FirstOrDefault();
                         if (SpEffectParam.Value != null)
                         {
                             var param = SpEffectParam.Value;
@@ -387,14 +387,14 @@ public class ParamRowNamer
                 if (row.Name != "")
                 {
                     // AtkParam
-                    var AtkParam_PC = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").FirstOrDefault();
+                    var AtkParam_PC = Editor.Project.Handler.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").FirstOrDefault();
                     if (AtkParam_PC.Value != null)
                     {
                         var param = AtkParam_PC.Value;
                         AddNameToReferencedRow(param, row, atkId_Bullet, "Bullet");
                     }
 
-                    var AtkParam_Npc = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Npc").FirstOrDefault();
+                    var AtkParam_Npc = Editor.Project.Handler.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Npc").FirstOrDefault();
 
                     if (AtkParam_Npc.Value != null)
                     {
@@ -403,7 +403,7 @@ public class ParamRowNamer
                     }
 
                     // Bullet
-                    var Bullet = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "Bullet").FirstOrDefault();
+                    var Bullet = Editor.Project.Handler.ParamData.PrimaryBank.Params.Where(e => e.Key == "Bullet").FirstOrDefault();
                     if (Bullet.Value != null)
                     {
                         var param = Bullet.Value;
@@ -412,7 +412,7 @@ public class ParamRowNamer
                     }
 
                     // SpEffect
-                    var SpEffectParam = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").FirstOrDefault();
+                    var SpEffectParam = Editor.Project.Handler.ParamData.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").FirstOrDefault();
                     if (SpEffectParam.Value != null)
                     {
                         var param = Bullet.Value;
@@ -440,7 +440,7 @@ public class ParamRowNamer
 
     public void HandleItemLotParamMap(string activeParam, List<Param.Row> rows)
     {
-        var fmgs = Editor.Project.TextData.PrimaryBank.Entries;
+        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Entries;
 
         if (activeParam == "ItemLotParam_map")
         {
@@ -460,7 +460,7 @@ public class ParamRowNamer
 
     public string GetName_ItemLotParamMap(Param.Row row)
     {
-        Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapNames, out List<AliasEntry> mapNames);
+        Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapNames, out List<AliasEntry> mapNames);
 
         var newName = "";
         var prefix = "";
@@ -623,7 +623,7 @@ public class ParamRowNamer
 
     public void HandleItemLotParamEnemy(string activeParam, List<Param.Row> rows)
     {
-        var fmgs = Editor.Project.TextData.PrimaryBank.Entries;
+        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Entries;
 
         if (activeParam == "ItemLotParam_enemy")
         {
@@ -643,7 +643,7 @@ public class ParamRowNamer
 
     public string GetName_ItemLotParamEnemy(Param.Row row)
     {
-        Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out var characterAliases);
+        Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out var characterAliases);
 
         var newName = "";
         var prefix = "";
@@ -759,7 +759,7 @@ public class ParamRowNamer
     {
         var newName = "";
 
-        foreach (var (fileEntry, wrapper) in Editor.Project.TextData.PrimaryBank.Entries)
+        foreach (var (fileEntry, wrapper) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
         {
             if (wrapper.ContainerDisplayCategory is not TextContainerCategory.English)
                 continue;
@@ -837,7 +837,7 @@ public class ParamRowNamer
     {
         var newName = "";
 
-        foreach (var (fileEntry, wrapper) in Editor.Project.TextData.PrimaryBank.Entries)
+        foreach (var (fileEntry, wrapper) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
         {
             if (wrapper.ContainerDisplayCategory is not TextContainerCategory.English)
                 continue;

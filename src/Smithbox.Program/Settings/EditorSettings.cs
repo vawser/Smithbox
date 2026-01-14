@@ -21,12 +21,7 @@ namespace StudioCore.Application;
 #region System
 public class SystemTab
 {
-    public Smithbox BaseEditor;
-
-    public SystemTab(Smithbox baseEditor)
-    {
-        BaseEditor = baseEditor;
-    }
+    public SystemTab() { }
 
     public void Display()
     {
@@ -95,7 +90,7 @@ public class SystemTab
 
             if(ImGui.Button("Clear Backup Files", DPI.WholeWidthButton(width, 24)))
             {
-                var root = Smithbox.ProjectManager.SelectedProject.ProjectPath;
+                var root = Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath;
 
                 var filesToDelete = GetBackupFiles(root);
 
@@ -126,10 +121,6 @@ public class SystemTab
             UIHelper.Tooltip("This will clear all files with the .prev and .bak extension from your project.");
 
             ImGui.Separator();
-
-            // Project Name Prefix
-            ImGui.Checkbox("Display Project Type Prefix in Project List", ref CFG.Current.DisplayProjectPrefix);
-            UIHelper.Tooltip("If enabled, the prefix for the project type will be displayed in the project list for each project.");
 
             // Default Project Directory
             if (ImGui.Button("Select##projectDirSelect", DPI.StandardButtonSize))
@@ -223,11 +214,11 @@ public class SystemTab
 
             if (ImGui.Button("Clear Auto-Load##clearProjectAutoload", DPI.StandardButtonSize))
             {
-                foreach (var project in Smithbox.ProjectManager.Projects)
+                foreach (var project in Smithbox.Orchestrator.Projects)
                 {
-                    project.AutoSelect = false;
+                    project.Descriptor.AutoSelect = false;
 
-                    Smithbox.ProjectManager.SaveProject(project);
+                    Smithbox.Orchestrator.SaveProject(project);
                 }
             }
             UIHelper.Tooltip("Clear the project that has been set as primary, so no project is loaded on Smithbox start.");
@@ -323,12 +314,7 @@ public class SystemTab
 #region Map Editor
 public class MapEditorTab
 {
-    public Smithbox BaseEditor;
-
-    public MapEditorTab(Smithbox baseEditor)
-    {
-        BaseEditor = baseEditor;
-    }
+    public MapEditorTab() { }
 
     public void Display()
     {
@@ -353,7 +339,7 @@ public class MapEditorTab
         }
 
         // Map Collision
-        if (Smithbox.ProjectManager.SelectedProject.ProjectType is ProjectType.DS1R)
+        if (Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectType is ProjectType.DS1R)
         {
             if (ImGui.CollapsingHeader("Map Collision", ImGuiTreeNodeFlags.DefaultOpen))
             {
@@ -533,13 +519,7 @@ public class MapEditorTab
 #region Model Editor
 public class ModelEditorTab
 {
-    public Smithbox BaseEditor;
-
-    public ModelEditorTab(Smithbox baseEditor)
-    {
-        BaseEditor = baseEditor;
-    }
-
+    public ModelEditorTab() { }
     public void Display()
     {
         // General
@@ -594,12 +574,7 @@ public class ModelEditorTab
 #region Text Editor
 public class TextEditorTab
 {
-    public Smithbox BaseEditor;
-
-    public TextEditorTab(Smithbox baseEditor)
-    {
-        BaseEditor = baseEditor;
-    }
+    public TextEditorTab() { }
 
     public void Display()
     {
@@ -622,9 +597,9 @@ public class TextEditorTab
         // Primary Category
         if (ImGui.CollapsingHeader("Primary Category", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            if (Smithbox.ProjectManager.SelectedProject != null)
+            if (Smithbox.Orchestrator.SelectedProject != null)
             {
-                var curProject = Smithbox.ProjectManager.SelectedProject;
+                var curProject = Smithbox.Orchestrator.SelectedProject;
 
                 if (ImGui.BeginCombo("Primary Category##primaryCategoryCombo", CFG.Current.TextEditor_PrimaryCategory.GetDisplayName()))
                 {
@@ -639,9 +614,9 @@ public class TextEditorTab
                                 CFG.Current.TextEditor_PrimaryCategory = (TextContainerCategory)entry;
 
                                 // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.ParamEditor != null)
+                                if (curProject.Handler.ParamEditor != null)
                                 {
-                                    curProject.ParamEditor.DecoratorHandler.ClearFmgDecorators();
+                                    curProject.Handler.ParamEditor.DecoratorHandler.ClearFmgDecorators();
                                 }
                             }
                         }
@@ -757,18 +732,13 @@ public class TextEditorTab
 #region Param Editor
 public class ParamEditorTab
 {
-    public Smithbox BaseEditor;
-
-    public ParamEditorTab(Smithbox baseEditor)
-    {
-        BaseEditor = baseEditor;
-    }
+    public ParamEditorTab() { }
 
     public void Display()
     {
-        if (Smithbox.ProjectManager.SelectedProject != null)
+        if (Smithbox.Orchestrator.SelectedProject != null)
         {
-            var curProject = Smithbox.ProjectManager.SelectedProject;
+            var curProject = Smithbox.Orchestrator.SelectedProject;
 
             // General
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
@@ -802,21 +772,21 @@ public class ParamEditorTab
 
                     if (dialog is DialogResult.Yes)
                     {
-                        curProject.ParamData.CreateProjectMetadata();
+                        curProject.Handler.ParamData.CreateProjectMetadata();
                     }
                 }
 
                 if (ImGui.Checkbox("Use project metadata", ref CFG.Current.Param_UseProjectMeta))
                 {
-                    curProject.ParamData.ParamMeta.Clear();
-                    curProject.ParamData.ReloadMeta();
+                    curProject.Handler.ParamData.ParamMeta.Clear();
+                    curProject.Handler.ParamData.ReloadMeta();
                 }
                 UIHelper.Tooltip("Use project-specific metadata instead of Smithbox's base versions.");
             }
 
             if (ImGui.CollapsingHeader("Regulation Data", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                switch (curProject.ProjectType)
+                switch (curProject.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DES);
@@ -859,7 +829,7 @@ public class ParamEditorTab
                 UIHelper.Tooltip("If enabled, row names are stripped upon save, meaning no row names will be stored in the regulation.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
 
 
-                switch (curProject.ProjectType)
+                switch (curProject.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DES);
@@ -901,7 +871,7 @@ public class ParamEditorTab
                 }
                 UIHelper.Tooltip("If enabled, stripped row names that have been stored will be applied to the row names during param loading.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
 
-                if (curProject.ProjectType is ProjectType.ER && curProject.ParamData.PrimaryBank.ParamVersion >= 11210015L)
+                if (curProject.Descriptor.ProjectType is ProjectType.ER && curProject.Handler.ParamData.PrimaryBank.ParamVersion >= 11210015L)
                 {
                     ImGui.Checkbox("Save regulation.bin as DCX.DFLT", ref CFG.Current.Param_SaveERAsDFLT);
                     UIHelper.Tooltip("If enabled, the regulation will be saved with the DCX.DFLT compression instead of the ZSTD compression that Elden Ring uses post patch 1.12.1.\n\nEnable if you want to load the regulation in an older tool that doesn't support ZSTD compression.");
@@ -1115,7 +1085,7 @@ public class ParamEditorTab
             }
 
             // Ignore if no game offsets exist for the project type
-            if (curProject.ParamData.ParamMemoryOffsets != null && curProject.ParamData.ParamMemoryOffsets.list != null)
+            if (curProject.Handler.ParamData.ParamMemoryOffsets != null && curProject.Handler.ParamData.ParamMemoryOffsets.list != null)
             {
                 // Auto-set to the latest version
                 if (ImGui.CollapsingHeader("Param Reloader", ImGuiTreeNodeFlags.DefaultOpen))
@@ -1127,7 +1097,7 @@ public class ParamEditorTab
                     UIHelper.Tooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");
 
                     var index = CFG.Current.SelectedGameOffsetData;
-                    string[] options = curProject.ParamData.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
+                    string[] options = curProject.Handler.ParamData.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
 
                     if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
                     {
@@ -1147,12 +1117,8 @@ public class ParamEditorTab
 #region Graphics Param Editor
 public class GparamEditorTab
 {
-    public Smithbox BaseEditor;
 
-    public GparamEditorTab(Smithbox baseEditor)
-    {
-        BaseEditor = baseEditor;
-    }
+    public GparamEditorTab() { }
 
     public void Display()
     {
@@ -1326,12 +1292,7 @@ public class GparamEditorTab
 #region Texture Viewer
 public class TextureViewerTab
 {
-    public Smithbox BaseEditor;
-
-    public TextureViewerTab(Smithbox baseEditor)
-    {
-        BaseEditor = baseEditor;
-    }
+    public TextureViewerTab() { }
 
     public void Display()
     {
@@ -1367,15 +1328,12 @@ public class TextureViewerTab
 #region Interface
 public class InterfaceTab
 {
-    public Smithbox BaseEditor;
-
     private float _tempScale;
     private string newThemeName = "";
     private string currentThemeName = "";
 
-    public InterfaceTab(Smithbox baseEditor)
+    public InterfaceTab()
     {
-        BaseEditor = baseEditor;
         _tempScale = CFG.Current.System_UI_Scale;
 
         currentThemeName = CFG.Current.SelectedTheme;
@@ -1738,12 +1696,7 @@ public class InterfaceTab
 #region Viewport
 public class ViewportTab
 {
-    public Smithbox BaseEditor;
-
-    public ViewportTab(Smithbox baseEditor)
-    {
-        BaseEditor = baseEditor;
-    }
+    public ViewportTab() { }
 
     public void Display()
     {

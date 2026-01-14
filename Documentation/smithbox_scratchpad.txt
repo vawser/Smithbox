@@ -1,0 +1,6 @@
+#---------------------
+# TODO 
+#---------------------
+- Apply Foundry project flow changes
+- Update the code structuring in Param Editor to better match the Foundry implementation
+- Implement lazy-loading for FMGs (copy Foundry impl) and Materials (will need tying into the resource manager stuff)

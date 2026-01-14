@@ -8,14 +8,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MsbMeta
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public Dictionary<string, MapEntityPropertyMeta> _MsbMetas = new();
 
-    public MsbMeta(Smithbox baseEditor, ProjectEntry project)
+    public MsbMeta(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 

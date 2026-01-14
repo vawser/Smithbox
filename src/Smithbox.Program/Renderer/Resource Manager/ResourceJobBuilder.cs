@@ -96,7 +96,7 @@ public class ResourceJobBuilder
 
         ResourceManager.InFlightFiles.Add(virtualPath);
 
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
         var relativePath = PathBuilder.GetRelativePath(curProject, virtualPath);
 
         IResourceLoadPipeline pipeline;
@@ -106,7 +106,7 @@ public class ResourceJobBuilder
             return;
         }
 
-        if (!curProject.FS.FileExists(relativePath) && !virtualPath.Contains("direct"))
+        if (!curProject.VFS.FS.FileExists(relativePath) && !virtualPath.Contains("direct"))
         {
             return;
         }
@@ -161,7 +161,7 @@ public class ResourceJobBuilder
 
         ResourceManager.InFlightFiles.Add(virtualPath);
 
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
         var absPath = PathBuilder.GetAbsolutePath(curProject, virtualPath);
 
         IResourceLoadPipeline pipeline;
@@ -200,7 +200,7 @@ public class ResourceJobBuilder
     /// </summary>
     public void AddPostTextureLoadTask()
     {
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         foreach (KeyValuePair<string, IResourceHandle> r in ResourceManager.ResourceDatabase)
         {
@@ -213,13 +213,13 @@ public class ResourceJobBuilder
                 // DS1 
                 if (CFG.Current.MapEditor_TextureLoad_MapPieces)
                 {
-                    if (curProject.ProjectType is ProjectType.DS1)
+                    if (curProject.Descriptor.ProjectType is ProjectType.DS1)
                     {
                         if (virtPath.StartsWith("map/tex"))
                         {
                             if (curProject != null)
                             {
-                                path = Path.Join(curProject.DataPath, "map", "tx", $"{Path.GetFileName(virtPath)}.tpf");
+                                path = Path.Join(curProject.Descriptor.DataPath, "map", "tx", $"{Path.GetFileName(virtPath)}.tpf");
                             }
                         }
 
@@ -238,7 +238,7 @@ public class ResourceJobBuilder
                 // as some models make use of textures from others.
                 if (CFG.Current.MapEditor_TextureLoad_Objects)
                 {
-                    if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                    if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                     {
                         if (virtPath.Contains("aet"))
                         {
@@ -274,7 +274,7 @@ public class ResourceJobBuilder
 
     public void AddWorldMapLoadTask()
     {
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         if (curProject == null)
             return;
@@ -287,7 +287,7 @@ public class ResourceJobBuilder
 
                 // Smithbox
                 // For loading the world map TPFs
-                if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+                if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
                 {
                     if (virtPath.Contains("smithbox"))
                     {

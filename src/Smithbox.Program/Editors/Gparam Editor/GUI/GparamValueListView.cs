@@ -216,7 +216,7 @@ public class GparamValueListView
     {
         ImGui.AlignTextToFramePadding();
 
-        string desc = FormatInformationUtils.GetReferenceDescription(Project.GparamData.GparamInformation, Editor.Selection._selectedParamGroup.Key, Editor.Selection._selectedParamField.Key);
+        string desc = FormatInformationUtils.GetReferenceDescription(Project.Handler.GparamData.GparamInformation, Editor.Selection._selectedParamGroup.Key, Editor.Selection._selectedParamField.Key);
 
         UIHelper.WrappedText($"Type: {GparamUtils.GetReadableObjectTypeName(field)}");
         UIHelper.WrappedText($"");
@@ -228,7 +228,7 @@ public class GparamValueListView
         }
 
         // Show enum list if they exist
-        var propertyEnum = FormatInformationUtils.GetEnumForProperty(Project.GparamData.GparamInformation, Project.GparamData.GparamEnums, field.Key);
+        var propertyEnum = FormatInformationUtils.GetEnumForProperty(Project.Handler.GparamData.GparamInformation, Project.Handler.GparamData.GparamEnums, field.Key);
 
         if (propertyEnum != null)
         {

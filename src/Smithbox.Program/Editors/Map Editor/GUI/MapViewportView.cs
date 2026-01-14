@@ -10,7 +10,6 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapViewportView
 {
-    public Smithbox BaseEditor;
     public MapEditorScreen Editor;
     public ProjectEntry Project;
 
@@ -28,14 +27,13 @@ public class MapViewportView
 
     public PlacementEntity PlacementOrb;
 
-    public MapViewportView(MapEditorScreen editor, ProjectEntry project, Smithbox baseEditor)
+    public MapViewportView(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
-        BaseEditor = baseEditor;
 
-        Window = baseEditor._context.Window;
-        Device = baseEditor._context.Device;
+        Window = Smithbox.Instance._context.Window;
+        Device = Smithbox.Instance._context.Device;
 
         Rect = Window.Bounds;
 
@@ -49,13 +47,13 @@ public class MapViewportView
     {
         if (Device != null && !Smithbox.LowRequirementsMode)
         {
-            Viewport = new Viewport.Viewport(BaseEditor, Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
+            Viewport = new Viewport.Viewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
 
             RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
         }
         else
         {
-            Viewport = new NullViewport(BaseEditor, Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
+            Viewport = new NullViewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
         }
     }
 

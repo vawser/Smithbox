@@ -56,11 +56,11 @@ public class ParamRowView
 
             DisplayHeader(ref doFocus, isActiveView, ref scrollTo, activeParam);
 
-            Param para = Editor.Project.ParamData.PrimaryBank.Params[activeParam];
+            Param para = Editor.Project.Handler.ParamData.PrimaryBank.Params[activeParam];
 
-            HashSet<int> vanillaDiffCache = Editor.Project.ParamData.PrimaryBank.GetVanillaDiffRows(activeParam);
+            HashSet<int> vanillaDiffCache = Editor.Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(activeParam);
 
-            var auxDiffCaches = Editor.Project.ParamData.AuxBanks.Select((bank, i) =>
+            var auxDiffCaches = Editor.Project.Handler.ParamData.AuxBanks.Select((bank, i) =>
                 (bank.Value.GetVanillaDiffRows(activeParam), bank.Value.GetPrimaryDiffRows(activeParam))).ToList();
 
             Param.Column compareCol = View.Selection.GetCompareCol();
@@ -69,10 +69,10 @@ public class ParamRowView
             //ImGui.BeginChild("rows" + activeParam);
             if (ParamEditorDecorations.ImGuiTableStdColumns("rowList", compareCol == null ? 1 : 2, false))
             {
-                var curParam = Editor.Project.ParamData.PrimaryBank.Params[activeParam];
-                var meta = Editor.Project.ParamData.GetParamMeta(curParam.AppliedParamdef);
+                var curParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[activeParam];
+                var meta = Editor.Project.Handler.ParamData.GetParamMeta(curParam.AppliedParamdef);
 
-                var pinnedRowList = Editor.Project.PinnedRows
+                var pinnedRowList = Editor.Project.Descriptor.PinnedRows
                     .GetValueOrDefault(activeParam, new List<int>()).Select(id => para[id]).ToList();
 
                 ImGui.TableSetupColumn("rowCol", ImGuiTableColumnFlags.None, 1f);
@@ -149,7 +149,7 @@ public class ParamRowView
                 }
 
                 List<Param.Row> rows = UICache.GetCached(Editor, (View.ViewIndex, activeParam),
-                    () => Editor.MassEditHandler.rse.Search((Editor.Project.ParamData.PrimaryBank, para),
+                    () => Editor.MassEditHandler.rse.Search((Editor.Project.Handler.ParamData.PrimaryBank, para),
 
                 View.Selection.GetCurrentRowSearchString(), true, true));
 
@@ -611,12 +611,12 @@ public class ParamRowView
                 if (ParamFieldInput.UpdateProperty(Editor, Editor.EditorActionManager, c, compareColProp,
                         c.Value))
                 {
-                    if (Project.TextureViewer != null)
+                    if (Project.Handler.TextureViewer != null)
                     {
-                        Project.TextureViewer.ImagePreview.ClearIcons();
+                        Project.Handler.TextureViewer.ImagePreview.ClearIcons();
                     }
 
-                    Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, r, activeParam);
+                    Editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, r, activeParam);
                 }
 
                 ImGui.PopStyleVar();
@@ -688,7 +688,7 @@ public class ParamRowView
 
                 // Paste
                 if (ImGui.Selectable(@$"Paste", false,
-                        Editor.Project.ParamData.PrimaryBank.ClipboardRows.Any() ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+                        Editor.Project.Handler.ParamData.PrimaryBank.ClipboardRows.Any() ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
                 }
@@ -758,12 +758,12 @@ public class ParamRowView
                 {
                     if (ImGui.Selectable($"Pin"))
                     {
-                        if (!Editor.Project.PinnedRows.ContainsKey(activeParam))
+                        if (!Editor.Project.Descriptor.PinnedRows.ContainsKey(activeParam))
                         {
-                            Editor.Project.PinnedRows.Add(activeParam, new List<int>());
+                            Editor.Project.Descriptor.PinnedRows.Add(activeParam, new List<int>());
                         }
 
-                        List<int> pinned = Editor.Project.PinnedRows[activeParam];
+                        List<int> pinned = Editor.Project.Descriptor.PinnedRows[activeParam];
 
                         foreach (var entry in View.Selection.GetSelectedRows())
                         {
@@ -780,12 +780,12 @@ public class ParamRowView
                 {
                     if (ImGui.Selectable($"Unpin"))
                     {
-                        if (!Editor.Project.PinnedRows.ContainsKey(activeParam))
+                        if (!Editor.Project.Descriptor.PinnedRows.ContainsKey(activeParam))
                         {
-                            Editor.Project.PinnedRows.Add(activeParam, new List<int>());
+                            Editor.Project.Descriptor.PinnedRows.Add(activeParam, new List<int>());
                         }
 
-                        List<int> pinned = Editor.Project.PinnedRows[activeParam];
+                        List<int> pinned = Editor.Project.Descriptor.PinnedRows[activeParam];
 
                         foreach (var entry in View.Selection.GetSelectedRows())
                         {
@@ -820,10 +820,10 @@ public class ParamRowView
             // Reverse Lookup Options
             if (CFG.Current.Param_RowContextMenu_ReverseLoopup)
             {
-                FieldDecorators.ParamReverseLookup_Value(Editor, Editor.Project.ParamData.PrimaryBank, activeParam, r.ID);
+                FieldDecorators.ParamReverseLookup_Value(Editor, Editor.Project.Handler.ParamData.PrimaryBank, activeParam, r.ID);
             }
 
-            FieldDecorators.ParamQuickSearch(Editor, Editor.Project.ParamData.PrimaryBank, activeParam, r.ID);
+            FieldDecorators.ParamQuickSearch(Editor, Editor.Project.Handler.ParamData.PrimaryBank, activeParam, r.ID);
 
             if (CFG.Current.Param_RowContextMenu_ProliferateName || CFG.Current.Param_RowContextMenu_InheritName)
             {

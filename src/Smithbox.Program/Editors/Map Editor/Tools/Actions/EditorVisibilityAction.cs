@@ -194,7 +194,7 @@ public class EditorVisibilityAction
 
         if (targetType == EditorVisibilityType.All)
         {
-            foreach (var entry in Project.MapData.PrimaryBank.Maps)
+            foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
             {
                 if (entry.Value.MapContainer == null)
                 {
@@ -217,7 +217,7 @@ public class EditorVisibilityAction
     }
     public void ApplyEditorVisibilityChangeByTag()
     {
-        foreach (var entry in Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer == null)
             {
@@ -228,7 +228,7 @@ public class EditorVisibilityAction
             {
                 if (obj.IsPart())
                 {
-                    if (Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
+                    if (Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
                     {
                         foreach (var assetEntry in assetAliases)
                         {
@@ -259,7 +259,7 @@ public class EditorVisibilityAction
                         }
                     }
 
-                    if (Project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
+                    if (Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
                     {
                         foreach (var mapPieceEntry in mapPieceAliases)
                         {

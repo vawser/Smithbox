@@ -17,7 +17,7 @@ public partial class ParamTools
 
     public void Display()
     {
-        if (Editor.Project.ProjectType == ProjectType.Undefined)
+        if (Editor.Project.Descriptor.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

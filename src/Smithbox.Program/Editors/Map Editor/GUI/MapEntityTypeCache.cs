@@ -80,14 +80,14 @@ public class MapEntityTypeCache
         */
 
         // Part Pose
-        if (Editor.Project.ProjectType is ProjectType.DS2S
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2S
             or ProjectType.DS2 or ProjectType.DS3)
         {
             mapcache.Add(MsbEntityType.PartPose, new Dictionary<Type, List<MsbEntity>>());
         }
 
         // External: BTL
-        if (Editor.Project.ProjectType is ProjectType.BB
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.BB
             or ProjectType.DS3
             or ProjectType.SDT
             or ProjectType.ER
@@ -122,7 +122,7 @@ public class MapEntityTypeCache
         }
 
         // External: DS2 PARAM
-        else if (Editor.Project.ProjectType is ProjectType.DS2S
+        else if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2S
             or ProjectType.DS2)
         {
             mapcache.Add(MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());

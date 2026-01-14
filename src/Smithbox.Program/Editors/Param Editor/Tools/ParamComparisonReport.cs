@@ -44,30 +44,30 @@ public class ParamComparisonReport
         IsGeneratingReport = true;
         ReportText = "";
 
-        var primaryBank = Editor.Project.ParamData.PrimaryBank;
-        var compareBank = Editor.Project.ParamData.VanillaBank;
+        var primaryBank = Editor.Project.Handler.ParamData.PrimaryBank;
+        var compareBank = Editor.Project.Handler.ParamData.VanillaBank;
 
         if(TargetProjectName != "Vanilla")
         {
-            var auxBank = Project.ParamData.AuxBanks.Where(e => e.Key == TargetProjectName).FirstOrDefault();
+            var auxBank = Project.Handler.ParamData.AuxBanks.Where(e => e.Key == TargetProjectName).FirstOrDefault();
             compareBank = auxBank.Value;
         }
 
         if (ImportNamesOnGeneration_Primary)
         {
-            Project.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Community);
+            Project.Handler.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Community);
         }
 
         if (ImportNamesOnGeneration_Compare)
         {
             if(TargetProjectName == "Vanilla")
             {
-                Project.ParamData.VanillaBank.ImportRowNames(ParamImportRowNameSourceType.Community);
+                Project.Handler.ParamData.VanillaBank.ImportRowNames(ParamImportRowNameSourceType.Community);
             }
             else
             {
-                var auxBank = Project.ParamData.AuxBanks.Where(e => e.Key == TargetProjectName).FirstOrDefault();
-                Project.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Community);
+                var auxBank = Project.Handler.ParamData.AuxBanks.Where(e => e.Key == TargetProjectName).FirstOrDefault();
+                Project.Handler.ParamData.PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Community);
             }
         }
 
@@ -198,19 +198,19 @@ public class ParamComparisonReport
 
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Comparison Report");
         ImGui.Separator();
-        UIHelper.WrappedText($"Primary Bank - Param Version: {Editor.Project.ParamData.PrimaryBank.ParamVersion}");
+        UIHelper.WrappedText($"Primary Bank - Param Version: {Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion}");
 
         if (TargetProjectName == "Vanilla")
         {
-            UIHelper.WrappedText($"Comparison Bank - Param Version: {Editor.Project.ParamData.VanillaBank.ParamVersion}");
+            UIHelper.WrappedText($"Comparison Bank - Param Version: {Editor.Project.Handler.ParamData.VanillaBank.ParamVersion}");
         }
         else
         {
-            if (Editor.Project.ParamData.AuxBanks.Count > 0)
+            if (Editor.Project.Handler.ParamData.AuxBanks.Count > 0)
             {
-                if (Editor.Project.ParamData.AuxBanks.ContainsKey(TargetProjectName))
+                if (Editor.Project.Handler.ParamData.AuxBanks.ContainsKey(TargetProjectName))
                 {
-                    var auxBank = Editor.Project.ParamData.AuxBanks[TargetProjectName];
+                    var auxBank = Editor.Project.Handler.ParamData.AuxBanks[TargetProjectName];
                     UIHelper.WrappedText($"Comparison Bank - Param Version: {auxBank.ParamVersion}");
                 }
             }
@@ -223,7 +223,7 @@ public class ParamComparisonReport
         if (TargetProject == null)
             AllowGenerate = false;
 
-        var projectList = Smithbox.ProjectManager.Projects;
+        var projectList = Smithbox.Orchestrator.Projects;
   
         if (ImGui.BeginCombo("##targetProjectComparison", TargetProjectName))
         {
@@ -234,12 +234,12 @@ public class ParamComparisonReport
                 TargetProjectName = "Vanilla";
             }
 
-            foreach (var proj in Smithbox.ProjectManager.Projects)
+            foreach (var proj in Smithbox.Orchestrator.Projects)
             {
                 if (proj == null)
                     continue;
 
-                if (proj.ProjectType != Editor.Project.ProjectType)
+                if (proj.Descriptor.ProjectType != Editor.Project.Descriptor.ProjectType)
                     continue;
 
                 if (proj == Editor.Project)
@@ -249,13 +249,13 @@ public class ParamComparisonReport
 
                 if (TargetProject != null)
                 {
-                    isSelected = TargetProject.ProjectName == proj.ProjectName;
+                    isSelected = TargetProject.Descriptor.ProjectName == proj.Descriptor.ProjectName;
                 }
 
-                if (ImGui.Selectable($"{proj.ProjectName}", isSelected))
+                if (ImGui.Selectable($"{proj.Descriptor.ProjectName}", isSelected))
                 {
                     TargetProject = proj;
-                    TargetProjectName = proj.ProjectName;
+                    TargetProjectName = proj.Descriptor.ProjectName;
                     LoadParamBank = true;
                 }
             }
@@ -416,7 +416,7 @@ public class ParamComparisonReport
 
             AllowGenerate = false;
 
-            await Editor.Project.ParamData.SetupAuxBank(TargetProject, true);
+            await Editor.Project.Handler.ParamData.SetupAuxBank(TargetProject, true);
             AllowGenerate = true;
         }
     }

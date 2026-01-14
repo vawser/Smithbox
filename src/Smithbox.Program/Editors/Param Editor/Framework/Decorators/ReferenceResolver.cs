@@ -68,7 +68,7 @@ public class ReferenceResolver
                 }
 
                 Param param = bank.Params[rt];
-                var meta = editor.Project.ParamData.GetParamMeta(bank.Params[rt].AppliedParamdef);
+                var meta = editor.Project.Handler.ParamData.GetParamMeta(bank.Params[rt].AppliedParamdef);
                 if (meta != null && meta.Row0Dummy && altval == 0)
                 {
                     continue;
@@ -145,9 +145,9 @@ public class ReferenceResolver
             {
                 uint tempVal = (uint)oldval;
 
-                if (Smithbox.ProjectManager.SelectedProject.TextEditor != null)
+                if (Smithbox.Orchestrator.SelectedProject.Handler.TextEditor != null)
                 {
-                    var textEditor = Smithbox.ProjectManager.SelectedProject.TextEditor;
+                    var textEditor = Smithbox.Orchestrator.SelectedProject.Handler.TextEditor;
 
                     TextResult result = TextFinder.GetTextResult(textEditor, entry.fmg, (int)tempVal, entry.offset);
 

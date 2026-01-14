@@ -92,15 +92,15 @@ public class ModelInstanceFinder
         {
             SetupSearch = false;
 
-            var targetFS = Editor.Project.VanillaFS;
+            var targetFS = Editor.Project.VFS.VanillaFS;
             if(_targetProjectFiles)
             {
-                targetFS = Editor.Project.FS;
+                targetFS = Editor.Project.VFS.FS;
             }
 
-            var maps = Editor.Project.MapData.MapFiles;
+            var maps = Editor.Project.Handler.MapData.MapFiles;
 
-            switch (Editor.Project.ProjectType)
+            switch (Editor.Project.Descriptor.ProjectType)
             {
                 case ProjectType.DES:
                     foreach (var entry in maps.Entries)

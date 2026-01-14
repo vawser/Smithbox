@@ -21,7 +21,7 @@ public class MapSelection
     {
         var check = false;
 
-        foreach (var entry in Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer != null)
             {
@@ -34,7 +34,7 @@ public class MapSelection
 
     public MapContainer GetMapContainerFromMapID(string mapID)
     {
-        var targetMap = Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapID);
+        var targetMap = Project.Handler.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapID);
 
         if (targetMap.Value != null && targetMap.Value.MapContainer != null)
         {
@@ -46,7 +46,7 @@ public class MapSelection
 
     public FileDictionaryEntry GetFileEntryFromMapID(string mapID)
     {
-        var targetMap = Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapID);
+        var targetMap = Project.Handler.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapID);
 
         if (targetMap.Value != null)
         {

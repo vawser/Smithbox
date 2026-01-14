@@ -18,14 +18,14 @@ public static class MapEditorActionHelper
         if (sel.WrappedObject is BTL.Light)
             return;
 
-        if (editor.Project.ProjectType == ProjectType.DS2S || editor.Project.ProjectType == ProjectType.DS2)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.DS2S || editor.Project.Descriptor.ProjectType == ProjectType.DS2)
             return;
 
-        if (editor.Project.ProjectType is ProjectType.AC6)
+        if (editor.Project.Descriptor.ProjectType is ProjectType.AC6)
         {
             SetUniqueEntityID_AC6(editor, sel, map);
         }
-        else if (editor.Project.ProjectType is ProjectType.ER or ProjectType.NR)
+        else if (editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             SetUniqueEntityID_ER(editor, sel, map);
         }
@@ -259,7 +259,7 @@ public static class MapEditorActionHelper
                     hasMatch = true;
 
                     // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                    if (editor.Project.ProjectType == ProjectType.DS1 || editor.Project.ProjectType == ProjectType.DS1R)
+                    if (editor.Project.Descriptor.ProjectType == ProjectType.DS1 || editor.Project.Descriptor.ProjectType == ProjectType.DS1R)
                     {
                         if (newID < 10000)
                         {
@@ -285,7 +285,7 @@ public static class MapEditorActionHelper
 
     public static void SetSelfPartNames(MapEditorScreen editor, MsbEntity sel, MapContainer map)
     {
-        if (editor.Project.ProjectType == ProjectType.ER)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.ER)
         {
             if (sel.WrappedObject is MSBE.Part.Asset)
             {
@@ -338,7 +338,7 @@ public static class MapEditorActionHelper
             }
         }
 
-        if (editor.Project.ProjectType == ProjectType.AC6)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             if (sel.WrappedObject is MSB_AC6.Part.Asset)
             {
@@ -380,7 +380,7 @@ public static class MapEditorActionHelper
             }
         }
 
-        if (editor.Project.ProjectType == ProjectType.NR)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.NR)
         {
             if (sel.WrappedObject is MSB_NR.Part.Asset)
             {
@@ -465,7 +465,7 @@ public static class MapEditorActionHelper
 
     public static void SetUniqueInstanceID(MapEditorScreen editor, MsbEntity ent, MapContainer m)
     {
-        if (editor.Project.ProjectType == ProjectType.ER)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.ER)
         {
             Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
@@ -495,7 +495,7 @@ public static class MapEditorActionHelper
             }
         }
 
-        if (editor.Project.ProjectType == ProjectType.AC6)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
@@ -523,7 +523,7 @@ public static class MapEditorActionHelper
             }
         }
 
-        if (editor.Project.ProjectType == ProjectType.NR)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.NR)
         {
             Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
@@ -556,7 +556,7 @@ public static class MapEditorActionHelper
 
     public static void SetSpecificEntityGroupID(MapEditorScreen editor, MsbEntity ent, MapContainer m)
     {
-        if (editor.Project.ProjectType == ProjectType.NR)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.NR)
         {
             var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
             var added = false;
@@ -583,7 +583,7 @@ public static class MapEditorActionHelper
 
             ent.SetPropertyValue("EntityGroupIDs", newEntityGroupIds);
         }
-        else if (editor.Project.ProjectType == ProjectType.AC6)
+        else if (editor.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
             var added = false;
@@ -605,7 +605,7 @@ public static class MapEditorActionHelper
 
             part.EntityGroupIDs = newEntityGroupIDs;
         }
-        else if (editor.Project.ProjectType == ProjectType.ER)
+        else if (editor.Project.Descriptor.ProjectType == ProjectType.ER)
         {
             var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
             var added = false;
@@ -627,7 +627,7 @@ public static class MapEditorActionHelper
 
             part.EntityGroupIDs = newEntityGroupIDs;
         }
-        else if (editor.Project.ProjectType == ProjectType.DS3)
+        else if (editor.Project.Descriptor.ProjectType == ProjectType.DS3)
         {
             var newID = CFG.Current.Prefab_SpecificEntityGroupID;
             var added = false;
@@ -649,7 +649,7 @@ public static class MapEditorActionHelper
 
             part.EntityGroups = newEntityGroupIDs;
         }
-        else if (editor.Project.ProjectType == ProjectType.SDT)
+        else if (editor.Project.Descriptor.ProjectType == ProjectType.SDT)
         {
             var newID = CFG.Current.Prefab_SpecificEntityGroupID;
             var added = false;
@@ -675,10 +675,10 @@ public static class MapEditorActionHelper
 
     public static void ClearEntityID(MapEditorScreen editor, MsbEntity sel, MapContainer map)
     {
-        if (editor.Project.ProjectType == ProjectType.DS2S || editor.Project.ProjectType == ProjectType.DS2)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.DS2S || editor.Project.Descriptor.ProjectType == ProjectType.DS2)
             return;
 
-        if (editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.NR)
+        if (editor.Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.NR)
         {
             ClearEntityID_UINT(sel, map);
         }
@@ -700,10 +700,10 @@ public static class MapEditorActionHelper
 
     public static void ClearEntityGroupID(MapEditorScreen editor, MsbEntity ent, MapContainer map)
     {
-        if (editor.Project.ProjectType == ProjectType.DS2S || editor.Project.ProjectType == ProjectType.DS2)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.DS2S || editor.Project.Descriptor.ProjectType == ProjectType.DS2)
             return;
 
-        if (editor.Project.ProjectType == ProjectType.NR)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.NR)
         {
             var part = ent.WrappedObject as MSB_NR.Part;
 
@@ -721,7 +721,7 @@ public static class MapEditorActionHelper
 
             ent.SetPropertyValue("EntityGroupIDs", newEntityGroupIds);
         }
-        else if (editor.Project.ProjectType == ProjectType.AC6)
+        else if (editor.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             var part = ent.WrappedObject as MSB_AC6.Part;
 
@@ -735,7 +735,7 @@ public static class MapEditorActionHelper
 
             part.EntityGroupIDs = newEntityGroupIDs;
         }
-        else if (editor.Project.ProjectType == ProjectType.ER)
+        else if (editor.Project.Descriptor.ProjectType == ProjectType.ER)
         {
             var part = ent.WrappedObject as MSBE.Part;
 
@@ -749,7 +749,7 @@ public static class MapEditorActionHelper
 
             part.EntityGroupIDs = newEntityGroupIDs;
         }
-        else if (editor.Project.ProjectType == ProjectType.DS3)
+        else if (editor.Project.Descriptor.ProjectType == ProjectType.DS3)
         {
             var part = ent.WrappedObject as MSB3.Part;
 
@@ -763,7 +763,7 @@ public static class MapEditorActionHelper
 
             part.EntityGroups = newEntityGroupIDs;
         }
-        else if (editor.Project.ProjectType == ProjectType.SDT)
+        else if (editor.Project.Descriptor.ProjectType == ProjectType.SDT)
         {
             var part = ent.WrappedObject as MSBS.Part;
 

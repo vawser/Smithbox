@@ -43,14 +43,14 @@ public class PathBuilder
             {
                 i++;
 
-                if (project.ProjectType is ProjectType.DES)
+                if (project.Descriptor.ProjectType is ProjectType.DES)
                 {
                     var mid = p[i];
                     i++;
 
                     relPath = Path.Combine("map", mid, $"{mid}_{p[i]}.tpf.dcx");
                 }
-                else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     var mid = p[i];
 
@@ -83,27 +83,27 @@ public class PathBuilder
                 {
                     i++;
 
-                    if (project.ProjectType is ProjectType.DES)
+                    if (project.Descriptor.ProjectType is ProjectType.DES)
                     {
                         relPath = Path.Combine("map", mapid, $"{p[i]}.flver");
                     }
-                    else if (project.ProjectType is ProjectType.DS1)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS1)
                     {
                         relPath = Path.Combine("map", mapid, $"{p[i]}.flver");
                     }
-                    else if (project.ProjectType is ProjectType.DS1R)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS1R)
                     {
                         relPath = Path.Combine("map", mapid, $"{p[i]}.flver.dcx");
                     }
-                    else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                     {
                         relPath = Path.Combine("model", "map", $"{mapid}.mapbhd");
                     }
-                    else if (project.ProjectType is ProjectType.BB)
+                    else if (project.Descriptor.ProjectType is ProjectType.BB)
                     {
                         relPath = Path.Combine("map", mapid, $"{p[i]}.flver.dcx");
                     }
-                    else if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                     {
                         relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"{p[i]}.mapbnd.dcx");
                     }
@@ -119,15 +119,15 @@ public class PathBuilder
                     var hittype = p[i];
                     i++;
 
-                    if (project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                    if (project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                     {
                         relPath = Path.Combine("map", mapid, p[i]);
                     }
-                    else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                     {
                         relPath = Path.Combine("model", "map", $"h{mapid.Substring(1)}.hkxbhd");
                     }
-                    else if (project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
                     {
                         if (hittype == "lo")
                         {
@@ -138,7 +138,7 @@ public class PathBuilder
                             relPath = Path.Combine("map", mapid, $"h{mapid.Substring(1)}.hkxbhd");
                         }
                     }
-                    else if (project.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
+                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
                     {
                         if (hittype == "lo")
                         {
@@ -161,19 +161,19 @@ public class PathBuilder
                     var hittype = p[i];
                     i++;
 
-                    if (project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                    if (project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                     {
                         relPath = Path.Combine("map", mapid, p[i]);
                     }
-                    else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                     {
                         relPath = Path.Combine("model", "map", $"l{mapid.Substring(1)}.hkxbhd");
                     }
-                    else if (project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
                     {
                         relPath = Path.Combine("map", mapid, $"l{mapid.Substring(1)}.hkxbhd");
                     }
-                    else if (project.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
+                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
                     {
                         relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"l{mapid.Substring(1)}.hkxbhd");
                     }
@@ -183,19 +183,19 @@ public class PathBuilder
                 {
                     i++;
 
-                    if (project.ProjectType is ProjectType.DES or ProjectType.DS1)
+                    if (project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1)
                     {
                         relPath = Path.Combine("map", mapid, $"{mapid}.nvmbnd");
                     }
-                    else if (project.ProjectType is ProjectType.DS1R)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS1R)
                     {
                         relPath = Path.Combine("map", mapid, $"{mapid}.nvmbnd.dcx");
                     }
-                    else if (project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT or ProjectType.ER)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT or ProjectType.ER)
                     {
                         relPath = Path.Combine("map", mapid, $"{mapid}.nvmhktbnd.dcx");
 
-                        if (project.ProjectType is ProjectType.ER or ProjectType.NR)
+                        if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
                         {
                             var id = mapid.Substring(0, 3);
                             relPath = Path.Combine("map", id, mapid, $"{mapid}.nvmhktbnd.dcx");
@@ -214,19 +214,19 @@ public class PathBuilder
             // Models
             if (p[i].Equals("model"))
             {
-                if (project.ProjectType is ProjectType.DES)
+                if (project.Descriptor.ProjectType is ProjectType.DES)
                 {
                     relPath = Path.Combine("chr", chrid, $"{chrid}.chrbnd");
                 }
-                else if (project.ProjectType is ProjectType.DS1)
+                else if (project.Descriptor.ProjectType is ProjectType.DS1)
                 {
                     relPath = Path.Combine("chr", $"{chrid}.chrbnd");
                 }
-                else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     relPath = Path.Combine("model", "chr", $"{chrid}.bnd");
                 }
-                else if (project.ProjectType is ProjectType.DES)
+                else if (project.Descriptor.ProjectType is ProjectType.DES)
                 {
                     relPath = Path.Combine("chr", chrid, $"{chrid}.chrbnd.dcx");
                 }
@@ -250,36 +250,36 @@ public class PathBuilder
                     }
                 }
 
-                if (project.ProjectType is ProjectType.DES)
+                if (project.Descriptor.ProjectType is ProjectType.DES)
                 {
                     relPath = Path.Combine("chr", chrid, $"{chrid}.tpf");
                 }
-                else if (project.ProjectType is ProjectType.DS1)
+                else if (project.Descriptor.ProjectType is ProjectType.DS1)
                 {
                     relPath = Path.Combine("chr", chrid, $"{chrid}.tpf");
 
-                    if (!project.FS.FileExists(SanitiseRelativePath(relPath)))
+                    if (!project.VFS.FS.FileExists(SanitiseRelativePath(relPath)))
                     {
                         relPath = Path.Combine("chr", $"{chrid}.chrbnd");
                     }
                 }
-                else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     relPath = Path.Combine("model", "chr", $"{chrid}.texbnd");
                 }
-                else if (project.ProjectType is ProjectType.DS1R)
+                else if (project.Descriptor.ProjectType is ProjectType.DS1R)
                 {
                     relPath = Path.Combine("chr", $"{chrid}.chrbnd.dcx");
                 }
-                else if (project.ProjectType is ProjectType.BB)
+                else if (project.Descriptor.ProjectType is ProjectType.BB)
                 {
                     relPath = Path.Combine("chr", $"{chrid}.chrbnd.dcx");
                 }
-                else if (project.ProjectType is ProjectType.DS3 or ProjectType.SDT)
+                else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
                 {
                     relPath = Path.Combine("chr", $"{chrid}.texbnd.dcx");
                 }
-                else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
+                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
                 {
                     relPath = Path.Combine("chr", $"{chrid}_h.texbnd.dcx");
 
@@ -288,7 +288,7 @@ public class PathBuilder
                         relPath = Path.Combine("chr", $"{chrid}_l.texbnd.dcx");
                     }
                 }
-                else if (project.ProjectType is ProjectType.AC6)
+                else if (project.Descriptor.ProjectType is ProjectType.AC6)
                 {
                     relPath = Path.Combine("chr", $"{chrid}.texbnd.dcx");
 
@@ -309,15 +309,15 @@ public class PathBuilder
             // Models / Textures
             if (p[i].Equals("model") || p[i].Equals("tex"))
             {
-                if (project.ProjectType is ProjectType.DS1)
+                if (project.Descriptor.ProjectType is ProjectType.DS1)
                 {
                     relPath = Path.Combine("obj", $"{objid}.objbnd");
                 }
-                else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     relPath = Path.Combine("model", "obj", $"{objid}.bnd");
                 }
-                else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
+                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
                 {
                     // Derive subfolder path from model name (all vanilla AEG are within subfolders)
                     if (objid.Length >= 6)
@@ -325,7 +325,7 @@ public class PathBuilder
                         relPath = Path.Combine("asset", "aeg", objid.Substring(0, 6), $"{objid}.geombnd.dcx");
                     }
                 }
-                else if (project.ProjectType is ProjectType.AC6)
+                else if (project.Descriptor.ProjectType is ProjectType.AC6)
                 {
                     if (objid.Length >= 6)
                     {
@@ -344,7 +344,7 @@ public class PathBuilder
                 var colName = Path.GetFileNameWithoutExtension(p[i]);
                 i++;
 
-                if (project.ProjectType is ProjectType.ER or ProjectType.NR)
+                if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
                 {
                     // Derive subfolder path from model name (all vanilla AEG are within subfolders)
                     if (objid.Length >= 6)
@@ -352,7 +352,7 @@ public class PathBuilder
                         relPath = Path.Combine("asset", "aeg", objid.Substring(0, 6), $"{colName}.geomhkxbnd.dcx");
                     }
                 }
-                else if (project.ProjectType is ProjectType.AC6)
+                else if (project.Descriptor.ProjectType is ProjectType.AC6)
                 {
                     if (objid.Length >= 6)
                     {
@@ -375,11 +375,11 @@ public class PathBuilder
             // Models / Textures
             if (p[i].Equals("model") || p[i].Equals("tex"))
             {
-                if (project.ProjectType is ProjectType.DS1)
+                if (project.Descriptor.ProjectType is ProjectType.DS1)
                 {
                     relPath = Path.Combine("parts", $"{partsId}.partsbnd");
                 }
-                else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     var partType = "";
                     switch (partsId.Substring(0, 2))
@@ -414,7 +414,7 @@ public class PathBuilder
 
                     relPath = Path.Combine("model", "parts", partType, $"{partsId}.bnd");
                 }
-                else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
+                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
                 {
                     if (p.Length == 4)
                     {
@@ -439,7 +439,7 @@ public class PathBuilder
                         relPath = Path.Combine("parts", $"{partsId}.tpf.dcx");
                     }
                 }
-                else if (project.ProjectType is ProjectType.AC6 && p[i].Equals("tex"))
+                else if (project.Descriptor.ProjectType is ProjectType.AC6 && p[i].Equals("tex"))
                 {
                     if (p.Length == 4)
                     {
@@ -492,7 +492,7 @@ public class PathBuilder
             // Textures
             if (p[i].Equals("tex"))
             {
-                if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     relPath = Path.Combine("menu", "tex", "icon", $"{containerName}.tpf");
 
@@ -546,12 +546,12 @@ public class PathBuilder
 
             if (p[i].Equals("tex"))
             {
-                if (project.ProjectType is ProjectType.AC6)
+                if (project.Descriptor.ProjectType is ProjectType.AC6)
                 {
                     relPath = Path.Combine("asset", "environment", "texture", $"{containerName}.tpf.dcx");
                 }
 
-                if (project.ProjectType is ProjectType.ER or ProjectType.NR)
+                if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
                 {
                     if (containerName.Length > 5)
                     {
@@ -598,7 +598,7 @@ public class PathBuilder
             {
                 var fileExt = @".ffxbnd.dcx";
 
-                if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     fileExt = @".ffxbnd";
                 }
@@ -623,7 +623,7 @@ public class PathBuilder
         relPath = SanitiseRelativePath(relPath);
 
 #if DEBUG
-        if (relPath != "" && !project.FS.FileExists(relPath))
+        if (relPath != "" && !project.VFS.FS.FileExists(relPath))
         {
             TaskLogs.AddLog($"[Smithbox:DEBUG] Failed to find file in VFS: {relPath}", Microsoft.Extensions.Logging.LogLevel.Error);
         }
@@ -655,7 +655,7 @@ public class PathBuilder
             var containerName = p[i];
 
             absPath = Path.Combine(
-                AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(project.ProjectType),
+                AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(project.Descriptor.ProjectType),
                 "Maps", $"{containerName}.tpf.dcx");
         }
 
@@ -674,11 +674,11 @@ public class PathBuilder
     /// <returns>The map ID for the purpose of asset storage</returns>
     public static string GetAssetMapID(ProjectEntry project, string mapid)
     {
-        if (project.ProjectType is ProjectType.DES or ProjectType.ER or ProjectType.NR or ProjectType.AC6)
+        if (project.Descriptor.ProjectType is ProjectType.DES or ProjectType.ER or ProjectType.NR or ProjectType.AC6)
         {
             return mapid;
         }
-        else if (project.ProjectType is ProjectType.DS1R)
+        else if (project.Descriptor.ProjectType is ProjectType.DS1R)
         {
             if (mapid.StartsWith("m99"))
             {
@@ -686,7 +686,7 @@ public class PathBuilder
                 return mapid;
             }
         }
-        else if (project.ProjectType is ProjectType.BB)
+        else if (project.Descriptor.ProjectType is ProjectType.BB)
         {
             if (mapid.StartsWith("m29"))
             {

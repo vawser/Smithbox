@@ -11,18 +11,16 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.Common;
 
-public class CommonData
+public class ProjectData : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
 
     public AliasStore Aliases;
     public ProjectEnumResource ProjectEnums;
 
-    public CommonData(Smithbox baseEditor, ProjectEntry project)
+    public ProjectData(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -36,11 +34,11 @@ public class CommonData
 
         if (aliasesSetup)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}] Setup aliases.");
+            TaskLogs.AddLog($"[{Project.Descriptor.ProjectName}] Setup aliases.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}] Failed to setup aliases.");
+            TaskLogs.AddLog($"[{Project.Descriptor.ProjectName}] Failed to setup aliases.");
         }
 
         // Project Enums (per project)
@@ -49,11 +47,11 @@ public class CommonData
 
         if (projectParamEnumResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}] Setup Project Param Enums.");
+            TaskLogs.AddLog($"[{Project.Descriptor.ProjectName}] Setup Project Param Enums.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}] Failed to setup Project Param Enums.");
+            TaskLogs.AddLog($"[{Project.Descriptor.ProjectName}] Failed to setup Project Param Enums.");
         }
 
         return true;
@@ -72,8 +70,8 @@ public class CommonData
         HashSet<string> sourceDirectories =
         [
             Path.Join(AppContext.BaseDirectory, "Assets", "Aliases", 
-            ProjectUtils.GetGameDirectory(Project.ProjectType)),
-            Path.Join(Project.ProjectPath,".smithbox","Assets","Aliases")
+            ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType)),
+            Path.Join(Project.Descriptor.ProjectPath,".smithbox","Assets","Aliases")
         ];
 
         List<string> sourceFiles = sourceDirectories.Where(Directory.Exists).Select(dir => Directory.GetFiles(dir, "*.json")).SelectMany(f => f).ToList();
@@ -124,10 +122,10 @@ public class CommonData
         ProjectEnums = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
 
-        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Project");
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Project");
         var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
 
         var targetFile = sourceFile;
@@ -163,4 +161,12 @@ public class CommonData
 
         return true;
     }
+
+    #region Dispose
+    public void Dispose()
+    {
+        Aliases = null;
+        ProjectEnums = null;
+    }
+    #endregion
 }

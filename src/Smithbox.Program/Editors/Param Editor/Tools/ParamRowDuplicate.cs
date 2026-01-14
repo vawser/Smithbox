@@ -83,7 +83,7 @@ public partial class ParamTools
         if (curParamKey == null)
             return;
 
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param param = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
         List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
 
         if (rows.Count == 0)
@@ -233,11 +233,11 @@ public partial class ParamTools
                 if (curParamKey == null)
                     return;
 
-                Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+                Param param = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
 
-                if (Editor.Project.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).Any())
+                if (Editor.Project.Handler.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).Any())
                 {
-                    var targetGroup = Editor.Project.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
+                    var targetGroup = Editor.Project.Handler.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
 
                     if (targetGroup == null)
                         return;
@@ -277,12 +277,12 @@ public partial class ParamTools
         if (paramName == null)
             return false;
 
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[paramName];
+        Param param = Editor.Project.Handler.ParamData.PrimaryBank.Params[paramName];
 
-        if (Editor.Project.ParamData.CommutativeParamGroups.Groups == null)
+        if (Editor.Project.Handler.ParamData.CommutativeParamGroups.Groups == null)
             return false;
 
-        if (Editor.Project.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).Any())
+        if (Editor.Project.Handler.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).Any())
         {
             isValid = true;
         }
@@ -300,11 +300,11 @@ public partial class ParamTools
         if (curParamKey == null)
             return;
 
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param param = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
 
-        if (Editor.Project.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).Any())
+        if (Editor.Project.Handler.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).Any())
         {
-            var targetGroup = Editor.Project.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
+            var targetGroup = Editor.Project.Handler.ParamData.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
 
             if (targetGroup == null)
                 return;
@@ -344,15 +344,15 @@ public partial class ParamTools
         if (curParamKey == targetParamName)
             return;
 
-        if (!Editor.Project.ParamData.PrimaryBank.Params.ContainsKey(curParamKey))
+        if (!Editor.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(curParamKey))
             return;
 
-        Param currentParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param currentParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
 
-        if (!Editor.Project.ParamData.PrimaryBank.Params.ContainsKey(targetParamName))
+        if (!Editor.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(targetParamName))
             return;
 
-        Param targetParam = Editor.Project.ParamData.PrimaryBank.Params[targetParamName];
+        Param targetParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[targetParamName];
 
         if (targetParam == null)
             return;

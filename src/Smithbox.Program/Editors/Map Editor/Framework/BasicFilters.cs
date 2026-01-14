@@ -29,7 +29,7 @@ public class BasicFilters
         UIHelper.Tooltip("Toggle the display of map objects classified as 'Map pieces'.");
 
         var name = "Objects";
-        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             name = "Assets";
         }
@@ -107,7 +107,7 @@ public class BasicFilters
         UIHelper.Tooltip($"Toggle the display of map objects classified as 'Speed Trees'.");
 
         // AutoInvade
-        if (Editor.Project.ProjectType is ProjectType.ER)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER)
         {
             if (ImGui.MenuItem("Invasion Points"))
             {
@@ -119,7 +119,7 @@ public class BasicFilters
         }
 
         // Light Probe
-        if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
         {
             if (ImGui.MenuItem("Light Probes"))
             {

@@ -10,9 +10,8 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
-public class GparamBank
+public class GparamBank : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
@@ -21,9 +20,8 @@ public class GparamBank
 
     public Dictionary<FileDictionaryEntry, GPARAM> Entries = new();
 
-    public GparamBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
+    public GparamBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
     {
-        BaseEditor = baseEditor;
         Project = project;
         Name = name;
         TargetFS = targetFs;
@@ -45,7 +43,7 @@ public class GparamBank
 
         Entries = new();
 
-        foreach (var entry in Project.GparamData.GparamFiles.Entries)
+        foreach (var entry in Project.Handler.GparamData.GparamFiles.Entries)
         {
             Entries.Add(entry, null);
         }
@@ -83,13 +81,13 @@ public class GparamBank
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to read {key.Path} as GPARAM", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Graphics Param Editor] Failed to read {key.Path} as GPARAM for {Name}.", e);
                         return false;
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to read {key.Path} from VFS", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Graphics Param Editor] Failed to read {key.Path} from VFS for {Name}.", e);
                     return false;
                 }
             }
@@ -124,20 +122,29 @@ public class GparamBank
 
             try
             {
-                Project.ProjectFS.WriteFile(fileEntry.Path, bytes);
+                Project.VFS.ProjectFS.WriteFile(fileEntry.Path, bytes);
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to write {fileEntry.Filename} as file.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Graphics Param Editor] Failed to write {fileEntry.Filename} as file for {Name}.",  e);
                 return false;
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to write {fileEntry.Filename} as GPARAM", LogLevel.Error, LogPriority.High, e);
+            TaskLogs.AddError($"[Graphics Param Editor] Failed to write {fileEntry.Filename} as GPARAM for {Name}.", e);
             return false;
         }
 
         return true;
     }
+
+    #region Dispose
+    public void Dispose()
+    {
+        Entries.Clear();
+
+        Entries = null;
+    }
+    #endregion
 }

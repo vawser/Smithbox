@@ -23,7 +23,7 @@ public class GparamCommandQueue
             if (initcmd[0] == "view" && initcmd.Length >= 2)
             {
                 // Gparam
-                foreach (var entry in Project.GparamData.PrimaryBank.Entries)
+                foreach (var entry in Project.Handler.GparamData.PrimaryBank.Entries)
                 {
                     if (initcmd[1] == entry.Key.Filename)
                     {

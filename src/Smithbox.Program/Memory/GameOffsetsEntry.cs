@@ -17,11 +17,11 @@ public class GameOffsetsEntry
 
     internal GameOffsetsEntry(ProjectEntry project)
     {
-        var data = project.ParamData.ParamMemoryOffsets.list[CFG.Current.SelectedGameOffsetData];
+        var data = project.Handler.ParamData.ParamMemoryOffsets.list[CFG.Current.SelectedGameOffsetData];
 
-        exeName = project.ParamData.ParamMemoryOffsets.exeName;
+        exeName = project.Handler.ParamData.ParamMemoryOffsets.exeName;
         Is64Bit = type != ProjectType.DS1;
-        type = project.ProjectType;
+        type = project.Descriptor.ProjectType;
 
         foreach (var entry in data.bases)
         {

@@ -197,7 +197,7 @@ public class ParamSelection
 
             if (s.activeRow != null)
             {
-                Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
+                Editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
             }
 
             if (!isHistory)
@@ -209,14 +209,14 @@ public class ParamSelection
             s.selectionRows.Clear();
             s.selectionRows.Add(row);
             if (s.activeRow != null)
-                Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
+                Editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
 
             s.selectionCacheDirty = true;
 
             // Clear the icon preview resource dictionary on active row switch
-            if(Project.TextureViewer != null)
+            if(Project.Handler.TextureViewer != null)
             {
-                Project.TextureViewer.ImagePreview.ClearIcons();
+                Project.Handler.TextureViewer.ImagePreview.ClearIcons();
             }
         }
     }
@@ -371,7 +371,7 @@ public class ParamSelection
         if (_activeParam != null)
         {
             ParamSelectionState s = _paramStates[_activeParam];
-            Param p = Editor.Project.ParamData.PrimaryBank.Params[_activeParam];
+            Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[_activeParam];
             s.selectionRows.Sort((a, b) => { return p.IndexOfRow(a) - p.IndexOfRow(b); });
         }
     }

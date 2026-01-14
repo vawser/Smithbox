@@ -5,8 +5,6 @@ using System.Numerics;
 namespace StudioCore.Application;
 public class KeybindWindow
 {
-    public Smithbox BaseEditor;
-
     public bool MenuOpenState;
 
     private CommonKeybindTab CommonKeybinds;
@@ -18,10 +16,8 @@ public class KeybindWindow
     private GparamEditorKeybindTab GparamEditorKeybinds;
     private TextureViewerKeybindTab TextureViewerKeybinds;
 
-    public KeybindWindow(Smithbox baseEditor)
+    public KeybindWindow()
     {
-        BaseEditor = baseEditor;
-
         CommonKeybinds = new CommonKeybindTab();
         ViewportKeybinds = new ViewportKeybindTab();
         MapEditorKeybinds = new MapEditorKeybindTab();

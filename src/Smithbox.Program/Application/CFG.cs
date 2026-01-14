@@ -18,672 +18,11 @@ namespace StudioCore.Application;
 public class CFG
 {
     ///------------------------------------------------------------
-    /// Developer
+    /// System
     ///------------------------------------------------------------
-    /// <summary>
-    /// If true, the developer-only tools are visible.
-    /// </summary>
     public bool EnableDeveloperTools = false;
-
-    /// <summary>
-    /// The local build folder for Smithbox (used for some tools)
-    /// </summary>
     public string SmithboxBuildFolder = "";
 
-    ///------------------------------------------------------------
-    /// Saving
-    ///------------------------------------------------------------
-    public bool EnableAutomaticSave = true;
-    public bool EnableBackupSaves = true;
-
-    public float AutomaticSaveIntervalTime = 300;
-
-    public bool AutomaticSave_MapEditor = true;
-    public bool AutomaticSave_ModelEditor = true;
-    public bool AutomaticSave_ParamEditor = true;
-    public bool AutomaticSave_TextEditor = true;
-    public bool AutomaticSave_GparamEditor = false;
-    public bool AutomaticSave_MaterialEditor = false;
-
-    // Map Editor
-    public bool MapEditor_AutomaticSave_IncludeMSB = true;
-    public bool MapEditor_AutomaticSave_IncludeBTL = false;
-    public bool MapEditor_AutomaticSave_IncludeAIP = false;
-    public bool MapEditor_AutomaticSave_IncludeNVA = false;
-    public bool MapEditor_AutomaticSave_IncludeBTAB = false;
-    public bool MapEditor_AutomaticSave_IncludeBTPB = false;
-
-    public bool MapEditor_ManualSave_IncludeMSB = true;
-    public bool MapEditor_ManualSave_IncludeBTL = true;
-    public bool MapEditor_ManualSave_IncludeAIP = true;
-    public bool MapEditor_ManualSave_IncludeNVA = true;
-    public bool MapEditor_ManualSave_IncludeBTAB = true;
-    public bool MapEditor_ManualSave_IncludeBTPB = true;
-
-    // Model Editor
-    public bool ModelEditor_AutomaticSave_IncludeFLVER = true;
-
-    public bool ModelEditor_ManualSave_IncludeFLVER = true;
-
-    // Param Editor
-    public bool ParamEditor_AutomaticSave_IncludePARAM = true;
-
-    public bool ParamEditor_ManualSave_IncludePARAM = true;
-
-    // Text Editor
-    public bool TextEditor_AutomaticSave_IncludeFMG = true;
-
-    public bool TextEditor_ManualSave_IncludeFMG = true;
-
-    // Graphics Param Editor
-    public bool GparamEditor_AutomaticSave_IncludeGPARAM = true;
-
-    public bool GparamEditor_ManualSave_IncludeGPARAM = true;
-
-    // Material Editor
-    public bool MaterialEditor_AutomaticSave_IncludeMTD = true;
-    public bool MaterialEditor_AutomaticSave_IncludeMATBIN = true;
-
-    public bool MaterialEditor_ManualSave_IncludeMTD  = true;
-    public bool MaterialEditor_ManualSave_IncludeMATBIN = true;
-
-    ///------------------------------------------------------------
-    /// Project
-    ///------------------------------------------------------------
-    /// <summary>
-    /// If enabled, the project type is prefixed to the project name.
-    /// </summary>
-    public bool DisplayProjectPrefix = true;
-
-    /// <summary>
-    /// The default directory to use for selecting a project directory during Project Creation.
-    /// </summary>
-    public string DefaultModDirectory = "";
-
-    /// <summary>
-    /// The default directory to use for selecting a data directory during Project Creation.
-    /// </summary>
-    public string DefaultDataDirectory = "";
-
-    /// <summary>
-    /// The path to store the ME3 profiles.
-    /// </summary>
-    public string ModEngine3ProfileDirectory = "";
-
-    /// <summary>
-    /// The path to the user's Mod Engine 2 exe.
-    /// </summary>
-    public string ModEngine2Install = "";
-
-    /// <summary>
-    /// The dll arguments to use with the Mod Engine 2 launch.
-    /// </summary>
-    public string ModEngine2Dlls = "";
-
-    /// <summary>
-    /// If true, the project list is split into project type collapsible categories
-    /// </summary>
-    public bool DisplayCollapsibleProjectCategories = true;
-
-    /// <summary>
-    /// The current backup process to use.
-    /// </summary>
-    public ProjectBackupBehaviorType BackupProcessType = ProjectBackupBehaviorType.Simple;
-
-    ///------------------------------------------------------------
-    /// Interface
-    ///------------------------------------------------------------
-    /// <summary>
-    /// If true, the Action Logger elements are visible.
-    /// </summary>
-    public bool System_ShowActionLogger = true;
-
-    /// <summary>
-    /// If true, the Warning Logger elements are visible.
-    /// </summary>
-    public bool System_ShowWarningLogger = true;
-
-    /// <summary>
-    /// If true, the alias text will be wrapped if required.
-    /// </summary>
-    public bool System_WrapAliasDisplay = true;
-
-    /// <summary>
-    /// The scale value to apply to interface sizing.
-    /// </summary>
-    public float System_UI_Scale = 1.0f;
-
-    /// <summary>
-    /// If true, the interface sizing is affected by DPI.
-    /// </summary>
-    public bool System_ScaleByDPI = true;
-
-    /// <summary>
-    /// If true, Chinese characters are supported by the ImGui font.
-    /// </summary>
-    public bool System_Font_Chinese = false;
-
-    /// <summary>
-    /// If true, Russian characters are supported by the ImGui font.
-    /// </summary>
-    public bool System_Font_Cyrillic = false;
-
-    /// <summary>
-    /// If true, Korean characters are supported by the ImGui font.
-    /// </summary>
-    public bool System_Font_Korean = false;
-
-    /// <summary>
-    /// If true, Thai characters are supported by the ImGui font.
-    /// </summary>
-    public bool System_Font_Thai = false;
-
-    /// <summary>
-    /// If true, Vietnamese characters are supported by the ImGui font.
-    /// </summary>
-    public bool System_Font_Vietnamese = false;
-
-    /// <summary>
-    /// The relative path (from the Smithbox.exe) to the font used for English text.
-    /// </summary>
-    public string System_English_Font = Path.Join("Assets","Fonts","RobotoMono-Light.ttf");
-
-    /// <summary>
-    /// The relative path (from the Smithbox.exe) to the font used for non-English text.
-    /// </summary>
-    public string System_Other_Font = Path.Join("Assets","Fonts","NotoSansCJKtc-Light.otf");
-
-    /// <summary>
-    /// The current theme a user has selected to override the default.
-    /// </summary>
-    public string SelectedTheme = "";
-
-    /// <summary>
-    /// The size of the font used by ImGui (before scaling).
-    /// </summary>
-    public float Interface_FontSize = 14.0f;
-
-    /// <summary>
-    /// If true, the viewport window (in Map or Model Editor) is visible.
-    /// </summary>
-    public bool Interface_Editor_Viewport = true;
-
-    /// <summary>
-    /// If true, the profiling window (in Map or Model Editor) is visible.
-    /// </summary>
-    public bool Viewport_Profiling = true;
-
-    public bool Allow_Window_Movement = true;
-
-    ///------------------------------------------------------------
-    /// Map Editor
-    ///------------------------------------------------------------
-    /// <summary>
-    /// If true, the viewport grid is visible in the Map Editor.
-    /// </summary>
-    public bool Interface_MapEditor_Viewport_Grid = true;
-
-    /// <summary>
-    /// If true, the map list window is visible in the Map Editor.
-    /// </summary>
-    public bool Interface_MapEditor_MapList = true;
-
-    /// <summary>
-    /// If true, the map content window is visible in the Map Editor.
-    /// </summary>
-    public bool Interface_MapEditor_MapContents = true;
-
-    /// <summary>
-    /// If true, the properties window is visible in the Map Editor.
-    /// </summary>
-    public bool Interface_MapEditor_Properties = true;
-
-    /// <summary>
-    /// If true, the render groups window is visible in the Map Editor.
-    /// </summary>
-    public bool Interface_MapEditor_RenderGroups = true;
-
-    /// <summary>
-    /// If true, the asset browser window is visible in the Map Editor.
-    /// </summary>
-    public bool Interface_MapEditor_AssetBrowser = true;
-
-    /// <summary>
-    /// If true, the tool window is visible in the Map Editor.
-    /// </summary>
-    public bool Interface_MapEditor_ToolWindow = true;
-
-    /// <summary>
-    /// If true, the resource list window is visible in the Map Editor.
-    /// </summary>
-    public bool Interface_MapEditor_ResourceList = true;
-
-    /// <summary>
-    /// If true, the entity identifier window is visible in the Map Editor.
-    /// </summary>
-    public bool Interface_MapEditor_EntityIdentifierOverview = false;
-
-    /// <summary>
-    /// If true, the Create tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_Create = true;
-
-    /// <summary>
-    /// If true, the Duplicate tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_Duplicate = true;
-
-    /// <summary>
-    /// If true, the Duplicate to Map tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_DuplicateToMap = true;
-
-    /// <summary>
-    /// If true, the Move to Camera tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_PullToCamera = true;
-
-    /// <summary>
-    /// If true, the Rotate tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_Rotate = true;
-
-    /// <summary>
-    /// If true, the Scramble tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_Scramble = true;
-
-    /// <summary>
-    /// If true, the Replicate tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_Replicate = true;
-
-    /// <summary>
-    /// If true, the Import/Export Prefab tool collapsibles are visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_Prefab = true;
-
-    /// <summary>
-    /// If true, the Selection Groups tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_SelectionGroups = true;
-
-    /// <summary>
-    /// If true, the Movement Increments tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_MovementIncrements = true;
-
-    /// <summary>
-    /// If true, the Rotation Increments tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_RotationIncrements = true;
-
-    /// <summary>
-    /// If true, the Local Property Search tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_LocalPropertySearch = true;
-
-    /// <summary>
-    /// If true, the Global Property Search tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_GlobalPropertySearch = true;
-
-    /// <summary>
-    /// If true, the Property Mass Edit tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_PropertyMassEdit = true;
-
-    /// <summary>
-    /// If true, the Treasure Maker tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_TreasureMaker = false;
-
-    /// <summary>
-    /// If true, the World Map Layout Generator tool collapsible is visible in the Map Editor Tool window.
-    /// </summary>
-    public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
-
-    public bool Interface_MapEditor_Tool_GridConfiguration = true;
-
-    public bool Interface_MapEditor_Tool_ModelSelector = true;
-
-    public bool Interface_MapEditor_Tool_DisplayGroups = true;
-
-    public bool Interface_MapEditor_Tool_EntityIdentifier = true;
-
-    public bool Interface_MapEditor_Tool_MapValidator = true;
-
-    public bool Interface_MapEditor_Tool_MapModelInsight = true;
-
-    /// <summary>
-    /// If true, the shortcuts for the Selection Groups will be detected.
-    /// </summary>
-    public bool Shortcuts_MapEditor_EnableSelectionGroupShortcuts = false;
-
-    public bool GlobalMapSearch_CopyResults_IncludeHeader = true;
-    public bool GlobalMapSearch_CopyResults_IncludeIndex = true;
-    public bool GlobalMapSearch_CopyResults_IncludeEntityName = true;
-    public bool GlobalMapSearch_CopyResults_IncludeEntityAlias = true;
-    public bool GlobalMapSearch_CopyResults_IncludePropertyName = true;
-    public bool GlobalMapSearch_CopyResults_IncludePropertyValue = true;
-    public string GlobalMapSearch_CopyResults_Delimiter = ",";
-
-    public bool MsbReference_DisplayName = true;
-    public bool MsbReference_DisplayEntityID = true;
-    public bool MsbReference_DisplayAlias = true;
-
-    public bool Interface_MapEditor_WrapAliasDisplay = true;
-
-    ///------------------------------------------------------------
-    /// Model Editor
-    ///------------------------------------------------------------
-    /// <summary>
-    /// If true, the viewport grid is visible in the Model Editor.
-    /// </summary>
-    public bool Interface_ModelEditor_Viewport_Grid = true;
-
-    /// <summary>
-    /// If true, the model list window is visible in the Model Editor.
-    /// </summary>
-    public bool Interface_ModelEditor_ModelSourceList = true;
-
-    /// <summary>
-    /// If true, the model select list window is visible in the Model Editor.
-    /// </summary>
-    public bool Interface_ModelEditor_ModelSelectList = true;
-
-    /// <summary>
-    /// If true, the model content window is visible in the Model Editor.
-    /// </summary>
-    public bool Interface_ModelEditor_ModelContents = true;
-
-    /// <summary>
-    /// If true, the properties window is visible in the Model Editor.
-    /// </summary>
-    public bool Interface_ModelEditor_Properties = true;
-
-    /// <summary>
-    /// If true, the resource list window is visible in the Model Editor.
-    /// </summary>
-    public bool Interface_ModelEditor_ResourceList = true;
-
-    public bool Interface_ModelEditor_Tool_CreateAction = true;
-    public bool Interface_ModelEditor_Tool_ModelGridConfiguration = true;
-    public bool Interface_ModelEditor_Tool_ModelInsight = true;
-    public bool Interface_ModelEditor_Tool_ModelInstanceFinder = true;
-    public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
-
-    public bool ModelEditor_AutoLoadSingles = true;
-    public bool ModelEditor_IncludeAliasInSearch = true;
-
-    public bool Interface_ModelEditor_WrapAliasDisplay = true;
-
-    ///------------------------------------------------------------
-    /// Text Editor
-    ///------------------------------------------------------------
-    /// <summary>
-    /// If true, the file container window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_TextEditor_FileContainerList = true;
-
-    /// <summary>
-    /// If true, the text file window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_TextEditor_FmgList = true;
-
-    /// <summary>
-    /// If true, the text entries window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_TextEditor_TextEntryList = true;
-
-    /// <summary>
-    /// If true, the text entry contents window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_TextEditor_TextEntryContents = true;
-
-    /// <summary>
-    /// If true, the tool window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_TextEditor_ToolWindow = true;
-
-    /// <summary>
-    /// If true, the Text Search tool collapsible is visible in the Text Editor Tool window.
-    /// </summary>
-    public bool Interface_TextEditor_Tool_TextSearch = true;
-
-    /// <summary>
-    /// If true, the Text Replacement tool collapsible is visible in the Text Editor Tool window.
-    /// </summary>
-    public bool Interface_TextEditor_Tool_TextReplacement = true;
-
-    /// <summary>
-    /// If true, the Text Merge tool collapsible is visible in the Text Editor Tool window.
-    /// </summary>
-    public bool Interface_TextEditor_Tool_TextMerge = true;
-
-    ///------------------------------------------------------------
-    /// Param Editor
-    ///------------------------------------------------------------
-    /// <summary>
-    /// If true, then loose params are prioitized over packed params (for games where it is relevant)
-    /// </summary>
-    public bool UseLooseParams = false;
-
-    /// <summary>
-    /// If true, then loose params are repacked into the enc_regulation for DS2 projects.
-    /// </summary>
-    public bool RepackLooseDS2Params = false;
-
-    /// <summary>
-    /// The delimiter character to use when exporting param data.
-    /// </summary>
-    public string Param_Export_Delimiter
-    {
-        get
-        {
-            if (_Param_Export_Delimiter.Length == 0)
-            {
-                _Param_Export_Delimiter = Default.Param_Export_Delimiter;
-            }
-            else if (_Param_Export_Delimiter == "|")
-            {
-                _Param_Export_Delimiter =
-                    Default
-                        .Param_Export_Delimiter; // Temporary measure to prevent conflicts with byte array delimiters. Will be removed later.
-            }
-
-            return _Param_Export_Delimiter;
-        }
-        set => _Param_Export_Delimiter = value;
-    }
-    private string _Param_Export_Delimiter = ",";
-
-    /// <summary>
-    /// If true, the editor window is visible in the Param Editor.
-    /// </summary>
-    public bool Interface_ParamEditor_Table = true;
-
-    /// <summary>
-    /// If true, the tool window is visible in the Param Editor.
-    /// </summary>
-    public bool Interface_ParamEditor_ToolWindow = true;
-
-    /// <summary>
-    /// If true, the Pin Groups tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_PinGroups = true;
-
-    /// <summary>
-    /// If true, the Param Categories tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_ParamCategories = true;
-
-    /// <summary>
-    /// If true, the Param Merge tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_ParamMerge = true;
-
-    public bool Interface_ParamEditor_Tool_ParamUpgrader = true;
-
-    /// <summary>
-    /// If true, the Param Reloader tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_ParamReloader = true;
-
-    /// <summary>
-    /// If true, the Item Gib tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_ItemGib = true;
-
-    /// <summary>
-    /// If true, the Mass Edit tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_MassEdit = true;
-
-    /// <summary>
-    /// If true, the Mass Edit Script tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_MassEditScript = true;
-
-    /// <summary>
-    /// If true, the Duplicate tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_Duplicate = true;
-
-    /// <summary>
-    /// If true, the Commutative Duplicate tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_CommutativeDuplicate = true;
-
-    /// <summary>
-    /// If true, the Row Name Trimmer tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_RowNameTrimmer = true;
-
-    /// <summary>
-    /// If true, the Row Name Sorter tool collapsible is visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_RowNameSorter = true;
-
-    /// <summary>
-    /// If true, the Field Instance tool collapsibles are visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_FieldInstanceFinder = true;
-
-    /// <summary>
-    /// If true, the Row Instance tool collapsibles are visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_RowInstanceFinder = true;
-
-    /// <summary>
-    /// If true, the Set Finder tool collapsibles are visible in the Param Editor Tool window.
-    /// </summary>
-    public bool Interface_ParamEditor_Tool_SetFinder = true;
-
-    ///------------------------------------------------------------
-    /// Graphics Param Editor
-    ///------------------------------------------------------------
-    /// <summary>
-    /// If true, the file list window is visible in the Graphics Param Editor.
-    /// </summary>
-    public bool Interface_GparamEditor_FileList = true;
-
-    /// <summary>
-    /// If true, the group list window is visible in the Graphics Param Editor.
-    /// </summary>
-    public bool Interface_GparamEditor_GroupList = true;
-
-    /// <summary>
-    /// If true, the field list window is visible in the Graphics Param Editor.
-    /// </summary>
-    public bool Interface_GparamEditor_FieldList = true;
-
-    /// <summary>
-    /// If true, the field values window is visible in the Graphics Param Editor.
-    /// </summary>
-    public bool Interface_GparamEditor_FieldValues = true;
-
-    /// <summary>
-    /// If true, the tool window is visible in the Graphics Param Editor.
-    /// </summary>
-    public bool Interface_GparamEditor_ToolWindow = true;
-
-    /// <summary>
-    /// If true, the Quick Edit tool collapsible is visible in the Graphics Param Editor Tool window.
-    /// </summary>
-    public bool Interface_GparamEditor_Tool_QuickEdit = true;
-
-    ///------------------------------------------------------------
-    /// Texture Viewer
-    ///------------------------------------------------------------
-    /// <summary>
-    /// If true, the file list window is visible in the Texture Viewer.
-    /// </summary>
-    public bool Interface_TextureViewer_Files = true;
-
-    /// <summary>
-    /// If true, the texture list window is visible in the Texture Viewer.
-    /// </summary>
-    public bool Interface_TextureViewer_Textures = true;
-
-    /// <summary>
-    /// If true, the texture view window is visible in the Texture Viewer.
-    /// </summary>
-    public bool Interface_TextureViewer_Viewer = true;
-
-    /// <summary>
-    /// If true, the texture properties window is visible in the Texture Viewer.
-    /// </summary>
-    public bool Interface_TextureViewer_Properties = true;
-
-    /// <summary>
-    /// If true, the tool window is visible in the Texture Viewer.
-    /// </summary>
-    public bool Interface_TextureViewer_ToolWindow = true;
-
-    /// <summary>
-    /// If true, the resource list window is visible in the Texture Viewer.
-    /// </summary>
-    public bool Interface_TextureViewer_ResourceList = true;
-
-    public bool Interface_TextureViewer_Tool_ExportTexture = true;
-
-    ///------------------------------------------------------------
-    /// Material Editor
-    ///------------------------------------------------------------
-    public bool Interface_MaterialEditor_SourceList = true;
-    public bool Interface_MaterialEditor_FileList = true;
-    public bool Interface_MaterialEditor_PropertyView = true;
-    public bool Interface_MaterialEditor_ToolWindow = true;
-
-    public bool MaterialEditor_DisplayCommunityFieldNames = false;
-
-    ///------------------------------------------------------------
-    /// File Browser
-    ///------------------------------------------------------------
-    public bool Interface_FileBrowser_FileList = true;
-    public bool Interface_FileBrowser_ItemViewer = true;
-    public bool Interface_FileBrowser_ToolView = true;
-
-    public bool Interface_FileBrowser_Tool_GameUnpacker = true;
-
-    //**************
-    // Actions
-    //**************
-    public Vector3 SavedPosition = new Vector3();
-    public Vector3 SavedRotation = new Vector3();
-    public Vector3 SavedScale = new Vector3();
-
-    //**************
-    // Project
-    //**************
-    public bool PTDE_UseCollisionHack = true;
-    public string PTDE_Collision_Root = "";
-    public bool PTDE_Collision_Root_Warning = true;
-
-    //****************************
-    // Settings: System
-    //****************************
     public bool System_Check_Program_Update = true;
     public float System_Frame_Rate = 60.0f;
     public bool System_Enable_Soapstone_Server = true;
@@ -704,261 +43,92 @@ public class CFG
     public int System_ActionLogger_FadeTime = 1500;
     public int System_WarningLogger_FadeTime = 1500;
 
-    //****************************
-    // Settings: Viewport Grid
-    //****************************
-    // Map Editor: Primary Grid
-    public bool MapEditor_DisplayPrimaryGrid = false;
-    public bool MapEditor_RegeneratePrimaryGrid = false;
-    public int MapEditor_PrimaryGrid_Size = 1000;
-    public float MapEditor_PrimaryGrid_SectionSize = 10;
-    public Vector3 MapEditor_PrimaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float MapEditor_PrimaryGrid_Position_X = 0;
-    public float MapEditor_PrimaryGrid_Position_Y = 0;
-    public float MapEditor_PrimaryGrid_Position_Z = 0;
-
-    public float MapEditor_PrimaryGrid_Rotation_X = 0;
-    public float MapEditor_PrimaryGrid_Rotation_Y = 0;
-    public float MapEditor_PrimaryGrid_Rotation_Z = 0;
-
-    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_X = true;
-    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_Y = true;
-    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_Z = true;
-
-    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_X = true;
-    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_Y = true;
-    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_Z = true;
-
-    public ViewportGridRootAxis MapEditor_PrimaryGrid_Configure_RootAxis = ViewportGridRootAxis.Y;
-
-    // Map Editor: Secondary Grid
-    public bool MapEditor_DisplaySecondaryGrid = false;
-    public bool MapEditor_RegenerateSecondaryGrid = false;
-    public int MapEditor_SecondaryGrid_Size = 1000;
-    public float MapEditor_SecondaryGrid_SectionSize = 10;
-    public Vector3 MapEditor_SecondaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float MapEditor_SecondaryGrid_Position_X = 90;
-    public float MapEditor_SecondaryGrid_Position_Y = 0;
-    public float MapEditor_SecondaryGrid_Position_Z = 0;
-
-    public float MapEditor_SecondaryGrid_Rotation_X = 0;
-    public float MapEditor_SecondaryGrid_Rotation_Y = 0;
-    public float MapEditor_SecondaryGrid_Rotation_Z = 0;
-
-    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_X = true;
-    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_Y = true;
-    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_Z = true;
-
-    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_X = true;
-    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_Y = true;
-    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_Z = true;
-
-    public ViewportGridRootAxis MapEditor_SecondaryGrid_Configure_RootAxis = ViewportGridRootAxis.X;
-
-    // Map Editor: Tertiary Grid
-    public bool MapEditor_DisplayTertiaryGrid = false;
-    public bool MapEditor_RegenerateTertiaryGrid = false;
-    public int MapEditor_TertiaryGrid_Size = 1000;
-    public float MapEditor_TertiaryGrid_SectionSize = 10;
-    public Vector3 MapEditor_TertiaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float MapEditor_TertiaryGrid_Position_X = 0;
-    public float MapEditor_TertiaryGrid_Position_Y = 0;
-    public float MapEditor_TertiaryGrid_Position_Z = 0;
-
-    public float MapEditor_TertiaryGrid_Rotation_X = 0;
-    public float MapEditor_TertiaryGrid_Rotation_Y = 0;
-    public float MapEditor_TertiaryGrid_Rotation_Z = 90;
-
-    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_X = true;
-    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_Y = true;
-    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_Z = true;
-
-    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_X = true;
-    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_Y = true;
-    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_Z = true;
-
-    public ViewportGridRootAxis MapEditor_TertiaryGrid_Configure_RootAxis = ViewportGridRootAxis.Z;
-
-    // Model Editor: Primary Grid
-    public bool ModelEditor_DisplayPrimaryGrid = false;
-    public bool ModelEditor_RegeneratePrimaryGrid = false;
-    public int ModelEditor_PrimaryGrid_Size = 1000;
-    public float ModelEditor_PrimaryGrid_SectionSize = 10;
-
-    public Vector3 ModelEditor_PrimaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float ModelEditor_PrimaryGrid_Position_X = 0;
-    public float ModelEditor_PrimaryGrid_Position_Y = 0;
-    public float ModelEditor_PrimaryGrid_Position_Z = 0;
-
-    public float ModelEditor_PrimaryGrid_Rotation_X = 0;
-    public float ModelEditor_PrimaryGrid_Rotation_Y = 0;
-    public float ModelEditor_PrimaryGrid_Rotation_Z = 0;
-
-    // Model Editor: Secondary Grid
-    public bool ModelEditor_DisplaySecondaryGrid = false;
-    public bool ModelEditor_RegenerateSecondaryGrid = false;
-    public int ModelEditor_SecondaryGrid_Size = 1000;
-    public float ModelEditor_SecondaryGrid_SectionSize = 10;
-
-    public Vector3 ModelEditor_SecondaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float ModelEditor_SecondaryGrid_Position_X = 0;
-    public float ModelEditor_SecondaryGrid_Position_Y = 0;
-    public float ModelEditor_SecondaryGrid_Position_Z = 0;
-
-    public float ModelEditor_SecondaryGrid_Rotation_X = 90;
-    public float ModelEditor_SecondaryGrid_Rotation_Y = 0;
-    public float ModelEditor_SecondaryGrid_Rotation_Z = 0;
-
-    // Model Editor: Tertiary Grid
-    public bool ModelEditor_DisplayTertiaryGrid = false;
-    public bool ModelEditor_RegenerateTertiaryGrid = false;
-    public int ModelEditor_TertiaryGrid_Size = 1000;
-    public float ModelEditor_TertiaryGrid_SectionSize = 10;
-
-    public Vector3 ModelEditor_TertiaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float ModelEditor_TertiaryGrid_Position_X = 0;
-    public float ModelEditor_TertiaryGrid_Position_Y = 0;
-    public float ModelEditor_TertiaryGrid_Position_Z = 0;
-
-    public float ModelEditor_TertiaryGrid_Rotation_X = 0;
-    public float ModelEditor_TertiaryGrid_Rotation_Y = 0;
-    public float ModelEditor_TertiaryGrid_Rotation_Z = 90;
-
-    public Vector3 ModelEditor_FrameInViewport_Offset = new Vector3();
-    public float ModelEditor_FrameInViewport_Distance = 1f;
-    public float ModelEditor_PullToCamera_Offset = 3f;
-
-    //****************************
-    // Settings: Viewport
-    //****************************
-    public bool Viewport_Enable_Rendering = true;
-    public bool Viewport_Enable_Texturing = true;
-    public bool Viewport_Enable_Culling = true;
-
-    public bool Viewport_Enable_Selection_Outline = true;
-    public bool Viewport_Enable_Model_Masks = true;
-    public bool Viewport_Enable_LOD_Facesets = false;
-
-
-    public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
-
-    // Camera
-    public float Viewport_Camera_FOV { get; set; } = 60.0f;
-    public float Viewport_Camera_MoveSpeed_Slow { get; set; } = 1.0f;
-    public float Viewport_Camera_MoveSpeed_Normal { get; set; } = 20.0f;
-    public float Viewport_Camera_MoveSpeed_Fast { get; set; } = 200.0f;
-    public float Viewport_Camera_Sensitivity { get; set; } = 0.0160f;
-    public float Viewport_RenderDistance_Min { get; set; } = 0.1f;
-    public float Viewport_RenderDistance_Max { get; set; } = 50000.0f;
-
-    // Rendering Limits
-    public uint Viewport_Limit_Buffer_Flver_Bone = 65536;
-    public uint Viewport_Limit_Buffer_Indirect_Draw = 50000;
-    public int Viewport_Limit_Renderables = 50000;
-
-    // Wireframe Coloring
-    public float GFX_Wireframe_Color_Variance = 0.11f;
-
-    public float GFX_Renderable_Default_Wireframe_Alpha = 100.0f;
-
-
-    public Vector3 GFX_Renderable_Collision_Color = new Vector3(53, 157, 255);
-    public Vector3 GFX_Renderable_ConnectCollision_Color = new Vector3(146, 57, 158);
-    public Vector3 GFX_Renderable_Navmesh_Color = new Vector3(157, 53, 255);
-    public Vector3 GFX_Renderable_NavmeshGate_Color = new Vector3(50, 220, 0);
-
-    public Vector3 GFX_Renderable_Box_BaseColor = Utils.GetDecimalColor(Color.Blue);
-    public Vector3 GFX_Renderable_Box_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Box_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_Cylinder_BaseColor = Utils.GetDecimalColor(Color.Blue);
-    public Vector3 GFX_Renderable_Cylinder_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Cylinder_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_Sphere_BaseColor = Utils.GetDecimalColor(Color.Blue);
-    public Vector3 GFX_Renderable_Sphere_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Sphere_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_Point_BaseColor = Utils.GetDecimalColor(Color.Yellow);
-    public Vector3 GFX_Renderable_Point_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Point_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_DummyPoly_BaseColor = Utils.GetDecimalColor(Color.Yellow);
-    public Vector3 GFX_Renderable_DummyPoly_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_DummyPoly_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_BonePoint_BaseColor = Utils.GetDecimalColor(Color.Blue);
-    public Vector3 GFX_Renderable_BonePoint_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_BonePoint_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_ModelMarker_Chr_BaseColor = Utils.GetDecimalColor(Color.Firebrick);
-    public Vector3 GFX_Renderable_ModelMarker_Chr_HighlightColor = Utils.GetDecimalColor(Color.Tomato);
-    public float GFX_Renderable_ModelMarker_Chr_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_ModelMarker_Object_BaseColor = Utils.GetDecimalColor(Color.MediumVioletRed);
-    public Vector3 GFX_Renderable_ModelMarker_Object_HighlightColor = Utils.GetDecimalColor(Color.DeepPink);
-    public float GFX_Renderable_ModelMarker_Object_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_ModelMarker_Player_BaseColor = Utils.GetDecimalColor(Color.DarkOliveGreen);
-    public Vector3 GFX_Renderable_ModelMarker_Player_HighlightColor = Utils.GetDecimalColor(Color.OliveDrab);
-    public float GFX_Renderable_ModelMarker_Player_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_ModelMarker_Other_BaseColor = Utils.GetDecimalColor(Color.Wheat);
-    public Vector3 GFX_Renderable_ModelMarker_Other_HighlightColor = Utils.GetDecimalColor(Color.AntiqueWhite);
-    public float GFX_Renderable_ModelMarker_Other_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_PointLight_BaseColor = Utils.GetDecimalColor(Color.YellowGreen);
-    public Vector3 GFX_Renderable_PointLight_HighlightColor = Utils.GetDecimalColor(Color.Yellow);
-    public float GFX_Renderable_PointLight_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_SpotLight_BaseColor = Utils.GetDecimalColor(Color.Goldenrod);
-    public Vector3 GFX_Renderable_SpotLight_HighlightColor = Utils.GetDecimalColor(Color.Violet);
-    public float GFX_Renderable_SpotLight_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_DirectionalLight_BaseColor = Utils.GetDecimalColor(Color.Cyan);
-    public Vector3 GFX_Renderable_DirectionalLight_HighlightColor = Utils.GetDecimalColor(Color.AliceBlue);
-    public float GFX_Renderable_DirectionalLight_Alpha = 75.0f;
-
-    public Vector3 GFX_Renderable_AutoInvadeSphere_BaseColor = Utils.GetDecimalColor(Color.Red);
-    public Vector3 GFX_Renderable_AutoInvadeSphere_HighlightColor = Utils.GetDecimalColor(Color.DarkRed);
-
-    public Vector3 GFX_Renderable_LightProbeSphere_BaseColor = Utils.GetDecimalColor(Color.Yellow);
-    public Vector3 GFX_Renderable_LightProbeSphere_HighlightColor = Utils.GetDecimalColor(Color.YellowGreen);
-
-    public Vector3 GFX_Renderable_LevelConnectorSphere_BaseColor = Utils.GetDecimalColor(Color.Turquoise);
-    public Vector3 GFX_Renderable_LevelConnectorSphere_HighlightColor = Utils.GetDecimalColor(Color.DarkTurquoise);
-
-    public Vector3 GFX_Gizmo_X_BaseColor = new(0.952f, 0.211f, 0.325f);
-    public Vector3 GFX_Gizmo_X_HighlightColor = new(1.0f, 0.4f, 0.513f);
-
-    public Vector3 GFX_Gizmo_Y_BaseColor = new(0.525f, 0.784f, 0.082f);
-    public Vector3 GFX_Gizmo_Y_HighlightColor = new(0.713f, 0.972f, 0.270f);
-
-    public Vector3 GFX_Gizmo_Z_BaseColor = new(0.219f, 0.564f, 0.929f);
-    public Vector3 GFX_Gizmo_Z_HighlightColor = new(0.407f, 0.690f, 1.0f);
-
-    public float Viewport_DefaultRender_Brightness = 1.0f;
-    public float Viewport_DefaultRender_Saturation = 0.5f;
-
-    public Vector3 Viewport_DefaultRender_SelectColor = new(1.0f, 0.5f, 0.0f);
-
-    public bool Viewport_DisplayControls = true;
-    public bool Viewport_DisplayRotationIncrement = true;
-    public bool Viewport_DisplayMovementIncrement = true;
-    public bool Viewport_Enable_BoxSelection = true;
-    public float Viewport_BS_DistThresFactor = 1.2f;
-
-    public Vector3 Viewport_Background_Color = new(1.0f, 0.5f, 0.0f);
-
-    //****************************
-    // Settings: Map Editor
-    //****************************
+    ///------------------------------------------------------------
+    /// Project
+    ///------------------------------------------------------------
+
+    public bool Project_Enable_Auto_Load = true;
+
+    public bool EnableAutomaticSave = true;
+    public bool EnableBackupSaves = true;
+
+    public float AutomaticSaveIntervalTime = 300;
+
+    public string DefaultModDirectory = "";
+    public string DefaultDataDirectory = "";
+
+    public string ModEngine3ProfileDirectory = "";
+    public string ModEngine2Install = "";
+    public string ModEngine2Dlls = "";
+
+    public ProjectBackupBehaviorType BackupProcessType = ProjectBackupBehaviorType.Simple;
+
+    public string Alias_Export_Delimiter = ";";
+    public bool Alias_Editor_Export_Ignore_Empty = false;
+
+    public bool PTDE_UseCollisionHack = true;
+    public string PTDE_Collision_Root = "";
+    public bool PTDE_Collision_Root_Warning = true;
+
+    public bool AliasBank_EditorMode = false;
+
+    public bool AssetBrowser_ShowAliasesInBrowser = true;
+    public bool AssetBrowser_ShowTagsInBrowser = true;
+    public bool AssetBrowser_ShowLowDetailParts = false;
+    public bool AssetBrowser_UpdateName = true;
+    public bool AssetBrowser_UpdateInstanceID = true;
+
+    public bool MapAtlas_ShowTags = true;
+    public bool CharacterAtlas_ShowTags = true;
+    public bool AssetAtlas_ShowTags = true;
+    public bool PartAtlas_ShowTags = true;
+    public bool MapPieceAtlas_ShowTags = true;
+    public bool EventFlagAtlas_ShowTags = true;
+    public bool ParticleAtlas_ShowTags = true;
+    public bool MapNameAtlas_ShowTags = true;
+    public bool GparamNameAtlas_ShowTags = true;
+    public bool SoundAtlas_ShowTags = true;
+    public bool CutsceneAtlas_ShowTags = true;
+    public bool MovieAtlas_ShowTags = true;
+    public bool TimeActAtlas_ShowTags = true;
+    public bool TalkAtlas_ShowTags = true;
+
+    ///------------------------------------------------------------
+    /// Interface
+    ///------------------------------------------------------------
+    public bool System_ShowActionLogger = true;
+    public bool System_ShowWarningLogger = true;
+    public bool System_WrapAliasDisplay = true;
+
+    public float System_UI_Scale = 1.0f;
+    public bool System_ScaleByDPI = true;
+
+    public bool System_Font_Chinese = false;
+    public bool System_Font_Cyrillic = false;
+    public bool System_Font_Korean = false;
+    public bool System_Font_Thai = false;
+    public bool System_Font_Vietnamese = false;
+
+    public string System_English_Font = Path.Join("Assets","Fonts","RobotoMono-Light.ttf");
+    public string System_Other_Font = Path.Join("Assets","Fonts","NotoSansCJKtc-Light.otf");
+
+    public string SelectedTheme = "";
+
+    public float Interface_FontSize = 14.0f;
+
+    public bool Interface_Editor_Viewport = true;
+    public bool Viewport_Profiling = true;
+
+    public bool Allow_Window_Movement = true;
+    public int GFX_Display_Width { get; set; } = 1920;
+    public int GFX_Display_Height { get; set; } = 1057;
+    public int GFX_Display_X { get; set; } = 0;
+    public int GFX_Display_Y { get; set; } = 23;
+
+    ///------------------------------------------------------------
+    /// Map Editor
+    ///------------------------------------------------------------
+    // General
     public bool MapEditor_EnableMapUnload = true;
     public bool MapEditor_IgnoreSaveExceptions = false;
 
@@ -1025,14 +195,21 @@ public class CFG
 
     public bool MapEditor_Selection_Movement_DiscreteApplication = false;
 
-    // Scene Filters
-    public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
-    public RenderFilterPreset SceneFilter_Preset_01 { get; set; } = new("Map", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-    public RenderFilterPreset SceneFilter_Preset_02 { get; set; } = new("Collision", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-    public RenderFilterPreset SceneFilter_Preset_03 { get; set; } = new("Collision & Navmesh", RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-    public RenderFilterPreset SceneFilter_Preset_04 { get; set; } = new("Lighting (Map)", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
-    public RenderFilterPreset SceneFilter_Preset_05 { get; set; } = new("Lighting (Collision)", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
-    public RenderFilterPreset SceneFilter_Preset_06 { get; set; } = new("All", RenderFilter.All);
+    public bool Shortcuts_MapEditor_EnableSelectionGroupShortcuts = false;
+
+    public bool GlobalMapSearch_CopyResults_IncludeHeader = true;
+    public bool GlobalMapSearch_CopyResults_IncludeIndex = true;
+    public bool GlobalMapSearch_CopyResults_IncludeEntityName = true;
+    public bool GlobalMapSearch_CopyResults_IncludeEntityAlias = true;
+    public bool GlobalMapSearch_CopyResults_IncludePropertyName = true;
+    public bool GlobalMapSearch_CopyResults_IncludePropertyValue = true;
+    public string GlobalMapSearch_CopyResults_Delimiter = ",";
+
+    public bool MsbReference_DisplayName = true;
+    public bool MsbReference_DisplayEntityID = true;
+    public bool MsbReference_DisplayAlias = true;
+
+    public bool Interface_MapEditor_WrapAliasDisplay = true;
 
     public bool Prefab_IncludeEntityID = true;
     public bool Prefab_IncludeEntityGroupIDs = true;
@@ -1081,9 +258,198 @@ public class CFG
 
     public HavokCollisionType CurrentHavokCollisionType = HavokCollisionType.Low;
 
-    //****************************
-    // Settings: Model Editor
-    //****************************
+    // Toolbar
+    public bool Toolbar_Duplicate_Increment_Entity_ID = false;
+    public bool Toolbar_Duplicate_Increment_PartNames = false;
+    public bool Toolbar_Duplicate_Increment_InstanceID = true;
+
+    public bool Toolbar_Duplicate_Clear_Entity_ID = false;
+    public bool Toolbar_Duplicate_Clear_Entity_Group_IDs = false;
+
+    public bool Toolbar_Presence_Dummy_Type_ER = false;
+    public bool Toolbar_Presence_Dummify = true;
+    public bool Toolbar_Presence_Undummify = false;
+
+    public bool Toolbar_Rotate_X = true;
+    public bool Toolbar_Rotate_Y = false;
+    public bool Toolbar_Rotate_Y_Pivot = false;
+    public bool Toolbar_Fixed_Rotate = false;
+    public Vector3 Toolbar_Rotate_FixedAngle = new Vector3(0, 0, 0);
+
+    public bool Toolbar_Move_to_Camera_Offset_Specific_Input = false;
+    public float Toolbar_Move_to_Camera_Offset = 3.0f;
+
+    public bool Toolbar_Rotate_Specific_Input = false;
+
+    public int Toolbar_Rotate_IncrementType = 0;
+    public float Toolbar_Rotate_Increment_0 { get; set; } = 90.0f;
+    public float Toolbar_Rotate_Increment_1 { get; set; } = 45.0f;
+    public float Toolbar_Rotate_Increment_2 { get; set; } = 30.0f;
+    public float Toolbar_Rotate_Increment_3 { get; set; } = 15.0f;
+    public float Toolbar_Rotate_Increment_4 { get; set; } = 5.0f;
+
+    public bool Toolbar_Move_to_Grid_X = false;
+    public bool Toolbar_Move_to_Grid_Y = true;
+    public bool Toolbar_Move_to_Grid_Z = false;
+
+    public bool Toolbar_Move_to_Grid_Specific_Height_Input = false;
+
+    public bool Toolbar_Create_Light = false;
+    public bool Toolbar_Create_Part = true;
+    public bool Toolbar_Create_Region = false;
+    public bool Toolbar_Create_Event = false;
+
+    public string Toolbar_Tag_Visibility_Target = "LOD";
+    public bool Toolbar_Tag_Visibility_State_Enabled = false;
+    public bool Toolbar_Tag_Visibility_State_Disabled = true;
+
+    public bool Toolbar_ShowScramblerMenu = false;
+
+    public bool Scrambler_RandomisePosition_X = false;
+    public bool Scrambler_RandomisePosition_Y = false;
+    public bool Scrambler_RandomisePosition_Z = false;
+
+    public float Scrambler_OffsetMin_Position_X = -100.0f;
+    public float Scrambler_OffsetMax_Position_X = 100.0f;
+    public float Scrambler_OffsetMin_Position_Y = -100.0f;
+    public float Scrambler_OffsetMax_Position_Y = 100.0f;
+    public float Scrambler_OffsetMin_Position_Z = -100.0f;
+    public float Scrambler_OffsetMax_Position_Z = 100.0f;
+
+    public bool Scrambler_RandomiseRotation_X = false;
+    public bool Scrambler_RandomiseRotation_Y = false;
+    public bool Scrambler_RandomiseRotation_Z = false;
+
+    public float Scrambler_OffsetMin_Rotation_X = 0.0f;
+    public float Scrambler_OffsetMax_Rotation_X = 360.0f;
+    public float Scrambler_OffsetMin_Rotation_Y = 0.0f;
+    public float Scrambler_OffsetMax_Rotation_Y = 360.0f;
+    public float Scrambler_OffsetMin_Rotation_Z = 0.0f;
+    public float Scrambler_OffsetMax_Rotation_Z = 360.0f;
+
+    public bool Scrambler_RandomiseScale_SharedScale = false;
+
+    public bool Scrambler_RandomiseScale_X = false;
+    public bool Scrambler_RandomiseScale_Y = false;
+    public bool Scrambler_RandomiseScale_Z = false;
+
+    public float Scrambler_OffsetMin_Scale_X = 1.0f;
+    public float Scrambler_OffsetMax_Scale_X = 3.0f;
+    public float Scrambler_OffsetMin_Scale_Y = 1.0f;
+    public float Scrambler_OffsetMax_Scale_Y = 3.0f;
+    public float Scrambler_OffsetMin_Scale_Z = 1.0f;
+    public float Scrambler_OffsetMax_Scale_Z = 3.0f;
+
+    public bool Toolbar_ShowReplicatorMenu = false;
+
+    public bool Replicator_Circle_Radius_Specific_Input = false;
+    public bool Replicator_Sphere_Horizontal_Radius_Specific_Input = false;
+    public bool Replicator_Sphere_Vertical_Radius_Specific_Input = false;
+
+    public bool Replicator_Apply_Scramble_Configuration = false;
+    public bool Replicator_Increment_Entity_ID = false;
+    public bool Replicator_Increment_PartNames = false;
+    public bool Replicator_Increment_InstanceID = true;
+
+    public bool Replicator_Clear_Entity_ID = false;
+    public bool Replicator_Clear_Entity_Group_IDs = false;
+
+    public bool Replicator_Mode_Line = true;
+    public bool Replicator_Mode_Circle = false;
+    public bool Replicator_Mode_Square = false;
+    public bool Replicator_Mode_Sphere = false;
+    public bool Replicator_Mode_Box = false;
+
+    public int Replicator_Line_Clone_Amount = 1;
+    public int Replicator_Line_Position_Offset = 25;
+    public bool Replicator_Line_Position_Offset_Axis_X = true;
+    public bool Replicator_Line_Position_Offset_Axis_Y = false;
+    public bool Replicator_Line_Position_Offset_Axis_Z = false;
+    public bool Replicator_Line_Offset_Direction_Flipped = false;
+
+    public int Replicator_Circle_Size = 1;
+    public float Replicator_Circle_Radius = 1;
+
+    public int Replicator_Square_Size = 4;
+    public float Replicator_Square_Width = 4;
+    public float Replicator_Square_Depth = 4;
+
+    public int Replicator_Sphere_Size = 1;
+    public float Replicator_Sphere_Horizontal_Radius = 1;
+    public float Replicator_Sphere_Vertical_Radius = 1;
+
+    public int Toolbar_EntityGroupID = 0;
+    public string Toolbar_EntityGroup_Attribute = "";
+
+    // Windows
+    public bool Interface_MapEditor_Viewport_Grid = true;
+    public bool Interface_MapEditor_MapList = true;
+    public bool Interface_MapEditor_MapContents = true;
+    public bool Interface_MapEditor_Properties = true;
+    public bool Interface_MapEditor_RenderGroups = true;
+    public bool Interface_MapEditor_AssetBrowser = true;
+    public bool Interface_MapEditor_ToolWindow = true;
+    public bool Interface_MapEditor_ResourceList = true;
+
+    // Tools
+    public bool Interface_MapEditor_Tool_Create = true;
+    public bool Interface_MapEditor_Tool_Duplicate = true;
+    public bool Interface_MapEditor_Tool_DuplicateToMap = true;
+    public bool Interface_MapEditor_Tool_PullToCamera = true;
+    public bool Interface_MapEditor_Tool_Rotate = true;
+    public bool Interface_MapEditor_Tool_Scramble = true;
+    public bool Interface_MapEditor_Tool_Replicate = true;
+    public bool Interface_MapEditor_Tool_Prefab = true;
+    public bool Interface_MapEditor_Tool_SelectionGroups = true;
+    public bool Interface_MapEditor_Tool_MovementIncrements = true;
+    public bool Interface_MapEditor_Tool_RotationIncrements = true;
+    public bool Interface_MapEditor_Tool_LocalPropertySearch = true;
+    public bool Interface_MapEditor_Tool_GlobalPropertySearch = true;
+    public bool Interface_MapEditor_Tool_PropertyMassEdit = true;
+    public bool Interface_MapEditor_Tool_TreasureMaker = false;
+    public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
+    public bool Interface_MapEditor_Tool_GridConfiguration = true;
+    public bool Interface_MapEditor_Tool_ModelSelector = true;
+    public bool Interface_MapEditor_Tool_DisplayGroups = true;
+    public bool Interface_MapEditor_Tool_EntityIdentifier = true;
+    public bool Interface_MapEditor_Tool_MapValidator = true;
+    public bool Interface_MapEditor_Tool_MapModelInsight = true;
+
+    // Saving
+    public bool AutomaticSave_MapEditor = true;
+
+    public bool MapEditor_AutomaticSave_IncludeMSB = true;
+    public bool MapEditor_AutomaticSave_IncludeBTL = false;
+    public bool MapEditor_AutomaticSave_IncludeAIP = false;
+    public bool MapEditor_AutomaticSave_IncludeNVA = false;
+    public bool MapEditor_AutomaticSave_IncludeBTAB = false;
+    public bool MapEditor_AutomaticSave_IncludeBTPB = false;
+
+    public bool MapEditor_ManualSave_IncludeMSB = true;
+    public bool MapEditor_ManualSave_IncludeBTL = true;
+    public bool MapEditor_ManualSave_IncludeAIP = true;
+    public bool MapEditor_ManualSave_IncludeNVA = true;
+    public bool MapEditor_ManualSave_IncludeBTAB = true;
+    public bool MapEditor_ManualSave_IncludeBTPB = true;
+
+    // Scene Filters
+    public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
+    public RenderFilterPreset SceneFilter_Preset_01 { get; set; } = new("Map", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
+    public RenderFilterPreset SceneFilter_Preset_02 { get; set; } = new("Collision", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
+    public RenderFilterPreset SceneFilter_Preset_03 { get; set; } = new("Collision & Navmesh", RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
+    public RenderFilterPreset SceneFilter_Preset_04 { get; set; } = new("Lighting (Map)", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
+    public RenderFilterPreset SceneFilter_Preset_05 { get; set; } = new("Lighting (Collision)", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
+    public RenderFilterPreset SceneFilter_Preset_06 { get; set; } = new("All", RenderFilter.All);
+
+    ///------------------------------------------------------------
+    /// Model Editor
+    ///------------------------------------------------------------
+    // General
+    public bool ModelEditor_AutoLoadSingles = true;
+    public bool ModelEditor_IncludeAliasInSearch = true;
+
+    public bool Interface_ModelEditor_WrapAliasDisplay = true;
+
     public bool ModelEditor_ViewMeshes = true;
     public bool ModelEditor_ViewDummyPolys = true;
     public bool ModelEditor_ViewBones = true;
@@ -1115,9 +481,33 @@ public class CFG
     public float DummyMeshSize = 0.05f;
     public float NodeMeshSize = 0.05f;
 
-    //****************************
-    // Settings: Param Editor
-    //****************************
+    // Windows
+    public bool Interface_ModelEditor_Viewport_Grid = true;
+    public bool Interface_ModelEditor_ModelSourceList = true;
+    public bool Interface_ModelEditor_ModelSelectList = true;
+    public bool Interface_ModelEditor_ModelContents = true;
+    public bool Interface_ModelEditor_Properties = true;
+    public bool Interface_ModelEditor_ResourceList = true;
+
+    // Tools
+    public bool Interface_ModelEditor_Tool_CreateAction = true;
+    public bool Interface_ModelEditor_Tool_ModelGridConfiguration = true;
+    public bool Interface_ModelEditor_Tool_ModelInsight = true;
+    public bool Interface_ModelEditor_Tool_ModelInstanceFinder = true;
+    public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
+
+    // Saving
+    public bool ModelEditor_AutomaticSave_IncludeFLVER = true;
+    public bool ModelEditor_ManualSave_IncludeFLVER = true;
+    public bool AutomaticSave_ModelEditor = true;
+
+    ///------------------------------------------------------------
+    /// Param Editor
+    ///------------------------------------------------------------
+    // General
+    public bool UseLooseParams = false;
+    public bool RepackLooseDS2Params = false;
+
     // Done per project so we can default ON for DS2 and ER without forcing stripping for the others
     public bool Param_StripRowNamesOnSave_DES = false;
     public bool Param_StripRowNamesOnSave_DS1 = false;
@@ -1249,9 +639,65 @@ public class CFG
 
     public bool Param_TableGroupView_AllowDuplicateInject = false;
 
-    //****************************
-    // Settings: Text Editor
-    //****************************
+    public bool UseLatestGameOffset = true;
+    public int SelectedGameOffsetData = 0;
+
+    // Windows
+    public bool Interface_ParamEditor_Table = true;
+
+    // Tools
+    public bool Interface_ParamEditor_ToolWindow = true;
+    public bool Interface_ParamEditor_Tool_PinGroups = true;
+    public bool Interface_ParamEditor_Tool_ParamCategories = true;
+    public bool Interface_ParamEditor_Tool_ParamMerge = true;
+    public bool Interface_ParamEditor_Tool_ParamUpgrader = true;
+    public bool Interface_ParamEditor_Tool_ParamReloader = true;
+    public bool Interface_ParamEditor_Tool_ItemGib = true;
+    public bool Interface_ParamEditor_Tool_MassEdit = true;
+    public bool Interface_ParamEditor_Tool_MassEditScript = true;
+    public bool Interface_ParamEditor_Tool_Duplicate = true;
+    public bool Interface_ParamEditor_Tool_CommutativeDuplicate = true;
+    public bool Interface_ParamEditor_Tool_RowNameTrimmer = true;
+    public bool Interface_ParamEditor_Tool_RowNameSorter = true;
+    public bool Interface_ParamEditor_Tool_FieldInstanceFinder = true;
+    public bool Interface_ParamEditor_Tool_RowInstanceFinder = true;
+    public bool Interface_ParamEditor_Tool_SetFinder = true;
+
+    // Saving
+    public bool AutomaticSave_ParamEditor = true;
+
+    public bool ParamEditor_AutomaticSave_IncludePARAM = true;
+    public bool ParamEditor_ManualSave_IncludePARAM = true;
+
+    // Misc
+    public string Param_Export_Delimiter
+    {
+        get
+        {
+            if (_Param_Export_Delimiter.Length == 0)
+            {
+                _Param_Export_Delimiter = Default.Param_Export_Delimiter;
+            }
+            else if (_Param_Export_Delimiter == "|")
+            {
+                _Param_Export_Delimiter =
+                    Default
+                        .Param_Export_Delimiter; // Temporary measure to prevent conflicts with byte array delimiters. Will be removed later.
+            }
+
+            return _Param_Export_Delimiter;
+        }
+        set => _Param_Export_Delimiter = value;
+    }
+    private string _Param_Export_Delimiter = ",";
+
+    public string Param_Import_Delimiter = ",";
+
+
+    ///------------------------------------------------------------
+    /// Text Editor
+    ///------------------------------------------------------------
+    // General
     public TextContainerCategory TextEditor_PrimaryCategory = TextContainerCategory.English;
 
     public bool TextEditor_AdvancedPresentationMode = false;
@@ -1314,9 +760,27 @@ public class CFG
     public bool TextEditor_LanguageSync_IncludeModifiedEntries = true;
     public bool TextEditor_LanguageSync_IncludeUniqueEntries = true;
 
-    //****************************
-    // Settings: Gparam Editor
-    //****************************
+    // Windows
+    public bool Interface_TextEditor_FileContainerList = true;
+    public bool Interface_TextEditor_FmgList = true;
+    public bool Interface_TextEditor_TextEntryList = true;
+    public bool Interface_TextEditor_TextEntryContents = true;
+
+    // Tools
+    public bool Interface_TextEditor_ToolWindow = true;
+    public bool Interface_TextEditor_Tool_TextSearch = true;
+    public bool Interface_TextEditor_Tool_TextReplacement = true;
+    public bool Interface_TextEditor_Tool_TextMerge = true;
+
+    // Saving
+    public bool AutomaticSave_TextEditor = true;
+
+    public bool TextEditor_AutomaticSave_IncludeFMG = true;
+    public bool TextEditor_ManualSave_IncludeFMG = true;
+
+    ///------------------------------------------------------------
+    /// Graphics Param Editor
+    ///------------------------------------------------------------
     public bool Interface_Display_Alias_for_Gparam = true;
 
     public bool Gparam_DisplayParamGroupAlias = true;
@@ -1350,14 +814,26 @@ public class CFG
     public string Gparam_QuickEdit_Restore = "restore";
     public string Gparam_QuickEdit_Random = "random";
 
-    //****************************
-    // Settings: Particle Editor
-    //****************************
-    public bool Interface_Display_Alias_for_Particles = true;
+    // Windows
+    public bool Interface_GparamEditor_FileList = true;
+    public bool Interface_GparamEditor_GroupList = true;
+    public bool Interface_GparamEditor_FieldList = true;
+    public bool Interface_GparamEditor_FieldValues = true;
 
-    //****************************
-    // Settings: Texture Viewer
-    //****************************
+    // Tools
+    public bool Interface_GparamEditor_ToolWindow = true;
+    public bool Interface_GparamEditor_Tool_QuickEdit = true;
+
+    // Saving
+    public bool AutomaticSave_GparamEditor = false;
+
+    public bool GparamEditor_AutomaticSave_IncludeGPARAM = true;
+    public bool GparamEditor_ManualSave_IncludeGPARAM = true;
+
+    ///------------------------------------------------------------
+    /// Texture Viewer
+    ///------------------------------------------------------------
+    // General
     public bool TextureViewer_FileList_ShowLowDetail_Entries = true;
 
     public bool TextureViewer_FileList_ShowAliasName_Characters = true;
@@ -1371,175 +847,313 @@ public class CFG
     public bool TextureViewerToolbar_ExportTexture_DisplayConfirm = true;
     public int TextureViewerToolbar_ExportTextureType = 0;
 
-    //****************************
     // Windows
-    //****************************
-    public bool AliasBank_EditorMode = false;
+    public bool Interface_TextureViewer_Files = true;
+    public bool Interface_TextureViewer_Textures = true;
+    public bool Interface_TextureViewer_Viewer = true;
+    public bool Interface_TextureViewer_Properties = true;
+    public bool Interface_TextureViewer_ToolWindow = true;
+    public bool Interface_TextureViewer_ResourceList = true;
 
-    public bool AssetBrowser_ShowAliasesInBrowser = true;
-    public bool AssetBrowser_ShowTagsInBrowser = true;
-    public bool AssetBrowser_ShowLowDetailParts = false;
-    public bool AssetBrowser_UpdateName = true;
-    public bool AssetBrowser_UpdateInstanceID = true;
+    // Tools
+    public bool Interface_TextureViewer_Tool_ExportTexture = true;
 
-    public bool MapAtlas_ShowTags = true;
-    public bool CharacterAtlas_ShowTags = true;
-    public bool AssetAtlas_ShowTags = true;
-    public bool PartAtlas_ShowTags = true;
-    public bool MapPieceAtlas_ShowTags = true;
-    public bool EventFlagAtlas_ShowTags = true;
-    public bool ParticleAtlas_ShowTags = true;
-    public bool MapNameAtlas_ShowTags = true;
-    public bool GparamNameAtlas_ShowTags = true;
-    public bool SoundAtlas_ShowTags = true;
-    public bool CutsceneAtlas_ShowTags = true;
-    public bool MovieAtlas_ShowTags = true;
-    public bool TimeActAtlas_ShowTags = true;
-    public bool TalkAtlas_ShowTags = true;
+    ///------------------------------------------------------------
+    /// Material Editor
+    ///------------------------------------------------------------
+    // General
+    public bool MaterialEditor_DisplayCommunityFieldNames = false;
 
-    //****************************
-    // Map Toolbar
-    //****************************
+    // Windows
+    public bool Interface_MaterialEditor_SourceList = true;
+    public bool Interface_MaterialEditor_FileList = true;
+    public bool Interface_MaterialEditor_PropertyView = true;
+    public bool Interface_MaterialEditor_ToolWindow = true;
 
-    public bool Toolbar_Duplicate_Increment_Entity_ID = false;
-    public bool Toolbar_Duplicate_Increment_PartNames = false;
-    public bool Toolbar_Duplicate_Increment_InstanceID = true;
+    // Tools
 
-    public bool Toolbar_Duplicate_Clear_Entity_ID = false;
-    public bool Toolbar_Duplicate_Clear_Entity_Group_IDs = false;
+    // Saving
+    public bool AutomaticSave_MaterialEditor = false;
 
-    public bool Toolbar_Presence_Dummy_Type_ER = false;
-    public bool Toolbar_Presence_Dummify = true;
-    public bool Toolbar_Presence_Undummify = false;
+    public bool MaterialEditor_AutomaticSave_IncludeMTD = true;
+    public bool MaterialEditor_AutomaticSave_IncludeMATBIN = true;
 
-    public bool Toolbar_Rotate_X = true;
-    public bool Toolbar_Rotate_Y = false;
-    public bool Toolbar_Rotate_Y_Pivot = false;
-    public bool Toolbar_Fixed_Rotate = false;
-    public Vector3 Toolbar_Rotate_FixedAngle = new Vector3(0, 0, 0);
+    public bool MaterialEditor_ManualSave_IncludeMTD = true;
+    public bool MaterialEditor_ManualSave_IncludeMATBIN = true;
 
-    public bool Toolbar_Move_to_Camera_Offset_Specific_Input = false;
-    public float Toolbar_Move_to_Camera_Offset = 3.0f;
+    ///------------------------------------------------------------
+    /// File Browser
+    ///------------------------------------------------------------
+    public bool Interface_FileBrowser_FileList = true;
+    public bool Interface_FileBrowser_ItemViewer = true;
+    public bool Interface_FileBrowser_ToolView = true;
 
-    public bool Toolbar_Rotate_Specific_Input = false;
+    public bool Interface_FileBrowser_Tool_GameUnpacker = true;
 
-    public int Toolbar_Rotate_IncrementType = 0;
-    public float Toolbar_Rotate_Increment_0 { get; set; } = 90.0f;
-    public float Toolbar_Rotate_Increment_1 { get; set; } = 45.0f;
-    public float Toolbar_Rotate_Increment_2 { get; set; } = 30.0f;
-    public float Toolbar_Rotate_Increment_3 { get; set; } = 15.0f;
-    public float Toolbar_Rotate_Increment_4 { get; set; } = 5.0f;
+    ///------------------------------------------------------------
+    /// Viewport
+    ///------------------------------------------------------------
+    public bool Viewport_Enable_Rendering = true;
+    public bool Viewport_Enable_Texturing = true;
+    public bool Viewport_Enable_Culling = true;
 
-    public bool Toolbar_Move_to_Grid_X = false;
-    public bool Toolbar_Move_to_Grid_Y = true;
-    public bool Toolbar_Move_to_Grid_Z = false;
+    public bool Viewport_Enable_Selection_Outline = true;
+    public bool Viewport_Enable_Model_Masks = true;
+    public bool Viewport_Enable_LOD_Facesets = false;
 
-    public bool Toolbar_Move_to_Grid_Specific_Height_Input = false;
 
-    public bool Toolbar_Create_Light = false;
-    public bool Toolbar_Create_Part = true;
-    public bool Toolbar_Create_Region = false;
-    public bool Toolbar_Create_Event = false;
+    public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
 
-    public string Toolbar_Tag_Visibility_Target = "LOD";
-    public bool Toolbar_Tag_Visibility_State_Enabled = false;
-    public bool Toolbar_Tag_Visibility_State_Disabled = true;
+    // Camera
+    public float Viewport_Camera_FOV { get; set; } = 60.0f;
+    public float Viewport_Camera_MoveSpeed_Slow { get; set; } = 1.0f;
+    public float Viewport_Camera_MoveSpeed_Normal { get; set; } = 20.0f;
+    public float Viewport_Camera_MoveSpeed_Fast { get; set; } = 200.0f;
+    public float Viewport_Camera_Sensitivity { get; set; } = 0.0160f;
+    public float Viewport_RenderDistance_Min { get; set; } = 0.1f;
+    public float Viewport_RenderDistance_Max { get; set; } = 50000.0f;
 
-    public bool Toolbar_ShowScramblerMenu = false;
+    // Rendering Limits
+    public uint Viewport_Limit_Buffer_Flver_Bone = 65536;
+    public uint Viewport_Limit_Buffer_Indirect_Draw = 50000;
+    public int Viewport_Limit_Renderables = 50000;
 
-    public bool Scrambler_RandomisePosition_X = false;
-    public bool Scrambler_RandomisePosition_Y = false;
-    public bool Scrambler_RandomisePosition_Z = false;
+    // Wireframe Coloring
+    public float GFX_Wireframe_Color_Variance = 0.11f;
 
-    public float Scrambler_OffsetMin_Position_X = -100.0f;
-    public float Scrambler_OffsetMax_Position_X = 100.0f;
-    public float Scrambler_OffsetMin_Position_Y = -100.0f;
-    public float Scrambler_OffsetMax_Position_Y = 100.0f;
-    public float Scrambler_OffsetMin_Position_Z = -100.0f;
-    public float Scrambler_OffsetMax_Position_Z = 100.0f;
+    public float GFX_Renderable_Default_Wireframe_Alpha = 100.0f;
 
-    public bool Scrambler_RandomiseRotation_X = false;
-    public bool Scrambler_RandomiseRotation_Y = false;
-    public bool Scrambler_RandomiseRotation_Z = false;
 
-    public float Scrambler_OffsetMin_Rotation_X = 0.0f;
-    public float Scrambler_OffsetMax_Rotation_X = 360.0f;
-    public float Scrambler_OffsetMin_Rotation_Y = 0.0f;
-    public float Scrambler_OffsetMax_Rotation_Y = 360.0f;
-    public float Scrambler_OffsetMin_Rotation_Z = 0.0f;
-    public float Scrambler_OffsetMax_Rotation_Z = 360.0f;
+    public Vector3 GFX_Renderable_Collision_Color = new Vector3(53, 157, 255);
+    public Vector3 GFX_Renderable_ConnectCollision_Color = new Vector3(146, 57, 158);
+    public Vector3 GFX_Renderable_Navmesh_Color = new Vector3(157, 53, 255);
+    public Vector3 GFX_Renderable_NavmeshGate_Color = new Vector3(50, 220, 0);
 
-    public bool Scrambler_RandomiseScale_SharedScale = false;
+    public Vector3 GFX_Renderable_Box_BaseColor = Utils.GetDecimalColor(Color.Blue);
+    public Vector3 GFX_Renderable_Box_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
+    public float GFX_Renderable_Box_Alpha = 75.0f;
 
-    public bool Scrambler_RandomiseScale_X = false;
-    public bool Scrambler_RandomiseScale_Y = false;
-    public bool Scrambler_RandomiseScale_Z = false;
+    public Vector3 GFX_Renderable_Cylinder_BaseColor = Utils.GetDecimalColor(Color.Blue);
+    public Vector3 GFX_Renderable_Cylinder_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
+    public float GFX_Renderable_Cylinder_Alpha = 75.0f;
 
-    public float Scrambler_OffsetMin_Scale_X = 1.0f;
-    public float Scrambler_OffsetMax_Scale_X = 3.0f;
-    public float Scrambler_OffsetMin_Scale_Y = 1.0f;
-    public float Scrambler_OffsetMax_Scale_Y = 3.0f;
-    public float Scrambler_OffsetMin_Scale_Z = 1.0f;
-    public float Scrambler_OffsetMax_Scale_Z = 3.0f;
+    public Vector3 GFX_Renderable_Sphere_BaseColor = Utils.GetDecimalColor(Color.Blue);
+    public Vector3 GFX_Renderable_Sphere_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
+    public float GFX_Renderable_Sphere_Alpha = 75.0f;
 
-    public bool Toolbar_ShowReplicatorMenu = false;
+    public Vector3 GFX_Renderable_Point_BaseColor = Utils.GetDecimalColor(Color.Yellow);
+    public Vector3 GFX_Renderable_Point_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
+    public float GFX_Renderable_Point_Alpha = 75.0f;
 
-    public bool Replicator_Circle_Radius_Specific_Input = false;
-    public bool Replicator_Sphere_Horizontal_Radius_Specific_Input = false;
-    public bool Replicator_Sphere_Vertical_Radius_Specific_Input = false;
+    public Vector3 GFX_Renderable_DummyPoly_BaseColor = Utils.GetDecimalColor(Color.Yellow);
+    public Vector3 GFX_Renderable_DummyPoly_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
+    public float GFX_Renderable_DummyPoly_Alpha = 75.0f;
 
-    public bool Replicator_Apply_Scramble_Configuration = false;
-    public bool Replicator_Increment_Entity_ID = false;
-    public bool Replicator_Increment_PartNames = false;
-    public bool Replicator_Increment_InstanceID = true;
+    public Vector3 GFX_Renderable_BonePoint_BaseColor = Utils.GetDecimalColor(Color.Blue);
+    public Vector3 GFX_Renderable_BonePoint_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
+    public float GFX_Renderable_BonePoint_Alpha = 75.0f;
 
-    public bool Replicator_Clear_Entity_ID = false;
-    public bool Replicator_Clear_Entity_Group_IDs = false;
+    public Vector3 GFX_Renderable_ModelMarker_Chr_BaseColor = Utils.GetDecimalColor(Color.Firebrick);
+    public Vector3 GFX_Renderable_ModelMarker_Chr_HighlightColor = Utils.GetDecimalColor(Color.Tomato);
+    public float GFX_Renderable_ModelMarker_Chr_Alpha = 75.0f;
 
-    public bool Replicator_Mode_Line = true;
-    public bool Replicator_Mode_Circle = false;
-    public bool Replicator_Mode_Square = false;
-    public bool Replicator_Mode_Sphere = false;
-    public bool Replicator_Mode_Box = false;
+    public Vector3 GFX_Renderable_ModelMarker_Object_BaseColor = Utils.GetDecimalColor(Color.MediumVioletRed);
+    public Vector3 GFX_Renderable_ModelMarker_Object_HighlightColor = Utils.GetDecimalColor(Color.DeepPink);
+    public float GFX_Renderable_ModelMarker_Object_Alpha = 75.0f;
 
-    public int Replicator_Line_Clone_Amount = 1;
-    public int Replicator_Line_Position_Offset = 25;
-    public bool Replicator_Line_Position_Offset_Axis_X = true;
-    public bool Replicator_Line_Position_Offset_Axis_Y = false;
-    public bool Replicator_Line_Position_Offset_Axis_Z = false;
-    public bool Replicator_Line_Offset_Direction_Flipped = false;
+    public Vector3 GFX_Renderable_ModelMarker_Player_BaseColor = Utils.GetDecimalColor(Color.DarkOliveGreen);
+    public Vector3 GFX_Renderable_ModelMarker_Player_HighlightColor = Utils.GetDecimalColor(Color.OliveDrab);
+    public float GFX_Renderable_ModelMarker_Player_Alpha = 75.0f;
 
-    public int Replicator_Circle_Size = 1;
-    public float Replicator_Circle_Radius = 1;
+    public Vector3 GFX_Renderable_ModelMarker_Other_BaseColor = Utils.GetDecimalColor(Color.Wheat);
+    public Vector3 GFX_Renderable_ModelMarker_Other_HighlightColor = Utils.GetDecimalColor(Color.AntiqueWhite);
+    public float GFX_Renderable_ModelMarker_Other_Alpha = 75.0f;
 
-    public int Replicator_Square_Size = 4;
-    public float Replicator_Square_Width = 4;
-    public float Replicator_Square_Depth = 4;
+    public Vector3 GFX_Renderable_PointLight_BaseColor = Utils.GetDecimalColor(Color.YellowGreen);
+    public Vector3 GFX_Renderable_PointLight_HighlightColor = Utils.GetDecimalColor(Color.Yellow);
+    public float GFX_Renderable_PointLight_Alpha = 75.0f;
 
-    public int Replicator_Sphere_Size = 1;
-    public float Replicator_Sphere_Horizontal_Radius = 1;
-    public float Replicator_Sphere_Vertical_Radius = 1;
+    public Vector3 GFX_Renderable_SpotLight_BaseColor = Utils.GetDecimalColor(Color.Goldenrod);
+    public Vector3 GFX_Renderable_SpotLight_HighlightColor = Utils.GetDecimalColor(Color.Violet);
+    public float GFX_Renderable_SpotLight_Alpha = 75.0f;
 
-    public int Toolbar_EntityGroupID = 0;
-    public string Toolbar_EntityGroup_Attribute = "";
+    public Vector3 GFX_Renderable_DirectionalLight_BaseColor = Utils.GetDecimalColor(Color.Cyan);
+    public Vector3 GFX_Renderable_DirectionalLight_HighlightColor = Utils.GetDecimalColor(Color.AliceBlue);
+    public float GFX_Renderable_DirectionalLight_Alpha = 75.0f;
 
-    public bool UseLatestGameOffset = true;
-    public int SelectedGameOffsetData = 0;
+    public Vector3 GFX_Renderable_AutoInvadeSphere_BaseColor = Utils.GetDecimalColor(Color.Red);
+    public Vector3 GFX_Renderable_AutoInvadeSphere_HighlightColor = Utils.GetDecimalColor(Color.DarkRed);
 
-    public int GFX_Display_Width { get; set; } = 1920;
-    public int GFX_Display_Height { get; set; } = 1057;
+    public Vector3 GFX_Renderable_LightProbeSphere_BaseColor = Utils.GetDecimalColor(Color.Yellow);
+    public Vector3 GFX_Renderable_LightProbeSphere_HighlightColor = Utils.GetDecimalColor(Color.YellowGreen);
 
-    public int GFX_Display_X { get; set; } = 0;
-    public int GFX_Display_Y { get; set; } = 23;
+    public Vector3 GFX_Renderable_LevelConnectorSphere_BaseColor = Utils.GetDecimalColor(Color.Turquoise);
+    public Vector3 GFX_Renderable_LevelConnectorSphere_HighlightColor = Utils.GetDecimalColor(Color.DarkTurquoise);
+
+    public Vector3 GFX_Gizmo_X_BaseColor = new(0.952f, 0.211f, 0.325f);
+    public Vector3 GFX_Gizmo_X_HighlightColor = new(1.0f, 0.4f, 0.513f);
+
+    public Vector3 GFX_Gizmo_Y_BaseColor = new(0.525f, 0.784f, 0.082f);
+    public Vector3 GFX_Gizmo_Y_HighlightColor = new(0.713f, 0.972f, 0.270f);
+
+    public Vector3 GFX_Gizmo_Z_BaseColor = new(0.219f, 0.564f, 0.929f);
+    public Vector3 GFX_Gizmo_Z_HighlightColor = new(0.407f, 0.690f, 1.0f);
+
+    public float Viewport_DefaultRender_Brightness = 1.0f;
+    public float Viewport_DefaultRender_Saturation = 0.5f;
+
+    public Vector3 Viewport_DefaultRender_SelectColor = new(1.0f, 0.5f, 0.0f);
+
+    public bool Viewport_DisplayControls = true;
+    public bool Viewport_DisplayRotationIncrement = true;
+    public bool Viewport_DisplayMovementIncrement = true;
+    public bool Viewport_Enable_BoxSelection = true;
+    public float Viewport_BS_DistThresFactor = 1.2f;
+
+    public Vector3 Viewport_Background_Color = new(1.0f, 0.5f, 0.0f);
+
+    // Map Editor: Primary Grid
+    public bool MapEditor_DisplayPrimaryGrid = false;
+    public bool MapEditor_RegeneratePrimaryGrid = false;
+    public int MapEditor_PrimaryGrid_Size = 1000;
+    public float MapEditor_PrimaryGrid_SectionSize = 10;
+    public Vector3 MapEditor_PrimaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public float MapEditor_PrimaryGrid_Position_X = 0;
+    public float MapEditor_PrimaryGrid_Position_Y = 0;
+    public float MapEditor_PrimaryGrid_Position_Z = 0;
+
+    public float MapEditor_PrimaryGrid_Rotation_X = 0;
+    public float MapEditor_PrimaryGrid_Rotation_Y = 0;
+    public float MapEditor_PrimaryGrid_Rotation_Z = 0;
+
+    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_X = true;
+    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_Y = true;
+    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_Z = true;
+
+    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_X = true;
+    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_Y = true;
+    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_Z = true;
+
+    public ViewportGridRootAxis MapEditor_PrimaryGrid_Configure_RootAxis = ViewportGridRootAxis.Y;
+
+    // Map Editor: Secondary Grid
+    public bool MapEditor_DisplaySecondaryGrid = false;
+    public bool MapEditor_RegenerateSecondaryGrid = false;
+    public int MapEditor_SecondaryGrid_Size = 1000;
+    public float MapEditor_SecondaryGrid_SectionSize = 10;
+    public Vector3 MapEditor_SecondaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public float MapEditor_SecondaryGrid_Position_X = 90;
+    public float MapEditor_SecondaryGrid_Position_Y = 0;
+    public float MapEditor_SecondaryGrid_Position_Z = 0;
+
+    public float MapEditor_SecondaryGrid_Rotation_X = 0;
+    public float MapEditor_SecondaryGrid_Rotation_Y = 0;
+    public float MapEditor_SecondaryGrid_Rotation_Z = 0;
+
+    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_X = true;
+    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_Y = true;
+    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_Z = true;
+
+    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_X = true;
+    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_Y = true;
+    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_Z = true;
+
+    public ViewportGridRootAxis MapEditor_SecondaryGrid_Configure_RootAxis = ViewportGridRootAxis.X;
+
+    // Map Editor: Tertiary Grid
+    public bool MapEditor_DisplayTertiaryGrid = false;
+    public bool MapEditor_RegenerateTertiaryGrid = false;
+    public int MapEditor_TertiaryGrid_Size = 1000;
+    public float MapEditor_TertiaryGrid_SectionSize = 10;
+    public Vector3 MapEditor_TertiaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public float MapEditor_TertiaryGrid_Position_X = 0;
+    public float MapEditor_TertiaryGrid_Position_Y = 0;
+    public float MapEditor_TertiaryGrid_Position_Z = 0;
+
+    public float MapEditor_TertiaryGrid_Rotation_X = 0;
+    public float MapEditor_TertiaryGrid_Rotation_Y = 0;
+    public float MapEditor_TertiaryGrid_Rotation_Z = 90;
+
+    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_X = true;
+    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_Y = true;
+    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_Z = true;
+
+    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_X = true;
+    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_Y = true;
+    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_Z = true;
+
+    public ViewportGridRootAxis MapEditor_TertiaryGrid_Configure_RootAxis = ViewportGridRootAxis.Z;
+
+    // Model Editor: Primary Grid
+    public bool ModelEditor_DisplayPrimaryGrid = false;
+    public bool ModelEditor_RegeneratePrimaryGrid = false;
+    public int ModelEditor_PrimaryGrid_Size = 1000;
+    public float ModelEditor_PrimaryGrid_SectionSize = 10;
+
+    public Vector3 ModelEditor_PrimaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public float ModelEditor_PrimaryGrid_Position_X = 0;
+    public float ModelEditor_PrimaryGrid_Position_Y = 0;
+    public float ModelEditor_PrimaryGrid_Position_Z = 0;
+
+    public float ModelEditor_PrimaryGrid_Rotation_X = 0;
+    public float ModelEditor_PrimaryGrid_Rotation_Y = 0;
+    public float ModelEditor_PrimaryGrid_Rotation_Z = 0;
+
+    // Model Editor: Secondary Grid
+    public bool ModelEditor_DisplaySecondaryGrid = false;
+    public bool ModelEditor_RegenerateSecondaryGrid = false;
+    public int ModelEditor_SecondaryGrid_Size = 1000;
+    public float ModelEditor_SecondaryGrid_SectionSize = 10;
+
+    public Vector3 ModelEditor_SecondaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public float ModelEditor_SecondaryGrid_Position_X = 0;
+    public float ModelEditor_SecondaryGrid_Position_Y = 0;
+    public float ModelEditor_SecondaryGrid_Position_Z = 0;
+
+    public float ModelEditor_SecondaryGrid_Rotation_X = 90;
+    public float ModelEditor_SecondaryGrid_Rotation_Y = 0;
+    public float ModelEditor_SecondaryGrid_Rotation_Z = 0;
+
+    // Model Editor: Tertiary Grid
+    public bool ModelEditor_DisplayTertiaryGrid = false;
+    public bool ModelEditor_RegenerateTertiaryGrid = false;
+    public int ModelEditor_TertiaryGrid_Size = 1000;
+    public float ModelEditor_TertiaryGrid_SectionSize = 10;
+
+    public Vector3 ModelEditor_TertiaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public float ModelEditor_TertiaryGrid_Position_X = 0;
+    public float ModelEditor_TertiaryGrid_Position_Y = 0;
+    public float ModelEditor_TertiaryGrid_Position_Z = 0;
+
+    public float ModelEditor_TertiaryGrid_Rotation_X = 0;
+    public float ModelEditor_TertiaryGrid_Rotation_Y = 0;
+    public float ModelEditor_TertiaryGrid_Rotation_Z = 90;
+
+    public Vector3 ModelEditor_FrameInViewport_Offset = new Vector3();
+    public float ModelEditor_FrameInViewport_Distance = 1f;
+    public float ModelEditor_PullToCamera_Offset = 3f;
+
+    ///------------------------------------------------------------
+    /// Misc
+    ///------------------------------------------------------------
+    public Vector3 SavedPosition = new Vector3();
+    public Vector3 SavedRotation = new Vector3();
+    public Vector3 SavedScale = new Vector3();
 
     // JsonExtensionData stores info in config file not present in class in order to retain settings between versions.
 #pragma warning disable IDE0051
     [JsonExtensionData] public IDictionary<string, JsonElement> AdditionalData;
 #pragma warning restore IDE0051
 
-    //****************************
-    // CFG
-    //****************************
+    ///------------------------------------------------------------
+    /// CFG
+    ///------------------------------------------------------------
     public static CFG Current { get; private set; }
     public static CFG Default { get; } = new();
 

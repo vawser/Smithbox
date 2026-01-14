@@ -38,7 +38,7 @@ public class ModelSelectorTool
             ImGui.Checkbox("Update Name on Switch", ref CFG.Current.AssetBrowser_UpdateName);
             UIHelper.Tooltip("When a map object is switched to a new form, update the name to match the new form.");
 
-            if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
                 ImGui.SameLine();
 
@@ -79,9 +79,9 @@ public class ModelSelectorTool
     private void DisplayCharacterList()
     {
         // TODO: this needs to draw from a scanned list of characters, not the alias list
-        if (Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases))
+        if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases))
         {
-            var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
             var sectionHeight = windowSize.Y * 0.3f;
             var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
@@ -126,9 +126,9 @@ public class ModelSelectorTool
     private void DisplayAssetList()
     {
         // TODO: this needs to draw from a scanned list of assets, not the alias list
-        if (Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
+        if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
         {
-            var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
             var sectionHeight = windowSize.Y * 0.3f;
             var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
@@ -175,9 +175,9 @@ public class ModelSelectorTool
         var maps = MsbUtils.GetFullMapList(Editor.Project);
 
         // TODO: this needs to draw from a scanned list of map pieces, not the alias list
-        if (Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
+        if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
         {
-            var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
             var sectionHeight = windowSize.Y * 0.3f;
             var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
@@ -194,7 +194,7 @@ public class ModelSelectorTool
                 var modelName = map.Replace($"{map}_", "m");
                 displayedName = $"{modelName}";
 
-                if (Editor.Project.ProjectType == ProjectType.DS1 || Editor.Project.ProjectType == ProjectType.DS1R)
+                if (Editor.Project.Descriptor.ProjectType == ProjectType.DS1 || Editor.Project.Descriptor.ProjectType == ProjectType.DS1R)
                 {
                     displayedName = displayedName.Replace($"A{map.Substring(1, 2)}", "");
                 }
@@ -304,7 +304,7 @@ public class ModelSelectorTool
 
             if (assetType == FileSelectionType.Character)
             {
-                switch (Editor.Project.ProjectType)
+                switch (Editor.Project.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Enemy)
@@ -348,7 +348,7 @@ public class ModelSelectorTool
             }
             if (assetType == FileSelectionType.Asset)
             {
-                switch (Editor.Project.ProjectType)
+                switch (Editor.Project.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Object)
@@ -394,7 +394,7 @@ public class ModelSelectorTool
             }
             if (assetType == FileSelectionType.MapPiece)
             {
-                switch (Editor.Project.ProjectType)
+                switch (Editor.Project.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.MapPiece)
@@ -573,7 +573,7 @@ public class ModelSelectorTool
         var names = new List<string>();
 
         // Collect names
-        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer == null)
             {

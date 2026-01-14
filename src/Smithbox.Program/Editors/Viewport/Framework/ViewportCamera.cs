@@ -88,12 +88,10 @@ public class ViewportCamera
 
     public Viewport ParentViewport;
 
-    public Smithbox BaseEditor;
     public ViewportType ViewportType;
 
-    public ViewportCamera(Smithbox baseEditor, IViewport viewport, ViewportType viewportType, Rectangle bounds)
+    public ViewportCamera(IViewport viewport, ViewportType viewportType, Rectangle bounds)
     {
-        BaseEditor = baseEditor;
         BoundingRect = bounds;
         SDL = SdlProvider.SDL.Value;
 

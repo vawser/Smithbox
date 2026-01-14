@@ -139,7 +139,7 @@ public static class DrawableHelper
             return mesh;
         }
 
-        if (loadnav && curProject.ProjectType != ProjectType.DS2S && curProject.ProjectType != ProjectType.DS2)
+        if (loadnav && curProject.Descriptor.ProjectType != ProjectType.DS2S && curProject.Descriptor.ProjectType != ProjectType.DS2)
         {
             var mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
                 scene, asset.AssetVirtualPath, modelMarkerType);

@@ -64,7 +64,7 @@ public class GameVisibilityAction
                 ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
             }
 
-            if (Project.ProjectType is ProjectType.ER)
+            if (Project.Descriptor.ProjectType is ProjectType.ER)
             {
                 if (ImGui.MenuItem("Disable Game Presence of Selected", KeyBindings.Current.MAP_DisableGamePresence.HintText))
                 {
@@ -98,7 +98,7 @@ public class GameVisibilityAction
                 ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
             }
 
-            if (Project.ProjectType is ProjectType.ER)
+            if (Project.Descriptor.ProjectType is ProjectType.ER)
             {
                 if (ImGui.MenuItem("Disable Game Presence of Selected", KeyBindings.Current.MAP_DisableGamePresence.HintText))
                 {
@@ -139,7 +139,7 @@ public class GameVisibilityAction
                     List<MsbEntity> sourceList = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
                     foreach (MsbEntity s in sourceList)
                     {
-                        if (Editor.Project.ProjectType == ProjectType.ER)
+                        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
                         {
                             s.SetPropertyValue("GameEditionDisable", 1);
                         }
@@ -150,7 +150,7 @@ public class GameVisibilityAction
                     List<MsbEntity> sourceList = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
                     foreach (MsbEntity s in sourceList)
                     {
-                        if (Editor.Project.ProjectType == ProjectType.ER)
+                        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
                         {
                             s.SetPropertyValue("GameEditionDisable", 0);
                         }
@@ -182,7 +182,7 @@ public class GameVisibilityAction
     public void ChangeMapObjectType(string[] sourceTypes, string[] targetTypes)
     {
         Type msbclass;
-        switch (Editor.Project.ProjectType)
+        switch (Editor.Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 msbclass = typeof(MSBD);

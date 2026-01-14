@@ -136,7 +136,7 @@ public class TextEntryGroupManager
     {
         List<EntryGroupAssociation> groupings = new();
 
-        switch (Editor.Project.ProjectType)
+        switch (Editor.Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 // Vanilla

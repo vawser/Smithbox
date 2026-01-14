@@ -308,7 +308,7 @@ public class MassEditTool
         {
             Editor.ViewportSelection.ClearSelection(Editor);
 
-            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 var wrapper = entry.Value;
 
@@ -510,7 +510,7 @@ public class MassEditTool
         // Local
         if (MapTarget is QueryMapListType.Local)
         {
-            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 var wrapper = entry.Value;
 
@@ -557,7 +557,7 @@ public class MassEditTool
             }
 
             // Process each map
-            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 var wrapper = entry.Value;
 

@@ -69,12 +69,12 @@ public class ParamView
         ImGui.Text("Params");
 
         // Param Version
-        if (Editor.Project.ParamData.PrimaryBank.ParamVersion != 0)
+        if (Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion != 0)
         {
             ImGui.SameLine();
-            ImGui.Text($"- Version {Utils.ParseParamVersion(Editor.Project.ParamData.PrimaryBank.ParamVersion)}");
+            ImGui.Text($"- Version {Utils.ParseParamVersion(Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion)}");
 
-            if (Editor.Project.ParamData.PrimaryBank.ParamVersion < Editor.Project.ParamData.VanillaBank.ParamVersion)
+            if (Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion < Editor.Project.Handler.ParamData.VanillaBank.ParamVersion)
             {
                 ImGui.SameLine();
                 UIHelper.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, "(out of date)");
@@ -136,20 +136,20 @@ public class ParamView
     /// <param name="scale"></param>
     private void DisplayPinnedParams(float scale)
     {
-        List<string> pinnedParamKeyList = new(Editor.Project.PinnedParams);
+        List<string> pinnedParamKeyList = new(Editor.Project.Descriptor.PinnedParams);
 
         if (pinnedParamKeyList.Count > 0)
         {
             foreach (var paramKey in pinnedParamKeyList)
             {
-                HashSet<int> primary = Editor.Project.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
+                HashSet<int> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
 
-                if (Editor.Project.ParamData.PrimaryBank.Params.ContainsKey(paramKey))
+                if (Editor.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(paramKey))
                 {
-                    Param p = Editor.Project.ParamData.PrimaryBank.Params[paramKey];
+                    Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[paramKey];
                     if (p != null)
                     {
-                        var meta = Editor.Project.ParamData.GetParamMeta(p.AppliedParamdef);
+                        var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
                         var Wiki = meta?.Wiki;
                         if (Wiki != null)
                         {
@@ -198,8 +198,8 @@ public class ParamView
 
             if (list != null)
             {
-                var keyList = list.Where(param => param.Item1 == Editor.Project.ParamData.PrimaryBank)
-                    .Select(param => Editor.Project.ParamData.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
+                var keyList = list.Where(param => param.Item1 == Editor.Project.Handler.ParamData.PrimaryBank)
+                    .Select(param => Editor.Project.Handler.ParamData.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
 
                 if (CFG.Current.Param_AlphabeticalParams)
                 {
@@ -210,15 +210,15 @@ public class ParamView
             }
             else
             {
-                var keyList = Editor.Project.ParamData.PrimaryBank.Params.Select(e => e.Key).ToList();
+                var keyList = Editor.Project.Handler.ParamData.PrimaryBank.Params.Select(e => e.Key).ToList();
             }
 
             return new List<string>();
         });
 
 
-        var categoryObj = Editor.Project.ParamData.ParamCategories;
-        var categories = Editor.Project.ParamData.ParamCategories.Categories;
+        var categoryObj = Editor.Project.Handler.ParamData.ParamCategories;
+        var categories = Editor.Project.Handler.ParamData.ParamCategories.Categories;
 
         if (categories != null && CFG.Current.Param_DisplayParamCategories)
         {
@@ -312,15 +312,15 @@ public class ParamView
     {
         foreach (var paramKey in paramKeyList)
         {
-            HashSet<int> primary = Editor.Project.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
-            Param p = Editor.Project.ParamData.PrimaryBank.Params[paramKey];
+            HashSet<int> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
+            Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[paramKey];
 
             if (!visibleParams.Contains(paramKey))
                 continue;
 
             if (p != null)
             {
-                var meta = Editor.Project.ParamData.GetParamMeta(p.AppliedParamdef);
+                var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
 
                 var Wiki = meta?.Wiki;
                 if (Wiki != null)
@@ -347,7 +347,7 @@ public class ParamView
 
             if (CFG.Current.Param_ShowParamCommunityName)
             {
-                var meta = Editor.Project.ParamData.GetParamMeta(p.AppliedParamdef);
+                var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
                 var names = meta?.DisplayNames;
 
                 if (names != null)
@@ -367,7 +367,7 @@ public class ParamView
                 EditorCommandQueue.AddCommand($@"param/view/{View.ViewIndex}/{paramKey}");
                 View.TableGroupView.UpdateTableSelection(paramKey);
 
-                Editor.Project.ParamData.RefreshParamDifferenceCacheTask(true);
+                Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask(true);
             }
 
             ImGui.PopStyleColor();
@@ -417,7 +417,7 @@ public class ParamView
             {
                 if (ImGui.Selectable($"Pin"))
                 {
-                    List<string> pinned = Editor.Project.PinnedParams;
+                    List<string> pinned = Editor.Project.Descriptor.PinnedParams;
 
                     if (!pinned.Contains(paramKey))
                     {
@@ -431,7 +431,7 @@ public class ParamView
             {
                 if (ImGui.Selectable($"Unpin"))
                 {
-                    List<string> pinned = Editor.Project.PinnedParams;
+                    List<string> pinned = Editor.Project.Descriptor.PinnedParams;
 
                     if (pinned.Contains(paramKey))
                     {
@@ -445,13 +445,13 @@ public class ParamView
             {
                 if (ImGui.Selectable("Copy Param List"))
                 {
-                    DokuWikiGenerator.OutputParamTableInformation(Editor.BaseEditor, Editor.Project);
+                    DokuWikiGenerator.OutputParamTableInformation(Editor.Project);
                 }
                 UIHelper.Tooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
 
                 if (ImGui.Selectable("Copy Param Field List"))
                 {
-                    DokuWikiGenerator.OutputParamInformation(Editor.BaseEditor, Editor.Project, paramKey);
+                    DokuWikiGenerator.OutputParamInformation(Editor.Project, paramKey);
                 }
                 UIHelper.Tooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
             }

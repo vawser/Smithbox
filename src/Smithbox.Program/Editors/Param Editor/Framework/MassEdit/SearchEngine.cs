@@ -244,7 +244,7 @@ public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamSelection, (P
     {
         unpacker = selection =>
         {
-            var pBank = Project.ParamData.PrimaryBank;
+            var pBank = Project.Handler.ParamData.PrimaryBank;
 
             List<(ParamMassEditRowSource, Param.Row)> list = new();
             list.AddRange(selection.GetSelectedRows().Select((x, i) => (ParamMassEditRowSource.Selection, x)));
@@ -259,16 +259,16 @@ public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamSelection, (P
         filterList.Add("clipboard",
             newCmd(new string[0], "Selects the param of the clipboard and the rows in the clipboard",
                 noArgs(noContext(row => row.Item1 == ParamMassEditRowSource.Clipboard)),
-                () => Project.ParamData.PrimaryBank.ClipboardRows?.Count > 0));
+                () => Project.Handler.ParamData.PrimaryBank.ClipboardRows?.Count > 0));
 
-        contextGetterForMultiStage = (state, exampleItem) => (Project.ParamData.PrimaryBank,
-            Project.ParamData.PrimaryBank.Params[
+        contextGetterForMultiStage = (state, exampleItem) => (Project.Handler.ParamData.PrimaryBank,
+            Project.Handler.ParamData.PrimaryBank.Params[
                 exampleItem.Item1 == ParamMassEditRowSource.Selection
                     ? state.GetActiveParam()
-                    : Project.ParamData.PrimaryBank.ClipboardParam]);
+                    : Project.Handler.ParamData.PrimaryBank.ClipboardParam]);
 
         sourceListGetterForMultiStage = row => row.Item2;
-        searchEngineForMultiStage = Project.ParamEditor.MassEditHandler.rse;
+        searchEngineForMultiStage = Project.Handler.ParamEditor.MassEditHandler.rse;
         resultRetrieverForMultiStage = (row, exampleItem) => (exampleItem.Item1, row);
     }
 }
@@ -285,10 +285,10 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
 
     internal void Setup()
     {
-        var bank = Project.ParamData.PrimaryBank;
+        var bank = Project.Handler.ParamData.PrimaryBank;
 
         unpacker = dummy =>
-            Project.ParamData.AuxBanks.Select((aux, i) => aux.Value.Params.Select((x, i) => (aux.Value, x.Value)))
+            Project.Handler.ParamData.AuxBanks.Select((aux, i) => aux.Value.Params.Select((x, i) => (aux.Value, x.Value)))
                 .Aggregate(bank.Params.Values.Select((x, i) => (bank, x)), (o, n) => o.Concat(n)).ToList();
 
         filterList.Add("modified", newCmd(new string[0],
@@ -320,7 +320,7 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
             "Selects params from the specified regulation or parambnd where the param name matches the given regex",
             (args, lenient) =>
             {
-                ParamBank auxBank = Project.ParamData.AuxBanks[args[0]];
+                ParamBank auxBank = Project.Handler.ParamData.AuxBanks[args[0]];
                 Regex rx = lenient ? new Regex(args[1], RegexOptions.IgnoreCase) : new Regex($@"^{args[1]}$");
                 return noContext(param =>
                     param.Item1 != auxBank
@@ -328,7 +328,7 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                         : rx.IsMatch(auxBank.GetKeyForParam(param.Item2) == null
                             ? ""
                             : auxBank.GetKeyForParam(param.Item2)));
-            }, () => Project.ParamData.AuxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
+            }, () => Project.Handler.ParamData.AuxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
 
         defaultFilter = newCmd(new[] { "param name (regex)" },
             "Selects all params whose name matches the given regex", (args, lenient) =>
@@ -356,10 +356,10 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
 
     internal void Setup()
     {
-        var meta = Project.ParamData.ParamMeta;
-        var pBank = Project.ParamData.PrimaryBank;
-        var vBank = Project.ParamData.VanillaBank;
-        var auxBanks = Project.ParamData.AuxBanks;
+        var meta = Project.Handler.ParamData.ParamMeta;
+        var pBank = Project.Handler.ParamData.PrimaryBank;
+        var vBank = Project.Handler.ParamData.VanillaBank;
+        var auxBanks = Project.Handler.ParamData.AuxBanks;
 
         unpacker = param => new List<Param.Row>(param.Item2.Rows);
 
@@ -386,7 +386,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
         filterList.Add("selected", newCmd(new string[0],
             "Selects rows that are already manually selected", (args, lenient) =>
             {
-                var selectedRows = Project.ParamEditor._activeView.Selection.GetSelectedRows();
+                var selectedRows = Project.Handler.ParamEditor._activeView.Selection.GetSelectedRows();
 
                 return noContext(row => selectedRows.Contains(row));
             }));
@@ -580,7 +580,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return row =>
                     {
                         (string paramName, Param.Row row) cseSearchContext = (paramName, row);
-                        List<(ParamEditorPseudoColumn, Param.Column)> res = Project.ParamEditor.MassEditHandler.cse.Search(cseSearchContext,
+                        List<(ParamEditorPseudoColumn, Param.Column)> res = Project.Handler.ParamEditor.MassEditHandler.cse.Search(cseSearchContext,
                             new List<(ParamEditorPseudoColumn, Param.Column)> { testCol }, args[1], lenient, false);
                         return res.Contains(testCol);
                     };
@@ -593,7 +593,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return context =>
                 {
-                    var editor = Project.ParamEditor;
+                    var editor = Project.Handler.ParamEditor;
 
                     var paramName = context.Item1.GetKeyForParam(context.Item2);
                     List<FMG.Entry> fmgEntries = TextParamUtils.GetFmgEntriesByAssociatedParam(editor, paramName);
@@ -762,7 +762,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         throw new Exception("Could not find param " + otherParam);
                     }
 
-                    List<Param.Row> rows = Project.ParamEditor.MassEditHandler.rse.Search((pBank, otherParamReal), otherSearchTerm,
+                    List<Param.Row> rows = Project.Handler.ParamEditor.MassEditHandler.rse.Search((pBank, otherParamReal), otherSearchTerm,
                         lenient, false);
                     (ParamEditorPseudoColumn, Param.Column) otherFieldReal = otherParamReal.GetCol(otherField);
                     if (!otherFieldReal.IsColumnValid())
@@ -818,8 +818,8 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     var paramName = paramContext.Item1.GetKeyForParam(paramContext.Item2);
 
-                    var editor = Project.ParamEditor;
-                    var textEditor = Project.TextEditor;
+                    var editor = Project.Handler.ParamEditor;
+                    var textEditor = Project.Handler.TextEditor;
 
                     if (textEditor != null)
                     {
@@ -877,7 +877,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
 
         unpacker = row =>
         {
-            var metaDict = Project.ParamData.ParamMeta;
+            var metaDict = Project.Handler.ParamData.ParamMeta;
             pMeta = metaDict[row.Item2.Def];
 
             List<(ParamEditorPseudoColumn, Param.Column)> list = new();
@@ -927,7 +927,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
             {
                 var startValue = args[0];
 
-                ParamBank bank = Project.ParamData.PrimaryBank;
+                ParamBank bank = Project.Handler.ParamData.PrimaryBank;
 
                 return row =>
                 {
@@ -975,7 +975,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                 var startValue = args[0];
                 var endValue = args[1];
 
-                ParamBank bank = Project.ParamData.PrimaryBank;
+                ParamBank bank = Project.Handler.ParamData.PrimaryBank;
 
                 return row =>
                 {
@@ -1025,7 +1025,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                     throw new Exception("Can't check if cell is modified - not part of a param");
                 }
 
-                var vBank = Project.ParamData.VanillaBank;
+                var vBank = Project.Handler.ParamData.VanillaBank;
 
                 Param vParam = vBank.Params?[row.Item1];
                 if (vParam == null)
@@ -1051,8 +1051,8 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
             "Selects cells/fields where the equivalent cell in the specified regulation or parambnd has a different value",
             (args, lenient) =>
             {
-                var vBank = Project.ParamData.VanillaBank;
-                var auxBank = Project.ParamData.AuxBanks;
+                var vBank = Project.Handler.ParamData.VanillaBank;
+                var auxBank = Project.Handler.ParamData.AuxBanks;
 
                 if (!auxBank.ContainsKey(args[0]))
                 {
@@ -1100,7 +1100,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                         return ParamUtils.IsValueDiff(ref valA, ref valB, col.GetColumnType());
                     };
                 };
-            }, () => Project.ParamData.AuxBanks.Count > 0));
+            }, () => Project.Handler.ParamData.AuxBanks.Count > 0));
 
         filterList.Add("sftype", newCmd(new[] { "paramdef type" },
             "Selects cells/fields where the field's data type, as enumerated by soulsformats, matches the given regex",
@@ -1115,7 +1115,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
             "Selects cells/fields where the cell value is the same as the 'default' for the field.",
             (args, lenient) =>
             {
-                ParamBank bank = Project.ParamData.PrimaryBank;
+                ParamBank bank = Project.Handler.ParamData.PrimaryBank;
 
                 return row =>
                 {

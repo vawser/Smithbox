@@ -39,7 +39,7 @@ public class FmgDumper
         {
             Directory.CreateDirectory(dumpLocation);
 
-            var entryTasks = Project.TextData.PrimaryBank.Entries.Select(entry =>
+            var entryTasks = Project.Handler.TextData.PrimaryBank.Entries.Select(entry =>
             {
                 return Task.Run(() =>
                 {

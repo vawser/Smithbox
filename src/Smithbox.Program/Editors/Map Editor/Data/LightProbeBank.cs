@@ -28,7 +28,7 @@ public class LightProbeBank
 
     public bool CanUse()
     {
-        if (Project.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
             return true;
 
         return false;
@@ -39,9 +39,9 @@ public class LightProbeBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.MapData.LightProbeFiles.Entries)
+        foreach (var entry in Project.Handler.MapData.LightProbeFiles.Entries)
         {
-            var fileData = Project.FS.ReadFile(entry.Path);
+            var fileData = Project.VFS.FS.ReadFile(entry.Path);
 
             if (fileData != null)
             {
@@ -53,7 +53,7 @@ public class LightProbeBank
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {entry.Path} as BTPB", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} as BTPB", LogLevel.Error, LogPriority.High, e);
                 }
             }
         }
@@ -84,13 +84,13 @@ public class LightProbeBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.MapData.LightProbeFiles.Entries)
+        foreach (var entry in Project.Handler.MapData.LightProbeFiles.Entries)
         {
             // File will be: m30_00_00_00_0001, so we match loosely
             if (!entry.Filename.Contains(map.Name))
                 continue;
 
-            var fileData = Project.FS.ReadFile(entry.Path);
+            var fileData = Project.VFS.FS.ReadFile(entry.Path);
 
             if (fileData != null)
             {
@@ -124,14 +124,14 @@ public class LightProbeBank
 
                             if (applyEdit)
                             {
-                                Project.ProjectFS.WriteFile(entry.Path, fileOutput);
+                                Project.VFS.ProjectFS.WriteFile(entry.Path, fileOutput);
                             }
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to write {entry.Path} as BTPB", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddLog($"[Map Editor] Failed to write {entry.Path} as BTPB", LogLevel.Error, LogPriority.High, e);
                 }
             }
         }

@@ -50,7 +50,7 @@ public class GparamFieldListView
 
                 var name = entry.Key;
                 if (CFG.Current.Gparam_DisplayParamFieldAlias)
-                    name = FormatInformationUtils.GetReferenceName(Project.GparamData.GparamInformation, entry.Key, entry.Name);
+                    name = FormatInformationUtils.GetReferenceName(Project.Handler.GparamData.GparamInformation, entry.Key, entry.Name);
 
                 if (Editor.Filters.IsFieldFilterMatch(entry.Name, ""))
                 {
@@ -98,7 +98,7 @@ public class GparamFieldListView
         List<FormatMember> missingFields = new List<FormatMember>();
 
         // Get source Format Reference
-        foreach (var entry in Project.GparamData.GparamInformation.list)
+        foreach (var entry in Project.Handler.GparamData.GparamInformation.list)
         {
             if (entry.id == Editor.Selection._selectedParamGroup.Key)
             {
@@ -144,7 +144,7 @@ public class GparamFieldListView
     /// <param name="missingField"></param>
     public void AddMissingField(Param targetParam, FormatMember missingField)
     {
-        var typeName = FormatInformationUtils.GetTypeForProperty(Project.GparamData.GparamInformation, missingField.id);
+        var typeName = FormatInformationUtils.GetTypeForProperty(Project.Handler.GparamData.GparamInformation, missingField.id);
 
         if (typeName == "Byte")
         {

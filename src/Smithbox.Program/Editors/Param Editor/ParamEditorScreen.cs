@@ -20,7 +20,6 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamEditorScreen : EditorScreen
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
     public string EditorName => "Param Editor";
     public string CommandEndpoint => "param";
@@ -76,9 +75,8 @@ public class ParamEditorScreen : EditorScreen
     private ParamEditorShortcuts EditorShortcuts;
     public ParamContextManager ContextManager;
 
-    public ParamEditorScreen(Smithbox baseEditor, ProjectEntry project)
+    public ParamEditorScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
         EditorShortcuts = new ParamEditorShortcuts(this);
@@ -107,7 +105,7 @@ public class ParamEditorScreen : EditorScreen
 
         MassEditHandler = new(this, Project);
 
-        Project.ParamData.RefreshParamDifferenceCacheTask();
+        Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
     }
 
     public void OnGUI(string[] initcmd)
@@ -126,7 +124,7 @@ public class ParamEditorScreen : EditorScreen
         {
             if (initcmd[0] == "select" || initcmd[0] == "view")
             {
-                if (initcmd.Length > 2 && Project.ParamData.PrimaryBank.Params.ContainsKey(initcmd[2]))
+                if (initcmd.Length > 2 && Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(initcmd[2]))
                 {
                     doFocus = initcmd[0] == "select";
                     if (!doFocus)
@@ -162,7 +160,7 @@ public class ParamEditorScreen : EditorScreen
                         if (!onlyAddToSelection)
                             viewToModify.Selection.SetActiveRow(null, doFocus);
 
-                        Param p = Project.ParamData.PrimaryBank.Params[viewToModify.Selection.GetActiveParam()];
+                        Param p = Project.Handler.ParamData.PrimaryBank.Params[viewToModify.Selection.GetActiveParam()];
                         int id;
                         var parsed = int.TryParse(initcmd[3], out id);
 
@@ -213,7 +211,7 @@ public class ParamEditorScreen : EditorScreen
                     IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamUpgradeRowGetType>(initcmd[2]));
 
                     MassEditHandler.ME_CSV_Output = ParamIO.GenerateCSV(Project, rows,
-                        Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
+                        Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
                         CFG.Current.Param_Export_Delimiter[0]);
                     MassEditHandler.OpenMassEditPopup("massEditMenuCSVExport");
                 }
@@ -227,7 +225,7 @@ public class ParamEditorScreen : EditorScreen
                     IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamUpgradeRowGetType>(initcmd[3]));
 
                     MassEditHandler.ME_CSV_Output = ParamIO.GenerateSingleCSV(rows,
-                        Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
+                        Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
                         MassEditHandler.ME_Single_CSV_Field,
                         CFG.Current.Param_Export_Delimiter[0]);
 
@@ -240,7 +238,7 @@ public class ParamEditorScreen : EditorScreen
                 }
                 else if (initcmd[1] == "distributionPopup" && initcmd.Length > 2)
                 {
-                    Param p = Project.ParamData.PrimaryBank.GetParamFromName(_activeView.Selection.GetActiveParam());
+                    Param p = Project.Handler.ParamData.PrimaryBank.GetParamFromName(_activeView.Selection.GetActiveParam());
 
                     (ParamEditorPseudoColumn, Param.Column) col = p.GetCol(initcmd[2]);
                     _distributionOutput =
@@ -475,7 +473,7 @@ public class ParamEditorScreen : EditorScreen
 
             if (ImGui.MenuItem("Paste", KeyBindings.Current.PARAM_PasteClipboard.HintText))
             {
-                if (Project.ParamData.PrimaryBank.ClipboardRows.Any())
+                if (Project.Handler.ParamData.PrimaryBank.ClipboardRows.Any())
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
                 }
@@ -635,9 +633,9 @@ public class ParamEditorScreen : EditorScreen
                     {
                         if (SaveCsvDialog(out var path))
                         {
-                            IReadOnlyList<Param.Row> rows = Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()].Rows;
+                            IReadOnlyList<Param.Row> rows = Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()].Rows;
                             TryWriteFile(path, ParamIO.GenerateCSV(Project, rows,
-                                Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
+                                Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
                                 CFG.Current.Param_Export_Delimiter[0]));
                         }
                     }
@@ -645,7 +643,7 @@ public class ParamEditorScreen : EditorScreen
                     ImGui.EndMenu();
                 }
 
-                if (ImGui.BeginMenu("Modified rows", Project.ParamData.PrimaryBank.GetVanillaDiffRows(_activeView.Selection.GetActiveParam()).Any()))
+                if (ImGui.BeginMenu("Modified rows", Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(_activeView.Selection.GetActiveParam()).Any()))
                 {
                     CsvExportDisplay(ParamUpgradeRowGetType.ModifiedRows);
                     ImGui.EndMenu();
@@ -663,7 +661,7 @@ public class ParamEditorScreen : EditorScreen
                     {
                         if (PlatformUtils.Instance.OpenFolderDialog("Choose CSV directory", out var path))
                         {
-                            foreach (KeyValuePair<string, Param> param in Project.ParamData.PrimaryBank.Params)
+                            foreach (KeyValuePair<string, Param> param in Project.Handler.ParamData.PrimaryBank.Params)
                             {
                                 IReadOnlyList<Param.Row> rows = param.Value.Rows;
                                 TryWriteFile(
@@ -677,9 +675,9 @@ public class ParamEditorScreen : EditorScreen
                     {
                         if (PlatformUtils.Instance.OpenFolderDialog("Choose CSV directory", out var path))
                         {
-                            foreach (KeyValuePair<string, Param> param in Project.ParamData.PrimaryBank.Params)
+                            foreach (KeyValuePair<string, Param> param in Project.Handler.ParamData.PrimaryBank.Params)
                             {
-                                var result = Project.ParamData.PrimaryBank.GetVanillaDiffRows(param.Key);
+                                var result = Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(param.Key);
 
                                 if (result.Count > 0)
                             {
@@ -714,7 +712,7 @@ public class ParamEditorScreen : EditorScreen
 
                 if (ImGui.BeginMenu("Specific Field"))
                 {
-                    foreach (PARAMDEF.Field field in Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()].AppliedParamdef.Fields)
+                    foreach (PARAMDEF.Field field in Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()].AppliedParamdef.Fields)
                     {
                         if (ImGui.MenuItem(field.InternalName))
                         {
@@ -731,7 +729,7 @@ public class ParamEditorScreen : EditorScreen
                     {
                         if (ReadCsvDialog(out var csv))
                         {
-                            (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.ParamData.PrimaryBank, csv,
+                            (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.Handler.ParamData.PrimaryBank, csv,
                                 _activeView.Selection.GetActiveParam(), false, false,
                                 CFG.Current.Param_Export_Delimiter[0]);
 
@@ -742,7 +740,7 @@ public class ParamEditorScreen : EditorScreen
                                     EditorActionManager.ExecuteAction(action);
                                 }
 
-                                Project.ParamData.RefreshParamDifferenceCacheTask();
+                                Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
                             }
                             else
                             {
@@ -754,7 +752,7 @@ public class ParamEditorScreen : EditorScreen
                     {
                         if (ReadCsvDialog(out var csv))
                         {
-                            (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.ParamData.PrimaryBank,
+                            (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.Handler.ParamData.PrimaryBank,
                                 csv, _activeView.Selection.GetActiveParam(), "Name",
                                 CFG.Current.Param_Export_Delimiter[0], false);
 
@@ -767,20 +765,20 @@ public class ParamEditorScreen : EditorScreen
                                 PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
                             }
 
-                            Project.ParamData.RefreshParamDifferenceCacheTask();
+                            Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
                         }
                     }
 
                     if (ImGui.BeginMenu("Specific Field"))
                     {
-                        foreach (PARAMDEF.Field field in Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()].AppliedParamdef.Fields)
+                        foreach (PARAMDEF.Field field in Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()].AppliedParamdef.Fields)
                         {
                             if (ImGui.MenuItem(field.InternalName))
                             {
                                 if (ReadCsvDialog(out var csv))
                                 {
                                     (var result, CompoundAction action) =
-                                        ParamIO.ApplySingleCSV(Project, Project.ParamData.PrimaryBank, csv,
+                                        ParamIO.ApplySingleCSV(Project, Project.Handler.ParamData.PrimaryBank, csv,
                                             _activeView.Selection.GetActiveParam(), field.InternalName,
                                             CFG.Current.Param_Export_Delimiter[0], false);
 
@@ -793,7 +791,7 @@ public class ParamEditorScreen : EditorScreen
                                         PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
                                     }
 
-                                    Project.ParamData.RefreshParamDifferenceCacheTask();
+                                    Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
                                 }
                             }
                         }
@@ -844,29 +842,29 @@ public class ParamEditorScreen : EditorScreen
 
             if (ImGui.MenuItem("Clear all param comparisons"))
             {
-                if (Project.ParamData.AuxBanks.Count > 0)
+                if (Project.Handler.ParamData.AuxBanks.Count > 0)
                 {
-                    Project.ParamData.AuxBanks = new Dictionary<string, ParamBank>();
+                    Project.Handler.ParamData.AuxBanks = new Dictionary<string, ParamBank>();
                 }
             }
 
             if (ImGui.BeginMenu("Select project for param comparison"))
             {
                 // Display compatible projects
-               foreach (var proj in Smithbox.ProjectManager.Projects)
+               foreach (var proj in Smithbox.Orchestrator.Projects)
                 {
                     if (proj == null)
                         continue;
 
-                    if (proj.ProjectType != Project.ProjectType)
+                    if (proj.Descriptor.ProjectType != Project.Descriptor.ProjectType)
                         continue;
 
-                    if (proj == Smithbox.ProjectManager.SelectedProject)
+                    if (proj == Smithbox.Orchestrator.SelectedProject)
                         continue;
 
                     var isSelected = false;
 
-                    if (ImGui.Selectable($"{proj.ProjectName}", isSelected))
+                    if (ImGui.Selectable($"{proj.Descriptor.ProjectName}", isSelected))
                     {
                         LoadComparisonParams(proj);
                     }
@@ -877,14 +875,14 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            if (ImGui.BeginMenu("Clear param comparison...", Project.ParamData.AuxBanks.Count > 0))
+            if (ImGui.BeginMenu("Clear param comparison...", Project.Handler.ParamData.AuxBanks.Count > 0))
             {
-                for (var i = 0; i < Project.ParamData.AuxBanks.Count; i++)
+                for (var i = 0; i < Project.Handler.ParamData.AuxBanks.Count; i++)
                 {
-                    KeyValuePair<string, ParamBank> pb = Project.ParamData.AuxBanks.ElementAt(i);
+                    KeyValuePair<string, ParamBank> pb = Project.Handler.ParamData.AuxBanks.ElementAt(i);
                     if (ImGui.MenuItem(pb.Key))
                     {
-                        Project.ParamData.AuxBanks.Remove(pb.Key);
+                        Project.Handler.ParamData.AuxBanks.Remove(pb.Key);
                         break;
                     }
                 }
@@ -898,7 +896,7 @@ public class ParamEditorScreen : EditorScreen
 
     public async void LoadComparisonParams(ProjectEntry proj)
     {
-        await Project.ParamData.SetupAuxBank(proj, true);
+        await Project.Handler.ParamData.SetupAuxBank(proj, true);
     }
 
     public void OverviewMenu()
@@ -1023,7 +1021,7 @@ public class ParamEditorScreen : EditorScreen
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Param saving already in progress.");
+            TaskLogs.AddInfo($"[Param Editor] Param saving already in progress.");
         }
     }
 
@@ -1031,8 +1029,8 @@ public class ParamEditorScreen : EditorScreen
     {
         try
         {
-            await Project.ParamData.PrimaryBank.Save();
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Params saved.");
+            await Project.Handler.ParamData.PrimaryBank.Save();
+            TaskLogs.AddInfo($"[Param Editor] Params saved.");
         }
         catch (SavingFailedException e)
         {
@@ -1046,7 +1044,7 @@ public class ParamEditorScreen : EditorScreen
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
 
         return true;
     }
@@ -1067,13 +1065,13 @@ public class ParamEditorScreen : EditorScreen
         if (rowType == ParamUpgradeRowGetType.AllRows)
         {
             // All rows
-            rows = Project.ParamData.PrimaryBank.Params[activeParam].Rows;
+            rows = Project.Handler.ParamData.PrimaryBank.Params[activeParam].Rows;
         }
         else if (rowType == ParamUpgradeRowGetType.ModifiedRows)
         {
             // Modified rows
-            HashSet<int> vanillaDiffCache = Project.ParamData.PrimaryBank.GetVanillaDiffRows(activeParam);
-            rows = Project.ParamData.PrimaryBank.Params[activeParam].Rows.Where(p => vanillaDiffCache.Contains(p.ID))
+            HashSet<int> vanillaDiffCache = Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(activeParam);
+            rows = Project.Handler.ParamData.PrimaryBank.Params[activeParam].Rows.Where(p => vanillaDiffCache.Contains(p.ID))
                 .ToList();
         }
         else if (rowType == ParamUpgradeRowGetType.SelectedRows)
@@ -1108,7 +1106,7 @@ public class ParamEditorScreen : EditorScreen
                     EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/{rowType}");
                 }
 
-                foreach (PARAMDEF.Field field in Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()].AppliedParamdef.Fields)
+                foreach (PARAMDEF.Field field in Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()].AppliedParamdef.Fields)
                 {
                     if (ImGui.MenuItem(field.InternalName))
                     {
@@ -1132,7 +1130,7 @@ public class ParamEditorScreen : EditorScreen
                     TryWriteFile(
                         path,
                         ParamIO.GenerateCSV(Project, rows,
-                            Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
+                            Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
                             CFG.Current.Param_Export_Delimiter[0]));
                 }
             }
@@ -1147,13 +1145,13 @@ public class ParamEditorScreen : EditorScreen
                         TryWriteFile(
                             path,
                             ParamIO.GenerateSingleCSV(rows,
-                                Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
+                                Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()],
                                 "Name",
                                 CFG.Current.Param_Export_Delimiter[0]));
                     }
                 }
 
-                foreach (PARAMDEF.Field field in Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()].AppliedParamdef.Fields)
+                foreach (PARAMDEF.Field field in Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()].AppliedParamdef.Fields)
                 {
                     if (ImGui.MenuItem(field.InternalName))
                     {
@@ -1163,7 +1161,7 @@ public class ParamEditorScreen : EditorScreen
                             TryWriteFile(
                                 path,
                                 ParamIO.GenerateSingleCSV(rows,
-                                    Project.ParamData.PrimaryBank.Params[
+                                    Project.Handler.ParamData.PrimaryBank.Params[
                                         _activeView.Selection.GetActiveParam()],
                                     field.InternalName, CFG.Current.Param_Export_Delimiter[0]));
                         }
@@ -1184,15 +1182,15 @@ public class ParamEditorScreen : EditorScreen
 
     public void CopySelectionToClipboard(ParamSelection selectionState)
     {
-        Project.ParamData.PrimaryBank.ClipboardParam = selectionState.GetActiveParam();
-        Project.ParamData.PrimaryBank.ClipboardRows.Clear();
+        Project.Handler.ParamData.PrimaryBank.ClipboardParam = selectionState.GetActiveParam();
+        Project.Handler.ParamData.PrimaryBank.ClipboardRows.Clear();
 
         var baseValue = long.MaxValue;
         selectionState.SortSelection();
 
         foreach (Param.Row r in selectionState.GetSelectedRows())
         {
-            Project.ParamData.PrimaryBank.ClipboardRows.Add(new Param.Row(r)); // make a clone
+            Project.Handler.ParamData.PrimaryBank.ClipboardRows.Add(new Param.Row(r)); // make a clone
             if (r.ID < baseValue)
                 baseValue = r.ID;
         }
@@ -1257,7 +1255,7 @@ public class ParamEditorScreen : EditorScreen
     public void DeleteSelection(ParamSelection selectionState)
     {
         List<Param.Row> toRemove = new(selectionState.GetSelectedRows());
-        DeleteParamsAction act = new(this, Project.ParamData.PrimaryBank.Params[selectionState.GetActiveParam()], toRemove);
+        DeleteParamsAction act = new(this, Project.Handler.ParamData.PrimaryBank.Params[selectionState.GetActiveParam()], toRemove);
 
         EditorActionManager.ExecuteAction(act);
 
@@ -1371,7 +1369,7 @@ public class ParamEditorScreen : EditorScreen
                     List<Param.Row> rowsToInsert = new();
                     if (!CFG.Current.Param_PasteAfterSelection)
                     {
-                        foreach (Param.Row r in Project.ParamData.PrimaryBank.ClipboardRows)
+                        foreach (Param.Row r in Project.Handler.ParamData.PrimaryBank.ClipboardRows)
                         {
                             Param.Row newrow = new(r); // more cloning
                             newrow.ID = (int)(r.ID + offset);
@@ -1381,10 +1379,10 @@ public class ParamEditorScreen : EditorScreen
                     else
                     {
                         List<Param.Row> rows = _activeView.Selection.GetSelectedRows();
-                        Param param = Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()];
+                        Param param = Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()];
                         insertIndex = param.IndexOfRow(rows.Last()) + 1;
 
-                        foreach (Param.Row r in Project.ParamData.PrimaryBank.ClipboardRows)
+                        foreach (Param.Row r in Project.Handler.ParamData.PrimaryBank.ClipboardRows)
                         {
                             // Determine new ID based on paste target. Increment ID until a free ID is found.
                             Param.Row newrow = new(r);
@@ -1393,7 +1391,7 @@ public class ParamEditorScreen : EditorScreen
                             {
                                 newrow.ID++;
                             }
-                            while (Project.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()][newrow.ID] != null || rowsToInsert.Exists(e => e.ID == newrow.ID));
+                            while (Project.Handler.ParamData.PrimaryBank.Params[_activeView.Selection.GetActiveParam()][newrow.ID] != null || rowsToInsert.Exists(e => e.ID == newrow.ID));
 
                             rowsToInsert.Add(newrow);
                         }
@@ -1403,7 +1401,7 @@ public class ParamEditorScreen : EditorScreen
                     }
 
                     var paramAction = new AddParamsAction(this,
-                        Project.ParamData.PrimaryBank.Params[Project.ParamData.PrimaryBank.ClipboardParam], "legacystring", rowsToInsert, false,
+                        Project.Handler.ParamData.PrimaryBank.Params[Project.Handler.ParamData.PrimaryBank.ClipboardParam], "legacystring", rowsToInsert, false,
                         false, insertIndex);
                     EditorActionManager.ExecuteAction(paramAction);
 

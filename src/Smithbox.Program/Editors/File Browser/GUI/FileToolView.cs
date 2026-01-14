@@ -193,7 +193,7 @@ public class FileToolView
                 // Delete the empty folders
                 foreach (var entry in TopFolderList)
                 {
-                    var absFolder = $@"{Project.DataPath}{entry}";
+                    var absFolder = $@"{Project.Descriptor.DataPath}{entry}";
 
                     if (Directory.Exists(absFolder))
                     {
@@ -243,7 +243,7 @@ public class FileToolView
     {
         bool anyExist = false;
 
-        var unpackPath = Project.DataPath;
+        var unpackPath = Project.Descriptor.DataPath;
         if (UnpackDirectory != "")
             unpackPath = UnpackDirectory;
 
@@ -284,10 +284,10 @@ public class FileToolView
                 if (token.IsCancellationRequested)
                     return;
 
-                var data = Project.VanillaFS.ReadFile(entry.Path);
+                var data = Project.VFS.VanillaFS.ReadFile(entry.Path);
                 if (data != null)
                 {
-                    var unpackPath = Project.DataPath;
+                    var unpackPath = Project.Descriptor.DataPath;
                     if (UnpackDirectory != "")
                         unpackPath = UnpackDirectory;
 
@@ -359,7 +359,7 @@ public class FileToolView
                 if (token.IsCancellationRequested)
                     return;
 
-                var unpackPath = Project.DataPath;
+                var unpackPath = Project.Descriptor.DataPath;
                 if (UnpackDirectory != "")
                     unpackPath = UnpackDirectory;
 
@@ -395,7 +395,7 @@ public class FileToolView
         var folder = Path.Join(AppContext.BaseDirectory, "Assets", "File Dictionaries");
         var file = "";
 
-        switch (Project.ProjectType)
+        switch (Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 file = "DES-File-Dictionary.json"; break;

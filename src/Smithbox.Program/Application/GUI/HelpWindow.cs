@@ -9,8 +9,6 @@ namespace StudioCore.Application;
 
 public class HelpWindow
 {
-    public Smithbox BaseEditor;
-
     private readonly HelpBank _helpBank;
     private bool MenuOpenState;
 
@@ -50,9 +48,8 @@ public class HelpWindow
     private string _inputStrCache_Credit = "";
 
 
-    public HelpWindow(Smithbox baseEditor)
+    public HelpWindow()
     {
-        BaseEditor = baseEditor;
         _helpBank = new HelpBank();
     }
 
@@ -233,9 +230,9 @@ public class HelpWindow
 
             ProjectType curProjectType = ProjectType.Undefined;
 
-            if(Smithbox.ProjectManager.SelectedProject != null)
+            if(Smithbox.Orchestrator.SelectedProject != null)
             {
-                curProjectType = Smithbox.ProjectManager.SelectedProject.ProjectType;
+                curProjectType = Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectType;
             }
 
             if (entry.ProjectType == (int)curProjectType || entry.ProjectType == 0)

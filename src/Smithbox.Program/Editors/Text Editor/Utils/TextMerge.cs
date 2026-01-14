@@ -33,25 +33,25 @@ public static class TextMerge
 
         int index = 0;
 
-        foreach (var proj in Smithbox.ProjectManager.Projects)
+        foreach (var proj in Smithbox.Orchestrator.Projects)
         {
             if (proj == null)
                 continue;
 
-            if (proj.ProjectType != editor.Project.ProjectType)
+            if (proj.Descriptor.ProjectType != editor.Project.Descriptor.ProjectType)
                 continue;
 
-            if (proj == Smithbox.ProjectManager.SelectedProject)
+            if (proj == Smithbox.Orchestrator.SelectedProject)
                 continue;
 
             var isSelected = false;
 
             if (TargetProject != null)
             {
-                isSelected = TargetProject.ProjectName == proj.ProjectName;
+                isSelected = TargetProject.Descriptor.ProjectName == proj.Descriptor.ProjectName;
             }
 
-            if (ImGui.Selectable($"{proj.ProjectName}##targetProject{index}", isSelected))
+            if (ImGui.Selectable($"{proj.Descriptor.ProjectName}##targetProject{index}", isSelected))
             {
                 TargetProject = proj;
             }
@@ -93,18 +93,18 @@ public static class TextMerge
     {
         MergeInProgress = true;
 
-        await editor.Project.TextData.LoadAuxBank(TargetProject, true);
+        await editor.Project.Handler.TextData.LoadAuxBank(TargetProject, true);
 
         Task<bool> mergeTask = StartFmgMerge(editor);
         bool mergeTaskResult = await mergeTask;
 
         if (mergeTaskResult)
         {
-            TaskLogs.AddLog($"[{editor.Project.ProjectName}:Text Editor] Merged text from {TargetProject.ProjectName} into this project.");
+            TaskLogs.AddLog($"[Text Editor] Merged text from {TargetProject.Descriptor.ProjectName} into this project.");
         }
         else
         {
-            TaskLogs.AddLog($"[{editor.Project.ProjectName}:Text Editor] Failed to merge text from {TargetProject.ProjectName}.");
+            TaskLogs.AddLog($"[Text Editor] Failed to merge text from {TargetProject.Descriptor.ProjectName}.");
         }
 
         MergeInProgress = false;
@@ -114,10 +114,10 @@ public static class TextMerge
     {
         await Task.Yield();
 
-        if (!editor.Project.TextData.AuxBanks.TryGetValue(TargetProject.ProjectName, out var targetAuxBank))
+        if (!editor.Project.Handler.TextData.AuxBanks.TryGetValue(TargetProject.Descriptor.ProjectName, out var targetAuxBank))
             return false;
 
-        foreach (var primaryEntry in editor.Project.TextData.PrimaryBank.Entries)
+        foreach (var primaryEntry in editor.Project.Handler.TextData.PrimaryBank.Entries)
         {
             var primaryKey = primaryEntry.Key.Filename;
             var currentContainer = primaryEntry.Value;

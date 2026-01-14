@@ -13,9 +13,9 @@ public static class Test_MSB_Util
     {
         var mismatches = new List<MismatchData>();
 
-        var maps = curProject.MapData.MapFiles.Entries;
+        var maps = curProject.Handler.MapData.MapFiles.Entries;
 
-        var ouputDir = Path.Combine(curProject.ProjectPath, ".tests", "msb-mismatches");
+        var ouputDir = Path.Combine(curProject.Descriptor.ProjectPath, ".tests", "msb-mismatches");
 
         if (!Directory.Exists(ouputDir))
         {
@@ -25,7 +25,7 @@ public static class Test_MSB_Util
         foreach (var entry in maps)
         {
             // Read the root version of the MSB
-            var bytes = curProject.VanillaFS.ReadFile(entry.Path);
+            var bytes = curProject.VFS.VanillaFS.ReadFile(entry.Path);
             var byteArray = bytes.Value.ToArray();
             var decompressed = DCX.Decompress(byteArray);
 
@@ -40,7 +40,7 @@ public static class Test_MSB_Util
 
             byte[] written = new byte[0];
 
-            switch (curProject.ProjectType)
+            switch (curProject.Descriptor.ProjectType)
             {
                 case ProjectType.NR:
                     MSB_NR msb_nr = MSB_NR.Read(decompressed);
@@ -107,9 +107,9 @@ public static class Test_MSB_Util
     {
         var mismatches = new List<MismatchData>();
 
-        var lights = curProject.MapData.LightFiles.Entries;
+        var lights = curProject.Handler.MapData.LightFiles.Entries;
 
-        var ouputDir = Path.Combine(curProject.ProjectPath, ".tests", "btl-mismatches");
+        var ouputDir = Path.Combine(curProject.Descriptor.ProjectPath, ".tests", "btl-mismatches");
 
         if (!Directory.Exists(ouputDir))
         {
@@ -119,7 +119,7 @@ public static class Test_MSB_Util
         foreach (var entry in lights)
         {
             // Read the root version of the MSB
-            var bytes = curProject.VanillaFS.ReadFile(entry.Path);
+            var bytes = curProject.VFS.VanillaFS.ReadFile(entry.Path);
             var byteArray = bytes.Value.ToArray();
             var decompressed = DCX.Decompress(byteArray);
 
@@ -167,9 +167,9 @@ public static class Test_MSB_Util
     {
         var mismatches = new List<MismatchData>();
 
-        var nvaFiles = curProject.MapData.NavmeshFiles.Entries;
+        var nvaFiles = curProject.Handler.MapData.NavmeshFiles.Entries;
 
-        var ouputDir = Path.Combine(curProject.ProjectPath, ".tests", "nva-mismatches");
+        var ouputDir = Path.Combine(curProject.Descriptor.ProjectPath, ".tests", "nva-mismatches");
 
         if (!Directory.Exists(ouputDir))
         {
@@ -179,7 +179,7 @@ public static class Test_MSB_Util
         foreach (var entry in nvaFiles)
         {
             // Read the root version of the MSB
-            var bytes = curProject.VanillaFS.ReadFile(entry.Path);
+            var bytes = curProject.VFS.VanillaFS.ReadFile(entry.Path);
 
             if (bytes == null)
                 continue;

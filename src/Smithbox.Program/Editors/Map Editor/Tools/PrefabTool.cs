@@ -233,13 +233,13 @@ public class PrefabTool
         ImGui.Checkbox("Apply Unique Entity ID##prefabApplyUniqueEntityID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
         UIHelper.Tooltip("Spawned prefab objects will be given unique Entity IDs.");
 
-        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ImGui.Checkbox("Apply Unique Instance ID##prefabApplyUniqueInstanceID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
             UIHelper.Tooltip("Spawned prefab objects will be given unique Instance IDs.");
         }
 
-        if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ImGui.Checkbox("Apply Entity Group ID##prefabApplyEntityGroupID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
 
@@ -271,7 +271,7 @@ public class PrefabTool
         ImGui.PushItemWidth(-1);
         if (ImGui.BeginCombo("##PrefabMapCombo", comboMap.name))
         {
-            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 if (entry.Value.MapContainer == null)
                     continue;
@@ -316,7 +316,7 @@ public class PrefabTool
 
     public void PrefabTree()
     {
-        var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
         var sectionHeight = windowSize.Y * 0.3f;
         var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());

@@ -7,7 +7,7 @@ namespace StudioCore.Application;
 
 public static class TaskViewer
 {
-    public static void Display(Smithbox baseEditor, ProjectEntry project)
+    public static void Display(ProjectEntry project)
     {
         ImGui.Text("Currently running tasks:");
         ImGui.Text("");

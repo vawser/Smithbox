@@ -12,9 +12,8 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class TextBank
+public class TextBank : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
@@ -23,9 +22,8 @@ public class TextBank
 
     public ConcurrentDictionary<FileDictionaryEntry, TextContainerWrapper> Entries = new();
 
-    public TextBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
+    public TextBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
     {
-        BaseEditor = baseEditor;
         Project = project;
         Name = name;
         TargetFS = targetFs;
@@ -36,7 +34,7 @@ public class TextBank
         var tasks = new List<Task>();
 
         // msgbnd
-        foreach (var entry in Project.TextData.FmgFiles.Entries)
+        foreach (var entry in Project.Handler.TextData.FmgFiles.Entries)
         {
             if (entry.Extension != "msgbnd")
                 continue;
@@ -45,7 +43,7 @@ public class TextBank
         }
 
         // fmg
-        foreach (var entry in Project.TextData.FmgFiles.Entries)
+        foreach (var entry in Project.Handler.TextData.FmgFiles.Entries)
         {
             if (entry.Extension != "fmg")
                 continue;
@@ -107,7 +105,7 @@ public class TextBank
 
             containerWrapper.FmgWrappers = fmgWrappers;
 
-            if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 containerWrapper.ContainerDisplaySubCategory = TextUtils.GetSubCategory(entry.Path);
             }
@@ -117,7 +115,8 @@ public class TextBank
         catch (Exception e)
         {
             var filename = Path.GetFileNameWithoutExtension(entry.Path);
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to load FMG: {filename} at {entry.Path}", LogLevel.Error, LogPriority.High, e);
+
+            TaskLogs.AddError($"[Text Editor] Failed to load FMG: {filename} at {entry.Path} for {Name}", e);
         }
     }
 
@@ -163,7 +162,7 @@ public class TextBank
             // Populate the Text Fmg wrappers with their contents
             List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
 
-            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 using (IBinder binder = BND3.Read(containerBytes))
                 {
@@ -220,7 +219,8 @@ public class TextBank
         catch (Exception e)
         {
             var filename = Path.GetFileNameWithoutExtension(entry.Path);
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to load FMG container: {filename} at {entry.Path}", LogLevel.Error, LogPriority.High, e);
+
+            TaskLogs.AddError($"[Text Editor] Failed to load FMG container: {filename} at {entry.Path} for {Name}", e);
         }
     }
 
@@ -236,7 +236,7 @@ public class TextBank
             // Only save all modified files
             if (containerInfo.IsModified)
             {
-                if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
                     Task<bool> saveTask = SaveLooseFmg(fileEntry, containerInfo);
                     bool saveTaskResult = await saveTask;
@@ -274,7 +274,7 @@ public class TextBank
         {
             var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);
 
-            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 using (IBinder binder = BND3.Read(containerBytes))
                 {
@@ -307,17 +307,17 @@ public class TextBank
 
             try
             {
-                Project.ProjectFS.WriteFile(entry.Path, fileBytes);
+                Project.VFS.ProjectFS.WriteFile(entry.Path, fileBytes);
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to write {entry.Filename} as file.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Text Editor] Failed to write {entry.Filename} as file for {Name}.", e);
                 return false;
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to read {entry.Filename} from VFS.", LogLevel.Error, LogPriority.High, e);
+            TaskLogs.AddError($"[Text Editor] Failed to read {entry.Filename} from VFS for {Name}.", e);
             return false;
         }
 
@@ -338,7 +338,7 @@ public class TextBank
                     }
                     catch (Exception ex)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to write FMG file: {file.ID}\n{ex}");
+                        TaskLogs.AddError($"[Text Editor] Failed to write FMG file: {file.ID} for {Name}", ex);
                     }
                 }
             }
@@ -361,22 +361,32 @@ public class TextBank
 
             try
             {
-                Project.ProjectFS.WriteFile(entry.Path, newFmgBytes);
+                Project.VFS.ProjectFS.WriteFile(entry.Path, newFmgBytes);
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to write {entry.Filename} as file.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Text Editor] Failed to write {entry.Filename} as file for {Name}.", e);
                 return false;
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to write {entry.Filename} as FMG", LogLevel.Error, LogPriority.High, e);
+            TaskLogs.AddError($"[Text Editor] Failed to write {entry.Filename} as FMG for {Name}.", e);
+
             return false;
         }
 
         return true;
     }
+
+    #region Dispose
+    public void Dispose()
+    {
+        Entries.Clear();
+
+        Entries = null;
+    }
+    #endregion
 }
 
 

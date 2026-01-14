@@ -22,7 +22,7 @@ namespace StudioCore;
 public class Smithbox
 {
     public static Smithbox Instance { get; set; }
-    public static ProjectManager ProjectManager { get; set; }
+    public static ProjectOrchestrator Orchestrator { get; set; }
 
     private static double _desiredFrameLengthSeconds = 1.0 / 20.0f;
     private static readonly bool _limitFrameRate = true;
@@ -53,6 +53,8 @@ public class Smithbox
 
     public unsafe Smithbox(IGraphicsContext context, string version, bool isLowRequirements)
     {
+        Instance = this;
+
         LowRequirementsMode = isLowRequirements;
 
         _version = version;
@@ -70,43 +72,29 @@ public class Smithbox
 
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
-        // Hack to pass the current project status into the Resource system for now
-        // This is not to be used outside of the resource system
-        ResourceManager.BaseEditor = this;
-
-        ProjectManager = new(this);
-
-        ActionLogger = new(ProjectManager);
-        WarningLogger = new(ProjectManager);
+        Orchestrator = new();
+        ActionLogger = new();
+        WarningLogger = new();
 
         DPI.UpdateDpi(_context);
         DPI.UIScaleChanged += (_, _) =>
         {
             FontRebuildRequest = true;
         };
+
         SetupImGui();
         SetupFonts();
 
         _context.ImguiRenderer.OnSetupDone();
 
-        ProjectManager.Setup();
+        Settings = new();
+        Help = new();
+        Keybinds = new();
+        DebugTools = new();
 
-        Settings = new(this);
-        Help = new(this);
-        Keybinds = new(this);
-        DebugTools = new(this);
-
-        _soapstoneService = new(this, version);
+        _soapstoneService = new(version);
     }
 
-    public void SetProgramName(ProjectEntry curProject)
-    {
-        _context.Window.Title = $"{curProject.ProjectName} - {_version}";
-    }
-
-    /// <summary>
-    /// Called when Smithbox is starting up
-    /// </summary>
     private void Setup()
     {
         CFG.Setup();
@@ -123,6 +111,12 @@ public class Smithbox
         BinaryReaderEx.CurrentProjectType = "";
         BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
         BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.System_UseDCXHeuristicOnReadFailure;
+    }
+
+
+    public void SetProgramName(ProjectEntry curProject)
+    {
+        _context.Window.Title = $"{curProject.Descriptor.ProjectName} - {_version}";
     }
 
     public void SaveConfiguration()
@@ -326,16 +320,16 @@ public class Smithbox
 
             if (!_context.Window.Exists)
             {
-                ProjectManager.Exit();
+                Orchestrator.Exit();
                 Exit();
 
                 break;
             }
 
-            _context.Draw(ProjectManager);
+            _context.Draw(Orchestrator);
         }
 
-        ProjectManager.Exit();
+        Orchestrator.Exit();
         Exit();
         ResourceManager.Shutdown();
         _context.Dispose();
@@ -453,25 +447,17 @@ public class Smithbox
 
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
 
-        ProjectCreation.Draw();
-        ProjectSettings.Draw();
-        ProjectAliasEditor.Draw();
-        ProjectEnumEditor.Draw();
-
         ActionLogger.Draw();
         WarningLogger.Draw();
 
-        // Create new project if triggered to do so
-        if (ProjectCreation.Create)
-        {
-            ProjectCreation.Create = false;
-            ProjectManager.CreateProject();
-        }
-
         if (ImGui.BeginMainMenuBar())
         {
-            // Projects
-            ProjectManager.Menubar();
+            if (ImGui.BeginMenu("Projects"))
+            {
+                Orchestrator.DisplayMenuOptions();
+
+                ImGui.EndMenu();
+            }
 
             // Settings
             if (ImGui.BeginMenu("Settings"))
@@ -656,7 +642,7 @@ public class Smithbox
             ImGui.SetNextWindowFocus();
         }
 
-        ProjectManager.Update(deltaseconds);
+        Orchestrator.Update(deltaseconds);
 
         Settings.Display();
         Help.Display();

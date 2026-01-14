@@ -30,7 +30,7 @@ public class TextNamingTemplateManager
         Project = project;
 
         RootPath = Path.Join(AppContext.BaseDirectory, "Assets", "Workflow", "Naming Templates");
-        ProjectPath = Path.Join(editor.Project.ProjectPath, ".smithbox", "Workflow", "Naming Templates");
+        ProjectPath = Path.Join(editor.Project.Descriptor.ProjectPath, ".smithbox", "Workflow", "Naming Templates");
     }
 
     public FmgEntryGeneratorBase GetGenerator(string name)
@@ -48,7 +48,7 @@ public class TextNamingTemplateManager
 
     public void SetupTemplates()
     {
-        if (Editor.Project.ProjectType is not ProjectType.Undefined)
+        if (Editor.Project.Descriptor.ProjectType is not ProjectType.Undefined)
         {
             if (!Directory.Exists(ProjectPath))
             {
@@ -72,11 +72,11 @@ public class TextNamingTemplateManager
 
     public void OnProjectChanged()
     {
-        ProjectPath = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Workflow", "Naming Templates");
+        ProjectPath = Path.Join(Editor.Project.Descriptor.ProjectPath, ".smithbox", "Workflow", "Naming Templates");
 
         GeneratorDictionary = new();
 
-        if (Editor.Project.ProjectType is not ProjectType.Undefined)
+        if (Editor.Project.Descriptor.ProjectType is not ProjectType.Undefined)
         {
             SetupTemplates();
             CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template = "";

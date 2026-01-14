@@ -114,7 +114,7 @@ public static class ModelEditorUtils
             if (p[i].Equals("tex"))
             {
                 i++;
-                if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     var mid = p[i];
 
@@ -127,7 +127,7 @@ public static class ModelEditorUtils
                         containerType = ResourceContainerType.BXF;
                     }
                 }
-                else if (project.ProjectType is ProjectType.DES)
+                else if (project.Descriptor.ProjectType is ProjectType.DES)
                 {
                     var mid = p[i];
                     i++;
@@ -154,23 +154,23 @@ public static class ModelEditorUtils
                 {
                     i++;
 
-                    if (project.ProjectType is ProjectType.DS1)
+                    if (project.Descriptor.ProjectType is ProjectType.DS1)
                     {
                         containerType = ResourceContainerType.None;
                     }
-                    else if (project.ProjectType is ProjectType.DS1R)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS1R)
                     {
                         containerType = ResourceContainerType.None;
                     }
-                    else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                     {
                         containerType = ResourceContainerType.BXF;
                     }
-                    else if (project.ProjectType is ProjectType.BB or ProjectType.DES)
+                    else if (project.Descriptor.ProjectType is ProjectType.BB or ProjectType.DES)
                     {
                         containerType = ResourceContainerType.None;
                     }
-                    else if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                     {
                         containerType = ResourceContainerType.BND;
                     }
@@ -186,21 +186,21 @@ public static class ModelEditorUtils
                     var hittype = p[i];
                     i++;
 
-                    if (project.ProjectType is ProjectType.DS1 or ProjectType.DES)
+                    if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DES)
                     {
                     }
-                    else if (project.ProjectType == ProjectType.DS1R)
+                    else if (project.Descriptor.ProjectType == ProjectType.DS1R)
                     {
                     }
-                    else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-                    {
-                        containerType = ResourceContainerType.BXF;
-                    }
-                    else if (project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                     {
                         containerType = ResourceContainerType.BXF;
                     }
-                    else if (project.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+                    {
+                        containerType = ResourceContainerType.BXF;
+                    }
+                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
                     {
                         containerType = ResourceContainerType.BXF;
                     }
@@ -210,15 +210,15 @@ public static class ModelEditorUtils
                 {
                     i++;
 
-                    if (project.ProjectType is ProjectType.DS1 or ProjectType.DES)
+                    if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DES)
                     {
                         containerType = ResourceContainerType.BND;
                     }
-                    else if (project.ProjectType is ProjectType.DS1R)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS1R)
                     {
                         containerType = ResourceContainerType.BND;
                     }
-                    else if (project.MapEditor != null && project.MapEditor.HavokNavmeshBank.CanUse())
+                    else if (project.Handler.MapEditor != null && project.Handler.MapEditor.HavokNavmeshBank.CanUse())
                     {
                         containerType = ResourceContainerType.BND;
                     }
@@ -235,19 +235,19 @@ public static class ModelEditorUtils
             // Models
             if (p[i].Equals("model"))
             {
-                if (project.ProjectType is ProjectType.DES)
+                if (project.Descriptor.ProjectType is ProjectType.DES)
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.ProjectType is ProjectType.DS1)
+                else if (project.Descriptor.ProjectType is ProjectType.DS1)
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.ProjectType is ProjectType.DES)
+                else if (project.Descriptor.ProjectType is ProjectType.DES)
                 {
                     containerType = ResourceContainerType.BND;
                 }
@@ -271,31 +271,31 @@ public static class ModelEditorUtils
                     }
                 }
 
-                if (project.ProjectType is ProjectType.DES)
+                if (project.Descriptor.ProjectType is ProjectType.DES)
                 {
                     containerType = ResourceContainerType.None;
                 }
-                else if (project.ProjectType is ProjectType.DS1)
+                else if (project.Descriptor.ProjectType is ProjectType.DS1)
                 {
                     containerType = ResourceContainerType.None;
                 }
-                else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.ProjectType is ProjectType.DS1R)
+                else if (project.Descriptor.ProjectType is ProjectType.DS1R)
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.ProjectType is ProjectType.BB)
+                else if (project.Descriptor.ProjectType is ProjectType.BB)
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.ProjectType is ProjectType.DS3 or ProjectType.SDT)
+                else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
+                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
                 {
                     containerType = ResourceContainerType.BND;
 
@@ -304,7 +304,7 @@ public static class ModelEditorUtils
                         containerType = ResourceContainerType.BND;
                     }
                 }
-                else if (project.ProjectType is ProjectType.AC6)
+                else if (project.Descriptor.ProjectType is ProjectType.AC6)
                 {
                     containerType = ResourceContainerType.BND;
 
@@ -347,11 +347,11 @@ public static class ModelEditorUtils
             // Models / Textures
             if (p[i].Equals("model") || p[i].Equals("tex"))
             {
-                if (project.ProjectType is ProjectType.DS1 or ProjectType.DS2S or ProjectType.DS2)
+                if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS2S or ProjectType.DS2)
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
+                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
                 {
                     if (p.Length == 4)
                     {
@@ -372,7 +372,7 @@ public static class ModelEditorUtils
                         containerType = ResourceContainerType.None;
                     }
                 }
-                else if (project.ProjectType is ProjectType.AC6 && p[i].Equals("tex"))
+                else if (project.Descriptor.ProjectType is ProjectType.AC6 && p[i].Equals("tex"))
                 {
                     if (p.Length == 4)
                     {

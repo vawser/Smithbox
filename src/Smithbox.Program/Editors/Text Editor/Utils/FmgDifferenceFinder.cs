@@ -20,7 +20,7 @@ public static class FmgDifferenceFinder
         foreach (var entry in srcFmg.File.Entries)
         {
             // DS2
-            if (editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 if (srcEntries.ContainsKey(entry.ID))
                 {
@@ -56,7 +56,7 @@ public static class FmgDifferenceFinder
             }
 
             // DS2
-            if (editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 if (srcEntries.ContainsKey(entry.ID))
                 {

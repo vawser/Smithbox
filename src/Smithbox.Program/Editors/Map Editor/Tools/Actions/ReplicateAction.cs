@@ -202,7 +202,7 @@ public class ReplicateAction
             ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
             UIHelper.Tooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
 
-            if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2 && Editor.Project.ProjectType != ProjectType.AC6)
+            if (Editor.Project.Descriptor.ProjectType != ProjectType.DS2S && Editor.Project.Descriptor.ProjectType != ProjectType.DS2 && Editor.Project.Descriptor.ProjectType != ProjectType.AC6)
             {
                 if (ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID))
                 {
@@ -214,19 +214,19 @@ public class ReplicateAction
                 UIHelper.Tooltip("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
             }
 
-            if (Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
+            if (Editor.Project.Descriptor.ProjectType == ProjectType.ER || Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
             {
                 ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Replicator_Increment_InstanceID);
                 UIHelper.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
             }
 
-            if (Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
+            if (Editor.Project.Descriptor.ProjectType == ProjectType.ER || Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
             {
                 ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Replicator_Increment_PartNames);
                 UIHelper.Tooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
             }
 
-            if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
+            if (Editor.Project.Descriptor.ProjectType != ProjectType.DS2S && Editor.Project.Descriptor.ProjectType != ProjectType.DS2)
             {
                 if (ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Replicator_Clear_Entity_ID))
                 {

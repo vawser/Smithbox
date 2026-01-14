@@ -46,7 +46,7 @@ public class MapListView : IActionEventHandler
                 DisplayMenubar();
                 DisplaySearchbar();
 
-                if (Editor.Project.ProjectType is ProjectType.BB)
+                if (Editor.Project.Descriptor.ProjectType is ProjectType.BB)
                 {
                     ImGui.SameLine();
                     DisplayChaliceToggleButton();
@@ -140,7 +140,7 @@ public class MapListView : IActionEventHandler
             }
             UIHelper.Tooltip("Select a list filter to narrow the map list down to a pre-defined set of maps.");
 
-            if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             {
                 if (ImGui.MenuItem("World Map"))
                 {
@@ -196,7 +196,7 @@ public class MapListView : IActionEventHandler
             _cachedMapNameAliases.Clear();
             _cachedMapTags.Clear();
 
-            foreach (var entry in Project.MapData.MapFiles.Entries)
+            foreach (var entry in Project.Handler.MapData.MapFiles.Entries)
             {
                 var mapID = entry.Filename;
 
@@ -235,7 +235,7 @@ public class MapListView : IActionEventHandler
     {
         var filteredEntries = new List<MapWrapper>();
 
-        foreach (var entry in Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
         {
             var wrapper = entry.Value;
 
@@ -431,7 +431,7 @@ public class MapListView : IActionEventHandler
             }
 
             // ER: Load Related Maps
-            if (Editor.Project.ProjectType is ProjectType.ER)
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.ER)
             {
                 if (mapWrapper.Name.StartsWith("m60") || mapWrapper.Name.StartsWith("m61"))
                 {

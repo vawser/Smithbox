@@ -58,7 +58,7 @@ public class FmgRowDecorator
             return;
         }
 
-        if (Editor.Project.TextEditor == null)
+        if (Editor.Project.Handler.TextEditor == null)
             return;
 
         if (CommandLine == "")
@@ -72,7 +72,7 @@ public class FmgRowDecorator
                 var fmg = cachedEntry.Parent;
                 var fmgName = fmg.Name;
 
-                foreach (var (path, entry) in Editor.Project.TextData.PrimaryBank.Entries)
+                foreach (var (path, entry) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
                 {
                     if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
                     {

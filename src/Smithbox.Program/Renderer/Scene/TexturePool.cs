@@ -473,9 +473,9 @@ public class TexturePool
                 "world_map_limveld_noklateo"
             };
 
-            if (Smithbox.ProjectManager.SelectedProject != null)
+            if (Smithbox.Orchestrator.SelectedProject != null)
             {
-                var curProject = Smithbox.ProjectManager.SelectedProject;
+                var curProject = Smithbox.Orchestrator.SelectedProject;
 
                 var checkPow = true;
 
@@ -486,13 +486,13 @@ public class TexturePool
                 }
 
                 // Ignore for Icon Preview
-                if(curProject.FocusedEditor is ParamEditorScreen)
+                if(curProject.Handler.FocusedEditor is ParamEditorScreen)
                 {
                     checkPow = false;
                 }
 
                 // Ignore for Texture Viewer
-                if (curProject.FocusedEditor is TextureViewerScreen)
+                if (curProject.Handler.FocusedEditor is TextureViewerScreen)
                 {
                     checkPow = false;
                 }

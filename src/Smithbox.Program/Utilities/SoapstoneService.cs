@@ -49,14 +49,11 @@ public class SoapstoneService : SoapstoneServiceV1
     private static readonly Dictionary<KeyNamespace, MsbEntityType> revMapNamespaces =
         mapNamespaces.ToDictionary(e => e.Value, e => e.Key);
 
-    private readonly Smithbox BaseEditor;
-
     private readonly string Version;
 
-    public SoapstoneService(Smithbox baseEditor, string version)
+    public SoapstoneService(string version)
     {
         Version = version;
-        BaseEditor = baseEditor;
     }
 
     public override async Task<ServerInfoResponse> GetServerInfo(ServerCallContext context)
@@ -68,26 +65,26 @@ public class SoapstoneService : SoapstoneServiceV1
             ServerPath = Process.GetCurrentProcess().MainModule?.FileName
         };
 
-        if (Smithbox.ProjectManager.SelectedProject != null)
+        if (Smithbox.Orchestrator.SelectedProject != null)
         {
-            var curProject = Smithbox.ProjectManager.SelectedProject;
+            var curProject = Smithbox.Orchestrator.SelectedProject;
 
-            if (curProject.DataPath != null
-                && gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame gameType))
+            if (curProject.Descriptor.DataPath != null
+                && gameMapping.TryGetValue(curProject.Descriptor.ProjectType, out FromSoftGame gameType))
             {
                 EditorResource projectResource = new()
                 {
                     Type = EditorResourceType.Project,
-                    ProjectJsonPath = Path.Combine(curProject.ProjectPath, "project.json"),
+                    ProjectJsonPath = Path.Combine(curProject.Descriptor.ProjectPath, "project.json"),
                     Game = gameType
                 };
                 response.Resources.Add(projectResource);
 
-                if (curProject.MapEditor != null)
+                if (curProject.Handler.MapEditor != null)
                 {
-                    if (curProject.MapEditor.Selection.IsAnyMapLoaded())
+                    if (curProject.Handler.MapEditor.Selection.IsAnyMapLoaded())
                     {
-                        foreach(var entry in curProject.MapData.PrimaryBank.Maps)
+                        foreach(var entry in curProject.Handler.MapData.PrimaryBank.Maps)
                         {
                             if (entry.Value.MapContainer != null)
                             {
@@ -104,9 +101,9 @@ public class SoapstoneService : SoapstoneServiceV1
                     }
                 }
 
-                if (curProject.ParamEditor != null)
+                if (curProject.Handler.ParamEditor != null)
                 {
-                    if (curProject.ParamData.PrimaryBank?.Params != null && curProject.ParamData.PrimaryBank?.Params.Count > 0)
+                    if (curProject.Handler.ParamData.PrimaryBank?.Params != null && curProject.Handler.ParamData.PrimaryBank?.Params.Count > 0)
                     {
                         EditorResource paramResource = new()
                         {
@@ -118,7 +115,7 @@ public class SoapstoneService : SoapstoneServiceV1
                     }
                 }
 
-                if (curProject.TextEditor != null)
+                if (curProject.Handler.TextEditor != null)
                 {
                     FmgLanguage lang;
 
@@ -285,22 +282,22 @@ public class SoapstoneService : SoapstoneServiceV1
     {
         List<SoulsObject> results = new();
 
-        if (Smithbox.ProjectManager.SelectedProject == null)
+        if (Smithbox.Orchestrator.SelectedProject == null)
         {
             return results;
         }
 
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(curProject.Descriptor.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return results;
         }
 
-        if (curProject.ParamEditor != null)
+        if (curProject.Handler.ParamEditor != null)
         {
             if (resource.Type == EditorResourceType.Param
-                && curProject.ParamData.PrimaryBank?.Params is IReadOnlyDictionary<string, Param> paramDict)
+                && curProject.Handler.ParamData.PrimaryBank?.Params is IReadOnlyDictionary<string, Param> paramDict)
             {
                 foreach (SoulsKey getKey in keys)
                 {
@@ -375,19 +372,19 @@ public class SoapstoneService : SoapstoneServiceV1
         }
         */
 
-        if (curProject.MapEditor != null)
+        if (curProject.Handler.MapEditor != null)
         {
             if (resource.Type == EditorResourceType.Map)
             {
                 foreach (SoulsKey getKey in keys)
                 {
                     if (getKey.File is not SoulsKey.MsbKey fileKey ||
-                        curProject.MapEditor.Selection.GetMapContainerFromMapID(fileKey.Map) == null || !MatchesResource(resource, fileKey.Map))
+                        curProject.Handler.MapEditor.Selection.GetMapContainerFromMapID(fileKey.Map) == null || !MatchesResource(resource, fileKey.Map))
                     {
                         continue;
                     }
 
-                    var targetContainer = curProject.MapEditor.Selection.GetMapContainerFromMapID(fileKey.Map);
+                    var targetContainer = curProject.Handler.MapEditor.Selection.GetMapContainerFromMapID(fileKey.Map);
 
                     if (getKey is SoulsKey.MsbKey msbKey)
                     {
@@ -427,14 +424,14 @@ public class SoapstoneService : SoapstoneServiceV1
     {
         List<SoulsObject> results = new();
 
-        if (Smithbox.ProjectManager.SelectedProject == null)
+        if (Smithbox.Orchestrator.SelectedProject == null)
         {
             return results;
         }
 
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(curProject.Descriptor.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return results;
         }
@@ -449,12 +446,12 @@ public class SoapstoneService : SoapstoneServiceV1
 
         // Some of the iterations below may have interference with concurrent modification issues,
         // but transient errors are basically acceptable here. If not, use concurrent collections instead.
-        if(curProject.ParamEditor != null)
+        if(curProject.Handler.ParamEditor != null)
         {
             if (resource.Type == EditorResourceType.Param)
             {
                 Predicate<object> fileFilter = search.GetKeyFilter("Param");
-                foreach (KeyValuePair<string, Param> entry in curProject.ParamData.PrimaryBank?.Params ??
+                foreach (KeyValuePair<string, Param> entry in curProject.Handler.ParamData.PrimaryBank?.Params ??
                                                               new Dictionary<string, Param>())
                 {
                     if (!fileFilter(entry.Key))
@@ -554,13 +551,13 @@ public class SoapstoneService : SoapstoneServiceV1
         }
         */
 
-        if (curProject.MapEditor != null)
+        if (curProject.Handler.MapEditor != null)
         {
             if (resource.Type == EditorResourceType.Map)
             {
                 Predicate<object> fileFilter = search.GetKeyFilter("Map");
                 // LoadedObjectContainers is never null, starts out an empty dictionary
-                foreach (var entry in curProject.MapData.PrimaryBank.Maps)
+                foreach (var entry in curProject.Handler.MapData.PrimaryBank.Maps)
                 {
                     if (!fileFilter(entry.Key) || !MatchesResource(resource, entry.Key.Filename))
                     {
@@ -614,11 +611,11 @@ public class SoapstoneService : SoapstoneServiceV1
 
     public override async Task OpenResource(ServerCallContext context, EditorResource resource)
     {
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         // At the moment, only loading maps is supported.
         // This could be extended to switching FMG language, or adding a param view, or opening a model to view.
-        if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(curProject.Descriptor.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return;
         }
@@ -635,12 +632,12 @@ public class SoapstoneService : SoapstoneServiceV1
         EditorResource resource,
         SoulsKey key)
     {
-        if (Smithbox.ProjectManager.SelectedProject == null)
+        if (Smithbox.Orchestrator.SelectedProject == null)
             return;
 
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(curProject.Descriptor.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return;
         }
@@ -704,14 +701,14 @@ public class SoapstoneService : SoapstoneServiceV1
         PropertySearch search,
         bool openFirstResult)
     {
-        if (Smithbox.ProjectManager.SelectedProject == null)
+        if (Smithbox.Orchestrator.SelectedProject == null)
             return;
 
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         // At the moment, just map properties, since there are some multi-keyed things like entity groups
         // Params are also possible; FMG might require a new command
-        if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(curProject.Descriptor.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return;
         }

@@ -28,7 +28,7 @@ public static class ParamCategories
 
     public static void Display(ParamEditorScreen editor)
     {
-        var categories = editor.Project.ParamData.ParamCategories;
+        var categories = editor.Project.Handler.ParamData.ParamCategories;
 
         if (categories == null)
         {
@@ -76,7 +76,7 @@ public static class ParamCategories
         ImGui.SameLine();
         if (ImGui.Button("Delete Selected Entry", DPI.HalfWidthButton(windowWidth, 24)))
         {
-            editor.Project.ParamData.ParamCategories.Categories.Remove(_selectedUserCategory);
+            editor.Project.Handler.ParamData.ParamCategories.Categories.Remove(_selectedUserCategory);
             _selectedUserCategory = null;
             isNewEntryMode = false;
             isEditEntryMode = false;
@@ -99,7 +99,7 @@ public static class ParamCategories
         // List
         ImGui.Separator();
 
-        foreach(var category in editor.Project.ParamData.ParamCategories.Categories)
+        foreach(var category in editor.Project.Handler.ParamData.ParamCategories.Categories)
         {
             if (ImGui.Selectable($"{category.DisplayName}##userCategory_{category.DisplayName}", category == _selectedUserCategory, ImGuiSelectableFlags.AllowDoubleClick))
             {
@@ -170,7 +170,7 @@ public static class ParamCategories
                 newCategoryEntry.DisplayName = NewEntryName;
                 newCategoryEntry.Params = NewEntryParams;
 
-                editor.Project.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
+                editor.Project.Handler.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
             }
         }
 
@@ -220,7 +220,7 @@ public static class ParamCategories
                 {
                     isEditEntryMode = false;
 
-                    var curEntry = editor.Project.ParamData.ParamCategories.Categories.Where(e => e.DisplayName == NewEntryName).FirstOrDefault();
+                    var curEntry = editor.Project.Handler.ParamData.ParamCategories.Categories.Where(e => e.DisplayName == NewEntryName).FirstOrDefault();
 
                     if (curEntry != null)
                     {
@@ -254,7 +254,7 @@ public static class ParamCategories
 
     public static void RestoreDefault(ParamEditorScreen editor)
     {
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(editor.Project.ProjectType));
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(editor.Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
         if (File.Exists(sourceFile))
@@ -265,7 +265,7 @@ public static class ParamCategories
 
                 try
                 {
-                    editor.Project.ParamData.ParamCategories = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCategoryResource);
+                    editor.Project.Handler.ParamData.ParamCategories = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCategoryResource);
                 }
                 catch (Exception e)
                 {
@@ -285,10 +285,10 @@ public static class ParamCategories
 
     public static void Write(ParamEditorScreen editor)
     {
-        if (editor.Project.ProjectType == ProjectType.Undefined)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.Undefined)
             return;
 
-        var modResourceDir = Path.Join(editor.Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(editor.Project));
+        var modResourceDir = Path.Join(editor.Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(editor.Project));
         var modResourcePath = Path.Combine(modResourceDir, "Param Categories.json");
 
         if (!Directory.Exists(modResourceDir))
@@ -298,7 +298,7 @@ public static class ParamCategories
 
         try
         {
-            string jsonString = JsonSerializer.Serialize(editor.Project.ParamData.ParamCategories, typeof(ParamCategoryResource), ProjectJsonSerializerContext.Default);
+            string jsonString = JsonSerializer.Serialize(editor.Project.Handler.ParamData.ParamCategories, typeof(ParamCategoryResource), ProjectJsonSerializerContext.Default);
             var fs = new FileStream(modResourcePath, System.IO.FileMode.Create);
             var data = Encoding.ASCII.GetBytes(jsonString);
             fs.Write(data, 0, data.Length);

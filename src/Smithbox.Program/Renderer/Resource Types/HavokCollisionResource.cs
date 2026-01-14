@@ -30,10 +30,10 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
-        if (Smithbox.ProjectManager.SelectedProject == null)
+        if (Smithbox.Orchestrator.SelectedProject == null)
             return false;
 
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         if(virtPath.Contains("connect"))
         {
@@ -41,7 +41,7 @@ public class HavokCollisionResource : IResource, IDisposable
         }
 
         // HKLib - ER
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             var success = HandleHKLibLoad(curProject, virtPath);
 
@@ -49,7 +49,7 @@ public class HavokCollisionResource : IResource, IDisposable
                 return false;
         }
         // HKX2 - DS3
-        else if (curProject.ProjectType is ProjectType.DS3)
+        else if (curProject.Descriptor.ProjectType is ProjectType.DS3)
         {
             DCX.Type t;
             Memory<byte> decomp = DCX.Decompress(bytes, out t);
@@ -58,7 +58,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
         }
         // HKX - BB
-        else if (curProject.ProjectType is ProjectType.BB)
+        else if (curProject.Descriptor.ProjectType is ProjectType.BB)
         {
             Hkx = HKX.Read(bytes, HKX.HKXVariation.HKXBloodBorne);
         }
@@ -75,10 +75,10 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
-        if (Smithbox.ProjectManager.SelectedProject == null)
+        if (Smithbox.Orchestrator.SelectedProject == null)
             return false;
 
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         if (virtPath.Contains("connect"))
         {
@@ -86,7 +86,7 @@ public class HavokCollisionResource : IResource, IDisposable
         }
 
         // HKLib - ER
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             var success = HandleHKLibLoad(curProject, virtPath);
 
@@ -94,11 +94,11 @@ public class HavokCollisionResource : IResource, IDisposable
                 return false;
         }
         // HKX2 - DS3
-        else if (curProject.ProjectType is ProjectType.DS3)
+        else if (curProject.Descriptor.ProjectType is ProjectType.DS3)
         {
             try
             {
-                var fileData = curProject.FS.ReadFile(relativePath);
+                var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
                 DCX.Type t;
                 Memory<byte> decomp = DCX.Decompress(fileData.Value, out t);
@@ -112,11 +112,11 @@ public class HavokCollisionResource : IResource, IDisposable
             }
         }
         // HKX - BB
-        else if (curProject.ProjectType is ProjectType.BB)
+        else if (curProject.Descriptor.ProjectType is ProjectType.BB)
         {
             try
             {
-                var fileData = curProject.FS.ReadFile(relativePath);
+                var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
                 Hkx = HKX.Read(fileData.Value, HKX.HKXVariation.HKXBloodBorne);
             }
@@ -130,12 +130,12 @@ public class HavokCollisionResource : IResource, IDisposable
         {
             try
             {
-                var fileData = curProject.FS.ReadFile(relativePath);
+                var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
                 // Intercept and load the collision from PTDE FS for DS1R projects
-                if(CFG.Current.PTDE_UseCollisionHack && curProject.ProjectType is ProjectType.DS1R)
+                if(CFG.Current.PTDE_UseCollisionHack && curProject.Descriptor.ProjectType is ProjectType.DS1R)
                 {
-                    fileData = curProject.PTDE_FS.ReadFile(relativePath);
+                    fileData = curProject.VFS.PTDE_FS.ReadFile(relativePath);
                 }
 
                 Hkx = HKX.Read(fileData.Value);
@@ -153,11 +153,11 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool HandleMeshLoad(ProjectEntry curProject, AccessLevel al)
     {
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             return HKLib_Helper.LoadCollisionMesh(this, al);
         }
-        else if (curProject.ProjectType is ProjectType.DS3)
+        else if (curProject.Descriptor.ProjectType is ProjectType.DS3)
         {
             return HKX2_Helper.LoadCollisionMesh(this, al);
         }
@@ -169,23 +169,23 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool HandleHKLibLoad(ProjectEntry curProject, string virtPath)
     {
-        if (curProject.MapEditor != null)
+        if (curProject.Handler.MapEditor != null)
         {
             // Map collision
             var pathElements = virtPath.Split('/');
             var filename = pathElements[4];
 
-            if (curProject.MapEditor.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.Low)
+            if (curProject.Handler.MapEditor.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.Low)
             {
                 filename = $"l{filename.Substring(1)}";
             }
 
-            if (curProject.MapEditor.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.High)
+            if (curProject.Handler.MapEditor.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.High)
             {
                 filename = $"h{filename.Substring(1)}";
             }
 
-            if (curProject.MapEditor.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.FallProtection)
+            if (curProject.Handler.MapEditor.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.FallProtection)
             {
                 filename = $"f{filename.Substring(1)}";
             }
@@ -193,9 +193,9 @@ public class HavokCollisionResource : IResource, IDisposable
             // HKX for ER is loaded directly in HavokCollisionManager
             // This is required since the parallel nature of the
             // Resource Manager doesn't work with the HavokBinarySerializer
-            if (curProject.MapEditor.HavokCollisionBank.HavokContainers.ContainsKey(filename))
+            if (curProject.Handler.MapEditor.HavokCollisionBank.HavokContainers.ContainsKey(filename))
             {
-                ER_HKX = curProject.MapEditor.HavokCollisionBank.HavokContainers[filename];
+                ER_HKX = curProject.Handler.MapEditor.HavokCollisionBank.HavokContainers[filename];
             }
             else
             {
@@ -209,7 +209,7 @@ public class HavokCollisionResource : IResource, IDisposable
     public void DetermineFrontFace(ProjectEntry curProject)
     {
 
-        if (curProject.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER or ProjectType.NR)
         {
             FrontFace = VkFrontFace.Clockwise;
         }

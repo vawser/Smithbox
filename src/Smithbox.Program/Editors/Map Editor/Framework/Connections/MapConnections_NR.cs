@@ -40,7 +40,7 @@ internal class MapConnections_NR
         Vector3 closestOriginGlobal = Vector3.Zero;
         ObjectContainer closestMap = null;
 
-        foreach (var entry in editor.Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in editor.Project.Handler.MapData.PrimaryBank.Maps)
         {
             var mapID = entry.Key.Filename;
             var container = entry.Value.MapContainer;
@@ -85,13 +85,13 @@ internal class MapConnections_NR
             return NightreignOffsets.Count > 0;
         }
 
-        if (editor.Project.ParamEditor == null)
+        if (editor.Project.Handler.ParamEditor == null)
             return false;
 
         Dictionary<string, TileDefinition> dungeonOffsets = new();
 
 
-        IReadOnlyDictionary<string, Param> loadedParams = editor.Project.ParamData.PrimaryBank.Params;
+        IReadOnlyDictionary<string, Param> loadedParams = editor.Project.Handler.ParamData.PrimaryBank.Params;
         // Do not explicitly check ParamBank's game type here, but fail gracefully if the param does not exist
         if (loadedParams == null || !loadedParams.TryGetValue("WorldMapLegacyConvParam", out Param convParam))
         {

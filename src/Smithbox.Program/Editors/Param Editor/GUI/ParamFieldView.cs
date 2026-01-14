@@ -60,12 +60,12 @@ public class ParamFieldView
 
             Editor.ContextManager.SetWindowContext(ParamEditorContext.FieldList);
 
-            Param vanillaParam = Editor.Project.ParamData.VanillaBank.Params?.GetValueOrDefault(activeParam);
+            Param vanillaParam = Editor.Project.Handler.ParamData.VanillaBank.Params?.GetValueOrDefault(activeParam);
 
-            var bank = Editor.Project.ParamData.PrimaryBank;
+            var bank = Editor.Project.Handler.ParamData.PrimaryBank;
             var curRow = activeRow;
             var vanillaRow = vanillaParam?[activeRow.ID];
-            var auxRows = Editor.Project.ParamData.AuxBanks
+            var auxRows = Editor.Project.Handler.ParamData.AuxBanks
                 .Select((bank, i) => (bank.Key, bank.Value.Params?
                 .GetValueOrDefault(activeParam)?[activeRow.ID]))
                 .ToList();
@@ -94,7 +94,7 @@ public class ParamFieldView
         Param.Row compareRow, ref string propSearchString, string activeParam, bool isActiveView,
         ParamSelection selection)
     {
-        var meta = Editor.Project.ParamData.GetParamMeta(curRow.Def);
+        var meta = Editor.Project.Handler.ParamData.GetParamMeta(curRow.Def);
 
         var imguiId = 0;
         var showParamCompare = auxRows.Count > 0;
@@ -125,7 +125,7 @@ public class ParamFieldView
         if (ParamEditorDecorations.ImGuiTableStdColumns("ParamFieldsT", columnCount, false))
         {
             List<string> pinnedFields =
-                Editor.Project.PinnedFields.GetValueOrDefault(activeParam, null);
+                Editor.Project.Descriptor.PinnedFields.GetValueOrDefault(activeParam, null);
 
             if (CFG.Current.Param_PinnedFieldsStayVisible)
             {
@@ -171,10 +171,10 @@ public class ParamFieldView
                 () => Editor.MassEditHandler.cse.Search((activeParam, curRow), search, true, true));
 
             List<(ParamEditorPseudoColumn, Param.Column)> vcols = UICache.GetCached(Editor, vanillaRow, "vFieldFilter",
-                () => cols.Select((x, i) => x.GetAs(Editor.Project.ParamData.VanillaBank.GetParamFromName(activeParam))).ToList());
+                () => cols.Select((x, i) => x.GetAs(Editor.Project.Handler.ParamData.VanillaBank.GetParamFromName(activeParam))).ToList());
 
             List<List<(ParamEditorPseudoColumn, Param.Column)>> auxCols = UICache.GetCached(Editor, auxRows,
-                "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
+                "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.Handler.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
 
             // Pinned Fields
             if (CFG.Current.Param_PinnedFieldsStayVisible)
@@ -592,7 +592,7 @@ public class ParamFieldView
             auxRows.Select((r, i) => auxCols[i].IsColumnValid() ? r.Item2?.Get(auxCols[i]) : null).ToList(),
             ref imguiId,
             fieldOffset != null ? "0x" + fieldOffset : null, col.Item2.Def.InternalName,
-            Editor.Project.ParamData.GetParamFieldMeta(meta, col.Item2.Def),
+            Editor.Project.Handler.ParamData.GetParamFieldMeta(meta, col.Item2.Def),
             col.GetColumnType(),
             typeof(Param.Cell).GetProperty("Value"),
             row[col.Item2],
@@ -972,7 +972,7 @@ public class ParamFieldView
                 // Field Icon
                 if (displayIcon)
                 {
-                    FieldDecorators.FieldIcon_Display(Editor, Editor.Project.TextureViewer, IconConfig, row, oldval, internalName, 0);
+                    FieldDecorators.FieldIcon_Display(Editor, Editor.Project.Handler.TextureViewer, IconConfig, row, oldval, internalName, 0);
                 }
 
                 // Enum
@@ -982,37 +982,37 @@ public class ParamFieldView
                 }
 
                 // ParticleAlias
-                if (showParticleEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particles))
+                if (showParticleEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particles))
                 {
                     FieldDecorators.AliasEnum_Value(particles, oldval.ToString());
                 }
 
                 // SoundAlias
-                if (showSoundEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> sounds))
+                if (showSoundEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> sounds))
                 {
                     FieldDecorators.AliasEnum_Value(sounds, oldval.ToString());
                 }
 
                 // FlagAlias
-                if (showFlagEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlags))
+                if (showFlagEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlags))
                 {
                     FieldDecorators.ConditionalAliasEnum_Value(eventFlags, oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
                 }
 
                 // CutsceneAlias
-                if (showCutsceneEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Cutscenes, out List<AliasEntry> cutscenes))
+                if (showCutsceneEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Cutscenes, out List<AliasEntry> cutscenes))
                 {
                     FieldDecorators.AliasEnum_Value(cutscenes, oldval.ToString());
                 }
 
                 // MovieAlias
-                if (showMovieEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Movies, out List<AliasEntry> movies))
+                if (showMovieEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Movies, out List<AliasEntry> movies))
                 {
                     FieldDecorators.ConditionalAliasEnum_Value(movies, oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
                 }
 
                 // CharacterAlias
-                if (showCharacterEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters))
+                if (showCharacterEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters))
                 {
                     FieldDecorators.AliasEnum_Value(characters, oldval.ToString(), true);
                 }
@@ -1181,12 +1181,12 @@ public class ParamFieldView
 
         if (committed)
         {
-            if (Project.TextureViewer != null)
+            if (Project.Handler.TextureViewer != null)
             {
-                Project.TextureViewer.ImagePreview.ClearIcons();
+                Project.Handler.TextureViewer.ImagePreview.ClearIcons();
             }
 
-            Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, row, activeParam);
+            Editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, row, activeParam);
         }
 
         ImGui.PopID();
@@ -1269,7 +1269,7 @@ public class ParamFieldView
 
             if (CFG.Current.Param_HideReferenceRows == false && iconConfig != null)
             {
-                FieldDecorators.FieldIcon_Display(Editor, Editor.Project.TextureViewer, iconConfig, context, colVal, fieldName, 1);
+                FieldDecorators.FieldIcon_Display(Editor, Editor.Project.Handler.TextureViewer, iconConfig, context, colVal, fieldName, 1);
             }
 
             if (CFG.Current.Param_HideEnums == false && Enum != null)
@@ -1278,37 +1278,37 @@ public class ParamFieldView
             }
 
             // ParticleAlias
-            if (showParticleEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particles))
+            if (showParticleEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particles))
             {
                 FieldDecorators.AliasEnum_Value(particles, colVal.ToString());
             }
 
             // SoundAlias
-            if (showSoundEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> sounds))
+            if (showSoundEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> sounds))
             {
                 FieldDecorators.AliasEnum_Value(sounds, colVal.ToString());
             }
 
             // FlagAlias
-            if (showFlagEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlags))
+            if (showFlagEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlags))
             {
                 FieldDecorators.ConditionalAliasEnum_Value(eventFlags, colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
             }
 
             // CutsceneAlias
-            if (showCutsceneEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Cutscenes, out List<AliasEntry> cutscenes))
+            if (showCutsceneEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Cutscenes, out List<AliasEntry> cutscenes))
             {
                 FieldDecorators.AliasEnum_Value(cutscenes, colVal.ToString());
             }
 
             // MovieAlias
-            if (showMovieEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Movies, out List<AliasEntry> movies))
+            if (showMovieEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Movies, out List<AliasEntry> movies))
             {
                 FieldDecorators.ConditionalAliasEnum_Value(movies, colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
             }
 
             // CharacterAlias
-            if (showCharacterEnum && Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters))
+            if (showCharacterEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters))
             {
                 FieldDecorators.AliasEnum_Value(characters, colVal.ToString(), true);
             }
@@ -1492,12 +1492,12 @@ public class ParamFieldView
         {
             if (ImGui.MenuItem(isPinned ? "Unpin " : "Pin " + internalName))
             {
-                if (!Editor.Project.PinnedFields.ContainsKey(activeParam))
+                if (!Editor.Project.Descriptor.PinnedFields.ContainsKey(activeParam))
                 {
-                    Editor.Project.PinnedFields.Add(activeParam, new List<string>());
+                    Editor.Project.Descriptor.PinnedFields.Add(activeParam, new List<string>());
                 }
 
-                List<string> pinned = Editor.Project.PinnedFields[activeParam];
+                List<string> pinned = Editor.Project.Descriptor.PinnedFields[activeParam];
 
                 if (isPinned)
                 {
@@ -1511,13 +1511,13 @@ public class ParamFieldView
 
             if (isPinned)
             {
-                ParamEditorDecorations.PinListReorderOptions(Editor.Project.PinnedFields[activeParam],
+                ParamEditorDecorations.PinListReorderOptions(Editor.Project.Descriptor.PinnedFields[activeParam],
                     internalName);
             }
 
             if (ImGui.Selectable("Unpin all"))
             {
-                Editor.Project.PinnedFields.Clear();
+                Editor.Project.Descriptor.PinnedFields.Clear();
             }
 
             ImGui.Separator();

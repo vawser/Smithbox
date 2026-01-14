@@ -24,7 +24,7 @@ public static class TextFinder
             return CachedResults[cacheName];
         }
 
-        foreach(var (fileEntry, entry) in editor.Project.TextData.PrimaryBank.Entries)
+        foreach(var (fileEntry, entry) in editor.Project.Handler.TextData.PrimaryBank.Entries)
         {
             var containerName = fileEntry.Filename;
 
@@ -75,7 +75,7 @@ public static class TextFinder
     {
         var results = new List<TextResult>();
 
-        foreach (var (fileEntry, entry) in editor.Project.TextData.PrimaryBank.Entries)
+        foreach (var (fileEntry, entry) in editor.Project.Handler.TextData.PrimaryBank.Entries)
         {
             var containerName = fileEntry.Filename;
 
@@ -159,7 +159,7 @@ public static class TextFinder
     {
         var results = new List<ReplacementResult>();
 
-        foreach (var (fileEntry, entry) in editor.Project.TextData.PrimaryBank.Entries)
+        foreach (var (fileEntry, entry) in editor.Project.Handler.TextData.PrimaryBank.Entries)
         {
             var containerName = fileEntry.Filename;
 

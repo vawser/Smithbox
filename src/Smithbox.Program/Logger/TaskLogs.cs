@@ -173,104 +173,39 @@ public static class TaskLogs
         });
     }
 
-    private static ImGuiDir WarningLogger_CurrentDir = ImGuiDir.Right;
-    private static bool WarningLogger_WindowOpen = false;
-
-    /// <summary>
-    /// Top Bar Logger: Warnings
-    /// </summary>
-    public static void DisplayWarningLoggerBar()
+    public static void AddError(string text, Exception ex = null)
     {
-        if (CFG.Current.System_ShowWarningLogger)
+        if(ex != null)
         {
-            if (ImGui.ArrowButton("##warningLoggerToggle", WarningLogger_CurrentDir))
-            {
-                if (WarningLogger_CurrentDir == ImGuiDir.Right)
-                {
-                    WarningLogger_CurrentDir = ImGuiDir.Down;
-                    WarningLogger_WindowOpen = true;
-                }
-                else
-                {
-                    WarningLogger_CurrentDir = ImGuiDir.Right;
-                    WarningLogger_WindowOpen = false;
-                }
-            }
-            UIHelper.Tooltip("Toggle the display of the warning logger.");
-
-            if (_lastWarningLogEntry != null)
-            {
-                // Only show the warning for X frames in the menu bar
-                if (_warningShowTime > 0 || CFG.Current.System_WarningLogger_FadeTime < 0)
-                {
-                    if (CFG.Current.System_WarningLogger_FadeTime > 0)
-                    {
-                        _warningShowTime--;
-                    }
-
-                    Vector4 color = PickColor(_lastWarningLogEntry.Level);
-                    ImGui.TextColored(color, _lastWarningLogEntry.FormattedMessage);
-                }
-            }
+            AddLog(text, LogLevel.Error, LogPriority.High, ex);
+        }
+        else
+        {
+            AddLog(text, LogLevel.Error, LogPriority.High);
         }
     }
 
-    /// <summary>
-    /// Action Logger window
-    /// </summary>
-    public static void DisplayWarningLoggerWindow()
+    public static void AddInfo(string text, Exception ex = null)
     {
-        if (WarningLogger_WindowOpen)
+        if (ex != null)
         {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
-            ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.Imgui_Moveable_TitleBg);
-            ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.Imgui_Moveable_TitleBg_Active);
-            ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBg);
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+            AddLog(text, LogLevel.Information, LogPriority.High, ex);
+        }
+        else
+        {
+            AddLog(text, LogLevel.Information, LogPriority.High);
+        }
+    }
 
-            if (ImGui.Begin("Warning Logs##warningTaskLogger", ref WarningLogger_WindowOpen, ImGuiWindowFlags.NoDocking))
-            {
-                var windowWidth = ImGui.GetWindowWidth();
-
-                if (ImGui.Button("Clear##warningTaskLogger", DPI.HalfWidthButton(windowWidth, 24)))
-                {
-                    _warningLog.Clear();
-                    _lastWarningLogEntry = null;
-                }
-
-                ImGui.SameLine();
-                if (ImGui.Button("Copy to Clipboard##warningTaskLogger", DPI.HalfWidthButton(windowWidth, 24)))
-                {
-                    string contents = "";
-                    foreach (var entry in _warningLog)
-                    {
-                        contents = contents + $"{entry.FormattedMessage}\n";
-                    }
-
-                    PlatformUtils.Instance.SetClipboardText($"{contents}");
-                }
-
-                ImGui.BeginChild("##warningLogItems");
-                ImGui.Spacing();
-                for (var i = 0; i < _warningLog.Count; i++)
-                {
-                    ImGui.Indent();
-                    ImGui.TextColored(PickColor(_warningLog[i].Level), _warningLog[i].FormattedMessage);
-                    ImGui.Unindent();
-                }
-
-                if (_warningLog_ScrollToEnd)
-                {
-                    ImGui.SetScrollHereY();
-                    _warningLog_ScrollToEnd = false;
-                }
-
-                ImGui.Spacing();
-                ImGui.EndChild();
-            }
-
-            ImGui.End();
-            ImGui.PopStyleColor(5);
+    public static void AddWarning(string text, Exception ex = null)
+    {
+        if (ex != null)
+        {
+            AddLog(text, LogLevel.Warning, LogPriority.High, ex);
+        }
+        else
+        {
+            AddLog(text, LogLevel.Warning, LogPriority.High);
         }
     }
 

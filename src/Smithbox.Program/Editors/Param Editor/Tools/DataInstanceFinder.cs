@@ -35,7 +35,7 @@ public class FieldNameFinder
 
     public void Display()
     {
-        if (Editor.Project.ParamData.PrimaryBank.Params == null)
+        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -145,7 +145,7 @@ public class FieldNameFinder
         // Search Button
         if (ImGui.Button($"Search##searchButton_{imguiID}", DPI.WholeWidthButton(windowWidth, 24)))
         {
-            if (Editor.Project.ParamData.PrimaryBank.Params != null)
+            if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
             {
                 CachedSearchText = SearchText;
 
@@ -207,7 +207,7 @@ public class FieldNameFinder
 
         var searchComponents = SearchText.ToLower().Split(" ");
 
-        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
+        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             if (TargetedParams.Count > 0)
             {
@@ -218,12 +218,12 @@ public class FieldNameFinder
             }
 
             var def = p.Value.AppliedParamdef;
-            var meta = Editor.Project.ParamData.GetParamMeta(def);
+            var meta = Editor.Project.Handler.ParamData.GetParamMeta(def);
 
             foreach (var field in def.Fields)
             {
                 bool addResult = false;
-                var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(meta, field);
+                var fieldMeta = Editor.Project.Handler.ParamData.GetParamFieldMeta(meta, field);
 
                 foreach (var entry in searchComponents)
                 {
@@ -346,7 +346,7 @@ public class FieldValueFinder
     }
     public void Display()
     {
-        if (Editor.Project.ParamData.PrimaryBank.Params == null)
+        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -544,7 +544,7 @@ public class FieldValueFinder
         var startValue = RangeSearchText_Start;
         var endValue = RangeSearchText_End;
 
-        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
+        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             if (TargetedParams.Count > 0)
             {
@@ -554,7 +554,7 @@ public class FieldValueFinder
                 }
             }
 
-            var meta = Editor.Project.ParamData.GetParamMeta(p.Value.AppliedParamdef);
+            var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.Value.AppliedParamdef);
 
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {
@@ -568,7 +568,7 @@ public class FieldValueFinder
                 {
                     PARAMDEF.DefType type = field.Def.DisplayType;
 
-                    var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(meta, field.Def);
+                    var fieldMeta = Editor.Project.Handler.ParamData.GetParamFieldMeta(meta, field.Def);
 
                     fieldName = field.Def.InternalName;
                     if (fieldMeta != null)
@@ -629,7 +629,7 @@ public class RowIDFinder
 
     public void Display()
     {
-        if (Editor.Project.ParamData.PrimaryBank.Params == null)
+        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -770,7 +770,7 @@ public class RowIDFinder
     {
         List<DataSearchResult> output = new();
 
-        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
+        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             if (TargetedParams.Count > 0)
             {
@@ -822,7 +822,7 @@ public class RowNameFinder
 
     public void Display()
     {
-        if (Editor.Project.ParamData.PrimaryBank.Params == null)
+        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -965,7 +965,7 @@ public class RowNameFinder
 
         var searchElements = SearchText.Split(" ");
 
-        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
+        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             if (TargetedParams.Count > 0)
             {
@@ -1373,7 +1373,7 @@ public class ValueSetFinder
     }
     public void Display()
     {
-        if (Editor.Project.ParamData.PrimaryBank.Params == null)
+        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -1456,7 +1456,7 @@ public class ValueSetFinder
             Values.Add(SearchText);
         }
 
-        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
+        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             ProcessParam(ref output, p.Key, p.Value, Values);
         }
@@ -1532,7 +1532,7 @@ public class IdSetFinder
     }
     public void Display()
     {
-        if (Editor.Project.ParamData.PrimaryBank.Params == null)
+        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -1624,7 +1624,7 @@ public class IdSetFinder
             }
         }
 
-        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
+        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             ProcessParam(ref output, p.Key, p.Value, Values);
         }

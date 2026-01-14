@@ -48,13 +48,13 @@ public class ModelMaskToggler
 
     public void Display()
     {
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             UIHelper.WrappedText("This project type is not supported by this tool.");
             return;
         }
 
-        if (Editor.Project.ParamEditor == null)
+        if (Editor.Project.Handler.ParamEditor == null)
         {
             UIHelper.WrappedText("The Param Editor must be enabled for this tool to work.");
 
@@ -71,14 +71,14 @@ public class ModelMaskToggler
         var filename = Editor.Selection.SelectedModelWrapper.Name;
         var npcParamKey = "NpcParam";
 
-        if (!Editor.Project.ParamData.PrimaryBank.Params.ContainsKey(npcParamKey))
+        if (!Editor.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(npcParamKey))
         {
             UIHelper.WrappedText("Failed to find associated NpcParam entry.");
 
             return;
         }
 
-        var npcParam = Editor.Project.ParamData.PrimaryBank.Params[npcParamKey];
+        var npcParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[npcParamKey];
 
         if (npcParam == null)
         {

@@ -44,7 +44,7 @@ internal class MapConnections_ER
         Vector3 closestOriginGlobal = Vector3.Zero;
         ObjectContainer closestMap = null;
 
-        foreach (var entry in editor.Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in editor.Project.Handler.MapData.PrimaryBank.Maps)
         {
             var mapID = entry.Key.Filename;
             var container = entry.Value.MapContainer;
@@ -87,7 +87,7 @@ internal class MapConnections_ER
         string mapid,
         List<byte[]> connectColMaps = null)
     {
-        var allMapIds = editor.Project.MapData.MapFiles.Entries.Select(e => e.Filename).ToList();
+        var allMapIds = editor.Project.Handler.MapData.MapFiles.Entries.Select(e => e.Filename).ToList();
 
         connectColMaps ??= new List<byte[]>();
         SortedDictionary<string, MapConnectionRelationType> relations = new();
@@ -96,7 +96,7 @@ internal class MapConnections_ER
             return relations;
         }
 
-        if (editor.Project.ProjectType == ProjectType.ER && (parts[0] == 60 || parts[0] == 61) && parts[1] > 0 && parts[2] > 0)
+        if (editor.Project.Descriptor.ProjectType == ProjectType.ER && (parts[0] == 60 || parts[0] == 61) && parts[1] > 0 && parts[2] > 0)
         {
             var topIndex = parts[0];
 
@@ -206,22 +206,22 @@ internal class MapConnections_ER
             }
 
             // Avoid putting in tons of maps. These types of cols are not used in the vanilla game.
-            if (editor.Project.ProjectType == ProjectType.ER && (connectParts[0] == 60 || connectParts[0] == 61) && firstWildcard < 3)
+            if (editor.Project.Descriptor.ProjectType == ProjectType.ER && (connectParts[0] == 60 || connectParts[0] == 61) && firstWildcard < 3)
             {
                 continue;
             }
 
-            if (editor.Project.ProjectType == ProjectType.BB && connectParts[0] == 29)
+            if (editor.Project.Descriptor.ProjectType == ProjectType.BB && connectParts[0] == 29)
             {
                 continue;
             }
 
-            if (editor.Project.ProjectType == ProjectType.AC6)
+            if (editor.Project.Descriptor.ProjectType == ProjectType.AC6)
             {
                 //TODO AC6
             }
 
-            if (editor.Project.ProjectType == ProjectType.NR)
+            if (editor.Project.Descriptor.ProjectType == ProjectType.NR)
             {
                 //TODO NR
             }
@@ -254,10 +254,10 @@ internal class MapConnections_ER
             return eldenRingOffsets.Count > 0;
         }
 
-        if (editor.Project.ParamEditor == null)
+        if (editor.Project.Handler.ParamEditor == null)
             return false;
 
-        IReadOnlyDictionary<string, Param> loadedParams = editor.Project.ParamData.PrimaryBank.Params;
+        IReadOnlyDictionary<string, Param> loadedParams = editor.Project.Handler.ParamData.PrimaryBank.Params;
         // Do not explicitly check ParamBank's game type here, but fail gracefully if the param does not exist
         if (loadedParams == null || !loadedParams.TryGetValue("WorldMapLegacyConvParam", out Param convParam))
         {

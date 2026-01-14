@@ -34,13 +34,13 @@ public partial class ParamTools
             if (ParamMerge_TargetProject != null)
             {
                 // Load
-                if (!Project.ParamData.AuxBanks.ContainsKey(ParamMerge_TargetProject.ProjectName))
+                if (!Project.Handler.ParamData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
                 {
                     if (ImGui.Button("Load##action_Load", DPI.HalfWidthButton(windowWidth, 24)))
                     {
-                        Task<bool> loadTask = Editor.Project.ParamData.SetupAuxBank(ParamMerge_TargetProject, true);
+                        Task<bool> loadTask = Editor.Project.Handler.ParamData.SetupAuxBank(ParamMerge_TargetProject, true);
                         Task.WaitAll(loadTask);
-                        Editor.Project.ParamData.RefreshParamDifferenceCacheTask(true);
+                        Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask(true);
                         TargetParams = new();
                     }
 
@@ -85,25 +85,25 @@ public partial class ParamTools
 
             UIHelper.SimpleHeader("availableProjects", "Compatible Projects:", "List of projects you can merge into your current project", UI.Current.ImGui_AliasName_Text);
 
-            foreach (var proj in Smithbox.ProjectManager.Projects)
+            foreach (var proj in Smithbox.Orchestrator.Projects)
             {
                 if (proj == null)
                     continue;
 
-                if (proj.ProjectType != Editor.Project.ProjectType)
+                if (proj.Descriptor.ProjectType != Editor.Project.Descriptor.ProjectType)
                     continue;
 
-                if (proj == Smithbox.ProjectManager.SelectedProject)
+                if (proj == Smithbox.Orchestrator.SelectedProject)
                     continue;
 
                 var isSelected = false;
 
                 if (ParamMerge_TargetProject != null)
                 {
-                    isSelected = ParamMerge_TargetProject.ProjectName == proj.ProjectName;
+                    isSelected = ParamMerge_TargetProject.Descriptor.ProjectName == proj.Descriptor.ProjectName;
                 }
 
-                if (ImGui.Selectable($"{proj.ProjectName}", isSelected))
+                if (ImGui.Selectable($"{proj.Descriptor.ProjectName}", isSelected))
                 {
                     ParamMerge_TargetProject = proj;
                 }
@@ -124,7 +124,7 @@ public partial class ParamTools
             // Generate bool dict once
             if (TargetParams.Count == 0)
             {
-                foreach (var entry in Project.ParamData.PrimaryBank.Params)
+                foreach (var entry in Project.Handler.ParamData.PrimaryBank.Params)
                 {
                     TargetParams.Add(entry.Key, true);
                 }
@@ -184,7 +184,7 @@ public partial class ParamTools
     {
         ParamMerge_InProgress = true;
 
-        var auxBank = Editor.Project.ParamData.AuxBanks[ParamMerge_TargetProject.ProjectName];
+        var auxBank = Editor.Project.Handler.ParamData.AuxBanks[ParamMerge_TargetProject.Descriptor.ProjectName];
 
         // ParamSearchEngine: auxparam {ParamMerge_TargetProject.ProjectName}
         // RowSearchEngine: modified && unique ID:
@@ -194,11 +194,11 @@ public partial class ParamTools
         {
             if (entry.Value)
             {
-                var command = $"auxparam {ParamMerge_TargetProject.ProjectName} {entry.Key}: modified ID: paste;";
+                var command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: modified ID: paste;";
 
                 if (ParamMerge_TargetUniqueOnly)
                 {
-                    command = $"auxparam {ParamMerge_TargetProject.ProjectName} {entry.Key}: modified && unique ID: paste;";
+                    command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: modified && unique ID: paste;";
                 }
 
                 Editor.MassEditHandler.ApplyMassEdit(command);

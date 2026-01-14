@@ -47,7 +47,7 @@ public class TextFileView
                 }
 
                 // Only display if the category contains something
-                if (Editor.Project.TextData.PrimaryBank.Entries.Any(e => e.Value.ContainerDisplayCategory == category))
+                if (Editor.Project.Handler.TextData.PrimaryBank.Entries.Any(e => e.Value.ContainerDisplayCategory == category))
                 {
                     if (AllowedCategory(category))
                     {
@@ -68,7 +68,7 @@ public class TextFileView
     private void DisplaySubCategories(TextContainerCategory category, ImGuiTreeNodeFlags flags, int index)
     {
         // DS2 
-        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             // Category Header
             if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
@@ -76,7 +76,7 @@ public class TextFileView
                 // Common Sub-Header
                 if (ImGui.CollapsingHeader($"Common", flags))
                 {
-                    foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
+                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
@@ -97,7 +97,7 @@ public class TextFileView
                 // Blood Message Sub-Header
                 if (ImGui.CollapsingHeader($"Blood Message", flags))
                 {
-                    foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
+                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
@@ -118,7 +118,7 @@ public class TextFileView
                 // Talk Sub-Header
                 if (ImGui.CollapsingHeader($"Talk", flags))
                 {
-                    foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
+                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
@@ -144,7 +144,7 @@ public class TextFileView
             if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
             {
                 // Get relevant containers for each category
-                foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
+                foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
                 {
                     if (info.ContainerDisplayCategory == category)
                     {
@@ -167,7 +167,7 @@ public class TextFileView
         if(CFG.Current.TextEditor_DisplayCommunityContainerName)
         {
             // To get nice DS2 names, apply the FMG display name stuff on the container level
-            if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 displayName = TextUtils.GetFmgDisplayName(Editor.Project, wrapper, -1, wrapper.FileEntry.Filename);
             }
@@ -223,7 +223,7 @@ public class TextFileView
             // Display hint if normal File List is displayed to user knows about the game's usage of the containers
             if (CFG.Current.TextEditor_DisplayContainerPrecedenceHint && !CFG.Current.TextEditor_SimpleFileList)
             {
-                if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                 {
                     if (wrapper.FileEntry.Filename.Contains("item") || wrapper.FileEntry.Filename.Contains("menu"))
                     {

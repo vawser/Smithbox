@@ -34,19 +34,19 @@ public class NVMNavmeshResource : IResource, IDisposable
 
     public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
-        if (Smithbox.ProjectManager.SelectedProject == null)
+        if (Smithbox.Orchestrator.SelectedProject == null)
             return false;
 
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         try
         {
-            var fileData = curProject.FS.ReadFile(relativePath);
+            var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
             // Intercept and load the collision from PTDE FS for DS1R projects
-            if (CFG.Current.PTDE_UseCollisionHack && curProject.ProjectType is ProjectType.DS1R)
+            if (CFG.Current.PTDE_UseCollisionHack && curProject.Descriptor.ProjectType is ProjectType.DS1R)
             {
-                fileData = curProject.PTDE_FS.ReadFile(relativePath);
+                fileData = curProject.VFS.PTDE_FS.ReadFile(relativePath);
             }
 
             Nvm = NVM.Read(fileData.Value);

@@ -19,7 +19,7 @@ public class ParamIO
 
         if (paramdef != null)
         {
-            foreach (PARAMDEF.Field? f in paramdef.Fields.FindAll(f => f.IsValidForRegulationVersion(project.ParamData.PrimaryBank.ParamVersion)))
+            foreach (PARAMDEF.Field? f in paramdef.Fields.FindAll(f => f.IsValidForRegulationVersion(project.Handler.ParamData.PrimaryBank.ParamVersion)))
             {
                 str += $@"{f.InternalName}{separator}";
             }
@@ -158,7 +158,7 @@ public class ParamIO
             addedCount = addedParams.Count;
             if (addedCount != 0)
             {
-                actions.Add(new AddParamsAction(project.ParamEditor, p, "legacystring", addedParams, appendOnly, replaceParams));
+                actions.Add(new AddParamsAction(project.Handler.ParamEditor, p, "legacystring", addedParams, appendOnly, replaceParams));
             }
 
             return ($@"{changeCount} cells affected, {addedCount} rows added", new CompoundAction(actions));
@@ -199,7 +199,7 @@ public class ParamIO
             Param? p_vanilla = null;
             if (getVanillaRow)
             {
-                p_vanilla = project.ParamData.VanillaBank.Params[param];
+                p_vanilla = project.Handler.ParamData.VanillaBank.Params[param];
             }
             if (p == null)
             {

@@ -56,7 +56,7 @@ public partial class ParamTools
         {
             if (selectedParam.ActiveParamExists())
             {
-                if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
                 {
                     var activeParam = selectedParam.GetActiveParam();
                     var rows = selectedParam.GetSelectedRows();
@@ -72,7 +72,7 @@ public partial class ParamTools
                             PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                         case ParamOperationTargetType.AllParams:
-                            foreach (var param in Editor.Project.ParamData.PrimaryBank.Params)
+                            foreach (var param in Editor.Project.Handler.ParamData.PrimaryBank.Params)
                             {
                                 TrimRowNameHelper(param.Key);
                             }
@@ -108,7 +108,7 @@ public partial class ParamTools
 
     private void TrimRowNameHelper(string param)
     {
-        Param p = Editor.Project.ParamData.PrimaryBank.Params[param];
+        Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[param];
         TrimRowNameHelper(p.Rows);
     }
 
@@ -155,7 +155,7 @@ public partial class ParamTools
 
     public void SortRows()
     {
-        if (Project.ProjectType is ProjectType.AC6)
+        if (Project.Descriptor.ProjectType is ProjectType.AC6)
         {
             var dialog = PlatformUtils.Instance.MessageBox("This action will delete rows if there are multiple rows with the same ID within this param. Do you want to proceed?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
@@ -164,7 +164,7 @@ public partial class ParamTools
                 if (Editor._activeView.Selection.ActiveParamExists())
                 {
                     TaskLogs.AddLog($"Param rows sorted for {Editor._activeView.Selection.GetActiveParam()}");
-                    Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam()));
+                    Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.Handler.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam()));
                 }
             }
         }
@@ -173,7 +173,7 @@ public partial class ParamTools
             if (Editor._activeView.Selection.ActiveParamExists())
             {
                 TaskLogs.AddLog($"Param rows sorted for {Editor._activeView.Selection.GetActiveParam()}");
-                Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam()));
+                Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.Handler.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam()));
             }
         }
     }
@@ -187,8 +187,8 @@ public partial class ParamTools
         if (curParamKey == null)
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
-        Param vanillaParam = Editor.Project.ParamData.VanillaBank.Params[curParamKey];
+        Param baseParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
+        Param vanillaParam = Editor.Project.Handler.ParamData.VanillaBank.Params[curParamKey];
 
         if (baseParam == null)
             return;
@@ -231,7 +231,7 @@ public partial class ParamTools
         if (curParamKey == null)
             return;
 
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param param = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
         List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
 
         if (rows.Count == 0)
@@ -278,14 +278,14 @@ public partial class ParamTools
         if (curParamKey == null)
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param baseParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
 
         if (baseParam == null)
             return;
 
         List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
 
-        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+        var paramMeta = Editor.Project.Handler.ParamData.GetParamMeta(baseParam.AppliedParamdef);
 
         var actions = new List<EditorAction>();
 
@@ -302,13 +302,13 @@ public partial class ParamTools
             }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
-            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+            var fieldMeta = Editor.Project.Handler.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
 
             if (fieldMeta == null)
                 continue;
 
             List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(
-                Editor, Editor.Project.ParamData.PrimaryBank, fieldMeta.RefTypes, row, targetCell.Value);
+                Editor, Editor.Project.Handler.ParamData.PrimaryBank, fieldMeta.RefTypes, row, targetCell.Value);
 
             foreach ((string, Param.Row, string) rf in refs)
             {
@@ -339,14 +339,14 @@ public partial class ParamTools
         if (curParamKey == null)
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param baseParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
 
         if (baseParam == null)
             return;
 
         List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
 
-        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+        var paramMeta = Editor.Project.Handler.ParamData.GetParamMeta(baseParam.AppliedParamdef);
 
         var actions = new List<EditorAction>();
 
@@ -363,13 +363,13 @@ public partial class ParamTools
             }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
-            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+            var fieldMeta = Editor.Project.Handler.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
 
             if (fieldMeta == null)
                 continue;
 
             List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(
-                Editor, Editor.Project.ParamData.PrimaryBank, fieldMeta.RefTypes, row, targetCell.Value);
+                Editor, Editor.Project.Handler.ParamData.PrimaryBank, fieldMeta.RefTypes, row, targetCell.Value);
 
             foreach ((string, Param.Row, string) rf in refs)
             {
@@ -400,14 +400,14 @@ public partial class ParamTools
         if (curParamKey == null)
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param baseParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
 
         if (baseParam == null)
             return;
 
         List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
 
-        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+        var paramMeta = Editor.Project.Handler.ParamData.GetParamMeta(baseParam.AppliedParamdef);
 
         var actions = new List<EditorAction>();
 
@@ -424,7 +424,7 @@ public partial class ParamTools
             }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
-            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+            var fieldMeta = Editor.Project.Handler.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
 
             if (fieldMeta == null)
                 continue;
@@ -462,14 +462,14 @@ public partial class ParamTools
         if (curParamKey == null)
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param baseParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
 
         if (baseParam == null)
             return;
 
         List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
 
-        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+        var paramMeta = Editor.Project.Handler.ParamData.GetParamMeta(baseParam.AppliedParamdef);
 
         var actions = new List<EditorAction>();
 
@@ -486,14 +486,14 @@ public partial class ParamTools
             }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
-            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+            var fieldMeta = Editor.Project.Handler.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
 
             if (fieldMeta == null)
                 continue;
 
             if(fieldMeta.ShowCharacterEnumList)
             {
-                foreach(var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Characters])
+                foreach(var entry in Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.Characters])
                 {
                     var text = entry.ID.Substring(1);
                     if (text == $"{targetCell.Value}")
@@ -506,7 +506,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowCutsceneEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Cutscenes])
+                foreach (var entry in Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.Cutscenes])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -518,7 +518,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowFlagEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.EventFlags])
+                foreach (var entry in Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.EventFlags])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -530,7 +530,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowMovieEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Movies])
+                foreach (var entry in Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.Movies])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -542,7 +542,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowParticleEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Particles])
+                foreach (var entry in Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.Particles])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -554,7 +554,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowSoundEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Sounds])
+                foreach (var entry in Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.Sounds])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -583,14 +583,14 @@ public partial class ParamTools
         if (string.IsNullOrEmpty(curParamKey))
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param baseParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[curParamKey];
 
         if (baseParam == null)
             return;
 
         List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
 
-        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+        var paramMeta = Editor.Project.Handler.ParamData.GetParamMeta(baseParam.AppliedParamdef);
 
         var actions = new List<EditorAction>();
 

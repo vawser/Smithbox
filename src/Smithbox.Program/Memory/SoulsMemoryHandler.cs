@@ -290,7 +290,7 @@ public class SoulsMemoryHandler
 
     internal void PlayerItemGive_DS3(List<int> itemIds, int itemQuantity = 1, int itemDurability = -1)
     {
-        if (Editor.Project.ProjectType is not ProjectType.DS3 || !itemIds.Any())
+        if (Editor.Project.Descriptor.ProjectType is not ProjectType.DS3 || !itemIds.Any())
             return;
 
         var intListProcessing = new List<int> { 0, 0, 0, 0, itemIds.Count };
@@ -335,7 +335,7 @@ public class SoulsMemoryHandler
 
     internal void PlayerItemGive_ER(GameOffsetBaseEntry entry, List<int> itemIds, int itemQuantity = 1, int gemId = -1)
     {
-        if (Editor.Project.ProjectType is not ProjectType.ER || !itemIds.Any())
+        if (Editor.Project.Descriptor.ProjectType is not ProjectType.ER || !itemIds.Any())
             return;
 
         const int maxItems = 10;

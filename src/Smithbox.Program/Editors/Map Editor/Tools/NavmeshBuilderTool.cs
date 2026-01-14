@@ -81,7 +81,7 @@ public class NavmeshBuilderTool
 
         if (ImGui.CollapsingHeader("Navmesh Builder"))
         {
-            if (Editor.Project.ProjectType != ProjectType.DS3)
+            if (Editor.Project.Descriptor.ProjectType != ProjectType.DS3)
             {
                 ImGui.Text("Navmesh building only supported for DS3");
                 ImGui.End();
@@ -157,7 +157,7 @@ public class NavmeshBuilderTool
                         _previewMesh.World = mrp.World;
 
                         // Do a test save
-                        var path = Path.Join(Editor.Project.ProjectPath, "navout", "test.hkx");
+                        var path = Path.Join(Editor.Project.Descriptor.ProjectPath, "navout", "test.hkx");
                         using (FileStream s2 = File.Create(path))
                         {
                             BinaryWriterEx bw = new(false, s2);

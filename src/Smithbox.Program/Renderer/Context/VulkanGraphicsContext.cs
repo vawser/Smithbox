@@ -67,7 +67,7 @@ public class VulkanGraphicsContext : IGraphicsContext
             CFG.Current.GFX_Display_Height, ColorSpaceHandling.Legacy);
     }
 
-    public void Draw(ProjectManager projectManager)
+    public void Draw(ProjectOrchestrator projectManager)
     {
         //Debug.Assert(_window.Exists);
         var width = _window.Width;

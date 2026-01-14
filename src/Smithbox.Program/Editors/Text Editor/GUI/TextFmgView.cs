@@ -37,7 +37,7 @@ public class TextFmgView
             if (Editor.Selection.SelectedContainerWrapper != null && Editor.Selection.SelectedContainerWrapper.FmgWrappers != null)
             {
                 // Ignore the grouping stuff for DS2 as it happens on the FMG Container level
-                if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
                     foreach (var fmgInfo in Editor.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -206,7 +206,7 @@ public class TextFmgView
                                         HandleFmgView(fmgInfo);
                                         if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
                                         {
-                                            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                                            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                             {
                                                 UIHelper.Tooltip("This FMG has the highest priority for new entries, so it is recommended you always add new entries in this section.");
                                             }
@@ -232,7 +232,7 @@ public class TextFmgView
                                         HandleFmgView(fmgInfo);
                                         if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
                                         {
-                                            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                                            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                             {
                                                 UIHelper.Tooltip("This FMG contains entries associated with DLC 1, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base section FMG will take precedence.");
                                             }
@@ -258,7 +258,7 @@ public class TextFmgView
                                         HandleFmgView(fmgInfo);
                                         if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
                                         {
-                                            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                                            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                             {
                                                 UIHelper.Tooltip("This FMG contains entries associated with DLC 2, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base or DLC 1 section FMG will take precedence.");
                                             }

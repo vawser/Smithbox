@@ -9,7 +9,6 @@ namespace StudioCore.Editors.FileBrowser;
 // Credit to GoogleBen (https://github.com/googleben/Smithbox/tree/VFS)
 public class FileBrowserScreen : EditorScreen
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public ActionManager ActionManager = new();
@@ -26,9 +25,8 @@ public class FileBrowserScreen : EditorScreen
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
-    public FileBrowserScreen(Smithbox baseEditor, ProjectEntry project)
+    public FileBrowserScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
         Selection = new(this, project);
@@ -92,12 +90,12 @@ public class FileBrowserScreen : EditorScreen
         {
             if (ImGui.MenuItem($"View Game Directory"))
             {
-                Process.Start("explorer.exe", Project.DataPath);
+                Process.Start("explorer.exe", Project.Descriptor.DataPath);
             }
 
             if (ImGui.MenuItem($"View Project Directory"))
             {
-                Process.Start("explorer.exe", Project.ProjectPath);
+                Process.Start("explorer.exe", Project.Descriptor.ProjectPath);
             }
 
             ImGui.EndMenu();

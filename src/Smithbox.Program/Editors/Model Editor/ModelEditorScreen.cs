@@ -16,7 +16,6 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelEditorScreen : EditorScreen
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     /// <summary>
@@ -59,12 +58,11 @@ public class ModelEditorScreen : EditorScreen
     public PullToCameraAction PullToCameraAction;
     public ReorderAction ReorderAction;
 
-    public ModelEditorScreen(Smithbox baseEditor, ProjectEntry project)
+    public ModelEditorScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
-        ModelViewportView = new ModelViewportView(this, project, baseEditor);
+        ModelViewportView = new ModelViewportView(this, project);
         ModelViewportView.Setup();
 
         Universe = new ModelUniverse(this, project);
@@ -401,7 +399,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void Save(bool autoSave = false)
     {
-        if (Project.ProjectType == ProjectType.DES)
+        if (Project.Descriptor.ProjectType == ProjectType.DES)
         {
             TaskLogs.AddLog("Model Editor is not supported for DES.", LogLevel.Warning);
             return;
@@ -417,7 +415,7 @@ public class ModelEditorScreen : EditorScreen
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
 
     /// <summary>

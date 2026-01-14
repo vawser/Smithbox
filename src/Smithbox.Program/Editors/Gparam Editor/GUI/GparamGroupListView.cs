@@ -57,7 +57,7 @@ public class GparamGroupListView
 
                 var name = entry.Key;
                 if (CFG.Current.Gparam_DisplayParamGroupAlias)
-                    name = FormatInformationUtils.GetReferenceName(Project.GparamData.GparamInformation, entry.Key, entry.Name);
+                    name = FormatInformationUtils.GetReferenceName(Project.Handler.GparamData.GparamInformation, entry.Key, entry.Name);
 
                 var display = false;
 
@@ -124,11 +124,11 @@ public class GparamGroupListView
 
         List<FormatReference> missingGroups = new List<FormatReference>();
 
-        if (Project.GparamData.GparamInformation.list == null)
+        if (Project.Handler.GparamData.GparamInformation.list == null)
             return;
 
         // Get source Format Reference
-        foreach (var entry in Project.GparamData.GparamInformation.list)
+        foreach (var entry in Project.Handler.GparamData.GparamInformation.list)
         {
             bool isPresent = false;
 

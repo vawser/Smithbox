@@ -3,11 +3,9 @@
 public class ViewportShortcuts
 {
     public Viewport Parent;
-    public Smithbox BaseEditor;
 
-    public ViewportShortcuts(Smithbox baseEditor, Viewport parent)
+    public ViewportShortcuts(Viewport parent)
     {
-        this.BaseEditor = baseEditor;
         Parent = parent;
     }
 

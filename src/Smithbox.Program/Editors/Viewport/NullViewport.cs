@@ -14,7 +14,6 @@ namespace StudioCore.Editors.Viewport;
 /// </summary>
 public class NullViewport : IViewport
 {
-    public Smithbox BaseEditor;
     public MapEditorScreen MapEditor;
     public ModelEditorScreen ModelEditor;
 
@@ -26,11 +25,10 @@ public class NullViewport : IViewport
     public int Y;
 
     private ViewportType _viewportType;
-    public NullViewport(Smithbox baseEditor, MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
+    public NullViewport(MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
     {
         _vpid = id;
 
-        BaseEditor = baseEditor;
         MapEditor = mapEditor;
         ModelEditor = modelEditor;
         ViewportType = viewportType;
@@ -38,7 +36,7 @@ public class NullViewport : IViewport
         Width = width;
         Height = height;
 
-        ViewportCamera = new ViewportCamera(BaseEditor, this, viewportType, new Rectangle(0, 0, Width, Height));
+        ViewportCamera = new ViewportCamera(this, viewportType, new Rectangle(0, 0, Width, Height));
     }
 
     public ViewportCamera ViewportCamera { get; }

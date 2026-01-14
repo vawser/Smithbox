@@ -83,7 +83,7 @@ public class MassEditHandler
     /// <param name="commandString"></param>
     public void ApplyMassEdit(string commandString)
     {
-        ExecuteMassEdit(commandString, Project.ParamData.PrimaryBank, Editor._activeView.Selection);
+        ExecuteMassEdit(commandString, Project.Handler.ParamData.PrimaryBank, Editor._activeView.Selection);
     }
 
     /// <summary>
@@ -106,7 +106,7 @@ public class MassEditHandler
 
         if (r.Type == ParamMassEditResultType.SUCCESS)
         {
-            Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
+            Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
         }
 
         ME_Result = r.Information;
@@ -190,7 +190,7 @@ public class MassEditHandler
 
             if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
             {
-                (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.ParamData.PrimaryBank,
+                (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.Handler.ParamData.PrimaryBank,
                     ME_CSV_Input, Editor._activeView.Selection.GetActiveParam(), _mEditCSVAppendOnly,
                     _mEditCSVAppendOnly && _mEditCSVReplaceRows, CFG.Current.Param_Export_Delimiter[0]);
 
@@ -201,7 +201,7 @@ public class MassEditHandler
                         Editor.EditorActionManager.ExecuteAction(action);
                     }
 
-                    Project.ParamData.RefreshParamDifferenceCacheTask();
+                    Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
                 }
 
                 _mEditCSVResult = result;
@@ -220,7 +220,7 @@ public class MassEditHandler
 
             if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
             {
-                (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.ParamData.PrimaryBank,
+                (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.Handler.ParamData.PrimaryBank,
                     ME_CSV_Input, Editor._activeView.Selection.GetActiveParam(), ME_Single_CSV_Field,
                     CFG.Current.Param_Export_Delimiter[0], false);
 
@@ -294,7 +294,7 @@ public class MassEditHandler
 
             if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", DPI.HalfWidthButton(windowWidth, 24)))
             {
-                ExecuteMassEdit(CurrentInput, Project.ParamData.PrimaryBank, Editor._activeView.Selection);
+                ExecuteMassEdit(CurrentInput, Project.Handler.ParamData.PrimaryBank, Editor._activeView.Selection);
             }
             UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ExecuteMassEdit.HintText}");
 
@@ -413,7 +413,7 @@ public class MassEditHandler
             ImGui.SameLine();
             if (ImGui.Button("Open Script Folder", DPI.HalfWidthButton(windowWidth, 24)))
             {
-                var projectScriptDir = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Assets", "Scripts");
+                var projectScriptDir = Path.Join(Editor.Project.Descriptor.ProjectPath, ".smithbox", "Assets", "Scripts");
 
                 Process.Start("explorer.exe", projectScriptDir);
             }
@@ -445,7 +445,7 @@ public class MassEditHandler
             return;
         }
 
-        var scriptPath = Path.Combine(Editor.Project.ProjectPath, ".smithbox", "Assets", "Scripts", $"{NewScriptName}.txt");
+        var scriptPath = Path.Combine(Editor.Project.Descriptor.ProjectPath, ".smithbox", "Assets", "Scripts", $"{NewScriptName}.txt");
 
         // Check both so the name is unique everywhere
         if (!File.Exists(scriptPath))

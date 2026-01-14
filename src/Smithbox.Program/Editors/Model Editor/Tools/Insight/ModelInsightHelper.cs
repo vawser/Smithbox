@@ -44,7 +44,7 @@ public static class ModelInsightHelper
         if (Project == null)
             return;
 
-        if (Project.ModelEditor == null)
+        if (Project.Handler.ModelEditor == null)
             return;
 
         var flverName = Path.GetFileNameWithoutExtension(flverVirtPath);

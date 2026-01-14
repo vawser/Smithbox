@@ -36,9 +36,9 @@ public class PinGroups
 
     public void OnProjectChanged()
     {
-        ParamGroupPath = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Workflow", "Pin Groups", "Params");
-        RowGroupPath = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Workflow", "Pin Groups", "Rows");
-        FieldGroupPath = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Workflow", "Pin Groups", "Fields");
+        ParamGroupPath = Path.Join(Editor.Project.Descriptor.ProjectPath, ".smithbox", "Workflow", "Pin Groups", "Params");
+        RowGroupPath = Path.Join(Editor.Project.Descriptor.ProjectPath, ".smithbox", "Workflow", "Pin Groups", "Rows");
+        FieldGroupPath = Path.Join(Editor.Project.Descriptor.ProjectPath, ".smithbox", "Workflow", "Pin Groups", "Fields");
     }
 
     public void Display()
@@ -65,21 +65,21 @@ public class PinGroups
 
         if (ImGui.Button("Clear Param Pins", DPI.ThirdWidthButton(windowWidth, 24)))
         {
-            Editor.Project.PinnedParams = new();
+            Editor.Project.Descriptor.PinnedParams = new();
         }
         UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedParams.HintText}\nClear current pinned params.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Row Pins", DPI.ThirdWidthButton(windowWidth, 24)))
         {
-            Editor.Project.PinnedRows = new();
+            Editor.Project.Descriptor.PinnedRows = new();
         }
         UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedRows.HintText}\nClear current pinned rows.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Field Pins", DPI.ThirdWidthButton(windowWidth, 24)))
         {
-            Editor.Project.PinnedFields = new();
+            Editor.Project.Descriptor.PinnedFields = new();
         }
         UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedFields.HintText}\nClear current pinned fields.");
 
@@ -245,7 +245,7 @@ public class PinGroups
             {
                 if (_selectedParamPinGroup != null)
                 {
-                    Editor.Project.PinnedParams = _selectedParamPinGroup.Pins;
+                    Editor.Project.Descriptor.PinnedParams = _selectedParamPinGroup.Pins;
                 }
             }
 
@@ -279,7 +279,7 @@ public class PinGroups
             {
                 if (_selectedRowPinGroup != null)
                 {
-                    Editor.Project.PinnedRows = _selectedRowPinGroup.Pins;
+                    Editor.Project.Descriptor.PinnedRows = _selectedRowPinGroup.Pins;
                 }
             }
 
@@ -314,7 +314,7 @@ public class PinGroups
             {
                 if (_selectedFieldPinGroup != null)
                 {
-                    Editor.Project.PinnedFields = _selectedFieldPinGroup.Pins;
+                    Editor.Project.Descriptor.PinnedFields = _selectedFieldPinGroup.Pins;
                 }
             }
 
@@ -399,7 +399,7 @@ public class PinGroups
 
         ParamPinGroup newGroup = new();
         newGroup.Name = _newGroupName;
-        newGroup.Pins = Editor.Project.PinnedParams;
+        newGroup.Pins = Editor.Project.Descriptor.PinnedParams;
 
         var jsonString = JsonSerializer.Serialize(newGroup, ParamPinGroupSerializationContext.Default.ParamPinGroup);
         WritePinGroup($"{_newGroupName}.json", jsonString, ParamGroupPath, "Param Pin Group");
@@ -414,7 +414,7 @@ public class PinGroups
 
         RowPinGroup newGroup = new();
         newGroup.Name = _newGroupName;
-        newGroup.Pins = Editor.Project.PinnedRows;
+        newGroup.Pins = Editor.Project.Descriptor.PinnedRows;
 
         var jsonString = JsonSerializer.Serialize(newGroup, RowPinGroupSerializationContext.Default.RowPinGroup);
         WritePinGroup($"{_newGroupName}.json", jsonString, RowGroupPath, "Row Pin Group");
@@ -429,7 +429,7 @@ public class PinGroups
 
         FieldPinGroup newGroup = new();
         newGroup.Name = _newGroupName;
-        newGroup.Pins = Editor.Project.PinnedFields;
+        newGroup.Pins = Editor.Project.Descriptor.PinnedFields;
 
         var jsonString = JsonSerializer.Serialize(newGroup, FieldPinGroupSerializationContext.Default.FieldPinGroup);
         WritePinGroup($"{_newGroupName}.json", jsonString, FieldGroupPath, "Field Pin Group");

@@ -83,9 +83,9 @@ public class MsbUtils
     {
         List<string> mapList = new();
 
-        if (project.MapEditor != null)
+        if (project.Handler.MapEditor != null)
         {
-            foreach (var entry in project.MapData.MapFiles.Entries)
+            foreach (var entry in project.Handler.MapData.MapFiles.Entries)
             {
                 mapList.Add(entry.Filename);
             }

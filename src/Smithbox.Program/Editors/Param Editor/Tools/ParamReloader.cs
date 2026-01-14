@@ -33,9 +33,9 @@ public class ParamReloader
     {
         if (CFG.Current.UseLatestGameOffset)
         {
-            if (Project.ParamData.ParamMemoryOffsets != null && Project.ParamData.ParamMemoryOffsets.list != null)
+            if (Project.Handler.ParamData.ParamMemoryOffsets != null && Project.Handler.ParamData.ParamMemoryOffsets.list != null)
             {
-                var entries = Project.ParamData.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
+                var entries = Project.Handler.ParamData.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
 
                 CFG.Current.SelectedGameOffsetData = entries.Count() - 1;
             }
@@ -60,7 +60,7 @@ public class ParamReloader
 
     public bool CanReloadMemoryParams(ParamBank bank)
     {
-        if (ParamReloadSupported(Project.ProjectType))
+        if (ParamReloadSupported(Project.Descriptor.ProjectType))
         {
             return true;
         }
@@ -80,7 +80,7 @@ public class ParamReloader
         var windowWidth = ImGui.GetWindowWidth();
 
         // Param Reloader
-        if (ParamReloadSupported(Editor.Project.ProjectType))
+        if (ParamReloadSupported(Editor.Project.Descriptor.ProjectType))
         {
             if (ImGui.CollapsingHeader("Param Reloader"))
             {
@@ -104,7 +104,7 @@ public class ParamReloader
 
     public void DisplayParamReloaderMenu()
     {
-        if (ParamReloadSupported(Project.ProjectType))
+        if (ParamReloadSupported(Project.Descriptor.ProjectType))
         {
             if (ImGui.BeginMenu("Param Reloader"))
             {
@@ -551,7 +551,7 @@ public class ParamReloader
 
     public GameOffsetsEntry GetGameOffsets()
     {
-        ProjectType game = Project.ProjectType;
+        ProjectType game = Project.Descriptor.ProjectType;
         if (!GameOffsetsEntry.GameOffsetBank.ContainsKey(game))
         {
             try
@@ -609,12 +609,12 @@ public class ParamReloader
 
     public void ReloadCurrentParam(ParamEditorScreen editor)
     {
-        var canHotReload = CanReloadMemoryParams(editor.Project.ParamData.PrimaryBank);
+        var canHotReload = CanReloadMemoryParams(editor.Project.Handler.ParamData.PrimaryBank);
         if (canHotReload)
         {
             if (editor._activeView.Selection.GetActiveParam() != null)
             {
-                ReloadMemoryParam(editor.Project.ParamData.PrimaryBank, editor._activeView.Selection.GetActiveParam());
+                ReloadMemoryParam(editor.Project.Handler.ParamData.PrimaryBank, editor._activeView.Selection.GetActiveParam());
             }
             else
             {
@@ -628,10 +628,10 @@ public class ParamReloader
     }
     public void ReloadAllParams(ParamEditorScreen editor)
     {
-        var canHotReload = CanReloadMemoryParams(editor.Project.ParamData.PrimaryBank);
+        var canHotReload = CanReloadMemoryParams(editor.Project.Handler.ParamData.PrimaryBank);
         if (canHotReload)
         {
-            ReloadMemoryParams(editor.Project.ParamData.PrimaryBank, editor.Project.ParamData.PrimaryBank.Params.Keys.ToArray());
+            ReloadMemoryParams(editor.Project.Handler.ParamData.PrimaryBank, editor.Project.Handler.ParamData.PrimaryBank.Params.Keys.ToArray());
         }
         else
         {

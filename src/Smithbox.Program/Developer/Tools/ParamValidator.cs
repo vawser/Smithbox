@@ -16,12 +16,12 @@ public static class ParamValidator
     private static Dictionary<string, Param> _params = new Dictionary<string, Param>();
     private static ulong _paramVersion;
 
-    public static void Display(Smithbox baseEditor, ProjectEntry project)
+    public static void Display(ProjectEntry project)
     {
         if (project == null)
             return;
 
-        if (project.ParamEditor == null)
+        if (project.Handler.ParamEditor == null)
         {
             ImGui.Text("Param Editor must be enabled to use this tool.");
             return;
@@ -32,46 +32,46 @@ public static class ParamValidator
 
         if (ImGui.Button("Validate PARAMDEF", DPI.StandardButtonSize))
         {
-            ValidateParamdef(baseEditor, project);
+            ValidateParamdef(project);
         }
         UIHelper.Tooltip("Validate that the current PARAMDEF works with the old-style SF PARAM class.");
 
         if (ImGui.Button("Validate Padding (for selected param)", DPI.StandardButtonSize))
         {
-            ValidatePadding(baseEditor, project);
+            ValidatePadding(project);
         }
         UIHelper.Tooltip("Validate that there are no non-zero values within padding fields.");
 
         if (ImGui.Button("Validate Padding (for all params)", DPI.StandardButtonSize))
         {
-            ValidatePadding(baseEditor, project, true);
+            ValidatePadding(project, true);
         }
         UIHelper.Tooltip("Validate that there are no non-zero values within padding fields.");
     }
 
-    public static void ValidatePadding(Smithbox baseEditor, ProjectEntry project, bool allParams = false)
+    public static void ValidatePadding(ProjectEntry project, bool allParams = false)
     {
         if (allParams)
         {
-            foreach (var entry in project.ParamData.VanillaBank.Params)
+            foreach (var entry in project.Handler.ParamData.VanillaBank.Params)
             {
                 var selectedParamName = entry.Key;
-                ValidatePaddingForParam(baseEditor, project, selectedParamName);
+                ValidatePaddingForParam(project, selectedParamName);
             }
         }
         else
         {
-            var selectedParamName = project.ParamEditor._activeView.Selection.GetActiveParam();
+            var selectedParamName = project.Handler.ParamEditor._activeView.Selection.GetActiveParam();
             if (selectedParamName != null)
             {
-                ValidatePaddingForParam(baseEditor, project, selectedParamName);
+                ValidatePaddingForParam(project, selectedParamName);
             }
         }
     }
 
-    public static void ValidatePaddingForParam(Smithbox baseEditor, ProjectEntry project, string selectedParamName)
+    public static void ValidatePaddingForParam(ProjectEntry project, string selectedParamName)
     {
-        var currentParam = project.ParamData.VanillaBank.Params[selectedParamName];
+        var currentParam = project.Handler.ParamData.VanillaBank.Params[selectedParamName];
         var currentRow = 0;
 
         TaskManager.LiveTask task = new(
@@ -125,18 +125,18 @@ public static class ParamValidator
         TaskManager.Run(task);
     }
 
-    public static void ValidateParamdef(Smithbox baseEditor, ProjectEntry curProject)
+    public static void ValidateParamdef(ProjectEntry curProject)
     {
         // Read params from regulation.bin via SF PARAM impl
-        _paramdefs = curProject.ParamData.ParamDefs;
+        _paramdefs = curProject.Handler.ParamData.ParamDefs;
 
-        var dir = curProject.DataPath;
-        var mod = curProject.ProjectPath;
+        var dir = curProject.Descriptor.DataPath;
+        var mod = curProject.Descriptor.ProjectPath;
 
         var param = Path.Join(mod, "regulation.bin");
 
         // DES, DS1, DS1R
-        if (curProject.ProjectType == ProjectType.DES || curProject.ProjectType == ProjectType.DS1 || curProject.ProjectType == ProjectType.DS1R)
+        if (curProject.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
         {
             try
             {
@@ -150,7 +150,7 @@ public static class ParamValidator
         }
 
         // DS2
-        if (curProject.ProjectType == ProjectType.DS2 || curProject.ProjectType == ProjectType.DS2S)
+        if (curProject.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             try
             {
@@ -164,7 +164,7 @@ public static class ParamValidator
         }
 
         // DS3
-        if (curProject.ProjectType == ProjectType.DS3)
+        if (curProject.Descriptor.ProjectType is ProjectType.DS3)
         {
             param = Path.Join(mod, "Data0.bdt");
 
@@ -180,7 +180,7 @@ public static class ParamValidator
         }
 
         // BB, SDT
-        if (curProject.ProjectType == ProjectType.SDT || curProject.ProjectType == ProjectType.BB)
+        if (curProject.Descriptor.ProjectType is ProjectType.SDT or ProjectType.BB)
         {
             try
             {
@@ -193,7 +193,7 @@ public static class ParamValidator
             }
         }
         // ER
-        if (curProject.ProjectType == ProjectType.ER)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER)
         {
             try
             {
@@ -206,7 +206,7 @@ public static class ParamValidator
             }
         }
         // AC6
-        if (curProject.ProjectType == ProjectType.AC6)
+        if (curProject.Descriptor.ProjectType is ProjectType.AC6)
         {
             try
             {

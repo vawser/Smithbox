@@ -16,9 +16,8 @@ namespace StudioCore.Editors.MapEditor;
 /// Holds the data banks for Maps.
 /// Data Flow: Lazy Load
 /// </summary>
-public class MapData
+public class MapData : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public MapBank PrimaryBank;
@@ -45,9 +44,8 @@ public class MapData
     public FormatMask MsbMasks;
     public SpawnStateResource MapSpawnStates;
 
-    public MapData(Smithbox baseEditor, ProjectEntry project)
+    public MapData(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -57,8 +55,8 @@ public class MapData
 
         SetupFileDictionaries();
 
-        PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
-        VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);
+        PrimaryBank = new("Primary", Project, Project.VFS.FS);
+        VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Setup();
@@ -66,7 +64,7 @@ public class MapData
 
         if (!primaryBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to fully setup Primary Bank.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Map Editor] Failed to fully setup Primary Bank.");
         }
 
         // Vanilla Bank
@@ -75,31 +73,27 @@ public class MapData
 
         if (!vanillaBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to fully setup Vanilla Bank.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Map Editor] Failed to fully setup Vanilla Bank.");
         }
 
         // META
-        Meta = new MsbMeta(BaseEditor, Project);
+        Meta = new MsbMeta(Project);
 
         Task<bool> metaTask = Meta.Setup();
         bool metaTaskResult = await metaTask;
 
         if (!metaTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup MSB Meta.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Map Editor] Failed to setup MSB Meta.");
         }
 
         // MSB Information
         Task<bool> msbInfoTask = SetupMsbInfo();
         bool msbInfoResult = await msbInfoTask;
 
-        if (msbInfoResult)
+        if (!msbInfoResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Setup MSB information.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup MSB information.");
+            TaskLogs.AddError($"[Map Editor] Failed to setup MSB information.");
         }
 
         // Map Object Names
@@ -108,7 +102,7 @@ public class MapData
 
         if (!mapObjNamesTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup Map Object Name lists.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Map Editor] Failed to setup Map Object Name lists.");
         }
 
         // Map Object Selections
@@ -117,20 +111,16 @@ public class MapData
 
         if (!mapObjSelectionTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup Map Object Selections.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Map Editor] Failed to setup Map Object Selections.");
         }
 
         // Spawn States (per project) -- DS2 specific
         Task<bool> mapSpawnStatesTask = SetupMapSpawnStates();
         bool mapSpawnStatesResult = await mapSpawnStatesTask;
 
-        if (mapSpawnStatesResult)
+        if (!mapSpawnStatesResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Setup Spawn States information.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup Spawn States information.");
+            TaskLogs.AddError($"[Map Editor] Failed to setup Spawn States information.");
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
@@ -139,48 +129,48 @@ public class MapData
     public void SetupFileDictionaries()
     {
         // MSB
-        MapFiles.Entries = Project.FileDictionary.Entries
+        MapFiles.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map") && !e.Folder.Contains("autoroute"))
             .Where(e => e.Extension == "msb")
             .ToList();
 
         // BTL
-        LightFiles.Entries = Project.FileDictionary.Entries
+        LightFiles.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "btl")
             .ToList();
 
-        DS2_LightFiles.Entries = Project.FileDictionary.Entries
+        DS2_LightFiles.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "gibhd")
             .ToList();
 
         // NVA
-        NavmeshFiles.Entries = Project.FileDictionary.Entries
+        NavmeshFiles.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "nva")
             .ToList();
 
         // Collision
-        CollisionFiles.Entries = Project.FileDictionary.Entries
+        CollisionFiles.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "hkxbhd")
             .ToList();
 
         // AutoInvade
-        AutoInvadeBinders.Entries = Project.FileDictionary.Entries
+        AutoInvadeBinders.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/other"))
             .Where(e => e.Extension == "aipbnd")
             .ToList();
 
         // Light Atlases
-        LightAtlasFiles.Entries = Project.FileDictionary.Entries
+        LightAtlasFiles.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "btab")
             .ToList();
 
         // Light Probes
-        LightProbeFiles.Entries = Project.FileDictionary.Entries
+        LightProbeFiles.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "btpb")
             .ToList();
@@ -202,27 +192,27 @@ public class MapData
             }
         }
 
-        var newAuxBank = new MapBank(targetProject.ProjectName, BaseEditor, Project, targetProject.FS);
+        var newAuxBank = new MapBank(targetProject.Descriptor.ProjectName, Project, targetProject.VFS.FS);
 
         Task<bool> auxBankTask = newAuxBank.Setup();
         bool auxBankTaskResult = await auxBankTask;
 
         if (!auxBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup Aux MSB Bank for {targetProject.ProjectName}.");
+            TaskLogs.AddError($"[Map Editor] Failed to setup Aux MSB Bank for {targetProject.Descriptor.ProjectName}.");
             return false;
         }
 
-        if (AuxBanks.ContainsKey(targetProject.ProjectName))
+        if (AuxBanks.ContainsKey(targetProject.Descriptor.ProjectName))
         {
-            AuxBanks[targetProject.ProjectName] = newAuxBank;
+            AuxBanks[targetProject.Descriptor.ProjectName] = newAuxBank;
         }
         else
         {
-            AuxBanks.Add(targetProject.ProjectName, newAuxBank);
+            AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
 
-        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Setup Aux MSB Bank for {targetProject.ProjectName}.");
+        TaskLogs.AddError($"[Map Editor] Setup Aux MSB Bank for {targetProject.Descriptor.ProjectName}.");
 
         return true;
     }
@@ -233,7 +223,8 @@ public class MapData
 
 
         var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project), "Community Map Object Names");
-        var projDir = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Community Map Object Names");
+
+        var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Community Map Object Names");
 
         if (Directory.Exists(projDir))
         {
@@ -252,11 +243,7 @@ public class MapData
 
                     var item = JsonSerializer.Deserialize(filestring, MapEditorJsonSerializerContext.Default.MapObjectNameMapEntry);
 
-                    if (item == null)
-                    {
-                        throw new Exception($"[{Project.ProjectName}:Map Editor] JsonConvert returned null.");
-                    }
-                    else
+                    if (item != null)
                     {
                         if(!MapObjectNameLists.ContainsKey(item.Name))
                         {
@@ -266,7 +253,7 @@ public class MapData
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to load {file} for Map Object Name lists.", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Map Editor] Failed to load {file} for Map Object Name lists.", e);
                 }
             }
         }
@@ -282,7 +269,7 @@ public class MapData
 
         // Information
         var projectFolder = Path.Combine(
-            Project.ProjectPath,
+            Project.Descriptor.ProjectPath,
             ".smithbox",
             "MSB",
             "Entity Selections");
@@ -303,12 +290,12 @@ public class MapData
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Map Object Selections: {projectFile}", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Map Editor] Failed to deserialize the Map Object Selections: {projectFile}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Map Object Selections: {projectFile}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Map Editor] Failed to read the Map Object Selections: {projectFile}", e);
             }
         }
         else
@@ -344,7 +331,7 @@ public class MapData
     public void SaveMapObjectSelections()
     {
         var projectFolder = Path.Combine(
-            Project.ProjectPath,
+            Project.Descriptor.ProjectPath,
             ".smithbox",
             "MSB",
             "Entity Selections");
@@ -370,7 +357,7 @@ public class MapData
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to save map object selections: {projectFile}\n{ex}");
+            TaskLogs.AddError($"Failed to save map object selections: {projectFile}", ex);
         }
     }
 
@@ -387,10 +374,14 @@ public class MapData
         MsbMasks = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var gameDir = ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType);
+
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", gameDir);
+
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
-        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "MSB", gameDir);
+
         var projectFile = Path.Combine(projectFolder, "Core.json");
 
         var targetFile = sourceFile;
@@ -412,12 +403,12 @@ public class MapData
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the MSB information: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Map Editor] Failed to deserialize the MSB information: {targetFile}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the MSB information: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Map Editor] Failed to read the MSB information: {targetFile}", e);
             }
         }
 
@@ -445,12 +436,12 @@ public class MapData
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the MSB enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Map Editor] Failed to deserialize the MSB enums: {targetFile}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the MSB enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Map Editor] Failed to read the MSB enums: {targetFile}", e);
             }
         }
 
@@ -478,12 +469,12 @@ public class MapData
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the MSB masks: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Map Editor] Failed to deserialize the MSB masks: {targetFile}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the MSB masks: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Map Editor] Failed to read the MSB masks: {targetFile}", e);
             }
         }
 
@@ -501,10 +492,14 @@ public class MapData
         MapSpawnStates = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var gameDir = ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType);
+
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", gameDir);
+
         var sourceFile = Path.Combine(sourceFolder, "SpawnStates.json");
 
-        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "MSB", gameDir);
+
         var projectFile = Path.Combine(projectFolder, "SpawnStates.json");
 
         var targetFile = sourceFile;
@@ -526,15 +521,51 @@ public class MapData
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Map Spawn States: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Map Editor] Failed to deserialize the Map Spawn States: {targetFile}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Map Spawn States: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Map Editor] Failed to read the Map Spawn States: {targetFile}", e);
             }
         }
 
         return true;
     }
+
+    #region Dispose
+    public void Dispose()
+    {
+        PrimaryBank.Dispose();
+        VanillaBank.Dispose();
+
+        foreach(var entry in AuxBanks)
+        {
+            entry.Value.Dispose();
+        }
+
+        MapObjectNameLists.Clear();
+
+        PrimaryBank = null;
+        VanillaBank = null;
+        AuxBanks = null;
+        MapObjectNameLists = null;
+
+        Meta = null;
+        MapObjectSelections = null;
+        MsbInformation = null;
+        MsbEnums = null;
+        MsbMasks = null;
+        MapSpawnStates = null;
+
+        MapFiles = null;
+        LightFiles = null;
+        DS2_LightFiles = null;
+        NavmeshFiles = null;
+        CollisionFiles = null;
+        AutoInvadeBinders = null;
+        LightAtlasFiles = null;
+        LightProbeFiles = null;
+    }
+    #endregion
 }

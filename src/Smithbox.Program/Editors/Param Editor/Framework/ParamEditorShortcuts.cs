@@ -29,39 +29,39 @@ public class ParamEditorShortcuts
             if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
             {
                 Editor.EditorActionManager.UndoAction();
-                Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
+                Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
             }
 
             // Undo (contant)
             if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
             {
                 Editor.EditorActionManager.UndoAction();
-                Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
+                Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
             }
 
             // Redo
             if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
             {
                 Editor.EditorActionManager.RedoAction();
-                Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
+                Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
             }
 
             // Redo (constant)
             if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
             {
                 Editor.EditorActionManager.RedoAction();
-                Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
+                Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
             }
 
             // Select All
             if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.ActiveParamExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SelectAll))
             {
-                Editor.Project.ParamData.PrimaryBank.ClipboardParam = Editor._activeView.Selection.GetActiveParam();
+                Editor.Project.Handler.ParamData.PrimaryBank.ClipboardParam = Editor._activeView.Selection.GetActiveParam();
 
                 var activeParam = Editor._activeView.Selection.GetActiveParam();
 
                 foreach (Param.Row row in UICache.GetCached(Editor, (Editor._activeView.ViewIndex, Editor._activeView.Selection.GetActiveParam()),
-                    () => Editor.MassEditHandler.rse.Search((Editor.Project.ParamData.PrimaryBank, Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView.Selection.GetActiveParam()]),
+                    () => Editor.MassEditHandler.rse.Search((Editor.Project.Handler.ParamData.PrimaryBank, Editor.Project.Handler.ParamData.PrimaryBank.Params[Editor._activeView.Selection.GetActiveParam()]),
                     Editor._activeView.Selection.GetCurrentRowSearchString(), true, true)))
                 {
                     if (Editor._activeView.TableGroupView.IsInTableGroupMode(activeParam))
@@ -85,7 +85,7 @@ public class ParamEditorShortcuts
             }
 
             // Paste
-            if (Editor.Project.ParamData.PrimaryBank.ClipboardRows.Count > 00 && Editor.Project.ParamData.PrimaryBank.ClipboardParam == Editor._activeView.Selection.GetActiveParam() && !ImGui.IsAnyItemActive() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_PasteClipboard))
+            if (Editor.Project.Handler.ParamData.PrimaryBank.ClipboardRows.Count > 00 && Editor.Project.Handler.ParamData.PrimaryBank.ClipboardParam == Editor._activeView.Selection.GetActiveParam() && !ImGui.IsAnyItemActive() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_PasteClipboard))
             {
                 ImGui.OpenPopup("ctrlVPopup");
             }
@@ -139,19 +139,19 @@ public class ParamEditorShortcuts
         // Clear current Pinned Params
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearCurrentPinnedParams))
         {
-            Editor.Project.PinnedParams = new();
+            Editor.Project.Descriptor.PinnedParams = new();
         }
 
         // Clear current Pinned Rows
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearCurrentPinnedRows))
         {
-            Editor.Project.PinnedRows = new();
+            Editor.Project.Descriptor.PinnedRows = new();
         }
 
         // Clear current Pinned Fields
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearCurrentPinnedFields))
         {
-            Editor.Project.PinnedFields = new();
+            Editor.Project.Descriptor.PinnedFields = new();
         }
 
         // Show only Pinned Params
@@ -247,18 +247,18 @@ public class ParamEditorShortcuts
         }
 
         //Hot Reload shortcut keys
-        if (Editor.ParamReloader.CanReloadMemoryParams(Editor.Project.ParamData.PrimaryBank))
+        if (Editor.ParamReloader.CanReloadMemoryParams(Editor.Project.Handler.ParamData.PrimaryBank))
         {
             // Reload all PArams
             if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadAllParams))
             {
-                Editor.ParamReloader.ReloadMemoryParams(Editor.Project.ParamData.PrimaryBank, Editor.Project.ParamData.PrimaryBank.Params.Keys.ToArray());
+                Editor.ParamReloader.ReloadMemoryParams(Editor.Project.Handler.ParamData.PrimaryBank, Editor.Project.Handler.ParamData.PrimaryBank.Params.Keys.ToArray());
             }
 
             // Reload Current Param
             else if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadParam) && Editor._activeView.Selection.GetActiveParam() != null)
             {
-                Editor.ParamReloader.ReloadMemoryParam(Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam());
+                Editor.ParamReloader.ReloadMemoryParam(Editor.Project.Handler.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam());
             }
         }
     }

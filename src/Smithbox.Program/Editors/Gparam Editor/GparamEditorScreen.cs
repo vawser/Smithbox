@@ -9,7 +9,6 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamEditorScreen : EditorScreen
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public ActionManager EditorActionManager = new();
@@ -30,9 +29,8 @@ public class GparamEditorScreen : EditorScreen
     public GparamValueListView FieldValueListView;
     public GparamToolView ToolView;
 
-    public GparamEditorScreen(Smithbox baseEditor, ProjectEntry project)
+    public GparamEditorScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
         Selection = new GparamSelection(this, Project);
@@ -254,18 +252,18 @@ public class GparamEditorScreen : EditorScreen
         if (!autoSave && CFG.Current.GparamEditor_ManualSave_IncludeGPARAM ||
             autoSave && CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM)
         {
-            var targetScript = Project.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == Selection.SelectedFileEntry.Filename);
+            var targetScript = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == Selection.SelectedFileEntry.Filename);
 
             if (targetScript.Key != null)
             {
-                await Project.GparamData.PrimaryBank.SaveGraphicsParam(targetScript.Key, targetScript.Value);
+                await Project.Handler.GparamData.PrimaryBank.SaveGraphicsParam(targetScript.Key, targetScript.Value);
 
-                TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Saved {Selection.SelectedFileEntry.Filename}.gparam.dcx");
+                TaskLogs.AddLog($"[Graphics Param Editor] Saved {Selection.SelectedFileEntry.Filename}.gparam.dcx");
             }
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
 
     public async void SaveAll(bool autoSave = false)
@@ -273,11 +271,11 @@ public class GparamEditorScreen : EditorScreen
         if (!autoSave && CFG.Current.GparamEditor_ManualSave_IncludeGPARAM ||
             autoSave && CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM)
         {
-            await Project.GparamData.PrimaryBank.SaveAllGraphicsParams();
+            await Project.Handler.GparamData.PrimaryBank.SaveAllGraphicsParams();
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
 
     public void Shortcuts()

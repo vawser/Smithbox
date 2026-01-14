@@ -25,7 +25,6 @@ public enum ViewportType
 /// </summary>
 public class Viewport : IViewport
 {
-    public Smithbox BaseEditor;
     public MapEditorScreen MapEditor;
     public ModelEditorScreen ModelEditor;
 
@@ -124,27 +123,26 @@ public class Viewport : IViewport
     /// </summary>
     public float FarClip => CFG.Current.Viewport_RenderDistance_Max;
 
-    public Viewport(Smithbox baseEditor, MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
+    public Viewport(MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
     {
-        BaseEditor = baseEditor;
         MapEditor = mapEditor;
         ModelEditor = modelEditor;
         ViewportType = viewportType;
 
-        Shortcuts = new(baseEditor, this);
-        BoxSelection = new(baseEditor, this);
-        ViewportMenu = new(baseEditor, this);
-        ViewportOverlay = new(baseEditor, this);
+        Shortcuts = new(this);
+        BoxSelection = new(this);
+        ViewportMenu = new(this);
+        ViewportOverlay = new(this);
 
         ID = id;
         Width = width;
         Height = height;
-        Device = BaseEditor._context.Device;
+        Device = Smithbox.Instance._context.Device;
 
         float depth = Device.IsDepthRangeZeroToOne ? 1 : 0;
 
         RenderViewport = new Veldrid.Viewport(0, 0, Width, Height, depth, 1.0f - depth);
-        ViewportCamera = new ViewportCamera(BaseEditor, this, ViewportType, new Rectangle(0, 0, Width, Height));
+        ViewportCamera = new ViewportCamera(this, ViewportType, new Rectangle(0, 0, Width, Height));
 
         if (viewportType is ViewportType.MapEditor)
         {

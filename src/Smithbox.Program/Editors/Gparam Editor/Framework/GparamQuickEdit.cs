@@ -310,7 +310,7 @@ public class GparamQuickEdit
 
         List<EditorAction> actionList = new();
 
-        foreach (var entry in Project.GparamData.PrimaryBank.Entries)
+        foreach (var entry in Project.Handler.GparamData.PrimaryBank.Entries)
         {
             if (IsTargetFile(entry.Key))
             {
@@ -578,7 +578,7 @@ public class GparamQuickEdit
         bool foundValue = false;
 
         // Find vanilla value
-        foreach (var entry in Project.GparamData.VanillaBank.Entries)
+        foreach (var entry in Project.Handler.GparamData.VanillaBank.Entries)
         {
             if (entry.Key.Filename == Editor.Selection._selectedGparamKey)
             {

@@ -170,7 +170,7 @@ public class TextNewEntryCreationModal
                         {
                             foreach(var (name, generator) in Editor.NamingTemplateManager.GeneratorDictionary)
                             {
-                                if ((ProjectType)generator.ProjectType == Editor.Project.ProjectType)
+                                if ((ProjectType)generator.ProjectType == Editor.Project.Descriptor.ProjectType)
                                 {
                                     if (ImGui.Selectable(name))
                                     {

@@ -14,7 +14,6 @@ namespace StudioCore.Editors.Viewport;
 public class BoxSelection
 {
     public Viewport Parent;
-    public Smithbox BaseEditor;
 
     private Vector2 _dragEnd;
     private Vector2 _dragStart;
@@ -24,9 +23,8 @@ public class BoxSelection
 
     private const float DragThreshold = 5f;
 
-    public BoxSelection(Smithbox baseEditor, Viewport parent)
+    public BoxSelection(Viewport parent)
     {
-        this.BaseEditor = baseEditor;
         Parent = parent;
     }
 

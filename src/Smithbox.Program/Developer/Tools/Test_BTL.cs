@@ -12,16 +12,16 @@ public static class Test_BTL
 
     public static bool DisplaySizeDiffsOnly = false;
 
-    public static void Display(Smithbox baseEditor, ProjectEntry project)
+    public static void Display(ProjectEntry project)
     {
-        var windowSize = DPI.GetWindowSize(baseEditor._context);
+        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
         var sectionHeight = windowSize.Y * 0.3f;
         var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
 
         if (ImGui.Button("Check all BTLs for Byte-Perfect Match", DPI.StandardButtonSize))
         {
-            Run(baseEditor);
+            Run();
         }
 
         ImGui.SameLine();
@@ -73,9 +73,9 @@ public static class Test_BTL
         ImGui.EndChild();
     }
 
-    public static bool Run(Smithbox baseEditor)
+    public static bool Run()
     {
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         MismatchedBtls = Test_MSB_Util.GetBtlMismatches(curProject);
 

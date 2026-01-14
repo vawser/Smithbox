@@ -126,9 +126,9 @@ public class AutoFillSearchEngine<A, B>
                 ImGui.InputTextWithHint("##meautoinput" + argIndices[i], cmd.Item2[i],
                     ref _autoFillArgs[argIndices[i]], 256);
 
-                if (Project.ParamEditor.MassEditHandler.AutoFill != null)
+                if (Project.Handler.ParamEditor.MassEditHandler.AutoFill != null)
                 {
-                    var var = Project.ParamEditor.MassEditHandler.AutoFill.MassEditAutoFillForVars(argIndices[i]);
+                    var var = Project.Handler.ParamEditor.MassEditHandler.AutoFill.MassEditAutoFillForVars(argIndices[i]);
 
                     if (var != null)
                     {
@@ -215,23 +215,23 @@ public class AutoFill
     {
         Project = project;
 
-        autoFillParse = new(Project, "parse", Project.ParamEditor.MassEditHandler.parse);
-        autoFillVse = new(Project, "vse", Project.ParamEditor.MassEditHandler.vse);
-        autoFillPse = new(Project, "pse", Project.ParamEditor.MassEditHandler.pse);
-        autoFillRse = new(Project, "rse", Project.ParamEditor.MassEditHandler.rse);
-        autoFillCse = new(Project, "cse", Project.ParamEditor.MassEditHandler.cse);
+        autoFillParse = new(Project, "parse", Project.Handler.ParamEditor.MassEditHandler.parse);
+        autoFillVse = new(Project, "vse", Project.Handler.ParamEditor.MassEditHandler.vse);
+        autoFillPse = new(Project, "pse", Project.Handler.ParamEditor.MassEditHandler.pse);
+        autoFillRse = new(Project, "rse", Project.Handler.ParamEditor.MassEditHandler.rse);
+        autoFillCse = new(Project, "cse", Project.Handler.ParamEditor.MassEditHandler.cse);
 
         _autoFillArgsGop = Enumerable
-            .Repeat("", project.ParamEditor.MassEditHandler.GlobalOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
+            .Repeat("", project.Handler.ParamEditor.MassEditHandler.GlobalOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
 
         _autoFillArgsRop = Enumerable
-            .Repeat("", project.ParamEditor.MassEditHandler.RowOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
+            .Repeat("", project.Handler.ParamEditor.MassEditHandler.RowOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
 
         _autoFillArgsCop = Enumerable
-            .Repeat("", project.ParamEditor.MassEditHandler.FieldOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
+            .Repeat("", project.Handler.ParamEditor.MassEditHandler.FieldOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
 
         _autoFillArgsOa = Enumerable
-            .Repeat("", project.ParamEditor.MassEditHandler.OperationArgs.AllArguments().Sum(x => x.Item2.Length)).ToArray();
+            .Repeat("", project.Handler.ParamEditor.MassEditHandler.OperationArgs.AllArguments().Sum(x => x.Item2.Length)).ToArray();
     }
 
     public string ParamSearchBarAutoFill()
@@ -301,11 +301,11 @@ public class AutoFill
                     }
 
                     ImGui.TextColored(HINTCOLOUR, "Select field operation...");
-                    return MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";", null);
+                    return MassEditAutoFillForOperation(Project.Handler.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";", null);
                 });
                 ImGui.Separator();
                 ImGui.TextColored(HINTCOLOUR, "Select row operation...");
-                var res2 = MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.RowOps, ref _autoFillArgsRop, ";", null);
+                var res2 = MassEditAutoFillForOperation(Project.Handler.ParamEditor.MassEditHandler.RowOps, ref _autoFillArgsRop, ";", null);
                 if (res1 != null)
                 {
                     return res1;
@@ -341,7 +341,7 @@ public class AutoFill
                         }
 
                         ImGui.TextColored(HINTCOLOUR, "Select field operation...");
-                        return MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";",
+                        return MassEditAutoFillForOperation(Project.Handler.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";",
                             null);
                     });
                     string res2 = null;
@@ -349,7 +349,7 @@ public class AutoFill
                     {
                         ImGui.Separator();
                         ImGui.TextColored(HINTCOLOUR, "Select row operation...");
-                        res2 = MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.RowOps, ref _autoFillArgsRop, ";", null);
+                        res2 = MassEditAutoFillForOperation(Project.Handler.ParamEditor.MassEditHandler.RowOps, ref _autoFillArgsRop, ";", null);
                     }
 
                     if (res1 != null)
@@ -368,7 +368,7 @@ public class AutoFill
                 ImGui.Separator();
                 ImGui.PushID("globalop");
                 ImGui.TextColored(HINTCOLOUR, "Select global operation...");
-                result3 = MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.GlobalOps, ref _autoFillArgsGop, ";",
+                result3 = MassEditAutoFillForOperation(Project.Handler.ParamEditor.MassEditHandler.GlobalOps, ref _autoFillArgsGop, ";",
                     null);
                 ImGui.PopID();
                 if (MassParamEdit.massEditVars.Count != 0)
@@ -384,7 +384,7 @@ public class AutoFill
                         }
 
                         ImGui.TextColored(HINTCOLOUR, "Select value operation...");
-                        return MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";",
+                        return MassEditAutoFillForOperation(Project.Handler.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";",
                             null);
                     });
                 }
@@ -414,7 +414,7 @@ public class AutoFill
 
     public string MassEditOpAutoFill()
     {
-        return MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";", null);
+        return MassEditAutoFillForOperation(Project.Handler.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";", null);
     }
 
     private string MassEditAutoFillForOperation<A, B>(MEOperation<A, B> ops, ref string[] staticArgs,
@@ -469,7 +469,7 @@ public class AutoFill
                 if (ImGui.BeginPopupContextItem("##meautoinputoapopup" + argIndices[i],
                         ImGuiPopupFlags.MouseButtonLeft))
                 {
-                    var opargResult = MassEditAutoFillForArguments(Project.ParamEditor.MassEditHandler.OperationArgs, ref _autoFillArgsOa);
+                    var opargResult = MassEditAutoFillForArguments(Project.Handler.ParamEditor.MassEditHandler.OperationArgs, ref _autoFillArgsOa);
                     if (opargResult != null)
                     {
                         staticArgs[argIndices[i]] = opargResult;

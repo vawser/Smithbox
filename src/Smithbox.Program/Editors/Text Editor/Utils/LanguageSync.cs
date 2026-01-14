@@ -172,13 +172,13 @@ public class LanguageSync
     {
         List<EditorAction> actions = new();
 
-        foreach(var entry in Editor.Project.TextData.PrimaryBank.Entries)
+        foreach(var entry in Editor.Project.Handler.TextData.PrimaryBank.Entries)
         {
             var container = entry.Value;
 
             if(container.ContainerDisplayCategory == CurrentSourceLanguage)
             {
-                foreach (var tEntry in Editor.Project.TextData.PrimaryBank.Entries)
+                foreach (var tEntry in Editor.Project.Handler.TextData.PrimaryBank.Entries)
                 {
                     var tContainer = tEntry.Value;
 
@@ -251,7 +251,7 @@ public class LanguageSync
 
         if (ImGui.BeginMenu("Sync With"))
         {
-            foreach(var entry in Editor.Project.TextData.PrimaryBank.Entries)
+            foreach(var entry in Editor.Project.Handler.TextData.PrimaryBank.Entries)
             {
                 var syncSrcWrapper = entry.Value;
 
@@ -284,7 +284,7 @@ public class LanguageSync
                     if (CFG.Current.TextEditor_DisplayCommunityContainerName)
                     {
                         // To get nice DS2 names, apply the FMG display name stuff on the container level
-                        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                         {
                             displayName = TextUtils.GetFmgDisplayName(Project, syncSrcWrapper, -1, syncSrcWrapper.FileEntry.Filename);
                         }
@@ -401,14 +401,14 @@ public class LanguageSync
 
     public TextFmgWrapper GetVanillaSrcWrapper(TextContainerWrapper srcContainerWrapper, TextFmgWrapper srcWrapper)
     {
-        var vanillaContainer = Editor.Project.TextData.VanillaBank.Entries
+        var vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Entries
             .Where(e => e.Value.ContainerDisplayCategory == srcContainerWrapper.ContainerDisplayCategory)
             .Where(e => e.Value.FileEntry.Filename == srcContainerWrapper.FileEntry.Filename)
             .FirstOrDefault();
 
-        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            vanillaContainer = Editor.Project.TextData.VanillaBank.Entries
+            vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Entries
             .Where(e => e.Value.ContainerDisplayCategory == srcContainerWrapper.ContainerDisplayCategory)
             .Where(e => e.Value.ContainerDisplaySubCategory == srcContainerWrapper.ContainerDisplaySubCategory)
             .Where(e => e.Value.FileEntry.Filename == srcContainerWrapper.FileEntry.Filename)

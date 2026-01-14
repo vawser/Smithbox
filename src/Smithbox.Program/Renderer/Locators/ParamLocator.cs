@@ -12,13 +12,13 @@ public static class ParamLocator
         ResourceDescriptor ad = new();
         var path = Path.Join("Param", $"{paramStr}_{mapid}");
 
-        if (project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, $"{path}.param")) || writemode && project.ProjectPath != null)
+        if (project.Descriptor.ProjectPath != null && File.Exists(Path.Join(project.Descriptor.ProjectPath, $"{path}.param")) || writemode && project.Descriptor.ProjectPath != null)
         {
-            ad.AssetPath = Path.Join(project.ProjectPath, $"{path}.param");
+            ad.AssetPath = Path.Join(project.Descriptor.ProjectPath, $"{path}.param");
         }
-        else if (File.Exists(Path.Join(project.DataPath, $"{path}.param")))
+        else if (File.Exists(Path.Join(project.Descriptor.DataPath, $"{path}.param")))
         {
-            ad.AssetPath = Path.Join(project.DataPath, $"{path}.param");
+            ad.AssetPath = Path.Join(project.Descriptor.DataPath, $"{path}.param");
         }
 
         ad.AssetName = mapid + $"_{appendStr}";

@@ -53,7 +53,7 @@ public class ModelGrid
             Regenerate(size, sectionSize, color);
         }
 
-        if (displayGrid && Editor.Project.FocusedEditor is ModelEditorScreen)
+        if (displayGrid && Editor.Project.Handler.FocusedEditor is ModelEditorScreen)
         {
             Grid.BaseColor = GetViewGridColor(color);
             Grid.Visible = true;

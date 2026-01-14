@@ -8,7 +8,6 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TextureViewerScreen : EditorScreen, IResourceEventListener
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public ActionManager EditorActionManager = new();
@@ -30,9 +29,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public TexPropertyView PropertyView;
     public TexToolView ToolWindow;
 
-    public TextureViewerScreen(Smithbox baseEditor, ProjectEntry project)
+    public TextureViewerScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
         Selection = new TexViewSelection(this, Project);
@@ -244,7 +242,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         // Nothing
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)

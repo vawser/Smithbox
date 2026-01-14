@@ -10,7 +10,6 @@ namespace StudioCore.Editors.MaterialEditor;
 
 public class MaterialEditorScreen : EditorScreen
 {
-    private Smithbox BaseEditor;
     private ProjectEntry Project;
 
     public ActionManager EditorActionManager = new();
@@ -28,9 +27,8 @@ public class MaterialEditorScreen : EditorScreen
     public MaterialPropertyView PropertyView;
     public MaterialToolWindow ToolWindow;
 
-    public MaterialEditorScreen(Smithbox baseEditor, ProjectEntry project)
+    public MaterialEditorScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
         FocusManager = new(this);
@@ -277,22 +275,22 @@ public class MaterialEditorScreen : EditorScreen
                 return;
         }
 
-        Task<bool> saveTask = Project.MaterialData.PrimaryBank.Save(this);
+        Task<bool> saveTask = Project.Handler.MaterialData.PrimaryBank.Save(this);
         bool saveTaskResult = await saveTask;
 
         var displayName = Path.GetFileName(Selection.SelectedFileKey);
 
         if (saveTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Saved {displayName} in {Selection.SelectedBinderEntry.Filename}.");
+            TaskLogs.AddLog($"[Material Editor] Saved {displayName} in {Selection.SelectedBinderEntry.Filename}.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to save {displayName} in {Selection.SelectedBinderEntry.Filename}.");
+            TaskLogs.AddError($"[Material Editor] Failed to save {displayName} in {Selection.SelectedBinderEntry.Filename}.");
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
     public void OnDefocus()
     {

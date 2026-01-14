@@ -8,7 +8,7 @@ namespace StudioCore.Application;
 
 public class FileDictionary
 {
-    public List<FileDictionaryEntry> Entries { get; set; }
+    public List<FileDictionaryEntry> Entries { get; set; } = new();
 }
 public class FileDictionaryEntry
 {

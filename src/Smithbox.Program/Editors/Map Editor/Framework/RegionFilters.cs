@@ -27,7 +27,7 @@ public class RegionFilters
 
     public void SetupTruthList(bool defaultValue)
     {
-        switch (Editor.Project.ProjectType)
+        switch (Editor.Project.Descriptor.ProjectType)
         {
             // Supported Project Types
             case ProjectType.DS2:
@@ -52,7 +52,7 @@ public class RegionFilters
 
     public void DisplayOptions()
     {
-        switch (Editor.Project.ProjectType)
+        switch (Editor.Project.Descriptor.ProjectType)
         {
             // Supported Project Types
             case ProjectType.DS2:
@@ -219,7 +219,7 @@ public class RegionFilters
     {
         if (ImGui.MenuItem("Toggle Region Visibility: OFF"))
         {
-            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 if (entry.Value.MapContainer != null)
                 {
@@ -238,7 +238,7 @@ public class RegionFilters
 
         if (ImGui.MenuItem("Toggle Region Visibility: ON"))
         {
-            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 if (entry.Value.MapContainer != null)
                 {
@@ -263,7 +263,7 @@ public class RegionFilters
         var show = false;
 
         // Only show if region type is present
-        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer != null)
             {
@@ -282,7 +282,7 @@ public class RegionFilters
         {
             if (ImGui.MenuItem($"Toggle: {name}"))
             {
-                foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+                foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
                 {
                     if (entry.Value.MapContainer != null)
                     {

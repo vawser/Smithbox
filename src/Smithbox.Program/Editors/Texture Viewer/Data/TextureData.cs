@@ -1,14 +1,14 @@
 ﻿using StudioCore.Application;
 using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TextureData
+public class TextureData : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public TextureBank PrimaryBank;
@@ -20,9 +20,8 @@ public class TextureData
 
     public FileDictionary ShoeboxFiles = new();
 
-    public TextureData(Smithbox baseEditor, ProjectEntry project)
+    public TextureData(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -34,24 +33,24 @@ public class TextureData
         SetupPackedTextureDictionaries();
         SetupShoeboxDictionaries();
 
-        PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
+        PrimaryBank = new("Primary", Project, Project.VFS.FS);
 
         Task<bool> primaryChrBankTask = PrimaryBank.Setup();
         bool primaryChrBankTaskResult = await primaryChrBankTask;
 
         if (!primaryChrBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Primary Texture bank.");
+            TaskLogs.AddError($"[Texture Viewer] Failed to setup Primary Texture bank.");
         }
 
-        PreviewBank = new("Preview", BaseEditor, Project, Project.FS);
+        PreviewBank = new("Preview", Project, Project.VFS.FS);
 
         Task<bool> previewBankTask = PreviewBank.Setup();
         bool previewBankTaskResult = await previewBankTask;
 
         if (!previewBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Preview Texture bank.");
+            TaskLogs.AddError($"[Texture Viewer] Failed to setup Preview Texture bank.");
         }
 
         return true;
@@ -63,21 +62,21 @@ public class TextureData
 
         // TPF
         var baseDict = new FileDictionary();
-        baseDict.Entries = Project.FileDictionary.Entries
+        baseDict.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Extension == "tpf")
             .ToList();
 
         // Object Textures
         var objDict = new FileDictionary();
-        objDict.Entries = Project.FileDictionary.Entries
+        objDict.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Extension == "objbnd")
             .ToList();
 
-        if (Project.ProjectType == ProjectType.DS2S || Project.ProjectType == ProjectType.DS2)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
-            objDict.Entries = Project.FileDictionary.Entries
+            objDict.Entries = Project.Locator.FileDictionary.Entries
                 .Where(e => e.Archive != "sd")
                 .Where(e => e.Extension == "bnd" && e.Folder == "/model/obj")
                 .ToList();
@@ -87,7 +86,7 @@ public class TextureData
 
         // Chr Textures
         var chrDict = new FileDictionary();
-        chrDict.Entries = Project.FileDictionary.Entries
+        chrDict.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Extension == "texbnd")
             .ToList();
@@ -96,22 +95,22 @@ public class TextureData
 
         // Part Textures
         var partDict = new FileDictionary();
-        partDict.Entries = Project.FileDictionary.Entries
+        partDict.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Extension == "partsbnd")
             .ToList();
 
-        if (Project.ProjectType == ProjectType.DS2S || Project.ProjectType == ProjectType.DS2)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             var commonPartDict = new FileDictionary();
-            commonPartDict.Entries = Project.FileDictionary.Entries
+            commonPartDict.Entries = Project.Locator.FileDictionary.Entries
                 .Where(e => e.Archive != "sd")
                 .Where(e => e.Extension == "commonbnd")
                 .ToList();
 
             secondaryDicts.Add(commonPartDict);
 
-            partDict.Entries = Project.FileDictionary.Entries
+            partDict.Entries = Project.Locator.FileDictionary.Entries
                 .Where(e => e.Archive != "sd")
                 .Where(e => e.Extension == "bnd" && e.Folder.Contains("/model/parts"))
                 .ToList();
@@ -125,7 +124,7 @@ public class TextureData
 
         // SFX Textures
         var sfxDict = new FileDictionary();
-        sfxDict.Entries = Project.FileDictionary.Entries
+        sfxDict.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Extension == "ffxbnd")
             .ToList();
@@ -138,7 +137,7 @@ public class TextureData
 
     public void SetupPackedTextureDictionaries()
     {
-        TexturePackedFiles.Entries = Project.FileDictionary.Entries
+        TexturePackedFiles.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Extension == "tpfbhd")
             .ToList();
@@ -146,10 +145,22 @@ public class TextureData
 
     public void SetupShoeboxDictionaries()
     {
-        ShoeboxFiles.Entries = Project.FileDictionary.Entries
+        ShoeboxFiles.Entries = Project.Locator.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Extension == "sblytbnd")
             .ToList();
     }
+
+    #region Dispose
+    public void Dispose()
+    {
+        PrimaryBank?.Dispose();
+        PreviewBank?.Dispose();
+
+        TextureFiles = null;
+        TexturePackedFiles = null;
+        ShoeboxFiles = null;
+    }
+    #endregion
 }
 

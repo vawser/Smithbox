@@ -6,8 +6,6 @@ namespace StudioCore.Application;
 
 public class SettingsWindow
 {
-    public Smithbox BaseEditor;
-
     public bool MenuOpenState;
 
     private SystemTab SystemSettings;
@@ -24,19 +22,17 @@ public class SettingsWindow
 
     private SelectedSettingTab CurrentTab;
 
-    public SettingsWindow(Smithbox baseEditor)
+    public SettingsWindow()
     {
-        BaseEditor = baseEditor;
-
-        SystemSettings = new SystemTab(BaseEditor);
-        ViewportSettings = new ViewportTab(BaseEditor);
-        MapEditorSettings = new MapEditorTab(BaseEditor);
-        ModelEditorSettings = new ModelEditorTab(BaseEditor);
-        ParamEditorSettings = new ParamEditorTab(BaseEditor);
-        TextEditorSettings = new TextEditorTab(BaseEditor);
-        GparamEditorSettings = new GparamEditorTab(BaseEditor);
-        TextureViewerSettings = new TextureViewerTab(BaseEditor);
-        InterfaceSettings = new InterfaceTab(BaseEditor);
+        SystemSettings = new SystemTab();
+        ViewportSettings = new ViewportTab();
+        MapEditorSettings = new MapEditorTab();
+        ModelEditorSettings = new ModelEditorTab();
+        ParamEditorSettings = new ParamEditorTab();
+        TextEditorSettings = new TextEditorTab();
+        GparamEditorSettings = new GparamEditorTab();
+        TextureViewerSettings = new TextureViewerTab();
+        InterfaceSettings = new InterfaceTab();
     }
 
     public void ToggleMenuVisibility()

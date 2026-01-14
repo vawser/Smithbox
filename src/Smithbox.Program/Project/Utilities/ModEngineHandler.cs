@@ -9,7 +9,7 @@ public static class ModEngineHandler
 
     public static bool IsME3Project(ProjectEntry curProject)
     {
-        if (curProject.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             return true;
         }
@@ -28,26 +28,26 @@ public static class ModEngineHandler
             return;
         }
 
-        var projectName = $"{curProject.ProjectName}-{curProject.ProjectGUID}";
-        var absPath = $"{curProject.ProjectPath}".Replace(@"\", "/"); // Correct backslash to forward slash
+        var projectName = $"{curProject.Descriptor.ProjectName}-{curProject.Descriptor.ProjectGUID}";
+        var absPath = $"{curProject.Descriptor.ProjectPath}".Replace(@"\", "/"); // Correct backslash to forward slash
         var gametype = "nr";
 
-        if (curProject.ProjectType is ProjectType.ER)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER)
         {
             gametype = "er";
         }
 
-        if (curProject.ProjectType is ProjectType.AC6)
+        if (curProject.Descriptor.ProjectType is ProjectType.AC6)
         {
             gametype = "ac6";
         }
 
-        if (curProject.ProjectType is ProjectType.DS3)
+        if (curProject.Descriptor.ProjectType is ProjectType.DS3)
         {
             gametype = "ds3";
         }
 
-        if (curProject.ProjectType is ProjectType.SDT)
+        if (curProject.Descriptor.ProjectType is ProjectType.SDT)
         {
             gametype = "sdt";
         }
@@ -61,7 +61,7 @@ public static class ModEngineHandler
 
     public static bool ME3ProfileExists(ProjectEntry curProject)
     {
-        var projectName = $"{curProject.ProjectName}-{curProject.ProjectGUID}";
+        var projectName = $"{curProject.Descriptor.ProjectName}-{curProject.Descriptor.ProjectGUID}";
 
         var readPath = $"{CFG.Current.ModEngine3ProfileDirectory}/{projectName}.me3";
 
@@ -79,7 +79,7 @@ public static class ModEngineHandler
         if (!Directory.Exists(CFG.Current.ModEngine3ProfileDirectory))
             return;
 
-        var projectName = $"{curProject.ProjectName}-{curProject.ProjectGUID}";
+        var projectName = $"{curProject.Descriptor.ProjectName}-{curProject.Descriptor.ProjectGUID}";
 
         var readPath = CFG.Current.ModEngine3ProfileDirectory;
 
@@ -108,7 +108,7 @@ public static class ModEngineHandler
 
     public static bool IsME2Project(ProjectEntry curProject)
     {
-        if(curProject.ProjectType is ProjectType.DS3)
+        if(curProject.Descriptor.ProjectType is ProjectType.DS3)
         {
             return true;
         }
@@ -159,7 +159,7 @@ enabled = true
 loose_params = {looseParams}
 
 mods = [
-    {{ enabled = true, name = ""{curProject.ProjectName}"", path = ""{curProject.ProjectPath.Replace("\\", "\\\\")}"" }}
+    {{ enabled = true, name = ""{curProject.Descriptor.ProjectName}"", path = ""{curProject.Descriptor.ProjectPath.Replace("\\", "\\\\")}"" }}
 ]
 
 [extension.scylla_hide]
@@ -170,7 +170,7 @@ enabled = false";
         if(File.Exists(modTomlPath))
         {
             var tomlPath = Path.Combine(modEngineInstallFolderPath, "smithbox_launch_config.toml");
-            var projectType = $"{curProject.ProjectType}".ToLower();
+            var projectType = $"{curProject.Descriptor.ProjectType}".ToLower();
 
             var inputStr = $"'-t' '{projectType}' '-c' '{tomlPath}'".Replace("'", "\"");
 

@@ -9,12 +9,10 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelEditorStub : IEditorStub
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public ModelEditorStub(Smithbox baseEditor, ProjectEntry project)
+    public ModelEditorStub(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -24,10 +22,10 @@ public class ModelEditorStub : IEditorStub
 
     public unsafe void Display(float dt, string[] commands)
     {
-        if (!Project.EnableModelEditor)
+        if (!Project.Descriptor.EnableModelEditor)
             return;
 
-        if (!ProjectUtils.SupportsModelEditor(Project.ProjectType))
+        if (!ProjectUtils.SupportsModelEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)
@@ -36,7 +34,7 @@ public class ModelEditorStub : IEditorStub
             ImGui.SetNextWindowFocus();
         }
 
-        if (BaseEditor._context.Device == null)
+        if (Smithbox.Instance._context.Device == null)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, *ImGui.GetStyleColorVec4(ImGuiCol.WindowBg));
         }
@@ -52,9 +50,9 @@ public class ModelEditorStub : IEditorStub
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
 
-            if (Project.ModelEditor != null)
+            if (Project.Handler.ModelEditor != null)
             {
-                Project.ModelEditor.OnGUI(commands);
+                Project.Handler.ModelEditor.OnGUI(commands);
             }
             else
             {
@@ -64,17 +62,17 @@ public class ModelEditorStub : IEditorStub
 
             ImGui.End();
 
-            if (Project.ModelEditor != null)
+            if (Project.Handler.ModelEditor != null)
             {
-                Project.FocusedEditor = Project.ModelEditor;
-                Project.ModelEditor.Update(dt);
+                Project.Handler.FocusedEditor = Project.Handler.ModelEditor;
+                Project.Handler.ModelEditor.Update(dt);
             }
         }
         else
         {
-            if (Project.ModelEditor != null)
+            if (Project.Handler.ModelEditor != null)
             {
-                Project.ModelEditor.OnDefocus();
+                Project.Handler.ModelEditor.OnDefocus();
             }
 
             ImGui.PopStyleColor(1);
@@ -85,17 +83,17 @@ public class ModelEditorStub : IEditorStub
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
     {
-        if (Project.ModelEditor != null && Project.FocusedEditor is ModelEditorScreen)
+        if (Project.Handler.ModelEditor != null && Project.Handler.FocusedEditor is ModelEditorScreen)
         {
-            Project.ModelEditor.EditorResized(window, device);
+            Project.Handler.ModelEditor.EditorResized(window, device);
         }
     }
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (Project.ModelEditor != null && Project.FocusedEditor is ModelEditorScreen)
+        if (Project.Handler.ModelEditor != null && Project.Handler.FocusedEditor is ModelEditorScreen)
         {
-            Project.ModelEditor.Draw(device, cl);
+            Project.Handler.ModelEditor.Draw(device, cl);
         }
     }
 }

@@ -8,8 +8,6 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelViewportView
 {
-    public Smithbox BaseEditor;
-
     public ModelEditorScreen Editor;
     public ProjectEntry Project;
 
@@ -25,15 +23,13 @@ public class ModelViewportView
     public bool ShiftHeld;
     public bool ViewportUsingKeyboard;
 
-    public ModelViewportView(ModelEditorScreen editor, ProjectEntry project, Smithbox baseEditor)
+    public ModelViewportView(ModelEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
 
-        BaseEditor = baseEditor;
-
-        Window = baseEditor._context.Window;
-        Device = baseEditor._context.Device;
+        Window = Smithbox.Instance._context.Window;
+        Device = Smithbox.Instance._context.Device;
 
         Rect = Window.Bounds;
 
@@ -47,12 +43,12 @@ public class ModelViewportView
     {
         if (Device != null && !Smithbox.LowRequirementsMode)
         {
-            Viewport = new StudioCore.Editors.Viewport.Viewport(BaseEditor, null, Editor, ViewportType.ModelEditor, 
+            Viewport = new StudioCore.Editors.Viewport.Viewport(null, Editor, ViewportType.ModelEditor, 
                 "Modeleditvp", Rect.Width, Rect.Height);
         }
         else
         {
-            Viewport = new NullViewport(BaseEditor, null, Editor, ViewportType.ModelEditor, 
+            Viewport = new NullViewport(null, Editor, ViewportType.ModelEditor, 
                 "Modeleditvp", Rect.Width, Rect.Height);
         }
     }

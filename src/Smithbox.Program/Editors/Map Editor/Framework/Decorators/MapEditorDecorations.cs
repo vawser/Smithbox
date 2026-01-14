@@ -27,7 +27,7 @@ public static class MapEditorDecorations
     /// </summary>
     public static bool ParamRefRow(MapEditorScreen editor, MapEntityPropertyFieldMeta meta, PropertyInfo propinfo, object val, ref object newObj)
     {
-        if (editor.Project.ParamEditor == null)
+        if (editor.Project.Handler.ParamEditor == null)
             return false;
 
         if (meta != null && meta.ParamRef.Count > 0)
@@ -106,14 +106,14 @@ public static class MapEditorDecorations
 
             ImGui.NextColumn();
 
-            if (editor.Project.ParamEditor != null)
+            if (editor.Project.Handler.ParamEditor != null)
             {
-                FieldDecorators.ParamReference_Value(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, refs, null, val);
-                FieldDecorators.ParamReference_ContextMenu(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, val, null, refs);
+                FieldDecorators.ParamReference_Value(editor.Project.Handler.ParamEditor, editor.Project.Handler.ParamData.PrimaryBank, refs, null, val);
+                FieldDecorators.ParamReference_ContextMenu(editor.Project.Handler.ParamEditor, editor.Project.Handler.ParamData.PrimaryBank, val, null, refs);
 
                 if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
                 {
-                    var opened = FieldDecorators.Decorator_ContextMenuItems(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, null, val, ref newObj, refs, null, null, null, null, null, null);
+                    var opened = FieldDecorators.Decorator_ContextMenuItems(editor.Project.Handler.ParamEditor, editor.Project.Handler.ParamData.PrimaryBank, null, val, ref newObj, refs, null, null, null, null, null, null);
                     ImGui.EndPopup();
                     return opened;
                 }
@@ -461,7 +461,7 @@ public static class MapEditorDecorations
         bool display = false;
         List<AliasEntry> options = null;
 
-        var aliases = editor.Project.CommonData.Aliases;
+        var aliases = editor.Project.Handler.ProjectData.Aliases;
 
         if (meta != null && meta.ShowParticleList && aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particleAliases))
         {
@@ -597,7 +597,7 @@ public static class MapEditorDecorations
             {
                 matchId = $"{rowID}".Substring(0, 3);
 
-                var states = editor.Project.MapData.MapSpawnStates.list;
+                var states = editor.Project.Handler.MapData.MapSpawnStates.list;
                 var matchedState = states.Where(e => e.id == matchId).FirstOrDefault();
                 if (matchedState != null)
                 {
@@ -716,7 +716,7 @@ public static class MapEditorDecorations
             FormatMaskEntry targetEntry = null;
 
             // Get the entry for the current model
-            foreach (var entry in editor.Project.MapData.MsbMasks.list)
+            foreach (var entry in editor.Project.Handler.MapData.MsbMasks.list)
             {
                 if (assetEnt.ModelName == entry.model)
                 {

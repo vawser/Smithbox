@@ -25,7 +25,7 @@ public class DecoratorHandler
     /// </summary>
     public void Initialize()
     {
-        if (Project.TextEditor != null)
+        if (Project.Handler.TextEditor != null)
         {
             if (!InitializedFmgDecorator)
             {
@@ -42,7 +42,7 @@ public class DecoratorHandler
     public void SetupFmgDecorators()
     {
         _rowFmgDecorators.Clear();
-        foreach (var entry in Project.ParamData.PrimaryBank.Params)
+        foreach (var entry in Project.Handler.ParamData.PrimaryBank.Params)
         {
             var paramName = entry.Key;
             var entries = TextParamUtils.GetFmgEntriesByAssociatedParam(Editor, paramName);

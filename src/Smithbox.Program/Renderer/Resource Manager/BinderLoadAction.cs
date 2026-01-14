@@ -49,7 +49,7 @@ public class LoadBinderResourcesAction
 
     public void ProcessBinder()
     {
-        var curProject = Smithbox.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         // Read binder
         if (Binder == null)
@@ -71,13 +71,13 @@ public class LoadBinderResourcesAction
                 var targetBhdPath = targetPath;
                 var targetBdtPath = targetPath.Replace("bhd", "bdt");
 
-                foreach (var entry in curProject.FileDictionary.Entries)
+                foreach (var entry in curProject.Locator.FileDictionary.Entries)
                 {
                     if (entry.Path == targetBhdPath)
                     {
                         try
                         {
-                            bhd = (Memory<byte>)curProject.FS.ReadFile(entry.Path);
+                            bhd = (Memory<byte>)curProject.VFS.FS.ReadFile(entry.Path);
                         }
                         catch (Exception e)
                         {
@@ -89,13 +89,13 @@ public class LoadBinderResourcesAction
                     }
                 }
 
-                foreach (var entry in curProject.FileDictionary.Entries)
+                foreach (var entry in curProject.Locator.FileDictionary.Entries)
                 {
                     if (entry.Path == targetBdtPath)
                     {
                         try
                         {
-                            bdt = (Memory<byte>)curProject.FS.ReadFile(entry.Path);
+                            bdt = (Memory<byte>)curProject.VFS.FS.ReadFile(entry.Path);
                         }
                         catch (Exception e)
                         {
@@ -109,7 +109,7 @@ public class LoadBinderResourcesAction
 
                 if (bhd.Length != 0 && bdt.Length != 0)
                 {
-                    if (curProject.ProjectType is ProjectType.DES
+                    if (curProject.Descriptor.ProjectType is ProjectType.DES
                         or ProjectType.DS1
                         or ProjectType.DS1R)
                     {
@@ -125,13 +125,13 @@ public class LoadBinderResourcesAction
             {
                 Memory<byte> binder = new Memory<byte>();
 
-                foreach (var entry in curProject.FileDictionary.Entries)
+                foreach (var entry in curProject.Locator.FileDictionary.Entries)
                 {
                     if (entry.Path == targetPath)
                     {
                         try
                         {
-                            binder = (Memory<byte>)curProject.FS.ReadFile(entry.Path);
+                            binder = (Memory<byte>)curProject.VFS.FS.ReadFile(entry.Path);
                         }
                         catch (Exception e)
                         {
@@ -145,7 +145,7 @@ public class LoadBinderResourcesAction
 
                 if (load && binder.Length != 0)
                 {
-                    if (curProject.ProjectType is ProjectType.DES
+                    if (curProject.Descriptor.ProjectType is ProjectType.DES
                         or ProjectType.DS1
                         or ProjectType.DS1R)
                     {

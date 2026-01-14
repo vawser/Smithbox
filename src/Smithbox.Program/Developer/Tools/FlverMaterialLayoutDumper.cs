@@ -9,7 +9,7 @@ namespace StudioCore.Application;
 
 public static class FlverMaterialLayoutDumper
 {
-    public static void Display(Smithbox baseEditor, ProjectEntry project)
+    public static void Display(ProjectEntry project)
     {
         if (ImGui.Button("Dump Material Layouts", DPI.StandardButtonSize))
         {

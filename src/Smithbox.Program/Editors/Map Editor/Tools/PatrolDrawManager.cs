@@ -56,7 +56,7 @@ public static class PatrolDrawManager
 
         Clear();
 
-        foreach (var map in editor.Project.MapData.PrimaryBank.Maps)
+        foreach (var map in editor.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (map.Value.MapContainer == null)
                 continue;

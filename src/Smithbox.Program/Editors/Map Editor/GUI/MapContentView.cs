@@ -412,7 +412,7 @@ public class MapContentView
                         {
                             // Regions don't have multiple types in certain games
                             if (cats.Key == MsbEntityType.Region &&
-                                Editor.Project.ProjectType is ProjectType.DES
+                                Editor.Project.Descriptor.ProjectType is ProjectType.DES
                                     or ProjectType.DS1
                                     or ProjectType.DS1R
                                     or ProjectType.BB)
@@ -654,7 +654,7 @@ public class MapContentView
                 {
                     displayName = e.PrettyName;
 
-                    var nameListEntry = Project.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
+                    var nameListEntry = Project.Handler.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
 
                     if (nameListEntry.Value != null)
                     {
@@ -697,7 +697,7 @@ public class MapContentView
             }
             else if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is EntityNameDisplayType.Internal_Community)
             {
-                var nameListEntry = Project.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
+                var nameListEntry = Project.Handler.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
 
                 if (nameListEntry.Value != null)
                 {

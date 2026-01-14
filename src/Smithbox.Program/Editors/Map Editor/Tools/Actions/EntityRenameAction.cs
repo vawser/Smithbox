@@ -56,7 +56,7 @@ public class EntityRenameAction
             {
                 if (ImGui.BeginCombo("##Targeted Map", TargetMap.Item1))
                 {
-                    foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+                    foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
                     {
                         var mapID = entry.Key.Filename;
                         var container = entry.Value.MapContainer;

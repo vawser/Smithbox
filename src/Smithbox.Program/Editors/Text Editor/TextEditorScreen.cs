@@ -9,7 +9,6 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextEditorScreen : EditorScreen
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public ActionManager EditorActionManager = new();
@@ -40,9 +39,8 @@ public class TextEditorScreen : EditorScreen
 
     public FmgDumper FmgDumper;
 
-    public TextEditorScreen(Smithbox baseEditor, ProjectEntry project)
+    public TextEditorScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
         Selection = new TextSelectionManager(this, Project);
@@ -335,25 +333,25 @@ public class TextEditorScreen : EditorScreen
         {
             try
             {
-                if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
-                    await Project.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
+                    await Project.Handler.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
                 }
                 else
                 {
-                    await Project.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
+                    await Project.Handler.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
                 }
 
-                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Saved {fileEntry.Path}");
+                TaskLogs.AddLog($"[Text Editor] Saved {fileEntry.Path}");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to save {fileEntry.Path}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+                TaskLogs.AddLog($"[Text Editor] Failed to save {fileEntry.Path}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
             }
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
 
     /// <summary>
@@ -366,17 +364,17 @@ public class TextEditorScreen : EditorScreen
         {
             try
             {
-                await Project.TextData.PrimaryBank.SaveTextFiles();
+                await Project.Handler.TextData.PrimaryBank.SaveTextFiles();
 
-                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Saved all modified text files.");
+                TaskLogs.AddLog($"[Text Editor] Saved all modified text files.");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to save all modified text files", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+                TaskLogs.AddLog($"[Text Editor] Failed to save all modified text files", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
             }
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
 }

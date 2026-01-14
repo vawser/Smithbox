@@ -6,41 +6,41 @@ namespace StudioCore.Application;
 
 public static class DokuWikiGenerator
 {
-    public static void Display(Smithbox baseEditor, ProjectEntry project)
+    public static void Display(ProjectEntry project)
     {
         if (project == null)
             return;
 
-        if (project.ParamEditor == null)
+        if (project.Handler.ParamEditor == null)
             return;
 
         if (ImGui.Button("Output Param Table Information", DPI.StandardButtonSize))
         {
-            OutputParamTableInformation(baseEditor, project);
+            OutputParamTableInformation(project);
         }
 
         UIHelper.SimpleHeader("paramList", "Specific Param Information", "", UI.Current.ImGui_AliasName_Text);
 
-        foreach (var param in project.ParamData.PrimaryBank.Params)
+        foreach (var param in project.Handler.ParamData.PrimaryBank.Params)
         {
             var paramKey = param.Key;
 
             if (ImGui.Selectable($"{paramKey}"))
             {
-                OutputParamInformation(baseEditor, project, paramKey);
+                OutputParamInformation(project, paramKey);
             }
         }
     }
 
-    public static void OutputParamTableInformation(Smithbox baseEditor, ProjectEntry curProject)
+    public static void OutputParamTableInformation(ProjectEntry curProject)
     {
-        var editor = Smithbox.ProjectManager.SelectedProject.ParamEditor;
+        var editor = Smithbox.Orchestrator.SelectedProject.Handler.ParamEditor;
 
         var output = "^ Param ^ Description ^\n";
 
-        foreach(var param in curProject.ParamData.PrimaryBank.Params)
+        foreach(var param in curProject.Handler.ParamData.PrimaryBank.Params)
         {
-            var targetParamMeta = editor.Project.ParamData.GetParamMeta(param.Value.AppliedParamdef);
+            var targetParamMeta = editor.Project.Handler.ParamData.GetParamMeta(param.Value.AppliedParamdef);
 
             var sanitizedWiki = $"{targetParamMeta.Wiki}".Replace("\n", ", ").Replace("|", "-");
 
@@ -50,13 +50,13 @@ public static class DokuWikiGenerator
         PlatformUtils.Instance.SetClipboardText(output);
     }
 
-    public static void OutputParamInformation(Smithbox baseEditor, ProjectEntry project, string paramKey)
+    public static void OutputParamInformation(ProjectEntry project, string paramKey)
     {
-        var editor = Smithbox.ProjectManager.SelectedProject.ParamEditor;
+        var editor = Smithbox.Orchestrator.SelectedProject.Handler.ParamEditor;
 
         var namespacePrefix = "XXX";
 
-        switch(project.ProjectType)
+        switch(project.Descriptor.ProjectType)
         {
             case ProjectType.DES: namespacePrefix = "des"; break;
             case ProjectType.DS1: namespacePrefix = "ds1"; break;
@@ -74,15 +74,15 @@ public static class DokuWikiGenerator
             $"===== Fields =====\n" +
             $"^ Field ^ Type ^ Offset ^ Description ^ Notes ^\n";
 
-        var targetParamDef = project.ParamData.PrimaryBank.GetParamFromName(paramKey);
-        var targetParamMeta = editor.Project.ParamData.GetParamMeta(targetParamDef.AppliedParamdef);
+        var targetParamDef = project.Handler.ParamData.PrimaryBank.GetParamFromName(paramKey);
+        var targetParamMeta = editor.Project.Handler.ParamData.GetParamMeta(targetParamDef.AppliedParamdef);
 
         // Fields
         foreach (var field in targetParamDef.AppliedParamdef.Fields)
         {
             var col = targetParamDef.Columns.Where(e => e.Def == field).FirstOrDefault();
 
-            var fieldMeta = editor.Project.ParamData.GetParamFieldMeta(targetParamMeta, field);
+            var fieldMeta = editor.Project.Handler.ParamData.GetParamFieldMeta(targetParamMeta, field);
 
             var notes = "";
 

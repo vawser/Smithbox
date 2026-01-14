@@ -9,7 +9,7 @@ public static class TextParamUtils
 {
     public static List<FMG.Entry> GetFmgEntriesByAssociatedParam(ParamEditorScreen editor, string paramName)
     {
-        if (editor.Project.TextEditor == null)
+        if (editor.Project.Handler.TextEditor == null)
             return new List<FMG.Entry>();
 
         List<FMG.Entry> entries = new List<FMG.Entry>();
@@ -17,7 +17,7 @@ public static class TextParamUtils
         var searchStr = GetAssociatedEnumString(paramName);
         if(searchStr != "")
         {
-            foreach(var (path, entry) in editor.Project.TextData.PrimaryBank.Entries)
+            foreach(var (path, entry) in editor.Project.Handler.TextData.PrimaryBank.Entries)
             {
                 if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
                 {

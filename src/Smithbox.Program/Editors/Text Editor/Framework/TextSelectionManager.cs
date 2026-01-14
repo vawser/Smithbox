@@ -56,7 +56,7 @@ public class TextSelectionManager
         _selectedFmgEntryIndex = -1;
         _selectedFmgEntry = null;
 
-        var paramEditor = Smithbox.ProjectManager.SelectedProject.ParamEditor;
+        var paramEditor = Smithbox.Orchestrator.SelectedProject.Handler.ParamEditor;
 
         // Refresh the param editor FMG decorators when the file changes.
         if (paramEditor != null)

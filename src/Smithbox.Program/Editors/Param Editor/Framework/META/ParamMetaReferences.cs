@@ -19,7 +19,7 @@ public static class ParamMetaReferences
     // Supports: ER, DS3, SDT
     public static void BonfireWarpParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(editor.Project.ProjectType is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT))
+        if (!(editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT))
             return;
 
         if (activeParam == null)
@@ -38,7 +38,7 @@ public static class ParamMetaReferences
             var rowMapId = "";
             uint entityID = 0;
 
-            if (editor.Project.ProjectType is ProjectType.ER)
+            if (editor.Project.Descriptor.ProjectType is ProjectType.ER)
             {
                 Param.Cell? c = row?["bonfireEntityId"];
                 entityID = (uint)c.Value.Value;
@@ -66,7 +66,7 @@ public static class ParamMetaReferences
 
                 rowMapId = $"m{sAA}_{sBB}_{sCC}_00";
             }
-            if (editor.Project.ProjectType is ProjectType.DS3)
+            if (editor.Project.Descriptor.ProjectType is ProjectType.DS3)
             {
                 Param.Cell? c = row?["bonfireEntityId"];
                 var value = (int)c.Value.Value;
@@ -81,7 +81,7 @@ public static class ParamMetaReferences
 
                 rowMapId = $"m{sAA}_{sBB}_00_00";
             }
-            if (editor.Project.ProjectType is ProjectType.SDT)
+            if (editor.Project.Descriptor.ProjectType is ProjectType.SDT)
             {
                 Param.Cell? c = row?["bonfireEntityId"];
                 var value = (int)c.Value.Value;
@@ -128,7 +128,7 @@ public static class ParamMetaReferences
     // Supports: BB
     public static void ReturnPointParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(editor.Project.ProjectType is ProjectType.BB))
+        if (!(editor.Project.Descriptor.ProjectType is ProjectType.BB))
             return;
 
         if (activeParam == null)
@@ -198,7 +198,7 @@ public static class ParamMetaReferences
     // Supports: ER, DS3, SDT, DS1, DS1R
     public static void GameAreaParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(editor.Project.ProjectType is ProjectType.ER or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS3 or ProjectType.SDT or ProjectType.BB))
+        if (!(editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS3 or ProjectType.SDT or ProjectType.BB))
             return;
 
         if (activeParam == null)
@@ -219,7 +219,7 @@ public static class ParamMetaReferences
             uint entityID = 0;
             entityID = (uint)row.ID;
 
-            if (editor.Project.ProjectType is ProjectType.ER)
+            if (editor.Project.Descriptor.ProjectType is ProjectType.ER)
             {
                 Param.Cell? c = row?["bossMapAreaNo"];
                 byte AA = (byte)c.Value.Value;
@@ -244,7 +244,7 @@ public static class ParamMetaReferences
                 rowMapId = $"m{sAA}_{sBB}_{sCC}_00";
             }
 
-            if (editor.Project.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB)
+            if (editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB)
             {
                 var idStr = entityID.ToString();
 
@@ -257,7 +257,7 @@ public static class ParamMetaReferences
                 }
             }
 
-            if (editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            if (editor.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
                 var idStr = entityID.ToString();
 
@@ -301,7 +301,7 @@ public static class ParamMetaReferences
     // Supports: ER, AC6
     public static void GrassTypeParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6))
+        if (!(editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6))
             return;
 
         if (activeParam == null)
@@ -321,7 +321,7 @@ public static class ParamMetaReferences
                 string modelId1 = "";
                 string modelId2 = "";
 
-                if (editor.Project.ProjectType is ProjectType.ER)
+                if (editor.Project.Descriptor.ProjectType is ProjectType.ER)
                 {
                     c = row?["model0Name"];
                     modelId1 = (string)c.Value.Value;
@@ -330,7 +330,7 @@ public static class ParamMetaReferences
                     modelId2 = (string)c.Value.Value;
                 }
 
-                if (editor.Project.ProjectType is ProjectType.AC6)
+                if (editor.Project.Descriptor.ProjectType is ProjectType.AC6)
                 {
                     c = row?["modelName"];
                     modelId1 = (string)c.Value.Value;
@@ -368,7 +368,7 @@ public static class ParamMetaReferences
     // Supports: ER, AC6
     public static void AssetGeometryParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6))
+        if (!(editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6))
             return;
 
         if (activeParam == null)
@@ -388,30 +388,30 @@ public static class ParamMetaReferences
 
             if (AssetList == null)
             {
-                if (editor.Project.ProjectType is ProjectType.DS1)
+                if (editor.Project.Descriptor.ProjectType is ProjectType.DS1)
                 {
-                    AssetList = editor.Project.FileDictionary.Entries
+                    AssetList = editor.Project.Locator.FileDictionary.Entries
                         .Where(e => e.Folder.StartsWith($"/obj"))
                         .Where(e => e.Extension == "objbnd")
                         .ToList();
                 }
-                else if (editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (editor.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
-                    AssetList = editor.Project.FileDictionary.Entries
+                    AssetList = editor.Project.Locator.FileDictionary.Entries
                         .Where(e => e.Folder.StartsWith($"/model/obj"))
                         .Where(e => e.Extension == "bnd")
                         .ToList();
                 }
-                else if (editor.Project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+                else if (editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
                 {
-                    AssetList = editor.Project.FileDictionary.Entries
+                    AssetList = editor.Project.Locator.FileDictionary.Entries
                         .Where(e => e.Folder.StartsWith($"/obj"))
                         .Where(e => e.Extension == "objbnd")
                         .ToList();
                 }
-                else if (editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                else if (editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                 {
-                    AssetList = editor.Project.FileDictionary.Entries
+                    AssetList = editor.Project.Locator.FileDictionary.Entries
                         .Where(e => e.Folder.StartsWith($"/asset"))
                         .Where(e => e.Extension == "geombnd")
                         .Where(e => !e.Archive.Contains("sd"))
@@ -480,7 +480,7 @@ public static class ParamMetaReferences
     // Supports: ER
     public static void BuddyStoneParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(editor.Project.ProjectType is ProjectType.ER))
+        if (!(editor.Project.Descriptor.ProjectType is ProjectType.ER))
             return;
         
         if (activeParam == null)
@@ -568,7 +568,7 @@ public static class ParamMetaReferences
     // Supports: AC6, ER, DS3
     public static void BulletParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(editor.Project.ProjectType is ProjectType.ER or ProjectType.DS3 or ProjectType.AC6))
+        if (!(editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.DS3 or ProjectType.AC6))
             return;
 
         if (activeParam == null)
@@ -585,11 +585,11 @@ public static class ParamMetaReferences
             if (currentField == "assetNo_Hit" || currentField == "assetCreationAssetId")
             {
                 Param.Cell? c = null;
-                if (editor.Project.ProjectType is ProjectType.AC6)
+                if (editor.Project.Descriptor.ProjectType is ProjectType.AC6)
                 {
                     c = row?["assetCreationAssetId"];
                 }
-                if (editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                if (editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                 {
                     c = row?["assetNo_Hit"];
                 }
@@ -608,7 +608,7 @@ public static class ParamMetaReferences
                 string category = "";
                 string modelName = "";
 
-                if (editor.Project.ProjectType is ProjectType.ER || editor.Project.ProjectType is ProjectType.AC6)
+                if (editor.Project.Descriptor.ProjectType is ProjectType.ER || editor.Project.Descriptor.ProjectType is ProjectType.AC6)
                 {
                     if (modelId.Length == 6)
                     {
@@ -712,31 +712,31 @@ public static class ParamMetaReferences
     // Supports: DS1, DS3, SDT, ER, AC6
     public static void ItemLotParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (editor.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
             ItemLotParam_DS1(editor, activeParam, row, currentField);
         }
-        if (editor.Project.ProjectType is ProjectType.BB)
+        if (editor.Project.Descriptor.ProjectType is ProjectType.BB)
         {
             ItemLotParam_BB(editor, activeParam, row, currentField);
         }
-        if (editor.Project.ProjectType is ProjectType.DS3)
+        if (editor.Project.Descriptor.ProjectType is ProjectType.DS3)
         {
             ItemLotParam_DS3(editor, activeParam, row, currentField);
         }
-        if (editor.Project.ProjectType is ProjectType.SDT)
+        if (editor.Project.Descriptor.ProjectType is ProjectType.SDT)
         {
             ItemLotParam_SDT(editor, activeParam, row, currentField);
         }
-        if (editor.Project.ProjectType is ProjectType.ER)
+        if (editor.Project.Descriptor.ProjectType is ProjectType.ER)
         {
             ItemLotParam_ER(editor, activeParam, row, currentField);
         }
-        if (editor.Project.ProjectType is ProjectType.AC6)
+        if (editor.Project.Descriptor.ProjectType is ProjectType.AC6)
         {
             ItemLotParam_AC6(editor, activeParam, row, currentField);
         }
-        if (editor.Project.ProjectType is ProjectType.NR)
+        if (editor.Project.Descriptor.ProjectType is ProjectType.NR)
         {
             ItemLotParam_NR(editor, activeParam, row, currentField);
         }
@@ -771,7 +771,7 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
-        if (editor.Project.MapEditor == null)
+        if (editor.Project.Handler.MapEditor == null)
             return;
 
         if (activeParam == "ItemLotParam")
@@ -813,8 +813,8 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
                         CurrentPeekMap_DS1 = MSB1.Read(mapData.Value);
@@ -854,7 +854,7 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
-        if (editor.Project.MapEditor == null)
+        if (editor.Project.Handler.MapEditor == null)
             return;
 
         if (activeParam == "ItemLotParam")
@@ -905,8 +905,8 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
                         CurrentPeekMap_BB = MSBB.Read(mapData.Value);
@@ -953,7 +953,7 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
-        if (editor.Project.MapEditor == null)
+        if (editor.Project.Handler.MapEditor == null)
             return;
 
         if (activeParam == "ItemLotParam")
@@ -1004,8 +1004,8 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
                         CurrentPeekMap_DS3 = MSB3.Read(mapData.Value);
@@ -1052,7 +1052,7 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
-        if (editor.Project.MapEditor == null)
+        if (editor.Project.Handler.MapEditor == null)
             return;
 
         if (activeParam == "ItemLotParam")
@@ -1094,8 +1094,8 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
                         CurrentPeekMap_SDT = MSBS.Read(mapData.Value);
@@ -1135,7 +1135,7 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
-        if (editor.Project.MapEditor == null)
+        if (editor.Project.Handler.MapEditor == null)
             return;
 
         if (activeParam == "ItemLotParam_map")
@@ -1189,8 +1189,8 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
                         CurrentPeekMap_ER = MSBE.Read(mapData.Value);
@@ -1230,7 +1230,7 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
-        if (editor.Project.MapEditor == null)
+        if (editor.Project.Handler.MapEditor == null)
             return;
 
         if (activeParam == "ItemLotParam")
@@ -1270,8 +1270,8 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
                         CurrentPeekMap_AC6 = MSB_AC6.Read(mapData.Value);
@@ -1312,7 +1312,7 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
-        if (editor.Project.MapEditor == null)
+        if (editor.Project.Handler.MapEditor == null)
             return;
 
         if (activeParam == "ItemLotParam_map")
@@ -1366,8 +1366,8 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
                         CurrentPeekMap_NR = MSB_NR.Read(mapData.Value);
@@ -1410,7 +1410,7 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
-        var meta = editor.Project.ParamData.GetParamMeta(row.Def);
+        var meta = editor.Project.Handler.ParamData.GetParamMeta(row.Def);
         var proceed = false;
         string name = "";
         string fields = "";

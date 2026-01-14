@@ -24,7 +24,7 @@ public static class ParamDebugTools
                 ProjectUtils.GetGameDirectory(project), "Community Table Names");
 
             editor._activeView.TableGroupView.WriteTableGroupNames(dir);
-            TaskLogs.AddLog($"[{project.ProjectName}:Param Editor] Exported table names to {dir}");
+            TaskLogs.AddLog($"[Param Editor] Exported table names to {dir}");
         }
         UIHelper.Tooltip("Export the current table names for the current param directly to the Smithbox.Data folder.");
     }
@@ -44,7 +44,7 @@ public static class ParamDebugTools
             var store = new RowNameStore();
             store.Params = new();
 
-            foreach (KeyValuePair<string, Param> p in project.ParamData.PrimaryBank.Params)
+            foreach (KeyValuePair<string, Param> p in project.Handler.ParamData.PrimaryBank.Params)
             {
                 if (curParam != "")
                 {
@@ -78,7 +78,7 @@ public static class ParamDebugTools
 
                 File.WriteAllText(fullPath, json);
 
-                TaskLogs.AddLog($"[{project.ProjectName}:Param Editor] Exported row names to {fullPath}");
+                TaskLogs.AddLog($"[Param Editor] Exported row names to {fullPath}");
             }
         }
         UIHelper.Tooltip("Export the current row names for the current param directly to the Smithbox.Data folder.");

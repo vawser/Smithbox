@@ -32,7 +32,7 @@ public class TextCommandQueue
 
                 TextFmgWrapper targetFmg = null;
 
-                foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
+                foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
                 {
                     bool found = false;
                     FMG.Entry entry = null;

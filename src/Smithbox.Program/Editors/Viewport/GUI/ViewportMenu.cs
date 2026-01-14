@@ -10,11 +10,9 @@ namespace StudioCore.Editors.Viewport;
 public class ViewportMenu
 {
     public Viewport Parent;
-    public Smithbox BaseEditor;
 
-    public ViewportMenu(Smithbox baseEditor, Viewport parent)
+    public ViewportMenu(Viewport parent)
     {
-        this.BaseEditor = baseEditor;
         Parent = parent;
     }
 
@@ -33,7 +31,7 @@ public class ViewportMenu
             Parent.MapEditor.FilterMenu();
             Parent.MapEditor.CollisionMenu();
 
-            if (Parent.MapEditor.Project.ProjectType != ProjectType.DS2S && Parent.MapEditor.Project.ProjectType != ProjectType.DS2)
+            if (Parent.MapEditor.Project.Descriptor.ProjectType != ProjectType.DS2S && Parent.MapEditor.Project.Descriptor.ProjectType != ProjectType.DS2)
             {
                 if (ImGui.BeginMenu("Patrol Routes"))
                 {
@@ -320,7 +318,7 @@ public class ViewportMenu
             {
                 CFG.Current.Viewport_Enable_Texturing = !CFG.Current.Viewport_Enable_Texturing;
 
-                MapEditorUtils.UpdateAllEntityModels(BaseEditor, Smithbox.ProjectManager.SelectedProject);
+                MapEditorUtils.UpdateAllEntityModels(Smithbox.Orchestrator.SelectedProject);
             }
             UIHelper.Tooltip($"Whether to render textures in the viewport.");
 
@@ -410,7 +408,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.MapEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (Parent.MapEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 name = "Assets";
             }
@@ -457,7 +455,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.MapEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (Parent.MapEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 name = "Assets";
             }
@@ -496,7 +494,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.ModelEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (Parent.ModelEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 name = "Assets";
             }
@@ -547,7 +545,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.ModelEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (Parent.ModelEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 name = "Assets";
             }

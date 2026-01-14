@@ -94,10 +94,10 @@ public class GparamSelection
         ResetGparamFieldSelection();
         ResetGparamFieldValueSelection();
 
-        await Project.GparamData.PrimaryBank.LoadGraphicsParam(entry);
+        await Project.Handler.GparamData.PrimaryBank.LoadGraphicsParam(entry);
 
         SelectedFileEntry = entry;
-        var targetEntry = Project.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename
+        var targetEntry = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename
          == entry.Filename);
 
         _selectedGparamKey = targetEntry.Key.Filename;

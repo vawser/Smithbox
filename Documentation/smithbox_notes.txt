@@ -57,6 +57,4 @@
 # DOCUMENTATION
 #---------------------
 - Param Editor: finish syncing the AC6 meta to the leaked paramdefs (was around NpcParam)
-#---------------------
-# TODO 
-#---------------------
+
