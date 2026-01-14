@@ -20,7 +20,7 @@ public class TextBank : IDisposable
 
     public string Name;
 
-    public ConcurrentDictionary<FileDictionaryEntry, TextContainerWrapper> Entries = new();
+    public ConcurrentDictionary<FileDictionaryEntry, TextContainerWrapper> Containers = new();
 
     public TextBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
     {
@@ -33,27 +33,145 @@ public class TextBank : IDisposable
     {
         var tasks = new List<Task>();
 
-        // msgbnd
         foreach (var entry in Project.Locator.TextFiles.Entries)
         {
-            if (entry.Extension != "msgbnd")
-                continue;
+            if (entry.Extension == "msgbnd")
+            {
+                tasks.Add(Task.Run(() => LoadFmgContainer(entry)));
+            }
 
-            tasks.Add(Task.Run(() => LoadFmgContainer(entry)));
-        }
-
-        // fmg
-        foreach (var entry in Project.Locator.TextFiles.Entries)
-        {
-            if (entry.Extension != "fmg")
-                continue;
-
-            tasks.Add(Task.Run(() => LoadFmg(entry)));
+            if (entry.Extension == "fmg")
+            {
+                tasks.Add(Task.Run(() => LoadFmg(entry)));
+            }
         }
 
         await Task.WhenAll(tasks);
 
         return true;
+    }
+
+    /// <summary>
+    /// Load FMG container
+    /// </summary>
+    public void LoadFmgContainer(FileDictionaryEntry entry)
+    {
+        var containerType = TextContainerType.BND;
+        var containerCategory = TextUtils.GetLanguageCategory(Project, entry.Path);
+
+        // Skip obsolete containers
+        if (TextUtils.IsObsoleteContainer(Project, entry))
+        {
+            return;
+        }
+
+        try
+        {
+            var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);
+
+            DCX.Type compressionType;
+            var reader = new BinaryReaderEx(false, containerBytes);
+            SFUtil.GetDecompressedBR(reader, out compressionType);
+
+            // Create the Text Container wrapper and and add it to the bank
+            TextContainerWrapper containerWrapper = new(Project);
+            containerWrapper.FileEntry = entry;
+
+            containerWrapper.CompressionType = compressionType;
+            containerWrapper.ContainerType = containerType;
+            containerWrapper.ContainerDisplayCategory = containerCategory;
+            containerWrapper.ContainerData = containerBytes.ToArray();
+            containerWrapper.FmgWrappers = new();
+
+            if (containerCategory == CFG.Current.TextEditor_PrimaryCategory)
+            {
+                LoadFmgWrappers(containerWrapper);
+            }
+
+            if (containerWrapper != null)
+            {
+                Containers.TryAdd(entry, containerWrapper);
+            }
+        }
+        catch (Exception e)
+        {
+            var filename = Path.GetFileNameWithoutExtension(entry.Path);
+
+            TaskLogs.AddError($"[Text Editor] Failed to load FMG container: {filename} at {entry.Path} for {Name}", e);
+        }
+    }
+
+    public void LoadAllFmgWrappers(FmgWrapperLoadType type)
+    {
+        foreach (var entry in Containers)
+        {
+            if (type is FmgWrapperLoadType.PrimaryLanguage)
+            {
+                if (entry.Value.ContainerDisplayCategory != CFG.Current.TextEditor_PrimaryCategory)
+                {
+                    continue;
+                }
+            }
+
+            LoadFmgWrappers(entry.Value);
+        }
+    }
+
+    public void LoadFmgWrappers(TextContainerWrapper container)
+    {
+        // Populate the Text Fmg wrappers with their contents
+        List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
+
+        if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+        {
+            using (IBinder binder = BND3.Read(container.ContainerData))
+            {
+                foreach (var file in binder.Files)
+                {
+                    if (file.Name.Contains(".fmg"))
+                    {
+                        var fmgName = Path.GetFileName(file.Name);
+                        var id = file.ID;
+                        var fmg = FMG.Read(file.Bytes);
+                        fmg.Name = fmgName;
+
+                        TextFmgWrapper fmgInfo = new();
+                        fmgInfo.ID = id;
+                        fmgInfo.Name = fmgName;
+                        fmgInfo.File = fmg;
+                        fmgInfo.Parent = container;
+
+                        fmgWrappers.Add(fmgInfo);
+                    }
+                }
+            }
+        }
+        else
+        {
+            using (IBinder binder = BND4.Read(container.ContainerData))
+            {
+                foreach (var file in binder.Files)
+                {
+                    if (file.Name.Contains(".fmg"))
+                    {
+                        var fmgName = Path.GetFileName(file.Name);
+                        var id = file.ID;
+                        var fmg = FMG.Read(file.Bytes);
+                        fmg.Name = fmgName;
+
+                        TextFmgWrapper fmgInfo = new();
+                        fmgInfo.ID = id;
+                        fmgInfo.Name = fmgName;
+                        fmgInfo.File = fmg;
+                        fmgInfo.Parent = container;
+
+                        fmgWrappers.Add(fmgInfo);
+                    }
+                }
+            }
+        }
+
+        container.FmgWrappers = fmgWrappers;
     }
 
     /// <summary>
@@ -64,13 +182,9 @@ public class TextBank : IDisposable
         var containerType = TextContainerType.Loose;
         var containerCategory = TextUtils.GetLanguageCategory(Project, entry.Path);
 
-        // Skip non-English if this is disabled
-        if(!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
+        if (containerCategory != CFG.Current.TextEditor_PrimaryCategory)
         {
-            if(containerCategory != CFG.Current.TextEditor_PrimaryCategory)
-            {
-                return;
-            }
+            return;
         }
 
         try
@@ -110,7 +224,7 @@ public class TextBank : IDisposable
                 containerWrapper.ContainerDisplaySubCategory = TextUtils.GetSubCategory(entry.Path);
             }
 
-            Entries.TryAdd(entry, containerWrapper);
+            Containers.TryAdd(entry, containerWrapper);
         }
         catch (Exception e)
         {
@@ -121,117 +235,13 @@ public class TextBank : IDisposable
     }
 
     /// <summary>
-    /// Load FMG container
-    /// </summary>
-    public void LoadFmgContainer(FileDictionaryEntry entry)
-    {
-        var containerType = TextContainerType.BND;
-        var containerCategory = TextUtils.GetLanguageCategory(Project, entry.Path);
-
-        // Skip non-English if this is disabled
-        if (!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
-        {
-            if (containerCategory is not TextContainerCategory.English)
-            {
-                return;
-            }
-        }
-
-        // Skip obsolete containers
-        if (TextUtils.IsObsoleteContainer(Project, entry))
-        {
-            return;
-        }
-
-        try
-        {
-            var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);
-
-            DCX.Type compressionType;
-            var reader = new BinaryReaderEx(false, containerBytes);
-            SFUtil.GetDecompressedBR(reader, out compressionType);
-
-            // Create the Text Container wrapper and and add it to the bank
-            TextContainerWrapper containerWrapper = new(Project);
-            containerWrapper.FileEntry = entry;
-
-            containerWrapper.CompressionType = compressionType;
-            containerWrapper.ContainerType = containerType;
-            containerWrapper.ContainerDisplayCategory = containerCategory;
-
-            // Populate the Text Fmg wrappers with their contents
-            List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
-
-            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
-            {
-                using (IBinder binder = BND3.Read(containerBytes))
-                {
-                    foreach (var file in binder.Files)
-                    {
-                        if (file.Name.Contains(".fmg"))
-                        {
-                            var fmgName = Path.GetFileName(file.Name);
-                            var id = file.ID;
-                            var fmg = FMG.Read(file.Bytes);
-                            fmg.Name = fmgName;
-
-                            TextFmgWrapper fmgInfo = new();
-                            fmgInfo.ID = id;
-                            fmgInfo.Name = fmgName;
-                            fmgInfo.File = fmg;
-                            fmgInfo.Parent = containerWrapper;
-
-                            fmgWrappers.Add(fmgInfo);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                using (IBinder binder = BND4.Read(containerBytes))
-                {
-                    foreach (var file in binder.Files)
-                    {
-                        if (file.Name.Contains(".fmg"))
-                        {
-                            var fmgName = Path.GetFileName(file.Name);
-                            var id = file.ID;
-                            var fmg = FMG.Read(file.Bytes);
-                            fmg.Name = fmgName;
-
-                            TextFmgWrapper fmgInfo = new();
-                            fmgInfo.ID = id;
-                            fmgInfo.Name = fmgName;
-                            fmgInfo.File = fmg;
-                            fmgInfo.Parent = containerWrapper;
-
-                            fmgWrappers.Add(fmgInfo);
-                        }
-                    }
-                }
-            }
-            
-            // Add the fmg wrappers to the container wrapper
-            containerWrapper.FmgWrappers = fmgWrappers;
-
-            Entries.TryAdd(entry, containerWrapper);
-        }
-        catch (Exception e)
-        {
-            var filename = Path.GetFileNameWithoutExtension(entry.Path);
-
-            TaskLogs.AddError($"[Text Editor] Failed to load FMG container: {filename} at {entry.Path} for {Name}", e);
-        }
-    }
-
-    /// <summary>
     /// Save all modified FMG Containers
     /// </summary>
     public async Task<bool> SaveTextFiles()
     {
         var success = true;
 
-        foreach (var (fileEntry, containerInfo) in Entries)
+        foreach (var (fileEntry, containerInfo) in Containers)
         {
             // Only save all modified files
             if (containerInfo.IsModified)
@@ -382,12 +392,15 @@ public class TextBank : IDisposable
     #region Dispose
     public void Dispose()
     {
-        Entries.Clear();
+        Containers.Clear();
 
-        Entries = null;
+        Containers = null;
     }
     #endregion
 }
 
-
-
+public enum FmgWrapperLoadType
+{
+    All,
+    PrimaryLanguage
+}

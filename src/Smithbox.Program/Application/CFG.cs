@@ -697,6 +697,7 @@ public class CFG
     ///------------------------------------------------------------
     /// Text Editor
     ///------------------------------------------------------------
+    
     // General
     public TextContainerCategory TextEditor_PrimaryCategory = TextContainerCategory.English;
 

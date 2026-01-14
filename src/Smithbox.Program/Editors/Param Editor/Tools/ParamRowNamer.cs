@@ -178,7 +178,7 @@ public class ParamRowNamer
     }
     public void HandleGenericParam(string activeParam, string targetParam, string fmgName, List<Param.Row> rows)
     {
-        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Entries;
+        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Containers;
 
         if (activeParam == targetParam)
         {
@@ -225,7 +225,7 @@ public class ParamRowNamer
 
     public void HandleEquipParam(string activeParam, string targetParam, int itemCategory, List<Param.Row> rows)
     {
-        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Entries;
+        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Containers;
 
         if (activeParam == targetParam)
         {
@@ -440,7 +440,7 @@ public class ParamRowNamer
 
     public void HandleItemLotParamMap(string activeParam, List<Param.Row> rows)
     {
-        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Entries;
+        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Containers;
 
         if (activeParam == "ItemLotParam_map")
         {
@@ -623,7 +623,7 @@ public class ParamRowNamer
 
     public void HandleItemLotParamEnemy(string activeParam, List<Param.Row> rows)
     {
-        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Entries;
+        var fmgs = Editor.Project.Handler.TextData.PrimaryBank.Containers;
 
         if (activeParam == "ItemLotParam_enemy")
         {
@@ -759,7 +759,7 @@ public class ParamRowNamer
     {
         var newName = "";
 
-        foreach (var (fileEntry, wrapper) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
+        foreach (var (fileEntry, wrapper) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
         {
             if (wrapper.ContainerDisplayCategory is not TextContainerCategory.English)
                 continue;
@@ -837,7 +837,7 @@ public class ParamRowNamer
     {
         var newName = "";
 
-        foreach (var (fileEntry, wrapper) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
+        foreach (var (fileEntry, wrapper) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
         {
             if (wrapper.ContainerDisplayCategory is not TextContainerCategory.English)
                 continue;

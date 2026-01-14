@@ -61,14 +61,14 @@ public class TextDifferenceManager
         }
 
         // Get vanilla container and entries
-        var vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Entries
+        var vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
             .Where(e => e.Value.FileEntry.Filename == containerName)
             .FirstOrDefault();
 
         if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Entries
+            vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
             .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
             .Where(e => e.Value.FileEntry.Filename == containerName)
@@ -117,7 +117,7 @@ public class TextDifferenceManager
         }
 
         // Get primary container and enetries
-        var primaryContainer = Editor.Project.Handler.TextData.PrimaryBank.Entries
+        var primaryContainer = Editor.Project.Handler.TextData.PrimaryBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
             .Where(e => e.Value.FileEntry.Filename == containerName)
             .FirstOrDefault();
@@ -127,7 +127,7 @@ public class TextDifferenceManager
 
         if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            primaryContainer = Editor.Project.Handler.TextData.PrimaryBank.Entries
+            primaryContainer = Editor.Project.Handler.TextData.PrimaryBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
             .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
             .Where(e => e.Value.FileEntry.Filename == containerName)

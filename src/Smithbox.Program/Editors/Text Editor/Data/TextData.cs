@@ -2,7 +2,9 @@
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
@@ -30,6 +32,19 @@ public class TextData : IDisposable
 
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
         VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
+
+        // FMG Descriptors
+        Task<bool> descriptorTask = SetupFmgDescriptors();
+        bool descriptorTaskResult = await descriptorTask;
+
+        if (descriptorTaskResult)
+        {
+            TaskLogs.AddLog($"Setup FMG Descriptors.");
+        }
+        else
+        {
+            TaskLogs.AddError($"Failed to setup FMG Descriptors.");
+        }
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Setup();
@@ -92,6 +107,42 @@ public class TextData : IDisposable
 
         return true;
     }
+
+    #region FMG Descriptors
+
+    public async Task<bool> SetupFmgDescriptors()
+    {
+        var jsonName = "FMG Descriptor Registry.json";
+
+        await Task.Yield();
+
+        var folder = @$"{AppContext.BaseDirectory}/Assets/FMG/{ProjectUtils.GetGameDirectory(Project)}";
+        var file = Path.Combine(folder, jsonName);
+
+        if (File.Exists(file))
+        {
+            try
+            {
+                var filestring = await File.ReadAllTextAsync(file);
+
+                try
+                {
+                    FmgDescriptors = JsonSerializer.Deserialize(filestring, TextEditorJsonSerializerContext.Default.FmgDescriptors);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddError($"Failed to deserialize FMG descriptor registry: {file}", e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddError($"Failed to read FMG descriptor registry: {file}", e);
+            }
+        }
+
+        return true;
+    }
+    #endregion
 
     #region Dispose
     public void Dispose()

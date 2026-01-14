@@ -47,7 +47,7 @@ public class TextContainerWindow
                 }
 
                 // Only display if the category contains something
-                if (Editor.Project.Handler.TextData.PrimaryBank.Entries.Any(e => e.Value.ContainerDisplayCategory == category))
+                if (Editor.Project.Handler.TextData.PrimaryBank.Containers.Any(e => e.Value.ContainerDisplayCategory == category))
                 {
                     if (AllowedCategory(category))
                     {
@@ -76,7 +76,7 @@ public class TextContainerWindow
                 // Common Sub-Header
                 if (ImGui.CollapsingHeader($"Common", flags))
                 {
-                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
+                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
@@ -97,7 +97,7 @@ public class TextContainerWindow
                 // Blood Message Sub-Header
                 if (ImGui.CollapsingHeader($"Blood Message", flags))
                 {
-                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
+                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
@@ -118,7 +118,7 @@ public class TextContainerWindow
                 // Talk Sub-Header
                 if (ImGui.CollapsingHeader($"Talk", flags))
                 {
-                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
+                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
@@ -144,7 +144,7 @@ public class TextContainerWindow
             if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
             {
                 // Get relevant containers for each category
-                foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
+                foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
                 {
                     if (info.ContainerDisplayCategory == category)
                     {

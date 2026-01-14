@@ -72,7 +72,7 @@ public class FmgRowDecorator
                 var fmg = cachedEntry.Parent;
                 var fmgName = fmg.Name;
 
-                foreach (var (path, entry) in Editor.Project.Handler.TextData.PrimaryBank.Entries)
+                foreach (var (path, entry) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
                 {
                     if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
                     {

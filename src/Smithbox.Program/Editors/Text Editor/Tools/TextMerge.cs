@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Utilities;
@@ -117,7 +118,7 @@ public static class TextMerge
         if (!editor.Project.Handler.TextData.AuxBanks.TryGetValue(TargetProject.Descriptor.ProjectName, out var targetAuxBank))
             return false;
 
-        foreach (var primaryEntry in editor.Project.Handler.TextData.PrimaryBank.Entries)
+        foreach (var primaryEntry in editor.Project.Handler.TextData.PrimaryBank.Containers)
         {
             var primaryKey = primaryEntry.Key.Filename;
             var currentContainer = primaryEntry.Value;
@@ -128,7 +129,12 @@ public static class TextMerge
                 continue;
             }
 
-            foreach (var targetEntry in targetAuxBank.Entries)
+            if (primaryEntry.Value.FmgWrappers == null || primaryEntry.Value.FmgWrappers.Count == 0)
+            {
+                editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(primaryEntry.Value);
+            }
+
+            foreach (var targetEntry in targetAuxBank.Containers)
             {
                 var targetKey = targetEntry.Key.Filename;
                 var targetContainer = targetEntry.Value;
@@ -137,6 +143,11 @@ public static class TextMerge
                     currentContainer.ContainerDisplayCategory != targetContainer.ContainerDisplayCategory)
                 {
                     continue;
+                }
+
+                if (targetEntry.Value.FmgWrappers == null || targetEntry.Value.FmgWrappers.Count == 0)
+                {
+                    editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(targetEntry.Value);
                 }
 
                 var targetWrapper = targetContainer;

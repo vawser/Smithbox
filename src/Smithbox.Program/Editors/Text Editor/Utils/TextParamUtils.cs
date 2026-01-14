@@ -17,19 +17,22 @@ public static class TextParamUtils
         var searchStr = GetAssociatedEnumString(paramName);
         if(searchStr != "")
         {
-            foreach(var (path, entry) in editor.Project.Handler.TextData.PrimaryBank.Entries)
+            foreach(var (path, entry) in editor.Project.Handler.TextData.PrimaryBank.Containers)
             {
                 if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
                 {
-                    foreach (var fmgInfo in entry.FmgWrappers)
+                    if (entry.FmgWrappers != null)
                     {
-                        var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
-
-                        if (enumName.Contains(searchStr))
+                        foreach (var fmgInfo in entry.FmgWrappers)
                         {
-                            foreach(var fmgEntry in fmgInfo.File.Entries)
+                            var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+
+                            if (enumName.Contains(searchStr))
                             {
-                                entries.Add(fmgEntry);
+                                foreach (var fmgEntry in fmgInfo.File.Entries)
+                                {
+                                    entries.Add(fmgEntry);
+                                }
                             }
                         }
                     }

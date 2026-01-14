@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -172,15 +173,25 @@ public class LanguageSync
     {
         List<EditorAction> actions = new();
 
-        foreach(var entry in Editor.Project.Handler.TextData.PrimaryBank.Entries)
+        foreach(var entry in Editor.Project.Handler.TextData.PrimaryBank.Containers)
         {
             var container = entry.Value;
 
-            if(container.ContainerDisplayCategory == CurrentSourceLanguage)
+            if (entry.Value.FmgWrappers == null || entry.Value.FmgWrappers.Count == 0)
             {
-                foreach (var tEntry in Editor.Project.Handler.TextData.PrimaryBank.Entries)
+                Editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(entry.Value);
+            }
+
+            if (container.ContainerDisplayCategory == CurrentSourceLanguage)
+            {
+                foreach (var tEntry in Editor.Project.Handler.TextData.PrimaryBank.Containers)
                 {
                     var tContainer = tEntry.Value;
+
+                    if (tEntry.Value.FmgWrappers == null || tEntry.Value.FmgWrappers.Count == 0)
+                    {
+                        Editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(tEntry.Value);
+                    }
 
                     if (TargetLanguages.ContainsKey(tContainer.ContainerDisplayCategory))
                     {
@@ -251,7 +262,7 @@ public class LanguageSync
 
         if (ImGui.BeginMenu("Sync With"))
         {
-            foreach(var entry in Editor.Project.Handler.TextData.PrimaryBank.Entries)
+            foreach(var entry in Editor.Project.Handler.TextData.PrimaryBank.Containers)
             {
                 var syncSrcWrapper = entry.Value;
 
@@ -274,6 +285,11 @@ public class LanguageSync
                             proceed = true;
                         }
                     }
+                }
+
+                if (entry.Value.FmgWrappers == null || entry.Value.FmgWrappers.Count == 0)
+                {
+                    Editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(entry.Value);
                 }
 
                 // Not current selection, but the same file in a different category
@@ -316,8 +332,19 @@ public class LanguageSync
     {
         List<EditorAction> actions = new();
 
-        foreach(var syncTargetWrapper in syncTargetContainerWrapper.FmgWrappers)
+        if (syncTargetContainerWrapper.FmgWrappers == null || syncTargetContainerWrapper.FmgWrappers.Count == 0)
         {
+            Editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(syncTargetContainerWrapper);
+        }
+
+        if (syncSrcContainerWrapper.FmgWrappers == null || syncSrcContainerWrapper.FmgWrappers.Count == 0)
+        {
+            Editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(syncSrcContainerWrapper);
+        }
+
+        foreach (var syncTargetWrapper in syncTargetContainerWrapper.FmgWrappers)
+        {
+
             foreach (var syncSrcWrapper in syncSrcContainerWrapper.FmgWrappers)
             {
                 if(targetFmgId == -1 && syncTargetWrapper.ID == syncSrcWrapper.ID 
@@ -401,14 +428,14 @@ public class LanguageSync
 
     public TextFmgWrapper GetVanillaSrcWrapper(TextContainerWrapper srcContainerWrapper, TextFmgWrapper srcWrapper)
     {
-        var vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Entries
+        var vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == srcContainerWrapper.ContainerDisplayCategory)
             .Where(e => e.Value.FileEntry.Filename == srcContainerWrapper.FileEntry.Filename)
             .FirstOrDefault();
 
         if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Entries
+            vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == srcContainerWrapper.ContainerDisplayCategory)
             .Where(e => e.Value.ContainerDisplaySubCategory == srcContainerWrapper.ContainerDisplaySubCategory)
             .Where(e => e.Value.FileEntry.Filename == srcContainerWrapper.FileEntry.Filename)

@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
+using System.Linq;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -44,11 +45,11 @@ public class TextSelectionManager
     /// <summary>
     /// Set current File Container selection
     /// </summary>>
-    public void SelectFileContainer(FileDictionaryEntry entry, TextContainerWrapper info, int index)
+    public void SelectFileContainer(FileDictionaryEntry entry, TextContainerWrapper container, int index)
     {
         SelectedFileDictionaryEntry = entry;
         SelectedContainerKey = index;
-        SelectedContainerWrapper = info;
+        SelectedContainerWrapper = container;
 
         SelectedFmgKey = -1;
         SelectedFmgWrapper = null;
@@ -56,16 +57,34 @@ public class TextSelectionManager
         _selectedFmgEntryIndex = -1;
         _selectedFmgEntry = null;
 
-        var paramEditor = Smithbox.Orchestrator.SelectedProject.Handler.ParamEditor;
-
-        // Refresh the param editor FMG decorators when the file changes.
-        if (paramEditor != null)
+        // Load in the FMG if this is the first time this container has been selected
+        if (container.FmgWrappers == null || container.FmgWrappers.Count == 0)
         {
-            paramEditor.DecoratorHandler.SetupFmgDecorators();
-        }
+            var textData = Project.Handler.TextData;
 
-        // Auto-select first FMG
-        AutoSelectFirstValidFmg();
+            // Primary
+            textData.PrimaryBank.LoadFmgWrappers(container);
+
+            var vanillaContainer = textData.VanillaBank.Containers.FirstOrDefault(e => e.Value.FileEntry.Filename == container.FileEntry.Filename);
+
+            if (vanillaContainer.Value != null)
+            {
+                textData.VanillaBank.LoadFmgWrappers(vanillaContainer.Value);
+            }
+        }
+        else
+        {
+            var paramEditor = Smithbox.Orchestrator.SelectedProject.Handler.ParamEditor;
+
+            // Refresh the param editor FMG decorators when the file changes.
+            if (paramEditor != null)
+            {
+                paramEditor.DecoratorHandler.SetupFmgDecorators();
+            }
+
+            // Auto-select first FMG
+            AutoSelectFirstValidFmg();
+        }
     }
 
     /// <summary>

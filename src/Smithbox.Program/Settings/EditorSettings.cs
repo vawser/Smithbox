@@ -581,9 +581,6 @@ public class TextEditorTab
         // Data
         if (ImGui.CollapsingHeader("Data", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Include Non-Primary Containers", ref CFG.Current.TextEditor_IncludeNonPrimaryContainers);
-            UIHelper.Tooltip("If enabled, non-primary FMG containers are loaded.");
-
             ImGui.Checkbox("Include Vanilla Cache", ref CFG.Current.TextEditor_IncludeVanillaCache);
             UIHelper.Tooltip("If enabled, the vanilla cache is loaded, which enables the modified and unique difference features.");
 
