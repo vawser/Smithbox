@@ -19,8 +19,10 @@ public class ProjectEntry
     // State
     public bool Initialized = false;
     public bool IsInitializing = false;
+    public bool IsLoadingData { get; private set; }
+    public bool IsCreatingEditors { get; private set; }
+
     public bool IsSelected = false;
-    public bool StopDraw = false;
 
     public int AutomaticSaveInterval = 60;
     public DateTime _nextAutoSaveTime = DateTime.MinValue;
@@ -127,8 +129,17 @@ public class ProjectEntry
         Handler.InitStubs();
 
         await Locator.Initialize();
-        await Handler.Initialize(initType, silent);
 
+        IsLoadingData = true;
+
+        await Handler.InitializeData(initType, silent);
+
+        IsLoadingData = false;
+        IsCreatingEditors = true;
+
+        Handler.InitializeEditors(initType);
+
+        IsCreatingEditors = false;
         Initialized = true;
         IsInitializing = false;
 

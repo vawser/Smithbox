@@ -400,7 +400,7 @@ public class ProjectOrchestrator : IDisposable
 
                 if (!IsProjectLoading)
                 {
-                    ReloadProject(curProject);
+                    _ = ReloadProject(curProject);
                 }
             }
         }
@@ -530,7 +530,7 @@ public class ProjectOrchestrator : IDisposable
             // Update the legacy project.json
             CreateLegacyProjectJSON(curProject, firstCreated);
 
-            var json = JsonSerializer.Serialize(curProject, ProjectJsonSerializerContext.Default.ProjectDescriptor);
+            var json = JsonSerializer.Serialize(curProject.Descriptor, ProjectJsonSerializerContext.Default.ProjectDescriptor);
 
             File.WriteAllText(file, json);
         }
@@ -628,7 +628,7 @@ public class ProjectOrchestrator : IDisposable
 
         SaveProject(SelectedProject);
 
-        ReloadProject(SelectedProject);
+        _ = ReloadProject(SelectedProject);
     }
 
     public async Task<bool> StartupProject(ProjectEntry curProject)
@@ -694,7 +694,7 @@ public class ProjectOrchestrator : IDisposable
         project.Dispose();
     }
 
-    public void ReloadProject(ProjectEntry curProject)
+    public async Task ReloadProject(ProjectEntry curProject)
     {
         var oldProject = SelectedProject;
 
@@ -710,8 +710,7 @@ public class ProjectOrchestrator : IDisposable
 
         IsProjectLoading = true;
 
-        Task<bool> projectInit = curProject.Init();
-        Task.WaitAll(projectInit);
+        await curProject.Init();
 
         foreach (var tEntry in Projects)
         {
