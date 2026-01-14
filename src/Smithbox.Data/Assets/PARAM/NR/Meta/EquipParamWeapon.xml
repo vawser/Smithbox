@@ -347,7 +347,10 @@
     IconConfig="Item" />
     
     <durability AltName="Durability" Wiki="Initial durability." />
-    <durabilityMax AltName="Max Durability" Wiki="New durability." />
+    <ultChargeA AltName="Ultimate Charge A Part" Wiki="Fractional part of the charge value, used in combination with the B Part to calculate the total charge value." />
+    <ultChargeB AltName="Ultimate Charge B Part" Wiki="Base part of the ultimate charge.\nIf B &gt;= 16, Charge = B + 0.125 × A.\nIf B &lt; 16, Charge = 8 + 0.5 × B + 0.0625 × A.\nThere's a global multiplier of 0.9x to obtain the final in-game value." />
+    <ultChargeExponent AltName="Ultimate Charge Exponent" Wiki="Base-4 exponent controlling the final scale of the ultimate charge. bias = 65, scale = 4^(exponent-65)" />
+    <ultChargeSign AltName="Ultimate Charge Sign" Wiki="Sign of the charge value. 0 = +, 1 = -" />
     <attackThrowEscape AltName="Throw Escape Damage" Wiki="Basic value of throw-through attack power" />
     <parryDamageLife AltName="Parry Occurrence Duration" Wiki="Limit the life of parry damage. It does not last longer than it is set in TimeAct." />
     <attackBasePhysics AltName="Damage: Physical" Wiki="Basic value of physical attribute attack that damages the enemy's HP" />

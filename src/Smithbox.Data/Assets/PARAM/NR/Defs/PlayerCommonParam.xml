@@ -553,9 +553,9 @@
     <Field Def="s32 tranceBuffEffectId" FirstVersion="10310025"/>
     <Field Def="s32 tranceRemoveBuffEffectId" FirstVersion="10310025"/>
     <Field Def="s32 tranceSuccessiveEffectId" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_31" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_32" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_33" FirstVersion="10310025"/>
+    <Field Def="s32 tranceRemoveBuffEffectId1" FirstVersion="10310025"/>
+    <Field Def="s32 tranceSuccessiveEffectId2" FirstVersion="10310025"/>
+    <Field Def="s32 tranceRemoveBuffEffectId2" FirstVersion="10310025"/>
     <Field Def="s16 bagcraftXp_Level2_Dart" FirstVersion="10310025"/>
 	<Field Def="s16 bagcraftXp_Level3_Dart" FirstVersion="10310025"/>
     <Field Def="s16 bagcraftXp_Level2_Pot" FirstVersion="10310025"/>
