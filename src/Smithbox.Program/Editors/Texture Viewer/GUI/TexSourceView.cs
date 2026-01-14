@@ -227,7 +227,7 @@ public class TexSourceView
     {
         if (ImGui.CollapsingHeader("Texture Files"))
         {
-            foreach (var entry in Project.Handler.TextureData.TextureFiles.Entries)
+            foreach (var entry in Project.Locator.TextureFiles.Entries)
             {
                 ImGui.Text($"{entry.Path}");
             }
@@ -235,7 +235,7 @@ public class TexSourceView
 
         if (ImGui.CollapsingHeader("Packed Texture Files"))
         {
-            foreach (var entry in Project.Handler.TextureData.TexturePackedFiles.Entries)
+            foreach (var entry in Project.Locator.TexturePackedFiles.Entries)
             {
                 ImGui.Text($"{entry.Path}");
             }

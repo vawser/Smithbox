@@ -17,9 +17,6 @@ public class MaterialData : IDisposable
 {
     public ProjectEntry Project;
 
-    public FileDictionary MTD_Files = new();
-    public FileDictionary MATBIN_Files = new();
-
     public MaterialBank PrimaryBank;
     public MaterialBank VanillaBank;
 
@@ -33,28 +30,6 @@ public class MaterialData : IDisposable
     public async Task<bool> Setup()
     {
         await Task.Yield();
-
-        MTD_Files.Entries =  Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/mtd"))
-            .Where(e => e.Extension == "mtdbnd")
-            .ToList();
-
-        // DS2 has it as a single .bnd file
-        if(Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            MTD_Files.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/material"))
-            .Where(e => e.Filename == "allmaterialbnd")
-            .ToList();
-        }
-
-        MATBIN_Files.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/material"))
-            .Where(e => e.Extension == "matbinbnd")
-            .ToList();
 
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
         VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
@@ -144,9 +119,6 @@ public class MaterialData : IDisposable
     #region Dispose
     public void Dispose()
     {
-        MTD_Files = null;
-        MATBIN_Files = null;
-
         PrimaryBank?.Dispose();
         VanillaBank?.Dispose();
 

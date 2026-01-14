@@ -62,7 +62,7 @@ public class MapQueryBank
         await Task.Yield();
 
         List<FileDictionaryEntry> failedLoads = [];
-        foreach (var map in Editor.Project.Handler.MapData.MapFiles.Entries)
+        foreach (var map in Editor.Project.Locator.MapFiles.Entries)
         {
             IMsb msb = null;
 

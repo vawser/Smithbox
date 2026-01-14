@@ -38,7 +38,7 @@ public class AutoInvadeBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.Handler.MapData.AutoInvadeBinders.Entries)
+        foreach (var entry in Project.Locator.AutoInvadeFiles.Entries)
         {
             try
             {
@@ -97,7 +97,7 @@ public class AutoInvadeBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.Handler.MapData.AutoInvadeBinders.Entries)
+        foreach (var entry in Project.Locator.AutoInvadeFiles.Entries)
         {
             // File
             try

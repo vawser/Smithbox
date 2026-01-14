@@ -7,14 +7,14 @@ namespace StudioCore.Editors.TextEditor;
 /// <summary>
 /// Handles the fmg selection, viewing and editing.
 /// </summary>
-public class TextFmgView
+public class TextFileWindow
 {
     private TextEditorScreen Editor;
     private ProjectEntry Project;
 
     private List<EntryGroupAssociation> Groupings;
 
-    public TextFmgView(TextEditorScreen editor, ProjectEntry project)
+    public TextFileWindow(TextEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;

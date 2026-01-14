@@ -196,7 +196,7 @@ public class MapListView : IActionEventHandler
             _cachedMapNameAliases.Clear();
             _cachedMapTags.Clear();
 
-            foreach (var entry in Project.Handler.MapData.MapFiles.Entries)
+            foreach (var entry in Project.Locator.MapFiles.Entries)
             {
                 var mapID = entry.Filename;
 

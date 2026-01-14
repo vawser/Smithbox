@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Program.Editors.TextEditor;
+namespace StudioCore.Editors.TextEditor;
 
 public class TextExportList
 {

@@ -13,8 +13,6 @@ public class GparamData : IDisposable
 {
     public ProjectEntry Project;
 
-    public FileDictionary GparamFiles = new();
-
     public GparamBank PrimaryBank;
     public GparamBank VanillaBank;
 
@@ -29,12 +27,6 @@ public class GparamData : IDisposable
     public async Task<bool> Setup()
     {
         await Task.Yield();
-
-        GparamFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/param/drawparam"))
-            .Where(e => e.Extension == "gparam")
-            .ToList();
 
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
         VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
@@ -185,7 +177,6 @@ public class GparamData : IDisposable
         PrimaryBank = null;
         VanillaBank = null;
 
-        GparamFiles = null;
         GparamInformation = null;
         GparamEnums = null;
     }

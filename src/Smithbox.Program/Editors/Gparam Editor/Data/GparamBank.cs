@@ -43,7 +43,7 @@ public class GparamBank : IDisposable
 
         Entries = new();
 
-        foreach (var entry in Project.Handler.GparamData.GparamFiles.Entries)
+        foreach (var entry in Project.Locator.GparamFiles.Entries)
         {
             Entries.Add(entry, null);
         }

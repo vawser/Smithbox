@@ -52,9 +52,9 @@ public class TextureBank : IDisposable
 
         Entries = new();
 
-        if (Project.Handler.TextureData.TextureFiles.Entries != null)
+        if (Project.Locator.TextureFiles.Entries != null)
         {
-            foreach (var entry in Project.Handler.TextureData.TextureFiles.Entries)
+            foreach (var entry in Project.Locator.TextureFiles.Entries)
             {
                 Entries.Add(entry, null);
             }
@@ -69,9 +69,9 @@ public class TextureBank : IDisposable
 
         PackedEntries = new();
 
-        if (Project.Handler.TextureData.TexturePackedFiles.Entries != null)
+        if (Project.Locator.TexturePackedFiles.Entries != null)
         {
-            foreach (var entry in Project.Handler.TextureData.TexturePackedFiles.Entries)
+            foreach (var entry in Project.Locator.TexturePackedFiles.Entries)
             {
                 PackedEntries.Add(entry, null);
             }
@@ -86,7 +86,7 @@ public class TextureBank : IDisposable
 
         ShoeboxEntries = new();
 
-        foreach (var entry in Project.Handler.TextureData.ShoeboxFiles.Entries)
+        foreach (var entry in Project.Locator.ShoeboxFiles.Entries)
         {
             var newShoeboxContainer = new ShoeboxLayoutContainer(Project, entry);
 

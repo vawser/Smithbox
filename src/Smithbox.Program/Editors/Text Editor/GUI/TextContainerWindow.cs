@@ -9,12 +9,12 @@ namespace StudioCore.Editors.TextEditor;
 /// <summary>
 /// Handles the file selection, viewing and editing.
 /// </summary>
-public class TextFileView
+public class TextContainerWindow
 {
     private TextEditorScreen Editor;
     private ProjectEntry Project;
 
-    public TextFileView(TextEditorScreen editor, ProjectEntry project)
+    public TextContainerWindow(TextEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;

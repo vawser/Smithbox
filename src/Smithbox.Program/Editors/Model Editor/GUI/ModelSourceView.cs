@@ -55,7 +55,7 @@ public class ModelSourceView
 
                     ImGui.BeginChild($"characterSourceList");
 
-                    DisplayModelSourceList(ModelListType.Character, Project.Handler.ModelData.ChrFiles);
+                    DisplayModelSourceList(ModelListType.Character, Project.Locator.ChrFiles);
 
                     ImGui.EndChild();
                     ImGui.EndTabItem();
@@ -73,7 +73,7 @@ public class ModelSourceView
 
                     ImGui.BeginChild($"assetSourceList");
 
-                    DisplayModelSourceList(ModelListType.Asset, Project.Handler.ModelData.AssetFiles);
+                    DisplayModelSourceList(ModelListType.Asset, Project.Locator.AssetFiles);
 
                     ImGui.EndChild();
                     ImGui.EndTabItem();
@@ -85,7 +85,7 @@ public class ModelSourceView
 
                     ImGui.BeginChild($"partsSourceList");
 
-                    DisplayModelSourceList(ModelListType.Part, Project.Handler.ModelData.PartFiles);
+                    DisplayModelSourceList(ModelListType.Part, Project.Locator.PartFiles);
 
                     ImGui.EndChild();
                     ImGui.EndTabItem();
@@ -97,7 +97,7 @@ public class ModelSourceView
 
                     ImGui.BeginChild($"mapPieceSourceList");
 
-                    DisplayModelSourceList(ModelListType.MapPiece, Project.Handler.ModelData.MapPieceFiles);
+                    DisplayModelSourceList(ModelListType.MapPiece, Project.Locator.MapPieceFiles);
 
                     ImGui.EndChild();
                     ImGui.EndTabItem();

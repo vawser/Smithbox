@@ -37,7 +37,7 @@ public class LightAtlasBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.Handler.MapData.LightAtlasFiles.Entries)
+        foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
         {
             var fileData = Project.VFS.FS.ReadFile(entry.Path);
 
@@ -82,7 +82,7 @@ public class LightAtlasBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.Handler.MapData.LightAtlasFiles.Entries)
+        foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
         {
             // File will be: m30_00_00_00_0001, so we match loosely
             if (!entry.Filename.Contains(map.Name))

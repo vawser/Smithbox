@@ -784,7 +784,7 @@ public class MapEditorScreen : EditorScreen
                 MessageBoxIcon.Error);
             if (result == DialogResult.Yes)
             {
-                foreach (var entry in Project.Handler.MapData.MapFiles.Entries)
+                foreach (var entry in Project.Locator.MapFiles.Entries)
                 {
                     var currentContainer = Selection.GetMapContainerFromMapID(entry.Filename);
 

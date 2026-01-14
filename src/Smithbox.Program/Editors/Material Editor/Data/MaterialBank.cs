@@ -35,7 +35,7 @@ public class MaterialBank : IDisposable
 
     public async Task<bool> Setup()
     {
-        var mtdTasks = Project.Handler.MaterialData.MTD_Files.Entries.Select(async entry =>
+        var mtdTasks = Project.Locator.MTD_Files.Entries.Select(async entry =>
         {
             var wrapper = new MTDWrapper(Project, entry, TargetFS);
             if (await wrapper.Load())
@@ -49,7 +49,7 @@ public class MaterialBank : IDisposable
             }
         });
 
-        var matbinTasks = Project.Handler.MaterialData.MATBIN_Files.Entries.Select(async entry =>
+        var matbinTasks = Project.Locator.MATBIN_Files.Entries.Select(async entry =>
         {
             var wrapper = new MATBINWrapper(Project, entry, TargetFS);
             if (await wrapper.Load())

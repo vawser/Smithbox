@@ -56,30 +56,35 @@
     ],
     "Containers": [
         {
+            "OrderID": 1,
             "FileName": "item_dlc1.msgbnd.dcx",
             "ContainerName": "Item",
             "VariantName": "DLC1",
             "DisplayName": "Item"
         },
         {
+            "OrderID": 2,
             "FileName": "item_dlc2.msgbnd.dcx",
             "ContainerName": "Item",
             "VariantName": "DLC2",
             "DisplayName": "Item"
         },
         {
+            "OrderID": 3,
             "FileName": "menu_dlc1.msgbnd.dcx",
             "ContainerName": "Menu",
             "VariantName": "DLC1",
             "DisplayName": "Menu"
         },
         {
+            "OrderID": 4,
             "FileName": "menu_dlc2.msgbnd.dcx",
             "ContainerName": "Menu",
             "VariantName": "DLC2",
             "DisplayName": "Menu"
         },
         {
+            "OrderID": 5,
             "FileName": "ngword.msgbnd.dcx",
             "ContainerName": "Blocked Words",
             "VariantName": "Stock",

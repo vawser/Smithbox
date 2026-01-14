@@ -139,7 +139,7 @@ public class HavokNavmeshBank
         }
         else
         {
-            var entry = Project.Handler.MapData.NavmeshFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
+            var entry = Project.Locator.NavmeshFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
             if (entry != null)
             {
                 try
@@ -176,7 +176,7 @@ public class HavokNavmeshBank
         if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             return;
 
-        foreach (var entry in Project.Handler.MapData.NavmeshFiles.Entries)
+        foreach (var entry in Project.Locator.NavmeshFiles.Entries)
         {
             if (entry.Filename != map.Name)
                 continue;

@@ -64,18 +64,21 @@
     ],
     "Containers": [
         {
+            "OrderID": 1,
             "FileName": "item_dlc01.msgbnd.dcx",
             "ContainerName": "Item",
             "VariantName": "DLC1",
             "DisplayName": "Item"
         },
         {
+            "OrderID": 2,
             "FileName": "menu_dlc01.msgbnd.dcx",
             "ContainerName": "Menu",
             "VariantName": "DLC1",
             "DisplayName": "Menu"
         },
         {
+            "OrderID": 3,
             "FileName": "ngword.msgbnd.dcx",
             "ContainerName": "Blocked Words",
             "VariantName": "Stock",

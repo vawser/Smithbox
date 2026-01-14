@@ -34,7 +34,7 @@ public class TextBank : IDisposable
         var tasks = new List<Task>();
 
         // msgbnd
-        foreach (var entry in Project.Handler.TextData.FmgFiles.Entries)
+        foreach (var entry in Project.Locator.TextFiles.Entries)
         {
             if (entry.Extension != "msgbnd")
                 continue;
@@ -43,7 +43,7 @@ public class TextBank : IDisposable
         }
 
         // fmg
-        foreach (var entry in Project.Handler.TextData.FmgFiles.Entries)
+        foreach (var entry in Project.Locator.TextFiles.Entries)
         {
             if (entry.Extension != "fmg")
                 continue;

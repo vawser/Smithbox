@@ -31,7 +31,7 @@ public class MapBank : IDisposable
     {
         await Task.Yield();
         
-        foreach(var entry in Project.Handler.MapData.MapFiles.Entries)
+        foreach(var entry in Project.Locator.MapFiles.Entries)
         {
             var newMapEntry = new MapWrapper(Project, entry, TargetFS);
             Maps.Add(entry, newMapEntry);

@@ -98,7 +98,7 @@ public class ModelInstanceFinder
                 targetFS = Editor.Project.VFS.FS;
             }
 
-            var maps = Editor.Project.Handler.MapData.MapFiles;
+            var maps = Editor.Project.Locator.MapFiles;
 
             switch (Editor.Project.Descriptor.ProjectType)
             {

@@ -64,6 +64,7 @@
     ],
     "Containers": [
         {
+            "OrderID": 1,
             "FileName": "item.msgbnd.dcx",
             "ContainerName": "Item",
             "VariantName": "Stock",
@@ -71,6 +72,7 @@
             "Obsolete": true
         },
         {
+            "OrderID": 2,
             "FileName": "item_dlc01.msgbnd.dcx",
             "ContainerName": "Item",
             "VariantName": "DLC1",
@@ -78,12 +80,14 @@
             "Obsolete": true
         },
         {
+            "OrderID": 3,
             "FileName": "item_dlc02.msgbnd.dcx",
             "ContainerName": "Item",
             "VariantName": "DLC2",
             "DisplayName": "Item"
         },
         {
+            "OrderID": 4,
             "FileName": "menu.msgbnd.dcx",
             "ContainerName": "Menu",
             "VariantName": "Stock",
@@ -91,6 +95,7 @@
             "Obsolete": true
         },
         {
+            "OrderID": 5,
             "FileName": "menu_dlc01.msgbnd.dcx",
             "ContainerName": "Menu",
             "VariantName": "DLC1",
@@ -98,12 +103,14 @@
             "Obsolete": true
         },
         {
+            "OrderID": 6,
             "FileName": "menu_dlc02.msgbnd.dcx",
             "ContainerName": "Menu",
             "VariantName": "DLC2",
             "DisplayName": "Menu"
         },
         {
+            "OrderID": 7,
             "FileName": "ngword.msgbnd.dcx",
             "ContainerName": "Blocked Words",
             "VariantName": "Stock",

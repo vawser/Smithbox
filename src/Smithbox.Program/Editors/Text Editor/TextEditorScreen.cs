@@ -24,10 +24,10 @@ public class TextEditorScreen : EditorScreen
 
     public TextCommandQueue CommandQueue;
 
-    public TextFileView FileView;
-    public TextFmgView FmgView;
-    public TextFmgEntryView FmgEntryView;
-    public TextFmgEntryPropertyEditor FmgEntryPropertyEditor;
+    public TextContainerWindow FileView;
+    public TextFileWindow FmgView;
+    public TextEntryWindow FmgEntryView;
+    public TextContentsWindow FmgEntryPropertyEditor;
     public TextNewEntryCreationModal EntryCreationModal;
     public TextExporterModal TextExportModal;
     public TextDuplicatePopup TextDuplicatePopup;
@@ -53,10 +53,10 @@ public class TextEditorScreen : EditorScreen
         DifferenceManager = new TextDifferenceManager(this, Project);
         NamingTemplateManager = new TextNamingTemplateManager(this, Project);
 
-        FileView = new TextFileView(this, Project);
-        FmgView = new TextFmgView(this, Project);
-        FmgEntryView = new TextFmgEntryView(this, Project);
-        FmgEntryPropertyEditor = new TextFmgEntryPropertyEditor(this, Project);
+        FileView = new TextContainerWindow(this, Project);
+        FmgView = new TextFileWindow(this, Project);
+        FmgEntryView = new TextEntryWindow(this, Project);
+        FmgEntryPropertyEditor = new TextContentsWindow(this, Project);
         ToolView = new TextToolView(this, Project);
 
         EntryCreationModal = new TextNewEntryCreationModal(this, Project);

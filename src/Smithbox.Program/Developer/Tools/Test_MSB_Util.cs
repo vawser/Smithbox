@@ -13,7 +13,7 @@ public static class Test_MSB_Util
     {
         var mismatches = new List<MismatchData>();
 
-        var maps = curProject.Handler.MapData.MapFiles.Entries;
+        var maps = curProject.Locator.MapFiles.Entries;
 
         var ouputDir = Path.Combine(curProject.Descriptor.ProjectPath, ".tests", "msb-mismatches");
 
@@ -107,7 +107,7 @@ public static class Test_MSB_Util
     {
         var mismatches = new List<MismatchData>();
 
-        var lights = curProject.Handler.MapData.LightFiles.Entries;
+        var lights = curProject.Locator.LightFiles.Entries;
 
         var ouputDir = Path.Combine(curProject.Descriptor.ProjectPath, ".tests", "btl-mismatches");
 
@@ -167,7 +167,7 @@ public static class Test_MSB_Util
     {
         var mismatches = new List<MismatchData>();
 
-        var nvaFiles = curProject.Handler.MapData.NavmeshFiles.Entries;
+        var nvaFiles = curProject.Locator.NavmeshFiles.Entries;
 
         var ouputDir = Path.Combine(curProject.Descriptor.ProjectPath, ".tests", "nva-mismatches");
 

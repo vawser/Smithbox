@@ -39,7 +39,7 @@ public class ModelBank : IDisposable
         await Task.Yield();
 
         // Map Pieces
-        foreach (var entry in Project.Handler.ModelData.MapPieceFiles.Entries)
+        foreach (var entry in Project.Locator.MapPieceFiles.Entries)
         {
             var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
             newEntry.DeriveMapID();
@@ -52,7 +52,7 @@ public class ModelBank : IDisposable
         }
 
         // Characters
-        foreach (var entry in Project.Handler.ModelData.ChrFiles.Entries)
+        foreach (var entry in Project.Locator.ChrFiles.Entries)
         {
             var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
 
@@ -64,7 +64,7 @@ public class ModelBank : IDisposable
         }
 
         // Assets
-        foreach (var entry in Project.Handler.ModelData.AssetFiles.Entries)
+        foreach (var entry in Project.Locator.AssetFiles.Entries)
         {
             var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
 
@@ -76,7 +76,7 @@ public class ModelBank : IDisposable
         }
 
         // Parts
-        foreach (var entry in Project.Handler.ModelData.PartFiles.Entries)
+        foreach (var entry in Project.Locator.PartFiles.Entries)
         {
             var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
 
@@ -88,7 +88,7 @@ public class ModelBank : IDisposable
         }
 
         // Collisions
-        foreach (var entry in Project.Handler.ModelData.CollisionFiles.Entries)
+        foreach (var entry in Project.Locator.CollisionFiles.Entries)
         {
             var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
 

@@ -56,12 +56,14 @@
     ],
     "Containers": [
         {
+            "OrderID": 1,
             "FileName": "item.msgbnd",
             "ContainerName": "Item",
             "VariantName": "Stock",
             "DisplayName": "Item"
         },
         {
+            "OrderID": 2,
             "FileName": "menu.msgbnd",
             "ContainerName": "Menu",
             "VariantName": "Stock",

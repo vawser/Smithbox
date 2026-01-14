@@ -295,7 +295,7 @@ public class Universe
     {
         if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            foreach (var entry in Editor.Project.Handler.MapData.DS2_LightFiles.Entries)
+            foreach (var entry in Editor.Project.Locator.DS2_LightFiles.Entries)
             {
                 if (entry.Filename.Contains(map.Name))
                 {
@@ -309,7 +309,7 @@ public class Universe
         }
         else
         {
-            foreach (var entry in Editor.Project.Handler.MapData.LightFiles.Entries)
+            foreach (var entry in Editor.Project.Locator.LightFiles.Entries)
             {
                 if (entry.Filename.Contains(map.Name))
                 {
@@ -401,7 +401,7 @@ public class Universe
         {
             try
             {
-                var curEntry = Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
+                var curEntry = Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
                 var mapData = (Memory<byte>)Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
 
                 IMsb msb;
@@ -1009,10 +1009,10 @@ public class Universe
     /// </summary>
     public void SaveBTL(MapEditorScreen editor, MapContainer map)
     {
-        var fileEntries = Editor.Project.Handler.MapData.LightFiles.Entries;
+        var fileEntries = Editor.Project.Locator.LightFiles.Entries;
 
         if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-            fileEntries = Editor.Project.Handler.MapData.DS2_LightFiles.Entries;
+            fileEntries = Editor.Project.Locator.DS2_LightFiles.Entries;
                 
         foreach (var entry in fileEntries)
         {

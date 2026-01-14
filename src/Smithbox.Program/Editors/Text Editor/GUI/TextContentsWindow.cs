@@ -10,12 +10,12 @@ namespace StudioCore.Editors.TextEditor;
 /// <summary>
 /// Handles the fmg entry editing
 /// </summary>
-public class TextFmgEntryPropertyEditor
+public class TextContentsWindow
 {
     private TextEditorScreen Editor;
     private ProjectEntry Project;
 
-    public TextFmgEntryPropertyEditor(TextEditorScreen editor, ProjectEntry project)
+    public TextContentsWindow(TextEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;

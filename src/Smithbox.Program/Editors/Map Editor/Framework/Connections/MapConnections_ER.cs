@@ -87,7 +87,7 @@ internal class MapConnections_ER
         string mapid,
         List<byte[]> connectColMaps = null)
     {
-        var allMapIds = editor.Project.Handler.MapData.MapFiles.Entries.Select(e => e.Filename).ToList();
+        var allMapIds = editor.Project.Locator.MapFiles.Entries.Select(e => e.Filename).ToList();
 
         connectColMaps ??= new List<byte[]>();
         SortedDictionary<string, MapConnectionRelationType> relations = new();

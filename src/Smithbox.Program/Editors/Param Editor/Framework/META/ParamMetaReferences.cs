@@ -813,7 +813,7 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapFileEntry = editor.Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
                     var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
@@ -905,7 +905,7 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapFileEntry = editor.Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
                     var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
@@ -1004,7 +1004,7 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapFileEntry = editor.Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
                     var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
@@ -1094,7 +1094,7 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapFileEntry = editor.Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
                     var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
@@ -1189,7 +1189,7 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapFileEntry = editor.Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
                     var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
@@ -1270,7 +1270,7 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapFileEntry = editor.Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
                     var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {
@@ -1366,7 +1366,7 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
 
-                    var mapFileEntry = editor.Project.Handler.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    var mapFileEntry = editor.Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
                     var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
                     if (mapData != null)
                     {

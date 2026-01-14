@@ -27,17 +27,6 @@ public class MapData : IDisposable
     public MsbMeta Meta;
     public EntitySelectionGroupList MapObjectSelections;
 
-    public FileDictionary MapFiles = new();
-    public FileDictionary LightFiles = new();
-    public FileDictionary DS2_LightFiles = new();
-    public FileDictionary NavmeshFiles = new();
-    public FileDictionary CollisionFiles = new();
-
-    public FileDictionary AutoInvadeBinders = new();
-
-    public FileDictionary LightAtlasFiles = new();
-    public FileDictionary LightProbeFiles = new();
-
     public Dictionary<string, MapObjectNameMapEntry> MapObjectNameLists = new();
     public FormatResource MsbInformation;
     public FormatEnum MsbEnums;
@@ -52,8 +41,6 @@ public class MapData : IDisposable
     public async Task<bool> Setup()
     {
         await Task.Yield();
-
-        SetupFileDictionaries();
 
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
         VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
@@ -124,56 +111,6 @@ public class MapData : IDisposable
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
-    }
-
-    public void SetupFileDictionaries()
-    {
-        // MSB
-        MapFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map") && !e.Folder.Contains("autoroute"))
-            .Where(e => e.Extension == "msb")
-            .ToList();
-
-        // BTL
-        LightFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "btl")
-            .ToList();
-
-        DS2_LightFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "gibhd")
-            .ToList();
-
-        // NVA
-        NavmeshFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "nva")
-            .ToList();
-
-        // Collision
-        CollisionFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "hkxbhd")
-            .ToList();
-
-        // AutoInvade
-        AutoInvadeBinders.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/other"))
-            .Where(e => e.Extension == "aipbnd")
-            .ToList();
-
-        // Light Atlases
-        LightAtlasFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "btab")
-            .ToList();
-
-        // Light Probes
-        LightProbeFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "btpb")
-            .ToList();
     }
 
     public async Task<bool> SetupAuxBank(ProjectEntry targetProject, bool reloadProject)
@@ -557,15 +494,6 @@ public class MapData : IDisposable
         MsbEnums = null;
         MsbMasks = null;
         MapSpawnStates = null;
-
-        MapFiles = null;
-        LightFiles = null;
-        DS2_LightFiles = null;
-        NavmeshFiles = null;
-        CollisionFiles = null;
-        AutoInvadeBinders = null;
-        LightAtlasFiles = null;
-        LightProbeFiles = null;
     }
     #endregion
 }

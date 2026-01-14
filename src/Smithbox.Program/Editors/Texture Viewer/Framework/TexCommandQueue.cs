@@ -36,7 +36,7 @@ public class TexCommandQueue
 
     public void HandleView(string filename, string textureName)
     {
-        var targetFile = Project.Handler.TextureData.TextureFiles.Entries.FirstOrDefault(e => e.Filename == filename);
+        var targetFile = Project.Locator.TextureFiles.Entries.FirstOrDefault(e => e.Filename == filename);
 
         if (targetFile == null)
             return;

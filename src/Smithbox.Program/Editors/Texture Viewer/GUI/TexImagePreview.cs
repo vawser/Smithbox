@@ -64,7 +64,7 @@ public class TexImagePreview : IResourceEventListener
         // If icon texture resource doesn't exist yet, load it
         if (!LoadedResources.ContainsKey(resourceKey))
         {
-            var targetFile = Project.Handler.TextureData.TextureFiles.Entries.FirstOrDefault(e => e.Filename == iconEntry.File);
+            var targetFile = Project.Locator.TextureFiles.Entries.FirstOrDefault(e => e.Filename == iconEntry.File);
 
             if(targetFile == null)
                 return false;
@@ -243,10 +243,10 @@ public class TexImagePreview : IResourceEventListener
 
     public SubTexture GetMatchingSubTexture(string currentTextureName, string imageIndex, string namePrepend)
     {
-        if (Editor.Project.Handler.TextureData.ShoeboxFiles == null)
+        if (Editor.Project.Locator.ShoeboxFiles == null)
             return null;
 
-        if (Editor.Project.Handler.TextureData.ShoeboxFiles.Entries == null)
+        if (Editor.Project.Locator.ShoeboxFiles.Entries == null)
             return null;
 
         var shoeboxEntry = Editor.Project.Handler.TextureData.PrimaryBank.ShoeboxEntries.FirstOrDefault();
