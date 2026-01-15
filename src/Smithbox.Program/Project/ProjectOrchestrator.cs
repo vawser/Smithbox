@@ -485,7 +485,8 @@ public class ProjectOrchestrator : IDisposable
         if (SelectedProject == null)
             return;
 
-        SelectedProject.EditorResized(window, device);
+        if (SelectedProject.Initialized)
+            SelectedProject.EditorResized(window, device);
     }
 
     public void Draw(GraphicsDevice device, CommandList cl)
@@ -493,7 +494,8 @@ public class ProjectOrchestrator : IDisposable
         if (SelectedProject == null)
             return;
 
-        SelectedProject.Draw(device, cl);
+        if(SelectedProject.Initialized)
+            SelectedProject.Draw(device, cl);
     }
 
     public void Exit()

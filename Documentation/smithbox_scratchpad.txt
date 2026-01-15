@@ -1,5 +1,7 @@
 #---------------------
 # TODO 
 #---------------------
-- Implement lazy-loading for FMGs (copy Foundry impl) and Materials (will need tying into the resource manager stuff)
-- Update the code structuring in Param Editor to better match the Foundry implementation
+- Update the code structuring in Param Editor to match the Foundry implementation
+- Implement Views for Text Editor
+- Implement FMG Descriptor pattern for Text Editor
+
