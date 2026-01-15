@@ -15,7 +15,7 @@ public class ProjectCreationMenu
 
     public ProjectOrchestrator Orchestrator;
 
-    public ProjectEntry Project;
+    public ProjectEntry Project = new();
     public ProjectDescriptor Descriptor = new();
 
     private string SteamExecutable_DS1 = "";
@@ -27,6 +27,7 @@ public class ProjectCreationMenu
     private string SteamExecutable_ER = "";
     private string SteamExecutable_AC6 = "";
     private string SteamExecutable_NR = "";
+    private bool SteamPathsInitialized = false;
 
     public ProjectCreationMenu(ProjectOrchestrator orchestrator)
     {
@@ -37,7 +38,11 @@ public class ProjectCreationMenu
     {
         if (IsDisplayed)
         {
-            FindSteamExecutables();
+            if (!SteamPathsInitialized)
+            {
+                FindSteamExecutables();
+                SteamPathsInitialized = true;
+            }
 
             if (!InitialLayout)
             {
@@ -331,6 +336,15 @@ public class ProjectCreationMenu
                     IsEditMode = false;
                     ProjectUtils.DeleteProject(Project);
                 }
+
+                ImGui.SameLine();
+
+                // Cancel
+                if (ImGui.Button("Cancel##cancelProjectCreation"))
+                {
+                    IsDisplayed = false;
+                    IsEditMode = false;
+                }
             }
             else
             {
@@ -352,15 +366,15 @@ public class ProjectCreationMenu
                     }
                     ImGui.EndDisabled();
                 }
-            }
 
-            ImGui.SameLine();
+                ImGui.SameLine();
 
-            // Cancel
-            if (ImGui.Button("Cancel##cancelProjectCreation"))
-            {
-                IsDisplayed = false;
-                IsEditMode = false;
+                // Cancel
+                if (ImGui.Button("Cancel##cancelProjectCreation"))
+                {
+                    IsDisplayed = false;
+                    IsEditMode = false;
+                }
             }
         }
     }

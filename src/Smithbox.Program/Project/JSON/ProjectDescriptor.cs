@@ -9,23 +9,23 @@ namespace StudioCore.Application;
 
 public class ProjectDescriptor
 {
-    public Guid ProjectGUID;
-    public string ProjectName;
-    public string ProjectPath;
-    public string DataPath;
-    public ProjectType ProjectType;
+    public Guid ProjectGUID = Guid.Empty;
+    public string ProjectName = "";
+    public string ProjectPath = "";
+    public string DataPath = "";
+    public ProjectType ProjectType = ProjectType.DS1;
 
-    public bool ImportedParamRowNames;
-    public bool AutoSelect;
+    public bool ImportedParamRowNames = false;
+    public bool AutoSelect = false;
 
-    public bool EnableMapEditor;
-    public bool EnableModelEditor;
-    public bool EnableTextEditor;
-    public bool EnableParamEditor;
-    public bool EnableGparamEditor;
-    public bool EnableMaterialEditor;
-    public bool EnableTextureViewer;
-    public bool EnableFileBrowser;
+    public bool EnableMapEditor = false;
+    public bool EnableModelEditor = false;
+    public bool EnableTextEditor = false;
+    public bool EnableParamEditor = false;
+    public bool EnableGparamEditor = false;
+    public bool EnableMaterialEditor = false;
+    public bool EnableTextureViewer = false;
+    public bool EnableFileBrowser = false;
 
     public string FolderTag = "";
 
