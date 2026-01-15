@@ -706,6 +706,23 @@ public class ProjectOrchestrator : IDisposable
         }
     }
 
+    public async Task<bool> LoadAuxiliaryProject(ProjectEntry targetProject, ProjectInitType initType, bool reloadProject)
+    {
+        if (reloadProject)
+        {
+            await targetProject.Init(ReportProgress, true, initType);
+        }
+        else
+        {
+            if (!targetProject.Initialized)
+            {
+                await targetProject.Init(ReportProgress, true, initType);
+            }
+        }
+
+        return true;
+    }
+
     public void UnloadProject(ProjectEntry project)
     {
         if (SelectedProject == project)

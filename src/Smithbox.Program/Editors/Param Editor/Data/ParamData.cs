@@ -273,19 +273,7 @@ public class ParamData : IDisposable
 
     public async Task<bool> SetupAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
-        await Task.Yield();
-
-        if (reloadProject)
-        {
-            await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.ParamEditorOnly);
-        }
-        else
-        {
-            if (!targetProject.Initialized)
-            {
-                await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.ParamEditorOnly);
-            }
-        }
+        await Smithbox.Orchestrator.LoadAuxiliaryProject(targetProject, ProjectInitType.ParamEditorOnly, reloadProject);
 
         // Pass in the target project's filesystem,
         // so we fill it with the param data from that project

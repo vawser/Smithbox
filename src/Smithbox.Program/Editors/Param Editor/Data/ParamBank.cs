@@ -270,7 +270,7 @@ public class ParamBank : IDisposable
             catch (Exception e)
             {
                 var name = f.Name.Split("\\").Last();
-                TaskLogs.AddError($"[Param Editor] Could not apply ParamDef for {name}", e);
+                TaskLogs.AddError($"[Param Editor] Could not apply ParamDef for {name} in {Name}", e);
             }
         }
     }

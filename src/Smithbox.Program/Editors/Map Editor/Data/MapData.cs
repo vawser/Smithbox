@@ -115,19 +115,7 @@ public class MapData : IDisposable
 
     public async Task<bool> SetupAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
-        await Task.Yield();
-
-        if (reloadProject)
-        {
-            await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.MapEditorOnly);
-        }
-        else
-        {
-            if (!targetProject.Initialized)
-            {
-                await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.MapEditorOnly);
-            }
-        }
+        await Smithbox.Orchestrator.LoadAuxiliaryProject(targetProject, ProjectInitType.MapEditorOnly, reloadProject);
 
         var newAuxBank = new MapBank(targetProject.Descriptor.ProjectName, Project, targetProject.VFS.FS);
 

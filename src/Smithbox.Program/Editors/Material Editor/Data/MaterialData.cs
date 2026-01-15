@@ -18,7 +18,10 @@ public class MaterialData : IDisposable
     public ProjectEntry Project;
 
     public MaterialBank PrimaryBank;
-    public MaterialBank VanillaBank;
+
+    // Disable for now to reduce loading time
+    // TODO: Add toggle if the Material Editor reaches a point where it can make use of the Vanilla Bank
+    //public MaterialBank VanillaBank;
 
     public MaterialDisplayConfiguration MaterialDisplayConfiguration;
 
@@ -32,7 +35,7 @@ public class MaterialData : IDisposable
         await Task.Yield();
 
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
-        VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
+        //VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
 
         // Material Display Configuration
         Task<bool> matDispTask = SetupMaterialDisplayConfiguration();
@@ -57,13 +60,13 @@ public class MaterialData : IDisposable
         }
 
         // Vanilla Bank
-        Task<bool> vanillaBankTask = VanillaBank.Setup();
-        bool vanillaBankTaskResult = await vanillaBankTask;
+        //Task<bool> vanillaBankTask = VanillaBank.Setup();
+        //bool vanillaBankTaskResult = await vanillaBankTask;
 
-        if (!vanillaBankTaskResult)
-        {
-            TaskLogs.AddError($"[Material Editor] Failed to fully setup Vanilla Bank.");
-        }
+        //if (!vanillaBankTaskResult)
+        //{
+        //    TaskLogs.AddError($"[Material Editor] Failed to fully setup Vanilla Bank.");
+        //}
 
         return true;
     }
@@ -120,10 +123,10 @@ public class MaterialData : IDisposable
     public void Dispose()
     {
         PrimaryBank?.Dispose();
-        VanillaBank?.Dispose();
+        //VanillaBank?.Dispose();
 
         PrimaryBank = null;
-        VanillaBank = null;
+        //VanillaBank = null;
 
         MaterialDisplayConfiguration = null;
     }

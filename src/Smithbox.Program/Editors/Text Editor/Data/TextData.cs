@@ -69,19 +69,7 @@ public class TextData : IDisposable
 
     public async Task<bool> LoadAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
-        await Task.Yield();
-
-        if (reloadProject)
-        {
-            await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.TextEditorOnly);
-        }
-        else
-        {
-            if (!targetProject.Initialized)
-            {
-                await targetProject.Init(Smithbox.Orchestrator.ReportProgress, true, ProjectInitType.TextEditorOnly);
-            }
-        }
+        await Smithbox.Orchestrator.LoadAuxiliaryProject(targetProject, ProjectInitType.TextEditorOnly, reloadProject);
 
         var newAuxBank = new TextBank($"{targetProject.Descriptor.ProjectName}",Project, targetProject.VFS.FS);
 
