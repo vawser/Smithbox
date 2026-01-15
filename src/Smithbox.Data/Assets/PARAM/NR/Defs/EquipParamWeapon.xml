@@ -394,9 +394,10 @@
       <Maximum>999</Maximum>
       <SortID>3200</SortID>
     </Field>
-    <Field Def="u16 ultChargea:2"/>
-    <Field Def="u16 ultChargeb:10"/>
-    <Field Def="u16 unknown_ult:4" />
+    <Field Def="u16 ultChargeA:3"/>
+    <Field Def="u16 ultChargeB:5"/>
+    <Field Def="u16 ultChargeExponent:7" />
+    <Field Def="u16 ultChargeSign:1"/>
     <Field Def="u16 attackThrowEscape">
       <DisplayName>投げ抜け攻撃力基本値</DisplayName>
       <Description>投げ抜け攻撃力の基本値</Description>
