@@ -1,5 +1,5 @@
 {
-  "MaxVersion": "1_03_3_0029L",
+  "MaxVersion": "1_03_4_0000L",
   "RegulationEntries": [
     {
       "Version": "1.01.1.0019",
@@ -60,6 +60,10 @@
     {
       "Version": "1.03.3.0029",
       "Folder": "1.03.3 (10330029)"
+    },
+    {
+      "Version": "1.03.4.0000",
+      "Folder": "1.03.4 (10340000)"
     }
   ],
   "UpgradeCommands": [
@@ -2442,6 +2446,26 @@
       "Version": "10320000",
       "Message": "1.03.2 - SpEffectParam",
       "Command": "param SpEffectParam: added: madnessInflictRate: = vanillafield madnessInflictRate"
+    },
+    {
+      "Version": "10340000",
+      "Message": "1.03.4 - Bullet",
+      "Command": "param Bullet: modified && !added: fh_unknown_1: = vanillafield fh_unknown_1"
+    },
+    {
+      "Version": "10340000",
+      "Message": "1.03.4 - Bullet",
+      "Command": "param Bullet: added: fh_unknown_1: = vanillafield fh_unknown_1"
+    },
+    {
+      "Version": "10340000",
+      "Message": "1.03.4 - Bullet",
+      "Command": "param Bullet: modified && !added: fh_unknown_padding: = vanillafield fh_unknown_padding"
+    },
+    {
+      "Version": "10340000",
+      "Message": "1.03.4 - Bullet",
+      "Command": "param Bullet: added: fh_unknown_padding: = vanillafield fh_unknown_padding"
     }
   ]
 }

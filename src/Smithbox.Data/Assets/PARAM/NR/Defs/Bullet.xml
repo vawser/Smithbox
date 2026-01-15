@@ -825,7 +825,6 @@
       <SortID>33500</SortID>
     </Field>
     
-    
     <Field Def="f32 unknown_1"/>
     <Field Def="f32 unknown_2"/>
     <Field Def="f32 unknown_3"/>
@@ -843,5 +842,11 @@
     <Field Def="f32 unknown_15"/>
     <Field Def="f32 unknown_16"/>
     <Field Def="f32 unknown_17"/>
+    
+    <Field Def="u8 fh_unknown_1" FirstVersion="10340000" />
+    <Field Def="u8 fh_unknown_2" FirstVersion="10340000" />
+    <Field Def="u8 fh_unknown_3" FirstVersion="10340000" />
+    <Field Def="u8 fh_unknown_4" FirstVersion="10340000" />
+    <Field Def="dummy8 fh_unknown_padding[12]" FirstVersion="10340000" />
   </Fields>
 </PARAMDEF>
