@@ -204,24 +204,26 @@
     Refs="SpEffectParam" />
 	
 	<tranceRemoveEffectId
-	AltName="Trance Remove Effect ID" 
+	AltName="Trance Effect Remove ID - Upon Duration End" 
     Refs="SpEffectParam" />
 	
 	<fh_unknown_22
 	Refs="BehaviorParam_PC" />
 	
 	<tranceSuccessiveThreshold
-	AltName="Trance Successive Atk Threshold" />
+	AltName="Trance Attack Boost Buff Threshold 1"
+	Wiki="The ult charge threshold to trigger attack boost buff, using original charge value from the attacks." />
 	
 	<tranceSuccessiveThreshold_unk
-	AltName="Trance Successive Unknown Threshold" />
+	AltName="Trance Attack Boost Buff Threshold 2"
+	Wiki="The second ult charge threshold, activated but no corresponding buff." />
 	
 	<tranceEnhanceEffectId
 	AltName="Enhanced Trance Effect ID" 
     Refs="SpEffectParam" />
 	
 	<tranceEnhanceRemoveEffectId
-	AltName="Enhanced Trance Remove Effect ID" 
+	AltName="Enhanced Trance Remove Effect ID - Upon Duration End" 
     Refs="SpEffectParam" />
 	
 	<tranceBuffEffectId
@@ -229,20 +231,27 @@
     Refs="SpEffectParam" />
 	
 	<tranceRemoveBuffEffectId
-	AltName="Trance Remove Buff Effect ID" 
+	AltName="Trance Remove Buff Effect ID - Upon Duration End" 
     Refs="SpEffectParam" />
 	
 	<tranceSuccessiveEffectId
-	AltName="Trance Successive Atk Effect ID" 
+	AltName="Trance Attack Boost Buff Effect ID" 
+	Wiki="Effect ID corresponding to trance threshold 1"
     Refs="SpEffectParam" />
 	
-	<fh_unknown_31
+	<tranceRemoveBuffEffectId1
+	AltName="Trance Remove Buff Effect ID - Threshold 1"
+	Wiki="The additional remove effect triggered after exceeding Threshold 1, at the end of the trance duration."
     Refs="SpEffectParam" />
 	
-	<fh_unknown_32
+	<tranceSuccessiveEffectId2
+	AltName="Trance Attack Boost Buff Effect ID 2"
+	Wiki="Effect ID corresponding to trance threshold 2"
     Refs="SpEffectParam" />
 	
-	<fh_unknown_33
+	<tranceRemoveBuffEffectId2
+	AltName="Trance Remove Buff Effect ID - Threshold 2"
+	Wiki="The additional remove effect triggered after exceeding Threshold 2, at the end of the trance duration."
     Refs="SpEffectParam" />
 	
 	<bagcraftXp_Level2_Dart
