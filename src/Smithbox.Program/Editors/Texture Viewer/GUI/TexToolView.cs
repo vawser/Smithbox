@@ -113,7 +113,7 @@ public class TexToolView
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            if (ImGui.MenuItem("Export Texture", InputManager.GetHint(InputAction.TextureViewer_Export_Texture)))
+            if (ImGui.MenuItem("Export Texture", InputManager.GetHint(KeybindID.TextureViewer_Export_Texture)))
             {
                 Editor.Tools.ExportTextureHandler();
             }

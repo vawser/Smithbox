@@ -26,7 +26,7 @@ public class RenderTypeAction
     {
         if (Editor.ViewportSelection.IsSelection())
         {
-            if (InputManager.IsPressed(InputAction.MapEditor_Cycle_Render_Type))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Cycle_Render_Type))
             {
                 ApplyRenderTypeToggle();
             }
@@ -46,7 +46,7 @@ public class RenderTypeAction
                 {
                     ApplyRenderTypeToggle();
                 }
-                UIHelper.Tooltip($"Toggles the rendering style for the current selection.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Cycle_Render_Type)}");
+                UIHelper.Tooltip($"Toggles the rendering style for the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Cycle_Render_Type)}");
             }
         }
     }
@@ -56,7 +56,7 @@ public class RenderTypeAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Toggle Render Type", InputManager.GetHint(InputAction.MapEditor_Cycle_Render_Type)))
+        if (ImGui.MenuItem("Toggle Render Type", InputManager.GetHint(KeybindID.MapEditor_Cycle_Render_Type)))
         {
             ApplyRenderTypeToggle();
         }

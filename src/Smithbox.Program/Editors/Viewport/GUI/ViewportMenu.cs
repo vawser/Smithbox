@@ -252,13 +252,13 @@ public class ViewportMenu
         {
             if (ImGui.BeginMenu("Mode"))
             {
-                if (ImGui.MenuItem("Translate", InputManager.GetHint(InputAction.Cycle_Gizmo_Translation_Mode)))
+                if (ImGui.MenuItem("Translate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Translation_Mode)))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Translate;
                 }
                 UIHelper.Tooltip($"Set the gizmo to Translation mode.");
 
-                if (ImGui.MenuItem("Rotate", InputManager.GetHint(InputAction.Cycle_Gizmo_Rotation_Mode)))
+                if (ImGui.MenuItem("Rotate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Rotation_Mode)))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Rotate;
                 }
@@ -269,13 +269,13 @@ public class ViewportMenu
 
             if (ImGui.BeginMenu("Space"))
             {
-                if (ImGui.MenuItem("Local", InputManager.GetHint(InputAction.Cycle_Gizmo_Space_Mode)))
+                if (ImGui.MenuItem("Local", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.Local;
                 }
                 UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
 
-                if (ImGui.MenuItem("World", InputManager.GetHint(InputAction.Cycle_Gizmo_Space_Mode)))
+                if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.World;
                 }
@@ -286,13 +286,13 @@ public class ViewportMenu
 
             if (ImGui.BeginMenu("Origin"))
             {
-                if (ImGui.MenuItem("World", InputManager.GetHint(InputAction.Cycle_Gizmo_Origin_Mode)))
+                if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.World;
                 }
                 UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
 
-                if (ImGui.MenuItem("Bounding Box", InputManager.GetHint(InputAction.Cycle_Gizmo_Origin_Mode)))
+                if (ImGui.MenuItem("Bounding Box", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
                 }

@@ -343,7 +343,7 @@ public class MapEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(InputAction.Save)}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
             }
@@ -479,7 +479,7 @@ public class MapEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)} / {InputManager.GetHint(InputAction.Undo_Repeat)}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -497,7 +497,7 @@ public class MapEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)} / {InputManager.GetHint(InputAction.Redo_Repeat)}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {

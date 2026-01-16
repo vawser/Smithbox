@@ -706,7 +706,7 @@ public class FieldDecorators
                     return false;
                 }
 
-                if (InputManager.IsPressed(InputAction.ParamEditor_RowList_Inherit_Referenced_Row_Name))
+                if (InputManager.IsPressed(KeybindID.ParamEditor_RowList_Inherit_Referenced_Row_Name))
                 {
                     List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(editor, bank, RefTypes, context, oldval);
 

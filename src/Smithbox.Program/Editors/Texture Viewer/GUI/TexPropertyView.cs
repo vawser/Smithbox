@@ -27,7 +27,7 @@ public class TexPropertyView
         FocusManager.SetFocus(EditorFocusContext.TextureViewer_Properties);
 
         UIHelper.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-        UIHelper.WrappedText($"Press {InputManager.GetHint(InputAction.TextureViewer_Reset_Zoom_Level)} to reset zoom level to 100%.");
+        UIHelper.WrappedText($"Press {InputManager.GetHint(KeybindID.TextureViewer_Reset_Zoom_Level)} to reset zoom level to 100%.");
 
         UIHelper.WrappedText($"");
         UIHelper.WrappedText($"Properties of {Editor.Selection.SelectedTextureKey}:");

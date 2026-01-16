@@ -214,7 +214,7 @@ public class ParamFieldView
         {
             if (FocusManager.IsFocus(EditorFocusContext.ParamEditor_FieldList))
             {
-                if (isActiveView && InputManager.IsPressed(InputAction.ParamEditor_Focus_Searchbar))
+                if (isActiveView && InputManager.IsPressed(KeybindID.ParamEditor_Focus_Searchbar))
                 {
                     ImGui.SetKeyboardFocusHere();
                 }
@@ -238,7 +238,7 @@ public class ParamFieldView
             ImGui.AlignTextToFramePadding();
             ImGui.InputText("##fieldSearch", ref propSearchString,
                 255);
-            UIHelper.Tooltip($"Search <{InputManager.GetHint(InputAction.ParamEditor_Focus_Searchbar)}>");
+            UIHelper.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
 
             if (ImGui.IsItemEdited())
             {

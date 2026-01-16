@@ -120,7 +120,7 @@ public class DisplayGroupTool
     public void HandleShortcuts(DrawGroup dg, uint[] sdrawgroups, uint[] sdispgroups, HashSet<Entity> sels)
     {
         // Show All
-        if (InputManager.IsPressed(InputAction.MapEditor_Show_All_Display_Groups))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Show_All_Display_Groups))
         {
             for (var i = 0; i < _dispGroupCount; i++)
             {
@@ -129,7 +129,7 @@ public class DisplayGroupTool
         }
 
         // Hide All
-        if (InputManager.IsPressed(InputAction.MapEditor_Hide_All_Display_Groups))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Hide_All_Display_Groups))
         {
             for (var i = 0; i < _dispGroupCount; i++)
             {
@@ -137,7 +137,7 @@ public class DisplayGroupTool
             }
         }
 
-        if (InputManager.IsPressed(InputAction.MapEditor_View_Display_Group) && sdispgroups != null)
+        if (InputManager.IsPressed(KeybindID.MapEditor_View_Display_Group) && sdispgroups != null)
         {
             for (var i = 0; i < _dispGroupCount; i++)
             {
@@ -145,7 +145,7 @@ public class DisplayGroupTool
             }
         }
 
-        if (InputManager.IsPressed(InputAction.MapEditor_View_Draw_Group) && sdispgroups != null)
+        if (InputManager.IsPressed(KeybindID.MapEditor_View_Draw_Group) && sdispgroups != null)
         {
             for (var i = 0; i < _dispGroupCount; i++)
             {
@@ -153,21 +153,21 @@ public class DisplayGroupTool
             }
         }
 
-        if (InputManager.IsPressed(InputAction.MapEditor_Apply_Display_Group) && sdispgroups != null)
+        if (InputManager.IsPressed(KeybindID.MapEditor_Apply_Display_Group) && sdispgroups != null)
         {
             IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
             ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
             Editor.EditorActionManager.ExecuteAction(action);
         }
 
-        if (InputManager.IsPressed(InputAction.MapEditor_Apply_Draw_Group) && sdispgroups != null)
+        if (InputManager.IsPressed(KeybindID.MapEditor_Apply_Draw_Group) && sdispgroups != null)
         {
             IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
             ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
             Editor.EditorActionManager.ExecuteAction(action);
         }
 
-        if (InputManager.IsPressed(InputAction.MapEditor_Select_Display_Group_Highlights))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Select_Display_Group_Highlights))
         {
             selectHighlightsOperation = true;
         }
@@ -185,7 +185,7 @@ public class DisplayGroupTool
                 dg.RenderGroups[i] = 0xFFFFFFFF;
             }
         }
-        UIHelper.Tooltip($"Show all display groups.\n{InputManager.GetHint(InputAction.MapEditor_Show_All_Display_Groups)}");
+        UIHelper.Tooltip($"Show all display groups.\n{InputManager.GetHint(KeybindID.MapEditor_Show_All_Display_Groups)}");
 
         ImGui.SameLine();
 
@@ -197,7 +197,7 @@ public class DisplayGroupTool
                 dg.RenderGroups[i] = 0;
             }
         }
-        UIHelper.Tooltip($"Hide all display groups.\n{InputManager.GetHint(InputAction.MapEditor_Hide_All_Display_Groups)}");
+        UIHelper.Tooltip($"Hide all display groups.\n{InputManager.GetHint(KeybindID.MapEditor_Hide_All_Display_Groups)}");
 
         // Get Display Group
         if (sdispgroups == null)
@@ -212,7 +212,7 @@ public class DisplayGroupTool
                 dg.RenderGroups[i] = sdispgroups[i];
             }
         }
-        UIHelper.Tooltip($"Get display group for current selection.\n{InputManager.GetHint(InputAction.MapEditor_View_Display_Group)}");
+        UIHelper.Tooltip($"Get display group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_View_Display_Group)}");
 
         ImGui.SameLine();
 
@@ -224,7 +224,7 @@ public class DisplayGroupTool
                 dg.RenderGroups[i] = sdrawgroups[i];
             }
         }
-        UIHelper.Tooltip($"Get draw group for current selection.\n{InputManager.GetHint(InputAction.MapEditor_View_Draw_Group)}");
+        UIHelper.Tooltip($"Get draw group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_View_Draw_Group)}");
 
         // Assign Display Group
         if (ImGui.Button($"Assign Display Group", DPI.StandardButtonSize) && sdispgroups != null)
@@ -233,7 +233,7 @@ public class DisplayGroupTool
             ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
             Editor.EditorActionManager.ExecuteAction(action);
         }
-        UIHelper.Tooltip($"Assign display group for current selection.\n{InputManager.GetHint(InputAction.MapEditor_Apply_Display_Group)}");
+        UIHelper.Tooltip($"Assign display group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_Apply_Display_Group)}");
 
         ImGui.SameLine();
 
@@ -244,7 +244,7 @@ public class DisplayGroupTool
             ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
             Editor.EditorActionManager.ExecuteAction(action);
         }
-        UIHelper.Tooltip($"Assign draw group for current selection.\n{InputManager.GetHint(InputAction.MapEditor_Apply_Draw_Group)}");
+        UIHelper.Tooltip($"Assign draw group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_Apply_Draw_Group)}");
 
         // Select Highlights
         if (sdispgroups == null)
@@ -261,7 +261,7 @@ public class DisplayGroupTool
         {
             selectHighlightsOperation = true;
         }
-        UIHelper.Tooltip($"Select highlighted. Right-click to highlight a checkbox within the table section.\n{InputManager.GetHint(InputAction.MapEditor_Select_Display_Group_Highlights)}");
+        UIHelper.Tooltip($"Select highlighted. Right-click to highlight a checkbox within the table section.\n{InputManager.GetHint(KeybindID.MapEditor_Select_Display_Group_Highlights)}");
 
         ImGui.SameLine();
 

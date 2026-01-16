@@ -147,7 +147,7 @@ public class MapListView : IActionEventHandler
                 {
                     Editor.WorldMapTool.DisplayMenuOption();
                 }
-                UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Toggle_World_Map_Menu)}");
+                UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
             }
 
             ImGui.EndMenuBar();

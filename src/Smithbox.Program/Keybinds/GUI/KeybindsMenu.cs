@@ -14,7 +14,7 @@ namespace StudioCore.Keybinds;
 
 public class KeybindsMenu
 {
-    private InputAction? _listeningAction;
+    private KeybindID? _listeningAction;
     private int _listeningIndex;
 
     public bool IsDisplayed = false;
@@ -35,8 +35,33 @@ public class KeybindsMenu
                 InitialLayout = true;
             }
 
-            if (ImGui.Begin("Shortcuts##keybindsMenu", ref IsDisplayed, UIHelper.GetPopupWindowFlags()))
+            if (ImGui.Begin("Shortcuts##keybindsMenu", ref IsDisplayed, UIHelper.GetEditorPopupWindowFlags()))
             {
+                ImGui.BeginMenuBar();
+
+                if(ImGui.BeginMenu("Options"))
+                {
+                    if(ImGui.MenuItem("Save"))
+                    {
+                        InputManager.Save();
+                        TaskLogs.AddLog("Shortcuts saved.");
+                    }
+
+                    if (ImGui.MenuItem("Revert All to Default"))
+                    {
+                        var dialog = PlatformUtils.Instance.MessageBox("Are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (dialog is DialogResult.Yes)
+                        {
+                            RevertAllToDefault();
+                        }
+                    }
+
+                    ImGui.EndMenu();
+                }
+
+                ImGui.EndMenuBar();
+
                 DrawSearchBar();
 
                 ImGui.BeginChild("shortcutSection");
@@ -48,6 +73,25 @@ public class KeybindsMenu
                 ListenForCombo();
 
                 ImGui.End();
+            }
+        }
+    }
+
+    private void RevertAllToDefault()
+    {
+        var grouped = InputManager.Bindings
+            .GroupBy(kv => KeybindMetadata.Category[kv.Key])
+            .OrderBy(g => g.Key);
+
+        foreach (var categoryGroup in grouped)
+        {
+            foreach (var (action, bindings) in categoryGroup)
+            {
+                for (int i = 0; i < bindings.Count; i++)
+                {
+                    var defaultBinding = InputManager._defaultBindings.Entries[action][i];
+                    bindings[i] = defaultBinding.Clone();
+                }
             }
         }
     }
@@ -69,8 +113,20 @@ public class KeybindsMenu
     private void DisplayRebindSection()
     {
         var grouped = InputManager.Bindings
-            .GroupBy(kv => InputActionMetadata.Category[kv.Key])
+            .GroupBy(kv => KeybindMetadata.Category[kv.Key])
             .OrderBy(g => g.Key);
+
+        float nameColumnWidth = 200;
+
+        // Get the maximum name width from all of the bindings
+        foreach (var categoryGroup in grouped)
+        {
+            var curWidth = GetMaxActionNameWidth(
+                categoryGroup.Select(kv => (kv.Key, kv.Value)).ToList());
+
+            if(curWidth > nameColumnWidth)
+                nameColumnWidth = curWidth; 
+        }
 
         foreach (var categoryGroup in grouped)
         {
@@ -89,24 +145,56 @@ public class KeybindsMenu
 
             if (ImGui.CollapsingHeader(categoryGroup.Key.GetDisplayName(), flags))
             {
-                if (ImGui.BeginTable($"KeybindTable_{categoryGroup.Key}", 2,
+                if (ImGui.BeginTable($"KeybindTable_{categoryGroup.Key}", 4,
                     ImGuiTableFlags.Borders |
                     ImGuiTableFlags.RowBg |
                     ImGuiTableFlags.Resizable))
                 {
-                    ImGui.TableSetupColumn("Action", ImGuiTableColumnFlags.WidthFixed, 200);
-                    ImGui.TableSetupColumn("Binding");
+                    ImGui.TableSetupColumn("##defaultAction", ImGuiTableColumnFlags.WidthFixed);
+                    ImGui.TableSetupColumn("Action", ImGuiTableColumnFlags.WidthFixed, nameColumnWidth);
+                    ImGui.TableSetupColumn("Binding", ImGuiTableColumnFlags.WidthFixed);
+                    ImGui.TableSetupColumn("Description");
                     ImGui.TableHeadersRow();
 
                     foreach (var (action, bindings) in filteredActions)
                     {
+                        var name = "Unassigned";
+                        var desc = "";
+
+                        var presentation = KeybindMetadata.Presentation[action];
+
                         ImGui.TableNextRow();
 
+                        // Default
                         ImGui.TableSetColumnIndex(0);
-                        ImGui.TextUnformatted(action.GetDisplayName());
+
+                        if (ImGui.Button($"{Icons.Refresh}##revert_{action}", DPI.IconButtonSize))
+                        {
+                            for (int i = 0; i < bindings.Count; i++)
+                            {
+                                var defaultBinding = InputManager._defaultBindings.Entries[action][i];
+                                bindings[i] = defaultBinding.Clone();
+                            }
+                        }
+
+                        if (presentation.Item1 != null)
+                        {
+                            name = presentation.Item1;
+                        }
+
+                        if (presentation.Item2 != null)
+                        {
+                            desc = presentation.Item2;
+                        }
 
                         ImGui.TableSetColumnIndex(1);
 
+                        // Name
+                        ImGui.TextUnformatted(name);
+
+                        ImGui.TableSetColumnIndex(2);
+
+                        // Keybind
                         for (int i = 0; i < bindings.Count; i++)
                         {
                             var b = bindings[i];
@@ -127,6 +215,11 @@ public class KeybindsMenu
 
                             ImGui.SameLine();
                         }
+
+                        // Description
+                        ImGui.TableSetColumnIndex(3);
+
+                        ImGui.TextUnformatted(desc);
                     }
 
                     ImGui.EndTable();
@@ -181,7 +274,8 @@ public class KeybindsMenu
         s += b.Key.ToString();
         return s;
     }
-    private bool PassesSearch(InputAction action, List<InputManager.KeyBinding> bindings)
+
+    private bool PassesSearch(KeybindID action, List<InputManager.KeyBinding> bindings)
     {
         if (string.IsNullOrWhiteSpace(_search))
             return true;
@@ -193,7 +287,21 @@ public class KeybindsMenu
             return true;
 
         // Category name
-        if (InputActionMetadata.Category[action]
+        if (KeybindMetadata.Category[action]
+            .ToString()
+            .ToLowerInvariant()
+            .Contains(term))
+            return true;
+
+        // Keybind Name
+        if (KeybindMetadata.Presentation[action].Item1
+            .ToString()
+            .ToLowerInvariant()
+            .Contains(term))
+            return true;
+
+        // Keybind Description
+        if (KeybindMetadata.Presentation[action].Item2
             .ToString()
             .ToLowerInvariant()
             .Contains(term))
@@ -207,5 +315,21 @@ public class KeybindsMenu
         }
 
         return false;
+    }
+    private float GetMaxActionNameWidth(List<(KeybindID action, List<InputManager.KeyBinding> bindings)> actions)
+    {
+        float maxWidth = 0f;
+
+        foreach (var (action, _) in actions)
+        {
+            var presentation = KeybindMetadata.Presentation[action];
+            string name = presentation.Item1 ?? action.ToString();
+
+            float width = ImGui.CalcTextSize(name).X;
+            if (width > maxWidth)
+                maxWidth = width;
+        }
+
+        return maxWidth + ImGui.GetStyle().CellPadding.X * 2 + 6f;
     }
 }

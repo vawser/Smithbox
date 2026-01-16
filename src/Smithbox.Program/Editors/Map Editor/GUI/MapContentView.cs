@@ -589,7 +589,7 @@ public class MapContentView
             ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
             if (ImGui.Button($"{icon}##mapObject{key}", DPI.InlineIconButtonSize))
             {
-                if (InputManager.IsPressed(InputAction.Apply_to_All))
+                if (InputManager.IsPressed(KeybindID.Apply_to_All))
                 {
                     var targetContainer = Editor.Selection.GetMapContainerFromMapID(map.Name);
 

@@ -28,7 +28,7 @@ public class PullToCameraAction
     {
         if (Editor.ViewportSelection.IsSelection())
         {
-            if (InputManager.IsPressed(InputAction.Pull))
+            if (InputManager.IsPressed(KeybindID.Pull))
             {
                 ApplyMoveToCamera();
             }
@@ -44,7 +44,7 @@ public class PullToCameraAction
         {
             ApplyMoveToCamera();
         }
-        UIHelper.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {InputManager.GetHint(InputAction.Pull)}");
+        UIHelper.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {InputManager.GetHint(KeybindID.Pull)}");
     }
 
     /// <summary>
@@ -52,7 +52,7 @@ public class PullToCameraAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Pull to Camera", InputManager.GetHint(InputAction.Pull)))
+        if (ImGui.MenuItem("Pull to Camera", InputManager.GetHint(KeybindID.Pull)))
         {
             ApplyMoveToCamera();
         }

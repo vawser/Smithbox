@@ -29,7 +29,7 @@ public class ScrambleAction
     {
         if (Editor.ViewportSelection.IsSelection())
         {
-            if (InputManager.IsPressed(InputAction.MapEditor_Scramble))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Scramble))
             {
                 ApplyScramble();
             }
@@ -47,7 +47,7 @@ public class ScrambleAction
             {
                 ApplyScramble();
             }
-            UIHelper.Tooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Scramble)}");
+            UIHelper.Tooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Scramble)}");
         }
     }
 
@@ -56,7 +56,7 @@ public class ScrambleAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Scramble", InputManager.GetHint(InputAction.MapEditor_Scramble)))
+        if (ImGui.MenuItem("Scramble", InputManager.GetHint(KeybindID.MapEditor_Scramble)))
         {
             ApplyScramble();
         }

@@ -22,7 +22,7 @@ public class TextShortcuts
     public void Monitor()
     {
         // Save
-        if (InputManager.IsPressed(InputAction.Save))
+        if (InputManager.IsPressed(KeybindID.Save))
         {
             Editor.Save();
         }
@@ -30,12 +30,12 @@ public class TextShortcuts
         // Undo
         if (Editor.EditorActionManager.CanUndo())
         {
-            if (InputManager.IsPressed(InputAction.Undo))
+            if (InputManager.IsPressed(KeybindID.Undo))
             {
                 Editor.EditorActionManager.UndoAction();
             }
 
-            if (InputManager.IsPressedOrRepeated(InputAction.Undo_Repeat))
+            if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
             {
                 Editor.EditorActionManager.UndoAction();
             }
@@ -44,12 +44,12 @@ public class TextShortcuts
         // Redo
         if (Editor.EditorActionManager.CanRedo())
         {
-            if (InputManager.IsPressed(InputAction.Redo))
+            if (InputManager.IsPressed(KeybindID.Redo))
             {
                 Editor.EditorActionManager.RedoAction();
             }
 
-            if (InputManager.IsPressedOrRepeated(InputAction.Redo_Repeat))
+            if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
             {
                 Editor.EditorActionManager.RedoAction();
             }
@@ -58,33 +58,33 @@ public class TextShortcuts
         if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
         {
             // Create
-            if (InputManager.IsPressed(InputAction.TextEditor_Create_New_Entry))
+            if (InputManager.IsPressed(KeybindID.TextEditor_Create_New_Entry))
             {
                 Editor.EntryCreationModal.ShowModal = true;
             }
 
             // TODO: remove this if we add Copy/Paste functionality
             // Configurable Duplicate
-            if (InputManager.IsPressed(InputAction.TextEditor_Configurable_Duplicate))
+            if (InputManager.IsPressed(KeybindID.TextEditor_Configurable_Duplicate))
             {
                 ImGui.OpenPopup("textDuplicatePopup");
             }
 
             // Standard Duplicate
-            if (InputManager.IsPressed(InputAction.Duplicate))
+            if (InputManager.IsPressed(KeybindID.Duplicate))
             {
                 Editor.ActionHandler.DuplicateEntries();
             }
 
             // Delete
-            if (InputManager.IsPressed(InputAction.Delete))
+            if (InputManager.IsPressed(KeybindID.Delete))
             {
                 Editor.ActionHandler.DeleteEntries();
             }
         }
 
         // Focus Selected Entry
-        if (InputManager.IsPressed(InputAction.Jump))
+        if (InputManager.IsPressed(KeybindID.Jump))
         {
             Editor.Selection.FocusFmgEntrySelection = true;
         }
@@ -105,7 +105,7 @@ public class TextShortcuts
         // Select All
         if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
         {
-            if (InputManager.IsPressed(InputAction.SelectAll))
+            if (InputManager.IsPressed(KeybindID.SelectAll))
             {
                 multiselect.StoredEntries.Clear();
 
@@ -135,7 +135,7 @@ public class TextShortcuts
         // Copy Entry Contents
         if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
         {
-            if (InputManager.IsPressed(InputAction.Copy))
+            if (InputManager.IsPressed(KeybindID.Copy))
             {
                 Editor.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_TextCopy_IncludeID);
             }

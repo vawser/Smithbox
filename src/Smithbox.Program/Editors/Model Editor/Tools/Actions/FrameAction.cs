@@ -26,7 +26,7 @@ public class FrameAction
     {
         if (Editor.ViewportSelection.IsSelection())
         {
-            if (InputManager.IsPressed(InputAction.Frame))
+            if (InputManager.IsPressed(KeybindID.Frame))
             {
                 ApplyViewportFrame();
             }
@@ -42,7 +42,7 @@ public class FrameAction
         {
             ApplyViewportFrame();
         }
-        UIHelper.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {InputManager.GetHint(InputAction.Frame)}");
+        UIHelper.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {InputManager.GetHint(KeybindID.Frame)}");
     }
 
     /// <summary>
@@ -50,7 +50,7 @@ public class FrameAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Frame Selected in Viewport", InputManager.GetHint(InputAction.Frame)))
+        if (ImGui.MenuItem("Frame Selected in Viewport", InputManager.GetHint(KeybindID.Frame)))
         {
             ApplyViewportFrame();
         }

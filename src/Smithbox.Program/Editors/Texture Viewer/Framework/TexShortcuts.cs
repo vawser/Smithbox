@@ -17,7 +17,7 @@ public class TexShortcuts
 
     public void Monitor()
     {
-        if (InputManager.IsPressed(InputAction.TextureViewer_Export_Texture))
+        if (InputManager.IsPressed(KeybindID.TextureViewer_Export_Texture))
         {
             Editor.Tools.ExportTextureHandler();
         }
@@ -27,7 +27,7 @@ public class TexShortcuts
             Editor.ViewerZoom.HandleZoom();
         }
 
-        if (InputManager.IsPressed(InputAction.TextureViewer_Reset_Zoom_Level))
+        if (InputManager.IsPressed(KeybindID.TextureViewer_Reset_Zoom_Level))
         {
             Editor.ViewerZoom.ZoomReset();
         }

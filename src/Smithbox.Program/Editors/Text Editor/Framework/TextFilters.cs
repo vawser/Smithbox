@@ -177,7 +177,7 @@ public class TextFilters
     /// </summary>
     public void DisplayFmgEntryFilterSearch()
     {
-        if(InputManager.IsPressed(InputAction.TextEditor_Focus_Searchbar))
+        if(InputManager.IsPressed(KeybindID.TextEditor_Focus_Searchbar))
         {
             ImGui.SetKeyboardFocusHere();
         }

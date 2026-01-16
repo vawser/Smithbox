@@ -100,7 +100,7 @@ public class ParamView
 
         if (FocusManager.IsFocus(EditorFocusContext.ParamEditor_ParamList))
         {
-            if (isActiveView && InputManager.IsPressed(InputAction.ParamEditor_Focus_Searchbar))
+            if (isActiveView && InputManager.IsPressed(KeybindID.ParamEditor_Focus_Searchbar))
             {
                 ImGui.SetKeyboardFocusHere();
             }
@@ -108,7 +108,7 @@ public class ParamView
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputText($"##paramSearch", ref View.Selection.currentParamSearchString, 256);
-        UIHelper.Tooltip($"Search <{InputManager.GetHint(InputAction.ParamEditor_Focus_Searchbar)}>");
+        UIHelper.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
 
         if (!View.Selection.currentParamSearchString.Equals(lastParamSearch))
         {

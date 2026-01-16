@@ -26,7 +26,7 @@ public class ReplicateAction
     {
         if (Editor.ViewportSelection.IsSelection())
         {
-            if (InputManager.IsPressed(InputAction.MapEditor_Replicate))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Replicate))
             {
                 ApplyReplicate();
             }
@@ -44,7 +44,7 @@ public class ReplicateAction
             {
                 ApplyReplicate();
             }
-            UIHelper.Tooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Replicate)}");
+            UIHelper.Tooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Replicate)}");
         }
     }
 
@@ -53,7 +53,7 @@ public class ReplicateAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Replicate", InputManager.GetHint(InputAction.MapEditor_Replicate)))
+        if (ImGui.MenuItem("Replicate", InputManager.GetHint(KeybindID.MapEditor_Replicate)))
         {
             ApplyReplicate();
         }

@@ -25,14 +25,14 @@ public class MaterialShortcuts
         if (!FocusManager.IsInMaterialEditor())
             return;
 
-        if (InputManager.IsPressed(InputAction.Save))
+        if (InputManager.IsPressed(KeybindID.Save))
         {
             Editor.Save();
         }
 
         if (Editor.EditorActionManager.CanUndo())
         {
-            if (InputManager.IsPressed(InputAction.Undo))
+            if (InputManager.IsPressed(KeybindID.Undo))
             {
                 Editor.EditorActionManager.UndoAction();
             }
@@ -40,7 +40,7 @@ public class MaterialShortcuts
 
         if (Editor.EditorActionManager.CanRedo())
         {
-            if (InputManager.IsPressed(InputAction.Redo))
+            if (InputManager.IsPressed(KeybindID.Redo))
             {
                 Editor.EditorActionManager.RedoAction();
             }

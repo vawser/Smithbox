@@ -29,7 +29,7 @@ public class ParamEditorShortcuts
         if (!Editor._isShortcutPopupOpen && !Editor._isMEditPopupOpen && !Editor._isStatisticPopupOpen && !Editor._isSearchBarActive)
         {
             // Save
-            if (InputManager.IsPressed(InputAction.Save))
+            if (InputManager.IsPressed(KeybindID.Save))
             {
                 Editor.Save();
             }
@@ -37,13 +37,13 @@ public class ParamEditorShortcuts
             // Undo
             if (Editor.EditorActionManager.CanUndo())
             {
-                if (InputManager.IsPressed(InputAction.Undo))
+                if (InputManager.IsPressed(KeybindID.Undo))
                 {
                     Editor.EditorActionManager.UndoAction();
                     paramData.RefreshParamDifferenceCacheTask();
                 }
 
-                if (InputManager.IsPressedOrRepeated(InputAction.Undo_Repeat))
+                if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
                 {
                     Editor.EditorActionManager.UndoAction();
                     paramData.RefreshParamDifferenceCacheTask();
@@ -53,13 +53,13 @@ public class ParamEditorShortcuts
             // Redo
             if (Editor.EditorActionManager.CanRedo())
             {
-                if (InputManager.IsPressed(InputAction.Redo))
+                if (InputManager.IsPressed(KeybindID.Redo))
                 {
                     Editor.EditorActionManager.RedoAction();
                     paramData.RefreshParamDifferenceCacheTask();
                 }
 
-                if (InputManager.IsPressedOrRepeated(InputAction.Redo_Repeat))
+                if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
                 {
                     Editor.EditorActionManager.RedoAction();
                     paramData.RefreshParamDifferenceCacheTask();
@@ -69,7 +69,7 @@ public class ParamEditorShortcuts
             // Select All
             if (!ImGui.IsAnyItemActive() && activeParamExists)
             {
-                if (InputManager.IsPressed(InputAction.SelectAll))
+                if (InputManager.IsPressed(KeybindID.SelectAll))
                 {
                     primaryBank.ClipboardParam = activeView.Selection.GetActiveParam();
 
@@ -96,7 +96,7 @@ public class ParamEditorShortcuts
             // Copy
             if (!ImGui.IsAnyItemActive() && rowSelectionExists)
             {
-                if (InputManager.IsPressed(InputAction.Copy))
+                if (InputManager.IsPressed(KeybindID.Copy))
                 {
                     Editor.CopySelectionToClipboard();
                 }
@@ -105,7 +105,7 @@ public class ParamEditorShortcuts
             // Paste
             if (primaryBank.ClipboardRows.Count > 00 && primaryBank.ClipboardParam == activeParam && !ImGui.IsAnyItemActive())
             {
-                if (InputManager.IsPressed(InputAction.Paste))
+                if (InputManager.IsPressed(KeybindID.Paste))
                 {
                     ImGui.OpenPopup("ctrlVPopup");
                 }
@@ -114,7 +114,7 @@ public class ParamEditorShortcuts
             // Duplicate
             if (!ImGui.IsAnyItemActive() && rowSelectionExists)
             {
-                if (InputManager.IsPressed(InputAction.Duplicate))
+                if (InputManager.IsPressed(KeybindID.Duplicate))
                 {
                     if (!FocusManager.IsFocus(EditorFocusContext.ParamEditor_TableList))
                     {
@@ -126,7 +126,7 @@ public class ParamEditorShortcuts
             // Delete
             if (!ImGui.IsAnyItemActive() && rowSelectionExists)
             {
-                if (InputManager.IsPressed(InputAction.Delete))
+                if (InputManager.IsPressed(KeybindID.Delete))
                 {
                     if (!FocusManager.IsFocus(EditorFocusContext.ParamEditor_TableList))
                     {
@@ -138,7 +138,7 @@ public class ParamEditorShortcuts
             // Go to Row
             if (!ImGui.IsAnyItemActive() && rowSelectionExists)
             {
-                if (InputManager.IsPressed(InputAction.Jump))
+                if (InputManager.IsPressed(KeybindID.Jump))
                 {
                     Editor.GotoSelectedRow = true;
                 }
@@ -146,19 +146,19 @@ public class ParamEditorShortcuts
         }
 
         // Sort Rows
-        if (InputManager.IsPressed(InputAction.ParamEditor_RowList_Sort_Rows))
+        if (InputManager.IsPressed(KeybindID.ParamEditor_RowList_Sort_Rows))
         {
             Editor.ParamToolView.SortRows();
         }
 
         // Execute Mass Editor
-        if (InputManager.IsPressed(InputAction.ParamEditor_Apply_Mass_Edit))
+        if (InputManager.IsPressed(KeybindID.ParamEditor_Apply_Mass_Edit))
         {
             Editor.MassEditHandler.ApplyMassEdit(Editor.MassEditHandler.CurrentInput);
         }
 
         // View Mass Edit
-        if (InputManager.IsPressed(InputAction.ParamEditor_View_Mass_Edit))
+        if (InputManager.IsPressed(KeybindID.ParamEditor_View_Mass_Edit))
         {
             EditorCommandQueue.AddCommand(@"param/menu/massEditRegex");
         }
@@ -166,39 +166,39 @@ public class ParamEditorShortcuts
         // Import CSV
         if (!ImGui.IsAnyItemActive() && activeParamExists)
         {
-            if (InputManager.IsPressed(InputAction.ParamEditor_Import_CSV))
+            if (InputManager.IsPressed(KeybindID.ParamEditor_Import_CSV))
             {
                 EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
             }
 
-            if (InputManager.IsPressed(InputAction.ParamEditor_Export_CSV))
+            if (InputManager.IsPressed(KeybindID.ParamEditor_Export_CSV))
             {
                 EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{ParamUpgradeRowGetType.AllRows}");
             }
 
             if (rowSelectionExists)
             {
-                if (InputManager.IsPressed(InputAction.ParamEditor_Export_CSV_Names))
+                if (InputManager.IsPressed(KeybindID.ParamEditor_Export_CSV_Names))
                 {
                     EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/2");
                 }
 
-                if (InputManager.IsPressed(InputAction.ParamEditor_Export_CSV_Param))
+                if (InputManager.IsPressed(KeybindID.ParamEditor_Export_CSV_Param))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/massEditCSVExport/0");
                 }
 
-                if (InputManager.IsPressed(InputAction.ParamEditor_Export_CSV_All_Rows))
+                if (InputManager.IsPressed(KeybindID.ParamEditor_Export_CSV_All_Rows))
                 {
                     EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/AllRows");
                 }
 
-                if (InputManager.IsPressed(InputAction.ParamEditor_Export_CSV_Modified_Rows))
+                if (InputManager.IsPressed(KeybindID.ParamEditor_Export_CSV_Modified_Rows))
                 {
                     EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/ModifiedRows");
                 }
 
-                if (InputManager.IsPressed(InputAction.ParamEditor_Export_CSV_Selected_Rows))
+                if (InputManager.IsPressed(KeybindID.ParamEditor_Export_CSV_Selected_Rows))
                 {
                     EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/SelectedRows");
                 }
@@ -208,7 +208,7 @@ public class ParamEditorShortcuts
         if (Editor.ParamReloader.CanReloadMemoryParams(primaryBank))
         {
             // Reload All Params
-            if (InputManager.IsPressed(InputAction.ParamEditor_Reload_All_Params))
+            if (InputManager.IsPressed(KeybindID.ParamEditor_Reload_All_Params))
             {
                 Editor.ParamReloader.ReloadMemoryParams(primaryBank, primaryBank.Params.Keys.ToArray());
             }
@@ -216,7 +216,7 @@ public class ParamEditorShortcuts
             // Reload Selected Param
             if (activeParamExists)
             {
-                if (InputManager.IsPressed(InputAction.ParamEditor_Reload_Selected_Param))
+                if (InputManager.IsPressed(KeybindID.ParamEditor_Reload_Selected_Param))
                 {
                     Editor.ParamReloader.ReloadMemoryParam(primaryBank, activeParam);
                 }

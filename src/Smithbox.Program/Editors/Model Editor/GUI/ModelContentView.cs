@@ -538,7 +538,7 @@ public class ModelContentView : IActionEventHandler
 
         if (ImGui.Button($"{icon}##modelObjectVisibility{key}{index}", DPI.InlineIconButtonSize))
         {
-            if (InputManager.IsPressed(InputAction.Apply_to_All))
+            if (InputManager.IsPressed(KeybindID.Apply_to_All))
             {
                 foreach (var entry in container.RootObject.Children)
                 {

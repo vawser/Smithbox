@@ -25,7 +25,7 @@ public class DuplicateAction
     {
         if (Editor.ViewportSelection.IsSelection())
         {
-            if (InputManager.IsPressed(InputAction.Duplicate))
+            if (InputManager.IsPressed(KeybindID.Duplicate))
             {
                 ApplyDuplicate();
             }
@@ -42,7 +42,7 @@ public class DuplicateAction
         {
             ApplyDuplicate();
         }
-        UIHelper.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {InputManager.GetHint(InputAction.Duplicate)}");
+        UIHelper.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Duplicate)}");
 
     }
 
@@ -51,7 +51,7 @@ public class DuplicateAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Duplicate", InputManager.GetHint(InputAction.Duplicate)))
+        if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
         {
             ApplyDuplicate();
         }

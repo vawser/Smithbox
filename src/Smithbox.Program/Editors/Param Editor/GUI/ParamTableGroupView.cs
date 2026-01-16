@@ -228,12 +228,12 @@ public class ParamTableGroupView
         {
             if (!ImGui.IsAnyItemActive() && CurrentTableGroup != -1)
             {
-                if (InputManager.IsPressed(InputAction.Duplicate))
+                if (InputManager.IsPressed(KeybindID.Duplicate))
                 {
                     ApplyTableGroupDuplicate = true;
                 }
 
-                if (InputManager.IsPressed(InputAction.Delete))
+                if (InputManager.IsPressed(KeybindID.Delete))
                 {
                     ApplyTableGroupDelete = true;
                 }

@@ -42,7 +42,7 @@ public class CreateAction
     {
         if(Editor.ViewportSelection.IsSelection())
         {
-            if (InputManager.IsPressed(InputAction.MapEditor_Create_Map_Object))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Create_Map_Object))
             {
                 Editor.CreateAction.ApplyObjectCreation();
             }

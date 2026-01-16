@@ -297,7 +297,7 @@ public class MassEditHandler
             {
                 ExecuteMassEdit(CurrentInput, Project.Handler.ParamData.PrimaryBank, Editor._activeView.Selection);
             }
-            UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(InputAction.ParamEditor_Apply_Mass_Edit)}");
+            UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.ParamEditor_Apply_Mass_Edit)}");
 
             ImGui.SameLine();
             if (ImGui.Button("Clear##action_Selection_MassEdit_Clear", DPI.HalfWidthButton(windowWidth, 24)))

@@ -28,49 +28,49 @@ public class RotateAction
     public void OnShortcut()
     {
         // Rotate (X-axis)
-        if (InputManager.IsPressed(InputAction.MapEditor_Rotate_X_Axis))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Rotate_X_Axis))
         {
             ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
         }
 
         // Rotate (Y-axis)
-        if (InputManager.IsPressed(InputAction.MapEditor_Rotate_Y_Axis))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Rotate_Y_Axis))
         {
             ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
         }
 
         // Rotate Pivot (Y-axis)
-        if (InputManager.IsPressed(InputAction.MapEditor_Rotate_Pivot_Y_Axis))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Rotate_Pivot_Y_Axis))
         {
             ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
         }
 
         // Negative Rotate (X-axis)
-        if (InputManager.IsPressed(InputAction.MapEditor_Rotate_Minus_X_Axis))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Rotate_Minus_X_Axis))
         {
             ArbitraryRotation_Selection(new Vector3(-1, 0, 0), false);
         }
 
         // Negative Rotate (Y-axis)
-        if (InputManager.IsPressed(InputAction.MapEditor_Rotate_Minus_Y_Axis))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Rotate_Minus_Y_Axis))
         {
             ArbitraryRotation_Selection(new Vector3(0, -1, 0), false);
         }
 
         // Negative Rotate Pivot (Y-axis)
-        if (InputManager.IsPressed(InputAction.MapEditor_Rotate_Minus_Pivot_Y_Axis))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Rotate_Minus_Pivot_Y_Axis))
         {
             ArbitraryRotation_Selection(new Vector3(0, -1, 0), true);
         }
 
         // Rotate (Fixed Increment)
-        if (InputManager.IsPressed(InputAction.MapEditor_Rotate_Fixed_Angle))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Rotate_Fixed_Angle))
         {
             SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
         }
 
         // Reset Rotation
-        if (InputManager.IsPressed(InputAction.MapEditor_Reset_Rotation))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Reset_Rotation))
         {
             SetSelectionToFixedRotation(new Vector3(0, 0, 0));
         }
@@ -85,49 +85,49 @@ public class RotateAction
         if (ImGui.BeginMenu("Rotation"))
         {
             // Rotate (X-axis)
-            if (ImGui.MenuItem("Rotate Selection (+ x-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_X_Axis)))
+            if (ImGui.MenuItem("Rotate Selection (+ x-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_X_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
             }
 
             // Negative Rotate (X-axis)
-            if (ImGui.MenuItem("Rotate Selection (- x-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_Y_Axis)))
+            if (ImGui.MenuItem("Rotate Selection (- x-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Y_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(-1, 0, 0), false);
             }
 
             // Rotate (Y-axis)
-            if (ImGui.MenuItem("Rotate Selection (+ y-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_Pivot_Y_Axis)))
+            if (ImGui.MenuItem("Rotate Selection (+ y-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Pivot_Y_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
             }
 
             // Negative Rotate (Y-axis)
-            if (ImGui.MenuItem("Rotate Selection (- y-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_Minus_X_Axis)))
+            if (ImGui.MenuItem("Rotate Selection (- y-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Minus_X_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(0, -1, 0), false);
             }
 
             // Rotate Pivot (Y-axis)
-            if (ImGui.MenuItem("Pivot Selection (+ y-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_Minus_Y_Axis)))
+            if (ImGui.MenuItem("Pivot Selection (+ y-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Minus_Y_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
             }
 
             // Negative Rotate Pivot (Y-axis)
-            if (ImGui.MenuItem("Pivot Selection (- y-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_Minus_Pivot_Y_Axis)))
+            if (ImGui.MenuItem("Pivot Selection (- y-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Minus_Pivot_Y_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(0, -1, 0), true);
             }
 
             // Rotate Fixed Angle
-            if (ImGui.MenuItem("Rotate Selection (fixed angle)", InputManager.GetHint(InputAction.MapEditor_Rotate_Fixed_Angle)))
+            if (ImGui.MenuItem("Rotate Selection (fixed angle)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Fixed_Angle)))
             {
                 SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
             }
 
             // Reset Rotation
-            if (ImGui.MenuItem("Reset Selected Rotation", InputManager.GetHint(InputAction.MapEditor_Reset_Rotation)))
+            if (ImGui.MenuItem("Reset Selected Rotation", InputManager.GetHint(KeybindID.MapEditor_Reset_Rotation)))
             {
                 SetSelectionToFixedRotation(new Vector3(0, 0, 0));
             }
@@ -144,49 +144,49 @@ public class RotateAction
         if(ImGui.BeginMenu("Rotation"))
         {
             // Rotate (X-axis)
-            if (ImGui.MenuItem("Rotate Selection (+ x-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_X_Axis)))
+            if (ImGui.MenuItem("Rotate Selection (+ x-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_X_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
             }
 
             // Negative Rotate (X-axis)
-            if (ImGui.MenuItem("Rotate Selection (- x-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_Minus_X_Axis)))
+            if (ImGui.MenuItem("Rotate Selection (- x-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Minus_X_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(-1, 0, 0), false);
             }
 
             // Rotate (Y-axis)
-            if (ImGui.MenuItem("Rotate Selection (+ y-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_Y_Axis)))
+            if (ImGui.MenuItem("Rotate Selection (+ y-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Y_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
             }
 
             // Negative Rotate (Y-axis)
-            if (ImGui.MenuItem("Rotate Selection (- y-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_Minus_Y_Axis)))
+            if (ImGui.MenuItem("Rotate Selection (- y-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Minus_Y_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(0, -1, 0), false);
             }
 
             // Rotate Pivot (Y-axis)
-            if (ImGui.MenuItem("Pivot Selection (+ y-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_Pivot_Y_Axis)))
+            if (ImGui.MenuItem("Pivot Selection (+ y-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Pivot_Y_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
             }
 
             // Negative Rotate Pivot (Y-axis)
-            if (ImGui.MenuItem("Pivot Selection (- y-axis)", InputManager.GetHint(InputAction.MapEditor_Rotate_Minus_Pivot_Y_Axis)))
+            if (ImGui.MenuItem("Pivot Selection (- y-axis)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Minus_Pivot_Y_Axis)))
             {
                 ArbitraryRotation_Selection(new Vector3(0, -1, 0), true);
             }
 
             // Rotate Fixed Increment
-            if (ImGui.MenuItem("Rotate Selection (fixed angle)", InputManager.GetHint(InputAction.MapEditor_Rotate_Fixed_Angle)))
+            if (ImGui.MenuItem("Rotate Selection (fixed angle)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Fixed_Angle)))
             {
                 SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
             }
 
             // Reset Rotation
-            if (ImGui.MenuItem("Reset Selection Rotation", InputManager.GetHint(InputAction.MapEditor_Reset_Rotation)))
+            if (ImGui.MenuItem("Reset Selection Rotation", InputManager.GetHint(KeybindID.MapEditor_Reset_Rotation)))
             {
                 SetSelectionToFixedRotation(new Vector3(0, 0, 0));
             }

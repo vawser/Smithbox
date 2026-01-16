@@ -22,7 +22,7 @@ public class ToolSubMenu
         /// Toggle Patrol Route Visualisation
         if (Editor.Project.Descriptor.ProjectType != ProjectType.DS2S && Editor.Project.Descriptor.ProjectType != ProjectType.DS2)
         {
-            if (InputManager.IsPressed(InputAction.MapEditor_Toggle_Patrol_Route_Visuals))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Toggle_Patrol_Route_Visuals))
             {
                 if (!PatrolsVisualised)
                 {

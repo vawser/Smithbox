@@ -26,7 +26,7 @@ public class ModelShortcuts
             return;
 
         // Save
-        if (InputManager.IsPressed(InputAction.Save))
+        if (InputManager.IsPressed(KeybindID.Save))
         {
             Editor.Save();
         }
@@ -34,12 +34,12 @@ public class ModelShortcuts
         // Undo
         if (Editor.EditorActionManager.CanUndo())
         {
-            if (InputManager.IsPressed(InputAction.Undo))
+            if (InputManager.IsPressed(KeybindID.Undo))
             {
                 Editor.EditorActionManager.UndoAction();
             }
 
-            if (InputManager.IsPressedOrRepeated(InputAction.Undo_Repeat))
+            if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
             {
                 Editor.EditorActionManager.UndoAction();
             }
@@ -48,12 +48,12 @@ public class ModelShortcuts
         // Redo
         if (Editor.EditorActionManager.CanRedo())
         {
-            if (InputManager.IsPressed(InputAction.Redo))
+            if (InputManager.IsPressed(KeybindID.Redo))
             {
                 Editor.EditorActionManager.RedoAction();
             }
 
-            if (InputManager.IsPressedOrRepeated(InputAction.Redo_Repeat))
+            if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
             {
                 Editor.EditorActionManager.RedoAction();
             }
@@ -70,19 +70,19 @@ public class ModelShortcuts
 
 
         // Cycle Gizmo Translation Mode
-        if (InputManager.IsPressed(InputAction.Cycle_Gizmo_Translation_Mode))
+        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Translation_Mode))
         {
             Gizmos.Mode = Gizmos.GizmosMode.Translate;
         }
 
         // Cycle Gizmo Rotation Mode
-        if (InputManager.IsPressed(InputAction.Cycle_Gizmo_Rotation_Mode))
+        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Rotation_Mode))
         {
             Gizmos.Mode = Gizmos.GizmosMode.Rotate;
         }
 
         // Cycle Gizmo Origin Mode
-        if (InputManager.IsPressed(InputAction.Cycle_Gizmo_Origin_Mode))
+        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Origin_Mode))
         {
             if (Gizmos.Origin == Gizmos.GizmosOrigin.World)
             {
@@ -95,7 +95,7 @@ public class ModelShortcuts
         }
 
         // Cycle Gizmo Space Mode
-        if (InputManager.IsPressed(InputAction.Cycle_Gizmo_Space_Mode))
+        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Space_Mode))
         {
             if (Gizmos.Space == Gizmos.GizmosSpace.Local)
             {

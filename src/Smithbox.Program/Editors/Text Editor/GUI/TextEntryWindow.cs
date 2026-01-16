@@ -36,7 +36,7 @@ public class TextEntryWindow
             {
                 Editor.Selection.FocusFmgEntrySelection = true;
             }
-            UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {InputManager.GetHint(InputAction.Jump)}");
+            UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {InputManager.GetHint(KeybindID.Jump)}");
 
             ImGui.BeginChild("FmgEntriesList");
 

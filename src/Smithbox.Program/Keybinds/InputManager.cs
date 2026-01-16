@@ -22,9 +22,21 @@ public static class InputManager
         public bool Ctrl;
         public bool Shift;
         public bool Alt;
+
+        public KeyBinding Clone()
+        {
+            return new KeyBinding
+            {
+                Key = Key,
+                Ctrl = Ctrl,
+                Shift = Shift,
+                Alt = Alt
+            };
+        }
     }
 
-    private static readonly KeybindStore _bindings = new();
+    public static readonly KeybindStore _bindings = new();
+    public static readonly KeybindStore _defaultBindings = new();
 
     private static string KeybindPath = "";
 
@@ -50,7 +62,7 @@ public static class InputManager
         var folder = ProjectUtils.GetConfigurationFolder();
         KeybindPath = Path.Combine(folder, "Keybinds.json");
 
-        InputDefaultBindings.CreateDefaultBindings();
+        DefaultKeyBindings.CreateDefaultBindings();
 
         if (File.Exists(KeybindPath))
         {
@@ -115,7 +127,7 @@ public static class InputManager
 
     // ---------------- Actions ----------------
 
-    public static bool IsDown(InputAction action)
+    public static bool IsDown(KeybindID action)
     {
         if (_bindings.Entries.ContainsKey(action))
         {
@@ -125,7 +137,7 @@ public static class InputManager
         return false;
     }
 
-    public static bool IsPressed(InputAction action)
+    public static bool IsPressed(KeybindID action)
     {
         if (_bindings.Entries.ContainsKey(action))
         {
@@ -138,7 +150,7 @@ public static class InputManager
     }
 
     public static bool IsPressedOrRepeated(
-    InputAction action,
+    KeybindID action,
     float initialDelay = 0.35f,
     float repeatRate = 0.075f)
     {
@@ -168,7 +180,7 @@ public static class InputManager
         return false;
     }
 
-    public static bool IsReleased(InputAction action)
+    public static bool IsReleased(KeybindID action)
     {
         if (_bindings.Entries.ContainsKey(action))
         {
@@ -200,15 +212,20 @@ public static class InputManager
 
     // ---------------- Bindings ----------------
 
-    public static void Bind(InputAction action, KeyBinding binding)
+    public static void Bind(KeybindID action, KeyBinding binding)
     {
         if (!_bindings.Entries.TryGetValue(action, out var list))
             _bindings.Entries[action] = list = new();
 
         list.Add(binding);
+
+        if (!_defaultBindings.Entries.TryGetValue(action, out var defaultList))
+            _defaultBindings.Entries[action] = defaultList = new();
+
+        _defaultBindings.Entries[action].Add(binding.Clone());
     }
 
-    public static IReadOnlyDictionary<InputAction, List<KeyBinding>> Bindings => _bindings.Entries;
+    public static IReadOnlyDictionary<KeybindID, List<KeyBinding>> Bindings => _bindings.Entries;
 
     // ---------------- Serialization ----------------
 
@@ -238,7 +255,7 @@ public static class InputManager
 
     // ---------------- Helpers ----------------
 
-    public static bool IsPressed_IgnoreModifiers(InputAction action)
+    public static bool IsPressed_IgnoreModifiers(KeybindID action)
     {
         if (_bindings.Entries.ContainsKey(action))
         {
@@ -286,7 +303,7 @@ public static class InputManager
         => _current.IsKeyDown(Key.LAlt) || _current.IsKeyDown(Key.RAlt);
 
 
-    public static string GetHint(InputAction action)
+    public static string GetHint(KeybindID action)
     {
         var curBind = _bindings.Entries[action].FirstOrDefault();
 
@@ -300,8 +317,8 @@ public static class InputManager
 
     public static bool HasArrowSelection()
     {
-        if (IsPressedOrRepeated(InputAction.Up) ||
-            IsPressedOrRepeated(InputAction.Down))
+        if (IsPressedOrRepeated(KeybindID.Up) ||
+            IsPressedOrRepeated(KeybindID.Down))
         {
             return true;
         }
@@ -393,5 +410,5 @@ public sealed class KeyboardSnapshot
 
 public class KeybindStore
 {
-    public Dictionary<InputAction, List<KeyBinding>> Entries { get; set; } = new();
+    public Dictionary<KeybindID, List<KeyBinding>> Entries { get; set; } = new();
 }

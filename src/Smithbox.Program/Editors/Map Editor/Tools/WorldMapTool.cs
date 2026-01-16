@@ -97,7 +97,7 @@ public class WorldMapTool : IResourceEventListener
     {
         if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
         {
-            if (InputManager.IsPressed(InputAction.MapEditor_Toggle_World_Map_Menu))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Toggle_World_Map_Menu))
             {
                 DisplayMenuOption();
             }
@@ -124,7 +124,7 @@ public class WorldMapTool : IResourceEventListener
             ImGui.Text($"Left click to navigate the map.");
             ImGui.Text($"Right click on the map to filter the map list to the map tiles underneath your click.");
             ImGui.Text($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-            ImGui.Text($"Press {InputManager.GetHint(InputAction.TextureViewer_Reset_Zoom_Level)} to reset zoom level to 100%.");
+            ImGui.Text($"Press {InputManager.GetHint(KeybindID.TextureViewer_Reset_Zoom_Level)} to reset zoom level to 100%.");
 
             ImGui.EndPopup();
         }
@@ -136,13 +136,13 @@ public class WorldMapTool : IResourceEventListener
         {
             if (Project.Descriptor.ProjectType is ProjectType.ER)
             {
-                if (ImGui.MenuItem("Lands Between", InputManager.GetHint(InputAction.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Lands Between", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
                 {
                     CurrentMapSource = WorldMapImageSource.LandsBetween;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
 
-                if (ImGui.MenuItem("Shadow of the Erdtree", InputManager.GetHint(InputAction.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Shadow of the Erdtree", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
                 {
                     CurrentMapSource = WorldMapImageSource.ShadowOfTheErdtree;
                 }
@@ -151,31 +151,31 @@ public class WorldMapTool : IResourceEventListener
 
             if (Project.Descriptor.ProjectType is ProjectType.NR)
             {
-                if (ImGui.MenuItem("Limveld", InputManager.GetHint(InputAction.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Limveld", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
 
-                if (ImGui.MenuItem("Limveld: Mountaintops", InputManager.GetHint(InputAction.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Limveld: Mountaintops", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Mountaintops;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
 
-                if (ImGui.MenuItem("Limveld: Crater", InputManager.GetHint(InputAction.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Limveld: Crater", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Crater;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
 
-                if (ImGui.MenuItem("Limveld: Rotted Woods", InputManager.GetHint(InputAction.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Limveld: Rotted Woods", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Rotted_Woods;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
 
-                if (ImGui.MenuItem("Limveld: Noklateo", InputManager.GetHint(InputAction.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Limveld: Noklateo", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Noklateo;
                 }
@@ -436,7 +436,7 @@ public class WorldMapTool : IResourceEventListener
             }
         }
 
-        if (InputManager.IsPressed(InputAction.MapEditor_Reset_World_Map_Zoom_Level))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Reset_World_Map_Zoom_Level))
         {
             MapZoomFactor = GetDefaultZoomLevel();
         }

@@ -520,7 +520,7 @@ public class Smithbox
             }
 
             // Keybinds
-            if (ImGui.MenuItem("Keybinds"))
+            if (ImGui.MenuItem("Shortcuts"))
             {
                 Keybinds.IsDisplayed = !Keybinds.IsDisplayed;
             }

@@ -19,7 +19,7 @@ public class SelectionOutlineAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputManager.IsPressed(InputAction.Cycle_Render_Outline_Mode))
+        if (InputManager.IsPressed(KeybindID.Cycle_Render_Outline_Mode))
         {
             CFG.Current.Viewport_Enable_Selection_Outline = !CFG.Current.Viewport_Enable_Selection_Outline;
         }

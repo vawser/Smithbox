@@ -118,7 +118,7 @@ public class GparamEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(InputAction.Save)}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
             }
@@ -167,7 +167,7 @@ public class GparamEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)} / {InputManager.GetHint(InputAction.Undo_Repeat)}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -185,7 +185,7 @@ public class GparamEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)} / {InputManager.GetHint(InputAction.Redo_Repeat)}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
@@ -197,12 +197,12 @@ public class GparamEditorScreen : EditorScreen
 
             if(ImGui.BeginMenu("Value Row"))
             {
-                if (ImGui.MenuItem("Duplicate", InputManager.GetHint(InputAction.Duplicate)))
+                if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
                 {
                     ActionHandler.DuplicateValueRow();
                 }
 
-                if (ImGui.MenuItem("Delete", InputManager.GetHint(InputAction.Delete)))
+                if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
                 {
                     ActionHandler.DeleteValueRow();
                 }
@@ -290,7 +290,7 @@ public class GparamEditorScreen : EditorScreen
             return;
 
         // Save
-        if (InputManager.IsPressed(InputAction.Save))
+        if (InputManager.IsPressed(KeybindID.Save))
         {
             Save();
         }
@@ -298,7 +298,7 @@ public class GparamEditorScreen : EditorScreen
         // Undo
         if (EditorActionManager.CanUndo())
         {
-            if (InputManager.IsPressed(InputAction.Undo))
+            if (InputManager.IsPressed(KeybindID.Undo))
             {
                 EditorActionManager.UndoAction();
             }
@@ -307,38 +307,38 @@ public class GparamEditorScreen : EditorScreen
         // Redo
         if (EditorActionManager.CanRedo())
         {
-            if (InputManager.IsPressed(InputAction.Redo))
+            if (InputManager.IsPressed(KeybindID.Redo))
             {
                 EditorActionManager.RedoAction();
             }
         }
 
         // Duplicate
-        if (InputManager.IsPressed(InputAction.Duplicate))
+        if (InputManager.IsPressed(KeybindID.Duplicate))
         {
             ActionHandler.DuplicateValueRow();
         }
 
         // Delete
-        if (InputManager.IsPressed(InputAction.Delete))
+        if (InputManager.IsPressed(KeybindID.Delete))
         {
             ActionHandler.DeleteValueRow();
         }
 
         // Execute Quick Edit
-        if (InputManager.IsPressed(InputAction.GparamEditor_Execute_Quick_Edit))
+        if (InputManager.IsPressed(KeybindID.GparamEditor_Execute_Quick_Edit))
         {
             QuickEditHandler.ExecuteQuickEdit();
         }
 
         // Generate Quick Edit
-        if (InputManager.IsPressed(InputAction.GparamEditor_Generate_Quick_Edit))
+        if (InputManager.IsPressed(KeybindID.GparamEditor_Generate_Quick_Edit))
         {
             QuickEditHandler.GenerateQuickEditCommands();
         }
 
         // Clear Quick Edit
-        if (InputManager.IsPressed(InputAction.GparamEditor_Clear_Quick_Edit))
+        if (InputManager.IsPressed(KeybindID.GparamEditor_Clear_Quick_Edit))
         {
             QuickEditHandler.ClearQuickEditCommands();
         }

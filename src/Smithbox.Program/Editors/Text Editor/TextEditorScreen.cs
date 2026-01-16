@@ -143,7 +143,7 @@ public class TextEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(InputAction.Save)}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
             }
@@ -190,7 +190,7 @@ public class TextEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)} / {InputManager.GetHint(InputAction.Undo_Repeat)}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -208,7 +208,7 @@ public class TextEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)} / {InputManager.GetHint(InputAction.Redo_Repeat)}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
@@ -219,21 +219,21 @@ public class TextEditorScreen : EditorScreen
             ImGui.Separator();
 
             // Create
-            if (ImGui.MenuItem("Create", InputManager.GetHint(InputAction.TextEditor_Create_New_Entry)))
+            if (ImGui.MenuItem("Create", InputManager.GetHint(KeybindID.TextEditor_Create_New_Entry)))
             {
                 EntryCreationModal.ShowModal = true;
             }
             UIHelper.Tooltip($"Create new text entries.");
 
             // Duplicate
-            if (ImGui.MenuItem("Duplicate", InputManager.GetHint(InputAction.Duplicate)))
+            if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
             {
                 ActionHandler.DuplicateEntries();
             }
             UIHelper.Tooltip($"Duplicate the currently selected text entries.");
 
             // Delete
-            if (ImGui.MenuItem("Delete", InputManager.GetHint(InputAction.Delete)))
+            if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
             {
                 ActionHandler.DeleteEntries();
             }

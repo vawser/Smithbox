@@ -338,7 +338,7 @@ public class ViewportCamera
 
         var isSpeedupKeyPressed = InputManager.HasShiftDown();
         var isSlowdownKeyPressed = InputManager.HasCtrlDown();
-        var isResetKeyPressed = InputManager.IsPressed(InputAction.Reset);
+        var isResetKeyPressed = InputManager.IsPressed(KeybindID.Reset);
         var isMoveLightKeyPressed = false;
         var isOrbitCamToggleKeyPressed = false; // keyboard.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.F);
         var isPointCamAtObjectKeyPressed = false; // keyboard.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.T);
@@ -458,32 +458,32 @@ public class ViewportCamera
                 float z = 0;
                 float y = 0;
 
-                if (InputManager.IsDown(InputAction.MoveForward) && Math.Abs(cameraDist.Length()) > 0.1f)
+                if (InputManager.IsDown(KeybindID.MoveForward) && Math.Abs(cameraDist.Length()) > 0.1f)
                 {
                     z += 1;
                 }
 
-                if (InputManager.IsDown(InputAction.MoveBackward))
+                if (InputManager.IsDown(KeybindID.MoveBackward))
                 {
                     z -= 1;
                 }
 
-                if (InputManager.IsDown(InputAction.MoveDown))
+                if (InputManager.IsDown(KeybindID.MoveDown))
                 {
                     y += 1;
                 }
 
-                if (InputManager.IsDown(InputAction.MoveUp))
+                if (InputManager.IsDown(KeybindID.MoveUp))
                 {
                     y -= 1;
                 }
 
-                if (InputManager.IsDown(InputAction.MoveLeft))
+                if (InputManager.IsDown(KeybindID.MoveLeft))
                 {
                     x -= 1;
                 }
 
-                if (InputManager.IsDown(InputAction.MoveRight))
+                if (InputManager.IsDown(KeybindID.MoveRight))
                 {
                     x += 1;
                 }
@@ -511,32 +511,32 @@ public class ViewportCamera
             float y = 0;
             float z = 0;
 
-            if (InputManager.IsDown(InputAction.MoveRight))
+            if (InputManager.IsDown(KeybindID.MoveRight))
             {
                 x += 1;
             }
 
-            if (InputManager.IsDown(InputAction.MoveLeft))
+            if (InputManager.IsDown(KeybindID.MoveLeft))
             {
                 x -= 1;
             }
 
-            if (InputManager.IsDown(InputAction.MoveUp))
+            if (InputManager.IsDown(KeybindID.MoveUp))
             {
                 y += 1;
             }
 
-            if (InputManager.IsDown(InputAction.MoveDown))
+            if (InputManager.IsDown(KeybindID.MoveDown))
             {
                 y -= 1;
             }
 
-            if (InputManager.IsDown(InputAction.MoveForward))
+            if (InputManager.IsDown(KeybindID.MoveForward))
             {
                 z += 1;
             }
 
-            if (InputManager.IsDown(InputAction.MoveBackward))
+            if (InputManager.IsDown(KeybindID.MoveBackward))
             {
                 z -= 1;
             }

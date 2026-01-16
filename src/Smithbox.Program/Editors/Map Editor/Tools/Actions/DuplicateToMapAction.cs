@@ -51,7 +51,7 @@ public class DuplicateToMapAction
     {
         if (Editor.ViewportSelection.IsSelection())
         {
-            if (InputManager.IsPressed(InputAction.MapEditor_Duplicate_To_Map))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Duplicate_To_Map))
             {
                 ImGui.OpenPopup("##DupeToTargetMapPopup");
             }
@@ -67,7 +67,7 @@ public class DuplicateToMapAction
         {
             DisplayPopup = true;
         }
-        UIHelper.Tooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Duplicate_To_Map)}");
+        UIHelper.Tooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Duplicate_To_Map)}");
     }
 
     /// <summary>

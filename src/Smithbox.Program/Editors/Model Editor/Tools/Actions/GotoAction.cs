@@ -28,7 +28,7 @@ public class GotoAction
     {
         if (Editor.ViewportSelection.IsSelection())
         {
-            if (InputManager.IsPressed(InputAction.Jump))
+            if (InputManager.IsPressed(KeybindID.Jump))
             {
                 GotoModelObjectEntry();
             }
@@ -48,7 +48,7 @@ public class GotoAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Go to in List", InputManager.GetHint(InputAction.Jump)))
+        if (ImGui.MenuItem("Go to in List", InputManager.GetHint(KeybindID.Jump)))
         {
             GotoModelObjectEntry();
         }

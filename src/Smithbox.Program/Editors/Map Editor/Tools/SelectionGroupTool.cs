@@ -77,52 +77,52 @@ public class SelectionGroupTool
         if (CFG.Current.Shortcuts_MapEditor_EnableSelectionGroupShortcuts)
         {
             // Selection Groups
-            if (InputManager.IsPressed(InputAction.MapEditor_Create_Selection_Group))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Create_Selection_Group))
             {
                 CreateSelectionGroup("External");
             }
 
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_0))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_0))
             {
                 ShortcutSelectGroup(0);
             }
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_1))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_1))
             {
                 ShortcutSelectGroup(1);
             }
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_2))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_2))
             {
                 ShortcutSelectGroup(2);
             }
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_3))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_3))
             {
                 ShortcutSelectGroup(3);
             }
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_4))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_4))
             {
                 ShortcutSelectGroup(4);
             }
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_5))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_5))
             {
                 ShortcutSelectGroup(5);
             }
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_6))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_6))
             {
                 ShortcutSelectGroup(6);
             }
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_7))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_7))
             {
                 ShortcutSelectGroup(7);
             }
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_8))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_8))
             {
                 ShortcutSelectGroup(8);
             }
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_9))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_9))
             {
                 ShortcutSelectGroup(9);
             }
-            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_10))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_10))
             {
                 ShortcutSelectGroup(10);
             }
@@ -138,7 +138,7 @@ public class SelectionGroupTool
         {
             OpenPopup = true;
         }
-        UIHelper.Tooltip($"Create a selection group from the current selection.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Create_Selection_Group)}");
+        UIHelper.Tooltip($"Create a selection group from the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Create_Selection_Group)}");
     }
 
     /// <summary>
@@ -231,7 +231,7 @@ public class SelectionGroupTool
             {
                 CreateSelectionGroup("Internal");
             }
-            UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(InputAction.MapEditor_Create_Selection_Group)}\nBring up the selection group creation menu to assign your current selection to a selection group.");
+            UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Create_Selection_Group)}\nBring up the selection group creation menu to assign your current selection to a selection group.");
 
 
             UIHelper.SimpleHeader("Current Selection Group", "Current Selection Group", "", UI.Current.ImGui_Default_Text_Color);
@@ -566,17 +566,17 @@ public class SelectionGroupTool
 
         switch (index)
         {
-            case 0: return InputManager.GetHint(InputAction.MapEditor_Select_Group_0);
-            case 1: return InputManager.GetHint(InputAction.MapEditor_Select_Group_1);
-            case 2: return InputManager.GetHint(InputAction.MapEditor_Select_Group_2);
-            case 3: return InputManager.GetHint(InputAction.MapEditor_Select_Group_3);
-            case 4: return InputManager.GetHint(InputAction.MapEditor_Select_Group_4);
-            case 5: return InputManager.GetHint(InputAction.MapEditor_Select_Group_5);
-            case 6: return InputManager.GetHint(InputAction.MapEditor_Select_Group_6);
-            case 7: return InputManager.GetHint(InputAction.MapEditor_Select_Group_7);
-            case 8: return InputManager.GetHint(InputAction.MapEditor_Select_Group_8);
-            case 9: return InputManager.GetHint(InputAction.MapEditor_Select_Group_9);
-            case 10: return InputManager.GetHint(InputAction.MapEditor_Select_Group_10);
+            case 0: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_0);
+            case 1: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_1);
+            case 2: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_2);
+            case 3: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_3);
+            case 4: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_4);
+            case 5: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_5);
+            case 6: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_6);
+            case 7: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_7);
+            case 8: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_8);
+            case 9: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_9);
+            case 10: return InputManager.GetHint(KeybindID.MapEditor_Select_Group_10);
             default: return "None";
         }
     }

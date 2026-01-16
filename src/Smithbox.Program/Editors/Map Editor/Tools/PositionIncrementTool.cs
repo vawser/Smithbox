@@ -27,17 +27,17 @@ public class PositionIncrementTool
     /// </summary>
     public void OnShortcut()
     {
-        if (InputManager.IsPressed(InputAction.MapEditor_Position_Increment_Toggle_Discrete_Mode))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Toggle_Discrete_Mode))
         {
             CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication = !CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication;
         }
 
-        if (InputManager.IsPressed(InputAction.MapEditor_Position_Increment_Cycle_Type))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Cycle_Type))
         {
             CycleIncrementType();
         }
 
-        if (InputManager.IsPressed(InputAction.MapEditor_Position_Increment_Cycle_Type_Backwards))
+        if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Cycle_Type_Backwards))
         {
             CycleIncrementType(true);
         }
@@ -89,54 +89,54 @@ public class PositionIncrementTool
 
             if (CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication)
             {
-                if (InputManager.IsPressed(InputAction.MapEditor_Position_Increment_Positive_X))
+                if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Positive_X))
                 {
                     xMovement_Positive = true;
                 }
-                if (InputManager.IsPressed(InputAction.MapEditor_Position_Increment_Negative_X))
+                if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Negative_X))
                 {
                     xMovement_Negative = true;
                 }
-                if (InputManager.IsPressed(InputAction.MapEditor_Position_Increment_Positive_Y))
+                if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Positive_Y))
                 {
                     yMovement_Positive = true;
                 }
-                if (InputManager.IsPressed(InputAction.MapEditor_Position_Increment_Negative_Y))
+                if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Negative_Y))
                 {
                     yMovement_Negative = true;
                 }
-                if (InputManager.IsPressed(InputAction.MapEditor_Position_Increment_Positive_Z))
+                if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Positive_Z))
                 {
                     zMovement_Positive = true;
                 }
-                if (InputManager.IsPressed(InputAction.MapEditor_Position_Increment_Negative_Z))
+                if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Negative_Z))
                 {
                     zMovement_Negative = true;
                 }
             }
             else
             {
-                if (InputManager.IsPressedOrRepeated(InputAction.MapEditor_Position_Increment_Positive_X))
+                if (InputManager.IsPressedOrRepeated(KeybindID.MapEditor_Position_Increment_Positive_X))
                 {
                     xMovement_Positive = true;
                 }
-                if (InputManager.IsPressedOrRepeated(InputAction.MapEditor_Position_Increment_Negative_X))
+                if (InputManager.IsPressedOrRepeated(KeybindID.MapEditor_Position_Increment_Negative_X))
                 {
                     xMovement_Negative = true;
                 }
-                if (InputManager.IsPressedOrRepeated(InputAction.MapEditor_Position_Increment_Positive_Y))
+                if (InputManager.IsPressedOrRepeated(KeybindID.MapEditor_Position_Increment_Positive_Y))
                 {
                     yMovement_Positive = true;
                 }
-                if (InputManager.IsPressedOrRepeated(InputAction.MapEditor_Position_Increment_Negative_Y))
+                if (InputManager.IsPressedOrRepeated(KeybindID.MapEditor_Position_Increment_Negative_Y))
                 {
                     yMovement_Negative = true;
                 }
-                if (InputManager.IsPressedOrRepeated(InputAction.MapEditor_Position_Increment_Positive_Z))
+                if (InputManager.IsPressedOrRepeated(KeybindID.MapEditor_Position_Increment_Positive_Z))
                 {
                     zMovement_Positive = true;
                 }
-                if (InputManager.IsPressedOrRepeated(InputAction.MapEditor_Position_Increment_Negative_Z))
+                if (InputManager.IsPressedOrRepeated(KeybindID.MapEditor_Position_Increment_Negative_Z))
                 {
                     zMovement_Negative = true;
                 }
@@ -209,7 +209,7 @@ public class PositionIncrementTool
 
         if (ImGui.CollapsingHeader("Position Increments"))
         {
-            UIHelper.SimpleHeader("Current Position Increment", "Current Position Increment", $"Shortcut: {InputManager.GetHint(InputAction.MapEditor_Position_Increment_Cycle_Type)}", UI.Current.ImGui_Default_Text_Color);
+            UIHelper.SimpleHeader("Current Position Increment", "Current Position Increment", $"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)}", UI.Current.ImGui_Default_Text_Color);
 
             Editor.PositionIncrementTool.DisplayCurrentPositionIncrement();
 
@@ -220,7 +220,7 @@ public class PositionIncrementTool
             {
                 Editor.PositionIncrementTool.CycleIncrementType();
             }
-            UIHelper.Tooltip($"Press {InputManager.GetHint(InputAction.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
+            UIHelper.Tooltip($"Press {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
 
             UIHelper.SimpleHeader("Position Increment [0]", "Position Increment [0]", "", UI.Current.ImGui_Default_Text_Color);
             DPI.ApplyInputWidth(windowWidth);
@@ -273,7 +273,7 @@ public class PositionIncrementTool
             UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
             ImGui.Checkbox("Enable discrete movement", ref CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication);
-            UIHelper.Tooltip($"If enabled, the key must be pressed and released for each application.\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Position_Increment_Toggle_Discrete_Mode)}");
+            UIHelper.Tooltip($"If enabled, the key must be pressed and released for each application.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Toggle_Discrete_Mode)}");
         }
     }
 
@@ -317,7 +317,7 @@ public class PositionIncrementTool
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_4}");
                 break;
         }
-        UIHelper.Tooltip($"Press {InputManager.GetHint(InputAction.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
+        UIHelper.Tooltip($"Press {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
     }
 
     public void DisplayCurrentPositionIncrement()
@@ -340,6 +340,6 @@ public class PositionIncrementTool
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment [4]: {CFG.Current.MapEditor_Selection_Position_Increment_4}");
                 break;
         }
-        UIHelper.Tooltip($"Press {InputManager.GetHint(InputAction.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
+        UIHelper.Tooltip($"Press {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
     }
 }

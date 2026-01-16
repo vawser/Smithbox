@@ -92,13 +92,13 @@ public class ParamReloader
                 {
                     ReloadCurrentParam(Editor);
                 }
-                UIHelper.Tooltip($"{InputManager.GetHint(InputAction.ParamEditor_Reload_Selected_Param)}");
+                UIHelper.Tooltip($"{InputManager.GetHint(KeybindID.ParamEditor_Reload_Selected_Param)}");
 
                 if (ImGui.Button("Reload All Params", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     ReloadAllParams(Editor);
                 }
-                UIHelper.Tooltip($"{InputManager.GetHint(InputAction.ParamEditor_Reload_All_Params)}");
+                UIHelper.Tooltip($"{InputManager.GetHint(KeybindID.ParamEditor_Reload_All_Params)}");
             }
         }
     }
@@ -109,13 +109,13 @@ public class ParamReloader
         {
             if (ImGui.BeginMenu("Param Reloader"))
             {
-                if (ImGui.MenuItem("Current Param", InputManager.GetHint(InputAction.ParamEditor_Reload_Selected_Param)))
+                if (ImGui.MenuItem("Current Param", InputManager.GetHint(KeybindID.ParamEditor_Reload_Selected_Param)))
                 {
                     ReloadCurrentParam(Editor);
                 }
                 UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
 
-                if (ImGui.MenuItem("All Params", InputManager.GetHint(InputAction.ParamEditor_Reload_All_Params)))
+                if (ImGui.MenuItem("All Params", InputManager.GetHint(KeybindID.ParamEditor_Reload_All_Params)))
                 {
                     ReloadAllParams(Editor);
                 }
