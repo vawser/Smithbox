@@ -510,6 +510,36 @@
       "Entries": [
         "Caligo Raid"
       ]
+    },
+    {
+      "ID": 98830,
+      "Entries": [
+        "Lightning Ball"
+      ]
+    },
+    {
+      "ID": 99000,
+      "Entries": [
+        "Revenant - Helen"
+      ]
+    },
+    {
+      "ID": 99001,
+      "Entries": [
+        "Revenant - Frederick"
+      ]
+    },
+    {
+      "ID": 99002,
+      "Entries": [
+        "Revenant - Sebastian"
+      ]
+    },
+    {
+      "ID": 99010,
+      "Entries": [
+        "Executor - Beast Form"
+      ]
     }
   ]
 }
