@@ -28,11 +28,11 @@ public class ViewportOverlay
         {
             if (CFG.Current.Viewport_DisplayRotationIncrement)
             {
-                Parent.MapEditor.RotationCycleConfigTool.DisplayViewportRotateIncrement();
+                Parent.MapEditor.RotationIncrementTool.DisplayViewportRotateIncrement();
             }
-            if (CFG.Current.Viewport_DisplayMovementIncrement)
+            if (CFG.Current.Viewport_DisplayPositionIncrement)
             {
-                Parent.MapEditor.MovementCycleConfigTool.DisplayViewportMovementIncrement();
+                Parent.MapEditor.PositionIncrementTool.DisplayViewportMovementIncrement();
             }
         }
 

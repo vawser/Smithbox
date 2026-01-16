@@ -46,7 +46,7 @@ public static class InputDefaultBindings
         InputManager.Bind(InputAction.Copy, new() { Key = Key.C, Ctrl = true });
         InputManager.Bind(InputAction.Paste, new() { Key = Key.V, Ctrl = true });
         InputManager.Bind(InputAction.Duplicate, new() { Key = Key.D, Ctrl = true });
-        InputManager.Bind(InputAction.Delete, new() { Key = Key.Delete, Ctrl = true });
+        InputManager.Bind(InputAction.Delete, new() { Key = Key.Delete });
         InputManager.Bind(InputAction.Jump, new() { Key = Key.Q, Ctrl = true });
 
         InputManager.Bind(InputAction.Reorder_Up, new() { Key = Key.Up, Alt = true });

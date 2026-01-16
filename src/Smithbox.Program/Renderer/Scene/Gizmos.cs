@@ -307,7 +307,7 @@ public class Gizmos
 
         if (IsTransforming)
         {
-            if (!InputManager.IsMousePressed(MouseButton.Left))
+            if (!InputManager.IsMouseDown(MouseButton.Left))
             {
                 IsTransforming = false;
                 List<ViewportAction> actlist = new();
@@ -476,7 +476,7 @@ public class Gizmos
                         break;
                 }
 
-                if (canCaptureMouse && InputManager.IsMousePressed(MouseButton.Left))
+                if (canCaptureMouse && InputManager.IsMouseDown(MouseButton.Left))
                 {
                     if (hoveredAxis != Axis.None)
                     {

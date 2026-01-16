@@ -213,7 +213,7 @@ public class ToolWindow
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_SelectionGroups);
 
-            if (ImGui.MenuItem("Movement Increments"))
+            if (ImGui.MenuItem("Position Increments"))
             {
                 CFG.Current.Interface_MapEditor_Tool_MovementIncrements = !CFG.Current.Interface_MapEditor_Tool_MovementIncrements;
             }

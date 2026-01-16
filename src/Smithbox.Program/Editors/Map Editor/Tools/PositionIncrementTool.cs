@@ -222,7 +222,7 @@ public class PositionIncrementTool
             }
             UIHelper.Tooltip($"Press {InputManager.GetHint(InputAction.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
 
-            UIHelper.SimpleHeader("Movement Increment [0]", "Movement Increment [0]", "", UI.Current.ImGui_Default_Text_Color);
+            UIHelper.SimpleHeader("Position Increment [0]", "Position Increment [0]", "", UI.Current.ImGui_Default_Text_Color);
             DPI.ApplyInputWidth(windowWidth);
 
             var unit0 = CFG.Current.MapEditor_Selection_Position_Increment_0;

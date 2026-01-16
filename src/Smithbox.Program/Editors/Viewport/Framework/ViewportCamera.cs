@@ -1,5 +1,6 @@
 ﻿using Silk.NET.SDL;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -280,28 +281,28 @@ public class ViewportCamera
 
         var clampedLerpF = Utils.Clamp(30 * dt, 0, 1);
 
-        mousePos = new Vector2(Utils.Lerp(oldMouse.X, InputTracker.MousePosition.X, clampedLerpF),
-            Utils.Lerp(oldMouse.Y, InputTracker.MousePosition.Y, clampedLerpF));
+        mousePos = new Vector2(Utils.Lerp(oldMouse.X, InputManager.MousePosition.X, clampedLerpF),
+            Utils.Lerp(oldMouse.Y, InputManager.MousePosition.Y, clampedLerpF));
 
         currentClickType = MouseClickType.None;
 
-        if (InputTracker.GetMouseButton(MouseButton.Left))
+        if (InputManager.IsMouseDown(MouseButton.Left))
         {
             currentClickType = MouseClickType.Left;
         }
-        else if (InputTracker.GetMouseButton(MouseButton.Right))
+        else if (InputManager.IsMouseDown(MouseButton.Right))
         {
             currentClickType = MouseClickType.Right;
         }
-        else if (InputTracker.GetMouseButton(MouseButton.Middle))
+        else if (InputManager.IsMouseDown(MouseButton.Middle))
         {
             currentClickType = MouseClickType.Middle;
         }
-        else if (InputTracker.GetMouseButton(MouseButton.Button1))
+        else if (InputManager.IsMouseDown(MouseButton.Button1))
         {
             currentClickType = MouseClickType.Extra1;
         }
-        else if (InputTracker.GetMouseButton(MouseButton.Button2))
+        else if (InputManager.IsMouseDown(MouseButton.Button2))
         {
             currentClickType = MouseClickType.Extra2;
         }
@@ -325,7 +326,7 @@ public class ViewportCamera
             //mousePos = new Vector2(mouse.X, mouse.Y);
             if (MousePressed)
             {
-                mousePos = InputTracker.MousePosition;
+                mousePos = InputManager.MousePosition;
                 SDL.WarpMouseInWindow(window.SdlWindowHandle, (int)MousePressedPos.X, (int)MousePressedPos.Y);
                 SDL.SetWindowGrab(window.SdlWindowHandle, SdlBool.False);
                 SDL.ShowCursor(1);
@@ -335,10 +336,10 @@ public class ViewportCamera
             return false;
         }
 
-        var isSpeedupKeyPressed = InputTracker.GetKey(Key.LShift) || InputTracker.GetKey(Key.RShift);
-        var isSlowdownKeyPressed = InputTracker.GetKey(Key.LControl) || InputTracker.GetKey(Key.RControl);
-        var isResetKeyPressed = InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_CameraReset);
-        var isMoveLightKeyPressed = InputTracker.GetKey(Key.Space);
+        var isSpeedupKeyPressed = InputManager.HasShiftDown();
+        var isSlowdownKeyPressed = InputManager.HasCtrlDown();
+        var isResetKeyPressed = InputManager.IsPressed(InputAction.Reset);
+        var isMoveLightKeyPressed = false;
         var isOrbitCamToggleKeyPressed = false; // keyboard.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.F);
         var isPointCamAtObjectKeyPressed = false; // keyboard.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.T);
 
@@ -413,19 +414,19 @@ public class ViewportCamera
 
         if (IsOrthographic)
         {
-            if (InputTracker.GetMouseWheelDelta() != 0)
+            if (InputManager.MouseWheelDelta != 0)
             {
-                ZoomOrtho(InputTracker.GetMouseWheelDelta());
+                ZoomOrtho(InputManager.MouseWheelDelta);
             }
         }
         else
         {
-            if (InputTracker.GetMouseWheelDelta() > 0)
+            if (InputManager.MouseWheelDelta > 0)
             {
                 moveMult *= mouseWheelSpeedStep;
             }
 
-            if (InputTracker.GetMouseWheelDelta() < 0)
+            if (InputManager.MouseWheelDelta < 0)
             {
                 moveMult *= 1 / mouseWheelSpeedStep;
             }
@@ -457,32 +458,32 @@ public class ViewportCamera
                 float z = 0;
                 float y = 0;
 
-                if (InputTracker.GetKeyDown(Key.W) && Math.Abs(cameraDist.Length()) > 0.1f)
+                if (InputManager.IsDown(InputAction.MoveForward) && Math.Abs(cameraDist.Length()) > 0.1f)
                 {
                     z += 1;
                 }
 
-                if (InputTracker.GetKeyDown(Key.S))
+                if (InputManager.IsDown(InputAction.MoveBackward))
                 {
                     z -= 1;
                 }
 
-                if (InputTracker.GetKeyDown(Key.E))
+                if (InputManager.IsDown(InputAction.MoveDown))
                 {
                     y += 1;
                 }
 
-                if (InputTracker.GetKeyDown(Key.Q))
+                if (InputManager.IsDown(InputAction.MoveUp))
                 {
                     y -= 1;
                 }
 
-                if (InputTracker.GetKeyDown(Key.A))
+                if (InputManager.IsDown(InputAction.MoveLeft))
                 {
                     x -= 1;
                 }
 
-                if (InputTracker.GetKeyDown(Key.D))
+                if (InputManager.IsDown(InputAction.MoveRight))
                 {
                     x += 1;
                 }
@@ -510,32 +511,32 @@ public class ViewportCamera
             float y = 0;
             float z = 0;
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraRight))
+            if (InputManager.IsDown(InputAction.MoveRight))
             {
                 x += 1;
             }
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraLeft))
+            if (InputManager.IsDown(InputAction.MoveLeft))
             {
                 x -= 1;
             }
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraUp))
+            if (InputManager.IsDown(InputAction.MoveUp))
             {
                 y += 1;
             }
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraDown))
+            if (InputManager.IsDown(InputAction.MoveDown))
             {
                 y -= 1;
             }
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraForward))
+            if (InputManager.IsDown(InputAction.MoveForward))
             {
                 z += 1;
             }
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraBack))
+            if (InputManager.IsDown(InputAction.MoveBackward))
             {
                 z -= 1;
             }
@@ -547,13 +548,13 @@ public class ViewportCamera
         {
             if (!MousePressed)
             {
-                var x = InputTracker.MousePosition.X;
-                var y = InputTracker.MousePosition.Y;
+                var x = InputManager.MousePosition.X;
+                var y = InputManager.MousePosition.Y;
                 if (x >= BoundingRect.Left && x < BoundingRect.Right && y >= BoundingRect.Top &&
                     y < BoundingRect.Bottom)
                 {
                     MousePressed = true;
-                    MousePressedPos = InputTracker.MousePosition;
+                    MousePressedPos = InputManager.MousePosition;
                     SDL.ShowCursor(0);
                     SDL.SetWindowGrab(window.SdlWindowHandle, SdlBool.True);
                 }
@@ -563,7 +564,7 @@ public class ViewportCamera
                 int windowX = 0;
                 int windowY = 0;
 
-                Vector2 mouseDelta = MousePressedPos - InputTracker.MousePosition;
+                Vector2 mouseDelta = MousePressedPos - InputManager.MousePosition;
 
                 SDL.GetWindowPosition(window.SdlWindowHandle, ref windowX, ref windowY);
                 SDL.WarpMouseGlobal(windowX + (int)MousePressedPos.X, windowY + (int)MousePressedPos.Y);
