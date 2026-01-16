@@ -9962,6 +9962,12 @@
       ]
     },
     {
+      "ID": 403006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 403100,
       "Entries": [
         ""
@@ -39182,9 +39188,21 @@
       ]
     },
     {
+      "ID": 10305001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 10305100,
       "Entries": [
         "[Item] Large Glintstone Scrap"
+      ]
+    },
+    {
+      "ID": 10305101,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -42404,6 +42422,12 @@
       ]
     },
     {
+      "ID": 300000374,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 300000407,
       "Entries": [
         "[AoW] Storm Blade"
@@ -42767,6 +42791,12 @@
       "ID": 300000558,
       "Entries": [
         "[AoW] Golden Land"
+      ]
+    },
+    {
+      "ID": 300000559,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -43319,6 +43349,12 @@
       "ID": 300000818,
       "Entries": [
         "[AoW] Waves of Darkness - No FP R2"
+      ]
+    },
+    {
+      "ID": 300000819,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -46139,6 +46175,12 @@
       "ID": 300900114,
       "Entries": [
         "[AoW Dragonscale Blade] Ice Lightning Sword"
+      ]
+    },
+    {
+      "ID": 300900115,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -50060,6 +50102,12 @@
       ]
     },
     {
+      "ID": 301902926,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 301906900,
       "Entries": [
         "[AoW Winged Scythe] Angel's Wings - Rising"
@@ -51053,6 +51101,12 @@
       "ID": 302301905,
       "Entries": [
         "[AoW Watchdog's Staff] Sorcery of the Crozier"
+      ]
+    },
+    {
+      "ID": 302301906,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -53432,7 +53486,19 @@
       ]
     },
     {
+      "ID": 878800001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 878802000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 878802001,
       "Entries": [
         ""
       ]
@@ -53445,6 +53511,12 @@
     },
     {
       "ID": 878803001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 878803002,
       "Entries": [
         ""
       ]
@@ -53474,6 +53546,12 @@
       ]
     },
     {
+      "ID": 878881203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 878881500,
       "Entries": [
         ""
@@ -53492,13 +53570,37 @@
       ]
     },
     {
+      "ID": 878881503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 878881504,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 878882100,
       "Entries": [
         ""
       ]
     },
     {
+      "ID": 878882101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 878882500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 878882501,
       "Entries": [
         ""
       ]
@@ -53660,6 +53762,18 @@
       ]
     },
     {
+      "ID": 880000706,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 880000707,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 880000890,
       "Entries": [
         "[Weapon Effect] Power of the General"
@@ -53687,6 +53801,12 @@
       "ID": 880000902,
       "Entries": [
         "[Weapon Effect] Power of the Dragonlord (Jump Attack)"
+      ]
+    },
+    {
+      "ID": 880000903,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -53776,7 +53896,7 @@
     {
       "ID": 900334000,
       "Entries": [
-        "[Relic - Guardian] Reflect a portion of damage received when ability is activated"
+        "[Relic - Guardian] Successful guards send out shockwaves while ability is active"
       ]
     },
     {
