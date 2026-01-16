@@ -52846,13 +52846,13 @@
     {
       "ID": 600000030,
       "Entries": [
-        ""
+        "[Relic - Wylder] Character Skill inflicts Blood Loss (Going Out)"
       ]
     },
     {
       "ID": 600000035,
       "Entries": [
-        ""
+        "[Relic - Wylder] Character Skill inflicts Blood Loss (Pull)"
       ]
     },
     {
@@ -52870,7 +52870,7 @@
     {
       "ID": 600000070,
       "Entries": [
-        ""
+        "[Relic - Guardian] Character Skill Boosts Damage Negation of Nearby Allies"
       ]
     },
     {
@@ -52948,7 +52948,7 @@
     {
       "ID": 600000120,
       "Entries": [
-        ""
+        "[Relic - Ironeye] Character Skill Inflicts Heavy Poison Damage on Poisoned Enemies"
       ]
     },
     {
@@ -52966,7 +52966,7 @@
     {
       "ID": 600000210,
       "Entries": [
-        "[Skill - Raider] Retaliate (Full Power)"
+        "[Skill - Raider] Retaliate (Charged)"
       ]
     },
     {
@@ -52990,13 +52990,13 @@
     {
       "ID": 600000240,
       "Entries": [
-        ""
+        "[Relic - Raider] Hit With Character Skill to Reduce Enemy Attack Power"
       ]
     },
     {
       "ID": 600000250,
       "Entries": [
-        ""
+        "[Relic - Raider] Hit With Character Skill to Reduce Enemy Attack Power (Charged)"
       ]
     },
     {
@@ -53152,37 +53152,37 @@
     {
       "ID": 700000100,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Charged/Uncharged) Arrow"
+        "[Ultimate - Ironeye] Single Shot - Arrow"
       ]
     },
     {
       "ID": 700000101,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Charged/Uncharged) Air Stream"
+        "[Ultimate - Ironeye] Single Shot - Air Stream"
       ]
     },
     {
       "ID": 700000102,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Charged/Uncharged) Arrow (Ground Hit)"
+        "[Ultimate - Ironeye] Single Shot - Arrow (Ground Hit)"
       ]
     },
     {
       "ID": 700000130,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Unused) Arrow"
+        "[Ultimate - Ironeye] Single Shot (Unused Charged Triple) Arrow"
       ]
     },
     {
       "ID": 700000131,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Unused) Air Stream"
+        "[Ultimate - Ironeye] Single Shot (Unused Charged Triple) Air Stream"
       ]
     },
     {
       "ID": 700000132,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Unused) Arrow (Ground Hit)"
+        "[Ultimate - Ironeye] Single Shot (Unused Charged Triple) Arrow (Ground Hit)"
       ]
     },
     {
@@ -53284,25 +53284,25 @@
     {
       "ID": 700000450,
       "Entries": [
-        "[Ultimate - Undertaker] Loathsome Hex"
+        "[Ultimate - Undertaker] Loathsome Hex - Flying"
       ]
     },
     {
       "ID": 700000460,
       "Entries": [
-        "[Ultimate - Undertaker] Loathsome Hex"
+        "[Ultimate - Undertaker] Loathsome Hex - Impact"
       ]
     },
     {
       "ID": 700000470,
       "Entries": [
-        ""
+        "[Ultimate - Undertaker] Loathsome Hex - Fly Through Objects"
       ]
     },
     {
       "ID": 700000495,
       "Entries": [
-        ""
+        "[Relic - Undertaker] Contact with allies restores their HP while Ultimate Art is activated"
       ]
     },
     {
