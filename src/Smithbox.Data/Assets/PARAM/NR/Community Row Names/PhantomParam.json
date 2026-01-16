@@ -58,37 +58,37 @@
     {
       "ID": 60,
       "Entries": [
-        ""
+        "Red Phantom"
       ]
     },
     {
       "ID": 61,
       "Entries": [
-        ""
+        "Gold Phantom"
       ]
     },
     {
       "ID": 62,
       "Entries": [
-        ""
+        "Gold Phantom"
       ]
     },
     {
       "ID": 70,
       "Entries": [
-        ""
+        "Blue Phantom"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        ""
+        "Spirit Summon"
       ]
     },
     {
       "ID": 201,
       "Entries": [
-        ""
+        "Puppet Summon"
       ]
     },
     {
@@ -124,7 +124,7 @@
     {
       "ID": 240,
       "Entries": [
-        ""
+        "Mausoleum Spirit"
       ]
     },
     {
@@ -136,7 +136,7 @@
     {
       "ID": 260,
       "Entries": [
-        ""
+        "Ancestral Follower?"
       ]
     },
     {
@@ -195,6 +195,24 @@
     },
     {
       "ID": 370,
+      "Entries": [
+        "Restage Phantom"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Gladius Raid Flame Wolf"
+      ]
+    },
+    {
+      "ID": 420,
       "Entries": [
         ""
       ]
