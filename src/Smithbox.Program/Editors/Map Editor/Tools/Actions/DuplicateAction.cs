@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Linq;
 
@@ -22,9 +23,12 @@ public class DuplicateAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyDuplicate();
+            if (InputManager.IsPressed(InputAction.Duplicate))
+            {
+                ApplyDuplicate();
+            }
         }
     }
 
@@ -38,7 +42,7 @@ public class DuplicateAction
         {
             ApplyDuplicate();
         }
-        UIHelper.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
+        UIHelper.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {InputManager.GetHint(InputAction.Duplicate)}");
 
     }
 
@@ -47,7 +51,7 @@ public class DuplicateAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+        if (ImGui.MenuItem("Duplicate", InputManager.GetHint(InputAction.Duplicate)))
         {
             ApplyDuplicate();
         }

@@ -1,15 +1,16 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using System;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class RotationCycleConfigTool
+public class RotationIncrementTool
 {
     public MapEditorScreen Editor;
     public ProjectEntry Project;
 
-    public RotationCycleConfigTool(MapEditorScreen editor, ProjectEntry project)
+    public RotationIncrementTool(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
@@ -21,11 +22,12 @@ public class RotationCycleConfigTool
     public void OnShortcut()
     {
         // Only apply in Map Editor screen
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SwitchRotationDegreeIncrementType))
+        if (InputManager.IsPressed(InputAction.MapEditor_Rotation_Increment_Cycle_Type))
         {
             CycleIncrementType();
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SwitchRotationDegreeIncrementTypeBackward))
+
+        if (InputManager.IsPressed(InputAction.MapEditor_Rotation_Increment_Cycle_Type_Backwards))
         {
             CycleIncrementType(true);
         }
@@ -40,18 +42,18 @@ public class RotationCycleConfigTool
 
         if (ImGui.CollapsingHeader("Rotation Increments"))
         {
-            UIHelper.SimpleHeader("Current Rotation Increment", "Current Rotation Increment", $"Shortcut: {KeyBindings.Current.MAP_SwitchRotationDegreeIncrementType.HintText}", UI.Current.ImGui_Default_Text_Color);
+            UIHelper.SimpleHeader("Current Rotation Increment", "Current Rotation Increment", $"Shortcut: {InputManager.GetHint(InputAction.MapEditor_Rotation_Increment_Cycle_Type)}", UI.Current.ImGui_Default_Text_Color);
 
-            Editor.RotationCycleConfigTool.DisplayCurrentRotateIncrement();
+            Editor.RotationIncrementTool.DisplayCurrentRotateIncrement();
 
             ImGui.Checkbox("Display rotation increment in viewport", ref CFG.Current.Viewport_DisplayRotationIncrement);
             UIHelper.Tooltip("Display the current degree increment type you are using in the information panel.");
 
             if (ImGui.Button("Cycle Increment", DPI.WholeWidthButton(windowWidth, 24)))
             {
-                Editor.RotationCycleConfigTool.CycleIncrementType();
+                Editor.RotationIncrementTool.CycleIncrementType();
             }
-            UIHelper.Tooltip($"Press {KeyBindings.Current.MAP_SwitchRotationDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+            UIHelper.Tooltip($"Press {InputManager.GetHint(InputAction.MapEditor_Rotation_Increment_Cycle_Type)} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
 
             UIHelper.SimpleHeader("Degree Increment [0]", "Degree Increment [0]", "", UI.Current.ImGui_Default_Text_Color);
             DPI.ApplyInputWidth(windowWidth);
@@ -145,7 +147,7 @@ public class RotationCycleConfigTool
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment [4]: {CFG.Current.Toolbar_Rotate_Increment_4}°");
                 break;
         }
-        UIHelper.Tooltip($"Press {KeyBindings.Current.MAP_SwitchRotationDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+        UIHelper.Tooltip($"Press {InputManager.GetHint(InputAction.MapEditor_Rotation_Increment_Cycle_Type)} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
     }
 
     public void DisplayViewportRotateIncrement()
@@ -168,7 +170,7 @@ public class RotationCycleConfigTool
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_4}°");
                 break;
         }
-        UIHelper.Tooltip($"Press {KeyBindings.Current.MAP_SwitchRotationDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+        UIHelper.Tooltip($"Press {InputManager.GetHint(InputAction.MapEditor_Rotation_Increment_Cycle_Type)} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
     }
 
     public float GetRadianRotateAmount()

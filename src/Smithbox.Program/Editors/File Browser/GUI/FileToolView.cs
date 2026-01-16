@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,7 @@ public class FileToolView
     public void Display()
     {
         ImGui.Begin($"Tools##FileBrowserToolView", ImGuiWindowFlags.MenuBar);
+        FocusManager.SetFocus(EditorFocusContext.FileBrowser_Tools);
 
         if (ImGui.BeginMenuBar())
         {

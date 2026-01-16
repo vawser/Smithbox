@@ -43,7 +43,7 @@ public class ModelViewportView
     {
         if (Device != null && !Smithbox.LowRequirementsMode)
         {
-            Viewport = new StudioCore.Editors.Viewport.Viewport(null, Editor, ViewportType.ModelEditor, 
+            Viewport = new Viewport.Viewport(null, Editor, ViewportType.ModelEditor, 
                 "Modeleditvp", Rect.Width, Rect.Height);
         }
         else

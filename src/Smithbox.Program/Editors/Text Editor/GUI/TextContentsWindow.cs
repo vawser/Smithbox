@@ -28,10 +28,9 @@ public class TextContentsWindow
     {
         if (ImGui.Begin("Contents##fmgEntryContents"))
         {
-            Editor.Selection.SwitchWindowContext(TextEditorContext.FmgEntryContents);
+            FocusManager.SetFocus(EditorFocusContext.TextEditor_EntryContents);
 
             ImGui.BeginChild("FmgEntryContents");
-            Editor.Selection.SwitchWindowContext(TextEditorContext.FmgEntryContents);
 
             if (Editor.Selection._selectedFmgEntry != null)
             {

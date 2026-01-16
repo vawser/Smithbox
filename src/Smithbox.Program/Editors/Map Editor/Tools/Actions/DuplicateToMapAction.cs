@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -48,9 +49,12 @@ public class DuplicateToMapAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DuplicateToMap) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ImGui.OpenPopup("##DupeToTargetMapPopup");
+            if (InputManager.IsPressed(InputAction.MapEditor_Duplicate_To_Map))
+            {
+                ImGui.OpenPopup("##DupeToTargetMapPopup");
+            }
         }
     }
 
@@ -63,7 +67,7 @@ public class DuplicateToMapAction
         {
             DisplayPopup = true;
         }
-        UIHelper.Tooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {KeyBindings.Current.MAP_DuplicateToMap.HintText}");
+        UIHelper.Tooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Duplicate_To_Map)}");
     }
 
     /// <summary>

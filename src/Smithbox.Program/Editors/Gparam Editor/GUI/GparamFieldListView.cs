@@ -3,6 +3,7 @@ using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Collections.Generic;
 using System.Numerics;
 using static SoulsFormats.GPARAM;
@@ -25,7 +26,7 @@ public class GparamFieldListView
     public void Display()
     {
         ImGui.Begin("Fields##GparamFields");
-        Editor.Selection.SwitchWindowContext(GparamEditorContext.Field);
+        FocusManager.SetFocus(EditorFocusContext.GparamEditor_FieldList);
 
         Editor.Filters.DisplayFieldFilterSearch();
 
@@ -66,9 +67,13 @@ public class GparamFieldListView
                         Editor.Selection.SelectGparamField = false;
                         Editor.Selection.SetGparamField(i, entry);
                     }
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+
+                    if (ImGui.IsItemFocused())
                     {
-                        Editor.Selection.SelectGparamField = true;
+                        if (InputManager.HasArrowSelection())
+                        {
+                            Editor.Selection.SelectGparamField = true;
+                        }
                     }
                 }
 

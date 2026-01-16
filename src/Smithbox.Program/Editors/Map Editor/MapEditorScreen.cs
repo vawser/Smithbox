@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -34,7 +35,6 @@ public class MapEditorScreen : EditorScreen
     public MapSelection Selection;
     public Universe Universe;
     public MapEntityTypeCache EntityTypeCache;
-    public EditorFocusManager FocusManager;
     public MapPropertyCache MapPropertyCache = new();
     public MapCommandQueue CommandQueue;
     public MapShortcuts Shortcuts;
@@ -85,8 +85,8 @@ public class MapEditorScreen : EditorScreen
 
     // Tools
     public MassEditTool MassEditTool;
-    public RotationCycleConfigTool RotationCycleConfigTool;
-    public MovementCycleConfigTool MovementCycleConfigTool;
+    public RotationIncrementTool RotationIncrementTool;
+    public PositionIncrementTool PositionIncrementTool;
     public ModelSelectorTool ModelSelectorTool;
     public DisplayGroupTool DisplayGroupTool;
     public SelectionGroupTool SelectionGroupTool;
@@ -113,7 +113,6 @@ public class MapEditorScreen : EditorScreen
         MapViewportView.Setup();
 
         Universe = new Universe(this, project);
-        FocusManager = new EditorFocusManager(this);
         EntityTypeCache = new(this);
 
         Selection = new(this, project);
@@ -168,8 +167,8 @@ public class MapEditorScreen : EditorScreen
 
         // Tools
         MassEditTool = new MassEditTool(this, project);
-        RotationCycleConfigTool = new RotationCycleConfigTool(this, project);
-        MovementCycleConfigTool = new MovementCycleConfigTool(this, project);
+        RotationIncrementTool = new RotationIncrementTool(this, project);
+        PositionIncrementTool = new PositionIncrementTool(this, project);
         AutomaticPreviewTool = new AutomaticPreviewTool(this, project);
         DisplayGroupTool = new DisplayGroupTool(this, project);
         GlobalSearchTool = new GlobalSearchTool(this, project);
@@ -189,7 +188,6 @@ public class MapEditorScreen : EditorScreen
         MapModelInsightHelper.Setup(this, project);
 
         // Focus
-        FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
         EditorActionManager.AddEventHandler(MapListView);
     }
 
@@ -305,13 +303,10 @@ public class MapEditorScreen : EditorScreen
         }
 
         ImGui.PopStyleColor(1);
-
-        FocusManager.OnFocus();
     }
 
     public void OnDefocus()
     {
-        FocusManager.ResetFocus();
     }
 
     public void Update(float dt)
@@ -348,7 +343,7 @@ public class MapEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(InputAction.Save)}"))
             {
                 Save();
             }
@@ -484,7 +479,7 @@ public class MapEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)} / {InputManager.GetHint(InputAction.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -502,7 +497,7 @@ public class MapEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)} / {InputManager.GetHint(InputAction.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {

@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -110,9 +111,12 @@ public class ModelSelectorTool
                         ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Character);
                     }
 
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                    if (ImGui.IsItemFocused())
                     {
-                        SelectNextEntry = true;
+                        if(InputManager.HasArrowSelection())
+                        {
+                            SelectNextEntry = true;
+                        }
                     }
 
                     DisplaySelectableAlias(entry);
@@ -157,9 +161,12 @@ public class ModelSelectorTool
                         ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Asset);
                     }
 
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                    if (ImGui.IsItemFocused())
                     {
-                        SelectNextEntry = true;
+                        if (InputManager.HasArrowSelection())
+                        {
+                            SelectNextEntry = true;
+                        }
                     }
 
                     DisplaySelectableAlias(entry);
@@ -221,9 +228,12 @@ public class ModelSelectorTool
                         ApplyMapAssetSelection(_selectedEntry, FileSelectionType.MapPiece, map);
                     }
 
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                    if (ImGui.IsItemFocused())
                     {
-                        SelectNextEntry = true;
+                        if (InputManager.HasArrowSelection())
+                        {
+                            SelectNextEntry = true;
+                        }
                     }
 
                     DisplaySelectableAlias(entry);

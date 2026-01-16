@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -30,6 +31,7 @@ public class FileItemView
     public void Display()
     {
         ImGui.Begin($"Item Viewer##ItemViewer");
+        FocusManager.SetFocus(EditorFocusContext.FileBrowser_Item);
 
         DisplayItemViewer();
 

@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 
 namespace StudioCore.Editors.MapEditor;
@@ -20,9 +21,12 @@ public class GotoAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_GoToInList) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            GotoMapObjectEntry();
+            if (InputManager.IsPressed(InputAction.Jump))
+            {
+                GotoMapObjectEntry();
+            }
         }
     }
 
@@ -39,7 +43,7 @@ public class GotoAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Go to in List", KeyBindings.Current.MAP_GoToInList.HintText))
+        if (ImGui.MenuItem("Go to in List", InputManager.GetHint(InputAction.Jump)))
         {
             GotoMapObjectEntry();
         }

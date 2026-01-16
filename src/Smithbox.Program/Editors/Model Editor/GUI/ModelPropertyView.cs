@@ -52,7 +52,7 @@ public class ModelPropertyView
         ImGui.SetNextWindowPos(new Vector2(Editor.ModelViewportView.Viewport.Width - 370, 20) * scale, ImGuiCond.FirstUseEver);
         ImGui.Begin($@"Properties##modeleditprop");
 
-        Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelPropertiesHeader);
+        FocusManager.SetFocus(EditorFocusContext.ModelEditor_Properties);
 
         // Header
         ImGui.AlignTextToFramePadding();
@@ -78,8 +78,6 @@ public class ModelPropertyView
         // Properties
         ImGui.BeginChild("propedit");
 
-        Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelProperties);
-
         if(Editor.Selection.SelectedModelWrapper != null && Editor.Selection.SelectedModelWrapper.Container != null)
         {
             if(entSelection.Count > 1)
@@ -92,7 +90,6 @@ public class ModelPropertyView
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
                 ImGui.BeginChild("Model_EditingMultipleObjsChild");
-                Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelProperties);
 
                 ModelPropertyOrchestrator(Editor.ViewportSelection);
 

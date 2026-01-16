@@ -1,11 +1,13 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using static StudioCore.Keybinds.InputManager;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -75,52 +77,52 @@ public class SelectionGroupTool
         if (CFG.Current.Shortcuts_MapEditor_EnableSelectionGroupShortcuts)
         {
             // Selection Groups
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateSelectionGroup))
+            if (InputManager.IsPressed(InputAction.MapEditor_Create_Selection_Group))
             {
                 CreateSelectionGroup("External");
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_0))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_0))
             {
                 ShortcutSelectGroup(0);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_1))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_1))
             {
                 ShortcutSelectGroup(1);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_2))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_2))
             {
                 ShortcutSelectGroup(2);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_3))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_3))
             {
                 ShortcutSelectGroup(3);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup4))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_4))
             {
                 ShortcutSelectGroup(4);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup5))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_5))
             {
                 ShortcutSelectGroup(5);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup6))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_6))
             {
                 ShortcutSelectGroup(6);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup7))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_7))
             {
                 ShortcutSelectGroup(7);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup8))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_8))
             {
                 ShortcutSelectGroup(8);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup9))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_9))
             {
                 ShortcutSelectGroup(9);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup10))
+            if (InputManager.IsPressed(InputAction.MapEditor_Select_Group_10))
             {
                 ShortcutSelectGroup(10);
             }
@@ -136,7 +138,7 @@ public class SelectionGroupTool
         {
             OpenPopup = true;
         }
-        UIHelper.Tooltip($"Create a selection group from the current selection.\n\nShortcut: {KeyBindings.Current.MAP_CreateSelectionGroup.HintText}");
+        UIHelper.Tooltip($"Create a selection group from the current selection.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Create_Selection_Group)}");
     }
 
     /// <summary>
@@ -185,10 +187,10 @@ public class SelectionGroupTool
                 {
                     if (entry.SelectionGroupKeybind != -1)
                     {
-                        var keyBind = GetSelectionGroupKeyBind(entry.SelectionGroupKeybind);
-                        if (keyBind != null)
+                        var hint = GetSelectionGroupKeyBind(entry.SelectionGroupKeybind);
+                        if (hint != "None")
                         {
-                            displayName = $"{displayName} [{keyBind.HintText}]";
+                            displayName = $"{displayName} [{hint}]";
                         }
                     }
                 }
@@ -229,7 +231,7 @@ public class SelectionGroupTool
             {
                 CreateSelectionGroup("Internal");
             }
-            UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.MAP_CreateSelectionGroup.HintText}\nBring up the selection group creation menu to assign your current selection to a selection group.");
+            UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(InputAction.MapEditor_Create_Selection_Group)}\nBring up the selection group creation menu to assign your current selection to a selection group.");
 
 
             UIHelper.SimpleHeader("Current Selection Group", "Current Selection Group", "", UI.Current.ImGui_Default_Text_Color);
@@ -299,23 +301,13 @@ public class SelectionGroupTool
         ImGui.InputText("Tags##selectionGroup_Tags", ref createPromptTags, 255);
         UIHelper.Tooltip("Separate each tag with the , character as a delimiter.");
 
-        var keyBind = GetSelectionGroupKeyBind(currentKeyBindOption);
-        var previewString = "None";
-        if (keyBind != null)
-        {
-            previewString = keyBind.HintText;
-        }
+        var previewString = GetSelectionGroupKeyBind(currentKeyBindOption);
 
         if (ImGui.BeginCombo("Keybind##keybindCombo", previewString))
         {
             foreach (var entry in keyBindOptions)
             {
-                keyBind = GetSelectionGroupKeyBind(entry);
-                var nameString = "None";
-                if (keyBind != null)
-                {
-                    nameString = keyBind.HintText;
-                }
+                var nameString = GetSelectionGroupKeyBind(entry);
 
                 bool isSelected = currentKeyBindOption == entry;
 
@@ -349,23 +341,13 @@ public class SelectionGroupTool
         ImGui.InputText("Tags##selectionGroup_Tags", ref editPromptTags, 255);
         UIHelper.Tooltip("Separate each tag with the , character as a delimiter.");
 
-        var keyBind = GetSelectionGroupKeyBind(editPromptKeybind);
-        var previewString = "None";
-        if (keyBind != null)
-        {
-            previewString = keyBind.HintText;
-        }
-
+        var previewString = GetSelectionGroupKeyBind(editPromptKeybind);
+        
         if (ImGui.BeginCombo("Keybind##keybindCombo", previewString))
         {
             foreach (var entry in keyBindOptions)
             {
-                keyBind = GetSelectionGroupKeyBind(entry);
-                var nameString = "None";
-                if (keyBind != null)
-                {
-                    nameString = keyBind.HintText;
-                }
+                var nameString = GetSelectionGroupKeyBind(entry);
 
                 bool isSelected = editPromptKeybind == entry;
 
@@ -575,27 +557,27 @@ public class SelectionGroupTool
         }
     }
 
-    private KeyBind GetSelectionGroupKeyBind(int index)
+    private string GetSelectionGroupKeyBind(int index)
     {
         if (index == -1)
         {
-            return null;
+            return "None";
         }
 
         switch (index)
         {
-            case 0: return KeyBindings.Current.MAP_SelectionGroup_0;
-            case 1: return KeyBindings.Current.MAP_SelectionGroup_1;
-            case 2: return KeyBindings.Current.MAP_SelectionGroup_2;
-            case 3: return KeyBindings.Current.MAP_SelectionGroup_3;
-            case 4: return KeyBindings.Current.MAP_SelectionGroup4;
-            case 5: return KeyBindings.Current.MAP_SelectionGroup5;
-            case 6: return KeyBindings.Current.MAP_SelectionGroup6;
-            case 7: return KeyBindings.Current.MAP_SelectionGroup7;
-            case 8: return KeyBindings.Current.MAP_SelectionGroup8;
-            case 9: return KeyBindings.Current.MAP_SelectionGroup9;
-            case 10: return KeyBindings.Current.MAP_SelectionGroup10;
-            default: return null;
+            case 0: return InputManager.GetHint(InputAction.MapEditor_Select_Group_0);
+            case 1: return InputManager.GetHint(InputAction.MapEditor_Select_Group_1);
+            case 2: return InputManager.GetHint(InputAction.MapEditor_Select_Group_2);
+            case 3: return InputManager.GetHint(InputAction.MapEditor_Select_Group_3);
+            case 4: return InputManager.GetHint(InputAction.MapEditor_Select_Group_4);
+            case 5: return InputManager.GetHint(InputAction.MapEditor_Select_Group_5);
+            case 6: return InputManager.GetHint(InputAction.MapEditor_Select_Group_6);
+            case 7: return InputManager.GetHint(InputAction.MapEditor_Select_Group_7);
+            case 8: return InputManager.GetHint(InputAction.MapEditor_Select_Group_8);
+            case 9: return InputManager.GetHint(InputAction.MapEditor_Select_Group_9);
+            case 10: return InputManager.GetHint(InputAction.MapEditor_Select_Group_10);
+            default: return "None";
         }
     }
 }

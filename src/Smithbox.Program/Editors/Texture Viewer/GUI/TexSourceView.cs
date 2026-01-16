@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ public class TexSourceView
     {
         ImGui.Begin("Files##TextureContainerList");
 
-        Editor.Selection.SwitchWindowContext(TextureViewerContext.BinderList);
+        FocusManager.SetFocus(EditorFocusContext.TextureViewer_ContainerList);
 
         ImGui.BeginTabBar("sourceTabs");
 
@@ -160,9 +161,13 @@ public class TexSourceView
                         LoadTextureBinder = true;
                         TargetTextureBinderEntry = entry.Key;
                     }
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+
+                    if (ImGui.IsItemFocused())
                     {
-                        Editor.Selection.SelectFile = true;
+                        if (InputManager.HasArrowSelection())
+                        {
+                            Editor.Selection.SelectFile = true;
+                        }
                     }
 
                     if (ImGui.IsItemVisible())

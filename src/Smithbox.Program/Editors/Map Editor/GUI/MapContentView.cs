@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ public class MapContentView
         // Map Contents
         if (ImGui.Begin($@"Map Contents##mapContentsPanel", ImGuiWindowFlags.MenuBar))
         {
-            Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapContents);
+            FocusManager.SetFocus(EditorFocusContext.MapEditor_ContentList);
 
             DisplayMenubar();
 
@@ -277,7 +278,7 @@ public class MapContentView
                 // Only select if a node is not currently being opened/closed
                 if (mapRoot == null || nodeopen && _treeOpenEntities.Contains(mapRoot) || !nodeopen && !_treeOpenEntities.Contains(mapRoot))
                 {
-                    if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
+                    if (InputManager.HasCtrlDown())
                     {
                         // Toggle Selection
                         if (Editor.ViewportSelection.GetSelection().Contains(selectTarget))
@@ -588,7 +589,7 @@ public class MapContentView
             ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
             if (ImGui.Button($"{icon}##mapObject{key}", DPI.InlineIconButtonSize))
             {
-                if (InputTracker.GetKey(KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility))
+                if (InputManager.IsPressed(InputAction.Apply_to_All))
                 {
                     var targetContainer = Editor.Selection.GetMapContainerFromMapID(map.Name);
 
@@ -631,10 +632,13 @@ public class MapContentView
                     Editor.MapViewportView.Viewport.FrameBox(e.RenderSceneMesh.GetBounds(), new Vector3());
                 }
             }
-            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+            if (ImGui.IsItemFocused())
             {
-                doSelect = true;
-                arrowKeySelect = true;
+                if (InputManager.HasArrowSelection())
+                {
+                    doSelect = true;
+                    arrowKeySelect = true;
+                }
             }
         }
         else
@@ -681,10 +685,14 @@ public class MapContentView
                     }
                 }
             }
-            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+
+            if (ImGui.IsItemFocused())
             {
-                doSelect = true;
-                arrowKeySelect = true;
+                if (InputManager.HasArrowSelection())
+                {
+                    doSelect = true;
+                    arrowKeySelect = true;
+                }
             }
 
             if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is EntityNameDisplayType.Internal_FMG or EntityNameDisplayType.Community_FMG)

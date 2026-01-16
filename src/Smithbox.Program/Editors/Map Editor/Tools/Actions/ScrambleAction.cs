@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -26,9 +27,12 @@ public class ScrambleAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ScrambleSelection) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyScramble();
+            if (InputManager.IsPressed(InputAction.MapEditor_Scramble))
+            {
+                ApplyScramble();
+            }
         }
     }
 
@@ -43,7 +47,7 @@ public class ScrambleAction
             {
                 ApplyScramble();
             }
-            UIHelper.Tooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ScrambleSelection.HintText}");
+            UIHelper.Tooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Scramble)}");
         }
     }
 
@@ -52,7 +56,7 @@ public class ScrambleAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Scramble", KeyBindings.Current.MAP_ScrambleSelection.HintText))
+        if (ImGui.MenuItem("Scramble", InputManager.GetHint(InputAction.MapEditor_Scramble)))
         {
             ApplyScramble();
         }

@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.TextureViewer;
 
@@ -20,12 +22,11 @@ public class TexSelectView
     public void Display()
     {
         ImGui.Begin("TPFs##TextureTpfList");
-        Editor.Selection.SwitchWindowContext(TextureViewerContext.TpfList);
+        FocusManager.SetFocus(EditorFocusContext.TextureViewer_FileList);
 
         Editor.Filters.DisplayTpfFilterSearch();
 
         ImGui.BeginChild("TpfList");
-        Editor.Selection.SwitchWindowContext(TextureViewerContext.TpfList);
 
         if (Editor.Selection.SelectedBinder != null)
         {
@@ -56,9 +57,13 @@ public class TexSelectView
                         Editor.Selection.SelectTpf = false;
                         Editor.Selection.SelectTpfFile(entry.Key, entry.Value);
                     }
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+
+                    if (ImGui.IsItemFocused())
                     {
-                        Editor.Selection.SelectTpf = true;
+                        if (InputManager.HasArrowSelection())
+                        {
+                            Editor.Selection.SelectTpf = true;
+                        }
                     }
                 }
             }

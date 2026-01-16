@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Collections.Generic;
 
 namespace StudioCore.Editors.GparamEditor;
@@ -23,7 +24,7 @@ public class GparamGroupListView
     public void Display()
     {
         ImGui.Begin("Groups##GparamGroups");
-        Editor.Selection.SwitchWindowContext(GparamEditorContext.Group);
+        FocusManager.SetFocus(EditorFocusContext.GparamEditor_GroupList);
 
         Editor.Filters.DisplayGroupFilterSearch();
 
@@ -44,7 +45,6 @@ public class GparamGroupListView
         UIHelper.Tooltip("Toggle the display of the add group buttons.");
 
         ImGui.BeginChild("GparamGroupsSection");
-        Editor.Selection.SwitchWindowContext(GparamEditorContext.Group);
 
         if (Editor.Selection.IsFileSelected())
         {
@@ -92,9 +92,13 @@ public class GparamGroupListView
                             Editor.Selection.SelectGparamGroup = false;
                             Editor.Selection.SetGparamGroup(i, entry);
                         }
-                        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+
+                        if (ImGui.IsItemFocused())
                         {
-                            Editor.Selection.SelectGparamGroup = true;
+                            if (InputManager.HasArrowSelection())
+                            {
+                                Editor.Selection.SelectGparamGroup = true;
+                            }
                         }
                     }
                 }

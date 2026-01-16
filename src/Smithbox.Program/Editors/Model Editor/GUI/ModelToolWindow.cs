@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -22,7 +23,7 @@ public class ModelToolWindow
 
         if (ImGui.Begin("Tool Window##modelEditorTools", ImGuiWindowFlags.MenuBar))
         {
-            Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ToolWindow);
+            FocusManager.SetFocus(EditorFocusContext.ModelEditor_Tools);
 
             var windowHeight = ImGui.GetWindowHeight();
             var windowWidth = ImGui.GetWindowWidth();

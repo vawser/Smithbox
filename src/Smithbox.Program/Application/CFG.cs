@@ -186,14 +186,14 @@ public class CFG
     public bool MapEditor_SelectionGroup_ShowKeybind = true;
     public bool MapEditor_SelectionGroup_ShowTags = false;
 
-    public int MapEditor_Selection_Movement_IncrementType = 0;
-    public float MapEditor_Selection_Movement_Increment_0 { get; set; } = 0.05f;
-    public float MapEditor_Selection_Movement_Increment_1 { get; set; } = 0.1f;
-    public float MapEditor_Selection_Movement_Increment_2 { get; set; } = 0.25f;
-    public float MapEditor_Selection_Movement_Increment_3 { get; set; } = 0.5f;
-    public float MapEditor_Selection_Movement_Increment_4 { get; set; } = 1.0f;
+    public int MapEditor_Selection_Position_IncrementType = 0;
+    public float MapEditor_Selection_Position_Increment_0 { get; set; } = 0.05f;
+    public float MapEditor_Selection_Position_Increment_1 { get; set; } = 0.1f;
+    public float MapEditor_Selection_Position_Increment_2 { get; set; } = 0.25f;
+    public float MapEditor_Selection_Position_Increment_3 { get; set; } = 0.5f;
+    public float MapEditor_Selection_Position_Increment_4 { get; set; } = 1.0f;
 
-    public bool MapEditor_Selection_Movement_DiscreteApplication = false;
+    public bool MapEditor_Selection_Position_Increment_DiscreteApplication = false;
 
     public bool Shortcuts_MapEditor_EnableSelectionGroupShortcuts = false;
 
@@ -1007,7 +1007,7 @@ public class CFG
 
     public bool Viewport_DisplayControls = true;
     public bool Viewport_DisplayRotationIncrement = true;
-    public bool Viewport_DisplayMovementIncrement = true;
+    public bool Viewport_DisplayPositionIncrement = true;
     public bool Viewport_Enable_BoxSelection = true;
     public float Viewport_BS_DistThresFactor = 1.2f;
 

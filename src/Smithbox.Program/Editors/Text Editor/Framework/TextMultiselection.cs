@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using System.Collections.Generic;
 
 namespace StudioCore.Editors.TextEditor;
@@ -9,12 +10,10 @@ public class TextMultiselection
     public SortedDictionary<int, FMG.Entry> StoredEntries = new();
 
     private TextEditorScreen Editor;
-    private KeyBind AssociatedKeybind;
 
-    public TextMultiselection(TextEditorScreen screen, KeyBind associatedKeyBind)
+    public TextMultiselection(TextEditorScreen screen)
     {
         Editor = screen;
-        AssociatedKeybind = associatedKeyBind;
     }
 
     public bool HasValidMultiselection()
@@ -35,7 +34,7 @@ public class TextMultiselection
     public void HandleMultiselect(int currentSelectionIndex, int currentIndex)
     {
         // Multi-Select: Range Select
-        if (InputTracker.GetKey(Veldrid.Key.LShift))
+        if (InputManager.HasShiftDown())
         {
             var start = currentSelectionIndex;
             var end = currentIndex;
@@ -65,7 +64,7 @@ public class TextMultiselection
             }
         }
         // Multi-Select Mode
-        else if (InputTracker.GetKey(AssociatedKeybind))
+        else if (InputManager.HasCtrlDown())
         {
             if (StoredEntries.ContainsKey(currentIndex) && StoredEntries.Count > 1)
             {

@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -49,27 +50,33 @@ public class AdjustToGridAction
     public void OnShortcut()
     {
         // Configure Grid Placement
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ConfigureGridPlacement))
+        if (InputManager.IsPressed(InputAction.MapEditor_Configure_Grid_Placement))
         {
             OpenPopup = true;
         }
 
         // Adjust to Grid
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_SelectedType))
+        if (InputManager.IsPressed(InputAction.MapEditor_Cycle_Selected_Grid_Type))
         {
             AdjustSelectionToGrid(CurrentTargetGrid);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_Primary))
+
+        if (Editor.ViewportSelection.IsSelection())
         {
-            AdjustSelectionToGrid(ViewportTargetGridType.Primary);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_Secondary))
-        {
-            AdjustSelectionToGrid(ViewportTargetGridType.Secondary);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_Tertiary))
-        {
-            AdjustSelectionToGrid(ViewportTargetGridType.Tertiary);
+            if (InputManager.IsPressed(InputAction.MapEditor_Move_to_Primary_Grid))
+            {
+                AdjustSelectionToGrid(ViewportTargetGridType.Primary);
+            }
+
+            if (InputManager.IsPressed(InputAction.MapEditor_Move_to_Secondary_Grid))
+            {
+                AdjustSelectionToGrid(ViewportTargetGridType.Secondary);
+            }
+
+            if (InputManager.IsPressed(InputAction.MapEditor_Move_to_Tertiary_Grid))
+            {
+                AdjustSelectionToGrid(ViewportTargetGridType.Tertiary);
+            }
         }
     }
 
@@ -84,19 +91,19 @@ public class AdjustToGridAction
             {
                 AdjustSelectionToGrid(ViewportTargetGridType.Primary);
             }
-            UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid_Primary.HintText}");
+            UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Move_to_Primary_Grid)}");
 
             if (ImGui.Selectable("Secondary"))
             {
                 AdjustSelectionToGrid(ViewportTargetGridType.Secondary);
             }
-            UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid_Secondary.HintText}");
+            UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Move_to_Secondary_Grid)}");
 
             if (ImGui.Selectable("Tertiary"))
             {
                 AdjustSelectionToGrid(ViewportTargetGridType.Tertiary);
             }
-            UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid_Tertiary.HintText}");
+            UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Move_to_Tertiary_Grid)}");
 
             ImGui.EndMenu();
         }
@@ -105,7 +112,7 @@ public class AdjustToGridAction
         {
             OpenPopup = true;
         }
-        UIHelper.Tooltip($"Configure the grid placement for the Adjust to Grid action.\n\nShortcut: {KeyBindings.Current.MAP_ConfigureGridPlacement.HintText}");
+        UIHelper.Tooltip($"Configure the grid placement for the Adjust to Grid action.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Configure_Grid_Placement)}");
     }
 
     /// <summary>

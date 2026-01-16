@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.IO;
 using System.Numerics;
@@ -15,7 +16,6 @@ public class MaterialEditorScreen : EditorScreen
     public ActionManager EditorActionManager = new();
     public MaterialPropertyCache MaterialPropertyCache = new();
 
-    public EditorFocusManager FocusManager;
     public MaterialSelection Selection;
     public MaterialFilters Filters;
     public MaterialPropertyHandler PropertyHandler;
@@ -31,7 +31,6 @@ public class MaterialEditorScreen : EditorScreen
     {
         Project = project;
 
-        FocusManager = new(this);
         Selection = new(this, project);
         Filters = new(this, project);
         PropertyHandler = new(this, project);
@@ -110,15 +109,13 @@ public class MaterialEditorScreen : EditorScreen
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
-
-        FocusManager.OnFocus();
     }
 
     public void FileMenu()
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(InputAction.Save)}"))
             {
                 Save();
             }
@@ -175,7 +172,7 @@ public class MaterialEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)} / {InputManager.GetHint(InputAction.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -193,7 +190,7 @@ public class MaterialEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)} / {InputManager.GetHint(InputAction.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
@@ -292,8 +289,8 @@ public class MaterialEditorScreen : EditorScreen
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();
     }
+
     public void OnDefocus()
     {
-        FocusManager.ResetFocus();
     }
 }

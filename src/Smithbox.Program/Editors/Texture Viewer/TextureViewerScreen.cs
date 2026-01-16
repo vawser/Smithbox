@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using System.Numerics;
 
@@ -141,7 +142,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(InputAction.Save)}"))
             {
                 Save();
             }
@@ -155,7 +156,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)} / {InputManager.GetHint(InputAction.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -173,7 +174,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)} / {InputManager.GetHint(InputAction.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {

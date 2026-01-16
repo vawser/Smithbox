@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,8 @@ public class ParamRowView
     /// <param name="activeParam"></param>
     public void Display(bool doFocus, bool isActiveView, float scrollTo, string activeParam)
     {
+        FocusManager.SetFocus(EditorFocusContext.ParamEditor_RowList);
+
         if (!View.Selection.ActiveParamExists())
         {
             ImGui.Text("Select a param to see rows");
@@ -135,10 +138,12 @@ public class ParamRowView
 
                 ImGui.PopID();
 
-                // Up/Down arrow key input
-                if ((InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)) && !ImGui.IsAnyItemActive())
+                if (!ImGui.IsAnyItemActive())
                 {
-                    _arrowKeyPressed = true;
+                    if (InputManager.HasArrowSelection())
+                    {
+                        _arrowKeyPressed = true;
+                    }
                 }
 
                 if (_focusRows)
@@ -256,15 +261,17 @@ public class ParamRowView
 
         ImGui.SameLine();
 
-        // Row Search
-        if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SearchRow))
+        if (FocusManager.IsFocus(EditorFocusContext.ParamEditor_RowList))
         {
-            ImGui.SetKeyboardFocusHere();
+            if (isActiveView && InputManager.IsPressed(InputAction.ParamEditor_Focus_Searchbar))
+            {
+                ImGui.SetKeyboardFocusHere();
+            }
         }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputText($"##rowSearch", ref View.Selection.GetCurrentRowSearchString(), 256);
-        UIHelper.Tooltip($"Search <{KeyBindings.Current.PARAM_SearchRow.HintText}>");
+        UIHelper.Tooltip($"Search <{InputManager.GetHint(InputAction.ParamEditor_Focus_Searchbar)}>");
 
         if (!lastRowSearch.ContainsKey(View.Selection.GetActiveParam()) ||
             !lastRowSearch[View.Selection.GetActiveParam()].Equals(View.Selection.GetCurrentRowSearchString()))
@@ -287,23 +294,30 @@ public class ParamRowView
 
         // Go to selected
         ImGui.AlignTextToFramePadding();
-        if (ImGui.Button($"{Icons.LocationArrow}", DPI.IconButtonSize) ||
-            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
+        if (ImGui.Button($"{Icons.LocationArrow}", DPI.IconButtonSize))
         {
             Editor.GotoSelectedRow = true;
         }
-        UIHelper.Tooltip($"Go to selected <{KeyBindings.Current.PARAM_GoToSelectedRow.HintText}>");
+        UIHelper.Tooltip($"Go to selected <{InputManager.GetHint(InputAction.Jump)}>");
 
         ImGui.SameLine();
 
         // Go to ID
         ImGui.AlignTextToFramePadding();
-        if (ImGui.Button($"{Icons.InfoCircle}", DPI.IconButtonSize) ||
-            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
+        if (ImGui.Button($"{Icons.InfoCircle}", DPI.IconButtonSize))
         {
             ImGui.OpenPopup("gotoParamRow");
         }
-        UIHelper.Tooltip($"Go to ID <{KeyBindings.Current.PARAM_GoToRowID.HintText}>");
+        UIHelper.Tooltip($"Go to ID <{InputManager.GetHint(InputAction.ParamEditor_RowList_Jump_to_Row_ID)}>");
+
+        if (isActiveView)
+        {
+            if (InputManager.IsPressed(InputAction.ParamEditor_RowList_Jump_to_Row_ID))
+            {
+                Editor.GotoSelectedRow = true;
+                ImGui.OpenPopup("gotoParamRow");
+            }
+        }
 
         if (ImGui.BeginPopup("gotoParamRow"))
         {
@@ -478,11 +492,11 @@ public class ParamRowView
         {
             _focusRows = true;
 
-            if (InputTracker.GetKey(Key.LControl) || InputTracker.GetKey(Key.RControl))
+            if (InputManager.HasCtrlDown())
             {
                 View.Selection.ToggleRowInSelection(r);
             }
-            else if (p != null && (InputTracker.GetKey(Key.LShift) || InputTracker.GetKey(Key.RShift)) && View.Selection.GetActiveRow() != null)
+            else if (p != null && InputManager.HasShiftDown() && View.Selection.GetActiveRow() != null)
             {
                 View.Selection.CleanSelectedRows();
                 var start = p.IndexOf(View.Selection.GetActiveRow());
@@ -517,7 +531,7 @@ public class ParamRowView
 
         if (_arrowKeyPressed && ImGui.IsItemFocused() && r != View.Selection.GetActiveRow())
         {
-            if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
+            if (InputManager.HasCtrlDown())
             {
                 // Add to selection
                 View.Selection.AddRowToSelection(r);
@@ -683,7 +697,7 @@ public class ParamRowView
                 {
                     Editor.CopySelectionToClipboard(View.Selection);
                 }
-                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyToClipboard.HintText}\n\n" +
+                UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(InputAction.Copy)}\n\n" +
                     "Copy the current row selection to the clipboard.");
 
                 // Paste
@@ -692,7 +706,7 @@ public class ParamRowView
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
                 }
-                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.PARAM_PasteClipboard.HintText}\n\n" +
+                UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(InputAction.Paste)}\n\n" +
                     "Paste the current row clipboard into the current param.");
 
                 // Delete
@@ -703,7 +717,7 @@ public class ParamRowView
                 {
                     Editor.DeleteSelection(View.Selection);
                 }
-                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}\n\n" +
+                UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(InputAction.Delete)}\n\n" +
                     "Delete the current row selection from the param.");
 
                 // Duplicate
@@ -722,7 +736,7 @@ public class ParamRowView
                     {
                         Editor.ParamToolView.DuplicateRow();
                     }
-                    UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}\n\n" +
+                    UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(InputAction.Duplicate)}\n\n" +
                         "Duplicate the current row selection, automatically incrementing the row ID.");
 
                     ImGui.EndMenu();

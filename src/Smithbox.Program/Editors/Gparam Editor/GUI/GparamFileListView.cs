@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -21,12 +22,11 @@ public class GparamFileListView
     public void Display()
     {
         ImGui.Begin("Files##GparamFileList");
-        Editor.Selection.SwitchWindowContext(GparamEditorContext.File);
+        FocusManager.SetFocus(EditorFocusContext.GparamEditor_FileList);
 
         Editor.Filters.DisplayFileFilterSearch();
 
         ImGui.BeginChild("GparamFileSection");
-        Editor.Selection.SwitchWindowContext(GparamEditorContext.File);
 
         foreach (var entry in Editor.Project.Handler.GparamData.PrimaryBank.Entries)
         {
@@ -49,9 +49,13 @@ public class GparamFileListView
 
                     Editor.Selection.SetFileSelection(entry.Key);
                 }
-                if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+
+                if (ImGui.IsItemFocused())
                 {
-                    Editor.Selection.SelectGparamFile = true;
+                    if (InputManager.HasArrowSelection())
+                    {
+                        Editor.Selection.SelectGparamFile = true;
+                    }
                 }
 
                 if (CFG.Current.Interface_Display_Alias_for_Gparam)

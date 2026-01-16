@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 
@@ -21,10 +22,10 @@ public class MaterialSourceList
 
     public void Draw()
     {
+        FocusManager.SetFocus(EditorFocusContext.MaterialEditor_ContainerList);
+
         if (Project.Handler.MaterialData.PrimaryBank == null)
             return;
-
-        Editor.FocusManager.SwitchMaterialEditorContext(MaterialEditorContext.SourceList);
 
         ImGui.BeginTabBar("sourceTabs");
 

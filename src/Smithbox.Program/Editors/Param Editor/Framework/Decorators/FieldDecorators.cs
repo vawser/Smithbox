@@ -8,6 +8,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -652,8 +653,7 @@ public class FieldDecorators
     /// <param name="textureRefs"></param>
     public static void ParamReference_ContextMenu(ParamEditorScreen editor, ParamBank bank, object oldval, Param.Row context, List<ParamRef> RefTypes)
     {
-        if (ImGui.IsItemClicked(ImGuiMouseButton.Left) &&
-            (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight)))
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Left) && InputManager.HasCtrlDown())
         {
             if (RefTypes != null)
             {
@@ -662,7 +662,7 @@ public class FieldDecorators
 
                 if (primaryRef?.Item2 != null)
                 {
-                    if (InputTracker.GetKey(Key.ShiftLeft) || InputTracker.GetKey(Key.ShiftRight))
+                    if (InputManager.HasShiftDown())
                     {
                         EditorCommandQueue.AddCommand(
                             $@"param/select/new/{primaryRef?.Item1}/{primaryRef?.Item2.ID}");
@@ -706,7 +706,7 @@ public class FieldDecorators
                     return false;
                 }
 
-                if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_InheritReferencedRowName))
+                if (InputManager.IsPressed(InputAction.ParamEditor_RowList_Inherit_Referenced_Row_Name))
                 {
                     List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(editor, bank, RefTypes, context, oldval);
 
@@ -750,7 +750,8 @@ public class FieldDecorators
 
         // Add Goto statements
         List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(editor, bank, reftypes, context, oldval);
-        var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
+
+        var ctrlDown = InputManager.HasCtrlDown();
 
         int index = 0;
 
@@ -1065,8 +1066,7 @@ public class FieldDecorators
     /// <param name="fmgRefs"></param>
     public static void TextReference_ContextMenu(ParamEditorScreen editor, ParamBank bank, object oldval, Param.Row context, List<FMGRef> fmgRefs)
     {
-        if (ImGui.IsItemClicked(ImGuiMouseButton.Left) &&
-            (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight)))
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Left) && InputManager.HasCtrlDown())
         {
             if (fmgRefs != null)
             {
@@ -1093,7 +1093,7 @@ public class FieldDecorators
         // Add Goto statements
         List<TextResult> refs = ReferenceResolver.ResolveTextReferences(editor, reftypes, context, oldval);
 
-        var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
+        var ctrlDown = InputManager.HasCtrlDown();
 
         foreach (var result in refs)
         {

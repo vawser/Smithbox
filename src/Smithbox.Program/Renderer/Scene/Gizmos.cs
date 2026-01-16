@@ -2,6 +2,7 @@
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -306,7 +307,7 @@ public class Gizmos
 
         if (IsTransforming)
         {
-            if (!InputTracker.GetMouseButton(MouseButton.Left))
+            if (!InputManager.IsMousePressed(MouseButton.Left))
             {
                 IsTransforming = false;
                 List<ViewportAction> actlist = new();
@@ -475,7 +476,7 @@ public class Gizmos
                         break;
                 }
 
-                if (canCaptureMouse && InputTracker.GetMouseButtonDown(MouseButton.Left))
+                if (canCaptureMouse && InputManager.IsMousePressed(MouseButton.Left))
                 {
                     if (hoveredAxis != Axis.None)
                     {

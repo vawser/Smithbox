@@ -1,4 +1,6 @@
 ﻿using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,29 +22,28 @@ public class MaterialShortcuts
 
     public void Monitor()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        if (!FocusManager.IsInMaterialEditor())
+            return;
+
+        if (InputManager.IsPressed(InputAction.Save))
         {
             Editor.Save();
         }
 
-        if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        if (Editor.EditorActionManager.CanUndo())
         {
-            Editor.EditorActionManager.UndoAction();
+            if (InputManager.IsPressed(InputAction.Undo))
+            {
+                Editor.EditorActionManager.UndoAction();
+            }
         }
 
-        if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+        if (Editor.EditorActionManager.CanRedo())
         {
-            Editor.EditorActionManager.UndoAction();
-        }
-
-        if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
-        {
-            Editor.EditorActionManager.RedoAction();
-        }
-
-        if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
-        {
-            Editor.EditorActionManager.RedoAction();
+            if (InputManager.IsPressed(InputAction.Redo))
+            {
+                Editor.EditorActionManager.RedoAction();
+            }
         }
 
         // Actions

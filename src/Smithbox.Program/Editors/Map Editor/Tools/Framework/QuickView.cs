@@ -26,7 +26,7 @@ public class AutomaticPreviewTool
     /// </summary>
     public void HandleQuickViewTooltip()
     {
-        if (Editor.FocusManager.MapEditorContext is not MapEditorContext.MapViewport)
+        if (!FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
             return;
 
         var curSel = Editor.ViewportSelection.GetSelection();

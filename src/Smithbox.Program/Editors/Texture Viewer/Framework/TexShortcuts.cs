@@ -1,4 +1,5 @@
 ﻿using StudioCore.Application;
+using StudioCore.Keybinds;
 using Veldrid;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -16,17 +17,17 @@ public class TexShortcuts
 
     public void Monitor()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ExportTexture))
+        if (InputManager.IsPressed(InputAction.TextureViewer_Export_Texture))
         {
             Editor.Tools.ExportTextureHandler();
         }
 
-        if (InputTracker.GetKey(Key.LControl))
+        if (InputManager.HasCtrlDown())
         {
             Editor.ViewerZoom.HandleZoom();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ResetZoomLevel))
+        if (InputManager.IsPressed(InputAction.TextureViewer_Reset_Zoom_Level))
         {
             Editor.ViewerZoom.ZoomReset();
         }

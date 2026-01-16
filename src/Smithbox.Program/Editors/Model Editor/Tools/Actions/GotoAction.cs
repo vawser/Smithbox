@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -25,10 +26,12 @@ public class GotoAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MODEL_GoToInList) 
-            && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            GotoModelObjectEntry();
+            if (InputManager.IsPressed(InputAction.Jump))
+            {
+                GotoModelObjectEntry();
+            }
         }
     }
 
@@ -45,7 +48,7 @@ public class GotoAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Go to in List", KeyBindings.Current.MAP_GoToInList.HintText))
+        if (ImGui.MenuItem("Go to in List", InputManager.GetHint(InputAction.Jump)))
         {
             GotoModelObjectEntry();
         }

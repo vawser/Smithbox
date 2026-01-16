@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Linq;
 using System.Numerics;
 
@@ -22,16 +24,15 @@ public class TexPropertyView
     public void Display()
     {
         ImGui.Begin("Properties##PropertiesView");
-        Editor.Selection.SwitchWindowContext(TextureViewerContext.TextureProperties);
+        FocusManager.SetFocus(EditorFocusContext.TextureViewer_Properties);
 
         UIHelper.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-        UIHelper.WrappedText($"Press {KeyBindings.Current.TEXTURE_ResetZoomLevel.HintText} to reset zoom level to 100%.");
+        UIHelper.WrappedText($"Press {InputManager.GetHint(InputAction.TextureViewer_Reset_Zoom_Level)} to reset zoom level to 100%.");
 
         UIHelper.WrappedText($"");
         UIHelper.WrappedText($"Properties of {Editor.Selection.SelectedTextureKey}:");
 
         ImGui.BeginChild("TextureProperties");
-        Editor.Selection.SwitchWindowContext(TextureViewerContext.TextureProperties);
 
         if (Editor.Selection.SelectedTexture != null)
         {

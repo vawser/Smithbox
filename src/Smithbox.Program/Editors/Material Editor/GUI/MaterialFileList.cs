@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,7 +22,7 @@ public class MaterialFileList
     }
     public void Draw()
     {
-        Editor.FocusManager.SwitchMaterialEditorContext(MaterialEditorContext.FileList);
+        FocusManager.SetFocus(EditorFocusContext.MaterialEditor_FileList);
 
         Editor.Filters.DisplayFileFilterSearch();
 
@@ -66,10 +68,13 @@ public class MaterialFileList
                         Editor.Selection.SelectedFileKey = key;
                         Editor.Selection.SelectedMTD = curFile;
                     }
-                    if (ImGui.IsItemFocused() && 
-                        (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+
+                    if (ImGui.IsItemFocused())
                     {
-                        Editor.Selection.SelectFileListEntry = true;
+                        if (InputManager.HasArrowSelection())
+                        {
+                            Editor.Selection.SelectFileListEntry = true;
+                        }
                     }
                 }
             }
@@ -119,10 +124,13 @@ public class MaterialFileList
                             Editor.Selection.SelectedFileKey = key;
                             Editor.Selection.SelectedMATBIN = curFile;
                         }
-                        if (ImGui.IsItemFocused() &&
-                            (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+
+                        if (ImGui.IsItemFocused())
                         {
-                            Editor.Selection.SelectFileListEntry = true;
+                            if (InputManager.HasArrowSelection())
+                            {
+                                Editor.Selection.SelectFileListEntry = true;
+                            }
                         }
                     }
                 }

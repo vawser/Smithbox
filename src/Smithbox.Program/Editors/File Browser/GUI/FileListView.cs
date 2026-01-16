@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,6 +24,7 @@ public class FileListView
     public void Display()
     {
         ImGui.Begin($"Browser List##BrowserList");
+        FocusManager.SetFocus(EditorFocusContext.FileBrowser_FileList);
 
         BuildFolderNodes();
 

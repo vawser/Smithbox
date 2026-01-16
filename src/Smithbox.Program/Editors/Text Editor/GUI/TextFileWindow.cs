@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Collections.Generic;
 
 namespace StudioCore.Editors.TextEditor;
@@ -27,12 +29,11 @@ public class TextFileWindow
     {
         if (ImGui.Begin("Text Files##fmgList"))
         {
-            Editor.Selection.SwitchWindowContext(TextEditorContext.Fmg);
+            FocusManager.SetFocus(EditorFocusContext.TextEditor_FmgList);
 
             Editor.Filters.DisplayFmgFilterSearch();
 
             ImGui.BeginChild("FmgFileList");
-            Editor.Selection.SwitchWindowContext(TextEditorContext.Fmg);
 
             if (Editor.Selection.SelectedContainerWrapper != null && Editor.Selection.SelectedContainerWrapper.FmgWrappers != null)
             {
@@ -315,9 +316,13 @@ public class TextFileWindow
                 Editor.Selection.SelectNextFmg = false;
                 Editor.Selection.SelectFmg(info);
             }
-            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+
+            if (ImGui.IsItemFocused())
             {
-                Editor.Selection.SelectNextFmg = true;
+                if (InputManager.HasArrowSelection())
+                {
+                    Editor.Selection.SelectNextFmg = true;
+                }
             }
 
             // Only apply to selection

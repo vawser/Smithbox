@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using System.Numerics;
 
@@ -23,7 +24,7 @@ public class TexDisplayView
     {
         ImGui.Begin("Viewer##TextureViewer", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
 
-        Editor.Selection.SwitchWindowContext(TextureViewerContext.TextureDisplay);
+        FocusManager.SetFocus(EditorFocusContext.TextureViewer_Viewer);
 
         Editor.Selection.TextureViewWindowPosition = ImGui.GetWindowPos();
         Editor.Selection.TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());

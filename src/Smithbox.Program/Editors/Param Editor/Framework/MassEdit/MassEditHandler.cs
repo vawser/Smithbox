@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
@@ -296,7 +297,7 @@ public class MassEditHandler
             {
                 ExecuteMassEdit(CurrentInput, Project.Handler.ParamData.PrimaryBank, Editor._activeView.Selection);
             }
-            UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ExecuteMassEdit.HintText}");
+            UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(InputAction.ParamEditor_Apply_Mass_Edit)}");
 
             ImGui.SameLine();
             if (ImGui.Button("Clear##action_Selection_MassEdit_Clear", DPI.HalfWidthButton(windowWidth, 24)))

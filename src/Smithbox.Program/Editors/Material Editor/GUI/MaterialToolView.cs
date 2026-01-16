@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ public class MaterialToolWindow
 
     public void Draw()
     {
-        Editor.FocusManager.SwitchMaterialEditorContext(MaterialEditorContext.ToolWindow);
+        FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Tools);
 
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();

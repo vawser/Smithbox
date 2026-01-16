@@ -25,7 +25,7 @@ public class GparamValueListView
     public void Display()
     {
         ImGui.Begin("Values##GparamValues");
-        Editor.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
+        FocusManager.SetFocus(EditorFocusContext.GparamEditor_Properties);
 
         Editor.Filters.DisplayFieldValueFilterSearch();
 
@@ -39,7 +39,6 @@ public class GparamValueListView
 
             // ID
             ImGui.BeginChild("IdList##GparamPropertyIds");
-            Editor.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"ID");
             ImGui.Separator();
 

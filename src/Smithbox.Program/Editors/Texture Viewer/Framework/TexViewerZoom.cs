@@ -1,4 +1,5 @@
 ﻿using StudioCore.Application;
+using StudioCore.Keybinds;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -19,7 +20,7 @@ public class TexViewerZoom
 
     public void HandleZoom()
     {
-        var delta = InputTracker.GetMouseWheelDelta();
+        var delta = InputManager.MouseWheelDelta;
 
         if (delta > 0)
         {

@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using StudioCore.Keybinds;
+using System.Text.Json.Serialization;
+using static StudioCore.Keybinds.InputManager;
 
 namespace StudioCore.Application;
 
@@ -11,8 +13,9 @@ namespace StudioCore.Application;
 // Program
 [JsonSerializable(typeof(CFG))]
 [JsonSerializable(typeof(UI))]
-[JsonSerializable(typeof(KeyBindings.Bindings))]
-[JsonSerializable(typeof(KeyBind))]
+
+[JsonSerializable(typeof(KeybindStore))]
+[JsonSerializable(typeof(KeyBinding))]
 
 // Project
 [JsonSerializable(typeof(ProjectDescriptor))]

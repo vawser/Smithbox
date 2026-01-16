@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -25,10 +26,12 @@ public class PullToCameraAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MODEL_MoveToCamera) 
-            && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyMoveToCamera();
+            if (InputManager.IsPressed(InputAction.Pull))
+            {
+                ApplyMoveToCamera();
+            }
         }
     }
 
@@ -41,7 +44,7 @@ public class PullToCameraAction
         {
             ApplyMoveToCamera();
         }
-        UIHelper.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MODEL_MoveToCamera.HintText}");
+        UIHelper.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {InputManager.GetHint(InputAction.Pull)}");
     }
 
     /// <summary>
@@ -49,7 +52,7 @@ public class PullToCameraAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Pull to Camera", KeyBindings.Current.MODEL_MoveToCamera.HintText))
+        if (ImGui.MenuItem("Pull to Camera", InputManager.GetHint(InputAction.Pull)))
         {
             ApplyMoveToCamera();
         }

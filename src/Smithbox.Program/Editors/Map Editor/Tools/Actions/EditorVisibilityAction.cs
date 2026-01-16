@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,29 +24,37 @@ public class EditorVisibilityAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_Visibility_FlipSelected) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_EnableSelected) && Editor.ViewportSelection.IsSelection())
-        {
-            ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_DisableSelected) && Editor.ViewportSelection.IsSelection())
-        {
-            ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_FlipAll))
-        {
-            ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_EnableAll))
-        {
-            ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_Visibility_DisableAll))
-        {
-            ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
+            if (InputManager.IsPressed(InputAction.MapEditor_Visibility_Flip))
+            {
+                ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
+            }
+
+            if (InputManager.IsPressed(InputAction.MapEditor_Visibility_Enable))
+            {
+                ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
+            }
+
+            if (InputManager.IsPressed(InputAction.MapEditor_Visibility_Disable))
+            {
+                ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
+            }
+
+            if (InputManager.IsPressed(InputAction.MapEditor_Global_Visibility_Flip))
+            {
+                ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
+            }
+
+            if (InputManager.IsPressed(InputAction.MapEditor_Global_Visibility_Enable))
+            {
+                ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
+            }
+
+            if (InputManager.IsPressed(InputAction.MapEditor_Global_Visibility_Disable))
+            {
+                ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
+            }
         }
     }
 
@@ -56,32 +65,32 @@ public class EditorVisibilityAction
     {
         if (ImGui.BeginMenu("Editor Visibility"))
         {
-            if (ImGui.MenuItem("Flip Visibility for Selected", KeyBindings.Current.Map_Visibility_FlipSelected.HintText))
+            if (ImGui.MenuItem("Flip Selection Visibility", InputManager.GetHint(InputAction.MapEditor_Visibility_Flip)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
             }
 
-            if (ImGui.MenuItem("Enable Visibility for Selected", KeyBindings.Current.MAP_Visibility_EnableSelected.HintText))
+            if (ImGui.MenuItem("Enable Selection Visibility", InputManager.GetHint(InputAction.MapEditor_Visibility_Enable)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
             }
 
-            if (ImGui.MenuItem("Disable Visibility for Selected", KeyBindings.Current.MAP_Visibility_DisableSelected.HintText))
+            if (ImGui.MenuItem("Disable Selection Visibility", InputManager.GetHint(InputAction.MapEditor_Visibility_Disable)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
             }
 
-            if (ImGui.MenuItem("Flip Visibility for All", KeyBindings.Current.MAP_Visibility_FlipAll.HintText))
+            if (ImGui.MenuItem("Flip Visibility for All", InputManager.GetHint(InputAction.MapEditor_Global_Visibility_Flip)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
             }
 
-            if (ImGui.MenuItem("Enable Visibility for All", KeyBindings.Current.MAP_Visibility_EnableAll.HintText))
+            if (ImGui.MenuItem("Enable Visibility for All", InputManager.GetHint(InputAction.MapEditor_Global_Visibility_Enable)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
             }
 
-            if (ImGui.MenuItem("Disable Visibility for All", KeyBindings.Current.Map_Visibility_DisableAll.HintText))
+            if (ImGui.MenuItem("Disable Visibility for All", InputManager.GetHint(InputAction.MapEditor_Global_Visibility_Disable)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
             }
@@ -97,32 +106,32 @@ public class EditorVisibilityAction
     {
         if (ImGui.BeginMenu("Editor Visibility"))
         {
-            if (ImGui.MenuItem("Flip Visibility for Selected", KeyBindings.Current.Map_Visibility_FlipSelected.HintText))
+            if (ImGui.MenuItem("Flip Selection Visibility", InputManager.GetHint(InputAction.MapEditor_Visibility_Flip)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
             }
 
-            if (ImGui.MenuItem("Enable Visibility for Selected", KeyBindings.Current.MAP_Visibility_EnableSelected.HintText))
+            if (ImGui.MenuItem("Enable Selection Visibility", InputManager.GetHint(InputAction.MapEditor_Visibility_Enable)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
             }
 
-            if (ImGui.MenuItem("Disable Visibility for Selected", KeyBindings.Current.MAP_Visibility_DisableSelected.HintText))
+            if (ImGui.MenuItem("Disable Selection Visibility", InputManager.GetHint(InputAction.MapEditor_Visibility_Disable)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
             }
 
-            if (ImGui.MenuItem("Flip Visibility for All", KeyBindings.Current.MAP_Visibility_FlipAll.HintText))
+            if (ImGui.MenuItem("Flip Visibility for All", InputManager.GetHint(InputAction.MapEditor_Global_Visibility_Flip)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
             }
 
-            if (ImGui.MenuItem("Enable Visibility for All", KeyBindings.Current.MAP_Visibility_EnableAll.HintText))
+            if (ImGui.MenuItem("Enable Visibility for All", InputManager.GetHint(InputAction.MapEditor_Global_Visibility_Enable)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
             }
 
-            if (ImGui.MenuItem("Disable Visibility for All", KeyBindings.Current.Map_Visibility_DisableAll.HintText))
+            if (ImGui.MenuItem("Disable Visibility for All", InputManager.GetHint(InputAction.MapEditor_Global_Visibility_Disable)))
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
             }

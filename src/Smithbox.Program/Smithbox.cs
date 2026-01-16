@@ -2,6 +2,7 @@
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -13,7 +14,6 @@ using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Sdl2;
 using static StudioCore.Application.HelpWindow;
-using static StudioCore.Application.KeybindWindow;
 using static StudioCore.Application.SettingsWindow;
 using Thread = System.Threading.Thread;
 
@@ -45,8 +45,9 @@ public class Smithbox
 
     public SettingsWindow Settings;
     public HelpWindow Help;
-    public KeybindWindow Keybinds;
     public DeveloperTools DebugTools;
+
+    public KeybindsMenu Keybinds = new();
 
     public ActionLogger ActionLogger;
     public WarningLogger WarningLogger;
@@ -99,11 +100,10 @@ public class Smithbox
     {
         CFG.Setup();
         UI.Setup();
-        KeyBindings.Setup();
+        InputManager.Init();
 
         CFG.Load();
         UI.Load();
-        KeyBindings.Load();
 
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
@@ -123,7 +123,7 @@ public class Smithbox
     {
         CFG.Save();
         UI.Save();
-        KeyBindings.Save();
+        InputManager.Save();
     }
 
     /// <summary>
@@ -133,7 +133,7 @@ public class Smithbox
     {
         CFG.Save();
         UI.Save();
-        KeyBindings.Save();
+        InputManager.Save();
     }
 
     private unsafe void SetupImGui()
@@ -314,7 +314,7 @@ public class Smithbox
 
             snapshot = _context.Window.PumpEvents();
 
-            InputTracker.UpdateFrameInput(snapshot, _context.Window);
+            InputManager.Update(_context.Window, snapshot, deltaSeconds);
             
             Update((float)deltaSeconds);
 
@@ -384,12 +384,12 @@ public class Smithbox
 
         if (FontRebuildRequest)
         {
-            _context.ImguiRenderer.Update(deltaseconds, InputTracker.FrameSnapshot, SetupFonts);
+            _context.ImguiRenderer.Update(deltaseconds, InputManager.InputSnapshot, SetupFonts);
             FontRebuildRequest = false;
         }
         else
         {
-            _context.ImguiRenderer.Update(deltaseconds, InputTracker.FrameSnapshot, null);
+            _context.ImguiRenderer.Update(deltaseconds, InputManager.InputSnapshot, null);
         }
 
         TaskManager.ThrowTaskExceptions();
@@ -520,57 +520,9 @@ public class Smithbox
             }
 
             // Keybinds
-            if (ImGui.BeginMenu("Keybinds"))
+            if (ImGui.MenuItem("Keybinds"))
             {
-                if (ImGui.MenuItem("Common"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.Common);
-                }
-                UIHelper.Tooltip("View the common keybinds shared between all editors.");
-
-                if (ImGui.MenuItem("Viewport"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.Viewport);
-                }
-                UIHelper.Tooltip("View the keybinds that apply to the viewport.");
-
-                if (ImGui.MenuItem("Map Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.MapEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Map Editor.");
-
-                if (ImGui.MenuItem("Model Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.ModelEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Model Editor.");
-
-                if (ImGui.MenuItem("Param Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.ParamEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Param Editor.");
-
-                if (ImGui.MenuItem("Text Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.TextEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Text Editor.");
-
-                if (ImGui.MenuItem("Gparam Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.GparamEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Gparam Editor.");
-
-                if (ImGui.MenuItem("Texture Viewer"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.TextureViewer);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Texture Viewer.");
-
-                ImGui.EndMenu();
+                Keybinds.IsDisplayed = !Keybinds.IsDisplayed;
             }
 
             // Help
@@ -646,8 +598,9 @@ public class Smithbox
 
         Settings.Display();
         Help.Display();
-        Keybinds.Display();
         DebugTools.Display();
+
+        Keybinds.Draw();
 
         // Tool windows
         ColorPicker.DisplayColorPicker();

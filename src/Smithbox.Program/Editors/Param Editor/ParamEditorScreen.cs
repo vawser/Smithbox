@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -371,7 +372,7 @@ public class ParamEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(InputAction.Save)}"))
             {
                 Save();
             }
@@ -414,7 +415,7 @@ public class ParamEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)} / {InputManager.GetHint(InputAction.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -432,7 +433,7 @@ public class ParamEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)} / {InputManager.GetHint(InputAction.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
@@ -440,54 +441,57 @@ public class ParamEditorScreen : EditorScreen
                 }
             }
 
-            ImGui.Separator();
-
-            if (ImGui.MenuItem("Duplicate Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            if (ImGui.BeginMenu("Param Row"))
             {
-                ParamToolView.DuplicateRow();
-            }
-            UIHelper.Tooltip($"Duplicates current selection.");
+                if (ImGui.MenuItem("Duplicate", InputManager.GetHint(InputAction.Duplicate)))
+                {
+                    ParamToolView.DuplicateRow();
+                }
+                UIHelper.Tooltip($"Duplicates current selection.");
 
-            if (ImGui.BeginMenu("Duplicate Row to Commutative Param", ParamToolView.IsCommutativeParam()))
-            {
-                ParamToolView.DisplayCommutativeDropDownMenu();
+                if (ImGui.BeginMenu("Duplicate to Commutative Param", ParamToolView.IsCommutativeParam()))
+                {
+                    ParamToolView.DisplayCommutativeDropDownMenu();
+
+                    ImGui.EndMenu();
+                }
+                UIHelper.Tooltip($"Duplicates current selection to a commutative param.");
+
+                if (ImGui.MenuItem("Delete", InputManager.GetHint(InputAction.Delete)))
+                {
+                    DeleteSelection();
+                }
+                UIHelper.Tooltip($"Deletes current selection.");
+
+                if (ImGui.MenuItem("Copy", InputManager.GetHint(InputAction.Copy)))
+                {
+                    if (_activeView.Selection.RowSelectionExists())
+                    {
+                        CopySelectionToClipboard();
+                    }
+                }
+                UIHelper.Tooltip($"Copy current selection to clipboard.");
+
+                if (ImGui.MenuItem("Paste", InputManager.GetHint(InputAction.Paste)))
+                {
+                    if (Project.Handler.ParamData.PrimaryBank.ClipboardRows.Any())
+                    {
+                        EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
+                    }
+                }
+                UIHelper.Tooltip($"Paste current selection into current param.");
+
+                if (ImGui.MenuItem("Jump To Selected", InputManager.GetHint(InputAction.Jump)))
+                {
+                    if (_activeView.Selection.RowSelectionExists())
+                    {
+                        GotoSelectedRow = true;
+                    }
+                }
+                UIHelper.Tooltip($"Go to currently selected row.");
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip($"Duplicates current selection to a commutative param.");
-
-            if (ImGui.MenuItem("Remove Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
-            {
-                DeleteSelection();
-            }
-            UIHelper.Tooltip($"Deletes current selection.");
-
-            if (ImGui.MenuItem("Copy", KeyBindings.Current.PARAM_CopyToClipboard.HintText))
-            {
-                if (_activeView.Selection.RowSelectionExists())
-                {
-                    CopySelectionToClipboard();
-                }
-            }
-            UIHelper.Tooltip($"Copy current selection to clipboard.");
-
-            if (ImGui.MenuItem("Paste", KeyBindings.Current.PARAM_PasteClipboard.HintText))
-            {
-                if (Project.Handler.ParamData.PrimaryBank.ClipboardRows.Any())
-                {
-                    EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
-                }
-            }
-            UIHelper.Tooltip($"Paste current selection into current param.");
-
-            if (ImGui.MenuItem("Go to selected row", KeyBindings.Current.PARAM_GoToSelectedRow.HintText))
-            {
-                if (_activeView.Selection.RowSelectionExists())
-                {
-                    GotoSelectedRow = true;
-                }
-            }
-            UIHelper.Tooltip($"Go to currently selected row.");
 
             ImGui.EndMenu();
         }
@@ -617,17 +621,15 @@ public class ParamEditorScreen : EditorScreen
 
                 if (ImGui.BeginMenu("Quick action"))
                 {
-                    if (ImGui.MenuItem("Export selected Names to window"))
+                    if (ImGui.MenuItem("Export selected Names to window", InputManager.GetHint(InputAction.ParamEditor_Export_CSV_Names)))
                     {
                         EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/2");
                     }
-                    UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ExportCSV_Names.HintText}");
 
-                    if (ImGui.MenuItem("Export entire param to window"))
+                    if (ImGui.MenuItem("Export entire param to window", InputManager.GetHint(InputAction.ParamEditor_Export_CSV_Param)))
                     {
                         EditorCommandQueue.AddCommand(@"param/menu/massEditCSVExport/0");
                     }
-                    UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ExportCSV_Param.HintText}");
 
                     if (ImGui.MenuItem("Export entire param to file"))
                     {
@@ -700,7 +702,7 @@ public class ParamEditorScreen : EditorScreen
             {
                 DelimiterInputText();
 
-                if (ImGui.MenuItem("All fields", KeyBindings.Current.PARAM_ImportCSV.HintText))
+                if (ImGui.MenuItem("All fields", InputManager.GetHint(InputAction.ParamEditor_Import_CSV)))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
                 }
@@ -1094,7 +1096,7 @@ public class ParamEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Export to window..."))
         {
-            if (ImGui.MenuItem("Export all fields", KeyBindings.Current.PARAM_ExportCSV.HintText))
+            if (ImGui.MenuItem("Export all fields", InputManager.GetHint(InputAction.ParamEditor_Export_CSV)))
             {
                 EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{rowType}");
             }

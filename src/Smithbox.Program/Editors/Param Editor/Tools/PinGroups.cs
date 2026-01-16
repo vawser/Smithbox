@@ -55,33 +55,33 @@ public class PinGroups
         ImGui.Separator();
 
         ImGui.Checkbox("Show only pinned params exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedParams);
-        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedParams.HintText}\nWhen enabled, only pinned params will appear in the param list.");
+        UIHelper.Tooltip($"When enabled, only pinned params will appear in the param list.");
 
         ImGui.Checkbox("Show only pinned rows exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedRows);
-        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedRows.HintText}\nWhen enabled, only pinned rows will appear in the rows list.");
+        UIHelper.Tooltip($"When enabled, only pinned rows will appear in the rows list.");
 
         ImGui.Checkbox("Show only pinned fields exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedFields);
-        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedFields.HintText}\nWhen enabled, only pinned fields will appear in the param list.");
+        UIHelper.Tooltip($"When enabled, only pinned fields will appear in the param list.");
 
         if (ImGui.Button("Clear Param Pins", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             Editor.Project.Descriptor.PinnedParams = new();
         }
-        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedParams.HintText}\nClear current pinned params.");
+        UIHelper.Tooltip($"Clear current pinned params.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Row Pins", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             Editor.Project.Descriptor.PinnedRows = new();
         }
-        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedRows.HintText}\nClear current pinned rows.");
+        UIHelper.Tooltip($"Clear current pinned rows.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Field Pins", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             Editor.Project.Descriptor.PinnedFields = new();
         }
-        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedFields.HintText}\nClear current pinned fields.");
+        UIHelper.Tooltip($"Clear current pinned fields.");
 
 
         ImGui.Separator();
@@ -96,21 +96,21 @@ public class PinGroups
         {
             CreateParamGroup();
         }
-        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_CreateParamPinGroup.HintText}\nCreate a new pin group from the current pinned params.");
+        UIHelper.Tooltip($"Create a new pin group from the current pinned params.");
 
         ImGui.SameLine();
         if (ImGui.Button("Create Row Group", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             CreateRowGroup();
         }
-        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_CreateRowPinGroup.HintText}\nCreate a new pin group from the current pinned rows.");
+        UIHelper.Tooltip($"Create a new pin group from the current pinned rows.");
 
         ImGui.SameLine();
         if (ImGui.Button("Create Field Group", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             CreateFieldGroup();
         }
-        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_CreateFieldPinGroup.HintText}\nCreate a new pin group from the current pinned fields.");
+        UIHelper.Tooltip($"Create a new pin group from the current pinned fields.");
 
         ImGui.Separator();
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Group Lists");

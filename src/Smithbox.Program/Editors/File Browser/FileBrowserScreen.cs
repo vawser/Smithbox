@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Diagnostics;
 using System.Numerics;
 
@@ -107,7 +108,7 @@ public class FileBrowserScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)} / {InputManager.GetHint(InputAction.Undo_Repeat)}"))
             {
                 if (ActionManager.CanUndo())
                 {
@@ -125,7 +126,7 @@ public class FileBrowserScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)} / {InputManager.GetHint(InputAction.Redo_Repeat)}"))
             {
                 if (ActionManager.CanRedo())
                 {

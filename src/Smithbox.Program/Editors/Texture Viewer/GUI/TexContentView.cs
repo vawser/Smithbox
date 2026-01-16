@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -18,12 +20,11 @@ public class TexContentView
     public void Display()
     {
         ImGui.Begin("Textures##TextureList");
-        Editor.Selection.SwitchWindowContext(TextureViewerContext.TextureList);
+        FocusManager.SetFocus(EditorFocusContext.TextureViewer_TextureList);
 
         Editor.Filters.DisplayTextureFilterSearch();
 
         ImGui.BeginChild("TextureList");
-        Editor.Selection.SwitchWindowContext(TextureViewerContext.TextureList);
 
         if (Editor.Selection.SelectedTpf != null)
         {
@@ -57,9 +58,13 @@ public class TexContentView
                         TargetIndex = index;
                         LoadTexture = true;
                     }
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+
+                    if (ImGui.IsItemFocused())
                     {
-                        Editor.Selection.SelectTexture = true;
+                        if (InputManager.HasArrowSelection())
+                        {
+                            Editor.Selection.SelectTexture = true;
+                        }
                     }
                 }
 

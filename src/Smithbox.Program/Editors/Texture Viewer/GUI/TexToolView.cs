@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Diagnostics;
 using System.Numerics;
@@ -24,7 +26,7 @@ public class TexToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextureViewer", ImGuiWindowFlags.MenuBar))
         {
-            Editor.Selection.SwitchWindowContext(TextureViewerContext.ToolWindow);
+            FocusManager.SetFocus(EditorFocusContext.TextureViewer_Tools);
 
             var windowWidth = ImGui.GetWindowWidth();
 
@@ -111,7 +113,7 @@ public class TexToolView
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            if (ImGui.MenuItem("Export Texture", KeyBindings.Current.TEXTURE_ExportTexture.HintText))
+            if (ImGui.MenuItem("Export Texture", InputManager.GetHint(InputAction.TextureViewer_Export_Texture)))
             {
                 Editor.Tools.ExportTextureHandler();
             }

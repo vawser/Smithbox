@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Numerics;
@@ -41,7 +42,7 @@ public class MapListView : IActionEventHandler
             // Map List
             if (ImGui.Begin($@"Map List##mapIdList", ImGuiWindowFlags.MenuBar))
             {
-                Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapIdList);
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
 
                 DisplayMenubar();
                 DisplaySearchbar();
@@ -146,7 +147,7 @@ public class MapListView : IActionEventHandler
                 {
                     Editor.WorldMapTool.DisplayMenuOption();
                 }
-                UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleWorldMap.HintText}");
+                UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Toggle_World_Map_Menu)}");
             }
 
             ImGui.EndMenuBar();

@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Linq;
@@ -27,14 +29,13 @@ public class TextContainerWindow
     {
         if (ImGui.Begin("Files##FmgContainerFileList"))
         {
-            Editor.Selection.SwitchWindowContext(TextEditorContext.File);
+            FocusManager.SetFocus(EditorFocusContext.TextEditor_ContainerList);
 
             Editor.Filters.DisplayFileFilterSearch();
 
             int index = 0;
 
             ImGui.BeginChild("CategoryList");
-            Editor.Selection.SwitchWindowContext(TextEditorContext.File);
 
             // Categories
             foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
@@ -200,9 +201,13 @@ public class TextContainerWindow
                 Editor.Selection.SelectNextFileContainer = false;
                 Editor.Selection.SelectFileContainer(entry, wrapper, index);
             }
-            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
-            {
-                Editor.Selection.SelectNextFileContainer = true;
+
+            if(ImGui.IsItemFocused())
+            {           
+                if (InputManager.HasArrowSelection())
+                {
+                    Editor.Selection.SelectNextFileContainer = true;
+                }
             }
 
             // Only apply to selection

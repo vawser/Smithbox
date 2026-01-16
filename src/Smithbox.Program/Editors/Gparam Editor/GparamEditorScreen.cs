@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Linq;
 using System.Numerics;
@@ -117,12 +118,12 @@ public class GparamEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(InputAction.Save)}"))
             {
                 Save();
             }
 
-            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            if (ImGui.MenuItem($"Save All"))
             {
                 SaveAll();
             }
@@ -166,7 +167,7 @@ public class GparamEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)} / {InputManager.GetHint(InputAction.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -184,7 +185,7 @@ public class GparamEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)} / {InputManager.GetHint(InputAction.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
@@ -194,14 +195,19 @@ public class GparamEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Duplicate Value Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            if(ImGui.BeginMenu("Value Row"))
             {
-                ActionHandler.DuplicateValueRow();
-            }
+                if (ImGui.MenuItem("Duplicate", InputManager.GetHint(InputAction.Duplicate)))
+                {
+                    ActionHandler.DuplicateValueRow();
+                }
 
-            if (ImGui.MenuItem("Delete Value Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
-            {
-                ActionHandler.DeleteValueRow();
+                if (ImGui.MenuItem("Delete", InputManager.GetHint(InputAction.Delete)))
+                {
+                    ActionHandler.DeleteValueRow();
+                }
+
+                ImGui.EndMenu();
             }
 
 
@@ -280,50 +286,59 @@ public class GparamEditorScreen : EditorScreen
 
     public void Shortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        if (!FocusManager.IsInGparamEditor())
+            return;
+
+        // Save
+        if (InputManager.IsPressed(InputAction.Save))
         {
             Save();
         }
 
-        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        // Undo
+        if (EditorActionManager.CanUndo())
         {
-            EditorActionManager.UndoAction();
+            if (InputManager.IsPressed(InputAction.Undo))
+            {
+                EditorActionManager.UndoAction();
+            }
         }
 
-        if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+        // Redo
+        if (EditorActionManager.CanRedo())
         {
-            EditorActionManager.UndoAction();
+            if (InputManager.IsPressed(InputAction.Redo))
+            {
+                EditorActionManager.RedoAction();
+            }
         }
 
-        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
-        {
-            EditorActionManager.RedoAction();
-        }
-
-        if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
-        {
-            EditorActionManager.RedoAction();
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
-        {
-            ActionHandler.DeleteValueRow();
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
+        // Duplicate
+        if (InputManager.IsPressed(InputAction.Duplicate))
         {
             ActionHandler.DuplicateValueRow();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ExecuteQuickEdit))
+        // Delete
+        if (InputManager.IsPressed(InputAction.Delete))
+        {
+            ActionHandler.DeleteValueRow();
+        }
+
+        // Execute Quick Edit
+        if (InputManager.IsPressed(InputAction.GparamEditor_Execute_Quick_Edit))
         {
             QuickEditHandler.ExecuteQuickEdit();
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_GenerateQuickEdit))
+
+        // Generate Quick Edit
+        if (InputManager.IsPressed(InputAction.GparamEditor_Generate_Quick_Edit))
         {
             QuickEditHandler.GenerateQuickEditCommands();
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ClearQuickEdit))
+
+        // Clear Quick Edit
+        if (InputManager.IsPressed(InputAction.GparamEditor_Clear_Quick_Edit))
         {
             QuickEditHandler.ClearQuickEditCommands();
         }

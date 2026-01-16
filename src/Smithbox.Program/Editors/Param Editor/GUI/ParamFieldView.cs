@@ -3,6 +3,7 @@ using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,8 @@ public class ParamFieldView
     /// <param name="activeRow"></param>
     public void Display(bool isActiveView, string activeParam, Param.Row activeRow)
     {
+        FocusManager.SetFocus(EditorFocusContext.ParamEditor_FieldList);
+
         ImGui.Text("Fields");
         ImGui.Separator();
 
@@ -49,16 +52,12 @@ public class ParamFieldView
         {
             ImGui.BeginChild("columnsNONE");
 
-            Editor.ContextManager.SetWindowContext(ParamEditorContext.FieldList);
-
             ImGui.Text("Select a row to see properties");
             ImGui.EndChild();
         }
         else
         {
             ImGui.BeginChild("columns" + activeParam);
-
-            Editor.ContextManager.SetWindowContext(ParamEditorContext.FieldList);
 
             Param vanillaParam = Editor.Project.Handler.ParamData.VanillaBank.Params?.GetValueOrDefault(activeParam);
 
@@ -213,9 +212,12 @@ public class ParamFieldView
     {
         if (propSearchString != null)
         {
-            if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SearchField))
+            if (FocusManager.IsFocus(EditorFocusContext.ParamEditor_FieldList))
             {
-                ImGui.SetKeyboardFocusHere();
+                if (isActiveView && InputManager.IsPressed(InputAction.ParamEditor_Focus_Searchbar))
+                {
+                    ImGui.SetKeyboardFocusHere();
+                }
             }
 
             // Autofill
@@ -236,7 +238,7 @@ public class ParamFieldView
             ImGui.AlignTextToFramePadding();
             ImGui.InputText("##fieldSearch", ref propSearchString,
                 255);
-            UIHelper.Tooltip($"Search <{KeyBindings.Current.PARAM_SearchField.HintText}>");
+            UIHelper.Tooltip($"Search <{InputManager.GetHint(InputAction.ParamEditor_Focus_Searchbar)}>");
 
             if (ImGui.IsItemEdited())
             {

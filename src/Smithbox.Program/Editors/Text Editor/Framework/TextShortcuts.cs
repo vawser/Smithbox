@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -20,65 +21,70 @@ public class TextShortcuts
 
     public void Monitor()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        // Save
+        if (InputManager.IsPressed(InputAction.Save))
         {
             Editor.Save();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_SaveAll))
+        // Undo
+        if (Editor.EditorActionManager.CanUndo())
         {
-            Editor.SaveAll();
+            if (InputManager.IsPressed(InputAction.Undo))
+            {
+                Editor.EditorActionManager.UndoAction();
+            }
+
+            if (InputManager.IsPressedOrRepeated(InputAction.Undo_Repeat))
+            {
+                Editor.EditorActionManager.UndoAction();
+            }
         }
 
-        if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        // Redo
+        if (Editor.EditorActionManager.CanRedo())
         {
-            Editor.EditorActionManager.UndoAction();
+            if (InputManager.IsPressed(InputAction.Redo))
+            {
+                Editor.EditorActionManager.RedoAction();
+            }
+
+            if (InputManager.IsPressedOrRepeated(InputAction.Redo_Repeat))
+            {
+                Editor.EditorActionManager.RedoAction();
+            }
         }
 
-        if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
-        {
-            Editor.EditorActionManager.UndoAction();
-        }
-
-        if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
-        {
-            Editor.EditorActionManager.RedoAction();
-        }
-
-        if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
-        {
-            Editor.EditorActionManager.RedoAction();
-        }
-
-        if (Editor.Selection.CurrentWindowContext is TextEditorContext.FmgEntry)
+        if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
         {
             // Create
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_CreateNewEntry))
+            if (InputManager.IsPressed(InputAction.TextEditor_Create_New_Entry))
             {
                 Editor.EntryCreationModal.ShowModal = true;
             }
 
+            // TODO: remove this if we add Copy/Paste functionality
             // Configurable Duplicate
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntryPopup))
+            if (InputManager.IsPressed(InputAction.TextEditor_Configurable_Duplicate))
             {
                 ImGui.OpenPopup("textDuplicatePopup");
             }
 
             // Standard Duplicate
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
+            if (InputManager.IsPressed(InputAction.Duplicate))
             {
                 Editor.ActionHandler.DuplicateEntries();
             }
 
             // Delete
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
+            if (InputManager.IsPressed(InputAction.Delete))
             {
                 Editor.ActionHandler.DeleteEntries();
             }
         }
 
         // Focus Selected Entry
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXT_FocusSelectedEntry))
+        if (InputManager.IsPressed(InputAction.Jump))
         {
             Editor.Selection.FocusFmgEntrySelection = true;
         }
@@ -89,7 +95,6 @@ public class TextShortcuts
     /// </summary>
     public void HandleSelectAll()
     {
-        var selectionContext = Editor.Selection.CurrentWindowContext;
         var multiselect = Editor.Selection.FmgEntryMultiselect;
 
         if (Editor.Selection.SelectedFmgWrapper == null)
@@ -98,9 +103,9 @@ public class TextShortcuts
         var fmg = Editor.Selection.SelectedFmgWrapper.File;
 
         // Select All
-        if (selectionContext is TextEditorContext.FmgEntry)
+        if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
         {
-            if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
+            if (InputManager.IsPressed(InputAction.SelectAll))
             {
                 multiselect.StoredEntries.Clear();
 
@@ -128,9 +133,9 @@ public class TextShortcuts
         var selectionContext = Editor.Selection.CurrentWindowContext;
 
         // Copy Entry Contents
-        if (selectionContext is TextEditorContext.FmgEntry)
+        if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
         {
-            if (InputTracker.GetKey(KeyBindings.Current.TEXT_CopyEntryContents))
+            if (InputManager.IsPressed(InputAction.Copy))
             {
                 Editor.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_TextCopy_IncludeID);
             }

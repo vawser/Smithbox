@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,9 +40,12 @@ public class CreateAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateMapObject) && Editor.ViewportSelection.IsSelection())
+        if(Editor.ViewportSelection.IsSelection())
         {
-            Editor.CreateAction.ApplyObjectCreation();
+            if (InputManager.IsPressed(InputAction.MapEditor_Create_Map_Object))
+            {
+                Editor.CreateAction.ApplyObjectCreation();
+            }
         }
     }
 

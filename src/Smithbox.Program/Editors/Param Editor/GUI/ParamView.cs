@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,8 @@ public class ParamView
     /// <param name="scrollTo"></param>
     public void Display(bool doFocus, bool isActiveView, float scale, float scrollTo)
     {
+        FocusManager.SetFocus(EditorFocusContext.ParamEditor_ParamList);
+
         DisplayHeader(isActiveView);
 
         if (CFG.Current.Param_PinnedParamsStayVisible)
@@ -44,8 +47,6 @@ public class ParamView
         }
 
         ImGui.BeginChild("paramTypes");
-
-        Editor.ContextManager.SetWindowContext(ParamEditorContext.ParamList);
 
         if (!CFG.Current.Param_PinnedParamsStayVisible)
         {
@@ -97,15 +98,17 @@ public class ParamView
 
         ImGui.SameLine();
 
-        // Search param
-        if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SearchParam))
+        if (FocusManager.IsFocus(EditorFocusContext.ParamEditor_ParamList))
         {
-            ImGui.SetKeyboardFocusHere();
+            if (isActiveView && InputManager.IsPressed(InputAction.ParamEditor_Focus_Searchbar))
+            {
+                ImGui.SetKeyboardFocusHere();
+            }
         }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputText($"##paramSearch", ref View.Selection.currentParamSearchString, 256);
-        UIHelper.Tooltip($"Search <{KeyBindings.Current.PARAM_SearchParam.HintText}>");
+        UIHelper.Tooltip($"Search <{InputManager.GetHint(InputAction.ParamEditor_Focus_Searchbar)}>");
 
         if (!View.Selection.currentParamSearchString.Equals(lastParamSearch))
         {

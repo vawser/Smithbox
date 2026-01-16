@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -21,7 +22,7 @@ public class ToolSubMenu
         /// Toggle Patrol Route Visualisation
         if (Editor.Project.Descriptor.ProjectType != ProjectType.DS2S && Editor.Project.Descriptor.ProjectType != ProjectType.DS2)
         {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_TogglePatrolRouteRendering))
+            if (InputManager.IsPressed(InputAction.MapEditor_Toggle_Patrol_Route_Visuals))
             {
                 if (!PatrolsVisualised)
                 {

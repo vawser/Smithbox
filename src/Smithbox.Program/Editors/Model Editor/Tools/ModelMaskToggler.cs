@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -105,10 +106,12 @@ public class ModelMaskToggler
                     ToggleMeshes(entry);
                 }
 
-                if (ImGui.IsItemFocused() &&
-                    (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+                if (ImGui.IsItemFocused())
                 {
-                    SelectEntry = true;
+                    if (InputManager.HasArrowSelection())
+                    {
+                        SelectEntry = true;
+                    }
                 }
 
                 UIHelper.DisplayAlias($"{entry.Name}");

@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -176,6 +177,11 @@ public class TextFilters
     /// </summary>
     public void DisplayFmgEntryFilterSearch()
     {
+        if(InputManager.IsPressed(InputAction.TextEditor_Focus_Searchbar))
+        {
+            ImGui.SetKeyboardFocusHere();
+        }
+
         ImGui.InputText($"Search##fmgEntryFilterSearch", ref FmgEntryFilterInput, 255);
         UIHelper.WideTooltip("Chain commands by using the + symbol between them.\n\nSpecial commands:\nmodified - Displays rows where the text is different to vanilla.\nunique - Displays rows that are unique to your project.");
 

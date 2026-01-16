@@ -43,7 +43,7 @@ public class ModelSourceView
 
             if (ImGui.Begin($@"Model Sources##modelSourceList", ImGuiWindowFlags.MenuBar))
             {
-                Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelSourceList);
+                FocusManager.SetFocus(EditorFocusContext.ModelEditor_ContainerList);
 
                 DisplayMenubar();
 

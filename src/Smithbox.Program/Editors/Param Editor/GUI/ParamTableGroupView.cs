@@ -1,6 +1,8 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -38,11 +40,11 @@ public class ParamTableGroupView
 
     public void Display(bool doFocus, bool isActiveView, float scrollTo, string paramKey)
     {
+        FocusManager.SetFocus(EditorFocusContext.ParamEditor_TableList);
+
         DisplayHeader(isActiveView);
 
         ImGui.BeginChild("rowGroupSection");
-
-        Editor.ContextManager.SetWindowContext(ParamEditorContext.TableGroupList);
 
         DisplayRowGroups(doFocus, scrollTo);
 
@@ -129,10 +131,12 @@ public class ParamTableGroupView
                 UpdateTableGroupSelection(group);
             }
 
-            // Up/Down arrow key input
-            if ((InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)) && !ImGui.IsAnyItemActive())
+            if(!ImGui.IsAnyItemActive())
             {
-                _arrowKeyPressed = true;
+                if(InputManager.HasArrowSelection())
+                {
+                    _arrowKeyPressed = true;
+                }
             }
 
             if (_arrowKeyPressed && ImGui.IsItemFocused())
@@ -220,16 +224,19 @@ public class ParamTableGroupView
 
     public void Shortcuts()
     {
-        if (Editor.ContextManager.CurrentContext is ParamEditorContext.TableGroupList)
+        if (FocusManager.IsFocus(EditorFocusContext.ParamEditor_TableList))
         {
-            if (!ImGui.IsAnyItemActive() && CurrentTableGroup != -1 && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
+            if (!ImGui.IsAnyItemActive() && CurrentTableGroup != -1)
             {
-                ApplyTableGroupDuplicate = true;
-            }
+                if (InputManager.IsPressed(InputAction.Duplicate))
+                {
+                    ApplyTableGroupDuplicate = true;
+                }
 
-            if (!ImGui.IsAnyItemActive() && CurrentTableGroup != -1 && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
-            {
-                ApplyTableGroupDelete = true;
+                if (InputManager.IsPressed(InputAction.Delete))
+                {
+                    ApplyTableGroupDelete = true;
+                }
             }
         }
     }

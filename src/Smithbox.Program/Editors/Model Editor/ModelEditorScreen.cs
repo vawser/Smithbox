@@ -4,6 +4,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.Viewport;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -31,7 +32,6 @@ public class ModelEditorScreen : EditorScreen
     public ModelSelection Selection;
     public ModelUniverse Universe;
     public ModelEntityTypeCache EntityTypeCache;
-    public EditorFocusManager FocusManager;
     public ModelPropertyCache ModelPropertyCache = new();
     public ModelCommandQueue CommandQueue;
     public ModelShortcuts Shortcuts;
@@ -66,7 +66,6 @@ public class ModelEditorScreen : EditorScreen
         ModelViewportView.Setup();
 
         Universe = new ModelUniverse(this, project);
-        FocusManager = new EditorFocusManager(this);
         EntityTypeCache = new(this, project);
 
         Selection = new(this, project);
@@ -98,8 +97,6 @@ public class ModelEditorScreen : EditorScreen
         ReorderAction = new ReorderAction(this, Project);
 
         ModelInsightHelper.Setup(this, Project);
-
-        FocusManager.SetDefaultFocusElement("Properties##modeleditprop");
 
         EditorActionManager.AddEventHandler(ModelContentView);
     }
@@ -204,13 +201,10 @@ public class ModelEditorScreen : EditorScreen
         }
 
         ImGui.PopStyleColor(1);
-
-        FocusManager.OnFocus();
     }
 
     public void OnDefocus()
     {
-        FocusManager.ResetFocus();
     }
 
     public void Update(float dt)
@@ -241,7 +235,7 @@ public class ModelEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(InputAction.Save)}"))
             {
                 Save();
             }
@@ -285,7 +279,7 @@ public class ModelEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)}  /  {InputManager.GetHint(InputAction.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -303,7 +297,7 @@ public class ModelEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)}  /  {InputManager.GetHint(InputAction.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {

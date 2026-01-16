@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -26,9 +27,12 @@ public class FrameAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_FrameSelection) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyViewportFrame();
+            if (InputManager.IsPressed(InputAction.Frame))
+            {
+                ApplyViewportFrame();
+            }
         }
     }
 
@@ -39,11 +43,11 @@ public class FrameAction
     {
         if (ent.WrappedObject is IMsbPart or IMsbRegion)
         {
-            if (ImGui.Selectable("Frame in Viewport"))
+            if (ImGui.Selectable("Frame Selection"))
             {
                 ApplyViewportFrame();
             }
-            UIHelper.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {KeyBindings.Current.MAP_FrameSelection.HintText}");
+            UIHelper.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {InputManager.GetHint(InputAction.Frame)}");
         }
     }
 
@@ -52,7 +56,7 @@ public class FrameAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Frame Selected in Viewport", KeyBindings.Current.MAP_FrameSelection.HintText))
+        if (ImGui.MenuItem("Frame Selection", InputManager.GetHint(InputAction.Frame)))
         {
             ApplyViewportFrame();
         }

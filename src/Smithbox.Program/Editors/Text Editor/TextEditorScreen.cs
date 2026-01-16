@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Numerics;
@@ -142,12 +143,12 @@ public class TextEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(InputAction.Save)}"))
             {
                 Save();
             }
 
-            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            if (ImGui.MenuItem($"Save All"))
             {
                 SaveAll();
             }
@@ -189,7 +190,7 @@ public class TextEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(InputAction.Undo)} / {InputManager.GetHint(InputAction.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -207,7 +208,7 @@ public class TextEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(InputAction.Redo)} / {InputManager.GetHint(InputAction.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
@@ -218,21 +219,21 @@ public class TextEditorScreen : EditorScreen
             ImGui.Separator();
 
             // Create
-            if (ImGui.MenuItem("Create", KeyBindings.Current.CORE_CreateNewEntry.HintText))
+            if (ImGui.MenuItem("Create", InputManager.GetHint(InputAction.TextEditor_Create_New_Entry)))
             {
                 EntryCreationModal.ShowModal = true;
             }
             UIHelper.Tooltip($"Create new text entries.");
 
             // Duplicate
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            if (ImGui.MenuItem("Duplicate", InputManager.GetHint(InputAction.Duplicate)))
             {
                 ActionHandler.DuplicateEntries();
             }
             UIHelper.Tooltip($"Duplicate the currently selected text entries.");
 
             // Delete
-            if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
+            if (ImGui.MenuItem("Delete", InputManager.GetHint(InputAction.Delete)))
             {
                 ActionHandler.DeleteEntries();
             }

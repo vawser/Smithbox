@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -84,8 +85,6 @@ public class DisplayGroupTool
         {
             if (ImGui.CollapsingHeader("Render Groups"))
             {
-                Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.RenderGroups);
-
                 DisplayGroupsGUI(sdrawgroups, sdispgroups, sels);
             }
         }
@@ -114,6 +113,64 @@ public class DisplayGroupTool
 
         // Actions
         DisplayFooterSection(dg, sdrawgroups, sdispgroups, sels);
+
+        HandleShortcuts(dg, sdrawgroups, sdispgroups, sels);
+    }
+
+    public void HandleShortcuts(DrawGroup dg, uint[] sdrawgroups, uint[] sdispgroups, HashSet<Entity> sels)
+    {
+        // Show All
+        if (InputManager.IsPressed(InputAction.MapEditor_Show_All_Display_Groups))
+        {
+            for (var i = 0; i < _dispGroupCount; i++)
+            {
+                dg.RenderGroups[i] = 0xFFFFFFFF;
+            }
+        }
+
+        // Hide All
+        if (InputManager.IsPressed(InputAction.MapEditor_Hide_All_Display_Groups))
+        {
+            for (var i = 0; i < _dispGroupCount; i++)
+            {
+                dg.RenderGroups[i] = 0;
+            }
+        }
+
+        if (InputManager.IsPressed(InputAction.MapEditor_View_Display_Group) && sdispgroups != null)
+        {
+            for (var i = 0; i < _dispGroupCount; i++)
+            {
+                dg.RenderGroups[i] = sdispgroups[i];
+            }
+        }
+
+        if (InputManager.IsPressed(InputAction.MapEditor_View_Draw_Group) && sdispgroups != null)
+        {
+            for (var i = 0; i < _dispGroupCount; i++)
+            {
+                dg.RenderGroups[i] = sdrawgroups[i];
+            }
+        }
+
+        if (InputManager.IsPressed(InputAction.MapEditor_Apply_Display_Group) && sdispgroups != null)
+        {
+            IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
+            ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
+            Editor.EditorActionManager.ExecuteAction(action);
+        }
+
+        if (InputManager.IsPressed(InputAction.MapEditor_Apply_Draw_Group) && sdispgroups != null)
+        {
+            IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
+            ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
+            Editor.EditorActionManager.ExecuteAction(action);
+        }
+
+        if (InputManager.IsPressed(InputAction.MapEditor_Select_Display_Group_Highlights))
+        {
+            selectHighlightsOperation = true;
+        }
     }
 
     public void DisplayFooterSection(DrawGroup dg, uint[] sdrawgroups, uint[] sdispgroups, HashSet<Entity> sels)
@@ -121,28 +178,26 @@ public class DisplayGroupTool
         var scale = DPI.UIScale();
 
         // Show All
-        if (ImGui.Button($"Show All", DPI.StandardButtonSize)
-            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_ShowAllDisplayGroups))
+        if (ImGui.Button($"Show All", DPI.StandardButtonSize))
         {
             for (var i = 0; i < _dispGroupCount; i++)
             {
                 dg.RenderGroups[i] = 0xFFFFFFFF;
             }
         }
-        UIHelper.Tooltip($"Show all display groups.\n{KeyBindings.Current.MAP_ShowAllDisplayGroups.HintText}");
+        UIHelper.Tooltip($"Show all display groups.\n{InputManager.GetHint(InputAction.MapEditor_Show_All_Display_Groups)}");
 
         ImGui.SameLine();
 
         // Hide All
-        if (ImGui.Button($"Hide All", DPI.StandardButtonSize)
-            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_HideAllDisplayGroups))
+        if (ImGui.Button($"Hide All", DPI.StandardButtonSize))
         {
             for (var i = 0; i < _dispGroupCount; i++)
             {
                 dg.RenderGroups[i] = 0;
             }
         }
-        UIHelper.Tooltip($"Hide all display groups.\n{KeyBindings.Current.MAP_HideAllDisplayGroups.HintText}");
+        UIHelper.Tooltip($"Hide all display groups.\n{InputManager.GetHint(InputAction.MapEditor_Hide_All_Display_Groups)}");
 
         // Get Display Group
         if (sdispgroups == null)
@@ -150,55 +205,46 @@ public class DisplayGroupTool
             ImGui.BeginDisabled();
         }
 
-        if (ImGui.Button($"Get Display Group", DPI.StandardButtonSize)
-            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDisplayGroup)
-                && sdispgroups != null)
+        if (ImGui.Button($"Get Display Group", DPI.StandardButtonSize) && sdispgroups != null)
         {
             for (var i = 0; i < _dispGroupCount; i++)
             {
                 dg.RenderGroups[i] = sdispgroups[i];
             }
         }
-        UIHelper.Tooltip($"Get display group for current selection.\n{KeyBindings.Current.MAP_GetDisplayGroup.HintText}");
+        UIHelper.Tooltip($"Get display group for current selection.\n{InputManager.GetHint(InputAction.MapEditor_View_Display_Group)}");
 
         ImGui.SameLine();
 
         // Get Draw Group
-        if (ImGui.Button($"Get Draw Group", DPI.StandardButtonSize)
-            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDrawGroup)
-                && sdispgroups != null)
+        if (ImGui.Button($"Get Draw Group", DPI.StandardButtonSize) && sdispgroups != null)
         {
             for (var i = 0; i < _dispGroupCount; i++)
             {
                 dg.RenderGroups[i] = sdrawgroups[i];
             }
         }
-        UIHelper.Tooltip($"Get draw group for current selection.\n{KeyBindings.Current.MAP_GetDrawGroup.HintText}");
+        UIHelper.Tooltip($"Get draw group for current selection.\n{InputManager.GetHint(InputAction.MapEditor_View_Draw_Group)}");
 
         // Assign Display Group
-        if (ImGui.Button($"Assign Display Group", DPI.StandardButtonSize)
-            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDisplayGroup)
-                && sdispgroups != null)
+        if (ImGui.Button($"Assign Display Group", DPI.StandardButtonSize) && sdispgroups != null)
         {
             IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
             ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
             Editor.EditorActionManager.ExecuteAction(action);
         }
-        UIHelper.Tooltip($"Assign display group for current selection.\n{KeyBindings.Current.MAP_SetDisplayGroup.HintText}");
+        UIHelper.Tooltip($"Assign display group for current selection.\n{InputManager.GetHint(InputAction.MapEditor_Apply_Display_Group)}");
 
         ImGui.SameLine();
 
         // Assign Draw Group
-        if (ImGui.Button($"Assign Draw Group",
-            DPI.StandardButtonSize)
-            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDrawGroup)
-                && sdispgroups != null)
+        if (ImGui.Button($"Assign Draw Group", DPI.StandardButtonSize) && sdispgroups != null)
         {
             IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
             ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
             Editor.EditorActionManager.ExecuteAction(action);
         }
-        UIHelper.Tooltip($"Assign draw group for current selection.\n{KeyBindings.Current.MAP_SetDrawGroup.HintText}");
+        UIHelper.Tooltip($"Assign draw group for current selection.\n{InputManager.GetHint(InputAction.MapEditor_Apply_Draw_Group)}");
 
         // Select Highlights
         if (sdispgroups == null)
@@ -211,12 +257,11 @@ public class DisplayGroupTool
             ImGui.BeginDisabled();
         }
 
-        if (ImGui.Button("Select Highlights", DPI.StandardButtonSize)
-            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectDisplayGroupHighlights))
+        if (ImGui.Button("Select Highlights", DPI.StandardButtonSize))
         {
             selectHighlightsOperation = true;
         }
-        UIHelper.Tooltip($"Select highlighted. Right-click to highlight a checkbox within the table section.\n{KeyBindings.Current.MAP_SelectDisplayGroupHighlights.HintText}");
+        UIHelper.Tooltip($"Select highlighted. Right-click to highlight a checkbox within the table section.\n{InputManager.GetHint(InputAction.MapEditor_Select_Display_Group_Highlights)}");
 
         ImGui.SameLine();
 

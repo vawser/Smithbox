@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Linq;
 
@@ -23,9 +24,12 @@ public class ReplicateAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ReplicateSelection) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyReplicate();
+            if (InputManager.IsPressed(InputAction.MapEditor_Replicate))
+            {
+                ApplyReplicate();
+            }
         }
     }
 
@@ -40,7 +44,7 @@ public class ReplicateAction
             {
                 ApplyReplicate();
             }
-            UIHelper.Tooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ReplicateSelection.HintText}");
+            UIHelper.Tooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {InputManager.GetHint(InputAction.MapEditor_Replicate)}");
         }
     }
 
@@ -49,7 +53,7 @@ public class ReplicateAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Replicate", KeyBindings.Current.MAP_ReplicateSelection.HintText))
+        if (ImGui.MenuItem("Replicate", InputManager.GetHint(InputAction.MapEditor_Replicate)))
         {
             ApplyReplicate();
         }

@@ -26,7 +26,7 @@ public class MaterialPropertyView
 
     public void Draw()
     {
-        Editor.FocusManager.SwitchMaterialEditorContext(MaterialEditorContext.Properties);
+        FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Properties);
 
         var scale = DPI.UIScale();
 

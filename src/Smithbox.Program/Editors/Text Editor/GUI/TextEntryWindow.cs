@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -24,7 +26,7 @@ public class TextEntryWindow
     {
         if (ImGui.Begin("Text Entries##fmgEntryList"))
         {
-            Editor.Selection.SwitchWindowContext(TextEditorContext.FmgEntry);
+            FocusManager.SetFocus(EditorFocusContext.TextEditor_EntryList);
 
             Editor.Filters.DisplayFmgEntryFilterSearch();
 
@@ -34,10 +36,9 @@ public class TextEntryWindow
             {
                 Editor.Selection.FocusFmgEntrySelection = true;
             }
-            UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {KeyBindings.Current.TEXT_FocusSelectedEntry.HintText}");
+            UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {InputManager.GetHint(InputAction.Jump)}");
 
             ImGui.BeginChild("FmgEntriesList");
-            Editor.Selection.SwitchWindowContext(TextEditorContext.FmgEntry);
 
             if (Editor.Selection.SelectedFmgWrapper != null && Editor.Selection.SelectedFmgWrapper.File != null)
             {
@@ -101,9 +102,12 @@ public class TextEntryWindow
                             Editor.Selection.SelectNextFmgEntry = false;
                             Editor.Selection.SelectFmgEntry(i, entry);
                         }
-                        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                        if (ImGui.IsItemFocused())
                         {
-                            Editor.Selection.SelectNextFmgEntry = true;
+                            if (InputManager.HasArrowSelection())
+                            {
+                                Editor.Selection.SelectNextFmgEntry = true;
+                            }
                         }
 
                         // Context Menu / Shortcuts

@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
@@ -25,7 +26,7 @@ public class ToolWindow
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_MapEditor", ImGuiWindowFlags.MenuBar))
         {
-            Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.ToolWindow);
+            FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);
 
             var windowHeight = ImGui.GetWindowHeight();
             var windowWidth = ImGui.GetWindowWidth();
@@ -84,12 +85,12 @@ public class ToolWindow
 
             if (CFG.Current.Interface_MapEditor_Tool_MovementIncrements)
             {
-                Editor.MovementCycleConfigTool.OnToolWindow();   
+                Editor.PositionIncrementTool.OnToolWindow();   
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_RotationIncrements)
             {
-                Editor.RotationCycleConfigTool.OnToolWindow();
+                Editor.RotationIncrementTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_LocalPropertySearch)

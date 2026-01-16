@@ -30,8 +30,6 @@ public class TextSelectionManager
     public bool FocusFmgSelection;
     public bool FocusFmgEntrySelection;
 
-    private KeyBind MultiSelectKey = KeyBindings.Current.TEXT_Multiselect;
-
     public TextEditorContext CurrentWindowContext = TextEditorContext.None;
 
     public TextSelectionManager(TextEditorScreen editor, ProjectEntry project)
@@ -39,7 +37,7 @@ public class TextSelectionManager
         Editor = editor;
         Project = project;
 
-        FmgEntryMultiselect = new TextMultiselection(Editor, MultiSelectKey);
+        FmgEntryMultiselect = new TextMultiselection(Editor);
     }
 
     /// <summary>
@@ -95,7 +93,7 @@ public class TextSelectionManager
         SelectedFmgWrapper = fmgInfo;
         SelectedFmgKey = fmgInfo.ID;
 
-        FmgEntryMultiselect = new TextMultiselection(Editor, MultiSelectKey);
+        FmgEntryMultiselect = new TextMultiselection(Editor);
 
         _selectedFmgEntryIndex = -1;
         _selectedFmgEntry = null;

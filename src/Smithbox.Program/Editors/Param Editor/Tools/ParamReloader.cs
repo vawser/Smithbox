@@ -3,6 +3,7 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using StudioCore.Memory;
 using StudioCore.Utilities;
 using System;
@@ -91,13 +92,13 @@ public class ParamReloader
                 {
                     ReloadCurrentParam(Editor);
                 }
-                UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+                UIHelper.Tooltip($"{InputManager.GetHint(InputAction.ParamEditor_Reload_Selected_Param)}");
 
                 if (ImGui.Button("Reload All Params", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     ReloadAllParams(Editor);
                 }
-                UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+                UIHelper.Tooltip($"{InputManager.GetHint(InputAction.ParamEditor_Reload_All_Params)}");
             }
         }
     }
@@ -108,17 +109,17 @@ public class ParamReloader
         {
             if (ImGui.BeginMenu("Param Reloader"))
             {
-                if (ImGui.MenuItem("Current Param"))
+                if (ImGui.MenuItem("Current Param", InputManager.GetHint(InputAction.ParamEditor_Reload_Selected_Param)))
                 {
                     ReloadCurrentParam(Editor);
                 }
-                UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+                UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
 
-                if (ImGui.MenuItem("All Params"))
+                if (ImGui.MenuItem("All Params", InputManager.GetHint(InputAction.ParamEditor_Reload_All_Params)))
                 {
                     ReloadAllParams(Editor);
                 }
-                UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+                UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
 
                 ImGui.EndMenu();
             }

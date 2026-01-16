@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.GparamEditor;
@@ -28,7 +29,7 @@ public class GparamToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_GparamEditor", ImGuiWindowFlags.MenuBar))
         {
-            Editor.Selection.SwitchWindowContext(GparamEditorContext.ToolWindow);
+            FocusManager.SetFocus(EditorFocusContext.GparamEditor_Tools);
 
             var windowWidth = ImGui.GetWindowWidth();
 

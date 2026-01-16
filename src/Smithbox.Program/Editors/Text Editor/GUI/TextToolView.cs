@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
@@ -22,7 +23,7 @@ public class TextToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextEditor", ImGuiWindowFlags.MenuBar))
         {
-            Editor.Selection.SwitchWindowContext(TextEditorContext.ToolWindow);
+            FocusManager.SetFocus(EditorFocusContext.TextEditor_Tools);
 
             if (ImGui.BeginMenuBar())
             {

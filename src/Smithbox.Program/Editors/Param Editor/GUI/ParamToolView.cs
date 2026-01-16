@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.ParamEditor;
@@ -25,6 +26,8 @@ public partial class ParamTools
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_ParamEditor", ImGuiWindowFlags.MenuBar))
         {
+            FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);
+
             if (ImGui.BeginMenuBar())
             {
                 ViewMenu();

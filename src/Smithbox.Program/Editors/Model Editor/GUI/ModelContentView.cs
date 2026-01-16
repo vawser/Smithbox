@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,7 @@ public class ModelContentView : IActionEventHandler
 
         if (ImGui.Begin($@"Model Contents##modelContentsPanel", ImGuiWindowFlags.MenuBar))
         {
-            Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelProperties);
+            FocusManager.SetFocus(EditorFocusContext.ModelEditor_ContentList);
 
             DisplayMenubar();
 
@@ -227,7 +228,7 @@ public class ModelContentView : IActionEventHandler
                     nodeopen && _treeOpenEntities.Contains(modelRoot) || 
                     !nodeopen && !_treeOpenEntities.Contains(modelRoot))
                 {
-                    if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
+                    if (InputManager.HasCtrlDown())
                     {
                         // Toggle Selection
                         if (Editor.ViewportSelection.GetSelection().Contains(selectTarget))
@@ -406,10 +407,14 @@ public class ModelContentView : IActionEventHandler
             {
                 Editor.FrameAction.FrameCurrentEntity(e);
             }
-            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+
+            if (ImGui.IsItemFocused())
             {
-                doSelect = true;
-                arrowKeySelect = true;
+                if (InputManager.HasArrowSelection())
+                {
+                    doSelect = true;
+                    arrowKeySelect = true;
+                }
             }
         }
         else
@@ -432,10 +437,14 @@ public class ModelContentView : IActionEventHandler
                     }
                 }
             }
-            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+
+            if (ImGui.IsItemFocused())
             {
-                doSelect = true;
-                arrowKeySelect = true;
+                if (InputManager.HasArrowSelection())
+                {
+                    doSelect = true;
+                    arrowKeySelect = true;
+                }
             }
 
             DisplayModelObjectContextMenu(container, e, treeImGuiId);
@@ -529,7 +538,7 @@ public class ModelContentView : IActionEventHandler
 
         if (ImGui.Button($"{icon}##modelObjectVisibility{key}{index}", DPI.InlineIconButtonSize))
         {
-            if (InputTracker.GetKey(KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility))
+            if (InputManager.IsPressed(InputAction.Apply_to_All))
             {
                 foreach (var entry in container.RootObject.Children)
                 {
@@ -556,7 +565,8 @@ public class ModelContentView : IActionEventHandler
     {
         // Up/Down arrow mass selection
         var arrowKeySelect = false;
-        if (isItemFocused && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+
+        if (isItemFocused && InputManager.HasArrowSelection())
         {
             itemSelected = true;
             arrowKeySelect = true;
@@ -566,10 +576,7 @@ public class ModelContentView : IActionEventHandler
         {
             if (arrowKeySelect)
             {
-                if (InputTracker.GetKey(Key.ControlLeft)
-                    || InputTracker.GetKey(Key.ControlRight)
-                    || InputTracker.GetKey(Key.ShiftLeft)
-                    || InputTracker.GetKey(Key.ShiftRight))
+                if (InputManager.HasCtrlDown() || InputManager.HasShiftDown())
                 {
                     Editor.ViewportSelection.AddSelection(Editor, entity);
                 }
@@ -579,7 +586,7 @@ public class ModelContentView : IActionEventHandler
                     Editor.ViewportSelection.AddSelection(Editor, entity);
                 }
             }
-            else if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
+            else if (InputManager.HasCtrlDown())
             {
                 // Toggle Selection
                 if (Editor.ViewportSelection.GetSelection().Contains(entity))
@@ -592,7 +599,7 @@ public class ModelContentView : IActionEventHandler
                 }
             }
             else if (Editor.ViewportSelection.GetSelection().Count > 0
-                     && (InputTracker.GetKey(Key.ShiftLeft) || InputTracker.GetKey(Key.ShiftRight)))
+                     && InputManager.HasShiftDown())
             {
                 // Select Range
                 List<Entity> entList;
