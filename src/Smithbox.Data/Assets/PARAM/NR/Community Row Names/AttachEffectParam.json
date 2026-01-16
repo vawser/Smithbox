@@ -3892,145 +3892,145 @@
     {
       "ID": 8000000,
       "Entries": [
-        "[Weapon] Increased Maximum HP"
+        "[Weapon] Increased Maximum HP - Potency 1"
       ]
     },
     {
       "ID": 8000001,
       "Entries": [
-        "[Weapon] Increased Maximum HP"
+        "[Weapon] Increased Maximum HP - Potency 2"
       ]
     },
     {
       "ID": 8010000,
       "Entries": [
-        "[Weapon] Increased Maximum FP"
+        "[Weapon] Increased Maximum FP - Potency 1"
       ]
     },
     {
       "ID": 8010001,
       "Entries": [
-        "[Weapon] Increased Maximum FP"
+        "[Weapon] Increased Maximum FP - Potency 2"
       ]
     },
     {
       "ID": 8010100,
       "Entries": [
-        "[Weapon] Reduced FP Consumption"
+        "[Weapon] Reduced FP Consumption - Potency 1"
       ]
     },
     {
       "ID": 8010101,
       "Entries": [
-        "[Weapon] Reduced FP Consumption"
+        "[Weapon] Reduced FP Consumption - Potency 2"
       ]
     },
     {
       "ID": 8020000,
       "Entries": [
-        "[Weapon] Increased Maximum Stamina"
+        "[Weapon] Increased Maximum Stamina - Potency 1"
       ]
     },
     {
       "ID": 8020001,
       "Entries": [
-        "[Weapon] Increased Maximum Stamina"
+        "[Weapon] Increased Maximum Stamina - Potency 2"
       ]
     },
     {
       "ID": 8020200,
       "Entries": [
-        "[Weapon] Improved Stamina Recovery"
+        "[Weapon] Improved Stamina Recovery - Potency 1"
       ]
     },
     {
       "ID": 8020201,
       "Entries": [
-        "[Weapon] Improved Stamina Recovery"
+        "[Weapon] Improved Stamina Recovery - Potency 2"
       ]
     },
     {
       "ID": 8100000,
       "Entries": [
-        "[Weapon] Improved Physical Attack Power"
+        "[Weapon] Improved Physical Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100001,
       "Entries": [
-        "[Weapon] Improved Physical Attack Power"
+        "[Weapon] Improved Physical Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8100100,
       "Entries": [
-        "[Weapon] Improved Magic Attack Power"
+        "[Weapon] Improved Magic Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100101,
       "Entries": [
-        "[Weapon] Improved Magic Attack Power"
+        "[Weapon] Improved Magic Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8100102,
       "Entries": [
-        "[Weapon] Improved Magic Attack Power"
+        "[Weapon] Improved Magic Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8100200,
       "Entries": [
-        "[Weapon] Improved Fire Attack Power"
+        "[Weapon] Improved Fire Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100201,
       "Entries": [
-        "[Weapon] Improved Fire Attack Power"
+        "[Weapon] Improved Fire Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8100202,
       "Entries": [
-        "[Weapon] Improved Fire Attack Power"
+        "[Weapon] Improved Fire Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8100300,
       "Entries": [
-        "[Weapon] Improved Lightning Attack Power"
+        "[Weapon] Improved Lightning Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100301,
       "Entries": [
-        "[Weapon] Improved Lightning Attack Power"
+        "[Weapon] Improved Lightning Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8100302,
       "Entries": [
-        "[Weapon] Improved Lightning Attack Power"
+        "[Weapon] Improved Lightning Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8100400,
       "Entries": [
-        "[Weapon] Improved Holy Attack Power"
+        "[Weapon] Improved Holy Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100401,
       "Entries": [
-        "[Weapon] Improved Holy Attack Power"
+        "[Weapon] Improved Holy Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8100402,
       "Entries": [
-        "[Weapon] Improved Holy Attack Power"
+        "[Weapon] Improved Holy Attack Power - Potency 3"
       ]
     },
     {
@@ -4048,199 +4048,199 @@
     {
       "ID": 8110000,
       "Entries": [
-        "[Weapon] Attacks Inflict Poison"
+        "[Weapon] Attacks Inflict Poison - Potency 1"
       ]
     },
     {
       "ID": 8110001,
       "Entries": [
-        "[Weapon] Attacks Inflict Poison"
+        "[Weapon] Attacks Inflict Poison - Potency 2"
       ]
     },
     {
       "ID": 8110002,
       "Entries": [
-        "[Weapon] Attacks Inflict Poison"
+        "[Weapon] Attacks Inflict Poison - Potency 3"
       ]
     },
     {
       "ID": 8110010,
       "Entries": [
-        "[Weapon] Attacks Inflict Poison"
+        "[Weapon] Attacks Inflict Poison (Bow) - Potency 1"
       ]
     },
     {
       "ID": 8110011,
       "Entries": [
-        "[Weapon] Attacks Inflict Poison"
+        "[Weapon] Attacks Inflict Poison (Bow) - Potency 2"
       ]
     },
     {
       "ID": 8110012,
       "Entries": [
-        "[Weapon] Attacks Inflict Poison"
+        "[Weapon] Attacks Inflict Poison (Bow) - Potency 3"
       ]
     },
     {
       "ID": 8110100,
       "Entries": [
-        "[Weapon] Attacks Inflict Blood Loss"
+        "[Weapon] Attacks Inflict Blood Loss - Potency 1"
       ]
     },
     {
       "ID": 8110101,
       "Entries": [
-        "[Weapon] Attacks Inflict Blood Loss"
+        "[Weapon] Attacks Inflict Blood Loss - Potency 2"
       ]
     },
     {
       "ID": 8110102,
       "Entries": [
-        "[Weapon] Attacks Inflict Blood Loss"
+        "[Weapon] Attacks Inflict Blood Loss - Potency 3"
       ]
     },
     {
       "ID": 8110110,
       "Entries": [
-        "[Weapon] Attacks Inflict Blood Loss"
+        "[Weapon] Attacks Inflict Blood Loss (Bow) - Potency 1"
       ]
     },
     {
       "ID": 8110111,
       "Entries": [
-        "[Weapon] Attacks Inflict Blood Loss"
+        "[Weapon] Attacks Inflict Blood Loss (Bow) - Potency 2"
       ]
     },
     {
       "ID": 8110112,
       "Entries": [
-        "[Weapon] Attacks Inflict Blood Loss"
+        "[Weapon] Attacks Inflict Blood Loss (Bow) - Potency 3"
       ]
     },
     {
       "ID": 8110200,
       "Entries": [
-        "[Weapon] Attacks Inflict Sleep"
+        "[Weapon] Attacks Inflict Sleep - Potency 1"
       ]
     },
     {
       "ID": 8110201,
       "Entries": [
-        "[Weapon] Attacks Inflict Sleep"
+        "[Weapon] Attacks Inflict Sleep - Potency 2"
       ]
     },
     {
       "ID": 8110202,
       "Entries": [
-        "[Weapon] Attacks Inflict Sleep"
+        "[Weapon] Attacks Inflict Sleep - Potency 3"
       ]
     },
     {
       "ID": 8110210,
       "Entries": [
-        "[Weapon] Attacks Inflict Sleep"
+        "[Weapon] Attacks Inflict Sleep (Bow) - Potency 1"
       ]
     },
     {
       "ID": 8110211,
       "Entries": [
-        "[Weapon] Attacks Inflict Sleep"
+        "[Weapon] Attacks Inflict Sleep (Bow) - Potency 2"
       ]
     },
     {
       "ID": 8110212,
       "Entries": [
-        "[Weapon] Attacks Inflict Sleep"
+        "[Weapon] Attacks Inflict Sleep (Bow) - Potency 3"
       ]
     },
     {
       "ID": 8110400,
       "Entries": [
-        "[Weapon] Attacks Inflict Rot"
+        "[Weapon] Attacks Inflict Rot - Potency 1"
       ]
     },
     {
       "ID": 8110401,
       "Entries": [
-        "[Weapon] Attacks Inflict Rot"
+        "[Weapon] Attacks Inflict Rot - Potency 2"
       ]
     },
     {
       "ID": 8110402,
       "Entries": [
-        "[Weapon] Attacks Inflict Rot"
+        "[Weapon] Attacks Inflict Rot - Potency 3"
       ]
     },
     {
       "ID": 8110410,
       "Entries": [
-        "[Weapon] Attacks Inflict Rot"
+        "[Weapon] Attacks Inflict Rot (Bow) - Potency 1"
       ]
     },
     {
       "ID": 8110411,
       "Entries": [
-        "[Weapon] Attacks Inflict Rot"
+        "[Weapon] Attacks Inflict Rot (Bow) - Potency 2"
       ]
     },
     {
       "ID": 8110412,
       "Entries": [
-        "[Weapon] Attacks Inflict Rot"
+        "[Weapon] Attacks Inflict Rot (Bow) - Potency 3"
       ]
     },
     {
       "ID": 8110500,
       "Entries": [
-        "[Weapon] Attacks Inflict Frost"
+        "[Weapon] Attacks Inflict Frost - Potency 1"
       ]
     },
     {
       "ID": 8110501,
       "Entries": [
-        "[Weapon] Attacks Inflict Frost"
+        "[Weapon] Attacks Inflict Frost - Potency 2"
       ]
     },
     {
       "ID": 8110502,
       "Entries": [
-        "[Weapon] Attacks Inflict Frost"
+        "[Weapon] Attacks Inflict Frost - Potency 3"
       ]
     },
     {
       "ID": 8110510,
       "Entries": [
-        "[Weapon] Attacks Inflict Frost"
+        "[Weapon] Attacks Inflict Frost (Bow) - Potency 1"
       ]
     },
     {
       "ID": 8110511,
       "Entries": [
-        "[Weapon] Attacks Inflict Frost"
+        "[Weapon] Attacks Inflict Frost (Bow) - Potency 2"
       ]
     },
     {
       "ID": 8110512,
       "Entries": [
-        "[Weapon] Attacks Inflict Frost"
+        "[Weapon] Attacks Inflict Frost (Bow) - Potency 3"
       ]
     },
     {
       "ID": 8110700,
       "Entries": [
-        "[Weapon] Add Fire to Weapon"
+        "[Weapon] Add Fire to Weapon - Potency 1"
       ]
     },
     {
       "ID": 8110701,
       "Entries": [
-        "[Weapon] Add Fire to Weapon"
+        "[Weapon] Add Fire to Weapon - Potency 2"
       ]
     },
     {
       "ID": 8110702,
       "Entries": [
-        "[Weapon] Add Fire to Weapon"
+        "[Weapon] Add Fire to Weapon - Potency 3"
       ]
     },
     {
@@ -4252,19 +4252,19 @@
     {
       "ID": 8110800,
       "Entries": [
-        "[Weapon] Add Magic to Weapon"
+        "[Weapon] Add Magic to Weapon - Potency 1"
       ]
     },
     {
       "ID": 8110801,
       "Entries": [
-        "[Weapon] Add Magic to Weapon"
+        "[Weapon] Add Magic to Weapon - Potency 2"
       ]
     },
     {
       "ID": 8110802,
       "Entries": [
-        "[Weapon] Add Magic to Weapon"
+        "[Weapon] Add Magic to Weapon - Potency 3"
       ]
     },
     {
@@ -4276,19 +4276,19 @@
     {
       "ID": 8110900,
       "Entries": [
-        "[Weapon] Add Lightning to Weapon"
+        "[Weapon] Add Lightning to Weapon - Potency 1"
       ]
     },
     {
       "ID": 8110901,
       "Entries": [
-        "[Weapon] Add Lightning to Weapon"
+        "[Weapon] Add Lightning to Weapon - Potency 2"
       ]
     },
     {
       "ID": 8110902,
       "Entries": [
-        "[Weapon] Add Lightning to Weapon"
+        "[Weapon] Add Lightning to Weapon - Potency 3"
       ]
     },
     {
@@ -4300,19 +4300,19 @@
     {
       "ID": 8111000,
       "Entries": [
-        "[Weapon] Add Holy to Weapon"
+        "[Weapon] Add Holy to Weapon - Potency 1"
       ]
     },
     {
       "ID": 8111001,
       "Entries": [
-        "[Weapon] Add Holy to Weapon"
+        "[Weapon] Add Holy to Weapon - Potency 2"
       ]
     },
     {
       "ID": 8111002,
       "Entries": [
-        "[Weapon] Add Holy to Weapon"
+        "[Weapon] Add Holy to Weapon - Potency 3"
       ]
     },
     {
@@ -4324,91 +4324,91 @@
     {
       "ID": 8120000,
       "Entries": [
-        "[Weapon] Improved Stance-Breaking"
+        "[Weapon] Improved Stance-Breaking - Potency 1"
       ]
     },
     {
       "ID": 8120001,
       "Entries": [
-        "[Weapon] Improved Stance-Breaking"
+        "[Weapon] Improved Stance-Breaking - Potency 2"
       ]
     },
     {
       "ID": 8130000,
       "Entries": [
-        "[Weapon] Improved Critical Hits"
+        "[Weapon] Improved Critical Hits - Potency 1"
       ]
     },
     {
       "ID": 8130001,
       "Entries": [
-        "[Weapon] Improved Critical Hits"
+        "[Weapon] Improved Critical Hits - Potency 2"
       ]
     },
     {
       "ID": 8130002,
       "Entries": [
-        "[Weapon] Improved Critical Hits"
+        "[Weapon] Improved Critical Hits - Potency 3"
       ]
     },
     {
       "ID": 8140000,
       "Entries": [
-        "[Weapon] Improved Guard Breaking"
+        "[Weapon] Improved Guard Breaking - Potency 1"
       ]
     },
     {
       "ID": 8140001,
       "Entries": [
-        "[Weapon] Improved Guard Breaking"
+        "[Weapon] Improved Guard Breaking - Potency 2"
       ]
     },
     {
       "ID": 8140002,
       "Entries": [
-        "[Weapon] Improved Guard Breaking"
+        "[Weapon] Improved Guard Breaking - Potency 3"
       ]
     },
     {
       "ID": 8200000,
       "Entries": [
-        "[Weapon] Improved Physical Damage Negation"
+        "[Weapon] Improved Physical Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200001,
       "Entries": [
-        "[Weapon] Improved Physical Damage Negation"
+        "[Weapon] Improved Physical Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8200100,
       "Entries": [
-        "[Weapon] Improved Magic Damage Negation"
+        "[Weapon] Improved Magic Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200101,
       "Entries": [
-        "[Weapon] Improved Magic Damage Negation"
+        "[Weapon] Improved Magic Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8200102,
       "Entries": [
-        "[Weapon] Improved Magic Damage Negation"
+        "[Weapon] Improved Magic Damage Negation - Potency 3"
       ]
     },
     {
       "ID": 8200200,
       "Entries": [
-        "[Weapon] Improved Fire Damage Negation"
+        "[Weapon] Improved Fire Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200201,
       "Entries": [
-        "[Weapon] Improved Fire Damage Negation"
+        "[Weapon] Improved Fire Damage Negation - Potency 2"
       ]
     },
     {
@@ -4420,13 +4420,13 @@
     {
       "ID": 8200300,
       "Entries": [
-        "[Weapon] Improved Lightning Damage Negation"
+        "[Weapon] Improved Lightning Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200301,
       "Entries": [
-        "[Weapon] Improved Lightning Damage Negation"
+        "[Weapon] Improved Lightning Damage Negation - Potency 2"
       ]
     },
     {
@@ -4438,97 +4438,97 @@
     {
       "ID": 8200400,
       "Entries": [
-        "[Weapon] Improved Holy Damage Negation"
+        "[Weapon] Improved Holy Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200401,
       "Entries": [
-        "[Weapon] Improved Holy Damage Negation"
+        "[Weapon] Improved Holy Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8200402,
       "Entries": [
-        "[Weapon] Improved Holy Damage Negation"
+        "[Weapon] Improved Holy Damage Negation - Potency 3"
       ]
     },
     {
       "ID": 8200500,
       "Entries": [
-        "[Weapon] Improved Affinity Damage Negation"
+        "[Weapon] Improved Affinity Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200501,
       "Entries": [
-        "[Weapon] Improved Affinity Damage Negation"
+        "[Weapon] Improved Affinity Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8210000,
       "Entries": [
-        "[Weapon] Improved Poison Resistance"
+        "[Weapon] Improved Poison Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210001,
       "Entries": [
-        "[Weapon] Improved Poison Resistance"
+        "[Weapon] Improved Poison Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210002,
       "Entries": [
-        "[Weapon] Improved Poison Resistance"
+        "[Weapon] Improved Poison Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210100,
       "Entries": [
-        "[Weapon] Improved Blood Loss Resistance"
+        "[Weapon] Improved Blood Loss Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210101,
       "Entries": [
-        "[Weapon] Improved Blood Loss Resistance"
+        "[Weapon] Improved Blood Loss Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210102,
       "Entries": [
-        "[Weapon] Improved Blood Loss Resistance"
+        "[Weapon] Improved Blood Loss Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210200,
       "Entries": [
-        "[Weapon] Improved Sleep Resistance"
+        "[Weapon] Improved Sleep Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210201,
       "Entries": [
-        "[Weapon] Improved Sleep Resistance"
+        "[Weapon] Improved Sleep Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210202,
       "Entries": [
-        "[Weapon] Improved Sleep Resistance"
+        "[Weapon] Improved Sleep Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210300,
       "Entries": [
-        "[Weapon] Improved Death Blight Resistance"
+        "[Weapon] Improved Death Blight Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210301,
       "Entries": [
-        "[Weapon] Improved Death Blight Resistance"
+        "[Weapon] Improved Death Blight Resistance - Potency 2"
       ]
     },
     {
@@ -4540,55 +4540,55 @@
     {
       "ID": 8210400,
       "Entries": [
-        "[Weapon] Improved Rot Resistance"
+        "[Weapon] Improved Rot Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210401,
       "Entries": [
-        "[Weapon] Improved Rot Resistance"
+        "[Weapon] Improved Rot Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210402,
       "Entries": [
-        "[Weapon] Improved Rot Resistance"
+        "[Weapon] Improved Rot Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210500,
       "Entries": [
-        "[Weapon] Improved Frost Resistance"
+        "[Weapon] Improved Frost Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210501,
       "Entries": [
-        "[Weapon] Improved Frost Resistance"
+        "[Weapon] Improved Frost Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210502,
       "Entries": [
-        "[Weapon] Improved Frost Resistance"
+        "[Weapon] Improved Frost Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210600,
       "Entries": [
-        "[Weapon] Improved Madness Resistance"
+        "[Weapon] Improved Madness Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210601,
       "Entries": [
-        "[Weapon] Improved Madness Resistance"
+        "[Weapon] Improved Madness Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210602,
       "Entries": [
-        "[Weapon] Improved Madness Resistance"
+        "[Weapon] Improved Madness Resistance - Potency 3"
       ]
     },
     {
@@ -4606,145 +4606,145 @@
     {
       "ID": 8220000,
       "Entries": [
-        "[Weapon] Improved Guarding Ability"
+        "[Weapon] Improved Guarding Ability - Potency 1"
       ]
     },
     {
       "ID": 8220001,
       "Entries": [
-        "[Weapon] Improved Guarding Ability +1"
+        "[Weapon] Improved Guarding Ability - Potency 2"
       ]
     },
     {
       "ID": 8220002,
       "Entries": [
-        "[Weapon] Improved Guarding Ability +2"
+        "[Weapon] Improved Guarding Ability - Potency 3"
       ]
     },
     {
       "ID": 8230000,
       "Entries": [
-        "[Weapon] Improved Poise"
+        "[Weapon] Improved Poise - Potency 1"
       ]
     },
     {
       "ID": 8230001,
       "Entries": [
-        "[Weapon] Improved Poise"
+        "[Weapon] Improved Poise - Potency 2"
       ]
     },
     {
       "ID": 8300000,
       "Entries": [
-        "[Weapon] Improved Attack Power when Two-Handing"
+        "[Weapon] Improved Attack Power when Two-Handing - Potency 1"
       ]
     },
     {
       "ID": 8300001,
       "Entries": [
-        "[Weapon] Improved Attack Power when Two-Handing"
+        "[Weapon] Improved Attack Power when Two-Handing - Potency 2"
       ]
     },
     {
       "ID": 8300002,
       "Entries": [
-        "[Weapon] Improved Attack Power when Two-Handing"
+        "[Weapon] Improved Attack Power when Two-Handing - Potency 3"
       ]
     },
     {
       "ID": 8310000,
       "Entries": [
-        "[Weapon] Attack Up when Wielding Two Armaments"
+        "[Weapon] Attack Up when Wielding Two Armaments - Potency 1"
       ]
     },
     {
       "ID": 8310001,
       "Entries": [
-        "[Weapon] Attack Up when Wielding Two Armaments"
+        "[Weapon] Attack Up when Wielding Two Armaments - Potency 2"
       ]
     },
     {
       "ID": 8310002,
       "Entries": [
-        "[Weapon] Attack Up when Wielding Two Armaments"
+        "[Weapon] Attack Up when Wielding Two Armaments - Potency 3"
       ]
     },
     {
       "ID": 8320000,
       "Entries": [
-        "[Weapon] Improved Chain Attack Finishers"
+        "[Weapon] Improved Chain Attack Finishers - Potency 1"
       ]
     },
     {
       "ID": 8320001,
       "Entries": [
-        "[Weapon] Improved Chain Attack Finishers"
+        "[Weapon] Improved Chain Attack Finishers - Potency 2"
       ]
     },
     {
       "ID": 8320002,
       "Entries": [
-        "[Weapon] Improved Chain Attack Finishers"
+        "[Weapon] Improved Chain Attack Finishers - Potency 3"
       ]
     },
     {
       "ID": 8320100,
       "Entries": [
-        "[Weapon] Improved Charge Attacks"
+        "[Weapon] Improved Charge Attacks - Potency 1"
       ]
     },
     {
       "ID": 8320101,
       "Entries": [
-        "[Weapon] Improved Charge Attacks"
+        "[Weapon] Improved Charge Attacks - Potency 2"
       ]
     },
     {
       "ID": 8320102,
       "Entries": [
-        "[Weapon] Improved Charge Attacks"
+        "[Weapon] Improved Charge Attacks - Potency 3"
       ]
     },
     {
       "ID": 8320300,
       "Entries": [
-        "[Weapon] Improved Jump Attacks"
+        "[Weapon] Improved Jump Attacks - Potency 1"
       ]
     },
     {
       "ID": 8320301,
       "Entries": [
-        "[Weapon] Improved Jump Attacks"
+        "[Weapon] Improved Jump Attacks - Potency 2"
       ]
     },
     {
       "ID": 8320302,
       "Entries": [
-        "[Weapon] Improved Jump Attacks"
+        "[Weapon] Improved Jump Attacks - Potency 3"
       ]
     },
     {
       "ID": 8320400,
       "Entries": [
-        "[Weapon] Dmg Negation Up upon Landing Charge Attacks"
+        "[Weapon] Dmg Negation Up upon Landing Charge Attacks - Potency 1"
       ]
     },
     {
       "ID": 8320410,
       "Entries": [
-        "[Weapon] Dmg Negation Up upon Landing Charge Attacks"
+        "[Weapon] Dmg Negation Up upon Landing Charge Attacks - Potency 2"
       ]
     },
     {
       "ID": 8320420,
       "Entries": [
-        "[Weapon] Dmg Negation Up upon Landing Charge Attacks"
+        "[Weapon] Dmg Negation Up upon Landing Charge Attacks - Potency 3"
       ]
     },
     {
       "ID": 8320500,
       "Entries": [
-        "[Weapon] Improved Melee Attack Power"
+        "[Weapon] Improved Melee Attack Power - Potency 1"
       ]
     },
     {
@@ -4798,37 +4798,37 @@
     {
       "ID": 8330000,
       "Entries": [
-        "[Weapon] Improved Sorceries"
+        "[Weapon] Improved Sorceries - Potency 1"
       ]
     },
     {
       "ID": 8330001,
       "Entries": [
-        "[Weapon] Improved Sorceries"
+        "[Weapon] Improved Sorceries - Potency 2"
       ]
     },
     {
       "ID": 8330002,
       "Entries": [
-        "[Weapon] Improved Sorceries"
+        "[Weapon] Improved Sorceries - Potency 3"
       ]
     },
     {
       "ID": 8330100,
       "Entries": [
-        "[Weapon] Improved Incantations"
+        "[Weapon] Improved Incantations - Potency 1"
       ]
     },
     {
       "ID": 8330101,
       "Entries": [
-        "[Weapon] Improved Incantations"
+        "[Weapon] Improved Incantations - Potency 2"
       ]
     },
     {
       "ID": 8330102,
       "Entries": [
-        "[Weapon] Improved Incantations"
+        "[Weapon] Improved Incantations - Potency 3"
       ]
     },
     {
@@ -4846,49 +4846,49 @@
     {
       "ID": 8330200,
       "Entries": [
-        "[Weapon] Improved Charged Sorceries"
+        "[Weapon] Improved Charged Sorceries - Potency 1"
       ]
     },
     {
       "ID": 8330201,
       "Entries": [
-        "[Weapon] Improved Charged Sorceries"
+        "[Weapon] Improved Charged Sorceries - Potency 2"
       ]
     },
     {
       "ID": 8330202,
       "Entries": [
-        "[Weapon] Improved Charged Sorceries"
+        "[Weapon] Improved Charged Sorceries - Potency 3"
       ]
     },
     {
       "ID": 8330300,
       "Entries": [
-        "[Weapon] Improved Charged Incantation"
+        "[Weapon] Improved Charged Incantation - Potency 1"
       ]
     },
     {
       "ID": 8330301,
       "Entries": [
-        "[Weapon] Improved Charged Incantation"
+        "[Weapon] Improved Charged Incantation - Potency 2"
       ]
     },
     {
       "ID": 8330302,
       "Entries": [
-        "[Weapon] Improved Charged Incantation"
+        "[Weapon] Improved Charged Incantation - Potency 3"
       ]
     },
     {
       "ID": 8330400,
       "Entries": [
-        "[Weapon] Improved Spell Casting Speed"
+        "[Weapon] Improved Spell Casting Speed - Potency 1"
       ]
     },
     {
       "ID": 8330401,
       "Entries": [
-        "[Weapon] Improved Spell Casting Speed"
+        "[Weapon] Improved Spell Casting Speed - Potency 2"
       ]
     },
     {
@@ -4900,19 +4900,19 @@
     {
       "ID": 8330600,
       "Entries": [
-        "[Weapon] Reduced Spell FP Cost"
+        "[Weapon] Reduced Spell FP Cost - Potency 1"
       ]
     },
     {
       "ID": 8330601,
       "Entries": [
-        "[Weapon] Reduced Spell FP Cost"
+        "[Weapon] Reduced Spell FP Cost - Potency 2"
       ]
     },
     {
       "ID": 8330602,
       "Entries": [
-        "[Weapon] Reduced Spell FP Cost"
+        "[Weapon] Reduced Spell FP Cost - Potency 3"
       ]
     },
     {
@@ -4924,91 +4924,91 @@
     {
       "ID": 8330900,
       "Entries": [
-        "[Weapon] Dmg Negation Up While Casting Spells"
+        "[Weapon] Dmg Negation Up While Casting Spells - Potency 1"
       ]
     },
     {
       "ID": 8330910,
       "Entries": [
-        "[Weapon] Dmg Negation Up While Casting Spells"
+        "[Weapon] Dmg Negation Up While Casting Spells - Potency 2"
       ]
     },
     {
       "ID": 8330920,
       "Entries": [
-        "[Weapon] Dmg Negation Up While Casting Spells"
+        "[Weapon] Dmg Negation Up While Casting Spells - Potency 3"
       ]
     },
     {
       "ID": 8340000,
       "Entries": [
-        "[Weapon] Improved Ranged Weapon Attacks"
+        "[Weapon] Improved Ranged Weapon Attacks - Potency 1"
       ]
     },
     {
       "ID": 8340001,
       "Entries": [
-        "[Weapon] Improved Ranged Weapon Attacks"
+        "[Weapon] Improved Ranged Weapon Attacks - Potency 2"
       ]
     },
     {
       "ID": 8340002,
       "Entries": [
-        "[Weapon] Improved Ranged Weapon Attacks"
+        "[Weapon] Improved Ranged Weapon Attacks - Potency 3"
       ]
     },
     {
       "ID": 8340100,
       "Entries": [
-        "[Weapon] Projectile Damage Drop-Off Reduced"
+        "[Weapon] Projectile Damage Drop-Off Reduced - Potency 1"
       ]
     },
     {
       "ID": 8340101,
       "Entries": [
-        "[Weapon] Projectile Damage Drop-Off Reduced"
+        "[Weapon] Projectile Damage Drop-Off Reduced - Potency 2"
       ]
     },
     {
       "ID": 8340102,
       "Entries": [
-        "[Weapon] Projectile Damage Drop-Off Reduced"
+        "[Weapon] Projectile Damage Drop-Off Reduced - Potency 3"
       ]
     },
     {
       "ID": 8350000,
       "Entries": [
-        "[Weapon] Improved Skill Attack Power"
+        "[Weapon] Improved Skill Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8350001,
       "Entries": [
-        "[Weapon] Improved Skill Attack Power"
+        "[Weapon] Improved Skill Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8350002,
       "Entries": [
-        "[Weapon] Improved Skill Attack Power"
+        "[Weapon] Improved Skill Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8350200,
       "Entries": [
-        "[Weapon] Reduced Skill FP Cost"
+        "[Weapon] Reduced Skill FP Cost - Potency 1"
       ]
     },
     {
       "ID": 8350201,
       "Entries": [
-        "[Weapon] Reduced Skill FP Cost"
+        "[Weapon] Reduced Skill FP Cost - Potency 2"
       ]
     },
     {
       "ID": 8350202,
       "Entries": [
-        "[Weapon] Reduced Skill FP Cost"
+        "[Weapon] Reduced Skill FP Cost - Potency 3"
       ]
     },
     {
@@ -5044,19 +5044,19 @@
     {
       "ID": 8420000,
       "Entries": [
-        "[Weapon] Improved Guard Counters"
+        "[Weapon] Improved Guard Counters - Potency 1"
       ]
     },
     {
       "ID": 8420001,
       "Entries": [
-        "[Weapon] Improved Guard Counters"
+        "[Weapon] Improved Guard Counters - Potency 2"
       ]
     },
     {
       "ID": 8420002,
       "Entries": [
-        "[Weapon] Improved Guard Counters"
+        "[Weapon] Improved Guard Counters - Potency 3"
       ]
     },
     {
@@ -5080,13 +5080,13 @@
     {
       "ID": 8440000,
       "Entries": [
-        "[Weapon] Improved Flask HP Restoration"
+        "[Weapon] Improved Flask HP Restoration - Potency 1"
       ]
     },
     {
       "ID": 8440001,
       "Entries": [
-        "[Weapon] Improved Flask HP Restoration"
+        "[Weapon] Improved Flask HP Restoration - Potency 2"
       ]
     },
     {
@@ -5164,37 +5164,37 @@
     {
       "ID": 8510000,
       "Entries": [
-        "[Weapon] Improved Item Discovery"
+        "[Weapon] Improved Item Discovery - Potency 1"
       ]
     },
     {
       "ID": 8510001,
       "Entries": [
-        "[Weapon] Improved Item Discovery"
+        "[Weapon] Improved Item Discovery - Potency 2"
       ]
     },
     {
       "ID": 8510002,
       "Entries": [
-        "[Weapon] Improved Item Discovery"
+        "[Weapon] Improved Item Discovery - Potency 3"
       ]
     },
     {
       "ID": 8520000,
       "Entries": [
-        "[Weapon] Less Likely to Be Targeted"
+        "[Weapon] Less Likely to Be Targeted - Potency 1"
       ]
     },
     {
       "ID": 8520001,
       "Entries": [
-        "[Weapon] Less Likely to Be Targeted"
+        "[Weapon] Less Likely to Be Targeted - Potency 2"
       ]
     },
     {
       "ID": 8520002,
       "Entries": [
-        "[Weapon] Less Likely to Be Targeted"
+        "[Weapon] Less Likely to Be Targeted - Potency 3"
       ]
     },
     {
@@ -5224,37 +5224,37 @@
     {
       "ID": 8600100,
       "Entries": [
-        "[Weapon] HP Restoration upon Landing Attacks"
+        "[Weapon] HP Restoration upon Landing Attacks - Potency 1"
       ]
     },
     {
       "ID": 8600101,
       "Entries": [
-        "[Weapon] HP Restoration upon Landing Attacks"
+        "[Weapon] HP Restoration upon Landing Attacks - Potency 2"
       ]
     },
     {
       "ID": 8600102,
       "Entries": [
-        "[Weapon] HP Restoration upon Landing Attacks"
+        "[Weapon] HP Restoration upon Landing Attacks - Potency 3"
       ]
     },
     {
       "ID": 8600200,
       "Entries": [
-        "[Weapon] FP Restoration upon Landing Attacks"
+        "[Weapon] FP Restoration upon Landing Attacks - Potency 1"
       ]
     },
     {
       "ID": 8600201,
       "Entries": [
-        "[Weapon] FP Restoration upon Landing Attacks"
+        "[Weapon] FP Restoration upon Landing Attacks - Potency 2"
       ]
     },
     {
       "ID": 8600202,
       "Entries": [
-        "[Weapon] FP Restoration upon Landing Attacks"
+        "[Weapon] FP Restoration upon Landing Attacks - Potency 3"
       ]
     },
     {
@@ -5302,91 +5302,91 @@
     {
       "ID": 8610700,
       "Entries": [
-        "[Weapon] Successive Attacks Negate Damage"
+        "[Weapon] Successive Attacks Negate Damage - Potency 1"
       ]
     },
     {
       "ID": 8610710,
       "Entries": [
-        "[Weapon] Successive Attacks Negate Damage"
+        "[Weapon] Successive Attacks Negate Damage - Potency 2"
       ]
     },
     {
       "ID": 8610720,
       "Entries": [
-        "[Weapon] Successive Attacks Negate Damage"
+        "[Weapon] Successive Attacks Negate Damage - Potency 3"
       ]
     },
     {
       "ID": 8620000,
       "Entries": [
-        "[Weapon] Taking Damage Restores FP"
+        "[Weapon] Taking Damage Restores FP - Potency 1"
       ]
     },
     {
       "ID": 8620010,
       "Entries": [
-        "[Weapon] Taking Damage Restores FP"
+        "[Weapon] Taking Damage Restores FP - Potency 2"
       ]
     },
     {
       "ID": 8620020,
       "Entries": [
-        "[Weapon] Taking Damage Restores FP"
+        "[Weapon] Taking Damage Restores FP - Potency 3"
       ]
     },
     {
       "ID": 8620100,
       "Entries": [
-        "[Weapon] Taking Damage Boosts Damage Negation"
+        "[Weapon] Taking Damage Boosts Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8620110,
       "Entries": [
-        "[Weapon] Taking Damage Boosts Damage Negation"
+        "[Weapon] Taking Damage Boosts Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8620120,
       "Entries": [
-        "[Weapon] Taking Damage Boosts Damage Negation"
+        "[Weapon] Taking Damage Boosts Damage Negation - Potency 3"
       ]
     },
     {
       "ID": 8630000,
       "Entries": [
-        "[Weapon] Defeating Enemies Restores HP"
+        "[Weapon] Defeating Enemies Restores HP - Potency 1"
       ]
     },
     {
       "ID": 8630010,
       "Entries": [
-        "[Weapon] Defeating Enemies Restores HP"
+        "[Weapon] Defeating Enemies Restores HP - Potency 2"
       ]
     },
     {
       "ID": 8630020,
       "Entries": [
-        "[Weapon] Defeating Enemies Restores HP"
+        "[Weapon] Defeating Enemies Restores HP - Potency 3"
       ]
     },
     {
       "ID": 8630100,
       "Entries": [
-        "[Weapon] Defeating Enemies Restores FP"
+        "[Weapon] Defeating Enemies Restores FP - Potency 1"
       ]
     },
     {
       "ID": 8630110,
       "Entries": [
-        "[Weapon] Defeating Enemies Restores FP"
+        "[Weapon] Defeating Enemies Restores FP - Potency 2"
       ]
     },
     {
       "ID": 8630120,
       "Entries": [
-        "[Weapon] Defeating Enemies Restores FP"
+        "[Weapon] Defeating Enemies Restores FP - Potency 3"
       ]
     },
     {
@@ -5464,73 +5464,73 @@
     {
       "ID": 8652000,
       "Entries": [
-        "[Weapon] Successful Guarding Ups Poise"
+        "[Weapon] Successful Guarding Ups Poise - Potency 1"
       ]
     },
     {
       "ID": 8652010,
       "Entries": [
-        "[Weapon] Successful Guarding Ups Poise"
+        "[Weapon] Successful Guarding Ups Poise - Potency 2"
       ]
     },
     {
       "ID": 8652020,
       "Entries": [
-        "[Weapon] Successful Guarding Ups Poise"
+        "[Weapon] Successful Guarding Ups Poise - Potency 3"
       ]
     },
     {
       "ID": 8652100,
       "Entries": [
-        "[Weapon] Successful Guarding Ups Dmg Negation"
+        "[Weapon] Successful Guarding Ups Dmg Negation - Potency 1"
       ]
     },
     {
       "ID": 8652110,
       "Entries": [
-        "[Weapon] Successful Guarding Ups Dmg Negation"
+        "[Weapon] Successful Guarding Ups Dmg Negation - Potency 2"
       ]
     },
     {
       "ID": 8652120,
       "Entries": [
-        "[Weapon] Successful Guarding Ups Dmg Negation"
+        "[Weapon] Successful Guarding Ups Dmg Negation - Potency 3"
       ]
     },
     {
       "ID": 8660000,
       "Entries": [
-        "[Weapon] Improved Attack Power at Low HP"
+        "[Weapon] Improved Attack Power at Low HP - Potency 1"
       ]
     },
     {
       "ID": 8660001,
       "Entries": [
-        "[Weapon] Improved Attack Power at Low HP"
+        "[Weapon] Improved Attack Power at Low HP - Potency 2"
       ]
     },
     {
       "ID": 8660002,
       "Entries": [
-        "[Weapon] Improved Attack Power at Low HP"
+        "[Weapon] Improved Attack Power at Low HP - Potency 3"
       ]
     },
     {
       "ID": 8660100,
       "Entries": [
-        "[Weapon] Improved Damage Negation at Low HP"
+        "[Weapon] Improved Damage Negation at Low HP - Potency 1"
       ]
     },
     {
       "ID": 8660101,
       "Entries": [
-        "[Weapon] Improved Damage Negation at Low HP"
+        "[Weapon] Improved Damage Negation at Low HP - Potency 2"
       ]
     },
     {
       "ID": 8660102,
       "Entries": [
-        "[Weapon] Improved Damage Negation at Low HP"
+        "[Weapon] Improved Damage Negation at Low HP - Potency 3"
       ]
     },
     {
@@ -5548,37 +5548,37 @@
     {
       "ID": 8670000,
       "Entries": [
-        "[Weapon] Improved Attack Power at Full HP"
+        "[Weapon] Improved Attack Power at Full HP - Potency 1"
       ]
     },
     {
       "ID": 8670001,
       "Entries": [
-        "[Weapon] Improved Attack Power at Full HP"
+        "[Weapon] Improved Attack Power at Full HP - Potency 2"
       ]
     },
     {
       "ID": 8670002,
       "Entries": [
-        "[Weapon] Improved Attack Power at Full HP"
+        "[Weapon] Improved Attack Power at Full HP - Potency 3"
       ]
     },
     {
       "ID": 8670100,
       "Entries": [
-        "[Weapon] Improved Damage Negation at Full HP"
+        "[Weapon] Improved Damage Negation at Full HP - Potency 1"
       ]
     },
     {
       "ID": 8670101,
       "Entries": [
-        "[Weapon] Improved Damage Negation at Full HP"
+        "[Weapon] Improved Damage Negation at Full HP - Potency 2"
       ]
     },
     {
       "ID": 8670102,
       "Entries": [
-        "[Weapon] Improved Damage Negation at Full HP"
+        "[Weapon] Improved Damage Negation at Full HP - Potency 3"
       ]
     },
     {
@@ -5626,469 +5626,469 @@
     {
       "ID": 8760000,
       "Entries": [
-        "[Weapon] Reduced Maximum HP"
+        "[Weapon] Reduced Maximum HP - Potency 1"
       ]
     },
     {
       "ID": 8760050,
       "Entries": [
-        "[Weapon] Reduced Maximum HP"
+        "[Weapon] Reduced Maximum HP - Potency 2"
       ]
     },
     {
       "ID": 8760100,
       "Entries": [
-        "[Weapon] Reduced Maximum FP"
+        "[Weapon] Reduced Maximum FP - Potency 1"
       ]
     },
     {
       "ID": 8760150,
       "Entries": [
-        "[Weapon] Reduced Maximum FP"
+        "[Weapon] Reduced Maximum FP - Potency 2"
       ]
     },
     {
       "ID": 8760200,
       "Entries": [
-        "[Weapon] Reduced Maximum Stamina"
+        "[Weapon] Reduced Maximum Stamina - Potency 1"
       ]
     },
     {
       "ID": 8760250,
       "Entries": [
-        "[Weapon] Reduced Maximum Stamina"
+        "[Weapon] Reduced Maximum Stamina - Potency 2"
       ]
     },
     {
       "ID": 8761000,
       "Entries": [
-        "[Weapon] Impaired Physical Damage Negation"
+        "[Weapon] Impaired Physical Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8761050,
       "Entries": [
-        "[Weapon] Impaired Physical Damage Negation"
+        "[Weapon] Impaired Physical Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8761100,
       "Entries": [
-        "[Weapon] Impaired Affinity Damage Negation"
+        "[Weapon] Impaired Affinity Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8761150,
       "Entries": [
-        "[Weapon] Impaired Affinity Damage Negation"
+        "[Weapon] Impaired Affinity Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8762000,
       "Entries": [
-        "[Weapon] All Resistances Down"
+        "[Weapon] All Resistances Down - Potency 1"
       ]
     },
     {
       "ID": 8762050,
       "Entries": [
-        "[Weapon] All Resistances Down"
+        "[Weapon] All Resistances Down - Potency 2"
       ]
     },
     {
       "ID": 8763000,
       "Entries": [
-        "[Weapon] Reduced Flask HP Restoration"
+        "[Weapon] Reduced Flask HP Restoration - Potency 1"
       ]
     },
     {
       "ID": 8763050,
       "Entries": [
-        "[Weapon] Reduced Flask HP Restoration"
+        "[Weapon] Reduced Flask HP Restoration - Potency 2"
       ]
     },
     {
       "ID": 8766000,
       "Entries": [
-        "[Weapon] Continuous HP Loss"
+        "[Weapon] Continuous HP Loss - Potency 1"
       ]
     },
     {
       "ID": 8766050,
       "Entries": [
-        "[Weapon] Continuous HP Loss"
+        "[Weapon] Continuous HP Loss - Potency 2"
       ]
     },
     {
       "ID": 8770000,
       "Entries": [
-        "[Weapon] Night's Tide Damage Increased"
+        "[Weapon] Night's Tide Damage Increased - Potency 1"
       ]
     },
     {
       "ID": 8770050,
       "Entries": [
-        "[Weapon] Night's Tide Damage Increased"
+        "[Weapon] Night's Tide Damage Increased - Potency 2"
       ]
     },
     {
       "ID": 8771000,
       "Entries": [
-        "[Weapon] Damage Increased by Night's Encroachment"
+        "[Weapon] Damage Increased by Night's Encroachment - Potency 1"
       ]
     },
     {
       "ID": 8771050,
       "Entries": [
-        "[Weapon] Damage Increased by Night's Encroachment"
+        "[Weapon] Damage Increased by Night's Encroachment - Potency 2"
       ]
     },
     {
       "ID": 8800100,
       "Entries": [
-        "[Weapon] More Damage Taken After Evasion"
+        "[Weapon] More Damage Taken After Evasion - Potency 1"
       ]
     },
     {
       "ID": 8800150,
       "Entries": [
-        "[Weapon] Reduced Damage Negation After Evading"
+        "[Weapon] Reduced Damage Negation After Evading - Potency 2"
       ]
     },
     {
       "ID": 8800200,
       "Entries": [
-        "[Weapon] Repeated Evasions Lower Damage Negation"
+        "[Weapon] Repeated Evasions Lower Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8800250,
       "Entries": [
-        "[Weapon] Repeated Evasions Lower Damage Negation"
+        "[Weapon] Repeated Evasions Lower Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8801000,
       "Entries": [
-        "[Weapon] Reduced Damage Negation for Flask Usages"
+        "[Weapon] Reduced Damage Negation for Flask Usages - Potency 1"
       ]
     },
     {
       "ID": 8801050,
       "Entries": [
-        "[Weapon] Reduced Damage Negation for Flask Usages"
+        "[Weapon] Reduced Damage Negation for Flask Usages - Potency 2"
       ]
     },
     {
       "ID": 8810000,
       "Entries": [
-        "[Weapon] Lower Attack When Below Max HP"
+        "[Weapon] Lower Attack When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810050,
       "Entries": [
-        "[Weapon] Lower Attack When Below Max HP"
+        "[Weapon] Lower Attack When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8810200,
       "Entries": [
-        "[Weapon] Slower Art Gauge When Below Max HP"
+        "[Weapon] Slower Art Gauge When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810250,
       "Entries": [
-        "[Weapon] Slower Art Gauge When Below Max HP"
+        "[Weapon] Slower Art Gauge When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8810300,
       "Entries": [
-        "[Weapon] Poison Buildup When Below Max HP"
+        "[Weapon] Poison Buildup When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810350,
       "Entries": [
-        "[Weapon] Poison Buildup When Below Max HP"
+        "[Weapon] Poison Buildup When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8810400,
       "Entries": [
-        "[Weapon] Rot Buildup When Below Max HP"
+        "[Weapon] Rot Buildup When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810450,
       "Entries": [
-        "[Weapon] Rot Buildup When Below Max HP"
+        "[Weapon] Rot Buildup When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8813100,
       "Entries": [
-        "[Weapon] Lower Stamina Impairs Dmg Negation"
+        "[Weapon] Lower Stamina Impairs Dmg Negation - Potency 1"
       ]
     },
     {
       "ID": 8813150,
       "Entries": [
-        "[Weapon] Lower Stamina Impairs Dmg Negation"
+        "[Weapon] Lower Stamina Impairs Dmg Negation - Potency 2"
       ]
     },
     {
       "ID": 8821000,
       "Entries": [
-        "[Weapon] Attacks Impaired on Occasion"
+        "[Weapon] Attacks Impaired on Occasion - Potency 1"
       ]
     },
     {
       "ID": 8821050,
       "Entries": [
-        "[Weapon] Attacks Impaired on Occasion"
+        "[Weapon] Attacks Impaired on Occasion - Potency 2"
       ]
     },
     {
       "ID": 8830000,
       "Entries": [
-        "[Weapon] Ailments Cause Increased Damage"
+        "[Weapon] Ailments Cause Increased Damage - Potency 1"
       ]
     },
     {
       "ID": 8830050,
       "Entries": [
-        "[Weapon] Ailments Cause Increased Damage"
+        "[Weapon] Ailments Cause Increased Damage - Potency 2"
       ]
     },
     {
       "ID": 8831000,
       "Entries": [
-        "[Weapon] Near Death Reduces Art Gauge"
+        "[Weapon] Near Death Reduces Art Gauge - Potency 1"
       ]
     },
     {
       "ID": 8831050,
       "Entries": [
-        "[Weapon] Near Death Reduces Art Gauge"
+        "[Weapon] Near Death Reduces Art Gauge - Potency 2"
       ]
     },
     {
       "ID": 8831200,
       "Entries": [
-        "[Weapon] Near Death Reduces Max HP"
+        "[Weapon] Near Death Reduces Max HP - Potency 1"
       ]
     },
     {
       "ID": 8831250,
       "Entries": [
-        "[Weapon] Near Death Reduces Max HP"
+        "[Weapon] Near Death Reduces Max HP - Potency 2"
       ]
     },
     {
       "ID": 8850000,
       "Entries": [
-        "[Weapon] Increased Maximum HP"
+        "[Weapon] Increased Maximum HP - Potency 1"
       ]
     },
     {
       "ID": 8850050,
       "Entries": [
-        "[Weapon] Increased Maximum HP"
+        "[Weapon] Increased Maximum HP - Potency 2"
       ]
     },
     {
       "ID": 8850100,
       "Entries": [
-        "[Weapon] Increased Maximum FP"
+        "[Weapon] Increased Maximum FP - Potency 1"
       ]
     },
     {
       "ID": 8850150,
       "Entries": [
-        "[Weapon] Increased Maximum FP"
+        "[Weapon] Increased Maximum FP - Potency 2"
       ]
     },
     {
       "ID": 8850200,
       "Entries": [
-        "[Weapon] Reduced FP Consumption"
+        "[Weapon] Reduced FP Consumption - Potency 1"
       ]
     },
     {
       "ID": 8850250,
       "Entries": [
-        "[Weapon] Reduced FP Consumption"
+        "[Weapon] Reduced FP Consumption - Potency 2"
       ]
     },
     {
       "ID": 8850300,
       "Entries": [
-        "[Weapon] Increased Maximum Stamina"
+        "[Weapon] Increased Maximum Stamina - Potency 1"
       ]
     },
     {
       "ID": 8850350,
       "Entries": [
-        "[Weapon] Increased Maximum Stamina"
+        "[Weapon] Increased Maximum Stamina - Potency 2"
       ]
     },
     {
       "ID": 8850400,
       "Entries": [
-        "[Weapon] Improved Stamina Recovery"
+        "[Weapon] Improved Stamina Recovery - Potency 1"
       ]
     },
     {
       "ID": 8850450,
       "Entries": [
-        "[Weapon] Improved Stamina Recovery"
+        "[Weapon] Improved Stamina Recovery - Potency 2"
       ]
     },
     {
       "ID": 8850500,
       "Entries": [
-        "[Weapon] Physical Attack Up"
+        "[Weapon] Physical Attack Up - Potency 1"
       ]
     },
     {
       "ID": 8850550,
       "Entries": [
-        "[Weapon] Physical Attack Up"
+        "[Weapon] Physical Attack Up - Potency 2"
       ]
     },
     {
       "ID": 8850600,
       "Entries": [
-        "[Weapon] Improved Affinity Attack Power"
+        "[Weapon] Improved Affinity Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8850650,
       "Entries": [
-        "[Weapon] Improved Affinity Attack Power"
+        "[Weapon] Improved Affinity Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8850700,
       "Entries": [
-        "[Weapon] Improved Stance-Breaking"
+        "[Weapon] Improved Stance-Breaking - Potency 1"
       ]
     },
     {
       "ID": 8850750,
       "Entries": [
-        "[Weapon] Improved Stance-Breaking"
+        "[Weapon] Improved Stance-Breaking - Potency 2"
       ]
     },
     {
       "ID": 8850800,
       "Entries": [
-        "[Weapon] Improved Physical Damage Negation"
+        "[Weapon] Improved Physical Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8850850,
       "Entries": [
-        "[Weapon] Improved Physical Damage Negation"
+        "[Weapon] Improved Physical Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8850900,
       "Entries": [
-        "[Weapon] Improved Affinity Damage Negation"
+        "[Weapon] Improved Affinity Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8850950,
       "Entries": [
-        "[Weapon] Improved Affinity Damage Negation"
+        "[Weapon] Improved Affinity Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8851000,
       "Entries": [
-        "[Weapon] All Resistances Up"
+        "[Weapon] All Resistances Up - Potency 1"
       ]
     },
     {
       "ID": 8851050,
       "Entries": [
-        "[Weapon] All Resistances Up"
+        "[Weapon] All Resistances Up - Potency 2"
       ]
     },
     {
       "ID": 8851100,
       "Entries": [
-        "[Weapon] Improved Poise"
+        "[Weapon] Improved Poise - Potency 1"
       ]
     },
     {
       "ID": 8851150,
       "Entries": [
-        "[Weapon] Improved Poise"
+        "[Weapon] Improved Poise - Potency 2"
       ]
     },
     {
       "ID": 8851200,
       "Entries": [
-        "[Weapon] Improved Sorceries & Incantations"
+        "[Weapon] Improved Sorceries & Incantations - Potency 1"
       ]
     },
     {
       "ID": 8851250,
       "Entries": [
-        "[Weapon] Improved Sorceries & Incantations"
+        "[Weapon] Improved Sorceries & Incantations - Potency 2"
       ]
     },
     {
       "ID": 8851300,
       "Entries": [
-        "[Weapon] Increased Sorcery & Incantation Duration"
+        "[Weapon] Increased Sorcery & Incantation Duration - Potency 1"
       ]
     },
     {
       "ID": 8851350,
       "Entries": [
-        "[Weapon] Increased Sorcery & Incantation Duration"
+        "[Weapon] Increased Sorcery & Incantation Duration - Potency 2"
       ]
     },
     {
       "ID": 8851800,
       "Entries": [
-        "[Weapon] Improved Thrusting Counterattack"
+        "[Weapon] Improved Thrusting Counterattack - Potency 1"
       ]
     },
     {
       "ID": 8851850,
       "Entries": [
-        "[Weapon] Improved Thrusting Counterattack"
+        "[Weapon] Improved Thrusting Counterattack - Potency 2"
       ]
     },
     {
       "ID": 8851900,
       "Entries": [
-        "[Weapon] Improved Flask HP Restoration"
+        "[Weapon] Improved Flask HP Restoration - Potency 1"
       ]
     },
     {
       "ID": 8851950,
       "Entries": [
-        "[Weapon] Improved Flask HP Restoration"
+        "[Weapon] Improved Flask HP Restoration - Potency 2"
       ]
     },
     {
       "ID": 8852000,
       "Entries": [
-        "[Weapon] More Runes From Defeated Enemies"
+        "[Weapon] More Runes From Defeated Enemies - Potency 1"
       ]
     },
     {
       "ID": 8852050,
       "Entries": [
-        "[Weapon] More Runes From Defeated Enemies"
+        "[Weapon] More Runes From Defeated Enemies - Potency 2"
       ]
     },
     {
