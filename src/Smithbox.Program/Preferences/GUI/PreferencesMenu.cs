@@ -360,7 +360,7 @@ public class PreferencesMenu
 
                 if (dialog is DialogResult.Yes)
                 {
-                    CFGHelpers.ResetViewportGeneralCFG();
+                    PreferencesUtil.ResetViewportGeneralCFG();
                 }
             }
             UIHelper.Tooltip("Reverts all preferences in the Viewport General section to their default value.");
@@ -371,7 +371,7 @@ public class PreferencesMenu
 
                 if (dialog is DialogResult.Yes)
                 {
-                    CFGHelpers.ResetViewportRenderingCFG();
+                    PreferencesUtil.ResetViewportRenderingCFG();
                 }
             }
             UIHelper.Tooltip("Reverts all preferences in the Viewport Rendering section to their default value.");
@@ -382,10 +382,21 @@ public class PreferencesMenu
 
                 if (dialog is DialogResult.Yes)
                 {
-                    CFGHelpers.ResetViewportModelRenderingCFG();
+                    PreferencesUtil.ResetViewportModelRenderingCFG();
                 }
             }
             UIHelper.Tooltip("Reverts all preferences in the Viewport Model Rendering section to their default value.");
+
+            if (ImGui.MenuItem("Selection"))
+            {
+                var dialog = PlatformUtils.Instance.MessageBox("Are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialog is DialogResult.Yes)
+                {
+                    PreferencesUtil.ResetViewportSelectionCFG();
+                }
+            }
+            UIHelper.Tooltip("Reverts all preferences in the Viewport Selection section to their default value.");
 
             if (ImGui.MenuItem("Coloring"))
             {
@@ -393,7 +404,7 @@ public class PreferencesMenu
 
                 if (dialog is DialogResult.Yes)
                 {
-                    CFGHelpers.ResetViewportColoringCFG();
+                    PreferencesUtil.ResetViewportColoringCFG();
                 }
             }
             UIHelper.Tooltip("Reverts all preferences in the Viewport Coloring section to their default value.");
@@ -404,7 +415,7 @@ public class PreferencesMenu
 
                 if (dialog is DialogResult.Yes)
                 {
-                    CFGHelpers.ResetViewportDisplayPresetCFG();
+                    PreferencesUtil.ResetViewportDisplayPresetCFG();
                 }
             }
             UIHelper.Tooltip("Reverts all preferences in the Viewport Display Preset section to their default value.");
