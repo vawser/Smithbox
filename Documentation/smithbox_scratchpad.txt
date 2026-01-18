@@ -2,7 +2,25 @@
 # TODO 
 #---------------------
 - Implement new Settings impl
+- Add back project manual auto-load set if the auto-load pref is off
 - Update the code structuring in Param Editor to match the Foundry implementation
-- Implement Views for Text Editor
 - Implement FMG Descriptor pattern for Text Editor
+- Implement Views for Text Editor
 
+public static PreferenceItem XXX()
+{
+    return new PreferenceItem
+    {
+        Category = PreferenceCategory.System,
+        Spacer = true,
+
+        Section = "General",
+
+        Title = "XXX",
+        Description = "XXX",
+
+        Draw = () => {
+            ImGui.Checkbox("##inputValue", ref CFG.Current.System_Check_Program_Update);
+        }
+    };
+}

@@ -88,38 +88,6 @@ public class SystemTab
             ImGui.Checkbox("Enable Backup Saves", ref CFG.Current.EnableBackupSaves);
             UIHelper.Tooltip("If enabled, the .prev and .bak files will be produced when saving.");
 
-            if(ImGui.Button("Clear Backup Files", DPI.WholeWidthButton(width, 24)))
-            {
-                var root = Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath;
-
-                var filesToDelete = GetBackupFiles(root);
-
-                var fileList = "";
-
-                int i = 0;
-
-                foreach(var entry in filesToDelete)
-                {
-                    fileList = fileList + $"\n{entry}";
-
-                    i++;
-
-                    if (i > 25)
-                    {
-                        fileList = fileList + $"\n....";
-                        break;
-                    }
-                }
-
-                var dialog = PlatformUtils.Instance.MessageBox($"You will delete the following files:\n{fileList}", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-               
-                if(dialog is DialogResult.OK)
-                {
-                    DeleteFiles(filesToDelete);
-                }
-            }
-            UIHelper.Tooltip("This will clear all files with the .prev and .bak extension from your project.");
-
             ImGui.Separator();
 
             // Default Project Directory
@@ -264,45 +232,6 @@ public class SystemTab
 
             ImGui.InputText("Smithbox Build Directory##smithboxBuildDir", ref CFG.Current.SmithboxBuildFolder, 255);
             UIHelper.Tooltip("Select the build directory for Smithbox (where the Smithbox.sln is placed).");
-        }
-    }
-    public static List<string> GetBackupFiles(string rootDirectory)
-    {
-        if (string.IsNullOrWhiteSpace(rootDirectory) || !Directory.Exists(rootDirectory))
-            throw new DirectoryNotFoundException($"Directory not found: {rootDirectory}");
-
-        var results = new List<string>();
-
-        foreach (var file in Directory.EnumerateFiles(rootDirectory, "*.*", SearchOption.AllDirectories))
-        {
-            string ext = Path.GetExtension(file);
-
-            if (ext.Equals(".bak", StringComparison.OrdinalIgnoreCase) ||
-                ext.Equals(".prev", StringComparison.OrdinalIgnoreCase))
-            {
-                results.Add(file);
-            }
-        }
-
-        return results;
-    }
-
-    public static void DeleteFiles(IEnumerable<string> files)
-    {
-        foreach (var file in files)
-        {
-            try
-            {
-                if (File.Exists(file))
-                {
-                    File.Delete(file);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Log or handle as needed
-                Console.WriteLine($"Failed to delete {file}: {ex.Message}");
-            }
         }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Keybinds;
+using StudioCore.Preferences;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -43,11 +45,11 @@ public class Smithbox
 
     public SoapstoneService _soapstoneService;
 
-    public SettingsWindow Settings;
     public HelpWindow Help;
     public DeveloperTools DebugTools;
 
-    public KeybindsMenu Keybinds = new();
+    public PreferencesMenu PreferencesMenu = new();
+    public KeybindsMenu KeybindsMenu = new();
 
     public ActionLogger ActionLogger;
     public WarningLogger WarningLogger;
@@ -88,9 +90,9 @@ public class Smithbox
 
         _context.ImguiRenderer.OnSetupDone();
 
-        Settings = new();
         Help = new();
-        Keybinds = new();
+        KeybindsMenu = new();
+        PreferencesMenu = new();
         DebugTools = new();
 
         _soapstoneService = new(version);
@@ -105,12 +107,16 @@ public class Smithbox
         CFG.Load();
         UI.Load();
 
+        PreferencesUtil.Setup();
+
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
 
         BinaryReaderEx.CurrentProjectType = "";
         BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
         BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.System_UseDCXHeuristicOnReadFailure;
+
+        CheckProgramUpdate();
     }
 
 
@@ -459,70 +465,16 @@ public class Smithbox
                 ImGui.EndMenu();
             }
 
-            // Settings
-            if (ImGui.BeginMenu("Settings"))
+            // Preferences
+            if (ImGui.MenuItem("Preferences"))
             {
-                if (ImGui.MenuItem("System"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.System);
-                }
-                UIHelper.Tooltip("Open the settings related to Smithbox's systems.");
-
-                if (ImGui.MenuItem("Viewport"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.Viewport);
-                }
-                UIHelper.Tooltip("Open the settings related to Viewport in Smithbox.");
-
-                if (ImGui.MenuItem("Interface"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.Interface);
-                }
-                UIHelper.Tooltip("Open the settings related to interface of Smithbox.");
-
-                if (ImGui.MenuItem("Map Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.MapEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Map Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Model Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.ModelEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Model Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Param Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.ParamEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Param Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Text Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.TextEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Text Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Graphics Param Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.GparamEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Gparam Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Texture Viewer"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.TextureViewer);
-                }
-                UIHelper.Tooltip("Open the settings related to Texture Viewer in Smithbox.");
-
-                ImGui.EndMenu();
+                PreferencesMenu.IsDisplayed = !PreferencesMenu.IsDisplayed;
             }
 
             // Keybinds
             if (ImGui.MenuItem("Shortcuts"))
             {
-                Keybinds.IsDisplayed = !Keybinds.IsDisplayed;
+                KeybindsMenu.IsDisplayed = !KeybindsMenu.IsDisplayed;
             }
 
             // Help
@@ -596,14 +548,34 @@ public class Smithbox
 
         Orchestrator.Update(deltaseconds);
 
-        Settings.Display();
         Help.Display();
         DebugTools.Display();
 
-        Keybinds.Draw();
+        KeybindsMenu.Draw();
+        PreferencesMenu.Draw();
 
         // Tool windows
         ColorPicker.DisplayColorPicker();
+
+        if (_programUpdateAvailable)
+        {
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Update"))
+            {
+                if (ImGui.MenuItem("Go to Release"))
+                {
+                    Process myProcess = new();
+                    myProcess.StartInfo.UseShellExecute = true;
+                    myProcess.StartInfo.FileName = _releaseUrl;
+                    myProcess.Start();
+                }
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.Separator();
+        }
 
         ImGui.PopStyleVar(2);
 
@@ -625,6 +597,42 @@ public class Smithbox
         }
 
         _firstframe = false;
+    }
+
+    private bool _programUpdateAvailable = false;
+    private string _releaseUrl = "";
+
+    private void CheckProgramUpdate()
+    {
+        if (!CFG.Current.System_Check_Program_Update)
+            return;
+
+        try
+        {
+            GitHubClient gitHubClient = new(new ProductHeaderValue("Smithbox"));
+            Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
+            var isVer = false;
+            var verstring = "";
+            foreach (var c in release.TagName)
+            {
+                if (char.IsDigit(c) || (isVer && c == '.'))
+                {
+                    verstring += c;
+                    isVer = true;
+                }
+                else
+                {
+                    isVer = false;
+                }
+            }
+
+            if (Version.Parse(verstring) > Version.Parse(_version.ToString()))
+            {
+                _programUpdateAvailable = true;
+                _releaseUrl = release.HtmlUrl;
+            }
+        }
+        catch (Exception) { }
     }
 }
 

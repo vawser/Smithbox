@@ -235,6 +235,30 @@ public static class UIHelper
     {
         PlatformUtils.Instance.SetClipboardText(text);
     }
+
+    public static void SimpleHeader(string title, string tooltip)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
+
+        if (ImGui.BeginTable($"{title.GetHashCode()}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text($"{title}");
+
+            if (tooltip != "")
+            {
+                UIHelper.Tooltip(tooltip);
+            }
+
+            ImGui.EndTable();
+        }
+    }
+
     public static void SimpleHeader(string id, string title, string tooltip, Vector4 textColor)
     {
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;

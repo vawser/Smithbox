@@ -456,4 +456,44 @@ public class ProjectUtils
     {
         return true;
     }
+
+    public static List<string> GetBackupFiles(string rootDirectory)
+    {
+        if (string.IsNullOrWhiteSpace(rootDirectory) || !Directory.Exists(rootDirectory))
+            throw new DirectoryNotFoundException($"Directory not found: {rootDirectory}");
+
+        var results = new List<string>();
+
+        foreach (var file in Directory.EnumerateFiles(rootDirectory, "*.*", SearchOption.AllDirectories))
+        {
+            string ext = Path.GetExtension(file);
+
+            if (ext.Equals(".bak", StringComparison.OrdinalIgnoreCase) ||
+                ext.Equals(".prev", StringComparison.OrdinalIgnoreCase))
+            {
+                results.Add(file);
+            }
+        }
+
+        return results;
+    }
+
+    public static void DeleteFiles(IEnumerable<string> files)
+    {
+        foreach (var file in files)
+        {
+            try
+            {
+                if (File.Exists(file))
+                {
+                    File.Delete(file);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log or handle as needed
+                Console.WriteLine($"Failed to delete {file}: {ex.Message}");
+            }
+        }
+    }
 }

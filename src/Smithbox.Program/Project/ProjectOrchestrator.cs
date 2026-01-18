@@ -476,6 +476,39 @@ public class ProjectOrchestrator : IDisposable
             }
         }
 
+        ImGui.Separator();
+
+        if (ImGui.MenuItem($"Clear Backup Files##clearBackupFiles"))
+        {
+            var root = curProject.Descriptor.ProjectPath;
+
+            var filesToDelete = ProjectUtils.GetBackupFiles(root);
+
+            var fileList = "";
+
+            int i = 0;
+
+            foreach (var entry in filesToDelete)
+            {
+                fileList = fileList + $"\n{entry}";
+
+                i++;
+
+                if (i > 25)
+                {
+                    fileList = fileList + $"\n....";
+                    break;
+                }
+            }
+
+            var dialog = PlatformUtils.Instance.MessageBox($"You will delete the following files:\n{fileList}", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (dialog is DialogResult.OK)
+            {
+                ProjectUtils.DeleteFiles(filesToDelete);
+            }
+        }
+
         ImGui.PopID();
     }
 
