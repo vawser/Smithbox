@@ -298,7 +298,7 @@ public static class ParamListCategories
 
         try
         {
-            string jsonString = JsonSerializer.Serialize(editor.Project.Handler.ParamData.ParamCategories, typeof(ParamCategoryResource), ProjectJsonSerializerContext.Default);
+            string jsonString = JsonSerializer.Serialize(editor.Project.Handler.ParamData.ParamCategories, typeof(ParamCategoryResource), ParamEditorJsonSerializerContext.Default);
             var fs = new FileStream(modResourcePath, System.IO.FileMode.Create);
             var data = Encoding.ASCII.GetBytes(jsonString);
             fs.Write(data, 0, data.Length);
