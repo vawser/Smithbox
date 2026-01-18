@@ -1,4 +1,10 @@
 ﻿using StudioCore.Editors.Common;
+using StudioCore.Editors.GparamEditor;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MaterialEditor;
+using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.IO;
@@ -220,7 +226,7 @@ public class ProjectEntry
 
                 if (CFG.Current.AutomaticSave_MapEditor)
                 {
-                    if (Handler.MapEditor != null)
+                    if (Handler.MapEditor != null && Handler.FocusedEditor is MapEditorScreen)
                     {
                         Handler.MapEditor.Save(true);
                     }
@@ -228,34 +234,34 @@ public class ProjectEntry
 
                 if (CFG.Current.AutomaticSave_ModelEditor)
                 {
-                    if (Handler.ModelEditor != null)
+                    if (Handler.ModelEditor != null && Handler.FocusedEditor is ModelEditorScreen)
                     {
                         Handler.ModelEditor.Save(true);
                     }
                 }
 
-                if (CFG.Current.AutomaticSave_ParamEditor)
+                if (CFG.Current.AutomaticSave_ParamEditor && Handler.FocusedEditor is ParamEditorScreen)
                 {
                     if (Handler.ParamEditor != null)
                     {
                         Handler.ParamEditor.Save(true);
                     }
                 }
-                if (CFG.Current.AutomaticSave_TextEditor)
+                if (CFG.Current.AutomaticSave_TextEditor && Handler.FocusedEditor is TextEditorScreen)
                 {
                     if (Handler.TextEditor != null)
                     {
                         Handler.TextEditor.Save(true);
                     }
                 }
-                if (CFG.Current.AutomaticSave_GparamEditor)
+                if (CFG.Current.AutomaticSave_GparamEditor && Handler.FocusedEditor is GparamEditorScreen)
                 {
                     if (Handler.GparamEditor != null)
                     {
                         Handler.GparamEditor.Save(true);
                     }
                 }
-                if (CFG.Current.AutomaticSave_MaterialEditor)
+                if (CFG.Current.AutomaticSave_MaterialEditor && Handler.FocusedEditor is MaterialEditorScreen)
                 {
                     if (Handler.MaterialEditor != null)
                     {
