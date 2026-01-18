@@ -649,7 +649,7 @@ public class CFG
     // Tools
     public bool Interface_ParamEditor_ToolWindow = true;
     public bool Interface_ParamEditor_Tool_PinGroups = true;
-    public bool Interface_ParamEditor_Tool_ParamCategories = true;
+    public bool Interface_ParamEditor_Tool_ParamListCategories = true;
     public bool Interface_ParamEditor_Tool_ParamMerge = true;
     public bool Interface_ParamEditor_Tool_ParamUpgrader = true;
     public bool Interface_ParamEditor_Tool_ParamReloader = true;

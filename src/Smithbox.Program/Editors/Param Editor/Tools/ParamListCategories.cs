@@ -12,7 +12,7 @@ using System.Text.Json;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public static class ParamCategories
+public static class ParamListCategories
 {
     private static bool isNewEntryMode = false;
     private static bool isEditEntryMode = false;

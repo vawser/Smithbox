@@ -37,11 +37,11 @@ public partial class ParamTools
 
             var windowWidth = ImGui.GetWindowWidth();
 
-            if (CFG.Current.Interface_ParamEditor_Tool_ParamCategories)
+            if (CFG.Current.Interface_ParamEditor_Tool_ParamListCategories)
             {
-                if (ImGui.CollapsingHeader("Param Categories"))
+                if (ImGui.CollapsingHeader("Param List Categories"))
                 {
-                    ParamCategories.Display(Editor);
+                    ParamListCategories.Display(Editor);
                 }
             }
 
@@ -155,9 +155,9 @@ public partial class ParamTools
         {
             if (ImGui.MenuItem("Param Categories"))
             {
-                CFG.Current.Interface_ParamEditor_Tool_ParamCategories = !CFG.Current.Interface_ParamEditor_Tool_ParamCategories;
+                CFG.Current.Interface_ParamEditor_Tool_ParamListCategories = !CFG.Current.Interface_ParamEditor_Tool_ParamListCategories;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_ParamCategories);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_ParamListCategories);
 
             if (ImGui.MenuItem("Pin Groups"))
             {
