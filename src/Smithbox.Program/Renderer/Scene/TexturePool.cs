@@ -506,8 +506,10 @@ public class TexturePool
                 }
             }
 
-            width = FormatHelpers.IsCompressedFormat(format) ? (uint)((width + 3) & ~0x3) : width;
-            height = FormatHelpers.IsCompressedFormat(format) ? (uint)((height + 3) & ~0x3) : height;
+            var isCompressed = FormatHelpers.IsCompressedFormat(format);
+
+            width = isCompressed ? (uint)((width + 3) & ~0x3) : width;
+            height = isCompressed ? (uint)((height + 3) & ~0x3) : height;
 
             var isCubemap = (dds.dwCaps2 & DDS.DDSCAPS2.CUBEMAP) > 0;
             var arrayCount = isCubemap ? 6u : 1;
@@ -524,6 +526,13 @@ public class TexturePool
             desc.CreateFlags = VkImageCreateFlags.None;
             desc.Tiling = VkImageTiling.Linear;
             desc.Format = format;
+
+            // TODO: this is a hack to stop DXT5 saved icon files from crashing the program
+            // Really we need to fix the Veldrid workflow to properly handle them
+            if(format is VkFormat.Bc3SrgbBlock)
+            {
+                return;
+            }
 
             _staging = d.ResourceFactory.CreateTexture(desc);
 
