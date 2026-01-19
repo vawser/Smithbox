@@ -35,7 +35,7 @@ public class SystemPrefs
         };
     }
 
-    public static PreferenceItem System_IgnoreAsserts()
+    public static PreferenceItem System_Ignore_Read_Asserts()
     {
         return new PreferenceItem
         {
@@ -48,12 +48,12 @@ public class SystemPrefs
             Description = "If enabled, when attempting to read files, asserts will be ignored.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_IgnoreAsserts);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Ignore_Read_Asserts);
             }
         };
     }
 
-    public static PreferenceItem System_UseDCXHeuristicOnReadFailure()
+    public static PreferenceItem System_Apply_DCX_Heuristic()
     {
         return new PreferenceItem
         {
@@ -66,7 +66,7 @@ public class SystemPrefs
             Description = "If enabled, if a DCX fails to read its compression type, use a heuristic to guess which it should be instead.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_UseDCXHeuristicOnReadFailure);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Apply_DCX_Heuristic);
             }
         };
     }
@@ -83,16 +83,16 @@ public class SystemPrefs
 
             Section = "Loggers",
 
-            Title = "Show Action Logger",
+            Title = "Enable Action Log",
             Description = "If enabled, the action logger will be visible in the menu bar.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_ShowActionLogger);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Action_Log);
             }
         };
     }
 
-    public static PreferenceItem System_ActionLogger_FadeTime()
+    public static PreferenceItem Logger_Action_Fade_Time()
     {
         return new PreferenceItem
         {
@@ -102,17 +102,17 @@ public class SystemPrefs
 
             Section = "Loggers",
 
-            Title = "Action Log Visibility Duration",
+            Title = "Action Visibility Duration",
             Description = "The number of frames for which the action logger message stays visible in the menu bar.\n-1 means the message never disappears.",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputInt("##inputValue", ref CFG.Current.System_ActionLogger_FadeTime);
+                ImGui.InputInt("##inputValue", ref CFG.Current.Logger_Action_Fade_Time);
             }
         };
     }
 
-    public static PreferenceItem System_ShowWarningLogger()
+    public static PreferenceItem Logger_Enable_Warning_Log()
     {
         return new PreferenceItem
         {
@@ -121,11 +121,11 @@ public class SystemPrefs
 
             Section = "Loggers",
 
-            Title = "Show Warning Logger",
+            Title = "Enable Warning Log",
             Description = "If enabled, the warning logger will be visible in the menu bar.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_ShowWarningLogger);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Warning_Log);
             }
         };
     }
@@ -140,12 +140,12 @@ public class SystemPrefs
 
             Section = "Loggers",
 
-            Title = "Warning Log Visibility Duration",
+            Title = "Warning Visibility Duration",
             Description = "The number of frames for which the warning logger message stays visible in the menu bar.\n-1 means the message never disappears.",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputInt("##inputValue", ref CFG.Current.System_WarningLogger_FadeTime);
+                ImGui.InputInt("##inputValue", ref CFG.Current.Logger_Warning_Fade_Time);
             }
         };
     }
@@ -153,7 +153,7 @@ public class SystemPrefs
     #endregion
 
     #region Developer
-    public static PreferenceItem EnableDeveloperTools()
+    public static PreferenceItem Developer_Enable_Tools()
     {
         return new PreferenceItem
         {
@@ -166,12 +166,12 @@ public class SystemPrefs
             Description = "Enables various tools meant for Smithbox developers only.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.EnableDeveloperTools);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Developer_Enable_Tools);
             }
         };
     }
 
-    public static PreferenceItem SmithboxBuildFolder()
+    public static PreferenceItem Developer_Smithbox_Build_Folder()
     {
         return new PreferenceItem
         {
@@ -186,7 +186,7 @@ public class SystemPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.SmithboxBuildFolder, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Developer_Smithbox_Build_Folder, 255);
 
                 ImGui.SameLine();
 
@@ -197,7 +197,7 @@ public class SystemPrefs
 
                     if (result)
                     {
-                        CFG.Current.SmithboxBuildFolder = smithboxBuildDir;
+                        CFG.Current.Developer_Smithbox_Build_Folder = smithboxBuildDir;
                     }
                 }
             }

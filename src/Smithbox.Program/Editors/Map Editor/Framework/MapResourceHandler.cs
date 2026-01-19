@@ -55,7 +55,7 @@ public class MapResourceHandler
     {
         if (CFG.Current.MapEditor_ModelLoad_Characters)
         {
-            var chrId = CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID;
+            var chrId = CFG.Current.MapEditor_Character_Substitution_ID;
 
             var modelAsset = ModelLocator.GetChrModel(Editor.Project, chrId, chrId);
 

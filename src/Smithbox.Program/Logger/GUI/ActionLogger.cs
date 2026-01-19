@@ -19,7 +19,7 @@ public class ActionLogger
 
     public void DisplayTopbarToggle()
     {
-        if (CFG.Current.System_ShowActionLogger)
+        if (CFG.Current.Logger_Enable_Action_Log)
         {
             if (ImGui.ArrowButton("##actionLoggerToggle", CurrentDir))
             {
@@ -39,9 +39,9 @@ public class ActionLogger
             // Only show the warning for X frames in the menu bar
             if (TaskLogs._lastActionLogEntry != null)
             {
-                if (TaskLogs._actionShowTime > 0 || CFG.Current.System_ActionLogger_FadeTime < 0)
+                if (TaskLogs._actionShowTime > 0 || CFG.Current.Logger_Action_Fade_Time < 0)
                 {
-                    if (CFG.Current.System_ActionLogger_FadeTime > 0)
+                    if (CFG.Current.Logger_Action_Fade_Time > 0)
                     {
                         TaskLogs._actionShowTime--;
                     }

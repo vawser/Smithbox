@@ -21,14 +21,14 @@ public class CFG
     ///------------------------------------------------------------
     /// System
     ///------------------------------------------------------------
-    public bool EnableDeveloperTools = false;
-    public string SmithboxBuildFolder = "";
+    public bool Developer_Enable_Tools = false;
+    public string Developer_Smithbox_Build_Folder = "";
 
     public bool System_Check_Program_Update = true;
-    public float System_Frame_Rate = 60.0f;
+    public float Viewport_Frame_Rate = 60.0f;
     public bool System_Enable_Soapstone_Server = true;
-    public bool System_IgnoreAsserts = false;
-    public bool System_UseDCXHeuristicOnReadFailure = false;
+    public bool System_Ignore_Read_Asserts = false;
+    public bool System_Apply_DCX_Heuristic = false;
 
     public bool System_EnableAutoSave = true;
     public int System_AutoSaveIntervalSeconds = 300;
@@ -41,8 +41,8 @@ public class CFG
 
     public bool System_EnableRecoveryFolder = true;
 
-    public int System_ActionLogger_FadeTime = 1500;
-    public int System_WarningLogger_FadeTime = 1500;
+    public int Logger_Action_Fade_Time = 1500;
+    public int Logger_Warning_Fade_Time = 1500;
 
     ///------------------------------------------------------------
     /// Project
@@ -51,15 +51,15 @@ public class CFG
     public bool Project_Enable_Auto_Load = true;
     public bool Project_Enable_Automatic_Auto_Load_Assignment = true;
 
-    public bool EnableAutomaticSave = true;
+    public bool Project_Enable_Automatic_Save = true;
     public bool EnableBackupSaves = true;
 
-    public float AutomaticSaveIntervalTime = 300;
+    public float Project_Automatic_Save_Interval = 300;
 
-    public string DefaultModDirectory = "";
-    public string DefaultDataDirectory = "";
+    public string Project_Default_Mod_Directory = "";
+    public string Project_Default_Data_Directory = "";
 
-    public string ModEngine3ProfileDirectory = "";
+    public string Project_ME3_Profile_Directory = "";
     public string ModEngine2Install = "";
     public string ModEngine2Dlls = "";
 
@@ -98,25 +98,25 @@ public class CFG
     ///------------------------------------------------------------
     /// Interface
     ///------------------------------------------------------------
-    public bool System_ShowActionLogger = true;
-    public bool System_ShowWarningLogger = true;
-    public bool System_WrapAliasDisplay = true;
+    public bool Logger_Enable_Action_Log = true;
+    public bool Logger_Enable_Warning_Log = true;
+    public bool Interface_Alias_Wordwrap_General = true;
 
-    public float System_UI_Scale = 1.0f;
-    public bool System_ScaleByDPI = true;
+    public float Interface_UI_Scale = 1.0f;
+    public bool Interface_Scale_by_DPI = true;
 
-    public bool System_Font_Chinese = false;
-    public bool System_Font_Cyrillic = false;
-    public bool System_Font_Korean = false;
-    public bool System_Font_Thai = false;
-    public bool System_Font_Vietnamese = false;
+    public bool Interface_Include_Chinese_Symbols = false;
+    public bool Interface_Include_Cyrillic_Symbols = false;
+    public bool Interface_Include_Korean_Symbols = false;
+    public bool Interface_Include_Thai_Symbols = false;
+    public bool Interface_Include_Vietnamese_Symbols = false;
 
-    public string System_English_Font = Path.Join("Assets","Fonts","RobotoMono-Light.ttf");
-    public string System_Other_Font = Path.Join("Assets","Fonts","NotoSansCJKtc-Light.otf");
+    public string Interface_English_Font_Path = Path.Join("Assets","Fonts","RobotoMono-Light.ttf");
+    public string Interface_Non_English_Font_Path = Path.Join("Assets","Fonts","NotoSansCJKtc-Light.otf");
 
-    public string SelectedTheme = "";
+    public string Interface_Selected_Theme = "";
 
-    public float Interface_FontSize = 14.0f;
+    public float Interface_Font_Size = 14.0f;
 
     public bool Interface_Editor_Viewport = true;
     public bool Viewport_Profiling = true;
@@ -130,58 +130,46 @@ public class CFG
     ///------------------------------------------------------------
     /// Map Editor
     ///------------------------------------------------------------
-    // General
+    // Preferences
     public bool MapEditor_IgnoreSaveExceptions = false;
-
-    public bool MapEditor_DisplayMapCategories = true;
-
-    public EntityNameDisplayType MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal_FMG;
-
-    public bool MapEditor_AssetBrowser_ShowAliases = true;
-    public bool MapEditor_AssetBrowser_ShowTags = false;
-    public bool MapEditor_AssetBrowser_ShowLowDetailParts = false;
 
     public bool MapEditor_LoadCollisions_ER = true;
 
-    public bool MapEditor_ShowMapGroups = true;
-    public bool MapEditor_ShowWorldMapButtons = true;
-    public bool MapEditor_MapObjectList_ShowMapNames = true;
+    public bool MapEditor_Map_List_Display_Map_Aliases = true;
+    public bool MapEditor_Map_List_Enable_Load_on_Double_Click = false;
 
-    public bool MapEditor_Enable_Commmunity_Names = true;
-    public bool MapEditor_DisplayUnknownFields = true;
-    public bool MapEditor_Enable_Obsolete_Fields = true;
+    public bool MapEditor_Map_Contents_Display_Character_Aliases = true;
+    public bool MapEditor_Map_Contents_Display_Asset_Aliases = true;
+    public bool MapEditor_Map_Contents_Display_Map_Piece_Aliases = true;
+    public bool MapEditor_Map_Contents_Display_Treasure_Aliases = true;
 
-    public bool MapEditor_Enable_Property_Info = false;
-    public bool MapEditor_Enable_Map_Load_on_Double_Click = false;
-    public bool MapEditor_Enable_Property_Filter = true;
-    public bool MapEditor_Enable_Param_Quick_Links = true;
-    public bool MapEditor_Enable_Referenced_Rename = false;
+    public bool MapEditor_Properties_Enable_Commmunity_Names = true;
+    public bool MapEditor_Properties_Display_Unknown_Properties = true;
+    public bool MapEditor_Properties_Display_Property_Attributes = false;
+    public bool MapEditor_Properties_Enable_Referenced_Rename = false;
+    public bool MapEditor_Properties_Display_Additional_Information_at_Top = false;
+    public bool MapEditor_Properties_Display_Behavior_Information = true;
+    public bool MapEditor_Properties_Display_Reference_Information = true;
 
-    public bool MapEditor_Enable_Property_Property_TopDecoration = false;
-    public bool MapEditor_Enable_Property_Property_Class_Info = true;
-    public bool MapEditor_Enable_Property_Property_SpecialProperty_Info = true;
-    public bool MapEditor_Enable_Property_Property_ReferencesTo = true;
-    public bool MapEditor_Enable_Property_Property_ReferencesBy = true;
+    public bool MapEditor_Model_Selector_Display_Aliases = true;
+    public bool MapEditor_Model_Selector_Display_Tags = false;
+    public bool MapEditor_Model_Selector_Display_Low_Detail_Entries = false;
 
-    public bool MapEditor_MapObjectList_ShowListSortingType = true;
-    public bool MapEditor_MapObjectList_ShowMapIdSearch = true;
-    public bool MapEditor_MapObjectList_ShowMapContentSearch = true;
+    public bool MapEditor_Selection_Group_Frame_Selection_On_Use = true;
+    public bool MapEditor_Selection_Group_Enable_Quick_Creation = false;
+    public bool MapEditor_Selection_Group_Confirm_Delete = true;
+    public bool MapEditor_Selection_Group_Show_Keybind = true;
+    public bool MapEditor_Selection_Group_Show_Tags = false;
 
-    public bool MapEditor_MapObjectList_ShowCharacterNames = true;
-    public bool MapEditor_MapObjectList_ShowAssetNames = true;
-    public bool MapEditor_MapObjectList_ShowMapPieceNames = true;
+
     public bool MapEditor_MapObjectList_ShowPlayerCharacterNames = true;
     public bool MapEditor_MapObjectList_ShowSystemCharacterNames = true;
-    public bool MapEditor_MapObjectList_ShowTreasureNames = true;
 
-    public bool MapEditor_Substitute_PseudoPlayer_Model = false;
-    public string MapEditor_Substitute_PseudoPlayer_ChrID = "c0000";
+    public bool MapEditor_Enable_Character_Substitution = false;
+    public string MapEditor_Character_Substitution_ID = "c0000";
 
-    public bool MapEditor_SelectionGroup_FrameSelection = true;
-    public bool MapEditor_SelectionGroup_AutoCreation = false;
-    public bool MapEditor_SelectionGroup_ConfirmDelete = true;
-    public bool MapEditor_SelectionGroup_ShowKeybind = true;
-    public bool MapEditor_SelectionGroup_ShowTags = false;
+    // Internal
+    public EntityNameDisplayType MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal_FMG;
 
     public int MapEditor_Selection_Position_IncrementType = 0;
     public float MapEditor_Selection_Position_Increment_0 { get; set; } = 0.05f;
@@ -192,7 +180,7 @@ public class CFG
 
     public bool MapEditor_Selection_Position_Increment_DiscreteApplication = false;
 
-    public bool Shortcuts_MapEditor_EnableSelectionGroupShortcuts = false;
+    public bool MapEditor_Selection_Group_Enable_Shortcuts = false;
 
     public bool GlobalMapSearch_CopyResults_IncludeHeader = true;
     public bool GlobalMapSearch_CopyResults_IncludeIndex = true;
@@ -202,11 +190,11 @@ public class CFG
     public bool GlobalMapSearch_CopyResults_IncludePropertyValue = true;
     public string GlobalMapSearch_CopyResults_Delimiter = ",";
 
-    public bool MsbReference_DisplayName = true;
-    public bool MsbReference_DisplayEntityID = true;
-    public bool MsbReference_DisplayAlias = true;
+    public bool MapEditor_Properties_Display_Reference_Name = true;
+    public bool MapEditor_Properties_Display_Reference_Entity_ID = true;
+    public bool MapEditor_Properties_Display_Reference_Alias = true;
 
-    public bool Interface_MapEditor_WrapAliasDisplay = true;
+    public bool Interface_Alias_Wordwrap_Map_Editor = true;
 
     public bool Prefab_IncludeEntityID = true;
     public bool Prefab_IncludeEntityGroupIDs = true;
@@ -413,7 +401,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_MapModelInsight = true;
 
     // Saving
-    public bool AutomaticSave_MapEditor = true;
+    public bool Project_Automatic_Save_Include_Map_Editor = true;
 
     public bool MapEditor_AutomaticSave_IncludeMSB = true;
     public bool MapEditor_AutomaticSave_IncludeBTL = false;
@@ -431,12 +419,12 @@ public class CFG
 
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
-    public RenderFilterPreset SceneFilter_Preset_01 { get; set; } = new("Map", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-    public RenderFilterPreset SceneFilter_Preset_02 { get; set; } = new("Collision", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-    public RenderFilterPreset SceneFilter_Preset_03 { get; set; } = new("Collision & Navmesh", RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-    public RenderFilterPreset SceneFilter_Preset_04 { get; set; } = new("Lighting (Map)", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
-    public RenderFilterPreset SceneFilter_Preset_05 { get; set; } = new("Lighting (Collision)", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
-    public RenderFilterPreset SceneFilter_Preset_06 { get; set; } = new("All", RenderFilter.All);
+    public RenderFilterPreset Viewport_Filter_Preset_1 { get; set; } = new("Map", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
+    public RenderFilterPreset Viewport_Filter_Preset_2 { get; set; } = new("Collision", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
+    public RenderFilterPreset Viewport_Filter_Preset_3 { get; set; } = new("Collision & Navmesh", RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
+    public RenderFilterPreset Viewport_Filter_Preset_4 { get; set; } = new("Lighting (Map)", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
+    public RenderFilterPreset Viewport_Filter_Preset_5 { get; set; } = new("Lighting (Collision)", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
+    public RenderFilterPreset Viewport_Filter_Preset_6 { get; set; } = new("All", RenderFilter.All);
 
     ///------------------------------------------------------------
     /// Model Editor
@@ -445,7 +433,7 @@ public class CFG
     public bool ModelEditor_AutoLoadSingles = true;
     public bool ModelEditor_IncludeAliasInSearch = true;
 
-    public bool Interface_ModelEditor_WrapAliasDisplay = true;
+    public bool Interface_Alias_Wordwrap_Model_Editor = true;
 
     public bool ModelEditor_ViewMeshes = true;
     public bool ModelEditor_ViewDummyPolys = true;
@@ -456,8 +444,8 @@ public class CFG
 
     public bool ModelEditor_ExactSearch = false;
 
-    public bool ModelEditor_Enable_Commmunity_Names = true;
-    public bool ModelEditor_Enable_Commmunity_Hints = true;
+    public bool ModelEditor_Properties_Enable_Commmunity_Names = true;
+    public bool ModelEditor_Properties_Enable_Commmunity_Descriptions = true;
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;
     public bool ModelEditor_DisplayMatNameOnMesh = true;
 
@@ -639,8 +627,6 @@ public class CFG
     public bool UseLatestGameOffset = true;
     public int SelectedGameOffsetData = 0;
 
-    public bool Checked_CSV_Application = true;
-
     // Windows
     public bool Interface_ParamEditor_Table = true;
 
@@ -663,7 +649,7 @@ public class CFG
     public bool Interface_ParamEditor_Tool_SetFinder = true;
 
     // Saving
-    public bool AutomaticSave_ParamEditor = true;
+    public bool Project_Automatic_Save_Include_Param_Editor = true;
 
     public bool ParamEditor_AutomaticSave_IncludePARAM = true;
     public bool ParamEditor_ManualSave_IncludePARAM = true;
@@ -773,7 +759,7 @@ public class CFG
     public bool Interface_TextEditor_Tool_TextMerge = true;
 
     // Saving
-    public bool AutomaticSave_TextEditor = true;
+    public bool Project_Automatic_Save_Include_Text_Editor = true;
 
     public bool TextEditor_AutomaticSave_IncludeFMG = true;
     public bool TextEditor_ManualSave_IncludeFMG = true;
@@ -825,7 +811,7 @@ public class CFG
     public bool Interface_GparamEditor_Tool_QuickEdit = true;
 
     // Saving
-    public bool AutomaticSave_GparamEditor = false;
+    public bool Project_Automatic_Save_Include_Gparam_Editor = false;
 
     public bool GparamEditor_AutomaticSave_IncludeGPARAM = true;
     public bool GparamEditor_ManualSave_IncludeGPARAM = true;
@@ -873,7 +859,7 @@ public class CFG
     // Tools
 
     // Saving
-    public bool AutomaticSave_MaterialEditor = false;
+    public bool Project_Automatic_Save_Include_Material_Editor = false;
 
     public bool MaterialEditor_AutomaticSave_IncludeMTD = true;
     public bool MaterialEditor_AutomaticSave_IncludeMATBIN = true;
@@ -902,6 +888,9 @@ public class CFG
     public bool Viewport_Enable_LOD_Facesets = false;
 
 
+    public Vector3 Viewport_Frame_Offset = new Vector3();
+    public float Viewport_Frame_Distance = 1f;
+
     public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
 
     // Camera
@@ -919,96 +908,96 @@ public class CFG
     public int Viewport_Limit_Renderables = 50000;
 
     // Wireframe Coloring
-    public float GFX_Wireframe_Color_Variance = 0.11f;
+    public float Viewport_Wireframe_Color_Variance = 0.11f;
 
     public float GFX_Renderable_Default_Wireframe_Alpha = 100.0f;
 
 
-    public Vector3 GFX_Renderable_Collision_Color = new Vector3(53, 157, 255);
-    public Vector3 GFX_Renderable_ConnectCollision_Color = new Vector3(146, 57, 158);
-    public Vector3 GFX_Renderable_Navmesh_Color = new Vector3(157, 53, 255);
-    public Vector3 GFX_Renderable_NavmeshGate_Color = new Vector3(50, 220, 0);
+    public Vector3 Viewport_Collision_Color = new Vector3(53, 157, 255);
+    public Vector3 Viewport_Connect_Collision_Color = new Vector3(146, 57, 158);
+    public Vector3 Viewport_Navmesh_Color = new Vector3(157, 53, 255);
+    public Vector3 Viewport_Navmesh_Gate_Color = new Vector3(50, 220, 0);
 
-    public Vector3 GFX_Renderable_Box_BaseColor = Utils.GetDecimalColor(Color.Blue);
-    public Vector3 GFX_Renderable_Box_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Box_Alpha = 75.0f;
+    public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
+    public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
+    public float Viewport_Box_Region_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_Cylinder_BaseColor = Utils.GetDecimalColor(Color.Blue);
-    public Vector3 GFX_Renderable_Cylinder_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Cylinder_Alpha = 75.0f;
+    public Vector3 Viewport_Cylinder_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
+    public Vector3 Viewport_Cylinder_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
+    public float Viewport_Cylinder_Region_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_Sphere_BaseColor = Utils.GetDecimalColor(Color.Blue);
-    public Vector3 GFX_Renderable_Sphere_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Sphere_Alpha = 75.0f;
+    public Vector3 Viewport_Sphere_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
+    public Vector3 Viewport_Sphere_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
+    public float Viewport_Sphere_Region_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_Point_BaseColor = Utils.GetDecimalColor(Color.Yellow);
-    public Vector3 GFX_Renderable_Point_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Point_Alpha = 75.0f;
+    public Vector3 Viewport_Point_Region_Base_Color = Utils.GetDecimalColor(Color.Yellow);
+    public Vector3 Viewport_Point_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
+    public float Viewport_Point_Region_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_DummyPoly_BaseColor = Utils.GetDecimalColor(Color.Yellow);
-    public Vector3 GFX_Renderable_DummyPoly_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_DummyPoly_Alpha = 75.0f;
+    public Vector3 Viewport_Dummy_Polygon_Base_Color = Utils.GetDecimalColor(Color.Yellow);
+    public Vector3 Viewport_Dummy_Polygon_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
+    public float Viewport_Dummy_Polygon_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_BonePoint_BaseColor = Utils.GetDecimalColor(Color.Blue);
-    public Vector3 GFX_Renderable_BonePoint_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_BonePoint_Alpha = 75.0f;
+    public Vector3 Viewport_Bone_Marker_Base_Color = Utils.GetDecimalColor(Color.Blue);
+    public Vector3 Viewport_Bone_Marker_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
+    public float Viewport_Bone_Marker_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_ModelMarker_Chr_BaseColor = Utils.GetDecimalColor(Color.Firebrick);
-    public Vector3 GFX_Renderable_ModelMarker_Chr_HighlightColor = Utils.GetDecimalColor(Color.Tomato);
-    public float GFX_Renderable_ModelMarker_Chr_Alpha = 75.0f;
+    public Vector3 Viewport_Character_Marker_Base_Color = Utils.GetDecimalColor(Color.Firebrick);
+    public Vector3 Viewport_Character_Marker_Highlight_Color = Utils.GetDecimalColor(Color.Tomato);
+    public float Viewport_Character_Marker_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_ModelMarker_Object_BaseColor = Utils.GetDecimalColor(Color.MediumVioletRed);
-    public Vector3 GFX_Renderable_ModelMarker_Object_HighlightColor = Utils.GetDecimalColor(Color.DeepPink);
-    public float GFX_Renderable_ModelMarker_Object_Alpha = 75.0f;
+    public Vector3 Viewport_Object_Marker_Base_Color = Utils.GetDecimalColor(Color.MediumVioletRed);
+    public Vector3 Viewport_Object_Marker_Highlight_Color = Utils.GetDecimalColor(Color.DeepPink);
+    public float Viewport_Object_Marker_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_ModelMarker_Player_BaseColor = Utils.GetDecimalColor(Color.DarkOliveGreen);
-    public Vector3 GFX_Renderable_ModelMarker_Player_HighlightColor = Utils.GetDecimalColor(Color.OliveDrab);
-    public float GFX_Renderable_ModelMarker_Player_Alpha = 75.0f;
+    public Vector3 Viewport_Player_Marker_Base_Color = Utils.GetDecimalColor(Color.DarkOliveGreen);
+    public Vector3 Viewport_Player_Marker_Highlight_Color = Utils.GetDecimalColor(Color.OliveDrab);
+    public float Viewport_Player_Marker_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_ModelMarker_Other_BaseColor = Utils.GetDecimalColor(Color.Wheat);
-    public Vector3 GFX_Renderable_ModelMarker_Other_HighlightColor = Utils.GetDecimalColor(Color.AntiqueWhite);
-    public float GFX_Renderable_ModelMarker_Other_Alpha = 75.0f;
+    public Vector3 Viewport_Other_Marker_Base_Color = Utils.GetDecimalColor(Color.Wheat);
+    public Vector3 Viewport_Other_Marker_Highlight_Color = Utils.GetDecimalColor(Color.AntiqueWhite);
+    public float Viewport_Other_Marker_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_PointLight_BaseColor = Utils.GetDecimalColor(Color.YellowGreen);
-    public Vector3 GFX_Renderable_PointLight_HighlightColor = Utils.GetDecimalColor(Color.Yellow);
-    public float GFX_Renderable_PointLight_Alpha = 75.0f;
+    public Vector3 Viewport_Point_Light_Base_Color = Utils.GetDecimalColor(Color.YellowGreen);
+    public Vector3 Viewport_Point_Light_Highlight_Color = Utils.GetDecimalColor(Color.Yellow);
+    public float Viewport_Point_Light_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_SpotLight_BaseColor = Utils.GetDecimalColor(Color.Goldenrod);
-    public Vector3 GFX_Renderable_SpotLight_HighlightColor = Utils.GetDecimalColor(Color.Violet);
-    public float GFX_Renderable_SpotLight_Alpha = 75.0f;
+    public Vector3 Viewport_Spot_Light_Base_Color = Utils.GetDecimalColor(Color.Goldenrod);
+    public Vector3 Viewport_Splot_Light_Highlight_Color = Utils.GetDecimalColor(Color.Violet);
+    public float Viewport_Spot_Light_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_DirectionalLight_BaseColor = Utils.GetDecimalColor(Color.Cyan);
-    public Vector3 GFX_Renderable_DirectionalLight_HighlightColor = Utils.GetDecimalColor(Color.AliceBlue);
-    public float GFX_Renderable_DirectionalLight_Alpha = 75.0f;
+    public Vector3 Viewport_Directional_Light_Base_Color = Utils.GetDecimalColor(Color.Cyan);
+    public Vector3 Viewport_Directional_Light_Highlight_Color = Utils.GetDecimalColor(Color.AliceBlue);
+    public float Viewport_Directional_Light_Alpha = 75.0f;
 
-    public Vector3 GFX_Renderable_AutoInvadeSphere_BaseColor = Utils.GetDecimalColor(Color.Red);
-    public Vector3 GFX_Renderable_AutoInvadeSphere_HighlightColor = Utils.GetDecimalColor(Color.DarkRed);
+    public Vector3 Viewport_Auto_Invade_Marker_Base_Color = Utils.GetDecimalColor(Color.Red);
+    public Vector3 Viewport_Auto_Invade_Marker_Highlight_Color = Utils.GetDecimalColor(Color.DarkRed);
 
     public Vector3 GFX_Renderable_LightProbeSphere_BaseColor = Utils.GetDecimalColor(Color.Yellow);
     public Vector3 GFX_Renderable_LightProbeSphere_HighlightColor = Utils.GetDecimalColor(Color.YellowGreen);
 
-    public Vector3 GFX_Renderable_LevelConnectorSphere_BaseColor = Utils.GetDecimalColor(Color.Turquoise);
-    public Vector3 GFX_Renderable_LevelConnectorSphere_HighlightColor = Utils.GetDecimalColor(Color.DarkTurquoise);
+    public Vector3 Viewport_Level_Connector_Marker_Base_Color = Utils.GetDecimalColor(Color.Turquoise);
+    public Vector3 Viewport_Level_Connector_Marker_Highlight_Color = Utils.GetDecimalColor(Color.DarkTurquoise);
 
-    public Vector3 GFX_Gizmo_X_BaseColor = new(0.952f, 0.211f, 0.325f);
-    public Vector3 GFX_Gizmo_X_HighlightColor = new(1.0f, 0.4f, 0.513f);
+    public Vector3 Viewport_Gizmo_X_Base_Color = new(0.952f, 0.211f, 0.325f);
+    public Vector3 Viewport_Gizmo_X_Highlight_Color = new(1.0f, 0.4f, 0.513f);
 
-    public Vector3 GFX_Gizmo_Y_BaseColor = new(0.525f, 0.784f, 0.082f);
-    public Vector3 GFX_Gizmo_Y_HighlightColor = new(0.713f, 0.972f, 0.270f);
+    public Vector3 Viewport_Gizmo_Y_Base_Color = new(0.525f, 0.784f, 0.082f);
+    public Vector3 Viewport_Gizmo_Y_Highlight_Color = new(0.713f, 0.972f, 0.270f);
 
-    public Vector3 GFX_Gizmo_Z_BaseColor = new(0.219f, 0.564f, 0.929f);
-    public Vector3 GFX_Gizmo_Z_HighlightColor = new(0.407f, 0.690f, 1.0f);
+    public Vector3 Viewport_Gizmo_Z_Base_Color = new(0.219f, 0.564f, 0.929f);
+    public Vector3 Viewport_Gizmo_Z_Highlight_Color = new(0.407f, 0.690f, 1.0f);
 
-    public float Viewport_DefaultRender_Brightness = 1.0f;
-    public float Viewport_DefaultRender_Saturation = 0.5f;
+    public float Viewport_Untextured_Model_Brightness = 1.0f;
+    public float Viewport_Untextured_Model_Saturation = 0.5f;
 
-    public Vector3 Viewport_DefaultRender_SelectColor = new(1.0f, 0.5f, 0.0f);
+    public Vector3 Viewport_Selection_Outline_Color = new(1.0f, 0.5f, 0.0f);
 
     public bool Viewport_DisplayControls = true;
     public bool Viewport_DisplayRotationIncrement = true;
     public bool Viewport_DisplayPositionIncrement = true;
-    public bool Viewport_Enable_BoxSelection = true;
-    public float Viewport_BS_DistThresFactor = 1.2f;
+    public bool Viewport_Enable_Box_Selection = true;
+    public float Viewport_Box_Selection_Distance_Threshold = 1.2f;
 
     public Vector3 Viewport_Background_Color = new(1.0f, 0.5f, 0.0f);
 
@@ -1134,10 +1123,6 @@ public class CFG
     public float ModelEditor_TertiaryGrid_Rotation_X = 0;
     public float ModelEditor_TertiaryGrid_Rotation_Y = 0;
     public float ModelEditor_TertiaryGrid_Rotation_Z = 90;
-
-    public Vector3 ModelEditor_FrameInViewport_Offset = new Vector3();
-    public float ModelEditor_FrameInViewport_Distance = 1f;
-    public float ModelEditor_PullToCamera_Offset = 3f;
 
     ///------------------------------------------------------------
     /// Misc

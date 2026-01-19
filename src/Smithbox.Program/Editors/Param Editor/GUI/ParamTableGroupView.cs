@@ -88,7 +88,7 @@ public class ParamTableGroupView
 
         UIHelper.Tooltip($"Toggle the row display type when in Table mode.\nCurrent Mode: {rowDisplayType}");
 
-        if (CFG.Current.EnableDeveloperTools)
+        if (CFG.Current.Developer_Enable_Tools)
         {
             ParamDebugTools.DisplayQuickTableNameExport(Editor, Project);
         }

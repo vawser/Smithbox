@@ -444,7 +444,7 @@ public class ParamView
                 UIHelper.Tooltip($"Unpin the current param selection from the top of the param list.");
             }
 
-            if (CFG.Current.EnableDeveloperTools)
+            if (CFG.Current.Developer_Enable_Tools)
             {
                 if (ImGui.Selectable("Copy Param List"))
                 {

@@ -32,7 +32,7 @@ public class BoxSelection
     public void Update()
     {
 
-        if (CFG.Current.Viewport_Enable_BoxSelection && !Parent.Gizmos.IsMouseBusy())
+        if (CFG.Current.Viewport_Enable_Box_Selection && !Parent.Gizmos.IsMouseBusy())
         {
             Vector2 mousePos = InputManager.MousePosition;
 
@@ -138,7 +138,7 @@ public class BoxSelection
                 UpdateSelection(obj, targetEditor, ctrl);
                 continue;
             }
-            if (distanceToCamera > lastSelectedDistance * CFG.Current.Viewport_BS_DistThresFactor) break;
+            if (distanceToCamera > lastSelectedDistance * CFG.Current.Viewport_Box_Selection_Distance_Threshold) break;
             lastSelectedDistance = distanceToCamera;
             UpdateSelection(obj, targetEditor, ctrl);
         }

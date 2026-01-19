@@ -172,10 +172,10 @@ public class ProjectCreationMenu
 
             if (ImGui.Button("Select##projectPathSelect", DPI.SelectorButtonSize))
             {
-                if (CFG.Current.DefaultModDirectory != "")
+                if (CFG.Current.Project_Default_Mod_Directory != "")
                 {
                     var newProjectPath = "";
-                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath, CFG.Current.DefaultModDirectory);
+                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath, CFG.Current.Project_Default_Mod_Directory);
 
                     if (result)
                     {
@@ -225,10 +225,10 @@ public class ProjectCreationMenu
 
             if (ImGui.Button("Select##dataPathSelect", DPI.SelectorButtonSize))
             {
-                if (CFG.Current.DefaultDataDirectory != "")
+                if (CFG.Current.Project_Default_Data_Directory != "")
                 {
                     var newDataPath = "";
-                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Game Directory", out newDataPath, CFG.Current.DefaultDataDirectory);
+                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Game Directory", out newDataPath, CFG.Current.Project_Default_Data_Directory);
 
                     if (result)
                     {

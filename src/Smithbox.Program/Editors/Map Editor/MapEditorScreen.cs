@@ -582,27 +582,19 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Map List: Categories"))
-            {
-                CFG.Current.MapEditor_DisplayMapCategories = !CFG.Current.MapEditor_DisplayMapCategories;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_DisplayMapCategories);
-
-            ImGui.Separator();
-
             // Quick toggles for some of the Field Editor field visibility options
 
             if (ImGui.MenuItem("Field: Community Names"))
             {
-                CFG.Current.MapEditor_Enable_Commmunity_Names = !CFG.Current.MapEditor_Enable_Commmunity_Names;
+                CFG.Current.MapEditor_Properties_Enable_Commmunity_Names = !CFG.Current.MapEditor_Properties_Enable_Commmunity_Names;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Enable_Commmunity_Names);
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Properties_Enable_Commmunity_Names);
 
             if (ImGui.MenuItem("Field: Unknowns"))
             {
-                CFG.Current.MapEditor_DisplayUnknownFields = !CFG.Current.MapEditor_DisplayUnknownFields;
+                CFG.Current.MapEditor_Properties_Display_Unknown_Properties = !CFG.Current.MapEditor_Properties_Display_Unknown_Properties;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_DisplayUnknownFields);
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Properties_Display_Unknown_Properties);
 
             ImGui.EndMenu();
         }
@@ -631,34 +623,34 @@ public class MapEditorScreen : EditorScreen
 
             if (ImGui.BeginMenu("Filter Presets"))
             {
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_01.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_1.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_01.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_02.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_2.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_02.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_03.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_3.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_03.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_04.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_4.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_04.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_05.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_5.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_05.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_06.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_6.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_06.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
                 }
 
                 ImGui.EndMenu();

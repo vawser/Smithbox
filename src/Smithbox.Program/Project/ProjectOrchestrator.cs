@@ -463,7 +463,7 @@ public class ProjectOrchestrator : IDisposable
             }
             else
             {
-                if (CFG.Current.ModEngine3ProfileDirectory != "")
+                if (CFG.Current.Project_ME3_Profile_Directory != "")
                 {
                     if (ImGui.MenuItem($"Create Mod Profile##createME3profile"))
                     {
@@ -482,7 +482,7 @@ public class ProjectOrchestrator : IDisposable
 
                         if (result)
                         {
-                            CFG.Current.ModEngine3ProfileDirectory = profilePath;
+                            CFG.Current.Project_ME3_Profile_Directory = profilePath;
                         }
                     }
 

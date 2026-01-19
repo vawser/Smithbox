@@ -64,11 +64,11 @@ public class ModelPropertyView
 
         if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
         {
-            CFG.Current.ModelEditor_Enable_Commmunity_Names = !CFG.Current.ModelEditor_Enable_Commmunity_Names;
+            CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names = !CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names;
         }
 
         var communityFieldNameMode = "Internal";
-        if (CFG.Current.ModelEditor_Enable_Commmunity_Names)
+        if (CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names)
             communityFieldNameMode = "Community";
 
         UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");

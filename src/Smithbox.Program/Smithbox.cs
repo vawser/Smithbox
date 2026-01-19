@@ -16,7 +16,6 @@ using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Sdl2;
 using static StudioCore.Application.HelpWindow;
-using static StudioCore.Application.SettingsWindow;
 using Thread = System.Threading.Thread;
 
 namespace StudioCore;
@@ -113,8 +112,8 @@ public class Smithbox
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
 
         BinaryReaderEx.CurrentProjectType = "";
-        BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
-        BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.System_UseDCXHeuristicOnReadFailure;
+        BinaryReaderEx.IgnoreAsserts = CFG.Current.System_Ignore_Read_Asserts;
+        BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.System_Apply_DCX_Heuristic;
 
         CheckProgramUpdate();
     }
@@ -164,16 +163,16 @@ public class Smithbox
         string NonEnglishFontRelPath = Path.Join("Assets", "Fonts", "NotoSansCJKtc-Light.otf");
         string IconFontRelPath = Path.Join("Assets", "Fonts", "forkawesome-webfont.ttf");
 
-        if (!string.IsNullOrWhiteSpace(CFG.Current.System_English_Font) &&
-            File.Exists(CFG.Current.System_English_Font))
+        if (!string.IsNullOrWhiteSpace(CFG.Current.Interface_English_Font_Path) &&
+            File.Exists(CFG.Current.Interface_English_Font_Path))
         {
-            EnglishFontRelPath = CFG.Current.System_English_Font;
+            EnglishFontRelPath = CFG.Current.Interface_English_Font_Path;
         }
 
-        if (!string.IsNullOrWhiteSpace(CFG.Current.System_Other_Font) &&
-            File.Exists(CFG.Current.System_Other_Font))
+        if (!string.IsNullOrWhiteSpace(CFG.Current.Interface_Non_English_Font_Path) &&
+            File.Exists(CFG.Current.Interface_Non_English_Font_Path))
         {
-            NonEnglishFontRelPath = CFG.Current.System_Other_Font;
+            NonEnglishFontRelPath = CFG.Current.Interface_Non_English_Font_Path;
         }
 
         var englishFontPath = Path.Combine(AppContext.BaseDirectory, EnglishFontRelPath);
@@ -194,8 +193,8 @@ public class Smithbox
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
         fonts.Clear();
 
-        var scaleFine = (float)Math.Round(CFG.Current.Interface_FontSize * DPI.UIScale());
-        var scaleLarge = (float)Math.Round((CFG.Current.Interface_FontSize + 2) * DPI.UIScale());
+        var scaleFine = (float)Math.Round(CFG.Current.Interface_Font_Size * DPI.UIScale());
+        var scaleLarge = (float)Math.Round((CFG.Current.Interface_Font_Size + 2) * DPI.UIScale());
 
         ImFontConfigPtr cfg = ImGui.ImFontConfig();
 
@@ -221,15 +220,15 @@ public class Smithbox
 
         Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
 
-        if (CFG.Current.System_Font_Chinese)
+        if (CFG.Current.Interface_Include_Chinese_Symbols)
             glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
-        if (CFG.Current.System_Font_Korean)
+        if (CFG.Current.Interface_Include_Korean_Symbols)
             glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
-        if (CFG.Current.System_Font_Thai)
+        if (CFG.Current.Interface_Include_Thai_Symbols)
             glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
-        if (CFG.Current.System_Font_Vietnamese)
+        if (CFG.Current.Interface_Include_Vietnamese_Symbols)
             glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
-        if (CFG.Current.System_Font_Cyrillic)
+        if (CFG.Current.Interface_Include_Cyrillic_Symbols)
             glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
 
         ImVector<uint> outGlyphRanges;
@@ -299,7 +298,7 @@ public class Smithbox
             }
             else
             {
-                _desiredFrameLengthSeconds = 1.0 / CFG.Current.System_Frame_Rate;
+                _desiredFrameLengthSeconds = 1.0 / CFG.Current.Viewport_Frame_Rate;
             }
 
             var currentFrameTicks = sw.ElapsedTicks;

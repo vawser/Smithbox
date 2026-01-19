@@ -178,11 +178,11 @@ public static class DrawableHelper
             return null;
         }
 
-        if (CFG.Current.MapEditor_Substitute_PseudoPlayer_Model)
+        if (CFG.Current.MapEditor_Enable_Character_Substitution)
         {
             if (asset.AssetName == "c0000")
             {
-                asset = ModelLocator.GetChrModel(curProject, CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID, CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+                asset = ModelLocator.GetChrModel(curProject, CFG.Current.MapEditor_Character_Substitution_ID, CFG.Current.MapEditor_Character_Substitution_ID);
             }
         }
 

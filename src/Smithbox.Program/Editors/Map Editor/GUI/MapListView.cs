@@ -174,20 +174,17 @@ public class MapListView : IActionEventHandler
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch)
+        DPI.ApplyInputWidth(windowWidth * 0.75f);
+        ImGui.InputText($"##mapListSearch_{ImguiID}", ref SearchBarText, 255);
+        if(ImGui.IsItemEdited())
         {
-            DPI.ApplyInputWidth(windowWidth * 0.75f);
-            ImGui.InputText($"##mapListSearch_{ImguiID}", ref SearchBarText, 255);
-            if(ImGui.IsItemEdited())
+            if (_lastSearchText != SearchBarText)
             {
-                if (_lastSearchText != SearchBarText)
-                {
-                    _lastSearchText = SearchBarText;
-                    _updateMapList = true;
-                }
+                _lastSearchText = SearchBarText;
+                _updateMapList = true;
             }
-            UIHelper.Tooltip("Filter the map list entries.");
         }
+        UIHelper.Tooltip("Filter the map list entries.");
 
         if (_updateMapList)
         {
@@ -346,7 +343,7 @@ public class MapListView : IActionEventHandler
                         Editor.Selection.SelectedMapContainer = curWrapper.MapContainer;
                     }
 
-                    if (CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click && 
+                    if (CFG.Current.MapEditor_Map_List_Enable_Load_on_Double_Click && 
                         ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                     {
                         if (loadType == MapContentLoadState.Loaded)
@@ -363,7 +360,7 @@ public class MapListView : IActionEventHandler
                 var mapId = curWrapper.Name;
                 var displayedName = $"{mapId}";
 
-                if (CFG.Current.MapEditor_MapObjectList_ShowMapNames)
+                if (CFG.Current.MapEditor_Map_List_Display_Map_Aliases)
                 {
                     var mapName = _cachedMapNameAliases.TryGetValue(mapId, out var cachedName) ? cachedName : "";
                     displayedName = $"{mapId}: {mapName}";
@@ -371,11 +368,11 @@ public class MapListView : IActionEventHandler
 
                 if (loadType == MapContentLoadState.Loaded)
                 {
-                    UIHelper.DisplayColoredAlias(displayedName, UI.Current.ImGui_AliasName_Text, CFG.Current.Interface_MapEditor_WrapAliasDisplay);
+                    UIHelper.DisplayColoredAlias(displayedName, UI.Current.ImGui_AliasName_Text, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
                 }
                 else
                 {
-                    UIHelper.DisplayColoredAlias(displayedName, UI.Current.ImGui_Default_Text_Color, CFG.Current.Interface_MapEditor_WrapAliasDisplay);
+                    UIHelper.DisplayColoredAlias(displayedName, UI.Current.ImGui_Default_Text_Color, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
                 }
 
                 // Context Menu

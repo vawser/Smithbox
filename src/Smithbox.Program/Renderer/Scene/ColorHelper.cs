@@ -78,7 +78,7 @@ public static class ColorHelper
         rend._hasColorVariance = true;
 
         Vector3 hsv = Utils.ColorToHSV(rend._initialColor);
-        var range = 360.0f * CFG.Current.GFX_Wireframe_Color_Variance / 2;
+        var range = 360.0f * CFG.Current.Viewport_Wireframe_Color_Variance / 2;
         _colorHueIncrement += range * incrementModifier;
         if (_colorHueIncrement > range)
         {

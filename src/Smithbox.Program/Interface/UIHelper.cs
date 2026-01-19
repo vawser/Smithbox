@@ -164,7 +164,7 @@ public static class UIHelper
         if (aliasName != "")
         {
             ImGui.SameLine();
-            if (CFG.Current.System_WrapAliasDisplay)
+            if (CFG.Current.Interface_Alias_Wordwrap_General)
             {
                 ImGui.PushTextWrapPos();
                 ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{aliasName}");
@@ -200,7 +200,7 @@ public static class UIHelper
         if (aliasName != "")
         {
             ImGui.SameLine();
-            if (CFG.Current.System_WrapAliasDisplay)
+            if (CFG.Current.Interface_Alias_Wordwrap_General)
             {
                 ImGui.PushTextWrapPos();
                 ImGui.TextColored(color, @$"{aliasName}");

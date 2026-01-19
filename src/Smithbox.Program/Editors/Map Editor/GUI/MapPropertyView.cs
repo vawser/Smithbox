@@ -74,11 +74,11 @@ public class MapPropertyView
 
         if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
         {
-            CFG.Current.MapEditor_Enable_Commmunity_Names = !CFG.Current.MapEditor_Enable_Commmunity_Names;
+            CFG.Current.MapEditor_Properties_Enable_Commmunity_Names = !CFG.Current.MapEditor_Properties_Enable_Commmunity_Names;
         }
 
         var communityFieldNameMode = "Internal";
-        if (CFG.Current.MapEditor_Enable_Commmunity_Names)
+        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names)
             communityFieldNameMode = "Community";
 
         UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
@@ -88,12 +88,12 @@ public class MapPropertyView
 
         if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
         {
-            CFG.Current.MapEditor_DisplayUnknownFields = !CFG.Current.MapEditor_DisplayUnknownFields;
+            CFG.Current.MapEditor_Properties_Display_Unknown_Properties = !CFG.Current.MapEditor_Properties_Display_Unknown_Properties;
         }
 
         var unkFieldDisplayMode = "Hidden";
 
-        if (CFG.Current.MapEditor_DisplayUnknownFields)
+        if (CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
             unkFieldDisplayMode = "Visible";
 
         UIHelper.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
@@ -308,7 +308,7 @@ public class MapPropertyView
         if (ImGui.BeginPopup("MsbPropContextMenu"))
         {
             // Info
-            if (CFG.Current.MapEditor_Enable_Property_Info)
+            if (CFG.Current.MapEditor_Properties_Display_Property_Attributes)
             {
                 ParamEditorDecorations.ImGui_DisplayPropertyInfo(prop);
                 ImGui.Separator();
@@ -495,7 +495,7 @@ public class MapPropertyView
         // Field Name
         var fieldName = prop.Name;
 
-        if (CFG.Current.MapEditor_Enable_Commmunity_Names && !meta.IsEmpty)
+        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !meta.IsEmpty)
         {
             fieldName = meta.AltName;
 
@@ -690,7 +690,7 @@ public class MapPropertyView
         var type = types.Count() == 1 ? types.First() : typeof(IMsbEntry);
         var meta = Editor.Project.Handler.MapData.Meta.GetMeta(type, false);
 
-        if (CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
+        if (CFG.Current.MapEditor_Properties_Display_Additional_Information_at_Top)
         {
             DisplayPropertyViewDecorations(selection, 0);
         }
@@ -735,7 +735,7 @@ public class MapPropertyView
         if (first.SupportsName)
         {
             // Name
-            if (CFG.Current.MapEditor_Enable_Referenced_Rename)
+            if (CFG.Current.MapEditor_Properties_Enable_Referenced_Rename)
             {
                 PropEditorNameWithRef(entities);
             }
@@ -757,7 +757,7 @@ public class MapPropertyView
         // Bottom Decoration
         ImGui.Columns(1);
 
-        if (!CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
+        if (!CFG.Current.MapEditor_Properties_Display_Additional_Information_at_Top)
         {
             DisplayPropertyViewDecorations(selection, 0);
         }
@@ -796,7 +796,7 @@ public class MapPropertyView
             // Field Name
             var fieldName = prop.Name;
 
-            if (CFG.Current.MapEditor_Enable_Commmunity_Names && !meta.IsEmpty)
+            if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !meta.IsEmpty)
             {
                 fieldName = meta.AltName;
             }
@@ -839,7 +839,7 @@ public class MapPropertyView
             if (meta != null && meta.IndexProperty)
                 continue;
 
-            if(!CFG.Current.MapEditor_DisplayUnknownFields)
+            if(!CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
             {
                 // Rough heuristic since all unknown fields start with Unk
                 var propName = prop.Name.ToLower();
@@ -1096,25 +1096,16 @@ public class MapPropertyView
         var firstEnt = entSelection.FirstOrDefault();
         if (firstEnt.References is null) return;
 
-        if (CFG.Current.MapEditor_Enable_Property_Property_Class_Info)
+        if (CFG.Current.MapEditor_Properties_Display_Behavior_Information)
         {
             PropInfo_MapObjectType.Display(Editor, firstEnt);
-        }
-        if (CFG.Current.MapEditor_Enable_Property_Property_SpecialProperty_Info)
-        {
             PropInfo_Region_Connection.Display(Editor, firstEnt);
             PropInfo_Part_ConnectCollision.Display(Editor, firstEnt);
         }
-        if (CFG.Current.MapEditor_Enable_Property_Property_ReferencesTo)
+        if (CFG.Current.MapEditor_Properties_Display_Reference_Information)
         {
             PropInfo_ReferencesTo.Display(Editor, firstEnt, Viewport, ref selection, ref refID);
-        }
-        if (CFG.Current.MapEditor_Enable_Property_Property_ReferencesBy)
-        {
             PropInfo_ReferencedBy.Display(Editor, firstEnt, Viewport, ref selection, ref refID);
-        }
-        if (CFG.Current.MapEditor_Enable_Param_Quick_Links)
-        {
             PropInfo_ParamJumps.Display(Editor, firstEnt, Viewport, ref selection, ref refID);
         }
     }

@@ -40,7 +40,7 @@ public static class AliasHelper
         {
             ImGui.SameLine();
 
-            if (CFG.Current.System_WrapAliasDisplay)
+            if (CFG.Current.Interface_Alias_Wordwrap_General)
             {
                 ImGui.PushTextWrapPos();
                 ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, @$"[{aliasName}]");
@@ -248,26 +248,26 @@ public static class AliasHelper
         // Only grab the alias once, then refer to the cachedName within the entity
         if (e.CachedAliasName == null)
         {
-            if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
+            if (CFG.Current.MapEditor_Map_Contents_Display_Character_Aliases && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
             {
                 aliasName = GetCharacterAlias(project, modelName);
                 aliasName = $"{aliasName}";
             }
 
-            if (CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
+            if (CFG.Current.MapEditor_Map_Contents_Display_Asset_Aliases && (e.IsPartAsset() || e.IsPartDummyAsset()))
             {
                 aliasName = GetAssetAlias(project, modelName);
                 aliasName = $"{aliasName}";
             }
 
-            if (CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
+            if (CFG.Current.MapEditor_Map_Contents_Display_Map_Piece_Aliases && e.IsPartMapPiece())
             {
                 aliasName = GetMapPieceAlias(project, modelName);
                 aliasName = $"{aliasName}";
             }
 
             // Player/System Characters: peek in param/fmg for name
-            if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
+            if (CFG.Current.MapEditor_Map_Contents_Display_Character_Aliases && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
             {
                 if (modelName == "c0000")
                 {
@@ -281,7 +281,7 @@ public static class AliasHelper
             }
 
             // Treasure: show itemlot row name
-            if (CFG.Current.MapEditor_MapObjectList_ShowTreasureNames && e.IsEventTreasure())
+            if (CFG.Current.MapEditor_Map_Contents_Display_Treasure_Aliases && e.IsEventTreasure())
             {
                 aliasName = FindTreasureName(project, e);
             }
@@ -297,16 +297,16 @@ public static class AliasHelper
         var modelName = "";
 
         // Early returns if the show X vars are disabled
-        if (!CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
+        if (!CFG.Current.MapEditor_Map_Contents_Display_Character_Aliases && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
             return aliasName;
 
-        if (!CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
+        if (!CFG.Current.MapEditor_Map_Contents_Display_Asset_Aliases && (e.IsPartAsset() || e.IsPartDummyAsset()))
             return aliasName;
 
-        if (!CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
+        if (!CFG.Current.MapEditor_Map_Contents_Display_Map_Piece_Aliases && e.IsPartMapPiece())
             return aliasName;
 
-        if (!CFG.Current.MapEditor_MapObjectList_ShowTreasureNames && e.IsEventTreasure())
+        if (!CFG.Current.MapEditor_Map_Contents_Display_Treasure_Aliases && e.IsEventTreasure())
             return aliasName;
 
         if (e.IsPart())
@@ -323,26 +323,26 @@ public static class AliasHelper
         // Only grab the alias once, then refer to the cachedName within the entity
         if (e.CachedAliasName == null)
         {
-            if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
+            if (CFG.Current.MapEditor_Map_Contents_Display_Character_Aliases && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
             {
                 aliasName = GetCharacterAlias(project, modelName);
                 aliasName = $"{aliasName}";
             }
 
-            if (CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
+            if (CFG.Current.MapEditor_Map_Contents_Display_Asset_Aliases && (e.IsPartAsset() || e.IsPartDummyAsset()))
             {
                 aliasName = GetAssetAlias(project, modelName);
                 aliasName = $"{aliasName}";
             }
 
-            if (CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
+            if (CFG.Current.MapEditor_Map_Contents_Display_Map_Piece_Aliases && e.IsPartMapPiece())
             {
                 aliasName = GetMapPieceAlias(project, modelName);
                 aliasName = $"{aliasName}";
             }
 
             // Player/System Characters: peek in param/fmg for name
-            if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
+            if (CFG.Current.MapEditor_Map_Contents_Display_Character_Aliases && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
             {
                 if (modelName == "c0000")
                 {
@@ -356,7 +356,7 @@ public static class AliasHelper
             }
 
             // Treasure: show itemlot row name
-            if (CFG.Current.MapEditor_MapObjectList_ShowTreasureNames && e.IsEventTreasure())
+            if (CFG.Current.MapEditor_Map_Contents_Display_Treasure_Aliases && e.IsEventTreasure())
             {
                 aliasName = FindTreasureName(project, e);
             }

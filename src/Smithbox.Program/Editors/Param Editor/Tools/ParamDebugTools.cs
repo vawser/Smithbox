@@ -19,7 +19,7 @@ public static class ParamDebugTools
 
         if (ImGui.Button($"{Icons.Copyright}##tableNameExport", DPI.IconButtonSize))
         {
-            var dir = Path.Combine(CFG.Current.SmithboxBuildFolder,
+            var dir = Path.Combine(CFG.Current.Developer_Smithbox_Build_Folder,
                 "src", "Smithbox.Data", "Assets", "PARAM",
                 ProjectUtils.GetGameDirectory(project), "Community Table Names");
 
@@ -35,7 +35,7 @@ public static class ParamDebugTools
 
         if (ImGui.Button($"{Icons.Copyright}", DPI.IconButtonSize))
         {
-            var dir = Path.Combine(CFG.Current.SmithboxBuildFolder, 
+            var dir = Path.Combine(CFG.Current.Developer_Smithbox_Build_Folder, 
                 "src", "Smithbox.Data", "Assets", "PARAM", 
                 ProjectUtils.GetGameDirectory(project), "Community Row Names");
 

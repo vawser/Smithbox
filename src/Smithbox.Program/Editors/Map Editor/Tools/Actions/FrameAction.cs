@@ -78,6 +78,9 @@ public class FrameAction
     /// </summary>
     public void ApplyViewportFrame()
     {
+        var offset = CFG.Current.Viewport_Frame_Offset;
+        var distance = CFG.Current.Viewport_Frame_Distance;
+
         if (Editor.ViewportSelection.IsSelection())
         {
             HashSet<Entity> selected = Editor.ViewportSelection.GetFilteredSelection<Entity>();
@@ -120,7 +123,7 @@ public class FrameAction
 
             if (first)
             {
-                Editor.MapViewportView.Viewport.FrameBox(box, new Vector3());
+                Editor.MapViewportView.Viewport.FrameBox(box, offset, distance);
             }
         }
         else
@@ -131,6 +134,9 @@ public class FrameAction
 
     public void ApplyViewportFrameWithBox(BoundingBox box)
     {
-        Editor.MapViewportView.Viewport.FrameBox(box, new Vector3());
+        var offset = CFG.Current.Viewport_Frame_Offset;
+        var distance = CFG.Current.Viewport_Frame_Distance;
+
+        Editor.MapViewportView.Viewport.FrameBox(box, offset, distance);
     }
 }

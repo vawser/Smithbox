@@ -220,16 +220,16 @@ public static class HKX2_Helper
     /// <param name="indices"></param>
     public static unsafe void RenderMesh(CollisionSubmesh dest, List<Vector3> verts, List<int> indices, bool isConnectCollision = false)
     {
-        byte colR = (byte)CFG.Current.GFX_Renderable_Collision_Color.X;
-        byte colG = (byte)CFG.Current.GFX_Renderable_Collision_Color.Y;
-        byte colB = (byte)CFG.Current.GFX_Renderable_Collision_Color.Z;
+        byte colR = (byte)CFG.Current.Viewport_Collision_Color.X;
+        byte colG = (byte)CFG.Current.Viewport_Collision_Color.Y;
+        byte colB = (byte)CFG.Current.Viewport_Collision_Color.Z;
         byte colA = 255;
 
         if (isConnectCollision)
         {
-            colR = (byte)CFG.Current.GFX_Renderable_ConnectCollision_Color.X;
-            colG = (byte)CFG.Current.GFX_Renderable_ConnectCollision_Color.Y;
-            colB = (byte)CFG.Current.GFX_Renderable_ConnectCollision_Color.Z;
+            colR = (byte)CFG.Current.Viewport_Connect_Collision_Color.X;
+            colG = (byte)CFG.Current.Viewport_Connect_Collision_Color.Y;
+            colB = (byte)CFG.Current.Viewport_Connect_Collision_Color.Z;
         }
 
         dest.PickingIndices = indices.ToArray();

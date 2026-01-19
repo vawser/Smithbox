@@ -387,7 +387,7 @@ public class ParamRowView
 
         UIHelper.Tooltip($"Determines what is copied to the text clipboard when Ctrl+C is used on selected rows.\nCurrent Mode: {CFG.Current.Param_RowCopyBehavior.GetDisplayName()}");
 
-        if (CFG.Current.EnableDeveloperTools)
+        if (CFG.Current.Developer_Enable_Tools)
         {
             ParamDebugTools.DisplayQuickRowNameExport(Editor, Project);
         }

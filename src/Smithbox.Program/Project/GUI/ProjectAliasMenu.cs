@@ -149,7 +149,7 @@ public class ProjectAliasMenu
                         PlatformUtils.Instance.SetClipboardText(output);
                     }
 
-                    if (CFG.Current.EnableDeveloperTools)
+                    if (CFG.Current.Developer_Enable_Tools)
                     {
                         if (ImGui.Selectable($"Copy Entries as Table"))
                         {

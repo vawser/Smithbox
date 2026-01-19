@@ -72,8 +72,8 @@ public class FrameAction
     /// </summary>
     public void ApplyViewportFrame()
     {
-        var offset = CFG.Current.ModelEditor_FrameInViewport_Offset;
-        var distance = CFG.Current.ModelEditor_FrameInViewport_Distance;
+        var offset = CFG.Current.Viewport_Frame_Offset;
+        var distance = CFG.Current.Viewport_Frame_Distance;
 
         if (Editor.ViewportSelection.IsSelection())
         {
@@ -94,8 +94,8 @@ public class FrameAction
 
     public void FrameCurrentEntity(Entity entity)
     {
-        var offset = CFG.Current.ModelEditor_FrameInViewport_Offset;
-        var distance = CFG.Current.ModelEditor_FrameInViewport_Distance;
+        var offset = CFG.Current.Viewport_Frame_Offset;
+        var distance = CFG.Current.Viewport_Frame_Distance;
 
         if (entity != null && entity.RenderSceneMesh != null)
         {

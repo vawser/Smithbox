@@ -53,7 +53,7 @@ public class ProjectPrefs
         };
     }
 
-    public static PreferenceItem DefaultModDirectory()
+    public static PreferenceItem Project_Default_Mod_Directory()
     {
         return new PreferenceItem
         {
@@ -68,7 +68,7 @@ public class ProjectPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.DefaultModDirectory, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Project_Default_Mod_Directory, 255);
 
                 ImGui.SameLine();
 
@@ -79,14 +79,14 @@ public class ProjectPrefs
 
                     if (result)
                     {
-                        CFG.Current.DefaultModDirectory = newProjectPath;
+                        CFG.Current.Project_Default_Mod_Directory = newProjectPath;
                     }
                 }
             }
         };
     }
 
-    public static PreferenceItem DefaultDataDirectory()
+    public static PreferenceItem Project_Default_Data_Directory()
     {
         return new PreferenceItem
         {
@@ -101,7 +101,7 @@ public class ProjectPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.DefaultDataDirectory, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Project_Default_Data_Directory, 255);
 
                 ImGui.SameLine();
 
@@ -112,7 +112,7 @@ public class ProjectPrefs
 
                     if (result)
                     {
-                        CFG.Current.DefaultDataDirectory = newDataPath;
+                        CFG.Current.Project_Default_Data_Directory = newDataPath;
                     }
                 }
             }
@@ -121,7 +121,7 @@ public class ProjectPrefs
     #endregion
 
     #region Automatic Save
-    public static PreferenceItem EnableAutomaticSave()
+    public static PreferenceItem Project_Enable_Automatic_Save()
     {
         return new PreferenceItem
         {
@@ -134,12 +134,12 @@ public class ProjectPrefs
             Description = "If enabled, all enabled editors will automatically save.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.EnableAutomaticSave);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Automatic_Save);
             }
         };
     }
 
-    public static PreferenceItem AutomaticSaveIntervalTime()
+    public static PreferenceItem Project_Automatic_Save_Interval()
     {
         return new PreferenceItem
         {
@@ -154,12 +154,12 @@ public class ProjectPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.SliderFloat("##inputValue", ref CFG.Current.AutomaticSaveIntervalTime, 5f, 3600f);
+                ImGui.SliderFloat("##inputValue", ref CFG.Current.Project_Automatic_Save_Interval, 5f, 3600f);
             }
         };
     }
 
-    public static PreferenceItem AutomaticSave_MapEditor()
+    public static PreferenceItem ProjecT_Automatic_Save_Include_Map_Editor()
     {
         return new PreferenceItem
         {
@@ -172,12 +172,12 @@ public class ProjectPrefs
             Description = "If enabled, the Map Editor is automatically saved.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.AutomaticSave_MapEditor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Map_Editor);
             }
         };
     }
 
-    public static PreferenceItem AutomaticSave_ParamEditor()
+    public static PreferenceItem ProjecT_Automatic_Save_Include_Param_Editor()
     {
         return new PreferenceItem
         {
@@ -190,12 +190,12 @@ public class ProjectPrefs
             Description = "If enabled, the Param Editor is automatically saved.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.AutomaticSave_ParamEditor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Param_Editor);
             }
         };
     }
 
-    public static PreferenceItem AutomaticSave_TextEditor()
+    public static PreferenceItem Project_Automatic_Save_Include_Text_Editor()
     {
         return new PreferenceItem
         {
@@ -208,12 +208,12 @@ public class ProjectPrefs
             Description = "If enabled, the Text Editor is automatically saved.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.AutomaticSave_TextEditor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Text_Editor);
             }
         };
     }
 
-    public static PreferenceItem AutomaticSave_GparamEditor()
+    public static PreferenceItem Project_Automatic_Save_Include_Gparam_Editor()
     {
         return new PreferenceItem
         {
@@ -226,12 +226,12 @@ public class ProjectPrefs
             Description = "If enabled, the Graphics Param Editor is automatically saved.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.AutomaticSave_GparamEditor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Gparam_Editor);
             }
         };
     }
 
-    public static PreferenceItem AutomaticSave_MaterialEditor()
+    public static PreferenceItem Project_Automatic_Save_Include_Material_Editor()
     {
         return new PreferenceItem
         {
@@ -244,14 +244,14 @@ public class ProjectPrefs
             Description = "If enabled, the Material Editor is automatically saved.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.AutomaticSave_MaterialEditor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Material_Editor);
             }
         };
     }
     #endregion
 
     #region Mod Engine 3
-    public static PreferenceItem ModEngine3ProfileDirectory()
+    public static PreferenceItem Project_ME3_Profile_Directory()
     {
         return new PreferenceItem
         {
@@ -266,7 +266,7 @@ public class ProjectPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.ModEngine3ProfileDirectory, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Project_ME3_Profile_Directory, 255);
 
                 ImGui.SameLine();
 
@@ -277,7 +277,7 @@ public class ProjectPrefs
 
                     if (result)
                     {
-                        CFG.Current.ModEngine3ProfileDirectory = newDataPath;
+                        CFG.Current.Project_ME3_Profile_Directory = newDataPath;
                     }
                 }
 

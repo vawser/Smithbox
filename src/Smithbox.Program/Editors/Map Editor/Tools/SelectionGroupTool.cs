@@ -74,7 +74,7 @@ public class SelectionGroupTool
     /// </summary>
     public void OnShortcut()
     {
-        if (CFG.Current.Shortcuts_MapEditor_EnableSelectionGroupShortcuts)
+        if (CFG.Current.MapEditor_Selection_Group_Enable_Shortcuts)
         {
             // Selection Groups
             if (InputManager.IsPressed(KeybindID.MapEditor_Create_Selection_Group))
@@ -183,7 +183,7 @@ public class SelectionGroupTool
             {
                 var displayName = $"{entry.Name}";
 
-                if (CFG.Current.MapEditor_SelectionGroup_ShowKeybind)
+                if (CFG.Current.MapEditor_Selection_Group_Show_Keybind)
                 {
                     if (entry.SelectionGroupKeybind != -1)
                     {
@@ -195,7 +195,7 @@ public class SelectionGroupTool
                     }
                 }
 
-                if (CFG.Current.MapEditor_SelectionGroup_ShowTags)
+                if (CFG.Current.MapEditor_Selection_Group_Show_Tags)
                 {
                     if (entry.Tags.Count > 0)
                     {
@@ -444,7 +444,7 @@ public class SelectionGroupTool
     }
     public void CreateSelectionGroup(string type)
     {
-        if (CFG.Current.MapEditor_SelectionGroup_AutoCreation)
+        if (CFG.Current.MapEditor_Selection_Group_Enable_Quick_Creation)
         {
             if (Editor.ViewportSelection.GetSelection().Count != 0)
             {
@@ -464,7 +464,7 @@ public class SelectionGroupTool
     {
         var result = DialogResult.Yes;
 
-        if (CFG.Current.MapEditor_SelectionGroup_ConfirmDelete)
+        if (CFG.Current.MapEditor_Selection_Group_Confirm_Delete)
         {
             result = PlatformUtils.Instance.MessageBox($"You are about to delete this selection group. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
         }
@@ -508,7 +508,7 @@ public class SelectionGroupTool
             Editor.ViewportSelection.AddSelection(Editor, entry);
         }
 
-        if (CFG.Current.MapEditor_SelectionGroup_FrameSelection)
+        if (CFG.Current.MapEditor_Selection_Group_Frame_Selection_On_Use)
         {
             Editor.FrameAction.ApplyViewportFrame();
             Editor.GotoAction.GotoMapObjectEntry();

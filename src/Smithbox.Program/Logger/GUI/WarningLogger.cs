@@ -19,7 +19,7 @@ public class WarningLogger
 
     public void DisplayTopbarToggle()
     {
-        if (CFG.Current.System_ShowWarningLogger)
+        if (CFG.Current.Logger_Enable_Warning_Log)
         {
             if (ImGui.ArrowButton("##WarningLoggerToggle", CurrentDir))
             {
@@ -39,9 +39,9 @@ public class WarningLogger
             // Only show the warning for X frames in the menu bar
             if (TaskLogs._lastWarningLogEntry != null)
             {
-                if (TaskLogs._warningShowTime > 0 || CFG.Current.System_WarningLogger_FadeTime < 0)
+                if (TaskLogs._warningShowTime > 0 || CFG.Current.Logger_Warning_Fade_Time < 0)
                 {
-                    if (CFG.Current.System_WarningLogger_FadeTime > 0)
+                    if (CFG.Current.Logger_Warning_Fade_Time > 0)
                     {
                         TaskLogs._warningShowTime--;
                     }

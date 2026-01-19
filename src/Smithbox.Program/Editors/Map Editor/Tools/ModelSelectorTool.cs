@@ -250,7 +250,7 @@ public class ModelSelectorTool
         var refName = entry.Name;
         var refTagList = entry.Tags;
 
-        if (!CFG.Current.MapEditor_AssetBrowser_ShowLowDetailParts)
+        if (!CFG.Current.MapEditor_Model_Selector_Display_Low_Detail_Entries)
         {
             if (entry.ID.Substring(entry.ID.Length - 2) == "_l")
             {
@@ -270,13 +270,13 @@ public class ModelSelectorTool
     {
         var lowerName = entry.ID.ToLower();
 
-        if (CFG.Current.MapEditor_AssetBrowser_ShowAliases)
+        if (CFG.Current.MapEditor_Model_Selector_Display_Aliases)
         {
             UIHelper.DisplayAlias(entry.Name);
         }
 
         // Tags
-        if (CFG.Current.MapEditor_AssetBrowser_ShowTags)
+        if (CFG.Current.MapEditor_Model_Selector_Display_Tags)
         {
             var tagString = string.Join(" ", entry.Tags);
             AliasHelper.DisplayTagAlias(tagString);

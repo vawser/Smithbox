@@ -73,7 +73,7 @@ public class ProjectEntry
             Handler.FileBrowserStub.Display(dt, commands);
 
         // Auto-Save
-        AutomaticSaveInterval = (int)CFG.Current.AutomaticSaveIntervalTime;
+        AutomaticSaveInterval = (int)CFG.Current.Project_Automatic_Save_Interval;
 
         // Do this so we don't auto-save at init
         if (!AutomaticSaveSetup)
@@ -218,13 +218,13 @@ public class ProjectEntry
 
     private void PerformAutoSave()
     {
-        if (CFG.Current.EnableAutomaticSave)
+        if (CFG.Current.Project_Enable_Automatic_Save)
         {
             try
             {
                 TaskLogs.AddInfo($"[Smithbox] Auto-save triggered.");
 
-                if (CFG.Current.AutomaticSave_MapEditor)
+                if (CFG.Current.Project_Automatic_Save_Include_Map_Editor)
                 {
                     if (Handler.MapEditor != null && Handler.FocusedEditor is MapEditorScreen)
                     {
@@ -240,28 +240,28 @@ public class ProjectEntry
                     }
                 }
 
-                if (CFG.Current.AutomaticSave_ParamEditor && Handler.FocusedEditor is ParamEditorScreen)
+                if (CFG.Current.Project_Automatic_Save_Include_Param_Editor && Handler.FocusedEditor is ParamEditorScreen)
                 {
                     if (Handler.ParamEditor != null)
                     {
                         Handler.ParamEditor.Save(true);
                     }
                 }
-                if (CFG.Current.AutomaticSave_TextEditor && Handler.FocusedEditor is TextEditorScreen)
+                if (CFG.Current.Project_Automatic_Save_Include_Text_Editor && Handler.FocusedEditor is TextEditorScreen)
                 {
                     if (Handler.TextEditor != null)
                     {
                         Handler.TextEditor.Save(true);
                     }
                 }
-                if (CFG.Current.AutomaticSave_GparamEditor && Handler.FocusedEditor is GparamEditorScreen)
+                if (CFG.Current.Project_Automatic_Save_Include_Gparam_Editor && Handler.FocusedEditor is GparamEditorScreen)
                 {
                     if (Handler.GparamEditor != null)
                     {
                         Handler.GparamEditor.Save(true);
                     }
                 }
-                if (CFG.Current.AutomaticSave_MaterialEditor && Handler.FocusedEditor is MaterialEditorScreen)
+                if (CFG.Current.Project_Automatic_Save_Include_Material_Editor && Handler.FocusedEditor is MaterialEditorScreen)
                 {
                     if (Handler.MaterialEditor != null)
                     {

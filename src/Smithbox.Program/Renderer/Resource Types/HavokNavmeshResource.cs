@@ -201,9 +201,9 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     private unsafe void ProcessMesh_HKX2(hkaiNavMesh mesh)
     {
-        byte navR = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.X;
-        byte navG = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.Y;
-        byte navB = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.Z;
+        byte navR = (byte)CFG.Current.Viewport_Navmesh_Color.X;
+        byte navG = (byte)CFG.Current.Viewport_Navmesh_Color.Y;
+        byte navB = (byte)CFG.Current.Viewport_Navmesh_Color.Z;
         byte navA = 255;
 
         List<Vector4> verts = mesh.m_vertices;

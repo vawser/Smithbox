@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Preferences;
 
@@ -20,7 +17,7 @@ public class InterfacePrefs
     }
 
     #region General
-    public static PreferenceItem System_UI_Scale()
+    public static PreferenceItem Interface_UI_Scale()
     {
         return new PreferenceItem
         {
@@ -39,8 +36,8 @@ public class InterfacePrefs
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    CFG.Current.System_UI_Scale = (float)Math.Round(PreferencesUtil.TempScale * 20) / 20;
-                    PreferencesUtil.TempScale = CFG.Current.System_UI_Scale;
+                    CFG.Current.Interface_UI_Scale = (float)Math.Round(PreferencesUtil.TempScale * 20) / 20;
+                    PreferencesUtil.TempScale = CFG.Current.Interface_UI_Scale;
                     DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
                 }
 
@@ -48,15 +45,15 @@ public class InterfacePrefs
 
                 if (ImGui.Button("Reset", DPI.SelectorButtonSize))
                 {
-                    CFG.Current.System_UI_Scale = CFG.Default.System_UI_Scale;
-                    PreferencesUtil.TempScale = CFG.Current.System_UI_Scale;
+                    CFG.Current.Interface_UI_Scale = CFG.Default.Interface_UI_Scale;
+                    PreferencesUtil.TempScale = CFG.Current.Interface_UI_Scale;
                     DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
                 }
             }
         };
     }
 
-    public static PreferenceItem System_ScaleByDPI()
+    public static PreferenceItem Interface_Scale_by_DPI()
     {
         return new PreferenceItem
         {
@@ -69,7 +66,7 @@ public class InterfacePrefs
             Description = "Multiplies the user interface scale by your monitor's DPI setting.",
 
             Draw = () => {
-                ImGui.Checkbox($"##inputValue", ref CFG.Current.System_ScaleByDPI);
+                ImGui.Checkbox($"##inputValue", ref CFG.Current.Interface_Scale_by_DPI);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
@@ -84,7 +81,7 @@ public class InterfacePrefs
         };
     }
 
-    public static PreferenceItem Interface_FontSize()
+    public static PreferenceItem Interface_Font_Size()
     {
         return new PreferenceItem
         {
@@ -98,18 +95,18 @@ public class InterfacePrefs
             Description = "Adjusts the size of the font in Smithbox.",
 
             Draw = () => {
-                ImGui.SliderFloat("Font size", ref CFG.Current.Interface_FontSize, 8.0f, 32.0f);
+                ImGui.SliderFloat("Font size", ref CFG.Current.Interface_Font_Size, 8.0f, 32.0f);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    CFG.Current.Interface_FontSize = (float)Math.Round(CFG.Current.Interface_FontSize);
+                    CFG.Current.Interface_Font_Size = (float)Math.Round(CFG.Current.Interface_Font_Size);
                     DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
                 }
             }
         };
     }
 
-    public static PreferenceItem System_WrapAliasDisplay()
+    public static PreferenceItem Interface_Alias_Wordwrap_General()
     {
         return new PreferenceItem
         {
@@ -122,12 +119,12 @@ public class InterfacePrefs
             Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_WrapAliasDisplay);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_General);
             }
         };
     }
 
-    public static PreferenceItem Interface_MapEditor_WrapAliasDisplay()
+    public static PreferenceItem Interface_Alias_Wordwrap_Map_Editor()
     {
         return new PreferenceItem
         {
@@ -140,11 +137,11 @@ public class InterfacePrefs
             Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Map Editor only.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_MapEditor_WrapAliasDisplay);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
             }
         };
     }
-    public static PreferenceItem Interface_ModelEditor_WrapAliasDisplay()
+    public static PreferenceItem Interface_Alias_Wordwrap_Model_Editor()
     {
         return new PreferenceItem
         {
@@ -157,7 +154,7 @@ public class InterfacePrefs
             Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Model Editor only.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_ModelEditor_WrapAliasDisplay);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
             }
         };
     }
@@ -165,7 +162,7 @@ public class InterfacePrefs
     #endregion
 
     #region Fonts
-    public static PreferenceItem System_English_Font()
+    public static PreferenceItem Interface_English_Font_Path()
     {
         return new PreferenceItem
         {
@@ -179,7 +176,7 @@ public class InterfacePrefs
             Description = "Set the font used for English characters. .ttf and .otf expected.",
 
             Draw = () => {
-                ImGui.InputText("##inputValue", ref CFG.Current.System_English_Font, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Interface_English_Font_Path, 255);
 
                 ImGui.SameLine();
 
@@ -188,7 +185,7 @@ public class InterfacePrefs
                     PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
                     if (File.Exists(path))
                     {
-                        CFG.Current.System_English_Font = path;
+                        CFG.Current.Interface_English_Font_Path = path;
                         Smithbox.FontRebuildRequest = true;
                     }
                 }
@@ -197,14 +194,14 @@ public class InterfacePrefs
 
                 if (ImGui.Button("Reset", DPI.SelectorButtonSize))
                 {
-                    CFG.Current.System_English_Font = Path.Join("Assets", "Fonts", "RobotoMono-Light.ttf");
+                    CFG.Current.Interface_English_Font_Path = Path.Join("Assets", "Fonts", "RobotoMono-Light.ttf");
                     Smithbox.FontRebuildRequest = true;
                 }
             }
         };
     }
 
-    public static PreferenceItem System_Other_Font()
+    public static PreferenceItem Interface_Non_English_Font_Path()
     {
         return new PreferenceItem
         {
@@ -218,7 +215,7 @@ public class InterfacePrefs
             Description = "Set the font used for Non-English characters. .ttf and .otf expected.",
 
             Draw = () => {
-                ImGui.InputText("##inputValue", ref CFG.Current.System_Other_Font, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Interface_Non_English_Font_Path, 255);
 
                 ImGui.SameLine();
 
@@ -227,7 +224,7 @@ public class InterfacePrefs
                     PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
                     if (File.Exists(path))
                     {
-                        CFG.Current.System_Other_Font = path;
+                        CFG.Current.Interface_Non_English_Font_Path = path;
                         Smithbox.FontRebuildRequest = true;
                     }
                 }
@@ -236,7 +233,7 @@ public class InterfacePrefs
 
                 if (ImGui.Button("Reset", DPI.SelectorButtonSize))
                 {
-                    CFG.Current.System_Other_Font = Path.Join("Assets", "Fonts", "NotoSansCJKtc-Light.otf");
+                    CFG.Current.Interface_Non_English_Font_Path = Path.Join("Assets", "Fonts", "NotoSansCJKtc-Light.otf");
                     Smithbox.FontRebuildRequest = true;
                 }
             }
@@ -246,7 +243,7 @@ public class InterfacePrefs
     #endregion
 
     #region Additional Font Symbols
-    public static PreferenceItem System_Font_Chinese()
+    public static PreferenceItem Interface_Include_Chinese_Symbols()
     {
         return new PreferenceItem
         {
@@ -259,12 +256,12 @@ public class InterfacePrefs
             Description = "Include Chinese font.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Font_Chinese);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Include_Chinese_Symbols);
             }
         };
     }
 
-    public static PreferenceItem System_Font_Korean()
+    public static PreferenceItem Interface_Include_Korean_Symbols()
     {
         return new PreferenceItem
         {
@@ -277,12 +274,12 @@ public class InterfacePrefs
             Description = "Include Korean font.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Font_Korean);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Include_Korean_Symbols);
             }
         };
     }
 
-    public static PreferenceItem System_Font_Thai()
+    public static PreferenceItem Interface_Include_Thai_Symbols()
     {
         return new PreferenceItem
         {
@@ -295,12 +292,12 @@ public class InterfacePrefs
             Description = "Include Thai font.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Font_Thai);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Include_Thai_Symbols);
             }
         };
     }
 
-    public static PreferenceItem System_Font_Vietnamese()
+    public static PreferenceItem Interface_Include_Vietnamese_Symbols()
     {
         return new PreferenceItem
         {
@@ -313,12 +310,12 @@ public class InterfacePrefs
             Description = "Include Vietnamese font.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Font_Vietnamese);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Include_Vietnamese_Symbols);
             }
         };
     }
 
-    public static PreferenceItem System_Font_Cyrillic()
+    public static PreferenceItem Interface_Include_Cyrillic_Symbols()
     {
         return new PreferenceItem
         {
@@ -331,7 +328,7 @@ public class InterfacePrefs
             Description = "Include Cyrillic font.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Font_Cyrillic);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Include_Cyrillic_Symbols);
             }
         };
     }
@@ -370,7 +367,7 @@ public class InterfacePrefs
                         if (ImGui.Selectable(entry, entry == PreferencesUtil.CurrentThemeName))
                         {
                             PreferencesUtil.CurrentThemeName = entry;
-                            CFG.Current.SelectedTheme = PreferencesUtil.CurrentThemeName;
+                            CFG.Current.Interface_Selected_Theme = PreferencesUtil.CurrentThemeName;
                             UI.LoadTheme(entry);
                         }
                     }

@@ -19,10 +19,10 @@ public static class ModEngineHandler
 
     public static void CreateME3Profile(ProjectEntry curProject)
     {
-        if (CFG.Current.ModEngine3ProfileDirectory == "")
+        if (CFG.Current.Project_ME3_Profile_Directory == "")
             return;
 
-        if (!Directory.Exists(CFG.Current.ModEngine3ProfileDirectory))
+        if (!Directory.Exists(CFG.Current.Project_ME3_Profile_Directory))
         {
             TaskLogs.AddLog("The current ME3 profile directory does not exist. Please configure the ME3 profile directory within the settings to a valid directory.");
             return;
@@ -54,7 +54,7 @@ public static class ModEngineHandler
 
         var profileString = $"profileVersion = \"v1\"\r\nnatives = []\r\n\r\n[[packages]] \r\nid = \"{projectName}\" \r\nsource = \"{absPath}\" \r\n\r\n[[supports]]\r\ngame = \"{gametype}\"\r\n";
 
-        var writePath = $"{CFG.Current.ModEngine3ProfileDirectory}/{projectName}.me3";
+        var writePath = $"{CFG.Current.Project_ME3_Profile_Directory}/{projectName}.me3";
 
         File.WriteAllText(writePath, profileString);
     }
@@ -63,7 +63,7 @@ public static class ModEngineHandler
     {
         var projectName = $"{curProject.Descriptor.ProjectName}-{curProject.Descriptor.ProjectGUID}";
 
-        var readPath = $"{CFG.Current.ModEngine3ProfileDirectory}/{projectName}.me3";
+        var readPath = $"{CFG.Current.Project_ME3_Profile_Directory}/{projectName}.me3";
 
         if (File.Exists(readPath))
             return true;
@@ -73,15 +73,15 @@ public static class ModEngineHandler
 
     public static void LaunchME3Mod(ProjectEntry curProject)
     {
-        if (CFG.Current.ModEngine3ProfileDirectory == "")
+        if (CFG.Current.Project_ME3_Profile_Directory == "")
             return;
 
-        if (!Directory.Exists(CFG.Current.ModEngine3ProfileDirectory))
+        if (!Directory.Exists(CFG.Current.Project_ME3_Profile_Directory))
             return;
 
         var projectName = $"{curProject.Descriptor.ProjectName}-{curProject.Descriptor.ProjectGUID}";
 
-        var readPath = CFG.Current.ModEngine3ProfileDirectory;
+        var readPath = CFG.Current.Project_ME3_Profile_Directory;
 
         var targetFile = Path.Combine(readPath, $"{projectName}.me3");
 
@@ -91,7 +91,7 @@ public static class ModEngineHandler
             {
                 FileName = "cmd.exe",
                 Arguments = $"/c {projectName}.me3",
-                WorkingDirectory = CFG.Current.ModEngine3ProfileDirectory,
+                WorkingDirectory = CFG.Current.Project_ME3_Profile_Directory,
                 UseShellExecute = false, 
                 RedirectStandardOutput = true, 
                 RedirectStandardError = true,  

@@ -216,7 +216,7 @@ public class MapContentView
             nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
 
             var mapName = AliasHelper.GetMapNameAlias(Editor.Project, map.Name);
-            UIHelper.DisplayAlias(mapName, CFG.Current.Interface_MapEditor_WrapAliasDisplay);
+            UIHelper.DisplayAlias(mapName, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
         }
 
         ImGui.EndGroup();

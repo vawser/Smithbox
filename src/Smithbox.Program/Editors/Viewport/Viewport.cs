@@ -411,10 +411,10 @@ public class Viewport : IViewport
                 ref CFG.Current.ModelEditor_RegenerateTertiaryGrid);
         }
 
-        ViewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_DefaultRender_Brightness;
-        ViewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_DefaultRender_Saturation;
-        ViewPipeline.SceneParams.SelectionColor = new Vector4(CFG.Current.Viewport_DefaultRender_SelectColor.X, CFG.Current.Viewport_DefaultRender_SelectColor.Y,
-            CFG.Current.Viewport_DefaultRender_SelectColor.Z, 1.0f);
+        ViewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Untextured_Model_Brightness;
+        ViewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Untextured_Model_Saturation;
+        ViewPipeline.SceneParams.SelectionColor = new Vector4(CFG.Current.Viewport_Selection_Outline_Color.X, CFG.Current.Viewport_Selection_Outline_Color.Y,
+            CFG.Current.Viewport_Selection_Outline_Color.Z, 1.0f);
         bool kbbusy = false;
 
         if (!Gizmos.IsMouseBusy() && CanInteract && MouseInViewport())

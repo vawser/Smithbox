@@ -48,7 +48,7 @@ public static class TaskLogs
 
                 if (level is LogLevel.Warning or LogLevel.Error)
                 {
-                    _warningShowTime = CFG.Current.System_WarningLogger_FadeTime;
+                    _warningShowTime = CFG.Current.Logger_Warning_Fade_Time;
 
                     LogEntry lastLog = _warningLog.LastOrDefault();
                     if (lastLog != null)
@@ -104,7 +104,7 @@ public static class TaskLogs
                 }
                 else
                 {
-                    _actionShowTime = CFG.Current.System_ActionLogger_FadeTime;
+                    _actionShowTime = CFG.Current.Logger_Action_Fade_Time;
 
                     LogEntry lastLog = _actionLog.LastOrDefault();
                     if (lastLog != null)
