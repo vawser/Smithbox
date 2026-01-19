@@ -582,7 +582,7 @@ public class ProjectCreationMenu
         SteamExecutable_NR = SteamGameLocator.FindGameExecutable(2622380, "Game\\nightreign.exe");
 
         // If we find the PTDE install, auto-set the PTDE path for DS1R.
-        if(SteamExecutable_DS1 != "" && CFG.Current.PTDE_Data_Path == "")
+        if(SteamExecutable_DS1 != null && SteamExecutable_DS1 != "" && CFG.Current.PTDE_Data_Path == "")
         {
             var dir = Path.GetDirectoryName(Path.GetFullPath(SteamExecutable_DS1));
             if(Directory.Exists(dir))
