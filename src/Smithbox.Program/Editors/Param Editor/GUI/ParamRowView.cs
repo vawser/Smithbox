@@ -88,13 +88,11 @@ public class ParamRowView
                     }
                     if (ImGui.TableNextColumn())
                     {
-                        Editor.ContextManager.SetWindowContext(ParamEditorContext.RowList);
                         ImGui.Text("ID\t\tName");
                     }
 
                     if (ImGui.TableNextColumn())
                     {
-                        Editor.ContextManager.SetWindowContext(ParamEditorContext.RowList);
                         ImGui.Text(compareCol.Def.InternalName);
                     }
                 }
@@ -604,7 +602,6 @@ public class ParamRowView
 
         if (ImGui.TableNextColumn())
         {
-            Editor.ContextManager.SetWindowContext(ParamEditorContext.RowList);
             DisplayRow(selectionCache, selectionCacheIndex, activeParam, p, r, vanillaDiffCache,
                 auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, isPinned, meta);
             lastCol = true;
@@ -614,7 +611,6 @@ public class ParamRowView
         {
             if (ImGui.TableNextColumn())
             {
-                Editor.ContextManager.SetWindowContext(ParamEditorContext.RowList);
                 Param.Cell c = r[compareCol];
                 object newval = null;
                 ImGui.PushID("compareCol_" + selectionCacheIndex);
