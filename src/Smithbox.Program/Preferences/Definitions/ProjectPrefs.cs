@@ -27,11 +27,28 @@ public class ProjectPrefs
 
             Section = "General",
 
-            Title = "Enable Project Auto-Load",
-            Description = "If enabled, loading a project will set it to be automatically loaded when Smithbox starts.",
+            Title = "Enable Auto-Load on Smithbox Start",
+            Description = "If enabled, a previously loaded project will be loaded automatically upon starting Smithbox.",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Auto_Load);
+            }
+        };
+    }
+    public static PreferenceItem Project_Enable_Automatic_Auto_Load_Assignment()
+    {
+        return new PreferenceItem
+        {
+            Category = PreferenceCategory.Project,
+            Spacer = true,
+
+            Section = "General",
+
+            Title = "Enable Automatic Auto-Load Assignment",
+            Description = "If enabled, loading a project will automatically flag it to 'auto-load'.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment);
             }
         };
     }
@@ -267,5 +284,59 @@ public class ProjectPrefs
             }
         };
     }
+    #endregion
+
+    #region Dark Souls: Remastered
+    public static PreferenceItem MapEditor_Use_PTDE_Collisions_In_DS1R_Projects()
+    {
+        return new PreferenceItem
+        {
+            Category = PreferenceCategory.Project,
+            Spacer = true,
+            DisplayRestrictions = new List<ProjectType>() { ProjectType.DS1R },
+
+            Section = "Dark Souls: Remastered",
+
+            Title = "Utilise PTDE Collisions in Dark Souls: Remastered Projects",
+            Description = "If enabled, and a Dark Souls: Prepare to Die Edition install exists, the collision files from it will be used for collisions and navmeshes.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Use_PTDE_Collisions_In_DS1R_Projects);
+            }
+        };
+    }
+    public static PreferenceItem PTDE_Data_Path()
+    {
+        return new PreferenceItem
+        {
+            Category = PreferenceCategory.Project,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>() { ProjectType.DS1R },
+
+            Section = "Dark Souls: Remastered",
+
+            Title = "PTDE Install Path",
+            Description = "The install directory for Dark Souls: Prepare to Die Edition.",
+
+            Draw = () => {
+                ImGui.InputText("##inputValue", ref CFG.Current.PTDE_Data_Path, 255);
+
+                ImGui.SameLine();
+
+                if (ImGui.Button("Select##ptdeGameDirectorySelect", DPI.SelectorButtonSize))
+                {
+                    var ptdeDir = "";
+                    var result = PlatformUtils.Instance.OpenFolderDialog("Select PTDE directory", out ptdeDir);
+
+                    if (result)
+                    {
+                        CFG.Current.PTDE_Data_Path = ptdeDir;
+                    }
+                }
+            }
+        };
+    }
+
     #endregion
 }

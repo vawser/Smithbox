@@ -253,40 +253,8 @@ public class MapEditorTab
             ImGui.Checkbox("Enable map load on double-click", ref CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click);
             UIHelper.Tooltip("This option will cause double-clicking on a map in the map object list to load it.");
 
-            ImGui.Checkbox("Wrap alias text", ref CFG.Current.Interface_MapEditor_WrapAliasDisplay);
-            UIHelper.Tooltip("Makes the alias text display wrap instead of being cut off within the Map Editor.");
-
         }
 
-        // Map Collision
-        if (Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectType is ProjectType.DS1R)
-        {
-            if (ImGui.CollapsingHeader("Map Collision", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                var width = ImGui.GetWindowWidth();
-
-                UIHelper.WrappedText("Select the install directory for your Dark Souls: Prepare to Die Edition. This will allow collision to be visible within a Dark Souls: Remastered project.");
-
-                ImGui.Checkbox("Use PTDE Collision Files", ref CFG.Current.MapEditor_Use_PTDE_Collisions_In_DS1R_Projects);
-                UIHelper.Tooltip("If enabled, and a PTDE install is set, the PTDE collision files will be loaded for collisions and navmeshes.");
-
-                ImGui.InputText("PTDE Game Directory##ptdeGameDirectory", ref CFG.Current.PTDE_Data_Path, 255);
-                UIHelper.Tooltip("Select the directory of the Dark Souls: Prepare to Die Edition install.");
-
-                ImGui.Separator();
-
-                if (ImGui.Button("Select##ptdeGameDirectorySelect", DPI.StandardButtonSize))
-                {
-                    var ptdeDir = "";
-                    var result = PlatformUtils.Instance.OpenFolderDialog("Select PTDE directory", out ptdeDir);
-
-                    if (result)
-                    {
-                        CFG.Current.PTDE_Data_Path = ptdeDir;
-                    }
-                }
-            }
-        }
 
         // Scene View
         if (ImGui.CollapsingHeader("Map Object List", ImGuiTreeNodeFlags.DefaultOpen))

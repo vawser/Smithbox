@@ -232,7 +232,7 @@ public class PreferencesMenu
 
     private void DisplaySettingsSearch()
     {
-        ImGui.InputText("##settingsSearch", ref searchFilter, 255);
+        ImGui.InputTextWithHint("##settingsSearch", "Search preferences...", ref searchFilter, 128);
     }
 
     private void DisplaySettings(List<PreferenceItem> prefs)

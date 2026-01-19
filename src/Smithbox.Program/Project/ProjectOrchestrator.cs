@@ -391,7 +391,11 @@ public class ProjectOrchestrator : IDisposable
             {
                 SelectedProject = curProject;
                 Smithbox.Instance.SetProgramName(curProject);
-                SetAsAutoLoad(curProject);
+
+                if (CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment)
+                {
+                    SetAsAutoLoad(curProject);
+                }
             }
 
             if (ImGui.MenuItem($"Unload##unloadProject"))
@@ -431,6 +435,17 @@ public class ProjectOrchestrator : IDisposable
             if (ImGui.MenuItem($"Open Project Enums##projectEnums"))
             {
                 EnumMenu.IsDisplayed = true;
+            }
+        }
+
+
+        if (!CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment)
+        {
+            ImGui.Separator();
+
+            if (ImGui.MenuItem($"Set to Auto-Load"))
+            {
+                SetAsAutoLoad(curProject);
             }
         }
 
@@ -709,7 +724,10 @@ public class ProjectOrchestrator : IDisposable
         // Used for the DCX heuristic
         BinaryReaderEx.CurrentProjectType = $"{curProject.Descriptor.ProjectType}";
 
-        SetAsAutoLoad(curProject);
+        if (CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment)
+        {
+            SetAsAutoLoad(curProject);
+        }
 
         SetProgress(new ProjectLoadProgress
         {

@@ -108,6 +108,60 @@ public class InterfacePrefs
             }
         };
     }
+
+    public static PreferenceItem System_WrapAliasDisplay()
+    {
+        return new PreferenceItem
+        {
+            Category = PreferenceCategory.System,
+            Spacer = true,
+
+            Section = "General",
+
+            Title = "Enable Alias Word-wrap",
+            Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.System_WrapAliasDisplay);
+            }
+        };
+    }
+
+    public static PreferenceItem Interface_MapEditor_WrapAliasDisplay()
+    {
+        return new PreferenceItem
+        {
+            Category = PreferenceCategory.System,
+            Spacer = true,
+
+            Section = "General",
+
+            Title = "Enable Alias Word-wrap (Map Editor)",
+            Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Map Editor only.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_MapEditor_WrapAliasDisplay);
+            }
+        };
+    }
+    public static PreferenceItem Interface_ModelEditor_WrapAliasDisplay()
+    {
+        return new PreferenceItem
+        {
+            Category = PreferenceCategory.System,
+            Spacer = true,
+
+            Section = "General",
+
+            Title = "Enable Alias Word-wrap (Model Editor)",
+            Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Model Editor only.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_ModelEditor_WrapAliasDisplay);
+            }
+        };
+    }
+
     #endregion
 
     #region Fonts

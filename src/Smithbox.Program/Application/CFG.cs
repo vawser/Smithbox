@@ -49,6 +49,7 @@ public class CFG
     ///------------------------------------------------------------
 
     public bool Project_Enable_Auto_Load = true;
+    public bool Project_Enable_Automatic_Auto_Load_Assignment = true;
 
     public bool EnableAutomaticSave = true;
     public bool EnableBackupSaves = true;
