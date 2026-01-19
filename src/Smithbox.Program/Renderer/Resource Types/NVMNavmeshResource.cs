@@ -44,7 +44,7 @@ public class NVMNavmeshResource : IResource, IDisposable
             var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
             // Intercept and load the collision from PTDE FS for DS1R projects
-            if (CFG.Current.PTDE_UseCollisionHack && curProject.Descriptor.ProjectType is ProjectType.DS1R)
+            if (CFG.Current.MapEditor_Use_PTDE_Collisions_In_DS1R_Projects && curProject.Descriptor.ProjectType is ProjectType.DS1R)
             {
                 fileData = curProject.VFS.PTDE_FS.ReadFile(relativePath);
             }

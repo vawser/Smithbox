@@ -580,6 +580,16 @@ public class ProjectCreationMenu
         SteamExecutable_ER = SteamGameLocator.FindGameExecutable(1245620, "Game\\eldenring.exe");
         SteamExecutable_AC6 = SteamGameLocator.FindGameExecutable(1888160, "Game\\armoredcore6.exe");
         SteamExecutable_NR = SteamGameLocator.FindGameExecutable(2622380, "Game\\nightreign.exe");
+
+        // If we find the PTDE install, auto-set the PTDE path for DS1R.
+        if(SteamExecutable_DS1 != "" && CFG.Current.PTDE_Data_Path == "")
+        {
+            var dir = Path.GetDirectoryName(Path.GetFullPath(SteamExecutable_DS1));
+            if(Directory.Exists(dir))
+            {
+                CFG.Current.PTDE_Data_Path = dir;
+            }
+        }
     }
 
 }

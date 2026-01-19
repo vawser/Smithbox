@@ -250,17 +250,8 @@ public class MapEditorTab
         // General
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Allow map unload", ref CFG.Current.MapEditor_EnableMapUnload);
-            UIHelper.Tooltip("When enabled, a map's resources will be unloaded and released when a map is unloaded. If disabled, they are kept in memory until Smithbox closes.");
-
             ImGui.Checkbox("Enable map load on double-click", ref CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click);
             UIHelper.Tooltip("This option will cause double-clicking on a map in the map object list to load it.");
-
-            ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.MapEditor_Always_List_Loaded_Maps);
-            UIHelper.Tooltip("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
-
-            ImGui.Checkbox("Enable global property search", ref CFG.Current.MapEditor_LoadMapQueryData);
-            UIHelper.Tooltip("This option will allow the global property search to be used. Note, this will load all map files into memory.\nYou need to restart Smithbox after enabling this.");
 
             ImGui.Checkbox("Wrap alias text", ref CFG.Current.Interface_MapEditor_WrapAliasDisplay);
             UIHelper.Tooltip("Makes the alias text display wrap instead of being cut off within the Map Editor.");
@@ -276,10 +267,10 @@ public class MapEditorTab
 
                 UIHelper.WrappedText("Select the install directory for your Dark Souls: Prepare to Die Edition. This will allow collision to be visible within a Dark Souls: Remastered project.");
 
-                ImGui.Checkbox("Use PTDE Collision Files", ref CFG.Current.PTDE_UseCollisionHack);
+                ImGui.Checkbox("Use PTDE Collision Files", ref CFG.Current.MapEditor_Use_PTDE_Collisions_In_DS1R_Projects);
                 UIHelper.Tooltip("If enabled, and a PTDE install is set, the PTDE collision files will be loaded for collisions and navmeshes.");
 
-                ImGui.InputText("PTDE Game Directory##ptdeGameDirectory", ref CFG.Current.PTDE_Collision_Root, 255);
+                ImGui.InputText("PTDE Game Directory##ptdeGameDirectory", ref CFG.Current.PTDE_Data_Path, 255);
                 UIHelper.Tooltip("Select the directory of the Dark Souls: Prepare to Die Edition install.");
 
                 ImGui.Separator();
@@ -291,7 +282,7 @@ public class MapEditorTab
 
                     if (result)
                     {
-                        CFG.Current.PTDE_Collision_Root = ptdeDir;
+                        CFG.Current.PTDE_Data_Path = ptdeDir;
                     }
                 }
             }

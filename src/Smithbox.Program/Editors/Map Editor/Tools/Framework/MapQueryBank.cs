@@ -29,17 +29,6 @@ public class MapQueryBank
         }
     }
 
-    public void OnProjectChanged()
-    {
-        MapBankInitialized = false;
-        MapList = new Dictionary<string, IMsb>();
-
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.Undefined)
-        {
-            MapBankInitialized = true;
-        }
-    }
-
     public Dictionary<string, IMsb> GetMaps()
     {
         return MapList;
@@ -47,9 +36,6 @@ public class MapQueryBank
 
     public async void SetupData()
     {
-        if (!CFG.Current.MapEditor_LoadMapQueryData)
-            return;
-
         // Load the maps async so the main thread isn't blocked
         Task<bool> loadMapsTask = ReadMaps();
 

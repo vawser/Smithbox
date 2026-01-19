@@ -67,8 +67,8 @@ public class CFG
     public string Alias_Export_Delimiter = ";";
     public bool Alias_Editor_Export_Ignore_Empty = false;
 
-    public bool PTDE_UseCollisionHack = true;
-    public string PTDE_Collision_Root = "";
+    public bool MapEditor_Use_PTDE_Collisions_In_DS1R_Projects = true;
+    public string PTDE_Data_Path = "";
     public bool PTDE_Collision_Root_Warning = true;
 
     public bool AliasBank_EditorMode = false;
@@ -130,14 +130,11 @@ public class CFG
     /// Map Editor
     ///------------------------------------------------------------
     // General
-    public bool MapEditor_EnableMapUnload = true;
     public bool MapEditor_IgnoreSaveExceptions = false;
 
     public bool MapEditor_DisplayMapCategories = true;
 
     public EntityNameDisplayType MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal_FMG;
-
-    public bool MapEditor_LoadMapQueryData = true;
 
     public bool MapEditor_AssetBrowser_ShowAliases = true;
     public bool MapEditor_AssetBrowser_ShowTags = false;
@@ -148,8 +145,6 @@ public class CFG
     public bool MapEditor_ShowMapGroups = true;
     public bool MapEditor_ShowWorldMapButtons = true;
     public bool MapEditor_MapObjectList_ShowMapNames = true;
-
-    public bool MapEditor_Always_List_Loaded_Maps = true;
 
     public bool MapEditor_Enable_Commmunity_Names = true;
     public bool MapEditor_DisplayUnknownFields = true;

@@ -80,9 +80,9 @@ public class ProjectVFS : IDisposable
         }
 
         // PTDE File System
-        if (Directory.Exists(CFG.Current.PTDE_Collision_Root))
+        if (Directory.Exists(CFG.Current.PTDE_Data_Path))
         {
-            PTDE_FS = new RealVirtualFileSystem(CFG.Current.PTDE_Collision_Root, false);
+            PTDE_FS = new RealVirtualFileSystem(CFG.Current.PTDE_Data_Path, false);
             fileSystems.Add(PTDE_FS);
         }
         else
