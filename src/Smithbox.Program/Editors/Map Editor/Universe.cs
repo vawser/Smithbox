@@ -835,7 +835,7 @@ public class Universe
         regparam.Write(regparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(regparamadw.AssetPath))
         {
-            if (CFG.Current.EnableBackupSaves)
+            if (CFG.Current.Project_Enable_Backup_Saves)
             {
                 if (!File.Exists(regparamadw.AssetPath + ".bak"))
                 {
@@ -857,7 +857,7 @@ public class Universe
         locparam.Write(locparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(locparamadw.AssetPath))
         {
-            if (CFG.Current.EnableBackupSaves)
+            if (CFG.Current.Project_Enable_Backup_Saves)
             {
                 if (!File.Exists(locparamadw.AssetPath + ".bak"))
                 {
@@ -879,7 +879,7 @@ public class Universe
         genparam.Write(genparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(genparamadw.AssetPath))
         {
-            if (CFG.Current.EnableBackupSaves)
+            if (CFG.Current.Project_Enable_Backup_Saves)
             {
                 if (!File.Exists(genparamadw.AssetPath + ".bak"))
                 {
@@ -902,7 +902,7 @@ public class Universe
         evtparam.Write(evtparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(evtparamadw.AssetPath))
         {
-            if (CFG.Current.EnableBackupSaves)
+            if (CFG.Current.Project_Enable_Backup_Saves)
             {
                 if (!File.Exists(evtparamadw.AssetPath + ".bak"))
                 {
@@ -925,7 +925,7 @@ public class Universe
         evtlparam.Write(evtlparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(evtlparamadw.AssetPath))
         {
-            if (CFG.Current.EnableBackupSaves)
+            if (CFG.Current.Project_Enable_Backup_Saves)
             {
                 if (!File.Exists(evtlparamadw.AssetPath + ".bak"))
                 {
@@ -948,7 +948,7 @@ public class Universe
         objparam.Write(objparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(objparamadw.AssetPath))
         {
-            if (CFG.Current.EnableBackupSaves)
+            if (CFG.Current.Project_Enable_Backup_Saves)
             {
                 if (!File.Exists(objparamadw.AssetPath + ".bak"))
                 {

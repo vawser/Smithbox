@@ -85,9 +85,9 @@ public class ViewportMenu
 
             if (ImGui.MenuItem("Profiling"))
             {
-                CFG.Current.Viewport_Profiling = !CFG.Current.Viewport_Profiling;
+                CFG.Current.Viewport_Display_Profiling = !CFG.Current.Viewport_Display_Profiling;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Profiling);
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display_Profiling);
             UIHelper.Tooltip($"Toggle the display of the Profiling information in the top-left corner.");
 
             if (Parent.ViewportType is ViewportType.MapEditor)

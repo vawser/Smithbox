@@ -285,7 +285,7 @@ public class ProjectUtils
 
     public static void CreateBackupFolder(ProjectEntry curProject)
     {
-        if(CFG.Current.BackupProcessType is ProjectBackupBehaviorType.Complete)
+        if(CFG.Current.Project_Backup_Type is ProjectBackupBehaviorType.Complete)
         {
             var folderPath = Path.Combine(curProject.Descriptor.ProjectPath, ".backup");
 
@@ -311,7 +311,7 @@ public class ProjectUtils
             // Make a backup of the original file if a mod path doesn't exist
             if (toFs != curProject.VFS.ProjectFS && !toFs.FileExists($"{assetPath}.bak") && toFs.FileExists(assetPath))
             {
-                if (CFG.Current.EnableBackupSaves)
+                if (CFG.Current.Project_Enable_Backup_Saves)
                 {
                     toFs.Copy(assetPath, $"{assetPath}.bak");
                 }
@@ -355,7 +355,7 @@ public class ProjectUtils
                     bxf4.Dispose();
                 }
 
-                if (CFG.Current.EnableBackupSaves)
+                if (CFG.Current.Project_Enable_Backup_Saves)
                 {
                     if (toFs.FileExists(bhdPath))
                     {
@@ -378,7 +378,7 @@ public class ProjectUtils
                 d.Dispose();
             }
 
-            if (CFG.Current.EnableBackupSaves)
+            if (CFG.Current.Project_Enable_Backup_Saves)
             {
                 if (toFs.FileExists(assetPath))
                 {

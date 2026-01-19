@@ -36,14 +36,14 @@ public class ModelSelectorTool
             ImGui.InputText($"##selectorFilter", ref _searchInput, 255);
             UIHelper.Tooltip("Filter the model selector list. Separate terms are split via the + character.");
 
-            ImGui.Checkbox("Update Name on Switch", ref CFG.Current.AssetBrowser_UpdateName);
+            ImGui.Checkbox("Update Name on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_Name);
             UIHelper.Tooltip("When a map object is switched to a new form, update the name to match the new form.");
 
             if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
                 ImGui.SameLine();
 
-                ImGui.Checkbox("Update Instance ID on Switch", ref CFG.Current.AssetBrowser_UpdateInstanceID);
+                ImGui.Checkbox("Update Instance ID on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_Instance_ID);
                 UIHelper.Tooltip("When a map object is switched to a new form, update the Instance ID to account for the new form.");
             }
 
@@ -479,13 +479,13 @@ public class ModelSelectorTool
                 // ModelName
                 actlist.Add(s.ChangeObjectProperty("ModelName", modelName));
 
-                if (CFG.Current.AssetBrowser_UpdateName)
+                if (CFG.Current.MapEditor_Model_Selector_Update_Name)
                 {
                     var updateNameAction = UpdateEntityName(modelName, s);
                     actlist.Add(updateNameAction);
                 }
 
-                if (CFG.Current.AssetBrowser_UpdateInstanceID)
+                if (CFG.Current.MapEditor_Model_Selector_Update_Instance_ID)
                 {
                     if (s.WrappedObject is MSBE.Part || s.WrappedObject is MSB_AC6.Part)
                     {

@@ -37,7 +37,7 @@ public class ViewportOverlay
         }
 
         // Profiling
-        if (CFG.Current.Viewport_Profiling)
+        if (CFG.Current.Viewport_Display_Profiling)
         {
             ImGui.Text($@"Cull time: {Parent.RenderScene.OctreeCullTime} ms");
             ImGui.Text($@"Work creation time: {Parent.RenderScene.CPUDrawTime} ms");

@@ -18,92 +18,80 @@ namespace StudioCore.Application;
 
 public class CFG
 {
+    // Types:
+    // Preferences: shown in the Preferences menu
+    // Options: exposes via ImGui elements such as checkboxes or combo-lists
+    // Internal: used for persistent state
+
+    #region GFX
+    ///------------------------------------------------------------
+    /// GFX
+    ///------------------------------------------------------------
+    public int GFX_Display_Width { get; set; } = 1920;
+    public int GFX_Display_Height { get; set; } = 1057;
+    public int GFX_Display_X { get; set; } = 0;
+    public int GFX_Display_Y { get; set; } = 23;
+    #endregion
+
+    #region System
     ///------------------------------------------------------------
     /// System
     ///------------------------------------------------------------
-    public bool Developer_Enable_Tools = false;
-    public string Developer_Smithbox_Build_Folder = "";
-
+    // Preferences
     public bool System_Check_Program_Update = true;
-    public float Viewport_Frame_Rate = 60.0f;
     public bool System_Enable_Soapstone_Server = true;
     public bool System_Ignore_Read_Asserts = false;
     public bool System_Apply_DCX_Heuristic = false;
 
-    public bool System_EnableAutoSave = true;
-    public int System_AutoSaveIntervalSeconds = 300;
-    public bool System_EnableAutoSave_Project = true;
-    public bool System_EnableAutoSave_MapEditor = false;
-    public bool System_EnableAutoSave_ModelEditor = false;
-    public bool System_EnableAutoSave_ParamEditor = false;
-    public bool System_EnableAutoSave_TextEditor = false;
-    public bool System_EnableAutoSave_GparamEditor = false;
-
-    public bool System_EnableRecoveryFolder = true;
-
+    public bool Logger_Enable_Action_Log = true;
+    public bool Logger_Enable_Warning_Log = true;
     public int Logger_Action_Fade_Time = 1500;
     public int Logger_Warning_Fade_Time = 1500;
 
+    public bool Developer_Enable_Tools = false;
+    public string Developer_Smithbox_Build_Folder = "";
+
+    #endregion
+
+    #region Project
     ///------------------------------------------------------------
     /// Project
     ///------------------------------------------------------------
-
+    // Preferences
     public bool Project_Enable_Auto_Load = true;
     public bool Project_Enable_Automatic_Auto_Load_Assignment = true;
 
-    public bool Project_Enable_Automatic_Save = true;
-    public bool EnableBackupSaves = true;
+    public bool Project_Enable_Backup_Saves = true;
+    public ProjectBackupBehaviorType Project_Backup_Type = ProjectBackupBehaviorType.Simple;
 
+    public bool Project_Enable_Automatic_Save = true;
     public float Project_Automatic_Save_Interval = 300;
 
     public string Project_Default_Mod_Directory = "";
     public string Project_Default_Data_Directory = "";
-
     public string Project_ME3_Profile_Directory = "";
-    public string ModEngine2Install = "";
-    public string ModEngine2Dlls = "";
-
-    public ProjectBackupBehaviorType BackupProcessType = ProjectBackupBehaviorType.Simple;
-
-    public string Alias_Export_Delimiter = ";";
-    public bool Alias_Editor_Export_Ignore_Empty = false;
 
     public bool MapEditor_Use_PTDE_Collisions_In_DS1R_Projects = true;
     public string PTDE_Data_Path = "";
-    public bool PTDE_Collision_Root_Warning = true;
 
-    public bool AliasBank_EditorMode = false;
+    // Options
+    public string Project_Alias_Export_Delimiter = ";";
+    public bool Project_Alias_Editor_Export_Ignore_Empty = false;
 
-    public bool AssetBrowser_ShowAliasesInBrowser = true;
-    public bool AssetBrowser_ShowTagsInBrowser = true;
-    public bool AssetBrowser_ShowLowDetailParts = false;
-    public bool AssetBrowser_UpdateName = true;
-    public bool AssetBrowser_UpdateInstanceID = true;
+    #endregion
 
-    public bool MapAtlas_ShowTags = true;
-    public bool CharacterAtlas_ShowTags = true;
-    public bool AssetAtlas_ShowTags = true;
-    public bool PartAtlas_ShowTags = true;
-    public bool MapPieceAtlas_ShowTags = true;
-    public bool EventFlagAtlas_ShowTags = true;
-    public bool ParticleAtlas_ShowTags = true;
-    public bool MapNameAtlas_ShowTags = true;
-    public bool GparamNameAtlas_ShowTags = true;
-    public bool SoundAtlas_ShowTags = true;
-    public bool CutsceneAtlas_ShowTags = true;
-    public bool MovieAtlas_ShowTags = true;
-    public bool TimeActAtlas_ShowTags = true;
-    public bool TalkAtlas_ShowTags = true;
-
+    #region Interface
     ///------------------------------------------------------------
     /// Interface
     ///------------------------------------------------------------
-    public bool Logger_Enable_Action_Log = true;
-    public bool Logger_Enable_Warning_Log = true;
-    public bool Interface_Alias_Wordwrap_General = true;
-
     public float Interface_UI_Scale = 1.0f;
     public bool Interface_Scale_by_DPI = true;
+    public float Interface_Font_Size = 14.0f;
+    public bool Interface_Allow_Window_Movement = true;
+
+    public bool Interface_Alias_Wordwrap_General = true;
+    public bool Interface_Alias_Wordwrap_Map_Editor = true;
+    public bool Interface_Alias_Wordwrap_Model_Editor = true;
 
     public bool Interface_Include_Chinese_Symbols = false;
     public bool Interface_Include_Cyrillic_Symbols = false;
@@ -116,17 +104,9 @@ public class CFG
 
     public string Interface_Selected_Theme = "";
 
-    public float Interface_Font_Size = 14.0f;
+    #endregion
 
-    public bool Interface_Editor_Viewport = true;
-    public bool Viewport_Profiling = true;
-
-    public bool Allow_Window_Movement = true;
-    public int GFX_Display_Width { get; set; } = 1920;
-    public int GFX_Display_Height { get; set; } = 1057;
-    public int GFX_Display_X { get; set; } = 0;
-    public int GFX_Display_Y { get; set; } = 23;
-
+    #region Map Editor
     ///------------------------------------------------------------
     /// Map Editor
     ///------------------------------------------------------------
@@ -155,20 +135,19 @@ public class CFG
     public bool MapEditor_Model_Selector_Display_Tags = false;
     public bool MapEditor_Model_Selector_Display_Low_Detail_Entries = false;
 
+    public bool MapEditor_Enable_Character_Substitution = false;
+    public string MapEditor_Character_Substitution_ID = "c0000";
+
     public bool MapEditor_Selection_Group_Frame_Selection_On_Use = true;
     public bool MapEditor_Selection_Group_Enable_Quick_Creation = false;
     public bool MapEditor_Selection_Group_Confirm_Delete = true;
     public bool MapEditor_Selection_Group_Show_Keybind = true;
     public bool MapEditor_Selection_Group_Show_Tags = false;
 
+    // Options
+    public bool MapEditor_Model_Selector_Update_Name = true;
+    public bool MapEditor_Model_Selector_Update_Instance_ID = true;
 
-    public bool MapEditor_MapObjectList_ShowPlayerCharacterNames = true;
-    public bool MapEditor_MapObjectList_ShowSystemCharacterNames = true;
-
-    public bool MapEditor_Enable_Character_Substitution = false;
-    public string MapEditor_Character_Substitution_ID = "c0000";
-
-    // Internal
     public EntityNameDisplayType MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal_FMG;
 
     public int MapEditor_Selection_Position_IncrementType = 0;
@@ -193,8 +172,6 @@ public class CFG
     public bool MapEditor_Properties_Display_Reference_Name = true;
     public bool MapEditor_Properties_Display_Reference_Entity_ID = true;
     public bool MapEditor_Properties_Display_Reference_Alias = true;
-
-    public bool Interface_Alias_Wordwrap_Map_Editor = true;
 
     public bool Prefab_IncludeEntityID = true;
     public bool Prefab_IncludeEntityGroupIDs = true;
@@ -426,14 +403,15 @@ public class CFG
     public RenderFilterPreset Viewport_Filter_Preset_5 { get; set; } = new("Lighting (Collision)", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
     public RenderFilterPreset Viewport_Filter_Preset_6 { get; set; } = new("All", RenderFilter.All);
 
+    #endregion
+
+    #region Model Editor
     ///------------------------------------------------------------
     /// Model Editor
     ///------------------------------------------------------------
     // General
     public bool ModelEditor_AutoLoadSingles = true;
     public bool ModelEditor_IncludeAliasInSearch = true;
-
-    public bool Interface_Alias_Wordwrap_Model_Editor = true;
 
     public bool ModelEditor_ViewMeshes = true;
     public bool ModelEditor_ViewDummyPolys = true;
@@ -486,6 +464,9 @@ public class CFG
     public bool ModelEditor_ManualSave_IncludeFLVER = true;
     public bool AutomaticSave_ModelEditor = true;
 
+    #endregion
+
+    #region Param Editor
     ///------------------------------------------------------------
     /// Param Editor
     ///------------------------------------------------------------
@@ -678,11 +659,13 @@ public class CFG
 
     public string Param_Import_Delimiter = ",";
 
+    #endregion
 
+    #region Text Editor
     ///------------------------------------------------------------
     /// Text Editor
     ///------------------------------------------------------------
-    
+
     // General
     public TextContainerCategory TextEditor_PrimaryCategory = TextContainerCategory.English;
 
@@ -764,6 +747,9 @@ public class CFG
     public bool TextEditor_AutomaticSave_IncludeFMG = true;
     public bool TextEditor_ManualSave_IncludeFMG = true;
 
+    #endregion
+
+    #region Graphics Param Editor
     ///------------------------------------------------------------
     /// Graphics Param Editor
     ///------------------------------------------------------------
@@ -816,6 +802,9 @@ public class CFG
     public bool GparamEditor_AutomaticSave_IncludeGPARAM = true;
     public bool GparamEditor_ManualSave_IncludeGPARAM = true;
 
+    #endregion
+
+    #region Texture Viewer
     ///------------------------------------------------------------
     /// Texture Viewer
     ///------------------------------------------------------------
@@ -844,6 +833,9 @@ public class CFG
     // Tools
     public bool Interface_TextureViewer_Tool_ExportTexture = true;
 
+    #endregion
+
+    #region Material Editor
     ///------------------------------------------------------------
     /// Material Editor
     ///------------------------------------------------------------
@@ -867,6 +859,9 @@ public class CFG
     public bool MaterialEditor_ManualSave_IncludeMTD = true;
     public bool MaterialEditor_ManualSave_IncludeMATBIN = true;
 
+    #endregion
+
+    #region File Browser
     ///------------------------------------------------------------
     /// File Browser
     ///------------------------------------------------------------
@@ -876,9 +871,13 @@ public class CFG
 
     public bool Interface_FileBrowser_Tool_GameUnpacker = true;
 
+    #endregion
+
+    #region Viewport
     ///------------------------------------------------------------
     /// Viewport
     ///------------------------------------------------------------
+    public float Viewport_Frame_Rate = 60.0f;
     public bool Viewport_Enable_Rendering = true;
     public bool Viewport_Enable_Texturing = true;
     public bool Viewport_Enable_Culling = true;
@@ -887,6 +886,8 @@ public class CFG
     public bool Viewport_Enable_Model_Masks = true;
     public bool Viewport_Enable_LOD_Facesets = false;
 
+    public bool Viewport_Display = true;
+    public bool Viewport_Display_Profiling = true;
 
     public Vector3 Viewport_Frame_Offset = new Vector3();
     public float Viewport_Frame_Distance = 1f;
@@ -1123,6 +1124,8 @@ public class CFG
     public float ModelEditor_TertiaryGrid_Rotation_X = 0;
     public float ModelEditor_TertiaryGrid_Rotation_Y = 0;
     public float ModelEditor_TertiaryGrid_Rotation_Z = 90;
+
+    #endregion
 
     ///------------------------------------------------------------
     /// Misc

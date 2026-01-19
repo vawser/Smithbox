@@ -332,9 +332,9 @@ public class ModelEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Viewport"))
             {
-                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
+                CFG.Current.Viewport_Display = !CFG.Current.Viewport_Display;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display);
 
             if (ImGui.MenuItem("Source List"))
             {

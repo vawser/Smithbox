@@ -158,6 +158,23 @@ public class InterfacePrefs
             }
         };
     }
+    public static PreferenceItem Interface_Allow_Window_Movement()
+    {
+        return new PreferenceItem
+        {
+            Category = PreferenceCategory.System,
+            Spacer = true,
+
+            Section = "General",
+
+            Title = "Enable Window Movement",
+            Description = "If enabled, the internal windows can be moved and docked freely.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Allow_Window_Movement);
+            }
+        };
+    }
 
     #endregion
 

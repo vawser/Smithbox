@@ -327,7 +327,7 @@ public static class UIHelper
     {
         var flags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
-        if (!CFG.Current.Allow_Window_Movement)
+        if (!CFG.Current.Interface_Allow_Window_Movement)
         {
             flags |= ImGuiWindowFlags.NoMove;
         }
@@ -338,7 +338,7 @@ public static class UIHelper
     {
         var flags = ImGuiWindowFlags.None | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
-        if (!CFG.Current.Allow_Window_Movement)
+        if (!CFG.Current.Interface_Allow_Window_Movement)
         {
             flags |= ImGuiWindowFlags.NoMove;
         }

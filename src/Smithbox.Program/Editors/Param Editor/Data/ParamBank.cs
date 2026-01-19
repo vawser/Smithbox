@@ -1008,7 +1008,7 @@ public class ParamBank : IDisposable
             // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
             if (!toFs.FileExists($"{param}.bak"))
             {
-                if (CFG.Current.EnableBackupSaves)
+                if (CFG.Current.Project_Enable_Backup_Saves)
                 {
                     toFs.WriteFile($"{param}.bak", data);
                 }
@@ -1039,7 +1039,7 @@ public class ParamBank : IDisposable
                         // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
                         if (!toFs.FileExists($@"{param}.bak"))
                         {
-                            if (CFG.Current.EnableBackupSaves)
+                            if (CFG.Current.Project_Enable_Backup_Saves)
                             {
                                 toFs.WriteFile($"{param}.bak", data);
                             }

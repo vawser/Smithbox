@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -118,6 +119,57 @@ public class ProjectPrefs
             }
         };
     }
+    public static PreferenceItem Project_Enable_Backup_Saves()
+    {
+        return new PreferenceItem
+        {
+            Category = PreferenceCategory.Project,
+            Spacer = true,
+
+            Section = "General",
+
+            Title = "Enable Backup Saves",
+            Description = "If enabled, backup files are created during save events (i.e. .bak and .prev files).",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Backup_Saves);
+            }
+        };
+    }
+
+    // TODO: enable once the Complete type has been implemented.
+    //public static PreferenceItem Project_Backup_Type()
+    //{
+    //    return new PreferenceItem
+    //    {
+    //        Category = PreferenceCategory.Project,
+    //        Spacer = true,
+
+    //        Section = "General",
+
+    //        Title = "Backup Save Type",
+    //        Description = "Determines the type of backup saving that occurs.\nSimple: backup files are placed along side source file.\nComplete: backup files are stored in a time-dated folder.",
+
+    //        Draw = () => {
+    //            var curProject = Smithbox.Orchestrator.SelectedProject;
+
+    //            if (ImGui.BeginCombo("##inputValue", CFG.Current.Project_Backup_Type.GetDisplayName()))
+    //            {
+    //                foreach (var entry in Enum.GetValues(typeof(ProjectBackupBehaviorType)))
+    //                {
+    //                    var type = (ProjectBackupBehaviorType)entry;
+
+    //                    if (ImGui.Selectable(type.GetDisplayName()))
+    //                    {
+    //                        CFG.Current.Project_Backup_Type = (ProjectBackupBehaviorType)entry;
+    //                    }
+    //                }
+    //                ImGui.EndCombo();
+    //            }
+    //        }
+    //    };
+    //}
+
     #endregion
 
     #region Automatic Save

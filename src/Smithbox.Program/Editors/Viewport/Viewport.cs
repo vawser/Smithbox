@@ -240,7 +240,7 @@ public class Viewport : IViewport
     {
         var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav | ImGuiWindowFlags.MenuBar;
 
-        if (CFG.Current.Interface_Editor_Viewport)
+        if (CFG.Current.Viewport_Display)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0, 0, 0, 0)); // Transparent
 

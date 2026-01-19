@@ -61,10 +61,10 @@ public class ProjectAliasMenu
 
         if (ImGui.BeginMenu("Data"))
         {
-            ImGui.InputText("##exportDelimiter", ref CFG.Current.Alias_Export_Delimiter, 255);
+            ImGui.InputText("##exportDelimiter", ref CFG.Current.Project_Alias_Export_Delimiter, 255);
             UIHelper.Tooltip("Set the delimiter to use when exporting the alias lists via 'Copy Entries as Text'");
 
-            ImGui.Checkbox("Ignore Empty on Export", ref CFG.Current.Alias_Editor_Export_Ignore_Empty);
+            ImGui.Checkbox("Ignore Empty on Export", ref CFG.Current.Project_Alias_Editor_Export_Ignore_Empty);
             UIHelper.Tooltip("If enabled, empty entries will be ignored by the 'Copy Entries as Text' action.");
 
             ImGui.EndMenu();
@@ -135,13 +135,13 @@ public class ProjectAliasMenu
 
                         foreach (var aliasEntry in source)
                         {
-                            if (CFG.Current.Alias_Editor_Export_Ignore_Empty)
+                            if (CFG.Current.Project_Alias_Editor_Export_Ignore_Empty)
                             {
                                 if (aliasEntry.Name == "")
                                     continue;
                             }
 
-                            var line = $"{aliasEntry.ID}{CFG.Current.Alias_Export_Delimiter}{aliasEntry.Name}";
+                            var line = $"{aliasEntry.ID}{CFG.Current.Project_Alias_Export_Delimiter}{aliasEntry.Name}";
                             entries.Add(line);
                         }
 
