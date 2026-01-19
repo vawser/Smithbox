@@ -731,22 +731,29 @@ public class ParamEditorScreen : EditorScreen
                     {
                         if (ReadCsvDialog(out var csv))
                         {
-                            (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.Handler.ParamData.PrimaryBank, csv,
-                                _activeView.Selection.GetActiveParam(), false, false,
-                                CFG.Current.Param_Export_Delimiter[0]);
-
-                            if (action != null)
+                            try
                             {
-                                if (action.HasActions)
+                                (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.Handler.ParamData.PrimaryBank, csv,
+                                    _activeView.Selection.GetActiveParam(), false, false,
+                                    CFG.Current.Param_Export_Delimiter[0]);
+
+                                if (action != null)
                                 {
-                                    EditorActionManager.ExecuteAction(action);
-                                }
+                                    if (action.HasActions)
+                                    {
+                                        EditorActionManager.ExecuteAction(action);
+                                    }
 
-                                Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
+                                    Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
+                                }
+                                else
+                                {
+                                    PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
+                                }
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
+                                TaskLogs.AddError("Failed to apply CSV", ex);
                             }
                         }
                     }
@@ -754,17 +761,24 @@ public class ParamEditorScreen : EditorScreen
                     {
                         if (ReadCsvDialog(out var csv))
                         {
-                            (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.Handler.ParamData.PrimaryBank,
-                                csv, _activeView.Selection.GetActiveParam(), "Name",
-                                CFG.Current.Param_Export_Delimiter[0], false);
+                            try
+                            {
+                                (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.Handler.ParamData.PrimaryBank,
+                                    csv, _activeView.Selection.GetActiveParam(), "Name",
+                                    CFG.Current.Param_Export_Delimiter[0], false);
 
-                            if (action != null)
-                            {
-                                EditorActionManager.ExecuteAction(action);
+                                if (action != null)
+                                {
+                                    EditorActionManager.ExecuteAction(action);
+                                }
+                                else
+                                {
+                                    PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
+                                }
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
+                                TaskLogs.AddError("Failed to apply CSV", ex);
                             }
 
                             Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
@@ -779,18 +793,25 @@ public class ParamEditorScreen : EditorScreen
                             {
                                 if (ReadCsvDialog(out var csv))
                                 {
-                                    (var result, CompoundAction action) =
-                                        ParamIO.ApplySingleCSV(Project, Project.Handler.ParamData.PrimaryBank, csv,
-                                            _activeView.Selection.GetActiveParam(), field.InternalName,
-                                            CFG.Current.Param_Export_Delimiter[0], false);
+                                    try
+                                    {
+                                        (var result, CompoundAction action) =
+                                            ParamIO.ApplySingleCSV(Project, Project.Handler.ParamData.PrimaryBank, csv,
+                                                _activeView.Selection.GetActiveParam(), field.InternalName,
+                                                CFG.Current.Param_Export_Delimiter[0], false);
 
-                                    if (action != null)
-                                    {
-                                        EditorActionManager.ExecuteAction(action);
+                                        if (action != null)
+                                        {
+                                            EditorActionManager.ExecuteAction(action);
+                                        }
+                                        else
+                                        {
+                                            PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
+                                        }
                                     }
-                                    else
+                                    catch (Exception ex)
                                     {
-                                        PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
+                                        TaskLogs.AddError("Failed to apply CSV", ex);
                                     }
 
                                     Project.Handler.ParamData.RefreshParamDifferenceCacheTask();

@@ -191,21 +191,28 @@ public class MassEditHandler
 
             if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
             {
-                (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.Handler.ParamData.PrimaryBank,
-                    ME_CSV_Input, Editor._activeView.Selection.GetActiveParam(), _mEditCSVAppendOnly,
-                    _mEditCSVAppendOnly && _mEditCSVReplaceRows, CFG.Current.Param_Export_Delimiter[0]);
-
-                if (action != null)
+                try
                 {
-                    if (action.HasActions)
+                    (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.Handler.ParamData.PrimaryBank,
+                        ME_CSV_Input, Editor._activeView.Selection.GetActiveParam(), _mEditCSVAppendOnly,
+                        _mEditCSVAppendOnly && _mEditCSVReplaceRows, CFG.Current.Param_Export_Delimiter[0]);
+
+                    if (action != null)
                     {
-                        Editor.EditorActionManager.ExecuteAction(action);
+                        if (action.HasActions)
+                        {
+                            Editor.EditorActionManager.ExecuteAction(action);
+                        }
+
+                        Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
                     }
 
-                    Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
+                    _mEditCSVResult = result;
                 }
-
-                _mEditCSVResult = result;
+                catch (Exception ex)
+                {
+                    TaskLogs.AddError("Failed to apply CSV", ex);
+                }
             }
 
             ImGui.Text(_mEditCSVResult);
@@ -221,16 +228,23 @@ public class MassEditHandler
 
             if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
             {
-                (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.Handler.ParamData.PrimaryBank,
-                    ME_CSV_Input, Editor._activeView.Selection.GetActiveParam(), ME_Single_CSV_Field,
-                    CFG.Current.Param_Export_Delimiter[0], false);
-
-                if (action != null)
+                try
                 {
-                    Editor.EditorActionManager.ExecuteAction(action);
-                }
+                    (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.Handler.ParamData.PrimaryBank,
+                        ME_CSV_Input, Editor._activeView.Selection.GetActiveParam(), ME_Single_CSV_Field,
+                        CFG.Current.Param_Export_Delimiter[0], false);
 
-                _mEditCSVResult = result;
+                    if (action != null)
+                    {
+                        Editor.EditorActionManager.ExecuteAction(action);
+                    }
+
+                    _mEditCSVResult = result;
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddError("Failed to apply CSV", ex);
+                }
             }
 
             ImGui.Text(_mEditCSVResult);

@@ -639,6 +639,8 @@ public class CFG
     public bool UseLatestGameOffset = true;
     public int SelectedGameOffsetData = 0;
 
+    public bool Checked_CSV_Application = true;
+
     // Windows
     public bool Interface_ParamEditor_Table = true;
 
