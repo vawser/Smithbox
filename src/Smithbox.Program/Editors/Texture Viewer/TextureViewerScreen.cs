@@ -21,8 +21,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public TexTools Tools;
 
-    public TexImagePreview ImagePreview;
-
     public TexSourceView SourceView;
     public TexSelectView TpfSelectView;
     public TexContentView TpfContentView;
@@ -38,8 +36,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         Tools = new TexTools(this, Project);
         Filters = new TexFilters(this, Project);
         CommandQueue = new TexCommandQueue(this, Project);
-
-        ImagePreview = new TexImagePreview(this, Project);
 
         ViewerZoom = new TexViewerZoom(this, Project);
         EditorShortcuts = new TexShortcuts(this, Project);

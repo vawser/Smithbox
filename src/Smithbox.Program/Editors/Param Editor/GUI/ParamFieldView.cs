@@ -974,7 +974,7 @@ public class ParamFieldView
                 // Field Icon
                 if (displayIcon)
                 {
-                    FieldDecorators.FieldIcon_Display(Editor, Editor.Project.Handler.TextureViewer, IconConfig, row, oldval, internalName, 0);
+                    FieldDecorators.FieldIcon_Display(Editor, IconConfig, row, oldval, internalName, 0);
                 }
 
                 // Enum
@@ -1183,11 +1183,6 @@ public class ParamFieldView
 
         if (committed)
         {
-            if (Project.Handler.TextureViewer != null)
-            {
-                Project.Handler.TextureViewer.ImagePreview.ClearIcons();
-            }
-
             Editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, row, activeParam);
         }
 
@@ -1271,7 +1266,7 @@ public class ParamFieldView
 
             if (CFG.Current.Param_HideReferenceRows == false && iconConfig != null)
             {
-                FieldDecorators.FieldIcon_Display(Editor, Editor.Project.Handler.TextureViewer, iconConfig, context, colVal, fieldName, 1);
+                FieldDecorators.FieldIcon_Display(Editor, iconConfig, context, colVal, fieldName, 1);
             }
 
             if (CFG.Current.Param_HideEnums == false && Enum != null)

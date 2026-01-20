@@ -24,6 +24,7 @@ public class ProjectEditorHandler : IDisposable
 
     // Project Data
     public ProjectData ProjectData;
+    public TextureData TextureData;
 
     // File Browser
     public FileBrowserScreen FileBrowser;
@@ -60,7 +61,6 @@ public class ProjectEditorHandler : IDisposable
     public MaterialEditorStub MaterialEditorStub;
 
     // Texture Viewer
-    public TextureData TextureData;
     public TextureViewerScreen TextureViewer;
     public TextureViewerStub TextureViewerStub;
 
@@ -95,10 +95,15 @@ public class ProjectEditorHandler : IDisposable
     {
         var tasks = new List<Task<bool>>();
 
-        // Project data (always required)
+        // Project data
         ProjectData = new(Project);
         _projectDataTask = ProjectData.Setup();
         tasks.Add(_projectDataTask);
+
+        // Texture data 
+        TextureData = new(Project);
+        _textureDataTask = TextureData.Setup();
+        tasks.Add(_textureDataTask);
 
         // Material data (shared dependency)
         _materialDataTask = Task.Run(async () =>
@@ -152,15 +157,6 @@ public class ProjectEditorHandler : IDisposable
             GparamData = new(Project);
             _gparamDataTask = GparamData.Setup();
             tasks.Add(_gparamDataTask);
-        }
-
-        // Texture
-        if (Project.Descriptor.EnableTextureViewer &&
-            initType is ProjectInitType.ProjectDefined)
-        {
-            TextureData = new(Project);
-            _textureDataTask = TextureData.Setup();
-            tasks.Add(_textureDataTask);
         }
 
         bool[] results = await Task.WhenAll(tasks);

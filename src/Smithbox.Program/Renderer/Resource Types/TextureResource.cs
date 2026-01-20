@@ -19,11 +19,6 @@ public class TextureResource : IResource, IDisposable
         TPFIndex = index;
     }
 
-    /// <summary>
-    /// Denotes the sub-texture this resource uses (for Icon Preview)
-    /// </summary>
-    public SubTexture SubTexture { get; set; }
-
     public TPF Texture { get; private set; }
 
     public TexturePool.TextureHandle GPUTexture { get; private set; }
@@ -97,8 +92,11 @@ public class TextureResource : IResource, IDisposable
                 // TODO: dispose managed state (managed objects).
             }
 
+            Texture = null;
+
             GPUTexture?.Dispose();
             GPUTexture = null;
+
 
             disposedValue = true;
         }

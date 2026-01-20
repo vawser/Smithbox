@@ -9,6 +9,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Keybinds;
+using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -1179,23 +1180,24 @@ public class FieldDecorators
     /// <param name="texRefs"></param>
     /// <param name="context"></param>
     /// <param name="oldval"></param>
-    public static void FieldIcon_Display(ParamEditorScreen editor, TextureViewerScreen textureViewer, IconConfig fieldIcon, Param.Row context, dynamic oldval, string fieldName, int columnIndex)
+    public static void FieldIcon_Display(ParamEditorScreen editor, IconConfig fieldIcon, Param.Row context, dynamic oldval, string fieldName, int columnIndex)
     {
-        if (editor.Project.Handler.TextureViewer == null)
-            return;
-
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
-            return;
-
-        if (textureViewer.ImagePreview == null)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRef_Text);
 
         if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
         {
-            var imageDisplayed = textureViewer.ImagePreview.DisplayImagePreview(context, fieldIcon, oldval, fieldName, columnIndex);
+            CachedTexture cachedTexture = Smithbox.TextureManager.LoadIcon(context, fieldIcon, oldval, fieldName, columnIndex);
+
+            if(cachedTexture != null)
+            {
+                // TEMP
+                Smithbox.TextureManager.DisplayIcon_Old(cachedTexture);
+                //  Smithbox.TextureManager.DisplayIcon(cachedTexture);
+            }
         }
 
         ImGui.PopStyleColor();

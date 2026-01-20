@@ -23,6 +23,7 @@ public class Smithbox
 {
     public static Smithbox Instance { get; set; }
     public static ProjectOrchestrator Orchestrator { get; set; }
+    public static TextureManager TextureManager { get; set; }
 
     private static double _desiredFrameLengthSeconds = 1.0 / 20.0f;
     private static readonly bool _limitFrameRate = true;
@@ -92,6 +93,8 @@ public class Smithbox
         DebugTools = new();
 
         _soapstoneService = new(version);
+
+        TextureManager = new(_context.Device, _context.ImguiRenderer);
     }
 
     private void Setup()
