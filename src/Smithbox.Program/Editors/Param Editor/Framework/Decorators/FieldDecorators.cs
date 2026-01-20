@@ -1190,13 +1190,11 @@ public class FieldDecorators
 
         if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
         {
-            CachedTexture cachedTexture = Smithbox.TextureManager.LoadIcon(context, fieldIcon, oldval, fieldName, columnIndex);
+            CachedTexture cachedTexture = Smithbox.TextureManager.IconManager.LoadIcon(context, fieldIcon, oldval, fieldName, columnIndex);
 
             if(cachedTexture != null)
             {
-                // TEMP
-                Smithbox.TextureManager.DisplayIcon_Old(cachedTexture);
-                //  Smithbox.TextureManager.DisplayIcon(cachedTexture);
+                Smithbox.TextureManager.IconManager.DisplayIcon(cachedTexture);
             }
         }
 

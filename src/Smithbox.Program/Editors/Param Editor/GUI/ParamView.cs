@@ -169,7 +169,7 @@ public class ParamView
                         EditorCommandQueue.AddCommand($@"param/view/{View.ViewIndex}/{paramKey}");
                         View.TableGroupView.UpdateTableSelection(paramKey);
 
-                        Smithbox.TextureManager.PurgeCache();
+                        Smithbox.TextureManager.IconManager.PurgeCache();
                     }
 
                     DisplayContextMenu(p, paramKey, true);
@@ -374,7 +374,7 @@ public class ParamView
 
                 Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask(true);
 
-                Smithbox.TextureManager.PurgeCache();
+                Smithbox.TextureManager.IconManager.PurgeCache();
             }
 
             ImGui.PopStyleColor();

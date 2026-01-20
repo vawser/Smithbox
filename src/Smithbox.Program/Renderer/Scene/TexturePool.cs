@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using Veldrid;
 using Vortice.Vulkan;
 using Rectangle = Veldrid.Rectangle;
