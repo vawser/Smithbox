@@ -42,7 +42,7 @@ public class TextDifferenceManager
             return;
 
         // Leave empty if disabled
-        if(!CFG.Current.TextEditor_IncludeVanillaCache)
+        if(!CFG.Current.TextEditor_Include_Vanilla_Cache)
         {
             return;
         }

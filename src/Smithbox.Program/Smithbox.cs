@@ -15,7 +15,6 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Application.HelpWindow;
 using Thread = System.Threading.Thread;
 
 namespace StudioCore;
@@ -44,7 +43,6 @@ public class Smithbox
 
     public SoapstoneService _soapstoneService;
 
-    public HelpWindow Help;
     public DeveloperTools DebugTools;
 
     public PreferencesMenu PreferencesMenu = new();
@@ -89,7 +87,6 @@ public class Smithbox
 
         _context.ImguiRenderer.OnSetupDone();
 
-        Help = new();
         KeybindsMenu = new();
         PreferencesMenu = new();
         DebugTools = new();
@@ -479,55 +476,36 @@ public class Smithbox
             // Help
             if (ImGui.BeginMenu("Help"))
             {
-                if (ImGui.MenuItem("Articles"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Articles);
-                }
-                UIHelper.Tooltip("View the articles that relate to this project.");
+                ImGui.Text("Developed by Vawser.");
+                ImGui.Text($"Smithbox Version: {_version}");
 
-                if (ImGui.MenuItem("Tutorials"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Tutorials);
-                }
-                UIHelper.Tooltip("View the tutorials that relate to this project.");
+                ImGui.Separator();
 
-                if (ImGui.MenuItem("Glossary"))
+                if (ImGui.MenuItem("Go to Wiki"))
                 {
-                    Help.ToggleWindow(SelectedHelpTab.Glossary);
+                    Process myProcess = new();
+                    myProcess.StartInfo.UseShellExecute = true;
+                    myProcess.StartInfo.FileName = "https://soulsmodding.com/doku.php?id=smithbox";
+                    myProcess.Start();
                 }
-                UIHelper.Tooltip("View the glossary that relate to this project.");
+                UIHelper.Tooltip("Go to the Github repository page.");
 
-                if (ImGui.MenuItem("Mass Edit"))
+                if (ImGui.MenuItem("Go to Github Repository"))
                 {
-                    Help.ToggleWindow(SelectedHelpTab.MassEdit);
+                    Process myProcess = new();
+                    myProcess.StartInfo.UseShellExecute = true;
+                    myProcess.StartInfo.FileName = "https://github.com/vawser/Smithbox";
+                    myProcess.Start();
                 }
-                UIHelper.Tooltip("View the mass edit help instructions.");
+                UIHelper.Tooltip("Go to the Github repository page.");
 
-                if (ImGui.MenuItem("Regex"))
+                if (CFG.Current.Developer_Enable_Tools)
                 {
-                    Help.ToggleWindow(SelectedHelpTab.Regex);
+                    DebugTools.DisplayMenu();
                 }
-                UIHelper.Tooltip("View the regex help instructions.");
-
-                if (ImGui.MenuItem("Links"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Links);
-                }
-                UIHelper.Tooltip("View the community links.");
-
-                if (ImGui.MenuItem("Credits"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Credits);
-                }
-                UIHelper.Tooltip("View the credits.");
 
                 ImGui.EndMenu();
             }
-
-#if DEBUG
-            // Debugging
-            DebugTools.DisplayMenu();
-#endif
 
             // Action Logger
             ActionLogger.DisplayTopbarToggle();
@@ -547,7 +525,6 @@ public class Smithbox
 
         Orchestrator.Update(deltaseconds);
 
-        Help.Display();
         DebugTools.Display();
 
         KeybindsMenu.Draw();

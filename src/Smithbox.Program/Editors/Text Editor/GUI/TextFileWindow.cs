@@ -48,7 +48,7 @@ public class TextFileWindow
                 else
                 {
                     // If not in Simple mode, display all FMG files fully
-                    if (!CFG.Current.TextEditor_SimpleFmgList)
+                    if (!CFG.Current.TextEditor_Text_File_List_Grouped_Display)
                     {
                         var info = Editor.Selection.SelectedContainerWrapper;
 
@@ -205,12 +205,9 @@ public class TextFileWindow
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "")
                                     {
                                         HandleFmgView(fmgInfo);
-                                        if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
+                                        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                         {
-                                            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
-                                            {
-                                                UIHelper.Tooltip("This FMG has the highest priority for new entries, so it is recommended you always add new entries in this section.");
-                                            }
+                                            UIHelper.Tooltip("This FMG has the highest priority for new entries, so it is recommended you always add new entries in this section.");
                                         }
                                     }
                                 }
@@ -231,12 +228,9 @@ public class TextFileWindow
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 1")
                                     {
                                         HandleFmgView(fmgInfo);
-                                        if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
+                                        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                         {
-                                            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
-                                            {
-                                                UIHelper.Tooltip("This FMG contains entries associated with DLC 1, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base section FMG will take precedence.");
-                                            }
+                                            UIHelper.Tooltip("This FMG contains entries associated with DLC 1, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base section FMG will take precedence.");
                                         }
                                     }
                                 }
@@ -257,12 +251,9 @@ public class TextFileWindow
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 2")
                                     {
                                         HandleFmgView(fmgInfo);
-                                        if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
+                                        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                         {
-                                            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
-                                            {
-                                                UIHelper.Tooltip("This FMG contains entries associated with DLC 2, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base or DLC 1 section FMG will take precedence.");
-                                            }
+                                            UIHelper.Tooltip("This FMG contains entries associated with DLC 2, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base or DLC 1 section FMG will take precedence.");
                                         }
                                     }
                                 }
@@ -288,18 +279,18 @@ public class TextFileWindow
         {
             var selectableName = $"{displayName}";
 
-            if (!CFG.Current.TextEditor_DisplayFmgPrettyName)
+            if (!CFG.Current.TextEditor_Text_File_List_Display_Community_Names)
             {
                 selectableName = $"{fmgName}";
             }
 
-            if (CFG.Current.TextEditor_DisplayFmgID)
+            if (CFG.Current.TextEditor_Text_File_List_Display_ID)
             {
                 selectableName = $"[{id}] {selectableName}";
             }
 
             // Only show DLC markers in non Simple mode
-            if(!CFG.Current.TextEditor_SimpleFmgList && dlcGroupingName != "")
+            if(!CFG.Current.TextEditor_Text_File_List_Grouped_Display && dlcGroupingName != "")
             {
                 selectableName = $"{selectableName} [{dlcGroupingName}]";
             }

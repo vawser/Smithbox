@@ -63,7 +63,7 @@ public class FmgRowDecorator
 
         if (CommandLine == "")
         {
-            var category = CFG.Current.TextEditor_PrimaryCategory.ToString();
+            var category = CFG.Current.TextEditor_Primary_Category.ToString();
             if (_entryCache.Values.Count > 0)
             {
                 var cachedEntry = _entryCache.Values.Where(e => e.ID == row.ID).FirstOrDefault();
@@ -74,7 +74,7 @@ public class FmgRowDecorator
 
                 foreach (var (path, entry) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
                 {
-                    if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
+                    if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
                     {
                         foreach(var fmgInfo in entry.FmgWrappers)
                         {

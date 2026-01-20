@@ -58,3 +58,15 @@
 #---------------------
 - Param Editor: finish syncing the AC6 meta to the leaked paramdefs (was around NpcParam)
 
+# NR stuff to add to MSB and Param Def
+How to add a field boss being able to be red / mutated:
+Find its SmallBaseMapVariationParam ID. For example magma wyrm has 4668.
+In ChaosMatchingMutationEnemyTableParam the ID that handles its mutation is 46680000.
+Then you need to find the new boss variation id in properties (in map editor).
+For example with variety 1 you copy the row and increment by 1000 so it becomes 46681000. 
+Then change unk_02 to correspond to variety, so in this case 1.
+
+When there are multiple creatures you need to assign them a unique value in the map editor properties Unk3E. (You can reference how ruins are setup in map editor.)
+You will then need to make new rows in ChaosMatchingMutationEnemyTableParam and set unk_01a to that unique value.
+
+ChaosMatchingMutationEnemyTableParam unk_00 is for the type of creature. For example in a ruin, The the boss Depraved Perfumer has 366. Operatic Bat (strong mob) has 357, miranda flower (trash mob) has 358. I'm guessing these values are related to ChaosMatchingMutationCategoryParam which I think handles the amount of mutated enemies for different categories that exist in total, but I havent figured that out.

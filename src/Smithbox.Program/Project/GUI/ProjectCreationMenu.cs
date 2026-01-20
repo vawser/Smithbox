@@ -112,39 +112,48 @@ public class ProjectCreationMenu
                     {
                         Descriptor.ProjectType = type;
 
-                        if(Descriptor.ProjectType is ProjectType.DS1 && SteamExecutable_DS1 != "" && SteamExecutable_DS1 != null)
+                        if(Descriptor.ProjectType is ProjectType.DS1 
+                            && !string.IsNullOrEmpty(SteamExecutable_DS1))
                         {
                             Descriptor.DataPath = SteamExecutable_DS1;
                         }
-                        if (Descriptor.ProjectType is ProjectType.DS1R && SteamExecutable_DS1R != "" && SteamExecutable_DS1R != null)
+                        if (Descriptor.ProjectType is ProjectType.DS1R 
+                            && !string.IsNullOrEmpty(SteamExecutable_DS1R))
                         {
                             Descriptor.DataPath = SteamExecutable_DS1R;
                         }
-                        if (Descriptor.ProjectType is ProjectType.DS2 && SteamExecutable_DS2 != "" && SteamExecutable_DS2 != null)
+                        if (Descriptor.ProjectType is ProjectType.DS2 
+                            && !string.IsNullOrEmpty(SteamExecutable_DS2))
                         {
                             Descriptor.DataPath = SteamExecutable_DS2;
                         }
-                        if (Descriptor.ProjectType is ProjectType.DS2S && SteamExecutable_DS2S != "" && SteamExecutable_DS2S != null)
+                        if (Descriptor.ProjectType is ProjectType.DS2S 
+                            && !string.IsNullOrEmpty(SteamExecutable_DS2S))
                         {
                             Descriptor.DataPath = SteamExecutable_DS2S;
                         }
-                        if (Descriptor.ProjectType is ProjectType.DS3 && SteamExecutable_DS3 != "" && SteamExecutable_DS3 != null)
+                        if (Descriptor.ProjectType is ProjectType.DS3 
+                            && !string.IsNullOrEmpty(SteamExecutable_DS3))
                         {
                             Descriptor.DataPath = SteamExecutable_DS3;
                         }
-                        if (Descriptor.ProjectType is ProjectType.SDT && SteamExecutable_SDT != "" && SteamExecutable_SDT != null)
+                        if (Descriptor.ProjectType is ProjectType.SDT 
+                            && !string.IsNullOrEmpty(SteamExecutable_SDT))
                         {
                             Descriptor.DataPath = SteamExecutable_SDT;
                         }
-                        if (Descriptor.ProjectType is ProjectType.ER && SteamExecutable_ER != "" && SteamExecutable_ER != null)
+                        if (Descriptor.ProjectType is ProjectType.ER 
+                            && !string.IsNullOrEmpty(SteamExecutable_ER))
                         {
                             Descriptor.DataPath = SteamExecutable_ER;
                         }
-                        if (Descriptor.ProjectType is ProjectType.AC6 && SteamExecutable_AC6 != "" && SteamExecutable_AC6 != null)
+                        if (Descriptor.ProjectType is ProjectType.AC6 
+                            && !string.IsNullOrEmpty(SteamExecutable_AC6))
                         {
                             Descriptor.DataPath = SteamExecutable_AC6;
                         }
-                        if (Descriptor.ProjectType is ProjectType.NR && SteamExecutable_NR != "" && SteamExecutable_NR != null)
+                        if (Descriptor.ProjectType is ProjectType.NR 
+                            && !string.IsNullOrEmpty(SteamExecutable_NR))
                         {
                             Descriptor.DataPath = SteamExecutable_NR;
                         }
@@ -582,7 +591,7 @@ public class ProjectCreationMenu
         SteamExecutable_NR = SteamGameLocator.FindGameExecutable(2622380, "Game\\nightreign.exe");
 
         // If we find the PTDE install, auto-set the PTDE path for DS1R.
-        if(SteamExecutable_DS1 != null && SteamExecutable_DS1 != "" && CFG.Current.PTDE_Data_Path == "")
+        if(!string.IsNullOrEmpty(SteamExecutable_DS1) && CFG.Current.PTDE_Data_Path == "")
         {
             var dir = Path.GetDirectoryName(Path.GetFullPath(SteamExecutable_DS1));
             if(Directory.Exists(dir))

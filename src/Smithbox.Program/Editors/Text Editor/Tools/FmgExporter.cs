@@ -235,7 +235,7 @@ public class FmgExporter
         CurrentExportType = exportType;
         CurrentExportModifier = exportModifier;
 
-        if (CFG.Current.TextEditor_TextExport_UseQuickExport)
+        if (CFG.Current.TextEditor_Text_Export_Enable_Quick_Export)
         {
             var exportName = CFG.Current.TextEditor_TextExport_QuickExportPrefix;
 
@@ -285,7 +285,7 @@ public class FmgExporter
             var selectedFmgWrapper = Editor.Selection.SelectedFmgWrapper;
 
             // Export associated group entries as well
-            if(CFG.Current.TextEditor_TextExport_IncludeGroupedEntries)
+            if(CFG.Current.TextEditor_Text_Export_Include_Grouped_Entries)
             {
                 var currentEntry = Editor.Selection._selectedFmgEntry;
                 var fmgEntryGroup = Editor.EntryGroupManager.GetEntryGroup(currentEntry);

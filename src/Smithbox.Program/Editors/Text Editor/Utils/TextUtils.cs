@@ -1838,7 +1838,7 @@ public static class TextUtils
 
     public static bool IsObsoleteContainer(ProjectEntry project, FileDictionaryEntry entry)
     {
-        if (!CFG.Current.TextEditor_EnableObsoleteContainerLoad)
+        if (!CFG.Current.TextEditor_Container_List_Display_Obsolete_Containers)
         {
             switch (project.Descriptor.ProjectType)
             {

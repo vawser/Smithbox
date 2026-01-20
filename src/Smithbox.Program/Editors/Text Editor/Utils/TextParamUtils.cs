@@ -19,7 +19,7 @@ public static class TextParamUtils
         {
             foreach(var (path, entry) in editor.Project.Handler.TextData.PrimaryBank.Containers)
             {
-                if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
+                if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
                 {
                     if (entry.FmgWrappers != null)
                     {

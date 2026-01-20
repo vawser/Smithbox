@@ -272,11 +272,11 @@ public class TextFilters
                     isValid = false;
             }
         }
-        else if(!CFG.Current.TextEditor_DisplayNullEntries && input == "" && text == null)
+        else if(!CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text && input == "" && text == null)
         {
             isValid = false;
         }
-        else if (CFG.Current.TextEditor_DisplayNullEntries && input != "" && text == null)
+        else if (CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text && input != "" && text == null)
         {
             isValid = false;
         }

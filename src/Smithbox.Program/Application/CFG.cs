@@ -665,35 +665,28 @@ public class CFG
     ///------------------------------------------------------------
     /// Text Editor
     ///------------------------------------------------------------
+    // Preferences
+    public TextContainerCategory TextEditor_Primary_Category = TextContainerCategory.English;
+    public bool TextEditor_Include_Vanilla_Cache = true;
 
-    // General
-    public TextContainerCategory TextEditor_PrimaryCategory = TextContainerCategory.English;
+    public bool TextEditor_Container_List_Hide_Unused_Containers = true;
+    public bool TextEditor_Container_List_Display_Obsolete_Containers = false;
+    public bool TextEditor_Container_List_Display_Primary_Category_Only = false;
+    public bool TextEditor_Container_List_Display_Community_Names = true;
+    public bool TextEditor_Container_List_Display_Source_Path = true;
 
-    public bool TextEditor_AdvancedPresentationMode = false;
-    public bool TextEditor_SimpleFileList = true;
-    public bool TextEditor_SimpleFmgList = true;
+    public bool TextEditor_Text_File_List_Grouped_Display = true;
+    public bool TextEditor_Text_File_List_Display_ID = false;
+    public bool TextEditor_Text_File_List_Display_Community_Names = true;
 
-    public bool TextEditor_IncludeNonPrimaryContainers = true;
-    public bool TextEditor_IncludeVanillaCache = true;
-    public bool TextEditor_DisplayFmgPrecedenceHint = true;
+    public bool TextEditor_Text_Entry_List_Display_Null_Text = true;
+    public bool TextEditor_Text_Entry_List_Truncate_Name = true;
 
-    public bool TextEditor_DisplayPrimaryCategoryOnly = false;
-    public bool TextEditor_DisplayCommunityContainerName = true;
-    public bool TextEditor_DisplaySourcePath = true;
-    public bool TextEditor_DisplayContainerPrecedenceHint = true;
+    public bool TextEditor_Text_Entry_Enable_Grouped_Entries = true;
+    public bool TextEditor_Text_Entry_Allow_Duplicate_ID = false;
 
-    public bool TextEditor_DisplayFmgID = false;
-    public bool TextEditor_DisplayFmgPrettyName = true;
-
-    public bool TextEditor_DisplayNullEntries = true;
-    public bool TextEditor_DisplayNullPlaceholder = true;
-    public bool TextEditor_TruncateTextDisplay = true;
-
-    public bool TextEditor_Entry_DisplayGroupedEntries = true;
-    public bool TextEditor_Entry_AllowDuplicateIds = false;
-
-    public bool TextEditor_TextCopy_EscapeNewLines = true;
-    public bool TextEditor_TextCopy_IncludeID = true;
+    public bool TextEditor_Text_Clipboard_Escape_New_Lines = true;
+    public bool TextEditor_Text_Clipboard_Include_ID = true;
 
     public int TextEditor_CreationModal_CreationCount = 1;
     public int TextEditor_CreationModal_IncrementCount = 1;
@@ -704,18 +697,15 @@ public class CFG
     public bool TextEditor_CreationModal_UseIncrementalNaming = false;
     public string TextEditor_CreationModal_IncrementalNaming_Template = "";
 
-    public bool TextEditor_IgnoreIdOnDuplicate = false;
+    public bool TextEditor_Text_Entry_List_Ignore_ID_Check = false;
 
-    public bool TextEditor_TextExport_IncludeGroupedEntries = true;
-    public bool TextEditor_TextExport_UseQuickExport = false;
+    public bool TextEditor_Text_Export_Include_Grouped_Entries = true;
+    public bool TextEditor_Text_Export_Enable_Quick_Export = false;
     public string TextEditor_TextExport_QuickExportPrefix = "quick_export";
 
-    public bool TextEditor_LanguageSync_PrimaryOnly = false;
-    public bool TextEditor_LanguageSync_AddPrefix = true;
-    public string TextEditor_LanguageSync_Prefix = "TRANSLATE: ";
-
-    public bool TextEditor_EnableAutomaticDifferenceCheck = false;
-    public bool TextEditor_EnableObsoleteContainerLoad = false;
+    public bool TextEditor_Language_Sync_Display_Primary_Only = false;
+    public bool TextEditor_Language_Sync_Apply_Prefix = true;
+    public string TextEditor_Language_Sync_Prefix = "TRANSLATE: ";
 
     // OLD
     public string FMG_SearchAndReplace_SearchText = "";

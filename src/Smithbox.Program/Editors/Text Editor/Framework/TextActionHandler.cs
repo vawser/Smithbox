@@ -134,7 +134,7 @@ public class TextActionHandler
             }
 
             // If this is enabled, just use the current entry ID
-            if(CFG.Current.TextEditor_IgnoreIdOnDuplicate)
+            if(CFG.Current.TextEditor_Text_Entry_List_Ignore_ID_Check)
             {
                 newId = curEntry.ID;
             }
@@ -405,7 +405,7 @@ public class TextActionHandler
                                 {
                                     var newText = $"{entry.Text}";
 
-                                    if (CFG.Current.TextEditor_TextCopy_EscapeNewLines)
+                                    if (CFG.Current.TextEditor_Text_Clipboard_Escape_New_Lines)
                                     {
                                         newText = $"{entry.Text}".Replace("\n", "\\n");
                                     }

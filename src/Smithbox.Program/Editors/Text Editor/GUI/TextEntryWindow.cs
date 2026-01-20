@@ -55,7 +55,7 @@ public class TextEntryWindow
 
                         if (contents != null)
                         {
-                            if (CFG.Current.TextEditor_TruncateTextDisplay)
+                            if (CFG.Current.TextEditor_Text_Entry_List_Truncate_Name)
                             {
                                 if (contents.Contains("\n"))
                                 {
@@ -67,7 +67,7 @@ public class TextEntryWindow
                         {
                             displayedText = "";
 
-                            if (CFG.Current.TextEditor_DisplayNullPlaceholder)
+                            if (CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text)
                             {
                                 displayedText = $"<null>";
                             }

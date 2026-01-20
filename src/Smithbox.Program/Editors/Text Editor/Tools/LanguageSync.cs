@@ -124,8 +124,8 @@ public class LanguageSync
                     ImGui.Checkbox("Include Modified Entries", ref CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries);
                     UIHelper.Tooltip("If enabled, modified entries will be synced.");
 
-                    ImGui.Checkbox("Apply Prefix to Synced Text", ref CFG.Current.TextEditor_LanguageSync_AddPrefix);
-                    ImGui.InputText("##prefixTextInput", ref CFG.Current.TextEditor_LanguageSync_Prefix, 255);
+                    ImGui.Checkbox("Apply Prefix to Synced Text", ref CFG.Current.TextEditor_Language_Sync_Apply_Prefix);
+                    ImGui.InputText("##prefixTextInput", ref CFG.Current.TextEditor_Language_Sync_Prefix, 255);
                     UIHelper.Tooltip("The prefix to apply to the synced text.");
                 }
 
@@ -247,10 +247,10 @@ public class LanguageSync
 
         if (ImGui.MenuItem("Apply Prefix to Added Entries"))
         {
-            CFG.Current.TextEditor_LanguageSync_AddPrefix = !CFG.Current.TextEditor_LanguageSync_AddPrefix;
+            CFG.Current.TextEditor_Language_Sync_Apply_Prefix = !CFG.Current.TextEditor_Language_Sync_Apply_Prefix;
         }
-        UIHelper.Tooltip($"If enabled, {CFG.Current.TextEditor_LanguageSync_Prefix} will be added to the text contents of any added entries that are synced into another language.");
-        UIHelper.ShowActiveStatus(CFG.Current.TextEditor_LanguageSync_AddPrefix);
+        UIHelper.Tooltip($"If enabled, {CFG.Current.TextEditor_Language_Sync_Prefix} will be added to the text contents of any added entries that are synced into another language.");
+        UIHelper.ShowActiveStatus(CFG.Current.TextEditor_Language_Sync_Apply_Prefix);
     }
 
     /// <summary>
@@ -276,11 +276,11 @@ public class LanguageSync
 
                 if (proceed)
                 {
-                    if (CFG.Current.TextEditor_LanguageSync_PrimaryOnly)
+                    if (CFG.Current.TextEditor_Language_Sync_Display_Primary_Only)
                     {
                         proceed = false;
 
-                        if (syncSrcWrapper.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
+                        if (syncSrcWrapper.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
                         {
                             proceed = true;
                         }
@@ -297,7 +297,7 @@ public class LanguageSync
                 {
                     var displayName = syncSrcWrapper.FileEntry.Filename;
 
-                    if (CFG.Current.TextEditor_DisplayCommunityContainerName)
+                    if (CFG.Current.TextEditor_Container_List_Display_Community_Names)
                     {
                         // To get nice DS2 names, apply the FMG display name stuff on the container level
                         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -366,9 +366,9 @@ public class LanguageSync
                             {
                                 var newText = result.AdditionCache[syncSrcEntry.ID];
 
-                                if (CFG.Current.TextEditor_LanguageSync_AddPrefix)
+                                if (CFG.Current.TextEditor_Language_Sync_Apply_Prefix)
                                 {
-                                    newText = $"{CFG.Current.TextEditor_LanguageSync_Prefix}{newText}";
+                                    newText = $"{CFG.Current.TextEditor_Language_Sync_Prefix}{newText}";
                                 }
 
                                 // Guard against multiple usage, if the entry ID already exists, we can assume the addition has already occured

@@ -28,13 +28,10 @@ public class TextEditorTab
         // Data
         if (ImGui.CollapsingHeader("Data", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Include Vanilla Cache", ref CFG.Current.TextEditor_IncludeVanillaCache);
+            ImGui.Checkbox("Include Vanilla Cache", ref CFG.Current.TextEditor_Include_Vanilla_Cache);
             UIHelper.Tooltip("If enabled, the vanilla cache is loaded, which enables the modified and unique difference features.");
 
-            ImGui.Checkbox("Enable Background Difference Update", ref CFG.Current.TextEditor_EnableAutomaticDifferenceCheck);
-            UIHelper.Tooltip("If enabled, the difference cache will be updated in the background every 5 minutes.");
-
-            ImGui.Checkbox("Enable Obsolete Container Loading", ref CFG.Current.TextEditor_EnableObsoleteContainerLoad);
+            ImGui.Checkbox("Enable Obsolete Container Loading", ref CFG.Current.TextEditor_Container_List_Display_Obsolete_Containers);
             UIHelper.Tooltip("If enabled, obsolete containers will be loaded. Otherwise, they are ignored.");
         }
 
@@ -45,7 +42,7 @@ public class TextEditorTab
             {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (ImGui.BeginCombo("Primary Category##primaryCategoryCombo", CFG.Current.TextEditor_PrimaryCategory.GetDisplayName()))
+                if (ImGui.BeginCombo("Primary Category##primaryCategoryCombo", CFG.Current.TextEditor_Primary_Category.GetDisplayName()))
                 {
                     foreach (var entry in Enum.GetValues(typeof(TextContainerCategory)))
                     {
@@ -55,7 +52,7 @@ public class TextEditorTab
                         {
                             if (ImGui.Selectable(type.GetDisplayName()))
                             {
-                                CFG.Current.TextEditor_PrimaryCategory = (TextContainerCategory)entry;
+                                CFG.Current.TextEditor_Primary_Category = (TextContainerCategory)entry;
 
                                 // Refresh the param editor FMG decorators when the category changes.
                                 if (curProject.Handler.ParamEditor != null)
@@ -70,7 +67,7 @@ public class TextEditorTab
                 UIHelper.Tooltip("Change the primary category, this determines which text files are used for FMG references and other stuff.");
             }
 
-            ImGui.Checkbox("Hide non-primary categories in list", ref CFG.Current.TextEditor_DisplayPrimaryCategoryOnly);
+            ImGui.Checkbox("Hide non-primary categories in list", ref CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only);
             UIHelper.Tooltip("Hide the non-primary categories in the File List.");
 
         }
@@ -78,91 +75,82 @@ public class TextEditorTab
         // File List
         if (ImGui.CollapsingHeader("File List", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Simple File List", ref CFG.Current.TextEditor_SimpleFileList);
+            ImGui.Checkbox("Simple File List", ref CFG.Current.TextEditor_Container_List_Hide_Unused_Containers);
             UIHelper.Tooltip("Display the file list in a simple form: this means unused containers are hidden.");
 
-            ImGui.Checkbox("Display Community File Name", ref CFG.Current.TextEditor_DisplayCommunityContainerName);
+            ImGui.Checkbox("Display Community File Name", ref CFG.Current.TextEditor_Container_List_Display_Community_Names);
             UIHelper.Tooltip("If enabled, the names in the File List will be given a community name.");
 
-            ImGui.Checkbox("Display Source Path", ref CFG.Current.TextEditor_DisplaySourcePath);
+            ImGui.Checkbox("Display Source Path", ref CFG.Current.TextEditor_Container_List_Display_Source_Path);
             UIHelper.Tooltip("If enabled, the path of the source file will be displayed in the hover tooltip.");
-
-            ImGui.Checkbox("Display File Precedence Hint", ref CFG.Current.TextEditor_DisplayContainerPrecedenceHint);
-            UIHelper.Tooltip("Display the File precedence hint on hover.");
         }
 
         // Text File List
         if (ImGui.CollapsingHeader("Text File List", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Simple Text File List", ref CFG.Current.TextEditor_SimpleFmgList);
+            ImGui.Checkbox("Simple Text File List", ref CFG.Current.TextEditor_Text_File_List_Grouped_Display);
             UIHelper.Tooltip("Display the text file list in a simple form: this means non-title or standalone files are hidden.");
 
-            ImGui.Checkbox("Display FMG ID", ref CFG.Current.TextEditor_DisplayFmgID);
+            ImGui.Checkbox("Display FMG ID", ref CFG.Current.TextEditor_Text_File_List_Display_ID);
             UIHelper.Tooltip("Display the FMG ID in the Text File List by the name.");
 
-            ImGui.Checkbox("Display Community FMG Name", ref CFG.Current.TextEditor_DisplayFmgPrettyName);
+            ImGui.Checkbox("Display Community FMG Name", ref CFG.Current.TextEditor_Text_File_List_Display_Community_Names);
             UIHelper.Tooltip("Display the FMG community name instead of the internal form.");
-
-            ImGui.Checkbox("Display FMG Precedence Hint", ref CFG.Current.TextEditor_DisplayFmgPrecedenceHint);
-            UIHelper.Tooltip("Display the FMG precedence hint on hover.");
         }
 
         // Text Entries List
         if (ImGui.CollapsingHeader("Text Entries List", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Display Empty Text Placeholder", ref CFG.Current.TextEditor_DisplayNullPlaceholder);
+            ImGui.Checkbox("Display Empty Text Placeholder", ref CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text);
             UIHelper.Tooltip("Display placeholder text for rows that have no text.");
 
-            ImGui.Checkbox("Display Empty Rows", ref CFG.Current.TextEditor_DisplayNullEntries);
-            UIHelper.Tooltip("Display FMG entries with empty text.");
-
-            ImGui.Checkbox("Trucate Displayed Text", ref CFG.Current.TextEditor_TruncateTextDisplay);
+            ImGui.Checkbox("Trucate Displayed Text", ref CFG.Current.TextEditor_Text_Entry_List_Truncate_Name);
             UIHelper.Tooltip("Truncate the displayed text so it is always one line (does not affect the contents of the entry).");
 
-            ImGui.Checkbox("Ignore ID on Duplication", ref CFG.Current.TextEditor_IgnoreIdOnDuplicate);
+            ImGui.Checkbox("Ignore ID on Duplication", ref CFG.Current.TextEditor_Text_Entry_List_Ignore_ID_Check);
             UIHelper.Tooltip("Keep the Entry ID the same on duplication. Useful if you want to manually edit the IDs afterwards.");
         }
 
         // Entry Properties
         if (ImGui.CollapsingHeader("Text Entry Properties", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Display Grouped Entries", ref CFG.Current.TextEditor_Entry_DisplayGroupedEntries);
+            ImGui.Checkbox("Display Grouped Entries", ref CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries);
             UIHelper.Tooltip("Include related entries in the Contents window, e.g. Title, Summary, Description, Effect entries that share the same ID.");
 
-            ImGui.Checkbox("Allow Duplicate IDs", ref CFG.Current.TextEditor_Entry_AllowDuplicateIds);
+            ImGui.Checkbox("Allow Duplicate IDs", ref CFG.Current.TextEditor_Text_Entry_Allow_Duplicate_ID);
             UIHelper.Tooltip("Allow Entry ID input to apply change even if the ID is a duplicate of an existing entry row.");
         }
 
         // Text Export
         if (ImGui.CollapsingHeader("Text Export", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Include Grouped Entries", ref CFG.Current.TextEditor_TextExport_IncludeGroupedEntries);
+            ImGui.Checkbox("Include Grouped Entries", ref CFG.Current.TextEditor_Text_Export_Include_Grouped_Entries);
             UIHelper.Tooltip("When exporting Text Entries, if they are associated with a group, include the associated entries as well whilst exporting.");
 
-            ImGui.Checkbox("Use Quick Export", ref CFG.Current.TextEditor_TextExport_UseQuickExport);
+            ImGui.Checkbox("Use Quick Export", ref CFG.Current.TextEditor_Text_Export_Enable_Quick_Export);
             UIHelper.Tooltip("Automatically name the export file instead of display the Export Text prompt. Will overwrite the existing quick export file each time.");
         }
 
         // Language Sync
         if (ImGui.CollapsingHeader("Language Sync", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Display Primary Category only", ref CFG.Current.TextEditor_LanguageSync_PrimaryOnly);
+            ImGui.Checkbox("Display Primary Category only", ref CFG.Current.TextEditor_Language_Sync_Display_Primary_Only);
             UIHelper.Tooltip("Only show your primary category (language) in the selection dropdown.");
 
-            ImGui.Checkbox("Apply Prefix", ref CFG.Current.TextEditor_LanguageSync_AddPrefix);
+            ImGui.Checkbox("Apply Prefix", ref CFG.Current.TextEditor_Language_Sync_Apply_Prefix);
             UIHelper.Tooltip("Add a prefix to synced text in the target language container for all new entries.");
 
-            ImGui.InputText("##prefixText", ref CFG.Current.TextEditor_LanguageSync_Prefix, 255);
+            ImGui.InputText("##prefixText", ref CFG.Current.TextEditor_Language_Sync_Prefix, 255);
             UIHelper.Tooltip("The prefix to apply.");
         }
 
         // Text Entry Copy
         if (ImGui.CollapsingHeader("Clipboard Action", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Include ID", ref CFG.Current.TextEditor_TextCopy_IncludeID);
+            ImGui.Checkbox("Include ID", ref CFG.Current.TextEditor_Text_Clipboard_Include_ID);
             UIHelper.Tooltip("Include the row ID when copying a Text Entry to the clipboard.");
 
-            ImGui.Checkbox("Escape New Lines", ref CFG.Current.TextEditor_TextCopy_EscapeNewLines);
+            ImGui.Checkbox("Escape New Lines", ref CFG.Current.TextEditor_Text_Clipboard_Escape_New_Lines);
             UIHelper.Tooltip("Escape the new lines characters when copying a Text Entry to the clipboard.");
         }
     }

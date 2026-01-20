@@ -83,7 +83,7 @@ public class TextBank : IDisposable
             containerWrapper.ContainerData = containerBytes.ToArray();
             containerWrapper.FmgWrappers = new();
 
-            if (containerCategory == CFG.Current.TextEditor_PrimaryCategory)
+            if (containerCategory == CFG.Current.TextEditor_Primary_Category)
             {
                 LoadFmgWrappers(containerWrapper);
             }
@@ -107,7 +107,7 @@ public class TextBank : IDisposable
         {
             if (type is FmgWrapperLoadType.PrimaryLanguage)
             {
-                if (entry.Value.ContainerDisplayCategory != CFG.Current.TextEditor_PrimaryCategory)
+                if (entry.Value.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
                 {
                     continue;
                 }
@@ -182,7 +182,7 @@ public class TextBank : IDisposable
         var containerType = TextContainerType.Loose;
         var containerCategory = TextUtils.GetLanguageCategory(Project, entry.Path);
 
-        if (containerCategory != CFG.Current.TextEditor_PrimaryCategory)
+        if (containerCategory != CFG.Current.TextEditor_Primary_Category)
         {
             return;
         }

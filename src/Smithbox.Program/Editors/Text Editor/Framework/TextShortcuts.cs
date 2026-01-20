@@ -137,7 +137,7 @@ public class TextShortcuts
         {
             if (InputManager.IsPressed(KeybindID.Copy))
             {
-                Editor.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_TextCopy_IncludeID);
+                Editor.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_Text_Clipboard_Include_ID);
             }
         }
     }

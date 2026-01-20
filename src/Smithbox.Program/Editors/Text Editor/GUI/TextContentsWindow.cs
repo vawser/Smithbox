@@ -51,7 +51,7 @@ public class TextContentsWindow
         var fmgEntryGroup = Editor.EntryGroupManager.GetEntryGroup(Editor.Selection._selectedFmgEntry);
 
         // Display normally if entry has no groups, or it has been disabled
-        if(!fmgEntryGroup.SupportsGrouping || !CFG.Current.TextEditor_Entry_DisplayGroupedEntries)
+        if(!fmgEntryGroup.SupportsGrouping || !CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
         {
             DisplayBasicTextInput(Editor.Selection._selectedFmgEntry);
         }
@@ -114,7 +114,7 @@ public class TextContentsWindow
                     var proceed = true;
 
                     // If duplicate IDs are disallowed, then don't apply the ID action changes if there is a match
-                    if (!CFG.Current.TextEditor_Entry_AllowDuplicateIds)
+                    if (!CFG.Current.TextEditor_Text_Entry_Allow_Duplicate_ID)
                     {
                         var parentFmg = fmgEntryGroup.Title.Parent;
                         foreach (var fmgEntry in parentFmg.Entries)

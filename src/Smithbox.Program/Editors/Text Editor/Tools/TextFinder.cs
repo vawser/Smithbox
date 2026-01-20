@@ -28,7 +28,7 @@ public static class TextFinder
         {
             var containerName = fileEntry.Filename;
 
-            if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
+            if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
             {
                 foreach (var fmg in entry.FmgWrappers)
                 {
@@ -81,7 +81,7 @@ public static class TextFinder
 
             if (searchFilterType is SearchFilterType.PrimaryCategory)
             {
-                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_PrimaryCategory)
+                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
                 {
                     continue;
                 }
@@ -165,7 +165,7 @@ public static class TextFinder
 
             if (searchFilterType is SearchFilterType.PrimaryCategory)
             {
-                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_PrimaryCategory)
+                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
                 {
                     continue;
                 }

@@ -529,6 +529,7 @@ public class TexturePool
 
             // TODO: this is a hack to stop DXT5 saved icon files from crashing the program
             // Really we need to fix the Veldrid workflow to properly handle them
+            // We need to use a staging buffer instead a linear image to do so.
             if(format is VkFormat.Bc3SrgbBlock)
             {
                 return;

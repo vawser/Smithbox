@@ -42,7 +42,7 @@ public class TextContainerWindow
             {
                 ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None;
 
-                if (category == CFG.Current.TextEditor_PrimaryCategory)
+                if (category == CFG.Current.TextEditor_Primary_Category)
                 {
                     flags = ImGuiTreeNodeFlags.DefaultOpen;
                 }
@@ -165,7 +165,7 @@ public class TextContainerWindow
         var displayName = wrapper.FileEntry.Filename;
 
         // Display community name instead of raw container filename
-        if(CFG.Current.TextEditor_DisplayCommunityContainerName)
+        if(CFG.Current.TextEditor_Container_List_Display_Community_Names)
         {
             // To get nice DS2 names, apply the FMG display name stuff on the container level
             if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -179,7 +179,7 @@ public class TextContainerWindow
         }
 
         // If in Simple mode, hide unused containers
-        if (CFG.Current.TextEditor_SimpleFileList)
+        if (CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
         {
             if(wrapper.IsContainerUnused())
             {
@@ -226,7 +226,7 @@ public class TextContainerWindow
             }
 
             // Display hint if normal File List is displayed to user knows about the game's usage of the containers
-            if (CFG.Current.TextEditor_DisplayContainerPrecedenceHint && !CFG.Current.TextEditor_SimpleFileList)
+            if (!CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
             {
                 if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                 {
@@ -247,7 +247,7 @@ public class TextContainerWindow
                     }
                 }
             }
-            if (CFG.Current.TextEditor_DisplaySourcePath)
+            if (CFG.Current.TextEditor_Container_List_Display_Source_Path)
             {
                 UIHelper.Tooltip($"Source File: {wrapper.FileEntry.Path}");
             }
@@ -256,9 +256,9 @@ public class TextContainerWindow
 
     public bool AllowedCategory(TextContainerCategory category)
     {
-        if (CFG.Current.TextEditor_DisplayPrimaryCategoryOnly)
+        if (CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only)
         {
-            if (category == CFG.Current.TextEditor_PrimaryCategory)
+            if (category == CFG.Current.TextEditor_Primary_Category)
             {
                 return true;
             }
