@@ -20,10 +20,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Map List",
+            Section = SectionCategory.MapEditor_Map_List,
 
             Title = "Enable Load on Double-click",
             Description = "If enabled, double-clicking a map in the map list will load it.",
@@ -38,10 +39,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Map List",
+            Section = SectionCategory.MapEditor_Map_List,
 
             Title = "Display Map Aliases",
             Description = "If enabled, the map aliases for maps will be displayed.",
@@ -60,10 +62,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Map Contents",
+            Section = SectionCategory.MapEditor_Map_Contents,
 
             Title = "Display Character Aliases",
             Description = "If enabled, character aliases will be displayed where possible.",
@@ -78,10 +81,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Map Contents",
+            Section = SectionCategory.MapEditor_Map_Contents,
 
             Title = "Display Asset Aliases",
             Description = "If enabled, asset (object) aliases will be displayed where possible.",
@@ -96,10 +100,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Map Contents",
+            Section = SectionCategory.MapEditor_Map_Contents,
 
             Title = "Display Map Piece Aliases",
             Description = "If enabled, map piece aliases will be displayed where possible.",
@@ -114,10 +119,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Map Contents",
+            Section = SectionCategory.MapEditor_Map_Contents,
 
             Title = "Display Treasure Aliases",
             Description = "If enabled, itemlot references will be displayed as aliases for treasure events.",
@@ -136,10 +142,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Map Object Properties",
+            Section = SectionCategory.MapEditor_Map_Object_Properties,
 
             Title = "Enable Community Names",
             Description = "If enabled, community names are used for each map object property name.",
@@ -155,10 +162,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Map Object Properties",
+            Section = SectionCategory.MapEditor_Map_Object_Properties,
 
             Title = "Display Unknown Properties",
             Description = "If enabled, unknown properties will be displayed (i.e. any property starting with Unk).",
@@ -174,10 +182,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Map Object Properties",
+            Section = SectionCategory.MapEditor_Map_Object_Properties,
 
             Title = "Propagate Name Changes to References",
             Description = "If enabled, renaming a viewport object will propagate the name change to any references it is found in.",
@@ -195,10 +204,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Map Object Properties",
+            Section = SectionCategory.MapEditor_Map_Object_Properties,
 
             Title = "Display Property Attributes",
             Description = "If enabled, data type attributes are displayed in the tooltip for each property.",
@@ -215,10 +225,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Additional Property Information",
+            Section = SectionCategory.MapEditor_Additional_Property_Information,
 
             Title = "Display at the Top",
             Description = "If enabled, the additional property information will be displayed at the top of the properties window. By default they will appear at the bottom.",
@@ -234,10 +245,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Additional Property Information",
+            Section = SectionCategory.MapEditor_Additional_Property_Information,
 
             Title = "Display Map Object Behavior Information",
             Description = "If enabled, information about what the map object does is displayed.",
@@ -253,10 +265,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Additional Property Information",
+            Section = SectionCategory.MapEditor_Additional_Property_Information,
 
             Title = "Display Map Object References",
             Description = "If enabled, references information for the map object is displayed..",
@@ -272,10 +285,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Additional Property Information",
+            Section = SectionCategory.MapEditor_Additional_Property_Information,
 
             Title = "Display Reference Name",
             Description = "If enabled, map object references will display the name of the map object.",
@@ -290,10 +304,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 4,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Additional Property Information",
+            Section = SectionCategory.MapEditor_Additional_Property_Information,
 
             Title = "Display Reference Entity ID",
             Description = "If enabled, map object references will display the Entity ID of the map object.",
@@ -308,10 +323,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 5,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Additional Property Information",
+            Section = SectionCategory.MapEditor_Additional_Property_Information,
 
             Title = "Display Reference Alias",
             Description = "If enabled, map object references will display the alias of the map object.",
@@ -330,10 +346,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Character Substitution",
+            Section = SectionCategory.MapEditor_Character_Substitution,
 
             Title = "Enable Substitution",
             Description = "If enabled, the character marker for 'c0000' map objects will be substituted for the character model assigned here.",
@@ -348,11 +365,12 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
             InlineName = false,
 
-            Section = "Character Substitution",
+            Section = SectionCategory.MapEditor_Character_Substitution,
 
             Title = "Character Model ID",
             Description = "The character ID of the model you want to use for the substitution.",
@@ -371,10 +389,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Model Selector",
+            Section = SectionCategory.MapEditor_Model_Selector,
 
             Title = "Display Aliases",
             Description = "If enabled, aliases for each model entry are displayed where possible.",
@@ -389,10 +408,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Model Selector",
+            Section = SectionCategory.MapEditor_Model_Selector,
 
             Title = "Display Tags",
             Description = "If enabled, the tags associated with an model are displayed.",
@@ -407,10 +427,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Model Selector",
+            Section = SectionCategory.MapEditor_Model_Selector,
 
             Title = "Include Low Detail Entries",
             Description = "If enabled, the low detail part entries are displayed.",
@@ -429,10 +450,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Selection Groups",
+            Section = SectionCategory.MapEditor_Selection_Groups,
 
             Title = "Enable Shortcuts for Groups",
             Description = "If enabled, the shortcuts for Selection Groups are enabled.",
@@ -447,10 +469,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Selection Groups",
+            Section = SectionCategory.MapEditor_Selection_Groups,
 
             Title = "Frame Selection on Use",
             Description = "If enabled, when a selection group is triggered, the contents is framed in the viewport.",
@@ -465,10 +488,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Selection Groups",
+            Section = SectionCategory.MapEditor_Selection_Groups,
 
             Title = "Enable Quick Creation",
             Description = "If enabled, the 'Create Selection Group' shortcut will automatically create the group, bypassing the creation prompt.",
@@ -483,10 +507,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Selection Groups",
+            Section = SectionCategory.MapEditor_Selection_Groups,
 
             Title = "Confirm before Deletion",
             Description = "If enabled, a confirmation dialog occurs before deletion of a group.",
@@ -501,10 +526,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 4,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Selection Groups",
+            Section = SectionCategory.MapEditor_Selection_Groups,
 
             Title = "Display Shortcut",
             Description = "If enabled, the shortcut to select a group is displayed next to its name.",
@@ -519,10 +545,11 @@ public class MapEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 5,
             Category = PreferenceCategory.MapEditor,
             Spacer = true,
 
-            Section = "Selection Groups",
+            Section = SectionCategory.MapEditor_Selection_Groups,
 
             Title = "Display Tags",
             Description = "If enabled, the tags associated with a group are displayed next to its name.",

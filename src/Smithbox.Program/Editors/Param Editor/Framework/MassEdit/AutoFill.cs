@@ -345,7 +345,7 @@ public class AutoFill
                             null);
                     });
                     string res2 = null;
-                    if (CFG.Current.Param_AdvancedMassedit)
+                    if (CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands)
                     {
                         ImGui.Separator();
                         ImGui.TextColored(HINTCOLOUR, "Select row operation...");
@@ -363,7 +363,7 @@ public class AutoFill
             ImGui.PopID();
             string result3 = null;
             string result4 = null;
-            if (CFG.Current.Param_AdvancedMassedit)
+            if (CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands)
             {
                 ImGui.Separator();
                 ImGui.PushID("globalop");

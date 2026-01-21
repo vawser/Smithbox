@@ -74,6 +74,8 @@ public class CFG
     public bool MapEditor_Use_PTDE_Collisions_In_DS1R_Projects = true;
     public string PTDE_Data_Path = "";
 
+    public bool Project_Enable_Project_Metadata = false;
+
     // Options
     public string Project_Alias_Export_Delimiter = ";";
     public bool Project_Alias_Editor_Export_Ignore_Empty = false;
@@ -471,55 +473,57 @@ public class CFG
     /// Param Editor
     ///------------------------------------------------------------
     // General
-    public bool UseLooseParams = false;
-    public bool RepackLooseDS2Params = false;
+    public bool ParamEditor_Enable_Compact_Mode = false;
 
-    // Done per project so we can default ON for DS2 and ER without forcing stripping for the others
-    public bool Param_StripRowNamesOnSave_DES = false;
-    public bool Param_StripRowNamesOnSave_DS1 = false;
-    public bool Param_StripRowNamesOnSave_DS2 = true;
-    public bool Param_StripRowNamesOnSave_BB = false;
-    public bool Param_StripRowNamesOnSave_DS3 = false;
-    public bool Param_StripRowNamesOnSave_SDT = false;
-    public bool Param_StripRowNamesOnSave_ER = true;
-    public bool Param_StripRowNamesOnSave_AC6 = false;
-    public bool Param_StripRowNamesOnSave_NR = false;
+    // Regulation
+    public bool ParamEditor_Loose_Param_Mode_DS2 = false;
+    public bool ParamEditor_Loose_Param_Mode_DS3 = false;
+    public bool ParamEditor_Repack_Loose_Params_DS2 = false;
 
-    public bool Param_RestoreStrippedRowNamesOnLoad_DES = false;
-    public bool Param_RestoreStrippedRowNamesOnLoad_DS1 = false;
-    public bool Param_RestoreStrippedRowNamesOnLoad_DS2 = true;
-    public bool Param_RestoreStrippedRowNamesOnLoad_BB = false;
-    public bool Param_RestoreStrippedRowNamesOnLoad_DS3 = false;
-    public bool Param_RestoreStrippedRowNamesOnLoad_SDT = false;
-    public bool Param_RestoreStrippedRowNamesOnLoad_ER = true;
-    public bool Param_RestoreStrippedRowNamesOnLoad_AC6 = false;
-    public bool Param_RestoreStrippedRowNamesOnLoad_NR = false;
+    public bool ParamEditor_Row_Name_Strip_DES = false;
+    public bool ParamEditor_Row_Name_Strip_DS1 = false;
+    public bool ParamEditor_Row_Name_Strip_DS2 = false;
+    public bool ParamEditor_Row_Name_Strip_BB = false;
+    public bool ParamEditor_Row_Name_Strip_DS3 = false;
+    public bool ParamEditor_Row_Name_Strip_SDT = false;
+    public bool ParamEditor_Row_Name_Strip_ER = false;
+    public bool ParamEditor_Row_Name_Strip_AC6 = false;
+    public bool ParamEditor_Row_Name_Strip_NR = false;
 
-    public bool Param_SaveERAsDFLT = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_DES = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_DS1 = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_DS2 = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_BB = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_DS3 = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_SDT = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_ER = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_AC6 = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_NR = false;
 
-    public bool UI_CompactParams = false;
+    // Param List
+    public bool ParamEditor_Param_List_Sort_Alphabetically = true;
+    public bool ParamEditor_Param_List_Display_Community_Names = false;
+    public bool ParamEditor_Param_List_Display_Categories = true;
 
-    public bool Param_UseProjectMeta = false;
+    // Row List
 
-    public bool Param_AlphabeticalParams = true;
-    public bool Param_ShowParamCommunityName = false;
+    // Field List
     public bool Param_ShowSecondaryNames = true;
 
-    public bool Param_DisplayParamCategories = true;
 
     public bool Param_DisplayTableGroupColumn = true;
     public ParamTableGroupRowDisplayType Param_TableGroupRowDisplayType = ParamTableGroupRowDisplayType.None;
 
-    public bool Param_AdvancedMassedit = false;
-    public bool Param_AllowFieldReorder = true;
-    public bool Param_DisableLineWrapping = false;
-    public bool Param_DisableRowGrouping = false;
+    public ParamFieldNameMode ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
+    public bool ParamEditor_Show_Advanced_Mass_Edit_Commands = false;
+    public bool ParamEditor_Field_List_Allow_Rearrangement = true;
+    public bool ParamEditor_Row_List_Enable_Line_Wrapping = true;
+    public bool ParamEditor_Row_List_Enable_Row_Grouping = false;
     public bool Param_HideEnums = false;
     public bool Param_HideReferenceRows = false;
-    public bool Param_MakeMetaNamesPrimary = true;
     public bool Param_PasteAfterSelection = false;
     public bool Param_PasteThenSelect = true;
-    public bool Param_ShowFieldOffsets = false;
+    public bool ParamEditor_Field_List_Display_Offsets = false;
     public bool Param_ShowFieldEnumLabels = true;
     public bool Param_ShowFieldParamLabels = true;
     public bool Param_ShowFieldFmgLabels = true;
@@ -534,9 +538,9 @@ public class CFG
     public bool Param_HideObsoleteFields = true;
     public bool Param_ShowColorPreview = true;
     public bool Param_ShowGraphVisualisation = true;
-    public bool Param_PinnedParamsStayVisible = true;
-    public bool Param_PinnedRowsStayVisible = true;
-    public bool Param_PinnedFieldsStayVisible = true;
+    public bool ParamEditor_Param_List_Pinned_Stay_Visible = true;
+    public bool ParamEditor_Row_List_Pinned_Stay_Visible = true;
+    public bool ParamEditor_Field_List_Pinned_Stay_Visible = true;
     public bool Param_ViewInMapOption = true;
     public bool Param_ViewModelOption = true;
 

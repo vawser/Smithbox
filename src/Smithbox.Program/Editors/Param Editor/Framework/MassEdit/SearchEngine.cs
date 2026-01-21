@@ -328,7 +328,7 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                         : rx.IsMatch(auxBank.GetKeyForParam(param.Item2) == null
                             ? ""
                             : auxBank.GetKeyForParam(param.Item2)));
-            }, () => Project.Handler.ParamData.AuxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
+            }, () => Project.Handler.ParamData.AuxBanks.Count > 0 && CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
 
         defaultFilter = newCmd(new[] { "param name (regex)" },
             "Selects all params whose name matches the given regex", (args, lenient) =>
@@ -566,7 +566,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         return false;
                     };
                 };
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         filterList.Add("propwhere", newCmd(new[] { "field internalName", "cell/field selector" },
             "Selects rows where the specified field appears when the given cell/field search is given",
             (args, lenient) =>
@@ -585,7 +585,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         return res.Contains(testCol);
                     };
                 };
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         filterList.Add("fmg", newCmd(new[] { "fmg title (regex)" },
             "Selects rows which have an attached FMG and that FMG's text matches the given regex",
             (args, lenient) =>
@@ -614,7 +614,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         return e != null && rx.IsMatch(e.Text ?? "");
                     };
                 };
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         filterList.Add("vanillaprop", newCmd(new[] { "field internalName", "field value (regex)" },
             "Selects rows where the vanilla equivilent of that row has a value for the given field that matches the given regex",
             (args, lenient) =>
@@ -643,7 +643,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         return rx.IsMatch(term);
                     };
                 };
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         filterList.Add("vanillaproprange", newCmd(
             new[] { "field internalName", "field value minimum (inclusive)", "field value maximum (inclusive)" },
             "Selects rows where the vanilla equivilent of that row has a value for the given field that falls in the given numerical range",
@@ -672,7 +672,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                     };
                 };
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         filterList.Add("auxprop", newCmd(new[] { "parambank name", "field internalName", "field value (regex)" },
             "Selects rows where the equivilent of that row in the given regulation or parambnd has a value for the given field that matches the given regex.\nCan be used to determine if an aux row exists.",
             (args, lenient) =>
@@ -707,7 +707,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         return rx.IsMatch(term);
                     };
                 };
-            }, () => auxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
+            }, () => auxBanks.Count > 0 && CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         filterList.Add("auxproprange", newCmd(
             new[]
             {
@@ -741,7 +741,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                     };
                 };
-            }, () => auxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
+            }, () => auxBanks.Count > 0 && CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         filterList.Add("semijoin",
             newCmd(
                 new[]
@@ -786,7 +786,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                             return possibleValues.Contains(toFind);
                         };
                     };
-                }, () => CFG.Current.Param_AdvancedMassedit));
+                }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         filterList.Add("unique", newCmd(new string[] { "field" }, "Selects all rows where the value in the given field is unique", (args, lenient) =>
         {
             string field = args[0].Replace(@"\s", " ");
@@ -802,7 +802,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return !setOfDuped.Contains(row.Get(col));
                 };
             };
-        }, () => CFG.Current.Param_AdvancedMassedit));
+        }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
 
         defaultFilter = newCmd(new[] { "row ID or Name (regex)" },
             "Selects rows where either the ID or Name matches the given regex, except in strict/massedit mode",
@@ -1109,7 +1109,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                 Regex r = new('^' + args[0] + '$',
                     lenient ? RegexOptions.IgnoreCase : RegexOptions.None); //Leniency rules break from the norm
                 return row => col => r.IsMatch(col.GetColumnSfType());
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
 
         filterList.Add("default_value", newCmd(new string[0],
             "Selects cells/fields where the cell value is the same as the 'default' for the field.",

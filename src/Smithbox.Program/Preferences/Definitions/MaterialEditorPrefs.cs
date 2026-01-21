@@ -18,13 +18,14 @@ public class MaterialEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.MaterialEditor,
-
-            Section = "XXX",
-            Title = "XXX",
-
-            Description = "XXX",
             Spacer = true,
+
+            Section = SectionCategory.General,
+
+            Title = "XXX",
+            Description = "XXX",
 
             Draw = () => {
 

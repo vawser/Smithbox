@@ -20,10 +20,11 @@ public class ModelEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.ModelEditor,
             Spacer = true,
 
-            Section = "Properties",
+            Section = SectionCategory.ModelEditor_Properties,
 
             Title = "Display Community Names",
             Description = "If enabled, community names are displayed for FLVER property names.",
@@ -37,10 +38,11 @@ public class ModelEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.ModelEditor,
             Spacer = true,
 
-            Section = "Properties",
+            Section = SectionCategory.ModelEditor_Properties,
 
             Title = "Display Community Descriptions",
             Description = "If enabled, community descriptions are displayed in the tooltips for FLVER properties.",

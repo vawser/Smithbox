@@ -22,11 +22,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Frame Rate",
             Description = "Adjusts the frame rate of the viewport.",
@@ -49,10 +50,11 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
-            Section = "Rendering",
+            Section = SectionCategory.Rendering,
 
             Title = "Enable Model Rendering",
             Description = "If enabled, model rendering will occur within the viewport.",
@@ -68,10 +70,11 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
-            Section = "Rendering",
+            Section = SectionCategory.Rendering,
 
             Title = "Enable Texture Rendering",
             Description = "If enabled, texture rendering will occur within the viewport.",
@@ -87,10 +90,11 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
-            Section = "Rendering",
+            Section = SectionCategory.Rendering,
 
             Title = "Enable Frustum Culling",
             Description = "If enabled, entities outside of the camera frustum to be culled within the viewport.",
@@ -106,11 +110,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Rendering",
+            Section = SectionCategory.Rendering,
 
             Title = "Renderable Limit",
             Description = "This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.",
@@ -130,11 +135,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 4,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Rendering",
+            Section = SectionCategory.Rendering,
 
             Title = "Indirect Draw Buffer",
             Description = "This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception.",
@@ -150,11 +156,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 5,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Rendering",
+            Section = SectionCategory.Rendering,
 
             Title = "FLVER Bone Buffer",
             Description = "This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception.",
@@ -173,10 +180,11 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
-            Section = "Model Rendering",
+            Section = SectionCategory.Rendering,
 
             Title = "Enable Model Masks",
             Description = "If enabled, model masks will be accounted for when rendering viewport objects.",
@@ -192,10 +200,11 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
-            Section = "Model Rendering",
+            Section = SectionCategory.ModelRendering,
 
             Title = "Enable LOD Facesets",
             Description = "If enabled, render all facesets for all FLVER meshes, including LOD ones.",
@@ -211,11 +220,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Model Rendering",
+            Section = SectionCategory.ModelRendering,
 
             Title = "Untextured Model Brightness",
             Description = "Change the brightness of untextured models.",
@@ -230,11 +240,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Model Rendering",
+            Section = SectionCategory.ModelRendering,
 
             Title = "Untextured Model Saturation",
             Description = "Change the saturation of untextured models.",
@@ -253,10 +264,11 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
-            Section = "Selection",
+            Section = SectionCategory.Selection,
 
             Title = "Enable Selection Outline",
             Description = "If enabled, a selection outline will appear on selected objects.",
@@ -272,10 +284,11 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
-            Section = "Selection",
+            Section = SectionCategory.Selection,
 
             Title = "Enable Box Drag Selection",
             Description = "If enabled, you can click and drag the mouse to select multiple objects. (Ctrl: Subtract, Shift: Add)",
@@ -291,11 +304,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Selection",
+            Section = SectionCategory.Selection,
 
             Title = "Box Drag Distance Threshold",
             Description = "The distance threshold to use for the box drag. Lower means 'select objects closer to each other', Higher means 'select objects farther from each other'.",
@@ -311,10 +325,11 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
-            Section = "Selection",
+            Section = SectionCategory.Selection,
 
             Title = "Frame Selection Distance",
             Description = "Determine the distance the camera is placed at when framing a selection in the viewport.",
@@ -329,10 +344,11 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 4,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
-            Section = "Selection",
+            Section = SectionCategory.Selection,
 
             Title = "Frame Selection Offset",
             Description = "Determine the offset applied to the camera when framing a selection in the viewport.",
@@ -350,11 +366,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Coloring",
+            Section = SectionCategory.Coloring,
 
             Title = "Wireframe Color Variance",
             Description = "The variance factor when adjusting the coloring of wireframe viewport objects.",
@@ -370,11 +387,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Coloring",
+            Section = SectionCategory.Coloring,
 
             Title = "",
             Description = "",
@@ -392,11 +410,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Coloring",
+            Section = SectionCategory.Coloring,
 
             Title = "",
             Description = "",
@@ -421,11 +440,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Coloring",
+            Section = SectionCategory.Coloring,
 
             Title = "",
             Description = "",
@@ -465,11 +485,12 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 4,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
             InlineName = false,
 
-            Section = "Coloring",
+            Section = SectionCategory.Coloring,
 
             Title = "",
             Description = "",
@@ -547,10 +568,11 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
-            Section = "Viewport Filter Preset",
+            Section = SectionCategory.FilterPresets,
 
             Title = "",
             Description = "",

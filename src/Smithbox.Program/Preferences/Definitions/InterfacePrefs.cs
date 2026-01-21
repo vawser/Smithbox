@@ -21,11 +21,12 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Interface,
             Spacer = true,
             InlineName = false,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Interface Scale",
             Description = "Adjusts the scaling of the user interface throughout all of Smithbox.",
@@ -57,10 +58,11 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Interface Scale affected by DPI",
             Description = "Multiplies the user interface scale by your monitor's DPI setting.",
@@ -85,11 +87,12 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.Interface,
             Spacer = true,
             InlineName = false,
 
-            Section = "Fonts",
+            Section = SectionCategory.Fonts,
 
             Title = "Font Size",
             Description = "Adjusts the size of the font in Smithbox.",
@@ -110,10 +113,11 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.System,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.Fonts,
 
             Title = "Enable Alias Word-wrap",
             Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate.",
@@ -128,10 +132,11 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 4,
             Category = PreferenceCategory.System,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.Fonts,
 
             Title = "Enable Alias Word-wrap (Map Editor)",
             Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Map Editor only.",
@@ -145,10 +150,11 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 5,
             Category = PreferenceCategory.System,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.Fonts,
 
             Title = "Enable Alias Word-wrap (Model Editor)",
             Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Model Editor only.",
@@ -162,10 +168,11 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 6,
             Category = PreferenceCategory.System,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.Fonts,
 
             Title = "Enable Window Movement",
             Description = "If enabled, the internal windows can be moved and docked freely.",
@@ -183,11 +190,12 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Interface,
             Spacer = true,
             InlineName = false,
 
-            Section = "Fonts",
+            Section = SectionCategory.Fonts,
 
             Title = "English Font",
             Description = "Set the font used for English characters. .ttf and .otf expected.",
@@ -222,11 +230,12 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.Interface,
             Spacer = true,
             InlineName = false,
 
-            Section = "Fonts",
+            Section = SectionCategory.Fonts,
 
             Title = "Non-English Font",
             Description = "Set the font used for Non-English characters. .ttf and .otf expected.",
@@ -264,10 +273,11 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = "Additional Font Symbols",
+            Section = SectionCategory.AdditionalFontSymbols,
 
             Title = "Enable Chinese",
             Description = "Include Chinese font.",
@@ -282,10 +292,11 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = "Additional Font Symbols",
+            Section = SectionCategory.AdditionalFontSymbols,
 
             Title = "Enable Korean",
             Description = "Include Korean font.",
@@ -300,10 +311,11 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = "Additional Font Symbols",
+            Section = SectionCategory.AdditionalFontSymbols,
 
             Title = "Enable Thai",
             Description = "Include Thai font.",
@@ -318,10 +330,11 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = "Additional Font Symbols",
+            Section = SectionCategory.AdditionalFontSymbols,
 
             Title = "Enable Vietnamese",
             Description = "Include Vietnamese font.",
@@ -336,10 +349,11 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 4,
             Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = "Additional Font Symbols",
+            Section = SectionCategory.AdditionalFontSymbols,
 
             Title = "Enable Cyrillic",
             Description = "Include Cyrillic font.",
@@ -356,11 +370,12 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Interface,
             Spacer = true,
             InlineName = false,
 
-            Section = "Theme",
+            Section = SectionCategory.Theme,
 
             Title = "Theme Selection",
             Description = "Select the interface theme to use for Smithbox.",
@@ -413,11 +428,12 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Interface,
             Spacer = true,
             InlineName = false,
 
-            Section = "Theme Builder",
+            Section = SectionCategory.ThemeBuilder,
 
             Title = "New Theme Name",
             Description = "",

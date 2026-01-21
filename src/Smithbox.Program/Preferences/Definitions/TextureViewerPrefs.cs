@@ -18,13 +18,14 @@ public class TextureViewerPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.TextureViewer,
-
-            Section = "XXX",
-            Title = "XXX",
-
-            Description = "XXX",
             Spacer = true,
+
+            Section = SectionCategory.General,
+
+            Title = "XXX",
+            Description = "XXX",
 
             Draw = () => {
 

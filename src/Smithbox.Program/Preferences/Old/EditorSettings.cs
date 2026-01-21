@@ -16,149 +16,6 @@ using System.Numerics;
 namespace StudioCore.Application;
 
 //------------------------------------------
-// Text Editor
-//------------------------------------------
-#region Text Editor
-public class TextEditorTab
-{
-    public TextEditorTab() { }
-
-    public void Display()
-    {
-        // Data
-        if (ImGui.CollapsingHeader("Data", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Include Vanilla Cache", ref CFG.Current.TextEditor_Include_Vanilla_Cache);
-            UIHelper.Tooltip("If enabled, the vanilla cache is loaded, which enables the modified and unique difference features.");
-
-            ImGui.Checkbox("Enable Obsolete Container Loading", ref CFG.Current.TextEditor_Container_List_Display_Obsolete_Containers);
-            UIHelper.Tooltip("If enabled, obsolete containers will be loaded. Otherwise, they are ignored.");
-        }
-
-        // Primary Category
-        if (ImGui.CollapsingHeader("Primary Category", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            if (Smithbox.Orchestrator.SelectedProject != null)
-            {
-                var curProject = Smithbox.Orchestrator.SelectedProject;
-
-                if (ImGui.BeginCombo("Primary Category##primaryCategoryCombo", CFG.Current.TextEditor_Primary_Category.GetDisplayName()))
-                {
-                    foreach (var entry in Enum.GetValues(typeof(TextContainerCategory)))
-                    {
-                        var type = (TextContainerCategory)entry;
-
-                        if (TextUtils.IsSupportedLanguage(curProject, (TextContainerCategory)entry))
-                        {
-                            if (ImGui.Selectable(type.GetDisplayName()))
-                            {
-                                CFG.Current.TextEditor_Primary_Category = (TextContainerCategory)entry;
-
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    curProject.Handler.ParamEditor.DecoratorHandler.ClearFmgDecorators();
-                                }
-                            }
-                        }
-                    }
-                    ImGui.EndCombo();
-                }
-                UIHelper.Tooltip("Change the primary category, this determines which text files are used for FMG references and other stuff.");
-            }
-
-            ImGui.Checkbox("Hide non-primary categories in list", ref CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only);
-            UIHelper.Tooltip("Hide the non-primary categories in the File List.");
-
-        }
-
-        // File List
-        if (ImGui.CollapsingHeader("File List", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Simple File List", ref CFG.Current.TextEditor_Container_List_Hide_Unused_Containers);
-            UIHelper.Tooltip("Display the file list in a simple form: this means unused containers are hidden.");
-
-            ImGui.Checkbox("Display Community File Name", ref CFG.Current.TextEditor_Container_List_Display_Community_Names);
-            UIHelper.Tooltip("If enabled, the names in the File List will be given a community name.");
-
-            ImGui.Checkbox("Display Source Path", ref CFG.Current.TextEditor_Container_List_Display_Source_Path);
-            UIHelper.Tooltip("If enabled, the path of the source file will be displayed in the hover tooltip.");
-        }
-
-        // Text File List
-        if (ImGui.CollapsingHeader("Text File List", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Simple Text File List", ref CFG.Current.TextEditor_Text_File_List_Grouped_Display);
-            UIHelper.Tooltip("Display the text file list in a simple form: this means non-title or standalone files are hidden.");
-
-            ImGui.Checkbox("Display FMG ID", ref CFG.Current.TextEditor_Text_File_List_Display_ID);
-            UIHelper.Tooltip("Display the FMG ID in the Text File List by the name.");
-
-            ImGui.Checkbox("Display Community FMG Name", ref CFG.Current.TextEditor_Text_File_List_Display_Community_Names);
-            UIHelper.Tooltip("Display the FMG community name instead of the internal form.");
-        }
-
-        // Text Entries List
-        if (ImGui.CollapsingHeader("Text Entries List", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Display Empty Text Placeholder", ref CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text);
-            UIHelper.Tooltip("Display placeholder text for rows that have no text.");
-
-            ImGui.Checkbox("Trucate Displayed Text", ref CFG.Current.TextEditor_Text_Entry_List_Truncate_Name);
-            UIHelper.Tooltip("Truncate the displayed text so it is always one line (does not affect the contents of the entry).");
-
-            ImGui.Checkbox("Ignore ID on Duplication", ref CFG.Current.TextEditor_Text_Entry_List_Ignore_ID_Check);
-            UIHelper.Tooltip("Keep the Entry ID the same on duplication. Useful if you want to manually edit the IDs afterwards.");
-        }
-
-        // Entry Properties
-        if (ImGui.CollapsingHeader("Text Entry Properties", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Display Grouped Entries", ref CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries);
-            UIHelper.Tooltip("Include related entries in the Contents window, e.g. Title, Summary, Description, Effect entries that share the same ID.");
-
-            ImGui.Checkbox("Allow Duplicate IDs", ref CFG.Current.TextEditor_Text_Entry_Allow_Duplicate_ID);
-            UIHelper.Tooltip("Allow Entry ID input to apply change even if the ID is a duplicate of an existing entry row.");
-        }
-
-        // Text Export
-        if (ImGui.CollapsingHeader("Text Export", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Include Grouped Entries", ref CFG.Current.TextEditor_Text_Export_Include_Grouped_Entries);
-            UIHelper.Tooltip("When exporting Text Entries, if they are associated with a group, include the associated entries as well whilst exporting.");
-
-            ImGui.Checkbox("Use Quick Export", ref CFG.Current.TextEditor_Text_Export_Enable_Quick_Export);
-            UIHelper.Tooltip("Automatically name the export file instead of display the Export Text prompt. Will overwrite the existing quick export file each time.");
-        }
-
-        // Language Sync
-        if (ImGui.CollapsingHeader("Language Sync", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Display Primary Category only", ref CFG.Current.TextEditor_Language_Sync_Display_Primary_Only);
-            UIHelper.Tooltip("Only show your primary category (language) in the selection dropdown.");
-
-            ImGui.Checkbox("Apply Prefix", ref CFG.Current.TextEditor_Language_Sync_Apply_Prefix);
-            UIHelper.Tooltip("Add a prefix to synced text in the target language container for all new entries.");
-
-            ImGui.InputText("##prefixText", ref CFG.Current.TextEditor_Language_Sync_Prefix, 255);
-            UIHelper.Tooltip("The prefix to apply.");
-        }
-
-        // Text Entry Copy
-        if (ImGui.CollapsingHeader("Clipboard Action", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Include ID", ref CFG.Current.TextEditor_Text_Clipboard_Include_ID);
-            UIHelper.Tooltip("Include the row ID when copying a Text Entry to the clipboard.");
-
-            ImGui.Checkbox("Escape New Lines", ref CFG.Current.TextEditor_Text_Clipboard_Escape_New_Lines);
-            UIHelper.Tooltip("Escape the new lines characters when copying a Text Entry to the clipboard.");
-        }
-    }
-}
-
-#endregion
-
-//------------------------------------------
 // Param Editor
 //------------------------------------------
 #region Param Editor
@@ -172,187 +29,9 @@ public class ParamEditorTab
         {
             var curProject = Smithbox.Orchestrator.SelectedProject;
 
-            // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Use loose params", ref CFG.Current.UseLooseParams);
-                UIHelper.Tooltip("If true, then loose params will be loaded over the packed versions.");
-
-                ImGui.Checkbox("Use compact param editor", ref CFG.Current.UI_CompactParams);
-                UIHelper.Tooltip("Reduces the line height within the the Param Editor screen.");
-
-                ImGui.Checkbox("Show advanced options in massedit popup", ref CFG.Current.Param_AdvancedMassedit);
-                UIHelper.Tooltip("Show additional options for advanced users within the massedit popup.");
-
-                ImGui.Checkbox("Pinned params stay visible", ref CFG.Current.Param_PinnedParamsStayVisible);
-                UIHelper.Tooltip("Pinned params will stay visible when you scroll instead of only being pinned to the top of the list.");
-
-                ImGui.Checkbox("Pinned rows stay visible", ref CFG.Current.Param_PinnedRowsStayVisible);
-                UIHelper.Tooltip("Pinned rows will stay visible when you scroll instead of only being pinned to the top of the list.");
-
-                ImGui.Checkbox("Pinned fields stay visible", ref CFG.Current.Param_PinnedFieldsStayVisible);
-                UIHelper.Tooltip("Pinned fields will stay visible when you scroll instead of only being pinned to the top of the list.");
-            }
-
-            if (ImGui.CollapsingHeader("Metadata", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Text("Configure whether the current project draws the param editor metadata from project files rather than base files.");
-
-                if (ImGui.Button("Create Project Metadata##createProjectMetaData", DPI.StandardButtonSize))
-                {
-                    var dialog = PlatformUtils.Instance.MessageBox("This will overwrite any existing project-specific metadata. Are you sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                    if (dialog is DialogResult.Yes)
-                    {
-                        curProject.Handler.ParamData.CreateProjectMetadata();
-                    }
-                }
-
-                if (ImGui.Checkbox("Use project metadata", ref CFG.Current.Param_UseProjectMeta))
-                {
-                    curProject.Handler.ParamData.ParamMeta.Clear();
-                    curProject.Handler.ParamData.ReloadMeta();
-                }
-                UIHelper.Tooltip("Use project-specific metadata instead of Smithbox's base versions.");
-            }
-
-            if (ImGui.CollapsingHeader("Regulation Data", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                switch (curProject.Descriptor.ProjectType)
-                {
-                    case ProjectType.DES:
-                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DES);
-                        break;
-
-                    case ProjectType.DS1:
-                    case ProjectType.DS1R:
-                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DS1);
-                        break;
-
-                    case ProjectType.DS2:
-                    case ProjectType.DS2S:
-                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DS2);
-                        break;
-
-                    case ProjectType.BB:
-                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_BB);
-                        break;
-
-                    case ProjectType.DS3:
-                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DS3);
-                        break;
-
-                    case ProjectType.SDT:
-                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_SDT);
-                        break;
-
-                    case ProjectType.ER:
-                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_ER);
-                        break;
-
-                    case ProjectType.AC6:
-                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_AC6);
-                        break;
-
-                    case ProjectType.NR:
-                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_NR);
-                        break;
-                }
-                UIHelper.Tooltip("If enabled, row names are stripped upon save, meaning no row names will be stored in the regulation.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
-
-
-                switch (curProject.Descriptor.ProjectType)
-                {
-                    case ProjectType.DES:
-                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DES);
-                        break;
-
-                    case ProjectType.DS1:
-                    case ProjectType.DS1R:
-                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1);
-                        break;
-
-                    case ProjectType.DS2:
-                    case ProjectType.DS2S:
-                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2);
-                        break;
-
-                    case ProjectType.BB:
-                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_BB);
-                        break;
-
-                    case ProjectType.DS3:
-                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS3);
-                        break;
-
-                    case ProjectType.SDT:
-                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_SDT);
-                        break;
-
-                    case ProjectType.ER:
-                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ER);
-                        break;
-
-                    case ProjectType.AC6:
-                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_AC6);
-                        break;
-
-                    case ProjectType.NR:
-                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_NR);
-                        break;
-                }
-                UIHelper.Tooltip("If enabled, stripped row names that have been stored will be applied to the row names during param loading.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
-
-                if (curProject.Descriptor.ProjectType is ProjectType.ER && curProject.Handler.ParamData.PrimaryBank.ParamVersion >= 11210015L)
-                {
-                    ImGui.Checkbox("Save regulation.bin as DCX.DFLT", ref CFG.Current.Param_SaveERAsDFLT);
-                    UIHelper.Tooltip("If enabled, the regulation will be saved with the DCX.DFLT compression instead of the ZSTD compression that Elden Ring uses post patch 1.12.1.\n\nEnable if you want to load the regulation in an older tool that doesn't support ZSTD compression.");
-                }
-            }
-
-            // Params
-            if (ImGui.CollapsingHeader("Params", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                if (ImGui.Checkbox("Sort params alphabetically", ref CFG.Current.Param_AlphabeticalParams))
-                    UICache.ClearCaches();
-                UIHelper.Tooltip("Sort the Param View list alphabetically.");
-
-                if (ImGui.Checkbox("Show community param names", ref CFG.Current.Param_ShowParamCommunityName))
-                    UICache.ClearCaches();
-                UIHelper.Tooltip("Show the community name for a param instead of its raw filename in the list.");
-
-                if (ImGui.Checkbox("Display param categories", ref CFG.Current.Param_DisplayParamCategories))
-                    UICache.ClearCaches();
-                UIHelper.Tooltip("If defined, display params in their assigned param category groupings.");
-            }
-
-            // Rows
-            if (ImGui.CollapsingHeader("Rows", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Disable line wrapping", ref CFG.Current.Param_DisableLineWrapping);
-                UIHelper.Tooltip("Disable the row names from wrapping within the Row View list.");
-
-                ImGui.Checkbox("Disable row grouping", ref CFG.Current.Param_DisableRowGrouping);
-                UIHelper.Tooltip("Disable the grouping of connected rows in certain params, such as ItemLotParam within the Row View list.");
-            }
-
             // Fields
             if (ImGui.CollapsingHeader("Field Layout", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Allow field reordering", ref CFG.Current.Param_AllowFieldReorder);
-                UIHelper.Tooltip("Allow the field order to be changed by an alternative order as defined within the PARAM META file.");
-
-                ImGui.Separator();
-
-                ImGui.Checkbox("Show community field names first", ref CFG.Current.Param_MakeMetaNamesPrimary);
-                UIHelper.Tooltip("Crowd-sourced names will appear before the canonical name in the Field View list.");
-
-                ImGui.Checkbox("Show secondary field names", ref CFG.Current.Param_ShowSecondaryNames);
-                UIHelper.Tooltip("The crowd-sourced name (or the canonical name if the above option is enabled) will appear after the initial name in the Field View list.");
-
-                ImGui.Checkbox("Show field data offsets", ref CFG.Current.Param_ShowFieldOffsets);
-                UIHelper.Tooltip("The field offset within the .PARAM file will be shown to the left in the Field View List.");
-
                 ImGui.Checkbox("Show color preview", ref CFG.Current.Param_ShowColorPreview);
                 UIHelper.Tooltip("Show color preview in field column if applicable.");
 
@@ -414,6 +93,12 @@ public class ParamEditorTab
             // Values
             if (ImGui.CollapsingHeader("Values", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                ImGui.Checkbox("Display icon preview", ref CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
+
+                ImGui.Text("Icon Preview Scale:");
+                ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.1f, 0.1f, 10.0f);
+                UIHelper.Tooltip("Scale of the previewed image.");
+
                 ImGui.Checkbox("Show inverted percentages as traditional percentages", ref CFG.Current.Param_ShowTraditionalPercentages);
                 UIHelper.Tooltip("Displays field values that utilise the (1 - x) pattern as traditional percentages (e.g. -20 instead of 1.2).");
             }
@@ -509,34 +194,8 @@ public class ParamEditorTab
             // Icon Preview
             if (ImGui.CollapsingHeader("Icon Preview", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Display icon preview", ref CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
-
-                ImGui.Text("Icon Preview Scale:");
-                ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.1f, 0.1f, 10.0f);
-                UIHelper.Tooltip("Scale of the previewed image.");
             }
 
-            // Ignore if no game offsets exist for the project type
-            if (curProject.Handler.ParamData.ParamMemoryOffsets != null && curProject.Handler.ParamData.ParamMemoryOffsets.list != null)
-            {
-                // Auto-set to the latest version
-                if (ImGui.CollapsingHeader("Param Reloader", ImGuiTreeNodeFlags.DefaultOpen))
-                {
-                    ImGui.Checkbox("Set latest version on program start", ref CFG.Current.UseLatestGameOffset);
-                    UIHelper.Tooltip("If enabled, the param reloader version will be set to the latest executable version whenever Smithbox is started.");
-
-                    ImGui.Text("Param Reloader Version");
-                    UIHelper.Tooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");
-
-                    var index = CFG.Current.SelectedGameOffsetData;
-                    string[] options = curProject.Handler.ParamData.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
-
-                    if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
-                    {
-                        CFG.Current.SelectedGameOffsetData = index;
-                    }
-                }
-            }
         }
     }
 }

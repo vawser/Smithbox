@@ -41,14 +41,14 @@ public class ParamView
 
         DisplayHeader(isActiveView);
 
-        if (CFG.Current.Param_PinnedParamsStayVisible)
+        if (CFG.Current.ParamEditor_Param_List_Pinned_Stay_Visible)
         {
             DisplayPinnedParams(scale);
         }
 
         ImGui.BeginChild("paramTypes");
 
-        if (!CFG.Current.Param_PinnedParamsStayVisible)
+        if (!CFG.Current.ParamEditor_Param_List_Pinned_Stay_Visible)
         {
             DisplayPinnedParams(scale);
         }
@@ -206,7 +206,7 @@ public class ParamView
                 var keyList = list.Where(param => param.Item1 == Editor.Project.Handler.ParamData.PrimaryBank)
                     .Select(param => Editor.Project.Handler.ParamData.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
 
-                if (CFG.Current.Param_AlphabeticalParams)
+                if (CFG.Current.ParamEditor_Param_List_Sort_Alphabetically)
                 {
                     keyList.Sort();
                 }
@@ -225,7 +225,7 @@ public class ParamView
         var categoryObj = Editor.Project.Handler.ParamData.ParamCategories;
         var categories = Editor.Project.Handler.ParamData.ParamCategories.Categories;
 
-        if (categories != null && CFG.Current.Param_DisplayParamCategories)
+        if (categories != null && CFG.Current.ParamEditor_Param_List_Display_Categories)
         {
             var generalParamList = new List<string>();
 
@@ -350,7 +350,7 @@ public class ParamView
 
             var displayedName = paramKey;
 
-            if (CFG.Current.Param_ShowParamCommunityName)
+            if (CFG.Current.ParamEditor_Param_List_Display_Community_Names)
             {
                 var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
                 var names = meta?.DisplayNames;

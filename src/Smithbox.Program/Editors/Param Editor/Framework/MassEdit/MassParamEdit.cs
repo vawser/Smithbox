@@ -1076,7 +1076,7 @@ public class MEOperationArgument
                     throw new Exception($@"Could not find row {id} in param {address[0]}");
                 var value = row.Get(field).ToParamEditorString();
                 return (i, param) => (j, row) => (k, col) => value;
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("average", newGetter(new[] { "field internalName", "row selector" },
             "Gives the mean value of the cells/fields found using the given selector, for the currently selected param",
             field => (i, param) =>
@@ -1104,7 +1104,7 @@ public class MEOperationArgument
 
                 return (j, row) => (k, c) => avg.ToString();
 
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("median", newGetter(new[] { "field internalName", "row selector" },
             "Gives the median value of the cells/fields found using the given selector, for the currently selected param",
             field => (i, param) =>
@@ -1125,7 +1125,7 @@ public class MEOperationArgument
                 var avg = vals.OrderBy(val => Convert.ToDouble(val)).ElementAt(vals.Count() / 2);
 
                 return (j, row) => (k, c) => avg.ToParamEditorString();
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("mode", newGetter(new[] { "field internalName", "row selector" },
             "Gives the most common value of the cells/fields found using the given selector, for the currently selected param",
             field => (i, param) =>
@@ -1145,7 +1145,7 @@ public class MEOperationArgument
                     .First().Item1;
 
                 return (j, row) => (k, c) => avg.ToParamEditorString();
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("min", newGetter(new[] { "field internalName", "row selector" },
             "Gives the smallest value from the cells/fields found using the given param, row selector and field",
             field => (i, param) =>
@@ -1164,7 +1164,7 @@ public class MEOperationArgument
                 var min = rows.Min(r => r[field[0]].Value.Value);
 
                 return (j, row) => (k, c) => min.ToParamEditorString();
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("max", newGetter(new[] { "field internalName", "row selector" },
             "Gives the largest value from the cells/fields found using the given param, row selector and field",
             field => (i, param) =>
@@ -1183,7 +1183,7 @@ public class MEOperationArgument
                 var max = rows.Max(r => r[field[0]].Value.Value);
 
                 return (j, row) => (k, c) => max.ToParamEditorString();
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("random", newGetter(
             new[] { "minimum number (inclusive)", "maximum number (exclusive)" },
             "Gives a random decimal number between the given values for each selected value", minAndMax =>
@@ -1202,7 +1202,7 @@ public class MEOperationArgument
 
                 var range = max - min;
                 return (i, param) => (j, row) => (k, c) => ((Random.Shared.NextDouble() * range) + min).ToString();
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("randint", newGetter(
             new[] { "minimum integer (inclusive)", "maximum integer (inclusive)" },
             "Gives a random integer between the given values for each selected value", minAndMax =>
@@ -1220,7 +1220,7 @@ public class MEOperationArgument
                 }
 
                 return (i, param) => (j, row) => (k, c) => Random.Shared.NextInt64(min, max + 1).ToString();
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("randFrom", newGetter(new[] { "param name", "field internalName", "row selector" },
             "Gives a random value from the cells/fields found using the given param, row selector and field, for each selected value",
             paramFieldRowSelector =>
@@ -1233,25 +1233,25 @@ public class MEOperationArgument
                 var values = srcRows.Select((r, i) => r[paramFieldRowSelector[1]].Value.Value).ToArray();
                 return (i, param) =>
                     (j, row) => (k, c) => values[Random.Shared.NextInt64(values.Length)].ToString();
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("paramIndex", newGetter(new string[0],
             "Gives an integer for the current selected param, beginning at 0 and increasing by 1 for each param selected",
             empty => (i, param) => (j, row) => (k, col) =>
             {
                 return i.ToParamEditorString();
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("rowIndex", newGetter(new string[0],
             "Gives an integer for the current selected row, beginning at 0 and increasing by 1 for each row selected",
             empty => (i, param) => (j, row) => (k, col) =>
             {
                 return j.ToParamEditorString();
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
         argumentGetters.Add("fieldIndex", newGetter(new string[0],
             "Gives an integer for the current selected cell/field, beginning at 0 and increasing by 1 for each cell/field selected",
             empty => (i, param) => (j, row) => (k, col) =>
             {
                 return k.ToParamEditorString();
-            }, () => CFG.Current.Param_AdvancedMassedit));
+            }, () => CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands));
     }
 
     public List<(string, string[])> AllArguments()

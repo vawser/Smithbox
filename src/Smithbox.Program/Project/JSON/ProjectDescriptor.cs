@@ -116,9 +116,14 @@ public class LegacyProjectDescriptor
         UseLooseParams = false;
 
         // Account for this for DS3 projects
+        if (curProject.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            UseLooseParams = CFG.Current.ParamEditor_Loose_Param_Mode_DS2;
+        }
+
         if (curProject.Descriptor.ProjectType is ProjectType.DS3)
         {
-            UseLooseParams = CFG.Current.UseLooseParams;
+            UseLooseParams = CFG.Current.ParamEditor_Loose_Param_Mode_DS3;
         }
 
         PartialParams = false;

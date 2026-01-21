@@ -126,7 +126,7 @@ public class ParamFieldView
             List<string> pinnedFields =
                 Editor.Project.Descriptor.PinnedFields.GetValueOrDefault(activeParam, null);
 
-            if (CFG.Current.Param_PinnedFieldsStayVisible)
+            if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
                 ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + (1 + pinnedFields?.Count ?? 0));
             }
@@ -176,7 +176,7 @@ public class ParamFieldView
                 "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.Handler.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
 
             // Pinned Fields
-            if (CFG.Current.Param_PinnedFieldsStayVisible)
+            if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
                 if (pinnedFields?.Count > 0)
                 {
@@ -250,12 +250,42 @@ public class ParamFieldView
 
             if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
             {
-                CFG.Current.Param_MakeMetaNamesPrimary = !CFG.Current.Param_MakeMetaNamesPrimary;
+                if(CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source)
+                {
+                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Community;
+                }
+                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
+                {
+                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Source_Community;
+                }
+                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
+                {
+                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Community_Source;
+                }
+                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
+                {
+                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
+                }
             }
 
-            var communityFieldNameMode = "Internal";
-            if (CFG.Current.Param_MakeMetaNamesPrimary)
+            var communityFieldNameMode = "";
+
+            if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source)
+            {
+                communityFieldNameMode = "Source";
+            }
+            else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
+            {
                 communityFieldNameMode = "Community";
+            }
+            else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
+            {
+                communityFieldNameMode = "Source (Community)";
+            }
+            else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
+            {
+                communityFieldNameMode = "Community (Source)";
+            }
 
             UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
@@ -292,11 +322,11 @@ public class ParamFieldView
 
             if (ImGui.Button($"{Icons.MapSigns}", DPI.IconButtonSize))
             {
-                CFG.Current.Param_ShowFieldOffsets = !CFG.Current.Param_ShowFieldOffsets;
+                CFG.Current.ParamEditor_Field_List_Display_Offsets = !CFG.Current.ParamEditor_Field_List_Display_Offsets;
             }
 
             var fieldOffsetColumnMode = "Hidden";
-            if (CFG.Current.Param_ShowFieldOffsets)
+            if (CFG.Current.ParamEditor_Field_List_Display_Offsets)
                 fieldOffsetColumnMode = "Visible";
 
             UIHelper.Tooltip($"Toggle the display of the field offset column.\nCurrent Mode: {fieldOffsetColumnMode}");
@@ -464,7 +494,7 @@ public class ParamFieldView
         List<(ParamEditorPseudoColumn, Param.Column)> vcols, List<List<(ParamEditorPseudoColumn, Param.Column)>> auxCols, ref int imguiId,
         string activeParam, ParamSelection selection, List<string> pinnedFields)
     {
-        List<string> fieldOrder = meta is { AlternateOrder: not null } && CFG.Current.Param_AllowFieldReorder
+        List<string> fieldOrder = meta is { AlternateOrder: not null } && CFG.Current.ParamEditor_Field_List_Allow_Rearrangement
             ? [..meta.AlternateOrder]
             : [];
 
@@ -477,7 +507,7 @@ public class ParamFieldView
         }
 
         if (meta != null &&
-            CFG.Current.Param_AllowFieldReorder && 
+            CFG.Current.ParamEditor_Field_List_Allow_Rearrangement && 
             (meta is { AlternateOrder: null } || meta.AlternateOrder.Count != fieldOrder.Count))
         {
             meta.AlternateOrder = [..fieldOrder];
@@ -491,7 +521,7 @@ public class ParamFieldView
             {
                 firstRow = false;
 
-                if (!CFG.Current.Param_PinnedFieldsStayVisible)
+                if (!CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
                 {
                     if (pinnedFields?.Count > 0)
                     {
@@ -1376,19 +1406,21 @@ public class ParamFieldView
 
             if (!string.IsNullOrWhiteSpace(altName))
             {
-                if (CFG.Current.Param_MakeMetaNamesPrimary)
+                if(CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
                 {
                     printedName = altName;
-                    if (CFG.Current.Param_ShowSecondaryNames)
-                        printedName = $"{printedName} ({internalName})";
                 }
-                else if (CFG.Current.Param_ShowSecondaryNames)
+                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
                 {
-                    printedName = $"{printedName} ({altName})";
+                    printedName = $"{internalName} ({altName})";
+                }
+                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
+                {
+                    printedName = $"{altName} ({internalName})";
                 }
             }
 
-            if (fieldOffset != null && CFG.Current.Param_ShowFieldOffsets)
+            if (fieldOffset != null && CFG.Current.ParamEditor_Field_List_Display_Offsets)
             {
                 printedName = $"{fieldOffset} {printedName}";
             }

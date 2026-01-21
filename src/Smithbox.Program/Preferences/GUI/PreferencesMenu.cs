@@ -53,8 +53,7 @@ public class PreferencesMenu
 
         list = methods
             .Select(m => (PreferenceItem)m.Invoke(null, null))
-            .OrderBy(s => s.Section)   // sort by Section
-            .ThenBy(s => s.Title)      // then by Title
+            .OrderBy(s => s.Section)
             .ToList();
 
         return list;
@@ -244,7 +243,7 @@ public class PreferencesMenu
         // Force General to the top
         foreach (var sectionGroup in groupedSettings)
         {
-            if (sectionGroup.Any(e => e.Section == "General"))
+            if (sectionGroup.Any(e => e.Section is SectionCategory.General))
             {
                 DisplayPrefSettings(sectionGroup);
             }
@@ -253,20 +252,21 @@ public class PreferencesMenu
         // Then display the rest
         foreach (var sectionGroup in groupedSettings)
         {
-            if (sectionGroup.Any(e => e.Section != "General"))
+            if (sectionGroup.Any(e => e.Section is not SectionCategory.General))
             {
                 DisplayPrefSettings(sectionGroup);
             }
         }
     }
 
-    private void DisplayPrefSettings(IGrouping<string, PreferenceItem> sectionGroup)
+    private void DisplayPrefSettings(IGrouping<SectionCategory, PreferenceItem> sectionGroup)
     {
         // Filter settings in this section based on search
         var filteredSettings = sectionGroup
             .Where(s => string.IsNullOrWhiteSpace(searchFilter) ||
                         s.Title.Contains(searchFilter, StringComparison.OrdinalIgnoreCase) ||
                         s.Description.Contains(searchFilter, StringComparison.OrdinalIgnoreCase))
+            .OrderBy(s => s.OrderID)
             .ToList();
 
         // Skip sections with no matching settings
@@ -275,8 +275,8 @@ public class PreferencesMenu
 
         // Auto-expand sections if a search filter is active
         bool sectionOpen = string.IsNullOrWhiteSpace(searchFilter)
-            ? ImGui.CollapsingHeader(sectionGroup.Key, ImGuiTreeNodeFlags.DefaultOpen)
-            : ImGui.CollapsingHeader(sectionGroup.Key, ImGuiTreeNodeFlags.DefaultOpen);
+            ? ImGui.CollapsingHeader(sectionGroup.Key.GetDisplayName(), ImGuiTreeNodeFlags.DefaultOpen)
+            : ImGui.CollapsingHeader(sectionGroup.Key.GetDisplayName(), ImGuiTreeNodeFlags.DefaultOpen);
 
         if (sectionOpen)
         {

@@ -18,13 +18,14 @@ public class GparamEditorPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.GparamEditor,
-
-            Section = "XXX",
-            Title = "XXX",
-
-            Description = "XXX",
             Spacer = true,
+
+            Section = SectionCategory.General,
+
+            Title = "XXX",
+            Description = "XXX",
 
             Draw = () => {
 

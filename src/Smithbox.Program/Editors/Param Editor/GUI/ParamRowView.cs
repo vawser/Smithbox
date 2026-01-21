@@ -82,7 +82,7 @@ public class ParamRowView
                 if (compareCol != null)
                 {
                     ImGui.TableSetupColumn("rowCol2", ImGuiTableColumnFlags.None, 0.4f);
-                    if (CFG.Current.Param_PinnedRowsStayVisible)
+                    if (CFG.Current.ParamEditor_Row_List_Pinned_Stay_Visible)
                     {
                         ImGui.TableSetupScrollFreeze(2, 1 + pinnedRowList.Count);
                     }
@@ -98,7 +98,7 @@ public class ParamRowView
                 }
                 else
                 {
-                    if (CFG.Current.Param_PinnedRowsStayVisible)
+                    if (CFG.Current.ParamEditor_Row_List_Pinned_Stay_Visible)
                     {
                         ImGui.TableSetupScrollFreeze(1, pinnedRowList.Count);
                     }
@@ -160,7 +160,7 @@ public class ParamRowView
 
                 if (meta != null)
                 {
-                    enableGrouping = !CFG.Current.Param_DisableRowGrouping && meta.ConsecutiveIDs;
+                    enableGrouping = CFG.Current.ParamEditor_Row_List_Enable_Row_Grouping && meta.ConsecutiveIDs;
                 }
 
                 // Rows
@@ -476,7 +476,7 @@ public class ParamRowView
 
         var label = $@"{r.ID} {Utils.ImGuiEscape(r.Name)}";
         label = Utils.ImGui_WordWrapString(label, ImGui.GetColumnWidth(),
-            CFG.Current.Param_DisableLineWrapping ? 1 : 3);
+            !CFG.Current.ParamEditor_Row_List_Enable_Line_Wrapping ? 1 : 3);
 
         if(View.TableGroupView.IsInTableGroupMode(activeParam))
         {
@@ -592,7 +592,7 @@ public class ParamRowView
     {
         var scale = DPI.UIScale();
 
-        if (CFG.Current.UI_CompactParams)
+        if (CFG.Current.ParamEditor_Enable_Compact_Mode)
         {
             // ItemSpacing only affects clickable area for selectables in tables. Add additional height to prevent gaps between selectables.
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 2.0f) * scale);
@@ -634,7 +634,7 @@ public class ParamRowView
             }
         }
 
-        if (CFG.Current.UI_CompactParams)
+        if (CFG.Current.ParamEditor_Enable_Compact_Mode)
         {
             ImGui.PopStyleVar();
         }

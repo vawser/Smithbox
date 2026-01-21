@@ -21,10 +21,11 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.System,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Check for new versions of Smithbox during startup",
             Description = "When enabled Smithbox will automatically check for new versions upon program start.",
@@ -39,10 +40,11 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.System,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Ignore Read Asserts",
             Description = "If enabled, when attempting to read files, asserts will be ignored.",
@@ -57,10 +59,11 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.System,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Use DCX Heuristic on Read",
             Description = "If enabled, if a DCX fails to read its compression type, use a heuristic to guess which it should be instead.",
@@ -78,10 +81,11 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.System,
             Spacer = true,
 
-            Section = "Loggers",
+            Section = SectionCategory.Loggers,
 
             Title = "Enable Action Log",
             Description = "If enabled, the action logger will be visible in the menu bar.",
@@ -96,11 +100,12 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.System,
             Spacer = true,
             InlineName = false,
 
-            Section = "Loggers",
+            Section = SectionCategory.Loggers,
 
             Title = "Action Visibility Duration",
             Description = "The number of frames for which the action logger message stays visible in the menu bar.\n-1 means the message never disappears.",
@@ -116,10 +121,11 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.System,
             Spacer = true,
 
-            Section = "Loggers",
+            Section = SectionCategory.Loggers,
 
             Title = "Enable Warning Log",
             Description = "If enabled, the warning logger will be visible in the menu bar.",
@@ -134,11 +140,12 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.System,
             Spacer = true,
             InlineName = false,
 
-            Section = "Loggers",
+            Section = SectionCategory.Loggers,
 
             Title = "Warning Visibility Duration",
             Description = "The number of frames for which the warning logger message stays visible in the menu bar.\n-1 means the message never disappears.",
@@ -157,10 +164,11 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.System,
             Spacer = true,
 
-            Section = "Developer",
+            Section = SectionCategory.Developer,
 
             Title = "Enable Developer Tools",
             Description = "Enables various tools meant for Smithbox developers only.",
@@ -175,11 +183,12 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.System,
             Spacer = true,
             InlineName = false,
 
-            Section = "Developer",
+            Section = SectionCategory.Developer,
 
             Title = "Smithbox Build Folder",
             Description = "Select the build directory for Smithbox (where the Smithbox.sln is placed).",

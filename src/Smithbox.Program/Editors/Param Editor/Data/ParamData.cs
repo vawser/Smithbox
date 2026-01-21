@@ -208,7 +208,7 @@ public class ParamData : IDisposable
         switch(Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DES)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DES)
                 {
                     PrimaryBank.RowNameRestore();
                 }
@@ -216,7 +216,7 @@ public class ParamData : IDisposable
 
             case ProjectType.DS1:
             case ProjectType.DS1R:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS1)
                 {
                     PrimaryBank.RowNameRestore();
                 }
@@ -224,42 +224,42 @@ public class ParamData : IDisposable
 
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS2)
                 {
                     PrimaryBank.RowNameRestore();
                 }
                 break;
 
             case ProjectType.BB:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_BB)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_BB)
                 {
                     PrimaryBank.RowNameRestore();
                 }
                 break;
 
             case ProjectType.DS3:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS3)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS3)
                 {
                     PrimaryBank.RowNameRestore();
                 }
                 break;
 
             case ProjectType.ER:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ER)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_ER)
                 {
                     PrimaryBank.RowNameRestore();
                 }
                 break;
 
             case ProjectType.AC6:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_AC6)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_AC6)
                 {
                     PrimaryBank.RowNameRestore();
                 }
                 break;
 
             case ProjectType.NR:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_NR)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_NR)
                 {
                     PrimaryBank.RowNameRestore();
                 }
@@ -388,7 +388,7 @@ public class ParamData : IDisposable
 
         var projectMetaDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
-        if (CFG.Current.Param_UseProjectMeta)
+        if (CFG.Current.Project_Enable_Project_Metadata)
         {
             if (Project.Descriptor.ProjectType != ProjectType.Undefined)
             {
@@ -421,7 +421,7 @@ public class ParamData : IDisposable
 
             try
             {
-                if (CFG.Current.Param_UseProjectMeta && Project.Descriptor.ProjectType != ProjectType.Undefined)
+                if (CFG.Current.Project_Enable_Project_Metadata && Project.Descriptor.ProjectType != ProjectType.Undefined)
                 {
                     meta.XmlDeserialize(Path.Join(projectMetaDir, fName), pdef);
                 }
@@ -448,7 +448,7 @@ public class ParamData : IDisposable
         var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Graph Legends.json");
 
-        if(CFG.Current.Param_UseProjectMeta)
+        if(CFG.Current.Project_Enable_Project_Metadata)
         {
             var projFolder = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project");
             var projFile = Path.Combine(projFolder, "Graph Legends.json");
@@ -491,7 +491,7 @@ public class ParamData : IDisposable
         var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Icon Configurations.json");
 
-        if (CFG.Current.Param_UseProjectMeta)
+        if (CFG.Current.Project_Enable_Project_Metadata)
         {
             var projFolder = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project");
             var projFile = Path.Combine(projFolder, "Icon Configurations.json");

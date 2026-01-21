@@ -1220,7 +1220,7 @@ public class FieldDecorators
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             ImGui.TextUnformatted(@"   <PARAM>");
             ImGui.TextUnformatted(@"   <FIELD>");
-            if (CFG.Current.Param_MakeMetaNamesPrimary)
+            if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
             {
                 ImGui.TextUnformatted(@"   <NAME>");
             }
@@ -1345,7 +1345,7 @@ public class FieldDecorators
 
             ImGui.TextUnformatted($"{paramString}:");
             ImGui.TextUnformatted($"{internalName}");
-            if (CFG.Current.Param_MakeMetaNamesPrimary)
+            if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
             {
                 ImGui.TextUnformatted($"{displayName}");
             }

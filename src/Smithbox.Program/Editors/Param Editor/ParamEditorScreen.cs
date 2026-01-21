@@ -274,7 +274,7 @@ public class ParamEditorScreen : EditorScreen
         MassEditHandler.DisplayMassEditPopupWindow();
         StatisticPopups();
 
-        if (CFG.Current.UI_CompactParams)
+        if (CFG.Current.ParamEditor_Enable_Compact_Mode)
         {
             ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(1.0f, 1.0f) * scale);
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 1.0f) * scale);
@@ -357,7 +357,7 @@ public class ParamEditorScreen : EditorScreen
             ParamToolView.Display();
         }
 
-        if (CFG.Current.UI_CompactParams)
+        if (CFG.Current.ParamEditor_Enable_Compact_Mode)
         {
             ImGui.PopStyleVar(3);
         }
@@ -510,92 +510,6 @@ public class ParamEditorScreen : EditorScreen
                 CFG.Current.Interface_ParamEditor_ToolWindow = !CFG.Current.Interface_ParamEditor_ToolWindow;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_ToolWindow);
-
-            ImGui.Separator();
-
-            // Quick toggles for some of the Param Editor param visibility options
-
-            if (ImGui.MenuItem("Param: Community Names"))
-            {
-                CFG.Current.Param_ShowParamCommunityName = !CFG.Current.Param_ShowParamCommunityName;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowParamCommunityName);
-
-            if (ImGui.MenuItem("Param: Categories"))
-            {
-                CFG.Current.Param_DisplayParamCategories = !CFG.Current.Param_DisplayParamCategories;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_DisplayParamCategories);
-
-            ImGui.Separator();
-
-            // Quick toggles for some of the Param Editor field visibility options
-
-            if (ImGui.MenuItem("Field: Vanilla Comparison Column"))
-            {
-                CFG.Current.Param_ShowVanillaColumn = !CFG.Current.Param_ShowVanillaColumn;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowVanillaColumn);
-
-            if (ImGui.MenuItem("Field: Source Names"))
-            {
-                CFG.Current.Param_ShowSecondaryNames = !CFG.Current.Param_ShowSecondaryNames;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowSecondaryNames);
-
-            if (ImGui.MenuItem("Field: Community Names"))
-            {
-                CFG.Current.Param_MakeMetaNamesPrimary = !CFG.Current.Param_MakeMetaNamesPrimary;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_MakeMetaNamesPrimary);
-
-            if (ImGui.MenuItem("Field: Offsets"))
-            {
-                CFG.Current.Param_ShowFieldOffsets = !CFG.Current.Param_ShowFieldOffsets;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowFieldOffsets);
-
-            if (ImGui.MenuItem("Field: Padding"))
-            {
-                CFG.Current.Param_HidePaddingFields = !CFG.Current.Param_HidePaddingFields;
-            }
-            UIHelper.ShowActiveStatus(!CFG.Current.Param_HidePaddingFields);
-
-            if (ImGui.MenuItem("Field: Obsolete"))
-            {
-                CFG.Current.Param_HideObsoleteFields = !CFG.Current.Param_HideObsoleteFields;
-            }
-            UIHelper.ShowActiveStatus(!CFG.Current.Param_HideObsoleteFields);
-
-            if (ImGui.MenuItem("Field: Enum Helper"))
-            {
-                CFG.Current.Param_HideEnums = !CFG.Current.Param_HideEnums;
-            }
-            UIHelper.ShowActiveStatus(!CFG.Current.Param_HideEnums);
-
-            if (ImGui.MenuItem("Field: Reference Helper"))
-            {
-                CFG.Current.Param_HideReferenceRows = !CFG.Current.Param_HideReferenceRows;
-            }
-            UIHelper.ShowActiveStatus(!CFG.Current.Param_HideReferenceRows);
-
-            if (ImGui.MenuItem("Field: Image Preview"))
-            {
-                CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn = !CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
-
-            if (ImGui.MenuItem("Field: Color Preview"))
-            {
-                CFG.Current.Param_ShowColorPreview = !CFG.Current.Param_ShowColorPreview;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowColorPreview);
-
-            if (ImGui.MenuItem("Field: Graph Visualisation"))
-            {
-                CFG.Current.Param_ShowColorPreview = !CFG.Current.Param_ShowGraphVisualisation;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowGraphVisualisation);
 
             ImGui.EndMenu();
         }

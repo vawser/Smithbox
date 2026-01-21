@@ -130,7 +130,7 @@ public class ProjectData : IDisposable
 
         var targetFile = sourceFile;
 
-        if (CFG.Current.Param_UseProjectMeta)
+        if (CFG.Current.Project_Enable_Project_Metadata)
         {
             if (File.Exists(projectFile))
             {

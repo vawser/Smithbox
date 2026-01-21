@@ -383,7 +383,7 @@ public class ParamBank : IDisposable
 
         using var paramBnd = BND3.Read(fs.GetFile(paramPath).GetData());
 
-        if (CFG.Current.Param_StripRowNamesOnSave_DES)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_DES)
         {
             RowNameStrip();
         }
@@ -444,7 +444,7 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.Param_StripRowNamesOnSave_DES)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_DES)
         {
             RowNameRestore();
         }
@@ -562,7 +562,7 @@ public class ParamBank : IDisposable
 
         using var paramBnd = BND3.Read(fs.GetFile(param).GetData());
 
-        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
         {
             RowNameStrip();
         }
@@ -594,7 +594,7 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
         {
             RowNameRestore();
         }
@@ -689,7 +689,7 @@ public class ParamBank : IDisposable
 
         using var paramBnd = BND3.Read(fs.GetFile(param).GetData());
 
-        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
         {
             RowNameStrip();
         }
@@ -722,7 +722,7 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
         {
             RowNameRestore();
         }
@@ -822,7 +822,7 @@ public class ParamBank : IDisposable
 
             try
             {
-                if (CFG.Current.UseLooseParams)
+                if (CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
                 {
                     // Loose params: override params already loaded via regulation
                     PARAMDEF def = Project.Handler.ParamData.ParamDefs[lp.ParamType];
@@ -952,7 +952,7 @@ public class ParamBank : IDisposable
 
             try
             {
-                if (CFG.Current.UseLooseParams)
+                if (CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
                 {
                     // Loose params: override params already loaded via regulation
                     PARAMDEF def = Project.Handler.ParamData.ParamDefs[lp.ParamType];
@@ -1020,12 +1020,12 @@ public class ParamBank : IDisposable
             paramBnd = BND4.Read(data);
         }
 
-        if (!CFG.Current.UseLooseParams && CFG.Current.Param_StripRowNamesOnSave_DS2)
+        if (!CFG.Current.ParamEditor_Loose_Param_Mode_DS2 && CFG.Current.ParamEditor_Row_Name_Strip_DS2)
         {
             // Save params non-loosely: Replace params regulation and write remaining params loosely.
             if (paramBnd.Files.Find(e => e.Name.EndsWith(".param")) == null)
             {
-                if (CFG.Current.RepackLooseDS2Params)
+                if (CFG.Current.ParamEditor_Repack_Loose_Params_DS2)
                 {
                     paramBnd.Dispose();
                     param = $@"enc_regulation.bnd.dcx";
@@ -1081,7 +1081,7 @@ public class ParamBank : IDisposable
 
             RowNameRestore();
         }
-        else if (CFG.Current.Param_StripRowNamesOnSave_DS2)
+        else if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
         {
             // Save params loosely: Strip params from regulation and write all params loosely.
 
@@ -1143,7 +1143,7 @@ public class ParamBank : IDisposable
         }
         else
         {
-            if (CFG.Current.UseLooseParams && TargetFS.FileExists(looseFile))
+            if (CFG.Current.ParamEditor_Loose_Param_Mode_DS3 && TargetFS.FileExists(looseFile))
             {
                 try
                 {
@@ -1197,7 +1197,7 @@ public class ParamBank : IDisposable
 
         BND4 paramBnd = SFUtil.DecryptDS3Regulation(data);
 
-        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_DS3)
         {
             RowNameStrip();
         }
@@ -1212,7 +1212,7 @@ public class ParamBank : IDisposable
         }
 
         // If not loose write out the new regulation
-        if (!CFG.Current.UseLooseParams)
+        if (!CFG.Current.ParamEditor_Loose_Param_Mode_DS3)
         {
             ProjectUtils.WriteWithBackup(Project, fs, toFs, @"Data0.bdt", paramBnd, ProjectType.DS3);
         }
@@ -1235,7 +1235,7 @@ public class ParamBank : IDisposable
             ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam_dlc2.parambnd.dcx"), paramBND);
         }
 
-        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_DS3)
         {
             RowNameRestore();
         }
@@ -1294,7 +1294,7 @@ public class ParamBank : IDisposable
 
         var paramBnd = BND4.Read(data);
 
-        if (CFG.Current.Param_StripRowNamesOnSave_BB)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_BB)
         {
             RowNameStrip();
         }
@@ -1310,7 +1310,7 @@ public class ParamBank : IDisposable
 
         ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
 
-        if (CFG.Current.Param_StripRowNamesOnSave_BB)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_BB)
         {
             RowNameRestore();
         }
@@ -1370,7 +1370,7 @@ public class ParamBank : IDisposable
 
         var paramBnd = BND4.Read(data);
 
-        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_SDT)
         {
             RowNameStrip();
         }
@@ -1403,7 +1403,7 @@ public class ParamBank : IDisposable
 
         ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
 
-        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_SDT)
         {
             RowNameRestore();
         }
@@ -1510,7 +1510,7 @@ public class ParamBank : IDisposable
 
         BND4 regParams = SFUtil.DecryptERRegulation(data);
 
-        if (CFG.Current.Param_StripRowNamesOnSave_ER)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_ER)
         {
             RowNameStrip();
         }
@@ -1537,7 +1537,7 @@ public class ParamBank : IDisposable
                 ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
             }
         }
-        if (CFG.Current.Param_StripRowNamesOnSave_ER)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_ER)
         {
             RowNameRestore();
         }
@@ -1706,7 +1706,7 @@ public class ParamBank : IDisposable
 
         BND4 regParams = SFUtil.DecryptAC6Regulation(data);
 
-        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_AC6)
         {
             RowNameStrip();
         }
@@ -1771,7 +1771,7 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_AC6)
         {
             RowNameRestore();
         }
@@ -1902,7 +1902,7 @@ public class ParamBank : IDisposable
 
         BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
 
-        if (CFG.Current.Param_StripRowNamesOnSave_NR)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
         {
             RowNameStrip();
         }
@@ -1950,7 +1950,7 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.Param_StripRowNamesOnSave_NR)
+        if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
         {
             RowNameRestore();
         }

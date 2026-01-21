@@ -23,10 +23,11 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Project,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Enable Auto-Load on Smithbox Start",
             Description = "If enabled, a previously loaded project will be loaded automatically upon starting Smithbox.",
@@ -40,10 +41,11 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.Project,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Enable Automatic Auto-Load Assignment",
             Description = "If enabled, loading a project will automatically flag it to 'auto-load'.",
@@ -58,11 +60,12 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.Project,
             Spacer = true,
             InlineName = false,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Default Project Directory",
             Description = "The default directory to use during the project directory selection when creating a new project.",
@@ -91,11 +94,12 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 4,
             Category = PreferenceCategory.Project,
             Spacer = true,
             InlineName = false,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Default Data Directory",
             Description = "The default directory to use during the data directory selection when creating a new project.",
@@ -123,10 +127,11 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.Project,
             Spacer = true,
 
-            Section = "General",
+            Section = SectionCategory.General,
 
             Title = "Enable Backup Saves",
             Description = "If enabled, backup files are created during save events (i.e. .bak and .prev files).",
@@ -145,7 +150,7 @@ public class ProjectPrefs
     //        Category = PreferenceCategory.Project,
     //        Spacer = true,
 
-    //        Section = "General",
+              // Section = SectionCategory.General,
 
     //        Title = "Backup Save Type",
     //        Description = "Determines the type of backup saving that occurs.\nSimple: backup files are placed along side source file.\nComplete: backup files are stored in a time-dated folder.",
@@ -177,10 +182,11 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Project,
             Spacer = true,
 
-            Section = "Automatic Save",
+            Section = SectionCategory.AutomaticSave,
 
             Title = "Enable Automatic Save",
             Description = "If enabled, all enabled editors will automatically save.",
@@ -195,11 +201,12 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.Project,
             Spacer = true,
             InlineName = false,
 
-            Section = "Automatic Save",
+            Section = SectionCategory.AutomaticSave,
 
             Title = "Automatic Save Interval",
             Description = "The rate at which the automatic save occurs. In seconds.",
@@ -215,10 +222,11 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.Project,
             Spacer = true,
 
-            Section = "Automatic Save",
+            Section = SectionCategory.AutomaticSave,
 
             Title = "Include Map Editor",
             Description = "If enabled, the Map Editor is automatically saved.",
@@ -233,10 +241,11 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 3,
             Category = PreferenceCategory.Project,
             Spacer = true,
 
-            Section = "Automatic Save",
+            Section = SectionCategory.AutomaticSave,
 
             Title = "Include Param Editor",
             Description = "If enabled, the Param Editor is automatically saved.",
@@ -251,10 +260,11 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 4,
             Category = PreferenceCategory.Project,
             Spacer = true,
 
-            Section = "Automatic Save",
+            Section = SectionCategory.AutomaticSave,
 
             Title = "Include Text Editor",
             Description = "If enabled, the Text Editor is automatically saved.",
@@ -269,10 +279,11 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 5,
             Category = PreferenceCategory.Project,
             Spacer = true,
 
-            Section = "Automatic Save",
+            Section = SectionCategory.AutomaticSave,
 
             Title = "Include Graphics Param Editor",
             Description = "If enabled, the Graphics Param Editor is automatically saved.",
@@ -287,10 +298,11 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 6,
             Category = PreferenceCategory.Project,
             Spacer = true,
 
-            Section = "Automatic Save",
+            Section = SectionCategory.AutomaticSave,
 
             Title = "Include Material Editor",
             Description = "If enabled, the Material Editor is automatically saved.",
@@ -307,11 +319,12 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 0,
             Category = PreferenceCategory.Project,
             Spacer = true,
             InlineName = false,
 
-            Section = "Mod Engine 3",
+            Section = SectionCategory.ModEngine3,
 
             Title = "ME3 Profile Directory",
             Description = "Select the directory you want the generated ME3 profiles to be placed in.",
@@ -338,16 +351,17 @@ public class ProjectPrefs
     }
     #endregion
 
-    #region Dark Souls: Remastered
+    #region Data Overrides
     public static PreferenceItem MapEditor_Use_PTDE_Collisions_In_DS1R_Projects()
     {
         return new PreferenceItem
         {
+            OrderID = 1,
             Category = PreferenceCategory.Project,
             Spacer = true,
             DisplayRestrictions = new List<ProjectType>() { ProjectType.DS1R },
 
-            Section = "Dark Souls: Remastered",
+            Section = SectionCategory.DataOverride,
 
             Title = "Utilise PTDE Collisions in Dark Souls: Remastered Projects",
             Description = "If enabled, and a Dark Souls: Prepare to Die Edition install exists, the collision files from it will be used for collisions and navmeshes.",
@@ -361,12 +375,13 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
+            OrderID = 2,
             Category = PreferenceCategory.Project,
             Spacer = true,
             InlineName = false,
             DisplayRestrictions = new List<ProjectType>() { ProjectType.DS1R },
 
-            Section = "Dark Souls: Remastered",
+            Section = SectionCategory.DataOverride,
 
             Title = "PTDE Install Path",
             Description = "The install directory for Dark Souls: Prepare to Die Edition.",
@@ -390,5 +405,44 @@ public class ProjectPrefs
         };
     }
 
+    public static PreferenceItem Project_Enable_Project_Metadata()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.Project,
+            Spacer = true,
+
+            Section = SectionCategory.DataOverride,
+
+            Title = "Enable Project Metadata",
+            Description = "If enabled, Smithbox will use project-specific metadata instead of Smithbox's base versions.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Project_Metadata))
+                {
+                    curProject.Handler.ParamData.ParamMeta.Clear();
+                    curProject.Handler.ParamData.ReloadMeta();
+                }
+            },
+
+            PostDraw = () =>
+            {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (ImGui.Button("Create Project Metadata##createProjectMetaData", DPI.StandardButtonSize))
+                {
+                    var dialog = PlatformUtils.Instance.MessageBox("This will overwrite any existing project-specific metadata. Are you sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (dialog is DialogResult.Yes)
+                    {
+                        curProject.Handler.ParamData.CreateProjectMetadata();
+                    }
+                }
+            }
+        };
+    }
     #endregion
 }
