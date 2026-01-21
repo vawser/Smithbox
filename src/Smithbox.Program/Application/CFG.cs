@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
@@ -106,6 +107,9 @@ public class CFG
 
     public string Interface_Selected_Theme = "";
 
+    public float Interface_Context_Menu_Width = 350f;
+    public float Interface_Context_Menu_List_Height_Multiplier = 1f;
+
     #endregion
 
     #region Map Editor
@@ -114,8 +118,6 @@ public class CFG
     ///------------------------------------------------------------
     // Preferences
     public bool MapEditor_IgnoreSaveExceptions = false;
-
-    public bool MapEditor_LoadCollisions_ER = true;
 
     public bool MapEditor_Map_List_Display_Map_Aliases = true;
     public bool MapEditor_Map_List_Enable_Load_on_Double_Click = false;
@@ -501,90 +503,74 @@ public class CFG
     public bool ParamEditor_Stripped_Row_Name_Load_NR = false;
 
     // Param List
+    public bool ParamEditor_Param_List_Pinned_Stay_Visible = true;
     public bool ParamEditor_Param_List_Sort_Alphabetically = true;
     public bool ParamEditor_Param_List_Display_Community_Names = false;
     public bool ParamEditor_Param_List_Display_Categories = true;
 
-    // Row List
-
-    // Field List
-    public bool Param_ShowSecondaryNames = true;
-
-
+    // Table List
     public bool Param_DisplayTableGroupColumn = true;
     public ParamTableGroupRowDisplayType Param_TableGroupRowDisplayType = ParamTableGroupRowDisplayType.None;
 
-    public ParamFieldNameMode ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
-    public bool ParamEditor_Show_Advanced_Mass_Edit_Commands = false;
-    public bool ParamEditor_Field_List_Allow_Rearrangement = true;
+
+    // Row List
+    public bool ParamEditor_Row_List_Pinned_Stay_Visible = true;
     public bool ParamEditor_Row_List_Enable_Line_Wrapping = true;
     public bool ParamEditor_Row_List_Enable_Row_Grouping = false;
-    public bool Param_HideEnums = false;
-    public bool Param_HideReferenceRows = false;
+    public bool ParamEditor_Row_List_Display_Decorators = true;
+
+    // Field List
+    public ParamFieldNameMode ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
+    public bool ParamEditor_Field_List_Allow_Rearrangement = true;
+    public bool ParamEditor_Field_List_Display_Offsets = false;
+    public bool ParamEditor_Field_List_Pinned_Stay_Visible = true;
+    public bool ParamEditor_Field_List_Display_Padding = true;
+    public bool ParamEditor_Field_List_Display_Color_Picker = true;
+    public bool ParamEditor_Field_List_Display_Graph = true;
+    public bool ParamEditor_Field_List_Display_Map_Link = true;
+    public bool ParamEditor_Field_List_Display_Model_Link = true;
+    public bool ParamEditor_Field_List_Display_Decorators = true;
+    public bool ParamEditor_Field_List_Display_Field_Attributes = true;
+    public bool ParamEditor_Field_List_Display_Icon_Preview = true;
+    public float ParamEditor_Field_List_Icon_Preview_Scale = 1.0f;
+
+
+    // Mass Edit
+    public bool ParamEditor_Show_Advanced_Mass_Edit_Commands = false;
+
     public bool Param_PasteAfterSelection = false;
     public bool Param_PasteThenSelect = true;
-    public bool ParamEditor_Field_List_Display_Offsets = false;
-    public bool Param_ShowFieldEnumLabels = true;
-    public bool Param_ShowFieldParamLabels = true;
-    public bool Param_ShowFieldFmgLabels = true;
-    public bool Param_ShowFieldTextureLabels = true;
-    public bool Param_ShowFmgDecorator = true;
     public ParamRowCopyBehavior Param_RowCopyBehavior = ParamRowCopyBehavior.ID;
 
     public bool Param_ShowVanillaColumn = true;
     public bool Param_ShowAuxColumn = true;
 
-    public bool Param_HidePaddingFields = true;
-    public bool Param_HideObsoleteFields = true;
-    public bool Param_ShowColorPreview = true;
-    public bool Param_ShowGraphVisualisation = true;
-    public bool ParamEditor_Param_List_Pinned_Stay_Visible = true;
-    public bool ParamEditor_Row_List_Pinned_Stay_Visible = true;
-    public bool ParamEditor_Field_List_Pinned_Stay_Visible = true;
-    public bool Param_ViewInMapOption = true;
-    public bool Param_ViewModelOption = true;
-
-    public bool Param_ShowFieldDescription_onIcon = true;
-    public bool Param_ShowFieldLimits_onIcon = true;
-    public bool Param_ShowFieldDescription_onName = true;
-    public bool Param_ShowFieldLimits_onName = true;
-
-    public bool Param_ShowTraditionalPercentages = false;
+    public bool ParamEditor_Field_Input_Display_Traditional_Percentage = false;
 
     public bool Param_MassEdit_ShowAddButtons = true;
 
-    public float Param_ParamContextMenu_Width = 350f;
+    public bool ParamEditor_Row_Context_Display_Row_Name_Input = true;
+    public bool ParamEditor_Row_Context_Display_Shortcut_Tools = true;
+    public bool ParamEditor_Row_Context_Display_Pin_Options = true;
+    public bool ParamEditor_Row_Context_Display_Comparison_Options = true;
+    public bool ParamEditor_Row_Context_Display_Reverse_Lookup = true;
+    public bool ParamEditor_Row_Context_Display_Proliferate_Name = true;
+    public bool ParamEditor_Row_Context_Display_Inherit_Name = true;
+    public bool ParamEditor_Row_Context_Display_Row_Name_Tools = true;
 
-    public float Param_TableGroupContextMenu_Width = 350f;
-
-    public float Param_RowContextMenu_Width = 350f;
-    public bool Param_RowContextMenu_NameInput = true;
-    public bool Param_RowContextMenu_ShortcutTools = true;
-    public bool Param_RowContextMenu_PinOptions = true;
-    public bool Param_RowContextMenu_CompareOptions = true;
-    public bool Param_RowContextMenu_ReverseLoopup = true;
-    public bool Param_RowContextMenu_ProliferateName = true;
-    public bool Param_RowContextMenu_InheritName = true;
-    public bool Param_RowContextMenu_RowNameAdjustments = true;
-
-    public float Param_FieldContextMenu_Width = 350f;
-    public float Param_FieldContextMenu_ListHeightMultiplier = 1f;
-
-    public bool Param_FieldContextMenu_Split = false;
-    public bool Param_FieldContextMenu_Name = false;
-    public bool Param_FieldContextMenu_Description = false;
-    public bool Param_FieldContextMenu_PropertyInfo = false;
-    public bool Param_FieldContextMenu_PinOptions = true;
-    public bool Param_FieldContextMenu_CompareOptions = true;
-    public bool Param_FieldContextMenu_ValueDistribution = true;
-    public bool Param_FieldContextMenu_AddOptions = true;
-    public bool Param_FieldContextMenu_ReferenceSearch = true;
-    public bool Param_FieldContextMenu_References = true;
-    public bool Param_FieldContextMenu_MassEdit = true;
-    public bool Param_FieldContextMenu_FullMassEdit = true;
+    public bool ParamEditor_Field_Context_Split = false;
+    public bool ParamEditor_Field_Context_Display_Field_Name = false;
+    public bool ParamEditor_Field_Context_Display_Field_Description = false;
+    public bool ParamEditor_Field_Context_Display_Field_Attributes = false;
+    public bool ParamEditor_Field_Context_Display_Pin_Options = true;
+    public bool ParamEditor_Field_Context_Display_Comparison_Options = true;
+    public bool ParamEditor_Field_Context_Display_Field_Value_Distribution = true;
+    public bool ParamEditor_Field_Context_Display_Searchbar_Options = true;
+    public bool ParamEditor_Field_Context_Display_Reference_Search = true;
+    public bool ParamEditor_Field_Context_Display_References = true;
+    public bool ParamEditor_Field_Context_Display_Mass_Edit = true;
+    public bool ParamEditor_Field_Context_Display_Full_Mass_Edit = true;
     public bool Param_FieldContextMenu_ImagePreview_ContextMenu = false;
-    public bool Param_FieldContextMenu_ImagePreview_FieldColumn = true;
-    public float Param_FieldContextMenu_ImagePreviewScale = 1.0f;
 
     public int Param_Toolbar_Duplicate_Amount = 1;
     public int Param_Toolbar_Duplicate_Offset = 1;
@@ -747,38 +733,18 @@ public class CFG
     ///------------------------------------------------------------
     /// Graphics Param Editor
     ///------------------------------------------------------------
-    public bool Interface_Display_Alias_for_Gparam = true;
+    public bool GparamEditor_File_List_Display_Aliases = true;
 
-    public bool Gparam_DisplayParamGroupAlias = true;
-    public bool Gparam_DisplayParamFieldAlias = false;
+    public bool GparamEditor_Group_List_Display_Aliases = true;
+    public bool GparamEditor_Group_List_Display_Empty_Group = true;
+    public bool GparamEditor_Group_List_Display_Group_Add = true;
 
-    public bool Gparam_DisplayColorEditForVector4Fields = true;
-    public bool Gparam_DisplayEmptyGroups = true;
-    public bool Gparam_DisplayAddGroups = true;
-    public bool Gparam_DisplayAddFields = true;
+    public bool GparamEditor_Field_List_Display_Field_Add = true;
+    public bool GparamEditor_Field_List_Enable_Aliases = false;
 
-    public bool Gparam_ColorEdit_RGB = true;
-    public bool Gparam_ColorEdit_Decimal = false;
-    public bool Gparam_ColorEdit_HSV = false;
+    public bool GparamEditor_Value_List_Display_Color_Edit_V4 = true;
 
-    public string Gparam_QuickEdit_Chain = "+";
-
-    public string Gparam_QuickEdit_File = "file";
-    public string Gparam_QuickEdit_Group = "group";
-    public string Gparam_QuickEdit_Field = "field";
-
-    public string Gparam_QuickEdit_ID = "id";
-    public string Gparam_QuickEdit_TimeOfDay = "tod";
-    public string Gparam_QuickEdit_Value = "value";
-    public string Gparam_QuickEdit_Index = "index";
-
-    public string Gparam_QuickEdit_Set = "set";
-    public string Gparam_QuickEdit_Add = "add";
-    public string Gparam_QuickEdit_Subtract = "sub";
-    public string Gparam_QuickEdit_Multiply = "mult";
-    public string Gparam_QuickEdit_SetByRow = "setbyrow";
-    public string Gparam_QuickEdit_Restore = "restore";
-    public string Gparam_QuickEdit_Random = "random";
+    public ColorEditDisplayMode GparamEditor_Color_Edit_Mode = ColorEditDisplayMode.RGB;
 
     // Windows
     public bool Interface_GparamEditor_FileList = true;
@@ -803,13 +769,13 @@ public class CFG
     /// Texture Viewer
     ///------------------------------------------------------------
     // General
-    public bool TextureViewer_FileList_ShowLowDetail_Entries = true;
+    public bool TextureViewer_File_List_Display_Low_Detail_Entries = true;
 
-    public bool TextureViewer_FileList_ShowAliasName_Characters = true;
-    public bool TextureViewer_FileList_ShowAliasName_Assets = true;
-    public bool TextureViewer_FileList_ShowAliasName_Parts = true;
+    public bool TextureViewer_File_List_Display_Character_Aliases = true;
+    public bool TextureViewer_File_List_Display_Asset_Aliases = true;
+    public bool TextureViewer_File_List_Display_Part_Aliases = true;
 
-    public bool TextureViewer_TextureList_ShowAliasName_Particles = true;
+    public bool TextureViewer_File_List_Display_Particle_Aliases = true;
 
     public string TextureViewerToolbar_ExportTextureLocation = "";
     public bool TextureViewerToolbar_ExportTexture_IncludeFolder = true;
@@ -834,7 +800,7 @@ public class CFG
     /// Material Editor
     ///------------------------------------------------------------
     // General
-    public bool MaterialEditor_DisplayCommunityFieldNames = false;
+    public bool MaterialEditor_Properties_Display_Community_Names = false;
 
     // Windows
     public bool Interface_MaterialEditor_SourceList = true;

@@ -177,8 +177,29 @@ public enum SectionCategory
     TextEditor_Text_Clipboard = 806,
 
     // Gparam Editor
+    [Display(Name = "File List")]
+    GparamEditor_File_List = 900,
 
-    // Material Editor
+    [Display(Name = "Group List")]
+    GparamEditor_Group_List = 901,
+
+    [Display(Name = "Field List")]
+    GparamEditor_Field_List = 902,
+
+    [Display(Name = "Value List")]
+    GparamEditor_Value_List = 903,
+
+    [Display(Name = "Color Edit")]
+    GparamEditor_Color_Edit = 904,
 
     // Texture Viewer
+    [Display(Name = "File List")]
+    TextureViewer_File_List = 1000,
+
+    [Display(Name = "Texture List")]
+    TextureViewer_Texture_List = 1001,
+
+    // Material Editor
+    [Display(Name = "Properties")]
+    MaterialEditor_Properties = 1100,
 }

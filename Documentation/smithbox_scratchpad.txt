@@ -4,7 +4,6 @@
 - Implement new Settings impl
 
 - Update the code structuring in Param Editor to match the Foundry implementation
-- Add 'Variant Generator' that implements a generic framework that meets the requirements of the GenerateAffinity script: i.e. define instance count, the fields to modify for each count index (include abs/relative operations)
 
 - Implement FMG Descriptor pattern for Text Editor
 - Implement Views for Text Editor

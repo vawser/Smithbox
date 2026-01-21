@@ -109,11 +109,6 @@ public class FieldDecorators
     /// <param name="pEnum"></param>
     public static void Enum_Title(ParamEnum pEnum)
     {
-        if (!CFG.Current.Param_ShowFieldEnumLabels)
-        {
-            return;
-        }
-
         if (pEnum != null && pEnum.Name != null)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
@@ -143,11 +138,11 @@ public class FieldDecorators
     /// <returns></returns>
     public static bool Enum_ContextMenuItems(ParamEnum en, object oldval, ref object newval)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Param_FieldContextMenu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Interface_Context_Menu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, en.Values.Count) * CFG.Current.Param_FieldContextMenu_ListHeightMultiplier;
+        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, en.Values.Count) * CFG.Current.Interface_Context_Menu_List_Height_Multiplier;
 
-        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Param_FieldContextMenu_Width, listHeight)))
+        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Interface_Context_Menu_Width, listHeight)))
         {
             try
             {
@@ -184,11 +179,6 @@ public class FieldDecorators
     /// <param name="enumType"></param>
     public static void ProjectEnum_Title(ParamEditorScreen editor, string enumType)
     {
-        if (!CFG.Current.Param_ShowFieldEnumLabels)
-        {
-            return;
-        }
-
         var enumEntry = editor.Project.Handler.ProjectData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
         if (enumEntry != null)
@@ -212,24 +202,21 @@ public class FieldDecorators
     /// <param name="value"></param>
     public static void ProjectEnum_Value(ParamEditorScreen editor, string enumType, string value)
     {
-        if (CFG.Current.Param_HideEnums == false) //Move preference
+        var enumEntry = editor.Project.Handler.ProjectData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+
+        if (enumEntry != null)
         {
-            var enumEntry = editor.Project.Handler.ProjectData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+            var enumValueName = "";
+            var enumValue = enumEntry.Options.Where(e => e.ID == value).FirstOrDefault();
 
-            if (enumEntry != null)
+            if (enumValue != null)
             {
-                var enumValueName = "";
-                var enumValue = enumEntry.Options.Where(e => e.ID == value).FirstOrDefault();
-
-                if (enumValue != null)
-                {
-                    enumValueName = enumValue.Name;
-                }
-
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
-                ImGui.TextUnformatted(enumValueName);
-                ImGui.PopStyleColor();
+                enumValueName = enumValue.Name;
             }
+
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
+            ImGui.TextUnformatted(enumValueName);
+            ImGui.PopStyleColor();
         }
     }
 
@@ -242,11 +229,11 @@ public class FieldDecorators
     /// <returns></returns>
     public static bool ProjectEnum_ContextMenuItems(ProjectEnumEntry en, object oldval, ref object newval)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Param_FieldContextMenu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Interface_Context_Menu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, en.Options.Count) * CFG.Current.Param_FieldContextMenu_ListHeightMultiplier;
+        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, en.Options.Count) * CFG.Current.Interface_Context_Menu_List_Height_Multiplier;
 
-        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Param_FieldContextMenu_Width, listHeight)))
+        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Interface_Context_Menu_Width, listHeight)))
         {
             try
             {
@@ -282,11 +269,6 @@ public class FieldDecorators
     /// <param name="name"></param>
     public static void AliasEnum_Title(string name)
     {
-        if (!CFG.Current.Param_ShowFieldEnumLabels)
-        {
-            return;
-        }
-
         var inactiveEnum = false;
 
         if (!inactiveEnum)
@@ -306,59 +288,56 @@ public class FieldDecorators
     {
         var inactiveEnum = false;
 
-        if (!CFG.Current.Param_HideEnums) //Move preference
+        if (!inactiveEnum)
         {
-            if (!inactiveEnum)
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
+            if (value == "0" || value == "-1")
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
-                if (value == "0" || value == "-1")
+                var entry = entries.FirstOrDefault(e => e.ID == value);
+
+                if(isCharacterAlias)
                 {
-                    var entry = entries.FirstOrDefault(e => e.ID == value);
+                    entry = entries.FirstOrDefault(e => e.ID.Replace("c", "") == value);
+                }
 
-                    if(isCharacterAlias)
-                    {
-                        entry = entries.FirstOrDefault(e => e.ID.Replace("c", "") == value);
-                    }
-
-                    if (entry != null)
-                    {
-                        ImGui.TextUnformatted(entry.Name);
-                    }
-                    else
-                    {
-                        ImGui.TextUnformatted("None");
-                    }
+                if (entry != null)
+                {
+                    ImGui.TextUnformatted(entry.Name);
                 }
                 else
                 {
-                    var entry = entries.FirstOrDefault(e => e.ID == value);
-
-                    if (isCharacterAlias)
-                    {
-                        entry = entries.FirstOrDefault(e => e.ID.Replace("c", "") == value);
-                    }
-
-                    if (entry != null)
-                    {
-                        ImGui.TextUnformatted(entry.Name);
-                    }
-                    else
-                    {
-                        ImGui.TextUnformatted("Not Enumerated");
-                    }
+                    ImGui.TextUnformatted("None");
                 }
-                ImGui.PopStyleColor();
             }
+            else
+            {
+                var entry = entries.FirstOrDefault(e => e.ID == value);
+
+                if (isCharacterAlias)
+                {
+                    entry = entries.FirstOrDefault(e => e.ID.Replace("c", "") == value);
+                }
+
+                if (entry != null)
+                {
+                    ImGui.TextUnformatted(entry.Name);
+                }
+                else
+                {
+                    ImGui.TextUnformatted("Not Enumerated");
+                }
+            }
+            ImGui.PopStyleColor();
         }
     }
 
     public static bool CharacterAliasEnum_ContextMenuItems(List<AliasEntry> entries, object oldval, ref object newval)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Param_FieldContextMenu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Interface_Context_Menu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count) * CFG.Current.Param_FieldContextMenu_ListHeightMultiplier;
+        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count) * CFG.Current.Interface_Context_Menu_List_Height_Multiplier;
 
-        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Param_FieldContextMenu_Width, listHeight)))
+        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Interface_Context_Menu_Width, listHeight)))
         {
             try
             {
@@ -390,11 +369,11 @@ public class FieldDecorators
 
     public static bool AliasEnum_ContextMenuItems(List<AliasEntry> entries, object oldval, ref object newval)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Param_FieldContextMenu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Interface_Context_Menu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count) * CFG.Current.Param_FieldContextMenu_ListHeightMultiplier;
+        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count) * CFG.Current.Interface_Context_Menu_List_Height_Multiplier;
 
-        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Param_FieldContextMenu_Width, listHeight)))
+        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Interface_Context_Menu_Width, listHeight)))
         {
             try
             {
@@ -434,11 +413,6 @@ public class FieldDecorators
     /// <param name="limitValue"></param>
     public static void ConditionalAliasEnum_Title(string name, Param.Row row, string limitField, string limitValue)
     {
-        if (!CFG.Current.Param_ShowFieldEnumLabels)
-        {
-            return;
-        }
-
         var inactiveEnum = false;
 
         if (limitField != "")
@@ -473,37 +447,34 @@ public class FieldDecorators
             inactiveEnum = row != null && c != null && Convert.ToInt32(c.Value.Value) != Convert.ToInt32(conditionalValue);
         }
 
-        if (CFG.Current.Param_HideEnums == false) //Move preference
+        if (!inactiveEnum)
         {
-            if (!inactiveEnum)
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
+            if (value == "0" || value == "-1")
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
-                if (value == "0" || value == "-1")
+                var entry = entries.FirstOrDefault(e => e.ID == value);
+                if (entry != null)
                 {
-                    var entry = entries.FirstOrDefault(e => e.ID == value);
-                    if (entry != null)
-                    {
-                        ImGui.TextUnformatted(entry.Name);
-                    }
-                    else
-                    {
-                        ImGui.TextUnformatted("None");
-                    }
+                    ImGui.TextUnformatted(entry.Name);
                 }
                 else
                 {
-                    var entry = entries.FirstOrDefault(e => e.ID == value);
-                    if (entry != null)
-                    {
-                        ImGui.TextUnformatted(entry.Name);
-                    }
-                    else
-                    {
-                        ImGui.TextUnformatted("Not Enumerated");
-                    }
+                    ImGui.TextUnformatted("None");
                 }
-                ImGui.PopStyleColor();
             }
+            else
+            {
+                var entry = entries.FirstOrDefault(e => e.ID == value);
+                if (entry != null)
+                {
+                    ImGui.TextUnformatted(entry.Name);
+                }
+                else
+                {
+                    ImGui.TextUnformatted("Not Enumerated");
+                }
+            }
+            ImGui.PopStyleColor();
         }
     }
     #endregion
@@ -518,11 +489,6 @@ public class FieldDecorators
     public static void ParamReference_Title(List<ParamRef> paramRefs, Param.Row context)
     {
         if (paramRefs == null || paramRefs.Count == 0)
-        {
-            return;
-        }
-
-        if (!CFG.Current.Param_ShowFieldParamLabels)
         {
             return;
         }
@@ -943,11 +909,6 @@ public class FieldDecorators
             return;
         }
 
-        if (!CFG.Current.Param_ShowFieldFmgLabels)
-        {
-            return;
-        }
-
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
 
@@ -1158,11 +1119,6 @@ public class FieldDecorators
             return;
         }
 
-        if (!CFG.Current.Param_ShowFieldTextureLabels)
-        {
-            return;
-        }
-
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
 
@@ -1188,7 +1144,7 @@ public class FieldDecorators
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRef_Text);
 
-        if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
+        if (CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
         {
             CachedTexture cachedTexture = Smithbox.TextureManager.IconManager.LoadIcon(context, fieldIcon, oldval, fieldName, columnIndex);
 
@@ -1615,11 +1571,6 @@ public class FieldDecorators
     /// <param name="enumType"></param>
     public static void TileRef_Title(ParamEditorScreen editor, string enumType)
     {
-        if (!CFG.Current.Param_ShowFieldEnumLabels)
-        {
-            return;
-        }
-
         ImGui.TextUnformatted($@"   <Tile>");
     }
 
@@ -1631,7 +1582,7 @@ public class FieldDecorators
     /// <param name="value"></param>
     public static void TileRef_Value(ParamEditorScreen editor, string enumType, string value)
     {
-        if (CFG.Current.Param_HideEnums == false && editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapNames, out List<AliasEntry>? mapNames))
+        if (editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapNames, out List<AliasEntry>? mapNames))
         {
             var resultID = "";
             var resultName = "";

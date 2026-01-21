@@ -103,7 +103,7 @@ public class TexSourceView
 
                     if (Editor.Filters.IsFileFilterMatch(entry.Key.Path, aliasName))
                     {
-                        if (!CFG.Current.TextureViewer_FileList_ShowLowDetail_Entries)
+                        if (!CFG.Current.TextureViewer_File_List_Display_Low_Detail_Entries)
                         {
                             if (entry.Key.Filename.Contains("_l"))
                             {

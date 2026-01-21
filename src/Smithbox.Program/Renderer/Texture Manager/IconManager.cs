@@ -124,7 +124,7 @@ public class IconManager
             return;
 
         // Get scaled image size vector
-        var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
+        var scale = CFG.Current.ParamEditor_Field_List_Icon_Preview_Scale;
 
         // Get crop bounds
         float Xmin = float.Parse(cachedTexture.SubTexture.X);

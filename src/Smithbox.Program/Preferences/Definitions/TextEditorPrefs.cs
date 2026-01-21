@@ -35,6 +35,7 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
+                DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", CFG.Current.TextEditor_Primary_Category.GetDisplayName()))
                 {
                     foreach (var entry in Enum.GetValues(typeof(TextContainerCategory)))
@@ -432,6 +433,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
+                DPI.ApplyInputWidth();
                 ImGui.InputText("##inputValue", ref CFG.Current.TextEditor_Language_Sync_Prefix, 255);
             }
         };

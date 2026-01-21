@@ -1398,7 +1398,7 @@ public static class ParamMetaReferences
 
     public static void ColorPicker(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!CFG.Current.Param_ShowColorPreview)
+        if (!CFG.Current.ParamEditor_Field_List_Display_Color_Picker)
             return;
 
         if (activeParam == null)

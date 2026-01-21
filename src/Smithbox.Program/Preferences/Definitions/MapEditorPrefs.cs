@@ -377,6 +377,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
+                DPI.ApplyInputWidth();
                 ImGui.InputText("##inputeValue", ref CFG.Current.MapEditor_Character_Substitution_ID, 255);
             }
         };

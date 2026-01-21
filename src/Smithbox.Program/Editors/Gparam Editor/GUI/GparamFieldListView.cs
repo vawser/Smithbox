@@ -34,7 +34,7 @@ public class GparamFieldListView
 
         if (ImGui.Button($"{Icons.Bars}##addFieldToggle"))
         {
-            CFG.Current.Gparam_DisplayAddFields = !CFG.Current.Gparam_DisplayAddFields;
+            CFG.Current.GparamEditor_Field_List_Display_Field_Add = !CFG.Current.GparamEditor_Field_List_Display_Field_Add;
         }
         UIHelper.Tooltip("Toggle the display of empty groups.");
 
@@ -50,7 +50,7 @@ public class GparamFieldListView
                 GPARAM.IField entry = data.Fields[i];
 
                 var name = entry.Key;
-                if (CFG.Current.Gparam_DisplayParamFieldAlias)
+                if (CFG.Current.GparamEditor_Field_List_Enable_Aliases)
                     name = FormatInformationUtils.GetReferenceName(Project.Handler.GparamData.GparamInformation, entry.Key, entry.Name);
 
                 if (Editor.Filters.IsFieldFilterMatch(entry.Name, ""))
@@ -80,7 +80,7 @@ public class GparamFieldListView
                 Editor.ContextMenu.FieldContextMenu(i);
             }
 
-            if (CFG.Current.Gparam_DisplayAddFields)
+            if (CFG.Current.GparamEditor_Field_List_Display_Field_Add)
             {
                 ImGui.Separator();
 

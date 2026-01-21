@@ -92,13 +92,14 @@ public class InterfacePrefs
             Spacer = true,
             InlineName = false,
 
-            Section = SectionCategory.Fonts,
+            Section = SectionCategory.General,
 
             Title = "Font Size",
             Description = "Adjusts the size of the font in Smithbox.",
 
             Draw = () => {
-                ImGui.SliderFloat("Font size", ref CFG.Current.Interface_Font_Size, 8.0f, 32.0f);
+                DPI.ApplyInputWidth();
+                ImGui.SliderFloat("##inputValue", ref CFG.Current.Interface_Font_Size, 8.0f, 32.0f);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
@@ -114,10 +115,10 @@ public class InterfacePrefs
         return new PreferenceItem
         {
             OrderID = 3,
-            Category = PreferenceCategory.System,
+            Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = SectionCategory.Fonts,
+            Section = SectionCategory.General,
 
             Title = "Enable Alias Word-wrap",
             Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate.",
@@ -133,10 +134,10 @@ public class InterfacePrefs
         return new PreferenceItem
         {
             OrderID = 4,
-            Category = PreferenceCategory.System,
+            Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = SectionCategory.Fonts,
+            Section = SectionCategory.General,
 
             Title = "Enable Alias Word-wrap (Map Editor)",
             Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Map Editor only.",
@@ -151,10 +152,10 @@ public class InterfacePrefs
         return new PreferenceItem
         {
             OrderID = 5,
-            Category = PreferenceCategory.System,
+            Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = SectionCategory.Fonts,
+            Section = SectionCategory.General,
 
             Title = "Enable Alias Word-wrap (Model Editor)",
             Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Model Editor only.",
@@ -169,10 +170,10 @@ public class InterfacePrefs
         return new PreferenceItem
         {
             OrderID = 6,
-            Category = PreferenceCategory.System,
+            Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = SectionCategory.Fonts,
+            Section = SectionCategory.General,
 
             Title = "Enable Window Movement",
             Description = "If enabled, the internal windows can be moved and docked freely.",
@@ -182,6 +183,47 @@ public class InterfacePrefs
             }
         };
     }
+    public static PreferenceItem Interface_Context_Menu_Width()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 7,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.General,
+
+            Title = "Popup Context Menu Width",
+            Description = "The width of a popup context menu within an editor.",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                ImGui.DragFloat("##inputValue", ref CFG.Current.Interface_Context_Menu_Width);
+            }
+        };
+    }
+    public static PreferenceItem Interface_Context_Menu_List_Height_Multiplier()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 7,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.General,
+
+            Title = "Listbox Line Height Multiplier",
+            Description = "The line height multiple to use for a listbox per entry.",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                ImGui.DragFloat("##inputValue", ref CFG.Current.Interface_Context_Menu_List_Height_Multiplier);
+            }
+        };
+    }
+
 
     #endregion
 
@@ -201,6 +243,7 @@ public class InterfacePrefs
             Description = "Set the font used for English characters. .ttf and .otf expected.",
 
             Draw = () => {
+                DPI.ApplyInputWidth();
                 ImGui.InputText("##inputValue", ref CFG.Current.Interface_English_Font_Path, 255);
 
                 ImGui.SameLine();
@@ -241,6 +284,7 @@ public class InterfacePrefs
             Description = "Set the font used for Non-English characters. .ttf and .otf expected.",
 
             Draw = () => {
+                DPI.ApplyInputWidth();
                 ImGui.InputText("##inputValue", ref CFG.Current.Interface_Non_English_Font_Path, 255);
 
                 ImGui.SameLine();
@@ -392,6 +436,7 @@ public class InterfacePrefs
                     themeFiles.Add(filename);
                 }
 
+                DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##themeSelect", PreferencesUtil.CurrentThemeName))
                 {
                     foreach (var entry in themeFiles)

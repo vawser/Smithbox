@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Application;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,8 @@ public class MaterialEditorPrefs
         return typeof(MaterialEditorPrefs);
     }
 
-    public static PreferenceItem Project_XXX()
+    #region Properties
+    public static PreferenceItem MaterialEditor_Properties_Display_Community_Names()
     {
         return new PreferenceItem
         {
@@ -22,14 +24,15 @@ public class MaterialEditorPrefs
             Category = PreferenceCategory.MaterialEditor,
             Spacer = true,
 
-            Section = SectionCategory.General,
+            Section = SectionCategory.MaterialEditor_Properties,
 
-            Title = "XXX",
-            Description = "XXX",
+            Title = "Display Community Names",
+            Description = "If enabled, display community names in the properties list.",
 
             Draw = () => {
-
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MaterialEditor_Properties_Display_Community_Names);
             }
         };
     }
+    #endregion
 }

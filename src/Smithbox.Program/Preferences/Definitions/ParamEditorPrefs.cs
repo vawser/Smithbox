@@ -590,6 +590,7 @@ public class ParamEditorPrefs
 
                 string[] options = curProject.Handler.ParamData.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
 
+                DPI.ApplyInputWidth();
                 if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
                 {
                     CFG.Current.SelectedGameOffsetData = index;
@@ -730,6 +731,24 @@ public class ParamEditorPrefs
             }
         };
     }
+    public static PreferenceItem ParamEditor_Row_List_Display_Decorators()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_List,
+
+            Title = "Display Decorators",
+            Description = "If enabled, the row decorators are displayed.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue_row", ref CFG.Current.ParamEditor_Row_List_Display_Decorators);
+            }
+        };
+    }
     #endregion
 
     #region Field List
@@ -784,6 +803,7 @@ public class ParamEditorPrefs
             Description = "Determines how the field naming is displayed.\nSource is the original param definition name.\nCommunity is a more readable and descriptive name.",
 
             Draw = () => {
+                DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_FieldNameMode.GetDisplayName()))
                 {
                     foreach (var entry in Enum.GetValues(typeof(ParamFieldNameMode)))
@@ -818,26 +838,558 @@ public class ParamEditorPrefs
             }
         };
     }
+    public static PreferenceItem ParamEditor_Field_List_Display_Color_Picker()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 4,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Color Picker",
+            Description = "If enabled, a color picker is displayed (when suitable for the field).",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Color_Picker);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Display_Graph()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 5,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Graph",
+            Description = "If enabled, a graph is displayed (when suitable for the field).",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Graph);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Display_Map_Link()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 6,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Map Link",
+            Description = "If enabled, a map link button is displayed (when suitable for the field).",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Map_Link);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Display_Model_Link()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 7,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Model Link",
+            Description = "If enabled, a model link button is displayed (when suitable for the field).",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Model_Link);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Display_Padding()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 8,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Padding",
+            Description = "If enabled, padding fields are displayed.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Padding);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Display_Decorators()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 9,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Decorators",
+            Description = "If enabled, field decorators are displayed.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor_Field_List_Display_Decorators);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Display_Field_Attributes()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 10,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Attributes",
+            Description = "If enabled, field attributes are displayed in the tooltip.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Field_Attributes);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Display_Icon_Preview()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 11,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Icon Preview",
+            Description = "If enabled, a referenced icon will be displayed visually by the field.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Icon_Preview);
+            }
+        };
+    }
+    public static PreferenceItem Param_FieldContextMenu_ImagePreviewScale()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 12,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Icon Preview Scale",
+            Description = "The image scale of the icon preview.",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                ImGui.DragFloat("##inputValue", ref CFG.Current.ParamEditor_Field_List_Icon_Preview_Scale, 0.1f, 0.1f, 10.0f);
+            }
+        };
+    }
     #endregion
 
     #region Field Input
+    public static PreferenceItem ParamEditor_Field_Input_Display_Traditional_Percentage()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 12,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
 
-    #endregion
+            Section = SectionCategory.ParamEditor_Field_Input,
 
-    #region Param Context Menu
+            Title = "Display Traditional Percentages",
+            Description = "If enabled, fields that represent a percentage will be displayed in a normal fashion, with the value representing the percentage. Typically, the value in represented as 1 - <value>.",
 
-    #endregion
-
-    #region Table Context Menu
-
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Input_Display_Traditional_Percentage);
+            }
+        };
+    }
     #endregion
 
     #region Row Context Menu
+    public static PreferenceItem ParamEditor_Row_Context_Display_Row_Name_Input()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_Context_Menu,
+
+            Title = "Display Row Name Input",
+            Description = "If enabled, display the row name input box within the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Input);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Row_Context_Display_Shortcut_Tools()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_Context_Menu,
+
+            Title = "Display Shortcut Tools",
+            Description = "If enabled, display the shortcut tools within the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Shortcut_Tools);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Row_Context_Display_Pin_Options()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_Context_Menu,
+
+            Title = "Display Pin Options",
+            Description = "If enabled, display the pin options within the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Pin_Options);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Row_Context_Display_Comparison_Options()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_Context_Menu,
+
+            Title = "Display Comparison Options",
+            Description = "If enabled, display the comparison options within the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Comparison_Options);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Row_Context_Display_Reverse_Lookup()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 4,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_Context_Menu,
+
+            Title = "Display Reverse Lookup Tool",
+            Description = "If enabled, display the reverse lookup tool within the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Reverse_Lookup);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Row_Context_Display_Proliferate_Name()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_Context_Menu,
+
+            Title = "Display Proliferate Name Tool",
+            Description = "If enabled, display the proliferate name tool within the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Proliferate_Name);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Row_Context_Display_Inherit_Name()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_Context_Menu,
+
+            Title = "Display Inherit Name Tool",
+            Description = "If enabled, display the inherit name tool within the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Inherit_Name);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Row_Context_Display_Row_Name_Tools()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_Context_Menu,
+
+            Title = "Display Row Name Tools",
+            Description = "If enabled, display the row name tools within the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Tools);
+            }
+        };
+    }
 
     #endregion
 
     #region Field Context Menu
+    public static PreferenceItem ParamEditor_Field_Context_Split()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
 
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Split Menu",
+            Description = "If enabled, the context menu is adjusted if the right-click is done on name text or a value input.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Split);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_Field_Name()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Field Name",
+            Description = "If enabled, the field name is displayed in the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Field_Name);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_Field_Description()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Field Description",
+            Description = "If enabled, the field description is displayed in the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Field_Description);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_Field_Attributes()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Field Attributes",
+            Description = "If enabled, the field attributes are displayed in the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Field_Attributes);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_Pin_Options()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 4,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Field Pin Options",
+            Description = "If enabled, the field pin options are displayed in the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Pin_Options);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_Comparison_Options()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 5,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Field Comparison Options",
+            Description = "If enabled, the field comparison options are displayed in the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Comparison_Options);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_Field_Value_Distribution()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 6,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Field Value Distribution",
+            Description = "If enabled, the field value distribution tool is displayed in the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Field_Value_Distribution);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_Searchbar_Options()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 7,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Field Searchbar Options",
+            Description = "If enabled, the field searchbar options are displayed in the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Searchbar_Options);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_References()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 8,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Field References",
+            Description = "If enabled, the field references are displayed in the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_References);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_Reference_Search()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 9,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Field Reference Search",
+            Description = "If enabled, the field reference search tool is displayed in the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Reference_Search);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_Mass_Edit()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 10,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Field Mass Edit",
+            Description = "If enabled, the mass edit tool is displayed in the context menu.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Mass_Edit);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_Context_Display_Full_Mass_Edit()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 11,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+
+            Title = "Display Full Field Mass Edit",
+            Description = "If enabled, the context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Full_Mass_Edit);
+            }
+        };
+    }
     #endregion
 
     #region Mass Edit

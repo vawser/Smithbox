@@ -321,7 +321,7 @@ public class GparamPropertyEditor
         }
         // VECTOR4
         else if (field is Vector4Field vector4Field &&
-            !CFG.Current.Gparam_DisplayColorEditForVector4Fields)
+            !CFG.Current.GparamEditor_Value_List_Display_Color_Edit_V4)
         {
             Vector4 fieldValue = vector4Field.Values[idx].Value;
             Vector4 vector4Input = fieldValue;
@@ -337,7 +337,7 @@ public class GparamPropertyEditor
         }
         // VECTOR4 (COLOR EDIT)
         else if (field is Vector4Field vectorColorField &&
-            CFG.Current.Gparam_DisplayColorEditForVector4Fields)
+            CFG.Current.GparamEditor_Value_List_Display_Color_Edit_V4)
         {
             Vector4 fieldValue = vectorColorField.Values[idx].Value;
             Vector4 colorInput = fieldValue;
@@ -351,15 +351,15 @@ public class GparamPropertyEditor
 
             var flags = ImGuiColorEditFlags.AlphaOpaque;
 
-            if (CFG.Current.Gparam_ColorEdit_RGB)
+            if (CFG.Current.GparamEditor_Color_Edit_Mode is ColorEditDisplayMode.RGB)
             {
                 flags = flags | ImGuiColorEditFlags.DisplayRgb;
             }
-            if (CFG.Current.Gparam_ColorEdit_Decimal)
+            if (CFG.Current.GparamEditor_Color_Edit_Mode is ColorEditDisplayMode.Decimal)
             {
                 flags = flags | ImGuiColorEditFlags.Float;
             }
-            if (CFG.Current.Gparam_ColorEdit_HSV)
+            if (CFG.Current.GparamEditor_Color_Edit_Mode is ColorEditDisplayMode.HSV)
             {
                 flags = flags | ImGuiColorEditFlags.DisplayHsv;
             }

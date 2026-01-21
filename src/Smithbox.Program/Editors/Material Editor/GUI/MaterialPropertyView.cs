@@ -40,11 +40,11 @@ public class MaterialPropertyView
 
         if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
         {
-            CFG.Current.MaterialEditor_DisplayCommunityFieldNames = !CFG.Current.MaterialEditor_DisplayCommunityFieldNames;
+            CFG.Current.MaterialEditor_Properties_Display_Community_Names = !CFG.Current.MaterialEditor_Properties_Display_Community_Names;
         }
 
         var communityFieldNameMode = "Internal";
-        if (CFG.Current.MaterialEditor_DisplayCommunityFieldNames)
+        if (CFG.Current.MaterialEditor_Properties_Display_Community_Names)
             communityFieldNameMode = "Community";
 
         UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");

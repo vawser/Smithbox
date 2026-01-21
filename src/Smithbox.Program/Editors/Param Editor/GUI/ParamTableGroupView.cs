@@ -166,7 +166,7 @@ public class ParamTableGroupView
     {
         if (ImGui.BeginPopupContextItem($"{groupKey}"))
         {
-            DPI.ApplyInputWidth(CFG.Current.Param_TableGroupContextMenu_Width);
+            DPI.ApplyInputWidth(CFG.Current.Interface_Context_Menu_Width);
 
             var activeParam = View.Selection.GetActiveParam();
 

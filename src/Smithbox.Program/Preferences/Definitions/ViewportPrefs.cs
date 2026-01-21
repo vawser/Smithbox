@@ -34,6 +34,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
+                DPI.ApplyInputWidth();
                 if (ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport_Frame_Rate, 20.0f, 240.0f))
                 {
                     CFG.Current.Viewport_Frame_Rate = (float)Math.Round(CFG.Current.Viewport_Frame_Rate);
@@ -122,6 +123,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
+                DPI.ApplyInputWidth();
                 if (ImGui.InputInt("##inputValue", ref CFG.Current.Viewport_Limit_Renderables, 0, 0))
                 {
                     if (CFG.Current.Viewport_Limit_Renderables < CFG.Default.Viewport_Limit_Renderables)
@@ -147,6 +149,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
+                DPI.ApplyInputWidth();
                 Utils.ImGui_InputUint("##inputValue", ref CFG.Current.Viewport_Limit_Buffer_Indirect_Draw);
             }
         };
@@ -168,6 +171,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
+                DPI.ApplyInputWidth();
                 Utils.ImGui_InputUint("##inputValue", ref CFG.Current.Viewport_Limit_Buffer_Flver_Bone);
             }
         };
@@ -232,6 +236,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
+                DPI.ApplyInputWidth();
                 ImGui.InputFloat("##inputValue", ref CFG.Current.Viewport_Untextured_Model_Brightness);
             }
         };
@@ -252,6 +257,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
+                DPI.ApplyInputWidth();
                 ImGui.InputFloat("##inputValue", ref CFG.Current.Viewport_Untextured_Model_Saturation);
             }
         };
@@ -316,6 +322,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
+                DPI.ApplyInputWidth();
                 ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport_Box_Selection_Distance_Threshold, 1.0f, 2.0f);
             }
         };
@@ -335,6 +342,7 @@ public class ViewportPrefs
             Description = "Determine the distance the camera is placed at when framing a selection in the viewport.",
 
             Draw = () => {
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat3("##inputValue", ref CFG.Current.Viewport_Frame_Distance);
             }
         };
@@ -354,6 +362,7 @@ public class ViewportPrefs
             Description = "Determine the offset applied to the camera when framing a selection in the viewport.",
 
             Draw = () => {
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat3("##inputValue", ref CFG.Current.Viewport_Frame_Offset);
             }
         };
@@ -378,6 +387,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
+                DPI.ApplyInputWidth();
                 ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport_Wireframe_Color_Variance, 0.0f, 1.0f);
             }
         };
@@ -400,7 +410,11 @@ public class ViewportPrefs
             Draw = () =>
             {
                 UIHelper.SimpleHeader("General", "");
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Selection Outline Color", ref CFG.Current.Viewport_Selection_Outline_Color);
             }
         };
@@ -424,13 +438,22 @@ public class ViewportPrefs
             {
                 UIHelper.SimpleHeader("Gizmo", "");
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("X-Axis: Base Color", ref CFG.Current.Viewport_Gizmo_X_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("X-Axis: Highlight Color", ref CFG.Current.Viewport_Gizmo_X_Highlight_Color);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Y-Axis: Base Color", ref CFG.Current.Viewport_Gizmo_Y_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Y-Axis: Highlight Color", ref CFG.Current.Viewport_Gizmo_Y_Highlight_Color);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Z-Axis: Base Color", ref CFG.Current.Viewport_Gizmo_Z_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Z-Axis: Highlight Color", ref CFG.Current.Viewport_Gizmo_Z_Highlight_Color);
             }
         };
@@ -455,24 +478,28 @@ public class ViewportPrefs
                 UIHelper.SimpleHeader("Parts", "");
 
                 var curColor = Utils.GetDecimalColor(CFG.Current.Viewport_Collision_Color);
+                DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3("Collision: Base Color", ref curColor))
                 {
                     CFG.Current.Viewport_Collision_Color = Utils.GetRgbColor(curColor);
                 }
 
                 curColor = Utils.GetDecimalColor(CFG.Current.Viewport_Connect_Collision_Color);
+                DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3("Connect Collision: Base Color", ref curColor))
                 {
                     CFG.Current.Viewport_Connect_Collision_Color = Utils.GetRgbColor(curColor);
                 }
 
                 curColor = Utils.GetDecimalColor(CFG.Current.Viewport_Navmesh_Color);
+                DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3("Navmesh: Base Color", ref curColor))
                 {
                     CFG.Current.Viewport_Navmesh_Color = Utils.GetRgbColor(curColor);
                 }
 
                 curColor = Utils.GetDecimalColor(CFG.Current.Viewport_Navmesh_Gate_Color);
+                DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3("Navmesh Gate: Base Color", ref curColor))
                 {
                     CFG.Current.Viewport_Navmesh_Gate_Color = Utils.GetRgbColor(curColor);
@@ -499,62 +526,133 @@ public class ViewportPrefs
             {
                 UIHelper.SimpleHeader("Wireframes", "");
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Box Region: Base Color", ref CFG.Current.Viewport_Box_Region_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Box Region: Highlight Color", ref CFG.Current.Viewport_Box_Region_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Box Region: Transparency", ref CFG.Current.Viewport_Box_Region_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Cylinder Region: Base Color", ref CFG.Current.Viewport_Cylinder_Region_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Cylinder Region: Highlight Color", ref CFG.Current.Viewport_Cylinder_Region_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Cylinder Region: Transparency", ref CFG.Current.Viewport_Cylinder_Region_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Sphere Region: Base Color", ref CFG.Current.Viewport_Sphere_Region_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Sphere Region: Highlight Color", ref CFG.Current.Viewport_Sphere_Region_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Sphere region: Transparency", ref CFG.Current.Viewport_Sphere_Region_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Point Region: Base Color", ref CFG.Current.Viewport_Point_Region_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Point Region: Highlight Color", ref CFG.Current.Viewport_Point_Region_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Point Region: Transparency", ref CFG.Current.Viewport_Point_Region_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Dummy Polygon: Base Color", ref CFG.Current.Viewport_Dummy_Polygon_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Dummy Polygon: Highlight Color", ref CFG.Current.Viewport_Dummy_Polygon_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Dummy Polygon: Transparency", ref CFG.Current.Viewport_Dummy_Polygon_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Bone Marker: Base Color", ref CFG.Current.Viewport_Bone_Marker_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Bone Marker: Highlight Color", ref CFG.Current.Viewport_Bone_Marker_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Bone Marker: Transparency", ref CFG.Current.Viewport_Bone_Marker_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Character Marker: Base Color", ref CFG.Current.Viewport_Character_Marker_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Character Marker: Highlight Color", ref CFG.Current.Viewport_Character_Marker_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Character Marker: Transparency", ref CFG.Current.Viewport_Character_Marker_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Object Marker: Base Color", ref CFG.Current.Viewport_Object_Marker_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Object Marker: Highlight Color", ref CFG.Current.Viewport_Object_Marker_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Object Marker: Transparency", ref CFG.Current.Viewport_Object_Marker_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Player Marker: Base Color", ref CFG.Current.Viewport_Player_Marker_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Player Marker: Highlight Color", ref CFG.Current.Viewport_Player_Marker_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Player Marker: Transparency", ref CFG.Current.Viewport_Player_Marker_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Other Marker: Base Color", ref CFG.Current.Viewport_Other_Marker_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Other Marker: Highlight Color", ref CFG.Current.Viewport_Other_Marker_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Other Marker: Transparency", ref CFG.Current.Viewport_Other_Marker_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Point Light: Base Color", ref CFG.Current.Viewport_Point_Light_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Point Light: Highlight Color", ref CFG.Current.Viewport_Point_Light_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Point Light: Transparency", ref CFG.Current.Viewport_Point_Light_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Spot Light: Base Color", ref CFG.Current.Viewport_Spot_Light_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Spot Light: Highlight Color", ref CFG.Current.Viewport_Splot_Light_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Spot Light: Transparency", ref CFG.Current.Viewport_Spot_Light_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Directional Light: Base Color", ref CFG.Current.Viewport_Directional_Light_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Directional Light: Highlight Color", ref CFG.Current.Viewport_Directional_Light_Highlight_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.DragFloat("Directional Light: Transparency", ref CFG.Current.Viewport_Directional_Light_Alpha, 1.0f, 1.0f, 100.0f);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Auto Invade Marker: Base Color", ref CFG.Current.Viewport_Auto_Invade_Marker_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Auto Invade Marker: Highlight Color", ref CFG.Current.Viewport_Auto_Invade_Marker_Highlight_Color);
 
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Level Connector Marker: Base Color", ref CFG.Current.Viewport_Level_Connector_Marker_Base_Color);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Level Connector Marker: Highlight Color", ref CFG.Current.Viewport_Level_Connector_Marker_Highlight_Color);
             }
         };

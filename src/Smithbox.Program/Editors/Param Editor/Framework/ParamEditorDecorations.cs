@@ -90,12 +90,12 @@ public class ParamEditorDecorations
             fieldName += $"  /  {altName}";
         }
 
-        if (CFG.Current.Param_FieldContextMenu_Name && printName)
+        if (CFG.Current.ParamEditor_Field_Context_Display_Field_Name && printName)
         {
             ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(fieldName, "", true));
         }
 
-        if (CFG.Current.Param_FieldContextMenu_Split && !printType)
+        if (CFG.Current.ParamEditor_Field_Context_Split && !printType)
         {
             return;
         }

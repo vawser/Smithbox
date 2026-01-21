@@ -32,7 +32,7 @@ public class GparamGroupListView
 
         if (ImGui.Button($"{Icons.CircleO}##emptyGroupToggle"))
         {
-            CFG.Current.Gparam_DisplayEmptyGroups = !CFG.Current.Gparam_DisplayEmptyGroups;
+            CFG.Current.GparamEditor_Group_List_Display_Empty_Group = !CFG.Current.GparamEditor_Group_List_Display_Empty_Group;
         }
         UIHelper.Tooltip("Toggle the display of empty groups.");
 
@@ -40,7 +40,7 @@ public class GparamGroupListView
 
         if (ImGui.Button($"{Icons.Bars}##addGroupToggle"))
         {
-            CFG.Current.Gparam_DisplayAddGroups = !CFG.Current.Gparam_DisplayAddGroups;
+            CFG.Current.GparamEditor_Group_List_Display_Group_Add = !CFG.Current.GparamEditor_Group_List_Display_Group_Add;
         }
         UIHelper.Tooltip("Toggle the display of the add group buttons.");
 
@@ -56,12 +56,12 @@ public class GparamGroupListView
                 GPARAM.Param entry = data.Params[i];
 
                 var name = entry.Key;
-                if (CFG.Current.Gparam_DisplayParamGroupAlias)
+                if (CFG.Current.GparamEditor_Group_List_Display_Aliases)
                     name = FormatInformationUtils.GetReferenceName(Project.Handler.GparamData.GparamInformation, entry.Key, entry.Name);
 
                 var display = false;
 
-                if (!CFG.Current.Gparam_DisplayEmptyGroups)
+                if (!CFG.Current.GparamEditor_Group_List_Display_Empty_Group)
                 {
                     foreach (var fieldEntry in entry.Fields)
                     {
@@ -106,7 +106,7 @@ public class GparamGroupListView
                 Editor.ContextMenu.GroupContextMenu(i);
             }
 
-            if (CFG.Current.Gparam_DisplayAddGroups)
+            if (CFG.Current.GparamEditor_Group_List_Display_Group_Add)
             {
                 ImGui.Separator();
 

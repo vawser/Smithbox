@@ -58,7 +58,7 @@ public class GparamFileListView
                     }
                 }
 
-                if (CFG.Current.Interface_Display_Alias_for_Gparam)
+                if (CFG.Current.GparamEditor_File_List_Display_Aliases)
                 {
                     UIHelper.DisplayAlias(alias);
                 }

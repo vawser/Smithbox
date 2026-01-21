@@ -163,21 +163,21 @@ public static class AliasHelper
         var usedName = rawName;
         var aliasName = "";
 
-        if (!CFG.Current.TextureViewer_FileList_ShowAliasName_Characters)
+        if (!CFG.Current.TextureViewer_File_List_Display_Character_Aliases)
         {
             if(curCategory == TextureViewCategory.Characters)
             {
                 return aliasName;
             }
         }
-        if (!CFG.Current.TextureViewer_FileList_ShowAliasName_Assets)
+        if (!CFG.Current.TextureViewer_File_List_Display_Asset_Aliases)
         {
             if (curCategory == TextureViewCategory.Assets || curCategory == TextureViewCategory.Objects)
             {
                 return aliasName;
             }
         }
-        if (!CFG.Current.TextureViewer_FileList_ShowAliasName_Parts)
+        if (!CFG.Current.TextureViewer_File_List_Display_Part_Aliases)
         {
             if (curCategory == TextureViewCategory.Parts)
             {

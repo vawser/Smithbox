@@ -350,20 +350,6 @@ public class ParamRowView
             ImGui.EndPopup();
         }
 
-        // Toggle FMG Decorator
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Hubzilla}", DPI.IconButtonSize))
-        {
-            CFG.Current.Param_ShowFmgDecorator = !CFG.Current.Param_ShowFmgDecorator;
-        }
-
-        var fmgDecoratorDisplayStatus = "Hidden";
-        if (!CFG.Current.Param_ShowFmgDecorator)
-            fmgDecoratorDisplayStatus = "Visible";
-
-        UIHelper.Tooltip($"Toggle the display of FMG references.\nCurrent Mode: {fmgDecoratorDisplayStatus}");
-
         // Toggle Row Copy Behavior
         ImGui.SameLine();
 
@@ -547,7 +533,7 @@ public class ParamRowView
 
         DisplayContextMenu(r, selectionCacheIndex, isPinned, activeParam, fmgDecorator);
 
-        if (CFG.Current.Param_ShowFmgDecorator)
+        if (CFG.Current.ParamEditor_Row_List_Display_Decorators)
         {
             if (fmgDecorator != null)
             {
@@ -654,10 +640,10 @@ public class ParamRowView
     {
         if (ImGui.BeginPopupContextItem($"{r.ID}_{selectionCacheIndex}"))
         {
-            DPI.ApplyInputWidth(CFG.Current.Param_RowContextMenu_Width);
+            DPI.ApplyInputWidth(CFG.Current.Interface_Context_Menu_Width);
 
             // Name Input
-            if (CFG.Current.Param_RowContextMenu_NameInput)
+            if (CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Input)
             {
                 if (View.Selection.RowSelectionExists())
                 {
@@ -678,7 +664,7 @@ public class ParamRowView
             }
 
             // General Options
-            if (CFG.Current.Param_RowContextMenu_ShortcutTools)
+            if (CFG.Current.ParamEditor_Row_Context_Display_Shortcut_Tools)
             {
                 // Copy
                 if (ImGui.Selectable(@$"Copy", false,
@@ -756,7 +742,7 @@ public class ParamRowView
             }
 
             // Pinning Options
-            if (CFG.Current.Param_RowContextMenu_PinOptions)
+            if (CFG.Current.ParamEditor_Row_Context_Display_Pin_Options)
             {
                 // Pin
                 if (!isPinned)
@@ -813,7 +799,7 @@ public class ParamRowView
             }
 
             // Comparison Options
-            if (CFG.Current.Param_RowContextMenu_CompareOptions)
+            if (CFG.Current.ParamEditor_Row_Context_Display_Comparison_Options)
             {
                 if (ImGui.Selectable("Compare"))
                 {
@@ -823,19 +809,19 @@ public class ParamRowView
             }
 
             // Reverse Lookup Options
-            if (CFG.Current.Param_RowContextMenu_ReverseLoopup)
+            if (CFG.Current.ParamEditor_Row_Context_Display_Reverse_Lookup)
             {
                 FieldDecorators.ParamReverseLookup_Value(Editor, Editor.Project.Handler.ParamData.PrimaryBank, activeParam, r.ID);
             }
 
             FieldDecorators.ParamQuickSearch(Editor, Editor.Project.Handler.ParamData.PrimaryBank, activeParam, r.ID);
 
-            if (CFG.Current.Param_RowContextMenu_ProliferateName || CFG.Current.Param_RowContextMenu_InheritName)
+            if (CFG.Current.ParamEditor_Row_Context_Display_Proliferate_Name || CFG.Current.ParamEditor_Row_Context_Display_Inherit_Name)
             {
                 ImGui.Separator();
 
                 // Proliferate name
-                if (CFG.Current.Param_RowContextMenu_ProliferateName)
+                if (CFG.Current.ParamEditor_Row_Context_Display_Proliferate_Name)
                 {
                     if (ImGui.Selectable(@$"Proliferate name", false,
                             View.Selection.RowSelectionExists()
@@ -848,7 +834,7 @@ public class ParamRowView
                 }
 
                 // Inherit Name
-                if (CFG.Current.Param_RowContextMenu_InheritName)
+                if (CFG.Current.ParamEditor_Row_Context_Display_Inherit_Name)
                 {
                     if (ImGui.Selectable(@$"Inherit name", false,
                             View.Selection.RowSelectionExists()
@@ -882,7 +868,7 @@ public class ParamRowView
                 UIHelper.Tooltip("The internal name of the field to target.");
             }
 
-            if (CFG.Current.Param_RowContextMenu_RowNameAdjustments)
+            if (CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Tools)
             {
                 ImGui.Separator();
 

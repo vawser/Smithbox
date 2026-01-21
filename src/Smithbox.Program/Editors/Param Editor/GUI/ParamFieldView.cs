@@ -336,11 +336,11 @@ public class ParamFieldView
 
             if (ImGui.Button($"{Icons.Hubzilla}", DPI.IconButtonSize))
             {
-                CFG.Current.Param_HidePaddingFields = !CFG.Current.Param_HidePaddingFields;
+                CFG.Current.ParamEditor_Field_List_Display_Padding = !CFG.Current.ParamEditor_Field_List_Display_Padding;
             }
 
             var fieldPaddingMode = "Hidden";
-            if (!CFG.Current.Param_HidePaddingFields)
+            if (CFG.Current.ParamEditor_Field_List_Display_Padding)
                 fieldPaddingMode = "Visible";
 
             UIHelper.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
@@ -350,11 +350,11 @@ public class ParamFieldView
 
             if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
             {
-                CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn = !CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn;
+                CFG.Current.ParamEditor_Field_List_Display_Icon_Preview = !CFG.Current.ParamEditor_Field_List_Display_Icon_Preview;
             }
 
             var iconPreviewMode = "Hidden";
-            if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
+            if (CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
                 iconPreviewMode = "Visible";
 
             UIHelper.Tooltip($"Toggle the display of icons.\nCurrent Mode: {iconPreviewMode}");
@@ -372,7 +372,7 @@ public class ParamFieldView
         if (meta == null)
             return;
 
-        if (CFG.Current.Param_ShowGraphVisualisation)
+        if (CFG.Current.ParamEditor_Field_List_Display_Graph)
         {
             var columnWidth = ImGui.GetColumnWidth();
 
@@ -660,11 +660,11 @@ public class ParamFieldView
         var IsObsoleteField = cellMeta?.IsObsoleteField ?? false;
         var AddSeparator = cellMeta?.AddSeparatorNextLine ?? false;
 
-        var displayRefTypes = !CFG.Current.Param_HideReferenceRows && RefTypes != null;
-        var displayFmgRef = !CFG.Current.Param_HideReferenceRows && FmgRef != null;
-        var displayIcon = !CFG.Current.Param_HideReferenceRows && IconConfig != null;
-        var displayEnum = !CFG.Current.Param_HideEnums && Enum != null;
-        var displayMapFmgRef = !CFG.Current.Param_HideReferenceRows && MapFmgRef != null;
+        var displayRefTypes = RefTypes != null;
+        var displayFmgRef = FmgRef != null;
+        var displayIcon = IconConfig != null;
+        var displayEnum = Enum != null;
+        var displayMapFmgRef = MapFmgRef != null;
 
         bool showParticleEnum = false;
         bool showSoundEnum = false;
@@ -686,13 +686,13 @@ public class ParamFieldView
 
         if (cellMeta != null)
         {
-            showParticleEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowParticleEnumList;
-            showSoundEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowSoundEnumList;
-            showFlagEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowFlagEnumList;
-            showCutsceneEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCutsceneEnumList;
-            showMovieEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowMovieEnumList;
-            showCharacterEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCharacterEnumList;
-            showProjectEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowProjectEnumList;
+            showParticleEnum = cellMeta.ShowParticleEnumList;
+            showSoundEnum = cellMeta.ShowSoundEnumList;
+            showFlagEnum = cellMeta.ShowFlagEnumList;
+            showCutsceneEnum = cellMeta.ShowCutsceneEnumList;
+            showMovieEnum = cellMeta.ShowMovieEnumList;
+            showCharacterEnum = cellMeta.ShowCharacterEnumList;
+            showProjectEnum = cellMeta.ShowProjectEnumList;
 
             showParamFieldOffset = cellMeta.ShowParamFieldOffset;
             paramFieldIndex = cellMeta.ParamFieldOffsetIndex;
@@ -705,12 +705,7 @@ public class ParamFieldView
 
         object newval = null;
 
-        if(CFG.Current.Param_HidePaddingFields && IsPaddingField)
-        {
-            return;
-        }
-
-        if (CFG.Current.Param_HideObsoleteFields && IsObsoleteField)
+        if(!CFG.Current.ParamEditor_Field_List_Display_Padding && IsPaddingField)
         {
             return;
         }
@@ -724,85 +719,67 @@ public class ParamFieldView
                 ImGui.Separator();
             }
 
-            // Help icon text
-            if (CFG.Current.Param_ShowFieldDescription_onIcon || CFG.Current.Param_ShowFieldLimits_onIcon)
+            ImGui.AlignTextToFramePadding();
+
+            if (Wiki != null)
             {
-                ImGui.AlignTextToFramePadding();
+                var helpIconText = "";
 
-                if (Wiki != null)
+                helpIconText = Wiki;
+
+                if (CFG.Current.ParamEditor_Field_List_Display_Field_Attributes)
                 {
-                    var helpIconText = "";
+                    helpIconText = helpIconText +
+                        "\n" +
+                        "-----\n";
 
-                    if(CFG.Current.Param_ShowFieldDescription_onIcon)
-                    {
-                        helpIconText = Wiki;
-                    }
-
-                    if (CFG.Current.Param_ShowFieldLimits_onIcon)
-                    {
-                        if (CFG.Current.Param_ShowFieldDescription_onIcon)
-                        {
-                            helpIconText = helpIconText +
-                                "\n" +
-                                "-----\n";
-                        }
-
-                        helpIconText = helpIconText +
-                        $"Minimum: {col.Def.Minimum}\n" +
-                        $"Maximum: {col.Def.Maximum}\n" +
-                        $"Increment: {col.Def.Increment}";
-                    }
-
-                    if (ParamEditorDecorations.HelpIcon(internalName, ref helpIconText, true))
-                    {
-                        cellMeta.Wiki = Wiki;
-                    }
-
-                    ImGui.SameLine();
+                    helpIconText = helpIconText +
+                    $"Minimum: {col.Def.Minimum}\n" +
+                    $"Maximum: {col.Def.Maximum}\n" +
+                    $"Increment: {col.Def.Increment}";
                 }
-                else
+
+                if (ParamEditorDecorations.HelpIcon(internalName, ref helpIconText, true))
                 {
-                    ImGui.Text(" ");
-                    ImGui.SameLine();
+                    cellMeta.Wiki = Wiki;
                 }
+
+                ImGui.SameLine();
+            }
+            else
+            {
+                ImGui.Text(" ");
+                ImGui.SameLine();
             }
 
             // Field selection
             ImGui.Selectable("", false, ImGuiSelectableFlags.AllowOverlap);
 
             // Help hover text
-            if (CFG.Current.Param_ShowFieldDescription_onName || CFG.Current.Param_ShowFieldLimits_onName)
+            if (Wiki != null)
             {
-                if (Wiki != null)
+                var helpIconText = "";
+
+                helpIconText = Wiki;
+
+                if (CFG.Current.ParamEditor_Field_List_Display_Field_Attributes)
                 {
-                    var helpIconText = "";
+                    helpIconText = helpIconText + 
+                        "\n" + 
+                        "-----\n";
 
-                    if (CFG.Current.Param_ShowFieldDescription_onName)
-                    {
-                        helpIconText = Wiki;
-                    }
-                    if (CFG.Current.Param_ShowFieldLimits_onName)
-                    {
-                        if (CFG.Current.Param_ShowFieldDescription_onName)
-                        {
-                            helpIconText = helpIconText + 
-                                "\n" + 
-                                "-----\n";
-                        }
-
-                        helpIconText = helpIconText +
-                        $"Minimum: {col.Def.Minimum}\n" +
-                        $"Maximum: {col.Def.Maximum}\n" +
-                        $"Increment: {col.Def.Increment}";
-                    }
-
-                    UIHelper.Tooltip(helpIconText);
+                    helpIconText = helpIconText +
+                    $"Minimum: {col.Def.Minimum}\n" +
+                    $"Maximum: {col.Def.Maximum}\n" +
+                    $"Increment: {col.Def.Increment}";
                 }
+
+                UIHelper.Tooltip(helpIconText);
             }
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
-                if (!CFG.Current.Param_FieldContextMenu_Split)
+                if (!CFG.Current.ParamEditor_Field_Context_Split)
                 {
                     ImGui.OpenPopup("ParamRowCommonMenu");
                 }
@@ -817,104 +794,107 @@ public class ParamFieldView
             // Name column
             PropertyRowName(Editor, fieldOffset, ref internalName, cellMeta);
 
-            if (displayRefTypes || displayFmgRef || displayIcon || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showCharacterEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
+            if (CFG.Current.ParamEditor_Field_List_Display_Decorators)
             {
-                ImGui.BeginGroup();
-
-                // Param Ref
-                if (displayRefTypes)
+                if (displayRefTypes || displayFmgRef || displayIcon || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showCharacterEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
                 {
-                    FieldDecorators.ParamReference_Title(RefTypes, row);
-                }
+                    ImGui.BeginGroup();
 
-                // Text Ref
-                if (displayFmgRef)
-                {
-                    FieldDecorators.TextReference_Title(FmgRef, row);
-                }
-
-                // Map Text Ref
-                if(displayMapFmgRef)
-                {
-                    FieldDecorators.TextReference_Title(MapFmgRef, row, "MAP FMGS");
-                }
-
-                // Field Icon
-                if (displayIcon)
-                {
-                    FieldDecorators.FieldIcon_Title(IconConfig, row);
-                }
-
-                if (displayEnum)
-                {
-                    FieldDecorators.Enum_Title(Enum);
-                }
-
-                // Particle list
-                if (showParticleEnum)
-                {
-                    FieldDecorators.AliasEnum_Title("PARTICLES");
-                }
-
-                // Sound list
-                if (showSoundEnum)
-                {
-                    FieldDecorators.AliasEnum_Title("SOUNDS");
-                }
-
-                // Flag list
-                if (showFlagEnum)
-                {
-                    FieldDecorators.ConditionalAliasEnum_Title("FLAGS", row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
-                }
-
-                // Cutscene list
-                if (showCutsceneEnum)
-                {
-                    FieldDecorators.AliasEnum_Title("CUTSCENES");
-                }
-
-                // Movie list
-                if (showMovieEnum)
-                {
-                    FieldDecorators.ConditionalAliasEnum_Title("MOVIES", row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
-                }
-
-                // Character list
-                if (showCharacterEnum)
-                {
-                    FieldDecorators.AliasEnum_Title("CHARACTERS");
-                }
-
-                // Project Enum
-                if (showProjectEnum)
-                {
-                    FieldDecorators.ProjectEnum_Title(Editor, cellMeta.ProjectEnumType);
-                }
-
-                // TileRef
-                if (showTileRef)
-                {
-                    FieldDecorators.TileRef_Title(Editor, cellMeta.TileRef);
-                }
-
-                // Param Field Offset
-                if (showParamFieldOffset)
-                {
-                    FieldDecorators.ParamFieldOffset_Title(activeParam, row, paramFieldIndex);
-                }
-
-                ImGui.EndGroup();
-
-                if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
-                {
-                    if (!CFG.Current.Param_FieldContextMenu_Split)
+                    // Param Ref
+                    if (displayRefTypes)
                     {
-                        ImGui.OpenPopup("ParamRowCommonMenu");
+                        FieldDecorators.ParamReference_Title(RefTypes, row);
                     }
-                    else
+
+                    // Text Ref
+                    if (displayFmgRef)
                     {
-                        ImGui.OpenPopup("ParamRowNameMenu");
+                        FieldDecorators.TextReference_Title(FmgRef, row);
+                    }
+
+                    // Map Text Ref
+                    if (displayMapFmgRef)
+                    {
+                        FieldDecorators.TextReference_Title(MapFmgRef, row, "MAP FMGS");
+                    }
+
+                    // Field Icon
+                    if (displayIcon)
+                    {
+                        FieldDecorators.FieldIcon_Title(IconConfig, row);
+                    }
+
+                    if (displayEnum)
+                    {
+                        FieldDecorators.Enum_Title(Enum);
+                    }
+
+                    // Particle list
+                    if (showParticleEnum)
+                    {
+                        FieldDecorators.AliasEnum_Title("PARTICLES");
+                    }
+
+                    // Sound list
+                    if (showSoundEnum)
+                    {
+                        FieldDecorators.AliasEnum_Title("SOUNDS");
+                    }
+
+                    // Flag list
+                    if (showFlagEnum)
+                    {
+                        FieldDecorators.ConditionalAliasEnum_Title("FLAGS", row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                    }
+
+                    // Cutscene list
+                    if (showCutsceneEnum)
+                    {
+                        FieldDecorators.AliasEnum_Title("CUTSCENES");
+                    }
+
+                    // Movie list
+                    if (showMovieEnum)
+                    {
+                        FieldDecorators.ConditionalAliasEnum_Title("MOVIES", row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                    }
+
+                    // Character list
+                    if (showCharacterEnum)
+                    {
+                        FieldDecorators.AliasEnum_Title("CHARACTERS");
+                    }
+
+                    // Project Enum
+                    if (showProjectEnum)
+                    {
+                        FieldDecorators.ProjectEnum_Title(Editor, cellMeta.ProjectEnumType);
+                    }
+
+                    // TileRef
+                    if (showTileRef)
+                    {
+                        FieldDecorators.TileRef_Title(Editor, cellMeta.TileRef);
+                    }
+
+                    // Param Field Offset
+                    if (showParamFieldOffset)
+                    {
+                        FieldDecorators.ParamFieldOffset_Title(activeParam, row, paramFieldIndex);
+                    }
+
+                    ImGui.EndGroup();
+
+                    if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+                    {
+                        if (!CFG.Current.ParamEditor_Field_Context_Split)
+                        {
+                            ImGui.OpenPopup("ParamRowCommonMenu");
+                        }
+                        else
+                        {
+                            ImGui.OpenPopup("ParamRowNameMenu");
+                        }
                     }
                 }
             }
@@ -932,7 +912,7 @@ public class ParamFieldView
         var conflict = (diffVanilla ? 1 : 0) + diffAuxPrimaryAndVanilla.Where(x => x).Count() > 1;
 
         var matchDefault = nullableCell?.Def.Default != null && nullableCell.Value.Def.Default.Equals(oldval);
-        var isRef = CFG.Current.Param_HideReferenceRows == false && (RefTypes != null || FmgRef != null || IconConfig != null) || CFG.Current.Param_HideEnums == false && Enum != null || VirtualRef != null || ExtRefs != null || CFG.Current.Param_HideEnums == false && showParticleEnum;
+        var isRef = (RefTypes != null || FmgRef != null || IconConfig != null) || Enum != null || VirtualRef != null || ExtRefs != null || showParticleEnum;
 
         if (ImGui.TableNextColumn())
         {
@@ -969,7 +949,7 @@ public class ParamFieldView
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
-                if (!CFG.Current.Param_FieldContextMenu_Split)
+                if (!CFG.Current.ParamEditor_Field_Context_Split)
                 {
                     ImGui.OpenPopup("ParamRowCommonMenu");
                 }
@@ -979,140 +959,143 @@ public class ParamFieldView
                 }
             }
 
-            if (displayRefTypes || displayFmgRef || displayIcon || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showCharacterEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
+            if (CFG.Current.ParamEditor_Field_List_Display_Decorators)
             {
-                ImGui.BeginGroup();
-
-                // ParamRef
-                if (displayRefTypes)
+                if (displayRefTypes || displayFmgRef || displayIcon || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showCharacterEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
                 {
-                    FieldDecorators.ParamReference_Value(Editor, bank, RefTypes, row, oldval);
+                    ImGui.BeginGroup();
+
+                    // ParamRef
+                    if (displayRefTypes)
+                    {
+                        FieldDecorators.ParamReference_Value(Editor, bank, RefTypes, row, oldval);
+                    }
+
+                    // FmgRef
+                    if (displayFmgRef)
+                    {
+                        FieldDecorators.TextReference_Value(Editor, FmgRef, row, oldval);
+                    }
+
+                    // MapFmgRef
+                    if (displayMapFmgRef)
+                    {
+                        FieldDecorators.TextReference_Value(Editor, MapFmgRef, row, oldval);
+                    }
+
+                    // Field Icon
+                    if (displayIcon)
+                    {
+                        FieldDecorators.FieldIcon_Display(Editor, IconConfig, row, oldval, internalName, 0);
+                    }
+
+                    // Enum
+                    if (displayEnum)
+                    {
+                        FieldDecorators.Enum_Value(Enum.Values, oldval.ToString());
+                    }
+
+                    // ParticleAlias
+                    if (showParticleEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particles))
+                    {
+                        FieldDecorators.AliasEnum_Value(particles, oldval.ToString());
+                    }
+
+                    // SoundAlias
+                    if (showSoundEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> sounds))
+                    {
+                        FieldDecorators.AliasEnum_Value(sounds, oldval.ToString());
+                    }
+
+                    // FlagAlias
+                    if (showFlagEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlags))
+                    {
+                        FieldDecorators.ConditionalAliasEnum_Value(eventFlags, oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                    }
+
+                    // CutsceneAlias
+                    if (showCutsceneEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Cutscenes, out List<AliasEntry> cutscenes))
+                    {
+                        FieldDecorators.AliasEnum_Value(cutscenes, oldval.ToString());
+                    }
+
+                    // MovieAlias
+                    if (showMovieEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Movies, out List<AliasEntry> movies))
+                    {
+                        FieldDecorators.ConditionalAliasEnum_Value(movies, oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                    }
+
+                    // CharacterAlias
+                    if (showCharacterEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters))
+                    {
+                        FieldDecorators.AliasEnum_Value(characters, oldval.ToString(), true);
+                    }
+
+                    // ProjectEnum
+                    if (showProjectEnum)
+                    {
+                        FieldDecorators.ProjectEnum_Value(Editor, cellMeta.ProjectEnumType, oldval.ToString());
+                    }
+
+                    // TileRef
+                    if (showTileRef)
+                    {
+                        FieldDecorators.TileRef_Value(Editor, cellMeta.TileRef, oldval.ToString());
+                    }
+
+                    // Param Field Offset
+                    if (showParamFieldOffset)
+                    {
+                        FieldDecorators.ParamFieldOffset_Value(Editor, activeParam, row, paramFieldIndex);
+                    }
+
+                    ImGui.EndGroup();
+
                 }
 
-                // FmgRef
-                if (displayFmgRef)
+                FieldDecorators.ParamReference_ContextMenu(Editor, bank, oldval, row, RefTypes);
+                FieldDecorators.TextReference_ContextMenu(Editor, bank, oldval, row, FmgRef);
+
+                // Param Reference Buttons
+                if (CFG.Current.ParamEditor_Field_List_Display_Map_Link)
                 {
-                    FieldDecorators.TextReference_Value(Editor, FmgRef, row, oldval);
+                    // These are placed at the top, below the ID row
+                    if (imguiId == 1)
+                    {
+                        ParamMetaReferences.ReturnPointParam(Editor, activeParam, row, internalName);
+                        ParamMetaReferences.BonfireWarpParam(Editor, activeParam, row, internalName);
+                        ParamMetaReferences.GameAreaParam(Editor, activeParam, row, internalName);
+                        ParamMetaReferences.ItemLotParam(Editor, activeParam, row, internalName);
+                    }
                 }
 
-                // MapFmgRef
-                if (displayMapFmgRef)
+                if (CFG.Current.ParamEditor_Field_List_Display_Model_Link)
                 {
-                    FieldDecorators.TextReference_Value(Editor, MapFmgRef, row, oldval);
+                    // These are placed at the top, below the ID row
+                    if (imguiId == 1)
+                    {
+                        ParamMetaReferences.AssetGeometryParam(Editor, activeParam, row, internalName);
+                        ParamMetaReferences.BuddyStoneParam(Editor, activeParam, row, internalName);
+                    }
+
+                    // These are placed in-line with the current field
+                    ParamMetaReferences.GrassTypeParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.BulletParam(Editor, activeParam, row, internalName);
                 }
 
-                // Field Icon
-                if (displayIcon)
+                // Color Picker
+                ParamMetaReferences.ColorPicker(Editor, activeParam, row, internalName);
+
+                if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
                 {
-                    FieldDecorators.FieldIcon_Display(Editor, IconConfig, row, oldval, internalName, 0);
-                }
-
-                // Enum
-                if (displayEnum)
-                {
-                    FieldDecorators.Enum_Value(Enum.Values, oldval.ToString());
-                }
-
-                // ParticleAlias
-                if (showParticleEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particles))
-                {
-                    FieldDecorators.AliasEnum_Value(particles, oldval.ToString());
-                }
-
-                // SoundAlias
-                if (showSoundEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> sounds))
-                {
-                    FieldDecorators.AliasEnum_Value(sounds, oldval.ToString());
-                }
-
-                // FlagAlias
-                if (showFlagEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlags))
-                {
-                    FieldDecorators.ConditionalAliasEnum_Value(eventFlags, oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
-                }
-
-                // CutsceneAlias
-                if (showCutsceneEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Cutscenes, out List<AliasEntry> cutscenes))
-                {
-                    FieldDecorators.AliasEnum_Value(cutscenes, oldval.ToString());
-                }
-
-                // MovieAlias
-                if (showMovieEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Movies, out List<AliasEntry> movies))
-                {
-                    FieldDecorators.ConditionalAliasEnum_Value(movies, oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
-                }
-
-                // CharacterAlias
-                if (showCharacterEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters))
-                {
-                    FieldDecorators.AliasEnum_Value(characters, oldval.ToString(), true);
-                }
-
-                // ProjectEnum
-                if (showProjectEnum)
-                {
-                    FieldDecorators.ProjectEnum_Value(Editor, cellMeta.ProjectEnumType, oldval.ToString());
-                }
-
-                // TileRef
-                if(showTileRef)
-                {
-                    FieldDecorators.TileRef_Value(Editor, cellMeta.TileRef, oldval.ToString());
-                }
-
-                // Param Field Offset
-                if (showParamFieldOffset)
-                {
-                    FieldDecorators.ParamFieldOffset_Value(Editor, activeParam, row, paramFieldIndex);
-                }
-
-                ImGui.EndGroup();
-
-            }
-
-            FieldDecorators.ParamReference_ContextMenu(Editor, bank, oldval, row, RefTypes);
-            FieldDecorators.TextReference_ContextMenu(Editor, bank, oldval, row, FmgRef);
-
-            // Param Reference Buttons
-            if (CFG.Current.Param_ViewInMapOption)
-            {
-                // These are placed at the top, below the ID row
-                if (imguiId == 1)
-                {
-                    ParamMetaReferences.ReturnPointParam(Editor, activeParam, row, internalName);
-                    ParamMetaReferences.BonfireWarpParam(Editor, activeParam, row, internalName);
-                    ParamMetaReferences.GameAreaParam(Editor, activeParam, row, internalName);
-                    ParamMetaReferences.ItemLotParam(Editor, activeParam, row, internalName);
-                }
-            }
-
-            if (CFG.Current.Param_ViewModelOption)
-            {
-                // These are placed at the top, below the ID row
-                if (imguiId == 1)
-                {
-                    ParamMetaReferences.AssetGeometryParam(Editor, activeParam, row, internalName);
-                    ParamMetaReferences.BuddyStoneParam(Editor, activeParam, row, internalName);
-                }
-
-                // These are placed in-line with the current field
-                ParamMetaReferences.GrassTypeParam(Editor, activeParam, row, internalName);
-                ParamMetaReferences.BulletParam(Editor, activeParam, row, internalName);
-            }
-
-            // Color Picker
-            ParamMetaReferences.ColorPicker(Editor, activeParam, row, internalName);
-
-            if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
-            {
-                if (!CFG.Current.Param_FieldContextMenu_Split)
-                {
-                    ImGui.OpenPopup("ParamRowCommonMenu");
-                }
-                else
-                {
-                    ImGui.OpenPopup("ParamRowValueMenu");
+                    if (!CFG.Current.ParamEditor_Field_Context_Split)
+                    {
+                        ImGui.OpenPopup("ParamRowCommonMenu");
+                    }
+                    else
+                    {
+                        ImGui.OpenPopup("ParamRowValueMenu");
+                    }
                 }
             }
 
@@ -1251,13 +1234,13 @@ public class ParamFieldView
 
             if (cellMeta != null)
             {
-                showParticleEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowParticleEnumList;
-                showSoundEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowSoundEnumList;
-                showFlagEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowFlagEnumList;
-                showCutsceneEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCutsceneEnumList;
-                showMovieEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowMovieEnumList;
-                showCharacterEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCharacterEnumList;
-                showProjectEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowProjectEnumList;
+                showParticleEnum = cellMeta.ShowParticleEnumList;
+                showSoundEnum = cellMeta.ShowSoundEnumList;
+                showFlagEnum = cellMeta.ShowFlagEnumList;
+                showCutsceneEnum = cellMeta.ShowCutsceneEnumList;
+                showMovieEnum = cellMeta.ShowMovieEnumList;
+                showCharacterEnum = cellMeta.ShowCharacterEnumList;
+                showProjectEnum = cellMeta.ShowProjectEnumList;
 
                 showParamFieldOffset = cellMeta.ShowParamFieldOffset;
                 paramFieldIndex = cellMeta.ParamFieldOffsetIndex;
@@ -1279,83 +1262,87 @@ public class ParamFieldView
 
             ImGui.InputText("##colval" + imguiSuffix, ref value, 256, ImGuiInputTextFlags.ReadOnly);
 
-            if (CFG.Current.Param_HideReferenceRows == false && RefTypes != null)
-            {
-                FieldDecorators.ParamReference_Value(Editor, bank, RefTypes, context, colVal);
-            }
 
-            if (CFG.Current.Param_HideReferenceRows == false && FmgRef != null)
+            if (CFG.Current.ParamEditor_Field_List_Display_Decorators)
             {
-                FieldDecorators.TextReference_Value(Editor, FmgRef, context, colVal);
-            }
+                if (RefTypes != null)
+                {
+                    FieldDecorators.ParamReference_Value(Editor, bank, RefTypes, context, colVal);
+                }
 
-            if (CFG.Current.Param_HideReferenceRows == false && MapFmgRef != null)
-            {
-                FieldDecorators.TextReference_Value(Editor, MapFmgRef, context, colVal);
-            }
+                if (FmgRef != null)
+                {
+                    FieldDecorators.TextReference_Value(Editor, FmgRef, context, colVal);
+                }
 
-            if (CFG.Current.Param_HideReferenceRows == false && iconConfig != null)
-            {
-                FieldDecorators.FieldIcon_Display(Editor, iconConfig, context, colVal, fieldName, 1);
-            }
+                if (MapFmgRef != null)
+                {
+                    FieldDecorators.TextReference_Value(Editor, MapFmgRef, context, colVal);
+                }
 
-            if (CFG.Current.Param_HideEnums == false && Enum != null)
-            {
-                FieldDecorators.Enum_Value(Enum.Values, colVal.ToString());
-            }
+                if (iconConfig != null)
+                {
+                    FieldDecorators.FieldIcon_Display(Editor, iconConfig, context, colVal, fieldName, 1);
+                }
 
-            // ParticleAlias
-            if (showParticleEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particles))
-            {
-                FieldDecorators.AliasEnum_Value(particles, colVal.ToString());
-            }
+                if (Enum != null)
+                {
+                    FieldDecorators.Enum_Value(Enum.Values, colVal.ToString());
+                }
 
-            // SoundAlias
-            if (showSoundEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> sounds))
-            {
-                FieldDecorators.AliasEnum_Value(sounds, colVal.ToString());
-            }
+                // ParticleAlias
+                if (showParticleEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particles))
+                {
+                    FieldDecorators.AliasEnum_Value(particles, colVal.ToString());
+                }
 
-            // FlagAlias
-            if (showFlagEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlags))
-            {
-                FieldDecorators.ConditionalAliasEnum_Value(eventFlags, colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
-            }
+                // SoundAlias
+                if (showSoundEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> sounds))
+                {
+                    FieldDecorators.AliasEnum_Value(sounds, colVal.ToString());
+                }
 
-            // CutsceneAlias
-            if (showCutsceneEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Cutscenes, out List<AliasEntry> cutscenes))
-            {
-                FieldDecorators.AliasEnum_Value(cutscenes, colVal.ToString());
-            }
+                // FlagAlias
+                if (showFlagEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlags))
+                {
+                    FieldDecorators.ConditionalAliasEnum_Value(eventFlags, colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                }
 
-            // MovieAlias
-            if (showMovieEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Movies, out List<AliasEntry> movies))
-            {
-                FieldDecorators.ConditionalAliasEnum_Value(movies, colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
-            }
+                // CutsceneAlias
+                if (showCutsceneEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Cutscenes, out List<AliasEntry> cutscenes))
+                {
+                    FieldDecorators.AliasEnum_Value(cutscenes, colVal.ToString());
+                }
 
-            // CharacterAlias
-            if (showCharacterEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters))
-            {
-                FieldDecorators.AliasEnum_Value(characters, colVal.ToString(), true);
-            }
+                // MovieAlias
+                if (showMovieEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Movies, out List<AliasEntry> movies))
+                {
+                    FieldDecorators.ConditionalAliasEnum_Value(movies, colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                }
 
-            // ProjectEnum
-            if (showProjectEnum)
-            {
-                FieldDecorators.ProjectEnum_Value(Editor, cellMeta.ProjectEnumType, colVal.ToString());
-            }
+                // CharacterAlias
+                if (showCharacterEnum && Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters))
+                {
+                    FieldDecorators.AliasEnum_Value(characters, colVal.ToString(), true);
+                }
 
-            // TileRef
-            if (showTileRef)
-            {
-                FieldDecorators.TileRef_Value(Editor, cellMeta.TileRef, colVal.ToString());
-            }
+                // ProjectEnum
+                if (showProjectEnum)
+                {
+                    FieldDecorators.ProjectEnum_Value(Editor, cellMeta.ProjectEnumType, colVal.ToString());
+                }
 
-            // Param Field Offset
-            if (showParamFieldOffset)
-            {
-                FieldDecorators.ParamFieldOffset_Value(Editor, activeParam, context, paramFieldIndex);
+                // TileRef
+                if (showTileRef)
+                {
+                    FieldDecorators.TileRef_Value(Editor, cellMeta.TileRef, colVal.ToString());
+                }
+
+                // Param Field Offset
+                if (showParamFieldOffset)
+                {
+                    FieldDecorators.ParamFieldOffset_Value(Editor, activeParam, context, paramFieldIndex);
+                }
             }
         }
     }
@@ -1447,14 +1434,14 @@ public class ParamFieldView
         // Field Information
         if (col != null)
         {
-            if (CFG.Current.Param_FieldContextMenu_PropertyInfo)
+            if (CFG.Current.ParamEditor_Field_Context_Display_Field_Attributes)
             {
                 ParamEditorDecorations.ImGui_DisplayPropertyInfo(propType, internalName, isNameMenu, !isNameMenu, altName,
                     col.Def.ArrayLength,
                     col.Def.BitSize);
             }
 
-            if (isNameMenu && CFG.Current.Param_FieldContextMenu_Description)
+            if (isNameMenu && CFG.Current.ParamEditor_Field_Context_Display_Field_Description)
             {
                 if (Wiki != null)
                 {
@@ -1470,13 +1457,13 @@ public class ParamFieldView
         else
         {
             // Headers
-            if (CFG.Current.Param_FieldContextMenu_Name)
+            if (CFG.Current.ParamEditor_Field_Context_Display_Field_Name)
             {
                 ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(internalName, "", true));
             }
         }
 
-        if (isNameMenu && (CFG.Current.Param_FieldContextMenu_Name || CFG.Current.Param_FieldContextMenu_Description || CFG.Current.Param_FieldContextMenu_PropertyInfo))
+        if (isNameMenu && (CFG.Current.ParamEditor_Field_Context_Display_Field_Name || CFG.Current.ParamEditor_Field_Context_Display_Field_Description || CFG.Current.ParamEditor_Field_Context_Display_Field_Attributes))
         {
             ImGui.Separator();
         }
@@ -1517,7 +1504,7 @@ public class ParamFieldView
         }
 
         // Pin Options
-        if (showPinOptions && CFG.Current.Param_FieldContextMenu_PinOptions)
+        if (showPinOptions && CFG.Current.ParamEditor_Field_Context_Display_Pin_Options)
         {
             if (ImGui.MenuItem(isPinned ? "Unpin " : "Pin " + internalName))
             {
@@ -1553,7 +1540,7 @@ public class ParamFieldView
         }
 
         // Compare
-        if (CFG.Current.Param_FieldContextMenu_CompareOptions)
+        if (CFG.Current.ParamEditor_Field_Context_Display_Comparison_Options)
         {
             if (col != null && ImGui.MenuItem("Compare field"))
             {
@@ -1562,7 +1549,7 @@ public class ParamFieldView
         }
 
         // Value Distribution
-        if (CFG.Current.Param_FieldContextMenu_ValueDistribution)
+        if (CFG.Current.ParamEditor_Field_Context_Display_Field_Value_Distribution)
         {
             if (ImGui.Selectable("View value distribution in selected rows..."))
             {
@@ -1577,7 +1564,7 @@ public class ParamFieldView
         string VirtualRef, List<ExtRef> ExtRefs, dynamic oldval, ref object newval, List<ParamRef> RefTypes,
         List<FMGRef> FmgRef, List<FMGRef> MapFmgRef, IconConfig iconConfig, ParamEnum Enum, string fieldName)
     {
-        if (CFG.Current.Param_FieldContextMenu_References)
+        if (CFG.Current.ParamEditor_Field_Context_Display_References)
         {
             if (RefTypes != null || FmgRef != null || MapFmgRef != null || iconConfig != null || Enum != null || cellMeta != null)
             {
@@ -1593,7 +1580,7 @@ public class ParamFieldView
             }
         }
 
-        if (CFG.Current.Param_FieldContextMenu_ReferenceSearch)
+        if (CFG.Current.ParamEditor_Field_Context_Display_Reference_Search)
         {
             if (VirtualRef != null || ExtRefs != null)
             {
@@ -1605,11 +1592,11 @@ public class ParamFieldView
             }
         }
 
-        if (CFG.Current.Param_FieldContextMenu_MassEdit)
+        if (CFG.Current.ParamEditor_Field_Context_Display_Mass_Edit)
         {
             ImGui.Separator();
 
-            if (!CFG.Current.Param_FieldContextMenu_FullMassEdit)
+            if (!CFG.Current.ParamEditor_Field_Context_Display_Full_Mass_Edit)
             {
                 if (ImGui.Selectable("Mass edit"))
                 {

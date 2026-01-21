@@ -218,7 +218,7 @@ public class ParamFieldInput
         else if (typ == typeof(float))
         {
             // Display in-game form of this property (i.e. 75% instead of 0.25)
-            if (isInvertedPercentage && CFG.Current.Param_ShowTraditionalPercentages)
+            if (isInvertedPercentage && CFG.Current.ParamEditor_Field_Input_Display_Traditional_Percentage)
             {
                 float fakeVal = (1 - (float)oldval) * 100;
 
