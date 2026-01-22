@@ -118,10 +118,10 @@ public class IconManager
         return texture;
     }
 
-    public void DisplayIcon(CachedTexture cachedTexture)
+    public Vector2 DisplayIcon(CachedTexture cachedTexture)
     {
         if (cachedTexture.OldHandle == null)
-            return;
+            return new Vector2();
 
         // Get scaled image size vector
         var scale = CFG.Current.ParamEditor_Field_List_Icon_Preview_Scale;
@@ -148,6 +148,8 @@ public class IconManager
         var textureId = new ImTextureID(cachedTexture.OldHandle.TexHandle);
 
         ImGui.Image(textureId, size, UV0, UV1);
+
+        return size;
     }
 
     public bool IsValidIconConfiguration(IconConfig iconConfig)

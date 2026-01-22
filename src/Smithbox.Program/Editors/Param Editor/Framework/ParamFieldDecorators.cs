@@ -679,7 +679,7 @@ public static class EnumHelper
         if (pEnum != null && pEnum.Name != null)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-            ImGui.TextUnformatted($@"{pEnum.Name}");
+            ImGui.TextUnformatted($@"   {pEnum.Name}");
             ImGui.PopStyleColor(1);
         }
     }
@@ -750,12 +750,12 @@ public static class ProjectEnumHelper
         if (enumEntry != null)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-            ImGui.TextUnformatted($@"{enumEntry.DisplayName}");
+            ImGui.TextUnformatted($@"   {enumEntry.DisplayName}");
             ImGui.PopStyleColor(1);
 
             if (enumEntry.Description != "")
             {
-                UIHelper.Tooltip($"{enumEntry.Description}");
+                UIHelper.Tooltip($"   {enumEntry.Description}");
             }
         }
     }
@@ -840,7 +840,7 @@ public static class AliasEnumHelper
         if (!inactiveEnum)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-            ImGui.TextUnformatted($@"{name}");
+            ImGui.TextUnformatted($@"   {name}");
             ImGui.PopStyleColor(1);
         }
     }
@@ -960,7 +960,7 @@ public static class ConditionalAliasEnumHelper
         if (!inactiveEnum)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-            ImGui.TextUnformatted($@"{name}");
+            ImGui.TextUnformatted($@"   {name}");
             ImGui.PopStyleColor(1);
         }
     }
@@ -1693,6 +1693,8 @@ public static class TextReferenceHelper
 #region Texture Reference Helper
 public static class TextureReferenceHelper
 {
+    public static Vector2 DummySize = new Vector2();
+
     public static void Label(ParamView curView, IconConfig iconConfig, Param.Row context)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
@@ -1723,7 +1725,11 @@ public static class TextureReferenceHelper
 
             if (cachedTexture != null)
             {
-                Smithbox.TextureManager.IconManager.DisplayIcon(cachedTexture);
+                DummySize = Smithbox.TextureManager.IconManager.DisplayIcon(cachedTexture);
+            }
+            else
+            {
+                ImGui.Dummy(DummySize);
             }
         }
 
