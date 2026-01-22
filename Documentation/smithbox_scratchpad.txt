@@ -5,4 +5,3 @@
 - Implement Views for Text Editor
 
 # TODO:
-changing value on icon field causes crash (LoadIcon culprit)

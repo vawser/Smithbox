@@ -599,9 +599,12 @@ public class ParamFieldWindow
 
         if (ImGui.TableNextColumn())
         {
+            bool pushedStyle = false;
+
             if (conflict)
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AuxConflict_Text);
+                pushedStyle = true;
             }
             else if (diffVanilla)
             {
@@ -613,10 +616,13 @@ public class ParamFieldWindow
                 {
                     ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
                 }
+
+                pushedStyle = true;
             }
             else if (metaContext.HasAnyReferenceElements())
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+                pushedStyle = true;
             }
             else if (matchDefault)
             {
@@ -630,11 +636,6 @@ public class ParamFieldWindow
 
             // Property Editor UI
             ParentView.FieldInputHandler.DisplayFieldInput(metaContext, propType, oldval, ref newval);
-
-            if (metaContext.HasAnyReferenceElements())
-            {
-                ImGui.PopStyleColor();
-            }
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
@@ -696,7 +697,7 @@ public class ParamFieldWindow
                 }
             }
 
-            if (conflict || diffVanilla)
+            if (pushedStyle)
             {
                 ImGui.PopStyleColor();
             }
