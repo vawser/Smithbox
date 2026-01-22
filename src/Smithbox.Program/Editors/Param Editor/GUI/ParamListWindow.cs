@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -151,13 +152,7 @@ public class ParamListWindow
                     ImGui.Indent(15.0f);
                     if (ImGui.Selectable($"{paramKey}##pin{paramKey}", paramKey == ParentView.Selection.GetActiveParam()))
                     {
-                        EditorCommandQueue.AddCommand($@"param/view/{ParentView.ViewIndex}/{paramKey}");
-
-                        ParentView.ParamTableWindow.UpdateTableSelection(paramKey);
-
-                        Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask(true);
-
-                        ParentView.RowDecorators.SetupFmgDecorators(paramKey);
+                        SelectParam(paramKey);
                     }
 
                     DisplayContextMenu(p, paramKey, true);
@@ -343,13 +338,7 @@ public class ParamListWindow
 
             if (ImGui.Selectable($"{displayedName}##{paramKey}", paramKey == ParentView.Selection.GetActiveParam()))
             {
-                EditorCommandQueue.AddCommand($@"param/view/{ParentView.ViewIndex}/{paramKey}");
-
-                ParentView.ParamTableWindow.UpdateTableSelection(paramKey);
-
-                Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask(true);
-
-                ParentView.RowDecorators.SetupFmgDecorators(paramKey);
+                SelectParam(paramKey);
             }
 
             if (popColor)
@@ -436,5 +425,18 @@ public class ParamListWindow
 
             ImGui.EndPopup();
         }
+    }
+
+    private void SelectParam(string paramKey)
+    {
+        EditorCommandQueue.AddCommand($@"param/view/{ParentView.ViewIndex}/{paramKey}");
+
+        ParentView.ParamTableWindow.UpdateTableSelection(paramKey);
+
+        Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask(true);
+
+        ParentView.RowDecorators.SetupFmgDecorators(paramKey);
+
+        Smithbox.TextureManager.IconManager.PurgeCache();
     }
 }
