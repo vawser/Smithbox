@@ -509,8 +509,8 @@ public class CFG
     public bool ParamEditor_Param_List_Display_Categories = true;
 
     // Table List
-    public bool Param_DisplayTableGroupColumn = true;
-    public ParamTableGroupRowDisplayType Param_TableGroupRowDisplayType = ParamTableGroupRowDisplayType.None;
+    public bool ParamEditor_Display_Table_List = true;
+    public ParamTableRowDisplayType ParamEditor_Table_List_Row_Display_Type = ParamTableRowDisplayType.None;
 
 
     // Row List
@@ -518,6 +518,7 @@ public class CFG
     public bool ParamEditor_Row_List_Enable_Line_Wrapping = true;
     public bool ParamEditor_Row_List_Enable_Row_Grouping = false;
     public bool ParamEditor_Row_List_Display_Decorators = true;
+    public bool ParamEditor_Row_List_Display_Modified_Row_Background = true;
 
     // Field List
     public ParamFieldNameMode ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
@@ -530,13 +531,19 @@ public class CFG
     public bool ParamEditor_Field_List_Display_Map_Link = true;
     public bool ParamEditor_Field_List_Display_Model_Link = true;
     public bool ParamEditor_Field_List_Display_Decorators = true;
+    public bool ParamEditor_Field_List_Display_Enums = true;
+    public bool ParamEditor_Field_List_Display_References = true;
     public bool ParamEditor_Field_List_Display_Field_Attributes = true;
     public bool ParamEditor_Field_List_Display_Icon_Preview = true;
     public float ParamEditor_Field_List_Icon_Preview_Scale = 1.0f;
+    public bool ParamEditor_Field_List_Display_Modified_Field_Background = true;
 
+    public ParamTooltipMode ParamEditor_Field_List_Tooltip_Mode = ParamTooltipMode.OnFieldName;
 
     // Mass Edit
     public bool ParamEditor_Show_Advanced_Mass_Edit_Commands = false;
+
+    public ParamFieldMassEditMode ParamEditor_Field_List_Context_Mass_Edit_Display_Mode = ParamFieldMassEditMode.AutoFill;
 
     public bool Param_PasteAfterSelection = false;
     public bool Param_PasteThenSelect = true;
@@ -557,6 +564,8 @@ public class CFG
     public bool ParamEditor_Row_Context_Display_Proliferate_Name = true;
     public bool ParamEditor_Row_Context_Display_Inherit_Name = true;
     public bool ParamEditor_Row_Context_Display_Row_Name_Tools = true;
+    public bool ParamEditor_Row_Context_Display_Finder_Quick_Option = false;
+    public bool ParamEditor_Row_Context_Display_Advanced_Options = true;
 
     public bool ParamEditor_Field_Context_Split = false;
     public bool ParamEditor_Field_Context_Display_Field_Name = false;
@@ -568,9 +577,8 @@ public class CFG
     public bool ParamEditor_Field_Context_Display_Searchbar_Options = true;
     public bool ParamEditor_Field_Context_Display_Reference_Search = true;
     public bool ParamEditor_Field_Context_Display_References = true;
-    public bool ParamEditor_Field_Context_Display_Mass_Edit = true;
-    public bool ParamEditor_Field_Context_Display_Full_Mass_Edit = true;
     public bool Param_FieldContextMenu_ImagePreview_ContextMenu = false;
+
 
     public int Param_Toolbar_Duplicate_Amount = 1;
     public int Param_Toolbar_Duplicate_Offset = 1;
@@ -595,29 +603,22 @@ public class CFG
 
     public bool Param_TableGroupView_AllowDuplicateInject = false;
 
-    public bool UseLatestGameOffset = true;
-    public int SelectedGameOffsetData = 0;
+    public bool ParamReloader_Use_Latest_Offset = true;
+    public int ParamReloader_Current_Offsets = 0;
 
-    // Windows
+
+    // 
     public bool Interface_ParamEditor_Table = true;
+    public bool Interface_ParamEditor_ToolWindow = true;
 
     // Tools
-    public bool Interface_ParamEditor_ToolWindow = true;
-    public bool Interface_ParamEditor_Tool_PinGroups = true;
-    public bool Interface_ParamEditor_Tool_ParamListCategories = true;
-    public bool Interface_ParamEditor_Tool_ParamMerge = true;
-    public bool Interface_ParamEditor_Tool_ParamUpgrader = true;
-    public bool Interface_ParamEditor_Tool_ParamReloader = true;
-    public bool Interface_ParamEditor_Tool_ItemGib = true;
-    public bool Interface_ParamEditor_Tool_MassEdit = true;
-    public bool Interface_ParamEditor_Tool_MassEditScript = true;
-    public bool Interface_ParamEditor_Tool_Duplicate = true;
-    public bool Interface_ParamEditor_Tool_CommutativeDuplicate = true;
-    public bool Interface_ParamEditor_Tool_RowNameTrimmer = true;
-    public bool Interface_ParamEditor_Tool_RowNameSorter = true;
-    public bool Interface_ParamEditor_Tool_FieldInstanceFinder = true;
-    public bool Interface_ParamEditor_Tool_RowInstanceFinder = true;
-    public bool Interface_ParamEditor_Tool_SetFinder = true;
+    public bool ParamEditor_Show_Tool_Mass_Edit = true;
+    public bool ParamEditor_Show_Tool_Data_Finders = true;
+    public bool ParamEditor_Show_Tool_Param_List_Categories = true;
+    public bool ParamEditor_Show_Tool_Item_Gib = true;
+    public bool ParamEditor_Show_Tool_Param_Reloader = true;
+    public bool ParamEditor_Show_Tool_Param_Merger = true;
+    public bool ParamEditor_Show_Tool_Pin_Groups = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Param_Editor = true;

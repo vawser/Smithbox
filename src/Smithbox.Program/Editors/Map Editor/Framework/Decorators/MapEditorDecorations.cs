@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using HKLib.hk2018.hkReflect.Opt;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -22,13 +23,12 @@ public static class MapEditorDecorations
         "treasureboxparam"
     };
 
-    /// <summary>
-    /// Param References
-    /// </summary>
     public static bool ParamRefRow(MapEditorScreen editor, MapEntityPropertyFieldMeta meta, PropertyInfo propinfo, object val, ref object newObj)
     {
         if (editor.Project.Handler.ParamEditor == null)
             return false;
+
+        var activeView = editor.Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
         if (meta != null && meta.ParamRef.Count > 0)
         {
@@ -102,18 +102,18 @@ public static class MapEditorDecorations
 
             ImGui.NextColumn();
 
-            FieldDecorators.ParamReference_Title(refs, null);
+            ParamReferenceHelper.Label(activeView, refs, null);
 
             ImGui.NextColumn();
 
             if (editor.Project.Handler.ParamEditor != null)
             {
-                FieldDecorators.ParamReference_Value(editor.Project.Handler.ParamEditor, editor.Project.Handler.ParamData.PrimaryBank, refs, null, val);
-                FieldDecorators.ParamReference_ContextMenu(editor.Project.Handler.ParamEditor, editor.Project.Handler.ParamData.PrimaryBank, val, null, refs);
+                ParamReferenceHelper.Hint(activeView, refs, null, val);
+                ParamReferenceHelper.Click(activeView, val, null, refs);
 
                 if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
                 {
-                    var opened = FieldDecorators.Decorator_ContextMenuItems(editor.Project.Handler.ParamEditor, editor.Project.Handler.ParamData.PrimaryBank, null, val, ref newObj, refs, null, null, null, null, null, null);
+                    var opened = ParamReferenceHelper.ContextMenu(activeView, refs, null, val, ref newObj, null);
                     ImGui.EndPopup();
                     return opened;
                 }
@@ -123,14 +123,13 @@ public static class MapEditorDecorations
         return false;
     }
 
-    /// <summary>
-    /// Text References
-    /// </summary>
-    /// <summary>
-    /// Param References
-    /// </summary>
     public static bool FmgRefRow(MapEditorScreen editor, MapEntityPropertyFieldMeta meta, PropertyInfo propinfo, object val, ref object newObj)
     {
+        if (editor.Project.Handler.ParamEditor == null)
+            return false;
+
+        var activeView = editor.Project.Handler.ParamEditor.ViewHandler.ActiveView;
+
         if (meta != null && meta.FmgRef.Count > 0)
         {
             List<FMGRef> refs = new();
@@ -142,10 +141,11 @@ public static class MapEditorDecorations
 
             ImGui.NextColumn();
 
-            FieldDecorators.TextReference_Title(refs, null);
+            TextReferenceHelper.Label(activeView, refs, null);
 
             ImGui.NextColumn();
-            FieldDecorators.TextReference_Value(editor, refs, null, val);
+
+            TextReferenceHelper.Hint(activeView, refs, null, val);
         }
 
         return false;

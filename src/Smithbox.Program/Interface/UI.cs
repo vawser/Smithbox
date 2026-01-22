@@ -152,6 +152,10 @@ public class UI
     public Vector4 ImGui_TimeAct_InfoText_3_Color = new Vector4(0.237f, 0.925f, 1.000f, 1.0f); // Light Blue
     public Vector4 ImGui_TimeAct_InfoText_4_Color = new Vector4(1f, 0.470f, 0.884f, 1.0f); // Purple
 
+    public Vector4 ParamDiffBackgroundColor = new Vector4(0.255f, 0.412f, 0.125f, 1.0f); // DARK GREEN
+    public Vector4 ParamConflictBackgroundColor = new Vector4(0.38f, 0.231f, 0.231f, 1.0f); // DARK RED
+    public Vector4 ParamCompareDiffBackgroundColor = new Vector4(0.2f, 0.2f, 0.35f, 1.0f); // DARK BLUE
+
     //****************************
     // UI
     //****************************

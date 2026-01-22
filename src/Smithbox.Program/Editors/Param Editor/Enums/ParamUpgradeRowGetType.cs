@@ -9,7 +9,10 @@ namespace StudioCore.Editors.ParamEditor;
 
 public enum ParamUpgradeRowGetType
 {
-    [Display(Name = "All Rows")] AllRows = 0,
-    [Display(Name = "Modified Rows")] ModifiedRows = 1,
-    [Display(Name = "Selected Rows")] SelectedRows = 2
+    [Display(Name = "All Rows")]
+    AllRows = 0,
+    [Display(Name = "Modified Rows")] 
+    ModifiedRows = 1,
+    [Display(Name = "Selected Rows")] 
+    SelectedRows = 2
 }

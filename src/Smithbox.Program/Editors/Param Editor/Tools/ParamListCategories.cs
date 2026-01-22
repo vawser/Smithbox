@@ -1,7 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
 using StudioCore.Application;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -9,192 +7,125 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public static class ParamListCategories
+public class ParamListCategories
 {
-    private static bool isNewEntryMode = false;
-    private static bool isEditEntryMode = false;
-    private static bool isInitialEditMode = false;
+    public ParamEditorScreen Editor;
+    public ProjectEntry Project;
 
-    private static ParamCategoryEntry _selectedUserCategory = null;
+    private bool isNewEntryMode = false;
+    private bool isEditEntryMode = false;
+    private bool isInitialEditMode = false;
 
-    private static string NewEntryName = "";
-    private static bool ForceTop = false;
-    private static bool ForceBottom = false;
-    private static List<string> NewEntryParams = new List<string>();
-    private static int NewEntryParamsCount = 1;
+    private ParamCategoryEntry _selectedUserCategory = null;
 
-    public static void Display(ParamEditorScreen editor)
+    private string NewEntryName = "";
+    private bool ForceTop = false;
+    private bool ForceBottom = false;
+    private List<string> NewEntryParams = new List<string>();
+    private int NewEntryParamsCount = 1;
+
+    public ParamListCategories(ParamEditorScreen editor, ProjectEntry project)
     {
-        var categories = editor.Project.Handler.ParamData.ParamCategories;
+        Editor = editor;
+        Project = project;
+    }
 
-        if (categories == null)
+    public void Display()
+    {
+        if (ImGui.CollapsingHeader("Param List Categories"))
         {
-            UIHelper.WrappedText("No param categories found.");
+            var categories = Project.Handler.ParamData.ParamCategories;
 
-            return;
-        }
-
-        var windowWidth = ImGui.GetWindowWidth();
-        var sectionHeight = ImGui.GetWindowHeight();
-
-        UIHelper.WrappedText("Create or modify project-specific param categories.");
-        UIHelper.WrappedText("");
-
-        ImGui.Separator();
-
-        if (ImGui.Button("New Entry", DPI.HalfWidthButton(windowWidth, 24)))
-        {
-            isNewEntryMode = true;
-            isEditEntryMode = false;
-
-            NewEntryName = "";
-            NewEntryParamsCount = 1;
-            NewEntryParams = new List<string>() { "" };
-        }
-        UIHelper.Tooltip("Create a new param category.");
-
-        ImGui.SameLine();
-        if (ImGui.Button("Save Changes", DPI.HalfWidthButton(windowWidth, 24)))
-        {
-            Write(editor);
-            isNewEntryMode = false;
-            isEditEntryMode = false;
-        }
-        UIHelper.Tooltip("Permanently save the current param categories to your project's .smithbox folder, so they persist across sessions.");
-
-        if (ImGui.Button("Edit Selected Entry", DPI.HalfWidthButton(windowWidth, 24)))
-        {
-            isNewEntryMode = false;
-            isEditEntryMode = true;
-            isInitialEditMode = true;
-        }
-        UIHelper.Tooltip("Edit the currently selected param category.");
-
-        ImGui.SameLine();
-        if (ImGui.Button("Delete Selected Entry", DPI.HalfWidthButton(windowWidth, 24)))
-        {
-            editor.Project.Handler.ParamData.ParamCategories.Categories.Remove(_selectedUserCategory);
-            _selectedUserCategory = null;
-            isNewEntryMode = false;
-            isEditEntryMode = false;
-        }
-        UIHelper.Tooltip("Delete the currently selected param category.");
-
-        if (ImGui.Button("Restore Base Categories", DPI.WholeWidthButton(windowWidth, 24)))
-        {
-            var result = PlatformUtils.Instance.MessageBox("Are you sure?", "Warning", MessageBoxButtons.YesNo);
-
-            if (result is DialogResult.Yes)
+            if (categories == null)
             {
-                RestoreDefault(editor);
-                isNewEntryMode = false;
-                isEditEntryMode = false;
+                UIHelper.WrappedText("No param categories found.");
+
+                return;
             }
-        }
-        UIHelper.Tooltip("Restore the default param categories.");
 
-        // List
-        ImGui.Separator();
+            var windowWidth = ImGui.GetWindowWidth();
+            var sectionHeight = ImGui.GetWindowHeight();
 
-        foreach(var category in editor.Project.Handler.ParamData.ParamCategories.Categories)
-        {
-            if (ImGui.Selectable($"{category.DisplayName}##userCategory_{category.DisplayName}", category == _selectedUserCategory, ImGuiSelectableFlags.AllowDoubleClick))
-            {
-                _selectedUserCategory = category;
-                isNewEntryMode = false;
-                isEditEntryMode = false;
-            }
-        }
+            UIHelper.WrappedText("Create or modify project-specific param categories.");
+            UIHelper.WrappedText("");
 
-        ImGui.Separator();
-
-        // New Entry
-        if (isNewEntryMode)
-        {
-            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "New Param Category");
             ImGui.Separator();
 
-            ImGui.InputText("Name##newEntryName", ref NewEntryName, 255);
-            UIHelper.Tooltip("The name of this param category.");
-
-            if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
+            if (ImGui.Button("New Entry"))
             {
-                ForceBottom = false;
+                isNewEntryMode = true;
+                isEditEntryMode = false;
+
+                NewEntryName = "";
+                NewEntryParamsCount = 1;
+                NewEntryParams = new List<string>() { "" };
             }
-            UIHelper.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
-
-            if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
-            {
-                ForceTop = false;
-            }
-            UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
-
-            ImGui.Text("Params to add:");
-            for (int i = 0; i < NewEntryParamsCount; i++)
-            {
-                var curText = NewEntryParams[i];
-                ImGui.InputText($"##newParamName{i}", ref curText, 255);
-                NewEntryParams[i] = curText;
-
-                ImGui.SameLine();
-
-                if (NewEntryParams.Count > 1)
-                {
-                    if (ImGui.Button($"Remove##removeNewParamName{i}", DPI.StandardButtonSize))
-                    {
-                        NewEntryParams.RemoveAt(i);
-                        NewEntryParamsCount = NewEntryParams.Count;
-                    }
-                }
-            }
-
-            ImGui.Text("");
-
-            if (ImGui.Button("Expand List", DPI.HalfWidthButton(windowWidth, 24)))
-            {
-                NewEntryParams.Add("");
-                NewEntryParamsCount++;
-            }
-            UIHelper.Tooltip("Add another param entry to fill.");
+            UIHelper.Tooltip("Create a new param category.");
 
             ImGui.SameLine();
+            if (ImGui.Button("Save Changes"))
+            {
+                Write();
+                isNewEntryMode = false;
+                isEditEntryMode = false;
+            }
+            UIHelper.Tooltip("Permanently save the current param categories to your project's .smithbox folder, so they persist across sessions.");
 
-            if (ImGui.Button("Finalize Entry", DPI.HalfWidthButton(windowWidth, 24)))
+            if (ImGui.Button("Edit Selected Entry"))
             {
                 isNewEntryMode = false;
-
-                var newCategoryEntry = new ParamCategoryEntry();
-                newCategoryEntry.DisplayName = NewEntryName;
-                newCategoryEntry.Params = NewEntryParams;
-
-                editor.Project.Handler.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
+                isEditEntryMode = true;
+                isInitialEditMode = true;
             }
-        }
+            UIHelper.Tooltip("Edit the currently selected param category.");
 
-        // Edit Entry
-        if (isEditEntryMode)
-        {
-            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Edit Param Category");
+            ImGui.SameLine();
+            if (ImGui.Button("Delete Selected Entry"))
+            {
+                Project.Handler.ParamData.ParamCategories.Categories.Remove(_selectedUserCategory);
+
+                _selectedUserCategory = null;
+                isNewEntryMode = false;
+                isEditEntryMode = false;
+            }
+            UIHelper.Tooltip("Delete the currently selected param category.");
+
+            if (ImGui.Button("Restore Base Categories"))
+            {
+                RestoreDefault();
+                isNewEntryMode = false;
+                isEditEntryMode = false;
+            }
+            UIHelper.Tooltip("Restore the default param categories.");
+
+            // List
             ImGui.Separator();
 
-            if (_selectedUserCategory != null)
+            foreach (var category in Project.Handler.ParamData.ParamCategories.Categories)
             {
-                // Fill with existing stuff
-                if (isInitialEditMode)
+                if (ImGui.Selectable($"{category.DisplayName}##userCategory_{category.DisplayName}", category == _selectedUserCategory, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    isInitialEditMode = false;
-
-                    NewEntryName = _selectedUserCategory.DisplayName;
-                    NewEntryParamsCount = _selectedUserCategory.Params.Count;
-                    ForceTop = _selectedUserCategory.ForceTop;
-                    ForceBottom = _selectedUserCategory.ForceBottom;
-                    NewEntryParams = _selectedUserCategory.Params;
+                    _selectedUserCategory = category;
+                    isNewEntryMode = false;
+                    isEditEntryMode = false;
                 }
+            }
 
-                // Edit
+            ImGui.Separator();
+
+            // New Entry
+            if (isNewEntryMode)
+            {
+                UIHelper.WrappedText("New Param Category");
+                ImGui.Separator();
+
+                ImGui.InputText("Name##newEntryName", ref NewEntryName, 255);
+                UIHelper.Tooltip("The name of this param category.");
+
                 if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
                 {
                     ForceBottom = false;
@@ -207,29 +138,6 @@ public static class ParamListCategories
                 }
                 UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
 
-                if (ImGui.Button("Expand List", DPI.HalfWidthButton(windowWidth, 24)))
-                {
-                    NewEntryParams.Add("");
-                    NewEntryParamsCount++;
-                }
-                UIHelper.Tooltip("Add another param entry to fill.");
-
-                ImGui.SameLine();
-
-                if (ImGui.Button("Finalize Entry", DPI.HalfWidthButton(windowWidth, 24)))
-                {
-                    isEditEntryMode = false;
-
-                    var curEntry = editor.Project.Handler.ParamData.ParamCategories.Categories.Where(e => e.DisplayName == NewEntryName).FirstOrDefault();
-
-                    if (curEntry != null)
-                    {
-                        curEntry.Params = NewEntryParams;
-                        curEntry.ForceTop = ForceTop;
-                        curEntry.ForceBottom = ForceBottom;
-                    }
-                }
-
                 ImGui.Text("Params to add:");
                 for (int i = 0; i < NewEntryParamsCount; i++)
                 {
@@ -241,10 +149,109 @@ public static class ParamListCategories
 
                     if (NewEntryParams.Count > 1)
                     {
-                        if (ImGui.Button($"Remove##removeNewParamName{i}", DPI.StandardButtonSize))
+                        if (ImGui.Button($"Remove##removeNewParamName{i}"))
                         {
                             NewEntryParams.RemoveAt(i);
                             NewEntryParamsCount = NewEntryParams.Count;
+                        }
+                    }
+                }
+
+                ImGui.Text("");
+
+                if (ImGui.Button("Expand List"))
+                {
+                    NewEntryParams.Add("");
+                    NewEntryParamsCount++;
+                }
+                UIHelper.Tooltip("Add another param entry to fill.");
+
+                ImGui.SameLine();
+
+                if (ImGui.Button("Finalize Entry"))
+                {
+                    isNewEntryMode = false;
+
+                    var newCategoryEntry = new ParamCategoryEntry();
+                    newCategoryEntry.DisplayName = NewEntryName;
+                    newCategoryEntry.Params = NewEntryParams;
+
+                    Project.Handler.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
+                }
+            }
+
+            // Edit Entry
+            if (isEditEntryMode)
+            {
+                UIHelper.WrappedText("Edit Param Category");
+                ImGui.Separator();
+
+                if (_selectedUserCategory != null)
+                {
+                    // Fill with existing stuff
+                    if (isInitialEditMode)
+                    {
+                        isInitialEditMode = false;
+
+                        NewEntryName = _selectedUserCategory.DisplayName;
+                        NewEntryParamsCount = _selectedUserCategory.Params.Count;
+                        ForceTop = _selectedUserCategory.ForceTop;
+                        ForceBottom = _selectedUserCategory.ForceBottom;
+                        NewEntryParams = _selectedUserCategory.Params;
+                    }
+
+                    // Edit
+                    if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
+                    {
+                        ForceBottom = false;
+                    }
+                    UIHelper.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
+
+                    if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
+                    {
+                        ForceTop = false;
+                    }
+                    UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
+
+                    if (ImGui.Button("Expand List"))
+                    {
+                        NewEntryParams.Add("");
+                        NewEntryParamsCount++;
+                    }
+                    UIHelper.Tooltip("Add another param entry to fill.");
+
+                    ImGui.SameLine();
+
+                    if (ImGui.Button("Finalize Entry"))
+                    {
+                        isEditEntryMode = false;
+
+                        var curEntry = Project.Handler.ParamData.ParamCategories.Categories.Where(e => e.DisplayName == NewEntryName).FirstOrDefault();
+
+                        if (curEntry != null)
+                        {
+                            curEntry.Params = NewEntryParams;
+                            curEntry.ForceTop = ForceTop;
+                            curEntry.ForceBottom = ForceBottom;
+                        }
+                    }
+
+                    ImGui.Text("Params to add:");
+                    for (int i = 0; i < NewEntryParamsCount; i++)
+                    {
+                        var curText = NewEntryParams[i];
+                        ImGui.InputText($"##newParamName{i}", ref curText, 255);
+                        NewEntryParams[i] = curText;
+
+                        ImGui.SameLine();
+
+                        if (NewEntryParams.Count > 1)
+                        {
+                            if (ImGui.Button($"Remove##removeNewParamName{i}"))
+                            {
+                                NewEntryParams.RemoveAt(i);
+                                NewEntryParamsCount = NewEntryParams.Count;
+                            }
                         }
                     }
                 }
@@ -252,9 +259,9 @@ public static class ParamListCategories
         }
     }
 
-    public static void RestoreDefault(ParamEditorScreen editor)
+    public void RestoreDefault()
     {
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(editor.Project.Descriptor.ProjectType));
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
         if (File.Exists(sourceFile))
@@ -265,30 +272,27 @@ public static class ParamListCategories
 
                 try
                 {
-                    editor.Project.Handler.ParamData.ParamCategories = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCategoryResource);
+                    Editor.Project.Handler.ParamData.ParamCategories = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCategoryResource);
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog("[Smithbox] Failed to deserialize param categories", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError("Failed to deserialize param categories", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to read param categories", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError("Failed to read param categories", e);
             }
         }
         else
         {
-            TaskLogs.AddLog("[Smithbox] Failed to find default param categories for game", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError("Failed to find default param categories for game");
         }
     }
 
-    public static void Write(ParamEditorScreen editor)
+    public void Write()
     {
-        if (editor.Project.Descriptor.ProjectType == ProjectType.Undefined)
-            return;
-
-        var modResourceDir = Path.Join(editor.Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(editor.Project));
+        var modResourceDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project));
         var modResourcePath = Path.Combine(modResourceDir, "Param Categories.json");
 
         if (!Directory.Exists(modResourceDir))
@@ -298,7 +302,7 @@ public static class ParamListCategories
 
         try
         {
-            string jsonString = JsonSerializer.Serialize(editor.Project.Handler.ParamData.ParamCategories, typeof(ParamCategoryResource), ParamEditorJsonSerializerContext.Default);
+            string jsonString = JsonSerializer.Serialize(Project.Handler.ParamData.ParamCategories, typeof(ParamCategoryResource), ParamEditorJsonSerializerContext.Default);
             var fs = new FileStream(modResourcePath, System.IO.FileMode.Create);
             var data = Encoding.ASCII.GetBytes(jsonString);
             fs.Write(data, 0, data.Length);
@@ -307,7 +311,7 @@ public static class ParamListCategories
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog("[Smithbox] Failed to write project param categories", LogLevel.Error, LogPriority.High, ex);
+            TaskLogs.AddError("Failed to write project param categories", ex);
         }
 
     }

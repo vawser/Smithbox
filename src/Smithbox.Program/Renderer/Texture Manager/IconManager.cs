@@ -57,7 +57,7 @@ public class IconManager
             return null;
         }
 
-        var key = $"icon_{fieldName}_{columnIndex}_{fieldName}_{fieldValue}";
+        var key = $"icon_{context.ID}_{columnIndex}_{fieldName}_{fieldValue}";
 
         var iconEntry = curProject.Handler.ParamData.IconConfigurations.Configurations.Where(
             e => e.Name == iconConfig.TargetConfiguration).FirstOrDefault();

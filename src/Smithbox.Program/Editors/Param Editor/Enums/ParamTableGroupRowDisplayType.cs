@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public enum ParamTableGroupRowDisplayType
+public enum ParamTableRowDisplayType
 {
     [Display(Name = "ID")]
     ID = 0,

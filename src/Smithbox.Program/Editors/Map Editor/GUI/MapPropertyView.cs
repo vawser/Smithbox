@@ -310,7 +310,7 @@ public class MapPropertyView
             // Info
             if (CFG.Current.MapEditor_Properties_Display_Property_Attributes)
             {
-                ParamEditorDecorations.ImGui_DisplayPropertyInfo(prop);
+                ParamFieldUtils.ImGui_DisplayPropertyInfo(prop);
                 ImGui.Separator();
             }
 

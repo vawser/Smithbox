@@ -1,27 +1,8 @@
 #---------------------
 # TODO 
 #---------------------
-- Implement new Settings impl
-
-- Update the code structuring in Param Editor to match the Foundry implementation
-
 - Implement FMG Descriptor pattern for Text Editor
 - Implement Views for Text Editor
 
-public static PreferenceItem XXX()
-{
-    return new PreferenceItem
-    {
-        Category = PreferenceCategory.System,
-        Spacer = true,
-
-        Section = "General",
-
-        Title = "XXX",
-        Description = "XXX",
-
-        Draw = () => {
-            ImGui.Checkbox("##inputValue", ref CFG.Current.System_Check_Program_Update);
-        }
-    };
-}
+# TODO:
+changing value on icon field causes crash (LoadIcon culprit)

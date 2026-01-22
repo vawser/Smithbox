@@ -17,7 +17,6 @@ public class ParamSelection
 
     private readonly List<(string, Param.Row)> pastStack = new();
     private string _activeParam;
-    internal string currentParamSearchString = "";
 
     public ParamSelection(ParamEditorScreen editor, ProjectEntry project)
     {
@@ -123,16 +122,6 @@ public class ParamSelection
         return ref _paramStates[_activeParam].currentPropSearchString;
     }
 
-    public void SetCurrentParamSearchString(string s)
-    {
-        if (_activeParam == null)
-        {
-            return;
-        }
-
-        currentParamSearchString = s;
-    }
-
     public void SetCurrentRowSearchString(string s)
     {
         if (_activeParam == null)
@@ -212,6 +201,8 @@ public class ParamSelection
                 Editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
 
             s.selectionCacheDirty = true;
+
+            // WIP: add icon clear for future icon support here
         }
     }
 

@@ -10,460 +10,124 @@ using System.Linq;
 
 namespace StudioCore.Editors.ParamEditor;
 
-/// <summary>
-/// The param column within a Param Editor view
-/// </summary>
+
 public class ParamView
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
-    public ParamEditorView View;
 
-    private string lastParamSearch = "";
+    public ParamSelection Selection;
 
-    public ParamView(ParamEditorScreen editor, ProjectEntry project, ParamEditorView view)
+    public ParamListWindow ParamListWindow;
+    public ParamTableWindow ParamTableWindow;
+    public ParamRowWindow ParamRowWindow;
+    public ParamFieldWindow ParamFieldWindow;
+
+    public ParamRowDecorators RowDecorators;
+    public ParamFieldDecorators FieldDecorators;
+    public ParamMetaEditor MetaEditor;
+    public ParamFieldInput FieldInputHandler;
+    public MassEdit MassEdit;
+
+    public int ViewIndex;
+    private int _imguiId = -1;
+
+    public bool JumpToSelectedRow = false;
+    public bool _isSearchBarActive = false;
+
+    public ParamView(ParamEditorScreen editor, ProjectEntry project, int imguiId)
     {
         Editor = editor;
         Project = project;
-        View = view;
+
+        ViewIndex = imguiId;
+        _imguiId = imguiId;
+
+        Selection = new(editor, project);
+
+        RowDecorators = new ParamRowDecorators(editor, project, this);
+        FieldDecorators = new ParamFieldDecorators(editor, project, this);
+        MetaEditor = new ParamMetaEditor(editor, project, this);
+        FieldInputHandler = new ParamFieldInput(editor, project, this);
+        MassEdit = new MassEdit(editor, project, this);
+
+        ParamListWindow = new ParamListWindow(editor, project, this);
+        ParamTableWindow = new ParamTableWindow(editor, project, this);
+        ParamRowWindow = new ParamRowWindow(editor, project, this);
+        ParamFieldWindow = new ParamFieldWindow(editor, project, this);
     }
 
-    /// <summary>
-    /// Entry point for the Params column.
-    /// </summary>
-    /// <param name="doFocus"></param>
-    /// <param name="isActiveView"></param>
-    /// <param name="scale"></param>
-    /// <param name="scrollTo"></param>
-    public void Display(bool doFocus, bool isActiveView, float scale, float scrollTo)
+    public void Display(bool doFocus, bool isActiveView)
     {
-        FocusManager.SetFocus(EditorFocusContext.ParamEditor_ParamList);
+        var activeParam = Selection.GetActiveParam();
 
-        DisplayHeader(isActiveView);
+        var columnCount = 3;
 
-        if (CFG.Current.ParamEditor_Param_List_Pinned_Stay_Visible)
+        if (ParamTableWindow.IsInTableGroupMode(activeParam))
         {
-            DisplayPinnedParams(scale);
+            columnCount = 4;
         }
 
-        ImGui.BeginChild("paramTypes");
-
-        if (!CFG.Current.ParamEditor_Param_List_Pinned_Stay_Visible)
+        if (ParamTableUtils.ImGuiTableStdColumns("paramsT", columnCount, true))
         {
-            DisplayPinnedParams(scale);
-        }
+            ImGui.TableSetupColumn("paramsCol", ImGuiTableColumnFlags.None, 0.5f);
+            ImGui.TableSetupColumn("paramsCol2", ImGuiTableColumnFlags.None, 0.5f);
 
-        if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedParams)
-        {
-            DisplayParams(doFocus, scale, scrollTo);
-        }
+            if (ParamTableWindow.IsInTableGroupMode(activeParam))
+            {
+                ImGui.TableSetupColumn("rowGroupCol", ImGuiTableColumnFlags.None, 0.5f);
+            }
 
-        ImGui.EndChild();
+            var scrollTo = 0f;
+            if (ImGui.TableNextColumn())
+            {
+                FocusManager.SetFocus(EditorFocusContext.ParamEditor_ParamList);
+
+                ParamListWindow.Display(doFocus, isActiveView, scrollTo);
+            }
+
+            if (ParamTableWindow.IsInTableGroupMode(activeParam))
+            {
+                if (ImGui.TableNextColumn())
+                {
+                    FocusManager.SetFocus(EditorFocusContext.ParamEditor_TableList);
+
+                    ParamTableWindow.Display(doFocus, isActiveView, scrollTo, activeParam);
+                }
+            }
+
+            if (ImGui.TableNextColumn())
+            {
+                FocusManager.SetFocus(EditorFocusContext.ParamEditor_RowList);
+
+                ParamRowWindow.Display(doFocus, isActiveView, scrollTo, activeParam);
+            }
+
+            Param.Row activeRow = Selection.GetActiveRow();
+            if (ImGui.TableNextColumn())
+            {
+                FocusManager.SetFocus(EditorFocusContext.ParamEditor_FieldList);
+
+                ParamFieldWindow.Display(isActiveView, activeParam, activeRow);
+            }
+
+            ImGui.EndTable();
+        }
     }
 
-    /// <summary>
-    /// The header section in the Params column.
-    /// </summary>
-    /// <param name="isActiveView"></param>
-    private void DisplayHeader(bool isActiveView)
+    public ParamData GetParamData()
     {
-        ImGui.Text("Params");
-
-        // Param Version
-        if (Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion != 0)
-        {
-            ImGui.SameLine();
-            ImGui.Text($"- Version {Utils.ParseParamVersion(Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion)}");
-
-            if (Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion < Editor.Project.Handler.ParamData.VanillaBank.ParamVersion)
-            {
-                ImGui.SameLine();
-                UIHelper.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, "(out of date)");
-            }
-        }
-
-        ImGui.Separator();
-
-        // Autofill
-        if (Editor.MassEditHandler.AutoFill != null)
-        {
-            ImGui.AlignTextToFramePadding();
-            var resAutoParam = Editor.MassEditHandler.AutoFill.ParamSearchBarAutoFill();
-
-            if (resAutoParam != null)
-            {
-                View.Selection.SetCurrentParamSearchString(resAutoParam);
-            }
-        }
-
-        ImGui.SameLine();
-
-        if (FocusManager.IsFocus(EditorFocusContext.ParamEditor_ParamList))
-        {
-            if (isActiveView && InputManager.IsPressed(KeybindID.ParamEditor_Focus_Searchbar))
-            {
-                ImGui.SetKeyboardFocusHere();
-            }
-        }
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.InputText($"##paramSearch", ref View.Selection.currentParamSearchString, 256);
-        UIHelper.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
-
-        if (!View.Selection.currentParamSearchString.Equals(lastParamSearch))
-        {
-            UICache.ClearCaches();
-            lastParamSearch = View.Selection.currentParamSearchString;
-        }
-
-        // Toggle Table Group Column
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Table}##tableGroupToggle", DPI.IconButtonSize))
-        {
-            CFG.Current.Param_DisplayTableGroupColumn = !CFG.Current.Param_DisplayTableGroupColumn;
-        }
-
-        var rowGroupColumnVisibility = "Hidden";
-        if (!CFG.Current.Param_DisplayTableGroupColumn)
-            rowGroupColumnVisibility = "Visible";
-
-        UIHelper.Tooltip($"Toggle the display of the Table Group column.\nCurrent Mode: {rowGroupColumnVisibility}");
-
-        ImGui.Separator();
+        return Project.Handler.ParamData;
     }
 
-    /// <summary>
-    /// The pinned params section in the Param column.
-    /// </summary>
-    /// <param name="scale"></param>
-    private void DisplayPinnedParams(float scale)
+    public ParamBank GetPrimaryBank()
     {
-        List<string> pinnedParamKeyList = new(Editor.Project.Descriptor.PinnedParams);
-
-        if (pinnedParamKeyList.Count > 0)
-        {
-            foreach (var paramKey in pinnedParamKeyList)
-            {
-                HashSet<int> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
-
-                if (Editor.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(paramKey))
-                {
-                    Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[paramKey];
-                    if (p != null)
-                    {
-                        var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
-                        var Wiki = meta?.Wiki;
-                        if (Wiki != null)
-                        {
-                            if (ParamEditorDecorations.HelpIcon(paramKey + "wiki", ref Wiki, true))
-                            {
-                                meta.Wiki = Wiki;
-                            }
-                        }
-                    }
-
-                    ImGui.Indent(15.0f * scale);
-                    if (ImGui.Selectable($"{paramKey}##pin{paramKey}", paramKey == View.Selection.GetActiveParam()))
-                    {
-                        EditorCommandQueue.AddCommand($@"param/view/{View.ViewIndex}/{paramKey}");
-                        View.TableGroupView.UpdateTableSelection(paramKey);
-
-                        Smithbox.TextureManager.IconManager.PurgeCache();
-                    }
-
-                    DisplayContextMenu(p, paramKey, true);
-
-                    ImGui.Unindent(15.0f * scale);
-                }
-            }
-
-            ImGui.Spacing();
-            ImGui.Separator();
-            ImGui.Spacing();
-        }
+        return Project.Handler.ParamData.PrimaryBank;
     }
 
-    /// <summary>
-    /// The main params section in the Param column.
-    /// </summary>
-    /// <param name="doFocus"></param>
-    /// <param name="scale"></param>
-    /// <param name="scrollTo"></param>
-    private void DisplayParams(bool doFocus, float scale, float scrollTo)
+    public ParamBank GetVanillaBank()
     {
-        List<string> paramKeyList = UICache.GetCached(Editor, View.ViewIndex, () =>
-        {
-            List<(ParamBank, Param)> list = null;
-
-            if (Editor.MassEditHandler.pse != null)
-            {
-                list = Editor.MassEditHandler.pse.Search(true, View.Selection.currentParamSearchString, true, true);
-            }
-
-            if (list != null)
-            {
-                var keyList = list.Where(param => param.Item1 == Editor.Project.Handler.ParamData.PrimaryBank)
-                    .Select(param => Editor.Project.Handler.ParamData.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
-
-                if (CFG.Current.ParamEditor_Param_List_Sort_Alphabetically)
-                {
-                    keyList.Sort();
-                }
-
-                return keyList;
-            }
-            else
-            {
-                var keyList = Editor.Project.Handler.ParamData.PrimaryBank.Params.Select(e => e.Key).ToList();
-            }
-
-            return new List<string>();
-        });
-
-
-        var categoryObj = Editor.Project.Handler.ParamData.ParamCategories;
-        var categories = Editor.Project.Handler.ParamData.ParamCategories.Categories;
-
-        if (categories != null && CFG.Current.ParamEditor_Param_List_Display_Categories)
-        {
-            var generalParamList = new List<string>();
-
-            // Build a general list from all unassigned params
-            foreach (var paramKey in paramKeyList)
-            {
-                bool add = true;
-
-                foreach (var category in categories)
-                {
-                    foreach (var entry in category.Params)
-                    {
-                        if (entry == paramKey)
-                            add = false;
-                    }
-                }
-
-                if (add)
-                    generalParamList.Add(paramKey);
-            }
-
-            // TODO: perhaps add an actual ordering system to the ParamCategories (using SortID) instead of this crude boolean method
-            if (categories.Count > 0)
-            {
-                // Categories - Forced Top
-                foreach (var category in categories)
-                {
-                    if (category.ForceTop)
-                    {
-                        if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
-                        {
-                            DisplayParamList(paramKeyList, category.Params, doFocus, scale, scrollTo);
-                        }
-                    }
-                }
-
-                // General List
-                if (ImGui.CollapsingHeader($"General", ImGuiTreeNodeFlags.DefaultOpen))
-                {
-                    DisplayParamList(paramKeyList, generalParamList, doFocus, scale, scrollTo);
-                }
-
-                // Categories - Default
-                foreach (var category in categories)
-                {
-                    if (!category.ForceTop && !category.ForceBottom)
-                    {
-                        if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
-                        {
-                            DisplayParamList(paramKeyList, category.Params, doFocus, scale, scrollTo);
-                        }
-                    }
-                }
-
-                // Categories - Forced Bottom
-                foreach (var category in categories)
-                {
-                    if (category.ForceBottom)
-                    {
-                        if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
-                        {
-                            DisplayParamList(paramKeyList, category.Params, doFocus, scale, scrollTo);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                // Fallback to full view
-                DisplayParamList(paramKeyList, paramKeyList, doFocus, scale, scrollTo);
-            }
-        }
-        else
-        {
-            // Fallback to full view
-            DisplayParamList(paramKeyList, paramKeyList, doFocus, scale, scrollTo);
-        }
+        return Project.Handler.ParamData.VanillaBank;
     }
 
-    /// <summary>
-    /// The actual list of params for the main section.
-    /// </summary>
-    /// <param name="paramKeyList"></param>
-    /// <param name="visibleParams"></param>
-    /// <param name="doFocus"></param>
-    /// <param name="scale"></param>
-    /// <param name="scrollTo"></param>
-    public void DisplayParamList(List<string> paramKeyList, List<string> visibleParams, bool doFocus, float scale, float scrollTo)
-    {
-        foreach (var paramKey in paramKeyList)
-        {
-            HashSet<int> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
-            Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[paramKey];
-
-            if (!visibleParams.Contains(paramKey))
-                continue;
-
-            if (p != null)
-            {
-                var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
-
-                var Wiki = meta?.Wiki;
-                if (Wiki != null)
-                {
-                    if (ParamEditorDecorations.HelpIcon(paramKey + "wiki", ref Wiki, true))
-                    {
-                        meta.Wiki = Wiki;
-                    }
-                }
-            }
-
-            ImGui.Indent(15.0f * scale);
-
-            if (primary != null ? primary.Any() : false)
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
-            }
-            else
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-            }
-
-            var displayedName = paramKey;
-
-            if (CFG.Current.ParamEditor_Param_List_Display_Community_Names)
-            {
-                var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
-                var names = meta?.DisplayNames;
-
-                if (names != null)
-                {
-                    var paramDisplayName = names.Where(e => e.Param == paramKey).FirstOrDefault();
-
-                    if (paramDisplayName != null)
-                    {
-                        displayedName = paramDisplayName.Name;
-                    }
-                }
-            }
-
-            if (ImGui.Selectable($"{displayedName}##{paramKey}", paramKey == View.Selection.GetActiveParam()))
-            {
-                //_selection.setActiveParam(param.Key);
-                EditorCommandQueue.AddCommand($@"param/view/{View.ViewIndex}/{paramKey}");
-                View.TableGroupView.UpdateTableSelection(paramKey);
-
-                Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask(true);
-
-                Smithbox.TextureManager.IconManager.PurgeCache();
-            }
-
-            ImGui.PopStyleColor();
-
-            if (doFocus && paramKey == View.Selection.GetActiveParam())
-            {
-                scrollTo = ImGui.GetCursorPosY();
-            }
-
-            // Context Menu
-            DisplayContextMenu(p, paramKey);
-
-            ImGui.Unindent(15.0f * scale);
-        }
-
-        if (doFocus)
-        {
-            ImGui.SetScrollFromPosY(scrollTo - ImGui.GetScrollY());
-        }
-    }
-
-    /// <summary>
-    /// The context menu for a Param entry.
-    /// </summary>
-    /// <param name="param"></param>
-    /// <param name="paramKey"></param>
-    /// <param name="isPinnedEntry"></param>
-    public void DisplayContextMenu(Param param, string paramKey, bool isPinnedEntry = false)
-    {
-        if (ImGui.BeginPopupContextItem($"{paramKey}"))
-        {
-            DPI.ApplyInputWidth(CFG.Current.Interface_Context_Menu_Width);
-
-            //if (ImGui.Selectable("Export Row Names as Text"))
-            //{
-            //    Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.Text, @"G:\Modding\Nightreign\NR-Test", Editor._activeView.Selection.GetActiveParam());
-            //}
-
-            if (ImGui.Selectable("Copy Name"))
-            {
-                PlatformUtils.Instance.SetClipboardText(paramKey);
-            }
-            UIHelper.Tooltip($"Copy the name of the current param selection to the clipboard.");
-
-            // Pin
-            if (!isPinnedEntry)
-            {
-                if (ImGui.Selectable($"Pin"))
-                {
-                    List<string> pinned = Editor.Project.Descriptor.PinnedParams;
-
-                    if (!pinned.Contains(paramKey))
-                    {
-                        pinned.Add(paramKey);
-                    }
-                }
-                UIHelper.Tooltip($"Pin the current param selection to the top of the param list.");
-            }
-            // Unpin
-            else if (isPinnedEntry)
-            {
-                if (ImGui.Selectable($"Unpin"))
-                {
-                    List<string> pinned = Editor.Project.Descriptor.PinnedParams;
-
-                    if (pinned.Contains(paramKey))
-                    {
-                        pinned.Remove(paramKey);
-                    }
-                }
-                UIHelper.Tooltip($"Unpin the current param selection from the top of the param list.");
-            }
-
-            if (CFG.Current.Developer_Enable_Tools)
-            {
-                if (ImGui.Selectable("Copy Param List"))
-                {
-                    DokuWikiGenerator.OutputParamTableInformation(Editor.Project);
-                }
-                UIHelper.Tooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
-
-                if (ImGui.Selectable("Copy Param Field List"))
-                {
-                    DokuWikiGenerator.OutputParamInformation(Editor.Project, paramKey);
-                }
-                UIHelper.Tooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
-            }
-
-            ImGui.EndPopup();
-        }
-    }
 }

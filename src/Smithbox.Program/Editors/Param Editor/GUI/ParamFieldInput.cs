@@ -10,13 +10,24 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamFieldInput
 {
-    private static object _editedPropCache;
-    private static object _editedTypeCache;
-    private static object _editedObjCache;
-    private static bool _changedCache;
-    private static bool _committedCache;
+    public ParamEditorScreen Editor;
+    public ProjectEntry Project;
+    public ParamView ParentView;
 
-    public static unsafe void DisplayFieldInput(ParamEditorScreen editor, Type typ, string internalName, object oldval, ref object newval, bool isBool, bool isInvertedPercentage)
+    private object _editedPropCache;
+    private object _editedTypeCache;
+    private object _editedObjCache;
+    private bool _changedCache;
+    private bool _committedCache;
+
+    public ParamFieldInput(ParamEditorScreen editor, ProjectEntry project, ParamView curView)
+    {
+        Editor = editor;
+        Project = project;
+        ParentView = curView;
+    }
+
+    public unsafe void DisplayFieldInput(FieldMetaContext metaContext, Type typ, object oldval, ref object newval)
     {
         _changedCache = false;
         _committedCache = false;
@@ -24,7 +35,7 @@ public class ParamFieldInput
 
         try
         {
-            if (isBool)
+            if (metaContext.IsBool)
             {
                 dynamic val = oldval;
                 bool checkVal = val > 0;
@@ -53,7 +64,7 @@ public class ParamFieldInput
 
             if (input.Draw("##value", out string newValue))
             {
-                if(ParamUtils.IsFxrString(newValue))
+                if (ParamUtils.IsFxrString(newValue))
                 {
                     newValue = ParamUtils.GetFxrId(newValue);
                 }
@@ -218,11 +229,11 @@ public class ParamFieldInput
         else if (typ == typeof(float))
         {
             // Display in-game form of this property (i.e. 75% instead of 0.25)
-            if (isInvertedPercentage && CFG.Current.ParamEditor_Field_Input_Display_Traditional_Percentage)
+            if (metaContext.IsInvertedPercentage && !CFG.Current.ParamEditor_Field_Input_Display_Traditional_Percentage)
             {
                 float fakeVal = (1 - (float)oldval) * 100;
 
-                if (ImGui.InputFloat("##value", ref fakeVal, 0.0f, 1.0f, Utils.ImGui_InputFloatFormat(fakeVal, 3, 3)))
+                if (ImGui.InputFloat("##value", ref fakeVal, 0.0f, 1.0f, ParamFieldUtils.ImGui_InputFloatFormat(fakeVal, 3, 3)))
                 {
                     // Restore actual value
                     float realVal = (1 - (fakeVal / 100));
@@ -234,7 +245,7 @@ public class ParamFieldInput
             else
             {
                 var val = (float)oldval;
-                if (ImGui.InputFloat("##value", ref val, 0.1f, 1.0f, Utils.ImGui_InputFloatFormat(val)))
+                if (ImGui.InputFloat("##value", ref val, 0.1f, 1.0f, ParamFieldUtils.ImGui_InputFloatFormat(val)))
                 {
                     newval = val;
                     _editedPropCache = newval;
@@ -317,14 +328,14 @@ public class ParamFieldInput
         _committedCache |= ImGui.IsItemDeactivatedAfterEdit();
     }
 
-    public static void SetLastPropertyManual(object newval)
+    public void SetLastPropertyManual(object newval)
     {
         _editedPropCache = newval;
         _changedCache = true;
         _committedCache = true;
     }
 
-    public static bool UpdateProperty(ParamEditorScreen editor, ActionManager executor, object obj, PropertyInfo prop, object oldval,
+    public bool UpdateProperty(object obj, PropertyInfo prop, object oldval,
         int arrayindex = -1)
     {
         if (_changedCache)
@@ -339,16 +350,14 @@ public class ParamFieldInput
 
         if (_changedCache)
         {
-            ChangeProperty(editor, executor, _editedTypeCache, _editedObjCache, _editedPropCache, ref _committedCache,
+            ChangeProperty(_editedTypeCache, _editedObjCache, _editedPropCache, ref _committedCache,
                 arrayindex);
         }
-
-        //Smithbox.EditorHandler.TextureViewer.ImagePreview.InvalidatePreviewImage();
 
         return _changedCache && _committedCache;
     }
 
-    private static void ChangeProperty(ParamEditorScreen editor, ActionManager executor, object prop, object obj, object newval,
+    private void ChangeProperty(object prop, object obj, object newval,
         ref bool committed, int arrayindex = -1)
     {
         if (committed)
@@ -366,12 +375,12 @@ public class ParamFieldInput
                 action = new PropertiesChangedAction((PropertyInfo)prop, arrayindex, obj, newval);
                 action.SetPostExecutionAction(undo =>
                 {
-                    var curParam = editor._activeView.Selection.GetActiveParam();
+                    var curParam = ParentView.Selection.GetActiveParam();
 
-                    if (editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+                    if (ParentView.ParamTableWindow.IsInTableGroupMode(curParam))
                     {
-                        var curGroup = editor._activeView.TableGroupView.CurrentTableGroup;
-                        editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+                        var curGroup = ParentView.ParamTableWindow.CurrentTableGroup;
+                        ParentView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
                     }
                 });
             }
@@ -380,17 +389,17 @@ public class ParamFieldInput
                 action = new PropertiesChangedAction((PropertyInfo)prop, obj, newval);
                 action.SetPostExecutionAction(undo =>
                 {
-                    var curParam = editor._activeView.Selection.GetActiveParam();
+                    var curParam = ParentView.Selection.GetActiveParam();
 
-                    if (editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+                    if (ParentView.ParamTableWindow.IsInTableGroupMode(curParam))
                     {
-                        var curGroup = editor._activeView.TableGroupView.CurrentTableGroup;
-                        editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+                        var curGroup = ParentView.ParamTableWindow.CurrentTableGroup;
+                        ParentView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
                     }
                 });
             }
 
-            executor.ExecuteAction(action);
+            ParentView.Editor.ActionManager.ExecuteAction(action);
         }
     }
 }

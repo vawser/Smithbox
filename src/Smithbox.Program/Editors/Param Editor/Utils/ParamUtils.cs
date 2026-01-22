@@ -11,6 +11,179 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamUtils
 {
+    /// <summary>
+    ///     Map related params.
+    /// </summary>
+    public static List<string> DS2MapParamlist = new()
+    {
+        "demopointlight",
+        "demospotlight",
+        "eventlocation",
+        "eventparam",
+        "GeneralLocationEventParam",
+        "generatorparam",
+        "generatorregistparam",
+        "generatorlocation",
+        "generatordbglocation",
+        "hitgroupparam",
+        "intrudepointparam",
+        "mapobjectinstanceparam",
+        "maptargetdirparam",
+        "npctalkparam",
+        "treasureboxparam"
+    };
+
+    public static List<string> SystemParamPrefixes_ER = new List<string>()
+    {
+        "CameraFadeParam",
+        "CommonSystemParam",
+        "DefaultKeyAssign",
+        "Gconfig",
+        "ReverbAuxSendBusParam",
+        "SoundCommonSystemParam"
+    };
+
+    public static List<string> SystemParamPrefixes_AC6 = new List<string>()
+    {
+        "CameraFadeParam"
+    };
+
+    public static List<string> GraphicsParamPrefixes_AC6 = new List<string>()
+    {
+        "GraphicsConfig"
+    };
+
+    public static List<string> EventParamPrefixes_AC6 = new List<string>()
+    {
+        "EFID"
+    };
+
+    public static List<string> SystemParamPrefixes_NR = new List<string>()
+    {
+        "CameraFadeParam",
+        "CommonSystemParam",
+        "DefaultKeyAssign",
+        "Gconfig",
+        "ReverbAuxSendBusParam",
+        "SoundCommonSystemParam"
+    };
+
+    public static List<string> EventParamPrefixes_NR = new List<string>()
+    {
+        "EFID"
+    };
+
+    public static bool IsSystemParamTouched(ProjectEntry project, ParamBank bank)
+    {
+        foreach (var param in bank.Params)
+        {
+            var key = param.Key;
+
+            if (project.Descriptor.ProjectType is ProjectType.ER)
+            {
+                foreach (var entry in ParamUtils.SystemParamPrefixes_ER)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+            if (project.Descriptor.ProjectType is ProjectType.AC6)
+            {
+                foreach (var entry in ParamUtils.SystemParamPrefixes_AC6)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+            if (project.Descriptor.ProjectType is ProjectType.NR)
+            {
+                foreach (var entry in ParamUtils.SystemParamPrefixes_NR)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public static bool IsGraphicsParamTouched(ProjectEntry project, ParamBank bank)
+    {
+        foreach (var param in bank.Params)
+        {
+            var key = param.Key;
+
+            if (project.Descriptor.ProjectType is ProjectType.AC6)
+            {
+                foreach (var entry in ParamUtils.GraphicsParamPrefixes_AC6)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public static bool IsEventParamTouched(ProjectEntry project, ParamBank bank)
+    {
+        foreach (var param in bank.Params)
+        {
+            var key = param.Key;
+
+            if (project.Descriptor.ProjectType is ProjectType.AC6)
+            {
+                foreach (var entry in ParamUtils.EventParamPrefixes_AC6)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+            if (project.Descriptor.ProjectType is ProjectType.NR)
+            {
+                foreach (var entry in EventParamPrefixes_NR)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
     public static string ParseRegulationVersion(ulong version)
     {
         string verStr = version.ToString();
@@ -375,5 +548,24 @@ public static class ParamUtils
         }
 
         return value;
+    }
+
+    public static string ParseParamVersion(ulong version)
+    {
+        string verStr = version.ToString();
+        if (verStr.Length == 7 || verStr.Length == 8)
+        {
+            char major = verStr[0];
+            string minor = verStr[1..3];
+            char patch = verStr[3];
+            string rev = verStr[4..];
+            return $"{major}.{minor}.{patch}.{rev}";
+        }
+
+        return "Unknown version format";
+    }
+    public static int ParseHexFromString(string str)
+    {
+        return int.Parse(str.Replace("0x", ""), System.Globalization.NumberStyles.HexNumber);
     }
 }

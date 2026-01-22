@@ -236,7 +236,6 @@ public class ProjectEditorHandler : IDisposable
         if (ParamData != null)
         {
             ParamEditor = new ParamEditorScreen(Project);
-            ParamEditor.MassEditHandler.Setup();
             firstEditor ??= ParamEditor;
         }
 

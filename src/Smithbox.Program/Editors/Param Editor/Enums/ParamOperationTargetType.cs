@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.ParamEditor;
 public enum ParamOperationTargetType
 {
-    [Display(Name = "Selected Rows")] SelectedRows,
-    [Display(Name = "Selected Param")] SelectedParam,
-    [Display(Name = "All Params")] AllParams
+    [Display(Name = "Selected Rows")] 
+    SelectedRows,
+    [Display(Name = "Selected Param")] 
+    SelectedParam,
+    [Display(Name = "All Params")] 
+    AllParams
 }

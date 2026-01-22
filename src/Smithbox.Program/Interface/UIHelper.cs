@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using Google.Protobuf.WellKnownTypes;
+using Hexa.NET.ImGui;
 using StudioCore.Utilities;
 using System;
 using System.IO;
@@ -316,6 +317,42 @@ public static class UIHelper
         }
     }
 
+
+    public static void ConditionalHeader(string title, string tooltip, ref bool visibilityToggle)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
+
+        if (ImGui.BeginTable($"{title.GetHashCode()}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text($"{title}");
+            ImGui.SameLine();
+
+            var icon = visibilityToggle ? Icons.Eye : Icons.EyeSlash;
+
+            ImGui.PushItemFlag(ImGuiItemFlags.NoNav, true);
+            ImGui.PushStyleColor(ImGuiCol.Button, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.ButtonActive, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
+            if (ImGui.Button($"{icon}", DPI.InlineIconButtonSize))
+            {
+                visibilityToggle = !visibilityToggle;
+            }
+            ImGui.PopStyleColor(4);
+            ImGui.PopItemFlag();
+
+            UIHelper.Tooltip(tooltip);
+
+            ImGui.EndTable();
+        }
+    }
+
     public static nuint GetTextInputBuffer(string contents)
     {
         int byteCount = Encoding.UTF8.GetByteCount(contents) + 1;
@@ -334,11 +371,11 @@ public static class UIHelper
 
         return flags;
     }
-    public static ImGuiWindowFlags GetInnerWindowFlags()
+    public static ImGuiWindowFlags GetInnerWindowFlags(bool checkMovementCfg = true)
     {
         var flags = ImGuiWindowFlags.None | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
-        if (!CFG.Current.Interface_Allow_Window_Movement)
+        if (checkMovementCfg && !CFG.Current.Interface_Allow_Window_Movement)
         {
             flags |= ImGuiWindowFlags.NoMove;
         }
@@ -377,6 +414,26 @@ public static class UIHelper
         var height = ImGui.GetIO().DisplaySize.Y;
         var size = new Vector2(width * 0.5f, height * 0.5f);
         ImGui.SetNextWindowSize(size);
+    }
+
+    public static void ApplyDiffHeaderBackground()
+    {
+        Vector2 pMin = ImGui.GetCursorScreenPos();
+        Vector2 pMax = new Vector2(
+            pMin.X + ImGui.GetContentRegionAvail().X,
+            pMin.Y + ImGui.GetTextLineHeightWithSpacing()
+        );
+
+        var color = new Vector4(0.255f, 0.412f, 0.125f, 1.0f);
+
+        color = UI.Current.ParamDiffBackgroundColor;
+
+        // Draw background
+        ImGui.GetWindowDrawList().AddRectFilled(
+            pMin,
+            pMax,
+            ImGui.ColorConvertFloat4ToU32(color)
+        );
     }
 }
 
@@ -417,4 +474,5 @@ public class InputTextHandler
         }
         return changed;
     }
+
 }

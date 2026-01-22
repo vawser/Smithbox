@@ -23,24 +23,20 @@ public class ParamData : IDisposable
 {
     public ProjectEntry Project;
 
-    public Dictionary<string, PARAMDEF> ParamDefs = new();
-    public Dictionary<string, PARAMDEF> ParamDefsByFilename = new();
-
     public ParamBank PrimaryBank;
     public ParamBank VanillaBank;
     public Dictionary<string, ParamBank> AuxBanks = new();
 
+    public Dictionary<string, PARAMDEF> ParamDefs = new();
+    public Dictionary<string, PARAMDEF> ParamDefsByFilename = new();
     public Dictionary<PARAMDEF, ParamMeta> ParamMeta = new();
 
+    // Additional Data
     public ParamTypeInfo ParamTypeInfo;
-
     public GraphLegends GraphLegends;
-
     public IconConfigurations IconConfigurations;
-
     public TableParams TableParamList;
     public TableGroupNameStore TableGroupNames;
-
     public GameOffsetResource ParamMemoryOffsets;
     public ParamCategoryResource ParamCategories;
     public ParamCommutativeResource CommutativeParamGroups;
@@ -197,7 +193,7 @@ public class ParamData : IDisposable
             var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog is DialogResult.OK)
             {
-                PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Community);
+                RowNameHelper.ImportRowNames(Project, PrimaryBank, ParamRowNameImportType.Community);
             }
 
             Project.Descriptor.ImportedParamRowNames = true;
@@ -210,7 +206,7 @@ public class ParamData : IDisposable
             case ProjectType.DES:
                 if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DES)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
@@ -218,7 +214,7 @@ public class ParamData : IDisposable
             case ProjectType.DS1R:
                 if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS1)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
@@ -226,42 +222,42 @@ public class ParamData : IDisposable
             case ProjectType.DS2S:
                 if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS2)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.BB:
                 if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_BB)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.DS3:
                 if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS3)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.ER:
                 if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_ER)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.AC6:
                 if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_AC6)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.NR:
                 if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_NR)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 

@@ -555,7 +555,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the param reloader version will be set to the latest executable version whenever Smithbox is started.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.UseLatestGameOffset);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamReloader_Use_Latest_Offset);
             }
         };
     }
@@ -586,14 +586,14 @@ public class ParamEditorPrefs
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
-                var index = CFG.Current.SelectedGameOffsetData;
+                var index = CFG.Current.ParamReloader_Current_Offsets;
 
                 string[] options = curProject.Handler.ParamData.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
 
                 DPI.ApplyInputWidth();
                 if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
                 {
-                    CFG.Current.SelectedGameOffsetData = index;
+                    CFG.Current.ParamReloader_Current_Offsets = index;
                 }
             }
         };
@@ -946,11 +946,50 @@ public class ParamEditorPrefs
             }
         };
     }
-    public static PreferenceItem ParamEditor_Field_List_Display_Field_Attributes()
+
+    public static PreferenceItem ParamEditor_Field_List_Display_References()
     {
         return new PreferenceItem
         {
             OrderID = 10,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display References",
+            Description = "If enabled, field references are displayed.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor_Field_List_Display_References);
+            }
+        };
+    }
+
+    public static PreferenceItem ParamEditor_Field_List_Display_Enums()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 11,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Enums",
+            Description = "If enabled, field enums are displayed.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor_Field_List_Display_Enums);
+            }
+        };
+    }
+
+    public static PreferenceItem ParamEditor_Field_List_Display_Field_Attributes()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 12,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -968,7 +1007,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 11,
+            OrderID = 13,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -986,7 +1025,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 12,
+            OrderID = 14,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
             InlineName = false,
@@ -1002,6 +1041,38 @@ public class ParamEditorPrefs
             }
         };
     }
+    public static PreferenceItem ParamEditor_Field_List_Tooltip_Mode()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 15,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Field Tooltip Mode",
+            Description = "Determines how the field tooltip is shown.",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Field_List_Tooltip_Mode.GetDisplayName()))
+                {
+                    foreach (var entry in Enum.GetValues(typeof(ParamTooltipMode)))
+                    {
+                        var type = (ParamTooltipMode)entry;
+
+                        if (ImGui.Selectable(type.GetDisplayName()))
+                        {
+                            CFG.Current.ParamEditor_Field_List_Tooltip_Mode = (ParamTooltipMode)entry;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
     #endregion
 
     #region Field Input
@@ -1009,7 +1080,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 12,
+            OrderID = 0,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -1026,11 +1097,29 @@ public class ParamEditorPrefs
     #endregion
 
     #region Row Context Menu
-    public static PreferenceItem ParamEditor_Row_Context_Display_Row_Name_Input()
+    public static PreferenceItem ParamEditor_Row_Context_Display_Advanced_Options()
     {
         return new PreferenceItem
         {
             OrderID = 0,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_Context_Menu,
+
+            Title = "Display Advanced Options",
+            Description = "If enabled, the advanced options in the row context menu will be displayed.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Advanced_Options);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Row_Context_Display_Row_Name_Input()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -1048,7 +1137,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 1,
+            OrderID = 2,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -1066,7 +1155,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 2,
+            OrderID = 3,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -1084,7 +1173,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 3,
+            OrderID = 4,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -1102,7 +1191,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 4,
+            OrderID = 5,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -1120,7 +1209,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 0,
+            OrderID = 6,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -1138,7 +1227,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 0,
+            OrderID = 7,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -1156,7 +1245,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 0,
+            OrderID = 8,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -1354,39 +1443,35 @@ public class ParamEditorPrefs
             }
         };
     }
-    public static PreferenceItem ParamEditor_Field_Context_Display_Mass_Edit()
+    public static PreferenceItem ParamEditor_Field_List_Context_Mass_Edit_Display_Mode()
     {
         return new PreferenceItem
         {
             OrderID = 10,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
+            InlineName = false,
 
-            Section = SectionCategory.ParamEditor_Field_Context_Menu,
+            Section = SectionCategory.ParamEditor_Field_List,
 
-            Title = "Display Field Mass Edit",
-            Description = "If enabled, the mass edit tool is displayed in the context menu.",
-
-            Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Mass_Edit);
-            }
-        };
-    }
-    public static PreferenceItem ParamEditor_Field_Context_Display_Full_Mass_Edit()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 11,
-            Category = PreferenceCategory.ParamEditor,
-            Spacer = true,
-
-            Section = SectionCategory.ParamEditor_Field_Context_Menu,
-
-            Title = "Display Full Field Mass Edit",
-            Description = "If enabled, the context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)",
+            Title = "Mass Edit Display Mode",
+            Description = "Determines how the mass edit input is displayed in the field context menu.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Full_Mass_Edit);
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Field_List_Context_Mass_Edit_Display_Mode.GetDisplayName()))
+                {
+                    foreach (var entry in Enum.GetValues(typeof(ParamFieldMassEditMode)))
+                    {
+                        var type = (ParamFieldMassEditMode)entry;
+
+                        if (ImGui.Selectable(type.GetDisplayName()))
+                        {
+                            CFG.Current.ParamEditor_Field_List_Context_Mass_Edit_Display_Mode = (ParamFieldMassEditMode)entry;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
             }
         };
     }

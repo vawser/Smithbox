@@ -385,7 +385,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_DES)
         {
-            RowNameStrip();
+            RowNameHelper.RowNameStrip(Project);
         }
 
         // Replace params with edited ones
@@ -446,7 +446,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_DES)
         {
-            RowNameRestore();
+            RowNameHelper.RowNameRestore(Project);
         }
 
         return successfulSave;
@@ -564,7 +564,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
         {
-            RowNameStrip();
+            RowNameHelper.RowNameStrip(Project);
         }
 
         foreach (BinderFile p in paramBnd.Files)
@@ -596,7 +596,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
         {
-            RowNameRestore();
+            RowNameHelper.RowNameRestore(Project);
         }
 
         return successfulSave;
@@ -691,7 +691,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
         {
-            RowNameStrip();
+            RowNameHelper.RowNameStrip(Project);
         }
 
         // Replace params with edited ones
@@ -724,7 +724,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
         {
-            RowNameRestore();
+            RowNameHelper.RowNameRestore(Project);
         }
 
         return successfulSave;
@@ -1055,7 +1055,7 @@ public class ParamBank : IDisposable
             try
             {
                 // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                RowNameStrip();
+                RowNameHelper.RowNameStrip(Project);
 
                 foreach (KeyValuePair<string, Param> p in Params)
                 {
@@ -1075,11 +1075,11 @@ public class ParamBank : IDisposable
             }
             catch
             {
-                RowNameRestore();
+                RowNameHelper.RowNameRestore(Project);
                 throw;
             }
 
-            RowNameRestore();
+            RowNameHelper.RowNameRestore(Project);
         }
         else if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
         {
@@ -1100,7 +1100,7 @@ public class ParamBank : IDisposable
             try
             {
                 // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                RowNameStrip();
+                RowNameHelper.RowNameStrip(Project);
 
                 // Write params to loose files.
                 foreach (KeyValuePair<string, Param> p in Params)
@@ -1110,11 +1110,11 @@ public class ParamBank : IDisposable
             }
             catch
             {
-                RowNameRestore();
+                RowNameHelper.RowNameRestore(Project);
                 throw;
             }
 
-            RowNameRestore();
+            RowNameHelper.RowNameRestore(Project);
         }
 
         ProjectUtils.WriteWithBackup(Project, fs, toFs, @"enc_regulation.bnd.dcx", paramBnd);
@@ -1199,7 +1199,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_DS3)
         {
-            RowNameStrip();
+            RowNameHelper.RowNameStrip(Project);
         }
 
         // Replace params with edited ones
@@ -1237,7 +1237,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_DS3)
         {
-            RowNameRestore();
+            RowNameHelper.RowNameRestore(Project);
         }
 
         return successfulSave;
@@ -1296,7 +1296,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_BB)
         {
-            RowNameStrip();
+            RowNameHelper.RowNameStrip(Project);
         }
 
         // Replace params with edited ones
@@ -1312,7 +1312,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_BB)
         {
-            RowNameRestore();
+            RowNameHelper.RowNameRestore(Project);
         }
 
         return successfulSave;
@@ -1372,7 +1372,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_SDT)
         {
-            RowNameStrip();
+            RowNameHelper.RowNameStrip(Project);
         }
 
         // Replace params with edited ones
@@ -1405,7 +1405,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_SDT)
         {
-            RowNameRestore();
+            RowNameHelper.RowNameRestore(Project);
         }
 
         return successfulSave;
@@ -1512,7 +1512,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_ER)
         {
-            RowNameStrip();
+            RowNameHelper.RowNameStrip(Project);
         }
 
         OverwriteParamsER(regParams);
@@ -1528,7 +1528,7 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (IsSystemParamTouched())
+        if (ParamUtils.IsSystemParamTouched(Project, this))
         {
             if (sourceFs.TryGetFile(sysParam, out var sysParamF))
             {
@@ -1539,7 +1539,8 @@ public class ParamBank : IDisposable
         }
         if (CFG.Current.ParamEditor_Row_Name_Strip_ER)
         {
-            RowNameRestore();
+
+            RowNameHelper.RowNameRestore(Project);
         }
 
         return successfulSave;
@@ -1708,7 +1709,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_AC6)
         {
-            RowNameStrip();
+            RowNameHelper.RowNameStrip(Project);
         }
 
         OverwriteParamsAC6(regParams);
@@ -1723,7 +1724,7 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (IsSystemParamTouched())
+        if (ParamUtils.IsSystemParamTouched(Project, this))
         {
             if (sourceFs.TryGetFile(sysParam, out var sysParamF))
             {
@@ -1742,7 +1743,7 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (IsGraphicsParamTouched())
+        if (ParamUtils.IsGraphicsParamTouched(Project, this))
         {
             if (sourceFs.TryGetFile(graphicsParam, out var graphicsParamF))
             {
@@ -1761,7 +1762,7 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (IsEventParamTouched())
+        if (ParamUtils.IsEventParamTouched(Project, this))
         {
             if (sourceFs.TryGetFile(eventParam, out var eventParamF))
             {
@@ -1773,7 +1774,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_AC6)
         {
-            RowNameRestore();
+            RowNameHelper.RowNameRestore(Project);
         }
 
         return successfulSave;
@@ -1904,7 +1905,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
         {
-            RowNameStrip();
+            RowNameHelper.RowNameStrip(Project);
         }
 
         OverwriteParamsNR(regParams);
@@ -1921,7 +1922,7 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (IsSystemParamTouched())
+        if (ParamUtils.IsSystemParamTouched(Project, this))
         {
             if (fs.TryGetFile(sysParam, out var sysParamF))
             {
@@ -1940,7 +1941,7 @@ public class ParamBank : IDisposable
             //return false;
         }
 
-        if (IsEventParamTouched())
+        if (ParamUtils.IsEventParamTouched(Project, this))
         {
             if (fs.TryGetFile(eventParam, out var eventParamF))
             {
@@ -1952,7 +1953,7 @@ public class ParamBank : IDisposable
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
         {
-            RowNameRestore();
+            RowNameHelper.RowNameRestore(Project);
         }
 
         return successfulSave;
@@ -2197,827 +2198,6 @@ public class ParamBank : IDisposable
         return allDiffs[param];
     }
     #endregion
-
-    #region Row Name Strip / Restore
-    /// <summary>
-    /// Strip and store the row names for this param bank
-    /// </summary>
-    public void RowNameStrip()
-    {
-        var exportDir = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names");
-
-        if (!Directory.Exists(exportDir))
-        {
-            Directory.CreateDirectory(exportDir);
-        }
-
-        var store = new RowNameStore();
-        store.Params = new();
-
-        foreach (KeyValuePair<string, Param> p in Params)
-        {
-            var paramEntry = new RowNameParam();
-            paramEntry.Name = p.Key;
-            paramEntry.Entries = new();
-
-            var groupedRows = p.Value.Rows
-                .GroupBy(r => r.ID)
-                .ToDictionary(g => g.Key, g => g.Select(r => r.Name ?? "").ToList());
-
-            paramEntry.Entries = groupedRows.Select(kvp => new RowNameEntry
-            {
-                ID = kvp.Key,
-                Entries = kvp.Value
-            }).ToList();
-
-            var fullPath = Path.Combine(exportDir, $"{p.Key}.json");
-
-            var options = new JsonSerializerOptions
-            {
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                WriteIndented = true,
-                IncludeFields = true
-            };
-            var json = JsonSerializer.Serialize(paramEntry, typeof(RowNameParam), options);
-
-            File.WriteAllText(fullPath, json);
-
-            for (int i = 0; i < p.Value.Rows.Count; i++)
-            {
-                // Strip
-                p.Value.Rows[i].Name = "";
-            }
-
-            //TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Stripped row names and stored them in {fullPath}");
-        }
-
-    }
-
-    public void RowNameRestore()
-    {
-        RowNameStore store = new();
-        store.Params = new();
-
-        var importDir = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names");
-
-        // Fallback to pre 2.0.6 method if the Stripped Row Names folder doesn't exist
-        if (!Directory.Exists(importDir))
-        {
-            var importFile = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names.json");
-
-            if (File.Exists(importFile))
-            {
-                var filestring = File.ReadAllText(importFile);
-
-                RowNameStoreLegacy legacyStore = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.RowNameStoreLegacy);
-
-                if (legacyStore == null)
-                {
-                    TaskLogs.AddError($"[Param Editor:] Failed to located {importDir} for row name restore in {Name}.");
-                }
-                else
-                {
-                    if (legacyStore == null)
-                        return;
-
-                    if (legacyStore.Params == null)
-                        return;
-
-                    var storeDict = legacyStore.Params.ToDictionary(e => e.Name);
-
-                    foreach (KeyValuePair<string, Param> p in Params)
-                    {
-                        if (!storeDict.ContainsKey(p.Key))
-                            continue;
-
-                        SetParamNamesLegacy(
-                            p.Value,
-                            storeDict[p.Key]
-                        );
-                    }
-
-                    TaskLogs.AddLog($"[Param Editor] Restored row names in {Name}.");
-                }
-            }
-        }
-        else
-        {
-            foreach (var file in Directory.EnumerateFiles(importDir))
-            {
-                try
-                {
-                    var filestring = File.ReadAllText(file);
-
-                    RowNameParam item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.RowNameParam);
-
-                    if (item != null)
-                    {
-                        store.Params.Add(item);
-                    }
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddError($"[Param Editor] Failed to load {file} for row name restore in {Name}.", e);
-                }
-            }
-
-            if (store == null)
-                return;
-
-            if (store.Params == null)
-                return;
-
-            var storeDict = store.Params.ToDictionary(e => e.Name);
-
-            foreach (KeyValuePair<string, Param> p in Params)
-            {
-                if (!storeDict.ContainsKey(p.Key))
-                    continue;
-
-                SetParamNames(
-                    p.Value,
-                    storeDict[p.Key]
-                );
-            }
-
-            TaskLogs.AddLog($"[Param Editor] Restored row names in {Name}.");
-
-            var legacyFile = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names.json");
-            if (File.Exists(legacyFile))
-            {
-                var dialog = PlatformUtils.Instance.MessageBox("Delete legacy JSON for row names?\nBy default, you should click Yes.", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if(dialog is DialogResult.Yes)
-                {
-                    File.Delete(legacyFile);
-                }
-            }
-        }
-    }
-
-    #endregion
-
-    #region Row Name Import
-    /// <summary>
-    /// Import row names
-    /// </summary>
-    /// <param name="importType"></param>
-    /// <param name="sourceType"></param>
-    /// <param name="filepath"></param>
-    public async void ImportRowNames(ParamImportRowNameSourceType sourceType, string filepath = "")
-    {
-        Task<bool> importRowNameTask = ImportRowNamesTask(sourceType, filepath, "");
-        bool rowNamesImported = await importRowNameTask;
-
-        if (rowNamesImported)
-        {
-            TaskLogs.AddLog($"[Param Editor] Imported row names in {Name}.");
-        }
-        else
-        {
-            TaskLogs.AddError($"[Param Editor] Failed to import row names in {Name}.");
-        }
-    }
-
-    public async void ImportRowNamesForParam(ParamImportRowNameSourceType sourceType, string targetParam = "", string filepath = "")
-    {
-        Task<bool> importRowNameTask = ImportRowNamesTask(sourceType, filepath, targetParam);
-        bool rowNamesImported = await importRowNameTask;
-
-        if (rowNamesImported)
-        {
-            TaskLogs.AddLog($"[Param Editor] Imported row names for {targetParam} in {Name}.");
-        }
-        else
-        {
-            TaskLogs.AddError($"[Param Editor] Failed to import row names for {targetParam} in {Name}.");
-        }
-    }
-
-    public async Task<bool> ImportRowNamesTask(ParamImportRowNameSourceType sourceType, string filepath = "", string targetParam = "")
-    {
-        await Task.Yield();
-
-        var sourceDirectory = filepath;
-        var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
-
-        switch (sourceType)
-        {
-            case ParamImportRowNameSourceType.Community:
-                sourceDirectory = Path.Combine(folder, "Community Row Names");
-                break;
-            case ParamImportRowNameSourceType.Developer:
-                sourceDirectory = Path.Combine(folder, "Developer Row Names");
-                break;
-        }
-
-        // For user-explicit imports
-        if (filepath != "")
-        {
-            sourceDirectory = filepath;
-        }
-
-        if (!Directory.Exists(sourceDirectory))
-        {
-            TaskLogs.AddError($"[Param Editor] Failed to find {sourceDirectory} for {Name}");
-            return false;
-        }
-
-        RowNameStore store = new RowNameStore();
-        store.Params = new();
-
-        if (targetParam != "")
-        {
-            var sourceFile = Path.Combine(sourceDirectory, $"{targetParam}.json");
-
-            if (File.Exists(sourceFile))
-            {
-                try
-                {
-                    var filestring = File.ReadAllText(sourceFile);
-
-                    RowNameParam item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.RowNameParam);
-
-                    if (item != null)
-                    {
-                        store.Params.Add(item);
-                    }
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddError($"[Param Editor] Failed to load {sourceFile} for row name import in {Name}.", e);
-                }
-            }
-        }
-        else
-        {
-            foreach (var file in Directory.EnumerateFiles(sourceDirectory))
-            {
-                try
-                {
-                    var filestring = File.ReadAllText(file);
-
-                    RowNameParam item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.RowNameParam);
-
-                    if (item != null)
-                    {
-                        store.Params.Add(item);
-                    }
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddError($"[Param Editor] Failed to load {file} for row name import in {Name}.", e);
-                }
-            }
-        }
-
-        if (store == null)
-            return false;
-
-        if (store.Params == null)
-            return false;
-
-        var storeDict = store.Params.ToDictionary(e => e.Name);
-
-        foreach (KeyValuePair<string, Param> p in Params)
-        {
-            if (!storeDict.ContainsKey(p.Key))
-                continue;
-
-            if(targetParam != "")
-            {
-                if (p.Key != targetParam)
-                    continue;
-            }
-
-            SetParamNames(p.Value, storeDict[p.Key]);
-        }
-
-        return true;
-    }
-
-    private static void SetParamNames(Param param, RowNameParam rowNames)
-    {
-        if (rowNames == null)
-            return;
-
-        var nameEntriesByID = new Dictionary<int, RowNameEntry>();
-        foreach(var entry in rowNames.Entries)
-        {
-            if(!nameEntriesByID.ContainsKey(entry.ID))
-            {
-                nameEntriesByID.Add(entry.ID, entry);
-            }
-        }
-        var idCounts = new Dictionary<int, int>();
-
-        foreach (var row in param.Rows)
-        {
-            if (!idCounts.TryGetValue(row.ID, out int index))
-                index = 0;
-
-            idCounts[row.ID] = index + 1;
-
-            if (nameEntriesByID.TryGetValue(row.ID, out var nameEntry))
-            {
-                if (nameEntry.Entries != null)
-                {
-                    if (index < nameEntry.Entries.Count)
-                    {
-                        if(CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly)
-                        {
-                            if (row.Name == null || row.Name == "")
-                            {
-                                row.Name = nameEntry.Entries[index];
-                            }
-                        }
-                        else
-                        {
-                            row.Name = nameEntry.Entries[index];
-                        }
-                    }
-                }
-            }
-        }
-    }
-    private static void SetParamNamesLegacy(Param param, RowNameParamLegacy rowNames)
-    {
-        var rowsByID = param.Rows.ToLookup(e => e.ID);
-        var rowNamesByID = rowNames.Entries.ToLookup(e => e.ID);
-
-        foreach (var entry in rowsByID)
-        {
-            foreach (var (row, nameEntry) in entry.Zip(rowNamesByID[entry.Key]))
-            {
-                if (CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly)
-                {
-                    if (row.Name == null || row.Name == "")
-                    {
-                        row.Name = nameEntry.Name;
-                    }
-                }
-                else
-                {
-                    row.Name = nameEntry.Name;
-                }
-            }
-        }
-    }
-
-    #endregion
-
-    #region Row Name Export
-    /// <summary>
-    /// Export row names
-    /// </summary>
-    /// <param name="exportType"></param>
-    /// <param name="filepath"></param>
-    /// <param name="paramName"></param>
-    public async void ExportRowNames(ParamExportRowNameType exportType, string filepath, string paramName = "")
-    {
-        var exportDir = Path.Combine(filepath, "Row Name Export");
-
-        if (!Directory.Exists(exportDir))
-        {
-            Directory.CreateDirectory(exportDir);
-        }
-
-        Task<bool> exportRowNameTask = ExportRowNamesTask(exportDir, exportType, filepath, paramName);
-        bool rowNamesExported = await exportRowNameTask;
-
-
-        if (rowNamesExported)
-        {
-            TaskLogs.AddLog($"[Param Editor] Exported row names to {exportDir} for {Name}.");
-        }
-        else
-        {
-            TaskLogs.AddError($"[Param Editor] Failed to export row names to {exportDir} for {Name}.");
-        }
-    }
-
-    public async Task<bool> ExportRowNamesTask(string exportDir, ParamExportRowNameType exportType, string filepath, string paramName = "")
-    {
-        await Task.Yield();
-
-        var store = new RowNameStore();
-        store.Params = new();
-
-        foreach (KeyValuePair<string, Param> p in Params)
-        {
-            if (paramName != "")
-            {
-                if (p.Key != paramName)
-                    continue;
-            }
-
-            var paramEntry = new RowNameParam();
-            paramEntry.Name = p.Key;
-            paramEntry.Entries = new();
-
-            var groupedRows = p.Value.Rows
-                .GroupBy(r => r.ID)
-                .ToDictionary(g => g.Key, g => g.Select(r => r.Name ?? "").ToList());
-
-            paramEntry.Entries = groupedRows.Select(kvp => new RowNameEntry
-            {
-                ID = kvp.Key,
-                Entries = kvp.Value
-            }).ToList();
-
-            // JSON
-            if (exportType is ParamExportRowNameType.JSON)
-            {
-                var fullPath = Path.Combine(exportDir, $"{p.Key}.json");
-
-                var options = new JsonSerializerOptions
-                {
-                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                    WriteIndented = true,
-                    IncludeFields = true
-                };
-                var json = JsonSerializer.Serialize(paramEntry, typeof(RowNameParam), options);
-
-                File.WriteAllText(fullPath, json);
-
-                TaskLogs.AddLog($"[Param Editor] Exported row names to {fullPath} for {Name}.");
-            }
-
-            if (exportType is ParamExportRowNameType.Text)
-            {
-                store.Params.Add(paramEntry);
-            }
-        }
-
-        // Text
-        if (exportType is ParamExportRowNameType.Text)
-        {
-            var textOuput = "";
-
-            foreach (var entry in store.Params)
-            {
-                var fullPath = Path.Combine(exportDir, $"{entry.Name}.txt");
-
-                if (paramName != "")
-                {
-                    if (entry.Name != paramName)
-                        continue;
-                }
-                textOuput = $"{textOuput}\n##{entry.Name}";
-
-                foreach (var row in entry.Entries)
-                {
-                    textOuput = $"{textOuput}\n{row.ID};";
-
-                    foreach(var indexRow in row.Entries)
-                    {
-                        textOuput = $"{textOuput};{indexRow}";
-                    }
-                }
-
-                File.WriteAllText(fullPath, textOuput);
-            }
-        }
-
-        return true;
-    }
-
-    #endregion
-
-
-
-    /// <summary>
-    ///     Map related params.
-    /// </summary>
-    public readonly List<string> DS2MapParamlist = new()
-    {
-        "demopointlight",
-        "demospotlight",
-        "eventlocation",
-        "eventparam",
-        "GeneralLocationEventParam",
-        "generatorparam",
-        "generatorregistparam",
-        "generatorlocation",
-        "generatordbglocation",
-        "hitgroupparam",
-        "intrudepointparam",
-        "mapobjectinstanceparam",
-        "maptargetdirparam",
-        "npctalkparam",
-        "treasureboxparam"
-    }; 
-    
-    // Legacy CSV import
-    public async void ImportRowNamesForParam_CSV(string filepath = "", string targetParam = "")
-    {
-        Task<bool> importRowNameTask = ImportRowNamesTask_CSV(filepath, targetParam);
-        bool rowNamesImported = await importRowNameTask;
-
-        if (rowNamesImported)
-        {
-            TaskLogs.AddLog($"[Param Editor] Imported row names for {targetParam} in {Name}.");
-        }
-        else
-        {
-            TaskLogs.AddError($"[Param Editor] Failed to import row names for {targetParam} in {Name}.");
-        }
-    }
-
-    public async Task<bool> ImportRowNamesTask_CSV(string filepath = "", string targetParam = "")
-    {
-        await Task.Yield();
-
-        var sourceFilepath = filepath;
-
-        if (!File.Exists(sourceFilepath))
-        {
-            TaskLogs.AddError($"[Param Editor] Failed to find {sourceFilepath} for {Name}.");
-            return false;
-        }
-
-        try
-        {
-            var filestring = File.ReadAllText(sourceFilepath);
-
-            var entries = filestring.Split("\n");
-            var mapping = new Dictionary<int, string>();
-
-            foreach(var entry in entries)
-            {
-                var parts = entry.Split(CFG.Current.Param_Import_Delimiter);
-                if(parts.Length > 1)
-                {
-                    var id = parts[0];
-                    var name = parts[1];
-
-                    try
-                    {
-                        var realID = int.Parse(id);
-
-                        mapping.Add(realID, name);
-                    }
-                    catch { }
-                }
-            }
-
-            foreach (KeyValuePair<string, Param> p in Params)
-            {
-                if (targetParam != "")
-                {
-                    if (p.Key != targetParam)
-                        continue;
-                }
-
-                for (var i = 0; i < p.Value.Rows.Count; i++)
-                {
-                    foreach (var entry in mapping)
-                    {
-                        if (entry.Key == p.Value.Rows[i].ID)
-                        {
-                            p.Value.Rows[i].Name = entry.Value;
-                        }
-                    }
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddError($"[Param Editor] Failed to load {sourceFilepath} for row name import in {Name}.", e);
-        }
-
-        return true;
-    }
-
-    /// <summary>
-    /// Import all legacy stripped names from folder
-    /// </summary>
-    /// <param name="folderPath"></param>
-    /// <param name="targetParam"></param>
-    public async void ImportRowNamesForParam_Legacy(string folderPath = "", string targetParam = "")
-    {
-        Task<bool> importRowNameTask = ImportRowNamesTask_Legacy(folderPath, targetParam);
-        bool rowNamesImported = await importRowNameTask;
-
-        if (rowNamesImported)
-        {
-            TaskLogs.AddLog($"[Param Editor] Imported row names from legacy row name storage for {Name}.");
-        }
-        else
-        {
-            TaskLogs.AddError($"[Param Editor] Failed to import row names from legacy row name storage for {Name}.");
-        }
-    }
-
-    public async Task<bool> ImportRowNamesTask_Legacy(string folderPath = "", string targetParam = "")
-    {
-        await Task.Yield();
-
-        var sourceFolderPath = folderPath;
-
-        if (!Directory.Exists(sourceFolderPath))
-        {
-            TaskLogs.AddError($"[Param Editor] Failed to find {sourceFolderPath} for {Name}.");
-            return false;
-        }
-
-        try
-        {
-            foreach(var file in Directory.EnumerateFiles(sourceFolderPath))
-            {
-                var filename = Path.GetFileNameWithoutExtension(file);
-
-                if(targetParam != "")
-                {
-                    if (targetParam != filename)
-                        continue;
-                }
-
-                if(Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(filename))
-                {
-                    var param = Project.Handler.ParamData.PrimaryBank.Params[filename];
-
-                    var lines = File.ReadLines(file);
-                    Dictionary<int, string> nameDict = lines
-                        .Select((value, index) => new { index, value })
-                        .ToDictionary(x => x.index, x => x.value);
-
-                    for(int i = 0; i < param.Rows.Count; i++)
-                    {
-                        var curRow = param.Rows[i];
-
-                        if(nameDict.ContainsKey(i))
-                        {
-                            var name = nameDict[i];
-
-                            Match match = Regex.Match(name, @"^\d+\s*(.*)$");
-                            if (match.Success)
-                            {
-                                string nonNumericPart = match.Groups[1].Value;
-                                curRow.Name = nonNumericPart;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddError($"[Param Editor] Failed to load {sourceFolderPath} for row name import in {Name}", e);
-        }
-
-        return true;
-    }
-
-    public List<string> SystemParamPrefixes_ER = new List<string>()
-    {
-        "CameraFadeParam",
-        "CommonSystemParam",
-        "DefaultKeyAssign",
-        "Gconfig",
-        "ReverbAuxSendBusParam",
-        "SoundCommonSystemParam"
-    };
-
-    public List<string> SystemParamPrefixes_AC6 = new List<string>()
-    {
-        "CameraFadeParam"
-    };
-
-    public List<string> GraphicsParamPrefixes_AC6 = new List<string>()
-    {
-        "GraphicsConfig"
-    };
-
-    public List<string> EventParamPrefixes_AC6 = new List<string>()
-    {
-        "EFID"
-    };
-
-    public List<string> SystemParamPrefixes_NR = new List<string>()
-    {
-        "CameraFadeParam",
-        "CommonSystemParam",
-        "DefaultKeyAssign",
-        "Gconfig",
-        "ReverbAuxSendBusParam",
-        "SoundCommonSystemParam"
-    };
-
-    public List<string> EventParamPrefixes_NR = new List<string>()
-    {
-        "EFID"
-    };
-
-    public bool IsSystemParamTouched()
-    {
-        foreach(var param in Params)
-        {
-            var key = param.Key;
-
-            if(Project.Descriptor.ProjectType is ProjectType.ER)
-            {
-                foreach(var entry in SystemParamPrefixes_ER)
-                {
-                    if(key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if (primary.Any())
-                            return true;
-                    }
-                }
-            }
-            if (Project.Descriptor.ProjectType is ProjectType.AC6)
-            {
-                foreach (var entry in SystemParamPrefixes_AC6)
-                {
-                    if (key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if (primary.Any())
-                            return true;
-                    }
-                }
-            }
-            if (Project.Descriptor.ProjectType is ProjectType.NR)
-            {
-                foreach (var entry in SystemParamPrefixes_NR)
-                {
-                    if (key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if (primary.Any())
-                            return true;
-                    }
-                }
-            }
-        }
-
-        return false;
-    }
-
-    public bool IsGraphicsParamTouched()
-    {
-        foreach (var param in Params)
-        {
-            var key = param.Key;
-
-            if (Project.Descriptor.ProjectType is ProjectType.AC6)
-            {
-                foreach (var entry in GraphicsParamPrefixes_AC6)
-                {
-                    if (key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if(primary.Any())
-                            return true;
-                    }
-                }
-            }
-        }
-
-        return false;
-    }
-
-    public bool IsEventParamTouched()
-    {
-        foreach (var param in Params)
-        {
-            var key = param.Key;
-
-            if (Project.Descriptor.ProjectType is ProjectType.AC6)
-            {
-                foreach (var entry in EventParamPrefixes_AC6)
-                {
-                    if (key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if (primary.Any())
-                            return true;
-                    }
-                }
-            }
-            if (Project.Descriptor.ProjectType is ProjectType.NR)
-            {
-                foreach (var entry in EventParamPrefixes_NR)
-                {
-                    if (key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if (primary.Any())
-                            return true;
-                    }
-                }
-            }
-        }
-
-        return false;
-    }
 
     #region Dispose
     public void Dispose()

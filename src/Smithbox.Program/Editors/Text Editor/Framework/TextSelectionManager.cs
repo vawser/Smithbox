@@ -77,7 +77,8 @@ public class TextSelectionManager
             // Refresh the param editor FMG decorators when the file changes.
             if (paramEditor != null)
             {
-                paramEditor.DecoratorHandler.SetupFmgDecorators();
+                var activeView = paramEditor.ViewHandler.ActiveView;
+                activeView.RowDecorators.SetupFmgDecorators();
             }
 
             // Auto-select first FMG

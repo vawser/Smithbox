@@ -51,7 +51,8 @@ public class TextEditorPrefs
                                 // Refresh the param editor FMG decorators when the category changes.
                                 if (curProject.Handler.ParamEditor != null)
                                 {
-                                    curProject.Handler.ParamEditor.DecoratorHandler.ClearFmgDecorators();
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
                                 }
                             }
                         }

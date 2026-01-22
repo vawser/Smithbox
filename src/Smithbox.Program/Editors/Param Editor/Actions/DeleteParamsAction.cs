@@ -34,14 +34,13 @@ public class DeleteParamsAction : EditorAction
         {
         }
 
-        var curParam = Editor._activeView.Selection.GetActiveParam();
+        var curParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
 
-        if (Editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+        if (Editor.ViewHandler.ActiveView.ParamTableWindow.IsInTableGroupMode(curParam))
         {
-            var curGroup = Editor._activeView.TableGroupView.CurrentTableGroup;
-            Editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
-
-            Editor._activeView.TableGroupView.UpdateTableSelection();
+            var curGroup = Editor.ViewHandler.ActiveView.ParamTableWindow.CurrentTableGroup;
+            Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
+            Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection();
         }
 
         return ActionEvent.NoEvent;
@@ -58,16 +57,13 @@ public class DeleteParamsAction : EditorAction
         {
         }
 
-        Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
+        var curParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
 
-        var curParam = Editor._activeView.Selection.GetActiveParam();
-
-        if (Editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+        if (Editor.ViewHandler.ActiveView.ParamTableWindow.IsInTableGroupMode(curParam))
         {
-            var curGroup = Editor._activeView.TableGroupView.CurrentTableGroup;
-            Editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
-
-            Editor._activeView.TableGroupView.UpdateTableSelection();
+            var curGroup = Editor.ViewHandler.ActiveView.ParamTableWindow.CurrentTableGroup;
+            Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
+            Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection();
         }
         return ActionEvent.NoEvent;
     }
