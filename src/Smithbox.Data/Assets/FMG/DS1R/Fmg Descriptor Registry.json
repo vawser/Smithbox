@@ -45,14 +45,16 @@
     "Containers": [
         {
             "OrderID": 1,
-            "FileName": "item.msgbnd.dcx",
+            "FullName": "item.msgbnd.dcx",
+            "SimpleName": "item",
             "ContainerName": "Item",
             "VariantName": "Stock",
             "DisplayName": "Item"
         },
         {
             "OrderID": 2,
-            "FileName": "menu.msgbnd.dcx",
+            "FullName": "menu.msgbnd.dcx",
+            "SimpleName": "menu",
             "ContainerName": "Menu",
             "VariantName": "Stock",
             "DisplayName": "Menu"

@@ -65,7 +65,8 @@
     "Containers": [
         {
             "OrderID": 1,
-            "FileName": "item.msgbnd.dcx",
+            "FullName": "item.msgbnd.dcx",
+            "SimpleName": "item",
             "ContainerName": "Item",
             "VariantName": "Stock",
             "DisplayName": "Item",
@@ -73,7 +74,8 @@
         },
         {
             "OrderID": 2,
-            "FileName": "item_dlc01.msgbnd.dcx",
+            "FullName": "item_dlc01.msgbnd.dcx",
+            "SimpleName": "item_dlc01",
             "ContainerName": "Item",
             "VariantName": "DLC1",
             "DisplayName": "Item",
@@ -81,14 +83,16 @@
         },
         {
             "OrderID": 3,
-            "FileName": "item_dlc02.msgbnd.dcx",
+            "FullName": "item_dlc02.msgbnd.dcx",
+            "SimpleName": "item_dlc02",
             "ContainerName": "Item",
             "VariantName": "DLC2",
             "DisplayName": "Item"
         },
         {
             "OrderID": 4,
-            "FileName": "menu.msgbnd.dcx",
+            "FullName": "menu.msgbnd.dcx",
+            "SimpleName": "menu",
             "ContainerName": "Menu",
             "VariantName": "Stock",
             "DisplayName": "Menu",
@@ -96,7 +100,8 @@
         },
         {
             "OrderID": 5,
-            "FileName": "menu_dlc01.msgbnd.dcx",
+            "FullName": "menu_dlc01.msgbnd.dcx",
+            "SimpleName": "menu_dlc01",
             "ContainerName": "Menu",
             "VariantName": "DLC1",
             "DisplayName": "Menu",
@@ -104,14 +109,16 @@
         },
         {
             "OrderID": 6,
-            "FileName": "menu_dlc02.msgbnd.dcx",
+            "FullName": "menu_dlc02.msgbnd.dcx",
+            "SimpleName": "menu_dlc02",
             "ContainerName": "Menu",
             "VariantName": "DLC2",
             "DisplayName": "Menu"
         },
         {
             "OrderID": 7,
-            "FileName": "ngword.msgbnd.dcx",
+            "FullName": "ngword.msgbnd.dcx",
+            "SimpleName": "ngword",
             "ContainerName": "Blocked Words",
             "VariantName": "Stock",
             "DisplayName": "Blocked Words"

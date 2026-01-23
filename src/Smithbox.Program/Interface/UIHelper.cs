@@ -371,11 +371,11 @@ public static class UIHelper
 
         return flags;
     }
-    public static ImGuiWindowFlags GetInnerWindowFlags(bool checkMovementCfg = true)
+    public static ImGuiWindowFlags GetInnerWindowFlags()
     {
         var flags = ImGuiWindowFlags.None | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
-        if (checkMovementCfg && !CFG.Current.Interface_Allow_Window_Movement)
+        if (!CFG.Current.Interface_Allow_Window_Movement)
         {
             flags |= ImGuiWindowFlags.NoMove;
         }

@@ -6,6 +6,7 @@
 
 - Model Editor: Make the mesh entries use the sub-meshes properly
 - Model Editor: Fix property editing for the sub-classes (FaceSet, Texture, etc)
+- Model Editor: dummy duplicate doesn't stick
 - Model Editor: bone position cannot be changed (resets itself on gizmo move)
 - Model Editor: DS2 chrs loading badly, parts + map pieces failed to find
 
@@ -15,9 +16,6 @@
 #---------------------
 # FEATURES
 #---------------------
-- Project: implement Foundry setting and keybind arrangement
-- Project: add create from project.json action
-
 - Viewport add ability to change viewport background color
 - Viewport implement orthographic view
 - Viewport add track selection camera toggle - camera locks onto selection and moves in-line with any movement to the selection
@@ -36,9 +34,6 @@
 - Param Editor add param port tool: select base row in existing project + target project -> bring up selection window that displays the target project's params (of the currently selected param), 
  - allow user to select which to port over. Use the selected base row as the base for the ported rows, and then copy values over based on field name matching (perhaps add some heuristics too for minor deviations)
  
-- Text Editor: add multiple editor view support
-- Text Editor: implement FMG descriptor flow instead of the enum/utils stuff for FMGs
-
 - Graphical Param Editor: add multiple editor view support
 
 - Texture Editor add automated mass export

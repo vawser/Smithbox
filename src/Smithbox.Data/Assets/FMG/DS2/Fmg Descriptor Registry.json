@@ -53,7 +53,8 @@
     "Containers": [
         {
             "OrderID": 1,
-            "FileName": "",
+            "FullName": "",
+            "SimpleName": "",
             "ContainerName": "",
             "VariantName": "",
             "DisplayName": ""

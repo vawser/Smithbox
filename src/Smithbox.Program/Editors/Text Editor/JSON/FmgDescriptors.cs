@@ -53,7 +53,10 @@ public class LanguageDescriptor
 public class FmgContainerDescriptor
 {
     // The actual file name of the container
-    public string FileName { get; set; }
+    public string FullName { get; set; }
+
+    // The file name of the container without extensions
+    public string SimpleName { get; set; }
 
     // The name used in the FmgDescriptor to associate with this container
     public string ContainerName { get; set; }

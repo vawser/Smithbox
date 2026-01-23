@@ -73,7 +73,7 @@ public class ParamToolMenu
         if (!CFG.Current.Interface_ParamEditor_ToolWindow)
             return;
 
-        if (ImGui.Begin("Tools##toolWindow_ParamEditor", UIHelper.GetInnerWindowFlags(false)))
+        if (ImGui.Begin("Tools##toolWindow_ParamEditor", UIHelper.GetInnerWindowFlags()))
         {
             if (ImGui.BeginMenuBar())
             {

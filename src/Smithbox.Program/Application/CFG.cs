@@ -658,6 +658,19 @@ public class CFG
     ///------------------------------------------------------------
     // Preferences
     public TextContainerCategory TextEditor_Primary_Category = TextContainerCategory.English;
+
+    public string TextEditor_Primary_Language_DES = "English";
+    public string TextEditor_Primary_Language_DS1 = "English";
+    public string TextEditor_Primary_Language_DS1R = "English";
+    public string TextEditor_Primary_Language_DS2 = "English";
+    public string TextEditor_Primary_Language_DS2S = "English";
+    public string TextEditor_Primary_Language_BB = "English";
+    public string TextEditor_Primary_Language_DS3 = "English";
+    public string TextEditor_Primary_Language_SDT = "English";
+    public string TextEditor_Primary_Language_ER = "English";
+    public string TextEditor_Primary_Language_AC6 = "English";
+    public string TextEditor_Primary_Language_NR = "English";
+
     public bool TextEditor_Include_Vanilla_Cache = true;
 
     public bool TextEditor_Container_List_Hide_Unused_Containers = true;

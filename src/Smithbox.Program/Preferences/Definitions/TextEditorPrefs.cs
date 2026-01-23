@@ -18,7 +18,7 @@ public class TextEditorPrefs
     }
 
     #region
-    public static PreferenceItem TextEditor_Primary_Category()
+    public static PreferenceItem TextEditor_Primary_Language_DES()
     {
         return new PreferenceItem
         {
@@ -26,27 +26,33 @@ public class TextEditorPrefs
             Category = PreferenceCategory.TextEditor,
             Spacer = true,
             InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.DES
+            },
 
             Section = SectionCategory.General,
 
-            Title = "Primary Category",
-            Description = "Determines which language is considered the 'primary' language.",
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", CFG.Current.TextEditor_Primary_Category.GetDisplayName()))
+                if (curProject.Handler.TextData != null)
                 {
-                    foreach (var entry in Enum.GetValues(typeof(TextContainerCategory)))
-                    {
-                        var type = (TextContainerCategory)entry;
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                        if (TextUtils.IsSupportedLanguage(curProject, (TextContainerCategory)entry))
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DES;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
                         {
-                            if (ImGui.Selectable(type.GetDisplayName()))
+                            if (ImGui.Selectable(entry.Language))
                             {
-                                CFG.Current.TextEditor_Primary_Category = (TextContainerCategory)entry;
+                                CFG.Current.TextEditor_Primary_Language_DES = entry.Language;
 
                                 // Refresh the param editor FMG decorators when the category changes.
                                 if (curProject.Handler.ParamEditor != null)
@@ -56,12 +62,514 @@ public class TextEditorPrefs
                                 }
                             }
                         }
+                        ImGui.EndCombo();
                     }
-                    ImGui.EndCombo();
                 }
             }
         };
     }
+
+    public static PreferenceItem TextEditor_Primary_Language_DS1()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.DS1
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject.Handler.TextData != null)
+                {
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DS1;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
+                        {
+                            if (ImGui.Selectable(entry.Language))
+                            {
+                                CFG.Current.TextEditor_Primary_Language_DS1 = entry.Language;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.Handler.ParamEditor != null)
+                                {
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                }
+            }
+        };
+    }
+    public static PreferenceItem TextEditor_Primary_Language_DS1R()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.DS1R
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject.Handler.TextData != null)
+                {
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DS1R;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
+                        {
+                            if (ImGui.Selectable(entry.Language))
+                            {
+                                CFG.Current.TextEditor_Primary_Language_DS1R = entry.Language;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.Handler.ParamEditor != null)
+                                {
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                }
+            }
+        };
+    }
+    public static PreferenceItem TextEditor_Primary_Language_DS2()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.DS2
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject.Handler.TextData != null)
+                {
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DS2;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
+                        {
+                            if (ImGui.Selectable(entry.Language))
+                            {
+                                CFG.Current.TextEditor_Primary_Language_DS2 = entry.Language;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.Handler.ParamEditor != null)
+                                {
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                }
+            }
+        };
+    }
+    public static PreferenceItem TextEditor_Primary_Language_DS2S()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.DS2S
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject.Handler.TextData != null)
+                {
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DS2S;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
+                        {
+                            if (ImGui.Selectable(entry.Language))
+                            {
+                                CFG.Current.TextEditor_Primary_Language_DS2S = entry.Language;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.Handler.ParamEditor != null)
+                                {
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                }
+            }
+        };
+    }
+    public static PreferenceItem TextEditor_Primary_Language_BB()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.BB
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject.Handler.TextData != null)
+                {
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_BB;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
+                        {
+                            if (ImGui.Selectable(entry.Language))
+                            {
+                                CFG.Current.TextEditor_Primary_Language_BB = entry.Language;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.Handler.ParamEditor != null)
+                                {
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                }
+            }
+        };
+    }
+    public static PreferenceItem TextEditor_Primary_Language_DS3()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.DS3
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject.Handler.TextData != null)
+                {
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DS3;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
+                        {
+                            if (ImGui.Selectable(entry.Language))
+                            {
+                                CFG.Current.TextEditor_Primary_Language_DS3 = entry.Language;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.Handler.ParamEditor != null)
+                                {
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                }
+            }
+        };
+    }
+    public static PreferenceItem TextEditor_Primary_Language_SDT()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.SDT
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject.Handler.TextData != null)
+                {
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_SDT;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
+                        {
+                            if (ImGui.Selectable(entry.Language))
+                            {
+                                CFG.Current.TextEditor_Primary_Language_SDT = entry.Language;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.Handler.ParamEditor != null)
+                                {
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                }
+            }
+        };
+    }
+    public static PreferenceItem TextEditor_Primary_Language_ER()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.ER
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject.Handler.TextData != null)
+                {
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_ER;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
+                        {
+                            if (ImGui.Selectable(entry.Language))
+                            {
+                                CFG.Current.TextEditor_Primary_Language_ER = entry.Language;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.Handler.ParamEditor != null)
+                                {
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                }
+            }
+        };
+    }
+    public static PreferenceItem TextEditor_Primary_Language_AC6()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.AC6
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject.Handler.TextData != null)
+                {
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_AC6;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
+                        {
+                            if (ImGui.Selectable(entry.Language))
+                            {
+                                CFG.Current.TextEditor_Primary_Language_AC6 = entry.Language;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.Handler.ParamEditor != null)
+                                {
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                }
+            }
+        };
+    }
+    public static PreferenceItem TextEditor_Primary_Language_NR()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.NR
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "Primary Language",
+            Description = "Determines which language is treated as the default for other various features.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject.Handler.TextData != null)
+                {
+                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                    var curLanguage = CFG.Current.TextEditor_Primary_Language_NR;
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    {
+                        foreach (var entry in languages)
+                        {
+                            if (ImGui.Selectable(entry.Language))
+                            {
+                                CFG.Current.TextEditor_Primary_Language_NR = entry.Language;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.Handler.ParamEditor != null)
+                                {
+                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                    activeView.RowDecorators.SetupFmgDecorators();
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                }
+            }
+        };
+    }
+
     public static PreferenceItem TextEditor_IncludeVanillaCache()
     {
         return new PreferenceItem

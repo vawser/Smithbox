@@ -4,4 +4,22 @@
 - Implement FMG Descriptor pattern for Text Editor
 - Implement Views for Text Editor
 
+- Think about a Delta patch concept for the Param Editor: 
+ params = {
+    <param> = {
+        rows = {
+            <row> = {
+                fields = {
+                    <field> = <value>
+                }
+            }
+        }
+    }
+ }
+ 
+- User would generate a delta patch (resulting in a JSON object as above): their current parambank checked against vanillabank (or an auxbank)
+- User can then apply a delta patch directly to their current parambank.
+- Easier to reason about compared to the current mass edit merger.
+- Opens the possible for a user to manually pick and choose which elements to merge, or to adjust on the fly (i.e. shift all row IDs in one section by Y amount, and then perhaps update any usage of said ID in other elements.
+
 # TODO:

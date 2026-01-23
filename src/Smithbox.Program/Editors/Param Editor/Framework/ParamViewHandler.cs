@@ -134,7 +134,7 @@ public class ParamViewHandler
                 displayTitle = "Param Editor";
             }
 
-            if (ImGui.Begin($@"{displayTitle}###ParamEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags(false)))
+            if (ImGui.Begin($@"{displayTitle}###ParamEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {
