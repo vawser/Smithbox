@@ -1325,21 +1325,24 @@ public static class ParamReferenceHelper
                     return false;
                 }
 
-                if (InputManager.IsPressed(KeybindID.ParamEditor_RowList_Inherit_Referenced_Row_Name))
+                if (FocusManager.Focus is EditorFocusContext.ParamEditor_RowList)
                 {
-                    List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, context.ParamReferences, row, oldval);
-
-                    foreach ((string, Param.Row, string) rf in refs)
+                    if (InputManager.IsPressed(KeybindID.ParamEditor_RowList_Inherit_Referenced_Row_Name))
                     {
-                        if (row == null || curView.Editor.ActionManager == null)
+                        List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, context.ParamReferences, row, oldval);
+
+                        foreach ((string, Param.Row, string) rf in refs)
                         {
-                            continue;
+                            if (row == null || curView.Editor.ActionManager == null)
+                            {
+                                continue;
+                            }
+
+                            curView.Editor.ActionManager.ExecuteAction(new PropertiesChangedAction(row.GetType().GetProperty("Name"), row, rf.Item2.Name));
                         }
 
-                        curView.Editor.ActionManager.ExecuteAction(new PropertiesChangedAction(row.GetType().GetProperty("Name"), row, rf.Item2.Name));
+                        result = true;
                     }
-
-                    result = true;
                 }
             }
         }

@@ -23,8 +23,11 @@ public static class ParamReferenceResolver
         if (paramRefs == null)
             return rows;
 
-        var originalValue =
-            (int)oldval; //make sure to explicitly cast from dynamic or C# complains. Object or Convert.ToInt32 fail.
+        var originalValue = -1;
+        var success = int.TryParse($"{oldval}", out originalValue);
+
+        if (!success)
+            return rows;
 
         foreach (ParamRef rf in paramRefs)
         {
