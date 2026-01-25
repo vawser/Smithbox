@@ -76,6 +76,7 @@ public class CFG
     public string PTDE_Data_Path = "";
 
     public bool Project_Enable_Project_Metadata = false;
+    public bool Project_Scan_Directory_For_Additions = true;
 
     // Options
     public string Project_Alias_Export_Delimiter = ";";
@@ -618,7 +619,9 @@ public class CFG
     public bool ParamEditor_Show_Tool_Item_Gib = true;
     public bool ParamEditor_Show_Tool_Param_Reloader = true;
     public bool ParamEditor_Show_Tool_Param_Merger = true;
+    public bool ParamEditor_Show_Tool_Param_Upgrader = true;
     public bool ParamEditor_Show_Tool_Pin_Groups = true;
+    public bool ParamEditor_Show_Tool_Param_Delta_Patcher = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Param_Editor = true;

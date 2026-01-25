@@ -141,6 +141,25 @@ public class ProjectPrefs
             }
         };
     }
+    public static PreferenceItem Project_Scan_Directory_For_Additions()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 5,
+            Category = PreferenceCategory.Project,
+            Spacer = true,
+
+            Section = SectionCategory.General,
+
+            Title = "Enable Project Directory Addition Detection",
+            Description = "If enabled, new files that only reside in the project directory will be detected. Required if you are working with custom files and wnat them to appear in Smithbox.\nIf disabled, project startup is quicker.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Scan_Directory_For_Additions);
+            }
+        };
+    }
+
 
     // TODO: enable once the Complete type has been implemented.
     //public static PreferenceItem Project_Backup_Type()
@@ -150,7 +169,7 @@ public class ProjectPrefs
     //        Category = PreferenceCategory.Project,
     //        Spacer = true,
 
-              // Section = SectionCategory.General,
+    // Section = SectionCategory.General,
 
     //        Title = "Backup Save Type",
     //        Description = "Determines the type of backup saving that occurs.\nSimple: backup files are placed along side source file.\nComplete: backup files are stored in a time-dated folder.",

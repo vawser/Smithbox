@@ -27,6 +27,7 @@ public class ParamToolMenu
     public ParamUpgrader ParamUpgrader;
     public ParamListCategories ParamListCategories;
     public ParamPinGroups PinGroups;
+    public ParamDeltaPatcher DeltaPatcher;
 
     public ParamToolMenu(ParamEditorScreen editor, ProjectEntry project)
     {
@@ -47,6 +48,7 @@ public class ParamToolMenu
         ParamUpgrader = new(editor, project);
         ParamListCategories = new(editor, project);
         PinGroups = new(editor, project);
+        DeltaPatcher = new(editor, project);
     }
 
     public void DisplayMenu()
@@ -92,6 +94,12 @@ public class ParamToolMenu
                     }
                     UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Merger);
 
+                    if (ImGui.MenuItem("Param Delta Patcher"))
+                    {
+                        CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher = !CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher;
+                    }
+                    UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher);
+
                     if (ImGui.MenuItem("Param Reloader"))
                     {
                         CFG.Current.ParamEditor_Show_Tool_Param_Reloader = !CFG.Current.ParamEditor_Show_Tool_Param_Reloader;
@@ -130,9 +138,20 @@ public class ParamToolMenu
 
             FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);
 
+            if (CFG.Current.ParamEditor_Show_Tool_Param_Upgrader)
+            {
+                ParamUpgrader.Display();
+            }
+
+
             if (CFG.Current.ParamEditor_Show_Tool_Param_Merger)
             {
                 ParamMerger.Display();
+            }
+
+            if (CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher)
+            {
+                DeltaPatcher.Display();
             }
 
             if (CFG.Current.ParamEditor_Show_Tool_Param_Reloader)

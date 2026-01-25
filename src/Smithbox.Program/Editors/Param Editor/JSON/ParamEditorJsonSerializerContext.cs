@@ -59,6 +59,12 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(GraphLegends))]
 [JsonSerializable(typeof(GraphLegendEntry))]
 
+// Delta Patch
+[JsonSerializable(typeof(ParamDeltaPatch))]
+[JsonSerializable(typeof(ParamDelta))]
+[JsonSerializable(typeof(RowDelta))]
+[JsonSerializable(typeof(FieldDelta))]
+
 internal partial class ParamEditorJsonSerializerContext : JsonSerializerContext
 {
 }

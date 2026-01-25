@@ -131,11 +131,19 @@ public class ProjectFileLocator : IDisposable
                 Percent = 0.25f
             });
         }
-        var projectFileDictionary = BuildFromSource(
-            Project.Descriptor.ProjectPath, 
-            jsonFileDictionary, Project.Descriptor.ProjectType);
 
-        FileDictionary = MergeFileDictionaries(jsonFileDictionary, projectFileDictionary);
+        if (CFG.Current.Project_Scan_Directory_For_Additions)
+        {
+            var projectFileDictionary = BuildFromSource(
+                Project.Descriptor.ProjectPath,
+                jsonFileDictionary, Project.Descriptor.ProjectType);
+
+            FileDictionary = MergeFileDictionaries(jsonFileDictionary, projectFileDictionary);
+        }
+        else
+        {
+            FileDictionary = jsonFileDictionary;
+        }
 
         if (!silent)
         {

@@ -81,6 +81,12 @@ public class ProjectUtils
 
         return Path.Join(localAppDataPath, "Smithbox", "Configuration");
     }
+    public static string GetParamDeltaFolder()
+    {
+        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+        return Path.Join(localAppDataPath, "Smithbox", "Data", "Param Deltas");
+    }
 
     public static string GetThemeFolder()
     {
