@@ -27,7 +27,7 @@
       <Option Value="1" Name="Bullet" />
       <Option Value="2" Name="SpEffect" />
     </Enum>
-      <Enum Name="QUICKMATCH_ITEM_USE" type="u8">
+      <Enum Name="QUICKMATCH_ITEM_USE_RESTRICTION" type="u8">
       <Option Value="0" Name="Always Allowed" />
       <Option Value="1" Name="Prohibited In Duel" />
       <Option Value="2" Name="Prohibited In Team Match" />
