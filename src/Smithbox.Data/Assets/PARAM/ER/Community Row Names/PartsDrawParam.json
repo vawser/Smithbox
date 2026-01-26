@@ -40,19 +40,19 @@
     {
       "ID": 6,
       "Entries": [
-        ""
+        "[Player] Host"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        ""
+        "[Player] Client"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        ""
+        "[Player] Loading/Unloaded"
       ]
     },
     {
