@@ -27,11 +27,18 @@ public class RowDelta
     public int Index { get; set; }
     public string Name { get; set; }
     public List<FieldDelta> Fields { get; set; } = new();
-    public bool IsDeleted { get; set; }
+    public RowDeltaState State { get; set; } = RowDeltaState.Modified;
 }
 
 public class FieldDelta
 {
     public string Field { get; set; }
     public string Value { get; set; }
+}
+
+public enum RowDeltaState
+{
+    Added = 0,
+    Modified = 1,
+    Deleted = 2
 }

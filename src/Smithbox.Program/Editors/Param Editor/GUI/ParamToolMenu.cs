@@ -88,6 +88,12 @@ public class ParamToolMenu
                     }
                     UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Finders);
 
+                    if (ImGui.MenuItem("Param Upgrader"))
+                    {
+                        CFG.Current.ParamEditor_Show_Tool_Param_Upgrader = !CFG.Current.ParamEditor_Show_Tool_Param_Upgrader;
+                    }
+                    UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Upgrader);
+
                     if (ImGui.MenuItem("Param Merger"))
                     {
                         CFG.Current.ParamEditor_Show_Tool_Param_Merger = !CFG.Current.ParamEditor_Show_Tool_Param_Merger;
@@ -143,7 +149,6 @@ public class ParamToolMenu
                 ParamUpgrader.Display();
             }
 
-
             if (CFG.Current.ParamEditor_Show_Tool_Param_Merger)
             {
                 ParamMerger.Display();
@@ -153,6 +158,8 @@ public class ParamToolMenu
             {
                 DeltaPatcher.Display();
             }
+
+            DeltaPatcher.DrawProgressModal();
 
             if (CFG.Current.ParamEditor_Show_Tool_Param_Reloader)
             {
