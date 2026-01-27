@@ -29,6 +29,8 @@ public class ParamDeltaPatcher
     private bool DisplayProgressModal = false;
     private bool InitialLayout = false;
 
+    private bool IgnoreIndexedParams = true;
+
     public ParamDeltaPatcher(ParamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -74,13 +76,20 @@ public class ParamDeltaPatcher
 
     public void DisplayExportTab()
     {
-        ImGui.Text("Filename:");
+        UIHelper.SimpleHeader("Filename", "The name of the delta file.");
+        DPI.ApplyInputWidth();
         ImGui.InputText("##inputFileName", ref ExportName, 255);
 
-        if(ImGui.Button("Generate", DPI.StandardButtonSize))
+        UIHelper.SimpleHeader("Options", "Options to set for the delta builder.");
+        ImGui.Checkbox("Ignore Indexed Params", ref IgnoreIndexedParams);
+        UIHelper.Tooltip("If enabled, indexed params where the rows depending on row index as well as ID will be ignored when producing the delta.");
+
+        UIHelper.SimpleHeader("Actions", "");
+        if (ImGui.Button("Generate", DPI.StandardButtonSize))
         {
             GenerateDeltaPatch();
         }
+        UIHelper.Tooltip("Generate a delta file that represents the changes made within this regulation compared to vanilla.");
 
         ImGui.SameLine();
 
@@ -177,6 +186,15 @@ public class ParamDeltaPatcher
             if (!vanillaBank.Params.ContainsKey(primaryParam.Key))
                 continue;
 
+            // Skip indexed params if the option is enabled
+            if(IgnoreIndexedParams)
+            {
+                if (Project.Handler.ParamData.TableParamList.Params.Contains(primaryParam.Key))
+                {
+                    continue;
+                }
+            }
+
             var paramDelta = new ParamDelta();
             paramDelta.Name = primaryParam.Key;
 
@@ -247,7 +265,7 @@ public class ParamDeltaPatcher
         rowDelta.State = RowDeltaState.Modified;
 
         // TODO: Handle indexed rows
-        if (row.ID == curRowID && false)
+        if (row.ID == curRowID)
         {
             var vInternalIndex = 0;
 
@@ -255,9 +273,11 @@ public class ParamDeltaPatcher
             {
                 if (vRow.ID == row.ID)
                 {
+                    if (vRow.DataEquals(row))
+                        continue;
+
                     if (internalIndex == vInternalIndex)
                     {
-
                         var fieldDeltas = HandleFields(row, vRow);
                         foreach(var entry in fieldDeltas)
                         {
@@ -298,6 +318,11 @@ public class ParamDeltaPatcher
 
                     fieldDelta.Field = curField;
                     fieldDelta.Value = curValue.ToString();
+
+                    if(primaryCol.Def.InternalType == "dummy8")
+                    {
+                        fieldDelta.Value = ParamUtils.Dummy8Write((byte[])curValue);
+                    }
 
                     rowDelta.Fields.Add(fieldDelta);
                 }
@@ -353,6 +378,11 @@ public class ParamDeltaPatcher
 
         fieldDelta.Field = curField;
         fieldDelta.Value = curValue.ToString();
+
+        if (primaryCol.Def.InternalType == "dummy8")
+        {
+            fieldDelta.Value = ParamUtils.Dummy8Write((byte[])curValue);
+        }
 
         var vanillaValue = vanillaCol.GetValue(vanillaRow);
         if (vanillaValue.ToString() != curValue.ToString())
@@ -487,6 +517,10 @@ public class ParamDeltaPatcher
             ImGui.EndPopup();
         }
     }
+    #endregion
+
+    #region Delta Import
+
     #endregion
 }
 

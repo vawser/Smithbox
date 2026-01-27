@@ -207,7 +207,11 @@ public class HavokNavmeshBank
                     }
 
                     var newFileData = nva.Write();
-                    Project.VFS.ProjectFS.WriteFile(entry.Path, newFileData);
+
+                    if (!BytePerfectHelper.Md5Equal(fileData.ToArray(), newFileData))
+                    {
+                        Project.VFS.ProjectFS.WriteFile(entry.Path, newFileData);
+                    }
                 }
             }
             catch (Exception e)
