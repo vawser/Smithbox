@@ -1,10 +1,12 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -492,6 +494,11 @@ public class ProjectOrchestrator : IDisposable
         }
 
         ImGui.Separator();
+
+        if (ImGui.MenuItem($"Open Project Folder"))
+        {
+            Process.Start("explorer.exe", curProject.Descriptor.ProjectPath);
+        }
 
         if (ImGui.MenuItem($"Clear Backup Files##clearBackupFiles"))
         {
