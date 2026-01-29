@@ -75,11 +75,10 @@ public class ParamToolMenu
         if (!CFG.Current.Interface_ParamEditor_ToolWindow)
             return;
 
-        if (ImGui.Begin("Tools##toolWindow_ParamEditor", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin("Tools##toolWindow_ParamEditor", UIHelper.GetMainWindowFlags()))
         {
             if (ImGui.BeginMenuBar())
             {
-
                 if (ImGui.BeginMenu("View"))
                 {
                     if (ImGui.MenuItem("Data Finders"))
