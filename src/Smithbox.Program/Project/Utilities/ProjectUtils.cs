@@ -1,12 +1,14 @@
 ﻿using Andre.IO.VFS;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
+using ZstdNet;
 
 namespace StudioCore.Application;
 
@@ -323,21 +325,55 @@ public class ProjectUtils
                 }
             }
 
+            var compressionOverride = CFG.Current.ParamEditor_CompressionOverride;
+
             if (gameType == ProjectType.DS3 && item is BND4 bndDS3)
             {
-                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptDS3Regulation(bndDS3, ZeroIv));
+                if (compressionOverride is ParamSaveCompressionType.Default)
+                {
+                    toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptDS3Regulation(bndDS3, ZeroIv));
+                }
+                else
+                {
+                    var currentCompression = ParamSaveCompression.GetCurrentOverride();
+                    toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptDS3Regulation(bndDS3, ZeroIv, currentCompression));
+                }
             }
             else if (gameType == ProjectType.ER && item is BND4 bndER)
             {
-                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptERRegulation(bndER, ZeroIv));
+                if (compressionOverride is ParamSaveCompressionType.Default)
+                {
+                    toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptERRegulation(bndER, ZeroIv));
+                }
+                else
+                {
+                    var currentCompression = ParamSaveCompression.GetCurrentOverride();
+                    toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptERRegulation(bndER, ZeroIv, currentCompression));
+                }
             }
             else if (gameType == ProjectType.NR && item is BND4 bndNR)
             {
-                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptNightreignRegulation(bndNR, ZeroIv));
+                if (compressionOverride is ParamSaveCompressionType.Default)
+                {
+                    toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptNightreignRegulation(bndNR, ZeroIv));
+                }
+                else
+                {
+                    var currentCompression = ParamSaveCompression.GetCurrentOverride();
+                    toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptNightreignRegulation(bndNR, ZeroIv, currentCompression));
+                }
             }
             else if (gameType == ProjectType.AC6 && item is BND4 bndAC6)
             {
-                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptAC6Regulation(bndAC6, ZeroIv));
+                if (compressionOverride is ParamSaveCompressionType.Default)
+                {
+                    toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptAC6Regulation(bndAC6, ZeroIv));
+                }
+                else
+                {
+                    var currentCompression = ParamSaveCompression.GetCurrentOverride();
+                    toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptAC6Regulation(bndAC6, ZeroIv, currentCompression));
+                }
             }
             else if (item is BXF3 or BXF4)
             {
@@ -375,7 +411,16 @@ public class ProjectUtils
             }
             else
             {
-                toFs.WriteFile(assetPath + ".temp", item.Write());
+                if (compressionOverride is ParamSaveCompressionType.Default)
+                {
+                    toFs.WriteFile(assetPath + ".temp", item.Write());
+                }
+                else
+                {
+                    var currentCompression = ParamSaveCompression.GetCurrentOverride();
+                    byte[] bytes = null;
+                    bytes = item.Write(currentCompression);
+                }
             }
 
             // Ugly but until I rethink the binder API we need to dispose it before touching the existing files

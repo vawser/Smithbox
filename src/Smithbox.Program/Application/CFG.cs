@@ -482,6 +482,7 @@ public class CFG
     public bool ParamEditor_Loose_Param_Mode_DS2 = false;
     public bool ParamEditor_Loose_Param_Mode_DS3 = false;
     public bool ParamEditor_Repack_Loose_Params_DS2 = false;
+    public ParamSaveCompressionType ParamEditor_CompressionOverride = ParamSaveCompressionType.Default;
 
     public bool ParamEditor_Row_Name_Strip_DES = false;
     public bool ParamEditor_Row_Name_Strip_DS1 = false;

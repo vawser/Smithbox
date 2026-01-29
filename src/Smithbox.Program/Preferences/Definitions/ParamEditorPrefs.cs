@@ -527,6 +527,41 @@ public class ParamEditorPrefs
             }
         };
     }
+    public static PreferenceItem ParamEditor_CompressionOverride()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.ParamEditor_Regulation,
+
+            Title = "Param Save Compression",
+            Description = "Determine which form of DCX compression to apply to the saved regulation file.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_CompressionOverride.GetDisplayName()))
+                {
+                    foreach (var entry in Enum.GetValues(typeof(ParamSaveCompressionType)))
+                    {
+                        var type = (ParamSaveCompressionType)entry;
+
+                        if (ImGui.Selectable(type.GetDisplayName()))
+                        {
+                            CFG.Current.ParamEditor_CompressionOverride = (ParamSaveCompressionType)entry;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
+
     #endregion
 
     #region Param Reloader
