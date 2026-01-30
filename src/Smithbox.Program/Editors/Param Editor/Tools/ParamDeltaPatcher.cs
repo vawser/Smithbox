@@ -49,6 +49,7 @@ public class ParamDeltaPatcher
         RefreshImportList();
     }
 
+    #region Display
     public void Display()
     {
         var windowWidth = ImGui.GetWindowWidth();
@@ -89,6 +90,8 @@ public class ParamDeltaPatcher
         }
         UIHelper.Tooltip("If enabled, delta entries for all project types are displayed.");
 
+        ImGui.Separator();
+
         ImGui.Checkbox("Include Modified Rows", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows);
         UIHelper.Tooltip("If enabled, rows considered 'modified' within the delta will be applied. This means the import will modify rows within the primary bank with the same row ID and index as those in the delta.");
 
@@ -98,9 +101,13 @@ public class ParamDeltaPatcher
         ImGui.Checkbox("Include Deleted Rows", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows);
         UIHelper.Tooltip("If enabled, rows considered 'delete' within the delta will be applied. This means the import will delete these rows from the primary bank.");
 
-        ImGui.Checkbox("Restrict Row Addition", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Duplicates);
-        UIHelper.Tooltip("If enabled, row additions will only occur if the row ID doesn't already exist in the primary bank.");
+        ImGui.Separator();
 
+        ImGui.Checkbox("Restrict Row Modification", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify);
+        UIHelper.Tooltip("If enabled, row modifications will only occur if the row hasn't already been modified.");
+
+        ImGui.Checkbox("Restrict Row Addition", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add);
+        UIHelper.Tooltip("If enabled, row additions will only occur if the row ID doesn't already exist in the primary bank.");
 
         UIHelper.SimpleHeader("Actions", "");
         if (ImGui.Button("Import", DPI.StandardButtonSize))
@@ -272,6 +279,8 @@ public class ParamDeltaPatcher
         }
     }
 
+    #endregion
+
     #region Delta Import
     public void ImportDelta(DeltaImportEntry entry)
     {
@@ -289,11 +298,13 @@ public class ParamDeltaPatcher
         {
             var success = HandleParamImport(entry.Delta);
 
-            TaskLogs.AddInfo($"Finished importing '{entry.Filename}' delta");
+            TaskLogs.AddInfo($"Finished '{entry.Filename}' param delta import.");
+
+            Project.Handler.ParamData.PrimaryBank.RefreshPrimaryDiffCaches(true);
         }
         catch (Exception ex)
         {
-            TaskLogs.AddError("Delta import failed", ex);
+            TaskLogs.AddError($"'{entry.Filename}' param delta import failed.", ex);
         }
         finally
         {
@@ -306,6 +317,7 @@ public class ParamDeltaPatcher
     public bool HandleParamImport(ParamDeltaPatch patch)
     {
         var primaryBank = Project.Handler.ParamData.PrimaryBank;
+        var vanillaBank = Project.Handler.ParamData.VanillaBank;
 
         int total = patch.Params.Count;
         int processed = 0;
@@ -332,10 +344,12 @@ public class ParamDeltaPatcher
             // Store this to use in the Row Import section as a template for additions.
             var srcRow = param.Rows.First();
 
+            var vanillaParam = vanillaBank.Params.FirstOrDefault(e => e.Key == curParam.Key);
+
             // Swap orientation to delta first now as the delta is the 'truth'
-            foreach(var rDelta in pDelta.Rows)
+            foreach (var rDelta in pDelta.Rows)
             {
-                HandleRowImport(param, srcRow, rDelta);
+                HandleRowImport(curParam.Key, param, vanillaParam.Value, srcRow, rDelta);
             }
 
             //Thread.Sleep(1000);
@@ -344,9 +358,19 @@ public class ParamDeltaPatcher
         return true;
     }
 
-    public void HandleRowImport(Param srcParam, Param.Row srcRow, RowDelta rowDelta)
+    public void HandleRowImport(string paramName, Param srcParam, Param vanillaParam, Param.Row srcRow, RowDelta rowDelta)
     {
-        if (CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows && 
+        var addRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows;
+        var modRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows;
+        var delRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows;
+
+        var restrictRowAdd = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add;
+        var restrictRowMod = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify;
+
+        HashSet<int> vanillaDiffCache = Editor.Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(paramName);
+        var diffVanilla = vanillaDiffCache.Contains(rowDelta.ID);
+
+        if (addRows && 
             rowDelta.State is RowDeltaState.Added)
         {
             var newRow = new Param.Row(srcRow);
@@ -359,7 +383,7 @@ public class ParamDeltaPatcher
             var insertRow = srcParam.Rows.FirstOrDefault(e => e.ID == rowDelta.ID);
             if (insertRow != null)
             {
-                if (!CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Duplicates)
+                if (!restrictRowAdd)
                 {
                     var insertIndex = srcParam.Rows.ToList().IndexOf(insertRow);
                     srcParam.InsertRow(insertIndex, newRow);
@@ -391,12 +415,23 @@ public class ParamDeltaPatcher
 
                 if (rowDelta.ID == row.ID && rowDelta.Index == internalIndex)
                 {
-                    if (CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows && 
+                    if (modRows && 
                         rowDelta.State is RowDeltaState.Modified)
                     {
-                        HandleFieldImport(row, rowDelta);
+                        var proceed = true;
+
+                        // If row modification is restricted, and this row is already modified, then ignore.
+                        if(restrictRowMod && diffVanilla)
+                        {
+                            proceed = false;
+                        }
+
+                        if (proceed)
+                        {
+                            HandleFieldImport(row, rowDelta);
+                        }
                     }
-                    else if(CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows && 
+                    else if(delRows && 
                         rowDelta.State is RowDeltaState.Deleted)
                     {
                         rowToDelete = row;
@@ -415,7 +450,7 @@ public class ParamDeltaPatcher
 
     public void HandleFieldImport(Param.Row curRow, RowDelta rowDelta)
     {
-        foreach(var field in rowDelta.Fields)
+        foreach (var field in rowDelta.Fields)
         {
             var curFieldDef = curRow.Def.Fields.FirstOrDefault(e => e.InternalName == field.Field);
 

@@ -612,7 +612,9 @@ public class CFG
     public bool ParamEditor_DeltaPatcher_Import_Modified_Rows = true;
     public bool ParamEditor_DeltaPatcher_Import_Added_Rows = true;
     public bool ParamEditor_DeltaPatcher_Import_Deleted_Rows = true;
-    public bool ParamEditor_DeltaPatcher_Import_Restrict_Duplicates = false;
+
+    public bool ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify = false;
+    public bool ParamEditor_DeltaPatcher_Import_Restrict_Row_Add = false;
 
     public bool ParamEditor_DeltaPatcher_Export_Selected_Rows_Only = false;
     public bool ParamEditor_DeltaPatcher_Export_Selected_Param_Only = false;
