@@ -93,11 +93,11 @@ public class ParamToolMenu
                     }
                     UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Upgrader);
 
-                    if (ImGui.MenuItem("Param Merger"))
-                    {
-                        CFG.Current.ParamEditor_Show_Tool_Param_Merger = !CFG.Current.ParamEditor_Show_Tool_Param_Merger;
-                    }
-                    UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Merger);
+                    //if (ImGui.MenuItem("Param Merger"))
+                    //{
+                    //    CFG.Current.ParamEditor_Show_Tool_Param_Merger = !CFG.Current.ParamEditor_Show_Tool_Param_Merger;
+                    //}
+                    //UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Merger);
 
                     if (ImGui.MenuItem("Param Delta Patcher"))
                     {
@@ -148,17 +148,19 @@ public class ParamToolMenu
                 ParamUpgrader.Display();
             }
 
-            if (CFG.Current.ParamEditor_Show_Tool_Param_Merger)
-            {
-                ParamMerger.Display();
-            }
+            //if (CFG.Current.ParamEditor_Show_Tool_Param_Merger)
+            //{
+            //    ParamMerger.Display();
+            //}
 
             if (CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher)
             {
                 DeltaPatcher.Display();
             }
 
-            DeltaPatcher.DrawProgressModal();
+            DeltaPatcher.DrawExportProgressModal();
+            DeltaPatcher.DrawImportProgressModal();
+            DeltaPatcher.DrawSelectiveImportModal();
 
             if (CFG.Current.ParamEditor_Show_Tool_Param_Reloader)
             {

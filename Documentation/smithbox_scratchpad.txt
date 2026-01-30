@@ -4,6 +4,8 @@
 - Implement FMG Descriptor pattern for Text Editor
 - Implement Views for Text Editor
 
+- BUG: project randomly crashes on finalizing step (likely ImGui bug as no exception), perhaps race condition that fails a ImGui element pairing in Param Editor
+
 - Think about a Delta patch concept for the Param Editor: 
  params = {
     <param> = {
@@ -23,3 +25,7 @@
 - Opens the possible for a user to manually pick and choose which elements to merge, or to adjust on the fly (i.e. shift all row IDs in one section by Y amount, and then perhaps update any usage of said ID in other elements.
 
 # TODO:
+
+
+        var selectedRows = Project.Handler.ParamEditor.ViewHandler.ActiveView.Selection.GetSelectedRows();
+        var isSelected = false;

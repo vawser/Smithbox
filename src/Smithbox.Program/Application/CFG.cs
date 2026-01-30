@@ -608,6 +608,15 @@ public class CFG
     public bool ParamReloader_Use_Latest_Offset = true;
     public int ParamReloader_Current_Offsets = 0;
 
+    public bool ParamEditor_DeltaPatcher_Import_Display_All_Entries = false;
+    public bool ParamEditor_DeltaPatcher_Import_Modified_Rows = true;
+    public bool ParamEditor_DeltaPatcher_Import_Added_Rows = true;
+    public bool ParamEditor_DeltaPatcher_Import_Deleted_Rows = true;
+    public bool ParamEditor_DeltaPatcher_Import_Restrict_Duplicates = false;
+
+    public bool ParamEditor_DeltaPatcher_Export_Selected_Rows_Only = false;
+    public bool ParamEditor_DeltaPatcher_Export_Selected_Param_Only = false;
+    public bool ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows = true;
 
     // 
     public bool Interface_ParamEditor_Table = true;

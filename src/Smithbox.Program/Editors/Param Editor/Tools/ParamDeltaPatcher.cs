@@ -1,6 +1,9 @@
 ﻿using Andre.Formats;
+using Google.Protobuf.WellKnownTypes;
 using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -11,6 +14,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
@@ -26,10 +30,14 @@ public class ParamDeltaPatcher
 
     private string ExportName = "";
 
-    private bool DisplayProgressModal = false;
+    private bool DisplaySelectiveImportModal = false;
+    private bool DisplayExportProgressModal = false;
+    private bool DisplayImportProgressModal = false;
     private bool InitialLayout = false;
 
-    private bool IgnoreIndexedParams = true;
+    private List<DeltaImportEntry> ImportList = new();
+    private DeltaImportEntry SelectedImport = null;
+    private bool SelectImportEntry = false;
 
     public ParamDeltaPatcher(ParamEditorScreen editor, ProjectEntry project)
     {
@@ -37,6 +45,8 @@ public class ParamDeltaPatcher
         Project = project;
 
         ReportProgress = SetProgress;
+
+        RefreshImportList();
     }
 
     public void Display()
@@ -71,7 +81,161 @@ public class ParamDeltaPatcher
 
     public void DisplayImportTab()
     {
+        UIHelper.SimpleHeader("Options", "Options to set for the delta import.");
+        ImGui.Checkbox("Display All Entries", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Display_All_Entries);
+        if(ImGui.IsItemDeactivatedAfterEdit())
+        {
+            RefreshImportList();
+        }
+        UIHelper.Tooltip("If enabled, delta entries for all project types are displayed.");
 
+        ImGui.Checkbox("Include Modified Rows", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows);
+        UIHelper.Tooltip("If enabled, rows considered 'modified' within the delta will be applied. This means the import will modify rows within the primary bank with the same row ID and index as those in the delta.");
+
+        ImGui.Checkbox("Include Added Rows", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows);
+        UIHelper.Tooltip("If enabled, rows considered 'added' within the delta will be applied. This means the import will add these rows to the primary bank.");
+
+        ImGui.Checkbox("Include Deleted Rows", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows);
+        UIHelper.Tooltip("If enabled, rows considered 'delete' within the delta will be applied. This means the import will delete these rows from the primary bank.");
+
+        ImGui.Checkbox("Restrict Row Addition", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Duplicates);
+        UIHelper.Tooltip("If enabled, row additions will only occur if the row ID doesn't already exist in the primary bank.");
+
+
+        UIHelper.SimpleHeader("Actions", "");
+        if (ImGui.Button("Import", DPI.StandardButtonSize))
+        {
+            if (SelectedImport != null)
+            {
+                ImportDelta(SelectedImport);
+                SelectedImport = null; // Deselect once done.
+            }
+            else
+            {
+                TaskLogs.AddError("No param delta has been selected.");
+            }
+        }
+        UIHelper.Tooltip("Import the selected delta into the project's regulation.");
+
+        //ImGui.SameLine();
+
+        //if (ImGui.Button("Selective Import", DPI.StandardButtonSize))
+        //{
+        //    if (SelectedImport != null)
+        //    {
+        //        DisplaySelectiveImportModal = true;
+        //    }
+        //    else
+        //    {
+        //        TaskLogs.AddError("No param delta has been selected.");
+        //    }
+        //}
+        //UIHelper.Tooltip("Import the selected delta into the project's regulation, via the Selective Import menu.");
+
+        UIHelper.SimpleHeader("Entries", "");
+        ImGui.BeginChild("importEntryList");
+        foreach(var entry in ImportList)
+        {
+            var selected = entry == SelectedImport;
+
+            var version = ParamUtils.ParseRegulationVersion(entry.Delta.ParamVersion);
+
+            var displayName = $"{entry.Filename} [{version}]";
+
+            if (ImGui.Selectable($"{displayName}##curEntry_{entry.Filename.GetHashCode()}", selected))
+            {
+                SelectedImport = entry;
+            }
+
+            // Arrow Selection
+            if (ImGui.IsItemHovered() && SelectImportEntry)
+            {
+                SelectImportEntry = false;
+                SelectedImport = entry;
+            }
+
+            if (ImGui.IsItemFocused())
+            {
+                if (InputManager.HasArrowSelection())
+                {
+                    SelectImportEntry = true;
+                }
+            }
+
+            if (selected)
+            {
+                if (ImGui.BeginPopupContextItem($"##curEntryContext_{entry.Filename.GetHashCode()}"))
+                {
+                    if(ImGui.BeginMenu("Affected Params"))
+                    {
+                        var affectedParams = entry.Delta.Params;
+
+                        foreach(var param in affectedParams)
+                        {
+                            var modCount = param.Rows.Where(e => e.State is RowDeltaState.Modified).Count();
+                            var addCount = param.Rows.Where(e => e.State is RowDeltaState.Added).Count();
+                            var deleteCount = param.Rows.Where(e => e.State is RowDeltaState.Deleted).Count();
+
+                            // Technically inaccurate when not not applied directly to a fresh vanilla bank
+                            if (modCount > 0)
+                            {
+                                ImGui.Text($"{param.Name}: will modify {modCount} rows.");
+                            }
+                            if (addCount > 0)
+                            {
+                                ImGui.Text($"{param.Name}: will add {addCount} rows.");
+                            }
+                            if (deleteCount > 0)
+                            {
+                                ImGui.Text($"{param.Name}: will delete {deleteCount} rows.");
+                            }
+                        }
+
+                        ImGui.EndMenu();
+                    }
+
+                    if (ImGui.Selectable("Delete"))
+                    {
+                        DeleteDeltaPatch(entry.Filename);
+                        RefreshImportList();
+
+                        ImGui.CloseCurrentPopup();
+                    }
+                    UIHelper.Tooltip("Delete this delta file.");
+
+                    ImGui.EndPopup();
+                }
+            }
+        }
+
+        ImGui.EndChild();
+    }
+
+    private void RefreshImportList()
+    {
+        ImportList.Clear();
+
+        var sourceDir = ProjectUtils.GetParamDeltaFolder();
+        foreach(var file in Directory.EnumerateFiles(sourceDir))
+        {
+            var filename = Path.GetFileNameWithoutExtension(file);
+
+            var entry = new DeltaImportEntry();
+            entry.Filename = filename;
+            entry.Delta = LoadDeltaPatch(filename);
+
+            if (CFG.Current.ParamEditor_DeltaPatcher_Import_Display_All_Entries)
+            {
+                ImportList.Add(entry);
+            }
+            else
+            {
+                if (Project.Descriptor.ProjectType == entry.Delta.ProjectType)
+                {
+                    ImportList.Add(entry);
+                }
+            }
+        }
     }
 
     public void DisplayExportTab()
@@ -81,8 +245,15 @@ public class ParamDeltaPatcher
         ImGui.InputText("##inputFileName", ref ExportName, 255);
 
         UIHelper.SimpleHeader("Options", "Options to set for the delta builder.");
-        ImGui.Checkbox("Ignore Indexed Params", ref IgnoreIndexedParams);
+        ImGui.Checkbox("Ignore Indexed Params", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows);
         UIHelper.Tooltip("If enabled, indexed params where the rows depending on row index as well as ID will be ignored when producing the delta.");
+
+        ImGui.Checkbox("Selected Param Only", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Selected_Param_Only);
+        UIHelper.Tooltip("If enabled, only the selected param is checked for modifications during export.");
+
+        // TODO
+        //ImGui.Checkbox("Selected Rows Only", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Selected_Rows_Only);
+        //UIHelper.Tooltip("If enabled, instead of checking rows if they are modified, the currently selected rows are exported, irrespectively of their modification state.");
 
         UIHelper.SimpleHeader("Actions", "");
         if (ImGui.Button("Generate", DPI.StandardButtonSize))
@@ -101,7 +272,273 @@ public class ParamDeltaPatcher
         }
     }
 
-    #region Delta Builder
+    #region Delta Import
+    public void ImportDelta(DeltaImportEntry entry)
+    {
+        _ = ImportDeltaAsync(entry);
+    }
+
+    private async Task ImportDeltaAsync(DeltaImportEntry entry)
+    {
+        DisplayImportProgressModal = true;
+        InitialLayout = false;
+
+        await Task.Yield();
+
+        try
+        {
+            var success = HandleParamImport(entry.Delta);
+
+            TaskLogs.AddInfo($"Finished importing '{entry.Filename}' delta");
+        }
+        catch (Exception ex)
+        {
+            TaskLogs.AddError("Delta import failed", ex);
+        }
+        finally
+        {
+            DisplayImportProgressModal = false;
+        }
+
+        return;
+    }
+
+    public bool HandleParamImport(ParamDeltaPatch patch)
+    {
+        var primaryBank = Project.Handler.ParamData.PrimaryBank;
+
+        int total = patch.Params.Count;
+        int processed = 0;
+
+        foreach (var curParam in primaryBank.Params)
+        {
+            processed++;
+
+            ReportProgress?.Invoke(new()
+            {
+                PhaseLabel = "Processing",
+                StepLabel = $"{curParam.Key}",
+                Percent = processed / (float)total
+            });
+
+            var pDelta = patch.Params.FirstOrDefault(
+                e => e.Name == curParam.Key);
+
+            if (pDelta == null)
+                continue;
+
+            var param = curParam.Value;
+
+            // Store this to use in the Row Import section as a template for additions.
+            var srcRow = param.Rows.First();
+
+            // Swap orientation to delta first now as the delta is the 'truth'
+            foreach(var rDelta in pDelta.Rows)
+            {
+                HandleRowImport(param, srcRow, rDelta);
+            }
+
+            //Thread.Sleep(1000);
+        }
+
+        return true;
+    }
+
+    public void HandleRowImport(Param srcParam, Param.Row srcRow, RowDelta rowDelta)
+    {
+        if (CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows && 
+            rowDelta.State is RowDeltaState.Added)
+        {
+            var newRow = new Param.Row(srcRow);
+
+            newRow.ID = rowDelta.ID;
+
+            // Apply the fields from the delta to the new row
+            HandleFieldImport(newRow, rowDelta);
+
+            var insertRow = srcParam.Rows.FirstOrDefault(e => e.ID == rowDelta.ID);
+            if (insertRow != null)
+            {
+                if (!CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Duplicates)
+                {
+                    var insertIndex = srcParam.Rows.ToList().IndexOf(insertRow);
+                    srcParam.InsertRow(insertIndex, newRow);
+                }
+            }
+            else
+            {
+                srcParam.AddRow(newRow);
+            }
+        }
+        else if(rowDelta.State is RowDeltaState.Deleted or RowDeltaState.Modified)
+        {
+            var curRowID = 0;
+            int internalIndex = 0;
+
+            Param.Row rowToDelete = null;
+
+            foreach(var row in srcParam.Rows)
+            {
+                // Handle the indexing of rows with the same ID
+                if(row.ID == curRowID)
+                {
+                    internalIndex++;
+                }
+                else
+                {
+                    internalIndex = 0;
+                }
+
+                if (rowDelta.ID == row.ID && rowDelta.Index == internalIndex)
+                {
+                    if (CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows && 
+                        rowDelta.State is RowDeltaState.Modified)
+                    {
+                        HandleFieldImport(row, rowDelta);
+                    }
+                    else if(CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows && 
+                        rowDelta.State is RowDeltaState.Deleted)
+                    {
+                        rowToDelete = row;
+                    }
+                }
+
+                curRowID = row.ID;
+            }
+
+            if(rowToDelete != null)
+            {
+                srcParam.RemoveRow(rowToDelete);
+            }
+        }
+    }
+
+    public void HandleFieldImport(Param.Row curRow, RowDelta rowDelta)
+    {
+        foreach(var field in rowDelta.Fields)
+        {
+            var curFieldDef = curRow.Def.Fields.FirstOrDefault(e => e.InternalName == field.Field);
+
+            if (curFieldDef == null)
+                continue;
+
+            var curCol = curRow.Columns.FirstOrDefault(e => e.Def == curFieldDef);
+
+            if (curCol == null)
+                continue;
+
+            // We have to re-cast the string here to the correct type
+            // since the SetValue method assumes an object, so passing a string fails
+            switch (curFieldDef.DisplayType)
+            {
+                case PARAMDEF.DefType.s8:
+                    if(sbyte.TryParse(field.Value, out var sbyteVal))
+                    {
+                        curCol.SetValue(curRow, sbyteVal);
+                    }
+                    break;
+                case PARAMDEF.DefType.s16:
+                    if (short.TryParse(field.Value, out var shortVal))
+                    {
+                        curCol.SetValue(curRow, shortVal);
+                    }
+                    break;
+                case PARAMDEF.DefType.s32:
+                case PARAMDEF.DefType.b32:
+                    if (int.TryParse(field.Value, out var intVal))
+                    {
+                        curCol.SetValue(curRow, intVal);
+                    }
+                    break;
+                case PARAMDEF.DefType.f32:
+                case PARAMDEF.DefType.angle32:
+                    if (float.TryParse(field.Value, out var floatVal))
+                    {
+                        curCol.SetValue(curRow, floatVal);
+                    }
+                    break;
+                case PARAMDEF.DefType.f64:
+                    if (double.TryParse(field.Value, out var doubleVal))
+                    {
+                        curCol.SetValue(curRow, doubleVal);
+                    }
+                    break;
+                case PARAMDEF.DefType.u8:
+                case PARAMDEF.DefType.dummy8:
+                    if (curCol.Def.ArrayLength > 1)
+                    {
+                        byte[] val = ParamUtils.Dummy8Read(field.Value, curCol.Def.ArrayLength);
+                        curCol.SetValue(curRow, val);
+                    }
+                    else
+                    {
+                        if (byte.TryParse(field.Value, out var byteVal))
+                        {
+                            curCol.SetValue(curRow, byteVal);
+                        }
+                    }
+                    break;
+                case PARAMDEF.DefType.u16:
+                    if (ushort.TryParse(field.Value, out var ushortVal))
+                    {
+                        curCol.SetValue(curRow, ushortVal);
+                    }
+                    break;
+                case PARAMDEF.DefType.u32:
+                    if (uint.TryParse(field.Value, out var uintVal))
+                    {
+                        curCol.SetValue(curRow, uintVal);
+                    }
+                    break;
+                case PARAMDEF.DefType.fixstr:
+                case PARAMDEF.DefType.fixstrW:
+                    curCol.SetValue(curRow, field.Value);
+                    break;
+            }
+        }
+    }
+
+    public void DrawSelectiveImportModal()
+    {
+        if (!DisplaySelectiveImportModal)
+            return;
+
+        ImGui.OpenPopup("Selective Import##selectiveImportMenu");
+
+        if (!InitialLayout)
+        {
+            UIHelper.SetupPopupWindow();
+            InitialLayout = true;
+        }
+
+        if (ImGui.BeginPopupModal(
+            "Selective Import##selectiveImportMenu",
+            ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
+        {
+            UIHelper.SimpleHeader("Selective Imports", "");
+            ImGui.Text("TODO");
+
+            UIHelper.SimpleHeader("Actions", "");
+            if (ImGui.Button("Commit", DPI.StandardButtonSize))
+            {
+                ImportDelta(SelectedImport);
+                SelectedImport = null; // Deselect once done.
+            }
+
+            ImGui.SameLine();
+
+            if (ImGui.Button("Close", DPI.StandardButtonSize))
+            {
+                DisplaySelectiveImportModal = false;
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
+    #endregion
+
+    #region Delta Export
     public void GenerateDeltaPatch()
     {
         if (string.IsNullOrWhiteSpace(ExportName))
@@ -130,7 +567,7 @@ public class ParamDeltaPatcher
                 return;
         }
 
-        DisplayProgressModal = true;
+        DisplayExportProgressModal = true;
         InitialLayout = false;
 
         try
@@ -141,6 +578,8 @@ public class ParamDeltaPatcher
             {
                 WriteDeltaPatch(patch, ExportName);
                 TaskLogs.AddLog($"Saved param delta: {ExportName}.json");
+
+                RefreshImportList();
             }
             else
             {
@@ -153,13 +592,13 @@ public class ParamDeltaPatcher
         }
         finally
         {
-            DisplayProgressModal = false;
+            DisplayExportProgressModal = false;
         }
     }
 
     public ParamDeltaPatch BuildDeltaPatch()
     {
-        DisplayProgressModal = true;
+        DisplayExportProgressModal = true;
 
         var patch = new ParamDeltaPatch();
 
@@ -187,9 +626,17 @@ public class ParamDeltaPatcher
                 continue;
 
             // Skip indexed params if the option is enabled
-            if(IgnoreIndexedParams)
+            if(CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows)
             {
                 if (Project.Handler.ParamData.TableParamList.Params.Contains(primaryParam.Key))
+                {
+                    continue;
+                }
+            }
+
+            if(CFG.Current.ParamEditor_DeltaPatcher_Export_Selected_Param_Only)
+            {
+                if(primaryParam.Key != Project.Handler.ParamEditor.ViewHandler.ActiveView.Selection.GetActiveParam())
                 {
                     continue;
                 }
@@ -212,7 +659,7 @@ public class ParamDeltaPatcher
             }
         }
 
-        DisplayProgressModal = false;
+        DisplayExportProgressModal = false;
 
         return patch;
     }
@@ -233,8 +680,6 @@ public class ParamDeltaPatcher
             {
                 rowDeltas.Add(rowDelta);
             }
-
-            curRowID = row.ID;
         }
 
         // Determine deleted rows
@@ -242,16 +687,25 @@ public class ParamDeltaPatcher
         {
             Param.Row row = vanillaParam.Rows[i];
 
-            var primaryRow = primaryParam.Rows.FirstOrDefault(e => e.ID == row.ID);
-            if(primaryRow == null)
+            // Indexed Row
+            if (row.ID == curRowID)
             {
-                var rowDelta = new RowDelta();
-                rowDelta.ID = row.ID;
-                rowDelta.Name = row.Name;
-                rowDelta.State = RowDeltaState.Deleted;
+                // TODO: currently we don't add indexed row deletions since it is a thorny thing to detect
+            }
+            // Individual Row
+            else
+            {
+                var primaryRow = primaryParam.Rows.FirstOrDefault(e => e.ID == row.ID);
+                if (primaryRow == null)
+                {
+                    var rowDelta = new RowDelta();
+                    rowDelta.ID = row.ID;
+                    rowDelta.Name = row.Name;
+                    rowDelta.State = RowDeltaState.Deleted;
+                }
             }
 
-            // TODO: handle indexed rows
+            curRowID = row.ID;
         }
 
         return rowDeltas;
@@ -264,7 +718,7 @@ public class ParamDeltaPatcher
         rowDelta.Name = row.Name;
         rowDelta.State = RowDeltaState.Modified;
 
-        // TODO: Handle indexed rows
+        // Indexed Row
         if (row.ID == curRowID)
         {
             var vInternalIndex = 0;
@@ -273,15 +727,15 @@ public class ParamDeltaPatcher
             {
                 if (vRow.ID == row.ID)
                 {
-                    if (vRow.DataEquals(row))
-                        continue;
-
-                    if (internalIndex == vInternalIndex)
+                    if (!vRow.DataEquals(row))
                     {
-                        var fieldDeltas = HandleFields(row, vRow);
-                        foreach(var entry in fieldDeltas)
+                        if (internalIndex == vInternalIndex)
                         {
-                            rowDelta.Fields.Add(entry);
+                            var fieldDeltas = HandleFields(row, vRow);
+                            foreach (var entry in fieldDeltas)
+                            {
+                                rowDelta.Fields.Add(entry);
+                            }
                         }
                     }
 
@@ -291,6 +745,7 @@ public class ParamDeltaPatcher
 
             internalIndex++;
         }
+        // Individual Row
         else
         {
             internalIndex = 0;
@@ -319,9 +774,13 @@ public class ParamDeltaPatcher
                     fieldDelta.Field = curField;
                     fieldDelta.Value = curValue.ToString();
 
+                    // For the dummy8 values with more than 1 byte, do this
                     if(primaryCol.Def.InternalType == "dummy8")
                     {
-                        fieldDelta.Value = ParamUtils.Dummy8Write((byte[])curValue);
+                        if (primaryCol.Def.ArrayLength > 1)
+                        {
+                            fieldDelta.Value = ParamUtils.Dummy8Write((byte[])curValue);
+                        }
                     }
 
                     rowDelta.Fields.Add(fieldDelta);
@@ -381,7 +840,10 @@ public class ParamDeltaPatcher
 
         if (primaryCol.Def.InternalType == "dummy8")
         {
-            fieldDelta.Value = ParamUtils.Dummy8Write((byte[])curValue);
+            if (primaryCol.Def.ArrayLength > 1)
+            {
+                fieldDelta.Value = ParamUtils.Dummy8Write((byte[])curValue);
+            }
         }
 
         var vanillaValue = vanillaCol.GetValue(vanillaRow);
@@ -396,11 +858,23 @@ public class ParamDeltaPatcher
     #endregion
 
     #region IO
+    public void DeleteDeltaPatch(string name)
+    {
+        var storageDir = ProjectUtils.GetParamDeltaFolder();
+
+        var readPath = Path.Combine(storageDir, $"{name}.json");
+
+        if (File.Exists(readPath))
+        {
+            File.Delete(readPath);
+        }
+    }
+
     public ParamDeltaPatch LoadDeltaPatch(string name)
     {
         var storageDir = ProjectUtils.GetParamDeltaFolder();
 
-        var readPath = Path.Combine(storageDir, $"{ExportName}.json");
+        var readPath = Path.Combine(storageDir, $"{name}.json");
 
         var deltaPatch = new ParamDeltaPatch();
 
@@ -475,12 +949,12 @@ public class ParamDeltaPatcher
         }
     }
 
-    public void DrawProgressModal()
+    public void DrawExportProgressModal()
     {
-        if (!DisplayProgressModal)
+        if (!DisplayExportProgressModal)
             return;
 
-        ImGui.OpenPopup("Delta Builder##deltaBuilder");
+        ImGui.OpenPopup("Delta Export##deltaExport");
 
         if (!InitialLayout)
         {
@@ -489,7 +963,50 @@ public class ParamDeltaPatcher
         }
 
         if (ImGui.BeginPopupModal(
-            "Delta Builder##deltaBuilder",
+            "Delta Export##deltaExport",
+            ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
+        {
+            DeltaBuildProgress progress;
+            lock (_progressLock)
+                progress = LoadProgress;
+
+            if (!string.IsNullOrEmpty(progress.PhaseLabel))
+            {
+                ImGui.Text(progress.PhaseLabel);
+                ImGui.Spacing();
+            }
+
+            ImGui.ProgressBar(
+                Math.Clamp(progress.Percent, 0f, 1f),
+                new System.Numerics.Vector2(400, 0),
+                $"{(int)(progress.Percent * 100)}%"
+            );
+
+            if (!string.IsNullOrEmpty(progress.StepLabel))
+            {
+                ImGui.Spacing();
+                ImGui.TextDisabled(progress.StepLabel);
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
+    public void DrawImportProgressModal()
+    {
+        if (!DisplayImportProgressModal)
+            return;
+
+        ImGui.OpenPopup("Delta Import##deltaImport");
+
+        if (!InitialLayout)
+        {
+            UIHelper.SetupPopupWindow();
+            InitialLayout = true;
+        }
+
+        if (ImGui.BeginPopupModal(
+            "Delta Import##deltaImport",
             ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
         {
             DeltaBuildProgress progress;
@@ -519,9 +1036,6 @@ public class ParamDeltaPatcher
     }
     #endregion
 
-    #region Delta Import
-
-    #endregion
 }
 
 public struct DeltaBuildProgress
@@ -529,4 +1043,10 @@ public struct DeltaBuildProgress
     public string PhaseLabel;
     public string StepLabel;
     public float Percent;
+}
+
+public class DeltaImportEntry
+{
+    public string Filename { get; set; }
+    public ParamDeltaPatch Delta { get; set; }
 }
