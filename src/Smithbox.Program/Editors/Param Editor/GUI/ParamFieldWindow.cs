@@ -737,7 +737,9 @@ public class ParamFieldWindow
                     Comparison_ValueColumn(metaContext, activeParam, auxVals[i], propType, row, i.ToString(), cellMeta, internalName);
 
                     if (!conflict && diffAuxVanilla[i])
+                    {
                         ImGui.PopStyleColor();
+                    }
                 }
             }
         }

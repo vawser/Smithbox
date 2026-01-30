@@ -3,12 +3,11 @@
 #---------------------
 - Implement FMG Descriptor pattern for Text Editor
 - Implement Views for Text Editor
+- Implement the auto-BTAB handling actions
 
-- BUG: project randomly crashes on finalizing step (likely ImGui bug as no exception), perhaps race condition that fails a ImGui element pairing in Param Editor
+- Param Delta Patcher:
+ - Add Delta Mode (Modified / Selected): 
+    Selected should export only the currently selected rows but ignore the modified check (useful for porting specific rows)
 
 # TODO:
 
-
-- Param Delta Patcher:
- - Add Selected Rows Only option support
- - Added option for import to ignore already modified rows (i.e. second import only applies changes that don't collide with the first import's)

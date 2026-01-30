@@ -103,7 +103,10 @@ public class ParamEditorScreen : EditorScreen
 
         ViewHandler.HandleViews();
 
-        ToolMenu.Draw();
+        if (ViewHandler.ActiveView != null)
+        {
+            ToolMenu.Draw();
+        }
 
         if (CFG.Current.ParamEditor_Enable_Compact_Mode)
         {

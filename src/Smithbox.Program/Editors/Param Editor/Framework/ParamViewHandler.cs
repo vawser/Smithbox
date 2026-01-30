@@ -168,5 +168,4 @@ public class ParamViewHandler
             ViewToClose = null;
         }
     }
-
 }

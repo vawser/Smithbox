@@ -50,7 +50,6 @@ public class TextEditorStub : IEditorStub
 
             if (Project.Handler.TextEditor != null)
             {
-
                 Project.Handler.TextEditor.OnGUI(commands);
             }
             else

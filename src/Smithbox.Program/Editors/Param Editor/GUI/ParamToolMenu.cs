@@ -143,103 +143,103 @@ public class ParamToolMenu
 
             FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);
 
-            if (CFG.Current.ParamEditor_Show_Tool_Param_Upgrader)
-            {
-                ParamUpgrader.Display();
-            }
-
-            //if (CFG.Current.ParamEditor_Show_Tool_Param_Merger)
-            //{
-            //    ParamMerger.Display();
-            //}
-
-            if (CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher)
-            {
-                DeltaPatcher.Display();
-            }
-
-            DeltaPatcher.DrawExportProgressModal();
-            DeltaPatcher.DrawImportProgressModal();
-            DeltaPatcher.DrawSelectiveImportModal();
-
-            if (CFG.Current.ParamEditor_Show_Tool_Param_Reloader)
-            {
-                ParamReloader.Display();
-            }
-
-            if (CFG.Current.ParamEditor_Show_Tool_Item_Gib)
-            {
-                ItemGib.Display();
-            }
-
-            if (CFG.Current.ParamEditor_Show_Tool_Param_List_Categories)
-            {
-                ParamListCategories.Display();
-            }
-
-            if (CFG.Current.ParamEditor_Show_Tool_Pin_Groups)
-            {
-                PinGroups.Display();
-            }
-
-            if (CFG.Current.ParamEditor_Show_Tool_Data_Finders)
-            {
-                if (ImGui.CollapsingHeader("Data Finders"))
-                {
-                    if (ImGui.BeginTabBar("dataFinderTabs"))
-                    {
-
-                        if (ImGui.BeginTabItem("Field Names"))
-                        {
-                            FieldNameFinder.Display();
-
-                            ImGui.EndTabItem();
-                        }
-
-                        if (ImGui.BeginTabItem("Field Values"))
-                        {
-                            FieldValueFinder.Display();
-
-                            ImGui.EndTabItem();
-                        }
-
-                        if (ImGui.BeginTabItem("Row Names"))
-                        {
-                            RowNameFinder.Display();
-
-                            ImGui.EndTabItem();
-                        }
-
-                        if (ImGui.BeginTabItem("Row IDs"))
-                        {
-                            RowIdFinder.Display();
-
-                            ImGui.EndTabItem();
-                        }
-
-                        if (ImGui.BeginTabItem("Field Value Sets"))
-                        {
-                            ValueSetFinder.Display();
-
-                            ImGui.EndTabItem();
-                        }
-
-                        if (ImGui.BeginTabItem("Row ID Sets"))
-                        {
-                            IdSetFinder.Display();
-
-                            ImGui.EndTabItem();
-                        }
-
-                        ImGui.EndTabBar();
-                    }
-                }
-            }
-
             var activeView = Editor.ViewHandler.ActiveView;
 
             if (activeView != null)
             {
+                if (CFG.Current.ParamEditor_Show_Tool_Param_Upgrader)
+                {
+                    ParamUpgrader.Display();
+                }
+
+                //if (CFG.Current.ParamEditor_Show_Tool_Param_Merger)
+                //{
+                //    ParamMerger.Display();
+                //}
+
+                if (CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher)
+                {
+                    DeltaPatcher.Display();
+                }
+
+                DeltaPatcher.DrawExportProgressModal();
+                DeltaPatcher.DrawImportProgressModal();
+                DeltaPatcher.DrawSelectiveImportModal();
+
+                if (CFG.Current.ParamEditor_Show_Tool_Param_Reloader)
+                {
+                    ParamReloader.Display();
+                }
+
+                if (CFG.Current.ParamEditor_Show_Tool_Item_Gib)
+                {
+                    ItemGib.Display();
+                }
+
+                if (CFG.Current.ParamEditor_Show_Tool_Param_List_Categories)
+                {
+                    ParamListCategories.Display();
+                }
+
+                if (CFG.Current.ParamEditor_Show_Tool_Pin_Groups)
+                {
+                    PinGroups.Display();
+                }
+
+                if (CFG.Current.ParamEditor_Show_Tool_Data_Finders)
+                {
+                    if (ImGui.CollapsingHeader("Data Finders"))
+                    {
+                        if (ImGui.BeginTabBar("dataFinderTabs"))
+                        {
+
+                            if (ImGui.BeginTabItem("Field Names"))
+                            {
+                                FieldNameFinder.Display();
+
+                                ImGui.EndTabItem();
+                            }
+
+                            if (ImGui.BeginTabItem("Field Values"))
+                            {
+                                FieldValueFinder.Display();
+
+                                ImGui.EndTabItem();
+                            }
+
+                            if (ImGui.BeginTabItem("Row Names"))
+                            {
+                                RowNameFinder.Display();
+
+                                ImGui.EndTabItem();
+                            }
+
+                            if (ImGui.BeginTabItem("Row IDs"))
+                            {
+                                RowIdFinder.Display();
+
+                                ImGui.EndTabItem();
+                            }
+
+                            if (ImGui.BeginTabItem("Field Value Sets"))
+                            {
+                                ValueSetFinder.Display();
+
+                                ImGui.EndTabItem();
+                            }
+
+                            if (ImGui.BeginTabItem("Row ID Sets"))
+                            {
+                                IdSetFinder.Display();
+
+                                ImGui.EndTabItem();
+                            }
+
+                            ImGui.EndTabBar();
+                        }
+                    }
+                }
+
                 if (CFG.Current.ParamEditor_Show_Tool_Mass_Edit)
                 {
                     if (ImGui.CollapsingHeader("Mass Edit"))
@@ -268,7 +268,8 @@ public class ParamToolMenu
                 }
             }
 
-            ImGui.End();
         }
+
+        ImGui.End();
     }
 }
