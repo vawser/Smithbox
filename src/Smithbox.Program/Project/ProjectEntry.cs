@@ -129,14 +129,7 @@ public class ProjectEntry
         Locator = new(this);
         Handler = new(this);
 
-        try
-        {
-            SetupDLLs();
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddError("Failed to setup Oodle DLLs.", e);
-        }
+        SetupDLLs();
 
         if (!silent)
         {
@@ -148,14 +141,7 @@ public class ProjectEntry
             });
         }
 
-        try
-        {
-            VFS.Initialize();
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddError("Failed to initialize VFS.", e);
-        }
+        VFS.Initialize();
 
         if (!silent)
         {
@@ -167,14 +153,7 @@ public class ProjectEntry
             });
         }
 
-        try
-        {
-            Handler.InitStubs();
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddError("Failed to initialize editor stubs.", e);
-        }
+        Handler.InitStubs();
 
         if (!silent)
         {
@@ -186,14 +165,7 @@ public class ProjectEntry
             });
         }
 
-        try
-        {
-            await Locator.Initialize(reportProgress, silent);
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddError("Failed to initialize file locator.", e);
-        }
+        await Locator.Initialize(reportProgress, silent);
 
         IsLoadingData = true;
 
@@ -207,14 +179,7 @@ public class ProjectEntry
             });
         }
 
-        try
-        {
-            await Handler.InitializeData(initType, silent);
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddError("Failed to initialize data.", e);
-        }
+        await Handler.InitializeData(initType, silent);
 
         IsLoadingData = false;
         IsCreatingEditors = true;
@@ -229,14 +194,7 @@ public class ProjectEntry
             });
         }
 
-        try
-        {
-            Handler.InitializeEditors(initType);
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddError("Failed to initialize editors.", e);
-        }
+        Handler.InitializeEditors(initType);
 
         IsCreatingEditors = false;
         Initialized = true;
