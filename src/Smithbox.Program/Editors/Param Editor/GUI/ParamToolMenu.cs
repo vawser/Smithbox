@@ -162,9 +162,11 @@ public class ParamToolMenu
                     DeltaPatcher.Display();
                 }
 
-                DeltaPatcher.DrawExportProgressModal();
-                DeltaPatcher.DrawImportProgressModal();
-                DeltaPatcher.DrawSelectiveImportModal();
+                DeltaPatcher.ExportProgressModal.Draw();
+                DeltaPatcher.ImportProgressModal.Draw();
+                DeltaPatcher.SelectiveImportModal.Draw();
+                DeltaPatcher.ImportPreviewModal.Draw();
+                DeltaPatcher.ExportPreviewModal.Draw();
 
                 if (CFG.Current.ParamEditor_Show_Tool_Param_Reloader)
                 {
