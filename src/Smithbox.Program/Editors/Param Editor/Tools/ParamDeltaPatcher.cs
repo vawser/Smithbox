@@ -226,25 +226,33 @@ public class ParamDeltaPatcher
         ImportList.Clear();
 
         var sourceDir = ProjectUtils.GetParamDeltaFolder();
-        foreach(var file in Directory.EnumerateFiles(sourceDir))
+
+        if (Directory.Exists(sourceDir))
         {
-            var filename = Path.GetFileNameWithoutExtension(file);
-
-            var entry = new DeltaImportEntry();
-            entry.Filename = filename;
-            entry.Delta = LoadDeltaPatch(filename);
-
-            if (CFG.Current.ParamEditor_DeltaPatcher_Import_Display_All_Entries)
+            foreach (var file in Directory.EnumerateFiles(sourceDir))
             {
-                ImportList.Add(entry);
-            }
-            else
-            {
-                if (Project.Descriptor.ProjectType == entry.Delta.ProjectType)
+                var filename = Path.GetFileNameWithoutExtension(file);
+
+                var entry = new DeltaImportEntry();
+                entry.Filename = filename;
+                entry.Delta = LoadDeltaPatch(filename);
+
+                if (CFG.Current.ParamEditor_DeltaPatcher_Import_Display_All_Entries)
                 {
                     ImportList.Add(entry);
                 }
+                else
+                {
+                    if (Project.Descriptor.ProjectType == entry.Delta.ProjectType)
+                    {
+                        ImportList.Add(entry);
+                    }
+                }
             }
+        }
+        else
+        {
+            Directory.CreateDirectory(sourceDir);
         }
     }
 

@@ -373,6 +373,20 @@ public class ProjectOrchestrator : IDisposable
 
         ImGui.Text(curProject.Descriptor.ProjectName);
 
+        if (ImGui.BeginPopupContextItem($"##projectNameContext"))
+        {
+            ImGui.Text($"{curProject.Descriptor.ProjectGUID}");
+
+            ImGui.Separator();
+
+            if (ImGui.Selectable("Copy GUID"))
+            {
+                PlatformUtils.Instance.SetClipboardText($"{curProject.Descriptor.ProjectGUID}");
+            }
+
+            ImGui.EndPopup();
+        }
+
         ImGui.Separator();
 
         if (!curProject.Initialized)
@@ -495,65 +509,47 @@ public class ProjectOrchestrator : IDisposable
 
         ImGui.Separator();
 
-        if (ImGui.BeginMenu("Project Utilities"))
+        if (ImGui.MenuItem($"Open Project Folder"))
         {
-            ImGui.Text($"Project GUID: {curProject.Descriptor.ProjectGUID}");
+            Process.Start("explorer.exe", curProject.Descriptor.ProjectPath);
+        }
 
-            if (ImGui.BeginPopupContextItem($"##projectGuidContext"))
+        if (ImGui.MenuItem($"Open Project JSON Folder"))
+        {
+            var jsonPath = ProjectUtils.GetProjectsFolder();
+
+            Process.Start("explorer.exe", jsonPath);
+        }
+
+        if (ImGui.MenuItem($"Clear Backup Files##clearBackupFiles"))
+        {
+            var root = curProject.Descriptor.ProjectPath;
+
+            var filesToDelete = ProjectUtils.GetBackupFiles(root);
+
+            var fileList = "";
+
+            int i = 0;
+
+            foreach (var entry in filesToDelete)
             {
-                if (ImGui.Selectable("Copy"))
+                fileList = fileList + $"\n{entry}";
+
+                i++;
+
+                if (i > 25)
                 {
-                    PlatformUtils.Instance.SetClipboardText($"{curProject.Descriptor.ProjectGUID}");
-                }
-                UIHelper.Tooltip("Delete this delta file.");
-
-                ImGui.EndPopup();
-            }
-
-            if (ImGui.MenuItem($"Open Project Folder"))
-            {
-                Process.Start("explorer.exe", curProject.Descriptor.ProjectPath);
-            }
-
-            if (ImGui.MenuItem($"Open Project JSON Folder"))
-            {
-                var jsonPath = ProjectUtils.GetProjectsFolder();
-
-                Process.Start("explorer.exe", jsonPath);
-            }
-
-            if (ImGui.MenuItem($"Clear Backup Files##clearBackupFiles"))
-            {
-                var root = curProject.Descriptor.ProjectPath;
-
-                var filesToDelete = ProjectUtils.GetBackupFiles(root);
-
-                var fileList = "";
-
-                int i = 0;
-
-                foreach (var entry in filesToDelete)
-                {
-                    fileList = fileList + $"\n{entry}";
-
-                    i++;
-
-                    if (i > 25)
-                    {
-                        fileList = fileList + $"\n....";
-                        break;
-                    }
-                }
-
-                var dialog = PlatformUtils.Instance.MessageBox($"You will delete the following files:\n{fileList}", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
-                if (dialog is DialogResult.OK)
-                {
-                    ProjectUtils.DeleteFiles(filesToDelete);
+                    fileList = fileList + $"\n....";
+                    break;
                 }
             }
 
-            ImGui.EndMenu();
+            var dialog = PlatformUtils.Instance.MessageBox($"You will delete the following files:\n{fileList}", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (dialog is DialogResult.OK)
+            {
+                ProjectUtils.DeleteFiles(filesToDelete);
+            }
         }
 
         ImGui.PopID();
