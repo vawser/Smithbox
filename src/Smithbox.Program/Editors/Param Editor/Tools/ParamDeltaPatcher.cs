@@ -16,6 +16,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Enum = System.Enum;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -38,6 +39,8 @@ public class ParamDeltaPatcher
     private List<DeltaImportEntry> ImportList = new();
     private DeltaImportEntry SelectedImport = null;
     private bool SelectImportEntry = false;
+
+    private DeltaExportMode CurrentExportMode = DeltaExportMode.Modified;
 
     public ParamDeltaPatcher(ParamEditorScreen editor, ProjectEntry project)
     {
@@ -252,15 +255,25 @@ public class ParamDeltaPatcher
         ImGui.InputText("##inputFileName", ref ExportName, 255);
 
         UIHelper.SimpleHeader("Options", "Options to set for the delta builder.");
+
+        ImGui.Text("Export Mode");
+        DPI.ApplyInputWidth();
+        if (ImGui.BeginCombo("##inputValue", CurrentExportMode.GetDisplayName()))
+        {
+            foreach (var entry in Enum.GetValues(typeof(DeltaExportMode)))
+            {
+                var type = (DeltaExportMode)entry;
+
+                if (ImGui.Selectable(type.GetDisplayName()))
+                {
+                    CurrentExportMode = (DeltaExportMode)entry;
+                }
+            }
+            ImGui.EndCombo();
+        }
+
         ImGui.Checkbox("Ignore Indexed Params", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows);
         UIHelper.Tooltip("If enabled, indexed params where the rows depending on row index as well as ID will be ignored when producing the delta.");
-
-        ImGui.Checkbox("Selected Param Only", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Selected_Param_Only);
-        UIHelper.Tooltip("If enabled, only the selected param is checked for modifications during export.");
-
-        // TODO
-        //ImGui.Checkbox("Selected Rows Only", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Selected_Rows_Only);
-        //UIHelper.Tooltip("If enabled, instead of checking rows if they are modified, the currently selected rows are exported, irrespectively of their modification state.");
 
         UIHelper.SimpleHeader("Actions", "");
         if (ImGui.Button("Generate", DPI.StandardButtonSize))
@@ -669,7 +682,7 @@ public class ParamDeltaPatcher
                 }
             }
 
-            if(CFG.Current.ParamEditor_DeltaPatcher_Export_Selected_Param_Only)
+            if(CurrentExportMode is DeltaExportMode.Selected)
             {
                 if(primaryParam.Key != Project.Handler.ParamEditor.ViewHandler.ActiveView.Selection.GetActiveParam())
                 {
@@ -682,7 +695,18 @@ public class ParamDeltaPatcher
 
             var vanillaParam = vanillaBank.Params[primaryParam.Key];
 
-            var rowDeltas = HandleRows(primaryParam.Value, vanillaParam);
+            List<RowDelta> rowDeltas = new List<RowDelta>();
+
+            if (CurrentExportMode is DeltaExportMode.Modified)
+            {
+                rowDeltas = HandleRows(primaryParam.Value, vanillaParam);
+            }
+
+            if (CurrentExportMode is DeltaExportMode.Selected)
+            {
+                rowDeltas = HandleSelectedRows(primaryParam.Value, vanillaParam);
+            }
+
             foreach (var entry in rowDeltas)
             {
                 paramDelta.Rows.Add(entry);
@@ -892,6 +916,19 @@ public class ParamDeltaPatcher
 
     #endregion
 
+    #region Selected Export
+
+    public List<RowDelta> HandleSelectedRows(Param primaryParam, Param vanillaParam)
+    {
+        var rowDeltas = new List<RowDelta>();
+
+        // TODO
+
+
+        return rowDeltas;
+    }
+    #endregion
+
     #region IO
     public void DeleteDeltaPatch(string name)
     {
@@ -1084,4 +1121,10 @@ public class DeltaImportEntry
 {
     public string Filename { get; set; }
     public ParamDeltaPatch Delta { get; set; }
+}
+
+public enum DeltaExportMode
+{
+    Modified,
+    Selected
 }

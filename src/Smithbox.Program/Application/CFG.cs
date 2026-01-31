@@ -617,7 +617,6 @@ public class CFG
     public bool ParamEditor_DeltaPatcher_Import_Restrict_Row_Add = false;
 
     public bool ParamEditor_DeltaPatcher_Export_Selected_Rows_Only = false;
-    public bool ParamEditor_DeltaPatcher_Export_Selected_Param_Only = false;
     public bool ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows = true;
 
     // 

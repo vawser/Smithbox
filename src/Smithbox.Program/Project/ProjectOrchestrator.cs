@@ -495,40 +495,65 @@ public class ProjectOrchestrator : IDisposable
 
         ImGui.Separator();
 
-        if (ImGui.MenuItem($"Open Project Folder"))
+        if (ImGui.BeginMenu("Project Utilities"))
         {
-            Process.Start("explorer.exe", curProject.Descriptor.ProjectPath);
-        }
+            ImGui.Text($"Project GUID: {curProject.Descriptor.ProjectGUID}");
 
-        if (ImGui.MenuItem($"Clear Backup Files##clearBackupFiles"))
-        {
-            var root = curProject.Descriptor.ProjectPath;
-
-            var filesToDelete = ProjectUtils.GetBackupFiles(root);
-
-            var fileList = "";
-
-            int i = 0;
-
-            foreach (var entry in filesToDelete)
+            if (ImGui.BeginPopupContextItem($"##projectGuidContext"))
             {
-                fileList = fileList + $"\n{entry}";
-
-                i++;
-
-                if (i > 25)
+                if (ImGui.Selectable("Copy"))
                 {
-                    fileList = fileList + $"\n....";
-                    break;
+                    PlatformUtils.Instance.SetClipboardText($"{curProject.Descriptor.ProjectGUID}");
+                }
+                UIHelper.Tooltip("Delete this delta file.");
+
+                ImGui.EndPopup();
+            }
+
+            if (ImGui.MenuItem($"Open Project Folder"))
+            {
+                Process.Start("explorer.exe", curProject.Descriptor.ProjectPath);
+            }
+
+            if (ImGui.MenuItem($"Open Project JSON Folder"))
+            {
+                var jsonPath = ProjectUtils.GetProjectsFolder();
+
+                Process.Start("explorer.exe", jsonPath);
+            }
+
+            if (ImGui.MenuItem($"Clear Backup Files##clearBackupFiles"))
+            {
+                var root = curProject.Descriptor.ProjectPath;
+
+                var filesToDelete = ProjectUtils.GetBackupFiles(root);
+
+                var fileList = "";
+
+                int i = 0;
+
+                foreach (var entry in filesToDelete)
+                {
+                    fileList = fileList + $"\n{entry}";
+
+                    i++;
+
+                    if (i > 25)
+                    {
+                        fileList = fileList + $"\n....";
+                        break;
+                    }
+                }
+
+                var dialog = PlatformUtils.Instance.MessageBox($"You will delete the following files:\n{fileList}", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                if (dialog is DialogResult.OK)
+                {
+                    ProjectUtils.DeleteFiles(filesToDelete);
                 }
             }
 
-            var dialog = PlatformUtils.Instance.MessageBox($"You will delete the following files:\n{fileList}", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
-            if (dialog is DialogResult.OK)
-            {
-                ProjectUtils.DeleteFiles(filesToDelete);
-            }
+            ImGui.EndMenu();
         }
 
         ImGui.PopID();

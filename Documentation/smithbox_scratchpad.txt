@@ -5,9 +5,11 @@
 - Implement Views for Text Editor
 - Implement the auto-BTAB handling actions
 
+# TODO:
+
 - Param Delta Patcher:
  - Add Delta Mode (Modified / Selected): 
     Selected should export only the currently selected rows but ignore the modified check (useful for porting specific rows)
 
-# TODO:
-
+ - Add Export Preview step, displays the Param -> Row -> Field tree to the user, and if they Save it writes the file
+  (Same structure can be used for Import Preview and Selective Import)
