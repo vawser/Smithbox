@@ -92,6 +92,7 @@ public class ParamDeltaExporter
 
         patch.ProjectType = Patcher.Project.Descriptor.ProjectType;
         patch.ParamVersion = primaryBank.ParamVersion;
+        patch.Tag = Patcher.Selection.ExportFileTag;
 
         int total = primaryBank.Params.Count;
         int processed = 0;

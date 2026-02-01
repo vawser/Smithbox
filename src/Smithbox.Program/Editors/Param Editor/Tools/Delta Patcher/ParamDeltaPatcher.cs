@@ -29,13 +29,12 @@ public class ParamDeltaPatcher
 
     public ParamDeltaSelection Selection;
 
-    private ParamDeltaImporter Importer;
-    private ParamDeltaExporter Exporter;
+    public ParamDeltaImporter Importer;
+    public ParamDeltaExporter Exporter;
 
     public ParamDeltaProgressModal ImportProgressModal;
     public ParamDeltaProgressModal ExportProgressModal;
 
-    public ParamSelectiveImportModal SelectiveImportModal;
     public ParamImportPreviewModal ImportPreviewModal;
     public ParamExportPreviewModal ExportPreviewModal;
 
@@ -52,7 +51,6 @@ public class ParamDeltaPatcher
         ImportProgressModal = new("Delta Import", this);
         ExportProgressModal = new("Delta Export", this);
 
-        SelectiveImportModal = new(this);
         ImportPreviewModal = new(this);
         ExportPreviewModal = new(this);
 
@@ -119,38 +117,11 @@ public class ParamDeltaPatcher
         ImGui.Checkbox("Restrict Row Addition", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add);
         UIHelper.Tooltip("If enabled, row additions will only occur if the row ID doesn't already exist in the primary bank.");
 
-        UIHelper.SimpleHeader("Actions", "");
-        if (ImGui.Button("Import", DPI.StandardButtonSize))
-        {
-            if (Selection.SelectedImport != null)
-            {
-                Importer.ImportDelta(Selection.SelectedImport);
-                Selection.SelectedImport = null; // Deselect once done.
-            }
-            else
-            {
-                TaskLogs.AddError("No param delta has been selected.");
-            }
-        }
-        UIHelper.Tooltip("Import the selected delta into the project's regulation.");
-
-        //ImGui.SameLine();
-
-        //if (ImGui.Button("Selective Import", DPI.StandardButtonSize))
-        //{
-        //    if (SelectedImport != null)
-        //    {
-        //        DisplaySelectiveImportModal = true;
-        //    }
-        //    else
-        //    {
-        //        TaskLogs.AddError("No param delta has been selected.");
-        //    }
-        //}
-        //UIHelper.Tooltip("Import the selected delta into the project's regulation, via the Selective Import menu.");
-
         UIHelper.SimpleHeader("Entries", "");
         ImGui.BeginChild("importEntryList");
+
+        // TODO: add Tag support (similar to the project list)
+
         foreach(var entry in Selection.ImportList)
         {
             var selected = entry == Selection.SelectedImport;
@@ -162,6 +133,13 @@ public class ParamDeltaPatcher
             if (ImGui.Selectable($"{displayName}##curEntry_{entry.Filename.GetHashCode()}", selected))
             {
                 Selection.SelectedImport = entry;
+            }
+
+            if(ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+            {
+                Selection.SelectedImport = entry;
+                ImportPreviewModal.Show(Selection.SelectedImport.Filename, Selection.SelectedImport.Delta);
+                Selection.SelectedImport = null; // Deselect once done.
             }
 
             // Arrow Selection
@@ -183,34 +161,6 @@ public class ParamDeltaPatcher
             {
                 if (ImGui.BeginPopupContextItem($"##curEntryContext_{entry.Filename.GetHashCode()}"))
                 {
-                    if(ImGui.BeginMenu("Affected Params"))
-                    {
-                        var affectedParams = entry.Delta.Params;
-
-                        foreach(var param in affectedParams)
-                        {
-                            var modCount = param.Rows.Where(e => e.State is RowDeltaState.Modified).Count();
-                            var addCount = param.Rows.Where(e => e.State is RowDeltaState.Added).Count();
-                            var deleteCount = param.Rows.Where(e => e.State is RowDeltaState.Deleted).Count();
-
-                            // Technically inaccurate when not not applied directly to a fresh vanilla bank
-                            if (modCount > 0)
-                            {
-                                ImGui.Text($"{param.Name}: will modify {modCount} rows.");
-                            }
-                            if (addCount > 0)
-                            {
-                                ImGui.Text($"{param.Name}: will add {addCount} rows.");
-                            }
-                            if (deleteCount > 0)
-                            {
-                                ImGui.Text($"{param.Name}: will delete {deleteCount} rows.");
-                            }
-                        }
-
-                        ImGui.EndMenu();
-                    }
-
                     if (ImGui.Selectable("Delete"))
                     {
                         DeleteDeltaPatch(entry.Filename);
@@ -239,6 +189,11 @@ public class ParamDeltaPatcher
         UIHelper.SimpleHeader("Filename", "The name of the delta file.");
         DPI.ApplyInputWidth();
         ImGui.InputText("##inputFileName", ref Selection.ExportName, 255);
+
+        UIHelper.SimpleHeader("Tag", "The file tag for the delta file.");
+        DPI.ApplyInputWidth();
+        ImGui.InputText("##inputFileTag", ref Selection.ExportFileTag, 255);
+
 
         UIHelper.SimpleHeader("Options", "Options to set for the delta builder.");
 

@@ -11,6 +11,7 @@ public class ParamDeltaPatch
 {
     public ProjectType ProjectType { get; set; }
     public ulong ParamVersion { get; set; }
+    public string Tag { get; set; }
 
     public List<ParamDelta> Params { get; set; } = new();
 }

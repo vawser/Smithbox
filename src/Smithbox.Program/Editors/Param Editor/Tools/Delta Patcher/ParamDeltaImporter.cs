@@ -23,12 +23,12 @@ public class ParamDeltaImporter
         Patcher = patcher;
     }
 
-    public void ImportDelta(DeltaImportEntry entry)
+    public void ImportDelta(string filename, ParamDeltaPatch delta)
     {
-        _ = ImportDeltaAsync(entry);
+        _ = ImportDeltaAsync(filename, delta);
     }
 
-    private async Task ImportDeltaAsync(DeltaImportEntry entry)
+    private async Task ImportDeltaAsync(string filename, ParamDeltaPatch delta)
     {
         Patcher.ImportProgressModal.DisplayModal = true;
         Patcher.ImportProgressModal.InitialLayout = false;
@@ -37,15 +37,15 @@ public class ParamDeltaImporter
 
         try
         {
-            var success = HandleParamImport(entry.Delta);
+            var success = HandleParamImport(delta);
 
-            TaskLogs.AddInfo($"Finished '{entry.Filename}' param delta import.");
+            TaskLogs.AddInfo($"Finished '{filename}' param delta import.");
 
             Patcher.Project.Handler.ParamData.PrimaryBank.RefreshPrimaryDiffCaches(true);
         }
         catch (Exception ex)
         {
-            TaskLogs.AddError($"'{entry.Filename}' param delta import failed.", ex);
+            TaskLogs.AddError($"'{filename}' param delta import failed.", ex);
         }
         finally
         {

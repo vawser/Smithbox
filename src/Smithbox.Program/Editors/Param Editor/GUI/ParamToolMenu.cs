@@ -164,7 +164,7 @@ public class ParamToolMenu
 
                 DeltaPatcher.ExportProgressModal.Draw();
                 DeltaPatcher.ImportProgressModal.Draw();
-                DeltaPatcher.SelectiveImportModal.Draw();
+
                 DeltaPatcher.ImportPreviewModal.Draw();
                 DeltaPatcher.ExportPreviewModal.Draw();
 

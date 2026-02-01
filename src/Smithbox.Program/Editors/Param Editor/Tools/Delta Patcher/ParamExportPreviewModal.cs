@@ -31,8 +31,6 @@ public class ParamExportPreviewModal
     public void Show(ParamDeltaPatch exportPatch)
     {
         PatchForExport = exportPatch;
-        DisplayModal = true;
-        InitialLayout = false;
 
         ParamEnabled.Clear();
         RowEnabled.Clear();
@@ -53,6 +51,9 @@ public class ParamExportPreviewModal
                 }
             }
         }
+
+        DisplayModal = true;
+        InitialLayout = false;
     }
 
     public void Hide()
@@ -331,7 +332,8 @@ public class ParamExportPreviewModal
         var result = new ParamDeltaPatch
         {
             ProjectType = PatchForExport.ProjectType,
-            ParamVersion = PatchForExport.ParamVersion
+            ParamVersion = PatchForExport.ParamVersion,
+            Tag = PatchForExport.Tag,
         };
 
         foreach (var param in PatchForExport.Params)

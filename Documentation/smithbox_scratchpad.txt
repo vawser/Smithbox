@@ -6,7 +6,3 @@
 - Implement the auto-BTAB handling actions
 
 # TODO:
-
-- Param Delta Patcher:
- - Add Export Preview step, displays the Param -> Row -> Field tree to the user, and if they Save it writes the file
-  (Same structure can be used for Import Preview and Selective Import)
