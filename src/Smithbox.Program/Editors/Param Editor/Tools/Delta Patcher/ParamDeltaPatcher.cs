@@ -2,6 +2,7 @@
 using Google.Protobuf.WellKnownTypes;
 using Hexa.NET.ImGui;
 using HKLib.hk2018.hkSerialize.Note;
+using Microsoft.Extensions.FileSystemGlobbing;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Keybinds;
@@ -120,60 +121,7 @@ public class ParamDeltaPatcher
         UIHelper.SimpleHeader("Entries", "");
         ImGui.BeginChild("importEntryList");
 
-        // TODO: add Tag support (similar to the project list)
-
-        foreach(var entry in Selection.ImportList)
-        {
-            var selected = entry == Selection.SelectedImport;
-
-            var version = ParamUtils.ParseRegulationVersion(entry.Delta.ParamVersion);
-
-            var displayName = $"{entry.Filename} [{version}]";
-
-            if (ImGui.Selectable($"{displayName}##curEntry_{entry.Filename.GetHashCode()}", selected))
-            {
-                Selection.SelectedImport = entry;
-            }
-
-            if(ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-            {
-                Selection.SelectedImport = entry;
-                ImportPreviewModal.Show(Selection.SelectedImport.Filename, Selection.SelectedImport.Delta);
-                Selection.SelectedImport = null; // Deselect once done.
-            }
-
-            // Arrow Selection
-            if (ImGui.IsItemHovered() && Selection.SelectImportEntry)
-            {
-                Selection.SelectImportEntry = false;
-                Selection.SelectedImport = entry;
-            }
-
-            if (ImGui.IsItemFocused())
-            {
-                if (InputManager.HasArrowSelection())
-                {
-                    Selection.SelectImportEntry = true;
-                }
-            }
-
-            if (selected)
-            {
-                if (ImGui.BeginPopupContextItem($"##curEntryContext_{entry.Filename.GetHashCode()}"))
-                {
-                    if (ImGui.Selectable("Delete"))
-                    {
-                        DeleteDeltaPatch(entry.Filename);
-                        Selection.QueueImportListRefresh = true;
-
-                        ImGui.CloseCurrentPopup();
-                    }
-                    UIHelper.Tooltip("Delete this delta file.");
-
-                    ImGui.EndPopup();
-                }
-            }
-        }
+        DisplayEntryList();
 
         ImGui.EndChild();
 
@@ -181,6 +129,145 @@ public class ParamDeltaPatcher
         {
             Selection.QueueImportListRefresh = false;
             Selection.RefreshImportList();
+        }
+    }
+
+    public void DisplayEntryList()
+    {
+        // Build the folder dictionary
+        Dictionary<string, List<DeltaImportEntry>> _folders = new();
+
+        if (Selection.ImportList.Count > 0)
+        {
+            foreach (var entry in Selection.ImportList)
+            {
+                if (entry.Delta.Tag != "")
+                {
+                    if (_folders.ContainsKey(entry.Delta.Tag))
+                    {
+                        _folders[entry.Delta.Tag].Add(entry);
+                    }
+                    else
+                    {
+                        _folders.Add(entry.Delta.Tag, new List<DeltaImportEntry>() { entry });
+                    }
+                }
+            }
+        }
+
+        // General
+
+        if (ImGui.CollapsingHeader($"General##importFolder_General", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            foreach (var entry in Selection.ImportList)
+            {
+                if (entry.Delta.Tag == "")
+                {
+                    DisplayImportEntry(entry);
+                }
+            }
+        }
+
+        // Folders
+        foreach (var folder in _folders)
+        {
+            var name = folder.Key;
+            var entries = folder.Value;
+
+            if(ImGui.CollapsingHeader($"{name}##importFolder_{name}", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                foreach (var entry in entries)
+                {
+                    DisplayImportEntry(entry);
+                }
+            }
+        }
+    }
+
+    public void DisplayImportEntry(DeltaImportEntry entry)
+    {
+        var selected = entry == Selection.SelectedImport;
+
+        var version = ParamUtils.ParseRegulationVersion(entry.Delta.ParamVersion);
+
+        var displayName = $"{entry.Filename} [{version}]";
+
+        if (ImGui.Selectable($"{displayName}##curEntry_{entry.Filename.GetHashCode()}", selected))
+        {
+            Selection.SelectedImport = entry;
+            Selection.Edit_OriginalName = entry.Filename;
+            Selection.Edit_FileTag = entry.Delta.Tag;
+            Selection.Edit_Name = entry.Filename;
+        }
+
+        if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+        {
+            if (selected)
+            {
+                ImportPreviewModal.Show(Selection.SelectedImport.Filename, Selection.SelectedImport.Delta);
+            }
+        }
+
+        // Arrow Selection
+        if (ImGui.IsItemHovered() && Selection.SelectImportEntry)
+        {
+            Selection.SelectImportEntry = false;
+
+            Selection.SelectedImport = entry;
+            Selection.Edit_OriginalName = entry.Filename;
+            Selection.Edit_FileTag = entry.Delta.Tag;
+            Selection.Edit_Name = entry.Filename;
+        }
+
+        if (ImGui.IsItemFocused())
+        {
+            if (InputManager.HasArrowSelection())
+            {
+                Selection.SelectImportEntry = true;
+            }
+        }
+
+        if (selected)
+        {
+            if (ImGui.BeginPopupContextItem($"##curEntryContext_{entry.Filename.GetHashCode()}"))
+            {
+                if(ImGui.BeginMenu("Edit"))
+                {
+                    ImGui.InputText("Name", ref Selection.Edit_Name, 255);
+                    ImGui.InputText("Tag", ref Selection.Edit_FileTag, 255);
+
+                    if(ImGui.Button("Update", DPI.SelectorButtonSize))
+                    {
+                        entry.Delta.Tag = Selection.Edit_FileTag;
+
+                        WriteDeltaPatch(entry.Delta, Selection.Edit_Name);
+
+                        // Delete old
+                        var writeDir = ProjectUtils.GetParamDeltaFolder();
+                        var writePath = Path.Combine(writeDir, $"{Selection.Edit_OriginalName}.json");
+
+                        if(File.Exists(writePath))
+                        {
+                            File.Delete(writePath);
+                        }
+
+                        Selection.QueueImportListRefresh = true;
+                    }
+
+                    ImGui.EndMenu();
+                }
+
+                if (ImGui.Selectable("Delete"))
+                {
+                    DeleteDeltaPatch(entry.Filename);
+                    Selection.QueueImportListRefresh = true;
+
+                    ImGui.CloseCurrentPopup();
+                }
+                UIHelper.Tooltip("Delete this delta file.");
+
+                ImGui.EndPopup();
+            }
         }
     }
 

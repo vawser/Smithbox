@@ -272,6 +272,8 @@ public class ParamExportPreviewModal
 
             TaskLogs.AddLog($"Saved param delta: {Patcher.Selection.ExportName}.json");
 
+            Patcher.Selection.QueueImportListRefresh = true;
+
             Hide();
         }
 

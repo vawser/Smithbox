@@ -21,8 +21,13 @@ public class ParamDeltaSelection
 
     // Exporter
     public DeltaExportMode CurrentExportMode = DeltaExportMode.Modified;
+
     public string ExportName = "";
     public string ExportFileTag = "";
+
+    public string Edit_Name = "";
+    public string Edit_FileTag = "";
+    public string Edit_OriginalName = "";
 
     public ParamDeltaSelection(ParamDeltaPatcher patcher)
     {
