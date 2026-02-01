@@ -118,6 +118,25 @@ public class ParamDeltaPatcher
         ImGui.Checkbox("Restrict Row Addition", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add);
         UIHelper.Tooltip("If enabled, row additions will only occur if the row ID doesn't already exist in the primary bank.");
 
+        UIHelper.SimpleHeader("Actions", "");
+
+        if(ImGui.Button("Import", DPI.StandardButtonSize))
+        {
+            if (Selection.SelectedImport != null)
+            {
+                ImportPreviewModal.Show(Selection.SelectedImport.Filename, Selection.SelectedImport.Delta);
+            }
+        }
+        UIHelper.Tooltip("Import the currently selected import entry.");
+
+        ImGui.SameLine();
+
+        if (ImGui.Button("Refresh", DPI.StandardButtonSize))
+        {
+            Selection.RefreshImportList();
+        }
+        UIHelper.Tooltip("Refresh the import entries list.");
+
         UIHelper.SimpleHeader("Entries", "");
         ImGui.BeginChild("importEntryList");
 
@@ -157,13 +176,16 @@ public class ParamDeltaPatcher
 
         // General
 
-        if (ImGui.CollapsingHeader($"General##importFolder_General", ImGuiTreeNodeFlags.DefaultOpen))
+        if (Selection.ImportList.Any(e => e.Delta.Tag == ""))
         {
-            foreach (var entry in Selection.ImportList)
+            if (ImGui.CollapsingHeader($"General##importFolder_General", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                if (entry.Delta.Tag == "")
+                foreach (var entry in Selection.ImportList)
                 {
-                    DisplayImportEntry(entry);
+                    if (entry.Delta.Tag == "")
+                    {
+                        DisplayImportEntry(entry);
+                    }
                 }
             }
         }
@@ -174,7 +196,7 @@ public class ParamDeltaPatcher
             var name = folder.Key;
             var entries = folder.Value;
 
-            if(ImGui.CollapsingHeader($"{name}##importFolder_{name}", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader($"{name}##importFolder_{name}", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 foreach (var entry in entries)
                 {
