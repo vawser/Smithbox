@@ -262,7 +262,7 @@ public class ParamDeltaPatcher
         UIHelper.Tooltip("If enabled, indexed params where the rows depending on row index as well as ID will be ignored when producing the delta.");
 
         UIHelper.SimpleHeader("Actions", "");
-        if (ImGui.Button("Generate", DPI.StandardButtonSize))
+        if (ImGui.Button("Export", DPI.StandardButtonSize))
         {
             Exporter.GenerateDeltaPatch();
         }

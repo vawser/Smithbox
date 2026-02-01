@@ -58,17 +58,20 @@ public class ParamDeltaExporter
         {
             var patch = await Task.Run(BuildDeltaPatch);
 
-            if (patch.Params.Count > 0)
-            {
-                Patcher.WriteDeltaPatch(patch, Patcher.Selection.ExportName);
-                TaskLogs.AddLog($"Saved param delta: {Patcher.Selection.ExportName}.json");
+            // Display the export preview modal, actual save only occurs within the modal
+            Patcher.ExportPreviewModal.Show(patch);
 
-                Patcher.Selection.RefreshImportList();
-            }
-            else
-            {
-                TaskLogs.AddLog("Aborted param delta as no changes were detected.");
-            }
+            //if (patch.Params.Count > 0)
+            //{
+            //    Patcher.WriteDeltaPatch(patch, Patcher.Selection.ExportName);
+            //    TaskLogs.AddLog($"Saved param delta: {Patcher.Selection.ExportName}.json");
+
+            //    Patcher.Selection.RefreshImportList();
+            //}
+            //else
+            //{
+            //    TaskLogs.AddLog("Aborted param delta as no changes were detected.");
+            //}
         }
         catch (Exception ex)
         {
