@@ -353,10 +353,56 @@ public class ParamDeltaExporter
     {
         var rowDeltas = new List<RowDelta>();
 
-        // TODO
+        var curRowID = 0;
+        var internalIndex = 0;
 
+        var selectedRows = Patcher.Editor.ViewHandler.ActiveView.Selection.GetSelectedRows();
+
+        for (int i = 0; i < primaryParam.Rows.Count; i++)
+        {
+            Param.Row row = primaryParam.Rows[i];
+
+            if (selectedRows.Contains(row))
+            {
+                var rowDelta = HandleSelectedRow(primaryParam, vanillaParam, row, ref curRowID, ref internalIndex);
+                rowDeltas.Add(rowDelta);
+            }
+        }
 
         return rowDeltas;
     }
+
+    public RowDelta HandleSelectedRow(Param primaryParam, Param vanillaParam, Param.Row row, ref int curRowID, ref int internalIndex)
+    {
+        var rowDelta = new RowDelta();
+        rowDelta.ID = row.ID;
+        rowDelta.Name = row.Name;
+        rowDelta.State = RowDeltaState.Modified;
+        rowDelta.Fields = new List<FieldDelta>();
+
+        foreach (var primaryCol in row.Columns)
+        {
+            var fieldDelta = new FieldDelta();
+
+            var curField = primaryCol.Def.InternalName;
+            var curValue = primaryCol.GetValue(row);
+
+            fieldDelta.Field = curField;
+            fieldDelta.Value = curValue.ToString();
+
+            if (primaryCol.Def.InternalType == "dummy8")
+            {
+                if (primaryCol.Def.ArrayLength > 1)
+                {
+                    fieldDelta.Value = ParamUtils.Dummy8Write((byte[])curValue);
+                }
+            }
+
+            rowDelta.Fields.Add(fieldDelta);
+        }
+
+        return rowDelta;
+    }
+
     #endregion
 }
