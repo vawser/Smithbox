@@ -7,9 +7,5 @@
 
 
 # TODO:
-- Look into why the program doesn't exit properly when X closed
 - Implement the auto-BTAB handling actions
 
-
-    
-        if(CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)

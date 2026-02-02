@@ -62,7 +62,7 @@
   weapon_id,armor_id,ammo_id,ring_id,spell_id,gesture_id,-,
   Unk03,Unk04,Unk05,Unk06,Unk07" />
   <Field>
-    <icon_id AltName="Icon ID" Wiki="The icon to use for this item.\nTypically found in menu\tex\icon." />
+    <icon_id AltName="Icon ID" Wiki="The icon to use for this item.\nTypically found in menu\tex\icon." IconConfig="Item" />
     <speffect_id AltName="SpEffect ID" Wiki="The SpEffect script to use for this item." />
     <sfx_on_use_1 AltName="SFX ID [1]" Wiki="A SFX that occurs on use." />
     <sfx_on_use_2 AltName="SFX ID [2]" Wiki="A SFX that occurs on use." />

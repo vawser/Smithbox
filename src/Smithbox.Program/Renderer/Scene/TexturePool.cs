@@ -474,10 +474,10 @@ public class TexturePool
                 "world_map_limveld_noklateo"
             };
 
-            if (Smithbox.Orchestrator.SelectedProject != null)
-            {
-                var curProject = Smithbox.Orchestrator.SelectedProject;
+            var curProject = Smithbox.Orchestrator.SelectedProject;
 
+            if (curProject != null)
+            {
                 var checkPow = true;
 
                 // Ignore the World Map textures
@@ -531,7 +531,10 @@ public class TexturePool
             // TODO: this is a hack to stop DXT5 saved icon files from crashing the program
             // Really we need to fix the Veldrid workflow to properly handle them
             // We need to use a staging buffer instead a linear image to do so.
-            if(format is VkFormat.Bc3SrgbBlock)
+            var isDS2 = curProject.Descriptor.ProjectType is Application.ProjectType.DS2 or Application.ProjectType.DS2S;
+
+            // Block BC3 unless we are working with DS2, where it works correctly.
+            if (format is VkFormat.Bc3SrgbBlock && !isDS2)
             {
                 return;
             }

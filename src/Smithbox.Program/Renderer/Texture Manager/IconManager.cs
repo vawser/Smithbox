@@ -1,13 +1,19 @@
 ﻿using Andre.Formats;
+using DotNext.IO.Log;
 using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TextureViewer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StudioCore.Renderer;
@@ -31,7 +37,113 @@ public class IconManager
         Cache.Clear();
     }
 
-    public CachedTexture LoadIcon(Param.Row context, IconConfig iconConfig, object fieldValue, string fieldName, int columnIndex)
+    public CachedTexture HandleIcon(Param.Row context, IconConfig iconConfig, object fieldValue, string fieldName, int columnIndex)
+    {
+        CachedTexture texture = null;
+
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if(curProject.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            return texture = LoadDirectIcon(context, iconConfig, fieldValue, fieldName, columnIndex);
+        }
+        else
+        {
+            return texture = LoadContainerIcon(context, iconConfig, fieldValue, fieldName, columnIndex);
+        }
+    }
+
+    public CachedTexture LoadDirectIcon(Param.Row context, IconConfig iconConfig, object fieldValue, string fieldName, int columnIndex)
+    {
+        CachedTexture texture = null;
+
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        // Instead of icon config, we search the layout folder directly
+        var layouts = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType), "Icon Layouts");
+
+        var key = $"icon_{context.ID}_{columnIndex}_{fieldName}_{fieldValue}";
+
+        if (Cache.ContainsKey(key))
+            return Cache[key];
+
+        var targetLayoutPath = "";
+        
+        foreach(var file in Directory.EnumerateFiles(layouts))
+        {
+            var filename = Path.GetFileNameWithoutExtension(file);
+
+            Match match = Regex.Match(filename, @"\d+");
+            if (match.Success)
+            {
+                var idString = match.Value;
+                int id;
+
+                if(int.TryParse(idString, out id))
+                {
+                    if(id.ToString() == fieldValue.ToString())
+                    {
+                        targetLayoutPath = file;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (targetLayoutPath == "")
+            return texture;
+
+        ShoeboxLayout layout = new ShoeboxLayout(targetLayoutPath);
+
+        var atlas = layout.TextureAtlases.FirstOrDefault();
+        if (atlas == null)
+            return texture;
+
+        // For DS2 we have a type attribute in the layout file that
+        // corresponds to the IconConfig ref string
+        var isMatch = atlas.Type == iconConfig.TargetConfiguration;
+
+        if (!isMatch)
+            return texture;
+
+        // ImagePath is set to the relative path needed for the VFS
+        var relativePath = atlas.ImagePath;
+
+        // Create this as it is needed in SubTextureHelper.GetPreviewSubTexture
+        var iconConfigEntry = new IconConfigurationEntry();
+        iconConfigEntry.SubTexturePrefix = "ICON_";
+
+        try
+        {
+            var tpfData = curProject.VFS.FS.ReadFileOrThrow(relativePath);
+
+            TPF curTPF = TPF.Read(tpfData);
+
+            // DS2 TPFs only contain 1 texture, so we can skip proper matching
+            var curTex = curTPF.Textures.FirstOrDefault();
+
+            var subTexture = atlas.SubTextures.FirstOrDefault();
+
+            if (subTexture != null)
+            {
+                var newCachedTexture = new CachedTexture(subTexture);
+                newCachedTexture.Load(curTPF, 0);
+
+                if (!Cache.ContainsKey(key))
+                {
+                    Cache.Add(key, newCachedTexture);
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            TaskLogs.AddError($"Failed to read TPF: {relativePath}", e);
+        }
+
+        return texture;
+    }
+
+    public CachedTexture LoadContainerIcon(Param.Row context, IconConfig iconConfig, object fieldValue, string fieldName, int columnIndex)
     {
         CachedTexture texture = null;
 

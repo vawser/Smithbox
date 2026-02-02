@@ -9,6 +9,9 @@ public class TextureAtlas
 
     public List<SubTexture> SubTextures = new List<SubTexture>();
 
+    // Custom
+    public string Type { get; set; } = "";
+
     public TextureAtlas(XmlNode node)
     {
         ImagePath = node.Attributes["imagePath"].Value;
@@ -16,6 +19,11 @@ public class TextureAtlas
         foreach (XmlNode cNode in node.ChildNodes)
         {
             SubTextures.Add(new SubTexture(cNode));
+        }
+
+        if (node.Attributes["type"] != null)
+        {
+            Type = node.Attributes["type"].Value;
         }
     }
 }

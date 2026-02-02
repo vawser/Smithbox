@@ -1720,7 +1720,7 @@ public static class TextureReferenceHelper
 
         if (CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
         {
-            CachedTexture cachedTexture = Smithbox.TextureManager.IconManager.LoadIcon(context, fieldIcon, oldval, fieldName, columnIndex);
+            CachedTexture cachedTexture = Smithbox.TextureManager.IconManager.HandleIcon(context, fieldIcon, oldval, fieldName, columnIndex);
 
             if (cachedTexture != null)
             {
