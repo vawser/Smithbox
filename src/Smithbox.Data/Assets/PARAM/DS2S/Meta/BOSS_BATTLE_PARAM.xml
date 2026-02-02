@@ -16,7 +16,7 @@
     <name_text_id_0 AltName="Boss Entity Name Text ID [0]"/>
     <name_text_id_1 AltName="Boss Entity Name Text ID [1]"/>
     <name_text_id_2 AltName="Boss Entity Name Text ID [2]"/>
-    <map_obj_bonfire_id AltName="Map Object Bonfire ID" Refs="MapObjectBonfireParam"/> 
+    <map_obj_bonfire_id AltName="Map Object Bonfire ID" Refs="MapObjectBonfireParam" IconConfig="Bonfire List"/> 
     <boss_soul_bullet_id AltName="Boss Soul Bullet ID" Refs="SystemBulletParam"/> 
   </Field>
 </PARAMMETA>
