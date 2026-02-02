@@ -1,8 +1,10 @@
 #---------------------
 # TODO 
 #---------------------
-- Implement FMG Descriptor pattern for Text Editor
 - Implement Views for Text Editor
+- Implement Views for Graphical Param Editor
+- Implement Views for Material Editor
+
 - Implement the auto-BTAB handling actions
 
 # TODO:
