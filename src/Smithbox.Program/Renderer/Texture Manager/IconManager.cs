@@ -92,7 +92,10 @@ public class IconManager
                         var newCachedTexture = new CachedTexture(subTexture);
                         newCachedTexture.Load(curTpf, i);
 
-                        Cache.Add(key, newCachedTexture);
+                        if (!Cache.ContainsKey(key))
+                        {
+                            Cache.Add(key, newCachedTexture);
+                        }
 
                         break;
                     }

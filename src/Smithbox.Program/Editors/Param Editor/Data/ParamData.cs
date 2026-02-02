@@ -750,7 +750,7 @@ public class ParamData : IDisposable
             bank.Value.RefreshAuxDiffCaches(checkAuxVanillaDiff);
         }
 
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
     }
 
     public ParamMeta GetParamMeta(PARAMDEF def)

@@ -1421,7 +1421,7 @@ public static class ExternalReferenceHelper
     public static void Item(ParamView curView, Param.Row keyRow, string fieldKey, string menuText,
         List<string> matchedExtRefPath, string dir)
     {
-        var exist = UICache.GetCached(curView.Editor, keyRow, $"extRef{menuText}{fieldKey}",
+        var exist = CacheBank.GetCached(curView.Editor, keyRow, $"extRef{menuText}{fieldKey}",
             () => Path.Exists(Path.Join(dir, matchedExtRefPath[0])));
 
         if (exist && ImGui.Selectable($"Go to {menuText} file..."))
@@ -1437,7 +1437,7 @@ public static class ExternalReferenceHelper
                 TaskLogs.AddLog($"\"{path}\" could not be found. It may be map or chr specific",
                     LogLevel.Warning);
 
-                UICache.ClearCaches();
+                CacheBank.ClearCaches();
             }
         }
     }
@@ -1525,7 +1525,7 @@ public static class TextReferenceHelper
 
         List<string> textsToPrint = new List<string>();
 
-        textsToPrint = UICache.GetCached(curView.Editor, (int)oldval, "PARAM META FMGREF", () =>
+        textsToPrint = CacheBank.GetCached(curView.Editor, (int)oldval, "PARAM META FMGREF", () =>
         {
             List<TextResult> refs = ParamReferenceResolver.ResolveTextReferences(curView, fmgNames, context, oldval);
             return refs.Where(x => x.Entry != null)
@@ -1934,11 +1934,11 @@ public static class CalcCorrectGraphHelper
             {
                 if (scd != null && scd.cost_row == row.ID)
                 {
-                    (values, maxY) = UICache.GetCached(curView.Editor, row, "soulCostData", () => ParamUtils.getSoulCostData(scd, row));
+                    (values, maxY) = CacheBank.GetCached(curView.Editor, row, "soulCostData", () => ParamUtils.getSoulCostData(scd, row));
                 }
                 else if (ccd != null)
                 {
-                    (values, xOffset, minY, maxY) = UICache.GetCached(curView.Editor, row, "calcCorrectData",
+                    (values, xOffset, minY, maxY) = CacheBank.GetCached(curView.Editor, row, "calcCorrectData",
                         () => ParamUtils.getCalcCorrectedData(ccd, row));
                 }
 

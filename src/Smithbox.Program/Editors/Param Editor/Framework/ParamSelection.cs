@@ -315,10 +315,10 @@ public class ParamSelection
         // We maintain this flag as clearing the cache properly is slow for the number of times we modify selection
         if (s.selectionCacheDirty)
         {
-            UICache.RemoveCache(Editor, s);
+            CacheBank.RemoveCache(Editor, s);
         }
 
-        return UICache.GetCached(Editor, s, "selectionCache" + cacheVer, () =>
+        return CacheBank.GetCached(Editor, s, "selectionCache" + cacheVer, () =>
         {
             s.selectionCacheDirty = false;
             return rows.Select(x => GetSelectedRows().Contains(x)).ToArray();

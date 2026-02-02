@@ -147,13 +147,13 @@ public class ParamFieldWindow
             DisplayRowFields(curRow, meta, vanillaRow, auxRows, compareRow, ref imguiId, activeParam);
 
             var search = propSearchString;
-            List<(ParamEditorPseudoColumn, Param.Column)> cols = UICache.GetCached(Editor, curRow, "fieldFilter",
+            List<(ParamEditorPseudoColumn, Param.Column)> cols = CacheBank.GetCached(Editor, curRow, "fieldFilter",
                 () => ParentView.MassEdit.CSE.Search((activeParam, curRow), search, true, true));
 
-            List<(ParamEditorPseudoColumn, Param.Column)> vcols = UICache.GetCached(Editor, vanillaRow, "vFieldFilter",
+            List<(ParamEditorPseudoColumn, Param.Column)> vcols = CacheBank.GetCached(Editor, vanillaRow, "vFieldFilter",
                 () => cols.Select((x, i) => x.GetAs(ParentView.GetVanillaBank().GetParamFromName(activeParam))).ToList());
 
-            List<List<(ParamEditorPseudoColumn, Param.Column)>> auxCols = UICache.GetCached(Editor, auxRows,
+            List<List<(ParamEditorPseudoColumn, Param.Column)>> auxCols = CacheBank.GetCached(Editor, auxRows,
                 "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.Handler.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
 
             // Pinned Fields
@@ -195,7 +195,7 @@ public class ParamFieldWindow
                 if (resAutoCol != null)
                 {
                     propSearchString = resAutoCol;
-                    UICache.ClearCaches();
+                    CacheBank.ClearCaches();
                 }
             }
 
@@ -209,7 +209,7 @@ public class ParamFieldWindow
 
             if (ImGui.IsItemEdited())
             {
-                UICache.ClearCaches();
+                CacheBank.ClearCaches();
             }
 
             // Toggle Community Field Names

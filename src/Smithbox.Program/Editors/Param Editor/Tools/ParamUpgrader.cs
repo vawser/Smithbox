@@ -271,7 +271,7 @@ public class ParamUpgrader
             TaskLogs.AddLog($"Primary bank is already fully upgraded.");
         }
 
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
         paramData.RefreshAllParamDiffCaches(false);
 
         await paramData.PrimaryBank.Save();
@@ -428,7 +428,7 @@ public class ParamUpgrader
         primaryBank._paramVersion = vanillaBank.ParamVersion;
         primaryBank._pendingUpgrade = true;
 
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
         paramData.RefreshAllParamDiffCaches(false);
 
         return true;

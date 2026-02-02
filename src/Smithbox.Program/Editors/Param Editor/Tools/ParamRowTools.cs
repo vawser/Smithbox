@@ -35,7 +35,7 @@ public static class ParamRowTools
     {
         if (ImGui.BeginMenu("Search for references"))
         {
-            Dictionary<string, List<(string, ParamRef)>> items = UICache.GetCached(curView.Editor, (curView.GetPrimaryBank(), currentParam),
+            Dictionary<string, List<(string, ParamRef)>> items = CacheBank.GetCached(curView.Editor, (curView.GetPrimaryBank(), currentParam),
                 () => ParamRefReverseLookupFieldItems(curView, currentParam));
 
             foreach (KeyValuePair<string, List<(string, ParamRef)>> paramitems in items)
@@ -46,7 +46,7 @@ public static class ParamRowTools
                     {
                         if (ImGui.BeginMenu($@"in {fieldName}"))
                         {
-                            List<Param.Row> rows = UICache.GetCached(curView.Editor, (curView.GetPrimaryBank(), currentParam, currentID, paramitems.Key, fieldName),
+                            List<Param.Row> rows = CacheBank.GetCached(curView.Editor, (curView.GetPrimaryBank(), currentParam, currentID, paramitems.Key, fieldName),
                                 () => ParamRefReverseLookupRowItems(curView, paramitems.Key, fieldName, currentID,
                                     pref));
                             foreach (Param.Row row in rows)

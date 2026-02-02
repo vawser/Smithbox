@@ -102,7 +102,7 @@ public class ParamListWindow
 
         if (!currentParamSearchString.Equals(lastParamSearch))
         {
-            UICache.ClearCaches();
+            CacheBank.ClearCaches();
             lastParamSearch = currentParamSearchString;
         }
 
@@ -169,7 +169,7 @@ public class ParamListWindow
 
     private void DisplayParams(bool doFocus, float scrollTo)
     {
-        List<string> paramKeyList = UICache.GetCached(Editor, ParentView.ViewIndex, () =>
+        List<string> paramKeyList = CacheBank.GetCached(Editor, ParentView.ViewIndex, () =>
         {
             var primaryBank = Editor.Project.Handler.ParamData.PrimaryBank;
 

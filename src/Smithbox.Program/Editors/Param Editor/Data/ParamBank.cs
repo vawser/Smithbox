@@ -90,7 +90,7 @@ public class ParamBank : IDisposable
 
         _params = new Dictionary<string, Param>();
 
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
 
         var successfulLoad = false;
 
@@ -1981,7 +1981,7 @@ public class ParamBank : IDisposable
             _vanillaDiffCache = GetParamDiff(Project.Handler.ParamData.VanillaBank);
         }
 
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
     }
 
     public void RefreshVanillaDiffCaches()
@@ -1993,7 +1993,7 @@ public class ParamBank : IDisposable
 
         _primaryDiffCache = GetParamDiff(Project.Handler.ParamData.PrimaryBank);
 
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
     }
 
     public void RefreshAuxDiffCaches(bool checkVanillaDiff)
@@ -2005,7 +2005,7 @@ public class ParamBank : IDisposable
 
         _primaryDiffCache = GetParamDiff(Project.Handler.ParamData.PrimaryBank);
 
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
     }
 
     private Dictionary<string, HashSet<int>> GetParamDiff(ParamBank otherBank)

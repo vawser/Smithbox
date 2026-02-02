@@ -6,7 +6,7 @@ using Veldrid.MetalBindings;
 
 namespace StudioCore.Editors.Common;
 
-public class UICache
+public class CacheBank
 {
     private static readonly Dictionary<(EditorScreen, object, string), object> caches = new();
 
@@ -25,13 +25,15 @@ public class UICache
     /// </summary>
     public static T GetCached<T>(EditorScreen UIScreen, object context, string key, Func<T> getValue)
     {
-        (EditorScreen UIScreen, object context, string key) trueKey = (UIScreen, context, key);
-        if (!caches.ContainsKey(trueKey))
+        var trueKey = (UIScreen, context, key);
+
+        if (!caches.TryGetValue(trueKey, out var cachedValue))
         {
-            caches[trueKey] = getValue();
+            cachedValue = getValue();
+            caches[trueKey] = cachedValue;
         }
 
-        return (T)caches[trueKey];
+        return (T)cachedValue;
     }
 
     /// <summary>

@@ -140,7 +140,7 @@ public class ParamRowWindow
                     _focusRows = false;
                 }
 
-                List<Param.Row> rows = UICache.GetCached(Editor, (ParentView.ViewIndex, activeParam),
+                List<Param.Row> rows = CacheBank.GetCached(Editor, (ParentView.ViewIndex, activeParam),
                     () => ParentView.MassEdit.RSE.Search((Editor.Project.Handler.ParamData.PrimaryBank, para),
 
                 ParentView.Selection.GetCurrentRowSearchString(), true, true));
@@ -258,7 +258,7 @@ public class ParamRowWindow
         if (!lastRowSearch.ContainsKey(ParentView.Selection.GetActiveParam())
             || !lastRowSearch[ParentView.Selection.GetActiveParam()].Equals(ParentView.Selection.GetCurrentRowSearchString()))
         {
-            UICache.ClearCaches();
+            CacheBank.ClearCaches();
             lastRowSearch[ParentView.Selection.GetActiveParam()] = ParentView.Selection.GetCurrentRowSearchString();
 
             doFocus = true;
@@ -876,7 +876,7 @@ public class ParamRowWindow
 
         var activeParam = ParentView.Selection.GetActiveParam();
 
-        foreach (Param.Row row in UICache.GetCached(Editor, (ParentView.ViewIndex, ParentView.Selection.GetActiveParam()),
+        foreach (Param.Row row in CacheBank.GetCached(Editor, (ParentView.ViewIndex, ParentView.Selection.GetActiveParam()),
             () => ParentView.MassEdit.RSE.Search((ParentView.GetPrimaryBank(), ParentView.GetPrimaryBank().Params[ParentView.Selection.GetActiveParam()]),
             ParentView.Selection.GetCurrentRowSearchString(), true, true)))
         {
