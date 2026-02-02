@@ -73,7 +73,16 @@ public class Smithbox
 
         if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
         {
-            _context = new VulkanGraphicsContext();
+            if (VulkanCheck.IsVulkanSupported())
+            {
+                _context = new VulkanGraphicsContext();
+            }
+            else
+            {
+                _context = new OpenGLCompatGraphicsContext();
+                LowRequirementsMode = true;
+                CFG.Current.System_RenderingBackend = RenderingBackend.OpenGL;
+            }
         }
 
         _context.Initialize();
