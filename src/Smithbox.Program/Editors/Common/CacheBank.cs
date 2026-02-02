@@ -25,15 +25,17 @@ public class CacheBank
     /// </summary>
     public static T GetCached<T>(EditorScreen UIScreen, object context, string key, Func<T> getValue)
     {
-        var trueKey = (UIScreen, context, key);
-
-        if (!caches.TryGetValue(trueKey, out var cachedValue))
+        lock(caches)
         {
-            cachedValue = getValue();
-            caches[trueKey] = cachedValue;
-        }
+            var trueKey = (UIScreen, context, key);
 
-        return (T)cachedValue;
+            if (!caches.TryGetValue(trueKey, out var cachedValue))
+            {
+                cachedValue = getValue();
+                caches[trueKey] = cachedValue;
+            }
+            return (T)cachedValue;
+        }
     }
 
     /// <summary>
