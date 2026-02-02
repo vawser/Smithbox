@@ -75,20 +75,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         var dsid = ImGui.GetID("DockSpace_TextureViewer");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Smithbox.LowRequirementsMode)
-        {
-            ImGui.Begin("Viewer##InvalidTextureViewerLowReqs");
-
-            ImGui.Text("Not usable in Low Requirements mode.");
-
-            ImGui.End();
-
-            ImGui.PopStyleVar();
-            ImGui.PopStyleColor(1);
-
-            return;
-        }
-
         CommandQueue.Parse(initcmd);
         EditorShortcuts.Monitor();
 

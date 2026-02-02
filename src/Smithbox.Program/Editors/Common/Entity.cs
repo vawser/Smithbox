@@ -2277,7 +2277,11 @@ public class PlacementEntity : Entity
         {
             var curEditor = (MapEditorScreen)editor;
             var universe = curEditor.Universe;
-            _renderSceneMesh = DrawableHelper.GetPlacementOrbDrawable(universe.RenderScene, this);
+
+            if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+            {
+                _renderSceneMesh = DrawableHelper.GetPlacementOrbDrawable(universe.RenderScene, this);
+            }
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Editors.TextureViewer;
 using System;
 
@@ -24,6 +25,16 @@ public class TextureResource : IResource, IDisposable
     public TexturePool.TextureHandle GPUTexture { get; private set; }
 
     public bool _LoadTexture(AccessLevel al)
+    {
+        if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+        {
+            return LoadVulkanTexture(al);
+        }
+
+        return false;
+    }
+
+    public bool LoadVulkanTexture(AccessLevel al)
     {
         if (TexturePool.TextureHandle.IsTPFCube(Texture.Textures[TPFIndex], Texture.Platform))
         {

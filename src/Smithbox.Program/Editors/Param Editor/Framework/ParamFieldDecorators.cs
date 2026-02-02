@@ -1716,10 +1716,6 @@ public static class TextureReferenceHelper
         if (!CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
             return;
 
-        // Required to stop the LowRequirements build from failing
-        if (Smithbox.LowRequirementsMode)
-            return;
-
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRef_Text);
 
         if (CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)

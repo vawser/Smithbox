@@ -449,10 +449,6 @@ public class WorldMapTool : IResourceEventListener
 
     private void RegisterWorldMapListeners()
     {
-        // Required to stop the LowRequirements build from failing
-        if (Smithbox.LowRequirementsMode)
-            return;
-
         if (Project.Descriptor.ProjectType is ProjectType.ER)
         {
             ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_vanilla", this, AccessLevel.AccessGPUOptimizedOnly);

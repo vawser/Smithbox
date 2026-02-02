@@ -24,7 +24,7 @@ public enum ViewportType
 /// A viewport is a virtual (i.e. render to texture/render target) view of a scene. It can receive input events to
 /// transform the view within a virtual canvas, or it can be manually configured for say rendering thumbnails
 /// </summary>
-public class Viewport : IViewport
+public class VulkanViewport : IViewport
 {
     public MapEditorScreen MapEditor;
     public ModelEditorScreen ModelEditor;
@@ -124,7 +124,7 @@ public class Viewport : IViewport
     /// </summary>
     public float FarClip => CFG.Current.Viewport_RenderDistance_Max;
 
-    public Viewport(MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
+    public VulkanViewport(MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
     {
         MapEditor = mapEditor;
         ModelEditor = modelEditor;

@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Utilities;
 using System;
@@ -21,7 +22,16 @@ public class CachedTexture
     {
         SubTexture = subTexture;
     }
+
     public void Load(TPF tpf, int index)
+    {
+        if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+        {
+            LoadVulkanTexture(tpf, index);
+        }
+    }
+
+    public void LoadVulkanTexture(TPF tpf, int index)
     {
         if (TexturePool.TextureHandle.IsTPFCube(tpf.Textures[index], tpf.Platform))
         {

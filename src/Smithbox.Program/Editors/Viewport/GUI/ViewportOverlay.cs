@@ -5,9 +5,9 @@ namespace StudioCore.Editors.Viewport;
 
 public class ViewportOverlay
 {
-    public Viewport Parent;
+    public VulkanViewport Parent;
 
-    public ViewportOverlay(Viewport parent)
+    public ViewportOverlay(VulkanViewport parent)
     {
         Parent = parent;
     }

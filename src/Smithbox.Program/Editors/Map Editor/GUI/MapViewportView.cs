@@ -45,9 +45,9 @@ public class MapViewportView
 
     public void Setup()
     {
-        if (Device != null && !Smithbox.LowRequirementsMode)
+        if (Device != null && CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
         {
-            Viewport = new Viewport.Viewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
+            Viewport = new VulkanViewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
 
             RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
         }
@@ -138,17 +138,14 @@ public class MapViewportView
     {
         Viewport.OnGui();
 
-        if (!Smithbox.LowRequirementsMode)
+        if (Editor.Universe != null && PlacementOrb == null)
         {
-            if (Editor.Universe != null && PlacementOrb == null)
-            {
-                PlacementOrb = new PlacementEntity(Editor);
-            }
+            PlacementOrb = new PlacementEntity(Editor);
+        }
 
-            if (PlacementOrb != null)
-            {
-                PlacementOrb.UpdateRenderModel(Editor);
-            }
+        if (PlacementOrb != null)
+        {
+            PlacementOrb.UpdateRenderModel(Editor);
         }
     }
 
@@ -167,6 +164,7 @@ public class MapViewportView
     {
         Viewport.Draw(device, cl);
     }
+
     public bool InputCaptured()
     {
         return Viewport.IsViewportSelected;

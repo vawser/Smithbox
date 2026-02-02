@@ -24,23 +24,10 @@ namespace StudioCore.Renderer;
 
 public class TextureManager
 {
-    private readonly GraphicsDevice _gd;
-    private readonly IImguiRenderer _imgui;
-
-    private readonly VulkanImGuiRenderer imGuiRenderer;
-
     public IconManager IconManager;
 
-    public TextureManager(GraphicsDevice gd, IImguiRenderer imgui)
+    public TextureManager()
     {
-        _gd = gd;
-        _imgui = imgui;
-
-        if(!Smithbox.LowRequirementsMode)
-        {
-            imGuiRenderer = (VulkanImGuiRenderer)_imgui;
-        }
-
-        IconManager = new(_gd, _imgui);
+        IconManager = new();
     }
 }

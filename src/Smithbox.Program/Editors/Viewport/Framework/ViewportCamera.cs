@@ -87,7 +87,7 @@ public class ViewportCamera
     private float OrthoHeight = 10f;    
     private float OrthoZoomSpeed = 1f;
 
-    public Viewport ParentViewport;
+    public VulkanViewport ParentViewport;
 
     public ViewportType ViewportType;
 
@@ -96,9 +96,9 @@ public class ViewportCamera
         BoundingRect = bounds;
         SDL = SdlProvider.SDL.Value;
 
-        if(viewport is Viewport)
+        if(viewport is VulkanViewport)
         {
-            ParentViewport = (Viewport)viewport;
+            ParentViewport = (VulkanViewport)viewport;
         }
     }
 

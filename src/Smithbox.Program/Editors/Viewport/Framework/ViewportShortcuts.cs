@@ -2,9 +2,9 @@
 
 public class ViewportShortcuts
 {
-    public Viewport Parent;
+    public VulkanViewport Parent;
 
-    public ViewportShortcuts(Viewport parent)
+    public ViewportShortcuts(VulkanViewport parent)
     {
         Parent = parent;
     }

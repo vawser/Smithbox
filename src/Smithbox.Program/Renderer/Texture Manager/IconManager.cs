@@ -9,7 +9,6 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using Veldrid;
 
 namespace StudioCore.Renderer;
 
@@ -18,23 +17,9 @@ namespace StudioCore.Renderer;
 /// </summary>
 public class IconManager
 {
-    private readonly GraphicsDevice _gd;
-    private readonly IImguiRenderer _imgui;
-
-    private readonly VulkanImGuiRenderer imGuiRenderer;
-
     public Dictionary<string, CachedTexture> Cache = new();
 
-    public IconManager(GraphicsDevice gd, IImguiRenderer imgui)
-    {
-        _gd = gd;
-        _imgui = imgui;
-
-        if (!Smithbox.LowRequirementsMode)
-        {
-            imGuiRenderer = (VulkanImGuiRenderer)_imgui;
-        }
-    }
+    public IconManager() { }
 
     public void PurgeCache()
     {

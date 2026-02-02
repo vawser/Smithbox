@@ -628,8 +628,6 @@ public static class RenderableHelper
         var highlightColor = Utils.GetDecimalColor(Color.Purple);
         var transparency = 25.0f;
 
-
-
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _placementOrb);
 
         r.RenderOverlay = true;
@@ -638,6 +636,8 @@ public static class RenderableHelper
         //ColorHelper.ApplyColorVariance(r);
 
         return r;
+
+        return null;
     }
 
     // AUTO INVADE SPHERE REGION

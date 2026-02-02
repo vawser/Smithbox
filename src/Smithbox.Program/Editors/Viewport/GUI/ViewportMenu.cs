@@ -10,9 +10,9 @@ namespace StudioCore.Editors.Viewport;
 
 public class ViewportMenu
 {
-    public Viewport Parent;
+    public VulkanViewport Parent;
 
-    public ViewportMenu(Viewport parent)
+    public ViewportMenu(VulkanViewport parent)
     {
         Parent = parent;
     }

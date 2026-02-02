@@ -14,7 +14,7 @@ namespace StudioCore.Editors.Viewport;
 
 public class BoxSelection
 {
-    public Viewport Parent;
+    public VulkanViewport Parent;
 
     private Vector2 _dragEnd;
     private Vector2 _dragStart;
@@ -24,7 +24,7 @@ public class BoxSelection
 
     private const float DragThreshold = 5f;
 
-    public BoxSelection(Viewport parent)
+    public BoxSelection(VulkanViewport parent)
     {
         Parent = parent;
     }

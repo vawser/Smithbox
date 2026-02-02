@@ -33,7 +33,7 @@ public class TexDisplayView
         {
             TextureResource texRes = Editor.Selection.ViewerTextureResource;
 
-            if (texRes != null)
+            if (texRes != null && texRes.GPUTexture != null)
             {
                 Vector2 size = GetImageSize(texRes, true);
 

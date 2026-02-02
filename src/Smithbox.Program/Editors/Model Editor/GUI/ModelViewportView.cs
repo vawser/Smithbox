@@ -41,9 +41,9 @@ public class ModelViewportView
 
     public void Setup()
     {
-        if (Device != null && !Smithbox.LowRequirementsMode)
+        if (Device != null && CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
         {
-            Viewport = new Viewport.Viewport(null, Editor, ViewportType.ModelEditor, 
+            Viewport = new VulkanViewport(null, Editor, ViewportType.ModelEditor, 
                 "Modeleditvp", Rect.Width, Rect.Height);
         }
         else

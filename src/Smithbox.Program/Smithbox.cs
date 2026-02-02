@@ -32,8 +32,6 @@ public class Smithbox
     private static bool _firstframe = true;
     public static bool FirstFrame = true;
 
-    public static bool LowRequirementsMode;
-
     public IGraphicsContext _context;
 
     public static bool FontRebuildRequest;
@@ -68,7 +66,6 @@ public class Smithbox
         if (CFG.Current.System_RenderingBackend is RenderingBackend.OpenGL)
         {
             _context = new OpenGLCompatGraphicsContext();
-            LowRequirementsMode = true;
         }
 
         if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
@@ -80,7 +77,6 @@ public class Smithbox
             else
             {
                 _context = new OpenGLCompatGraphicsContext();
-                LowRequirementsMode = true;
                 CFG.Current.System_RenderingBackend = RenderingBackend.OpenGL;
             }
         }
@@ -111,7 +107,7 @@ public class Smithbox
 
         _soapstoneService = new(version);
 
-        TextureManager = new(_context.Device, _context.ImguiRenderer);
+        TextureManager = new();
     }
 
     private void Setup()
