@@ -317,6 +317,21 @@
     <matchingWeaponLevelUpperArena_24 AltName="Arena - Max Reinforcement Coefficient 24" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
     <matchingWeaponLevelUpperArena_25 AltName="Arena - Max Reinforcement Coefficient 25" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
 
+    <matchDuel_FirstHalfTime AltName="Arena - First Half Time" Wiki="Total time of the first half of the arena match in Duel game mode" />
+    <matchDuel_SecondHalfTime AltName="Arena - Second Half Time" Wiki="Total time of the second half of the arena match in Duel game mode" />
+    <matchDM2_FirstHalfTime AltName="Arena - First Half Time" Wiki="Total time of the first half of the arena match in 2 players Death Match game mode" />
+    <matchDM2_SecondHalfTime AltName="Arena - Second Half Time" Wiki="Total time of the second half of the arena match in 2 players Death Match game mode" />
+    <matchDM4_FirstHalfTime AltName="Arena - First Half Time" Wiki="Total time of the first half of the arena match in 4 players Death Match game mode" />
+    <matchDM4_SecondHalfTime AltName="Arena - Second Half Time" Wiki="Total time of the second half of the arena match in 4 players Death Match game mode" />
+    <matchDM6_FirstHalfTime AltName="Arena - First Half Time" Wiki="Total time of the first half of the arena match in 6 players Death Match game mode" />
+    <matchDM6_SecondHalfTime AltName="Arena - Second Half Time" Wiki="Total time of the second half of the arena match in 6 players Death Match game mode" />
+    <matchTM2vs2_FirstHalfTime AltName="Arena - First Half Time" Wiki="Total time of the first half of the arena match in 2vs2 Team Match game mode" />
+    <matchTM2vs2_SecondHalfTime AltName="Arena - Second Half Time" Wiki="Total time of the second half of the arena match in 2vs2 Team Match game mode" />
+    <matchTM3vs3_FirstHalfTime AltName="Arena - First Half Time" Wiki="Total time of the first half of the arena match in 3vs3 Team Match game mode" />
+    <matchTM3vs3_SecondHalfTime AltName="Arena - Second Half Time" Wiki="Total time of the second half of the arena match in 3vs3 Team Match game mode" />
+    <matchTM1vs1_FirstHalfTime AltName="Arena - First Half Time" Wiki="Total time of the first half of the arena match in 1vs1 Team Match game mode" />
+    <matchTM1vs1_SecondHalfTime AltName="Arena - Second Half Time" Wiki="Total time of the second half of the arena match in 1vs1 Team Match game mode" />
+
     <summonDataCoopMatchingSpiritAshLevelMul AltName="Coop - Maximum Spirit Ash Reinforcement Correction" Wiki="Weakened stats when multiplayer. Maximum spirit ash level correction" />
 
     <matchingSpiritAshLevelUpper_0 AltName="Spirit Ash - Max Level Coefficient 0" Wiki="Maximum Spirit Ash level factor for whether to apply level sync" />
