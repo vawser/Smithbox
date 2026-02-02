@@ -636,8 +636,6 @@ public static class RenderableHelper
         //ColorHelper.ApplyColorVariance(r);
 
         return r;
-
-        return null;
     }
 
     // AUTO INVADE SPHERE REGION

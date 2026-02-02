@@ -94,7 +94,7 @@ public class ModelContainer : ObjectContainer
         {
             var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Node);
 
-            if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
                 AssignNodeDrawable(newObject, wrapper);
             }
@@ -133,7 +133,7 @@ public class ModelContainer : ObjectContainer
         {
             var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Dummy);
 
-            if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
                 AssignDummyDrawable(newObject, wrapper);
             }
@@ -167,7 +167,7 @@ public class ModelContainer : ObjectContainer
         {
             var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Mesh);
 
-            if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
                 AssignMeshDrawable(newObject, wrapper);
             }

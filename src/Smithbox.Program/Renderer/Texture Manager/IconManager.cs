@@ -25,7 +25,7 @@ public class IconManager
     {
         foreach (var entry in Cache)
         {
-            entry.Value.OldHandle.Dispose();
+            entry.Value.Handle?.Dispose();
         }
 
         Cache.Clear();
@@ -105,7 +105,7 @@ public class IconManager
 
     public Vector2 DisplayIcon(CachedTexture cachedTexture)
     {
-        if (cachedTexture.OldHandle == null)
+        if (cachedTexture.Handle == null)
             return new Vector2();
 
         // Get scaled image size vector
@@ -121,18 +121,28 @@ public class IconManager
         Vector2 size = new Vector2(Xmax - Xmin, Ymax - Ymin) * scale;
 
         // Get UV coordinates based on full image
-        float left = (Xmin) / cachedTexture.OldHandle.Width;
-        float top = (Ymin) / cachedTexture.OldHandle.Height;
-        float right = (Xmax) / cachedTexture.OldHandle.Width;
-        float bottom = (Ymax) / cachedTexture.OldHandle.Height;
+        float left = (Xmin) / cachedTexture.Handle.Width;
+        float top = (Ymin) / cachedTexture.Handle.Height;
+        float right = (Xmax) / cachedTexture.Handle.Width;
+        float bottom = (Ymax) / cachedTexture.Handle.Height;
 
         // Build UV coordinates
         var UV0 = new Vector2(left, top);
         var UV1 = new Vector2(right, bottom);
 
-        var textureId = new ImTextureID(cachedTexture.OldHandle.TexHandle);
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+        {
+            var vulkanHandle = (VulkanTextureHandle)cachedTexture.Handle;
+            var textureId = new ImTextureID(vulkanHandle.Handle.TexHandle);
+            ImGui.Image(textureId, size, UV0, UV1);
+        }
 
-        ImGui.Image(textureId, size, UV0, UV1);
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
+        {
+            var openglHandle = (OpenGLTextureHandle)cachedTexture.Handle;
+            var textureId = new ImTextureID(openglHandle.Handle);
+            ImGui.Image(textureId, size, UV0, UV1);
+        }
 
         return size;
     }

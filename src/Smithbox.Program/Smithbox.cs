@@ -50,6 +50,8 @@ public class Smithbox
     public ActionLogger ActionLogger;
     public WarningLogger WarningLogger;
 
+    public RenderingBackend CurrentBackend = RenderingBackend.Vulkan;
+
     public unsafe Smithbox(string version)
     {
         Instance = this;
@@ -63,12 +65,12 @@ public class Smithbox
 
         Setup();
 
-        if (CFG.Current.System_RenderingBackend is RenderingBackend.OpenGL)
+        if (CurrentBackend is RenderingBackend.OpenGL)
         {
             _context = new OpenGLCompatGraphicsContext();
         }
 
-        if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+        if (CurrentBackend is RenderingBackend.Vulkan)
         {
             if (VulkanCheck.IsVulkanSupported())
             {
@@ -80,6 +82,9 @@ public class Smithbox
                 CFG.Current.System_RenderingBackend = RenderingBackend.OpenGL;
             }
         }
+
+        // Set this so even if the user changes the CFG, the program won't suddenly switch its usage until a restart.
+        CurrentBackend = CFG.Current.System_RenderingBackend;
 
         _context.Initialize();
         _context.Window.Title = _programTitle;

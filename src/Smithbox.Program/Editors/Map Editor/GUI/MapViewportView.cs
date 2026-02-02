@@ -45,7 +45,7 @@ public class MapViewportView
 
     public void Setup()
     {
-        if (Device != null && CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+        if (Device != null && Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
         {
             Viewport = new VulkanViewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
 

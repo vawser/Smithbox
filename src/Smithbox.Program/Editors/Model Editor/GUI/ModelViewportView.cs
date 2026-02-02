@@ -41,7 +41,7 @@ public class ModelViewportView
 
     public void Setup()
     {
-        if (Device != null && CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+        if (Device != null && Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
         {
             Viewport = new VulkanViewport(null, Editor, ViewportType.ModelEditor, 
                 "Modeleditvp", Rect.Width, Rect.Height);

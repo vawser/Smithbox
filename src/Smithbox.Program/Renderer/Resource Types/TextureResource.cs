@@ -26,7 +26,7 @@ public class TextureResource : IResource, IDisposable
 
     public bool _LoadTexture(AccessLevel al)
     {
-        if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
         {
             return LoadVulkanTexture(al);
         }
