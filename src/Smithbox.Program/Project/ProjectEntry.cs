@@ -129,7 +129,14 @@ public class ProjectEntry
         Locator = new(this);
         Handler = new(this);
 
-        SetupDLLs();
+        try
+        {
+            SetupDLLs();
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddError("Failed to setup DLLs", e);
+        }
 
         if (!silent)
         {
@@ -141,7 +148,14 @@ public class ProjectEntry
             });
         }
 
-        VFS.Initialize();
+        try
+        {
+            VFS.Initialize();
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddError("Failed to setup VFS", e);
+        }
 
         if (!silent)
         {
@@ -153,7 +167,14 @@ public class ProjectEntry
             });
         }
 
-        Handler.InitStubs();
+        try
+        {
+            Handler.InitStubs();
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddError("Failed to setup editor stubs", e);
+        }
 
         if (!silent)
         {
@@ -165,7 +186,14 @@ public class ProjectEntry
             });
         }
 
-        await Locator.Initialize(reportProgress, silent);
+        try
+        {
+            await Locator.Initialize(reportProgress, silent);
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddError("Failed to setup file locator", e);
+        }
 
         IsLoadingData = true;
 
@@ -179,7 +207,14 @@ public class ProjectEntry
             });
         }
 
-        await Handler.InitializeData(initType, silent);
+        try
+        {
+            await Handler.InitializeData(initType, silent);
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddError("Failed to setup editor data", e);
+        }
 
         IsLoadingData = false;
         IsCreatingEditors = true;
@@ -194,7 +229,14 @@ public class ProjectEntry
             });
         }
 
-        Handler.InitializeEditors(initType);
+        try
+        {
+            Handler.InitializeEditors(initType);
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddError("Failed to setup editors", e);
+        }
 
         IsCreatingEditors = false;
         Initialized = true;
