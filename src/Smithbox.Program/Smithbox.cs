@@ -52,11 +52,9 @@ public class Smithbox
     public ActionLogger ActionLogger;
     public WarningLogger WarningLogger;
 
-    public unsafe Smithbox(IGraphicsContext context, string version, bool isLowRequirements)
+    public unsafe Smithbox(string version)
     {
         Instance = this;
-
-        LowRequirementsMode = isLowRequirements;
 
         _version = version;
         _programTitle = $"Smithbox - {_version}";
@@ -67,11 +65,21 @@ public class Smithbox
 
         Setup();
 
-        _context = context;
+        if (CFG.Current.System_RenderingBackend is RenderingBackend.OpenGL)
+        {
+            _context = new OpenGLCompatGraphicsContext();
+            LowRequirementsMode = true;
+        }
+
+        if (CFG.Current.System_RenderingBackend is RenderingBackend.Vulkan)
+        {
+            _context = new VulkanGraphicsContext();
+        }
+
         _context.Initialize();
         _context.Window.Title = _programTitle;
 
-        PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
+        PlatformUtils.InitializeWindows(_context.Window.SdlWindowHandle);
 
         Orchestrator = new();
         ActionLogger = new();

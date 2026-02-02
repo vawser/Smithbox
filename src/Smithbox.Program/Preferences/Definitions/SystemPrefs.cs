@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -70,6 +71,39 @@ public class SystemPrefs
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.System_Apply_DCX_Heuristic);
+            }
+        };
+    }
+
+    public static PreferenceItem System_RenderingBackend()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.System,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.General,
+
+            Title = "Rendering Backend",
+            Description = "Determines which rendering backend to use. Restart is required for changes to take affect.",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.System_RenderingBackend.GetDisplayName()))
+                {
+                    foreach (var entry in Enum.GetValues(typeof(RenderingBackend)))
+                    {
+                        var type = (RenderingBackend)entry;
+
+                        if (ImGui.Selectable(type.GetDisplayName()))
+                        {
+                            CFG.Current.System_RenderingBackend = (RenderingBackend)entry;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
             }
         };
     }

@@ -44,6 +44,8 @@ public class CFG
     public bool System_Ignore_Read_Asserts = false;
     public bool System_Apply_DCX_Heuristic = false;
 
+    public RenderingBackend System_RenderingBackend = RenderingBackend.Vulkan;
+
     public bool Logger_Enable_Action_Log = true;
     public bool Logger_Enable_Warning_Log = true;
     public int Logger_Action_Fade_Time = 1500;
