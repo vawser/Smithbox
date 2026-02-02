@@ -2241,20 +2241,20 @@
     <Field Def="u8 matchingWeaponLevelUpperArena_24" FirstVersion="11210015" />
     <Field Def="u8 matchingWeaponLevelUpperArena_25" FirstVersion="11210015" />
 
-    <Field Def="f32 unknown_0x310" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x314" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x318" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x31c" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x320" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x324" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x328" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x32c" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x330" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x334" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x338" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x33c" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x340" FirstVersion="10701000" />
-    <Field Def="f32 unknown_0x344" FirstVersion="10701000" />
+    <Field Def="f32 matchDuel_FirstHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchDuel_SecondHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchDM2_FirstHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchDM2_SecondHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchDM4_FirstHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchDM4_SecondHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchDM6_FirstHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchDM6_SecondHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchTM2vs2_FirstHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchTM2vs2_SecondHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchTM3vs3_FirstHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchTM3vs3_SecondHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchTM1vs1_FirstHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 matchTM1vs1_SecondHalfTime" FirstVersion="10701000" />
 
     <Field Def="dummy8 pad_0x348[40]" FirstVersion="10701000" RemovedVersion="11210015"/>
 
