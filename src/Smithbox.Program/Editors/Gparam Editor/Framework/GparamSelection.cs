@@ -7,7 +7,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamSelection
 {
-    private GparamEditorScreen Editor;
+    private GparamEditorView Parent;
     private ProjectEntry Project;
 
     public FileDictionaryEntry SelectedFileEntry;
@@ -30,9 +30,9 @@ public class GparamSelection
     public bool SelectGparamGroup = false;
     public bool SelectGparamField = false;
 
-    public GparamSelection(GparamEditorScreen editor, ProjectEntry project)
+    public GparamSelection(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -151,7 +151,7 @@ public class GparamSelection
 
         _selectedParamField = entry;
         _selectedParamFieldKey = index;
-        Editor.QuickEditHandler.targetParamField = entry;
+        Parent.QuickEditHandler.targetParamField = entry;
     }
 
     /// <summary>

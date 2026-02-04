@@ -11,8 +11,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 {
     public ProjectEntry Project;
 
-    public ActionManager ActionManager = new();
-
     public TexViewHandler ViewHandler;
 
     public TexShortcuts Shortcuts;
@@ -83,32 +81,37 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void EditMenu()
     {
+        var activeView = ViewHandler.ActiveView;
+
         if (ImGui.BeginMenu("Edit"))
         {
-            // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+            if (activeView != null)
             {
-                if (ActionManager.CanUndo())
+                // Undo
+                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
-                    ActionManager.UndoAction();
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAction();
+                    }
                 }
-            }
 
-            // Undo All
-            if (ImGui.MenuItem($"Undo All"))
-            {
-                if (ActionManager.CanUndo())
+                // Undo All
+                if (ImGui.MenuItem($"Undo All"))
                 {
-                    ActionManager.UndoAllAction();
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAllAction();
+                    }
                 }
-            }
 
-            // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
-            {
-                if (ActionManager.CanRedo())
+                // Redo
+                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
-                    ActionManager.RedoAction();
+                    if (activeView.ActionManager.CanRedo())
+                    {
+                        activeView.ActionManager.RedoAction();
+                    }
                 }
             }
 

@@ -10,6 +10,8 @@ public class TexEditorView
     public TextureViewerScreen Editor;
     public ProjectEntry Project;
 
+    public ActionManager ActionManager = new();
+
     public TexViewSelection Selection;
 
     public TexViewerZoom ZoomState;

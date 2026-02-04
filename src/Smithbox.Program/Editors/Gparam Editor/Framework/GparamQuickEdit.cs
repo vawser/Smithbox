@@ -14,7 +14,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamQuickEdit
 {
-    private GparamEditorScreen Editor;
+    private GparamEditorView Parent;
     private ProjectEntry Project;
 
     private string _targetFileString = "";
@@ -34,9 +34,9 @@ public class GparamQuickEdit
 
     public RandomNumberGenerator RandomSource;
 
-    public GparamQuickEdit(GparamEditorScreen editor, ProjectEntry project)
+    public GparamQuickEdit(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
 
         RandomSource = RandomNumberGenerator.Create();
@@ -251,39 +251,39 @@ public class GparamQuickEdit
         _targetFieldString = "";
         _valueFilterString = "";
 
-        if (Editor.Selection._selectedGparamKey != null)
+        if (Parent.Selection._selectedGparamKey != null)
         {
-            UpdateFileFilter(Editor.Selection._selectedGparamKey);
+            UpdateFileFilter(Parent.Selection._selectedGparamKey);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Editor.Selection._selectedParamGroup != null)
+        if (Parent.Selection._selectedParamGroup != null)
         {
-            UpdateGroupFilter(Editor.Selection._selectedParamGroup.Key);
+            UpdateGroupFilter(Parent.Selection._selectedParamGroup.Key);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Editor.Selection._selectedParamField != null)
+        if (Parent.Selection._selectedParamField != null)
         {
-            UpdateFieldFilter(Editor.Selection._selectedParamField.Key);
+            UpdateFieldFilter(Parent.Selection._selectedParamField.Key);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Editor.Selection._selectedParamField != null)
+        if (Parent.Selection._selectedParamField != null)
         {
             var fieldIndex = -1;
-            for (int i = 0; i < Editor.Selection._selectedParamField.Values.Count; i++)
+            for (int i = 0; i < Parent.Selection._selectedParamField.Values.Count; i++)
             {
-                if (Editor.Selection._selectedParamField.Values[i] == Editor.Selection._selectedFieldValue)
+                if (Parent.Selection._selectedParamField.Values[i] == Parent.Selection._selectedFieldValue)
                 {
                     fieldIndex = i;
                     break;
@@ -359,7 +359,7 @@ public class GparamQuickEdit
             {
 
                 var compoundAction = new CompoundAction(actionList);
-                Editor.EditorActionManager.ExecuteAction(compoundAction);
+                Parent.ActionManager.ExecuteAction(compoundAction);
             }
         }
         else
@@ -383,7 +383,7 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Editor.Selection._selectedGparamKey == entry.Filename)
+                if (Parent.Selection._selectedGparamKey == entry.Filename)
                 {
                     match = true;
                     continue;
@@ -421,7 +421,7 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Editor.Selection._selectedParamGroup.Key == entry.Key || Editor.Selection._selectedParamGroup.Name == entry.Name)
+                if (Parent.Selection._selectedParamGroup.Key == entry.Key || Parent.Selection._selectedParamGroup.Name == entry.Name)
                 {
                     match = true;
                     continue;
@@ -459,7 +459,7 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Editor.Selection._selectedParamField.Key == entry.Key)
+                if (Parent.Selection._selectedParamField.Key == entry.Key)
                 {
                     match = true;
                     continue;
@@ -580,15 +580,15 @@ public class GparamQuickEdit
         // Find vanilla value
         foreach (var entry in Project.Handler.GparamData.VanillaBank.Entries)
         {
-            if (entry.Key.Filename == Editor.Selection._selectedGparamKey)
+            if (entry.Key.Filename == Parent.Selection._selectedGparamKey)
             {
                 foreach (var paramGroup in entry.Value.Params)
                 {
-                    if (paramGroup.Key == Editor.Selection._selectedParamGroup.Key)
+                    if (paramGroup.Key == Parent.Selection._selectedParamGroup.Key)
                     {
                         foreach (var paramField in paramGroup.Fields)
                         {
-                            if (paramField.Key == Editor.Selection._selectedParamField.Key)
+                            if (paramField.Key == Parent.Selection._selectedParamField.Key)
                             {
                                 if (paramField.Values.Count > index)
                                 {
@@ -1501,7 +1501,7 @@ public class GparamQuickEdit
         {
             for (int i = 0; i < targetField.Values.Count; i++)
             {
-                if (Editor.Selection._selectedFieldValueKey == i)
+                if (Parent.Selection._selectedFieldValueKey == i)
                 {
                     filterTruth[i] = true;
                 }

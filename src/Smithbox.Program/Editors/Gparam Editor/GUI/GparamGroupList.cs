@@ -7,14 +7,14 @@ using System.Collections.Generic;
 
 namespace StudioCore.Editors.GparamEditor;
 
-public class GparamGroupListView
+public class GparamGroupList
 {
-    private GparamEditorScreen Editor;
+    private GparamEditorView Parent;
     private ProjectEntry Project;
 
-    public GparamGroupListView(GparamEditorScreen editor, ProjectEntry project)
+    public GparamGroupList(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -23,10 +23,9 @@ public class GparamGroupListView
     /// </summary>
     public void Display()
     {
-        ImGui.Begin("Groups##GparamGroups");
-        FocusManager.SetFocus(EditorFocusContext.GparamEditor_GroupList);
+        UIHelper.SimpleHeader("Groups", "");
 
-        Editor.Filters.DisplayGroupFilterSearch();
+        Parent.Filters.DisplayGroupFilterSearch();
 
         ImGui.SameLine();
 
@@ -46,9 +45,9 @@ public class GparamGroupListView
 
         ImGui.BeginChild("GparamGroupsSection");
 
-        if (Editor.Selection.IsFileSelected())
+        if (Parent.Selection.IsFileSelected())
         {
-            GPARAM data = Editor.Selection.GetSelectedGparam();
+            GPARAM data = Parent.Selection.GetSelectedGparam();
 
             // Available groups
             for (int i = 0; i < data.Params.Count; i++)
@@ -76,34 +75,34 @@ public class GparamGroupListView
                     display = true;
                 }
 
-                if (Editor.Filters.IsGroupFilterMatch(entry.Name, ""))
+                if (Parent.Filters.IsGroupFilterMatch(entry.Name, ""))
                 {
                     if (display)
                     {
                         // Group row
-                        if (ImGui.Selectable($@" {name}##{entry.Key}", i == Editor.Selection._selectedParamGroupKey))
+                        if (ImGui.Selectable($@" {name}##{entry.Key}", i == Parent.Selection._selectedParamGroupKey))
                         {
-                            Editor.Selection.SetGparamGroup(i, entry);
+                            Parent.Selection.SetGparamGroup(i, entry);
                         }
 
                         // Arrow Selection
-                        if (ImGui.IsItemHovered() && Editor.Selection.SelectGparamGroup)
+                        if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamGroup)
                         {
-                            Editor.Selection.SelectGparamGroup = false;
-                            Editor.Selection.SetGparamGroup(i, entry);
+                            Parent.Selection.SelectGparamGroup = false;
+                            Parent.Selection.SetGparamGroup(i, entry);
                         }
 
                         if (ImGui.IsItemFocused())
                         {
                             if (InputManager.HasArrowSelection())
                             {
-                                Editor.Selection.SelectGparamGroup = true;
+                                Parent.Selection.SelectGparamGroup = true;
                             }
                         }
                     }
                 }
 
-                Editor.ContextMenu.GroupContextMenu(i);
+                Parent.ContextMenu.GroupContextMenu(i);
             }
 
             if (CFG.Current.GparamEditor_Group_List_Display_Group_Add)
@@ -115,8 +114,6 @@ public class GparamGroupListView
         }
 
         ImGui.EndChild();
-
-        ImGui.End();
     }
 
     /// <summary>
@@ -124,7 +121,7 @@ public class GparamGroupListView
     /// </summary>
     public void AddMissingGroupSection()
     {
-        GPARAM data = Editor.Selection.GetSelectedGparam();
+        GPARAM data = Parent.Selection.GetSelectedGparam();
 
         List<FormatReference> missingGroups = new List<FormatReference>();
 
@@ -172,6 +169,6 @@ public class GparamGroupListView
         newGroup.Name = missingGroup.name;
         newGroup.Fields = new List<GPARAM.IField>();
 
-        Editor.Selection._selectedGparam.Params.Add(newGroup);
+        Parent.Selection._selectedGparam.Params.Add(newGroup);
     }
 }

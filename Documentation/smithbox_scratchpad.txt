@@ -5,6 +5,5 @@
  - Seems due to the movement of when the context is initialized
 
 - Implement Views for Graphical Param Editor
-- Implement Views for Material Editor
 
 # TODO:

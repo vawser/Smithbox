@@ -9,14 +9,14 @@ using System.Numerics;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
-public class GparamFieldListView
+public class GparamFieldList
 {
-    private GparamEditorScreen Editor;
+    private GparamEditorView Parent;
     private ProjectEntry Project;
 
-    public GparamFieldListView(GparamEditorScreen editor, ProjectEntry project)
+    public GparamFieldList(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -25,10 +25,9 @@ public class GparamFieldListView
     /// </summary>
     public void Display()
     {
-        ImGui.Begin("Fields##GparamFields");
-        FocusManager.SetFocus(EditorFocusContext.GparamEditor_FieldList);
+        UIHelper.SimpleHeader("Fields", "");
 
-        Editor.Filters.DisplayFieldFilterSearch();
+        Parent.Filters.DisplayFieldFilterSearch();
 
         ImGui.SameLine();
 
@@ -39,11 +38,11 @@ public class GparamFieldListView
         UIHelper.Tooltip("Toggle the display of empty groups.");
 
         ImGui.BeginChild("GparamFieldsSection");
-        Editor.Selection.SwitchWindowContext(GparamEditorContext.Field);
+        Parent.Selection.SwitchWindowContext(GparamEditorContext.Field);
 
-        if (Editor.Selection.IsGparamGroupSelected())
+        if (Parent.Selection.IsGparamGroupSelected())
         {
-            GPARAM.Param data = Editor.Selection.GetSelectedGparamGroup();
+            GPARAM.Param data = Parent.Selection.GetSelectedGparamGroup();
 
             for (int i = 0; i < data.Fields.Count; i++)
             {
@@ -53,31 +52,31 @@ public class GparamFieldListView
                 if (CFG.Current.GparamEditor_Field_List_Enable_Aliases)
                     name = FormatInformationUtils.GetReferenceName(Project.Handler.GparamData.GparamInformation, entry.Key, entry.Name);
 
-                if (Editor.Filters.IsFieldFilterMatch(entry.Name, ""))
+                if (Parent.Filters.IsFieldFilterMatch(entry.Name, ""))
                 {
                     // Field row
-                    if (ImGui.Selectable($@" {name}##{entry.Key}{i}", i == Editor.Selection._selectedParamFieldKey))
+                    if (ImGui.Selectable($@" {name}##{entry.Key}{i}", i == Parent.Selection._selectedParamFieldKey))
                     {
-                        Editor.Selection.SetGparamField(i, entry);
+                        Parent.Selection.SetGparamField(i, entry);
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Editor.Selection.SelectGparamField)
+                    if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamField)
                     {
-                        Editor.Selection.SelectGparamField = false;
-                        Editor.Selection.SetGparamField(i, entry);
+                        Parent.Selection.SelectGparamField = false;
+                        Parent.Selection.SetGparamField(i, entry);
                     }
 
                     if (ImGui.IsItemFocused())
                     {
                         if (InputManager.HasArrowSelection())
                         {
-                            Editor.Selection.SelectGparamField = true;
+                            Parent.Selection.SelectGparamField = true;
                         }
                     }
                 }
 
-                Editor.ContextMenu.FieldContextMenu(i);
+                Parent.ContextMenu.FieldContextMenu(i);
             }
 
             if (CFG.Current.GparamEditor_Field_List_Display_Field_Add)
@@ -89,8 +88,6 @@ public class GparamFieldListView
         }
 
         ImGui.EndChild();
-
-        ImGui.End();
     }
 
     /// <summary>
@@ -98,14 +95,14 @@ public class GparamFieldListView
     /// </summary>
     public void DisplayMissingFieldSection()
     {
-        GPARAM.Param data = Editor.Selection.GetSelectedGparamGroup();
+        GPARAM.Param data = Parent.Selection.GetSelectedGparamGroup();
 
         List<FormatMember> missingFields = new List<FormatMember>();
 
         // Get source Format Reference
         foreach (var entry in Project.Handler.GparamData.GparamInformation.list)
         {
-            if (entry.id == Editor.Selection._selectedParamGroup.Key)
+            if (entry.id == Parent.Selection._selectedParamGroup.Key)
             {
                 foreach (var member in entry.members)
                 {
@@ -134,7 +131,7 @@ public class GparamFieldListView
             {
                 if (ImGui.Button($"Add##{missing.id}", DPI.StandardButtonSize))
                 {
-                    AddMissingField(Editor.Selection._selectedParamGroup, missing);
+                    AddMissingField(Parent.Selection._selectedParamGroup, missing);
                 }
                 ImGui.SameLine();
                 ImGui.Text($"{missing.name}");

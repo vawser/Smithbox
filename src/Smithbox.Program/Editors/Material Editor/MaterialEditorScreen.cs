@@ -14,8 +14,6 @@ public class MaterialEditorScreen : EditorScreen
 {
     private ProjectEntry Project;
 
-    public ActionManager EditorActionManager = new();
-
     public MaterialViewHandler ViewHandler;
 
     public MaterialCommandQueue CommandQueue;
@@ -128,32 +126,37 @@ public class MaterialEditorScreen : EditorScreen
 
     public void EditMenu()
     {
+        var activeView = ViewHandler.ActiveView;
+
         if (ImGui.BeginMenu("Edit"))
         {
-            // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+            if (activeView != null)
             {
-                if (EditorActionManager.CanUndo())
+                // Undo
+                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
-                    EditorActionManager.UndoAction();
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAction();
+                    }
                 }
-            }
 
-            // Undo All
-            if (ImGui.MenuItem($"Undo All"))
-            {
-                if (EditorActionManager.CanUndo())
+                // Undo All
+                if (ImGui.MenuItem($"Undo All"))
                 {
-                    EditorActionManager.UndoAllAction();
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAllAction();
+                    }
                 }
-            }
 
-            // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
-            {
-                if (EditorActionManager.CanRedo())
+                // Redo
+                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
-                    EditorActionManager.RedoAction();
+                    if (activeView.ActionManager.CanRedo())
+                    {
+                        activeView.ActionManager.RedoAction();
+                    }
                 }
             }
 
@@ -165,7 +168,7 @@ public class MaterialEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.MenuItem("Tool Window"))
+            if (ImGui.MenuItem("Tools"))
             {
                 CFG.Current.Interface_MaterialEditor_ToolWindow = !CFG.Current.Interface_MaterialEditor_ToolWindow;
             }

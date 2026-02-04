@@ -826,9 +826,6 @@ public class CFG
     public bool MaterialEditor_Properties_Display_Community_Names = false;
 
     // Windows
-    public bool Interface_MaterialEditor_SourceList = true;
-    public bool Interface_MaterialEditor_FileList = true;
-    public bool Interface_MaterialEditor_PropertyView = true;
     public bool Interface_MaterialEditor_ToolWindow = true;
 
     // Tools

@@ -13,7 +13,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamPropertyEditor
 {
-    private GparamEditorScreen Editor;
+    private GparamEditorView Parent;
     private ProjectEntry Project;
 
     private object _editedValueCache;
@@ -30,9 +30,9 @@ public class GparamPropertyEditor
     private bool _isHoldingColor;
     private Vector4 _heldColor;
 
-    public GparamPropertyEditor(GparamEditorScreen editor, ProjectEntry project)
+    public GparamPropertyEditor(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -439,9 +439,9 @@ public class GparamPropertyEditor
                 else
                 {
                     GparamValueChangeAction action = null;
-                    action = new GparamValueChangeAction(Editor.Selection._selectedGparamKey, Editor.Selection._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
+                    action = new GparamValueChangeAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
 
-                    Editor.EditorActionManager.ExecuteAction(action);
+                    Parent.ActionManager.ExecuteAction(action);
                 }
             }
             // Only used for Vec4 color
@@ -504,9 +504,9 @@ public class GparamPropertyEditor
                 else
                 {
                     GparamTimeOfDayChangeAction action = null;
-                    action = new GparamTimeOfDayChangeAction(Editor.Selection._selectedGparamKey, Editor.Selection._selectedParamGroup.Name, field, value, newValue, idx);
+                    action = new GparamTimeOfDayChangeAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroup.Name, field, value, newValue, idx);
 
-                    Editor.EditorActionManager.ExecuteAction(action);
+                    Parent.ActionManager.ExecuteAction(action);
                 }
             }
         }
