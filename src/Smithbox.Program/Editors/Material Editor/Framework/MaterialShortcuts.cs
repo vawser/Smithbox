@@ -25,6 +25,8 @@ public class MaterialShortcuts
         if (!FocusManager.IsInMaterialEditor())
             return;
 
+        var activeView = Editor.ViewHandler.ActiveView;
+
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
             CFG.Current.Interface_MaterialEditor_ToolWindow = !CFG.Current.Interface_MaterialEditor_ToolWindow;
@@ -35,23 +37,26 @@ public class MaterialShortcuts
             Editor.Save();
         }
 
-        if (Editor.EditorActionManager.CanUndo())
+        if (activeView != null)
         {
-            if (InputManager.IsPressed(KeybindID.Undo))
+            if (activeView.ActionManager.CanUndo())
             {
-                Editor.EditorActionManager.UndoAction();
+                if (InputManager.IsPressed(KeybindID.Undo))
+                {
+                    activeView.ActionManager.UndoAction();
+                }
             }
-        }
 
-        if (Editor.EditorActionManager.CanRedo())
-        {
-            if (InputManager.IsPressed(KeybindID.Redo))
+            if (activeView.ActionManager.CanRedo())
             {
-                Editor.EditorActionManager.RedoAction();
+                if (InputManager.IsPressed(KeybindID.Redo))
+                {
+                    activeView.ActionManager.RedoAction();
+                }
             }
-        }
 
-        // Actions
+            // Actions
+        }
 
     }
 }

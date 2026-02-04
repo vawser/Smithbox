@@ -12,31 +12,31 @@ namespace StudioCore.Editors.MaterialEditor;
 /// </summary>
 public class MaterialFileList
 {
-    public MaterialEditorScreen Editor;
+    public MaterialEditorView Parent;
     public ProjectEntry Project;
 
-    public MaterialFileList(MaterialEditorScreen editor, ProjectEntry project)
+    public MaterialFileList(MaterialEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
-    public void Draw()
+    public void Draw(float width, float height)
     {
-        FocusManager.SetFocus(EditorFocusContext.MaterialEditor_FileList);
+        UIHelper.SimpleHeader("Files", "");
 
-        Editor.Filters.DisplayFileFilterSearch();
+        Parent.Filters.DisplayFileFilterSearch();
 
-        ImGui.BeginChild("FileList");
+        ImGui.BeginChild("FileList", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
         // MTD
-        if (Editor.Selection.SourceType is MaterialSourceType.MTD && Editor.Selection.MTDWrapper != null)
+        if (Parent.Selection.SourceType is MaterialSourceType.MTD && Parent.Selection.MTDWrapper != null)
         {
-            var files = Editor.Selection.MTDWrapper.Entries;
+            var files = Parent.Selection.MTDWrapper.Entries;
 
             var filteredEntries = new List<string>();
             foreach (var entry in files)
             {
-                if (Editor.Filters.IsFileFilterMatch(entry.Key))
+                if (Parent.Filters.IsFileFilterMatch(entry.Key))
                 {
                     filteredEntries.Add(entry.Key);
                 }
@@ -50,30 +50,30 @@ public class MaterialFileList
                 for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
                 {
                     var key = filteredEntries[i];
-                    var curFile = Editor.Selection.MTDWrapper.Entries[key];
+                    var curFile = Parent.Selection.MTDWrapper.Entries[key];
 
                     var displayName = GetPrettyName($"{key}");
 
-                    if (ImGui.Selectable($"{displayName}##mtdFileEntry_{key}{i}", key == Editor.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable($"{displayName}##mtdFileEntry_{key}{i}", key == Parent.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        Editor.Selection.SelectedFileKey = key;
-                        Editor.Selection.SelectedMTD = curFile;
+                        Parent.Selection.SelectedFileKey = key;
+                        Parent.Selection.SelectedMTD = curFile;
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Editor.Selection.SelectFileListEntry)
+                    if (ImGui.IsItemHovered() && Parent.Selection.SelectFileListEntry)
                     {
-                        Editor.Selection.SelectFileListEntry = false;
+                        Parent.Selection.SelectFileListEntry = false;
 
-                        Editor.Selection.SelectedFileKey = key;
-                        Editor.Selection.SelectedMTD = curFile;
+                        Parent.Selection.SelectedFileKey = key;
+                        Parent.Selection.SelectedMTD = curFile;
                     }
 
                     if (ImGui.IsItemFocused())
                     {
                         if (InputManager.HasArrowSelection())
                         {
-                            Editor.Selection.SelectFileListEntry = true;
+                            Parent.Selection.SelectFileListEntry = true;
                         }
                     }
                 }
@@ -83,16 +83,16 @@ public class MaterialFileList
         }
 
         // MATBIN
-        if (Editor.Selection.SourceType is MaterialSourceType.MATBIN && MaterialUtils.SupportsMATBIN(Project))
+        if (Parent.Selection.SourceType is MaterialSourceType.MATBIN && MaterialUtils.SupportsMATBIN(Project))
         {
-            if (Editor.Selection.MATBINWrapper != null)
+            if (Parent.Selection.MATBINWrapper != null)
             {
-                var files = Editor.Selection.MATBINWrapper.Entries;
+                var files = Parent.Selection.MATBINWrapper.Entries;
 
                 var filteredEntries = new List<string>();
                 foreach (var entry in files)
                 {
-                    if (Editor.Filters.IsFileFilterMatch(entry.Key))
+                    if (Parent.Filters.IsFileFilterMatch(entry.Key))
                     {
                         filteredEntries.Add(entry.Key);
                     }
@@ -106,30 +106,30 @@ public class MaterialFileList
                     for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
                     {
                         var key = filteredEntries[i];
-                        var curFile = Editor.Selection.MATBINWrapper.Entries[key];
+                        var curFile = Parent.Selection.MATBINWrapper.Entries[key];
 
                         var displayName = GetPrettyName($"{key}");
 
-                        if (ImGui.Selectable($"{displayName}##matbinFileEntry_{key}", key == Editor.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
+                        if (ImGui.Selectable($"{displayName}##matbinFileEntry_{key}", key == Parent.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
                         {
-                            Editor.Selection.SelectedFileKey = key;
-                            Editor.Selection.SelectedMATBIN = curFile;
+                            Parent.Selection.SelectedFileKey = key;
+                            Parent.Selection.SelectedMATBIN = curFile;
                         }
 
                         // Arrow Selection
-                        if (ImGui.IsItemHovered() && Editor.Selection.SelectFileListEntry)
+                        if (ImGui.IsItemHovered() && Parent.Selection.SelectFileListEntry)
                         {
-                            Editor.Selection.SelectFileListEntry = false;
+                            Parent.Selection.SelectFileListEntry = false;
 
-                            Editor.Selection.SelectedFileKey = key;
-                            Editor.Selection.SelectedMATBIN = curFile;
+                            Parent.Selection.SelectedFileKey = key;
+                            Parent.Selection.SelectedMATBIN = curFile;
                         }
 
                         if (ImGui.IsItemFocused())
                         {
                             if (InputManager.HasArrowSelection())
                             {
-                                Editor.Selection.SelectFileListEntry = true;
+                                Parent.Selection.SelectFileListEntry = true;
                             }
                         }
                     }
@@ -149,8 +149,8 @@ public class MaterialFileList
         if (Project.Handler.MaterialData.MaterialDisplayConfiguration != null && Project.Handler.MaterialData.MaterialDisplayConfiguration.FileListConfigurations != null)
         {
             var curConfig = Project.Handler.MaterialData.MaterialDisplayConfiguration.FileListConfigurations
-                .Where(e => e.SourceType == $"{Editor.Selection.SourceType}")
-                .Where(e => e.Binder == Editor.Selection.SelectedBinderEntry.Filename)
+                .Where(e => e.SourceType == $"{Parent.Selection.SourceType}")
+                .Where(e => e.Binder == Parent.Selection.SelectedBinderEntry.Filename)
                 .FirstOrDefault();
 
             if (curConfig != null)

@@ -24,17 +24,26 @@ public class MaterialToolWindow
 
     public void Draw()
     {
-        FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Tools);
+        if (!CFG.Current.Interface_MaterialEditor_ToolWindow)
+            return;
 
-        var windowHeight = ImGui.GetWindowHeight();
-        var windowWidth = ImGui.GetWindowWidth();
-
-        if (ImGui.BeginMenuBar())
+        if (ImGui.Begin("Tools##ToolConfigureWindow_MaterialEditor", UIHelper.GetMainWindowFlags()))
         {
-            ViewMenu();
+            FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Tools);
 
-            ImGui.EndMenuBar();
+            var windowHeight = ImGui.GetWindowHeight();
+            var windowWidth = ImGui.GetWindowWidth();
+
+            if (ImGui.BeginMenuBar())
+            {
+                ViewMenu();
+
+                ImGui.EndMenuBar();
+            }
+
         }
+
+        ImGui.End();
     }
 
     public void ViewMenu()

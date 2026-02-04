@@ -12,6 +12,7 @@ public class MaterialCommandQueue
     public MaterialEditorScreen Editor;
     public ProjectEntry Project;
 
+    public bool DoFocus = false;
     public MaterialCommandQueue(MaterialEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -20,6 +21,8 @@ public class MaterialCommandQueue
 
     public void Parse(string[] initcmd)
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
         // Parse select commands
         if (initcmd != null && initcmd.Length > 1)
         {

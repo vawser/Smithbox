@@ -104,7 +104,6 @@ public static class FocusManager
     public static bool IsInMaterialEditor()
     {
         if (Focus is EditorFocusContext.MaterialEditor_None
-            or EditorFocusContext.MaterialEditor_ContainerList
             or EditorFocusContext.MaterialEditor_FileList
             or EditorFocusContext.MaterialEditor_Properties
             or EditorFocusContext.MaterialEditor_Tools)
@@ -171,7 +170,6 @@ public enum EditorFocusContext
     GparamEditor_Tools,
 
     MaterialEditor_None,
-    MaterialEditor_ContainerList,
     MaterialEditor_FileList,
     MaterialEditor_Properties,
     MaterialEditor_Tools,

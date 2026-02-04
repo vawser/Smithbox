@@ -74,18 +74,18 @@ public class MaterialBank : IDisposable
     public MATBIN GetMatbin(string name) =>
         MATBINLookup.TryGetValue(name, out var matbin) ? matbin : null;
 
-    public async Task<bool> Save(MaterialEditorScreen editor)
+    public async Task<bool> Save(MaterialEditorView view)
     {
         await Task.Yield();
 
-        if(editor.Selection.SourceType is MaterialSourceType.MTD)
+        if(view.Selection.SourceType is MaterialSourceType.MTD)
         {
-            await editor.Selection.MTDWrapper.Save(editor);
+            await view.Selection.MTDWrapper.Save(view);
         }
 
-        if (editor.Selection.SourceType is MaterialSourceType.MATBIN)
+        if (view.Selection.SourceType is MaterialSourceType.MATBIN)
         {
-            await editor.Selection.MATBINWrapper.Save(editor);
+            await view.Selection.MATBINWrapper.Save(view);
         }
 
         return true;
@@ -201,7 +201,7 @@ public class MTDWrapper
         }
     }
 
-    public async Task<bool> Save(MaterialEditorScreen editor)
+    public async Task<bool> Save(MaterialEditorView view)
     {
         await Task.Yield();
 
@@ -214,11 +214,11 @@ public class MTDWrapper
 
                 foreach (var entry in binder.Files)
                 {
-                    if (entry.Name == editor.Selection.SelectedFileKey)
+                    if (entry.Name == view.Selection.SelectedFileKey)
                     {
                         try
                         {
-                            entry.Bytes = editor.Selection.SelectedMTD.Write();
+                            entry.Bytes = view.Selection.SelectedMTD.Write();
                         }
                         catch (Exception e)
                         {
@@ -228,7 +228,7 @@ public class MTDWrapper
                 }
 
                 var newBinderData = binder.Write();
-                Project.VFS.ProjectFS.WriteFile(editor.Selection.SelectedBinderEntry.Path, newBinderData);
+                Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, newBinderData);
             }
             catch (Exception e)
             {
@@ -246,11 +246,11 @@ public class MTDWrapper
 
                 foreach (var entry in binder.Files)
                 {
-                    if (entry.Name == editor.Selection.SelectedFileKey)
+                    if (entry.Name == view.Selection.SelectedFileKey)
                     {
                         try
                         {
-                            entry.Bytes = editor.Selection.SelectedMTD.Write();
+                            entry.Bytes = view.Selection.SelectedMTD.Write();
                         }
                         catch (Exception e)
                         {
@@ -260,7 +260,7 @@ public class MTDWrapper
                 }
 
                 var newBinderData = binder.Write();
-                Project.VFS.ProjectFS.WriteFile(editor.Selection.SelectedBinderEntry.Path, newBinderData);
+                Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, newBinderData);
             }
             catch (Exception e)
             {
@@ -331,7 +331,7 @@ public class MATBINWrapper
         }
     }
 
-    public async Task<bool> Save(MaterialEditorScreen editor)
+    public async Task<bool> Save(MaterialEditorView view)
     {
         await Task.Yield();
 
@@ -342,11 +342,11 @@ public class MATBINWrapper
 
             foreach (var entry in binder.Files)
             {
-                if(entry.Name == editor.Selection.SelectedFileKey)
+                if(entry.Name == view.Selection.SelectedFileKey)
                 {
                     try
                     {
-                        entry.Bytes = editor.Selection.SelectedMATBIN.Write();
+                        entry.Bytes = view.Selection.SelectedMATBIN.Write();
                     }
                     catch (Exception e)
                     {
@@ -356,7 +356,7 @@ public class MATBINWrapper
             }
 
             var newBinderData = binder.Write();
-            Project.VFS.ProjectFS.WriteFile(editor.Selection.SelectedBinderEntry.Path, newBinderData);
+            Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, newBinderData);
         }
         catch (Exception e)
         {

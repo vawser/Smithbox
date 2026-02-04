@@ -9,31 +9,30 @@ namespace StudioCore.Editors.MaterialEditor;
 /// <summary>
 /// The list of binders for the source type.
 /// </summary>
-public class MaterialSourceList
+public class MaterialContainerList
 {
-    public MaterialEditorScreen Editor;
+    public MaterialEditorView Parent;
     public ProjectEntry Project;
 
-    public MaterialSourceList(MaterialEditorScreen editor, ProjectEntry project)
+    public MaterialContainerList(MaterialEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
-    public void Draw()
+    public void Draw(float width, float height)
     {
-        FocusManager.SetFocus(EditorFocusContext.MaterialEditor_ContainerList);
-
-        if (Project.Handler.MaterialData.PrimaryBank == null)
-            return;
+        UIHelper.SimpleHeader("Containers", "");
+        
+        ImGui.BeginChild("ContainerList", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("sourceTabs");
 
         if (ImGui.BeginTabItem($"MTD"))
         {
-            Editor.Selection.SourceType = MaterialSourceType.MTD;
+            Parent.Selection.SourceType = MaterialSourceType.MTD;
 
-            Editor.Filters.DisplayBinderFilterSearch();
+            Parent.Filters.DisplayBinderFilterSearch();
 
             DisplayMtdList();
 
@@ -44,9 +43,9 @@ public class MaterialSourceList
         {
             if (ImGui.BeginTabItem($"MATBIN"))
             {
-                Editor.Selection.SourceType = MaterialSourceType.MATBIN;
+                Parent.Selection.SourceType = MaterialSourceType.MATBIN;
 
-                Editor.Filters.DisplayBinderFilterSearch();
+                Parent.Filters.DisplayBinderFilterSearch();
 
                 DisplayMatbinList();
 
@@ -55,13 +54,15 @@ public class MaterialSourceList
         }
 
         ImGui.EndTabBar();
+
+        ImGui.EndChild();
     }
 
     public void DisplayMtdList()
     {
         ImGui.BeginChild("mtdListSection");
 
-        if (Editor.Selection.SourceType is MaterialSourceType.MTD)
+        if (Parent.Selection.SourceType is MaterialSourceType.MTD)
         {
             var wrappers = Project.Handler.MaterialData.PrimaryBank.MTDs;
 
@@ -70,7 +71,7 @@ public class MaterialSourceList
                 var filteredEntries = new List<FileDictionaryEntry>();
                 foreach (var entry in wrappers)
                 {
-                    if (Editor.Filters.IsBinderFilterMatch(entry.Key.Filename))
+                    if (Parent.Filters.IsBinderFilterMatch(entry.Key.Filename))
                     {
                         filteredEntries.Add(entry.Key);
                     }
@@ -88,14 +89,14 @@ public class MaterialSourceList
 
                         var displayName = $"{key.Filename}";
 
-                        if (ImGui.Selectable($"{displayName}##mtdEntry_{key.Filename}{i}", key == Editor.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
+                        if (ImGui.Selectable($"{displayName}##mtdEntry_{key.Filename}{i}", key == Parent.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
-                            Editor.Selection.SelectedBinderEntry = key;
-                            Editor.Selection.MTDWrapper = curWrapper;
+                            Parent.Selection.SelectedBinderEntry = key;
+                            Parent.Selection.MTDWrapper = curWrapper;
 
-                            Editor.Selection.SelectedFileKey = "";
-                            Editor.Selection.SelectedMTD = null;
-                            Editor.Selection.SelectedMATBIN = null;
+                            Parent.Selection.SelectedFileKey = "";
+                            Parent.Selection.SelectedMTD = null;
+                            Parent.Selection.SelectedMATBIN = null;
                         }
                     }
                 }
@@ -113,7 +114,7 @@ public class MaterialSourceList
 
         if (MaterialUtils.SupportsMATBIN(Project))
         {
-            if (Editor.Selection.SourceType is MaterialSourceType.MATBIN)
+            if (Parent.Selection.SourceType is MaterialSourceType.MATBIN)
             {
                 var wrappers = Project.Handler.MaterialData.PrimaryBank.MATBINs;
 
@@ -122,7 +123,7 @@ public class MaterialSourceList
                     var filteredEntries = new List<FileDictionaryEntry>();
                     foreach (var entry in wrappers)
                     {
-                        if (Editor.Filters.IsBinderFilterMatch(entry.Key.Filename))
+                        if (Parent.Filters.IsBinderFilterMatch(entry.Key.Filename))
                         {
                             filteredEntries.Add(entry.Key);
                         }
@@ -140,14 +141,14 @@ public class MaterialSourceList
 
                             var displayName = $"{key.Filename}";
 
-                            if (ImGui.Selectable($"{displayName}##matbinEntry_{key}", key == Editor.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
+                            if (ImGui.Selectable($"{displayName}##matbinEntry_{key}", key == Parent.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
                             {
-                                Editor.Selection.SelectedBinderEntry = key;
-                                Editor.Selection.MATBINWrapper = curWrapper;
+                                Parent.Selection.SelectedBinderEntry = key;
+                                Parent.Selection.MATBINWrapper = curWrapper;
 
-                                Editor.Selection.SelectedFileKey = "";
-                                Editor.Selection.SelectedMTD = null;
-                                Editor.Selection.SelectedMATBIN = null;
+                                Parent.Selection.SelectedFileKey = "";
+                                Parent.Selection.SelectedMTD = null;
+                                Parent.Selection.SelectedMATBIN = null;
                             }
                         }
                     }

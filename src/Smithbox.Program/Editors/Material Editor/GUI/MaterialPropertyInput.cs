@@ -18,9 +18,9 @@ using static SoulsFormats.MTD;
 
 namespace StudioCore.Editors.MaterialEditor;
 
-public class MaterialPropertyHandler
+public class MaterialPropertyInput
 {
-    public MaterialEditorScreen Editor;
+    public MaterialEditorView Parent;
     public ProjectEntry Project;
 
     private object _changingObject;
@@ -29,9 +29,9 @@ public class MaterialPropertyHandler
     private EditorAction _lastUncommittedAction;
     public PropertyInfo RequestedSearchProperty = null;
 
-    public MaterialPropertyHandler(MaterialEditorScreen editor, ProjectEntry project)
+    public MaterialPropertyInput(MaterialEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -442,9 +442,9 @@ public class MaterialPropertyHandler
         ref bool committed, int arrayindex = -1)
     {
         if (prop == _changingPropery && _lastUncommittedAction != null &&
-            Editor.EditorActionManager.PeekUndoAction() == _lastUncommittedAction)
+            Parent.ActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
-            Editor.EditorActionManager.UndoAction();
+            Parent.ActionManager.UndoAction();
         }
         else
         {
@@ -468,7 +468,7 @@ public class MaterialPropertyHandler
                 action = new MaterialPropertyChange((PropertyInfo)prop, sourceObj, newval);
             }
 
-            Editor.EditorActionManager.ExecuteAction(action);
+            Parent.ActionManager.ExecuteAction(action);
 
             _lastUncommittedAction = action;
             _changingPropery = prop;
@@ -479,11 +479,11 @@ public class MaterialPropertyHandler
     private void CommitProperty(object oldval, object newval)
     {
         // Undo and redo the last action with a rendering update
-        if (_lastUncommittedAction != null && Editor.EditorActionManager.PeekUndoAction() == _lastUncommittedAction)
+        if (_lastUncommittedAction != null && Parent.ActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
             if (_lastUncommittedAction is MaterialPropertyChange a)
             {
-                Editor.EditorActionManager.ExecuteAction(a);
+                Parent.ActionManager.ExecuteAction(a);
             }
         }
 

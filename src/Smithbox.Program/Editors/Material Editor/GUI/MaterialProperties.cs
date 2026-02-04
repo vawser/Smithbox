@@ -11,24 +11,26 @@ using static SoulsFormats.MTD;
 
 namespace StudioCore.Editors.MaterialEditor;
 
-public class MaterialPropertyView
+public class MaterialProperties
 {
-    public MaterialEditorScreen Editor;
+    public MaterialEditorView Parent;
     public ProjectEntry Project;
 
     private string PropertySearch = "";
 
-    public MaterialPropertyView(MaterialEditorScreen editor, ProjectEntry project)
+    public MaterialProperties(MaterialEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
     public void Draw()
     {
-        FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Properties);
-
         var scale = DPI.UIScale();
+
+        UIHelper.SimpleHeader("Contents", "");
+
+        ImGui.BeginChild("MaterialProperties", ImGuiChildFlags.Borders);
 
         // Header
         ImGui.AlignTextToFramePadding();
@@ -76,24 +78,26 @@ public class MaterialPropertyView
 
         // Property Lines
         {
-            if (Editor.Selection.SourceType is MaterialSourceType.MTD)
+            if (Parent.Selection.SourceType is MaterialSourceType.MTD)
             {
-                if (Editor.Selection.SelectedMTD != null)
+                if (Parent.Selection.SelectedMTD != null)
                 {
-                    PropertyHandler(Editor.Selection.SelectedMTD);
+                    PropertyHandler(Parent.Selection.SelectedMTD);
                 }
             }
 
-            if (Editor.Selection.SourceType is MaterialSourceType.MATBIN)
+            if (Parent.Selection.SourceType is MaterialSourceType.MATBIN)
             {
-                if (Editor.Selection.SelectedMATBIN != null)
+                if (Parent.Selection.SelectedMATBIN != null)
                 {
-                    PropertyHandler(Editor.Selection.SelectedMATBIN);
+                    PropertyHandler(Parent.Selection.SelectedMATBIN);
                 }
             }
         }
 
         ImGui.Columns(1);
+
+        ImGui.EndChild();
 
         ImGui.EndChild();
 
@@ -111,7 +115,7 @@ public class MaterialPropertyView
         var scale = DPI.UIScale();
         Type type = obj.GetType();
 
-        PropertyInfo[] properties = Editor.MaterialPropertyCache.GetCachedProperties(type);
+        PropertyInfo[] properties = Parent.MaterialPropertyCache.GetCachedProperties(type);
 
         // Properties
         var id = 0;
@@ -305,7 +309,7 @@ public class MaterialPropertyView
                 ImGui.PopID();
             }
             // Material Param 'Value' line
-            else if (Editor.Selection.SourceType is MaterialSourceType.MTD && 
+            else if (Parent.Selection.SourceType is MaterialSourceType.MTD && 
                 prop.Name == "Value" && typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
                 var o = prop.GetValue(obj);
@@ -406,7 +410,7 @@ public class MaterialPropertyView
         object newval;
 
         // Property Editor UI
-        (bool, bool) propEditResults = Editor.PropertyHandler.HandlePropertyInput(type, oldval, out newval, prop, sourceObj, paramType);
+        (bool, bool) propEditResults = Parent.PropertyInput.HandlePropertyInput(type, oldval, out newval, prop, sourceObj, paramType);
 
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
@@ -418,7 +422,7 @@ public class MaterialPropertyView
             ImGui.SetItemDefaultFocus();
         }
 
-        Editor.PropertyHandler.UpdateProperty(prop, sourceObj, oldval, newval, changed, committed, arrayIndex, classIndex);
+        Parent.PropertyInput.UpdateProperty(prop, sourceObj, oldval, newval, changed, committed, arrayIndex, classIndex);
 
         ImGui.NextColumn();
     }
@@ -525,7 +529,7 @@ public class MaterialPropertyView
 
             foreach(var action in ListActionsToProcess)
             {
-                Editor.EditorActionManager.ExecuteAction(action);
+                Parent.ActionManager.ExecuteAction(action);
             }
 
             ProcessingListActions = false;

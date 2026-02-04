@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.IO;
@@ -14,32 +15,23 @@ public class MaterialEditorScreen : EditorScreen
     private ProjectEntry Project;
 
     public ActionManager EditorActionManager = new();
-    public MaterialPropertyCache MaterialPropertyCache = new();
 
-    public MaterialSelection Selection;
-    public MaterialFilters Filters;
-    public MaterialPropertyHandler PropertyHandler;
+    public MaterialViewHandler ViewHandler;
+
     public MaterialCommandQueue CommandQueue;
     public MaterialShortcuts Shortcuts;
 
-    public MaterialSourceList BinderList;
-    public MaterialFileList FileList;
-    public MaterialPropertyView PropertyView;
     public MaterialToolWindow ToolWindow;
 
     public MaterialEditorScreen(ProjectEntry project)
     {
         Project = project;
 
-        Selection = new(this, project);
-        Filters = new(this, project);
-        PropertyHandler = new(this, project);
+        ViewHandler = new MaterialViewHandler(this, project);
+
         CommandQueue = new(this, project);
         Shortcuts = new(this, project);
 
-        BinderList = new(this, project);
-        FileList = new(this, project);
-        PropertyView = new(this, project);
         ToolWindow = new(this, project);
     }
 
@@ -49,25 +41,13 @@ public class MaterialEditorScreen : EditorScreen
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
-    public void OnGUI(string[] initcmd)
+    public void OnGUI(string[] commands)
     {
         var scale = DPI.UIScale();
 
-        // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
-
-        var dsid = ImGui.GetID("DockSpace_MaterialEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
         Shortcuts.Monitor();
-        CommandQueue.Parse(initcmd);
+
+        CommandQueue.Parse(commands);
 
         if (ImGui.BeginMenuBar())
         {
@@ -79,36 +59,15 @@ public class MaterialEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        if (CFG.Current.Interface_MaterialEditor_SourceList)
-        {
-            ImGui.Begin("Source List##materialBinderList", ImGuiWindowFlags.None);
-            BinderList.Draw();
-            ImGui.End();
-        }
+        var dsid = ImGui.GetID("DockSpace_MaterialEditor");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (CFG.Current.Interface_MaterialEditor_FileList)
-        {
-            ImGui.Begin("File List##materialFileList", ImGuiWindowFlags.None);
-            FileList.Draw();
-            ImGui.End();
-        }
+        ViewHandler.HandleViews();
 
-        if (CFG.Current.Interface_MaterialEditor_PropertyView)
+        if (ViewHandler.ActiveView != null)
         {
-            ImGui.Begin("Properties##propertyView", ImGuiWindowFlags.MenuBar);
-            PropertyView.Draw();
-            ImGui.End();
-        }
-
-        if (CFG.Current.Interface_MaterialEditor_ToolWindow)
-        {
-            ImGui.Begin("Tool Window##materialEditorTools", ImGuiWindowFlags.MenuBar);
             ToolWindow.Draw();
-            ImGui.End();
         }
-
-        ImGui.PopStyleVar();
-        ImGui.PopStyleColor(1);
     }
 
     public void FileMenu()
@@ -206,29 +165,15 @@ public class MaterialEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.MenuItem("Source List"))
-            {
-                CFG.Current.Interface_MaterialEditor_SourceList = !CFG.Current.Interface_MaterialEditor_SourceList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_SourceList);
-
-            if (ImGui.MenuItem("File List"))
-            {
-                CFG.Current.Interface_MaterialEditor_FileList = !CFG.Current.Interface_MaterialEditor_FileList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_FileList);
-
-            if (ImGui.MenuItem("Properties"))
-            {
-                CFG.Current.Interface_MaterialEditor_PropertyView = !CFG.Current.Interface_MaterialEditor_PropertyView;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_PropertyView);
-
             if (ImGui.MenuItem("Tool Window"))
             {
                 CFG.Current.Interface_MaterialEditor_ToolWindow = !CFG.Current.Interface_MaterialEditor_ToolWindow;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_ToolWindow);
+
+            ImGui.Separator();
+
+            ViewHandler.DisplayMenu();
 
             ImGui.EndMenu();
         }
@@ -236,18 +181,23 @@ public class MaterialEditorScreen : EditorScreen
 
     public async void Save(bool autoSave = false)
     {
-        if (Selection.SelectedBinderEntry == null)
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
             return;
 
-        if (Selection.SelectedFileKey == "")
+        if (activeView.Selection.SelectedBinderEntry == null)
             return;
 
-        if(Selection.SourceType is MaterialSourceType.MTD)
+        if (activeView.Selection.SelectedFileKey == "")
+            return;
+
+        if(activeView.Selection.SourceType is MaterialSourceType.MTD)
         {
-            if (Selection.MTDWrapper == null)
+            if (activeView.Selection.MTDWrapper == null)
                 return;
 
-            if (Selection.SelectedMTD == null)
+            if (activeView.Selection.SelectedMTD == null)
                 return;
 
             if (!autoSave && !CFG.Current.MaterialEditor_ManualSave_IncludeMTD)
@@ -257,12 +207,12 @@ public class MaterialEditorScreen : EditorScreen
                 return;
         }
 
-        if (Selection.SourceType is MaterialSourceType.MATBIN)
+        if (activeView.Selection.SourceType is MaterialSourceType.MATBIN)
         {
-            if (Selection.MATBINWrapper == null)
+            if (activeView.Selection.MATBINWrapper == null)
                 return;
 
-            if (Selection.SelectedMATBIN == null)
+            if (activeView.Selection.SelectedMATBIN == null)
                 return;
 
             if (!autoSave && !CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN)
@@ -272,18 +222,18 @@ public class MaterialEditorScreen : EditorScreen
                 return;
         }
 
-        Task<bool> saveTask = Project.Handler.MaterialData.PrimaryBank.Save(this);
+        Task<bool> saveTask = Project.Handler.MaterialData.PrimaryBank.Save(activeView);
         bool saveTaskResult = await saveTask;
 
-        var displayName = Path.GetFileName(Selection.SelectedFileKey);
+        var displayName = Path.GetFileName(activeView.Selection.SelectedFileKey);
 
         if (saveTaskResult)
         {
-            TaskLogs.AddLog($"[Material Editor] Saved {displayName} in {Selection.SelectedBinderEntry.Filename}.");
+            TaskLogs.AddLog($"[Material Editor] Saved {displayName} in {activeView.Selection.SelectedBinderEntry.Filename}.");
         }
         else
         {
-            TaskLogs.AddError($"[Material Editor] Failed to save {displayName} in {Selection.SelectedBinderEntry.Filename}.");
+            TaskLogs.AddError($"[Material Editor] Failed to save {displayName} in {activeView.Selection.SelectedBinderEntry.Filename}.");
         }
 
         // Save the configuration JSONs
