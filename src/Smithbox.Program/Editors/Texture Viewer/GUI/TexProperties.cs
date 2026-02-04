@@ -23,13 +23,13 @@ public class TexProperties
     /// </summary>
     public void Display()
     {
+        ImGui.BeginChild("TextureProperties", new Vector2(0, 0), ImGuiChildFlags.Borders);
+
         UIHelper.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
         UIHelper.WrappedText($"Press {InputManager.GetHint(KeybindID.TextureViewer_Reset_Zoom_Level)} to reset zoom level to 100%.");
 
         UIHelper.WrappedText($"");
         UIHelper.WrappedText($"Properties of {Parent.Selection.SelectedTextureKey}:");
-
-        ImGui.BeginChild("TextureProperties");
 
         if (Parent.Selection.SelectedTexture != null)
         {

@@ -32,7 +32,7 @@ public class TextFileList
 
         Parent.Filters.DisplayFmgFilterSearch();
 
-        ImGui.BeginChild("FmgFileList", new Vector2(width, height));
+        ImGui.BeginChild("FmgFileList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         DisplayFmgList();
 

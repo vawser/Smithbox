@@ -26,7 +26,7 @@ public class TexInternalFileList
 
         Parent.Filters.DisplayTpfFilterSearch();
 
-        ImGui.BeginChild("TpfList", new Vector2(width, height));
+        ImGui.BeginChild("TpfList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         if (Parent.Selection.SelectedBinder != null)
         {

@@ -28,7 +28,7 @@ public class TexContainerList
         UIHelper.SimpleHeader("Containers", "");
         Parent.Filters.DisplayFileFilterSearch();
 
-        ImGui.BeginChild("ContainerList", new Vector2(width, height));
+        ImGui.BeginChild("ContainerList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("sourceTabs");
 

@@ -36,7 +36,7 @@ public class TextEntryList
         }
         UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {InputManager.GetHint(KeybindID.Jump)}");
 
-        ImGui.BeginChild("FmgEntriesList");
+        ImGui.BeginChild("FmgEntriesList", ImGuiChildFlags.Borders);
 
         if (Parent.Selection.SelectedFmgWrapper != null && Parent.Selection.SelectedFmgWrapper.File != null)
         {

@@ -31,7 +31,7 @@ public class TextContainerList
 
         Parent.Filters.DisplayFileFilterSearch();
 
-        ImGui.BeginChild("CategoryList", new System.Numerics.Vector2(width, height));
+        ImGui.BeginChild("CategoryList", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
         // Categories
         foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))

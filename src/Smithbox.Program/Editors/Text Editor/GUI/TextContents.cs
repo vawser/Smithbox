@@ -28,7 +28,7 @@ public class TextContents
     {
         UIHelper.SimpleHeader("Contents", "");
 
-        ImGui.BeginChild("FmgEntryContents");
+        ImGui.BeginChild("FmgEntryContents", ImGuiChildFlags.Borders);
 
         if (Parent.Selection._selectedFmgEntry != null)
         {
