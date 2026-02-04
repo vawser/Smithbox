@@ -15,14 +15,14 @@ namespace StudioCore.Editors.FileBrowser;
 
 public class FileItemView
 {
-    public FileBrowserScreen Editor;
+    public FileEditorView Parent;
     public ProjectEntry Project;
 
     private string ExtractionPath = "";
 
-    public FileItemView(FileBrowserScreen editor, ProjectEntry project)
+    public FileItemView(FileEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
 
         ExtractionPath = project.Descriptor.ProjectPath;
@@ -30,17 +30,14 @@ public class FileItemView
 
     public void Display()
     {
-        ImGui.Begin($"Item Viewer##ItemViewer");
-        FocusManager.SetFocus(EditorFocusContext.FileBrowser_Item);
+        UIHelper.SimpleHeader("Item", "");
 
         DisplayItemViewer();
-
-        ImGui.End();
     }
 
     private void DisplayItemViewer()
     {
-        if(Editor.Selection.SelectedVfsFile != null)
+        if(Parent.Selection.SelectedVfsFile != null)
         {
             DisplayVfsItem();
         }
@@ -55,7 +52,7 @@ public class FileItemView
         var sectionHeight = ImGui.GetWindowHeight() * 0.3f;
         var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
 
-        var entry = Editor.Selection.SelectedVfsFile;
+        var entry = Parent.Selection.SelectedVfsFile;
 
         // Main Container
         UIHelper.SimpleHeader("containerFile", "Main File", "", UI.Current.ImGui_Default_Text_Color);
@@ -66,7 +63,7 @@ public class FileItemView
         ImGui.Text($"");
 
         // Binder Entries
-        if (Editor.Selection.InternalFileList.Count > 0)
+        if (Parent.Selection.InternalFileList.Count > 0)
         {
             UIHelper.SimpleHeader("internalFiles", "Internal Files", "", UI.Current.ImGui_Default_Text_Color);
 
@@ -79,7 +76,7 @@ public class FileItemView
             
             ImGui.BeginChild("internalFileSection", sectionSize, ImGuiChildFlags.Borders);
 
-            foreach (var file in Editor.Selection.InternalFileList)
+            foreach (var file in Parent.Selection.InternalFileList)
             {
                 var filename = file;
 
@@ -92,14 +89,14 @@ public class FileItemView
                 }
 
                 var selected = false;
-                if (file == Editor.Selection.SelectedInternalFile)
+                if (file == Parent.Selection.SelectedInternalFile)
                 {
                     selected = true;
                 }
 
                 if (ImGui.Selectable($"{filename}##fileEntry_{file.GetHashCode()}", selected))
                 {
-                    Editor.Selection.SelectedInternalFile = file;
+                    Parent.Selection.SelectedInternalFile = file;
                 }
             }
 
@@ -107,7 +104,7 @@ public class FileItemView
         }
 
         // TPF Entries
-        if (Editor.Selection.InternalTextureList.Count > 0)
+        if (Parent.Selection.InternalTextureList.Count > 0)
         {
             UIHelper.SimpleHeader("internalTexFiles", "Texture Files", "", UI.Current.ImGui_Default_Text_Color);
 
@@ -120,14 +117,14 @@ public class FileItemView
 
             ImGui.BeginChild("internalTexFileSection", sectionSize, ImGuiChildFlags.Borders);
 
-            foreach (var texEntry in Editor.Selection.InternalTextureList)
+            foreach (var texEntry in Parent.Selection.InternalTextureList)
             {
                 var containerFile = texEntry.Key;
                 var texNames = texEntry.Value;
 
-                if (!LocatorUtils.IsTPF(Editor.Selection.SelectedVfsFile.Path))
+                if (!LocatorUtils.IsTPF(Parent.Selection.SelectedVfsFile.Path))
                 {
-                    if (containerFile != Editor.Selection.SelectedInternalFile)
+                    if (containerFile != Parent.Selection.SelectedInternalFile)
                         continue;
                 }
 
@@ -142,14 +139,14 @@ public class FileItemView
                     }
 
                     var selected = false;
-                    if (tex == Editor.Selection.SelectedInternalTexFile)
+                    if (tex == Parent.Selection.SelectedInternalTexFile)
                     {
                         selected = true;
                     }
 
                     if (ImGui.Selectable($"{tex}##fileTexEntry_{tex.GetHashCode()}", selected))
                     {
-                        Editor.Selection.SelectedInternalTexFile = tex;
+                        Parent.Selection.SelectedInternalTexFile = tex;
                     }
                 }
             }
@@ -183,7 +180,7 @@ public class FileItemView
         }
         UIHelper.Tooltip("Extract the main file. Creates the folder structure it should reside in if missing.");
 
-        if (Editor.Selection.SelectedInternalFile != "" || Editor.Selection.SelectedInternalTexFile != "")
+        if (Parent.Selection.SelectedInternalFile != "" || Parent.Selection.SelectedInternalTexFile != "")
         {
             ImGui.SameLine();
 
@@ -197,7 +194,7 @@ public class FileItemView
 
     public void ExtractMainFile()
     {
-        var fileEntry = Editor.Selection.SelectedVfsFile;
+        var fileEntry = Parent.Selection.SelectedVfsFile;
 
         try
         {
@@ -232,9 +229,9 @@ public class FileItemView
 
     public void ExtractInternalFile()
     {
-        var targetFile = Editor.Selection.SelectedVfsFile;
-        var internalFile = Editor.Selection.SelectedInternalFile;
-        var internalTexFile = Editor.Selection.SelectedInternalTexFile;
+        var targetFile = Parent.Selection.SelectedVfsFile;
+        var internalFile = Parent.Selection.SelectedInternalFile;
+        var internalTexFile = Parent.Selection.SelectedInternalTexFile;
 
         var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Project, targetFile.Path);
 
@@ -250,7 +247,7 @@ public class FileItemView
                     var tpfData = TPF.Read(fileData.Value);
                     foreach (var entry in tpfData.Textures)
                     {
-                        if(Editor.Selection.SelectedInternalTexFile == entry.Name)
+                        if(Parent.Selection.SelectedInternalTexFile == entry.Name)
                         {
                             extractData = entry.Bytes;
                         }
@@ -281,7 +278,7 @@ public class FileItemView
                                     var tpfData = TPF.Read(containerData);
                                     foreach (var entry in tpfData.Textures)
                                     {
-                                        if (Editor.Selection.SelectedInternalTexFile == entry.Name)
+                                        if (Parent.Selection.SelectedInternalTexFile == entry.Name)
                                         {
                                             extractData = entry.Bytes;
                                         }
@@ -316,7 +313,7 @@ public class FileItemView
                                     var tpfData = TPF.Read(containerData);
                                     foreach (var entry in tpfData.Textures)
                                     {
-                                        if (Editor.Selection.SelectedInternalTexFile == entry.Name)
+                                        if (Parent.Selection.SelectedInternalTexFile == entry.Name)
                                         {
                                             extractData = entry.Bytes;
                                         }
@@ -378,7 +375,7 @@ public class FileItemView
                                 var tpfData = TPF.Read(containerData);
                                 foreach (var entry in tpfData.Textures)
                                 {
-                                    if (Editor.Selection.SelectedInternalTexFile == entry.Name)
+                                    if (Parent.Selection.SelectedInternalTexFile == entry.Name)
                                     {
                                         extractData = entry.Bytes;
                                     }
@@ -402,7 +399,7 @@ public class FileItemView
                                 var tpfData = TPF.Read(containerData);
                                 foreach (var entry in tpfData.Textures)
                                 {
-                                    if (Editor.Selection.SelectedInternalTexFile == entry.Name)
+                                    if (Parent.Selection.SelectedInternalTexFile == entry.Name)
                                     {
                                         extractData = entry.Bytes;
                                     }

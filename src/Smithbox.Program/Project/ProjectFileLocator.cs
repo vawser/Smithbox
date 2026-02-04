@@ -58,7 +58,7 @@ public class ProjectFileLocator : IDisposable
             Directory.CreateDirectory(projectLocalFolder);
         }
 
-        var folder = Path.Join(AppContext.BaseDirectory, "Assets", "File Dictionaries");
+        var folder = Path.Join(StudioCore.Common.FileLocations.Assets, "File Dictionaries");
         var file = "";
 
         // Build the file dictionary JSON objects here
@@ -209,7 +209,6 @@ public class ProjectFileLocator : IDisposable
                     add = true;
                 }
             }
-
 
             if (add)
             {

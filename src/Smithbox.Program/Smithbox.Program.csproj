@@ -65,7 +65,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AssimpNetter" Version="6.0.2.1" />
+    <PackageReference Include="AssimpNet" Version="4.1.0" />
     <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.2" />
     <PackageReference Include="CsvHelper" Version="33.1.0" />
     <PackageReference Include="DirectXTexNet" Version="1.0.7" />
@@ -85,6 +85,10 @@
     <PackageReference Include="Veldrid.ImageSharp" Version="4.9.0" />
     <PackageReference Include="Vortice.Vulkan" Version="1.8.12" />
     <PackageReference Include="Vortice.VulkanMemoryAllocator" Version="1.4.6" />
+    <PackageReference Include="Hexa.NET.ImGuizmo" Version="2.2.7" />
+    <PackageReference Include="Hexa.NET.ImGui" Version="2.2.7" />
+    <PackageReference Include="Hexa.NET.ImNodes" Version="2.2.7" />
+    <PackageReference Include="Hexa.NET.ImPlot" Version="2.2.7" />
   </ItemGroup>
 
   <ItemGroup>

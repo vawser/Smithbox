@@ -2,13 +2,12 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <AssemblyName>Smithbox</AssemblyName>
     <TargetFramework>net9.0-macos</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
-    <Version>2.0.8</Version>
+    <Version>2.1.1</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <PackageVersion>2.0.6</PackageVersion>
-    <AssemblyVersion>2.0.8</AssemblyVersion>
+    <PackageVersion>2.1.0</PackageVersion>
+    <AssemblyVersion>2.1.1</AssemblyVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
@@ -16,6 +15,7 @@
     <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
     <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
     <OodlePath>path/to/oodle.dylib</OodlePath>
+    <RootNamespace>StudioCore</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -47,17 +47,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-    <PackageReference Include="Hexa.NET.ImGui" Version="2.2.7" />
-    <PackageReference Include="Hexa.NET.ImGuizmo" Version="2.2.7" />
-    <PackageReference Include="Hexa.NET.ImNodes" Version="2.2.7" />
-    <PackageReference Include="Hexa.NET.ImPlot" Version="2.2.7" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Smithbox.Program\Smithbox.Program.csproj" />
     <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
-    <ProjectReference Include="..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
   </ItemGroup>
 
   <ItemGroup>

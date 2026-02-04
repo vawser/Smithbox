@@ -18,19 +18,19 @@ public class TextCommandQueue
         Project = project;
     }
 
-    public void Parse(string[] initcmd)
+    public void Parse(string[] commands)
     {
         var activeView = Editor.ViewHandler.ActiveView;
 
         // text / select / category / container name / fmg name / fmg entry id
-        if (initcmd != null && initcmd[0] == "select")
+        if (commands != null && commands[0] == "select")
         {
-            if (initcmd.Length > 4)
+            if (commands.Length > 4)
             {
-                var category = initcmd[1];
-                var containerName = initcmd[2];
-                var fmgName = initcmd[3];
-                var fmgEntryId = initcmd[4];
+                var category = commands[1];
+                var containerName = commands[2];
+                var fmgName = commands[3];
+                var fmgEntryId = commands[4];
 
                 var fileIndex = 0;
 

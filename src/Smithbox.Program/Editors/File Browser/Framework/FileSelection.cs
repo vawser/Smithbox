@@ -1,7 +1,4 @@
-﻿using Andre.IO.VFS;
-using DotNext.Collections.Generic;
-using Microsoft.Extensions.Logging;
-using Octokit;
+﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.ModelEditor;
@@ -9,14 +6,12 @@ using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
-using static SoulsFormats.NVA;
 
 namespace StudioCore.Editors.FileBrowser;
 
 public class FileSelection
 {
-    public FileBrowserScreen Editor;
+    public FileEditorView Parent;
     public ProjectEntry Project;
 
     public FolderNode SelectedVfsFolder = null;
@@ -28,9 +23,9 @@ public class FileSelection
     public string SelectedInternalFile = "";
     public string SelectedInternalTexFile = "";
 
-    public FileSelection(FileBrowserScreen baseEditor, ProjectEntry project)
+    public FileSelection(FileEditorView view, ProjectEntry project)
     {
-        Editor = baseEditor;
+        Parent = view;
         Project = project;
     }
 

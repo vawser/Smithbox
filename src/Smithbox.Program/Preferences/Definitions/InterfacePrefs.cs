@@ -461,7 +461,7 @@ public class InterfacePrefs
 
                 if (ImGui.Button("Open Folder", DPI.SelectorButtonSize))
                 {
-                    Process.Start("explorer.exe", Path.Join(AppContext.BaseDirectory, "Assets", "Themes")); 
+                    StudioCore.Common.FileExplorer.Start(Path.Join(StudioCore.Common.FileLocations.Assets, "Themes")); 
                 }
             }
         };

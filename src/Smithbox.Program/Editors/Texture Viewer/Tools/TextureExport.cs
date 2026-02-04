@@ -56,7 +56,7 @@ public class TextureExport
             ImGui.SameLine();
             if (ImGui.Button("View Folder", DPI.HalfWidthButton(windowWidth, 24)))
             {
-                Process.Start("explorer.exe", CFG.Current.TextureViewerToolbar_ExportTextureLocation);
+                StudioCore.Common.FileExplorer.Start(CFG.Current.TextureViewerToolbar_ExportTextureLocation);
             }
             UIHelper.Tooltip("The folder destination to export the texture to.");
             UIHelper.WrappedText("");

@@ -12,34 +12,22 @@ namespace StudioCore.Editors.FileBrowser;
 
 public class FileListView
 {
-    public FileBrowserScreen Editor;
+    public FileEditorView Parent;
     public ProjectEntry Project;
 
-    public FileListView(FileBrowserScreen editor, ProjectEntry project)
+    public FileListView(FileEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
     public void Display()
     {
-        ImGui.Begin($"Browser List##BrowserList");
-        FocusManager.SetFocus(EditorFocusContext.FileBrowser_FileList);
-
         BuildFolderNodes();
 
-        ImGui.BeginTabBar("sourceTabs");
+        UIHelper.SimpleHeader("File List", "");
 
-        if (ImGui.BeginTabItem($"VFS"))
-        {
-            DisplayVFS();
-
-            ImGui.EndTabItem();
-        }
-
-        ImGui.EndTabBar();
-
-        ImGui.End();
+        DisplayVFS();
     }
 
     private bool BuiltFolderNodes = false;
@@ -73,7 +61,7 @@ public class FileListView
                 !folder.Name.Contains(_search, StringComparison.OrdinalIgnoreCase))
                 continue;
 
-            bool folderSelected = ReferenceEquals(Editor.Selection.SelectedVfsFolder, folder);
+            bool folderSelected = ReferenceEquals(Parent.Selection.SelectedVfsFolder, folder);
 
             ImGuiTreeNodeFlags flags =
                 ImGuiTreeNodeFlags.OpenOnArrow |
@@ -92,7 +80,7 @@ public class FileListView
             );
 
             if (ImGui.IsItemClicked())
-                Editor.Selection.SelectedVfsFolder = folder;
+                Parent.Selection.SelectedVfsFolder = folder;
 
             if (!open)
                 continue;
@@ -108,7 +96,7 @@ public class FileListView
                 if (!fileMatches)
                     continue;
 
-                bool fileSelected = ReferenceEquals(Editor.Selection.SelectedVfsFile, file);
+                bool fileSelected = ReferenceEquals(Parent.Selection.SelectedVfsFile, file);
 
                 ImGuiTreeNodeFlags fileFlags =
                     ImGuiTreeNodeFlags.Leaf |
@@ -129,7 +117,7 @@ public class FileListView
 
                 if (ImGui.IsItemClicked())
                 {
-                    Editor.Selection.UpdateVfsFileSelection(file);
+                    Parent.Selection.UpdateVfsFileSelection(file);
                 }
 
                 if (searchActive && filename.Contains(_search, StringComparison.OrdinalIgnoreCase))

@@ -2,8 +2,10 @@
     <Import Project="Platform.Build.props" />
     <ItemGroup Condition="'$(MSBuildProjectName)' != 'Smithbox.Program'">
         <Compile Include="$(MSBuildThisFileDirectory)Common/FileLocations.cs" Visible="false" />
+        <Compile Include="$(MSBuildThisFileDirectory)Common/FileExplorer.cs" Visible="false" />
     </ItemGroup>
     <ItemGroup Condition="'$(MSBuildProjectName)' == 'Smithbox.Program'">
         <Compile Include="$(MSBuildThisFileDirectory)Common/FileLocations.cs" Visible="true" />
+        <Compile Include="$(MSBuildThisFileDirectory)Common/FileExplorer.cs" Visible="true" />
     </ItemGroup>
 </Project>

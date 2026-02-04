@@ -14,10 +14,11 @@ public class FileBrowserScreen : EditorScreen
 
     public ActionManager ActionManager = new();
 
-    public FileSelection Selection;
+    public FileViewHandler ViewHandler;
 
-    public FileListView FileList;
-    public FileItemView ItemViewer;
+    public FileCommandQueue CommandQueue;
+    public FileShortcuts Shortcuts;
+
     public FileToolView ToolView;
 
     public string EditorName => "File Browser##fileBrowserEditor";
@@ -30,31 +31,21 @@ public class FileBrowserScreen : EditorScreen
     {
         Project = project;
 
-        Selection = new(this, project);
+        Shortcuts = new(this, project);
+        CommandQueue = new(this, project);
 
-        FileList = new(this, project);
-        ItemViewer = new(this, project);
+        ViewHandler = new(this, project);
+
         ToolView = new(this, project);
     }
 
-    public void OnGUI(string[] initcmd)
+    public void OnGUI(string[] commands)
     {
         var scale = DPI.UIScale();
 
-        // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
+        Shortcuts.Monitor();
 
-        var dsid = ImGui.GetID("DockSpace_FileBrowser");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
-        Shortcuts();
+        CommandQueue.Parse(commands);
 
         if (ImGui.BeginMenuBar())
         {
@@ -65,23 +56,15 @@ public class FileBrowserScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        if (CFG.Current.Interface_FileBrowser_FileList)
-        {
-            FileList.Display();
-        }
+        var dsid = ImGui.GetID("DockSpace_FileBrowser");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (CFG.Current.Interface_FileBrowser_ItemViewer)
-        {
-            ItemViewer.Display();
-        }
+        ViewHandler.HandleViews();
 
-        if (CFG.Current.Interface_FileBrowser_ToolView)
+        if (ViewHandler.ActiveView != null)
         {
             ToolView.Display();
         }
-
-        ImGui.PopStyleVar();
-        ImGui.PopStyleColor(1);
     }
 
 
@@ -91,24 +74,12 @@ public class FileBrowserScreen : EditorScreen
         {
             if (ImGui.MenuItem($"View Game Directory"))
             {
-#if WINDOWS
-                Process.Start("explorer.exe", Project.Descriptor.DataPath);
-#elif MACOS
-                Process.Start("/usr/bin/open", Project.Descriptor.DataPath);
-#elif LINUX
-                Process.Start("xdg-open", Project.Descriptor.DataPath);
-#endif
+                StudioCore.Common.FileExplorer.Start(Project.Descriptor.DataPath);
             }
 
             if (ImGui.MenuItem($"View Project Directory"))
             {
-#if WINDOWS
-                Process.Start("explorer.exe", Project.Descriptor.ProjectPath);
-#elif MACOS
-                Process.Start("/usr/bin/open", Project.Descriptor.ProjectPath);
-#elif LINUX
-                Process.Start("xdg-open", Project.Descriptor.ProjectPath);
-#endif
+                StudioCore.Common.FileExplorer.Start(Project.Descriptor.ProjectPath);
             }
 
             ImGui.EndMenu();
@@ -117,32 +88,37 @@ public class FileBrowserScreen : EditorScreen
 
     public void EditMenu()
     {
+        var activeView = ViewHandler.ActiveView;
+
         if (ImGui.BeginMenu("Edit"))
         {
-            // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+            if (activeView != null)
             {
-                if (ActionManager.CanUndo())
+                // Undo
+                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
-                    ActionManager.UndoAction();
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAction();
+                    }
                 }
-            }
 
-            // Undo All
-            if (ImGui.MenuItem($"Undo All"))
-            {
-                if (ActionManager.CanUndo())
+                // Undo All
+                if (ImGui.MenuItem($"Undo All"))
                 {
-                    ActionManager.UndoAllAction();
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAllAction();
+                    }
                 }
-            }
 
-            // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
-            {
-                if (ActionManager.CanRedo())
+                // Redo
+                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
-                    ActionManager.RedoAction();
+                    if (activeView.ActionManager.CanRedo())
+                    {
+                        activeView.ActionManager.RedoAction();
+                    }
                 }
             }
 
@@ -154,36 +130,18 @@ public class FileBrowserScreen : EditorScreen
     {
         if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.MenuItem("Files"))
-            {
-                CFG.Current.Interface_FileBrowser_FileList = !CFG.Current.Interface_FileBrowser_FileList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_FileList);
-
-            if (ImGui.MenuItem("Item Viewer"))
-            {
-                CFG.Current.Interface_FileBrowser_ItemViewer = !CFG.Current.Interface_FileBrowser_ItemViewer;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_ItemViewer);
-
             if (ImGui.MenuItem("Tools"))
             {
                 CFG.Current.Interface_FileBrowser_ToolView = !CFG.Current.Interface_FileBrowser_ToolView;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_ToolView);
 
+            ImGui.Separator();
+
+            ViewHandler.DisplayMenu();
+
             ImGui.EndMenu();
         }
     }
 
-    private void Shortcuts()
-    {
-        if (!FocusManager.IsInFileBrowser())
-            return;
-
-        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
-        {
-            CFG.Current.Interface_FileBrowser_ToolView = !CFG.Current.Interface_FileBrowser_ToolView;
-        }
-    }
 }
