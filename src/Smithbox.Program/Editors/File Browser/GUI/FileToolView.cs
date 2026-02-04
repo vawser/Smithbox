@@ -46,6 +46,9 @@ public class FileToolView
 
     public void Display()
     {
+        if (!CFG.Current.Interface_FileBrowser_ToolView)
+            return;
+
         ImGui.Begin($"Tools##FileBrowserToolView", ImGuiWindowFlags.MenuBar);
         FocusManager.SetFocus(EditorFocusContext.FileBrowser_Tools);
 

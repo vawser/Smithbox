@@ -29,22 +29,4 @@ public class FilePathUtils
 
         return true;
     }
-    public static string NormalizeAssetPath(string fullPath, string projectPath)
-    {
-        // Get path relative to the project root
-        string relative = Path.GetRelativePath(projectPath, fullPath);
-
-        // Convert Windows slashes to forward slashes
-        relative = relative.Replace('\\', '/');
-
-        // Ensure leading slash
-        if (!relative.StartsWith("/"))
-            relative = "/" + relative;
-
-        // Ensure trailing slash
-        if (!relative.EndsWith("/"))
-            relative += "/";
-
-        return relative;
-    }
 }

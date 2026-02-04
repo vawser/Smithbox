@@ -210,7 +210,6 @@ public class ProjectFileLocator : IDisposable
                 }
             }
 
-
             if (add)
             {
                 var ext = Path.GetExtension(filePath).TrimStart('.').ToLowerInvariant();
