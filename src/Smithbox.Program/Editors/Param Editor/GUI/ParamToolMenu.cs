@@ -77,6 +77,8 @@ public class ParamToolMenu
 
         if (ImGui.Begin("Tools##toolWindow_ParamEditor", UIHelper.GetMainWindowFlags()))
         {
+            FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);
+
             if (ImGui.BeginMenuBar())
             {
                 if (ImGui.BeginMenu("View"))

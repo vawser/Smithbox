@@ -102,7 +102,7 @@ public class ParamFieldWindow
         }
 
         // Field Table
-        if (ParamTableUtils.ImGuiTableStdColumns("ParamFieldsT", columnCount, false))
+        if (EditorTableUtils.ImGuiTableStdColumns("ParamFieldsT", columnCount, false))
         {
             List<string> pinnedFields =
                 Editor.Project.Descriptor.PinnedFields.GetValueOrDefault(activeParam, null);
@@ -141,7 +141,7 @@ public class ParamFieldWindow
                 }
             }
 
-            ParamTableUtils.ImguiTableSeparator();
+            EditorTableUtils.ImguiTableSeparator();
 
             // ID and Name
             DisplayRowFields(curRow, meta, vanillaRow, auxRows, compareRow, ref imguiId, activeParam);
@@ -166,7 +166,7 @@ public class ParamFieldWindow
                     DisplayPinnedFields(pinnedFields, meta, curRow, vanillaRow, auxRows, compareRow, cols, vcols,
                         auxCols, ref imguiId, activeParam, ref i);
 
-                    ParamTableUtils.ImguiTableSeparator();
+                    EditorTableUtils.ImguiTableSeparator();
                 }
             }
 
@@ -417,7 +417,7 @@ public class ParamFieldWindow
                     DisplayPinnedFields(pinnedFields, meta, row, vrow, auxRows, crow, cols, vcols,
                         auxCols, ref imguiId, activeParam, ref index);
 
-                    ParamTableUtils.ImguiTableSeparator();
+                    EditorTableUtils.ImguiTableSeparator();
                 }
             }
 
@@ -441,7 +441,7 @@ public class ParamFieldWindow
                 }
                 else if (lastRowExists)
                 {
-                    ParamTableUtils.ImguiTableSeparator();
+                    EditorTableUtils.ImguiTableSeparator();
                     lastRowExists = false;
                     continue;
                 }

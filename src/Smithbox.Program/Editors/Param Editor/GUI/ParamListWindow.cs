@@ -142,7 +142,7 @@ public class ParamListWindow
                         var Wiki = meta?.Wiki;
                         if (Wiki != null)
                         {
-                            if (ParamTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true))
+                            if (EditorTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true))
                             {
                                 meta.Wiki = Wiki;
                             }
@@ -301,7 +301,7 @@ public class ParamListWindow
                 var Wiki = meta?.Wiki;
                 if (Wiki != null)
                 {
-                    if (ParamTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true))
+                    if (EditorTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true))
                     {
                         meta.Wiki = Wiki;
                     }

@@ -117,9 +117,7 @@ public static class FocusManager
     public static bool IsInTextureViewer()
     {
         if (Focus is EditorFocusContext.TextureViewer_None
-            or EditorFocusContext.TextureViewer_ContainerList
             or EditorFocusContext.TextureViewer_FileList
-            or EditorFocusContext.TextureViewer_TextureList
             or EditorFocusContext.TextureViewer_Viewer
             or EditorFocusContext.TextureViewer_Properties
             or EditorFocusContext.TextureViewer_Tools)
@@ -181,9 +179,7 @@ public enum EditorFocusContext
     MaterialEditor_Tools,
 
     TextureViewer_None,
-    TextureViewer_ContainerList,
     TextureViewer_FileList,
-    TextureViewer_TextureList,
     TextureViewer_Viewer,
     TextureViewer_Properties,
     TextureViewer_Tools

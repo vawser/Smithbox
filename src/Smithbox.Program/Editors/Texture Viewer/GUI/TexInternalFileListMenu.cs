@@ -2,45 +2,45 @@
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
+using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexSelectView
+public class TexInternalFileListMenu
 {
-    public TextureViewerScreen Editor;
+    public TexView Parent;
     public ProjectEntry Project;
 
-    public TexSelectView(TextureViewerScreen editor, ProjectEntry project)
+    public TexInternalFileListMenu(TexView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
     /// <summary>
     /// The main UI for the file container list view
     /// </summary>
-    public void Display()
+    public void Display(float width, float height)
     {
-        ImGui.Begin("TPFs##TextureTpfList");
-        FocusManager.SetFocus(EditorFocusContext.TextureViewer_FileList);
+        UIHelper.SimpleHeader("Files", "");
 
-        Editor.Filters.DisplayTpfFilterSearch();
+        Parent.Editor.Filters.DisplayTpfFilterSearch();
 
-        ImGui.BeginChild("TpfList");
+        ImGui.BeginChild("TpfList", new Vector2(width, height));
 
-        if (Editor.Selection.SelectedBinder != null)
+        if (Parent.Selection.SelectedBinder != null)
         {
-            foreach (var entry in Editor.Selection.SelectedBinder.Files)
+            foreach (var entry in Parent.Selection.SelectedBinder.Files)
             {
                 var file = entry.Key;
                 var tpfEntry = entry.Value;
 
-                if (Editor.Filters.IsTpfFilterMatch(file.Name))
+                if (Parent.Editor.Filters.IsTpfFilterMatch(file.Name))
                 {
                     var displayName = file.Name;
 
                     var isSelected = false;
-                    if(Editor.Selection.SelectedTpfKey == file.Name)
+                    if(Parent.Selection.SelectedTpfKey == file.Name)
                     {
                         isSelected = true;
                     }
@@ -48,21 +48,22 @@ public class TexSelectView
                     // Texture row
                     if (ImGui.Selectable($@"{displayName}", isSelected))
                     {
-                        Editor.Selection.SelectTpfFile(entry.Key, entry.Value);
+                        Parent.Selection.SelectTpfFile(entry.Key, entry.Value);
+                        Parent.Editor.ViewHandler.ActiveView = Parent;
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Editor.Selection.SelectTpf)
+                    if (ImGui.IsItemHovered() && Parent.Selection.SelectTpf)
                     {
-                        Editor.Selection.SelectTpf = false;
-                        Editor.Selection.SelectTpfFile(entry.Key, entry.Value);
+                        Parent.Selection.SelectTpf = false;
+                        Parent.Selection.SelectTpfFile(entry.Key, entry.Value);
                     }
 
                     if (ImGui.IsItemFocused())
                     {
                         if (InputManager.HasArrowSelection())
                         {
-                            Editor.Selection.SelectTpf = true;
+                            Parent.Selection.SelectTpf = true;
                         }
                     }
                 }
@@ -70,7 +71,5 @@ public class TexSelectView
         }
 
         ImGui.EndChild();
-
-        ImGui.End();
     }
 }

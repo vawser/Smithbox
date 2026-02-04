@@ -813,12 +813,8 @@ public class CFG
     public int TextureViewerToolbar_ExportTextureType = 0;
 
     // Windows
-    public bool Interface_TextureViewer_Files = true;
-    public bool Interface_TextureViewer_Textures = true;
-    public bool Interface_TextureViewer_Viewer = true;
-    public bool Interface_TextureViewer_Properties = true;
     public bool Interface_TextureViewer_ToolWindow = true;
-    public bool Interface_TextureViewer_ResourceList = true;
+    public bool Interface_TextureViewer_Properties = true;
 
     // Tools
     public bool Interface_TextureViewer_Tool_ExportTexture = true;

@@ -17,19 +17,24 @@ public class TexShortcuts
 
     public void Monitor()
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
         if (InputManager.IsPressed(KeybindID.TextureViewer_Export_Texture))
         {
-            Editor.Tools.ExportTextureHandler();
+            Editor.ToolMenu.TextureExport.ExportTextureHandler();
         }
 
         if (InputManager.HasCtrlDown())
         {
-            Editor.ViewerZoom.HandleZoom();
+            activeView.ViewerZoom.HandleZoom();
         }
 
         if (InputManager.IsPressed(KeybindID.TextureViewer_Reset_Zoom_Level))
         {
-            Editor.ViewerZoom.ZoomReset();
+            activeView.ViewerZoom.ZoomReset();
         }
     }
 }

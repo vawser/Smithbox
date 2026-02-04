@@ -11,42 +11,27 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 {
     public ProjectEntry Project;
 
-    public ActionManager EditorActionManager = new();
+    public ActionManager ActionManager = new();
 
-    public TexViewSelection Selection;
-    public TexShortcuts EditorShortcuts;
-    public TexViewerZoom ViewerZoom;
+    public TexViewHandler ViewHandler;
+
+    public TexShortcuts Shortcuts;
     public TexFilters Filters;
     public TexCommandQueue CommandQueue;
 
-    public TexTools Tools;
-
-    public TexSourceView SourceView;
-    public TexSelectView TpfSelectView;
-    public TexContentView TpfContentView;
-    public TexDisplayView DisplayView;
-    public TexPropertyView PropertyView;
-    public TexToolView ToolWindow;
+    public TexToolMenu ToolMenu;
 
     public TextureViewerScreen(ProjectEntry project)
     {
         Project = project;
 
-        Selection = new TexViewSelection(this, Project);
-        Tools = new TexTools(this, Project);
-        Filters = new TexFilters(this, Project);
+        ViewHandler = new TexViewHandler(this, project);
         CommandQueue = new TexCommandQueue(this, Project);
 
-        ViewerZoom = new TexViewerZoom(this, Project);
-        EditorShortcuts = new TexShortcuts(this, Project);
+        Filters = new TexFilters(this, Project);
+        Shortcuts = new TexShortcuts(this, Project);
 
-        ToolWindow = new TexToolView(this, Project);
-
-        SourceView = new TexSourceView(this, Project);
-        TpfSelectView = new TexSelectView(this, Project);
-        TpfContentView = new TexContentView(this, Project);
-        DisplayView = new TexDisplayView(this, Project);
-        PropertyView = new TexPropertyView(this, Project);
+        ToolMenu = new TexToolMenu(this, Project);
     }
 
     public string EditorName => "Texture Viewer##TextureViewerEditor";
@@ -55,69 +40,34 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
-    /// <summary>
-    /// The editor loop
-    /// </summary>
-    public void OnGUI(string[] initcmd)
+    public void OnGUI(string[] commands)
     {
         var scale = DPI.UIScale();
 
-        // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
+        Shortcuts.Monitor();
 
-        var dsid = ImGui.GetID("DockSpace_TextureViewer");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
-        CommandQueue.Parse(initcmd);
-        EditorShortcuts.Monitor();
+        CommandQueue.Parse(commands);
 
         if (ImGui.BeginMenuBar())
         {
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu();
+
+            ToolMenu.DisplayMenubar();
 
             ImGui.EndMenuBar();
         }
 
-        if (CFG.Current.Interface_TextureViewer_Files)
-        {
-            SourceView.Display();
-        }
-        if (CFG.Current.Interface_TextureViewer_Textures)
-        {
-            TpfSelectView.Display();
+        var dsid = ImGui.GetID("DockSpace_TextureViewer");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-            TpfContentView.Display();
-        }
+        ViewHandler.HandleViews();
 
-        if (CFG.Current.Interface_TextureViewer_Viewer)
+        if (ViewHandler.ActiveView != null)
         {
-            DisplayView.Display();
+            ToolMenu.Display();
         }
-        if (CFG.Current.Interface_TextureViewer_Properties)
-        {
-            PropertyView.Display();
-        }
-
-        if (CFG.Current.Interface_TextureViewer_ToolWindow)
-        {
-            ToolWindow.Display();
-        }
-
-        SourceView.Update();
-        TpfContentView.Update();
-
-        ImGui.PopStyleVar();
-        ImGui.PopStyleColor(1);
     }
 
     public void FileMenu()
@@ -140,27 +90,27 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             // Undo
             if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
             {
-                if (EditorActionManager.CanUndo())
+                if (ActionManager.CanUndo())
                 {
-                    EditorActionManager.UndoAction();
+                    ActionManager.UndoAction();
                 }
             }
 
             // Undo All
             if (ImGui.MenuItem($"Undo All"))
             {
-                if (EditorActionManager.CanUndo())
+                if (ActionManager.CanUndo())
                 {
-                    EditorActionManager.UndoAllAction();
+                    ActionManager.UndoAllAction();
                 }
             }
 
             // Redo
             if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
             {
-                if (EditorActionManager.CanRedo())
+                if (ActionManager.CanRedo())
                 {
-                    EditorActionManager.RedoAction();
+                    ActionManager.RedoAction();
                 }
             }
 
@@ -172,24 +122,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     {
         if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.MenuItem("Files"))
-            {
-                CFG.Current.Interface_TextureViewer_Files = !CFG.Current.Interface_TextureViewer_Files;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Files);
-
-            if (ImGui.MenuItem("Textures"))
-            {
-                CFG.Current.Interface_TextureViewer_Textures = !CFG.Current.Interface_TextureViewer_Textures;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Textures);
-
-            if (ImGui.MenuItem("Viewer"))
-            {
-                CFG.Current.Interface_TextureViewer_Viewer = !CFG.Current.Interface_TextureViewer_Viewer;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Viewer);
-
             if (ImGui.MenuItem("Properties"))
             {
                 CFG.Current.Interface_TextureViewer_Properties = !CFG.Current.Interface_TextureViewer_Properties;
@@ -202,22 +134,12 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ToolWindow);
 
-            if (ImGui.MenuItem("Resource List"))
-            {
-                CFG.Current.Interface_TextureViewer_ResourceList = !CFG.Current.Interface_TextureViewer_ResourceList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ResourceList);
+            ImGui.Separator();
+
+            ViewHandler.DisplayMenu();
 
             ImGui.EndMenu();
         }
-    }
-
-    /// <summary>
-    /// The editor menubar
-    /// </summary>
-    public void ToolMenu()
-    {
-        ToolWindow.DisplayMenubar();
     }
 
     public void Save()

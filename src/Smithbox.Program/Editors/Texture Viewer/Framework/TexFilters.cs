@@ -101,7 +101,7 @@ public class TexFilters
     /// </summary>
     public void DisplayTpfFilterSearch()
     {
-        ImGui.InputText($"Search##textureListFilterSearch", ref TpfFilterSearchStr, 255);
+        ImGui.InputText($"Search##tpfListFilterSearch", ref TpfFilterSearchStr, 255);
         UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 

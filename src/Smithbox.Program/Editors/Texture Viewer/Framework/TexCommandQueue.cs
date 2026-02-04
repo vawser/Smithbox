@@ -9,6 +9,8 @@ public class TexCommandQueue
     public TextureViewerScreen Editor;
     public ProjectEntry Project;
 
+    public bool DoFocus = false;
+
     public TexCommandQueue(TextureViewerScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -36,6 +38,11 @@ public class TexCommandQueue
 
     public void HandleView(string filename, string textureName)
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
         var targetFile = Project.Locator.TextureFiles.Entries.FirstOrDefault(e => e.Filename == filename);
 
         if (targetFile == null)
@@ -49,7 +56,7 @@ public class TexCommandQueue
 
         if (targetBinder.Key != null)
         {
-            Editor.Selection.SelectTextureFile(targetBinder.Key, targetBinder.Value);
+            activeView.Selection.SelectTextureFile(targetBinder.Key, targetBinder.Value);
         }
 
         // TPF
@@ -60,7 +67,7 @@ public class TexCommandQueue
 
             if (binderFile.Name == filename)
             {
-                Editor.Selection.SelectTpfFile(entry.Key, entry.Value);
+                activeView.Selection.SelectTpfFile(entry.Key, entry.Value);
                 break;
             }
         }
@@ -69,15 +76,15 @@ public class TexCommandQueue
         int index = 0;
         int targetIndex = 0;
 
-        foreach (var entry in Editor.Selection.SelectedTpf.Textures)
+        foreach (var entry in activeView.Selection.SelectedTpf.Textures)
         {
             if (entry.Name == textureName)
             {
                 targetIndex = index;
-                Editor.Selection.SelectTextureEntry(entry.Name, entry);
+                activeView.Selection.SelectTextureEntry(entry.Name, entry);
 
                 // TODO: fix this not properly working: the texture entry needs to be pressed again for the texture to appear after the editor switch
-                Editor.TpfContentView.LoadTexture = true;
+                activeView.TextureFileListMenu.LoadTexture = true;
                 break;
             }
 

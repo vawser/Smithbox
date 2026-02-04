@@ -604,7 +604,7 @@ public static class FieldTooltipHelper
                         $"Increment: {col.Def.Increment}";
                     }
 
-                    if (ParamTableUtils.HelpIcon(context.InternalName, ref helpIconText, true))
+                    if (EditorTableUtils.HelpIcon(context.InternalName, ref helpIconText, true))
                     {
                         context.FieldMeta.Wiki = context.Description;
                     }

@@ -59,7 +59,7 @@ public class ParamRowWindow
             PropertyInfo compareColProp = typeof(Param.Cell).GetProperty("Value");
 
             //ImGui.BeginChild("rows" + activeParam);
-            if (ParamTableUtils.ImGuiTableStdColumns("rowList", compareCol == null ? 1 : 2, false))
+            if (EditorTableUtils.ImGuiTableStdColumns("rowList", compareCol == null ? 1 : 2, false))
             {
                 var curParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[activeParam];
                 var meta = Editor.Project.Handler.ParamData.GetParamMeta(curParam.AppliedParamdef);
@@ -120,7 +120,7 @@ public class ParamRowWindow
                         ImGui.Spacing();
                     }
 
-                    if (ParamTableUtils.ImguiTableSeparator())
+                    if (EditorTableUtils.ImguiTableSeparator())
                     {
                         ImGui.Spacing();
                     }
@@ -183,7 +183,7 @@ public class ParamRowWindow
                             if (prev != null && next != null && prev.ID + 1 != currentRow.ID &&
                                 currentRow.ID + 1 == next.ID)
                             {
-                                ParamTableUtils.ImguiTableSeparator();
+                                EditorTableUtils.ImguiTableSeparator();
                             }
 
                             HandleRowPresentation(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
@@ -193,7 +193,7 @@ public class ParamRowWindow
                             if (prev != null && next != null && prev.ID + 1 == currentRow.ID &&
                                 currentRow.ID + 1 != next.ID)
                             {
-                                ParamTableUtils.ImguiTableSeparator();
+                                EditorTableUtils.ImguiTableSeparator();
                             }
                         }
                         else

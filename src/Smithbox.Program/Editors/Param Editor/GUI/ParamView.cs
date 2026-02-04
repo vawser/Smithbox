@@ -68,7 +68,7 @@ public class ParamView
             columnCount = 4;
         }
 
-        if (ParamTableUtils.ImGuiTableStdColumns("paramsT", columnCount, true))
+        if (EditorTableUtils.ImGuiTableStdColumns("paramsT", columnCount, true))
         {
             ImGui.TableSetupColumn("paramsCol", ImGuiTableColumnFlags.None, 0.5f);
             ImGui.TableSetupColumn("paramsCol2", ImGuiTableColumnFlags.None, 0.5f);

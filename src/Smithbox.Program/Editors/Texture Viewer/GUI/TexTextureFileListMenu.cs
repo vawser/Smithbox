@@ -3,41 +3,41 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
+using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexContentView
+public class TexTextureFileListMenu
 {
-    public TextureViewerScreen Editor;
+    public TexView Parent;
     public ProjectEntry Project;
 
-    public TexContentView(TextureViewerScreen editor, ProjectEntry project)
+    public TexTextureFileListMenu(TexView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
-    public void Display()
+    public void Display(float width, float height)
     {
-        ImGui.Begin("Textures##TextureList");
-        FocusManager.SetFocus(EditorFocusContext.TextureViewer_TextureList);
+        UIHelper.SimpleHeader("Textures", "");
 
-        Editor.Filters.DisplayTextureFilterSearch();
+        Parent.Editor.Filters.DisplayTextureFilterSearch();
 
-        ImGui.BeginChild("TextureList");
+        ImGui.BeginChild("TextureList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
-        if (Editor.Selection.SelectedTpf != null)
+        if (Parent.Selection.SelectedTpf != null)
         {
             int index = 0;
 
-            foreach (var entry in Editor.Selection.SelectedTpf.Textures)
+            foreach (var entry in Parent.Selection.SelectedTpf.Textures)
             {
-                if (Editor.Filters.IsTextureFilterMatch(entry.Name))
+                if (Parent.Editor.Filters.IsTextureFilterMatch(entry.Name))
                 {
                     var displayName = entry.Name;
 
                     var isSelected = false;
-                    if (Editor.Selection.SelectedTextureKey == entry.Name)
+                    if (Parent.Selection.SelectedTextureKey == entry.Name)
                     {
                         isSelected = true;
                     }
@@ -45,16 +45,17 @@ public class TexContentView
                     // Texture row
                     if (ImGui.Selectable($@"{displayName}", isSelected))
                     {
-                        Editor.Selection.SelectTextureEntry(entry.Name, entry);
+                        Parent.Selection.SelectTextureEntry(entry.Name, entry);
                         TargetIndex = index;
                         LoadTexture = true;
+                        Parent.Editor.ViewHandler.ActiveView = Parent;
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Editor.Selection.SelectTexture)
+                    if (ImGui.IsItemHovered() && Parent.Selection.SelectTexture)
                     {
-                        Editor.Selection.SelectTexture = false;
-                        Editor.Selection.SelectTextureEntry(entry.Name, entry);
+                        Parent.Selection.SelectTexture = false;
+                        Parent.Selection.SelectTextureEntry(entry.Name, entry);
                         TargetIndex = index;
                         LoadTexture = true;
                     }
@@ -63,7 +64,7 @@ public class TexContentView
                     {
                         if (InputManager.HasArrowSelection())
                         {
-                            Editor.Selection.SelectTexture = true;
+                            Parent.Selection.SelectTexture = true;
                         }
                     }
                 }
@@ -73,8 +74,6 @@ public class TexContentView
         }
 
         ImGui.EndChild();
-
-        ImGui.End();
     }
 
 
@@ -87,8 +86,8 @@ public class TexContentView
         {
             if (TargetIndex != -1)
             {
-                Editor.Selection.ViewerTextureResource = new TextureResource(Editor.Selection.SelectedTpf, TargetIndex);
-                Editor.Selection.ViewerTextureResource._LoadTexture(AccessLevel.AccessFull);
+                Parent.Selection.ViewerTextureResource = new TextureResource(Parent.Selection.SelectedTpf, TargetIndex);
+                Parent.Selection.ViewerTextureResource._LoadTexture(AccessLevel.AccessFull);
             }
 
             LoadTexture = false;

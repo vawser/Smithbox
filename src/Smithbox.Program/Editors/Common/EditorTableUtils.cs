@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public static class ParamTableUtils
+public static class EditorTableUtils
 {
     public static bool ImGuiTableStdColumns(string id, int cols, bool fixVerticalPadding)
     {

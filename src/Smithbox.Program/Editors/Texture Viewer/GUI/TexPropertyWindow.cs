@@ -7,14 +7,14 @@ using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexPropertyView
+public class TexPropertyWindow
 {
-    public TextureViewerScreen Editor;
+    public TexView Parent;
     public ProjectEntry Project;
 
-    public TexPropertyView(TextureViewerScreen editor, ProjectEntry project)
+    public TexPropertyWindow(TexView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -23,29 +23,26 @@ public class TexPropertyView
     /// </summary>
     public void Display()
     {
-        ImGui.Begin("Properties##PropertiesView");
-        FocusManager.SetFocus(EditorFocusContext.TextureViewer_Properties);
-
         UIHelper.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
         UIHelper.WrappedText($"Press {InputManager.GetHint(KeybindID.TextureViewer_Reset_Zoom_Level)} to reset zoom level to 100%.");
 
         UIHelper.WrappedText($"");
-        UIHelper.WrappedText($"Properties of {Editor.Selection.SelectedTextureKey}:");
+        UIHelper.WrappedText($"Properties of {Parent.Selection.SelectedTextureKey}:");
 
         ImGui.BeginChild("TextureProperties");
 
-        if (Editor.Selection.SelectedTexture != null)
+        if (Parent.Selection.SelectedTexture != null)
         {
-            if (Editor.Selection.ViewerTextureResource != null)
+            if (Parent.Selection.ViewerTextureResource != null)
             {
-                Vector2 size = Editor.DisplayView.GetImageSize(
-                    Editor.Selection.ViewerTextureResource, 
+                Vector2 size = Parent.DisplayView.GetImageSize(
+                    Parent.Selection.ViewerTextureResource, 
                     false);
 
-                Vector2 relativePos = Editor.DisplayView.GetRelativePosition(
-                    size, 
-                    Editor.Selection.TextureViewWindowPosition, 
-                    Editor.Selection.TextureViewScrollPosition);
+                Vector2 relativePos = Parent.DisplayView.GetRelativePosition(
+                    size,
+                    Parent.Selection.TextureViewWindowPosition,
+                    Parent.Selection.TextureViewScrollPosition);
 
                 ImGui.Columns(2);
 
@@ -58,29 +55,29 @@ public class TexPropertyView
                 ImGui.Text($"{size.X}");
                 ImGui.Text($"{size.Y}");
 
-                if (Editor.Selection.ViewerTextureResource.GPUTexture != null)
+                if (Parent.Selection.ViewerTextureResource.GPUTexture != null)
                 {
-                    ImGui.Text($"{Editor.Selection.ViewerTextureResource.GPUTexture.Format}".ToUpper());
+                    ImGui.Text($"{Parent.Selection.ViewerTextureResource.GPUTexture.Format}".ToUpper());
                 }
                 ImGui.Columns(1);
 
                 ImGui.Text("");
                 ImGui.Text($"Relative Position: {relativePos}");
 
-                if (Editor.Project.Handler.TextureData.PrimaryBank.ShoeboxEntries != null)
+                if (Project.Handler.TextureData.PrimaryBank.ShoeboxEntries != null)
                 {
-                    var shoeboxEntry = Editor.Project.Handler.TextureData.PrimaryBank.ShoeboxEntries.FirstOrDefault();
+                    var shoeboxEntry = Project.Handler.TextureData.PrimaryBank.ShoeboxEntries.FirstOrDefault();
 
                     if (shoeboxEntry.Value != null)
                     {
-                        if (shoeboxEntry.Value.Textures.ContainsKey(Editor.Selection.SelectedTextureKey))
+                        if (shoeboxEntry.Value.Textures.ContainsKey(Parent.Selection.SelectedTextureKey))
                         {
-                            var subTexs = shoeboxEntry.Value.Textures[Editor.Selection.SelectedTextureKey];
+                            var subTexs = shoeboxEntry.Value.Textures[Parent.Selection.SelectedTextureKey];
                             foreach (var entry in subTexs)
                             {
                                 string IconName;
                                 bool IsMatch;
-                                (IconName, IsMatch) = Editor.DisplayView.MatchMousePosToIcon(entry, relativePos);
+                                (IconName, IsMatch) = Parent.DisplayView.MatchMousePosToIcon(entry, relativePos);
 
                                 if (IsMatch)
                                 {
@@ -94,7 +91,5 @@ public class TexPropertyView
         }
 
         ImGui.EndChild();
-
-        ImGui.End();
     }
 }

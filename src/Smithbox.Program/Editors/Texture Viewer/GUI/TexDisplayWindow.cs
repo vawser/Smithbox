@@ -6,14 +6,14 @@ using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexDisplayView
+public class TexDisplayWindow
 {
-    public TextureViewerScreen Editor;
+    public TexView Parent;
     public ProjectEntry Project;
 
-    public TexDisplayView(TextureViewerScreen editor, ProjectEntry project)
+    public TexDisplayWindow(TexView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -22,16 +22,12 @@ public class TexDisplayView
     /// </summary>
     public void Display()
     {
-        ImGui.Begin("Viewer##TextureViewer", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
+        Parent.Selection.TextureViewWindowPosition = ImGui.GetWindowPos();
+        Parent.Selection.TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
 
-        FocusManager.SetFocus(EditorFocusContext.TextureViewer_Viewer);
-
-        Editor.Selection.TextureViewWindowPosition = ImGui.GetWindowPos();
-        Editor.Selection.TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
-
-        if (Editor.Selection.ViewerTextureResource != null)
+        if (Parent.Selection.ViewerTextureResource != null)
         {
-            TextureResource texRes = Editor.Selection.ViewerTextureResource;
+            TextureResource texRes = Parent.Selection.ViewerTextureResource;
 
             if (texRes != null && texRes.GPUTexture != null)
             {
@@ -41,8 +37,6 @@ public class TexDisplayView
                 ImGui.Image(textureId, size);
             }
         }
-
-        ImGui.End();
     }
 
     /// <summary>
@@ -62,8 +56,8 @@ public class TexDisplayView
                 if (includeZoomFactor)
                 {
                     size = new Vector2(
-                        (Width * Editor.ViewerZoom.GetZoomFactorWidth()), 
-                        (Height * Editor.ViewerZoom.GetZoomFactorHeight()));
+                        (Width * Parent.ViewerZoom.GetZoomFactorWidth()), 
+                        (Height * Parent.ViewerZoom.GetZoomFactorHeight()));
                 }
                 else
                 {
@@ -115,8 +109,8 @@ public class TexDisplayView
         relativePos.Y = cursorPos.Y - ((windowPos.Y + fixedY) - scrollPos.Y);
 
         // Account for zoom
-        relativePos.X = relativePos.X / Editor.ViewerZoom.GetZoomFactorWidth();
-        relativePos.Y = relativePos.Y / Editor.ViewerZoom.GetZoomFactorHeight();
+        relativePos.X = relativePos.X / Parent.ViewerZoom.GetZoomFactorWidth();
+        relativePos.Y = relativePos.Y / Parent.ViewerZoom.GetZoomFactorHeight();
 
         return relativePos;
     }
