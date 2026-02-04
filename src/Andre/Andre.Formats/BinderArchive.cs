@@ -11,10 +11,22 @@ namespace Andre.Formats
 {
     public class BinderArchive : IDisposable, IAsyncDisposable
     {
-        public static int ThreadsForDecryption = Environment.ProcessorCount > 4 ? Environment.ProcessorCount / 2 : 4;
+        private static int threadsForDecryption =
+            Environment.ProcessorCount > 4 ? Environment.ProcessorCount / 2 : 4;
+
+        public static int ThreadsForDecryption
+        {
+            get => threadsForDecryption;
+            set
+            {
+                if (value < 1)
+                    throw new ArgumentOutOfRangeException(nameof(value), value, "Thread count must be >= 1.");
+                threadsForDecryption = value;
+            }
+        }
 
         private BHD5 bhd;
-        public FileStream Bdt { get; }
+        public FileStream? BdtStream { get; }
 
         public MemoryMappedFile BdtMmf { get; }
 
@@ -110,22 +122,28 @@ namespace Andre.Formats
             => GetArchiveNames(game)
                 .Select(archive => Path.Combine(gameRoot, archive + (game == Game.DS1 ? ".bhd5" : ".bhd")))
                 .Where(File.Exists);
-
-        public BinderArchive(BHD5 bhd, FileStream bdt, MemoryMappedFile bdtMmf, bool wasEncrypted = false)
+        
+        /// <summary>
+        /// Decrypts a BHD file using a native library. Fast, but not available on all platforms.
+        /// </summary>
+        /// <param name="encryptedBhd"></param>
+        /// <param name="bhdPath"></param>
+        /// <param name="game"></param>
+        /// <returns></returns>
+        public static byte[] DecryptNative(Memory<byte> encryptedBhd, string bhdPath, Game game)
         {
-            this.bhd = bhd;
-            this.Bdt = bdt;
-            this.BdtMmf = bdtMmf;
-            this.BhdWasEncrypted = wasEncrypted;
+            return NativeRsa.Decrypt(encryptedBhd, ArchiveKeys.GetKey(bhdPath, game), ThreadsForDecryption);
         }
 
-        public BinderArchive(BHD5 bhd, FileStream bdt, bool wasEncrypted = false)
+        /// <summary>
+        /// Decrypts a BHD file using the slow .NET implementation. Available on all platforms.
+        /// </summary>
+        /// <param name="bhdPath"></param>
+        /// <param name="game"></param>
+        /// <returns></returns>
+        public static byte[] DecryptSlow(string bhdPath, Game game)
         {
-            this.bhd = bhd;
-            Bdt = bdt;
-            BhdWasEncrypted = wasEncrypted;
-            BdtMmf = MemoryMappedFile.CreateFromFile(bdt, bdt.Name, bdt.Length, MemoryMappedFileAccess.Read,
-                HandleInheritability.None, true);
+            return SoulsFormats.Util.CryptographyUtility.DecryptRsaParallel(bhdPath, ArchiveKeys.GetKey(bhdPath, game), ThreadsForDecryption).ToArray();
         }
 
         public static bool IsBhdEncrypted(Memory<byte> bhd)
@@ -143,25 +161,43 @@ namespace Andre.Formats
 
             return sig != "BHD5";
         }
-
-        public static byte[] Decrypt(Memory<byte> encryptedBhd, string bhdPath, Game game)
+        
+        /// <summary>
+        /// Creates a new BinderArchive from a BHD5 and a FileStream.
+        ///
+        /// Does not take ownership of bdtStream.
+        /// </summary>
+        /// <param name="bhd"></param>
+        /// <param name="bdtStream"></param>
+        /// <param name="wasEncrypted"></param>
+        public BinderArchive(BHD5 bhd, FileStream bdtStream, bool wasEncrypted = false)
         {
-            return NativeRsa.Decrypt(encryptedBhd, ArchiveKeys.GetKey(bhdPath, game), ThreadsForDecryption);
+            this.bhd = bhd;
+            BdtStream = bdtStream;
+            BhdWasEncrypted = wasEncrypted;
+            BdtMmf = MemoryMappedFile.CreateFromFile(bdtStream, bdtStream.Name, bdtStream.Length, MemoryMappedFileAccess.Read,
+                HandleInheritability.None, true);
         }
 
-        public static byte[] Decrypt(string bhdPath, Game game)
-        {
-            return SoulsFormats.Util.CryptographyUtility.DecryptRsaParallel(bhdPath, ArchiveKeys.GetKey(bhdPath, game), ThreadsForDecryption).ToArray();
-        }
-
+        /// <summary>
+        /// Creates a new BinderArchive from paths to a BHD and BDT file.
+        ///
+        /// This constructor performs decryption if necessary, which may be slow.
+        /// </summary>
+        /// <param name="bhdPath"></param>
+        /// <param name="bdtPath"></param>
+        /// <param name="game"></param>
         public BinderArchive(string bhdPath, string bdtPath, Game game)
         {
 
-            var fs = new FileStream(bhdPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            using var file = MemoryMappedFile.CreateFromFile(fs, null, 0, MemoryMappedFileAccess.Read,
+            using var fs = new FileStream(bhdPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            using var mmf = MemoryMappedFile.CreateFromFile(fs, null, 0, MemoryMappedFileAccess.Read,
                 HandleInheritability.None, leaveOpen: false);
-            using var accessor = file.CreateMemoryAccessor(0, 0, MemoryMappedFileAccess.Read);
+            using var accessor = mmf.CreateMemoryAccessor(0, 0, MemoryMappedFileAccess.Read);
 
+            BHD5.Game bhdGame = game.AsBhdGame()
+                                ?? throw new ArgumentException($"Game {game} cannot be converted to a BHD game.", nameof(game));
+            
             if (IsBhdEncrypted(accessor.Memory))
             {
                 //encrypted
@@ -170,31 +206,31 @@ namespace Andre.Formats
 #endif
                 byte[] decrypted;
 #if WINDOWS
-                decrypted = Decrypt(accessor.Memory, bhdPath, game);
+                decrypted = DecryptNative(accessor.Memory, bhdPath, game);
 #else
-                decrypted = Decrypt(bhdPath, game);
+                decrypted = DecryptSlow(bhdPath, game);
 #endif
-                bhd = BHD5.Read(decrypted, game.AsBhdGame()!.Value);
+                bhd = BHD5.Read(decrypted, bhdGame);
                 BhdWasEncrypted = true;
             }
             else
             {
-                bhd = BHD5.Read(accessor.Memory, game.AsBhdGame()!.Value);
+                bhd = BHD5.Read(accessor.Memory, bhdGame);
                 BhdWasEncrypted = true;
             }
-            Bdt = File.OpenRead(bdtPath);
-            BdtMmf = MemoryMappedFile.CreateFromFile(Bdt, null, 0, MemoryMappedFileAccess.Read,
+            BdtStream = File.OpenRead(bdtPath);
+            BdtMmf = MemoryMappedFile.CreateFromFile(BdtStream, null, 0, MemoryMappedFileAccess.Read,
                 HandleInheritability.None, true);
         }
-
+        
         public BHD5.FileHeader? TryGetFileFromHash(ulong hash)
         {
             return bhd.Buckets.SelectMany(b => b.Where(f => f.FileNameHash == hash)).FirstOrDefault();
         }
 
-        public byte[] ReadFile(BHD5.FileHeader file) => file.ReadFile(Bdt);
+        public byte[] ReadFile(BHD5.FileHeader file) => file.ReadFile(BdtStream);
 
-        public byte[]? TryReadFileFromHash(ulong hash) => TryGetFileFromHash(hash)?.ReadFile(Bdt);
+        public byte[]? TryReadFileFromHash(ulong hash) => TryGetFileFromHash(hash)?.ReadFile(BdtStream);
 
         public List<BHD5.Bucket> Buckets => bhd.Buckets;
 
@@ -204,13 +240,15 @@ namespace Andre.Formats
         public void Dispose()
         {
             GC.SuppressFinalize(this);
-            Bdt.Dispose();
+            BdtMmf.Dispose();
+            BdtStream?.Dispose();
         }
 
         public async ValueTask DisposeAsync()
         {
             GC.SuppressFinalize(this);
-            await Bdt.DisposeAsync();
+            BdtMmf.Dispose();
+            if (BdtStream != null) await BdtStream.DisposeAsync();
         }
     }
 }
