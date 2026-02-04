@@ -21,46 +21,48 @@ public class TextShortcuts
 
     public void Monitor()
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
         // Save
         if (InputManager.IsPressed(KeybindID.Save))
         {
             Editor.Save();
         }
 
-        // Undo
-        if (Editor.EditorActionManager.CanUndo())
+        if (activeView != null)
         {
-            if (InputManager.IsPressed(KeybindID.Undo))
+            // Undo
+            if (activeView.ActionManager.CanUndo())
             {
-                Editor.EditorActionManager.UndoAction();
+                if (InputManager.IsPressed(KeybindID.Undo))
+                {
+                    activeView.ActionManager.UndoAction();
+                }
+
+                if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
+                {
+                    activeView.ActionManager.UndoAction();
+                }
             }
 
-            if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
+            // Redo
+            if (activeView.ActionManager.CanRedo())
             {
-                Editor.EditorActionManager.UndoAction();
-            }
-        }
+                if (InputManager.IsPressed(KeybindID.Redo))
+                {
+                    activeView.ActionManager.RedoAction();
+                }
 
-        // Redo
-        if (Editor.EditorActionManager.CanRedo())
-        {
-            if (InputManager.IsPressed(KeybindID.Redo))
-            {
-                Editor.EditorActionManager.RedoAction();
+                if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
+                {
+                    activeView.ActionManager.RedoAction();
+                }
             }
 
-            if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
-            {
-                Editor.EditorActionManager.RedoAction();
-            }
-        }
-
-        if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
-        {
             // Create
             if (InputManager.IsPressed(KeybindID.TextEditor_Create_New_Entry))
             {
-                Editor.EntryCreationModal.ShowModal = true;
+                activeView.NewEntryModal.ShowModal = true;
             }
 
             // TODO: remove this if we add Copy/Paste functionality
@@ -73,20 +75,20 @@ public class TextShortcuts
             // Standard Duplicate
             if (InputManager.IsPressed(KeybindID.Duplicate))
             {
-                Editor.ActionHandler.DuplicateEntries();
+                activeView.ActionHandler.DuplicateEntries();
             }
 
             // Delete
             if (InputManager.IsPressed(KeybindID.Delete))
             {
-                Editor.ActionHandler.DeleteEntries();
+                activeView.ActionHandler.DeleteEntries();
             }
-        }
 
-        // Focus Selected Entry
-        if (InputManager.IsPressed(KeybindID.Jump))
-        {
-            Editor.Selection.FocusFmgEntrySelection = true;
+            // Focus Selected Entry
+            if (InputManager.IsPressed(KeybindID.Jump))
+            {
+                activeView.Selection.FocusFmgEntrySelection = true;
+            }
         }
     }
 
@@ -95,29 +97,34 @@ public class TextShortcuts
     /// </summary>
     public void HandleSelectAll()
     {
-        var multiselect = Editor.Selection.FmgEntryMultiselect;
+        var activeView = Editor.ViewHandler.ActiveView;
 
-        if (Editor.Selection.SelectedFmgWrapper == null)
-            return;
-
-        var fmg = Editor.Selection.SelectedFmgWrapper.File;
-
-        // Select All
-        if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
+        if (activeView != null)
         {
-            if (InputManager.IsPressed(KeybindID.SelectAll))
+            var multiselect = activeView.Selection.FmgEntryMultiselect;
+
+            if (activeView.Selection.SelectedFmgWrapper == null)
+                return;
+
+            var fmg = activeView.Selection.SelectedFmgWrapper.File;
+
+            // Select All
+            if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
             {
-                multiselect.StoredEntries.Clear();
-
-                if (fmg != null)
+                if (InputManager.IsPressed(KeybindID.SelectAll))
                 {
-                    for (int j = 0; j < fmg.Entries.Count; j++)
-                    {
-                        var tEntry = fmg.Entries[j];
+                    multiselect.StoredEntries.Clear();
 
-                        if (Editor.Filters.IsFmgEntryFilterMatch(tEntry))
+                    if (fmg != null)
+                    {
+                        for (int j = 0; j < fmg.Entries.Count; j++)
                         {
-                            multiselect.StoredEntries.Add(j, tEntry);
+                            var tEntry = fmg.Entries[j];
+
+                            if (activeView.Filters.IsFmgEntryFilterMatch(tEntry))
+                            {
+                                multiselect.StoredEntries.Add(j, tEntry);
+                            }
                         }
                     }
                 }
@@ -130,14 +137,17 @@ public class TextShortcuts
     /// </summary>
     public void HandleCopyEntryText()
     {
-        var selectionContext = Editor.Selection.CurrentWindowContext;
+        var activeView = Editor.ViewHandler.ActiveView;
 
-        // Copy Entry Contents
-        if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
+        if (activeView != null)
         {
-            if (InputManager.IsPressed(KeybindID.Copy))
+            // Copy Entry Contents
+            if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
             {
-                Editor.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_Text_Clipboard_Include_ID);
+                if (InputManager.IsPressed(KeybindID.Copy))
+                {
+                    activeView.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_Text_Clipboard_Include_ID);
+                }
             }
         }
     }

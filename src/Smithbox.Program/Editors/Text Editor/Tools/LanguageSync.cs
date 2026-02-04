@@ -12,7 +12,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class LanguageSync
 {
-    public TextEditorScreen Editor;
+    public TextEditorView Parent;
     public ProjectEntry Project;
 
     public bool DisplayMassLanguageSyncWindow = false;
@@ -24,9 +24,9 @@ public class LanguageSync
     public bool DisplayTargetLanguagesSection = true;
     public bool DisplayOptionsLanguagesSection = true;
 
-    public LanguageSync(TextEditorScreen editor, ProjectEntry project)
+    public LanguageSync(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -173,24 +173,24 @@ public class LanguageSync
     {
         List<EditorAction> actions = new();
 
-        foreach(var entry in Editor.Project.Handler.TextData.PrimaryBank.Containers)
+        foreach(var entry in Project.Handler.TextData.PrimaryBank.Containers)
         {
             var container = entry.Value;
 
             if (entry.Value.FmgWrappers == null || entry.Value.FmgWrappers.Count == 0)
             {
-                Editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(entry.Value);
+                Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(entry.Value);
             }
 
             if (container.ContainerDisplayCategory == CurrentSourceLanguage)
             {
-                foreach (var tEntry in Editor.Project.Handler.TextData.PrimaryBank.Containers)
+                foreach (var tEntry in Project.Handler.TextData.PrimaryBank.Containers)
                 {
                     var tContainer = tEntry.Value;
 
                     if (tEntry.Value.FmgWrappers == null || tEntry.Value.FmgWrappers.Count == 0)
                     {
-                        Editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(tEntry.Value);
+                        Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(tEntry.Value);
                     }
 
                     if (TargetLanguages.ContainsKey(tContainer.ContainerDisplayCategory))
@@ -212,7 +212,7 @@ public class LanguageSync
         }
 
         var compandAction = new CompoundAction(actions);
-        Editor.EditorActionManager.ExecuteAction(compandAction);
+        Parent.ActionManager.ExecuteAction(compandAction);
     }
 
     public void DisplayMenubarOptions()
@@ -258,11 +258,11 @@ public class LanguageSync
     /// </summary>
     public void DisplaySyncOptions(int targetFmgId = -1)
     {
-        var syncTargetWrapper = Editor.Selection.SelectedContainerWrapper;
+        var syncTargetWrapper = Parent.Selection.SelectedContainerWrapper;
 
         if (ImGui.BeginMenu("Sync With"))
         {
-            foreach(var entry in Editor.Project.Handler.TextData.PrimaryBank.Containers)
+            foreach(var entry in Project.Handler.TextData.PrimaryBank.Containers)
             {
                 var syncSrcWrapper = entry.Value;
 
@@ -289,7 +289,7 @@ public class LanguageSync
 
                 if (entry.Value.FmgWrappers == null || entry.Value.FmgWrappers.Count == 0)
                 {
-                    Editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(entry.Value);
+                    Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(entry.Value);
                 }
 
                 // Not current selection, but the same file in a different category
@@ -315,7 +315,7 @@ public class LanguageSync
                         var actions = SyncLanguage(syncTargetWrapper, syncSrcWrapper, targetFmgId);
 
                         var compandAction = new CompoundAction(actions);
-                        Editor.EditorActionManager.ExecuteAction(compandAction);
+                        Parent.ActionManager.ExecuteAction(compandAction);
                     }
                 }
             }
@@ -334,12 +334,12 @@ public class LanguageSync
 
         if (syncTargetContainerWrapper.FmgWrappers == null || syncTargetContainerWrapper.FmgWrappers.Count == 0)
         {
-            Editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(syncTargetContainerWrapper);
+            Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(syncTargetContainerWrapper);
         }
 
         if (syncSrcContainerWrapper.FmgWrappers == null || syncSrcContainerWrapper.FmgWrappers.Count == 0)
         {
-            Editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(syncSrcContainerWrapper);
+            Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(syncSrcContainerWrapper);
         }
 
         foreach (var syncTargetWrapper in syncTargetContainerWrapper.FmgWrappers)
@@ -355,7 +355,7 @@ public class LanguageSync
 
                     if (vanillaSrcWrapper != null)
                     {
-                        var result = FmgDifferenceFinder.GetFmgDifferenceResult(Editor, vanillaSrcWrapper, syncSrcWrapper);
+                        var result = FmgDifferenceFinder.GetFmgDifferenceResult(Parent, vanillaSrcWrapper, syncSrcWrapper);
 
                         foreach (var syncSrcEntry in syncSrcWrapper.File.Entries)
                         {
@@ -377,7 +377,7 @@ public class LanguageSync
                                     var newEntry = new FMG.Entry(syncTargetWrapper.File, syncSrcEntry.ID, newText);
 
                                     actions.Add(
-                                        new AddFmgEntry(Editor, syncTargetContainerWrapper, parentEntry, newEntry, syncSrcEntry.ID));
+                                        new AddFmgEntry(Parent, syncTargetContainerWrapper, parentEntry, newEntry, syncSrcEntry.ID));
                                 }
                                 // If already added, handle like a modified entry
                                 else
@@ -387,7 +387,7 @@ public class LanguageSync
                                     if (targetEntry != null)
                                     {
                                         actions.Add(
-                                            new ChangeFmgEntryText(Editor, syncTargetContainerWrapper, targetEntry, result.AdditionCache[syncSrcEntry.ID]));
+                                            new ChangeFmgEntryText(Parent, syncTargetContainerWrapper, targetEntry, result.AdditionCache[syncSrcEntry.ID]));
                                     }
                                 }
                             }
@@ -399,7 +399,7 @@ public class LanguageSync
                                 if (targetEntry != null)
                                 {
                                     actions.Add(
-                                        new ChangeFmgEntryText(Editor, syncTargetContainerWrapper, targetEntry, result.ModifiedCache[syncSrcEntry.ID]));
+                                        new ChangeFmgEntryText(Parent, syncTargetContainerWrapper, targetEntry, result.ModifiedCache[syncSrcEntry.ID]));
                                 }
                             }
                             // Any
@@ -410,12 +410,12 @@ public class LanguageSync
                                 if (targetEntry != null)
                                 {
                                     actions.Add(
-                                        new ChangeFmgEntryText(Editor, syncTargetContainerWrapper, targetEntry, result.DefaultCache[syncSrcEntry.ID]));
+                                        new ChangeFmgEntryText(Parent, syncTargetContainerWrapper, targetEntry, result.DefaultCache[syncSrcEntry.ID]));
                                 }
                             }
                         }
 
-                        actions.Add(new SortFmgList(Editor, syncTargetWrapper));
+                        actions.Add(new SortFmgList(syncTargetWrapper));
                     }
                 }
             }
@@ -428,14 +428,14 @@ public class LanguageSync
 
     public TextFmgWrapper GetVanillaSrcWrapper(TextContainerWrapper srcContainerWrapper, TextFmgWrapper srcWrapper)
     {
-        var vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Containers
+        var vanillaContainer = Project.Handler.TextData.VanillaBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == srcContainerWrapper.ContainerDisplayCategory)
             .Where(e => e.Value.FileEntry.Filename == srcContainerWrapper.FileEntry.Filename)
             .FirstOrDefault();
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Containers
+            vanillaContainer = Project.Handler.TextData.VanillaBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == srcContainerWrapper.ContainerDisplayCategory)
             .Where(e => e.Value.ContainerDisplaySubCategory == srcContainerWrapper.ContainerDisplaySubCategory)
             .Where(e => e.Value.FileEntry.Filename == srcContainerWrapper.FileEntry.Filename)

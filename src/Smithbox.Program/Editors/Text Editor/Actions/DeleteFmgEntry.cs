@@ -5,7 +5,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class DeleteFmgEntry : EditorAction
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
 
     private FMG Fmg;
     private FMG.Entry Entry;
@@ -14,9 +14,9 @@ public class DeleteFmgEntry : EditorAction
 
     private TextContainerWrapper Info;
 
-    public DeleteFmgEntry(TextEditorScreen editor, TextContainerWrapper info, FMG currentFmg, FMG.Entry entry)
+    public DeleteFmgEntry(TextEditorView view, TextContainerWrapper info, FMG currentFmg, FMG.Entry entry)
     {
-        Editor = editor;
+        Parent = view;
         Info = info;
         Fmg = currentFmg;
         Entry = entry;
@@ -39,7 +39,7 @@ public class DeleteFmgEntry : EditorAction
         Fmg.Entries.RemoveAt(InsertionIndex);
         Info.IsModified = true;
 
-        Editor.DifferenceManager.TrackFmgDifferences();
+        Parent.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }
@@ -49,7 +49,7 @@ public class DeleteFmgEntry : EditorAction
         Fmg.Entries.Insert(InsertionIndex, OldEntry);
         Info.IsModified = false;
 
-        Editor.DifferenceManager.TrackFmgDifferences();
+        Parent.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }

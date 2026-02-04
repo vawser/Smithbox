@@ -24,7 +24,7 @@ public class TexInternalFileList
     {
         UIHelper.SimpleHeader("Files", "");
 
-        Parent.Editor.Filters.DisplayTpfFilterSearch();
+        Parent.Filters.DisplayTpfFilterSearch();
 
         ImGui.BeginChild("TpfList", new Vector2(width, height));
 
@@ -35,7 +35,7 @@ public class TexInternalFileList
                 var file = entry.Key;
                 var tpfEntry = entry.Value;
 
-                if (Parent.Editor.Filters.IsTpfFilterMatch(file.Name))
+                if (Parent.Filters.IsTpfFilterMatch(file.Name))
                 {
                     var displayName = file.Name;
 

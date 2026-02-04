@@ -1,13 +1,14 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Linq;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class TextSelectionManager
+public class TextViewSelection
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private ProjectEntry Project;
 
     public FileDictionaryEntry SelectedFileDictionaryEntry;
@@ -30,14 +31,12 @@ public class TextSelectionManager
     public bool FocusFmgSelection;
     public bool FocusFmgEntrySelection;
 
-    public TextEditorContext CurrentWindowContext = TextEditorContext.None;
-
-    public TextSelectionManager(TextEditorScreen editor, ProjectEntry project)
+    public TextViewSelection(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
 
-        FmgEntryMultiselect = new TextMultiselection(Editor);
+        FmgEntryMultiselect = new TextMultiselection(view);
     }
 
     /// <summary>
@@ -94,12 +93,12 @@ public class TextSelectionManager
         SelectedFmgWrapper = fmgInfo;
         SelectedFmgKey = fmgInfo.ID;
 
-        FmgEntryMultiselect = new TextMultiselection(Editor);
+        FmgEntryMultiselect = new TextMultiselection(Parent);
 
         _selectedFmgEntryIndex = -1;
         _selectedFmgEntry = null;
 
-        Editor.DifferenceManager.TrackFmgDifferences();
+        Parent.DifferenceManager.TrackFmgDifferences();
 
         // Auto-select first FMG Entry
         AutoSelectFmgEntry();
@@ -114,9 +113,9 @@ public class TextSelectionManager
         {
             var id = fmgInfo.ID;
             var fmgName = fmgInfo.Name;
-            var displayName = TextUtils.GetFmgDisplayName(Editor.Project, SelectedContainerWrapper, id, fmgName);
+            var displayName = TextUtils.GetFmgDisplayName(Project, SelectedContainerWrapper, id, fmgName);
 
-            if (Editor.Filters.IsFmgFilterMatch(fmgName, displayName, id))
+            if (Parent.Filters.IsFmgFilterMatch(fmgName, displayName, id))
             {
                 SelectFmg(fmgInfo);
                 break;
@@ -129,7 +128,7 @@ public class TextSelectionManager
     /// </summary>
     public void SelectFmgEntry(int index, FMG.Entry entry)
     {
-        if (CurrentWindowContext == TextEditorContext.FmgEntry)
+        if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
         {
             FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index);
         }
@@ -149,7 +148,7 @@ public class TextSelectionManager
             {
                 var entry = SelectedFmgWrapper.File.Entries[i];
 
-                if (Editor.Filters.IsFmgEntryFilterMatch(entry))
+                if (Parent.Filters.IsFmgEntryFilterMatch(entry))
                 {
                     SelectFmgEntry(i, entry);
                     break;
@@ -171,16 +170,4 @@ public class TextSelectionManager
         return false;
     }
 
-    /// <summary>
-    /// Switches the focus context to the passed value.
-    /// Use this on all windows (e.g. both Begin and BeginChild)
-    /// </summary>
-    public void SwitchWindowContext(TextEditorContext newContext)
-    {
-        if (ImGui.IsWindowHovered())
-        {
-            CurrentWindowContext = newContext;
-            //TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
-        }
-    }
 }

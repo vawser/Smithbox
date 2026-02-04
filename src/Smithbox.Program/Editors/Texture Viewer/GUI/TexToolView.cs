@@ -25,7 +25,7 @@ public class TexToolView
         if (!CFG.Current.Interface_TextureViewer_ToolWindow)
             return;
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextureViewer", UIHelper.GetMainWindowFlags()))
+        if (ImGui.Begin("Tools##ToolConfigureWindow_TextureViewer", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.TextureViewer_Tools);
 

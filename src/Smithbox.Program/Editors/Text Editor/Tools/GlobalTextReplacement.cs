@@ -23,7 +23,7 @@ public static class GlobalTextReplacement
     private static bool IgnorePatternWhitespace = false;
 
     private static bool HasSearched = false;
-    public static void Display(TextEditorScreen editor)
+    public static void Display(TextEditorView view)
     {
         var windowWidth = ImGui.GetWindowWidth();
 
@@ -157,7 +157,7 @@ public static class GlobalTextReplacement
         if (ImGui.Button("Preview Edit##executeSearch", DPI.HalfWidthButton(windowWidth, 24)))
         {
             HasSearched = true;
-            ReplacementResults = TextFinder.GetReplacementResult(editor, _globalSearchInput, FilterType, MatchType, IgnoreCase);
+            ReplacementResults = TextFinder.GetReplacementResult(view, _globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         UIHelper.Tooltip("Populate the edit preview list.");
         ImGui.SameLine();
@@ -201,11 +201,11 @@ public static class GlobalTextReplacement
                 foreach (var result in ReplacementResults)
                 {
                     var newText = Regex.Replace(result.Entry.Text, searchText, replaceText, options);
-                    actions.Add(new ChangeFmgEntryText(editor, result.ContainerWrapper, result.Entry, newText));
+                    actions.Add(new ChangeFmgEntryText(view, result.ContainerWrapper, result.Entry, newText));
                 }
 
                 var groupedAction = new FmgGroupedAction(actions);
-                editor.EditorActionManager.ExecuteAction(groupedAction);
+                view.ActionManager.ExecuteAction(groupedAction);
             }
             UIHelper.Tooltip("All the entries listed in the list below will have the Replacement Input regex applied to them.");
 
@@ -249,7 +249,7 @@ public static class GlobalTextReplacement
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_Text_File_List_Display_Community_Names)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(editor.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(view.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";

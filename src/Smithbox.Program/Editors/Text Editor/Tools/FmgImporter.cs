@@ -14,14 +14,14 @@ namespace StudioCore.Editors.TextEditor;
 
 public class FmgImporter
 {
-    public TextEditorScreen Editor;
+    public TextEditorView Parent;
     public ProjectEntry Project;
 
     public Dictionary<string, StoredFmgContainer> ImportSources = new();
 
-    public FmgImporter(TextEditorScreen editor, ProjectEntry project)
+    public FmgImporter(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -32,7 +32,7 @@ public class FmgImporter
     {
         if (ImGui.BeginMenu("Import"))
         {
-            if (ImGui.BeginMenu("File", Editor.Selection.SelectedContainerWrapper != null))
+            if (ImGui.BeginMenu("File", Parent.Selection.SelectedContainerWrapper != null))
             {
                 DisplayImportList(ImportType.Container);
 
@@ -40,7 +40,7 @@ public class FmgImporter
             }
             UIHelper.Tooltip("Import the selected text file on the container level, replacing all FMGs and their associated entries (if applicable).");
 
-            if (ImGui.BeginMenu("Text File", Editor.Selection.SelectedFmgWrapper != null))
+            if (ImGui.BeginMenu("Text File", Parent.Selection.SelectedFmgWrapper != null))
             {
                 DisplayImportList(ImportType.FMG);
 
@@ -48,7 +48,7 @@ public class FmgImporter
             }
             UIHelper.Tooltip("Import the selected text file on the FMG level, replacing all associated entries (if applicable).");
 
-            if (ImGui.BeginMenu("Text Entry", Editor.Selection._selectedFmgEntry != null))
+            if (ImGui.BeginMenu("Text Entry", Parent.Selection._selectedFmgEntry != null))
             {
                 DisplayImportList(ImportType.FMG_Entries);
 
@@ -182,7 +182,7 @@ public class FmgImporter
 
         ImportActions = new List<EditorAction>();
 
-        var targetContainer = Editor.Selection.SelectedContainerWrapper;
+        var targetContainer = Parent.Selection.SelectedContainerWrapper;
 
         if (targetContainer == null)
             return;
@@ -199,7 +199,7 @@ public class FmgImporter
         }
 
         var groupAction = new FmgGroupedAction(ImportActions);
-        Editor.EditorActionManager.ExecuteAction(groupAction);
+        Parent.ActionManager.ExecuteAction(groupAction);
     }
     private void ProcessFmg(
         TextContainerWrapper containerWrapper, 
@@ -216,7 +216,7 @@ public class FmgImporter
             // New entry
             if (!targetEntries.Any(e => e.ID == storedEntry.ID))
             {
-                ImportActions.Add(new AddFmgEntry(Editor, containerWrapper, storedEntry, storedEntry, storedEntry.ID));
+                ImportActions.Add(new AddFmgEntry(Parent, containerWrapper, storedEntry, storedEntry, storedEntry.ID));
             }
             // Existing entry
             else if(targetEntries.Any(e => e.ID == storedEntry.ID) && importBehavior is not ImportBehavior.Append)
@@ -225,7 +225,7 @@ public class FmgImporter
 
                 if (targetEntry != null)
                 {
-                    ImportActions.Add(new ChangeFmgEntryText(Editor, containerWrapper, targetEntry, storedEntry.Text));
+                    ImportActions.Add(new ChangeFmgEntryText(Parent, containerWrapper, targetEntry, storedEntry.Text));
                 }
             }
         }
@@ -238,7 +238,7 @@ public class FmgImporter
     {
         ImportSources = new();
 
-        var wrapperPathList = TextUtils.GetStoredContainerWrappers(Editor.Project);
+        var wrapperPathList = TextUtils.GetStoredContainerWrappers(Project);
 
         if (wrapperPathList.Count > 0)
         {

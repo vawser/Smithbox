@@ -22,7 +22,7 @@ public class TexTextureFileList
     {
         UIHelper.SimpleHeader("Textures", "");
 
-        Parent.Editor.Filters.DisplayTextureFilterSearch();
+        Parent.Filters.DisplayTextureFilterSearch();
 
         ImGui.BeginChild("TextureList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
@@ -32,7 +32,7 @@ public class TexTextureFileList
 
             foreach (var entry in Parent.Selection.SelectedTpf.Textures)
             {
-                if (Parent.Editor.Filters.IsTextureFilterMatch(entry.Name))
+                if (Parent.Filters.IsTextureFilterMatch(entry.Name))
                 {
                     var displayName = entry.Name;
 

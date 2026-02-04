@@ -8,12 +8,12 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextFilters
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private ProjectEntry Project;
 
-    public TextFilters(TextEditorScreen editor, ProjectEntry project)
+    public TextFilters(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -190,14 +190,14 @@ public class TextFilters
         {
             if (FmgEntryFilterInput == "")
             {
-                Editor.Selection.FocusFmgEntrySelection = true;
+                Parent.Selection.FocusFmgEntrySelection = true;
             }
         }
 
         // Focus after clicking off
         if (ImGui.IsItemDeactivated())
         {
-            Editor.Selection.FocusFmgEntrySelection = true;
+            Parent.Selection.FocusFmgEntrySelection = true;
         }
 
         ImGui.SameLine();
@@ -219,7 +219,7 @@ public class TextFilters
 
         if (input == "modified")
         {
-            if(Editor.DifferenceManager.IsDifferentToVanilla(curEntry))
+            if(Parent.DifferenceManager.IsDifferentToVanilla(curEntry))
             {
                 return true;
             }
@@ -228,7 +228,7 @@ public class TextFilters
         }
         else if (input == "unique")
         {
-            if (Editor.DifferenceManager.IsUniqueToProject(curEntry))
+            if (Parent.DifferenceManager.IsUniqueToProject(curEntry))
             {
                 return true;
             }

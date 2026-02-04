@@ -379,6 +379,11 @@ public static class AliasHelper
         if (project.Handler.TextEditor == null)
             return "";
 
+        var activeView = project.Handler.TextEditor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return "";
+
         var aliasName = "";
 
         int npcId = e.GetPropertyValue<int>("NPCParamID");
@@ -402,7 +407,7 @@ public static class AliasHelper
                         var result = term;
 
                         var searchValue = int.Parse(term);
-                        var textResult = TextFinder.GetTextResult(project.Handler.TextEditor, "Title_Characters", searchValue);
+                        var textResult = TextFinder.GetTextResult(activeView, "Title_Characters", searchValue);
 
                         if (textResult != null)
                         {

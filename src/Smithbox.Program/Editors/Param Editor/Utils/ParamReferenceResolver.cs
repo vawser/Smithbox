@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using Octokit;
 using StudioCore.Editors.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -135,13 +136,16 @@ public static class ParamReferenceResolver
 
                 if (curView.Project.Handler.TextEditor != null)
                 {
-                    var textEditor = curView.Project.Handler.TextEditor;
+                    var activeView = curView.Project.Handler.TextEditor.ViewHandler.ActiveView;
 
-                    TextResult result = TextFinder.GetTextResult(textEditor, entry.fmg, (int)tempVal, entry.offset);
-
-                    if (result != null)
+                    if (activeView != null)
                     {
-                        newTextResults.Add(result);
+                        TextResult result = TextFinder.GetTextResult(activeView, entry.fmg, (int)tempVal, entry.offset);
+
+                        if (result != null)
+                        {
+                            newTextResults.Add(result);
+                        }
                     }
                 }
             }

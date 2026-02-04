@@ -71,7 +71,14 @@ namespace Veldrid
 
         ~CommandBufferPool()
         {
-            ReleaseUnmanagedResources();
+            try
+            {
+                ReleaseUnmanagedResources();
+            }
+            catch(DivideByZeroException e)
+            {
+
+            }
         }
     }
 }

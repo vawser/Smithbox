@@ -26,7 +26,7 @@ public class TexContainerList
     public void Display(float width, float height)
     {
         UIHelper.SimpleHeader("Containers", "");
-        Parent.Editor.Filters.DisplayFileFilterSearch();
+        Parent.Filters.DisplayFileFilterSearch();
 
         ImGui.BeginChild("ContainerList", new Vector2(width, height));
 
@@ -101,7 +101,7 @@ public class TexContainerList
                     var rawName = entry.Key.Filename.ToLower();
                     var aliasName = GetAlias(rawName);
 
-                    if (Parent.Editor.Filters.IsFileFilterMatch(entry.Key.Path, aliasName))
+                    if (Parent.Filters.IsFileFilterMatch(entry.Key.Path, aliasName))
                     {
                         if (!CFG.Current.TextureViewer_File_List_Display_Low_Detail_Entries)
                         {

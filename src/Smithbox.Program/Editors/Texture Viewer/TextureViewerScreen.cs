@@ -16,7 +16,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public TexViewHandler ViewHandler;
 
     public TexShortcuts Shortcuts;
-    public TexFilters Filters;
     public TexCommandQueue CommandQueue;
 
     public TexToolView ToolView;
@@ -26,9 +25,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         Project = project;
 
         ViewHandler = new TexViewHandler(this, project);
-        CommandQueue = new TexCommandQueue(this, Project);
 
-        Filters = new TexFilters(this, Project);
+        CommandQueue = new TexCommandQueue(this, Project);
         Shortcuts = new TexShortcuts(this, Project);
 
         ToolView = new TexToolView(this, Project);

@@ -18,10 +18,12 @@ public class TextToolView
 
     public void Display()
     {
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
+        if (!CFG.Current.Interface_TextEditor_ToolWindow)
+            return;
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextEditor", ImGuiWindowFlags.MenuBar))
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (ImGui.Begin("Tools##ToolConfigureWindow_TextEditor", ImGuiWindowFlags.MenuBar))
         {
             FocusManager.SetFocus(EditorFocusContext.TextEditor_Tools);
 
@@ -37,7 +39,7 @@ public class TextToolView
             {
                 if (ImGui.CollapsingHeader("Text Search"))
                 {
-                    GlobalTextSearch.Display(Editor);
+                    GlobalTextSearch.Display(activeView);
                 }
             }
 
@@ -46,7 +48,7 @@ public class TextToolView
             {
                 if (ImGui.CollapsingHeader("Text Replacement"))
                 {
-                    GlobalTextReplacement.Display(Editor);
+                    GlobalTextReplacement.Display(activeView);
                 }
             }
 
@@ -55,13 +57,12 @@ public class TextToolView
             {
                 if (ImGui.CollapsingHeader("Text Merge"))
                 {
-                    TextMerge.Display(Editor);
+                    TextMerge.Display(activeView);
                 }
             }
         }
 
         ImGui.End();
-        ImGui.PopStyleColor(1);
     }
     public void ViewMenu()
     {

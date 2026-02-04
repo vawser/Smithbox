@@ -8,9 +8,9 @@ using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class TextNewEntryCreationModal
+public class TextNewEntryModal
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private ProjectEntry Project;
 
     public bool ShowModal = false;
@@ -23,9 +23,9 @@ public class TextNewEntryCreationModal
     private string _newDescriptionText = "";
     private string _newEffectText = "";
 
-    public TextNewEntryCreationModal(TextEditorScreen editor, ProjectEntry project)
+    public TextNewEntryModal(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -45,8 +45,8 @@ public class TextNewEntryCreationModal
         {
             var windowWidth = 520f;
 
-            var entry = Editor.Selection._selectedFmgEntry;
-            var fmgEntryGroup = Editor.EntryGroupManager.GetEntryGroup(entry);
+            var entry = Parent.Selection._selectedFmgEntry;
+            var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(entry);
 
             if (ImGui.CollapsingHeader("Configuration", ImGuiTreeNodeFlags.DefaultOpen))
             {
@@ -168,9 +168,9 @@ public class TextNewEntryCreationModal
 
                         if(ImGui.BeginCombo("##incrementalNamingGeneratorList", CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template))
                         {
-                            foreach(var (name, generator) in Editor.NamingTemplateManager.GeneratorDictionary)
+                            foreach(var (name, generator) in Parent.NamingTemplateManager.GeneratorDictionary)
                             {
-                                if ((ProjectType)generator.ProjectType == Editor.Project.Descriptor.ProjectType)
+                                if ((ProjectType)generator.ProjectType == Project.Descriptor.ProjectType)
                                 {
                                     if (ImGui.Selectable(name))
                                     {
@@ -189,7 +189,7 @@ public class TextNewEntryCreationModal
 
                 if (ImGui.Button("Inherit Text from Selection", DPI.WholeWidthButton(windowWidth, 24)))
                 {
-                    _newId = Editor.Selection._selectedFmgEntry.ID;
+                    _newId = Parent.Selection._selectedFmgEntry.ID;
 
                     if(fmgEntryGroup.SupportsGrouping)
                     {
@@ -215,7 +215,7 @@ public class TextNewEntryCreationModal
                     }
                     else
                     {
-                        _newBasicText = Editor.Selection._selectedFmgEntry.Text;
+                        _newBasicText = Parent.Selection._selectedFmgEntry.Text;
                     }
                 }
                 UIHelper.Tooltip("Fill creation text input with contents of current selection.");
@@ -275,7 +275,7 @@ public class TextNewEntryCreationModal
 
                 if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming)
                 {
-                    generator = Editor.NamingTemplateManager.GetGenerator(CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template);
+                    generator = Parent.NamingTemplateManager.GetGenerator(CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template);
                 }
 
                 List<EditorAction> groupedActions = new();
@@ -301,7 +301,7 @@ public class TextNewEntryCreationModal
                 // Reverse add order so they are added to the entry list in the expected order (0, 100, 200, etc)
                 groupedActions.Reverse();
 
-                Editor.EditorActionManager.ExecuteAction(new FmgGroupedAction(groupedActions));
+                Parent.ActionManager.ExecuteAction(new FmgGroupedAction(groupedActions));
                 ShowModal = false;
             }
             ImGui.SameLine();
@@ -370,12 +370,12 @@ public class TextNewEntryCreationModal
     private void HandleNewTitleEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, int creationCount,
         FmgEntryGeneratorBase generator, int offset, List<EditorAction> actions)
     {
-        var selectedFmgWrapper = Editor.Selection.SelectedFmgWrapper;
+        var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
 
         // Title
         if (fmgEntryGroup.SupportsTitle)
         {
-            TextFmgWrapper wrapper = Editor.EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
+            TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -428,12 +428,12 @@ public class TextNewEntryCreationModal
     /// </summary>
     private void HandleNewSummaryEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, List<EditorAction> actions)
     {
-        var selectedFmgWrapper = Editor.Selection.SelectedFmgWrapper;
+        var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
 
         // Summary
         if (fmgEntryGroup.SupportsSummary)
         {
-            TextFmgWrapper wrapper = Editor.EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
+            TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -452,12 +452,12 @@ public class TextNewEntryCreationModal
     /// </summary>
     private void HandleNewDescriptionEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, List<EditorAction> actions)
     {
-        var selectedFmgWrapper = Editor.Selection.SelectedFmgWrapper;
+        var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
 
         // Description
         if (fmgEntryGroup.SupportsDescription)
         {
-            TextFmgWrapper wrapper = Editor.EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
+            TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -476,12 +476,12 @@ public class TextNewEntryCreationModal
     /// </summary>
     private void HandleNewEffectEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, List<EditorAction> actions)
     {
-        var selectedFmgWrapper = Editor.Selection.SelectedFmgWrapper;
+        var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
 
         // Description
         if (fmgEntryGroup.SupportsEffect)
         {
-            TextFmgWrapper wrapper = Editor.EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
+            TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -576,6 +576,6 @@ public class TextNewEntryCreationModal
         var currentFmg = entry.Parent;
         var newEntry = new FMG.Entry(currentFmg, id, contents);
 
-        return new AddFmgEntry(Editor, Editor.Selection.SelectedContainerWrapper, entry, newEntry, id);
+        return new AddFmgEntry(Parent, Parent.Selection.SelectedContainerWrapper, entry, newEntry, id);
     }
 }

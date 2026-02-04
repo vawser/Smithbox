@@ -15,7 +15,7 @@ public static class TextFinder
     /// <summary>
     /// Get FMG reference, caching it on initial search, and then accessing cache on future usage
     /// </summary>
-    public static TextResult GetTextResult(TextEditorScreen editor, string fmgName, int value, int offset = 0)
+    public static TextResult GetTextResult(TextEditorView view, string fmgName, int value, int offset = 0)
     {
         var cacheName = $"{fmgName}{value}{offset}";
 
@@ -24,7 +24,7 @@ public static class TextFinder
             return CachedResults[cacheName];
         }
 
-        foreach(var (fileEntry, entry) in editor.Project.Handler.TextData.PrimaryBank.Containers)
+        foreach(var (fileEntry, entry) in view.Project.Handler.TextData.PrimaryBank.Containers)
         {
             var containerName = fileEntry.Filename;
 
@@ -32,7 +32,7 @@ public static class TextFinder
             {
                 foreach (var fmg in entry.FmgWrappers)
                 {
-                    var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmg.ID, fmg.Name);
+                    var enumName = TextUtils.GetFmgInternalName(view.Project, entry, fmg.ID, fmg.Name);
 
                     // Contains here to capture the _DLC, _DLC1 and _DLC2 fmgs
                     if (enumName.Contains(fmgName))
@@ -71,11 +71,11 @@ public static class TextFinder
     /// <summary>
     /// Get text result for global search.
     /// </summary>
-    public static List<TextResult> GetGlobalTextResult(TextEditorScreen editor, string searchTerm, SearchFilterType searchFilterType, SearchMatchType matchType, bool ignoreCase)
+    public static List<TextResult> GetGlobalTextResult(TextEditorView view, string searchTerm, SearchFilterType searchFilterType, SearchMatchType matchType, bool ignoreCase)
     {
         var results = new List<TextResult>();
 
-        foreach (var (fileEntry, entry) in editor.Project.Handler.TextData.PrimaryBank.Containers)
+        foreach (var (fileEntry, entry) in view.Project.Handler.TextData.PrimaryBank.Containers)
         {
             var containerName = fileEntry.Filename;
 
@@ -155,11 +155,11 @@ public static class TextFinder
     /// <summary>
     /// Get text result for global replacement.
     /// </summary>
-    public static List<ReplacementResult> GetReplacementResult(TextEditorScreen editor, string searchPattern, SearchFilterType searchFilterType, SearchMatchType matchType, bool ignoreCase)
+    public static List<ReplacementResult> GetReplacementResult(TextEditorView view, string searchPattern, SearchFilterType searchFilterType, SearchMatchType matchType, bool ignoreCase)
     {
         var results = new List<ReplacementResult>();
 
-        foreach (var (fileEntry, entry) in editor.Project.Handler.TextData.PrimaryBank.Containers)
+        foreach (var (fileEntry, entry) in view.Project.Handler.TextData.PrimaryBank.Containers)
         {
             var containerName = fileEntry.Filename;
 
@@ -173,7 +173,7 @@ public static class TextFinder
 
             if(entry.FmgWrappers == null || entry.FmgWrappers.Count == 0)
             {
-                editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(entry);
+                view.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(entry);
             }
 
             foreach (var fmg in entry.FmgWrappers)

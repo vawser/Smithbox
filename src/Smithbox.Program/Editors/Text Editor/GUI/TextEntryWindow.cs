@@ -8,14 +8,14 @@ namespace StudioCore.Editors.TextEditor;
 /// <summary>
 /// Handles the fmg entry selection and viewing
 /// </summary>
-public class TextEntryWindow
+public class TextEntryList
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private ProjectEntry Project;
 
-    public TextEntryWindow(TextEditorScreen editor, ProjectEntry project)
+    public TextEntryList(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -24,115 +24,110 @@ public class TextEntryWindow
     /// </summary>
     public void Display()
     {
-        if (ImGui.Begin("Text Entries##fmgEntryList"))
+        UIHelper.SimpleHeader("Entries", "");
+
+        Parent.Filters.DisplayFmgEntryFilterSearch();
+
+        ImGui.SameLine();
+
+        if(ImGui.Button($"{Icons.Eye}##fmgFocusSelection", DPI.IconButtonSize))
         {
-            FocusManager.SetFocus(EditorFocusContext.TextEditor_EntryList);
+            Parent.Selection.FocusFmgEntrySelection = true;
+        }
+        UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {InputManager.GetHint(KeybindID.Jump)}");
 
-            Editor.Filters.DisplayFmgEntryFilterSearch();
+        ImGui.BeginChild("FmgEntriesList");
 
-            ImGui.SameLine();
-
-            if(ImGui.Button($"{Icons.Eye}##fmgFocusSelection", DPI.IconButtonSize))
+        if (Parent.Selection.SelectedFmgWrapper != null && Parent.Selection.SelectedFmgWrapper.File != null)
+        {
+            // Categories
+            for (int i = 0; i < Parent.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
             {
-                Editor.Selection.FocusFmgEntrySelection = true;
-            }
-            UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {InputManager.GetHint(KeybindID.Jump)}");
+                var entry = Parent.Selection.SelectedFmgWrapper.File.Entries[i];
+                var id = entry.ID;
+                var contents = entry.Text;
 
-            ImGui.BeginChild("FmgEntriesList");
-
-            if (Editor.Selection.SelectedFmgWrapper != null && Editor.Selection.SelectedFmgWrapper.File != null)
-            {
-                // Categories
-                for (int i = 0; i < Editor.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
+                if (Parent.Filters.IsFmgEntryFilterMatch(entry))
                 {
-                    var entry = Editor.Selection.SelectedFmgWrapper.File.Entries[i];
-                    var id = entry.ID;
-                    var contents = entry.Text;
+                    var displayedText = contents;
 
-                    if (Editor.Filters.IsFmgEntryFilterMatch(entry))
+                    if (contents != null)
                     {
-                        var displayedText = contents;
-
-                        if (contents != null)
+                        if (CFG.Current.TextEditor_Text_Entry_List_Truncate_Name)
                         {
-                            if (CFG.Current.TextEditor_Text_Entry_List_Truncate_Name)
+                            if (contents.Contains("\n"))
                             {
-                                if (contents.Contains("\n"))
-                                {
-                                    displayedText = $"{displayedText.Split("\n")[0]} <...>";
-                                }
+                                displayedText = $"{displayedText.Split("\n")[0]} <...>";
                             }
                         }
-                        else
-                        {
-                            displayedText = "";
-
-                            if (CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text)
-                            {
-                                displayedText = $"<null>";
-                            }
-                        }
-
-                        // Unique rows
-                        if (Editor.DifferenceManager.IsUniqueToProject(entry))
-                        {
-                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueTextEntry_Text);
-                        }
-                        // Modified rows
-                        else if (Editor.DifferenceManager.IsDifferentToVanilla(entry))
-                        {
-                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text);
-                        }
-
-                        // Script row
-                        if (ImGui.Selectable($"{id} {displayedText}##fmgEntry{id}{i}", Editor.Selection.IsFmgEntrySelected(i)))
-                        {
-                            Editor.Selection.SelectFmgEntry(i, entry);
-                        }
-
-                        if (Editor.DifferenceManager.IsUniqueToProject(entry) ||
-                            Editor.DifferenceManager.IsDifferentToVanilla(entry))
-                        {
-                            ImGui.PopStyleColor(1);
-                        }
-
-                        // Arrow Selection
-                        if (ImGui.IsItemHovered() && Editor.Selection.SelectNextFmgEntry)
-                        {
-                            Editor.Selection.SelectNextFmgEntry = false;
-                            Editor.Selection.SelectFmgEntry(i, entry);
-                        }
-                        if (ImGui.IsItemFocused())
-                        {
-                            if (InputManager.HasArrowSelection())
-                            {
-                                Editor.Selection.SelectNextFmgEntry = true;
-                            }
-                        }
-
-                        // Context Menu / Shortcuts
-                        if (Editor.Selection.IsFmgEntrySelected(i))
-                        {
-                            Editor.ContextMenu.FmgEntryContextMenu(i, Editor.Selection.SelectedFmgWrapper, entry, Editor.Selection.IsFmgEntrySelected(i));
-
-                            Editor.EditorShortcuts.HandleSelectAll();
-                            Editor.EditorShortcuts.HandleCopyEntryText();
-                        }
-
-                        // Focus Selection
-                        if (Editor.Selection.FocusFmgEntrySelection && Editor.Selection.IsFmgEntrySelected(i))
-                        {
-                            Editor.Selection.FocusFmgEntrySelection = false;
-                            ImGui.SetScrollHereY();
-                        }
-
                     }
+                    else
+                    {
+                        displayedText = "";
+
+                        if (CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text)
+                        {
+                            displayedText = $"<null>";
+                        }
+                    }
+
+                    // Unique rows
+                    if (Parent.DifferenceManager.IsUniqueToProject(entry))
+                    {
+                        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueTextEntry_Text);
+                    }
+                    // Modified rows
+                    else if (Parent.DifferenceManager.IsDifferentToVanilla(entry))
+                    {
+                        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text);
+                    }
+
+                    // Script row
+                    if (ImGui.Selectable($"{id} {displayedText}##fmgEntry{id}{i}", Parent.Selection.IsFmgEntrySelected(i)))
+                    {
+                        Parent.Selection.SelectFmgEntry(i, entry);
+                    }
+
+                    if (Parent.DifferenceManager.IsUniqueToProject(entry) ||
+                        Parent.DifferenceManager.IsDifferentToVanilla(entry))
+                    {
+                        ImGui.PopStyleColor(1);
+                    }
+
+                    // Arrow Selection
+                    if (ImGui.IsItemHovered() && Parent.Selection.SelectNextFmgEntry)
+                    {
+                        Parent.Selection.SelectNextFmgEntry = false;
+                        Parent.Selection.SelectFmgEntry(i, entry);
+                    }
+                    if (ImGui.IsItemFocused())
+                    {
+                        if (InputManager.HasArrowSelection())
+                        {
+                            Parent.Selection.SelectNextFmgEntry = true;
+                        }
+                    }
+
+                    // Context Menu / Shortcuts
+                    if (Parent.Selection.IsFmgEntrySelected(i))
+                    {
+                        Parent.ContextMenu.FmgEntryContextMenu(i, Parent.Selection.SelectedFmgWrapper, entry, Parent.Selection.IsFmgEntrySelected(i));
+
+                        Parent.Editor.Shortcuts.HandleSelectAll();
+                        Parent.Editor.Shortcuts.HandleCopyEntryText();
+                    }
+
+                    // Focus Selection
+                    if (Parent.Selection.FocusFmgEntrySelection && Parent.Selection.IsFmgEntrySelected(i))
+                    {
+                        Parent.Selection.FocusFmgEntrySelection = false;
+                        ImGui.SetScrollHereY();
+                    }
+
                 }
             }
-
-            ImGui.EndChild();
-
-            ImGui.End();
         }
+
+        ImGui.EndChild();
     }
 }

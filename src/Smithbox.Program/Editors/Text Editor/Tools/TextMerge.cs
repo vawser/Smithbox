@@ -19,7 +19,7 @@ public static class TextMerge
 
     public static bool PrimaryLanguageOnly = true;
 
-    public static void Display(TextEditorScreen editor)
+    public static void Display(TextEditorView view)
     {
         var windowWidth = ImGui.GetWindowWidth();
 
@@ -39,7 +39,7 @@ public static class TextMerge
             if (proj == null)
                 continue;
 
-            if (proj.Descriptor.ProjectType != editor.Project.Descriptor.ProjectType)
+            if (proj.Descriptor.ProjectType != view.Project.Descriptor.ProjectType)
                 continue;
 
             if (proj == Smithbox.Orchestrator.SelectedProject)
@@ -79,7 +79,7 @@ public static class TextMerge
         {
             if (ImGui.Button("Merge##action_MergeText", DPI.WholeWidthButton(windowWidth, 24)))
             {
-                HandleMergeAction(editor);
+                HandleMergeAction(view);
             }
         }
 
@@ -90,13 +90,13 @@ public static class TextMerge
         }
     }
 
-    public static async void HandleMergeAction(TextEditorScreen editor)
+    public static async void HandleMergeAction(TextEditorView view)
     {
         MergeInProgress = true;
 
-        await editor.Project.Handler.TextData.LoadAuxBank(TargetProject, true);
+        await view.Project.Handler.TextData.LoadAuxBank(TargetProject, true);
 
-        Task<bool> mergeTask = StartFmgMerge(editor);
+        Task<bool> mergeTask = StartFmgMerge(view);
         bool mergeTaskResult = await mergeTask;
 
         if (mergeTaskResult)
@@ -111,14 +111,14 @@ public static class TextMerge
         MergeInProgress = false;
     }
 
-    private static async Task<bool> StartFmgMerge(TextEditorScreen editor)
+    private static async Task<bool> StartFmgMerge(TextEditorView view)
     {
         await Task.Yield();
 
-        if (!editor.Project.Handler.TextData.AuxBanks.TryGetValue(TargetProject.Descriptor.ProjectName, out var targetAuxBank))
+        if (!view.Project.Handler.TextData.AuxBanks.TryGetValue(TargetProject.Descriptor.ProjectName, out var targetAuxBank))
             return false;
 
-        foreach (var primaryEntry in editor.Project.Handler.TextData.PrimaryBank.Containers)
+        foreach (var primaryEntry in view.Project.Handler.TextData.PrimaryBank.Containers)
         {
             var primaryKey = primaryEntry.Key.Filename;
             var currentContainer = primaryEntry.Value;
@@ -131,7 +131,7 @@ public static class TextMerge
 
             if (primaryEntry.Value.FmgWrappers == null || primaryEntry.Value.FmgWrappers.Count == 0)
             {
-                editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(primaryEntry.Value);
+                view.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(primaryEntry.Value);
             }
 
             foreach (var targetEntry in targetAuxBank.Containers)
@@ -147,7 +147,7 @@ public static class TextMerge
 
                 if (targetEntry.Value.FmgWrappers == null || targetEntry.Value.FmgWrappers.Count == 0)
                 {
-                    editor.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(targetEntry.Value);
+                    view.Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(targetEntry.Value);
                 }
 
                 var targetWrapper = targetContainer;

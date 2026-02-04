@@ -1,14 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ParamEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
+using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
@@ -18,7 +11,10 @@ public class TexEditorView
     public ProjectEntry Project;
 
     public TexViewSelection Selection;
+
     public TexViewerZoom ZoomState;
+    public TexFilters Filters;
+
     public TexContainerList ContainerList;
     public TexInternalFileList InternalFileList;
     public TexTextureFileList FileList;
@@ -26,10 +22,6 @@ public class TexEditorView
     public TexProperties Properties;
 
     public int ViewIndex;
-    private int _imguiId = -1;
-
-    public bool JumpToSelectedRow = false;
-    public bool _isSearchBarActive = false;
 
     public TexEditorView(TextureViewerScreen editor, ProjectEntry project, int imguiId)
     {
@@ -37,11 +29,11 @@ public class TexEditorView
         Project = project;
 
         ViewIndex = imguiId;
-        _imguiId = imguiId;
 
         Selection = new TexViewSelection(this, Project);
 
         ZoomState = new TexViewerZoom(this, Project);
+        Filters = new TexFilters(this, Project);
 
         ContainerList = new TexContainerList(this, Project);
         InternalFileList = new TexInternalFileList(this, Project);
@@ -54,8 +46,9 @@ public class TexEditorView
     public void Display(bool doFocus, bool isActiveView)
     {
         var columnCount = 3;
+        var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
-        if(!CFG.Current.Interface_TextureViewer_Properties)
+        if (!CFG.Current.Interface_TextureViewer_Properties)
         {
             columnCount = 2;
         }
@@ -65,7 +58,7 @@ public class TexEditorView
             ImGuiTableFlags.SizingStretchProp |
             ImGuiTableFlags.BordersInnerV))
         {
-            ImGui.TableSetupColumn("##File Lists", ImGuiTableColumnFlags.WidthStretch, 0.3f);
+            ImGui.TableSetupColumn("##FileList", ImGuiTableColumnFlags.WidthStretch, 0.3f);
             ImGui.TableSetupColumn("##Viewer", ImGuiTableColumnFlags.WidthStretch, 0.5f);
 
             if (CFG.Current.Interface_TextureViewer_Properties)
@@ -73,22 +66,55 @@ public class TexEditorView
 
             // --- Column 1 ---
             ImGui.TableNextColumn();
+
             float width = ImGui.GetContentRegionAvail().X;
             float height = ImGui.GetContentRegionAvail().Y;
+
+            ImGui.BeginChild("##FileListArea", new Vector2(0, 0), windowFlags);
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.TextureViewer_FileList);
+                Editor.ViewHandler.ActiveView = this;
+            }
 
             ContainerList.Display(width, height * 0.2f);
             InternalFileList.Display(width, height * 0.1f);
             FileList.Display(width, height * 0.6f);
 
+            ImGui.EndChild();
+
             // --- Column 2 ---
             ImGui.TableNextColumn();
+
+            ImGui.BeginChild("##ViewerArea", new Vector2(0, 0), windowFlags);
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.TextureViewer_Viewer);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
             DisplayViewport.Display();
+
+            ImGui.EndChild();
 
             // --- Column 3 ---
             if (CFG.Current.Interface_TextureViewer_Properties)
             {
                 ImGui.TableNextColumn();
+
+                ImGui.BeginChild("##PropertiesArea", new Vector2(0, 0), windowFlags);
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.TextureViewer_Properties);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
                 Properties.Display();
+
+                ImGui.EndChild();
             }
 
             ImGui.EndTable();

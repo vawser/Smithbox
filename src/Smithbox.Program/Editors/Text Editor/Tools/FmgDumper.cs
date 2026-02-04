@@ -10,12 +10,12 @@ namespace StudioCore.Editors.TextEditor;
 
 public class FmgDumper
 {
-    public TextEditorScreen Editor;
+    public TextEditorView Parent;
     public ProjectEntry Project;
 
-    public FmgDumper(TextEditorScreen editor, ProjectEntry project)
+    public FmgDumper(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 

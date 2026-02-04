@@ -5,12 +5,12 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexFilters
 {
-    public TextureViewerScreen Editor;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
-    public TexFilters(TextureViewerScreen editor, ProjectEntry project)
+    public TexFilters(TexEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 

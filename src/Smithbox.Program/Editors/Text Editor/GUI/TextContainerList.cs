@@ -11,56 +11,49 @@ namespace StudioCore.Editors.TextEditor;
 /// <summary>
 /// Handles the file selection, viewing and editing.
 /// </summary>
-public class TextContainerWindow
+public class TextContainerList
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private ProjectEntry Project;
 
-    public TextContainerWindow(TextEditorScreen editor, ProjectEntry project)
+    public TextContainerList(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
     /// <summary>
     /// The main UI for the file view
     /// </summary>
-    public void Display()
+    public void Display(float width, float height)
     {
-        if (ImGui.Begin("Files##FmgContainerFileList"))
+        UIHelper.SimpleHeader("Containers", "");
+
+        Parent.Filters.DisplayFileFilterSearch();
+
+        ImGui.BeginChild("CategoryList", new System.Numerics.Vector2(width, height));
+
+        // Categories
+        foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
         {
-            FocusManager.SetFocus(EditorFocusContext.TextEditor_ContainerList);
+            ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None;
 
-            Editor.Filters.DisplayFileFilterSearch();
-
-            int index = 0;
-
-            ImGui.BeginChild("CategoryList");
-
-            // Categories
-            foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
+            if (category == CFG.Current.TextEditor_Primary_Category)
             {
-                ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None;
-
-                if (category == CFG.Current.TextEditor_Primary_Category)
-                {
-                    flags = ImGuiTreeNodeFlags.DefaultOpen;
-                }
-
-                // Only display if the category contains something
-                if (Editor.Project.Handler.TextData.PrimaryBank.Containers.Any(e => e.Value.ContainerDisplayCategory == category))
-                {
-                    if (AllowedCategory(category))
-                    {
-                        DisplaySubCategories(category, flags, index);
-                    }
-                }
+                flags = ImGuiTreeNodeFlags.DefaultOpen;
             }
 
-            ImGui.EndChild();
-
-            ImGui.End();
+            // Only display if the category contains something
+            if (Project.Handler.TextData.PrimaryBank.Containers.Any(e => e.Value.ContainerDisplayCategory == category))
+            {
+                if (AllowedCategory(category))
+                {
+                    DisplaySubCategories(category, flags, 0);
+                }
+            }
         }
+
+        ImGui.EndChild();
     }
 
     /// <summary>
@@ -69,7 +62,7 @@ public class TextContainerWindow
     private void DisplaySubCategories(TextContainerCategory category, ImGuiTreeNodeFlags flags, int index)
     {
         // DS2 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             // Category Header
             if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
@@ -77,12 +70,12 @@ public class TextContainerWindow
                 // Common Sub-Header
                 if (ImGui.CollapsingHeader($"Common", flags))
                 {
-                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
+                    foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
                         var fmgName = fmgWrapper.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, info, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, info, id, fmgName);
 
                         if (displayGroup == "Common")
                         {
@@ -98,12 +91,12 @@ public class TextContainerWindow
                 // Blood Message Sub-Header
                 if (ImGui.CollapsingHeader($"Blood Message", flags))
                 {
-                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
+                    foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
                         var fmgName = fmgWrapper.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, info, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, info, id, fmgName);
 
                         if (displayGroup == "Blood Message")
                         {
@@ -119,12 +112,12 @@ public class TextContainerWindow
                 // Talk Sub-Header
                 if (ImGui.CollapsingHeader($"Talk", flags))
                 {
-                    foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
+                    foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
                         var fmgName = fmgWrapper.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, info, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, info, id, fmgName);
 
                         if (displayGroup == "Talk")
                         {
@@ -145,7 +138,7 @@ public class TextContainerWindow
             if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
             {
                 // Get relevant containers for each category
-                foreach (var (fileEntry, info) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
+                foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
                 {
                     if (info.ContainerDisplayCategory == category)
                     {
@@ -168,9 +161,9 @@ public class TextContainerWindow
         if(CFG.Current.TextEditor_Container_List_Display_Community_Names)
         {
             // To get nice DS2 names, apply the FMG display name stuff on the container level
-            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                displayName = TextUtils.GetFmgDisplayName(Editor.Project, wrapper, -1, wrapper.FileEntry.Filename);
+                displayName = TextUtils.GetFmgDisplayName(Project, wrapper, -1, wrapper.FileEntry.Filename);
             }
             else
             {
@@ -187,40 +180,40 @@ public class TextContainerWindow
             }
         }
 
-        if (Editor.Filters.IsFileFilterMatch(displayName, "", wrapper))
+        if (Parent.Filters.IsFileFilterMatch(displayName, "", wrapper))
         {
             // Script row
-            if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Filename}{index}", index == Editor.Selection.SelectedContainerKey))
+            if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Filename}{index}", index == Parent.Selection.SelectedContainerKey))
             {
-                Editor.Selection.SelectFileContainer(entry, wrapper, index);
+                Parent.Selection.SelectFileContainer(entry, wrapper, index);
             }
 
             // Arrow Selection
-            if (ImGui.IsItemHovered() && Editor.Selection.SelectNextFileContainer)
+            if (ImGui.IsItemHovered() && Parent.Selection.SelectNextFileContainer)
             {
-                Editor.Selection.SelectNextFileContainer = false;
-                Editor.Selection.SelectFileContainer(entry, wrapper, index);
+                Parent.Selection.SelectNextFileContainer = false;
+                Parent.Selection.SelectFileContainer(entry, wrapper, index);
             }
 
             if(ImGui.IsItemFocused())
             {           
                 if (InputManager.HasArrowSelection())
                 {
-                    Editor.Selection.SelectNextFileContainer = true;
+                    Parent.Selection.SelectNextFileContainer = true;
                 }
             }
 
             // Only apply to selection
-            if (Editor.Selection.SelectedContainerKey != -1)
+            if (Parent.Selection.SelectedContainerKey != -1)
             {
-                if (Editor.Selection.SelectedContainerKey == index)
+                if (Parent.Selection.SelectedContainerKey == index)
                 {
-                    Editor.ContextMenu.FileContextMenu(wrapper);
+                    Parent.ContextMenu.FileContextMenu(wrapper);
                 }
 
-                if (Editor.Selection.FocusFileSelection && Editor.Selection.SelectedContainerKey == index)
+                if (Parent.Selection.FocusFileSelection && Parent.Selection.SelectedContainerKey == index)
                 {
-                    Editor.Selection.FocusFileSelection = false;
+                    Parent.Selection.FocusFileSelection = false;
                     ImGui.SetScrollHereY();
                 }
             }
@@ -228,7 +221,7 @@ public class TextContainerWindow
             // Display hint if normal File List is displayed to user knows about the game's usage of the containers
             if (!CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
             {
-                if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                 {
                     if (wrapper.FileEntry.Filename.Contains("item") || wrapper.FileEntry.Filename.Contains("menu"))
                     {

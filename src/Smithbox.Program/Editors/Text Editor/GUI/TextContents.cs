@@ -10,14 +10,14 @@ namespace StudioCore.Editors.TextEditor;
 /// <summary>
 /// Handles the fmg entry editing
 /// </summary>
-public class TextContentsWindow
+public class TextContents
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private ProjectEntry Project;
 
-    public TextContentsWindow(TextEditorScreen editor, ProjectEntry project)
+    public TextContents(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -26,21 +26,16 @@ public class TextContentsWindow
     /// </summary>
     public void Display()
     {
-        if (ImGui.Begin("Contents##fmgEntryContents"))
+        UIHelper.SimpleHeader("Contents", "");
+
+        ImGui.BeginChild("FmgEntryContents");
+
+        if (Parent.Selection._selectedFmgEntry != null)
         {
-            FocusManager.SetFocus(EditorFocusContext.TextEditor_EntryContents);
-
-            ImGui.BeginChild("FmgEntryContents");
-
-            if (Editor.Selection._selectedFmgEntry != null)
-            {
-                DisplayEditor();
-            }
-
-            ImGui.EndChild();
-
-            ImGui.End();
+            DisplayEditor();
         }
+
+        ImGui.EndChild();
     }
 
     /// <summary>
@@ -48,16 +43,16 @@ public class TextContentsWindow
     /// </summary>
     public void DisplayEditor()
     {
-        var fmgEntryGroup = Editor.EntryGroupManager.GetEntryGroup(Editor.Selection._selectedFmgEntry);
+        var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(Parent.Selection._selectedFmgEntry);
 
         // Display normally if entry has no groups, or it has been disabled
         if(!fmgEntryGroup.SupportsGrouping || !CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
         {
-            DisplayBasicTextInput(Editor.Selection._selectedFmgEntry);
+            DisplayBasicTextInput(Parent.Selection._selectedFmgEntry);
         }
         else
         {
-            DisplayGroupedTextInput(Editor.Selection._selectedFmgEntry, fmgEntryGroup);
+            DisplayGroupedTextInput(Parent.Selection._selectedFmgEntry, fmgEntryGroup);
         }
     }
 
@@ -72,8 +67,8 @@ public class TextContentsWindow
         var textboxWidth = ImGui.GetWindowWidth() * 0.92f;
         var height = textboxHeight;
 
-        var selectedFmgWrapper = Editor.Selection.SelectedFmgWrapper;
-        var selectedEntry = Editor.Selection._selectedFmgEntry;
+        var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
+        var selectedEntry = Parent.Selection._selectedFmgEntry;
 
         // We assume Title always exists
         if (fmgEntryGroup.Title == null)
@@ -103,7 +98,6 @@ public class TextContentsWindow
                 if (ImGui.InputInt($"##fmgEntryIdInputGrouped", ref curId))
                 {
                     _idCache = curId;
-                    Editor.Selection.CurrentWindowContext = TextEditorContext.FmgEntryContents;
                 }
 
                 var idCommit = ImGui.IsItemDeactivatedAfterEdit();
@@ -132,23 +126,23 @@ public class TextContentsWindow
 
                         if (fmgEntryGroup.Title != null)
                         {
-                            actions.Add(new ChangeFmgEntryID(Editor, Editor.Selection.SelectedContainerWrapper, fmgEntryGroup.Title, _idCache));
+                            actions.Add(new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Title, _idCache));
                         }
                         if (fmgEntryGroup.Summary != null)
                         {
-                            actions.Add(new ChangeFmgEntryID(Editor, Editor.Selection.SelectedContainerWrapper, fmgEntryGroup.Summary, _idCache));
+                            actions.Add(new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Summary, _idCache));
                         }
                         if (fmgEntryGroup.Description != null)
                         {
-                            actions.Add(new ChangeFmgEntryID(Editor, Editor.Selection.SelectedContainerWrapper, fmgEntryGroup.Description, _idCache));
+                            actions.Add(new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Description, _idCache));
                         }
                         if (fmgEntryGroup.Effect != null)
                         {
-                            actions.Add(new ChangeFmgEntryID(Editor, Editor.Selection.SelectedContainerWrapper, fmgEntryGroup.Effect, _idCache));
+                            actions.Add(new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Effect, _idCache));
                         }
 
                         var groupAction = new FmgGroupedAction(actions);
-                        Editor.EditorActionManager.ExecuteAction(groupAction);
+                        Parent.ActionManager.ExecuteAction(groupAction);
                     }
                 }
             }
@@ -174,7 +168,6 @@ public class TextContentsWindow
                 if (ImGui.InputTextMultiline($"##fmgTextInput_Title", ref curText, 2000, new Vector2(-1, height)))
                 {
                     _textCache = curText;
-                    Editor.Selection.CurrentWindowContext = TextEditorContext.FmgEntryContents;
                 }
 
                 var titleTextCommit = ImGui.IsItemDeactivatedAfterEdit();
@@ -182,8 +175,8 @@ public class TextContentsWindow
                 // Title Text
                 if (fmgEntryGroup.Title != null && titleTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Editor, Editor.Selection.SelectedContainerWrapper, fmgEntryGroup.Title, _textCache);
-                    Editor.EditorActionManager.ExecuteAction(action);
+                    var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Title, _textCache);
+                    Parent.ActionManager.ExecuteAction(action);
                 }
             }
             else if (fmgEntryGroup.Title == null && fmgEntryGroup.SupportsTitle)
@@ -197,7 +190,7 @@ public class TextContentsWindow
 
                 if (ImGui.Button("Add Title Entry", DPI.HalfWidthButton(windowWidth, 24)))
                 {
-                    Editor.ActionHandler.AddTitleEntry(selectedFmgWrapper, selectedEntry);
+                    Parent.ActionHandler.AddTitleEntry(selectedFmgWrapper, selectedEntry);
                 }
             }
 
@@ -222,15 +215,14 @@ public class TextContentsWindow
                 if (ImGui.InputTextMultiline($"##fmgTextInput_Summary", ref curText, 2000, new Vector2(-1, height)))
                 {
                     _textCache = curText;
-                    Editor.Selection.CurrentWindowContext = TextEditorContext.FmgEntryContents;
                 }
 
                 var summaryTextCommit = ImGui.IsItemDeactivatedAfterEdit();
 
                 if (fmgEntryGroup.Summary != null && summaryTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Editor, Editor.Selection.SelectedContainerWrapper, fmgEntryGroup.Summary, _textCache);
-                    Editor.EditorActionManager.ExecuteAction(action);
+                    var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Summary, _textCache);
+                    Parent.ActionManager.ExecuteAction(action);
                 }
             }
             else if (fmgEntryGroup.Summary == null && fmgEntryGroup.SupportsSummary)
@@ -244,7 +236,7 @@ public class TextContentsWindow
 
                 if (ImGui.Button("Add Summary Entry", DPI.HalfWidthButton(windowWidth, 24)))
                 {
-                    Editor.ActionHandler.AddSummaryEntry(selectedFmgWrapper, selectedEntry);
+                    Parent.ActionHandler.AddSummaryEntry(selectedFmgWrapper, selectedEntry);
                 }
             }
 
@@ -269,15 +261,14 @@ public class TextContentsWindow
                 if (ImGui.InputTextMultiline($"##fmgTextInput_Description", ref curText, 2000, new Vector2(-1, height)))
                 {
                     _textCache = curText;
-                    Editor.Selection.CurrentWindowContext = TextEditorContext.FmgEntryContents;
                 }
 
                 var descriptionTextCommit = ImGui.IsItemDeactivatedAfterEdit();
 
                 if (fmgEntryGroup.Description != null && descriptionTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Editor, Editor.Selection.SelectedContainerWrapper, fmgEntryGroup.Description, _textCache);
-                    Editor.EditorActionManager.ExecuteAction(action);
+                    var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Description, _textCache);
+                    Parent.ActionManager.ExecuteAction(action);
                 }
             }
             else if (fmgEntryGroup.Description == null && fmgEntryGroup.SupportsDescription)
@@ -291,7 +282,7 @@ public class TextContentsWindow
 
                 if (ImGui.Button("Add Description Entry", DPI.HalfWidthButton(windowWidth, 24)))
                 {
-                    Editor.ActionHandler.AddDescriptionEntry(selectedFmgWrapper, selectedEntry);
+                    Parent.ActionHandler.AddDescriptionEntry(selectedFmgWrapper, selectedEntry);
                 }
             }
 
@@ -316,15 +307,14 @@ public class TextContentsWindow
                 if (ImGui.InputTextMultiline($"##fmgTextInput_Effect", ref curText, 2000, new Vector2(-1, height)))
                 {
                     _textCache = curText;
-                    Editor.Selection.CurrentWindowContext = TextEditorContext.FmgEntryContents;
                 }
 
                 var effectTextCommit = ImGui.IsItemDeactivatedAfterEdit();
 
                 if (fmgEntryGroup.Effect != null && effectTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Editor, Editor.Selection.SelectedContainerWrapper, fmgEntryGroup.Effect, _textCache);
-                    Editor.EditorActionManager.ExecuteAction(action);
+                    var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Effect, _textCache);
+                    Parent.ActionManager.ExecuteAction(action);
                 }
             }
             else if (fmgEntryGroup.Effect == null && fmgEntryGroup.SupportsEffect)
@@ -338,7 +328,7 @@ public class TextContentsWindow
 
                 if (ImGui.Button("Add Effect Entry", DPI.HalfWidthButton(windowWidth, 24)))
                 {
-                    Editor.ActionHandler.AddEffectEntry(selectedFmgWrapper, selectedEntry);
+                    Parent.ActionHandler.AddEffectEntry(selectedFmgWrapper, selectedEntry);
                 }
             }
 
@@ -374,15 +364,14 @@ public class TextContentsWindow
             if (ImGui.InputInt($"##fmgEntryIdInputBasic", ref curId))
             {
                 _idCache = curId;
-                Editor.Selection.CurrentWindowContext = TextEditorContext.FmgEntryContents;
             }
 
             var idCommit = ImGui.IsItemDeactivatedAfterEdit();
 
             if (idCommit)
             {
-                var action = new ChangeFmgEntryID(Editor, Editor.Selection.SelectedContainerWrapper, entry, _idCache);
-                Editor.EditorActionManager.ExecuteAction(action);
+                var action = new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, entry, _idCache);
+                Parent.ActionManager.ExecuteAction(action);
             }
 
             // Text
@@ -405,14 +394,13 @@ public class TextContentsWindow
             if (ImGui.InputTextMultiline($"##fmgTextInputBasic", ref curText, 2000, new Vector2(-1, height)))
             {
                 _textCache = curText;
-                Editor.Selection.CurrentWindowContext = TextEditorContext.FmgEntryContents;
             }
 
             var textCommit = ImGui.IsItemDeactivatedAfterEdit();
             if (textCommit)
             {
-                var action = new ChangeFmgEntryText(Editor, Editor.Selection.SelectedContainerWrapper, entry, _textCache);
-                Editor.EditorActionManager.ExecuteAction(action);
+                var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, entry, _textCache);
+                Parent.ActionManager.ExecuteAction(action);
             }
 
             ImGui.EndTable();

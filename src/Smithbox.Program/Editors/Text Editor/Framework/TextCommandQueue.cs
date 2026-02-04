@@ -10,6 +10,8 @@ public class TextCommandQueue
     private TextEditorScreen Editor;
     private ProjectEntry Project;
 
+    public bool DoFocus = false;
+
     public TextCommandQueue(TextEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -18,6 +20,8 @@ public class TextCommandQueue
 
     public void Parse(string[] initcmd)
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
         // text / select / category / container name / fmg name / fmg entry id
         if (initcmd != null && initcmd[0] == "select")
         {
@@ -62,16 +66,17 @@ public class TextCommandQueue
                         }
                     }
 
-                    if (found)
+                    if (found && activeView != null)
                     {
-                        Editor.Selection.SelectFileContainer(fileEntry, info, fileIndex);
-                        Editor.Selection.FocusFileSelection = true;
+                        activeView.Selection.SelectFileContainer(fileEntry, info, fileIndex);
+                        activeView.Selection.FocusFileSelection = true;
 
-                        Editor.Selection.SelectFmg(targetFmg);
-                        Editor.Selection.FocusFmgSelection = true;
+                        activeView.Selection.SelectFmg(targetFmg);
+                        activeView.Selection.FocusFmgSelection = true;
 
-                        Editor.Selection.SelectFmgEntry(index, entry);
-                        Editor.Selection.FocusFmgEntrySelection = true;
+                        activeView.Selection.SelectFmgEntry(index, entry);
+                        activeView.Selection.FocusFmgEntrySelection = true;
+
                         break;
                     }
                     fileIndex++;

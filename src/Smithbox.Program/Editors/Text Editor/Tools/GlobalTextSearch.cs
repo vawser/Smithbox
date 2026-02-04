@@ -21,7 +21,7 @@ public static class GlobalTextSearch
 
     private static bool HasSearched = false;
 
-    public static void Display(TextEditorScreen editor)
+    public static void Display(TextEditorView view)
     {
         var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
@@ -113,7 +113,7 @@ public static class GlobalTextSearch
         if (ImGui.Button("Search##executeSearch", DPI.HalfWidthButton(sectionWidth, 24)))
         {
             HasSearched = true;
-            SearchResults = TextFinder.GetGlobalTextResult(editor, _globalSearchInput, FilterType, MatchType, IgnoreCase);
+            SearchResults = TextFinder.GetGlobalTextResult(view, _globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         ImGui.SameLine();
         if (ImGui.Button("Clear##clearSearchResults", DPI.HalfWidthButton(sectionWidth, 24)))
@@ -166,7 +166,7 @@ public static class GlobalTextSearch
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_Text_File_List_Display_Community_Names)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(editor.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(view.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";

@@ -4,13 +4,10 @@ namespace StudioCore.Editors.TextEditor;
 
 public class SortFmgList : EditorAction
 {
-    private TextEditorScreen Editor;
-
     private TextFmgWrapper Wrapper;
 
-    public SortFmgList(TextEditorScreen editor, TextFmgWrapper wrapper)
+    public SortFmgList(TextFmgWrapper wrapper)
     {
-        Editor = editor;
         Wrapper = wrapper;
     }
 

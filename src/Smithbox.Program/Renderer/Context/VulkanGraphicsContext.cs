@@ -81,6 +81,9 @@ public class VulkanGraphicsContext : IGraphicsContext
         {
             _windowResized = false;
 
+            if (width == 0 || height == 0)
+                return;
+
             CFG.Current.GFX_Display_Width = width;
             CFG.Current.GFX_Display_Height = height;
 

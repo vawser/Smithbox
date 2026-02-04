@@ -35,11 +35,11 @@ public class TexProperties
         {
             if (Parent.Selection.ViewerTextureResource != null)
             {
-                Vector2 size = Parent.Display.GetImageSize(
+                Vector2 size = Parent.DisplayViewport.GetImageSize(
                     Parent.Selection.ViewerTextureResource, 
                     false);
 
-                Vector2 relativePos = Parent.Display.GetRelativePosition(
+                Vector2 relativePos = Parent.DisplayViewport.GetRelativePosition(
                     size,
                     Parent.Selection.TextureViewWindowPosition,
                     Parent.Selection.TextureViewScrollPosition);
@@ -77,7 +77,7 @@ public class TexProperties
                             {
                                 string IconName;
                                 bool IsMatch;
-                                (IconName, IsMatch) = Parent.Display.MatchMousePosToIcon(entry, relativePos);
+                                (IconName, IsMatch) = Parent.DisplayViewport.MatchMousePosToIcon(entry, relativePos);
 
                                 if (IsMatch)
                                 {

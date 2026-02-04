@@ -78,8 +78,7 @@ public static class FocusManager
     public static bool IsInTextEditor()
     {
         if (Focus is EditorFocusContext.TextEditor_None
-            or EditorFocusContext.TextEditor_ContainerList
-            or EditorFocusContext.TextEditor_FmgList
+            or EditorFocusContext.TextEditor_FileList
             or EditorFocusContext.TextEditor_EntryList
             or EditorFocusContext.TextEditor_EntryContents
             or EditorFocusContext.TextEditor_Tools)
@@ -159,8 +158,7 @@ public enum EditorFocusContext
     ParamEditor_Tools,
 
     TextEditor_None,
-    TextEditor_ContainerList,
-    TextEditor_FmgList,
+    TextEditor_FileList,
     TextEditor_EntryList,
     TextEditor_EntryContents,
     TextEditor_Tools,

@@ -740,13 +740,9 @@ public class CFG
     public bool TextEditor_LanguageSync_IncludeUniqueEntries = true;
 
     // Windows
-    public bool Interface_TextEditor_FileContainerList = true;
-    public bool Interface_TextEditor_FmgList = true;
-    public bool Interface_TextEditor_TextEntryList = true;
-    public bool Interface_TextEditor_TextEntryContents = true;
+    public bool Interface_TextEditor_ToolWindow = true;
 
     // Tools
-    public bool Interface_TextEditor_ToolWindow = true;
     public bool Interface_TextEditor_Tool_TextSearch = true;
     public bool Interface_TextEditor_Tool_TextReplacement = true;
     public bool Interface_TextEditor_Tool_TextMerge = true;

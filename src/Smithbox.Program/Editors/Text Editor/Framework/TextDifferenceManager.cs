@@ -8,12 +8,12 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextDifferenceManager
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private ProjectEntry Project;
 
-    public TextDifferenceManager(TextEditorScreen editor, ProjectEntry project)
+    public TextDifferenceManager(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -38,7 +38,7 @@ public class TextDifferenceManager
         AdditionCache = new();
         DifferenceCache = new();
 
-        if (Editor.Selection.SelectedContainerWrapper == null)
+        if (Parent.Selection.SelectedContainerWrapper == null)
             return;
 
         // Leave empty if disabled
@@ -47,12 +47,12 @@ public class TextDifferenceManager
             return;
         }
 
-        var containerCategory = Editor.Selection.SelectedContainerWrapper.ContainerDisplayCategory;
-        var containerSubCategory = Editor.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
-        var containerName = Editor.Selection.SelectedContainerWrapper.FileEntry.Filename;
+        var containerCategory = Parent.Selection.SelectedContainerWrapper.ContainerDisplayCategory;
+        var containerSubCategory = Parent.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
+        var containerName = Parent.Selection.SelectedContainerWrapper.FileEntry.Filename;
 
         // Fmg ID for comparison is selected FMG
-        var fmgID = Editor.Selection.SelectedFmgWrapper.ID;
+        var fmgID = Parent.Selection.SelectedFmgWrapper.ID;
 
         // Set the ID to passed instead of selected if called from the FmgExporter
         if(setFmgId != -1)
@@ -61,14 +61,14 @@ public class TextDifferenceManager
         }
 
         // Get vanilla container and entries
-        var vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Containers
+        var vanillaContainer = Project.Handler.TextData.VanillaBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
             .Where(e => e.Value.FileEntry.Filename == containerName)
             .FirstOrDefault();
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            vanillaContainer = Editor.Project.Handler.TextData.VanillaBank.Containers
+            vanillaContainer = Project.Handler.TextData.VanillaBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
             .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
             .Where(e => e.Value.FileEntry.Filename == containerName)
@@ -89,7 +89,7 @@ public class TextDifferenceManager
         foreach(var entry in vanillaFmg.File.Entries)
         {
             // DS2
-            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 var key = $"{entry.ID}{entry.Parent.Name}{containerSubCategory}";
                 if(vanillaEntries.ContainsKey(key))
@@ -117,7 +117,7 @@ public class TextDifferenceManager
         }
 
         // Get primary container and enetries
-        var primaryContainer = Editor.Project.Handler.TextData.PrimaryBank.Containers
+        var primaryContainer = Project.Handler.TextData.PrimaryBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
             .Where(e => e.Value.FileEntry.Filename == containerName)
             .FirstOrDefault();
@@ -125,9 +125,9 @@ public class TextDifferenceManager
         if (primaryContainer.Value == null)
             return;
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            primaryContainer = Editor.Project.Handler.TextData.PrimaryBank.Containers
+            primaryContainer = Project.Handler.TextData.PrimaryBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
             .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
             .Where(e => e.Value.FileEntry.Filename == containerName)
@@ -145,7 +145,7 @@ public class TextDifferenceManager
             string entryId = $"{entry.ID}";
 
             // DS2
-            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 entryId = $"{entryId}{entry.Parent.Name}{containerSubCategory}";
 
@@ -249,12 +249,12 @@ public class TextDifferenceManager
         var entryId = $"{entry.ID}";
 
         // DS2
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            if (Editor.Selection.SelectedContainerWrapper == null)
+            if (Parent.Selection.SelectedContainerWrapper == null)
                 return false;
 
-            var containerSubCategory = Editor.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
+            var containerSubCategory = Parent.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
             entryId = $"{entryId}{entry.Parent.Name}{containerSubCategory}";
 
@@ -286,12 +286,12 @@ public class TextDifferenceManager
         var entryId = $"{entry.ID}";
 
         // DS2
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            if (Editor.Selection.SelectedContainerWrapper == null)
+            if (Parent.Selection.SelectedContainerWrapper == null)
                 return false;
 
-            var containerSubCategory = Editor.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
+            var containerSubCategory = Parent.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
             entryId = $"{entryId}{entry.Parent.Name}{containerSubCategory}";
 
