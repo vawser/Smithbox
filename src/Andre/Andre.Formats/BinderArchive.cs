@@ -151,7 +151,7 @@ namespace Andre.Formats
 
         public static byte[] Decrypt(string bhdPath, Game game)
         {
-            return SoulsFormats.Util.CryptographyUtility.DecryptRsa(bhdPath, ArchiveKeys.GetKey(bhdPath, game)).ToArray();
+            return SoulsFormats.Util.CryptographyUtility.DecryptRsaParallel(bhdPath, ArchiveKeys.GetKey(bhdPath, game), ThreadsForDecryption).ToArray();
         }
 
         public BinderArchive(string bhdPath, string bdtPath, Game game)
