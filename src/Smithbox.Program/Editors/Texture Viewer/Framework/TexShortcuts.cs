@@ -19,6 +19,11 @@ public class TexShortcuts
     {
         var activeView = Editor.ViewHandler.ActiveView;
 
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
+        {
+            CFG.Current.Interface_TextureViewer_ToolWindow = !CFG.Current.Interface_TextureViewer_ToolWindow;
+        }
+
         if (activeView == null)
             return;
 

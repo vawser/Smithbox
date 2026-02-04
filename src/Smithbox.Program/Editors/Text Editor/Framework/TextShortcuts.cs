@@ -29,6 +29,11 @@ public class TextShortcuts
             Editor.Save();
         }
 
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
+        {
+            CFG.Current.Interface_TextEditor_ToolWindow = !CFG.Current.Interface_TextEditor_ToolWindow;
+        }
+
         if (activeView != null)
         {
             // Undo

@@ -51,6 +51,7 @@ public enum KeybindID
     Reorder_Top,
     Reorder_Bottom,
     Apply_to_All,
+    Toggle_Tools_Menu,
 
     // Map Editor
     MapEditor_Toggle_World_Map_Menu,
@@ -204,6 +205,7 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.Reorder_Bottom, new() { Key = Key.Down, Ctrl = true, Alt = true });
 
         InputManager.Bind(KeybindID.Apply_to_All, new() { Key = Key.A, Shift = true });
+        InputManager.Bind(KeybindID.Toggle_Tools_Menu, new() { Key = Key.Keypad1, Ctrl = true });
 
         // Map Editor
         InputManager.Bind(KeybindID.MapEditor_Toggle_World_Map_Menu, new() { Key = Key.M });

@@ -25,8 +25,13 @@ public class MapShortcuts
             ImGui.IsAnyItemActive())
             return;
 
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
+        {
+            CFG.Current.Interface_MapEditor_ToolWindow = !CFG.Current.Interface_MapEditor_ToolWindow;
+        }
+
         // Save
-        if(InputManager.IsPressed(KeybindID.Save))
+        if (InputManager.IsPressed(KeybindID.Save))
         {
             Editor.Save();
         }

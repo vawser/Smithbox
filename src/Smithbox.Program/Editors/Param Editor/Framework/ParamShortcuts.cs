@@ -27,6 +27,11 @@ public class ParamShortcuts
         if (!FocusManager.IsInParamEditor())
             return;
 
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
+        {
+            CFG.Current.Interface_ParamEditor_ToolWindow = !CFG.Current.Interface_ParamEditor_ToolWindow;
+        }
+
         if (AllowContextualShortcuts(activeView))
         {
             // Save

@@ -166,6 +166,12 @@ public class FileBrowserScreen : EditorScreen
 
     private void Shortcuts()
     {
+        if (!FocusManager.IsInFileBrowser())
+            return;
 
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
+        {
+            CFG.Current.Interface_FileBrowser_ToolView = !CFG.Current.Interface_FileBrowser_ToolView;
+        }
     }
 }

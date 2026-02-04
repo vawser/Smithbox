@@ -18,6 +18,9 @@ public class ModelToolWindow
 
     public void OnGui()
     {
+        if (!CFG.Current.Interface_ModelEditor_ToolWindow)
+            return;
+
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 

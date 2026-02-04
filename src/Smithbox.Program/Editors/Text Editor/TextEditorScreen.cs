@@ -20,7 +20,6 @@ public class TextEditorScreen : EditorScreen
 
     public TextToolView ToolView;
 
-
     public TextEditorScreen(ProjectEntry project)
     {
         Project = project;

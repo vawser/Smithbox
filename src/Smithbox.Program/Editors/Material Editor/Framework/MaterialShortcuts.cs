@@ -25,6 +25,11 @@ public class MaterialShortcuts
         if (!FocusManager.IsInMaterialEditor())
             return;
 
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
+        {
+            CFG.Current.Interface_MaterialEditor_ToolWindow = !CFG.Current.Interface_MaterialEditor_ToolWindow;
+        }
+
         if (InputManager.IsPressed(KeybindID.Save))
         {
             Editor.Save();

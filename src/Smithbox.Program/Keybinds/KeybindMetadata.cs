@@ -153,6 +153,10 @@ public static class KeybindMetadata
             "Apply to All",
             "When in a list, holding this button will cause the action to apply to all entries."
         ) },
+        { KeybindID.Toggle_Tools_Menu, (
+            "Toggle Tools Menu",
+            "Toggle the visibility of the Tools menu within the current editor."
+        ) },
 
         // Map 
         { KeybindID.MapEditor_Toggle_World_Map_Menu, (
@@ -559,6 +563,7 @@ public static class KeybindMetadata
         { KeybindID.Reorder_Top, InputCategory.Contextual },
         { KeybindID.Reorder_Bottom, InputCategory.Contextual },
         { KeybindID.Apply_to_All, InputCategory.Contextual },
+        { KeybindID.Toggle_Tools_Menu, InputCategory.Contextual },
 
         // Map 
         { KeybindID.MapEditor_Toggle_World_Map_Menu, InputCategory.MapEditor },

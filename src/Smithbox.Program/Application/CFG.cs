@@ -458,6 +458,7 @@ public class CFG
     public bool Interface_ModelEditor_ModelContents = true;
     public bool Interface_ModelEditor_Properties = true;
     public bool Interface_ModelEditor_ResourceList = true;
+    public bool Interface_ModelEditor_ToolWindow = true;
 
     // Tools
     public bool Interface_ModelEditor_Tool_CreateAction = true;

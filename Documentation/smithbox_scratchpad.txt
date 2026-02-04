@@ -1,9 +1,9 @@
 #---------------------
 # TODO 
 #---------------------
-- Restructure the Rendering code in Renderer to properly delineated between OpenGL and Vulkan
+- Random Vulkan crash due to divide by zero on startup (NEED TO FIX)
+ - Seems due to the movement of when the context is initialized
 
-- Implement Views for Text Editor
 - Implement Views for Graphical Param Editor
 - Implement Views for Material Editor
 

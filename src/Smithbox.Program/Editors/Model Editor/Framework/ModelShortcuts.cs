@@ -25,6 +25,11 @@ public class ModelShortcuts
         if (ImGui.IsAnyItemActive() || Editor.ModelViewportView.ViewportUsingKeyboard)
             return;
 
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
+        {
+            CFG.Current.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface_ModelEditor_ToolWindow;
+        }
+
         // Save
         if (InputManager.IsPressed(KeybindID.Save))
         {
