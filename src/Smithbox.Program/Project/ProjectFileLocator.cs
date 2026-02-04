@@ -1,5 +1,6 @@
 ﻿using DotNext.Collections.Generic;
 using Microsoft.Extensions.Logging;
+using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StudioCore.Application;
@@ -134,7 +136,7 @@ public class ProjectFileLocator : IDisposable
 
         if (CFG.Current.Project_Scan_Directory_For_Additions)
         {
-            var projectFileDictionary = BuildFromSource(
+            var projectFileDictionary = BuildProjectFileDictionary(
                 Project.Descriptor.ProjectPath,
                 jsonFileDictionary, Project.Descriptor.ProjectType);
 
@@ -160,81 +162,82 @@ public class ProjectFileLocator : IDisposable
         return;
     }
 
-    private FileDictionary BuildFromSource(string sourcePath, FileDictionary existingDict, ProjectType type)
+    private FileDictionary BuildProjectFileDictionary(string projectPath, FileDictionary existingDict, ProjectType type)
     {
-        var fileDict = new FileDictionary { Entries = new() };
+        var projectFileDictionary = new FileDictionary { Entries = new() };
 
-        if (!Directory.Exists(sourcePath))
-            return fileDict;
+        if (!Directory.Exists(projectPath))
+            return projectFileDictionary;
 
         var existingPaths = new HashSet<string>(
             existingDict.Entries.Select(e => e.Path),
             StringComparer.OrdinalIgnoreCase);
 
-        var excludedDirs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var existingFolders = new HashSet<string>(
+            existingDict.Entries.Select(e => e.Folder),
+            StringComparer.OrdinalIgnoreCase);
 
-        excludedDirs.Add(".git");
-        excludedDirs.Add(".smithbox");
+        var archiveName = Path.GetFileName(projectPath);
 
-        foreach (var manifest in Directory.EnumerateFiles(sourcePath, "_witchy-*.xml", SearchOption.AllDirectories))
-        {
-            var dir = Path.GetDirectoryName(manifest);
-            while (!string.IsNullOrEmpty(dir))
-            {
-                if (!excludedDirs.Add(dir))
-                    break;
-
-                dir = Path.GetDirectoryName(dir);
-            }
-        }
-
-        var archiveName = Path.GetFileName(sourcePath);
-
-        foreach (var filePath in Directory.EnumerateFiles(sourcePath, "*", SearchOption.AllDirectories))
+        foreach (var filePath in Directory.EnumerateFiles(projectPath, "*", SearchOption.AllDirectories))
         {
             var dir = Path.GetDirectoryName(filePath);
-            if (dir != null && excludedDirs.Contains(dir))
-                continue;
-
             var normalizedDir = NormalizePath(dir);
 
-            var relativePath = "/" + Path.GetRelativePath(sourcePath, filePath).Replace('\\', '/');
+            var relativePath = "/" + Path.GetRelativePath(projectPath, filePath).Replace('\\', '/');
+            var relativeFolder = Path.GetDirectoryName(relativePath).Replace('\\', '/');
 
+            // Skip any new base dir files
+            if (relativeFolder == "/")
+                continue;
+
+            // If project relative path already exists in vanilla directory, ignore it as we don't need to include it
             if (existingPaths.Contains(relativePath))
                 continue;
 
-            var ext = Path.GetExtension(filePath).TrimStart('.').ToLowerInvariant();
-            var fileName = Path.GetFileNameWithoutExtension(filePath);
+            var add = false;
 
-            if (ext == "dcx")
+            // Add if it is a file in a new aeg/aet folder
+            if (relativeFolder.Contains("/aeg") || relativeFolder.Contains("/aet"))
+                add = true;
+
+            // Add if it is a new file in any of the vanilla directories
+            foreach (var entry in existingFolders)
             {
-                var prevExt = Path.GetExtension(fileName);
-                if (!string.IsNullOrEmpty(prevExt))
+                if(entry == relativeFolder)
                 {
-                    ext = prevExt.TrimStart('.').ToLowerInvariant();
-                    fileName = Path.GetFileNameWithoutExtension(fileName);
+                    add = true;
                 }
             }
 
-            if (type == ProjectType.ER)
-            {
-                if (relativePath.StartsWith("/menu/deploy", StringComparison.OrdinalIgnoreCase))
-                    continue;
-                if (ext == "matbinbnd")
-                    continue;
-            }
 
-            fileDict.Entries.Add(new FileDictionaryEntry
+            if (add)
             {
-                Archive = archiveName,
-                Path = relativePath,
-                Folder = Path.GetDirectoryName(relativePath)?.Replace('\\', '/'),
-                Filename = fileName,
-                Extension = ext
-            });
+                var ext = Path.GetExtension(filePath).TrimStart('.').ToLowerInvariant();
+                var fileName = Path.GetFileNameWithoutExtension(filePath);
+
+                if (ext == "dcx")
+                {
+                    var prevExt = Path.GetExtension(fileName);
+                    if (!string.IsNullOrEmpty(prevExt))
+                    {
+                        ext = prevExt.TrimStart('.').ToLowerInvariant();
+                        fileName = Path.GetFileNameWithoutExtension(fileName);
+                    }
+                }
+
+                projectFileDictionary.Entries.Add(new FileDictionaryEntry
+                {
+                    Archive = archiveName,
+                    Path = relativePath,
+                    Folder = Path.GetDirectoryName(relativePath)?.Replace('\\', '/'),
+                    Filename = fileName,
+                    Extension = ext
+                });
+            }
         }
 
-        return fileDict;
+        return projectFileDictionary;
     }
 
     private FileDictionary MergeFileDictionaries(FileDictionary first, FileDictionary second)

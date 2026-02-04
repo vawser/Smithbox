@@ -1,9 +1,12 @@
 #---------------------
 # TODO 
 #---------------------
-- Random Vulkan crash due to divide by zero on startup (NEED TO FIX)
- - Seems due to the movement of when the context is initialized
+- Maybe: implement viewport instances for Model/Map Editor, i.e. multiple viewports for the same loaded data
 
-- Implement Views for Graphical Param Editor
+- Adjust DS2 loose params + system/graphics/event param loading to use VFS since they aren't present without unpacking
+
+- Implement Views for File Browser
+- Implement Views for Model Editor
+- Implement Views for Map Editor
 
 # TODO:

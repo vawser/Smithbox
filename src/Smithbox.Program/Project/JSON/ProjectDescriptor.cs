@@ -18,6 +18,10 @@ public class ProjectDescriptor
     public bool ImportedParamRowNames = false;
     public bool AutoSelect = false;
 
+    public string FolderTag = "";
+
+    public bool EnableExternalMaterialData = true;
+
     public bool EnableMapEditor = false;
     public bool EnableModelEditor = false;
     public bool EnableTextEditor = false;
@@ -26,10 +30,6 @@ public class ProjectDescriptor
     public bool EnableMaterialEditor = false;
     public bool EnableTextureViewer = false;
     public bool EnableFileBrowser = false;
-
-    public string FolderTag = "";
-
-    public bool EnableExternalMaterialData = true;
 
     public List<string> PinnedParams { get; set; } = new();
     public Dictionary<string, List<int>> PinnedRows { get; set; } = new();
