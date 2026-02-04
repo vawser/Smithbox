@@ -1,194 +1,29 @@
 ﻿using Andre.Formats;
-using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public partial class ParamTools
+
+public static class ParamRowOperations
 {
-    public ParamOperationTargetType CurrentTargetCategory = ParamOperationTargetType.SelectedParam;
-
-    #region Row Name Trimmer
-    public void DisplayRowNameTrimmer()
-    {
-        var windowWidth = ImGui.GetWindowWidth();
-        var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
-
-        if (ImGui.CollapsingHeader("Trim Row Names"))
-        {
-            UIHelper.WrappedText("Trim Carriage Return (\\r) characters from row names\nfor the currently selected param, or for all params.");
-            UIHelper.WrappedText("");
-
-            if (!Editor._activeView.Selection.ActiveParamExists())
-            {
-                UIHelper.WrappedText("You must select a param before you can use this action.");
-                UIHelper.WrappedText("");
-            }
-            else
-            {
-                ParamTargetElement(ref CurrentTargetCategory, "The target for the Row Name trimming.", DPI.WholeWidthButton(windowWidth, 24));
-
-                if (ImGui.Button("Trim##action_TrimRowNames", DPI.WholeWidthButton(windowWidth, 24)))
-                {
-                    TrimRowNames();
-                }
-            }
-        }
-    }
-
-    public void TrimRowNames(ParamRowTrimType trimType = ParamRowTrimType.Whitespace)
-    {
-        var selectedParam = Editor._activeView.Selection;
-        var curParamKey = selectedParam.GetActiveParam();
-
-        if (curParamKey == null)
-            return;
-
-        if (trimType is ParamRowTrimType.Whitespace)
-        {
-            if (selectedParam.ActiveParamExists())
-            {
-                if (Editor.Project.ParamData.PrimaryBank.Params != null)
-                {
-                    var activeParam = selectedParam.GetActiveParam();
-                    var rows = selectedParam.GetSelectedRows();
-                    switch (CurrentTargetCategory)
-                    {
-                        case ParamOperationTargetType.SelectedRows:
-                            if (!rows.Any()) return;
-                            TrimRowNameHelper(rows);
-                            PlatformUtils.Instance.MessageBox($"Row names for {rows.Count} selected rows have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            break;
-                        case ParamOperationTargetType.SelectedParam:
-                            TrimRowNameHelper(activeParam);
-                            PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            break;
-                        case ParamOperationTargetType.AllParams:
-                            foreach (var param in Editor.Project.ParamData.PrimaryBank.Params)
-                            {
-                                TrimRowNameHelper(param.Key);
-                            }
-                            PlatformUtils.Instance.MessageBox($"Row names for all params have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
-                }
-            }
-        }
-
-        if (trimType is ParamRowTrimType.NewLines)
-        {
-            var activeParam = selectedParam.GetActiveParam();
-            var rows = selectedParam.GetSelectedRows();
-
-            foreach (Param.Row row in rows)
-            {
-                var newName = row.Name.Replace("\n", " ").Replace("\r", "");
-                row.Name = newName;
-            }
-        }
-    }
-
-    private void TrimRowNameHelper(IEnumerable<Param.Row> rows)
-    {
-        foreach (Param.Row row in rows)
-        {
-            row.Name = row.Name.Trim();
-        }
-    }
-
-    private void TrimRowNameHelper(string param)
-    {
-        Param p = Editor.Project.ParamData.PrimaryBank.Params[param];
-        TrimRowNameHelper(p.Rows);
-    }
-
-    public void ParamTargetElement(ref ParamOperationTargetType currentTarget, string tooltip, Vector2 size)
-    {
-        var inputWidth = size.X;
-
-        UIHelper.WrappedText("Target Category:");
-        DPI.ApplyInputWidth(inputWidth);
-        if (ImGui.BeginCombo("##Target", currentTarget.GetDisplayName()))
-        {
-            foreach (ParamOperationTargetType e in Enum.GetValues<ParamOperationTargetType>())
-            {
-                var name = e.GetDisplayName();
-                if (ImGui.Selectable(name))
-                {
-                    currentTarget = e;
-                    break;
-                }
-            }
-            ImGui.EndCombo();
-        }
-        UIHelper.Tooltip(tooltip);
-        UIHelper.WrappedText("");
-    }
-    #endregion
-
-    #region Row Sorter
-    public void DisplayRowSorter()
-    {
-        var windowWidth = ImGui.GetWindowWidth();
-
-        if (ImGui.CollapsingHeader("Sort Rows"))
-        {
-            UIHelper.WrappedText("Sort the rows for the currently selected param by their ID.");
-            UIHelper.WrappedText("");
-
-            if (ImGui.Button("Sort##action_SortRows", DPI.WholeWidthButton(windowWidth, 24)))
-            {
-                SortRows();
-            }
-        }
-    }
-
-    public void SortRows()
-    {
-        if (Project.ProjectType is ProjectType.AC6)
-        {
-            var dialog = PlatformUtils.Instance.MessageBox("This action will delete rows if there are multiple rows with the same ID within this param. Do you want to proceed?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
-            if (dialog == DialogResult.OK)
-            {
-                if (Editor._activeView.Selection.ActiveParamExists())
-                {
-                    TaskLogs.AddLog($"Param rows sorted for {Editor._activeView.Selection.GetActiveParam()}");
-                    Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam()));
-                }
-            }
-        }
-        else
-        {
-            if (Editor._activeView.Selection.ActiveParamExists())
-            {
-                TaskLogs.AddLog($"Param rows sorted for {Editor._activeView.Selection.GetActiveParam()}");
-                Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam()));
-            }
-        }
-    }
-    #endregion
-
     #region Set Row to Default
-    public void SetRowToDefault()
+    public static void SetRowToDefault(ParamEditorView curView)
     {
-        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+        var curParamKey = curView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
-        Param vanillaParam = Editor.Project.ParamData.VanillaBank.Params[curParamKey];
+        Param baseParam = curView.GetPrimaryBank().Params[curParamKey];
+        Param vanillaParam = curView.GetVanillaBank().Params[curParamKey];
 
         if (baseParam == null)
             return;
@@ -196,7 +31,7 @@ public partial class ParamTools
         if (vanillaParam == null)
             return;
 
-        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+        List<Param.Row> rows = curView.Selection.GetSelectedRows();
 
         List<Param.Row> rowsToInsert = new();
 
@@ -215,24 +50,24 @@ public partial class ParamTools
 
         List<EditorAction> actions = new List<EditorAction>();
 
-        actions.Add(new AddParamsAction(Editor, baseParam, "legacystring", rowsToInsert, false, true, -1, 0, false));
+        actions.Add(new AddParamsAction(curView.Editor, baseParam, "legacystring", rowsToInsert, false, true, -1, 0, false));
 
         var compoundAction = new CompoundAction(actions);
 
-        Editor.EditorActionManager.ExecuteAction(compoundAction);
+        curView.Editor.ActionManager.ExecuteAction(compoundAction);
     }
     #endregion
 
     #region Copy Row Details
-    public void CopyRowDetails(bool includeName = false)
+    public static void CopyRowDetails(ParamEditorView curView, bool includeName = false)
     {
-        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+        var curParamKey = curView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
 
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
-        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+        Param param = curView.GetPrimaryBank().Params[curParamKey];
+        List<Param.Row> rows = curView.Selection.GetSelectedRows();
 
         if (rows.Count == 0)
         {
@@ -268,24 +103,24 @@ public partial class ParamTools
     #endregion
 
     #region Proliferate Name
-    public void ProliferateRowName(string targetField)
+    public static void ProliferateRowName(ParamEditorView curView, string targetField)
     {
         if (targetField == null)
             return;
 
-        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+        var curParamKey = curView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param baseParam = curView.GetPrimaryBank().Params[curParamKey];
 
         if (baseParam == null)
             return;
 
-        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+        List<Param.Row> rows = curView.Selection.GetSelectedRows();
 
-        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+        var paramMeta = curView.GetParamData().GetParamMeta(baseParam.AppliedParamdef);
 
         var actions = new List<EditorAction>();
 
@@ -302,17 +137,17 @@ public partial class ParamTools
             }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
-            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+            var fieldMeta = curView.GetParamData().GetParamFieldMeta(paramMeta, fieldDef);
 
             if (fieldMeta == null)
                 continue;
 
-            List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(
-                Editor, Editor.Project.ParamData.PrimaryBank, fieldMeta.RefTypes, row, targetCell.Value);
+            List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(
+                curView, fieldMeta.RefTypes, row, targetCell.Value);
 
             foreach ((string, Param.Row, string) rf in refs)
             {
-                if (row == null || Editor.EditorActionManager == null)
+                if (row == null || curView.Editor.ActionManager == null)
                 {
                     continue;
                 }
@@ -321,7 +156,7 @@ public partial class ParamTools
             }
         }
 
-        if(displayWarning)
+        if (displayWarning)
         {
             TaskLogs.AddLog($"Failed to find field with internal name of: {targetField}");
         }
@@ -329,24 +164,24 @@ public partial class ParamTools
     #endregion
 
     #region Inherit Row Name
-    public void InheritRowName(string targetField)
+    public static void InheritRowName(ParamEditorView curView, string targetField)
     {
         if (targetField == null)
             return;
 
-        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+        var curParamKey = curView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param baseParam = curView.GetPrimaryBank().Params[curParamKey];
 
         if (baseParam == null)
             return;
 
-        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+        List<Param.Row> rows = curView.Selection.GetSelectedRows();
 
-        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+        var paramMeta = curView.GetParamData().GetParamMeta(baseParam.AppliedParamdef);
 
         var actions = new List<EditorAction>();
 
@@ -363,17 +198,16 @@ public partial class ParamTools
             }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
-            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+            var fieldMeta = curView.GetParamData().GetParamFieldMeta(paramMeta, fieldDef);
 
             if (fieldMeta == null)
                 continue;
 
-            List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(
-                Editor, Editor.Project.ParamData.PrimaryBank, fieldMeta.RefTypes, row, targetCell.Value);
+            List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, fieldMeta.RefTypes, row, targetCell.Value);
 
             foreach ((string, Param.Row, string) rf in refs)
             {
-                if (row == null || Editor.EditorActionManager == null)
+                if (row == null || curView.Editor.ActionManager == null)
                 {
                     continue;
                 }
@@ -390,24 +224,24 @@ public partial class ParamTools
     #endregion
 
     #region Inherit Row Name from FMG
-    public void InheritRowNameFromFMG(string targetField)
+    public static void InheritRowNameFromFMG(ParamEditorView curView, string targetField)
     {
         if (targetField == null)
             return;
 
-        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+        var curParamKey = curView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param baseParam = curView.GetPrimaryBank().Params[curParamKey];
 
         if (baseParam == null)
             return;
 
-        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+        List<Param.Row> rows = curView.Selection.GetSelectedRows();
 
-        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+        var paramMeta = curView.GetParamData().GetParamMeta(baseParam.AppliedParamdef);
 
         var actions = new List<EditorAction>();
 
@@ -424,17 +258,16 @@ public partial class ParamTools
             }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
-            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+            var fieldMeta = curView.GetParamData().GetParamFieldMeta(paramMeta, fieldDef);
 
             if (fieldMeta == null)
                 continue;
 
-            List<TextResult> refs = ReferenceResolver.ResolveTextReferences(
-                Editor, fieldMeta.FmgRef, row, targetCell.Value);
+            List<TextResult> refs = ParamReferenceResolver.ResolveTextReferences(curView, fieldMeta.FmgRef, row, targetCell.Value);
 
             foreach (var result in refs)
             {
-                if (row == null || Editor.EditorActionManager == null)
+                if (row == null || curView.Editor.ActionManager == null)
                 {
                     continue;
                 }
@@ -450,26 +283,25 @@ public partial class ParamTools
     }
     #endregion
 
-
     #region Inherit Row Name from Alias
-    public void InheritRowNameFromAlias(string targetField)
+    public static void InheritRowNameFromAlias(ParamEditorView curView, string targetField)
     {
         if (targetField == null)
             return;
 
-        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+        var curParamKey = curView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param baseParam = curView.GetPrimaryBank().Params[curParamKey];
 
         if (baseParam == null)
             return;
 
-        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+        List<Param.Row> rows = curView.Selection.GetSelectedRows();
 
-        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+        var paramMeta = curView.GetParamData().GetParamMeta(baseParam.AppliedParamdef);
 
         var actions = new List<EditorAction>();
 
@@ -486,14 +318,14 @@ public partial class ParamTools
             }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
-            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+            var fieldMeta = curView.GetParamData().GetParamFieldMeta(paramMeta, fieldDef);
 
             if (fieldMeta == null)
                 continue;
 
-            if(fieldMeta.ShowCharacterEnumList)
+            if (fieldMeta.ShowCharacterEnumList)
             {
-                foreach(var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Characters])
+                foreach (var entry in curView.Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.Characters])
                 {
                     var text = entry.ID.Substring(1);
                     if (text == $"{targetCell.Value}")
@@ -506,7 +338,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowCutsceneEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Cutscenes])
+                foreach (var entry in curView.Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.Cutscenes])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -518,7 +350,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowFlagEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.EventFlags])
+                foreach (var entry in curView.Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.EventFlags])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -530,7 +362,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowMovieEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Movies])
+                foreach (var entry in curView.Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.Movies])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -542,7 +374,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowParticleEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Particles])
+                foreach (var entry in curView.Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.Particles])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -554,7 +386,7 @@ public partial class ParamTools
 
             if (fieldMeta.ShowSoundEnumList)
             {
-                foreach (var entry in Editor.Project.CommonData.Aliases[ProjectAliasType.Sounds])
+                foreach (var entry in curView.Editor.Project.Handler.ProjectData.Aliases[ProjectAliasType.Sounds])
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
@@ -573,43 +405,56 @@ public partial class ParamTools
     #endregion
 
     #region Adjust Row Name
-    public void AdjustRowName(string adjustment, ParamRowNameAdjustType type)
+    public static void AdjustRowName(ParamEditorView curView, string adjustment, ParamRowNameAdjustType type)
     {
         if (string.IsNullOrEmpty(adjustment))
             return;
 
-        string curParamKey = Editor._activeView.Selection.GetActiveParam();
+        string curParamKey = curView.Selection.GetActiveParam();
 
         if (string.IsNullOrEmpty(curParamKey))
             return;
 
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param baseParam = curView.GetPrimaryBank().Params[curParamKey];
 
         if (baseParam == null)
             return;
 
-        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+        List<Param.Row> rows = curView.Selection.GetSelectedRows();
 
-        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+        var paramMeta = curView.GetParamData().GetParamMeta(baseParam.AppliedParamdef);
 
-        var actions = new List<EditorAction>();
+        var commands = new List<string>();
 
         foreach (Param.Row row in rows)
         {
+            var command = $"selection: Name: = ";
+
             if (type is ParamRowNameAdjustType.Prepend)
             {
-                row.Name = $"{adjustment}{row.Name}";
+                command = $"{command}{adjustment}{row.Name}";
             }
             if (type is ParamRowNameAdjustType.Postpend)
             {
-                row.Name = $"{row.Name}{adjustment}";
+                command = $"{command}{row.Name}{adjustment}";
             }
             if (type is ParamRowNameAdjustType.Remove)
             {
-                row.Name = row.Name.Replace(adjustment, "");
+                command = $"{command}{row.Name.Replace(adjustment, "")}";
             }
+            if (type is ParamRowNameAdjustType.Clear)
+            {
+                command = $"{command} ";
+            }
+
+            commands.Add(command);
         }
+
+        foreach (var entry in commands)
+        {
+            curView.MassEdit.ExecuteMassEdit(entry, curView.GetPrimaryBank(), curView.Selection);
+        }
+
     }
     #endregion
 }
-

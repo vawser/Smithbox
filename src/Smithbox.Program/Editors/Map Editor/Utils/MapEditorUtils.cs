@@ -11,11 +11,11 @@ public class MapEditorUtils
     /// </summary>
     /// <param name="baseEditor"></param>
     /// <param name="projectEntry"></param>
-    public static void UpdateAllEntityModels(Smithbox baseEditor, ProjectEntry projectEntry)
+    public static void UpdateAllEntityModels(ProjectEntry projectEntry)
     {
-        var ents = GetAllEntities(baseEditor, projectEntry);
+        var ents = GetAllEntities(projectEntry);
 
-        var mapEditor = projectEntry.MapEditor;
+        var mapEditor = projectEntry.Handler.MapEditor;
 
         foreach (var ent in ents)
         {
@@ -32,11 +32,11 @@ public class MapEditorUtils
     /// <param name="baseEditor"></param>
     /// <param name="projectEntry"></param>
     /// <returns></returns>
-    public static List<Entity> GetAllEntities(Smithbox baseEditor, ProjectEntry projectEntry)
+    public static List<Entity> GetAllEntities(ProjectEntry projectEntry)
     {
         var entities = new List<Entity>();
 
-        foreach (var entry in projectEntry.MapData.PrimaryBank.Maps)
+        foreach (var entry in projectEntry.Handler.MapData.PrimaryBank.Maps)
         {
             var wrapper = entry.Value;
 
@@ -62,11 +62,11 @@ public class MapEditorUtils
     {
         var entities = new List<Entity>();
 
-        foreach (var entry in projectEntry.MapData.PrimaryBank.Maps)
+        foreach (var entry in projectEntry.Handler.MapData.PrimaryBank.Maps)
         {
             var wrapper = entry.Value;
 
-            if (wrapper.Name != projectEntry.MapEditor.Selection.SelectedMapID)
+            if (wrapper.Name != projectEntry.Handler.MapEditor.Selection.SelectedMapID)
                 continue;
 
             if (wrapper.MapContainer == null)

@@ -17,17 +17,17 @@ public static class TextureLocator
     {
         List<ResourceDescriptor> ads = new();
 
-        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             ResourceDescriptor t = new();
             t.AssetArchiveVirtualPath = $@"map/tex/{mapID}/tex";
             ads.Add(t);
         }
-        else if (project.ProjectType is ProjectType.DES)
+        else if (project.Descriptor.ProjectType is ProjectType.DES)
         {
             var mid = mapID.Substring(0, 3);
 
-            foreach(var entry in project.FileDictionary.Entries)
+            foreach(var entry in project.Locator.FileDictionary.Entries)
             {
                 if(entry.Folder == $"/map/{mid}" && entry.Extension == "tpf")
                 {
@@ -41,7 +41,7 @@ public static class TextureLocator
         {
             var mid = mapID.Substring(0, 3);
 
-            if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
 
             }
@@ -64,13 +64,13 @@ public static class TextureLocator
                 ads.Add(t0003);
             }
 
-            if (project.ProjectType is ProjectType.DS1R)
+            if (project.Descriptor.ProjectType is ProjectType.DS1R)
             {
                 ResourceDescriptor env = new();
                 env.AssetArchiveVirtualPath = $@"map/tex/{mid}/env";
                 ads.Add(env);
             }
-            else if (project.ProjectType is ProjectType.BB or ProjectType.DS3)
+            else if (project.Descriptor.ProjectType is ProjectType.BB or ProjectType.DS3)
             {
                 ResourceDescriptor env = new();
                 env.AssetVirtualPath = $@"map/tex/{mid}/env";
@@ -89,22 +89,22 @@ public static class TextureLocator
         ad.AssetVirtualPath = null;
         ad.AssetArchiveVirtualPath = null;
 
-        if (project.ProjectType is ProjectType.DES)
+        if (project.Descriptor.ProjectType is ProjectType.DES)
         {
             ad.AssetVirtualPath = $@"chr/{id}/tex";
         }
-        else if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB)
+        else if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB)
         {
             if (binder)
                 ad.AssetArchiveVirtualPath = $@"chr/{id}/tex";
             else
                 ad.AssetVirtualPath = $@"chr/{id}/tex";
         }
-        else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.SDT)
+        else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.SDT)
         {
             ad.AssetArchiveVirtualPath = $@"chr/{id}/tex";
         }
-        else if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ad.AssetArchiveVirtualPath = $@"chr/{id}/tex";
 
@@ -198,7 +198,7 @@ public static class TextureLocator
         }
 
         // Usage of the global BaseEditor here:
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
         texpath = texpath.Replace('\\', sl);
 
         // MAP Texture

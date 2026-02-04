@@ -34,7 +34,7 @@ public class ModelSelectView
 
             if (ImGui.Begin($@"Model List##modelSelectionList", ImGuiWindowFlags.MenuBar))
             {
-                Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelSelectList);
+                FocusManager.SetFocus(EditorFocusContext.ModelEditor_FileList);
 
                 DisplayMenubar();
 

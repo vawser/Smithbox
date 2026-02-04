@@ -37,7 +37,7 @@ public class MapValidatorTool
         {
             var windowWidth = ImGui.GetWindowWidth();
 
-            var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
             var sectionHeight = windowSize.Y * 0.25f;
             var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
@@ -57,7 +57,7 @@ public class MapValidatorTool
                     ValidateEntityID(mapContainer);
 
                     // Collision Name
-                    if (Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                    if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                     {
                         ValidateReferenceProperty(mapContainer, "CollisionPartName", MapValidationType.CollisionName, true);
 
@@ -75,7 +75,7 @@ public class MapValidatorTool
                         MapValidationType.WalkRoute, true);
 
                     // Part Names
-                    if (Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                    if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                     {
                         ValidateStringArrayReferenceProperty(mapContainer, "PartNames", MapValidationType.PartNames, true);
 
@@ -329,10 +329,10 @@ public class MapValidatorTool
 
     public void ValidateParamProperty(MapContainer map, string paramName, string propName, MapValidationType type, int[] defaultValues)
     {
-        if (Project.ParamEditor == null)
+        if (Project.Handler.ParamEditor == null)
             return;
 
-        if (!Project.ParamData.PrimaryBank.Params.ContainsKey(paramName))
+        if (!Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(paramName))
             return;
 
 
@@ -365,7 +365,7 @@ public class MapValidatorTool
                     continue;
                 }
 
-                if (!Project.ParamData.PrimaryBank.Params[paramName].ContainsRow(id))
+                if (!Project.Handler.ParamData.PrimaryBank.Params[paramName].ContainsRow(id))
                 {
                     var validationEntry = new MapValidationEntry();
                     validationEntry.AssociatedEntity = obj;

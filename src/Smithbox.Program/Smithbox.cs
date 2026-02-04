@@ -1,7 +1,10 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Keybinds;
+using StudioCore.Preferences;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -13,23 +16,22 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Application.HelpWindow;
-using static StudioCore.Application.KeybindWindow;
-using static StudioCore.Application.SettingsWindow;
 using Thread = System.Threading.Thread;
 
 namespace StudioCore;
 
 public class Smithbox
 {
+    public static Smithbox Instance { get; set; }
+    public static ProjectOrchestrator Orchestrator { get; set; }
+    public static TextureManager TextureManager { get; set; }
+
     private static double _desiredFrameLengthSeconds = 1.0 / 20.0f;
     private static readonly bool _limitFrameRate = true;
 
     private static bool _initialLoadComplete;
     private static bool _firstframe = true;
     public static bool FirstFrame = true;
-
-    public static bool LowRequirementsMode;
 
     public IGraphicsContext _context;
 
@@ -41,16 +43,19 @@ public class Smithbox
 
     public SoapstoneService _soapstoneService;
 
-    public ProjectManager ProjectManager;
-
-    public SettingsWindow Settings;
-    public HelpWindow Help;
-    public KeybindWindow Keybinds;
     public DeveloperTools DebugTools;
 
-    public unsafe Smithbox(IGraphicsContext context, string version, bool isLowRequirements)
+    public PreferencesMenu PreferencesMenu = new();
+    public KeybindsMenu KeybindsMenu = new();
+
+    public ActionLogger ActionLogger;
+    public WarningLogger WarningLogger;
+
+    public RenderingBackend CurrentBackend = RenderingBackend.Vulkan;
+
+    public unsafe Smithbox(string version)
     {
-        LowRequirementsMode = isLowRequirements;
+        Instance = this;
 
         _version = version;
         _programTitle = $"Smithbox - {_version}";
@@ -61,69 +66,88 @@ public class Smithbox
 
         Setup();
 
-        _context = context;
+        if (CurrentBackend is RenderingBackend.OpenGL)
+        {
+            _context = new OpenGLCompatGraphicsContext();
+        }
+
+        if (CurrentBackend is RenderingBackend.Vulkan)
+        {
+            if (VulkanCheck.IsVulkanSupported())
+            {
+                _context = new VulkanGraphicsContext();
+            }
+            else
+            {
+                _context = new OpenGLCompatGraphicsContext();
+                CFG.Current.System_RenderingBackend = RenderingBackend.OpenGL;
+            }
+        }
+
+        // Set this so even if the user changes the CFG, the program won't suddenly switch its usage until a restart.
+        CurrentBackend = CFG.Current.System_RenderingBackend;
+
         _context.Initialize();
         _context.Window.Title = _programTitle;
 
-        PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
+        PlatformUtils.InitializeWindows(_context.Window.SdlWindowHandle);
 
-        // Hack to pass the current project status into the Resource system for now
-        // This is not to be used outside of the resource system
-        ResourceManager.BaseEditor = this;
-
-        ProjectManager = new(this);
+        Orchestrator = new();
+        ActionLogger = new();
+        WarningLogger = new();
 
         DPI.UpdateDpi(_context);
         DPI.UIScaleChanged += (_, _) =>
         {
             FontRebuildRequest = true;
         };
+
         SetupImGui();
         SetupFonts();
 
         _context.ImguiRenderer.OnSetupDone();
 
-        ProjectManager.Setup();
+        KeybindsMenu = new();
+        PreferencesMenu = new();
+        DebugTools = new();
 
-        Settings = new(this);
-        Help = new(this);
-        Keybinds = new(this);
-        DebugTools = new(this);
+        _soapstoneService = new(version);
 
-        _soapstoneService = new(this, version);
+        TextureManager = new();
     }
 
-    public void SetProgramName(ProjectEntry curProject)
-    {
-        _context.Window.Title = $"{curProject.ProjectName} - {_version}";
-    }
-
-    /// <summary>
-    /// Called when Smithbox is starting up
-    /// </summary>
     private void Setup()
     {
         CFG.Setup();
         UI.Setup();
-        KeyBindings.Setup();
+        InputManager.Init();
 
         CFG.Load();
         UI.Load();
-        KeyBindings.Load();
+
+        PreferencesUtil.Setup();
 
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
 
         BinaryReaderEx.CurrentProjectType = "";
-        BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
-        BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.System_UseDCXHeuristicOnReadFailure;
+        BinaryReaderEx.IgnoreAsserts = CFG.Current.System_Ignore_Read_Asserts;
+        BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.System_Apply_DCX_Heuristic;
+
+        CheckProgramUpdate();
+    }
+
+
+    public void SetProgramName(ProjectEntry curProject)
+    {
+        _context.Window.Title = $"{curProject.Descriptor.ProjectName} - {_version}";
     }
 
     public void SaveConfiguration()
     {
         CFG.Save();
         UI.Save();
-        KeyBindings.Save();
+        InputManager.Save();
     }
 
     /// <summary>
@@ -133,7 +157,7 @@ public class Smithbox
     {
         CFG.Save();
         UI.Save();
-        KeyBindings.Save();
+        InputManager.Save();
     }
 
     private unsafe void SetupImGui()
@@ -162,16 +186,16 @@ public class Smithbox
         string NonEnglishFontRelPath = Path.Join("Assets", "Fonts", "NotoSansCJKtc-Light.otf");
         string IconFontRelPath = Path.Join("Assets", "Fonts", "forkawesome-webfont.ttf");
 
-        if (!string.IsNullOrWhiteSpace(CFG.Current.System_English_Font) &&
-            File.Exists(CFG.Current.System_English_Font))
+        if (!string.IsNullOrWhiteSpace(CFG.Current.Interface_English_Font_Path) &&
+            File.Exists(CFG.Current.Interface_English_Font_Path))
         {
-            EnglishFontRelPath = CFG.Current.System_English_Font;
+            EnglishFontRelPath = CFG.Current.Interface_English_Font_Path;
         }
 
-        if (!string.IsNullOrWhiteSpace(CFG.Current.System_Other_Font) &&
-            File.Exists(CFG.Current.System_Other_Font))
+        if (!string.IsNullOrWhiteSpace(CFG.Current.Interface_Non_English_Font_Path) &&
+            File.Exists(CFG.Current.Interface_Non_English_Font_Path))
         {
-            NonEnglishFontRelPath = CFG.Current.System_Other_Font;
+            NonEnglishFontRelPath = CFG.Current.Interface_Non_English_Font_Path;
         }
 
         var englishFontPath = Path.Combine(StudioCore.Common.FileLocations.Resources, EnglishFontRelPath);
@@ -192,8 +216,8 @@ public class Smithbox
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
         fonts.Clear();
 
-        var scaleFine = (float)Math.Round(CFG.Current.Interface_FontSize * DPI.UIScale());
-        var scaleLarge = (float)Math.Round((CFG.Current.Interface_FontSize + 2) * DPI.UIScale());
+        var scaleFine = (float)Math.Round(CFG.Current.Interface_Font_Size * DPI.UIScale());
+        var scaleLarge = (float)Math.Round((CFG.Current.Interface_Font_Size + 2) * DPI.UIScale());
 
         ImFontConfigPtr cfg = ImGui.ImFontConfig();
 
@@ -219,15 +243,15 @@ public class Smithbox
 
         Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
 
-        if (CFG.Current.System_Font_Chinese)
+        if (CFG.Current.Interface_Include_Chinese_Symbols)
             glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
-        if (CFG.Current.System_Font_Korean)
+        if (CFG.Current.Interface_Include_Korean_Symbols)
             glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
-        if (CFG.Current.System_Font_Thai)
+        if (CFG.Current.Interface_Include_Thai_Symbols)
             glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
-        if (CFG.Current.System_Font_Vietnamese)
+        if (CFG.Current.Interface_Include_Vietnamese_Symbols)
             glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
-        if (CFG.Current.System_Font_Cyrillic)
+        if (CFG.Current.Interface_Include_Cyrillic_Symbols)
             glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
 
         ImVector<uint> outGlyphRanges;
@@ -297,7 +321,7 @@ public class Smithbox
             }
             else
             {
-                _desiredFrameLengthSeconds = 1.0 / CFG.Current.System_Frame_Rate;
+                _desiredFrameLengthSeconds = 1.0 / CFG.Current.Viewport_Frame_Rate;
             }
 
             var currentFrameTicks = sw.ElapsedTicks;
@@ -318,22 +342,22 @@ public class Smithbox
 
             snapshot = _context.Window.PumpEvents();
 
-            InputTracker.UpdateFrameInput(snapshot, _context.Window);
+            InputManager.Update(_context.Window, snapshot, deltaSeconds);
             
             Update((float)deltaSeconds);
 
             if (!_context.Window.Exists)
             {
-                ProjectManager.Exit();
+                Orchestrator.Exit();
                 Exit();
 
                 break;
             }
 
-            _context.Draw(ProjectManager);
+            _context.Draw(Orchestrator);
         }
 
-        ProjectManager.Exit();
+        Orchestrator.Exit();
         Exit();
         ResourceManager.Shutdown();
         _context.Dispose();
@@ -388,12 +412,12 @@ public class Smithbox
 
         if (FontRebuildRequest)
         {
-            _context.ImguiRenderer.Update(deltaseconds, InputTracker.FrameSnapshot, SetupFonts);
+            _context.ImguiRenderer.Update(deltaseconds, InputManager.InputSnapshot, SetupFonts);
             FontRebuildRequest = false;
         }
         else
         {
-            _context.ImguiRenderer.Update(deltaseconds, InputTracker.FrameSnapshot, null);
+            _context.ImguiRenderer.Update(deltaseconds, InputManager.InputSnapshot, null);
         }
 
         TaskManager.ThrowTaskExceptions();
@@ -451,197 +475,69 @@ public class Smithbox
 
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
 
-        ProjectCreation.Draw();
-        ProjectSettings.Draw();
-        ProjectAliasEditor.Draw();
-        ProjectEnumEditor.Draw();
-
-        // Create new project if triggered to do so
-        if (ProjectCreation.Create)
-        {
-            ProjectCreation.Create = false;
-            ProjectManager.CreateProject();
-        }
+        ActionLogger.Draw();
+        WarningLogger.Draw();
 
         if (ImGui.BeginMainMenuBar())
         {
-            // Projects
-            ProjectManager.Menubar();
-
-            // Settings
-            if (ImGui.BeginMenu("Settings"))
+            if (ImGui.BeginMenu("Projects"))
             {
-                if (ImGui.MenuItem("System"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.System);
-                }
-                UIHelper.Tooltip("Open the settings related to Smithbox's systems.");
-
-                if (ImGui.MenuItem("Viewport"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.Viewport);
-                }
-                UIHelper.Tooltip("Open the settings related to Viewport in Smithbox.");
-
-                if (ImGui.MenuItem("Interface"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.Interface);
-                }
-                UIHelper.Tooltip("Open the settings related to interface of Smithbox.");
-
-                if (ImGui.MenuItem("Map Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.MapEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Map Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Model Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.ModelEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Model Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Param Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.ParamEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Param Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Text Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.TextEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Text Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Graphics Param Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.GparamEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Gparam Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Texture Viewer"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.TextureViewer);
-                }
-                UIHelper.Tooltip("Open the settings related to Texture Viewer in Smithbox.");
+                Orchestrator.DisplayMenuOptions();
 
                 ImGui.EndMenu();
             }
 
-            // Keybinds
-            if (ImGui.BeginMenu("Keybinds"))
+            // Preferences
+            if (ImGui.MenuItem("Preferences"))
             {
-                if (ImGui.MenuItem("Common"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.Common);
-                }
-                UIHelper.Tooltip("View the common keybinds shared between all editors.");
+                PreferencesMenu.IsDisplayed = !PreferencesMenu.IsDisplayed;
+            }
 
-                if (ImGui.MenuItem("Viewport"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.Viewport);
-                }
-                UIHelper.Tooltip("View the keybinds that apply to the viewport.");
-
-                if (ImGui.MenuItem("Map Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.MapEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Map Editor.");
-
-                if (ImGui.MenuItem("Model Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.ModelEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Model Editor.");
-
-                if (ImGui.MenuItem("Param Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.ParamEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Param Editor.");
-
-                if (ImGui.MenuItem("Text Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.TextEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Text Editor.");
-
-                if (ImGui.MenuItem("Gparam Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.GparamEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Gparam Editor.");
-
-                if (ImGui.MenuItem("Texture Viewer"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.TextureViewer);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Texture Viewer.");
-
-                ImGui.EndMenu();
+            // Keybinds
+            if (ImGui.MenuItem("Shortcuts"))
+            {
+                KeybindsMenu.IsDisplayed = !KeybindsMenu.IsDisplayed;
             }
 
             // Help
             if (ImGui.BeginMenu("Help"))
             {
-                if (ImGui.MenuItem("Articles"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Articles);
-                }
-                UIHelper.Tooltip("View the articles that relate to this project.");
+                ImGui.Text("Developed by Vawser.");
+                ImGui.Text($"Smithbox Version: {_version}");
 
-                if (ImGui.MenuItem("Tutorials"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Tutorials);
-                }
-                UIHelper.Tooltip("View the tutorials that relate to this project.");
+                ImGui.Separator();
 
-                if (ImGui.MenuItem("Glossary"))
+                if (ImGui.MenuItem("Go to Wiki"))
                 {
-                    Help.ToggleWindow(SelectedHelpTab.Glossary);
+                    Process myProcess = new();
+                    myProcess.StartInfo.UseShellExecute = true;
+                    myProcess.StartInfo.FileName = "https://soulsmodding.com/doku.php?id=smithbox";
+                    myProcess.Start();
                 }
-                UIHelper.Tooltip("View the glossary that relate to this project.");
+                UIHelper.Tooltip("Go to the Github repository page.");
 
-                if (ImGui.MenuItem("Mass Edit"))
+                if (ImGui.MenuItem("Go to Github Repository"))
                 {
-                    Help.ToggleWindow(SelectedHelpTab.MassEdit);
+                    Process myProcess = new();
+                    myProcess.StartInfo.UseShellExecute = true;
+                    myProcess.StartInfo.FileName = "https://github.com/vawser/Smithbox";
+                    myProcess.Start();
                 }
-                UIHelper.Tooltip("View the mass edit help instructions.");
+                UIHelper.Tooltip("Go to the Github repository page.");
 
-                if (ImGui.MenuItem("Regex"))
+                if (CFG.Current.Developer_Enable_Tools)
                 {
-                    Help.ToggleWindow(SelectedHelpTab.Regex);
+                    DebugTools.DisplayMenu();
                 }
-                UIHelper.Tooltip("View the regex help instructions.");
-
-                if (ImGui.MenuItem("Links"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Links);
-                }
-                UIHelper.Tooltip("View the community links.");
-
-                if (ImGui.MenuItem("Credits"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Credits);
-                }
-                UIHelper.Tooltip("View the credits.");
 
                 ImGui.EndMenu();
             }
 
-#if DEBUG
-            // Debugging
-            DebugTools.DisplayMenu();
-#endif
-
             // Action Logger
-            TaskLogs.DisplayActionLoggerBar();
-            TaskLogs.DisplayActionLoggerWindow();
+            ActionLogger.DisplayTopbarToggle();
 
             // Warning Logger
-            TaskLogs.DisplayWarningLoggerBar();
-            TaskLogs.DisplayWarningLoggerWindow();
+            WarningLogger.DisplayTopbarToggle();
 
             ImGui.EndMainMenuBar();
         }
@@ -653,15 +549,35 @@ public class Smithbox
             ImGui.SetNextWindowFocus();
         }
 
-        ProjectManager.Update(deltaseconds);
+        Orchestrator.Update(deltaseconds);
 
-        Settings.Display();
-        Help.Display();
-        Keybinds.Display();
         DebugTools.Display();
+
+        KeybindsMenu.Draw();
+        PreferencesMenu.Draw();
 
         // Tool windows
         ColorPicker.DisplayColorPicker();
+
+        if (_programUpdateAvailable)
+        {
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Update"))
+            {
+                if (ImGui.MenuItem("Go to Release"))
+                {
+                    Process myProcess = new();
+                    myProcess.StartInfo.UseShellExecute = true;
+                    myProcess.StartInfo.FileName = _releaseUrl;
+                    myProcess.Start();
+                }
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.Separator();
+        }
 
         ImGui.PopStyleVar(2);
 
@@ -683,6 +599,42 @@ public class Smithbox
         }
 
         _firstframe = false;
+    }
+
+    private bool _programUpdateAvailable = false;
+    private string _releaseUrl = "";
+
+    private void CheckProgramUpdate()
+    {
+        if (!CFG.Current.System_Check_Program_Update)
+            return;
+
+        try
+        {
+            GitHubClient gitHubClient = new(new ProductHeaderValue("Smithbox"));
+            Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
+            var isVer = false;
+            var verstring = "";
+            foreach (var c in release.TagName)
+            {
+                if (char.IsDigit(c) || (isVer && c == '.'))
+                {
+                    verstring += c;
+                    isVer = true;
+                }
+                else
+                {
+                    isVer = false;
+                }
+            }
+
+            if (Version.Parse(verstring) > Version.Parse(_version.ToString()))
+            {
+                _programUpdateAvailable = true;
+                _releaseUrl = release.HtmlUrl;
+            }
+        }
+        catch (Exception) { }
     }
 }
 

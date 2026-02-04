@@ -20,7 +20,7 @@ public static class PrefabUtils
 
     public static string GetPrefabStorageDirectory(ProjectEntry curProject)
     {
-        var prefabStorageDir = @$"{curProject.ProjectPath}/.smithbox/MSB/Prefabs";
+        var prefabStorageDir = @$"{curProject.Descriptor.ProjectPath}/.smithbox/MSB/Prefabs";
 
         if(!Directory.Exists(prefabStorageDir))
         {

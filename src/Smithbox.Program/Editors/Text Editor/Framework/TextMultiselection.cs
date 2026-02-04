@@ -1,20 +1,19 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using System.Collections.Generic;
 
 namespace StudioCore.Editors.TextEditor;
 
 public class TextMultiselection
 {
+    private TextEditorView Parent;
+
     public SortedDictionary<int, FMG.Entry> StoredEntries = new();
 
-    private TextEditorScreen Editor;
-    private KeyBind AssociatedKeybind;
-
-    public TextMultiselection(TextEditorScreen screen, KeyBind associatedKeyBind)
+    public TextMultiselection(TextEditorView view)
     {
-        Editor = screen;
-        AssociatedKeybind = associatedKeyBind;
+        Parent = view;
     }
 
     public bool HasValidMultiselection()
@@ -35,7 +34,7 @@ public class TextMultiselection
     public void HandleMultiselect(int currentSelectionIndex, int currentIndex)
     {
         // Multi-Select: Range Select
-        if (InputTracker.GetKey(Veldrid.Key.LShift))
+        if (InputManager.HasShiftDown())
         {
             var start = currentSelectionIndex;
             var end = currentIndex;
@@ -50,12 +49,12 @@ public class TextMultiselection
             {
                 if (!StoredEntries.ContainsKey(k))
                 {
-                    if (Editor.Selection.SelectedFmgWrapper != null && Editor.Selection.SelectedFmgWrapper.File != null)
+                    if (Parent.Selection.SelectedFmgWrapper != null && Parent.Selection.SelectedFmgWrapper.File != null)
                     {
-                        if (k < Editor.Selection.SelectedFmgWrapper.File.Entries.Count)
+                        if (k < Parent.Selection.SelectedFmgWrapper.File.Entries.Count)
                         {
-                            var curEntry = Editor.Selection.SelectedFmgWrapper.File.Entries[k];
-                            if (Editor.Filters.IsFmgEntryFilterMatch(curEntry))
+                            var curEntry = Parent.Selection.SelectedFmgWrapper.File.Entries[k];
+                            if (Parent.Filters.IsFmgEntryFilterMatch(curEntry))
                             {
                                 StoredEntries.Add(k, curEntry);
                             }
@@ -65,7 +64,7 @@ public class TextMultiselection
             }
         }
         // Multi-Select Mode
-        else if (InputTracker.GetKey(AssociatedKeybind))
+        else if (InputManager.HasCtrlDown())
         {
             if (StoredEntries.ContainsKey(currentIndex) && StoredEntries.Count > 1)
             {
@@ -75,11 +74,11 @@ public class TextMultiselection
             {
                 if (!StoredEntries.ContainsKey(currentIndex))
                 {
-                    if (Editor.Selection.SelectedFmgWrapper != null &&  Editor.Selection.SelectedFmgWrapper.File != null)
+                    if (Parent.Selection.SelectedFmgWrapper != null && Parent.Selection.SelectedFmgWrapper.File != null)
                     {
-                        if (currentIndex < Editor.Selection.SelectedFmgWrapper.File.Entries.Count)
+                        if (currentIndex < Parent.Selection.SelectedFmgWrapper.File.Entries.Count)
                         {
-                            var curEntry = Editor.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
+                            var curEntry = Parent.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
                             StoredEntries.Add(currentIndex, curEntry);
                         }
                     }
@@ -91,11 +90,11 @@ public class TextMultiselection
         {
             StoredEntries.Clear();
 
-            if (Editor.Selection.SelectedFmgWrapper != null && Editor.Selection.SelectedFmgWrapper.File != null)
+            if (Parent.Selection.SelectedFmgWrapper != null && Parent.Selection.SelectedFmgWrapper.File != null)
             {
-                if (currentIndex < Editor.Selection.SelectedFmgWrapper.File.Entries.Count)
+                if (currentIndex < Parent.Selection.SelectedFmgWrapper.File.Entries.Count)
                 {
-                    var curEntry = Editor.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
+                    var curEntry = Parent.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
                     StoredEntries.Add(currentIndex, curEntry);
                 }
             }

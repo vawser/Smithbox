@@ -94,22 +94,22 @@ public static class LocatorUtils
 
     public static string GetAssetPath(ProjectEntry project, string relpath)
     {
-        if (project.ProjectPath != null)
+        if (project.Descriptor.ProjectPath != null)
         {
-            var modpath = Path.Join(project.ProjectPath, relpath);
+            var modpath = Path.Join(project.Descriptor.ProjectPath, relpath);
             if (File.Exists(modpath))
                 return modpath;
         }
 
-        return Path.Join(project.DataPath, relpath);
+        return Path.Join(project.Descriptor.DataPath, relpath);
     }
 
     public static string GetOverridenFilePath(ProjectEntry project, string relpath)
     {
-        var rootPath = Path.Join(project.DataPath, relpath);
-        var modPath = Path.Join(project.ProjectPath, relpath);
+        var rootPath = Path.Join(project.Descriptor.DataPath, relpath);
+        var modPath = Path.Join(project.Descriptor.ProjectPath, relpath);
 
-        if (project.ProjectPath != null && File.Exists(modPath))
+        if (project.Descriptor.ProjectPath != null && File.Exists(modPath))
             return modPath;
 
         if (File.Exists($@"{rootPath}"))

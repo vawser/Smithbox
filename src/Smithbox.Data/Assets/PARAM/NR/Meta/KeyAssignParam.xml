@@ -38,6 +38,20 @@
     AltName="Description ID"
     Wiki="The description to use for this key assignment." 
     FmgRef="Modern_Menu_Line_Help" />
+	
+	<direction
+	AltName="Direction"
+	Wiki="For pad sticks. Works for both X and Y axes." />
+	
+	<unkKey
+	AltName="Unknown Key"
+	Wiki="" 
+	Refs="KeyAssignParam" />
+	
+	<sharedKey
+	AltName="Shared Pad Key"
+	Wiki="Pad action shared with this when holding Y/Triangle." 
+	Refs="KeyAssignParam" />
     
     <reserved
     AltName=""

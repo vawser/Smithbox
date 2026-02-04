@@ -37,7 +37,7 @@ public class ActionManager
         NotifyHandlers(a.Execute());
         UndoStack.Push(a);
         RedoStack.Clear();
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
     }
 
     public void PushSubManager(ActionManager child)
@@ -46,7 +46,7 @@ public class ActionManager
         childList.Reverse();
         UndoStack.Push(new CompoundAction(childList));
         RedoStack.Clear();
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
     }
 
     public EditorAction PeekUndoAction()
@@ -69,7 +69,7 @@ public class ActionManager
         EditorAction a = UndoStack.Pop();
         NotifyHandlers(a.Undo());
         RedoStack.Push(a);
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
     }
 
     public void UndoAllAction()
@@ -84,7 +84,7 @@ public class ActionManager
             EditorAction a = UndoStack.Pop();
             NotifyHandlers(a.Undo());
             RedoStack.Push(a);
-            UICache.ClearCaches();
+            CacheBank.ClearCaches();
         }
     }
 
@@ -98,7 +98,7 @@ public class ActionManager
         EditorAction a = RedoStack.Pop();
         NotifyHandlers(a.Execute());
         UndoStack.Push(a);
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
     }
 
     public bool CanUndo()

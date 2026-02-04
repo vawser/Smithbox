@@ -1,28 +1,172 @@
 ﻿using Microsoft.Extensions.Logging;
+using Octokit;
 using StudioCore.Application;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace StudioCore.Editors.TextEditor;
 
 public static class TextUtils
 {
-    /// <summary>
-    /// Whether the current project type supports the Text Editor
-    /// </summary>
-    public static bool IsSupportedProjectType()
+    public static string GetPrimaryLanguage()
     {
-        return true;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        switch(curProject.Descriptor.ProjectType)
+        {
+            case ProjectType.DES:  return CFG.Current.TextEditor_Primary_Language_DES;
+            case ProjectType.DS1:  return CFG.Current.TextEditor_Primary_Language_DS1;
+            case ProjectType.DS1R: return CFG.Current.TextEditor_Primary_Language_DS1R;
+            case ProjectType.DS2:  return CFG.Current.TextEditor_Primary_Language_DS2;
+            case ProjectType.DS2S: return CFG.Current.TextEditor_Primary_Language_DS2S;
+            case ProjectType.BB:   return CFG.Current.TextEditor_Primary_Language_BB;
+            case ProjectType.DS3:  return CFG.Current.TextEditor_Primary_Language_DS3;
+            case ProjectType.SDT:  return CFG.Current.TextEditor_Primary_Language_SDT;
+            case ProjectType.ER:   return CFG.Current.TextEditor_Primary_Language_ER;
+            case ProjectType.AC6:  return CFG.Current.TextEditor_Primary_Language_AC6;
+            case ProjectType.NR:   return CFG.Current.TextEditor_Primary_Language_NR;
+        }
+
+        return "English";
     }
+
+    public static LanguageDescriptor GetPrimaryLanguageDescriptor()
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject.Handler.TextData != null)
+        {
+            var primaryLang = curProject.Handler.TextData.FmgDescriptors.Languages.FirstOrDefault(e => e.Language == GetPrimaryLanguage());
+
+            return primaryLang;
+        }
+
+        return null;
+    }
+
+    public static LanguageDescriptor GetContainerLanguageDescriptor(string path)
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject.Handler.TextData != null)
+        {
+            var containerLang = curProject.Handler.TextData.FmgDescriptors.Languages.FirstOrDefault(e => path.Contains(e.Abbreviation));
+
+            return containerLang;
+        }
+
+        return null;
+    }
+    public static FmgContainerDescriptor GetContainerDescriptor(FileDictionaryEntry entry)
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject.Handler.TextData != null)
+        {
+            var desc = curProject.Handler.TextData.FmgDescriptors.Containers.FirstOrDefault(e => e.SimpleName == entry.Filename);
+
+            return desc;
+        }
+
+        return null;
+    }
+
+
+    public static void ValidateLanguage()
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        // Validate that the current CFG language exists, other reset to English
+        if (curProject.Handler.TextData != null)
+        {
+            var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+            switch (curProject.Descriptor.ProjectType)
+            {
+                case ProjectType.DES:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DES))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_DES = "English";
+                    }
+                    break;
+                case ProjectType.DS1:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DS1))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_DS1 = "English";
+                    }
+                    break;
+                case ProjectType.DS1R:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DS1R))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_DS1R = "English";
+                    }
+                    break;
+                case ProjectType.DS2:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DS2))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_DS2 = "English";
+                    }
+                    break;
+                case ProjectType.DS2S:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DS2S))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_DS2S = "English";
+                    }
+                    break;
+                case ProjectType.DS3:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DS3))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_DS3 = "English";
+                    }
+                    break;
+                case ProjectType.BB:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_BB))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_BB = "English";
+                    }
+                    break;
+                case ProjectType.SDT:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_SDT))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_SDT = "English";
+                    }
+                    break;
+                case ProjectType.ER:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_ER))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_ER = "English";
+                    }
+                    break;
+                case ProjectType.AC6:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_AC6))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_AC6 = "English";
+                    }
+                    break;
+                case ProjectType.NR:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_NR))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_NR = "English";
+                    }
+                    break;
+            }
+
+        }
+    }
+
+
+
+    // TODO: remove the defunct stuff below once FMG descriptor change is done
 
     /// <summary>
     /// Whether the current project supports the passed category
     /// </summary>
     public static bool IsSupportedLanguage(ProjectEntry project, TextContainerCategory category)
     {
-        switch (project.ProjectType)
+        switch (project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 return CategoryGroupings.DES_Languages.Contains(category);
@@ -53,7 +197,7 @@ public static class TextUtils
 
     public static List<TextContainerCategory> GetSupportedLanguages(ProjectEntry project)
     {
-        switch (project.ProjectType)
+        switch (project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 return CategoryGroupings.DES_Languages;
@@ -89,7 +233,7 @@ public static class TextUtils
     {
         var name = $"Unknown";
 
-        switch(project.ProjectType)
+        switch(project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -440,7 +584,7 @@ public static class TextUtils
     {
         var name = $"";
 
-        switch (project.ProjectType)
+        switch (project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -764,7 +908,7 @@ public static class TextUtils
     {
         var name = $"Unknown";
 
-        switch (project.ProjectType)
+        switch (project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -1114,7 +1258,7 @@ public static class TextUtils
     {
         var name = $"Unknown";
 
-        switch (project.ProjectType)
+        switch (project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -1619,7 +1763,7 @@ public static class TextUtils
         string pathLower = path.ToLowerInvariant();
 
         // Special-case: DES the msg folder has Japanese, so default to Japanese.
-        if(project.ProjectType is ProjectType.DES)
+        if(project.Descriptor.ProjectType is ProjectType.DES)
         {
             group = TextContainerCategory.Japanese;
         }
@@ -1838,9 +1982,9 @@ public static class TextUtils
 
     public static bool IsObsoleteContainer(ProjectEntry project, FileDictionaryEntry entry)
     {
-        if (!CFG.Current.TextEditor_EnableObsoleteContainerLoad)
+        if (!CFG.Current.TextEditor_Container_List_Display_Obsolete_Containers)
         {
-            switch (project.ProjectType)
+            switch (project.Descriptor.ProjectType)
             {
                 // NR DLC update means these containers are no longer present
                 case ProjectType.NR:
@@ -1855,7 +1999,7 @@ public static class TextUtils
 
     public static string GetStoredTextDirectory(ProjectEntry project)
     {
-        return Path.Join(project.ProjectPath, ".smithbox", "Workflow", "Exported Text");
+        return Path.Join(project.Descriptor.ProjectPath, ".smithbox", "Workflow", "Exported Text");
     }
 
     public static List<string> GetStoredContainerWrappers(ProjectEntry project)

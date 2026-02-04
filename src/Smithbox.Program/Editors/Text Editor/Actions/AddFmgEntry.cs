@@ -5,7 +5,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class AddFmgEntry : EditorAction
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
 
     private FMG Fmg;
     private FMG.Entry NewEntry;
@@ -13,9 +13,9 @@ public class AddFmgEntry : EditorAction
 
     private TextContainerWrapper Info;
 
-    public AddFmgEntry(TextEditorScreen editor, TextContainerWrapper info, FMG.Entry sourceEntry, FMG.Entry newEntry, int newID)
+    public AddFmgEntry(TextEditorView view, TextContainerWrapper info, FMG.Entry sourceEntry, FMG.Entry newEntry, int newID)
     {
-        Editor = editor;
+        Parent = view;
         Info = info;
         Fmg = sourceEntry.Parent;
         NewEntry = newEntry;
@@ -48,7 +48,7 @@ public class AddFmgEntry : EditorAction
 
         Info.IsModified = true;
 
-        Editor.DifferenceManager.TrackFmgDifferences();
+        Parent.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }
@@ -66,7 +66,7 @@ public class AddFmgEntry : EditorAction
 
         Info.IsModified = false;
 
-        Editor.DifferenceManager.TrackFmgDifferences();
+        Parent.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }

@@ -8,7 +8,7 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public static class FmgDifferenceFinder
 {
-    public static FmgDifferenceResult GetFmgDifferenceResult(TextEditorScreen editor, TextFmgWrapper srcFmg, TextFmgWrapper compareFmg)
+    public static FmgDifferenceResult GetFmgDifferenceResult(TextEditorView view, TextFmgWrapper srcFmg, TextFmgWrapper compareFmg)
     {
         var result = new FmgDifferenceResult();
         result.SourceFmgWrapper = srcFmg;
@@ -20,7 +20,7 @@ public static class FmgDifferenceFinder
         foreach (var entry in srcFmg.File.Entries)
         {
             // DS2
-            if (editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (view.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 if (srcEntries.ContainsKey(entry.ID))
                 {
@@ -56,7 +56,7 @@ public static class FmgDifferenceFinder
             }
 
             // DS2
-            if (editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (view.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 if (srcEntries.ContainsKey(entry.ID))
                 {

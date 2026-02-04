@@ -19,9 +19,6 @@ public class FileSelection
     public FileBrowserScreen Editor;
     public ProjectEntry Project;
 
-    public FsEntry SelectedEntry = null;
-    public string SelectedEntryID = "";
-
     public FolderNode SelectedVfsFolder = null;
     public FileDictionaryEntry SelectedVfsFile = null;
 
@@ -37,17 +34,8 @@ public class FileSelection
         Project = project;
     }
 
-    public void SelectFile(string id, FsEntry selectedEntry)
-    {
-        SelectedEntryID = id;
-        SelectedEntry = selectedEntry;
-    }
-
     public void UpdateVfsFileSelection(FileDictionaryEntry targetFile)
     {
-        SelectedEntryID = "";
-        SelectedEntry = null;
-
         SelectedVfsFile = targetFile;
         InternalFileList = new();
         InternalTextureList = new();
@@ -56,7 +44,7 @@ public class FileSelection
 
         if (binderType is ResourceContainerType.None)
         {
-            var fileData = Project.VanillaFS.ReadFile(targetFile.Path);
+            var fileData = Project.VFS.VanillaFS.ReadFile(targetFile.Path);
             if (fileData != null)
             {
                 if(LocatorUtils.IsTPF(targetFile.Path))
@@ -79,11 +67,11 @@ public class FileSelection
 
         if (binderType is ResourceContainerType.BND)
         {
-            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 try
                 {
-                    var fileData = Project.VanillaFS.ReadFile(targetFile.Path);
+                    var fileData = Project.VFS.VanillaFS.ReadFile(targetFile.Path);
                     if (fileData != null)
                     {
                         var binder = new BND3Reader(fileData.Value);
@@ -122,7 +110,7 @@ public class FileSelection
             {
                 try
                 {
-                    var fileData = Project.VanillaFS.ReadFile(targetFile.Path);
+                    var fileData = Project.VFS.VanillaFS.ReadFile(targetFile.Path);
                     if (fileData != null)
                     {
                         var binder = new BND4Reader(fileData.Value);
@@ -169,7 +157,7 @@ public class FileSelection
 
             try
             {
-                bhd = (Memory<byte>)Project.VanillaFS.ReadFile(targetBhdPath);
+                bhd = (Memory<byte>)Project.VFS.VanillaFS.ReadFile(targetBhdPath);
             }
             catch (Exception e)
             {
@@ -178,7 +166,7 @@ public class FileSelection
 
             try
             {
-                bdt = (Memory<byte>)Project.VanillaFS.ReadFile(targetBdtPath);
+                bdt = (Memory<byte>)Project.VFS.VanillaFS.ReadFile(targetBdtPath);
             }
             catch (Exception e)
             {
@@ -187,7 +175,7 @@ public class FileSelection
 
             if (bhd.Length != 0 && bdt.Length != 0)
             {
-                if (Project.ProjectType is ProjectType.DES
+                if (Project.Descriptor.ProjectType is ProjectType.DES
                     or ProjectType.DS1
                     or ProjectType.DS1R)
                 {

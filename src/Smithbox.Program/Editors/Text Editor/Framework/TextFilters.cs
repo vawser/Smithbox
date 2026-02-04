@@ -2,17 +2,18 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.TextEditor;
 
 public class TextFilters
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private ProjectEntry Project;
 
-    public TextFilters(TextEditorScreen editor, ProjectEntry project)
+    public TextFilters(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -176,6 +177,11 @@ public class TextFilters
     /// </summary>
     public void DisplayFmgEntryFilterSearch()
     {
+        if(InputManager.IsPressed(KeybindID.TextEditor_Focus_Searchbar))
+        {
+            ImGui.SetKeyboardFocusHere();
+        }
+
         ImGui.InputText($"Search##fmgEntryFilterSearch", ref FmgEntryFilterInput, 255);
         UIHelper.WideTooltip("Chain commands by using the + symbol between them.\n\nSpecial commands:\nmodified - Displays rows where the text is different to vanilla.\nunique - Displays rows that are unique to your project.");
 
@@ -184,14 +190,14 @@ public class TextFilters
         {
             if (FmgEntryFilterInput == "")
             {
-                Editor.Selection.FocusFmgEntrySelection = true;
+                Parent.Selection.FocusFmgEntrySelection = true;
             }
         }
 
         // Focus after clicking off
         if (ImGui.IsItemDeactivated())
         {
-            Editor.Selection.FocusFmgEntrySelection = true;
+            Parent.Selection.FocusFmgEntrySelection = true;
         }
 
         ImGui.SameLine();
@@ -213,7 +219,7 @@ public class TextFilters
 
         if (input == "modified")
         {
-            if(Editor.DifferenceManager.IsDifferentToVanilla(curEntry))
+            if(Parent.DifferenceManager.IsDifferentToVanilla(curEntry))
             {
                 return true;
             }
@@ -222,7 +228,7 @@ public class TextFilters
         }
         else if (input == "unique")
         {
-            if (Editor.DifferenceManager.IsUniqueToProject(curEntry))
+            if (Parent.DifferenceManager.IsUniqueToProject(curEntry))
             {
                 return true;
             }
@@ -266,11 +272,11 @@ public class TextFilters
                     isValid = false;
             }
         }
-        else if(!CFG.Current.TextEditor_DisplayNullEntries && input == "" && text == null)
+        else if(!CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text && input == "" && text == null)
         {
             isValid = false;
         }
-        else if (CFG.Current.TextEditor_DisplayNullEntries && input != "" && text == null)
+        else if (CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text && input != "" && text == null)
         {
             isValid = false;
         }

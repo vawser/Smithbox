@@ -14,7 +14,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamQuickEdit
 {
-    private GparamEditorScreen Editor;
+    private GparamEditorView Parent;
     private ProjectEntry Project;
 
     private string _targetFileString = "";
@@ -34,9 +34,9 @@ public class GparamQuickEdit
 
     public RandomNumberGenerator RandomSource;
 
-    public GparamQuickEdit(GparamEditorScreen editor, ProjectEntry project)
+    public GparamQuickEdit(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
 
         RandomSource = RandomNumberGenerator.Create();
@@ -60,7 +60,7 @@ public class GparamQuickEdit
         ImGui.Separator();
         if (displayFileFilterSection)
         {
-            UIHelper.WrappedText($"File arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+            UIHelper.WrappedText($"File arguments can be chained by using the '+' character.");
             UIHelper.WrappedText("");
             UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
             UIHelper.WrappedText("Targets all files.");
@@ -83,7 +83,7 @@ public class GparamQuickEdit
         ImGui.Separator();
         if (displayGroupFilterSection)
         {
-            UIHelper.WrappedText($"Group arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+            UIHelper.WrappedText($"Group arguments can be chained by using the '+' character.");
             UIHelper.WrappedText("");
             UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
             UIHelper.WrappedText("Targets all groups.");
@@ -106,7 +106,7 @@ public class GparamQuickEdit
         ImGui.Separator();
         if (displayFieldFilterSection)
         {
-            UIHelper.WrappedText($"Field arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+            UIHelper.WrappedText($"Field arguments can be chained by using the '+' character.");
             UIHelper.WrappedText("");
             UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
             UIHelper.WrappedText("Targets all fields.");
@@ -129,7 +129,7 @@ public class GparamQuickEdit
         ImGui.Separator();
         if (displayValueFilterSection)
         {
-            UIHelper.WrappedText($"Filter arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+            UIHelper.WrappedText($"Filter arguments can be chained by using the '+' character.");
             UIHelper.WrappedText("");
             UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
             UIHelper.WrappedText("Targets all rows.");
@@ -137,16 +137,16 @@ public class GparamQuickEdit
             UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
             UIHelper.WrappedText("Targets current value row selection.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_ID}:[<x>]");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"id:[<x>]");
             UIHelper.WrappedText("Targets all rows with <x> ID.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Index}:[<x>]");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"index:[<x>]");
             UIHelper.WrappedText("Targets all rows with <x> row index.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_TimeOfDay}:[<x>]");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"tod:[<x>]");
             UIHelper.WrappedText("Targets all rows with <x> Time of Day.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Value}:[<x>]");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"value:[<x>]");
             UIHelper.WrappedText("Targets all rows with <x> Value. For multi-values split them like so: [<x>,<x>]");
             UIHelper.WrappedText("");
         }
@@ -161,27 +161,27 @@ public class GparamQuickEdit
         ImGui.Separator();
         if (displayValueCommandSection)
         {
-            UIHelper.WrappedText($"Command arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+            UIHelper.WrappedText($"Command arguments can be chained by using the '+' character.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Set}:[<x>]");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"set:[<x>]");
             UIHelper.WrappedText("Sets target rows to <x> Value.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Add}:[<x>]");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"add:[<x>]");
             UIHelper.WrappedText("Adds <x> to the Value of the target rows.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Subtract}:[<x>]");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"sub:[<x>]");
             UIHelper.WrappedText("Subtracts <x> from the Value of the target rows.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Multiply}:[<x>]");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"mult:[<x>]");
             UIHelper.WrappedText("Multiplies the Value of the target rows by <x>.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_SetByRow}:[<x>]");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"rowset:[<x>]");
             UIHelper.WrappedText("Sets target rows to the Value of row ID <x>.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Restore}");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"restore");
             UIHelper.WrappedText("Sets target rows to their vanilla Value.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Random}:[<x>][<y>]");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"random:[<x>][<y>]");
             UIHelper.WrappedText("Sets target rows to a random value between <x> and <y>. First is the minimum, second is the maximum.");
             UIHelper.WrappedText("");
         }
@@ -251,39 +251,39 @@ public class GparamQuickEdit
         _targetFieldString = "";
         _valueFilterString = "";
 
-        if (Editor.Selection._selectedGparamKey != null)
+        if (Parent.Selection._selectedGparamKey != null)
         {
-            UpdateFileFilter(Editor.Selection._selectedGparamKey);
+            UpdateFileFilter(Parent.Selection._selectedGparamKey);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Editor.Selection._selectedParamGroup != null)
+        if (Parent.Selection._selectedParamGroup != null)
         {
-            UpdateGroupFilter(Editor.Selection._selectedParamGroup.Key);
+            UpdateGroupFilter(Parent.Selection._selectedParamGroup.Key);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Editor.Selection._selectedParamField != null)
+        if (Parent.Selection._selectedParamField != null)
         {
-            UpdateFieldFilter(Editor.Selection._selectedParamField.Key);
+            UpdateFieldFilter(Parent.Selection._selectedParamField.Key);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Editor.Selection._selectedParamField != null)
+        if (Parent.Selection._selectedParamField != null)
         {
             var fieldIndex = -1;
-            for (int i = 0; i < Editor.Selection._selectedParamField.Values.Count; i++)
+            for (int i = 0; i < Parent.Selection._selectedParamField.Values.Count; i++)
             {
-                if (Editor.Selection._selectedParamField.Values[i] == Editor.Selection._selectedFieldValue)
+                if (Parent.Selection._selectedParamField.Values[i] == Parent.Selection._selectedFieldValue)
                 {
                     fieldIndex = i;
                     break;
@@ -310,7 +310,7 @@ public class GparamQuickEdit
 
         List<EditorAction> actionList = new();
 
-        foreach (var entry in Project.GparamData.PrimaryBank.Entries)
+        foreach (var entry in Project.Handler.GparamData.PrimaryBank.Entries)
         {
             if (IsTargetFile(entry.Key))
             {
@@ -359,7 +359,7 @@ public class GparamQuickEdit
             {
 
                 var compoundAction = new CompoundAction(actionList);
-                Editor.EditorActionManager.ExecuteAction(compoundAction);
+                Parent.ActionManager.ExecuteAction(compoundAction);
             }
         }
         else
@@ -372,7 +372,7 @@ public class GparamQuickEdit
     {
         var match = false;
 
-        var commands = _targetFileString.Split($"{CFG.Current.Gparam_QuickEdit_Chain}");
+        var commands = _targetFileString.Split($"+");
         foreach (var command in commands)
         {
             if (command == "*")
@@ -383,7 +383,7 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Editor.Selection._selectedGparamKey == entry.Filename)
+                if (Parent.Selection._selectedGparamKey == entry.Filename)
                 {
                     match = true;
                     continue;
@@ -391,7 +391,7 @@ public class GparamQuickEdit
             }
 
             Match filterMatch = null;
-            filterMatch = Regex.Match(command, $@"{CFG.Current.Gparam_QuickEdit_File}:\[(.*)\]");
+            filterMatch = Regex.Match(command, $@"file:\[(.*)\]");
 
             if (filterMatch.Success && filterMatch.Groups.Count >= 2)
             {
@@ -410,7 +410,7 @@ public class GparamQuickEdit
     {
         var match = false;
 
-        var commands = _targetGroupString.Split($"{CFG.Current.Gparam_QuickEdit_Chain}");
+        var commands = _targetGroupString.Split($"+");
         foreach (var command in commands)
         {
             if (command == "*")
@@ -421,7 +421,7 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Editor.Selection._selectedParamGroup.Key == entry.Key || Editor.Selection._selectedParamGroup.Name == entry.Name)
+                if (Parent.Selection._selectedParamGroup.Key == entry.Key || Parent.Selection._selectedParamGroup.Name == entry.Name)
                 {
                     match = true;
                     continue;
@@ -429,7 +429,7 @@ public class GparamQuickEdit
             }
 
             Match filterMatch = null;
-            filterMatch = Regex.Match(command, $@"{CFG.Current.Gparam_QuickEdit_Group}:\[(.*)\]");
+            filterMatch = Regex.Match(command, $@"group:\[(.*)\]");
 
             if (filterMatch.Success && filterMatch.Groups.Count >= 2)
             {
@@ -448,7 +448,7 @@ public class GparamQuickEdit
     {
         var match = false;
 
-        var commands = _targetFieldString.Split($"{CFG.Current.Gparam_QuickEdit_Chain}");
+        var commands = _targetFieldString.Split($"+");
         foreach (var command in commands)
         {
             if (command == "*")
@@ -459,7 +459,7 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Editor.Selection._selectedParamField.Key == entry.Key)
+                if (Parent.Selection._selectedParamField.Key == entry.Key)
                 {
                     match = true;
                     continue;
@@ -467,7 +467,7 @@ public class GparamQuickEdit
             }
 
             Match filterMatch = null;
-            filterMatch = Regex.Match(command, $@"{CFG.Current.Gparam_QuickEdit_Field}:\[(.*)\]");
+            filterMatch = Regex.Match(command, $@"field:\[(.*)\]");
 
             if (filterMatch.Success && filterMatch.Groups.Count >= 2)
             {
@@ -487,11 +487,11 @@ public class GparamQuickEdit
     {
         if (_targetFileString != "")
         {
-            _targetFileString = $"{_targetFileString}+{CFG.Current.Gparam_QuickEdit_File}:[{name}]";
+            _targetFileString = $"{_targetFileString}+file:[{name}]";
         }
         else
         {
-            _targetFileString = $"{CFG.Current.Gparam_QuickEdit_File}:[{name}]";
+            _targetFileString = $"file:[{name}]";
         }
     }
     public void UpdateGroupFilter(string key)
@@ -500,11 +500,11 @@ public class GparamQuickEdit
 
         if (_targetGroupString != "")
         {
-            _targetGroupString = $"{_targetGroupString}+{CFG.Current.Gparam_QuickEdit_Group}:[{input}]";
+            _targetGroupString = $"{_targetGroupString}+group:[{input}]";
         }
         else
         {
-            _targetGroupString = $"{CFG.Current.Gparam_QuickEdit_Group}:[{input}]";
+            _targetGroupString = $"group:[{input}]";
         }
     }
     public void UpdateFieldFilter(string key)
@@ -513,22 +513,22 @@ public class GparamQuickEdit
 
         if (_targetFieldString != "")
         {
-            _targetFieldString = $"{_targetFieldString}+{CFG.Current.Gparam_QuickEdit_Field}:[{input}]";
+            _targetFieldString = $"{_targetFieldString}+field:[{input}]";
         }
         else
         {
-            _targetFieldString = $"{CFG.Current.Gparam_QuickEdit_Field}:[{input}]";
+            _targetFieldString = $"field:[{input}]";
         }
     }
     public void UpdateValueRowFilter(int index)
     {
         if (_valueFilterString != "")
         {
-            _valueFilterString = $"{_valueFilterString}+{CFG.Current.Gparam_QuickEdit_Index}:[{index}]";
+            _valueFilterString = $"{_valueFilterString}+index:[{index}]";
         }
         else
         {
-            _valueFilterString = $"{CFG.Current.Gparam_QuickEdit_Index}:[{index}]";
+            _valueFilterString = $"index:[{index}]";
         }
     }
 
@@ -543,7 +543,7 @@ public class GparamQuickEdit
         }
 
         // Filter arguments
-        var filters = _valueFilterString.Split($"{CFG.Current.Gparam_QuickEdit_Chain}");
+        var filters = _valueFilterString.Split($"+");
         foreach (var filter in filters)
         {
             FilterAll(targetField, filter);
@@ -555,7 +555,7 @@ public class GparamQuickEdit
         }
 
         // Command arguments
-        var commands = _valueCommandString.Split($"{CFG.Current.Gparam_QuickEdit_Chain}");
+        var commands = _valueCommandString.Split($"+");
         foreach (var command in commands)
         {
             CommandAdjust(targetField, command, EditEffectType.Set, gparamName, groupName);
@@ -578,17 +578,17 @@ public class GparamQuickEdit
         bool foundValue = false;
 
         // Find vanilla value
-        foreach (var entry in Project.GparamData.VanillaBank.Entries)
+        foreach (var entry in Project.Handler.GparamData.VanillaBank.Entries)
         {
-            if (entry.Key.Filename == Editor.Selection._selectedGparamKey)
+            if (entry.Key.Filename == Parent.Selection._selectedGparamKey)
             {
                 foreach (var paramGroup in entry.Value.Params)
                 {
-                    if (paramGroup.Key == Editor.Selection._selectedParamGroup.Key)
+                    if (paramGroup.Key == Parent.Selection._selectedParamGroup.Key)
                     {
                         foreach (var paramField in paramGroup.Fields)
                         {
-                            if (paramField.Key == Editor.Selection._selectedParamField.Key)
+                            if (paramField.Key == Parent.Selection._selectedParamField.Key)
                             {
                                 if (paramField.Values.Count > index)
                                 {
@@ -618,31 +618,31 @@ public class GparamQuickEdit
 
         if (effectType == EditEffectType.Set)
         {
-            valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Set}:\[(.*)\]");
+            valueCommandMatch = Regex.Match(commandArg, $@"set:\[(.*)\]");
         }
         if (effectType == EditEffectType.Add)
         {
-            valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Add}:\[(.*)\]");
+            valueCommandMatch = Regex.Match(commandArg, $@"add:\[(.*)\]");
         }
         if (effectType == EditEffectType.Subtract)
         {
-            valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Subtract}:\[(.*)\]");
+            valueCommandMatch = Regex.Match(commandArg, $@"sub:\[(.*)\]");
         }
         if (effectType == EditEffectType.Multiply)
         {
-            valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Multiply}:\[(.*)\]");
+            valueCommandMatch = Regex.Match(commandArg, $@"mult:\[(.*)\]");
         }
         if (effectType == EditEffectType.SetByRow)
         {
-            valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_SetByRow}:\[(.*)\]");
+            valueCommandMatch = Regex.Match(commandArg, $@"rowset:\[(.*)\]");
         }
         if (effectType == EditEffectType.Restore)
         {
-            valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Restore}");
+            valueCommandMatch = Regex.Match(commandArg, $@"restore");
         }
         if (effectType == EditEffectType.Random)
         {
-            valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Random}:\[(.*)\]\[(.*)\]");
+            valueCommandMatch = Regex.Match(commandArg, $@"random:\[(.*)\]\[(.*)\]");
         }
 
         if (valueCommandMatch == null)
@@ -1501,7 +1501,7 @@ public class GparamQuickEdit
         {
             for (int i = 0; i < targetField.Values.Count; i++)
             {
-                if (Editor.Selection._selectedFieldValueKey == i)
+                if (Parent.Selection._selectedFieldValueKey == i)
                 {
                     filterTruth[i] = true;
                 }
@@ -1511,7 +1511,7 @@ public class GparamQuickEdit
 
     private void FilterId(GPARAM.IField targetField, string filterArg)
     {
-        var idMatch = Regex.Match(filterArg, $@"{CFG.Current.Gparam_QuickEdit_ID}:\[([0-9]+)\]");
+        var idMatch = Regex.Match(filterArg, $@"id:\[([0-9]+)\]");
 
         if (idMatch.Success && idMatch.Groups.Count >= 2)
         {
@@ -1533,7 +1533,7 @@ public class GparamQuickEdit
 
     private void FilterIndex(GPARAM.IField targetField, string filterArg)
     {
-        var idxMatch = Regex.Match(filterArg, $@"{CFG.Current.Gparam_QuickEdit_Index}:\[([0-9]+)\]");
+        var idxMatch = Regex.Match(filterArg, $@"index:\[([0-9]+)\]");
 
         if (idxMatch.Success && idxMatch.Groups.Count >= 2)
         {
@@ -1555,7 +1555,7 @@ public class GparamQuickEdit
 
     private void FilterTimeOfDay(GPARAM.IField targetField, string filterArg)
     {
-        var todMatch = Regex.Match(filterArg, $@"{CFG.Current.Gparam_QuickEdit_TimeOfDay}:\[([0-9]+)\]");
+        var todMatch = Regex.Match(filterArg, $@"tod:\[([0-9]+)\]");
 
         if (todMatch.Success && todMatch.Groups.Count >= 2)
         {
@@ -1577,7 +1577,7 @@ public class GparamQuickEdit
 
     private void FilterValue(GPARAM.IField targetField, string filterArg)
     {
-        var valueMatch = Regex.Match(filterArg, $@"{CFG.Current.Gparam_QuickEdit_Value}:\[(.*)\]");
+        var valueMatch = Regex.Match(filterArg, $@"value:\[(.*)\]");
 
         if (valueMatch.Success && valueMatch.Groups.Count >= 2)
         {

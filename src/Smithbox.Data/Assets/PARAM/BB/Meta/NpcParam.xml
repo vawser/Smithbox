@@ -174,7 +174,7 @@
     <superArmorRecoverCorrection AltName="Poise Recovery Correction" />
     <superArmorBrakeKnockbackDist AltName="Poise Break Knockback Distance" />
     <stamina AltName="Stamina" Wiki="Total amount of stamina." />
-    <staminaRecoverBaseVal AltName="Stamina Recovery" />
+    <staminaRecoverBaseVel AltName="Stamina Recovery" />
     <def_phys AltName="Defence: Physical" />
     <def_slash AltName="Defence: Slash" />
     <def_blow AltName="Defence: Strike" />

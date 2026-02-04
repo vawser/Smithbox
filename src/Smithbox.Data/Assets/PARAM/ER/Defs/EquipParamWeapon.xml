@@ -1926,7 +1926,7 @@
       <Maximum>999</Maximum>
       <SortID>9050</SortID>
     </Field>
-    <Field Def="f32 vsPlayerDmgCorrectRate_Disease = 1">
+    <Field Def="f32 vsPlayerDmgCorrectRate_Disease = 1" FirstVersion="10210038">
       <DisplayName>対プレイヤー 疫病ダメージ補正倍率</DisplayName>
       <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
       <DisplayFormat>%0.3f</DisplayFormat>
@@ -1935,7 +1935,7 @@
       <Increment>0.001</Increment>
       <SortID>7810</SortID>
     </Field>
-    <Field Def="f32 vsPlayerDmgCorrectRate_Curse = 1">
+    <Field Def="f32 vsPlayerDmgCorrectRate_Curse = 1" FirstVersion="10210038">
       <DisplayName>対プレイヤー 呪ダメージ補正倍率</DisplayName>
       <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
       <DisplayFormat>%0.3f</DisplayFormat>
@@ -1945,7 +1945,7 @@
       <SortID>7830</SortID>
     </Field>
     
-    <Field Def="dummy8 pad_old[8]" RemovedVersion="11210015" />
+    <Field Def="dummy8 pad_old[8]" FirstVersion="10210038" RemovedVersion="11210015" />
     
     <Field Def="u8 restrictSpecialSwordArt" FirstVersion="11210015" />
     

@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using StudioCore.Application;
+﻿using StudioCore.Application;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -10,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class TextData
+public class TextData : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public TextBank PrimaryBank;
@@ -21,13 +19,10 @@ public class TextData
 
     public FileDictionary FmgFiles = new();
 
-    public LanguageDef LanguageDef;
-    public ContainerDef ContainerDef;
-    public AssociationDef AssociationDef;
+    public FmgDescriptors FmgDescriptors;
 
-    public TextData(Smithbox baseEditor, ProjectEntry project)
+    public TextData(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -35,15 +30,21 @@ public class TextData
     {
         await Task.Yield();
 
-        // TODO: for transitioning from the hardcoded stuff into JSON
-        //LanguageDef = SetupLanguageDef();
-        //ContainerDef = SetupContainerDef();
-        //AssociationDef = SetupAssociationDef();
+        PrimaryBank = new("Primary", Project, Project.VFS.FS);
+        VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
 
-        FmgFiles = SetupFmgFilelist();
+        // FMG Descriptors
+        Task<bool> descriptorTask = SetupFmgDescriptors();
+        bool descriptorTaskResult = await descriptorTask;
 
-        PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
-        VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);
+        if (descriptorTaskResult)
+        {
+            TaskLogs.AddLog($"Setup FMG Descriptors.");
+        }
+        else
+        {
+            TaskLogs.AddError($"Failed to setup FMG Descriptors.");
+        }
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Setup();
@@ -51,7 +52,7 @@ public class TextData
 
         if (!primaryBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to fully setup Primary Bank.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Text Editor] Failed to fully setup Primary Bank.");
         }
 
         // Vanilla Bank
@@ -60,7 +61,7 @@ public class TextData
 
         if (!vanillaBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to fully setup Primary Bank.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Text Editor] Failed to fully setup Primary Bank.");
         }
 
         return true;
@@ -68,21 +69,9 @@ public class TextData
 
     public async Task<bool> LoadAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
-        await Task.Yield();
+        await Smithbox.Orchestrator.LoadAuxiliaryProject(targetProject, ProjectInitType.TextEditorOnly, reloadProject);
 
-        if (reloadProject)
-        {
-            await targetProject.Init(silent: true, ProjectInitType.TextEditorOnly);
-        }
-        else
-        {
-            if (!targetProject.Initialized)
-            {
-                await targetProject.Init(silent: true, ProjectInitType.TextEditorOnly);
-            }
-        }
-
-        var newAuxBank = new TextBank($"{targetProject.ProjectName}", BaseEditor, Project, targetProject.FS);
+        var newAuxBank = new TextBank($"{targetProject.Descriptor.ProjectName}",Project, targetProject.VFS.FS);
 
         // Aux Bank
         Task<bool> auxBankTask = newAuxBank.Setup();
@@ -90,143 +79,75 @@ public class TextData
 
         if (!auxBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to setup Aux FMG Bank.");
+            TaskLogs.AddError($"[Text Editor] Failed to setup Aux FMG Bank.");
         }
 
-        if (AuxBanks.ContainsKey(targetProject.ProjectName))
+        if (AuxBanks.ContainsKey(targetProject.Descriptor.ProjectName))
         {
-            AuxBanks[targetProject.ProjectName] = newAuxBank;
+            AuxBanks[targetProject.Descriptor.ProjectName] = newAuxBank;
         }
         else
         {
-            AuxBanks.Add(targetProject.ProjectName, newAuxBank);
+            AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
 
-        TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Setup Aux FMG Bank.");
+        TaskLogs.AddLog($"[Text Editor] Setup Aux FMG Bank.");
 
         return true;
     }
-    public FileDictionary SetupFmgFilelist()
+
+    #region FMG Descriptors
+
+    public async Task<bool> SetupFmgDescriptors()
     {
-        var msgbndDictionary = new FileDictionary();
-        msgbndDictionary.Entries = Project.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/msg"))
-            .Where(e => e.Extension == "msgbnd")
-            .ToList();
+        var jsonName = "FMG Descriptor Registry.json";
 
+        await Task.Yield();
 
-        if (Project.ProjectType == ProjectType.ER)
-        {
-            msgbndDictionary.Entries = msgbndDictionary.Entries.OrderBy(e => e.Folder).ThenBy(e => e.Filename.Contains("dlc02")).ThenBy(e => e.Filename.Contains("dlc01")).ThenBy(e => e.Filename).ToList();
-        }
-
-        var fmgDictionary = new FileDictionary();
-        fmgDictionary.Entries = new List<FileDictionaryEntry>();
-
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            fmgDictionary.Entries = Project.FileDictionary.Entries
-                .Where(e => e.Archive != "sd")
-                .Where(e => e.Folder.StartsWith("/menu/text"))
-                .Where(e => e.Extension == "fmg").ToList();
-        }
-
-        return ProjectUtils.MergeFileDictionaries(msgbndDictionary, fmgDictionary);
-    }
-
-
-    public LanguageDef SetupLanguageDef()
-    {
-        LanguageDef def = null;
-
-        var folder = Path.Join(StudioCore.Common.FileLocations.Assets, "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
-        var file = Path.Combine(folder, "Languages.json");
+        var folder = @$"{StudioCore.Common.FileLocations.Assets}/FMG/{ProjectUtils.GetGameDirectory(Project)}";
+        var file = Path.Combine(folder, jsonName);
 
         if (File.Exists(file))
         {
             try
             {
-                var filestring = File.ReadAllText(file);
+                var filestring = await File.ReadAllTextAsync(file);
 
                 try
                 {
-                    def = JsonSerializer.Deserialize(filestring, FmgJsonSerializerContext.Default.LanguageDef);
+                    FmgDescriptors = JsonSerializer.Deserialize(filestring, TextEditorJsonSerializerContext.Default.FmgDescriptors);
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FMG Language Def: {file}", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"Failed to deserialize FMG descriptor registry: {file}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the FMG Language Def: {file}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"Failed to read FMG descriptor registry: {file}", e);
             }
         }
 
-        return def;
+        return true;
     }
+    #endregion
 
-    public ContainerDef SetupContainerDef()
+    #region Dispose
+    public void Dispose()
     {
-        ContainerDef def = null;
+        PrimaryBank?.Dispose();
+        VanillaBank?.Dispose();
 
-        var folder = Path.Join(StudioCore.Common.FileLocations.Assets, "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
-        var file = Path.Combine(folder, "Containers.json");
-
-        if (File.Exists(file))
+        foreach(var entry in AuxBanks)
         {
-            try
-            {
-                var filestring = File.ReadAllText(file);
-
-                try
-                {
-                    def = JsonSerializer.Deserialize(filestring, FmgJsonSerializerContext.Default.ContainerDef);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FMG Container Def: {file}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the FMG Container Def: {file}", LogLevel.Error, LogPriority.High, e);
-            }
+            entry.Value?.Dispose();
         }
 
-        return def;
+        PrimaryBank = null;
+        VanillaBank = null;
+        AuxBanks = null;
+
+        FmgFiles = null;
     }
-
-    public AssociationDef SetupAssociationDef()
-    {
-        AssociationDef def = null;
-
-        var folder = Path.Join(StudioCore.Common.FileLocations.Assets, "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
-        var file = Path.Combine(folder, "Associations.json");
-
-
-        if (File.Exists(file))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(file);
-
-                try
-                {
-                    def = JsonSerializer.Deserialize(filestring, FmgJsonSerializerContext.Default.AssociationDef);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FMG Association Def: {file}", LogLevel.Error, LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the FMG Association Def: {file}", LogLevel.Error, LogPriority.High, e);
-            }
-        }
-
-        return def;
-    }
+    #endregion
 }

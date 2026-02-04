@@ -3,10 +3,10 @@
   <Enums>
     <Enum Name="GEMEFFECT_GEN_PT">
       <Option Value="0" Name="Type 0" />
-      <Option Value="1" Name="Type 1" />
-      <Option Value="2" Name="Type 2" />
-      <Option Value="3" Name="Type 3" />
-      <Option Value="4" Name="Type 4" />
+      <Option Value="1" Name="Type 1: Fixed Effect" />
+      <Option Value="2" Name="Type 2: Fixed Category" />
+      <Option Value="3" Name="Type 3: Category Group ID" />
+      <Option Value="4" Name="Type 4: Directional ID" />
     </Enum>
   </Enums>
   <Field>
@@ -25,32 +25,32 @@
     <pad_1 Padding="" />
     
 	<gemeffectGenParamType_0 AltName=" [0] Gem Generation Param Type" Wiki="" Enum="GEMEFFECT_GEN_PT" />
-	<gemeffectGenParam_0 AltName=" [0] Gem Generation Param" Wiki="" Refs="GemeffectParam" />
+	<gemeffectGenParam_0 AltName=" [0] Gem Generation Param" Wiki="" Refs="GemeffectParam(gemeffectGenParamType_0=1),GemCategoryParam(gemeffectGenParamType_0=2)" />
 	<manifestRate_0 AltName="[0] Appearance Rate" Wiki="" />
 	<negativizeRate_0 AltName="[0] Negative Effect Rate" Wiki="" />
     
 	<gemeffectGenParamType_1 AltName=" [1] Gem Generation Param Type" Wiki="" Enum="GEMEFFECT_GEN_PT" />
-	<gemeffectGenParam_1 AltName=" [1] Gem Generation Param" Wiki="" Refs="GemeffectParam" />
+	<gemeffectGenParam_1 AltName=" [1] Gem Generation Param" Wiki="" Refs="GemeffectParam(gemeffectGenParamType_1=1),GemCategoryParam(gemeffectGenParamType_1=2)" />
 	<manifestRate_1 AltName="[1] Appearance Rate" Wiki="" />
 	<negativizeRate_1 AltName="[1] Negative Effect Rate" Wiki="" />
     
 	<gemeffectGenParamType_2 AltName=" [2] Gem Generation Param Type" Wiki="" Enum="GEMEFFECT_GEN_PT" />
-	<gemeffectGenParam_2 AltName=" [2] Gem Generation Param" Wiki="" Refs="GemeffectParam" />
+	<gemeffectGenParam_2 AltName=" [2] Gem Generation Param" Wiki="" Refs="GemeffectParam(gemeffectGenParamType_2=1),GemCategoryParam(gemeffectGenParamType_2=2)" />
 	<manifestRate_2 AltName="[2] Appearance Rate" Wiki="" />
 	<negativizeRate_2 AltName="[2] Negative Effect Rate" Wiki="" />
     
 	<gemeffectGenParamType_3 AltName=" [3] Gem Generation Param Type" Wiki="" Enum="GEMEFFECT_GEN_PT" />
-	<gemeffectGenParam_3 AltName=" [3] Gem Generation Param" Wiki="" Refs="GemeffectParam" />
+	<gemeffectGenParam_3 AltName=" [3] Gem Generation Param" Wiki="" Refs="GemeffectParam(gemeffectGenParamType_3=1),GemCategoryParam(gemeffectGenParamType_3=2)" />
 	<manifestRate_3 AltName="[3] Appearance Rate" Wiki="" />
 	<negativizeRate_3 AltName="[3] Negative Effect Rate" Wiki="" />
     
 	<gemeffectGenParamType_4 AltName=" [4] Gem Generation Param Type" Wiki="" Enum="GEMEFFECT_GEN_PT" />
-	<gemeffectGenParam_4 AltName=" [4] Gem Generation Param" Wiki="" Refs="GemeffectParam" />
+	<gemeffectGenParam_4 AltName=" [4] Gem Generation Param" Wiki="" Refs="GemeffectParam(gemeffectGenParamType_4=1),GemCategoryParam(gemeffectGenParamType_4=2)" />
 	<manifestRate_4 AltName="[4] Appearance Rate" Wiki="" />
 	<negativizeRate_4 AltName="[4] Negative Effect Rate" Wiki="" />
     
 	<gemeffectGenParamType_5 AltName=" [5] Gem Generation Param Type" Wiki="" Enum="GEMEFFECT_GEN_PT" />
-	<gemeffectGenParam_5 AltName=" [5] Gem Generation Param" Wiki="" Refs="GemeffectParam" />
+	<gemeffectGenParam_5 AltName=" [5] Gem Generation Param" Wiki="" Refs="GemeffectParam(gemeffectGenParamType_5=1),GemCategoryParam(gemeffectGenParamType_5=2)" />
 	<manifestRate_5 AltName="[5] Appearance Rate" Wiki="" />
 	<negativizeRate_5 AltName="[5] Negative Effect Rate" Wiki="" />
     

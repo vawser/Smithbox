@@ -1,4 +1,5 @@
 ﻿using StudioCore.Application;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -18,7 +19,7 @@ public class SelectionOutlineAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_RenderOutline))
+        if (InputManager.IsPressed(KeybindID.Cycle_Render_Outline_Mode))
         {
             CFG.Current.Viewport_Enable_Selection_Outline = !CFG.Current.Viewport_Enable_Selection_Outline;
         }

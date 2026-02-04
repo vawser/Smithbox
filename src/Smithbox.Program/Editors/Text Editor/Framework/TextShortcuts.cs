@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -20,67 +21,79 @@ public class TextShortcuts
 
     public void Monitor()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        // Save
+        if (InputManager.IsPressed(KeybindID.Save))
         {
             Editor.Save();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_SaveAll))
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            Editor.SaveAll();
+            CFG.Current.Interface_TextEditor_ToolWindow = !CFG.Current.Interface_TextEditor_ToolWindow;
         }
 
-        if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        if (activeView != null)
         {
-            Editor.EditorActionManager.UndoAction();
-        }
-
-        if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
-        {
-            Editor.EditorActionManager.UndoAction();
-        }
-
-        if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
-        {
-            Editor.EditorActionManager.RedoAction();
-        }
-
-        if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
-        {
-            Editor.EditorActionManager.RedoAction();
-        }
-
-        if (Editor.Selection.CurrentWindowContext is TextEditorContext.FmgEntry)
-        {
-            // Create
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_CreateNewEntry))
+            // Undo
+            if (activeView.ActionManager.CanUndo())
             {
-                Editor.EntryCreationModal.ShowModal = true;
+                if (InputManager.IsPressed(KeybindID.Undo))
+                {
+                    activeView.ActionManager.UndoAction();
+                }
+
+                if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
+                {
+                    activeView.ActionManager.UndoAction();
+                }
             }
 
+            // Redo
+            if (activeView.ActionManager.CanRedo())
+            {
+                if (InputManager.IsPressed(KeybindID.Redo))
+                {
+                    activeView.ActionManager.RedoAction();
+                }
+
+                if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
+                {
+                    activeView.ActionManager.RedoAction();
+                }
+            }
+
+            // Create
+            if (InputManager.IsPressed(KeybindID.TextEditor_Create_New_Entry))
+            {
+                activeView.NewEntryModal.ShowModal = true;
+            }
+
+            // TODO: remove this if we add Copy/Paste functionality
             // Configurable Duplicate
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntryPopup))
+            if (InputManager.IsPressed(KeybindID.TextEditor_Configurable_Duplicate))
             {
                 ImGui.OpenPopup("textDuplicatePopup");
             }
 
             // Standard Duplicate
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
+            if (InputManager.IsPressed(KeybindID.Duplicate))
             {
-                Editor.ActionHandler.DuplicateEntries();
+                activeView.ActionHandler.DuplicateEntries();
             }
 
             // Delete
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
+            if (InputManager.IsPressed(KeybindID.Delete))
             {
-                Editor.ActionHandler.DeleteEntries();
+                activeView.ActionHandler.DeleteEntries();
             }
-        }
 
-        // Focus Selected Entry
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXT_FocusSelectedEntry))
-        {
-            Editor.Selection.FocusFmgEntrySelection = true;
+            // Focus Selected Entry
+            if (InputManager.IsPressed(KeybindID.Jump))
+            {
+                activeView.Selection.FocusFmgEntrySelection = true;
+            }
         }
     }
 
@@ -89,30 +102,34 @@ public class TextShortcuts
     /// </summary>
     public void HandleSelectAll()
     {
-        var selectionContext = Editor.Selection.CurrentWindowContext;
-        var multiselect = Editor.Selection.FmgEntryMultiselect;
+        var activeView = Editor.ViewHandler.ActiveView;
 
-        if (Editor.Selection.SelectedFmgWrapper == null)
-            return;
-
-        var fmg = Editor.Selection.SelectedFmgWrapper.File;
-
-        // Select All
-        if (selectionContext is TextEditorContext.FmgEntry)
+        if (activeView != null)
         {
-            if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
+            var multiselect = activeView.Selection.FmgEntryMultiselect;
+
+            if (activeView.Selection.SelectedFmgWrapper == null)
+                return;
+
+            var fmg = activeView.Selection.SelectedFmgWrapper.File;
+
+            // Select All
+            if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
             {
-                multiselect.StoredEntries.Clear();
-
-                if (fmg != null)
+                if (InputManager.IsPressed(KeybindID.SelectAll))
                 {
-                    for (int j = 0; j < fmg.Entries.Count; j++)
-                    {
-                        var tEntry = fmg.Entries[j];
+                    multiselect.StoredEntries.Clear();
 
-                        if (Editor.Filters.IsFmgEntryFilterMatch(tEntry))
+                    if (fmg != null)
+                    {
+                        for (int j = 0; j < fmg.Entries.Count; j++)
                         {
-                            multiselect.StoredEntries.Add(j, tEntry);
+                            var tEntry = fmg.Entries[j];
+
+                            if (activeView.Filters.IsFmgEntryFilterMatch(tEntry))
+                            {
+                                multiselect.StoredEntries.Add(j, tEntry);
+                            }
                         }
                     }
                 }
@@ -125,14 +142,17 @@ public class TextShortcuts
     /// </summary>
     public void HandleCopyEntryText()
     {
-        var selectionContext = Editor.Selection.CurrentWindowContext;
+        var activeView = Editor.ViewHandler.ActiveView;
 
-        // Copy Entry Contents
-        if (selectionContext is TextEditorContext.FmgEntry)
+        if (activeView != null)
         {
-            if (InputTracker.GetKey(KeyBindings.Current.TEXT_CopyEntryContents))
+            // Copy Entry Contents
+            if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
             {
-                Editor.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_TextCopy_IncludeID);
+                if (InputManager.IsPressed(KeybindID.Copy))
+                {
+                    activeView.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_Text_Clipboard_Include_ID);
+                }
             }
         }
     }

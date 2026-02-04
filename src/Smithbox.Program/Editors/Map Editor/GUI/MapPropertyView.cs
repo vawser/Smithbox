@@ -60,8 +60,9 @@ public class MapPropertyView
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(350, h - 80) * scale, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowPos(new Vector2(w - 370, 20) * scale, ImGuiCond.FirstUseEver);
+
         ImGui.Begin($@"Properties##{id}");
-        Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapObjectProperties);
+        FocusManager.SetFocus(EditorFocusContext.MapEditor_Properties);
 
         // Header
         ImGui.AlignTextToFramePadding();
@@ -73,11 +74,11 @@ public class MapPropertyView
 
         if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
         {
-            CFG.Current.MapEditor_Enable_Commmunity_Names = !CFG.Current.MapEditor_Enable_Commmunity_Names;
+            CFG.Current.MapEditor_Properties_Enable_Commmunity_Names = !CFG.Current.MapEditor_Properties_Enable_Commmunity_Names;
         }
 
         var communityFieldNameMode = "Internal";
-        if (CFG.Current.MapEditor_Enable_Commmunity_Names)
+        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names)
             communityFieldNameMode = "Community";
 
         UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
@@ -87,12 +88,12 @@ public class MapPropertyView
 
         if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
         {
-            CFG.Current.MapEditor_DisplayUnknownFields = !CFG.Current.MapEditor_DisplayUnknownFields;
+            CFG.Current.MapEditor_Properties_Display_Unknown_Properties = !CFG.Current.MapEditor_Properties_Display_Unknown_Properties;
         }
 
         var unkFieldDisplayMode = "Hidden";
 
-        if (CFG.Current.MapEditor_DisplayUnknownFields)
+        if (CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
             unkFieldDisplayMode = "Visible";
 
         UIHelper.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
@@ -101,7 +102,6 @@ public class MapPropertyView
 
         // Properties
         ImGui.BeginChild("propedit");
-        Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapObjectProperties);
 
         if (Editor.Universe.HasProcessedMapLoad && entSelection.Count > 1)
         {
@@ -120,7 +120,6 @@ public class MapPropertyView
             ImGui.Separator();
             ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
             ImGui.BeginChild("MSB_EditingMultipleObjsChild");
-            Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapObjectProperties);
             PropEditorSelectedEntities(selection);
             ImGui.PopStyleColor();
             ImGui.EndChild();
@@ -196,13 +195,13 @@ public class MapPropertyView
             {
                 var mergedRow = (MergedParamRow)selection.WrappedObject;
 
-                meta = Editor.Project.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{mergedRow.MetaName}");
+                meta = Editor.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{mergedRow.MetaName}");
             }
             if (selection.WrappedObject is Param.Row)
             {
                 var paramRow = (Param.Row)selection.WrappedObject;
 
-                meta = Editor.Project.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
+                meta = Editor.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
             }
 
 
@@ -231,7 +230,7 @@ public class MapPropertyView
 
         foreach (Param.Column cell in row.Columns)
         {
-            var meta = Editor.Project.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+            var meta = Editor.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
 
             PropEditorPropCellRow(meta, row[cell], ref id, null, row.ID);
         }
@@ -309,9 +308,9 @@ public class MapPropertyView
         if (ImGui.BeginPopup("MsbPropContextMenu"))
         {
             // Info
-            if (CFG.Current.MapEditor_Enable_Property_Info)
+            if (CFG.Current.MapEditor_Properties_Display_Property_Attributes)
             {
-                ParamEditorDecorations.ImGui_DisplayPropertyInfo(prop);
+                ParamFieldUtils.ImGui_DisplayPropertyInfo(prop);
                 ImGui.Separator();
             }
 
@@ -491,12 +490,12 @@ public class MapPropertyView
     {
         PropContextRowOpener();
 
-        var meta = Editor.Project.MapData.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
+        var meta = Editor.Project.Handler.MapData.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
 
         // Field Name
         var fieldName = prop.Name;
 
-        if (CFG.Current.MapEditor_Enable_Commmunity_Names && !meta.IsEmpty)
+        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !meta.IsEmpty)
         {
             fieldName = meta.AltName;
 
@@ -689,9 +688,9 @@ public class MapPropertyView
         var first = entities.First();
 
         var type = types.Count() == 1 ? types.First() : typeof(IMsbEntry);
-        var meta = Editor.Project.MapData.Meta.GetMeta(type, false);
+        var meta = Editor.Project.Handler.MapData.Meta.GetMeta(type, false);
 
-        if (CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
+        if (CFG.Current.MapEditor_Properties_Display_Additional_Information_at_Top)
         {
             DisplayPropertyViewDecorations(selection, 0);
         }
@@ -736,7 +735,7 @@ public class MapPropertyView
         if (first.SupportsName)
         {
             // Name
-            if (CFG.Current.MapEditor_Enable_Referenced_Rename)
+            if (CFG.Current.MapEditor_Properties_Enable_Referenced_Rename)
             {
                 PropEditorNameWithRef(entities);
             }
@@ -758,7 +757,7 @@ public class MapPropertyView
         // Bottom Decoration
         ImGui.Columns(1);
 
-        if (!CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
+        if (!CFG.Current.MapEditor_Properties_Display_Additional_Information_at_Top)
         {
             DisplayPropertyViewDecorations(selection, 0);
         }
@@ -792,12 +791,12 @@ public class MapPropertyView
                 treeFlags = ImGuiTreeNodeFlags.None;
             }
 
-            var meta = Editor.Project.MapData.Meta.GetFieldMeta(prop.Name, type);
+            var meta = Editor.Project.Handler.MapData.Meta.GetFieldMeta(prop.Name, type);
 
             // Field Name
             var fieldName = prop.Name;
 
-            if (CFG.Current.MapEditor_Enable_Commmunity_Names && !meta.IsEmpty)
+            if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !meta.IsEmpty)
             {
                 fieldName = meta.AltName;
             }
@@ -840,7 +839,7 @@ public class MapPropertyView
             if (meta != null && meta.IndexProperty)
                 continue;
 
-            if(!CFG.Current.MapEditor_DisplayUnknownFields)
+            if(!CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
             {
                 // Rough heuristic since all unknown fields start with Unk
                 var propName = prop.Name.ToLower();
@@ -1097,25 +1096,16 @@ public class MapPropertyView
         var firstEnt = entSelection.FirstOrDefault();
         if (firstEnt.References is null) return;
 
-        if (CFG.Current.MapEditor_Enable_Property_Property_Class_Info)
+        if (CFG.Current.MapEditor_Properties_Display_Behavior_Information)
         {
             PropInfo_MapObjectType.Display(Editor, firstEnt);
-        }
-        if (CFG.Current.MapEditor_Enable_Property_Property_SpecialProperty_Info)
-        {
             PropInfo_Region_Connection.Display(Editor, firstEnt);
             PropInfo_Part_ConnectCollision.Display(Editor, firstEnt);
         }
-        if (CFG.Current.MapEditor_Enable_Property_Property_ReferencesTo)
+        if (CFG.Current.MapEditor_Properties_Display_Reference_Information)
         {
             PropInfo_ReferencesTo.Display(Editor, firstEnt, Viewport, ref selection, ref refID);
-        }
-        if (CFG.Current.MapEditor_Enable_Property_Property_ReferencesBy)
-        {
             PropInfo_ReferencedBy.Display(Editor, firstEnt, Viewport, ref selection, ref refID);
-        }
-        if (CFG.Current.MapEditor_Enable_Param_Quick_Links)
-        {
             PropInfo_ParamJumps.Display(Editor, firstEnt, Viewport, ref selection, ref refID);
         }
     }

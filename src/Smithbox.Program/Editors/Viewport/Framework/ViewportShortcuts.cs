@@ -2,12 +2,10 @@
 
 public class ViewportShortcuts
 {
-    public Viewport Parent;
-    public Smithbox BaseEditor;
+    public VulkanViewport Parent;
 
-    public ViewportShortcuts(Smithbox baseEditor, Viewport parent)
+    public ViewportShortcuts(VulkanViewport parent)
     {
-        this.BaseEditor = baseEditor;
         Parent = parent;
     }
 

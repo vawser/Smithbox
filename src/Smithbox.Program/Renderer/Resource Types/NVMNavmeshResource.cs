@@ -34,19 +34,19 @@ public class NVMNavmeshResource : IResource, IDisposable
 
     public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
-        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.Orchestrator.SelectedProject == null)
             return false;
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         try
         {
-            var fileData = curProject.FS.ReadFile(relativePath);
+            var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
             // Intercept and load the collision from PTDE FS for DS1R projects
-            if (CFG.Current.PTDE_UseCollisionHack && curProject.ProjectType is ProjectType.DS1R)
+            if (CFG.Current.MapEditor_Use_PTDE_Collisions_In_DS1R_Projects && curProject.Descriptor.ProjectType is ProjectType.DS1R)
             {
-                fileData = curProject.PTDE_FS.ReadFile(relativePath);
+                fileData = curProject.VFS.PTDE_FS.ReadFile(relativePath);
             }
 
             Nvm = NVM.Read(fileData.Value);
@@ -62,14 +62,14 @@ public class NVMNavmeshResource : IResource, IDisposable
 
     private unsafe void ProcessMesh(NVM mesh)
     {
-        byte navR = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.X;
-        byte navG = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.Y;
-        byte navB = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.Z;
+        byte navR = (byte)CFG.Current.Viewport_Navmesh_Color.X;
+        byte navG = (byte)CFG.Current.Viewport_Navmesh_Color.Y;
+        byte navB = (byte)CFG.Current.Viewport_Navmesh_Color.Z;
         byte navA = 255;
 
-        byte navGateR = (byte)CFG.Current.GFX_Renderable_NavmeshGate_Color.X;
-        byte navGateG = (byte)CFG.Current.GFX_Renderable_NavmeshGate_Color.Y;
-        byte navGateB = (byte)CFG.Current.GFX_Renderable_NavmeshGate_Color.Z;
+        byte navGateR = (byte)CFG.Current.Viewport_Navmesh_Gate_Color.X;
+        byte navGateG = (byte)CFG.Current.Viewport_Navmesh_Gate_Color.Y;
+        byte navGateB = (byte)CFG.Current.Viewport_Navmesh_Gate_Color.Z;
         byte navGateA = 255;
 
         List<Vector3> verts = mesh.Vertices;

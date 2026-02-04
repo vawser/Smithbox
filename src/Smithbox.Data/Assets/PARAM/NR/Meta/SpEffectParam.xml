@@ -1041,8 +1041,8 @@
     
     <changeTeamType 
     AltName="Team Type" 
-    Wiki="Overwrites the specified team type. Requires State Info 132" 
-    Enum="SP_EFFECT_CHANGE_TEAM_TYPE" 
+    Wiki="Overwrites the specified team type." 
+    ProjectEnum="TEAM_TYPE" 
     DefaultValue="-1" />
     
     <dmypolyId 

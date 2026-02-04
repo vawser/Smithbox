@@ -17,7 +17,6 @@ public class ParamSelection
 
     private readonly List<(string, Param.Row)> pastStack = new();
     private string _activeParam;
-    internal string currentParamSearchString = "";
 
     public ParamSelection(ParamEditorScreen editor, ProjectEntry project)
     {
@@ -123,16 +122,6 @@ public class ParamSelection
         return ref _paramStates[_activeParam].currentPropSearchString;
     }
 
-    public void SetCurrentParamSearchString(string s)
-    {
-        if (_activeParam == null)
-        {
-            return;
-        }
-
-        currentParamSearchString = s;
-    }
-
     public void SetCurrentRowSearchString(string s)
     {
         if (_activeParam == null)
@@ -197,7 +186,7 @@ public class ParamSelection
 
             if (s.activeRow != null)
             {
-                Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
+                Editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
             }
 
             if (!isHistory)
@@ -209,15 +198,11 @@ public class ParamSelection
             s.selectionRows.Clear();
             s.selectionRows.Add(row);
             if (s.activeRow != null)
-                Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
+                Editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
 
             s.selectionCacheDirty = true;
 
-            // Clear the icon preview resource dictionary on active row switch
-            if(Project.TextureViewer != null)
-            {
-                Project.TextureViewer.ImagePreview.ClearIcons();
-            }
+            // WIP: add icon clear for future icon support here
         }
     }
 
@@ -330,10 +315,10 @@ public class ParamSelection
         // We maintain this flag as clearing the cache properly is slow for the number of times we modify selection
         if (s.selectionCacheDirty)
         {
-            UICache.RemoveCache(Editor, s);
+            CacheBank.RemoveCache(Editor, s);
         }
 
-        return UICache.GetCached(Editor, s, "selectionCache" + cacheVer, () =>
+        return CacheBank.GetCached(Editor, s, "selectionCache" + cacheVer, () =>
         {
             s.selectionCacheDirty = false;
             return rows.Select(x => GetSelectedRows().Contains(x)).ToArray();
@@ -371,7 +356,7 @@ public class ParamSelection
         if (_activeParam != null)
         {
             ParamSelectionState s = _paramStates[_activeParam];
-            Param p = Editor.Project.ParamData.PrimaryBank.Params[_activeParam];
+            Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[_activeParam];
             s.selectionRows.Sort((a, b) => { return p.IndexOfRow(a) - p.IndexOfRow(b); });
         }
     }

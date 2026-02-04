@@ -19,5 +19,5 @@ public interface IGraphicsContext : IDisposable
 
     public void Initialize();
 
-    public void Draw(ProjectManager projectManager);
+    public void Draw(ProjectOrchestrator projectManager);
 }

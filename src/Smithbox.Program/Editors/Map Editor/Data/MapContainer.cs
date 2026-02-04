@@ -181,7 +181,7 @@ public class MapContainer : ObjectContainer
         }
 
         // Part Poses
-        if(Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.DS3)
+        if(Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.DS3)
         {
             if(msb is MSB2 msb2)
             {

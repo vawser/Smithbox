@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -17,79 +19,96 @@ public class ModelShortcuts
 
     public void Monitor()
     {
-        if (!Editor.ModelViewportView.ViewportUsingKeyboard && !ImGui.IsAnyItemActive())
+        if (!FocusManager.IsInModelEditor())
+            return;
+
+        if (ImGui.IsAnyItemActive() || Editor.ModelViewportView.ViewportUsingKeyboard)
+            return;
+
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
-            {
-                Editor.Save();
-            }
+            CFG.Current.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface_ModelEditor_ToolWindow;
+        }
 
-            if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        // Save
+        if (InputManager.IsPressed(KeybindID.Save))
+        {
+            Editor.Save();
+        }
+
+        // Undo
+        if (Editor.EditorActionManager.CanUndo())
+        {
+            if (InputManager.IsPressed(KeybindID.Undo))
             {
                 Editor.EditorActionManager.UndoAction();
             }
 
-            if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+            if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
             {
                 Editor.EditorActionManager.UndoAction();
             }
+        }
 
-            if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+        // Redo
+        if (Editor.EditorActionManager.CanRedo())
+        {
+            if (InputManager.IsPressed(KeybindID.Redo))
             {
                 Editor.EditorActionManager.RedoAction();
             }
 
-            if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+            if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
             {
                 Editor.EditorActionManager.RedoAction();
             }
+        }
 
-            // Actions
-            Editor.CreateAction.OnShortcut();
-            Editor.DuplicateAction.OnShortcut();
-            Editor.DeleteAction.OnShortcut();
-            Editor.FrameAction.OnShortcut();
-            Editor.GotoAction.OnShortcut();
-            Editor.PullToCameraAction.OnShortcut();
-            Editor.ReorderAction.OnShortcut();
+        // Actions
+        Editor.CreateAction.OnShortcut();
+        Editor.DuplicateAction.OnShortcut();
+        Editor.DeleteAction.OnShortcut();
+        Editor.FrameAction.OnShortcut();
+        Editor.GotoAction.OnShortcut();
+        Editor.PullToCameraAction.OnShortcut();
+        Editor.ReorderAction.OnShortcut();
 
-            // Editor.RotateAction.OnShortcut();
-            // Editor.ReorderAction.OnShortcut();
-            // Editor.PullToCameraAction.OnShortcut();
 
-            // Gizmos
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoTranslationMode))
+        // Cycle Gizmo Translation Mode
+        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Translation_Mode))
+        {
+            Gizmos.Mode = Gizmos.GizmosMode.Translate;
+        }
+
+        // Cycle Gizmo Rotation Mode
+        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Rotation_Mode))
+        {
+            Gizmos.Mode = Gizmos.GizmosMode.Rotate;
+        }
+
+        // Cycle Gizmo Origin Mode
+        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Origin_Mode))
+        {
+            if (Gizmos.Origin == Gizmos.GizmosOrigin.World)
             {
-                Gizmos.Mode = Gizmos.GizmosMode.Translate;
+                Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
             }
-
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoRotationMode))
+            else if (Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox)
             {
-                Gizmos.Mode = Gizmos.GizmosMode.Rotate;
+                Gizmos.Origin = Gizmos.GizmosOrigin.World;
             }
+        }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoOriginMode))
+        // Cycle Gizmo Space Mode
+        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Space_Mode))
+        {
+            if (Gizmos.Space == Gizmos.GizmosSpace.Local)
             {
-                if (Gizmos.Origin == Gizmos.GizmosOrigin.World)
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
-                }
-                else if (Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox)
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.World;
-                }
+                Gizmos.Space = Gizmos.GizmosSpace.World;
             }
-
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoSpaceMode))
+            else if (Gizmos.Space == Gizmos.GizmosSpace.World)
             {
-                if (Gizmos.Space == Gizmos.GizmosSpace.Local)
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.World;
-                }
-                else if (Gizmos.Space == Gizmos.GizmosSpace.World)
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.Local;
-                }
+                Gizmos.Space = Gizmos.GizmosSpace.Local;
             }
         }
     }

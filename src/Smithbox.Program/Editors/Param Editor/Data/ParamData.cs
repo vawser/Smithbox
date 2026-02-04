@@ -19,36 +19,30 @@ namespace StudioCore.Editors.ParamEditor;
 /// Holds the data banks for params.
 /// Data Flow: Full Load
 /// </summary>
-public class ParamData
+public class ParamData : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
-
-    public Dictionary<string, PARAMDEF> ParamDefs = new();
-    public Dictionary<string, PARAMDEF> ParamDefsByFilename = new();
 
     public ParamBank PrimaryBank;
     public ParamBank VanillaBank;
     public Dictionary<string, ParamBank> AuxBanks = new();
 
+    public Dictionary<string, PARAMDEF> ParamDefs = new();
+    public Dictionary<string, PARAMDEF> ParamDefsByFilename = new();
     public Dictionary<PARAMDEF, ParamMeta> ParamMeta = new();
 
+    // Additional Data
     public ParamTypeInfo ParamTypeInfo;
-
     public GraphLegends GraphLegends;
-
     public IconConfigurations IconConfigurations;
-
     public TableParams TableParamList;
     public TableGroupNameStore TableGroupNames;
-
     public GameOffsetResource ParamMemoryOffsets;
     public ParamCategoryResource ParamCategories;
     public ParamCommutativeResource CommutativeParamGroups;
 
-    public ParamData(Smithbox baseEditor, ProjectEntry project)
+    public ParamData(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -56,8 +50,8 @@ public class ParamData
     {
         await Task.Yield();
 
-        PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
-        VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);
+        PrimaryBank = new("Primary", Project, Project.VFS.FS);
+        VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
 
         // Param Defs
         Task<bool> paramDefTask = SetupParamDefs();
@@ -65,11 +59,11 @@ public class ParamData
 
         if (paramDefTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup PARAM definitions.");
+            TaskLogs.AddLog($"[Param Editor] Setup PARAM definitions.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup PARAM definitions.");
+            TaskLogs.AddError($"[Param Editor] Failed to setup PARAM definitions.");
         }
 
         // Param Meta
@@ -78,11 +72,11 @@ public class ParamData
 
         if (paramMetaTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup PARAM meta.");
+            TaskLogs.AddLog($"[Param Editor] Setup PARAM meta.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup PARAM meta.");
+            TaskLogs.AddError($"[Param Editor] Failed to setup PARAM meta.");
         }
 
         // Graph Legends
@@ -91,11 +85,11 @@ public class ParamData
 
         if (graphLegendsTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup graph legends.");
+            TaskLogs.AddLog($"[Param Editor] Setup graph legends.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup graph legends.");
+            TaskLogs.AddError($"[Param Editor] Failed to setup graph legends.");
         }
 
         // Icon Configurations
@@ -104,11 +98,11 @@ public class ParamData
 
         if (iconConfigTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup icon configurations.");
+            TaskLogs.AddLog($"[Param Editor] Setup icon configurations.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup icon configurations.");
+            TaskLogs.AddError($"[Param Editor] Failed to setup icon configurations.");
         }
 
         // Table Param List
@@ -117,11 +111,11 @@ public class ParamData
 
         if (tableParamTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup table param list.");
+            TaskLogs.AddLog($"[Param Editor] Setup table param list.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup table param list.");
+            //TaskLogs.AddError($"[Param Editor] Failed to setup table param list.");
         }
 
         // Table Group Names
@@ -130,11 +124,11 @@ public class ParamData
 
         if (tableGroupNameTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup table group name bank.");
+            TaskLogs.AddLog($"[Param Editor] Setup table group name bank.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup table group name bank.");
+            // TaskLogs.AddError($"[Param Editor] Failed to setup table group name bank.");
         }
 
         // Game Offsets (per project)
@@ -143,11 +137,11 @@ public class ParamData
 
         if (gameOffsetResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Param Memory Offsets.");
+            TaskLogs.AddLog($"[Param Editor] Setup Param Memory Offsets.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Param Memory Offsets.");
+            TaskLogs.AddError($"[Param Editor] Failed to setup Param Memory Offsets.");
         }
 
         // Param Categories (per project)
@@ -156,11 +150,11 @@ public class ParamData
 
         if (paramCategoryResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Param Categories.");
+            TaskLogs.AddLog($"[Param Editor] Setup Param Categories.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Param Categories.");
+            TaskLogs.AddError($"[Param Editor] Failed to setup Param Categories.");
         }
 
         // Commutative Param Groups (per project)
@@ -169,11 +163,11 @@ public class ParamData
 
         if (commutativeParamGroupResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Commutative Param Groups.");
+            TaskLogs.AddLog($"[Param Editor] Setup Commutative Param Groups.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Commutative Param Groups.");
+            TaskLogs.AddError($"[Param Editor] Failed to setup Commutative Param Groups.");
         }
 
         // Primary Bank
@@ -182,7 +176,7 @@ public class ParamData
 
         if (!primaryBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to fully setup Primary Bank.");
+            TaskLogs.AddError($"[Param Editor] Failed to fully setup Primary Bank.");
         }
 
         // Vanilla Bank
@@ -191,78 +185,79 @@ public class ParamData
 
         if (!vanillaBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to fully setup Vanilla Bank.");
+            TaskLogs.AddError($"[Param Editor] Failed to fully setup Vanilla Bank.");
         }
 
-        if(!Project.ImportedParamRowNames)
+        if(!Project.Descriptor.ImportedParamRowNames)
         {
             var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog is DialogResult.OK)
             {
-                PrimaryBank.ImportRowNames(ParamImportRowNameSourceType.Community);
+                RowNameHelper.ImportRowNames(Project, PrimaryBank, ParamRowNameImportType.Community);
             }
 
-            Project.ImportedParamRowNames = true;
-            BaseEditor.ProjectManager.SaveProject(Project);
+            Project.Descriptor.ImportedParamRowNames = true;
+
+            Smithbox.Orchestrator.SaveProject(Project);
         }
 
-        switch(Project.ProjectType)
+        switch(Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DES)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DES)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.DS1:
             case ProjectType.DS1R:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS1)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS2)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.BB:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_BB)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_BB)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.DS3:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS3)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS3)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.ER:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ER)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_ER)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.AC6:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_AC6)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_AC6)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.NR:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_NR)
+                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_NR)
                 {
-                    PrimaryBank.RowNameRestore();
+                    RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
@@ -274,42 +269,30 @@ public class ParamData
 
     public async Task<bool> SetupAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
-        await Task.Yield();
-
-        if (reloadProject)
-        {
-            await targetProject.Init(silent: true, ProjectInitType.ParamEditorOnly);
-        }
-        else
-        {
-            if (!targetProject.Initialized)
-            {
-                await targetProject.Init(silent: true, ProjectInitType.ParamEditorOnly);
-            }
-        }
+        await Smithbox.Orchestrator.LoadAuxiliaryProject(targetProject, ProjectInitType.ParamEditorOnly, reloadProject);
 
         // Pass in the target project's filesystem,
         // so we fill it with the param data from that project
-        var newAuxBank = new ParamBank(Project.ProjectName, BaseEditor, Project, targetProject.FS);
+        var newAuxBank = new ParamBank(Project.Descriptor.ProjectName, Project, targetProject.VFS.FS);
 
         Task<bool> auxBankTask = newAuxBank.Load();
         bool auxBankTaskResult = await auxBankTask;
 
         if (!auxBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Aux PARAM Bank for {targetProject.ProjectName}.", LogLevel.Error, LogPriority.High);
+            TaskLogs.AddError($"[Param Editor] Failed to setup Aux PARAM Bank for {targetProject.Descriptor.ProjectName}.");
         }
 
-        if (AuxBanks.ContainsKey(targetProject.ProjectName))
+        if (AuxBanks.ContainsKey(targetProject.Descriptor.ProjectName))
         {
-            AuxBanks[targetProject.ProjectName] = newAuxBank;
+            AuxBanks[targetProject.Descriptor.ProjectName] = newAuxBank;
         }
         else
         {
-            AuxBanks.Add(targetProject.ProjectName, newAuxBank);
+            AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
 
-        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Aux PARAM Bank for {targetProject.ProjectName}.");
+        TaskLogs.AddLog($"[Param Editor] Setup Aux PARAM Bank for {targetProject.Descriptor.ProjectName}.");
 
         return true;
     }
@@ -339,7 +322,7 @@ public class ParamData
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deseralize {f} as PARAMDEF", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Param Editor] Failed to deseralize {f} as PARAMDEF", e);
             }
         }
 
@@ -365,12 +348,12 @@ public class ParamData
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deserialize Param Type Info: {paramTypeInfoPath}", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Param Editor] Failed to deserialize Param Type Info: {paramTypeInfoPath}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to read Param Type Info: {paramTypeInfoPath}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Param Editor] Failed to read Param Type Info: {paramTypeInfoPath}", e);
             }
         }
 
@@ -385,11 +368,11 @@ public class ParamData
 
         if (paramMetaTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Reloaded PARAM meta.");
+            TaskLogs.AddLog($"[Param Editor] Reloaded PARAM meta.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to reload PARAM meta.");
+            TaskLogs.AddError($"[Param Editor] Failed to reload PARAM meta.");
         }
     }
 
@@ -399,11 +382,11 @@ public class ParamData
 
         var rootMetaDir = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
-        var projectMetaDir = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
+        var projectMetaDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
-        if (CFG.Current.Param_UseProjectMeta)
+        if (CFG.Current.Project_Enable_Project_Metadata)
         {
-            if (Project.ProjectType != ProjectType.Undefined)
+            if (Project.Descriptor.ProjectType != ProjectType.Undefined)
             {
                 // Create the project meta copy if it doesn't already exist
                 if (!Directory.Exists(projectMetaDir))
@@ -434,7 +417,7 @@ public class ParamData
 
             try
             {
-                if (CFG.Current.Param_UseProjectMeta && Project.ProjectType != ProjectType.Undefined)
+                if (CFG.Current.Project_Enable_Project_Metadata && Project.Descriptor.ProjectType != ProjectType.Undefined)
                 {
                     meta.XmlDeserialize(Path.Join(projectMetaDir, fName), pdef);
                 }
@@ -447,7 +430,7 @@ public class ParamData
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deseralize {fName} as PARAMMETA", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Param Editor] Failed to deseralize {fName} as PARAMMETA",  e);
             }
         }
 
@@ -461,9 +444,9 @@ public class ParamData
         var folder = @$"{StudioCore.Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Graph Legends.json");
 
-        if(CFG.Current.Param_UseProjectMeta)
+        if(CFG.Current.Project_Enable_Project_Metadata)
         {
-            var projFolder = Path.Combine(Project.ProjectPath, ".smithbox", "Project");
+            var projFolder = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project");
             var projFile = Path.Combine(projFolder, "Graph Legends.json");
 
             if(File.Exists(projFile))
@@ -485,12 +468,12 @@ public class ParamData
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deserialize Graph Legends: {file}", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Param Editor] Failed to deserialize Graph Legends: {file}",  e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to read Graph Legends: {file}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Param Editor] Failed to read Graph Legends: {file}", e);
             }
         }
 
@@ -504,9 +487,9 @@ public class ParamData
         var folder = @$"{StudioCore.Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Icon Configurations.json");
 
-        if (CFG.Current.Param_UseProjectMeta)
+        if (CFG.Current.Project_Enable_Project_Metadata)
         {
-            var projFolder = Path.Combine(Project.ProjectPath, ".smithbox", "Project");
+            var projFolder = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project");
             var projFile = Path.Combine(projFolder, "Icon Configurations.json");
 
             if (File.Exists(projFile))
@@ -528,12 +511,12 @@ public class ParamData
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deserialize Icon Configurations: {file}", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Param Editor] Failed to deserialize Icon Configurations: {file}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to read Icon Configurations: {file}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[:Param Editor] Failed to read Icon Configurations: {file}", e);
             }
         }
 
@@ -567,23 +550,19 @@ public class ParamData
 
                 var item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.TableGroupParamEntry);
 
-                if (item == null)
-                {
-                    throw new Exception($"[{Project.ProjectName}:Param Editor] JsonConvert returned null.");
-                }
-                else
+                if (item != null)
                 {
                     baseStore.Groups.Add(item);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to load {file} for table group name import during Base Store step.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Param Editor] Failed to load {file} for table group name import during Base Store step.", e);
             }
         }
 
         // Project Store
-        var projDir = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Community Table Names");
+        var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Community Table Names");
 
         var projStore = new TableGroupNameStore();
         projStore.Groups = new();
@@ -598,18 +577,14 @@ public class ParamData
 
                     var item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.TableGroupParamEntry);
 
-                    if (item == null)
-                    {
-                        throw new Exception($"[{Project.ProjectName}:Param Editor] JsonConvert returned null.");
-                    }
-                    else
+                    if (item != null)
                     {
                         projStore.Groups.Add(item);
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to load {file} for table group name import during Project Store step.", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Param Editor] Failed to load {file} for table group name import during Project Store step.", e);
                 }
             }
         }
@@ -665,7 +640,7 @@ public class ParamData
         await Task.Yield();
 
         var srcFile = Path.Combine(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Table Params.json");
-        var projFile = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Table Params.json");
+        var projFile = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Table Params.json");
 
         if (Directory.Exists(projFile))
         {
@@ -686,18 +661,14 @@ public class ParamData
 
             var item = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.TableParams);
 
-            if (item == null)
-            {
-                throw new Exception($"[{Project.ProjectName}:Param Editor] JsonConvert returned null.");
-            }
-            else
+            if (item != null)
             {
                 TableParamList = item;
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to load table param list.", LogLevel.Error, LogPriority.High, e);
+            TaskLogs.AddError($"[Param Editor] Failed to load table param list.", e);
         }
 
         return true;
@@ -708,7 +679,7 @@ public class ParamData
         // META
         var metaDir = ParamLocator.GetParammetaDir(Project);
         var rootDir = Path.Combine(StudioCore.Common.FileLocations.Resources, metaDir);
-        var projectDir = Path.Join(Project.ProjectPath, ".smithbox", metaDir);
+        var projectDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", metaDir);
 
         if (!Directory.Exists(projectDir))
         {
@@ -737,7 +708,7 @@ public class ParamData
         var srcFolder = @$"{StudioCore.Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var srcFile = Path.Combine(srcFolder, name);
 
-        var targetFolder = Path.Combine(Project.ProjectPath, ".smithbox", "Project");
+        var targetFolder = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project");
         var targetFile = Path.Combine(targetFolder, name);
 
         if(!Directory.Exists(targetFolder))
@@ -779,7 +750,7 @@ public class ParamData
             bank.Value.RefreshAuxDiffCaches(checkAuxVanillaDiff);
         }
 
-        UICache.ClearCaches();
+        CacheBank.ClearCaches();
     }
 
     public ParamMeta GetParamMeta(PARAMDEF def)
@@ -817,7 +788,7 @@ public class ParamData
         ParamMemoryOffsets = new();
 
         // Information
-        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Reload Offsets.json");
 
         var targetFile = sourceFile;
@@ -857,10 +828,10 @@ public class ParamData
         ParamCategories = new();
 
         // Information
-        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
-        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var projectFile = Path.Combine(projectFolder, "Param Categories.json");
 
         var targetFile = sourceFile;
@@ -901,10 +872,10 @@ public class ParamData
         CommutativeParamGroups = new();
 
         // Information
-        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Commutative Params.json");
 
-        var projectFolder = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var projectFile = Path.Combine(projectFolder, "Commutative Params.json");
 
         var targetFile = sourceFile;
@@ -937,4 +908,33 @@ public class ParamData
 
         return true;
     }
+
+    #region Dispose
+    public void Dispose()
+    {
+        PrimaryBank?.Dispose();
+        VanillaBank?.Dispose();
+
+        foreach (var entry in AuxBanks)
+        {
+            entry.Value?.Dispose();
+        }
+
+        PrimaryBank = null;
+        VanillaBank = null;
+        AuxBanks = null;
+
+        ParamDefs = null;
+        ParamDefsByFilename = null;
+        ParamMeta = null;
+        ParamTypeInfo = null;
+        GraphLegends = null;
+        IconConfigurations = null;
+        TableParamList = null;
+        TableGroupNames = null;
+        ParamMemoryOffsets = null;
+        ParamCategories = null;
+        CommutativeParamGroups = null;
+    }
+    #endregion
 }

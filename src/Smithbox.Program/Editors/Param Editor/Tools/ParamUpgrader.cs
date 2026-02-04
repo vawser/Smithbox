@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Security.AccessControl;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -29,7 +29,7 @@ public class ParamUpgrader
 
     public void Display()
     {
-        if (Project.ParamData == null)
+        if (Project.Handler.ParamData == null)
             return;
 
         var windowWidth = ImGui.GetWindowWidth();
@@ -41,24 +41,28 @@ public class ParamUpgrader
         }
     }
 
-    public bool SupportsParamUpgrading(ProjectEntry curProject)
+    public bool SupportsParamUpgrading()
     {
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             return true;
 
         return false;
     }
 
-    public void ParamUpgradeWarning(ProjectEntry curProject)
+    public void ParamUpgradeWarning()
     {
-        if (SupportsParamUpgrading(curProject) && curProject.Initialized && curProject.IsSelected)
-        {
-            if (curProject.ParamData.PrimaryBank.ParamVersion < curProject.ParamData.VanillaBank.ParamVersion)
-            {
-                var primaryVersion = ParamUtils.ParseRegulationVersion(curProject.ParamData.PrimaryBank.ParamVersion);
-                var vanillaVersion = ParamUtils.ParseRegulationVersion(curProject.ParamData.VanillaBank.ParamVersion);
+        var paramData = Project.Handler.ParamData;
 
-                ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, $"Project primary bank version is below current game version: {primaryVersion} < {vanillaVersion} -- Use the Param Upgrader in the Tool window.");
+        if (SupportsParamUpgrading() && Project.Initialized && Project.IsSelected)
+        {
+            if (paramData.PrimaryBank.ParamVersion < paramData.VanillaBank.ParamVersion)
+            {
+                var primaryVersion = ParamUtils.ParseRegulationVersion(paramData.PrimaryBank.ParamVersion);
+                var vanillaVersion = ParamUtils.ParseRegulationVersion(paramData.VanillaBank.ParamVersion);
+
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
+                ImGui.Text($"Project primary bank version is below current game version: {primaryVersion} < {vanillaVersion} -- Use the Param Upgrader in the Tool window.");
+                ImGui.PopStyleColor(1);
             }
         }
     }
@@ -77,14 +81,13 @@ public class ParamUpgrader
 
     public void UpgraderMenu()
     {
-        var windowWidth = 620;
-
-        var primaryBank = Project.ParamData.PrimaryBank;
-        var vanillaBank = Project.ParamData.VanillaBank;
+        var paramData = Project.Handler.ParamData;
+        var primaryBank = Project.Handler.ParamData.PrimaryBank;
+        var vanillaBank = Project.Handler.ParamData.VanillaBank;
 
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
 
-        UIHelper.SimpleHeader("versionHeader", "Version", "", UI.Current.ImGui_AliasName_Text);
+        UIHelper.SimpleHeader("Version", "");
 
         if (ImGui.BeginTable($"upgraderInfo", 2, tblFlags))
         {
@@ -116,18 +119,18 @@ public class ParamUpgrader
             ImGui.EndTable();
         }
 
-        UIHelper.SimpleHeader("actionHeader", "Actions", "", UI.Current.ImGui_AliasName_Text);
+        UIHelper.SimpleHeader("Actions", "");
 
         // Start
-        if (!DisplayActions && Project.ParamData.PrimaryBank.ParamVersion < Project.ParamData.VanillaBank.ParamVersion)
+        if (!DisplayActions && primaryBank.ParamVersion < vanillaBank.ParamVersion)
         {
-            if (ImGui.Button("Start", DPI.WholeWidthButton(windowWidth, 24)))
+            if (ImGui.Button("Start"))
             {
                 Start();
             }
         }
 
-        if(!DisplayActions && Project.ParamData.PrimaryBank.ParamVersion >= Project.ParamData.VanillaBank.ParamVersion 
+        if (!DisplayActions && primaryBank.ParamVersion >= vanillaBank.ParamVersion
             || DisplayActions && ConflictsChecked && UpgradePerformed && MassEditsPerformed)
         {
             UIHelper.WrappedText("No need to upgrade params.");
@@ -136,7 +139,7 @@ public class ParamUpgrader
         // Conflicts
         if (DisplayActions && !ConflictsChecked)
         {
-            if (ImGui.Button("Check for Conflicts", DPI.WholeWidthButton(windowWidth, 24)))
+            if (ImGui.Button("Check for Conflicts"))
             {
                 CheckForConflicts();
             }
@@ -145,7 +148,7 @@ public class ParamUpgrader
         // Apply Upgrade
         if (DisplayActions && ConflictsChecked && !UpgradePerformed)
         {
-            if (ImGui.Button("Apply Upgrade", DPI.WholeWidthButton(windowWidth, 24)))
+            if (ImGui.Button("Apply Upgrade"))
             {
                 UpgradeParams();
             }
@@ -154,7 +157,7 @@ public class ParamUpgrader
         // Apply Mass Edit
         if (DisplayActions && ConflictsChecked && UpgradePerformed && !MassEditsPerformed)
         {
-            if (ImGui.Button("Apply Mass Edits", DPI.WholeWidthButton(windowWidth, 24)))
+            if (ImGui.Button("Apply Mass Edits"))
             {
                 ApplyMassEdits();
             }
@@ -165,7 +168,7 @@ public class ParamUpgrader
         {
             if (ConflictParams.Count > 0)
             {
-                UIHelper.SimpleHeader("conflictHeader", "Conflicts", "", UI.Current.ImGui_Warning_Text_Color);
+                UIHelper.SimpleHeader("Conflicts", "");
 
                 if (ImGui.BeginTable($"conflictTable", 2, tblFlags))
                 {
@@ -183,7 +186,7 @@ public class ParamUpgrader
 
                         ImGui.TableSetColumnIndex(1);
 
-                        foreach(var cEntry in entry.Value)
+                        foreach (var cEntry in entry.Value)
                         {
                             ImGui.Text($"{cEntry}");
                         }
@@ -221,7 +224,7 @@ public class ParamUpgrader
 
         if (!upgraderInfoTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to find load upgrader information.");
+            TaskLogs.AddError($"Failed to find load upgrader information.");
         }
 
         return true;
@@ -234,7 +237,7 @@ public class ParamUpgrader
 
         if (!oldRegTaskFinished)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to find old regulation file.");
+            TaskLogs.AddError($"Failed to find old regulation file.");
         }
 
         return true;
@@ -244,8 +247,10 @@ public class ParamUpgrader
 
     public async void UpgradeParams()
     {
+        var paramData = Project.Handler.ParamData;
+
         // Special handling for the moved fields in the NR 1.03.1 -> 1.03.2 update
-        if(Project.ProjectType is ProjectType.NR && Project.ParamData.PrimaryBank.ParamVersion == 10310025)
+        if (Project.Descriptor.ProjectType is ProjectType.NR && paramData.PrimaryBank.ParamVersion == 10310025)
         {
             ApplySpecialHandlingForNR = true;
 
@@ -257,19 +262,19 @@ public class ParamUpgrader
 
         if (upgradeTaskFinished)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Upgraded primary bank params successfully.");
+            TaskLogs.AddLog($"Upgraded primary bank params successfully.");
 
             UpgradePerformed = true;
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Primary bank is already fully upgraded.");
+            TaskLogs.AddLog($"Primary bank is already fully upgraded.");
         }
 
-        UICache.ClearCaches();
-        Project.ParamData.RefreshAllParamDiffCaches(false);
+        CacheBank.ClearCaches();
+        paramData.RefreshAllParamDiffCaches(false);
 
-        await Project.ParamData.PrimaryBank.Save();
+        await paramData.PrimaryBank.Save();
     }
 
     // Special handling for the moved fields in the NR 1.03.1 -> 1.03.2 update
@@ -280,7 +285,7 @@ public class ParamUpgrader
 
         if (!spEffectTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to store SpEffect data.");
+            TaskLogs.AddError($"Failed to store SpEffect data.");
         }
 
         return true;
@@ -293,10 +298,12 @@ public class ParamUpgrader
     {
         await Task.Yield();
 
+        var paramData = Project.Handler.ParamData;
+
         SpEffectData.Clear();
 
-        var spEffectParam = Project.ParamData.PrimaryBank.Params["SpEffectParam"];
-        var spEffectParamVanilla = Project.ParamData.VanillaBank.Params["SpEffectParam"];
+        var spEffectParam = paramData.PrimaryBank.Params["SpEffectParam"];
+        var spEffectParamVanilla = paramData.VanillaBank.Params["SpEffectParam"];
 
         foreach (var row in spEffectParam.Rows)
         {
@@ -325,7 +332,8 @@ public class ParamUpgrader
 
     public async void ApplyMassEdits()
     {
-        var newVersion = Project.ParamData.VanillaBank.ParamVersion;
+        var paramData = Project.Handler.ParamData;
+        var newVersion = paramData.VanillaBank.ParamVersion;
 
         // Update fields
         var massEditCmds = UpgraderInfo.UpgradeCommands.Where(e => e.Version == $"{newVersion}").ToList();
@@ -336,11 +344,12 @@ public class ParamUpgrader
             commandString = $"{commandString}{cmd.Command};\n";
         }
 
-        Project.ParamEditor.MassEditHandler.ApplyMassEdit(commandString);
-        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Applied upgrader mass edit commands", LogLevel.Information, LogPriority.Normal);
+        Editor.ViewHandler.ActiveView.MassEdit.ApplyMassEdit(commandString);
+
+        TaskLogs.AddLog($"Applied upgrader mass edit commands");
 
         // Special handling for the moved fields in the NR 1.03.1 -> 1.03.2 update
-        if (Project.ProjectType is ProjectType.NR && ApplySpecialHandlingForNR)
+        if (Project.Descriptor.ProjectType is ProjectType.NR && ApplySpecialHandlingForNR)
         {
             commandString = "";
 
@@ -357,10 +366,10 @@ public class ParamUpgrader
                 commandString = $"{commandString}\n{command}";
             }
 
-            Project.ParamEditor.MassEditHandler.ApplyMassEdit(commandString);
+            Editor.ViewHandler.ActiveView.MassEdit.ApplyMassEdit(commandString);
         }
 
-        await Project.ParamData.PrimaryBank.Save();
+        await paramData.PrimaryBank.Save();
 
         MassEditsPerformed = true;
     }
@@ -369,20 +378,22 @@ public class ParamUpgrader
     {
         await Task.Yield();
 
-        // Backup original
-        var data = Project.ProjectFS.GetFile(@"regulation.bin")?.GetData().ToArray();
+        var paramData = Project.Handler.ParamData;
 
-        if (CFG.Current.EnableBackupSaves)
+        // Backup original
+        var data = Project.VFS.ProjectFS.GetFile(@"regulation.bin")?.GetData().ToArray();
+
+        if (CFG.Current.Project_Enable_Backup_Saves)
         {
-            File.WriteAllBytes(Path.Join(Project.ProjectPath, "regulation.bin.prev"), data);
+            File.WriteAllBytes(Path.Join(Project.Descriptor.ProjectPath, "regulation.bin.prev"), data);
         }
 
         NewParams = new();
 
         var anyUpgrades = false;
 
-        var primaryBank = Project.ParamData.PrimaryBank;
-        var vanillaBank = Project.ParamData.VanillaBank;
+        var primaryBank = paramData.PrimaryBank;
+        var vanillaBank = paramData.VanillaBank;
 
         foreach (var k in vanillaBank.Params.Keys)
         {
@@ -417,8 +428,8 @@ public class ParamUpgrader
         primaryBank._paramVersion = vanillaBank.ParamVersion;
         primaryBank._pendingUpgrade = true;
 
-        UICache.ClearCaches();
-        Project.ParamData.RefreshAllParamDiffCaches(false);
+        CacheBank.ClearCaches();
+        paramData.RefreshAllParamDiffCaches(false);
 
         return true;
     }
@@ -430,13 +441,13 @@ public class ParamUpgrader
 
         if (conflictTaskFinished)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Checked for conflicts successfully.");
+            TaskLogs.AddLog($"Checked for conflicts successfully.");
 
             ConflictsChecked = true;
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to check for conflicts.");
+            TaskLogs.AddError($"Failed to check for conflicts.");
         }
     }
 
@@ -444,8 +455,9 @@ public class ParamUpgrader
     {
         await Task.Yield();
 
-        var primaryBank = Project.ParamData.PrimaryBank;
-        var vanillaBank = Project.ParamData.VanillaBank;
+        var paramData = Project.Handler.ParamData;
+        var primaryBank = paramData.PrimaryBank;
+        var vanillaBank = paramData.VanillaBank;
 
         foreach (var k in vanillaBank.Params.Keys)
         {
@@ -486,12 +498,12 @@ public class ParamUpgrader
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deserialize Upgrader Information.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"Failed to deserialize Upgrader Information.", e);
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to load Upgrader Information.", LogLevel.Error, LogPriority.High, e);
+            TaskLogs.AddError($"Failed to load Upgrader Information.", e);
         }
 
         return true;
@@ -508,15 +520,15 @@ public class ParamUpgrader
             return false;
         }
 
-        if (Project.ProjectType == ProjectType.ER)
+        if (Project.Descriptor.ProjectType == ProjectType.ER)
         {
             OldRegulationBinder = SFUtil.DecryptERRegulation(oldRegPath);
         }
-        else if (Project.ProjectType == ProjectType.AC6)
+        else if (Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             OldRegulationBinder = SFUtil.DecryptAC6Regulation(oldRegPath);
         }
-        else if (Project.ProjectType == ProjectType.NR)
+        else if (Project.Descriptor.ProjectType == ProjectType.NR)
         {
             OldRegulationBinder = SFUtil.DecryptNightreignRegulation(oldRegPath);
         }
@@ -534,7 +546,8 @@ public class ParamUpgrader
         if (UpgraderInfo == null)
             return "";
 
-        var primaryBank = Project.ParamData.PrimaryBank;
+        var paramData = Project.Handler.ParamData;
+        var primaryBank = paramData.PrimaryBank;
         var oldVersionString = ParamUtils.ParseRegulationVersion(primaryBank.ParamVersion);
 
         var oldRegulationPath = "";
@@ -565,6 +578,8 @@ public class ParamUpgrader
             throw new Exception(@"Failed to get regulation version. Params might be corrupt.");
         }
 
+        var paramData = Project.Handler.ParamData;
+
         // Load every param in the regulation
         foreach (BinderFile f in parambnd.Files)
         {
@@ -583,14 +598,14 @@ public class ParamUpgrader
             Param p;
 
             // AC6/SDT - Tentative ParamTypes
-            if (Project.ProjectType is ProjectType.AC6 or ProjectType.SDT)
+            if (Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.SDT)
             {
                 p = Param.ReadIgnoreCompression(f.Bytes);
                 if (!string.IsNullOrEmpty(p.ParamType))
                 {
-                    if (!Project.ParamData.ParamDefs.ContainsKey(p.ParamType) || paramName == "EquipParamWeapon_Npc")
+                    if (!paramData.ParamDefs.ContainsKey(p.ParamType) || paramName == "EquipParamWeapon_Npc")
                     {
-                        if (Project.ParamData.ParamTypeInfo.Mapping.TryGetValue(paramName, out var newParamType))
+                        if (paramData.ParamTypeInfo.Mapping.TryGetValue(paramName, out var newParamType))
                         {
                             p.ParamType = newParamType;
                         }
@@ -607,7 +622,7 @@ public class ParamUpgrader
                 }
                 else
                 {
-                    if (Project.ParamData.ParamTypeInfo.Mapping.TryGetValue(paramName, out var newParamType))
+                    if (paramData.ParamTypeInfo.Mapping.TryGetValue(paramName, out var newParamType))
                     {
                         p.ParamType = newParamType;
                     }
@@ -625,7 +640,7 @@ public class ParamUpgrader
             else
             {
                 p = Param.ReadIgnoreCompression(f.Bytes);
-                if (!Project.ParamData.ParamDefs.ContainsKey(p.ParamType ?? ""))
+                if (!paramData.ParamDefs.ContainsKey(p.ParamType ?? ""))
                 {
                     TaskLogs.AddLog(
                         $"Couldn't find ParamDef for param {paramName} with ParamType \"{p.ParamType}\".",
@@ -638,7 +653,7 @@ public class ParamUpgrader
 
             // Try to fixup Elden Ring ChrModelParam for ER 1.06 because many have been saving botched params and
             // it's an easy fixup
-            if (Project.ProjectType == ProjectType.ER && version >= 10601000)
+            if (Project.Descriptor.ProjectType == ProjectType.ER && version >= 10601000)
             {
                 if (p.ParamType == "CHR_MODEL_PARAM_ST")
                 {
@@ -648,7 +663,7 @@ public class ParamUpgrader
             }
 
             // Add in the new data for these two params added in 1.12.1
-            if (Project.ProjectType == ProjectType.ER && version >= 11210015)
+            if (Project.Descriptor.ProjectType == ProjectType.ER && version >= 11210015)
             {
                 if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
                 {
@@ -673,7 +688,7 @@ public class ParamUpgrader
             }
 
             // Skip these for DS1 so the param load is not slowed down by the catching
-            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
                 if (paramName is "m99_ToneCorrectBank" or "m99_ToneMapBank" or "default_ToneCorrectBank")
                 {
@@ -683,7 +698,7 @@ public class ParamUpgrader
             }
 
             // VAW: this is grabbing the defs from the primary/vanilla param bank stuff
-            PARAMDEF def = Project.ParamData.ParamDefs[p.ParamType];
+            PARAMDEF def = paramData.ParamDefs[p.ParamType];
 
             try
             {

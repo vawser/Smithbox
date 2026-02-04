@@ -1,16 +1,17 @@
 ﻿using StudioCore.Application;
+using StudioCore.Keybinds;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
 public class TexViewerZoom
 {
-    public TextureViewerScreen Editor;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
-    public TexViewerZoom(TextureViewerScreen editor, ProjectEntry project)
+    public TexViewerZoom(TexEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -19,7 +20,7 @@ public class TexViewerZoom
 
     public void HandleZoom()
     {
-        var delta = InputTracker.GetMouseWheelDelta();
+        var delta = InputManager.MouseWheelDelta;
 
         if (delta > 0)
         {

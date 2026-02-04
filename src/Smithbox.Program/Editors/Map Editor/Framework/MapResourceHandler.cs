@@ -39,9 +39,9 @@ public class MapResourceHandler
 
     public async Task<bool> ReadMap(string mapid)
     {
-        await Editor.Project.MapData.PrimaryBank.LoadMap(mapid);
+        await Editor.Project.Handler.MapData.PrimaryBank.LoadMap(mapid);
 
-        var entry = Editor.Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapid);
+        var entry = Editor.Project.Handler.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapid);
 
         if (entry.Value == null)
             return false;
@@ -55,7 +55,7 @@ public class MapResourceHandler
     {
         if (CFG.Current.MapEditor_ModelLoad_Characters)
         {
-            var chrId = CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID;
+            var chrId = CFG.Current.MapEditor_Character_Substitution_ID;
 
             var modelAsset = ModelLocator.GetChrModel(Editor.Project, chrId, chrId);
 
@@ -131,7 +131,7 @@ public class MapResourceHandler
             }
 
             // Navmesh
-            if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 if (model.Name.StartsWith('n'))
                 {
@@ -198,7 +198,7 @@ public class MapResourceHandler
         }
 
         // AAT
-        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(Editor.Project, "common_body");
 
@@ -207,7 +207,7 @@ public class MapResourceHandler
         }
 
         // SYSTEX
-        if (Editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
+        if (Editor.Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
         {
             var textureAsset = TextureLocator.GetSystexTextureVirtualPath(Editor.Project, "systex");
 
@@ -471,7 +471,7 @@ public class MapResourceHandler
                 {
                     var type = ResourceType.NavmeshHKX;
 
-                    if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+                    if (Editor.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
                         type = ResourceType.Navmesh;
 
                     job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,

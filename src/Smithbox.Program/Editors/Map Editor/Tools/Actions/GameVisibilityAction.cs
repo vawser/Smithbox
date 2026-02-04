@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -25,25 +26,30 @@ public class GameVisibilityAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MakeDummyObject) && 
-            Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Disable);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MakeNormalObject) && 
-            Editor.ViewportSelection.IsSelection())
-        {
-            ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DisableGamePresence) && 
-            Editor.ViewportSelection.IsSelection())
-        {
-            ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Disable);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_EnableGamePresence) && 
-            Editor.ViewportSelection.IsSelection())
-        {
-            ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Enable);
+            if (InputManager.IsPressed(KeybindID.MapEditor_Make_Dummy_Object))
+            {
+                ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Disable);
+            }
+
+            if (InputManager.IsPressed(KeybindID.MapEditor_Make_Normal_Object))
+            {
+                ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
+            }
+
+            if (Project.Descriptor.ProjectType is ProjectType.ER)
+            {
+                if (InputManager.IsPressed(KeybindID.MapEditor_Disable_Game_Presence))
+                {
+                    ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Disable);
+                }
+
+                if (InputManager.IsPressed(KeybindID.MapEditor_Enable_Game_Presence))
+                {
+                    ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Enable);
+                }
+            }
         }
     }
 
@@ -54,24 +60,24 @@ public class GameVisibilityAction
     {
         if (ImGui.BeginMenu("Game Visibility"))
         {
-            if (ImGui.MenuItem("Make Selected Normal Object into Dummy Object", KeyBindings.Current.MAP_MakeDummyObject.HintText))
+            if (ImGui.MenuItem("Set Map Object to Dummy", InputManager.GetHint(KeybindID.MapEditor_Make_Dummy_Object)))
             {
                 ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Disable);
             }
 
-            if (ImGui.MenuItem("Make Selected Dummy Object into Normal Object", KeyBindings.Current.MAP_MakeNormalObject.HintText))
+            if (ImGui.MenuItem("Set Map Object to Normal", InputManager.GetHint(KeybindID.MapEditor_Make_Normal_Object)))
             {
                 ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
             }
 
-            if (Project.ProjectType is ProjectType.ER)
+            if (Project.Descriptor.ProjectType is ProjectType.ER)
             {
-                if (ImGui.MenuItem("Disable Game Presence of Selected", KeyBindings.Current.MAP_DisableGamePresence.HintText))
+                if (ImGui.MenuItem("Disable Map Object Game Presence", InputManager.GetHint(KeybindID.MapEditor_Disable_Game_Presence)))
                 {
                     ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Disable);
                 }
 
-                if (ImGui.MenuItem("Enable Game Presence of Selected", KeyBindings.Current.MAP_EnableGamePresence.HintText))
+                if (ImGui.MenuItem("Enable Map Object Game Presence", InputManager.GetHint(KeybindID.MapEditor_Enable_Game_Presence)))
                 {
                     ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Enable);
                 }
@@ -88,24 +94,24 @@ public class GameVisibilityAction
     {
         if (ImGui.BeginMenu("Game Visibility"))
         {
-            if (ImGui.MenuItem("Make Selected Normal Object into Dummy Object", KeyBindings.Current.MAP_MakeDummyObject.HintText))
+            if (ImGui.MenuItem("Set Map Object to Dummy", InputManager.GetHint(KeybindID.MapEditor_Make_Dummy_Object)))
             {
                 ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Disable);
             }
 
-            if (ImGui.MenuItem("Make Selected Dummy Object into Normal Object", KeyBindings.Current.MAP_MakeNormalObject.HintText))
+            if (ImGui.MenuItem("Set Map Object to Normal", InputManager.GetHint(KeybindID.MapEditor_Make_Normal_Object)))
             {
                 ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
             }
 
-            if (Project.ProjectType is ProjectType.ER)
+            if (Project.Descriptor.ProjectType is ProjectType.ER)
             {
-                if (ImGui.MenuItem("Disable Game Presence of Selected", KeyBindings.Current.MAP_DisableGamePresence.HintText))
+                if (ImGui.MenuItem("Disable Map Object Game Presence", InputManager.GetHint(KeybindID.MapEditor_Disable_Game_Presence)))
                 {
                     ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Disable);
                 }
 
-                if (ImGui.MenuItem("Enable Game Presence of Selected", KeyBindings.Current.MAP_EnableGamePresence.HintText))
+                if (ImGui.MenuItem("Enable Map Object Game Presence", InputManager.GetHint(KeybindID.MapEditor_Enable_Game_Presence)))
                 {
                     ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Enable);
                 }
@@ -139,7 +145,7 @@ public class GameVisibilityAction
                     List<MsbEntity> sourceList = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
                     foreach (MsbEntity s in sourceList)
                     {
-                        if (Editor.Project.ProjectType == ProjectType.ER)
+                        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
                         {
                             s.SetPropertyValue("GameEditionDisable", 1);
                         }
@@ -150,7 +156,7 @@ public class GameVisibilityAction
                     List<MsbEntity> sourceList = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
                     foreach (MsbEntity s in sourceList)
                     {
-                        if (Editor.Project.ProjectType == ProjectType.ER)
+                        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
                         {
                             s.SetPropertyValue("GameEditionDisable", 0);
                         }
@@ -182,7 +188,7 @@ public class GameVisibilityAction
     public void ChangeMapObjectType(string[] sourceTypes, string[] targetTypes)
     {
         Type msbclass;
-        switch (Editor.Project.ProjectType)
+        switch (Editor.Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 msbclass = typeof(MSBD);
@@ -210,6 +216,9 @@ public class GameVisibilityAction
                 break;
             case ProjectType.AC6:
                 msbclass = typeof(MSB_AC6);
+                break;
+            case ProjectType.NR:
+                msbclass = typeof(MSB_NR);
                 break;
             default:
                 throw new ArgumentException("type must be valid");

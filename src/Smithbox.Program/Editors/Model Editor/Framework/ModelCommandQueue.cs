@@ -28,7 +28,7 @@ public class ModelCommandQueue
             {
                 var filename = initcmd[1];
 
-                var entry = Project.ModelData.PrimaryBank.Models
+                var entry = Project.Handler.ModelData.PrimaryBank.Models
                     .FirstOrDefault(e => e.Key.Filename.ToLower() == filename.ToLower());
 
                 if (entry.Value != null)

@@ -5,16 +5,16 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextExporterModal
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private ProjectEntry Project;
 
     public bool ShowModal = false;
 
     public string WrapperName = "";
 
-    public TextExporterModal(TextEditorScreen editor, ProjectEntry project)
+    public TextExporterModal(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -46,7 +46,7 @@ public class TextExporterModal
             if (ImGui.Button("Export", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 ShowModal = false;
-                Editor.FmgExporter.ProcessExport(WrapperName);
+                Parent.FmgExporter.ProcessExport(WrapperName);
             }
             if (WrapperName == "")
             {

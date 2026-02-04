@@ -5,12 +5,12 @@ namespace StudioCore.Editors.MaterialEditor;
 
 public class MaterialFilters
 {
-    public MaterialEditorScreen Editor;
+    public MaterialEditorView Parent;
     public ProjectEntry Project;
 
-    public MaterialFilters(MaterialEditorScreen editor, ProjectEntry project)
+    public MaterialFilters(MaterialEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 

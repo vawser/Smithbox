@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
@@ -17,12 +18,14 @@ public class TextToolView
 
     public void Display()
     {
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
+        if (!CFG.Current.Interface_TextEditor_ToolWindow)
+            return;
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextEditor", ImGuiWindowFlags.MenuBar))
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (ImGui.Begin("Tools##ToolConfigureWindow_TextEditor", UIHelper.GetMainWindowFlags()))
         {
-            Editor.Selection.SwitchWindowContext(TextEditorContext.ToolWindow);
+            FocusManager.SetFocus(EditorFocusContext.TextEditor_Tools);
 
             if (ImGui.BeginMenuBar())
             {
@@ -36,7 +39,7 @@ public class TextToolView
             {
                 if (ImGui.CollapsingHeader("Text Search"))
                 {
-                    GlobalTextSearch.Display(Editor);
+                    GlobalTextSearch.Display(activeView);
                 }
             }
 
@@ -45,7 +48,7 @@ public class TextToolView
             {
                 if (ImGui.CollapsingHeader("Text Replacement"))
                 {
-                    GlobalTextReplacement.Display(Editor);
+                    GlobalTextReplacement.Display(activeView);
                 }
             }
 
@@ -54,13 +57,12 @@ public class TextToolView
             {
                 if (ImGui.CollapsingHeader("Text Merge"))
                 {
-                    TextMerge.Display(Editor);
+                    TextMerge.Display(activeView);
                 }
             }
         }
 
         ImGui.End();
-        ImGui.PopStyleColor(1);
     }
     public void ViewMenu()
     {

@@ -18,6 +18,10 @@
     AltName="Defeat Flag"
     Wiki="The event flag set upon defeating this night boss."
     FlagAlias="" />
+	
+	<unknown_5
+	AltName="Map Lot Condition?"
+	Refs="MapPatternMapLotCondition" />
     
     <bossNameId
     AltName="Boss Name ID"

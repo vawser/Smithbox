@@ -13,8 +13,6 @@ public static class Program
 {
     private static string _version = "undefined";
 
-    private static bool IsLowRequirements = false;
-
     private static Smithbox Instance;
 
     private static bool IsDebug = false;
@@ -29,16 +27,6 @@ public static class Program
         IsDebug = true;
         #endif
 
-        for (int i = 0; i < args.Length; i++)
-        {
-            switch (args[i])
-            {
-                case "-low-requirements":
-                    IsLowRequirements = true;
-                    break;
-            }
-        }
-
         AppDomain currentDomain = AppDomain.CurrentDomain;
         currentDomain.UnhandledException += CrashHandler;
 
@@ -46,14 +34,7 @@ public static class Program
 
         _version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion ?? "undefined";
 
-        if(IsLowRequirements)
-        {
-            Instance = new Smithbox(new OpenGLCompatGraphicsContext(), _version, IsLowRequirements);
-        }
-        else
-        {
-            Instance = new Smithbox(new VulkanGraphicsContext(), _version, IsLowRequirements);
-        }
+        Instance = new Smithbox(_version);
 
         if (Instance != null)
         {

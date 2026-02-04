@@ -1,4 +1,5 @@
 ﻿using StudioCore.Application;
+using StudioCore.Keybinds;
 using Veldrid;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -16,19 +17,29 @@ public class TexShortcuts
 
     public void Monitor()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ExportTexture))
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            Editor.Tools.ExportTextureHandler();
+            CFG.Current.Interface_TextureViewer_ToolWindow = !CFG.Current.Interface_TextureViewer_ToolWindow;
         }
 
-        if (InputTracker.GetKey(Key.LControl))
+        if (activeView == null)
+            return;
+
+        if (InputManager.IsPressed(KeybindID.TextureViewer_Export_Texture))
         {
-            Editor.ViewerZoom.HandleZoom();
+            Editor.ToolView.TextureExport.ExportTextureHandler();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ResetZoomLevel))
+        if (InputManager.HasCtrlDown())
         {
-            Editor.ViewerZoom.ZoomReset();
+            activeView.ZoomState.HandleZoom();
+        }
+
+        if (InputManager.IsPressed(KeybindID.TextureViewer_Reset_Zoom_Level))
+        {
+            activeView.ZoomState.ZoomReset();
         }
     }
 }

@@ -10,9 +10,8 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MapBank
+public class MapBank : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
@@ -21,9 +20,8 @@ public class MapBank
 
     public Dictionary<FileDictionaryEntry, MapWrapper> Maps = new();
 
-    public MapBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
+    public MapBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
     {
-        BaseEditor = baseEditor;
         Project = project;
         Name = name;
         TargetFS = targetFs;
@@ -33,9 +31,9 @@ public class MapBank
     {
         await Task.Yield();
         
-        foreach(var entry in Project.MapData.MapFiles.Entries)
+        foreach(var entry in Project.Locator.MapFiles.Entries)
         {
-            var newMapEntry = new MapWrapper(BaseEditor, Project, entry, TargetFS);
+            var newMapEntry = new MapWrapper(Project, entry, TargetFS);
             Maps.Add(entry, newMapEntry);
         }
 
@@ -62,32 +60,21 @@ public class MapBank
         return true;
     }
 
-    // Save still handled in Universe for now
+    #region Dispose
+    public void Dispose()
+    {
+        foreach(var entry in Maps)
+        {
+            entry.Value.Dispose();
+        }
 
-    //public async Task<bool> SaveMap(string mapID, bool seralizeContainer = true)
-    //{
-    //    if (Maps.Any(e => e.Key.Filename == mapID))
-    //    {
-    //        var fileDictEntry = Maps.FirstOrDefault(e => e.Key.Filename == mapID);
-
-    //        if (fileDictEntry.Value != null)
-    //        {
-    //            var key = fileDictEntry.Key;
-    //            await Maps[key].Save();
-    //        }
-    //    }
-    //    else
-    //    {
-    //        return false;
-    //    }
-
-    //    return true;
-    //}
+        Maps = null;
+    }
+    #endregion
 }
 
-public class MapWrapper
+public class MapWrapper : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
     public VirtualFileSystem TargetFS;
 
@@ -104,9 +91,8 @@ public class MapWrapper
     /// </summary>
     public MapContainer MapContainer { get; set; }
 
-    public MapWrapper(Smithbox baseEditor, ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
+    public MapWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
     {
-        BaseEditor = baseEditor;
         Project = project;
         TargetFS = targetFS;
         Name = dictEntry.Filename;
@@ -119,13 +105,13 @@ public class MapWrapper
 
         var successfulLoad = false;
 
-        var editor = Project.MapEditor;
+        var editor = Project.Handler.MapEditor;
 
         try
         {
             var mapData = TargetFS.ReadFileOrThrow(Path);
 
-            switch (Project.ProjectType)
+            switch (Project.Descriptor.ProjectType)
             {
                 case ProjectType.DES:
                     try
@@ -135,7 +121,7 @@ public class MapWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -148,7 +134,7 @@ public class MapWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -161,7 +147,7 @@ public class MapWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -173,7 +159,7 @@ public class MapWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -185,7 +171,7 @@ public class MapWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -197,7 +183,7 @@ public class MapWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -209,7 +195,7 @@ public class MapWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -221,7 +207,7 @@ public class MapWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB",  e);
                         return false;
                     }
                     break;
@@ -233,7 +219,7 @@ public class MapWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
 
                         return false;
                     }
@@ -243,37 +229,18 @@ public class MapWrapper
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} from VFS", LogLevel.Error, LogPriority.High, e);
+            TaskLogs.AddError($"[Map Editor] Failed to read {Path} from VFS", e);
             return false;
         }
 
         return successfulLoad;
     }
 
-    // Save still handled in Universe for now
-
-    //public async Task<bool> Save()
-    //{
-    //    await Task.Yield();
-
-    //    var successfulSave = false;
-
-    //    switch (Project.ProjectType)
-    //    {
-    //        case ProjectType.DES:
-    //        case ProjectType.DS1:
-    //        case ProjectType.DS1R:
-    //        case ProjectType.DS2:
-    //        case ProjectType.DS2S:
-    //        case ProjectType.DS3:
-    //        case ProjectType.BB:
-    //        case ProjectType.SDT:
-    //        case ProjectType.ER:
-    //        case ProjectType.AC6:
-    //        case ProjectType.ERN:
-    //        default: break;
-    //    }
-
-    //    return successfulSave;
-    //}
+    #region Dispose
+    public void Dispose()
+    {
+        MSB = null;
+        MapContainer = null;
+    }
+    #endregion
 }

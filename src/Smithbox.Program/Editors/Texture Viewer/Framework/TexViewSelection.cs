@@ -9,7 +9,7 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexViewSelection
 {
-    public TextureViewerScreen Editor;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
     private Task LoadingTask;
@@ -38,9 +38,9 @@ public class TexViewSelection
 
     public SubTexture PreviewSubTexture;
 
-    public TexViewSelection(TextureViewerScreen editor, ProjectEntry project)
+    public TexViewSelection(TexEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -94,18 +94,4 @@ public class TexViewSelection
         SelectedTexture = texture;
     }
 
-    public TextureViewerContext CurrentWindowContext = TextureViewerContext.None;
-
-    /// <summary>
-    /// Switches the focus context to the passed value.
-    /// Use this on all windows (e.g. both Begin and BeginChild)
-    /// </summary>
-    public void SwitchWindowContext(TextureViewerContext newContext)
-    {
-        if (ImGui.IsWindowHovered())
-        {
-            CurrentWindowContext = newContext;
-            //TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
-        }
-    }
 }

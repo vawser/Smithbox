@@ -5,16 +5,16 @@ namespace StudioCore.Editors.TextEditor;
 
 public class ChangeFmgEntryText : EditorAction
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private FMG.Entry Entry;
     private string NewText;
     private string OldText;
 
     private TextContainerWrapper Info;
 
-    public ChangeFmgEntryText(TextEditorScreen editor, TextContainerWrapper info, FMG.Entry entry, string newText)
+    public ChangeFmgEntryText(TextEditorView view, TextContainerWrapper info, FMG.Entry entry, string newText)
     {
-        Editor = editor;
+        Parent = view;
         Info = info;
         Entry = entry;
         NewText = newText;
@@ -26,7 +26,7 @@ public class ChangeFmgEntryText : EditorAction
         Entry.Text = NewText;
         Info.IsModified = true;
 
-        Editor.DifferenceManager.TrackFmgDifferences();
+        Parent.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }
@@ -36,7 +36,7 @@ public class ChangeFmgEntryText : EditorAction
         Entry.Text = OldText;
         Info.IsModified = false;
 
-        Editor.DifferenceManager.TrackFmgDifferences();
+        Parent.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }

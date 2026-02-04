@@ -9,12 +9,10 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapEditorStub : IEditorStub
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public MapEditorStub(Smithbox baseEditor, ProjectEntry project)
+    public MapEditorStub(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -24,10 +22,10 @@ public class MapEditorStub : IEditorStub
 
     public unsafe void Display(float dt, string[] commands)
     {
-        if (!Project.EnableMapEditor)
+        if (!Project.Descriptor.EnableMapEditor)
             return;
 
-        if (!ProjectUtils.SupportsMapEditor(Project.ProjectType))
+        if (!ProjectUtils.SupportsMapEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)
@@ -36,7 +34,7 @@ public class MapEditorStub : IEditorStub
             ImGui.SetNextWindowFocus();
         }
 
-        if (BaseEditor._context.Device == null)
+        if (Smithbox.Instance._context.Device == null)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, *ImGui.GetStyleColorVec4(ImGuiCol.WindowBg));
         }
@@ -52,9 +50,9 @@ public class MapEditorStub : IEditorStub
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
 
-            if(Project.MapEditor != null)
+            if(Project.Handler.MapEditor != null)
             {
-                Project.MapEditor.OnGUI(commands);
+                Project.Handler.MapEditor.OnGUI(commands);
             }
             else
             {
@@ -64,17 +62,17 @@ public class MapEditorStub : IEditorStub
 
             ImGui.End();
 
-            if (Project.MapEditor != null)
+            if (Project.Handler.MapEditor != null)
             {
-                Project.FocusedEditor = Project.MapEditor;
-                Project.MapEditor.Update(dt);
+                Project.Handler.FocusedEditor = Project.Handler.MapEditor;
+                Project.Handler.MapEditor.Update(dt);
             }
         }
         else
         {
-            if (Project.MapEditor != null)
+            if (Project.Handler.MapEditor != null)
             {
-                Project.MapEditor.OnDefocus();
+                Project.Handler.MapEditor.OnDefocus();
             }
 
             ImGui.PopStyleColor(1);
@@ -85,17 +83,17 @@ public class MapEditorStub : IEditorStub
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
     {
-        if (Project.MapEditor != null && Project.FocusedEditor is MapEditorScreen)
+        if (Project.Handler.MapEditor != null && Project.Handler.FocusedEditor is MapEditorScreen)
         {
-            Project.MapEditor.EditorResized(window, device);
+            Project.Handler.MapEditor.EditorResized(window, device);
         }
     }
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (Project.MapEditor != null && Project.FocusedEditor is MapEditorScreen)
+        if (Project.Handler.MapEditor != null && Project.Handler.FocusedEditor is MapEditorScreen)
         {
-            Project.MapEditor.Draw(device, cl);
+            Project.Handler.MapEditor.Draw(device, cl);
         }
     }
 }

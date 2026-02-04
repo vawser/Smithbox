@@ -77,7 +77,7 @@ public class MapModelInsightView
 
             UIHelper.SimpleHeader("actHeader", "Actions", "", UI.Current.ImGui_AliasName_Text);
 
-            var outputDirectory = Path.Combine(Project.ProjectPath, CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
+            var outputDirectory = Path.Combine(Project.Descriptor.ProjectPath, CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
 
             if (!Directory.Exists(outputDirectory))
             {
@@ -199,7 +199,7 @@ public class MapModelInsightView
         var fileName = Path.GetFileName(relativePath);
 
         VirtualFile virtFile;
-        var readFile = project.FS.TryGetFile(relativePath, out virtFile);
+        var readFile = project.VFS.FS.TryGetFile(relativePath, out virtFile);
 
         if (!readFile)
         {
@@ -237,7 +237,7 @@ public class MapModelInsightView
 
             if (containerType is ResourceContainerType.BND)
             {
-                if (project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                if (project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                 {
                     var reader = new BND3Reader(virtFile.GetData());
                     foreach (var file in reader.Files)
@@ -309,7 +309,7 @@ public class MapModelInsightView
                 }
             }
 
-            if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 if (matbin != null)
                 {
@@ -355,7 +355,7 @@ public class MapModelInsightView
             var relativePath = PathBuilder.GetRelativePath(project, tex.VirtualPath);
 
             var fileName = Path.GetFileName(relativePath);
-            var fileData = project.FS.ReadFile(relativePath);
+            var fileData = project.VFS.FS.ReadFile(relativePath);
 
             if (fileData == null)
                 continue;
@@ -411,7 +411,7 @@ public class MapModelInsightView
                 // TPFBND
                 if (containerType is ResourceContainerType.BND)
                 {
-                    if (project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                    if (project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                     {
                         var reader = new BND3Reader(fileData.Value);
                         foreach (var file in reader.Files)

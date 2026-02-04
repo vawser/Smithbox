@@ -1,4 +1,5 @@
 ﻿using StudioCore.Application;
+using StudioCore.Utilities;
 using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.StartupUtilities;
@@ -67,7 +68,7 @@ public class VulkanGraphicsContext : IGraphicsContext
             CFG.Current.GFX_Display_Height, ColorSpaceHandling.Legacy);
     }
 
-    public void Draw(ProjectManager projectManager)
+    public void Draw(ProjectOrchestrator projectManager)
     {
         //Debug.Assert(_window.Exists);
         var width = _window.Width;
@@ -80,6 +81,9 @@ public class VulkanGraphicsContext : IGraphicsContext
         if (_windowResized)
         {
             _windowResized = false;
+
+            if (width == 0 || height == 0)
+                return;
 
             CFG.Current.GFX_Display_Width = width;
             CFG.Current.GFX_Display_Height = height;
@@ -135,6 +139,16 @@ public class VulkanGraphicsContext : IGraphicsContext
         MainWindowColorTexture?.Dispose();
         MainWindowFramebuffer?.Dispose();
         //MainWindowResourceSet?.Dispose();
+
+        if(_gd.SwapchainFramebuffer.Width == 0)
+        {
+            TaskLogs.AddLog($"{_gd.SwapchainFramebuffer.Width}");
+        }
+
+        if (_gd.SwapchainFramebuffer.Height == 0)
+        {
+            TaskLogs.AddLog($"{_gd.SwapchainFramebuffer.Height}");
+        }
 
         ResourceFactory factory = _gd.ResourceFactory;
         TextureDescription mainColorDesc = TextureDescription.Texture2D(

@@ -1,0 +1,399 @@
+{
+    "ProjectType": 9,
+    "Languages": [
+        {
+            "Abbreviation": "engus",
+            "Language": "English"
+        },
+        {
+            "Abbreviation": "frafr",
+            "Language": "French"
+        },
+        {
+            "Abbreviation": "deude",
+            "Language": "German"
+        },
+        {
+            "Abbreviation": "itait",
+            "Language": "Italian"
+        },
+        {
+            "Abbreviation": "jpnjp",
+            "Language": "Japanese"
+        },
+        {
+            "Abbreviation": "korkr",
+            "Language": "Korean"
+        },
+        {
+            "Abbreviation": "polpl",
+            "Language": "Polish"
+        },
+        {
+            "Abbreviation": "rusru",
+            "Language": "Russian"
+        },
+        {
+            "Abbreviation": "spaes",
+            "Language": "Spanish"
+        },
+        {
+            "Abbreviation": "spaar",
+            "Language": "Spanish (Latin)"
+        },
+        {
+            "Abbreviation": "zhotw",
+            "Language": "Traditional Chinese"
+        },
+        {
+            "Abbreviation": "zhocn",
+            "Language": "Simplified Chinese"
+        },
+        {
+            "Abbreviation": "thath",
+            "Language": "Thai"
+        },
+        {
+            "Abbreviation": "araae",
+            "Language": "Arabic"
+        },
+        {
+            "Abbreviation": "porpt",
+            "Language": "Portuguese"
+        }
+    ],
+    "Containers": [
+        {
+            "OrderID": 1,
+            "FullName": "item.msgbnd.dcx",
+            "SimpleName": "item",
+            "ContainerName": "Item",
+            "VariantName": "Stock",
+            "DisplayName": "Item"
+        },
+        {
+            "OrderID": 2,
+            "FullName": "menu.msgbnd.dcx",
+            "SimpleName": "menu",
+            "ContainerName": "Menu",
+            "VariantName": "Stock",
+            "DisplayName": "Menu"
+        },
+        {
+            "OrderID": 3,
+            "FullName": "ngword.msgbnd.dcx",
+            "SimpleName": "ngword",
+            "ContainerName": "Blocked Words",
+            "VariantName": "Stock",
+            "DisplayName": "Blocked Words"
+        }
+    ],
+    "List": [
+        {
+            "ID": 10,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 11,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 12,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 18,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Characters",
+            "SecondaryDomain": "",
+            "DisplayName": "Characters"
+        },
+        {
+            "ID": 21,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 22,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 35,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Generators",
+            "SecondaryDomain": "",
+            "DisplayName": "Generators"
+        },
+        {
+            "ID": 36,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Generators",
+            "SecondaryDomain": "",
+            "DisplayName": "Generators"
+        },
+        {
+            "ID": 38,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Boosters",
+            "SecondaryDomain": "",
+            "DisplayName": "Boosters"
+        },
+        {
+            "ID": 39,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Boosters",
+            "SecondaryDomain": "",
+            "DisplayName": "Boosters"
+        },
+        {
+            "ID": 41,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "FCS",
+            "SecondaryDomain": "",
+            "DisplayName": "FCS"
+        },
+        {
+            "ID": 42,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "FCS",
+            "SecondaryDomain": "",
+            "DisplayName": "FCS"
+        },
+        {
+            "ID": 1,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Talk Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages"
+        },
+        {
+            "ID": 3,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Movie Subtitles",
+            "SecondaryDomain": "",
+            "DisplayName": "Movie Subtitles"
+        },
+        {
+            "ID": 30,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Event Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text"
+        },
+        {
+            "ID": 50,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Ranker Profile Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Ranker Profile Text"
+        },
+        {
+            "ID": 60,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Mission Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Mission Text"
+        },
+        {
+            "ID": 61,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Mission Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Mission Text"
+        },
+        {
+            "ID": 62,
+            "Container": "Menu",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Mission Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Mission Text"
+        },
+        {
+            "ID": 63,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Mission Locations",
+            "SecondaryDomain": "",
+            "DisplayName": "Mission Locations"
+        },
+        {
+            "ID": 65,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Archive Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Archive Text"
+        },
+        {
+            "ID": 66,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Archive Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Archive Text"
+        },
+        {
+            "ID": 73,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 74,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 200,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Menu Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Menu Text"
+        },
+        {
+            "ID": 201,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Line Help",
+            "SecondaryDomain": "",
+            "DisplayName": "Line Help"
+        },
+        {
+            "ID": 202,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Key Guides",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guides"
+        },
+        {
+            "ID": 203,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "System Message",
+            "SecondaryDomain": "",
+            "DisplayName": "System Message"
+        },
+        {
+            "ID": 204,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Dialogues",
+            "SecondaryDomain": "",
+            "DisplayName": "Dialogues"
+        },
+        {
+            "ID": 205,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Item Help Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Item Help Text"
+        },
+        {
+            "ID": 207,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Loading Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Loading Text"
+        },
+        {
+            "ID": 208,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Loading Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Loading Text"
+        },
+        {
+            "ID": 210,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Text Embed Image Names",
+            "SecondaryDomain": "",
+            "DisplayName": "Text Embed Image Names"
+        },
+        {
+            "ID": 1,
+            "Container": "NgWord",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blocked Words",
+            "SecondaryDomain": "",
+            "DisplayName": "Blocked Words"
+        }
+    ]
+}

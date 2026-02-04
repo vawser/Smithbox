@@ -53,7 +53,7 @@ public class MapGrid
             Regenerate(size, sectionSize, color);
         }
 
-        if (displayGrid && Editor.Project.FocusedEditor is MapEditorScreen)
+        if (displayGrid && Editor.Project.Handler.FocusedEditor is MapEditorScreen)
         {
             Grid.BaseColor = GetViewGridColor(color);
             Grid.Visible = true;

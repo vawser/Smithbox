@@ -1,0 +1,984 @@
+{
+    "ProjectType": 15,
+    "Languages": [
+        {
+            "Abbreviation": "engus",
+            "Language": "English"
+        },
+        {
+            "Abbreviation": "frafr",
+            "Language": "French"
+        },
+        {
+            "Abbreviation": "deude",
+            "Language": "German"
+        },
+        {
+            "Abbreviation": "itait",
+            "Language": "Italian"
+        },
+        {
+            "Abbreviation": "jpnjp",
+            "Language": "Japanese"
+        },
+        {
+            "Abbreviation": "korkr",
+            "Language": "Korean"
+        },
+        {
+            "Abbreviation": "polpl",
+            "Language": "Polish"
+        },
+        {
+            "Abbreviation": "rusru",
+            "Language": "Russian"
+        },
+        {
+            "Abbreviation": "spaes",
+            "Language": "Spanish"
+        },
+        {
+            "Abbreviation": "spaar",
+            "Language": "Spanish (Latin)"
+        },
+        {
+            "Abbreviation": "zhotw",
+            "Language": "Traditional Chinese"
+        },
+        {
+            "Abbreviation": "zhocn",
+            "Language": "Simplified Chinese"
+        },
+        {
+            "Abbreviation": "thath",
+            "Language": "Thai"
+        },
+        {
+            "Abbreviation": "porbr",
+            "Language": "Portuguese (Latin)"
+        },
+        {
+            "Abbreviation": "araae",
+            "Language": "Arabic"
+        }
+    ],
+    "Containers": [
+        {
+            "OrderID": 1,
+            "FullName": "item_dlc01.msgbnd.dcx",
+            "SimpleName": "item_dlc01",
+            "ContainerName": "Item",
+            "VariantName": "DLC1",
+            "DisplayName": "Item"
+        },
+        {
+            "OrderID": 2,
+            "FullName": "menu_dlc01.msgbnd.dcx",
+            "SimpleName": "menu_dlc01",
+            "ContainerName": "Menu",
+            "VariantName": "DLC1",
+            "DisplayName": "Menu"
+        },
+        {
+            "OrderID": 3,
+            "FullName": "ngword.msgbnd.dcx",
+            "SimpleName": "ngword",
+            "ContainerName": "Blocked Words",
+            "VariantName": "Stock",
+            "DisplayName": "Blocked Words"
+        }
+    ],
+    "List": [
+        {
+            "ID": 10,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 11,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 12,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 13,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 14,
+            "Container": "Spells",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 18,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Characters",
+            "SecondaryDomain": "",
+            "DisplayName": "Characters"
+        },
+        {
+            "ID": 19,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Locations",
+            "SecondaryDomain": "",
+            "DisplayName": "Locations"
+        },
+        {
+            "ID": 20,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 21,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 22,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 23,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 28,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 24,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 25,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 26,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 27,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 28,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 41,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Goods Dialog",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods Dialog"
+        },
+        {
+            "ID": 42,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 43,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 44,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Attached Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Attached Effects"
+        },
+        {
+            "ID": 45,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 46,
+            "Container": "Item",
+            "Role": "Effect",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 47,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Relics",
+            "SecondaryDomain": "",
+            "DisplayName": "Relics"
+        },
+        {
+            "ID": 48,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Relics",
+            "SecondaryDomain": "",
+            "DisplayName": "Relics"
+        },
+        {
+            "ID": 49,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Relics",
+            "SecondaryDomain": "",
+            "DisplayName": "Relics"
+        },
+        {
+            "ID": 50,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Attached Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Attached Effects"
+        },
+        {
+            "ID": 51,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Permanent Buffs",
+            "SecondaryDomain": "",
+            "DisplayName": "Permanent Buffs"
+        },
+        {
+            "ID": 52,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Permanent Buffs",
+            "SecondaryDomain": "",
+            "DisplayName": "Permanent Buffs"
+        },
+        {
+            "ID": 53,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Permanent Buffs",
+            "SecondaryDomain": "",
+            "DisplayName": "Permanent Buffs"
+        },
+        {
+            "ID": 400,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 401,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 402,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 403,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Relics",
+            "SecondaryDomain": "",
+            "DisplayName": "Relics"
+        },
+        {
+            "ID": 404,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Relics",
+            "SecondaryDomain": "",
+            "DisplayName": "Relics"
+        },
+        {
+            "ID": 405,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Relics",
+            "SecondaryDomain": "",
+            "DisplayName": "Relics"
+        },
+        {
+            "ID": 406,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 407,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 408,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 409,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Attached Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Attached Effects"
+        },
+        {
+            "ID": 410,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Attached Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Attached Effects"
+        },
+        {
+            "ID": 411,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 412,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 413,
+            "Container": "Item",
+            "Role": "Effect",
+            "Variant": "DLC1",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 414,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 415,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 416,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 417,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 418,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Characters",
+            "SecondaryDomain": "",
+            "DisplayName": "Characters"
+        },
+        {
+            "ID": 419,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Permanent Buffs",
+            "SecondaryDomain": "",
+            "DisplayName": "Permanent Buffs"
+        },
+        {
+            "ID": 420,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Permanent Buffs",
+            "SecondaryDomain": "",
+            "DisplayName": "Permanent Buffs"
+        },
+        {
+            "ID": 421,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Permanent Buffs",
+            "SecondaryDomain": "",
+            "DisplayName": "Permanent Buffs"
+        },
+        {
+            "ID": 422,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Locations",
+            "SecondaryDomain": "",
+            "DisplayName": "Locations"
+        },
+        {
+            "ID": 426,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 427,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 428,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 1,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Talk Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages"
+        },
+        {
+            "ID": 2,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blood Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Messages"
+        },
+        {
+            "ID": 3,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Movie Subtitles",
+            "SecondaryDomain": "",
+            "DisplayName": "Movie Subtitles"
+        },
+        {
+            "ID": 4,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Talk Messages (Female)",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages (Female)"
+        },
+        {
+            "ID": 31,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Network Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Network Messages"
+        },
+        {
+            "ID": 32,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Action Button Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Action Button Text"
+        },
+        {
+            "ID": 33,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Event Text for Talk",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Talk"
+        },
+        {
+            "ID": 34,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Event Text for Map",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Map"
+        },
+        {
+            "ID": 200,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Menu Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Menu Text"
+        },
+        {
+            "ID": 201,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Line Help",
+            "SecondaryDomain": "",
+            "DisplayName": "Line Help"
+        },
+        {
+            "ID": 202,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Key Guide",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guide"
+        },
+        {
+            "ID": 203,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "System Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "System Messages"
+        },
+        {
+            "ID": 204,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Dialogue",
+            "SecondaryDomain": "",
+            "DisplayName": "Dialogue"
+        },
+        {
+            "ID": 205,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Loading Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Loading Text"
+        },
+        {
+            "ID": 206,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Loading Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Loading Text"
+        },
+        {
+            "ID": 207,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 208,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 209,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Text Embed Image Name",
+            "SecondaryDomain": "",
+            "DisplayName": "Text Embed Image Name"
+        },
+        {
+            "ID": 210,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Terms of Service",
+            "SecondaryDomain": "",
+            "DisplayName": "Terms of Service"
+        },
+        {
+            "ID": 211,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Personal Scenario Objectives",
+            "SecondaryDomain": "",
+            "DisplayName": "Personal Scenario Objectives"
+        },
+        {
+            "ID": 212,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Personal Scenario Titles",
+            "SecondaryDomain": "",
+            "DisplayName": "Personal Scenario Titles"
+        },
+        {
+            "ID": 213,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Personal Scenario Descriptions",
+            "SecondaryDomain": "",
+            "DisplayName": "Personal Scenario Descriptions"
+        },
+        {
+            "ID": 214,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "SpEffect",
+            "SecondaryDomain": "",
+            "DisplayName": "SpEffect"
+        },
+        {
+            "ID": 215,
+            "Container": "Menu",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "SpEffect",
+            "SecondaryDomain": "",
+            "DisplayName": "SpEffect"
+        },
+        {
+            "ID": 216,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "SpEffect",
+            "SecondaryDomain": "",
+            "DisplayName": "SpEffect"
+        },
+        {
+            "ID": 500,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Action Button Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Action Button Text"
+        },
+        {
+            "ID": 501,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Dialogue",
+            "SecondaryDomain": "",
+            "DisplayName": "Dialogue"
+        },
+        {
+            "ID": 502,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Key Guide",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guide"
+        },
+        {
+            "ID": 503,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Line Help",
+            "SecondaryDomain": "",
+            "DisplayName": "Line Help"
+        },
+        {
+            "ID": 504,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Menu Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Menu Text"
+        },
+        {
+            "ID": 505,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "System Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "System Messages"
+        },
+        {
+            "ID": 506,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Event Text for Map",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Map"
+        },
+        {
+            "ID": 507,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Event Text for Talk",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Talk"
+        },
+        {
+            "ID": 508,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Network Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Network Messages"
+        },
+        {
+            "ID": 509,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Personal Scenario Objectives",
+            "SecondaryDomain": "",
+            "DisplayName": "Personal Scenario Objectives"
+        },
+        {
+            "ID": 510,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Personal Scenario Titles",
+            "SecondaryDomain": "",
+            "DisplayName": "Personal Scenario Titles"
+        },
+        {
+            "ID": 511,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Personal Scenario Descriptions",
+            "SecondaryDomain": "",
+            "DisplayName": "Personal Scenario Descriptions"
+        },
+        {
+            "ID": 512,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "SpEffect",
+            "SecondaryDomain": "",
+            "DisplayName": "SpEffect"
+        },
+        {
+            "ID": 513,
+            "Container": "Menu",
+            "Role": "Summary",
+            "Variant": "DLC1",
+            "Domain": "SpEffect",
+            "SecondaryDomain": "",
+            "DisplayName": "SpEffect"
+        },
+        {
+            "ID": 515,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "DLC1",
+            "Domain": "Talk Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages"
+        },
+        {
+            "ID": 516,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "DLC1",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 517,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "DLC1",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 1,
+            "Container": "NgWord",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blocked Words",
+            "SecondaryDomain": "",
+            "DisplayName": "Blocked Words"
+        }
+    ]
+}

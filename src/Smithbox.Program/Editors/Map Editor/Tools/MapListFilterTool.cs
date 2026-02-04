@@ -311,7 +311,7 @@ public class MapListFilterTool
 
     public void ReadFilterListCollection()
     {
-        var filterFolder = Path.Join(Project.ProjectPath, ".smithbox", "MSB");
+        var filterFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "MSB");
         var filterFile = Path.Combine(filterFolder, "Map List Filters.json");
 
         if(!Directory.Exists(filterFolder))
@@ -331,12 +331,12 @@ public class MapListFilterTool
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:{Project.ProjectName}:Map Editor] Failed to deserialize the Quick Filter List Collection: {filterFile}", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddLog($"[Map Editor] Failed to deserialize the Quick Filter List Collection: {filterFile}", LogLevel.Error, LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:{Project.ProjectName}:Map Editor] Failed to read the Quick Filter List Collection: {filterFile}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddLog($"[Map Editor] Failed to read the Quick Filter List Collection: {filterFile}", LogLevel.Error, LogPriority.High, e);
             }
         }
         else
@@ -354,7 +354,7 @@ public class MapListFilterTool
 
     public void SaveFilterListCollection()
     {
-        var filterFolder = Path.Join(Project.ProjectPath, ".smithbox", "MSB");
+        var filterFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "MSB");
         var filterFile = Path.Combine(filterFolder, "Map List Filters.json");
 
         if (!Directory.Exists(filterFolder))

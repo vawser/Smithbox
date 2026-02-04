@@ -52,7 +52,7 @@ public class ModelPropertyView
         ImGui.SetNextWindowPos(new Vector2(Editor.ModelViewportView.Viewport.Width - 370, 20) * scale, ImGuiCond.FirstUseEver);
         ImGui.Begin($@"Properties##modeleditprop");
 
-        Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelPropertiesHeader);
+        FocusManager.SetFocus(EditorFocusContext.ModelEditor_Properties);
 
         // Header
         ImGui.AlignTextToFramePadding();
@@ -64,11 +64,11 @@ public class ModelPropertyView
 
         if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
         {
-            CFG.Current.ModelEditor_Enable_Commmunity_Names = !CFG.Current.ModelEditor_Enable_Commmunity_Names;
+            CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names = !CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names;
         }
 
         var communityFieldNameMode = "Internal";
-        if (CFG.Current.ModelEditor_Enable_Commmunity_Names)
+        if (CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names)
             communityFieldNameMode = "Community";
 
         UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
@@ -77,8 +77,6 @@ public class ModelPropertyView
 
         // Properties
         ImGui.BeginChild("propedit");
-
-        Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelProperties);
 
         if(Editor.Selection.SelectedModelWrapper != null && Editor.Selection.SelectedModelWrapper.Container != null)
         {
@@ -92,7 +90,6 @@ public class ModelPropertyView
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
                 ImGui.BeginChild("Model_EditingMultipleObjsChild");
-                Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelProperties);
 
                 ModelPropertyOrchestrator(Editor.ViewportSelection);
 

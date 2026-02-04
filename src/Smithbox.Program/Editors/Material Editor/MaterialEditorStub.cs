@@ -7,12 +7,10 @@ namespace StudioCore.Editors.MaterialEditor;
 
 public class MaterialEditorStub : IEditorStub
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public MaterialEditorStub(Smithbox baseEditor, ProjectEntry project)
+    public MaterialEditorStub(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -22,10 +20,10 @@ public class MaterialEditorStub : IEditorStub
 
     public unsafe void Display(float dt, string[] commands)
     {
-        if (!Project.EnableMaterialEditor)
+        if (!Project.Descriptor.EnableMaterialEditor)
             return;
 
-        if (!ProjectUtils.SupportsMaterialEditor(Project.ProjectType))
+        if (!ProjectUtils.SupportsMaterialEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)
@@ -34,7 +32,7 @@ public class MaterialEditorStub : IEditorStub
             ImGui.SetNextWindowFocus();
         }
 
-        if (BaseEditor._context.Device == null)
+        if (Smithbox.Instance._context.Device == null)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, *ImGui.GetStyleColorVec4(ImGuiCol.WindowBg));
         }
@@ -50,9 +48,9 @@ public class MaterialEditorStub : IEditorStub
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
 
-            if (Project.MaterialEditor != null)
+            if (Project.Handler.MaterialEditor != null)
             {
-                Project.MaterialEditor.OnGUI(commands);
+                Project.Handler.MaterialEditor.OnGUI(commands);
             }
             else
             {
@@ -62,13 +60,18 @@ public class MaterialEditorStub : IEditorStub
 
             ImGui.End();
 
-            if (Project.MaterialEditor != null)
+            if (Project.Handler.MaterialEditor != null)
             {
-                Project.FocusedEditor = Project.MaterialEditor;
+                Project.Handler.FocusedEditor = Project.Handler.MaterialEditor;
             }
         }
         else
         {
+            if (Project.Handler.MaterialEditor != null)
+            {
+                Project.Handler.MaterialEditor.OnDefocus();
+            }
+
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
             ImGui.End();

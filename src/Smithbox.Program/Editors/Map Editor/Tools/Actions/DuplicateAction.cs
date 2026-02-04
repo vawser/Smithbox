@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Linq;
 
@@ -22,9 +23,12 @@ public class DuplicateAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyDuplicate();
+            if (InputManager.IsPressed(KeybindID.Duplicate))
+            {
+                ApplyDuplicate();
+            }
         }
     }
 
@@ -38,7 +42,7 @@ public class DuplicateAction
         {
             ApplyDuplicate();
         }
-        UIHelper.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
+        UIHelper.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Duplicate)}");
 
     }
 
@@ -47,7 +51,7 @@ public class DuplicateAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+        if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
         {
             ApplyDuplicate();
         }
@@ -76,7 +80,7 @@ public class DuplicateAction
 
         UIHelper.SimpleHeader("Options", "Options", "", UI.Current.ImGui_Default_Text_Color);
 
-        if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
+        if (Editor.Project.Descriptor.ProjectType != ProjectType.DS2S && Editor.Project.Descriptor.ProjectType != ProjectType.DS2)
         {
             if (ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID))
             {
@@ -88,19 +92,19 @@ public class DuplicateAction
             UIHelper.Tooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
         }
 
-        if (Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
+        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER || Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
             UIHelper.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
         }
 
-        if (Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
+        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER || Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_PartNames);
             UIHelper.Tooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
         }
 
-        if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
+        if (Editor.Project.Descriptor.ProjectType != ProjectType.DS2S && Editor.Project.Descriptor.ProjectType != ProjectType.DS2)
         {
             if (ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Toolbar_Duplicate_Clear_Entity_ID))
             {

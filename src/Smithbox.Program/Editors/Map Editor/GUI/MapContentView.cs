@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ public class MapContentView
         // Map Contents
         if (ImGui.Begin($@"Map Contents##mapContentsPanel", ImGuiWindowFlags.MenuBar))
         {
-            Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapContents);
+            FocusManager.SetFocus(EditorFocusContext.MapEditor_ContentList);
 
             DisplayMenubar();
 
@@ -119,32 +120,32 @@ public class MapContentView
 
             if(Editor.LightAtlasBank.CanUse())
             {
-                if (ImGui.BeginMenu("Light Atlases"))
-                {
-                    if (ImGui.MenuItem("Automatically adjust entries"))
-                    {
-                        CFG.Current.MapEditor_LightAtlas_AutomaticAdjust = !CFG.Current.MapEditor_LightAtlas_AutomaticAdjust;
-                    }
-                    UIHelper.Tooltip("If enabled, when a part is renamed, if a light atlas entry points to it, the name reference within the entry is updated to the new name.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdjust);
+                //if (ImGui.BeginMenu("Light Atlases"))
+                //{
+                //    if (ImGui.MenuItem("Automatically adjust entries"))
+                //    {
+                //        CFG.Current.MapEditor_LightAtlas_AutomaticAdjust = !CFG.Current.MapEditor_LightAtlas_AutomaticAdjust;
+                //    }
+                //    UIHelper.Tooltip("If enabled, when a part is renamed, if a light atlas entry points to it, the name reference within the entry is updated to the new name.");
+                //    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdjust);
 
 
-                    if (ImGui.MenuItem("Automatically add entries"))
-                    {
-                        CFG.Current.MapEditor_LightAtlas_AutomaticAdd = !CFG.Current.MapEditor_LightAtlas_AutomaticAdd;
-                    }
-                    UIHelper.Tooltip("If enabled, when new parts are duplicated, the a new light atlas entry pointing to the newly duplicated part is created (deriving the other properties from the source part).");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdd);
+                //    if (ImGui.MenuItem("Automatically add entries"))
+                //    {
+                //        CFG.Current.MapEditor_LightAtlas_AutomaticAdd = !CFG.Current.MapEditor_LightAtlas_AutomaticAdd;
+                //    }
+                //    UIHelper.Tooltip("If enabled, when new parts are duplicated, the a new light atlas entry pointing to the newly duplicated part is created (deriving the other properties from the source part).");
+                //    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdd);
 
-                    if (ImGui.MenuItem("Automatically delete entries"))
-                    {
-                        CFG.Current.MapEditor_LightAtlas_AutomaticDelete = !CFG.Current.MapEditor_LightAtlas_AutomaticDelete;
-                    }
-                    UIHelper.Tooltip("If enabled, when parts are deleted, if there is a light atlas entry pointing to that part, the entry is deleted.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticDelete);
+                //    if (ImGui.MenuItem("Automatically delete entries"))
+                //    {
+                //        CFG.Current.MapEditor_LightAtlas_AutomaticDelete = !CFG.Current.MapEditor_LightAtlas_AutomaticDelete;
+                //    }
+                //    UIHelper.Tooltip("If enabled, when parts are deleted, if there is a light atlas entry pointing to that part, the entry is deleted.");
+                //    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticDelete);
 
-                    ImGui.EndMenu();
-                }
+                //    ImGui.EndMenu();
+                //}
             }
 
             ImGui.EndMenuBar();
@@ -215,7 +216,7 @@ public class MapContentView
             nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
 
             var mapName = AliasHelper.GetMapNameAlias(Editor.Project, map.Name);
-            UIHelper.DisplayAlias(mapName, CFG.Current.Interface_MapEditor_WrapAliasDisplay);
+            UIHelper.DisplayAlias(mapName, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
         }
 
         ImGui.EndGroup();
@@ -277,7 +278,7 @@ public class MapContentView
                 // Only select if a node is not currently being opened/closed
                 if (mapRoot == null || nodeopen && _treeOpenEntities.Contains(mapRoot) || !nodeopen && !_treeOpenEntities.Contains(mapRoot))
                 {
-                    if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
+                    if (InputManager.HasCtrlDown())
                     {
                         // Toggle Selection
                         if (Editor.ViewportSelection.GetSelection().Contains(selectTarget))
@@ -412,7 +413,7 @@ public class MapContentView
                         {
                             // Regions don't have multiple types in certain games
                             if (cats.Key == MsbEntityType.Region &&
-                                Editor.Project.ProjectType is ProjectType.DES
+                                Editor.Project.Descriptor.ProjectType is ProjectType.DES
                                     or ProjectType.DS1
                                     or ProjectType.DS1R
                                     or ProjectType.BB)
@@ -588,7 +589,7 @@ public class MapContentView
             ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
             if (ImGui.Button($"{icon}##mapObject{key}", DPI.InlineIconButtonSize))
             {
-                if (InputTracker.GetKey(KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility))
+                if (InputManager.IsPressed(KeybindID.Apply_to_All))
                 {
                     var targetContainer = Editor.Selection.GetMapContainerFromMapID(map.Name);
 
@@ -631,10 +632,13 @@ public class MapContentView
                     Editor.MapViewportView.Viewport.FrameBox(e.RenderSceneMesh.GetBounds(), new Vector3());
                 }
             }
-            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+            if (ImGui.IsItemFocused())
             {
-                doSelect = true;
-                arrowKeySelect = true;
+                if (InputManager.HasArrowSelection())
+                {
+                    doSelect = true;
+                    arrowKeySelect = true;
+                }
             }
         }
         else
@@ -654,7 +658,7 @@ public class MapContentView
                 {
                     displayName = e.PrettyName;
 
-                    var nameListEntry = Project.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
+                    var nameListEntry = Project.Handler.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
 
                     if (nameListEntry.Value != null)
                     {
@@ -681,10 +685,14 @@ public class MapContentView
                     }
                 }
             }
-            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+
+            if (ImGui.IsItemFocused())
             {
-                doSelect = true;
-                arrowKeySelect = true;
+                if (InputManager.HasArrowSelection())
+                {
+                    doSelect = true;
+                    arrowKeySelect = true;
+                }
             }
 
             if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is EntityNameDisplayType.Internal_FMG or EntityNameDisplayType.Community_FMG)
@@ -697,7 +705,7 @@ public class MapContentView
             }
             else if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is EntityNameDisplayType.Internal_Community)
             {
-                var nameListEntry = Project.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
+                var nameListEntry = Project.Handler.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
 
                 if (nameListEntry.Value != null)
                 {

@@ -53,7 +53,7 @@ namespace Andre.IO.VFS
                         }
                         string[] sp = p.Trim('/').Split('/');
                         string fileName = sp[^1];
-                        f = new(fileName, h, b.Bdt, b.BdtMmf);
+                        f = new(fileName, h, b.BdtStream, b.BdtMmf);
                         files.Add(p!, f);
                         var currDir = root;
                         foreach (string dirName in sp[..^1])
@@ -73,7 +73,7 @@ namespace Andre.IO.VFS
                     }
                     else
                     {
-                        f = new(null, h, b.Bdt, b.BdtMmf);
+                        f = new(null, h, b.BdtStream, b.BdtMmf);
                         Console.WriteLine($"Couldn't find name for file hash: {h.FileNameHash}");
                     }
                     fileList.Add(f);

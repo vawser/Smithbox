@@ -1,6 +1,8 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Numerics;
@@ -9,67 +11,25 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextEditorScreen : EditorScreen
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public ActionManager EditorActionManager = new();
-
-    public TextSelectionManager Selection;
-    public TextContextMenu ContextMenu;
-    public TextShortcuts EditorShortcuts;
-    public TextActionHandler ActionHandler;
-    public TextFilters Filters;
-    public TextEntryGroupManager EntryGroupManager;
-    public TextDifferenceManager DifferenceManager;
-    public TextNamingTemplateManager NamingTemplateManager;
+    public TextViewHandler ViewHandler;
 
     public TextCommandQueue CommandQueue;
+    public TextShortcuts Shortcuts;
 
-    public TextFileView FileView;
-    public TextFmgView FmgView;
-    public TextFmgEntryView FmgEntryView;
-    public TextFmgEntryPropertyEditor FmgEntryPropertyEditor;
-    public TextNewEntryCreationModal EntryCreationModal;
-    public TextExporterModal TextExportModal;
-    public TextDuplicatePopup TextDuplicatePopup;
     public TextToolView ToolView;
 
-    public FmgExporter FmgExporter;
-    public FmgImporter FmgImporter;
-    public LanguageSync LanguageSync;
-
-    public FmgDumper FmgDumper;
-
-    public TextEditorScreen(Smithbox baseEditor, ProjectEntry project)
+    public TextEditorScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
-        Selection = new TextSelectionManager(this, Project);
-        ContextMenu = new TextContextMenu(this, Project);
-        ActionHandler = new TextActionHandler(this, Project);
-        EditorShortcuts = new TextShortcuts(this, Project);
+        ViewHandler = new TextViewHandler(this, project);
+
+        Shortcuts = new TextShortcuts(this, Project);
         CommandQueue = new TextCommandQueue(this, Project);
-        Filters = new TextFilters(this, Project);
-        EntryGroupManager = new TextEntryGroupManager(this, Project);
-        DifferenceManager = new TextDifferenceManager(this, Project);
-        NamingTemplateManager = new TextNamingTemplateManager(this, Project);
 
-        FileView = new TextFileView(this, Project);
-        FmgView = new TextFmgView(this, Project);
-        FmgEntryView = new TextFmgEntryView(this, Project);
-        FmgEntryPropertyEditor = new TextFmgEntryPropertyEditor(this, Project);
         ToolView = new TextToolView(this, Project);
-
-        EntryCreationModal = new TextNewEntryCreationModal(this, Project);
-        TextExportModal = new TextExporterModal(this, Project);
-        TextDuplicatePopup = new TextDuplicatePopup(this, Project);
-
-        FmgExporter = new FmgExporter(this, Project);
-        FmgImporter = new FmgImporter(this, Project);
-        LanguageSync = new LanguageSync(this, Project);
-
-        FmgDumper = new FmgDumper(this, Project);
     }
 
     public string EditorName => "Text Editor";
@@ -81,22 +41,13 @@ public class TextEditorScreen : EditorScreen
     /// <summary>
     /// The editor loop
     /// </summary>
-    public void OnGUI(string[] initcmd)
+    public void OnGUI(string[] commands)
     {
         var scale = DPI.UIScale();
 
-        // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
+        Shortcuts.Monitor();
 
-        var dsid = ImGui.GetID("DockSpace_TextEntries");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+        CommandQueue.Parse(commands);
 
         if (ImGui.BeginMenuBar())
         {
@@ -108,48 +59,27 @@ public class TextEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        if (CFG.Current.Interface_TextEditor_FileContainerList)
-        {
-            FileView.Display();
-        }
-        if (CFG.Current.Interface_TextEditor_FmgList)
-        {
-            FmgView.Display();
-        }
-        if (CFG.Current.Interface_TextEditor_TextEntryList)
-        {
-            FmgEntryView.Display();
-        }
-        if (CFG.Current.Interface_TextEditor_TextEntryContents)
-        {
-            FmgEntryPropertyEditor.Display();
-        }
-        EditorShortcuts.Monitor();
+        var dsid = ImGui.GetID("DockSpace_TextEditor");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (CFG.Current.Interface_TextEditor_ToolWindow)
+        ViewHandler.HandleViews();
+
+        if (ViewHandler.ActiveView != null)
         {
             ToolView.Display();
         }
-
-        CommandQueue.Parse(initcmd);
-        EntryCreationModal.Display();
-        TextDuplicatePopup.Display();
-
-        ImGui.PopStyleVar();
-        ImGui.PopStyleColor(1);
-
-        FmgExporter.OnGui();
     }
+
     public void FileMenu()
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
             }
 
-            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            if (ImGui.MenuItem($"Save All"))
             {
                 SaveAll();
             }
@@ -188,57 +118,61 @@ public class TextEditorScreen : EditorScreen
 
     public void EditMenu()
     {
+        var activeView = ViewHandler.ActiveView;
+
         if (ImGui.BeginMenu("Edit"))
         {
-            // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (activeView != null)
             {
-                if (EditorActionManager.CanUndo())
+                // Undo
+                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
-                    EditorActionManager.UndoAction();
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAction();
+                    }
                 }
-            }
 
-            // Undo All
-            if (ImGui.MenuItem($"Undo All"))
-            {
-                if (EditorActionManager.CanUndo())
+                // Undo All
+                if (ImGui.MenuItem($"Undo All"))
                 {
-                    EditorActionManager.UndoAllAction();
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAllAction();
+                    }
                 }
-            }
 
-            // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
-            {
-                if (EditorActionManager.CanRedo())
+                // Redo
+                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
-                    EditorActionManager.RedoAction();
+                    if (activeView.ActionManager.CanRedo())
+                    {
+                        activeView.ActionManager.RedoAction();
+                    }
                 }
-            }
+                ImGui.Separator();
 
-            ImGui.Separator();
+                // Create
+                if (ImGui.MenuItem("Create", InputManager.GetHint(KeybindID.TextEditor_Create_New_Entry)))
+                {
+                    activeView.NewEntryModal.ShowModal = true;
+                }
+                UIHelper.Tooltip($"Create new text entries.");
 
-            // Create
-            if (ImGui.MenuItem("Create", KeyBindings.Current.CORE_CreateNewEntry.HintText))
-            {
-                EntryCreationModal.ShowModal = true;
-            }
-            UIHelper.Tooltip($"Create new text entries.");
+                // Duplicate
+                if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
+                {
+                    activeView.ActionHandler.DuplicateEntries();
+                }
+                UIHelper.Tooltip($"Duplicate the currently selected text entries.");
 
-            // Duplicate
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
-            {
-                ActionHandler.DuplicateEntries();
+                // Delete
+                if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
+                {
+                    activeView.ActionHandler.DeleteEntries();
+                }
+                UIHelper.Tooltip($"Delete the currently selected text entries.");
             }
-            UIHelper.Tooltip($"Duplicate the currently selected text entries.");
-
-            // Delete
-            if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
-            {
-                ActionHandler.DeleteEntries();
-            }
-            UIHelper.Tooltip($"Delete the currently selected text entries.");
 
             ImGui.EndMenu();
         }
@@ -248,35 +182,15 @@ public class TextEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.MenuItem("Files"))
-            {
-                CFG.Current.Interface_TextEditor_FileContainerList = !CFG.Current.Interface_TextEditor_FileContainerList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_FileContainerList);
-
-            if (ImGui.MenuItem("Text Files"))
-            {
-                CFG.Current.Interface_TextEditor_FmgList = !CFG.Current.Interface_TextEditor_FmgList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_FmgList);
-
-            if (ImGui.MenuItem("Text Entries"))
-            {
-                CFG.Current.Interface_TextEditor_TextEntryList = !CFG.Current.Interface_TextEditor_TextEntryList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextEntryList);
-
-            if (ImGui.MenuItem("Contents"))
-            {
-                CFG.Current.Interface_TextEditor_TextEntryContents = !CFG.Current.Interface_TextEditor_TextEntryContents;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextEntryContents);
-
             if (ImGui.MenuItem("Tool Window"))
             {
                 CFG.Current.Interface_TextEditor_ToolWindow = !CFG.Current.Interface_TextEditor_ToolWindow;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_ToolWindow);
+
+            ImGui.Separator();
+
+            ViewHandler.DisplayMenu();
 
             ImGui.EndMenu();
         }
@@ -287,29 +201,34 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void ToolMenu()
     {
-        if (ImGui.BeginMenu("Data"))
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView != null)
         {
-            FmgImporter.MenubarOptions();
+            if (ImGui.BeginMenu("Data"))
+            {
+                activeView.FmgImporter.MenubarOptions();
 
-            ImGui.Separator();
+                ImGui.Separator();
 
-            FmgExporter.MenubarOptions();
+                activeView.FmgExporter.MenubarOptions();
 
-            ImGui.Separator();
+                ImGui.Separator();
 
-            FmgDumper.MenubarOptions();
+                activeView.FmgDumper.MenubarOptions();
 
-            ImGui.EndMenu();
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.BeginMenu("Language Sync"))
+            {
+                activeView.LanguageSync.DisplayMenubarOptions();
+
+                ImGui.EndMenu();
+            }
+
+            activeView.LanguageSync.OnGui();
         }
-
-        if (ImGui.BeginMenu("Language Sync"))
-        {
-            LanguageSync.DisplayMenubarOptions();
-
-            ImGui.EndMenu();
-        }
-
-        LanguageSync.OnGui();
     }
 
     /// <summary>
@@ -317,43 +236,48 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public async void Save(bool autoSave = false)
     {
-        var fileEntry = Selection.SelectedFileDictionaryEntry;
-        var wrapper = Selection.SelectedContainerWrapper;
+        var activeView = ViewHandler.ActiveView;
 
-        if(fileEntry == null)
+        if (activeView != null)
         {
-            return;
-        }
+            var fileEntry = activeView.Selection.SelectedFileDictionaryEntry;
+            var wrapper = activeView.Selection.SelectedContainerWrapper;
 
-        if (wrapper == null)
-        {
-            return;
-        }
-
-        if (!autoSave && CFG.Current.TextEditor_ManualSave_IncludeFMG ||
-            autoSave && CFG.Current.TextEditor_AutomaticSave_IncludeFMG)
-        {
-            try
+            if (fileEntry == null)
             {
-                if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-                {
-                    await Project.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
-                }
-                else
-                {
-                    await Project.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
-                }
-
-                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Saved {fileEntry.Path}");
+                return;
             }
-            catch (Exception ex)
+
+            if (wrapper == null)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to save {fileEntry.Path}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+                return;
             }
-        }
 
-        // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+            if (!autoSave && CFG.Current.TextEditor_ManualSave_IncludeFMG ||
+                autoSave && CFG.Current.TextEditor_AutomaticSave_IncludeFMG)
+            {
+                try
+                {
+                    if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                    {
+                        await Project.Handler.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
+                    }
+                    else
+                    {
+                        await Project.Handler.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
+                    }
+
+                    TaskLogs.AddLog($"[Text Editor] Saved {fileEntry.Path}");
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"[Text Editor] Failed to save {fileEntry.Path}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+                }
+            }
+
+            // Save the configuration JSONs
+            Smithbox.Instance.SaveConfiguration();
+        }
     }
 
     /// <summary>
@@ -366,17 +290,17 @@ public class TextEditorScreen : EditorScreen
         {
             try
             {
-                await Project.TextData.PrimaryBank.SaveTextFiles();
+                await Project.Handler.TextData.PrimaryBank.SaveTextFiles();
 
-                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Saved all modified text files.");
+                TaskLogs.AddLog($"[Text Editor] Saved all modified text files.");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to save all modified text files", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+                TaskLogs.AddLog($"[Text Editor] Failed to save all modified text files", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
             }
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
 }

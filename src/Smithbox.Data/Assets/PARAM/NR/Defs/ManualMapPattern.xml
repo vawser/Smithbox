@@ -9,20 +9,24 @@
     
     <Field Def="s32 unknown_0"/>
     <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
+    <Field Def="s16 unknown_2a"/>
+    <Field Def="s8 unknown_2b"/>
+    <Field Def="s8 unknown_2c"/>
     <Field Def="s32 unknown_3"/>
     <Field Def="s32 unknown_4"/>
     <Field Def="s32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
-    <Field Def="s32 unknown_8"/>
-    <Field Def="s32 unknown_9"/>
-    <Field Def="s32 unknown_10"/>
-    <Field Def="s32 unknown_11"/>
+    <Field Def="s16 unknown_6"/>
+    <Field Def="s8 unknown_7a"/>
+    <Field Def="s8 unknown_7b"/>
+    <Field Def="s32 eventFlag1"/>
+    <Field Def="s32 eventFlag2"/>
+    <Field Def="s32 eventFlag3"/>
+    <Field Def="s32 eventFlag4"/>
+    <Field Def="s32 eventFlag5"/>
     <Field Def="s32 unknown_12"/>
     <Field Def="s32 unknown_13"/>
     <Field Def="s32 unknown_14"/>
-    <Field Def="s32 unknown_15"/>
+    <Field Def="s32 modifierId"/>
     <Field Def="s32 unknown_16"/>
     <Field Def="s32 unknown_17"/>
     <Field Def="s32 unknown_18"/>
@@ -30,9 +34,11 @@
     <Field Def="s32 unknown_20"/>
     <Field Def="s32 unknown_21"/>
     <Field Def="s32 unknown_22"/>
-    <Field Def="s32 unknown_23"/>
+    <Field Def="s16 unknown_23a"/>
+    <Field Def="s16 unknown_23b"/>
     <Field Def="s32 unknown_24"/>
     <Field Def="s32 unknown_25"/>
-    <Field Def="s32 unknown_26"/>
+    <Field Def="s16 unknown_26a"/>
+    <Field Def="s16 unknown_26b"/>
   </Fields>
 </PARAMDEF>

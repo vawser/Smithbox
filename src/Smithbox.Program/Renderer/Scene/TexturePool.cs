@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using Veldrid;
 using Vortice.Vulkan;
 using Rectangle = Veldrid.Rectangle;
@@ -473,10 +474,10 @@ public class TexturePool
                 "world_map_limveld_noklateo"
             };
 
-            if (ResourceManager.BaseEditor.ProjectManager.SelectedProject != null)
-            {
-                var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+            var curProject = Smithbox.Orchestrator.SelectedProject;
 
+            if (curProject != null)
+            {
                 var checkPow = true;
 
                 // Ignore the World Map textures
@@ -486,13 +487,13 @@ public class TexturePool
                 }
 
                 // Ignore for Icon Preview
-                if(curProject.FocusedEditor is ParamEditorScreen)
+                if(curProject.Handler.FocusedEditor is ParamEditorScreen)
                 {
                     checkPow = false;
                 }
 
                 // Ignore for Texture Viewer
-                if (curProject.FocusedEditor is TextureViewerScreen)
+                if (curProject.Handler.FocusedEditor is TextureViewerScreen)
                 {
                     checkPow = false;
                 }
@@ -506,8 +507,10 @@ public class TexturePool
                 }
             }
 
-            width = FormatHelpers.IsCompressedFormat(format) ? (uint)((width + 3) & ~0x3) : width;
-            height = FormatHelpers.IsCompressedFormat(format) ? (uint)((height + 3) & ~0x3) : height;
+            var isCompressed = FormatHelpers.IsCompressedFormat(format);
+
+            width = isCompressed ? (uint)((width + 3) & ~0x3) : width;
+            height = isCompressed ? (uint)((height + 3) & ~0x3) : height;
 
             var isCubemap = (dds.dwCaps2 & DDS.DDSCAPS2.CUBEMAP) > 0;
             var arrayCount = isCubemap ? 6u : 1;
@@ -524,6 +527,17 @@ public class TexturePool
             desc.CreateFlags = VkImageCreateFlags.None;
             desc.Tiling = VkImageTiling.Linear;
             desc.Format = format;
+
+            // TODO: this is a hack to stop DXT5 saved icon files from crashing the program
+            // Really we need to fix the Veldrid workflow to properly handle them
+            // We need to use a staging buffer instead a linear image to do so.
+            var isDS2 = curProject.Descriptor.ProjectType is Application.ProjectType.DS2 or Application.ProjectType.DS2S;
+
+            // Block BC3 unless we are working with DS2, where it works correctly.
+            if (format is VkFormat.Bc3SrgbBlock && !isDS2)
+            {
+                return;
+            }
 
             _staging = d.ResourceFactory.CreateTexture(desc);
 

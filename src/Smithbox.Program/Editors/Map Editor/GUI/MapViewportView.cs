@@ -10,7 +10,6 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapViewportView
 {
-    public Smithbox BaseEditor;
     public MapEditorScreen Editor;
     public ProjectEntry Project;
 
@@ -28,14 +27,13 @@ public class MapViewportView
 
     public PlacementEntity PlacementOrb;
 
-    public MapViewportView(MapEditorScreen editor, ProjectEntry project, Smithbox baseEditor)
+    public MapViewportView(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
-        BaseEditor = baseEditor;
 
-        Window = baseEditor._context.Window;
-        Device = baseEditor._context.Device;
+        Window = Smithbox.Instance._context.Window;
+        Device = Smithbox.Instance._context.Device;
 
         Rect = Window.Bounds;
 
@@ -47,15 +45,15 @@ public class MapViewportView
 
     public void Setup()
     {
-        if (Device != null && !Smithbox.LowRequirementsMode)
+        if (Device != null && Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
         {
-            Viewport = new Viewport.Viewport(BaseEditor, Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
+            Viewport = new VulkanViewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
 
             RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
         }
         else
         {
-            Viewport = new NullViewport(BaseEditor, Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
+            Viewport = new NullViewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
         }
     }
 
@@ -140,17 +138,14 @@ public class MapViewportView
     {
         Viewport.OnGui();
 
-        if (!Smithbox.LowRequirementsMode)
+        if (Editor.Universe != null && PlacementOrb == null)
         {
-            if (Editor.Universe != null && PlacementOrb == null)
-            {
-                PlacementOrb = new PlacementEntity(Editor);
-            }
+            PlacementOrb = new PlacementEntity(Editor);
+        }
 
-            if (PlacementOrb != null)
-            {
-                PlacementOrb.UpdateRenderModel(Editor);
-            }
+        if (PlacementOrb != null)
+        {
+            PlacementOrb.UpdateRenderModel(Editor);
         }
     }
 
@@ -169,6 +164,7 @@ public class MapViewportView
     {
         Viewport.Draw(device, cl);
     }
+
     public bool InputCaptured()
     {
         return Viewport.IsViewportSelected;

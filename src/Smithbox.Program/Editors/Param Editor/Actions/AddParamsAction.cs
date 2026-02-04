@@ -43,14 +43,14 @@ public class AddParamsAction : EditorAction
         {
             var newrow = new Param.Row(row);
 
-            var paramMeta = Editor.Project.ParamData.GetParamMeta(row.Def);
+            var paramMeta = Editor.Project.Handler.ParamData.GetParamMeta(row.Def);
 
             // Only apply for Duplicate action
             if (IsDuplicate)
             {
                 foreach (var cell in newrow.Cells)
                 {
-                    var meta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, cell.Def);
+                    var meta = Editor.Project.Handler.ParamData.GetParamFieldMeta(paramMeta, cell.Def);
                     var adjust = false;
 
                     if (meta.DeepCopyTargetType != null)
@@ -164,10 +164,10 @@ public class AddParamsAction : EditorAction
             Clones.Add(newrow);
         }
 
-        Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
+        Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
 
-        var activeParam = Editor._activeView.Selection.GetActiveParam();
-        Editor._activeView.TableGroupView.UpdateTableSelection(activeParam);
+        var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
+        Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
 
         return ActionEvent.NoEvent;
     }
@@ -193,8 +193,8 @@ public class AddParamsAction : EditorAction
         RemovedIndex.Clear();
         Removed.Clear();
 
-        var activeParam = Editor._activeView.Selection.GetActiveParam();
-        Editor._activeView.TableGroupView.UpdateTableSelection(activeParam);
+        var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
+        Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
 
         return ActionEvent.NoEvent;
     }

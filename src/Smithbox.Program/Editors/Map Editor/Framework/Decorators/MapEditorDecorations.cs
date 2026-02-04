@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using HKLib.hk2018.hkReflect.Opt;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -22,13 +23,12 @@ public static class MapEditorDecorations
         "treasureboxparam"
     };
 
-    /// <summary>
-    /// Param References
-    /// </summary>
     public static bool ParamRefRow(MapEditorScreen editor, MapEntityPropertyFieldMeta meta, PropertyInfo propinfo, object val, ref object newObj)
     {
-        if (editor.Project.ParamEditor == null)
+        if (editor.Project.Handler.ParamEditor == null)
             return false;
+
+        var activeView = editor.Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
         if (meta != null && meta.ParamRef.Count > 0)
         {
@@ -102,18 +102,18 @@ public static class MapEditorDecorations
 
             ImGui.NextColumn();
 
-            FieldDecorators.ParamReference_Title(refs, null);
+            ParamReferenceHelper.Label(activeView, refs, null);
 
             ImGui.NextColumn();
 
-            if (editor.Project.ParamEditor != null)
+            if (editor.Project.Handler.ParamEditor != null)
             {
-                FieldDecorators.ParamReference_Value(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, refs, null, val);
-                FieldDecorators.ParamReference_ContextMenu(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, val, null, refs);
+                ParamReferenceHelper.Hint(activeView, refs, null, val);
+                ParamReferenceHelper.Click(activeView, val, null, refs);
 
                 if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
                 {
-                    var opened = FieldDecorators.Decorator_ContextMenuItems(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, null, val, ref newObj, refs, null, null, null, null, null, null);
+                    var opened = ParamReferenceHelper.ContextMenu(activeView, refs, null, val, ref newObj, null);
                     ImGui.EndPopup();
                     return opened;
                 }
@@ -123,14 +123,13 @@ public static class MapEditorDecorations
         return false;
     }
 
-    /// <summary>
-    /// Text References
-    /// </summary>
-    /// <summary>
-    /// Param References
-    /// </summary>
     public static bool FmgRefRow(MapEditorScreen editor, MapEntityPropertyFieldMeta meta, PropertyInfo propinfo, object val, ref object newObj)
     {
+        if (editor.Project.Handler.ParamEditor == null)
+            return false;
+
+        var activeView = editor.Project.Handler.ParamEditor.ViewHandler.ActiveView;
+
         if (meta != null && meta.FmgRef.Count > 0)
         {
             List<FMGRef> refs = new();
@@ -142,10 +141,11 @@ public static class MapEditorDecorations
 
             ImGui.NextColumn();
 
-            FieldDecorators.TextReference_Title(refs, null);
+            TextReferenceHelper.Label(activeView, refs, null);
 
             ImGui.NextColumn();
-            FieldDecorators.TextReference_Value(editor, refs, null, val);
+
+            TextReferenceHelper.Hint(activeView, refs, null, val);
         }
 
         return false;
@@ -328,12 +328,12 @@ public static class MapEditorDecorations
 
             var displayText = $"";
 
-            if(CFG.Current.MsbReference_DisplayName)
+            if(CFG.Current.MapEditor_Properties_Display_Reference_Name)
             {
                 displayText = $"{entity.PrettyName}";
             }
 
-            if (CFG.Current.MsbReference_DisplayEntityID)
+            if (CFG.Current.MapEditor_Properties_Display_Reference_Entity_ID)
             {
                 var entId = PropFinderUtil.FindPropertyValue("EntityID", entity.WrappedObject);
 
@@ -341,7 +341,7 @@ public static class MapEditorDecorations
                 {
                     var newText = $"{entId}";
 
-                    if (CFG.Current.MsbReference_DisplayName)
+                    if (CFG.Current.MapEditor_Properties_Display_Reference_Name)
                     {
                         displayText = $"{displayText} - {newText}";
                     }
@@ -352,9 +352,9 @@ public static class MapEditorDecorations
                 }
             }
 
-            if (CFG.Current.MsbReference_DisplayAlias)
+            if (CFG.Current.MapEditor_Properties_Display_Reference_Alias)
             {
-                if (!CFG.Current.MsbReference_DisplayName && !CFG.Current.MsbReference_DisplayEntityID)
+                if (!CFG.Current.MapEditor_Properties_Display_Reference_Name && !CFG.Current.MapEditor_Properties_Display_Reference_Entity_ID)
                 {
                     if (alias is null or "")
                     {
@@ -461,7 +461,7 @@ public static class MapEditorDecorations
         bool display = false;
         List<AliasEntry> options = null;
 
-        var aliases = editor.Project.CommonData.Aliases;
+        var aliases = editor.Project.Handler.ProjectData.Aliases;
 
         if (meta != null && meta.ShowParticleList && aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particleAliases))
         {
@@ -597,7 +597,7 @@ public static class MapEditorDecorations
             {
                 matchId = $"{rowID}".Substring(0, 3);
 
-                var states = editor.Project.MapData.MapSpawnStates.list;
+                var states = editor.Project.Handler.MapData.MapSpawnStates.list;
                 var matchedState = states.Where(e => e.id == matchId).FirstOrDefault();
                 if (matchedState != null)
                 {
@@ -716,7 +716,7 @@ public static class MapEditorDecorations
             FormatMaskEntry targetEntry = null;
 
             // Get the entry for the current model
-            foreach (var entry in editor.Project.MapData.MsbMasks.list)
+            foreach (var entry in editor.Project.Handler.MapData.MsbMasks.list)
             {
                 if (assetEnt.ModelName == entry.model)
                 {

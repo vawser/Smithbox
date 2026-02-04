@@ -247,10 +247,7 @@
       <Maximum>999</Maximum>
       <SortID>1300</SortID>
     </Field>
-    <Field Def="dummy8 pad6[1]">
-      <DisplayName>pad</DisplayName>
-      <SortID>12001</SortID>
-    </Field>
+    <Field Def="u8 unknown_1" />
     <Field Def="u8 isEnableCalcDamageForBushesObj">
       <DisplayName>茂みにダメージ可</DisplayName>
       <Enum>ATK_PARAM_BOOL</Enum>
@@ -526,7 +523,7 @@
       <Maximum>1</Maximum>
       <SortID>12000</SortID>
     </Field>
-    <Field Def="dummy8 pad1:1">
+    <Field Def="u8 unknown_2a:1">
       <SortID>12002</SortID>
     </Field>
     <Field Def="u8 atkBehaviorId">
@@ -1227,7 +1224,7 @@
       <Maximum>9999</Maximum>
       <SortID>820</SortID>
     </Field>
-    <Field Def="dummy8 pad5:1">
+    <Field Def="u8 unknown_3a:1">
       <DisplayName>pad</DisplayName>
       <Description>pad</Description>
       <DisplayFormat>%d</DisplayFormat>
@@ -1255,7 +1252,7 @@
       <Maximum>1</Maximum>
       <SortID>350</SortID>
     </Field>
-    <Field Def="dummy8 pad2:4">
+    <Field Def="u8 unknown_4:4">
       <DisplayName>pad1</DisplayName>
       <SortID>12004</SortID>
     </Field>
@@ -1394,22 +1391,23 @@
     
     <Field Def="s8 spAttributeMixcraft" />
 	
-	<Field Def="s8 unknown_2" />
+	<Field Def="s8 unknown_5" />
     
-    <Field Def="dummy8 pad4[1]">
+    <Field Def="u8 unknown_6">
       <DisplayName>pad</DisplayName>
       <SortID>12005</SortID>
     </Field>
     
     <Field Def="s16 ultimateChargeCorrection" />
 	<Field Def="s16 atkSa_JustGuard" />
-    <Field Def="s32 reviveDamageCorrection" />
+    <Field Def="s16 reviveDamageCorrection" />
+    <Field Def="s16 unknown_7" />
     <Field Def="f32 reviveDamage" />
-    <Field Def="f32 unknown_4" />
+    <Field Def="f32 unknown_8" />
     <Field Def="u8 subCategory3" />
     <Field Def="u8 subCategory4" />
     <Field Def="u8 subCategory5" />
-    <Field Def="u8 unknown_5d" />
+    <Field Def="u8 unknown_9" />
     
     <Field Def="dummy8 pad7_old[4]"/>
   </Fields>

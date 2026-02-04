@@ -66,27 +66,27 @@
   },
   {
     "ID": "110",
-    "Name": "First cleared",
+    "Name": "1st Nightlord Defeated",
     "Tags": []
   },
   {
     "ID": "111",
-    "Name": "2nd night boss defeats on the 3rd day",
+    "Name": "2nd Nightlord Defeated",
     "Tags": []
   },
   {
     "ID": "112",
-    "Name": "3rd night boss defeats on the 3rd day",
+    "Name": "3rd Nightlord Defeated",
     "Tags": []
   },
   {
     "ID": "113",
-    "Name": "4th night boss defeats on the 3rd day",
+    "Name": "4th Nightlord Defeated",
     "Tags": []
   },
   {
     "ID": "115",
-    "Name": "Nameless unlock flag",
+    "Name": "Night Aspect Unlocked",
     "Tags": []
   },
   {
@@ -96,7 +96,17 @@
   },
   {
     "ID": "130",
-    "Name": "Chaos match unlock flag",
+    "Name": "Deep of Night Unlocked",
+    "Tags": []
+  },
+  {
+    "ID": "135",
+    "Name": "Balancers Unlocked",
+    "Tags": []
+  },
+  {
+    "ID": "136",
+    "Name": "Dreglord Unlocked",
     "Tags": []
   },
   {
@@ -106,7 +116,7 @@
   },
   {
     "ID": "141",
-    "Name": "Shifting Earth Unlocked: Mountaintops",
+    "Name": "Shifting Earth Unlocked: Mountaintop",
     "Tags": []
   },
   {
@@ -121,37 +131,37 @@
   },
   {
     "ID": "150",
-    "Name": "3-Day Table Mode: Defeat Gladius (Tricephalos)",
+    "Name": "Defeated Gladius (Tricephalos)",
     "Tags": []
   },
   {
     "ID": "151",
-    "Name": "3-Day Table Mode: Defeat Adel (Gaping Jaw)",
+    "Name": "Defeated Adel (Gaping Jaw)",
     "Tags": []
   },
   {
     "ID": "152",
-    "Name": "3-Day Table Mode: Defeat Gnoster (Sentient Pest)",
+    "Name": "Defeated Gnoster (Sentient Pest)",
     "Tags": []
   },
   {
     "ID": "153",
-    "Name": "3-Day Table Mode: Defeat Maris (Augur)",
+    "Name": "Defeated Maris (Augur)",
     "Tags": []
   },
   {
     "ID": "154",
-    "Name": "3-Day Table Mode: Defeat Libra (Equilibrious Beast)",
+    "Name": "Defeated Libra (Equilibrious Beast)",
     "Tags": []
   },
   {
     "ID": "155",
-    "Name": "3-Day Table Mode: Defeat Fulghor (Darkdrift Knight)",
+    "Name": "Defeated Fulghor (Darkdrift Knight)",
     "Tags": []
   },
   {
     "ID": "156",
-    "Name": "3-Day Table Mode: Defeat Caligo (Fissure in the Fog)",
+    "Name": "Defeated Caligo (Fissure in the Fog)",
     "Tags": []
   },
   {
@@ -171,42 +181,57 @@
   },
   {
     "ID": "160",
-    "Name": "3-Day Table Mode: Defeat Heolstor the Nightlord (Night Aspect)",
+    "Name": "Defeated Heolstor the Nightlord (Night Aspect)",
+    "Tags": []
+  },
+  {
+    "ID": "161",
+    "Name": "Defeated Harmonia (Balancers)",
+    "Tags": []
+  },
+  {
+    "ID": "162",
+    "Name": "Defeated Straghess (Dreglord)",
     "Tags": []
   },
   {
     "ID": "170",
-    "Name": "Campaign: Defeat Gladius (Tricephalos)",
+    "Name": "Defeated Everdark Sovereign Gladius (Tricephalos)",
     "Tags": []
   },
   {
     "ID": "171",
-    "Name": "Campaign: Defeat Adel (Gaping Jaw)",
+    "Name": "Defeated Everdark Sovereign Adel (Gaping Jaw)",
     "Tags": []
   },
   {
     "ID": "172",
-    "Name": "Campaign: Defeat Gnoster (Sentient Pest)",
+    "Name": "Defeated Everdark Sovereign Gnoster (Sentient Pest)",
     "Tags": []
   },
   {
     "ID": "173",
-    "Name": "Campaign: Defeat Maris (Augur)",
+    "Name": "Defeated Everdark Sovereign Maris (Augur)",
     "Tags": []
   },
   {
     "ID": "174",
-    "Name": "Campaign: Defeat Libra (Equilibrious Beast)",
+    "Name": "Defeated Everdark Sovereign Libra (Equilibrious Beast)",
     "Tags": []
   },
   {
     "ID": "175",
-    "Name": "Campaign: Defeat Fulghor (Darkdrift Knight)",
+    "Name": "Defeated Everdark Sovereign Fulghor (Darkdrift Knight)",
     "Tags": []
   },
   {
     "ID": "176",
-    "Name": "Campaign: Defeat Caligo (Fissure in the Fog)",
+    "Name": "Defeated Everdark Sovereign Caligo (Fissure in the Fog)",
+    "Tags": []
+  },
+  {
+    "ID": "181",
+    "Name": "Defeated Salvation's Standard-Bearers Harmonia (Balancers)",
     "Tags": []
   },
   {
@@ -561,7 +586,7 @@
   },
   {
     "ID": "6031",
-    "Name": "Hero Unlock Flag_Lady",
+    "Name": "Hero Unlock: Duchess",
     "Tags": []
   },
   {
@@ -591,7 +616,17 @@
   },
   {
     "ID": "6037",
-    "Name": "Hero Unlock Flag_Avenger",
+    "Name": "Hero Unlock: Revenant",
+    "Tags": []
+  },
+  {
+    "ID": "6038",
+    "Name": "Hero Unlock: Scholar",
+    "Tags": []
+  },
+  {
+    "ID": "6039",
+    "Name": "Hero Unlock: Undertaker",
     "Tags": []
   },
   {
@@ -666,7 +701,7 @@
   },
   {
     "ID": "6071",
-    "Name": "Shifting Earth: Mountaintops",
+    "Name": "Shifting Earth: Mountaintop",
     "Tags": []
   },
   {
@@ -677,6 +712,11 @@
   {
     "ID": "6073",
     "Name": "Shifting Earth: Noklateo",
+    "Tags": []
+  },
+  {
+    "ID": "6074",
+    "Name": "Shifting Earth: Great Hollow",
     "Tags": []
   },
   {
@@ -696,7 +736,7 @@
   },
   {
     "ID": "6091",
-    "Name": "Last Session: Mountaintops",
+    "Name": "Last Session: Mountaintop",
     "Tags": []
   },
   {
@@ -707,6 +747,11 @@
   {
     "ID": "6093",
     "Name": "Last Session: Noklateo",
+    "Tags": []
+  },
+  {
+    "ID": "6094",
+    "Name": "Last Session: Great Hollow",
     "Tags": []
   },
   {
@@ -1271,37 +1316,37 @@
   },
   {
     "ID": "7600",
-    "Name": "Natural disaster flag: Start",
+    "Name": "Cataclysm Flag: Start",
     "Tags": []
   },
   {
     "ID": "7601",
-    "Name": "Shifting Earth: Mountaintops flag",
+    "Name": "Map Flag: Mountaintop",
     "Tags": []
   },
   {
     "ID": "7602",
-    "Name": "Shifting Earth: The Crater flag",
+    "Name": "Map Flag: The Crater",
     "Tags": []
   },
   {
     "ID": "7603",
-    "Name": "Shifting Earth: Rotted Woods flag",
+    "Name": "Map Flag: Rotted Woods",
     "Tags": []
   },
   {
     "ID": "7604",
-    "Name": "Missing number",
+    "Name": "Map Flag: Great Hollow",
     "Tags": []
   },
   {
     "ID": "7605",
-    "Name": "Shifting Earth: Noklateo flag",
+    "Name": "Map Flag: Shrouded City",
     "Tags": []
   },
   {
     "ID": "7649",
-    "Name": "Natural disaster flag: Finished",
+    "Name": "Cataclysm Flag: Finished",
     "Tags": []
   },
   {
@@ -3241,7 +3286,7 @@
   },
   {
     "ID": "9193",
-    "Name": "Permanent buff acquisition permission: Mountaintops area",
+    "Name": "Permanent buff acquisition permission: Mountaintop area",
     "Tags": []
   },
   {

@@ -5,12 +5,10 @@ namespace StudioCore.Editors.Viewport;
 
 public class ViewportOverlay
 {
-    public Viewport Parent;
-    public Smithbox BaseEditor;
+    public VulkanViewport Parent;
 
-    public ViewportOverlay(Smithbox baseEditor, Viewport parent)
+    public ViewportOverlay(VulkanViewport parent)
     {
-        this.BaseEditor = baseEditor;
         Parent = parent;
     }
 
@@ -30,16 +28,16 @@ public class ViewportOverlay
         {
             if (CFG.Current.Viewport_DisplayRotationIncrement)
             {
-                Parent.MapEditor.RotationCycleConfigTool.DisplayViewportRotateIncrement();
+                Parent.MapEditor.RotationIncrementTool.DisplayViewportRotateIncrement();
             }
-            if (CFG.Current.Viewport_DisplayMovementIncrement)
+            if (CFG.Current.Viewport_DisplayPositionIncrement)
             {
-                Parent.MapEditor.MovementCycleConfigTool.DisplayViewportMovementIncrement();
+                Parent.MapEditor.PositionIncrementTool.DisplayViewportMovementIncrement();
             }
         }
 
         // Profiling
-        if (CFG.Current.Viewport_Profiling)
+        if (CFG.Current.Viewport_Display_Profiling)
         {
             ImGui.Text($@"Cull time: {Parent.RenderScene.OctreeCullTime} ms");
             ImGui.Text($@"Work creation time: {Parent.RenderScene.CPUDrawTime} ms");

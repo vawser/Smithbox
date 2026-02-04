@@ -48,8 +48,8 @@ public static class SoulsMapMetadataGenerator
 
     public static void GenerateMCGMCP(MapEditorScreen editor, List<string> directories, bool toBigEndian = true)
     {
-        string baseDirectory = editor.Project.DataPath;
-        string modDirectory = editor.Project.ProjectPath;
+        string baseDirectory = editor.Project.Descriptor.DataPath;
+        string modDirectory = editor.Project.Descriptor.ProjectPath;
         Dictionary<string, MCCombo> mcCombos = new Dictionary<string, MCCombo>();
 
         //Gather NVM files and filter by MSB 
@@ -64,14 +64,14 @@ public static class SoulsMapMetadataGenerator
             List<string> msbNavmeshNames = new List<string>();
             if (File.Exists(msbPath))
             {
-                if(editor.Project.ProjectType == ProjectType.DES)
+                if(editor.Project.Descriptor.ProjectType == ProjectType.DES)
                 {
                     var msb = SoulsFile<MSBD>.Read(msbPath);
                     foreach (var navMesh in msb.Parts.Navmeshes)
                     {
                         msbNavmeshNames.Add(navMesh.ModelName.ToLower());
                     }
-                } else if (editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+                } else if (editor.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
                 {
                     var msb = SoulsFile<MSB1>.Read(msbPath);
                     foreach (var navMesh in msb.Parts.Navmeshes)
@@ -90,7 +90,7 @@ public static class SoulsMapMetadataGenerator
                 foreach (var nvmFile in nvmBndFile.Files)
                 {
                     var fname = Path.GetFileNameWithoutExtension(nvmFile.Name).ToLower();
-                    if(editor.Project.ProjectType is ProjectType.DS1R or ProjectType.DS1)
+                    if(editor.Project.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS1)
                     {
                         fname = fname.Substring(0, 7);
                     }

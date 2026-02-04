@@ -4,37 +4,37 @@
     {
       "ID": 10,
       "Entries": [
-        "Basic Rules"
+        "[Guide] Basic Rules"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Expedition Region"
+        "[Guide] Expedition Region"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        "Roundtable Hold"
+        "[Guide] Roundtable Hold"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Basic Controls"
+        "[Handbook] Basic Controls"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "Tactical Controls"
+        "[Handbook] Tactical Controls"
       ]
     },
     {
       "ID": 140,
       "Entries": [
-        "Unique Character Controls"
+        "[Handbook] Unique Character Controls"
       ]
     }
   ]

@@ -5,16 +5,16 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextDuplicatePopup
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
     private ProjectEntry Project;
 
     private string DuplicateOffset = "";
     private int DuplicateAmount = 1;
     private bool AutoAdjustOffset = true;
 
-    public TextDuplicatePopup(TextEditorScreen editor, ProjectEntry project)
+    public TextDuplicatePopup(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -45,7 +45,7 @@ public class TextDuplicatePopup
 
                 if (validOffset)
                 {
-                    Editor.ActionHandler.DuplicateEntriesPopup(offset, DuplicateAmount, AutoAdjustOffset);
+                    Parent.ActionHandler.DuplicateEntriesPopup(offset, DuplicateAmount, AutoAdjustOffset);
                 }
             }
 

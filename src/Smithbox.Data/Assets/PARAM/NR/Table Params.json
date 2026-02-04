@@ -3,6 +3,9 @@
     "AttachEffectTableParam",
     "ItemTableParam",
     "MagicTableParam",
-    "SwordArtsTableParam"
+    "SwordArtsTableParam",
+    "MenuPropertyLayoutParam",
+    "NPCBotTableParam",
+    "RandomAppearParam"
   ]
 }

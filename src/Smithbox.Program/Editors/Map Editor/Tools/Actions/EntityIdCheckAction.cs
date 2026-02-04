@@ -56,7 +56,7 @@ public class EntityIdCheckAction
             {
                 if (ImGui.BeginCombo("##Targeted Map", TargetMap.Item1))
                 {
-                    foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+                    foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
                     {
                         var mapID = entry.Key.Filename;
                         var container = entry.Value.MapContainer;
@@ -136,7 +136,7 @@ public class EntityIdCheckAction
             // Entity Group ID
             foreach (var e in loadedMap?.Objects)
             {
-                if (Editor.Project.ProjectType == ProjectType.AC6)
+                if (Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
                 {
                     if (e.WrappedObject is MSB_AC6.Part)
                     {
@@ -165,7 +165,7 @@ public class EntityIdCheckAction
                         }
                     }
                 }
-                if (Editor.Project.ProjectType == ProjectType.ER)
+                if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
                 {
                     if (e.WrappedObject is MSBE.Part)
                     {
@@ -194,7 +194,7 @@ public class EntityIdCheckAction
                         }
                     }
                 }
-                if (Editor.Project.ProjectType == ProjectType.SDT)
+                if (Editor.Project.Descriptor.ProjectType == ProjectType.SDT)
                 {
                     if (e.WrappedObject is MSBS.Part)
                     {
@@ -223,7 +223,7 @@ public class EntityIdCheckAction
                         }
                     }
                 }
-                if (Editor.Project.ProjectType == ProjectType.DS3)
+                if (Editor.Project.Descriptor.ProjectType == ProjectType.DS3)
                 {
                     if (e.WrappedObject is MSB3.Part)
                     {

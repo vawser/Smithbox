@@ -14,9 +14,9 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
 
     private bool _windowMoved = true;
     private bool _windowResized = true;
-    private GL GL;
+    public GL GL;
 
-    private Sdl SDL;
+    public Sdl SDL;
 
     public IImguiRenderer ImguiRenderer => _imGuiRenderer;
     public Sdl2Window Window { get; private set; }
@@ -72,7 +72,7 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
             ColorSpaceHandling.Legacy);
     }
 
-    public void Draw(ProjectManager projectManager)
+    public void Draw(ProjectOrchestrator projectManager)
     {
         var width = Window.Width;
         var height = Window.Height;

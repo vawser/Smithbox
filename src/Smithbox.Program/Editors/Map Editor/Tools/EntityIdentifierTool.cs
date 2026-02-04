@@ -31,7 +31,7 @@ public class EntityIdentifierTool
     public void OnToolWindow()
     {
         // DS2 is not supported currently since it uses Entity IDs differently to the other games.
-        if(Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if(Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             return;
         }
@@ -40,7 +40,7 @@ public class EntityIdentifierTool
         {
             var windowWidth = ImGui.GetWindowWidth();
 
-            var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
             var sectionHeight = windowSize.Y * 0.25f;
             var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
@@ -285,7 +285,7 @@ public class EntityIdentifierTool
         var baseId = 0;
         var baseIdStr = mapId.Replace("m", "").Replace("_", "");
 
-        switch(Editor.Project.ProjectType)
+        switch(Editor.Project.Descriptor.ProjectType)
         {
             // 4 digit range with no prefix
             case ProjectType.DES:

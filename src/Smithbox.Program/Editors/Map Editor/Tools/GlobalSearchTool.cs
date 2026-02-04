@@ -457,7 +457,7 @@ public class GlobalSearchTool : IMapQueryEngine
 
     public void DisplayResultList()
     {
-        var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
         var sectionHeight = windowSize.Y * 0.3f;
         var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());

@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Editors.TextureViewer;
 using System;
 
@@ -19,16 +20,21 @@ public class TextureResource : IResource, IDisposable
         TPFIndex = index;
     }
 
-    /// <summary>
-    /// Denotes the sub-texture this resource uses (for Icon Preview)
-    /// </summary>
-    public SubTexture SubTexture { get; set; }
-
     public TPF Texture { get; private set; }
 
     public TexturePool.TextureHandle GPUTexture { get; private set; }
 
     public bool _LoadTexture(AccessLevel al)
+    {
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+        {
+            return LoadVulkanTexture(al);
+        }
+
+        return false;
+    }
+
+    public bool LoadVulkanTexture(AccessLevel al)
     {
         if (TexturePool.TextureHandle.IsTPFCube(Texture.Textures[TPFIndex], Texture.Platform))
         {
@@ -97,8 +103,11 @@ public class TextureResource : IResource, IDisposable
                 // TODO: dispose managed state (managed objects).
             }
 
+            Texture = null;
+
             GPUTexture?.Dispose();
             GPUTexture = null;
+
 
             disposedValue = true;
         }

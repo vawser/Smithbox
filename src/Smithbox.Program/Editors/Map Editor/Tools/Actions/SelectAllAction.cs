@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -72,22 +73,22 @@ public class SelectAllAction
     /// </summary>
     public void OnShortcut()
     {
-        // Select All by Configuration
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ConfigurableSelectAll) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            OpenPopup = true;
-        }
+            if (InputManager.IsPressed(KeybindID.MapEditor_SelectAll_Configurable))
+            {
+                OpenPopup = true;
+            }
 
-        // Select All by Map Object Type
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectAllByMapObjectType) && Editor.ViewportSelection.IsSelection())
-        {
-            SelectAllByMapObjectType();
-        }
+            if (InputManager.IsPressed(KeybindID.MapEditor_SelectAll_ObjectType))
+            {
+                SelectAllByMapObjectType();
+            }
 
-        // Select All by Model Name
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectAllByModelName) && Editor.ViewportSelection.IsSelection())
-        {
-            SelectAllByModelName();
+            if (InputManager.IsPressed(KeybindID.MapEditor_SelectAll_ModelName))
+            {
+                SelectAllByModelName();
+            }
         }
     }
 
@@ -102,13 +103,13 @@ public class SelectAllAction
             {
                 OpenPopup = true;
             }
-            UIHelper.Tooltip($"Select all map objects via a user-defined search filter configuration.\n\nShortcut: {KeyBindings.Current.MAP_ConfigurableSelectAll.HintText}");
+            UIHelper.Tooltip($"Select all map objects via a user-defined search filter configuration.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_Configurable)}");
 
             if (ImGui.Selectable("Select All by Type"))
             {
                 SelectAllByMapObjectType();
             }
-            UIHelper.Tooltip($"Select all map objects that share the same internal type as the current selection.\n\nShortcut: {KeyBindings.Current.MAP_SelectAllByMapObjectType.HintText}");
+            UIHelper.Tooltip($"Select all map objects that share the same internal type as the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_ObjectType)}");
 
             if (ent.WrappedObject is IMsbPart)
             {
@@ -116,7 +117,7 @@ public class SelectAllAction
                 {
                     SelectAllByModelName();
                 }
-                UIHelper.Tooltip($"Select all part map objects that share the same model name as the current selection.\n\nShortcut: {KeyBindings.Current.MAP_SelectAllByModelName.HintText}");
+                UIHelper.Tooltip($"Select all part map objects that share the same model name as the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_ModelName)}");
             }
 
             ImGui.EndMenu();

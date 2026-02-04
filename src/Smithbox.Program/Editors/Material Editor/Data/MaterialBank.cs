@@ -12,9 +12,8 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MaterialEditor;
 
-public class MaterialBank
+public class MaterialBank : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
@@ -27,9 +26,8 @@ public class MaterialBank
     private ConcurrentDictionary<string, MTD> MTDLookup = new();
     private ConcurrentDictionary<string, MATBIN> MATBINLookup = new();
 
-    public MaterialBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
+    public MaterialBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
     {
-        BaseEditor = baseEditor;
         Project = project;
         Name = name;
         TargetFS = targetFs;
@@ -37,9 +35,9 @@ public class MaterialBank
 
     public async Task<bool> Setup()
     {
-        var mtdTasks = Project.MaterialData.MTD_Files.Entries.Select(async entry =>
+        var mtdTasks = Project.Locator.MTD_Files.Entries.Select(async entry =>
         {
-            var wrapper = new MTDWrapper(BaseEditor, Project, entry, TargetFS);
+            var wrapper = new MTDWrapper(Project, entry, TargetFS);
             if (await wrapper.Load())
             {
                 MTDs[entry] = wrapper;
@@ -51,9 +49,9 @@ public class MaterialBank
             }
         });
 
-        var matbinTasks = Project.MaterialData.MATBIN_Files.Entries.Select(async entry =>
+        var matbinTasks = Project.Locator.MATBIN_Files.Entries.Select(async entry =>
         {
-            var wrapper = new MATBINWrapper(BaseEditor, Project, entry, TargetFS);
+            var wrapper = new MATBINWrapper(Project, entry, TargetFS);
             if (await wrapper.Load())
             {
                 MATBINs[entry] = wrapper;
@@ -76,36 +74,49 @@ public class MaterialBank
     public MATBIN GetMatbin(string name) =>
         MATBINLookup.TryGetValue(name, out var matbin) ? matbin : null;
 
-    public async Task<bool> Save(MaterialEditorScreen editor)
+    public async Task<bool> Save(MaterialEditorView view)
     {
         await Task.Yield();
 
-        if(editor.Selection.SourceType is MaterialSourceType.MTD)
+        if(view.Selection.SourceType is MaterialSourceType.MTD)
         {
-            await editor.Selection.MTDWrapper.Save(editor);
+            await view.Selection.MTDWrapper.Save(view);
         }
 
-        if (editor.Selection.SourceType is MaterialSourceType.MATBIN)
+        if (view.Selection.SourceType is MaterialSourceType.MATBIN)
         {
-            await editor.Selection.MATBINWrapper.Save(editor);
+            await view.Selection.MATBINWrapper.Save(view);
         }
 
         return true;
     }
+
+    #region Dispose
+    public void Dispose()
+    {
+        MTDs.Clear();
+        MATBINs.Clear();
+        MTDLookup.Clear();
+        MATBINLookup.Clear();
+
+        MTDs = null;
+        MATBINs = null;
+        MTDLookup = null;
+        MATBINLookup = null;
+    }
+    #endregion
 }
 
 public class MTDWrapper
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
     public VirtualFileSystem TargetFS;
     public string Name { get; set; }
     public string Path { get; set; }
     public Dictionary<string, MTD> Entries { get; set; } = new();
 
-    public MTDWrapper(Smithbox baseEditor, ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
+    public MTDWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
     {
-        BaseEditor = baseEditor;
         Project = project;
         TargetFS = targetFS;
         Name = dictEntry.Filename;
@@ -120,7 +131,7 @@ public class MTDWrapper
         {
             var binderData = TargetFS.ReadFileOrThrow(Path);
 
-            if (Project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+            if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
             {
                 var binder = BND3.Read(binderData);
 
@@ -143,7 +154,8 @@ public class MTDWrapper
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MTD", LogLevel.Error, LogPriority.High, e);
+                            TaskLogs.AddError($"[Material Editor] Failed to read {entry.Name} as MTD", e);
+
                             return false;
                         }
                     }
@@ -172,7 +184,8 @@ public class MTDWrapper
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MTD", LogLevel.Error, LogPriority.High, e);
+                            TaskLogs.AddError($"[Material Editor] Failed to read {entry.Name} as MTD", e);
+
                             return false;
                         }
                     }
@@ -183,16 +196,16 @@ public class MTDWrapper
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path}", LogLevel.Error, LogPriority.High, e);
+            TaskLogs.AddError($"[Material Editor] Failed to read {Path}",  e);
             return false;
         }
     }
 
-    public async Task<bool> Save(MaterialEditorScreen editor)
+    public async Task<bool> Save(MaterialEditorView view)
     {
         await Task.Yield();
 
-        if (Project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+        if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
         {
             try
             {
@@ -201,25 +214,26 @@ public class MTDWrapper
 
                 foreach (var entry in binder.Files)
                 {
-                    if (entry.Name == editor.Selection.SelectedFileKey)
+                    if (entry.Name == view.Selection.SelectedFileKey)
                     {
                         try
                         {
-                            entry.Bytes = editor.Selection.SelectedMTD.Write();
+                            entry.Bytes = view.Selection.SelectedMTD.Write();
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {entry.Name} as MTD", LogLevel.Error, LogPriority.High, e);
+                            TaskLogs.AddError($"[Material Editor] Failed to write {entry.Name} as MTD", e);
                         }
                     }
                 }
 
                 var newBinderData = binder.Write();
-                Project.ProjectFS.WriteFile(editor.Selection.SelectedBinderEntry.Path, newBinderData);
+                Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, newBinderData);
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {Path}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Material Editor] Failed to write {Path}", e);
+
                 return false;
             }
         }
@@ -232,25 +246,25 @@ public class MTDWrapper
 
                 foreach (var entry in binder.Files)
                 {
-                    if (entry.Name == editor.Selection.SelectedFileKey)
+                    if (entry.Name == view.Selection.SelectedFileKey)
                     {
                         try
                         {
-                            entry.Bytes = editor.Selection.SelectedMTD.Write();
+                            entry.Bytes = view.Selection.SelectedMTD.Write();
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {entry.Name} as MTD", LogLevel.Error, LogPriority.High, e);
+                            TaskLogs.AddError($"[aterial Editor] Failed to write {entry.Name} as MTD", e);
                         }
                     }
                 }
 
                 var newBinderData = binder.Write();
-                Project.ProjectFS.WriteFile(editor.Selection.SelectedBinderEntry.Path, newBinderData);
+                Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, newBinderData);
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {Path}", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Material Editor] Failed to write {Path}", e);
                 return false;
             }
         }
@@ -261,16 +275,14 @@ public class MTDWrapper
 
 public class MATBINWrapper
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
     public VirtualFileSystem TargetFS;
     public string Name { get; set; }
     public string Path { get; set; }
     public Dictionary<string, MATBIN> Entries { get; set; } = new();
 
-    public MATBINWrapper(Smithbox baseEditor, ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
+    public MATBINWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
     {
-        BaseEditor = baseEditor;
         Project = project;
         TargetFS = targetFS;
         Name = dictEntry.Filename;
@@ -304,7 +316,7 @@ public class MATBINWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MATBIN", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Material Editor] Failed to read {entry.Name} as MATBIN", e);
                         return false;
                     }
                 }
@@ -314,12 +326,12 @@ public class MATBINWrapper
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path}", LogLevel.Error, LogPriority.High, e);
+            TaskLogs.AddError($"[Material Editor] Failed to read {Path}", e);
             return false;
         }
     }
 
-    public async Task<bool> Save(MaterialEditorScreen editor)
+    public async Task<bool> Save(MaterialEditorView view)
     {
         await Task.Yield();
 
@@ -330,25 +342,25 @@ public class MATBINWrapper
 
             foreach (var entry in binder.Files)
             {
-                if(entry.Name == editor.Selection.SelectedFileKey)
+                if(entry.Name == view.Selection.SelectedFileKey)
                 {
                     try
                     {
-                        entry.Bytes = editor.Selection.SelectedMATBIN.Write();
+                        entry.Bytes = view.Selection.SelectedMATBIN.Write();
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {entry.Name} as MATBIN", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddError($"[Material Editor] Failed to write {entry.Name} as MATBIN", e);
                     }
                 }
             }
 
             var newBinderData = binder.Write();
-            Project.ProjectFS.WriteFile(editor.Selection.SelectedBinderEntry.Path, newBinderData);
+            Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, newBinderData);
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {Path}", LogLevel.Error, LogPriority.High, e);
+            TaskLogs.AddError($"[Material Editor] Failed to write {Path}", e);
             return false;
         }
 

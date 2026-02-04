@@ -93,7 +93,11 @@ public class ModelContainer : ObjectContainer
         foreach (var entry in flver.Nodes)
         {
             var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Node);
-            AssignNodeDrawable(newObject, wrapper);
+
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                AssignNodeDrawable(newObject, wrapper);
+            }
 
             Nodes.Add(newObject);
             Objects.Add(newObject);
@@ -128,7 +132,11 @@ public class ModelContainer : ObjectContainer
         foreach (var entry in flver.Dummies)
         {
             var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Dummy);
-            AssignDummyDrawable(newObject, wrapper);
+
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                AssignDummyDrawable(newObject, wrapper);
+            }
 
             Dummies.Add(newObject);
             Objects.Add(newObject);
@@ -159,7 +167,10 @@ public class ModelContainer : ObjectContainer
         {
             var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Mesh);
 
-            AssignMeshDrawable(newObject, wrapper);
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                AssignMeshDrawable(newObject, wrapper);
+            }
 
             Meshes.Add(newObject);
             Objects.Add(newObject);

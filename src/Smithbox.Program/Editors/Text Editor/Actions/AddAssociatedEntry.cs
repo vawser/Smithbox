@@ -5,7 +5,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class AddAssociatedEntry : EditorAction
 {
-    private TextEditorScreen Editor;
+    private TextEditorView Parent;
 
     private FMG Fmg;
     private FMG.Entry NewEntry;
@@ -13,9 +13,9 @@ public class AddAssociatedEntry : EditorAction
 
     private TextContainerWrapper Info;
 
-    public AddAssociatedEntry(TextEditorScreen editor, TextContainerWrapper info, FMG targetFmg, FMG.Entry newEntry)
+    public AddAssociatedEntry(TextEditorView view, TextContainerWrapper info, FMG targetFmg, FMG.Entry newEntry)
     {
-        Editor = editor;
+        Parent = view;
         Info = info;
         Fmg = targetFmg;
         NewEntry = newEntry;
@@ -39,7 +39,7 @@ public class AddAssociatedEntry : EditorAction
         Fmg.Entries.Insert(InsertionIndex, NewEntry);
         Info.IsModified = true;
 
-        Editor.DifferenceManager.TrackFmgDifferences();
+        Parent.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }
@@ -49,7 +49,7 @@ public class AddAssociatedEntry : EditorAction
         Fmg.Entries.RemoveAt(InsertionIndex);
         Info.IsModified = false;
 
-        Editor.DifferenceManager.TrackFmgDifferences();
+        Parent.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }

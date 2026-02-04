@@ -25,7 +25,7 @@
     <PackageReference Include="DotNext.Unsafe" Version="4.14.0" />
     <PackageReference Include="DrSwizzler" Version="1.1.1" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="System.Text.Json" Version="10.0.2" />
     <PackageReference Include="ZstdNet" Version="1.4.5" />
   </ItemGroup>
 </Project>

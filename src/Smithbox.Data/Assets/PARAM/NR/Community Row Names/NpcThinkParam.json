@@ -94,7 +94,7 @@
     {
       "ID": 26000,
       "Entries": [
-        ""
+        "Revenant (Duchess Remembrance)"
       ]
     },
     {
@@ -2794,7 +2794,7 @@
     {
       "ID": 38501010,
       "Entries": [
-        ""
+        "Marionette Soldier - Iron Menial (Undertaker Remembrance)"
       ]
     },
     {
@@ -2806,7 +2806,7 @@
     {
       "ID": 38502100,
       "Entries": [
-        "Marionette Soldier"
+        "Marionette Soldier - Spears (Sparring Grounds Dummy)"
       ]
     },
     {
@@ -4420,7 +4420,7 @@
     {
       "ID": 43520010,
       "Entries": [
-        ""
+        "Cuckoo Knight - Sword"
       ]
     },
     {
@@ -4438,7 +4438,7 @@
     {
       "ID": 43521010,
       "Entries": [
-        ""
+        "Cuckoo Knight - Spear"
       ]
     },
     {
@@ -6272,6 +6272,12 @@
       ]
     },
     {
+      "ID": 48200030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 49000000,
       "Entries": [
         "Unknown"
@@ -7072,7 +7078,7 @@
     {
       "ID": 60011050,
       "Entries": [
-        "Eagle"
+        "Eagle (Sparring Grounds)"
       ]
     },
     {
@@ -7324,7 +7330,7 @@
     {
       "ID": 76200000,
       "Entries": [
-        ""
+        "Weapon-Bequeathed Harmonia"
       ]
     },
     {
@@ -7336,7 +7342,13 @@
     {
       "ID": 76200020,
       "Entries": [
-        ""
+        "Weapon-Bequeathed Harmonia (Everdark Phase 2)"
+      ]
+    },
+    {
+      "ID": 76200030,
+      "Entries": [
+        "Weapon-Bequeathed Harmonia (Everdark Phase 1?)"
       ]
     },
     {
@@ -7726,55 +7738,55 @@
     {
       "ID": 137030000,
       "Entries": [
-        "Revenant: Depraved Perfumer"
+        "[Revenant] Helen (Page)"
       ]
     },
     {
       "ID": 137030010,
       "Entries": [
-        "Revenant: Depraved Perfumer"
+        "[Revenant] Helen (Unlock Fight)"
       ]
     },
     {
       "ID": 137030020,
       "Entries": [
-        "Revenant: Depraved Perfumer"
+        "[Revenant] Helen (Duchess Remembrance)"
       ]
     },
     {
       "ID": 143400000,
       "Entries": [
-        "Revenant: Mad Pumpkin Head"
+        "[Revenant] Frederick (Pumpkin Head)"
       ]
     },
     {
       "ID": 143400010,
       "Entries": [
-        "Revenant: Mad Pumpkin Head"
+        "[Revenant] Frederick (Unlock Fight)"
       ]
     },
     {
       "ID": 143400020,
       "Entries": [
-        "Revenant: Mad Pumpkin Head"
+        "[Revenant] Frederick (Duchess Remembrance)"
       ]
     },
     {
       "ID": 149610000,
       "Entries": [
-        "Revenant: Giant Skeleton Torso"
+        "[Revenant] Sebastian (Giant Skeleton Torso)"
       ]
     },
     {
       "ID": 149610010,
       "Entries": [
-        "Revenant: Giant Skeleton Torso"
+        "[Revenant] Sebastian (Unlock Fight)"
       ]
     },
     {
       "ID": 149610020,
       "Entries": [
-        "Revenant: Giant Skeleton Torso"
+        "[Revenant] Sebastian (Duchess Remembrance)"
       ]
     },
     {
@@ -7876,49 +7888,49 @@
     {
       "ID": 610030000,
       "Entries": [
-        ""
+        "Wylder (Undertaker Remembrance)"
       ]
     },
     {
       "ID": 610030100,
       "Entries": [
-        ""
+        "Guardian (Undertaker Remembrance)"
       ]
     },
     {
       "ID": 610030200,
       "Entries": [
-        ""
+        "Ironeye (Undertaker Remembrance)"
       ]
     },
     {
       "ID": 610030300,
       "Entries": [
-        ""
+        "Duchess (Undertaker Remembrance - Unused?)"
       ]
     },
     {
       "ID": 610030400,
       "Entries": [
-        ""
+        "Raider (Undertaker Remembrance)"
       ]
     },
     {
       "ID": 610030500,
       "Entries": [
-        ""
+        "Revenant (Undertaker Remembrance - Unused?)"
       ]
     },
     {
       "ID": 610030600,
       "Entries": [
-        ""
+        "Recluse (Undertaker Remembrance)"
       ]
     },
     {
       "ID": 610030700,
       "Entries": [
-        ""
+        "Executor (Undertaker Remembrance)"
       ]
     }
   ]

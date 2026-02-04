@@ -23,7 +23,7 @@
     <heroType
     AltName="Hero Type"
     Wiki="Which heros can use this relic vessel."
-    ProjectEnum="HERO" />
+    ProjectEnum="HERO_VESSEL" />
     
     <relicSlot1
     AltName="Relic Slot Color: 1"

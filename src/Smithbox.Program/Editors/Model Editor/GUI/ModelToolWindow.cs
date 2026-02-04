@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -17,12 +18,15 @@ public class ModelToolWindow
 
     public void OnGui()
     {
+        if (!CFG.Current.Interface_ModelEditor_ToolWindow)
+            return;
+
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##modelEditorTools", ImGuiWindowFlags.MenuBar))
         {
-            Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ToolWindow);
+            FocusManager.SetFocus(EditorFocusContext.ModelEditor_Tools);
 
             var windowHeight = ImGui.GetWindowHeight();
             var windowWidth = ImGui.GetWindowWidth();

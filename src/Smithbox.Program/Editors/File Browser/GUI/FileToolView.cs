@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,7 @@ public class FileToolView
     public void Display()
     {
         ImGui.Begin($"Tools##FileBrowserToolView", ImGuiWindowFlags.MenuBar);
+        FocusManager.SetFocus(EditorFocusContext.FileBrowser_Tools);
 
         if (ImGui.BeginMenuBar())
         {
@@ -193,7 +195,7 @@ public class FileToolView
                 // Delete the empty folders
                 foreach (var entry in TopFolderList)
                 {
-                    var absFolder = $@"{Project.DataPath}{entry}";
+                    var absFolder = $@"{Project.Descriptor.DataPath}{entry}";
 
                     if (Directory.Exists(absFolder))
                     {
@@ -243,7 +245,7 @@ public class FileToolView
     {
         bool anyExist = false;
 
-        var unpackPath = Project.DataPath;
+        var unpackPath = Project.Descriptor.DataPath;
         if (UnpackDirectory != "")
             unpackPath = UnpackDirectory;
 
@@ -284,10 +286,10 @@ public class FileToolView
                 if (token.IsCancellationRequested)
                     return;
 
-                var data = Project.VanillaFS.ReadFile(entry.Path);
+                var data = Project.VFS.VanillaFS.ReadFile(entry.Path);
                 if (data != null)
                 {
-                    var unpackPath = Project.DataPath;
+                    var unpackPath = Project.Descriptor.DataPath;
                     if (UnpackDirectory != "")
                         unpackPath = UnpackDirectory;
 
@@ -359,7 +361,7 @@ public class FileToolView
                 if (token.IsCancellationRequested)
                     return;
 
-                var unpackPath = Project.DataPath;
+                var unpackPath = Project.Descriptor.DataPath;
                 if (UnpackDirectory != "")
                     unpackPath = UnpackDirectory;
 
@@ -395,7 +397,7 @@ public class FileToolView
         var folder = Path.Join(StudioCore.Common.FileLocations.Assets, "File Dictionaries");
         var file = "";
 
-        switch (Project.ProjectType)
+        switch (Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 file = "DES-File-Dictionary.json"; break;

@@ -30724,31 +30724,31 @@
     {
       "ID": 4960650,
       "Entries": [
-        ""
+        "[Giant Skeleton Torso] Roar"
       ]
     },
     {
       "ID": 4960800,
       "Entries": [
-        ""
+        "[Giant Skeleton Torso] Eye Beam Part A"
       ]
     },
     {
       "ID": 4960810,
       "Entries": [
-        ""
+        "[Giant Skeleton Torso] Eye Beam Part B"
       ]
     },
     {
       "ID": 4960820,
       "Entries": [
-        ""
+        "[Giant Skeleton Torso] Eye Beam Part C"
       ]
     },
     {
       "ID": 4960830,
       "Entries": [
-        ""
+        "[Giant Skeleton Torso] Eye Beam Finish"
       ]
     },
     {
@@ -70912,7 +70912,7 @@
     {
       "ID": 30901070,
       "Entries": [
-        ""
+        "[Relic - Guardian] Character Skill Boosts Damage Negation of Nearby Allies"
       ]
     },
     {
@@ -71260,49 +71260,49 @@
     {
       "ID": 30902010,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Charged/Uncharged) Arrow"
+        "[Ultimate - Ironeye] Single Shot - Arrow"
       ]
     },
     {
       "ID": 30902013,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Charged/Uncharged) Arrow (Ground Hit)"
+        "[Ultimate - Ironeye] Single Shot - Arrow (Ground Hit)"
       ]
     },
     {
       "ID": 30902015,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Charged/Uncharged) Air Stream (Delay)"
+        "[Ultimate - Ironeye] Single Shot - Air Stream (Delay)"
       ]
     },
     {
       "ID": 30902016,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Charged/Uncharged) Air Stream"
+        "[Ultimate - Ironeye] Single Shot - Air Stream"
       ]
     },
     {
       "ID": 30902110,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Unused) Arrow"
+        "[Ultimate - Ironeye] Single Shot (Unused Charged Triple) Arrow"
       ]
     },
     {
       "ID": 30902111,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Unused) Arrow (Ground Hit)"
+        "[Ultimate - Ironeye] Single Shot (Unused Charged Triple) Arrow (Ground Hit)"
       ]
     },
     {
       "ID": 30902112,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Unused) Air Stream (Delay)"
+        "[Ultimate - Ironeye] Single Shot (Unused Charged Triple) Air Stream (Delay)"
       ]
     },
     {
       "ID": 30902113,
       "Entries": [
-        "[Ultimate - Ironeye] Single Shot (Unused) Air Stream"
+        "[Ultimate - Ironeye] Single Shot (Unused Charged Triple) Air Stream"
       ]
     },
     {
@@ -71518,25 +71518,25 @@
     {
       "ID": 30908000,
       "Entries": [
-        ""
+        "[Skill - Scholar] Analyse Shield Burst"
       ]
     },
     {
       "ID": 30908010,
       "Entries": [
-        ""
+        "[Ultimate - Scholar] Communion"
       ]
     },
     {
       "ID": 30908110,
       "Entries": [
-        ""
+        "[Relic - Scholar] Continuous damage inflicted on targets threaded by Ultimate Art"
       ]
     },
     {
       "ID": 30909100,
       "Entries": [
-        ""
+        "[Passive - Undertaker] Grant Bonus Ult to Undertaker"
       ]
     },
     {
@@ -73072,13 +73072,13 @@
     {
       "ID": 890000910,
       "Entries": [
-        ""
+        "Power of the Dragonlord - Landing"
       ]
     },
     {
       "ID": 890000911,
       "Entries": [
-        ""
+        "Power of the Dragonlord - Landing Burst"
       ]
     },
     {
@@ -73414,7 +73414,7 @@
     {
       "ID": 900503070,
       "Entries": [
-        "[Relic - Guardian] Reflect a portion of damage received when ability is activated"
+        "[Relic - Guardian] Successful guards send out shockwaves while ability is active"
       ]
     },
     {

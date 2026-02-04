@@ -6,6 +6,13 @@
       "player",
       "human"
     ]
+  },{
+    "ID": "c0",
+    "Name": "Player",
+    "Tags": [
+      "player",
+      "human"
+    ]
   },
   {
     "ID": "c0010",
@@ -13,6 +20,13 @@
     "Tags": [
       "player",
       "human"
+    ]
+  },
+  {
+    "ID": "c2010",
+    "Name": "Blaidd, the Half-Wolf",
+    "Tags": [
+      "creature"
     ]
   },
   {
@@ -38,7 +52,7 @@
   },
   {
     "ID": "c2130",
-    "Name": "Morgott",
+    "Name": "Fell Omen / Morgott",
     "Tags": [
       "creature",
       "boss"
@@ -68,6 +82,20 @@
   {
     "ID": "c2271",
     "Name": "Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2274",
+    "Name": "Giant Sleep Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2275",
+    "Name": "Sleep Crab",
     "Tags": [
       "creature"
     ]
@@ -121,6 +149,18 @@
     "Tags": [
       "creature"
     ]
+  },
+  {
+    "ID": "c3061",
+    "Name": "Giant Beast Skeleton",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3070",
+    "Name": "Dominula Celebrant",
+    "Tags": []
   },
   {
     "ID": "c3080",
@@ -182,6 +222,11 @@
     ]
   },
   {
+    "ID": "c3201",
+    "Name": "Frenzied Nomad",
+    "Tags": []
+  },
+  {
     "ID": "c3250",
     "Name": "Draconic Tree Sentinel",
     "Tags": [
@@ -199,7 +244,7 @@
   },
   {
     "ID": "c3252",
-    "Name": "Loretta",
+    "Name": "Royal Carian Knight / Loretta",
     "Tags": [
       "creature",
       "boss"
@@ -207,7 +252,7 @@
   },
   {
     "ID": "c3300",
-    "Name": "Nox Swordstress/Monk/Nightmaiden",
+    "Name": "Nox Warrior",
     "Tags": [
       "creature",
       "boss"
@@ -219,6 +264,11 @@
     "Tags": [
       "creature"
     ]
+  },
+  {
+    "ID": "c3330",
+    "Name": "Silver Tear Ball",
+    "Tags": []
   },
   {
     "ID": "c3350",
@@ -301,7 +351,7 @@
   },
   {
     "ID": "c3500",
-    "Name": "Skeletal Militiaman/Bandit/Knight/Grave Warden",
+    "Name": "Grave Skeleton",
     "Tags": [
       "creature"
     ]
@@ -329,7 +379,7 @@
   },
   {
     "ID": "c3600",
-    "Name": "Alabaster Lord",
+    "Name": "Stoneskin Lord",
     "Tags": [
       "creature"
     ]
@@ -364,14 +414,14 @@
   },
   {
     "ID": "c3661",
-    "Name": "Putrid Corpse",
+    "Name": "Shambling Corpse",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c3662",
-    "Name": "Putrid Corpse (Large)",
+    "Name": "Shambling Corpse (Large)",
     "Tags": [
       "creature"
     ]
@@ -382,6 +432,11 @@
     "Tags": [
       "creature"
     ]
+  },
+  {
+    "ID": "c3670",
+    "Name": "Aged Albinauric",
+    "Tags": []
   },
   {
     "ID": "c3700",
@@ -417,6 +472,16 @@
     "Tags": [
       "creature"
     ]
+  },
+  {
+    "ID": "c3730",
+    "Name": "Graven Mass",
+    "Tags": []
+  },
+  {
+    "ID": "c3750",
+    "Name": "Clayman",
+    "Tags": []
   },
   {
     "ID": "c3800",
@@ -490,7 +555,7 @@
   },
   {
     "ID": "c4021",
-    "Name": "Royal Revenant",
+    "Name": "Large Royal Revenant",
     "Tags": [
       "creature"
     ]
@@ -582,6 +647,11 @@
     ]
   },
   {
+    "ID": "c4140",
+    "Name": "Snail",
+    "Tags": []
+  },
+  {
     "ID": "c4150",
     "Name": "Basilisk",
     "Tags": [
@@ -624,6 +694,11 @@
     ]
   },
   {
+    "ID": "c4167",
+    "Name": "Rotten Stray",
+    "Tags": []
+  },
+  {
     "ID": "c4170",
     "Name": "Putrid Flesh",
     "Tags": [
@@ -646,7 +721,7 @@
   },
   {
     "ID": "c4181",
-    "Name": "Spirit Jellyfish",
+    "Name": "Maris' Jellyfish",
     "Tags": [
       "creature"
     ]
@@ -682,6 +757,11 @@
     ]
   },
   {
+    "ID": "c4210",
+    "Name": "Warhawk/Stormhawk",
+    "Tags": []
+  },
+  {
     "ID": "c4230",
     "Name": "Land Octopus (Small)",
     "Tags": [
@@ -697,7 +777,7 @@
   },
   {
     "ID": "c4241",
-    "Name": "Fingercreeper (Large)",
+    "Name": "Fingercreeper (Huge)",
     "Tags": [
       "creature"
     ]
@@ -800,8 +880,13 @@
     ]
   },
   {
+    "ID": "c4316",
+    "Name": "Haligtree Soldier",
+    "Tags": []
+  },
+  {
     "ID": "c4320",
-    "Name": "Vulgar Militia",
+    "Name": "Vulgar Militia (Large)",
     "Tags": [
       "creature"
     ]
@@ -869,6 +954,11 @@
     ]
   },
   {
+    "ID": "c4356",
+    "Name": "Haligtree Knight",
+    "Tags": []
+  },
+  {
     "ID": "c4360",
     "Name": "Lordsworn Knight's Horse",
     "Tags": [
@@ -878,7 +968,7 @@
   },
   {
     "ID": "c4363",
-    "Name": "Lordsworn Knight's Horse",
+    "Name": "Leyndell Knight's Horse",
     "Tags": [
       "creature",
       "horse",
@@ -934,6 +1024,11 @@
     ]
   },
   {
+    "ID": "c4376",
+    "Name": "Haligtree Foot Soldier",
+    "Tags": []
+  },
+  {
     "ID": "c4377",
     "Name": "Highwayman",
     "Tags": [
@@ -956,31 +1051,46 @@
   },
   {
     "ID": "c4382",
-    "Name": "Stonedigger",
+    "Name": "Miner",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c4383",
-    "Name": "Glintstone Digger",
+    "Name": "Stonedigger",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c4384",
-    "Name": "Glintstone Digger (Small Sack)",
+    "Name": "Large Stonedigger",
     "Tags": [
       "creature"
     ]
   },
   {
+    "ID": "c4385",
+    "Name": "Mushroom Sorcerer",
+    "Tags": []
+  },
+  {
     "ID": "c4386",
-    "Name": "Flame Priestess",
+    "Name": "Blackflame Guilty",
     "Tags": [
       "creature"
     ]
+  },
+  {
+    "ID": "c4420",
+    "Name": "Giant Crayfish",
+    "Tags": []
+  },
+  {
+    "ID": "c4430",
+    "Name": "Sentry Stone",
+    "Tags": []
   },
   {
     "ID": "c4440",
@@ -1027,21 +1137,21 @@
   },
   {
     "ID": "c4490",
-    "Name": "Living Jar Warrior",
-    "Tags": [
-      "creature"
-    ]
-  },
-  {
-    "ID": "c4491",
     "Name": "Living Jar",
     "Tags": [
       "creature"
     ]
   },
   {
+    "ID": "c4491",
+    "Name": "Living Jar (Small)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
     "ID": "c4500",
-    "Name": "Flying Dragon",
+    "Name": "Flying Dragon of the Hills",
     "Tags": [
       "creature",
       "boss"
@@ -1049,7 +1159,7 @@
   },
   {
     "ID": "c4501",
-    "Name": "Decaying Ekzykes",
+    "Name": "Decaying Rancor Dragon",
     "Tags": [
       "creature",
       "boss"
@@ -1057,7 +1167,7 @@
   },
   {
     "ID": "c4503",
-    "Name": "Borealis the Freezing Fog",
+    "Name": "Mountaintop Ice Dragon",
     "Tags": [
       "creature",
       "boss"
@@ -1094,6 +1204,11 @@
     ]
   },
   {
+    "ID": "c4561",
+    "Name": "Bloodbane Giant Crow",
+    "Tags": []
+  },
+  {
     "ID": "c4570",
     "Name": "Wormface",
     "Tags": [
@@ -1116,6 +1231,11 @@
     ]
   },
   {
+    "ID": "c4601",
+    "Name": "Carian Troll Knight",
+    "Tags": []
+  },
+  {
     "ID": "c4602",
     "Name": "Snowfield Troll",
     "Tags": [
@@ -1123,8 +1243,13 @@
     ]
   },
   {
+    "ID": "c4603",
+    "Name": "Stonedigger Troll",
+    "Tags": []
+  },
+  {
     "ID": "c4620",
-    "Name": "Astel, Naturalborn of the Void",
+    "Name": "Naturalborn of the Void / Astel",
     "Tags": [
       "creature",
       "boss"
@@ -1145,6 +1270,11 @@
       "creature",
       "boss"
     ]
+  },
+  {
+    "ID": "c4641",
+    "Name": "Balancers / Weapon-Bequeathed Harmonia (Everdark Worm)",
+    "Tags": []
   },
   {
     "ID": "c4650",
@@ -1172,7 +1302,7 @@
   },
   {
     "ID": "c4680",
-    "Name": "Falling-star Beast",
+    "Name": "Fallingstar Beast",
     "Tags": [
       "creature",
       "boss"
@@ -1188,7 +1318,7 @@
   },
   {
     "ID": "c4750",
-    "Name": "Godrick the Grafted",
+    "Name": "Grafted Monarch / Godrick",
     "Tags": [
       "creature",
       "boss"
@@ -1196,11 +1326,21 @@
   },
   {
     "ID": "c4770",
-    "Name": "Valiant Gargoyle",
+    "Name": "Valiant Gargoyle/Black Blade Kindred",
     "Tags": [
       "creature",
       "boss"
     ]
+  },
+  {
+    "ID": "c4800",
+    "Name": "Lord of Blood / Mohg",
+    "Tags": []
+  },
+  {
+    "ID": "c4801",
+    "Name": "Lord of Blood Spear",
+    "Tags": []
   },
   {
     "ID": "c4810",
@@ -1211,15 +1351,25 @@
     ]
   },
   {
+    "ID": "c4811",
+    "Name": "Putrid Avatar",
+    "Tags": []
+  },
+  {
+    "ID": "c4820",
+    "Name": "Omenkiller",
+    "Tags": []
+  },
+  {
     "ID": "c4900",
-    "Name": "Dragon",
+    "Name": "Fissure in the Fog / Caligo, Miasma of Night",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c4901",
-    "Name": "Caligo - Miasma of Night",
+    "Name": "Fissure in the Fog / Caligo, Miasma of Night (Everdark)",
     "Tags": [
       "creature"
     ]
@@ -1234,7 +1384,7 @@
   },
   {
     "ID": "c4911",
-    "Name": "Great Wyrm Theodorix",
+    "Name": "Great Wyrm",
     "Tags": [
       "creature",
       "boss"
@@ -1257,7 +1407,7 @@
   },
   {
     "ID": "c4961",
-    "Name": "Giant Skeleton Torso",
+    "Name": "Sebastian (Giant Skeleton Torso)",
     "Tags": [
       "creature"
     ]
@@ -1272,7 +1422,7 @@
   },
   {
     "ID": "c5010",
-    "Name": "Golden Hippopotamus",
+    "Name": "Golden Hippopotamus (Large)",
     "Tags": [
       "creature",
       "boss"
@@ -1280,18 +1430,122 @@
   },
   {
     "ID": "c5011",
-    "Name": "Golden Hippopotamus (Golden Wings)",
+    "Name": "Golden Hippopotamus (Small)",
     "Tags": [
       "creature",
       "boss"
     ]
   },
   {
+    "ID": "c5040",
+    "Name": "Curseblade",
+    "Tags": []
+  },
+  {
+    "ID": "c5070",
+    "Name": "Death Knight",
+    "Tags": []
+  },
+  {
+    "ID": "c5080",
+    "Name": "Bloodfiend",
+    "Tags": []
+  },
+  {
+    "ID": "c5081",
+    "Name": "Chief Bloodfiend",
+    "Tags": []
+  },
+  {
+    "ID": "c5090",
+    "Name": "Gravebird",
+    "Tags": []
+  },
+  {
     "ID": "c5110",
-    "Name": "Spirit Eel",
+    "Name": "Maris' Tendril",
     "Tags": [
       "creature"
     ]
+  },{
+    "ID": "c5160",
+    "Name": "Fire Knight",
+    "Tags": []
+  },
+  {
+    "ID": "c5190",
+    "Name": "Spider Scorpion",
+    "Tags": []
+  },
+  {
+    "ID": "c5192",
+    "Name": "Spider Scorpion (Large)",
+    "Tags": []
+  },
+  {
+    "ID": "c5193",
+    "Name": "Spider Scorpion (Small)",
+    "Tags": []
+  },
+  {
+    "ID": "c5210",
+    "Name": "Divine Beast Dancing Lion",
+    "Tags": []
+  },
+  {
+    "ID": "c5240",
+    "Name": "Shadow Hornsent",
+    "Tags": []
+  },
+  {
+    "ID": "c5241",
+    "Name": "Shadow Hornsent (Large)",
+    "Tags": []
+  },
+  {
+    "ID": "c5250",
+    "Name": "Horned Warrior/Divine Warrior",
+    "Tags": []
+  },
+  {
+    "ID": "c5310",
+    "Name": "Inquisitor (Base)",
+    "Tags": []
+  },
+  {
+    "ID": "c5311",
+    "Name": "Inquisitor",
+    "Tags": []
+  },
+  {
+    "ID": "c5312",
+    "Name": "Elder Inquisitor",
+    "Tags": []
+  },
+  {
+    "ID": "c5320",
+    "Name": "Fat Inquisitor",
+    "Tags": []
+  },
+  {
+    "ID": "c5522",
+    "Name": "Shadow Stray (Large)",
+    "Tags": []
+  },
+  {
+    "ID": "c5523",
+    "Name": "Shadow Stray",
+    "Tags": []
+  },
+  {
+    "ID": "c5750",
+    "Name": "Living Jar",
+    "Tags": []
+  },
+  {
+    "ID": "c5751",
+    "Name": "Living Jar (Small)",
+    "Tags": []
   },
   {
     "ID": "c5810",
@@ -1299,6 +1553,31 @@
     "Tags": [
       "creature"
     ]
+  },
+  {
+    "ID": "c5820",
+    "Name": "Great Red Bear",
+    "Tags": []
+  },
+  {
+    "ID": "c5830",
+    "Name": "Messmer Soldier",
+    "Tags": []
+  },
+  {
+    "ID": "c5860",
+    "Name": "Ghostflame Dragon",
+    "Tags": []
+  },
+  {
+    "ID": "c5870",
+    "Name": "Lion-head Imp/Bigmouth Imp",
+    "Tags": []
+  },
+  {
+    "ID": "c5900",
+    "Name": "Man-fly",
+    "Tags": []
   },
   {
     "ID": "c6000",
@@ -1317,6 +1596,16 @@
     ]
   },
   {
+    "ID": "c6060",
+    "Name": "Ram",
+    "Tags": []
+  },
+  {
+    "ID": "c6240",
+    "Name": "Lightning Ball",
+    "Tags": []
+  },
+  {
     "ID": "c7000",
     "Name": "Fallen Hawks Soldier",
     "Tags": [
@@ -1325,108 +1614,128 @@
   },
   {
     "ID": "c7100",
-    "Name": "Ancient Hero",
+    "Name": "Ancient Hero of Zamor",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7500",
-    "Name": "Gladius - Beast of Night",
+    "Name": "Tricephalos / Gladius, Beast of Night",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7510",
-    "Name": "Adel - Baron of Night",
+    "Name": "Gaping Jaw / Adel, Baron of Night",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7511",
-    "Name": "Adel - Baron of Night (Lightning Fang)",
+    "Name": "Gaping Jaw / Adel, Baron of Night (Everdark)",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7520",
-    "Name": "Gnoster - Wisdom of Night (Moth)",
+    "Name": "Sentient Pest / Gnoster, Wisdom of Night",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7521",
-    "Name": "Gnoster - Wisdom of Night (Moth)",
+    "Name": "Sentient Pest / Animus, Ascendant Light (Everdark)",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7530",
-    "Name": "Gnoster - Wisdom of Night (Pest)",
+    "Name": "Sentient Pest / Faurtis Stoneshield",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7540",
-    "Name": "Maris - Fathom of Night",
+    "Name": "Augur / Maris, Fathom of Night",
     "Tags": [
       "creature"
     ]
   },
   {
+    "ID": "c7541",
+    "Name": "Augur / Maris, Fathom of Night (Everdark)",
+    "Tags": []
+  },
+  {
     "ID": "c7560",
-    "Name": "Libra - Creature of Night",
+    "Name": "Equilibrious Beast / Libra, Creature of Night",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7561",
-    "Name": "Libra - Creature of Night",
+    "Name": "Equilibrious Beast / Libra, Creature of Night (Everdark)",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7570",
-    "Name": "Libra - Creature of Night (Shrouded)",
+    "Name": "Scale-Bearing Merchant (Libra)",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7580",
-    "Name": "Heolstor the Nightlord",
+    "Name": "Night Aspect / Heolstor the Nightlord",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7600",
-    "Name": "Fulghor - Champion of Nightglow",
+    "Name": "Darkdrift Knight / Fulghor, Champion of Nightglow",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7610",
-    "Name": "Dreglord",
+    "Name": "Dreglord / Straghess",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7620",
-    "Name": "Balancers",
+    "Name": "Balancers / Weapon-Bequeathed Harmonia",
     "Tags": [
       "creature"
     ]
+  },
+  {
+    "ID": "c7650",
+    "Name": "Dreg Corpse",
+    "Tags": []
+  },
+  {
+    "ID": "c7651",
+    "Name": "Large Dreg Corpse",
+    "Tags": []
+  },
+  {
+    "ID": "c7660",
+    "Name": "Dreg Wormface",
+    "Tags": []
   },
   {
     "ID": "c7700",
@@ -1444,17 +1753,22 @@
   },
   {
     "ID": "c7711",
-    "Name": "Centipede Grub",
+    "Name": "Centipede Demon Arm",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c7712",
-    "Name": "Centipede Grub",
+    "Name": "Centipede Demon Tail",
     "Tags": [
       "creature"
     ]
+  },
+  {
+    "ID": "c7720",
+    "Name": "Knight Artorias",
+    "Tags": []
   },
   {
     "ID": "c7800",
@@ -1486,7 +1800,7 @@
   },
   {
     "ID": "c7910",
-    "Name": "Nameless King (Mount)",
+    "Name": "King of the Storm (Nameless King)",
     "Tags": [
       "creature"
     ]
@@ -1499,6 +1813,21 @@
     ]
   },
   {
+    "ID": "c7930",
+    "Name": "Demon Prince/Demon in Pain/Demon from Below",
+    "Tags": []
+  },
+  {
+    "ID": "c7931",
+    "Name": "Demon Prince Helper",
+    "Tags": []
+  },
+  {
+    "ID": "c7932",
+    "Name": "Demon Prince Helper",
+    "Tags": []
+  },
+  {
     "ID": "c8000",
     "Name": "Torrent",
     "Tags": [
@@ -1506,36 +1835,41 @@
     ]
   },
   {
+    "ID": "c8100",
+    "Name": "Ballista",
+    "Tags": []
+  },
+  {
     "ID": "c8130",
-    "Name": "Traning Dummy (Small)",
+    "Name": "Training Post (Small)",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c8131",
-    "Name": "Traning Dummy (Medium)",
+    "Name": "Training Post (Medium)",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c8132",
-    "Name": "Traning Dummy (Large)",
+    "Name": "Training Post (Large)",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c8910",
-    "Name": "Human Man",
+    "Name": "Edgar Northencroft",
     "Tags": [
       "creature"
     ]
   },
   {
     "ID": "c8911",
-    "Name": "Long-limbed Man",
+    "Name": "Sitting Nightlord Corpse",
     "Tags": [
       "creature"
     ]

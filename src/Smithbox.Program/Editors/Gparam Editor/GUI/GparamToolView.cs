@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Numerics;
 
 namespace StudioCore.Editors.GparamEditor;
@@ -20,15 +21,12 @@ public class GparamToolView
     /// </summary>
     public void Display()
     {
-        if (Project.ProjectType == ProjectType.Undefined)
+        if (!CFG.Current.Interface_GparamEditor_ToolWindow)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
-
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_GparamEditor", ImGuiWindowFlags.MenuBar))
+        if (ImGui.Begin("Tools##ToolConfigureWindow_GparamEditor", UIHelper.GetMainWindowFlags()))
         {
-            Editor.Selection.SwitchWindowContext(GparamEditorContext.ToolWindow);
+            FocusManager.SetFocus(EditorFocusContext.GparamEditor_Tools);
 
             var windowWidth = ImGui.GetWindowWidth();
 
@@ -39,16 +37,21 @@ public class GparamToolView
                 ImGui.EndMenuBar();
             }
 
-            if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
-            {
-                if (ImGui.CollapsingHeader("Quick Edit"))
-                {
-                    Editor.QuickEditHandler.DisplayInputWindow();
-                }
+            var activeView = Editor.ViewHandler.ActiveView;
 
-                if (ImGui.CollapsingHeader("Quick Edit Commands"))
+            if (activeView != null)
+            {
+                if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
                 {
-                    Editor.QuickEditHandler.DisplayCheatSheet();
+                    if (ImGui.CollapsingHeader("Quick Edit"))
+                    {
+                        activeView.QuickEditHandler.DisplayInputWindow();
+                    }
+
+                    if (ImGui.CollapsingHeader("Quick Edit Commands"))
+                    {
+                        activeView.QuickEditHandler.DisplayCheatSheet();
+                    }
                 }
             }
 
@@ -71,8 +74,8 @@ public class GparamToolView
         }
 
         ImGui.End();
-        ImGui.PopStyleColor(1);
     }
+
     public void ViewMenu()
     {
         if (ImGui.BeginMenu("View"))

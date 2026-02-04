@@ -66,7 +66,7 @@
     <burnSfxDelayTimeMax_1 AltName="Burn - Bullet Generation Delay Time [1] (Maximum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     <burnSfxDelayTimeMax_2 AltName="Burn - Bullet Generation Delay Time [2] (Maximum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     <burnSfxDelayTimeMax_3 AltName="Burn - Bullet Generation Delay Time [3] (Maximum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
-	<BreakAiSoundID AltName="Destruction AI Sound ID" Wiki="AI sound ID generated at the time of destruction" Refs="AiSoundParam" />
+	<breakAiSoundId AltName="Destruction AI Sound ID" Wiki="AI sound ID generated at the time of destruction" Refs="AiSoundParam" />
     <FragmentInvisibleWaitTime AltName="Debris Fragments - Wait Time" Wiki="Material ID of debris (-1 Do not hide)" />
     <FragmentInvisibleTime AltName="Debris Fragments - Invisibility Time" Wiki="Time to hide debris (seconds)" />
 	<RigidPenetrationScale_Soft AltName="Rigid Body Collision - Soft" Wiki="Rigid body soft contact setting Collision point distance coefficient [soft]" />
@@ -91,7 +91,7 @@ defaultLodParamId,extRefTexId,materialId,LandTouchSfxId,contactSeId,-,
 clothUpdateDist,-,
 navimeshFlag,collisionType,RigidPenetrationScale_Soft,RigidPenetrationScale_Normal,RigidPenetrationScale_Hard,-,
 isCamHit,isBreakByPlayerCollide,isAnimBreak,isPenetrationBulletHit,isChrHit,isAttackBacklash,isDisableBreakForFirstAppear,isLadder,isAnimPauseOnRemoPlay,isDamageNoHit,isMoveObj,isRopeBridge,isAddRigidImpulse_ByDamage,isBreak_ByChrRide,isBreakByEnemyCollide,isDamageCover,-,
-animBreakIdMax,breakSfxId,breakSfxCpId,breakLandingSfxId,breakBulletBehaviorId,breakBulletCpId,breakFallHeight,breakStopTime,BreakAiSoundID,-,
+animBreakIdMax,breakSfxId,breakSfxCpId,breakLandingSfxId,breakBulletBehaviorId,breakBulletCpId,breakFallHeight,breakStopTime,breakAiSoundId,-,
 FragmentInvisibleWaitTime,FragmentInvisibleTime,-,
 isBurn,burnTime,burnBraekRate,burnSfxId,burnSfxId_1,burnSfxId_2,burnSfxId_3,burnBulletBehaviorId,burnBulletBehaviorId_1,burnBulletBehaviorId_2,burnBulletBehaviorId_3,burnBulletInterval,burnBulletDelayTime,burnSfxDelayTimeMin,burnSfxDelayTimeMin_1,burnSfxDelayTimeMin_2,burnSfxDelayTimeMin_3,burnSfxDelayTimeMax,burnSfxDelayTimeMax_1,burnSfxDelayTimeMax_2,burnSfxDelayTimeMax_3,-,
 windEffectType_0,windEffectType_1,windEffectRate_0,windEffectRate_1,camAvoidType,-,

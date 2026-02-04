@@ -13,7 +13,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamPropertyEditor
 {
-    private GparamEditorScreen Editor;
+    private GparamEditorView Parent;
     private ProjectEntry Project;
 
     private object _editedValueCache;
@@ -30,9 +30,9 @@ public class GparamPropertyEditor
     private bool _isHoldingColor;
     private Vector4 _heldColor;
 
-    public GparamPropertyEditor(GparamEditorScreen editor, ProjectEntry project)
+    public GparamPropertyEditor(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -54,7 +54,7 @@ public class GparamPropertyEditor
             int intInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -98,7 +98,7 @@ public class GparamPropertyEditor
 
             var strval = $@"{uintInput}";
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -142,7 +142,7 @@ public class GparamPropertyEditor
             int shortInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -181,7 +181,7 @@ public class GparamPropertyEditor
             int sbyteInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -222,7 +222,7 @@ public class GparamPropertyEditor
 
             var strval = $@"{byteInput}";
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.GparamData.GparamInformation, field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -321,7 +321,7 @@ public class GparamPropertyEditor
         }
         // VECTOR4
         else if (field is Vector4Field vector4Field &&
-            !CFG.Current.Gparam_DisplayColorEditForVector4Fields)
+            !CFG.Current.GparamEditor_Value_List_Display_Color_Edit_V4)
         {
             Vector4 fieldValue = vector4Field.Values[idx].Value;
             Vector4 vector4Input = fieldValue;
@@ -337,7 +337,7 @@ public class GparamPropertyEditor
         }
         // VECTOR4 (COLOR EDIT)
         else if (field is Vector4Field vectorColorField &&
-            CFG.Current.Gparam_DisplayColorEditForVector4Fields)
+            CFG.Current.GparamEditor_Value_List_Display_Color_Edit_V4)
         {
             Vector4 fieldValue = vectorColorField.Values[idx].Value;
             Vector4 colorInput = fieldValue;
@@ -351,15 +351,15 @@ public class GparamPropertyEditor
 
             var flags = ImGuiColorEditFlags.AlphaOpaque;
 
-            if (CFG.Current.Gparam_ColorEdit_RGB)
+            if (CFG.Current.GparamEditor_Color_Edit_Mode is ColorEditDisplayMode.RGB)
             {
                 flags = flags | ImGuiColorEditFlags.DisplayRgb;
             }
-            if (CFG.Current.Gparam_ColorEdit_Decimal)
+            if (CFG.Current.GparamEditor_Color_Edit_Mode is ColorEditDisplayMode.Decimal)
             {
                 flags = flags | ImGuiColorEditFlags.Float;
             }
-            if (CFG.Current.Gparam_ColorEdit_HSV)
+            if (CFG.Current.GparamEditor_Color_Edit_Mode is ColorEditDisplayMode.HSV)
             {
                 flags = flags | ImGuiColorEditFlags.DisplayHsv;
             }
@@ -439,9 +439,9 @@ public class GparamPropertyEditor
                 else
                 {
                     GparamValueChangeAction action = null;
-                    action = new GparamValueChangeAction(Editor.Selection._selectedGparamKey, Editor.Selection._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
+                    action = new GparamValueChangeAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
 
-                    Editor.EditorActionManager.ExecuteAction(action);
+                    Parent.ActionManager.ExecuteAction(action);
                 }
             }
             // Only used for Vec4 color
@@ -504,9 +504,9 @@ public class GparamPropertyEditor
                 else
                 {
                     GparamTimeOfDayChangeAction action = null;
-                    action = new GparamTimeOfDayChangeAction(Editor.Selection._selectedGparamKey, Editor.Selection._selectedParamGroup.Name, field, value, newValue, idx);
+                    action = new GparamTimeOfDayChangeAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroup.Name, field, value, newValue, idx);
 
-                    Editor.EditorActionManager.ExecuteAction(action);
+                    Parent.ActionManager.ExecuteAction(action);
                 }
             }
         }

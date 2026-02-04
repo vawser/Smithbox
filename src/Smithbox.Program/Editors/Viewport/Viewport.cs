@@ -3,6 +3,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -23,9 +24,8 @@ public enum ViewportType
 /// A viewport is a virtual (i.e. render to texture/render target) view of a scene. It can receive input events to
 /// transform the view within a virtual canvas, or it can be manually configured for say rendering thumbnails
 /// </summary>
-public class Viewport : IViewport
+public class VulkanViewport : IViewport
 {
-    public Smithbox BaseEditor;
     public MapEditorScreen MapEditor;
     public ModelEditorScreen ModelEditor;
 
@@ -124,27 +124,26 @@ public class Viewport : IViewport
     /// </summary>
     public float FarClip => CFG.Current.Viewport_RenderDistance_Max;
 
-    public Viewport(Smithbox baseEditor, MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
+    public VulkanViewport(MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
     {
-        BaseEditor = baseEditor;
         MapEditor = mapEditor;
         ModelEditor = modelEditor;
         ViewportType = viewportType;
 
-        Shortcuts = new(baseEditor, this);
-        BoxSelection = new(baseEditor, this);
-        ViewportMenu = new(baseEditor, this);
-        ViewportOverlay = new(baseEditor, this);
+        Shortcuts = new(this);
+        BoxSelection = new(this);
+        ViewportMenu = new(this);
+        ViewportOverlay = new(this);
 
         ID = id;
         Width = width;
         Height = height;
-        Device = BaseEditor._context.Device;
+        Device = Smithbox.Instance._context.Device;
 
         float depth = Device.IsDepthRangeZeroToOne ? 1 : 0;
 
         RenderViewport = new Veldrid.Viewport(0, 0, Width, Height, depth, 1.0f - depth);
-        ViewportCamera = new ViewportCamera(BaseEditor, this, ViewportType, new Rectangle(0, 0, Width, Height));
+        ViewportCamera = new ViewportCamera(this, ViewportType, new Rectangle(0, 0, Width, Height));
 
         if (viewportType is ViewportType.MapEditor)
         {
@@ -241,7 +240,7 @@ public class Viewport : IViewport
     {
         var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav | ImGuiWindowFlags.MenuBar;
 
-        if (CFG.Current.Interface_Editor_Viewport)
+        if (CFG.Current.Viewport_Display)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0, 0, 0, 0)); // Transparent
 
@@ -253,12 +252,12 @@ public class Viewport : IViewport
 
                 if (ViewportType is ViewportType.MapEditor)
                 {
-                    MapEditor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapViewport);
+                    FocusManager.SetFocus(EditorFocusContext.MapEditor_Viewport);
                 }
 
                 if (ViewportType is ViewportType.ModelEditor)
                 {
-                    ModelEditor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelViewport);
+                    FocusManager.SetFocus(EditorFocusContext.ModelEditor_Viewport);
                 }
 
                 Vector2 p = ImGui.GetWindowPos();
@@ -268,12 +267,12 @@ public class Viewport : IViewport
                 ResizeViewport(Device, newvp);
 
                 // Inputs
-                if (InputTracker.GetMouseButtonDown(MouseButton.Right) && MouseInViewport())
+                if (InputManager.IsMouseDown(MouseButton.Right) && MouseInViewport())
                 {
                     ImGui.SetWindowFocus();
                     IsViewportSelected = true;
                 }
-                else if (!InputTracker.GetMouseButton(MouseButton.Right))
+                else if (!InputManager.IsMouseDown(MouseButton.Right))
                 {
                     IsViewportSelected = false;
                 }
@@ -315,7 +314,7 @@ public class Viewport : IViewport
 
     public bool Update(Sdl2Window window, float dt)
     {
-        Vector2 pos = InputTracker.MousePosition;
+        Vector2 pos = InputManager.MousePosition;
         Ray ray = GetRay(pos.X - X, pos.Y - Y);
         CursorX = (int)pos.X; // - X;
         CursorY = (int)pos.Y; // - Y;
@@ -412,20 +411,20 @@ public class Viewport : IViewport
                 ref CFG.Current.ModelEditor_RegenerateTertiaryGrid);
         }
 
-        ViewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_DefaultRender_Brightness;
-        ViewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_DefaultRender_Saturation;
-        ViewPipeline.SceneParams.SelectionColor = new Vector4(CFG.Current.Viewport_DefaultRender_SelectColor.X, CFG.Current.Viewport_DefaultRender_SelectColor.Y,
-            CFG.Current.Viewport_DefaultRender_SelectColor.Z, 1.0f);
+        ViewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Untextured_Model_Brightness;
+        ViewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Untextured_Model_Saturation;
+        ViewPipeline.SceneParams.SelectionColor = new Vector4(CFG.Current.Viewport_Selection_Outline_Color.X, CFG.Current.Viewport_Selection_Outline_Color.Y,
+            CFG.Current.Viewport_Selection_Outline_Color.Z, 1.0f);
         bool kbbusy = false;
 
         if (!Gizmos.IsMouseBusy() && CanInteract && MouseInViewport())
         {
             kbbusy = ViewportCamera.UpdateInput(window, dt);
-            if (InputTracker.GetMouseButtonDown(MouseButton.Left))
+            if (InputManager.IsMouseDown(MouseButton.Left))
             {
                 ViewPipeline.CreateAsyncPickingRequest();
             }
-            if (InputTracker.GetMouseButton(MouseButton.Left) && InputTracker.GetKeyDown(Key.AltLeft))
+            if (InputManager.IsMousePressed(MouseButton.Left) && InputManager.IsKeyDown(Key.AltLeft))
             {
                 ViewPipeline.CreateAsyncPickingRequest();
             }
@@ -444,7 +443,7 @@ public class Viewport : IViewport
                 if (targetEditor != null)
                 {
                     ISelectable sel = ViewPipeline.GetSelection();
-                    if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
+                    if (InputManager.HasCtrlDown())
                     {
                         if (sel != null)
                         {
@@ -458,7 +457,7 @@ public class Viewport : IViewport
                             }
                         }
                     }
-                    else if (InputTracker.GetKey(Key.ShiftLeft) || InputTracker.GetKey(Key.ShiftRight))
+                    else if (InputManager.HasShiftDown())
                     {
                         if (sel != null)
                         {
@@ -547,7 +546,7 @@ public class Viewport : IViewport
 
     public bool MouseInViewport()
     {
-        Vector2 mp = InputTracker.MousePosition;
+        Vector2 mp = InputManager.MousePosition;
         if ((int)mp.X < X || (int)mp.X >= X + Width)
         {
             return false;

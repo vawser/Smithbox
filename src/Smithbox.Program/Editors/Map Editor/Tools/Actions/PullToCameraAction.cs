@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -26,9 +27,12 @@ public class PullToCameraAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveToCamera) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyMoveToCamera();
+            if (InputManager.IsPressed(KeybindID.Pull))
+            {
+                ApplyMoveToCamera();
+            }
         }
     }
 
@@ -39,11 +43,11 @@ public class PullToCameraAction
     {
         if (ent.WrappedObject is IMsbPart or IMsbRegion)
         {
-            if (ImGui.Selectable("Pull to Camera"))
+            if (ImGui.Selectable("Pull Selection"))
             {
                 ApplyMoveToCamera();
             }
-            UIHelper.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MAP_MoveToCamera.HintText}");
+            UIHelper.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {InputManager.GetHint(KeybindID.Pull)}");
         }
     }
 
@@ -52,7 +56,7 @@ public class PullToCameraAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Move Selected to Camera", KeyBindings.Current.MAP_MoveToCamera.HintText))
+        if (ImGui.MenuItem("Pull Selection", InputManager.GetHint(KeybindID.Pull)))
         {
             ApplyMoveToCamera();
         }

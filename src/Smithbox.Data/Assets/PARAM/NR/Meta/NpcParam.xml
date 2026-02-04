@@ -340,7 +340,7 @@
     <defaultLodParamId AltName="Default LOD Param ID" Wiki="Default LOD Param ID (-1 None)" />
     <drawType AltName="Draw Type" Wiki="Drawing type" Enum="NPC_DRAW_TYPE" />
     <npcType AltName="NPC Type" Wiki="NPC type. OK if Zako enemies / boss enemies are distinguished" Enum="NPC_TYPE" />
-    <teamType AltName="Team Type" Wiki="NPC attack hit / not hit, aim / not aim setting" Enum="TEAM_TYPE" />
+    <teamType AltName="Team Type" Wiki="NPC attack hit / not hit, aim / not aim setting" ProjectEnum="TEAM_TYPE" />
     <moveType AltName="Move Type" Wiki="Moving method. This changes the control." Enum="NPC_MOVE_TYPE" />
     <lockDist AltName="Lock Distance" Wiki="Lock-on distance [m]" />
     <materialSe_Weak1 AltName="Weak Point - SE Material" Wiki="Determines the SE that sounds when the weak point is damaged. 1" Enum="WEP_MATERIAL_DEF" />

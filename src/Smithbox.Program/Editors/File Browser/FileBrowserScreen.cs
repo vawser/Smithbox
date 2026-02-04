@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Diagnostics;
 using System.Numerics;
 
@@ -9,7 +10,6 @@ namespace StudioCore.Editors.FileBrowser;
 // Credit to GoogleBen (https://github.com/googleben/Smithbox/tree/VFS)
 public class FileBrowserScreen : EditorScreen
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public ActionManager ActionManager = new();
@@ -26,9 +26,8 @@ public class FileBrowserScreen : EditorScreen
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
-    public FileBrowserScreen(Smithbox baseEditor, ProjectEntry project)
+    public FileBrowserScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
         Selection = new(this, project);
@@ -93,22 +92,22 @@ public class FileBrowserScreen : EditorScreen
             if (ImGui.MenuItem($"View Game Directory"))
             {
 #if WINDOWS
-                Process.Start("explorer.exe", Project.DataPath);
+                Process.Start("explorer.exe", Project.Descriptor.DataPath);
 #elif MACOS
-                Process.Start("/usr/bin/open", Project.DataPath);
+                Process.Start("/usr/bin/open", Project.Descriptor.DataPath);
 #elif LINUX
-                Process.Start("xdg-open", Project.DataPath);
+                Process.Start("xdg-open", Project.Descriptor.DataPath);
 #endif
             }
 
             if (ImGui.MenuItem($"View Project Directory"))
             {
 #if WINDOWS
-                Process.Start("explorer.exe", Project.ProjectPath);
+                Process.Start("explorer.exe", Project.Descriptor.ProjectPath);
 #elif MACOS
-                Process.Start("/usr/bin/open", Project.ProjectPath);
+                Process.Start("/usr/bin/open", Project.Descriptor.ProjectPath);
 #elif LINUX
-                Process.Start("xdg-open", Project.ProjectPath);
+                Process.Start("xdg-open", Project.Descriptor.ProjectPath);
 #endif
             }
 
@@ -121,7 +120,7 @@ public class FileBrowserScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
             {
                 if (ActionManager.CanUndo())
                 {
@@ -139,7 +138,7 @@ public class FileBrowserScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
             {
                 if (ActionManager.CanRedo())
                 {
@@ -179,6 +178,12 @@ public class FileBrowserScreen : EditorScreen
 
     private void Shortcuts()
     {
+        if (!FocusManager.IsInFileBrowser())
+            return;
 
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
+        {
+            CFG.Current.Interface_FileBrowser_ToolView = !CFG.Current.Interface_FileBrowser_ToolView;
+        }
     }
 }

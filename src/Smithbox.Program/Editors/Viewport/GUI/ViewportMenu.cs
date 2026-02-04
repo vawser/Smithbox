@@ -4,17 +4,16 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using StudioCore.Renderer;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.Viewport;
 
 public class ViewportMenu
 {
-    public Viewport Parent;
-    public Smithbox BaseEditor;
+    public VulkanViewport Parent;
 
-    public ViewportMenu(Smithbox baseEditor, Viewport parent)
+    public ViewportMenu(VulkanViewport parent)
     {
-        this.BaseEditor = baseEditor;
         Parent = parent;
     }
 
@@ -33,7 +32,7 @@ public class ViewportMenu
             Parent.MapEditor.FilterMenu();
             Parent.MapEditor.CollisionMenu();
 
-            if (Parent.MapEditor.Project.ProjectType != ProjectType.DS2S && Parent.MapEditor.Project.ProjectType != ProjectType.DS2)
+            if (Parent.MapEditor.Project.Descriptor.ProjectType != ProjectType.DS2S && Parent.MapEditor.Project.Descriptor.ProjectType != ProjectType.DS2)
             {
                 if (ImGui.BeginMenu("Patrol Routes"))
                 {
@@ -86,19 +85,19 @@ public class ViewportMenu
 
             if (ImGui.MenuItem("Profiling"))
             {
-                CFG.Current.Viewport_Profiling = !CFG.Current.Viewport_Profiling;
+                CFG.Current.Viewport_Display_Profiling = !CFG.Current.Viewport_Display_Profiling;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Profiling);
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display_Profiling);
             UIHelper.Tooltip($"Toggle the display of the Profiling information in the top-left corner.");
 
             if (Parent.ViewportType is ViewportType.MapEditor)
             {
-                if (ImGui.MenuItem("Movement Increment"))
+                if (ImGui.MenuItem("Position Increment"))
                 {
-                    CFG.Current.Viewport_DisplayMovementIncrement = !CFG.Current.Viewport_DisplayMovementIncrement;
+                    CFG.Current.Viewport_DisplayPositionIncrement = !CFG.Current.Viewport_DisplayPositionIncrement;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayMovementIncrement);
-                UIHelper.Tooltip($"Toggle the display of the current Movement Increment in the top-left corner.");
+                UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayPositionIncrement);
+                UIHelper.Tooltip($"Toggle the display of the current Position Increment in the top-left corner.");
 
                 if (ImGui.MenuItem("Rotation Increment"))
                 {
@@ -253,13 +252,13 @@ public class ViewportMenu
         {
             if (ImGui.BeginMenu("Mode"))
             {
-                if (ImGui.MenuItem("Translate", KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText))
+                if (ImGui.MenuItem("Translate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Translation_Mode)))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Translate;
                 }
                 UIHelper.Tooltip($"Set the gizmo to Translation mode.");
 
-                if (ImGui.MenuItem("Rotate", KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText))
+                if (ImGui.MenuItem("Rotate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Rotation_Mode)))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Rotate;
                 }
@@ -270,13 +269,13 @@ public class ViewportMenu
 
             if (ImGui.BeginMenu("Space"))
             {
-                if (ImGui.MenuItem("Local", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
+                if (ImGui.MenuItem("Local", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.Local;
                 }
                 UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
 
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
+                if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.World;
                 }
@@ -287,13 +286,13 @@ public class ViewportMenu
 
             if (ImGui.BeginMenu("Origin"))
             {
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
+                if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.World;
                 }
                 UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
 
-                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
+                if (ImGui.MenuItem("Bounding Box", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
                 }
@@ -320,7 +319,7 @@ public class ViewportMenu
             {
                 CFG.Current.Viewport_Enable_Texturing = !CFG.Current.Viewport_Enable_Texturing;
 
-                MapEditorUtils.UpdateAllEntityModels(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                MapEditorUtils.UpdateAllEntityModels(Smithbox.Orchestrator.SelectedProject);
             }
             UIHelper.Tooltip($"Whether to render textures in the viewport.");
 
@@ -410,7 +409,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.MapEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (Parent.MapEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 name = "Assets";
             }
@@ -457,7 +456,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.MapEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (Parent.MapEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 name = "Assets";
             }
@@ -496,7 +495,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.ModelEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (Parent.ModelEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 name = "Assets";
             }
@@ -547,7 +546,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.ModelEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (Parent.ModelEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 name = "Assets";
             }

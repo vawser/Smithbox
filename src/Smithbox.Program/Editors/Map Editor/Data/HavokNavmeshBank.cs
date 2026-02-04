@@ -31,7 +31,7 @@ public class HavokNavmeshBank
 
     public bool CanUse()
     {
-        if (Project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT or ProjectType.ER)
+        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT or ProjectType.ER)
             return true;
 
         // NOTE: SDT doesn't render the meshes as it doesn't have HKX support yet
@@ -41,7 +41,7 @@ public class HavokNavmeshBank
 
     public void OnLoadMap(string mapId)
     {
-        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             LoadNavmeshModels(mapId);
         }
@@ -49,7 +49,7 @@ public class HavokNavmeshBank
 
     public void OnUnloadMap(string mapId)
     {
-        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
             {
@@ -63,7 +63,7 @@ public class HavokNavmeshBank
 
     private void LoadNavmeshModels(string mapId)
     {
-        var binderEntry = Project.FileDictionary.Entries.FirstOrDefault(
+        var binderEntry = Project.Locator.FileDictionary.Entries.FirstOrDefault(
             e => e.Filename == mapId &&
             e.Extension == "nvmhktbnd");
 
@@ -72,7 +72,7 @@ public class HavokNavmeshBank
 
         try
         {
-            var binderData = Project.FS.ReadFile(binderEntry.Path);
+            var binderData = Project.VFS.FS.ReadFile(binderEntry.Path);
 
             if (binderData == null)
                 return;
@@ -139,12 +139,12 @@ public class HavokNavmeshBank
         }
         else
         {
-            var entry = Project.MapData.NavmeshFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
+            var entry = Project.Locator.NavmeshFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
             if (entry != null)
             {
                 try
                 {
-                    var nvaData = Project.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
+                    var nvaData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
 
                     try
                     {
@@ -157,12 +157,12 @@ public class HavokNavmeshBank
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {entry.Path} as NVA", LogLevel.Error, LogPriority.High, e);
+                        TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} as NVA", LogLevel.Error, LogPriority.High, e);
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {entry.Path} from VFS", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} from VFS", LogLevel.Error, LogPriority.High, e);
                 }
             }
         }
@@ -173,10 +173,10 @@ public class HavokNavmeshBank
         if (!CanUse())
             return;
 
-        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             return;
 
-        foreach (var entry in Project.MapData.NavmeshFiles.Entries)
+        foreach (var entry in Project.Locator.NavmeshFiles.Entries)
         {
             if (entry.Filename != map.Name)
                 continue;
@@ -187,7 +187,7 @@ public class HavokNavmeshBank
 
                 if (map.Name == mapID)
                 {
-                    var fileData = Project.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
+                    var fileData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
                     var nva = NVA.Read(fileData);
 
                     WriteNavmeshInfo(map, nva);
@@ -207,12 +207,16 @@ public class HavokNavmeshBank
                     }
 
                     var newFileData = nva.Write();
-                    Project.ProjectFS.WriteFile(entry.Path, newFileData);
+
+                    if (!BytePerfectHelper.Md5Equal(fileData.ToArray(), newFileData))
+                    {
+                        Project.VFS.ProjectFS.WriteFile(entry.Path, newFileData);
+                    }
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to write {entry.Path} as NVA", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddLog($"[Map Editor] Failed to write {entry.Path} as NVA", LogLevel.Error, LogPriority.High, e);
             }
         }
     }

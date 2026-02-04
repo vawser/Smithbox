@@ -60,7 +60,14 @@ namespace Veldrid
             {
                 vkFreeCommandBuffers(_device.Device, _pool, b);
             }
-            vkDestroyCommandPool(_device.Device, _pool);
+            try
+            {
+                vkDestroyCommandPool(_device.Device, _pool);
+            }
+            catch (Exception e)
+            {
+
+            }
         }
         
         public void Dispose()
@@ -71,7 +78,14 @@ namespace Veldrid
 
         ~CommandBufferPool()
         {
-            ReleaseUnmanagedResources();
+            try
+            {
+                ReleaseUnmanagedResources();
+            }
+            catch(Exception e)
+            {
+
+            }
         }
     }
 }

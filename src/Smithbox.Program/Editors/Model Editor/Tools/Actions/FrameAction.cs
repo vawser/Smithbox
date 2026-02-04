@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,12 @@ public class FrameAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MODEL_FrameSelection) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyViewportFrame();
+            if (InputManager.IsPressed(KeybindID.Frame))
+            {
+                ApplyViewportFrame();
+            }
         }
     }
 
@@ -38,7 +42,7 @@ public class FrameAction
         {
             ApplyViewportFrame();
         }
-        UIHelper.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {KeyBindings.Current.MODEL_FrameSelection.HintText}");
+        UIHelper.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {InputManager.GetHint(KeybindID.Frame)}");
     }
 
     /// <summary>
@@ -46,7 +50,7 @@ public class FrameAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Frame Selected in Viewport", KeyBindings.Current.MODEL_FrameSelection.HintText))
+        if (ImGui.MenuItem("Frame Selected in Viewport", InputManager.GetHint(KeybindID.Frame)))
         {
             ApplyViewportFrame();
         }
@@ -68,8 +72,8 @@ public class FrameAction
     /// </summary>
     public void ApplyViewportFrame()
     {
-        var offset = CFG.Current.ModelEditor_FrameInViewport_Offset;
-        var distance = CFG.Current.ModelEditor_FrameInViewport_Distance;
+        var offset = CFG.Current.Viewport_Frame_Offset;
+        var distance = CFG.Current.Viewport_Frame_Distance;
 
         if (Editor.ViewportSelection.IsSelection())
         {
@@ -90,8 +94,8 @@ public class FrameAction
 
     public void FrameCurrentEntity(Entity entity)
     {
-        var offset = CFG.Current.ModelEditor_FrameInViewport_Offset;
-        var distance = CFG.Current.ModelEditor_FrameInViewport_Distance;
+        var offset = CFG.Current.Viewport_Frame_Offset;
+        var distance = CFG.Current.Viewport_Frame_Distance;
 
         if (entity != null && entity.RenderSceneMesh != null)
         {

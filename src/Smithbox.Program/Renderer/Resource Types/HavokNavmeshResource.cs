@@ -39,26 +39,26 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         BinaryReaderEx br = new(false, bytes);
 
-        if (curProject.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
         {
             var des = new PackFileDeserializer();
             Root_HKX2 = (hkRootLevelContainer)des.Deserialize(br);
         }
 
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
-            if (curProject.MapEditor != null)
+            if (curProject.Handler.MapEditor != null)
             {
                 var pathElements = virtPath.Split('/');
                 var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
 
-                if (curProject.MapEditor.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
+                if (curProject.Handler.MapEditor.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
                 {
-                    Root_HKX3 = curProject.MapEditor.HavokNavmeshBank.HKX3_Containers[filename];
+                    Root_HKX3 = curProject.Handler.MapEditor.HavokNavmeshBank.HKX3_Containers[filename];
                 }
                 else
                 {
@@ -72,33 +72,33 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         try
         {
-            var fileData = curProject.FS.ReadFile(relativePath);
+            var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
             // Intercept and load the collision from PTDE FS for DS1R projects
-            if (CFG.Current.PTDE_UseCollisionHack && curProject.ProjectType is ProjectType.DS1R)
+            if (CFG.Current.MapEditor_Use_PTDE_Collisions_In_DS1R_Projects && curProject.Descriptor.ProjectType is ProjectType.DS1R)
             {
-                fileData = curProject.PTDE_FS.ReadFile(relativePath);
+                fileData = curProject.VFS.PTDE_FS.ReadFile(relativePath);
             }
 
-            if (curProject.ProjectType is ProjectType.DS3 or ProjectType.BB)
+            if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
             {
                 var des = new PackFileDeserializer();
                 Root_HKX2 = (hkRootLevelContainer)des.Deserialize(new BinaryReaderEx(false, fileData.Value));
             }
-            else if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+            else if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             {
-                if (curProject.MapEditor != null)
+                if (curProject.Handler.MapEditor != null)
                 {
                     var pathElements = virtPath.Split('/');
                     var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
 
-                    if (curProject.MapEditor.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
+                    if (curProject.Handler.MapEditor.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
                     {
-                        Root_HKX3 = curProject.MapEditor.HavokNavmeshBank.HKX3_Containers[filename];
+                        Root_HKX3 = curProject.Handler.MapEditor.HavokNavmeshBank.HKX3_Containers[filename];
                     }
                     else
                     {
@@ -117,9 +117,9 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     private bool LoadInternal(AccessLevel al)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (curProject.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+        if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
         {
             if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
             {
@@ -142,7 +142,7 @@ public class HavokNavmeshResource : IResource, IDisposable
             }
         }
 
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
             {
@@ -201,9 +201,9 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     private unsafe void ProcessMesh_HKX2(hkaiNavMesh mesh)
     {
-        byte navR = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.X;
-        byte navG = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.Y;
-        byte navB = (byte)CFG.Current.GFX_Renderable_Navmesh_Color.Z;
+        byte navR = (byte)CFG.Current.Viewport_Navmesh_Color.X;
+        byte navG = (byte)CFG.Current.Viewport_Navmesh_Color.Y;
+        byte navB = (byte)CFG.Current.Viewport_Navmesh_Color.Z;
         byte navA = 255;
 
         List<Vector4> verts = mesh.m_vertices;

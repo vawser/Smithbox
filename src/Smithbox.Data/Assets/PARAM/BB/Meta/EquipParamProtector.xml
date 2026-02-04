@@ -66,7 +66,7 @@
     <sortId AltName="Sort ID" Wiki="Sort ID (7 digits is the limit for s32 because the enhancement level is added in the program)" />
     <wanderingEquipId AltName="Wandering Equip ID" Wiki="Replacement equipment ID for wandering ghosts." Refs="EquipParamProtector" />
     <vagrantItemLotId AltName="Vagrant Itemlot ID" />
-    <vagrantBonuseneDropItemLotId AltName="Vagrant Bonus Drop Itemlot ID" />
+    <vagrantBonusEneDropItemLotId AltName="Vagrant Bonus Drop Itemlot ID" />
     <vagrantItemEneDropItemLotId AltName="Vagrant Enemy Drop Itemlot ID" />
     <fixPrice AltName="Repair Price" Wiki="Basic repair price" />
     <basicPrice AltName="Basic Price" Wiki="Basic price" />
@@ -129,7 +129,7 @@
     <compTrophySedId AltName="Achievement ID" />
     <shopLv AltName="Shop Level" />
     <knockbackParamId AltName="Knockback Param ID" Wiki="ID of the parameter used for knockback" />
-    <FlickDamageCutRate AltName="Flick Damage %"  Wiki="Determines percentage of damage reduced when an attack is deflected by flick.\nValue given is modified depending on slot.\nHead: Value / 3.65\nBody: Value / 2.7\nArms: Value / 3.35\nLegs: Value / 3.35" />
+    <flickDamageCutRate AltName="Flick Damage %"  Wiki="Determines percentage of damage reduced when an attack is deflected by flick.\nValue given is modified depending on slot.\nHead: Value / 3.65\nBody: Value / 2.7\nArms: Value / 3.35\nLegs: Value / 3.35" />
     <equipModelCategory AltName="Equip Model Category" Wiki="Equipment model type." Enum="EQUIP_MODEL_CATEGORY" />
     <equipModelGender AltName="Equip Model Gender" Wiki="Gender of equipment model." Enum="EQUIP_MODEL_GENDER" />
     <protectorCategory AltName="Armor Category" Wiki="Armor category." Enum="PROTECTOR_CATEGORY" />
@@ -193,7 +193,7 @@
     <invisibleFlag46 IsBool="" AltName="Model Mask 46"/>
     <invisibleFlag47 IsBool="" AltName="Model Mask 47"/>
     <disableMultiDropShare AltName="Disable Multiplayer Sharing" Wiki="Prevents item from appearing to other players when dropped." IsBool="" />
-    <simpleModelForDlc1 AltName="Simple Model for DLC1" Wiki="Is there a simple model for DLC?" IsBool="" />
+    <simpleModelForDlc AltName="Simple Model for DLC1" Wiki="Is there a simple model for DLC?" IsBool="" />
     <isGuestDrop AltName="Can Drop" IsBool="" />
     <shotDamageCutRate AltName="Absorption - Gun" IsInvertedPercentage="" />
     <slashDamageCutRate AltName="Absorption - Slash" IsInvertedPercentage=""/>

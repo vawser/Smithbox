@@ -116,16 +116,16 @@ public static class HKX_Helper
     /// <param name="dest"></param>
     public static unsafe void ProcessMesh(HKX.HKPStorageExtendedMeshShapeMeshSubpartStorage mesh, CollisionSubmesh dest, bool isConnectCollision = false)
     {
-        byte colR = (byte)CFG.Current.GFX_Renderable_Collision_Color.X;
-        byte colG = (byte)CFG.Current.GFX_Renderable_Collision_Color.Y;
-        byte colB = (byte)CFG.Current.GFX_Renderable_Collision_Color.Z;
+        byte colR = (byte)CFG.Current.Viewport_Collision_Color.X;
+        byte colG = (byte)CFG.Current.Viewport_Collision_Color.Y;
+        byte colB = (byte)CFG.Current.Viewport_Collision_Color.Z;
         byte colA = 255;
 
         if (isConnectCollision)
         {
-            colR = (byte)CFG.Current.GFX_Renderable_ConnectCollision_Color.X;
-            colG = (byte)CFG.Current.GFX_Renderable_ConnectCollision_Color.Y;
-            colB = (byte)CFG.Current.GFX_Renderable_ConnectCollision_Color.Z;
+            colR = (byte)CFG.Current.Viewport_Connect_Collision_Color.X;
+            colG = (byte)CFG.Current.Viewport_Connect_Collision_Color.Y;
+            colB = (byte)CFG.Current.Viewport_Connect_Collision_Color.Z;
         }
 
         List<HKX.HKVector4> verts = mesh.Vertices.GetArrayData().Elements;
@@ -230,16 +230,16 @@ public static class HKX_Helper
     /// <param name="dest"></param>
     public static unsafe void ProcessMesh(HKX.FSNPCustomParamCompressedMeshShape mesh, HKX.HKNPBodyCInfo bodyinfo, CollisionSubmesh dest, bool isConnectCollision = false)
     {
-        byte colR = (byte)CFG.Current.GFX_Renderable_Collision_Color.X;
-        byte colG = (byte)CFG.Current.GFX_Renderable_Collision_Color.Y;
-        byte colB = (byte)CFG.Current.GFX_Renderable_Collision_Color.Z;
+        byte colR = (byte)CFG.Current.Viewport_Collision_Color.X;
+        byte colG = (byte)CFG.Current.Viewport_Collision_Color.Y;
+        byte colB = (byte)CFG.Current.Viewport_Collision_Color.Z;
         byte colA = 255;
 
         if (isConnectCollision)
         {
-            colR = (byte)CFG.Current.GFX_Renderable_ConnectCollision_Color.X;
-            colG = (byte)CFG.Current.GFX_Renderable_ConnectCollision_Color.Y;
-            colB = (byte)CFG.Current.GFX_Renderable_ConnectCollision_Color.Z;
+            colR = (byte)CFG.Current.Viewport_Connect_Collision_Color.X;
+            colG = (byte)CFG.Current.Viewport_Connect_Collision_Color.Y;
+            colB = (byte)CFG.Current.Viewport_Connect_Collision_Color.Z;
         }
 
         var verts = new List<Vector3>();

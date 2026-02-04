@@ -7,12 +7,10 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TextureViewerStub : IEditorStub
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public TextureViewerStub(Smithbox baseEditor, ProjectEntry project)
+    public TextureViewerStub(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -22,10 +20,10 @@ public class TextureViewerStub : IEditorStub
 
     public unsafe void Display(float dt, string[] commands)
     {
-        if (!Project.EnableTextureViewer)
+        if (!Project.Descriptor.EnableTextureViewer)
             return;
 
-        if (!ProjectUtils.SupportsTextureViewer(Project.ProjectType))
+        if (!ProjectUtils.SupportsTextureViewer(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)
@@ -34,7 +32,7 @@ public class TextureViewerStub : IEditorStub
             ImGui.SetNextWindowFocus();
         }
 
-        if (BaseEditor._context.Device == null)
+        if (Smithbox.Instance._context.Device == null)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, *ImGui.GetStyleColorVec4(ImGuiCol.WindowBg));
         }
@@ -50,9 +48,9 @@ public class TextureViewerStub : IEditorStub
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
 
-            if (Project.TextureViewer != null)
+            if (Project.Handler.TextureViewer != null)
             {
-                Project.TextureViewer.OnGUI(commands);
+                Project.Handler.TextureViewer.OnGUI(commands);
             }
             else
             {
@@ -62,9 +60,9 @@ public class TextureViewerStub : IEditorStub
 
             ImGui.End();
 
-            if (Project.TextureViewer != null)
+            if (Project.Handler.TextureViewer != null)
             {
-                Project.FocusedEditor = Project.TextureViewer;
+                Project.Handler.FocusedEditor = Project.Handler.TextureViewer;
             }
         }
         else

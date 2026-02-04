@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -19,9 +20,9 @@ public class ToolSubMenu
     public void Shortcuts()
     {
         /// Toggle Patrol Route Visualisation
-        if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
+        if (Editor.Project.Descriptor.ProjectType != ProjectType.DS2S && Editor.Project.Descriptor.ProjectType != ProjectType.DS2)
         {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_TogglePatrolRouteRendering))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Toggle_Patrol_Route_Visuals))
             {
                 if (!PatrolsVisualised)
                 {
@@ -56,7 +57,7 @@ public class ToolSubMenu
             ///--------------------
             /// Generate Navigation Data
             ///--------------------
-            if (Editor.Project.ProjectType is ProjectType.DES || Editor.Project.ProjectType is ProjectType.DS1 || Editor.Project.ProjectType is ProjectType.DS1R)
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.DES || Editor.Project.Descriptor.ProjectType is ProjectType.DS1 || Editor.Project.Descriptor.ProjectType is ProjectType.DS1R)
             {
                 if (ImGui.BeginMenu("Navigation Data"))
                 {
@@ -72,7 +73,7 @@ public class ToolSubMenu
             ///--------------------
             /// Entity ID Checker
             ///--------------------
-            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
             {
                 Editor.EntityIdCheckAction.OnToolMenu();
             }
@@ -81,7 +82,7 @@ public class ToolSubMenu
             /// Name Map Objects
             ///--------------------
             // Tool for AC6 since its maps come with unnamed Regions and Events
-            if (Editor.Project.ProjectType is ProjectType.AC6)
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.AC6)
             {
                 Editor.EntityRenameAction.OnToolMenu();
             }

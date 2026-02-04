@@ -4,30 +4,30 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamActionHandler
 {
-    private GparamEditorScreen Editor;
+    private GparamEditorView Parent;
     private ProjectEntry Project;
 
-    public GparamActionHandler(GparamEditorScreen editor, ProjectEntry project)
+    public GparamActionHandler(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
     public void DeleteValueRow()
     {
-        if (Editor.Selection.CanAffectSelection())
+        if (Parent.Selection.CanAffectSelection())
         {
-            var action = new GparamRemoveValueRow(Editor);
-            Editor.EditorActionManager.ExecuteAction(action);
+            var action = new GparamRemoveValueRow(Parent);
+            Parent.ActionManager.ExecuteAction(action);
         }
     }
 
     public void DuplicateValueRow()
     {
-        if (Editor.Selection.CanAffectSelection())
+        if (Parent.Selection.CanAffectSelection())
         {
-            var action = new GparamDuplicateValueRow(Editor);
-            Editor.EditorActionManager.ExecuteAction(action);
+            var action = new GparamDuplicateValueRow(Parent);
+            Parent.ActionManager.ExecuteAction(action);
         }
     }
 }

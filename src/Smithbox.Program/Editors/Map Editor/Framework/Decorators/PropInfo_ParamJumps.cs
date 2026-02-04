@@ -18,7 +18,7 @@ public static class PropInfo_ParamJumps
             return;
 
         // Only relevant to assets
-        if (editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 && firstEnt.IsPartPureAsset())
+        if (editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 && firstEnt.IsPartPureAsset())
         {
             ImGui.Separator();
             ImGui.Text("Params:");
@@ -81,7 +81,7 @@ public static class PropInfo_ParamJumps
         }
 
         // Only relevant to characters
-        if (editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6
+        if (editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6
             && (firstEnt.IsPartEnemy() || firstEnt.IsPartDummyEnemy()))
         {
             ImGui.Separator();

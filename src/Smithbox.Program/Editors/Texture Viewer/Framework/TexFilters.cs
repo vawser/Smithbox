@@ -5,12 +5,12 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexFilters
 {
-    public TextureViewerScreen Editor;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
-    public TexFilters(TextureViewerScreen editor, ProjectEntry project)
+    public TexFilters(TexEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
@@ -101,7 +101,7 @@ public class TexFilters
     /// </summary>
     public void DisplayTpfFilterSearch()
     {
-        ImGui.InputText($"Search##textureListFilterSearch", ref TpfFilterSearchStr, 255);
+        ImGui.InputText($"Search##tpfListFilterSearch", ref TpfFilterSearchStr, 255);
         UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 

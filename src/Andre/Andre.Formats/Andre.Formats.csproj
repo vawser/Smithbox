@@ -20,4 +20,22 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AdditionalFiles>
   </ItemGroup>
+
+  <!-- Copies the Rust dll from the cargo target dir to the base dir, if it exists -->
+  <Target Name="CopyRustDllIfPresent" BeforeTargets="Build">
+    <PropertyGroup>
+      <RustTargetDir>native\bhd5-decrypt-rust\target\release\</RustTargetDir>
+      <RustDllPath>$(RustTargetDir)bhd5_decrypt_rust.dll</RustDllPath>
+    </PropertyGroup>
+    
+    <ItemGroup>
+      <RustDll Include="$(RustDllPath)" Condition="Exists('$(RustDllPath)')" />
+    </ItemGroup>
+    
+    <Copy
+      SourceFiles="@(RustDll)"
+      DestinationFolder="$(MSBuildProjectDirectory)"
+      SkipUnchangedFiles="true" />
+  </Target>
+
 </Project>

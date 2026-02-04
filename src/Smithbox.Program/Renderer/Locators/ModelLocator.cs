@@ -19,13 +19,13 @@ public static class ModelLocator
 
     public static string MapModelNameToAssetName(ProjectEntry project, string mapid, string modelname)
     {
-        if (project.ProjectType is ProjectType.DES)
+        if (project.Descriptor.ProjectType is ProjectType.DES)
             return $@"{modelname}";
 
-        if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             return $@"{modelname}A{mapid.Substring(1, 2)}";
 
-        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             return modelname;
 
         return $@"{mapid}_{modelname.Substring(1)}";
@@ -33,13 +33,13 @@ public static class ModelLocator
 
     public static string GetMapModelName(ProjectEntry project, string mapid, string modelname)
     {
-        if (project.ProjectType is ProjectType.DES)
+        if (project.Descriptor.ProjectType is ProjectType.DES)
             return $@"{modelname}";
 
-        if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             return $@"{modelname}A{mapid.Substring(1, 2)}";
 
-        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             return modelname;
 
         return $@"m{modelname.Substring(1)}";
@@ -51,21 +51,21 @@ public static class ModelLocator
 
         ret.AssetName = modelId;
 
-        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/model";
             ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flv.dcx";
         }
         else
         {
-            if (!(project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB))
+            if (!(project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB))
             {
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/model/{modelId}";
             }
 
             ret.AssetVirtualPath = $@"map/{mapid}/model/{mapContainerId}/{modelId}.flver";
 
-            if(project.ProjectType is ProjectType.DES)
+            if(project.Descriptor.ProjectType is ProjectType.DES)
             {
                 ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}";
             }
@@ -84,7 +84,7 @@ public static class ModelLocator
 
         var targetType = HavokCollisionType.Low;
 
-        if (project.MapEditor != null)
+        if (project.Handler.MapEditor != null)
         {
             targetType = CFG.Current.CurrentHavokCollisionType;
         }
@@ -95,7 +95,7 @@ public static class ModelLocator
             targetType = HavokCollisionType.Low;
         }
 
-        if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+        if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
         {
             if (targetType is HavokCollisionType.High)
             {
@@ -108,13 +108,13 @@ public static class ModelLocator
                 ret.AssetVirtualPath = $@"map/{mapid}/{colType}/lo/l{model.Substring(1)}.hkx";
             }
         }
-        else if (project.ProjectType == ProjectType.DS2S)
+        else if (project.Descriptor.ProjectType == ProjectType.DS2S)
         {
             ret.AssetName = model;
             ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/{model}.hkx.dcx";
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/hi";
         }
-        else if (project.ProjectType == ProjectType.DS3 || project.ProjectType == ProjectType.BB)
+        else if (project.Descriptor.ProjectType == ProjectType.DS3 || project.Descriptor.ProjectType == ProjectType.BB)
         {
             if (targetType is HavokCollisionType.High)
             {
@@ -129,7 +129,7 @@ public static class ModelLocator
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/lo";
             }
         }
-        else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
+        else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             if (targetType is HavokCollisionType.High)
             {
@@ -162,7 +162,7 @@ public static class ModelLocator
     {
         ResourceDescriptor ret = new();
 
-        if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+        if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
         {
             ret.AssetName = model;
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/nav";
@@ -201,7 +201,7 @@ public static class ModelLocator
         ret.AssetName = chrId;
         ret.AssetArchiveVirtualPath = $@"chr/{chrContainerId}/model";
 
-        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             ret.AssetVirtualPath = $@"chr/{chrContainerId}/model/{chrId}.flv";
         else
             ret.AssetVirtualPath = $@"chr/{chrContainerId}/model/{chrId}.flver";
@@ -215,11 +215,11 @@ public static class ModelLocator
         ret.AssetName = objId;
         ret.AssetArchiveVirtualPath = $@"obj/{objContainerId}/model";
 
-        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId}.flv";
         }
-        else if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId.ToUpper()}.flver";
         }
@@ -237,11 +237,11 @@ public static class ModelLocator
         ret.AssetName = partId;
         ret.AssetArchiveVirtualPath = $@"parts/{partContainerId}/model";
 
-        if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
+        if (project.Descriptor.ProjectType == ProjectType.DS2S || project.Descriptor.ProjectType == ProjectType.DS2)
         {
             ret.AssetVirtualPath = $@"parts/{partContainerId}/model/{partId}.flv";
         }
-        else if (project.ProjectType is ProjectType.DS1)
+        else if (project.Descriptor.ProjectType is ProjectType.DS1)
         {
             ret.AssetVirtualPath = $@"parts/{partContainerId}/model/{partId.ToUpper()}.flver";
         }

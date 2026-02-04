@@ -14,6 +14,12 @@
       ]
     },
     {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 10,
       "Entries": [
         "[Standard] No Skill"
@@ -712,7 +718,7 @@
     {
       "ID": 1018,
       "Entries": [
-        "[Specific] Flowing Form"
+        "[Specific] Flowing Form (Nox Flowing Sword)"
       ]
     },
     {
@@ -784,7 +790,7 @@
     {
       "ID": 1030,
       "Entries": [
-        "[Specific] I Command Thee- Kneel!"
+        "[Specific] I Command Thee, Kneel!"
       ]
     },
     {
@@ -814,7 +820,7 @@
     {
       "ID": 1035,
       "Entries": [
-        "[Specific] Flowing Form"
+        "[Specific] Flowing Form (Nox Flowing Hammer)"
       ]
     },
     {
@@ -886,7 +892,7 @@
     {
       "ID": 1047,
       "Entries": [
-        "[Specific] Nebula"
+        "[Specific] Nebula (Bastard's Stars)"
       ]
     },
     {
@@ -928,7 +934,7 @@
     {
       "ID": 1054,
       "Entries": [
-        "[Specific] Unblockable Blade"
+        "[Specific] Unblockable Blade (Coded Sword)"
       ]
     },
     {
@@ -946,13 +952,13 @@
     {
       "ID": 1165,
       "Entries": [
-        "[Specific] Loretta's Slash"
+        "[Specific] Loretta's Slash (Loretta's War Sickle)"
       ]
     },
     {
       "ID": 1166,
       "Entries": [
-        "[Specific] Spinning Slash"
+        "[Specific] Spinning Slash (Dragon Halberd)"
       ]
     },
     {
@@ -994,7 +1000,7 @@
     {
       "ID": 1173,
       "Entries": [
-        "[Specific] Nebula"
+        "[Specific] Nebula (Wing of Astel)"
       ]
     },
     {
@@ -1102,7 +1108,7 @@
     {
       "ID": 1191,
       "Entries": [
-        "[Specific] Unblockable Blade"
+        "[Specific] Unblockable Blade (Cipher Pata)"
       ]
     },
     {
@@ -1150,7 +1156,7 @@
     {
       "ID": 1199,
       "Entries": [
-        "[Specific] Spinning Weapon"
+        "[Specific] Spinning Weapon (Carian Regal Scepter)"
       ]
     },
     {
@@ -1192,7 +1198,7 @@
     {
       "ID": 9999,
       "Entries": [
-        "???"
+        "??? (Skill Reroll Standin)"
       ]
     }
   ]

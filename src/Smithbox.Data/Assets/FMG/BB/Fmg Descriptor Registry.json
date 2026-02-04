@@ -1,0 +1,478 @@
+{
+    "ProjectType": 6,
+    "Languages": [
+        {
+            "Abbreviation": "dandk",
+            "Language": "Danish"
+        },
+        {
+            "Abbreviation": "deude",
+            "Language": "German"
+        },
+        {
+            "Abbreviation": "enggb",
+            "Language": "English (UK)"
+        },
+        {
+            "Abbreviation": "engus",
+            "Language": "English (US)"
+        },
+        {
+            "Abbreviation": "finfi",
+            "Language": "Finnish"
+        },
+        {
+            "Abbreviation": "frafr",
+            "Language": "French"
+        },
+        {
+            "Abbreviation": "itait",
+            "Language": "Italian"
+        },
+        {
+            "Abbreviation": "jpnjp",
+            "Language": "Japanese"
+        },
+        {
+            "Abbreviation": "korkr",
+            "Language": "Korean"
+        },
+        {
+            "Abbreviation": "nldnl",
+            "Language": "Dutch"
+        },
+        {
+            "Abbreviation": "norno",
+            "Language": "Norwegian"
+        },
+        {
+            "Abbreviation": "polpl",
+            "Language": "Polish"
+        },
+        {
+            "Abbreviation": "porbr",
+            "Language": "Portuguese (Latin)"
+        },
+        {
+            "Abbreviation": "porpt",
+            "Language": "Portuguese"
+        },
+        {
+            "Abbreviation": "rusru",
+            "Language": "Russian"
+        },
+        {
+            "Abbreviation": "spaar",
+            "Language": "Spanish (Latin)"
+        },
+        {
+            "Abbreviation": "spaes",
+            "Language": "Spanish"
+        },
+        {
+            "Abbreviation": "swese",
+            "Language": "Swedish"
+        },
+        {
+            "Abbreviation": "turtr",
+            "Language": "Turkish"
+        },
+        {
+            "Abbreviation": "zhocn",
+            "Language": "Simplified Chinese"
+        },
+        {
+            "Abbreviation": "zhotw",
+            "Language": "Traditional Chinese"
+        }
+    ],
+    "Containers": [
+        {
+            "OrderID": 1,
+            "FullName": "item.msgbnd.dcx",
+            "SimpleName": "item",
+            "ContainerName": "Item",
+            "VariantName": "Stock",
+            "DisplayName": "Item"
+        },
+        {
+            "OrderID": 2,
+            "FullName": "menu.msgbnd.dcx",
+            "SimpleName": "menu",
+            "ContainerName": "Menu",
+            "VariantName": "Stock",
+            "DisplayName": "Menu"
+        }
+    ],
+    "List": [
+        {
+            "ID": 10,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 11,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 12,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 13,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 14,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 18,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Characters",
+            "SecondaryDomain": "",
+            "DisplayName": "Characters"
+        },
+        {
+            "ID": 19,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Locations",
+            "SecondaryDomain": "",
+            "DisplayName": "Locations"
+        },
+        {
+            "ID": 20,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 21,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 22,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 23,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 28,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 24,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 25,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 26,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 27,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 29,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 1,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Talk Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages"
+        },
+        {
+            "ID": 2,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blood Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Messages"
+        },
+        {
+            "ID": 3,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Movie Subtitles",
+            "SecondaryDomain": "",
+            "DisplayName": "Movie Subtitles"
+        },
+        {
+            "ID": 4,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Causes of Death",
+            "SecondaryDomain": "",
+            "DisplayName": "Causes of Death"
+        },
+        {
+            "ID": 30,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Event Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text"
+        },
+        {
+            "ID": 31,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Blood Gems",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Gems"
+        },
+        {
+            "ID": 32,
+            "Container": "Menu",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Blood Gems",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Gems"
+        },
+        {
+            "ID": 33,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Blood Gems",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Gems"
+        },
+        {
+            "ID": 34,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blood Gems Prefixes",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Gems Prefixes"
+        },
+        {
+            "ID": 35,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blood Gems Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Gems Effects"
+        },
+        {
+            "ID": 70,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "In-game Text",
+            "SecondaryDomain": "",
+            "DisplayName": "In-game Text"
+        },
+        {
+            "ID": 76,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Common Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Common Text"
+        },
+        {
+            "ID": 77,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Other Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Other Text"
+        },
+        {
+            "ID": 78,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Dialog Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Dialog Text"
+        },
+        {
+            "ID": 79,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Key Guides",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guides"
+        },
+        {
+            "ID": 80,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Line Help",
+            "SecondaryDomain": "",
+            "DisplayName": "Line Help"
+        },
+        {
+            "ID": 90,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Tags",
+            "SecondaryDomain": "",
+            "DisplayName": "Tags"
+        },
+        {
+            "ID": 91,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Tags: PC",
+            "SecondaryDomain": "",
+            "DisplayName": "Tags: PC"
+        },
+        {
+            "ID": 92,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Messages: PC",
+            "SecondaryDomain": "",
+            "DisplayName": "Messages: PC"
+        },
+        {
+            "ID": 200,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Menu Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Menu Text"
+        },
+        {
+            "ID": 201,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Line Help",
+            "SecondaryDomain": "",
+            "DisplayName": "Line Help"
+        },
+        {
+            "ID": 202,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Key Guides",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guides"
+        },
+        {
+            "ID": 203,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "System Messages: PC",
+            "SecondaryDomain": "",
+            "DisplayName": "System Messages: PC"
+        },
+        {
+            "ID": 204,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Dialogues",
+            "SecondaryDomain": "",
+            "DisplayName": "Dialogues"
+        }
+    ]
+}

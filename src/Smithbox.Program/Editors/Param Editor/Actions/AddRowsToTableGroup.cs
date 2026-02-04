@@ -36,7 +36,7 @@ public class AddRowsToTableGroup : EditorAction
         {
             var newrow = new Param.Row(row);
 
-            var paramMeta = Editor.Project.ParamData.GetParamMeta(row.Def);
+            var paramMeta = Editor.Project.Handler.ParamData.GetParamMeta(row.Def);
 
             if (InsertIndex > -1)
             {
@@ -85,10 +85,10 @@ public class AddRowsToTableGroup : EditorAction
             Clones.Add(newrow);
         }
 
-        Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
+        Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
 
-        var activeParam = Editor._activeView.Selection.GetActiveParam();
-        Editor._activeView.TableGroupView.UpdateTableSelection(activeParam);
+        var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
+        Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
 
         return ActionEvent.NoEvent;
     }
@@ -114,8 +114,8 @@ public class AddRowsToTableGroup : EditorAction
         RemovedIndex.Clear();
         Removed.Clear();
 
-        var activeParam = Editor._activeView.Selection.GetActiveParam();
-        Editor._activeView.TableGroupView.UpdateTableSelection(activeParam);
+        var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
+        Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
 
         return ActionEvent.NoEvent;
     }

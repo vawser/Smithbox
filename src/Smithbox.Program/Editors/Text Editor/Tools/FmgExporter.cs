@@ -12,18 +12,18 @@ namespace StudioCore.Editors.TextEditor;
 
 public class FmgExporter
 {
-    public TextEditorScreen Editor;
+    public TextEditorView Parent;
     public ProjectEntry Project;
 
-    public FmgExporter(TextEditorScreen editor, ProjectEntry project)
+    public FmgExporter(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        Parent = view;
         Project = project;
     }
 
     public void OnGui()
     {
-        Editor.TextExportModal.Display();
+        Parent.TextExportModal.Display();
     }
 
     /// <summary>
@@ -34,7 +34,7 @@ public class FmgExporter
         if (ImGui.BeginMenu("Export"))
         {
             // File
-            if (ImGui.BeginMenu("File", Editor.Selection.SelectedContainerWrapper != null))
+            if (ImGui.BeginMenu("File", Parent.Selection.SelectedContainerWrapper != null))
             {
                 if (ImGui.Selectable("Export Selected File"))
                 {
@@ -60,7 +60,7 @@ public class FmgExporter
             UIHelper.Tooltip("Export your currently selected File (including all of its Text Files and their Text Entries) to a export text file.");
 
             // FMG
-            if (ImGui.BeginMenu("Text File", Editor.Selection.SelectedFmgWrapper != null))
+            if (ImGui.BeginMenu("Text File", Parent.Selection.SelectedFmgWrapper != null))
             {
                 if (ImGui.Selectable("Export Selected Text File"))
                 {
@@ -86,7 +86,7 @@ public class FmgExporter
             UIHelper.Tooltip("Export your currently selected Text File (including all of its entries) to a export text file.");
 
             // FMG Entries
-            if (ImGui.BeginMenu("Text Entry", Editor.Selection._selectedFmgEntry != null))
+            if (ImGui.BeginMenu("Text Entry", Parent.Selection._selectedFmgEntry != null))
             {
                 if (ImGui.Selectable("Export Selected Text Entries"))
                 {
@@ -120,7 +120,7 @@ public class FmgExporter
 
                 if (result == DialogResult.Yes)
                 {
-                    var wrapperPathList = TextUtils.GetStoredContainerWrappers(Editor.Project);
+                    var wrapperPathList = TextUtils.GetStoredContainerWrappers(Project);
 
                     foreach (var path in wrapperPathList)
                     {
@@ -235,7 +235,7 @@ public class FmgExporter
         CurrentExportType = exportType;
         CurrentExportModifier = exportModifier;
 
-        if (CFG.Current.TextEditor_TextExport_UseQuickExport)
+        if (CFG.Current.TextEditor_Text_Export_Enable_Quick_Export)
         {
             var exportName = CFG.Current.TextEditor_TextExport_QuickExportPrefix;
 
@@ -243,7 +243,7 @@ public class FmgExporter
         }
         else
         {
-            Editor.TextExportModal.ShowModal = true;
+            Parent.TextExportModal.ShowModal = true;
         }
     }
 
@@ -263,7 +263,7 @@ public class FmgExporter
         // Container
         if (CurrentExportType is ExportType.Container)
         {
-            var selectedContainer = Editor.Selection.SelectedContainerWrapper;
+            var selectedContainer = Parent.Selection.SelectedContainerWrapper;
 
             foreach(var wrapper in selectedContainer.FmgWrappers)
             {
@@ -274,7 +274,7 @@ public class FmgExporter
         // FMG
         if (CurrentExportType is ExportType.FMG)
         {
-            var selectedFmgWrapper = Editor.Selection.SelectedFmgWrapper;
+            var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
 
             ProcessFmg(selectedFmgWrapper, storedFmgContainer);
         }
@@ -282,13 +282,13 @@ public class FmgExporter
         // FMG Entries
         if (CurrentExportType is ExportType.FMG_Entries)
         {
-            var selectedFmgWrapper = Editor.Selection.SelectedFmgWrapper;
+            var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
 
             // Export associated group entries as well
-            if(CFG.Current.TextEditor_TextExport_IncludeGroupedEntries)
+            if(CFG.Current.TextEditor_Text_Export_Include_Grouped_Entries)
             {
-                var currentEntry = Editor.Selection._selectedFmgEntry;
-                var fmgEntryGroup = Editor.EntryGroupManager.GetEntryGroup(currentEntry);
+                var currentEntry = Parent.Selection._selectedFmgEntry;
+                var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(currentEntry);
 
                 if (fmgEntryGroup.SupportsGrouping)
                 {
@@ -297,7 +297,7 @@ public class FmgExporter
                     // (as an object) is not within the associated wrappers.
                     if (fmgEntryGroup.SupportsTitle)
                     {
-                        var wrapper = Editor.EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
+                        var wrapper = Parent.EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
 
                         // If not null, then use the associated wrapper
                         if(wrapper != null)
@@ -308,7 +308,7 @@ public class FmgExporter
                     }
                     if (fmgEntryGroup.SupportsSummary)
                     {
-                        var wrapper = Editor.EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
+                        var wrapper = Parent.EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
                         if (wrapper != null)
                             ProcessFmg(wrapper, storedFmgContainer, true);
                         else
@@ -316,7 +316,7 @@ public class FmgExporter
                     }
                     if (fmgEntryGroup.SupportsDescription)
                     {
-                        var wrapper = Editor.EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
+                        var wrapper = Parent.EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
                         if (wrapper != null)
                             ProcessFmg(wrapper, storedFmgContainer, true);
                         else
@@ -324,7 +324,7 @@ public class FmgExporter
                     }
                     if (fmgEntryGroup.SupportsEffect)
                     {
-                        var wrapper = Editor.EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
+                        var wrapper = Parent.EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
                         if (wrapper != null)
                             ProcessFmg(wrapper, storedFmgContainer, true);
                         else
@@ -362,7 +362,7 @@ public class FmgExporter
 
         // We have to call this so the diff cache updates for each wrapper,
         // without changing the user selection
-        Editor.DifferenceManager.TrackFmgDifferences(wrapper.ID);
+        Parent.DifferenceManager.TrackFmgDifferences(wrapper.ID);
 
         // Build FMG entries
         foreach (var entry in wrapper.File.Entries)
@@ -385,7 +385,7 @@ public class FmgExporter
         {
             bool skip = true;
 
-            foreach(var sel in Editor.Selection.FmgEntryMultiselect.StoredEntries)
+            foreach(var sel in Parent.Selection.FmgEntryMultiselect.StoredEntries)
             {
                 var fmgEntry = sel.Value;
 
@@ -410,7 +410,7 @@ public class FmgExporter
         // Modified Omly
         if (CurrentExportModifier is ExportModifier.ModifiedOnly)
         {
-            if (Editor.DifferenceManager.IsDifferentToVanilla(entry))
+            if (Parent.DifferenceManager.IsDifferentToVanilla(entry))
             {
                 var storedFmgEntry = new FMG.Entry(storedFmg, entry.ID, entry.Text);
                 storedFmg.Entries.Add(storedFmgEntry);
@@ -419,7 +419,7 @@ public class FmgExporter
         // Unique Only
         if (CurrentExportModifier is ExportModifier.UniqueOnly)
         {
-            if (Editor.DifferenceManager.IsUniqueToProject(entry))
+            if (Parent.DifferenceManager.IsUniqueToProject(entry))
             {
                 var storedFmgEntry = new FMG.Entry(storedFmg, entry.ID, entry.Text);
                 storedFmg.Entries.Add(storedFmgEntry);
@@ -429,7 +429,7 @@ public class FmgExporter
 
     public void WriteWrapper(StoredFmgContainer wrapper)
     {
-        var writeDir = TextUtils.GetStoredTextDirectory(Editor.Project);
+        var writeDir = TextUtils.GetStoredTextDirectory(Project);
         var writePath = Path.Join(writeDir, $"{wrapper.Name}.json");
 
         if(!Directory.Exists(writeDir))

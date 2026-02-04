@@ -25,7 +25,7 @@ public class PrefabAttributes
 
     public PrefabAttributes(MapEditorScreen editor)
     {
-        Type = editor.Project.ProjectType;
+        Type = editor.Project.Descriptor.ProjectType;
     }
 }
 
@@ -43,7 +43,7 @@ public abstract class Prefab : PrefabAttributes
 
     public static Prefab New(MapEditorScreen editor)
     {
-        return editor.Project.ProjectType switch
+        return editor.Project.Descriptor.ProjectType switch
         {
             ProjectType.NR => new Prefab<MSB_NR>(editor),
             ProjectType.ER => new Prefab<MSBE>(editor),

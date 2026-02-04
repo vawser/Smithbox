@@ -1,0 +1,3 @@
+<TextureAtlas imagePath="/menu/tex/icon/mapname/english/map_name_202110.tpf" width="1024" height="64" type="Map Names">
+    <SubTexture name="ICON_202110.png" x="0" y="0" width="1024"  height="64" originalWidth="1024" originalHeight="64" half="0"/>
+</TextureAtlas>

@@ -64,19 +64,19 @@
     {
       "ID": 1147,
       "Entries": [
-        ""
+        "Insufficient runes"
       ]
     },
     {
       "ID": 1148,
       "Entries": [
-        ""
+        "Out of stock"
       ]
     },
     {
       "ID": 1149,
       "Entries": [
-        ""
+        "Item slots already at maximum"
       ]
     },
     {
@@ -238,13 +238,13 @@
     {
       "ID": 1630,
       "Entries": [
-        ""
+        "Mastered unique armaments"
       ]
     },
     {
       "ID": 1700,
       "Entries": [
-        ""
+        "If you continue to remain inactive you will be removed from session"
       ]
     },
     {
@@ -308,7 +308,55 @@
       ]
     },
     {
+      "ID": 6001,
+      "Entries": [
+        "You indicated equipment"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "You indicated equipment"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "You indicated equipment"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "You indicated equipment"
+      ]
+    },
+    {
       "ID": 6010,
+      "Entries": [
+        "You asked for equipment"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "You asked for equipment"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "You asked for equipment"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "You asked for equipment"
+      ]
+    },
+    {
+      "ID": 6014,
       "Entries": [
         "You asked for equipment"
       ]
@@ -320,7 +368,55 @@
       ]
     },
     {
+      "ID": 6021,
+      "Entries": [
+        "Ally is indicating equipment"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "Ally is indicating equipment"
+      ]
+    },
+    {
+      "ID": 6023,
+      "Entries": [
+        "Ally is indicating equipment"
+      ]
+    },
+    {
+      "ID": 6024,
+      "Entries": [
+        "Ally is indicating equipment"
+      ]
+    },
+    {
       "ID": 6030,
+      "Entries": [
+        "Ally desires equipment"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "Ally desires equipment"
+      ]
+    },
+    {
+      "ID": 6032,
+      "Entries": [
+        "Ally desires equipment"
+      ]
+    },
+    {
+      "ID": 6033,
+      "Entries": [
+        "Ally desires equipment"
+      ]
+    },
+    {
+      "ID": 6034,
       "Entries": [
         "Ally desires equipment"
       ]
@@ -748,13 +844,13 @@
     {
       "ID": 11350,
       "Entries": [
-        ""
+        "Unable to identify target"
       ]
     },
     {
       "ID": 11360,
       "Entries": [
-        ""
+        "Map information missing"
       ]
     },
     {
@@ -850,25 +946,25 @@
     {
       "ID": 12110,
       "Entries": [
-        "Shifting earth has settled"
+        "Shifting earth has settled (The Crater)"
       ]
     },
     {
       "ID": 12111,
       "Entries": [
-        "Shifting earth has settled"
+        "Shifting earth has settled (Mountaintop)"
       ]
     },
     {
       "ID": 12112,
       "Entries": [
-        "Shifting earth has settled"
+        "Shifting earth has settled (Rotted Woods)"
       ]
     },
     {
       "ID": 12113,
       "Entries": [
-        "Shifting earth has settled"
+        "Shifting earth has settled (Shrouded City)"
       ]
     },
     {
@@ -946,7 +1042,481 @@
     {
       "ID": 13000,
       "Entries": [
+        "Map information missing"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Changed skill"
+      ]
+    },
+    {
+      "ID": 101010,
+      "Entries": [
+        "Changed skill"
+      ]
+    },
+    {
+      "ID": 101020,
+      "Entries": [
+        "Changed skill"
+      ]
+    },
+    {
+      "ID": 101030,
+      "Entries": [
+        "Changed skill"
+      ]
+    },
+    {
+      "ID": 101040,
+      "Entries": [
+        "Changed skill"
+      ]
+    },
+    {
+      "ID": 101099,
+      "Entries": [
+        "Cannot change this weapon's skill"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "Reverted skill"
+      ]
+    },
+    {
+      "ID": 101110,
+      "Entries": [
+        "Reverted skill"
+      ]
+    },
+    {
+      "ID": 101120,
+      "Entries": [
+        "Reverted skill"
+      ]
+    },
+    {
+      "ID": 101130,
+      "Entries": [
+        "Reverted skill"
+      ]
+    },
+    {
+      "ID": 101140,
+      "Entries": [
+        "Reverted skill"
+      ]
+    },
+    {
+      "ID": 101199,
+      "Entries": [
+        "Cannot revert this weapon's skill"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Item-handling level up [2]"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "Item-handling level up [3]"
+      ]
+    },
+    {
+      "ID": 102020,
+      "Entries": [
+        "Item-handling level up [2]"
+      ]
+    },
+    {
+      "ID": 102030,
+      "Entries": [
+        "Item-handling level up [3]"
+      ]
+    },
+    {
+      "ID": 102040,
+      "Entries": [
+        "Item-handling level up [2]"
+      ]
+    },
+    {
+      "ID": 102050,
+      "Entries": [
+        "Item-handling level up [3]"
+      ]
+    },
+    {
+      "ID": 102060,
+      "Entries": [
+        "Item-handling level up [2]"
+      ]
+    },
+    {
+      "ID": 102070,
+      "Entries": [
+        "Item-handling level up [3]"
+      ]
+    },
+    {
+      "ID": 102080,
+      "Entries": [
+        "Item-handling level up [2]"
+      ]
+    },
+    {
+      "ID": 102090,
+      "Entries": [
+        "Item-handling level up [3]"
+      ]
+    },
+    {
+      "ID": 102100,
+      "Entries": [
+        "Item-handling level up [2]"
+      ]
+    },
+    {
+      "ID": 102110,
+      "Entries": [
+        "Item-handling level up [3]"
+      ]
+    },
+    {
+      "ID": 102120,
+      "Entries": [
+        "Item-handling level up [2]"
+      ]
+    },
+    {
+      "ID": 102130,
+      "Entries": [
+        "Item-handling level up [3]"
+      ]
+    },
+    {
+      "ID": 102140,
+      "Entries": [
+        "Item-handling level up [2]"
+      ]
+    },
+    {
+      "ID": 102150,
+      "Entries": [
+        "Item-handling level up [3]"
+      ]
+    },
+    {
+      "ID": 102160,
+      "Entries": [
+        "Item-handling level up [2]"
+      ]
+    },
+    {
+      "ID": 102170,
+      "Entries": [
+        "Item-handling level up [3]"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Fire-summoning beasts appeared"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "All fire-summoning beasts felled"
+      ]
+    },
+    {
+      "ID": 110002,
+      "Entries": [
+        "Fire-summoning beasts repelled"
+      ]
+    },
+    {
+      "ID": 110003,
+      "Entries": [
+        "Fire-summoning beast felled"
+      ]
+    },
+    {
+      "ID": 110004,
+      "Entries": [
+        "Fire-summoning beasts located"
+      ]
+    },
+    {
+      "ID": 110005,
+      "Entries": [
+        "Fire-summoning beast felled"
+      ]
+    },
+    {
+      "ID": 110006,
+      "Entries": [
+        "Fire-summoning beasts grow stronger"
+      ]
+    },
+    {
+      "ID": 110050,
+      "Entries": [
+        "The Balancers will judge"
+      ]
+    },
+    {
+      "ID": 110051,
+      "Entries": [
+        "Sacred flask charges lost"
+      ]
+    },
+    {
+      "ID": 110052,
+      "Entries": [
+        "Partially restored sacred flask charges"
+      ]
+    },
+    {
+      "ID": 110053,
+      "Entries": [
+        "Restored all sacred flask charges"
+      ]
+    },
+    {
+      "ID": 110054,
+      "Entries": [
+        "A Balancer has withdrawn"
+      ]
+    },
+    {
+      "ID": 110055,
+      "Entries": [
+        "All Balancers have withdrawn"
+      ]
+    },
+    {
+      "ID": 110100,
+      "Entries": [
+        "Skill-changing smithing table opened"
+      ]
+    },
+    {
+      "ID": 110200,
+      "Entries": [
+        "A chill mist rolls in, and hail begins to rain..."
+      ]
+    },
+    {
+      "ID": 110201,
+      "Entries": [
+        "The chill mist has lifted"
+      ]
+    },
+    {
+      "ID": 110202,
+      "Entries": [
+        "The chill mist has lifted"
+      ]
+    },
+    {
+      "ID": 110210,
+      "Entries": [
+        "The great crystal cracks"
+      ]
+    },
+    {
+      "ID": 110211,
+      "Entries": [
+        "The great crystal shatters"
+      ]
+    },
+    {
+      "ID": 110212,
+      "Entries": [
+        "Resonating crystals located"
+      ]
+    },
+    {
+      "ID": 110220,
+      "Entries": [
+        "A variant has invaded!"
+      ]
+    },
+    {
+      "ID": 110221,
+      "Entries": [
+        "Variant felled"
+      ]
+    },
+    {
+      "ID": 110222,
+      "Entries": [
+        "Disturbance in the heights of the fort"
+      ]
+    },
+    {
+      "ID": 110225,
+      "Entries": [
+        "Seal broken"
+      ]
+    },
+    {
+      "ID": 110230,
+      "Entries": [
+        "Replication altar unlocked"
+      ]
+    },
+    {
+      "ID": 110300,
+      "Entries": [
+        "The temple stirs ominously with fire"
+      ]
+    },
+    {
+      "ID": 110301,
+      "Entries": [
+        "The temple is replete with magic"
+      ]
+    },
+    {
+      "ID": 110302,
+      "Entries": [
+        "The temple rumbles with lightning"
+      ]
+    },
+    {
+      "ID": 110303,
+      "Entries": [
+        "The temple is blessed by holy"
+      ]
+    },
+    {
+      "ID": 110304,
+      "Entries": [
+        "The temple is thick with poison"
+      ]
+    },
+    {
+      "ID": 110305,
+      "Entries": [
+        "The temple thirsts for blood loss"
+      ]
+    },
+    {
+      "ID": 110306,
+      "Entries": [
+        "The temple stings with frostbite"
+      ]
+    },
+    {
+      "ID": 110307,
+      "Entries": [
+        "The temple is corroded by divine scarlet rot"
+      ]
+    },
+    {
+      "ID": 110308,
+      "Entries": [
+        "The temple quietly soothes any and all life"
+      ]
+    },
+    {
+      "ID": 110309,
+      "Entries": [
+        "The temple steadily erodes any and all life"
+      ]
+    },
+    {
+      "ID": 110320,
+      "Entries": [
+        "Great enemy felled"
+      ]
+    },
+    {
+      "ID": 110400,
+      "Entries": [
+        "One power of the Favor of the Rotted Woods was lost"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "Personal Objective in Progress"
+      ]
+    },
+    {
+      "ID": 120005,
+      "Entries": [
+        "Personal Objective in Progress"
+      ]
+    },
+    {
+      "ID": 120006,
+      "Entries": [
+        "Objective location can now be examined"
+      ]
+    },
+    {
+      "ID": 120010,
+      "Entries": [
+        "Objective location can now be examined"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Earth is shifting: The Great Hollow"
+      ]
+    },
+    {
+      "ID": 121010,
+      "Entries": [
+        "Shifting earth has settled (Great Hollow)"
+      ]
+    },
+    {
+      "ID": 121020,
+      "Entries": [
+        "A new target appeared"
+      ]
+    },
+    {
+      "ID": 121021,
+      "Entries": [
+        "A new target appeared"
+      ]
+    },
+    {
+      "ID": 121030,
+      "Entries": [
+        "Entry added to the Guide"
+      ]
+    },
+    {
+      "ID": 121031,
+      "Entries": [
+        "Entry added to the Handbook"
+      ]
+    },
+    {
+      "ID": 121032,
+      "Entries": [
+        "Entry added to the Guide and Handbook"
       ]
     }
   ]

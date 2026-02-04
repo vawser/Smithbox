@@ -7,12 +7,10 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextEditorStub : IEditorStub
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public TextEditorStub(Smithbox baseEditor, ProjectEntry project)
+    public TextEditorStub(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -22,10 +20,10 @@ public class TextEditorStub : IEditorStub
 
     public unsafe void Display(float dt, string[] commands)
     {
-        if (!Project.EnableTextEditor)
+        if (!Project.Descriptor.EnableTextEditor)
             return;
 
-        if (!ProjectUtils.SupportsTextEditor(Project.ProjectType))
+        if (!ProjectUtils.SupportsTextEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)
@@ -34,7 +32,7 @@ public class TextEditorStub : IEditorStub
             ImGui.SetNextWindowFocus();
         }
 
-        if (BaseEditor._context.Device == null)
+        if (Smithbox.Instance._context.Device == null)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, *ImGui.GetStyleColorVec4(ImGuiCol.WindowBg));
         }
@@ -50,10 +48,9 @@ public class TextEditorStub : IEditorStub
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
 
-            if (Project.TextEditor != null)
+            if (Project.Handler.TextEditor != null)
             {
-
-                Project.TextEditor.OnGUI(commands);
+                Project.Handler.TextEditor.OnGUI(commands);
             }
             else
             {
@@ -63,9 +60,9 @@ public class TextEditorStub : IEditorStub
 
             ImGui.End();
 
-            if (Project.TextEditor != null)
+            if (Project.Handler.TextEditor != null)
             {
-                Project.FocusedEditor = Project.TextEditor;
+                Project.Handler.FocusedEditor = Project.Handler.TextEditor;
             }
         }
         else

@@ -8,13 +8,13 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using StudioCore.Renderer;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.Viewport;
 
 public class BoxSelection
 {
-    public Viewport Parent;
-    public Smithbox BaseEditor;
+    public VulkanViewport Parent;
 
     private Vector2 _dragEnd;
     private Vector2 _dragStart;
@@ -24,26 +24,26 @@ public class BoxSelection
 
     private const float DragThreshold = 5f;
 
-    public BoxSelection(Smithbox baseEditor, Viewport parent)
+    public BoxSelection(VulkanViewport parent)
     {
-        this.BaseEditor = baseEditor;
         Parent = parent;
     }
 
     public void Update()
     {
 
-        if (CFG.Current.Viewport_Enable_BoxSelection && !Parent.Gizmos.IsMouseBusy())
+        if (CFG.Current.Viewport_Enable_Box_Selection && !Parent.Gizmos.IsMouseBusy())
         {
-            Vector2 mousePos = InputTracker.MousePosition;
-            if (InputTracker.GetMouseButtonDown(MouseButton.Left) && Parent.MouseInViewport())
+            Vector2 mousePos = InputManager.MousePosition;
+
+            if (InputManager.IsMousePressed(MouseButton.Left) && Parent.MouseInViewport())
             {
                 _isDragging = true;
                 _mouseDragStarted = false;
                 _dragStart = mousePos;
                 _dragEnd = mousePos;
             }
-            else if (InputTracker.GetMouseButton(MouseButton.Left) && _isDragging)
+            else if (InputManager.IsMousePressed(MouseButton.Left) && _isDragging)
             {
                 _dragEnd = mousePos;
 
@@ -53,7 +53,7 @@ public class BoxSelection
                     _mouseDragStarted = true;
                 }
             }
-            else if (_isDragging && !InputTracker.GetMouseButton(MouseButton.Left))
+            else if (_isDragging && !InputManager.IsMousePressed(MouseButton.Left))
             {
                 if (_mouseDragStarted)
                 {
@@ -107,8 +107,9 @@ public class BoxSelection
         float minY = MathF.Min(start.Y, end.Y) - Parent.Y;
         float maxX = MathF.Max(start.X, end.X) - Parent.X;
         float maxY = MathF.Max(start.Y, end.Y) - Parent.Y;
-        bool shift = InputTracker.GetKey(Key.ShiftLeft) || InputTracker.GetKey(Key.ShiftRight);
-        bool ctrl = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
+        bool shift = InputManager.HasShiftDown();
+        bool ctrl = InputManager.HasCtrlDown();
+
         if (!shift && !ctrl && targetEditor != null)
             Parent.ViewportSelection.ClearSelection(targetEditor);
         List<(WeakReference<ISelectable> obj, float distance)> selectableObjects = new();
@@ -137,7 +138,7 @@ public class BoxSelection
                 UpdateSelection(obj, targetEditor, ctrl);
                 continue;
             }
-            if (distanceToCamera > lastSelectedDistance * CFG.Current.Viewport_BS_DistThresFactor) break;
+            if (distanceToCamera > lastSelectedDistance * CFG.Current.Viewport_Box_Selection_Distance_Threshold) break;
             lastSelectedDistance = distanceToCamera;
             UpdateSelection(obj, targetEditor, ctrl);
         }

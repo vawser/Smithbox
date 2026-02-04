@@ -26,11 +26,11 @@ public class MapActionHandler
     {
         HashSet<string> idCache = new();
 
-        foreach (var entry in Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
         {
             string mapid = entry.Key.Filename;
 
-            if (Editor.Project.ProjectType is ProjectType.DES)
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.DES)
             {
                 if (mapid != "m03_01_00_99" && !mapid.StartsWith("m99"))
                 {
@@ -40,24 +40,24 @@ public class MapActionHandler
                     idCache.Add(areaId);
 
                     var areaDirectories = new List<string>();
-                    foreach (var tEntry in Project.MapData.PrimaryBank.Maps)
+                    foreach (var tEntry in Project.Handler.MapData.PrimaryBank.Maps)
                     {
                         if (tEntry.Key.Filename.StartsWith(areaId) && tEntry.Key.Filename != "m03_01_00_99")
                         {
-                            areaDirectories.Add(Path.Combine(Editor.Project.DataPath, "map", tEntry.Key.Filename));
+                            areaDirectories.Add(Path.Combine(Editor.Project.Descriptor.DataPath, "map", tEntry.Key.Filename));
                         }
                     }
                     SoulsMapMetadataGenerator.GenerateMCGMCP(Editor, areaDirectories, toBigEndian: true);
                 }
                 else
                 {
-                    var areaDirectories = new List<string> { Path.Combine(Editor.Project.DataPath, "map", mapid) };
+                    var areaDirectories = new List<string> { Path.Combine(Editor.Project.Descriptor.DataPath, "map", mapid) };
                     SoulsMapMetadataGenerator.GenerateMCGMCP(Editor, areaDirectories, toBigEndian: true);
                 }
             }
-            else if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            else if (Editor.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
-                var areaDirectories = new List<string> { Path.Combine(Editor.Project.DataPath, "map", mapid) };
+                var areaDirectories = new List<string> { Path.Combine(Editor.Project.Descriptor.DataPath, "map", mapid) };
 
                 SoulsMapMetadataGenerator.GenerateMCGMCP(Editor, areaDirectories, toBigEndian: false);
             }
@@ -78,7 +78,7 @@ public class MapActionHandler
 
         if (SelectedMapFilter == "All")
         {
-            foreach (var entry in Project.MapData.PrimaryBank.Maps)
+            foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
             {
                 ApplyEntityGroupIdChange(entry.Key.Filename);
             }
@@ -91,10 +91,10 @@ public class MapActionHandler
 
     public void ApplyEntityGroupIdChange(string mapid)
     {
-        var filepath = Path.Join(Editor.Project.ProjectPath, "map", "MapStudio", $"{mapid}.msb.dcx");
+        var filepath = Path.Join(Editor.Project.Descriptor.ProjectPath, "map", "MapStudio", $"{mapid}.msb.dcx");
 
         // Armored Core
-        if (Editor.Project.ProjectType == ProjectType.AC6)
+        if (Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             MSB_AC6 map = MSB_AC6.Read(filepath);
 
@@ -154,7 +154,7 @@ public class MapActionHandler
         }
 
         // Elden Ring
-        if (Editor.Project.ProjectType == ProjectType.ER)
+        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
         {
             MSBE map = MSBE.Read(filepath);
 
@@ -214,7 +214,7 @@ public class MapActionHandler
         }
 
         // Sekiro
-        if (Editor.Project.ProjectType == ProjectType.SDT)
+        if (Editor.Project.Descriptor.ProjectType == ProjectType.SDT)
         {
             MSBS map = MSBS.Read(filepath);
 
@@ -274,7 +274,7 @@ public class MapActionHandler
         }
 
         // DS3
-        if (Editor.Project.ProjectType == ProjectType.DS3)
+        if (Editor.Project.Descriptor.ProjectType == ProjectType.DS3)
         {
             MSB3 map = MSB3.Read(filepath);
 

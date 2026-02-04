@@ -4,7 +4,66 @@
   Wiki="" />
   
   <Field>
+  
+  <unknown_3
+  AltName="Night 1 Boss Area"
+  Refs="PlayAreaCreateParam" />
+  
+  <unknown_4
+  AltName="Night 2 Boss Area"
+  Refs="PlayAreaCreateParam" />
+  
+  <unknown_5
+  AltName="Map Attach Point"
+  Refs="SmallBaseAndSpotAttachPoint" />
+  
+  <unknown_6
+  AltName="Map Tile"
+  TileRef="" />
+  
+  <eventFlag1
+  AltName="Event Flag"
+  FlagAlias="" />
+  
+  <eventFlag2
+  AltName="Event Flag 2"
+  FlagAlias="" />
+  
+  <eventFlag3
+  AltName="Event Flag 3"
+  FlagAlias="" />
+  
+  <eventFlag4
+  AltName="Event Flag 4"
+  FlagAlias="" />
+  
+  <eventFlag5
+  AltName="Event Flag 5"
+  FlagAlias="" />
     
+  <modifierId
+  AltName="Modifier ID"
+  ProjectEnum="PATTERN_MODIFIER" />
+  
+  <unknown_16
+  AltName="Modifier ID 2"
+  ProjectEnum="PATTERN_MODIFIER" />
+  
+  <unknown_23a
+  AltName="Night 1 Boss"
+  TileRef="" />
+  
+  <unknown_23b
+  AltName="Night 2 Boss"
+  TileRef="" />
+  
+  <unknown_26a
+  AltName="Extra Night 1 Boss"
+  TileRef="" />
+  
+  <unknown_26b
+  AltName="Extra Night 2 Boss"
+  TileRef="" />
   </Field>
   
   <Enums>

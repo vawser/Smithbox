@@ -1,0 +1,343 @@
+{
+    "ProjectType": 1,
+    "Languages": [
+        {
+            "Abbreviation": "",
+            "Language": "English"
+        }
+    ],
+    "Containers": [
+        {
+            "OrderID": 1,
+            "FullName": "item.msgbnd.dcx",
+            "SimpleName": "item",
+            "ContainerName": "Item",
+            "VariantName": "Stock",
+            "DisplayName": "Item"
+        },
+        {
+            "OrderID": 2,
+            "FullName": "menu.msgbnd.dcx",
+            "SimpleName": "menu",
+            "ContainerName": "Menu",
+            "VariantName": "Stock",
+            "DisplayName": "Menu"
+        },
+        {
+            "OrderID": 3,
+            "FullName": "sample.msgbnd.dcx",
+            "SimpleName": "sample",
+            "ContainerName": "Sample",
+            "VariantName": "Stock",
+            "DisplayName": "Sample"
+        }
+    ],
+    "List": [
+        {
+            "ID": 10,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 11,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 12,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 13,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 14,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 15,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Effects"
+        },
+        {
+            "ID": 16,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Effects"
+        },
+        {
+            "ID": 17,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Effects",
+            "SecondaryDomain": "",
+            "DisplayName": "Effects"
+        },
+        {
+            "ID": 18,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Characters",
+            "SecondaryDomain": "",
+            "DisplayName": "Characters"
+        },
+        {
+            "ID": 19,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Locations",
+            "SecondaryDomain": "",
+            "DisplayName": "Locations"
+        },
+        {
+            "ID": 20,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 21,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 22,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 23,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 28,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 24,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 25,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 26,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Armor",
+            "SecondaryDomain": "",
+            "DisplayName": "Armor"
+        },
+        {
+            "ID": 27,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 29,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Spells",
+            "SecondaryDomain": "",
+            "DisplayName": "Spells"
+        },
+        {
+            "ID": 1,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Talk Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages"
+        },
+        {
+            "ID": 2,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Blood Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Blood Messages"
+        },
+        {
+            "ID": 3,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Movie Subtitles",
+            "SecondaryDomain": "",
+            "DisplayName": "Movie Subtitles"
+        },
+        {
+            "ID": 30,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Event Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text"
+        },
+        {
+            "ID": 70,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "In-game Text",
+            "SecondaryDomain": "",
+            "DisplayName": "In-game Text"
+        },
+        {
+            "ID": 76,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Common Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Common Text"
+        },
+        {
+            "ID": 77,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Other Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Other Text"
+        },
+        {
+            "ID": 78,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Dialog Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Dialog Text"
+        },
+        {
+            "ID": 79,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Key Guides",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guides"
+        },
+        {
+            "ID": 80,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Line Help",
+            "SecondaryDomain": "",
+            "DisplayName": "Line Help"
+        },
+        {
+            "ID": 81,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Context",
+            "SecondaryDomain": "",
+            "DisplayName": "Context"
+        },
+        {
+            "ID": 90,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Tags",
+            "SecondaryDomain": "",
+            "DisplayName": "Tags"
+        },
+        {
+            "ID": 0,
+            "Container": "Sample",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Sample",
+            "SecondaryDomain": "",
+            "DisplayName": "Sample"
+        },
+        {
+            "ID": 500,
+            "Container": "Sample",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Key Guide Test",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guide Test"
+        }
+    ]
+}

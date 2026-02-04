@@ -43,7 +43,7 @@ public class ModelSourceView
 
             if (ImGui.Begin($@"Model Sources##modelSourceList", ImGuiWindowFlags.MenuBar))
             {
-                Editor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelSourceList);
+                FocusManager.SetFocus(EditorFocusContext.ModelEditor_ContainerList);
 
                 DisplayMenubar();
 
@@ -55,14 +55,14 @@ public class ModelSourceView
 
                     ImGui.BeginChild($"characterSourceList");
 
-                    DisplayModelSourceList(ModelListType.Character, Project.ModelData.ChrFiles);
+                    DisplayModelSourceList(ModelListType.Character, Project.Locator.ChrFiles);
 
                     ImGui.EndChild();
                     ImGui.EndTabItem();
                 }
 
                 var name = "Objects";
-                if (Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                 {
                     name = "Assets";
                 }
@@ -73,7 +73,7 @@ public class ModelSourceView
 
                     ImGui.BeginChild($"assetSourceList");
 
-                    DisplayModelSourceList(ModelListType.Asset, Project.ModelData.AssetFiles);
+                    DisplayModelSourceList(ModelListType.Asset, Project.Locator.AssetFiles);
 
                     ImGui.EndChild();
                     ImGui.EndTabItem();
@@ -85,7 +85,7 @@ public class ModelSourceView
 
                     ImGui.BeginChild($"partsSourceList");
 
-                    DisplayModelSourceList(ModelListType.Part, Project.ModelData.PartFiles);
+                    DisplayModelSourceList(ModelListType.Part, Project.Locator.PartFiles);
 
                     ImGui.EndChild();
                     ImGui.EndTabItem();
@@ -97,7 +97,7 @@ public class ModelSourceView
 
                     ImGui.BeginChild($"mapPieceSourceList");
 
-                    DisplayModelSourceList(ModelListType.MapPiece, Project.ModelData.MapPieceFiles);
+                    DisplayModelSourceList(ModelListType.MapPiece, Project.Locator.MapPieceFiles);
 
                     ImGui.EndChild();
                     ImGui.EndTabItem();
@@ -153,7 +153,7 @@ public class ModelSourceView
 
             _cachedSearchMatches.Clear();
 
-            foreach (var entry in Project.ModelData.PrimaryBank.Models)
+            foreach (var entry in Project.Handler.ModelData.PrimaryBank.Models)
             {
                 var modelName = entry.Key.Filename;
                 var nameAlias = "";
@@ -235,7 +235,7 @@ public class ModelSourceView
                 {
                     if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
                     {
-                        var entry = Project.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
+                        var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
                         if (entry.Value != null)
                         {
                             Editor.Selection.SelectedModelContainerWrapper = entry.Value;
@@ -250,7 +250,7 @@ public class ModelSourceView
 
                 if (alias != "")
                 {
-                    UIHelper.DisplayAlias(alias, CFG.Current.Interface_ModelEditor_WrapAliasDisplay);
+                    UIHelper.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
                 }
 
                 // Context Menu
@@ -267,7 +267,7 @@ public class ModelSourceView
         {
             if (ImGui.Selectable("Load"))
             {
-                var entry = Project.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
+                var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
                 if (entry.Value != null)
                 {
                     Editor.Selection.SelectedModelContainerWrapper = entry.Value;
@@ -306,22 +306,22 @@ public class ModelSourceView
 
         if (modelListType is ModelListType.Character)
         {
-            checkedEntries = Project.CommonData.Aliases[ProjectAliasType.Characters];
+            checkedEntries = Project.Handler.ProjectData.Aliases[ProjectAliasType.Characters];
         }
 
         if (modelListType is ModelListType.Asset)
         {
-            checkedEntries = Project.CommonData.Aliases[ProjectAliasType.Assets];
+            checkedEntries = Project.Handler.ProjectData.Aliases[ProjectAliasType.Assets];
         }
 
         if (modelListType is ModelListType.Part)
         {
-            checkedEntries = Project.CommonData.Aliases[ProjectAliasType.Parts];
+            checkedEntries = Project.Handler.ProjectData.Aliases[ProjectAliasType.Parts];
         }
 
         if (modelListType is ModelListType.MapPiece)
         {
-            checkedEntries = Project.CommonData.Aliases[ProjectAliasType.MapPieces];
+            checkedEntries = Project.Handler.ProjectData.Aliases[ProjectAliasType.MapPieces];
         }
 
         if (checkedEntries.Any(e => e.ID == fileEntry.Filename))
@@ -339,22 +339,22 @@ public class ModelSourceView
 
             if (modelListType is ModelListType.Character)
             {
-                entries = Project.CommonData.Aliases[ProjectAliasType.Characters];
+                entries = Project.Handler.ProjectData.Aliases[ProjectAliasType.Characters];
             }
 
             if (modelListType is ModelListType.Asset)
             {
-                entries = Project.CommonData.Aliases[ProjectAliasType.Assets];
+                entries = Project.Handler.ProjectData.Aliases[ProjectAliasType.Assets];
             }
 
             if (modelListType is ModelListType.Part)
             {
-                entries = Project.CommonData.Aliases[ProjectAliasType.Parts];
+                entries = Project.Handler.ProjectData.Aliases[ProjectAliasType.Parts];
             }
 
             if (modelListType is ModelListType.MapPiece)
             {
-                entries = Project.CommonData.Aliases[ProjectAliasType.MapPieces];
+                entries = Project.Handler.ProjectData.Aliases[ProjectAliasType.MapPieces];
             }
 
             if (!newAlias)
@@ -382,30 +382,30 @@ public class ModelSourceView
 
             if (modelListType is ModelListType.Character)
             {
-                Project.CommonData.Aliases[ProjectAliasType.Characters] = entries;
+                Project.Handler.ProjectData.Aliases[ProjectAliasType.Characters] = entries;
 
-                ProjectAliasEditor.SaveIndividual(Project, ProjectAliasType.Characters);
+                Smithbox.Orchestrator.AliasMenu.SaveIndividual(ProjectAliasType.Characters);
             }
 
             if (modelListType is ModelListType.Asset)
             {
-                Project.CommonData.Aliases[ProjectAliasType.Assets] = entries;
+                Project.Handler.ProjectData.Aliases[ProjectAliasType.Assets] = entries;
 
-                ProjectAliasEditor.SaveIndividual(Project, ProjectAliasType.Assets);
+                Smithbox.Orchestrator.AliasMenu.SaveIndividual(ProjectAliasType.Assets);
             }
 
             if (modelListType is ModelListType.Part)
             {
-                Project.CommonData.Aliases[ProjectAliasType.Parts] = entries;
+                Project.Handler.ProjectData.Aliases[ProjectAliasType.Parts] = entries;
 
-                ProjectAliasEditor.SaveIndividual(Project, ProjectAliasType.Parts);
+                Smithbox.Orchestrator.AliasMenu.SaveIndividual(ProjectAliasType.Parts);
             }
 
             if (modelListType is ModelListType.MapPiece)
             {
-                Project.CommonData.Aliases[ProjectAliasType.MapPieces] = entries;
+                Project.Handler.ProjectData.Aliases[ProjectAliasType.MapPieces] = entries;
 
-                ProjectAliasEditor.SaveIndividual(Project, ProjectAliasType.MapPieces);
+                Smithbox.Orchestrator.AliasMenu.SaveIndividual(ProjectAliasType.MapPieces);
             }
 
             TaskLogs.AddLog("[Smithbox] Updated aliases.");

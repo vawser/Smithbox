@@ -4,6 +4,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.Viewport;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -16,7 +17,6 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelEditorScreen : EditorScreen
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     /// <summary>
@@ -32,7 +32,6 @@ public class ModelEditorScreen : EditorScreen
     public ModelSelection Selection;
     public ModelUniverse Universe;
     public ModelEntityTypeCache EntityTypeCache;
-    public EditorFocusManager FocusManager;
     public ModelPropertyCache ModelPropertyCache = new();
     public ModelCommandQueue CommandQueue;
     public ModelShortcuts Shortcuts;
@@ -59,16 +58,14 @@ public class ModelEditorScreen : EditorScreen
     public PullToCameraAction PullToCameraAction;
     public ReorderAction ReorderAction;
 
-    public ModelEditorScreen(Smithbox baseEditor, ProjectEntry project)
+    public ModelEditorScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
-        ModelViewportView = new ModelViewportView(this, project, baseEditor);
+        ModelViewportView = new ModelViewportView(this, project);
         ModelViewportView.Setup();
 
         Universe = new ModelUniverse(this, project);
-        FocusManager = new EditorFocusManager(this);
         EntityTypeCache = new(this, project);
 
         Selection = new(this, project);
@@ -100,8 +97,6 @@ public class ModelEditorScreen : EditorScreen
         ReorderAction = new ReorderAction(this, Project);
 
         ModelInsightHelper.Setup(this, Project);
-
-        FocusManager.SetDefaultFocusElement("Properties##modeleditprop");
 
         EditorActionManager.AddEventHandler(ModelContentView);
     }
@@ -206,13 +201,10 @@ public class ModelEditorScreen : EditorScreen
         }
 
         ImGui.PopStyleColor(1);
-
-        FocusManager.OnFocus();
     }
 
     public void OnDefocus()
     {
-        FocusManager.ResetFocus();
     }
 
     public void Update(float dt)
@@ -243,7 +235,7 @@ public class ModelEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
             }
@@ -287,7 +279,7 @@ public class ModelEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)}  /  {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -305,7 +297,7 @@ public class ModelEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)}  /  {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
@@ -340,9 +332,9 @@ public class ModelEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Viewport"))
             {
-                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
+                CFG.Current.Viewport_Display = !CFG.Current.Viewport_Display;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display);
 
             if (ImGui.MenuItem("Source List"))
             {
@@ -401,7 +393,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void Save(bool autoSave = false)
     {
-        if (Project.ProjectType == ProjectType.DES)
+        if (Project.Descriptor.ProjectType == ProjectType.DES)
         {
             TaskLogs.AddLog("Model Editor is not supported for DES.", LogLevel.Warning);
             return;
@@ -417,7 +409,7 @@ public class ModelEditorScreen : EditorScreen
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
 
     /// <summary>

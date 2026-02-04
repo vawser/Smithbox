@@ -7,12 +7,10 @@ namespace StudioCore.Editors.FileBrowser;
 
 public class FileBrowserStub : IEditorStub
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public FileBrowserStub(Smithbox baseEditor, ProjectEntry project)
+    public FileBrowserStub(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
     }
 
@@ -22,10 +20,10 @@ public class FileBrowserStub : IEditorStub
 
     public unsafe void Display(float dt, string[] commands)
     {
-        if (!Project.EnableFileBrowser)
+        if (!Project.Descriptor.EnableFileBrowser)
             return;
 
-        if (!ProjectUtils.SupportsFileBrowser(Project.ProjectType))
+        if (!ProjectUtils.SupportsFileBrowser(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)
@@ -34,7 +32,7 @@ public class FileBrowserStub : IEditorStub
             ImGui.SetNextWindowFocus();
         }
 
-        if (BaseEditor._context.Device == null)
+        if (Smithbox.Instance._context.Device == null)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, *ImGui.GetStyleColorVec4(ImGuiCol.WindowBg));
         }
@@ -50,9 +48,9 @@ public class FileBrowserStub : IEditorStub
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
 
-            if (Project.FileBrowser != null)
+            if (Project.Handler.FileBrowser != null && Project.Initialized)
             {
-                Project.FileBrowser.OnGUI(commands);
+                Project.Handler.FileBrowser.OnGUI(commands);
             }
             else
             {
@@ -62,9 +60,9 @@ public class FileBrowserStub : IEditorStub
 
             ImGui.End();
 
-            if (Project.FileBrowser != null)
+            if (Project.Handler.FileBrowser != null)
             {
-                Project.FocusedEditor = Project.FileBrowser;
+                Project.Handler.FocusedEditor = Project.Handler.FileBrowser;
             }
         }
         else

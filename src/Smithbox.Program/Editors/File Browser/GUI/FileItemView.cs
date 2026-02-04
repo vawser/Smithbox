@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -24,12 +25,13 @@ public class FileItemView
         Editor = editor;
         Project = project;
 
-        ExtractionPath = project.ProjectPath;
+        ExtractionPath = project.Descriptor.ProjectPath;
     }
 
     public void Display()
     {
         ImGui.Begin($"Item Viewer##ItemViewer");
+        FocusManager.SetFocus(EditorFocusContext.FileBrowser_Item);
 
         DisplayItemViewer();
 
@@ -38,44 +40,9 @@ public class FileItemView
 
     private void DisplayItemViewer()
     {
-        // FsEntry
-        if (Editor.Selection.SelectedEntry == null && Editor.Selection.SelectedVfsFile == null)
-        {
-            ImGui.Text("Nothing selected");
-        }
-        else if(Editor.Selection.SelectedEntry != null)
-        {
-            DisplayFsItem();
-        }
-        // VFS
-        else if(Editor.Selection.SelectedVfsFile != null)
+        if(Editor.Selection.SelectedVfsFile != null)
         {
             DisplayVfsItem();
-        }
-    }
-
-    public void DisplayFsItem()
-    {
-        if (Editor.Selection.SelectedEntry.CanView)
-        {
-            if (!Editor.Selection.SelectedEntry.IsInitialized && !Editor.Selection.SelectedEntry.IsLoading)
-            {
-                Editor.Selection.SelectedEntry.LoadAsync(Editor.Selection.SelectedEntryID, Editor.Selection.SelectedEntry.Name, Project);
-            }
-
-            if (Editor.Selection.SelectedEntry.IsInitialized)
-            {
-                Editor.Selection.SelectedEntry.OnGui();
-            }
-            else
-            {
-                ImGui.Text("Loading...");
-            }
-        }
-        else
-        {
-            ImGui.Text($"Selected: {Editor.Selection.SelectedEntry.Name}");
-            ImGui.Text("This file has no Item Viewer.");
         }
     }
 
@@ -234,7 +201,7 @@ public class FileItemView
 
         try
         {
-            var data = Project.VanillaFS.ReadFile(fileEntry.Path);
+            var data = Project.VFS.VanillaFS.ReadFile(fileEntry.Path);
             var rawData = (Memory<byte>)data;
 
             var unpackPath = ExtractionPath;
@@ -275,7 +242,7 @@ public class FileItemView
 
         if (binderType is ResourceContainerType.None)
         {
-            var fileData = Project.VanillaFS.ReadFile(targetFile.Path);
+            var fileData = Project.VFS.VanillaFS.ReadFile(targetFile.Path);
             if (fileData != null)
             {
                 if (LocatorUtils.IsTPF(targetFile.Path))
@@ -294,11 +261,11 @@ public class FileItemView
 
         if (binderType is ResourceContainerType.BND)
         {
-            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 try
                 {
-                    var fileData = Project.VanillaFS.ReadFile(targetFile.Path);
+                    var fileData = Project.VFS.VanillaFS.ReadFile(targetFile.Path);
                     if (fileData != null)
                     {
                         var binder = new BND3Reader(fileData.Value);
@@ -333,7 +300,7 @@ public class FileItemView
             {
                 try
                 {
-                    var fileData = Project.VanillaFS.ReadFile(targetFile.Path);
+                    var fileData = Project.VFS.VanillaFS.ReadFile(targetFile.Path);
                     if (fileData != null)
                     {
                         var binder = new BND4Reader(fileData.Value);
@@ -376,7 +343,7 @@ public class FileItemView
 
             try
             {
-                bhd = (Memory<byte>)Project.VanillaFS.ReadFile(targetBhdPath);
+                bhd = (Memory<byte>)Project.VFS.VanillaFS.ReadFile(targetBhdPath);
             }
             catch (Exception e)
             {
@@ -385,7 +352,7 @@ public class FileItemView
 
             try
             {
-                bdt = (Memory<byte>)Project.VanillaFS.ReadFile(targetBdtPath);
+                bdt = (Memory<byte>)Project.VFS.VanillaFS.ReadFile(targetBdtPath);
             }
             catch (Exception e)
             {
@@ -394,7 +361,7 @@ public class FileItemView
 
             if (bhd.Length != 0 && bdt.Length != 0)
             {
-                if (Project.ProjectType is ProjectType.DES
+                if (Project.Descriptor.ProjectType is ProjectType.DES
                     or ProjectType.DS1
                     or ProjectType.DS1R)
                 {

@@ -6,6 +6,8 @@ using Org.BouncyCastle.Crypto.Modes;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SoulsFormats.Util
 {
@@ -87,46 +89,125 @@ namespace SoulsFormats.Util
         /// <returns>A memory stream with the decrypted file</returns>
         public static MemoryStream DecryptRsa(string filePath, string key)
         {
-            if (filePath == null)
-            {
-                throw new ArgumentNullException(nameof(filePath));
-            }
-
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
+            ArgumentNullException.ThrowIfNull(filePath);
+            ArgumentNullException.ThrowIfNull(key);
 
             AsymmetricKeyParameter keyParameter = GetKeyOrDefault(key);
             RsaEngine engine = new RsaEngine();
             engine.Init(false, keyParameter);
 
-            MemoryStream outputStream = new MemoryStream();
-            using (FileStream inputStream = File.OpenRead(filePath))
+            int inputBlockSize = engine.GetInputBlockSize();
+            int outputBlockSize = engine.GetOutputBlockSize();
+
+            // Zero buffer so we can pad with zeros without allocating each time
+            byte[] zeroPad = new byte[Math.Min(outputBlockSize, 4096)];
+
+            using var inputStream = new FileStream(
+                filePath,
+                FileMode.Open,
+                FileAccess.Read,
+                FileShare.Read,
+                bufferSize: 1 << 20,                 // 1 MiB
+                options: FileOptions.SequentialScan);
+
+            long inputLength = inputStream.Length;
+            long blockCount = (inputLength + inputBlockSize - 1) / inputBlockSize;
+            long estimatedOutputLength = blockCount * outputBlockSize;
+
+            var outputStream = new MemoryStream((int)estimatedOutputLength);
+
+            byte[] inputBlock = new byte[inputBlockSize];
+
+            while (true)
             {
-
-                int inputBlockSize = engine.GetInputBlockSize();
-                int outputBlockSize = engine.GetOutputBlockSize();
-                byte[] inputBlock = new byte[inputBlockSize];
-                while (inputStream.Read(inputBlock, 0, inputBlock.Length) > 0)
+                int totalRead = 0;
+                while (totalRead < inputBlockSize)
                 {
-                    byte[] outputBlock = engine.ProcessBlock(inputBlock, 0, inputBlockSize);
-
-                    int requiredPadding = outputBlockSize - outputBlock.Length;
-                    if (requiredPadding > 0)
-                    {
-                        byte[] paddedOutputBlock = new byte[outputBlockSize];
-                        outputBlock.CopyTo(paddedOutputBlock, requiredPadding);
-                        outputBlock = paddedOutputBlock;
-                    }
-
-                    outputStream.Write(outputBlock, 0, outputBlock.Length);
+                    int read = inputStream.Read(inputBlock, totalRead, inputBlockSize - totalRead);
+                    if (read == 0) break;
+                    totalRead += read;
                 }
+
+                if (totalRead == 0)
+                    break;
+
+                byte[] outputBlock = engine.ProcessBlock(inputBlock, 0, totalRead);
+
+                int requiredPadding = outputBlockSize - outputBlock.Length;
+                while (requiredPadding > 0)
+                {
+                    int chunk = Math.Min(requiredPadding, zeroPad.Length);
+                    outputStream.Write(zeroPad, 0, chunk);
+                    requiredPadding -= chunk;
+                }
+
+                outputStream.Write(outputBlock, 0, outputBlock.Length);
             }
 
             outputStream.Seek(0, SeekOrigin.Begin);
             return outputStream;
         }
+        
+        /// <summary>
+        ///     Decrypts a file with a provided decryption key using multiple threads.
+        /// </summary>
+        /// <param name="filePath">An encrypted file</param>
+        /// <param name="key">The RSA key in PEM format</param>
+        /// <param name="maxThreadCount">The maximum number of threads to use</param>
+        /// <exception cref="ArgumentNullException">When the argument filePath is null</exception>
+        /// <exception cref="ArgumentNullException">When the argument keyPath is null</exception>
+        /// <returns>A memory stream with the decrypted file</returns>
+        public static MemoryStream DecryptRsaParallel(string filePath, string key, int maxThreadCount)
+        {
+            ArgumentNullException.ThrowIfNull(filePath);
+            ArgumentNullException.ThrowIfNull(key);
+
+            AsymmetricKeyParameter keyParameter = GetKeyOrDefault(key);
+
+            // Use a temporary engine just to get block sizes (cheap).
+            var sizingEngine = new RsaEngine();
+            sizingEngine.Init(false, keyParameter);
+            int inputBlockSize = sizingEngine.GetInputBlockSize();
+            int outputBlockSize = sizingEngine.GetOutputBlockSize();
+
+            byte[] encrypted = File.ReadAllBytes(filePath);
+
+            int blockCount = (encrypted.Length + inputBlockSize - 1) / inputBlockSize;
+
+            long totalOutputLength = (long)blockCount * outputBlockSize;
+
+            byte[] decrypted = new byte[(int)totalOutputLength];
+
+            // Pretty sure RsaEngine is not thread-safe, so each thread gets its own
+            var engineLocal = new ThreadLocal<RsaEngine>(() =>
+            {
+                var e = new RsaEngine();
+                e.Init(false, keyParameter);
+                return e;
+            });
+
+            var options = new ParallelOptions { MaxDegreeOfParallelism = maxThreadCount };
+
+            Parallel.For(0, blockCount, options, i =>
+            {
+                int inOffset = i * inputBlockSize;
+                int inLen = Math.Min(inputBlockSize, encrypted.Length - inOffset);
+
+                byte[] outBlock = engineLocal.Value!.ProcessBlock(encrypted, inOffset, inLen);
+
+                int outOffset = i * outputBlockSize;
+                int pad = outputBlockSize - outBlock.Length;
+
+                // decrypted[] is already zero-initialized, so padding is “free”.
+                Buffer.BlockCopy(outBlock, 0, decrypted, outOffset + pad, outBlock.Length);
+            });
+
+            engineLocal.Dispose();
+
+            //TODO: Maybe switch off MemoryStream?
+            return new MemoryStream(decrypted, writable: false);
+        }
+
 
         public static AsymmetricKeyParameter GetKeyOrDefault(string key)
         {

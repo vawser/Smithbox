@@ -6,40 +6,42 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamRemoveValueRow : EditorAction
 {
+    private GparamEditorView Parent;
+
     private GPARAM SelectedGPARAM;
-    private GparamEditorScreen Screen;
     private IField SelectedField;
     private IFieldValue SelectedFieldValue;
     private int RemovedRowID;
     private int RemovedRowIndex;
 
-    public GparamRemoveValueRow(GparamEditorScreen screen)
+    public GparamRemoveValueRow(GparamEditorView view)
     {
-        Screen = screen;
-        SelectedGPARAM = screen.Selection._selectedGparam;
-        SelectedField = screen.Selection._selectedParamField;
-        SelectedFieldValue = screen.Selection._selectedFieldValue;
-        RemovedRowID = screen.Selection._selectedFieldValue.Id;
+        Parent = view;
+
+        SelectedGPARAM = view.Selection._selectedGparam;
+        SelectedField = view.Selection._selectedParamField;
+        SelectedFieldValue = view.Selection._selectedFieldValue;
+        RemovedRowID = view.Selection._selectedFieldValue.Id;
     }
 
     public override ActionEvent Execute()
     {
-        Screen.FieldValueListView.ReduceDisplayTruth(SelectedField);
+        Parent.FieldValueListView.ReduceDisplayTruth(SelectedField);
 
-        RemovedRowIndex = Screen.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, SelectedFieldValue.Id);
+        RemovedRowIndex = Parent.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, SelectedFieldValue.Id);
 
-        Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
+        Parent.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
         return ActionEvent.NoEvent;
     }
 
     public override ActionEvent Undo()
     {
-        Screen.FieldValueListView.ExtendDisplayTruth(SelectedField);
+        Parent.FieldValueListView.ExtendDisplayTruth(SelectedField);
 
-        Screen.PropertyEditor.AddPropertyValueRowAtIndex(SelectedField, SelectedFieldValue, RemovedRowID, RemovedRowIndex);
+        Parent.PropertyEditor.AddPropertyValueRowAtIndex(SelectedField, SelectedFieldValue, RemovedRowID, RemovedRowIndex);
 
-        Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
+        Parent.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
         return ActionEvent.NoEvent;
     }

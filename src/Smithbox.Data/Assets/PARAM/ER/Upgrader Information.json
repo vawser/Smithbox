@@ -2,6 +2,10 @@
   "MaxVersion": "1_16_1_1000L",
   "RegulationEntries": [
     {
+      "Version": "1.00.0.0092",
+      "Folder": "1.00.0 (10000092)"
+    },
+    {
       "Version": "1.02.1.0038",
       "Folder": "1.02.1 (10210038)"
     },

@@ -6,6 +6,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.Viewport;
+using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -292,14 +293,14 @@ public static class Utils
 
     public static string GetLocalAssetPath(ProjectEntry project, string assetPath)
     {
-        if (assetPath.StartsWith(project.ProjectPath))
+        if (assetPath.StartsWith(project.Descriptor.ProjectPath))
         {
-            return assetPath.Replace(project.ProjectPath, "");
+            return assetPath.Replace(project.Descriptor.ProjectPath, "");
         }
 
-        if (assetPath.StartsWith(project.DataPath))
+        if (assetPath.StartsWith(project.Descriptor.DataPath))
         {
-            return assetPath.Replace(project.DataPath, "");
+            return assetPath.Replace(project.Descriptor.DataPath, "");
         }
 
         throw new DirectoryNotFoundException(
@@ -873,7 +874,8 @@ public static class Utils
     {
         // Up/Down arrow mass selection
         var arrowKeySelect = false;
-        if (isItemFocused && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+
+        if (isItemFocused && InputManager.HasArrowSelection())
         {
             itemSelected = true;
             arrowKeySelect = true;
@@ -883,10 +885,7 @@ public static class Utils
         {
             if (arrowKeySelect)
             {
-                if (InputTracker.GetKey(Key.ControlLeft)
-                    || InputTracker.GetKey(Key.ControlRight)
-                    || InputTracker.GetKey(Key.ShiftLeft)
-                    || InputTracker.GetKey(Key.ShiftRight))
+                if (InputManager.HasCtrlDown() || InputManager.HasShiftDown())
                 {
                     selection.AddSelection(editor, entity);
                 }
@@ -896,7 +895,7 @@ public static class Utils
                     selection.AddSelection(editor, entity);
                 }
             }
-            else if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
+            else if (InputManager.HasCtrlDown())
             {
                 // Toggle Selection
                 if (selection.GetSelection().Contains(entity))
@@ -909,7 +908,7 @@ public static class Utils
                 }
             }
             else if (selection.GetSelection().Count > 0
-                     && (InputTracker.GetKey(Key.ShiftLeft) || InputTracker.GetKey(Key.ShiftRight)))
+                     && InputManager.HasShiftDown())
             {
                 // Select Range
                 List<Entity> entList;

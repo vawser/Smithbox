@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -35,14 +36,14 @@ public class ModelSelectorTool
             ImGui.InputText($"##selectorFilter", ref _searchInput, 255);
             UIHelper.Tooltip("Filter the model selector list. Separate terms are split via the + character.");
 
-            ImGui.Checkbox("Update Name on Switch", ref CFG.Current.AssetBrowser_UpdateName);
+            ImGui.Checkbox("Update Name on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_Name);
             UIHelper.Tooltip("When a map object is switched to a new form, update the name to match the new form.");
 
-            if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
                 ImGui.SameLine();
 
-                ImGui.Checkbox("Update Instance ID on Switch", ref CFG.Current.AssetBrowser_UpdateInstanceID);
+                ImGui.Checkbox("Update Instance ID on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_Instance_ID);
                 UIHelper.Tooltip("When a map object is switched to a new form, update the Instance ID to account for the new form.");
             }
 
@@ -79,9 +80,9 @@ public class ModelSelectorTool
     private void DisplayCharacterList()
     {
         // TODO: this needs to draw from a scanned list of characters, not the alias list
-        if (Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases))
+        if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases))
         {
-            var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
             var sectionHeight = windowSize.Y * 0.3f;
             var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
@@ -110,9 +111,12 @@ public class ModelSelectorTool
                         ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Character);
                     }
 
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                    if (ImGui.IsItemFocused())
                     {
-                        SelectNextEntry = true;
+                        if(InputManager.HasArrowSelection())
+                        {
+                            SelectNextEntry = true;
+                        }
                     }
 
                     DisplaySelectableAlias(entry);
@@ -126,9 +130,9 @@ public class ModelSelectorTool
     private void DisplayAssetList()
     {
         // TODO: this needs to draw from a scanned list of assets, not the alias list
-        if (Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
+        if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
         {
-            var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
             var sectionHeight = windowSize.Y * 0.3f;
             var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
@@ -157,9 +161,12 @@ public class ModelSelectorTool
                         ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Asset);
                     }
 
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                    if (ImGui.IsItemFocused())
                     {
-                        SelectNextEntry = true;
+                        if (InputManager.HasArrowSelection())
+                        {
+                            SelectNextEntry = true;
+                        }
                     }
 
                     DisplaySelectableAlias(entry);
@@ -175,9 +182,9 @@ public class ModelSelectorTool
         var maps = MsbUtils.GetFullMapList(Editor.Project);
 
         // TODO: this needs to draw from a scanned list of map pieces, not the alias list
-        if (Editor.Project.CommonData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
+        if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
         {
-            var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
             var sectionHeight = windowSize.Y * 0.3f;
             var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
@@ -194,7 +201,7 @@ public class ModelSelectorTool
                 var modelName = map.Replace($"{map}_", "m");
                 displayedName = $"{modelName}";
 
-                if (Editor.Project.ProjectType == ProjectType.DS1 || Editor.Project.ProjectType == ProjectType.DS1R)
+                if (Editor.Project.Descriptor.ProjectType == ProjectType.DS1 || Editor.Project.Descriptor.ProjectType == ProjectType.DS1R)
                 {
                     displayedName = displayedName.Replace($"A{map.Substring(1, 2)}", "");
                 }
@@ -221,9 +228,12 @@ public class ModelSelectorTool
                         ApplyMapAssetSelection(_selectedEntry, FileSelectionType.MapPiece, map);
                     }
 
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                    if (ImGui.IsItemFocused())
                     {
-                        SelectNextEntry = true;
+                        if (InputManager.HasArrowSelection())
+                        {
+                            SelectNextEntry = true;
+                        }
                     }
 
                     DisplaySelectableAlias(entry);
@@ -240,7 +250,7 @@ public class ModelSelectorTool
         var refName = entry.Name;
         var refTagList = entry.Tags;
 
-        if (!CFG.Current.MapEditor_AssetBrowser_ShowLowDetailParts)
+        if (!CFG.Current.MapEditor_Model_Selector_Display_Low_Detail_Entries)
         {
             if (entry.ID.Substring(entry.ID.Length - 2) == "_l")
             {
@@ -260,13 +270,13 @@ public class ModelSelectorTool
     {
         var lowerName = entry.ID.ToLower();
 
-        if (CFG.Current.MapEditor_AssetBrowser_ShowAliases)
+        if (CFG.Current.MapEditor_Model_Selector_Display_Aliases)
         {
             UIHelper.DisplayAlias(entry.Name);
         }
 
         // Tags
-        if (CFG.Current.MapEditor_AssetBrowser_ShowTags)
+        if (CFG.Current.MapEditor_Model_Selector_Display_Tags)
         {
             var tagString = string.Join(" ", entry.Tags);
             AliasHelper.DisplayTagAlias(tagString);
@@ -304,7 +314,7 @@ public class ModelSelectorTool
 
             if (assetType == FileSelectionType.Character)
             {
-                switch (Editor.Project.ProjectType)
+                switch (Editor.Project.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Enemy)
@@ -348,7 +358,7 @@ public class ModelSelectorTool
             }
             if (assetType == FileSelectionType.Asset)
             {
-                switch (Editor.Project.ProjectType)
+                switch (Editor.Project.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Object)
@@ -394,7 +404,7 @@ public class ModelSelectorTool
             }
             if (assetType == FileSelectionType.MapPiece)
             {
-                switch (Editor.Project.ProjectType)
+                switch (Editor.Project.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.MapPiece)
@@ -469,13 +479,13 @@ public class ModelSelectorTool
                 // ModelName
                 actlist.Add(s.ChangeObjectProperty("ModelName", modelName));
 
-                if (CFG.Current.AssetBrowser_UpdateName)
+                if (CFG.Current.MapEditor_Model_Selector_Update_Name)
                 {
                     var updateNameAction = UpdateEntityName(modelName, s);
                     actlist.Add(updateNameAction);
                 }
 
-                if (CFG.Current.AssetBrowser_UpdateInstanceID)
+                if (CFG.Current.MapEditor_Model_Selector_Update_Instance_ID)
                 {
                     if (s.WrappedObject is MSBE.Part || s.WrappedObject is MSB_AC6.Part)
                     {
@@ -573,7 +583,7 @@ public class ModelSelectorTool
         var names = new List<string>();
 
         // Collect names
-        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer == null)
             {

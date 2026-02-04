@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -19,7 +20,6 @@ namespace StudioCore.Editors.MapEditor;
 /// </summary>
 public class MapEditorScreen : EditorScreen
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     /// <summary>
@@ -35,7 +35,6 @@ public class MapEditorScreen : EditorScreen
     public MapSelection Selection;
     public Universe Universe;
     public MapEntityTypeCache EntityTypeCache;
-    public EditorFocusManager FocusManager;
     public MapPropertyCache MapPropertyCache = new();
     public MapCommandQueue CommandQueue;
     public MapShortcuts Shortcuts;
@@ -86,8 +85,8 @@ public class MapEditorScreen : EditorScreen
 
     // Tools
     public MassEditTool MassEditTool;
-    public RotationCycleConfigTool RotationCycleConfigTool;
-    public MovementCycleConfigTool MovementCycleConfigTool;
+    public RotationIncrementTool RotationIncrementTool;
+    public PositionIncrementTool PositionIncrementTool;
     public ModelSelectorTool ModelSelectorTool;
     public DisplayGroupTool DisplayGroupTool;
     public SelectionGroupTool SelectionGroupTool;
@@ -106,16 +105,14 @@ public class MapEditorScreen : EditorScreen
     // Special Tools
     public AutomaticPreviewTool AutomaticPreviewTool;
 
-    public MapEditorScreen(Smithbox baseEditor, ProjectEntry project)
+    public MapEditorScreen(ProjectEntry project)
     {
-        BaseEditor = baseEditor;
         Project = project;
 
-        MapViewportView = new MapViewportView(this, project, baseEditor);
+        MapViewportView = new MapViewportView(this, project);
         MapViewportView.Setup();
 
         Universe = new Universe(this, project);
-        FocusManager = new EditorFocusManager(this);
         EntityTypeCache = new(this);
 
         Selection = new(this, project);
@@ -170,8 +167,8 @@ public class MapEditorScreen : EditorScreen
 
         // Tools
         MassEditTool = new MassEditTool(this, project);
-        RotationCycleConfigTool = new RotationCycleConfigTool(this, project);
-        MovementCycleConfigTool = new MovementCycleConfigTool(this, project);
+        RotationIncrementTool = new RotationIncrementTool(this, project);
+        PositionIncrementTool = new PositionIncrementTool(this, project);
         AutomaticPreviewTool = new AutomaticPreviewTool(this, project);
         DisplayGroupTool = new DisplayGroupTool(this, project);
         GlobalSearchTool = new GlobalSearchTool(this, project);
@@ -191,7 +188,6 @@ public class MapEditorScreen : EditorScreen
         MapModelInsightHelper.Setup(this, project);
 
         // Focus
-        FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
         EditorActionManager.AddEventHandler(MapListView);
     }
 
@@ -307,13 +303,10 @@ public class MapEditorScreen : EditorScreen
         }
 
         ImGui.PopStyleColor(1);
-
-        FocusManager.OnFocus();
     }
 
     public void OnDefocus()
     {
-        FocusManager.ResetFocus();
     }
 
     public void Update(float dt)
@@ -350,7 +343,7 @@ public class MapEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("File"))
         {
-            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
             }
@@ -486,7 +479,7 @@ public class MapEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -504,7 +497,7 @@ public class MapEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
@@ -553,9 +546,9 @@ public class MapEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Viewport"))
             {
-                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
+                CFG.Current.Viewport_Display = !CFG.Current.Viewport_Display;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display);
 
             if (ImGui.MenuItem("Map List"))
             {
@@ -589,27 +582,19 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Map List: Categories"))
-            {
-                CFG.Current.MapEditor_DisplayMapCategories = !CFG.Current.MapEditor_DisplayMapCategories;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_DisplayMapCategories);
-
-            ImGui.Separator();
-
             // Quick toggles for some of the Field Editor field visibility options
 
             if (ImGui.MenuItem("Field: Community Names"))
             {
-                CFG.Current.MapEditor_Enable_Commmunity_Names = !CFG.Current.MapEditor_Enable_Commmunity_Names;
+                CFG.Current.MapEditor_Properties_Enable_Commmunity_Names = !CFG.Current.MapEditor_Properties_Enable_Commmunity_Names;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Enable_Commmunity_Names);
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Properties_Enable_Commmunity_Names);
 
             if (ImGui.MenuItem("Field: Unknowns"))
             {
-                CFG.Current.MapEditor_DisplayUnknownFields = !CFG.Current.MapEditor_DisplayUnknownFields;
+                CFG.Current.MapEditor_Properties_Display_Unknown_Properties = !CFG.Current.MapEditor_Properties_Display_Unknown_Properties;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_DisplayUnknownFields);
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Properties_Display_Unknown_Properties);
 
             ImGui.EndMenu();
         }
@@ -638,34 +623,34 @@ public class MapEditorScreen : EditorScreen
 
             if (ImGui.BeginMenu("Filter Presets"))
             {
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_01.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_1.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_01.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_02.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_2.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_02.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_03.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_3.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_03.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_04.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_4.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_04.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_05.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_5.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_05.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_06.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_6.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_06.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
                 }
 
                 ImGui.EndMenu();
@@ -710,7 +695,7 @@ public class MapEditorScreen : EditorScreen
             UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.");
             UIHelper.ShowActiveStatus(HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
 
-            if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             {
                 if (ImGui.MenuItem("Fall Protection"))
                 {
@@ -745,7 +730,7 @@ public class MapEditorScreen : EditorScreen
 
     public void Save(bool autoSave = false)
     {
-        if (Project.ProjectType == ProjectType.Undefined)
+        if (Project.Descriptor.ProjectType == ProjectType.Undefined)
             return;
 
         try
@@ -758,7 +743,7 @@ public class MapEditorScreen : EditorScreen
         }
 
         // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Smithbox.Instance.SaveConfiguration();
     }
 
 
@@ -786,7 +771,7 @@ public class MapEditorScreen : EditorScreen
                 MessageBoxIcon.Error);
             if (result == DialogResult.Yes)
             {
-                foreach (var entry in Project.MapData.MapFiles.Entries)
+                foreach (var entry in Project.Locator.MapFiles.Entries)
                 {
                     var currentContainer = Selection.GetMapContainerFromMapID(entry.Filename);
 

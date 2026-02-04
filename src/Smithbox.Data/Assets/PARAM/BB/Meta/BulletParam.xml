@@ -99,7 +99,7 @@
     <shootAngleInterval AltName="Launch Angle Interval" Wiki="When firing multiple missiles, specify how often to fire them. (Y-axis)" />
     <shootAngleXInterval AltName="Launch Elevation Interval" Wiki="When firing multiple missiles, specify how often to fire them. (X-axis)" />
     <damageDamp AltName="Damage Falloff: Physical" Wiki="Percentage reduction in physical damage per second." />
-    <magicDamageDamp AltName="Damage Falloff: Magic" Wiki="Percentage reduction in magic damage per second." />
+    <spelDamageDamp AltName="Damage Falloff: Magic" Wiki="Percentage reduction in magic damage per second." />
     <fireDamageDamp AltName="Damage Falloff: Fire" Wiki="Percentage reduction in fire damage per second." />
     <thunderDamageDamp AltName="Damage Falloff: Lightning" Wiki="Percentage reduction in lightning damage per second." />
     <staminaDamp AltName="Damage Falloff: Stamina" Wiki="Percentage reduction in stamina damage per second." />

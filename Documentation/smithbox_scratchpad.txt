@@ -1,0 +1,12 @@
+#---------------------
+# TODO 
+#---------------------
+- Maybe: implement viewport instances for Model/Map Editor, i.e. multiple viewports for the same loaded data
+
+- Adjust DS2 loose params + system/graphics/event param loading to use VFS since they aren't present without unpacking
+
+- Implement Views for File Browser
+- Implement Views for Model Editor
+- Implement Views for Map Editor
+
+# TODO:

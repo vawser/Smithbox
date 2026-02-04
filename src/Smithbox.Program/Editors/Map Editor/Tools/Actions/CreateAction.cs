@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,9 +40,12 @@ public class CreateAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateMapObject) && Editor.ViewportSelection.IsSelection())
+        if(Editor.ViewportSelection.IsSelection())
         {
-            Editor.CreateAction.ApplyObjectCreation();
+            if (InputManager.IsPressed(KeybindID.MapEditor_Create_Map_Object))
+            {
+                Editor.CreateAction.ApplyObjectCreation();
+            }
         }
     }
 
@@ -84,7 +88,7 @@ public class CreateAction
 
         ImGui.BeginChild("##mapSelectionSection", sectionSize, ImGuiChildFlags.Borders);
 
-        foreach (var entry in Project.MapData.PrimaryBank.Maps)
+        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
         {
             var mapID = entry.Key.Filename;
             var map = entry.Value.MapContainer;
@@ -284,7 +288,7 @@ public class CreateAction
     public void PopulateClassNames()
     {
         Type msbclass;
-        switch (Editor.Project.ProjectType)
+        switch (Editor.Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 msbclass = typeof(MSBD);

@@ -90,13 +90,13 @@ public class FlverResource : IResource, IDisposable
     {
         VirtPath = virtPath;
 
-        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject != null)
+        if (Smithbox.Orchestrator.SelectedProject != null)
         {
-            var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+            var curProject = Smithbox.Orchestrator.SelectedProject;
 
             bool ret;
 
-            if (curProject.ProjectType is ProjectType.DES)
+            if (curProject.Descriptor.ProjectType is ProjectType.DES)
             {
                 FlverDeS = FLVER0.Read(bytes);
                 ret = LoadInternalDeS(al);
@@ -104,8 +104,8 @@ public class FlverResource : IResource, IDisposable
             else
             {
                 if (al == AccessLevel.AccessGPUOptimizedOnly &&
-                    curProject.ProjectType != ProjectType.DS1R &&
-                    curProject.ProjectType != ProjectType.DS1)
+                    curProject.Descriptor.ProjectType != ProjectType.DS1R &&
+                    curProject.Descriptor.ProjectType != ProjectType.DS1)
                 {
                     BinaryReaderEx br = new(false, bytes);
                     Flver = FLVER2.Read(bytes);
@@ -150,24 +150,24 @@ public class FlverResource : IResource, IDisposable
     {
         VirtPath = virtPath;
 
-        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.Orchestrator.SelectedProject == null)
             return false;
 
         // Small hack so the chrbnd's that are passed here are skipped.
         if (!(relativePath.Contains(".flv")))
             return false;
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         try
         {
-            var fileData = curProject.FS.ReadFile(relativePath);
+            var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
             bool ret = false;
 
             if (fileData != null && fileData.Value.Length > 1)
             {
-                if (curProject.ProjectType is ProjectType.DES)
+                if (curProject.Descriptor.ProjectType is ProjectType.DES)
                 {
                     FlverDeS = FLVER0.Read(fileData.Value);
                     ret = LoadInternalDeS(al);
@@ -175,8 +175,8 @@ public class FlverResource : IResource, IDisposable
                 else
                 {
                     if (al == AccessLevel.AccessGPUOptimizedOnly &&
-                        curProject.ProjectType != ProjectType.DS1R &&
-                        curProject.ProjectType != ProjectType.DS1)
+                        curProject.Descriptor.ProjectType != ProjectType.DS1R &&
+                        curProject.Descriptor.ProjectType != ProjectType.DS1)
                     {
                         BinaryReaderEx br = new(false, fileData.Value);
                         DCX.Type ctype;
@@ -204,15 +204,15 @@ public class FlverResource : IResource, IDisposable
     private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string? type, string mpath,
         string mtd)
     {
-        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+        if (Smithbox.Orchestrator.SelectedProject == null)
             return;
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (curProject.MaterialData == null || curProject.MaterialData.PrimaryBank == null)
+        if (curProject.Handler.MaterialData == null || curProject.Handler.MaterialData.PrimaryBank == null)
             return;
 
-        var bank = curProject.MaterialData.PrimaryBank;
+        var bank = curProject.Handler.MaterialData.PrimaryBank;
 
         var path = mpath;
 
@@ -240,7 +240,7 @@ public class FlverResource : IResource, IDisposable
             }
 
             // MATBIN
-            if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 matbin = bank.GetMatbin(mtdstring);
 
@@ -325,12 +325,12 @@ public class FlverResource : IResource, IDisposable
             //TaskLogs.AddLog($"[Smithbox] LISTENER for {virtualPath}");
 
             // Used to allow for association of models and textures
-            if (ResourceManager.BaseEditor.ProjectManager.SelectedProject.FocusedEditor is MapEditorScreen)
+            if (Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor is MapEditorScreen)
             {
                 MapModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
             }
 
-            if (ResourceManager.BaseEditor.ProjectManager.SelectedProject.FocusedEditor is ModelEditorScreen)
+            if (Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor is ModelEditorScreen)
             {
                 ModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
             }
@@ -347,7 +347,7 @@ public class FlverResource : IResource, IDisposable
     private void ProcessMaterialTexture(FlverMaterial dest, string texType, string mpath, string mtd,
         out bool blend, out bool hasNormal2, out bool hasSpec2, out bool hasShininess2, out bool blendMask)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         blend = false;
         blendMask = false;
@@ -392,7 +392,7 @@ public class FlverResource : IResource, IDisposable
         else if (paramNameCheck == "G_SPECULARTEXTURE2" || paramNameCheck == "G_SPECULAR2" ||
                  paramNameCheck.Contains("SPECULAR_2"))
         {
-            if (curProject.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
+            if (curProject.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
             {
                 LookupTexture(FlverMaterial.TextureType.ShininessTextureResource2, dest, texType, mpath, mtd);
                 blend = true;
@@ -408,7 +408,7 @@ public class FlverResource : IResource, IDisposable
         else if (paramNameCheck == "G_SPECULARTEXTURE" || paramNameCheck == "G_SPECULAR" ||
                  paramNameCheck.Contains("SPECULAR"))
         {
-            if (curProject.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
+            if (curProject.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
             {
                 LookupTexture(FlverMaterial.TextureType.ShininessTextureResource, dest, texType, mpath, mtd);
             }
@@ -438,7 +438,7 @@ public class FlverResource : IResource, IDisposable
 
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         dest.MaterialName = Path.GetFileNameWithoutExtension(mat.MTD);
         dest.MaterialBuffer = SceneRenderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
@@ -453,7 +453,7 @@ public class FlverResource : IResource, IDisposable
         dest.SpecializationConstants = new List<SpecializationConstant>();
 
         //FLVER0 stores layouts directly in the material
-        if (curProject.ProjectType is ProjectType.DES)
+        if (curProject.Descriptor.ProjectType is ProjectType.DES)
         {
             var desMat = (FLVER0.Material)mat;
             var foundBoneIndices = false;
@@ -528,7 +528,7 @@ public class FlverResource : IResource, IDisposable
         }
 
         List<SpecializationConstant> specConstants = new();
-        specConstants.Add(new SpecializationConstant(0, (uint)curProject.ProjectType));
+        specConstants.Add(new SpecializationConstant(0, (uint)curProject.Descriptor.ProjectType));
         if (blend || blendMask)
         {
             specConstants.Add(new SpecializationConstant(1, hasNormal2));
@@ -546,7 +546,7 @@ public class FlverResource : IResource, IDisposable
     private unsafe void ProcessMaterial(FlverMaterial dest, BinaryReaderEx br,
         ref FlverMaterialDef mat, Span<FlverTexture> textures, bool isUTF)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         var mtd = isUTF ? br.GetUTF16(mat.mtdOffset) : br.GetShiftJIS(mat.mtdOffset);
         var matName = isUTF ? br.GetUTF16(mat.nameOffset) : br.GetShiftJIS(mat.nameOffset);
@@ -598,7 +598,7 @@ public class FlverResource : IResource, IDisposable
         }
 
         List<SpecializationConstant> specConstants = new();
-        specConstants.Add(new SpecializationConstant(0, (uint)curProject.ProjectType));
+        specConstants.Add(new SpecializationConstant(0, (uint)curProject.Descriptor.ProjectType));
         if (blend || blendMask)
         {
             specConstants.Add(new SpecializationConstant(1, hasNormal2));
@@ -1286,7 +1286,7 @@ public class FlverResource : IResource, IDisposable
 
     private unsafe void ProcessMesh(FLVER0.Mesh mesh, FlverSubmesh dest)
     {
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         ResourceFactory? factory = SceneRenderer.Factory;
 
@@ -1432,7 +1432,7 @@ public class FlverResource : IResource, IDisposable
         if (mesh.Vertices == null)
             return;
 
-        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         if (Flver == null)
             return;

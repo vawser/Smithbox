@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Linq;
 
@@ -22,9 +23,12 @@ public class DeleteAction
     /// </summary>
     public void OnShortcut()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry) && Editor.ViewportSelection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ApplyDelete();
+            if (InputManager.IsPressed(KeybindID.Delete))
+            {
+                ApplyDelete();
+            }
         }
     }
 
@@ -37,7 +41,7 @@ public class DeleteAction
         {
             ApplyDelete();
         }
-        UIHelper.Tooltip($"Delete the currently selected model objects.\n\nShortcut: {KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
+        UIHelper.Tooltip($"Delete the currently selected model objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Delete)}");
     }
 
     /// <summary>
@@ -45,7 +49,7 @@ public class DeleteAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
+        if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
         {
             ApplyDelete();
         }

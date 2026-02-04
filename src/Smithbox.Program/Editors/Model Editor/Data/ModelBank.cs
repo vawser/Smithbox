@@ -11,9 +11,8 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelBank
+public class ModelBank : IDisposable
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
 
     public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
@@ -28,9 +27,8 @@ public class ModelBank
     public Dictionary<FileDictionaryEntry, ModelContainerWrapper> Parts = new();
     public Dictionary<FileDictionaryEntry, ModelContainerWrapper> Collisions = new();
 
-    public ModelBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
+    public ModelBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
     {
-        BaseEditor = baseEditor;
         Project = project;
         Name = name;
         TargetFS = targetFs;
@@ -41,9 +39,9 @@ public class ModelBank
         await Task.Yield();
 
         // Map Pieces
-        foreach (var entry in Project.ModelData.MapPieceFiles.Entries)
+        foreach (var entry in Project.Locator.MapPieceFiles.Entries)
         {
-            var newEntry = new ModelContainerWrapper(BaseEditor, Project, entry, TargetFS);
+            var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
             newEntry.DeriveMapID();
 
             if(!MapPieces.ContainsKey(entry))
@@ -54,9 +52,9 @@ public class ModelBank
         }
 
         // Characters
-        foreach (var entry in Project.ModelData.ChrFiles.Entries)
+        foreach (var entry in Project.Locator.ChrFiles.Entries)
         {
-            var newEntry = new ModelContainerWrapper(BaseEditor, Project, entry, TargetFS);
+            var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
 
             if (!Characters.ContainsKey(entry))
                 Characters.Add(entry, newEntry);
@@ -66,9 +64,9 @@ public class ModelBank
         }
 
         // Assets
-        foreach (var entry in Project.ModelData.AssetFiles.Entries)
+        foreach (var entry in Project.Locator.AssetFiles.Entries)
         {
-            var newEntry = new ModelContainerWrapper(BaseEditor, Project, entry, TargetFS);
+            var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
 
             if (!Assets.ContainsKey(entry))
                 Assets.Add(entry, newEntry);
@@ -78,9 +76,9 @@ public class ModelBank
         }
 
         // Parts
-        foreach (var entry in Project.ModelData.PartFiles.Entries)
+        foreach (var entry in Project.Locator.PartFiles.Entries)
         {
-            var newEntry = new ModelContainerWrapper(BaseEditor, Project, entry, TargetFS);
+            var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
 
             if (!Parts.ContainsKey(entry))
                 Parts.Add(entry, newEntry);
@@ -90,9 +88,9 @@ public class ModelBank
         }
 
         // Collisions
-        foreach (var entry in Project.ModelData.CollisionFiles.Entries)
+        foreach (var entry in Project.Locator.CollisionFiles.Entries)
         {
-            var newEntry = new ModelContainerWrapper(BaseEditor, Project, entry, TargetFS);
+            var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
 
             if (!Collisions.ContainsKey(entry))
                 Collisions.Add(entry, newEntry);
@@ -103,11 +101,29 @@ public class ModelBank
 
         return true;
     }
+
+    #region Dispose
+    public void Dispose()
+    {
+        Models.Clear();
+        MapPieces.Clear();
+        Characters.Clear();
+        Assets.Clear();
+        Parts.Clear();
+        Collisions.Clear();
+
+        Models = null;
+        MapPieces = null;
+        Characters = null;
+        Assets = null;
+        Parts = null;
+        Collisions = null;
+    }
+    #endregion
 }
 
 public class ModelContainerWrapper
 {
-    public Smithbox BaseEditor;
     public ProjectEntry Project;
     public VirtualFileSystem TargetFS;
 
@@ -118,9 +134,8 @@ public class ModelContainerWrapper
 
     public List<ModelWrapper> Models { get; set; }
 
-    public ModelContainerWrapper(Smithbox baseEditor, ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
+    public ModelContainerWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
     {
-        BaseEditor = baseEditor;
         Project = project;
         TargetFS = targetFS;
         Name = dictEntry.Filename;
@@ -136,7 +151,7 @@ public class ModelContainerWrapper
     {
         var parts = Path.Split("/");
 
-        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             // '/map/m30/m30_00_00_00/...'
             if(parts.Length >= 3)
@@ -168,7 +183,7 @@ public class ModelContainerWrapper
 
         if (binderType is ResourceContainerType.BND)
         {
-            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 try
                 {
@@ -191,7 +206,7 @@ public class ModelContainerWrapper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to read {Path} during model load.", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Model Editor] Failed to read {Path} during model load.", e);
                 }
             }
             else
@@ -217,7 +232,7 @@ public class ModelContainerWrapper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to read {Path} during model load.", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Model Editor] Failed to read {Path} during model load.", e);
                 }
             }
         }
@@ -236,7 +251,7 @@ public class ModelContainerWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to read {targetBhdPath} during model load.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Model Editor] Failed to read {targetBhdPath} during model load.", e);
             }
 
             try
@@ -245,12 +260,12 @@ public class ModelContainerWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to read {targetBdtPath} during model load.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Model Editor] Failed to read {targetBdtPath} during model load.", e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
             {
-                if (Project.ProjectType is ProjectType.DES
+                if (Project.Descriptor.ProjectType is ProjectType.DES
                     or ProjectType.DS1
                     or ProjectType.DS1R)
                 {
@@ -318,7 +333,7 @@ public class ModelWrapper
 
         if (binderType is ResourceContainerType.BND)
         {
-            if (Parent.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (Parent.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 try
                 {
@@ -344,7 +359,7 @@ public class ModelWrapper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to read {Parent.Path} during model load.", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Model Editor] Failed to read {Parent.Path} during model load.", e);
                 }
             }
             else
@@ -373,7 +388,7 @@ public class ModelWrapper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to read {Parent.Path} during model load.", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Model Editor] Failed to read {Parent.Path} during model load.", e);
                 }
             }
         }
@@ -392,7 +407,7 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to read {targetBhdPath} during model load.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Model Editor] Failed to read {targetBhdPath} during model load.", e);
             }
 
             try
@@ -401,12 +416,12 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to read {targetBdtPath} during model load.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Model Editor] Failed to read {targetBdtPath} during model load.", e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
             {
-                if (Parent.Project.ProjectType is ProjectType.DES
+                if (Parent.Project.Descriptor.ProjectType is ProjectType.DES
                     or ProjectType.DS1
                     or ProjectType.DS1R)
                 {
@@ -449,17 +464,17 @@ public class ModelWrapper
 
         if (FLVER != null)
         {
-            Parent.Project.ModelEditor.Universe.LoadModel(this);
+            Parent.Project.Handler.ModelEditor.Universe.LoadModel(this);
         }
     }
 
 
     public void Unload()
     {
-        Parent.Project.ModelEditor.EditorActionManager.Clear();
-        Parent.Project.ModelEditor.EntityTypeCache.InvalidateCache();
+        Parent.Project.Handler.ModelEditor.EditorActionManager.Clear();
+        Parent.Project.Handler.ModelEditor.EntityTypeCache.InvalidateCache();
 
-        Parent.Project.ModelEditor.Universe.UnloadModel(this);
+        Parent.Project.Handler.ModelEditor.Universe.UnloadModel(this);
     }
 
     public void UpdateFLVER()
@@ -518,18 +533,18 @@ public class ModelWrapper
         {
             try
             {
-                project.ProjectFS.WriteFile(containerPath, flverData);
-                TaskLogs.AddLog($"[Smithbox:Model Editor] Saved {containerPath}.");
+                project.VFS.ProjectFS.WriteFile(containerPath, flverData);
+                TaskLogs.AddInfo($"[Model Editor] Saved {containerPath}.");
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to write {containerPath} during model save.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Model Editor] Failed to write {containerPath} during model save.",e);
             }
         }
 
         if (binderType is ResourceContainerType.BND)
         {
-            if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 try
                 {
@@ -552,13 +567,14 @@ public class ModelWrapper
                         }
 
                         var outBinderData = binder.Write();
-                        project.ProjectFS.WriteFile(containerPath, outBinderData);
-                        TaskLogs.AddLog($"[Smithbox:Model Editor] Saved {containerPath}.");
+                        project.VFS.ProjectFS.WriteFile(containerPath, outBinderData);
+
+                        TaskLogs.AddInfo($"[Model Editor] Saved {containerPath}.");
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to write {containerPath} during model save.", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Model Editor] Failed to write {containerPath} during model save.", e);
                 }
             }
             else
@@ -584,13 +600,14 @@ public class ModelWrapper
                         }
 
                         var outBinderData = binder.Write();
-                        project.ProjectFS.WriteFile(containerPath, outBinderData);
-                        TaskLogs.AddLog($"[Smithbox:Model Editor] Saved {containerPath}.");
+                        project.VFS.ProjectFS.WriteFile(containerPath, outBinderData);
+
+                        TaskLogs.AddInfo($"[Model Editor] Saved {containerPath}.");
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to write {containerPath} during model save.", LogLevel.Error, LogPriority.High, e);
+                    TaskLogs.AddError($"[Model Editor] Failed to write {containerPath} during model save.", e);
                 }
             }
         }
@@ -603,8 +620,8 @@ public class ModelWrapper
             var targetBhdPath = containerPath;
             var targetBdtPath = containerPath.Replace("bhd", "bdt");
 
-            var writePathBhd = Path.Combine(project.ProjectPath, targetBhdPath);
-            var writePathBdt = Path.Combine(project.ProjectPath, targetBdtPath);
+            var writePathBhd = Path.Combine(project.Descriptor.ProjectPath, targetBhdPath);
+            var writePathBdt = Path.Combine(project.Descriptor.ProjectPath, targetBdtPath);
 
             try
             {
@@ -612,7 +629,7 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to write {targetBhdPath} during model save.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Model Editor] Failed to write {targetBhdPath} during model save.", e);
             }
 
             try
@@ -621,12 +638,12 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to write {targetBdtPath} during model save.", LogLevel.Error, LogPriority.High, e);
+                TaskLogs.AddError($"[Model Editor] Failed to write {targetBdtPath} during model save.", e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
             {
-                if (project.ProjectType is ProjectType.DES
+                if (project.Descriptor.ProjectType is ProjectType.DES
                     or ProjectType.DS1
                     or ProjectType.DS1R)
                 {
@@ -650,9 +667,10 @@ public class ModelWrapper
 
                     binder.Write(out bhdData, out bdtData);
 
-                    project.ProjectFS.WriteFile(writePathBhd, bhdData);
-                    project.ProjectFS.WriteFile(writePathBhd, bdtData);
-                    TaskLogs.AddLog($"[Smithbox:Model Editor] Saved {containerPath}.");
+                    project.VFS.ProjectFS.WriteFile(writePathBhd, bhdData);
+                    project.VFS.ProjectFS.WriteFile(writePathBhd, bdtData);
+
+                    TaskLogs.AddInfo($"[Model Editor] Saved {containerPath}.");
                 }
                 else
                 {
@@ -676,9 +694,10 @@ public class ModelWrapper
 
                     binder.Write(out bhdData, out bdtData);
 
-                    project.ProjectFS.WriteFile(writePathBhd, bhdData);
-                    project.ProjectFS.WriteFile(writePathBhd, bdtData);
-                    TaskLogs.AddLog($"[Smithbox:Model Editor] Saved {containerPath}.");
+                    project.VFS.ProjectFS.WriteFile(writePathBhd, bhdData);
+                    project.VFS.ProjectFS.WriteFile(writePathBhd, bdtData);
+
+                    TaskLogs.AddInfo($"[Model Editor] Saved {containerPath}.");
                 }
             }
         }

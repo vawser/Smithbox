@@ -161,6 +161,13 @@ public abstract unsafe class PlatformUtils
         return dialogResult.IsOk;
     }
 
+    public bool OpenFileDialog(string title, out string path)
+    {
+        NativeFileDialogSharp.DialogResult dialogResult = Dialog.FileOpen();
+        path = dialogResult.Path;
+        return dialogResult.IsOk;
+    }
+
     public bool OpenMultiFileDialog(string title, IReadOnlyList<string> filters, out IReadOnlyList<string> paths)
     {
         NativeFileDialogSharp.DialogResult

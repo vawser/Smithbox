@@ -145,6 +145,18 @@
     AltName="Execution Invalid Time" 
     Wiki="Invalid time after execution (-infinite by value)" 
     DefaultValue="0" />
+	
+	<interactIconOffset_X
+	AltName="Interaction Icon Offset: X"
+	Wiki="Offset for interaction icon position" />
+	
+	<interactIconOffset_Y
+	AltName="Interaction Icon Offset: Y"
+	Wiki="Offset for interaction icon position" />
+	
+	<interactIconOffset_Z
+	AltName="Interaction Icon Offset: Z"
+	Wiki="Offset for interaction icon position" />
     
     <padding6 
     Padding=""/>

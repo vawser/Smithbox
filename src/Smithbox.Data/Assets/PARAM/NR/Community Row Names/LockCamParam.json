@@ -4,11 +4,17 @@
     {
       "ID": 0,
       "Entries": [
-        ""
+        "Default"
       ]
     },
     {
       "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
       "Entries": [
         ""
       ]
@@ -46,19 +52,19 @@
     {
       "ID": 1020,
       "Entries": [
-        ""
+        "[Spell] Large Spell"
       ]
     },
     {
       "ID": 1021,
       "Entries": [
-        ""
+        "[Spell] Very Large Spell"
       ]
     },
     {
       "ID": 1022,
       "Entries": [
-        ""
+        "[Spell] Tall Large Spell"
       ]
     },
     {
@@ -82,7 +88,7 @@
     {
       "ID": 1050,
       "Entries": [
-        ""
+        "[Crit] Vs Large Enemy"
       ]
     },
     {
@@ -100,19 +106,19 @@
     {
       "ID": 1062,
       "Entries": [
-        ""
+        "[Wylder] Ultimate"
       ]
     },
     {
       "ID": 1063,
       "Entries": [
-        ""
+        "[Wylder] Skill: Relic Followup"
       ]
     },
     {
       "ID": 1064,
       "Entries": [
-        ""
+        "Surge Sprint"
       ]
     },
     {
@@ -130,19 +136,19 @@
     {
       "ID": 1067,
       "Entries": [
-        ""
+        "[Guardian] Skill"
       ]
     },
     {
       "ID": 1068,
       "Entries": [
-        ""
+        "[Guardian] Ultimate"
       ]
     },
     {
       "ID": 1069,
       "Entries": [
-        ""
+        "Unused Special Jump Attacks"
       ]
     },
     {
@@ -194,6 +200,24 @@
       ]
     },
     {
+      "ID": 1080,
+      "Entries": [
+        "[Undertaker] Ultimate"
+      ]
+    },
+    {
+      "ID": 1081,
+      "Entries": [
+        "[Undertaker] Trance Running"
+      ]
+    },
+    {
+      "ID": 1082,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 1100,
       "Entries": [
         ""
@@ -220,7 +244,7 @@
     {
       "ID": 1500,
       "Entries": [
-        ""
+        "[Executor] Ultimate: As Beast Form"
       ]
     },
     {
@@ -596,6 +620,18 @@
       ]
     },
     {
+      "ID": 4420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 4430,
       "Entries": [
         ""
@@ -776,6 +812,24 @@
       ]
     },
     {
+      "ID": 4642,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4643,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4644,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 4650,
       "Entries": [
         "Dragonkin Soldier"
@@ -938,6 +992,12 @@
       ]
     },
     {
+      "ID": 4801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 4810,
       "Entries": [
         "Erdtree Avatar"
@@ -1058,9 +1118,75 @@
       ]
     },
     {
+      "ID": 5011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5081,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 5119,
       "Entries": [
         "Spirit Eel"
+      ]
+    },
+    {
+      "ID": 5190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5191,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5212,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -1073,6 +1199,36 @@
       "ID": 5241,
       "Entries": [
         "Runebear"
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5860,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5861,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -1346,6 +1502,138 @@
       ]
     },
     {
+      "ID": 7610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7612,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7613,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7614,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7615,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7616,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7617,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7618,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7619,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7620,
+      "Entries": [
+        "Weapon-Bequeathed Harmonia"
+      ]
+    },
+    {
+      "ID": 7621,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7622,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7623,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7624,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7625,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7626,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7628,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7629,
+      "Entries": [
+        "Weapon-Bequeathed Harmonia (Everdark Phase 2"
+      ]
+    },
+    {
+      "ID": 7650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7660,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 7700,
       "Entries": [
         "Gaping Dragon"
@@ -1373,6 +1661,24 @@
       "ID": 7715,
       "Entries": [
         "Centipede Grub"
+      ]
+    },
+    {
+      "ID": 7720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7721,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7722,
+      "Entries": [
+        ""
       ]
     },
     {

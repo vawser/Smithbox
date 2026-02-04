@@ -5,12 +5,12 @@ namespace StudioCore.Editors.MaterialEditor;
 
 public class MaterialSelection
 {
-    public MaterialEditorScreen Editor;
+    public MaterialEditorView Parent;
     public ProjectEntry Project;
 
-    public MaterialSelection(MaterialEditorScreen editor, ProjectEntry project)
+    public MaterialSelection(MaterialEditorView view, ProjectEntry project)
     {
-        Editor = editor; 
+        Parent = view; 
         Project = project;
     }
 
@@ -28,7 +28,6 @@ public class MaterialSelection
 
     public MATBIN SelectedMATBIN { get; set; }
 
-    // MTD
-    public int SelectedTextureIndex { get; set; } = -1;
-
+    // Focus
+    public bool SelectFileListEntry = false;
 }

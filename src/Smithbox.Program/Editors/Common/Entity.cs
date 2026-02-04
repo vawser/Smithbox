@@ -1773,17 +1773,17 @@ public class MsbEntity : Entity
         {
             var curEditor = (MapEditorScreen)Editor;
 
-            curProjectType = curEditor.Project.ProjectType;
+            curProjectType = curEditor.Project.Descriptor.ProjectType;
 
-            paramEditor = curEditor.Project.ParamEditor;
+            paramEditor = curEditor.Project.Handler.ParamEditor;
         }
 
         if (paramEditor == null)
             return null;
 
-        if (paramEditor.Project.ParamData.PrimaryBank.Params.ContainsKey("NpcParam"))
+        if (paramEditor.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey("NpcParam"))
         {
-            var npcParam = paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"];
+            var npcParam = paramEditor.Project.Handler.ParamData.PrimaryBank.Params?["NpcParam"];
 
             switch (curProjectType)
             {
@@ -2277,7 +2277,11 @@ public class PlacementEntity : Entity
         {
             var curEditor = (MapEditorScreen)editor;
             var universe = curEditor.Universe;
-            _renderSceneMesh = DrawableHelper.GetPlacementOrbDrawable(universe.RenderScene, this);
+
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                _renderSceneMesh = DrawableHelper.GetPlacementOrbDrawable(universe.RenderScene, this);
+            }
         }
     }
 

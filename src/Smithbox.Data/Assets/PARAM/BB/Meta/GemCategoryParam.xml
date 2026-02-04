@@ -5,7 +5,7 @@
 	<manifestRate AltName="Appearance Rate by Category" Wiki="" />
 	<directionalId AltName="Directional ID" Wiki="" />
 	<cateGroupId AltName="Category Group ID" Wiki="" />
-	<excludeGroupId AltName="Exclusive Group ID" Wiki="" />
+	<excludeGroupId AltName="Exclusive Group ID" Wiki="Entries with the same ID cannot appear together." />
 	<isNegative AltName="Is Negative Effect" Wiki="" IsBool=""/>
 	<enableSlotTypeA AltName="Enable Slot Type A" Wiki="" IsBool=""/>
 	<enableSlotTypeB AltName="Enable Slot Type B" Wiki="" IsBool=""/>
