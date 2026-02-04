@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexContainerListMenu
+public class TexContainerList
 {
-    public TexView Parent;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
-    public TexContainerListMenu(TexView view, ProjectEntry project)
+    public TexContainerList(TexEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;

@@ -84,7 +84,7 @@ public class TexCommandQueue
                 activeView.Selection.SelectTextureEntry(entry.Name, entry);
 
                 // TODO: fix this not properly working: the texture entry needs to be pressed again for the texture to appear after the editor switch
-                activeView.TextureFileListMenu.LoadTexture = true;
+                activeView.FileList.LoadTexture = true;
                 break;
             }
 

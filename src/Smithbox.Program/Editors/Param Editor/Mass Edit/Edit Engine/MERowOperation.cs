@@ -11,9 +11,9 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row)>
 {
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
-    public MERowOperation(ParamView curView)
+    public MERowOperation(ParamEditorView curView)
     {
         CurrentView = curView;
         operations.Clear();

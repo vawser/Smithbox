@@ -10,9 +10,9 @@ namespace StudioCore.Editors.ParamEditor;
 public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamSelection, (ParamMassEditRowSource,
     Param.Row), (ParamBank, Param), Param.Row>
 {
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
-    public ParamAndRowSearchEngine(ParamView curView, MassEdit massEdit)
+    public ParamAndRowSearchEngine(ParamEditorView curView, MassEdit massEdit)
     {
         CurrentView = curView;
 

@@ -6,12 +6,12 @@ using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexDisplayWindow
+public class TexDisplayViewport
 {
-    public TexView Parent;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
-    public TexDisplayWindow(TexView view, ProjectEntry project)
+    public TexDisplayViewport(TexEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;
@@ -56,8 +56,8 @@ public class TexDisplayWindow
                 if (includeZoomFactor)
                 {
                     size = new Vector2(
-                        (Width * Parent.ViewerZoom.GetZoomFactorWidth()), 
-                        (Height * Parent.ViewerZoom.GetZoomFactorHeight()));
+                        (Width * Parent.ZoomState.GetZoomFactorWidth()), 
+                        (Height * Parent.ZoomState.GetZoomFactorHeight()));
                 }
                 else
                 {
@@ -109,8 +109,8 @@ public class TexDisplayWindow
         relativePos.Y = cursorPos.Y - ((windowPos.Y + fixedY) - scrollPos.Y);
 
         // Account for zoom
-        relativePos.X = relativePos.X / Parent.ViewerZoom.GetZoomFactorWidth();
-        relativePos.Y = relativePos.Y / Parent.ViewerZoom.GetZoomFactorHeight();
+        relativePos.X = relativePos.X / Parent.ZoomState.GetZoomFactorWidth();
+        relativePos.Y = relativePos.Y / Parent.ZoomState.GetZoomFactorHeight();
 
         return relativePos;
     }

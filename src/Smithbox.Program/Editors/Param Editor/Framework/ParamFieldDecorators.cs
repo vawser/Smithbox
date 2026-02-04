@@ -23,9 +23,9 @@ public class ParamFieldDecorators
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
-    public ParamView ParentView;
+    public ParamEditorView ParentView;
 
-    public ParamFieldDecorators(ParamEditorScreen editor, ProjectEntry project, ParamView curView)
+    public ParamFieldDecorators(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
         Editor = editor;
         Project = project;
@@ -355,7 +355,7 @@ public class ParamFieldDecorators
 #region Field Meta Context
 public class FieldMetaContext
 {
-    public ParamView View;
+    public ParamEditorView View;
     public ParamMeta Meta;
     public ParamFieldMeta FieldMeta;
 
@@ -415,7 +415,7 @@ public class FieldMetaContext
 
     public bool DisplayTileReference = false;
 
-    public FieldMetaContext(ParamView curView, ParamMeta meta, ParamFieldMeta fieldMeta, string activeParam, string internalName)
+    public FieldMetaContext(ParamEditorView curView, ParamMeta meta, ParamFieldMeta fieldMeta, string activeParam, string internalName)
     {
         View = curView;
         Meta = meta;
@@ -564,7 +564,7 @@ public class FieldMetaContext
 #region Field Tooltip Helper
 public static class FieldTooltipHelper
 {
-    public static void IconTooltip(ParamView curView, FieldMetaContext context, Param.Column col)
+    public static void IconTooltip(ParamEditorView curView, FieldMetaContext context, Param.Column col)
     {
         if (col == null)
             return;
@@ -620,7 +620,7 @@ public static class FieldTooltipHelper
         }
     }
 
-    public static void HoverTooltip(ParamView curView, FieldMetaContext context, Param.Column col)
+    public static void HoverTooltip(ParamEditorView curView, FieldMetaContext context, Param.Column col)
     {
         if (col == null)
             return;
@@ -671,7 +671,7 @@ public static class EnumHelper
 {
     public static string enumSearchStr = "";
 
-    public static void Label(ParamView curView, ParamEnum pEnum)
+    public static void Label(ParamEditorView curView, ParamEnum pEnum)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -684,7 +684,7 @@ public static class EnumHelper
         }
     }
 
-    public static void Hint(ParamView curView, Dictionary<string, string> enumValues, string value)
+    public static void Hint(ParamEditorView curView, Dictionary<string, string> enumValues, string value)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -694,7 +694,7 @@ public static class EnumHelper
         ImGui.PopStyleColor(1);
     }
 
-    public static bool ContextMenu(ParamView curView, ParamEnum en, object oldval, ref object newval)
+    public static bool ContextMenu(ParamEditorView curView, ParamEnum en, object oldval, ref object newval)
     {
         ImGui.InputText("##enumSearch", ref enumSearchStr, 255);
 
@@ -740,7 +740,7 @@ public static class ProjectEnumHelper
 {
     public static string enumSearchStr = "";
 
-    public static void Label(ParamView curView, string enumType)
+    public static void Label(ParamEditorView curView, string enumType)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -760,7 +760,7 @@ public static class ProjectEnumHelper
         }
     }
 
-    public static void Hint(ParamView curView, string enumType, string value)
+    public static void Hint(ParamEditorView curView, string enumType, string value)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -784,7 +784,7 @@ public static class ProjectEnumHelper
         }
     }
 
-    public static bool ContextMenu(ParamView curView, ProjectEnumEntry en, object oldval, ref object newval)
+    public static bool ContextMenu(ParamEditorView curView, ProjectEnumEntry en, object oldval, ref object newval)
     {
         ImGui.InputText("##enumSearch", ref enumSearchStr, 255);
 
@@ -830,7 +830,7 @@ public static class AliasEnumHelper
 {
     public static string enumSearchStr = "";
 
-    public static void Label(ParamView curView, string name)
+    public static void Label(ParamEditorView curView, string name)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -845,7 +845,7 @@ public static class AliasEnumHelper
         }
     }
 
-    public static void Hint(ParamView curView, List<AliasEntry> entries, string value, bool isCharacterAlias = false)
+    public static void Hint(ParamEditorView curView, List<AliasEntry> entries, string value, bool isCharacterAlias = false)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -896,7 +896,7 @@ public static class AliasEnumHelper
         }
     }
 
-    public static bool ContextMenu(ParamView curView, List<AliasEntry> entries, object oldval, ref object newval)
+    public static bool ContextMenu(ParamEditorView curView, List<AliasEntry> entries, object oldval, ref object newval)
     {
         ImGui.InputText("##enumSearch", ref enumSearchStr, 255);
 
@@ -944,7 +944,7 @@ public static class ConditionalAliasEnumHelper
 {
     public static string enumSearchStr = "";
 
-    public static void Label(ParamView curView, string name, Param.Row row, string limitField, string limitValue)
+    public static void Label(ParamEditorView curView, string name, Param.Row row, string limitField, string limitValue)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -965,7 +965,7 @@ public static class ConditionalAliasEnumHelper
         }
     }
 
-    public static void Hint(ParamView curView, List<AliasEntry> entries, string value, Param.Row row, string conditionalField, string conditionalValue)
+    public static void Hint(ParamEditorView curView, List<AliasEntry> entries, string value, Param.Row row, string conditionalField, string conditionalValue)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -1009,7 +1009,7 @@ public static class ConditionalAliasEnumHelper
         }
     }
 
-    public static bool ContextMenu(ParamView curView, List<AliasEntry> entries, object oldval, ref object newval)
+    public static bool ContextMenu(ParamEditorView curView, List<AliasEntry> entries, object oldval, ref object newval)
     {
         ImGui.InputText("##enumSearch", ref enumSearchStr, 255);
 
@@ -1057,7 +1057,7 @@ public static class ParamReferenceHelper
 {
     private static string _refContextCurrentAutoComplete = "";
 
-    public static void Label(ParamView curView, List<ParamRef> paramRefs, Param.Row context)
+    public static void Label(ParamEditorView curView, List<ParamRef> paramRefs, Param.Row context)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_References)
             return;
@@ -1140,7 +1140,7 @@ public static class ParamReferenceHelper
         ImGui.PopStyleVar();
     }
 
-    public static void Hint(ParamView curView, List<ParamRef> paramRefs, Param.Row context, dynamic oldval)
+    public static void Hint(ParamEditorView curView, List<ParamRef> paramRefs, Param.Row context, dynamic oldval)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_References)
             return;
@@ -1176,7 +1176,7 @@ public static class ParamReferenceHelper
         ImGui.EndGroup();
     }
 
-    public static bool ContextMenu(ParamView curView, List<ParamRef> reftypes, Param.Row context,
+    public static bool ContextMenu(ParamEditorView curView, List<ParamRef> reftypes, Param.Row context,
         object oldval, ref object newval, ActionManager executor)
     {
         if (curView.GetPrimaryBank().Params == null)
@@ -1284,7 +1284,7 @@ public static class ParamReferenceHelper
         return false;
     }
 
-    public static bool Click(ParamView curView, object oldval, Param.Row context, List<ParamRef> RefTypes)
+    public static bool Click(ParamEditorView curView, object oldval, Param.Row context, List<ParamRef> RefTypes)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Left) && InputManager.HasCtrlDown())
         {
@@ -1312,7 +1312,7 @@ public static class ParamReferenceHelper
         return false;
     }
 
-    public static bool Shortcut(ParamView curView, FieldMetaContext context, Param.Row row, object oldval, ref object newval)
+    public static bool Shortcut(ParamEditorView curView, FieldMetaContext context, Param.Row row, object oldval, ref object newval)
     {
         var result = false;
 
@@ -1355,7 +1355,7 @@ public static class ParamReferenceHelper
 #region Virtual Param Reference Helper
 public static class VirtualParamReferenceHelper
 {
-    public static bool ContextMenu(ParamView curView, string virtualRefName, object searchValue,
+    public static bool ContextMenu(ParamEditorView curView, string virtualRefName, object searchValue,
         Param.Row context, string fieldName)
     {
         // Add Goto statements
@@ -1399,7 +1399,7 @@ public static class VirtualParamReferenceHelper
 #region External Reference Helper
 public static class ExternalReferenceHelper
 {
-    public static bool ContextMenu(ParamView curView, string virtualRefName, object searchValue,
+    public static bool ContextMenu(ParamEditorView curView, string virtualRefName, object searchValue,
         Param.Row context, string fieldName, List<ExtRef> ExtRefs)
     {
         if (ExtRefs != null)
@@ -1418,7 +1418,7 @@ public static class ExternalReferenceHelper
         return false;
     }
 
-    public static void Item(ParamView curView, Param.Row keyRow, string fieldKey, string menuText,
+    public static void Item(ParamEditorView curView, Param.Row keyRow, string fieldKey, string menuText,
         List<string> matchedExtRefPath, string dir)
     {
         var exist = CacheBank.GetCached(curView.Editor, keyRow, $"extRef{menuText}{fieldKey}",
@@ -1448,7 +1448,7 @@ public static class ExternalReferenceHelper
 #region Text Reference Helper
 public static class TextReferenceHelper
 {
-    public static void Label(ParamView curView, List<FMGRef> fmgRef, Param.Row context, string overrideName = "")
+    public static void Label(ParamEditorView curView, List<FMGRef> fmgRef, Param.Row context, string overrideName = "")
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_References)
             return;
@@ -1518,7 +1518,7 @@ public static class TextReferenceHelper
         ImGui.PopStyleVar();
     }
 
-    public static void Hint(ParamView curView, List<FMGRef> fmgNames, Param.Row context, dynamic oldval)
+    public static void Hint(ParamEditorView curView, List<FMGRef> fmgNames, Param.Row context, dynamic oldval)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_References)
             return;
@@ -1551,7 +1551,7 @@ public static class TextReferenceHelper
         ImGui.PopStyleColor();
     }
 
-    public static void Click(ParamView curView, object oldval, Param.Row context, List<FMGRef> fmgRefs, string roleOverride)
+    public static void Click(ParamEditorView curView, object oldval, Param.Row context, List<FMGRef> fmgRefs, string roleOverride)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Left) && InputManager.HasCtrlDown())
         {
@@ -1586,7 +1586,7 @@ public static class TextReferenceHelper
     //    }
     //}
 
-    public static bool ContextMenu(ParamView curView, List<FMGRef> reftypes, Param.Row context, dynamic oldval,
+    public static bool ContextMenu(ParamEditorView curView, List<FMGRef> reftypes, Param.Row context, dynamic oldval,
         ActionManager executor, string roleOverride = "")
     {
         List<TextResult> refs = ParamReferenceResolver.ResolveTextReferences(curView, reftypes, context, oldval);
@@ -1698,7 +1698,7 @@ public static class TextureReferenceHelper
 {
     public static Vector2 DummySize = new Vector2();
 
-    public static void Label(ParamView curView, IconConfig iconConfig, Param.Row context)
+    public static void Label(ParamEditorView curView, IconConfig iconConfig, Param.Row context)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
             return;
@@ -1711,7 +1711,7 @@ public static class TextureReferenceHelper
         ImGui.PopStyleVar();
     }
 
-    public static void Hint(ParamView curView, IconConfig fieldIcon, Param.Row context, dynamic oldval, string fieldName, int columnIndex)
+    public static void Hint(ParamEditorView curView, IconConfig fieldIcon, Param.Row context, dynamic oldval, string fieldName, int columnIndex)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
             return;
@@ -1735,7 +1735,7 @@ public static class TextureReferenceHelper
         ImGui.PopStyleColor();
     }
 
-    public static bool ContextMenu(ParamView curView)
+    public static bool ContextMenu(ParamEditorView curView)
     {
         return false;
     }
@@ -1745,7 +1745,7 @@ public static class TextureReferenceHelper
 #region AC6 Field Offset Helper
 public static class AC6_FieldOffsetHelper
 {
-    public static void Label(ParamView curView, string activeParam, Param.Row context, string index)
+    public static void Label(ParamEditorView curView, string activeParam, Param.Row context, string index)
     {
         // This feature is purely for AC6 MenuPropertySpecParam.
         if (activeParam == "MenuPropertySpecParam")
@@ -1758,7 +1758,7 @@ public static class AC6_FieldOffsetHelper
         }
     }
 
-    public static void Hint(ParamView curView, string activeParam, Param.Row context, string index)
+    public static void Hint(ParamEditorView curView, string activeParam, Param.Row context, string index)
     {
         // This feature is purely for AC6 MenuPropertySpecParam.
         if (activeParam == "MenuPropertySpecParam")
@@ -1875,7 +1875,7 @@ public static class AC6_FieldOffsetHelper
         }
     }
 
-    public static bool ContextMenu(ParamView curView)
+    public static bool ContextMenu(ParamEditorView curView)
     {
         return false;
     }
@@ -1888,7 +1888,7 @@ public static class CalcCorrectGraphHelper
     private static string ExportPath = "";
     private static GraphDataContext GraphContext = null;
 
-    public static void Display(ParamView curView, ParamMeta meta, Param.Row row, Vector2 graphSize)
+    public static void Display(ParamEditorView curView, ParamMeta meta, Param.Row row, Vector2 graphSize)
     {
         try
         {
@@ -2062,7 +2062,7 @@ public class GraphDataContext
 #region Tile Reference Helper
 public static class TileReferenceHelper
 {
-    public static void Label(ParamView curView, string enumType)
+    public static void Label(ParamEditorView curView, string enumType)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -2070,7 +2070,7 @@ public static class TileReferenceHelper
         ImGui.TextUnformatted($@"   <Tile>");
     }
 
-    public static void Hint(ParamView curView, string enumType, string value)
+    public static void Hint(ParamEditorView curView, string enumType, string value)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -2105,7 +2105,7 @@ public static class TileReferenceHelper
         }
     }
 
-    public static bool ContextMenu(ParamView curView, List<AliasEntry> entries, object oldval, ref object newval)
+    public static bool ContextMenu(ParamEditorView curView, List<AliasEntry> entries, object oldval, ref object newval)
     {
         return false;
     }
@@ -2117,7 +2117,7 @@ public static class FieldColorPicker
 {
     private static Vector3 heldColor = new();
 
-    public static void ColorPicker(ParamView curView, string activeParam, Param.Row row, string currentField)
+    public static void ColorPicker(ParamEditorView curView, string activeParam, Param.Row row, string currentField)
     {
         if (activeParam == null)
             return;
@@ -2162,7 +2162,7 @@ public static class FieldColorPicker
         }
     }
 
-    private static void DisplayColorPicker(ParamView curView, string activeParam, Param.Row curRow, string name, string redField, string greenField, string blueField)
+    private static void DisplayColorPicker(ParamEditorView curView, string activeParam, Param.Row curRow, string name, string redField, string greenField, string blueField)
     {
         var color = GetVector3Color(curRow, redField, greenField, blueField);
 

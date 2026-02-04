@@ -19,11 +19,11 @@ public class ParamFieldWindow
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
-    public ParamView ParentView;
+    public ParamEditorView ParentView;
 
     private Dictionary<string, PropertyInfo[]> _propCache = new();
 
-    public ParamFieldWindow(ParamEditorScreen editor, ProjectEntry project, ParamView curView)
+    public ParamFieldWindow(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
         Editor = editor;
         Project = project;

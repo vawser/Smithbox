@@ -24,7 +24,7 @@ public class ParamClipboard
         Project = project;
     }
 
-    public bool HasClipboardContents(ParamView curView)
+    public bool HasClipboardContents(ParamEditorView curView)
     {
         if (Editor.Project.Handler.ParamData.PrimaryBank.ClipboardRows.Count > 0)
         {
@@ -37,7 +37,7 @@ public class ParamClipboard
         return false;
     }
 
-    public void CopySelectionToClipboard(ParamView curView)
+    public void CopySelectionToClipboard(ParamEditorView curView)
     {
         if (curView.Selection.RowSelectionExists())
         {

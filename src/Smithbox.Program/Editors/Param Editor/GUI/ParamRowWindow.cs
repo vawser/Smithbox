@@ -19,7 +19,7 @@ public class ParamRowWindow
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
-    public ParamView ParentView;
+    public ParamEditorView ParentView;
 
     public readonly Dictionary<string, string> lastRowSearch = new();
     public bool _arrowKeyPressed;
@@ -29,7 +29,7 @@ public class ParamRowWindow
     public string TargetField = "";
     public string NameAdjustment = "";
 
-    public ParamRowWindow(ParamEditorScreen editor, ProjectEntry project, ParamView curView)
+    public ParamRowWindow(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
         Editor = editor;
         Project = project;

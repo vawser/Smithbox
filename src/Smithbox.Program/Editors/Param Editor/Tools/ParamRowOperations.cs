@@ -15,7 +15,7 @@ namespace StudioCore.Editors.ParamEditor;
 public static class ParamRowOperations
 {
     #region Set Row to Default
-    public static void SetRowToDefault(ParamView curView)
+    public static void SetRowToDefault(ParamEditorView curView)
     {
         var curParamKey = curView.Selection.GetActiveParam();
 
@@ -59,7 +59,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Copy Row Details
-    public static void CopyRowDetails(ParamView curView, bool includeName = false)
+    public static void CopyRowDetails(ParamEditorView curView, bool includeName = false)
     {
         var curParamKey = curView.Selection.GetActiveParam();
 
@@ -103,7 +103,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Proliferate Name
-    public static void ProliferateRowName(ParamView curView, string targetField)
+    public static void ProliferateRowName(ParamEditorView curView, string targetField)
     {
         if (targetField == null)
             return;
@@ -164,7 +164,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Inherit Row Name
-    public static void InheritRowName(ParamView curView, string targetField)
+    public static void InheritRowName(ParamEditorView curView, string targetField)
     {
         if (targetField == null)
             return;
@@ -224,7 +224,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Inherit Row Name from FMG
-    public static void InheritRowNameFromFMG(ParamView curView, string targetField)
+    public static void InheritRowNameFromFMG(ParamEditorView curView, string targetField)
     {
         if (targetField == null)
             return;
@@ -284,7 +284,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Inherit Row Name from Alias
-    public static void InheritRowNameFromAlias(ParamView curView, string targetField)
+    public static void InheritRowNameFromAlias(ParamEditorView curView, string targetField)
     {
         if (targetField == null)
             return;
@@ -405,7 +405,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Adjust Row Name
-    public static void AdjustRowName(ParamView curView, string adjustment, ParamRowNameAdjustType type)
+    public static void AdjustRowName(ParamEditorView curView, string adjustment, ParamRowNameAdjustType type)
     {
         if (string.IsNullOrEmpty(adjustment))
             return;

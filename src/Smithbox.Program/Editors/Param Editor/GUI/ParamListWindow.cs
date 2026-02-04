@@ -19,12 +19,12 @@ public class ParamListWindow
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
 
-    public ParamView ParentView;
+    public ParamEditorView ParentView;
 
     private string lastParamSearch = "";
     private string currentParamSearchString = "";
 
-    public ParamListWindow(ParamEditorScreen editor, ProjectEntry project, ParamView curView)
+    public ParamListWindow(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
         Editor = editor;
         Project = project;

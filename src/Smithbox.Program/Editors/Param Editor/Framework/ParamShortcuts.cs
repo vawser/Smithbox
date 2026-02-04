@@ -195,7 +195,7 @@ public class ParamShortcuts
             }
         }
     }
-    public bool AllowContextualShortcuts(ParamView curView)
+    public bool AllowContextualShortcuts(ParamEditorView curView)
     {
         if (ImGui.IsAnyItemActive())
         {

@@ -12,7 +12,7 @@ public class ParamFieldInput
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
-    public ParamView ParentView;
+    public ParamEditorView ParentView;
 
     private object _editedPropCache;
     private object _editedTypeCache;
@@ -20,7 +20,7 @@ public class ParamFieldInput
     private bool _changedCache;
     private bool _committedCache;
 
-    public ParamFieldInput(ParamEditorScreen editor, ProjectEntry project, ParamView curView)
+    public ParamFieldInput(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
         Editor = editor;
         Project = project;

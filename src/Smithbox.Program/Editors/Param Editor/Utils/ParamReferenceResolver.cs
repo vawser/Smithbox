@@ -12,7 +12,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamReferenceResolver
 {
-    public static List<(string, Param.Row, string)> ResolveParamReferences(ParamView curView, List<ParamRef> paramRefs, Param.Row context, dynamic oldval)
+    public static List<(string, Param.Row, string)> ResolveParamReferences(ParamEditorView curView, List<ParamRef> paramRefs, Param.Row context, dynamic oldval)
     {
         List<(string, Param.Row, string)> rows = new();
         if (curView.GetPrimaryBank().Params == null)
@@ -108,7 +108,7 @@ public static class ParamReferenceResolver
         return rows;
     }
 
-    public static List<TextResult> ResolveTextReferences(ParamView curView, List<FMGRef> fmgRefs, Param.Row context, dynamic oldval)
+    public static List<TextResult> ResolveTextReferences(ParamEditorView curView, List<FMGRef> fmgRefs, Param.Row context, dynamic oldval)
     {
         List<TextResult> newTextResults = new();
 

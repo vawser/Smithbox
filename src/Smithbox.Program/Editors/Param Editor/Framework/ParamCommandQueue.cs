@@ -44,7 +44,7 @@ public class ParamCommandQueue
                         activeView.JumpToSelectedRow = true;
                     }
 
-                    ParamView viewToModify = activeView;
+                    ParamEditorView viewToModify = activeView;
 
                     if (args[1].Equals("new"))
                     {
@@ -56,9 +56,9 @@ public class ParamCommandQueue
                         var parsable = int.TryParse(args[1], out cmdIndex);
 
                         if (parsable && cmdIndex >= 0 &&
-                            cmdIndex < viewHandler.ParamViews.Count)
+                            cmdIndex < viewHandler.ParamEditorViews.Count)
                         {
-                            viewToModify = viewHandler.ParamViews[cmdIndex];
+                            viewToModify = viewHandler.ParamEditorViews[cmdIndex];
                         }
                     }
 

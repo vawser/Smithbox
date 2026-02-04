@@ -19,7 +19,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public TexFilters Filters;
     public TexCommandQueue CommandQueue;
 
-    public TexToolMenu ToolMenu;
+    public TexToolView ToolView;
 
     public TextureViewerScreen(ProjectEntry project)
     {
@@ -31,7 +31,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         Filters = new TexFilters(this, Project);
         Shortcuts = new TexShortcuts(this, Project);
 
-        ToolMenu = new TexToolMenu(this, Project);
+        ToolView = new TexToolView(this, Project);
     }
 
     public string EditorName => "Texture Viewer##TextureViewerEditor";
@@ -54,7 +54,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             EditMenu();
             ViewMenu();
 
-            ToolMenu.DisplayMenubar();
+            ToolView.DisplayMenubar();
 
             ImGui.EndMenuBar();
         }
@@ -66,7 +66,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         if (ViewHandler.ActiveView != null)
         {
-            ToolMenu.Display();
+            ToolView.Display();
         }
     }
 

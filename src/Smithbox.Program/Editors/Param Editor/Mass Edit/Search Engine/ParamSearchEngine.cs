@@ -11,9 +11,9 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
 {
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
-    public ParamSearchEngine(ParamView curView)
+    public ParamSearchEngine(ParamEditorView curView)
     {
         CurrentView = curView;
         Setup();

@@ -16,7 +16,7 @@ public class MassEdit
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
     public MassEditTemplateMenu TemplateMenu;
 
@@ -52,7 +52,7 @@ public class MassEdit
     public MEValueOperation FieldOps;
     public MEOperationArgument OperationArgs;
 
-    public MassEdit(ParamEditorScreen editor, ProjectEntry project, ParamView parentView)
+    public MassEdit(ParamEditorScreen editor, ProjectEntry project, ParamEditorView parentView)
     {
         Editor = editor;
         Project = project;

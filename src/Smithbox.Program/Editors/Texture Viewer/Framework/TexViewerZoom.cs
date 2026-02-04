@@ -6,10 +6,10 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexViewerZoom
 {
-    public TexView Parent;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
-    public TexViewerZoom(TexView view, ProjectEntry project)
+    public TexViewerZoom(TexEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;

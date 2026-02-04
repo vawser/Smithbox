@@ -16,17 +16,17 @@ public class TexViewHandler
     public TextureViewerScreen Editor;
     public ProjectEntry Project;
 
-    public List<TexView> TexViews = new();
-    public TexView ActiveView;
+    public List<TexEditorView> TexViews = new();
+    public TexEditorView ActiveView;
 
-    public TexView ViewToClose = null;
+    public TexEditorView ViewToClose = null;
 
     public TexViewHandler(TextureViewerScreen editor, ProjectEntry project)
     {
         Editor = editor; 
         Project = project;
 
-        var initialView = new TexView(Editor, Project, 0);
+        var initialView = new TexEditorView(Editor, Project, 0);
 
         TexViews = [initialView];
         ActiveView = initialView;
@@ -48,7 +48,7 @@ public class TexViewHandler
         }
     }
 
-    public TexView AddView()
+    public TexEditorView AddView()
     {
         var index = 0;
         while (index < TexViews.Count)
@@ -61,7 +61,7 @@ public class TexViewHandler
             index++;
         }
 
-        TexView view = new(Editor, Project, index);
+        TexEditorView view = new(Editor, Project, index);
 
         if (index < TexViews.Count)
         {
@@ -77,7 +77,7 @@ public class TexViewHandler
         return view;
     }
 
-    public bool RemoveView(TexView view)
+    public bool RemoveView(TexEditorView view)
     {
         if (!TexViews.Contains(view))
         {
@@ -125,7 +125,7 @@ public class TexViewHandler
 
             if (CountViews() == 1)
             {
-                displayTitle = "Texture Viewer";
+                displayTitle = "Active View";
             }
 
             if (ImGui.Begin($@"{displayTitle}###TextureEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))

@@ -9,9 +9,9 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class MEGlobalOperation : MEOperation<ParamSelection, bool>
 {
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
-    public MEGlobalOperation(ParamView curView)
+    public MEGlobalOperation(ParamEditorView curView)
     {
         CurrentView = curView;
         operations.Clear();

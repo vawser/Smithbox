@@ -15,19 +15,19 @@ public class ParamViewHandler
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
 
-    public List<ParamView> ParamViews;
-    public ParamView ActiveView;
+    public List<ParamEditorView> ParamEditorViews;
+    public ParamEditorView ActiveView;
 
-    public ParamView ViewToClose = null;
+    public ParamEditorView ViewToClose = null;
 
     public ParamViewHandler(ParamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
 
-        var initialView = new ParamView(Editor, Project, 0);
+        var initialView = new ParamEditorView(Editor, Project, 0);
 
-        ParamViews = [initialView];
+        ParamEditorViews = [initialView];
         ActiveView = initialView;
     }
 
@@ -47,12 +47,12 @@ public class ParamViewHandler
         }
     }
 
-    public ParamView AddView()
+    public ParamEditorView AddView()
     {
         var index = 0;
-        while (index < ParamViews.Count)
+        while (index < ParamEditorViews.Count)
         {
-            if (ParamViews[index] == null)
+            if (ParamEditorViews[index] == null)
             {
                 break;
             }
@@ -60,15 +60,15 @@ public class ParamViewHandler
             index++;
         }
 
-        ParamView view = new(Editor, Project, index);
+        ParamEditorView view = new(Editor, Project, index);
 
-        if (index < ParamViews.Count)
+        if (index < ParamEditorViews.Count)
         {
-            ParamViews[index] = view;
+            ParamEditorViews[index] = view;
         }
         else
         {
-            ParamViews.Add(view);
+            ParamEditorViews.Add(view);
         }
 
         ActiveView = view;
@@ -76,18 +76,18 @@ public class ParamViewHandler
         return view;
     }
 
-    public bool RemoveView(ParamView view)
+    public bool RemoveView(ParamEditorView view)
     {
-        if (!ParamViews.Contains(view))
+        if (!ParamEditorViews.Contains(view))
         {
             return false;
         }
 
-        ParamViews[view.ViewIndex] = null;
+        ParamEditorViews[view.ViewIndex] = null;
 
         if (view == ActiveView || ActiveView == null)
         {
-            ActiveView = ParamViews.FindLast(e => e != null);
+            ActiveView = ParamEditorViews.FindLast(e => e != null);
         }
 
         return true;
@@ -95,14 +95,14 @@ public class ParamViewHandler
 
     public int CountViews()
     {
-        return ParamViews.Where(e => e != null).Count();
+        return ParamEditorViews.Where(e => e != null).Count();
     }
 
     public void HandleViews()
     {
         var activeView = ActiveView;
 
-        foreach (var view in ParamViews)
+        foreach (var view in ParamEditorViews)
         {
             if (view == null)
             {
@@ -131,7 +131,7 @@ public class ParamViewHandler
 
             if (CountViews() == 1)
             {
-                displayTitle = "Param Editor";
+                displayTitle = "Active View";
             }
 
             if (ImGui.Begin($@"{displayTitle}###ParamEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))

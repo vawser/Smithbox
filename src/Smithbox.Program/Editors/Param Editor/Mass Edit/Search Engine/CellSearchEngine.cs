@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.ParamEditor;
 public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPseudoColumn, Param.Column)>
 {
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
-    public CellSearchEngine(ParamView curView)
+    public CellSearchEngine(ParamEditorView curView)
     {
         CurrentView = curView;
         Setup();

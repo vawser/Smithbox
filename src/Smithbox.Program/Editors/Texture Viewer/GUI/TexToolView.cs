@@ -5,14 +5,14 @@ using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexToolMenu
+public class TexToolView
 {
     public TextureViewerScreen Editor;
     public ProjectEntry Project;
 
     public TextureExport TextureExport;
 
-    public TexToolMenu(TextureViewerScreen editor, ProjectEntry project)
+    public TexToolView(TextureViewerScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;

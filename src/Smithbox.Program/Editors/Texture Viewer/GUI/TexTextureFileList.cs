@@ -7,12 +7,12 @@ using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexTextureFileListMenu
+public class TexTextureFileList
 {
-    public TexView Parent;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
-    public TexTextureFileListMenu(TexView view, ProjectEntry project)
+    public TexTextureFileList(TexEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;

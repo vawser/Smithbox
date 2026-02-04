@@ -37,7 +37,7 @@ public class ParamComparisonTools
         Project = project;
     }
 
-    public void ComparisonMenu(ParamView curView)
+    public void ComparisonMenu(ParamEditorView curView)
     {
         if (ImGui.MenuItem("View comparison report"))
         {

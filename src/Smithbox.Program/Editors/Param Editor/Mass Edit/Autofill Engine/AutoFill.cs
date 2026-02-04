@@ -13,7 +13,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class AutoFill
 {
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
     // Type hell. Can't omit the type.
     private readonly AutoFillSearchEngine<ParamSelection, (ParamMassEditRowSource, Param.Row)> autoFillParse;
@@ -39,7 +39,7 @@ public class AutoFill
     internal Vector4 HINTCOLOUR = new(0.3f, 0.5f, 1.0f, 1.0f);
     internal Vector4 PREVIEWCOLOUR = new(0.65f, 0.75f, 0.65f, 1.0f);
 
-    public AutoFill(ParamView curView, MassEdit massEdit)
+    public AutoFill(ParamEditorView curView, MassEdit massEdit)
     {
         CurrentView = curView;
 

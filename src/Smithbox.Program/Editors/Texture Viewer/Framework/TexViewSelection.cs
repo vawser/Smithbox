@@ -9,7 +9,7 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexViewSelection
 {
-    public TexView Parent;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
     private Task LoadingTask;
@@ -38,7 +38,7 @@ public class TexViewSelection
 
     public SubTexture PreviewSubTexture;
 
-    public TexViewSelection(TexView view, ProjectEntry project)
+    public TexViewSelection(TexEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;

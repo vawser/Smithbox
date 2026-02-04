@@ -11,11 +11,11 @@ public class ParamMetaEditor
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
-    public ParamView ParentView;
+    public ParamEditorView ParentView;
 
     public bool IsInEditorMode = false;
 
-    public ParamMetaEditor(ParamEditorScreen editor, ProjectEntry project, ParamView curView)
+    public ParamMetaEditor(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
         Editor = editor;
         Project = project;

@@ -10,9 +10,9 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class MEValueOperation : MEOperation<object, object>
 {
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
-    public MEValueOperation(ParamView curView)
+    public MEValueOperation(ParamEditorView curView)
     {
         CurrentView = curView;
         operations.Clear();

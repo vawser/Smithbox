@@ -13,7 +13,7 @@ namespace StudioCore.Editors.ParamEditor;
 public static class ParamRowDuplicate
 {
     #region Duplicate
-    public static void ApplyDuplicate(ParamView curView, bool wholeTableGroupDuplicate = false)
+    public static void ApplyDuplicate(ParamEditorView curView, bool wholeTableGroupDuplicate = false)
     {
         var curParamKey = curView.Selection.GetActiveParam();
 
@@ -135,7 +135,7 @@ public static class ParamRowDuplicate
     #endregion
 
     #region Commutative Duplicate
-    public static bool IsCommutativeParam(ParamView curView)
+    public static bool IsCommutativeParam(ParamEditorView curView)
     {
         var isValid = false;
 
@@ -158,7 +158,7 @@ public static class ParamRowDuplicate
         return isValid;
     }
 
-    public static void ApplyCommutativeDuplicate(ParamView curView)
+    public static void ApplyCommutativeDuplicate(ParamEditorView curView)
     {
         var curParamKey = curView.Selection.GetActiveParam();
 
@@ -193,7 +193,7 @@ public static class ParamRowDuplicate
             }
         }
     }
-    private static void DuplicateCommutativeRow(ParamView curView)
+    private static void DuplicateCommutativeRow(ParamEditorView curView)
     {
         var curParamKey = curView.Selection.GetActiveParam();
 

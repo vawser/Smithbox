@@ -9,8 +9,8 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class VarSearchEngine : SearchEngine<bool, string>
 {
-    public ParamView CurrentView;
-    public VarSearchEngine(ParamView curView)
+    public ParamEditorView CurrentView;
+    public VarSearchEngine(ParamEditorView curView)
     {
         CurrentView = curView;
 

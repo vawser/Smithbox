@@ -15,7 +15,7 @@ namespace StudioCore.Editors.ParamEditor;
 public static class ParamRowTools
 {
     #region Quick Search
-    public static void ParamQuickSearch(ParamView curView, string currentParam, int currentID)
+    public static void ParamQuickSearch(ParamEditorView curView, string currentParam, int currentID)
     {
         if (ImGui.MenuItem("Search for references in tool"))
         {
@@ -30,7 +30,7 @@ public static class ParamRowTools
     #endregion
 
     #region Param Reverse Lookup
-    public static void ParamReverseLookup_Value(ParamView curView, string currentParam,
+    public static void ParamReverseLookup_Value(ParamEditorView curView, string currentParam,
         int currentID)
     {
         if (ImGui.BeginMenu("Search for references"))
@@ -80,7 +80,7 @@ public static class ParamRowTools
         }
     }
 
-    private static Dictionary<string, List<(string, ParamRef)>> ParamRefReverseLookupFieldItems(ParamView curView, string currentParam)
+    private static Dictionary<string, List<(string, ParamRef)>> ParamRefReverseLookupFieldItems(ParamEditorView curView, string currentParam)
     {
         Dictionary<string, List<(string, ParamRef)>> items = new();
         foreach (KeyValuePair<string, Param> param in curView.GetPrimaryBank().Params)
@@ -122,7 +122,7 @@ public static class ParamRowTools
         return items;
     }
 
-    private static List<Param.Row> ParamRefReverseLookupRowItems(ParamView curView, string paramName, string fieldName,
+    private static List<Param.Row> ParamRefReverseLookupRowItems(ParamEditorView curView, string paramName, string fieldName,
         int currentID, ParamRef pref)
     {
         var searchTerm = pref.ConditionField != null
@@ -135,7 +135,7 @@ public static class ParamRowTools
     #endregion
 
     #region Sort Rows
-    public static void SortRows(ParamView activeView)
+    public static void SortRows(ParamEditorView activeView)
     {
         if (activeView.Selection.ActiveParamExists())
         {

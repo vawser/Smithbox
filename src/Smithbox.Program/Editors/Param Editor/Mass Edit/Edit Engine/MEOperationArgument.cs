@@ -9,9 +9,9 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class MEOperationArgument
 {
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
-    public MEOperationArgument(ParamView curView)
+    public MEOperationArgument(ParamEditorView curView)
     {
         CurrentView = curView;
         argumentGetters.Clear();

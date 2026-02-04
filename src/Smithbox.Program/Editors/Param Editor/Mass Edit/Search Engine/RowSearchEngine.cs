@@ -12,9 +12,9 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
 {
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
-    public RowSearchEngine(ParamView curView)
+    public RowSearchEngine(ParamEditorView curView)
     {
         CurrentView = curView;
         Setup();

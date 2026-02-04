@@ -10,7 +10,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class MassParamEditOther
 {
-    public static AddParamsAction SortRows(ParamView curView, ParamBank bank, string paramName)
+    public static AddParamsAction SortRows(ParamEditorView curView, ParamBank bank, string paramName)
     {
         Param param = bank.Params[paramName];
         List<Param.Row> newRows = new(param.Rows);

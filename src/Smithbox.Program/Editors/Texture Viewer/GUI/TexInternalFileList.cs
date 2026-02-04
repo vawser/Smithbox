@@ -6,12 +6,12 @@ using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexInternalFileListMenu
+public class TexInternalFileList
 {
-    public TexView Parent;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
-    public TexInternalFileListMenu(TexView view, ProjectEntry project)
+    public TexInternalFileList(TexEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;

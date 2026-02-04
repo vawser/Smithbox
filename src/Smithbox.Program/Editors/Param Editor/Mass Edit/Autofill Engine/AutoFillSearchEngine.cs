@@ -10,7 +10,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class AutoFillSearchEngine<A, B>
 {
-    public ParamView CurrentView;
+    public ParamEditorView CurrentView;
 
     private readonly string[] _autoFillArgs;
     private readonly SearchEngine<A, B> engine;
@@ -19,7 +19,7 @@ public class AutoFillSearchEngine<A, B>
     private bool _autoFillNotToggle;
     private bool _useAdditionalCondition;
 
-    internal AutoFillSearchEngine(ParamView curView, string id, SearchEngine<A, B> searchEngine)
+    internal AutoFillSearchEngine(ParamEditorView curView, string id, SearchEngine<A, B> searchEngine)
     {
         CurrentView = curView;
         this.id = id;

@@ -24,7 +24,7 @@ public static class ParamCsvTools
     private static ParamUpgradeRowGetType RowType = ParamUpgradeRowGetType.AllRows;
     private static string SpecificFieldName = "";
 
-    public static void ExportMenu(ParamView curView)
+    public static void ExportMenu(ParamEditorView curView)
     {
         var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
 
@@ -104,7 +104,7 @@ public static class ParamCsvTools
         }
     }
 
-    private static void ExportEntireParam(ParamView curView)
+    private static void ExportEntireParam(ParamEditorView curView)
     {
         var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
@@ -122,7 +122,7 @@ public static class ParamCsvTools
         TryWriteFile(writePath, csvString);
     }
 
-    private static void ExportAllParams(ParamView curView)
+    private static void ExportAllParams(ParamEditorView curView)
     {
         var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
@@ -143,7 +143,7 @@ public static class ParamCsvTools
         }
     }
 
-    private static void ExportAllModifiedParams(ParamView curView)
+    private static void ExportAllModifiedParams(ParamEditorView curView)
     {
         var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
@@ -338,7 +338,7 @@ public static class ParamCsvTools
         return rows;
     }
 
-    public static void ImportMenu(ParamView curView)
+    public static void ImportMenu(ParamEditorView curView)
     {
         var primaryBank = curView.Editor.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
@@ -416,7 +416,7 @@ public static class ParamCsvTools
         }
     }
 
-    private static void ImportAllFields(ParamView curView, string csvPath)
+    private static void ImportAllFields(ParamEditorView curView, string csvPath)
     {
         var primaryBank = curView.Editor.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
@@ -447,7 +447,7 @@ public static class ParamCsvTools
         }
     }
 
-    private static void ImportSpecificField(ParamView curView, string csvPath, string internalName)
+    private static void ImportSpecificField(ParamEditorView curView, string csvPath, string internalName)
     {
         var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;

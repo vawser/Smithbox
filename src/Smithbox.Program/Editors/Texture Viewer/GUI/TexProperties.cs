@@ -7,12 +7,12 @@ using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexPropertyWindow
+public class TexProperties
 {
-    public TexView Parent;
+    public TexEditorView Parent;
     public ProjectEntry Project;
 
-    public TexPropertyWindow(TexView view, ProjectEntry project)
+    public TexProperties(TexEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;
@@ -35,11 +35,11 @@ public class TexPropertyWindow
         {
             if (Parent.Selection.ViewerTextureResource != null)
             {
-                Vector2 size = Parent.DisplayView.GetImageSize(
+                Vector2 size = Parent.Display.GetImageSize(
                     Parent.Selection.ViewerTextureResource, 
                     false);
 
-                Vector2 relativePos = Parent.DisplayView.GetRelativePosition(
+                Vector2 relativePos = Parent.Display.GetRelativePosition(
                     size,
                     Parent.Selection.TextureViewWindowPosition,
                     Parent.Selection.TextureViewScrollPosition);
@@ -77,7 +77,7 @@ public class TexPropertyWindow
                             {
                                 string IconName;
                                 bool IsMatch;
-                                (IconName, IsMatch) = Parent.DisplayView.MatchMousePosToIcon(entry, relativePos);
+                                (IconName, IsMatch) = Parent.Display.MatchMousePosToIcon(entry, relativePos);
 
                                 if (IsMatch)
                                 {

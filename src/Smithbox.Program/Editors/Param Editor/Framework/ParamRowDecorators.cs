@@ -17,13 +17,13 @@ public class ParamRowDecorators
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
-    public ParamView ParentView;
+    public ParamEditorView ParentView;
 
     public Dictionary<string, FmgRowDecorator> _rowFmgDecorators = new();
 
     private string CurrentParam = "";
 
-    public ParamRowDecorators(ParamEditorScreen editor, ProjectEntry project, ParamView curView)
+    public ParamRowDecorators(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
         Editor = editor;
         Project = project;

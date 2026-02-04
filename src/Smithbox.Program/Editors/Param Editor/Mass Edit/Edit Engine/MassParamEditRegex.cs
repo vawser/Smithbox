@@ -43,9 +43,9 @@ public class MassParamEditRegex
     // Parsing data
     private string varSelector;
 
-    private ParamView CurrentView;
+    private ParamEditorView CurrentView;
 
-    public MassParamEditRegex(ParamView curView)
+    public MassParamEditRegex(ParamEditorView curView)
     {
         CurrentView = curView;
     }

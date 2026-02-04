@@ -20,7 +20,7 @@ public class ParamTableWindow
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
 
-    public ParamView ParentView;
+    public ParamEditorView ParentView;
 
     public bool _arrowKeyPressed;
 
@@ -33,7 +33,7 @@ public class ParamTableWindow
     public int TotalChance = 0;
     private Dictionary<Param.Row, string> RollChances = new();
 
-    public ParamTableWindow(ParamEditorScreen editor, ProjectEntry project, ParamView parentView)
+    public ParamTableWindow(ParamEditorScreen editor, ProjectEntry project, ParamEditorView parentView)
     {
         Editor = editor;
         Project = project;

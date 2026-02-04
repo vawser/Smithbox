@@ -11,7 +11,7 @@ using System.Linq;
 namespace StudioCore.Editors.ParamEditor;
 
 
-public class ParamView
+public class ParamEditorView
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
@@ -35,7 +35,7 @@ public class ParamView
     public bool JumpToSelectedRow = false;
     public bool _isSearchBarActive = false;
 
-    public ParamView(ParamEditorScreen editor, ProjectEntry project, int imguiId)
+    public ParamEditorView(ParamEditorScreen editor, ProjectEntry project, int imguiId)
     {
         Editor = editor;
         Project = project;

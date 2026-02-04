@@ -10,7 +10,7 @@ namespace StudioCore.Editors.ParamEditor;
 public static class ParamRowDelete
 {
     #region Delete
-    public static void ApplyDelete(ParamView curView)
+    public static void ApplyDelete(ParamEditorView curView)
     {
         List<Param.Row> toRemove = new(curView.Selection.GetSelectedRows());
 
@@ -18,7 +18,7 @@ public static class ParamRowDelete
 
         curView.Editor.ActionManager.ExecuteAction(act);
 
-        curView.Editor.ViewHandler.ParamViews.ForEach(view =>
+        curView.Editor.ViewHandler.ParamEditorViews.ForEach(view =>
         {
             if (view != null)
             {
