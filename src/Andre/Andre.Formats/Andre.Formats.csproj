@@ -8,24 +8,34 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <RustDllName Condition="$(DefineConstants.Contains(WINDOWS))">bhd5_decrypt_rust.dll</RustDllName>
+    <RustDllName Condition="$(DefineConstants.Contains(MACOS))">libbhd5_decrypt_rust.dylib</RustDllName>
+    <RustDllName Condition="$(DefineConstants.Contains(LINUX))">bhd5_decrypt_rust.so</RustDllName>
+  </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(DefineConstants.Contains(MACOS))">
+    <MSBuildDisableGetCopyToPublishDirectoryItemsOptimization>true</MSBuildDisableGetCopyToPublishDirectoryItemsOptimization>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
     <ProjectReference Include="..\Andre.Core\Andre.Core.csproj" />
-    <None Remove="bhd5_decrypt_rust.dll" />
-    <AdditionalFiles Include="bhd5_decrypt_rust.dll">
+    <None Remove="*bhd5_decrypt_rust*" />
+    <AdditionalFiles Include="$(RustDllName)" Condition="!$(DefineConstants.Contains(MACOS))">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AdditionalFiles>
   </ItemGroup>
 
   <!-- Copies the Rust dll from the cargo target dir to the base dir, if it exists -->
-  <Target Name="CopyRustDllIfPresent" BeforeTargets="Build">
+  <Target Name="CopyRustDllIfPresent" BeforeTargets="BeforeBuild">
     <PropertyGroup>
       <RustTargetDir>native\bhd5-decrypt-rust\target\release\</RustTargetDir>
-      <RustDllPath>$(RustTargetDir)bhd5_decrypt_rust.dll</RustDllPath>
+      <RustDllPath>$(RustTargetDir)$(RustDllName)</RustDllPath>
     </PropertyGroup>
     
     <ItemGroup>

@@ -14,7 +14,6 @@
     <SelfContained>true</SelfContained>
     <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
     <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
-    <OodlePath>path/to/oodle.dylib</OodlePath>
     <RootNamespace>StudioCore</RootNamespace>
   </PropertyGroup>
 
@@ -39,10 +38,16 @@
     <_UseClassicLinker>true</_UseClassicLinker>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <OodlePath>path/to/oodle.dylib</OodlePath>
+    <RustDllPath>../Andre/Andre.Formats/libbhd5_decrypt_rust.dylib</RustDllPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <NativeReference Include="$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib" Kind="Dynamic" />
     <NativeReference Include="$(OodlePath)" Condition="Exists('$(OodlePath)')" Kind="Dynamic" />
     <NativeReference Include="path/to/libzstd.dylib" Kind="Dynamic" />
+    <NativeReference Include="$(RustDllPath)" Kind="Dynamic" Condition="Exists('$(RustDllPath)')" />
     <BundleResource Include="AppIcon.icns" />
   </ItemGroup>
 

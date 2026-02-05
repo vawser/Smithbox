@@ -205,11 +205,12 @@ namespace Andre.Formats
                 Console.WriteLine($"Decrypting {Path.GetFileName(bhdPath)}");
 #endif
                 byte[] decrypted;
-#if WINDOWS
-                decrypted = DecryptNative(accessor.Memory, bhdPath, game);
-#else
-                decrypted = DecryptSlow(bhdPath, game);
-#endif
+                try {
+                    decrypted = DecryptNative(accessor.Memory, bhdPath, game);
+                }
+                catch {
+                    decrypted = DecryptSlow(bhdPath, game);
+                }
                 bhd = BHD5.Read(decrypted, bhdGame);
                 BhdWasEncrypted = true;
             }
