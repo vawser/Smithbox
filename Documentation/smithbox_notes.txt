@@ -32,8 +32,6 @@
  - Makes it a lot more feasible to filter to ALL instances of X item within the itemlots without a 8 term search filter
  - Only works with the itemlot params (obviously)
  
-- Graphical Param Editor: add multiple editor view support
-
 - Text Editor: Implement FMG Descriptor support (to replace enums) 
 
 - Texture Editor add automated mass export
@@ -41,16 +39,12 @@
 - Texture Editor adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
  (i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
  
-- Material Editor: add multiple editor view support
 - Material Editor: add power search to file list 
  (i.e. param: g_BlendMode = 6 should filter the list down to all files that contain a parameter called g_BlendMode set to 6)
  (i.e. texture: Path ~ fire should filter the list down to all files that contain a texture with the Path string that contains the string 'fire')
 - Material Editor: add list add/remove actions for the Param/Texture lists in a MTD
 - Material Editor: implement changes needed for the MATBIN properties
 
-- Shoebox Editor:
- - Add basic editor to view and edit the shoebox files for ER, AC6 and NR projects.
- 
 #---------------------
 # DOCUMENTATION
 #---------------------
