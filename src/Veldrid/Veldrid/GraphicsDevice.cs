@@ -680,6 +680,29 @@ namespace Veldrid
         }
 
         /// <summary>
+        /// Gets the maximum image extent for the given <see cref="VkFormat"/>.
+        /// </summary>
+        /// <param name="type">The image type.</param>
+        /// <param name="format">The format to query.</param>
+        /// <param name="usageFlags">The usage flags.</param>
+        /// <param name="createFlags">The creation flags.</param>
+        /// <param name="tiling">The tiling options.</param>
+        /// <returns>A <see cref="VkExtent3D"/> struct representing the maximum width, height, and depth that a <see cref="Texture"/> of that
+        /// format can be created with.</returns>
+        public VkExtent3D GetImageFormatMaxExtent(VkImageType type, VkFormat format, VkImageUsageFlags usageFlags, VkImageCreateFlags createFlags, VkImageTiling tiling)
+        {
+            vkGetPhysicalDeviceImageFormatProperties(
+                _physicalDevice,
+                format,
+                type,
+                tiling,
+                usageFlags,
+                createFlags,
+                out VkImageFormatProperties formatProperties);
+            return formatProperties.maxExtent;
+        }
+
+        /// <summary>
         /// Maps a <see cref="DeviceBuffer"/> or <see cref="Texture"/> into a CPU-accessible data region. For Texture resources, this
         /// overload maps the first subresource.
         /// </summary>
