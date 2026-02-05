@@ -33,7 +33,7 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.SliderFloat("##inputValue", ref PreferencesUtil.TempScale, 0.5f, 4.0f);
+                ImGui.SliderFloat("##inputValue", ref PreferencesUtil.TempScale, 0.3f, 4.0f);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
