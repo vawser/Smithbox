@@ -121,7 +121,7 @@ public class MapWrapper : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -134,7 +134,7 @@ public class MapWrapper : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -147,7 +147,7 @@ public class MapWrapper : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -159,7 +159,7 @@ public class MapWrapper : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -171,7 +171,7 @@ public class MapWrapper : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -183,7 +183,7 @@ public class MapWrapper : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -195,7 +195,7 @@ public class MapWrapper : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -207,7 +207,7 @@ public class MapWrapper : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB",  e);
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {Path} as MSB", e);
                         return false;
                     }
                     break;
@@ -219,7 +219,7 @@ public class MapWrapper : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Map Editor] Failed to read {Path} as MSB", e);
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {Path} as MSB", e);
 
                         return false;
                     }
@@ -229,7 +229,7 @@ public class MapWrapper : IDisposable
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"[Map Editor] Failed to read {Path} from VFS", e);
+            Smithbox.LogError(this, $"[Map Editor] Failed to read {Path} from VFS", e);
             return false;
         }
 

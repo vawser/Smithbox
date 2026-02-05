@@ -1218,7 +1218,7 @@ public class Entity : ISelectable, IDisposable
                         if (collisionNameValue != "")
                         {
                             // CollisionName referenced doesn't exist
-                            TaskLogs.AddLog(
+                            Smithbox.Log(this, 
                                 $"{Container?.Name}: {Name} references to CollisionName {collisionNameValue} which doesn't exist",
                                 LogLevel.Warning);
                         }

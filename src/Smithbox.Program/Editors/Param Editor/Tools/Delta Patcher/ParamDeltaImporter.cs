@@ -39,13 +39,13 @@ public class ParamDeltaImporter
         {
             var success = HandleParamImport(delta);
 
-            TaskLogs.AddInfo($"Finished '{filename}' param delta import.");
+            Smithbox.Log(this, $"Finished '{filename}' param delta import.");
 
             Patcher.Project.Handler.ParamData.PrimaryBank.RefreshPrimaryDiffCaches(true);
         }
         catch (Exception ex)
         {
-            TaskLogs.AddError($"'{filename}' param delta import failed.", ex);
+            Smithbox.LogError(this, $"'{filename}' param delta import failed.", ex);
         }
         finally
         {

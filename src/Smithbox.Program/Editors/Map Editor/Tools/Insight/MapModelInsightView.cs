@@ -203,7 +203,7 @@ public class MapModelInsightView
 
         if (!readFile)
         {
-            TaskLogs.AddLog($"Failed to read {relativePath}");
+            Smithbox.Log(this, $"Failed to read {relativePath}");
             return;
         }
 
@@ -278,11 +278,11 @@ public class MapModelInsightView
 
         if (successful)
         {
-            TaskLogs.AddLog("Model extraction complete.");
+            Smithbox.Log(this, "Model extraction complete.");
         }
         else
         {
-            TaskLogs.AddLog("Could not complete model extraction.");
+            Smithbox.Log(this, "Could not complete model extraction.");
         }
     }
 
@@ -335,11 +335,11 @@ public class MapModelInsightView
 
         if (successful)
         {
-            TaskLogs.AddLog("Material extraction complete.");
+            Smithbox.Log(this, "Material extraction complete.");
         }
         else
         {
-            TaskLogs.AddLog("Could not complete material extraction.");
+            Smithbox.Log(this, "Could not complete material extraction.");
         }
     }
 
@@ -479,11 +479,11 @@ public class MapModelInsightView
 
         if (successful)
         {
-            TaskLogs.AddLog("Texture extraction complete.");
+            Smithbox.Log(this, "Texture extraction complete.");
         }
         else
         {
-            TaskLogs.AddLog("Could not complete texture extraction.");
+            Smithbox.Log(this, "Could not complete texture extraction.");
         }
     }
 }

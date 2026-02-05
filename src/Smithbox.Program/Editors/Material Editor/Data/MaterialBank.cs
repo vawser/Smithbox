@@ -154,7 +154,7 @@ public class MTDWrapper
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddError($"[Material Editor] Failed to read {entry.Name} as MTD", e);
+                            Smithbox.LogError(this, $"[Material Editor] Failed to read {entry.Name} as MTD", e);
 
                             return false;
                         }
@@ -184,7 +184,7 @@ public class MTDWrapper
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddError($"[Material Editor] Failed to read {entry.Name} as MTD", e);
+                            Smithbox.LogError(this, $"[Material Editor] Failed to read {entry.Name} as MTD", e);
 
                             return false;
                         }
@@ -196,7 +196,7 @@ public class MTDWrapper
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"[Material Editor] Failed to read {Path}",  e);
+            Smithbox.LogError(this, $"[Material Editor] Failed to read {Path}", e);
             return false;
         }
     }
@@ -222,7 +222,7 @@ public class MTDWrapper
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddError($"[Material Editor] Failed to write {entry.Name} as MTD", e);
+                            Smithbox.LogError(this, $"[Material Editor] Failed to write {entry.Name} as MTD", e);
                         }
                     }
                 }
@@ -232,7 +232,7 @@ public class MTDWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Material Editor] Failed to write {Path}", e);
+                Smithbox.LogError(this, $"[Material Editor] Failed to write {Path}", e);
 
                 return false;
             }
@@ -254,7 +254,7 @@ public class MTDWrapper
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddError($"[aterial Editor] Failed to write {entry.Name} as MTD", e);
+                            Smithbox.LogError(this, $"[aterial Editor] Failed to write {entry.Name} as MTD", e);
                         }
                     }
                 }
@@ -264,7 +264,7 @@ public class MTDWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Material Editor] Failed to write {Path}", e);
+                Smithbox.LogError(this, $"[Material Editor] Failed to write {Path}", e);
                 return false;
             }
         }
@@ -316,7 +316,7 @@ public class MATBINWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Material Editor] Failed to read {entry.Name} as MATBIN", e);
+                        Smithbox.LogError(this, $"[Material Editor] Failed to read {entry.Name} as MATBIN", e);
                         return false;
                     }
                 }
@@ -326,7 +326,7 @@ public class MATBINWrapper
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"[Material Editor] Failed to read {Path}", e);
+            Smithbox.LogError(this, $"[Material Editor] Failed to read {Path}", e);
             return false;
         }
     }
@@ -350,7 +350,7 @@ public class MATBINWrapper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Material Editor] Failed to write {entry.Name} as MATBIN", e);
+                        Smithbox.LogError(this, $"[Material Editor] Failed to write {entry.Name} as MATBIN", e);
                     }
                 }
             }
@@ -360,7 +360,7 @@ public class MATBINWrapper
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"[Material Editor] Failed to write {Path}", e);
+            Smithbox.LogError(this, $"[Material Editor] Failed to write {Path}", e);
             return false;
         }
 

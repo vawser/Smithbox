@@ -267,7 +267,7 @@ public class ParamTableWindow
 
         if (!allowUnrestricted && param.Rows.Any(e => e.ID == newId))
         {
-            TaskLogs.AddError("Duplicate aborted. This duplicate would have injected rows into an existing table group.");
+            Smithbox.LogError(this, "Duplicate aborted. This duplicate would have injected rows into an existing table group.");
         }
         else
         {

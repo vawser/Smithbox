@@ -158,7 +158,7 @@ public static class ParamRowOperations
 
         if (displayWarning)
         {
-            TaskLogs.AddLog($"Failed to find field with internal name of: {targetField}");
+            Smithbox.Log(typeof(ParamRowOperations), $"Failed to find field with internal name of: {targetField}");
         }
     }
     #endregion
@@ -218,7 +218,7 @@ public static class ParamRowOperations
 
         if (displayWarning)
         {
-            TaskLogs.AddLog($"Failed to find field with internal name of: {targetField}");
+            Smithbox.Log(typeof(ParamRowOperations), $"Failed to find field with internal name of: {targetField}");
         }
     }
     #endregion
@@ -278,7 +278,7 @@ public static class ParamRowOperations
 
         if (displayWarning)
         {
-            TaskLogs.AddLog($"Failed to find field with internal name of: {targetField}");
+            Smithbox.Log(typeof(ParamRowOperations), $"Failed to find field with internal name of: {targetField}");
         }
     }
     #endregion
@@ -399,7 +399,7 @@ public static class ParamRowOperations
 
         if (displayWarning)
         {
-            TaskLogs.AddLog($"Failed to find field with internal name of: {targetField}");
+            Smithbox.Log(typeof(ParamRowOperations), $"Failed to find field with internal name of: {targetField}");
         }
     }
     #endregion

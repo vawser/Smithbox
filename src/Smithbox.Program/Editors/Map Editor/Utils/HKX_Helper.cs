@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -91,7 +92,7 @@ public static class HKX_Helper
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to load HKX.", LogLevel.Error, LogPriority.High, e);
+                            Smithbox.Log(typeof(HKX_Helper), $"[Smithbox] Failed to load HKX.", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                 }

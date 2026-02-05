@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -215,7 +216,7 @@ public class ItemGib
         Process[] processArray = Process.GetProcessesByName(name);
         if (!processArray.Any())
         {
-            TaskLogs.AddLog($"No game process found for {offsets.exeName}. Please start the game first.", LogLevel.Error, LogPriority.High);
+            Smithbox.LogError(this, $"No game process found for {offsets.exeName}. Please start the game first.", LogPriority.High);
             return;
         }
         var gameOffsets = offsets.Bases.Find(x =>
@@ -229,7 +230,7 @@ public class ItemGib
         });
         if (gameOffsets == null)
         {
-            TaskLogs.AddLog($"No ItemGib offsets found.", LogLevel.Error, LogPriority.High);
+            Smithbox.LogError(this, $"No ItemGib offsets found.", LogPriority.High);
             return;
         }
 
@@ -265,7 +266,7 @@ public class ItemGib
 
         if (string.IsNullOrEmpty(activeParam))
         {
-            TaskLogs.AddLog("No param selected yet for Item Gib.");
+            Smithbox.Log(this, "No param selected yet for Item Gib.");
             return;
         }
 
@@ -284,7 +285,7 @@ public class ItemGib
                 rowsToGib = activeView.Selection.GetSelectedRows();
                 if (!rowsToGib.Any())
                 {
-                    TaskLogs.AddLog("No rows selected for Item Gib.");
+                    Smithbox.Log(this, "No rows selected for Item Gib.");
                     return;
                 }
                 break;
@@ -300,13 +301,13 @@ public class ItemGib
                 var equipParamWeaponId = activeView.Selection.GetActiveRow()["baseWepId"].Value.Value as int? ?? -1;
                 if (equipParamWeaponId < 0)
                 {
-                    TaskLogs.AddLog("No base weapon ID found for EquipParamCustomWeapon.");
+                    Smithbox.Log(this, "No base weapon ID found for EquipParamCustomWeapon.");
                     return;
                 }
                 var equipParamWeapon = activeView.GetPrimaryBank().GetParamFromName("EquipParamWeapon")[equipParamWeaponId];
                 if (equipParamWeapon == null)
                 {
-                    TaskLogs.AddLog($"EquipParamWeapon with ID {equipParamWeaponId} not found.");
+                    Smithbox.Log(this, $"EquipParamWeapon with ID {equipParamWeaponId} not found.");
                     return;
                 }
                 rowsToGib = new()
@@ -330,7 +331,7 @@ public class ItemGib
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("Unable to create GameOffsets for Item Gibber.", LogLevel.Error,
+                Smithbox.LogError(this, "Unable to create GameOffsets for Item Gibber.",
                     LogPriority.High, e);
                 return null;
             }

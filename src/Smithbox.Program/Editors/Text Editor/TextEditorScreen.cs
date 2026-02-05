@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Numerics;
@@ -267,11 +268,11 @@ public class TextEditorScreen : EditorScreen
                         await Project.Handler.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
                     }
 
-                    TaskLogs.AddLog($"[Text Editor] Saved {fileEntry.Path}");
+                    Smithbox.Log(this, $"[Text Editor] Saved {fileEntry.Path}");
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"[Text Editor] Failed to save {fileEntry.Path}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+                    Smithbox.Log(this, $"[Text Editor] Failed to save {fileEntry.Path}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
                 }
             }
 
@@ -292,11 +293,11 @@ public class TextEditorScreen : EditorScreen
             {
                 await Project.Handler.TextData.PrimaryBank.SaveTextFiles();
 
-                TaskLogs.AddLog($"[Text Editor] Saved all modified text files.");
+                Smithbox.Log(this, $"[Text Editor] Saved all modified text files.");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"[Text Editor] Failed to save all modified text files", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+                Smithbox.Log(this, $"[Text Editor] Failed to save all modified text files", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
             }
         }
 

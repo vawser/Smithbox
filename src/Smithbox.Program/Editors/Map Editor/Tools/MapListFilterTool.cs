@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -331,12 +332,12 @@ public class MapListFilterTool
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Map Editor] Failed to deserialize the Quick Filter List Collection: {filterFile}", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the Quick Filter List Collection: {filterFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Map Editor] Failed to read the Quick Filter List Collection: {filterFile}", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to read the Quick Filter List Collection: {filterFile}", LogPriority.High, e);
             }
         }
         else

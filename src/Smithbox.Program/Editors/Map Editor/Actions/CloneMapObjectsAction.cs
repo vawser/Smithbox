@@ -49,7 +49,7 @@ public class CloneMapObjectsAction : ViewportAction
             {
                 if (!Silent)
                 {
-                    TaskLogs.AddLog($"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
+                    Smithbox.Log(this, $"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
                         LogLevel.Warning);
                 }
                 continue;
@@ -160,7 +160,7 @@ public class CloneMapObjectsAction : ViewportAction
 
                 if (TargetMap != null)
                 {
-                    TaskLogs.AddLog($"Duplicated {newobj.Name} to {TargetMap.Name}");
+                    Smithbox.Log(this, $"Duplicated {newobj.Name} to {TargetMap.Name}");
                 }
 
                 if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)

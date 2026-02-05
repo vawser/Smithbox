@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -91,29 +92,29 @@ public static class ParamValidator
                     {
                         if (cell.Def.InternalType == "dummy8")
                         {
-                            //TaskLogs.AddLog(cell.Value.GetType().Name);
+                            //Smithbox.Log(this, cell.Value.GetType().Name);
 
                             if (cell.Value.GetType() == typeof(byte[]))
                             {
-                                // TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
+                                // Smithbox.Log(this, $"{currentParam}: {cell.Def.InternalName}");
 
                                 byte[] bytes = (byte[])cell.Value;
                                 foreach (var b in bytes)
                                 {
                                     if (b != 0)
                                     {
-                                        TaskLogs.AddLog($"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
+                                        Smithbox.Log(typeof(ParamValidator), $"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
                                     }
                                 }
                             }
                             else if (cell.Value.GetType() == typeof(byte))
                             {
-                                //TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
+                                //Smithbox.Log(this, $"{currentParam}: {cell.Def.InternalName}");
 
                                 byte b = (byte)cell.Value;
                                 if (b != 0)
                                 {
-                                    TaskLogs.AddLog($"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
+                                    Smithbox.Log(typeof(ParamValidator), $"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
                                 }
                             }
                         }
@@ -244,7 +245,7 @@ public static class ParamValidator
             p = PARAM.ReadIgnoreCompression(f.Bytes);
             if (!_paramdefs.ContainsKey(p.ParamType ?? ""))
             {
-                TaskLogs.AddLog(
+                Smithbox.Log(typeof(ParamValidator), 
                     $"Couldn't find ParamDef for param {paramName} with ParamType \"{p.ParamType}\".",
                     LogLevel.Warning);
                 continue;
@@ -265,11 +266,11 @@ public static class ParamValidator
                 var name = f.Name.Split("\\").Last();
                 var message = $"Could not apply ParamDef for {name}";
 
-                TaskLogs.AddLog(message,
+                Smithbox.Log(typeof(ParamValidator), message,
                         LogLevel.Warning, LogPriority.Normal, e);
             }
 
-            TaskLogs.AddLog($"{paramName} validated");
+            Smithbox.Log(typeof(ParamValidator), $"{paramName} validated");
         }
     }
 }

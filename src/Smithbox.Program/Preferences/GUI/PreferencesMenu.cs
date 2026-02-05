@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
@@ -78,7 +79,7 @@ public class PreferencesMenu
                     if (ImGui.MenuItem("Save"))
                     {
                         CFG.Save();
-                        TaskLogs.AddLog("Preferences saved.");
+                        Smithbox.Log(this, "Preferences saved.", LogLevel.Information);
                     }
 
                     if(ImGui.BeginMenu("Reset to Default"))

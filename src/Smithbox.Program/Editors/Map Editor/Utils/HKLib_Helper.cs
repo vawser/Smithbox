@@ -2,6 +2,7 @@
 using HKLib.hk2018.hkcdStaticMeshTree;
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -76,7 +77,7 @@ public static class HKLib_Helper
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to load HKLIB.",
+                            Smithbox.Log(typeof(HKLib_Helper), $"[Smithbox] Failed to load HKLIB.",
                                 LogLevel.Error, LogPriority.High, e);
                         }
                     }
@@ -121,7 +122,7 @@ public static class HKLib_Helper
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to load HKLIB.",
+                            Smithbox.Log(typeof(HKLib_Helper), $"[Smithbox] Failed to load HKLIB.",
                                 LogLevel.Error, LogPriority.High, e);
                         }
                     }

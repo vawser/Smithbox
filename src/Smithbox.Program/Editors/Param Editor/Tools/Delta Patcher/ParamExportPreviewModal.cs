@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore;
 using StudioCore.Application;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
@@ -270,7 +271,7 @@ public class ParamExportPreviewModal
 
             Patcher.WriteDeltaPatch(filteredPatch, Patcher.Selection.ExportName);
 
-            TaskLogs.AddLog($"Saved param delta: {Patcher.Selection.ExportName}.json");
+            Smithbox.Log(this, $"Saved param delta: {Patcher.Selection.ExportName}.json");
 
             Patcher.Selection.QueueImportListRefresh = true;
 

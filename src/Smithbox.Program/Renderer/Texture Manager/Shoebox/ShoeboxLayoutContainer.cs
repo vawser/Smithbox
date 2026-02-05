@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ public class ShoeboxLayoutContainer
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to load Shoebox Layout: {FileEntry.Filename}", LogLevel.Error, LogPriority.High, ex);
+            Smithbox.LogError(this, $"Failed to load Shoebox Layout: {FileEntry.Filename}", LogPriority.High, ex);
         }
 
         return true;
@@ -66,7 +67,7 @@ public class ShoeboxLayoutContainer
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to load Shoebox Layout: {FileEntry.Filename}", LogLevel.Error, LogPriority.High, e);
+            Smithbox.LogError(this, $"Failed to load Shoebox Layout: {FileEntry.Filename}", LogPriority.High, e);
         }
     }
 

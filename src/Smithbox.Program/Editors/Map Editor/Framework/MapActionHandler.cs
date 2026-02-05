@@ -63,7 +63,7 @@ public class MapActionHandler
             }
         }
 
-        TaskLogs.AddLog("Navigation Data generated.");
+        Smithbox.Log(this, "Navigation Data generated.");
     }
 
     public EntityFilterType SelectedFilter = EntityFilterType.None;
@@ -143,7 +143,7 @@ public class MapActionHandler
                         {
                             enemy.EntityGroupIDs[i] = (uint)CFG.Current.Toolbar_EntityGroupID;
 
-                            TaskLogs.AddLog($"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
+                            Smithbox.Log(this, $"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
                             break;
                         }
                     }
@@ -203,7 +203,7 @@ public class MapActionHandler
                         {
                             enemy.EntityGroupIDs[i] = (uint)CFG.Current.Toolbar_EntityGroupID;
 
-                            TaskLogs.AddLog($"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
+                            Smithbox.Log(this, $"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
                             break;
                         }
                     }
@@ -263,7 +263,7 @@ public class MapActionHandler
                         {
                             enemy.EntityGroupIDs[i] = CFG.Current.Toolbar_EntityGroupID;
 
-                            TaskLogs.AddLog($"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
+                            Smithbox.Log(this, $"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
                             break;
                         }
                     }
@@ -323,7 +323,7 @@ public class MapActionHandler
                         {
                             enemy.EntityGroups[i] = CFG.Current.Toolbar_EntityGroupID;
 
-                            TaskLogs.AddLog($"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
+                            Smithbox.Log(this, $"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
                             break;
                         }
                     }

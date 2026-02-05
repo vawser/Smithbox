@@ -276,17 +276,17 @@ public class ParamListCategories
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError("Failed to deserialize param categories", e);
+                    Smithbox.LogError(this, "Failed to deserialize param categories", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError("Failed to read param categories", e);
+                Smithbox.LogError(this, "Failed to read param categories", e);
             }
         }
         else
         {
-            TaskLogs.AddError("Failed to find default param categories for game");
+            Smithbox.LogError(this, "Failed to find default param categories for game");
         }
     }
 
@@ -311,7 +311,7 @@ public class ParamListCategories
         }
         catch (Exception ex)
         {
-            TaskLogs.AddError("Failed to write project param categories", ex);
+            Smithbox.LogError(this, "Failed to write project param categories", ex);
         }
 
     }

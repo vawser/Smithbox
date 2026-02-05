@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Editors.Common;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -650,7 +651,7 @@ public class ProjectOrchestrator : IDisposable
 
                     if (curProjectDescriptor == null)
                     {
-                        TaskLogs.AddError($"[Smithbox] Failed to load project: {entry}");
+                        Smithbox.LogError(this, $"[Smithbox] Failed to load project: {entry}");
                     }
                     else
                     {
@@ -662,7 +663,7 @@ public class ProjectOrchestrator : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Smithbox] Failed to load project: {entry}", e);
+                    Smithbox.LogError(this, $"[Smithbox] Failed to load project: {entry}", e);
                 }
             }
         }
@@ -885,7 +886,7 @@ public class ProjectOrchestrator : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to parse existing project.json: {e}", LogLevel.Error,
+                    Smithbox.LogError(this, $"[Smithbox] Failed to parse existing project.json: {e}",
                         LogPriority.High, e);
                 }
             }
@@ -928,7 +929,7 @@ public class ProjectOrchestrator : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError("Failed to read legacy project.json", e);
+                Smithbox.LogError(this, "Failed to read legacy project.json", e);
             }
         }
     }

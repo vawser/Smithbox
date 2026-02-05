@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,7 @@ public class LightAtlasBank
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} as BTAB", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as BTAB", LogPriority.High, e);
                 }
             }
         }
@@ -127,7 +128,7 @@ public class LightAtlasBank
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Map Editor] Failed to write {entry.Path} as BTAB", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as BTAB", LogPriority.High, e);
                 }
             }
         }

@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System.Linq;
 
@@ -27,7 +28,7 @@ public static class ParamUniqueInserter
             i++;
             p.AddRow(row);
         }
-        TaskLogs.AddLog($"Added rows to all params with IDs {baseID}-{i - 1} ",
+        Smithbox.Log(typeof(ParamUniqueInserter), $"Added rows to all params with IDs {baseID}-{i - 1} ",
             Microsoft.Extensions.Logging.LogLevel.Debug, LogPriority.High);
     }
 }

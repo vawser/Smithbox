@@ -26,7 +26,7 @@ public class ParamColorEdit
         }
         else
         {
-            TaskLogs.AddLog($"PARAM META: {parent.Name} - Unable to populate ParamColorEdit Name property for {colorEditNode.Name}");
+            Smithbox.Log(this, $"PARAM META: {parent.Name} - Unable to populate ParamColorEdit Name property for {colorEditNode.Name}");
         }
         if (colorEditNode.Attributes["Fields"] != null)
         {
@@ -34,7 +34,7 @@ public class ParamColorEdit
         }
         else
         {
-            TaskLogs.AddLog($"PARAM META: {parent.Name} - Unable to populate ParamColorEdit Fields property for {colorEditNode.Name}");
+            Smithbox.Log(this, $"PARAM META: {parent.Name} - Unable to populate ParamColorEdit Fields property for {colorEditNode.Name}");
         }
         if (colorEditNode.Attributes["PlacedField"] != null)
         {
@@ -42,7 +42,7 @@ public class ParamColorEdit
         }
         else
         {
-            TaskLogs.AddLog($"PARAM META: {parent.Name} - Unable to populate ParamColorEdit PlacedField property for {colorEditNode.Name}");
+            Smithbox.Log(this, $"PARAM META: {parent.Name} - Unable to populate ParamColorEdit PlacedField property for {colorEditNode.Name}");
         }
     }
 }

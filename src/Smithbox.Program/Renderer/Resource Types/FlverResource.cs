@@ -5,6 +5,7 @@ using SoulsFormats.Utilities;
 using StudioCore.Application;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -195,7 +196,7 @@ public class FlverResource : IResource, IDisposable
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during FlverResource load.", LogLevel.Error, LogPriority.High, e);
+            Smithbox.LogError(this, $"[Smithbox] Failed to load {relativePath} during FlverResource load.", LogPriority.High, e);
         }
 
         return false;
@@ -231,12 +232,12 @@ public class FlverResource : IResource, IDisposable
                 MTD.Texture? tex = material.Textures.Find(x => x.Type == type);
                 if (tex == null || !tex.Extended || tex.Path == "")
                 {
-                    //ResourceLog.AddLog($"[Smithbox] {VirtPath}: Failed to find MTD string: {mtdstring} - {type}");
+                    //Smithbox.Log(this, $"[Smithbox] {VirtPath}: Failed to find MTD string: {mtdstring} - {type}");
                     return;
                 }
 
                 path = tex.Path;
-                //ResourceLog.AddLog($"[Smithbox] {VirtPath}: MTD: {path}");
+                //Smithbox.Log(this, $"[Smithbox] {VirtPath}: MTD: {path}");
             }
 
             // MATBIN
@@ -308,12 +309,12 @@ public class FlverResource : IResource, IDisposable
 
                     if (tex == null || tex.Path == "")
                     {
-                        //ResourceLog.AddLog($"[Smithbox] {VirtPath}: Failed to find MATBIN string: {mtdstring} - {type}");
+                        //Smithbox.Log(this, $"[Smithbox] {VirtPath}: Failed to find MATBIN string: {mtdstring} - {type}");
                         return;
                     }
 
                     path = tex.Path;
-                    //ResourceLog.AddLog($"[Smithbox] {VirtPath}: MATBIN: {path}");
+                    //Smithbox.Log(this, $"[Smithbox] {VirtPath}: MATBIN: {path}");
                 }
             }
         }
@@ -322,7 +323,7 @@ public class FlverResource : IResource, IDisposable
 
         if (!dest.TextureResourceFilled[(int)textureType])
         {
-            //TaskLogs.AddLog($"[Smithbox] LISTENER for {virtualPath}");
+            //Smithbox.Log(this, $"[Smithbox] LISTENER for {virtualPath}");
 
             // Used to allow for association of models and textures
             if (Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor is MapEditorScreen)
@@ -352,7 +353,7 @@ public class FlverResource : IResource, IDisposable
         }
         else
         {
-            // ResourceLog.AddLog($"[Smithbox:DEBUG] {VirtPath}: NO LISTENER for {textureVirtPath}", Microsoft.Extensions.Logging.LogLevel.Error);
+            // Smithbox.Log(this, $"[Smithbox:DEBUG] {VirtPath}: NO LISTENER for {textureVirtPath}", Microsoft.Extensions.Logging.LogLevel.Error);
         }
     }
 

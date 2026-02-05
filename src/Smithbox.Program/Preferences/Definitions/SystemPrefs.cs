@@ -112,7 +112,7 @@ public class SystemPrefs
     #endregion
 
     #region Loggers
-    public static PreferenceItem System_ShowActionLogger()
+    public static PreferenceItem Logger_Enable_Action_Log()
     {
         return new PreferenceItem
         {
@@ -171,7 +171,7 @@ public class SystemPrefs
         };
     }
 
-    public static PreferenceItem System_WarningLogger_FadeTime()
+    public static PreferenceItem Logger_Warning_Fade_Time()
     {
         return new PreferenceItem
         {
@@ -188,6 +188,26 @@ public class SystemPrefs
             Draw = () => {
                 DPI.ApplyInputWidth();
                 ImGui.InputInt("##inputValue", ref CFG.Current.Logger_Warning_Fade_Time);
+            }
+        };
+    }
+
+    public static PreferenceItem System_Logger_Enable_Log_Popups()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 4,
+            Category = PreferenceCategory.System,
+            Spacer = true,
+            InlineName = false,
+            
+            Section = SectionCategory.Loggers,
+            
+            Title = "Log Popups",
+            Description = "If enabled, high priority log messages will cause a popup message box to appear.",
+            
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Logger_Enable_Log_Popups);
             }
         };
     }

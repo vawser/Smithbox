@@ -426,7 +426,7 @@ public class TexturePool
 
                     format = GetPixelFormatFromDXGI(dds.header10.dxgiFormat);
 
-                    //TaskLogs.AddLog($"header10 - {name}: {format}");
+                    //Smithbox.Log(this, $"header10 - {name}: {format}");
                 }
                 else
                 {
@@ -446,12 +446,12 @@ public class TexturePool
                         format = GetPixelFormatFromFourCC(dds.ddspf.dwFourCC);
                     }
 
-                    //TaskLogs.AddLog($"{name}: {format}");
+                    //Smithbox.Log(this, $"{name}: {format}");
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog(""+
+                Smithbox.Log(this, ""+
                     $"Error loading texture:\n" +
                     $"Name: {tex.Name}\n" +
                     $"Format: {tex.Format}\n" +

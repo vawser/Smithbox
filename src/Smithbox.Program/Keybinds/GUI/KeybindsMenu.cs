@@ -44,7 +44,7 @@ public class KeybindsMenu
                     if(ImGui.MenuItem("Save"))
                     {
                         InputManager.Save();
-                        TaskLogs.AddLog("Shortcuts saved.");
+                        Smithbox.Log(this, "Shortcuts saved.");
                     }
 
                     if (ImGui.MenuItem("Revert All to Default"))

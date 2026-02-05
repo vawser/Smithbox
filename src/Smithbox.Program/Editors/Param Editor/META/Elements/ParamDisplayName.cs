@@ -24,7 +24,7 @@ public class ParamDisplayName
         }
         else
         {
-            TaskLogs.AddLog($"PARAM META: {parent.Name} - Unable to populate ParamColorEdit Name property for {Param}");
+            Smithbox.Log(this, $"PARAM META: {parent.Name} - Unable to populate ParamColorEdit Name property for {Param}");
         }
 
         if (node.Attributes["Name"] != null)
@@ -33,7 +33,7 @@ public class ParamDisplayName
         }
         else
         {
-            TaskLogs.AddLog($"PARAM META: {parent.Name} - Unable to populate ParamColorEdit Name property for {Name}");
+            Smithbox.Log(this, $"PARAM META: {parent.Name} - Unable to populate ParamColorEdit Name property for {Name}");
         }
     }
 }

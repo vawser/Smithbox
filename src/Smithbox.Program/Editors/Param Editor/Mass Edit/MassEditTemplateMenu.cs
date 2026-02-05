@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -138,7 +139,7 @@ public class MassEditTemplateMenu
     {
         if (NewScriptName == "")
         {
-            TaskLogs.AddError("Mass Edit Template name must not be empty.");
+            Smithbox.LogError(this, "Mass Edit Template name must not be empty.");
             return;
         }
 
@@ -157,16 +158,16 @@ public class MassEditTemplateMenu
                 fs.Flush();
                 fs.Dispose();
 
-                TaskLogs.AddLog($"Mass Edit: saved mass edit template: {filename} at {scriptPath}.");
+                Smithbox.Log(this, $"Mass Edit: saved mass edit template: {filename} at {scriptPath}.");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Mass Edit: to save mass edit template: {filename} at {scriptPath}\n{ex}");
+                Smithbox.Log(this, $"Mass Edit: to save mass edit template: {filename} at {scriptPath}\n{ex}");
             }
         }
         else
         {
-            TaskLogs.AddError($"Mass Edit template with this name already exists: {NewScriptName}.");
+            Smithbox.LogError(this, $"Mass Edit template with this name already exists: {NewScriptName}.");
         }
 
         ReloadScripts();
@@ -214,7 +215,7 @@ public class MassEditTemplateMenu
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Error loading mass edit script {name}",
+                        Smithbox.Log(this, $"Error loading mass edit script {name}",
                             LogLevel.Warning, LogPriority.Normal, e);
                         return null;
                     }
@@ -223,7 +224,7 @@ public class MassEditTemplateMenu
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Error loading mass edit scripts in {dir}",
+            Smithbox.Log(this, $"Error loading mass edit scripts in {dir}",
                 LogLevel.Warning, LogPriority.Normal, e);
         }
     }

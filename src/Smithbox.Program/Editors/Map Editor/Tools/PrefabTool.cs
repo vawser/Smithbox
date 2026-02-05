@@ -86,14 +86,14 @@ public class PrefabTool
 
         if (Prefabs.ContainsKey(name))
         {
-            TaskLogs.AddLog($"Failed to create prefab {name}: prefab already exists with this name.", LogLevel.Error);
+            Smithbox.LogError(this, $"Failed to create prefab {name}: prefab already exists with this name.");
             return;
         }
         var newPrefab = Prefab.New(View);
 
         if (newPrefab == null)
         {
-            TaskLogs.AddLog("Prefabs are not supported for this project type.");
+            Smithbox.Log(this, "Prefabs are not supported for this project type.");
         }
         else
         {

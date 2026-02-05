@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
@@ -19,7 +20,7 @@ public class AOBReader
             Process[] processesByName = Process.GetProcessesByName(processName);
             if (processesByName.Length == 0)
             {
-                TaskLogs.AddLog($"Error: Process '{processName}' not found. Please run the game first.");
+                Smithbox.Log(this, $"Error: Process '{processName}' not found. Please run the game first.");
             }
             else
             {
@@ -29,7 +30,7 @@ public class AOBReader
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to initialize AOBReader", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
+            Smithbox.Log(this, $"Failed to initialize AOBReader", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
         }
     }
 
@@ -37,18 +38,18 @@ public class AOBReader
     {
         try
         {
-            TaskLogs.AddLog("Starting AOB scan...");
+            Smithbox.Log(this, "Starting AOB scan...");
 
             string mask = new string('x', pattern.Length);
             IntPtr pattern1 = _scanner.FindPattern(pattern, mask);
 
-            TaskLogs.AddLog($"Found at: 0x{pattern1}");
+            Smithbox.Log(this, $"Found at: 0x{pattern1}");
 
             return pattern1;
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Scan failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
+            Smithbox.Log(this, $"Scan failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
             return new IntPtr(-1);
         }
     }
@@ -97,7 +98,7 @@ public class AOBReader
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Read failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
+            Smithbox.Log(this, $"Read failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
             return null;
         }
     }
@@ -143,7 +144,7 @@ public class AOBReader
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Write failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
+            Smithbox.Log(this, $"Write failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
             return false;
         }
     }

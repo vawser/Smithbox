@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -208,7 +209,7 @@ public class FileToolView
                         }
                         catch(Exception e)
                         {
-                            TaskLogs.AddLog($"[Smithbox] Failed to delete folder: {absFolder}", LogLevel.Error, LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Smithbox] Failed to delete folder: {absFolder}", LogPriority.High, e);
                         }
                     }
                 }
@@ -316,7 +317,7 @@ public class FileToolView
                 }
                 else
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to write file: {entry.Path}", LogLevel.Error, LogPriority.High);
+                    Smithbox.LogError(this, $"[Smithbox] Failed to write file: {entry.Path}", LogPriority.High);
 
                     lock (FailedUnpackEntries)
                     {
@@ -336,7 +337,7 @@ public class FileToolView
         }
         catch (OperationCanceledException)
         {
-            TaskLogs.AddLog("[Smithbox] Unpacking was cancelled.", LogLevel.Warning);
+            Smithbox.Log(this, "[Smithbox] Unpacking was cancelled.", LogLevel.Warning);
         }
 
         IsUnpacking = false;
@@ -387,7 +388,7 @@ public class FileToolView
         }
         catch (OperationCanceledException)
         {
-            TaskLogs.AddLog("[Smithbox] Deleting was cancelled.", LogLevel.Warning);
+            Smithbox.Log(this, "[Smithbox] Deleting was cancelled.", LogLevel.Warning);
         }
 
         IsDeleting = false;
@@ -444,12 +445,12 @@ public class FileToolView
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the file dictionary: {filepath}", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the file dictionary: {filepath}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the file dictionary: {filepath}", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox] Failed to read the file dictionary: {filepath}", LogPriority.High, e);
             }
         }
 

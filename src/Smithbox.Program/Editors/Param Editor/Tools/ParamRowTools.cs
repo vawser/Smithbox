@@ -146,7 +146,7 @@ public static class ParamRowTools
 
             activeView.Editor.ActionManager.ExecuteAction(action);
 
-            TaskLogs.AddLog($"Param rows sorted for " +
+            Smithbox.Log(typeof(ParamRowTools), $"Param rows sorted for " +
                 $"{activeView.Selection.GetActiveParam()}");
         }
     }

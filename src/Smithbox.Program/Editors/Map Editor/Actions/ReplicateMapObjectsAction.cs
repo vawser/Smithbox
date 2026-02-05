@@ -76,7 +76,7 @@ public class ReplicateMapObjectsAction : ViewportAction
             {
                 if (Clonables[i].MapID == null)
                 {
-                    TaskLogs.AddLog($"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
+                    Smithbox.Log(this, $"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
                         LogLevel.Warning);
                     continue;
                 }

@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Utilities;
 using System;
@@ -61,7 +62,7 @@ public class ParamStatisticsMenu
             catch (Exception e)
             {
                 // Happily ignore exceptions. This is non-mutating code with no critical use.
-                TaskLogs.AddError($"StatisticPopups buttons failed.", e);
+                Smithbox.LogError(this, $"StatisticPopups buttons failed.", e);
             }
 
             ImGui.Separator();

@@ -220,7 +220,7 @@ public class GparamSelection
         if (ImGui.IsWindowHovered())
         {
             CurrentWindowContext = newContext;
-            //TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
+            //Smithbox.Log(this, $"Context: {newContext.GetDisplayName()}");
         }
     }
 }

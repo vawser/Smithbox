@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.IO;
@@ -37,7 +38,7 @@ public class GparamData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            TaskLogs.AddError($"[Graphics Param Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to fully setup Primary Bank.");
         }
 
         // Vanilla Bank
@@ -46,7 +47,7 @@ public class GparamData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            TaskLogs.AddError($"[Graphics Param Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to fully setup Primary Bank.");
         }
 
         // GPARAM Information
@@ -55,11 +56,11 @@ public class GparamData : IDisposable
 
         if (gparamInfoResult)
         {
-            TaskLogs.AddLog($"[Graphics Param Editor] Setup GPARAM information.");
+            Smithbox.Log(this, $"[Graphics Param Editor] Setup GPARAM information.");
         }
         else
         {
-            TaskLogs.AddError($"[Graphics Param Editor] Failed to setup GPARAM information.");
+            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup GPARAM information.");
         }
 
         // GPARAM Enums
@@ -68,11 +69,11 @@ public class GparamData : IDisposable
 
         if (gparamEnumResult)
         {
-            TaskLogs.AddLog($"[Graphics Param Editor] Setup GPARAM enums.");
+            Smithbox.Log(this, $"[Graphics Param Editor] Setup GPARAM enums.");
         }
         else
         {
-            TaskLogs.AddError($"[Graphics Param Editor] Failed to setup GPARAM enums.");
+            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup GPARAM enums.");
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
@@ -111,12 +112,12 @@ public class GparamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the GPARAM information: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"Failed to deserialize the GPARAM information: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the GPARAM information: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"Failed to read the GPARAM information: {targetFile}", LogPriority.High, e);
             }
         }
 
@@ -156,12 +157,12 @@ public class GparamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the GPARAM enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the GPARAM enums: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the GPARAM enums: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox] Failed to read the GPARAM enums: {targetFile}", LogPriority.High, e);
             }
         }
 

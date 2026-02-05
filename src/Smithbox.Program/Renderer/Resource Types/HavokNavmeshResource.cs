@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -119,7 +120,7 @@ public class HavokNavmeshResource : IResource, IDisposable
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.", LogLevel.Error, LogPriority.High, e);
+            Smithbox.LogError(this, $"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.", LogPriority.High, e);
         }
 
         return LoadInternal(al);

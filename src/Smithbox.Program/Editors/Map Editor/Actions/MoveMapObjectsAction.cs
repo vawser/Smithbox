@@ -42,7 +42,7 @@ public class MoveMapObjectsAction : ViewportAction
         {
             if (Moveables[i].MapID == null)
             {
-                TaskLogs.AddLog($"Failed to move {Moveables[i].Name}, as it had no defined MapID",
+                Smithbox.Log(this, $"Failed to move {Moveables[i].Name}, as it had no defined MapID",
                     LogLevel.Warning);
                 continue;
             }

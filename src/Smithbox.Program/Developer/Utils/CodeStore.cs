@@ -61,12 +61,12 @@ public void GenerateUpgraderInfo(Smithbox baseEditor, ProjectEntry curProject)
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{curProject.ProjectName}:Param Editor] Failed to deserialize Upgrader Information.", LogLevel.Error, LogPriority.High, e);
+            Smithbox.LogError(this, $"[{curProject.ProjectName}:Param Editor] Failed to deserialize Upgrader Information.", LogPriority.High, e);
         }
     }
     catch (Exception e)
     {
-        TaskLogs.AddLog($"[{curProject.ProjectName}:Param Editor] Failed to load Upgrader Information.", LogLevel.Error, LogPriority.High, e);
+        Smithbox.LogError(this, $"[{curProject.ProjectName}:Param Editor] Failed to load Upgrader Information.", LogPriority.High, e);
     }
 
     for (int i = 0; i < UpgraderInfo.UpgradeCommands.Count; i++)

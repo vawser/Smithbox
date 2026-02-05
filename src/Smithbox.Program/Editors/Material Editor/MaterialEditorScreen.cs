@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.TextEditor;
@@ -232,11 +233,11 @@ public class MaterialEditorScreen : EditorScreen
 
         if (saveTaskResult)
         {
-            TaskLogs.AddLog($"[Material Editor] Saved {displayName} in {activeView.Selection.SelectedBinderEntry.Filename}.");
+            Smithbox.Log(this, $"[Material Editor] Saved {displayName} in {activeView.Selection.SelectedBinderEntry.Filename}.");
         }
         else
         {
-            TaskLogs.AddError($"[Material Editor] Failed to save {displayName} in {activeView.Selection.SelectedBinderEntry.Filename}.");
+            Smithbox.LogError(this, $"[Material Editor] Failed to save {displayName} in {activeView.Selection.SelectedBinderEntry.Filename}.");
         }
 
         // Save the configuration JSONs

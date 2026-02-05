@@ -431,7 +431,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "+")
@@ -442,7 +442,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "-")
@@ -453,7 +453,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "*")
@@ -464,7 +464,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "/")
@@ -475,7 +475,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
 
@@ -511,7 +511,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "+")
@@ -522,7 +522,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "-")
@@ -533,7 +533,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "*")
@@ -544,7 +544,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "/")
@@ -555,7 +555,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
 
@@ -591,7 +591,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "+")
@@ -602,7 +602,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "-")
@@ -613,7 +613,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "*")
@@ -624,7 +624,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "/")
@@ -635,7 +635,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
 
@@ -671,7 +671,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "+")
@@ -682,7 +682,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "-")
@@ -693,7 +693,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "*")
@@ -704,7 +704,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "/")
@@ -715,7 +715,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
 
@@ -751,7 +751,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "+")
@@ -762,7 +762,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "-")
@@ -773,7 +773,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "*")
@@ -784,7 +784,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "/")
@@ -795,7 +795,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
 
@@ -831,7 +831,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "+")
@@ -842,7 +842,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "-")
@@ -853,7 +853,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "*")
@@ -864,7 +864,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "/")
@@ -875,7 +875,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
 
@@ -911,7 +911,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "+")
@@ -922,7 +922,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "-")
@@ -933,7 +933,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "*")
@@ -944,7 +944,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "/")
@@ -955,7 +955,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
 
@@ -991,7 +991,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "+")
@@ -1002,7 +1002,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "-")
@@ -1013,7 +1013,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "*")
@@ -1024,7 +1024,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "/")
@@ -1035,7 +1035,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
 
@@ -1071,7 +1071,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "+")
@@ -1082,7 +1082,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "-")
@@ -1093,7 +1093,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "*")
@@ -1104,7 +1104,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
                 if (compare == "/")
@@ -1115,7 +1115,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
 
@@ -1151,7 +1151,7 @@ public static class MassEditPropertyHelper
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
+                        Smithbox.Log(typeof(MassEditPropertyHelper), $"{e.Message} {e.StackTrace}");
                     }
                 }
 

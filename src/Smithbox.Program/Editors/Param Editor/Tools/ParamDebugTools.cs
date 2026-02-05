@@ -32,7 +32,7 @@ public static class ParamDebugTools
 
             activeView.ParamTableWindow.WriteTableGroupNames(dir);
 
-            TaskLogs.AddLog($"Exported table names to {dir}");
+            Smithbox.Log(typeof(ParamDebugTools), $"Exported table names to {dir}");
         }
         UIHelper.Tooltip("Export the current table names for the current param directly to the Smithbox.Data folder.");
     }
@@ -88,7 +88,7 @@ public static class ParamDebugTools
 
                 File.WriteAllText(fullPath, json);
 
-                TaskLogs.AddLog($"Exported row names to {fullPath}");
+                Smithbox.Log(typeof(ParamDebugTools), $"Exported row names to {fullPath}");
             }
         }
         UIHelper.Tooltip("Export the current row names for the current param directly to the Smithbox.Data folder.");
