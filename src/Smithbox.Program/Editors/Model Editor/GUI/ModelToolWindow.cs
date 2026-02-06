@@ -10,26 +10,57 @@ public class ModelToolWindow
     public ModelEditorScreen Editor;
     public ProjectEntry Project;
 
+    // Tools
+    public ModelGridConfiguration ModelGridTool;
+    public ModelInsightView ModelInsightMenu;
+    public ModelInstanceFinder ModelInstanceFinder;
+    public ModelMaskToggler ModelMaskToggler;
+    public ModelInsightHelper ModelInsightHelper;
+
+    // Actions
+    public CreateAction CreateAction;
+    public DuplicateAction DuplicateAction;
+    public DeleteAction DeleteAction;
+    public FrameAction FrameAction;
+    public GotoAction GotoAction;
+    public PullToCameraAction PullToCameraAction;
+    public ReorderAction ReorderAction;
+
+
     public ModelToolWindow(ModelEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
+
+        ModelGridTool = new ModelGridConfiguration(Editor, Project);
+        ModelInsightMenu = new ModelInsightView(Editor, Project);
+        ModelInstanceFinder = new ModelInstanceFinder(Editor, Project);
+        ModelMaskToggler = new ModelMaskToggler(Editor, Project);
+
+        CreateAction = new CreateAction(Editor, Project);
+        DuplicateAction = new DuplicateAction(Editor, Project);
+        DeleteAction = new DeleteAction(Editor, Project);
+        FrameAction = new FrameAction(Editor, Project);
+        GotoAction = new GotoAction(Editor, Project);
+        PullToCameraAction = new PullToCameraAction(Editor, Project);
+        ReorderAction = new ReorderAction(Editor, Project);
+
+        ModelInsightHelper = new ModelInsightHelper(Editor, Project);
     }
 
-    public void OnGui()
+    public void Display()
     {
+        if (CFG.Current.Interface_ModelEditor_ScreenshotMode)
+            return;
+
         if (!CFG.Current.Interface_ModelEditor_ToolWindow)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
+        var activeView = Editor.ViewHandler.ActiveView;
 
-        if (ImGui.Begin("Tool Window##modelEditorTools", ImGuiWindowFlags.MenuBar))
+        if (ImGui.Begin("Tool Window##modelEditorTools", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.ModelEditor_Tools);
-
-            var windowHeight = ImGui.GetWindowHeight();
-            var windowWidth = ImGui.GetWindowWidth();
 
             if (ImGui.BeginMenuBar())
             {
@@ -40,32 +71,31 @@ public class ModelToolWindow
 
             if (CFG.Current.Interface_ModelEditor_Tool_CreateAction)
             {
-                Editor.CreateAction.OnToolWindow();
+                CreateAction.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
             {
-                Editor.ModelGridTool.OnToolWindow();
+                ModelGridTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelInsight)
             {
-                Editor.ModelInsightTool.OnToolWindow();
+                ModelInsightMenu.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
             {
-                Editor.ModelInstanceFinder.OnToolWindow();
+                ModelInstanceFinder.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler)
             {
-                Editor.ModelMaskToggler.OnToolWindow();
+                ModelMaskToggler.OnToolWindow();
             }
         }
 
         ImGui.End();
-        ImGui.PopStyleColor(1);
     }
 
     public void ViewMenu()

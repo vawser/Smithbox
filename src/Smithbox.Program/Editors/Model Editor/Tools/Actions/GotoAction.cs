@@ -26,7 +26,12 @@ public class GotoAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (activeView.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Jump))
             {
@@ -69,9 +74,14 @@ public class GotoAction
     /// </summary>
     public void GotoModelObjectEntry()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (activeView.ViewportSelection.IsSelection())
         {
-            Editor.ViewportSelection.GotoTreeTarget = Editor.ViewportSelection.GetSingleSelection();
+            activeView.ViewportSelection.GotoTreeTarget = activeView.ViewportSelection.GetSingleSelection();
         }
         else
         {

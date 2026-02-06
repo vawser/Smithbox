@@ -77,10 +77,10 @@ public class ReorderContainerObjectsAction : ViewportAction
         UndoIndices = sourceindices;
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
             foreach (Entity c in SourceObjects)
             {
-                universe.Selection.AddSelection(Editor, c);
+                universe.Selection.AddSelection(c);
             }
         }
 
@@ -134,10 +134,10 @@ public class ReorderContainerObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
             foreach (Entity c in SourceObjects)
             {
-                universe.Selection.AddSelection(Editor, c);
+                universe.Selection.AddSelection(c);
             }
         }
 

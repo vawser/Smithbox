@@ -1,4 +1,5 @@
-﻿using StudioCore.Application;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
@@ -12,10 +13,6 @@ public class MapViewportView
 {
     public MapEditorScreen Editor;
     public ProjectEntry Project;
-
-    private Sdl2Window Window;
-    private GraphicsDevice Device;
-    public RenderScene RenderScene;
 
     public IViewport Viewport;
     public Rectangle Rect;
@@ -32,34 +29,29 @@ public class MapViewportView
         Editor = editor;
         Project = project;
 
-        Window = Smithbox.Instance._context.Window;
-        Device = Smithbox.Instance._context.Device;
+        editor.Window = Smithbox.Instance._context.Window;
+        editor.Device = Smithbox.Instance._context.Device;
 
-        Rect = Window.Bounds;
+        Rect = editor.Window.Bounds;
 
-        if (Device != null)
+        if (editor.Device != null)
         {
-            RenderScene = new RenderScene();
-        }
-    }
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                Viewport = new VulkanViewport(Editor.Universe, "Mapeditvp", Rect.Width, Rect.Height);
 
-    public void Setup()
-    {
-        if (Device != null && Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-        {
-            Viewport = new VulkanViewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
-
-            RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
-        }
-        else
-        {
-            Viewport = new NullViewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
+                editor.RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
+            }
+            else
+            {
+                Viewport = new NullViewport(Editor.Universe, "Mapeditvp", Rect.Width, Rect.Height);
+            }
         }
     }
 
     public Vector3 GetCameraPosition()
     {
-        if (Device != null)
+        if (Editor.Device != null)
         {
             return Viewport.ViewportCamera.CameraTransform.Position;
         }
@@ -73,7 +65,7 @@ public class MapViewportView
     /// <returns></returns>
     public Vector3 GetPlacementPosition()
     {
-        if (Device != null)
+        if (Editor.Device != null)
         {
             // Get the camera's view matrix and position
             var viewMatrix = Viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH;
@@ -101,7 +93,7 @@ public class MapViewportView
     /// <returns></returns>
     public Matrix4x4 GetPlacementTransform()
     {
-        if (Device != null)
+        if (Editor.Device != null)
         {
             // Get the camera's view matrix and position
             var viewMatrix = Viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH;
@@ -136,27 +128,27 @@ public class MapViewportView
 
     public void OnGui()
     {
-        Viewport.OnGui();
+        Viewport.Display();
 
         if (Editor.Universe != null && PlacementOrb == null)
         {
-            PlacementOrb = new PlacementEntity(Editor);
+            PlacementOrb = new PlacementEntity(Editor.Universe);
         }
 
         if (PlacementOrb != null)
         {
-            PlacementOrb.UpdateRenderModel(Editor);
+            PlacementOrb.UpdateRenderModel();
         }
     }
 
     public void Update(float deltatime)
     {
-        ViewportUsingKeyboard = Viewport.Update(Window, deltatime);
+        ViewportUsingKeyboard = Viewport.Update(Editor.Window, deltatime);
     }
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
     {
-        Window = window;
+        Editor.Window = window;
         Rect = window.Bounds;
     }
 

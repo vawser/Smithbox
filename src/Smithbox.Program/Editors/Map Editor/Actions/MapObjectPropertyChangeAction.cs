@@ -146,7 +146,7 @@ public class MapObjectPropertyChangeAction : ViewportAction
             PostExecutionAction.Invoke(false);
         }
 
-        TargetEntity.UpdateRenderModel(Editor);
+        TargetEntity.UpdateRenderModel();
 
         return ActionEvent.NoEvent;
     }
@@ -182,7 +182,7 @@ public class MapObjectPropertyChangeAction : ViewportAction
             PostExecutionAction.Invoke(true);
         }
 
-        TargetEntity.UpdateRenderModel(Editor);
+        TargetEntity.UpdateRenderModel();
 
         return ActionEvent.NoEvent;
     }

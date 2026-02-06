@@ -6,12 +6,12 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelViewportFilters
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public ModelViewportFilters(ModelEditorScreen editor, ProjectEntry project)
+    public ModelViewportFilters(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -24,18 +24,18 @@ public class ModelViewportFilters
             // Meshes
             if (ImGui.MenuItem("Meshes"))
             {
-                Editor.ModelViewportView.RenderScene.ToggleDrawFilter(RenderFilter.Meshes);
+                View.RenderScene.ToggleDrawFilter(RenderFilter.Meshes);
             }
-            ticked = Editor.ModelViewportView.RenderScene.DrawFilter.HasFlag(RenderFilter.Meshes);
+            ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Meshes);
             UIHelper.ShowActiveStatus(ticked);
             UIHelper.Tooltip("Toggle the display of meshes.");
 
             // Dummies
             if (ImGui.MenuItem("Dummy Polygons"))
             {
-                Editor.ModelViewportView.RenderScene.ToggleDrawFilter(RenderFilter.Dummies);
+                View.RenderScene.ToggleDrawFilter(RenderFilter.Dummies);
             }
-            ticked = Editor.ModelViewportView.RenderScene.DrawFilter.HasFlag(RenderFilter.Dummies);
+            ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Dummies);
             UIHelper.ShowActiveStatus(ticked);
             UIHelper.Tooltip("Toggle the display of dummy polygons.");
 
@@ -43,18 +43,18 @@ public class ModelViewportFilters
             // Nodes
             if (ImGui.MenuItem("Bones"))
             {
-                Editor.ModelViewportView.RenderScene.ToggleDrawFilter(RenderFilter.Nodes);
+                View.RenderScene.ToggleDrawFilter(RenderFilter.Nodes);
             }
-            ticked = Editor.ModelViewportView.RenderScene.DrawFilter.HasFlag(RenderFilter.Nodes);
+            ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Nodes);
             UIHelper.ShowActiveStatus(ticked);
             UIHelper.Tooltip("Toggle the display of bones.");
 
             // Collision
             if (ImGui.MenuItem("Collision"))
             {
-                Editor.ModelViewportView.RenderScene.ToggleDrawFilter(RenderFilter.Collision);
+                View.RenderScene.ToggleDrawFilter(RenderFilter.Collision);
             }
-            ticked = Editor.ModelViewportView.RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
+            ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
             UIHelper.ShowActiveStatus(ticked);
             UIHelper.Tooltip("Toggle the display of collision.");
 

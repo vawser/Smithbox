@@ -106,11 +106,11 @@ public class Gizmos
     private Vector3 OriginProjection;
     private Axis TransformAxis = Axis.None;
 
-    private EditorScreen Editor;
+    private IUniverse Owner;
 
-    public Gizmos(EditorScreen editor, ViewportActionManager am, ViewportSelection selection, MeshRenderables renderlist)
+    public Gizmos(IUniverse owner, ViewportActionManager am, ViewportSelection selection, MeshRenderables renderlist)
     {
-        Editor = editor;
+        Owner = owner;
 
         ActionManager = am;
         TranslateGizmoX = new DbgPrimGizmoTranslateArrow(Axis.PosX);
@@ -313,7 +313,7 @@ public class Gizmos
                 List<ViewportAction> actlist = new();
                 foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
                 {
-                    sel.ClearTemporaryTransform(Editor, false);
+                    sel.ClearTemporaryTransform(false);
                     actlist.Add(sel.GetUpdateTransformAction(ProjectTransformDelta(sel)));
                 }
 
@@ -372,7 +372,7 @@ public class Gizmos
                     //Selection.GetSingleSelection().SetTemporaryTransform(CurrentTransform);
                     foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
                     {
-                        sel.SetTemporaryTransform(Editor, ProjectTransformDelta(sel));
+                        sel.SetTemporaryTransform(ProjectTransformDelta(sel));
                     }
                 }
             }

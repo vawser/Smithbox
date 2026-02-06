@@ -51,9 +51,7 @@ public static class FocusManager
     public static bool IsInModelEditor()
     {
         if (Focus is EditorFocusContext.ModelEditor_None
-            or EditorFocusContext.ModelEditor_ContainerList
             or EditorFocusContext.ModelEditor_FileList
-            or EditorFocusContext.ModelEditor_ContentList
             or EditorFocusContext.ModelEditor_Properties
             or EditorFocusContext.ModelEditor_Tools
             or EditorFocusContext.ModelEditor_Viewport)
@@ -142,9 +140,7 @@ public enum EditorFocusContext
     MapEditor_Viewport,
 
     ModelEditor_None,
-    ModelEditor_ContainerList,
     ModelEditor_FileList,
-    ModelEditor_ContentList,
     ModelEditor_Properties,
     ModelEditor_Tools,
     ModelEditor_Viewport,

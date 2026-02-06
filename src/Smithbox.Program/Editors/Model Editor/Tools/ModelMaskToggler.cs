@@ -49,6 +49,11 @@ public class ModelMaskToggler
 
     public void Display()
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             UIHelper.WrappedText("This project type is not supported by this tool.");
@@ -62,14 +67,14 @@ public class ModelMaskToggler
             return;
         }
 
-        if(Editor.Selection.SelectedModelWrapper == null)
+        if(activeView.Selection.SelectedModelWrapper == null)
         {
             UIHelper.WrappedText("A model must be loaded first for this tool to work.");
 
             return;
         }
 
-        var filename = Editor.Selection.SelectedModelWrapper.Name;
+        var filename = activeView.Selection.SelectedModelWrapper.Name;
         var npcParamKey = "NpcParam";
 
         if (!Editor.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(npcParamKey))
@@ -137,6 +142,11 @@ public class ModelMaskToggler
 
     public void ToggleMeshes(Param.Row row)
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
         List<bool> maskList = new List<bool>();
 
         foreach (var cell in row.Cells)
@@ -159,8 +169,8 @@ public class ModelMaskToggler
             }
         }
 
-        var container = Editor.Selection.SelectedModelWrapper.Container;
-        var flver = Editor.Selection.SelectedModelWrapper.FLVER;
+        var container = activeView.Selection.SelectedModelWrapper.Container;
+        var flver = activeView.Selection.SelectedModelWrapper.FLVER;
 
         Dictionary<int, FLVER2.Material> materialDict = new();
 

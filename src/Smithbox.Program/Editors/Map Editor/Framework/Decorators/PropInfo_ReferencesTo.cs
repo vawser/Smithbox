@@ -85,8 +85,8 @@ public static class PropInfo_ReferencesTo
                     if (ImGui.Button(displayName + "##MSBRefTo" + refID,
                         DPI.WholeWidthButton(windowWidth, 24)))
                     {
-                        selection.ClearSelection(editor);
-                        selection.AddSelection(editor, e);
+                        selection.ClearSelection();
+                        selection.AddSelection(e);
                     }
                 }
                 else if (n is ObjectContainerReference r)
@@ -102,9 +102,9 @@ public static class PropInfo_ReferencesTo
                     if (ImGui.Button(prettyName + "##MSBRefTo" + refID,
                         DPI.WholeWidthButton(windowWidth, 24)))
                     {
-                        ISelectable rootTarget = r.GetSelectionTarget(editor);
-                        selection.ClearSelection(editor);
-                        selection.AddSelection(editor, rootTarget);
+                        ISelectable rootTarget = r.GetSelectionTarget(editor.Universe);
+                        selection.ClearSelection();
+                        selection.AddSelection(rootTarget);
                         // For this type of connection, jump to the object in the list to actually load the map
                         // (is this desirable in other cases?). It could be possible to have a Load context menu
                         // here, but that should be shared with SceneTree.

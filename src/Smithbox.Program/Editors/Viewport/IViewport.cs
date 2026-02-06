@@ -17,7 +17,7 @@ public interface IViewport
 
     public bool IsViewportSelected { get; set; }
 
-    public void OnGui();
+    public void Display();
     public void ResizeViewport(GraphicsDevice device, Rectangle newvp);
     public bool Update(Sdl2Window window, float dt);
     public void Draw(GraphicsDevice device, CommandList cl);

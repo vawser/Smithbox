@@ -41,7 +41,7 @@ public class AddMapObjectsAction : ViewportAction
             {
                 Map.Objects.Add(Added[i]);
                 Parent.AddChild(Added[i]);
-                Added[i].UpdateRenderModel(Editor);
+                Added[i].UpdateRenderModel();
                 if (Added[i].RenderSceneMesh != null)
                 {
                     Added[i].RenderSceneMesh.SetSelectable(Added[i]);
@@ -85,10 +85,10 @@ public class AddMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
             foreach (MsbEntity c in Added)
             {
-                universe.Selection.AddSelection(Editor, c);
+                universe.Selection.AddSelection(c);
             }
         }
 
@@ -117,7 +117,7 @@ public class AddMapObjectsAction : ViewportAction
         //Clones.Clear();
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
         }
 
         return ActionEvent.ObjectAddedRemoved;

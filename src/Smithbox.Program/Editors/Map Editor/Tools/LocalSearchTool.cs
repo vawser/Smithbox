@@ -246,8 +246,8 @@ public class LocalSearchTool
                         {
                             if (selectFirstResult)
                             {
-                                Editor.Universe.Selection.ClearSelection(Editor);
-                                Editor.Universe.Selection.AddSelection(Editor, obj);
+                                Editor.Universe.Selection.ClearSelection();
+                                Editor.Universe.Selection.AddSelection(obj);
                                 selectFirstResult = false;
                             }
 

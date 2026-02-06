@@ -96,6 +96,6 @@ public class RenderTypeAction
             }
         }
 
-        Editor.ViewportSelection.ResetSelection(Editor);
+        Editor.ViewportSelection.ResetSelection();
     }
 }

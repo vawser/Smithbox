@@ -985,7 +985,7 @@ public class MapPropertyView
                                 firstEnt.RenderSceneMesh = null;
                             }
 
-                            firstEnt.UpdateRenderModel(Editor);
+                            firstEnt.UpdateRenderModel();
                             firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                         });
                         ContextActionManager.ExecuteAction(action);
@@ -1039,7 +1039,7 @@ public class MapPropertyView
                             firstEnt.RenderSceneMesh = null;
                         }
 
-                        firstEnt.UpdateRenderModel(Editor);
+                        firstEnt.UpdateRenderModel();
                         firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                     });
                     ContextActionManager.ExecuteAction(action);
@@ -1670,7 +1670,7 @@ public class MapPropertyView
                             }
                         }
 
-                        selection.UpdateRenderModel(Editor);
+                        selection.UpdateRenderModel();
                     });
                 }
 

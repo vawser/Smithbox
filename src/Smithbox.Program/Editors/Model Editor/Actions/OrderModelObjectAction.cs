@@ -13,8 +13,8 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class OrderModelObjectAction : ViewportAction
 {
-    private readonly ModelEditorScreen Editor;
-    private readonly ProjectEntry Project;
+    private ModelEditorView View;
+    private ProjectEntry Project;
 
     private ModelContainer Container;
     private List<ModelEntity> Selection = new();
@@ -22,10 +22,10 @@ public class OrderModelObjectAction : ViewportAction
 
     private TreeObjectOrderMovementType MoveSelectionDir;
 
-    public OrderModelObjectAction(ModelEditorScreen editor, ProjectEntry project, 
+    public OrderModelObjectAction(ModelEditorView view, ProjectEntry project, 
        ModelContainer container, List<ModelEntity> objects, TreeObjectOrderMovementType moveDir)
     {
-        Editor = editor;
+        View = view;
         Project = project;
         Container = container;
 
@@ -36,8 +36,6 @@ public class OrderModelObjectAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = Editor.Universe;
-
         // TODO: allow this to work with multi-selections
         // Will require more rigorous validation of the indices
         if (Selection.Count > 1)
@@ -211,8 +209,6 @@ public class OrderModelObjectAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        var universe = Editor.Universe;
-
         if (Selection.Count > 0)
         {
             var curSel = Selection.First();

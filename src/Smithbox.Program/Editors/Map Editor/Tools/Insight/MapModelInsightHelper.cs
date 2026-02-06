@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor;
 
-public static class MapModelInsightHelper
+public class MapModelInsightHelper
 {
-    public static MapEditorScreen Editor;
-    public static ProjectEntry Project;
+    public MapEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public static void Setup(MapEditorScreen editor, ProjectEntry project)
+    public MapModelInsightHelper(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
@@ -24,11 +24,11 @@ public static class MapModelInsightHelper
         Entries = new();
     }
 
-    public static Dictionary<string, MapModelInsightEntry> Entries { get; set; }
-    public static MapModelInsightEntry SelectedDataEntry { get; set; }
-    public static MapFlverInsightEntry SelectedFlverEntry { get; set; }
+    public Dictionary<string, MapModelInsightEntry> Entries { get; set; }
+    public MapModelInsightEntry SelectedDataEntry { get; set; }
+    public MapFlverInsightEntry SelectedFlverEntry { get; set; }
 
-    public static void AddEntry(MapContainer container)
+    public void AddEntry(MapContainer container)
     {
         if (!Entries.ContainsKey(container.Name))
         {
@@ -36,7 +36,7 @@ public static class MapModelInsightHelper
         }
     }
 
-    public static void ClearEntry(MapContainer container)
+    public void ClearEntry(MapContainer container)
     {
         if (Entries.ContainsKey(container.Name))
         {
@@ -44,7 +44,7 @@ public static class MapModelInsightHelper
         }
     }
 
-    public static void UpdateEntry(string flverVirtPath, string texVirtPath, IFlver flver, MTD mtd, MATBIN matbin, string materialStr)
+    public void UpdateEntry(string flverVirtPath, string texVirtPath, IFlver flver, MTD mtd, MATBIN matbin, string materialStr)
     {
         if (Project == null)
             return;

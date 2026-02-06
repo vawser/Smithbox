@@ -22,10 +22,10 @@ namespace StudioCore.Editors.MapEditor;
 /// A universe is a collection of loaded maps with methods to load, serialize,
 /// and unload individual maps.
 /// </summary>
-public class Universe
+public class MapUniverse : IUniverse
 {
-    private MapEditorScreen Editor;
-    private ProjectEntry Project;
+    public MapEditorScreen Editor;
+    public ProjectEntry Project;
 
     /// <summary>
     /// The rendering scene context
@@ -52,12 +52,12 @@ public class Universe
     /// </summary>
     private List<Task> Tasks = new();
 
-    public Universe(MapEditorScreen editor, ProjectEntry project)
+    public MapUniverse(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
 
-        RenderScene = editor.MapViewportView.RenderScene;
+        RenderScene = editor.RenderScene;
         Selection = editor.ViewportSelection;
 
         if (RenderScene == null)
@@ -84,7 +84,7 @@ public class Universe
 
         ResourceManager.ClearUnusedResources();
 
-        Editor.ViewportSelection.ClearSelection(Editor);
+        Editor.ViewportSelection.ClearSelection();
 
         LoadMapAsync(mapid, selectOnLoad, fastLoad);
 
@@ -93,7 +93,7 @@ public class Universe
 
     public void UnloadMap(string mapID, bool clearFromList = false)
     {
-        Editor.ViewportSelection.ClearSelection(Editor);
+        Editor.ViewportSelection.ClearSelection();
         Editor.EditorActionManager.Clear();
 
         foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
@@ -105,7 +105,7 @@ public class Universe
                 var wrapper = entry.Value;
 
                 ResourceManager.ClearUnusedResources();
-                MapModelInsightHelper.ClearEntry(wrapper.MapContainer);
+                Editor.ModelInsightTool.ClearEntry(wrapper.MapContainer);
 
                 Editor.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
 
@@ -160,7 +160,7 @@ public class Universe
             var newMap = new MapContainer(Editor, mapid);
 
             ModelDataMapID = newMap.Name;
-            MapModelInsightHelper.AddEntry(newMap);
+            Editor.ModelInsightTool.AddEntry(newMap);
 
             Editor.DisplayGroupTool.SetupDrawgroupCount();
 
@@ -222,8 +222,8 @@ public class Universe
                     // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
                     if (selectOnLoad)
                     {
-                        Selection.ClearSelection(Editor);
-                        Selection.AddSelection(Editor, newMap.RootObject);
+                        Selection.ClearSelection();
+                        Selection.AddSelection(newMap.RootObject);
                     }
                 }
 
@@ -251,7 +251,7 @@ public class Universe
                     // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
                     foreach (Entity obj in newMap.Objects)
                     {
-                        obj.UpdateRenderModel(Editor);
+                        obj.UpdateRenderModel();
                     }
                 }
 
@@ -536,7 +536,7 @@ public class Universe
 
             registParams.Add(row.ID, row);
 
-            MsbEntity obj = new(Editor, map, row, MsbEntityType.DS2GeneratorRegist);
+            MsbEntity obj = new(Editor.Universe, map, row, MsbEntityType.DS2GeneratorRegist);
             map.AddObject(obj);
         }
 
@@ -553,7 +553,7 @@ public class Universe
             mergedRow.AddRow("generator-loc", row);
             generatorParams.Add(row.ID, mergedRow);
 
-            MsbEntity obj = new(Editor, map, mergedRow, MsbEntityType.DS2Generator);
+            MsbEntity obj = new(Editor.Universe, map, mergedRow, MsbEntityType.DS2Generator);
             generatorObjs.Add(row.ID, obj);
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
@@ -577,7 +577,7 @@ public class Universe
                 MergedParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
                 mergedRow.AddRow("generator", row);
                 generatorParams.Add(row.ID, mergedRow);
-                MsbEntity obj = new(Editor, map, mergedRow, MsbEntityType.DS2Generator);
+                MsbEntity obj = new(Editor.Universe, map, mergedRow, MsbEntityType.DS2Generator);
                 generatorObjs.Add(row.ID, obj);
                 map.AddObject(obj);
             }
@@ -626,7 +626,7 @@ public class Universe
 
             eventParams.Add(row.ID, row);
 
-            MsbEntity obj = new(Editor, map, row, MsbEntityType.DS2Event);
+            MsbEntity obj = new(Editor.Universe, map, row, MsbEntityType.DS2Event);
             map.AddObject(obj);
         }
 
@@ -640,7 +640,7 @@ public class Universe
 
             eventLocationParams.Add(row.ID, row);
 
-            MsbEntity obj = new(Editor, map, row, MsbEntityType.DS2EventLocation);
+            MsbEntity obj = new(Editor.Universe, map, row, MsbEntityType.DS2EventLocation);
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
 
@@ -662,7 +662,7 @@ public class Universe
 
             objectInstanceParams.Add(row.ID, row);
 
-            MsbEntity obj = new(Editor, map, row, MsbEntityType.DS2ObjectInstance);
+            MsbEntity obj = new(Editor.Universe, map, row, MsbEntityType.DS2ObjectInstance);
             map.AddObject(obj);
         }
 

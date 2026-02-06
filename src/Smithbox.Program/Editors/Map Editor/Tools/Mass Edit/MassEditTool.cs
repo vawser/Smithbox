@@ -306,7 +306,7 @@ public class MassEditTool
         // Select
         if (ImGui.Button($"{Icons.MousePointer}##selectInputSelection", DPI.IconButtonSize))
         {
-            Editor.ViewportSelection.ClearSelection(Editor);
+            Editor.ViewportSelection.ClearSelection();
 
             foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
             {
@@ -322,7 +322,7 @@ public class MassEditTool
                             {
                                 if (IsValidMapObject(wrapper.MapContainer, mEnt))
                                 {
-                                    Editor.ViewportSelection.AddSelection(Editor, mEnt);
+                                    Editor.ViewportSelection.AddSelection(mEnt);
                                 }
                             }
                         }
@@ -494,7 +494,7 @@ public class MassEditTool
         List<MapActionGroup> actionGroups = new List<MapActionGroup>();
 
         // Clear selection before applying edits, to ensure the properties view doesn't interfere.
-        selection.ClearSelection(Editor);
+        selection.ClearSelection();
 
         // Get filtered list of maps
         var mapList = MsbUtils.GetFullMapList(Editor.Project);

@@ -208,9 +208,9 @@ public class MapValidatorTool
 
     private void FocusEntry(MapValidationEntry entry)
     {
-        Editor.ViewportSelection.ClearSelection(Editor);
+        Editor.ViewportSelection.ClearSelection();
         Editor.MapViewportView.Viewport.FramePosition(entry.AssociatedEntity.GetLocalTransform().Position, 10f);
-        Editor.ViewportSelection.AddSelection(Editor, entry.AssociatedEntity);
+        Editor.ViewportSelection.AddSelection(entry.AssociatedEntity);
     }
 
     public void ValidateEntityID(MapContainer map)

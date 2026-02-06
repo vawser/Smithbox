@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
@@ -14,40 +15,33 @@ using Veldrid.Utilities;
 
 namespace StudioCore.Editors.Viewport;
 
-public enum ViewportType
-{
-    MapEditor,
-    ModelEditor
-}
-
 /// <summary>
 /// A viewport is a virtual (i.e. render to texture/render target) view of a scene. It can receive input events to
 /// transform the view within a virtual canvas, or it can be manually configured for say rendering thumbnails
 /// </summary>
 public class VulkanViewport : IViewport
 {
-    public MapEditorScreen MapEditor;
-    public ModelEditorScreen ModelEditor;
+    public IUniverse Owner;
 
     public readonly string ID = "";
 
-    public readonly ViewportActionManager ActionManager;
-    public readonly FullScreenQuad ClearQuad;
-    public readonly GraphicsDevice Device;
+    public ViewportActionManager ActionManager;
+    public FullScreenQuad ClearQuad;
+    public GraphicsDevice Device;
 
-    public readonly Gizmos Gizmos;
+    public Gizmos Gizmos;
 
-    public readonly MapGrid MapPrimaryGrid;
-    public readonly MapGrid MapSecondaryGrid;
-    public readonly MapGrid MapTertiaryGrid;
+    public MapGrid MapPrimaryGrid;
+    public MapGrid MapSecondaryGrid;
+    public MapGrid MapTertiaryGrid;
 
-    public readonly ModelGrid ModelPrimaryGrid;
-    public readonly ModelGrid ModelSecondaryGrid;
-    public readonly ModelGrid ModelTertiaryGrid;
+    public ModelGrid ModelPrimaryGrid;
+    public ModelGrid ModelSecondaryGrid;
+    public ModelGrid ModelTertiaryGrid;
 
-    public readonly RenderScene RenderScene;
-    public readonly ViewportSelection ViewportSelection;
-    public readonly SceneRenderPipeline ViewPipeline;
+    public RenderScene RenderScene;
+    public ViewportSelection ViewportSelection;
+    public SceneRenderPipeline ViewPipeline;
 
     public BoundingFrustum Frustum;
     public Matrix4x4 ProjectionMatrix;
@@ -58,11 +52,6 @@ public class VulkanViewport : IViewport
     public BoxSelection BoxSelection;
     public ViewportShortcuts Shortcuts;
     public ViewportOverlay ViewportOverlay;
-
-    /// <summary>
-    /// The editor this viewport is located in.
-    /// </summary>
-    public ViewportType ViewportType;
 
     /// <summary>
     /// If true, the user can interact with the viewport.
@@ -124,11 +113,11 @@ public class VulkanViewport : IViewport
     /// </summary>
     public float FarClip => CFG.Current.Viewport_RenderDistance_Max;
 
-    public VulkanViewport(MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
+    private bool Instantiated = false;
+
+    public VulkanViewport(IUniverse owner, string id, int width, int height)
     {
-        MapEditor = mapEditor;
-        ModelEditor = modelEditor;
-        ViewportType = viewportType;
+        Owner = owner;
 
         Shortcuts = new(this);
         BoxSelection = new(this);
@@ -143,20 +132,20 @@ public class VulkanViewport : IViewport
         float depth = Device.IsDepthRangeZeroToOne ? 1 : 0;
 
         RenderViewport = new Veldrid.Viewport(0, 0, Width, Height, depth, 1.0f - depth);
-        ViewportCamera = new ViewportCamera(this, ViewportType, new Rectangle(0, 0, Width, Height));
+        ViewportCamera = new ViewportCamera(this, new Rectangle(0, 0, Width, Height));
 
-        if (viewportType is ViewportType.MapEditor)
+        if (owner is MapUniverse mapUniverse)
         {
-            RenderScene = mapEditor.MapViewportView.RenderScene;
-            ViewportSelection = mapEditor.ViewportSelection;
-            ActionManager = mapEditor.EditorActionManager;
+            RenderScene = mapUniverse.Editor.RenderScene;
+            ViewportSelection = mapUniverse.Editor.ViewportSelection;
+            ActionManager = mapUniverse.Editor.EditorActionManager;
         }
 
-        if (viewportType is ViewportType.ModelEditor)
+        if (owner is ModelUniverse modelUniverse)
         {
-            RenderScene = modelEditor.ModelViewportView.RenderScene;
-            ViewportSelection = modelEditor.ViewportSelection;
-            ActionManager = modelEditor.EditorActionManager;
+            RenderScene = modelUniverse.View.RenderScene;
+            ViewportSelection = modelUniverse.View.ViewportSelection;
+            ActionManager = modelUniverse.View.ViewportActionManager;
         }
 
         if (RenderScene != null && Device != null)
@@ -186,42 +175,41 @@ public class VulkanViewport : IViewport
                 cl.ClearDepthStencil(0);
             });
 
-            // Create gizmos
-            if (ViewportType is ViewportType.MapEditor)
+            if (owner is MapUniverse)
             {
-                Gizmos = new Gizmos(MapEditor, ActionManager, ViewportSelection, RenderScene.OverlayRenderables);
+                Gizmos = new Gizmos(owner, ActionManager, ViewportSelection, RenderScene.OverlayRenderables);
 
-                MapPrimaryGrid = new MapGrid(MapEditor, RenderScene.OpaqueRenderables, 
-                    CFG.Current.MapEditor_PrimaryGrid_Size, 
+                MapPrimaryGrid = new MapGrid(owner, RenderScene.OpaqueRenderables,
+                    CFG.Current.MapEditor_PrimaryGrid_Size,
                     CFG.Current.MapEditor_PrimaryGrid_SectionSize,
                     CFG.Current.MapEditor_PrimaryGrid_Color);
 
-                MapSecondaryGrid = new MapGrid(MapEditor, RenderScene.OpaqueRenderables,
+                MapSecondaryGrid = new MapGrid(owner, RenderScene.OpaqueRenderables,
                     CFG.Current.MapEditor_SecondaryGrid_Size,
                     CFG.Current.MapEditor_SecondaryGrid_SectionSize,
                     CFG.Current.MapEditor_SecondaryGrid_Color);
 
-                MapTertiaryGrid = new MapGrid(MapEditor, RenderScene.OpaqueRenderables,
+                MapTertiaryGrid = new MapGrid(owner, RenderScene.OpaqueRenderables,
                     CFG.Current.MapEditor_TertiaryGrid_Size,
                     CFG.Current.MapEditor_TertiaryGrid_SectionSize,
                     CFG.Current.MapEditor_TertiaryGrid_Color);
             }
 
-            if (ViewportType is ViewportType.ModelEditor)
+            if (owner is ModelUniverse)
             {
-                Gizmos = new Gizmos(ModelEditor, ActionManager, ViewportSelection, RenderScene.OverlayRenderables);
+                Gizmos = new Gizmos(owner, ActionManager, ViewportSelection, RenderScene.OverlayRenderables);
 
-                ModelPrimaryGrid = new ModelGrid(ModelEditor, RenderScene.OpaqueRenderables,           
-                    CFG.Current.ModelEditor_PrimaryGrid_Size, 
+                ModelPrimaryGrid = new ModelGrid(owner, RenderScene.OpaqueRenderables,
+                    CFG.Current.ModelEditor_PrimaryGrid_Size,
                     CFG.Current.ModelEditor_PrimaryGrid_SectionSize,
                     CFG.Current.ModelEditor_PrimaryGrid_Color);
 
-                ModelSecondaryGrid = new ModelGrid(ModelEditor, RenderScene.OpaqueRenderables,
+                ModelSecondaryGrid = new ModelGrid(owner, RenderScene.OpaqueRenderables,
                     CFG.Current.ModelEditor_SecondaryGrid_Size,
                     CFG.Current.ModelEditor_SecondaryGrid_SectionSize,
                     CFG.Current.ModelEditor_SecondaryGrid_Color);
 
-                ModelTertiaryGrid = new ModelGrid(ModelEditor, RenderScene.OpaqueRenderables,
+                ModelTertiaryGrid = new ModelGrid(owner, RenderScene.OpaqueRenderables,
                     CFG.Current.ModelEditor_TertiaryGrid_Size,
                     CFG.Current.ModelEditor_TertiaryGrid_SectionSize,
                     CFG.Current.ModelEditor_TertiaryGrid_Color);
@@ -233,73 +221,85 @@ public class VulkanViewport : IViewport
             {
                 ClearQuad.CreateDeviceObjects(gd, cl);
             });
+
         }
+
+        Instantiated = true;
     }
 
-    public void OnGui()
+    public bool Visible = false;
+
+    public void Display()
     {
         var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav | ImGuiWindowFlags.MenuBar;
 
-        if (CFG.Current.Viewport_Display)
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0, 0, 0, 0)); // Transparent
+
+        if (ImGui.Begin($@"Viewport##{ID}", flags))
         {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0, 0, 0, 0)); // Transparent
+            Visible = true;
 
-            if (ImGui.Begin($@"Viewport##{ID}", flags))
+            if (Owner is ModelUniverse modelUniverse)
             {
-                ViewportMenu.Draw();
-                ViewportOverlay.Draw();
-                Shortcuts.Update();
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.ModelEditor_Viewport);
+                    modelUniverse.View.Editor.ViewHandler.ActiveView = modelUniverse.View;
+                }
+            }
 
-                if (ViewportType is ViewportType.MapEditor)
+            if (Owner is MapUniverse mapUniverse)
+            {
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
                     FocusManager.SetFocus(EditorFocusContext.MapEditor_Viewport);
                 }
 
-                if (ViewportType is ViewportType.ModelEditor)
+                if (CFG.Current.QuickView_DisplayTooltip)
                 {
-                    FocusManager.SetFocus(EditorFocusContext.ModelEditor_Viewport);
-                }
-
-                Vector2 p = ImGui.GetWindowPos();
-                Vector2 s = ImGui.GetWindowSize();
-                Rectangle newvp = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
-
-                ResizeViewport(Device, newvp);
-
-                // Inputs
-                if (InputManager.IsMouseDown(MouseButton.Right) && MouseInViewport())
-                {
-                    ImGui.SetWindowFocus();
-                    IsViewportSelected = true;
-                }
-                else if (!InputManager.IsMouseDown(MouseButton.Right))
-                {
-                    IsViewportSelected = false;
-                }
-
-                CanInteract = ImGui.IsWindowFocused();
-
-                BoxSelection.Update();
-
-                IsViewportVisible = true;
-
-                Matrix4x4 proj = Matrix4x4.Transpose(ProjectionMatrix);
-                Matrix4x4 view = Matrix4x4.Transpose(ViewportCamera.CameraTransform.CameraViewMatrixLH);
-                Matrix4x4 identity = Matrix4x4.Identity;
-
-                if (ViewportType is ViewportType.MapEditor)
-                {
-                    if (CFG.Current.QuickView_DisplayTooltip)
-                    {
-                        MapEditor.AutomaticPreviewTool.HandleQuickViewTooltip();
-                    }
+                    mapUniverse.Editor.AutomaticPreviewTool.HandleQuickViewTooltip();
                 }
             }
-            ImGui.End();
-            ImGui.PopStyleColor();
-        }
-    }
 
+            ViewportMenu.Draw();
+            ViewportOverlay.Draw();
+            Shortcuts.Update();
+
+            Vector2 p = ImGui.GetWindowPos();
+            Vector2 s = ImGui.GetWindowSize();
+            Rectangle newvp = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
+
+            ResizeViewport(Device, newvp);
+
+            // Inputs
+            if (InputManager.IsMouseDown(MouseButton.Right) && MouseInViewport())
+            {
+                ImGui.SetWindowFocus();
+                IsViewportSelected = true;
+            }
+            else if (!InputManager.IsMouseDown(MouseButton.Right))
+            {
+                IsViewportSelected = false;
+            }
+
+            CanInteract = ImGui.IsWindowFocused();
+
+            BoxSelection.Update();
+
+            IsViewportVisible = true;
+
+            Matrix4x4 proj = Matrix4x4.Transpose(ProjectionMatrix);
+            Matrix4x4 view = Matrix4x4.Transpose(ViewportCamera.CameraTransform.CameraViewMatrixLH);
+            Matrix4x4 identity = Matrix4x4.Identity;
+        }
+        else
+        {
+            Visible = false;
+        }
+
+        ImGui.End();
+        ImGui.PopStyleColor();
+    }
 
     public void ResizeViewport(GraphicsDevice device, Rectangle newvp)
     {
@@ -314,16 +314,82 @@ public class VulkanViewport : IViewport
 
     public bool Update(Sdl2Window window, float dt)
     {
+        if (!Instantiated)
+            return false;
+
         Vector2 pos = InputManager.MousePosition;
         Ray ray = GetRay(pos.X - X, pos.Y - Y);
         CursorX = (int)pos.X; // - X;
         CursorY = (int)pos.Y; // - Y;
         Gizmos.Update(ray, CanInteract && MouseInViewport());
 
-        if (ViewportType is ViewportType.MapEditor)
+        UpdateGrids(ray);
+
+        ViewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Untextured_Model_Brightness;
+        ViewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Untextured_Model_Saturation;
+        ViewPipeline.SceneParams.SelectionColor = new Vector4(CFG.Current.Viewport_Selection_Outline_Color.X, CFG.Current.Viewport_Selection_Outline_Color.Y,
+            CFG.Current.Viewport_Selection_Outline_Color.Z, 1.0f);
+        bool kbbusy = false;
+
+        if (!Gizmos.IsMouseBusy() && CanInteract && MouseInViewport())
+        {
+            kbbusy = ViewportCamera.UpdateInput(window, dt);
+
+            if (InputManager.IsMouseDown(MouseButton.Left))
+            {
+                ViewPipeline.CreateAsyncPickingRequest();
+            }
+            if (InputManager.IsMousePressed(MouseButton.Left) && InputManager.IsKeyDown(Key.AltLeft))
+            {
+                ViewPipeline.CreateAsyncPickingRequest();
+            }
+
+            if (ViewPipeline.PickingResultsReady)
+        {
+                ISelectable sel = ViewPipeline.GetSelection();
+
+                if (InputManager.HasCtrlDown())
+                {
+                    if (sel != null)
+                    {
+                        if (ViewportSelection.GetSelection().Contains(sel))
+                        {
+                            ViewportSelection.RemoveSelection(sel);
+                        }
+                        else
+                        {
+                            ViewportSelection.AddSelection(sel);
+                        }
+                    }
+                }
+                else if (InputManager.HasShiftDown())
+                {
+                    if (sel != null)
+                    {
+                        ViewportSelection.AddSelection(sel);
+                    }
+                }
+                else
+                {
+                    ViewportSelection.ClearSelection();
+                    if (sel != null)
+                    {
+                        ViewportSelection.AddSelection(sel);
+                    }
+                }
+            }
+        }
+
+        //Gizmos.DebugGui();
+        return kbbusy;
+    }
+
+    public void UpdateGrids(Ray ray)
+    {
+        if (Owner is MapUniverse mapUniverse)
         {
             MapPrimaryGrid.Update(
-                CFG.Current.MapEditor_DisplayPrimaryGrid, 
+                CFG.Current.MapEditor_DisplayPrimaryGrid,
                 ray,
                 CFG.Current.MapEditor_PrimaryGrid_Size,
                 CFG.Current.MapEditor_PrimaryGrid_SectionSize,
@@ -337,7 +403,7 @@ public class VulkanViewport : IViewport
                 ref CFG.Current.MapEditor_RegeneratePrimaryGrid);
 
             MapSecondaryGrid.Update(
-                CFG.Current.MapEditor_DisplaySecondaryGrid, 
+                CFG.Current.MapEditor_DisplaySecondaryGrid,
                 ray,
                 CFG.Current.MapEditor_SecondaryGrid_Size,
                 CFG.Current.MapEditor_SecondaryGrid_SectionSize,
@@ -351,7 +417,7 @@ public class VulkanViewport : IViewport
                 ref CFG.Current.MapEditor_RegenerateSecondaryGrid);
 
             MapTertiaryGrid.Update(
-                CFG.Current.MapEditor_DisplayTertiaryGrid, 
+                CFG.Current.MapEditor_DisplayTertiaryGrid,
                 ray,
                 CFG.Current.MapEditor_TertiaryGrid_Size,
                 CFG.Current.MapEditor_TertiaryGrid_SectionSize,
@@ -366,10 +432,10 @@ public class VulkanViewport : IViewport
 
         }
 
-        if (ViewportType is ViewportType.ModelEditor)
+        if (Owner is ModelUniverse modelUniverse)
         {
             ModelPrimaryGrid.Update(
-                CFG.Current.ModelEditor_DisplayPrimaryGrid, 
+                CFG.Current.ModelEditor_DisplayPrimaryGrid,
                 ray,
                 CFG.Current.ModelEditor_PrimaryGrid_Size,
                 CFG.Current.ModelEditor_PrimaryGrid_SectionSize,
@@ -383,7 +449,7 @@ public class VulkanViewport : IViewport
                 ref CFG.Current.ModelEditor_RegeneratePrimaryGrid);
 
             ModelSecondaryGrid.Update(
-                CFG.Current.ModelEditor_DisplaySecondaryGrid, 
+                CFG.Current.ModelEditor_DisplaySecondaryGrid,
                 ray,
                 CFG.Current.ModelEditor_SecondaryGrid_Size,
                 CFG.Current.ModelEditor_SecondaryGrid_SectionSize,
@@ -397,7 +463,7 @@ public class VulkanViewport : IViewport
                 ref CFG.Current.ModelEditor_RegenerateSecondaryGrid);
 
             ModelTertiaryGrid.Update(
-                CFG.Current.ModelEditor_DisplayTertiaryGrid, 
+                CFG.Current.ModelEditor_DisplayTertiaryGrid,
                 ray,
                 CFG.Current.ModelEditor_TertiaryGrid_Size,
                 CFG.Current.ModelEditor_TertiaryGrid_SectionSize,
@@ -411,85 +477,19 @@ public class VulkanViewport : IViewport
                 ref CFG.Current.ModelEditor_RegenerateTertiaryGrid);
         }
 
-        ViewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Untextured_Model_Brightness;
-        ViewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Untextured_Model_Saturation;
-        ViewPipeline.SceneParams.SelectionColor = new Vector4(CFG.Current.Viewport_Selection_Outline_Color.X, CFG.Current.Viewport_Selection_Outline_Color.Y,
-            CFG.Current.Viewport_Selection_Outline_Color.Z, 1.0f);
-        bool kbbusy = false;
-
-        if (!Gizmos.IsMouseBusy() && CanInteract && MouseInViewport())
-        {
-            kbbusy = ViewportCamera.UpdateInput(window, dt);
-            if (InputManager.IsMouseDown(MouseButton.Left))
-            {
-                ViewPipeline.CreateAsyncPickingRequest();
-            }
-            if (InputManager.IsMousePressed(MouseButton.Left) && InputManager.IsKeyDown(Key.AltLeft))
-            {
-                ViewPipeline.CreateAsyncPickingRequest();
-            }
-            if (ViewPipeline.PickingResultsReady)
-            {
-                EditorScreen targetEditor = null;
-                if (ViewportType is ViewportType.MapEditor)
-                {
-                    targetEditor = MapEditor;
-                }
-                if (ViewportType is ViewportType.ModelEditor)
-                {
-                    targetEditor = ModelEditor;
-                }
-
-                if (targetEditor != null)
-                {
-                    ISelectable sel = ViewPipeline.GetSelection();
-                    if (InputManager.HasCtrlDown())
-                    {
-                        if (sel != null)
-                        {
-                            if (ViewportSelection.GetSelection().Contains(sel))
-                            {
-                                ViewportSelection.RemoveSelection(targetEditor, sel);
-                            }
-                            else
-                            {
-                                ViewportSelection.AddSelection(targetEditor, sel);
-                            }
-                        }
-                    }
-                    else if (InputManager.HasShiftDown())
-                    {
-                        if (sel != null)
-                        {
-                            ViewportSelection.AddSelection(targetEditor, sel);
-                        }
-                    }
-                    else
-                    {
-                        ViewportSelection.ClearSelection(targetEditor);
-                        if (sel != null)
-                        {
-                            ViewportSelection.AddSelection(targetEditor, sel);
-                        }
-                    }
-                }
-            }
-        }
-
-        //Gizmos.DebugGui();
-        return kbbusy;
     }
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
         ProjectionMatrix = Utils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f,
             Width / (float)Height, NearClip, FarClip);
+
         Frustum = new BoundingFrustum(ViewportCamera.CameraTransform.CameraViewMatrixLH * ProjectionMatrix);
         ViewPipeline.TestUpdateView(ProjectionMatrix, ViewportCamera.CameraTransform.CameraViewMatrixLH,
             ViewportCamera.CameraTransform.Position, CursorX, CursorY);
+
         ViewPipeline.RenderScene(Frustum);
         
-
         Gizmos.CameraPosition = ViewportCamera.CameraTransform.Position;
     }
 

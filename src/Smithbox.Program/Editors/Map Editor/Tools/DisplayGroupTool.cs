@@ -81,7 +81,7 @@ public class DisplayGroupTool
             sdispgroups = sels.First().Dispgroups;
         }
 
-        if (Editor.MapViewportView.RenderScene != null)
+        if (Editor.RenderScene != null)
         {
             if (ImGui.CollapsingHeader("Render Groups"))
             {
@@ -92,7 +92,7 @@ public class DisplayGroupTool
 
     public void DisplayGroupsGUI(uint[] sdrawgroups, uint[] sdispgroups, HashSet<Entity> sels)
     {
-        DrawGroup dg = Editor.MapViewportView.RenderScene.DisplayGroup;
+        DrawGroup dg = Editor.RenderScene.DisplayGroup;
 
         if (dg.AlwaysVisible || dg.RenderGroups.Length != _dispGroupCount)
         {

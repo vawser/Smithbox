@@ -9,10 +9,10 @@ public class BasicFilters
     private MapEditorScreen Editor;
     private RenderScene RenderScene;
 
-    public BasicFilters(MapEditorScreen screen)
+    public BasicFilters(MapEditorScreen editor)
     {
-        Editor = screen;
-        RenderScene = screen.MapViewportView.RenderScene;
+        Editor = editor;
+        RenderScene = editor.RenderScene;
     }
 
     public void Display()

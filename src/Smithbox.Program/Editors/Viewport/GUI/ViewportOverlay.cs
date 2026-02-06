@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.Editors.Viewport;
 
@@ -24,15 +25,15 @@ public class ViewportOverlay
         }
 
         // Map Editor
-        if (Parent.ViewportType is ViewportType.MapEditor)
+        if (Parent.Owner is MapUniverse mapUniverse)
         {
             if (CFG.Current.Viewport_DisplayRotationIncrement)
             {
-                Parent.MapEditor.RotationIncrementTool.DisplayViewportRotateIncrement();
+                mapUniverse.Editor.RotationIncrementTool.DisplayViewportRotateIncrement();
             }
             if (CFG.Current.Viewport_DisplayPositionIncrement)
             {
-                Parent.MapEditor.PositionIncrementTool.DisplayViewportMovementIncrement();
+                mapUniverse.Editor.PositionIncrementTool.DisplayViewportMovementIncrement();
             }
         }
 

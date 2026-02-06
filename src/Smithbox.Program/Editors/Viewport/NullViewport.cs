@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using System.Numerics;
@@ -14,29 +15,23 @@ namespace StudioCore.Editors.Viewport;
 /// </summary>
 public class NullViewport : IViewport
 {
-    public MapEditorScreen MapEditor;
-    public ModelEditorScreen ModelEditor;
-
-    public ViewportType ViewportType;
+    public IUniverse Owner;
 
     private readonly string _vpid = "";
 
     public int X;
     public int Y;
 
-    private ViewportType _viewportType;
-    public NullViewport(MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
+    public NullViewport(IUniverse owner, string id, int width, int height)
     {
         _vpid = id;
 
-        MapEditor = mapEditor;
-        ModelEditor = modelEditor;
-        ViewportType = viewportType;
+        Owner = owner;
 
         Width = width;
         Height = height;
 
-        ViewportCamera = new ViewportCamera(this, viewportType, new Rectangle(0, 0, Width, Height));
+        ViewportCamera = new ViewportCamera(this, new Rectangle(0, 0, Width, Height));
     }
 
     public ViewportCamera ViewportCamera { get; }
@@ -48,31 +43,18 @@ public class NullViewport : IViewport
 
     public bool IsViewportSelected { get; set; }
 
-    public void OnGui()
+    public void Display()
     {
-        if (CFG.Current.Viewport_Display)
+        if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
         {
-            if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
-            {
-                Vector2 p = ImGui.GetWindowPos();
-                Vector2 s = ImGui.GetWindowSize();
-                var newvp = new Rectangle((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
-                ResizeViewport(null, newvp);
-                ImGui.Text("Disabled...");
-            }
-
-            ImGui.End();
+            Vector2 p = ImGui.GetWindowPos();
+            Vector2 s = ImGui.GetWindowSize();
+            var newvp = new Rectangle((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
+            ResizeViewport(null, newvp);
+            ImGui.Text("Disabled...");
         }
 
-        if (CFG.Current.Viewport_Display_Profiling)
-        {
-            if (ImGui.Begin($@"Profiling##{_vpid}"))
-            {
-                ImGui.Text(@"Disabled...");
-            }
-
-            ImGui.End();
-        }
+        ImGui.End();
     }
 
     public void SceneParamsGui()

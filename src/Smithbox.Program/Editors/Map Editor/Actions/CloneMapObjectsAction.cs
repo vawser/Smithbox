@@ -184,7 +184,7 @@ public class CloneMapObjectsAction : ViewportAction
                     MapEditorActionHelper.ClearEntityGroupID(Editor, newobj, m);
                 }
 
-                newobj.UpdateRenderModel(Editor);
+                newobj.UpdateRenderModel();
                 if (newobj.RenderSceneMesh != null)
                 {
                     newobj.RenderSceneMesh.SetSelectable(newobj);
@@ -209,10 +209,10 @@ public class CloneMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
             foreach (MsbEntity c in Clones)
             {
-                universe.Selection.AddSelection(Editor, c);
+                universe.Selection.AddSelection(c);
             }
         }
 
@@ -241,10 +241,10 @@ public class CloneMapObjectsAction : ViewportAction
         // Clones.Clear();
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
             foreach (MsbEntity c in Clonables)
             {
-                universe.Selection.AddSelection(Editor, c);
+                universe.Selection.AddSelection(c);
             }
         }
 

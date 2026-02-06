@@ -14,9 +14,9 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelUniverse
+public class ModelUniverse : IUniverse
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
     public RenderScene RenderScene;
@@ -39,13 +39,13 @@ public class ModelUniverse
     private HashSet<ResourceDescriptor> LoadList_Part_Texture = new();
     private HashSet<ResourceDescriptor> LoadList_Map_Texture = new();
 
-    public ModelUniverse(ModelEditorScreen editor, ProjectEntry project)
+    public ModelUniverse(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        RenderScene = editor.ModelViewportView.RenderScene;
-        Selection = editor.ViewportSelection;
+        RenderScene = view.RenderScene;
+        Selection = view.ViewportSelection;
 
         if (RenderScene == null)
         {
@@ -72,11 +72,11 @@ public class ModelUniverse
         }
 
         ResourceManager.ClearUnusedResources();
-        Editor.ViewportSelection.ClearSelection(Editor);
+        View.ViewportSelection.ClearSelection();
 
-        var newContainer = new ModelContainer(Editor, Project, modelWrapper.Name);
+        var newContainer = new ModelContainer(View, Project, modelWrapper.Name);
 
-        ModelInsightHelper.AddEntry(newContainer);
+        View.Editor.ToolMenu.ModelInsightHelper.AddEntry(newContainer);
 
         newContainer.Load(modelWrapper.FLVER, modelWrapper);
 
@@ -87,8 +87,8 @@ public class ModelUniverse
 
         if (CFG.Current.Viewport_Enable_Rendering)
         {
-            Selection.ClearSelection(Editor);
-            Selection.AddSelection(Editor, newContainer.RootObject);
+            Selection.ClearSelection();
+            Selection.AddSelection(newContainer.RootObject);
         }
 
         if (CFG.Current.Viewport_Enable_Rendering)
@@ -122,7 +122,7 @@ public class ModelUniverse
 
             foreach (Entity obj in newContainer.Objects)
             {
-                obj.UpdateRenderModel(Editor);
+                obj.UpdateRenderModel();
             }
         }
     }
@@ -148,8 +148,8 @@ public class ModelUniverse
 
                     if (mapID != null)
                     {
-                        var name = ModelLocator.GetMapModelName(Editor.Project, mapID, modelName);
-                        var modelAsset = ModelLocator.GetMapModel(Editor.Project, mapID, name, name);
+                        var name = ModelLocator.GetMapModelName(View.Project, mapID, modelName);
+                        var modelAsset = ModelLocator.GetMapModel(View.Project, mapID, name, name);
 
                         if (modelAsset.IsValid())
                             LoadList_MapPiece_Model.Add(modelAsset);
@@ -163,7 +163,7 @@ public class ModelUniverse
         {
             if (modelName.StartsWith('c'))
             {
-                var modelAsset = ModelLocator.GetChrModel(Editor.Project, modelName, modelName);
+                var modelAsset = ModelLocator.GetChrModel(View.Project, modelName, modelName);
 
                 if (modelAsset.IsValid())
                     LoadList_Character_Model.Add(modelAsset);
@@ -175,7 +175,7 @@ public class ModelUniverse
         {
             if (modelName.StartsWith('o') || (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
             {
-                var modelAsset = ModelLocator.GetObjModel(Editor.Project, modelName, modelName);
+                var modelAsset = ModelLocator.GetObjModel(View.Project, modelName, modelName);
 
                 if (modelAsset.IsValid())
                     LoadList_Asset_Model.Add(modelAsset);
@@ -191,7 +191,7 @@ public class ModelUniverse
             modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
             modelName.StartsWith("wp") || modelName.StartsWith("WP"))
             {
-                var modelAsset = ModelLocator.GetPartsModel(Editor.Project, modelName, modelName);
+                var modelAsset = ModelLocator.GetPartsModel(View.Project, modelName, modelName);
 
                 if (modelAsset.IsValid())
                     LoadList_Part_Model.Add(modelAsset);
@@ -209,8 +209,8 @@ public class ModelUniverse
 
                     if (mapID != null)
                     {
-                        var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, mapID,
-                        ModelLocator.GetMapModelName(Editor.Project, mapID, modelName));
+                        var modelAsset = ModelLocator.GetMapCollisionModel(View.Project, mapID,
+                        ModelLocator.GetMapModelName(View.Project, mapID, modelName));
 
                         if (modelAsset.IsValid())
                             LoadList_Collision.Add(modelAsset);
@@ -236,7 +236,7 @@ public class ModelUniverse
 
                 if (mapID != null)
                 {
-                    foreach (ResourceDescriptor asset in TextureLocator.GetMapTextureVirtualPaths(Editor.Project, mapID))
+                    foreach (ResourceDescriptor asset in TextureLocator.GetMapTextureVirtualPaths(View.Project, mapID))
                     {
                         if (asset.IsValid())
                             LoadList_Map_Texture.Add(asset);
@@ -251,13 +251,13 @@ public class ModelUniverse
             if (modelName.StartsWith('c'))
             {
                 // TPF
-                var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, modelName, false);
+                var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, modelName, false);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
 
                 // BND
-                textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, modelName, true);
+                textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, modelName, true);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
@@ -269,7 +269,7 @@ public class ModelUniverse
         {
             if (modelName.StartsWith('o'))
             {
-                var textureAsset = TextureLocator.GetObjectTextureVirtualPath(Editor.Project, modelName);
+                var textureAsset = TextureLocator.GetObjectTextureVirtualPath(View.Project, modelName);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -278,7 +278,7 @@ public class ModelUniverse
             // Assets
             if (modelName.StartsWith("AEG") || modelName.StartsWith("aeg"))
             {
-                var textureAsset = TextureLocator.GetAssetTextureVirtualPath(Editor.Project, modelName);
+                var textureAsset = TextureLocator.GetAssetTextureVirtualPath(View.Project, modelName);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -294,7 +294,7 @@ public class ModelUniverse
             modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
             modelName.StartsWith("wp") || modelName.StartsWith("WP"))
             {
-                var textureAsset = TextureLocator.GetPartTextureVirtualPath(Editor.Project, modelName);
+                var textureAsset = TextureLocator.GetPartTextureVirtualPath(View.Project, modelName);
 
                 if (textureAsset.IsValid())
                     LoadList_Part_Texture.Add(textureAsset);
@@ -304,18 +304,18 @@ public class ModelUniverse
         // AAT
         if (CFG.Current.ModelEditor_TextureLoad_Misc)
         {
-            if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
-                var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(Editor.Project, "common_body");
+                var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(View.Project, "common_body");
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
             }
 
             // SYSTEX
-            if (Editor.Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
+            if (View.Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
             {
-                var textureAsset = TextureLocator.GetSystexTextureVirtualPath(Editor.Project, "systex");
+                var textureAsset = TextureLocator.GetSystexTextureVirtualPath(View.Project, "systex");
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -545,16 +545,17 @@ public class ModelUniverse
 
     public void UnloadModel(ModelWrapper modelWrapper)
     {
-        Editor.ViewportSelection.ClearSelection(Editor);
-        Editor.EditorActionManager.Clear();
+        View.ViewportSelection.ClearSelection();
+        View.ViewportActionManager.Clear();
+        View.ActionManager.Clear();
 
         ResourceManager.ClearUnusedResources();
 
         if (modelWrapper.Container != null)
         {
-            Editor.EntityTypeCache.RemoveModelFromCache(modelWrapper.Container);
+            View.EntityTypeCache.RemoveModelFromCache(modelWrapper.Container);
 
-            ModelInsightHelper.ClearEntry(modelWrapper.Container);
+            View.Editor.ToolMenu.ModelInsightHelper.ClearEntry(modelWrapper.Container);
 
             modelWrapper.Container.Unload();
             modelWrapper.Container.Clear();

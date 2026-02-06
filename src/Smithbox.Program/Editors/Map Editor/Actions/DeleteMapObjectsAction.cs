@@ -65,7 +65,7 @@ public class DeleteMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -97,10 +97,10 @@ public class DeleteMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
             foreach (MsbEntity d in Deletables)
             {
-                universe.Selection.AddSelection(Editor, d);
+                universe.Selection.AddSelection(d);
             }
         }
 

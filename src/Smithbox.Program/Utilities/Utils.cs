@@ -887,12 +887,12 @@ public static class Utils
             {
                 if (InputManager.HasCtrlDown() || InputManager.HasShiftDown())
                 {
-                    selection.AddSelection(editor, entity);
+                    selection.AddSelection(entity);
                 }
                 else
                 {
-                    selection.ClearSelection(editor);
-                    selection.AddSelection(editor, entity);
+                    selection.ClearSelection();
+                    selection.AddSelection(entity);
                 }
             }
             else if (InputManager.HasCtrlDown())
@@ -900,11 +900,11 @@ public static class Utils
                 // Toggle Selection
                 if (selection.GetSelection().Contains(entity))
                 {
-                    selection.RemoveSelection(editor, entity);
+                    selection.RemoveSelection(entity);
                 }
                 else
                 {
-                    selection.AddSelection(editor, entity);
+                    selection.AddSelection(entity);
                 }
             }
             else if (selection.GetSelection().Count > 0
@@ -964,19 +964,19 @@ public static class Utils
 
                     for (var i = iStart; i <= iEnd; i++)
                     {
-                        selection.AddSelection(editor, entList[i]);
+                        selection.AddSelection(entList[i]);
                     }
                 }
                 else
                 {
-                    selection.AddSelection(editor, entity);
+                    selection.AddSelection(entity);
                 }
             }
             else
             {
                 // Exclusive Selection
-                selection.ClearSelection(editor);
-                selection.AddSelection(editor, entity);
+                selection.ClearSelection();
+                selection.AddSelection(entity);
             }
         }
     }

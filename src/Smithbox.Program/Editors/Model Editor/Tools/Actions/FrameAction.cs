@@ -24,7 +24,12 @@ public class FrameAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (activeView.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Frame))
             {
@@ -72,18 +77,23 @@ public class FrameAction
     /// </summary>
     public void ApplyViewportFrame()
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
         var offset = CFG.Current.Viewport_Frame_Offset;
         var distance = CFG.Current.Viewport_Frame_Distance;
 
-        if (Editor.ViewportSelection.IsSelection())
+        if (activeView.ViewportSelection.IsSelection())
         {
-            HashSet<Entity> selected = Editor.ViewportSelection.GetFilteredSelection<Entity>();
+            HashSet<Entity> selected = activeView.ViewportSelection.GetFilteredSelection<Entity>();
 
             var entity = selected.FirstOrDefault();
 
             if (entity != null && entity.RenderSceneMesh != null)
             {
-                Editor.ModelViewportView.Viewport.FrameBox(entity.RenderSceneMesh.GetBounds(), offset, distance);
+                activeView.ViewportWindow.Viewport.FrameBox(entity.RenderSceneMesh.GetBounds(), offset, distance);
             }
         }
         else
@@ -94,12 +104,17 @@ public class FrameAction
 
     public void FrameCurrentEntity(Entity entity)
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
         var offset = CFG.Current.Viewport_Frame_Offset;
         var distance = CFG.Current.Viewport_Frame_Distance;
 
         if (entity != null && entity.RenderSceneMesh != null)
         {
-            Editor.ModelViewportView.Viewport.FrameBox(entity.RenderSceneMesh.GetBounds(), offset, distance);
+            activeView.ViewportWindow.Viewport.FrameBox(entity.RenderSceneMesh.GetBounds(), offset, distance);
         }
     }
 }

@@ -81,8 +81,8 @@ public static class PropInfo_ReferencedBy
             if (ImGui.Button(displayName + "##MSBRefBy" + refID,
                 DPI.WholeWidthButton(windowWidth, 24)))
             {
-                selection.ClearSelection(editor);
-                selection.AddSelection(editor, m);
+                selection.ClearSelection();
+                selection.AddSelection(m);
             }
 
             refID++;

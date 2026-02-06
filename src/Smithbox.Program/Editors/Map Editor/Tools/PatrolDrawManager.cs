@@ -20,7 +20,7 @@ public static class PatrolDrawManager
 
     private static Entity GetDrawEntity(MapEditorScreen editor, ObjectContainer map)
     {
-        Entity e = new(editor, map, new DrawEntity());
+        Entity e = new(editor.Universe, map, new DrawEntity());
         map.AddObject(e);
         _drawEntities.Add(new WeakReference<Entity>(e));
         return e;

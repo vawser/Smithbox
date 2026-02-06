@@ -201,8 +201,8 @@ public class EntityIdentifierTool
 
                     if (entity != null)
                     {
-                        Editor.ViewportSelection.ClearSelection(Editor);
-                        Editor.ViewportSelection.AddSelection(Editor, entity);
+                        Editor.ViewportSelection.ClearSelection();
+                        Editor.ViewportSelection.AddSelection(entity);
                         Editor.FrameAction.ApplyViewportFrame();
                     }
                 }

@@ -2,7 +2,6 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -26,28 +25,33 @@ public class ModelInsightView
 
     public void OnToolWindow()
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
         if (ImGui.CollapsingHeader("Model Insight"))
         {
-            if (Editor.Selection.SelectedModelWrapper == null)
+            if (activeView == null)
                 return;
 
-            var curModelData = ModelInsightHelper.Entries.FirstOrDefault(e => e.Key == Editor.Selection.SelectedModelWrapper.Name);
+            if (activeView.Selection.SelectedModelWrapper == null)
+                return;
 
-            if (curModelData.Value != null && curModelData.Value != ModelInsightHelper.SelectedDataEntry)
+            var curModelData = Editor.ToolMenu.ModelInsightHelper.Entries.FirstOrDefault(e => e.Key == activeView.Selection.SelectedModelWrapper.Name);
+
+            if (curModelData.Value != null && curModelData.Value != Editor.ToolMenu.ModelInsightHelper.SelectedDataEntry)
             {
-                ModelInsightHelper.SelectedDataEntry = curModelData.Value;
+                Editor.ToolMenu.ModelInsightHelper.SelectedDataEntry = curModelData.Value;
             }
 
-            if (ModelInsightHelper.SelectedDataEntry == null)
+            if (Editor.ToolMenu.ModelInsightHelper.SelectedDataEntry == null)
                 return;
 
 
-            var flverEntry = ModelInsightHelper.SelectedDataEntry.Models.FirstOrDefault(
-            e => e.Name == Editor.Selection.SelectedModelWrapper.Name);
+            var flverEntry = Editor.ToolMenu.ModelInsightHelper.SelectedDataEntry.Models.FirstOrDefault(
+            e => e.Name == activeView.Selection.SelectedModelWrapper.Name);
 
-            if (flverEntry != null && flverEntry != ModelInsightHelper.SelectedFlverEntry)
+            if (flverEntry != null && flverEntry != Editor.ToolMenu.ModelInsightHelper.SelectedFlverEntry)
             {
-                ModelInsightHelper.SelectedFlverEntry = flverEntry;
+                Editor.ToolMenu.ModelInsightHelper.SelectedFlverEntry = flverEntry;
             }
 
             Display();
@@ -58,9 +62,9 @@ public class ModelInsightView
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (ModelInsightHelper.SelectedFlverEntry != null)
+        if (Editor.ToolMenu.ModelInsightHelper.SelectedFlverEntry != null)
         {
-            var entry = ModelInsightHelper.SelectedFlverEntry;
+            var entry = Editor.ToolMenu.ModelInsightHelper.SelectedFlverEntry;
 
             UIHelper.SimpleHeader("actHeader", "Actions", "", UI.Current.ImGui_AliasName_Text);
 

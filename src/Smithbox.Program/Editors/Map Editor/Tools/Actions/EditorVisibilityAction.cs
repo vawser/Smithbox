@@ -300,7 +300,7 @@ public class EditorVisibilityAction
                         }
                     }
 
-                    obj.UpdateRenderModel(Editor);
+                    obj.UpdateRenderModel();
                 }
             }
         }

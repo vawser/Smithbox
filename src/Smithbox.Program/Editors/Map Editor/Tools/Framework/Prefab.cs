@@ -185,7 +185,7 @@ internal class Prefab<T> : Prefab
             foreach (var part in category.GetEntries())
             {
                 // Using the untyped constructor so that the model is not set
-                var entity = new MsbEntity(Editor, targetMap, copy(part)) { Type = type };
+                var entity = new MsbEntity(Editor.Universe, targetMap, copy(part)) { Type = type };
                 yield return entity;
             }
         }

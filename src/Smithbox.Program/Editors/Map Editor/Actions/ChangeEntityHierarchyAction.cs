@@ -86,10 +86,10 @@ public class ChangeEntityHierarchyAction : ViewportAction
         UndoIndices = sourceindices;
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
             foreach (Entity c in SourceObjects)
             {
-                universe.Selection.AddSelection(Editor, c);
+                universe.Selection.AddSelection(c);
             }
         }
 

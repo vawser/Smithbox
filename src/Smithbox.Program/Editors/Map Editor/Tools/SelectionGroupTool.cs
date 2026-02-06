@@ -483,7 +483,7 @@ public class SelectionGroupTool
 
     private void SelectSelectionGroup()
     {
-        Editor.ViewportSelection.ClearSelection(Editor);
+        Editor.ViewportSelection.ClearSelection();
 
         List<Entity> entities = new List<Entity>();
 
@@ -505,7 +505,7 @@ public class SelectionGroupTool
 
         foreach (var entry in entities)
         {
-            Editor.ViewportSelection.AddSelection(Editor, entry);
+            Editor.ViewportSelection.AddSelection(entry);
         }
 
         if (CFG.Current.MapEditor_Selection_Group_Frame_Selection_On_Use)

@@ -159,7 +159,7 @@ public class HavokCollisionBank
                     if(ent.IsPartCollision() || ent.IsPartConnectCollision())
                     {
                         ent.ForceModelRefresh = true;
-                        ent.UpdateRenderModel(Editor);
+                        ent.UpdateRenderModel();
                     }
                 }
 

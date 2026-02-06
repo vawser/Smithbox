@@ -67,7 +67,7 @@ public class MapCommandQueue
                 }
                 else
                 {
-                    target = new ObjectContainerReference(mapid).GetSelectionTarget(Editor);
+                    target = new ObjectContainerReference(mapid).GetSelectionTarget(Editor.Universe);
                 }
             }
 
@@ -123,8 +123,8 @@ public class MapCommandQueue
 
             if (target != null)
             {
-                Editor.Universe.Selection.ClearSelection(Editor);
-                Editor.Universe.Selection.AddSelection(Editor, target);
+                Editor.Universe.Selection.ClearSelection();
+                Editor.Universe.Selection.AddSelection(target);
                 Editor.Universe.Selection.GotoTreeTarget = target;
                 Editor.FrameAction.ApplyViewportFrame();
             }

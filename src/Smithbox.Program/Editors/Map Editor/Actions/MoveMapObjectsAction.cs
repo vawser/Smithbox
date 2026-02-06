@@ -125,7 +125,7 @@ public class MoveMapObjectsAction : ViewportAction
                 }
 
                 // Update render model
-                Moveables[i].UpdateRenderModel(Editor);
+                Moveables[i].UpdateRenderModel();
                 if (Moveables[i].RenderSceneMesh != null)
                 {
                     Moveables[i].RenderSceneMesh.SetSelectable(Moveables[i]);
@@ -142,10 +142,10 @@ public class MoveMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
             foreach (MsbEntity m in Moveables)
             {
-                universe.Selection.AddSelection(Editor, m);
+                universe.Selection.AddSelection(m);
             }
         }
 
@@ -205,7 +205,7 @@ public class MoveMapObjectsAction : ViewportAction
             }
 
             // Update render model
-            Moveables[i].UpdateRenderModel(Editor);
+            Moveables[i].UpdateRenderModel();
             if (Moveables[i].RenderSceneMesh != null)
             {
                 Moveables[i].RenderSceneMesh.SetSelectable(Moveables[i]);
@@ -214,10 +214,10 @@ public class MoveMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.Selection.ClearSelection();
             foreach (MsbEntity m in Moveables)
             {
-                universe.Selection.AddSelection(Editor, m);
+                universe.Selection.AddSelection(m);
             }
         }
 

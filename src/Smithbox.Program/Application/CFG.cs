@@ -453,12 +453,9 @@ public class CFG
 
     // Windows
     public bool Interface_ModelEditor_Viewport_Grid = true;
-    public bool Interface_ModelEditor_ModelSourceList = true;
-    public bool Interface_ModelEditor_ModelSelectList = true;
-    public bool Interface_ModelEditor_ModelContents = true;
-    public bool Interface_ModelEditor_Properties = true;
     public bool Interface_ModelEditor_ResourceList = true;
     public bool Interface_ModelEditor_ToolWindow = true;
+    public bool Interface_ModelEditor_ScreenshotMode = false;
 
     // Tools
     public bool Interface_ModelEditor_Tool_CreateAction = true;

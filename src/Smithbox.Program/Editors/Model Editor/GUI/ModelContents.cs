@@ -12,9 +12,9 @@ using Veldrid;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelContentView : IActionEventHandler
+public class ModelContents : IActionEventHandler
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
     public string ImguiID = "ModelContentView";
@@ -26,53 +26,41 @@ public class ModelContentView : IActionEventHandler
 
     public string SearchInput = "";
 
-    public ModelContentView(ModelEditorScreen editor, ProjectEntry project)
+    public ModelContents(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
-    public void OnGui()
+    public void Display(float width, float height)
     {
-        var scale = DPI.UIScale();
+        UIHelper.SimpleHeader("Contents", "");
 
-        if (!CFG.Current.Interface_ModelEditor_Properties)
-            return;
+        DisplayMenubar();
 
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+        ImGui.BeginChild("ModelContents", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
-        if (ImGui.Begin($@"Model Contents##modelContentsPanel", ImGuiWindowFlags.MenuBar))
+        if (View.Selection.SelectedModelWrapper != null && 
+            View.Selection.SelectedModelWrapper.FLVER != null)
         {
-            FocusManager.SetFocus(EditorFocusContext.ModelEditor_ContentList);
+            DisplaySearchbar();
+            DisplayButtons();
 
-            DisplayMenubar();
+            treeImGuiId = 0;
 
-            if (Editor.Selection.SelectedModelWrapper != null && 
-                Editor.Selection.SelectedModelWrapper.FLVER != null)
+            var container = View.Selection.SelectedModelWrapper.Container;
+
+            if (container != null)
             {
-                DisplaySearchbar();
-                DisplayButtons();
-
-                treeImGuiId = 0;
-
-                var container = Editor.Selection.SelectedModelWrapper.Container;
-
-                if (container != null)
-                {
-                    DisplayContentTree(container);
-                }
-            }
-            else
-            {
-                ImGui.Text("No FLVER has been loaded yet.");
+                DisplayContentTree(container);
             }
         }
+        else
+        {
+            ImGui.Text("No FLVER has been loaded yet.");
+        }
+        ImGui.EndChild();
 
-        ImGui.End();
-        ImGui.PopStyleColor(1);
-
-        Editor.ViewportSelection.ClearGotoTarget();
     }
 
     public void DisplayMenubar()
@@ -86,7 +74,7 @@ public class ModelContentView : IActionEventHandler
 
     public void DisplaySearchbar()
     {
-        var wrapper = Editor.Selection.SelectedModelWrapper;
+        var wrapper = View.Selection.SelectedModelWrapper;
 
         var windowWidth = ImGui.GetWindowWidth();
 
@@ -102,7 +90,7 @@ public class ModelContentView : IActionEventHandler
 
     public void DisplayButtons()
     {
-        var wrapper = Editor.Selection.SelectedModelWrapper;
+        var wrapper = View.Selection.SelectedModelWrapper;
 
         if (wrapper.Container == null)
             return;
@@ -143,8 +131,8 @@ public class ModelContentView : IActionEventHandler
 
         ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
 
-        var selected = Editor.ViewportSelection.GetSelection().Contains(modelRoot) || 
-            Editor.ViewportSelection.GetSelection().Contains(modelRef);
+        var selected = View.ViewportSelection.GetSelection().Contains(modelRoot) || 
+            View.ViewportSelection.GetSelection().Contains(modelRef);
 
         if (selected)
         {
@@ -166,10 +154,10 @@ public class ModelContentView : IActionEventHandler
 
         ImGui.EndGroup();
 
-        if (Editor.ViewportSelection.ShouldGoto(modelRoot) || Editor.ViewportSelection.ShouldGoto(modelRef))
+        if (View.ViewportSelection.ShouldGoto(modelRoot) || View.ViewportSelection.ShouldGoto(modelRef))
         {
             ImGui.SetScrollHereY();
-            Editor.ViewportSelection.ClearGotoTarget();
+            View.ViewportSelection.ClearGotoTarget();
         }
 
         if (nodeopen)
@@ -216,7 +204,7 @@ public class ModelContentView : IActionEventHandler
 
         if (ImGui.IsMouseDoubleClicked(0) && _pendingClick != null && modelRoot == _pendingClick)
         {
-            Editor.ModelViewportView.Viewport.FramePosition(modelRoot.GetLocalTransform().Position, 10f);
+            View.ViewportWindow.Viewport.FramePosition(modelRoot.GetLocalTransform().Position, 10f);
         }
 
         if ((_pendingClick == modelRoot || modelRef.Equals(_pendingClick)) && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
@@ -231,19 +219,19 @@ public class ModelContentView : IActionEventHandler
                     if (InputManager.HasCtrlDown())
                     {
                         // Toggle Selection
-                        if (Editor.ViewportSelection.GetSelection().Contains(selectTarget))
+                        if (View.ViewportSelection.GetSelection().Contains(selectTarget))
                         {
-                            Editor.ViewportSelection.RemoveSelection(Editor, selectTarget);
+                            View.ViewportSelection.RemoveSelection(selectTarget);
                         }
                         else
                         {
-                            Editor.ViewportSelection.AddSelection(Editor, selectTarget);
+                            View.ViewportSelection.AddSelection(selectTarget);
                         }
                     }
                     else
                     {
-                        Editor.ViewportSelection.ClearSelection(Editor);
-                        Editor.ViewportSelection.AddSelection(Editor, selectTarget);
+                        View.ViewportSelection.ClearSelection();
+                        View.ViewportSelection.AddSelection(selectTarget);
                     }
                 }
 
@@ -267,9 +255,9 @@ public class ModelContentView : IActionEventHandler
 
     private void TypeView(ModelContainer container)
     {
-        Editor.EntityTypeCache.AddModelToCache(container);
+        View.EntityTypeCache.AddModelToCache(container);
 
-        var dict = Editor.EntityTypeCache._cachedTypeView[container.Name].OrderBy(q => q.Key.ToString());
+        var dict = View.EntityTypeCache._cachedTypeView[container.Name].OrderBy(q => q.Key.ToString());
 
         foreach (var cats in dict)
         {
@@ -397,7 +385,7 @@ public class ModelContentView : IActionEventHandler
         if (hierarchial && e.Children.Count > 0)
         {
             ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
-            if (Editor.ViewportSelection.GetSelection().Contains(e))
+            if (View.ViewportSelection.GetSelection().Contains(e))
             {
                 treeflags |= ImGuiTreeNodeFlags.Selected;
             }
@@ -405,7 +393,7 @@ public class ModelContentView : IActionEventHandler
             nodeopen = ImGui.TreeNodeEx(e.PrettyName, treeflags);
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(0))
             {
-                Editor.FrameAction.FrameCurrentEntity(e);
+                View.Editor.ToolMenu.FrameAction.FrameCurrentEntity(e);
             }
 
             if (ImGui.IsItemFocused())
@@ -424,7 +412,7 @@ public class ModelContentView : IActionEventHandler
 
             var displayName = key;
 
-            if (ImGui.Selectable($"{displayName}##{treeImGuiId}", Editor.ViewportSelection.GetSelection().Contains(e), selectableFlags))
+            if (ImGui.Selectable($"{displayName}##{treeImGuiId}", View.ViewportSelection.GetSelection().Contains(e), selectableFlags))
             {
                 doSelect = true;
 
@@ -433,7 +421,7 @@ public class ModelContentView : IActionEventHandler
                 {
                     if (e.RenderSceneMesh != null)
                     {
-                        Editor.FrameAction.FrameCurrentEntity(e);
+                        View.Editor.ToolMenu.FrameAction.FrameCurrentEntity(e);
                     }
                 }
             }
@@ -485,11 +473,11 @@ public class ModelContentView : IActionEventHandler
             }
         }
 
-        if (Editor.ViewportSelection.ShouldGoto(e))
+        if (View.ViewportSelection.ShouldGoto(e))
         {
             // By default, this places the item at 50% in the frame. Use 0 to place it on top.
             ImGui.SetScrollHereY();
-            Editor.ViewportSelection.ClearGotoTarget();
+            View.ViewportSelection.ClearGotoTarget();
         }
 
         // If the visibility icon wasn't clicked, perform the selection
@@ -509,17 +497,17 @@ public class ModelContentView : IActionEventHandler
     {
         if (ImGui.BeginPopupContextItem($@"modelObjectContext_{container.Name}_{imguiID}"))
         {
-            Editor.DuplicateAction.OnContext();
-            Editor.DeleteAction.OnContext();
+            View.Editor.ToolMenu.DuplicateAction.OnContext();
+            View.Editor.ToolMenu.DeleteAction.OnContext();
 
             ImGui.Separator();
 
-            Editor.FrameAction.OnContext();
-            Editor.PullToCameraAction.OnContext();
+            View.Editor.ToolMenu.FrameAction.OnContext();
+            View.Editor.ToolMenu.PullToCameraAction.OnContext();
 
             ImGui.Separator();
 
-            Editor.ReorderAction.OnContext();
+            View.Editor.ToolMenu.ReorderAction.OnContext();
 
             ImGui.EndPopup();
         }
@@ -578,27 +566,27 @@ public class ModelContentView : IActionEventHandler
             {
                 if (InputManager.HasCtrlDown() || InputManager.HasShiftDown())
                 {
-                    Editor.ViewportSelection.AddSelection(Editor, entity);
+                    View.ViewportSelection.AddSelection(entity);
                 }
                 else
                 {
-                    Editor.ViewportSelection.ClearSelection(Editor);
-                    Editor.ViewportSelection.AddSelection(Editor, entity);
+                    View.ViewportSelection.ClearSelection();
+                    View.ViewportSelection.AddSelection(entity);
                 }
             }
             else if (InputManager.HasCtrlDown())
             {
                 // Toggle Selection
-                if (Editor.ViewportSelection.GetSelection().Contains(entity))
+                if (View.ViewportSelection.GetSelection().Contains(entity))
                 {
-                    Editor.ViewportSelection.RemoveSelection(Editor, entity);
+                    View.ViewportSelection.RemoveSelection(entity);
                 }
                 else
                 {
-                    Editor.ViewportSelection.AddSelection(Editor, entity);
+                    View.ViewportSelection.AddSelection(entity);
                 }
             }
-            else if (Editor.ViewportSelection.GetSelection().Count > 0
+            else if (View.ViewportSelection.GetSelection().Count > 0
                      && InputManager.HasShiftDown())
             {
                 // Select Range
@@ -623,7 +611,7 @@ public class ModelContentView : IActionEventHandler
 
                 if (entity.GetType() == typeof(ModelEntity))
                 {
-                    i1 = entList.IndexOf(Editor.ViewportSelection.GetFilteredSelection<ModelEntity>()
+                    i1 = entList.IndexOf(View.ViewportSelection.GetFilteredSelection<ModelEntity>()
                         .FirstOrDefault(fe => fe.Container == entity.Container && fe != entity.Container.RootObject));
                 }
 
@@ -646,19 +634,19 @@ public class ModelContentView : IActionEventHandler
 
                     for (var i = iStart; i <= iEnd; i++)
                     {
-                        Editor.ViewportSelection.AddSelection(Editor, entList[i]);
+                        View.ViewportSelection.AddSelection(entList[i]);
                     }
                 }
                 else
                 {
-                    Editor.ViewportSelection.AddSelection(Editor, entity);
+                    View.ViewportSelection.AddSelection(entity);
                 }
             }
             else
             {
                 // Exclusive Selection
-                Editor.ViewportSelection.ClearSelection(Editor);
-                Editor.ViewportSelection.AddSelection(Editor, entity);
+                View.ViewportSelection.ClearSelection();
+                View.ViewportSelection.AddSelection(entity);
             }
         }
     }
@@ -668,7 +656,7 @@ public class ModelContentView : IActionEventHandler
     {
         if (evt.HasFlag(ActionEvent.ObjectAddedRemoved))
         {
-            Editor.EntityTypeCache.InvalidateCache();
+            View.EntityTypeCache.InvalidateCache();
         }
     }
 }

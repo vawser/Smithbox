@@ -28,7 +28,12 @@ public class DuplicateAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (activeView.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Duplicate))
             {
@@ -94,20 +99,24 @@ public class DuplicateAction
     /// </summary>
     public void ApplyDuplicate()
     {
+        var activeView = Editor.ViewHandler.ActiveView;
 
-        if (Editor.Selection.SelectedModelWrapper == null)
+        if (activeView == null)
             return;
 
-        if (Editor.Selection.SelectedModelWrapper.Container == null)
+        if (activeView.Selection.SelectedModelWrapper == null)
             return;
 
-        if (Editor.ViewportSelection.IsSelection())
+        if (activeView.Selection.SelectedModelWrapper.Container == null)
+            return;
+
+        if (activeView.ViewportSelection.IsSelection())
         {
-            var selection = Editor.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
+            var selection = activeView.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
 
-            var action = new CloneModelObjectAction(Editor, Project, Editor.Selection.SelectedModelWrapper.Container, selection);
+            var action = new CloneModelObjectAction(activeView, Project, activeView.Selection.SelectedModelWrapper.Container, selection);
 
-            Editor.EditorActionManager.ExecuteAction(action);
+            activeView.ViewportActionManager.ExecuteAction(action);
         }
         else
         {

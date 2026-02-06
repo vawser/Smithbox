@@ -296,7 +296,7 @@ public class ScrambleAction
             List<ViewportAction> actlist = new();
             foreach (Entity sel in Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
-                sel.ClearTemporaryTransform(Editor, false);
+                sel.ClearTemporaryTransform(false);
                 actlist.Add(sel.GetUpdateTransformAction(GetScrambledTransform(sel), true));
             }
 

@@ -147,7 +147,7 @@ public class SelectAllAction
     /// </summary>
     public void SelectAll()
     {
-        Editor.ViewportSelection.ClearSelection(Editor);
+        Editor.ViewportSelection.ClearSelection();
 
         var curMap = Editor.Selection.SelectedMapContainer;
 
@@ -159,7 +159,7 @@ public class SelectAllAction
                 {
                     if (IsValidMapObject(curMap, mEnt))
                     {
-                        Editor.ViewportSelection.AddSelection(Editor, mEnt);
+                        Editor.ViewportSelection.AddSelection(mEnt);
                     }
                 }
             }
@@ -196,7 +196,7 @@ public class SelectAllAction
                 return;
             }
 
-            Editor.ViewportSelection.ClearSelection(Editor);
+            Editor.ViewportSelection.ClearSelection();
 
             foreach (var ent in Editor.Selection.SelectedMapContainer.Objects)
             {
@@ -210,7 +210,7 @@ public class SelectAllAction
 
                 if (curName != "" && targetNames.Contains(curName))
                 {
-                    Editor.ViewportSelection.AddSelection(Editor, ent);
+                    Editor.ViewportSelection.AddSelection(ent);
                 }
             }
         }
@@ -243,7 +243,7 @@ public class SelectAllAction
                 return;
             }
 
-            Editor.ViewportSelection.ClearSelection(Editor);
+            Editor.ViewportSelection.ClearSelection();
 
             foreach (var ent in Editor.Selection.SelectedMapContainer.Objects)
             {
@@ -251,7 +251,7 @@ public class SelectAllAction
 
                 if (targetTypes.Contains(curType))
                 {
-                    Editor.ViewportSelection.AddSelection(Editor, ent);
+                    Editor.ViewportSelection.AddSelection(ent);
                 }
             }
         }

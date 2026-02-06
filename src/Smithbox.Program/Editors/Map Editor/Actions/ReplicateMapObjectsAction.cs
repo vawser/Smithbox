@@ -179,7 +179,8 @@ public class ReplicateMapObjectsAction : ViewportAction
                         MapEditorActionHelper.ClearEntityGroupID(Editor, newobj, m);
                     }
 
-                    newobj.UpdateRenderModel(Editor);
+                    newobj.UpdateRenderModel();
+
                     if (newobj.RenderSceneMesh != null)
                     {
                         newobj.RenderSceneMesh.SetSelectable(newobj);

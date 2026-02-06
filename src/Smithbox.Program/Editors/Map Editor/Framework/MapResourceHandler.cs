@@ -231,7 +231,7 @@ public class MapResourceHandler
 
                 var renderScene = Editor.Universe.RenderScene;
 
-                DrawableHelper.GetModelDrawable(Editor, renderScene, map, obj, mp.ModelName, false, masks);
+                DrawableHelper.GetModelDrawable(Editor.Universe, renderScene, map, obj, mp.ModelName, false, masks);
             }
         }
     }

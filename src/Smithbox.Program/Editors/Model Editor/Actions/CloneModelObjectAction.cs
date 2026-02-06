@@ -9,16 +9,16 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class CloneModelObjectAction : ViewportAction
 {
-    private readonly ModelEditorScreen Editor;
-    private readonly ProjectEntry Project;
+    private ModelEditorView View;
+    private ProjectEntry Project;
 
-    private readonly ModelContainer Container;
-    private readonly List<ModelEntity> Clonables = new();
-    private readonly List<ModelEntity> Clones = new();
+    private ModelContainer Container;
+    private List<ModelEntity> Clonables = new();
+    private List<ModelEntity> Clones = new();
 
-    public CloneModelObjectAction(ModelEditorScreen editor, ProjectEntry project, ModelContainer container, List<ModelEntity> objects)
+    public CloneModelObjectAction(ModelEditorView view, ProjectEntry project, ModelContainer container, List<ModelEntity> objects)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         Container = container;
@@ -56,11 +56,11 @@ public class CloneModelObjectAction : ViewportAction
             }
         }
 
-        Editor.ViewportSelection.ClearSelection(Editor);
+        View.ViewportSelection.ClearSelection();
 
         foreach (ModelEntity d in Clonables)
         {
-            Editor.ViewportSelection.AddSelection(Editor, d);
+            View.ViewportSelection.AddSelection(d);
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -84,11 +84,11 @@ public class CloneModelObjectAction : ViewportAction
             }
         }
 
-        Editor.ViewportSelection.ClearSelection(Editor);
+        View.ViewportSelection.ClearSelection();
 
         foreach (ModelEntity d in Clonables)
         {
-            Editor.ViewportSelection.AddSelection(Editor, d);
+            View.ViewportSelection.AddSelection(d);
         }
 
         return ActionEvent.ObjectAddedRemoved;

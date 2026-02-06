@@ -140,16 +140,6 @@ public class VulkanGraphicsContext : IGraphicsContext
         MainWindowFramebuffer?.Dispose();
         //MainWindowResourceSet?.Dispose();
 
-        if(_gd.SwapchainFramebuffer.Width == 0)
-        {
-            TaskLogs.AddLog($"{_gd.SwapchainFramebuffer.Width}");
-        }
-
-        if (_gd.SwapchainFramebuffer.Height == 0)
-        {
-            TaskLogs.AddLog($"{_gd.SwapchainFramebuffer.Height}");
-        }
-
         ResourceFactory factory = _gd.ResourceFactory;
         TextureDescription mainColorDesc = TextureDescription.Texture2D(
             _gd.SwapchainFramebuffer.Width,

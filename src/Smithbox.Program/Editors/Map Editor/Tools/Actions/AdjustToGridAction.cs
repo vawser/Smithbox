@@ -339,7 +339,7 @@ public class AdjustToGridAction
             List<ViewportAction> actlist = new();
             foreach (Entity sel in Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
-                sel.ClearTemporaryTransform(Editor, false);
+                sel.ClearTemporaryTransform(false);
 
                 var transform = GetGridTransform(sel, curRootAxis,
                     applyPosX, applyPosY, applyPosZ,

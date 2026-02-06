@@ -7,9 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using Veldrid;
-using static Google.Protobuf.Reflection.FieldOptions.Types;
-using static StudioCore.Editors.MapEditor.MsbUtils;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -283,17 +280,17 @@ public class MapContentView
                         // Toggle Selection
                         if (Editor.ViewportSelection.GetSelection().Contains(selectTarget))
                         {
-                            Editor.ViewportSelection.RemoveSelection(Editor, selectTarget);
+                            Editor.ViewportSelection.RemoveSelection(selectTarget);
                         }
                         else
                         {
-                            Editor.ViewportSelection.AddSelection(Editor, selectTarget);
+                            Editor.ViewportSelection.AddSelection(selectTarget);
                         }
                     }
                     else
                     {
-                        Editor.ViewportSelection.ClearSelection(Editor);
-                        Editor.ViewportSelection.AddSelection(Editor, selectTarget);
+                        Editor.ViewportSelection.ClearSelection();
+                        Editor.ViewportSelection.AddSelection(selectTarget);
                     }
                 }
 

@@ -178,7 +178,7 @@ public class PrefabTool
             var loadedPrefab = GetLoadedPrefab(SelectedPrefab.PrefabName);
 
             if (loadedPrefab != null)
-                loadedPrefab.ImportToMap(Editor, comboMap.map as MapContainer, Editor.MapViewportView.RenderScene, Editor.EditorActionManager, prefixName);
+                loadedPrefab.ImportToMap(Editor, comboMap.map as MapContainer, Editor.RenderScene, Editor.EditorActionManager, prefixName);
         }
         UIHelper.Tooltip("Import the selected prefab into a loaded map.");
 

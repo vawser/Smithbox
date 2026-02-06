@@ -38,14 +38,14 @@ public class MapModelInsightView
 
             var mapEntity = (Entity)curEntity;
 
-            var curModelData = MapModelInsightHelper.Entries.FirstOrDefault(e => e.Key == Editor.Selection.SelectedMapID);
+            var curModelData = Editor.ModelInsightTool.Entries.FirstOrDefault(e => e.Key == Editor.Selection.SelectedMapID);
 
-            if (curModelData.Value != null && curModelData.Value != MapModelInsightHelper.SelectedDataEntry)
+            if (curModelData.Value != null && curModelData.Value != Editor.ModelInsightTool.SelectedDataEntry)
             {
-                MapModelInsightHelper.SelectedDataEntry = curModelData.Value;
+                Editor.ModelInsightTool.SelectedDataEntry = curModelData.Value;
             }
 
-            if (MapModelInsightHelper.SelectedDataEntry == null)
+            if (Editor.ModelInsightTool.SelectedDataEntry == null)
                 return;
 
             var propValue = mapEntity.GetPropertyValue("ModelName");
@@ -55,12 +55,12 @@ public class MapModelInsightView
 
             var modelName = propValue.ToString();
 
-            var flverEntry = MapModelInsightHelper.SelectedDataEntry.Models.FirstOrDefault(
+            var flverEntry = Editor.ModelInsightTool.SelectedDataEntry.Models.FirstOrDefault(
             e => e.Name == modelName);
 
-            if (flverEntry != null && flverEntry != MapModelInsightHelper.SelectedFlverEntry)
+            if (flverEntry != null && flverEntry != Editor.ModelInsightTool.SelectedFlverEntry)
             {
-                MapModelInsightHelper.SelectedFlverEntry = flverEntry;
+                Editor.ModelInsightTool.SelectedFlverEntry = flverEntry;
             }
 
             Display();
@@ -71,9 +71,9 @@ public class MapModelInsightView
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (MapModelInsightHelper.SelectedFlverEntry != null)
+        if (Editor.ModelInsightTool.SelectedFlverEntry != null)
         {
-            var entry = MapModelInsightHelper.SelectedFlverEntry;
+            var entry = Editor.ModelInsightTool.SelectedFlverEntry;
 
             UIHelper.SimpleHeader("actHeader", "Actions", "", UI.Current.ImGui_AliasName_Text);
 

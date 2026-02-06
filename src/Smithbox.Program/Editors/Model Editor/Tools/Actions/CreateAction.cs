@@ -79,6 +79,11 @@ public class CreateAction
     /// </summary>
     public void DisplayMenu()
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
         var windowSize = new Vector2(800f, 500f);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
         var sectionHeight = windowSize.Y * 0.25f;
@@ -86,9 +91,9 @@ public class CreateAction
 
         var display = false;
 
-        if(Editor.Selection.SelectedModelWrapper != null)
+        if(activeView.Selection.SelectedModelWrapper != null)
         {
-            var container = Editor.Selection.SelectedModelWrapper.Container;
+            var container = activeView.Selection.SelectedModelWrapper.Container;
 
             if (container != null)
                 display = true;
@@ -123,9 +128,14 @@ public class CreateAction
 
     public void ApplyObjectCreation()
     {
-        if (Editor.Selection.SelectedModelWrapper != null)
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (activeView.Selection.SelectedModelWrapper != null)
         {
-            var container = Editor.Selection.SelectedModelWrapper.Container;
+            var container = activeView.Selection.SelectedModelWrapper.Container;
 
             if (container != null && CreateSelectedType != null)
             {
@@ -137,6 +147,11 @@ public class CreateAction
     private void AddNewEntity(Type typ, ModelContainer container, Entity parent = null)
     {
         if (CreateSelectedType == null)
+            return;
+
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
             return;
 
         var newEntity = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
@@ -163,9 +178,9 @@ public class CreateAction
             modelObjType = ModelEntityType.Mesh;
         }
 
-        var newObj = new ModelEntity(Editor, container, newEntity, modelObjType);
+        var newObj = new ModelEntity(activeView.Universe, container, newEntity, modelObjType);
 
-        var act = new AddModelObjectAction(Editor, Project, container, new List<ModelEntity> { newObj });
-        Editor.EditorActionManager.ExecuteAction(act);
+        var act = new AddModelObjectAction(activeView, Project, container, new List<ModelEntity> { newObj });
+        activeView.ViewportActionManager.ExecuteAction(act);
     }
 }

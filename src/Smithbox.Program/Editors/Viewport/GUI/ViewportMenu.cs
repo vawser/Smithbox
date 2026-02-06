@@ -1,20 +1,22 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Utilities;
-using StudioCore.Renderer;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.Keybinds;
+using StudioCore.Renderer;
 
 namespace StudioCore.Editors.Viewport;
 
 public class ViewportMenu
 {
+    public IUniverse Owner;
     public VulkanViewport Parent;
 
     public ViewportMenu(VulkanViewport parent)
     {
         Parent = parent;
+        Owner = parent.Owner;
     }
 
     public void Draw()
@@ -27,18 +29,18 @@ public class ViewportMenu
         GizmoMenu();
 
         // Map Editor
-        if (Parent.ViewportType is ViewportType.MapEditor)
+        if (Owner is MapUniverse mapUniverse)
         {
-            Parent.MapEditor.FilterMenu();
-            Parent.MapEditor.CollisionMenu();
+            mapUniverse.Editor.FilterMenu();
+            mapUniverse.Editor.CollisionMenu();
 
-            if (Parent.MapEditor.Project.Descriptor.ProjectType != ProjectType.DS2S && Parent.MapEditor.Project.Descriptor.ProjectType != ProjectType.DS2)
+            if (mapUniverse.Project.Descriptor.ProjectType != ProjectType.DS2S && mapUniverse.Project.Descriptor.ProjectType != ProjectType.DS2)
             {
                 if (ImGui.BeginMenu("Patrol Routes"))
                 {
                     if (ImGui.MenuItem("Display"))
                     {
-                        PatrolDrawManager.Generate(Parent.MapEditor);
+                        PatrolDrawManager.Generate(mapUniverse.Editor);
                     }
                     UIHelper.Tooltip("Display the connections between patrol route nodes.");
 
@@ -54,9 +56,9 @@ public class ViewportMenu
         }
 
         // Model Editor
-        if (Parent.ViewportType is ViewportType.ModelEditor)
+        if (Owner is ModelUniverse modelUniverse)
         {
-            Parent.ModelEditor.ViewportFilters.Display();
+            modelUniverse.View.ViewportFilters.Display();
         }
 
         SettingsMenu();
@@ -90,7 +92,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display_Profiling);
             UIHelper.Tooltip($"Toggle the display of the Profiling information in the top-left corner.");
 
-            if (Parent.ViewportType is ViewportType.MapEditor)
+            if (Owner is MapUniverse mapUniverse)
             {
                 if (ImGui.MenuItem("Position Increment"))
                 {
@@ -222,7 +224,7 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu("Render"))
         {
-            if (Parent.ViewportType is ViewportType.MapEditor)
+            if (Owner is MapUniverse mapUniverse)
             {
                 if (ImGui.BeginMenu("Environment Map"))
                 {
@@ -329,17 +331,14 @@ public class ViewportMenu
             }
             UIHelper.Tooltip($"Whether to cull objects in the viewport outside of the camera frustum.");
 
-            if (Parent.ViewportType is ViewportType.MapEditor)
+            if (Owner is MapUniverse mapUniverse)
             {
                 if (ImGui.MenuItem("Enable model masks", CFG.Current.Viewport_Enable_Model_Masks))
                 {
                     CFG.Current.Viewport_Enable_Model_Masks = !CFG.Current.Viewport_Enable_Model_Masks;
                 }
                 UIHelper.Tooltip($"Whether to attempt to hide model masks based on entity NpcParam flags.");
-            }
 
-            if (Parent.ViewportType is ViewportType.MapEditor)
-            {
                 ImGui.Separator();
 
                 MapModelLoadMenu();
@@ -349,7 +348,7 @@ public class ViewportMenu
 
                 if (ImGui.BeginMenu("Quick View"))
                 {
-                    Parent.MapEditor.AutomaticPreviewTool.HandleQuickViewProperties();
+                    mapUniverse.Editor.AutomaticPreviewTool.HandleQuickViewProperties();
 
                     ImGui.EndMenu();
                 }
@@ -363,7 +362,7 @@ public class ViewportMenu
                 }
             }
 
-            if (Parent.ViewportType is ViewportType.ModelEditor)
+            if (Owner is ModelUniverse modelUniverse)
             {
                 ImGui.Separator();
 
@@ -379,7 +378,7 @@ public class ViewportMenu
                     if(ImGui.IsItemDeactivatedAfterEdit())
                     {
                         RenderableHelper.UpdateProxySizes();
-                        Parent.ModelEditor.UpdateDisplayNodes();
+                        modelUniverse.View.ViewportWindow.UpdateDisplayNodes();
                     }
 
                     ImGui.DragFloat("Node Size", ref CFG.Current.NodeMeshSize, 0.1f, 0.0001f, 1f);
@@ -387,7 +386,7 @@ public class ViewportMenu
                     if (ImGui.IsItemDeactivatedAfterEdit())
                     {
                         RenderableHelper.UpdateProxySizes();
-                        Parent.ModelEditor.UpdateDisplayNodes();
+                        modelUniverse.View.ViewportWindow.UpdateDisplayNodes();
                     }
 
                     ImGui.EndMenu();
@@ -409,9 +408,13 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.MapEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+
+            if (Owner is MapUniverse mapUniverse)
             {
-                name = "Assets";
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                {
+                    name = "Assets";
+                }
             }
 
             if (ImGui.MenuItem(name))
@@ -456,9 +459,13 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.MapEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+
+            if (Owner is MapUniverse mapUniverse)
             {
-                name = "Assets";
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                {
+                    name = "Assets";
+                }
             }
 
             if (ImGui.MenuItem(name))
@@ -495,9 +502,13 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.ModelEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+
+            if (Owner is MapUniverse mapUniverse)
             {
-                name = "Assets";
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                {
+                    name = "Assets";
+                }
             }
 
             if (ImGui.MenuItem(name))
@@ -546,9 +557,13 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.ModelEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+
+            if (Owner is MapUniverse mapUniverse)
             {
-                name = "Assets";
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                {
+                    name = "Assets";
+                }
             }
 
             if (ImGui.MenuItem(name))

@@ -277,7 +277,7 @@ public class CreateAction
     private void AddNewEntity(Type typ, MsbEntityType etype, MapContainer map, Entity parent = null)
     {
         var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
-        MsbEntity obj = new(Editor, map, newent, etype);
+        MsbEntity obj = new(Editor.Universe, map, newent, etype);
 
         parent ??= map.RootObject;
 

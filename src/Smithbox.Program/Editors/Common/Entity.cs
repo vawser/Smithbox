@@ -70,22 +70,22 @@ public class Entity : ISelectable, IDisposable
 
     public bool ForceModelRefresh = false;
 
+    private IUniverse Owner;
+
     /// <summary>
     /// Default constructor.
     /// </summary>
-    public Entity(EditorScreen editor)
+    public Entity(IUniverse universe)
     {
-        Editor = editor;
+        Owner = universe;
     }
-
-    private EditorScreen Editor;
 
     /// <summary>
     /// Constructor: container, object
     /// </summary>
-    public Entity(EditorScreen editor, ObjectContainer map, object msbo)
+    public Entity(IUniverse universe, ObjectContainer map, object msbo)
     {
-        Editor = editor;
+        Owner = universe;
         Container = map;
         WrappedObject = msbo;
     }
@@ -130,7 +130,7 @@ public class Entity : ISelectable, IDisposable
         set
         {
             _renderSceneMesh = value;
-            UpdateRenderModel(Editor);
+            UpdateRenderModel();
         }
         get => _renderSceneMesh;
     }
@@ -244,11 +244,11 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Function executed upon the selection of this entity.
     /// </summary>
-    public void OnSelected(EditorScreen editor)
+    public void OnSelected()
     {
         IsSelected = true;
 
-        UpdateRenderModel(Editor);
+        UpdateRenderModel();
 
         if (RenderSceneMesh != null)
         {
@@ -259,11 +259,11 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Function executed upon the deselection of this entity.
     /// </summary>
-    public void OnDeselected(EditorScreen editor)
+    public void OnDeselected()
     {
         IsSelected = false;
 
-        UpdateRenderModel(Editor);
+        UpdateRenderModel();
 
         if (RenderSceneMesh != null)
         {
@@ -290,7 +290,7 @@ public class Entity : ISelectable, IDisposable
         }
 
         Children.Add(child);
-        child.UpdateRenderModel(Editor);
+        child.UpdateRenderModel();
     }
 
     /// <summary>
@@ -305,7 +305,7 @@ public class Entity : ISelectable, IDisposable
 
         child.Parent = this;
         Children.Insert(index, child);
-        child.UpdateRenderModel(Editor);
+        child.UpdateRenderModel();
     }
 
     /// <summary>
@@ -367,7 +367,7 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     internal virtual Entity DuplicateEntity(object clone)
     {
-        return new Entity(Editor, Container, clone);
+        return new Entity(Owner, Container, clone);
     }
 
     /// <summary>
@@ -1017,23 +1017,23 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Set temporary transform for this object.
     /// </summary>
-    public void SetTemporaryTransform(EditorScreen editor, Transform t)
+    public void SetTemporaryTransform(Transform t)
     {
         TempTransform = t;
         UseTempTransform = true;
 
-        UpdateRenderModel(editor);
+        UpdateRenderModel();
     }
 
     /// <summary>
     /// Clear temporary transform for this object.
     /// </summary>
-    public void ClearTemporaryTransform(EditorScreen editor, bool updaterender = true)
+    public void ClearTemporaryTransform(bool updaterender = true)
     {
         UseTempTransform = false;
         if (updaterender)
         {
-            UpdateRenderModel(editor);
+            UpdateRenderModel();
         }
     }
 
@@ -1056,7 +1056,7 @@ public class Entity : ISelectable, IDisposable
             ViewportCompoundAction act = new(actions);
             act.SetPostExecutionAction(undo =>
             {
-                UpdateRenderModel(Editor);
+                UpdateRenderModel();
             });
             return act;
         }
@@ -1105,7 +1105,7 @@ public class Entity : ISelectable, IDisposable
 
             act.SetPostExecutionAction(undo =>
             {
-                UpdateRenderModel(Editor);
+                UpdateRenderModel();
             });
             return act;
         }
@@ -1119,7 +1119,7 @@ public class Entity : ISelectable, IDisposable
 
         act.SetPostExecutionAction(undo =>
         {
-            UpdateRenderModel(Editor);
+            UpdateRenderModel();
         });
         return act;
     }
@@ -1131,7 +1131,7 @@ public class Entity : ISelectable, IDisposable
 
         act.SetPostExecutionAction(undo =>
         {
-            UpdateRenderModel(Editor);
+            UpdateRenderModel();
         });
         return act;
     }
@@ -1144,7 +1144,7 @@ public class Entity : ISelectable, IDisposable
 
         act.SetPostExecutionAction(undo =>
         {
-            UpdateRenderModel(Editor);
+            UpdateRenderModel();
         });
         return act;
     }
@@ -1159,7 +1159,7 @@ public class Entity : ISelectable, IDisposable
         var act = new ViewportCompoundAction(actions);
         act.SetPostExecutionAction((undo) =>
         {
-            UpdateRenderModel(Editor);
+            UpdateRenderModel();
         });
         return act;
     }
@@ -1167,7 +1167,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Updates entity's render groups (DrawGroups/DispGroups). Uses CollisionName references if possible.
     /// </summary>
-    private void UpdateDispDrawGroups(EditorScreen editor)
+    private void UpdateDispDrawGroups()
     {
         RenderGroupRefName = "";
 
@@ -1208,10 +1208,10 @@ public class Entity : ISelectable, IDisposable
                     return;
                 }
 
-                if(editor is MapEditorScreen)
+                if(Owner is MapUniverse)
                 {
-                    var curEditor = (MapEditorScreen)editor;
-                    var universe = curEditor.Universe;
+                    var universe = (MapUniverse)Owner;
+
                     if (universe.HasProcessedMapLoad)
                     {
                         if (collisionNameValue != "")
@@ -1239,7 +1239,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Update the render model for this entity.
     /// </summary>
-    public virtual void UpdateRenderModel(EditorScreen editor)
+    public virtual void UpdateRenderModel()
     {
         if (!CFG.Current.Viewport_Enable_Rendering)
         {
@@ -1269,7 +1269,7 @@ public class Entity : ISelectable, IDisposable
         {
             if (c.HasTransform)
             {
-                c.UpdateRenderModel(editor);
+                c.UpdateRenderModel();
             }
         }
 
@@ -1277,18 +1277,12 @@ public class Entity : ISelectable, IDisposable
         {
             RenderSceneMesh.Visible = _EditorVisible;
 
-            //if (editor is ModelEditorScreen)
-            //{
-            //    RenderSceneMesh.AutoRegister = true;
-            //    RenderSceneMesh.Register();
-            //}
-
-            if (editor is MapEditorScreen)
+            if (Owner is MapUniverse)
             {
                 // Render Group management
                 if (HasRenderGroups != false)
                 {
-                    UpdateDispDrawGroups(Editor);
+                    UpdateDispDrawGroups();
                     RenderSceneMesh.DrawGroups.AlwaysVisible = false;
                     RenderSceneMesh.DrawGroups.RenderGroups = Drawgroups;
                 }
@@ -1560,7 +1554,7 @@ public class Entity : ISelectable, IDisposable
 /// </summary>
 public class NamedEntity : Entity
 {
-    public NamedEntity(EditorScreen editor, ObjectContainer map, object msbo, string name, int idx) : base(editor, map, msbo)
+    public NamedEntity(IUniverse owner, ObjectContainer map, object msbo, string name, int idx) : base(owner, map, msbo)
     {
         Name = name;
         Index = idx;
@@ -1575,7 +1569,7 @@ public class NamedEntity : Entity
 /// </summary>
 public class TransformableNamedEntity : Entity
 {
-    public TransformableNamedEntity(EditorScreen editor, ObjectContainer map, object msbo, string name, int idx) : base(editor, map, msbo)
+    public TransformableNamedEntity(IUniverse owner, ObjectContainer map, object msbo, string name, int idx) : base(owner, map, msbo)
     {
         Name = name;
         Index = idx;
@@ -1609,7 +1603,7 @@ public class MapSerializationEntity
 /// </summary>
 public class MsbEntity : Entity
 {
-    protected EditorScreen Editor;
+    protected IUniverse Owner;
 
     protected int CurrentNPCParamID = 0;
     protected int[] ModelMasks = null;
@@ -1617,17 +1611,17 @@ public class MsbEntity : Entity
     /// <summary>
     /// Constructor
     /// </summary>
-    public MsbEntity(EditorScreen editor) : base (editor)
+    public MsbEntity(IUniverse owner) : base (owner)
     {
-        Editor = editor;
+        Owner = owner;
     }
 
     /// <summary>
     /// Constructer: container, object
     /// </summary>
-    public MsbEntity(EditorScreen editor, ObjectContainer map, object msbo) : base(editor, map, msbo)
+    public MsbEntity(IUniverse owner, ObjectContainer map, object msbo) : base(owner, map, msbo)
     {
-        Editor = editor;
+        Owner = owner;
         Container = map;
         WrappedObject = msbo;
     }
@@ -1635,9 +1629,9 @@ public class MsbEntity : Entity
     /// <summary>
     /// Constructer: container, object, entity type
     /// </summary>
-    public MsbEntity(EditorScreen editor, ObjectContainer map, object msbo, MsbEntityType type) : base(editor, map, msbo)
+    public MsbEntity(IUniverse owner, ObjectContainer map, object msbo, MsbEntityType type) : base(owner, map, msbo)
     {
-        Editor = editor;
+        Owner = owner;
         Container = map;
         WrappedObject = msbo;
         Type = type;
@@ -1769,13 +1763,13 @@ public class MsbEntity : Entity
 
         ParamEditorScreen paramEditor = null;
         var curProjectType = ProjectType.Undefined;
-        if(Editor is MapEditorScreen)
+
+        if(Owner is MapUniverse)
         {
-            var curEditor = (MapEditorScreen)Editor;
+            var curOwner = (MapUniverse)Owner;
 
-            curProjectType = curEditor.Project.Descriptor.ProjectType;
-
-            paramEditor = curEditor.Project.Handler.ParamEditor;
+            curProjectType = curOwner.Project.Descriptor.ProjectType;
+            paramEditor = curOwner.Project.Handler.ParamEditor;
         }
 
         if (paramEditor == null)
@@ -1935,7 +1929,7 @@ public class MsbEntity : Entity
     /// <summary>
     /// Update the render model of this entity.
     /// </summary>
-    public override void UpdateRenderModel(EditorScreen editor)
+    public override void UpdateRenderModel()
     {
         if (!CFG.Current.Viewport_Enable_Rendering)
         {
@@ -1943,10 +1937,9 @@ public class MsbEntity : Entity
         }
 
         // Map Editor
-        if (editor is MapEditorScreen)
+        if (Owner is MapUniverse)
         {
-            var curEditor = (MapEditorScreen)editor;
-            var universe = curEditor.Universe;
+            var universe = (MapUniverse)Owner;
 
             if (Type == MsbEntityType.DS2Generator)
             {
@@ -2023,12 +2016,12 @@ public class MsbEntity : Entity
                         // Get model
                         if (model != null)
                         {
-                            _renderSceneMesh = DrawableHelper.GetModelDrawable(Editor, universe.RenderScene, ContainingMap, this, model, true, ModelMasks);
+                            _renderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.RenderScene, ContainingMap, this, model, true, ModelMasks);
                         }
 
                         if (universe.Selection.IsSelected(this))
                         {
-                            OnSelected(curEditor);
+                            OnSelected();
                         }
 
                         if (universe.HasProcessedMapLoad)
@@ -2040,15 +2033,14 @@ public class MsbEntity : Entity
             }
         }
 
-        base.UpdateRenderModel(editor);
+        base.UpdateRenderModel();
     }
 
     public void UpdateEntityModel()
     {
-        if (Editor is MapEditorScreen)
+        if (Owner is MapUniverse)
         {
-            var curEditor = (MapEditorScreen)Editor;
-            var universe = curEditor.Universe;
+            var universe = (MapUniverse)Owner;
 
             if (_renderSceneMesh != null)
             {
@@ -2058,12 +2050,12 @@ public class MsbEntity : Entity
             // Get model
             if (CurrentModelName != null)
             {
-                _renderSceneMesh = DrawableHelper.GetModelDrawable(Editor, universe.RenderScene, ContainingMap, this, CurrentModelName, true, ModelMasks, true);
+                _renderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.RenderScene, ContainingMap, this, CurrentModelName, true, ModelMasks, true);
             }
 
             if (universe.Selection.IsSelected(this))
             {
-                OnSelected(curEditor);
+                OnSelected();
             }
 
             if (universe.HasProcessedMapLoad)
@@ -2072,7 +2064,7 @@ public class MsbEntity : Entity
             }
         }
 
-        base.UpdateRenderModel(Editor);
+        base.UpdateRenderModel();
     }
 
     /// <summary>
@@ -2080,10 +2072,9 @@ public class MsbEntity : Entity
     /// </summary>
     public override void BuildReferenceMap()
     {
-        if (Editor is MapEditorScreen)
+        if (Owner is MapUniverse)
         {
-            var curEditor = (MapEditorScreen)Editor;
-            var universe = curEditor.Universe;
+            var universe = (MapUniverse)Owner;
 
             if (Type == MsbEntityType.MapRoot && universe != null)
             {
@@ -2112,7 +2103,7 @@ public class MsbEntity : Entity
                 }
 
                 // For now, the map relationship type is not given here (dictionary values), just all related maps.
-                foreach (var mapRef in MapConnections_ER.GetRelatedMaps(curEditor, Name))
+                foreach (var mapRef in MapConnections_ER.GetRelatedMaps(universe.Editor, Name))
                 {
                     References[mapRef.Key] = new[] { new ObjectContainerReference(mapRef.Key) };
                 }
@@ -2218,7 +2209,7 @@ public class MsbEntity : Entity
     /// </summary>
     internal override Entity DuplicateEntity(object clone)
     {
-        return new MsbEntity(Editor, Container, clone);
+        return new MsbEntity(Owner, Container, clone);
     }
 
     /// <summary>
@@ -2264,19 +2255,18 @@ public class MsbEntity : Entity
 /// </summary>
 public class PlacementEntity : Entity
 {
-    protected EditorScreen Editor;
+    protected IUniverse Owner;
 
     /// <summary>
     /// Constructor
     /// </summary>
-    public PlacementEntity(EditorScreen editor) : base(editor)
+    public PlacementEntity(IUniverse owner) : base(owner)
     {
-        Editor = editor;
+        Owner = owner;
 
-        if (editor is MapEditorScreen)
+        if (owner is MapUniverse)
         {
-            var curEditor = (MapEditorScreen)editor;
-            var universe = curEditor.Universe;
+            var universe = (MapUniverse)owner;
 
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
@@ -2288,7 +2278,7 @@ public class PlacementEntity : Entity
     /// <summary>
     /// Update the render model of this entity.
     /// </summary>
-    public override void UpdateRenderModel(EditorScreen editor)
+    public override void UpdateRenderModel()
     {
         if (!CFG.Current.Viewport_Enable_Rendering)
         {
@@ -2296,10 +2286,9 @@ public class PlacementEntity : Entity
         }
 
         // Map Editor
-        if (editor is MapEditorScreen)
+        if (Owner is MapUniverse)
         {
-            var curEditor = (MapEditorScreen)editor;
-            var universe = curEditor.Universe;
+            var universe = (MapUniverse)Owner;
 
             if (_renderSceneMesh != null)
             {
@@ -2313,11 +2302,11 @@ public class PlacementEntity : Entity
                 }
 
                 // Update position of the placement orb
-                _renderSceneMesh.World = curEditor.MapViewportView.GetPlacementTransform();
+                _renderSceneMesh.World = universe.Editor.MapViewportView.GetPlacementTransform();
             }
         }
 
-        base.UpdateRenderModel(editor);
+        base.UpdateRenderModel();
     }
 
     /// <summary>
@@ -2336,23 +2325,23 @@ public class PlacementEntity : Entity
 /// </summary>
 public class ModelEntity : Entity
 {
-    protected EditorScreen Editor;
+    protected IUniverse Owner;
 
-    public ModelEntity(EditorScreen editor) : base(editor)
+    public ModelEntity(IUniverse owner) : base(owner)
     {
-        Editor = editor;
+        Owner = owner;
     }
 
-    public ModelEntity(EditorScreen editor, ObjectContainer container, object internalObject) : base(editor, container, internalObject)
+    public ModelEntity(IUniverse owner, ObjectContainer container, object internalObject) : base(owner, container, internalObject)
     {
-        Editor = editor;
+        Owner = owner;
         Container = (ModelContainer)container;
         WrappedObject = internalObject;
     }
 
-    public ModelEntity(EditorScreen editor, ObjectContainer container, object internalObject, ModelEntityType entityType) : base(editor, container, internalObject)
+    public ModelEntity(IUniverse owner, ObjectContainer container, object internalObject, ModelEntityType entityType) : base(owner, container, internalObject)
     {
-        Editor = editor;
+        Owner = owner;
         Container = (ModelContainer)container;
         WrappedObject = internalObject;
         Type = entityType;
@@ -2368,7 +2357,7 @@ public class ModelEntity : Entity
 
     public override bool HasTransform => Type is ModelEntityType.Dummy or ModelEntityType.Node;
 
-    public override void UpdateRenderModel(EditorScreen editor)
+    public override void UpdateRenderModel()
     {
         if (!CFG.Current.Viewport_Enable_Rendering)
         {
@@ -2396,7 +2385,7 @@ public class ModelEntity : Entity
         //    }
         //}
 
-        base.UpdateRenderModel(editor);
+        base.UpdateRenderModel();
     }
 
     public override Transform GetLocalTransform()
@@ -2414,7 +2403,7 @@ public class ModelEntity : Entity
 
     internal override Entity DuplicateEntity(object clone)
     {
-        return new ModelEntity(Editor, Container, clone);
+        return new ModelEntity(Owner, Container, clone);
     }
 
     public override Entity Clone()

@@ -2,16 +2,13 @@
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
-using System;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -19,103 +16,29 @@ public class ModelEditorScreen : EditorScreen
 {
     public ProjectEntry Project;
 
-    /// <summary>
-    /// Lock variable used to handle pauses to the Update() function.
-    /// </summary>
-    private static readonly object _lock_PauseUpdate = new();
-    private bool GCNeedsCollection;
-    private bool _PauseUpdate;
+    public ModelViewHandler ViewHandler;
 
-    public ViewportActionManager EditorActionManager = new();
-    public ModelActionHandler ActionHandler;
-    public ViewportSelection ViewportSelection = new();
-    public ModelSelection Selection;
-    public ModelUniverse Universe;
-    public ModelEntityTypeCache EntityTypeCache;
-    public ModelPropertyCache ModelPropertyCache = new();
     public ModelCommandQueue CommandQueue;
     public ModelShortcuts Shortcuts;
 
-    public ModelViewportView ModelViewportView;
-    public ModelSourceView ModelSourceView;
-    public ModelSelectView ModelSelectView;
-    public ModelContentView ModelContentView;
-    public ModelPropertyView ModelPropertyView;
-    public ModelToolWindow ModelToolView;
+    public ModelToolWindow ToolMenu;
 
-    public ModelViewportFilters ViewportFilters;
-
-    public ModelGridConfiguration ModelGridTool;
-    public ModelInsightView ModelInsightTool;
-    public ModelInstanceFinder ModelInstanceFinder;
-    public ModelMaskToggler ModelMaskToggler;
-
-    public CreateAction CreateAction;
-    public DuplicateAction DuplicateAction;
-    public DeleteAction DeleteAction;
-    public FrameAction FrameAction;
-    public GotoAction GotoAction;
-    public PullToCameraAction PullToCameraAction;
-    public ReorderAction ReorderAction;
+    public ResourceLoadWindow LoadingModal;
+    public ResourceListWindow ResourceList;
 
     public ModelEditorScreen(ProjectEntry project)
     {
         Project = project;
 
-        ModelViewportView = new ModelViewportView(this, project);
-        ModelViewportView.Setup();
+        ViewHandler = new ModelViewHandler(this, project);
 
-        Universe = new ModelUniverse(this, project);
-        EntityTypeCache = new(this, project);
-
-        Selection = new(this, project);
-
-        // Core Views
-        ModelSourceView = new ModelSourceView(this, project);
-        ModelSelectView = new ModelSelectView(this, project);
-        ModelContentView = new ModelContentView(this, project);
-        ModelPropertyView = new ModelPropertyView(this, project);
-        ModelToolView = new ModelToolWindow(this, project);
-
-        ViewportFilters = new ModelViewportFilters(this, project);
-
-        ActionHandler = new ModelActionHandler(this, project);
         CommandQueue = new ModelCommandQueue(this, project);
         Shortcuts = new ModelShortcuts(this, project);
 
-        ModelGridTool = new ModelGridConfiguration(this, Project);
-        ModelInsightTool = new ModelInsightView(this, Project);
-        ModelInstanceFinder = new ModelInstanceFinder(this, Project);
-        ModelMaskToggler = new ModelMaskToggler(this, Project);
+        LoadingModal = new();
+        ResourceList = new();
 
-        CreateAction = new CreateAction(this, Project);
-        DuplicateAction = new DuplicateAction(this, Project);
-        DeleteAction = new DeleteAction(this, Project);
-        FrameAction = new FrameAction(this, Project);
-        GotoAction = new GotoAction(this, Project);
-        PullToCameraAction = new PullToCameraAction(this, Project);
-        ReorderAction = new ReorderAction(this, Project);
-
-        ModelInsightHelper.Setup(this, Project);
-
-        EditorActionManager.AddEventHandler(ModelContentView);
-    }
-    private bool PauseUpdate
-    {
-        get
-        {
-            lock (_lock_PauseUpdate)
-            {
-                return _PauseUpdate;
-            }
-        }
-        set
-        {
-            lock (_lock_PauseUpdate)
-            {
-                _PauseUpdate = value;
-            }
-        }
+        ToolMenu = new ModelToolWindow(this, project);
     }
 
     public string EditorName => "Model Editor";
@@ -124,111 +47,42 @@ public class ModelEditorScreen : EditorScreen
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
-    public void OnGUI(string[] initcmd)
+    public void OnGUI(string[] commands)
     {
-        if (Project.IsInitializing)
-            return;
-
         var scale = DPI.UIScale();
 
-        // Docking setup
-        //var vp = ImGui.GetMainViewport();
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowRounding, 0.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
-        ImGui.PushStyleVar(ImGuiStyleVar.ChildBorderSize, 0.0f);
-        ImGuiWindowFlags flags = ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse |
-                                 ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove;
-        flags |= ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
-        flags |= ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoNavFocus;
-        flags |= ImGuiWindowFlags.NoBackground;
-        //ImGui.Begin("DockSpace_MapEdit", flags);
-        ImGui.PopStyleVar(4);
-        var dsid = ImGui.GetID("DockSpace_ModelEdit");
-        ImGui.DockSpace(dsid, new Vector2(0, 0));
-
         Shortcuts.Monitor();
-        CommandQueue.Parse(initcmd);
 
-        // Action OnGUI
-
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);
-
-        Vector3 clear_color = new(114f / 255f, 144f / 255f, 154f / 255f);
+        CommandQueue.Parse(commands);
 
         if (ImGui.BeginMenuBar())
         {
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu();
+            ToolMenu.OnMenubar();
 
             ImGui.EndMenuBar();
         }
 
-        ModelViewportView.OnGui();
-        ModelSourceView.OnGui();
-        ModelSelectView.OnGui();
-        ModelContentView.OnGui();
-        ModelToolView.OnGui();
+        var dsid = ImGui.GetID("DockSpace_ModelEdit");
+        ImGui.DockSpace(dsid, new Vector2(0, 0));
 
-        if (Smithbox.FirstFrame)
+        ViewHandler.HandleViews();
+
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView != null)
         {
-            ImGui.SetNextWindowFocus();
+            ToolMenu.Display();
+
+            LoadingModal.DisplayWindow(activeView.ViewportWindow.Viewport.Width, activeView.ViewportWindow.Viewport.Height);
+
+            if (CFG.Current.Interface_ModelEditor_ResourceList)
+            {
+                ResourceList.DisplayWindow("modelResourceList", activeView.Universe);
+            }
         }
-
-        if (ModelPropertyView.Focus)
-        {
-            ModelPropertyView.Focus = false;
-            ImGui.SetNextWindowFocus();
-        }
-
-        ModelPropertyView.OnGui();
-
-        ResourceLoadWindow.DisplayWindow(ModelViewportView.Viewport.Width, ModelViewportView.Viewport.Height);
-
-        if (CFG.Current.Interface_MapEditor_ResourceList)
-        {
-            ResourceListWindow.DisplayWindow("modelResourceList", this);
-        }
-
-        ImGui.PopStyleColor(1);
-    }
-
-    public void OnDefocus()
-    {
-    }
-
-    public void Update(float dt)
-    {
-        if (Project.IsInitializing)
-            return;
-
-        if (GCNeedsCollection)
-        {
-            GC.Collect();
-            GCNeedsCollection = false;
-        }
-
-        if (PauseUpdate)
-        {
-            return;
-        }
-
-        ModelViewportView.Update(dt);
-    }
-
-    public void EditorResized(Sdl2Window window, GraphicsDevice device)
-    {
-        ModelViewportView.EditorResized(window, device);
     }
 
     public void FileMenu()
@@ -276,51 +130,56 @@ public class ModelEditorScreen : EditorScreen
 
     public void EditMenu()
     {
+        var activeView = ViewHandler.ActiveView;
+
         if (ImGui.BeginMenu("Edit"))
         {
-            // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)}  /  {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+            if (activeView != null)
             {
-                if (EditorActionManager.CanUndo())
+                // Undo
+                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)}  /  {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
-                    EditorActionManager.UndoAction();
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAction();
+                    }
                 }
-            }
 
-            // Undo All
-            if (ImGui.MenuItem($"Undo All"))
-            {
-                if (EditorActionManager.CanUndo())
+                // Undo All
+                if (ImGui.MenuItem($"Undo All"))
                 {
-                    EditorActionManager.UndoAllAction();
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAllAction();
+                    }
                 }
-            }
 
-            // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)}  /  {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
-            {
-                if (EditorActionManager.CanRedo())
+                // Redo
+                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)}  /  {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
-                    EditorActionManager.RedoAction();
+                    if (activeView.ActionManager.CanRedo())
+                    {
+                        activeView.ActionManager.RedoAction();
+                    }
                 }
+
+                ImGui.Separator();
+
+                // Actions
+                ToolMenu.CreateAction.OnMenu();
+                ToolMenu.DuplicateAction.OnMenu();
+                ToolMenu.DeleteAction.OnMenu();
+
+                ImGui.Separator();
+
+                ToolMenu.FrameAction.OnMenu();
+                ToolMenu.GotoAction.OnMenu();
+                ToolMenu.PullToCameraAction.OnMenu();
+
+                ImGui.Separator();
+
+                ToolMenu.ReorderAction.OnMenu();
             }
-
-            ImGui.Separator();
-
-            // Actions
-            CreateAction.OnMenu();
-            DuplicateAction.OnMenu();
-            DeleteAction.OnMenu();
-
-            ImGui.Separator();
-
-            FrameAction.OnMenu();
-            GotoAction.OnMenu();
-            PullToCameraAction.OnMenu();
-
-            ImGui.Separator();
-
-            ReorderAction.OnMenu();
 
             ImGui.EndMenu();
         }
@@ -330,35 +189,11 @@ public class ModelEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.MenuItem("Viewport"))
+            if (ImGui.MenuItem("Tools"))
             {
-                CFG.Current.Viewport_Display = !CFG.Current.Viewport_Display;
+                CFG.Current.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface_ModelEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display);
-
-            if (ImGui.MenuItem("Source List"))
-            {
-                CFG.Current.Interface_ModelEditor_ModelSourceList = !CFG.Current.Interface_ModelEditor_ModelSourceList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ModelSourceList);
-
-            if (ImGui.MenuItem("Model List"))
-            {
-                CFG.Current.Interface_ModelEditor_ModelSelectList = !CFG.Current.Interface_ModelEditor_ModelSelectList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ModelSelectList);
-
-            if (ImGui.MenuItem("Model Contents"))
-            {
-                CFG.Current.Interface_ModelEditor_ModelContents = !CFG.Current.Interface_ModelEditor_ModelContents;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ModelContents);
-
-            if (ImGui.MenuItem("Model Properties"))
-            {
-                CFG.Current.Interface_ModelEditor_Properties = !CFG.Current.Interface_ModelEditor_Properties;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Properties);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolWindow);
 
             if (ImGui.MenuItem("Resource List"))
             {
@@ -366,76 +201,88 @@ public class ModelEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ResourceList);
 
+            if (ImGui.MenuItem("Screenshot Mode"))
+            {
+                CFG.Current.Interface_ModelEditor_ScreenshotMode = !CFG.Current.Interface_ModelEditor_ScreenshotMode;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ScreenshotMode);
+
+
+            ImGui.Separator();
+
+            ViewHandler.DisplayMenu();
+
             ImGui.EndMenu();
         }
     }
 
-    public void ToolMenu()
-    {
-        ModelToolView.OnMenubar();
-    }
-
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (Project.IsInitializing)
+        foreach (var view in ViewHandler.ModelViews)
+        {
+            if (view.ViewportWindow.Viewport is VulkanViewport vulkanViewport)
+            {
+                if (vulkanViewport.Visible)
+                {
+                    view.ViewportWindow.Draw(device, cl);
+                }
+            }
+        }
+    }
+
+    public void Update(float dt)
+    {
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
             return;
 
-        if (ModelViewportView.Viewport != null)
-        {
-            ModelViewportView.Draw(device, cl);
-        }
+        activeView.ViewportWindow.Update(dt);
+    }
+
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+        
+        activeView.ViewportWindow.EditorResized(window, device);
     }
 
     public bool InputCaptured()
     {
-        return ModelViewportView.InputCaptured();
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return false;
+
+        return activeView.ViewportWindow.InputCaptured();
     }
 
     public void Save(bool autoSave = false)
     {
+        var activeView = ViewHandler.ActiveView;
+
         if (Project.Descriptor.ProjectType == ProjectType.DES)
         {
             TaskLogs.AddLog("Model Editor is not supported for DES.", LogLevel.Warning);
             return;
         }
 
+        if (activeView == null)
+            return;
+
         if (!autoSave && CFG.Current.ModelEditor_ManualSave_IncludeFLVER ||
-            autoSave && CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER)
+        autoSave && CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER)
         {
-            if (Selection.SelectedModelWrapper != null)
+            if (activeView.Selection.SelectedModelWrapper != null)
             {
-                Selection.SelectedModelWrapper.Save();
+                activeView.Selection.SelectedModelWrapper.Save();
             }
         }
 
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();
-    }
-
-    /// <summary>
-    /// Re-assigns the drawable meshes for Dummy/Node objects when the sizing changes via the Viewport menu
-    /// </summary>
-    public void UpdateDisplayNodes()
-    {
-        var wrapper = Selection.SelectedModelWrapper;
-        if (wrapper != null)
-        {
-            var container = wrapper.Container;
-
-            if (container != null)
-            {
-                foreach (var obj in container.Dummies)
-                {
-                    obj.RenderSceneMesh.Dispose();
-                    container.AssignDummyDrawable(obj, wrapper);
-                }
-
-                foreach (var obj in container.Nodes)
-                {
-                    obj.RenderSceneMesh.Dispose();
-                    container.AssignNodeDrawable(obj, wrapper);
-                }
-            }
-        }
     }
 }

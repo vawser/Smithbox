@@ -29,7 +29,12 @@ public class ReorderAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (activeView.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Reorder_Up))
             {
@@ -126,19 +131,24 @@ public class ReorderAction
     /// </summary>
     public void ApplyReorder(TreeObjectOrderMovementType direction)
     {
-        if (Editor.ViewportSelection.IsSelection())
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (activeView.ViewportSelection.IsSelection())
         {
-            if (Editor.Selection.SelectedModelWrapper != null)
+            if (activeView.Selection.SelectedModelWrapper != null)
             {
-                var container = Editor.Selection.SelectedModelWrapper.Container;
+                var container = activeView.Selection.SelectedModelWrapper.Container;
 
                 if (container != null)
                 {
-                    var selection = Editor.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
+                    var selection = activeView.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
 
-                    var action = new OrderModelObjectAction(Editor, Project, container, selection, direction);
+                    var action = new OrderModelObjectAction(activeView, Project, container, selection, direction);
 
-                    Editor.EditorActionManager.ExecuteAction(action);
+                    activeView.ViewportActionManager.ExecuteAction(action);
                 }
             }
         }

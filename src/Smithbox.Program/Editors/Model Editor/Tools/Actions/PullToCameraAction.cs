@@ -26,7 +26,12 @@ public class PullToCameraAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (activeView.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Pull))
             {
@@ -74,13 +79,18 @@ public class PullToCameraAction
     /// </summary>
     public void ApplyMoveToCamera()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (activeView.ViewportSelection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            HashSet<Entity> sels = Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
+            HashSet<Entity> sels = activeView.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
-            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, Editor.ModelViewportView.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
-            Vector3 camPos = Editor.ModelViewportView.Viewport.ViewportCamera.CameraTransform.Position;
+            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, activeView.ViewportWindow.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
+            Vector3 camPos = activeView.ViewportWindow.Viewport.ViewportCamera.CameraTransform.Position;
             Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
 
             // Get the accumulated center position of all selections
@@ -125,7 +135,7 @@ public class PullToCameraAction
             if (actlist.Any())
             {
                 ViewportCompoundAction action = new(actlist);
-                Editor.EditorActionManager.ExecuteAction(action);
+                activeView.ViewportActionManager.ExecuteAction(action);
             }
         }
         else

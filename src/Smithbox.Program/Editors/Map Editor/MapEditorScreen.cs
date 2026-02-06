@@ -11,7 +11,6 @@ using System;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -33,7 +32,7 @@ public class MapEditorScreen : EditorScreen
     public MapActionHandler ActionHandler;
     public ViewportSelection ViewportSelection = new();
     public MapSelection Selection;
-    public Universe Universe;
+    public MapUniverse Universe;
     public MapEntityTypeCache EntityTypeCache;
     public MapPropertyCache MapPropertyCache = new();
     public MapCommandQueue CommandQueue;
@@ -101,21 +100,35 @@ public class MapEditorScreen : EditorScreen
     public MapListFilterTool MapListFilterTool;
     public MapValidatorTool MapValidatorTool;
     public MapModelInsightView MapModelInsightTool;
+    public MapModelInsightHelper ModelInsightTool;
 
     // Special Tools
     public AutomaticPreviewTool AutomaticPreviewTool;
+
+    public ResourceLoadWindow LoadingModal;
+    public ResourceListWindow ResourceList;
+
+    public Sdl2Window Window;
+    public GraphicsDevice Device;
+    public RenderScene RenderScene;
 
     public MapEditorScreen(ProjectEntry project)
     {
         Project = project;
 
-        MapViewportView = new MapViewportView(this, project);
-        MapViewportView.Setup();
+        Window = Smithbox.Instance._context.Window;
+        Device = Smithbox.Instance._context.Device;
+        RenderScene = new();
 
-        Universe = new Universe(this, project);
+        Universe = new MapUniverse(this, project);
         EntityTypeCache = new(this);
 
+        LoadingModal = new();
+        ResourceList = new();
+
         Selection = new(this, project);
+
+        MapViewportView = new MapViewportView(this, project);
 
         // Core Views
         MapListView = new MapListView(this, project);
@@ -185,7 +198,7 @@ public class MapEditorScreen : EditorScreen
         MapValidatorTool = new MapValidatorTool(this, project);
         MapModelInsightTool = new MapModelInsightView(this, project);
 
-        MapModelInsightHelper.Setup(this, project);
+        ModelInsightTool = new MapModelInsightHelper(this, project);
 
         // Focus
         EditorActionManager.AddEventHandler(MapListView);
@@ -291,10 +304,12 @@ public class MapEditorScreen : EditorScreen
         SelectionGroupTool.OnGui();
         LocalSearchView.OnGui();
         WorldMapTool.DisplayWorldMap();
-        ResourceLoadWindow.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
+
+        LoadingModal.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
+
         if (CFG.Current.Interface_MapEditor_ResourceList)
         {
-            ResourceListWindow.DisplayWindow("mapResourceList", this);
+            ResourceList.DisplayWindow("mapResourceList", Universe);
         }
 
         if (CFG.Current.Interface_MapEditor_ToolWindow)
@@ -602,7 +617,7 @@ public class MapEditorScreen : EditorScreen
 
     public void ToolMenu()
     {
-        var validViewportState = MapViewportView.RenderScene != null &&
+        var validViewportState = RenderScene != null &&
             MapViewportView.Viewport != null;
 
         // Tools
@@ -611,7 +626,7 @@ public class MapEditorScreen : EditorScreen
 
     public void FilterMenu()
     {
-        var validViewportState = MapViewportView.RenderScene != null &&
+        var validViewportState = RenderScene != null &&
             MapViewportView.Viewport != null;
 
         // General Filters
@@ -625,32 +640,32 @@ public class MapEditorScreen : EditorScreen
             {
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_1.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
+                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_2.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
+                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_3.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
+                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_4.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
+                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_5.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
+                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_6.Name))
                 {
-                    MapViewportView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
+                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
                 }
 
                 ImGui.EndMenu();
@@ -670,7 +685,7 @@ public class MapEditorScreen : EditorScreen
 
     public void CollisionMenu()
     {
-        var validViewportState = MapViewportView.RenderScene != null &&
+        var validViewportState = RenderScene != null &&
             MapViewportView.Viewport != null;
 
         if (ImGui.BeginMenu("Collision Type", validViewportState))
@@ -781,8 +796,8 @@ public class MapEditorScreen : EditorScreen
                         {
                             if (obj.WrappedObject == eRef.Referrer)
                             {
-                                ViewportSelection.ClearSelection(this);
-                                ViewportSelection.AddSelection(this, obj);
+                                ViewportSelection.ClearSelection();
+                                ViewportSelection.AddSelection(obj);
                                 FrameAction.ApplyViewportFrame();
                                 return;
                             }
