@@ -113,12 +113,13 @@ public class Smithbox
         ActionLogger = new(
             "Action", 
             evt => evt.Level is not (LogLevel.Warning or LogLevel.Error),
-            () => (enabled: CFG.Current.Logger_Enable_Action_Log, fadeTime: CFG.Current.Logger_Action_Fade_Time)
+            //fade time is calculated to be the configured fade time in frames, but we need ms.
+            () => (enabled: CFG.Current.Logger_Enable_Action_Log, fadeTime: (int)(CFG.Current.Logger_Action_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
         );
         WarningLogger = new(
             "Warning",   
             evt => evt.Level is LogLevel.Warning or LogLevel.Error,
-            () => (enabled: CFG.Current.Logger_Enable_Warning_Log, fadeTime: CFG.Current.Logger_Warning_Fade_Time)
+            () => (enabled: CFG.Current.Logger_Enable_Warning_Log, fadeTime: (int)(CFG.Current.Logger_Warning_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
         );
         HighPriorityLogSubscription = new(
             evt => evt.Priority == LogPriority.High
@@ -519,7 +520,7 @@ public class Smithbox
         // Show popups for high priority log events
         if (HighPriorityLogSubscription.TryDequeue(out var evt))
         {
-            if (evt.Priority == LogPriority.High && CFG.Current.System_Logger_Enable_Log_Popups)
+            if (evt.Priority == LogPriority.High && CFG.Current.Logger_Enable_Log_Popups)
             {
                 var popupMessage = evt.Message;
                 if (evt.Exception != null) 

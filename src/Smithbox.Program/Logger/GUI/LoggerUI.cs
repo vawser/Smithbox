@@ -39,10 +39,6 @@ namespace StudioCore.Logger.GUI
         /// </summary>
         private bool InitialLayout = false;
         /// <summary>
-        /// The amount of time remaining to show the last log entry in the top bar.
-        /// </summary>
-        public int ShowTime = 0;
-        /// <summary>
         /// Whether to hide the last log entry after ShowTime expires.
         /// </summary>
         public bool UseShowTimer = false;
@@ -50,14 +46,14 @@ namespace StudioCore.Logger.GUI
         /// Whether we should scroll to the end of the log entries on next draw.
         /// </summary>
         public bool ScrollToEnd = false;
-        public volatile LogEntry? LastLogEntry = null;
+        public LogEntry? LastLogEntry = null;
         private LogSubscription _subscription;
         public string Name;
-        private Func<(bool enabled, int fadeTime)> _getSettings;
+        private Func<(bool enabled, int fadeTime, bool fadeColor)> _getSettings;
 
         private string _windowName;
         
-        public LoggerUI(string loggerName, Func<LogEvent, bool> filter, Func<(bool enabled, int fadeTime)> getSettings)
+        public LoggerUI(string loggerName, Func<LogEvent, bool> filter, Func<(bool enabled, int fadeTime, bool fadeColor)> getSettings)
         {
             Name = loggerName;
             _getSettings = getSettings;
@@ -73,7 +69,6 @@ namespace StudioCore.Logger.GUI
         /// </summary>
         public void DrainMessages()
         {
-            var cfg = _getSettings();
             //drain new log entries
             while (_subscription.TryDequeue(out var logEvent))
             {
@@ -90,8 +85,6 @@ namespace StudioCore.Logger.GUI
                     LastLogEntry = logEntry;
                 }
 
-                ShowTime = cfg.fadeTime;
-                ResetColorTimer();
                 ScrollToEnd = true;
             }
         }
@@ -102,7 +95,7 @@ namespace StudioCore.Logger.GUI
         public void DrawTopBar()
         {
             var cfg = _getSettings();
-            UseShowTimer = cfg.fadeTime > 0;
+            UseShowTimer = cfg.fadeTime >= 0;
             
             if (!cfg.enabled)
             {
@@ -116,16 +109,18 @@ namespace StudioCore.Logger.GUI
                 IsDisplayed = !IsDisplayed;
             }
             UIHelper.Tooltip($"Toggle the display of the {Name} logger.");
-            
-            if (LastLogEntry != null && (ShowTime > 0 || !UseShowTimer))
-            {
-                if (ShowTime > 0)
-                {
-                    ShowTime--;
-                }
 
-                Vector4 color = PickColor(LastLogEntry.LogEvent.Level);
-                ImGui.TextColored(color, LastLogEntry.FormattedMessage);
+            //fade time was in frames before, but we need milliseconds, so we need to convert it based on 60fps avg
+            var last = LastLogEntry;
+            if (last != null)
+            {
+                var timeDiff = DateTime.Now - last.LogEvent.Time;
+
+                if (!UseShowTimer || timeDiff.TotalMilliseconds < cfg.fadeTime)
+                {
+                    Vector4 color = PickColor(last.LogEvent.Level, timeDiff, cfg.fadeTime, cfg.fadeColor, 0.3f);
+                    ImGui.TextColored(color, last.FormattedMessage);
+                }
             }
             ImGui.PopID();
         }
@@ -134,6 +129,7 @@ namespace StudioCore.Logger.GUI
         {
             if (IsDisplayed)
             {
+                var cfg = _getSettings();
                 if (!InitialLayout)
                 {
                     UIHelper.SetupPopupWindow();
@@ -165,9 +161,11 @@ namespace StudioCore.Logger.GUI
                     ImGui.Separator();
                     ImGui.BeginChild("##LogItems");
                     ImGui.Spacing();
+                    
+                    var now = DateTime.Now;
                     foreach (var logEntry in LogEntries)
                     {
-                        Vector4 color = PickColor(logEntry.LogEvent.Level);
+                        Vector4 color = PickColor(logEntry.LogEvent.Level, now - logEntry.LogEvent.Time, cfg.fadeTime, cfg.fadeColor, 0.1f);
                         ImGui.TextColored(color, logEntry.FormattedMessage);
                     }
                     
@@ -192,69 +190,28 @@ namespace StudioCore.Logger.GUI
         }
         
         // =============statics=============
-        
-        /// <summary>
-        /// The multiplier for the color of log entries.
-        /// </summary>
-        public static volatile float ColorMult = 1.0f;
-        /// <summary>
-        /// Time for task text color to transition completely (in miliseconds)
-        /// </summary>
-        public static int ColorTransitionTime = 1000;
-        /// <summary>
-        /// Time for task text color to start transitioning (in miliseconds)
-        /// </summary>
-        public static int ColorTransitionDelay = 4000;
-        /// <summary>
-        /// Manages color timer for last log in menu bar. Resets or starts the process of fading the color.
-        /// </summary>
-        public static void ResetColorTimer()
-        {
-            if (ColorMult == 1.0f)
-            {
-                // Color timer is not currently running, start it.
-                Task.Run(() =>
-                {
 
-                    ColorMult = 0.0f;
-                    var prevMult = -1.0f;
-                    while (ColorMult < 1.0f)
-                    {
-                        if (ColorMult != prevMult)
-                        {
-                            // Mult was just changed, sleep for initial delay.
-                            Thread.Sleep(ColorTransitionDelay);
-                        }
-
-                        ColorMult += 1.0f / ColorTransitionTime;
-                        prevMult = ColorMult;
-                        Thread.Sleep(1);
-                    }
-
-                    ColorMult = 1.0f;
-                });
-            }
-            else
-            {
-                // Color timer is currently running, reset time.
-                ColorMult = 0.0f;
-            }
-        }
         /// <summary>
         /// Picks a color based on the log level and current color multiplier.
         /// </summary>
         /// <param name="level"></param>
+        /// <param name="timeDiff">The time difference between now and when the log entry was created.</param>
+        /// <param name="fadeTime">The time it takes for the color to fade to the faded color.</param>
         /// <returns>The color in RGBA</returns>
-        public static Vector4 PickColor(LogLevel? level)
+        public static Vector4 PickColor(LogLevel? level, TimeSpan timeDiff, int fadeTime, bool fadeColor, float maxFadeFactor)
         {
-            var mult = 0.0f;
-            if (level == null)
+            //-1 means no fade
+            fadeColor = fadeColor && fadeTime >= 0;
+            
+            var mult = fadeColor ? 1f : 0f;
+            var diffMs = timeDiff.TotalMilliseconds;
+            if (fadeColor && diffMs < fadeTime)
             {
-                level = LogLevel.Information;
-                mult = ColorMult;
+                mult = Math.Clamp((float)diffMs / fadeTime, 0f, 1f);
             }
+            level ??= LogLevel.Information;
 
-            var alpha = 1.0f - (0.3f * mult);
+            var alpha = 1.0f - (maxFadeFactor * mult);
             if (level is LogLevel.Information)
             {
                 return new Vector4(
@@ -267,9 +224,9 @@ namespace StudioCore.Logger.GUI
             if (level is LogLevel.Warning)
             {
                 return new Vector4(
-                    UI.Current.ImGui_Logger_Warning_Color.X - (0.1f * mult),
+                    UI.Current.ImGui_Logger_Warning_Color.X - (0.2f * mult),
                     UI.Current.ImGui_Logger_Warning_Color.Y - (0.1f * mult),
-                    UI.Current.ImGui_Logger_Warning_Color.Z + (0.6f * mult),
+                    UI.Current.ImGui_Logger_Warning_Color.Z - (0.1f * mult),
                     alpha);
             }
 
@@ -277,8 +234,8 @@ namespace StudioCore.Logger.GUI
             {
                 return new Vector4(
                     UI.Current.ImGui_Logger_Error_Color.X - (0.1f * mult),
-                    UI.Current.ImGui_Logger_Error_Color.Y + (0.6f * mult),
-                    UI.Current.ImGui_Logger_Error_Color.Z + (0.6f * mult),
+                    UI.Current.ImGui_Logger_Error_Color.Y - (0.1f * mult),
+                    UI.Current.ImGui_Logger_Error_Color.Z - (0.1f * mult),
                     alpha);
             }
 

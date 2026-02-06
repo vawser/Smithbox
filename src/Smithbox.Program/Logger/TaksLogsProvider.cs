@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿#nullable enable
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 
@@ -19,7 +20,7 @@ namespace StudioCore.Logger
     private sealed class TaskLogsLogger : ILogger
     {
         private readonly string _category;
-        private readonly Func<IExternalScopeProvider> _getScopes;
+        private readonly Func<IExternalScopeProvider?> _getScopes;
 
         public TaskLogsLogger(string category, Func<IExternalScopeProvider?> getScopes)
         {
