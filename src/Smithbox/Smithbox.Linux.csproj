@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AssemblyName>Smithbox</AssemblyName>
-    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
     <Version>2.1.1</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -13,8 +13,8 @@
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+    <DefineConstants>$(DefineConstants);LINUX</DefineConstants>
     <RootNamespace>StudioCore</RootNamespace>
   </PropertyGroup>
 
@@ -39,7 +39,7 @@
   <ItemGroup>
     <Props Include="&lt;Project&gt;" Visible="false"/>
     <Props Include="  &lt;PropertyGroup&gt;" Visible="false"/>
-    <Props Include="    &lt;DefineConstants&gt;%24(DefineConstants)%3BWINDOWS&lt;/DefineConstants&gt;" Visible="false"/>
+    <Props Include="    &lt;DefineConstants&gt;%24(DefineConstants)%3BLINUX&lt;/DefineConstants&gt;" Visible="false"/>
     <Props Include="  &lt;/PropertyGroup&gt;" Visible="false"/>
     <Props Include="&lt;/Project&gt;" Visible="false"/>
   </ItemGroup>

@@ -211,7 +211,17 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         BeginUpdate(deltaSeconds);
         if (updateFontAction != null)
         {
-            updateFontAction.Invoke();
+            try
+            {
+                updateFontAction.Invoke();
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                //TODO precompute and check for excessive width, height from DPI.UIScale instead of using io.Fonts
+                TaskLogs.AddError($"[Smithbox] {ex.Message}");
+                StudioCore.Application.CFG.Current.Interface_UI_Scale = StudioCore.Application.CFG.Default.Interface_UI_Scale;
+                updateFontAction.Invoke();
+            }
         }
 
         UpdateImGuiInput(snapshot);
@@ -431,22 +441,42 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         int height;
         int bytesPerPixel;
 
+        //FIXME can crash with large enough uiscale
         // Build
         io.Fonts.GetTexDataAsRGBA32(&pixels, &width, &height, &bytesPerPixel);
 
         // Store our identifier
         io.Fonts.SetTexID(_fontTexture.TexHandle);
 
+        var format = VkFormat.R8G8B8A8Unorm;
+        var usageFlags = VkImageUsageFlags.Sampled;
+        var createFlags = VkImageCreateFlags.None;
+        var tiling = VkImageTiling.Optimal;
+
         //_fontTexture?.Dispose();
+        var maxExtent = gd.GetImageFormatMaxExtent(
+            VkImageType.Image2D,
+            format,
+            usageFlags,
+            createFlags,
+            tiling);
+        if (width > maxExtent.width || height > maxExtent.height)
+        {
+            io.Fonts.ClearTexData();
+            throw new ArgumentOutOfRangeException(
+                width > maxExtent.width ? nameof(width) : nameof(height),
+                $"Image dimensions {width},{height} for {format} exceed device limits ({maxExtent.width},{maxExtent.height})"
+            );
+        }
         Texture tex = gd.ResourceFactory.CreateTexture(TextureDescription.Texture2D(
             (uint)width,
             (uint)height,
             1,
             1,
-            VkFormat.R8G8B8A8Unorm,
-            VkImageUsageFlags.Sampled,
-            VkImageCreateFlags.None,
-            VkImageTiling.Optimal));
+            format,
+            usageFlags,
+            createFlags,
+            tiling));
         tex.Name = "ImGui.NET Font Texture";
         gd.UpdateTexture(
             tex,

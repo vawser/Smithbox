@@ -115,6 +115,14 @@ namespace Veldrid
                 return false;
             }
 
+            //HACK to obey VUID-vkAcquireNextImageKHR-fence-01287 and VUID-vkAcquireNextImageKHR-fence-10066
+            if (vkGetFenceStatus(device, fence) == VkResult.Success)
+            {
+                _gd.WaitForIdle();
+                vkWaitForFences(device, 1, &fence, true, ulong.MaxValue);
+                vkResetFences(device, 1, &fence);
+            }
+
             VkResult result = vkAcquireNextImageKHR(
                 device,
                 _deviceSwapchain,

@@ -112,7 +112,7 @@ public class MassEditTemplateMenu
         {
             var projectScriptDir = Path.Combine(Parent.Editor.Project.Descriptor.ProjectPath, ".smithbox", "Assets", "Scripts");
 
-            Process.Start("explorer.exe", projectScriptDir);
+            StudioCore.Common.FileExplorer.Start(projectScriptDir);
         }
     }
 

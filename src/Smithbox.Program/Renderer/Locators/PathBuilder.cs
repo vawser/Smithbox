@@ -655,7 +655,7 @@ public class PathBuilder
             var containerName = p[i];
 
             absPath = Path.Combine(
-                AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(project.Descriptor.ProjectType),
+                StudioCore.Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(project.Descriptor.ProjectType),
                 "Maps", $"{containerName}.tpf.dcx");
         }
 

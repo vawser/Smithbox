@@ -511,14 +511,14 @@ public class ProjectOrchestrator : IDisposable
 
         if (ImGui.MenuItem($"Open Project Folder"))
         {
-            Process.Start("explorer.exe", curProject.Descriptor.ProjectPath);
+            StudioCore.Common.FileExplorer.Start(curProject.Descriptor.ProjectPath);
         }
 
         if (ImGui.MenuItem($"Open Project JSON Folder"))
         {
             var jsonPath = ProjectUtils.GetProjectsFolder();
 
-            Process.Start("explorer.exe", jsonPath);
+            StudioCore.Common.FileExplorer.Start(jsonPath);
         }
 
         if (ImGui.MenuItem($"Clear Backup Files##clearBackupFiles"))
