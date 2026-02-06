@@ -229,6 +229,8 @@ public class VulkanViewport : IViewport
 
     public bool Visible = false;
 
+    public bool IsActiveViewport = false;
+
     public void Display()
     {
         var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav | ImGuiWindowFlags.MenuBar;
@@ -260,8 +262,13 @@ public class VulkanViewport : IViewport
                         if(wrapper.Viewport == this)
                         {
                             mapUniverse.View.ViewportHandler.ActiveViewport = wrapper;
+                            IsActiveViewport = true;
                         }
                     }
+                }
+                else
+                {
+                    IsActiveViewport = false;
                 }
 
                 if (CFG.Current.QuickView_DisplayTooltip)
@@ -329,7 +336,8 @@ public class VulkanViewport : IViewport
         Ray ray = GetRay(pos.X - X, pos.Y - Y);
         CursorX = (int)pos.X; // - X;
         CursorY = (int)pos.Y; // - Y;
-        Gizmos.Update(ray, CanInteract && MouseInViewport());
+
+        Gizmos.Update(ray, CanInteract && MouseInViewport(), IsActiveViewport);
 
         UpdateGrids(ray);
 
@@ -353,7 +361,7 @@ public class VulkanViewport : IViewport
             }
 
             if (ViewPipeline.PickingResultsReady)
-        {
+            {
                 ISelectable sel = ViewPipeline.GetSelection();
 
                 if (InputManager.HasCtrlDown())

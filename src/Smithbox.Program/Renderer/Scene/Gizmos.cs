@@ -281,8 +281,23 @@ public class Gizmos
     }
 
 
-    public void Update(Ray ray, bool canCaptureMouse)
+    public void Update(Ray ray, bool canCaptureMouse, bool isActiveViewport = true)
     {
+        if (!isActiveViewport)
+        {
+            TranslateGizmoXProxy.Visible = false;
+            TranslateGizmoYProxy.Visible = false;
+            TranslateGizmoZProxy.Visible = false;
+            TranslateSquareGizmoXProxy.Visible = false;
+            TranslateSquareGizmoYProxy.Visible = false;
+            TranslateSquareGizmoZProxy.Visible = false;
+            RotateGizmoXProxy.Visible = false;
+            RotateGizmoYProxy.Visible = false;
+            RotateGizmoZProxy.Visible = false;
+
+            return;
+        }
+
         var canTransform = true;
 
         // Update gizmo color
