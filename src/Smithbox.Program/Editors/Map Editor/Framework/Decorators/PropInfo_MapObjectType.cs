@@ -6,15 +6,15 @@ namespace StudioCore.Editors.MapEditor;
 
 public static class PropInfo_MapObjectType
 {
-    public static void Display(MapEditorScreen editor, Entity firstEnt)
+    public static void Display(MapEditorView view, Entity firstEnt)
     {
         var typ = firstEnt.WrappedObject.GetType();
 
         var name = "";
         var desc = "";
 
-        name = FormatInformationUtils.GetClassReferenceName(editor.Project.Handler.MapData.MsbInformation, typ.Name);
-        desc = FormatInformationUtils.GetClassReferenceDescription(editor.Project.Handler.MapData.MsbInformation, typ.Name);
+        name = FormatInformationUtils.GetClassReferenceName(view.Project.Handler.MapData.MsbInformation, typ.Name);
+        desc = FormatInformationUtils.GetClassReferenceDescription(view.Project.Handler.MapData.MsbInformation, typ.Name);
 
         if (name != "")
         {

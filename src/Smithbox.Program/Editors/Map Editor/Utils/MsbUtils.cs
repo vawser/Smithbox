@@ -1,23 +1,140 @@
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
+using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 
-#nullable enable
 namespace StudioCore.Editors.MapEditor;
 
 public class MsbUtils
 {
-    static bool Matches(string? name, Type refType, IMsbEntry entry) => entry.Name == name && refType.IsAssignableFrom(entry.GetType());
+    public static void EntitySelectionHandler(MapEditorView view, ViewportSelection selection, Entity entity,
+        bool itemSelected, bool isItemFocused, List<WeakReference<Entity>> filteredEntityList = null)
+    {
+        // Up/Down arrow mass selection
+        var arrowKeySelect = false;
+
+        if (isItemFocused && InputManager.HasArrowSelection())
+        {
+            itemSelected = true;
+            arrowKeySelect = true;
+        }
+
+        if (itemSelected)
+        {
+            if (arrowKeySelect)
+            {
+                if (InputManager.HasCtrlDown() || InputManager.HasShiftDown())
+                {
+                    selection.AddSelection(entity);
+                }
+                else
+                {
+                    selection.ClearSelection();
+                    selection.AddSelection(entity);
+                }
+            }
+            else if (InputManager.HasCtrlDown())
+            {
+                // Toggle Selection
+                if (selection.GetSelection().Contains(entity))
+                {
+                    selection.RemoveSelection(entity);
+                }
+                else
+                {
+                    selection.AddSelection(entity);
+                }
+            }
+            else if (selection.GetSelection().Count > 0
+                     && InputManager.HasShiftDown())
+            {
+                // Select Range
+                List<Entity> entList;
+                if (filteredEntityList != null)
+                {
+                    entList = new();
+                    foreach (WeakReference<Entity> ent in filteredEntityList)
+                    {
+                        if (ent.TryGetTarget(out Entity e))
+                        {
+                            entList.Add(e);
+                        }
+                    }
+                }
+                else
+                {
+                    entList = entity.Container.Objects;
+                }
+
+                var i1 = -1;
+
+                if (entity.GetType() == typeof(MsbEntity))
+                {
+                    i1 = entList.IndexOf(selection.GetFilteredSelection<MsbEntity>()
+                        .FirstOrDefault(fe => fe.Container == entity.Container && fe != entity.Container.RootObject));
+                }
+                if (entity.GetType() == typeof(TransformableNamedEntity))
+                {
+                    i1 = entList.IndexOf(selection.GetFilteredSelection<TransformableNamedEntity>()
+                        .FirstOrDefault(fe => fe.Container == entity.Container && fe != entity.Container.RootObject));
+                }
+
+                var i2 = -1;
+
+                if (entity.GetType() == typeof(MsbEntity))
+                {
+                    i2 = entList.IndexOf((MsbEntity)entity);
+                }
+                if (entity.GetType() == typeof(TransformableNamedEntity))
+                {
+                    i2 = entList.IndexOf((TransformableNamedEntity)entity);
+                }
+
+                if (i1 != -1 && i2 != -1)
+                {
+                    var iStart = i1;
+                    var iEnd = i2;
+                    if (i2 < i1)
+                    {
+                        iStart = i2;
+                        iEnd = i1;
+                    }
+
+                    for (var i = iStart; i <= iEnd; i++)
+                    {
+                        selection.AddSelection(entList[i]);
+                    }
+                }
+                else
+                {
+                    selection.AddSelection(entity);
+                }
+            }
+            else
+            {
+                // Exclusive Selection
+                selection.ClearSelection();
+                selection.AddSelection(entity);
+            }
+        }
+    }
+
+    public static bool Matches(string name, Type refType, IMsbEntry entry)
+    {
+        return entry.Name == name && refType.IsAssignableFrom(entry.GetType());
+    }
+
     /// <summary>
     /// This will yield the value and a setter for that value for each field in `entry` that's a MSBReference
     /// </summary>
     /// <param name="entry"></param>
     /// <returns></returns>
-    public static IEnumerable<(string?, Type, Action<string?>)> GetMsbReferences(IMsbEntry entry)
+    public static IEnumerable<(string, Type, Action<string>)> GetMsbReferences(IMsbEntry entry)
     {
         if(entry == null) 
             yield break;
@@ -28,7 +145,7 @@ public class MsbUtils
                 continue;
 
             var value = property.GetValue(entry);
-            if (value is string?[] array)
+            if (value is string[] array)
             {
                 var index = 0;
                 foreach (var element in array)

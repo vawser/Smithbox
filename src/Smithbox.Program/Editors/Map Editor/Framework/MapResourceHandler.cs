@@ -10,7 +10,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapResourceHandler
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
 
     private Task task;
 
@@ -30,18 +30,18 @@ public class MapResourceHandler
     public string AdjustedMapID;
     public IMsb Msb;
 
-    public MapResourceHandler(MapEditorScreen editor, string mapId)
+    public MapResourceHandler(MapEditorView view, string mapId)
     {
-        Editor = editor;
+        View = view;
         MapID = mapId;
-        AdjustedMapID = PathBuilder.GetAssetMapID(Editor.Project, MapID);
+        AdjustedMapID = PathBuilder.GetAssetMapID(View.Project, MapID);
     }
 
     public async Task<bool> ReadMap(string mapid)
     {
-        await Editor.Project.Handler.MapData.PrimaryBank.LoadMap(mapid);
+        await View.Project.Handler.MapData.PrimaryBank.LoadMap(mapid);
 
-        var entry = Editor.Project.Handler.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapid);
+        var entry = View.Project.Handler.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapid);
 
         if (entry.Value == null)
             return false;
@@ -57,19 +57,19 @@ public class MapResourceHandler
         {
             var chrId = CFG.Current.MapEditor_Character_Substitution_ID;
 
-            var modelAsset = ModelLocator.GetChrModel(Editor.Project, chrId, chrId);
+            var modelAsset = ModelLocator.GetChrModel(View.Project, chrId, chrId);
 
             if (modelAsset.IsValid())
                 LoadList_Character_Model.Add(modelAsset);
 
             // TPF
-            var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, chrId, false);
+            var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, chrId, false);
 
             if (textureAsset.IsValid())
                 LoadList_Character_Model.Add(textureAsset);
 
             // BND
-            textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, chrId, true);
+            textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, chrId, true);
 
             if (textureAsset.IsValid())
                 LoadList_Character_Model.Add(textureAsset);
@@ -83,8 +83,8 @@ public class MapResourceHandler
             // MapPiece
             if (model.Name.StartsWith('m'))
             {
-                var name = ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, model.Name);
-                var modelAsset = ModelLocator.GetMapModel(Editor.Project, AdjustedMapID, name, name);
+                var name = ModelLocator.MapModelNameToAssetName(View.Project, AdjustedMapID, model.Name);
+                var modelAsset = ModelLocator.GetMapModel(View.Project, AdjustedMapID, name, name);
 
                 if (modelAsset.IsValid())
                     LoadList_MapPiece_Model.Add(modelAsset);
@@ -93,7 +93,7 @@ public class MapResourceHandler
             // Character
             if (model.Name.StartsWith('c'))
             {
-                var modelAsset = ModelLocator.GetChrModel(Editor.Project, model.Name, model.Name);
+                var modelAsset = ModelLocator.GetChrModel(View.Project, model.Name, model.Name);
 
                 if (modelAsset.IsValid())
                     LoadList_Character_Model.Add(modelAsset);
@@ -102,7 +102,7 @@ public class MapResourceHandler
             // Object / Asset
             if (model.Name.StartsWith('o') || (model.Name.StartsWith("AEG") || model.Name.StartsWith("aeg")))
             {
-                var modelAsset = ModelLocator.GetObjModel(Editor.Project, model.Name, model.Name);
+                var modelAsset = ModelLocator.GetObjModel(View.Project, model.Name, model.Name);
 
                 if (modelAsset.IsValid())
                     LoadList_Asset_Model.Add(modelAsset);
@@ -111,7 +111,7 @@ public class MapResourceHandler
             // Collision
             if (model.Name.StartsWith('h'))
             {
-                var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, model.Name));
+                var modelAsset = ModelLocator.GetMapCollisionModel(View.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(View.Project, AdjustedMapID, model.Name));
 
                 if (modelAsset.IsValid())
                 {
@@ -122,7 +122,7 @@ public class MapResourceHandler
             // Connect Collision
             if (model.Name.StartsWith('h'))
             {
-                var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, model.Name), true);
+                var modelAsset = ModelLocator.GetMapCollisionModel(View.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(View.Project, AdjustedMapID, model.Name), true);
 
                 if (modelAsset.IsValid())
                 {
@@ -131,19 +131,19 @@ public class MapResourceHandler
             }
 
             // Navmesh
-            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (View.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 if (model.Name.StartsWith('n'))
                 {
-                    var modelAsset = ModelLocator.GetMapNVMModel(Editor.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, model.Name));
+                    var modelAsset = ModelLocator.GetMapNVMModel(View.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(View.Project, AdjustedMapID, model.Name));
 
                     if (modelAsset.IsValid())
                         LoadList_Navmesh.Add(modelAsset);
                 }
             }
-            else if (Editor.HavokNavmeshBank.CanUse())
+            else if (View.HavokNavmeshBank.CanUse())
             {
-                ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(Editor.Project, AdjustedMapID);
+                ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(View.Project, AdjustedMapID);
 
                 LoadList_Navmesh.Add(nav);
             }
@@ -153,7 +153,7 @@ public class MapResourceHandler
     public void SetupTexturelLoadLists()
     {
         // MAP
-        foreach (ResourceDescriptor asset in TextureLocator.GetMapTextureVirtualPaths(Editor.Project, AdjustedMapID))
+        foreach (ResourceDescriptor asset in TextureLocator.GetMapTextureVirtualPaths(View.Project, AdjustedMapID))
         {
             if (asset.IsValid())
                 LoadList_Map_Texture.Add(asset);
@@ -166,13 +166,13 @@ public class MapResourceHandler
             if (model.Name.StartsWith('c'))
             {
                 // TPF
-                var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, model.Name, false);
+                var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, model.Name, false);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
     
                 // BND
-                textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, model.Name, true);
+                textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, model.Name, true);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
@@ -181,7 +181,7 @@ public class MapResourceHandler
             // Object
             if (model.Name.StartsWith('o'))
             {
-                var textureAsset = TextureLocator.GetObjectTextureVirtualPath(Editor.Project, model.Name);
+                var textureAsset = TextureLocator.GetObjectTextureVirtualPath(View.Project, model.Name);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -190,7 +190,7 @@ public class MapResourceHandler
             // Assets
             if (model.Name.StartsWith("AEG") || model.Name.StartsWith("aeg"))
             {
-                var textureAsset = TextureLocator.GetAssetTextureVirtualPath(Editor.Project, model.Name);
+                var textureAsset = TextureLocator.GetAssetTextureVirtualPath(View.Project, model.Name);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
@@ -198,18 +198,18 @@ public class MapResourceHandler
         }
 
         // AAT
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
-            var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(Editor.Project, "common_body");
+            var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(View.Project, "common_body");
 
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);
         }
 
         // SYSTEX
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
         {
-            var textureAsset = TextureLocator.GetSystexTextureVirtualPath(Editor.Project, "systex");
+            var textureAsset = TextureLocator.GetSystexTextureVirtualPath(View.Project, "systex");
 
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);
@@ -229,9 +229,9 @@ public class MapResourceHandler
                     masks = msbEnt.GetModelMasks();
                 }
 
-                var renderScene = Editor.Universe.RenderScene;
+                var renderScene = View.Universe.GetCurrentScene();
 
-                DrawableHelper.GetModelDrawable(Editor, renderScene, map, obj, mp.ModelName, false, masks);
+                DrawableHelper.GetModelDrawable(View.Universe, renderScene, map, obj, mp.ModelName, false, masks);
             }
         }
     }
@@ -471,7 +471,7 @@ public class MapResourceHandler
                 {
                     var type = ResourceType.NavmeshHKX;
 
-                    if (Editor.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+                    if (View.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
                         type = ResourceType.Navmesh;
 
                     job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,

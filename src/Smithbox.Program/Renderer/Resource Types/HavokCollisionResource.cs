@@ -169,38 +169,43 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool HandleHKLibLoad(ProjectEntry curProject, string virtPath)
     {
-        if (curProject.Handler.MapEditor != null)
+        if (curProject.Handler.MapEditor == null)
+            return false;
+
+        var activeView = curProject.Handler.MapEditor.ViewHandler.ActiveView;
+
+        if(activeView == null) 
+            return false;
+
+        // Map collision
+        var pathElements = virtPath.Split('/');
+        var filename = pathElements[4];
+
+        if (activeView.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.Low)
         {
-            // Map collision
-            var pathElements = virtPath.Split('/');
-            var filename = pathElements[4];
+            filename = $"l{filename.Substring(1)}";
+        }
 
-            if (curProject.Handler.MapEditor.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.Low)
-            {
-                filename = $"l{filename.Substring(1)}";
-            }
+        if (activeView.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.High)
+        {
+            filename = $"h{filename.Substring(1)}";
+        }
 
-            if (curProject.Handler.MapEditor.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.High)
-            {
-                filename = $"h{filename.Substring(1)}";
-            }
+        if (activeView.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.FallProtection)
+        {
+            filename = $"f{filename.Substring(1)}";
+        }
 
-            if (curProject.Handler.MapEditor.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.FallProtection)
-            {
-                filename = $"f{filename.Substring(1)}";
-            }
-
-            // HKX for ER is loaded directly in HavokCollisionManager
-            // This is required since the parallel nature of the
-            // Resource Manager doesn't work with the HavokBinarySerializer
-            if (curProject.Handler.MapEditor.HavokCollisionBank.HavokContainers.ContainsKey(filename))
-            {
-                ER_HKX = curProject.Handler.MapEditor.HavokCollisionBank.HavokContainers[filename];
-            }
-            else
-            {
-                return false;
-            }
+        // HKX for ER is loaded directly in HavokCollisionManager
+        // This is required since the parallel nature of the
+        // Resource Manager doesn't work with the HavokBinarySerializer
+        if (activeView.HavokCollisionBank.HavokContainers.ContainsKey(filename))
+        {
+            ER_HKX = activeView.HavokCollisionBank.HavokContainers[filename];
+        }
+        else
+        {
+            return false;
         }
 
         return true;

@@ -5,7 +5,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class ChangeEntityHierarchyAction : ViewportAction
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
     private readonly bool SetSelection;
     private readonly List<Entity> SourceObjects = new();
@@ -14,10 +14,10 @@ public class ChangeEntityHierarchyAction : ViewportAction
     private int[] UndoIndices;
     private Entity[] UndoObjects;
 
-    public ChangeEntityHierarchyAction(MapEditorScreen editor, List<Entity> src, List<Entity> targetEnts, List<int> targets,
+    public ChangeEntityHierarchyAction(MapEditorView view, List<Entity> src, List<Entity> targetEnts, List<int> targets,
         bool setSelection)
     {
-        Editor = editor;
+        View = view;
 
         SourceObjects.AddRange(src);
         TargetObjects.AddRange(targetEnts);
@@ -27,7 +27,7 @@ public class ChangeEntityHierarchyAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         var sourceindices = new int[SourceObjects.Count];
         for (var i = 0; i < SourceObjects.Count; i++)
@@ -86,10 +86,10 @@ public class ChangeEntityHierarchyAction : ViewportAction
         UndoIndices = sourceindices;
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.View.ViewportSelection.ClearSelection();
             foreach (Entity c in SourceObjects)
             {
-                universe.Selection.AddSelection(Editor, c);
+                universe.View.ViewportSelection.AddSelection(c);
             }
         }
 

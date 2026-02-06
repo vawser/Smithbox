@@ -382,6 +382,17 @@ public static class UIHelper
 
         return flags;
     }
+    public static ImGuiWindowFlags GetDisplayViewWindowFlags()
+    {
+        var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav;
+
+        if (!CFG.Current.Interface_Allow_Window_Movement)
+        {
+            flags |= ImGuiWindowFlags.NoMove;
+        }
+
+        return flags;
+    }
 
     public static ImGuiWindowFlags GetPopupWindowFlags()
     {

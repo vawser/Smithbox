@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class WorldMapTool : IResourceEventListener
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
     private ProjectEntry Project;
 
     private Task _loadingTask;
@@ -41,9 +41,9 @@ public class WorldMapTool : IResourceEventListener
     private bool _isDraggingMap = false;
     private Vector2 _lastMousePos = Vector2.Zero;
 
-    public WorldMapTool(MapEditorScreen screen, ProjectEntry project)
+    public WorldMapTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = screen;
+        View = view;
         Project = project;
 
         IsMapWindowOpen = false;
@@ -54,14 +54,14 @@ public class WorldMapTool : IResourceEventListener
             MapZoomFactor = GetDefaultZoomLevel();
         };
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER)
         {
             CurrentMapSource = WorldMapImageSource.LandsBetween;
 
             RegisterWorldMapListeners();
         }
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.NR)
         {
             CurrentMapSource = WorldMapImageSource.Limveld;
 
@@ -93,7 +93,7 @@ public class WorldMapTool : IResourceEventListener
         IsMapWindowOpen = !IsMapWindowOpen;
     }
 
-    public void DisplayWorldMap()
+    public void DisplayPopup()
     {
         if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
         {
@@ -106,7 +106,7 @@ public class WorldMapTool : IResourceEventListener
         if (!IsMapWindowOpen)
             return;
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             DisplayMap();
         }
@@ -413,7 +413,7 @@ public class WorldMapTool : IResourceEventListener
 
                 foreach (var tile in HoveredMapTiles)
                 {
-                    ImGui.Text($"{tile} ({AliasHelper.GetMapNameAlias(Editor.Project, tile)})");
+                    ImGui.Text($"{tile} ({AliasHelper.GetMapNameAlias(View.Project, tile)})");
                 }
 
                 ImGui.EndTooltip();
@@ -431,7 +431,7 @@ public class WorldMapTool : IResourceEventListener
                 {
                     SelectedMapTiles = HoveredMapTiles;
 
-                    Editor.MapListView.UpdateMapList(HoveredMapTiles);
+                    View.MapListView.UpdateMapList(HoveredMapTiles);
                 }
             }
         }
@@ -469,7 +469,7 @@ public class WorldMapTool : IResourceEventListener
             ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_noklateo", this, AccessLevel.AccessGPUOptimizedOnly);
         }
 
-        Editor.Universe.ScheduleWorldMapRefresh();
+        View.Universe.ScheduleWorldMapRefresh();
     }
 
     private void GenerateWorldMapLayout_Vanilla()
@@ -483,7 +483,7 @@ public class WorldMapTool : IResourceEventListener
         var largeRows = new List<int>() { 8, 9, 10, 11, 12, 13, 14 };
         var largeCols = new List<int>() { 15, 14, 13, 12, 11, 10, 9, 8, 7 };
 
-        VanillaLayout = new WorldMapLayout(Editor, "60", 480, 55);
+        VanillaLayout = new WorldMapLayout(View, "60", 480, 55);
         VanillaLayout.GenerateTiles(smallRows, smallCols, 0, 124, WorldMapTileType.Small);
         VanillaLayout.GenerateTiles(mediumRows, mediumCols, 1, 248, WorldMapTileType.Medium);
         VanillaLayout.GenerateTiles(largeRows, largeCols, 2, 496, WorldMapTileType.Large);
@@ -501,7 +501,7 @@ public class WorldMapTool : IResourceEventListener
         var largeRows = new List<int>() { 10, 11, 12, 13, 14 };
         var largeCols = new List<int>() { 13, 12, 11, 10, 9, 8 };
 
-        SoteLayout = new WorldMapLayout(Editor, "61", SOTE_xOffset, SOTE_yOffset);
+        SoteLayout = new WorldMapLayout(View, "61", SOTE_xOffset, SOTE_yOffset);
         SoteLayout.GenerateTiles(smallRows, smallCols, 0, 256, WorldMapTileType.Small);
         SoteLayout.GenerateTiles(mediumRows, mediumCols, 1, 528, WorldMapTileType.Medium);
         SoteLayout.GenerateTiles(largeRows, largeCols, 2, 1056, WorldMapTileType.Large);
@@ -524,7 +524,7 @@ public class WorldMapTool : IResourceEventListener
 
         var variantTileIds = new List<int>() { 0, 10, 20, 30, 50 };
 
-        LimveldLayout = new WorldMapLayout(Editor, "60", 0, 0);
+        LimveldLayout = new WorldMapLayout(View, "60", 0, 0);
 
         LimveldLayout.GenerateTiles(smallRows, smallCols, 0, smallTile, WorldMapTileType.Small, variantTileIds,
             xLargeOffset, yLargeOffset,

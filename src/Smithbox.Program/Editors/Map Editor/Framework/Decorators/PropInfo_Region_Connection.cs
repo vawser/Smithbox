@@ -6,7 +6,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public static class PropInfo_Region_Connection
 {
-    public static void Display(MapEditorScreen editor, Entity firstEnt)
+    public static void Display(MapEditorView view, Entity firstEnt)
     {
         if (firstEnt.IsRegionConnection())
         {
@@ -45,7 +45,7 @@ public static class PropInfo_Region_Connection
             ImGui.Separator();
 
             ImGui.Text(mapString);
-            UIHelper.DisplayAlias(AliasHelper.GetMapNameAlias(editor.Project, mapString));
+            UIHelper.DisplayAlias(AliasHelper.GetMapNameAlias(view.Project, mapString));
             ImGui.Text("");
         }
     }

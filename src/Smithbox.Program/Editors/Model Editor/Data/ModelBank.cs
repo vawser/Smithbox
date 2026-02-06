@@ -464,17 +464,33 @@ public class ModelWrapper
 
         if (FLVER != null)
         {
-            Parent.Project.Handler.ModelEditor.Universe.LoadModel(this);
+            var modelEditor = Parent.Project.Handler.ModelEditor;
+
+            var activeView = modelEditor.ViewHandler.ActiveView;
+
+            if (activeView != null)
+            {
+                activeView.Universe.LoadModel(this);
+            }
         }
     }
 
 
     public void Unload()
     {
-        Parent.Project.Handler.ModelEditor.EditorActionManager.Clear();
-        Parent.Project.Handler.ModelEditor.EntityTypeCache.InvalidateCache();
+        var modelEditor = Parent.Project.Handler.ModelEditor;
 
-        Parent.Project.Handler.ModelEditor.Universe.UnloadModel(this);
+        var activeView = modelEditor.ViewHandler.ActiveView;
+
+        if (activeView != null)
+        {
+            activeView.ViewportActionManager.Clear();
+            activeView.ActionManager.Clear();
+
+            activeView.EntityTypeCache.InvalidateCache();
+
+            activeView.Universe.UnloadModel(this);
+        }
     }
 
     public void UpdateFLVER()

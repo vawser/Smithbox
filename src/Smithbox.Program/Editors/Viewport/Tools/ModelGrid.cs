@@ -1,4 +1,6 @@
-﻿using StudioCore.Editors.ModelEditor;
+﻿using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System.Drawing;
@@ -9,15 +11,18 @@ namespace StudioCore.Editors.Viewport;
 
 public class ModelGrid
 {
-    private ModelEditorScreen Editor;
+    private IUniverse Owner;
+    private ModelUniverse ModelUniverse;
 
     private DbgPrimWireGrid WireGridPrimitive;
     private DebugPrimitiveRenderableProxy Grid;
     private MeshRenderables RenderList;
 
-    public ModelGrid(ModelEditorScreen editor, MeshRenderables renderlist, int size, float sectionSize, Vector3 color)
+    public ModelGrid(IUniverse owner, MeshRenderables renderlist, int size, float sectionSize, Vector3 color)
     {
-        Editor = editor;
+        Owner = owner;
+        ModelUniverse = (ModelUniverse)Owner;
+
         RenderList = renderlist;
 
         WireGridPrimitive = new DbgPrimWireGrid(Color.Red, Color.Red, size, sectionSize);
@@ -53,7 +58,7 @@ public class ModelGrid
             Regenerate(size, sectionSize, color);
         }
 
-        if (displayGrid && Editor.Project.Handler.FocusedEditor is ModelEditorScreen)
+        if (displayGrid && ModelUniverse.Project.Handler.FocusedEditor is ModelEditorScreen)
         {
             Grid.BaseColor = GetViewGridColor(color);
             Grid.Visible = true;

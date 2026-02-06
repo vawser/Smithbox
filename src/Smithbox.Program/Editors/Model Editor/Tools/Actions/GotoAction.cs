@@ -12,12 +12,12 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class GotoAction
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public GotoAction(ModelEditorScreen editor, ProjectEntry project)
+    public GotoAction(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -26,7 +26,7 @@ public class GotoAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Jump))
             {
@@ -69,9 +69,9 @@ public class GotoAction
     /// </summary>
     public void GotoModelObjectEntry()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            Editor.ViewportSelection.GotoTreeTarget = Editor.ViewportSelection.GetSingleSelection();
+            View.ViewportSelection.GotoTreeTarget = View.ViewportSelection.GetSingleSelection();
         }
         else
         {

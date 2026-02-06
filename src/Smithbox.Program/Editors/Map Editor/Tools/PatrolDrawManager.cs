@@ -1,5 +1,8 @@
-﻿using SoulsFormats;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
@@ -11,22 +14,52 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// Handles rendering walk / patrol routes.
 /// </summary>
-public static class PatrolDrawManager
+public class PatrolDrawManager
 {
-    private static readonly HashSet<WeakReference<Entity>> _drawEntities = new();
+    private readonly HashSet<WeakReference<Entity>> _drawEntities = new();
     private record DrawEntity;
 
     private const float _verticalOffset = 0.8f;
 
-    private static Entity GetDrawEntity(MapEditorScreen editor, ObjectContainer map)
+    private MapEditorView View;
+
+    private bool PatrolsVisualised = false;
+
+    public PatrolDrawManager(MapEditorView view)
     {
-        Entity e = new(editor, map, new DrawEntity());
+        View = view;
+    }
+
+    public void OnShortcut()
+    {
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+            return;
+
+        if (InputManager.IsPressed(KeybindID.MapEditor_Toggle_Patrol_Route_Visuals))
+        {
+            if (!PatrolsVisualised)
+            {
+                PatrolsVisualised = true;
+                Generate();
+            }
+            else
+            {
+                Clear();
+                PatrolsVisualised = false;
+            }
+        }
+    }
+
+    private Entity GetDrawEntity(ObjectContainer map)
+    {
+        Entity e = new(View.Universe, map, new DrawEntity());
+
         map.AddObject(e);
         _drawEntities.Add(new WeakReference<Entity>(e));
         return e;
     }
 
-    private static bool GetPoints(string[] regionNames, ObjectContainer map, out List<Vector3> points)
+    private bool GetPoints(string[] regionNames, ObjectContainer map, out List<Vector3> points)
     {
         points = [];
 
@@ -50,13 +83,11 @@ public static class PatrolDrawManager
     /// <summary>
     ///     Generates the renderable walk routes for all loaded maps.
     /// </summary>
-    public static void Generate(MapEditorScreen editor)
+    public void Generate()
     {
-        var universe = editor.Universe;
-
         Clear();
 
-        foreach (var map in editor.Project.Handler.MapData.PrimaryBank.Maps)
+        foreach (var map in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (map.Value.MapContainer == null)
                 continue;
@@ -67,11 +98,11 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSBD_Enemy.MovePointNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
+                        Entity drawEntity = GetDrawEntity(map.Value.MapContainer);
 
                         bool endAtStart = MSBD_Enemy.PointMoveType == 0;
                         bool moveRandomly = MSBD_Enemy.PointMoveType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(universe.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -81,11 +112,11 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSB1_Enemy.MovePointNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
+                        Entity drawEntity = GetDrawEntity(map.Value.MapContainer);
 
                         bool endAtStart = MSB1_Enemy.PointMoveType == 0;
                         bool moveRandomly = MSB1_Enemy.PointMoveType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(universe.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -96,12 +127,12 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSBB_Enemy.MovePointNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
+                        Entity drawEntity = GetDrawEntity(map.Value.MapContainer);
 
                         // BB move type is probably in an unk somewhere.
                         bool endAtStart = false;
                         bool moveRandomly = false;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(universe.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -111,7 +142,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSB3_Patrol.WalkPointNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
+                        Entity drawEntity = GetDrawEntity(map.Value.MapContainer);
                         List<Vector3> enemies = new();
                         foreach (var ent in map.Value.MapContainer.Objects)
                         {
@@ -128,7 +159,7 @@ public static class PatrolDrawManager
 
                         bool endAtStart = MSB3_Patrol.PatrolType == 0;
                         bool moveRandomly = MSB3_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(universe.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -138,7 +169,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSBS_Patrol.WalkRegionNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
+                        Entity drawEntity = GetDrawEntity(map.Value.MapContainer);
                         List<Vector3> enemies = new();
                         foreach (var ent in map.Value.MapContainer.Objects)
                         {
@@ -155,7 +186,7 @@ public static class PatrolDrawManager
 
                         bool endAtStart = MSBS_Patrol.PatrolType == 0;
                         bool moveRandomly = MSBS_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(universe.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -165,7 +196,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSBE_Patrol.WalkRegionNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
+                        Entity drawEntity = GetDrawEntity(map.Value.MapContainer);
                         List<Vector3> enemies = new();
                         foreach (var ent in map.Value.MapContainer.Objects)
                         {
@@ -182,7 +213,7 @@ public static class PatrolDrawManager
 
                         bool endAtStart = MSBE_Patrol.PatrolType == 0;
                         bool moveRandomly = MSBE_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(universe.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -192,7 +223,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSBAC6_Patrol.WalkRegionNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
+                        Entity drawEntity = GetDrawEntity(map.Value.MapContainer);
                         List<Vector3> enemies = new();
                         foreach (var ent in map.Value.MapContainer.Objects)
                         {
@@ -209,7 +240,7 @@ public static class PatrolDrawManager
 
                         bool endAtStart = MSBAC6_Patrol.PatrolType == 0;
                         bool moveRandomly = MSBAC6_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(universe.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -219,7 +250,7 @@ public static class PatrolDrawManager
         }
     }
 
-    public static void Clear()
+    public void Clear()
     {
         foreach (var weakEnt in _drawEntities)
         {

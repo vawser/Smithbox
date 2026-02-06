@@ -11,11 +11,11 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapContentFilters
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
-    public MapContentFilters(MapEditorScreen screen)
+    public MapContentFilters(MapEditorView view)
     {
-        Editor = screen;
+        View = view;
     }
 
     public string SearchInput = "";
@@ -29,7 +29,7 @@ public class MapContentFilters
         var windowWidth = ImGui.GetWindowWidth();
 
         var mapId = map.Name;
-        var mapName = AliasHelper.GetMapNameAlias(Editor.Project, map.Name);
+        var mapName = AliasHelper.GetMapNameAlias(View.Project, map.Name);
 
         DPI.ApplyInputWidth(windowWidth * 0.6f);
         ImGui.InputText($"##contentFilterSearch_{map.Name}", ref SearchInput, 255);

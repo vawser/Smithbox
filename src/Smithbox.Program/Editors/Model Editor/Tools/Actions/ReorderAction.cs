@@ -15,12 +15,12 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ReorderAction
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public ReorderAction(ModelEditorScreen editor, ProjectEntry project)
+    public ReorderAction(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -29,7 +29,7 @@ public class ReorderAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Reorder_Up))
             {
@@ -126,19 +126,19 @@ public class ReorderAction
     /// </summary>
     public void ApplyReorder(TreeObjectOrderMovementType direction)
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            if (Editor.Selection.SelectedModelWrapper != null)
+            if (View.Selection.SelectedModelWrapper != null)
             {
-                var container = Editor.Selection.SelectedModelWrapper.Container;
+                var container = View.Selection.SelectedModelWrapper.Container;
 
                 if (container != null)
                 {
-                    var selection = Editor.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
+                    var selection = View.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
 
-                    var action = new OrderModelObjectAction(Editor, Project, container, selection, direction);
+                    var action = new OrderModelObjectAction(View, Project, container, selection, direction);
 
-                    Editor.EditorActionManager.ExecuteAction(action);
+                    View.ViewportActionManager.ExecuteAction(action);
                 }
             }
         }

@@ -9,127 +9,144 @@ public class ModelCommandQueue
     public ModelEditorScreen Editor;
     public ProjectEntry Project;
 
+    public bool DoFocus = false;
     public ModelCommandQueue(ModelEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
     }
 
-    public void Parse(string[] initcmd)
+    public void Parse(string[] commands)
     {
-        // Parse select commands
-        if (initcmd != null && initcmd.Length > 1)
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (commands == null)
+            return;
+
+        if (commands.Length <= 0)
+            return;
+
+        HandleLoadCommand(activeView, commands);
+        HandleSelectCommand(activeView, commands);
+    }
+
+    public void HandleLoadCommand(ModelEditorView curView, string[] commands)
+    {
+        if (commands[0] != "load")
+            return;
+
+        var filename = commands[1];
+
+        var entry = Project.Handler.ModelData.PrimaryBank.Models
+            .FirstOrDefault(e => e.Key.Filename.ToLower() == filename.ToLower());
+
+        if (entry.Value == null)
+            return;
+
+        curView.Selection.SelectedModelContainerWrapper = entry.Value;
+        entry.Value.PopulateModelList();
+
+        if (curView.Selection.SelectedModelContainerWrapper == null)
+            return;
+
+        var firstEntry = curView.Selection.SelectedModelContainerWrapper.Models.FirstOrDefault();
+
+        if (firstEntry == null)
+            return;
+
+        if (curView.Selection.SelectedModelWrapper != null)
         {
-            // TODO:
+            curView.Selection.SelectedModelWrapper.Unload();
+        }
 
-            ISelectable target = null;
+        curView.Selection.SelectedModelWrapper = firstEntry;
 
-            if (initcmd[0] == "load")
+        curView.ActionManager.Clear();
+
+        firstEntry.Load();
+    }
+
+    public void HandleSelectCommand(ModelEditorView curView, string[] commands)
+    {
+        ISelectable target = null;
+
+        if (commands[0] != "select")
+            return;
+
+        if (commands.Length <= 1)
+            return;
+
+        var type = commands[1];
+        var value = commands[2];
+
+        if (curView.Selection.SelectedModelWrapper == null)
+            return;
+
+        var container = curView.Selection.SelectedModelWrapper.Container;
+
+        if (container == null)
+            return;
+
+        if (type == "dummy")
+        {
+            var index = int.Parse(value);
+
+            for (int i = 0; i < container.Dummies.Count; i++)
             {
-                var filename = initcmd[1];
-
-                var entry = Project.Handler.ModelData.PrimaryBank.Models
-                    .FirstOrDefault(e => e.Key.Filename.ToLower() == filename.ToLower());
-
-                if (entry.Value != null)
+                if (index == i)
                 {
-                    Editor.Selection.SelectedModelContainerWrapper = entry.Value;
-                    entry.Value.PopulateModelList();
-                }
-
-                if (Editor.Selection.SelectedModelContainerWrapper != null)
-                {
-                    var firstEntry = Editor.Selection.SelectedModelContainerWrapper.Models.FirstOrDefault();
-
-                    if (firstEntry != null)
-                    {
-                        if (Editor.Selection.SelectedModelWrapper != null)
-                        {
-                            Editor.Selection.SelectedModelWrapper.Unload();
-                        }
-
-                        Editor.Selection.SelectedModelWrapper = firstEntry;
-
-                        Editor.EditorActionManager.Clear();
-
-                        firstEntry.Load();
-                    }
+                    target = container.Dummies[i];
                 }
             }
+        }
 
-            // Assumes we are working in the Model Editor with the target model already loaded
-            if (initcmd[0] == "select" && initcmd.Length > 2)
+        if (type == "node")
+        {
+            var index = int.Parse(value);
+
+            for (int i = 0; i < container.Nodes.Count; i++)
             {
-                var type = initcmd[1];
-                var value = initcmd[2];
-
-                if (Editor.Selection.SelectedModelWrapper != null)
+                if (index == i)
                 {
-                    var container = Editor.Selection.SelectedModelWrapper.Container;
-
-                    if (container != null)
-                    {
-                        if (type == "dummy")
-                        {
-                            var index = int.Parse(value);
-
-                            for (int i = 0; i < container.Dummies.Count; i++)
-                            {
-                                if (index == i)
-                                {
-                                    target = container.Dummies[i];
-                                }
-                            }
-                        }
-
-                        if (type == "node")
-                        {
-                            var index = int.Parse(value);
-
-                            for (int i = 0; i < container.Nodes.Count; i++)
-                            {
-                                if (index == i)
-                                {
-                                    target = container.Nodes[i];
-                                }
-                            }
-                        }
-
-                        if (type == "mesh")
-                        {
-                            var index = int.Parse(value);
-
-                            for (int i = 0; i < container.Meshes.Count; i++)
-                            {
-                                if (index == i)
-                                {
-                                    target = container.Meshes[i];
-                                }
-                            }
-                        }
-
-                        if (type == "material")
-                        {
-                            var index = int.Parse(value);
-
-                            for (int i = 0; i < container.Materials.Count; i++)
-                            {
-                                if (index == i)
-                                {
-                                    target = container.Materials[i];
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (target != null)
-                {
-                    Editor.Universe.Selection.ClearSelection(Editor);
-                    Editor.Universe.Selection.AddSelection(Editor, target);
-                    Editor.Universe.Selection.GotoTreeTarget = target;
+                    target = container.Nodes[i];
                 }
             }
+        }
+
+        if (type == "mesh")
+        {
+            var index = int.Parse(value);
+
+            for (int i = 0; i < container.Meshes.Count; i++)
+            {
+                if (index == i)
+                {
+                    target = container.Meshes[i];
+                }
+            }
+        }
+
+        if (type == "material")
+        {
+            var index = int.Parse(value);
+
+            for (int i = 0; i < container.Materials.Count; i++)
+            {
+                if (index == i)
+                {
+                    target = container.Materials[i];
+                }
+            }
+        }
+
+        if (target != null)
+        {
+            curView.Universe.Selection.ClearSelection();
+            curView.Universe.Selection.AddSelection(target);
+            curView.Universe.Selection.GotoTreeTarget = target;
         }
     }
 }

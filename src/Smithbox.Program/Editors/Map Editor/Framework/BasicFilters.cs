@@ -6,13 +6,11 @@ namespace StudioCore.Editors.MapEditor;
 
 public class BasicFilters
 {
-    private MapEditorScreen Editor;
-    private RenderScene RenderScene;
+    private MapEditorView View;
 
-    public BasicFilters(MapEditorScreen screen)
+    public BasicFilters(MapEditorView view)
     {
-        Editor = screen;
-        RenderScene = screen.MapViewportView.RenderScene;
+        View = view;
     }
 
     public void Display()
@@ -22,68 +20,68 @@ public class BasicFilters
         // Map Piece
         if (ImGui.MenuItem("Map Pieces"))
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.MapPiece);
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.MapPiece);
         UIHelper.ShowActiveStatus(ticked);
         UIHelper.Tooltip("Toggle the display of map objects classified as 'Map pieces'.");
 
         var name = "Objects";
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             name = "Assets";
         }
         // Object
         if (ImGui.MenuItem(name))
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.Object);
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Object);
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Object);
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Object);
         UIHelper.ShowActiveStatus(ticked);
         UIHelper.Tooltip($"Toggle the display of map objects classified as '{name}'.");
 
         // Character
         if (ImGui.MenuItem("Characters"))
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.Character);
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Character);
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Character);
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Character);
         UIHelper.ShowActiveStatus(ticked);
         UIHelper.Tooltip($"Toggle the display of map objects classified as 'Characters'.");
 
         // Region
         if (ImGui.MenuItem("Regions"))
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.Region);
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Region);
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Region);
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Region);
         UIHelper.ShowActiveStatus(ticked);
         UIHelper.Tooltip($"Toggle the display of map objects classified as 'Regions'.");
 
         // Light
         if (ImGui.MenuItem("Lights"))
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.Light);
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Light);
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Light);
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Light);
         UIHelper.ShowActiveStatus(ticked);
         UIHelper.Tooltip($"Toggle the display of map objects classified as 'Lights'.");
 
         // Collision
         if (ImGui.MenuItem("Collisions"))
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.Collision);
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Collision);
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
         UIHelper.ShowActiveStatus(ticked);
         UIHelper.Tooltip($"Toggle the display of map objects classified as 'Collisions'.");
 
         // Collision
         if (ImGui.MenuItem("Connect Collisions"))
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.ConnectCollision);
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.ConnectCollision);
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.ConnectCollision);
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.ConnectCollision);
         UIHelper.ShowActiveStatus(ticked);
         UIHelper.Tooltip($"Toggle the display of map objects classified as 'Connect Collisions'.");
 
@@ -91,41 +89,41 @@ public class BasicFilters
         // Navmesh
         if (ImGui.MenuItem("Navmeshes"))
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Navmesh);
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Navmesh);
         UIHelper.ShowActiveStatus(ticked);
         UIHelper.Tooltip($"Toggle the display of map objects classified as 'Navmeshes'.");
 
         // Speed Trees
         if (ImGui.MenuItem("Speed Trees"))
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.SpeedTree);
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.SpeedTree);
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.SpeedTree);
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.SpeedTree);
         UIHelper.ShowActiveStatus(ticked);
         UIHelper.Tooltip($"Toggle the display of map objects classified as 'Speed Trees'.");
 
         // AutoInvade
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER)
         {
             if (ImGui.MenuItem("Invasion Points"))
             {
-                RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
+                View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
             }
-            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
+            ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
             UIHelper.ShowActiveStatus(ticked);
             UIHelper.Tooltip($"Toggle the display of map objects classified as 'Invasion Points'.");
         }
 
         // Light Probe
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
         {
             if (ImGui.MenuItem("Light Probes"))
             {
-                RenderScene.ToggleDrawFilter(RenderFilter.LightProbe);
+                View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.LightProbe);
             }
-            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.LightProbe);
+            ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.LightProbe);
             UIHelper.ShowActiveStatus(ticked);
             UIHelper.Tooltip($"Toggle the display of map objects classified as 'Light Probes'.");
         }

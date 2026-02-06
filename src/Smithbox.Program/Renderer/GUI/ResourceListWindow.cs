@@ -10,12 +10,24 @@ using System.Linq;
 
 namespace StudioCore.Renderer;
 
-public static class ResourceListWindow
+public class ResourceListWindow
 {
-    public static string SearchFilter = "";
+    public string SearchFilter = "";
 
-    public static void DisplayWindow(string menuId, EditorScreen editor)
+    private ListenerTab ListenerTab;
+    private MeshProviderTab MeshProviderTab;
+
+    public ResourceListWindow()
     {
+        ListenerTab = new(this);
+        MeshProviderTab = new(this);
+    }
+
+    public void DisplayWindow(string menuId, IUniverse owner, bool hide = false)
+    {
+        if (hide)
+            return;
+
         if (!ImGui.Begin($"Resource List##{menuId}"))
         {
             ImGui.End();

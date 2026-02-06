@@ -8,13 +8,20 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Renderer;
 
-public static class ListenerTab
+public class ListenerTab
 {
-    public static string SelectedListenerEntry = "";
+    public string SelectedListenerEntry = "";
 
-    public static bool DisplayEmptyListeners = false;
+    public bool DisplayEmptyListeners = false;
 
-    public static void Display()
+    private ResourceListWindow ListWindow;
+
+    public ListenerTab(ResourceListWindow listWindow)
+    {
+        ListWindow = listWindow;
+    }
+
+    public void Display()
     {
         var resDatabase = ResourceManager.GetResourceDatabase();
 
@@ -69,7 +76,7 @@ public static class ListenerTab
                 var resName = item.Key;
                 var resHandle = item.Value;
 
-                if (ResourceListWindow.SearchFilter != "" && !resName.Contains(ResourceListWindow.SearchFilter))
+                if (ListWindow.SearchFilter != "" && !resName.Contains(ListWindow.SearchFilter))
                 {
                     continue;
                 }

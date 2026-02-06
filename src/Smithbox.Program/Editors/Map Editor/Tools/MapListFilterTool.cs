@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapListFilterTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public MapListFilterCollection QuickFilterCollection = new MapListFilterCollection();
@@ -23,10 +23,10 @@ public class MapListFilterTool
     public MapListFilterSet CurrentFilter = null;
     public MapListFilterSet FilterToDelete = null;
 
-    public MapListFilterTool(MapEditorScreen screen, ProjectEntry project)
+    public MapListFilterTool(MapEditorView view, ProjectEntry project)
     {
         Project = project;
-        Editor = screen;
+        View = view;
 
         QuickFilterCollection.Entries = new();
 

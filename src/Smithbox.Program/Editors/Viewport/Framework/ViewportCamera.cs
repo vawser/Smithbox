@@ -89,9 +89,7 @@ public class ViewportCamera
 
     public VulkanViewport ParentViewport;
 
-    public ViewportType ViewportType;
-
-    public ViewportCamera(IViewport viewport, ViewportType viewportType, Rectangle bounds)
+    public ViewportCamera(IViewport viewport, Rectangle bounds)
     {
         BoundingRect = bounds;
         SDL = SdlProvider.SDL.Value;

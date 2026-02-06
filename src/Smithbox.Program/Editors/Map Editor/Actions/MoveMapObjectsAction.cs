@@ -11,7 +11,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MoveMapObjectsAction : ViewportAction
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
     private readonly List<MsbEntity> Moveables = new();
     private readonly List<MapContainer> SourceMaps = new();
@@ -22,10 +22,10 @@ public class MoveMapObjectsAction : ViewportAction
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
 
-    public MoveMapObjectsAction(MapEditorScreen editor, List<MsbEntity> objects, bool setSelection,
+    public MoveMapObjectsAction(MapEditorView view, List<MsbEntity> objects, bool setSelection,
         MapContainer targetMap = null, Entity targetBTL = null)
     {
-        Editor = editor;
+        View = view;
         Moveables.AddRange(objects);
         SetSelection = setSelection;
         TargetMap = targetMap;
@@ -34,7 +34,7 @@ public class MoveMapObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         var movesCached = SourceMaps.Count > 0;
 
@@ -47,12 +47,12 @@ public class MoveMapObjectsAction : ViewportAction
                 continue;
             }
 
-            MapContainer sourceMap = Editor.Selection.GetMapContainerFromMapID(Moveables[i].MapID);
+            MapContainer sourceMap = View.Selection.GetMapContainerFromMapID(Moveables[i].MapID);
             MapContainer targetMap;
 
             if (TargetMap != null)
             {
-                targetMap = Editor.Selection.GetMapContainerFromMapID(TargetMap.Name);
+                targetMap = View.Selection.GetMapContainerFromMapID(TargetMap.Name);
             }
             else
             {
@@ -125,7 +125,7 @@ public class MoveMapObjectsAction : ViewportAction
                 }
 
                 // Update render model
-                Moveables[i].UpdateRenderModel(Editor);
+                Moveables[i].UpdateRenderModel();
                 if (Moveables[i].RenderSceneMesh != null)
                 {
                     Moveables[i].RenderSceneMesh.SetSelectable(Moveables[i]);
@@ -142,10 +142,10 @@ public class MoveMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.View.ViewportSelection.ClearSelection();
             foreach (MsbEntity m in Moveables)
             {
-                universe.Selection.AddSelection(Editor, m);
+                universe.View.ViewportSelection.AddSelection(m);
             }
         }
 
@@ -154,7 +154,7 @@ public class MoveMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         for (var i = 0; i < Moveables.Count(); i++)
         {
@@ -205,7 +205,7 @@ public class MoveMapObjectsAction : ViewportAction
             }
 
             // Update render model
-            Moveables[i].UpdateRenderModel(Editor);
+            Moveables[i].UpdateRenderModel();
             if (Moveables[i].RenderSceneMesh != null)
             {
                 Moveables[i].RenderSceneMesh.SetSelectable(Moveables[i]);
@@ -214,10 +214,10 @@ public class MoveMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.View.ViewportSelection.ClearSelection();
             foreach (MsbEntity m in Moveables)
             {
-                universe.Selection.AddSelection(Editor, m);
+                universe.View.ViewportSelection.AddSelection(m);
             }
         }
 

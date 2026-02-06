@@ -10,10 +10,12 @@ namespace StudioCore.Editors.MapEditor;
 public class MapShortcuts
 {
     public MapEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public MapShortcuts(MapEditorScreen screen)
+    public MapShortcuts(MapEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
+        Editor = editor;
+        Project = project;
     }
 
     public void Monitor()
@@ -21,7 +23,12 @@ public class MapShortcuts
         if (!FocusManager.IsInMapEditor())
             return;
 
-        if(Editor.MapViewportView.ViewportUsingKeyboard &&
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if(activeView.ViewportWindow.ViewportUsingKeyboard &&
             ImGui.IsAnyItemActive())
             return;
 
@@ -37,30 +44,30 @@ public class MapShortcuts
         }
 
         // Undo
-        if (Editor.EditorActionManager.CanUndo())
+        if (activeView.ViewportActionManager.CanUndo())
         {
             if (InputManager.IsPressed(KeybindID.Undo))
             {
-                Editor.EditorActionManager.UndoAction();
+                activeView.ViewportActionManager.UndoAction();
             }
 
             if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
             {
-                Editor.EditorActionManager.UndoAction();
+                activeView.ViewportActionManager.UndoAction();
             }
         }
 
         // Redo
-        if (Editor.EditorActionManager.CanRedo())
+        if (activeView.ViewportActionManager.CanRedo())
         {
             if (InputManager.IsPressed(KeybindID.Redo))
             {
-                Editor.EditorActionManager.RedoAction();
+                activeView.ViewportActionManager.RedoAction();
             }
 
             if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
             {
-                Editor.EditorActionManager.RedoAction();
+                activeView.ViewportActionManager.RedoAction();
             }
         }
 
@@ -102,32 +109,34 @@ public class MapShortcuts
             }
         }
 
+
         // Actions
-        Editor.CreateAction.OnShortcut();
-        Editor.DuplicateAction.OnShortcut();
-        Editor.DeleteAction.OnShortcut();
-        Editor.DuplicateToMapAction.OnShortcut();
-        Editor.RotateAction.OnShortcut();
-        Editor.ScrambleAction.OnShortcut();
-        Editor.ReplicateAction.OnShortcut();
-        Editor.RenderTypeAction.OnShortcut();
-        Editor.ReorderAction.OnShortcut();
-        Editor.GotoAction.OnShortcut();
-        Editor.GameVisibilityAction.OnShortcut();
-        Editor.FrameAction.OnShortcut();
-        Editor.PullToCameraAction.OnShortcut();
-        Editor.EditorVisibilityAction.OnShortcut();
-        Editor.SelectionOutlineAction.OnShortcut();
-        Editor.AdjustToGridAction.OnShortcut();
-        Editor.SelectAllAction.OnShortcut();
-        Editor.EntityInfoAction.OnShortcut();
+        activeView.CreateAction.OnShortcut();
+        activeView.DuplicateAction.OnShortcut();
+        activeView.DeleteAction.OnShortcut();
+        activeView.DuplicateToMapAction.OnShortcut();
+        activeView.RotateAction.OnShortcut();
+        activeView.ScrambleAction.OnShortcut();
+        activeView.ReplicateAction.OnShortcut();
+        activeView.RenderTypeAction.OnShortcut();
+        activeView.ReorderAction.OnShortcut();
+        activeView.GotoAction.OnShortcut();
+        activeView.GameVisibilityAction.OnShortcut();
+        activeView.FrameAction.OnShortcut();
+        activeView.PullToCameraAction.OnShortcut();
+        activeView.EditorVisibilityAction.OnShortcut();
+        activeView.SelectionOutlineAction.OnShortcut();
+        activeView.AdjustToGridAction.OnShortcut();
+        activeView.SelectAllAction.OnShortcut();
+        activeView.EntityInfoAction.OnShortcut();
 
         // Tools
-        Editor.MassEditTool.OnShortcut();
-        Editor.DisplayGroupTool.OnShortcut();
-        Editor.PrefabTool.OnShortcut();
-        Editor.SelectionGroupTool.OnShortcut();
-        Editor.RotationIncrementTool.OnShortcut();
-        Editor.PositionIncrementTool.OnShortcut();
+        activeView.MassEditTool.OnShortcut();
+        activeView.DisplayGroupTool.OnShortcut();
+        activeView.PrefabTool.OnShortcut();
+        activeView.SelectionGroupTool.OnShortcut();
+        activeView.RotationIncrementTool.OnShortcut();
+        activeView.PositionIncrementTool.OnShortcut();
+        activeView.PatrolDrawManager.OnShortcut();
     }
 }

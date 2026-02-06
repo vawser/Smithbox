@@ -15,7 +15,7 @@ public static class PropAction_Rotation
         //CFG.Current.SavedRotation = (Vector3)prop.GetValue(obj, null);
     }
 
-    public static void PasteSavedRotation(MapEditorScreen editor, ViewportSelection _selection)
+    public static void PasteSavedRotation(MapEditorView view, ViewportSelection _selection)
     {
         List<ViewportAction> actlist = new();
         foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
@@ -24,6 +24,6 @@ public static class PropAction_Rotation
         }
 
         var action = new ViewportCompoundAction(actlist);
-        editor.EditorActionManager.ExecuteAction(action);
+        view.ViewportActionManager.ExecuteAction(action);
     }
 }

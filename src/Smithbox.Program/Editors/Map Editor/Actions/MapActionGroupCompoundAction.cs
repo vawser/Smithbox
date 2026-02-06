@@ -7,14 +7,14 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapActionGroupCompoundAction : ViewportAction
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
     private readonly List<MapActionGroup> Actions;
 
     private Action<bool> PostExecutionAction;
 
-    public MapActionGroupCompoundAction(MapEditorScreen editor, List<MapActionGroup> actions)
+    public MapActionGroupCompoundAction(MapEditorView view, List<MapActionGroup> actions)
     {
-        Editor = editor;
+        View = view;
         Actions = actions;
     }
 
@@ -30,7 +30,7 @@ public class MapActionGroupCompoundAction : ViewportAction
         foreach (var group in Actions)
         {
             var name = group.MapID;
-            var alias = AliasHelper.GetMapNameAlias(Editor.Project, name);
+            var alias = AliasHelper.GetMapNameAlias(View.Project, name);
             if (alias != null)
                 name = $"{name} {alias}";
 
@@ -62,7 +62,7 @@ public class MapActionGroupCompoundAction : ViewportAction
         foreach (var group in Actions)
         {
             var name = group.MapID;
-            var alias = AliasHelper.GetMapNameAlias(Editor.Project, name);
+            var alias = AliasHelper.GetMapNameAlias(View.Project, name);
             if (alias != null)
                 name = $"{name} {alias}";
 

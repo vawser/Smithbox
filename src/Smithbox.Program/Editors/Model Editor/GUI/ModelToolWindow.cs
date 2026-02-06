@@ -16,20 +16,22 @@ public class ModelToolWindow
         Project = project;
     }
 
-    public void OnGui()
+    public void Display()
     {
+        if (CFG.Current.Interface_ModelEditor_ScreenshotMode)
+            return;
+
         if (!CFG.Current.Interface_ModelEditor_ToolWindow)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
+        var activeView = Editor.ViewHandler.ActiveView;
 
-        if (ImGui.Begin("Tool Window##modelEditorTools", ImGuiWindowFlags.MenuBar))
+        if (activeView == null)
+            return;
+
+        if (ImGui.Begin("Tool Window##modelEditorTools", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.ModelEditor_Tools);
-
-            var windowHeight = ImGui.GetWindowHeight();
-            var windowWidth = ImGui.GetWindowWidth();
 
             if (ImGui.BeginMenuBar())
             {
@@ -40,32 +42,31 @@ public class ModelToolWindow
 
             if (CFG.Current.Interface_ModelEditor_Tool_CreateAction)
             {
-                Editor.CreateAction.OnToolWindow();
+                activeView.CreateAction.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
             {
-                Editor.ModelGridTool.OnToolWindow();
+                activeView.ModelGridTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelInsight)
             {
-                Editor.ModelInsightTool.OnToolWindow();
+                activeView.ModelInsightMenu.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
             {
-                Editor.ModelInstanceFinder.OnToolWindow();
+                activeView.ModelInstanceFinder.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler)
             {
-                Editor.ModelMaskToggler.OnToolWindow();
+                activeView.ModelMaskToggler.OnToolWindow();
             }
         }
 
         ImGui.End();
-        ImGui.PopStyleColor(1);
     }
 
     public void ViewMenu()

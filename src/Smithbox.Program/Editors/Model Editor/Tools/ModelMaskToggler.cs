@@ -19,15 +19,15 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelMaskToggler
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
     private bool SelectEntry = false;
     private int SelectedID = -1;
 
-    public ModelMaskToggler(ModelEditorScreen editor, ProjectEntry project)
+    public ModelMaskToggler(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -55,31 +55,31 @@ public class ModelMaskToggler
             return;
         }
 
-        if (Editor.Project.Handler.ParamEditor == null)
+        if (View.Project.Handler.ParamEditor == null)
         {
             UIHelper.WrappedText("The Param Editor must be enabled for this tool to work.");
 
             return;
         }
 
-        if(Editor.Selection.SelectedModelWrapper == null)
+        if(View.Selection.SelectedModelWrapper == null)
         {
             UIHelper.WrappedText("A model must be loaded first for this tool to work.");
 
             return;
         }
 
-        var filename = Editor.Selection.SelectedModelWrapper.Name;
+        var filename = View.Selection.SelectedModelWrapper.Name;
         var npcParamKey = "NpcParam";
 
-        if (!Editor.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(npcParamKey))
+        if (!View.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(npcParamKey))
         {
             UIHelper.WrappedText("Failed to find associated NpcParam entry.");
 
             return;
         }
 
-        var npcParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[npcParamKey];
+        var npcParam = View.Project.Handler.ParamData.PrimaryBank.Params[npcParamKey];
 
         if (npcParam == null)
         {
@@ -159,8 +159,8 @@ public class ModelMaskToggler
             }
         }
 
-        var container = Editor.Selection.SelectedModelWrapper.Container;
-        var flver = Editor.Selection.SelectedModelWrapper.FLVER;
+        var container = View.Selection.SelectedModelWrapper.Container;
+        var flver = View.Selection.SelectedModelWrapper.FLVER;
 
         Dictionary<int, FLVER2.Material> materialDict = new();
 

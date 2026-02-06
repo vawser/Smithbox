@@ -6,14 +6,14 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelGridConfiguration
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
     private TargetMapGridType CurrentModelGridType = TargetMapGridType.Primary;
 
-    public ModelGridConfiguration(ModelEditorScreen editor, ProjectEntry project)
+    public ModelGridConfiguration(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 

@@ -7,15 +7,6 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelEntityTypeCache
 {
-    private ModelEditorScreen Editor;
-    private ProjectEntry Project;
-
-    public ModelEntityTypeCache(ModelEditorScreen editor, ProjectEntry project)
-    {
-        Editor = editor;
-        Project = project;
-    }
-
     public Dictionary<string, Dictionary<ModelEntityType, Dictionary<Type, List<ModelEntity>>>> _cachedTypeView;
 
 

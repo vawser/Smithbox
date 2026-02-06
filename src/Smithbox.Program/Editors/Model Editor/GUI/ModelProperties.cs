@@ -16,14 +16,14 @@ using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelPropertyView
+public class ModelProperties
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public ModelPropertyView(ModelEditorScreen editor, ProjectEntry project)
+    public ModelProperties(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -38,21 +38,9 @@ public class ModelPropertyView
     private string PropertySearch = "";
 
 
-    public void OnGui()
+    public void Display()
     {
-        var scale = DPI.UIScale();
-        HashSet<Entity> entSelection = Editor.ViewportSelection.GetFilteredSelection<Entity>();
-
-        if (!CFG.Current.Interface_MapEditor_Properties)
-            return;
-
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.ImGui_ChildBg);
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(350, Editor.ModelViewportView.Viewport.Height - 80) * scale, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowPos(new Vector2(Editor.ModelViewportView.Viewport.Width - 370, 20) * scale, ImGuiCond.FirstUseEver);
-        ImGui.Begin($@"Properties##modeleditprop");
-
-        FocusManager.SetFocus(EditorFocusContext.ModelEditor_Properties);
+        HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
 
         // Header
         ImGui.AlignTextToFramePadding();
@@ -78,7 +66,7 @@ public class ModelPropertyView
         // Properties
         ImGui.BeginChild("propedit");
 
-        if(Editor.Selection.SelectedModelWrapper != null && Editor.Selection.SelectedModelWrapper.Container != null)
+        if(View.Selection.SelectedModelWrapper != null && View.Selection.SelectedModelWrapper.Container != null)
         {
             if(entSelection.Count > 1)
             {
@@ -91,7 +79,7 @@ public class ModelPropertyView
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
                 ImGui.BeginChild("Model_EditingMultipleObjsChild");
 
-                ModelPropertyOrchestrator(Editor.ViewportSelection);
+                ModelPropertyOrchestrator(View.ViewportSelection);
 
                 ImGui.PopStyleColor();
                 ImGui.EndChild();
@@ -109,7 +97,7 @@ public class ModelPropertyView
                     return;
                 }
 
-                ModelPropertyOrchestrator(Editor.ViewportSelection);
+                ModelPropertyOrchestrator(View.ViewportSelection);
             }
             else
             {
@@ -118,8 +106,6 @@ public class ModelPropertyView
         }
 
         ImGui.EndChild();
-        ImGui.End();
-        ImGui.PopStyleColor(2);
     }
 
     private void ModelPropertyOrchestrator(ViewportSelection selection, int classIndex = -1)
@@ -172,7 +158,7 @@ public class ModelPropertyView
         Entity firstEnt = entSelection.First();
         Type type = obj.GetType();
 
-        PropertyInfo[] properties = Editor.ModelPropertyCache.GetCachedProperties(type);
+        PropertyInfo[] properties = View.ModelPropertyCache.GetCachedProperties(type);
 
         // Properties
         var id = 0;
@@ -479,7 +465,7 @@ public class ModelPropertyView
         var dummyRef = prop.GetCustomAttribute<DummyReference>();
         if(dummyRef != null)
         {
-            var container = Editor.Selection.SelectedModelWrapper.Container;
+            var container = View.Selection.SelectedModelWrapper.Container;
             var value = int.Parse(oldval.ToString());
 
             ImGui.NextColumn();
@@ -512,7 +498,7 @@ public class ModelPropertyView
         var nodeRef = prop.GetCustomAttribute<NodeReference>();
         if (nodeRef != null)
         {
-            var container = Editor.Selection.SelectedModelWrapper.Container;
+            var container = View.Selection.SelectedModelWrapper.Container;
             var value = int.Parse(oldval.ToString());
 
             ImGui.NextColumn();
@@ -545,7 +531,7 @@ public class ModelPropertyView
         var matRef = prop.GetCustomAttribute<MaterialReference>();
         if (matRef != null)
         {
-            var container = Editor.Selection.SelectedModelWrapper.Container;
+            var container = View.Selection.SelectedModelWrapper.Container;
             var value = int.Parse(oldval.ToString());
 
             ImGui.NextColumn();
@@ -952,15 +938,15 @@ public class ModelPropertyView
 
         if (committed)
         {
-            if (_lastUncommittedAction != null && Editor.EditorActionManager.PeekUndoAction() == _lastUncommittedAction)
+            if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
             {
                 if (_lastUncommittedAction is MultipleEntityPropertyChangeAction a)
                 {
-                    Editor.EditorActionManager.UndoAction();
+                    View.ViewportActionManager.UndoAction();
 
                     a.UpdateRenderModel = true; // Update render model on commit execution, and update on undo/redo.
 
-                    Editor.EditorActionManager.ExecuteAction(a);
+                    View.ViewportActionManager.ExecuteAction(a);
                 }
 
                 _lastUncommittedAction = null;
@@ -973,9 +959,9 @@ public class ModelPropertyView
         int arrayindex = -1, int classIndex = -1)
     {
         if (prop == _changingPropery && _lastUncommittedAction != null &&
-            Editor.EditorActionManager.PeekUndoAction() == _lastUncommittedAction)
+            View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
-            Editor.EditorActionManager.UndoAction();
+            View.ViewportActionManager.UndoAction();
         }
         else
         {
@@ -983,7 +969,7 @@ public class ModelPropertyView
         }
 
         var set = ents.ToHashSet();
-        MultipleEntityPropertyChangeAction action;
+        ModelPropertyChangeAction action;
         foreach (Entity selection in ents)
         {
             if (selection != null && _changingObject != null && !set.SetEquals((HashSet<Entity>)_changingObject))
@@ -993,9 +979,9 @@ public class ModelPropertyView
             }
         }
 
-        action = new MultipleEntityPropertyChangeAction(Editor, (PropertyInfo)prop, set, newval, arrayindex, classIndex);
+        action = new ModelPropertyChangeAction(View, (PropertyInfo)prop, set, newval, arrayindex, classIndex);
 
-        Editor.EditorActionManager.ExecuteAction(action);
+        View.ViewportActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;
         _changingPropery = prop;
@@ -1006,9 +992,9 @@ public class ModelPropertyView
         ref bool committed, int arrayindex = -1)
     {
         if (prop == _changingPropery && _lastUncommittedAction != null &&
-            Editor.EditorActionManager.PeekUndoAction() == _lastUncommittedAction)
+            View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
-            Editor.EditorActionManager.UndoAction();
+            View.ViewportActionManager.UndoAction();
         }
         else
         {
@@ -1031,7 +1017,7 @@ public class ModelPropertyView
                 action = new PropertiesChangedAction((PropertyInfo)prop, obj, newval);
             }
 
-            Editor.EditorActionManager.ExecuteAction(action);
+            View.ViewportActionManager.ExecuteAction(action);
 
             _lastUncommittedAction = action;
             _changingPropery = prop;
@@ -1050,14 +1036,14 @@ public class ModelPropertyView
         selection.BuildReferenceMap();
 
         // Undo and redo the last action with a rendering update
-        if (_lastUncommittedAction != null && Editor.EditorActionManager.PeekUndoAction() == _lastUncommittedAction)
+        if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
             if (_lastUncommittedAction is PropertiesChangedAction a)
             {
                 // Kinda a hack to prevent a jumping glitch
                 a.SetPostExecutionAction(null);
 
-                Editor.EditorActionManager.UndoAction();
+                View.ViewportActionManager.UndoAction();
 
                 if (selection != null)
                 {
@@ -1072,11 +1058,11 @@ public class ModelPropertyView
                             }
                         }
 
-                        selection.UpdateRenderModel(Editor);
+                        selection.UpdateRenderModel();
                     });
                 }
 
-                Editor.EditorActionManager.ExecuteAction(a);
+                View.ViewportActionManager.ExecuteAction(a);
             }
         }
 

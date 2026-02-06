@@ -15,7 +15,7 @@ public static class PropAction_Position
         //CFG.Current.SavedPosition = (Vector3)prop.GetValue(obj, null);
     }
 
-    public static void PasteSavedPosition(MapEditorScreen editor, ViewportSelection _selection)
+    public static void PasteSavedPosition(MapEditorView view, ViewportSelection _selection)
     {
         List<ViewportAction> actlist = new();
         foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
@@ -24,6 +24,6 @@ public static class PropAction_Position
         }
 
         var action = new ViewportCompoundAction(actlist);
-        editor.EditorActionManager.ExecuteAction(action);
+        view.ViewportActionManager.ExecuteAction(action);
     }
 }

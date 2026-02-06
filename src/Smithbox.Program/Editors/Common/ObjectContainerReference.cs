@@ -14,25 +14,26 @@ public class ObjectContainerReference : ISelectable
 
     public string Name { get; set; }
 
-    public void OnSelected(EditorScreen editor)
+    public void OnSelected()
     {
         // No visual change from selection
     }
 
-    public void OnDeselected(EditorScreen editor)
+    public void OnDeselected()
     {
         // No visual change from selection
     }
 
-    public ISelectable GetSelectionTarget(MapEditorScreen editor)
+    public ISelectable GetSelectionTarget(IUniverse owner)
     {
-        var universe = editor.Universe;
-
-        var container = editor.Selection.GetMapContainerFromMapID(Name);
-
-        if (universe != null && container != null && container?.RootObject != null)
+        if (owner is MapUniverse mapUniverse)
         {
-            return container.RootObject;
+            var container = mapUniverse.View.Selection.GetMapContainerFromMapID(Name);
+
+            if (mapUniverse != null && container != null && container?.RootObject != null)
+            {
+                return container.RootObject;
+            }
         }
 
         return this;

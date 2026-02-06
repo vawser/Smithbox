@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
@@ -8,13 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Threading.Tasks;
-using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.ModelEditor;
 
 public class ModelContainer : ObjectContainer
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
     public Entity ModelOffsetNode { get; set; }
@@ -30,9 +28,9 @@ public class ModelContainer : ObjectContainer
     //public List<Entity> Collisions { get; set; }
 
 
-    public ModelContainer(ModelEditorScreen editor, ProjectEntry project, string modelName)
+    public ModelContainer(ModelEditorView view, ProjectEntry project, string modelName)
     {
-        Editor = editor;
+        View = view;
         Project = project;
         Name = modelName;
 
@@ -49,8 +47,8 @@ public class ModelContainer : ObjectContainer
         var rootTransformNode = new ModelTransformNode(modelName);
         var modelTransformNode = new ModelTransformNode(modelName);
 
-        RootObject = new ModelEntity(Editor, this, rootTransformNode, ModelEntityType.ModelRoot);
-        ModelOffsetNode = new ModelEntity(Editor, this, modelTransformNode);
+        RootObject = new ModelEntity(view.Universe, this, rootTransformNode, ModelEntityType.ModelRoot);
+        ModelOffsetNode = new ModelEntity(view.Universe, this, modelTransformNode);
 
         RootObject.AddChild(ModelOffsetNode);
     }
@@ -74,7 +72,7 @@ public class ModelContainer : ObjectContainer
         // Materials
         foreach (var entry in flver.Materials)
         {
-            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Material);
+            var newObject = new ModelEntity(View.Universe, this, entry, ModelEntityType.Material);
             Materials.Add(newObject);
             Objects.Add(newObject);
             RootObject.AddChild(newObject);
@@ -92,7 +90,7 @@ public class ModelContainer : ObjectContainer
         // Nodes
         foreach (var entry in flver.Nodes)
         {
-            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Node);
+            var newObject = new ModelEntity(View.Universe, this, entry, ModelEntityType.Node);
 
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
@@ -131,7 +129,7 @@ public class ModelContainer : ObjectContainer
         // Dummies
         foreach (var entry in flver.Dummies)
         {
-            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Dummy);
+            var newObject = new ModelEntity(View.Universe, this, entry, ModelEntityType.Dummy);
 
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
@@ -165,7 +163,7 @@ public class ModelContainer : ObjectContainer
         int index = 0;
         foreach (var entry in flver.Meshes)
         {
-            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Mesh);
+            var newObject = new ModelEntity(View.Universe, this, entry, ModelEntityType.Mesh);
 
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
@@ -189,7 +187,7 @@ public class ModelContainer : ObjectContainer
         //}
 
         // Skeletons
-        var skeletonSet = new ModelEntity(Editor, this, flver.Skeletons, ModelEntityType.Skeleton);
+        var skeletonSet = new ModelEntity(View.Universe, this, flver.Skeletons, ModelEntityType.Skeleton);
         Skeletons.Add(skeletonSet);
         Objects.Add(skeletonSet);
         RootObject.AddChild(skeletonSet);
@@ -250,7 +248,7 @@ public class ModelContainer : ObjectContainer
             modelName.StartsWith("hd") || modelName.StartsWith("HD") || 
             modelName.StartsWith("wp") || modelName.StartsWith("WP"))
         {
-            resource = ModelLocator.GetPartsModel(Editor.Project, modelName, modelName);
+            resource = ModelLocator.GetPartsModel(View.Project, modelName, modelName);
         }
         else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && ent.IsPartCollision())
         {
@@ -289,7 +287,7 @@ public class ModelContainer : ObjectContainer
 
     public void AssignDummyDrawable(Entity ent, ModelWrapper wrapper)
     {
-        var mesh = RenderableHelper.GetDummyPolyRegionProxy(Editor.ModelViewportView.RenderScene);
+        var mesh = RenderableHelper.GetDummyPolyRegionProxy(View.RenderScene);
 
         mesh.DrawFilter = RenderFilter.Dummies;
         mesh.World = ent.GetWorldMatrix();
@@ -300,7 +298,7 @@ public class ModelContainer : ObjectContainer
 
     public void AssignNodeDrawable(Entity ent, ModelWrapper wrapper)
     {
-        var mesh = RenderableHelper.GetBonePointProxy(Editor.ModelViewportView.RenderScene);
+        var mesh = RenderableHelper.GetBonePointProxy(View.RenderScene);
 
         mesh.DrawFilter = RenderFilter.Nodes;
         mesh.World = ent.GetWorldMatrix();
@@ -312,7 +310,7 @@ public class ModelContainer : ObjectContainer
     public void LoadMesh(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource)
     {
         MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                Editor.ModelViewportView.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None, null);
+                View.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None, null);
 
 
         mesh.DrawFilter = RenderFilter.Meshes;
@@ -327,7 +325,7 @@ public class ModelContainer : ObjectContainer
     public void LoadCollision(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource)
     {
         MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
-                Editor.ModelViewportView.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None);
+                View.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None);
 
         mesh.DrawFilter = RenderFilter.Collision;
         mesh.World = ent.GetWorldMatrix();

@@ -12,7 +12,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 public class PrefabTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, PrefabAttributes> Prefabs = new();
@@ -24,9 +24,9 @@ public class PrefabTool
 
     public (string name, ObjectContainer map) comboMap;
 
-    public PrefabTool(MapEditorScreen editor, ProjectEntry project) 
+    public PrefabTool(MapEditorView view, ProjectEntry project) 
     { 
-        Editor = editor;
+        View = view;
         Project = project;
 
         RefreshPrefabList();
@@ -62,14 +62,14 @@ public class PrefabTool
 
     public Prefab GetLoadedPrefab(string name)
     {
-        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(Editor.Project);
+        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(View.Project);
         var prefabPath = Path.Join(prefabDir, $"{name}.json");
         var loadedPrefab = LoadedPrefabs.GetValueOrDefault(name);
 
         if (loadedPrefab is not null)
             return loadedPrefab;
 
-        loadedPrefab = Prefab.New(Editor);
+        loadedPrefab = Prefab.New(View);
 
         if (File.Exists(prefabPath))
         {
@@ -82,14 +82,14 @@ public class PrefabTool
 
     public void CreateFromSelection(string name)
     {
-        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(Editor.Project);
+        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(View.Project);
 
         if (Prefabs.ContainsKey(name))
         {
             TaskLogs.AddLog($"Failed to create prefab {name}: prefab already exists with this name.", LogLevel.Error);
             return;
         }
-        var newPrefab = Prefab.New(Editor);
+        var newPrefab = Prefab.New(View);
 
         if (newPrefab == null)
         {
@@ -97,7 +97,7 @@ public class PrefabTool
         }
         else
         {
-            newPrefab.ExportSelection(Path.Join(prefabDir, $"{name}.json"), name, Prefab_EditFlags, Editor.Universe.Selection);
+            newPrefab.ExportSelection(Path.Join(prefabDir, $"{name}.json"), name, Prefab_EditFlags, View.ViewportSelection);
 
             Prefabs.Add(name, newPrefab);
             SelectedPrefab = newPrefab;
@@ -109,7 +109,7 @@ public class PrefabTool
 
     public void Delete(string name)
     {
-        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(Editor.Project);
+        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(View.Project);
 
         Prefabs.Remove(name);
         File.Delete(Path.Join(prefabDir, $"{name}.json"));
@@ -119,7 +119,7 @@ public class PrefabTool
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        bool selectedEntities = Editor.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
+        bool selectedEntities = View.ViewportSelection.GetFilteredSelection<MsbEntity>().Any();
 
         var isDisabled = !selectedEntities || !Prefab_EditName.Any();
 
@@ -178,7 +178,7 @@ public class PrefabTool
             var loadedPrefab = GetLoadedPrefab(SelectedPrefab.PrefabName);
 
             if (loadedPrefab != null)
-                loadedPrefab.ImportToMap(Editor, comboMap.map as MapContainer, Editor.MapViewportView.RenderScene, Editor.EditorActionManager, prefixName);
+                loadedPrefab.ImportToMap(View, comboMap.map as MapContainer, View.ViewportHandler.ActiveViewport.RenderScene, View.ViewportActionManager, prefixName);
         }
         UIHelper.Tooltip("Import the selected prefab into a loaded map.");
 
@@ -189,7 +189,7 @@ public class PrefabTool
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        bool selectedEntities = Editor.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
+        bool selectedEntities = View.ViewportSelection.GetFilteredSelection<MsbEntity>().Any();
 
         ImGui.BeginDisabled(SelectedPrefab is null || !selectedEntities);
 
@@ -233,13 +233,13 @@ public class PrefabTool
         ImGui.Checkbox("Apply Unique Entity ID##prefabApplyUniqueEntityID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
         UIHelper.Tooltip("Spawned prefab objects will be given unique Entity IDs.");
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ImGui.Checkbox("Apply Unique Instance ID##prefabApplyUniqueInstanceID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
             UIHelper.Tooltip("Spawned prefab objects will be given unique Instance IDs.");
         }
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ImGui.Checkbox("Apply Entity Group ID##prefabApplyEntityGroupID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
 
@@ -263,7 +263,7 @@ public class PrefabTool
 
         UIHelper.SimpleHeader("Target Map", "Target Map", "The map to spawn the selected prefab in.", UI.Current.ImGui_Default_Text_Color);
 
-        var container = Editor.Selection.GetMapContainerFromMapID(comboMap.name);
+        var container = View.Selection.GetMapContainerFromMapID(comboMap.name);
 
         if (comboMap.name != null && container == null)
             comboMap = (null, null);
@@ -271,7 +271,7 @@ public class PrefabTool
         ImGui.PushItemWidth(-1);
         if (ImGui.BeginCombo("##PrefabMapCombo", comboMap.name))
         {
-            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+            foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 if (entry.Value.MapContainer == null)
                     continue;
@@ -382,7 +382,7 @@ public class PrefabTool
 
     public void RefreshPrefabList()
     {
-        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(Editor.Project);
+        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(View.Project);
         Prefabs = new();
 
         if (!Directory.Exists(prefabDir))
@@ -400,7 +400,7 @@ public class PrefabTool
             {
                 var settings = new JsonSerializerSettings
                 {
-                    Converters = { new PrefabAttributesConverter(Editor) }
+                    Converters = { new PrefabAttributesConverter(View) }
                 };
 
                 var prefab = JsonConvert.DeserializeObject<PrefabAttributes>(File.ReadAllText(file), settings);

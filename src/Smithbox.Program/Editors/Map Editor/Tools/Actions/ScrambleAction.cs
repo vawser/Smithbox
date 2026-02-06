@@ -13,12 +13,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class ScrambleAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public ScrambleAction(MapEditorScreen editor, ProjectEntry project)
+    public ScrambleAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -27,7 +27,7 @@ public class ScrambleAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_Scramble))
             {
@@ -291,17 +291,18 @@ public class ScrambleAction
     /// </summary>
     public void ApplyScramble()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            foreach (Entity sel in Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
+            foreach (Entity sel in View.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
-                sel.ClearTemporaryTransform(Editor, false);
+                sel.ClearTemporaryTransform(false);
                 actlist.Add(sel.GetUpdateTransformAction(GetScrambledTransform(sel), true));
             }
 
             var action = new ViewportCompoundAction(actlist);
-            Editor.EditorActionManager.ExecuteAction(action);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
         else
         {

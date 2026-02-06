@@ -12,16 +12,16 @@ namespace StudioCore.Editors.MapEditor;
 
 public class AdjustToGridAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     private bool OpenPopup = false;
 
     public ViewportTargetGridType CurrentTargetGrid = ViewportTargetGridType.Primary;
 
-    public AdjustToGridAction(MapEditorScreen editor, ProjectEntry project)
+    public AdjustToGridAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -61,7 +61,7 @@ public class AdjustToGridAction
             AdjustSelectionToGrid(CurrentTargetGrid);
         }
 
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_Move_to_Primary_Grid))
             {
@@ -334,12 +334,12 @@ public class AdjustToGridAction
         bool applyPosX, bool applyPosY, bool applyPosZ,
         bool applyRotX, bool applyRotY, bool applyRotZ)
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            foreach (Entity sel in Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
+            foreach (Entity sel in View.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
-                sel.ClearTemporaryTransform(Editor, false);
+                sel.ClearTemporaryTransform(false);
 
                 var transform = GetGridTransform(sel, curRootAxis,
                     applyPosX, applyPosY, applyPosZ,
@@ -348,7 +348,8 @@ public class AdjustToGridAction
             }
 
             ViewportCompoundAction action = new(actlist);
-            Editor.EditorActionManager.ExecuteAction(action);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
         else
         {

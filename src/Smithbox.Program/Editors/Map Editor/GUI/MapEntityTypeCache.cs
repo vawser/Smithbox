@@ -7,13 +7,15 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapEntityTypeCache
 {
-    private MapEditorScreen Editor;
+    public MapEditorView View;
+    public ProjectEntry Project;
 
     public Dictionary<string, Dictionary<MsbEntityType, Dictionary<Type, List<MsbEntity>>>> _cachedTypeView;
 
-    public MapEntityTypeCache(MapEditorScreen editor)
+    public MapEntityTypeCache(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
+        Project = project;
     }
 
     public void InvalidateCache()
@@ -80,14 +82,14 @@ public class MapEntityTypeCache
         */
 
         // Part Pose
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2S
+        if (Project.Descriptor.ProjectType is ProjectType.DS2S
             or ProjectType.DS2 or ProjectType.DS3)
         {
             mapcache.Add(MsbEntityType.PartPose, new Dictionary<Type, List<MsbEntity>>());
         }
 
         // External: BTL
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.BB
+        if (Project.Descriptor.ProjectType is ProjectType.BB
             or ProjectType.DS3
             or ProjectType.SDT
             or ProjectType.ER
@@ -98,31 +100,31 @@ public class MapEntityTypeCache
         }
 
         // External: AIP
-        if (Editor.AutoInvadeBank.CanUse())
+        if (View.AutoInvadeBank.CanUse())
         {
             mapcache.Add(MsbEntityType.AutoInvadePoint, new Dictionary<Type, List<MsbEntity>>());
         }
 
         // External: BTAB
-        if (Editor.LightAtlasBank.CanUse())
+        if (View.LightAtlasBank.CanUse())
         {
             mapcache.Add(MsbEntityType.LightAtlas, new Dictionary<Type, List<MsbEntity>>());
         }
 
         // External: BTPB
-        if (Editor.LightProbeBank.CanUse())
+        if (View.LightProbeBank.CanUse())
         {
             mapcache.Add(MsbEntityType.LightProbeVolume, new Dictionary<Type, List<MsbEntity>>());
         }
 
         // External: NVA
-        if (Editor.HavokNavmeshBank.CanUse())
+        if (View.HavokNavmeshBank.CanUse())
         {
             mapcache.Add(MsbEntityType.Navmesh, new Dictionary<Type, List<MsbEntity>>());
         }
 
         // External: DS2 PARAM
-        else if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2S
+        else if (Project.Descriptor.ProjectType is ProjectType.DS2S
             or ProjectType.DS2)
         {
             mapcache.Add(MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());

@@ -14,7 +14,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class NavmeshBuilderTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     private readonly MeshRenderableProxy _previewMesh = null;
@@ -34,9 +34,9 @@ public class NavmeshBuilderTool
     private int MinRegionArea = 3;
     private float SlopeAngle = 30.0f;
 
-    public NavmeshBuilderTool(MapEditorScreen editor, ProjectEntry project)
+    public NavmeshBuilderTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -81,14 +81,14 @@ public class NavmeshBuilderTool
 
         if (ImGui.CollapsingHeader("Navmesh Builder"))
         {
-            if (Editor.Project.Descriptor.ProjectType != ProjectType.DS3)
+            if (View.Project.Descriptor.ProjectType != ProjectType.DS3)
             {
                 ImGui.Text("Navmesh building only supported for DS3");
                 ImGui.End();
                 return;
             }
 
-            var sel = Editor.ViewportSelection.GetSingleFilteredSelection<Entity>();
+            var sel = View.ViewportSelection.GetSingleFilteredSelection<Entity>();
             if (sel != null && sel.RenderSceneMesh != null && sel.RenderSceneMesh is MeshRenderableProxy mrp &&
                 mrp.ResourceHandle != null && mrp.ResourceHandle is ResourceHandle<HavokCollisionResource> col)
             {
@@ -157,7 +157,7 @@ public class NavmeshBuilderTool
                         _previewMesh.World = mrp.World;
 
                         // Do a test save
-                        var path = Path.Join(Editor.Project.Descriptor.ProjectPath, "navout", "test.hkx");
+                        var path = Path.Join(View.Project.Descriptor.ProjectPath, "navout", "test.hkx");
                         using (FileStream s2 = File.Create(path))
                         {
                             BinaryWriterEx bw = new(false, s2);

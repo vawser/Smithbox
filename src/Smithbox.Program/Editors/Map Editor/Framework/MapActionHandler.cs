@@ -10,12 +10,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapActionHandler
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
     private ProjectEntry Project;
 
-    public MapActionHandler(MapEditorScreen editor, ProjectEntry project)
+    public MapActionHandler(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -30,7 +30,7 @@ public class MapActionHandler
         {
             string mapid = entry.Key.Filename;
 
-            if (Editor.Project.Descriptor.ProjectType is ProjectType.DES)
+            if (View.Project.Descriptor.ProjectType is ProjectType.DES)
             {
                 if (mapid != "m03_01_00_99" && !mapid.StartsWith("m99"))
                 {
@@ -44,22 +44,22 @@ public class MapActionHandler
                     {
                         if (tEntry.Key.Filename.StartsWith(areaId) && tEntry.Key.Filename != "m03_01_00_99")
                         {
-                            areaDirectories.Add(Path.Combine(Editor.Project.Descriptor.DataPath, "map", tEntry.Key.Filename));
+                            areaDirectories.Add(Path.Combine(View.Project.Descriptor.DataPath, "map", tEntry.Key.Filename));
                         }
                     }
-                    SoulsMapMetadataGenerator.GenerateMCGMCP(Editor, areaDirectories, toBigEndian: true);
+                    SoulsMapMetadataGenerator.GenerateMCGMCP(View, areaDirectories, toBigEndian: true);
                 }
                 else
                 {
-                    var areaDirectories = new List<string> { Path.Combine(Editor.Project.Descriptor.DataPath, "map", mapid) };
-                    SoulsMapMetadataGenerator.GenerateMCGMCP(Editor, areaDirectories, toBigEndian: true);
+                    var areaDirectories = new List<string> { Path.Combine(View.Project.Descriptor.DataPath, "map", mapid) };
+                    SoulsMapMetadataGenerator.GenerateMCGMCP(View, areaDirectories, toBigEndian: true);
                 }
             }
-            else if (Editor.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            else if (View.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
-                var areaDirectories = new List<string> { Path.Combine(Editor.Project.Descriptor.DataPath, "map", mapid) };
+                var areaDirectories = new List<string> { Path.Combine(View.Project.Descriptor.DataPath, "map", mapid) };
 
-                SoulsMapMetadataGenerator.GenerateMCGMCP(Editor, areaDirectories, toBigEndian: false);
+                SoulsMapMetadataGenerator.GenerateMCGMCP(View, areaDirectories, toBigEndian: false);
             }
         }
 
@@ -73,8 +73,8 @@ public class MapActionHandler
     public void ApplyEntityAssigner()
     {
         // Save current and then unload
-        Editor.Save();
-        Editor.Universe.UnloadAll();
+        View.Editor.Save();
+        View.Universe.UnloadAll();
 
         if (SelectedMapFilter == "All")
         {
@@ -91,10 +91,10 @@ public class MapActionHandler
 
     public void ApplyEntityGroupIdChange(string mapid)
     {
-        var filepath = Path.Join(Editor.Project.Descriptor.ProjectPath, "map", "MapStudio", $"{mapid}.msb.dcx");
+        var filepath = Path.Join(View.Project.Descriptor.ProjectPath, "map", "MapStudio", $"{mapid}.msb.dcx");
 
         // Armored Core
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
+        if (View.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             MSB_AC6 map = MSB_AC6.Read(filepath);
 
@@ -154,7 +154,7 @@ public class MapActionHandler
         }
 
         // Elden Ring
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
+        if (View.Project.Descriptor.ProjectType == ProjectType.ER)
         {
             MSBE map = MSBE.Read(filepath);
 
@@ -214,7 +214,7 @@ public class MapActionHandler
         }
 
         // Sekiro
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.SDT)
+        if (View.Project.Descriptor.ProjectType == ProjectType.SDT)
         {
             MSBS map = MSBS.Read(filepath);
 
@@ -274,7 +274,7 @@ public class MapActionHandler
         }
 
         // DS3
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.DS3)
+        if (View.Project.Descriptor.ProjectType == ProjectType.DS3)
         {
             MSB3 map = MSB3.Read(filepath);
 

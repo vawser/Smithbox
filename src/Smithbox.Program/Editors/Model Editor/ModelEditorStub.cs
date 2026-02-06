@@ -70,11 +70,6 @@ public class ModelEditorStub : IEditorStub
         }
         else
         {
-            if (Project.Handler.ModelEditor != null)
-            {
-                Project.Handler.ModelEditor.OnDefocus();
-            }
-
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
             ImGui.End();

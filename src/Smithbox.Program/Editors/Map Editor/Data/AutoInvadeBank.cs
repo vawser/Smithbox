@@ -12,14 +12,14 @@ namespace StudioCore.Editors.MapEditor;
 
 public class AutoInvadeBank
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, AIP> Files = new();
 
-    public AutoInvadeBank(MapEditorScreen editor, ProjectEntry project)
+    public AutoInvadeBank(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         Setup();
@@ -92,7 +92,7 @@ public class AutoInvadeBank
             }
         }
     }
-    public void SaveAIP(MapEditorScreen editor, MapContainer map)
+    public void SaveAIP(MapContainer map)
     {
         if (!CanUse())
             return;

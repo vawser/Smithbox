@@ -234,7 +234,7 @@ public static class MassEditPropertyHelper
     /// <summary>
     /// Handles the property value operation edits
     /// </summary>
-    public static ViewportAction PropertyValueOperation(MapEditorScreen editor, MsbMassEditLog currentResult, MapContainer map, MsbEntity curEnt, string cmd,
+    public static ViewportAction PropertyValueOperation(MapEditorView view, MsbMassEditLog currentResult, MapContainer map, MsbEntity curEnt, string cmd,
         bool enableRandomSpread, float minRandom, float maxRandom)
     {
         var input = cmd.Replace("prop:", "");

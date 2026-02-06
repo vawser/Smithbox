@@ -5,16 +5,16 @@ namespace StudioCore.Editors.MapEditor;
 
 public class ReorderContainerObjectsAction : ViewportAction
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
     private readonly List<ObjectContainer> Containers = new();
     private readonly bool SetSelection;
     private readonly List<Entity> SourceObjects = new();
     private readonly List<int> TargetIndices = new();
     private int[] UndoIndices;
 
-    public ReorderContainerObjectsAction(MapEditorScreen editor, List<Entity> src, List<int> targets, bool setSelection)
+    public ReorderContainerObjectsAction(MapEditorView view, List<Entity> src, List<int> targets, bool setSelection)
     {
-        Editor = editor;
+        View = view;
         SourceObjects.AddRange(src);
         TargetIndices.AddRange(targets);
         SetSelection = setSelection;
@@ -22,7 +22,7 @@ public class ReorderContainerObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         var sourceindices = new int[SourceObjects.Count];
         for (var i = 0; i < SourceObjects.Count; i++)
@@ -77,10 +77,10 @@ public class ReorderContainerObjectsAction : ViewportAction
         UndoIndices = sourceindices;
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.View.ViewportSelection.ClearSelection();
             foreach (Entity c in SourceObjects)
             {
-                universe.Selection.AddSelection(Editor, c);
+                universe.View.ViewportSelection.AddSelection(c);
             }
         }
 
@@ -89,7 +89,7 @@ public class ReorderContainerObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         for (var i = 0; i < TargetIndices.Count; i++)
         {
@@ -134,10 +134,10 @@ public class ReorderContainerObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection(Editor);
+            universe.View.ViewportSelection.ClearSelection();
             foreach (Entity c in SourceObjects)
             {
-                universe.Selection.AddSelection(Editor, c);
+                universe.View.ViewportSelection.AddSelection(c);
             }
         }
 

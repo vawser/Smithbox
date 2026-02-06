@@ -4,23 +4,20 @@ using StudioCore.Application;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace StudioCore.Editors.MapEditor;
 
 public class LightProbeBank
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, BTPB> Files = new();
 
-    public LightProbeBank(MapEditorScreen editor, ProjectEntry project)
+    public LightProbeBank(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         Setup();
@@ -79,7 +76,7 @@ public class LightProbeBank
         }
     }
 
-    public void SaveBTPB(MapEditorScreen editor, MapContainer map)
+    public void SaveBTPB(MapContainer map)
     {
         if (!CanUse())
             return;

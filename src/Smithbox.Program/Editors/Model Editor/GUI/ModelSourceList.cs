@@ -1,5 +1,4 @@
 ﻿using Hexa.NET.ImGui;
-using Octokit;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
@@ -12,9 +11,9 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// Select the flver container (or the flver directly for some projects)
 /// </summary>
-public class ModelSourceView
+public class ModelSourceList
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
     private string ImguiID = "ModelSourceListView";
@@ -26,89 +25,79 @@ public class ModelSourceView
 
     private bool _updateModelSourceList = true;
 
-    public ModelSourceView(ModelEditorScreen editor, ProjectEntry project)
+    public ModelSourceList(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
-    public void OnGui()
+    public void Display(float width, float height)
     {
-        var scale = DPI.UIScale();
+        UIHelper.SimpleHeader("Containers", "");
 
-        if (CFG.Current.Interface_ModelEditor_ModelSourceList)
+        DisplayMenubar();
+
+        ImGui.BeginChild("ContainerList", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
+
+        ImGui.BeginTabBar("sourceTabs");
+
+        if (ImGui.BeginTabItem("Characters"))
         {
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+            DisplaySearchbar(ModelListType.Character);
 
-            if (ImGui.Begin($@"Model Sources##modelSourceList", ImGuiWindowFlags.MenuBar))
-            {
-                FocusManager.SetFocus(EditorFocusContext.ModelEditor_ContainerList);
+            ImGui.BeginChild($"characterSourceList");
 
-                DisplayMenubar();
+            DisplayModelSourceList(ModelListType.Character, Project.Locator.ChrFiles);
 
-                ImGui.BeginTabBar("sourceTabs");
-
-                if (ImGui.BeginTabItem("Characters"))
-                {
-                    DisplaySearchbar(ModelListType.Character);
-
-                    ImGui.BeginChild($"characterSourceList");
-
-                    DisplayModelSourceList(ModelListType.Character, Project.Locator.ChrFiles);
-
-                    ImGui.EndChild();
-                    ImGui.EndTabItem();
-                }
-
-                var name = "Objects";
-                if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-                {
-                    name = "Assets";
-                }
-
-                if (ImGui.BeginTabItem($"{name}"))
-                {
-                    DisplaySearchbar(ModelListType.Asset);
-
-                    ImGui.BeginChild($"assetSourceList");
-
-                    DisplayModelSourceList(ModelListType.Asset, Project.Locator.AssetFiles);
-
-                    ImGui.EndChild();
-                    ImGui.EndTabItem();
-                }
-
-                if (ImGui.BeginTabItem("Parts"))
-                {
-                    DisplaySearchbar(ModelListType.Part);
-
-                    ImGui.BeginChild($"partsSourceList");
-
-                    DisplayModelSourceList(ModelListType.Part, Project.Locator.PartFiles);
-
-                    ImGui.EndChild();
-                    ImGui.EndTabItem();
-                }
-
-                if (ImGui.BeginTabItem("Map Pieces"))
-                {
-                    DisplaySearchbar(ModelListType.MapPiece);
-
-                    ImGui.BeginChild($"mapPieceSourceList");
-
-                    DisplayModelSourceList(ModelListType.MapPiece, Project.Locator.MapPieceFiles);
-
-                    ImGui.EndChild();
-                    ImGui.EndTabItem();
-                }
-
-                ImGui.EndTabBar();
-            }
-
-            ImGui.End();
-            ImGui.PopStyleColor();
+            ImGui.EndChild();
+            ImGui.EndTabItem();
         }
+
+        var name = "Objects";
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        {
+            name = "Assets";
+        }
+
+        if (ImGui.BeginTabItem($"{name}"))
+        {
+            DisplaySearchbar(ModelListType.Asset);
+
+            ImGui.BeginChild($"assetSourceList");
+
+            DisplayModelSourceList(ModelListType.Asset, Project.Locator.AssetFiles);
+
+            ImGui.EndChild();
+            ImGui.EndTabItem();
+        }
+
+        if (ImGui.BeginTabItem("Parts"))
+        {
+            DisplaySearchbar(ModelListType.Part);
+
+            ImGui.BeginChild($"partsSourceList");
+
+            DisplayModelSourceList(ModelListType.Part, Project.Locator.PartFiles);
+
+            ImGui.EndChild();
+            ImGui.EndTabItem();
+        }
+
+        if (ImGui.BeginTabItem("Map Pieces"))
+        {
+            DisplaySearchbar(ModelListType.MapPiece);
+
+            ImGui.BeginChild($"mapPieceSourceList");
+
+            DisplayModelSourceList(ModelListType.MapPiece, Project.Locator.MapPieceFiles);
+
+            ImGui.EndChild();
+            ImGui.EndTabItem();
+        }
+
+        ImGui.EndTabBar();
+
+        ImGui.EndChild();
     }
 
     public void DisplayMenubar()
@@ -218,9 +207,9 @@ public class ModelSourceView
                 var fileEntry = filteredEntries[i];
 
                 bool selected = false;
-                if (Editor.Selection.SelectedModelContainerWrapper != null)
+                if (View.Selection.SelectedModelContainerWrapper != null)
                 {
-                    if (fileEntry.Filename == Editor.Selection.SelectedModelContainerWrapper.Name)
+                    if (fileEntry.Filename == View.Selection.SelectedModelContainerWrapper.Name)
                     {
                         selected = true;
                     }
@@ -238,12 +227,12 @@ public class ModelSourceView
                         var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
                         if (entry.Value != null)
                         {
-                            Editor.Selection.SelectedModelContainerWrapper = entry.Value;
+                            View.Selection.SelectedModelContainerWrapper = entry.Value;
 
                             // Populates the Files list so we can display the list in select view
                             entry.Value.PopulateModelList();
 
-                            Editor.ModelSelectView.ApplyAutoSelectPass = true;
+                            View.SelectionList.ApplyAutoSelectPass = true;
                         }
                     }
                 }
@@ -270,12 +259,12 @@ public class ModelSourceView
                 var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
                 if (entry.Value != null)
                 {
-                    Editor.Selection.SelectedModelContainerWrapper = entry.Value;
+                    View.Selection.SelectedModelContainerWrapper = entry.Value;
 
                     // Populates the Files list so we can display the list in select view
                     entry.Value.PopulateModelList();
 
-                    Editor.ModelSelectView.ApplyAutoSelectPass = true;
+                    View.SelectionList.ApplyAutoSelectPass = true;
                 }
             }
 

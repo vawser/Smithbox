@@ -9,12 +9,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class DeleteAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public DeleteAction(MapEditorScreen editor, ProjectEntry project)
+    public DeleteAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -23,7 +23,7 @@ public class DeleteAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Delete))
             {
@@ -71,11 +71,12 @@ public class DeleteAction
     /// </summary>
     public void ApplyDelete()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            DeleteMapObjectsAction action = new(Editor,
-            Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), true);
-            Editor.EditorActionManager.ExecuteAction(action);
+            DeleteMapObjectsAction action = new(View,
+            View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), true);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
         else
         {

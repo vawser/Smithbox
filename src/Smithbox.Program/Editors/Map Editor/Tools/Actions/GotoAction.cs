@@ -7,12 +7,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class GotoAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public GotoAction(MapEditorScreen editor, ProjectEntry project)
+    public GotoAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -21,7 +21,7 @@ public class GotoAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Jump))
             {
@@ -64,9 +64,9 @@ public class GotoAction
     /// </summary>
     public void GotoMapObjectEntry()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            Editor.ViewportSelection.GotoTreeTarget = Editor.ViewportSelection.GetSingleSelection();
+            View.ViewportSelection.GotoTreeTarget = View.ViewportSelection.GetSingleSelection();
         }
         else
         {

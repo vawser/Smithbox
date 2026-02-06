@@ -82,20 +82,25 @@ public class SoapstoneService : SoapstoneServiceV1
 
                 if (curProject.Handler.MapEditor != null)
                 {
-                    if (curProject.Handler.MapEditor.Selection.IsAnyMapLoaded())
+                    var activeView = curProject.Handler.MapEditor.ViewHandler.ActiveView;
+
+                    if (activeView != null)
                     {
-                        foreach(var entry in curProject.Handler.MapData.PrimaryBank.Maps)
+                        if (activeView.Selection.IsAnyMapLoaded())
                         {
-                            if (entry.Value.MapContainer != null)
+                            foreach (var entry in curProject.Handler.MapData.PrimaryBank.Maps)
                             {
-                                EditorResource mapResource = new()
+                                if (entry.Value.MapContainer != null)
                                 {
-                                    Type = EditorResourceType.Map,
-                                    ProjectJsonPath = projectResource.ProjectJsonPath,
-                                    Game = projectResource.Game,
-                                    Name = entry.Key.Filename
-                                };
-                                response.Resources.Add(mapResource);
+                                    EditorResource mapResource = new()
+                                    {
+                                        Type = EditorResourceType.Map,
+                                        ProjectJsonPath = projectResource.ProjectJsonPath,
+                                        Game = projectResource.Game,
+                                        Name = entry.Key.Filename
+                                    };
+                                    response.Resources.Add(mapResource);
+                                }
                             }
                         }
                     }
@@ -374,37 +379,42 @@ public class SoapstoneService : SoapstoneServiceV1
 
         if (curProject.Handler.MapEditor != null)
         {
-            if (resource.Type == EditorResourceType.Map)
+            var activeView = curProject.Handler.MapEditor.ViewHandler.ActiveView;
+
+            if (activeView != null)
             {
-                foreach (SoulsKey getKey in keys)
+                if (resource.Type == EditorResourceType.Map)
                 {
-                    if (getKey.File is not SoulsKey.MsbKey fileKey ||
-                        curProject.Handler.MapEditor.Selection.GetMapContainerFromMapID(fileKey.Map) == null || !MatchesResource(resource, fileKey.Map))
+                    foreach (SoulsKey getKey in keys)
                     {
-                        continue;
-                    }
-
-                    var targetContainer = curProject.Handler.MapEditor.Selection.GetMapContainerFromMapID(fileKey.Map);
-
-                    if (getKey is SoulsKey.MsbKey msbKey)
-                    {
-                        SoulsObject obj = new(msbKey);
-                        obj.AddRequestedProperties(properties, key => AccessMapFile(fileKey, key));
-                        results.Add(obj);
-                    }
-                    else if (getKey is SoulsKey.MsbEntryKey msbEntryKey && targetContainer != null)
-                    {
-                        foreach (Entity ob in targetContainer.GetObjectsByName(msbEntryKey.Name))
+                        if (getKey.File is not SoulsKey.MsbKey fileKey ||
+                            activeView.Selection.GetMapContainerFromMapID(fileKey.Map) == null || !MatchesResource(resource, fileKey.Map))
                         {
-                            if (ob is not MsbEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns) ||
-                                ns != msbEntryKey.Namespace)
-                            {
-                                continue;
-                            }
+                            continue;
+                        }
 
-                            SoulsObject obj = new(msbEntryKey);
-                            obj.AddRequestedProperties(properties, key => AccessMapProperty(e, key));
+                        var targetContainer = activeView.Selection.GetMapContainerFromMapID(fileKey.Map);
+
+                        if (getKey is SoulsKey.MsbKey msbKey)
+                        {
+                            SoulsObject obj = new(msbKey);
+                            obj.AddRequestedProperties(properties, key => AccessMapFile(fileKey, key));
                             results.Add(obj);
+                        }
+                        else if (getKey is SoulsKey.MsbEntryKey msbEntryKey && targetContainer != null)
+                        {
+                            foreach (Entity ob in targetContainer.GetObjectsByName(msbEntryKey.Name))
+                            {
+                                if (ob is not MsbEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns) ||
+                                    ns != msbEntryKey.Namespace)
+                                {
+                                    continue;
+                                }
+
+                                SoulsObject obj = new(msbEntryKey);
+                                obj.AddRequestedProperties(properties, key => AccessMapProperty(e, key));
+                                results.Add(obj);
+                            }
                         }
                     }
                 }

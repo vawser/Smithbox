@@ -1,4 +1,5 @@
-﻿using StudioCore.Utilities;
+﻿using StudioCore.Editors.Viewport;
+using StudioCore.Utilities;
 using System;
 using System.Drawing;
 using System.Numerics;
@@ -92,6 +93,6 @@ public class DbgPrimWireSphere : DbgPrimWire
     {
         var radius = Vector3.TransformNormal(Vector3.UnitX, transform).Length();
         Vector3 pos = Vector3.Transform(Vector3.Zero, transform);
-        return Utils.RaySphereIntersection(ref ray, pos, radius, out dist);
+        return ViewportUtils.RaySphereIntersection(ref ray, pos, radius, out dist);
     }
 }

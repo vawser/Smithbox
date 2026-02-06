@@ -13,12 +13,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class RotateAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public RotateAction(MapEditorScreen editor, ProjectEntry project)
+    public RotateAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -300,7 +300,7 @@ public class RotateAction
     /// </summary>
     public void ApplyRotation()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (CFG.Current.Toolbar_Rotate_X)
             {
@@ -327,7 +327,7 @@ public class RotateAction
     public void ArbitraryRotation_Selection(Vector3 axis, bool pivot)
     {
         List<ViewportAction> actlist = new();
-        HashSet<Entity> sels = Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
+        HashSet<Entity> sels = View.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
         // Get the center position of the selections
         Vector3 accumPos = Vector3.Zero;
@@ -351,7 +351,7 @@ public class RotateAction
 
             if (axis.X != 0)
             {
-                radianRotateAmount = Editor.RotationIncrementTool.GetRadianRotateAmount();
+                radianRotateAmount = View.RotationIncrementTool.GetRadianRotateAmount();
                 // Makes radian rotate amount negative if axis X argument is negative
                 radianRotateAmount = (axis.X < 0) ? -radianRotateAmount : radianRotateAmount;
                 rot_x = objT.EulerRotation.X + radianRotateAmount;
@@ -359,7 +359,7 @@ public class RotateAction
 
             if (axis.Y != 0)
             {
-                radianRotateAmount = Editor.RotationIncrementTool.GetRadianRotateAmount();
+                radianRotateAmount = View.RotationIncrementTool.GetRadianRotateAmount();
                 // Makes radian rotate amount negative if axis Y argument is negative
                 radianRotateAmount = (axis.Y < 0) ? -radianRotateAmount : radianRotateAmount;
                 rot_y = objT.EulerRotation.Y + radianRotateAmount;
@@ -382,7 +382,8 @@ public class RotateAction
         if (actlist.Any())
         {
             ViewportCompoundAction action = new(actlist);
-            Editor.EditorActionManager.ExecuteAction(action);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
     }
 
@@ -390,7 +391,7 @@ public class RotateAction
     {
         List<ViewportAction> actlist = new();
 
-        HashSet<Entity> selected = Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
+        HashSet<Entity> selected = View.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
         foreach (Entity s in selected)
         {
             Vector3 pos = s.GetLocalTransform().Position;
@@ -402,7 +403,8 @@ public class RotateAction
         if (actlist.Any())
         {
             ViewportCompoundAction action = new(actlist);
-            Editor.EditorActionManager.ExecuteAction(action);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
     }
 }

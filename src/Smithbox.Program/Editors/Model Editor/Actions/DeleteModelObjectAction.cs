@@ -8,20 +8,20 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class DeleteModelObjectAction : ViewportAction
 {
-    private readonly ModelEditorScreen Editor;
-    private readonly ProjectEntry Project;
+    private ModelEditorView View;
+    private ProjectEntry Project;
 
-    private readonly ModelContainer Container;
-    private readonly List<ModelEntity> Deletables = new();
+    private ModelContainer Container;
+    private List<ModelEntity> Deletables = new();
 
-    private readonly List<int> RemoveIndices = new();
-    private readonly List<ObjectContainer> RemoveContainers = new();
-    private readonly List<ModelEntity> RemoveParent = new();
-    private readonly List<int> RemoveParentIndex = new();
+    private List<int> RemoveIndices = new();
+    private List<ObjectContainer> RemoveContainers = new();
+    private List<ModelEntity> RemoveParent = new();
+    private List<int> RemoveParentIndex = new();
 
-    public DeleteModelObjectAction(ModelEditorScreen editor, ProjectEntry project, ModelContainer container, List<ModelEntity> objects)
+    public DeleteModelObjectAction(ModelEditorView view, ProjectEntry project, ModelContainer container, List<ModelEntity> objects)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         Container = container;
@@ -66,7 +66,7 @@ public class DeleteModelObjectAction : ViewportAction
             }
         }
 
-        Editor.ViewportSelection.ClearSelection(Editor);
+        View.ViewportSelection.ClearSelection();
 
         return ActionEvent.ObjectAddedRemoved;
     }
@@ -93,11 +93,11 @@ public class DeleteModelObjectAction : ViewportAction
             }
         }
 
-        Editor.ViewportSelection.ClearSelection(Editor);
+        View.ViewportSelection.ClearSelection();
 
         foreach (ModelEntity d in Deletables)
         {
-            Editor.ViewportSelection.AddSelection(Editor, d);
+            View.ViewportSelection.AddSelection(d);
         }
 
         return ActionEvent.ObjectAddedRemoved;

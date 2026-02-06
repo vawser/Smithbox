@@ -10,12 +10,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class ReorderAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public ReorderAction(MapEditorScreen editor, ProjectEntry project)
+    public ReorderAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -24,7 +24,7 @@ public class ReorderAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Reorder_Up))
             {
@@ -128,10 +128,11 @@ public class ReorderAction
     /// </summary>
     public void ApplyReorder(TreeObjectOrderMovementType direction)
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            OrderMapObjectsAction action = new(Editor, Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), direction);
-            Editor.EditorActionManager.ExecuteAction(action);
+            OrderMapObjectsAction action = new(View, View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), direction);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
         else
         {

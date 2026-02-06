@@ -72,7 +72,7 @@ public static class KeybindMetadata
 
         // Common
         { KeybindID.Save, (
-            "Up",
+            "Save",
             "This will save within the currently focused editor."
         ) },
         { KeybindID.Undo, (
@@ -80,7 +80,7 @@ public static class KeybindMetadata
             "This will undo the most recent action."
         ) },
         { KeybindID.Redo, (
-            "Up",
+            "Redo",
             "This will redo the most recently undone action."
         ) },
         { KeybindID.Undo_Repeat, (

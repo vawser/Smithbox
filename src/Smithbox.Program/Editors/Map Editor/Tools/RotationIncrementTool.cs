@@ -7,12 +7,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class RotationIncrementTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public RotationIncrementTool(MapEditorScreen editor, ProjectEntry project)
+    public RotationIncrementTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -44,14 +44,14 @@ public class RotationIncrementTool
         {
             UIHelper.SimpleHeader("Current Rotation Increment", "Current Rotation Increment", $"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Rotation_Increment_Cycle_Type)}", UI.Current.ImGui_Default_Text_Color);
 
-            Editor.RotationIncrementTool.DisplayCurrentRotateIncrement();
+            View.RotationIncrementTool.DisplayCurrentRotateIncrement();
 
             ImGui.Checkbox("Display rotation increment in viewport", ref CFG.Current.Viewport_DisplayRotationIncrement);
             UIHelper.Tooltip("Display the current degree increment type you are using in the information panel.");
 
             if (ImGui.Button("Cycle Increment", DPI.WholeWidthButton(windowWidth, 24)))
             {
-                Editor.RotationIncrementTool.CycleIncrementType();
+                View.RotationIncrementTool.CycleIncrementType();
             }
             UIHelper.Tooltip($"Press {InputManager.GetHint(KeybindID.MapEditor_Rotation_Increment_Cycle_Type)} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
 

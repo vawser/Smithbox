@@ -6,7 +6,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public static class PropInfo_Part_ConnectCollision
 {
-    public static void Display(MapEditorScreen editor, Entity firstEnt)
+    public static void Display(MapEditorView view, Entity firstEnt)
     {
         if (firstEnt.IsPartConnectCollision())
         {
@@ -50,7 +50,7 @@ public static class PropInfo_Part_ConnectCollision
             ImGui.Separator();
 
             ImGui.Text(mapString);
-            UIHelper.DisplayAlias(AliasHelper.GetMapNameAlias(editor.Project, mapString));
+            UIHelper.DisplayAlias(AliasHelper.GetMapNameAlias(view.Project, mapString));
             ImGui.Text("");
         }
     }

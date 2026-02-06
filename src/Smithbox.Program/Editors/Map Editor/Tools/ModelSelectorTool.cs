@@ -12,7 +12,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 public class ModelSelectorTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     private string _searchInput = "";
@@ -20,9 +20,9 @@ public class ModelSelectorTool
 
     private bool SelectNextEntry = false;
 
-    public ModelSelectorTool(MapEditorScreen editor, ProjectEntry project)
+    public ModelSelectorTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -39,7 +39,7 @@ public class ModelSelectorTool
             ImGui.Checkbox("Update Name on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_Name);
             UIHelper.Tooltip("When a map object is switched to a new form, update the name to match the new form.");
 
-            if (Editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6)
+            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
                 ImGui.SameLine();
 
@@ -47,7 +47,7 @@ public class ModelSelectorTool
                 UIHelper.Tooltip("When a map object is switched to a new form, update the Instance ID to account for the new form.");
             }
 
-            var curSelection = Editor.ViewportSelection.GetSelection();
+            var curSelection = View.ViewportSelection.GetSelection();
 
             if (curSelection.Count > 0)
             {
@@ -80,7 +80,7 @@ public class ModelSelectorTool
     private void DisplayCharacterList()
     {
         // TODO: this needs to draw from a scanned list of characters, not the alias list
-        if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases))
+        if (View.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases))
         {
             var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
@@ -130,7 +130,7 @@ public class ModelSelectorTool
     private void DisplayAssetList()
     {
         // TODO: this needs to draw from a scanned list of assets, not the alias list
-        if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
+        if (View.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
         {
             var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
@@ -179,10 +179,10 @@ public class ModelSelectorTool
 
     private void DisplayMapPieceList()
     {
-        var maps = MsbUtils.GetFullMapList(Editor.Project);
+        var maps = MsbUtils.GetFullMapList(View.Project);
 
         // TODO: this needs to draw from a scanned list of map pieces, not the alias list
-        if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
+        if (View.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
         {
             var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
@@ -193,7 +193,7 @@ public class ModelSelectorTool
 
             foreach (var map in maps)
             {
-                var displayedMapName = $"{map} - {AliasHelper.GetMapNameAlias(Editor.Project, map)}";
+                var displayedMapName = $"{map} - {AliasHelper.GetMapNameAlias(View.Project, map)}";
 
                 UIHelper.SimpleHeader($"{map}_header", $"{displayedMapName}", "", UI.Current.ImGui_Default_Text_Color);
 
@@ -201,7 +201,7 @@ public class ModelSelectorTool
                 var modelName = map.Replace($"{map}_", "m");
                 displayedName = $"{modelName}";
 
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.DS1 || Editor.Project.Descriptor.ProjectType == ProjectType.DS1R)
+                if (View.Project.Descriptor.ProjectType == ProjectType.DS1 || View.Project.Descriptor.ProjectType == ProjectType.DS1R)
                 {
                     displayedName = displayedName.Replace($"A{map.Substring(1, 2)}", "");
                 }
@@ -306,7 +306,7 @@ public class ModelSelectorTool
     {
         var actlist = new List<ViewportAction>();
 
-        var selected = Editor.ViewportSelection.GetFilteredSelection<Entity>();
+        var selected = View.ViewportSelection.GetFilteredSelection<Entity>();
 
         foreach (var s in selected)
         {
@@ -314,7 +314,7 @@ public class ModelSelectorTool
 
             if (assetType == FileSelectionType.Character)
             {
-                switch (Editor.Project.Descriptor.ProjectType)
+                switch (View.Project.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Enemy)
@@ -358,7 +358,7 @@ public class ModelSelectorTool
             }
             if (assetType == FileSelectionType.Asset)
             {
-                switch (Editor.Project.Descriptor.ProjectType)
+                switch (View.Project.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Object)
@@ -404,7 +404,7 @@ public class ModelSelectorTool
             }
             if (assetType == FileSelectionType.MapPiece)
             {
-                switch (Editor.Project.Descriptor.ProjectType)
+                switch (View.Project.Descriptor.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.MapPiece)
@@ -499,7 +499,8 @@ public class ModelSelectorTool
         if (actlist.Any())
         {
             var action = new ViewportCompoundAction(actlist);
-            Editor.EditorActionManager.ExecuteAction(action);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
     }
 
@@ -514,7 +515,7 @@ public class ModelSelectorTool
     private ViewportAction UpdateInstanceID(string modelName, MsbEntity ent)
     {
         MapContainer m;
-        m = Editor.Selection.GetMapContainerFromMapID(ent.MapID);
+        m = View.Selection.GetMapContainerFromMapID(ent.MapID);
 
         Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
@@ -583,7 +584,7 @@ public class ModelSelectorTool
         var names = new List<string>();
 
         // Collect names
-        foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer == null)
             {
