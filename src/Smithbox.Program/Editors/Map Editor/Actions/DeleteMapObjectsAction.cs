@@ -16,7 +16,6 @@ public class DeleteMapObjectsAction : ViewportAction
     private readonly List<MsbEntity> RemoveParent = new();
     private readonly List<int> RemoveParentIndex = new();
     private readonly bool SetSelection;
-    private RenderScene Scene;
 
     public DeleteMapObjectsAction(MapEditorView view, List<MsbEntity> objects, bool setSelection)
     {
@@ -65,7 +64,7 @@ public class DeleteMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection();
+            universe.View.ViewportSelection.ClearSelection();
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -97,10 +96,10 @@ public class DeleteMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection();
+            universe.View.ViewportSelection.ClearSelection();
             foreach (MsbEntity d in Deletables)
             {
-                universe.Selection.AddSelection(d);
+                universe.View.ViewportSelection.AddSelection(d);
             }
         }
 

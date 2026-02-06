@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Crypto;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
@@ -1951,7 +1952,7 @@ public class MsbEntity : Entity
                     _renderSceneMesh.Dispose();
                 }
 
-                _renderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(universe.RenderScene, ContainingMap, this);
+                _renderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(universe.GetCurrentScene(), ContainingMap, this);
             }
             else if (Type == MsbEntityType.Region && _renderSceneMesh == null)
             {
@@ -1960,7 +1961,7 @@ public class MsbEntity : Entity
                     _renderSceneMesh.Dispose();
                 }
 
-                _renderSceneMesh = DrawableHelper.GetRegionDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
+                _renderSceneMesh = DrawableHelper.GetRegionDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
             }
             else if (Type == MsbEntityType.Light && _renderSceneMesh == null)
             {
@@ -1969,7 +1970,7 @@ public class MsbEntity : Entity
                     _renderSceneMesh.Dispose();
                 }
 
-                _renderSceneMesh = DrawableHelper.GetLightDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
+                _renderSceneMesh = DrawableHelper.GetLightDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
             }
             else if (Type == MsbEntityType.AutoInvadePoint && _renderSceneMesh == null)
             {
@@ -1978,7 +1979,7 @@ public class MsbEntity : Entity
                     _renderSceneMesh.Dispose();
                 }
 
-                _renderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
+                _renderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
             }
             else
             {
@@ -2016,10 +2017,10 @@ public class MsbEntity : Entity
                         // Get model
                         if (model != null)
                         {
-                            _renderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.RenderScene, ContainingMap, this, model, true, ModelMasks);
+                            _renderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.GetCurrentScene(), ContainingMap, this, model, true, ModelMasks);
                         }
 
-                        if (universe.Selection.IsSelected(this))
+                        if (universe.View.ViewportSelection.IsSelected(this))
                         {
                             OnSelected();
                         }
@@ -2050,10 +2051,10 @@ public class MsbEntity : Entity
             // Get model
             if (CurrentModelName != null)
             {
-                _renderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.RenderScene, ContainingMap, this, CurrentModelName, true, ModelMasks, true);
+                _renderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.GetCurrentScene(), ContainingMap, this, CurrentModelName, true, ModelMasks, true);
             }
 
-            if (universe.Selection.IsSelected(this))
+            if (universe.View.ViewportSelection.IsSelected(this))
             {
                 OnSelected();
             }
@@ -2270,7 +2271,7 @@ public class PlacementEntity : Entity
 
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
-                _renderSceneMesh = DrawableHelper.GetPlacementOrbDrawable(universe.RenderScene, this);
+                _renderSceneMesh = DrawableHelper.GetPlacementOrbDrawable(universe.GetCurrentScene(), this);
             }
         }
     }

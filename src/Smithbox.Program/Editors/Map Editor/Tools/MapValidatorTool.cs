@@ -209,7 +209,7 @@ public class MapValidatorTool
     private void FocusEntry(MapValidationEntry entry)
     {
         View.ViewportSelection.ClearSelection();
-        View.ViewportWindow.Viewport.FramePosition(entry.AssociatedEntity.GetLocalTransform().Position, 10f);
+        View.ViewportHandler.ActiveViewport.Viewport.FramePosition(entry.AssociatedEntity.GetLocalTransform().Position, 10f);
         View.ViewportSelection.AddSelection(entry.AssociatedEntity);
     }
 

@@ -1,8 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ModelEditor;
+using StudioCore.Renderer;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -17,14 +16,14 @@ public class NullViewport : IViewport
 {
     public IUniverse Owner;
 
-    private readonly string _vpid = "";
-
     public int X;
     public int Y;
 
-    public NullViewport(IUniverse owner, string id, int width, int height)
+    public string ID { get; set; }
+
+    public NullViewport(IUniverse owner, string id, int width, int height, RenderScene scene)
     {
-        _vpid = id;
+        ID = id;
 
         Owner = owner;
 
@@ -45,7 +44,7 @@ public class NullViewport : IViewport
 
     public void Display()
     {
-        if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
+        if (ImGui.Begin($@"Viewport##{ID}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
         {
             Vector2 p = ImGui.GetWindowPos();
             Vector2 s = ImGui.GetWindowSize();

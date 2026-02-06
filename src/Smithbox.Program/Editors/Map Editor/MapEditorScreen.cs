@@ -81,7 +81,12 @@ public class MapEditorScreen : EditorScreen
         {
             ToolWindow.OnGui();
 
-            LoadingModal.DisplayWindow(activeView.ViewportWindow.Viewport.Width, activeView.ViewportWindow.Viewport.Height);
+            var curViewport = activeView.ViewportHandler.ActiveViewport;
+
+            if (curViewport.Viewport != null)
+            {
+                LoadingModal.DisplayWindow(curViewport.Viewport.Width, curViewport.Viewport.Height);
+            }
 
             if (CFG.Current.Interface_MapEditor_ResourceList)
             {
@@ -324,6 +329,15 @@ public class MapEditorScreen : EditorScreen
 
             ViewHandler.DisplayMenu();
 
+            ImGui.Separator();
+
+            var activeView = ViewHandler.ActiveView;
+
+            if(activeView != null)
+            {
+                activeView.ViewportHandler.DisplayMenu();
+            }
+
             ImGui.EndMenu();
         }
     }
@@ -335,8 +349,8 @@ public class MapEditorScreen : EditorScreen
         if (activeView == null)
             return;
 
-        var validViewportState = activeView.RenderScene != null &&
-             activeView.ViewportWindow.Viewport != null;
+        var validViewportState = activeView.ViewportHandler.ActiveViewport.RenderScene != null &&
+             activeView.ViewportHandler.ActiveViewport.Viewport != null;
 
         // General Filters
         if (ImGui.BeginMenu("General Filters", validViewportState))
@@ -349,32 +363,32 @@ public class MapEditorScreen : EditorScreen
             {
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_1.Name))
                 {
-                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_2.Name))
                 {
-                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_3.Name))
                 {
-                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_4.Name))
                 {
-                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_5.Name))
                 {
-                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_6.Name))
                 {
-                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
                 }
 
                 ImGui.EndMenu();
@@ -399,8 +413,8 @@ public class MapEditorScreen : EditorScreen
         if (activeView == null)
             return;
 
-        var validViewportState = activeView.RenderScene != null &&
-            activeView.ViewportWindow.Viewport != null;
+        var validViewportState = activeView.ViewportHandler.ActiveViewport.RenderScene != null &&
+            activeView.ViewportHandler.ActiveViewport.Viewport != null;
 
         if (ImGui.BeginMenu("Collision Type", validViewportState))
         {
@@ -450,11 +464,14 @@ public class MapEditorScreen : EditorScreen
                 if (view == null)
                     continue;
 
-                if (view.ViewportWindow.Viewport is VulkanViewport vulkanViewport)
+                foreach(var viewport in view.ViewportHandler.Viewports)
                 {
-                    if (vulkanViewport.Visible)
+                    if (viewport.Viewport is VulkanViewport vulkanViewport)
                     {
-                        view.ViewportWindow.Draw(device, cl);
+                        if (vulkanViewport.Visible)
+                        {
+                            vulkanViewport.Draw(device, cl);
+                        }
                     }
                 }
             }

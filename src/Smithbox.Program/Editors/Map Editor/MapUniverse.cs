@@ -28,11 +28,6 @@ public class MapUniverse : IUniverse
     public ProjectEntry Project;
 
     /// <summary>
-    /// The rendering scene context
-    /// </summary>
-    public RenderScene RenderScene;
-
-    /// <summary>
     /// Holds exception dispatches that can occur during map loading
     /// </summary>
     public ExceptionDispatchInfo LoadMapExceptions = null;
@@ -43,11 +38,6 @@ public class MapUniverse : IUniverse
     public bool HasProcessedMapLoad;
 
     /// <summary>
-    /// The entity selection context
-    /// </summary>
-    public ViewportSelection Selection { get; }
-
-    /// <summary>
     /// Task list for the async map loads
     /// </summary>
     private List<Task> Tasks = new();
@@ -56,19 +46,13 @@ public class MapUniverse : IUniverse
     {
         View = view;
         Project = project;
-
-        RenderScene = view.RenderScene;
-        Selection = view.ViewportSelection;
-
-        if (RenderScene == null)
-        {
-            CFG.Current.Viewport_Enable_Rendering = false;
-        }
-        else
-        {
-            CFG.Current.Viewport_Enable_Rendering = true;
-        }
     }
+
+    public RenderScene GetCurrentScene()
+    {
+        return View.ViewportHandler.ActiveViewport.RenderScene;
+    }
+
     public bool LoadMap(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
         if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
@@ -222,8 +206,8 @@ public class MapUniverse : IUniverse
                     // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
                     if (selectOnLoad)
                     {
-                        Selection.ClearSelection();
-                        Selection.AddSelection(newMap.RootObject);
+                        View.ViewportSelection.ClearSelection();
+                        View.ViewportSelection.AddSelection(newMap.RootObject);
                     }
                 }
 
@@ -592,7 +576,7 @@ public class MapUniverse : IUniverse
                 {
                     ResourceDescriptor asset = ModelLocator.GetChrModel(View.Project, $@"c{chrid}", $@"c{chrid}");
                     MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                        RenderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, null);
+                        View.ViewportHandler.ActiveViewport.RenderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, null);
                     model.DrawFilter = RenderFilter.Character;
                     generatorObjs[row.ID].RenderSceneMesh = model;
                     model.SetSelectable(generatorObjs[row.ID]);
@@ -645,7 +629,7 @@ public class MapUniverse : IUniverse
             map.MapOffsetNode.AddChild(obj);
 
             // Try rendering as a box for now
-            DebugPrimitiveRenderableProxy mesh = RenderableHelper.GetBoxRegionProxy(RenderScene);
+            DebugPrimitiveRenderableProxy mesh = RenderableHelper.GetBoxRegionProxy(View.ViewportHandler.ActiveViewport.RenderScene);
             mesh.World = obj.GetLocalTransform().WorldMatrix;
             obj.RenderSceneMesh = mesh;
             mesh.DrawFilter = RenderFilter.Region;

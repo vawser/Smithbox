@@ -123,7 +123,7 @@ public class FrameAction
 
             if (first)
             {
-                View.ViewportWindow.Viewport.FrameBox(box, offset, distance);
+                View.ViewportHandler.ActiveViewport.Viewport.FrameBox(box, offset, distance);
             }
         }
         else
@@ -137,6 +137,6 @@ public class FrameAction
         var offset = CFG.Current.Viewport_Frame_Offset;
         var distance = CFG.Current.Viewport_Frame_Distance;
 
-        View.ViewportWindow.Viewport.FrameBox(box, offset, distance);
+        View.ViewportHandler.ActiveViewport.Viewport.FrameBox(box, offset, distance);
     }
 }

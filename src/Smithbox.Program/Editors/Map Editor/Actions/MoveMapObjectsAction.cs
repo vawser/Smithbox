@@ -142,10 +142,10 @@ public class MoveMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection();
+            universe.View.ViewportSelection.ClearSelection();
             foreach (MsbEntity m in Moveables)
             {
-                universe.Selection.AddSelection(m);
+                universe.View.ViewportSelection.AddSelection(m);
             }
         }
 
@@ -214,10 +214,10 @@ public class MoveMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection();
+            universe.View.ViewportSelection.ClearSelection();
             foreach (MsbEntity m in Moveables)
             {
-                universe.Selection.AddSelection(m);
+                universe.View.ViewportSelection.AddSelection(m);
             }
         }
 

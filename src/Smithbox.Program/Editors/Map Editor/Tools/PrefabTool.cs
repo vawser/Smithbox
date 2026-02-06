@@ -97,7 +97,7 @@ public class PrefabTool
         }
         else
         {
-            newPrefab.ExportSelection(Path.Join(prefabDir, $"{name}.json"), name, Prefab_EditFlags, View.Universe.Selection);
+            newPrefab.ExportSelection(Path.Join(prefabDir, $"{name}.json"), name, Prefab_EditFlags, View.ViewportSelection);
 
             Prefabs.Add(name, newPrefab);
             SelectedPrefab = newPrefab;
@@ -119,7 +119,7 @@ public class PrefabTool
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        bool selectedEntities = View.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
+        bool selectedEntities = View.ViewportSelection.GetFilteredSelection<MsbEntity>().Any();
 
         var isDisabled = !selectedEntities || !Prefab_EditName.Any();
 
@@ -178,7 +178,7 @@ public class PrefabTool
             var loadedPrefab = GetLoadedPrefab(SelectedPrefab.PrefabName);
 
             if (loadedPrefab != null)
-                loadedPrefab.ImportToMap(View, comboMap.map as MapContainer, View.RenderScene, View.ViewportActionManager, prefixName);
+                loadedPrefab.ImportToMap(View, comboMap.map as MapContainer, View.ViewportHandler.ActiveViewport.RenderScene, View.ViewportActionManager, prefixName);
         }
         UIHelper.Tooltip("Import the selected prefab into a loaded map.");
 
@@ -189,7 +189,7 @@ public class PrefabTool
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        bool selectedEntities = View.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
+        bool selectedEntities = View.ViewportSelection.GetFilteredSelection<MsbEntity>().Any();
 
         ImGui.BeginDisabled(SelectedPrefab is null || !selectedEntities);
 

@@ -252,7 +252,7 @@ public class MapContentView
 
         if (ImGui.IsMouseDoubleClicked(0) && _pendingClick != null && mapRoot == _pendingClick)
         {
-            View.ViewportWindow.Viewport.FramePosition(mapRoot.GetLocalTransform().Position, 10f);
+            View.ViewportHandler.ActiveViewport.Viewport.FramePosition(mapRoot.GetLocalTransform().Position, 10f);
         }
 
         if ((_pendingClick == mapRoot || mapRef.Equals(_pendingClick)) && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
@@ -613,7 +613,7 @@ public class MapContentView
             {
                 if (e.RenderSceneMesh != null)
                 {
-                    View.ViewportWindow.Viewport.FrameBox(e.RenderSceneMesh.GetBounds(), new Vector3());
+                    View.ViewportHandler.ActiveViewport.Viewport.FrameBox(e.RenderSceneMesh.GetBounds(), new Vector3());
                 }
             }
             if (ImGui.IsItemFocused())
@@ -665,7 +665,7 @@ public class MapContentView
                 {
                     if (e.RenderSceneMesh != null)
                     {
-                        View.ViewportWindow.Viewport.FrameBox(e.RenderSceneMesh.GetBounds(), new Vector3());
+                        View.ViewportHandler.ActiveViewport.Viewport.FrameBox(e.RenderSceneMesh.GetBounds(), new Vector3());
                     }
                 }
             }

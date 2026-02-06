@@ -15,7 +15,8 @@ public class MapEditorView
 
     public Sdl2Window Window;
     public GraphicsDevice Device;
-    public RenderScene RenderScene;
+
+    public MapViewportHandler ViewportHandler;
 
     public ViewportActionManager ViewportActionManager = new();
     public ActionManager ActionManager = new();
@@ -98,11 +99,13 @@ public class MapEditorView
 
         Window = Smithbox.Instance._context.Window;
         Device = Smithbox.Instance._context.Device;
-        RenderScene = new();
 
         ViewIndex = imguiId;
 
         Universe = new MapUniverse(this, project);
+
+        ViewportHandler = new(this);
+
         EntityTypeCache = new MapEntityTypeCache(this, project);
 
         HavokCollisionBank = new HavokCollisionBank(this, project);

@@ -102,7 +102,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSBD_Enemy.PointMoveType == 0;
                         bool moveRandomly = MSBD_Enemy.PointMoveType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(View.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -116,7 +116,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSB1_Enemy.PointMoveType == 0;
                         bool moveRandomly = MSB1_Enemy.PointMoveType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(View.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -132,7 +132,7 @@ public class PatrolDrawManager
                         // BB move type is probably in an unk somewhere.
                         bool endAtStart = false;
                         bool moveRandomly = false;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(View.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -159,7 +159,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSB3_Patrol.PatrolType == 0;
                         bool moveRandomly = MSB3_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(View.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -186,7 +186,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSBS_Patrol.PatrolType == 0;
                         bool moveRandomly = MSBS_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(View.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -213,7 +213,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSBE_Patrol.PatrolType == 0;
                         bool moveRandomly = MSBE_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(View.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -240,7 +240,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSBAC6_Patrol.PatrolType == 0;
                         bool moveRandomly = MSBAC6_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(View.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(View.ViewportHandler.ActiveViewport.RenderScene, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;

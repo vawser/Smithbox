@@ -209,10 +209,10 @@ public class CloneMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection();
+            universe.View.ViewportSelection.ClearSelection();
             foreach (MsbEntity c in Clones)
             {
-                universe.Selection.AddSelection(c);
+                universe.View.ViewportSelection.AddSelection(c);
             }
         }
 
@@ -241,10 +241,10 @@ public class CloneMapObjectsAction : ViewportAction
         // Clones.Clear();
         if (SetSelection)
         {
-            universe.Selection.ClearSelection();
+            universe.View.ViewportSelection.ClearSelection();
             foreach (MsbEntity c in Clonables)
             {
-                universe.Selection.AddSelection(c);
+                universe.View.ViewportSelection.AddSelection(c);
             }
         }
 

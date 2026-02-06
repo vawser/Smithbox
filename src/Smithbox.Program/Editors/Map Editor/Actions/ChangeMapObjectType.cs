@@ -110,10 +110,10 @@ public class ChangeMapObjectType : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection();
+            universe.View.ViewportSelection.ClearSelection();
             foreach (MsbEntity ent in Entities)
             {
-                universe.Selection.AddSelection(ent);
+                universe.View.ViewportSelection.AddSelection(ent);
             }
         }
 

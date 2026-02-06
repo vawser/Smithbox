@@ -105,9 +105,9 @@ public class MapCommandQueue
     {
         if (target != null)
         {
-            curView.Universe.Selection.ClearSelection();
-            curView.Universe.Selection.AddSelection(target);
-            curView.Universe.Selection.GotoTreeTarget = target;
+            curView.ViewportSelection.ClearSelection();
+            curView.ViewportSelection.AddSelection(target);
+            curView.ViewportSelection.GotoTreeTarget = target;
             curView.FrameAction.ApplyViewportFrame();
         }
     }

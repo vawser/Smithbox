@@ -30,11 +30,11 @@ public class ModelViewportWindow
         {
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
-                Viewport = new VulkanViewport(View.Universe, $"ModelViewport_{View.ViewIndex}", Rect.Width, Rect.Height);
+                Viewport = new VulkanViewport(View.Universe, $"ModelViewport_{View.ViewIndex}", Rect.Width, Rect.Height, view.RenderScene);
             }
             else
             {
-                Viewport = new NullViewport(View.Universe, $"ModelViewport_{View.ViewIndex}", Rect.Width, Rect.Height);
+                Viewport = new NullViewport(View.Universe, $"ModelViewport_{View.ViewIndex}", Rect.Width, Rect.Height, view.RenderScene);
             }
         }
 

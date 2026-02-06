@@ -212,7 +212,7 @@ public class Gizmos
 
         float dist;
         Vector3 relorigin = ray.Origin - t.Position;
-        if (Utils.RayPlaneIntersection(relorigin, ray.Direction, Vector3.Zero, planeNormal, out dist))
+        if (ViewportUtils.RayPlaneIntersection(relorigin, ray.Direction, Vector3.Zero, planeNormal, out dist))
         {
             return ray.Origin + ray.Direction * dist;
         }
@@ -238,7 +238,7 @@ public class Gizmos
 
         float dist;
         Vector3 relorigin = ray.Origin - t.Position;
-        if (Utils.RayPlaneIntersection(relorigin, ray.Direction, Vector3.Zero, planeNormal, out dist))
+        if (ViewportUtils.RayPlaneIntersection(relorigin, ray.Direction, Vector3.Zero, planeNormal, out dist))
         {
             return ray.Origin + ray.Direction * dist;
         }

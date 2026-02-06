@@ -229,7 +229,7 @@ public class MapResourceHandler
                     masks = msbEnt.GetModelMasks();
                 }
 
-                var renderScene = View.Universe.RenderScene;
+                var renderScene = View.Universe.GetCurrentScene();
 
                 DrawableHelper.GetModelDrawable(View.Universe, renderScene, map, obj, mp.ModelName, false, masks);
             }

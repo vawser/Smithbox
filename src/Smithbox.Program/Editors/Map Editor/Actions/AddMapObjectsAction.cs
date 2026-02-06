@@ -85,10 +85,10 @@ public class AddMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            universe.Selection.ClearSelection();
+            universe.View.ViewportSelection.ClearSelection();
             foreach (MsbEntity c in Added)
             {
-                universe.Selection.AddSelection(c);
+                universe.View.ViewportSelection.AddSelection(c);
             }
         }
 
@@ -117,7 +117,7 @@ public class AddMapObjectsAction : ViewportAction
         //Clones.Clear();
         if (SetSelection)
         {
-            universe.Selection.ClearSelection();
+            universe.View.ViewportSelection.ClearSelection();
         }
 
         return ActionEvent.ObjectAddedRemoved;

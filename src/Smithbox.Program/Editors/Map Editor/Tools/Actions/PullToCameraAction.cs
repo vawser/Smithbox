@@ -104,8 +104,8 @@ public class PullToCameraAction
             List<ViewportAction> actlist = new();
             HashSet<Entity> sels = View.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
-            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, View.ViewportWindow.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
-            Vector3 camPos = View.ViewportWindow.Viewport.ViewportCamera.CameraTransform.Position;
+            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, View.ViewportHandler.ActiveViewport.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
+            Vector3 camPos = View.ViewportHandler.ActiveViewport.Viewport.ViewportCamera.CameraTransform.Position;
             Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
 
             // Get the accumulated center position of all selections

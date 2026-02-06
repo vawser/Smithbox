@@ -50,7 +50,6 @@ public class VulkanViewport : IViewport
 
     public ViewportMenu ViewportMenu;
     public BoxSelection BoxSelection;
-    public ViewportShortcuts Shortcuts;
     public ViewportOverlay ViewportOverlay;
 
     /// <summary>
@@ -115,16 +114,15 @@ public class VulkanViewport : IViewport
 
     private bool Instantiated = false;
 
-    public VulkanViewport(IUniverse owner, string id, int width, int height)
+    public VulkanViewport(IUniverse owner, string id, int width, int height, RenderScene scene)
     {
         Owner = owner;
 
-        Shortcuts = new(this);
-        BoxSelection = new(this);
+        ID = id;
+
         ViewportMenu = new(this);
         ViewportOverlay = new(this);
 
-        ID = id;
         Width = width;
         Height = height;
         Device = Smithbox.Instance._context.Device;
@@ -136,7 +134,7 @@ public class VulkanViewport : IViewport
 
         if (owner is MapUniverse mapUniverse)
         {
-            RenderScene = mapUniverse.View.RenderScene;
+            RenderScene = scene;
             ViewportSelection = mapUniverse.View.ViewportSelection;
             ActionManager = mapUniverse.View.ViewportActionManager;
         }
@@ -152,7 +150,7 @@ public class VulkanViewport : IViewport
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
 
-            ProjectionMatrix = Utils.CreatePerspective(Device, false,
+            ProjectionMatrix = ViewportUtils.CreatePerspective(Device, false,
                 CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, NearClip, FarClip);
 
             Frustum = new BoundingFrustum(ProjectionMatrix);
@@ -215,6 +213,8 @@ public class VulkanViewport : IViewport
                     CFG.Current.ModelEditor_TertiaryGrid_Color);
             }
 
+            BoxSelection = new(this);
+
             ClearQuad = new FullScreenQuad();
 
             SceneRenderer.AddBackgroundUploadTask((gd, cl) =>
@@ -253,6 +253,15 @@ public class VulkanViewport : IViewport
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
                     FocusManager.SetFocus(EditorFocusContext.MapEditor_Viewport);
+
+                    // Need to loop through since we can't easily pass in the wrapper since this is a shared class with the Model Editor
+                    foreach(var wrapper in mapUniverse.View.ViewportHandler.Viewports)
+                    {
+                        if(wrapper.Viewport == this)
+                        {
+                            mapUniverse.View.ViewportHandler.ActiveViewport = wrapper;
+                        }
+                    }
                 }
 
                 if (CFG.Current.QuickView_DisplayTooltip)
@@ -263,7 +272,6 @@ public class VulkanViewport : IViewport
 
             ViewportMenu.Draw();
             ViewportOverlay.Draw();
-            Shortcuts.Update();
 
             Vector2 p = ImGui.GetWindowPos();
             Vector2 s = ImGui.GetWindowSize();
@@ -481,7 +489,7 @@ public class VulkanViewport : IViewport
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        ProjectionMatrix = Utils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f,
+        ProjectionMatrix = ViewportUtils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f,
             Width / (float)Height, NearClip, FarClip);
 
         Frustum = new BoundingFrustum(ViewportCamera.CameraTransform.CameraViewMatrixLH * ProjectionMatrix);

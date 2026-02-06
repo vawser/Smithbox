@@ -303,7 +303,7 @@ public class MapContainer : ObjectContainer
             ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
 
             var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                View.Universe.RenderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
+                View.Universe.GetCurrentScene(), nasset.AssetVirtualPath, ModelMarkerType.Other);
 
             mesh.World = newEntity.GetWorldMatrix();
             mesh.SetSelectable(newEntity);
@@ -365,7 +365,7 @@ public class MapContainer : ObjectContainer
 
             newEntity.SupportsName = false;
 
-            var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.RenderScene);
+            var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.ViewportHandler.ActiveViewport.RenderScene);
 
             mesh.World = newEntity.GetWorldMatrix();
             mesh.SetSelectable(newEntity);

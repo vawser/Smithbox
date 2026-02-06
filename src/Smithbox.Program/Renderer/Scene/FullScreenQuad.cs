@@ -1,4 +1,5 @@
-﻿using StudioCore.Utilities;
+﻿using StudioCore.Editors.Viewport;
+using StudioCore.Utilities;
 using Veldrid;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
@@ -43,7 +44,7 @@ public class FullScreenQuad
             gd.SwapchainFramebuffer.OutputDescription);
         _pipeline = factory.CreateGraphicsPipeline(ref pd);
 
-        var verts = Utils.GetFullScreenQuadVerts(gd);
+        var verts = ViewportUtils.GetFullScreenQuadVerts(gd);
 
         _vb = factory.CreateBuffer(
             new BufferDescription(

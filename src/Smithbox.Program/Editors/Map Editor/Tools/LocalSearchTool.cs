@@ -64,7 +64,7 @@ public class LocalSearchTool
         UIHelper.WrappedText("");
 
         // propcache
-        var selection = View.Universe.Selection.GetSingleFilteredSelection<Entity>();
+        var selection = View.ViewportSelection.GetSingleFilteredSelection<Entity>();
         if (selection == null)
         {
             ImGui.Text("Select entity for dropdown list.");
@@ -243,20 +243,20 @@ public class LocalSearchTool
                         {
                             if (selectFirstResult)
                             {
-                                View.Universe.Selection.ClearSelection();
-                                View.Universe.Selection.AddSelection(obj);
+                                View.ViewportSelection.ClearSelection();
+                                View.ViewportSelection.AddSelection(obj);
                                 selectFirstResult = false;
                             }
 
                             bool itemFocused = ImGui.IsItemFocused();
                             bool selected = false;
-                            if (ImGui.Selectable(obj.Name, View.Universe.Selection.GetSelection().Contains(obj),
+                            if (ImGui.Selectable(obj.Name, View.ViewportSelection.GetSelection().Contains(obj),
                                     ImGuiSelectableFlags.AllowDoubleClick))
                             {
                                 selected = true;
                             }
 
-                            MsbUtils.EntitySelectionHandler(View, View.Universe.Selection, obj, selected, itemFocused, f.Value);
+                            MsbUtils.EntitySelectionHandler(View, View.ViewportSelection, obj, selected, itemFocused, f.Value);
                         }
                     }
 

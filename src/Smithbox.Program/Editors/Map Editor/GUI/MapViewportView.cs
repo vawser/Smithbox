@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
-using StudioCore.Application;
+﻿using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
-using StudioCore.Renderer;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
+using Vortice.Vulkan;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -14,7 +13,6 @@ public class MapViewportView
     public MapEditorView View;
     public ProjectEntry Project;
 
-    public IViewport Viewport;
     public Rectangle Rect;
 
     public bool AltHeld;
@@ -34,47 +32,45 @@ public class MapViewportView
 
         Rect = view.Window.Bounds;
 
-        if (view.Device != null)
-        {
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-            {
-                Viewport = new VulkanViewport(View.Universe, $"MapViewport_{View.ViewIndex}", Rect.Width, Rect.Height);
-
-                view.RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
-            }
-            else
-            {
-                Viewport = new NullViewport(View.Universe, $"MapViewport_{View.ViewIndex}", Rect.Width, Rect.Height);
-            }
-        }
     }
 
     public void Display()
     {
-        if (Viewport is VulkanViewport vulkanViewport)
+        foreach (var viewport in View.ViewportHandler.Viewports)
         {
-            vulkanViewport.Display();
-
-            if (View.Universe != null && PlacementOrb == null)
+            if (viewport == null)
             {
-                PlacementOrb = new PlacementEntity(View.Universe);
+                continue;
             }
 
-            if (PlacementOrb != null)
+            if(viewport.Viewport is VulkanViewport vulkanViewport)
             {
-                PlacementOrb.UpdateRenderModel();
-            }
-        }
+                vulkanViewport.Display();
 
-        if (Viewport is NullViewport nullViewport)
-        {
-            nullViewport.Display();
+                if (View.Universe != null && PlacementOrb == null)
+                {
+                    PlacementOrb = new PlacementEntity(View.Universe);
+                }
+
+                if (PlacementOrb != null)
+                {
+                    PlacementOrb.UpdateRenderModel();
+                }
+            }
+
+            if (viewport.Viewport is NullViewport nullViewport)
+            {
+                nullViewport.Display();
+            }
         }
     }
 
     public void Update(float deltatime)
     {
-        ViewportUsingKeyboard = Viewport.Update(View.Window, deltatime);
+        foreach (var viewport in View.ViewportHandler.Viewports)
+        {
+            ViewportUsingKeyboard = viewport.Viewport.Update(View.Window, deltatime);
+        }
     }
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
@@ -85,21 +81,36 @@ public class MapViewportView
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        Viewport.Draw(device, cl);
+        foreach (var viewport in View.ViewportHandler.Viewports)
+        {
+            viewport.Viewport.Draw(device, cl);
+        }
     }
 
     public bool InputCaptured()
     {
-        return Viewport.IsViewportSelected;
+        var activeViewport = View.ViewportHandler.ActiveViewport;
+
+        if (activeViewport.Viewport != null)
+        {
+            return activeViewport.Viewport.IsViewportSelected;
+        }
+
+        return false;
     }
 
     public Vector3 GetPlacementPosition()
     {
+        var activeViewport = View.ViewportHandler.ActiveViewport;
+
+        if(activeViewport.Viewport == null)
+            return Vector3.Zero;
+
         if (View.Device != null)
         {
             // Get the camera's view matrix and position
-            var viewMatrix = Viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH;
-            var cameraPosition = Viewport.ViewportCamera.CameraTransform.Position;
+            var viewMatrix = activeViewport.Viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH;
+            var cameraPosition = activeViewport.Viewport.ViewportCamera.CameraTransform.Position;
 
             // Invert the view matrix to get the camera's world matrix
             Matrix4x4.Invert(viewMatrix, out var cameraWorldMatrix);
@@ -123,11 +134,16 @@ public class MapViewportView
     /// <returns></returns>
     public Matrix4x4 GetPlacementTransform()
     {
+        var activeViewport = View.ViewportHandler.ActiveViewport;
+
+        if (activeViewport.Viewport == null)
+            return Matrix4x4.Identity;
+
         if (View.Device != null)
         {
             // Get the camera's view matrix and position
-            var viewMatrix = Viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH;
-            var cameraPosition = Viewport.ViewportCamera.CameraTransform.Position;
+            var viewMatrix = activeViewport.Viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH;
+            var cameraPosition = activeViewport.Viewport.ViewportCamera.CameraTransform.Position;
 
             Matrix4x4.Invert(viewMatrix, out var cameraWorldMatrix);
 

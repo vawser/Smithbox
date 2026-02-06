@@ -1086,9 +1086,9 @@ public class MapPropertyView
         }
         if (CFG.Current.MapEditor_Properties_Display_Reference_Information)
         {
-            PropInfo_ReferencesTo.Display(View, firstEnt, View.ViewportWindow.Viewport, ref selection, ref refID);
-            PropInfo_ReferencedBy.Display(View, firstEnt, View.ViewportWindow.Viewport, ref selection, ref refID);
-            PropInfo_ParamJumps.Display(View, firstEnt, View.ViewportWindow.Viewport, ref selection, ref refID);
+            PropInfo_ReferencesTo.Display(View, firstEnt, View.ViewportHandler.ActiveViewport.Viewport, ref selection, ref refID);
+            PropInfo_ReferencedBy.Display(View, firstEnt, View.ViewportHandler.ActiveViewport.Viewport, ref selection, ref refID);
+            PropInfo_ParamJumps.Display(View, firstEnt, View.ViewportHandler.ActiveViewport.Viewport, ref selection, ref refID);
         }
     }
 

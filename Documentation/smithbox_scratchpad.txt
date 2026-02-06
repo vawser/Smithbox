@@ -7,3 +7,5 @@ Map Editor:
  Save process should also be adjusted to only save the active view's loaded maps
  
  Add viewport instances (within view), so multiple viewports for one view's backing data can be displayed
+  - Selection doesn't work in secondary instances
+  - Frame action uses most recently created instance (ActiveViewport)
