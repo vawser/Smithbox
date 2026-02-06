@@ -121,7 +121,7 @@ public class Smithbox
             evt => evt.Level is LogLevel.Warning or LogLevel.Error,
             () => (enabled: CFG.Current.Logger_Enable_Warning_Log, fadeTime: (int)(CFG.Current.Logger_Warning_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
         );
-        HighPriorityLogSubscription = new(
+        HighPriorityLogSubscription = TaskLogs.Subscribe(
             evt => evt.Priority == LogPriority.High
         );
     
