@@ -75,6 +75,9 @@ public class MapToolWindow
 
     public void OnGui()
     {
+        if (!CFG.Current.Interface_MapEditor_ToolWindow)
+            return;
+
         var activeView = Editor.ViewHandler.ActiveView;
 
         if (activeView == null)
@@ -85,7 +88,7 @@ public class MapToolWindow
         activeView.SelectAllAction.OnGui();
         activeView.AdjustToGridAction.OnGui();
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_MapEditor", UIHelper.GetMainWindowFlags()))
+        if (ImGui.Begin("Tools##ToolConfigureWindow_MapEditor", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);
 
