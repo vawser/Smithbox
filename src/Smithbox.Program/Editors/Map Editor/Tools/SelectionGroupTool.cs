@@ -13,12 +13,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class SelectionGroupTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public SelectionGroupTool(MapEditorScreen editor, ProjectEntry project)
+    public SelectionGroupTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -46,12 +46,12 @@ public class SelectionGroupTool
     /// <summary>
     /// Update Loop
     /// </summary>
-    public void OnGui()
+    public void DisplayPopup()
     {
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.Undefined)
+        if (View.Project.Descriptor.ProjectType == ProjectType.Undefined)
             return;
 
-        if (Editor.Project.Handler.MapData.MapObjectSelections.Resources == null)
+        if (View.Project.Handler.MapData.MapObjectSelections.Resources == null)
             return;
 
         if (OpenPopup)
@@ -146,10 +146,10 @@ public class SelectionGroupTool
     /// </summary>
     public void OnToolWindow()
     {
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.Undefined)
+        if (View.Project.Descriptor.ProjectType == ProjectType.Undefined)
             return;
 
-        if (Editor.Project.Handler.MapData.MapObjectSelections.Resources == null)
+        if (View.Project.Handler.MapData.MapObjectSelections.Resources == null)
             return;
 
         if (ImGui.CollapsingHeader("Selection Groups"))
@@ -179,7 +179,7 @@ public class SelectionGroupTool
 
             ImGui.Separator();
 
-            foreach (var entry in Editor.Project.Handler.MapData.MapObjectSelections.Resources)
+            foreach (var entry in View.Project.Handler.MapData.MapObjectSelections.Resources)
             {
                 var displayName = $"{entry.Name}";
 
@@ -382,10 +382,10 @@ public class SelectionGroupTool
 
     public bool DeleteSelectionGroup(string currentResourceName)
     {
-        var resource = Editor.Project.Handler.MapData.MapObjectSelections.Resources.Where(x => x.Name == currentResourceName).FirstOrDefault();
+        var resource = View.Project.Handler.MapData.MapObjectSelections.Resources.Where(x => x.Name == currentResourceName).FirstOrDefault();
 
-        Editor.Project.Handler.MapData.MapObjectSelections.Resources.Remove(resource);
-        Editor.Project.Handler.MapData.SaveMapObjectSelections();
+        View.Project.Handler.MapData.MapObjectSelections.Resources.Remove(resource);
+        View.Project.Handler.MapData.SaveMapObjectSelections();
 
         return true;
     }
@@ -397,7 +397,7 @@ public class SelectionGroupTool
             PlatformUtils.Instance.MessageBox("Group name is empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
-        else if (!isEdit && Editor.Project.Handler.MapData.MapObjectSelections.Resources.Any(x => x.Name == name))
+        else if (!isEdit && View.Project.Handler.MapData.MapObjectSelections.Resources.Any(x => x.Name == name))
         {
             PlatformUtils.Instance.MessageBox("Group name already exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
@@ -412,12 +412,12 @@ public class SelectionGroupTool
             PlatformUtils.Instance.MessageBox("Selection is empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
-        else if (keybindIndex != -1 && Editor.Project.Handler.MapData.MapObjectSelections.Resources.Any(x => x.SelectionGroupKeybind == keybindIndex))
+        else if (keybindIndex != -1 && View.Project.Handler.MapData.MapObjectSelections.Resources.Any(x => x.SelectionGroupKeybind == keybindIndex))
         {
-            var group = Editor.Project.Handler.MapData.MapObjectSelections.Resources.Where(x => x.SelectionGroupKeybind == keybindIndex).First();
+            var group = View.Project.Handler.MapData.MapObjectSelections.Resources.Where(x => x.SelectionGroupKeybind == keybindIndex).First();
             if (isEdit)
             {
-                group = Editor.Project.Handler.MapData.MapObjectSelections.Resources.Where(x => x.SelectionGroupKeybind == keybindIndex && x.Name != name).First();
+                group = View.Project.Handler.MapData.MapObjectSelections.Resources.Where(x => x.SelectionGroupKeybind == keybindIndex && x.Name != name).First();
             }
             PlatformUtils.Instance.MessageBox($"Keybind already assigned to another selection group: {group.Name}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
@@ -436,8 +436,8 @@ public class SelectionGroupTool
             res.Selection = selection;
             res.SelectionGroupKeybind = keybindIndex;
 
-            Editor.Project.Handler.MapData.MapObjectSelections.Resources.Add(res);
-            Editor.Project.Handler.MapData.SaveMapObjectSelections();
+            View.Project.Handler.MapData.MapObjectSelections.Resources.Add(res);
+            View.Project.Handler.MapData.SaveMapObjectSelections();
         }
 
         return false;
@@ -446,9 +446,9 @@ public class SelectionGroupTool
     {
         if (CFG.Current.MapEditor_Selection_Group_Enable_Quick_Creation)
         {
-            if (Editor.ViewportSelection.GetSelection().Count != 0)
+            if (View.ViewportSelection.GetSelection().Count != 0)
             {
-                var ent = (Entity)Editor.ViewportSelection.GetSelection().First();
+                var ent = (Entity)View.ViewportSelection.GetSelection().First();
                 createPromptGroupName = ent.Name;
                 createPromptTags = "";
                 AmendSelectionGroupBank();
@@ -477,18 +477,18 @@ public class SelectionGroupTool
             selectedResourceTags = new List<string>();
             selectedResourceContents = new List<string>();
 
-            Editor.Project.Handler.MapData.SaveMapObjectSelections();
+            View.Project.Handler.MapData.SaveMapObjectSelections();
         }
     }
 
     private void SelectSelectionGroup()
     {
-        Editor.ViewportSelection.ClearSelection();
+        View.ViewportSelection.ClearSelection();
 
         List<Entity> entities = new List<Entity>();
 
         // TODO: add something to prevent confusion if multiple maps are loaded with the same names within
-        foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer != null)
             {
@@ -505,13 +505,13 @@ public class SelectionGroupTool
 
         foreach (var entry in entities)
         {
-            Editor.ViewportSelection.AddSelection(entry);
+            View.ViewportSelection.AddSelection(entry);
         }
 
         if (CFG.Current.MapEditor_Selection_Group_Frame_Selection_On_Use)
         {
-            Editor.FrameAction.ApplyViewportFrame();
-            Editor.GotoAction.GotoMapObjectEntry();
+            View.FrameAction.ApplyViewportFrame();
+            View.GotoAction.GotoMapObjectEntry();
         }
     }
 
@@ -526,7 +526,7 @@ public class SelectionGroupTool
         }
         else
         {
-            foreach (var entry in Editor.ViewportSelection.GetSelection())
+            foreach (var entry in View.ViewportSelection.GetSelection())
             {
                 var ent = (Entity)entry;
                 selectionList.Add(ent.Name);
@@ -535,16 +535,16 @@ public class SelectionGroupTool
 
         if (AddSelectionGroup(createPromptGroupName, tagList, selectionList, currentKeyBindOption, isEdit, editPromptOldGroupName))
         {
-            Editor.Project.Handler.MapData.SaveMapObjectSelections();
+            View.Project.Handler.MapData.SaveMapObjectSelections();
         }
     }
 
     public void ShortcutSelectGroup(int index)
     {
-        if (Editor.Project.Handler.MapData.MapObjectSelections.Resources == null)
+        if (View.Project.Handler.MapData.MapObjectSelections.Resources == null)
             return;
 
-        foreach (var entry in Editor.Project.Handler.MapData.MapObjectSelections.Resources)
+        foreach (var entry in View.Project.Handler.MapData.MapObjectSelections.Resources)
         {
             if (entry.SelectionGroupKeybind == index)
             {

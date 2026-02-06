@@ -5,14 +5,14 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapGridTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     private TargetMapGridType CurrentMapGridType = TargetMapGridType.Primary;
 
-    public MapGridTool(MapEditorScreen editor, ProjectEntry project)
+    public MapGridTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 

@@ -13,12 +13,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class FrameAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public FrameAction(MapEditorScreen editor, ProjectEntry project)
+    public FrameAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -27,7 +27,7 @@ public class FrameAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Frame))
             {
@@ -81,9 +81,9 @@ public class FrameAction
         var offset = CFG.Current.Viewport_Frame_Offset;
         var distance = CFG.Current.Viewport_Frame_Distance;
 
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            HashSet<Entity> selected = Editor.ViewportSelection.GetFilteredSelection<Entity>();
+            HashSet<Entity> selected = View.ViewportSelection.GetFilteredSelection<Entity>();
             var first = false;
             BoundingBox box = new();
 
@@ -123,7 +123,7 @@ public class FrameAction
 
             if (first)
             {
-                Editor.MapViewportView.Viewport.FrameBox(box, offset, distance);
+                View.ViewportWindow.Viewport.FrameBox(box, offset, distance);
             }
         }
         else
@@ -137,6 +137,6 @@ public class FrameAction
         var offset = CFG.Current.Viewport_Frame_Offset;
         var distance = CFG.Current.Viewport_Frame_Distance;
 
-        Editor.MapViewportView.Viewport.FrameBox(box, offset, distance);
+        View.ViewportWindow.Viewport.FrameBox(box, offset, distance);
     }
 }

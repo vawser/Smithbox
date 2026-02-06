@@ -73,6 +73,7 @@ public class ModelViewportWindow
     {
         return Viewport.IsViewportSelected;
     }
+
     public void UpdateDisplayNodes()
     {
         var wrapper = View.Selection.SelectedModelWrapper;

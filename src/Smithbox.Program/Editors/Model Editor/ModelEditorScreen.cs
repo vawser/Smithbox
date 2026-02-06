@@ -80,7 +80,7 @@ public class ModelEditorScreen : EditorScreen
 
             if (CFG.Current.Interface_ModelEditor_ResourceList)
             {
-                ResourceList.DisplayWindow("modelResourceList", activeView.Universe);
+                ResourceList.DisplayWindow("modelResourceList", activeView.Universe, CFG.Current.Interface_ModelEditor_ScreenshotMode);
             }
         }
     }
@@ -166,19 +166,19 @@ public class ModelEditorScreen : EditorScreen
                 ImGui.Separator();
 
                 // Actions
-                ToolMenu.CreateAction.OnMenu();
-                ToolMenu.DuplicateAction.OnMenu();
-                ToolMenu.DeleteAction.OnMenu();
+                activeView.CreateAction.OnMenu();
+                activeView.DuplicateAction.OnMenu();
+                activeView.DeleteAction.OnMenu();
 
                 ImGui.Separator();
 
-                ToolMenu.FrameAction.OnMenu();
-                ToolMenu.GotoAction.OnMenu();
-                ToolMenu.PullToCameraAction.OnMenu();
+                activeView.FrameAction.OnMenu();
+                activeView.GotoAction.OnMenu();
+                activeView.PullToCameraAction.OnMenu();
 
                 ImGui.Separator();
 
-                ToolMenu.ReorderAction.OnMenu();
+                activeView.ReorderAction.OnMenu();
             }
 
             ImGui.EndMenu();
@@ -201,6 +201,7 @@ public class ModelEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ResourceList);
 
+            // Hides the non-Viewport windows
             if (ImGui.MenuItem("Screenshot Mode"))
             {
                 CFG.Current.Interface_ModelEditor_ScreenshotMode = !CFG.Current.Interface_ModelEditor_ScreenshotMode;
@@ -218,15 +219,29 @@ public class ModelEditorScreen : EditorScreen
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        foreach (var view in ViewHandler.ModelViews)
+        if (ViewHandler.ViewToClose == null)
         {
-            if (view.ViewportWindow.Viewport is VulkanViewport vulkanViewport)
+            foreach (var view in ViewHandler.Views)
             {
-                if (vulkanViewport.Visible)
+                if (view == null)
+                    continue;
+
+                if (view.ViewportWindow.Viewport is VulkanViewport vulkanViewport)
                 {
-                    view.ViewportWindow.Draw(device, cl);
+                    if (vulkanViewport.Visible)
+                    {
+                        view.ViewportWindow.Draw(device, cl);
+                    }
                 }
             }
+        }
+
+        // Done here so we don't mutate the list during drawing
+        if (ViewHandler.ViewToClose != null)
+        {
+            ViewHandler.RemoveView(ViewHandler.ViewToClose);
+
+            ViewHandler.ViewToClose = null;
         }
     }
 

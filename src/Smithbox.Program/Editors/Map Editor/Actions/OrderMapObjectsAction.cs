@@ -9,16 +9,16 @@ namespace StudioCore.Editors.MapEditor;
 
 public class OrderMapObjectsAction : ViewportAction
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
     private List<MsbEntity> selection = new();
     private List<Entity> storedObjectOrder = new();
 
     private TreeObjectOrderMovementType MoveSelectionDir;
 
-    public OrderMapObjectsAction(MapEditorScreen editor, List<MsbEntity> objects, TreeObjectOrderMovementType moveDir)
+    public OrderMapObjectsAction(MapEditorView view, List<MsbEntity> objects, TreeObjectOrderMovementType moveDir)
     {
-        Editor = editor;
+        View = view;
         selection.AddRange(objects);
 
         MoveSelectionDir = moveDir;
@@ -26,7 +26,7 @@ public class OrderMapObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         // TODO: allow this to work with multi-selections
         // Will require more rigorous validation of the indices
@@ -46,7 +46,7 @@ public class OrderMapObjectsAction : ViewportAction
                 if (ent.WrappedObject is BTL.Light)
                     return ActionEvent.NoEvent;
 
-                MapContainer mapRoot = Editor.Selection.GetMapContainerFromMapID(curSel.MapID);
+                MapContainer mapRoot = View.Selection.GetMapContainerFromMapID(curSel.MapID);
 
                 // Ignore usage if the selection is the map root itself
                 if (mapRoot == null)
@@ -207,13 +207,13 @@ public class OrderMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         if (selection.Count > 0)
         {
             var curSel = selection.First();
 
-            MapContainer mapRoot = Editor.Selection.GetMapContainerFromMapID(curSel.MapID);
+            MapContainer mapRoot = View.Selection.GetMapContainerFromMapID(curSel.MapID);
             mapRoot.Objects = storedObjectOrder;
         }
 

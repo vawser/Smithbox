@@ -12,12 +12,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class GameVisibilityAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public GameVisibilityAction(MapEditorScreen editor, ProjectEntry project)
+    public GameVisibilityAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -26,7 +26,7 @@ public class GameVisibilityAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_Make_Dummy_Object))
             {
@@ -136,16 +136,16 @@ public class GameVisibilityAction
     /// </summary>
     public void ApplyGameVisibilityChange(GameVisibilityType targetType, GameVisibilityState targetState)
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (targetType == GameVisibilityType.GameEditionDisable)
             {
                 if (targetState == GameVisibilityState.Disable)
                 {
-                    List<MsbEntity> sourceList = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+                    List<MsbEntity> sourceList = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
                     foreach (MsbEntity s in sourceList)
                     {
-                        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
+                        if (View.Project.Descriptor.ProjectType == ProjectType.ER)
                         {
                             s.SetPropertyValue("GameEditionDisable", 1);
                         }
@@ -153,10 +153,10 @@ public class GameVisibilityAction
                 }
                 if (targetState == GameVisibilityState.Enable)
                 {
-                    List<MsbEntity> sourceList = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+                    List<MsbEntity> sourceList = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
                     foreach (MsbEntity s in sourceList)
                     {
-                        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
+                        if (View.Project.Descriptor.ProjectType == ProjectType.ER)
                         {
                             s.SetPropertyValue("GameEditionDisable", 0);
                         }
@@ -188,7 +188,7 @@ public class GameVisibilityAction
     public void ChangeMapObjectType(string[] sourceTypes, string[] targetTypes)
     {
         Type msbclass;
-        switch (Editor.Project.Descriptor.ProjectType)
+        switch (View.Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 msbclass = typeof(MSBD);
@@ -223,10 +223,11 @@ public class GameVisibilityAction
             default:
                 throw new ArgumentException("type must be valid");
         }
-        List<MsbEntity> sourceList = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+        List<MsbEntity> sourceList = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
 
-        ChangeMapObjectType action = new(Editor, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
-        Editor.EditorActionManager.ExecuteAction(action);
+        ChangeMapObjectType action = new(View, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
+
+        View.ViewportActionManager.ExecuteAction(action);
     }
 
 }

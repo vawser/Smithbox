@@ -10,14 +10,14 @@ using System.Linq;
 namespace StudioCore.Editors.MapEditor;
 public class EntityRenameAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public (string, ObjectContainer) TargetMap = ("None", null);
 
-    public EntityRenameAction(MapEditorScreen editor, ProjectEntry project)
+    public EntityRenameAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -52,11 +52,11 @@ public class EntityRenameAction
     {
         if (ImGui.BeginMenu("Rename Map Objects"))
         {
-            if (Editor.Selection.IsAnyMapLoaded())
+            if (View.Selection.IsAnyMapLoaded())
             {
                 if (ImGui.BeginCombo("##Targeted Map", TargetMap.Item1))
                 {
-                    foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+                    foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
                     {
                         var mapID = entry.Key.Filename;
                         var container = entry.Value.MapContainer;
@@ -118,7 +118,7 @@ public class EntityRenameAction
     /// </summary>
     public void ApplyMapObjectNames(bool useJapaneseNames)
     {
-        if (!Editor.Selection.IsAnyMapLoaded())
+        if (!View.Selection.IsAnyMapLoaded())
             return;
 
         if (TargetMap != (null, null))
@@ -207,7 +207,8 @@ public class EntityRenameAction
             }
 
             var compoundAction = new ViewportCompoundAction(actionList);
-            Editor.EditorActionManager.ExecuteAction(compoundAction);
+
+            View.ViewportActionManager.ExecuteAction(compoundAction);
         }
     }
 
@@ -215,7 +216,7 @@ public class EntityRenameAction
     {
         var list = new List<MapObjectNameInfo>();
 
-        var dir = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Editor.Project), "namelist.csv");
+        var dir = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(View.Project), "namelist.csv");
 
         if (File.Exists(dir))
         {

@@ -13,12 +13,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class PositionIncrementTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public PositionIncrementTool(MapEditorScreen editor, ProjectEntry project)
+    public PositionIncrementTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -76,7 +76,7 @@ public class PositionIncrementTool
         }
 
         List<ViewportAction> actlist = new();
-        HashSet<Entity> sels = Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
+        HashSet<Entity> sels = View.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
         foreach (Entity sel in sels)
         {
@@ -196,7 +196,8 @@ public class PositionIncrementTool
         if (actlist.Any())
         {
             ViewportCompoundAction action = new(actlist);
-            Editor.EditorActionManager.ExecuteAction(action);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
     }
 
@@ -211,14 +212,14 @@ public class PositionIncrementTool
         {
             UIHelper.SimpleHeader("Current Position Increment", "Current Position Increment", $"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)}", UI.Current.ImGui_Default_Text_Color);
 
-            Editor.PositionIncrementTool.DisplayCurrentPositionIncrement();
+            View.PositionIncrementTool.DisplayCurrentPositionIncrement();
 
             ImGui.Checkbox("Display position increment type", ref CFG.Current.Viewport_DisplayPositionIncrement);
             UIHelper.Tooltip("Display the current position increment type you are using in the information panel.");
 
             if (ImGui.Button("Cycle Increment", DPI.WholeWidthButton(windowWidth, 24)))
             {
-                Editor.PositionIncrementTool.CycleIncrementType();
+                View.PositionIncrementTool.CycleIncrementType();
             }
             UIHelper.Tooltip($"Press {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
 

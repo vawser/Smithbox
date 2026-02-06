@@ -70,11 +70,6 @@ public class MapEditorStub : IEditorStub
         }
         else
         {
-            if (Project.Handler.MapEditor != null)
-            {
-                Project.Handler.MapEditor.OnDefocus();
-            }
-
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
             ImGui.End();

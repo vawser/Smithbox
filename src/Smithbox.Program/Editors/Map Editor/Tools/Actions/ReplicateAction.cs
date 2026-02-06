@@ -10,12 +10,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class ReplicateAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public ReplicateAction(MapEditorScreen editor, ProjectEntry project)
+    public ReplicateAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -24,7 +24,7 @@ public class ReplicateAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_Replicate))
             {
@@ -206,7 +206,7 @@ public class ReplicateAction
             ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
             UIHelper.Tooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
 
-            if (Editor.Project.Descriptor.ProjectType != ProjectType.DS2S && Editor.Project.Descriptor.ProjectType != ProjectType.DS2 && Editor.Project.Descriptor.ProjectType != ProjectType.AC6)
+            if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2 && View.Project.Descriptor.ProjectType != ProjectType.AC6)
             {
                 if (ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID))
                 {
@@ -218,19 +218,19 @@ public class ReplicateAction
                 UIHelper.Tooltip("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
             }
 
-            if (Editor.Project.Descriptor.ProjectType == ProjectType.ER || Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
+            if (View.Project.Descriptor.ProjectType == ProjectType.ER || View.Project.Descriptor.ProjectType == ProjectType.AC6)
             {
                 ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Replicator_Increment_InstanceID);
                 UIHelper.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
             }
 
-            if (Editor.Project.Descriptor.ProjectType == ProjectType.ER || Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
+            if (View.Project.Descriptor.ProjectType == ProjectType.ER || View.Project.Descriptor.ProjectType == ProjectType.AC6)
             {
                 ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Replicator_Increment_PartNames);
                 UIHelper.Tooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
             }
 
-            if (Editor.Project.Descriptor.ProjectType != ProjectType.DS2S && Editor.Project.Descriptor.ProjectType != ProjectType.DS2)
+            if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2)
             {
                 if (ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Replicator_Clear_Entity_ID))
                 {
@@ -259,10 +259,11 @@ public class ReplicateAction
     /// </summary>
     public void ApplyReplicate()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            ReplicateMapObjectsAction action = new(Editor, Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList());
-            Editor.EditorActionManager.ExecuteAction(action);
+            ReplicateMapObjectsAction action = new(View, View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList());
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
         else
         {

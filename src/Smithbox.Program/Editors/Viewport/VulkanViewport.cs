@@ -136,9 +136,9 @@ public class VulkanViewport : IViewport
 
         if (owner is MapUniverse mapUniverse)
         {
-            RenderScene = mapUniverse.Editor.RenderScene;
-            ViewportSelection = mapUniverse.Editor.ViewportSelection;
-            ActionManager = mapUniverse.Editor.EditorActionManager;
+            RenderScene = mapUniverse.View.RenderScene;
+            ViewportSelection = mapUniverse.View.ViewportSelection;
+            ActionManager = mapUniverse.View.ViewportActionManager;
         }
 
         if (owner is ModelUniverse modelUniverse)
@@ -257,7 +257,7 @@ public class VulkanViewport : IViewport
 
                 if (CFG.Current.QuickView_DisplayTooltip)
                 {
-                    mapUniverse.Editor.AutomaticPreviewTool.HandleQuickViewTooltip();
+                    mapUniverse.View.AutomaticPreviewTool.HandleQuickViewTooltip();
                 }
             }
 

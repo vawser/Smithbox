@@ -11,7 +11,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class DuplicateToMapAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public bool DisplayPopup = false;
@@ -19,9 +19,9 @@ public class DuplicateToMapAction
     public (string, ObjectContainer) TargetMap = ("None", null);
     public (string, Entity) TargetBTL = ("None", null);
 
-    public DuplicateToMapAction(MapEditorScreen editor, ProjectEntry project)
+    public DuplicateToMapAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -49,7 +49,7 @@ public class DuplicateToMapAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_Duplicate_To_Map))
             {
@@ -124,7 +124,7 @@ public class DuplicateToMapAction
                     TargetMap = (mapID, map);
                 }
 
-                var mapName = AliasHelper.GetMapNameAlias(Editor.Project, mapID);
+                var mapName = AliasHelper.GetMapNameAlias(View.Project, mapID);
                 UIHelper.DisplayAlias(mapName);
             }
         }
@@ -139,7 +139,7 @@ public class DuplicateToMapAction
         {
             MapContainer targetMap = (MapContainer)TargetMap.Item2;
 
-            var sel = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
 
             if (sel.Any(e => e.WrappedObject is BTL.Light))
             {
@@ -175,7 +175,8 @@ public class DuplicateToMapAction
     /// </summary>
     public void DuplicateToMap(List<MsbEntity> selection, MapContainer targetMap, Entity targetBtl)
     {
-        var action = new CloneMapObjectsAction(Editor, selection, true, targetMap, targetBtl);
-        Editor.EditorActionManager.ExecuteAction(action);
+        var action = new CloneMapObjectsAction(View, selection, true, targetMap, targetBtl);
+
+        View.ViewportActionManager.ExecuteAction(action);
     }
 }

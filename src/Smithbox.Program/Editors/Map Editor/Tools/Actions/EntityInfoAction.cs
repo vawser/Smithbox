@@ -7,12 +7,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class EntityInfoAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public EntityInfoAction(MapEditorScreen editor, ProjectEntry project)
+    public EntityInfoAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -59,11 +59,11 @@ public class EntityInfoAction
     /// </summary>
     public void CopyEntityNameToClipboard(Entity ent)
     {
-        if (Editor.ViewportSelection.IsMultiSelection())
+        if (View.ViewportSelection.IsMultiSelection())
         {
             var fullStr = "";
 
-            foreach (var entry in Editor.ViewportSelection.GetSelection())
+            foreach (var entry in View.ViewportSelection.GetSelection())
             {
                 var curEnt = (MsbEntity)entry;
 

@@ -28,7 +28,7 @@ public class ObjectContainerReference : ISelectable
     {
         if (owner is MapUniverse mapUniverse)
         {
-            var container = mapUniverse.Editor.Selection.GetMapContainerFromMapID(Name);
+            var container = mapUniverse.View.Selection.GetMapContainerFromMapID(Name);
 
             if (mapUniverse != null && container != null && container?.RootObject != null)
             {

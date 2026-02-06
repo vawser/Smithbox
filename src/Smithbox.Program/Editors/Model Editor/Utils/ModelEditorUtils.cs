@@ -218,9 +218,22 @@ public static class ModelEditorUtils
                     {
                         containerType = ResourceContainerType.BND;
                     }
-                    else if (project.Handler.MapEditor != null && project.Handler.MapEditor.HavokNavmeshBank.CanUse())
+                    else
                     {
-                        containerType = ResourceContainerType.BND;
+                        var mapEditor = project.Handler.MapEditor;
+
+                        if (mapEditor != null)
+                        {
+                            var activeView = mapEditor.ViewHandler.ActiveView;
+
+                            if (activeView != null)
+                            {
+                                if (project.Handler.MapEditor != null && activeView.HavokNavmeshBank.CanUse())
+                                {
+                                    containerType = ResourceContainerType.BND;
+                                }
+                            }
+                        }
                     }
                 }
             }

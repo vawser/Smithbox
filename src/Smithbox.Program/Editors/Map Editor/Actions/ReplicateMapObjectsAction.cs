@@ -19,7 +19,7 @@ public class ReplicateMapObjectsAction : ViewportAction
     private readonly List<MsbEntity> Clonables = new();
     private readonly List<ObjectContainer> CloneMaps = new();
     private readonly List<MsbEntity> Clones = new();
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
     private int idxCache;
 
@@ -31,9 +31,9 @@ public class ReplicateMapObjectsAction : ViewportAction
 
     private ReplicateSquareSideType currentSquareSide;
 
-    public ReplicateMapObjectsAction(MapEditorScreen editor, List<MsbEntity> objects)
+    public ReplicateMapObjectsAction(MapEditorView view, List<MsbEntity> objects)
     {
-        Editor = editor;
+        View = view;
         Clonables.AddRange(objects);
     }
 
@@ -41,7 +41,7 @@ public class ReplicateMapObjectsAction : ViewportAction
     {
         if (isRedo)
         {
-            Editor.EditorActionManager.Clear();
+            View.ViewportActionManager.Clear();
 
             return ActionEvent.NoEvent;
         }
@@ -82,7 +82,7 @@ public class ReplicateMapObjectsAction : ViewportAction
                 }
 
                 MapContainer m;
-                m = Editor.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
+                m = View.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
 
                 if (m != null)
                 {
@@ -160,23 +160,23 @@ public class ReplicateMapObjectsAction : ViewportAction
                     // Apply other property changes
                     if (CFG.Current.Replicator_Increment_Entity_ID)
                     {
-                        MapEditorActionHelper.SetUniqueEntityID(Editor, newobj, m);
+                        MapEditorActionHelper.SetUniqueEntityID(View, newobj, m);
                     }
                     if (CFG.Current.Replicator_Increment_InstanceID)
                     {
-                        MapEditorActionHelper.SetUniqueInstanceID(Editor, newobj, m);
+                        MapEditorActionHelper.SetUniqueInstanceID(View, newobj, m);
                     }
                     if (CFG.Current.Replicator_Increment_PartNames)
                     {
-                        MapEditorActionHelper.SetSelfPartNames(Editor, newobj, m);
+                        MapEditorActionHelper.SetSelfPartNames(View, newobj, m);
                     }
                     if (CFG.Current.Replicator_Clear_Entity_ID)
                     {
-                        MapEditorActionHelper.ClearEntityID(Editor, newobj, m);
+                        MapEditorActionHelper.ClearEntityID(View, newobj, m);
                     }
                     if (CFG.Current.Replicator_Clear_Entity_Group_IDs)
                     {
-                        MapEditorActionHelper.ClearEntityGroupID(Editor, newobj, m);
+                        MapEditorActionHelper.ClearEntityGroupID(View, newobj, m);
                     }
 
                     newobj.UpdateRenderModel();
@@ -345,7 +345,7 @@ public class ReplicateMapObjectsAction : ViewportAction
         newTransform.Rotation = newRot;
         newTransform.Scale = newScale;
 
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.DS2S || Editor.Project.Descriptor.ProjectType == ProjectType.DS2)
+        if (View.Project.Descriptor.ProjectType == ProjectType.DS2S || View.Project.Descriptor.ProjectType == ProjectType.DS2)
         {
             if (sel.Type == MsbEntityType.DS2Generator &&
                 sel.WrappedObject is MergedParamRow mp)
@@ -369,9 +369,9 @@ public class ReplicateMapObjectsAction : ViewportAction
     {
         if (CFG.Current.Replicator_Apply_Scramble_Configuration)
         {
-            Transform scrambledTransform = Editor.ScrambleAction.GetScrambledTransform(newobj);
+            Transform scrambledTransform = View.ScrambleAction.GetScrambledTransform(newobj);
 
-            if (Editor.Project.Descriptor.ProjectType == ProjectType.DS2S || Editor.Project.Descriptor.ProjectType == ProjectType.DS2)
+            if (View.Project.Descriptor.ProjectType == ProjectType.DS2S || View.Project.Descriptor.ProjectType == ProjectType.DS2)
             {
                 if (newobj.Type == MsbEntityType.DS2Generator &&
                 newobj.WrappedObject is MergedParamRow mp)

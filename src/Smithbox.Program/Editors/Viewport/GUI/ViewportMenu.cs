@@ -31,8 +31,8 @@ public class ViewportMenu
         // Map Editor
         if (Owner is MapUniverse mapUniverse)
         {
-            mapUniverse.Editor.FilterMenu();
-            mapUniverse.Editor.CollisionMenu();
+            mapUniverse.View.Editor.FilterMenu();
+            mapUniverse.View.Editor.CollisionMenu();
 
             if (mapUniverse.Project.Descriptor.ProjectType != ProjectType.DS2S && mapUniverse.Project.Descriptor.ProjectType != ProjectType.DS2)
             {
@@ -40,13 +40,13 @@ public class ViewportMenu
                 {
                     if (ImGui.MenuItem("Display"))
                     {
-                        PatrolDrawManager.Generate(mapUniverse.Editor);
+                        mapUniverse.View.PatrolDrawManager.Generate();
                     }
                     UIHelper.Tooltip("Display the connections between patrol route nodes.");
 
                     if (ImGui.MenuItem("Clear"))
                     {
-                        PatrolDrawManager.Clear();
+                        mapUniverse.View.PatrolDrawManager.Clear();
                     }
                     UIHelper.Tooltip("Clear the display of connections between patrol route nodes.");
 
@@ -348,7 +348,7 @@ public class ViewportMenu
 
                 if (ImGui.BeginMenu("Quick View"))
                 {
-                    mapUniverse.Editor.AutomaticPreviewTool.HandleQuickViewProperties();
+                    mapUniverse.View.AutomaticPreviewTool.HandleQuickViewProperties();
 
                     ImGui.EndMenu();
                 }

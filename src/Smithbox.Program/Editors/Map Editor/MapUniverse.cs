@@ -24,7 +24,7 @@ namespace StudioCore.Editors.MapEditor;
 /// </summary>
 public class MapUniverse : IUniverse
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     /// <summary>
@@ -52,13 +52,13 @@ public class MapUniverse : IUniverse
     /// </summary>
     private List<Task> Tasks = new();
 
-    public MapUniverse(MapEditorScreen editor, ProjectEntry project)
+    public MapUniverse(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        RenderScene = editor.RenderScene;
-        Selection = editor.ViewportSelection;
+        RenderScene = view.RenderScene;
+        Selection = view.ViewportSelection;
 
         if (RenderScene == null)
         {
@@ -71,7 +71,7 @@ public class MapUniverse : IUniverse
     }
     public bool LoadMap(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             if (Project.Handler.ParamEditor == null)
             {
@@ -84,7 +84,7 @@ public class MapUniverse : IUniverse
 
         ResourceManager.ClearUnusedResources();
 
-        Editor.ViewportSelection.ClearSelection();
+        View.ViewportSelection.ClearSelection();
 
         LoadMapAsync(mapid, selectOnLoad, fastLoad);
 
@@ -93,10 +93,10 @@ public class MapUniverse : IUniverse
 
     public void UnloadMap(string mapID, bool clearFromList = false)
     {
-        Editor.ViewportSelection.ClearSelection();
-        Editor.EditorActionManager.Clear();
+        View.ViewportSelection.ClearSelection();
+        View.ViewportActionManager.Clear();
 
-        foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
             var curMapID = entry.Key.Filename;
 
@@ -105,17 +105,17 @@ public class MapUniverse : IUniverse
                 var wrapper = entry.Value;
 
                 ResourceManager.ClearUnusedResources();
-                Editor.ModelInsightTool.ClearEntry(wrapper.MapContainer);
+                View.ModelInsightTool.ClearEntry(wrapper.MapContainer);
 
-                Editor.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
+                View.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
 
-                Editor.HavokCollisionBank.OnUnloadMap(curMapID);
-                Editor.HavokNavmeshBank.OnUnloadMap(curMapID);
+                View.HavokCollisionBank.OnUnloadMap(curMapID);
+                View.HavokNavmeshBank.OnUnloadMap(curMapID);
 
-                if (Editor.Selection.SelectedMapContainer == wrapper.MapContainer)
+                if (View.Selection.SelectedMapContainer == wrapper.MapContainer)
                 {
-                    Editor.Selection.SelectedMapID = "";
-                    Editor.Selection.SelectedMapContainer = null;
+                    View.Selection.SelectedMapID = "";
+                    View.Selection.SelectedMapContainer = null;
                 }
 
                 wrapper.MapContainer.LoadState = MapContentLoadState.Unloaded;
@@ -137,8 +137,8 @@ public class MapUniverse : IUniverse
     /// </summary>
     public async void LoadMapAsync(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
-        var fileEntry = Editor.Selection.GetFileEntryFromMapID(mapid);
-        var existingMap = Editor.Selection.GetMapContainerFromMapID(mapid);
+        var fileEntry = View.Selection.GetFileEntryFromMapID(mapid);
+        var existingMap = View.Selection.GetMapContainerFromMapID(mapid);
 
         if (existingMap != null && existingMap.LoadState is MapContentLoadState.Loaded)
         {
@@ -149,22 +149,22 @@ public class MapUniverse : IUniverse
 
         if (!fastLoad)
         {
-            Editor.HavokCollisionBank.OnLoadMap(mapid);
-            Editor.HavokNavmeshBank.OnLoadMap(mapid);
+            View.HavokCollisionBank.OnLoadMap(mapid);
+            View.HavokNavmeshBank.OnLoadMap(mapid);
         }
 
         try
         {
             HasProcessedMapLoad = false;
 
-            var newMap = new MapContainer(Editor, mapid);
+            var newMap = new MapContainer(View, mapid);
 
             ModelDataMapID = newMap.Name;
-            Editor.ModelInsightTool.AddEntry(newMap);
+            View.ModelInsightTool.AddEntry(newMap);
 
-            Editor.DisplayGroupTool.SetupDrawgroupCount();
+            View.DisplayGroupTool.SetupDrawgroupCount();
 
-            MapResourceHandler resourceHandler = new MapResourceHandler(Editor, mapid);
+            MapResourceHandler resourceHandler = new MapResourceHandler(View, mapid);
 
             await resourceHandler.ReadMap(mapid);
 
@@ -182,11 +182,11 @@ public class MapUniverse : IUniverse
 
                 LoadLights(newMap);
 
-                Editor.AutoInvadeBank.LoadAIP(newMap);
-                Editor.LightAtlasBank.LoadBTAB(newMap);
-                Editor.LightProbeBank.LoadBTPB(newMap);
+                View.AutoInvadeBank.LoadAIP(newMap);
+                View.LightAtlasBank.LoadBTAB(newMap);
+                View.LightProbeBank.LoadBTPB(newMap);
 
-                Editor.HavokNavmeshBank.LoadHavokNVA(newMap, resourceHandler);
+                View.HavokNavmeshBank.LoadHavokNVA(newMap, resourceHandler);
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
@@ -194,18 +194,18 @@ public class MapUniverse : IUniverse
                     // This is what adjusts the map position/rotation so they are presented in the same way they appear in-game.
                     // By default, maps assume 0,0,0 as their origin, which means without this they overlap.
 
-                    if (Editor.Project.Descriptor.ProjectType is ProjectType.ER)
+                    if (View.Project.Descriptor.ProjectType is ProjectType.ER)
                     {
-                        if (MapConnections_ER.GetMapTransform(Editor, mapid) is Transform
+                        if (MapConnections_ER.GetMapTransform(View, mapid) is Transform
                             loadTransform)
                         {
                             newMap.RootObject.GetUpdateTransformAction(loadTransform).Execute();
                         }
                     }
 
-                    if (Editor.Project.Descriptor.ProjectType is ProjectType.NR)
+                    if (View.Project.Descriptor.ProjectType is ProjectType.NR)
                     {
-                        if (MapConnections_NR.GetMapTransform(Editor, mapid) is Transform
+                        if (MapConnections_NR.GetMapTransform(View, mapid) is Transform
                             loadTransform)
                         {
                             newMap.RootObject.GetUpdateTransformAction(loadTransform).Execute();
@@ -227,7 +227,7 @@ public class MapUniverse : IUniverse
                     }
                 }
 
-                if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     LoadDS2Generators(resourceHandler.AdjustedMapID, newMap);
                 }
@@ -265,16 +265,16 @@ public class MapUniverse : IUniverse
 
                 // HACK: this fixes the weird ghost state between the viewport and content list
                 CloneMapObjectsAction action = new(
-                    Editor,
+                    View,
                     new List<MsbEntity>() { (MsbEntity)newMap.RootObject }, false,
                     null, null, true);
 
-                Editor.EditorActionManager.ExecuteAction(action);
+                View.ViewportActionManager.ExecuteAction(action);
 
                 if (selectOnLoad)
                 {
-                    Editor.Selection.SelectedMapID = mapid;
-                    Editor.Selection.SelectedMapContainer = newMap;
+                    View.Selection.SelectedMapID = mapid;
+                    View.Selection.SelectedMapContainer = newMap;
                 }
             }
         }
@@ -293,9 +293,9 @@ public class MapUniverse : IUniverse
 
     public void LoadLights(MapContainer map)
     {
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            foreach (var entry in Editor.Project.Locator.DS2_LightFiles.Entries)
+            foreach (var entry in View.Project.Locator.DS2_LightFiles.Entries)
             {
                 if (entry.Filename.Contains(map.Name))
                 {
@@ -309,7 +309,7 @@ public class MapUniverse : IUniverse
         }
         else
         {
-            foreach (var entry in Editor.Project.Locator.LightFiles.Entries)
+            foreach (var entry in View.Project.Locator.LightFiles.Entries)
             {
                 if (entry.Filename.Contains(map.Name))
                 {
@@ -328,15 +328,15 @@ public class MapUniverse : IUniverse
     {
         BTL btl = null;
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             var bhdPath = curEntry.Path;
             var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
 
             try
             {
-                var bdtFile = (Memory<byte>)Editor.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
-                var bhdFile = (Memory<byte>)Editor.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
+                var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
+                var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
 
                 using var bdt = BXF4.Read(bhdFile, bdtFile);
                 BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
@@ -355,7 +355,7 @@ public class MapUniverse : IUniverse
         }
         else
         {
-            Memory<byte>? btlFile = (Memory<byte>)Editor.Project.Handler.MapData?.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
+            Memory<byte>? btlFile = (Memory<byte>)View.Project.Handler.MapData?.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
 
             if (btlFile.HasValue)
                 btl = BTL.Read(btlFile.Value);
@@ -369,31 +369,31 @@ public class MapUniverse : IUniverse
         if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeBTL ||
             autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeBTL)
         {
-            SaveBTL(Editor, map);
+            SaveBTL(View, map);
         }
 
         if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeAIP ||
             autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeAIP)
         {
-            Editor.AutoInvadeBank.SaveAIP(Editor, map);
+            View.AutoInvadeBank.SaveAIP(map);
         }
 
         if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeBTAB ||
             autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeBTAB)
         {
-            Editor.LightAtlasBank.SaveBTAB(Editor, map);
+            View.LightAtlasBank.SaveBTAB(map);
         }
 
         if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeBTPB ||
             autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeBTPB)
         {
-            Editor.LightProbeBank.SaveBTPB(Editor, map);
+            View.LightProbeBank.SaveBTPB(map);
         }
 
         if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeNVA ||
             autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeNVA)
         {
-            Editor.HavokNavmeshBank.SaveHavokNVA(Editor, map);
+            View.HavokNavmeshBank.SaveHavokNVA(map);
         }
 
         if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeMSB ||
@@ -406,7 +406,7 @@ public class MapUniverse : IUniverse
 
                 IMsb msb;
                 DCX.Type compressionType = GetCompressionType();
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.DS3)
+                if (View.Project.Descriptor.ProjectType == ProjectType.DS3)
                 {
                     var prev = MSB3.Read(mapData);
                     MSB3 n = new();
@@ -415,7 +415,7 @@ public class MapUniverse : IUniverse
                     n.Routes = prev.Routes;
                     msb = n;
                 }
-                else if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
+                else if (View.Project.Descriptor.ProjectType == ProjectType.ER)
                 {
                     var prev = MSBE.Read(mapData);
                     MSBE n = new();
@@ -423,7 +423,7 @@ public class MapUniverse : IUniverse
                     n.Routes = prev.Routes;
                     msb = n;
                 }
-                else if (Editor.Project.Descriptor.ProjectType == ProjectType.NR)
+                else if (View.Project.Descriptor.ProjectType == ProjectType.NR)
                 {
                     var prev = MSB_NR.Read(mapData);
                     MSB_NR n = new();
@@ -431,7 +431,7 @@ public class MapUniverse : IUniverse
                     n.Routes = prev.Routes;
                     msb = n;
                 }
-                else if (Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
+                else if (View.Project.Descriptor.ProjectType == ProjectType.AC6)
                 {
                     var prev = MSB_AC6.Read(mapData);
                     MSB_AC6 n = new();
@@ -439,14 +439,14 @@ public class MapUniverse : IUniverse
                     n.Routes = prev.Routes;
                     msb = n;
                 }
-                else if (Editor.Project.Descriptor.ProjectType == ProjectType.DS2S || Editor.Project.Descriptor.ProjectType == ProjectType.DS2)
+                else if (View.Project.Descriptor.ProjectType == ProjectType.DS2S || View.Project.Descriptor.ProjectType == ProjectType.DS2)
                 {
                     var prev = MSB2.Read(mapData);
                     MSB2 n = new();
                     //n.PartPoses = prev.PartPoses;
                     msb = n;
                 }
-                else if (Editor.Project.Descriptor.ProjectType == ProjectType.SDT)
+                else if (View.Project.Descriptor.ProjectType == ProjectType.SDT)
                 {
                     var prev = MSBS.Read(mapData);
                     MSBS n = new();
@@ -455,11 +455,11 @@ public class MapUniverse : IUniverse
                     n.Routes = prev.Routes;
                     msb = n;
                 }
-                else if (Editor.Project.Descriptor.ProjectType == ProjectType.BB)
+                else if (View.Project.Descriptor.ProjectType == ProjectType.BB)
                 {
                     msb = new MSBB();
                 }
-                else if (Editor.Project.Descriptor.ProjectType == ProjectType.DES)
+                else if (View.Project.Descriptor.ProjectType == ProjectType.DES)
                 {
                     var prev = MSBD.Read(mapData);
                     MSBD n = new();
@@ -473,14 +473,14 @@ public class MapUniverse : IUniverse
                     //((MSB1)msb).Models = t.Models;
                 }
 
-                map.SerializeToMSB(msb, Editor.Project.Descriptor.ProjectType);
+                map.SerializeToMSB(msb, View.Project.Descriptor.ProjectType);
 
                 try
                 {
                     var newMapData = msb.Write(compressionType);
                     Project.VFS.ProjectFS.WriteFile(curEntry.Path, newMapData);
 
-                    if (Editor.Project.Descriptor.ProjectType == ProjectType.DS2S || Editor.Project.Descriptor.ProjectType == ProjectType.DS2)
+                    if (View.Project.Descriptor.ProjectType == ProjectType.DS2S || View.Project.Descriptor.ProjectType == ProjectType.DS2)
                     {
                         SaveDS2Generators(map);
                     }
@@ -536,7 +536,7 @@ public class MapUniverse : IUniverse
 
             registParams.Add(row.ID, row);
 
-            MsbEntity obj = new(Editor.Universe, map, row, MsbEntityType.DS2GeneratorRegist);
+            MsbEntity obj = new(View.Universe, map, row, MsbEntityType.DS2GeneratorRegist);
             map.AddObject(obj);
         }
 
@@ -553,7 +553,7 @@ public class MapUniverse : IUniverse
             mergedRow.AddRow("generator-loc", row);
             generatorParams.Add(row.ID, mergedRow);
 
-            MsbEntity obj = new(Editor.Universe, map, mergedRow, MsbEntityType.DS2Generator);
+            MsbEntity obj = new(View.Universe, map, mergedRow, MsbEntityType.DS2Generator);
             generatorObjs.Add(row.ID, obj);
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
@@ -577,7 +577,7 @@ public class MapUniverse : IUniverse
                 MergedParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
                 mergedRow.AddRow("generator", row);
                 generatorParams.Add(row.ID, mergedRow);
-                MsbEntity obj = new(Editor.Universe, map, mergedRow, MsbEntityType.DS2Generator);
+                MsbEntity obj = new(View.Universe, map, mergedRow, MsbEntityType.DS2Generator);
                 generatorObjs.Add(row.ID, obj);
                 map.AddObject(obj);
             }
@@ -590,7 +590,7 @@ public class MapUniverse : IUniverse
                     (int)regist.GetCellHandleOrThrow("EnemyParamID").Value);
                 if (chrid != null)
                 {
-                    ResourceDescriptor asset = ModelLocator.GetChrModel(Editor.Project, $@"c{chrid}", $@"c{chrid}");
+                    ResourceDescriptor asset = ModelLocator.GetChrModel(View.Project, $@"c{chrid}", $@"c{chrid}");
                     MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
                         RenderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, null);
                     model.DrawFilter = RenderFilter.Character;
@@ -601,13 +601,13 @@ public class MapUniverse : IUniverse
                     if (CFG.Current.Viewport_Enable_Texturing)
                     {
                         // TPF
-                        var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, $@"c{chrid}", false);
+                        var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, $@"c{chrid}", false);
 
                         if (textureAsset.IsValid())
                             chrsToLoad.Add(textureAsset);
 
                         // BND
-                        textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Editor.Project, $@"c{chrid}", true);
+                        textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, $@"c{chrid}", true);
 
                         if (textureAsset.IsValid())
                             chrsToLoad.Add(textureAsset);
@@ -626,7 +626,7 @@ public class MapUniverse : IUniverse
 
             eventParams.Add(row.ID, row);
 
-            MsbEntity obj = new(Editor.Universe, map, row, MsbEntityType.DS2Event);
+            MsbEntity obj = new(View.Universe, map, row, MsbEntityType.DS2Event);
             map.AddObject(obj);
         }
 
@@ -640,7 +640,7 @@ public class MapUniverse : IUniverse
 
             eventLocationParams.Add(row.ID, row);
 
-            MsbEntity obj = new(Editor.Universe, map, row, MsbEntityType.DS2EventLocation);
+            MsbEntity obj = new(View.Universe, map, row, MsbEntityType.DS2EventLocation);
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
 
@@ -662,7 +662,7 @@ public class MapUniverse : IUniverse
 
             objectInstanceParams.Add(row.ID, row);
 
-            MsbEntity obj = new(Editor.Universe, map, row, MsbEntityType.DS2ObjectInstance);
+            MsbEntity obj = new(View.Universe, map, row, MsbEntityType.DS2ObjectInstance);
             map.AddObject(obj);
         }
 
@@ -685,11 +685,11 @@ public class MapUniverse : IUniverse
     public void LoadRelatedMapsER(string mapid)
     {
         IReadOnlyDictionary<string, MapConnectionRelationType> relatedMaps =
-            MapConnections_ER.GetRelatedMaps(Editor, mapid);
+            MapConnections_ER.GetRelatedMaps(View, mapid);
 
         foreach (KeyValuePair<string, MapConnectionRelationType> map in relatedMaps)
         {
-            Editor.Universe.LoadMap(map.Key);
+            View.Universe.LoadMap(map.Key);
         }
     }
 
@@ -750,40 +750,40 @@ public class MapUniverse : IUniverse
     private void SaveDS2Generators(MapContainer map)
     {
         // Load all the params
-        ResourceDescriptor regparamad = ParamLocator.GetDS2GeneratorRegistParam(Editor.Project, map.Name);
-        ResourceDescriptor regparamadw = ParamLocator.GetDS2GeneratorRegistParam(Editor.Project, map.Name, true);
+        ResourceDescriptor regparamad = ParamLocator.GetDS2GeneratorRegistParam(View.Project, map.Name);
+        ResourceDescriptor regparamadw = ParamLocator.GetDS2GeneratorRegistParam(View.Project, map.Name, true);
         Param regparam = Param.Read(regparamad.AssetPath);
-        PARAMDEF reglayout = ParamLocator.GetParamdefForParam(Editor.Project, regparam.ParamType);
+        PARAMDEF reglayout = ParamLocator.GetParamdefForParam(View.Project, regparam.ParamType);
         regparam.ApplyParamdef(reglayout);
 
-        ResourceDescriptor locparamad = ParamLocator.GetDS2GeneratorLocationParam(Editor.Project, map.Name);
-        ResourceDescriptor locparamadw = ParamLocator.GetDS2GeneratorLocationParam(Editor.Project, map.Name, true);
+        ResourceDescriptor locparamad = ParamLocator.GetDS2GeneratorLocationParam(View.Project, map.Name);
+        ResourceDescriptor locparamadw = ParamLocator.GetDS2GeneratorLocationParam(View.Project, map.Name, true);
         Param locparam = Param.Read(locparamad.AssetPath);
-        PARAMDEF loclayout = ParamLocator.GetParamdefForParam(Editor.Project, locparam.ParamType);
+        PARAMDEF loclayout = ParamLocator.GetParamdefForParam(View.Project, locparam.ParamType);
         locparam.ApplyParamdef(loclayout);
 
-        ResourceDescriptor genparamad = ParamLocator.GetDS2GeneratorParam(Editor.Project, map.Name);
-        ResourceDescriptor genparamadw = ParamLocator.GetDS2GeneratorParam(Editor.Project, map.Name, true);
+        ResourceDescriptor genparamad = ParamLocator.GetDS2GeneratorParam(View.Project, map.Name);
+        ResourceDescriptor genparamadw = ParamLocator.GetDS2GeneratorParam(View.Project, map.Name, true);
         Param genparam = Param.Read(genparamad.AssetPath);
-        PARAMDEF genlayout = ParamLocator.GetParamdefForParam(Editor.Project, genparam.ParamType);
+        PARAMDEF genlayout = ParamLocator.GetParamdefForParam(View.Project, genparam.ParamType);
         genparam.ApplyParamdef(genlayout);
 
-        ResourceDescriptor evtparamad = ParamLocator.GetDS2EventParam(Editor.Project, map.Name);
-        ResourceDescriptor evtparamadw = ParamLocator.GetDS2EventParam(Editor.Project, map.Name, true);
+        ResourceDescriptor evtparamad = ParamLocator.GetDS2EventParam(View.Project, map.Name);
+        ResourceDescriptor evtparamadw = ParamLocator.GetDS2EventParam(View.Project, map.Name, true);
         Param evtparam = Param.Read(evtparamad.AssetPath);
-        PARAMDEF evtlayout = ParamLocator.GetParamdefForParam(Editor.Project, evtparam.ParamType);
+        PARAMDEF evtlayout = ParamLocator.GetParamdefForParam(View.Project, evtparam.ParamType);
         evtparam.ApplyParamdef(evtlayout);
 
-        ResourceDescriptor evtlparamad = ParamLocator.GetDS2EventLocationParam(Editor.Project, map.Name);
-        ResourceDescriptor evtlparamadw = ParamLocator.GetDS2EventLocationParam(Editor.Project, map.Name, true);
+        ResourceDescriptor evtlparamad = ParamLocator.GetDS2EventLocationParam(View.Project, map.Name);
+        ResourceDescriptor evtlparamadw = ParamLocator.GetDS2EventLocationParam(View.Project, map.Name, true);
         Param evtlparam = Param.Read(evtlparamad.AssetPath);
-        PARAMDEF evtllayout = ParamLocator.GetParamdefForParam(Editor.Project, evtlparam.ParamType);
+        PARAMDEF evtllayout = ParamLocator.GetParamdefForParam(View.Project, evtlparam.ParamType);
         evtlparam.ApplyParamdef(evtllayout);
 
-        ResourceDescriptor objparamad = ParamLocator.GetDS2ObjInstanceParam(Editor.Project, map.Name);
-        ResourceDescriptor objparamadw = ParamLocator.GetDS2ObjInstanceParam(Editor.Project, map.Name, true);
+        ResourceDescriptor objparamad = ParamLocator.GetDS2ObjInstanceParam(View.Project, map.Name);
+        ResourceDescriptor objparamadw = ParamLocator.GetDS2ObjInstanceParam(View.Project, map.Name, true);
         Param objparam = Param.Read(objparamad.AssetPath);
-        PARAMDEF objlayout = ParamLocator.GetParamdefForParam(Editor.Project, objparam.ParamType);
+        PARAMDEF objlayout = ParamLocator.GetParamdefForParam(View.Project, objparam.ParamType);
         objparam.ApplyParamdef(objlayout);
 
         // Clear them out
@@ -965,38 +965,38 @@ public class MapUniverse : IUniverse
 
     private DCX.Type GetCompressionType()
     {
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.DS3)
+        if (View.Project.Descriptor.ProjectType == ProjectType.DS3)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
+        if (View.Project.Descriptor.ProjectType == ProjectType.ER)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType == ProjectType.NR)
         {
             return DCX.Type.DCX_DFLT_11000_44_9_15;
         }
 
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
+        if (View.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             return DCX.Type.DCX_KRAK_MAX;
         }
-        else if (Editor.Project.Descriptor.ProjectType == ProjectType.DS2S || Editor.Project.Descriptor.ProjectType == ProjectType.DS2)
+        else if (View.Project.Descriptor.ProjectType == ProjectType.DS2S || View.Project.Descriptor.ProjectType == ProjectType.DS2)
         {
             return DCX.Type.None;
         }
-        else if (Editor.Project.Descriptor.ProjectType == ProjectType.SDT)
+        else if (View.Project.Descriptor.ProjectType == ProjectType.SDT)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (Editor.Project.Descriptor.ProjectType == ProjectType.BB)
+        else if (View.Project.Descriptor.ProjectType == ProjectType.BB)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (Editor.Project.Descriptor.ProjectType == ProjectType.DES)
+        else if (View.Project.Descriptor.ProjectType == ProjectType.DES)
         {
             return DCX.Type.None;
         }
@@ -1007,27 +1007,27 @@ public class MapUniverse : IUniverse
     /// <summary>
     ///     Save BTL light data
     /// </summary>
-    public void SaveBTL(MapEditorScreen editor, MapContainer map)
+    public void SaveBTL(MapEditorView view, MapContainer map)
     {
-        var fileEntries = Editor.Project.Locator.LightFiles.Entries;
+        var fileEntries = View.Project.Locator.LightFiles.Entries;
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-            fileEntries = Editor.Project.Locator.DS2_LightFiles.Entries;
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            fileEntries = View.Project.Locator.DS2_LightFiles.Entries;
                 
         foreach (var entry in fileEntries)
         {
             if (!entry.Filename.Contains(map.Name))
                 continue;
 
-            if (Editor.Project.Descriptor.ProjectType == ProjectType.DS2S || Editor.Project.Descriptor.ProjectType == ProjectType.DS2)
+            if (View.Project.Descriptor.ProjectType == ProjectType.DS2S || View.Project.Descriptor.ProjectType == ProjectType.DS2)
             {
                 var bhdPath = entry.Path;
                 var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
 
                 try
                 {
-                    var bdtFile = (Memory<byte>)Editor.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
-                    var bhdFile = (Memory<byte>)Editor.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
+                    var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
+                    var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
 
                     using var bdt = BXF4.Read(bhdFile, bdtFile);
                     BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
@@ -1060,7 +1060,7 @@ public class MapUniverse : IUniverse
             }
             else
             {
-                var btlFile = (Memory<byte>)Editor.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(entry.Path);
+                var btlFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(entry.Path);
 
                 var btl = BTL.Read(btlFile);
 
@@ -1085,7 +1085,7 @@ public class MapUniverse : IUniverse
 
     public void SaveAllMaps(bool autoSave = false)
     {
-        foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer != null)
             {
@@ -1096,7 +1096,7 @@ public class MapUniverse : IUniverse
 
     public void UnloadAllMaps()
     {
-        foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer != null)
             {
@@ -1107,7 +1107,7 @@ public class MapUniverse : IUniverse
 
     public void UnloadAll(bool clearFromList = false)
     {
-        foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer != null)
             {

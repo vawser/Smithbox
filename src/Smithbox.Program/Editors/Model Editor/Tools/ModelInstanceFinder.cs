@@ -13,12 +13,12 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelInstanceFinder
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public ModelInstanceFinder(ModelEditorScreen editor, ProjectEntry project)
+    public ModelInstanceFinder(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -79,7 +79,7 @@ public class ModelInstanceFinder
                     EditorCommandQueue.AddCommand($"map/load/{entry.MapName}");
                     EditorCommandQueue.AddCommand($"map/select/{entry.MapName}/{entry.EntityName}/Part");
                 }
-                var aliasName = AliasHelper.GetMapNameAlias(Editor.Project, entry.MapName);
+                var aliasName = AliasHelper.GetMapNameAlias(View.Project, entry.MapName);
                 UIHelper.DisplayAlias(aliasName);
                 UIHelper.Tooltip("The value in the [] is the number of instances with the map.");
             }
@@ -92,15 +92,15 @@ public class ModelInstanceFinder
         {
             SetupSearch = false;
 
-            var targetFS = Editor.Project.VFS.VanillaFS;
+            var targetFS = View.Project.VFS.VanillaFS;
             if(_targetProjectFiles)
             {
-                targetFS = Editor.Project.VFS.FS;
+                targetFS = View.Project.VFS.FS;
             }
 
-            var maps = Editor.Project.Locator.MapFiles;
+            var maps = View.Project.Locator.MapFiles;
 
-            switch (Editor.Project.Descriptor.ProjectType)
+            switch (View.Project.Descriptor.ProjectType)
             {
                 case ProjectType.DES:
                     foreach (var entry in maps.Entries)

@@ -38,6 +38,23 @@ public class ModelEditorView
     public ModelContents Contents;
     public ModelProperties Properties;
 
+    // Tools
+    public ModelGridConfiguration ModelGridTool;
+    public ModelInsightView ModelInsightMenu;
+    public ModelInstanceFinder ModelInstanceFinder;
+    public ModelMaskToggler ModelMaskToggler;
+    public ModelInsightHelper ModelInsightHelper;
+
+    // Actions
+    public CreateAction CreateAction;
+    public DuplicateAction DuplicateAction;
+    public DeleteAction DeleteAction;
+    public FrameAction FrameAction;
+    public GotoAction GotoAction;
+    public PullToCameraAction PullToCameraAction;
+    public ReorderAction ReorderAction;
+
+
     public ModelEditorView(ModelEditorScreen editor, ProjectEntry project, int imguiId)
     {
         Editor = editor;
@@ -59,6 +76,23 @@ public class ModelEditorView
         SelectionList = new(this, project);
         Contents = new(this, project);
         Properties = new(this, project);
+
+        // Tools
+        ModelGridTool = new ModelGridConfiguration(this, Project);
+        ModelInsightMenu = new ModelInsightView(this, Project);
+        ModelInstanceFinder = new ModelInstanceFinder(this, Project);
+        ModelMaskToggler = new ModelMaskToggler(this, Project);
+
+        // Actions
+        CreateAction = new CreateAction(this, Project);
+        DuplicateAction = new DuplicateAction(this, Project);
+        DeleteAction = new DeleteAction(this, Project);
+        FrameAction = new FrameAction(this, Project);
+        GotoAction = new GotoAction(this, Project);
+        PullToCameraAction = new PullToCameraAction(this, Project);
+        ReorderAction = new ReorderAction(this, Project);
+
+        ModelInsightHelper = new ModelInsightHelper(this, Project);
 
         ActionManager.AddEventHandler(Contents);
     }
@@ -95,9 +129,6 @@ public class ModelEditorView
             // Properties
             if (ImGui.Begin($@"Properties##ModelPropertiesWindow{ViewIndex}", UIHelper.GetMainWindowFlags()))
             {
-                float width = ImGui.GetContentRegionAvail().X;
-                float height = ImGui.GetContentRegionAvail().Y;
-
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
                     FocusManager.SetFocus(EditorFocusContext.ModelEditor_FileList);
@@ -110,6 +141,7 @@ public class ModelEditorView
             ImGui.End();
         }
 
+        
         ViewportSelection.ClearGotoTarget();
     }
 }

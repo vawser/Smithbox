@@ -10,12 +10,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class RenderTypeAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public RenderTypeAction(MapEditorScreen editor, ProjectEntry project)
+    public RenderTypeAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -24,7 +24,7 @@ public class RenderTypeAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_Cycle_Render_Type))
             {
@@ -77,8 +77,8 @@ public class RenderTypeAction
     /// </summary>
     public void ApplyRenderTypeToggle()
     {
-        Editor.ViewportSelection.StoreSelection();
-        var sel = Editor.ViewportSelection.GetSelection();
+        View.ViewportSelection.StoreSelection();
+        var sel = View.ViewportSelection.GetSelection();
 
         foreach (var entry in sel)
         {
@@ -96,6 +96,6 @@ public class RenderTypeAction
             }
         }
 
-        Editor.ViewportSelection.ResetSelection();
+        View.ViewportSelection.ResetSelection();
     }
 }

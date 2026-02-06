@@ -10,12 +10,12 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class FrameAction
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public FrameAction(ModelEditorScreen editor, ProjectEntry project)
+    public FrameAction(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -24,12 +24,7 @@ public class FrameAction
     /// </summary>
     public void OnShortcut()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
-        if (activeView.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Frame))
             {
@@ -77,23 +72,18 @@ public class FrameAction
     /// </summary>
     public void ApplyViewportFrame()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
         var offset = CFG.Current.Viewport_Frame_Offset;
         var distance = CFG.Current.Viewport_Frame_Distance;
 
-        if (activeView.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            HashSet<Entity> selected = activeView.ViewportSelection.GetFilteredSelection<Entity>();
+            HashSet<Entity> selected = View.ViewportSelection.GetFilteredSelection<Entity>();
 
             var entity = selected.FirstOrDefault();
 
             if (entity != null && entity.RenderSceneMesh != null)
             {
-                activeView.ViewportWindow.Viewport.FrameBox(entity.RenderSceneMesh.GetBounds(), offset, distance);
+                View.ViewportWindow.Viewport.FrameBox(entity.RenderSceneMesh.GetBounds(), offset, distance);
             }
         }
         else
@@ -104,17 +94,12 @@ public class FrameAction
 
     public void FrameCurrentEntity(Entity entity)
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
         var offset = CFG.Current.Viewport_Frame_Offset;
         var distance = CFG.Current.Viewport_Frame_Distance;
 
         if (entity != null && entity.RenderSceneMesh != null)
         {
-            activeView.ViewportWindow.Viewport.FrameBox(entity.RenderSceneMesh.GetBounds(), offset, distance);
+            View.ViewportWindow.Viewport.FrameBox(entity.RenderSceneMesh.GetBounds(), offset, distance);
         }
     }
 }

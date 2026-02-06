@@ -2,3 +2,6 @@
 # TODO 
 #---------------------
 
+Map Editor:
+ Map List needs to be adjusted so the 'loaded' highlights are per view
+ Save process should also be adjusted to only save the active view's loaded maps

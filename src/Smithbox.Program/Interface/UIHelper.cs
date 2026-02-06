@@ -384,7 +384,7 @@ public static class UIHelper
     }
     public static ImGuiWindowFlags GetDisplayViewWindowFlags()
     {
-        var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav | ImGuiWindowFlags.MenuBar;
+        var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav;
 
         if (!CFG.Current.Interface_Allow_Window_Movement)
         {

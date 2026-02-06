@@ -11,14 +11,14 @@ namespace StudioCore.Editors.MapEditor;
 
 public class LightAtlasBank
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, BTAB> Files = new();
 
-    public LightAtlasBank(MapEditorScreen editor, ProjectEntry project)
+    public LightAtlasBank(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         Setup();
@@ -77,7 +77,7 @@ public class LightAtlasBank
         }
     }
 
-    public void SaveBTAB(MapEditorScreen editor, MapContainer map)
+    public void SaveBTAB(MapContainer map)
     {
         if (!CanUse())
             return;

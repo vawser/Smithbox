@@ -18,11 +18,8 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapPropertyView
 {
-    private MapEditorScreen Editor;
-    private MapPropertyCache MapEntityPropertyCache;
-    private IViewport Viewport;
-
-    private ViewportActionManager ContextActionManager;
+    private MapEditorView View;
+    private ProjectEntry Project;
 
     private readonly string[] _lightTypes = { "Spot", "Directional", "Point" };
 
@@ -40,29 +37,15 @@ public class MapPropertyView
 
     private string msbFieldSearch = "";
 
-    public MapPropertyView(MapEditorScreen screen)
+    public MapPropertyView(MapEditorView view, ProjectEntry project)
     {
-        Editor = screen;
-        ContextActionManager = screen.EditorActionManager;
-        MapEntityPropertyCache = screen.MapPropertyCache;
-        Viewport = screen.MapViewportView.Viewport;
+        View = view;
+        Project = project;
     }
 
-    public void OnGui(ViewportSelection selection, string id, float w, float h)
+    public void Display()
     {
-        var scale = DPI.UIScale();
-        HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
-
-        if (!CFG.Current.Interface_MapEditor_Properties)
-            return;
-
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.ImGui_ChildBg);
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(350, h - 80) * scale, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowPos(new Vector2(w - 370, 20) * scale, ImGuiCond.FirstUseEver);
-
-        ImGui.Begin($@"Properties##{id}");
-        FocusManager.SetFocus(EditorFocusContext.MapEditor_Properties);
+        HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
 
         // Header
         ImGui.AlignTextToFramePadding();
@@ -103,7 +86,7 @@ public class MapPropertyView
         // Properties
         ImGui.BeginChild("propedit");
 
-        if (Editor.Universe.HasProcessedMapLoad && entSelection.Count > 1)
+        if (View.Universe.HasProcessedMapLoad && entSelection.Count > 1)
         {
             Entity firstEnt = entSelection.First();
             if (firstEnt.WrappedObject is Param.Row prow || firstEnt.WrappedObject is MergedParamRow)
@@ -120,11 +103,12 @@ public class MapPropertyView
             ImGui.Separator();
             ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
             ImGui.BeginChild("MSB_EditingMultipleObjsChild");
-            PropEditorSelectedEntities(selection);
+            PropEditorSelectedEntities(View.ViewportSelection);
             ImGui.PopStyleColor();
+
             ImGui.EndChild();
         }
-        else if (Editor.Universe.HasProcessedMapLoad && entSelection.Any())
+        else if (View.Universe.HasProcessedMapLoad && entSelection.Any())
         {
             Entity firstEnt = entSelection.First();
             //ImGui.Text($" Map: {firstEnt.Container.Name}");
@@ -143,10 +127,10 @@ public class MapPropertyView
             }
             else
             {
-                PropEditorSelectedEntities(selection);
+                PropEditorSelectedEntities(View.ViewportSelection);
             }
         }
-        else if (!Editor.Universe.HasProcessedMapLoad)
+        else if (!View.Universe.HasProcessedMapLoad)
         {
             ImGui.Text("");
         }
@@ -156,8 +140,6 @@ public class MapPropertyView
         }
 
         ImGui.EndChild();
-        ImGui.End();
-        ImGui.PopStyleColor(2);
     }
 
     private void PropEditorParamRow(Entity selection)
@@ -195,13 +177,13 @@ public class MapPropertyView
             {
                 var mergedRow = (MergedParamRow)selection.WrappedObject;
 
-                meta = Editor.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{mergedRow.MetaName}");
+                meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{mergedRow.MetaName}");
             }
             if (selection.WrappedObject is Param.Row)
             {
                 var paramRow = (Param.Row)selection.WrappedObject;
 
-                meta = Editor.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
+                meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
             }
 
 
@@ -230,7 +212,7 @@ public class MapPropertyView
 
         foreach (Param.Column cell in row.Columns)
         {
-            var meta = Editor.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+            var meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
 
             PropEditorPropCellRow(meta, row[cell], ref id, null, row.ID);
         }
@@ -323,7 +305,7 @@ public class MapPropertyView
                 }
                 if (ImGui.Selectable(@"Paste##PastePosition"))
                 {
-                    PropAction_Position.PasteSavedPosition(Editor, selection);
+                    PropAction_Position.PasteSavedPosition(View, selection);
                 }
             }
 
@@ -336,7 +318,7 @@ public class MapPropertyView
                 }
                 if (ImGui.Selectable(@"Paste##PasteRotation"))
                 {
-                    PropAction_Rotation.PasteSavedRotation(Editor, selection);
+                    PropAction_Rotation.PasteSavedRotation(View, selection);
                 }
             }
 
@@ -349,7 +331,7 @@ public class MapPropertyView
                 }
                 if (ImGui.Selectable(@"Paste##PasteScale"))
                 {
-                    PropAction_Scale.PasteSavedScale(Editor, selection);
+                    PropAction_Scale.PasteSavedScale(View, selection);
                 }
             }
 
@@ -357,7 +339,7 @@ public class MapPropertyView
             // Actions
             if (ImGui.Selectable(@"Search##PropSearch"))
             {
-                Editor.LocalSearchView.FocusLocalPropertySearch = true;
+                View.LocalSearchView.FocusLocalPropertySearch = true;
                 RequestedSearchProperty = prop;
                 EditorCommandQueue.AddCommand($@"map/propsearch/{prop.Name}");
             }
@@ -376,11 +358,11 @@ public class MapPropertyView
                 }
             }
 
-            if (Editor.GlobalSearchTool.IsOpen)
+            if (View.GlobalSearchTool.IsOpen)
             {
                 if (ImGui.Selectable("Add to Property Filter"))
                 {
-                    Editor.GlobalSearchTool.AddPropertyFilterInput(prop, arrayIndex);
+                    View.GlobalSearchTool.AddPropertyFilterInput(prop, arrayIndex);
                 }
             }
 
@@ -434,35 +416,35 @@ public class MapPropertyView
         }
 
         // Param References
-        if (MapEditorDecorations.ParamRefRow(Editor, meta, proprow, oldval, ref newval))
+        if (MapEditorDecorations.ParamRefRow(View, meta, proprow, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Text References
-        if (MapEditorDecorations.FmgRefRow(Editor, meta, proprow, oldval, ref newval))
+        if (MapEditorDecorations.FmgRefRow(View, meta, proprow, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Enum List
-        if (MapEditorDecorations.GenericEnumRow(Editor, meta, proprow, oldval, ref newval))
+        if (MapEditorDecorations.GenericEnumRow(View, meta, proprow, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Alias List
-        if (MapEditorDecorations.AliasEnumRow(Editor, meta, proprow, oldval, ref newval))
+        if (MapEditorDecorations.AliasEnumRow(View, meta, proprow, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // DS2: Spawn State List
-        if (MapEditorDecorations.SpawnStateListRow(Editor, meta, proprow, oldval, ref newval, rowID))
+        if (MapEditorDecorations.SpawnStateListRow(View, meta, proprow, oldval, ref newval, rowID))
         {
             changed = true;
             committed = true;
@@ -490,7 +472,7 @@ public class MapPropertyView
     {
         PropContextRowOpener();
 
-        var meta = Editor.Project.Handler.MapData.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
+        var meta = View.Project.Handler.MapData.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
 
         // Field Name
         var fieldName = prop.Name;
@@ -533,38 +515,38 @@ public class MapPropertyView
         }
 
         // Model Link
-        MapEditorDecorations.ModelNameRow(Editor, meta, entSelection, prop, oldval);
+        MapEditorDecorations.ModelNameRow(View, meta, entSelection, prop, oldval);
 
         // Param References
-        if (MapEditorDecorations.ParamRefRow(Editor, meta, prop, oldval, ref newval))
+        if (MapEditorDecorations.ParamRefRow(View, meta, prop, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Text References
-        if (MapEditorDecorations.FmgRefRow(Editor, meta, prop, oldval, ref newval))
+        if (MapEditorDecorations.FmgRefRow(View, meta, prop, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Map References - TODO: this still uses the C# attribute method, change to MSBMETA
-        if (MapEditorDecorations.MsbReferenceRow(Editor, meta, prop, oldval, ref newval, entSelection))
+        if (MapEditorDecorations.MsbReferenceRow(View, meta, prop, oldval, ref newval, entSelection))
         {
             changed = true;
             committed = true;
         }
 
         // Enum List
-        if (MapEditorDecorations.GenericEnumRow(Editor, meta, prop, oldval, ref newval))
+        if (MapEditorDecorations.GenericEnumRow(View, meta, prop, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Alias List
-        if (MapEditorDecorations.AliasEnumRow(Editor, meta, prop, oldval, ref newval))
+        if (MapEditorDecorations.AliasEnumRow(View, meta, prop, oldval, ref newval))
         {
             changed = true;
             committed = true;
@@ -573,7 +555,7 @@ public class MapPropertyView
         // ER: Mask List - TODO: this still uses the C# attribute method, change to MSBMETA
         if (prop.GetCustomAttribute<EldenRingAssetMask>() != null)
         {
-            if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(Editor, meta, prop, oldval, ref newval, selection))
+            if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(View, meta, prop, oldval, ref newval, selection))
             {
                 changed = true;
                 committed = true;
@@ -603,7 +585,7 @@ public class MapPropertyView
             editName = (newValue, first);
             if (entities.Count() == 1)
             {
-                ContextActionManager.ExecuteAction(new RenameObjectsAction(
+                View.ViewportActionManager.ExecuteAction(new RenameObjectsAction(
                     entities.ToList(),
                     new List<string> { newValue },
                     false
@@ -611,7 +593,7 @@ public class MapPropertyView
             }
             else
             {
-                ContextActionManager.ExecuteAction(new RenameObjectsAction(
+                View.ViewportActionManager.ExecuteAction(new RenameObjectsAction(
                     entities.ToList(),
                     entities.Select((ent, i) => $"{newValue}_{i}").ToList(),
                     false
@@ -651,7 +633,7 @@ public class MapPropertyView
         {
             if (single)
             {
-                ContextActionManager.ExecuteAction(new RenameObjectsAction(
+                View.ViewportActionManager.ExecuteAction(new RenameObjectsAction(
                     new List<MsbEntity> { first },
                     new List<string> { editName.name },
                     true
@@ -665,7 +647,7 @@ public class MapPropertyView
                         group.Select((ent, index) => $"{editName.name}-{group.Key.Name}"
                     ));
 
-                ContextActionManager.ExecuteAction(new RenameObjectsAction(
+                View.ViewportActionManager.ExecuteAction(new RenameObjectsAction(
                     entities.ToList(),
                     nameList.ToList(),
                     true
@@ -688,7 +670,7 @@ public class MapPropertyView
         var first = entities.First();
 
         var type = types.Count() == 1 ? types.First() : typeof(IMsbEntry);
-        var meta = Editor.Project.Handler.MapData.Meta.GetMeta(type, false);
+        var meta = View.Project.Handler.MapData.Meta.GetMeta(type, false);
 
         if (CFG.Current.MapEditor_Properties_Display_Additional_Information_at_Top)
         {
@@ -725,7 +707,7 @@ public class MapPropertyView
 
             if (mapID != "")
             {
-                var mapAlias = AliasHelper.GetMapNameAlias(Editor.Project, first.MapID);
+                var mapAlias = AliasHelper.GetMapNameAlias(View.Project, first.MapID);
                 UIHelper.DisplayAlias(mapAlias);
             }
         }
@@ -777,7 +759,7 @@ public class MapPropertyView
         Entity firstEnt = entSelection.First();
         Type type = obj.GetType();
 
-        PropertyInfo[] properties = MapEntityPropertyCache.GetCachedProperties(type);
+        PropertyInfo[] properties = View.MapPropertyCache.GetCachedProperties(type);
 
         // Properties
         var id = 0;
@@ -791,7 +773,7 @@ public class MapPropertyView
                 treeFlags = ImGuiTreeNodeFlags.None;
             }
 
-            var meta = Editor.Project.Handler.MapData.Meta.GetFieldMeta(prop.Name, type);
+            var meta = View.Project.Handler.MapData.Meta.GetFieldMeta(prop.Name, type);
 
             // Field Name
             var fieldName = prop.Name;
@@ -988,7 +970,8 @@ public class MapPropertyView
                             firstEnt.UpdateRenderModel();
                             firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                         });
-                        ContextActionManager.ExecuteAction(action);
+
+                        View.ViewportActionManager.ExecuteAction(action);
                     }
                 }
 
@@ -1042,9 +1025,8 @@ public class MapPropertyView
                         firstEnt.UpdateRenderModel();
                         firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                     });
-                    ContextActionManager.ExecuteAction(action);
 
-                    ContextActionManager.ExecuteAction(action);
+                    View.ViewportActionManager.ExecuteAction(action);
                 }
 
                 ImGui.NextColumn();
@@ -1098,15 +1080,15 @@ public class MapPropertyView
 
         if (CFG.Current.MapEditor_Properties_Display_Behavior_Information)
         {
-            PropInfo_MapObjectType.Display(Editor, firstEnt);
-            PropInfo_Region_Connection.Display(Editor, firstEnt);
-            PropInfo_Part_ConnectCollision.Display(Editor, firstEnt);
+            PropInfo_MapObjectType.Display(View, firstEnt);
+            PropInfo_Region_Connection.Display(View, firstEnt);
+            PropInfo_Part_ConnectCollision.Display(View, firstEnt);
         }
         if (CFG.Current.MapEditor_Properties_Display_Reference_Information)
         {
-            PropInfo_ReferencesTo.Display(Editor, firstEnt, Viewport, ref selection, ref refID);
-            PropInfo_ReferencedBy.Display(Editor, firstEnt, Viewport, ref selection, ref refID);
-            PropInfo_ParamJumps.Display(Editor, firstEnt, Viewport, ref selection, ref refID);
+            PropInfo_ReferencesTo.Display(View, firstEnt, View.ViewportWindow.Viewport, ref selection, ref refID);
+            PropInfo_ReferencedBy.Display(View, firstEnt, View.ViewportWindow.Viewport, ref selection, ref refID);
+            PropInfo_ParamJumps.Display(View, firstEnt, View.ViewportWindow.Viewport, ref selection, ref refID);
         }
     }
 
@@ -1602,9 +1584,9 @@ public class MapPropertyView
         ref bool committed, int arrayindex = -1)
     {
         if (prop == _changingPropery && _lastUncommittedAction != null &&
-            ContextActionManager.PeekUndoAction() == _lastUncommittedAction)
+            View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
-            ContextActionManager.UndoAction();
+            View.ViewportActionManager.UndoAction();
         }
         else
         {
@@ -1627,7 +1609,7 @@ public class MapPropertyView
                 action = new PropertiesChangedAction((PropertyInfo)prop, obj, newval);
             }
 
-            ContextActionManager.ExecuteAction(action);
+            View.ViewportActionManager.ExecuteAction(action);
 
             _lastUncommittedAction = action;
             _changingPropery = prop;
@@ -1645,18 +1627,18 @@ public class MapPropertyView
 
         if (meta != null && meta.EntityIdentifierProperty)
         {
-            Editor.EntityIdentifierTool.UpdateEntityCache(selection, oldval, newval);
+            View.EntityIdentifierTool.UpdateEntityCache(selection, oldval, newval);
         }
 
         selection.BuildReferenceMap();
         // Undo and redo the last action with a rendering update
-        if (_lastUncommittedAction != null && ContextActionManager.PeekUndoAction() == _lastUncommittedAction)
+        if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
             if (_lastUncommittedAction is PropertiesChangedAction a)
             {
                 // Kinda a hack to prevent a jumping glitch
                 a.SetPostExecutionAction(null);
-                ContextActionManager.UndoAction();
+                View.ViewportActionManager.UndoAction();
                 if (selection != null)
                 {
                     a.SetPostExecutionAction(undo =>
@@ -1674,7 +1656,7 @@ public class MapPropertyView
                     });
                 }
 
-                ContextActionManager.ExecuteAction(a);
+                View.ViewportActionManager.ExecuteAction(a);
             }
         }
 
@@ -1709,7 +1691,7 @@ public class MapPropertyView
 
                 if (meta.EntityIdentifierProperty)
                 {
-                    Editor.EntityIdentifierTool.UpdateEntityCache(ent, oldval, newval);
+                    View.EntityIdentifierTool.UpdateEntityCache(ent, oldval, newval);
                 }
             }
         }
@@ -1725,13 +1707,13 @@ public class MapPropertyView
 
         if (committed)
         {
-            if (_lastUncommittedAction != null && ContextActionManager.PeekUndoAction() == _lastUncommittedAction)
+            if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
             {
                 if (_lastUncommittedAction is MultipleEntityPropertyChangeAction a)
                 {
-                    ContextActionManager.UndoAction();
+                    View.ViewportActionManager.UndoAction();
                     a.UpdateRenderModel = true; // Update render model on commit execution, and update on undo/redo.
-                    ContextActionManager.ExecuteAction(a);
+                    View.ViewportActionManager.ExecuteAction(a);
                 }
 
                 _lastUncommittedAction = null;
@@ -1750,9 +1732,9 @@ public class MapPropertyView
         int arrayindex = -1, int classIndex = -1)
     {
         if (prop == _changingPropery && _lastUncommittedAction != null &&
-            ContextActionManager.PeekUndoAction() == _lastUncommittedAction)
+            View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
-            ContextActionManager.UndoAction();
+            View.ViewportActionManager.UndoAction();
         }
         else
         {
@@ -1770,8 +1752,8 @@ public class MapPropertyView
             }
         }
 
-        action = new MultipleEntityPropertyChangeAction(Editor, (PropertyInfo)prop, set, newval, arrayindex, classIndex);
-        ContextActionManager.ExecuteAction(action);
+        action = new MultipleEntityPropertyChangeAction(View, (PropertyInfo)prop, set, newval, arrayindex, classIndex);
+        View.ViewportActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;
         _changingPropery = prop;

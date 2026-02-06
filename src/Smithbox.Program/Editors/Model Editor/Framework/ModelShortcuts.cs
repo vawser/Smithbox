@@ -70,13 +70,13 @@ public class ModelShortcuts
         }
 
         // Actions
-        Editor.ToolMenu.CreateAction.OnShortcut();
-        Editor.ToolMenu.DuplicateAction.OnShortcut();
-        Editor.ToolMenu.DeleteAction.OnShortcut();
-        Editor.ToolMenu.FrameAction.OnShortcut();
-        Editor.ToolMenu.GotoAction.OnShortcut();
-        Editor.ToolMenu.PullToCameraAction.OnShortcut();
-        Editor.ToolMenu.ReorderAction.OnShortcut();
+        activeView.CreateAction.OnShortcut();
+        activeView.DuplicateAction.OnShortcut();
+        activeView.DeleteAction.OnShortcut();
+        activeView.FrameAction.OnShortcut();
+        activeView.GotoAction.OnShortcut();
+        activeView.PullToCameraAction.OnShortcut();
+        activeView.ReorderAction.OnShortcut();
 
         // Cycle Gizmo Translation Mode
         if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Translation_Mode))

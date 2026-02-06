@@ -1,30 +1,91 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class ToolWindow
+public class MapToolWindow
 {
     private MapEditorScreen Editor;
-    private MapActionHandler Handler;
+    private ProjectEntry Project;
 
-    public ToolWindow(MapEditorScreen screen, MapActionHandler handler)
+    public MapToolWindow(MapEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Handler = handler;
+        Editor = editor;
+        Project = project;
+    }
+
+    public void DisplayMenu()
+    {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (ImGui.BeginMenu("Tools"))
+        {
+            ///--------------------
+            /// Color Picker
+            ///--------------------
+            if (ImGui.MenuItem("Color Picker"))
+            {
+                ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
+            }
+
+            ImGui.Separator();
+
+            activeView.EditorVisibilityAction.OnToolMenu();
+
+            ///--------------------
+            /// Generate Navigation Data
+            ///--------------------
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.DES || Editor.Project.Descriptor.ProjectType is ProjectType.DS1 || Editor.Project.Descriptor.ProjectType is ProjectType.DS1R)
+            {
+                if (ImGui.BeginMenu("Navigation Data"))
+                {
+                    if (ImGui.MenuItem("Generate"))
+                    {
+                        activeView.ActionHandler.GenerateNavigationData();
+                    }
+
+                    ImGui.EndMenu();
+                }
+            }
+
+            ///--------------------
+            /// Entity ID Checker
+            ///--------------------
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+            {
+                activeView.EntityIdCheckAction.OnToolMenu();
+            }
+
+            ///--------------------
+            /// Name Map Objects
+            ///--------------------
+            // Tool for AC6 since its maps come with unnamed Regions and Events
+            if (Editor.Project.Descriptor.ProjectType is ProjectType.AC6)
+            {
+                activeView.EntityRenameAction.OnToolMenu();
+            }
+
+            ImGui.EndMenu();
+        }
     }
 
     public void OnGui()
     {
-        if (Editor.Project.Descriptor.ProjectType == ProjectType.Undefined)
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
+        activeView.DuplicateToMapAction.OnGui();
+        activeView.MoveToMapAction.OnGui();
+        activeView.SelectAllAction.OnGui();
+        activeView.AdjustToGridAction.OnGui();
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_MapEditor", ImGuiWindowFlags.MenuBar))
+        if (ImGui.Begin("Tool Window##ToolConfigureWindow_MapEditor", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);
 
@@ -40,119 +101,118 @@ public class ToolWindow
 
             if (CFG.Current.Interface_MapEditor_Tool_Create)
             {
-                Editor.CreateAction.OnToolWindow();
+                activeView.CreateAction.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_Duplicate)
             {
-                Editor.DuplicateAction.OnToolWindow();
+                activeView.DuplicateAction.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_DuplicateToMap)
             {
-                Editor.DuplicateToMapAction.OnToolWindow();
+                activeView.DuplicateToMapAction.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_PullToCamera)
             {
-                Editor.PullToCameraAction.OnToolWindow();
+                activeView.PullToCameraAction.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_Rotate)
             {
-                Editor.RotateAction.OnToolWindow();
+                activeView.RotateAction.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_Scramble)
             {
-                Editor.ScrambleAction.OnToolWindow();
+                activeView.ScrambleAction.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_Replicate)
             {
-                Editor.ReplicateAction.OnToolWindow();
+                activeView.ReplicateAction.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_Prefab)
             {
-                Editor.PrefabTool.OnToolWindow();
+                activeView.PrefabTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_SelectionGroups)
             {
-                Editor.SelectionGroupTool.OnToolWindow();
+                activeView.SelectionGroupTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_MovementIncrements)
             {
-                Editor.PositionIncrementTool.OnToolWindow();   
+                activeView.PositionIncrementTool.OnToolWindow();   
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_RotationIncrements)
             {
-                Editor.RotationIncrementTool.OnToolWindow();
+                activeView.RotationIncrementTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_LocalPropertySearch)
             {
-                Editor.LocalSearchView.OnToolWindow();
+                activeView.LocalSearchView.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_GlobalPropertySearch)
             {
-                Editor.GlobalSearchTool.OnToolWindow();
+                activeView.GlobalSearchTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit)
             {
-                Editor.MassEditTool.OnToolWindow();
+                activeView.MassEditTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
             {
-                Editor.MapGridTool.OnToolWindow();
+                activeView.MapGridTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_ModelSelector)
             {
-                Editor.ModelSelectorTool.OnToolWindow();
+                activeView.ModelSelectorTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_DisplayGroups)
             {
-                Editor.DisplayGroupTool.OnToolWindow();
+                activeView.DisplayGroupTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_EntityIdentifier)
             {
-                Editor.EntityIdentifierTool.OnToolWindow();
+                activeView.EntityIdentifierTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_MapValidator)
             {
-                Editor.MapValidatorTool.OnToolWindow();
+                activeView.MapValidatorTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_MapModelInsight)
             {
-                Editor.MapModelInsightTool.OnToolWindow();
+                activeView.MapModelInsightTool.OnToolWindow();
             }
 
 #if DEBUG
             if (FeatureFlags.EnableNavmeshBuilder)
             {
-                Editor.NavmeshBuilderTool.OnToolWindow();
+                activeView.NavmeshBuilderTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_WorldMapLayoutGenerator)
             {
-                Editor.WorldMapLayoutTool.OnToolWindow();
+                activeView.WorldMapLayoutTool.OnToolWindow();
             }
 #endif
         }
 
         ImGui.End();
-        ImGui.PopStyleColor(1);
     }
 
     public void ViewMenu()

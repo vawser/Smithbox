@@ -29,11 +29,11 @@ public class ViewportOverlay
         {
             if (CFG.Current.Viewport_DisplayRotationIncrement)
             {
-                mapUniverse.Editor.RotationIncrementTool.DisplayViewportRotateIncrement();
+                mapUniverse.View.RotationIncrementTool.DisplayViewportRotateIncrement();
             }
             if (CFG.Current.Viewport_DisplayPositionIncrement)
             {
-                mapUniverse.Editor.PositionIncrementTool.DisplayViewportMovementIncrement();
+                mapUniverse.View.PositionIncrementTool.DisplayViewportMovementIncrement();
             }
         }
 

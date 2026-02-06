@@ -23,15 +23,15 @@ public class PrefabAttributes
 
     public List<string> TagList { get; set; }
 
-    public PrefabAttributes(MapEditorScreen editor)
+    public PrefabAttributes(MapEditorView view)
     {
-        Type = editor.Project.Descriptor.ProjectType;
+        Type = view.Project.Descriptor.ProjectType;
     }
 }
 
 public abstract class Prefab : PrefabAttributes
 {
-    protected Prefab(MapEditorScreen editor) : base(editor)
+    protected Prefab(MapEditorView view) : base(view)
     {
     }
 
@@ -41,23 +41,23 @@ public abstract class Prefab : PrefabAttributes
 
     protected abstract IMsb Map();
 
-    public static Prefab New(MapEditorScreen editor)
+    public static Prefab New(MapEditorView view)
     {
-        return editor.Project.Descriptor.ProjectType switch
+        return view.Project.Descriptor.ProjectType switch
         {
-            ProjectType.NR => new Prefab<MSB_NR>(editor),
-            ProjectType.ER => new Prefab<MSBE>(editor),
-            ProjectType.SDT => new Prefab<MSBS>(editor),
-            ProjectType.DS1 or ProjectType.DS1R => new Prefab<MSB1>(editor),
-            ProjectType.DS2 or ProjectType.DS2S => new Prefab<MSB2>(editor),
-            ProjectType.DS3 => new Prefab<MSB3>(editor),
-            ProjectType.AC6 => new Prefab<MSB_AC6>(editor),
-            ProjectType.BB => new Prefab<MSBB>(editor),
+            ProjectType.NR => new Prefab<MSB_NR>(view),
+            ProjectType.ER => new Prefab<MSBE>(view),
+            ProjectType.SDT => new Prefab<MSBS>(view),
+            ProjectType.DS1 or ProjectType.DS1R => new Prefab<MSB1>(view),
+            ProjectType.DS2 or ProjectType.DS2S => new Prefab<MSB2>(view),
+            ProjectType.DS3 => new Prefab<MSB3>(view),
+            ProjectType.AC6 => new Prefab<MSB_AC6>(view),
+            ProjectType.BB => new Prefab<MSBB>(view),
             _ => null,
         };
     }
 
-    public void ImportToMap(MapEditorScreen editor, MapContainer targetMap, RenderScene _scene, ViewportActionManager _actionManager, string prefixName = null)
+    public void ImportToMap(MapEditorView view, MapContainer targetMap, RenderScene _scene, ViewportActionManager _actionManager, string prefixName = null)
     {
         if (targetMap is null)
         {
@@ -71,7 +71,7 @@ public abstract class Prefab : PrefabAttributes
 
         if(CFG.Current.Prefab_PlaceAtPlacementOrb)
         {
-            var placementOrigin = editor.MapViewportView.GetPlacementPosition();
+            var placementOrigin = view.ViewportWindow.GetPlacementPosition();
 
             // Get average position to determine new centre
             Vector3 currentCenter = Vector3.Zero;
@@ -105,7 +105,7 @@ public abstract class Prefab : PrefabAttributes
             MsbUtils.RenameWithRefs(entries, entry, prefixName + entry.Name);
         }
 
-        AddMapObjectsAction act = new(editor, targetMap, ents, true, parent);
+        AddMapObjectsAction act = new(view, targetMap, ents, true, parent);
         _actionManager.ExecuteAction(act);
     }
 
@@ -124,7 +124,7 @@ public abstract class Prefab : PrefabAttributes
 internal class Prefab<T> : Prefab
     where T : SoulsFile<T>, IMsb, new()
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
     /// <summary>
     /// Bytes of the MSB that stores prefab data.
@@ -134,9 +134,9 @@ internal class Prefab<T> : Prefab
     [JsonIgnore]
     public T pseudoMap;
 
-    public Prefab(MapEditorScreen editor) : base(editor)
+    public Prefab(MapEditorView view) : base(view)
     {
-        Editor = editor;
+        View = view;
     }
 
     protected override IMsb Map()
@@ -149,7 +149,7 @@ internal class Prefab<T> : Prefab
     void Load(HashSet<MsbEntity> entities)
     {
         pseudoMap = new();
-        MapContainer map = new(Editor, null);
+        MapContainer map = new(View, null);
         var entries = entities.Select(ent => ent.WrappedObject as IMsbEntry);
         foreach (var ent in entities)
         {
@@ -185,7 +185,7 @@ internal class Prefab<T> : Prefab
             foreach (var part in category.GetEntries())
             {
                 // Using the untyped constructor so that the model is not set
-                var entity = new MsbEntity(Editor.Universe, targetMap, copy(part)) { Type = type };
+                var entity = new MsbEntity(View.Universe, targetMap, copy(part)) { Type = type };
                 yield return entity;
             }
         }
@@ -268,17 +268,17 @@ internal class Prefab<T> : Prefab
 
 public class PrefabAttributesConverter : JsonConverter<PrefabAttributes>
 {
-    private readonly MapEditorScreen _editor;
+    private readonly MapEditorView _view;
 
-    public PrefabAttributesConverter(MapEditorScreen editor)
+    public PrefabAttributesConverter(MapEditorView view)
     {
-        _editor = editor;
+        _view = view;
     }
 
     public override PrefabAttributes ReadJson(JsonReader reader, Type objectType, PrefabAttributes existingValue, bool hasExistingValue, JsonSerializer serializer)
     {
         var jo = JObject.Load(reader);
-        var prefab = new PrefabAttributes(_editor);
+        var prefab = new PrefabAttributes(_view);
         serializer.Populate(jo.CreateReader(), prefab);
         return prefab;
     }

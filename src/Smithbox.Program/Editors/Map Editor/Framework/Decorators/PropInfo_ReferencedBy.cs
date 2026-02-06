@@ -9,7 +9,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public static class PropInfo_ReferencedBy
 {
-    public static void Display(MapEditorScreen editor, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
+    public static void Display(MapEditorView view, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
         if (firstEnt.GetReferencingObjects().Count == 0)
             return;
@@ -58,15 +58,15 @@ public static class PropInfo_ReferencedBy
 
                 if (m.IsPartEnemy() || m.IsPartDummyEnemy())
                 {
-                    aliasName = AliasHelper.GetCharacterAlias(editor.Project, modelName);
+                    aliasName = AliasHelper.GetCharacterAlias(view.Project, modelName);
                 }
                 if (m.IsPartAsset() || m.IsPartDummyAsset())
                 {
-                    aliasName = AliasHelper.GetAssetAlias(editor.Project, modelName);
+                    aliasName = AliasHelper.GetAssetAlias(view.Project, modelName);
                 }
                 if (m.IsPartMapPiece())
                 {
-                    aliasName = AliasHelper.GetMapPieceAlias(editor.Project, modelName);
+                    aliasName = AliasHelper.GetMapPieceAlias(view.Project, modelName);
                 }
 
                 if (aliasName != "")

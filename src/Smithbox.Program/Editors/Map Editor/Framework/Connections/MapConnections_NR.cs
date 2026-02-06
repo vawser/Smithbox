@@ -15,10 +15,10 @@ internal class MapConnections_NR
     private static Dictionary<string, TileDefinition> NightreignOffsets;
 
     public static Transform? GetMapTransform(
-        MapEditorScreen editor,
+        MapEditorView view,
         string mapid)
     {
-        if (!TryInitializeOffsets(editor))
+        if (!TryInitializeOffsets(view))
         {
             return null;
         }
@@ -40,7 +40,7 @@ internal class MapConnections_NR
         Vector3 closestOriginGlobal = Vector3.Zero;
         ObjectContainer closestMap = null;
 
-        foreach (var entry in editor.Project.Handler.MapData.PrimaryBank.Maps)
+        foreach (var entry in view.Project.Handler.MapData.PrimaryBank.Maps)
         {
             var mapID = entry.Key.Filename;
             var container = entry.Value.MapContainer;
@@ -78,20 +78,20 @@ internal class MapConnections_NR
         return closestMap.RootObject.GetLocalTransform() + targetOffset;
     }
 
-    private static bool TryInitializeOffsets(MapEditorScreen editor)
+    private static bool TryInitializeOffsets(MapEditorView view)
     {
         if (NightreignOffsets != null)
         {
             return NightreignOffsets.Count > 0;
         }
 
-        if (editor.Project.Handler.ParamEditor == null)
+        if (view.Project.Handler.ParamEditor == null)
             return false;
 
         Dictionary<string, TileDefinition> dungeonOffsets = new();
 
 
-        IReadOnlyDictionary<string, Param> loadedParams = editor.Project.Handler.ParamData.PrimaryBank.Params;
+        IReadOnlyDictionary<string, Param> loadedParams = view.Project.Handler.ParamData.PrimaryBank.Params;
         // Do not explicitly check ParamBank's game type here, but fail gracefully if the param does not exist
         if (loadedParams == null || !loadedParams.TryGetValue("WorldMapLegacyConvParam", out Param convParam))
         {

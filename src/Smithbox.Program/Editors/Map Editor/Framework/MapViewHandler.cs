@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
-using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.ModelEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,24 +8,24 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.ModelEditor;
+namespace StudioCore.Editors.MapEditor;
 
-public class ModelViewHandler
+public class MapViewHandler
 {
-    public ModelEditorScreen Editor;
+    public MapEditorScreen Editor;
     public ProjectEntry Project;
 
-    public List<ModelEditorView> Views = new();
-    public ModelEditorView ActiveView;
+    public List<MapEditorView> Views = new();
+    public MapEditorView ActiveView;
 
-    public ModelEditorView ViewToClose = null;
+    public MapEditorView ViewToClose = null;
 
-    public ModelViewHandler(ModelEditorScreen editor, ProjectEntry project)
+    public MapViewHandler(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
 
-        var initialView = new ModelEditorView(Editor, Project, 0);
+        var initialView = new MapEditorView(Editor, Project, 0);
 
         Views = [initialView];
         ActiveView = initialView;
@@ -47,7 +47,7 @@ public class ModelViewHandler
         }
     }
 
-    public ModelEditorView AddView()
+    public MapEditorView AddView()
     {
         var index = 0;
         while (index < Views.Count)
@@ -60,7 +60,7 @@ public class ModelViewHandler
             index++;
         }
 
-        ModelEditorView view = new(Editor, Project, index);
+        MapEditorView view = new(Editor, Project, index);
 
         if (index < Views.Count)
         {
@@ -76,7 +76,7 @@ public class ModelViewHandler
         return view;
     }
 
-    public bool RemoveView(ModelEditorView view)
+    public bool RemoveView(MapEditorView view)
     {
         if (!Views.Contains(view))
         {
@@ -125,7 +125,7 @@ public class ModelViewHandler
                 displayTitle = "Active View";
             }
 
-            if (ImGui.Begin($@"{displayTitle}###ModelEditorView##{view.ViewIndex}", UIHelper.GetDisplayViewWindowFlags()))
+            if (ImGui.Begin($@"{displayTitle}###MapEditorView##{view.ViewIndex}", UIHelper.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {
@@ -147,7 +147,7 @@ public class ModelViewHandler
                 }
             }
 
-            var dsid = ImGui.GetID($"DockSpace_ModelEdit_View{view.ViewIndex}");
+            var dsid = ImGui.GetID($"DockSpace_MapEdit_View{view.ViewIndex}");
             ImGui.DockSpace(dsid, new Vector2(0, 0));
 
             view.Display(Editor.CommandQueue.DoFocus && view == activeView, view == activeView);

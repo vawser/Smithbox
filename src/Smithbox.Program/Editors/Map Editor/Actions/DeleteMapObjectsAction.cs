@@ -8,7 +8,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class DeleteMapObjectsAction : ViewportAction
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
     private readonly List<MsbEntity> Deletables = new();
     private readonly List<int> RemoveIndices = new();
@@ -18,20 +18,20 @@ public class DeleteMapObjectsAction : ViewportAction
     private readonly bool SetSelection;
     private RenderScene Scene;
 
-    public DeleteMapObjectsAction(MapEditorScreen editor, List<MsbEntity> objects, bool setSelection)
+    public DeleteMapObjectsAction(MapEditorView view, List<MsbEntity> objects, bool setSelection)
     {
-        Editor = editor;
+        View = view;
         Deletables.AddRange(objects);
         SetSelection = setSelection;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         foreach (MsbEntity obj in Deletables)
         {
-            MapContainer m = Editor.Selection.GetMapContainerFromMapID(obj.MapID);
+            MapContainer m = View.Selection.GetMapContainerFromMapID(obj.MapID);
             if (m != null)
             {
                 RemoveMaps.Add(m);
@@ -73,7 +73,7 @@ public class DeleteMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         for (var i = 0; i < Deletables.Count(); i++)
         {

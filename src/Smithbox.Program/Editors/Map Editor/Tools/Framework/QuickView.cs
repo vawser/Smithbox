@@ -9,15 +9,15 @@ namespace StudioCore.Editors.MapEditor;
 
 public class AutomaticPreviewTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     private bool InitTargetProperties = false;
     private List<string> curTargetProperties = new();
 
-    public AutomaticPreviewTool(MapEditorScreen editor, ProjectEntry project)
+    public AutomaticPreviewTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -29,7 +29,7 @@ public class AutomaticPreviewTool
         if (!FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
             return;
 
-        var curSel = Editor.ViewportSelection.GetSelection();
+        var curSel = View.ViewportSelection.GetSelection();
 
         if (curSel.Count > 0)
         {

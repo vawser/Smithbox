@@ -12,12 +12,12 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class PullToCameraAction
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public PullToCameraAction(ModelEditorScreen editor, ProjectEntry project)
+    public PullToCameraAction(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -26,12 +26,7 @@ public class PullToCameraAction
     /// </summary>
     public void OnShortcut()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
-        if (activeView.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Pull))
             {
@@ -79,18 +74,13 @@ public class PullToCameraAction
     /// </summary>
     public void ApplyMoveToCamera()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
-        if (activeView.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            HashSet<Entity> sels = activeView.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
+            HashSet<Entity> sels = View.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
-            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, activeView.ViewportWindow.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
-            Vector3 camPos = activeView.ViewportWindow.Viewport.ViewportCamera.CameraTransform.Position;
+            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, View.ViewportWindow.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
+            Vector3 camPos = View.ViewportWindow.Viewport.ViewportCamera.CameraTransform.Position;
             Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
 
             // Get the accumulated center position of all selections
@@ -135,7 +125,8 @@ public class PullToCameraAction
             if (actlist.Any())
             {
                 ViewportCompoundAction action = new(actlist);
-                activeView.ViewportActionManager.ExecuteAction(action);
+
+                View.ViewportActionManager.ExecuteAction(action);
             }
         }
         else

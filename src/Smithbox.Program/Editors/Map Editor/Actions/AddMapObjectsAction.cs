@@ -10,7 +10,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class AddMapObjectsAction : ViewportAction
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
     private static Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Added = new();
@@ -20,10 +20,10 @@ public class AddMapObjectsAction : ViewportAction
     private readonly bool SetSelection;
     private MapContainer TargetMap;
 
-    public AddMapObjectsAction(MapEditorScreen editor, MapContainer map, List<MsbEntity> objects,
+    public AddMapObjectsAction(MapEditorView view, MapContainer map, List<MsbEntity> objects,
         bool setSelection, Entity parent, MapContainer targetMap = null)
     {
-        Editor = editor;
+        View = view;
         Map = map;
         Added.AddRange(objects);
         SetSelection = setSelection;
@@ -33,7 +33,7 @@ public class AddMapObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         for (var i = 0; i < Added.Count(); i++)
         {
@@ -60,20 +60,20 @@ public class AddMapObjectsAction : ViewportAction
 
                 if (TargetMap != null)
                 {
-                    m = Editor.Selection.GetMapContainerFromMapID(TargetMap.Name);
+                    m = View.Selection.GetMapContainerFromMapID(TargetMap.Name);
 
                     // Prefab-specific
                     if (CFG.Current.Prefab_ApplyUniqueInstanceID)
                     {
-                        MapEditorActionHelper.SetUniqueInstanceID(Editor, ent, m);
+                        MapEditorActionHelper.SetUniqueInstanceID(View, ent, m);
                     }
                     if (CFG.Current.Prefab_ApplyUniqueEntityID)
                     {
-                        MapEditorActionHelper.SetUniqueEntityID(Editor, ent, m);
+                        MapEditorActionHelper.SetUniqueEntityID(View, ent, m);
                     }
                     if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
                     {
-                        MapEditorActionHelper.SetSpecificEntityGroupID(Editor, ent, m);
+                        MapEditorActionHelper.SetSpecificEntityGroupID(View, ent, m);
                     }
                 }
             }
@@ -97,7 +97,7 @@ public class AddMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         for (var i = 0; i < Added.Count(); i++)
         {

@@ -9,7 +9,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public static class PropInfo_ParamJumps
 {
-    public static void Display(MapEditorScreen editor, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
+    public static void Display(MapEditorView view, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
         var scale = DPI.UIScale();
         var windowWidth = ImGui.GetWindowWidth();
@@ -18,7 +18,7 @@ public static class PropInfo_ParamJumps
             return;
 
         // Only relevant to assets
-        if (editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 && firstEnt.IsPartPureAsset())
+        if (view.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 && firstEnt.IsPartPureAsset())
         {
             ImGui.Separator();
             ImGui.Text("Params:");
@@ -60,7 +60,7 @@ public static class PropInfo_ParamJumps
 
                     if (e.IsPartAsset() || e.IsPartDummyAsset())
                     {
-                        aliasName = AliasHelper.GetAssetAlias(editor.Project, modelName);
+                        aliasName = AliasHelper.GetAssetAlias(view.Project, modelName);
                     }
 
                     if (aliasName != "")
@@ -81,7 +81,7 @@ public static class PropInfo_ParamJumps
         }
 
         // Only relevant to characters
-        if (editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6
+        if (view.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6
             && (firstEnt.IsPartEnemy() || firstEnt.IsPartDummyEnemy()))
         {
             ImGui.Separator();
@@ -124,7 +124,7 @@ public static class PropInfo_ParamJumps
 
                     if (e.IsPartEnemy() || e.IsPartDummyEnemy())
                     {
-                        aliasName = AliasHelper.GetCharacterAlias(editor.Project, modelName);
+                        aliasName = AliasHelper.GetCharacterAlias(view.Project, modelName);
                     }
 
                     if (aliasName != "")

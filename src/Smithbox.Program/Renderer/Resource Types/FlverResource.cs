@@ -329,14 +329,22 @@ public class FlverResource : IResource, IDisposable
             {
                 var mapEditor = (MapEditorScreen)Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor;
 
-                mapEditor.ModelInsightTool.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+                var activeView = mapEditor.ViewHandler.ActiveView;
+                if (activeView != null)
+                {
+                    activeView.ModelInsightTool.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+                }
             }
 
             if (Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor is ModelEditorScreen)
             {
                 var modelEditor = (ModelEditorScreen)Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor;
 
-                modelEditor.ToolMenu.ModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+                var activeView = modelEditor.ViewHandler.ActiveView;
+                if (activeView != null)
+                {
+                    activeView.ModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+                }
             }
 
             ResourceManager.AddResourceListener<TextureResource>(textureVirtPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);

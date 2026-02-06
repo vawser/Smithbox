@@ -9,12 +9,12 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class DeleteAction 
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public DeleteAction(ModelEditorScreen editor, ProjectEntry project)
+    public DeleteAction(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -23,12 +23,7 @@ public class DeleteAction
     /// </summary>
     public void OnShortcut()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
-        if (activeView.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Delete))
             {
@@ -76,24 +71,19 @@ public class DeleteAction
     /// </summary>
     public void ApplyDelete()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
+        if (View.Selection.SelectedModelWrapper == null)
             return;
 
-        if (activeView.Selection.SelectedModelWrapper == null)
+        if (View.Selection.SelectedModelWrapper.Container == null)
             return;
 
-        if (activeView.Selection.SelectedModelWrapper.Container == null)
-            return;
-
-        if (activeView.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            var selection = activeView.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
+            var selection = View.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
 
-            var action = new DeleteModelObjectAction(activeView, Project, activeView.Selection.SelectedModelWrapper.Container, selection);
+            var action = new DeleteModelObjectAction(View, Project, View.Selection.SelectedModelWrapper.Container, selection);
 
-            activeView.ViewportActionManager.ExecuteAction(action);
+            View.ViewportActionManager.ExecuteAction(action);
         }
         else
         {

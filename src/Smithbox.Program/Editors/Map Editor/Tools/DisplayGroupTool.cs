@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class DisplayGroupTool
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
     public ProjectEntry Project;
 
     private int _dispGroupCount = 8;
@@ -23,15 +23,15 @@ public class DisplayGroupTool
     public bool selectHighlightsOperation = false;
     public bool DisplayHelpText = false;
 
-    public DisplayGroupTool(MapEditorScreen screen, ProjectEntry project)
+    public DisplayGroupTool(MapEditorView view, ProjectEntry project)
     {
+        View = view;
         Project = project;
-        Editor = screen;
     }
 
     public void SetupDrawgroupCount()
     {
-        switch (Editor.Project.Descriptor.ProjectType)
+        switch (View.Project.Descriptor.ProjectType)
         {
             // imgui checkbox click seems to break at some point after 8 (8*32) checkboxes, so let's just hope that never happens, yeah?
             case ProjectType.DES:
@@ -52,7 +52,7 @@ public class DisplayGroupTool
                 _dispGroupCount = 8; //?
                 break;
             default:
-                throw new Exception($"Error: Did not expect Gametype {Editor.Project.Descriptor.ProjectType}");
+                throw new Exception($"Error: Did not expect Gametype {View.Project.Descriptor.ProjectType}");
                 //break;
         }
     }
@@ -74,14 +74,14 @@ public class DisplayGroupTool
 
         uint[] sdrawgroups = null;
         uint[] sdispgroups = null;
-        var sels = Editor.ViewportSelection.GetFilteredSelection<Entity>(e => e.HasRenderGroups);
+        var sels = View.ViewportSelection.GetFilteredSelection<Entity>(e => e.HasRenderGroups);
         if (sels.Any())
         {
             sdrawgroups = sels.First().Drawgroups;
             sdispgroups = sels.First().Dispgroups;
         }
 
-        if (Editor.RenderScene != null)
+        if (View.RenderScene != null)
         {
             if (ImGui.CollapsingHeader("Render Groups"))
             {
@@ -92,7 +92,7 @@ public class DisplayGroupTool
 
     public void DisplayGroupsGUI(uint[] sdrawgroups, uint[] sdispgroups, HashSet<Entity> sels)
     {
-        DrawGroup dg = Editor.RenderScene.DisplayGroup;
+        DrawGroup dg = View.RenderScene.DisplayGroup;
 
         if (dg.AlwaysVisible || dg.RenderGroups.Length != _dispGroupCount)
         {
@@ -157,14 +157,16 @@ public class DisplayGroupTool
         {
             IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
             ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
-            Editor.EditorActionManager.ExecuteAction(action);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
 
         if (InputManager.IsPressed(KeybindID.MapEditor_Apply_Draw_Group) && sdispgroups != null)
         {
             IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
             ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
-            Editor.EditorActionManager.ExecuteAction(action);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
 
         if (InputManager.IsPressed(KeybindID.MapEditor_Select_Display_Group_Highlights))
@@ -231,7 +233,8 @@ public class DisplayGroupTool
         {
             IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
             ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
-            Editor.EditorActionManager.ExecuteAction(action);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
         UIHelper.Tooltip($"Assign display group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_Apply_Display_Group)}");
 
@@ -242,7 +245,8 @@ public class DisplayGroupTool
         {
             IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
             ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
-            Editor.EditorActionManager.ExecuteAction(action);
+
+            View.ViewportActionManager.ExecuteAction(action);
         }
         UIHelper.Tooltip($"Assign draw group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_Apply_Draw_Group)}");
 

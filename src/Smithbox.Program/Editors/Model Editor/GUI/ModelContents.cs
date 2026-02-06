@@ -393,7 +393,7 @@ public class ModelContents : IActionEventHandler
             nodeopen = ImGui.TreeNodeEx(e.PrettyName, treeflags);
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(0))
             {
-                View.Editor.ToolMenu.FrameAction.FrameCurrentEntity(e);
+                View.FrameAction.FrameCurrentEntity(e);
             }
 
             if (ImGui.IsItemFocused())
@@ -421,7 +421,7 @@ public class ModelContents : IActionEventHandler
                 {
                     if (e.RenderSceneMesh != null)
                     {
-                        View.Editor.ToolMenu.FrameAction.FrameCurrentEntity(e);
+                        View.FrameAction.FrameCurrentEntity(e);
                     }
                 }
             }
@@ -497,17 +497,17 @@ public class ModelContents : IActionEventHandler
     {
         if (ImGui.BeginPopupContextItem($@"modelObjectContext_{container.Name}_{imguiID}"))
         {
-            View.Editor.ToolMenu.DuplicateAction.OnContext();
-            View.Editor.ToolMenu.DeleteAction.OnContext();
+            View.DuplicateAction.OnContext();
+            View.DeleteAction.OnContext();
 
             ImGui.Separator();
 
-            View.Editor.ToolMenu.FrameAction.OnContext();
-            View.Editor.ToolMenu.PullToCameraAction.OnContext();
+            View.FrameAction.OnContext();
+            View.PullToCameraAction.OnContext();
 
             ImGui.Separator();
 
-            View.Editor.ToolMenu.ReorderAction.OnContext();
+            View.ReorderAction.OnContext();
 
             ImGui.EndPopup();
         }

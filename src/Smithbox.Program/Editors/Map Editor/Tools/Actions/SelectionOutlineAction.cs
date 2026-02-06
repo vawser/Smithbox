@@ -5,12 +5,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class SelectionOutlineAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public SelectionOutlineAction(MapEditorScreen editor, ProjectEntry project)
+    public SelectionOutlineAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 

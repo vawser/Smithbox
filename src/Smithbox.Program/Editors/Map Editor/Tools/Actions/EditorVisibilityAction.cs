@@ -10,12 +10,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class EditorVisibilityAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public EditorVisibilityAction(MapEditorScreen editor, ProjectEntry project)
+    public EditorVisibilityAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -24,7 +24,7 @@ public class EditorVisibilityAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_Visibility_Flip))
             {
@@ -186,7 +186,7 @@ public class EditorVisibilityAction
     {
         if (targetType == EditorVisibilityType.Selected)
         {
-            HashSet<Entity> selected = Editor.ViewportSelection.GetFilteredSelection<Entity>();
+            HashSet<Entity> selected = View.ViewportSelection.GetFilteredSelection<Entity>();
 
             foreach (Entity s in selected)
             {

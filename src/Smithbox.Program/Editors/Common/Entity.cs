@@ -2103,7 +2103,7 @@ public class MsbEntity : Entity
                 }
 
                 // For now, the map relationship type is not given here (dictionary values), just all related maps.
-                foreach (var mapRef in MapConnections_ER.GetRelatedMaps(universe.Editor, Name))
+                foreach (var mapRef in MapConnections_ER.GetRelatedMaps(universe.View, Name))
                 {
                     References[mapRef.Key] = new[] { new ObjectContainerReference(mapRef.Key) };
                 }
@@ -2302,7 +2302,7 @@ public class PlacementEntity : Entity
                 }
 
                 // Update position of the placement orb
-                _renderSceneMesh.World = universe.Editor.MapViewportView.GetPlacementTransform();
+                _renderSceneMesh.World = universe.View.ViewportWindow.GetPlacementTransform();
             }
         }
 

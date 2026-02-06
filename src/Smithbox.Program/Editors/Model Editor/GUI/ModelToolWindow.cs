@@ -10,42 +10,10 @@ public class ModelToolWindow
     public ModelEditorScreen Editor;
     public ProjectEntry Project;
 
-    // Tools
-    public ModelGridConfiguration ModelGridTool;
-    public ModelInsightView ModelInsightMenu;
-    public ModelInstanceFinder ModelInstanceFinder;
-    public ModelMaskToggler ModelMaskToggler;
-    public ModelInsightHelper ModelInsightHelper;
-
-    // Actions
-    public CreateAction CreateAction;
-    public DuplicateAction DuplicateAction;
-    public DeleteAction DeleteAction;
-    public FrameAction FrameAction;
-    public GotoAction GotoAction;
-    public PullToCameraAction PullToCameraAction;
-    public ReorderAction ReorderAction;
-
-
     public ModelToolWindow(ModelEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
-
-        ModelGridTool = new ModelGridConfiguration(Editor, Project);
-        ModelInsightMenu = new ModelInsightView(Editor, Project);
-        ModelInstanceFinder = new ModelInstanceFinder(Editor, Project);
-        ModelMaskToggler = new ModelMaskToggler(Editor, Project);
-
-        CreateAction = new CreateAction(Editor, Project);
-        DuplicateAction = new DuplicateAction(Editor, Project);
-        DeleteAction = new DeleteAction(Editor, Project);
-        FrameAction = new FrameAction(Editor, Project);
-        GotoAction = new GotoAction(Editor, Project);
-        PullToCameraAction = new PullToCameraAction(Editor, Project);
-        ReorderAction = new ReorderAction(Editor, Project);
-
-        ModelInsightHelper = new ModelInsightHelper(Editor, Project);
     }
 
     public void Display()
@@ -57,6 +25,9 @@ public class ModelToolWindow
             return;
 
         var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
 
         if (ImGui.Begin("Tool Window##modelEditorTools", UIHelper.GetMainWindowFlags()))
         {
@@ -71,27 +42,27 @@ public class ModelToolWindow
 
             if (CFG.Current.Interface_ModelEditor_Tool_CreateAction)
             {
-                CreateAction.OnToolWindow();
+                activeView.CreateAction.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
             {
-                ModelGridTool.OnToolWindow();
+                activeView.ModelGridTool.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelInsight)
             {
-                ModelInsightMenu.OnToolWindow();
+                activeView.ModelInsightMenu.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
             {
-                ModelInstanceFinder.OnToolWindow();
+                activeView.ModelInstanceFinder.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler)
             {
-                ModelMaskToggler.OnToolWindow();
+                activeView.ModelMaskToggler.OnToolWindow();
             }
         }
 

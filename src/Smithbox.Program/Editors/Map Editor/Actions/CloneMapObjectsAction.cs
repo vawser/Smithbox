@@ -13,7 +13,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class CloneMapObjectsAction : ViewportAction
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Clonables = new();
@@ -24,9 +24,9 @@ public class CloneMapObjectsAction : ViewportAction
     private readonly MapContainer TargetMap;
     private readonly bool Silent = false;
 
-    public CloneMapObjectsAction(MapEditorScreen editor, List<MsbEntity> objects, bool setSelection, MapContainer targetMap = null, Entity targetBTL = null, bool silent = false)
+    public CloneMapObjectsAction(MapEditorView view, List<MsbEntity> objects, bool setSelection, MapContainer targetMap = null, Entity targetBTL = null, bool silent = false)
     {
-        Editor = editor;
+        View = view;
         Clonables.AddRange(objects);
         SetSelection = setSelection;
         TargetMap = targetMap;
@@ -36,7 +36,7 @@ public class CloneMapObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         var clonesCached = Clones.Count() > 0;
 
@@ -58,11 +58,11 @@ public class CloneMapObjectsAction : ViewportAction
             MapContainer m;
             if (TargetMap != null)
             {
-                m = Editor.Selection.GetMapContainerFromMapID(TargetMap.Name);
+                m = View.Selection.GetMapContainerFromMapID(TargetMap.Name);
             }
             else
             {
-                m = Editor.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
+                m = View.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
             }
 
             if (m != null)
@@ -165,23 +165,23 @@ public class CloneMapObjectsAction : ViewportAction
 
                 if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
                 {
-                    MapEditorActionHelper.SetUniqueEntityID(Editor, newobj, m);
+                    MapEditorActionHelper.SetUniqueEntityID(View, newobj, m);
                 }
                 if (CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
                 {
-                    MapEditorActionHelper.SetUniqueInstanceID(Editor, newobj, m);
+                    MapEditorActionHelper.SetUniqueInstanceID(View, newobj, m);
                 }
                 if (CFG.Current.Toolbar_Duplicate_Increment_PartNames)
                 {
-                    MapEditorActionHelper.SetSelfPartNames(Editor, newobj, m);
+                    MapEditorActionHelper.SetSelfPartNames(View, newobj, m);
                 }
                 if (CFG.Current.Toolbar_Duplicate_Clear_Entity_ID)
                 {
-                    MapEditorActionHelper.ClearEntityID(Editor, newobj, m);
+                    MapEditorActionHelper.ClearEntityID(View, newobj, m);
                 }
                 if (CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs)
                 {
-                    MapEditorActionHelper.ClearEntityGroupID(Editor, newobj, m);
+                    MapEditorActionHelper.ClearEntityGroupID(View, newobj, m);
                 }
 
                 newobj.UpdateRenderModel();
@@ -221,7 +221,7 @@ public class CloneMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         for (var i = 0; i < Clones.Count(); i++)
         {

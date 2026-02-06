@@ -13,12 +13,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapModelInsightHelper
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public MapModelInsightHelper(MapEditorScreen editor, ProjectEntry project)
+    public MapModelInsightHelper(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         Entries = new();
@@ -55,7 +55,7 @@ public class MapModelInsightHelper
         var flverName = Path.GetFileNameWithoutExtension(flverVirtPath);
         var textureName = Path.GetFileName(texVirtPath);
 
-        var curEntity = Editor.ViewportSelection.GetSelection().FirstOrDefault();
+        var curEntity = View.ViewportSelection.GetSelection().FirstOrDefault();
 
         if (curEntity == null)
             return;

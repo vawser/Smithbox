@@ -13,15 +13,15 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class CreateAction
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
     public List<(string, Type)> Classes = new();
     public Type CreateSelectedType;
 
-    public CreateAction(ModelEditorScreen editor, ProjectEntry project)
+    public CreateAction(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         // Setup the classes list, done manually since FLVER doesn't change
@@ -79,11 +79,6 @@ public class CreateAction
     /// </summary>
     public void DisplayMenu()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
         var windowSize = new Vector2(800f, 500f);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
         var sectionHeight = windowSize.Y * 0.25f;
@@ -91,9 +86,9 @@ public class CreateAction
 
         var display = false;
 
-        if(activeView.Selection.SelectedModelWrapper != null)
+        if(View.Selection.SelectedModelWrapper != null)
         {
-            var container = activeView.Selection.SelectedModelWrapper.Container;
+            var container = View.Selection.SelectedModelWrapper.Container;
 
             if (container != null)
                 display = true;
@@ -128,14 +123,9 @@ public class CreateAction
 
     public void ApplyObjectCreation()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
-        if (activeView.Selection.SelectedModelWrapper != null)
+        if (View.Selection.SelectedModelWrapper != null)
         {
-            var container = activeView.Selection.SelectedModelWrapper.Container;
+            var container = View.Selection.SelectedModelWrapper.Container;
 
             if (container != null && CreateSelectedType != null)
             {
@@ -147,11 +137,6 @@ public class CreateAction
     private void AddNewEntity(Type typ, ModelContainer container, Entity parent = null)
     {
         if (CreateSelectedType == null)
-            return;
-
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
             return;
 
         var newEntity = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
@@ -178,9 +163,10 @@ public class CreateAction
             modelObjType = ModelEntityType.Mesh;
         }
 
-        var newObj = new ModelEntity(activeView.Universe, container, newEntity, modelObjType);
+        var newObj = new ModelEntity(View.Universe, container, newEntity, modelObjType);
 
-        var act = new AddModelObjectAction(activeView, Project, container, new List<ModelEntity> { newObj });
-        activeView.ViewportActionManager.ExecuteAction(act);
+        var act = new AddModelObjectAction(View, Project, container, new List<ModelEntity> { newObj });
+
+        View.ViewportActionManager.ExecuteAction(act);
     }
 }

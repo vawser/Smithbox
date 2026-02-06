@@ -23,9 +23,9 @@ public class ResourceListWindow
         MeshProviderTab = new(this);
     }
 
-    public void DisplayWindow(string menuId, IUniverse owner)
+    public void DisplayWindow(string menuId, IUniverse owner, bool hide = false)
     {
-        if (CFG.Current.Interface_ModelEditor_ScreenshotMode)
+        if (hide)
             return;
 
         if (!ImGui.Begin($"Resource List##{menuId}"))

@@ -76,7 +76,7 @@ public class ModelUniverse : IUniverse
 
         var newContainer = new ModelContainer(View, Project, modelWrapper.Name);
 
-        View.Editor.ToolMenu.ModelInsightHelper.AddEntry(newContainer);
+        View.ModelInsightHelper.AddEntry(newContainer);
 
         newContainer.Load(modelWrapper.FLVER, modelWrapper);
 
@@ -555,7 +555,7 @@ public class ModelUniverse : IUniverse
         {
             View.EntityTypeCache.RemoveModelFromCache(modelWrapper.Container);
 
-            View.Editor.ToolMenu.ModelInsightHelper.ClearEntry(modelWrapper.Container);
+            View.ModelInsightHelper.ClearEntry(modelWrapper.Container);
 
             modelWrapper.Container.Unload();
             modelWrapper.Container.Clear();

@@ -21,205 +21,29 @@ public class MapEditorScreen : EditorScreen
 {
     public ProjectEntry Project;
 
-    /// <summary>
-    /// Lock variable used to handle pauses to the Update() function.
-    /// </summary>
-    private static readonly object _lock_PauseUpdate = new();
-    private bool GCNeedsCollection;
-    private bool _PauseUpdate;
+    public MapViewHandler ViewHandler;
 
-    public ViewportActionManager EditorActionManager = new();
-    public MapActionHandler ActionHandler;
-    public ViewportSelection ViewportSelection = new();
-    public MapSelection Selection;
-    public MapUniverse Universe;
-    public MapEntityTypeCache EntityTypeCache;
-    public MapPropertyCache MapPropertyCache = new();
     public MapCommandQueue CommandQueue;
     public MapShortcuts Shortcuts;
 
-    public AutoInvadeBank AutoInvadeBank;
-    public HavokCollisionBank HavokCollisionBank;
-    public HavokNavmeshBank HavokNavmeshBank;
-    public LightAtlasBank LightAtlasBank;
-    public LightProbeBank LightProbeBank;
-
-    // Core
-    public MapViewportView MapViewportView;
-    public MapListView MapListView;
-    public MapContentView MapContentView;
-    public MapPropertyView MapPropertyView;
-
-    // Menubar
-    public BasicFilters BasicFilters;
-    public RegionFilters RegionFilters;
-    public MapContentFilters MapContentFilter;
-
-    // Tools
-    public ToolWindow ToolWindow;
-    public ToolSubMenu ToolSubMenu;
-
-    // Actions
-    public CreateAction CreateAction;
-    public DuplicateAction DuplicateAction;
-    public DeleteAction DeleteAction;
-    public DuplicateToMapAction DuplicateToMapAction;
-    public MoveToMapAction MoveToMapAction;
-    public ReorderAction ReorderAction;
-    public GotoAction GotoAction;
-    public FrameAction FrameAction;
-    public PullToCameraAction PullToCameraAction;
-    public RotateAction RotateAction;
-    public ScrambleAction ScrambleAction;
-    public ReplicateAction ReplicateAction;
-    public RenderTypeAction RenderTypeAction;
-    public SelectAllAction SelectAllAction;
-    public EditorVisibilityAction EditorVisibilityAction;
-    public GameVisibilityAction GameVisibilityAction;
-    public SelectionOutlineAction SelectionOutlineAction;
-    public AdjustToGridAction AdjustToGridAction;
-    public EntityInfoAction EntityInfoAction;
-    public EntityIdCheckAction EntityIdCheckAction;
-    public EntityRenameAction EntityRenameAction;
-
-    // Tools
-    public MassEditTool MassEditTool;
-    public RotationIncrementTool RotationIncrementTool;
-    public PositionIncrementTool PositionIncrementTool;
-    public ModelSelectorTool ModelSelectorTool;
-    public DisplayGroupTool DisplayGroupTool;
-    public SelectionGroupTool SelectionGroupTool;
-    public PrefabTool PrefabTool;
-    public NavmeshBuilderTool NavmeshBuilderTool;
-    public LocalSearchTool LocalSearchView;
-    public GlobalSearchTool GlobalSearchTool;
-    public WorldMapTool WorldMapTool;
-    public EntityIdentifierTool EntityIdentifierTool;
-    public MapGridTool MapGridTool;
-    public WorldMapLayoutTool WorldMapLayoutTool;
-    public MapListFilterTool MapListFilterTool;
-    public MapValidatorTool MapValidatorTool;
-    public MapModelInsightView MapModelInsightTool;
-    public MapModelInsightHelper ModelInsightTool;
-
-    // Special Tools
-    public AutomaticPreviewTool AutomaticPreviewTool;
+    public MapToolWindow ToolWindow;
 
     public ResourceLoadWindow LoadingModal;
     public ResourceListWindow ResourceList;
-
-    public Sdl2Window Window;
-    public GraphicsDevice Device;
-    public RenderScene RenderScene;
 
     public MapEditorScreen(ProjectEntry project)
     {
         Project = project;
 
-        Window = Smithbox.Instance._context.Window;
-        Device = Smithbox.Instance._context.Device;
-        RenderScene = new();
-
-        Universe = new MapUniverse(this, project);
-        EntityTypeCache = new(this);
+        ViewHandler = new(this, project);
 
         LoadingModal = new();
         ResourceList = new();
 
-        Selection = new(this, project);
+        CommandQueue = new MapCommandQueue(this, project);
+        Shortcuts = new MapShortcuts(this, project);
 
-        MapViewportView = new MapViewportView(this, project);
-
-        // Core Views
-        MapListView = new MapListView(this, project);
-        MapContentView = new MapContentView(this, project);
-        MapPropertyView = new MapPropertyView(this);
-
-        // Optional Views
-        BasicFilters = new BasicFilters(this);
-        RegionFilters = new RegionFilters(this);
-        MapContentFilter = new MapContentFilters(this);
-
-        // Framework
-        ActionHandler = new MapActionHandler(this, project);
-        CommandQueue = new MapCommandQueue(this);
-        Shortcuts = new MapShortcuts(this);
-
-        HavokCollisionBank = new HavokCollisionBank(this, project);
-        HavokNavmeshBank = new HavokNavmeshBank(this, project);
-        AutoInvadeBank = new AutoInvadeBank(this, project);
-        LightAtlasBank = new LightAtlasBank(this, project);
-        LightProbeBank = new LightProbeBank(this, project);
-
-        // Tools
-        ToolWindow = new ToolWindow(this, ActionHandler);
-        ToolSubMenu = new ToolSubMenu(this, ActionHandler);
-
-        // Actions
-        CreateAction = new CreateAction(this, project);
-        DuplicateAction = new DuplicateAction(this, project);
-        DeleteAction = new DeleteAction(this, project);
-        DuplicateToMapAction = new DuplicateToMapAction(this, project);
-        MoveToMapAction = new MoveToMapAction(this, project);
-        ReorderAction = new ReorderAction(this, project);
-        GotoAction = new GotoAction(this, project);
-        FrameAction = new FrameAction(this, project);
-        PullToCameraAction = new PullToCameraAction(this, project);
-        RotateAction = new RotateAction(this, project);
-        ScrambleAction = new ScrambleAction(this, project);
-        ReplicateAction = new ReplicateAction(this, project);
-        RenderTypeAction = new RenderTypeAction(this, project);
-        SelectAllAction = new SelectAllAction(this, project);
-        EditorVisibilityAction = new EditorVisibilityAction(this, project);
-        GameVisibilityAction = new GameVisibilityAction(this, project);
-        SelectionOutlineAction = new SelectionOutlineAction(this, project);
-        AdjustToGridAction = new AdjustToGridAction(this, project);
-        EntityInfoAction = new EntityInfoAction(this, project);
-        EntityIdCheckAction = new EntityIdCheckAction(this, project);
-        EntityRenameAction = new EntityRenameAction(this, project);
-
-        // Tools
-        MassEditTool = new MassEditTool(this, project);
-        RotationIncrementTool = new RotationIncrementTool(this, project);
-        PositionIncrementTool = new PositionIncrementTool(this, project);
-        AutomaticPreviewTool = new AutomaticPreviewTool(this, project);
-        DisplayGroupTool = new DisplayGroupTool(this, project);
-        GlobalSearchTool = new GlobalSearchTool(this, project);
-        LocalSearchView = new LocalSearchTool(this, project);
-        ModelSelectorTool = new ModelSelectorTool(this, project);
-        PrefabTool = new PrefabTool(this, project);
-        SelectionGroupTool = new SelectionGroupTool(this, project);
-        NavmeshBuilderTool = new NavmeshBuilderTool(this, project);
-        EntityIdentifierTool = new EntityIdentifierTool(this, project);
-        MapGridTool = new MapGridTool(this, project);
-        WorldMapTool = new WorldMapTool(this, project);
-        WorldMapLayoutTool = new WorldMapLayoutTool(this, project);
-        MapListFilterTool = new MapListFilterTool(this, project);
-        MapValidatorTool = new MapValidatorTool(this, project);
-        MapModelInsightTool = new MapModelInsightView(this, project);
-
-        ModelInsightTool = new MapModelInsightHelper(this, project);
-
-        // Focus
-        EditorActionManager.AddEventHandler(MapListView);
-    }
-
-    private bool PauseUpdate
-    {
-        get
-        {
-            lock (_lock_PauseUpdate)
-            {
-                return _PauseUpdate;
-            }
-        }
-        set
-        {
-            lock (_lock_PauseUpdate)
-            {
-                _PauseUpdate = value;
-            }
-        }
+        ToolWindow = new MapToolWindow(this, project);
     }
 
     public string EditorName => "Map Editor";
@@ -228,134 +52,48 @@ public class MapEditorScreen : EditorScreen
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
-    public void OnGUI(string[] initcmd)
+    public void OnGUI(string[] commands)
     {
-        if (Project.IsInitializing)
-            return;
-
         var scale = DPI.UIScale();
 
-        // Docking setup
-        //var vp = ImGui.GetMainViewport();
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowRounding, 0.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
-        ImGui.PushStyleVar(ImGuiStyleVar.ChildBorderSize, 0.0f);
-        ImGuiWindowFlags flags = ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse |
-                                 ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove;
-        flags |= ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
-        flags |= ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoNavFocus;
-        flags |= ImGuiWindowFlags.NoBackground;
-        //ImGui.Begin("DockSpace_MapEdit", flags);
-        ImGui.PopStyleVar(4);
-        var dsid = ImGui.GetID("DockSpace_MapEdit");
-        ImGui.DockSpace(dsid, new Vector2(0, 0));
-
         Shortcuts.Monitor();
-        ToolSubMenu.Shortcuts();
-        CommandQueue.Parse(initcmd);
-
-        DuplicateToMapAction.OnGui();
-        MoveToMapAction.OnGui();
-        SelectAllAction.OnGui();
-        AdjustToGridAction.OnGui();
-
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);
-
-        Vector3 clear_color = new(114f / 255f, 144f / 255f, 154f / 255f);
-        //ImGui.Text($@"Viewport size: {Viewport.Width}x{Viewport.Height}");
-        //ImGui.Text(string.Format("Application average {0:F3} ms/frame ({1:F1} FPS)", 1000f / ImGui.GetIO().Framerate, ImGui.GetIO().Framerate));
+        CommandQueue.Parse(commands);
 
         if (ImGui.BeginMenuBar())
         {
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu();
+
+            ToolWindow.DisplayMenu();
 
             ImGui.EndMenuBar();
         }
 
-        MapViewportView.OnGui();
-        MapListView.OnGui();
-        MapContentView.OnGui();
+        var dsid = ImGui.GetID("DockSpace_MapEdit");
+        ImGui.DockSpace(dsid, new Vector2(0, 0));
 
-        if (Smithbox.FirstFrame)
-        {
-            ImGui.SetNextWindowFocus();
-        }
+        ViewHandler.HandleViews();
 
-        if (MapPropertyView.Focus)
-        {
-            MapPropertyView.Focus = false;
-            ImGui.SetNextWindowFocus();
-        }
+        var activeView = ViewHandler.ActiveView;
 
-        MapPropertyView.OnGui(ViewportSelection, "mapeditprop", MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
-
-        SelectionGroupTool.OnGui();
-        LocalSearchView.OnGui();
-        WorldMapTool.DisplayWorldMap();
-
-        LoadingModal.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
-
-        if (CFG.Current.Interface_MapEditor_ResourceList)
-        {
-            ResourceList.DisplayWindow("mapResourceList", Universe);
-        }
-
-        if (CFG.Current.Interface_MapEditor_ToolWindow)
+        if (activeView != null)
         {
             ToolWindow.OnGui();
+
+            LoadingModal.DisplayWindow(activeView.ViewportWindow.Viewport.Width, activeView.ViewportWindow.Viewport.Height);
+
+            if (CFG.Current.Interface_MapEditor_ResourceList)
+            {
+                ResourceList.DisplayWindow("mapResourceList", activeView.Universe);
+            }
         }
-
-        ImGui.PopStyleColor(1);
-    }
-
-    public void OnDefocus()
-    {
-    }
-
-    public void Update(float dt)
-    {
-        if (Project.IsInitializing)
-            return;
-
-        if (GCNeedsCollection)
-        {
-            GC.Collect();
-            GCNeedsCollection = false;
-        }
-
-        if (PauseUpdate)
-        {
-            return;
-        }
-
-        MapViewportView.Update(dt);
-
-        // Throw any exceptions that ocurred during async map loading.
-        if (Universe.LoadMapExceptions != null)
-        {
-            Universe.LoadMapExceptions.Throw();
-        }
-    }
-
-    public void EditorResized(Sdl2Window window, GraphicsDevice device)
-    {
-        MapViewportView.EditorResized(window, device);
     }
 
     public void FileMenu()
     {
+        var activeView = ViewHandler.ActiveView;
+
         if (ImGui.BeginMenu("File"))
         {
             if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
@@ -381,44 +119,47 @@ public class MapEditorScreen : EditorScreen
                 UIHelper.Tooltip("If enabled, the light files are outputted on save.");
                 UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTL);
 
-                if (AutoInvadeBank.CanUse())
+                if (activeView != null)
                 {
-                    if (ImGui.MenuItem($"AIP"))
+                    if (activeView.AutoInvadeBank.CanUse())
                     {
-                        CFG.Current.MapEditor_ManualSave_IncludeAIP = !CFG.Current.MapEditor_ManualSave_IncludeAIP;
+                        if (ImGui.MenuItem($"AIP"))
+                        {
+                            CFG.Current.MapEditor_ManualSave_IncludeAIP = !CFG.Current.MapEditor_ManualSave_IncludeAIP;
+                        }
+                        UIHelper.Tooltip("If enabled, the auto invade point files are outputted on save.");
+                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeAIP);
                     }
-                    UIHelper.Tooltip("If enabled, the auto invade point files are outputted on save.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeAIP);
-                }
 
-                if (HavokNavmeshBank.CanUse())
-                {
-                    if (ImGui.MenuItem($"NVA"))
+                    if (activeView.HavokNavmeshBank.CanUse())
                     {
-                        CFG.Current.MapEditor_ManualSave_IncludeNVA = !CFG.Current.MapEditor_ManualSave_IncludeNVA;
+                        if (ImGui.MenuItem($"NVA"))
+                        {
+                            CFG.Current.MapEditor_ManualSave_IncludeNVA = !CFG.Current.MapEditor_ManualSave_IncludeNVA;
+                        }
+                        UIHelper.Tooltip("If enabled, the navmesh configuration files are outputted on save.");
+                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeNVA);
                     }
-                    UIHelper.Tooltip("If enabled, the navmesh configuration files are outputted on save.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeNVA);
-                }
 
-                if (LightAtlasBank.CanUse())
-                {
-                    if (ImGui.MenuItem($"BTAB"))
+                    if (activeView.LightAtlasBank.CanUse())
                     {
-                        CFG.Current.MapEditor_ManualSave_IncludeBTAB = !CFG.Current.MapEditor_ManualSave_IncludeBTAB;
+                        if (ImGui.MenuItem($"BTAB"))
+                        {
+                            CFG.Current.MapEditor_ManualSave_IncludeBTAB = !CFG.Current.MapEditor_ManualSave_IncludeBTAB;
+                        }
+                        UIHelper.Tooltip("If enabled, the light atlas files are outputted on save.");
+                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTAB);
                     }
-                    UIHelper.Tooltip("If enabled, the light atlas files are outputted on save.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTAB);
-                }
 
-                if (LightProbeBank.CanUse())
-                {
-                    if (ImGui.MenuItem($"BTPB"))
+                    if (activeView.LightProbeBank.CanUse())
                     {
-                        CFG.Current.MapEditor_ManualSave_IncludeBTPB = !CFG.Current.MapEditor_ManualSave_IncludeBTPB;
+                        if (ImGui.MenuItem($"BTPB"))
+                        {
+                            CFG.Current.MapEditor_ManualSave_IncludeBTPB = !CFG.Current.MapEditor_ManualSave_IncludeBTPB;
+                        }
+                        UIHelper.Tooltip("If enabled, the light probe files are outputted on save.");
+                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTPB);
                     }
-                    UIHelper.Tooltip("If enabled, the light probe files are outputted on save.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTPB);
                 }
 
                 ImGui.EndMenu();
@@ -441,44 +182,47 @@ public class MapEditorScreen : EditorScreen
                 UIHelper.Tooltip("If enabled, the light files are outputted on save.");
                 UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTL);
 
-                if (AutoInvadeBank.CanUse())
+                if (activeView != null)
                 {
-                    if (ImGui.MenuItem($"AIP"))
+                    if (activeView.AutoInvadeBank.CanUse())
                     {
-                        CFG.Current.MapEditor_AutomaticSave_IncludeAIP = !CFG.Current.MapEditor_AutomaticSave_IncludeAIP;
+                        if (ImGui.MenuItem($"AIP"))
+                        {
+                            CFG.Current.MapEditor_AutomaticSave_IncludeAIP = !CFG.Current.MapEditor_AutomaticSave_IncludeAIP;
+                        }
+                        UIHelper.Tooltip("If enabled, the auto invade point files are outputted on save.");
+                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeAIP);
                     }
-                    UIHelper.Tooltip("If enabled, the auto invade point files are outputted on save.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeAIP);
-                }
 
-                if (HavokNavmeshBank.CanUse())
-                {
-                    if (ImGui.MenuItem($"NVA"))
+                    if (activeView.HavokNavmeshBank.CanUse())
                     {
-                        CFG.Current.MapEditor_AutomaticSave_IncludeNVA = !CFG.Current.MapEditor_AutomaticSave_IncludeNVA;
+                        if (ImGui.MenuItem($"NVA"))
+                        {
+                            CFG.Current.MapEditor_AutomaticSave_IncludeNVA = !CFG.Current.MapEditor_AutomaticSave_IncludeNVA;
+                        }
+                        UIHelper.Tooltip("If enabled, the navmesh configuration files are outputted on save.");
+                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeNVA);
                     }
-                    UIHelper.Tooltip("If enabled, the navmesh configuration files are outputted on save.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeNVA);
-                }
 
-                if (LightAtlasBank.CanUse())
-                {
-                    if (ImGui.MenuItem($"BTAB"))
+                    if (activeView.LightAtlasBank.CanUse())
                     {
-                        CFG.Current.MapEditor_AutomaticSave_IncludeBTAB = !CFG.Current.MapEditor_AutomaticSave_IncludeBTAB;
+                        if (ImGui.MenuItem($"BTAB"))
+                        {
+                            CFG.Current.MapEditor_AutomaticSave_IncludeBTAB = !CFG.Current.MapEditor_AutomaticSave_IncludeBTAB;
+                        }
+                        UIHelper.Tooltip("If enabled, the light atlas files are outputted on save.");
+                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTAB);
                     }
-                    UIHelper.Tooltip("If enabled, the light atlas files are outputted on save.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTAB);
-                }
 
-                if (LightProbeBank.CanUse())
-                {
-                    if (ImGui.MenuItem($"BTPB"))
+                    if (activeView.LightProbeBank.CanUse())
                     {
-                        CFG.Current.MapEditor_AutomaticSave_IncludeBTPB = !CFG.Current.MapEditor_AutomaticSave_IncludeBTPB;
+                        if (ImGui.MenuItem($"BTPB"))
+                        {
+                            CFG.Current.MapEditor_AutomaticSave_IncludeBTPB = !CFG.Current.MapEditor_AutomaticSave_IncludeBTPB;
+                        }
+                        UIHelper.Tooltip("If enabled, the light probe files are outputted on save.");
+                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTPB);
                     }
-                    UIHelper.Tooltip("If enabled, the light probe files are outputted on save.");
-                    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTPB);
                 }
 
                 ImGui.EndMenu();
@@ -491,64 +235,69 @@ public class MapEditorScreen : EditorScreen
 
     public void EditMenu()
     {
+        var activeView = ViewHandler.ActiveView;
+
         if (ImGui.BeginMenu("Edit"))
         {
-            // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+            if (activeView != null)
             {
-                if (EditorActionManager.CanUndo())
+                // Undo
+                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
-                    EditorActionManager.UndoAction();
+                    if (activeView.ViewportActionManager.CanUndo())
+                    {
+                        activeView.ViewportActionManager.UndoAction();
+                    }
                 }
-            }
 
-            // Undo All
-            if (ImGui.MenuItem($"Undo All"))
-            {
-                if (EditorActionManager.CanUndo())
+                // Undo All
+                if (ImGui.MenuItem($"Undo All"))
                 {
-                    EditorActionManager.UndoAllAction();
+                    if (activeView.ViewportActionManager.CanUndo())
+                    {
+                        activeView.ViewportActionManager.UndoAllAction();
+                    }
                 }
-            }
 
-            // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
-            {
-                if (EditorActionManager.CanRedo())
+                // Redo
+                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
-                    EditorActionManager.RedoAction();
+                    if (activeView.ViewportActionManager.CanRedo())
+                    {
+                        activeView.ViewportActionManager.RedoAction();
+                    }
                 }
+
+                ImGui.Separator();
+
+                activeView.DuplicateAction.OnMenu();
+                activeView.DeleteAction.OnMenu();
+                activeView.RotateAction.OnMenu();
+                activeView.ScrambleAction.OnMenu();
+                activeView.ReplicateAction.OnMenu();
+                activeView.RenderTypeAction.OnMenu();
+
+                ImGui.Separator();
+
+                activeView.CreateAction.OnMenu();
+                activeView.DuplicateToMapAction.OnMenu();
+                activeView.MoveToMapAction.OnMenu();
+
+                ImGui.Separator();
+
+                activeView.GotoAction.OnMenu();
+                activeView.FrameAction.OnMenu();
+                activeView.PullToCameraAction.OnMenu();
+
+                ImGui.Separator();
+
+                activeView.ReorderAction.OnMenu();
+
+                ImGui.Separator();
+
+                activeView.EditorVisibilityAction.OnMenu();
+                activeView.GameVisibilityAction.OnMenu();
             }
-
-            ImGui.Separator();
-
-            DuplicateAction.OnMenu();
-            DeleteAction.OnMenu();
-            RotateAction.OnMenu();
-            ScrambleAction.OnMenu();
-            ReplicateAction.OnMenu();
-            RenderTypeAction.OnMenu();
-
-            ImGui.Separator();
-
-            CreateAction.OnMenu();
-            DuplicateToMapAction.OnMenu();
-            MoveToMapAction.OnMenu();
-
-            ImGui.Separator();
-
-            GotoAction.OnMenu();
-            FrameAction.OnMenu();   
-            PullToCameraAction.OnMenu();
-
-            ImGui.Separator();
-
-            ReorderAction.OnMenu();
-
-            ImGui.Separator();
-
-            EditorVisibilityAction.OnMenu();
-            GameVisibilityAction.OnMenu();
 
             ImGui.EndMenu();
         }
@@ -559,31 +308,7 @@ public class MapEditorScreen : EditorScreen
         // Dropdown: View
         if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.MenuItem("Viewport"))
-            {
-                CFG.Current.Viewport_Display = !CFG.Current.Viewport_Display;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display);
-
-            if (ImGui.MenuItem("Map List"))
-            {
-                CFG.Current.Interface_MapEditor_MapList = !CFG.Current.Interface_MapEditor_MapList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapList);
-
-            if (ImGui.MenuItem("Map Contents"))
-            {
-                CFG.Current.Interface_MapEditor_MapContents = !CFG.Current.Interface_MapEditor_MapContents;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapContents);
-
-            if (ImGui.MenuItem("Properties"))
-            {
-                CFG.Current.Interface_MapEditor_Properties = !CFG.Current.Interface_MapEditor_Properties;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Properties);
-
-            if (ImGui.MenuItem("Tool Window"))
+            if (ImGui.MenuItem("Tools"))
             {
                 CFG.Current.Interface_MapEditor_ToolWindow = !CFG.Current.Interface_MapEditor_ToolWindow;
             }
@@ -597,42 +322,26 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            // Quick toggles for some of the Field Editor field visibility options
-
-            if (ImGui.MenuItem("Field: Community Names"))
-            {
-                CFG.Current.MapEditor_Properties_Enable_Commmunity_Names = !CFG.Current.MapEditor_Properties_Enable_Commmunity_Names;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Properties_Enable_Commmunity_Names);
-
-            if (ImGui.MenuItem("Field: Unknowns"))
-            {
-                CFG.Current.MapEditor_Properties_Display_Unknown_Properties = !CFG.Current.MapEditor_Properties_Display_Unknown_Properties;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Properties_Display_Unknown_Properties);
+            ViewHandler.DisplayMenu();
 
             ImGui.EndMenu();
         }
     }
 
-    public void ToolMenu()
-    {
-        var validViewportState = RenderScene != null &&
-            MapViewportView.Viewport != null;
-
-        // Tools
-        ToolSubMenu.DisplayMenu();
-    }
-
     public void FilterMenu()
     {
-        var validViewportState = RenderScene != null &&
-            MapViewportView.Viewport != null;
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        var validViewportState = activeView.RenderScene != null &&
+             activeView.ViewportWindow.Viewport != null;
 
         // General Filters
         if (ImGui.BeginMenu("General Filters", validViewportState))
         {
-            BasicFilters.Display();
+            activeView.BasicFilters.Display();
 
             ImGui.Separator();
 
@@ -640,32 +349,32 @@ public class MapEditorScreen : EditorScreen
             {
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_1.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
+                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_2.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
+                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_3.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
+                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_4.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
+                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_5.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
+                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_6.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
+                    activeView.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
                 }
 
                 ImGui.EndMenu();
@@ -677,7 +386,7 @@ public class MapEditorScreen : EditorScreen
         // Region Filters
         if (ImGui.BeginMenu("Region Filters", validViewportState))
         {
-            RegionFilters.DisplayOptions();
+            activeView.RegionFilters.DisplayOptions();
 
             ImGui.EndMenu();
         }
@@ -685,42 +394,47 @@ public class MapEditorScreen : EditorScreen
 
     public void CollisionMenu()
     {
-        var validViewportState = RenderScene != null &&
-            MapViewportView.Viewport != null;
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        var validViewportState = activeView.RenderScene != null &&
+            activeView.ViewportWindow.Viewport != null;
 
         if (ImGui.BeginMenu("Collision Type", validViewportState))
         {
             if (ImGui.MenuItem("Low"))
             {
-                HavokCollisionBank.VisibleCollisionType = HavokCollisionType.Low;
+                activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.Low;
                 CFG.Current.CurrentHavokCollisionType = HavokCollisionType.Low;
 
-                HavokCollisionBank.RefreshCollision();
+                activeView.HavokCollisionBank.RefreshCollision();
             }
             UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.");
-            UIHelper.ShowActiveStatus(HavokCollisionBank.VisibleCollisionType == HavokCollisionType.Low);
+            UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.Low);
 
             if (ImGui.MenuItem("High"))
             {
-                HavokCollisionBank.VisibleCollisionType = HavokCollisionType.High;
+                activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.High;
                 CFG.Current.CurrentHavokCollisionType = HavokCollisionType.High;
 
-                HavokCollisionBank.RefreshCollision();
+                activeView.HavokCollisionBank.RefreshCollision();
             }
             UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.");
-            UIHelper.ShowActiveStatus(HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
+            UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
 
             if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             {
                 if (ImGui.MenuItem("Fall Protection"))
                 {
-                    HavokCollisionBank.VisibleCollisionType = HavokCollisionType.FallProtection;
+                    activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.FallProtection;
                     CFG.Current.CurrentHavokCollisionType = HavokCollisionType.FallProtection;
 
-                    HavokCollisionBank.RefreshCollision();
+                    activeView.HavokCollisionBank.RefreshCollision();
                 }
                 UIHelper.Tooltip("Visible collision will use the fall-protection mesh.\nUsed for enemy fall protection.");
-                UIHelper.ShowActiveStatus(HavokCollisionBank.VisibleCollisionType == HavokCollisionType.FallProtection);
+                UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.FallProtection);
             }
 
             ImGui.EndMenu();
@@ -729,28 +443,79 @@ public class MapEditorScreen : EditorScreen
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (Project.IsInitializing)
+        if (ViewHandler.ViewToClose == null)
+        {
+            foreach (var view in ViewHandler.Views)
+            {
+                if (view == null)
+                    continue;
+
+                if (view.ViewportWindow.Viewport is VulkanViewport vulkanViewport)
+                {
+                    if (vulkanViewport.Visible)
+                    {
+                        view.ViewportWindow.Draw(device, cl);
+                    }
+                }
+            }
+        }
+
+        // Done here so we don't mutate the list during drawing
+        if(ViewHandler.ViewToClose != null)
+        {
+            ViewHandler.RemoveView(ViewHandler.ViewToClose);
+
+            ViewHandler.ViewToClose = null;
+        }
+    }
+
+    public void Update(float dt)
+    {
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
             return;
 
-        if (MapViewportView.Viewport != null)
+        activeView.ViewportWindow.Update(dt);
+
+        // Throw any exceptions that ocurred during async map loading.
+        if (activeView.Universe.LoadMapExceptions != null)
         {
-            MapViewportView.Draw(device, cl);
+            activeView.Universe.LoadMapExceptions.Throw();
         }
+    }
+
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        activeView.ViewportWindow.EditorResized(window, device);
     }
 
     public bool InputCaptured()
     {
-        return MapViewportView.InputCaptured();
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return false;
+
+        return activeView.ViewportWindow.InputCaptured();
     }
 
     public void Save(bool autoSave = false)
     {
-        if (Project.Descriptor.ProjectType == ProjectType.Undefined)
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
             return;
 
         try
         {
-            Universe.SaveAllMaps(autoSave);
+            // NOTE: perhaps this should only save the loaded map for the active view (currently does all loaded maps)
+            activeView.Universe.SaveAllMaps(autoSave);
         }
         catch (SavingFailedException e)
         {
@@ -764,17 +529,27 @@ public class MapEditorScreen : EditorScreen
 
     public void ReloadUniverse()
     {
-        Universe.UnloadAllMaps();
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        activeView.Universe.UnloadAllMaps();
 
         GC.Collect();
         GC.WaitForPendingFinalizers();
         GC.Collect();
 
-        CreateAction.PopulateClassNames();
+        activeView.CreateAction.PopulateClassNames();
     }
 
     public void HandleSaveException(SavingFailedException e)
     {
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
         if (e.Wrapped is MSB.MissingReferenceException eRef)
         {
             TaskLogs.AddLog(e.Message,
@@ -788,7 +563,7 @@ public class MapEditorScreen : EditorScreen
             {
                 foreach (var entry in Project.Locator.MapFiles.Entries)
                 {
-                    var currentContainer = Selection.GetMapContainerFromMapID(entry.Filename);
+                    var currentContainer = activeView.Selection.GetMapContainerFromMapID(entry.Filename);
 
                     if (currentContainer != null)
                     {
@@ -796,9 +571,11 @@ public class MapEditorScreen : EditorScreen
                         {
                             if (obj.WrappedObject == eRef.Referrer)
                             {
-                                ViewportSelection.ClearSelection();
-                                ViewportSelection.AddSelection(obj);
-                                FrameAction.ApplyViewportFrame();
+                                activeView.ViewportSelection.ClearSelection();
+                                activeView.ViewportSelection.AddSelection(obj);
+
+                                activeView.FrameAction.ApplyViewportFrame();
+
                                 return;
                             }
                         }

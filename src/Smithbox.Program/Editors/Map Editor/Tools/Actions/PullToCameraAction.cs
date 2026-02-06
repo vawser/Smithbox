@@ -13,12 +13,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class PullToCameraAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public PullToCameraAction(MapEditorScreen editor, ProjectEntry project)
+    public PullToCameraAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -27,7 +27,7 @@ public class PullToCameraAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Pull))
             {
@@ -99,13 +99,13 @@ public class PullToCameraAction
     /// </summary>
     public void ApplyMoveToCamera()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            HashSet<Entity> sels = Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
+            HashSet<Entity> sels = View.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
-            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, Editor.MapViewportView.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
-            Vector3 camPos = Editor.MapViewportView.Viewport.ViewportCamera.CameraTransform.Position;
+            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, View.ViewportWindow.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
+            Vector3 camPos = View.ViewportWindow.Viewport.ViewportCamera.CameraTransform.Position;
             Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
 
             // Get the accumulated center position of all selections
@@ -150,7 +150,8 @@ public class PullToCameraAction
             if (actlist.Any())
             {
                 ViewportCompoundAction action = new(actlist);
-                Editor.EditorActionManager.ExecuteAction(action);
+
+                View.ViewportActionManager.ExecuteAction(action);
             }
         }
         else

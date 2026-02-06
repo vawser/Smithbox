@@ -8,7 +8,8 @@ namespace StudioCore.Editors.MapEditor;
 
 public class ChangeMapObjectType : ViewportAction
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
+
     private readonly List<MsbEntity> Entities = new();
     private readonly List<MapObjectChange> MapObjectChanges = new();
     private readonly string MsbParamstr;
@@ -22,10 +23,10 @@ public class ChangeMapObjectType : ViewportAction
     ///     as Parts or Regions.
     ///     Data for properties absent in targeted type will be lost, but will be restored for undo/redo.
     /// </summary>
-    public ChangeMapObjectType(MapEditorScreen editor, Type msbType, List<MsbEntity> selectedEnts, string[] oldTypes,
+    public ChangeMapObjectType(MapEditorView view, Type msbType, List<MsbEntity> selectedEnts, string[] oldTypes,
         string[] newTypes, string msbParamStr, bool setSelection)
     {
-        Editor = editor;
+        View = view;
         MsbType = msbType;
         Entities.AddRange(selectedEnts);
         OldTypes = oldTypes;
@@ -33,7 +34,7 @@ public class ChangeMapObjectType : ViewportAction
         SetSelection = setSelection;
         MsbParamstr = msbParamStr;
 
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         // Go through applicable map entities and create WrappedObject with the new type for each.
         // Store entity, old obj, and new obj to be used when changing Entity's WrappedObject (including restoring the exact same objs in cases of undo/redo).
@@ -49,7 +50,7 @@ public class ChangeMapObjectType : ViewportAction
                 Type currentType = ent.WrappedObject.GetType();
                 if (currentType == sourceType)
                 {
-                    MapContainer map = Editor.Selection.GetMapContainerFromMapID(ent.MapID);
+                    MapContainer map = View.Selection.GetMapContainerFromMapID(ent.MapID);
                     map.HasUnsavedChanges = true;
 
                     var sourceObj = ent.WrappedObject;
@@ -99,7 +100,7 @@ public class ChangeMapObjectType : ViewportAction
 
     public override ActionEvent Undo()
     {
-        var universe = Editor.Universe;
+        var universe = View.Universe;
 
         foreach (MapObjectChange mapChangeObj in MapObjectChanges)
         {

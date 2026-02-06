@@ -1,4 +1,6 @@
-﻿using StudioCore.Editors.Common;
+﻿using Org.BouncyCastle.Asn1.X509;
+using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System;
 using System.Linq;
 
@@ -7,127 +9,106 @@ namespace StudioCore.Editors.MapEditor;
 public class MapCommandQueue
 {
     public MapEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public MapCommandQueue(MapEditorScreen screen)
+    public bool DoFocus = false;
+
+    public MapCommandQueue(MapEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
+        Editor = editor;
+        Project = project;
     }
 
-    public void Parse(string[] initcmd)
+    public void Parse(string[] commands)
     {
-        // Parse select commands
-        if (initcmd != null && initcmd.Length > 1)
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        if (commands == null)
+            return;
+
+        if (commands.Length <= 0)
+            return;
+
+        HandleLoadCommand(activeView, commands);
+        HandleSelectCommand(activeView, commands);
+        HandlePropSearchCommand(activeView, commands);
+    }
+
+    public void HandleLoadCommand(MapEditorView curView, string[] commands)
+    {
+        if (commands[0] != "load")
+            return;
+
+        ISelectable target = null;
+
+        var mapid = commands[1];
+
+        var container = curView.Selection.GetMapContainerFromMapID(mapid);
+
+        if (container != null)
         {
-            if (initcmd[0] == "propsearch")
+            target = container.RootObject;
+        }
+        else
+        {
+            curView.Universe.LoadMap(mapid);
+        }
+
+        ApplyTargetSelection(curView, target);
+    }
+
+    public void HandleSelectCommand(MapEditorView curView, string[] commands)
+    {
+        ISelectable target = null;
+
+        var mapid = commands[1];
+        if (commands.Length > 2)
+        {
+            if (curView.Selection.GetMapContainerFromMapID(mapid) is MapContainer m)
             {
-                Editor.LocalSearchView.propSearchCmd = initcmd.Skip(1).ToArray();
-                Editor.LocalSearchView.Property = Editor.MapPropertyView.RequestedSearchProperty;
-                Editor.MapPropertyView.RequestedSearchProperty = null;
-                Editor.LocalSearchView.UpdatePropSearch = true;
-            }
-
-            // Support loading maps through commands.
-            // Probably don't support unload here, as there may be unsaved changes.
-            ISelectable target = null;
-            if (initcmd[0] == "load")
-            {
-                var mapid = initcmd[1];
-
-                var container = Editor.Selection.GetMapContainerFromMapID(mapid);
-
-                if (container != null)
+                var name = commands[2];
+                if (commands.Length > 3 && Enum.TryParse(commands[3], out MsbEntityType entityType))
                 {
-                    target = container.RootObject;
+                    target = m.GetObjectsByName(name)
+                        .Where(ent => ent is MsbEntity me && me.Type == entityType)
+                        .FirstOrDefault();
                 }
                 else
                 {
-                    Editor.Universe.LoadMap(mapid);
+                    target = m.GetObjectByName(name);
                 }
             }
+        }
+        else
+        {
+            target = new ObjectContainerReference(mapid).GetSelectionTarget(curView.Universe);
+        }
 
-            if (initcmd[0] == "select")
-            {
-                var mapid = initcmd[1];
-                if (initcmd.Length > 2)
-                {
-                    if (Editor.Selection.GetMapContainerFromMapID(mapid) is MapContainer m)
-                    {
-                        var name = initcmd[2];
-                        if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MsbEntityType entityType))
-                        {
-                            target = m.GetObjectsByName(name)
-                                .Where(ent => ent is MsbEntity me && me.Type == entityType)
-                                .FirstOrDefault();
-                        }
-                        else
-                        {
-                            target = m.GetObjectByName(name);
-                        }
-                    }
-                }
-                else
-                {
-                    target = new ObjectContainerReference(mapid).GetSelectionTarget(Editor.Universe);
-                }
-            }
+        ApplyTargetSelection(curView, target);
+    }
 
-            if (initcmd[0] == "idselect")
-            {
-                var type = initcmd[1];
-                var mapid = initcmd[2];
-                var entityID = initcmd[3];
+    public void HandlePropSearchCommand(MapEditorView curView, string[] commands)
+    {
+        if (commands[0] != "propsearch")
+            return;
 
-                if (initcmd.Length > 3)
-                {
-                    if (Editor.Selection.GetMapContainerFromMapID(mapid) is MapContainer m)
-                    {
-                        if (type == "enemy")
-                        {
-                            target = m.GetEnemyByID(entityID);
-                        }
-                        if (type == "asset")
-                        {
-                            target = m.GetAssetByID(entityID);
-                        }
-                        if (type == "region")
-                        {
-                            target = m.GetRegionByID(entityID);
-                        }
-                    }
-                }
-            }
+        curView.LocalSearchView.propSearchCmd = commands.Skip(1).ToArray();
+        curView.LocalSearchView.Property = curView.MapPropertyView.RequestedSearchProperty;
+        curView.MapPropertyView.RequestedSearchProperty = null;
+        curView.LocalSearchView.UpdatePropSearch = true;
+    }
 
-            if (initcmd[0] == "emevd_select")
-            {
-                var mapid = initcmd[1];
-                var entityID = initcmd[2];
-
-                if (initcmd.Length > 2)
-                {
-                    if (Editor.Selection.GetMapContainerFromMapID(mapid) is MapContainer m)
-                    {
-                        if (target == null)
-                            target = m.GetEnemyByID(entityID, true);
-
-                        if (target == null)
-                            target = m.GetAssetByID(entityID);
-
-                        if (target == null)
-                            target = m.GetRegionByID(entityID);
-
-                        if (target == null)
-                            target = m.GetCollisionByID(entityID);
-                    }
-                }
-            }
-
-            if (target != null)
-            {
-                Editor.Universe.Selection.ClearSelection();
-                Editor.Universe.Selection.AddSelection(target);
-                Editor.Universe.Selection.GotoTreeTarget = target;
-                Editor.FrameAction.ApplyViewportFrame();
-            }
+    public void ApplyTargetSelection(MapEditorView curView, ISelectable target)
+    {
+        if (target != null)
+        {
+            curView.Universe.Selection.ClearSelection();
+            curView.Universe.Selection.AddSelection(target);
+            curView.Universe.Selection.GotoTreeTarget = target;
+            curView.FrameAction.ApplyViewportFrame();
         }
     }
 }

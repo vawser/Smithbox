@@ -8,12 +8,12 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelInsightHelper
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public ModelInsightHelper(ModelEditorScreen editor, ProjectEntry project)
+    public ModelInsightHelper(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         Entries = new();
@@ -47,18 +47,13 @@ public class ModelInsightHelper
         if (Project.Handler.ModelEditor == null)
             return;
 
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if(activeView == null) 
-            return;
-
         var flverName = Path.GetFileNameWithoutExtension(flverVirtPath);
         var textureName = Path.GetFileName(texVirtPath);
 
-        if (activeView.Selection.SelectedModelWrapper == null)
+        if (View.Selection.SelectedModelWrapper == null)
             return;
 
-        var wrapperName = activeView.Selection.SelectedModelWrapper.Name;
+        var wrapperName = View.Selection.SelectedModelWrapper.Name;
 
         if (Entries.ContainsKey(wrapperName))
         {

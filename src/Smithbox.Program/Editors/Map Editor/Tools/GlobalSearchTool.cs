@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class GlobalSearchTool : IMapQueryEngine
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public MapQueryBank Bank;
@@ -41,12 +41,12 @@ public class GlobalSearchTool : IMapQueryEngine
     public string PropertyFilterInputs = "";
     public string ValueFilterInputs = "";
 
-    public GlobalSearchTool(MapEditorScreen editor, ProjectEntry project)
+    public GlobalSearchTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        Bank = new MapQueryBank(Editor, this);
+        Bank = new MapQueryBank(View, this);
     }
 
     public void Setup()
@@ -470,7 +470,7 @@ public class GlobalSearchTool : IMapQueryEngine
             {
                 var pair = Matches.ElementAt(i);
                 var mapName = pair.Key;
-                var mapAlias = AliasHelper.GetMapNameAlias(Editor.Project, mapName);
+                var mapAlias = AliasHelper.GetMapNameAlias(View.Project, mapName);
                 var displayName = $"{mapName}: {mapAlias}";
                 var objectMatches = pair.Value;
 
@@ -513,7 +513,7 @@ public class GlobalSearchTool : IMapQueryEngine
             {
                 var pair = Matches.ElementAt(i);
                 var mapName = pair.Key;
-                var mapAlias = AliasHelper.GetMapNameAlias(Editor.Project, mapName);
+                var mapAlias = AliasHelper.GetMapNameAlias(View.Project, mapName);
                 var displayName = $"{mapName}: {mapAlias}";
                 var objectMatches = pair.Value;
 
@@ -605,9 +605,9 @@ public class GlobalSearchTool : IMapQueryEngine
 
         string alias = "";
 
-        var chrAlias = AliasHelper.GetCharacterAlias(Editor.Project, rawName);
-        var assetAlias = AliasHelper.GetAssetAlias(Editor.Project, rawName);
-        var mapPieceAlias = AliasHelper.GetMapPieceAlias(Editor.Project, rawName);
+        var chrAlias = AliasHelper.GetCharacterAlias(View.Project, rawName);
+        var assetAlias = AliasHelper.GetAssetAlias(View.Project, rawName);
+        var mapPieceAlias = AliasHelper.GetMapPieceAlias(View.Project, rawName);
 
         if (chrAlias != "")
             return chrAlias;
