@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
+    <AssemblyName>Smithbox</AssemblyName>
     <TargetFramework>net9.0-macos</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
     <Version>2.1.1</Version>
@@ -46,8 +47,8 @@
   <ItemGroup>
     <NativeReference Include="$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib" Kind="Dynamic" />
     <NativeReference Include="$(OodlePath)" Condition="Exists('$(OodlePath)')" Kind="Dynamic" />
+    <NativeReference Include="$(RustDllPath)" Condition="Exists('$(RustDllPath)')" Kind="Dynamic" />
     <NativeReference Include="path/to/libzstd.dylib" Kind="Dynamic" />
-    <NativeReference Include="$(RustDllPath)" Kind="Dynamic" Condition="Exists('$(RustDllPath)')" />
     <BundleResource Include="AppIcon.icns" />
   </ItemGroup>
 
