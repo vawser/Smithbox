@@ -687,6 +687,8 @@ public class SceneRenderer
 
     public class RenderQueue
     {
+        public bool PickingEnabled { get; set; }
+
         // Number of frames in flight planned for this queue
         private readonly int _bufferCount = 3;
 
@@ -819,6 +821,17 @@ public class SceneRenderer
             Tracy.TracyCZoneEnd(ctx);
             watch.Stop();
             CPURenderTime = (float)(watch.ElapsedTicks / (double)Stopwatch.Frequency * 1000.0);
+
+            PickingEnabled = false;
+        }
+        public void RequestPicking()
+        {
+            PickingEnabled = true;
+        }
+
+        internal void ClearPicking()
+        {
+            PickingEnabled = false;
         }
 
         private struct KeyIndex : IComparable<KeyIndex>, IComparable

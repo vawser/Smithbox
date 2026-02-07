@@ -125,8 +125,14 @@ public class SceneRenderPipeline
         _overlayQueue.SetPredrawSetupAction(action);
     }
 
-    public unsafe void TestUpdateView(Matrix4x4 proj, Matrix4x4 view, Vector3 eye, int cursorx, int cursory)
+    public unsafe void UpdateSceneParameters(Matrix4x4 proj, Matrix4x4 view, Vector3 eye, int cursorx, int cursory)
     {
+        var selectionColor = new Vector4(
+            CFG.Current.Viewport_Selection_Outline_Color.X, 
+            CFG.Current.Viewport_Selection_Outline_Color.Y, 
+            CFG.Current.Viewport_Selection_Outline_Color.Z, 
+            1.0f);
+
         Eye = eye;
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
@@ -136,6 +142,11 @@ public class SceneRenderPipeline
             SceneParams.EnvMap = EnvMapTexture;
             SceneParams.CursorPosition[0] = cursorx;
             SceneParams.CursorPosition[1] = cursory;
+
+            SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Untextured_Model_Brightness;
+            SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Untextured_Model_Saturation;
+            SceneParams.SelectionColor = selectionColor;
+
             cl.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
         });
     }
@@ -162,7 +173,7 @@ public class SceneRenderPipeline
         }
 
         _pickingEnabled = true;
-        Scene.SendGPUPickingRequest();
+        Scene.SendGPUPickingRequest(_renderQueue, _overlayQueue);
 
         SceneRenderer.AddAsyncReadback(PickingResultReadbackBuffer, PickingResultsBuffer, d =>
         {

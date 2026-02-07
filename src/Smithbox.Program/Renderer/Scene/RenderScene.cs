@@ -9,8 +9,6 @@ namespace StudioCore.Renderer;
 /// </summary>
 public class RenderScene
 {
-    private bool _pickingEnabled;
-
     private float RCDist = float.PositiveInfinity;
 
     private object SceneUpdateLock = new();
@@ -79,9 +77,12 @@ public class RenderScene
         return null;
     }
 
-    public void SendGPUPickingRequest()
+    public void SendGPUPickingRequest(
+        SceneRenderer.RenderQueue queue, 
+        SceneRenderer.RenderQueue overlayQueue)
     {
-        _pickingEnabled = true;
+        queue.RequestPicking();
+        overlayQueue.RequestPicking();
     }
 
     public void Render(SceneRenderer.RenderQueue queue, SceneRenderer.RenderQueue overlayQueue, BoundingFrustum frustum,
@@ -97,16 +98,15 @@ public class RenderScene
         Tracy.TracyCZoneEnd(ctx);
 
         queue.SetDrawParameters(OpaqueRenderables.cDrawParameters,
-            _pickingEnabled ? OpaqueRenderables.cSelectionPipelines : OpaqueRenderables.cPipelines);
+            queue.PickingEnabled ? OpaqueRenderables.cSelectionPipelines : OpaqueRenderables.cPipelines);
 
         ctx = Tracy.TracyCZoneN(1, "Overlays");
         OverlayRenderables.CullRenderables(frustum);
         OverlayRenderables.ProcessSceneVisibility(DrawFilter, DisplayGroup);
         OverlayRenderables.SubmitRenderables(overlayQueue);
         overlayQueue.SetDrawParameters(OverlayRenderables.cDrawParameters,
-            _pickingEnabled ? OverlayRenderables.cSelectionPipelines : OverlayRenderables.cPipelines);
+            overlayQueue.PickingEnabled ? OverlayRenderables.cSelectionPipelines : OverlayRenderables.cPipelines);
         Tracy.TracyCZoneEnd(ctx);
 
-        _pickingEnabled = false;
     }
 }

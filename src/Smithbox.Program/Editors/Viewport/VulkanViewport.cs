@@ -114,6 +114,10 @@ public class VulkanViewport : IViewport
 
     private bool Instantiated = false;
 
+    public bool Visible = false;
+
+    public bool IsActiveViewport = false;
+
     public VulkanViewport(IUniverse owner, string id, int width, int height, RenderScene scene)
     {
         Owner = owner;
@@ -227,10 +231,6 @@ public class VulkanViewport : IViewport
         Instantiated = true;
     }
 
-    public bool Visible = false;
-
-    public bool IsActiveViewport = false;
-
     public void Display()
     {
         var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav | ImGuiWindowFlags.MenuBar;
@@ -241,50 +241,17 @@ public class VulkanViewport : IViewport
         {
             Visible = true;
 
-            if (Owner is ModelUniverse modelUniverse)
-            {
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.ModelEditor_Viewport);
-                    modelUniverse.View.Editor.ViewHandler.ActiveView = modelUniverse.View;
-                }
-            }
-
-            if (Owner is MapUniverse mapUniverse)
-            {
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.MapEditor_Viewport);
-
-                    // Need to loop through since we can't easily pass in the wrapper since this is a shared class with the Model Editor
-                    foreach(var wrapper in mapUniverse.View.ViewportHandler.Viewports)
-                    {
-                        if(wrapper.Viewport == this)
-                        {
-                            mapUniverse.View.ViewportHandler.ActiveViewport = wrapper;
-                            IsActiveViewport = true;
-                        }
-                    }
-                }
-                else
-                {
-                    IsActiveViewport = false;
-                }
-
-                if (CFG.Current.QuickView_DisplayTooltip)
-                {
-                    mapUniverse.View.AutomaticPreviewTool.HandleQuickViewTooltip();
-                }
-            }
+            HandleMapEditorFocus();
+            HandleModelEditorFocus();
 
             ViewportMenu.Draw();
             ViewportOverlay.Draw();
 
             Vector2 p = ImGui.GetWindowPos();
             Vector2 s = ImGui.GetWindowSize();
-            Rectangle newvp = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
+            Rectangle newViewportSize = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
 
-            ResizeViewport(Device, newvp);
+            ResizeViewport(Device, newViewportSize);
 
             // Inputs
             if (InputManager.IsMouseDown(MouseButton.Right) && MouseInViewport())
@@ -315,16 +282,19 @@ public class VulkanViewport : IViewport
         ImGui.End();
         ImGui.PopStyleColor();
     }
-
-    public void ResizeViewport(GraphicsDevice device, Rectangle newvp)
+    public void Draw(GraphicsDevice device, CommandList cl)
     {
-        Width = newvp.Width;
-        Height = newvp.Height;
-        X = newvp.X;
-        Y = newvp.Y;
-        ViewportCamera.UpdateBounds(newvp);
-        float depth = device.IsDepthRangeZeroToOne ? 0 : 1;
-        RenderViewport = new Veldrid.Viewport(newvp.X, newvp.Y, Width, Height, depth, 1.0f - depth);
+        ProjectionMatrix = ViewportUtils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f,
+            Width / (float)Height, NearClip, FarClip);
+
+        Frustum = new BoundingFrustum(ViewportCamera.CameraTransform.CameraViewMatrixLH * ProjectionMatrix);
+
+        ViewPipeline.UpdateSceneParameters(ProjectionMatrix, ViewportCamera.CameraTransform.CameraViewMatrixLH,
+            ViewportCamera.CameraTransform.Position, CursorX, CursorY);
+
+        ViewPipeline.RenderScene(Frustum);
+
+        Gizmos.CameraPosition = ViewportCamera.CameraTransform.Position;
     }
 
     public bool Update(Sdl2Window window, float dt)
@@ -341,63 +311,190 @@ public class VulkanViewport : IViewport
 
         UpdateGrids(ray);
 
-        ViewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Untextured_Model_Brightness;
-        ViewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Untextured_Model_Saturation;
-        ViewPipeline.SceneParams.SelectionColor = new Vector4(CFG.Current.Viewport_Selection_Outline_Color.X, CFG.Current.Viewport_Selection_Outline_Color.Y,
-            CFG.Current.Viewport_Selection_Outline_Color.Z, 1.0f);
         bool kbbusy = false;
 
         if (!Gizmos.IsMouseBusy() && CanInteract && MouseInViewport())
         {
             kbbusy = ViewportCamera.UpdateInput(window, dt);
 
-            if (InputManager.IsMouseDown(MouseButton.Left))
-            {
-                ViewPipeline.CreateAsyncPickingRequest();
-            }
-            if (InputManager.IsMousePressed(MouseButton.Left) && InputManager.IsKeyDown(Key.AltLeft))
-            {
-                ViewPipeline.CreateAsyncPickingRequest();
-            }
-
-            if (ViewPipeline.PickingResultsReady)
-            {
-                ISelectable sel = ViewPipeline.GetSelection();
-
-                if (InputManager.HasCtrlDown())
-                {
-                    if (sel != null)
-                    {
-                        if (ViewportSelection.GetSelection().Contains(sel))
-                        {
-                            ViewportSelection.RemoveSelection(sel);
-                        }
-                        else
-                        {
-                            ViewportSelection.AddSelection(sel);
-                        }
-                    }
-                }
-                else if (InputManager.HasShiftDown())
-                {
-                    if (sel != null)
-                    {
-                        ViewportSelection.AddSelection(sel);
-                    }
-                }
-                else
-                {
-                    ViewportSelection.ClearSelection();
-                    if (sel != null)
-                    {
-                        ViewportSelection.AddSelection(sel);
-                    }
-                }
-            }
+            HandlePickingRequest();
         }
 
         //Gizmos.DebugGui();
         return kbbusy;
+    }
+
+    public void HandleMapEditorFocus()
+    {
+        if (Owner is MapUniverse mapUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_Viewport);
+
+                // Need to loop through since we can't easily pass in the wrapper since this is a shared class with the Model Editor
+                foreach (var wrapper in mapUniverse.View.ViewportHandler.Viewports)
+                {
+                    if (wrapper.Viewport == this)
+                    {
+                        mapUniverse.View.ViewportHandler.ActiveViewport = wrapper;
+                        IsActiveViewport = true;
+                    }
+                }
+            }
+            else
+            {
+                IsActiveViewport = false;
+            }
+
+            if (CFG.Current.QuickView_DisplayTooltip)
+            {
+                mapUniverse.View.AutomaticPreviewTool.HandleQuickViewTooltip();
+            }
+        }
+    }
+    public void HandleModelEditorFocus()
+    {
+        if (Owner is ModelUniverse modelUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.ModelEditor_Viewport);
+                modelUniverse.View.Editor.ViewHandler.ActiveView = modelUniverse.View;
+            }
+        }
+    }
+
+    public void ResizeViewport(GraphicsDevice device, Rectangle newViewportSize)
+    {
+        Width = newViewportSize.Width;
+        Height = newViewportSize.Height;
+        X = newViewportSize.X;
+        Y = newViewportSize.Y;
+
+        ViewportCamera.UpdateBounds(newViewportSize);
+
+        float depth = device.IsDepthRangeZeroToOne ? 0 : 1;
+
+        RenderViewport = new Veldrid.Viewport(
+            newViewportSize.X, 
+            newViewportSize.Y, 
+            Width, 
+            Height, 
+            depth, 1.0f - depth);
+    }
+
+
+    public void HandlePickingRequest()
+    {
+        if (InputManager.IsMouseDown(MouseButton.Left))
+        {
+            ViewPipeline.CreateAsyncPickingRequest();
+        }
+        if (InputManager.IsMousePressed(MouseButton.Left) && InputManager.IsKeyDown(Key.AltLeft))
+        {
+            ViewPipeline.CreateAsyncPickingRequest();
+        }
+
+        if (ViewPipeline.PickingResultsReady)
+        {
+            ISelectable sel = ViewPipeline.GetSelection();
+
+            if (InputManager.HasCtrlDown())
+            {
+                if (sel != null)
+                {
+                    if (ViewportSelection.GetSelection().Contains(sel))
+                    {
+                        ViewportSelection.RemoveSelection(sel);
+                    }
+                    else
+                    {
+                        ViewportSelection.AddSelection(sel);
+                    }
+                }
+            }
+            else if (InputManager.HasShiftDown())
+            {
+                if (sel != null)
+                {
+                    ViewportSelection.AddSelection(sel);
+                }
+            }
+            else
+            {
+                ViewportSelection.ClearSelection();
+                if (sel != null)
+                {
+                    ViewportSelection.AddSelection(sel);
+                }
+            }
+        }
+    }
+
+    public void SetEnvMap(uint index)
+    {
+        ViewPipeline.EnvMapTexture = index;
+    }
+
+    /// <summary>
+    ///     Moves the camera position such that it is directly looking at the center of a
+    ///     bounding box. Camera will face the same direction as before.
+    /// </summary>
+    /// <param name="box">The bounding box to frame</param>
+    public void FrameBox(BoundingBox box, Vector3 offset, float distance = 5)
+    {
+        Vector3 camdir = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
+        Vector3 pos = box.GetCenter();
+        float radius = Vector3.Distance(box.Max, box.Min);
+        ViewportCamera.CameraTransform.Position = pos - camdir * (radius + distance) + offset; 
+        // 5 here is a offset so entities with 0 radius have a decent framing
+    }
+
+    /// <summary>
+    ///     Moves the camera position such that it is directly looking at a position.
+    public void FramePosition(Vector3 pos, float dist)
+    {
+        Vector3 camdir = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
+        ViewportCamera.CameraTransform.Position = pos - camdir * dist;
+    }
+
+    public Ray GetRay(float sx, float sy)
+    {
+        float x = 2.0f * sx / Width - 1.0f;
+        float y = 1.0f - 2.0f * sy / Height;
+        float z = 1.0f;
+        Vector3 deviceCoords = new(x, y, z);
+
+        // Clip Coordinates
+        Vector4 clipCoords = new(deviceCoords.X, deviceCoords.Y, -1.0f, 1.0f);
+
+        // View Coordinates
+        Matrix4x4 invProj;
+        Matrix4x4.Invert(ProjectionMatrix, out invProj);
+        Vector4 viewCoords = Vector4.Transform(clipCoords, invProj);
+        viewCoords.Z = 1.0f;
+        viewCoords.W = 0.0f;
+        Matrix4x4 invView;
+        Matrix4x4.Invert(ViewportCamera.CameraTransform.CameraViewMatrixLH, out invView);
+        Vector3 worldCoords = Vector4.Transform(viewCoords, invView).XYZ();
+        worldCoords = Vector3.Normalize(worldCoords);
+        //worldCoords.X = -worldCoords.X;
+        return new Ray(ViewportCamera.CameraTransform.Position, worldCoords);
+    }
+
+    public bool MouseInViewport()
+    {
+        Vector2 mp = InputManager.MousePosition;
+        if ((int)mp.X < X || (int)mp.X >= X + Width)
+        {
+            return false;
+        }
+        if ((int)mp.Y < Y || (int)mp.Y >= Y + Height)
+        {
+            return false;
+        }
+        return true;
     }
 
     public void UpdateGrids(Ray ray)
@@ -493,84 +590,5 @@ public class VulkanViewport : IViewport
                 ref CFG.Current.ModelEditor_RegenerateTertiaryGrid);
         }
 
-    }
-
-    public void Draw(GraphicsDevice device, CommandList cl)
-    {
-        ProjectionMatrix = ViewportUtils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f,
-            Width / (float)Height, NearClip, FarClip);
-
-        Frustum = new BoundingFrustum(ViewportCamera.CameraTransform.CameraViewMatrixLH * ProjectionMatrix);
-        ViewPipeline.TestUpdateView(ProjectionMatrix, ViewportCamera.CameraTransform.CameraViewMatrixLH,
-            ViewportCamera.CameraTransform.Position, CursorX, CursorY);
-
-        ViewPipeline.RenderScene(Frustum);
-        
-        Gizmos.CameraPosition = ViewportCamera.CameraTransform.Position;
-    }
-
-    public void SetEnvMap(uint index)
-    {
-        ViewPipeline.EnvMapTexture = index;
-    }
-
-    /// <summary>
-    ///     Moves the camera position such that it is directly looking at the center of a
-    ///     bounding box. Camera will face the same direction as before.
-    /// </summary>
-    /// <param name="box">The bounding box to frame</param>
-    public void FrameBox(BoundingBox box, Vector3 offset, float distance = 5)
-    {
-        Vector3 camdir = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
-        Vector3 pos = box.GetCenter();
-        float radius = Vector3.Distance(box.Max, box.Min);
-        ViewportCamera.CameraTransform.Position = pos - camdir * (radius + distance) + offset; 
-        // 5 here is a offset so entities with 0 radius have a decent framing
-    }
-
-    /// <summary>
-    ///     Moves the camera position such that it is directly looking at a position.
-    public void FramePosition(Vector3 pos, float dist)
-    {
-        Vector3 camdir = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
-        ViewportCamera.CameraTransform.Position = pos - camdir * dist;
-    }
-
-    public Ray GetRay(float sx, float sy)
-    {
-        float x = 2.0f * sx / Width - 1.0f;
-        float y = 1.0f - 2.0f * sy / Height;
-        float z = 1.0f;
-        Vector3 deviceCoords = new(x, y, z);
-
-        // Clip Coordinates
-        Vector4 clipCoords = new(deviceCoords.X, deviceCoords.Y, -1.0f, 1.0f);
-
-        // View Coordinates
-        Matrix4x4 invProj;
-        Matrix4x4.Invert(ProjectionMatrix, out invProj);
-        Vector4 viewCoords = Vector4.Transform(clipCoords, invProj);
-        viewCoords.Z = 1.0f;
-        viewCoords.W = 0.0f;
-        Matrix4x4 invView;
-        Matrix4x4.Invert(ViewportCamera.CameraTransform.CameraViewMatrixLH, out invView);
-        Vector3 worldCoords = Vector4.Transform(viewCoords, invView).XYZ();
-        worldCoords = Vector3.Normalize(worldCoords);
-        //worldCoords.X = -worldCoords.X;
-        return new Ray(ViewportCamera.CameraTransform.Position, worldCoords);
-    }
-
-    public bool MouseInViewport()
-    {
-        Vector2 mp = InputManager.MousePosition;
-        if ((int)mp.X < X || (int)mp.X >= X + Width)
-        {
-            return false;
-        }
-        if ((int)mp.Y < Y || (int)mp.Y >= Y + Height)
-        {
-            return false;
-        }
-        return true;
     }
 }
