@@ -1,4 +1,7 @@
 #---------------------
 # TODO 
 #---------------------
-
+- Map Editor:
+  - Get gizmos to work in Orthographic/Oblique view mode
+  - Implement the auto-BTAB handling actions
+  - Add map piece link in BTAB properties 
