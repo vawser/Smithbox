@@ -38,7 +38,7 @@ public class NullViewport : IViewport
     public int Height { get; private set; }
 
     public float NearClip { get; set; } = 0.1f;
-    public float FarClip { get; set; } = CFG.Current.Viewport_RenderDistance_Max;
+    public float FarClip { get; set; } = CFG.Current.Viewport_Perspective_Far_Clip;
 
     public bool IsViewportSelected { get; set; }
 

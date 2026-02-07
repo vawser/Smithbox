@@ -880,8 +880,17 @@ public class CFG
     public float Viewport_Camera_MoveSpeed_Normal { get; set; } = 20.0f;
     public float Viewport_Camera_MoveSpeed_Fast { get; set; } = 200.0f;
     public float Viewport_Camera_Sensitivity { get; set; } = 0.0160f;
-    public float Viewport_RenderDistance_Min { get; set; } = 0.1f;
-    public float Viewport_RenderDistance_Max { get; set; } = 50000.0f;
+
+    public float Viewport_Perspective_Near_Clip { get; set; } = 0.1f;
+    public float Viewport_Perspective_Far_Clip { get; set; } = 50000.0f;
+
+    public float Viewport_Orthographic_Near_Clip { get; set; } = -50000.0f;
+    public float Viewport_Orthographic_Far_Clip { get; set; } = 50000.0f;
+
+    public float Viewport_DefaultOrthographicSize { get; set; } = 10.0f;
+    public float Viewport_DefaultObliqueAngle { get; set; } = 45.0f;
+    public float Viewport_DefaultObliqueScaling { get; set; } = 0.5f;
+    public float Viewport_MousePan_Sensitivity { get; set; } = 25.0f;
 
     // Rendering Limits
     public uint Viewport_Limit_Buffer_Flver_Bone = 65536;

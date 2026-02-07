@@ -8,6 +8,7 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
+using Vortice.Vulkan;
 
 namespace StudioCore.Editors.Viewport;
 
@@ -24,7 +25,7 @@ public class ViewportCamera
     }
 
     private readonly Sdl SDL;
-    public VulkanViewport ParentViewport;
+    public VulkanViewport Viewport;
 
     public BoundingFrustum Frustum;
     public Matrix4x4 ProjectionMatrix;
@@ -45,19 +46,39 @@ public class ViewportCamera
 
     private MouseClickType CurrentClickType = MouseClickType.None;
     private bool CurrentRightMouseClick;
+    private bool CurrentLeftMouseClick;
+    private bool CurrentMiddleMouseClick;
+
     private bool CurrentMouseClickInWindow;
 
     private Vector2 MousePos = Vector2.Zero;
-    private bool MousePressed;
+    private bool RightMousePressed;
+    private bool LeftMousePressed;
+    private bool MiddleMousePressed;
+
     private Vector2 MousePressPos;
+    private Vector2 PanMousePressPos;
 
     private MouseClickType PreviousClickType = MouseClickType.None;
     private Vector2 PreviousMousePos = Vector2.Zero;
     private bool PreviousResetActionPress;
 
+    // Perspective projection
     public float CameraMoveSpeed_Fast = CFG.Current.Viewport_Camera_MoveSpeed_Fast;
     public float CameraMoveSpeed_Normal = CFG.Current.Viewport_Camera_MoveSpeed_Normal;
     public float CameraMoveSpeed_Slow = CFG.Current.Viewport_Camera_MoveSpeed_Slow;
+
+    // Orthographic projection
+    public float OrthographicSize = CFG.Current.Viewport_DefaultOrthographicSize;
+    public float OrthographicMinSize = 0.1f;
+    public float OrthographicMaxSize = 1000.0f;
+
+    // Oblique projection
+    public float ObliqueAngle = CFG.Current.Viewport_DefaultObliqueAngle;
+    public float ObliqueScaling = CFG.Current.Viewport_DefaultObliqueScaling;
+
+    // Pan sensitivity for orthographic/oblique modes
+    public float PanSensitivity = CFG.Current.Viewport_MousePan_Sensitivity;
 
     public ViewportCamera(IViewport viewport, Rectangle bounds)
     {
@@ -66,7 +87,7 @@ public class ViewportCamera
 
         if(viewport is VulkanViewport)
         {
-            ParentViewport = (VulkanViewport)viewport;
+            Viewport = (VulkanViewport)viewport;
         }
     }
 
@@ -129,6 +150,8 @@ public class ViewportCamera
         }
 
         CurrentRightMouseClick = CurrentClickType == MouseClickType.Right;
+        CurrentLeftMouseClick = CurrentClickType == MouseClickType.Left;
+        CurrentMiddleMouseClick = CurrentClickType == MouseClickType.Middle;
 
         if (CurrentClickType != MouseClickType.None && PreviousClickType == MouseClickType.None)
         {
@@ -142,13 +165,13 @@ public class ViewportCamera
         {
             // If nothing is pressed, just dont bother lerping
             //mousePos = new Vector2(mouse.X, mouse.Y);
-            if (MousePressed)
+            if (RightMousePressed)
             {
                 MousePos = InputManager.MousePosition;
                 SDL.WarpMouseInWindow(window.SdlWindowHandle, (int)MousePressPos.X, (int)MousePressPos.Y);
                 SDL.SetWindowGrab(window.SdlWindowHandle, SdlBool.False);
                 SDL.ShowCursor(1);
-                MousePressed = false;
+                RightMousePressed = false;
             }
 
             return false;
@@ -186,6 +209,27 @@ public class ViewportCamera
         if (InputManager.MouseWheelDelta < 0)
         {
             moveMult *= 1 / mouseWheelSpeedStep;
+        }
+
+        // For orthographic mode, adjust the orthographic size with mouse wheel
+        if (ViewMode is ViewMode.Orthographic or ViewMode.Oblique)
+        {
+            if (InputManager.MouseWheelDelta > 0)
+            {
+                OrthographicSize /= mouseWheelSpeedStep;
+                OrthographicSize = Math.Max(OrthographicSize, OrthographicMinSize);
+            }
+            else if (InputManager.MouseWheelDelta < 0)
+            {
+                OrthographicSize *= mouseWheelSpeedStep;
+                OrthographicSize = Math.Min(OrthographicSize, OrthographicMaxSize);
+            }
+
+            // Notify parent viewport to update projection matrix
+            if (InputManager.MouseWheelDelta != 0)
+            {
+                UpdateProjectionMatrix();
+            }
         }
 
         if (isSpeedupKeyPressed)
@@ -244,6 +288,7 @@ public class ViewportCamera
 
         HandleRightMouseClick(window);
         HandleNonRightMouseClick(window);
+        HandleMousePandding(window);
 
         UpdateCameraRotation();
 
@@ -254,14 +299,14 @@ public class ViewportCamera
     {
         if (CurrentRightMouseClick)
         {
-            if (!MousePressed)
+            if (!RightMousePressed)
             {
                 var x = InputManager.MousePosition.X;
                 var y = InputManager.MousePosition.Y;
                 if (x >= BoundingRect.Left && x < BoundingRect.Right && y >= BoundingRect.Top &&
                     y < BoundingRect.Bottom)
                 {
-                    MousePressed = true;
+                    RightMousePressed = true;
                     MousePressPos = InputManager.MousePosition;
                     SDL.ShowCursor(0);
                     SDL.SetWindowGrab(window.SdlWindowHandle, SdlBool.True);
@@ -292,12 +337,62 @@ public class ViewportCamera
     {
         if(!CurrentRightMouseClick)
         {
-            if (MousePressed)
+            if (RightMousePressed)
             {
                 SDL.WarpMouseInWindow(window.SdlWindowHandle, (int)MousePressPos.X, (int)MousePressPos.Y);
                 SDL.SetWindowGrab(window.SdlWindowHandle, SdlBool.False);
                 SDL.ShowCursor(1);
-                MousePressed = false;
+                RightMousePressed = false;
+            }
+        }
+    }
+
+    public unsafe void HandleMousePandding(Sdl2Window window)
+    {
+        if (ViewMode != ViewMode.Orthographic &&
+            ViewMode != ViewMode.Oblique)
+        {
+            return;
+        }
+
+        if (CurrentMiddleMouseClick)
+        {
+            if (!MiddleMousePressed)
+            {
+                var x = InputManager.MousePosition.X;
+                var y = InputManager.MousePosition.Y;
+                if (x >= BoundingRect.Left && x < BoundingRect.Right && y >= BoundingRect.Top &&
+                    y < BoundingRect.Bottom)
+                {
+                    MiddleMousePressed = true;
+                    PanMousePressPos = InputManager.MousePosition;
+                }
+            }
+            else
+            {
+                // Calculate delta from last frame's position
+                Vector2 currentPos = InputManager.MousePosition;
+                Vector2 mouseDelta = currentPos - PanMousePressPos;
+
+                PanMousePressPos = currentPos;
+
+                // Pan sensitivity - scale based on orthographic size for consistent feel
+                float panScale = OrthographicSize * 0.002f * PanSensitivity * CFG.Current.Viewport_Camera_Sensitivity;
+
+                // Calculate pan movement in camera space
+                Vector3 rightDir = Vector3.Transform(Vector3.UnitX, CameraTransform.Rotation);
+                Vector3 upDir = Vector3.Transform(Vector3.UnitY, CameraTransform.Rotation);
+
+                // Apply panning (inverted Y for natural feel)
+                Vector3 panOffset = (-rightDir * mouseDelta.X + upDir * mouseDelta.Y) * panScale;
+                CameraTransform.Position += panOffset;
+            }
+        }
+        else
+        {
+            if (MiddleMousePressed)
+            {
+                MiddleMousePressed = false;
             }
         }
     }
@@ -341,5 +436,108 @@ public class ViewportCamera
         CameraTransform.Position += Vector3.Transform(new Vector3(x, y, z),
             CameraTransform.Rotation
         ) * speed;
+    }
+    /// <summary>
+    /// Sets the camera projection type
+    /// </summary>
+    public void SetProjectionType(ViewMode type)
+    {
+        ViewMode = type;
+
+        UpdateProjectionMatrix();
+    }
+
+    /// <summary>
+    /// Cycles through available projection types
+    /// </summary>
+    public void CycleProjectionType()
+    {
+        ViewMode = ViewMode switch
+        {
+            ViewMode.Perspective => ViewMode.Orthographic,
+            ViewMode.Orthographic => ViewMode.Oblique,
+            ViewMode.Oblique => ViewMode.Perspective,
+            _ => ViewMode.Perspective
+        };
+
+        UpdateProjectionMatrix();
+    }
+
+    public void UpdateProjectionMatrix(bool adjustFrustrum = false)
+    {
+        float aspectRatio = Viewport.Width / (float)Viewport.Height;
+
+        switch (ViewMode)
+        {
+            case ViewMode.Perspective:
+                ProjectionMatrix = CreatePerspectiveMatrix(aspectRatio);
+                break;
+
+            case ViewMode.Orthographic:
+                ProjectionMatrix = CreateOrthographicMatrix(aspectRatio);
+                break;
+
+            case ViewMode.Oblique:
+                ProjectionMatrix = CreateObliqueMatrix(aspectRatio);
+                break;
+
+            default:
+                ProjectionMatrix = CreatePerspectiveMatrix(aspectRatio);
+                break;
+        }
+
+        if (adjustFrustrum)
+        {
+            Frustum = new BoundingFrustum(CameraTransform.CameraViewMatrixLH * ProjectionMatrix);
+
+        }
+        else
+        {
+            Frustum = new BoundingFrustum(ProjectionMatrix);
+        }
+    }
+
+    private Matrix4x4 CreatePerspectiveMatrix(float aspectRatio)
+    {
+        return ViewportUtils.CreatePerspective(
+            Viewport.Device,
+            true,
+            CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f,
+            aspectRatio,
+            CFG.Current.Viewport_Perspective_Near_Clip,
+            CFG.Current.Viewport_Perspective_Far_Clip);
+    }
+
+    private Matrix4x4 CreateOrthographicMatrix(float aspectRatio)
+    {
+        float height = OrthographicSize;
+        float width = height * aspectRatio;
+
+        return ViewportUtils.CreateOrthographic(
+            Viewport.Device,
+            false,
+            width,
+            height,
+            CFG.Current.Viewport_Orthographic_Near_Clip,
+            CFG.Current.Viewport_Orthographic_Far_Clip);
+    }
+
+    private Matrix4x4 CreateObliqueMatrix(float aspectRatio)
+    {
+        float height = OrthographicSize;
+        float width = height * aspectRatio;
+
+        // Convert angle from degrees to radians
+        float angleRadians = ObliqueAngle * (float)Math.PI / 180.0f;
+
+        return ViewportUtils.CreateOblique(
+            Viewport.Device,
+            false,
+            width,
+            height,
+            CFG.Current.Viewport_Orthographic_Near_Clip,
+            CFG.Current.Viewport_Orthographic_Far_Clip,
+            angleRadians,
+            ObliqueScaling);
     }
 }

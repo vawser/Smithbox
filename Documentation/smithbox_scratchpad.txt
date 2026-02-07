@@ -2,4 +2,5 @@
 # TODO 
 #---------------------
 
-Add Orthographic and Oblique projections for the viewport camera
+Add Orthographic and Oblique for the viewport camera
+ - Selection/Gizmo elements need to account for the projection change

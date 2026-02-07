@@ -12,6 +12,7 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
+using Vortice.Vulkan;
 
 namespace StudioCore.Editors.Viewport;
 
@@ -43,8 +44,6 @@ public class VulkanViewport : IViewport
     public ViewportSelection ViewportSelection;
     public SceneRenderPipeline ViewPipeline;
 
-    public BoundingFrustum Frustum;
-    public Matrix4x4 ProjectionMatrix;
     public Veldrid.Viewport RenderViewport;
 
     public ViewportMenu ViewportMenu;
@@ -101,16 +100,6 @@ public class VulkanViewport : IViewport
     /// </summary>
     public int Height { get; private set; }
 
-    /// <summary>
-    /// The near clipping value for the projection matrix
-    /// </summary>
-    public float NearClip => CFG.Current.Viewport_RenderDistance_Min;
-
-    /// <summary>
-    /// The far clipping value for the projection matrix
-    /// </summary>
-    public float FarClip => CFG.Current.Viewport_RenderDistance_Max;
-
     private bool Instantiated = false;
 
     public bool Visible = false;
@@ -153,10 +142,7 @@ public class VulkanViewport : IViewport
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
 
-            ProjectionMatrix = ViewportUtils.CreatePerspective(Device, false,
-                CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, NearClip, FarClip);
-
-            Frustum = new BoundingFrustum(ProjectionMatrix);
+            ViewportCamera.UpdateProjectionMatrix();
 
             ViewPipeline.SetViewportSetupAction((d, cl) =>
             {
@@ -268,10 +254,6 @@ public class VulkanViewport : IViewport
             BoxSelection.Update();
 
             IsViewportVisible = true;
-
-            Matrix4x4 proj = Matrix4x4.Transpose(ProjectionMatrix);
-            Matrix4x4 view = Matrix4x4.Transpose(ViewportCamera.CameraTransform.CameraViewMatrixLH);
-            Matrix4x4 identity = Matrix4x4.Identity;
         }
         else
         {
@@ -283,15 +265,12 @@ public class VulkanViewport : IViewport
     }
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        ProjectionMatrix = ViewportUtils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f,
-            Width / (float)Height, NearClip, FarClip);
+        ViewportCamera.UpdateProjectionMatrix(true);
 
-        Frustum = new BoundingFrustum(ViewportCamera.CameraTransform.CameraViewMatrixLH * ProjectionMatrix);
-
-        ViewPipeline.UpdateSceneParameters(ProjectionMatrix, ViewportCamera.CameraTransform.CameraViewMatrixLH,
+        ViewPipeline.UpdateSceneParameters(ViewportCamera.ProjectionMatrix, ViewportCamera.CameraTransform.CameraViewMatrixLH,
             ViewportCamera.CameraTransform.Position, CursorX, CursorY);
 
-        ViewPipeline.RenderScene(Frustum);
+        ViewPipeline.RenderScene(ViewportCamera.Frustum);
 
         Gizmos.CameraPosition = ViewportCamera.CameraTransform.Position;
     }
@@ -462,6 +441,20 @@ public class VulkanViewport : IViewport
     {
         float x = 2.0f * sx / Width - 1.0f;
         float y = 1.0f - 2.0f * sy / Height;
+
+        // Different ray calculation based on projection type
+        if (ViewportCamera.ViewMode == ViewMode.Perspective)
+        {
+            return GetRayPerspective(x, y);
+        }
+        else
+        {
+            // For orthographic and oblique, rays are parallel
+            return GetRayOrthographic(x, y);
+        }
+    }
+    private Ray GetRayPerspective(float x, float y)
+    {
         float z = 1.0f;
         Vector3 deviceCoords = new(x, y, z);
 
@@ -470,7 +463,7 @@ public class VulkanViewport : IViewport
 
         // View Coordinates
         Matrix4x4 invProj;
-        Matrix4x4.Invert(ProjectionMatrix, out invProj);
+        Matrix4x4.Invert(ViewportCamera.ProjectionMatrix, out invProj);
         Vector4 viewCoords = Vector4.Transform(clipCoords, invProj);
         viewCoords.Z = 1.0f;
         viewCoords.W = 0.0f;
@@ -478,8 +471,26 @@ public class VulkanViewport : IViewport
         Matrix4x4.Invert(ViewportCamera.CameraTransform.CameraViewMatrixLH, out invView);
         Vector3 worldCoords = Vector4.Transform(viewCoords, invView).XYZ();
         worldCoords = Vector3.Normalize(worldCoords);
-        //worldCoords.X = -worldCoords.X;
         return new Ray(ViewportCamera.CameraTransform.Position, worldCoords);
+    }
+
+    private Ray GetRayOrthographic(float x, float y)
+    {
+        // For orthographic/oblique, all rays are parallel to the view direction
+        Vector3 direction = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
+
+        // Calculate world position at near plane
+        Vector4 clipCoords = new Vector4(x, y, -1.0f, 1.0f);
+
+        Matrix4x4 invProj;
+        Matrix4x4.Invert(ViewportCamera.ProjectionMatrix, out invProj);
+        Vector4 viewCoords = Vector4.Transform(clipCoords, invProj);
+
+        Matrix4x4 invView;
+        Matrix4x4.Invert(ViewportCamera.CameraTransform.CameraViewMatrixLH, out invView);
+        Vector3 worldPos = Vector4.Transform(viewCoords, invView).XYZ();
+
+        return new Ray(worldPos, Vector3.Normalize(direction));
     }
 
     public bool MouseInViewport()

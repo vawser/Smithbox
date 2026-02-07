@@ -232,7 +232,7 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_Enable_Game_Presence, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Disable_Game_Presence, new() { Key = Key.Unknown });
 
-        InputManager.Bind(KeybindID.MapEditor_Visibility_Flip, new() { Key = Key.Y, Alt = true });
+        InputManager.Bind(KeybindID.MapEditor_Visibility_Flip, new() { Key = Key.H, Ctrl = true });
         InputManager.Bind(KeybindID.MapEditor_Visibility_Enable, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Visibility_Disable, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Global_Visibility_Flip, new() { Key = Key.Unknown });

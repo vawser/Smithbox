@@ -17,11 +17,22 @@ public class ViewportOverlay
     {
         if(CFG.Current.Viewport_DisplayControls)
         {
-            ImGui.Text("Holding click on the viewport will enable camera controls.");
-            ImGui.Text("Use WASD to navigate.");
-            ImGui.Text("Use right click to rotate the camera.");
-            ImGui.Text("Hold Shift to temporarily speed up and Ctrl to temporarily slow down.");
-            ImGui.Text("Scroll the mouse wheel to adjust overall speed.");
+            if (Parent.ViewportCamera.ViewMode is ViewMode.Perspective)
+            {
+                ImGui.Text("Holding click on the viewport will enable camera controls.");
+                ImGui.Text("Use WASD to navigate.");
+                ImGui.Text("Use right click to rotate the camera.");
+                ImGui.Text("Hold Shift to temporarily speed up and Ctrl to temporarily slow down.");
+                ImGui.Text("Scroll the mouse wheel to adjust overall speed.");
+            }
+
+            if (Parent.ViewportCamera.ViewMode is ViewMode.Orthographic or ViewMode.Oblique)
+            {
+                ImGui.Text("Holding click on the viewport will enable camera controls.");
+                ImGui.Text("Pan the screen with the middle mouse button.");
+                ImGui.Text("Use right click to rotate the camera.");
+                ImGui.Text("Hold right click and scroll the mouse wheel to adjust the zoom.");
+            }
         }
 
         // Map Editor

@@ -87,6 +87,137 @@ public static class ViewportUtils
 
         return result;
     }
+    /// <summary>
+    /// Creates an orthographic projection matrix
+    /// </summary>
+    /// <param name="gd">Graphics device</param>
+    /// <param name="useReverseDepth">Whether to use reverse depth</param>
+    /// <param name="width">Width of the orthographic view in world units</param>
+    /// <param name="height">Height of the orthographic view in world units</param>
+    /// <param name="near">Near clipping plane</param>
+    /// <param name="far">Far clipping plane</param>
+    /// <returns>Orthographic projection matrix</returns>
+    public static Matrix4x4 CreateOrthographic(
+        GraphicsDevice gd,
+        bool useReverseDepth,
+        float width,
+        float height,
+        float near,
+        float far)
+    {
+        Matrix4x4 ortho;
+        if (useReverseDepth)
+        {
+            ortho = CreateOrthographic(width, height, far, near);
+        }
+        else
+        {
+            ortho = CreateOrthographic(width, height, near, far);
+        }
+
+        if (gd.IsClipSpaceYInverted)
+        {
+            ortho *= new Matrix4x4(
+                1, 0, 0, 0,
+                0, -1, 0, 0,
+                0, 0, 1, 0,
+                0, 0, 0, 1);
+        }
+
+        return ortho;
+    }
+
+    /// <summary>
+    /// Creates an orthographic projection matrix
+    /// </summary>
+    private static Matrix4x4 CreateOrthographic(float width, float height, float near, float far)
+    {
+        if (width <= 0.0f)
+        {
+            return Matrix4x4.Identity;
+            //throw new ArgumentOutOfRangeException(nameof(width));
+        }
+
+        if (height <= 0.0f)
+        {
+            return Matrix4x4.Identity;
+            //throw new ArgumentOutOfRangeException(nameof(height));
+        }
+
+        // Note: near can be negative for orthographic projections
+        // This allows viewing objects behind the camera position
+
+        if (far <= near)
+        {
+            return Matrix4x4.Identity;
+            //throw new ArgumentOutOfRangeException(nameof(far), "Far plane must be greater than near plane");
+        }
+
+        float halfWidth = width * 0.5f;
+        float halfHeight = height * 0.5f;
+
+        Matrix4x4 result;
+
+        // Scale
+        result.M11 = 1.0f / halfWidth;
+        result.M12 = result.M13 = result.M14 = 0.0f;
+
+        result.M22 = 1.0f / halfHeight;
+        result.M21 = result.M23 = result.M24 = 0.0f;
+
+        // Depth
+        var depthRange = far - near;
+        result.M33 = -1.0f / depthRange;
+        result.M31 = result.M32 = result.M34 = 0.0f;
+
+        // Translation
+        result.M41 = 0.0f;
+        result.M42 = 0.0f;
+        result.M43 = -near / depthRange;
+        result.M44 = 1.0f;
+
+        return result;
+    }
+
+    /// <summary>
+    /// Creates an oblique projection matrix
+    /// </summary>
+    /// <param name="gd">Graphics device</param>
+    /// <param name="useReverseDepth">Whether to use reverse depth</param>
+    /// <param name="width">Width of the view in world units</param>
+    /// <param name="height">Height of the view in world units</param>
+    /// <param name="near">Near clipping plane</param>
+    /// <param name="far">Far clipping plane</param>
+    /// <param name="obliqueAngle">Angle of oblique projection in radians</param>
+    /// <param name="obliqueScaling">Scaling factor for oblique projection (typically 0.5)</param>
+    /// <returns>Oblique projection matrix</returns>
+    public static Matrix4x4 CreateOblique(
+        GraphicsDevice gd,
+        bool useReverseDepth,
+        float width,
+        float height,
+        float near,
+        float far,
+        float obliqueAngle,
+        float obliqueScaling)
+    {
+        // Start with orthographic projection
+        Matrix4x4 ortho = CreateOrthographic(gd, useReverseDepth, width, height, near, far);
+
+        // Create oblique shearing matrix
+        float L = -obliqueScaling * (float)Math.Cos(obliqueAngle);
+        float M = -obliqueScaling * (float)Math.Sin(obliqueAngle);
+
+        Matrix4x4 shearMatrix = new Matrix4x4(
+            1, 0, 0, 0,
+            0, 1, 0, 0,
+            L, M, 1, 0,
+            0, 0, 0, 1
+        );
+
+        // Combine shearing with orthographic projection
+        return shearMatrix * ortho;
+    }
 
     public static void ExtractScale(Matrix4x4 mat, out Vector3 scale, out Matrix4x4 post)
     {
