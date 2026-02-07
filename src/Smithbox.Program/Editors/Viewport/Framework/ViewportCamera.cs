@@ -288,7 +288,7 @@ public class ViewportCamera
 
         HandleRightMouseClick(window);
         HandleNonRightMouseClick(window);
-        HandleMousePandding(window);
+        HandleMousePanning(window);
 
         UpdateCameraRotation();
 
@@ -347,7 +347,7 @@ public class ViewportCamera
         }
     }
 
-    public unsafe void HandleMousePandding(Sdl2Window window)
+    public unsafe void HandleMousePanning(Sdl2Window window)
     {
         if (ViewMode != ViewMode.Orthographic &&
             ViewMode != ViewMode.Oblique)
