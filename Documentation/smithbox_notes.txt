@@ -16,8 +16,6 @@
 # FEATURES
 #---------------------
 - Viewport add ability to change viewport background color
-- Viewport implement orthographic view
-- Viewport add track selection camera toggle - camera locks onto selection and moves in-line with any movement to the selection
 
 - Map Editor add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor implement Edge support for SDT
