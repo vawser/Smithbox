@@ -71,6 +71,8 @@ public class RegionFilters
             case ProjectType.AC6:
                 HandleGranularRegionToggles_AC6();
                 break;
+            case ProjectType.NR:
+                break;
             default: break;
         }
     }

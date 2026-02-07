@@ -22,6 +22,8 @@ public class ViewportCamera
         Extra2
     }
 
+    public ViewMode ViewMode;
+
     private const float CAMERA_PITCH_LIMIT = 0.999f;
     private const float CAMERA_ZOOM_MIN_DIST = 0.2f;
 

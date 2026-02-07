@@ -2,9 +2,4 @@
 # TODO 
 #---------------------
 
-Map Editor:
- Map List needs to be adjusted so the 'loaded' highlights are per view
- Save process should also be adjusted to only save the active view's loaded maps
- 
- Add viewport instances (within view), so multiple viewports for one view's backing data can be displayed
-  - Frame action uses most recently created instance (ActiveViewport)
+Add Orthographic and Oblique projections for the viewport camera

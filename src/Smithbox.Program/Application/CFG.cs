@@ -871,6 +871,9 @@ public class CFG
 
     public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
 
+    public bool Viewport_Render_Gizmos = true;
+    public float Viewport_Gizmo_Size_Distance_Scale = 0.04f;
+
     // Camera
     public float Viewport_Camera_FOV { get; set; } = 60.0f;
     public float Viewport_Camera_MoveSpeed_Slow { get; set; } = 1.0f;
@@ -889,7 +892,6 @@ public class CFG
     public float Viewport_Wireframe_Color_Variance = 0.11f;
 
     public float GFX_Renderable_Default_Wireframe_Alpha = 100.0f;
-
 
     public Vector3 Viewport_Collision_Color = new Vector3(53, 157, 255);
     public Vector3 Viewport_Connect_Collision_Color = new Vector3(146, 57, 158);

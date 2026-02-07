@@ -283,7 +283,7 @@ public class Gizmos
 
     public void Update(Ray ray, bool canCaptureMouse, bool isActiveViewport = true)
     {
-        if (!isActiveViewport)
+        if (!isActiveViewport || !CFG.Current.Viewport_Render_Gizmos)
         {
             TranslateGizmoXProxy.Visible = false;
             TranslateGizmoYProxy.Visible = false;
@@ -540,7 +540,7 @@ public class Gizmos
             }
 
             var dist = (center - CameraPosition).Length();
-            Vector3 scale = new(dist * 0.04f);
+            Vector3 scale = new(dist * CFG.Current.Viewport_Gizmo_Size_Distance_Scale);
             TranslateGizmoXProxy.World = new Transform(center, rot, scale).WorldMatrix;
             TranslateGizmoYProxy.World = new Transform(center, rot, scale).WorldMatrix;
             TranslateGizmoZProxy.World = new Transform(center, rot, scale).WorldMatrix;

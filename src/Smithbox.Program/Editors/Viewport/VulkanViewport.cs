@@ -46,7 +46,6 @@ public class VulkanViewport : IViewport
     public BoundingFrustum Frustum;
     public Matrix4x4 ProjectionMatrix;
     public Veldrid.Viewport RenderViewport;
-    public ViewMode ViewMode;
 
     public ViewportMenu ViewportMenu;
     public BoxSelection BoxSelection;

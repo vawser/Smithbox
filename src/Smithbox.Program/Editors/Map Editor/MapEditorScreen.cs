@@ -353,7 +353,7 @@ public class MapEditorScreen : EditorScreen
              activeView.ViewportHandler.ActiveViewport.Viewport != null;
 
         // General Filters
-        if (ImGui.BeginMenu("General Filters", validViewportState))
+        if (ImGui.BeginMenu("Filters", validViewportState))
         {
             activeView.BasicFilters.Display();
 
@@ -394,13 +394,42 @@ public class MapEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            ImGui.EndMenu();
-        }
+            // Region Filters
+            if (ImGui.BeginMenu("Region Visibility", validViewportState))
+            {
+                activeView.RegionFilters.DisplayOptions();
 
-        // Region Filters
-        if (ImGui.BeginMenu("Region Filters", validViewportState))
-        {
-            activeView.RegionFilters.DisplayOptions();
+                ImGui.EndMenu();
+            }
+
+            // Collision Filters
+            if (ImGui.BeginMenu("Collision Visibility", validViewportState))
+            {
+                CollisionMenu();
+
+                ImGui.EndMenu();
+            }
+
+            // Patrol Routes
+            if (ImGui.BeginMenu("Patrol Route Visibility", validViewportState))
+            {
+                if (activeView.Project.Descriptor.ProjectType != ProjectType.DS2S && activeView.Project.Descriptor.ProjectType != ProjectType.DS2)
+                {
+                    if (ImGui.MenuItem("Display"))
+                    {
+                        activeView.PatrolDrawManager.Generate();
+                    }
+                    UIHelper.Tooltip("Display the connections between patrol route nodes.");
+
+                    if (ImGui.MenuItem("Clear"))
+                    {
+                        activeView.PatrolDrawManager.Clear();
+                    }
+                    UIHelper.Tooltip("Clear the display of connections between patrol route nodes.");
+                }
+
+                ImGui.EndMenu();
+            }
 
             ImGui.EndMenu();
         }
@@ -416,42 +445,37 @@ public class MapEditorScreen : EditorScreen
         var validViewportState = activeView.ViewportHandler.ActiveViewport.RenderScene != null &&
             activeView.ViewportHandler.ActiveViewport.Viewport != null;
 
-        if (ImGui.BeginMenu("Collision Type", validViewportState))
+        if (ImGui.MenuItem("Low"))
         {
-            if (ImGui.MenuItem("Low"))
+            activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.Low;
+            CFG.Current.CurrentHavokCollisionType = HavokCollisionType.Low;
+
+            activeView.HavokCollisionBank.RefreshCollision();
+        }
+        UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.");
+        UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.Low);
+
+        if (ImGui.MenuItem("High"))
+        {
+            activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.High;
+            CFG.Current.CurrentHavokCollisionType = HavokCollisionType.High;
+
+            activeView.HavokCollisionBank.RefreshCollision();
+        }
+        UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.");
+        UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
+
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        {
+            if (ImGui.MenuItem("Fall Protection"))
             {
-                activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.Low;
-                CFG.Current.CurrentHavokCollisionType = HavokCollisionType.Low;
+                activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.FallProtection;
+                CFG.Current.CurrentHavokCollisionType = HavokCollisionType.FallProtection;
 
                 activeView.HavokCollisionBank.RefreshCollision();
             }
-            UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.");
-            UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.Low);
-
-            if (ImGui.MenuItem("High"))
-            {
-                activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.High;
-                CFG.Current.CurrentHavokCollisionType = HavokCollisionType.High;
-
-                activeView.HavokCollisionBank.RefreshCollision();
-            }
-            UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.");
-            UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
-
-            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
-            {
-                if (ImGui.MenuItem("Fall Protection"))
-                {
-                    activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.FallProtection;
-                    CFG.Current.CurrentHavokCollisionType = HavokCollisionType.FallProtection;
-
-                    activeView.HavokCollisionBank.RefreshCollision();
-                }
-                UIHelper.Tooltip("Visible collision will use the fall-protection mesh.\nUsed for enemy fall protection.");
-                UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.FallProtection);
-            }
-
-            ImGui.EndMenu();
+            UIHelper.Tooltip("Visible collision will use the fall-protection mesh.\nUsed for enemy fall protection.");
+            UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.FallProtection);
         }
     }
 

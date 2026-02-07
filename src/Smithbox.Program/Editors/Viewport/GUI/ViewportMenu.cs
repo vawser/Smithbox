@@ -23,45 +23,12 @@ public class ViewportMenu
     {
         ImGui.BeginMenuBar();
 
+        SettingsMenu();
         OverlayMenu();
         CameraMenu();
         RenderMenu();
+        FilterMenu();
         GizmoMenu();
-
-        // Map Editor
-        if (Owner is MapUniverse mapUniverse)
-        {
-            mapUniverse.View.Editor.FilterMenu();
-            mapUniverse.View.Editor.CollisionMenu();
-
-            if (mapUniverse.Project.Descriptor.ProjectType != ProjectType.DS2S && mapUniverse.Project.Descriptor.ProjectType != ProjectType.DS2)
-            {
-                if (ImGui.BeginMenu("Patrol Routes"))
-                {
-                    if (ImGui.MenuItem("Display"))
-                    {
-                        mapUniverse.View.PatrolDrawManager.Generate();
-                    }
-                    UIHelper.Tooltip("Display the connections between patrol route nodes.");
-
-                    if (ImGui.MenuItem("Clear"))
-                    {
-                        mapUniverse.View.PatrolDrawManager.Clear();
-                    }
-                    UIHelper.Tooltip("Clear the display of connections between patrol route nodes.");
-
-                    ImGui.EndMenu();
-                }
-            }
-        }
-
-        // Model Editor
-        if (Owner is ModelUniverse modelUniverse)
-        {
-            modelUniverse.View.ViewportFilters.Display();
-        }
-
-        SettingsMenu();
 
         ImGui.EndMenuBar();
     }
@@ -131,23 +98,33 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu("Camera"))
         {
-            //if (ImGui.BeginMenu("View Mode"))
-            //{
-            //    if (ImGui.MenuItem("Perspective", Parent.ViewMode == ViewMode.Perspective))
-            //    {
-            //        Parent.ViewMode = ViewMode.Perspective;
-            //    }
-            //    if (ImGui.MenuItem("Orthographic", Parent.ViewMode == ViewMode.Orthographic))
-            //    {
-            //        Parent.ViewMode = ViewMode.Orthographic;
-            //    }
+            if (ImGui.BeginMenu("View Mode"))
+            {
+                if (ImGui.MenuItem("Perspective", Parent.ViewportCamera.ViewMode is ViewMode.Perspective))
+                {
+                    Parent.ViewportCamera.ViewMode = ViewMode.Perspective;
+                }
+                UIHelper.ShowActiveStatus(Parent.ViewportCamera.ViewMode == ViewMode.Perspective);
 
-            //    ImGui.EndMenu();
-            //}
+                if (ImGui.MenuItem("Orthographic", Parent.ViewportCamera.ViewMode is ViewMode.Orthographic))
+                {
+                    Parent.ViewportCamera.ViewMode = ViewMode.Orthographic;
+                }
+                UIHelper.ShowActiveStatus(Parent.ViewportCamera.ViewMode == ViewMode.Orthographic);
 
-            //ImGui.Separator();
+                if (ImGui.MenuItem("Oblique", Parent.ViewportCamera.ViewMode is ViewMode.Oblique))
+                {
+                    Parent.ViewportCamera.ViewMode = ViewMode.Oblique;
+                }
+                UIHelper.ShowActiveStatus(Parent.ViewportCamera.ViewMode == ViewMode.Oblique);
 
-            if (ImGui.BeginMenu("Camera Settings"))
+                ImGui.EndMenu();
+            }
+
+            ImGui.Separator();
+
+            // Perspective
+            if (Parent.ViewportCamera.ViewMode is ViewMode.Perspective)
             {
                 // FOV
                 var cam_fov = CFG.Current.Viewport_Camera_FOV;
@@ -201,29 +178,48 @@ public class ViewportMenu
                     CFG.Current.Viewport_Camera_MoveSpeed_Fast = Parent.ViewportCamera.CameraMoveSpeed_Fast;
                 }
                 UIHelper.Tooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
+            }
 
-                ImGui.Separator();
+            // Orthographic
+            if (Parent.ViewportCamera.ViewMode is ViewMode.Orthographic)
+            {
 
-                if (ImGui.Selectable("Reset camera settings"))
-                {
-                    CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
-                    CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
-                    CFG.Current.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
-                    CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
-                    CFG.Current.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
-                    CFG.Current.Viewport_Camera_MoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
-                }
+            }
 
-                ImGui.EndMenu();
+            // Oblique
+            if (Parent.ViewportCamera.ViewMode is ViewMode.Oblique)
+            {
+
+            }
+
+            ImGui.Separator();
+
+            if (ImGui.Selectable("Reset camera settings"))
+            {
+                CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
+                CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
+                CFG.Current.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
+                CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
+                CFG.Current.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
+                CFG.Current.Viewport_Camera_MoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
             }
 
             ImGui.EndMenu();
         }
     }
+
     public void RenderMenu()
     {
         if (ImGui.BeginMenu("Render"))
         {
+            if (ImGui.BeginMenu("Scene Lighting"))
+            {
+                SceneParamsGui();
+
+                ImGui.EndMenu();
+            }
+
+            // Map Editor
             if (Owner is MapUniverse mapUniverse)
             {
                 if (ImGui.BeginMenu("Environment Map"))
@@ -237,14 +233,22 @@ public class ViewportMenu
                 }
             }
 
-            if (ImGui.BeginMenu("Scene Lighting"))
-            {
-                SceneParamsGui();
-
-                ImGui.EndMenu();
-            }
-
             ImGui.EndMenu();
+        }
+    }
+
+    public void FilterMenu()
+    {
+        // Map Editor
+        if (Owner is MapUniverse mapUniverse)
+        {
+            mapUniverse.View.Editor.FilterMenu();
+        }
+
+        // Model Editor
+        if (Owner is ModelUniverse modelUniverse)
+        {
+            modelUniverse.View.ViewportFilters.Display();
         }
     }
 
@@ -252,6 +256,27 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu("Gizmos"))
         {
+            if (ImGui.MenuItem("Display"))
+            {
+                CFG.Current.Viewport_Render_Gizmos = !CFG.Current.Viewport_Render_Gizmos;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Render_Gizmos);
+            UIHelper.Tooltip("Toggle the display of gizmos.");
+
+            ImGui.DragFloat("Size##gizmoScale", ref CFG.Current.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
+
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                if (CFG.Current.Viewport_Gizmo_Size_Distance_Scale < 0.01)
+                {
+                    CFG.Current.Viewport_Gizmo_Size_Distance_Scale = 0.01f;
+                }
+                if (CFG.Current.Viewport_Gizmo_Size_Distance_Scale > 5.0)
+                {
+                    CFG.Current.Viewport_Gizmo_Size_Distance_Scale = 5.0f;
+                }
+            }
+
             if (ImGui.BeginMenu("Mode"))
             {
                 if (ImGui.MenuItem("Translate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Translation_Mode)))
