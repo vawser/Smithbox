@@ -520,7 +520,7 @@ public class CFG
     public bool ParamEditor_Row_List_Enable_Line_Wrapping = true;
     public bool ParamEditor_Row_List_Enable_Row_Grouping = false;
     public bool ParamEditor_Row_List_Display_Decorators = true;
-    public bool ParamEditor_Row_List_Display_Modified_Row_Background = true;
+    public bool ParamEditor_Row_List_Display_Modified_Row_Bg = false;
 
     // Field List
     public ParamFieldNameMode ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
@@ -538,7 +538,7 @@ public class CFG
     public bool ParamEditor_Field_List_Display_Field_Attributes = true;
     public bool ParamEditor_Field_List_Display_Icon_Preview = true;
     public float ParamEditor_Field_List_Icon_Preview_Scale = 1.0f;
-    public bool ParamEditor_Field_List_Display_Modified_Field_Background = true;
+    public bool ParamEditor_Field_List_Display_Modified_Field_Bg = true;
 
     public ParamTooltipMode ParamEditor_Field_List_Tooltip_Mode = ParamTooltipMode.OnFieldName;
 
