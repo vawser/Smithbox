@@ -124,7 +124,7 @@ public class BoxSelection
 
             BoundingBox obj = Parent.RenderScene.OpaqueRenderables.cBounds[i];
 
-            if (Parent.Frustum.Contains(obj) != ContainmentType.Contains) 
+            if (Parent.ViewportCamera.Frustum.Contains(obj) != ContainmentType.Contains) 
                 continue;
 
             Vector3 center = obj.GetCenter();
@@ -172,7 +172,7 @@ public class BoxSelection
     {
         Vector4 world = new(worldPos, 1.0f);
 
-        Vector4 clip = Vector4.Transform(world, Parent.ViewportCamera.CameraTransform.CameraViewMatrixLH * Parent.ProjectionMatrix);
+        Vector4 clip = Vector4.Transform(world, Parent.ViewportCamera.CameraTransform.CameraViewMatrixLH * Parent.ViewportCamera.ProjectionMatrix);
 
         if (clip.W <= 0.0f)
         {

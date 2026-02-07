@@ -5,6 +5,8 @@ using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
+using StudioCore.Utilities;
+using System;
 
 namespace StudioCore.Editors.Viewport;
 
@@ -98,30 +100,23 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu("Camera"))
         {
-            if (ImGui.BeginMenu("View Mode"))
+            UIHelper.SimpleHeader("View Mode", "");
+
+            if (ImGui.BeginCombo("##inputValue", Parent.ViewportCamera.ViewMode.GetDisplayName()))
             {
-                if (ImGui.MenuItem("Perspective", Parent.ViewportCamera.ViewMode is ViewMode.Perspective))
+                foreach (var entry in Enum.GetValues(typeof(ViewMode)))
                 {
-                    Parent.ViewportCamera.ViewMode = ViewMode.Perspective;
-                }
-                UIHelper.ShowActiveStatus(Parent.ViewportCamera.ViewMode == ViewMode.Perspective);
+                    var type = (ViewMode)entry;
 
-                if (ImGui.MenuItem("Orthographic", Parent.ViewportCamera.ViewMode is ViewMode.Orthographic))
-                {
-                    Parent.ViewportCamera.ViewMode = ViewMode.Orthographic;
+                    if (ImGui.Selectable(type.GetDisplayName()))
+                    {
+                        Parent.ViewportCamera.ViewMode = (ViewMode)entry;
+                    }
                 }
-                UIHelper.ShowActiveStatus(Parent.ViewportCamera.ViewMode == ViewMode.Orthographic);
-
-                if (ImGui.MenuItem("Oblique", Parent.ViewportCamera.ViewMode is ViewMode.Oblique))
-                {
-                    Parent.ViewportCamera.ViewMode = ViewMode.Oblique;
-                }
-                UIHelper.ShowActiveStatus(Parent.ViewportCamera.ViewMode == ViewMode.Oblique);
-
-                ImGui.EndMenu();
+                ImGui.EndCombo();
             }
 
-            ImGui.Separator();
+            UIHelper.SimpleHeader("Parameters", "");
 
             // Perspective
             if (Parent.ViewportCamera.ViewMode is ViewMode.Perspective)
@@ -192,8 +187,6 @@ public class ViewportMenu
 
             }
 
-            ImGui.Separator();
-
             if (ImGui.Selectable("Reset camera settings"))
             {
                 CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
@@ -263,7 +256,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Render_Gizmos);
             UIHelper.Tooltip("Toggle the display of gizmos.");
 
-            ImGui.DragFloat("Size##gizmoScale", ref CFG.Current.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
+            ImGui.SliderFloat("Size##gizmoScale", ref CFG.Current.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
 
             if (ImGui.IsItemDeactivatedAfterEdit())
             {

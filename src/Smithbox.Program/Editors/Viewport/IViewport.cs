@@ -12,9 +12,6 @@ public interface IViewport
     public int Width { get; }
     public int Height { get; }
 
-    public float NearClip { get; }
-    public float FarClip { get; }
-
     public bool IsViewportSelected { get; set; }
 
     public void Display();
