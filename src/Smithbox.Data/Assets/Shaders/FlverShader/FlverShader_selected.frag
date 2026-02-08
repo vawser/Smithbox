@@ -257,7 +257,11 @@ void main()
 		vec3 indirect = ambientDiffuse;
 		
         vec3 litColor = (direct * sceneparam.directLightMult + indirect * sceneparam.indirectLightMult) * sceneparam.sceneBrightness;
-        vec3 tintedColor = litColor * sceneparam.SimpleFlverSelectColor.rgb;
+        
+        vec3 tint = sceneparam.SimpleFlverSelectColor.rgb;
+        float strength = sceneparam.SimpleFlverSelectColor.a;
+        vec3 tintedColor = mix(litColor, litColor * tint, strength);
+        
         fsout_color = vec4(tintedColor, 1.0);
 	}
 	// PBR model
@@ -298,7 +302,11 @@ void main()
 		vec3 indirect = indirectDiffuse + indirectSpecular;
 		
         vec3 litColor = (direct * sceneparam.directLightMult + indirect * sceneparam.indirectLightMult) * sceneparam.sceneBrightness;
-        vec3 tintedColor = litColor * sceneparam.SimpleFlverSelectColor.rgb;
+        
+        vec3 tint = sceneparam.SimpleFlverSelectColor.rgb;
+        float strength = sceneparam.SimpleFlverSelectColor.a;
+        vec3 tintedColor = mix(litColor, litColor * tint, strength);
+        
         fsout_color = vec4(tintedColor, 1.0);
 	}
     

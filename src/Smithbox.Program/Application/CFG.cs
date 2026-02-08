@@ -981,6 +981,7 @@ public class CFG
     public float Viewport_Untextured_Model_Saturation = 0.5f;
 
     public Vector3 Viewport_Selection_Tint_Color = new(1.0f, 0.5f, 0.0f);
+    public float Viewport_Selection_Tint_Strength = 1.0f;
 
     public bool Viewport_DisplayControls = true;
     public bool Viewport_DisplayRotationIncrement = true;

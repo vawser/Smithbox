@@ -416,6 +416,17 @@ public class ViewportPrefs
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Selection Tint Color", ref CFG.Current.Viewport_Selection_Tint_Color);
+
+                DPI.ApplyInputWidth();
+                ImGui.DragFloat("Selection Tint Strength", ref CFG.Current.Viewport_Selection_Tint_Strength, 0.0f, 1.0f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (CFG.Current.Viewport_Selection_Tint_Strength < 0.0f)
+                        CFG.Current.Viewport_Selection_Tint_Strength = 0.0f;
+
+                    if (CFG.Current.Viewport_Selection_Tint_Strength > 1.0f)
+                        CFG.Current.Viewport_Selection_Tint_Strength = 1.0f;
+                }
             }
         };
     }

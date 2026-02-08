@@ -131,7 +131,7 @@ public class SceneRenderPipeline
             CFG.Current.Viewport_Selection_Tint_Color.X, 
             CFG.Current.Viewport_Selection_Tint_Color.Y, 
             CFG.Current.Viewport_Selection_Tint_Color.Z, 
-            1.0f);
+            CFG.Current.Viewport_Selection_Tint_Strength);
 
         Eye = eye;
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
