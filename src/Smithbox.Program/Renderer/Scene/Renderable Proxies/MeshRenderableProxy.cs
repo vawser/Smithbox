@@ -601,37 +601,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         _renderablesSet.cSceneVis[_renderable]._renderFilter = _drawfilter;
         _renderablesSet.cSceneVis[_renderable]._drawGroup = _drawgroups;
-
-        // Build mesh for selection outline
-        //if (_renderOutline && CFG.Current.Viewport_Enable_Selection_Outline)
-        //{
-        //    pipelineDescription.RasterizerState = new RasterizerStateDescription(
-        //        _meshProvider.SelectedUseBackface
-        //            ? _meshProvider.CullMode == VkCullModeFlags.Front ? VkCullModeFlags.Back : VkCullModeFlags.Front
-        //            : _meshProvider.CullMode,
-        //        _meshProvider.FillMode,
-        //        _meshProvider.FrontFace,
-        //        true,
-        //        false);
-
-        //    Tuple<Shader, Shader> s = StaticResourceCache.GetShaders(gd, gd.ResourceFactory,
-        //        _meshProvider.ShaderName + (_meshProvider.UseSelectedShader ? "_selected" : "")).ToTuple();
-        //    _shaders = new[] { s.Item1, s.Item2 };
-        //    pipelineDescription.ShaderSet = new ShaderSetDescription(
-        //        mainVertexLayouts,
-        //        _shaders, _meshProvider.SpecializationConstants);
-        //    _selectedPipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
-
-        //    _selectionOutlineRenderable = _renderablesSet.CreateMesh(ref bounds, ref meshcomp);
-        //    _renderablesSet.cRenderKeys[_selectionOutlineRenderable] = GetRenderKey(0.0f);
-
-        //    // Pipelines
-        //    _renderablesSet.cPipelines[_selectionOutlineRenderable] = _selectedPipeline;
-        //    _renderablesSet.cSelectionPipelines[_selectionOutlineRenderable] = _selectedPipeline;
-
-        //    // Selectable
-        //    _renderablesSet.cSelectables[_selectionOutlineRenderable] = _selectable;
-        //}
     }
 
     public override unsafe void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)

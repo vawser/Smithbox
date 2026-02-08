@@ -39,14 +39,14 @@ public class BoxSelection
         {
             Vector2 mousePos = InputManager.MousePosition;
 
-            if (InputManager.IsMouseDown(MouseButton.Left) && InputManager.HasCtrlDown() && Parent.MouseInViewport() && !_isDragging)
+            if (InputManager.IsMouseDown(MouseButton.Left) && InputManager.HasAltDown() && Parent.MouseInViewport() && !_isDragging)
             {
                 _isDragging = true;
                 _mouseDragStarted = false;
                 _dragStart = mousePos;
                 _dragEnd = mousePos;
             }
-            else if (InputManager.IsMouseDown(MouseButton.Left) && InputManager.HasCtrlDown() && _isDragging)
+            else if (InputManager.IsMouseDown(MouseButton.Left) && InputManager.HasAltDown() && _isDragging)
             {
                 _dragEnd = mousePos;
 
@@ -85,27 +85,12 @@ public class BoxSelection
         }
     }
 
-    private void UpdateSelection(WeakReference<ISelectable> obj, bool ctrl)
+    private void UpdateSelection(WeakReference<ISelectable> obj)
     {
         if (!obj.TryGetTarget(out ISelectable target))
             return;
 
-        if (ctrl)
-        {
-            // Toggle selection when Ctrl is held
-            if (Parent.ViewportSelection.GetSelection().Contains(target))
-            {
-                Parent.ViewportSelection.RemoveSelection(target);
-            }
-            else
-            {
-                Parent.ViewportSelection.AddSelection(target);
-            }
-        }
-        else
-        {
-            Parent.ViewportSelection.AddSelection(target);
-        }
+        Parent.ViewportSelection.AddSelection(target);
     }
 
     private void SelectObjectsInDragArea(Vector2 start, Vector2 end)
@@ -118,10 +103,10 @@ public class BoxSelection
         float maxY = MathF.Max(start.Y, end.Y) - winPos.Y;
 
         bool shift = InputManager.HasShiftDown();
-        bool ctrl = InputManager.HasCtrlDown();
+        bool alt = InputManager.HasAltDown();
 
         // Clear selection unless Shift (add) or Ctrl (toggle) is held
-        if (!shift && !ctrl)
+        if (!shift && !alt)
         {
             Parent.ViewportSelection.ClearSelection();
         }
@@ -222,7 +207,7 @@ public class BoxSelection
         // No distance-based filtering - if it's in the box, select it
         foreach (WeakReference<ISelectable> obj in selectableObjects)
         {
-            UpdateSelection(obj, ctrl);
+            UpdateSelection(obj);
         }
     }
 

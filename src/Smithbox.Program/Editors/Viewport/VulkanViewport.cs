@@ -375,10 +375,11 @@ public class VulkanViewport : IViewport
         {
             ViewPipeline.CreateAsyncPickingRequest();
         }
-        if (InputManager.IsMousePressed(MouseButton.Left) && InputManager.IsKeyDown(Key.AltLeft))
-        {
-            ViewPipeline.CreateAsyncPickingRequest();
-        }
+
+        //if (InputManager.IsMousePressed(MouseButton.Left) && InputManager.IsKeyDown(Key.AltLeft))
+        //{
+        //    ViewPipeline.CreateAsyncPickingRequest();
+        //}
 
         if (ViewPipeline.PickingResultsReady)
         {
@@ -388,7 +389,9 @@ public class VulkanViewport : IViewport
             {
                 if (sel != null)
                 {
-                    if (ViewportSelection.GetSelection().Contains(sel))
+                    var selection = ViewportSelection.GetSelection();
+
+                    if (selection.Contains(sel))
                     {
                         ViewportSelection.RemoveSelection(sel);
                     }
