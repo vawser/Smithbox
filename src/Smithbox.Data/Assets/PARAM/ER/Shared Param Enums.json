@@ -209,7 +209,7 @@
         {
             "DisplayName": "MAGIC_MOTION_TYPE",
             "Name": "MAGIC_MOTION_TYPE",
-            "Description": "These are TAE motion types used to determine spell casting animations.",
+            "Description": "These are TAE motion types used to determine spell casting animations. Its an offset of 400 (0 is a400)",
             "Options": [
                 { "ID": "0", "Name": "Head Clutch", "Description": "" },
                 { "ID": "1", "Name": "Raise Front, then Quick Cast", "Description": "" },
