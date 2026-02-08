@@ -859,7 +859,7 @@ public class CFG
     public bool Viewport_Enable_Texturing = true;
     public bool Viewport_Enable_Culling = true;
 
-    public bool Viewport_Enable_Selection_Outline = true;
+    public bool Viewport_Enable_Selection_Tint = true;
     public bool Viewport_Enable_Model_Masks = true;
     public bool Viewport_Enable_LOD_Facesets = false;
 
@@ -980,7 +980,7 @@ public class CFG
     public float Viewport_Untextured_Model_Brightness = 1.0f;
     public float Viewport_Untextured_Model_Saturation = 0.5f;
 
-    public Vector3 Viewport_Selection_Outline_Color = new(1.0f, 0.5f, 0.0f);
+    public Vector3 Viewport_Selection_Tint_Color = new(1.0f, 0.5f, 0.0f);
 
     public bool Viewport_DisplayControls = true;
     public bool Viewport_DisplayRotationIncrement = true;

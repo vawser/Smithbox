@@ -21,7 +21,7 @@ public class SelectionOutlineAction
     {
         if (InputManager.IsPressed(KeybindID.Cycle_Render_Outline_Mode))
         {
-            CFG.Current.Viewport_Enable_Selection_Outline = !CFG.Current.Viewport_Enable_Selection_Outline;
+            CFG.Current.Viewport_Enable_Selection_Tint = !CFG.Current.Viewport_Enable_Selection_Tint;
         }
     }
 

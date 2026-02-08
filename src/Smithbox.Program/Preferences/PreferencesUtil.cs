@@ -44,7 +44,7 @@ public static class PreferencesUtil
     }
     public static void ResetViewportSelectionCFG()
     {
-        CFG.Current.Viewport_Enable_Selection_Outline = CFG.Default.Viewport_Enable_Selection_Outline;
+        CFG.Current.Viewport_Enable_Selection_Tint = CFG.Default.Viewport_Enable_Selection_Tint;
         CFG.Current.Viewport_Enable_Box_Selection = CFG.Default.Viewport_Enable_Box_Selection;
         CFG.Current.Viewport_Box_Selection_Distance_Threshold = CFG.Default.Viewport_Box_Selection_Distance_Threshold;
     }

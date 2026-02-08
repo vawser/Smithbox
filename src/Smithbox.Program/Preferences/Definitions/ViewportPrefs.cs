@@ -276,12 +276,12 @@ public class ViewportPrefs
 
             Section = SectionCategory.Selection,
 
-            Title = "Enable Selection Outline",
-            Description = "If enabled, a selection outline will appear on selected objects.",
+            Title = "Enable Selection Tint",
+            Description = "If enabled, selected objects will be tinted.",
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Outline);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Tint);
             }
         };
     }
@@ -411,11 +411,11 @@ public class ViewportPrefs
             {
                 UIHelper.SimpleHeader("General", "");
 
-                DPI.ApplyInputWidth();
-                ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
+                //DPI.ApplyInputWidth();
+                //ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
 
                 DPI.ApplyInputWidth();
-                ImGui.ColorEdit3("Selection Outline Color", ref CFG.Current.Viewport_Selection_Outline_Color);
+                ImGui.ColorEdit3("Selection Tint Color", ref CFG.Current.Viewport_Selection_Tint_Color);
             }
         };
     }
