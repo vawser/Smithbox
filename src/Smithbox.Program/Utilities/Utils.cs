@@ -222,8 +222,6 @@ public static class Utils
 
     public static void PrintBoneInfo(List<FLVER.Node> bones, bool debug)
     {
-        Action<string> write = debug ? (string value) => Smithbox.Log(typeof(Utils), value) : Console.Write;
-
         StringBuilder sb = new StringBuilder();
         sb.AppendLine();
         sb.AppendLine("==== BONE INFO START ====");
@@ -244,13 +242,11 @@ public static class Utils
         sb.AppendLine("==== BONE INFO END ====");
         sb.AppendLine();
 
-        write(sb.ToString());
+        Smithbox.Log(typeof(Utils), sb.ToString());
     }
 
     public static void PrintTransformInfo(Matrix4x4[] transforms, bool debug)
     {
-        Action<string> write = debug ? (string value) => Smithbox.Log(typeof(Utils), value) : Console.Write;
-
         StringBuilder sb = new StringBuilder();
         sb.AppendLine();
         sb.AppendLine("==== TRANSFORM INFO START ====");
@@ -261,7 +257,7 @@ public static class Utils
         sb.AppendLine("==== TRANSFORM INFO END ====");
         sb.AppendLine();
 
-        write(sb.ToString());
+        Smithbox.Log(typeof(Utils), sb.ToString());
     }
 
     public static void setRegistry(string name, string value)

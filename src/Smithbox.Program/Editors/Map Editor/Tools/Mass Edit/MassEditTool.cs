@@ -467,15 +467,15 @@ public class MassEditTool
         {
             foreach (var msg in CurrentResult.EditLog)
             {
-                Smithbox.Log(this, msg, LogLevel.Error, LogPriority.High);
+                Smithbox.Log(this, msg, LogLevel.Error, LogPriority.Normal);
             }
 
             foreach (var msg in CurrentResult.SelectionLog)
             {
-                Smithbox.Log(this, msg, LogLevel.Error, LogPriority.High);
+                Smithbox.Log(this, msg, LogLevel.Error, LogPriority.Normal);
             }
 
-            Smithbox.LogError(this, "Failed to apply MSB Mass Edit:", LogPriority.High);
+            Smithbox.LogError(this, "Failed to apply MSB Mass Edit, see log for details", LogPriority.High);
         }
 
         MayRunEdit = true;

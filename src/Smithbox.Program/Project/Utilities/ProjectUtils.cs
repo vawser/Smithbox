@@ -544,7 +544,7 @@ public class ProjectUtils
             catch (Exception ex)
             {
                 // Log or handle as needed
-                Console.WriteLine($"Failed to delete {file}: {ex.Message}");
+                Smithbox.Log<ProjectUtils>($"Failed to delete {file}: {ex.Message}");
             }
         }
     }

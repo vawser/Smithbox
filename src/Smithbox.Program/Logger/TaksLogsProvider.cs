@@ -87,8 +87,8 @@ namespace StudioCore.Logger
     public static LogPriority DefaultPriority(LogLevel level) =>
         level switch
         {
-            LogLevel.Error or LogLevel.Critical => LogPriority.High,
-            LogLevel.Warning => LogPriority.Normal,
+            LogLevel.Critical => LogPriority.High,
+            LogLevel.Warning or LogLevel.Error => LogPriority.Normal,
             _ => LogPriority.Low
         };
 }

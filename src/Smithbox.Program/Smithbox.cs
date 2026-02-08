@@ -108,6 +108,7 @@ public class Smithbox
             });
             SbLogger = SbLoggerFactory.CreateLogger<Smithbox>();
             SoulsFormats.Util.Logging.LoggerFactory = SbLoggerFactory;
+            Andre.Core.AndreLogging.LoggerFactory = SbLoggerFactory;
         }
         
         ActionLogger = new(

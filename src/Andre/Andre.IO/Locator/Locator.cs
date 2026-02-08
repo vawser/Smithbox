@@ -1,6 +1,7 @@
 ﻿using Andre.Core;
 using Andre.IO.VFS;
 using DotNext.Collections.Generic;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
@@ -429,7 +430,7 @@ namespace Andre.IO
                         }
                         else
                         {
-                            Console.WriteLine($"Could not locate texture {p}");
+                            AndreLogging.For(typeof(Locator)).LogWarning("Could not locate texture {}", p);
                         }
                     }
                 }

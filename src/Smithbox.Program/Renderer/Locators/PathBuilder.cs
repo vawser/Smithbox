@@ -625,7 +625,7 @@ public class PathBuilder
 #if DEBUG
         if (relPath != "" && !project.VFS.FS.FileExists(relPath))
         {
-            Smithbox.Log<PathBuilder>($"[Smithbox:DEBUG] Failed to find file in VFS: {relPath}", Microsoft.Extensions.Logging.LogLevel.Error);
+            Smithbox.LogWarning<PathBuilder>($"[Smithbox:DEBUG] Failed to find file in VFS: {relPath}");
         }
 #endif
 

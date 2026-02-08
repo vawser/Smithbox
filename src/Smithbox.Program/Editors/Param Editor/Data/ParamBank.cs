@@ -2024,7 +2024,7 @@ public class ParamBank : IDisposable
 
             if (!otherBank._params.ContainsKey(param))
             {
-                Console.WriteLine("Missing vanilla param " + param);
+                Smithbox.Log(this, $"Missing vanilla param {param}", LogLevel.Debug);
                 continue;
             }
 
