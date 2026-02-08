@@ -705,13 +705,13 @@ public class ProjectOrchestrator : IDisposable
         }
     }
 
-    public void UpdateProject(ProjectDescriptor newProjectDescriptor)
+    public void UpdateProject(ProjectEntry project, ProjectDescriptor newProjectDescriptor)
     {
-        SelectedProject.Descriptor = newProjectDescriptor;
+        project.Descriptor = newProjectDescriptor;
 
-        SaveProject(SelectedProject);
+        SaveProject(project);
 
-        _ = ReloadProject(SelectedProject);
+        _ = ReloadProject(project);
     }
 
     public async Task<bool> StartupProject(ProjectEntry curProject)
@@ -808,6 +808,8 @@ public class ProjectOrchestrator : IDisposable
             SelectedProject = null;
 
         project.Dispose();
+
+        Smithbox.Instance.ResetProgramName();
     }
 
     public async Task ReloadProject(ProjectEntry curProject)

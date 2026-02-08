@@ -143,6 +143,10 @@ public class Smithbox
     {
         _context.Window.Title = $"{curProject.Descriptor.ProjectName} - {_version}";
     }
+    public void ResetProgramName()
+    {
+        _context.Window.Title = $"Smithbox - {_version}";
+    }
 
     public void SaveConfiguration()
     {
