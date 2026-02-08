@@ -20,6 +20,11 @@
 - Map Editor add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor implement Edge support for SDT
 
+- Map Editor:
+  - Get gizmos to work in Orthographic/Oblique view mode
+  - Implement the auto-BTAB handling actions
+  - Add map piece link in BTAB properties 
+  
 - Model Editor Add simple JSON export/import for elements of FLVER
 
 - Param Editor Table Group column should have difference highlighting if any of the internal rows are highlighted as different

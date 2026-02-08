@@ -85,6 +85,30 @@ public class ProjectDescriptor
 
         FolderTag = "";
     }
+    public ProjectDescriptor(LegacyProjectDescriptorAlt legacyDescriptor, string projectPath)
+    {
+        ProjectGUID = Guid.NewGuid();
+        ProjectName = legacyDescriptor.ProjectName;
+        ProjectPath = Path.GetDirectoryName(projectPath);
+        DataPath = legacyDescriptor.GameRoot;
+        ProjectType = legacyDescriptor.GameType;
+
+        AutoSelect = true;
+        ImportedParamRowNames = false;
+
+        EnableMapEditor = true;
+        EnableModelEditor = true;
+        EnableTextEditor = true;
+        EnableParamEditor = true;
+        EnableGparamEditor = true;
+        EnableTextureViewer = true;
+        EnableMaterialEditor = true;
+        EnableFileBrowser = true;
+
+        EnableExternalMaterialData = true;
+
+        FolderTag = "";
+    }
 }
 
 public class LegacyProjectDescriptor
@@ -104,6 +128,52 @@ public class LegacyProjectDescriptor
     public LegacyProjectDescriptor() { }
 
     public LegacyProjectDescriptor(ProjectEntry curProject)
+    {
+        ProjectName = curProject.Descriptor.ProjectName;
+        GameRoot = curProject.Descriptor.DataPath;
+        GameType = curProject.Descriptor.ProjectType;
+
+        PinnedParams = new();
+        PinnedRows = new();
+        PinnedFields = new();
+
+        UseLooseParams = false;
+
+        // Account for this for DS3 projects
+        if (curProject.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            UseLooseParams = CFG.Current.ParamEditor_Loose_Param_Mode_DS2;
+        }
+
+        if (curProject.Descriptor.ProjectType is ProjectType.DS3)
+        {
+            UseLooseParams = CFG.Current.ParamEditor_Loose_Param_Mode_DS3;
+        }
+
+        PartialParams = false;
+
+        LastFmgLanguageUsed = "engus";
+    }
+}
+
+
+public class LegacyProjectDescriptorAlt
+{
+    public string ProjectName { get; set; }
+    public string GameRoot { get; set; }
+    public ProjectType GameType { get; set; }
+
+    public List<string> PinnedParams { get; set; }
+    public List<int> PinnedRows { get; set; }
+    public List<string> PinnedFields { get; set; }
+
+    public bool UseLooseParams { get; set; }
+    public bool PartialParams { get; set; }
+    public string LastFmgLanguageUsed { get; set; }
+
+    public LegacyProjectDescriptorAlt() { }
+
+    public LegacyProjectDescriptorAlt(ProjectEntry curProject)
     {
         ProjectName = curProject.Descriptor.ProjectName;
         GameRoot = curProject.Descriptor.DataPath;

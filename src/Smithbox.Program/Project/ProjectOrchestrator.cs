@@ -873,6 +873,7 @@ public class ProjectOrchestrator : IDisposable
             if (File.Exists(jsonPath))
             {
                 string json = File.ReadAllText(jsonPath);
+
                 try
                 {
                     LegacyProjectDescriptor project =
@@ -899,6 +900,8 @@ public class ProjectOrchestrator : IDisposable
     }
     public void CreateProjectFromLegacyJson(string path)
     {
+        // Unfortunately the PinnedRows/PinnedFields have been saved as both List and Dictionary,
+        // so we need to fallback to the incorrect form if the correct form fails deserialization.
         try
         {
             var jsonText = File.ReadAllText(path);
@@ -909,9 +912,22 @@ public class ProjectOrchestrator : IDisposable
 
             CreateProject(newProjectDescriptor);
         }
-        catch (Exception e)
+        catch (Exception)
         {
-            TaskLogs.AddError("Failed to read legacy project.json", e);
+            try
+            {
+                var jsonText = File.ReadAllText(path);
+
+                var legacyDescriptor = JsonSerializer.Deserialize(jsonText, ProjectJsonSerializerContext.Default.LegacyProjectDescriptorAlt);
+
+                var newProjectDescriptor = new ProjectDescriptor(legacyDescriptor, path);
+
+                CreateProject(newProjectDescriptor);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddError("Failed to read legacy project.json", e);
+            }
         }
     }
 
