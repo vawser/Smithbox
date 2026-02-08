@@ -18,16 +18,16 @@ namespace StudioCore.Editors.MapEditor;
 
 public class HavokCollisionBank
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, hkRootLevelContainer> HavokContainers = new Dictionary<string, hkRootLevelContainer>();
 
     public HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
 
-    public HavokCollisionBank(MapEditorScreen editor, ProjectEntry project)
+    public HavokCollisionBank(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         VisibleCollisionType = CFG.Current.CurrentHavokCollisionType;
@@ -159,17 +159,17 @@ public class HavokCollisionBank
                     if(ent.IsPartCollision() || ent.IsPartConnectCollision())
                     {
                         ent.ForceModelRefresh = true;
-                        ent.UpdateRenderModel(Editor);
+                        ent.UpdateRenderModel();
                     }
                 }
 
                 // HACK: this fixes the weird ghost state between the viewport and content list
                 CloneMapObjectsAction action = new(
-                    Editor,
+                    View,
                     new List<MsbEntity>() { (MsbEntity)entry.Value.MapContainer.RootObject }, false,
                     null, null, true);
 
-                Editor.EditorActionManager.ExecuteAction(action);
+                View.ViewportActionManager.ExecuteAction(action);
             }
         }
     }

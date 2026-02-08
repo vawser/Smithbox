@@ -20,6 +20,7 @@ namespace StudioCore.Application;
 // Project
 [JsonSerializable(typeof(ProjectDescriptor))]
 [JsonSerializable(typeof(LegacyProjectDescriptor))]
+[JsonSerializable(typeof(LegacyProjectDescriptorAlt))]
 
 [JsonSerializable(typeof(FileDictionary))]
 [JsonSerializable(typeof(FileDictionaryEntry))]

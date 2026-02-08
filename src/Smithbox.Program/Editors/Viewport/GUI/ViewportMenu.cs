@@ -1,65 +1,36 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Utilities;
-using StudioCore.Renderer;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.Keybinds;
+using StudioCore.Renderer;
+using StudioCore.Utilities;
+using System;
 
 namespace StudioCore.Editors.Viewport;
 
 public class ViewportMenu
 {
+    public IUniverse Owner;
     public VulkanViewport Parent;
 
     public ViewportMenu(VulkanViewport parent)
     {
         Parent = parent;
+        Owner = parent.Owner;
     }
 
     public void Draw()
     {
         ImGui.BeginMenuBar();
 
+        SettingsMenu();
         OverlayMenu();
         CameraMenu();
         RenderMenu();
+        FilterMenu();
         GizmoMenu();
-
-        // Map Editor
-        if (Parent.ViewportType is ViewportType.MapEditor)
-        {
-            Parent.MapEditor.FilterMenu();
-            Parent.MapEditor.CollisionMenu();
-
-            if (Parent.MapEditor.Project.Descriptor.ProjectType != ProjectType.DS2S && Parent.MapEditor.Project.Descriptor.ProjectType != ProjectType.DS2)
-            {
-                if (ImGui.BeginMenu("Patrol Routes"))
-                {
-                    if (ImGui.MenuItem("Display"))
-                    {
-                        PatrolDrawManager.Generate(Parent.MapEditor);
-                    }
-                    UIHelper.Tooltip("Display the connections between patrol route nodes.");
-
-                    if (ImGui.MenuItem("Clear"))
-                    {
-                        PatrolDrawManager.Clear();
-                    }
-                    UIHelper.Tooltip("Clear the display of connections between patrol route nodes.");
-
-                    ImGui.EndMenu();
-                }
-            }
-        }
-
-        // Model Editor
-        if (Parent.ViewportType is ViewportType.ModelEditor)
-        {
-            Parent.ModelEditor.ViewportFilters.Display();
-        }
-
-        SettingsMenu();
 
         ImGui.EndMenuBar();
     }
@@ -90,7 +61,7 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display_Profiling);
             UIHelper.Tooltip($"Toggle the display of the Profiling information in the top-left corner.");
 
-            if (Parent.ViewportType is ViewportType.MapEditor)
+            if (Owner is MapUniverse mapUniverse)
             {
                 if (ImGui.MenuItem("Position Increment"))
                 {
@@ -129,24 +100,65 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu("Camera"))
         {
-            //if (ImGui.BeginMenu("View Mode"))
-            //{
-            //    if (ImGui.MenuItem("Perspective", Parent.ViewMode == ViewMode.Perspective))
-            //    {
-            //        Parent.ViewMode = ViewMode.Perspective;
-            //    }
-            //    if (ImGui.MenuItem("Orthographic", Parent.ViewMode == ViewMode.Orthographic))
-            //    {
-            //        Parent.ViewMode = ViewMode.Orthographic;
-            //    }
+            UIHelper.SimpleHeader("View Mode", "");
 
-            //    ImGui.EndMenu();
-            //}
-
-            //ImGui.Separator();
-
-            if (ImGui.BeginMenu("Camera Settings"))
+            if (ImGui.BeginCombo("##inputValue", Parent.ViewportCamera.ViewMode.GetDisplayName()))
             {
+                foreach (var entry in Enum.GetValues(typeof(ViewMode)))
+                {
+                    var type = (ViewMode)entry;
+
+                    if (ImGui.Selectable(type.GetDisplayName()))
+                    {
+                        Parent.ViewportCamera.SetProjectionType((ViewMode)entry);
+                    }
+                }
+                ImGui.EndCombo();
+            }
+
+            UIHelper.SimpleHeader("Parameters", "");
+
+            // Perspective
+            if (Parent.ViewportCamera.ViewMode is ViewMode.Perspective)
+            {
+                // Near Clipping Distance
+                var nearClip = CFG.Current.Viewport_Perspective_Near_Clip;
+                if (ImGui.SliderFloat("Near Clip", ref nearClip, 0.01f, 100.0f))
+                {
+                    CFG.Current.Viewport_Perspective_Near_Clip = nearClip;
+                }
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (CFG.Current.Viewport_Perspective_Near_Clip < 0.01f)
+                    {
+                        CFG.Current.Viewport_Perspective_Near_Clip = 0.01f;
+                    }
+                    if (CFG.Current.Viewport_Perspective_Near_Clip > 1000000.0f)
+                    {
+                        CFG.Current.Viewport_Perspective_Near_Clip = 1000000.0f;
+                    }
+                }
+                UIHelper.Tooltip("Set the minimum distance at which entities will be rendered within the viewport.");
+
+                // Far Clipping Distance
+                var farClip = CFG.Current.Viewport_Perspective_Far_Clip;
+                if (ImGui.SliderFloat("Far Clip", ref farClip, 0.01f, 1000000.0f))
+                {
+                    CFG.Current.Viewport_Perspective_Far_Clip = farClip;
+                }
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (CFG.Current.Viewport_Perspective_Far_Clip < 0.01f)
+                    {
+                        CFG.Current.Viewport_Perspective_Far_Clip = 0.01f;
+                    }
+                    if (CFG.Current.Viewport_Perspective_Far_Clip > 1000000.0f)
+                    {
+                        CFG.Current.Viewport_Perspective_Far_Clip = 1000000.0f;
+                    }
+                }
+                UIHelper.Tooltip("Set the maximum distance at which entities will be rendered within the viewport.");
+
                 // FOV
                 var cam_fov = CFG.Current.Viewport_Camera_FOV;
                 if (ImGui.SliderFloat("Camera FOV", ref cam_fov, 40.0f, 140.0f))
@@ -162,22 +174,6 @@ public class ViewportMenu
                     CFG.Current.Viewport_Camera_Sensitivity = cam_sensitivity;
                 }
                 UIHelper.Tooltip("Mouse sensitivty for turning the camera.");
-
-                // Near Clipping Distance
-                var nearClip = CFG.Current.Viewport_RenderDistance_Min;
-                if (ImGui.SliderFloat("Near clipping distance", ref nearClip, 0.1f, 100.0f))
-                {
-                    CFG.Current.Viewport_RenderDistance_Min = nearClip;
-                }
-                UIHelper.Tooltip("Set the minimum distance at which entities will be rendered within the viewport.");
-
-                // Far Clipping Distance
-                var farClip = CFG.Current.Viewport_RenderDistance_Max;
-                if (ImGui.SliderFloat("Far clipping distance", ref farClip, 10.0f, 1000000.0f))
-                {
-                    CFG.Current.Viewport_RenderDistance_Max = farClip;
-                }
-                UIHelper.Tooltip("Set the maximum distance at which entities will be rendered within the viewport.");
 
                 // Camera Speed (Slow)
                 if (ImGui.SliderFloat("Camera speed (slow)", ref Parent.ViewportCamera.CameraMoveSpeed_Slow, 0.1f, 9999.0f))
@@ -199,30 +195,145 @@ public class ViewportMenu
                     CFG.Current.Viewport_Camera_MoveSpeed_Fast = Parent.ViewportCamera.CameraMoveSpeed_Fast;
                 }
                 UIHelper.Tooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
+            }
 
-                ImGui.Separator();
-
-                if (ImGui.Selectable("Reset camera settings"))
+            // Orthographic / Oblique
+            if (Parent.ViewportCamera.ViewMode is ViewMode.Orthographic or ViewMode.Oblique)
+            {
+                // Near Clipping Distance
+                var nearClip = CFG.Current.Viewport_Orthographic_Near_Clip;
+                if (ImGui.SliderFloat("Near Clip##orthoNearClip", ref nearClip, -1000000.0f, 1000000.0f))
                 {
-                    CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
-                    CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
-                    CFG.Current.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
-                    CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
-                    CFG.Current.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
-                    CFG.Current.Viewport_Camera_MoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
+                    CFG.Current.Viewport_Orthographic_Near_Clip = nearClip;
                 }
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (CFG.Current.Viewport_Orthographic_Near_Clip < -1000000.0f)
+                    {
+                        CFG.Current.Viewport_Orthographic_Near_Clip = -1000000.0f;
+                    }
+                    if (CFG.Current.Viewport_Orthographic_Near_Clip > 1000000.0f)
+                    {
+                        CFG.Current.Viewport_Orthographic_Near_Clip = 1000000.0f;
+                    }
+                }
+                UIHelper.Tooltip("Set the minimum distance at which entities will be rendered within the viewport.");
 
-                ImGui.EndMenu();
+                // Far Clipping Distance
+                var farClip = CFG.Current.Viewport_Orthographic_Far_Clip;
+                if (ImGui.SliderFloat("Far Clip##orthoFarClip", ref farClip, -1000000.0f, 1000000.0f))
+                {
+                    CFG.Current.Viewport_Orthographic_Far_Clip = farClip;
+                }
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (CFG.Current.Viewport_Orthographic_Far_Clip < -1000000.0f)
+                    {
+                        CFG.Current.Viewport_Orthographic_Far_Clip = -1000000.0f;
+                    }
+                    if (CFG.Current.Viewport_Orthographic_Far_Clip > 1000000.0f)
+                    {
+                        CFG.Current.Viewport_Orthographic_Far_Clip = 1000000.0f;
+                    }
+                }
+                UIHelper.Tooltip("Set the maximum distance at which entities will be rendered within the viewport.");
+
+                // Orthographic Size
+                ImGui.SliderFloat("Pan Sensitivity", ref Parent.ViewportCamera.PanSensitivity, 1.0f, 100.0f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (Parent.ViewportCamera.PanSensitivity < 1.0f)
+                        Parent.ViewportCamera.PanSensitivity = 1.0f;
+
+                    if (Parent.ViewportCamera.PanSensitivity > 100.0f)
+                        Parent.ViewportCamera.PanSensitivity = 100.0f;
+
+                    // Update the default
+                    CFG.Current.Viewport_MousePan_Sensitivity = Parent.ViewportCamera.PanSensitivity;
+                }
+                UIHelper.Tooltip("The sensitivity of the mouse panning.");
+            }
+
+            // Orthographic
+            if (Parent.ViewportCamera.ViewMode is ViewMode.Orthographic)
+            {
+                // Orthographic Size
+                ImGui.SliderFloat("Size", ref Parent.ViewportCamera.OrthographicSize, 0.1f, 1000.0f);
+                if(ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (Parent.ViewportCamera.OrthographicSize < 0.1f)
+                        Parent.ViewportCamera.OrthographicSize = 0.1f;
+
+                    if (Parent.ViewportCamera.OrthographicSize > 1000.0f)
+                        Parent.ViewportCamera.OrthographicSize = 1000.0f;
+
+                    // Update the default
+                    CFG.Current.Viewport_DefaultOrthographicSize = Parent.ViewportCamera.OrthographicSize;
+                }
+                UIHelper.Tooltip("Set the height of the view in world units.");
+            }
+
+            // Oblique
+            if (Parent.ViewportCamera.ViewMode is ViewMode.Oblique)
+            {
+                // Oblique Angle
+                ImGui.SliderFloat("Angle", ref Parent.ViewportCamera.ObliqueAngle, 0.0f, 90.0f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (Parent.ViewportCamera.ObliqueAngle < 0.0f)
+                        Parent.ViewportCamera.ObliqueAngle = 0.0f;
+
+                    if (Parent.ViewportCamera.ObliqueAngle > 90.0f)
+                        Parent.ViewportCamera.ObliqueAngle = 90.0f;
+
+                    // Update the default
+                    CFG.Current.Viewport_DefaultObliqueAngle = Parent.ViewportCamera.ObliqueAngle;
+                }
+                UIHelper.Tooltip("Set the angle of the view.");
+
+                // Oblique Scaling
+                ImGui.SliderFloat("Scaling", ref Parent.ViewportCamera.ObliqueScaling, 0.0f, 1.0f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (Parent.ViewportCamera.ObliqueScaling < 0.0f)
+                        Parent.ViewportCamera.ObliqueScaling = 0.0f;
+
+                    if (Parent.ViewportCamera.ObliqueScaling > 1.0f)
+                        Parent.ViewportCamera.ObliqueScaling = 1.0f;
+
+                    // Update the default
+                    CFG.Current.Viewport_DefaultObliqueScaling = Parent.ViewportCamera.ObliqueScaling;
+                }
+                UIHelper.Tooltip("Set the scaling of the view.");
+            }
+
+            if (ImGui.Selectable("Reset camera settings"))
+            {
+                CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
+                CFG.Current.Viewport_Perspective_Far_Clip = CFG.Default.Viewport_Perspective_Far_Clip;
+                CFG.Current.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
+                CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
+                CFG.Current.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
+                CFG.Current.Viewport_Camera_MoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
             }
 
             ImGui.EndMenu();
         }
     }
+
     public void RenderMenu()
     {
         if (ImGui.BeginMenu("Render"))
         {
-            if (Parent.ViewportType is ViewportType.MapEditor)
+            if (ImGui.BeginMenu("Scene Lighting"))
+            {
+                SceneParamsGui();
+
+                ImGui.EndMenu();
+            }
+
+            // Map Editor
+            if (Owner is MapUniverse mapUniverse)
             {
                 if (ImGui.BeginMenu("Environment Map"))
                 {
@@ -235,14 +346,22 @@ public class ViewportMenu
                 }
             }
 
-            if (ImGui.BeginMenu("Scene Lighting"))
-            {
-                SceneParamsGui();
-
-                ImGui.EndMenu();
-            }
-
             ImGui.EndMenu();
+        }
+    }
+
+    public void FilterMenu()
+    {
+        // Map Editor
+        if (Owner is MapUniverse mapUniverse)
+        {
+            mapUniverse.View.Editor.FilterMenu();
+        }
+
+        // Model Editor
+        if (Owner is ModelUniverse modelUniverse)
+        {
+            modelUniverse.View.ViewportFilters.Display();
         }
     }
 
@@ -250,6 +369,27 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu("Gizmos"))
         {
+            if (ImGui.MenuItem("Display"))
+            {
+                CFG.Current.Viewport_Render_Gizmos = !CFG.Current.Viewport_Render_Gizmos;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Render_Gizmos);
+            UIHelper.Tooltip("Toggle the display of gizmos.");
+
+            ImGui.SliderFloat("Size##gizmoScale", ref CFG.Current.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
+
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                if (CFG.Current.Viewport_Gizmo_Size_Distance_Scale < 0.01)
+                {
+                    CFG.Current.Viewport_Gizmo_Size_Distance_Scale = 0.01f;
+                }
+                if (CFG.Current.Viewport_Gizmo_Size_Distance_Scale > 5.0)
+                {
+                    CFG.Current.Viewport_Gizmo_Size_Distance_Scale = 5.0f;
+                }
+            }
+
             if (ImGui.BeginMenu("Mode"))
             {
                 if (ImGui.MenuItem("Translate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Translation_Mode)))
@@ -329,17 +469,14 @@ public class ViewportMenu
             }
             UIHelper.Tooltip($"Whether to cull objects in the viewport outside of the camera frustum.");
 
-            if (Parent.ViewportType is ViewportType.MapEditor)
+            if (Owner is MapUniverse mapUniverse)
             {
                 if (ImGui.MenuItem("Enable model masks", CFG.Current.Viewport_Enable_Model_Masks))
                 {
                     CFG.Current.Viewport_Enable_Model_Masks = !CFG.Current.Viewport_Enable_Model_Masks;
                 }
                 UIHelper.Tooltip($"Whether to attempt to hide model masks based on entity NpcParam flags.");
-            }
 
-            if (Parent.ViewportType is ViewportType.MapEditor)
-            {
                 ImGui.Separator();
 
                 MapModelLoadMenu();
@@ -349,7 +486,7 @@ public class ViewportMenu
 
                 if (ImGui.BeginMenu("Quick View"))
                 {
-                    Parent.MapEditor.AutomaticPreviewTool.HandleQuickViewProperties();
+                    mapUniverse.View.AutomaticPreviewTool.HandleQuickViewProperties();
 
                     ImGui.EndMenu();
                 }
@@ -363,7 +500,7 @@ public class ViewportMenu
                 }
             }
 
-            if (Parent.ViewportType is ViewportType.ModelEditor)
+            if (Owner is ModelUniverse modelUniverse)
             {
                 ImGui.Separator();
 
@@ -379,7 +516,7 @@ public class ViewportMenu
                     if(ImGui.IsItemDeactivatedAfterEdit())
                     {
                         RenderableHelper.UpdateProxySizes();
-                        Parent.ModelEditor.UpdateDisplayNodes();
+                        modelUniverse.View.ViewportWindow.UpdateDisplayNodes();
                     }
 
                     ImGui.DragFloat("Node Size", ref CFG.Current.NodeMeshSize, 0.1f, 0.0001f, 1f);
@@ -387,7 +524,7 @@ public class ViewportMenu
                     if (ImGui.IsItemDeactivatedAfterEdit())
                     {
                         RenderableHelper.UpdateProxySizes();
-                        Parent.ModelEditor.UpdateDisplayNodes();
+                        modelUniverse.View.ViewportWindow.UpdateDisplayNodes();
                     }
 
                     ImGui.EndMenu();
@@ -409,9 +546,13 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.MapEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+
+            if (Owner is MapUniverse mapUniverse)
             {
-                name = "Assets";
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                {
+                    name = "Assets";
+                }
             }
 
             if (ImGui.MenuItem(name))
@@ -456,9 +597,13 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.MapEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+
+            if (Owner is MapUniverse mapUniverse)
             {
-                name = "Assets";
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                {
+                    name = "Assets";
+                }
             }
 
             if (ImGui.MenuItem(name))
@@ -495,9 +640,13 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.ModelEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+
+            if (Owner is MapUniverse mapUniverse)
             {
-                name = "Assets";
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                {
+                    name = "Assets";
+                }
             }
 
             if (ImGui.MenuItem(name))
@@ -546,9 +695,13 @@ public class ViewportMenu
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_MapPieces);
 
             var name = "Objects";
-            if (Parent.ModelEditor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+
+            if (Owner is MapUniverse mapUniverse)
             {
-                name = "Assets";
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                {
+                    name = "Assets";
+                }
             }
 
             if (ImGui.MenuItem(name))

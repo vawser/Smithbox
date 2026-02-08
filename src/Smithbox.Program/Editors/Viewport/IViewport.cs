@@ -12,12 +12,9 @@ public interface IViewport
     public int Width { get; }
     public int Height { get; }
 
-    public float NearClip { get; }
-    public float FarClip { get; }
-
     public bool IsViewportSelected { get; set; }
 
-    public void OnGui();
+    public void Display();
     public void ResizeViewport(GraphicsDevice device, Rectangle newvp);
     public bool Update(Sdl2Window window, float dt);
     public void Draw(GraphicsDevice device, CommandList cl);

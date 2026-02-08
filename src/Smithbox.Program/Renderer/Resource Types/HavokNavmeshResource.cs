@@ -51,19 +51,24 @@ public class HavokNavmeshResource : IResource, IDisposable
 
         if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
-            if (curProject.Handler.MapEditor != null)
-            {
-                var pathElements = virtPath.Split('/');
-                var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
+            if (curProject.Handler.MapEditor == null)
+                return false;
 
-                if (curProject.Handler.MapEditor.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
-                {
-                    Root_HKX3 = curProject.Handler.MapEditor.HavokNavmeshBank.HKX3_Containers[filename];
-                }
-                else
-                {
-                    return false;
-                }
+            var activeView = curProject.Handler.MapEditor.ViewHandler.ActiveView;
+
+            if (activeView == null)
+                return false;
+
+            var pathElements = virtPath.Split('/');
+            var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
+
+            if (activeView.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
+            {
+                Root_HKX3 = activeView.HavokNavmeshBank.HKX3_Containers[filename];
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -91,19 +96,24 @@ public class HavokNavmeshResource : IResource, IDisposable
             }
             else if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             {
-                if (curProject.Handler.MapEditor != null)
-                {
-                    var pathElements = virtPath.Split('/');
-                    var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
+                if (curProject.Handler.MapEditor == null)
+                    return false;
 
-                    if (curProject.Handler.MapEditor.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
-                    {
-                        Root_HKX3 = curProject.Handler.MapEditor.HavokNavmeshBank.HKX3_Containers[filename];
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                var activeView = curProject.Handler.MapEditor.ViewHandler.ActiveView;
+
+                if (activeView == null)
+                    return false;
+
+                var pathElements = virtPath.Split('/');
+                var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
+
+                if (activeView.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
+                {
+                    Root_HKX3 = activeView.HavokNavmeshBank.HKX3_Containers[filename];
+                }
+                else
+                {
+                    return false;
                 }
             }
         }

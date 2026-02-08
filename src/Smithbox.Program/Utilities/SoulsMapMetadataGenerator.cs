@@ -46,10 +46,10 @@ public static class SoulsMapMetadataGenerator
         }
     }
 
-    public static void GenerateMCGMCP(MapEditorScreen editor, List<string> directories, bool toBigEndian = true)
+    public static void GenerateMCGMCP(MapEditorView view, List<string> directories, bool toBigEndian = true)
     {
-        string baseDirectory = editor.Project.Descriptor.DataPath;
-        string modDirectory = editor.Project.Descriptor.ProjectPath;
+        string baseDirectory = view.Project.Descriptor.DataPath;
+        string modDirectory = view.Project.Descriptor.ProjectPath;
         Dictionary<string, MCCombo> mcCombos = new Dictionary<string, MCCombo>();
 
         //Gather NVM files and filter by MSB 
@@ -64,14 +64,14 @@ public static class SoulsMapMetadataGenerator
             List<string> msbNavmeshNames = new List<string>();
             if (File.Exists(msbPath))
             {
-                if(editor.Project.Descriptor.ProjectType == ProjectType.DES)
+                if(view.Project.Descriptor.ProjectType == ProjectType.DES)
                 {
                     var msb = SoulsFile<MSBD>.Read(msbPath);
                     foreach (var navMesh in msb.Parts.Navmeshes)
                     {
                         msbNavmeshNames.Add(navMesh.ModelName.ToLower());
                     }
-                } else if (editor.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+                } else if (view.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
                 {
                     var msb = SoulsFile<MSB1>.Read(msbPath);
                     foreach (var navMesh in msb.Parts.Navmeshes)
@@ -90,7 +90,7 @@ public static class SoulsMapMetadataGenerator
                 foreach (var nvmFile in nvmBndFile.Files)
                 {
                     var fname = Path.GetFileNameWithoutExtension(nvmFile.Name).ToLower();
-                    if(editor.Project.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS1)
+                    if(view.Project.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS1)
                     {
                         fname = fname.Substring(0, 7);
                     }

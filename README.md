@@ -7,11 +7,13 @@ Smithbox is a modding tool for Elden Ring, Elden Ring: Nightreign, Armored Core 
 
 ## Key Features
 - Map Editor: a visual editor for editing maps.
-- Param Editor: a table editor for editing parameters, which contain most of the data that defines each game.
 - Model Editor: a model editor for viewing and editing models. Similar to the FLVER Editor.
+- Param Editor: a table editor for editing parameters, which contain most of the data that defines each game.
 - Text Editor: an editor for editing text localization.
-- Gparam Editor: an editor for quickly creating and editing GPARAM files.
+- Graphics Param Editor: an editor for quickly creating and editing GPARAM files.
+- Material Editor: an editor for editing MTD and MATBIN materials.
 - Texture Viewer: a simple to use viewer for looking and extracting textures.
+- File Browser: a browser of the files contained within the data directory, plus the project directory. Allows easy extraction.
 
 You no longer need to unpack a game for any of the editors.
 

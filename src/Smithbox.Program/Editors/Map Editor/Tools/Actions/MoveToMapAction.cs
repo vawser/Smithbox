@@ -10,7 +10,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MoveToMapAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public bool DisplayPopup = false;
@@ -18,9 +18,9 @@ public class MoveToMapAction
     public (string, ObjectContainer) TargetMap = ("None", null);
     public (string, Entity) TargetBTL = ("None", null);
 
-    public MoveToMapAction(MapEditorScreen editor, ProjectEntry project)
+    public MoveToMapAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -96,7 +96,7 @@ public class MoveToMapAction
                     TargetMap = (mapID, map);
                 }
 
-                var mapName = AliasHelper.GetMapNameAlias(Editor.Project, mapID);
+                var mapName = AliasHelper.GetMapNameAlias(View.Project, mapID);
                 UIHelper.DisplayAlias(mapName);
             }
         }
@@ -111,7 +111,7 @@ public class MoveToMapAction
         {
             MapContainer targetMap = (MapContainer)TargetMap.Item2;
 
-            var sel = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
 
             if (sel.Any(e => e.WrappedObject is BTL.Light))
             {
@@ -147,7 +147,8 @@ public class MoveToMapAction
     /// </summary>
     public void MoveToMap(List<MsbEntity> selection, MapContainer targetMap, Entity targetBtl)
     {
-        var action = new MoveMapObjectsAction(Editor, selection, true, targetMap, targetBtl);
-        Editor.EditorActionManager.ExecuteAction(action);
+        var action = new MoveMapObjectsAction(View, selection, true, targetMap, targetBtl);
+
+        View.ViewportActionManager.ExecuteAction(action);
     }
 }

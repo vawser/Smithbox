@@ -5,7 +5,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class WorldMapLayoutTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     private int xLargeOffset = 0;
@@ -21,9 +21,9 @@ public class WorldMapLayoutTool
     private int MediumTile = 512;
     private int LargeTile = 1024;
 
-    public WorldMapLayoutTool(MapEditorScreen editor, ProjectEntry project)
+    public WorldMapLayoutTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -72,7 +72,7 @@ public class WorldMapLayoutTool
 
             if (ImGui.Button("Regenerate"))
             {
-                Editor.WorldMapTool.GenerateWorldMapLayout_Limveld(
+                View.WorldMapTool.GenerateWorldMapLayout_Limveld(
                     SmallTile, MediumTile, LargeTile,
                     xLargeOffset, yLargeOffset,
                     xMediumOffset, yMediumOffset,

@@ -72,10 +72,7 @@ public class ProjectOrchestrator : IDisposable
         {
             InitExistingProjects = true;
 
-            if (CFG.Current.Project_Enable_Auto_Load)
-            {
-                _ = LoadExistingProjects();
-            }
+            _ = LoadExistingProjects();
         }
 
         DrawProjectLoadingUI();
@@ -670,18 +667,21 @@ public class ProjectOrchestrator : IDisposable
             }
         }
 
-        if (Projects.Count > 0)
+        if (CFG.Current.Project_Enable_Auto_Load)
         {
-            foreach (var projectEntry in Projects)
+            if (Projects.Count > 0)
             {
-                if (projectEntry.Descriptor.AutoSelect)
+                foreach (var projectEntry in Projects)
                 {
-                    if (!IsProjectLoading)
+                    if (projectEntry.Descriptor.AutoSelect)
                     {
-                        await StartupProject(projectEntry);
+                        if (!IsProjectLoading)
+                        {
+                            await StartupProject(projectEntry);
 
-                        SelectedProject = projectEntry;
-                        SelectedProject.IsSelected = true;
+                            SelectedProject = projectEntry;
+                            SelectedProject.IsSelected = true;
+                        }
                     }
                 }
             }
@@ -705,13 +705,13 @@ public class ProjectOrchestrator : IDisposable
         }
     }
 
-    public void UpdateProject(ProjectDescriptor newProjectDescriptor)
+    public void UpdateProject(ProjectEntry project, ProjectDescriptor newProjectDescriptor)
     {
-        SelectedProject.Descriptor = newProjectDescriptor;
+        project.Descriptor = newProjectDescriptor;
 
-        SaveProject(SelectedProject);
+        SaveProject(project);
 
-        _ = ReloadProject(SelectedProject);
+        _ = ReloadProject(project);
     }
 
     public async Task<bool> StartupProject(ProjectEntry curProject)
@@ -808,6 +808,8 @@ public class ProjectOrchestrator : IDisposable
             SelectedProject = null;
 
         project.Dispose();
+
+        Smithbox.Instance.ResetProgramName();
     }
 
     public async Task ReloadProject(ProjectEntry curProject)
@@ -873,6 +875,7 @@ public class ProjectOrchestrator : IDisposable
             if (File.Exists(jsonPath))
             {
                 string json = File.ReadAllText(jsonPath);
+
                 try
                 {
                     LegacyProjectDescriptor project =
@@ -899,6 +902,8 @@ public class ProjectOrchestrator : IDisposable
     }
     public void CreateProjectFromLegacyJson(string path)
     {
+        // Unfortunately the PinnedRows/PinnedFields have been saved as both List and Dictionary,
+        // so we need to fallback to the incorrect form if the correct form fails deserialization.
         try
         {
             var jsonText = File.ReadAllText(path);
@@ -909,9 +914,22 @@ public class ProjectOrchestrator : IDisposable
 
             CreateProject(newProjectDescriptor);
         }
-        catch (Exception e)
+        catch (Exception)
         {
-            TaskLogs.AddError("Failed to read legacy project.json", e);
+            try
+            {
+                var jsonText = File.ReadAllText(path);
+
+                var legacyDescriptor = JsonSerializer.Deserialize(jsonText, ProjectJsonSerializerContext.Default.LegacyProjectDescriptorAlt);
+
+                var newProjectDescriptor = new ProjectDescriptor(legacyDescriptor, path);
+
+                CreateProject(newProjectDescriptor);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddError("Failed to read legacy project.json", e);
+            }
         }
     }
 

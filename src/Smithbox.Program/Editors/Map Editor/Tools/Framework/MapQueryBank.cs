@@ -9,7 +9,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapQueryBank
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
     private IMapQueryEngine Engine;
 
@@ -17,13 +17,13 @@ public class MapQueryBank
 
     public Dictionary<string, IMsb> MapList = new Dictionary<string, IMsb>();
 
-    public MapQueryBank(MapEditorScreen editor, IMapQueryEngine engine)
+    public MapQueryBank(MapEditorView view, IMapQueryEngine engine)
     {
-        Editor = editor;
+        View = view;
 
         Engine = engine;
 
-        if (Editor.Project.Descriptor.ProjectType is ProjectType.Undefined)
+        if (View.Project.Descriptor.ProjectType is ProjectType.Undefined)
         {
             MapBankInitialized = true;
         }
@@ -48,50 +48,50 @@ public class MapQueryBank
         await Task.Yield();
 
         List<FileDictionaryEntry> failedLoads = [];
-        foreach (var map in Editor.Project.Locator.MapFiles.Entries)
+        foreach (var map in View.Project.Locator.MapFiles.Entries)
         {
             IMsb msb = null;
 
-            var msbData = Editor.Project.VFS.FS.ReadFile(map.Path);
+            var msbData = View.Project.VFS.FS.ReadFile(map.Path);
 
             if (msbData == null)
                 continue;
 
             try
             {
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.DES)
+                if (View.Project.Descriptor.ProjectType == ProjectType.DES)
                 {
                     msb = MSBD.Read((Memory<byte>)msbData);
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.DS1 || Editor.Project.Descriptor.ProjectType == ProjectType.DS1R)
+                if (View.Project.Descriptor.ProjectType == ProjectType.DS1 || View.Project.Descriptor.ProjectType == ProjectType.DS1R)
                 {
                     msb = MSB1.Read((Memory<byte>)msbData);
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.DS2 || Editor.Project.Descriptor.ProjectType == ProjectType.DS2S)
+                if (View.Project.Descriptor.ProjectType == ProjectType.DS2 || View.Project.Descriptor.ProjectType == ProjectType.DS2S)
                 {
                     msb = MSB2.Read((Memory<byte>)msbData);
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.DS3)
+                if (View.Project.Descriptor.ProjectType == ProjectType.DS3)
                 {
                     msb = MSB3.Read((Memory<byte>)msbData);
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.BB)
+                if (View.Project.Descriptor.ProjectType == ProjectType.BB)
                 {
                     msb = MSBB.Read((Memory<byte>)msbData);
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.SDT)
+                if (View.Project.Descriptor.ProjectType == ProjectType.SDT)
                 {
                     msb = MSBS.Read((Memory<byte>)msbData);
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
+                if (View.Project.Descriptor.ProjectType == ProjectType.ER)
                 {
                     msb = MSBE.Read((Memory<byte>)msbData);
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
+                if (View.Project.Descriptor.ProjectType == ProjectType.AC6)
                 {
                     msb = MSB_AC6.Read((Memory<byte>)msbData);
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.NR)
+                if (View.Project.Descriptor.ProjectType == ProjectType.NR)
                 {
                     msb = MSB_NR.Read((Memory<byte>)msbData);
                 }

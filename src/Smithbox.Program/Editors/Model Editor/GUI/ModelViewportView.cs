@@ -6,14 +6,10 @@ using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelViewportView
+public class ModelViewportWindow
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
-
-    private Sdl2Window Window;
-    private GraphicsDevice Device;
-    public RenderScene RenderScene;
 
     public IViewport Viewport;
     public Rectangle Rect;
@@ -23,49 +19,48 @@ public class ModelViewportView
     public bool ShiftHeld;
     public bool ViewportUsingKeyboard;
 
-    public ModelViewportView(ModelEditorScreen editor, ProjectEntry project)
+    public ModelViewportWindow(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        Window = Smithbox.Instance._context.Window;
-        Device = Smithbox.Instance._context.Device;
+        Rect = view.Window.Bounds;
 
-        Rect = Window.Bounds;
-
-        if (Device != null)
+        if (view.Device != null)
         {
-            RenderScene = new RenderScene();
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                Viewport = new VulkanViewport(View.Universe, $"ModelViewport_{View.ViewIndex}", Rect.Width, Rect.Height, view.RenderScene);
+            }
+            else
+            {
+                Viewport = new NullViewport(View.Universe, $"ModelViewport_{View.ViewIndex}", Rect.Width, Rect.Height, view.RenderScene);
+            }
         }
+
     }
 
-    public void Setup()
+    public void Display()
     {
-        if (Device != null && Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+        if (Viewport is VulkanViewport vulkanViewport)
         {
-            Viewport = new VulkanViewport(null, Editor, ViewportType.ModelEditor, 
-                "Modeleditvp", Rect.Width, Rect.Height);
+            vulkanViewport.Display();
         }
-        else
-        {
-            Viewport = new NullViewport(null, Editor, ViewportType.ModelEditor, 
-                "Modeleditvp", Rect.Width, Rect.Height);
-        }
-    }
 
-    public void OnGui()
-    {
-        Viewport.OnGui();
+        if (Viewport is NullViewport nullViewport)
+        {
+            nullViewport.Display();
+        }
     }
 
     public void Update(float deltatime)
     {
-        ViewportUsingKeyboard = Viewport.Update(Window, deltatime);
+        ViewportUsingKeyboard = Viewport.Update(View.Window, deltatime);
     }
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
     {
-        Window = window;
+        View.Window = window;
         Rect = window.Bounds;
     }
 
@@ -77,5 +72,30 @@ public class ModelViewportView
     public bool InputCaptured()
     {
         return Viewport.IsViewportSelected;
+    }
+
+    public void UpdateDisplayNodes()
+    {
+        var wrapper = View.Selection.SelectedModelWrapper;
+
+        if (wrapper == null)
+            return;
+
+        var container = wrapper.Container;
+
+        if (container == null)
+            return;
+
+        foreach (var obj in container.Dummies)
+        {
+            obj.RenderSceneMesh.Dispose();
+            container.AssignDummyDrawable(obj, wrapper);
+        }
+
+        foreach (var obj in container.Nodes)
+        {
+            obj.RenderSceneMesh.Dispose();
+            container.AssignNodeDrawable(obj, wrapper);
+        }
     }
 }

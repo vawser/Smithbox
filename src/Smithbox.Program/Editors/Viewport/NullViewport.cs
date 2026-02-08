@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.Common;
+using StudioCore.Renderer;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -14,29 +14,23 @@ namespace StudioCore.Editors.Viewport;
 /// </summary>
 public class NullViewport : IViewport
 {
-    public MapEditorScreen MapEditor;
-    public ModelEditorScreen ModelEditor;
-
-    public ViewportType ViewportType;
-
-    private readonly string _vpid = "";
+    public IUniverse Owner;
 
     public int X;
     public int Y;
 
-    private ViewportType _viewportType;
-    public NullViewport(MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
-    {
-        _vpid = id;
+    public string ID { get; set; }
 
-        MapEditor = mapEditor;
-        ModelEditor = modelEditor;
-        ViewportType = viewportType;
+    public NullViewport(IUniverse owner, string id, int width, int height, RenderScene scene)
+    {
+        ID = id;
+
+        Owner = owner;
 
         Width = width;
         Height = height;
 
-        ViewportCamera = new ViewportCamera(this, viewportType, new Rectangle(0, 0, Width, Height));
+        ViewportCamera = new ViewportCamera(this, new Rectangle(0, 0, Width, Height));
     }
 
     public ViewportCamera ViewportCamera { get; }
@@ -44,35 +38,22 @@ public class NullViewport : IViewport
     public int Height { get; private set; }
 
     public float NearClip { get; set; } = 0.1f;
-    public float FarClip { get; set; } = CFG.Current.Viewport_RenderDistance_Max;
+    public float FarClip { get; set; } = CFG.Current.Viewport_Perspective_Far_Clip;
 
     public bool IsViewportSelected { get; set; }
 
-    public void OnGui()
+    public void Display()
     {
-        if (CFG.Current.Viewport_Display)
+        if (ImGui.Begin($@"Viewport##{ID}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
         {
-            if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
-            {
-                Vector2 p = ImGui.GetWindowPos();
-                Vector2 s = ImGui.GetWindowSize();
-                var newvp = new Rectangle((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
-                ResizeViewport(null, newvp);
-                ImGui.Text("Disabled...");
-            }
-
-            ImGui.End();
+            Vector2 p = ImGui.GetWindowPos();
+            Vector2 s = ImGui.GetWindowSize();
+            var newvp = new Rectangle((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
+            ResizeViewport(null, newvp);
+            ImGui.Text("Disabled...");
         }
 
-        if (CFG.Current.Viewport_Display_Profiling)
-        {
-            if (ImGui.Begin($@"Profiling##{_vpid}"))
-            {
-                ImGui.Text(@"Disabled...");
-            }
-
-            ImGui.End();
-        }
+        ImGui.End();
     }
 
     public void SceneParamsGui()

@@ -19,16 +19,21 @@ public class ModelShortcuts
 
     public void Monitor()
     {
-        if (!FocusManager.IsInModelEditor())
-            return;
+        var activeView = Editor.ViewHandler.ActiveView;
 
-        if (ImGui.IsAnyItemActive() || Editor.ModelViewportView.ViewportUsingKeyboard)
+        if (!FocusManager.IsInModelEditor())
             return;
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
             CFG.Current.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface_ModelEditor_ToolWindow;
         }
+
+        if (activeView == null)
+            return;
+
+        if (ImGui.IsAnyItemActive() || activeView.ViewportWindow.ViewportUsingKeyboard)
+            return;
 
         // Save
         if (InputManager.IsPressed(KeybindID.Save))
@@ -37,42 +42,41 @@ public class ModelShortcuts
         }
 
         // Undo
-        if (Editor.EditorActionManager.CanUndo())
+        if (activeView.ActionManager.CanUndo())
         {
             if (InputManager.IsPressed(KeybindID.Undo))
             {
-                Editor.EditorActionManager.UndoAction();
+                activeView.ActionManager.UndoAction();
             }
 
             if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
             {
-                Editor.EditorActionManager.UndoAction();
+                activeView.ActionManager.UndoAction();
             }
         }
 
         // Redo
-        if (Editor.EditorActionManager.CanRedo())
+        if (activeView.ActionManager.CanRedo())
         {
             if (InputManager.IsPressed(KeybindID.Redo))
             {
-                Editor.EditorActionManager.RedoAction();
+                activeView.ActionManager.RedoAction();
             }
 
             if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
             {
-                Editor.EditorActionManager.RedoAction();
+                activeView.ActionManager.RedoAction();
             }
         }
 
         // Actions
-        Editor.CreateAction.OnShortcut();
-        Editor.DuplicateAction.OnShortcut();
-        Editor.DeleteAction.OnShortcut();
-        Editor.FrameAction.OnShortcut();
-        Editor.GotoAction.OnShortcut();
-        Editor.PullToCameraAction.OnShortcut();
-        Editor.ReorderAction.OnShortcut();
-
+        activeView.CreateAction.OnShortcut();
+        activeView.DuplicateAction.OnShortcut();
+        activeView.DeleteAction.OnShortcut();
+        activeView.FrameAction.OnShortcut();
+        activeView.GotoAction.OnShortcut();
+        activeView.PullToCameraAction.OnShortcut();
+        activeView.ReorderAction.OnShortcut();
 
         // Cycle Gizmo Translation Mode
         if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Translation_Mode))

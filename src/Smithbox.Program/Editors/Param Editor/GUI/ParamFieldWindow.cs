@@ -298,11 +298,11 @@ public class ParamFieldWindow
 
             if (ImGui.Button($"{Icons.Bars}"))
             {
-                CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Background = !CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Background;
+                CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg = !CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg;
             }
 
             var rowModifiedBgMode = "Hide Background";
-            if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Background)
+            if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg)
                 rowModifiedBgMode = "Display Background";
 
             UIHelper.Tooltip($"Toggle the display of the modified background on modified fields.\nCurrent Mode: {rowModifiedBgMode}");
@@ -608,7 +608,7 @@ public class ParamFieldWindow
             }
             else if (diffVanilla)
             {
-                if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Background)
+                if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg)
                 {
                     ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ParamDiffBackgroundColor);
                 }
@@ -724,7 +724,7 @@ public class ParamFieldWindow
                 {
                     if (!conflict && diffAuxVanilla[i])
                     {
-                        if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Background)
+                        if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg)
                         {
                             ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ParamDiffBackgroundColor);
                         }

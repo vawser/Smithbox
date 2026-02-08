@@ -5,10 +5,10 @@
     <AssemblyName>Smithbox</AssemblyName>
     <TargetFramework>net9.0-macos</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
-    <Version>2.1.1</Version>
+    <Version>2.1.2</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <PackageVersion>2.1.0</PackageVersion>
-    <AssemblyVersion>2.1.1</AssemblyVersion>
+    <AssemblyVersion>2.1.2</AssemblyVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
@@ -40,15 +40,19 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <OodlePath>path/to/oodle.dylib</OodlePath>
+    <VULKAN_SDK Condition="'$(VULKAN_SDK)' == ''">/path/to/VulkanSDK/Version</VULKAN_SDK>
+    <MoltenVKPath>$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib</MoltenVKPath>
+    <OodlePath>/path/to/oodle.dylib</OodlePath>
     <RustDllPath>../Andre/Andre.Formats/libbhd5_decrypt_rust.dylib</RustDllPath>
+    <ZstdPath>/path/to/libzstd.dylib</ZstdPath>
   </PropertyGroup>
 
   <ItemGroup>
     <NativeReference Include="$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib" Kind="Dynamic" />
+    <NativeReference Include="$(MoltenVKPath)" Condition="Exists('$(MoltenVKPath)')" Kind="Dynamic" />
     <NativeReference Include="$(OodlePath)" Condition="Exists('$(OodlePath)')" Kind="Dynamic" />
     <NativeReference Include="$(RustDllPath)" Condition="Exists('$(RustDllPath)')" Kind="Dynamic" />
-    <NativeReference Include="path/to/libzstd.dylib" Kind="Dynamic" />
+    <NativeReference Include="$(ZstdPath)" Condition="Exists('$(ZstdPath)')" Kind="Dynamic" />
     <BundleResource Include="AppIcon.icns" />
   </ItemGroup>
 

@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class SelectAllAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public bool ConfigurableSelectAllPopupOpen = false;
@@ -25,9 +25,9 @@ public class SelectAllAction
 
     private bool OpenPopup = false;
 
-    public SelectAllAction(MapEditorScreen editor, ProjectEntry project)
+    public SelectAllAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -73,7 +73,7 @@ public class SelectAllAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_SelectAll_Configurable))
             {
@@ -147,9 +147,9 @@ public class SelectAllAction
     /// </summary>
     public void SelectAll()
     {
-        Editor.ViewportSelection.ClearSelection(Editor);
+        View.ViewportSelection.ClearSelection();
 
-        var curMap = Editor.Selection.SelectedMapContainer;
+        var curMap = View.Selection.SelectedMapContainer;
 
         if (curMap != null)
         {
@@ -159,7 +159,7 @@ public class SelectAllAction
                 {
                     if (IsValidMapObject(curMap, mEnt))
                     {
-                        Editor.ViewportSelection.AddSelection(Editor, mEnt);
+                        View.ViewportSelection.AddSelection(mEnt);
                     }
                 }
             }
@@ -168,9 +168,9 @@ public class SelectAllAction
 
     public void SelectAllByModelName()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            var sel = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
 
             List<string> targetNames = new List<string>();
 
@@ -190,15 +190,15 @@ public class SelectAllAction
                 }
             }
 
-            if (Editor.Selection.SelectedMapContainer == null)
+            if (View.Selection.SelectedMapContainer == null)
             {
                 PlatformUtils.Instance.MessageBox("Failed to select map container.", "Smithbox", MessageBoxButtons.OK);
                 return;
             }
 
-            Editor.ViewportSelection.ClearSelection(Editor);
+            View.ViewportSelection.ClearSelection();
 
-            foreach (var ent in Editor.Selection.SelectedMapContainer.Objects)
+            foreach (var ent in View.Selection.SelectedMapContainer.Objects)
             {
                 var curName = "";
                 var result = ent.GetPropertyValue("ModelName");
@@ -210,7 +210,7 @@ public class SelectAllAction
 
                 if (curName != "" && targetNames.Contains(curName))
                 {
-                    Editor.ViewportSelection.AddSelection(Editor, ent);
+                    View.ViewportSelection.AddSelection(ent);
                 }
             }
         }
@@ -222,9 +222,9 @@ public class SelectAllAction
 
     public void SelectAllByMapObjectType()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            var sel = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
 
             List<Type> targetTypes = new List<Type>();
 
@@ -237,21 +237,21 @@ public class SelectAllAction
                 }
             }
 
-            if (Editor.Selection.SelectedMapContainer == null)
+            if (View.Selection.SelectedMapContainer == null)
             {
                 PlatformUtils.Instance.MessageBox("Failed to select map container.", "Smithbox", MessageBoxButtons.OK);
                 return;
             }
 
-            Editor.ViewportSelection.ClearSelection(Editor);
+            View.ViewportSelection.ClearSelection();
 
-            foreach (var ent in Editor.Selection.SelectedMapContainer.Objects)
+            foreach (var ent in View.Selection.SelectedMapContainer.Objects)
             {
                 var curType = ent.WrappedObject.GetType();
 
                 if (targetTypes.Contains(curType))
                 {
-                    Editor.ViewportSelection.AddSelection(Editor, ent);
+                    View.ViewportSelection.AddSelection(ent);
                 }
             }
         }
@@ -531,14 +531,14 @@ public class SelectAllAction
 
             if (cmd.Contains("prop:"))
             {
-                partTruth[i] = Editor.MassEditTool.PropertyValueFilter(map, mEnt, cmd);
+                partTruth[i] = View.MassEditTool.PropertyValueFilter(map, mEnt, cmd);
                 if (invertTruth)
                     partTruth[i] = !partTruth[i];
             }
             // Default to name filter if no explicit command is used
             else
             {
-                partTruth[i] = Editor.MassEditTool.PropertyNameFilter(map, mEnt, cmd);
+                partTruth[i] = View.MassEditTool.PropertyNameFilter(map, mEnt, cmd);
                 if (invertTruth)
                     partTruth[i] = !partTruth[i];
             }

@@ -14,7 +14,7 @@ public static class PropAction_Scale
         CFG.Current.SavedScale = (Vector3)prop.GetValue(obj, null);
     }
 
-    public static void PasteSavedScale(MapEditorScreen editor, ViewportSelection _selection)
+    public static void PasteSavedScale(MapEditorView view, ViewportSelection _selection)
     {
         List<ViewportAction> actlist = new();
         foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
@@ -23,6 +23,6 @@ public static class PropAction_Scale
         }
 
         var action = new ViewportCompoundAction(actlist);
-        editor.EditorActionManager.ExecuteAction(action);
+        view.ViewportActionManager.ExecuteAction(action);
     }
 }

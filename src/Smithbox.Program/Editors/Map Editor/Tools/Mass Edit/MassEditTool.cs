@@ -16,7 +16,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MassEditTool
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
     public ProjectEntry Project;
 
     private QueryMapListType MapTarget;
@@ -37,9 +37,9 @@ public class MassEditTool
 
     public MsbMassEditLog CurrentResult;
 
-    public MassEditTool(MapEditorScreen editor, ProjectEntry project)
+    public MassEditTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -306,9 +306,9 @@ public class MassEditTool
         // Select
         if (ImGui.Button($"{Icons.MousePointer}##selectInputSelection", DPI.IconButtonSize))
         {
-            Editor.ViewportSelection.ClearSelection(Editor);
+            View.ViewportSelection.ClearSelection();
 
-            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+            foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 var wrapper = entry.Value;
 
@@ -322,7 +322,7 @@ public class MassEditTool
                             {
                                 if (IsValidMapObject(wrapper.MapContainer, mEnt))
                                 {
-                                    Editor.ViewportSelection.AddSelection(Editor, mEnt);
+                                    View.ViewportSelection.AddSelection(mEnt);
                                 }
                             }
                         }
@@ -487,17 +487,17 @@ public class MassEditTool
     {
         await Task.Yield();
 
-        var selection = Editor.ViewportSelection;
-        var listView = Editor.MapListView;
-        var universe = Editor.Universe;
+        var selection = View.ViewportSelection;
+        var listView = View.MapListView;
+        var universe = View.Universe;
 
         List<MapActionGroup> actionGroups = new List<MapActionGroup>();
 
         // Clear selection before applying edits, to ensure the properties view doesn't interfere.
-        selection.ClearSelection(Editor);
+        selection.ClearSelection();
 
         // Get filtered list of maps
-        var mapList = MsbUtils.GetFullMapList(Editor.Project);
+        var mapList = MsbUtils.GetFullMapList(View.Project);
         var availableList = new List<string>();
         foreach (var entry in mapList)
         {
@@ -510,7 +510,7 @@ public class MassEditTool
         // Local
         if (MapTarget is QueryMapListType.Local)
         {
-            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+            foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 var wrapper = entry.Value;
 
@@ -528,8 +528,9 @@ public class MassEditTool
 
             if (actionGroups.Count > 0)
             {
-                var compoundAction = new MapActionGroupCompoundAction(Editor, actionGroups);
-                Editor.EditorActionManager.ExecuteAction(compoundAction);
+                var compoundAction = new MapActionGroupCompoundAction(View, actionGroups);
+
+                View.ViewportActionManager.ExecuteAction(compoundAction);
             }
             else
             {
@@ -553,11 +554,11 @@ public class MassEditTool
             // Load all maps
             foreach (var entry in availableList)
             {
-                Editor.Universe.LoadMap(entry);
+                View.Universe.LoadMap(entry);
             }
 
             // Process each map
-            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+            foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 var wrapper = entry.Value;
 
@@ -572,8 +573,9 @@ public class MassEditTool
 
             if (actionGroups.Count > 0)
             {
-                var compoundAction = new MapActionGroupCompoundAction(Editor, actionGroups);
-                Editor.EditorActionManager.ExecuteAction(compoundAction);
+                var compoundAction = new MapActionGroupCompoundAction(View, actionGroups);
+
+                View.ViewportActionManager.ExecuteAction(compoundAction);
             }
             else
             {
@@ -585,7 +587,7 @@ public class MassEditTool
             //universe.UnloadAllMaps();
             foreach (var entry in availableList)
             {
-                Editor.Universe.UnloadMap(entry);
+                View.Universe.UnloadMap(entry);
             }
 
             if(restoreRendering)
@@ -888,7 +890,7 @@ public class MassEditTool
         {
             var cmd = editCommands[i];
 
-            var action = MassEditPropertyHelper.PropertyValueOperation(Editor, CurrentResult, map, mEnt, cmd, EnableVariance, VarianceMin, VarianceMax);
+            var action = MassEditPropertyHelper.PropertyValueOperation(View, CurrentResult, map, mEnt, cmd, EnableVariance, VarianceMin, VarianceMax);
             if (action != null)
                 actions.Add(action);
         }

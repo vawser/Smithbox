@@ -4,7 +4,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class WorldMapLayout
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
 
     public List<WorldMapTile> Tiles { get; set; }
 
@@ -12,9 +12,9 @@ public class WorldMapLayout
     private float XOffset;
     private float YOffset;
 
-    public WorldMapLayout(MapEditorScreen editor, string prefix, int xOffset, int yOffset)
+    public WorldMapLayout(MapEditorView view, string prefix, int xOffset, int yOffset)
     {
-        Editor = editor;
+        View = view;
         Prefix = prefix;
         XOffset = xOffset;
         YOffset = yOffset;
@@ -36,7 +36,7 @@ public class WorldMapLayout
         int xMediumOffset = -1, int yMediumOffset = -1, 
         int xSmallOffset = -1, int ySmallOffset = -1)
     {
-        var mapList = MsbUtils.GetFullMapList(Editor.Project);
+        var mapList = MsbUtils.GetFullMapList(View.Project);
 
         float CurX = XOffset;
         float CurY = YOffset;

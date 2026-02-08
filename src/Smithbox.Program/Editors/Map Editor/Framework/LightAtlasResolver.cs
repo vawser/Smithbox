@@ -6,13 +6,13 @@ namespace StudioCore.Editors.MapEditor;
 
 public class LightAtlasResolver
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
     private ProjectEntry Project;
     private MapContainer Parent;
 
-    public LightAtlasResolver(MapEditorScreen editor, ProjectEntry project, MapContainer parent)
+    public LightAtlasResolver(MapEditorView view, ProjectEntry project, MapContainer parent)
     {
-        Editor = editor;
+        View = view;
         Project = project;
         Parent = parent;
     }
@@ -42,7 +42,7 @@ public class LightAtlasResolver
     // Since we can't easily use MSBReference
     public void BuildReferenceMaps()
     {
-        if (!Editor.LightAtlasBank.CanUse())
+        if (!View.LightAtlasBank.CanUse())
             return;
 
         foreach(var parent in Parent.LightAtlasParents)

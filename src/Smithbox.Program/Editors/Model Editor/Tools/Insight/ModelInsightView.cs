@@ -2,7 +2,6 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -15,12 +14,12 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelInsightView
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public ModelInsightView(ModelEditorScreen editor, ProjectEntry project)
+    public ModelInsightView(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -28,26 +27,26 @@ public class ModelInsightView
     {
         if (ImGui.CollapsingHeader("Model Insight"))
         {
-            if (Editor.Selection.SelectedModelWrapper == null)
+            if (View.Selection.SelectedModelWrapper == null)
                 return;
 
-            var curModelData = ModelInsightHelper.Entries.FirstOrDefault(e => e.Key == Editor.Selection.SelectedModelWrapper.Name);
+            var curModelData = View.ModelInsightHelper.Entries.FirstOrDefault(e => e.Key == View.Selection.SelectedModelWrapper.Name);
 
-            if (curModelData.Value != null && curModelData.Value != ModelInsightHelper.SelectedDataEntry)
+            if (curModelData.Value != null && curModelData.Value != View.ModelInsightHelper.SelectedDataEntry)
             {
-                ModelInsightHelper.SelectedDataEntry = curModelData.Value;
+                View.ModelInsightHelper.SelectedDataEntry = curModelData.Value;
             }
 
-            if (ModelInsightHelper.SelectedDataEntry == null)
+            if (View.ModelInsightHelper.SelectedDataEntry == null)
                 return;
 
 
-            var flverEntry = ModelInsightHelper.SelectedDataEntry.Models.FirstOrDefault(
-            e => e.Name == Editor.Selection.SelectedModelWrapper.Name);
+            var flverEntry = View.ModelInsightHelper.SelectedDataEntry.Models.FirstOrDefault(
+            e => e.Name == View.Selection.SelectedModelWrapper.Name);
 
-            if (flverEntry != null && flverEntry != ModelInsightHelper.SelectedFlverEntry)
+            if (flverEntry != null && flverEntry != View.ModelInsightHelper.SelectedFlverEntry)
             {
-                ModelInsightHelper.SelectedFlverEntry = flverEntry;
+                View.ModelInsightHelper.SelectedFlverEntry = flverEntry;
             }
 
             Display();
@@ -58,9 +57,9 @@ public class ModelInsightView
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (ModelInsightHelper.SelectedFlverEntry != null)
+        if (View.ModelInsightHelper.SelectedFlverEntry != null)
         {
-            var entry = ModelInsightHelper.SelectedFlverEntry;
+            var entry = View.ModelInsightHelper.SelectedFlverEntry;
 
             UIHelper.SimpleHeader("actHeader", "Actions", "", UI.Current.ImGui_AliasName_Text);
 

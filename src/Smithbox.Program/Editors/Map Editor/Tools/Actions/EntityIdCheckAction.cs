@@ -10,14 +10,14 @@ namespace StudioCore.Editors.MapEditor;
 
 public class EntityIdCheckAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public (string, ObjectContainer) TargetMap = ("None", null);
 
-    public EntityIdCheckAction(MapEditorScreen editor, ProjectEntry project)
+    public EntityIdCheckAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -52,11 +52,11 @@ public class EntityIdCheckAction
     {
         if (ImGui.BeginMenu("Entity ID Check"))
         {
-            if (Editor.Selection.IsAnyMapLoaded())
+            if (View.Selection.IsAnyMapLoaded())
             {
                 if (ImGui.BeginCombo("##Targeted Map", TargetMap.Item1))
                 {
-                    foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+                    foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
                     {
                         var mapID = entry.Key.Filename;
                         var container = entry.Value.MapContainer;
@@ -96,7 +96,7 @@ public class EntityIdCheckAction
     /// </summary>
     public void ApplyEntityChecker()
     {
-        if (!Editor.Selection.IsAnyMapLoaded())
+        if (!View.Selection.IsAnyMapLoaded())
             return;
 
         HashSet<uint> vals = new();
@@ -136,7 +136,7 @@ public class EntityIdCheckAction
             // Entity Group ID
             foreach (var e in loadedMap?.Objects)
             {
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.AC6)
+                if (View.Project.Descriptor.ProjectType == ProjectType.AC6)
                 {
                     if (e.WrappedObject is MSB_AC6.Part)
                     {
@@ -165,7 +165,7 @@ public class EntityIdCheckAction
                         }
                     }
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.ER)
+                if (View.Project.Descriptor.ProjectType == ProjectType.ER)
                 {
                     if (e.WrappedObject is MSBE.Part)
                     {
@@ -194,7 +194,7 @@ public class EntityIdCheckAction
                         }
                     }
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.SDT)
+                if (View.Project.Descriptor.ProjectType == ProjectType.SDT)
                 {
                     if (e.WrappedObject is MSBS.Part)
                     {
@@ -223,7 +223,7 @@ public class EntityIdCheckAction
                         }
                     }
                 }
-                if (Editor.Project.Descriptor.ProjectType == ProjectType.DS3)
+                if (View.Project.Descriptor.ProjectType == ProjectType.DS3)
                 {
                     if (e.WrappedObject is MSB3.Part)
                     {

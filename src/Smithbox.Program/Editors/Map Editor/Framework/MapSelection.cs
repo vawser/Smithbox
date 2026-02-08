@@ -5,15 +5,15 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapSelection
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public string SelectedMapID;
     public MapContainer SelectedMapContainer;
 
-    public MapSelection(MapEditorScreen editor, ProjectEntry project)
+    public MapSelection(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 

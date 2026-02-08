@@ -1,5 +1,6 @@
 ﻿using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Utilities;
 using System;
 using System.Numerics;
@@ -54,7 +55,7 @@ public class SceneRenderPipeline
         );
 
         SceneParams = new SceneParam();
-        SceneParams.Projection = Utils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, 0.1f, 2000.0f);
+        SceneParams.Projection = ViewportUtils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, 0.1f, 2000.0f);
         SceneParams.View = Matrix4x4.CreateLookAt(new Vector3(0.0f, 2.0f, 0.0f), new Vector3(1.0f, 2.0f, 0.0f), Vector3.UnitY);
         SceneParams.EyePosition = new Vector4(0.0f, 2.0f, 0.0f, 0.0f);
         SceneParams.LightDirection = new Vector4(1.0f, -0.5f, 0.0f, 0.0f);
@@ -124,8 +125,14 @@ public class SceneRenderPipeline
         _overlayQueue.SetPredrawSetupAction(action);
     }
 
-    public unsafe void TestUpdateView(Matrix4x4 proj, Matrix4x4 view, Vector3 eye, int cursorx, int cursory)
+    public unsafe void UpdateSceneParameters(Matrix4x4 proj, Matrix4x4 view, Vector3 eye, int cursorx, int cursory)
     {
+        var selectionColor = new Vector4(
+            CFG.Current.Viewport_Selection_Outline_Color.X, 
+            CFG.Current.Viewport_Selection_Outline_Color.Y, 
+            CFG.Current.Viewport_Selection_Outline_Color.Z, 
+            1.0f);
+
         Eye = eye;
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
@@ -135,6 +142,11 @@ public class SceneRenderPipeline
             SceneParams.EnvMap = EnvMapTexture;
             SceneParams.CursorPosition[0] = cursorx;
             SceneParams.CursorPosition[1] = cursory;
+
+            SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Untextured_Model_Brightness;
+            SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Untextured_Model_Saturation;
+            SceneParams.SelectionColor = selectionColor;
+
             cl.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
         });
     }
@@ -161,7 +173,7 @@ public class SceneRenderPipeline
         }
 
         _pickingEnabled = true;
-        Scene.SendGPUPickingRequest();
+        Scene.SendGPUPickingRequest(_renderQueue, _overlayQueue);
 
         SceneRenderer.AddAsyncReadback(PickingResultReadbackBuffer, PickingResultsBuffer, d =>
         {

@@ -1,28 +1,22 @@
-﻿using SoulsFormats.KF4;
-using StudioCore.Application;
+﻿using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.MapEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
-using static SoulsFormats.DDS;
 
 namespace StudioCore.Editors.ModelEditor;
 
 public class AddModelObjectAction : ViewportAction
 {
-    private readonly ModelEditorScreen Editor;
+    private readonly ModelEditorView View;
     private readonly ProjectEntry Project;
 
     private readonly ModelContainer Container;
     private readonly List<ModelEntity> Added = new();
 
-    public AddModelObjectAction(ModelEditorScreen editor, ProjectEntry project, ModelContainer container, List<ModelEntity> objects)
+    public AddModelObjectAction(ModelEditorView view, ProjectEntry project, ModelContainer container, List<ModelEntity> objects)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         Container = container;
@@ -36,7 +30,7 @@ public class AddModelObjectAction : ViewportAction
         {
             Container.Objects.Add(Added[i]);
             Container.RootObject.AddChild(Added[i]);
-            Added[i].UpdateRenderModel(Editor);
+            Added[i].UpdateRenderModel();
 
             if (Added[i].RenderSceneMesh != null)
             {
@@ -47,10 +41,11 @@ public class AddModelObjectAction : ViewportAction
             }
         }
 
-        Editor.ViewportSelection.ClearSelection(Editor);
+        View.ViewportSelection.ClearSelection();
+
         foreach (ModelEntity c in Added)
         {
-            Editor.ViewportSelection.AddSelection(Editor, c);
+            View.ViewportSelection.AddSelection(c);
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -73,7 +68,7 @@ public class AddModelObjectAction : ViewportAction
             }
         }
 
-        Editor.ViewportSelection.ClearSelection(Editor);
+        View.ViewportSelection.ClearSelection();
 
         return ActionEvent.ObjectAddedRemoved;
     }

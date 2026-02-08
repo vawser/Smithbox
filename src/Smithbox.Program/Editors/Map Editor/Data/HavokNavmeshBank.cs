@@ -16,16 +16,16 @@ namespace StudioCore.Editors.MapEditor;
 
 public class HavokNavmeshBank
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, NVA> Files = new();
 
     public Dictionary<string, hkRootLevelContainer> HKX3_Containers = new Dictionary<string, hkRootLevelContainer>();
 
-    public HavokNavmeshBank(MapEditorScreen editor, ProjectEntry project)
+    public HavokNavmeshBank(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -168,7 +168,7 @@ public class HavokNavmeshBank
         }
     }
 
-    public void SaveHavokNVA(MapEditorScreen editor, MapContainer map)
+    public void SaveHavokNVA(MapContainer map)
     {
         if (!CanUse())
             return;

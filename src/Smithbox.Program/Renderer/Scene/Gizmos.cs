@@ -106,11 +106,11 @@ public class Gizmos
     private Vector3 OriginProjection;
     private Axis TransformAxis = Axis.None;
 
-    private EditorScreen Editor;
+    private IUniverse Owner;
 
-    public Gizmos(EditorScreen editor, ViewportActionManager am, ViewportSelection selection, MeshRenderables renderlist)
+    public Gizmos(IUniverse owner, ViewportActionManager am, ViewportSelection selection, MeshRenderables renderlist)
     {
-        Editor = editor;
+        Owner = owner;
 
         ActionManager = am;
         TranslateGizmoX = new DbgPrimGizmoTranslateArrow(Axis.PosX);
@@ -212,7 +212,7 @@ public class Gizmos
 
         float dist;
         Vector3 relorigin = ray.Origin - t.Position;
-        if (Utils.RayPlaneIntersection(relorigin, ray.Direction, Vector3.Zero, planeNormal, out dist))
+        if (ViewportUtils.RayPlaneIntersection(relorigin, ray.Direction, Vector3.Zero, planeNormal, out dist))
         {
             return ray.Origin + ray.Direction * dist;
         }
@@ -238,7 +238,7 @@ public class Gizmos
 
         float dist;
         Vector3 relorigin = ray.Origin - t.Position;
-        if (Utils.RayPlaneIntersection(relorigin, ray.Direction, Vector3.Zero, planeNormal, out dist))
+        if (ViewportUtils.RayPlaneIntersection(relorigin, ray.Direction, Vector3.Zero, planeNormal, out dist))
         {
             return ray.Origin + ray.Direction * dist;
         }
@@ -281,8 +281,23 @@ public class Gizmos
     }
 
 
-    public void Update(Ray ray, bool canCaptureMouse)
+    public void Update(Ray ray, bool canCaptureMouse, bool isActiveViewport = true)
     {
+        if (!isActiveViewport || !CFG.Current.Viewport_Render_Gizmos)
+        {
+            TranslateGizmoXProxy.Visible = false;
+            TranslateGizmoYProxy.Visible = false;
+            TranslateGizmoZProxy.Visible = false;
+            TranslateSquareGizmoXProxy.Visible = false;
+            TranslateSquareGizmoYProxy.Visible = false;
+            TranslateSquareGizmoZProxy.Visible = false;
+            RotateGizmoXProxy.Visible = false;
+            RotateGizmoYProxy.Visible = false;
+            RotateGizmoZProxy.Visible = false;
+
+            return;
+        }
+
         var canTransform = true;
 
         // Update gizmo color
@@ -313,7 +328,7 @@ public class Gizmos
                 List<ViewportAction> actlist = new();
                 foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
                 {
-                    sel.ClearTemporaryTransform(Editor, false);
+                    sel.ClearTemporaryTransform(false);
                     actlist.Add(sel.GetUpdateTransformAction(ProjectTransformDelta(sel)));
                 }
 
@@ -372,7 +387,7 @@ public class Gizmos
                     //Selection.GetSingleSelection().SetTemporaryTransform(CurrentTransform);
                     foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
                     {
-                        sel.SetTemporaryTransform(Editor, ProjectTransformDelta(sel));
+                        sel.SetTemporaryTransform(ProjectTransformDelta(sel));
                     }
                 }
             }
@@ -525,7 +540,7 @@ public class Gizmos
             }
 
             var dist = (center - CameraPosition).Length();
-            Vector3 scale = new(dist * 0.04f);
+            Vector3 scale = new(dist * CFG.Current.Viewport_Gizmo_Size_Distance_Scale);
             TranslateGizmoXProxy.World = new Transform(center, rot, scale).WorldMatrix;
             TranslateGizmoYProxy.World = new Transform(center, rot, scale).WorldMatrix;
             TranslateGizmoZProxy.World = new Transform(center, rot, scale).WorldMatrix;

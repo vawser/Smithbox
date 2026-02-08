@@ -309,11 +309,11 @@ public class ParamRowWindow
 
         if (ImGui.Button($"{Icons.Bars}"))
         {
-            CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Background = !CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Background;
+            CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg = !CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg;
         }
 
         var rowModifiedBgMode = "Hide Background";
-        if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Background)
+        if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg)
             rowModifiedBgMode = "Display Background";
 
         UIHelper.Tooltip($"Toggle the display of the modified background on modified rows.\nCurrent Mode: {rowModifiedBgMode}");
@@ -408,7 +408,7 @@ public class ParamRowWindow
             }
         }
 
-        if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Background)
+        if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg)
         {
             if (diffVanilla)
             {
@@ -486,7 +486,7 @@ public class ParamRowWindow
             _arrowKeyPressed = false;
         }
 
-        if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Background)
+        if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg)
         {
             if (diffVanilla)
             {

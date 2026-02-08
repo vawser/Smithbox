@@ -1,4 +1,5 @@
-﻿using StudioCore.Editors.MapEditor;
+﻿using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System.Drawing;
@@ -9,15 +10,18 @@ namespace StudioCore.Editors.Viewport;
 
 public class MapGrid
 {
-    private MapEditorScreen Editor;
+    private IUniverse Owner;
+    private MapUniverse MapUniverse;
 
     private DbgPrimWireGrid WireGridPrimitive;
     private DebugPrimitiveRenderableProxy Grid;
     private MeshRenderables RenderList;
 
-    public MapGrid(MapEditorScreen editor, MeshRenderables renderlist, int size, float sectionSize, Vector3 color)
+    public MapGrid(IUniverse owner, MeshRenderables renderlist, int size, float sectionSize, Vector3 color)
     {
-        Editor = editor;
+        Owner = owner;
+        MapUniverse = (MapUniverse)Owner;
+
         RenderList = renderlist;
 
         WireGridPrimitive = new DbgPrimWireGrid(Color.Red, Color.Red, size, sectionSize);
@@ -53,7 +57,7 @@ public class MapGrid
             Regenerate(size, sectionSize, color);
         }
 
-        if (displayGrid && Editor.Project.Handler.FocusedEditor is MapEditorScreen)
+        if (displayGrid && MapUniverse.Project.Handler.FocusedEditor is MapEditorScreen)
         {
             Grid.BaseColor = GetViewGridColor(color);
             Grid.Visible = true;

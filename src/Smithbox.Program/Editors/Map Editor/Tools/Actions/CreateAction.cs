@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class CreateAction
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     public (string, ObjectContainer) TargetMap = ("None", null);
@@ -27,9 +27,9 @@ public class CreateAction
     public Type CreateEventSelectedType;
 
 
-    public CreateAction(MapEditorScreen editor, ProjectEntry project)
+    public CreateAction(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         PopulateClassNames();
@@ -40,11 +40,11 @@ public class CreateAction
     /// </summary>
     public void OnShortcut()
     {
-        if(Editor.ViewportSelection.IsSelection())
+        if(View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_Create_Map_Object))
             {
-                Editor.CreateAction.ApplyObjectCreation();
+                ApplyObjectCreation();
             }
         }
     }
@@ -100,7 +100,7 @@ public class CreateAction
                     TargetMap = (mapID, map);
                 }
 
-                var mapName = AliasHelper.GetMapNameAlias(Editor.Project, mapID);
+                var mapName = AliasHelper.GetMapNameAlias(View.Project, mapID);
                 UIHelper.DisplayAlias(mapName);
             }
         }
@@ -236,7 +236,7 @@ public class CreateAction
     /// </summary>
     public void ApplyObjectCreation()
     {
-        if (!Editor.Selection.IsAnyMapLoaded())
+        if (!View.Selection.IsAnyMapLoaded())
             return;
 
         if (TargetMap != (null, null))
@@ -277,18 +277,18 @@ public class CreateAction
     private void AddNewEntity(Type typ, MsbEntityType etype, MapContainer map, Entity parent = null)
     {
         var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
-        MsbEntity obj = new(Editor, map, newent, etype);
+        MsbEntity obj = new(View.Universe, map, newent, etype);
 
         parent ??= map.RootObject;
 
-        AddMapObjectsAction act = new(Editor, map, new List<MsbEntity> { obj }, true, parent);
-        Editor.EditorActionManager.ExecuteAction(act);
+        AddMapObjectsAction act = new(View, map, new List<MsbEntity> { obj }, true, parent);
+        View.ViewportActionManager.ExecuteAction(act);
     }
 
     public void PopulateClassNames()
     {
         Type msbclass;
-        switch (Editor.Project.Descriptor.ProjectType)
+        switch (View.Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 msbclass = typeof(MSBD);

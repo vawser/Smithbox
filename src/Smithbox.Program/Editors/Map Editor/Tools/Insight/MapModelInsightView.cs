@@ -18,12 +18,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapModelInsightView
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public MapModelInsightView(MapEditorScreen editor, ProjectEntry project)
+    public MapModelInsightView(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -31,21 +31,21 @@ public class MapModelInsightView
     {
         if (ImGui.CollapsingHeader("Model Insight"))
         {
-            var curEntity = Editor.ViewportSelection.GetSelection().FirstOrDefault();
+            var curEntity = View.ViewportSelection.GetSelection().FirstOrDefault();
 
             if (curEntity == null)
                 return;
 
             var mapEntity = (Entity)curEntity;
 
-            var curModelData = MapModelInsightHelper.Entries.FirstOrDefault(e => e.Key == Editor.Selection.SelectedMapID);
+            var curModelData = View.ModelInsightTool.Entries.FirstOrDefault(e => e.Key == View.Selection.SelectedMapID);
 
-            if (curModelData.Value != null && curModelData.Value != MapModelInsightHelper.SelectedDataEntry)
+            if (curModelData.Value != null && curModelData.Value != View.ModelInsightTool.SelectedDataEntry)
             {
-                MapModelInsightHelper.SelectedDataEntry = curModelData.Value;
+                View.ModelInsightTool.SelectedDataEntry = curModelData.Value;
             }
 
-            if (MapModelInsightHelper.SelectedDataEntry == null)
+            if (View.ModelInsightTool.SelectedDataEntry == null)
                 return;
 
             var propValue = mapEntity.GetPropertyValue("ModelName");
@@ -55,12 +55,12 @@ public class MapModelInsightView
 
             var modelName = propValue.ToString();
 
-            var flverEntry = MapModelInsightHelper.SelectedDataEntry.Models.FirstOrDefault(
+            var flverEntry = View.ModelInsightTool.SelectedDataEntry.Models.FirstOrDefault(
             e => e.Name == modelName);
 
-            if (flverEntry != null && flverEntry != MapModelInsightHelper.SelectedFlverEntry)
+            if (flverEntry != null && flverEntry != View.ModelInsightTool.SelectedFlverEntry)
             {
-                MapModelInsightHelper.SelectedFlverEntry = flverEntry;
+                View.ModelInsightTool.SelectedFlverEntry = flverEntry;
             }
 
             Display();
@@ -71,9 +71,9 @@ public class MapModelInsightView
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (MapModelInsightHelper.SelectedFlverEntry != null)
+        if (View.ModelInsightTool.SelectedFlverEntry != null)
         {
-            var entry = MapModelInsightHelper.SelectedFlverEntry;
+            var entry = View.ModelInsightTool.SelectedFlverEntry;
 
             UIHelper.SimpleHeader("actHeader", "Actions", "", UI.Current.ImGui_AliasName_Text);
 

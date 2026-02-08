@@ -325,7 +325,7 @@ public class ProjectCreationMenu
                     {
                         IsDisplayed = false;
                         IsEditMode = false;
-                        Orchestrator.UpdateProject(Descriptor);
+                        Orchestrator.UpdateProject(Project, Descriptor);
                     }
                 }
                 else

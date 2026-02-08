@@ -8,11 +8,18 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Renderer;
 
-public static class MeshProviderTab
+public class MeshProviderTab
 {
-    public static string SelectedProviderEntry = "";
+    public string SelectedProviderEntry = "";
 
-    public static void Display()
+    private ResourceListWindow ListWindow;
+
+    public MeshProviderTab(ResourceListWindow listWindow)
+    {
+        ListWindow = listWindow;
+    }
+
+    public void Display()
     {
         var resDatabase = ResourceManager.GetResourceDatabase();
 
@@ -42,7 +49,7 @@ public static class MeshProviderTab
                 var hash = item.Key;
                 var context = item.Value;
 
-                if (ResourceListWindow.SearchFilter != "" && !context.VirtualPath.Contains(ResourceListWindow.SearchFilter))
+                if (ListWindow.SearchFilter != "" && !context.VirtualPath.Contains(ListWindow.SearchFilter))
                 {
                     continue;
                 }

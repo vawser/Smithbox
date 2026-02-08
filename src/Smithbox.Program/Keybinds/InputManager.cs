@@ -233,6 +233,13 @@ public static class InputManager
     {
         var filestring = JsonSerializer.Serialize(_bindings, ProjectJsonSerializerContext.Default.KeybindStore);
 
+        var dir = Path.GetDirectoryName(KeybindPath);
+
+        if (!Directory.Exists(dir))
+        {
+            Directory.CreateDirectory(dir);
+        }
+
         File.WriteAllText(KeybindPath, filestring);
     }
 

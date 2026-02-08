@@ -13,16 +13,16 @@ namespace StudioCore.Renderer;
 
 public static class DrawableHelper
 {
-    public static RenderableProxy GetModelDrawable(EditorScreen editor, RenderScene scene, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks, bool forceReload = false)
+    public static RenderableProxy GetModelDrawable(IUniverse owner, RenderScene scene, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks, bool forceReload = false)
     {
-        Universe curUniverse = null;
+        MapUniverse curUniverse = null;
         ProjectEntry curProject = null;
 
-        if(editor is MapEditorScreen)
+        if(owner is MapUniverse)
         {
-            var curEditor = editor as MapEditorScreen;
-            curProject = curEditor.Project;
-            curUniverse = curEditor.Universe;
+            var universe = owner as MapUniverse;
+            curProject = universe.Project;
+            curUniverse = universe;
         }
 
         ResourceDescriptor asset;

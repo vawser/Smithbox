@@ -12,11 +12,10 @@ namespace StudioCore.Editors.MapEditor;
 
 public class LocalSearchTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
     private readonly Dictionary<string, List<WeakReference<Entity>>> FoundObjects = new();
-    private readonly MapPropertyCache _propCache;
 
     private int currentSearchMatchTypeIndex;
 
@@ -34,12 +33,10 @@ public class LocalSearchTool
 
     public bool FocusLocalPropertySearch = false;
 
-    public LocalSearchTool(MapEditorScreen editor, ProjectEntry project)
+    public LocalSearchTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
-
-        _propCache = editor.MapPropertyCache;
     }
 
     /// <summary>
@@ -67,7 +64,7 @@ public class LocalSearchTool
         UIHelper.WrappedText("");
 
         // propcache
-        var selection = Editor.Universe.Selection.GetSingleFilteredSelection<Entity>();
+        var selection = View.ViewportSelection.GetSingleFilteredSelection<Entity>();
         if (selection == null)
         {
             ImGui.Text("Select entity for dropdown list.");
@@ -78,7 +75,7 @@ public class LocalSearchTool
 
             if (ImGui.BeginCombo("##SearchPropCombo", "Select property..."))
             {
-                var props = _propCache.GetCachedFields(selection.WrappedObject);
+                var props = View.MapPropertyCache.GetCachedFields(selection.WrappedObject);
                 foreach (var prop in props)
                 {
                     if (ImGui.Selectable(prop.Name))
@@ -119,7 +116,7 @@ public class LocalSearchTool
             // Find the first property that matches the given name.
             // Definitely replace this (along with everything else, really).
             HashSet<Type> typeCache = new();
-            foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+            foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
             {
                 if (entry.Value.MapContainer == null)
                 {
@@ -165,7 +162,7 @@ public class LocalSearchTool
             if (SearchValue(newSearch))
             {
                 FoundObjects.Clear();
-                foreach (var entry in Editor.Project.Handler.MapData.PrimaryBank.Maps)
+                foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
                 {
                     if (entry.Value.MapContainer == null)
                     {
@@ -246,19 +243,20 @@ public class LocalSearchTool
                         {
                             if (selectFirstResult)
                             {
-                                Editor.Universe.Selection.ClearSelection(Editor);
-                                Editor.Universe.Selection.AddSelection(Editor, obj);
+                                View.ViewportSelection.ClearSelection();
+                                View.ViewportSelection.AddSelection(obj);
                                 selectFirstResult = false;
                             }
 
                             bool itemFocused = ImGui.IsItemFocused();
                             bool selected = false;
-                            if (ImGui.Selectable(obj.Name, Editor.Universe.Selection.GetSelection().Contains(obj),
+                            if (ImGui.Selectable(obj.Name, View.ViewportSelection.GetSelection().Contains(obj),
                                     ImGuiSelectableFlags.AllowDoubleClick))
                             {
                                 selected = true;
                             }
-                            Utils.EntitySelectionHandler(Editor, Editor.Universe.Selection, obj, selected, itemFocused, f.Value);
+
+                            MsbUtils.EntitySelectionHandler(View, View.ViewportSelection, obj, selected, itemFocused, f.Value);
                         }
                     }
 
@@ -278,7 +276,7 @@ public class LocalSearchTool
     public bool newSearch = false;
     public bool selectFirstResult = false;
 
-    public void OnGui()
+    public void Update()
     {
         if (propSearchCmd != null && UpdatePropSearch)
         {

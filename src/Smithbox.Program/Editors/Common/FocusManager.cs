@@ -39,7 +39,6 @@ public static class FocusManager
     {
         if (Focus is EditorFocusContext.MapEditor_None
             or EditorFocusContext.MapEditor_FileList
-            or EditorFocusContext.MapEditor_ContentList
             or EditorFocusContext.MapEditor_Properties
             or EditorFocusContext.MapEditor_Tools
             or EditorFocusContext.MapEditor_Viewport)
@@ -51,9 +50,7 @@ public static class FocusManager
     public static bool IsInModelEditor()
     {
         if (Focus is EditorFocusContext.ModelEditor_None
-            or EditorFocusContext.ModelEditor_ContainerList
             or EditorFocusContext.ModelEditor_FileList
-            or EditorFocusContext.ModelEditor_ContentList
             or EditorFocusContext.ModelEditor_Properties
             or EditorFocusContext.ModelEditor_Tools
             or EditorFocusContext.ModelEditor_Viewport)
@@ -136,15 +133,12 @@ public enum EditorFocusContext
 
     MapEditor_None,
     MapEditor_FileList,
-    MapEditor_ContentList,
     MapEditor_Properties,
     MapEditor_Tools,
     MapEditor_Viewport,
 
     ModelEditor_None,
-    ModelEditor_ContainerList,
     ModelEditor_FileList,
-    ModelEditor_ContentList,
     ModelEditor_Properties,
     ModelEditor_Tools,
     ModelEditor_Viewport,

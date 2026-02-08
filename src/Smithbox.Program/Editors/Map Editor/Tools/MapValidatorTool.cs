@@ -16,16 +16,16 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapValidatorTool
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
     private ProjectEntry Project;
 
     private List<MapValidationEntry> ValidationEntries;
 
     private bool FirstValidate = false;
 
-    public MapValidatorTool(MapEditorScreen screen, ProjectEntry project)
+    public MapValidatorTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = screen;
+        View = view;
         Project = project;
 
         ValidationEntries = new();
@@ -49,7 +49,7 @@ public class MapValidatorTool
             {
                 ValidationEntries = new();
 
-                var mapContainer = Editor.Selection.SelectedMapContainer;
+                var mapContainer = View.Selection.SelectedMapContainer;
 
                 if(mapContainer != null)
                 {
@@ -208,9 +208,9 @@ public class MapValidatorTool
 
     private void FocusEntry(MapValidationEntry entry)
     {
-        Editor.ViewportSelection.ClearSelection(Editor);
-        Editor.MapViewportView.Viewport.FramePosition(entry.AssociatedEntity.GetLocalTransform().Position, 10f);
-        Editor.ViewportSelection.AddSelection(Editor, entry.AssociatedEntity);
+        View.ViewportSelection.ClearSelection();
+        View.ViewportHandler.ActiveViewport.Viewport.FramePosition(entry.AssociatedEntity.GetLocalTransform().Position, 10f);
+        View.ViewportSelection.AddSelection(entry.AssociatedEntity);
     }
 
     public void ValidateEntityID(MapContainer map)

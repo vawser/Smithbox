@@ -8,10 +8,10 @@ public interface ISelectable
     /// <summary>
     /// Function executed upon selection.
     /// </summary>
-    public void OnSelected(EditorScreen editor);
+    public void OnSelected();
 
     /// <summary>
     /// Function executed upon deselection.
     /// </summary>
-    public void OnDeselected(EditorScreen editor);
+    public void OnDeselected();
 }

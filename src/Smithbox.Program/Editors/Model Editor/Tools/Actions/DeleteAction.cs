@@ -9,12 +9,12 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class DeleteAction 
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public DeleteAction(ModelEditorScreen editor, ProjectEntry project)
+    public DeleteAction(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -23,7 +23,7 @@ public class DeleteAction
     /// </summary>
     public void OnShortcut()
     {
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
             if (InputManager.IsPressed(KeybindID.Delete))
             {
@@ -71,19 +71,19 @@ public class DeleteAction
     /// </summary>
     public void ApplyDelete()
     {
-        if (Editor.Selection.SelectedModelWrapper == null)
+        if (View.Selection.SelectedModelWrapper == null)
             return;
 
-        if (Editor.Selection.SelectedModelWrapper.Container == null)
+        if (View.Selection.SelectedModelWrapper.Container == null)
             return;
 
-        if (Editor.ViewportSelection.IsSelection())
+        if (View.ViewportSelection.IsSelection())
         {
-            var selection = Editor.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
+            var selection = View.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
 
-            var action = new DeleteModelObjectAction(Editor, Project, Editor.Selection.SelectedModelWrapper.Container, selection);
+            var action = new DeleteModelObjectAction(View, Project, View.Selection.SelectedModelWrapper.Container, selection);
 
-            Editor.EditorActionManager.ExecuteAction(action);
+            View.ViewportActionManager.ExecuteAction(action);
         }
         else
         {

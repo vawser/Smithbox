@@ -10,7 +10,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public static class PropInfo_ReferencesTo
 {
-    public static void Display(MapEditorScreen editor, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
+    public static void Display(MapEditorView view, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
         if (firstEnt.References.Count == 0)
             return;
@@ -63,15 +63,15 @@ public static class PropInfo_ReferencesTo
 
                         if (e.IsPartEnemy() || e.IsPartDummyEnemy())
                         {
-                            aliasName = AliasHelper.GetCharacterAlias(editor.Project, modelName);
+                            aliasName = AliasHelper.GetCharacterAlias(view.Project, modelName);
                         }
                         if (e.IsPartAsset() || e.IsPartDummyAsset())
                         {
-                            aliasName = AliasHelper.GetAssetAlias(editor.Project, modelName);
+                            aliasName = AliasHelper.GetAssetAlias(view.Project, modelName);
                         }
                         if (e.IsPartMapPiece())
                         {
-                            aliasName = AliasHelper.GetMapPieceAlias(editor.Project, modelName);
+                            aliasName = AliasHelper.GetMapPieceAlias(view.Project, modelName);
                         }
 
                         if (aliasName != "")
@@ -85,8 +85,8 @@ public static class PropInfo_ReferencesTo
                     if (ImGui.Button(displayName + "##MSBRefTo" + refID,
                         DPI.WholeWidthButton(windowWidth, 24)))
                     {
-                        selection.ClearSelection(editor);
-                        selection.AddSelection(editor, e);
+                        selection.ClearSelection();
+                        selection.AddSelection(e);
                     }
                 }
                 else if (n is ObjectContainerReference r)
@@ -96,15 +96,15 @@ public static class PropInfo_ReferencesTo
                     // but only the RootObject has the TransformNode and Viewport integration.
                     var mapid = r.Name;
                     var prettyName = $"{Icons.Cube} {mapid}";
-                    prettyName = $"{prettyName} {AliasHelper.GetMapNameAlias(editor.Project, mapid)}";
+                    prettyName = $"{prettyName} {AliasHelper.GetMapNameAlias(view.Project, mapid)}";
 
                     ImGui.SetNextItemWidth(-1);
                     if (ImGui.Button(prettyName + "##MSBRefTo" + refID,
                         DPI.WholeWidthButton(windowWidth, 24)))
                     {
-                        ISelectable rootTarget = r.GetSelectionTarget(editor);
-                        selection.ClearSelection(editor);
-                        selection.AddSelection(editor, rootTarget);
+                        ISelectable rootTarget = r.GetSelectionTarget(view.Universe);
+                        selection.ClearSelection();
+                        selection.AddSelection(rootTarget);
                         // For this type of connection, jump to the object in the list to actually load the map
                         // (is this desirable in other cases?). It could be possible to have a Load context menu
                         // here, but that should be shared with SceneTree.
@@ -113,20 +113,20 @@ public static class PropInfo_ReferencesTo
 
                     if (ImGui.BeginPopupContextItem())
                     {
-                        var universe = editor.Universe;
-                        MapContainer map = editor.Selection.GetMapContainerFromMapID(mapid);
+                        var universe = view.Universe;
+                        MapContainer map = view.Selection.GetMapContainerFromMapID(mapid);
                         if (map == null)
                         {
                             if (ImGui.Selectable("Load Map"))
                             {
-                                editor.Universe.LoadMap(mapid);
+                                view.Universe.LoadMap(mapid);
                             }
                         }
                         else
                         {
                             if (ImGui.Selectable("Unload Map"))
                             {
-                                editor.Universe.UnloadMap(mapid);
+                                view.Universe.UnloadMap(mapid);
                             }
                         }
 

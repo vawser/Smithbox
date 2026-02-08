@@ -1,4 +1,5 @@
-﻿using StudioCore.Utilities;
+﻿using StudioCore.Editors.Viewport;
+using StudioCore.Utilities;
 using System;
 using System.Drawing;
 using System.Numerics;
@@ -59,6 +60,6 @@ public class DbgPrimWireCylinder : DbgPrimWire
         // Use an AABB to approximate this I don't care cylinder intersections are scary
         BoundingBox bb = BoundingBox.Transform(new BoundingBox(new Vector3(-1.0f, 0.0f, -1.0f),
             new Vector3(1.0f, 1.0f, 1.0f)), transform);
-        return Utils.RayBoxIntersection(ref ray, ref bb, out dist);
+        return ViewportUtils.RayBoxIntersection(ref ray, ref bb, out dist);
     }
 }

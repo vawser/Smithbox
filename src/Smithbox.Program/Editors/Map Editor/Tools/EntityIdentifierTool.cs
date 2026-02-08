@@ -10,7 +10,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class EntityIdentifierTool
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
     private ProjectEntry Project;
 
     private string SearchText = "";
@@ -19,9 +19,9 @@ public class EntityIdentifierTool
 
     private string SelectedIdentifier = "";
 
-    public EntityIdentifierTool(MapEditorScreen screen, ProjectEntry project)
+    public EntityIdentifierTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = screen;
+        View = view;
         Project = project;
     }
 
@@ -31,7 +31,7 @@ public class EntityIdentifierTool
     public void OnToolWindow()
     {
         // DS2 is not supported currently since it uses Entity IDs differently to the other games.
-        if(Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             return;
         }
@@ -85,7 +85,7 @@ public class EntityIdentifierTool
 
             ImGui.BeginChild($"EIO_Overview", sectionSize, ImGuiChildFlags.Borders);
 
-            if (Editor.Selection.SelectedMapID == "")
+            if (View.Selection.SelectedMapID == "")
                 ImGui.Text("No map has been loaded and selected yet.");
 
             DisplayEIOList();
@@ -109,7 +109,7 @@ public class EntityIdentifierTool
         if (oldKey == newKey)
             return;
 
-        var map = Editor.Selection.SelectedMapContainer;
+        var map = View.Selection.SelectedMapContainer;
 
         if (EntityCache.ContainsKey(map.Name))
         {
@@ -129,7 +129,7 @@ public class EntityIdentifierTool
 
     public void SetupEntityCache()
     {
-        var map = Editor.Selection.SelectedMapContainer;
+        var map = View.Selection.SelectedMapContainer;
 
         Dictionary<string, Entity> cacheEntry = new Dictionary<string, Entity>();
 
@@ -148,7 +148,7 @@ public class EntityIdentifierTool
 
     public void DisplayEIOList()
     {
-        var map = Editor.Selection.SelectedMapContainer;
+        var map = View.Selection.SelectedMapContainer;
 
         if (map == null)
             return;
@@ -201,9 +201,9 @@ public class EntityIdentifierTool
 
                     if (entity != null)
                     {
-                        Editor.ViewportSelection.ClearSelection(Editor);
-                        Editor.ViewportSelection.AddSelection(Editor, entity);
-                        Editor.FrameAction.ApplyViewportFrame();
+                        View.ViewportSelection.ClearSelection();
+                        View.ViewportSelection.AddSelection(entity);
+                        View.FrameAction.ApplyViewportFrame();
                     }
                 }
 
@@ -285,7 +285,7 @@ public class EntityIdentifierTool
         var baseId = 0;
         var baseIdStr = mapId.Replace("m", "").Replace("_", "");
 
-        switch(Editor.Project.Descriptor.ProjectType)
+        switch(View.Project.Descriptor.ProjectType)
         {
             // 4 digit range with no prefix
             case ProjectType.DES:

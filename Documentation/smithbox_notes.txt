@@ -16,21 +16,18 @@
 # FEATURES
 #---------------------
 - Viewport add ability to change viewport background color
-- Viewport implement orthographic view
-- Viewport add track selection camera toggle - camera locks onto selection and moves in-line with any movement to the selection
 
 - Map Editor add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor implement Edge support for SDT
-- Map Editor look into a AABB bounding box gizmo mode where the centre is placed based on the model (for baked offset models where the position is normally 0,0,0)
-- Implement the auto-BTAB handling actions
-- Add map piece link in BTAB properties 
 
+- Map Editor:
+  - Get gizmos to work in Orthographic/Oblique view mode
+  - Implement the auto-BTAB handling actions
+  - Add map piece link in BTAB properties 
+  
 - Model Editor Add simple JSON export/import for elements of FLVER
 
 - Param Editor Table Group column should have difference highlighting if any of the internal rows are highlighted as different
-- Param Editor add a special-case mass edit search command "item:" which searches all of the itemlot item fields for a match
- - Makes it a lot more feasible to filter to ALL instances of X item within the itemlots without a 8 term search filter
- - Only works with the itemlot params (obviously)
  
 - Text Editor: Implement FMG Descriptor support (to replace enums) 
 

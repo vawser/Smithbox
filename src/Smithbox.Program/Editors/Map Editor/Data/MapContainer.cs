@@ -22,7 +22,7 @@ public class MapContainer : ObjectContainer
 {
 
     [XmlIgnore]
-    private MapEditorScreen Editor;
+    private MapEditorView View;
 
     // This keeps all models that exist when loading a map, so that saves
     // can be byte perfect
@@ -60,12 +60,12 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     public LightAtlasResolver LightAtlasResolver;
 
-    public MapContainer(MapEditorScreen editor, string mapid)
+    public MapContainer(MapEditorView view, string mapid)
     {
-        Editor = editor;
+        View = view;
         Name = mapid;
 
-        LightAtlasResolver = new LightAtlasResolver(Editor, Editor.Project, this);
+        LightAtlasResolver = new LightAtlasResolver(View, View.Project, this);
 
         LoadedModels = new();
 
@@ -84,8 +84,8 @@ public class MapContainer : ObjectContainer
         PartPoses = new();
 
         var t = new MapTransformNode(mapid);
-        RootObject = new MsbEntity(Editor, this, t, MsbEntityType.MapRoot);
-        MapOffsetNode = new MsbEntity(Editor, this, new MapTransformNode(mapid));
+        RootObject = new MsbEntity(View.Universe, this, t, MsbEntityType.MapRoot);
+        MapOffsetNode = new MsbEntity(View.Universe, this, new MapTransformNode(mapid));
 
         RootObject.AddChild(MapOffsetNode);
     }
@@ -129,7 +129,7 @@ public class MapContainer : ObjectContainer
 
         foreach (IMsbPart p in msb.Parts.GetEntries())
         {
-            var n = new MsbEntity(Editor, this, p, MsbEntityType.Part);
+            var n = new MsbEntity(View.Universe, this, p, MsbEntityType.Part);
             Parts.Add(n);
             Objects.Add(n);
             RootObject.AddChild(n);
@@ -137,7 +137,7 @@ public class MapContainer : ObjectContainer
 
         foreach (IMsbRegion p in msb.Regions.GetEntries())
         {
-            var n = new MsbEntity(Editor, this, p, MsbEntityType.Region);
+            var n = new MsbEntity(View.Universe, this, p, MsbEntityType.Region);
             Regions.Add(n);
             Objects.Add(n);
             RootObject.AddChild(n);
@@ -145,7 +145,7 @@ public class MapContainer : ObjectContainer
 
         foreach (IMsbEvent p in msb.Events.GetEntries())
         {
-            var n = new MsbEntity(Editor, this, p, MsbEntityType.Event);
+            var n = new MsbEntity(View.Universe, this, p, MsbEntityType.Event);
             Events.Add(n);
 
             if (p is MSB2.Event.MapOffset mo1)
@@ -181,13 +181,13 @@ public class MapContainer : ObjectContainer
         }
 
         // Part Poses
-        if(Editor.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.DS3)
+        if(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.DS3)
         {
             if(msb is MSB2 msb2)
             {
                 foreach(var entry in msb2.PartPoses)
                 {
-                    var n = new MsbEntity(Editor, this, entry, MsbEntityType.PartPose);
+                    var n = new MsbEntity(View.Universe, this, entry, MsbEntityType.PartPose);
                     PartPoses.Add(n);
                     Objects.Add(n);
                     RootObject.AddChild(n);
@@ -198,7 +198,7 @@ public class MapContainer : ObjectContainer
             {
                 foreach (var entry in msb3.PartsPoses)
                 {
-                    var n = new MsbEntity(Editor, this, entry, MsbEntityType.PartPose);
+                    var n = new MsbEntity(View.Universe, this, entry, MsbEntityType.PartPose);
                     PartPoses.Add(n);
                     Objects.Add(n);
                     RootObject.AddChild(n);
@@ -217,11 +217,11 @@ public class MapContainer : ObjectContainer
 
     public void LoadBTL(FileDictionaryEntry curEntry, BTL btl)
     {
-        var btlParent = new MsbEntity(Editor, this, curEntry.Filename, MsbEntityType.Editor);
+        var btlParent = new MsbEntity(View.Universe, this, curEntry.Filename, MsbEntityType.Editor);
         MapOffsetNode.AddChild(btlParent);
         foreach (BTL.Light l in btl.Lights)
         {
-            var n = new MsbEntity(Editor, this, l, MsbEntityType.Light);
+            var n = new MsbEntity(View.Universe, this, l, MsbEntityType.Light);
             Objects.Add(n);
             btlParent.AddChild(n);
         }
@@ -231,13 +231,13 @@ public class MapContainer : ObjectContainer
 
     public void LoadAIP(string mapName, AIP aip)
     {
-        var autoInvadeParent = new MsbEntity(Editor, this, mapName, MsbEntityType.Editor);
+        var autoInvadeParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
 
         MapOffsetNode.AddChild(autoInvadeParent);
 
         foreach (var point in aip.Points)
         {
-            var newEntity = new MsbEntity(Editor, this, point, MsbEntityType.AutoInvadePoint);
+            var newEntity = new MsbEntity(View.Universe, this, point, MsbEntityType.AutoInvadePoint);
 
             newEntity.SupportsName = false;
 
@@ -250,13 +250,13 @@ public class MapContainer : ObjectContainer
 
     public void LoadBTAB(string fileName, BTAB btab)
     {
-        var lightAtlasParent = new MsbEntity(Editor, this, fileName, MsbEntityType.Editor);
+        var lightAtlasParent = new MsbEntity(View.Universe, this, fileName, MsbEntityType.Editor);
 
         MapOffsetNode.AddChild(lightAtlasParent);
 
         foreach (var entry in btab.Entries)
         {
-            var newEntity = new MsbEntity(Editor, this, entry, MsbEntityType.LightAtlas);
+            var newEntity = new MsbEntity(View.Universe, this, entry, MsbEntityType.LightAtlas);
             newEntity.SupportsName = false;
 
             Objects.Add(newEntity);
@@ -268,13 +268,13 @@ public class MapContainer : ObjectContainer
 
     public void LoadBTPB(string fileName, BTPB btpb)
     {
-        var lightProbeParent = new MsbEntity(Editor, this, fileName, MsbEntityType.Editor);
+        var lightProbeParent = new MsbEntity(View.Universe, this, fileName, MsbEntityType.Editor);
 
         MapOffsetNode.AddChild(lightProbeParent);
 
         foreach (var volume in btpb.Groups)
         {
-            var newEntity = new MsbEntity(Editor, this, volume, MsbEntityType.LightProbeVolume);
+            var newEntity = new MsbEntity(View.Universe, this, volume, MsbEntityType.LightProbeVolume);
             newEntity.SupportsName = false;
 
             Objects.Add(newEntity);
@@ -286,24 +286,24 @@ public class MapContainer : ObjectContainer
 
     public void LoadHavokNVA(string mapName, NVA nva)
     {
-        var nvaParent = new MsbEntity(Editor, this, mapName, MsbEntityType.Editor);
+        var nvaParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
 
         MapOffsetNode.AddChild(nvaParent);
 
         // Navmesh Info
         foreach (var curNavmesh in nva.NavmeshInfoEntries)
         {
-            var newEntity = new MsbEntity(Editor, this, curNavmesh, MsbEntityType.Navmesh);
+            var newEntity = new MsbEntity(View.Universe, this, curNavmesh, MsbEntityType.Navmesh);
 
             newEntity.SupportsName = false;
 
             var navid = $@"n{curNavmesh.ModelID:D6}";
-            var navname = "n" + ModelLocator.MapModelNameToAssetName(Editor.Project, mapName, navid).Substring(1);
+            var navname = "n" + ModelLocator.MapModelNameToAssetName(View.Project, mapName, navid).Substring(1);
 
-            ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(Editor.Project, mapName, navname);
+            ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
 
             var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                Editor.Universe.RenderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
+                View.Universe.GetCurrentScene(), nasset.AssetVirtualPath, ModelMarkerType.Other);
 
             mesh.World = newEntity.GetWorldMatrix();
             mesh.SetSelectable(newEntity);
@@ -317,7 +317,7 @@ public class MapContainer : ObjectContainer
         // Face Data
         foreach (var curEntry in nva.FaceDataEntries)
         {
-            var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
             newEntity.SupportsName = false;
 
@@ -328,7 +328,7 @@ public class MapContainer : ObjectContainer
         // Node Bank Data
         foreach (var curEntry in nva.NodeBankEntries)
         {
-            var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
             newEntity.SupportsName = false;
 
@@ -350,7 +350,7 @@ public class MapContainer : ObjectContainer
         // Connectors
         foreach (var curEntry in nva.ConnectorEntries)
         {
-            var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
             newEntity.SupportsName = false;
 
@@ -361,11 +361,11 @@ public class MapContainer : ObjectContainer
         // Level Connectors
         foreach (var curEntry in nva.LevelConnectorEntries)
         {
-            var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
             newEntity.SupportsName = false;
 
-            var mesh = RenderableHelper.GetLevelConnectorSphereProxy(Editor.MapViewportView.RenderScene);
+            var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.ViewportHandler.ActiveViewport.RenderScene);
 
             mesh.World = newEntity.GetWorldMatrix();
             mesh.SetSelectable(newEntity);
@@ -392,7 +392,7 @@ public class MapContainer : ObjectContainer
             // Section 10
             foreach (var curEntry in nva.Section10Entries)
             {
-                var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
                 newEntity.SupportsName = false;
 
@@ -403,7 +403,7 @@ public class MapContainer : ObjectContainer
             // Section 11
             foreach (var curEntry in nva.Section11Entries)
             {
-                var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
                 newEntity.SupportsName = false;
 
@@ -414,7 +414,7 @@ public class MapContainer : ObjectContainer
             // Section 12
             foreach (var curEntry in nva.Section12Entries)
             {
-                var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
                 newEntity.SupportsName = false;
 
@@ -425,7 +425,7 @@ public class MapContainer : ObjectContainer
             // Section 13
             foreach (var curEntry in nva.Section13Entries)
             {
-                var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
                 newEntity.SupportsName = false;
 

@@ -1,23 +1,18 @@
 ﻿using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
-using StudioCore.Renderer;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
+using Vortice.Vulkan;
 
 namespace StudioCore.Editors.MapEditor;
 
 public class MapViewportView
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    private Sdl2Window Window;
-    private GraphicsDevice Device;
-    public RenderScene RenderScene;
-
-    public IViewport Viewport;
     public Rectangle Rect;
 
     public bool AltHeld;
@@ -27,57 +22,95 @@ public class MapViewportView
 
     public PlacementEntity PlacementOrb;
 
-    public MapViewportView(MapEditorScreen editor, ProjectEntry project)
+    public MapViewportView(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        Window = Smithbox.Instance._context.Window;
-        Device = Smithbox.Instance._context.Device;
+        view.Window = Smithbox.Instance._context.Window;
+        view.Device = Smithbox.Instance._context.Device;
 
-        Rect = Window.Bounds;
+        Rect = view.Window.Bounds;
 
-        if (Device != null)
-        {
-            RenderScene = new RenderScene();
-        }
     }
 
-    public void Setup()
+    public void Display()
     {
-        if (Device != null && Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+        foreach (var viewport in View.ViewportHandler.Viewports)
         {
-            Viewport = new VulkanViewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
+            if (viewport == null)
+            {
+                continue;
+            }
 
-            RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
-        }
-        else
-        {
-            Viewport = new NullViewport(Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
+            if(viewport.Viewport is VulkanViewport vulkanViewport)
+            {
+                vulkanViewport.Display();
+
+                if (View.Universe != null && PlacementOrb == null)
+                {
+                    PlacementOrb = new PlacementEntity(View.Universe);
+                }
+
+                if (PlacementOrb != null)
+                {
+                    PlacementOrb.UpdateRenderModel();
+                }
+            }
+
+            if (viewport.Viewport is NullViewport nullViewport)
+            {
+                nullViewport.Display();
+            }
         }
     }
 
-    public Vector3 GetCameraPosition()
+    public void Update(float deltatime)
     {
-        if (Device != null)
+        foreach (var viewport in View.ViewportHandler.Viewports)
         {
-            return Viewport.ViewportCamera.CameraTransform.Position;
+            ViewportUsingKeyboard = viewport.Viewport.Update(View.Window, deltatime);
         }
-
-        return new Vector3();
     }
 
-    /// <summary>
-    /// Get the placement position. For usage with the tools.
-    /// </summary>
-    /// <returns></returns>
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        View.Window = window;
+        Rect = window.Bounds;
+    }
+
+    public void Draw(GraphicsDevice device, CommandList cl)
+    {
+        foreach (var viewport in View.ViewportHandler.Viewports)
+        {
+            viewport.Viewport.Draw(device, cl);
+        }
+    }
+
+    public bool InputCaptured()
+    {
+        var activeViewport = View.ViewportHandler.ActiveViewport;
+
+        if (activeViewport.Viewport != null)
+        {
+            return activeViewport.Viewport.IsViewportSelected;
+        }
+
+        return false;
+    }
+
     public Vector3 GetPlacementPosition()
     {
-        if (Device != null)
+        var activeViewport = View.ViewportHandler.ActiveViewport;
+
+        if(activeViewport.Viewport == null)
+            return Vector3.Zero;
+
+        if (View.Device != null)
         {
             // Get the camera's view matrix and position
-            var viewMatrix = Viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH;
-            var cameraPosition = Viewport.ViewportCamera.CameraTransform.Position;
+            var viewMatrix = activeViewport.Viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH;
+            var cameraPosition = activeViewport.Viewport.ViewportCamera.CameraTransform.Position;
 
             // Invert the view matrix to get the camera's world matrix
             Matrix4x4.Invert(viewMatrix, out var cameraWorldMatrix);
@@ -101,11 +134,16 @@ public class MapViewportView
     /// <returns></returns>
     public Matrix4x4 GetPlacementTransform()
     {
-        if (Device != null)
+        var activeViewport = View.ViewportHandler.ActiveViewport;
+
+        if (activeViewport.Viewport == null)
+            return Matrix4x4.Identity;
+
+        if (View.Device != null)
         {
             // Get the camera's view matrix and position
-            var viewMatrix = Viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH;
-            var cameraPosition = Viewport.ViewportCamera.CameraTransform.Position;
+            var viewMatrix = activeViewport.Viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH;
+            var cameraPosition = activeViewport.Viewport.ViewportCamera.CameraTransform.Position;
 
             Matrix4x4.Invert(viewMatrix, out var cameraWorldMatrix);
 
@@ -134,39 +172,4 @@ public class MapViewportView
         return Matrix4x4.Identity;
     }
 
-    public void OnGui()
-    {
-        Viewport.OnGui();
-
-        if (Editor.Universe != null && PlacementOrb == null)
-        {
-            PlacementOrb = new PlacementEntity(Editor);
-        }
-
-        if (PlacementOrb != null)
-        {
-            PlacementOrb.UpdateRenderModel(Editor);
-        }
-    }
-
-    public void Update(float deltatime)
-    {
-        ViewportUsingKeyboard = Viewport.Update(Window, deltatime);
-    }
-
-    public void EditorResized(Sdl2Window window, GraphicsDevice device)
-    {
-        Window = window;
-        Rect = window.Bounds;
-    }
-
-    public void Draw(GraphicsDevice device, CommandList cl)
-    {
-        Viewport.Draw(device, cl);
-    }
-
-    public bool InputCaptured()
-    {
-        return Viewport.IsViewportSelected;
-    }
 }

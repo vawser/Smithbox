@@ -10,44 +10,30 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// Select the individual FLVER to load
 /// </summary>
-public class ModelSelectView
+public class ModelSelectionList
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
     public bool ApplyAutoSelectPass = false;
 
-    public ModelSelectView(ModelEditorScreen editor, ProjectEntry project)
+    public ModelSelectionList(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
-    public void OnGui()
+    public void Display(float width, float height)
     {
-        var scale = DPI.UIScale();
+        UIHelper.SimpleHeader("Files", "");
 
-        if (CFG.Current.Interface_ModelEditor_ModelSelectList)
-        {
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+        DisplayMenubar();
 
-            if (ImGui.Begin($@"Model List##modelSelectionList", ImGuiWindowFlags.MenuBar))
-            {
-                FocusManager.SetFocus(EditorFocusContext.ModelEditor_FileList);
+        ImGui.BeginChild($"FileSection", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
-                DisplayMenubar();
+        DisplayModelSelectionList();
 
-                ImGui.BeginChild($"modelSelectListSection");
-
-                DisplayModelSelectionList();
-
-                ImGui.EndChild();
-            }
-
-            ImGui.End();
-            ImGui.PopStyleColor();
-        }
+        ImGui.EndChild();
     }
 
     public void DisplayMenubar()
@@ -73,18 +59,18 @@ public class ModelSelectView
 
     public void DisplayModelSelectionList()
     {
-        if (Editor.Selection.SelectedModelContainerWrapper == null)
+        if (View.Selection.SelectedModelContainerWrapper == null)
             return;
 
-        var container = Editor.Selection.SelectedModelContainerWrapper;
+        var container = View.Selection.SelectedModelContainerWrapper;
 
         int i = 0;
         foreach(var wrapper in container.Models)
         {
             bool selected = false;
-            if (Editor.Selection.SelectedModelWrapper != null)
+            if (View.Selection.SelectedModelWrapper != null)
             {
-                if (Editor.Selection.SelectedModelWrapper.Name == wrapper.Name)
+                if (View.Selection.SelectedModelWrapper.Name == wrapper.Name)
                 {
                     selected = true;
                 }
@@ -96,14 +82,15 @@ public class ModelSelectView
             {
                 if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                 {
-                    if(Editor.Selection.SelectedModelWrapper != null)
+                    if(View.Selection.SelectedModelWrapper != null)
                     {
-                        Editor.Selection.SelectedModelWrapper.Unload();
+                        View.Selection.SelectedModelWrapper.Unload();
                     }
 
-                    Editor.Selection.SelectedModelWrapper = wrapper;
+                    View.Selection.SelectedModelWrapper = wrapper;
 
-                    Editor.EditorActionManager.Clear();
+                    View.ViewportActionManager.Clear();
+                    View.ActionManager.Clear();
 
                     wrapper.Load();
                 }
@@ -123,14 +110,15 @@ public class ModelSelectView
             {
                 foreach (var wrapper in container.Models)
                 {
-                    if (Editor.Selection.SelectedModelWrapper != null)
+                    if (View.Selection.SelectedModelWrapper != null)
                     {
-                        Editor.Selection.SelectedModelWrapper.Unload();
+                        View.Selection.SelectedModelWrapper.Unload();
                     }
 
-                    Editor.Selection.SelectedModelWrapper = wrapper;
+                    View.Selection.SelectedModelWrapper = wrapper;
 
-                    Editor.EditorActionManager.Clear();
+                    View.ViewportActionManager.Clear();
+                    View.ActionManager.Clear();
 
                     wrapper.Load();
                 }
@@ -144,21 +132,22 @@ public class ModelSelectView
         {
             if (ImGui.Selectable("Load"))
             {
-                if (Editor.Selection.SelectedModelWrapper != null)
+                if (View.Selection.SelectedModelWrapper != null)
                 {
-                    Editor.Selection.SelectedModelWrapper.Unload();
+                    View.Selection.SelectedModelWrapper.Unload();
                 }
 
-                Editor.Selection.SelectedModelWrapper = wrapper;
+                View.Selection.SelectedModelWrapper = wrapper;
 
-                Editor.EditorActionManager.Clear();
+                View.ViewportActionManager.Clear();
+                View.ActionManager.Clear();
 
                 wrapper.Load();
             }
 
             if (ImGui.Selectable("Unload"))
             {
-                Editor.Selection.SelectedModelWrapper = null;
+                View.Selection.SelectedModelWrapper = null;
 
                 wrapper.Unload();
             }

@@ -6,24 +6,24 @@ using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public static class ModelInsightHelper
+public class ModelInsightHelper
 {
-    public static ModelEditorScreen Editor;
-    public static ProjectEntry Project;
+    public ModelEditorView View;
+    public ProjectEntry Project;
 
-    public static void Setup(ModelEditorScreen editor, ProjectEntry project)
+    public ModelInsightHelper(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         Entries = new();
     }
 
-    public static Dictionary<string, ModelInsightEntry> Entries { get; set; }
-    public static ModelInsightEntry SelectedDataEntry { get; set; }
-    public static FlverInsightEntry SelectedFlverEntry { get; set; }
+    public Dictionary<string, ModelInsightEntry> Entries { get; set; }
+    public ModelInsightEntry SelectedDataEntry { get; set; }
+    public FlverInsightEntry SelectedFlverEntry { get; set; }
 
-    public static void AddEntry(ModelContainer container)
+    public void AddEntry(ModelContainer container)
     {
         if (!Entries.ContainsKey(container.Name))
         {
@@ -31,7 +31,7 @@ public static class ModelInsightHelper
         }
     }
 
-    public static void ClearEntry(ModelContainer container)
+    public void ClearEntry(ModelContainer container)
     {
         if (Entries.ContainsKey(container.Name))
         {
@@ -39,7 +39,7 @@ public static class ModelInsightHelper
         }
     }
 
-    public static void UpdateEntry(string flverVirtPath, string texVirtPath, IFlver flver, MTD mtd, MATBIN matbin, string materialStr)
+    public void UpdateEntry(string flverVirtPath, string texVirtPath, IFlver flver, MTD mtd, MATBIN matbin, string materialStr)
     {
         if (Project == null)
             return;
@@ -50,10 +50,10 @@ public static class ModelInsightHelper
         var flverName = Path.GetFileNameWithoutExtension(flverVirtPath);
         var textureName = Path.GetFileName(texVirtPath);
 
-        if (Editor.Selection.SelectedModelWrapper == null)
+        if (View.Selection.SelectedModelWrapper == null)
             return;
 
-        var wrapperName = Editor.Selection.SelectedModelWrapper.Name;
+        var wrapperName = View.Selection.SelectedModelWrapper.Name;
 
         if (Entries.ContainsKey(wrapperName))
         {

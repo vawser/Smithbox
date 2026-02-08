@@ -7,11 +7,13 @@ using System.Numerics;
 
 namespace StudioCore.Renderer;
 
-public static class ResourceLoadWindow
+public class ResourceLoadWindow
 {
-    private static bool TaskWindowOpen = true;
+    private bool TaskWindowOpen = true;
 
-    public static void DisplayWindow(float w, float h)
+    public ResourceLoadWindow() { }
+
+    public void DisplayWindow(float w, float h)
     {
         var scale = DPI.UIScale();
 

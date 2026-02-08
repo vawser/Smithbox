@@ -1,4 +1,5 @@
-﻿using StudioCore.Utilities;
+﻿using StudioCore.Editors.Viewport;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
@@ -126,7 +127,7 @@ public class DbgPrimWireBox : DbgPrimWire
     {
         Vector3 scale;
         Matrix4x4 transformNoScale;
-        Utils.ExtractScale(transform, out scale, out transformNoScale);
+        ViewportUtils.ExtractScale(transform, out scale, out transformNoScale);
         Matrix4x4 invw = transformNoScale.Inverse();
         Vector3 newo = Vector3.Transform(ray.Origin, invw);
         Vector3 newd = Vector3.TransformNormal(ray.Direction, invw);
@@ -144,7 +145,7 @@ public class DbgPrimWireBox : DbgPrimWire
                     Vector3.Dot(dir, Vector3.UnitX) + Vector3.Dot(dir, Vector3.UnitY));
                 var tol = 0.008f * Vector3.Distance(newo, c);
                 var bb = new BoundingBox(a - mag * tol, b + mag * tol);
-                if (Utils.RayBoxIntersection(ref tray, ref bb, out dist))
+                if (ViewportUtils.RayBoxIntersection(ref tray, ref bb, out dist))
                 {
                     if (dist > 0.0f)
                     {

@@ -82,27 +82,23 @@ public class BoxSelection
         }
     }
 
-    private void UpdateSelection(WeakReference<ISelectable> obj, EditorScreen targetEditor, bool ctrl)
+    private void UpdateSelection(WeakReference<ISelectable> obj, bool ctrl)
     {
-        if (!obj.TryGetTarget(out ISelectable target) || targetEditor == null) return;
+        if (!obj.TryGetTarget(out ISelectable target)) 
+            return;
+
         if (ctrl)
         {
-            Parent.ViewportSelection.RemoveSelection(targetEditor, target);
+            Parent.ViewportSelection.RemoveSelection(target);
         }
         else
         {
-            Parent.ViewportSelection.AddSelection(targetEditor, target);
+            Parent.ViewportSelection.AddSelection(target);
         }
     }
 
     private void SelectObjectsInDragArea(Vector2 start, Vector2 end)
     {
-        EditorScreen targetEditor = Parent.ViewportType switch
-        {
-            ViewportType.MapEditor => Parent.MapEditor,
-            ViewportType.ModelEditor => Parent.ModelEditor,
-            _ => null
-        };
         float minX = MathF.Min(start.X, end.X) - Parent.X;
         float minY = MathF.Min(start.Y, end.Y) - Parent.Y;
         float maxX = MathF.Max(start.X, end.X) - Parent.X;
@@ -110,49 +106,81 @@ public class BoxSelection
         bool shift = InputManager.HasShiftDown();
         bool ctrl = InputManager.HasCtrlDown();
 
-        if (!shift && !ctrl && targetEditor != null)
-            Parent.ViewportSelection.ClearSelection(targetEditor);
+        if (!shift && !ctrl)
+        {
+            Parent.ViewportSelection.ClearSelection();
+        }
+
         List<(WeakReference<ISelectable> obj, float distance)> selectableObjects = new();
+
         for (int i = 0; i < Parent.RenderScene.OpaqueRenderables.cBounds.Length; i++)
         {
             VisibleValidComponent visibleValidComponent = Parent.RenderScene.OpaqueRenderables.cVisible[i];
+
             bool isCulled = Parent.RenderScene.OpaqueRenderables.cCulled[i];
-            if (!(visibleValidComponent._valid && !isCulled)) continue;
+
+            if (!(visibleValidComponent._valid && !isCulled)) 
+                continue;
+
             BoundingBox obj = Parent.RenderScene.OpaqueRenderables.cBounds[i];
-            if (Parent.Frustum.Contains(obj) != ContainmentType.Contains) continue;
+
+            if (Parent.ViewportCamera.Frustum.Contains(obj) != ContainmentType.Contains) 
+                continue;
+
             Vector3 center = obj.GetCenter();
+
             float distanceToCamera = Vector3.Distance(center, Parent.ViewportCamera.CameraTransform.Position);
+
             WeakReference<ISelectable> selectable = Parent.RenderScene.OpaqueRenderables.cSelectables[i];
-            if (selectable == null) continue;
+
+            if (selectable == null) 
+                continue;
+
             Vector2 screenPos = WorldToScreen(center);
+
             if (screenPos.X >= minX && screenPos.X <= maxX && screenPos.Y >= minY && screenPos.Y <= maxY)
+            {
                 selectableObjects.Add((selectable, distanceToCamera));
+            }
         }
+
         selectableObjects.Sort((a, b) => a.distance.CompareTo(b.distance));
+
         float lastSelectedDistance = -1;
+
         foreach ((WeakReference<ISelectable> obj, float distanceToCamera) in selectableObjects)
         {
             if (lastSelectedDistance < 0)
             {
                 lastSelectedDistance = distanceToCamera;
-                UpdateSelection(obj, targetEditor, ctrl);
+
+                UpdateSelection(obj, ctrl);
+
                 continue;
             }
-            if (distanceToCamera > lastSelectedDistance * CFG.Current.Viewport_Box_Selection_Distance_Threshold) break;
+
+            if (distanceToCamera > lastSelectedDistance * CFG.Current.Viewport_Box_Selection_Distance_Threshold) 
+                break;
+
             lastSelectedDistance = distanceToCamera;
-            UpdateSelection(obj, targetEditor, ctrl);
+
+            UpdateSelection(obj, ctrl);
         }
     }
 
     private Vector2 WorldToScreen(Vector3 worldPos)
     {
         Vector4 world = new(worldPos, 1.0f);
-        Vector4 clip = Vector4.Transform(world, Parent.ViewportCamera.CameraTransform.CameraViewMatrixLH * Parent.ProjectionMatrix);
+
+        Vector4 clip = Vector4.Transform(world, Parent.ViewportCamera.CameraTransform.CameraViewMatrixLH * Parent.ViewportCamera.ProjectionMatrix);
+
         if (clip.W <= 0.0f)
         {
             return new Vector2(-10000, -10000);
         }
+
         Vector3 ndc = new(clip.X / clip.W, clip.Y / clip.W, clip.Z / clip.W);
+
         return new Vector2(
             (ndc.X + 1f) / 2f * Parent.Width,
             (1f - ndc.Y) / 2f * Parent.Height

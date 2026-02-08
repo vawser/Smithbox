@@ -30,11 +30,11 @@ public class ViewportSelection
         _storedSelection = _selected;
     }
 
-    public void ResetSelection(EditorScreen editor)
+    public void ResetSelection()
     {
         foreach (var entry in _selected)
         {
-            AddSelection(editor, entry);
+            AddSelection(entry);
         }
     }
 
@@ -168,10 +168,10 @@ public class ViewportSelection
     /// <summary>
     /// Clear the current Selection.
     /// </summary>
-    public void ClearSelection(EditorScreen editor)
+    public void ClearSelection()
     {
         foreach (ISelectable sel in _selected)
-            sel.OnDeselected(editor);
+            sel.OnDeselected();
 
         _selected.Clear();
     }
@@ -179,11 +179,11 @@ public class ViewportSelection
     /// <summary>
     /// Add the passed Selectable to the current Selection.
     /// </summary>
-    public void AddSelection(EditorScreen editor, ISelectable selected)
+    public void AddSelection(ISelectable selected)
     {
         if (selected != null)
         {
-            selected.OnSelected(editor);
+            selected.OnSelected();
             _selected.Add(selected);
         }
     }
@@ -191,12 +191,12 @@ public class ViewportSelection
     /// <summary>
     /// Add the passed list of Selectables to the current Selection.
     /// </summary>
-    public void AddSelection(EditorScreen editor, List<ISelectable> selected)
+    public void AddSelection(List<ISelectable> selected)
     {
         foreach (ISelectable sel in selected)
             if (sel != null)
             {
-                sel.OnSelected(editor);
+                sel.OnSelected();
                 _selected.Add(sel);
             }
     }
@@ -204,11 +204,11 @@ public class ViewportSelection
     /// <summary>
     /// Remove the passed Selectable from the current selection.
     /// </summary>
-    public void RemoveSelection(EditorScreen editor, ISelectable selected)
+    public void RemoveSelection(ISelectable selected)
     {
         if (selected != null)
         {
-            selected.OnDeselected(editor);
+            selected.OnDeselected();
             _selected.Remove(selected);
         }
     }

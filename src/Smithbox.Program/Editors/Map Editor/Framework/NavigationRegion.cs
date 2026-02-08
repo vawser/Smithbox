@@ -50,12 +50,12 @@ public class NavigationRegion : ISelectable
     /// </summary>
     public List<NavigationRegion> Neighbors { get; }
 
-    public void OnDeselected(EditorScreen editor)
+    public void OnDeselected()
     {
         throw new NotImplementedException();
     }
 
-    public void OnSelected(EditorScreen editor)
+    public void OnSelected()
     {
         throw new NotImplementedException();
     }

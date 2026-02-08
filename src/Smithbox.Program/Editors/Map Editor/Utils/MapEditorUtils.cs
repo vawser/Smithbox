@@ -52,32 +52,4 @@ public class MapEditorUtils
         return entities;
     }
 
-    /// <summary>
-    /// Get the list of entities from the currently selected map (that has been loaded).
-    /// </summary>
-    /// <param name="baseEditor"></param>
-    /// <param name="projectEntry"></param>
-    /// <returns></returns>
-    public static List<Entity> GetCurrentMapEntities(Smithbox baseEditor, ProjectEntry projectEntry)
-    {
-        var entities = new List<Entity>();
-
-        foreach (var entry in projectEntry.Handler.MapData.PrimaryBank.Maps)
-        {
-            var wrapper = entry.Value;
-
-            if (wrapper.Name != projectEntry.Handler.MapEditor.Selection.SelectedMapID)
-                continue;
-
-            if (wrapper.MapContainer == null)
-                continue;
-
-            foreach (var ent in wrapper.MapContainer.Objects)
-            {
-                entities.Add(ent);
-            }
-        }
-
-        return entities;
-    }
 }

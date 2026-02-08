@@ -13,15 +13,15 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class CreateAction
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
     public List<(string, Type)> Classes = new();
     public Type CreateSelectedType;
 
-    public CreateAction(ModelEditorScreen editor, ProjectEntry project)
+    public CreateAction(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         // Setup the classes list, done manually since FLVER doesn't change
@@ -86,9 +86,9 @@ public class CreateAction
 
         var display = false;
 
-        if(Editor.Selection.SelectedModelWrapper != null)
+        if(View.Selection.SelectedModelWrapper != null)
         {
-            var container = Editor.Selection.SelectedModelWrapper.Container;
+            var container = View.Selection.SelectedModelWrapper.Container;
 
             if (container != null)
                 display = true;
@@ -123,9 +123,9 @@ public class CreateAction
 
     public void ApplyObjectCreation()
     {
-        if (Editor.Selection.SelectedModelWrapper != null)
+        if (View.Selection.SelectedModelWrapper != null)
         {
-            var container = Editor.Selection.SelectedModelWrapper.Container;
+            var container = View.Selection.SelectedModelWrapper.Container;
 
             if (container != null && CreateSelectedType != null)
             {
@@ -163,9 +163,10 @@ public class CreateAction
             modelObjType = ModelEntityType.Mesh;
         }
 
-        var newObj = new ModelEntity(Editor, container, newEntity, modelObjType);
+        var newObj = new ModelEntity(View.Universe, container, newEntity, modelObjType);
 
-        var act = new AddModelObjectAction(Editor, Project, container, new List<ModelEntity> { newObj });
-        Editor.EditorActionManager.ExecuteAction(act);
+        var act = new AddModelObjectAction(View, Project, container, new List<ModelEntity> { newObj });
+
+        View.ViewportActionManager.ExecuteAction(act);
     }
 }

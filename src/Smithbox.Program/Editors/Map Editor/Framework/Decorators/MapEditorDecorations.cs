@@ -23,12 +23,12 @@ public static class MapEditorDecorations
         "treasureboxparam"
     };
 
-    public static bool ParamRefRow(MapEditorScreen editor, MapEntityPropertyFieldMeta meta, PropertyInfo propinfo, object val, ref object newObj)
+    public static bool ParamRefRow(MapEditorView view, MapEntityPropertyFieldMeta meta, PropertyInfo propinfo, object val, ref object newObj)
     {
-        if (editor.Project.Handler.ParamEditor == null)
+        if (view.Project.Handler.ParamEditor == null)
             return false;
 
-        var activeView = editor.Project.Handler.ParamEditor.ViewHandler.ActiveView;
+        var activeView = view.Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
         if (meta != null && meta.ParamRef.Count > 0)
         {
@@ -42,7 +42,7 @@ public static class MapEditorDecorations
                     foreach (var param in DS2_ObjectInstanceParams)
                     {
                         var paramName = param;
-                        var selection = editor.ViewportSelection;
+                        var selection = view.ViewportSelection;
 
                         if (selection.IsSelection())
                         {
@@ -59,7 +59,7 @@ public static class MapEditorDecorations
                 // DS1 Bank Params
                 else if (meta.SpecialHandling == "BankParam")
                 {
-                    var selection = editor.ViewportSelection;
+                    var selection = view.ViewportSelection;
 
                     if (selection.IsSelection())
                     {
@@ -81,7 +81,7 @@ public static class MapEditorDecorations
                 // DS2 Map Params
                 else if (meta.SpecialHandling == "MapParam")
                 {
-                    var selection = editor.ViewportSelection;
+                    var selection = view.ViewportSelection;
 
                     if (selection.IsSelection())
                     {
@@ -106,7 +106,7 @@ public static class MapEditorDecorations
 
             ImGui.NextColumn();
 
-            if (editor.Project.Handler.ParamEditor != null)
+            if (view.Project.Handler.ParamEditor != null)
             {
                 ParamReferenceHelper.Hint(activeView, refs, null, val);
                 ParamReferenceHelper.Click(activeView, val, null, refs);
@@ -123,12 +123,12 @@ public static class MapEditorDecorations
         return false;
     }
 
-    public static bool FmgRefRow(MapEditorScreen editor, MapEntityPropertyFieldMeta meta, PropertyInfo propinfo, object val, ref object newObj)
+    public static bool FmgRefRow(MapEditorView view, MapEntityPropertyFieldMeta meta, PropertyInfo propinfo, object val, ref object newObj)
     {
-        if (editor.Project.Handler.ParamEditor == null)
+        if (view.Project.Handler.ParamEditor == null)
             return false;
 
-        var activeView = editor.Project.Handler.ParamEditor.ViewHandler.ActiveView;
+        var activeView = view.Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
         if (meta != null && meta.FmgRef.Count > 0)
         {
@@ -155,7 +155,7 @@ public static class MapEditorDecorations
     /// Enum List
     /// </summary>
     public static bool GenericEnumRow(
-        MapEditorScreen editor,
+        MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         PropertyInfo propinfo,
         object val,
@@ -200,7 +200,7 @@ public static class MapEditorDecorations
 
             if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
             {
-                var opened = MsbEnumContextMenu(editor, meta, propinfo, val, ref newVal, options);
+                var opened = MsbEnumContextMenu(view, meta, propinfo, val, ref newVal, options);
                 ImGui.EndPopup();
                 return opened;
             }
@@ -212,7 +212,7 @@ public static class MapEditorDecorations
     private static string enumSearchStr = "";
 
     public static bool MsbEnumContextMenu(
-        MapEditorScreen editor,
+        MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         PropertyInfo propinfo,
         object val,
@@ -253,7 +253,7 @@ public static class MapEditorDecorations
     /// Map Reference
     /// </summary>
     public static bool MsbReferenceRow(
-        MapEditorScreen editor,
+        MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         PropertyInfo propInfo,
         object val,
@@ -318,13 +318,13 @@ public static class MapEditorDecorations
                     box = nodeBox;
                 }
 
-                editor.FrameAction.ApplyViewportFrameWithBox(box);
+                view.FrameAction.ApplyViewportFrameWithBox(box);
             }
 
             ImGui.SameLine();
 
             // Name
-            var alias = AliasHelper.GetEntityAliasName(editor.Project, entity);
+            var alias = AliasHelper.GetEntityAliasName(view.Project, entity);
 
             var displayText = $"";
 
@@ -383,7 +383,7 @@ public static class MapEditorDecorations
 
         if (ImGui.BeginPopupContextItem($"{msbRef.ReferenceType.Name}RefContextMenu"))
         {
-            var changed = PropertyRowMsbRefContextItems(editor, meta, msbRef, val, ref newval, map);
+            var changed = PropertyRowMsbRefContextItems(view, meta, msbRef, val, ref newval, map);
             ImGui.EndPopup();
             return changed;
         }
@@ -392,7 +392,7 @@ public static class MapEditorDecorations
     }
 
     public static bool PropertyRowMsbRefContextItems(
-        MapEditorScreen editor,
+        MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         MSBReference reference,
         object oldval,
@@ -452,7 +452,7 @@ public static class MapEditorDecorations
     /// Alias List
     /// </summary>
     public static bool AliasEnumRow(
-        MapEditorScreen editor,
+        MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         PropertyInfo propinfo,
         object val,
@@ -461,7 +461,7 @@ public static class MapEditorDecorations
         bool display = false;
         List<AliasEntry> options = null;
 
-        var aliases = editor.Project.Handler.ProjectData.Aliases;
+        var aliases = view.Project.Handler.ProjectData.Aliases;
 
         if (meta != null && meta.ShowParticleList && aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particleAliases))
         {
@@ -528,7 +528,7 @@ public static class MapEditorDecorations
 
             if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
             {
-                var opened = MsbAliasEnumContextMenu(editor, meta, propinfo, val, ref newVal, options);
+                var opened = MsbAliasEnumContextMenu(view, meta, propinfo, val, ref newVal, options);
                 ImGui.EndPopup();
                 return opened;
             }
@@ -538,7 +538,7 @@ public static class MapEditorDecorations
     }
 
     public static bool MsbAliasEnumContextMenu(
-        MapEditorScreen editor,
+        MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         PropertyInfo propinfo,
         object val,
@@ -579,7 +579,7 @@ public static class MapEditorDecorations
     /// DS2: Spawn State List
     /// </summary>
     public static bool SpawnStateListRow(
-        MapEditorScreen editor,
+        MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         PropertyInfo propinfo,
         object val,
@@ -597,7 +597,7 @@ public static class MapEditorDecorations
             {
                 matchId = $"{rowID}".Substring(0, 3);
 
-                var states = editor.Project.Handler.MapData.MapSpawnStates.list;
+                var states = view.Project.Handler.MapData.MapSpawnStates.list;
                 var matchedState = states.Where(e => e.id == matchId).FirstOrDefault();
                 if (matchedState != null)
                 {
@@ -649,7 +649,7 @@ public static class MapEditorDecorations
 
             if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
             {
-                var opened = MsbSpawnStateEnumContextMenu(editor, meta, propinfo, val, ref newVal, options);
+                var opened = MsbSpawnStateEnumContextMenu(view, meta, propinfo, val, ref newVal, options);
                 ImGui.EndPopup();
                 return opened;
             }
@@ -659,7 +659,7 @@ public static class MapEditorDecorations
     }
 
     public static bool MsbSpawnStateEnumContextMenu(
-        MapEditorScreen editor,
+        MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         PropertyInfo propinfo,
         object val,
@@ -700,7 +700,7 @@ public static class MapEditorDecorations
     /// ER: Mask List
     /// </summary>
     public static bool EldenRingAssetMaskAndAnimRow(
-        MapEditorScreen editor,
+        MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         PropertyInfo propinfo,
         object oldValue,
@@ -716,7 +716,7 @@ public static class MapEditorDecorations
             FormatMaskEntry targetEntry = null;
 
             // Get the entry for the current model
-            foreach (var entry in editor.Project.Handler.MapData.MsbMasks.list)
+            foreach (var entry in view.Project.Handler.MapData.MsbMasks.list)
             {
                 if (assetEnt.ModelName == entry.model)
                 {
@@ -925,7 +925,7 @@ public static class MapEditorDecorations
     /// Model Link Button
     /// </summary>
     public static void ModelNameRow(
-        MapEditorScreen editor,
+        MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         IEnumerable<Entity> entSelection,
         PropertyInfo propinfo,

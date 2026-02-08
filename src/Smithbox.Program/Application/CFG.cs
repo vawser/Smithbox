@@ -457,12 +457,9 @@ public class CFG
 
     // Windows
     public bool Interface_ModelEditor_Viewport_Grid = true;
-    public bool Interface_ModelEditor_ModelSourceList = true;
-    public bool Interface_ModelEditor_ModelSelectList = true;
-    public bool Interface_ModelEditor_ModelContents = true;
-    public bool Interface_ModelEditor_Properties = true;
     public bool Interface_ModelEditor_ResourceList = true;
     public bool Interface_ModelEditor_ToolWindow = true;
+    public bool Interface_ModelEditor_ScreenshotMode = false;
 
     // Tools
     public bool Interface_ModelEditor_Tool_CreateAction = true;
@@ -527,7 +524,7 @@ public class CFG
     public bool ParamEditor_Row_List_Enable_Line_Wrapping = true;
     public bool ParamEditor_Row_List_Enable_Row_Grouping = false;
     public bool ParamEditor_Row_List_Display_Decorators = true;
-    public bool ParamEditor_Row_List_Display_Modified_Row_Background = true;
+    public bool ParamEditor_Row_List_Display_Modified_Row_Bg = false;
 
     // Field List
     public ParamFieldNameMode ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
@@ -545,7 +542,7 @@ public class CFG
     public bool ParamEditor_Field_List_Display_Field_Attributes = true;
     public bool ParamEditor_Field_List_Display_Icon_Preview = true;
     public float ParamEditor_Field_List_Icon_Preview_Scale = 1.0f;
-    public bool ParamEditor_Field_List_Display_Modified_Field_Background = true;
+    public bool ParamEditor_Field_List_Display_Modified_Field_Bg = true;
 
     public ParamTooltipMode ParamEditor_Field_List_Tooltip_Mode = ParamTooltipMode.OnFieldName;
 
@@ -878,14 +875,26 @@ public class CFG
 
     public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
 
+    public bool Viewport_Render_Gizmos = true;
+    public float Viewport_Gizmo_Size_Distance_Scale = 0.04f;
+
     // Camera
     public float Viewport_Camera_FOV { get; set; } = 60.0f;
     public float Viewport_Camera_MoveSpeed_Slow { get; set; } = 1.0f;
     public float Viewport_Camera_MoveSpeed_Normal { get; set; } = 20.0f;
     public float Viewport_Camera_MoveSpeed_Fast { get; set; } = 200.0f;
     public float Viewport_Camera_Sensitivity { get; set; } = 0.0160f;
-    public float Viewport_RenderDistance_Min { get; set; } = 0.1f;
-    public float Viewport_RenderDistance_Max { get; set; } = 50000.0f;
+
+    public float Viewport_Perspective_Near_Clip { get; set; } = 0.1f;
+    public float Viewport_Perspective_Far_Clip { get; set; } = 50000.0f;
+
+    public float Viewport_Orthographic_Near_Clip { get; set; } = -50000.0f;
+    public float Viewport_Orthographic_Far_Clip { get; set; } = 50000.0f;
+
+    public float Viewport_DefaultOrthographicSize { get; set; } = 10.0f;
+    public float Viewport_DefaultObliqueAngle { get; set; } = 45.0f;
+    public float Viewport_DefaultObliqueScaling { get; set; } = 0.5f;
+    public float Viewport_MousePan_Sensitivity { get; set; } = 25.0f;
 
     // Rendering Limits
     public uint Viewport_Limit_Buffer_Flver_Bone = 65536;
@@ -896,7 +905,6 @@ public class CFG
     public float Viewport_Wireframe_Color_Variance = 0.11f;
 
     public float GFX_Renderable_Default_Wireframe_Alpha = 100.0f;
-
 
     public Vector3 Viewport_Collision_Color = new Vector3(53, 157, 255);
     public Vector3 Viewport_Connect_Collision_Color = new Vector3(146, 57, 158);
