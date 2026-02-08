@@ -2450,9 +2450,9 @@ namespace SoulsFormats
                 public byte UnkT10 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// If enabled, any destructible objects touching this object will always be destroyed when it is destroyed.
                 /// </summary>
-                public bool UnkT11 { get; set; }
+                public bool ApplyDestructionToAdjacentAssets { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3057,7 +3057,7 @@ namespace SoulsFormats
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     UnkT10 = br.ReadByte();
-                    UnkT11 = br.ReadBoolean();
+                    ApplyDestructionToAdjacentAssets = br.ReadBoolean();
                     UnkT12 = br.ReadByte();
                     br.AssertByte(0);
                     br.AssertInt32(0);
@@ -3110,7 +3110,7 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteByte(UnkT10);
-                    bw.WriteBoolean(UnkT11);
+                    bw.WriteBoolean(ApplyDestructionToAdjacentAssets);
                     bw.WriteByte(UnkT12);
                     bw.WriteByte(0);
                     bw.WriteInt32(0);

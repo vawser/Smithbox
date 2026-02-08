@@ -17,8 +17,8 @@
     Wiki="" />
     
     <UnkT11
-    AltName="Unknown: 0x11"
-    Wiki="" />
+    AltName="Apply Destruction to Adjacent Assets"
+    Wiki="If enabled, when this asset is destroyed, any other assets adjacent (touching) this asset will also be destroyed." />
     
     <UnkT12
     AltName="Unknown: 0x12"
