@@ -39,14 +39,14 @@ public class BoxSelection
         {
             Vector2 mousePos = InputManager.MousePosition;
 
-            if (InputManager.IsMouseDown(MouseButton.Left) && Parent.MouseInViewport() && !_isDragging)
+            if (InputManager.IsMouseDown(MouseButton.Left) && InputManager.HasCtrlDown() && Parent.MouseInViewport() && !_isDragging)
             {
                 _isDragging = true;
                 _mouseDragStarted = false;
                 _dragStart = mousePos;
                 _dragEnd = mousePos;
             }
-            else if (InputManager.IsMouseDown(MouseButton.Left) && _isDragging)
+            else if (InputManager.IsMouseDown(MouseButton.Left) && InputManager.HasCtrlDown() && _isDragging)
             {
                 _dragEnd = mousePos;
 

@@ -371,7 +371,7 @@ public class VulkanViewport : IViewport
             return;
         }
 
-        if (InputManager.IsMouseDown(MouseButton.Left))
+        if (InputManager.IsMouseReleased(MouseButton.Left))
         {
             ViewPipeline.CreateAsyncPickingRequest();
         }
