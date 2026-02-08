@@ -31,6 +31,8 @@
  
 - Text Editor: Implement FMG Descriptor support (to replace enums) 
 
+- Gparam Editor: DS2 support for flt files
+
 - Texture Editor add automated mass export
 - Texture Editor add individual icon export based on subtexture
 - Texture Editor adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails

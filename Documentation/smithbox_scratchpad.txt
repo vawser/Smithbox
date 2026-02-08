@@ -2,4 +2,6 @@
 # TODO 
 #---------------------
 
-- Gparam Editor: DS2 support
+- ER: World Map Editor
+ - Specific editor for the world map tile textures, should present them similarly to the Map Editor world map feature, but constructs the map from the actual tiles + includes the layering stuff
+ - Would then enable an editor for MapTexInfo, which controls weather
