@@ -985,7 +985,16 @@ public class CFG
     public bool Viewport_DisplayControls = true;
     public bool Viewport_DisplayRotationIncrement = true;
     public bool Viewport_DisplayPositionIncrement = true;
+
     public bool Viewport_Enable_Box_Selection = true;
+    public bool Viewport_Enable_Box_Selection_MapPiece = true;
+    public bool Viewport_Enable_Box_Selection_Asset = true;
+    public bool Viewport_Enable_Box_Selection_Enemy = true;
+    public bool Viewport_Enable_Box_Selection_Player = true;
+    public bool Viewport_Enable_Box_Selection_Collision = true;
+    public bool Viewport_Enable_Box_Selection_Light = true;
+    public bool Viewport_Enable_Box_Selection_Region = true;
+
     public float Viewport_Box_Selection_Distance_Threshold = 1.2f;
 
     public Vector3 Viewport_Background_Color = new(1.0f, 0.5f, 0.0f);

@@ -1,5 +1,6 @@
 ﻿using StudioCore.Editors.Common;
 using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,21 +77,31 @@ public class DeleteMapObjectsAction : ViewportAction
 
         for (var i = 0; i < Deletables.Count(); i++)
         {
+            if (Deletables[i] == null)
+                continue;
+
             if (RemoveMaps[i] == null || RemoveIndices[i] == -1)
             {
                 continue;
             }
 
-            RemoveMaps[i].Objects.Insert(RemoveIndices[i], Deletables[i]);
-            if (Deletables[i].RenderSceneMesh != null)
+            try
             {
-                Deletables[i].RenderSceneMesh.AutoRegister = true;
-                Deletables[i].RenderSceneMesh.Register();
-            }
+                RemoveMaps[i].Objects.Insert(RemoveIndices[i], Deletables[i]);
+                if (Deletables[i].RenderSceneMesh != null)
+                {
+                    Deletables[i].RenderSceneMesh.AutoRegister = true;
+                    Deletables[i].RenderSceneMesh.Register();
+                }
 
-            if (RemoveParent[i] != null)
+                if (RemoveParent[i] != null)
+                {
+                    RemoveParent[i].AddChild(Deletables[i], RemoveParentIndex[i]);
+                }
+            }
+            catch (Exception e)
             {
-                RemoveParent[i].AddChild(Deletables[i], RemoveParentIndex[i]);
+                TaskLogs.AddError("Failed to undo delete action fully.", e);
             }
         }
 

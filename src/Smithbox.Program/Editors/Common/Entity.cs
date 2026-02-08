@@ -1464,6 +1464,21 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
+    /// Returns true if this entity is an Player
+    /// </summary>
+    public bool IsPartPlayer()
+    {
+        return WrappedObject is MSB1.Part.Player ||
+            WrappedObject is MSB3.Part.Player ||
+            WrappedObject is MSBB.Part.Player ||
+            WrappedObject is MSBD.Part.Player ||
+            WrappedObject is MSBE.Part.Player ||
+            WrappedObject is MSBS.Part.Player ||
+            WrappedObject is MSB_AC6.Part.Player ||
+            WrappedObject is MSB_NR.Part.Player ? true : false;
+    }
+
+    /// <summary>
     /// Returns true if this entity is an Treasure
     /// </summary>
     public bool IsEventTreasure()
