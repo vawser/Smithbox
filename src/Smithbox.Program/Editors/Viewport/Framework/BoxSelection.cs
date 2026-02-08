@@ -28,6 +28,10 @@ public class BoxSelection
     {
         Parent = parent;
     }
+    public bool IsBoxSelecting()
+    {
+        return _isDragging && _mouseDragStarted;
+    }
 
     public void Update()
     {

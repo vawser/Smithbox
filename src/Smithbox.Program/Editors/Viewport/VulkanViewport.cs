@@ -291,7 +291,7 @@ public class VulkanViewport : IViewport
 
         bool kbbusy = false;
 
-        if (!Gizmos.IsMouseBusy() && CanInteract && MouseInViewport())
+        if (!Gizmos.IsMouseBusy() && !BoxSelection.IsBoxSelecting() && CanInteract && MouseInViewport())
         {
             kbbusy = ViewportCamera.UpdateInput(window, dt);
 
@@ -365,6 +365,12 @@ public class VulkanViewport : IViewport
 
     public void HandlePickingRequest()
     {
+        // Only handle picking if box selection is not active
+        if (BoxSelection != null && BoxSelection.IsBoxSelecting())
+        {
+            return;
+        }
+
         if (InputManager.IsMouseDown(MouseButton.Left))
         {
             ViewPipeline.CreateAsyncPickingRequest();
