@@ -455,7 +455,7 @@ public class ViewportMenu
                 CFG.Current.Viewport_Enable_Box_Selection = !CFG.Current.Viewport_Enable_Box_Selection;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection);
-            UIHelper.Tooltip("Toggle the usage of box selection.");
+            UIHelper.Tooltip($"Toggle the usage of box selection.\nHold Ctrl, Alt and left click to make a box selection.");
 
             UIHelper.SimpleHeader("Box Selection Targets", "Which map objects will be selected by the box select.");
 
