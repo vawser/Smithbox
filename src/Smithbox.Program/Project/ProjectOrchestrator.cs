@@ -72,10 +72,7 @@ public class ProjectOrchestrator : IDisposable
         {
             InitExistingProjects = true;
 
-            if (CFG.Current.Project_Enable_Auto_Load)
-            {
-                _ = LoadExistingProjects();
-            }
+            _ = LoadExistingProjects();
         }
 
         DrawProjectLoadingUI();
@@ -670,18 +667,21 @@ public class ProjectOrchestrator : IDisposable
             }
         }
 
-        if (Projects.Count > 0)
+        if (CFG.Current.Project_Enable_Auto_Load)
         {
-            foreach (var projectEntry in Projects)
+            if (Projects.Count > 0)
             {
-                if (projectEntry.Descriptor.AutoSelect)
+                foreach (var projectEntry in Projects)
                 {
-                    if (!IsProjectLoading)
+                    if (projectEntry.Descriptor.AutoSelect)
                     {
-                        await StartupProject(projectEntry);
+                        if (!IsProjectLoading)
+                        {
+                            await StartupProject(projectEntry);
 
-                        SelectedProject = projectEntry;
-                        SelectedProject.IsSelected = true;
+                            SelectedProject = projectEntry;
+                            SelectedProject.IsSelected = true;
+                        }
                     }
                 }
             }
