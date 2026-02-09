@@ -74,8 +74,7 @@ public class Gizmos
     public static GizmosMode Mode = GizmosMode.Translate;
     public static GizmosSpace Space = GizmosSpace.Local;
     public static GizmosOrigin Origin = GizmosOrigin.World;
-    private readonly ViewportSelection _selection;
-    private readonly ViewportActionManager ActionManager;
+
     private readonly DbgPrimGizmoRotateRing RotateGizmoX;
     private readonly DebugPrimitiveRenderableProxy RotateGizmoXProxy;
     private readonly DbgPrimGizmoRotateRing RotateGizmoY;
@@ -106,13 +105,12 @@ public class Gizmos
     private Vector3 OriginProjection;
     private Axis TransformAxis = Axis.None;
 
-    private IUniverse Owner;
+    private VulkanViewport Viewport;
 
-    public Gizmos(IUniverse owner, ViewportActionManager am, ViewportSelection selection, MeshRenderables renderlist)
+    public Gizmos(VulkanViewport viewport, MeshRenderables renderlist)
     {
-        Owner = owner;
+        Viewport = viewport;
 
-        ActionManager = am;
         TranslateGizmoX = new DbgPrimGizmoTranslateArrow(Axis.PosX);
         TranslateGizmoY = new DbgPrimGizmoTranslateArrow(Axis.PosY);
         TranslateGizmoZ = new DbgPrimGizmoTranslateArrow(Axis.PosZ);
@@ -159,8 +157,6 @@ public class Gizmos
         RotateGizmoZProxy = new DebugPrimitiveRenderableProxy(renderlist, RotateGizmoZ);
         RotateGizmoZProxy.BaseColor = GetGizmoColor(CFG.Current.Viewport_Gizmo_Z_Base_Color);
         RotateGizmoZProxy.HighlightedColor = GetGizmoColor(CFG.Current.Viewport_Gizmo_Z_Highlight_Color);
-
-        _selection = selection;
     }
 
     public Vector3 CameraPosition { get; set; }
@@ -326,14 +322,18 @@ public class Gizmos
             {
                 IsTransforming = false;
                 List<ViewportAction> actlist = new();
-                foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
+                foreach (Entity sel in Viewport.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
                 {
                     sel.ClearTemporaryTransform(false);
                     actlist.Add(sel.GetUpdateTransformAction(ProjectTransformDelta(sel)));
                 }
 
                 ViewportCompoundAction action = new(actlist);
-                ActionManager.ExecuteAction(action);
+                Viewport.ActionManager.ExecuteAction(action);
+
+                // Add a cooldown to normal picking so
+                // the user doesn't accidently clear their selection
+                Viewport.ClickSelection.TriggerCooldown();
             }
             else
             {
@@ -382,10 +382,10 @@ public class Gizmos
                                                                      OriginalTransform.Rotation);
                 }
 
-                if (_selection.IsFilteredSelection<Entity>())
+                if (Viewport.ViewportSelection.IsFilteredSelection<Entity>())
                 {
                     //Selection.GetSingleSelection().SetTemporaryTransform(CurrentTransform);
-                    foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
+                    foreach (Entity sel in Viewport.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
                     {
                         sel.SetTemporaryTransform(ProjectTransformDelta(sel));
                     }
@@ -395,11 +395,11 @@ public class Gizmos
 
         if (!IsTransforming)
         {
-            if (_selection.IsFilteredSelection<Entity>(o => o.HasTransform))
+            if (Viewport.ViewportSelection.IsFilteredSelection<Entity>(o => o.HasTransform))
             {
-                if (_selection.IsSingleFilteredSelection<Entity>(o => o.HasTransform))
+                if (Viewport.ViewportSelection.IsSingleFilteredSelection<Entity>(o => o.HasTransform))
                 {
-                    var sel = _selection.GetSingleFilteredSelection<Entity>(o => o.HasTransform);
+                    var sel = Viewport.ViewportSelection.GetSingleFilteredSelection<Entity>(o => o.HasTransform);
                     OriginalTransform = sel.GetRootLocalTransform();
                     if (Origin == GizmosOrigin.BoundingBox && sel.RenderSceneMesh != null)
                     {
@@ -410,7 +410,7 @@ public class Gizmos
                 {
                     // Average the positions of the selections and use rotation of first
                     Vector3 accumPos = Vector3.Zero;
-                    HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
+                    HashSet<Entity> sels = Viewport.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
                     foreach (Entity sel in sels)
                     {
                         if (Origin == GizmosOrigin.BoundingBox && sel.RenderSceneMesh != null)
@@ -524,7 +524,7 @@ public class Gizmos
         }
 
         // Update gizmos transform and visibility
-        if (_selection.IsFilteredSelection<Entity>() && canTransform)
+        if (Viewport.ViewportSelection.IsFilteredSelection<Entity>() && canTransform)
         {
             Vector3 center;
             Quaternion rot;

@@ -12,10 +12,6 @@ public class DeleteMapObjectsAction : ViewportAction
     private MapEditorView View;
 
     private readonly List<MsbEntity> Deletables = new();
-    private readonly List<int> RemoveIndices = new();
-    private readonly List<ObjectContainer> RemoveMaps = new();
-    private readonly List<MsbEntity> RemoveParent = new();
-    private readonly List<int> RemoveParentIndex = new();
     private readonly bool SetSelection;
 
     private readonly List<DeleteRecord> Records = new();

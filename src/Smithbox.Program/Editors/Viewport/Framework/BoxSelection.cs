@@ -67,6 +67,10 @@ public class BoxSelection
                 // Reset drag state
                 _isDragging = false;
                 _mouseDragStarted = false;
+
+                // Add a cooldown to normal picking so
+                // the user doesn't accidently clear the box selection immediately
+                Parent.ClickSelection.TriggerCooldown();
             }
         }
 
