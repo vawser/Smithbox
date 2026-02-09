@@ -427,77 +427,7 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu("Gizmos"))
         {
-            if (ImGui.MenuItem("Display"))
-            {
-                CFG.Current.Viewport_Render_Gizmos = !CFG.Current.Viewport_Render_Gizmos;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Render_Gizmos);
-            UIHelper.Tooltip("Toggle the display of gizmos.");
-
-            ImGui.SliderFloat("Size##gizmoScale", ref CFG.Current.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
-
-            if (ImGui.IsItemDeactivatedAfterEdit())
-            {
-                if (CFG.Current.Viewport_Gizmo_Size_Distance_Scale < 0.01)
-                {
-                    CFG.Current.Viewport_Gizmo_Size_Distance_Scale = 0.01f;
-                }
-                if (CFG.Current.Viewport_Gizmo_Size_Distance_Scale > 5.0)
-                {
-                    CFG.Current.Viewport_Gizmo_Size_Distance_Scale = 5.0f;
-                }
-            }
-
-            if (ImGui.BeginMenu("Mode"))
-            {
-                if (ImGui.MenuItem("Translate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Translation_Mode)))
-                {
-                    Gizmos.Mode = Gizmos.GizmosMode.Translate;
-                }
-                UIHelper.Tooltip($"Set the gizmo to Translation mode.");
-
-                if (ImGui.MenuItem("Rotate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Rotation_Mode)))
-                {
-                    Gizmos.Mode = Gizmos.GizmosMode.Rotate;
-                }
-                UIHelper.Tooltip($"Set the gizmo to Rotation mode.");
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Space"))
-            {
-                if (ImGui.MenuItem("Local", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.Local;
-                }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
-
-                if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.World;
-                }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's world position.");
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Origin"))
-            {
-                if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.World;
-                }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
-
-                if (ImGui.MenuItem("Bounding Box", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
-                }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the bounding box.");
-
-                ImGui.EndMenu();
-            }
+            GizmoState.OnMenu();
 
             ImGui.EndMenu();
         }

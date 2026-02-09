@@ -50,12 +50,16 @@ public static class KeybindMetadata
             "Within the viewport, this reset the camera's location."
         ) },
         { KeybindID.Cycle_Gizmo_Translation_Mode, ( 
-            "Switch to Gizmo Translation Mode",
+            "Set to Gizmo Translation Mode",
             "Within the viewport, this will switch the viewport object gizmo to 'Translate'."
         ) },
-        { KeybindID.Cycle_Gizmo_Rotation_Mode, ( 
-            "Switch to Gizmo Rotation Mode",
+        { KeybindID.Cycle_Gizmo_Rotation_Mode, (
+            "Set to Gizmo Rotation Mode",
             "Within the viewport, this will switch the viewport object gizmo to 'Rotate'."
+        ) },
+        { KeybindID.Cycle_Gizmo_Scale_Mode, (
+            "Set to Gizmo Scale Mode",
+            "Within the viewport, this will switch the viewport object gizmo to 'Scale'."
         ) },
         { KeybindID.Cycle_Gizmo_Origin_Mode, ( 
             "Cycle Gizmo Origin Mode",
@@ -544,6 +548,7 @@ public static class KeybindMetadata
         { KeybindID.Reset, InputCategory.Viewport },
         { KeybindID.Cycle_Gizmo_Translation_Mode, InputCategory.Viewport },
         { KeybindID.Cycle_Gizmo_Rotation_Mode, InputCategory.Viewport },
+        { KeybindID.Cycle_Gizmo_Scale_Mode, InputCategory.Viewport },
         { KeybindID.Cycle_Gizmo_Origin_Mode, InputCategory.Viewport },
         { KeybindID.Cycle_Gizmo_Space_Mode, InputCategory.Viewport },
         { KeybindID.Cycle_Render_Outline_Mode, InputCategory.Viewport },

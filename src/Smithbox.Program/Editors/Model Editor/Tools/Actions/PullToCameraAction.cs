@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -87,7 +88,7 @@ public class PullToCameraAction
             Vector3 accumPos = Vector3.Zero;
             foreach (Entity sel in sels)
             {
-                if (Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox && sel.RenderSceneMesh != null)
+                if (GizmoState.Origin == GizmoState.GizmosOrigin.BoundingBox && sel.RenderSceneMesh != null)
                 {
                     // Use bounding box origin as center
                     accumPos += sel.RenderSceneMesh.GetBounds().GetCenter();

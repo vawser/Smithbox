@@ -7,6 +7,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -1064,19 +1065,14 @@ public class Entity : ISelectable, IDisposable
         else
         {
             PropertiesChangedAction act = new(WrappedObject);
+
+            // Position
             PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
 
-            if(prop != null)
+            if (prop != null)
                 act.AddPropertyChange(prop, newt.Position);
 
-            if (includeScale)
-            {
-                PropertyInfo scaleProp = WrappedObject.GetType().GetProperty("Scale");
-
-                if(scaleProp != null)
-                    act.AddPropertyChange(scaleProp, newt.Scale);
-            }
-
+            // Rotation
             prop = WrappedObject.GetType().GetProperty("Rotation");
             if (prop != null)
             {
@@ -1104,10 +1100,20 @@ public class Entity : ISelectable, IDisposable
                 }
             }
 
+            // Scale
+            if (includeScale)
+            {
+                PropertyInfo scaleProp = WrappedObject.GetType().GetProperty("Scale");
+
+                if (scaleProp != null)
+                    act.AddPropertyChange(scaleProp, newt.Scale);
+            }
+
             act.SetPostExecutionAction(undo =>
             {
                 UpdateRenderModel();
             });
+
             return act;
         }
     }

@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using Veldrid;
@@ -71,45 +72,6 @@ public class MapShortcuts
             }
         }
 
-        // Cycle Gizmo Translation Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Translation_Mode))
-        {
-            Gizmos.Mode = Gizmos.GizmosMode.Translate;
-        }
-
-        // Cycle Gizmo Rotation Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Rotation_Mode))
-        {
-            Gizmos.Mode = Gizmos.GizmosMode.Rotate;
-        }
-
-        // Cycle Gizmo Origin Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Origin_Mode))
-        {
-            if (Gizmos.Origin == Gizmos.GizmosOrigin.World)
-            {
-                Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
-            }
-            else if (Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox)
-            {
-                Gizmos.Origin = Gizmos.GizmosOrigin.World;
-            }
-        }
-
-        // Cycle Gizmo Space Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Space_Mode))
-        {
-            if (Gizmos.Space == Gizmos.GizmosSpace.Local)
-            {
-                Gizmos.Space = Gizmos.GizmosSpace.World;
-            }
-            else if (Gizmos.Space == Gizmos.GizmosSpace.World)
-            {
-                Gizmos.Space = Gizmos.GizmosSpace.Local;
-            }
-        }
-
-
         // Actions
         activeView.CreateAction.OnShortcut();
         activeView.DuplicateAction.OnShortcut();
@@ -139,5 +101,7 @@ public class MapShortcuts
         activeView.RotationIncrementTool.OnShortcut();
         activeView.PositionIncrementTool.OnShortcut();
         activeView.PatrolDrawManager.OnShortcut();
+
+        GizmoState.OnShortcut();
     }
 }

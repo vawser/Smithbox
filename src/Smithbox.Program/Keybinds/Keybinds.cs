@@ -24,6 +24,7 @@ public enum KeybindID
     Reset,
     Cycle_Gizmo_Translation_Mode,
     Cycle_Gizmo_Rotation_Mode,
+    Cycle_Gizmo_Scale_Mode,
     Cycle_Gizmo_Origin_Mode,
     Cycle_Gizmo_Space_Mode,
     Cycle_Render_Outline_Mode,
@@ -178,6 +179,8 @@ public static class DefaultKeyBindings
 
         InputManager.Bind(KeybindID.Cycle_Gizmo_Translation_Mode, new() { Key = Key.W, Ctrl = true });
         InputManager.Bind(KeybindID.Cycle_Gizmo_Rotation_Mode, new() { Key = Key.E, Ctrl = true });
+        InputManager.Bind(KeybindID.Cycle_Gizmo_Scale_Mode, new() { Key = Key.G, Ctrl = true });
+
         InputManager.Bind(KeybindID.Cycle_Gizmo_Origin_Mode, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.Cycle_Gizmo_Space_Mode, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.Cycle_Render_Outline_Mode, new() { Key = Key.Number1, Alt = true });

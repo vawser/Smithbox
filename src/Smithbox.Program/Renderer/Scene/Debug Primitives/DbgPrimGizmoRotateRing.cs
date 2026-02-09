@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.Editors.Viewport;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -33,7 +34,7 @@ public class DbgPrimGizmoRotateRing : DbgPrimGizmo
 
     private readonly List<Vector3> Tris = new();
 
-    public DbgPrimGizmoRotateRing(Gizmos.Axis axis)
+    public DbgPrimGizmoRotateRing(GizmoState.Axis axis)
     {
         if (GeometryData != null)
         {
@@ -61,7 +62,7 @@ public class DbgPrimGizmoRotateRing : DbgPrimGizmo
 
             // Algorithm from
             // http://apparat-engine.blogspot.com/2013/04/procedural-meshes-torus.html
-            void Ring(Gizmos.Axis axis, Color color)
+            void Ring(GizmoState.Axis axis, Color color)
             {
                 List<Vector3> collist = Tris;
 
@@ -88,19 +89,19 @@ public class DbgPrimGizmoRotateRing : DbgPrimGizmo
                         var cb = sintheta * (Radius + RingRadius * 7.0f * cosphi);
                         var cc = RingRadius * 7.0f * sinphi;
 
-                        if (axis == Gizmos.Axis.PosX)
+                        if (axis == GizmoState.Axis.PosX)
                         {
                             vertices.Add(new Vector3(c, a, b));
                             colvertices.Add(new Vector3(cc, ca, cb));
                         }
 
-                        if (axis == Gizmos.Axis.PosY)
+                        if (axis == GizmoState.Axis.PosY)
                         {
                             vertices.Add(new Vector3(a, c, b));
                             colvertices.Add(new Vector3(ca, cc, cb));
                         }
 
-                        if (axis == Gizmos.Axis.PosZ)
+                        if (axis == GizmoState.Axis.PosZ)
                         {
                             vertices.Add(new Vector3(a, b, c));
                             colvertices.Add(new Vector3(ca, cb, cc));
