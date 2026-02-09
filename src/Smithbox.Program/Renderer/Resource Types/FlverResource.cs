@@ -353,7 +353,7 @@ public class FlverResource : IResource, IDisposable
         }
         else
         {
-            // Smithbox.Log(this, $"[Smithbox:DEBUG] {VirtPath}: NO LISTENER for {textureVirtPath}", Microsoft.Extensions.Logging.LogLevel.Error);
+            // Smithbox.Log(this, $"{VirtPath}: NO LISTENER for {textureVirtPath}", Microsoft.Extensions.Logging.LogLevel.Error);
         }
     }
 

@@ -42,8 +42,12 @@
  (i.e. param: g_BlendMode = 6 should filter the list down to all files that contain a parameter called g_BlendMode set to 6)
  (i.e. texture: Path ~ fire should filter the list down to all files that contain a texture with the Path string that contains the string 'fire')
 - Material Editor: add list add/remove actions for the Param/Texture lists in a MTD
-- Material Editor: implement changes needed for the MATBIN properties
 
+- Material Editor: implement changes needed for the MATBIN properties
+- ER: World Map Editor
+ - Specific editor for the world map tile textures, should present them similarly to the Map Editor world map feature, but constructs the map from the actual tiles + includes the layering stuff
+ - Would then enable an editor for MapTexInfo, which controls weather
+ 
 #---------------------
 # DOCUMENTATION
 #---------------------
