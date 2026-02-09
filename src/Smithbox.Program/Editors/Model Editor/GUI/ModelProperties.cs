@@ -836,55 +836,24 @@ public class ModelProperties
         else if (typ == typeof(Color))
         {
             var att = prop?.GetCustomAttribute<SupportsAlphaAttribute>();
+
+            bool supportsAlpha;
+
             if (att != null)
             {
-                if (att.Supports == false)
-                {
-                    var color = (Color)oldval;
-                    Vector3 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f);
-                    if (ImGui.ColorEdit3("##value", ref val))
-                    {
-                        Color newColor = Color.FromArgb((int)(val.X * 255.0f), (int)(val.Y * 255.0f),
-                            (int)(val.Z * 255.0f));
-                        newval = newColor;
-                        isChanged = true;
-                    }
-                }
-                else
-                {
-                    var color = (Color)oldval;
-                    Vector4 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
-
-                    var flags = ImGuiColorEditFlags.AlphaOpaque;
-
-                    if (ImGui.ColorEdit4("##value", ref val, flags))
-                    {
-                        Color newColor = Color.FromArgb((int)(val.W * 255.0f), (int)(val.X * 255.0f),
-                            (int)(val.Y * 255.0f), (int)(val.Z * 255.0f));
-                        newval = newColor;
-                        isChanged = true;
-                    }
-                }
+                supportsAlpha = att.Supports;
             }
             else
             {
-                // SoulsFormats does not define if alpha should be exposed. Expose alpha by default.
-                Smithbox.Log(this, 
-                    $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default",
-                    LogLevel.Warning, LogPriority.Low);
+                supportsAlpha = true;
+            }
 
-                var color = (Color)oldval;
-                Vector4 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
+            var color = (Color)oldval;
 
-                var flags = ImGuiColorEditFlags.AlphaOpaque;
-
-                if (ImGui.ColorEdit4("##value", ref val, flags))
-                {
-                    Color newColor = Color.FromArgb((int)(val.W * 255.0f), (int)(val.X * 255.0f),
-                        (int)(val.Y * 255.0f), (int)(val.Z * 255.0f));
-                    newval = newColor;
-                    isChanged = true;
-                }
+            if (EditColor(color, supportsAlpha, out var edited))
+            {
+                newval = edited;
+                isChanged = true;
             }
         }
         else
@@ -897,6 +866,72 @@ public class ModelProperties
         return (isChanged, isDeactivatedAfterEdit);
     }
 
+    public bool EditColor(Color input, bool supportsAlpha, out Color output)
+    {
+        if (supportsAlpha)
+        {
+            Vector4 val = new(
+                input.R / 255f,
+                input.G / 255f,
+                input.B / 255f,
+                input.A / 255f
+            );
+
+            if (ImGui.ColorEdit4("##value", ref val, ImGuiColorEditFlags.AlphaOpaque))
+            {
+                val = Clamp01(val);
+
+                output = Color.FromArgb(
+                    FloatToByte(val.W),
+                    FloatToByte(val.X),
+                    FloatToByte(val.Y),
+                    FloatToByte(val.Z)
+                );
+                return true;
+            }
+        }
+        else
+        {
+            Vector3 val = new(
+                input.R / 255f,
+                input.G / 255f,
+                input.B / 255f
+            );
+
+            if (ImGui.ColorEdit3("##value", ref val))
+            {
+                val.X = Clamp01(val.X);
+                val.Y = Clamp01(val.Y);
+                val.Z = Clamp01(val.Z);
+
+                output = Color.FromArgb(
+                    FloatToByte(val.X),
+                    FloatToByte(val.Y),
+                    FloatToByte(val.Z)
+                );
+                return true;
+            }
+        }
+
+        output = input;
+        return false;
+    }
+
+    public float Clamp01(float v) => MathF.Max(0f, MathF.Min(1f, v));
+    public Vector4 Clamp01(Vector4 v)
+    {
+        v.X = Clamp01(v.X);
+        v.Y = Clamp01(v.Y);
+        v.Z = Clamp01(v.Z);
+        v.W = Clamp01(v.W);
+        return v;
+    }
+
+    public int FloatToByte(float v)
+    {
+        v = Clamp01(v);
+        return (int)MathF.Round(v * 255f);
+    }
     #endregion
 
     #region Property Change - Update - Commit

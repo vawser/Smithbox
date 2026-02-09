@@ -1,5 +1,11 @@
 #---------------------
 # TODO 
 #---------------------
+
+- Issue with creating Bloom field entry in Gparam Editor, likely related to 【 characters in Gs Presents【Bloom】 Enable
+
+- Add a shortcut that selects all map objects that reference the currently selected collision.
+- Add scaling gizmo
+
 - Fix gizmo usage in Orthographic and Oblique view modes
 - Optimise duplicate action
