@@ -203,7 +203,7 @@ public class ParamFmgUtils
         }
         if (paramName == "Magic")
         {
-            return "Spells";
+            return "Goods";
         }
         if (paramName == "EquipParamProtector")
         {
