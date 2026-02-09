@@ -1427,7 +1427,7 @@ public class MapPropertyView
                 var ent = entSelection.FirstOrDefault();
                 if (ent != null)
                 {
-                    if (ent.IsPartEnemy() || ent.IsPartDummyEnemy())
+                    if (EntityHelper.IsPartEnemy(ent) || EntityHelper.IsPartDummyEnemy(ent))
                     {
                         showNormalInput = false;
                     }

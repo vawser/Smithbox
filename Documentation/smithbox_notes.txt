@@ -32,6 +32,7 @@
 - Text Editor: Implement FMG Descriptor support (to replace enums) 
 
 - Gparam Editor: DS2 support for flt files
+- Gparam Editor: Issue with creating Bloom field entry in Gparam Editor, likely related to 【 characters in Gs Presents【Bloom】 Enable
 
 - Texture Editor add automated mass export
 - Texture Editor add individual icon export based on subtexture

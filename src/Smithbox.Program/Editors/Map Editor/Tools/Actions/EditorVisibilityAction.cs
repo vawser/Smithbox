@@ -235,7 +235,7 @@ public class EditorVisibilityAction
 
             foreach (Entity obj in entry.Value.MapContainer.Objects)
             {
-                if (obj.IsPart())
+                if (EntityHelper.IsPart(obj))
                 {
                     if (Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
                     {

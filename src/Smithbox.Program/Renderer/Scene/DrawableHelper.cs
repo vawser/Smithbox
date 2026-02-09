@@ -55,7 +55,7 @@ public static class DrawableHelper
             asset = ModelLocator.GetObjModel(curProject, modelname, modelname);
             filt = RenderFilter.Object;
         }
-        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && obj.IsPartCollision())
+        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && EntityHelper.IsPartCollision(obj))
         {
             loadcol = true;
 
@@ -67,7 +67,7 @@ public static class DrawableHelper
 
             filt = RenderFilter.Collision;
         }
-        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && obj.IsPartConnectCollision())
+        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && EntityHelper.IsPartConnectCollision(obj))
         {
             loadcol = true;
 

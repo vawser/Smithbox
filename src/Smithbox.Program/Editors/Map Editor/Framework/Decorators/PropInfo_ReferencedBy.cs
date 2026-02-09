@@ -56,15 +56,15 @@ public static class PropInfo_ReferencedBy
             {
                 modelName = modelName.ToLower();
 
-                if (m.IsPartEnemy() || m.IsPartDummyEnemy())
+                if (EntityHelper.IsPartEnemy(m) || EntityHelper.IsPartDummyEnemy(m))
                 {
                     aliasName = AliasHelper.GetCharacterAlias(view.Project, modelName);
                 }
-                if (m.IsPartAsset() || m.IsPartDummyAsset())
+                if (EntityHelper.IsPartAsset(m) || EntityHelper.IsPartDummyAsset(m))
                 {
                     aliasName = AliasHelper.GetAssetAlias(view.Project, modelName);
                 }
-                if (m.IsPartMapPiece())
+                if (EntityHelper.IsPartMapPiece(m))
                 {
                     aliasName = AliasHelper.GetMapPieceAlias(view.Project, modelName);
                 }

@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Silk.NET.SDL;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -49,7 +50,7 @@ public class SelectCollisionRefAction
     public void OnContext(Entity ent)
     {
         // Only supported for these types
-        if (ent.IsPartCollision())
+        if (EntityHelper.IsPartCollision(ent))
         {
             // Move Up
             if (ImGui.Selectable("Select Referencing Parts"))
@@ -60,7 +61,7 @@ public class SelectCollisionRefAction
         }
 
         // Only supported for these types
-        if (ent.IsPart() && !ent.IsPartCollision() && !ent.IsPartConnectCollision())
+        if (EntityHelper.IsPart(ent) && !EntityHelper.IsPartCollision(ent) && !EntityHelper.IsPartConnectCollision(ent))
         {
             // Move Up
             if (ImGui.Selectable("Select Referenced Collision"))
@@ -99,7 +100,7 @@ public class SelectCollisionRefAction
 
             foreach(var sel in selection)
             {
-                if(sel.IsPartCollision())
+                if(EntityHelper.IsPartCollision(sel))
                 {
                     foreach (Entity refEnt in sel.GetReferencingObjects())
                     {
@@ -122,7 +123,7 @@ public class SelectCollisionRefAction
 
             foreach (var sel in selection)
             {
-                if (sel.IsPart() && !sel.IsPartCollision() && !sel.IsPartConnectCollision())
+                if (EntityHelper.IsPart(sel) && !EntityHelper.IsPartCollision(sel) && !EntityHelper.IsPartConnectCollision(sel))
                 {
                     foreach (KeyValuePair<string, object[]> m in sel.References)
                     {
@@ -130,7 +131,7 @@ public class SelectCollisionRefAction
                         {
                             if (n is MsbEntity e)
                             {
-                                if (e.IsPartCollision())
+                                if (EntityHelper.IsPartCollision(e))
                                 {
                                     View.ViewportSelection.AddSelection(e);
                                 }

@@ -78,21 +78,12 @@ public class MsbUtils
                     i1 = entList.IndexOf(selection.GetFilteredSelection<MsbEntity>()
                         .FirstOrDefault(fe => fe.Container == entity.Container && fe != entity.Container.RootObject));
                 }
-                if (entity.GetType() == typeof(TransformableNamedEntity))
-                {
-                    i1 = entList.IndexOf(selection.GetFilteredSelection<TransformableNamedEntity>()
-                        .FirstOrDefault(fe => fe.Container == entity.Container && fe != entity.Container.RootObject));
-                }
 
                 var i2 = -1;
 
                 if (entity.GetType() == typeof(MsbEntity))
                 {
                     i2 = entList.IndexOf((MsbEntity)entity);
-                }
-                if (entity.GetType() == typeof(TransformableNamedEntity))
-                {
-                    i2 = entList.IndexOf((TransformableNamedEntity)entity);
                 }
 
                 if (i1 != -1 && i2 != -1)

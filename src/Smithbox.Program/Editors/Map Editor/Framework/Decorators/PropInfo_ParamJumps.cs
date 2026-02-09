@@ -18,7 +18,7 @@ public static class PropInfo_ParamJumps
             return;
 
         // Only relevant to assets
-        if (view.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 && firstEnt.IsPartPureAsset())
+        if (view.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 && EntityHelper.IsPartPureAsset(firstEnt))
         {
             ImGui.Separator();
             ImGui.Text("Params:");
@@ -58,7 +58,7 @@ public static class PropInfo_ParamJumps
                 {
                     modelName = modelName.ToLower();
 
-                    if (e.IsPartAsset() || e.IsPartDummyAsset())
+                    if (EntityHelper.IsPartAsset(e) || EntityHelper.IsPartDummyAsset(e))
                     {
                         aliasName = AliasHelper.GetAssetAlias(view.Project, modelName);
                     }
@@ -82,7 +82,7 @@ public static class PropInfo_ParamJumps
 
         // Only relevant to characters
         if (view.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6
-            && (firstEnt.IsPartEnemy() || firstEnt.IsPartDummyEnemy()))
+            && (EntityHelper.IsPartEnemy(firstEnt) || EntityHelper.IsPartDummyEnemy(firstEnt)))
         {
             ImGui.Separator();
             ImGui.Text("Params:");
@@ -122,7 +122,7 @@ public static class PropInfo_ParamJumps
                 {
                     modelName = modelName.ToLower();
 
-                    if (e.IsPartEnemy() || e.IsPartDummyEnemy())
+                    if (EntityHelper.IsPartEnemy(e) || EntityHelper.IsPartDummyEnemy(e))
                     {
                         aliasName = AliasHelper.GetCharacterAlias(view.Project, modelName);
                     }

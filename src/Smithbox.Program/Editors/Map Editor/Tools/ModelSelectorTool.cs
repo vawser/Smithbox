@@ -53,15 +53,15 @@ public class ModelSelectorTool
             {
                 var firstSelection = (Entity)curSelection.First();
 
-                if (firstSelection.IsPartEnemy() || firstSelection.IsPartDummyEnemy())
+                if (EntityHelper.IsPartEnemy(firstSelection) || EntityHelper.IsPartDummyEnemy(firstSelection))
                 {
                     DisplayCharacterList();
                 }
-                else if (firstSelection.IsPartAsset() || firstSelection.IsPartDummyAsset())
+                else if (EntityHelper.IsPartAsset(firstSelection) || EntityHelper.IsPartDummyAsset(firstSelection))
                 {
                     DisplayAssetList();
                 }
-                else if (firstSelection.IsPartMapPiece())
+                else if (EntityHelper.IsPartMapPiece(firstSelection))
                 {
                     DisplayMapPieceList();
                 }

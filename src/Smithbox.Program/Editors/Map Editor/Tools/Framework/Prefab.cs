@@ -78,7 +78,7 @@ public abstract class Prefab : PrefabAttributes
             foreach (var entity in ents)
             {
                 // Ignore Events as they don't have position
-                if (entity.IsPart() || entity.IsRegion())
+                if (EntityHelper.IsPart(entity) || EntityHelper.IsRegion(entity))
                 {
                     var position = entity.GetPropertyValue<Vector3>("Position");
 

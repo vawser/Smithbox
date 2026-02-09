@@ -941,15 +941,15 @@ public static class MapEditorDecorations
 
         if (ent != null)
         {
-            if (ent.IsPartEnemy() || ent.IsPartDummyEnemy())
+            if (EntityHelper.IsPartEnemy(ent) || EntityHelper.IsPartDummyEnemy(ent))
             {
                 loadType = "Character";
             }
-            else if (ent.IsPartAsset() || ent.IsPartDummyAsset())
+            else if (EntityHelper.IsPartAsset(ent) || EntityHelper.IsPartDummyAsset(ent))
             {
                 loadType = "Asset";
             }
-            else if (ent.IsPartMapPiece())
+            else if (EntityHelper.IsPartMapPiece(ent))
             {
                 loadType = "MapPiece";
             }

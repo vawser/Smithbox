@@ -1,14 +1,15 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
+using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
-using StudioCore.Application;
-using StudioCore.Editors.Common;
-using StudioCore.Utilities;
-using StudioCore.Renderer;
-using StudioCore.Keybinds;
+using static SoulsFormats.NVM;
 
 namespace StudioCore.Editors.Viewport;
 
@@ -145,7 +146,7 @@ public class BoxSelection
                 {
                     if(!CFG.Current.Viewport_Enable_Box_Selection_MapPiece)
                     {
-                        if(ent.IsPartMapPiece())
+                        if(EntityHelper.IsPartMapPiece(ent))
                         {
                             add = false;
                         }
@@ -153,7 +154,7 @@ public class BoxSelection
 
                     if (!CFG.Current.Viewport_Enable_Box_Selection_Asset)
                     {
-                        if (ent.IsPartAsset() || ent.IsPartDummyAsset())
+                        if (EntityHelper.IsPartAsset(ent) || EntityHelper.IsPartDummyAsset(ent))
                         {
                             add = false;
                         }
@@ -161,7 +162,7 @@ public class BoxSelection
 
                     if (!CFG.Current.Viewport_Enable_Box_Selection_Enemy)
                     {
-                        if (ent.IsPartEnemy() || ent.IsPartDummyEnemy())
+                        if (EntityHelper.IsPartEnemy(ent) || EntityHelper.IsPartDummyEnemy(ent))
                         {
                             add = false;
                         }
@@ -169,7 +170,7 @@ public class BoxSelection
 
                     if (!CFG.Current.Viewport_Enable_Box_Selection_Player)
                     {
-                        if (ent.IsPartPlayer())
+                        if (EntityHelper.IsPartPlayer(ent))
                         {
                             add = false;
                         }
@@ -177,7 +178,7 @@ public class BoxSelection
 
                     if (!CFG.Current.Viewport_Enable_Box_Selection_Collision)
                     {
-                        if (ent.IsPartCollision() || ent.IsPartConnectCollision())
+                        if (EntityHelper.IsPartCollision(ent) || EntityHelper.IsPartConnectCollision(ent))
                         {
                             add = false;
                         }
@@ -185,7 +186,7 @@ public class BoxSelection
 
                     if (!CFG.Current.Viewport_Enable_Box_Selection_Region)
                     {
-                        if (ent.IsRegion())
+                        if (EntityHelper.IsRegion(ent))
                         {
                             add = false;
                         }
@@ -193,7 +194,7 @@ public class BoxSelection
 
                     if (!CFG.Current.Viewport_Enable_Box_Selection_Light)
                     {
-                        if (ent.IsLight())
+                        if (EntityHelper.IsLight(ent))
                         {
                             add = false;
                         }
