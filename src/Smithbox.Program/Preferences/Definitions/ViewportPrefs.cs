@@ -107,32 +107,6 @@ public class ViewportPrefs
         };
     }
 
-    public static PreferenceItem Viewport_Limit_Renderables()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 3,
-            Category = PreferenceCategory.Viewport,
-            Spacer = true,
-            InlineName = false,
-
-            Section = SectionCategory.Rendering,
-
-            Title = "Renderable Limit",
-            Description = "This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.",
-
-            Draw = () =>
-            {
-                DPI.ApplyInputWidth();
-                if (ImGui.InputInt("##inputValue", ref CFG.Current.Viewport_Limit_Renderables, 0, 0))
-                {
-                    if (CFG.Current.Viewport_Limit_Renderables < CFG.Default.Viewport_Limit_Renderables)
-                        CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
-                }
-            }
-        };
-    }
-
     public static PreferenceItem Viewport_Limit_Buffer_Indirect_Draw()
     {
         return new PreferenceItem

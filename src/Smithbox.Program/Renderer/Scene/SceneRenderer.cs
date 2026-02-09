@@ -398,47 +398,111 @@ public class SceneRenderer
     }
 
     /// <summary>
-    ///     A class used to hold, encode, and dispatch indirect draw calls
+    /// A class used to hold, encode, and dispatch indirect draw calls.
     /// </summary>
     public class IndirectDrawEncoder
     {
         private const int MAX_BATCH = 100;
+        private const uint INITIAL_CALL_COUNT = 10000;
+        private const float GROWTH_FACTOR = 1.5f;
 
         /// <summary>
-        ///     If set to true, a fallback that uses direct draw calls instead of
-        ///     indirect will be used
+        /// If set to true, a fallback that uses direct draw calls instead of
+        /// indirect will be used
         /// </summary>
         public static bool UseDirect = false;
 
         private readonly uint[] _batchCount;
-
         private readonly BatchInfo[] _batches;
-        private readonly IndirectDrawIndexedArgumentsPacked[] _directBuffer;
 
-        private readonly DeviceBuffer _indirectBuffer;
+        private IndirectDrawIndexedArgumentsPacked[] _directBuffer;
+        private DeviceBuffer _indirectBuffer;
+        private IndirectDrawIndexedArgumentsPacked[] _indirectStagingBuffer;
 
-        private readonly uint[] _indirectDrawCount;
-
-        private readonly IndirectDrawIndexedArgumentsPacked[] _indirectStagingBuffer;
+        private uint _currentCapacity;
         private int _renderSet = -1;
-
         private int _stagingSet;
 
         public IndirectDrawEncoder(uint initialCallCount)
         {
+            _currentCapacity = Math.Max(initialCallCount, INITIAL_CALL_COUNT);
+
+            CreateBuffers(_currentCapacity);
+
+            _batches = new BatchInfo[2 * MAX_BATCH];
+            _indirectDrawCount = new uint[2];
+            _batchCount = new uint[2];
+        }
+
+        private void CreateBuffers(uint capacity)
+        {
             BufferDescription desc = new(
-                initialCallCount * 20,
+                capacity * 20,
                 VkBufferUsageFlags.IndirectBuffer | VkBufferUsageFlags.TransferDst,
                 VmaMemoryUsage.Auto,
                 0);
             _indirectBuffer = Factory.CreateBuffer(desc);
-            _indirectStagingBuffer = new IndirectDrawIndexedArgumentsPacked[initialCallCount];
-            _directBuffer = new IndirectDrawIndexedArgumentsPacked[initialCallCount];
-            _batches = new BatchInfo[2 * MAX_BATCH];
-
-            _indirectDrawCount = new uint[2];
-            _batchCount = new uint[2];
+            _indirectStagingBuffer = new IndirectDrawIndexedArgumentsPacked[capacity];
+            _directBuffer = new IndirectDrawIndexedArgumentsPacked[capacity];
         }
+
+        private void ResizeBuffers(uint newCapacity)
+        {
+            Console.WriteLine($"IndirectDrawEncoder: Resizing from {_currentCapacity} to {newCapacity} draw calls");
+
+            var oldIndirectBuffer = _indirectBuffer;
+            var oldStagingBuffer = _indirectStagingBuffer;
+            var oldDirectBuffer = _directBuffer;
+
+            // Create new larger buffers
+            BufferDescription desc = new(
+                newCapacity * 20,
+                VkBufferUsageFlags.IndirectBuffer | VkBufferUsageFlags.TransferDst | VkBufferUsageFlags.TransferSrc,
+                VmaMemoryUsage.Auto,
+                0);
+            _indirectBuffer = Factory.CreateBuffer(desc);
+            _indirectStagingBuffer = new IndirectDrawIndexedArgumentsPacked[newCapacity];
+            _directBuffer = new IndirectDrawIndexedArgumentsPacked[newCapacity];
+
+            // Copy existing data from old staging buffer
+            if (oldStagingBuffer != null)
+            {
+                uint copyCount = Math.Min((uint)oldStagingBuffer.Length, newCapacity);
+                Array.Copy(oldStagingBuffer, _indirectStagingBuffer, copyCount);
+            }
+
+            if (oldDirectBuffer != null)
+            {
+                uint copyCount = Math.Min((uint)oldDirectBuffer.Length, newCapacity);
+                Array.Copy(oldDirectBuffer, _directBuffer, copyCount);
+            }
+
+            // Copy GPU buffer contents if needed
+            if (oldIndirectBuffer != null)
+            {
+                SceneRenderer.AddBackgroundUploadTask((device, cl) =>
+                {
+                    uint bytesToCopy = Math.Min(oldIndirectBuffer.SizeInBytes, _indirectBuffer.SizeInBytes);
+                    cl.CopyBuffer(oldIndirectBuffer, 0, _indirectBuffer, 0, bytesToCopy);
+
+                    cl.Barrier(
+                        VkPipelineStageFlags2.Transfer,
+                        VkAccessFlags2.TransferWrite,
+                        VkPipelineStageFlags2.DrawIndirect,
+                        VkAccessFlags2.IndirectCommandRead);
+
+                    // Dispose old buffer after copy
+                    SceneRenderer.AddBackgroundUploadTask((d, c) =>
+                    {
+                        oldIndirectBuffer.Dispose();
+                    });
+                });
+            }
+
+            _currentCapacity = newCapacity;
+        }
+
+        private readonly uint[] _indirectDrawCount;
 
         /// <summary>
         ///     Resets the buffer to prepare for a new frame
@@ -472,11 +536,11 @@ public class SceneRenderer
         public void AddDraw(ref IndirectDrawIndexedArgumentsPacked args, int buffer, Pipeline p,
             ResourceSet instanceData, VkIndexType indexf)
         {
-            // Encode the draw
+            // Check if we need to resize
             if (_indirectDrawCount[_stagingSet] >= _indirectStagingBuffer.Length)
             {
-                throw new Exception(
-                    "Indirect buffer not large enough for draw\n\nTry increasing indirect draw buffer in settings.\n");
+                uint newCapacity = (uint)(_currentCapacity * GROWTH_FACTOR);
+                ResizeBuffers(newCapacity);
             }
 
             if (p == null)
@@ -519,10 +583,11 @@ public class SceneRenderer
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void AddDraw(ref MeshDrawParametersComponent drawparams, Pipeline pipeline)
         {
-            // Encode the draw
+            // Check if we need to resize
             if (_indirectDrawCount[_stagingSet] >= _indirectStagingBuffer.Length)
             {
-                throw new Exception("Indirect buffer not large enough for draw");
+                uint newCapacity = (uint)(_currentCapacity * GROWTH_FACTOR);
+                ResizeBuffers(newCapacity);
             }
 
             if (pipeline == null)
@@ -572,7 +637,7 @@ public class SceneRenderer
         {
             if (UseDirect)
             {
-                Array.Copy(_indirectStagingBuffer, 0, _directBuffer, 0, _directBuffer.Length);
+                Array.Copy(_indirectStagingBuffer, 0, _directBuffer, 0, Math.Min(_directBuffer.Length, _indirectStagingBuffer.Length));
             }
             else
             {
@@ -646,6 +711,14 @@ public class SceneRenderer
                         count, 20);
                 }
             }
+        }
+
+        /// <summary>
+        /// Get statistics about the indirect draw encoder
+        /// </summary>
+        public (uint capacity, uint currentDrawCount, uint currentBatchCount) GetStats()
+        {
+            return (_currentCapacity, _indirectDrawCount[_stagingSet], _batchCount[_stagingSet]);
         }
 
         /// <summary>

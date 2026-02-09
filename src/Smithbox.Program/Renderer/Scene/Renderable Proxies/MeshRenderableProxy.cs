@@ -509,7 +509,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         _perObjectResourceSet = StaticResourceCache.GetResourceSet(factory, new ResourceSetDescription(
             mainPerObjectLayout,
-            SceneRenderer.UniformBufferAllocator._backingBuffer));
+            SceneRenderer.UniformBufferAllocator.BackingBuffer));
 
         // Build default pipeline
         GraphicsPipelineDescription pipelineDescription = new();

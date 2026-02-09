@@ -30,7 +30,6 @@ public static class PreferencesUtil
         CFG.Current.Viewport_Enable_Rendering = CFG.Default.Viewport_Enable_Rendering;
         CFG.Current.Viewport_Enable_Texturing = CFG.Default.Viewport_Enable_Texturing;
         CFG.Current.Viewport_Enable_Culling = CFG.Default.Viewport_Enable_Culling;
-        CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
         CFG.Current.Viewport_Limit_Buffer_Indirect_Draw = CFG.Default.Viewport_Limit_Buffer_Indirect_Draw;
         CFG.Current.Viewport_Limit_Buffer_Flver_Bone = CFG.Default.Viewport_Limit_Buffer_Flver_Bone;
     }

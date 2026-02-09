@@ -10,103 +10,199 @@ namespace StudioCore.Renderer;
 
 public class GPUBufferAllocator
 {
+    private const float GROWTH_FACTOR = 1.5f; // Grow by 50% each time
+    private const uint MIN_GROWTH_SIZE = 10 * 1024 * 1024; // Minimum 10MB growth
+
     private readonly object _allocationLock = new();
 
     private readonly List<GPUBufferHandle> _allocations = new();
 
-    private readonly FreeListAllocator _allocator;
+    private FreeListAllocator _allocator;
 
-    private readonly ResourceLayout _bufferLayout;
-    private readonly ResourceSet _bufferResourceSet;
+    private ResourceLayout _bufferLayout;
+    private ResourceSet _bufferResourceSet;
 
     private readonly VkAccessFlags2 _dstAccessFlags = VkAccessFlags2.None;
 
-    private readonly DeviceBuffer _stagingBuffer;
+    private DeviceBuffer _stagingBuffer;
+    private DeviceBuffer _backingBuffer;
+
+    private readonly VkBufferUsageFlags _usage;
+    private readonly uint _stride;
+    private readonly string _name;
+    private readonly VkShaderStageFlags _stages;
+    private readonly bool _hasResourceSet;
 
     public GPUBufferAllocator(uint initialSize, VkBufferUsageFlags usage)
     {
-        BufferDescription desc = new(
-            initialSize,
-            usage | VkBufferUsageFlags.TransferDst,
-            VmaMemoryUsage.Auto,
-            0);
-        _backingBuffer = SceneRenderer.Factory.CreateBuffer(desc);
-        desc = new BufferDescription(
-            initialSize,
-            VkBufferUsageFlags.TransferSrc,
-            VmaMemoryUsage.Auto,
-            VmaAllocationCreateFlags.Mapped);
-        _stagingBuffer = SceneRenderer.Factory.CreateBuffer(desc);
-        BufferSize = initialSize;
-        _allocator = new FreeListAllocator(initialSize);
+        _usage = usage;
+        _stride = 0;
+        _hasResourceSet = false;
+
+        CreateBuffers(initialSize);
         _dstAccessFlags = Util.AccessFlagsFromBufferUsageFlags(usage);
     }
 
     public GPUBufferAllocator(uint initialSize, VkBufferUsageFlags usage, uint stride)
     {
-        BufferDescription desc = new(
-            initialSize,
-            usage | VkBufferUsageFlags.TransferDst,
-            VmaMemoryUsage.Auto,
-            0,
-            stride);
-        _backingBuffer = SceneRenderer.Factory.CreateBuffer(desc);
-        desc = new BufferDescription(
-            initialSize,
-            VkBufferUsageFlags.TransferSrc,
-            VmaMemoryUsage.Auto,
-            VmaAllocationCreateFlags.Mapped);
-        _stagingBuffer = SceneRenderer.Factory.CreateBuffer(desc);
-        BufferSize = initialSize;
-        _allocator = new FreeListAllocator(initialSize);
+        _usage = usage;
+        _stride = stride;
+        _hasResourceSet = false;
+
+        CreateBuffers(initialSize);
         _dstAccessFlags = Util.AccessFlagsFromBufferUsageFlags(usage);
     }
 
     public GPUBufferAllocator(string name, uint initialSize, VkBufferUsageFlags usage, uint stride,
         VkShaderStageFlags stages)
     {
+        _usage = usage;
+        _stride = stride;
+        _name = name;
+        _stages = stages;
+        _hasResourceSet = true;
+
+        CreateBuffers(initialSize);
+        _dstAccessFlags = Util.AccessFlagsFromBufferUsageFlags(usage);
+
+        CreateResourceSet();
+    }
+
+    public long BufferSize { get; private set; }
+
+    public DeviceBuffer BackingBuffer => _backingBuffer;
+
+    private void CreateBuffers(uint size)
+    {
         BufferDescription desc = new(
-            initialSize,
-            usage | VkBufferUsageFlags.TransferDst,
+            size,
+            _usage | VkBufferUsageFlags.TransferDst | VkBufferUsageFlags.TransferSrc,
             VmaMemoryUsage.Auto,
             0,
-            stride);
+            _stride);
         _backingBuffer = SceneRenderer.Factory.CreateBuffer(desc);
-        BufferSize = initialSize;
+
         desc = new BufferDescription(
-            initialSize,
-            VkBufferUsageFlags.TransferSrc,
+            size,
+            VkBufferUsageFlags.TransferSrc | VkBufferUsageFlags.TransferDst,
             VmaMemoryUsage.Auto,
             VmaAllocationCreateFlags.Mapped);
         _stagingBuffer = SceneRenderer.Factory.CreateBuffer(desc);
-        _allocator = new FreeListAllocator(initialSize);
-        _dstAccessFlags = Util.AccessFlagsFromBufferUsageFlags(usage);
+
+        BufferSize = size;
+        _allocator = new FreeListAllocator(size);
+    }
+
+    private void CreateResourceSet()
+    {
+        if (!_hasResourceSet)
+            return;
+
+        // Dispose old resource set if it exists
+        _bufferResourceSet?.Dispose();
+        _bufferLayout?.Dispose();
 
         ResourceLayoutDescription layoutdesc = new(
-            new ResourceLayoutElementDescription(name, VkDescriptorType.StorageBuffer, stages));
+            new ResourceLayoutElementDescription(_name, VkDescriptorType.StorageBuffer, _stages));
         _bufferLayout = SceneRenderer.Factory.CreateResourceLayout(layoutdesc);
         ResourceSetDescription rsdesc = new(_bufferLayout, _backingBuffer);
         _bufferResourceSet = SceneRenderer.Factory.CreateResourceSet(rsdesc);
     }
 
-    public long BufferSize { get; }
+    private void ResizeBuffer(uint newSize)
+    {
+        lock (_allocationLock)
+        {
+            // Create new larger buffers
+            var oldBackingBuffer = _backingBuffer;
+            var oldStagingBuffer = _stagingBuffer;
+            var oldSize = (uint)BufferSize;
 
-    public DeviceBuffer _backingBuffer { get; }
+            BufferDescription desc = new(
+                newSize,
+                _usage | VkBufferUsageFlags.TransferDst | VkBufferUsageFlags.TransferSrc,
+                VmaMemoryUsage.Auto,
+                0,
+                _stride);
+            _backingBuffer = SceneRenderer.Factory.CreateBuffer(desc);
+
+            desc = new BufferDescription(
+                newSize,
+                VkBufferUsageFlags.TransferSrc | VkBufferUsageFlags.TransferDst,
+                VmaMemoryUsage.Auto,
+                VmaAllocationCreateFlags.Mapped);
+            _stagingBuffer = SceneRenderer.Factory.CreateBuffer(desc);
+
+            // Copy old data to new buffers
+            SceneRenderer.AddBackgroundUploadTask((device, cl) =>
+            {
+                // Copy backing buffer contents
+                cl.CopyBuffer(oldBackingBuffer, 0, _backingBuffer, 0, oldSize);
+
+                // Add barrier to ensure copy completes
+                cl.BufferBarrier(_backingBuffer,
+                    VkPipelineStageFlags2.Transfer,
+                    VkAccessFlags2.TransferWrite,
+                    VkPipelineStageFlags2.AllGraphics,
+                    _dstAccessFlags);
+
+                // Dispose old buffers after copy completes
+                SceneRenderer.AddBackgroundUploadTask((d, c) =>
+                {
+                    oldBackingBuffer.Dispose();
+                    oldStagingBuffer.Dispose();
+                });
+            });
+
+            // Update allocator
+            var oldAllocator = _allocator;
+            _allocator = new FreeListAllocator(newSize);
+
+            // Copy allocations from old allocator
+            foreach (var allocation in _allocations)
+            {
+                if (!_allocator.AllocAt(allocation.AllocationStart, allocation.AllocationSize))
+                {
+                    throw new Exception($"Failed to migrate allocation at {allocation.AllocationStart} during buffer resize");
+                }
+            }
+
+            BufferSize = newSize;
+
+            // Recreate resource set if needed
+            if (_hasResourceSet)
+            {
+                CreateResourceSet();
+            }
+        }
+    }
 
     public GPUBufferHandle Allocate(uint size, int alignment)
     {
         GPUBufferHandle handle;
         lock (_allocationLock)
         {
-            //if ((_allocatedbytes % alignment) != 0)
-            //{
-            //    _allocatedbytes += (alignment - (_allocatedbytes % alignment));
-            //}
             uint addr;
+
+            // Try to allocate
             if (!_allocator.AlignedAlloc(size, (uint)alignment, out addr))
             {
-                throw new Exception(
-                    "GPU allocation failed. Try increasing buffer sizes in settings. Otherwise, Download more RAM 4head");
+                // Calculate new size
+                uint requiredSize = (uint)BufferSize + size;
+                uint growthSize = Math.Max((uint)(BufferSize * GROWTH_FACTOR), requiredSize);
+                growthSize = Math.Max(growthSize, (uint)BufferSize + MIN_GROWTH_SIZE);
+
+                // Log the resize
+                Console.WriteLine($"GPUBufferAllocator: Resizing buffer from {BufferSize / (1024.0 * 1024.0):F2}MB to {growthSize / (1024.0 * 1024.0):F2}MB");
+
+                // Resize and try again
+                ResizeBuffer(growthSize);
+
+                if (!_allocator.AlignedAlloc(size, (uint)alignment, out addr))
+                {
+                    throw new Exception(
+                        $"GPU allocation failed even after resize. Requested: {size} bytes, Buffer size: {BufferSize} bytes");
+                }
             }
 
             handle = new GPUBufferHandle(this, addr, size);
@@ -144,6 +240,22 @@ public class GPUBufferAllocator
         if (_bufferResourceSet != null)
         {
             cl.SetGraphicsResourceSet(slot, _bufferResourceSet);
+        }
+    }
+
+    /// <summary>
+    /// Get allocation statistics for monitoring
+    /// </summary>
+    public (long totalSize, int allocationCount, long usedSpace) GetStats()
+    {
+        lock (_allocationLock)
+        {
+            long usedSpace = 0;
+            foreach (var allocation in _allocations)
+            {
+                usedSpace += allocation.AllocationSize;
+            }
+            return (BufferSize, _allocations.Count, usedSpace);
         }
     }
 
@@ -229,18 +341,12 @@ public class GPUBufferAllocator
             {
                 if (disposing)
                 {
-                    // TODO: dispose managed state (managed objects)
+                    _allocator._allocations.Remove(this);
+                    _allocator.Free(AllocationStart);
                 }
 
-                _allocator.Free(AllocationStart);
                 disposedValue = true;
             }
-        }
-
-        // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
-        ~GPUBufferHandle()
-        {
-            Dispose(false);
         }
     }
 }
@@ -248,49 +354,34 @@ public class GPUBufferAllocator
 /// <summary>
 ///     Allocator for vertex/index buffers. Maintains a set of smaller megabuffers
 ///     and tries to batch allocations together behind the scenes.
+///     Now supports dynamic buffer sizing that grows as needed.
 /// </summary>
 public class VertexIndexBufferAllocator
 {
+    private const float GROWTH_FACTOR = 1.5f;
+    private const uint MIN_VERTEX_SIZE = 64 * 1024 * 1024;   // 64MB minimum for vertex buffers
+    private const uint MIN_INDEX_SIZE = 32 * 1024 * 1024;    // 32MB minimum for index buffers
+
     private readonly object _allocationLock = new();
 
     private readonly List<VertexIndexBufferHandle> _allocations = new();
     private readonly List<VertexIndexBuffer> _buffers = new();
 
     private readonly GraphicsDevice _device;
-    private readonly uint _maxIndicesSize;
-
-    private readonly uint _maxVertsSize;
+    private uint _maxIndicesSize;
+    private uint _maxVertsSize;
 
     private VertexIndexBuffer _currentStaging;
-    //private bool _pendingFlush = false;
 
     private ConcurrentQueue<VertexIndexBuffer> _pendingUpload = new();
 
-    //private bool _stagingLocked = false;
-
-    public VertexIndexBufferAllocator(GraphicsDevice gd, uint maxVertsSize, uint maxIndicesSize)
+    public VertexIndexBufferAllocator(GraphicsDevice gd, uint initialMaxVertsSize, uint initialMaxIndicesSize)
     {
         _device = gd;
-        BufferDescription desc = new(
-            maxVertsSize,
-            VkBufferUsageFlags.TransferSrc | VkBufferUsageFlags.TransferDst,
-            VmaMemoryUsage.Auto,
-            VmaAllocationCreateFlags.Mapped);
-        _currentStaging = new VertexIndexBuffer(_device);
-        _currentStaging._stagingBufferVerts = SceneRenderer.Factory.CreateBuffer(desc);
-        _currentStaging._mappedStagingBufferVerts =
-            _device.Map(_currentStaging._stagingBufferVerts, MapMode.Write);
-        desc = new BufferDescription(
-            maxIndicesSize,
-            VkBufferUsageFlags.TransferSrc | VkBufferUsageFlags.TransferDst,
-            VmaMemoryUsage.Auto,
-            VmaAllocationCreateFlags.Mapped);
-        _currentStaging._stagingBufferIndices = SceneRenderer.Factory.CreateBuffer(desc);
-        _currentStaging._mappedStagingBufferIndices =
-            _device.Map(_currentStaging._stagingBufferIndices, MapMode.Write);
-        _maxVertsSize = maxVertsSize;
-        _maxIndicesSize = maxIndicesSize;
-        _currentStaging.BufferIndex = 0;
+        _maxVertsSize = Math.Max(initialMaxVertsSize, MIN_VERTEX_SIZE);
+        _maxIndicesSize = Math.Max(initialMaxIndicesSize, MIN_INDEX_SIZE);
+
+        _currentStaging = CreateNewStagingBuffer();
         _buffers.Add(_currentStaging);
     }
 
@@ -328,11 +419,60 @@ public class VertexIndexBufferAllocator
         }
     }
 
+    private VertexIndexBuffer CreateNewStagingBuffer()
+    {
+        var staging = new VertexIndexBuffer(_device);
+        staging.BufferIndex = _buffers.Count;
+
+        BufferDescription desc = new(
+            _maxVertsSize,
+            VkBufferUsageFlags.TransferSrc | VkBufferUsageFlags.TransferDst,
+            VmaMemoryUsage.Auto,
+            VmaAllocationCreateFlags.Mapped);
+        staging._stagingBufferVerts = SceneRenderer.Factory.CreateBuffer(desc);
+        staging._mappedStagingBufferVerts = _device.Map(staging._stagingBufferVerts, MapMode.Write);
+
+        desc = new BufferDescription(
+            _maxIndicesSize,
+            VkBufferUsageFlags.TransferSrc | VkBufferUsageFlags.TransferDst,
+            VmaMemoryUsage.Auto,
+            VmaAllocationCreateFlags.Mapped);
+        staging._stagingBufferIndices = SceneRenderer.Factory.CreateBuffer(desc);
+        staging._mappedStagingBufferIndices = _device.Map(staging._stagingBufferIndices, MapMode.Write);
+
+        return staging;
+    }
+
+    private void GrowStagingBuffers(uint requiredVertSize, uint requiredIndexSize)
+    {
+        // Calculate new sizes
+        uint newVertSize = _maxVertsSize;
+        uint newIndexSize = _maxIndicesSize;
+
+        while (newVertSize < requiredVertSize)
+        {
+            newVertSize = Math.Max((uint)(newVertSize * GROWTH_FACTOR), newVertSize + MIN_VERTEX_SIZE);
+        }
+
+        while (newIndexSize < requiredIndexSize)
+        {
+            newIndexSize = Math.Max((uint)(newIndexSize * GROWTH_FACTOR), newIndexSize + MIN_INDEX_SIZE);
+        }
+
+        Console.WriteLine($"VertexIndexBufferAllocator: Growing buffers");
+        Console.WriteLine($"  Vertex: {_maxVertsSize / (1024.0 * 1024.0):F2}MB → {newVertSize / (1024.0 * 1024.0):F2}MB");
+        Console.WriteLine($"  Index:  {_maxIndicesSize / (1024.0 * 1024.0):F2}MB → {newIndexSize / (1024.0 * 1024.0):F2}MB");
+
+        _maxVertsSize = newVertSize;
+        _maxIndicesSize = newIndexSize;
+    }
+
     public VertexIndexBufferHandle Allocate(uint vsize, uint isize, int valignment, int ialignment,
         Action<VertexIndexBufferHandle> onStaging = null)
     {
         VertexIndexBufferHandle handle;
         var needsFlush = false;
+
         lock (_allocationLock)
         {
             long val = 0;
@@ -347,57 +487,71 @@ public class VertexIndexBufferAllocator
                 ial += ialignment - (_currentStaging._stagingIndicesSize % ialignment);
             }
 
-            if (_currentStaging._stagingVertsSize + vsize + val > _maxVertsSize ||
-                _currentStaging._stagingIndicesSize + isize + ial > _maxIndicesSize)
+            uint requiredVertSize = (uint)(_currentStaging._stagingVertsSize + vsize + val);
+            uint requiredIndexSize = (uint)(_currentStaging._stagingIndicesSize + isize + ial);
+
+            // Check if allocation exceeds current buffer capacity
+            bool vertexOverflow = requiredVertSize > _maxVertsSize;
+            bool indexOverflow = requiredIndexSize > _maxIndicesSize;
+
+            // If a single allocation is too large for current max sizes, grow the max sizes
+            if (vertexOverflow || indexOverflow)
             {
-                // Buffer won't fit in current megabuffer. Create a new one while the current one is still staging
+                // Check if this is because we need larger buffers overall
+                if (vsize + val > _maxVertsSize || isize + ial > _maxIndicesSize)
+                {
+                    // Single allocation is bigger than max size - need to grow
+                    GrowStagingBuffers(
+                        Math.Max(vsize + (uint)val, _maxVertsSize),
+                        Math.Max(isize + (uint)ial, _maxIndicesSize)
+                    );
+                }
+
+                // Flush current staging buffer and create new one with new size
                 _currentStaging._allocationsFull = true;
                 _currentStaging.FlushIfNeeded();
 
-                _currentStaging = new VertexIndexBuffer(_device);
-                _currentStaging.BufferIndex = _buffers.Count;
+                _currentStaging = CreateNewStagingBuffer();
                 _buffers.Add(_currentStaging);
-                BufferDescription desc = new(
-                    _maxVertsSize,
-                    VkBufferUsageFlags.TransferSrc | VkBufferUsageFlags.TransferDst,
-                    VmaMemoryUsage.Auto,
-                    VmaAllocationCreateFlags.Mapped);
-                _currentStaging._stagingBufferVerts = SceneRenderer.Factory.CreateBuffer(desc);
-                _currentStaging._mappedStagingBufferVerts =
-                    _device.Map(_currentStaging._stagingBufferVerts, MapMode.Write);
-                desc = new BufferDescription(
-                    _maxIndicesSize,
-                    VkBufferUsageFlags.TransferSrc | VkBufferUsageFlags.TransferDst,
-                    VmaMemoryUsage.Auto,
-                    VmaAllocationCreateFlags.Mapped);
-                _currentStaging._stagingBufferIndices = SceneRenderer.Factory.CreateBuffer(desc);
-                _currentStaging._mappedStagingBufferIndices =
-                    _device.Map(_currentStaging._stagingBufferIndices, MapMode.Write);
 
-                // Add to currently staging megabuffer
-                handle = new VertexIndexBufferHandle(this, _currentStaging, (uint)_currentStaging._stagingVertsSize,
-                    vsize, (uint)_currentStaging._stagingIndicesSize, isize);
-                _currentStaging._stagingVertsSize += vsize;
-                _currentStaging._stagingIndicesSize += isize;
-                _allocations.Add(handle);
-                if (onStaging != null)
+                // Recalculate alignment for new buffer
+                val = 0;
+                ial = 0;
+                if (_currentStaging._stagingVertsSize % valignment != 0)
                 {
-                    onStaging.Invoke(handle);
+                    val += valignment - (_currentStaging._stagingVertsSize % valignment);
+                }
+                if (_currentStaging._stagingIndicesSize % ialignment != 0)
+                {
+                    ial += ialignment - (_currentStaging._stagingIndicesSize % ialignment);
                 }
             }
-            else
+            else if (_currentStaging._stagingVertsSize + vsize + val > _maxVertsSize ||
+                     _currentStaging._stagingIndicesSize + isize + ial > _maxIndicesSize)
             {
-                // Add to currently staging megabuffer
-                handle = new VertexIndexBufferHandle(this, _currentStaging,
-                    (uint)(_currentStaging._stagingVertsSize + val), vsize,
-                    (uint)(_currentStaging._stagingIndicesSize + ial), isize);
-                _currentStaging._stagingVertsSize += vsize + val;
-                _currentStaging._stagingIndicesSize += isize + ial;
-                _allocations.Add(handle);
-                if (onStaging != null)
-                {
-                    onStaging.Invoke(handle);
-                }
+                // Buffer won't fit in current megabuffer, but it would fit in a new one
+                _currentStaging._allocationsFull = true;
+                _currentStaging.FlushIfNeeded();
+
+                _currentStaging = CreateNewStagingBuffer();
+                _buffers.Add(_currentStaging);
+
+                // Reset alignment calculations
+                val = 0;
+                ial = 0;
+            }
+
+            // Add to currently staging megabuffer
+            handle = new VertexIndexBufferHandle(this, _currentStaging,
+                (uint)(_currentStaging._stagingVertsSize + val), vsize,
+                (uint)(_currentStaging._stagingIndicesSize + ial), isize);
+            _currentStaging._stagingVertsSize += vsize + val;
+            _currentStaging._stagingIndicesSize += isize + ial;
+            _allocations.Add(handle);
+
+            if (onStaging != null)
+            {
+                onStaging.Invoke(handle);
             }
 
             _currentStaging._handleCount++;
@@ -428,31 +582,14 @@ public class VertexIndexBufferAllocator
             _currentStaging._allocationsFull = true;
             _currentStaging.FlushIfNeeded();
 
-            _currentStaging = new VertexIndexBuffer(_device);
-            _currentStaging.BufferIndex = _buffers.Count;
+            _currentStaging = CreateNewStagingBuffer();
             _buffers.Add(_currentStaging);
-            BufferDescription desc = new(
-                _maxVertsSize,
-                VkBufferUsageFlags.TransferSrc | VkBufferUsageFlags.TransferDst,
-                VmaMemoryUsage.Auto,
-                VmaAllocationCreateFlags.Mapped);
-            _currentStaging._stagingBufferVerts = SceneRenderer.Factory.CreateBuffer(desc);
-            _currentStaging._mappedStagingBufferVerts =
-                _device.Map(_currentStaging._stagingBufferVerts, MapMode.Write);
-            desc = new BufferDescription(
-                _maxIndicesSize,
-                VkBufferUsageFlags.TransferSrc | VkBufferUsageFlags.TransferDst,
-                VmaMemoryUsage.Auto,
-                VmaAllocationCreateFlags.Mapped);
-            _currentStaging._stagingBufferIndices = SceneRenderer.Factory.CreateBuffer(desc);
-            _currentStaging._mappedStagingBufferIndices =
-                _device.Map(_currentStaging._stagingBufferIndices, MapMode.Write);
         }
     }
 
     public bool BindAsVertexBuffer(CommandList cl, int index)
     {
-        if (_buffers[index] == null)
+        if (index < 0 || index >= _buffers.Count || _buffers[index] == null)
         {
             return false;
         }
@@ -463,13 +600,24 @@ public class VertexIndexBufferAllocator
 
     public bool BindAsIndexBuffer(CommandList cl, int index, VkIndexType indexformat)
     {
-        if (_buffers[index] == null)
+        if (index < 0 || index >= _buffers.Count || _buffers[index] == null)
         {
             return false;
         }
 
         cl.SetIndexBuffer(_buffers[index]._backingIndexBuffer, indexformat);
         return true;
+    }
+
+    /// <summary>
+    /// Get statistics about buffer usage
+    /// </summary>
+    public (uint maxVertSize, uint maxIndexSize, int bufferCount, long totalVertFootprint, long totalIndexFootprint) GetStats()
+    {
+        lock (_allocationLock)
+        {
+            return (_maxVertsSize, _maxIndicesSize, _buffers.Count, TotalVertexFootprint, TotalIndexFootprint);
+        }
     }
 
     public class VertexIndexBuffer
@@ -505,7 +653,6 @@ public class VertexIndexBufferAllocator
 
         internal int _handleCount;
         internal int _ifillCount;
-        //internal FreeListAllocator _indexAllocator;
         public MappedResource _mappedStagingBufferIndices;
         public MappedResource _mappedStagingBufferVerts;
         internal bool _pendingUpload = false;
@@ -515,7 +662,6 @@ public class VertexIndexBufferAllocator
         public long _stagingIndicesSize;
         public long _stagingVertsSize;
 
-        //internal FreeListAllocator _vertAllocator;
         internal int _vfillCount;
 
         public VertexIndexBuffer(GraphicsDevice device)
@@ -565,10 +711,10 @@ public class VertexIndexBufferAllocator
                         0);
                     _backingVertBuffer = d.ResourceFactory.CreateBuffer(ref vd);
                     _backingIndexBuffer = d.ResourceFactory.CreateBuffer(ref id);
-                    //cl.CopyBuffer(_stagingBufferVerts, 0, _backingVertBuffer, 0, (uint)_stagingVertsSize);
-                    //cl.CopyBuffer(_stagingBufferIndices, 0, _backingIndexBuffer, 0, (uint)_stagingIndicesSize);
+
                     _device.Unmap(_stagingBufferVerts);
                     _device.Unmap(_stagingBufferIndices);
+
                     SceneRenderer.AddAsyncTransfer(_backingVertBuffer,
                         _stagingBufferVerts,
                         VkAccessFlags2.VertexAttributeRead,
@@ -605,12 +751,9 @@ public class VertexIndexBufferAllocator
     {
         private VertexIndexBufferAllocator _allocator;
         internal VertexIndexBuffer _buffer;
-        //internal int _ialign;
         private bool _ifilled;
 
         internal Action<VertexIndexBufferHandle> _onStagedAction = null;
-
-        //internal int _valign;
 
         private bool _vfilled;
 
@@ -668,10 +811,6 @@ public class VertexIndexBufferAllocator
                 {
                     cl.UpdateBuffer(_buffer._stagingBufferVerts, VAllocationStart, vdata);
                 }
-                /*else if (AllocStatus == Status.Resident)
-                {
-                    cl.UpdateBuffer(_buffer._backingVertBuffer, VAllocationStart, vdata);
-                }*/
                 else
                 {
                     throw new Exception("Attempt to copy data to non-staging buffer");
@@ -691,8 +830,6 @@ public class VertexIndexBufferAllocator
         {
             SceneRenderer.AddLowPriorityBackgroundUploadTask((device, cl) =>
             {
-                // If the buffer is null when we get here, it's likely that this allocation was
-                // destroyed by the time the staging is happening.
                 if (_buffer == null)
                 {
                     return;
@@ -703,10 +840,6 @@ public class VertexIndexBufferAllocator
                 {
                     cl.UpdateBuffer(_buffer._stagingBufferIndices, IAllocationStart, idata);
                 }
-                /*else if (AllocStatus == Status.Resident)
-                {
-                    cl.UpdateBuffer(_buffer._backingIndexBuffer, IAllocationStart, idata);
-                }*/
                 else
                 {
                     throw new Exception("Attempt to copy data to non-staging buffer");
@@ -764,7 +897,7 @@ public class VertexIndexBufferAllocator
 
         #region IDisposable Support
 
-        private bool disposedValue; // To detect redundant calls
+        private bool disposedValue;
 
         protected virtual void Dispose(bool disposing)
         {
@@ -804,7 +937,6 @@ public class VertexIndexBufferAllocator
             Dispose(false);
         }
 
-        // This code added to correctly implement the disposable pattern.
         public void Dispose()
         {
             Dispose(true);

@@ -895,7 +895,6 @@ public class CFG
     // Rendering Limits
     public uint Viewport_Limit_Buffer_Flver_Bone = 65536;
     public uint Viewport_Limit_Buffer_Indirect_Draw = 50000;
-    public int Viewport_Limit_Renderables = 50000;
 
     // Wireframe Coloring
     public float Viewport_Wireframe_Color_Variance = 0.11f;
