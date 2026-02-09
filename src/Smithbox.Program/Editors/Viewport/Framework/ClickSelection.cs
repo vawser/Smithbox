@@ -16,7 +16,7 @@ public class ClickSelection
 
     public bool InCooldown = false;
 
-    public int CooldownInterval = 1;
+    public float CooldownInterval = 0.25f;
     public DateTime CooldownTime = DateTime.MinValue;
 
     public ClickSelection(VulkanViewport parent)

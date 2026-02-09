@@ -6,6 +6,4 @@
  - Specific editor for the world map tile textures, should present them similarly to the Map Editor world map feature, but constructs the map from the actual tiles + includes the layering stuff
  - Would then enable an editor for MapTexInfo, which controls weather
  
-- Work out why a big map object delete doesn't undo properly (i.e. throws outofrange exceptions)
-
 - Add new loading modal to the Map load process
