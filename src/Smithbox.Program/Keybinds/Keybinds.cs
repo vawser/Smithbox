@@ -118,6 +118,8 @@ public enum KeybindID
     MapEditor_Hide_All_Display_Groups,
     MapEditor_Show_All_Display_Groups,
     MapEditor_Select_Display_Group_Highlights,
+    MapEditor_Select_Collision_References,
+    MapEditor_Select_Referenced_Collision,
 
     // Model Editor
 
@@ -283,6 +285,9 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_Hide_All_Display_Groups, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Show_All_Display_Groups, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Select_Display_Group_Highlights, new() { Key = Key.Unknown });
+
+        InputManager.Bind(KeybindID.MapEditor_Select_Collision_References, new() { Key = Key.U, Ctrl = true });
+        InputManager.Bind(KeybindID.MapEditor_Select_Referenced_Collision, new() { Key = Key.U, Alt = true });
 
         // Model Editor
 

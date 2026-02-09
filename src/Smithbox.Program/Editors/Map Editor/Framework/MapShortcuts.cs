@@ -129,6 +129,7 @@ public class MapShortcuts
         activeView.AdjustToGridAction.OnShortcut();
         activeView.SelectAllAction.OnShortcut();
         activeView.EntityInfoAction.OnShortcut();
+        activeView.SelectCollisionRefAction.OnShortcut();
 
         // Tools
         activeView.MassEditTool.OnShortcut();

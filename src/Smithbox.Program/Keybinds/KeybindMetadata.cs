@@ -415,6 +415,14 @@ public static class KeybindMetadata
             "Select Display Group Highlights",
             ""
         ) },
+        { KeybindID.MapEditor_Select_Collision_References, (
+            "Select Collision References",
+            "Selects all map objects that reference the currently selected collision(s)."
+        ) },
+        { KeybindID.MapEditor_Select_Referenced_Collision, (
+            "Select Referenced Collision",
+            "Selects the collisions referenced by the currently selected part(s)."
+        ) },
 
         // Model Editor
 
@@ -630,6 +638,8 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_Hide_All_Display_Groups, InputCategory.MapEditor },
         { KeybindID.MapEditor_Show_All_Display_Groups, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Display_Group_Highlights, InputCategory.MapEditor },
+        { KeybindID.MapEditor_Select_Collision_References, InputCategory.MapEditor },
+        { KeybindID.MapEditor_Select_Referenced_Collision, InputCategory.MapEditor },
 
         // Model Editor
 

@@ -362,6 +362,7 @@ public class MapContentView
             ImGui.Separator();
 
             View.SelectAllAction.OnContext(ent);
+            View.SelectCollisionRefAction.OnContext(ent);
 
             ImGui.Separator();
 
