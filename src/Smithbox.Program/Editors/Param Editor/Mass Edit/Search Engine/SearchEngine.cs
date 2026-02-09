@@ -173,7 +173,7 @@ public class SearchEngine<A, B>
         }
         catch (Exception)
         {
-            //TaskLogs.AddLog($"[Smithbox:Param Editor] Search Engine search failed.", LogLevel.Error, LogPriority.High, e);
+            //Smithbox.LogError(this, $"[Smithbox:Param Editor] Search Engine search failed.", LogPriority.High, e);
 
             liveSet = failureAllOrNone ? sourceSet : new List<B>();
         }

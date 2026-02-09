@@ -195,7 +195,7 @@ public class ModelMaskToggler
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Failed to parse Mask ID: {e.Message}", LogLevel.Warning);
+                        Smithbox.Log(this, $"Failed to parse Mask ID: {e.Message}", LogLevel.Warning);
                     }
                 }
                 else

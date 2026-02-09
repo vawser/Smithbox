@@ -5,6 +5,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -593,7 +594,7 @@ public class MapEditorScreen : EditorScreen
 
         if (e.Wrapped is MSB.MissingReferenceException eRef)
         {
-            TaskLogs.AddLog(e.Message,
+            Smithbox.Log(this, e.Message,
                 LogLevel.Error, LogPriority.Normal, e.Wrapped);
 
             DialogResult result = PlatformUtils.Instance.MessageBox($"{eRef.Message}\nSelect referring map entity?",
@@ -623,13 +624,13 @@ public class MapEditorScreen : EditorScreen
                     }
                 }
 
-                TaskLogs.AddLog($"Unable to find map entity \"{eRef.Referrer.Name}\"",
+                Smithbox.Log(this, $"Unable to find map entity \"{eRef.Referrer.Name}\"",
                     LogLevel.Error, LogPriority.High);
             }
         }
         else
         {
-            TaskLogs.AddLog(e.Message,
+            Smithbox.Log(this, e.Message,
                 LogLevel.Error, LogPriority.High, e.Wrapped);
         }
     }

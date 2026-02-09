@@ -129,7 +129,7 @@ public class EntityIdCheckAction
                     vals.Add(entUint);
 
                     hasError = true;
-                    TaskLogs.AddLog($"Duplicate Entity ID: {entUint.ToString()} in {e.Name}");
+                    Smithbox.Log(this, $"Duplicate Entity ID: {entUint.ToString()} in {e.Name}");
                 }
             }
 
@@ -156,7 +156,7 @@ public class EntityIdCheckAction
                                     if (part.EntityGroupIDs[i] == group)
                                     {
                                         hasError = true;
-                                        TaskLogs.AddLog($"Duplicate Entity Group ID: {part.EntityGroupIDs[i].ToString()} in {e.Name}");
+                                        Smithbox.Log(this, $"Duplicate Entity Group ID: {part.EntityGroupIDs[i].ToString()} in {e.Name}");
                                     }
                                 }
                             }
@@ -185,7 +185,7 @@ public class EntityIdCheckAction
                                     if (part.EntityGroupIDs[i] == group)
                                     {
                                         hasError = true;
-                                        TaskLogs.AddLog($"Duplicate Entity Group ID: {part.EntityGroupIDs[i].ToString()} in {e.Name}");
+                                        Smithbox.Log(this, $"Duplicate Entity Group ID: {part.EntityGroupIDs[i].ToString()} in {e.Name}");
                                     }
                                 }
                             }
@@ -214,7 +214,7 @@ public class EntityIdCheckAction
                                     if (part.EntityGroupIDs[i] == group)
                                     {
                                         hasError = true;
-                                        TaskLogs.AddLog($"Duplicate Entity Group ID: {part.EntityGroupIDs[i].ToString()} in {e.Name}");
+                                        Smithbox.Log(this, $"Duplicate Entity Group ID: {part.EntityGroupIDs[i].ToString()} in {e.Name}");
                                     }
                                 }
                             }
@@ -243,7 +243,7 @@ public class EntityIdCheckAction
                                     if (part.EntityGroups[i] == group)
                                     {
                                         hasError = true;
-                                        TaskLogs.AddLog($"Duplicate Entity Group ID: {part.EntityGroups[i].ToString()} in {e.Name}");
+                                        Smithbox.Log(this, $"Duplicate Entity Group ID: {part.EntityGroups[i].ToString()} in {e.Name}");
                                     }
                                 }
                             }
@@ -257,7 +257,7 @@ public class EntityIdCheckAction
 
         if (!hasError)
         {
-            TaskLogs.AddLog($"No errors found.");
+            Smithbox.Log(this, $"No errors found.");
         }
     }
 }

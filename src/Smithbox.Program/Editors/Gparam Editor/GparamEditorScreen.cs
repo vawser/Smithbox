@@ -210,7 +210,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 await Project.Handler.GparamData.PrimaryBank.SaveGraphicsParam(targetScript.Key, targetScript.Value);
 
-                TaskLogs.AddLog($"[Graphics Param Editor] Saved {activeView.Selection.SelectedFileEntry.Filename}.gparam.dcx");
+                Smithbox.Log(this, $"[Graphics Param Editor] Saved {activeView.Selection.SelectedFileEntry.Filename}.gparam.dcx");
             }
         }
 

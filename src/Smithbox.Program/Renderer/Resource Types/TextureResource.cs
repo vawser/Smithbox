@@ -47,7 +47,7 @@ public class TextureResource : IResource, IDisposable
 
         if (GPUTexture == null)
         {
-            ResourceLog.AddLog("Unable to allocate texture descriptor");
+            Smithbox.Log(this, "Unable to allocate texture descriptor");
             return false;
         }
 

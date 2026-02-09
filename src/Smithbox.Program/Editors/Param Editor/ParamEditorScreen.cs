@@ -358,7 +358,7 @@ public class ParamEditorScreen : EditorScreen
         }
         else
         {
-            TaskLogs.AddError($"Param saving already in progress.");
+            Smithbox.LogError(this, $"Param saving already in progress.");
         }
     }
 
@@ -369,15 +369,15 @@ public class ParamEditorScreen : EditorScreen
         try
         {
             await activeView.GetPrimaryBank().Save();
-            TaskLogs.AddLog($"Params saved.");
+            Smithbox.Log(this, $"Params saved.");
         }
         catch (SavingFailedException e)
         {
-            TaskLogs.AddError(e.Message, e.Wrapped);
+            Smithbox.LogError(this, e.Message, e.Wrapped);
         }
         catch (Exception e)
         {
-            TaskLogs.AddError(e.Message, e);
+            Smithbox.LogError(this, e.Message, e);
         }
 
         return true;

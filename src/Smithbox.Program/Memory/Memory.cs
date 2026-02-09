@@ -43,7 +43,7 @@ public class Memory
             return ProcessHandle;
         }
 
-        Console.WriteLine("Cant find process. Is it running?", "Process");
+        Smithbox.LogError<Memory>($"Can't find process {procName}. Is it running?");
         return ZeroRt;
     }
 

@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -446,12 +447,12 @@ public class ProjectAliasMenu
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"Failed to deserialize the aliases: {sourceFile}", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"Failed to deserialize the aliases: {sourceFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"Failed to read the aliases: {sourceFile}", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"Failed to read the aliases: {sourceFile}", LogPriority.High, e);
             }
         }
     }

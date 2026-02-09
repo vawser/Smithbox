@@ -215,7 +215,7 @@ public class ParamImportPreviewModal
 
             Patcher.Importer.ImportDelta(Filename, filtered);
 
-            TaskLogs.AddLog("Imported selected param delta patch.");
+            Smithbox.Log(this, "Imported selected param delta patch.");
 
             Hide();
         }

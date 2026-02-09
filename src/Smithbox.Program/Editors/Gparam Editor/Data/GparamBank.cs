@@ -81,13 +81,13 @@ public class GparamBank : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Graphics Param Editor] Failed to read {key.Path} as GPARAM for {Name}.", e);
+                        Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} as GPARAM for {Name}.", e);
                         return false;
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Graphics Param Editor] Failed to read {key.Path} from VFS for {Name}.", e);
+                    Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} from VFS for {Name}.", e);
                     return false;
                 }
             }
@@ -126,13 +126,13 @@ public class GparamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Graphics Param Editor] Failed to write {fileEntry.Filename} as file for {Name}.",  e);
+                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to write {fileEntry.Filename} as file for {Name}.", e);
                 return false;
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"[Graphics Param Editor] Failed to write {fileEntry.Filename} as GPARAM for {Name}.", e);
+            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to write {fileEntry.Filename} as GPARAM for {Name}.", e);
             return false;
         }
 

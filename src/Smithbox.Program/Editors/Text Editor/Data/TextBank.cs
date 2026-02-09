@@ -97,7 +97,7 @@ public class TextBank : IDisposable
         {
             var filename = Path.GetFileNameWithoutExtension(entry.Path);
 
-            TaskLogs.AddError($"[Text Editor] Failed to load FMG container: {filename} at {entry.Path} for {Name}", e);
+            Smithbox.LogError(this, $"[Text Editor] Failed to load FMG container: {filename} at {entry.Path} for {Name}", e);
         }
     }
 
@@ -230,7 +230,7 @@ public class TextBank : IDisposable
         {
             var filename = Path.GetFileNameWithoutExtension(entry.Path);
 
-            TaskLogs.AddError($"[Text Editor] Failed to load FMG: {filename} at {entry.Path} for {Name}", e);
+            Smithbox.LogError(this, $"[Text Editor] Failed to load FMG: {filename} at {entry.Path} for {Name}", e);
         }
     }
 
@@ -321,13 +321,13 @@ public class TextBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Text Editor] Failed to write {entry.Filename} as file for {Name}.", e);
+                Smithbox.LogError(this, $"[Text Editor] Failed to write {entry.Filename} as file for {Name}.", e);
                 return false;
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"[Text Editor] Failed to read {entry.Filename} from VFS for {Name}.", e);
+            Smithbox.LogError(this, $"[Text Editor] Failed to read {entry.Filename} from VFS for {Name}.", e);
             return false;
         }
 
@@ -348,7 +348,7 @@ public class TextBank : IDisposable
                     }
                     catch (Exception ex)
                     {
-                        TaskLogs.AddError($"[Text Editor] Failed to write FMG file: {file.ID} for {Name}", ex);
+                        Smithbox.LogError(this, $"[Text Editor] Failed to write FMG file: {file.ID} for {Name}", ex);
                     }
                 }
             }
@@ -375,13 +375,13 @@ public class TextBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Text Editor] Failed to write {entry.Filename} as file for {Name}.", e);
+                Smithbox.LogError(this, $"[Text Editor] Failed to write {entry.Filename} as file for {Name}.", e);
                 return false;
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"[Text Editor] Failed to write {entry.Filename} as FMG for {Name}.", e);
+            Smithbox.LogError(this, $"[Text Editor] Failed to write {entry.Filename} as FMG for {Name}.", e);
 
             return false;
         }

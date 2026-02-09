@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Keybinds;
+using StudioCore.Logger;
 using StudioCore.Memory;
 using StudioCore.Utilities;
 using System;
@@ -166,7 +167,7 @@ public class ParamReloader
                 }
                 else
                 {
-                    TaskLogs.AddLog("Unable to find running game", LogLevel.Error);
+                    Smithbox.LogError(this, "Unable to find running game");
                     //throw new Exception("Unable to find running game");
                 }
             }
@@ -185,7 +186,7 @@ public class ParamReloader
             // Skip these for now: cause it to CTD due to type issue
             if (param == "ThrustersLocomotionParam_PC" || param == "ThrustersParam_NPC")
             {
-                TaskLogs.AddLog($"Cannot reload {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
+                Smithbox.Log(this, $"Cannot reload {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
                 continue;
             }
 
@@ -206,7 +207,7 @@ public class ParamReloader
                     {
                         if (!handler.TryFindOffsetFromAOB("ParamBase", paramRepo.ParamBaseAobPattern, paramRepo.ParamBaseAobRelativeOffsets, out int paramBase))
                         {
-                            TaskLogs.AddLog($"Param Reloader cannot reload {param} because the given AOB was not found.", LogLevel.Warning, LogPriority.Normal);
+                            Smithbox.Log(this, $"Param Reloader cannot reload {param} because the given AOB was not found.", LogLevel.Warning, LogPriority.Normal);
                             continue;
                         }
 
@@ -228,13 +229,13 @@ public class ParamReloader
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"Failed to find base address.", LogLevel.Error, LogPriority.High, ex);
+                    Smithbox.LogError(this, $"Failed to find base address.", LogPriority.High, ex);
                 }
             }
 
             if (!paramFound)
             {
-                TaskLogs.AddLog($"Cannot find param offset for {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
+                Smithbox.Log(this, $"Cannot find param offset for {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
             }
         }
 
@@ -264,7 +265,7 @@ public class ParamReloader
 
         if (RowCount <= 0)
         {
-            TaskLogs.AddLog($"ParamType {param.ParamType} has invalid offset or no rows for Param Reloader.", LogLevel.Warning, LogPriority.Low);
+            Smithbox.Log(this, $"ParamType {param.ParamType} has invalid offset or no rows for Param Reloader.", LogLevel.Warning, LogPriority.Low);
             return;
         }
 
@@ -296,7 +297,7 @@ public class ParamReloader
             }
             else
             {
-                TaskLogs.AddLog($"ParamType {param.ParamType}: row {RowId} index {i} is in memory but not in editor during Param Reloader opeation.\nTry saving params and restarting game.", LogLevel.Warning, LogPriority.Normal);
+                Smithbox.Log(this, $"ParamType {param.ParamType}: row {RowId} index {i} is in memory but not in editor during Param Reloader opeation.\nTry saving params and restarting game.", LogLevel.Warning, LogPriority.Normal);
                 return;
             }
         }
@@ -568,7 +569,7 @@ public class ParamReloader
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("Unable to create GameOffsets for Param Reloader.", LogLevel.Error,
+                Smithbox.LogError(this, "Unable to create GameOffsets for Param Reloader.",
                     LogPriority.High, e);
                 return null;
             }
@@ -630,12 +631,12 @@ public class ParamReloader
             }
             else
             {
-                TaskLogs.AddLog("No param has been selected yet for the Param Reloder.");
+                Smithbox.Log(this, "No param has been selected yet for the Param Reloder.");
             }
         }
         else
         {
-            TaskLogs.AddLog("Param Reloader cannot reload for this project.");
+            Smithbox.Log(this, "Param Reloader cannot reload for this project.");
         }
     }
     public void ReloadAllParams()
@@ -651,7 +652,7 @@ public class ParamReloader
         }
         else
         {
-            TaskLogs.AddLog("Param Reloader cannot reload for this project.");
+            Smithbox.Log(this, "Param Reloader cannot reload for this project.");
         }
     }
 }

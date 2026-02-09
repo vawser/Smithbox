@@ -281,7 +281,7 @@ public class ModelEditorScreen : EditorScreen
 
         if (Project.Descriptor.ProjectType == ProjectType.DES)
         {
-            TaskLogs.AddLog("Model Editor is not supported for DES.", LogLevel.Warning);
+            Smithbox.Log(this, "Model Editor is not supported for DES.", LogLevel.Warning);
             return;
         }
 

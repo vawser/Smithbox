@@ -23,7 +23,7 @@ public class ParamEnum
         }
         else
         {
-            //TaskLogs.AddLog($"PARAM META: {parent.Name} - Unable to populate ParamEnum Name property for {enumNode.Name}", LogLevel.Error);
+            //Smithbox.LogError(this, $"PARAM META: {parent.Name} - Unable to populate ParamEnum Name property for {enumNode.Name}");
         }
 
         foreach (XmlNode option in enumNode.SelectNodes("Option"))
@@ -34,7 +34,7 @@ public class ParamEnum
             }
             else
             {
-                //TaskLogs.AddLog($"PARAM META: {parent.Name} - Unable to populate ParamEnum Option Attribute Value property for {enumNode.Name}", LogLevel.Error);
+                //Smithbox.LogError(this, $"PARAM META: {parent.Name} - Unable to populate ParamEnum Option Attribute Value property for {enumNode.Name}");
             }
         }
     }

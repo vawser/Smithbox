@@ -41,7 +41,7 @@ public class TextNamingTemplateManager
         }
         else
         {
-            TaskLogs.AddLog("Invalid name for Naming template.", LogLevel.Warning);
+            Smithbox.Log(this, "Invalid name for Naming template.", LogLevel.Warning);
             return null;
         }
     }

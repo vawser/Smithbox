@@ -261,7 +261,7 @@ public class FmgImporter
                 }
                 else
                 {
-                    TaskLogs.AddLog($"Attempted to add stored text with existing key: {filename}");
+                    Smithbox.Log(this, $"Attempted to add stored text with existing key: {filename}");
                 }
             }
         }
@@ -282,7 +282,7 @@ public class FmgImporter
                 }
                 catch(Exception e)
                 {
-                    TaskLogs.AddLog($"Failed to read JSON file: {filename} at {path}\n{e.Message}", LogLevel.Warning);
+                    Smithbox.Log(this, $"Failed to read JSON file: {filename} at {path}\n{e.Message}", LogLevel.Warning);
                 }
 
                 return wrapper;

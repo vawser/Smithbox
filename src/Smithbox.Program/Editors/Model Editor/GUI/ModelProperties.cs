@@ -13,6 +13,7 @@ using StudioCore.Renderer;
 using StudioCore.Utilities;
 using StudioCore.Editors.Viewport;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Logger;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -868,7 +869,7 @@ public class ModelProperties
             else
             {
                 // SoulsFormats does not define if alpha should be exposed. Expose alpha by default.
-                TaskLogs.AddLog(
+                Smithbox.Log(this, 
                     $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default",
                     LogLevel.Warning, LogPriority.Low);
 

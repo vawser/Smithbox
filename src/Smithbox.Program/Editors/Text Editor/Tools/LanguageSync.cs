@@ -421,7 +421,7 @@ public class LanguageSync
             }
         }
 
-        TaskLogs.AddLog($"Synced {syncTargetContainerWrapper.ContainerDisplayCategory.GetDisplayName()} {syncTargetContainerWrapper.FileEntry.Filename} with {syncSrcContainerWrapper.ContainerDisplayCategory.GetDisplayName()} version.");
+        Smithbox.Log(this, $"Synced {syncTargetContainerWrapper.ContainerDisplayCategory.GetDisplayName()} {syncTargetContainerWrapper.FileEntry.Filename} with {syncSrcContainerWrapper.ContainerDisplayCategory.GetDisplayName()} version.");
 
         return actions;
     }

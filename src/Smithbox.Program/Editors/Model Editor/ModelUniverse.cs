@@ -6,6 +6,7 @@ using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -66,7 +67,7 @@ public class ModelUniverse : IUniverse
     {
         if (modelWrapper.Container != null)
         {
-            TaskLogs.AddLog($"Model \"{modelWrapper.Name}\" is already loaded",
+            Smithbox.Log(this, $"Model \"{modelWrapper.Name}\" is already loaded",
                 LogLevel.Information, LogPriority.Normal);
             return;
         }

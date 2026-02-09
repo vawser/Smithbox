@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -98,7 +99,7 @@ public class FileSelection
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
                 }
             }
             else
@@ -137,7 +138,7 @@ public class FileSelection
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
                 }
             }
         }
@@ -156,7 +157,7 @@ public class FileSelection
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
             }
 
             try
@@ -165,7 +166,7 @@ public class FileSelection
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)

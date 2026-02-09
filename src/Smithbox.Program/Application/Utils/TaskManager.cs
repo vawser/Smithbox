@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Concurrent;
@@ -194,7 +195,7 @@ public class TaskManager
                 {
                     if (TaskName != "")
                     {
-                        TaskLogs.AddLog($"{TaskName} {TaskCompletedMessage}",
+                        Smithbox.Log(this, $"{TaskName} {TaskCompletedMessage}",
                             LogLevel.Information, LogPriority);
                     }
                 }
@@ -204,7 +205,7 @@ public class TaskManager
                     TaskAction.Invoke();
                     if (TaskName != "")
                     {
-                        TaskLogs.AddLog($"{TaskName} {TaskCompletedMessage}",
+                        Smithbox.Log(this, $"{TaskName} {TaskCompletedMessage}",
                         LogLevel.Information, LogPriority);
                     }
                 }
@@ -219,7 +220,7 @@ public class TaskManager
 
                         if (TaskName != "")
                         {
-                            TaskLogs.AddLog($"{TaskName} {TaskFailedMessage}",
+                            Smithbox.Log(this, $"{TaskName} {TaskFailedMessage}",
                             LogLevel.Error, LogPriority, e);
                         }
                     }

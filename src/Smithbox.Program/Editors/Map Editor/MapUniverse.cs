@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -60,7 +61,7 @@ public class MapUniverse : IUniverse
             if (Project.Handler.ParamEditor == null)
             {
                 // ParamBank must be loaded for DS2 maps
-                TaskLogs.AddLog("Cannot load DS2 maps when params are not loaded.",
+                Smithbox.Log(this, "Cannot load DS2 maps when params are not loaded.",
                     LogLevel.Warning, LogPriority.High);
                 return false;
             }
@@ -126,7 +127,7 @@ public class MapUniverse : IUniverse
 
         if (existingMap != null && existingMap.LoadState is MapContentLoadState.Loaded)
         {
-            TaskLogs.AddLog($"Map \"{mapid}\" is already loaded",
+            Smithbox.Log(this, $"Map \"{mapid}\" is already loaded",
                 LogLevel.Information, LogPriority.Normal);
             return;
         }
@@ -265,7 +266,7 @@ public class MapUniverse : IUniverse
         catch (Exception e)
         {
 #if DEBUG
-            TaskLogs.AddLog("Map Load Failed (debug build)",
+            Smithbox.Log(this, "Map Load Failed (debug build)",
                 LogLevel.Error, LogPriority.High, e);
             throw;
 #else
@@ -334,7 +335,7 @@ public class MapUniverse : IUniverse
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Map Editor] Failed to load BTL file.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to load BTL file.", LogPriority.High, e);
             }
         }
         else
@@ -472,11 +473,11 @@ public class MapUniverse : IUniverse
                     CheckDupeEntityIDs(map);
 
                     map.HasUnsavedChanges = false;
-                    TaskLogs.AddLog($"[Map Editor] Saved map: {curEntry.Filename}");
+                    Smithbox.Log(this, $"[Map Editor] Saved map: {curEntry.Filename}");
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Map Editor] Failed to save map: {curEntry.Filename}", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to save map: {curEntry.Filename}", LogPriority.High, e);
 
                     if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
                     {
@@ -717,8 +718,7 @@ public class MapUniverse : IUniverse
                         var entryExists = entityIDList.TryGetValue(entityID, out var name);
                         if (entryExists)
                         {
-                            TaskLogs.AddLog(
-                                $"Duplicate EntityID: \"{entityID}\" is being used by multiple regions \"{obj.PrettyName}\" and \"{name}\"",
+                            Smithbox.Log<MapUniverse>($"Duplicate EntityID: \"{entityID}\" is being used by multiple regions \"{obj.PrettyName}\" and \"{name}\"",
                                 LogLevel.Warning);
                         }
                         else
@@ -1039,7 +1039,7 @@ public class MapUniverse : IUniverse
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Map Editor] Failed to load BTL file.", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to load BTL file.", LogPriority.High, e);
                 }
             }
             else

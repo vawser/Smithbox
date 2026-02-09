@@ -115,12 +115,12 @@ public class ProjectFileLocator : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"Failed to deserialize the file dictionary: {filepath}", e);
+                    Smithbox.LogError(this, $"Failed to deserialize the file dictionary: {filepath}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"Failed to read the file dictionary: {filepath}", e);
+                Smithbox.LogError(this, $"Failed to read the file dictionary: {filepath}", e);
             }
         }
 

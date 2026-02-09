@@ -1,4 +1,4 @@
-﻿namespace StudioCore.Utilities;
+﻿namespace StudioCore.Logger;
 
 /// <summary>
 ///     Priority of log message. Affects how log is conveyed to the user.

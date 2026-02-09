@@ -352,7 +352,7 @@ public class GparamQuickEdit
         {
             foreach (var entry in resolvedList)
             {
-                //TaskLogs.AddLog($"Applied Quick Edit to: {entry}");
+                //Smithbox.Log(this, $"Applied Quick Edit to: {entry}");
             }
 
             if (actionList.Count > 0)
@@ -364,7 +364,7 @@ public class GparamQuickEdit
         }
         else
         {
-            TaskLogs.AddLog($"Quick Edit could not be applied.", LogLevel.Warning);
+            Smithbox.Log(this, $"Quick Edit could not be applied.", LogLevel.Warning);
         }
     }
 
@@ -612,7 +612,7 @@ public class GparamQuickEdit
 
     private void CommandAdjust(GPARAM.IField targetField, string commandArg, EditEffectType effectType, string gparamName, string groupName)
     {
-        //TaskLogs.AddLog(commandArg);
+        //Smithbox.Log(this, commandArg);
 
         Match valueCommandMatch = null;
 
@@ -718,7 +718,7 @@ public class GparamQuickEdit
                 {
                     GPARAM.IFieldValue entry = targetField.Values[i];
 
-                    //TaskLogs.AddLog($"entry: {entry.Id} {entry.Value}");
+                    //Smithbox.Log(this, $"entry: {entry.Id} {entry.Value}");
 
                     // INT
                     if (targetField is GPARAM.IntField intField)
@@ -1491,7 +1491,7 @@ public class GparamQuickEdit
                 GPARAM.IFieldValue entry = targetField.Values[i];
 
                 filterTruth[i] = true;
-                //TaskLogs.AddLog($"Filter All: {entry.Id}");
+                //Smithbox.Log(this, $"Filter All: {entry.Id}");
             }
         }
     }
@@ -1525,7 +1525,7 @@ public class GparamQuickEdit
                 if (entry.Id == targetId)
                 {
                     filterTruth[i] = true;
-                    //TaskLogs.AddLog($"Filter: Matched ID {targetId} - {entry.Id}");
+                    //Smithbox.Log(this, $"Filter: Matched ID {targetId} - {entry.Id}");
                 }
             }
         }
@@ -1547,7 +1547,7 @@ public class GparamQuickEdit
                 if (i == targetIdx)
                 {
                     filterTruth[i] = true;
-                    //TaskLogs.AddLog($"Filter: Matched ID {targetId} - {entry.Id}");
+                    //Smithbox.Log(this, $"Filter: Matched ID {targetId} - {entry.Id}");
                 }
             }
         }
@@ -1569,7 +1569,7 @@ public class GparamQuickEdit
                 if (entry.Unk04 == targetTod)
                 {
                     filterTruth[i] = true;
-                    //TaskLogs.AddLog($"Filter: Matched Time of Day {targetTod} - {entry.Id}");
+                    //Smithbox.Log(this, $"Filter: Matched Time of Day {targetTod} - {entry.Id}");
                 }
             }
         }
@@ -1600,7 +1600,7 @@ public class GparamQuickEdit
                         if (fieldValue == commandValue)
                         {
                             filterTruth[i] = true;
-                            //TaskLogs.AddLog($"Filter: Matched Value INT {commandValue} - {entry.Id}");
+                            //Smithbox.Log(this, $"Filter: Matched Value INT {commandValue} - {entry.Id}");
                         }
                     }
                 }
@@ -1617,7 +1617,7 @@ public class GparamQuickEdit
                         if (fieldValue == commandValue)
                         {
                             filterTruth[i] = true;
-                            //TaskLogs.AddLog($"Filter: Matched Value UINT {commandValue} - {entry.Id}");
+                            //Smithbox.Log(this, $"Filter: Matched Value UINT {commandValue} - {entry.Id}");
                         }
                     }
                 }
@@ -1634,7 +1634,7 @@ public class GparamQuickEdit
                         if (fieldValue == commandValue)
                         {
                             filterTruth[i] = true;
-                            //TaskLogs.AddLog($"Filter: Matched Value SHORT {commandValue} - {entry.Id}");
+                            //Smithbox.Log(this, $"Filter: Matched Value SHORT {commandValue} - {entry.Id}");
                         }
                     }
                 }
@@ -1651,7 +1651,7 @@ public class GparamQuickEdit
                         if (fieldValue == commandValue)
                         {
                             filterTruth[i] = true;
-                            //TaskLogs.AddLog($"Filter: Matched Value SBYTE {commandValue} - {entry.Id}");
+                            //Smithbox.Log(this, $"Filter: Matched Value SBYTE {commandValue} - {entry.Id}");
                         }
                     }
                 }
@@ -1668,7 +1668,7 @@ public class GparamQuickEdit
                         if (fieldValue == commandValue)
                         {
                             filterTruth[i] = true;
-                            //TaskLogs.AddLog($"Filter: Matched Value BYTE {commandValue} - {entry.Id}");
+                            //Smithbox.Log(this, $"Filter: Matched Value BYTE {commandValue} - {entry.Id}");
                         }
                     }
                 }
@@ -1685,7 +1685,7 @@ public class GparamQuickEdit
                         if (fieldValue == commandValue)
                         {
                             filterTruth[i] = true;
-                            //TaskLogs.AddLog($"Filter: Matched Value BOOL {commandValue} - {entry.Id}");
+                            //Smithbox.Log(this, $"Filter: Matched Value BOOL {commandValue} - {entry.Id}");
                         }
                     }
                 }
@@ -1702,7 +1702,7 @@ public class GparamQuickEdit
                         if (fieldValue == commandValue)
                         {
                             filterTruth[i] = true;
-                            //TaskLogs.AddLog($"Filter: Matched Value FLOAT {commandValue} - {entry.Id}");
+                            //Smithbox.Log(this, $"Filter: Matched Value FLOAT {commandValue} - {entry.Id}");
                         }
                     }
                 }
@@ -1733,7 +1733,7 @@ public class GparamQuickEdit
                             if (fieldValue == commandVector)
                             {
                                 filterTruth[i] = true;
-                                //TaskLogs.AddLog($"Filter: Matched Value VECTOR2 {commandVector} - {entry.Id}");
+                                //Smithbox.Log(this, $"Filter: Matched Value VECTOR2 {commandVector} - {entry.Id}");
                             }
                         }
                     }
@@ -1768,7 +1768,7 @@ public class GparamQuickEdit
                             if (fieldValue == commandVector)
                             {
                                 filterTruth[i] = true;
-                                //TaskLogs.AddLog($"Filter: Matched Value VECTOR3 {commandVector} - {entry.Id}");
+                                //Smithbox.Log(this, $"Filter: Matched Value VECTOR3 {commandVector} - {entry.Id}");
                             }
                         }
                     }
@@ -1807,7 +1807,7 @@ public class GparamQuickEdit
                             if (fieldValue == commandVector)
                             {
                                 filterTruth[i] = true;
-                                //TaskLogs.AddLog($"Filter: Matched Value VECTOR4 {commandVector} - {entry.Id}");
+                                //Smithbox.Log(this, $"Filter: Matched Value VECTOR4 {commandVector} - {entry.Id}");
                             }
                         }
                     }

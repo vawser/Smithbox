@@ -4,6 +4,7 @@ using HKLib.Serialization.hk2018.Xml;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -113,13 +114,13 @@ public class HavokNavmeshBank
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"[{Project}:Map Editor] Failed to serialize havok file: {name}", LogLevel.Error, LogPriority.High, ex);
+                    Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to serialize havok file: {name}", LogPriority.High, ex);
                 }
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project}:Map Editor] Failed to load navmesh models: {binderEntry.Path}", LogLevel.Error, LogPriority.High, e);
+            Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to load navmesh models: {binderEntry.Path}", LogPriority.High, e);
         }
     }
 
@@ -157,12 +158,12 @@ public class HavokNavmeshBank
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} as NVA", LogLevel.Error, LogPriority.High, e);
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as NVA", LogPriority.High, e);
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} from VFS", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} from VFS", LogPriority.High, e);
                 }
             }
         }
@@ -216,7 +217,7 @@ public class HavokNavmeshBank
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Map Editor] Failed to write {entry.Path} as NVA", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as NVA", LogPriority.High, e);
             }
         }
     }

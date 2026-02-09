@@ -4,6 +4,7 @@ using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -50,6 +51,8 @@ public class CFG
     public bool Logger_Enable_Warning_Log = true;
     public int Logger_Action_Fade_Time = 1500;
     public int Logger_Warning_Fade_Time = 1500;
+    public bool Logger_Enable_Color_Fade = true;
+    public bool Logger_Enable_Log_Popups = true;
 
     public bool Developer_Enable_Tools = false;
     public string Developer_Smithbox_Build_Folder = "";
@@ -1170,7 +1173,7 @@ public class CFG
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.Log<CFG>("[Smithbox] Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
 
                 Current = new CFG();
                 Save();

@@ -22,7 +22,7 @@ public static class InterfaceUtils
     {
         if (list == null)
         {
-            TaskLogs.AddLog($"Theme is missing entry, defaulted this vector to 1, 1, 1, 1");
+            Smithbox.Log(typeof(InterfaceUtils), $"Theme is missing entry, defaulted this vector to 1, 1, 1, 1");
             return new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
         }
 

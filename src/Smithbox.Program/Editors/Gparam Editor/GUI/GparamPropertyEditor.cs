@@ -407,7 +407,7 @@ public class GparamPropertyEditor
         }
         else
         {
-            TaskLogs.AddLog($"{field.Name} {field.GetType()} is not supported.", LogLevel.Warning);
+            Smithbox.Log(this, $"{field.Name} {field.GetType()} is not supported.", LogLevel.Warning);
         }
 
         // Update and Commit
@@ -1133,7 +1133,7 @@ public class GparamPropertyEditor
         }
         else
         {
-            TaskLogs.AddLog($"{field.Name} {field.GetType()} is not supported", LogLevel.Warning);
+            Smithbox.Log(this, $"{field.Name} {field.GetType()} is not supported", LogLevel.Warning);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -82,7 +83,7 @@ public class LoadBinderResourcesAction
                         catch (Exception e)
                         {
                             load = false;
-                            ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error, LogPriority.High, e);
+                            Smithbox.Log(this, $"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Warning, LogPriority.Normal, e);
                         }
 
                         break;
@@ -100,7 +101,7 @@ public class LoadBinderResourcesAction
                         catch (Exception e)
                         {
                             load = false;
-                            ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error, LogPriority.High, e);
+                            Smithbox.Log(this, $"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Warning, LogPriority.Normal, e);
                         }
 
                         break;
@@ -136,7 +137,7 @@ public class LoadBinderResourcesAction
                         catch (Exception e)
                         {
                             load = false;
-                            ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error, LogPriority.High, e);
+                            Smithbox.Log(this, $"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Warning, LogPriority.Normal, e);
                         }
 
                         break;
@@ -214,7 +215,7 @@ public class LoadBinderResourcesAction
 
                 PendingTPFs.Add((bndvirt, header).ToTuple());
 
-                //ResourceLog.AddLog($"ProcessBinder - PendingTPFs: {curFileBinderPath}");
+                //Smithbox.Log(this, $"ProcessBinder - PendingTPFs: {curFileBinderPath}");
             }
             else
             {
@@ -226,7 +227,7 @@ public class LoadBinderResourcesAction
                         //handle = new ResourceHandle<FlverResource>();
                         pipeline = _job.FlverLoadPipeline;
 
-                        //ResourceLog.AddLog($"ProcessBinder - FlverLoadPipeline: {curFileBinderPath}");
+                        //Smithbox.Log(this, $"ProcessBinder - FlverLoadPipeline: {curFileBinderPath}");
                     }
                 }
 
@@ -237,7 +238,7 @@ public class LoadBinderResourcesAction
                     {
                         pipeline = _job.NVMNavmeshLoadPipeline;
 
-                        //ResourceLog.AddLog($"ProcessBinder - NVMNavmeshLoadPipeline: {curFileBinderPath}");
+                        //Smithbox.Log(this, $"ProcessBinder - NVMNavmeshLoadPipeline: {curFileBinderPath}");
                     }
                 }
 
@@ -248,7 +249,7 @@ public class LoadBinderResourcesAction
                     {
                         pipeline = _job.HavokNavmeshLoadPipeline;
 
-                        //ResourceLog.AddLog($"ProcessBinder - HavokNavmeshLoadPipeline: {curFileBinderPath}");
+                        //Smithbox.Log(this, $"ProcessBinder - HavokNavmeshLoadPipeline: {curFileBinderPath}");
                     }
                 }
 
@@ -259,7 +260,7 @@ public class LoadBinderResourcesAction
                     {
                         pipeline = _job.HavokCollisionLoadPipeline;
 
-                        //ResourceLog.AddLog($"ProcessBinder - HavokCollisionLoadPipeline: {curFileBinderPath}");
+                        //Smithbox.Log(this, $"ProcessBinder - HavokCollisionLoadPipeline: {curFileBinderPath}");
                     }
                 }
 
@@ -269,7 +270,7 @@ public class LoadBinderResourcesAction
 
                     PendingResources.Add((pipeline, curFileBinderPath, header).ToTuple());
 
-                    //ResourceLog.AddLog($"ProcessBinder - PendingResources: {curFileBinderPath}");
+                    //Smithbox.Log(this, $"ProcessBinder - PendingResources: {curFileBinderPath}");
                 }
             }
         }

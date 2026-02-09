@@ -206,7 +206,7 @@ public class ModelContainerWrapper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Model Editor] Failed to read {Path} during model load.", e);
+                    Smithbox.LogError(this, $"[Model Editor] Failed to read {Path} during model load.", e);
                 }
             }
             else
@@ -232,7 +232,7 @@ public class ModelContainerWrapper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Model Editor] Failed to read {Path} during model load.", e);
+                    Smithbox.LogError(this, $"[Model Editor] Failed to read {Path} during model load.", e);
                 }
             }
         }
@@ -251,7 +251,7 @@ public class ModelContainerWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Model Editor] Failed to read {targetBhdPath} during model load.", e);
+                Smithbox.LogError(this, $"[Model Editor] Failed to read {targetBhdPath} during model load.", e);
             }
 
             try
@@ -260,7 +260,7 @@ public class ModelContainerWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Model Editor] Failed to read {targetBdtPath} during model load.", e);
+                Smithbox.LogError(this, $"[Model Editor] Failed to read {targetBdtPath} during model load.", e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
@@ -359,7 +359,7 @@ public class ModelWrapper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Model Editor] Failed to read {Parent.Path} during model load.", e);
+                    Smithbox.LogError(this, $"[Model Editor] Failed to read {Parent.Path} during model load.", e);
                 }
             }
             else
@@ -388,7 +388,7 @@ public class ModelWrapper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Model Editor] Failed to read {Parent.Path} during model load.", e);
+                    Smithbox.LogError(this, $"[Model Editor] Failed to read {Parent.Path} during model load.", e);
                 }
             }
         }
@@ -407,7 +407,7 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Model Editor] Failed to read {targetBhdPath} during model load.", e);
+                Smithbox.LogError(this, $"[Model Editor] Failed to read {targetBhdPath} during model load.", e);
             }
 
             try
@@ -416,7 +416,7 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Model Editor] Failed to read {targetBdtPath} during model load.", e);
+                Smithbox.LogError(this, $"[Model Editor] Failed to read {targetBdtPath} during model load.", e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
@@ -550,11 +550,11 @@ public class ModelWrapper
             try
             {
                 project.VFS.ProjectFS.WriteFile(containerPath, flverData);
-                TaskLogs.AddInfo($"[Model Editor] Saved {containerPath}.");
+                Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Model Editor] Failed to write {containerPath} during model save.",e);
+                Smithbox.LogError(this, $"[Model Editor] Failed to write {containerPath} during model save.", e);
             }
         }
 
@@ -585,12 +585,12 @@ public class ModelWrapper
                         var outBinderData = binder.Write();
                         project.VFS.ProjectFS.WriteFile(containerPath, outBinderData);
 
-                        TaskLogs.AddInfo($"[Model Editor] Saved {containerPath}.");
+                        Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Model Editor] Failed to write {containerPath} during model save.", e);
+                    Smithbox.LogError(this, $"[Model Editor] Failed to write {containerPath} during model save.", e);
                 }
             }
             else
@@ -618,12 +618,12 @@ public class ModelWrapper
                         var outBinderData = binder.Write();
                         project.VFS.ProjectFS.WriteFile(containerPath, outBinderData);
 
-                        TaskLogs.AddInfo($"[Model Editor] Saved {containerPath}.");
+                        Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Model Editor] Failed to write {containerPath} during model save.", e);
+                    Smithbox.LogError(this, $"[Model Editor] Failed to write {containerPath} during model save.", e);
                 }
             }
         }
@@ -645,7 +645,7 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Model Editor] Failed to write {targetBhdPath} during model save.", e);
+                Smithbox.LogError(this, $"[Model Editor] Failed to write {targetBhdPath} during model save.", e);
             }
 
             try
@@ -654,7 +654,7 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Model Editor] Failed to write {targetBdtPath} during model save.", e);
+                Smithbox.LogError(this, $"[Model Editor] Failed to write {targetBdtPath} during model save.", e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
@@ -686,7 +686,7 @@ public class ModelWrapper
                     project.VFS.ProjectFS.WriteFile(writePathBhd, bhdData);
                     project.VFS.ProjectFS.WriteFile(writePathBhd, bdtData);
 
-                    TaskLogs.AddInfo($"[Model Editor] Saved {containerPath}.");
+                    Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
                 }
                 else
                 {
@@ -713,7 +713,7 @@ public class ModelWrapper
                     project.VFS.ProjectFS.WriteFile(writePathBhd, bhdData);
                     project.VFS.ProjectFS.WriteFile(writePathBhd, bdtData);
 
-                    TaskLogs.AddInfo($"[Model Editor] Saved {containerPath}.");
+                    Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
                 }
             }
         }

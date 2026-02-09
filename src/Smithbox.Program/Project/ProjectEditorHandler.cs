@@ -1,4 +1,5 @@
-﻿using StudioCore.Editors.Common;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.FileBrowser;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
@@ -170,42 +171,42 @@ public class ProjectEditorHandler : IDisposable
     public void LogDataResults()
     {
         if (_projectDataTask?.Result == true)
-            TaskLogs.AddLog("Setup Project Data.");
+            Smithbox.Log(this, "Setup Project Data.");
         else
-            TaskLogs.AddError("Failed to setup Project Data.");
+            Smithbox.LogError(this, "Failed to setup Project Data.");
 
         if (_mapDataTask != null)
-            TaskLogs.AddLog(_mapDataTask.Result
+            Smithbox.Log(this, _mapDataTask.Result
                 ? "[Map Editor] Setup Map Data Banks."
                 : "[Map Editor] Failed to setup Map Data Banks.");
 
         if (_modelDataTask != null)
-            TaskLogs.AddLog(_modelDataTask.Result
+            Smithbox.Log(this, _modelDataTask.Result
                 ? "[Model Editor] Setup Model Data Banks."
                 : "[Model Editor] Failed to setup Model Data Banks.");
 
         if (_materialDataTask != null)
-            TaskLogs.AddLog(_materialDataTask.Result
+            Smithbox.Log(this, _materialDataTask.Result
                 ? "[Material Data] Setup Material Data."
                 : "[Material Data] Failed to setup Material Data.");
 
         if (_paramDataTask != null)
-            TaskLogs.AddLog(_paramDataTask.Result
+            Smithbox.Log(this, _paramDataTask.Result
                 ? "[Param Editor] Setup PARAM Banks."
                 : "[Param Editor] Failed to setup PARAM Banks.");
 
         if (_textDataTask != null)
-            TaskLogs.AddLog(_textDataTask.Result
+            Smithbox.Log(this, _textDataTask.Result
                 ? "[Text Editor] Setup FMG Banks."
                 : "[Text Editor] Failed to setup FMG Banks.");
 
         if (_gparamDataTask != null)
-            TaskLogs.AddLog(_gparamDataTask.Result
+            Smithbox.Log(this, _gparamDataTask.Result
                 ? "[Graphics Param Editor] Setup GPARAM Banks."
                 : "[Graphics Param Editor] Failed to setup GPARAM Banks.");
 
         if (_textureDataTask != null)
-            TaskLogs.AddLog(_textureDataTask.Result
+            Smithbox.Log(this, _textureDataTask.Result
                 ? "[Texture Viewer] Setup texture bank."
                 : "[Texture Viewer] Failed to setup texture bank.");
     }

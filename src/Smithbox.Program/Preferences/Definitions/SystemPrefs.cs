@@ -112,7 +112,7 @@ public class SystemPrefs
     #endregion
 
     #region Loggers
-    public static PreferenceItem System_ShowActionLogger()
+    public static PreferenceItem Logger_Enable_Action_Log()
     {
         return new PreferenceItem
         {
@@ -143,7 +143,7 @@ public class SystemPrefs
             Section = SectionCategory.Loggers,
 
             Title = "Action Visibility Duration",
-            Description = "The number of frames for which the action logger message stays visible in the menu bar.\n-1 means the message never disappears.",
+            Description = "The number of frames for which the action logger message stays visible in the menu bar.\nAlso determines the time it takes for messages to fade colors.\n-1 means the message never disappears or fades.",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
@@ -171,7 +171,7 @@ public class SystemPrefs
         };
     }
 
-    public static PreferenceItem System_WarningLogger_FadeTime()
+    public static PreferenceItem Logger_Warning_Fade_Time()
     {
         return new PreferenceItem
         {
@@ -183,11 +183,49 @@ public class SystemPrefs
             Section = SectionCategory.Loggers,
 
             Title = "Warning Visibility Duration",
-            Description = "The number of frames for which the warning logger message stays visible in the menu bar.\n-1 means the message never disappears.",
+            Description = "The number of frames for which the warning logger message stays visible in the menu bar.\nAlso determines the time it takes for messages to fade colors.\n-1 means the message never disappears or fades.",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
                 ImGui.InputInt("##inputValue", ref CFG.Current.Logger_Warning_Fade_Time);
+            }
+        };
+    }
+
+    public static PreferenceItem Logger_Enable_Color_Fade()
+    {
+        return new PreferenceItem()
+        {
+            OrderID = 4,
+            Category = PreferenceCategory.System,
+            Spacer = true,
+            InlineName = false,
+            Section = SectionCategory.Loggers,
+            Title = "Enable Log Message Color Fade",
+            Description = "If enabled, log messages will slowly fade from their original color to a faded color.",
+            Draw = () =>
+            {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Color_Fade);
+            }
+        };
+    }
+
+    public static PreferenceItem Logger_Enable_Log_Popups()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 5,
+            Category = PreferenceCategory.System,
+            Spacer = true,
+            InlineName = false,
+            
+            Section = SectionCategory.Loggers,
+            
+            Title = "Log Popups",
+            Description = "If enabled, high priority log messages will cause a popup message box to appear.",
+            
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Log_Popups);
             }
         };
     }

@@ -1,6 +1,7 @@
 ﻿using HKX2;
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -67,7 +68,7 @@ public static class HKX2_Helper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to load HKX2.", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.Log(typeof(HKX2_Helper), $"[Smithbox] Failed to load HKX2.", LogLevel.Error, LogPriority.High, e);
                 }
             }
 
