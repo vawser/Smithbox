@@ -4,7 +4,6 @@
 
 - Issue with creating Bloom field entry in Gparam Editor, likely related to 【 characters in Gs Presents【Bloom】 Enable
 
-- Add scaling gizmo
-
+- Add support to scale gizmo for regions
 - Fix gizmo usage in Orthographic and Oblique view modes
 - Optimise duplicate action

@@ -476,7 +476,7 @@ public class TexturePool
 
             var curProject = Smithbox.Orchestrator.SelectedProject;
 
-            if (curProject != null)
+            if (curProject != null && curProject.Handler != null)
             {
                 var checkPow = true;
 
