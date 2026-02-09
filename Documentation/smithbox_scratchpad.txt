@@ -6,4 +6,4 @@
  - Specific editor for the world map tile textures, should present them similarly to the Map Editor world map feature, but constructs the map from the actual tiles + includes the layering stuff
  - Would then enable an editor for MapTexInfo, which controls weather
  
-- Update SimpleFlver with the selection tint stuff
+- Update Collision/NavSolid/NavWire shaders

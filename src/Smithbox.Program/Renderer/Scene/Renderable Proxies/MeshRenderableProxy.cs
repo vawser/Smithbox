@@ -115,10 +115,10 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             if (_renderable != -1)
             {
                 _renderablesSet.cVisible[_renderable]._visible = value;
-                if (!_meshProvider.SelectedRenderBaseMesh && _renderOutline)
-                {
-                    _renderablesSet.cVisible[_renderable]._visible = false;
-                }
+                //if (!_meshProvider.SelectedRenderBaseMesh && _renderOutline)
+                //{
+                //    _renderablesSet.cVisible[_renderable]._visible = false;
+                //}
             }
 
             foreach (MeshRenderableProxy sm in _submeshes)
@@ -594,10 +594,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         // Visible
         _renderablesSet.cVisible[_renderable]._visible = _visible;
-        if (!_meshProvider.SelectedRenderBaseMesh && _renderOutline)
-        {
-            _renderablesSet.cVisible[_renderable]._visible = false;
-        }
+
+        //if (!_meshProvider.SelectedRenderBaseMesh && _renderOutline)
+        //{
+        //    _renderablesSet.cVisible[_renderable]._visible = false;
+        //}
 
         _renderablesSet.cSceneVis[_renderable]._renderFilter = _drawfilter;
         _renderablesSet.cSceneVis[_renderable]._drawGroup = _drawgroups;
