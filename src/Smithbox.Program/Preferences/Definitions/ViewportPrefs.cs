@@ -280,28 +280,6 @@ public class ViewportPrefs
         };
     }
 
-    public static PreferenceItem Viewport_Box_Selection_Distance_Threshold()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 2,
-            Category = PreferenceCategory.Viewport,
-            Spacer = true,
-            InlineName = false,
-
-            Section = SectionCategory.Selection,
-
-            Title = "Box Drag Distance Threshold",
-            Description = "The distance threshold to use for the box drag. Lower means 'select objects closer to each other', Higher means 'select objects farther from each other'.",
-
-            Draw = () =>
-            {
-                DPI.ApplyInputWidth();
-                ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport_Box_Selection_Distance_Threshold, 1.0f, 2.0f);
-            }
-        };
-    }
-
     public static PreferenceItem Viewport_Frame_Distance()
     {
         return new PreferenceItem
@@ -389,7 +367,11 @@ public class ViewportPrefs
                 //ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
 
                 DPI.ApplyInputWidth();
-                ImGui.ColorEdit3("Selection Tint Color", ref CFG.Current.Viewport_Selection_Tint_Color);
+                ImGui.ColorEdit3("Selection Tint Color (Textured)", ref CFG.Current.Viewport_Selection_Tint_Color);
+
+                DPI.ApplyInputWidth();
+                ImGui.ColorEdit3("Selection Tint Color (Untextured)", ref CFG.Current.Viewport_Untextured_Selection_Tint_Color);
+
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat("Selection Tint Strength", ref CFG.Current.Viewport_Selection_Tint_Strength, 0.0f, 1.0f);

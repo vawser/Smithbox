@@ -6,7 +6,16 @@ struct sceneParams
 	mat4 view;
 	vec4 eye;
 	vec4 lightDirection;
+	ivec4 curserPosition;
 	uint envmap;
+	
+	float ambientLightMult;
+	float directLightMult;
+	float indirectLightMult;
+	float emissiveMapMult;
+	float sceneBrightness;
+    float SimpleFlver_Brightness;
+    float SimpleFlver_Saturation;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -43,20 +52,17 @@ layout(location = 1) out uint fsin_entityid;
 void main()
 {
 	mat4 w = idata[gl_InstanceIndex].world;
-	vec3 fsin_normal = normalize(mat3(w) * vec3(normal));
+	vec3 tnormal = normalize(mat3(w) * vec3(normal));
+    fsin_color = vec4((vec3((vec4(tnormal, 1.0)) + sceneparam.SimpleFlver_Brightness) * sceneparam.SimpleFlver_Saturation), 1.0);
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;
-	
-	vec3 ssnormal = mat3(sceneparam.projection) * mat3(sceneparam.view) * fsin_normal;
-
-	vec4 posbase;
+    
 	if (c_normalWBoneTransform)
 	{
-		posbase = sceneparam.projection * sceneparam.view * w *
+		gl_Position = sceneparam.projection * sceneparam.view * w *
 			(bones[idata[gl_InstanceIndex].materialID.y + normal.w] * vec4(position, 1));
 	}
 	else
 	{
-		posbase = sceneparam.projection * sceneparam.view * w * vec4(position, 1);
+		gl_Position = sceneparam.projection * sceneparam.view * w * vec4(position, 1);
 	}
-    gl_Position = posbase + vec4(ssnormal, 0.0) * posbase.w * 0.005;
 }

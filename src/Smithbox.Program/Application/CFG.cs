@@ -980,6 +980,7 @@ public class CFG
     public float Viewport_Untextured_Model_Saturation = 0.5f;
 
     public Vector3 Viewport_Selection_Tint_Color = new(1.0f, 0.5f, 0.0f);
+    public Vector3 Viewport_Untextured_Selection_Tint_Color = new(0.85f, 0.0f, 1.0f);
     public float Viewport_Selection_Tint_Strength = 1.0f;
 
     public bool Viewport_DisplayControls = true;
@@ -994,8 +995,6 @@ public class CFG
     public bool Viewport_Enable_Box_Selection_Collision = true;
     public bool Viewport_Enable_Box_Selection_Light = true;
     public bool Viewport_Enable_Box_Selection_Region = true;
-
-    public float Viewport_Box_Selection_Distance_Threshold = 1.2f;
 
     public Vector3 Viewport_Background_Color = new(1.0f, 0.5f, 0.0f);
 

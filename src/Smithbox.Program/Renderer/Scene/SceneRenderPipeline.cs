@@ -133,6 +133,15 @@ public class SceneRenderPipeline
             CFG.Current.Viewport_Selection_Tint_Color.Z, 
             CFG.Current.Viewport_Selection_Tint_Strength);
 
+        if(!CFG.Current.Viewport_Enable_Texturing)
+        {
+            selectionColor = new Vector4(
+            CFG.Current.Viewport_Untextured_Selection_Tint_Color.X,
+            CFG.Current.Viewport_Untextured_Selection_Tint_Color.Y,
+            CFG.Current.Viewport_Untextured_Selection_Tint_Color.Z,
+            CFG.Current.Viewport_Selection_Tint_Strength);
+        }
+
         Eye = eye;
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
