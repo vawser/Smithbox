@@ -1020,7 +1020,7 @@ public class ParamBank : IDisposable
             paramBnd = BND4.Read(data);
         }
 
-        if (!CFG.Current.ParamEditor_Loose_Param_Mode_DS2 && CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+        if (!CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
         {
             // Save params non-loosely: Replace params regulation and write remaining params loosely.
             if (paramBnd.Files.Find(e => e.Name.EndsWith(".param")) == null)
@@ -1048,14 +1048,19 @@ public class ParamBank : IDisposable
                         }
                     }
                     else
+                    {
                         paramBnd = BND4.Read(data);
+                    }
                 }
             }
 
             try
             {
                 // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                RowNameHelper.RowNameStrip(Project);
+                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                {
+                    RowNameHelper.RowNameStrip(Project);
+                }
 
                 foreach (KeyValuePair<string, Param> p in Params)
                 {
@@ -1075,13 +1080,19 @@ public class ParamBank : IDisposable
             }
             catch
             {
-                RowNameHelper.RowNameRestore(Project);
+                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                {
+                    RowNameHelper.RowNameRestore(Project);
+                }
                 throw;
             }
 
-            RowNameHelper.RowNameRestore(Project);
+            if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+            {
+                RowNameHelper.RowNameRestore(Project);
+            }
         }
-        else if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+        else if (CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
         {
             // Save params loosely: Strip params from regulation and write all params loosely.
 
@@ -1100,7 +1111,10 @@ public class ParamBank : IDisposable
             try
             {
                 // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                RowNameHelper.RowNameStrip(Project);
+                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                {
+                    RowNameHelper.RowNameStrip(Project);
+                }
 
                 // Write params to loose files.
                 foreach (KeyValuePair<string, Param> p in Params)
@@ -1110,11 +1124,18 @@ public class ParamBank : IDisposable
             }
             catch
             {
-                RowNameHelper.RowNameRestore(Project);
+                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                {
+                    RowNameHelper.RowNameRestore(Project);
+                }
+
                 throw;
             }
 
-            RowNameHelper.RowNameRestore(Project);
+            if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+            {
+                RowNameHelper.RowNameRestore(Project);
+            }
         }
 
         ProjectUtils.WriteWithBackup(Project, fs, toFs, @"enc_regulation.bnd.dcx", paramBnd);
