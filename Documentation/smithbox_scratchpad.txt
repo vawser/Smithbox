@@ -1,6 +1,7 @@
 #---------------------
 # TODO 
 #---------------------
+- Test the MacOS/Linux PR, review it
 
 - Fix gizmo usage in Orthographic and Oblique view modes
 
