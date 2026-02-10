@@ -64,69 +64,69 @@ public class TextContainerList
         // DS2 
         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            // Category Header
-            if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
+            var name = $"{category.GetDisplayName()}";
+
+            UIHelper.SimpleHeader(name, "");
+
+            // Common Sub-Header
+            if (ImGui.CollapsingHeader($"Common##{name}_common", flags))
             {
-                // Common Sub-Header
-                if (ImGui.CollapsingHeader($"Common", flags))
+                foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
                 {
-                    foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
-                    {
-                        var fmgWrapper = info.FmgWrappers.First();
-                        var id = fmgWrapper.ID;
-                        var fmgName = fmgWrapper.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, info, id, fmgName);
+                    var fmgWrapper = info.FmgWrappers.First();
+                    var id = fmgWrapper.ID;
+                    var fmgName = fmgWrapper.Name;
+                    var displayGroup = TextUtils.GetFmgGrouping(Project, info, id, fmgName);
 
-                        if (displayGroup == "Common")
+                    if (displayGroup == "Common")
+                    {
+                        if (info.ContainerDisplayCategory == category)
                         {
-                            if (info.ContainerDisplayCategory == category)
-                            {
-                                DisplayFileEntry(fileEntry, info, index);
-                            }
-                            index++;
+                            DisplayFileEntry(fileEntry, info, index);
                         }
+                        index++;
                     }
                 }
+            }
 
-                // Blood Message Sub-Header
-                if (ImGui.CollapsingHeader($"Blood Message", flags))
+            // Blood Message Sub-Header
+            if (ImGui.CollapsingHeader($"Blood Message##{name}_bloodmsg", flags))
+            {
+                foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
                 {
-                    foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
-                    {
-                        var fmgWrapper = info.FmgWrappers.First();
-                        var id = fmgWrapper.ID;
-                        var fmgName = fmgWrapper.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, info, id, fmgName);
+                    var fmgWrapper = info.FmgWrappers.First();
+                    var id = fmgWrapper.ID;
+                    var fmgName = fmgWrapper.Name;
+                    var displayGroup = TextUtils.GetFmgGrouping(Project, info, id, fmgName);
 
-                        if (displayGroup == "Blood Message")
+                    if (displayGroup == "Blood Message")
+                    {
+                        if (info.ContainerDisplayCategory == category)
                         {
-                            if (info.ContainerDisplayCategory == category)
-                            {
-                                DisplayFileEntry(fileEntry, info, index);
-                            }
-                            index++;
+                            DisplayFileEntry(fileEntry, info, index);
                         }
+                        index++;
                     }
                 }
+            }
 
-                // Talk Sub-Header
-                if (ImGui.CollapsingHeader($"Talk", flags))
+            // Talk Sub-Header
+            if (ImGui.CollapsingHeader($"Talk##{name}_common", flags))
+            {
+                foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
                 {
-                    foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
-                    {
-                        var fmgWrapper = info.FmgWrappers.First();
-                        var id = fmgWrapper.ID;
-                        var fmgName = fmgWrapper.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, info, id, fmgName);
+                    var fmgWrapper = info.FmgWrappers.First();
+                    var id = fmgWrapper.ID;
+                    var fmgName = fmgWrapper.Name;
+                    var displayGroup = TextUtils.GetFmgGrouping(Project, info, id, fmgName);
 
-                        if (displayGroup == "Talk")
+                    if (displayGroup == "Talk")
+                    {
+                        if (info.ContainerDisplayCategory == category)
                         {
-                            if (info.ContainerDisplayCategory == category)
-                            {
-                                DisplayFileEntry(fileEntry, info, index);
-                            }
-                            index++;
+                            DisplayFileEntry(fileEntry, info, index);
                         }
+                        index++;
                     }
                 }
             }
