@@ -442,8 +442,11 @@ public class ProjectPrefs
 
                 if (ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Project_Metadata))
                 {
-                    curProject.Handler.ParamData.ParamMeta.Clear();
-                    curProject.Handler.ParamData.ReloadMeta();
+                    if (curProject != null)
+                    {
+                        curProject.Handler.ParamData.ParamMeta.Clear();
+                        curProject.Handler.ParamData.ReloadMeta();
+                    }
                 }
             },
 
@@ -451,13 +454,16 @@ public class ProjectPrefs
             {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (ImGui.Button("Create Project Metadata##createProjectMetaData", DPI.StandardButtonSize))
+                if (curProject != null)
                 {
-                    var dialog = PlatformUtils.Instance.MessageBox("This will overwrite any existing project-specific metadata. Are you sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                    if (dialog is DialogResult.Yes)
+                    if (ImGui.Button("Create Project Metadata##createProjectMetaData", DPI.StandardButtonSize))
                     {
-                        curProject.Handler.ParamData.CreateProjectMetadata();
+                        var dialog = PlatformUtils.Instance.MessageBox("This will overwrite any existing project-specific metadata. Are you sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                        if (dialog is DialogResult.Yes)
+                        {
+                            curProject.Handler.ParamData.CreateProjectMetadata();
+                        }
                     }
                 }
             }

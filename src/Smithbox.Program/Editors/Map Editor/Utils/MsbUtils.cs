@@ -117,6 +117,9 @@ public class MsbUtils
 
     public static bool Matches(string name, Type refType, IMsbEntry entry)
     {
+        if (entry == null)
+            return false;
+
         return entry.Name == name && refType.IsAssignableFrom(entry.GetType());
     }
 

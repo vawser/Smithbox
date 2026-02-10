@@ -159,12 +159,14 @@ internal class Prefab<T> : Prefab
             {
                 ent.GetType().GetProperty("EntityID")?.SetValue(ent, 0);
             }
+
             if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
             {
                 ent.GetType().GetProperty("EntityGroupIDs")?.SetValue(ent, new uint[] { });
             }
 
             MsbUtils.StripMsbReference(entries, copy.WrappedObject as IMsbEntry);
+
             map.AddObject(copy);
         }
         map.SerializeToMSB(pseudoMap, Type);
