@@ -2,5 +2,4 @@
 # TODO 
 #---------------------
 
-- Add support to scale gizmo for regions
 - Fix gizmo usage in Orthographic and Oblique view modes

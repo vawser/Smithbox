@@ -101,6 +101,7 @@ public static class EntityHelper
     public static bool IsPartAsset(Entity ent)
     {
         return ent.WrappedObject is MSB1.Part.Object ||
+            ent.WrappedObject is MSB2.Part.Object ||
             ent.WrappedObject is MSB3.Part.Object ||
             ent.WrappedObject is MSBB.Part.Object ||
             ent.WrappedObject is MSBD.Part.Object ||
@@ -141,6 +142,7 @@ public static class EntityHelper
     public static bool IsPartMapPiece(Entity ent)
     {
         return ent.WrappedObject is MSB1.Part.MapPiece ||
+            ent.WrappedObject is MSB2.Part.MapPiece ||
             ent.WrappedObject is MSB3.Part.MapPiece ||
             ent.WrappedObject is MSBB.Part.MapPiece ||
             ent.WrappedObject is MSBD.Part.MapPiece ||
@@ -156,6 +158,7 @@ public static class EntityHelper
     public static bool IsPartCollision(Entity ent)
     {
         return ent.WrappedObject is MSB1.Part.Collision ||
+            ent.WrappedObject is MSB2.Part.Collision ||
             ent.WrappedObject is MSB3.Part.Collision ||
             ent.WrappedObject is MSBB.Part.Collision ||
             ent.WrappedObject is MSBD.Part.Collision ||
@@ -171,6 +174,7 @@ public static class EntityHelper
     public static bool IsPartConnectCollision(Entity ent)
     {
         return ent.WrappedObject is MSB1.Part.ConnectCollision ||
+            ent.WrappedObject is MSB2.Part.ConnectCollision ||
             ent.WrappedObject is MSB3.Part.ConnectCollision ||
             ent.WrappedObject is MSBB.Part.ConnectCollision ||
             ent.WrappedObject is MSBD.Part.ConnectCollision ||
