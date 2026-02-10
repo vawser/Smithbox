@@ -556,6 +556,10 @@ public class InterfacePrefs
                 ImGui.ColorEdit4("Input Auxillary Vanilla Background", ref UI.Current.ImGui_Input_AuxVanilla_Background, flags);
                 ImGui.ColorEdit4("Input Difference Comparison Background", ref UI.Current.ImGui_Input_DiffCompare_Background, flags);
 
+                UIHelper.SimpleHeader("Backgrounds", "");
+                ImGui.ColorEdit4("Modified Row Background", ref UI.Current.ParamRowDiffBackgroundColor, flags);
+                ImGui.ColorEdit4("Modified Field Background", ref UI.Current.ParamDiffBackgroundColor, flags);
+
                 UIHelper.SimpleHeader("Text", "");
 
                 ImGui.ColorEdit4("Default Text", ref UI.Current.ImGui_Default_Text_Color, flags);

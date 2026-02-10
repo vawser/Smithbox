@@ -621,7 +621,7 @@ public class ParamFieldWindow
             }
             else if (metaContext.HasAnyReferenceElements())
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_IsRef_Text);
                 pushedStyle = true;
             }
             else if (matchDefault)
