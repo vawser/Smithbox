@@ -365,31 +365,43 @@ public class MapEditorScreen : EditorScreen
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_1.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_2.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_3.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_4.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_5.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_6.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
                 }
 
                 ImGui.EndMenu();
