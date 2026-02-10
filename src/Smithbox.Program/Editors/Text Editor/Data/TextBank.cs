@@ -182,11 +182,6 @@ public class TextBank : IDisposable
         var containerType = TextContainerType.Loose;
         var containerCategory = TextUtils.GetLanguageCategory(Project, entry.Path);
 
-        if (containerCategory != CFG.Current.TextEditor_Primary_Category)
-        {
-            return;
-        }
-
         try
         {
             // Get compression type
