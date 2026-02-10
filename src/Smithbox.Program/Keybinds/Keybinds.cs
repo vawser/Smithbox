@@ -177,9 +177,9 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.Pull, new() { Key = Key.X });
         InputManager.Bind(KeybindID.Reset, new() { Key = Key.R });
 
-        InputManager.Bind(KeybindID.Cycle_Gizmo_Translation_Mode, new() { Key = Key.W, Ctrl = true });
-        InputManager.Bind(KeybindID.Cycle_Gizmo_Rotation_Mode, new() { Key = Key.E, Ctrl = true });
-        InputManager.Bind(KeybindID.Cycle_Gizmo_Scale_Mode, new() { Key = Key.G, Ctrl = true });
+        InputManager.Bind(KeybindID.Cycle_Gizmo_Translation_Mode, new() { Key = Key.W, Shift = true });
+        InputManager.Bind(KeybindID.Cycle_Gizmo_Rotation_Mode, new() { Key = Key.E, Shift = true });
+        InputManager.Bind(KeybindID.Cycle_Gizmo_Scale_Mode, new() { Key = Key.G, Shift = true });
 
         InputManager.Bind(KeybindID.Cycle_Gizmo_Origin_Mode, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.Cycle_Gizmo_Space_Mode, new() { Key = Key.Unknown });
@@ -219,14 +219,14 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_Create_Map_Object, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Duplicate_To_Map, new() { Key = Key.D, Alt = true });
 
-        InputManager.Bind(KeybindID.MapEditor_Rotate_X_Axis, new() { Key = Key.R, Ctrl = true });
-        InputManager.Bind(KeybindID.MapEditor_Rotate_Y_Axis, new() { Key = Key.Unknown });
-        InputManager.Bind(KeybindID.MapEditor_Rotate_Pivot_Y_Axis, new() { Key = Key.R, Alt = true });
+        InputManager.Bind(KeybindID.MapEditor_Rotate_X_Axis, new() { Key = Key.R, Alt = true });
+        InputManager.Bind(KeybindID.MapEditor_Rotate_Y_Axis, new() { Key = Key.R, Shift = true });
+        InputManager.Bind(KeybindID.MapEditor_Rotate_Pivot_Y_Axis, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Rotate_Minus_X_Axis, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Rotate_Minus_Y_Axis, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Rotate_Minus_Pivot_Y_Axis, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Rotate_Fixed_Angle, new() { Key = Key.Unknown });
-        InputManager.Bind(KeybindID.MapEditor_Reset_Rotation, new() { Key = Key.R, Shift = true });
+        InputManager.Bind(KeybindID.MapEditor_Reset_Rotation, new() { Key = Key.R, Ctrl = true });
 
         InputManager.Bind(KeybindID.MapEditor_Scramble, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Replicate, new() { Key = Key.Unknown });
@@ -237,7 +237,7 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_Enable_Game_Presence, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Disable_Game_Presence, new() { Key = Key.Unknown });
 
-        InputManager.Bind(KeybindID.MapEditor_Visibility_Flip, new() { Key = Key.H, Ctrl = true });
+        InputManager.Bind(KeybindID.MapEditor_Visibility_Flip, new() { Key = Key.Z, Alt = true });
         InputManager.Bind(KeybindID.MapEditor_Visibility_Enable, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Visibility_Disable, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Global_Visibility_Flip, new() { Key = Key.Unknown });
@@ -246,9 +246,9 @@ public static class DefaultKeyBindings
 
         InputManager.Bind(KeybindID.MapEditor_Configure_Grid_Placement, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Cycle_Selected_Grid_Type, new() { Key = Key.Unknown });
-        InputManager.Bind(KeybindID.MapEditor_Move_to_Primary_Grid, new() { Key = Key.X, Alt = true });
+        InputManager.Bind(KeybindID.MapEditor_Move_to_Primary_Grid, new() { Key = Key.X, Shift = true });
         InputManager.Bind(KeybindID.MapEditor_Move_to_Secondary_Grid, new() { Key = Key.X, Ctrl = true });
-        InputManager.Bind(KeybindID.MapEditor_Move_to_Tertiary_Grid, new() { Key = Key.X, Shift = true });
+        InputManager.Bind(KeybindID.MapEditor_Move_to_Tertiary_Grid, new() { Key = Key.X, Alt = true });
 
         InputManager.Bind(KeybindID.MapEditor_SelectAll_Configurable, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_SelectAll_ObjectType, new() { Key = Key.Unknown });

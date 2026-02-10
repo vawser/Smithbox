@@ -13,9 +13,14 @@ public class ResourceLoadWindow
 
     public ResourceLoadWindow() { }
 
+    public bool AllowDisplay = true;
+
     public void DisplayWindow(float w, float h)
     {
         var scale = DPI.UIScale();
+
+        if (!AllowDisplay)
+            return;
 
         if (ResourceManager.GetActiveJobProgress().Count() > 0)
         {

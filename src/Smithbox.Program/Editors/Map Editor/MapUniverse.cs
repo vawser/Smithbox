@@ -122,6 +122,8 @@ public class MapUniverse : IUniverse
     /// </summary>
     public async void LoadMapAsync(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
+        View.Editor.LoadingModal.AllowDisplay = true;
+
         var fileEntry = View.Selection.GetFileEntryFromMapID(mapid);
         var existingMap = View.Selection.GetMapContainerFromMapID(mapid);
 
@@ -274,6 +276,8 @@ public class MapUniverse : IUniverse
                 LoadMapExceptions = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e);
 #endif
         }
+
+        View.Editor.LoadingModal.AllowDisplay = false;
     }
 
     public void LoadLights(MapContainer map)

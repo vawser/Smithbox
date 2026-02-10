@@ -6,4 +6,5 @@
 - Fix gizmo usage in Orthographic and Oblique view modes
 
 - Stop duplicate always attempting to load in textures
-- Adjust some of the map editor shortcuts to not require modifier keys, but ensure they only trigger when the viewport is focused
+
+- Look at the param editor text coloring, restore the pink ref text

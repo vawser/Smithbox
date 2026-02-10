@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 
@@ -97,43 +98,45 @@ public static class GizmoState
 
     public static void OnShortcut()
     {
-        // Cycle Gizmo Translation Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Translation_Mode))
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport) || FocusManager.IsFocus(EditorFocusContext.ModelEditor_Viewport))
         {
-            Mode = GizmosMode.Translate;
-        }
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Rotation_Mode))
-        {
-            Mode = GizmosMode.Rotate;
-        }
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Scale_Mode))
-        {
-            Mode = GizmosMode.Scale;
-        }
+            if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Translation_Mode))
+            {
+                Mode = GizmosMode.Translate;
+            }
+            if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Rotation_Mode))
+            {
+                Mode = GizmosMode.Rotate;
+            }
+            if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Scale_Mode))
+            {
+                Mode = GizmosMode.Scale;
+            }
 
-        // Cycle Gizmo Origin Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Origin_Mode))
-        {
-            if (Origin == GizmosOrigin.World)
+            // Cycle Gizmo Origin Mode
+            if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Origin_Mode))
             {
-                Origin = GizmosOrigin.BoundingBox;
+                if (Origin == GizmosOrigin.World)
+                {
+                    Origin = GizmosOrigin.BoundingBox;
+                }
+                else if (Origin == GizmosOrigin.BoundingBox)
+                {
+                    Origin = GizmosOrigin.World;
+                }
             }
-            else if (Origin == GizmosOrigin.BoundingBox)
-            {
-                Origin = GizmosOrigin.World;
-            }
-        }
 
-        // Cycle Gizmo Space Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Space_Mode))
-        {
-            if (Space == GizmosSpace.Local)
+            // Cycle Gizmo Space Mode
+            if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Space_Mode))
             {
-                Space = GizmosSpace.World;
-            }
-            else if (Space == GizmosSpace.World)
-            {
-                Space = GizmosSpace.Local;
+                if (Space == GizmosSpace.Local)
+                {
+                    Space = GizmosSpace.World;
+                }
+                else if (Space == GizmosSpace.World)
+                {
+                    Space = GizmosSpace.Local;
+                }
             }
         }
     }
