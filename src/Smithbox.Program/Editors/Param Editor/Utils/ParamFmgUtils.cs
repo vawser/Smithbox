@@ -107,7 +107,7 @@ public class ParamFmgUtils
         return "";
     }
 
-    public static List<FMG.Entry> GetFmgEntriesByAssociatedParam(ParamEditorScreen editor, string paramName)
+    public static List<FMG.Entry> GetFmgEntriesByAssociatedParam(ParamEditorScreen editor, string paramName, string grouping = "")
     {
         if (editor.Project.Handler.TextEditor == null)
             return new List<FMG.Entry>();
@@ -121,18 +121,26 @@ public class ParamFmgUtils
             {
                 if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
                 {
-                    if (entry.FmgWrappers != null)
-                    {
-                        foreach (var fmgInfo in entry.FmgWrappers)
-                        {
-                            var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+                    if (entry.FmgWrappers == null)
+                        continue;
 
-                            if (enumName.Contains(searchStr))
+                    foreach (var fmgInfo in entry.FmgWrappers)
+                    {
+                        var curGrouping = TextUtils.GetFmgGrouping(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+
+                        if(grouping != "")
+                        {
+                            if (!(curGrouping == "Common" || curGrouping == grouping))
+                                continue;
+                        }
+
+                        var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+
+                        if (enumName.Contains(searchStr))
+                        {
+                            foreach (var fmgEntry in fmgInfo.File.Entries)
                             {
-                                foreach (var fmgEntry in fmgInfo.File.Entries)
-                                {
-                                    entries.Add(fmgEntry);
-                                }
+                                entries.Add(fmgEntry);
                             }
                         }
                     }

@@ -276,7 +276,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     var paramName = context.Item1.GetKeyForParam(context.Item2);
                     List<FMG.Entry> fmgEntries = new();
 
-                    fmgEntries = ParamFmgUtils.GetFmgEntriesByAssociatedParam(CurrentView.Editor, paramName);
+                    fmgEntries = ParamFmgUtils.GetFmgEntriesByAssociatedParam(CurrentView.Editor, paramName, "Title");
 
                     Dictionary<int, FMG.Entry> _cache = new();
                     foreach (FMG.Entry fmgEntry in fmgEntries)

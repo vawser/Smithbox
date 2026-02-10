@@ -3,3 +3,6 @@
 #---------------------
 
 - Fix gizmo usage in Orthographic and Oblique view modes
+
+- Add progress modal to the prefab import/export
+- Make the prefab import much quicker (so we can support whole map imports)
