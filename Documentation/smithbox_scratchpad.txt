@@ -3,6 +3,8 @@
 #---------------------
 - Test the MacOS/Linux PR, review it
 
+- Add field reordering via drag (requires storing the ordering in .smithbox)
+
 - Fix gizmo usage in Orthographic and Oblique view modes
 
 - Add progress modal to the prefab import/export

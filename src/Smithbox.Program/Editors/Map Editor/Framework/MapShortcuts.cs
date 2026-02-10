@@ -73,25 +73,29 @@ public class MapShortcuts
         }
 
         // Actions
-        activeView.CreateAction.OnShortcut();
-        activeView.DuplicateAction.OnShortcut();
-        activeView.DeleteAction.OnShortcut();
-        activeView.DuplicateToMapAction.OnShortcut();
-        activeView.RotateAction.OnShortcut();
-        activeView.ScrambleAction.OnShortcut();
-        activeView.ReplicateAction.OnShortcut();
-        activeView.RenderTypeAction.OnShortcut();
-        activeView.ReorderAction.OnShortcut();
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
+        {
+            activeView.CreateAction.OnShortcut();
+            activeView.DuplicateAction.OnShortcut();
+            activeView.DeleteAction.OnShortcut();
+            activeView.DuplicateToMapAction.OnShortcut();
+            activeView.RotateAction.OnShortcut();
+            activeView.ScrambleAction.OnShortcut();
+            activeView.ReplicateAction.OnShortcut();
+            activeView.RenderTypeAction.OnShortcut();
+            activeView.ReorderAction.OnShortcut();
+            activeView.GameVisibilityAction.OnShortcut();
+            activeView.PullToCameraAction.OnShortcut();
+            activeView.EditorVisibilityAction.OnShortcut();
+            activeView.AdjustToGridAction.OnShortcut();
+            activeView.SelectCollisionRefAction.OnShortcut();
+        }
+
         activeView.GotoAction.OnShortcut();
-        activeView.GameVisibilityAction.OnShortcut();
         activeView.FrameAction.OnShortcut();
-        activeView.PullToCameraAction.OnShortcut();
-        activeView.EditorVisibilityAction.OnShortcut();
         activeView.SelectionOutlineAction.OnShortcut();
-        activeView.AdjustToGridAction.OnShortcut();
         activeView.SelectAllAction.OnShortcut();
         activeView.EntityInfoAction.OnShortcut();
-        activeView.SelectCollisionRefAction.OnShortcut();
 
         // Tools
         activeView.MassEditTool.OnShortcut();
