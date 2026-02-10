@@ -1,5 +1,6 @@
 ﻿using StudioCore.Editors.ParamEditor;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using Veldrid.MetalBindings;
@@ -8,7 +9,7 @@ namespace StudioCore.Editors.Common;
 
 public class CacheBank
 {
-    private static readonly Dictionary<(EditorScreen, object, string), object> caches = new();
+    private static readonly ConcurrentDictionary<(EditorScreen, object, string), object> caches = new();
 
     /// <summary>
     ///     Gets/Sets a cache. The cached data is intended to have a lifetime until the contextual object is modified, or the
@@ -47,7 +48,7 @@ public class CacheBank
             caches.Where(keypair => keypair.Key.Item1 == UIScreen && keypair.Key.Item2 == context);
         foreach (KeyValuePair<(EditorScreen, object, string), object> kp in toRemove)
         {
-            caches.Remove(kp.Key);
+            caches.TryRemove(kp);
         }
     }
 
@@ -60,7 +61,7 @@ public class CacheBank
             caches.Where(keypair => keypair.Key.Item1 == UIScreen);
         foreach (KeyValuePair<(EditorScreen, object, string), object> kp in toRemove)
         {
-            caches.Remove(kp.Key);
+            caches.TryRemove(kp);
         }
     }
 

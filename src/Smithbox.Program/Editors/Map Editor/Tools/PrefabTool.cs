@@ -50,13 +50,13 @@ public class PrefabTool
         if (ImGui.CollapsingHeader("Import Prefab"))
         {
             ImportPrefabMenu();
-            PrefabTree();
+            PrefabTree("import");
         }
 
         if (ImGui.CollapsingHeader("Export Prefab"))
         {
             ExportPrefabMenu();
-            PrefabTree();
+            PrefabTree("export");
         }
     }
 
@@ -314,7 +314,7 @@ public class PrefabTool
 
     }
 
-    public void PrefabTree()
+    public void PrefabTree(string imguiKey)
     {
         var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
@@ -323,7 +323,7 @@ public class PrefabTool
 
         UIHelper.SimpleHeader("Prefabs", "Prefabs", "", UI.Current.ImGui_Default_Text_Color);
 
-        if (ImGui.BeginChild("PrefabEditorTree", sectionSize, ImGuiChildFlags.Borders))
+        if (ImGui.BeginChild($"PrefabEditorTree_{imguiKey}", sectionSize, ImGuiChildFlags.Borders))
         {
             int index = 0;
 
@@ -334,7 +334,7 @@ public class PrefabTool
                 if (selected)
                     flag |= ImGuiTreeNodeFlags.Selected;
 
-                bool opened = ImGui.TreeNodeEx($"{name}##PrefabTreeNode{index}", flag);
+                bool opened = ImGui.TreeNodeEx($"{name}##PrefabTreeNode{index}{imguiKey}", flag);
 
                 if (ImGui.IsItemClicked())
                 {
