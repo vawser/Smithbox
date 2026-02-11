@@ -250,7 +250,7 @@ public class ModelContainer : ObjectContainer
         {
             resource = ModelLocator.GetPartsModel(View.Project, modelName, modelName);
         }
-        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && ent.IsPartCollision())
+        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && EntityHelper.IsPartCollision(ent))
         {
             loadCol = true;
 
@@ -260,7 +260,7 @@ public class ModelContainer : ObjectContainer
             if (resource == null || resource.AssetPath == null)
                 loadCol = false;
         }
-        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && ent.IsPartConnectCollision())
+        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && EntityHelper.IsPartConnectCollision(ent))
         {
             loadCol = true;
 

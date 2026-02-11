@@ -2,6 +2,7 @@
 using Andre.Core.Util;
 using Andre.Formats.Util;
 using DotNext.IO.MemoryMappedFiles;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using System.Diagnostics;
 using System.IO.MemoryMappedFiles;
@@ -202,7 +203,7 @@ namespace Andre.Formats
             {
                 //encrypted
 #if DEBUG
-                Console.WriteLine($"Decrypting {Path.GetFileName(bhdPath)}");
+                AndreLogging.For(this).LogDebug("Decrypting {}", Path.GetFileName(bhdPath));
 #endif
                 byte[] decrypted;
                 try {

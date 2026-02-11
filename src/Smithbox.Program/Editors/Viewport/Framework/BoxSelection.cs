@@ -1,14 +1,15 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
+using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
-using StudioCore.Application;
-using StudioCore.Editors.Common;
-using StudioCore.Utilities;
-using StudioCore.Renderer;
-using StudioCore.Keybinds;
+using static SoulsFormats.NVM;
 
 namespace StudioCore.Editors.Viewport;
 
@@ -28,22 +29,25 @@ public class BoxSelection
     {
         Parent = parent;
     }
+    public bool IsBoxSelecting()
+    {
+        return _isDragging && _mouseDragStarted;
+    }
 
     public void Update()
     {
-
         if (CFG.Current.Viewport_Enable_Box_Selection && !Parent.Gizmos.IsMouseBusy())
         {
             Vector2 mousePos = InputManager.MousePosition;
 
-            if (InputManager.IsMousePressed(MouseButton.Left) && Parent.MouseInViewport())
+            if (InputManager.IsMouseDown(MouseButton.Left) && InputManager.HasAltDown() && Parent.MouseInViewport() && !_isDragging)
             {
                 _isDragging = true;
                 _mouseDragStarted = false;
                 _dragStart = mousePos;
                 _dragEnd = mousePos;
             }
-            else if (InputManager.IsMousePressed(MouseButton.Left) && _isDragging)
+            else if (InputManager.IsMouseDown(MouseButton.Left) && InputManager.HasAltDown() && _isDragging)
             {
                 _dragEnd = mousePos;
 
@@ -53,7 +57,7 @@ public class BoxSelection
                     _mouseDragStarted = true;
                 }
             }
-            else if (_isDragging && !InputManager.IsMousePressed(MouseButton.Left))
+            else if (_isDragging && InputManager.IsMouseReleased(MouseButton.Left))
             {
                 if (_mouseDragStarted)
                 {
@@ -64,10 +68,14 @@ public class BoxSelection
                 // Reset drag state
                 _isDragging = false;
                 _mouseDragStarted = false;
+
+                // Add a cooldown to normal picking so
+                // the user doesn't accidently clear the box selection immediately
+                Parent.ClickSelection.TriggerCooldown();
             }
         }
 
-        if (_isDragging)
+        if (_isDragging && _mouseDragStarted)
         {
             ImDrawListPtr drawList = ImGui.GetWindowDrawList();
             Vector2 start = _dragStart;
@@ -82,108 +90,258 @@ public class BoxSelection
         }
     }
 
-    private void UpdateSelection(WeakReference<ISelectable> obj, bool ctrl)
+    private void UpdateSelection(WeakReference<ISelectable> obj)
     {
-        if (!obj.TryGetTarget(out ISelectable target)) 
+        if (!obj.TryGetTarget(out ISelectable target))
             return;
 
-        if (ctrl)
-        {
-            Parent.ViewportSelection.RemoveSelection(target);
-        }
-        else
-        {
-            Parent.ViewportSelection.AddSelection(target);
-        }
+        Parent.ViewportSelection.AddSelection(target);
     }
 
     private void SelectObjectsInDragArea(Vector2 start, Vector2 end)
     {
-        float minX = MathF.Min(start.X, end.X) - Parent.X;
-        float minY = MathF.Min(start.Y, end.Y) - Parent.Y;
-        float maxX = MathF.Max(start.X, end.X) - Parent.X;
-        float maxY = MathF.Max(start.Y, end.Y) - Parent.Y;
-        bool shift = InputManager.HasShiftDown();
-        bool ctrl = InputManager.HasCtrlDown();
+        Vector2 winPos = ImGui.GetWindowPos();
 
-        if (!shift && !ctrl)
+        float minX = MathF.Min(start.X, end.X) - winPos.X;
+        float minY = MathF.Min(start.Y, end.Y) - winPos.Y;
+        float maxX = MathF.Max(start.X, end.X) - winPos.X;
+        float maxY = MathF.Max(start.Y, end.Y) - winPos.Y;
+
+        bool shift = InputManager.HasShiftDown();
+        bool alt = InputManager.HasAltDown();
+
+        // Clear selection unless Shift (add) or Ctrl (toggle) is held
+        if (!shift && !alt)
         {
             Parent.ViewportSelection.ClearSelection();
         }
 
-        List<(WeakReference<ISelectable> obj, float distance)> selectableObjects = new();
+        List<WeakReference<ISelectable>> selectableObjects = new();
 
         for (int i = 0; i < Parent.RenderScene.OpaqueRenderables.cBounds.Length; i++)
         {
             VisibleValidComponent visibleValidComponent = Parent.RenderScene.OpaqueRenderables.cVisible[i];
 
-            bool isCulled = Parent.RenderScene.OpaqueRenderables.cCulled[i];
+            if(!visibleValidComponent._visible)
+                continue;
 
-            if (!(visibleValidComponent._valid && !isCulled)) 
+            if (!visibleValidComponent._valid)
                 continue;
 
             BoundingBox obj = Parent.RenderScene.OpaqueRenderables.cBounds[i];
-
-            if (Parent.ViewportCamera.Frustum.Contains(obj) != ContainmentType.Contains) 
-                continue;
-
-            Vector3 center = obj.GetCenter();
-
-            float distanceToCamera = Vector3.Distance(center, Parent.ViewportCamera.CameraTransform.Position);
-
             WeakReference<ISelectable> selectable = Parent.RenderScene.OpaqueRenderables.cSelectables[i];
 
-            if (selectable == null) 
+            if (selectable == null)
                 continue;
 
-            Vector2 screenPos = WorldToScreen(center);
-
-            if (screenPos.X >= minX && screenPos.X <= maxX && screenPos.Y >= minY && screenPos.Y <= maxY)
+            // Check if object's screen-space bounding box intersects selection box
+            if (IsObjectInSelectionBox(obj, minX, minY, maxX, maxY))
             {
-                selectableObjects.Add((selectable, distanceToCamera));
+                ISelectable curEnt;
+                selectable.TryGetTarget(out curEnt);
+
+                var add = true;
+
+                if (curEnt is MsbEntity ent)
+                {
+                    if(!CFG.Current.Viewport_Enable_Box_Selection_MapPiece)
+                    {
+                        if(EntityHelper.IsPartMapPiece(ent))
+                        {
+                            add = false;
+                        }
+                    }
+
+                    if (!CFG.Current.Viewport_Enable_Box_Selection_Asset)
+                    {
+                        if (EntityHelper.IsPartAsset(ent) || EntityHelper.IsPartDummyAsset(ent))
+                        {
+                            add = false;
+                        }
+                    }
+
+                    if (!CFG.Current.Viewport_Enable_Box_Selection_Enemy)
+                    {
+                        if (EntityHelper.IsPartEnemy(ent) || EntityHelper.IsPartDummyEnemy(ent))
+                        {
+                            add = false;
+                        }
+                    }
+
+                    if (!CFG.Current.Viewport_Enable_Box_Selection_Player)
+                    {
+                        if (EntityHelper.IsPartPlayer(ent))
+                        {
+                            add = false;
+                        }
+                    }
+
+                    if (!CFG.Current.Viewport_Enable_Box_Selection_Collision)
+                    {
+                        if (EntityHelper.IsPartCollision(ent) || EntityHelper.IsPartConnectCollision(ent))
+                        {
+                            add = false;
+                        }
+                    }
+
+                    if (!CFG.Current.Viewport_Enable_Box_Selection_Region)
+                    {
+                        if (EntityHelper.IsRegion(ent))
+                        {
+                            add = false;
+                        }
+                    }
+
+                    if (!CFG.Current.Viewport_Enable_Box_Selection_Light)
+                    {
+                        if (EntityHelper.IsLight(ent))
+                        {
+                            add = false;
+                        }
+                    }
+                }
+
+                if (add)
+                {
+                    selectableObjects.Add(selectable);
+                }
             }
         }
 
-        selectableObjects.Sort((a, b) => a.distance.CompareTo(b.distance));
-
-        float lastSelectedDistance = -1;
-
-        foreach ((WeakReference<ISelectable> obj, float distanceToCamera) in selectableObjects)
+        // Select all objects that intersect the box
+        // No distance-based filtering - if it's in the box, select it
+        foreach (WeakReference<ISelectable> obj in selectableObjects)
         {
-            if (lastSelectedDistance < 0)
-            {
-                lastSelectedDistance = distanceToCamera;
-
-                UpdateSelection(obj, ctrl);
-
-                continue;
-            }
-
-            if (distanceToCamera > lastSelectedDistance * CFG.Current.Viewport_Box_Selection_Distance_Threshold) 
-                break;
-
-            lastSelectedDistance = distanceToCamera;
-
-            UpdateSelection(obj, ctrl);
+            UpdateSelection(obj);
         }
     }
 
-    private Vector2 WorldToScreen(Vector3 worldPos)
+    /// <summary>
+    /// Checks if an object's bounding box intersects with the selection box in screen space
+    /// Works correctly for both perspective and orthographic projections
+    /// </summary>
+    private bool IsObjectInSelectionBox(BoundingBox worldBounds, float minX, float minY, float maxX, float maxY)
+    {
+        // Get the 8 corners of the bounding box
+        Vector3[] corners = new Vector3[8]
+        {
+            new Vector3(worldBounds.Min.X, worldBounds.Min.Y, worldBounds.Min.Z),
+            new Vector3(worldBounds.Max.X, worldBounds.Min.Y, worldBounds.Min.Z),
+            new Vector3(worldBounds.Min.X, worldBounds.Max.Y, worldBounds.Min.Z),
+            new Vector3(worldBounds.Max.X, worldBounds.Max.Y, worldBounds.Min.Z),
+            new Vector3(worldBounds.Min.X, worldBounds.Min.Y, worldBounds.Max.Z),
+            new Vector3(worldBounds.Max.X, worldBounds.Min.Y, worldBounds.Max.Z),
+            new Vector3(worldBounds.Min.X, worldBounds.Max.Y, worldBounds.Max.Z),
+            new Vector3(worldBounds.Max.X, worldBounds.Max.Y, worldBounds.Max.Z)
+        };
+
+        // Track if any corner is in front of the camera
+        bool anyInFront = false;
+
+        // Calculate screen-space bounding box
+        float objMinX = float.MaxValue;
+        float objMinY = float.MaxValue;
+        float objMaxX = float.MinValue;
+        float objMaxY = float.MinValue;
+
+        for (int i = 0; i < 8; i++)
+        {
+            Vector2 screenPos = WorldToScreen(corners[i], out bool inFront);
+
+            if (inFront)
+            {
+                anyInFront = true;
+
+                // Expand screen-space bounding box
+                objMinX = Math.Min(objMinX, screenPos.X);
+                objMinY = Math.Min(objMinY, screenPos.Y);
+                objMaxX = Math.Max(objMaxX, screenPos.X);
+                objMaxY = Math.Max(objMaxY, screenPos.Y);
+            }
+        }
+
+        // If no corners are in front of camera, object is not selectable
+        if (!anyInFront)
+        {
+            return false;
+        }
+
+        // Clamp screen bounds to viewport to handle objects partially off-screen
+        objMinX = Math.Max(objMinX, 0);
+        objMinY = Math.Max(objMinY, 0);
+        objMaxX = Math.Min(objMaxX, Parent.Width);
+        objMaxY = Math.Min(objMaxY, Parent.Height);
+
+        // Check if screen-space bounding boxes intersect
+        // This is an AABB intersection test
+        bool intersects = !(objMaxX < minX || objMinX > maxX || objMaxY < minY || objMinY > maxY);
+
+        return intersects;
+    }
+
+    /// <summary>
+    /// Converts a world position to screen space
+    /// Works correctly for perspective, orthographic, and oblique projections
+    /// Returns whether the point is in front of the camera
+    /// </summary>
+    private Vector2 WorldToScreen(Vector3 worldPos, out bool inFront)
     {
         Vector4 world = new(worldPos, 1.0f);
 
-        Vector4 clip = Vector4.Transform(world, Parent.ViewportCamera.CameraTransform.CameraViewMatrixLH * Parent.ViewportCamera.ProjectionMatrix);
+        // Get the view-projection matrix
+        Matrix4x4 viewProjection = Parent.ViewportCamera.CameraTransform.CameraViewMatrixLH * Parent.ViewportCamera.ProjectionMatrix;
+        Vector4 clip = Vector4.Transform(world, viewProjection);
 
-        if (clip.W <= 0.0f)
+        bool isOrthographic = Parent.ViewportCamera.ViewMode is ViewMode.Orthographic or ViewMode.Oblique;
+
+        if (isOrthographic)
         {
-            return new Vector2(-10000, -10000);
+            // In orthographic projection, check if Z is within valid range
+            // Use a more lenient check to catch objects near the clipping planes
+            inFront = clip.Z >= -1.5f && clip.Z <= 1.5f;
+
+            // No perspective divide needed for orthographic
+            Vector2 ndc = new Vector2(clip.X, clip.Y);
+
+            return new Vector2(
+                (ndc.X + 1f) / 2f * Parent.Width,
+                (1f - ndc.Y) / 2f * Parent.Height
+            );
         }
+        else
+        {
+            // Perspective projection
+            // Point is in front if W > 0
+            inFront = clip.W > 0.001f; // Small epsilon to avoid division issues
 
-        Vector3 ndc = new(clip.X / clip.W, clip.Y / clip.W, clip.Z / clip.W);
+            if (!inFront)
+            {
+                // Return position far off-screen
+                return new Vector2(-100000, -100000);
+            }
 
-        return new Vector2(
-            (ndc.X + 1f) / 2f * Parent.Width,
-            (1f - ndc.Y) / 2f * Parent.Height
-        );
+            // Perspective divide
+            Vector3 ndc = new(clip.X / clip.W, clip.Y / clip.W, clip.Z / clip.W);
+
+            return new Vector2(
+                (ndc.X + 1f) / 2f * Parent.Width,
+                (1f - ndc.Y) / 2f * Parent.Height
+            );
+        }
+    }
+
+    /// <summary>
+    /// Alternative selection method: check if object center is in selection box
+    /// Useful for small objects or as a fallback
+    /// </summary>
+    private bool IsObjectCenterInSelectionBox(Vector3 center, float minX, float minY, float maxX, float maxY)
+    {
+        Vector2 screenPos = WorldToScreen(center, out bool inFront);
+
+        if (!inFront)
+            return false;
+
+        return screenPos.X >= minX && screenPos.X <= maxX &&
+               screenPos.Y >= minY && screenPos.Y <= maxY;
     }
 }

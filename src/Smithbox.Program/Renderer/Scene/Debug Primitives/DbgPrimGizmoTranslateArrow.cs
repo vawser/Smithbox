@@ -1,4 +1,5 @@
-﻿using StudioCore.Utilities;
+﻿using StudioCore.Editors.Viewport;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -28,7 +29,7 @@ public class DbgPrimGizmoTranslateArrow : DbgPrimGizmo
 
     private readonly List<Vector3> Tris = new();
 
-    public DbgPrimGizmoTranslateArrow(Gizmos.Axis axis)
+    public DbgPrimGizmoTranslateArrow(GizmoState.Axis axis)
     {
         if (GeometryData != null)
         {
@@ -36,17 +37,17 @@ public class DbgPrimGizmoTranslateArrow : DbgPrimGizmo
         }
         else
         {
-            Vector3 GetPoint(Gizmos.Axis axis, int segmentIndex, float radius, float depth)
+            Vector3 GetPoint(GizmoState.Axis axis, int segmentIndex, float radius, float depth)
             {
                 var horizontalAngle = 1.0f * segmentIndex / Segments * Utils.Pi * 2.0f;
                 var x = (float)Math.Cos(horizontalAngle);
                 var y = (float)Math.Sin(horizontalAngle);
-                if (axis == Gizmos.Axis.PosZ)
+                if (axis == GizmoState.Axis.PosZ)
                 {
                     return new Vector3(x * radius, y * radius, depth);
                 }
 
-                if (axis == Gizmos.Axis.PosX)
+                if (axis == GizmoState.Axis.PosX)
                 {
                     return new Vector3(depth, x * radius, y * radius);
                 }
@@ -54,20 +55,20 @@ public class DbgPrimGizmoTranslateArrow : DbgPrimGizmo
                 return new Vector3(x * radius, depth, y * radius);
             }
 
-            void Arrow(Gizmos.Axis axis, Color color)
+            void Arrow(GizmoState.Axis axis, Color color)
             {
                 Vector3 tip = Vector3.Zero;
-                if (axis == Gizmos.Axis.PosX)
+                if (axis == GizmoState.Axis.PosX)
                 {
                     tip = Vector3.UnitX * TotalLength;
                 }
 
-                if (axis == Gizmos.Axis.PosY)
+                if (axis == GizmoState.Axis.PosY)
                 {
                     tip = Vector3.UnitY * TotalLength;
                 }
 
-                if (axis == Gizmos.Axis.PosZ)
+                if (axis == GizmoState.Axis.PosZ)
                 {
                     tip = Vector3.UnitZ * TotalLength;
                 }

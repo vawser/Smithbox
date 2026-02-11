@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.FileBrowser;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -59,11 +60,11 @@ public class ParamData : IDisposable
 
         if (paramDefTaskResult)
         {
-            TaskLogs.AddLog($"[Param Editor] Setup PARAM definitions.");
+            Smithbox.Log(this, $"[Param Editor] Setup PARAM definitions.");
         }
         else
         {
-            TaskLogs.AddError($"[Param Editor] Failed to setup PARAM definitions.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup PARAM definitions.");
         }
 
         // Param Meta
@@ -72,11 +73,11 @@ public class ParamData : IDisposable
 
         if (paramMetaTaskResult)
         {
-            TaskLogs.AddLog($"[Param Editor] Setup PARAM meta.");
+            Smithbox.Log(this, $"[Param Editor] Setup PARAM meta.");
         }
         else
         {
-            TaskLogs.AddError($"[Param Editor] Failed to setup PARAM meta.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup PARAM meta.");
         }
 
         // Graph Legends
@@ -85,11 +86,11 @@ public class ParamData : IDisposable
 
         if (graphLegendsTaskResult)
         {
-            TaskLogs.AddLog($"[Param Editor] Setup graph legends.");
+            Smithbox.Log(this, $"[Param Editor] Setup graph legends.");
         }
         else
         {
-            TaskLogs.AddError($"[Param Editor] Failed to setup graph legends.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup graph legends.");
         }
 
         // Icon Configurations
@@ -98,11 +99,11 @@ public class ParamData : IDisposable
 
         if (iconConfigTaskResult)
         {
-            TaskLogs.AddLog($"[Param Editor] Setup icon configurations.");
+            Smithbox.Log(this, $"[Param Editor] Setup icon configurations.");
         }
         else
         {
-            TaskLogs.AddError($"[Param Editor] Failed to setup icon configurations.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup icon configurations.");
         }
 
         // Table Param List
@@ -111,11 +112,11 @@ public class ParamData : IDisposable
 
         if (tableParamTaskResult)
         {
-            TaskLogs.AddLog($"[Param Editor] Setup table param list.");
+            Smithbox.Log(this, $"[Param Editor] Setup table param list.");
         }
         else
         {
-            //TaskLogs.AddError($"[Param Editor] Failed to setup table param list.");
+            //Smithbox.LogError(this, $"[Param Editor] Failed to setup table param list.");
         }
 
         // Table Group Names
@@ -124,11 +125,11 @@ public class ParamData : IDisposable
 
         if (tableGroupNameTaskResult)
         {
-            TaskLogs.AddLog($"[Param Editor] Setup table group name bank.");
+            Smithbox.Log(this, $"[Param Editor] Setup table group name bank.");
         }
         else
         {
-            // TaskLogs.AddError($"[Param Editor] Failed to setup table group name bank.");
+            // Smithbox.LogError(this, $"[Param Editor] Failed to setup table group name bank.");
         }
 
         // Game Offsets (per project)
@@ -137,11 +138,11 @@ public class ParamData : IDisposable
 
         if (gameOffsetResult)
         {
-            TaskLogs.AddLog($"[Param Editor] Setup Param Memory Offsets.");
+            Smithbox.Log(this, $"[Param Editor] Setup Param Memory Offsets.");
         }
         else
         {
-            TaskLogs.AddError($"[Param Editor] Failed to setup Param Memory Offsets.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup Param Memory Offsets.");
         }
 
         // Param Categories (per project)
@@ -150,11 +151,11 @@ public class ParamData : IDisposable
 
         if (paramCategoryResult)
         {
-            TaskLogs.AddLog($"[Param Editor] Setup Param Categories.");
+            Smithbox.Log(this, $"[Param Editor] Setup Param Categories.");
         }
         else
         {
-            TaskLogs.AddError($"[Param Editor] Failed to setup Param Categories.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup Param Categories.");
         }
 
         // Commutative Param Groups (per project)
@@ -163,11 +164,11 @@ public class ParamData : IDisposable
 
         if (commutativeParamGroupResult)
         {
-            TaskLogs.AddLog($"[Param Editor] Setup Commutative Param Groups.");
+            Smithbox.Log(this, $"[Param Editor] Setup Commutative Param Groups.");
         }
         else
         {
-            TaskLogs.AddError($"[Param Editor] Failed to setup Commutative Param Groups.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup Commutative Param Groups.");
         }
 
         // Primary Bank
@@ -176,7 +177,7 @@ public class ParamData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            TaskLogs.AddError($"[Param Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to fully setup Primary Bank.");
         }
 
         // Vanilla Bank
@@ -185,7 +186,7 @@ public class ParamData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            TaskLogs.AddError($"[Param Editor] Failed to fully setup Vanilla Bank.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to fully setup Vanilla Bank.");
         }
 
         if(!Project.Descriptor.ImportedParamRowNames)
@@ -280,7 +281,7 @@ public class ParamData : IDisposable
 
         if (!auxBankTaskResult)
         {
-            TaskLogs.AddError($"[Param Editor] Failed to setup Aux PARAM Bank for {targetProject.Descriptor.ProjectName}.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup Aux PARAM Bank for {targetProject.Descriptor.ProjectName}.");
         }
 
         if (AuxBanks.ContainsKey(targetProject.Descriptor.ProjectName))
@@ -292,7 +293,7 @@ public class ParamData : IDisposable
             AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
 
-        TaskLogs.AddLog($"[Param Editor] Setup Aux PARAM Bank for {targetProject.Descriptor.ProjectName}.");
+        Smithbox.Log(this, $"[Param Editor] Setup Aux PARAM Bank for {targetProject.Descriptor.ProjectName}.");
 
         return true;
     }
@@ -322,7 +323,7 @@ public class ParamData : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to deseralize {f} as PARAMDEF", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to deseralize {f} as PARAMDEF", e);
             }
         }
 
@@ -348,12 +349,12 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Param Editor] Failed to deserialize Param Type Info: {paramTypeInfoPath}", e);
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize Param Type Info: {paramTypeInfoPath}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to read Param Type Info: {paramTypeInfoPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to read Param Type Info: {paramTypeInfoPath}", e);
             }
         }
 
@@ -368,11 +369,11 @@ public class ParamData : IDisposable
 
         if (paramMetaTaskResult)
         {
-            TaskLogs.AddLog($"[Param Editor] Reloaded PARAM meta.");
+            Smithbox.Log(this, $"[Param Editor] Reloaded PARAM meta.");
         }
         else
         {
-            TaskLogs.AddError($"[Param Editor] Failed to reload PARAM meta.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to reload PARAM meta.");
         }
     }
 
@@ -430,7 +431,7 @@ public class ParamData : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to deseralize {fName} as PARAMMETA",  e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to deseralize {fName} as PARAMMETA", e);
             }
         }
 
@@ -468,12 +469,12 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Param Editor] Failed to deserialize Graph Legends: {file}",  e);
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize Graph Legends: {file}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to read Graph Legends: {file}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to read Graph Legends: {file}", e);
             }
         }
 
@@ -511,12 +512,12 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Param Editor] Failed to deserialize Icon Configurations: {file}", e);
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize Icon Configurations: {file}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[:Param Editor] Failed to read Icon Configurations: {file}", e);
+                Smithbox.LogError(this, $"[:Param Editor] Failed to read Icon Configurations: {file}", e);
             }
         }
 
@@ -557,7 +558,7 @@ public class ParamData : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load {file} for table group name import during Base Store step.", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load {file} for table group name import during Base Store step.", e);
             }
         }
 
@@ -584,7 +585,7 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Param Editor] Failed to load {file} for table group name import during Project Store step.", e);
+                    Smithbox.LogError(this, $"[Param Editor] Failed to load {file} for table group name import during Project Store step.", e);
                 }
             }
         }
@@ -668,7 +669,7 @@ public class ParamData : IDisposable
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"[Param Editor] Failed to load table param list.", e);
+            Smithbox.LogError(this, $"[Param Editor] Failed to load table param list.", e);
         }
 
         return true;
@@ -805,12 +806,12 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Param Reload offsets: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Param Reload offsets: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Param Reload offsets: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox] Failed to read the Param Reload offsets: {targetFile}", LogPriority.High, e);
             }
         }
 
@@ -853,12 +854,12 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Param Categories: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Param Categories: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Param Categories: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox] Failed to read the Param Categories: {targetFile}", LogPriority.High, e);
             }
         }
 
@@ -897,12 +898,12 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Commutative Param Groups: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Commutative Param Groups: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Commutative Param Groups: {targetFile}", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox] Failed to read the Commutative Param Groups: {targetFile}", LogPriority.High, e);
             }
         }
 

@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections;
@@ -460,21 +461,21 @@ public class MassEditTool
 
         if(result)
         {
-            TaskLogs.AddLog("Applied MSB Mass Edit successfully.");
+            Smithbox.Log(this, "Applied MSB Mass Edit successfully.");
         }
         else
         {
             foreach (var msg in CurrentResult.EditLog)
             {
-                TaskLogs.AddLog(msg, LogLevel.Error, LogPriority.High);
+                Smithbox.Log(this, msg, LogLevel.Error, LogPriority.Normal);
             }
 
             foreach (var msg in CurrentResult.SelectionLog)
             {
-                TaskLogs.AddLog(msg, LogLevel.Error, LogPriority.High);
+                Smithbox.Log(this, msg, LogLevel.Error, LogPriority.Normal);
             }
 
-            TaskLogs.AddLog("Failed to apply MSB Mass Edit:", LogLevel.Error, LogPriority.High);
+            Smithbox.LogError(this, "Failed to apply MSB Mass Edit, see log for details", LogPriority.High);
         }
 
         MayRunEdit = true;

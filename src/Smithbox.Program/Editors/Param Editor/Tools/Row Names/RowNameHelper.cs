@@ -24,11 +24,11 @@ public static class RowNameHelper
 
         if (rowNamesImported)
         {
-            TaskLogs.AddLog($"Imported row names.");
+            Smithbox.Log(typeof(RowNameHelper), $"Imported row names.");
         }
         else
         {
-            TaskLogs.AddError($"Failed to import row names.");
+            Smithbox.LogError(typeof(RowNameHelper), $"Failed to import row names.");
         }
     }
 
@@ -39,11 +39,11 @@ public static class RowNameHelper
 
         if (rowNamesImported)
         {
-            TaskLogs.AddLog($"Imported row names for {targetParam}");
+            Smithbox.Log(typeof(RowNameHelper), $"Imported row names for {targetParam}");
         }
         else
         {
-            TaskLogs.AddError($"Failed to import row names for {targetParam}");
+            Smithbox.LogError(typeof(RowNameHelper), $"Failed to import row names for {targetParam}");
         }
     }
 
@@ -72,7 +72,7 @@ public static class RowNameHelper
 
         if (!Directory.Exists(sourceDirectory))
         {
-            TaskLogs.AddError($"Failed to find {sourceDirectory}");
+            Smithbox.LogError(typeof(RowNameHelper), $"Failed to find {sourceDirectory}");
             return false;
         }
 
@@ -98,7 +98,7 @@ public static class RowNameHelper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"Failed to load {sourceFile} for row name import.", e);
+                    Smithbox.LogError(typeof(RowNameHelper), $"Failed to load {sourceFile} for row name import.", e);
                 }
             }
         }
@@ -119,7 +119,7 @@ public static class RowNameHelper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"Failed to load {file} for row name import.", e);
+                    Smithbox.LogError(typeof(RowNameHelper), $"Failed to load {file} for row name import.", e);
                 }
             }
         }
@@ -236,11 +236,11 @@ public static class RowNameHelper
 
         if (rowNamesExported)
         {
-            TaskLogs.AddLog($"Exported row names to {exportDir}");
+            Smithbox.Log(typeof(RowNameHelper), $"Exported row names to {exportDir}");
         }
         else
         {
-            TaskLogs.AddError($"Failed to export row names to {exportDir}");
+            Smithbox.LogError(typeof(RowNameHelper), $"Failed to export row names to {exportDir}");
         }
     }
 
@@ -288,7 +288,7 @@ public static class RowNameHelper
 
                 File.WriteAllText(fullPath, json);
 
-                TaskLogs.AddLog($"Exported row names to {fullPath}");
+                Smithbox.Log(typeof(RowNameHelper), $"Exported row names to {fullPath}");
             }
 
             if (exportType is ParamRowNameExportType.Text)
@@ -379,7 +379,7 @@ public static class RowNameHelper
                 p.Value.Rows[i].Name = "";
             }
 
-            //TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Stripped row names and stored them in {fullPath}");
+            //Smithbox.Log(this, $"[{Project.ProjectName}:Param Editor:{Name}] Stripped row names and stored them in {fullPath}");
         }
 
     }
@@ -404,7 +404,7 @@ public static class RowNameHelper
 
                 if (legacyStore == null)
                 {
-                    TaskLogs.AddError($"Failed to located {importDir} for row name restore.");
+                    Smithbox.LogError(typeof(RowNameHelper), $"Failed to located {importDir} for row name restore.");
                 }
                 else
                 {
@@ -427,7 +427,7 @@ public static class RowNameHelper
                         );
                     }
 
-                    TaskLogs.AddLog($"Restored row names");
+                    Smithbox.Log(typeof(RowNameHelper), $"Restored row names");
                 }
             }
         }
@@ -448,7 +448,7 @@ public static class RowNameHelper
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"Failed to load {file} for row name restore.", e);
+                    Smithbox.LogError(typeof(RowNameHelper), $"Failed to load {file} for row name restore.", e);
                 }
             }
 
@@ -471,7 +471,7 @@ public static class RowNameHelper
                 );
             }
 
-            TaskLogs.AddLog($"Restored row names");
+            Smithbox.Log(typeof(RowNameHelper), $"Restored row names");
 
             var legacyFile = Path.Combine(ProjectUtils.GetLocalProjectFolder(project), "Stripped Row Names.json");
             if (File.Exists(legacyFile))
@@ -491,11 +491,11 @@ public static class RowNameHelper
 
         if (rowNamesImported)
         {
-            TaskLogs.AddLog($"Imported row names for {targetParam}");
+            Smithbox.Log(typeof(RowNameHelper), $"Imported row names for {targetParam}");
         }
         else
         {
-            TaskLogs.AddError($"Failed to import row names for {targetParam}");
+            Smithbox.LogError(typeof(RowNameHelper), $"Failed to import row names for {targetParam}");
         }
     }
 
@@ -507,7 +507,7 @@ public static class RowNameHelper
 
         if (!File.Exists(sourceFilepath))
         {
-            TaskLogs.AddError($"Failed to find {sourceFilepath}");
+            Smithbox.LogError(typeof(RowNameHelper), $"Failed to find {sourceFilepath}");
             return false;
         }
 
@@ -557,7 +557,7 @@ public static class RowNameHelper
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"Failed to load {sourceFilepath} for row name import.", e);
+            Smithbox.LogError(typeof(RowNameHelper), $"Failed to load {sourceFilepath} for row name import.", e);
         }
 
         return true;
@@ -572,11 +572,11 @@ public static class RowNameHelper
 
         if (rowNamesImported)
         {
-            TaskLogs.AddLog($"Imported row names from legacy row name storage.");
+            Smithbox.Log(typeof(RowNameHelper), $"Imported row names from legacy row name storage.");
         }
         else
         {
-            TaskLogs.AddError($"Failed to import row names from legacy row name storage.");
+            Smithbox.LogError(typeof(RowNameHelper), $"Failed to import row names from legacy row name storage.");
         }
     }
 
@@ -588,7 +588,7 @@ public static class RowNameHelper
 
         if (!Directory.Exists(sourceFolderPath))
         {
-            TaskLogs.AddError($"Failed to find {sourceFolderPath}");
+            Smithbox.LogError(typeof(RowNameHelper), $"Failed to find {sourceFolderPath}");
             return false;
         }
 
@@ -634,7 +634,7 @@ public static class RowNameHelper
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"Failed to load {sourceFolderPath} for row name import.", e);
+            Smithbox.LogError(typeof(RowNameHelper), $"Failed to load {sourceFolderPath} for row name import.", e);
         }
 
         return true;

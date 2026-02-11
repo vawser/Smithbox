@@ -149,37 +149,7 @@ public class FmgRowDecorator
 
         if (CommandLine == "")
         {
-            var category = CFG.Current.TextEditor_Primary_Category.ToString();
-            if (_entryCache.Values.Count > 0)
-            {
-                var cachedEntry = _entryCache.Values.Where(e => e.ID == row.ID).FirstOrDefault();
-
-                var containerName = "";
-                var fmg = cachedEntry.Parent;
-                var fmgName = fmg.Name;
-
-                foreach (var (path, entry) in Editor.Project.Handler.TextData.PrimaryBank.Containers)
-                {
-                    if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
-                    {
-
-                        foreach (var fmgInfo in entry.FmgWrappers)
-                        {
-                            var grouping = TextUtils.GetFmgGrouping(Editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
-
-                            if (grouping == "Title" || grouping == "Common")
-                            {
-                                if (fmgInfo.Name == fmgName)
-                                {
-                                    containerName = entry.FileEntry.Filename;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                CommandLine = $@"text/select/{category}/{containerName}/{fmgName}/{row.ID}";
-            }
+            CommandLine = ParamFmgUtils.GetFmgRefCommandLine(Editor, _entryCache, row);
         }
         else
         {

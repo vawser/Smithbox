@@ -104,7 +104,7 @@ public class QuickScript
     {
         if (!Path.Exists(BuildFolder))
         {
-            TaskLogs.AddError($"Folder doesn't exist: {BuildFolder}");
+            Smithbox.Log<QuickScript>($"Folder doesn't exist: {BuildFolder}", LogLevel.Error);
             return;
         }
 
@@ -130,7 +130,7 @@ public class QuickScript
     {
         if (!Path.Exists(BuildFolder))
         {
-            TaskLogs.AddError($"Folder doesn't exist: {BuildFolder}");
+            Smithbox.Log<QuickScript>($"Folder doesn't exist: {BuildFolder}", LogLevel.Error);
             return;
         }
 

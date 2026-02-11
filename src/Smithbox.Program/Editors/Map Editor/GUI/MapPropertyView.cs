@@ -6,6 +6,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.Viewport;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -1426,7 +1427,7 @@ public class MapPropertyView
                 var ent = entSelection.FirstOrDefault();
                 if (ent != null)
                 {
-                    if (ent.IsPartEnemy() || ent.IsPartDummyEnemy())
+                    if (EntityHelper.IsPartEnemy(ent) || EntityHelper.IsPartDummyEnemy(ent))
                     {
                         showNormalInput = false;
                     }
@@ -1538,7 +1539,7 @@ public class MapPropertyView
             else
             {
                 // SoulsFormats does not define if alpha should be exposed. Expose alpha by default.
-                TaskLogs.AddLog(
+                Smithbox.Log(this, 
                     $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default",
                     LogLevel.Warning, LogPriority.Low);
 

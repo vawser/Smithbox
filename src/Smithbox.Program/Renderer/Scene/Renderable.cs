@@ -9,8 +9,8 @@ using Vortice.Vulkan;
 namespace StudioCore.Renderer;
 
 /// <summary>
-///     Contains if the component is visible/valid. Valid means that there's an actual
-///     renderable in this slot, while visible means it should be rendered
+/// Contains if the component is visible/valid. Valid means that there's an actual
+/// renderable in this slot, while visible means it should be rendered
 /// </summary>
 public struct VisibleValidComponent
 {
@@ -19,8 +19,8 @@ public struct VisibleValidComponent
 }
 
 /// <summary>
-///     All the components needed by the indirect draw encoder to render a mesh.
-///     Batch them all together for locality
+/// All the components needed by the indirect draw encoder to render a mesh.
+/// Batch them all together for locality
 /// </summary>
 public struct MeshDrawParametersComponent
 {
@@ -37,26 +37,78 @@ public struct SceneVisibilityComponent
 }
 
 /// <summary>
-///     Data oriented structure that contains renderables. This is basically a structure
-///     of arrays intended of containing all the renderables for a certain mesh. Management
-///     of how this is populated is left to a higher level system
+/// Data oriented structure that contains renderables. This is basically a structure
+/// of arrays intended of containing all the renderables for a certain mesh. Management
+/// of how this is populated is left to a higher level system
 /// </summary>
 public class Renderables
 {
-    protected static readonly int SYSTEM_SIZE = CFG.Current.Viewport_Limit_Renderables;
+    private const int INITIAL_SIZE = 128;
+    private const int GROWTH_FACTOR = 2;
 
-    private readonly Stack<int> _freeIndices = new(100);
+    public readonly Stack<int> _freeIndices = new(100);
 
-    private int _topIndex;
-    public RenderKey[] cRenderKeys = new RenderKey[SYSTEM_SIZE];
-    public SceneVisibilityComponent[] cSceneVis = new SceneVisibilityComponent[SYSTEM_SIZE];
+    public int _topIndex;
+    public int _capacity;
+
+    public RenderKey[] cRenderKeys;
+    public SceneVisibilityComponent[] cSceneVis;
 
     /// <summary>
-    ///     Component for if the renderable is visible or active
+    /// Component for if the renderable is visible or active
     /// </summary>
-    public VisibleValidComponent[] cVisible = new VisibleValidComponent[SYSTEM_SIZE];
+    public VisibleValidComponent[] cVisible;
 
     public int RenderableSystemIndex { get; protected set; }
+
+    /// <summary>
+    /// Current capacity of the renderable arrays
+    /// </summary>
+    public int Capacity => _capacity;
+
+    /// <summary>
+    /// Number of active renderables (valid slots)
+    /// </summary>
+    public int Count => _topIndex - _freeIndices.Count;
+
+    protected Renderables()
+    {
+        _capacity = INITIAL_SIZE;
+        cRenderKeys = new RenderKey[_capacity];
+        cSceneVis = new SceneVisibilityComponent[_capacity];
+        cVisible = new VisibleValidComponent[_capacity];
+    }
+
+    /// <summary>
+    /// Ensures the arrays have enough capacity. If not, resizes them.
+    /// </summary>
+    protected virtual void EnsureCapacity(int requiredCapacity)
+    {
+        if (requiredCapacity <= _capacity)
+        {
+            return;
+        }
+
+        int newCapacity = _capacity;
+        while (newCapacity < requiredCapacity)
+        {
+            newCapacity *= GROWTH_FACTOR;
+        }
+
+        ResizeArrays(newCapacity);
+    }
+
+    /// <summary>
+    ///     Resizes all arrays to the new capacity
+    /// </summary>
+    protected virtual void ResizeArrays(int newCapacity)
+    {
+        Array.Resize(ref cRenderKeys, newCapacity);
+        Array.Resize(ref cSceneVis, newCapacity);
+        Array.Resize(ref cVisible, newCapacity);
+
+        _capacity = newCapacity;
+    }
 
     protected int GetNextInvalidIndex()
     {
@@ -65,10 +117,8 @@ public class Renderables
             return _freeIndices.Pop();
         }
 
-        if (_topIndex >= SYSTEM_SIZE)
-        {
-            throw new Exception("Renderable system full.\n\nTry increasing renderables limit in settings.\n");
-        }
+        // Ensure we have capacity for the new index
+        EnsureCapacity(_topIndex + 1);
 
         return _topIndex++;
     }
@@ -86,8 +136,55 @@ public class Renderables
 
     public void RemoveRenderable(int renderable)
     {
+        if (renderable < 0 || renderable >= _topIndex)
+        {
+            throw new ArgumentOutOfRangeException(nameof(renderable),
+                $"Renderable index {renderable} is out of range [0, {_topIndex})");
+        }
+
         cVisible[renderable]._valid = false;
         _freeIndices.Push(renderable);
+    }
+
+    /// <summary>
+    /// Compacts the arrays by removing gaps from freed indices.
+    /// This is an expensive operation and should be called sparingly.
+    /// </summary>
+    public virtual void Compact()
+    {
+        if (_freeIndices.Count == 0)
+        {
+            return;
+        }
+
+        // Sort free indices in descending order
+        var sortedFreeIndices = new List<int>(_freeIndices);
+        sortedFreeIndices.Sort((a, b) => b.CompareTo(a));
+
+        int writeIndex = 0;
+        int readIndex = 0;
+        var indexMapping = new Dictionary<int, int>();
+
+        // Compact valid entries
+        while (readIndex < _topIndex)
+        {
+            if (cVisible[readIndex]._valid)
+            {
+                if (writeIndex != readIndex)
+                {
+                    cVisible[writeIndex] = cVisible[readIndex];
+                    cRenderKeys[writeIndex] = cRenderKeys[readIndex];
+                    cSceneVis[writeIndex] = cSceneVis[readIndex];
+
+                    indexMapping[readIndex] = writeIndex;
+                }
+                writeIndex++;
+            }
+            readIndex++;
+        }
+
+        _topIndex = writeIndex;
+        _freeIndices.Clear();
     }
 }
 
@@ -96,17 +193,37 @@ public class Renderables
 /// </summary>
 public class MeshRenderables : Renderables
 {
-    public BoundingBox[] cBounds = new BoundingBox[SYSTEM_SIZE];
-    public bool[] cCulled = new bool[SYSTEM_SIZE];
-    public MeshDrawParametersComponent[] cDrawParameters = new MeshDrawParametersComponent[SYSTEM_SIZE];
-    public Pipeline[] cPipelines = new Pipeline[SYSTEM_SIZE];
-    public WeakReference<ISelectable>[] cSelectables = new WeakReference<ISelectable>[SYSTEM_SIZE];
+    public BoundingBox[] cBounds;
+    public bool[] cCulled;
+    public MeshDrawParametersComponent[] cDrawParameters;
+    public Pipeline[] cPipelines;
+    public WeakReference<ISelectable>[] cSelectables;
+    public Pipeline[] cSelectionPipelines;
 
-    public Pipeline[] cSelectionPipelines = new Pipeline[SYSTEM_SIZE];
-
-    public MeshRenderables(int id)
+    public MeshRenderables(int id) : base()
     {
         RenderableSystemIndex = id;
+
+        // Initialize mesh-specific arrays
+        cBounds = new BoundingBox[Capacity];
+        cCulled = new bool[Capacity];
+        cDrawParameters = new MeshDrawParametersComponent[Capacity];
+        cPipelines = new Pipeline[Capacity];
+        cSelectables = new WeakReference<ISelectable>[Capacity];
+        cSelectionPipelines = new Pipeline[Capacity];
+    }
+
+    protected override void ResizeArrays(int newCapacity)
+    {
+        base.ResizeArrays(newCapacity);
+
+        // Resize mesh-specific arrays
+        Array.Resize(ref cBounds, newCapacity);
+        Array.Resize(ref cCulled, newCapacity);
+        Array.Resize(ref cDrawParameters, newCapacity);
+        Array.Resize(ref cPipelines, newCapacity);
+        Array.Resize(ref cSelectables, newCapacity);
+        Array.Resize(ref cSelectionPipelines, newCapacity);
     }
 
     public int CreateMesh(ref BoundingBox bounds, ref MeshDrawParametersComponent drawArgs)
@@ -119,7 +236,7 @@ public class MeshRenderables : Renderables
 
     public void CullRenderables(BoundingFrustum frustum)
     {
-        for (var i = 0; i < SYSTEM_SIZE; i++)
+        for (var i = 0; i < _topIndex; i++)
         {
             if (!cVisible[i]._valid)
             {
@@ -145,7 +262,7 @@ public class MeshRenderables : Renderables
     public void ProcessSceneVisibility(RenderFilter filter, DrawGroup dispGroup)
     {
         var alwaysVis = dispGroup != null ? dispGroup.AlwaysVisible : true;
-        for (var i = 0; i < SYSTEM_SIZE; i++)
+        for (var i = 0; i < _topIndex; i++)
         {
             if (cCulled[i])
             {
@@ -168,12 +285,48 @@ public class MeshRenderables : Renderables
 
     public void SubmitRenderables(SceneRenderer.RenderQueue queue)
     {
-        for (var i = 0; i < SYSTEM_SIZE; i++)
+        for (var i = 0; i < _topIndex; i++)
         {
             if (cVisible[i]._valid && !cCulled[i])
             {
                 queue.Add(i, cRenderKeys[i]);
             }
         }
+    }
+
+    public override void Compact()
+    {
+        if (_freeIndices.Count == 0)
+        {
+            return;
+        }
+
+        int writeIndex = 0;
+        int readIndex = 0;
+
+        // Compact valid entries
+        while (readIndex < _topIndex)
+        {
+            if (cVisible[readIndex]._valid)
+            {
+                if (writeIndex != readIndex)
+                {
+                    cVisible[writeIndex] = cVisible[readIndex];
+                    cRenderKeys[writeIndex] = cRenderKeys[readIndex];
+                    cSceneVis[writeIndex] = cSceneVis[readIndex];
+                    cBounds[writeIndex] = cBounds[readIndex];
+                    cCulled[writeIndex] = cCulled[readIndex];
+                    cDrawParameters[writeIndex] = cDrawParameters[readIndex];
+                    cPipelines[writeIndex] = cPipelines[readIndex];
+                    cSelectables[writeIndex] = cSelectables[readIndex];
+                    cSelectionPipelines[writeIndex] = cSelectionPipelines[readIndex];
+                }
+                writeIndex++;
+            }
+            readIndex++;
+        }
+
+        _topIndex = writeIndex;
+        _freeIndices.Clear();
     }
 }

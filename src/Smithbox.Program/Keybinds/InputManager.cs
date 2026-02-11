@@ -276,6 +276,9 @@ public static class InputManager
 
     private static bool IsBindingDown(KeyBinding b)
     {
+        if (b.Key == Key.Unknown)
+            return false;
+
         if (!_current.IsKeyDown(b.Key))
             return false;
 
@@ -294,6 +297,9 @@ public static class InputManager
 
     private static bool IsBindingDown_IgnoreModifiers(KeyBinding b)
     {
+        if (b.Key == Key.Unknown)
+            return false;
+
         if (!_current.IsKeyDown(b.Key))
             return false;
 

@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -215,7 +216,7 @@ public class FileItemView
             {
                 File.WriteAllBytes(absPath, rawData.ToArray());
 
-                TaskLogs.AddLog($"[Smithbox:File Browser] Extracted {absPath}");
+                Smithbox.Log(this, $"[Smithbox:File Browser] Extracted {absPath}");
 
                 data = null;
                 rawData = null;
@@ -223,7 +224,7 @@ public class FileItemView
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[Smithbox:File Browser] Failed to write file: {fileEntry.Path}", LogLevel.Error, LogPriority.High, e);
+            Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to write file: {fileEntry.Path}", LogPriority.High, e);
         }
     }
 
@@ -290,7 +291,7 @@ public class FileItemView
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
                 }
             }
             else
@@ -325,7 +326,7 @@ public class FileItemView
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
                 }
             }
         }
@@ -344,7 +345,7 @@ public class FileItemView
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
             }
 
             try
@@ -353,7 +354,7 @@ public class FileItemView
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
@@ -430,7 +431,7 @@ public class FileItemView
 
             File.WriteAllBytes(writePath, extractData);
 
-            TaskLogs.AddLog($"[Smithbox:File Browser] Extracted {filename}");
+            Smithbox.Log(this, $"[Smithbox:File Browser] Extracted {filename}");
         }
     }
 }

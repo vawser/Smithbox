@@ -18,7 +18,7 @@ public class ParamRef
     {
         if (refString == "")
         {
-            TaskLogs.AddLog($"PARAM META: {parent.Name} - ParamRef string is empty.");
+            Smithbox.Log(this, $"PARAM META: {parent.Name} - ParamRef string is empty.");
             return;
         }
 

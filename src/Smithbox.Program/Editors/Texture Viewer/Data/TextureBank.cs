@@ -166,7 +166,7 @@ public class TextureBank : IDisposable
                                     }
                                     catch (Exception e)
                                     {
-                                        TaskLogs.AddError($"[Texture Viewer] Failed to read {file.Name} as TPF in {Name}.", e);
+                                        Smithbox.LogError(this, $"[Texture Viewer] Failed to read {file.Name} as TPF in {Name}.", e);
                                         return false;
                                     }
                                 }
@@ -180,7 +180,7 @@ public class TextureBank : IDisposable
                             }
                             catch (Exception e)
                             {
-                                TaskLogs.AddError($"[Texture Viewer] Failed to read {key.Filename} as BND4 in {Name}.", e);
+                                Smithbox.LogError(this, $"[Texture Viewer] Failed to read {key.Filename} as BND4 in {Name}.", e);
                                 return false;
                             }
                         }
@@ -211,7 +211,7 @@ public class TextureBank : IDisposable
                                     }
                                     catch (Exception e)
                                     {
-                                        TaskLogs.AddError($"[Texture Viewer] Failed to read {file.Name} as TPF in {Name}.", e);
+                                        Smithbox.LogError(this, $"[Texture Viewer] Failed to read {file.Name} as TPF in {Name}.", e);
                                         return false;
                                     }
                                 }
@@ -225,14 +225,14 @@ public class TextureBank : IDisposable
                             }
                             catch (Exception e)
                             {
-                                TaskLogs.AddError($"[Texture Viewer] Failed to read {key.Filename} as BND4 in {Name}", e);
+                                Smithbox.LogError(this, $"[Texture Viewer] Failed to read {key.Filename} as BND4 in {Name}", e);
                                 return false;
                             }
                         }
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Texture Viewer] Failed to read {key.Filename} from VFS in {Name}", e);
+                        Smithbox.LogError(this, $"[Texture Viewer] Failed to read {key.Filename} from VFS in {Name}", e);
                         return false;
                     }
                 }
@@ -297,14 +297,14 @@ public class TextureBank : IDisposable
                                 }
                                 catch (Exception e)
                                 {
-                                    TaskLogs.AddError($"[Texture Viewer] Failed to read {fileEntry.Filename} from VFS in {Name}", e);
+                                    Smithbox.LogError(this, $"[Texture Viewer] Failed to read {fileEntry.Filename} from VFS in {Name}", e);
                                     return false;
                                 }
                             }
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddError($"[Texture Viewer] Failed to read {key.Filename} from VFS in {Name}", e);
+                            Smithbox.LogError(this, $"[Texture Viewer] Failed to read {key.Filename} from VFS in {Name}", e);
                             return false;
                         }
                     }
@@ -345,14 +345,14 @@ public class TextureBank : IDisposable
                                 }
                                 catch (Exception e)
                                 {
-                                    TaskLogs.AddError($"[Texture Viewer] Failed to read {fileEntry.Filename} as TPF in {Name}", e);
+                                    Smithbox.LogError(this, $"[Texture Viewer] Failed to read {fileEntry.Filename} as TPF in {Name}", e);
                                     return false;
                                 }
                             }
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddError($"[Texture Viewer] Failed to read {key.Filename} from VFS in {Name}", e);
+                            Smithbox.LogError(this, $"[Texture Viewer] Failed to read {key.Filename} from VFS in {Name}", e);
 
                             return false;
                         }
@@ -421,7 +421,7 @@ public class TextureBank : IDisposable
                                 }
                                 catch (Exception e)
                                 {
-                                    TaskLogs.AddError($"[Texture Viewer] Failed to {file.Name} as TPF in {Name}.", e);
+                                    Smithbox.LogError(this, $"[Texture Viewer] Failed to {file.Name} as TPF in {Name}.", e);
                                     return false;
                                 }
                             }
@@ -435,7 +435,7 @@ public class TextureBank : IDisposable
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddError($"[Texture Viewer] Failed to read {Name} as BND4 in {Name}", e);
+                            Smithbox.LogError(this, $"[Texture Viewer] Failed to read {Name} as BND4 in {Name}", e);
                             return false;
                         }
                     }
@@ -466,7 +466,7 @@ public class TextureBank : IDisposable
                                 }
                                 catch (Exception e)
                                 {
-                                    TaskLogs.AddError($"[Texture Viewer] Failed to {file.Name} as TPF in {Name}.",e);
+                                    Smithbox.LogError(this, $"[Texture Viewer] Failed to {file.Name} as TPF in {Name}.", e);
                                     return false;
                                 }
                             }
@@ -480,14 +480,14 @@ public class TextureBank : IDisposable
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddError($"[Texture Viewer] Failed to {key.Filename} as BXF4 in {Name}.",  e);
+                            Smithbox.LogError(this, $"[Texture Viewer] Failed to {key.Filename} as BXF4 in {Name}.", e);
                             return false;
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Texture Viewer] Failed to {key.Filename} from VFS in {Name}.", e);
+                    Smithbox.LogError(this, $"[Texture Viewer] Failed to {key.Filename} from VFS in {Name}.", e);
                     return false;
                 }
             }

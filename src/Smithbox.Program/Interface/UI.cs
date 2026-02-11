@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Editors.Common;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.IO;
@@ -156,6 +157,8 @@ public class UI
     public Vector4 ParamConflictBackgroundColor = new Vector4(0.38f, 0.231f, 0.231f, 1.0f); // DARK RED
     public Vector4 ParamCompareDiffBackgroundColor = new Vector4(0.2f, 0.2f, 0.35f, 1.0f); // DARK BLUE
 
+    public Vector4 ParamRowDiffBackgroundColor = new Vector4(0.255f, 0.412f, 0.125f, 1.0f); // DARK GREEN
+
     //****************************
     // UI
     //****************************
@@ -204,7 +207,7 @@ public class UI
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Interface Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError<UI>("[Smithbox] Interface Configuration failed to load, default configuration has been restored.", LogPriority.High, e);
 
                 Current = new UI();
                 Save();
@@ -237,7 +240,7 @@ public class UI
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Interface Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError<UI>("[Smithbox] Interface Configuration failed to load, default configuration has been restored.", LogPriority.High, e);
 
                 Current = new UI();
                 Save();

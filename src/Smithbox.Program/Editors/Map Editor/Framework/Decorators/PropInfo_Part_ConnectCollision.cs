@@ -8,7 +8,7 @@ public static class PropInfo_Part_ConnectCollision
 {
     public static void Display(MapEditorView view, Entity firstEnt)
     {
-        if (firstEnt.IsPartConnectCollision())
+        if (EntityHelper.IsPartConnectCollision(firstEnt))
         {
             byte[] mapIds = (byte[])PropFinderUtil.FindPropertyValue("MapID", firstEnt.WrappedObject);
 

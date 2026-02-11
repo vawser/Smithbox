@@ -24,6 +24,7 @@ public enum KeybindID
     Reset,
     Cycle_Gizmo_Translation_Mode,
     Cycle_Gizmo_Rotation_Mode,
+    Cycle_Gizmo_Scale_Mode,
     Cycle_Gizmo_Origin_Mode,
     Cycle_Gizmo_Space_Mode,
     Cycle_Render_Outline_Mode,
@@ -87,6 +88,7 @@ public enum KeybindID
     MapEditor_SelectAll_Configurable,
     MapEditor_SelectAll_ObjectType,
     MapEditor_SelectAll_ModelName,
+    MapEditor_SelectAll_Ceremony,
     MapEditor_Create_Selection_Group,
     MapEditor_Select_Group_0,
     MapEditor_Select_Group_1,
@@ -118,6 +120,8 @@ public enum KeybindID
     MapEditor_Hide_All_Display_Groups,
     MapEditor_Show_All_Display_Groups,
     MapEditor_Select_Display_Group_Highlights,
+    MapEditor_Select_Collision_References,
+    MapEditor_Select_Referenced_Collision,
 
     // Model Editor
 
@@ -174,8 +178,10 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.Pull, new() { Key = Key.X });
         InputManager.Bind(KeybindID.Reset, new() { Key = Key.R });
 
-        InputManager.Bind(KeybindID.Cycle_Gizmo_Translation_Mode, new() { Key = Key.W, Ctrl = true });
-        InputManager.Bind(KeybindID.Cycle_Gizmo_Rotation_Mode, new() { Key = Key.E, Ctrl = true });
+        InputManager.Bind(KeybindID.Cycle_Gizmo_Translation_Mode, new() { Key = Key.W, Shift = true });
+        InputManager.Bind(KeybindID.Cycle_Gizmo_Rotation_Mode, new() { Key = Key.E, Shift = true });
+        InputManager.Bind(KeybindID.Cycle_Gizmo_Scale_Mode, new() { Key = Key.G, Shift = true });
+
         InputManager.Bind(KeybindID.Cycle_Gizmo_Origin_Mode, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.Cycle_Gizmo_Space_Mode, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.Cycle_Render_Outline_Mode, new() { Key = Key.Number1, Alt = true });
@@ -214,14 +220,14 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_Create_Map_Object, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Duplicate_To_Map, new() { Key = Key.D, Alt = true });
 
-        InputManager.Bind(KeybindID.MapEditor_Rotate_X_Axis, new() { Key = Key.R, Ctrl = true });
-        InputManager.Bind(KeybindID.MapEditor_Rotate_Y_Axis, new() { Key = Key.Unknown });
-        InputManager.Bind(KeybindID.MapEditor_Rotate_Pivot_Y_Axis, new() { Key = Key.R, Alt = true });
+        InputManager.Bind(KeybindID.MapEditor_Rotate_X_Axis, new() { Key = Key.R, Alt = true });
+        InputManager.Bind(KeybindID.MapEditor_Rotate_Y_Axis, new() { Key = Key.R, Shift = true });
+        InputManager.Bind(KeybindID.MapEditor_Rotate_Pivot_Y_Axis, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Rotate_Minus_X_Axis, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Rotate_Minus_Y_Axis, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Rotate_Minus_Pivot_Y_Axis, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Rotate_Fixed_Angle, new() { Key = Key.Unknown });
-        InputManager.Bind(KeybindID.MapEditor_Reset_Rotation, new() { Key = Key.R, Shift = true });
+        InputManager.Bind(KeybindID.MapEditor_Reset_Rotation, new() { Key = Key.R, Ctrl = true });
 
         InputManager.Bind(KeybindID.MapEditor_Scramble, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Replicate, new() { Key = Key.Unknown });
@@ -232,7 +238,7 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_Enable_Game_Presence, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Disable_Game_Presence, new() { Key = Key.Unknown });
 
-        InputManager.Bind(KeybindID.MapEditor_Visibility_Flip, new() { Key = Key.H, Ctrl = true });
+        InputManager.Bind(KeybindID.MapEditor_Visibility_Flip, new() { Key = Key.Z, Alt = true });
         InputManager.Bind(KeybindID.MapEditor_Visibility_Enable, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Visibility_Disable, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Global_Visibility_Flip, new() { Key = Key.Unknown });
@@ -241,13 +247,14 @@ public static class DefaultKeyBindings
 
         InputManager.Bind(KeybindID.MapEditor_Configure_Grid_Placement, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Cycle_Selected_Grid_Type, new() { Key = Key.Unknown });
-        InputManager.Bind(KeybindID.MapEditor_Move_to_Primary_Grid, new() { Key = Key.X, Alt = true });
+        InputManager.Bind(KeybindID.MapEditor_Move_to_Primary_Grid, new() { Key = Key.X, Shift = true });
         InputManager.Bind(KeybindID.MapEditor_Move_to_Secondary_Grid, new() { Key = Key.X, Ctrl = true });
-        InputManager.Bind(KeybindID.MapEditor_Move_to_Tertiary_Grid, new() { Key = Key.X, Shift = true });
+        InputManager.Bind(KeybindID.MapEditor_Move_to_Tertiary_Grid, new() { Key = Key.X, Alt = true });
 
         InputManager.Bind(KeybindID.MapEditor_SelectAll_Configurable, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_SelectAll_ObjectType, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_SelectAll_ModelName, new() { Key = Key.Unknown });
+        InputManager.Bind(KeybindID.MapEditor_SelectAll_Ceremony, new() { Key = Key.Unknown });
 
         InputManager.Bind(KeybindID.MapEditor_Create_Selection_Group, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Select_Group_0, new() { Key = Key.Number0, Alt = true });
@@ -283,6 +290,9 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_Hide_All_Display_Groups, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Show_All_Display_Groups, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Select_Display_Group_Highlights, new() { Key = Key.Unknown });
+
+        InputManager.Bind(KeybindID.MapEditor_Select_Collision_References, new() { Key = Key.U, Ctrl = true });
+        InputManager.Bind(KeybindID.MapEditor_Select_Referenced_Collision, new() { Key = Key.U, Alt = true });
 
         // Model Editor
 

@@ -453,7 +453,7 @@ public class ParamPinGroups
         catch (Exception ex)
         {
             var filename = Path.GetFileNameWithoutExtension(readPath);
-            TaskLogs.AddLog($"Failed to load param pin group: {filename} at {readPath}\n{ex}");
+            Smithbox.Log(this, $"Failed to load param pin group: {filename} at {readPath}\n{ex}");
         }
     }
     public void LoadRowPinGroup(string groupName)
@@ -470,7 +470,7 @@ public class ParamPinGroups
         catch (Exception ex)
         {
             var filename = Path.GetFileNameWithoutExtension(readPath);
-            TaskLogs.AddLog($"Failed to load row pin group: {filename} at {readPath}\n{ex}");
+            Smithbox.Log(this, $"Failed to load row pin group: {filename} at {readPath}\n{ex}");
         }
     }
     public void LoadFieldPinGroup(string groupName)
@@ -487,7 +487,7 @@ public class ParamPinGroups
         catch (Exception ex)
         {
             var filename = Path.GetFileNameWithoutExtension(readPath);
-            TaskLogs.AddLog($"Failed to load field pin group: {filename} at {readPath}\n{ex}");
+            Smithbox.Log(this, $"Failed to load field pin group: {filename} at {readPath}\n{ex}");
         }
     }
 
@@ -522,11 +522,11 @@ public class ParamPinGroups
                 fs.Flush();
                 fs.Dispose();
 
-                TaskLogs.AddLog($"Pin Group: saved pin group: {filename} at {writePath}.");
+                Smithbox.Log(this, $"Pin Group: saved pin group: {filename} at {writePath}.");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Pin Group: failed to save pin group: {filename} at {writePath}\n{ex}");
+                Smithbox.Log(this, $"Pin Group: failed to save pin group: {filename} at {writePath}\n{ex}");
             }
 
             RefreshGroupList = true;

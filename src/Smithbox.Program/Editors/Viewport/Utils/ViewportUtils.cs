@@ -53,17 +53,17 @@ public static class ViewportUtils
     {
         if (fov <= 0.0f || fov >= Math.PI)
         {
-            throw new ArgumentOutOfRangeException(nameof(fov));
+            return Matrix4x4.Identity;
         }
 
         if (near <= 0.0f)
         {
-            throw new ArgumentOutOfRangeException(nameof(near));
+            return Matrix4x4.Identity;
         }
 
         if (far <= 0.0f)
         {
-            throw new ArgumentOutOfRangeException(nameof(far));
+            return Matrix4x4.Identity;
         }
 
         var yScale = 1.0f / (float)Math.Tan((double)fov * 0.5f);

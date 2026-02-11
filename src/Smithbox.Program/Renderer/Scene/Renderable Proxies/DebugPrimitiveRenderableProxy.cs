@@ -305,28 +305,35 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
 
         _perObjectResourceSet = StaticResourceCache.GetResourceSet(factory, new ResourceSetDescription(
             mainPerObjectLayout,
-            SceneRenderer.UniformBufferAllocator._backingBuffer));
+            SceneRenderer.UniformBufferAllocator.BackingBuffer));
 
         // Build default pipeline
         GraphicsPipelineDescription pipelineDescription = new();
+
         pipelineDescription.BlendState = BlendStateDescription.SingleAlphaBlend;
+
         pipelineDescription.DepthStencilState = DepthStencilStateDescription.DepthOnlyGreaterEqual;
+
         pipelineDescription.RasterizerState = new RasterizerStateDescription(
             _debugPrimitive.CullMode,
             _debugPrimitive.FillMode,
             _debugPrimitive.FrontFace,
             true,
             false);
+
         pipelineDescription.PrimitiveTopology = _debugPrimitive.Topology;
+
         pipelineDescription.ShaderSet = new ShaderSetDescription(
             mainVertexLayouts,
             _shaders, _debugPrimitive.SpecializationConstants);
+
         pipelineDescription.ResourceLayouts = new[]
         {
             projViewLayout, mainPerObjectLayout, SceneRenderer.GlobalTexturePool.GetLayout(),
             SceneRenderer.GlobalCubeTexturePool.GetLayout(), SceneRenderer.MaterialBufferAllocator.GetLayout(),
             SamplerSet.SamplersLayout, pickingResultLayout, SceneRenderer.BoneBufferAllocator.GetLayout()
         };
+
         pipelineDescription.Outputs = gd.SwapchainFramebuffer.OutputDescription;
         _pipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
 

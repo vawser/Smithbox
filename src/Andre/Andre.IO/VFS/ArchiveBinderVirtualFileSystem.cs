@@ -1,6 +1,7 @@
 ﻿using Andre.Core;
 using Andre.Core.Util;
 using Andre.Formats;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using System.Buffers;
 using System.Diagnostics;
@@ -48,7 +49,7 @@ namespace Andre.IO.VFS
                         fileHeaders.Add((p, h));
                         if (this.files.ContainsKey(p))
                         {
-                            Console.WriteLine($"Duplicate file for name \"{p}\"!");
+                            AndreLogging.For(this).LogWarning("Duplicate file for name \"{}\"!", p);
                             continue;
                         }
                         string[] sp = p.Trim('/').Split('/');
@@ -74,7 +75,7 @@ namespace Andre.IO.VFS
                     else
                     {
                         f = new(null, h, b.BdtStream, b.BdtMmf);
-                        Console.WriteLine($"Couldn't find name for file hash: {h.FileNameHash}");
+                        AndreLogging.For(this).LogWarning("Couldn't find name for file hash: {}", h.FileNameHash);
                     }
                     fileList.Add(f);
                 }
@@ -148,10 +149,10 @@ namespace Andre.IO.VFS
                     file = null;
                     return false;
                 case > 1:
-                    //Console.WriteLine($"Warning: Found more than one file for path: \"{canonicalPath}\", hash: {hash}");
+                    //AndreLogging.For(this).LogWarning($"Warning: Found more than one file for path: \"{canonicalPath}\", hash: {hash}");
                     break;
             }
-            Console.WriteLine($"Warning: file for path \"{canonicalPath}\" wasn't cached in the file lookup table correctly. Hash: {hash}");
+            AndreLogging.For(this).LogWarning("File for path \"{p}\" wasn't cached in the file lookup table correctly. Hash: {h}", canonicalPath, hash);
             file = tmp[0];
             return true;
 

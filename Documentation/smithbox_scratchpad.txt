@@ -1,5 +1,11 @@
 #---------------------
 # TODO 
 #---------------------
+- Test the MacOS/Linux PR, review it
 
-- Gparam Editor: DS2 support
+- Add field reordering via drag (requires storing the ordering in .smithbox)
+
+- Fix gizmo usage in Orthographic and Oblique view modes
+
+- Add progress modal to the prefab import/export
+- Make the prefab import much quicker (so we can support whole map imports)

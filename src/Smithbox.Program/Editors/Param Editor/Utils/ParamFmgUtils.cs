@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+﻿using Andre.Formats;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.TextEditor;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Veldrid;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -25,25 +27,37 @@ public class ParamFmgUtils
         {
             foreach (var (path, entry) in editor.Project.Handler.TextData.PrimaryBank.Containers)
             {
-                if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
+                if (entry.IsContainerUnused())
+                    continue;
+
+                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
+                    continue;
+
+                if (entry.FmgWrappers == null)
+                    continue;
+
+                foreach (var fmgInfo in entry.FmgWrappers)
                 {
-                    if (entry.FmgWrappers != null)
+                    var grouping = TextUtils.GetFmgGrouping(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+
+                    if (grouping == "Title" || grouping == "Common")
                     {
-                        foreach (var fmgInfo in entry.FmgWrappers)
+                        var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+
+                        // HACK: to avoid using the effect entries when display weapon FMG refs - fix this when we migrate to the FMG descriptors
+                        if(searchStr == "Weapons")
                         {
-                            var grouping = TextUtils.GetFmgGrouping(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
-
-                            if (grouping == "Title" || grouping == "Common")
+                            if(enumName == "Effect_Weapons")
                             {
-                                var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+                                continue;
+                            }
+                        }
 
-                                if (enumName.Contains(searchStr))
-                                {
-                                    foreach (var fmgEntry in fmgInfo.File.Entries)
-                                    {
-                                        entries.Add(fmgEntry);
-                                    }
-                                }
+                        if (enumName.Contains(searchStr))
+                        {
+                            foreach (var fmgEntry in fmgInfo.File.Entries)
+                            {
+                                entries.Add(fmgEntry);
                             }
                         }
                     }
@@ -54,7 +68,46 @@ public class ParamFmgUtils
         return entries;
     }
 
-    public static List<FMG.Entry> GetFmgEntriesByAssociatedParam(ParamEditorScreen editor, string paramName)
+    public static string GetFmgRefCommandLine(ParamEditorScreen editor, Dictionary<int, FMG.Entry> _entryCache, Param.Row row)
+    {
+        var category = CFG.Current.TextEditor_Primary_Category.ToString();
+        if (_entryCache.Values.Count > 0)
+        {
+            var cachedEntry = _entryCache.Values.Where(e => e.ID == row.ID).FirstOrDefault();
+
+            var containerName = "";
+            var fmg = cachedEntry.Parent;
+            var fmgName = fmg.Name;
+
+            foreach (var (path, entry) in editor.Project.Handler.TextData.PrimaryBank.Containers)
+            {
+                if (entry.IsContainerUnused())
+                    continue;
+
+                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
+                    continue;
+
+                foreach (var fmgInfo in entry.FmgWrappers)
+                {
+                    var grouping = TextUtils.GetFmgGrouping(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+
+                    if (grouping == "Title" || grouping == "Common")
+                    {
+                        if (fmgInfo.Name == fmgName)
+                        {
+                            containerName = entry.FileEntry.Filename;
+                        }
+                    }
+                }
+            }
+
+            return $@"text/select/{category}/{containerName}/{fmgName}/{row.ID}";
+        }
+
+        return "";
+    }
+
+    public static List<FMG.Entry> GetFmgEntriesByAssociatedParam(ParamEditorScreen editor, string paramName, string grouping = "")
     {
         if (editor.Project.Handler.TextEditor == null)
             return new List<FMG.Entry>();
@@ -68,18 +121,26 @@ public class ParamFmgUtils
             {
                 if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
                 {
-                    if (entry.FmgWrappers != null)
-                    {
-                        foreach (var fmgInfo in entry.FmgWrappers)
-                        {
-                            var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+                    if (entry.FmgWrappers == null)
+                        continue;
 
-                            if (enumName.Contains(searchStr))
+                    foreach (var fmgInfo in entry.FmgWrappers)
+                    {
+                        var curGrouping = TextUtils.GetFmgGrouping(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+
+                        if(grouping != "")
+                        {
+                            if (!(curGrouping == "Common" || curGrouping == grouping))
+                                continue;
+                        }
+
+                        var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+
+                        if (enumName.Contains(searchStr))
+                        {
+                            foreach (var fmgEntry in fmgInfo.File.Entries)
                             {
-                                foreach (var fmgEntry in fmgInfo.File.Entries)
-                                {
-                                    entries.Add(fmgEntry);
-                                }
+                                entries.Add(fmgEntry);
                             }
                         }
                     }
@@ -150,7 +211,7 @@ public class ParamFmgUtils
         }
         if (paramName == "Magic")
         {
-            return "Spells";
+            return "Goods";
         }
         if (paramName == "EquipParamProtector")
         {

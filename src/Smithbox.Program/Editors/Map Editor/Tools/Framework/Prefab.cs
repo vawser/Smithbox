@@ -61,7 +61,7 @@ public abstract class Prefab : PrefabAttributes
     {
         if (targetMap is null)
         {
-            TaskLogs.AddLog($"Failed to create prefab {PrefabName}: Target map is null.", LogLevel.Error);
+            Smithbox.LogError(this, $"Failed to create prefab {PrefabName}: Target map is null.");
             return;
         }
 
@@ -78,7 +78,7 @@ public abstract class Prefab : PrefabAttributes
             foreach (var entity in ents)
             {
                 // Ignore Events as they don't have position
-                if (entity.IsPart() || entity.IsRegion())
+                if (EntityHelper.IsPart(entity) || EntityHelper.IsRegion(entity))
                 {
                     var position = entity.GetPropertyValue<Vector3>("Position");
 
@@ -159,12 +159,14 @@ internal class Prefab<T> : Prefab
             {
                 ent.GetType().GetProperty("EntityID")?.SetValue(ent, 0);
             }
+
             if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
             {
                 ent.GetType().GetProperty("EntityGroupIDs")?.SetValue(ent, new uint[] { });
             }
 
             MsbUtils.StripMsbReference(entries, copy.WrappedObject as IMsbEntry);
+
             map.AddObject(copy);
         }
         map.SerializeToMSB(pseudoMap, Type);

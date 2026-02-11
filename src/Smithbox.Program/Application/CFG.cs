@@ -4,6 +4,7 @@ using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -50,6 +51,8 @@ public class CFG
     public bool Logger_Enable_Warning_Log = true;
     public int Logger_Action_Fade_Time = 1500;
     public int Logger_Warning_Fade_Time = 1500;
+    public bool Logger_Enable_Color_Fade = true;
+    public bool Logger_Enable_Log_Popups = true;
 
     public bool Developer_Enable_Tools = false;
     public string Developer_Smithbox_Build_Folder = "";
@@ -863,7 +866,7 @@ public class CFG
     public bool Viewport_Enable_Texturing = true;
     public bool Viewport_Enable_Culling = true;
 
-    public bool Viewport_Enable_Selection_Outline = true;
+    public bool Viewport_Enable_Selection_Tint = true;
     public bool Viewport_Enable_Model_Masks = true;
     public bool Viewport_Enable_LOD_Facesets = false;
 
@@ -899,7 +902,6 @@ public class CFG
     // Rendering Limits
     public uint Viewport_Limit_Buffer_Flver_Bone = 65536;
     public uint Viewport_Limit_Buffer_Indirect_Draw = 50000;
-    public int Viewport_Limit_Renderables = 50000;
 
     // Wireframe Coloring
     public float Viewport_Wireframe_Color_Variance = 0.11f;
@@ -984,13 +986,22 @@ public class CFG
     public float Viewport_Untextured_Model_Brightness = 1.0f;
     public float Viewport_Untextured_Model_Saturation = 0.5f;
 
-    public Vector3 Viewport_Selection_Outline_Color = new(1.0f, 0.5f, 0.0f);
+    public Vector3 Viewport_Selection_Tint_Color = new(1.0f, 0.5f, 0.0f);
+    public Vector3 Viewport_Untextured_Selection_Tint_Color = new(0.85f, 0.0f, 1.0f);
+    public float Viewport_Selection_Tint_Strength = 1.0f;
 
     public bool Viewport_DisplayControls = true;
     public bool Viewport_DisplayRotationIncrement = true;
     public bool Viewport_DisplayPositionIncrement = true;
+
     public bool Viewport_Enable_Box_Selection = true;
-    public float Viewport_Box_Selection_Distance_Threshold = 1.2f;
+    public bool Viewport_Enable_Box_Selection_MapPiece = true;
+    public bool Viewport_Enable_Box_Selection_Asset = true;
+    public bool Viewport_Enable_Box_Selection_Enemy = true;
+    public bool Viewport_Enable_Box_Selection_Player = true;
+    public bool Viewport_Enable_Box_Selection_Collision = true;
+    public bool Viewport_Enable_Box_Selection_Light = true;
+    public bool Viewport_Enable_Box_Selection_Region = true;
 
     public Vector3 Viewport_Background_Color = new(1.0f, 0.5f, 0.0f);
 
@@ -1166,7 +1177,7 @@ public class CFG
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.Log<CFG>("[Smithbox] Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
 
                 Current = new CFG();
                 Save();

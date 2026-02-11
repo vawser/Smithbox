@@ -24,6 +24,7 @@ public class ViewportOverlay
                 ImGui.Text("Use right click to rotate the camera.");
                 ImGui.Text("Hold Shift to temporarily speed up and Ctrl to temporarily slow down.");
                 ImGui.Text("Scroll the mouse wheel to adjust overall speed.");
+                ImGui.Text("Hold Ctrl, Alt and left click to make a box selection.");
             }
 
             if (Parent.ViewportCamera.ViewMode is ViewMode.Orthographic or ViewMode.Oblique)
@@ -32,6 +33,7 @@ public class ViewportOverlay
                 ImGui.Text("Pan the screen with the middle mouse button.");
                 ImGui.Text("Use right click to rotate the camera.");
                 ImGui.Text("Hold right click and scroll the mouse wheel to adjust the zoom.");
+                ImGui.Text("Hold Ctrl, Alt and left click to make a box selection.");
             }
         }
 

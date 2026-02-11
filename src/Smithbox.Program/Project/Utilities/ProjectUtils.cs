@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -130,7 +131,7 @@ public class ProjectUtils
 
         if (!Directory.Exists(sourcePath))
         {
-            TaskLogs.AddLog($"[Smithbox] Source path not found: {sourcePath}", LogLevel.Error, LogPriority.High);
+            Smithbox.Log(typeof(FileDictionary), $"[Smithbox] Source path not found: {sourcePath}", LogLevel.Error, LogPriority.High);
             return fileDict;
         }
 
@@ -440,7 +441,7 @@ public class ProjectUtils
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[Smithbox] Failed to save: {Path.GetFileName(assetPath)} - {e}");
+            Smithbox.Log<ProjectUtils>($"[Smithbox] Failed to save: {Path.GetFileName(assetPath)} - {e}");
         }
     }
 
@@ -543,7 +544,7 @@ public class ProjectUtils
             catch (Exception ex)
             {
                 // Log or handle as needed
-                Console.WriteLine($"Failed to delete {file}: {ex.Message}");
+                Smithbox.Log<ProjectUtils>($"Failed to delete {file}: {ex.Message}");
             }
         }
     }

@@ -165,7 +165,7 @@ public class ParamBank : IDisposable
 
         if (checkVersion && !success)
         {
-            TaskLogs.AddError($"[Param Editor] Failed to get regulation version. Params might be corrupt.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to get regulation version. Params might be corrupt.");
             return;
         }
 
@@ -204,7 +204,7 @@ public class ParamBank : IDisposable
                         }
                         else
                         {
-                            TaskLogs.AddError($"[Param Editor:{Name}] Couldn't find ParamDef for param {paramName} and no tentative ParamType exists.");
+                            Smithbox.LogError(this, $"[Param Editor:{Name}] Couldn't find ParamDef for param {paramName} and no tentative ParamType exists.");
 
                             continue;
                         }
@@ -220,7 +220,7 @@ public class ParamBank : IDisposable
                     }
                     else
                     {
-                        TaskLogs.AddError($"[Param Editor:{Name}] Couldn't read ParamType for {paramName} and no tentative ParamType exists.");
+                        Smithbox.LogError(this, $"[Param Editor:{Name}] Couldn't read ParamType for {paramName} and no tentative ParamType exists.");
 
                         continue;
                     }
@@ -231,11 +231,11 @@ public class ParamBank : IDisposable
             {
                 curParam = Param.ReadIgnoreCompression(f.Bytes);
 
-                //TaskLogs.AddLog($"{paramName}: {curParam.ParamdefDataVersion} - {curParam.ParamdefFormatVersion}");
+                //Smithbox.Log(this, $"{paramName}: {curParam.ParamdefDataVersion} - {curParam.ParamdefFormatVersion}");
 
                 if (!Project.Handler.ParamData.ParamDefs.ContainsKey(curParam.ParamType ?? ""))
                 {
-                    TaskLogs.AddError($"[Param Editor:{Name}] Couldn't find ParamDef for param {paramName} with ParamType \"{curParam.ParamType}\".");
+                    Smithbox.LogError(this, $"[Param Editor:{Name}] Couldn't find ParamDef for param {paramName} with ParamType \"{curParam.ParamType}\".");
 
                     //ParamDefHelper.GenerateBaseParamDefFile(paramName, $"{curParam.ParamType}");
 
@@ -247,7 +247,7 @@ public class ParamBank : IDisposable
 
             if (curParam.ParamType == null)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to get regulation version. Params might be corrupt.");
+                Smithbox.LogError(this, $"[Param Editor] Failed to get regulation version. Params might be corrupt.");
             }
 
             // Skip these for DS1 so the param load is not slowed down by the catching
@@ -255,7 +255,7 @@ public class ParamBank : IDisposable
             {
                 if (paramName is "m99_ToneCorrectBank" or "m99_ToneMapBank" or "default_ToneCorrectBank")
                 {
-                    TaskLogs.AddInfo($"[:Param Editor:{Name}] Skipped this param: {paramName}");
+                    Smithbox.Log(this, $"[:Param Editor:{Name}] Skipped this param: {paramName}");
                     continue;
                 }
             }
@@ -270,7 +270,7 @@ public class ParamBank : IDisposable
             catch (Exception e)
             {
                 var name = f.Name.Split("\\").Last();
-                TaskLogs.AddError($"[Param Editor] Could not apply ParamDef for {name} in {Name}", e);
+                Smithbox.LogError(this, $"[Param Editor] Could not apply ParamDef for {name} in {Name}", e);
             }
         }
     }
@@ -284,7 +284,7 @@ public class ParamBank : IDisposable
             if (p.ParamType == "CHR_MODEL_PARAM_ST")
             {
                 if (p.ExpandParamSize(12, 16))
-                    TaskLogs.AddInfo($"[Param Editor] CHR_MODEL_PARAM_ST fixed up.");
+                    Smithbox.Log(this, $"[Param Editor] CHR_MODEL_PARAM_ST fixed up.");
             }
         }
 
@@ -294,17 +294,17 @@ public class ParamBank : IDisposable
             if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
             {
                 if (p.ExpandParamSize(880, 1024))
-                    TaskLogs.AddInfo($"[Param Editor] GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
+                    Smithbox.Log(this, $"[Param Editor] GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
             }
             if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
             {
                 if (p.ExpandParamSize(112, 144))
-                    TaskLogs.AddInfo($"[Param Editor] POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
+                    Smithbox.Log(this, $"[Param Editor] POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
             }
             if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
             {
                 if (p.ExpandParamSize(32, 48))
-                    TaskLogs.AddInfo($"[Param Editor] SIGN_PUDDLE_PARAM_ST fixed up.");
+                    Smithbox.Log(this, $"[Param Editor] SIGN_PUDDLE_PARAM_ST fixed up.");
             }
         }
     }
@@ -319,7 +319,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(paramPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {paramPath} for {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {paramPath} for {Name}");
 
             successfulLoad = false;
         }
@@ -333,7 +333,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load game param for {Name}: {paramPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load game param for {Name}: {paramPath}", e);
 
                 successfulLoad = false;
             }
@@ -353,7 +353,7 @@ public class ParamBank : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
+                        Smithbox.LogError(this, $"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
 
                         successfulLoad = false;
                     }
@@ -375,7 +375,7 @@ public class ParamBank : IDisposable
 
         if (!fs.FileExists(paramPath))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate param files for {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate param files for {Name}. Save failed.");
             return false;
         }
 
@@ -496,7 +496,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(paramPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {paramPath} for {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {paramPath} for {Name}");
 
             successfulLoad = false;
         }
@@ -510,7 +510,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load game param for {Name}: {paramPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load game param for {Name}: {paramPath}", e);
 
                 successfulLoad = false;
             }
@@ -530,7 +530,7 @@ public class ParamBank : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Param Editor:] Failed to load draw param for {Name}: {paramPath}", e);
+                        Smithbox.LogError(this, $"[Param Editor:] Failed to load draw param for {Name}: {paramPath}", e);
 
                         successfulLoad = false;
                     }
@@ -554,7 +554,7 @@ public class ParamBank : IDisposable
             param += ".dcx";
             if (!fs.FileExists(param))
             {
-                TaskLogs.AddError($"[Param Editor] Cannot locate param files for {Name}. Save failed.");
+                Smithbox.LogError(this, $"[Param Editor] Cannot locate param files for {Name}. Save failed.");
 
                 return false;
             }
@@ -628,7 +628,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(paramPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {paramPath} for {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {paramPath} for {Name}");
 
             successfulLoad = false;
         }
@@ -642,7 +642,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load game param for {Name}: {paramPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load game param for {Name}: {paramPath}", e);
 
                 successfulLoad = false;
             }
@@ -662,7 +662,7 @@ public class ParamBank : IDisposable
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddError($"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
+                        Smithbox.LogError(this, $"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
                         successfulLoad = false;
                     }
                 }
@@ -682,7 +682,7 @@ public class ParamBank : IDisposable
 
         if (!fs.FileExists(param))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate param files for {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate param files for {Name}. Save failed.");
 
             return false;
         }
@@ -741,7 +741,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(paramPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to load game param for {Name}: {paramPath}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to load game param for {Name}: {paramPath}");
 
             successfulLoad = false;
         }
@@ -760,7 +760,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
 
                 successfulLoad = false;
             }
@@ -773,7 +773,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
 
                 successfulLoad = false;
             }
@@ -802,7 +802,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Could not apply ParamDef for {EnemyParam.ParamType} in {Name}", e);
+                Smithbox.LogError(this, $"[Param Editor] Could not apply ParamDef for {EnemyParam.ParamType} in {Name}", e);
 
                 successfulLoad = false;
             }
@@ -842,7 +842,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Could not apply ParamDef for {fname} in {Name}", e);
+                Smithbox.LogError(this, $"[Param Editor] Could not apply ParamDef for {fname} in {Name}", e);
                 successfulLoad = false;
             }
         }
@@ -871,7 +871,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(paramPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to load game param for {Name}: {paramPath}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to load game param for {Name}: {paramPath}");
 
             successfulLoad = false;
         }
@@ -890,7 +890,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
 
                 successfulLoad = false;
             }
@@ -903,7 +903,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load draw param for {Name}: {paramPath}", e);
 
                 successfulLoad = false;
             }
@@ -932,7 +932,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Could not apply ParamDef for {EnemyParam.ParamType} in {Name}", e);
+                Smithbox.LogError(this, $"[Param Editor] Could not apply ParamDef for {EnemyParam.ParamType} in {Name}", e);
 
                 successfulLoad = false;
             }
@@ -972,7 +972,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Could not apply ParamDef for {fname} in {Name}", e);
+                Smithbox.LogError(this, $"[Param Editor] Could not apply ParamDef for {fname} in {Name}", e);
 
                 successfulLoad = false;
             }
@@ -993,7 +993,7 @@ public class ParamBank : IDisposable
 
         if (!fs.FileExists(param))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate param files for {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate param files for {Name}. Save failed.");
 
             return false;
         }
@@ -1020,7 +1020,7 @@ public class ParamBank : IDisposable
             paramBnd = BND4.Read(data);
         }
 
-        if (!CFG.Current.ParamEditor_Loose_Param_Mode_DS2 && CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+        if (!CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
         {
             // Save params non-loosely: Replace params regulation and write remaining params loosely.
             if (paramBnd.Files.Find(e => e.Name.EndsWith(".param")) == null)
@@ -1048,14 +1048,19 @@ public class ParamBank : IDisposable
                         }
                     }
                     else
+                    {
                         paramBnd = BND4.Read(data);
+                    }
                 }
             }
 
             try
             {
                 // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                RowNameHelper.RowNameStrip(Project);
+                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                {
+                    RowNameHelper.RowNameStrip(Project);
+                }
 
                 foreach (KeyValuePair<string, Param> p in Params)
                 {
@@ -1075,13 +1080,19 @@ public class ParamBank : IDisposable
             }
             catch
             {
-                RowNameHelper.RowNameRestore(Project);
+                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                {
+                    RowNameHelper.RowNameRestore(Project);
+                }
                 throw;
             }
 
-            RowNameHelper.RowNameRestore(Project);
+            if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+            {
+                RowNameHelper.RowNameRestore(Project);
+            }
         }
-        else if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+        else if (CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
         {
             // Save params loosely: Strip params from regulation and write all params loosely.
 
@@ -1100,7 +1111,10 @@ public class ParamBank : IDisposable
             try
             {
                 // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                RowNameHelper.RowNameStrip(Project);
+                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                {
+                    RowNameHelper.RowNameStrip(Project);
+                }
 
                 // Write params to loose files.
                 foreach (KeyValuePair<string, Param> p in Params)
@@ -1110,11 +1124,18 @@ public class ParamBank : IDisposable
             }
             catch
             {
-                RowNameHelper.RowNameRestore(Project);
+                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                {
+                    RowNameHelper.RowNameRestore(Project);
+                }
+
                 throw;
             }
 
-            RowNameHelper.RowNameRestore(Project);
+            if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+            {
+                RowNameHelper.RowNameRestore(Project);
+            }
         }
 
         ProjectUtils.WriteWithBackup(Project, fs, toFs, @"enc_regulation.bnd.dcx", paramBnd);
@@ -1137,7 +1158,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(packedFile))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {packedFile} in {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {packedFile} in {Name}");
 
             successfulLoad = false;
         }
@@ -1153,7 +1174,7 @@ public class ParamBank : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"Failed to load game param in {Name}: {looseFile}", e);
+                    Smithbox.LogError(this, $"Failed to load game param in {Name}: {looseFile}", e);
 
                     successfulLoad = false;
                 }
@@ -1168,7 +1189,7 @@ public class ParamBank : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"Failed to load game param in {Name}: {packedFile}",  e);
+                    Smithbox.LogError(this, $"Failed to load game param in {Name}: {packedFile}", e);
 
                     successfulLoad = false;
                 }
@@ -1188,7 +1209,7 @@ public class ParamBank : IDisposable
 
         if (!fs.FileExists(param))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate param files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate param files in {Name}. Save failed.");
 
             return false;
         }
@@ -1253,7 +1274,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(paramPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {paramPath} in {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {paramPath} in {Name}");
             successfulLoad = false;
         }
         else
@@ -1266,7 +1287,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load game param in {Name}: {paramPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load game param in {Name}: {paramPath}", e);
 
                 successfulLoad = false;
             }
@@ -1285,7 +1306,7 @@ public class ParamBank : IDisposable
 
         if (!fs.FileExists(param))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate param files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate param files in {Name}. Save failed.");
 
             return false;
         }
@@ -1328,7 +1349,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(paramPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {paramPath} in {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {paramPath} in {Name}");
 
             successfulLoad = false;
         }
@@ -1342,7 +1363,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load game param in {Name}: {paramPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load game param in {Name}: {paramPath}", e);
 
                 successfulLoad = false;
             }
@@ -1361,7 +1382,7 @@ public class ParamBank : IDisposable
 
         if (!fs.FileExists(param))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate param files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate param files in {Name}. Save failed.");
 
             return false;
         }
@@ -1422,7 +1443,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(gameParamPath))
         {
-            TaskLogs.AddError($"Param Editor] Failed to find {gameParamPath} in {Name}");
+            Smithbox.LogError(this, $"Param Editor] Failed to find {gameParamPath} in {Name}");
 
             successfulLoad = false;
         }
@@ -1436,7 +1457,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load game param in {Name}: {gameParamPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load game param in {Name}: {gameParamPath}", e);
 
                 successfulLoad = false;
             }
@@ -1444,7 +1465,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(systemParamPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {systemParamPath} in {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {systemParamPath} in {Name}");
 
             successfulLoad = false;
         }
@@ -1458,7 +1479,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load game param in {Name}: {systemParamPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load game param in {Name}: {systemParamPath}", e);
 
                 successfulLoad = false;
             }
@@ -1495,7 +1516,7 @@ public class ParamBank : IDisposable
 
         if (!sourceFs.FileExists(param))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate param files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate param files in {Name}. Save failed.");
 
             return false;
         }
@@ -1523,7 +1544,7 @@ public class ParamBank : IDisposable
 
         if (!sourceFs.FileExists(sysParam))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate system param files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate system param files in {Name}. Save failed.");
 
             return false;
         }
@@ -1563,7 +1584,7 @@ public class ParamBank : IDisposable
         // Game Param
         if (!TargetFS.FileExists(gameParamPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {gameParamPath} in {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {gameParamPath} in {Name}");
 
             successfulLoad = false;
         }
@@ -1577,7 +1598,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load game param in {Name}: {gameParamPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load game param in {Name}: {gameParamPath}", e);
 
                 successfulLoad = false;
             }
@@ -1586,7 +1607,7 @@ public class ParamBank : IDisposable
         // System Param
         if (!TargetFS.FileExists(systemParamPath))
         {
-            TaskLogs.AddError($"Param Editor] Failed to find {systemParamPath} in {Name}");
+            Smithbox.LogError(this, $"Param Editor] Failed to find {systemParamPath} in {Name}");
             successfulLoad = false;
         }
         else
@@ -1599,7 +1620,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load system param in {Name}: {systemParamPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load system param in {Name}: {systemParamPath}", e);
                 successfulLoad = false;
             }
         }
@@ -1607,7 +1628,7 @@ public class ParamBank : IDisposable
         // Graphics Param
         if (!TargetFS.FileExists(graphicsParamPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {graphicsParamPath} in {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {graphicsParamPath} in {Name}");
 
             successfulLoad = false;
         }
@@ -1621,7 +1642,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load graphics param in {Name}: {graphicsParamPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load graphics param in {Name}: {graphicsParamPath}", e);
                 successfulLoad = false;
             }
         }
@@ -1629,7 +1650,7 @@ public class ParamBank : IDisposable
         // Event Param
         if (!TargetFS.FileExists(eventParamPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {eventParamPath} in {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {eventParamPath} in {Name}");
 
             successfulLoad = false;
         }
@@ -1643,7 +1664,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load event param in {Name}: {eventParamPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load event param in {Name}: {eventParamPath}", e);
 
                 successfulLoad = false;
             }
@@ -1692,7 +1713,7 @@ public class ParamBank : IDisposable
         string param = @"regulation.bin";
         if (!sourceFs.FileExists(param))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate param files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate param files in {Name}. Save failed.");
 
             return false;
         }
@@ -1719,7 +1740,7 @@ public class ParamBank : IDisposable
 
         if (!sourceFs.FileExists(sysParam))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate system param files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate system param files in {Name}. Save failed.");
 
             return false;
         }
@@ -1738,7 +1759,7 @@ public class ParamBank : IDisposable
 
         if (!sourceFs.FileExists(sysParam))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate graphics param files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate graphics param files in {Name}. Save failed.");
 
             return false;
         }
@@ -1757,7 +1778,7 @@ public class ParamBank : IDisposable
 
         if (!sourceFs.FileExists(eventParam))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate event param files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate event param files in {Name}. Save failed.");
 
             return false;
         }
@@ -1792,7 +1813,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(gameParamPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {gameParamPath} in {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {gameParamPath} in {Name}");
 
             successfulLoad = false;
         }
@@ -1806,7 +1827,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load game param in {Name}: {gameParamPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load game param in {Name}: {gameParamPath}", e);
 
                 successfulLoad = false;
             }
@@ -1815,7 +1836,7 @@ public class ParamBank : IDisposable
         // System Param
         if (!TargetFS.FileExists(systemParamPath))
         {
-            TaskLogs.AddError($"[Param Editor] Failed to find {systemParamPath} in {Name}");
+            Smithbox.LogError(this, $"[Param Editor] Failed to find {systemParamPath} in {Name}");
 
             successfulLoad = false;
         }
@@ -1829,7 +1850,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load system param in {Name}: {systemParamPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load system param in {Name}: {systemParamPath}", e);
 
                 successfulLoad = false;
             }
@@ -1838,7 +1859,7 @@ public class ParamBank : IDisposable
         // Event Param
         if (!TargetFS.FileExists(eventParamPath))
         {
-            //TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {eventParamPath}", LogLevel.Error, LogPriority.High);
+            //Smithbox.LogError(this, $"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {eventParamPath}", LogPriority.High);
             //successfulLoad = false;
         }
         else
@@ -1851,7 +1872,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Param Editor] Failed to load event param in {Name}: {eventParamPath}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to load event param in {Name}: {eventParamPath}", e);
 
                 successfulLoad = false;
             }
@@ -1886,7 +1907,7 @@ public class ParamBank : IDisposable
 
         if (!fs.FileExists(param))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate param files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate param files in {Name}. Save failed.");
 
             return false;
         }
@@ -1917,7 +1938,7 @@ public class ParamBank : IDisposable
 
         if (!fs.FileExists(sysParam))
         {
-            TaskLogs.AddError($"[Param Editor] Cannot locate system files in {Name}. Save failed.");
+            Smithbox.LogError(this, $"[Param Editor] Cannot locate system files in {Name}. Save failed.");
 
             return false;
         }
@@ -1937,7 +1958,7 @@ public class ParamBank : IDisposable
 
         if (!Project.VFS.FS.FileExists(eventParam))
         {
-            //TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate event param files. Save failed.", LogLevel.Error, LogPriority.High);
+            //Smithbox.LogError(this, $"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate event param files. Save failed.", LogPriority.High);
             //return false;
         }
 
@@ -2024,7 +2045,7 @@ public class ParamBank : IDisposable
 
             if (!otherBank._params.ContainsKey(param))
             {
-                Console.WriteLine("Missing vanilla param " + param);
+                Smithbox.Log(this, $"Missing vanilla param {param}", LogLevel.Debug);
                 continue;
             }
 

@@ -7,6 +7,7 @@ using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -138,13 +139,13 @@ public class HavokCollisionBank
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"[{Project}:Map Editor] Failed to serialize havok file: {name}", LogLevel.Error, LogPriority.High, ex);
+                    Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to serialize havok file: {name}", LogPriority.High, ex);
                 }
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project}:Map Editor] Failed to load map collision: {bdtPath}", LogLevel.Error, LogPriority.High, e);
+            Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to load map collision: {bdtPath}", LogPriority.High, e);
         }
     }
 
@@ -156,7 +157,7 @@ public class HavokCollisionBank
             {
                 foreach(var ent in entry.Value.MapContainer.Objects)
                 {
-                    if(ent.IsPartCollision() || ent.IsPartConnectCollision())
+                    if(EntityHelper.IsPartCollision(ent) || EntityHelper.IsPartConnectCollision(ent))
                     {
                         ent.ForceModelRefresh = true;
                         ent.UpdateRenderModel();

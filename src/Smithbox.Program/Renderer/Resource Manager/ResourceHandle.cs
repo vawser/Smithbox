@@ -207,7 +207,7 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
 
         if (ReferenceCount < 0)
         {
-            //TaskLogs.AddLog($@"Resource {AssetVirtualPath} reference count already 0", Microsoft.Extensions.Logging.LogLevel.Error);
+            //Smithbox.Log(this, $@"Resource {AssetVirtualPath} reference count already 0", Microsoft.Extensions.Logging.LogLevel.Error);
         }
 
         if (unload)

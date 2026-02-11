@@ -437,7 +437,7 @@ public static class UIHelper
 
         var color = new Vector4(0.255f, 0.412f, 0.125f, 1.0f);
 
-        color = UI.Current.ParamDiffBackgroundColor;
+        color = UI.Current.ParamRowDiffBackgroundColor;
 
         // Draw background
         ImGui.GetWindowDrawList().AddRectFilled(

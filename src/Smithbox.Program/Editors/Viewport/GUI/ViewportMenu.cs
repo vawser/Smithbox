@@ -31,6 +31,7 @@ public class ViewportMenu
         RenderMenu();
         FilterMenu();
         GizmoMenu();
+        SelectionMenu();
 
         ImGui.EndMenuBar();
     }
@@ -125,18 +126,16 @@ public class ViewportMenu
                 var nearClip = CFG.Current.Viewport_Perspective_Near_Clip;
                 if (ImGui.SliderFloat("Near Clip", ref nearClip, 0.01f, 100.0f))
                 {
+                    if (nearClip < 0.01f)
+                    {
+                        nearClip = 0.01f;
+                    }
+                    if (nearClip > 1000000.0f)
+                    {
+                        nearClip = 1000000.0f;
+                    }
+
                     CFG.Current.Viewport_Perspective_Near_Clip = nearClip;
-                }
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    if (CFG.Current.Viewport_Perspective_Near_Clip < 0.01f)
-                    {
-                        CFG.Current.Viewport_Perspective_Near_Clip = 0.01f;
-                    }
-                    if (CFG.Current.Viewport_Perspective_Near_Clip > 1000000.0f)
-                    {
-                        CFG.Current.Viewport_Perspective_Near_Clip = 1000000.0f;
-                    }
                 }
                 UIHelper.Tooltip("Set the minimum distance at which entities will be rendered within the viewport.");
 
@@ -144,18 +143,16 @@ public class ViewportMenu
                 var farClip = CFG.Current.Viewport_Perspective_Far_Clip;
                 if (ImGui.SliderFloat("Far Clip", ref farClip, 0.01f, 1000000.0f))
                 {
+                    if (farClip < 0.01f)
+                    {
+                        farClip = 0.01f;
+                    }
+                    if (farClip > 1000000.0f)
+                    {
+                        farClip = 1000000.0f;
+                    }
+
                     CFG.Current.Viewport_Perspective_Far_Clip = farClip;
-                }
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    if (CFG.Current.Viewport_Perspective_Far_Clip < 0.01f)
-                    {
-                        CFG.Current.Viewport_Perspective_Far_Clip = 0.01f;
-                    }
-                    if (CFG.Current.Viewport_Perspective_Far_Clip > 1000000.0f)
-                    {
-                        CFG.Current.Viewport_Perspective_Far_Clip = 1000000.0f;
-                    }
                 }
                 UIHelper.Tooltip("Set the maximum distance at which entities will be rendered within the viewport.");
 
@@ -163,14 +160,33 @@ public class ViewportMenu
                 var cam_fov = CFG.Current.Viewport_Camera_FOV;
                 if (ImGui.SliderFloat("Camera FOV", ref cam_fov, 40.0f, 140.0f))
                 {
+                    if (cam_fov < 0.0f)
+                    {
+                        cam_fov = 1.0f;
+                    }
+                    if (cam_fov > 360f)
+                    {
+                        cam_fov = 360f;
+                    }
+
                     CFG.Current.Viewport_Camera_FOV = cam_fov;
                 }
+
                 UIHelper.Tooltip("Set the field of view used by the camera.");
 
                 // Sensitivity
                 var cam_sensitivity = CFG.Current.Viewport_Camera_Sensitivity;
                 if (ImGui.SliderFloat("Camera sensitivity", ref cam_sensitivity, 0.0f, 0.1f))
                 {
+                    if (cam_sensitivity < 0.0f)
+                    {
+                        cam_sensitivity = 0.0f;
+                    }
+                    if (cam_sensitivity > 1f)
+                    {
+                        cam_sensitivity = 1f;
+                    }
+
                     CFG.Current.Viewport_Camera_Sensitivity = cam_sensitivity;
                 }
                 UIHelper.Tooltip("Mouse sensitivty for turning the camera.");
@@ -180,6 +196,17 @@ public class ViewportMenu
                 {
                     CFG.Current.Viewport_Camera_MoveSpeed_Slow = Parent.ViewportCamera.CameraMoveSpeed_Slow;
                 }
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (CFG.Current.Viewport_Camera_MoveSpeed_Slow < 0.0f)
+                    {
+                        CFG.Current.Viewport_Camera_MoveSpeed_Slow = 0.0f;
+                    }
+                    if (CFG.Current.Viewport_Camera_MoveSpeed_Slow > 9999.0f)
+                    {
+                        CFG.Current.Viewport_Camera_MoveSpeed_Slow = 9999.0f;
+                    }
+                }
                 UIHelper.Tooltip("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
 
                 // Camera Speed (Normal
@@ -187,12 +214,34 @@ public class ViewportMenu
                 {
                     CFG.Current.Viewport_Camera_MoveSpeed_Normal = Parent.ViewportCamera.CameraMoveSpeed_Normal;
                 }
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (CFG.Current.Viewport_Camera_MoveSpeed_Normal < 0.0f)
+                    {
+                        CFG.Current.Viewport_Camera_MoveSpeed_Normal = 0.0f;
+                    }
+                    if (CFG.Current.Viewport_Camera_MoveSpeed_Normal > 9999.0f)
+                    {
+                        CFG.Current.Viewport_Camera_MoveSpeed_Normal = 9999.0f;
+                    }
+                }
                 UIHelper.Tooltip("Set the speed at which the camera will move whilst moving normally.");
 
                 // Camera Speed (Fast)
                 if (ImGui.SliderFloat("Camera speed (fast)", ref Parent.ViewportCamera.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
                 {
                     CFG.Current.Viewport_Camera_MoveSpeed_Fast = Parent.ViewportCamera.CameraMoveSpeed_Fast;
+                }
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (CFG.Current.Viewport_Camera_MoveSpeed_Fast < 0.0f)
+                    {
+                        CFG.Current.Viewport_Camera_MoveSpeed_Fast = 0.0f;
+                    }
+                    if (CFG.Current.Viewport_Camera_MoveSpeed_Fast > 9999.0f)
+                    {
+                        CFG.Current.Viewport_Camera_MoveSpeed_Fast = 9999.0f;
+                    }
                 }
                 UIHelper.Tooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
             }
@@ -204,18 +253,16 @@ public class ViewportMenu
                 var nearClip = CFG.Current.Viewport_Orthographic_Near_Clip;
                 if (ImGui.SliderFloat("Near Clip##orthoNearClip", ref nearClip, -1000000.0f, 1000000.0f))
                 {
+                    if (nearClip < -1000000.0f)
+                    {
+                        nearClip = -1000000.0f;
+                    }
+                    if (nearClip > 1000000.0f)
+                    {
+                        nearClip = 1000000.0f;
+                    }
+
                     CFG.Current.Viewport_Orthographic_Near_Clip = nearClip;
-                }
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    if (CFG.Current.Viewport_Orthographic_Near_Clip < -1000000.0f)
-                    {
-                        CFG.Current.Viewport_Orthographic_Near_Clip = -1000000.0f;
-                    }
-                    if (CFG.Current.Viewport_Orthographic_Near_Clip > 1000000.0f)
-                    {
-                        CFG.Current.Viewport_Orthographic_Near_Clip = 1000000.0f;
-                    }
                 }
                 UIHelper.Tooltip("Set the minimum distance at which entities will be rendered within the viewport.");
 
@@ -223,18 +270,16 @@ public class ViewportMenu
                 var farClip = CFG.Current.Viewport_Orthographic_Far_Clip;
                 if (ImGui.SliderFloat("Far Clip##orthoFarClip", ref farClip, -1000000.0f, 1000000.0f))
                 {
+                    if (farClip < -1000000.0f)
+                    {
+                        farClip = -1000000.0f;
+                    }
+                    if (farClip > 1000000.0f)
+                    {
+                        farClip = 1000000.0f;
+                    }
+
                     CFG.Current.Viewport_Orthographic_Far_Clip = farClip;
-                }
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    if (CFG.Current.Viewport_Orthographic_Far_Clip < -1000000.0f)
-                    {
-                        CFG.Current.Viewport_Orthographic_Far_Clip = -1000000.0f;
-                    }
-                    if (CFG.Current.Viewport_Orthographic_Far_Clip > 1000000.0f)
-                    {
-                        CFG.Current.Viewport_Orthographic_Far_Clip = 1000000.0f;
-                    }
                 }
                 UIHelper.Tooltip("Set the maximum distance at which entities will be rendered within the viewport.");
 
@@ -310,11 +355,24 @@ public class ViewportMenu
             if (ImGui.Selectable("Reset camera settings"))
             {
                 CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
+                CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
+
+                CFG.Current.Viewport_Perspective_Near_Clip = CFG.Default.Viewport_Perspective_Near_Clip;
                 CFG.Current.Viewport_Perspective_Far_Clip = CFG.Default.Viewport_Perspective_Far_Clip;
+
                 CFG.Current.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
                 CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
                 CFG.Current.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
                 CFG.Current.Viewport_Camera_MoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
+
+                CFG.Current.Viewport_Orthographic_Near_Clip = CFG.Default.Viewport_Orthographic_Near_Clip;
+                CFG.Current.Viewport_Orthographic_Far_Clip = CFG.Default.Viewport_Orthographic_Far_Clip;
+
+                CFG.Current.Viewport_MousePan_Sensitivity = CFG.Default.Viewport_MousePan_Sensitivity;
+
+                CFG.Current.Viewport_DefaultObliqueAngle = CFG.Default.Viewport_DefaultObliqueAngle;
+                CFG.Current.Viewport_DefaultObliqueScaling = CFG.Default.Viewport_DefaultObliqueScaling;
+
             }
 
             ImGui.EndMenu();
@@ -369,77 +427,73 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu("Gizmos"))
         {
-            if (ImGui.MenuItem("Display"))
+            GizmoState.OnMenu();
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void SelectionMenu()
+    {
+        if (ImGui.BeginMenu("Selection"))
+        {
+            if (ImGui.MenuItem("Enable Box Selection"))
             {
-                CFG.Current.Viewport_Render_Gizmos = !CFG.Current.Viewport_Render_Gizmos;
+                CFG.Current.Viewport_Enable_Box_Selection = !CFG.Current.Viewport_Enable_Box_Selection;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Render_Gizmos);
-            UIHelper.Tooltip("Toggle the display of gizmos.");
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection);
+            UIHelper.Tooltip($"Toggle the usage of box selection.\nHold Ctrl, Alt and left click to make a box selection.");
 
-            ImGui.SliderFloat("Size##gizmoScale", ref CFG.Current.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
+            UIHelper.SimpleHeader("Box Selection Targets", "Which map objects will be selected by the box select.");
 
-            if (ImGui.IsItemDeactivatedAfterEdit())
+            if (ImGui.MenuItem("Map Pieces"))
             {
-                if (CFG.Current.Viewport_Gizmo_Size_Distance_Scale < 0.01)
-                {
-                    CFG.Current.Viewport_Gizmo_Size_Distance_Scale = 0.01f;
-                }
-                if (CFG.Current.Viewport_Gizmo_Size_Distance_Scale > 5.0)
-                {
-                    CFG.Current.Viewport_Gizmo_Size_Distance_Scale = 5.0f;
-                }
+                CFG.Current.Viewport_Enable_Box_Selection_MapPiece = !CFG.Current.Viewport_Enable_Box_Selection_MapPiece;
             }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_MapPiece);
 
-            if (ImGui.BeginMenu("Mode"))
+            var name = "Objects";
+            if(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
-                if (ImGui.MenuItem("Translate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Translation_Mode)))
-                {
-                    Gizmos.Mode = Gizmos.GizmosMode.Translate;
-                }
-                UIHelper.Tooltip($"Set the gizmo to Translation mode.");
-
-                if (ImGui.MenuItem("Rotate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Rotation_Mode)))
-                {
-                    Gizmos.Mode = Gizmos.GizmosMode.Rotate;
-                }
-                UIHelper.Tooltip($"Set the gizmo to Rotation mode.");
-
-                ImGui.EndMenu();
+                name = "Assets";
             }
 
-            if (ImGui.BeginMenu("Space"))
+            if (ImGui.MenuItem(name))
             {
-                if (ImGui.MenuItem("Local", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.Local;
-                }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
-
-                if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.World;
-                }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's world position.");
-
-                ImGui.EndMenu();
+                CFG.Current.Viewport_Enable_Box_Selection_Asset = !CFG.Current.Viewport_Enable_Box_Selection_Asset;
             }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Asset);
 
-            if (ImGui.BeginMenu("Origin"))
+            if (ImGui.MenuItem("Enemy"))
             {
-                if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.World;
-                }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
-
-                if (ImGui.MenuItem("Bounding Box", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
-                }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the bounding box.");
-
-                ImGui.EndMenu();
+                CFG.Current.Viewport_Enable_Box_Selection_Enemy = !CFG.Current.Viewport_Enable_Box_Selection_Enemy;
             }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Enemy);
+
+            if (ImGui.MenuItem("Player"))
+            {
+                CFG.Current.Viewport_Enable_Box_Selection_Player = !CFG.Current.Viewport_Enable_Box_Selection_Player;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Player);
+
+            if (ImGui.MenuItem("Collision"))
+            {
+                CFG.Current.Viewport_Enable_Box_Selection_Collision = !CFG.Current.Viewport_Enable_Box_Selection_Collision;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Collision);
+
+            if (ImGui.MenuItem("Light"))
+            {
+                CFG.Current.Viewport_Enable_Box_Selection_Light = !CFG.Current.Viewport_Enable_Box_Selection_Light;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Light);
+
+            if (ImGui.MenuItem("Region"))
+            {
+                CFG.Current.Viewport_Enable_Box_Selection_Region = !CFG.Current.Viewport_Enable_Box_Selection_Region;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Region);
+
 
             ImGui.EndMenu();
         }

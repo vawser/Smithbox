@@ -496,7 +496,7 @@ public class SelectionGroupTool
                 {
                     if (selectedResourceContents.Contains(mapObj.Name))
                     {
-                        //TaskLogs.AddLog(mapObj.Name);
+                        //Smithbox.Log(this, mapObj.Name);
                         entities.Add(mapObj);
                     }
                 }

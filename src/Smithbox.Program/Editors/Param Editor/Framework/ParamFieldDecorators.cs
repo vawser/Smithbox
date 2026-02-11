@@ -8,6 +8,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
 using StudioCore.Keybinds;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -1271,7 +1272,7 @@ public static class ParamReferenceHelper
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog("Unable to convert value into param field's type'", LogLevel.Warning,
+                            Smithbox.Log(typeof(ParamReferenceHelper), "Unable to convert value into param field's type'", LogLevel.Warning,
                                 LogPriority.Normal, e);
                         }
                     }
@@ -1434,7 +1435,7 @@ public static class ExternalReferenceHelper
             }
             else
             {
-                TaskLogs.AddLog($"\"{path}\" could not be found. It may be map or chr specific",
+                Smithbox.Log(typeof(ExternalReferenceHelper), $"\"{path}\" could not be found. It may be map or chr specific",
                     LogLevel.Warning);
 
                 CacheBank.ClearCaches();
@@ -2011,11 +2012,11 @@ public static class CalcCorrectGraphHelper
 
                             ExportGraphDataToCsv(Path.Combine(ExportPath, fileName), GraphContext.xValues, GraphContext.yValues);
 
-                            TaskLogs.AddLog($"Exported graph data for row {GraphContext.Row.ID}.");
+                            Smithbox.Log(typeof(CalcCorrectGraphHelper), $"Exported graph data for row {GraphContext.Row.ID}.");
                         }
                         catch (Exception ex)
                         {
-                            TaskLogs.AddError($"Failed to export graph data for row {GraphContext.Row.ID}.", ex);
+                            Smithbox.Log(typeof(CalcCorrectGraphHelper), $"Failed to export graph data for row {GraphContext.Row.ID}.", LogLevel.Error, ex);
                         }
                     }
                 }

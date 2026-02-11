@@ -10,7 +10,7 @@
     {
       "ID": 1,
       "Entries": [
-        ""
+        "No Skill"
       ]
     },
     {
@@ -46,7 +46,7 @@
     {
       "ID": 104,
       "Entries": [
-        "%null%"
+        ""
       ]
     },
     {
@@ -148,7 +148,7 @@
     {
       "ID": 121,
       "Entries": [
-        "%null%"
+        ""
       ]
     },
     {
@@ -424,7 +424,7 @@
     {
       "ID": 407,
       "Entries": [
-        "%null%"
+        ""
       ]
     },
     {
@@ -784,7 +784,7 @@
     {
       "ID": 1030,
       "Entries": [
-        "I Command Thee Kneel!"
+        "I Command Thee, Kneel!"
       ]
     },
     {
@@ -940,13 +940,13 @@
     {
       "ID": 1165,
       "Entries": [
-        ""
+        "Loretta's Slash"
       ]
     },
     {
       "ID": 1166,
       "Entries": [
-        ""
+        "Spinning Slash"
       ]
     },
     {
@@ -1030,13 +1030,13 @@
     {
       "ID": 1180,
       "Entries": [
-        "%null%"
+        ""
       ]
     },
     {
       "ID": 1181,
       "Entries": [
-        "%null%"
+        ""
       ]
     },
     {
@@ -1054,7 +1054,7 @@
     {
       "ID": 1184,
       "Entries": [
-        "Familal Rancor"
+        "Familial Rancor"
       ]
     },
     {
@@ -1294,7 +1294,7 @@
     {
       "ID": 4990,
       "Entries": [
-        ""
+        "Kick"
       ]
     },
     {
@@ -1384,7 +1384,7 @@
     {
       "ID": 5160,
       "Entries": [
-        "Shadow Sunflower Headbutts"
+        "Shadow Sunflower Headbutt"
       ]
     },
     {
@@ -1576,13 +1576,13 @@
     {
       "ID": 5500,
       "Entries": [
-        "Flare- O Serpent"
+        "Flare, O Serpent"
       ]
     },
     {
       "ID": 5510,
       "Entries": [
-        "Scattershot (Claws)"
+        "Scattershot Throw"
       ]
     },
     {
@@ -1630,7 +1630,7 @@
     {
       "ID": 5590,
       "Entries": [
-        ""
+        "Impaling Thrust"
       ]
     },
     {
@@ -1642,7 +1642,7 @@
     {
       "ID": 8000,
       "Entries": [
-        ""
+        "Shield Strike"
       ]
     },
     {

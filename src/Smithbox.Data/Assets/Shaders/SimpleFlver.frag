@@ -85,6 +85,6 @@ void main()
 		UpdatePickingBuffer(coord, uint64_t(fsin_entityid), gl_FragCoord.z);
 	}
 
-    //fsout_color = vec4(1.0, 1.0, 1.0, 1.0);
-	fsout_color = color;
+    float whiteTint = 0.6;
+    fsout_color = mix(color, vec4(1.0), whiteTint);
 }

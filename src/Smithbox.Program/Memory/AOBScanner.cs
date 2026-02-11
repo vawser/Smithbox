@@ -87,7 +87,6 @@ public class AOBScanner
             if (num1.ToInt64() > lpAddress.ToInt64())
             {
                 lpAddress = num1;
-                Console.WriteLine((long)lpAddress);
             }
             else
                 break;

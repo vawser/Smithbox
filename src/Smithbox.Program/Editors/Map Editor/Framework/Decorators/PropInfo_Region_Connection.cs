@@ -8,7 +8,7 @@ public static class PropInfo_Region_Connection
 {
     public static void Display(MapEditorView view, Entity firstEnt)
     {
-        if (firstEnt.IsRegionConnection())
+        if (EntityHelper.IsRegionConnection(firstEnt))
         {
             sbyte[] mapIds = (sbyte[])PropFinderUtil.FindPropertyValue("TargetMapID", firstEnt.WrappedObject);
 

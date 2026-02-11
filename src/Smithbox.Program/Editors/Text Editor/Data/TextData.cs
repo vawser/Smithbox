@@ -39,11 +39,11 @@ public class TextData : IDisposable
 
         if (descriptorTaskResult)
         {
-            TaskLogs.AddLog($"Setup FMG Descriptors.");
+            Smithbox.Log(this, $"Setup FMG Descriptors.");
         }
         else
         {
-            TaskLogs.AddError($"Failed to setup FMG Descriptors.");
+            Smithbox.LogError(this, $"Failed to setup FMG Descriptors.");
         }
 
         // Primary Bank
@@ -52,7 +52,7 @@ public class TextData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            TaskLogs.AddError($"[Text Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Text Editor] Failed to fully setup Primary Bank.");
         }
 
         // Vanilla Bank
@@ -61,7 +61,7 @@ public class TextData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            TaskLogs.AddError($"[Text Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Text Editor] Failed to fully setup Primary Bank.");
         }
 
         return true;
@@ -79,7 +79,7 @@ public class TextData : IDisposable
 
         if (!auxBankTaskResult)
         {
-            TaskLogs.AddError($"[Text Editor] Failed to setup Aux FMG Bank.");
+            Smithbox.LogError(this, $"[Text Editor] Failed to setup Aux FMG Bank.");
         }
 
         if (AuxBanks.ContainsKey(targetProject.Descriptor.ProjectName))
@@ -91,7 +91,7 @@ public class TextData : IDisposable
             AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
 
-        TaskLogs.AddLog($"[Text Editor] Setup Aux FMG Bank.");
+        Smithbox.Log(this, $"[Text Editor] Setup Aux FMG Bank.");
 
         return true;
     }
@@ -119,12 +119,12 @@ public class TextData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"Failed to deserialize FMG descriptor registry: {file}", e);
+                    Smithbox.LogError(this, $"Failed to deserialize FMG descriptor registry: {file}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"Failed to read FMG descriptor registry: {file}", e);
+                Smithbox.LogError(this, $"Failed to read FMG descriptor registry: {file}", e);
             }
         }
 

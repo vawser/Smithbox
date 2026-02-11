@@ -50,12 +50,16 @@ public static class KeybindMetadata
             "Within the viewport, this reset the camera's location."
         ) },
         { KeybindID.Cycle_Gizmo_Translation_Mode, ( 
-            "Switch to Gizmo Translation Mode",
+            "Set to Gizmo Translation Mode",
             "Within the viewport, this will switch the viewport object gizmo to 'Translate'."
         ) },
-        { KeybindID.Cycle_Gizmo_Rotation_Mode, ( 
-            "Switch to Gizmo Rotation Mode",
+        { KeybindID.Cycle_Gizmo_Rotation_Mode, (
+            "Set to Gizmo Rotation Mode",
             "Within the viewport, this will switch the viewport object gizmo to 'Rotate'."
+        ) },
+        { KeybindID.Cycle_Gizmo_Scale_Mode, (
+            "Set to Gizmo Scale Mode",
+            "Within the viewport, this will switch the viewport object gizmo to 'Scale'."
         ) },
         { KeybindID.Cycle_Gizmo_Origin_Mode, ( 
             "Cycle Gizmo Origin Mode",
@@ -291,6 +295,10 @@ public static class KeybindMetadata
             "Select All (Model Name)",
             ""
         ) },
+        { KeybindID.MapEditor_SelectAll_Ceremony, (
+            "Select All (Ceremony)",
+            ""
+        ) },
         { KeybindID.MapEditor_Create_Selection_Group, (
             "Create Selection Group",
             ""
@@ -415,6 +423,14 @@ public static class KeybindMetadata
             "Select Display Group Highlights",
             ""
         ) },
+        { KeybindID.MapEditor_Select_Collision_References, (
+            "Select Collision References",
+            "Selects all map objects that reference the currently selected collision(s)."
+        ) },
+        { KeybindID.MapEditor_Select_Referenced_Collision, (
+            "Select Referenced Collision",
+            "Selects the collisions referenced by the currently selected part(s)."
+        ) },
 
         // Model Editor
 
@@ -536,6 +552,7 @@ public static class KeybindMetadata
         { KeybindID.Reset, InputCategory.Viewport },
         { KeybindID.Cycle_Gizmo_Translation_Mode, InputCategory.Viewport },
         { KeybindID.Cycle_Gizmo_Rotation_Mode, InputCategory.Viewport },
+        { KeybindID.Cycle_Gizmo_Scale_Mode, InputCategory.Viewport },
         { KeybindID.Cycle_Gizmo_Origin_Mode, InputCategory.Viewport },
         { KeybindID.Cycle_Gizmo_Space_Mode, InputCategory.Viewport },
         { KeybindID.Cycle_Render_Outline_Mode, InputCategory.Viewport },
@@ -599,6 +616,7 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_SelectAll_Configurable, InputCategory.MapEditor },
         { KeybindID.MapEditor_SelectAll_ObjectType, InputCategory.MapEditor },
         { KeybindID.MapEditor_SelectAll_ModelName, InputCategory.MapEditor },
+        { KeybindID.MapEditor_SelectAll_Ceremony, InputCategory.MapEditor },
         { KeybindID.MapEditor_Create_Selection_Group, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Group_0, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Group_1, InputCategory.MapEditor },
@@ -630,6 +648,8 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_Hide_All_Display_Groups, InputCategory.MapEditor },
         { KeybindID.MapEditor_Show_All_Display_Groups, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Display_Group_Highlights, InputCategory.MapEditor },
+        { KeybindID.MapEditor_Select_Collision_References, InputCategory.MapEditor },
+        { KeybindID.MapEditor_Select_Referenced_Collision, InputCategory.MapEditor },
 
         // Model Editor
 

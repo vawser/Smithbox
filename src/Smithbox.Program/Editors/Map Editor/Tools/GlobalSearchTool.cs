@@ -302,7 +302,7 @@ public class GlobalSearchTool : IMapQueryEngine
             }
             catch
             {
-                TaskLogs.AddLog($"Failed to add filter pattern due to invalid regex expression: {input}", LogLevel.Warning);
+                Smithbox.Log(this, $"Failed to add filter pattern due to invalid regex expression: {input}", LogLevel.Warning);
             }
         }
 
@@ -630,7 +630,7 @@ public class GlobalSearchTool : IMapQueryEngine
         {
             if (entry.IsMatch(mapName))
             {
-                //TaskLogs.AddLog($"Match: {propName}");
+                //Smithbox.Log(this, $"Match: {propName}");
                 return true;
             }
         }
@@ -652,7 +652,7 @@ public class GlobalSearchTool : IMapQueryEngine
 
             if (entry.IsMatch(checkedName))
             {
-                //TaskLogs.AddLog($"Match: {propName}");
+                //Smithbox.Log(this, $"Match: {propName}");
                 return true;
             }
         }
@@ -669,7 +669,7 @@ public class GlobalSearchTool : IMapQueryEngine
         {
             if (entry.IsMatch($"{propValue}"))
             {
-                //TaskLogs.AddLog($"Match: {propValue}");
+                //Smithbox.Log(this, $"Match: {propValue}");
                 return true;
             }
         }

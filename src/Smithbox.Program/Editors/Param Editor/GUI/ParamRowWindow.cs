@@ -414,7 +414,7 @@ public class ParamRowWindow
             {
                 if (selected)
                 {
-                    ImGui.PushStyleColor(ImGuiCol.Header, UI.Current.ParamDiffBackgroundColor);
+                    ImGui.PushStyleColor(ImGuiCol.Header, UI.Current.ParamRowDiffBackgroundColor);
                 }
                 else
                 {

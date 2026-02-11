@@ -377,17 +377,17 @@ public class ParamDeltaPatcher
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError("Failed to deserialize delta patch", e);
+                    Smithbox.LogError(this, "Failed to deserialize delta patch", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError("Failed to read delta patch", e);
+                Smithbox.LogError(this, "Failed to read delta patch", e);
             }
         }
         else
         {
-            TaskLogs.AddError("Failed to find delta patch");
+            Smithbox.LogError(this, "Failed to find delta patch");
         }
 
         return deltaPatch;
@@ -397,7 +397,7 @@ public class ParamDeltaPatcher
     {
         if(name == "" || name == null)
         {
-            TaskLogs.AddError("Failed to write delta patch as filename is empty.");
+            Smithbox.LogError(this, "Failed to write delta patch as filename is empty.");
             return;
         }
 
@@ -422,7 +422,7 @@ public class ParamDeltaPatcher
         }
         catch (Exception ex)
         {
-            TaskLogs.AddError("Failed to write delta patch", ex);
+            Smithbox.LogError(this, "Failed to write delta patch", ex);
         }
     }
     #endregion

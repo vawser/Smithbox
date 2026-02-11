@@ -30,7 +30,6 @@ public static class PreferencesUtil
         CFG.Current.Viewport_Enable_Rendering = CFG.Default.Viewport_Enable_Rendering;
         CFG.Current.Viewport_Enable_Texturing = CFG.Default.Viewport_Enable_Texturing;
         CFG.Current.Viewport_Enable_Culling = CFG.Default.Viewport_Enable_Culling;
-        CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
         CFG.Current.Viewport_Limit_Buffer_Indirect_Draw = CFG.Default.Viewport_Limit_Buffer_Indirect_Draw;
         CFG.Current.Viewport_Limit_Buffer_Flver_Bone = CFG.Default.Viewport_Limit_Buffer_Flver_Bone;
     }
@@ -44,9 +43,8 @@ public static class PreferencesUtil
     }
     public static void ResetViewportSelectionCFG()
     {
-        CFG.Current.Viewport_Enable_Selection_Outline = CFG.Default.Viewport_Enable_Selection_Outline;
+        CFG.Current.Viewport_Enable_Selection_Tint = CFG.Default.Viewport_Enable_Selection_Tint;
         CFG.Current.Viewport_Enable_Box_Selection = CFG.Default.Viewport_Enable_Box_Selection;
-        CFG.Current.Viewport_Box_Selection_Distance_Threshold = CFG.Default.Viewport_Box_Selection_Distance_Threshold;
     }
 
     public static void ResetViewportColoringCFG()

@@ -1,9 +1,12 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using Octokit;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Keybinds;
+using StudioCore.Logger;
+using StudioCore.Logger.GUI;
 using StudioCore.Preferences;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -48,8 +51,12 @@ public class Smithbox
     public PreferencesMenu PreferencesMenu = new();
     public KeybindsMenu KeybindsMenu = new();
 
-    public ActionLogger ActionLogger;
-    public WarningLogger WarningLogger;
+    public static TaskLogsProvider LogsProvider;
+    public static ILogger SbLogger;
+    public static ILoggerFactory SbLoggerFactory;
+    public LoggerUI ActionLogger;
+    public LoggerUI WarningLogger;
+    public LogSubscription HighPriorityLogSubscription;
 
     public RenderingBackend CurrentBackend = RenderingBackend.Vulkan;
 
@@ -79,7 +86,7 @@ public class Smithbox
             }
             catch (Exception ex)
             {
-                TaskLogs.AddError("Failed to create Vulkan context, falling back to OpenGL", ex);
+                Smithbox.LogWarning(this, "Failed to create Vulkan context, falling back to OpenGL", ex);
 
                 _context = new OpenGLCompatGraphicsContext();
                 CFG.Current.System_RenderingBackend = RenderingBackend.OpenGL;
@@ -88,15 +95,44 @@ public class Smithbox
 
         // Set this so even if the user changes the CFG, the program won't suddenly switch its usage until a restart.
         CurrentBackend = CFG.Current.System_RenderingBackend;
-
+        
+        //set up logging
+        if (LogsProvider is null)
+        {
+            LogsProvider = new TaskLogsProvider();
+            SbLoggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder.AddProvider(LogsProvider);
+#if DEBUG
+                builder.AddConsole();
+#endif
+            });
+            SbLogger = SbLoggerFactory.CreateLogger<Smithbox>();
+            SoulsFormats.Util.Logging.LoggerFactory = SbLoggerFactory;
+            Andre.Core.AndreLogging.LoggerFactory = SbLoggerFactory;
+        }
+        
+        ActionLogger = new(
+            "Action", 
+            evt => evt.Level is not (LogLevel.Warning or LogLevel.Error),
+            //fade time is calculated to be the configured fade time in frames, but we need ms.
+            () => (enabled: CFG.Current.Logger_Enable_Action_Log, fadeTime: (int)(CFG.Current.Logger_Action_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
+        );
+        WarningLogger = new(
+            "Warning",   
+            evt => evt.Level is LogLevel.Warning or LogLevel.Error,
+            () => (enabled: CFG.Current.Logger_Enable_Warning_Log, fadeTime: (int)(CFG.Current.Logger_Warning_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
+        );
+        HighPriorityLogSubscription = TaskLogs.Subscribe(
+            evt => evt.Priority == LogPriority.High
+        );
+    
         _context.Initialize();
         _context.Window.Title = _programTitle;
 
         PlatformUtils.InitializeWindows(_context.Window.SdlWindowHandle);
 
         Orchestrator = new();
-        ActionLogger = new();
-        WarningLogger = new();
 
         DPI.UpdateDpi(_context);
         DPI.UIScaleChanged += (_, _) =>
@@ -480,9 +516,24 @@ public class Smithbox
         ImGui.PopStyleColor(1);
 
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
+        
+        // Drain logs and draw log windows
+        ActionLogger.DrainMessages();
+        WarningLogger.DrainMessages();
 
-        ActionLogger.Draw();
-        WarningLogger.Draw();
+        ActionLogger.DrawWindow();
+        WarningLogger.DrawWindow();
+        // Show popups for high priority log events
+        if (HighPriorityLogSubscription.TryDequeue(out var evt))
+        {
+            if (evt.Priority == LogPriority.High && CFG.Current.Logger_Enable_Log_Popups)
+            {
+                var popupMessage = evt.Message;
+                if (evt.Exception != null) 
+                    popupMessage += $"\n\nException Details:\n{evt.Exception}";
+                PlatformUtils.Instance.MessageBox(popupMessage, evt.Level.ToString(), MessageBoxButtons.OK);
+            }
+        }
 
         if (ImGui.BeginMainMenuBar())
         {
@@ -539,11 +590,9 @@ public class Smithbox
                 ImGui.EndMenu();
             }
 
-            // Action Logger
-            ActionLogger.DisplayTopbarToggle();
-
-            // Warning Logger
-            WarningLogger.DisplayTopbarToggle();
+            // draw log toggles
+            ActionLogger.DrawTopBar();
+            WarningLogger.DrawTopBar();
 
             ImGui.EndMainMenuBar();
         }
@@ -642,5 +691,111 @@ public class Smithbox
         }
         catch (Exception) { }
     }
+
+    #nullable enable
+    /// <summary>
+    /// Gets the logger for the specified type T
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    public static ILogger Logger<T>()
+    {
+        return SbLoggerFactory.CreateLogger<T>();
+    }
+    
+    public static ILogger Logger(Type type)
+    {
+        return SbLoggerFactory.CreateLogger(type);
+    }
+    
+    public static void Log<T>(string message, LogLevel logLevel, LogPriority logPriority, Exception? exception = null, params object?[] args)
+    {
+        Logger<T>().LogWithPriority(logLevel, message, logPriority, exception, args);
+    }
+
+    public static void Log<T>(T _, string message, LogLevel logLevel, LogPriority logPriority, Exception? exception = null, params object?[] args)
+    {
+        Log<T>(message, logLevel, logPriority, exception, args);
+    }
+    public static void Log(Type type, string message, LogLevel logLevel, LogPriority logPriority, Exception? exception = null, params object?[] args)
+    {
+        Logger(type).LogWithPriority(logLevel, message, logPriority, exception, args);
+    }
+
+    public static void Log<T>(string message, LogLevel logLevel = LogLevel.Information, Exception? exception = null, params object?[] args)
+    {
+        Logger<T>().Log(logLevel, exception, message, args);
+    }
+
+    public static void Log<T>(T _, string message, LogLevel logLevel = LogLevel.Information, Exception? exception = null, params object?[] args)
+    {
+        Log<T>(message, logLevel, exception, args);
+    }
+    
+    public static void Log(Type type, string message, LogLevel logLevel = LogLevel.Information, Exception? exception = null, params object?[] args)
+    {
+        Logger(type).Log(logLevel, exception, message, args);
+    }
+    
+    public static void LogError<T>(string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
+    {
+        Logger<T>().LogWithPriority(LogLevel.Error, message, logPriority, exception, args);
+    }
+    
+    public static void LogError<T>(T _, string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
+    {
+        LogError<T>(message, logPriority, exception, args);
+    }
+    
+    public static void LogError(Type type, string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
+    {
+        Logger(type).LogWithPriority(LogLevel.Error, message, logPriority, exception, args);
+    }
+    
+    public static void LogError<T>(string message, Exception? exception = null, params object?[] args)
+    {
+        Logger<T>().Log(LogLevel.Error, exception, message, args);
+    }
+    
+    public static void LogError<T>(T _, string message, Exception? exception = null, params object?[] args)
+    {
+        LogError<T>(message, exception, args);
+    }
+    
+    public static void LogError(Type type, string message, Exception? exception = null, params object?[] args)
+    {
+        Logger(type).Log(LogLevel.Error, exception, message, args);
+    }
+    
+    public static void LogWarning<T>(string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
+    {
+        Logger<T>().LogWithPriority(LogLevel.Warning, message, logPriority, exception, args);
+    }
+    
+    public static void LogWarning<T>(T _, string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
+    {
+        LogWarning<T>(message, logPriority, exception, args);
+    }
+    
+    public static void LogWarning(Type type, string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
+    {
+        Logger(type).LogWithPriority(LogLevel.Warning, message, logPriority, exception, args);
+    }
+    
+    public static void LogWarning<T>(string message, Exception? exception = null, params object?[] args)
+    {
+        Logger<T>().Log(LogLevel.Warning, exception, message, args);
+    }
+    
+    public static void LogWarning<T>(T _, string message, Exception? exception = null, params object?[] args)
+    {
+        LogWarning<T>(message, exception, args);
+    }
+
+    public static void LogWarning(Type type, string message, Exception? exception = null, params object?[] args)
+    {
+        Logger(type).Log(LogLevel.Warning, exception, message, args);
+    }
+
 }
 

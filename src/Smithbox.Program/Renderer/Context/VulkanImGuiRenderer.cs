@@ -218,7 +218,7 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
             catch (ArgumentOutOfRangeException ex)
             {
                 //TODO precompute and check for excessive width, height from DPI.UIScale instead of using io.Fonts
-                TaskLogs.AddError($"[Smithbox] {ex.Message}");
+                Smithbox.LogError(this, $"[Smithbox] {ex.Message}", Logger.LogPriority.High, ex);
                 StudioCore.Application.CFG.Current.Interface_UI_Scale = StudioCore.Application.CFG.Default.Interface_UI_Scale;
                 updateFontAction.Invoke();
             }

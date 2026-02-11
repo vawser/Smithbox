@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -103,7 +104,7 @@ public class ResourceJob
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtualPath}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
+                        Smithbox.Log<ResourceJob>($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtualPath}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
 
                         return new LoadTPFTextureResourceRequest[] { };
                     }
@@ -121,7 +122,7 @@ public class ResourceJob
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtualPath}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
+                        Smithbox.Log<ResourceJob>($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtualPath}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
 
                         return new LoadTPFTextureResourceRequest[] { };
                     }
@@ -207,7 +208,7 @@ public class ResourceJob
                     catch (Exception e)
                     {
 
-                        TaskLogs.AddLog("" +
+                        Smithbox.Log<ResourceJob>("" +
                             $"Failed to load TPF:\nName: {tpfName}" +
                             $"\nBinder Path: {action.BinderRelativePath}" +
                             $"\nBinder Virtual Path: {action.BinderVirtualPath}" +
@@ -223,7 +224,7 @@ public class ResourceJob
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to load binder: {action.BinderVirtualPath}" +
+            Smithbox.Log<ResourceJob>($"Failed to load binder: {action.BinderVirtualPath}" +
                             $"\nBinder Virtual Path: {action.BinderVirtualPath}" +
                             $"\nAccess Level: {action.AccessLevel}" +
                             $"\n{e}",
@@ -303,7 +304,7 @@ public class ResourceJob
             // TPF
             TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Completion.Wait();
 
-            ResourceLog.AddLog($"Job: {Name} - Finished");
+            Smithbox.Log(this, $"Job: {Name} - Finished");
             Finished = true;
         });
     }

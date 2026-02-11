@@ -137,7 +137,7 @@ public class IconManager
         }
         catch(Exception e)
         {
-            TaskLogs.AddError($"Failed to read TPF: {relativePath}", e);
+            Smithbox.LogError(this, $"Failed to read TPF: {relativePath}", e);
         }
 
         return texture;

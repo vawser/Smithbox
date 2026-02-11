@@ -69,6 +69,7 @@ public class MapEditorView
     public EntityInfoAction EntityInfoAction;
     public EntityIdCheckAction EntityIdCheckAction;
     public EntityRenameAction EntityRenameAction;
+    public SelectCollisionRefAction SelectCollisionRefAction;
 
     // Tools
     public MassEditTool MassEditTool;
@@ -153,6 +154,7 @@ public class MapEditorView
         EntityInfoAction = new EntityInfoAction(this, project);
         EntityIdCheckAction = new EntityIdCheckAction(this, project);
         EntityRenameAction = new EntityRenameAction(this, project);
+        SelectCollisionRefAction = new SelectCollisionRefAction(this, project);
 
         // Tools
         MassEditTool = new MassEditTool(this, project);

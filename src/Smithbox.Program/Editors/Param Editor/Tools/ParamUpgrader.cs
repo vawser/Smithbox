@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -224,7 +225,7 @@ public class ParamUpgrader
 
         if (!upgraderInfoTaskResult)
         {
-            TaskLogs.AddError($"Failed to find load upgrader information.");
+            Smithbox.LogError(this, $"Failed to find load upgrader information.");
         }
 
         return true;
@@ -237,7 +238,7 @@ public class ParamUpgrader
 
         if (!oldRegTaskFinished)
         {
-            TaskLogs.AddError($"Failed to find old regulation file.");
+            Smithbox.LogError(this, $"Failed to find old regulation file.");
         }
 
         return true;
@@ -262,13 +263,13 @@ public class ParamUpgrader
 
         if (upgradeTaskFinished)
         {
-            TaskLogs.AddLog($"Upgraded primary bank params successfully.");
+            Smithbox.Log(this, $"Upgraded primary bank params successfully.");
 
             UpgradePerformed = true;
         }
         else
         {
-            TaskLogs.AddLog($"Primary bank is already fully upgraded.");
+            Smithbox.Log(this, $"Primary bank is already fully upgraded.");
         }
 
         CacheBank.ClearCaches();
@@ -285,7 +286,7 @@ public class ParamUpgrader
 
         if (!spEffectTaskResult)
         {
-            TaskLogs.AddError($"Failed to store SpEffect data.");
+            Smithbox.LogError(this, $"Failed to store SpEffect data.");
         }
 
         return true;
@@ -346,7 +347,7 @@ public class ParamUpgrader
 
         Editor.ViewHandler.ActiveView.MassEdit.ApplyMassEdit(commandString);
 
-        TaskLogs.AddLog($"Applied upgrader mass edit commands");
+        Smithbox.Log(this, $"Applied upgrader mass edit commands");
 
         // Special handling for the moved fields in the NR 1.03.1 -> 1.03.2 update
         if (Project.Descriptor.ProjectType is ProjectType.NR && ApplySpecialHandlingForNR)
@@ -441,13 +442,13 @@ public class ParamUpgrader
 
         if (conflictTaskFinished)
         {
-            TaskLogs.AddLog($"Checked for conflicts successfully.");
+            Smithbox.Log(this, $"Checked for conflicts successfully.");
 
             ConflictsChecked = true;
         }
         else
         {
-            TaskLogs.AddError($"Failed to check for conflicts.");
+            Smithbox.LogError(this, $"Failed to check for conflicts.");
         }
     }
 
@@ -498,12 +499,12 @@ public class ParamUpgrader
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"Failed to deserialize Upgrader Information.", e);
+                Smithbox.LogError(this, $"Failed to deserialize Upgrader Information.", e);
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"Failed to load Upgrader Information.", e);
+            Smithbox.LogError(this, $"Failed to load Upgrader Information.", e);
         }
 
         return true;
@@ -611,7 +612,7 @@ public class ParamUpgrader
                         }
                         else
                         {
-                            TaskLogs.AddLog(
+                            Smithbox.Log(this, 
                                 $"Couldn't find ParamDef for param {paramName} and no tentative ParamType exists.",
                                 LogLevel.Error);
 
@@ -628,7 +629,7 @@ public class ParamUpgrader
                     }
                     else
                     {
-                        TaskLogs.AddLog(
+                        Smithbox.Log(this, 
                             $"Couldn't read ParamType for {paramName} and no tentative ParamType exists.",
                             LogLevel.Error);
 
@@ -642,7 +643,7 @@ public class ParamUpgrader
                 p = Param.ReadIgnoreCompression(f.Bytes);
                 if (!paramData.ParamDefs.ContainsKey(p.ParamType ?? ""))
                 {
-                    TaskLogs.AddLog(
+                    Smithbox.Log(this, 
                         $"Couldn't find ParamDef for param {paramName} with ParamType \"{p.ParamType}\".",
                         LogLevel.Warning);
 
@@ -658,7 +659,7 @@ public class ParamUpgrader
                 if (p.ParamType == "CHR_MODEL_PARAM_ST")
                 {
                     if (p.ExpandParamSize(12, 16))
-                        TaskLogs.AddLog($"CHR_MODEL_PARAM_ST fixed up.");
+                        Smithbox.Log(this, $"CHR_MODEL_PARAM_ST fixed up.");
                 }
             }
 
@@ -668,17 +669,17 @@ public class ParamUpgrader
                 if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
                 {
                     if (p.ExpandParamSize(880, 1024))
-                        TaskLogs.AddLog($"GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
+                        Smithbox.Log(this, $"GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
                 }
                 if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
                 {
                     if (p.ExpandParamSize(112, 144))
-                        TaskLogs.AddLog($"POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
+                        Smithbox.Log(this, $"POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
                 }
                 if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
                 {
                     if (p.ExpandParamSize(32, 48))
-                        TaskLogs.AddLog($"SIGN_PUDDLE_PARAM_ST fixed up.");
+                        Smithbox.Log(this, $"SIGN_PUDDLE_PARAM_ST fixed up.");
                 }
             }
 
@@ -692,7 +693,7 @@ public class ParamUpgrader
             {
                 if (paramName is "m99_ToneCorrectBank" or "m99_ToneMapBank" or "default_ToneCorrectBank")
                 {
-                    TaskLogs.AddLog($"Skipped this param: {paramName}");
+                    Smithbox.Log(this, $"Skipped this param: {paramName}");
                     continue;
                 }
             }
@@ -711,7 +712,7 @@ public class ParamUpgrader
                 var message = $"Could not apply ParamDef for {name}";
 
                 successfulLoad = false;
-                TaskLogs.AddLog(message, LogLevel.Warning, LogPriority.Normal, e);
+                Smithbox.Log(this, message, LogLevel.Warning, LogPriority.Normal, e);
             }
         }
 

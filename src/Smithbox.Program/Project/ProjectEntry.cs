@@ -1,10 +1,12 @@
-﻿using StudioCore.Editors.Common;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.IO;
@@ -102,21 +104,21 @@ public class ProjectEntry
         // Sanity checks
         if(Descriptor.ProjectType is ProjectType.Undefined)
         {
-            TaskLogs.AddError($"[Smithbox] Project initialization failed. Project Type is undefined.");
+            Smithbox.LogError(this, $"[Smithbox] Project initialization failed. Project Type is undefined.");
 
             return false;
         }
 
         if(!Directory.Exists(Descriptor.ProjectPath))
         {
-            TaskLogs.AddError($"[Smithbox] Project initialization failed. Project path does not exist: {Descriptor.ProjectPath}");
+            Smithbox.LogError(this, $"[Smithbox] Project initialization failed. Project path does not exist: {Descriptor.ProjectPath}");
 
             return false;
         }
 
         if (!Directory.Exists(Descriptor.DataPath))
         {
-            TaskLogs.AddError($"[Smithbox] Project initialization failed. Data path does not exist: {Descriptor.DataPath}");
+            Smithbox.LogError(this, $"[Smithbox] Project initialization failed. Data path does not exist: {Descriptor.DataPath}");
 
             return false;
         }
@@ -135,7 +137,7 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            TaskLogs.AddError("Failed to setup DLLs", e);
+            Smithbox.LogError(this, "Failed to setup DLLs", e);
         }
 
         if (!silent)
@@ -154,7 +156,7 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            TaskLogs.AddError("Failed to setup VFS", e);
+            Smithbox.LogError(this, "Failed to setup VFS", e);
         }
 
         if (!silent)
@@ -173,7 +175,7 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            TaskLogs.AddError("Failed to setup editor stubs", e);
+            Smithbox.LogError(this, "Failed to setup editor stubs", e);
         }
 
         if (!silent)
@@ -192,7 +194,7 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            TaskLogs.AddError("Failed to setup file locator", e);
+            Smithbox.LogError(this, "Failed to setup file locator", e);
         }
 
         IsLoadingData = true;
@@ -213,7 +215,7 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            TaskLogs.AddError("Failed to setup editor data", e);
+            Smithbox.LogError(this, "Failed to setup editor data", e);
         }
 
         IsLoadingData = false;
@@ -235,7 +237,7 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            TaskLogs.AddError("Failed to setup editors", e);
+            Smithbox.LogError(this, "Failed to setup editors", e);
         }
 
         IsCreatingEditors = false;
@@ -264,7 +266,7 @@ public class ProjectEntry
         {
             try
             {
-                TaskLogs.AddInfo($"[Smithbox] Auto-save triggered.");
+                Smithbox.Log(this, $"[Smithbox] Auto-save triggered.");
 
                 if (CFG.Current.Project_Automatic_Save_Include_Map_Editor)
                 {
@@ -313,7 +315,7 @@ public class ProjectEntry
             }
             catch (Exception ex)
             {
-                TaskLogs.AddError($"[Smithbox] Auto-save failed.", ex);
+                Smithbox.LogError(this, $"[Smithbox] Auto-save failed.", ex);
             }
         }
     }

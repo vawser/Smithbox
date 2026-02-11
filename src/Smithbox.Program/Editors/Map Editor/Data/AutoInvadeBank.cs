@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -58,18 +59,18 @@ public class AutoInvadeBank
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[Map Editor] Failed to read {file.Name} as AIP", LogLevel.Error, LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Map Editor] Failed to read {file.Name} as AIP", LogPriority.High, e);
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} as AIPBND", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as AIPBND", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} from VFS", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} from VFS", LogPriority.High, e);
             }
         }
     }
@@ -147,12 +148,12 @@ public class AutoInvadeBank
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Map Editor] Failed to write {entry.Path} as AIPBND", LogLevel.Error, LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as AIPBND", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Map Editor] Failed to read {entry.Path} from VFS", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} from VFS", LogPriority.High, e);
             }
         }
     }

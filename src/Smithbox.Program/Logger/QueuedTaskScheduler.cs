@@ -7,6 +7,7 @@
 //--------------------------------------------------------------------------
 
 using Microsoft.Extensions.Logging;
+using StudioCore.Logger;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -237,7 +238,7 @@ public sealed class QueuedTaskScheduler : TaskScheduler, IDisposable
                     }
                     catch (Exception ex)
                     {
-                        TaskLogs.AddLog($"[Smithbox] Task failed.", LogLevel.Error, LogPriority.High, ex);
+                        Smithbox.LogError(this, $"Task failed.", LogPriority.High, ex);
                     }
                     //catch (ThreadAbortException)
                     //{

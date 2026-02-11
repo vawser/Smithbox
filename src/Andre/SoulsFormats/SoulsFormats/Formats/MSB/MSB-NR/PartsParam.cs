@@ -2332,6 +2332,9 @@ namespace SoulsFormats
                     UnkA8Data = new UnkA8Struct();
 
                     InnerStruct68 = new AssetInnnerStruct68();
+                    InnerStruct70 = new AssetInnnerStruct70();
+                    InnerStruct78 = new AssetInnnerStruct78();
+                    InnerStruct80 = new AssetInnnerStruct80();
                 }
 
                 internal Asset(BinaryReaderEx br) : base(br) { }

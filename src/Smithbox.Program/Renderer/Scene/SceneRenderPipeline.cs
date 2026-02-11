@@ -128,10 +128,19 @@ public class SceneRenderPipeline
     public unsafe void UpdateSceneParameters(Matrix4x4 proj, Matrix4x4 view, Vector3 eye, int cursorx, int cursory)
     {
         var selectionColor = new Vector4(
-            CFG.Current.Viewport_Selection_Outline_Color.X, 
-            CFG.Current.Viewport_Selection_Outline_Color.Y, 
-            CFG.Current.Viewport_Selection_Outline_Color.Z, 
-            1.0f);
+            CFG.Current.Viewport_Selection_Tint_Color.X, 
+            CFG.Current.Viewport_Selection_Tint_Color.Y, 
+            CFG.Current.Viewport_Selection_Tint_Color.Z, 
+            CFG.Current.Viewport_Selection_Tint_Strength);
+
+        if(!CFG.Current.Viewport_Enable_Texturing)
+        {
+            selectionColor = new Vector4(
+            CFG.Current.Viewport_Untextured_Selection_Tint_Color.X,
+            CFG.Current.Viewport_Untextured_Selection_Tint_Color.Y,
+            CFG.Current.Viewport_Untextured_Selection_Tint_Color.Z,
+            CFG.Current.Viewport_Selection_Tint_Strength);
+        }
 
         Eye = eye;
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>

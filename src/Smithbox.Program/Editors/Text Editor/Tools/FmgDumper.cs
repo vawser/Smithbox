@@ -86,7 +86,7 @@ public class FmgDumper
 
             Task.WaitAll(entryTasks.ToArray());
 
-            TaskLogs.AddLog("Finished dumping all FMGs.");
+            Smithbox.Log(this, "Finished dumping all FMGs.");
         });
     }
 }

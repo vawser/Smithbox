@@ -47,8 +47,10 @@ public class VulkanViewport : IViewport
     public Veldrid.Viewport RenderViewport;
 
     public ViewportMenu ViewportMenu;
-    public BoxSelection BoxSelection;
     public ViewportOverlay ViewportOverlay;
+
+    public ClickSelection ClickSelection;
+    public BoxSelection BoxSelection;
 
     /// <summary>
     /// If true, the user can interact with the viewport.
@@ -164,7 +166,7 @@ public class VulkanViewport : IViewport
 
             if (owner is MapUniverse)
             {
-                Gizmos = new Gizmos(owner, ActionManager, ViewportSelection, RenderScene.OverlayRenderables);
+                Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
 
                 MapPrimaryGrid = new MapGrid(owner, RenderScene.OpaqueRenderables,
                     CFG.Current.MapEditor_PrimaryGrid_Size,
@@ -184,7 +186,7 @@ public class VulkanViewport : IViewport
 
             if (owner is ModelUniverse)
             {
-                Gizmos = new Gizmos(owner, ActionManager, ViewportSelection, RenderScene.OverlayRenderables);
+                Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
 
                 ModelPrimaryGrid = new ModelGrid(owner, RenderScene.OpaqueRenderables,
                     CFG.Current.ModelEditor_PrimaryGrid_Size,
@@ -202,6 +204,7 @@ public class VulkanViewport : IViewport
                     CFG.Current.ModelEditor_TertiaryGrid_Color);
             }
 
+            ClickSelection = new(this);
             BoxSelection = new(this);
 
             ClearQuad = new FullScreenQuad();
@@ -251,6 +254,7 @@ public class VulkanViewport : IViewport
 
             CanInteract = ImGui.IsWindowFocused();
 
+            ClickSelection.Update();
             BoxSelection.Update();
 
             IsViewportVisible = true;
@@ -263,6 +267,7 @@ public class VulkanViewport : IViewport
         ImGui.End();
         ImGui.PopStyleColor();
     }
+
     public void Draw(GraphicsDevice device, CommandList cl)
     {
         ViewportCamera.UpdateProjectionMatrix(true);
@@ -291,11 +296,11 @@ public class VulkanViewport : IViewport
 
         bool kbbusy = false;
 
-        if (!Gizmos.IsMouseBusy() && CanInteract && MouseInViewport())
+        if (!Gizmos.IsMouseBusy() && !BoxSelection.IsBoxSelecting() && CanInteract && MouseInViewport())
         {
             kbbusy = ViewportCamera.UpdateInput(window, dt);
 
-            HandlePickingRequest();
+            ClickSelection.HandlePickingRequest();
         }
 
         //Gizmos.DebugGui();
@@ -362,53 +367,6 @@ public class VulkanViewport : IViewport
             depth, 1.0f - depth);
     }
 
-
-    public void HandlePickingRequest()
-    {
-        if (InputManager.IsMouseDown(MouseButton.Left))
-        {
-            ViewPipeline.CreateAsyncPickingRequest();
-        }
-        if (InputManager.IsMousePressed(MouseButton.Left) && InputManager.IsKeyDown(Key.AltLeft))
-        {
-            ViewPipeline.CreateAsyncPickingRequest();
-        }
-
-        if (ViewPipeline.PickingResultsReady)
-        {
-            ISelectable sel = ViewPipeline.GetSelection();
-
-            if (InputManager.HasCtrlDown())
-            {
-                if (sel != null)
-                {
-                    if (ViewportSelection.GetSelection().Contains(sel))
-                    {
-                        ViewportSelection.RemoveSelection(sel);
-                    }
-                    else
-                    {
-                        ViewportSelection.AddSelection(sel);
-                    }
-                }
-            }
-            else if (InputManager.HasShiftDown())
-            {
-                if (sel != null)
-                {
-                    ViewportSelection.AddSelection(sel);
-                }
-            }
-            else
-            {
-                ViewportSelection.ClearSelection();
-                if (sel != null)
-                {
-                    ViewportSelection.AddSelection(sel);
-                }
-            }
-        }
-    }
 
     public void SetEnvMap(uint index)
     {

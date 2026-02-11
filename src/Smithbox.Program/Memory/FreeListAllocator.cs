@@ -90,6 +90,114 @@ public class FreeListAllocator
         return false;
     }
 
+    /// <summary>
+    ///     Allocates a block at a specific address. Used when migrating allocations during buffer resize.
+    ///     This method finds the free block containing the requested address and marks it as allocated.
+    /// </summary>
+    /// <param name="addr">The address where the block should be allocated</param>
+    /// <param name="size">The size of the block to allocate</param>
+    /// <returns>True if successful, false if the region is not available</returns>
+    public bool AllocAt(uint addr, uint size)
+    {
+        lock (_lock)
+        {
+            // Find the free block that contains this address range
+            LinkedListNode<Block> curr = _freeBlocks.First;
+            while (curr != null)
+            {
+                Block freeBlock = curr.Value;
+                uint freeBlockEnd = freeBlock._addr + freeBlock._size;
+                uint requestedEnd = addr + size;
+
+                // Check if this free block contains the requested range
+                if (freeBlock._addr <= addr && freeBlockEnd >= requestedEnd)
+                {
+                    // Found the free block containing our range
+
+                    // Case 1: Exact match - the free block is exactly what we need
+                    if (freeBlock._addr == addr && freeBlock._size == size)
+                    {
+                        freeBlock._free = false;
+                        _freeBlocks.Remove(curr);
+                        _allocations.Add(addr, freeBlock._node);
+                        return true;
+                    }
+
+                    // Case 2: Allocating from the start of the free block
+                    else if (freeBlock._addr == addr)
+                    {
+                        // Create allocated block at the start
+                        var allocBlock = new Block();
+                        allocBlock._free = false;
+                        allocBlock._size = size;
+                        allocBlock._addr = addr;
+                        allocBlock._node = _blocks.AddBefore(freeBlock._node, allocBlock);
+
+                        // Shrink the free block
+                        freeBlock._addr += size;
+                        freeBlock._size -= size;
+
+                        _allocations.Add(addr, allocBlock._node);
+                        return true;
+                    }
+
+                    // Case 3: Allocating from the end of the free block
+                    else if (requestedEnd == freeBlockEnd)
+                    {
+                        // Create allocated block at the end
+                        var allocBlock = new Block();
+                        allocBlock._free = false;
+                        allocBlock._size = size;
+                        allocBlock._addr = addr;
+                        allocBlock._node = _blocks.AddAfter(freeBlock._node, allocBlock);
+
+                        // Shrink the free block
+                        freeBlock._size -= size;
+
+                        _allocations.Add(addr, allocBlock._node);
+                        return true;
+                    }
+
+                    // Case 4: Allocating from the middle - need to split into 3 blocks
+                    else
+                    {
+                        // Calculate sizes
+                        uint beforeSize = addr - freeBlock._addr;
+                        uint afterSize = freeBlockEnd - requestedEnd;
+
+                        // Create the allocated block in the middle
+                        var allocBlock = new Block();
+                        allocBlock._free = false;
+                        allocBlock._size = size;
+                        allocBlock._addr = addr;
+                        allocBlock._node = _blocks.AddAfter(freeBlock._node, allocBlock);
+
+                        // Create the trailing free block
+                        var afterBlock = new Block();
+                        afterBlock._free = true;
+                        afterBlock._size = afterSize;
+                        afterBlock._addr = requestedEnd;
+                        afterBlock._node = _blocks.AddAfter(allocBlock._node, afterBlock);
+
+                        // Shrink the leading free block
+                        freeBlock._size = beforeSize;
+
+                        // Add the new trailing free block to free list
+                        _freeBlocks.AddLast(afterBlock);
+
+                        _allocations.Add(addr, allocBlock._node);
+                        return true;
+                    }
+                }
+
+                curr = curr.Next;
+            }
+
+            // The requested address range is not available (already allocated or out of bounds)
+            return false;
+        }
+    }
+
     public void Free(uint addr)
     {
         lock (_lock)

@@ -5,6 +5,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -364,31 +365,43 @@ public class MapEditorScreen : EditorScreen
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_1.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_2.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_3.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_4.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_5.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_6.Name))
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
+
+                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
                 }
 
                 ImGui.EndMenu();
@@ -593,7 +606,7 @@ public class MapEditorScreen : EditorScreen
 
         if (e.Wrapped is MSB.MissingReferenceException eRef)
         {
-            TaskLogs.AddLog(e.Message,
+            Smithbox.Log(this, e.Message,
                 LogLevel.Error, LogPriority.Normal, e.Wrapped);
 
             DialogResult result = PlatformUtils.Instance.MessageBox($"{eRef.Message}\nSelect referring map entity?",
@@ -623,13 +636,13 @@ public class MapEditorScreen : EditorScreen
                     }
                 }
 
-                TaskLogs.AddLog($"Unable to find map entity \"{eRef.Referrer.Name}\"",
+                Smithbox.Log(this, $"Unable to find map entity \"{eRef.Referrer.Name}\"",
                     LogLevel.Error, LogPriority.High);
             }
         }
         else
         {
-            TaskLogs.AddLog(e.Message,
+            Smithbox.Log(this, e.Message,
                 LogLevel.Error, LogPriority.High, e.Wrapped);
         }
     }

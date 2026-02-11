@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using Veldrid;
@@ -71,62 +72,28 @@ public class MapShortcuts
             }
         }
 
-        // Cycle Gizmo Translation Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Translation_Mode))
-        {
-            Gizmos.Mode = Gizmos.GizmosMode.Translate;
-        }
-
-        // Cycle Gizmo Rotation Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Rotation_Mode))
-        {
-            Gizmos.Mode = Gizmos.GizmosMode.Rotate;
-        }
-
-        // Cycle Gizmo Origin Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Origin_Mode))
-        {
-            if (Gizmos.Origin == Gizmos.GizmosOrigin.World)
-            {
-                Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
-            }
-            else if (Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox)
-            {
-                Gizmos.Origin = Gizmos.GizmosOrigin.World;
-            }
-        }
-
-        // Cycle Gizmo Space Mode
-        if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Space_Mode))
-        {
-            if (Gizmos.Space == Gizmos.GizmosSpace.Local)
-            {
-                Gizmos.Space = Gizmos.GizmosSpace.World;
-            }
-            else if (Gizmos.Space == Gizmos.GizmosSpace.World)
-            {
-                Gizmos.Space = Gizmos.GizmosSpace.Local;
-            }
-        }
-
-
         // Actions
-        activeView.CreateAction.OnShortcut();
-        activeView.DuplicateAction.OnShortcut();
-        activeView.DeleteAction.OnShortcut();
-        activeView.DuplicateToMapAction.OnShortcut();
-        activeView.RotateAction.OnShortcut();
-        activeView.ScrambleAction.OnShortcut();
-        activeView.ReplicateAction.OnShortcut();
-        activeView.RenderTypeAction.OnShortcut();
-        activeView.ReorderAction.OnShortcut();
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
+        {
+            activeView.CreateAction.OnShortcut();
+            activeView.DuplicateAction.OnShortcut();
+            activeView.DeleteAction.OnShortcut();
+            activeView.DuplicateToMapAction.OnShortcut();
+            activeView.RotateAction.OnShortcut();
+            activeView.ScrambleAction.OnShortcut();
+            activeView.ReplicateAction.OnShortcut();
+            activeView.RenderTypeAction.OnShortcut();
+            activeView.ReorderAction.OnShortcut();
+            activeView.GameVisibilityAction.OnShortcut();
+            activeView.PullToCameraAction.OnShortcut();
+            activeView.EditorVisibilityAction.OnShortcut();
+            activeView.AdjustToGridAction.OnShortcut();
+            activeView.SelectCollisionRefAction.OnShortcut();
+        }
+
         activeView.GotoAction.OnShortcut();
-        activeView.GameVisibilityAction.OnShortcut();
         activeView.FrameAction.OnShortcut();
-        activeView.PullToCameraAction.OnShortcut();
-        activeView.EditorVisibilityAction.OnShortcut();
         activeView.SelectionOutlineAction.OnShortcut();
-        activeView.AdjustToGridAction.OnShortcut();
         activeView.SelectAllAction.OnShortcut();
         activeView.EntityInfoAction.OnShortcut();
 
@@ -138,5 +105,7 @@ public class MapShortcuts
         activeView.RotationIncrementTool.OnShortcut();
         activeView.PositionIncrementTool.OnShortcut();
         activeView.PatrolDrawManager.OnShortcut();
+
+        GizmoState.OnShortcut();
     }
 }

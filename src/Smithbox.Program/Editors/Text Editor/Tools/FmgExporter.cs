@@ -468,11 +468,11 @@ public class FmgExporter
                 fs.Flush();
                 fs.Dispose();
 
-                TaskLogs.AddLog($"Text Exporter: exported text: {wrapper.Name} at {writePath}");
+                Smithbox.Log(this, $"Text Exporter: exported text: {wrapper.Name} at {writePath}");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Text Exporter: failed to export text: {wrapper.Name} at {writePath}\n{ex}");
+                Smithbox.Log(this, $"Text Exporter: failed to export text: {wrapper.Name} at {writePath}\n{ex}");
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.IO;
@@ -65,7 +66,7 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             }
             catch(Exception ex)
             {
-                TaskLogs.AddLog($"Resource pipeline load error:\nFile path request\nValue: {r.Data}\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{ex}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
+                Smithbox.Log(this, $"Resource pipeline load error:\nFile path request\nValue: {r.Data}\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{ex}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
             }
 
         }, options);
@@ -88,16 +89,16 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             }
             catch (FileNotFoundException e1)
             {
-                TaskLogs.AddLog($"Resource pipeline load error:\nFile bytes request\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{e1}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
+                Smithbox.Log(this, $"Resource pipeline load error:\nFile bytes request\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{e1}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
             }
             catch (DirectoryNotFoundException e2)
             {
-                TaskLogs.AddLog($"Resource pipeline load error:\nFile bytes request\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{e2}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
+                Smithbox.Log(this, $"Resource pipeline load error:\nFile bytes request\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{e2}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
             }
             // Some DSR FLVERS can't be read due to mismatching layout and vertex sizes
             catch (InvalidDataException e3)
             {
-                TaskLogs.AddLog($"Resource pipeline load error:\nFile bytes request\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{e3}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
+                Smithbox.Log(this, $"Resource pipeline load error:\nFile bytes request\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{e3}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
             }
         }, options);
 

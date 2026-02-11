@@ -27,7 +27,7 @@ public class ParamDeltaExporter
     {
         if (string.IsNullOrWhiteSpace(Patcher.Selection.ExportName))
         {
-            TaskLogs.AddError("Filename must not be empty.");
+            Smithbox.LogError(this, "Filename must not be empty.");
             return;
         }
 
@@ -64,18 +64,18 @@ public class ParamDeltaExporter
             //if (patch.Params.Count > 0)
             //{
             //    Patcher.WriteDeltaPatch(patch, Patcher.Selection.ExportName);
-            //    TaskLogs.AddLog($"Saved param delta: {Patcher.Selection.ExportName}.json");
+            //    Smithbox.Log(this, $"Saved param delta: {Patcher.Selection.ExportName}.json");
 
             //    Patcher.Selection.RefreshImportList();
             //}
             //else
             //{
-            //    TaskLogs.AddLog("Aborted param delta as no changes were detected.");
+            //    Smithbox.Log(this, "Aborted param delta as no changes were detected.");
             //}
         }
         catch (Exception ex)
         {
-            TaskLogs.AddError("Delta build failed", ex);
+            Smithbox.LogError(this, "Delta build failed", ex);
         }
         finally
         {

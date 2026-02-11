@@ -443,7 +443,7 @@ public static class ParamCsvTools
         }
         else
         {
-            TaskLogs.AddError($"Failed to import CSV: {result}");
+            Smithbox.LogError(typeof(ParamCsvTools), $"Failed to import CSV: {result}");
         }
     }
 
@@ -471,7 +471,7 @@ public static class ParamCsvTools
         }
         else
         {
-            TaskLogs.AddError($"Failed to import CSV: {result}");
+            Smithbox.LogError(typeof(ParamCsvTools), $"Failed to import CSV: {result}");
         }
     }
 
@@ -496,7 +496,7 @@ public static class ParamCsvTools
     {
         if (Path.Exists(path))
         {
-            TaskLogs.AddError("");
+            Smithbox.LogError(typeof(ParamCsvTools), "");
         }
 
         try
@@ -505,7 +505,7 @@ public static class ParamCsvTools
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"Failed to write file for CSV: {path}.", e);
+            Smithbox.LogError(typeof(ParamCsvTools), $"Failed to write file for CSV: {path}.", e);
         }
     }
 
@@ -517,7 +517,7 @@ public static class ParamCsvTools
         }
         catch (Exception e)
         {
-            TaskLogs.AddError($"Failed to read file for CSV: {path}.", e);
+            Smithbox.LogError(typeof(ParamCsvTools), $"Failed to read file for CSV: {path}.", e);
 
             return null;
         }

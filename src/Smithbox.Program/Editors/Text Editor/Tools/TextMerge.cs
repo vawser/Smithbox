@@ -101,11 +101,11 @@ public static class TextMerge
 
         if (mergeTaskResult)
         {
-            TaskLogs.AddLog($"[Text Editor] Merged text from {TargetProject.Descriptor.ProjectName} into this project.");
+            Smithbox.Log(typeof(TextMerge), $"[Text Editor] Merged text from {TargetProject.Descriptor.ProjectName} into this project.");
         }
         else
         {
-            TaskLogs.AddLog($"[Text Editor] Failed to merge text from {TargetProject.Descriptor.ProjectName}.");
+            Smithbox.Log(typeof(TextMerge), $"[Text Editor] Failed to merge text from {TargetProject.Descriptor.ProjectName}.");
         }
 
         MergeInProgress = false;

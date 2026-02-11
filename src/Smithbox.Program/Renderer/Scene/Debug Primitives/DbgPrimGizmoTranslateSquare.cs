@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.Editors.Viewport;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -24,7 +25,7 @@ public class DbgPrimGizmoTranslateSquare : DbgPrimGizmo
 
     private readonly List<Vector3> Tris = new();
 
-    public DbgPrimGizmoTranslateSquare(Gizmos.Axis axis)
+    public DbgPrimGizmoTranslateSquare(GizmoState.Axis axis)
     {
         if (GeometryData != null)
         {
@@ -35,19 +36,19 @@ public class DbgPrimGizmoTranslateSquare : DbgPrimGizmo
             Vector3 a, b, c, d;
             switch (axis)
             {
-                case Gizmos.Axis.PosX:
+                case GizmoState.Axis.PosX:
                     a = new Vector3(0.0f, StartOffset, StartOffset);
                     b = new Vector3(0.0f, StartOffset + Length, StartOffset);
                     c = new Vector3(0.0f, StartOffset, StartOffset + Length);
                     d = new Vector3(0.0f, StartOffset + Length, StartOffset + Length);
                     break;
-                case Gizmos.Axis.PosY:
+                case GizmoState.Axis.PosY:
                     a = new Vector3(StartOffset, 0.0f, StartOffset);
                     b = new Vector3(StartOffset + Length, 0.0f, StartOffset);
                     c = new Vector3(StartOffset, 0.0f, StartOffset + Length);
                     d = new Vector3(StartOffset + Length, 0.0f, StartOffset + Length);
                     break;
-                case Gizmos.Axis.PosZ:
+                case GizmoState.Axis.PosZ:
                     a = new Vector3(StartOffset, StartOffset, 0.0f);
                     b = new Vector3(StartOffset + Length, StartOffset, 0.0f);
                     c = new Vector3(StartOffset, StartOffset + Length, 0.0f);

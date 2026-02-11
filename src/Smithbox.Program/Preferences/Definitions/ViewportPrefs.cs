@@ -107,32 +107,6 @@ public class ViewportPrefs
         };
     }
 
-    public static PreferenceItem Viewport_Limit_Renderables()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 3,
-            Category = PreferenceCategory.Viewport,
-            Spacer = true,
-            InlineName = false,
-
-            Section = SectionCategory.Rendering,
-
-            Title = "Renderable Limit",
-            Description = "This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.",
-
-            Draw = () =>
-            {
-                DPI.ApplyInputWidth();
-                if (ImGui.InputInt("##inputValue", ref CFG.Current.Viewport_Limit_Renderables, 0, 0))
-                {
-                    if (CFG.Current.Viewport_Limit_Renderables < CFG.Default.Viewport_Limit_Renderables)
-                        CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
-                }
-            }
-        };
-    }
-
     public static PreferenceItem Viewport_Limit_Buffer_Indirect_Draw()
     {
         return new PreferenceItem
@@ -276,12 +250,12 @@ public class ViewportPrefs
 
             Section = SectionCategory.Selection,
 
-            Title = "Enable Selection Outline",
-            Description = "If enabled, a selection outline will appear on selected objects.",
+            Title = "Enable Selection Tint",
+            Description = "If enabled, selected objects will be tinted.",
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Outline);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Tint);
             }
         };
     }
@@ -302,28 +276,6 @@ public class ViewportPrefs
             Draw = () =>
             {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Box_Selection);
-            }
-        };
-    }
-
-    public static PreferenceItem Viewport_Box_Selection_Distance_Threshold()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 2,
-            Category = PreferenceCategory.Viewport,
-            Spacer = true,
-            InlineName = false,
-
-            Section = SectionCategory.Selection,
-
-            Title = "Box Drag Distance Threshold",
-            Description = "The distance threshold to use for the box drag. Lower means 'select objects closer to each other', Higher means 'select objects farther from each other'.",
-
-            Draw = () =>
-            {
-                DPI.ApplyInputWidth();
-                ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport_Box_Selection_Distance_Threshold, 1.0f, 2.0f);
             }
         };
     }
@@ -411,11 +363,26 @@ public class ViewportPrefs
             {
                 UIHelper.SimpleHeader("General", "");
 
-                DPI.ApplyInputWidth();
-                ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
+                //DPI.ApplyInputWidth();
+                //ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
 
                 DPI.ApplyInputWidth();
-                ImGui.ColorEdit3("Selection Outline Color", ref CFG.Current.Viewport_Selection_Outline_Color);
+                ImGui.ColorEdit3("Selection Tint Color (Textured)", ref CFG.Current.Viewport_Selection_Tint_Color);
+
+                DPI.ApplyInputWidth();
+                ImGui.ColorEdit3("Selection Tint Color (Untextured)", ref CFG.Current.Viewport_Untextured_Selection_Tint_Color);
+
+
+                DPI.ApplyInputWidth();
+                ImGui.DragFloat("Selection Tint Strength", ref CFG.Current.Viewport_Selection_Tint_Strength, 0.0f, 1.0f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (CFG.Current.Viewport_Selection_Tint_Strength < 0.0f)
+                        CFG.Current.Viewport_Selection_Tint_Strength = 0.0f;
+
+                    if (CFG.Current.Viewport_Selection_Tint_Strength > 1.0f)
+                        CFG.Current.Viewport_Selection_Tint_Strength = 1.0f;
+                }
             }
         };
     }

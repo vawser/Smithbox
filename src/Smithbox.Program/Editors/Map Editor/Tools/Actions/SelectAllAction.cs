@@ -89,6 +89,11 @@ public class SelectAllAction
             {
                 SelectAllByModelName();
             }
+
+            if (InputManager.IsPressed(KeybindID.MapEditor_SelectAll_Ceremony))
+            {
+                SelectAllByMapObjectCeremony();
+            }
         }
     }
 
@@ -119,6 +124,12 @@ public class SelectAllAction
                 }
                 UIHelper.Tooltip($"Select all part map objects that share the same model name as the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_ModelName)}");
             }
+
+            if (ImGui.Selectable("Select All by Ceremony"))
+            {
+                SelectAllByMapObjectCeremony();
+            }
+            UIHelper.Tooltip($"Select all map objects that share the same map layer value.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_Ceremony)}");
 
             ImGui.EndMenu();
         }
@@ -260,6 +271,53 @@ public class SelectAllAction
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
+
+    public void SelectAllByMapObjectCeremony()
+    {
+        if (View.ViewportSelection.IsSelection())
+        {
+            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+
+            List<Type> targetTypes = new List<Type>();
+
+            var firstSel = sel.First();
+
+            var mapCeremony = firstSel.GetPropertyValue("MapStudioLayer");
+            if(mapCeremony == null)
+            {
+                return;
+            }
+
+            var targetCeremonyVal = (uint)mapCeremony;
+
+            if (View.Selection.SelectedMapContainer == null)
+            {
+                PlatformUtils.Instance.MessageBox("Failed to select map container.", "Smithbox", MessageBoxButtons.OK);
+                return;
+            }
+
+            View.ViewportSelection.ClearSelection();
+
+            foreach (var ent in View.Selection.SelectedMapContainer.Objects)
+            {
+                var curCeremonyValue = ent.GetPropertyValue("MapStudioLayer");
+                if(curCeremonyValue != null)
+                {
+                    var curCeremonyVal = (uint)curCeremonyValue;
+
+                    if(targetCeremonyVal == curCeremonyVal)
+                    {
+                        View.ViewportSelection.AddSelection(ent);
+                    }
+                }
+            }
+        }
+        else
+        {
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+        }
+    }
+
     private void HelpSection()
     {
         var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;

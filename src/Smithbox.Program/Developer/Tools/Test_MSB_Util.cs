@@ -205,7 +205,7 @@ public static class Test_MSB_Util
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] NVA Mismatch: {entry.Filename} {e}");
+                Smithbox.Log(typeof(Test_MSB_Util), $"[Smithbox] NVA Mismatch: {entry.Filename} {e}");
             }
 
             if (nva == null)

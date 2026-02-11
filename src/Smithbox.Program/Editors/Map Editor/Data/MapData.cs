@@ -51,7 +51,7 @@ public class MapData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            TaskLogs.AddError($"[Map Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to fully setup Primary Bank.");
         }
 
         // Vanilla Bank
@@ -60,7 +60,7 @@ public class MapData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            TaskLogs.AddError($"[Map Editor] Failed to fully setup Vanilla Bank.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to fully setup Vanilla Bank.");
         }
 
         // META
@@ -71,7 +71,7 @@ public class MapData : IDisposable
 
         if (!metaTaskResult)
         {
-            TaskLogs.AddError($"[Map Editor] Failed to setup MSB Meta.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup MSB Meta.");
         }
 
         // MSB Information
@@ -80,7 +80,7 @@ public class MapData : IDisposable
 
         if (!msbInfoResult)
         {
-            TaskLogs.AddError($"[Map Editor] Failed to setup MSB information.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup MSB information.");
         }
 
         // Map Object Names
@@ -89,7 +89,7 @@ public class MapData : IDisposable
 
         if (!mapObjNamesTaskResult)
         {
-            TaskLogs.AddError($"[Map Editor] Failed to setup Map Object Name lists.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup Map Object Name lists.");
         }
 
         // Map Object Selections
@@ -98,7 +98,7 @@ public class MapData : IDisposable
 
         if (!mapObjSelectionTaskResult)
         {
-            TaskLogs.AddError($"[Map Editor] Failed to setup Map Object Selections.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup Map Object Selections.");
         }
 
         // Spawn States (per project) -- DS2 specific
@@ -107,7 +107,7 @@ public class MapData : IDisposable
 
         if (!mapSpawnStatesResult)
         {
-            TaskLogs.AddError($"[Map Editor] Failed to setup Spawn States information.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup Spawn States information.");
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
@@ -124,7 +124,7 @@ public class MapData : IDisposable
 
         if (!auxBankTaskResult)
         {
-            TaskLogs.AddError($"[Map Editor] Failed to setup Aux MSB Bank for {targetProject.Descriptor.ProjectName}.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup Aux MSB Bank for {targetProject.Descriptor.ProjectName}.");
             return false;
         }
 
@@ -137,7 +137,7 @@ public class MapData : IDisposable
             AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
 
-        TaskLogs.AddError($"[Map Editor] Setup Aux MSB Bank for {targetProject.Descriptor.ProjectName}.");
+        Smithbox.LogError(this, $"[Map Editor] Setup Aux MSB Bank for {targetProject.Descriptor.ProjectName}.");
 
         return true;
     }
@@ -178,7 +178,7 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Map Editor] Failed to load {file} for Map Object Name lists.", e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to load {file} for Map Object Name lists.", e);
                 }
             }
         }
@@ -215,12 +215,12 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Map Editor] Failed to deserialize the Map Object Selections: {projectFile}", e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the Map Object Selections: {projectFile}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Map Editor] Failed to read the Map Object Selections: {projectFile}", e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to read the Map Object Selections: {projectFile}", e);
             }
         }
         else
@@ -241,7 +241,7 @@ public class MapData : IDisposable
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Failed to write Map Entity Selection Groups: {projectFile}\n{ex}");
+                Smithbox.Log(this, $"Failed to write Map Entity Selection Groups: {projectFile}\n{ex}");
             }
         }
 
@@ -282,7 +282,7 @@ public class MapData : IDisposable
         }
         catch (Exception ex)
         {
-            TaskLogs.AddError($"Failed to save map object selections: {projectFile}", ex);
+            Smithbox.LogError(this, $"Failed to save map object selections: {projectFile}", ex);
         }
     }
 
@@ -328,12 +328,12 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Map Editor] Failed to deserialize the MSB information: {targetFile}", e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the MSB information: {targetFile}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Map Editor] Failed to read the MSB information: {targetFile}", e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to read the MSB information: {targetFile}", e);
             }
         }
 
@@ -361,12 +361,12 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Map Editor] Failed to deserialize the MSB enums: {targetFile}", e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the MSB enums: {targetFile}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Map Editor] Failed to read the MSB enums: {targetFile}", e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to read the MSB enums: {targetFile}", e);
             }
         }
 
@@ -394,12 +394,12 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Map Editor] Failed to deserialize the MSB masks: {targetFile}", e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the MSB masks: {targetFile}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Map Editor] Failed to read the MSB masks: {targetFile}", e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to read the MSB masks: {targetFile}", e);
             }
         }
 
@@ -446,12 +446,12 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddError($"[Map Editor] Failed to deserialize the Map Spawn States: {targetFile}", e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the Map Spawn States: {targetFile}", e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddError($"[Map Editor] Failed to read the Map Spawn States: {targetFile}", e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to read the Map Spawn States: {targetFile}", e);
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using StudioCore.Editors.Common;
 using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,9 @@ public class DeleteMapObjectsAction : ViewportAction
     private MapEditorView View;
 
     private readonly List<MsbEntity> Deletables = new();
-    private readonly List<int> RemoveIndices = new();
-    private readonly List<ObjectContainer> RemoveMaps = new();
-    private readonly List<MsbEntity> RemoveParent = new();
-    private readonly List<int> RemoveParentIndex = new();
     private readonly bool SetSelection;
+
+    private readonly List<DeleteRecord> Records = new();
 
     public DeleteMapObjectsAction(MapEditorView view, List<MsbEntity> objects, bool setSelection)
     {
@@ -26,81 +25,122 @@ public class DeleteMapObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = View.Universe;
+        Records.Clear();
 
-        foreach (MsbEntity obj in Deletables)
+        foreach (var obj in Deletables)
         {
-            MapContainer m = View.Selection.GetMapContainerFromMapID(obj.MapID);
-            if (m != null)
-            {
-                RemoveMaps.Add(m);
-                m.HasUnsavedChanges = true;
-                RemoveIndices.Add(m.Objects.IndexOf(obj));
-                m.Objects.RemoveAt(RemoveIndices.Last());
-                if (obj.RenderSceneMesh != null)
-                {
-                    obj.RenderSceneMesh.AutoRegister = false;
-                    obj.RenderSceneMesh.UnregisterWithScene();
-                }
+            var map = View.Selection.GetMapContainerFromMapID(obj.MapID);
 
-                RemoveParent.Add((MsbEntity)obj.Parent);
-                if (obj.Parent != null)
-                {
-                    RemoveParentIndex.Add(obj.Parent.RemoveChild(obj));
-                }
-                else
-                {
-                    RemoveParentIndex.Add(-1);
-                }
-            }
-            else
+            int mapIndex = -1;
+            if (map != null)
+                mapIndex = map.Objects.IndexOf(obj);
+
+            var parent = (MsbEntity)obj.Parent;
+            int parentIndex = -1;
+
+            if (parent != null)
+                parentIndex = parent.Children.IndexOf(obj);
+
+            Records.Add(new DeleteRecord
             {
-                RemoveMaps.Add(null);
-                RemoveIndices.Add(-1);
-                RemoveParent.Add(null);
-                RemoveParentIndex.Add(-1);
+                Map = map,
+                Entity = obj,
+                MapIndex = mapIndex,
+                Parent = parent,
+                ParentIndex = parentIndex
+            });
+        }
+
+        // Remove map objects safely
+        Records.Sort((a, b) =>
+        {
+            int mapCmp = Comparer<MapContainer>.Default.Compare(a.Map, b.Map);
+            if (mapCmp != 0)
+                return mapCmp;
+
+            return b.MapIndex.CompareTo(a.MapIndex);
+        });
+
+        foreach (var r in Records)
+        {
+            if (r.Map != null && r.MapIndex >= 0)
+            {
+                r.Map.HasUnsavedChanges = true;
+                r.Map.Objects.RemoveAt(r.MapIndex);
+            }
+
+            if (r.Entity.RenderSceneMesh != null)
+            {
+                r.Entity.RenderSceneMesh.AutoRegister = false;
+                r.Entity.RenderSceneMesh.UnregisterWithScene();
+            }
+
+            if (r.Parent != null)
+            {
+                r.Parent.Children.Remove(r.Entity);
+                r.Entity.Parent = null;
             }
         }
 
         if (SetSelection)
-        {
-            universe.View.ViewportSelection.ClearSelection();
-        }
+            View.Universe.View.ViewportSelection.ClearSelection();
 
         return ActionEvent.ObjectAddedRemoved;
     }
 
     public override ActionEvent Undo()
     {
-        var universe = View.Universe;
+        // Restore map objects FIRST
+        var mapOrdered = Records
+            .Where(r => r.Map != null && r.MapIndex >= 0)
+            .OrderBy(r => r.Map)
+            .ThenBy(r => r.MapIndex);
 
-        for (var i = 0; i < Deletables.Count(); i++)
+        foreach (var r in mapOrdered)
         {
-            if (RemoveMaps[i] == null || RemoveIndices[i] == -1)
-            {
-                continue;
-            }
+            int idx = r.MapIndex;
+            if (idx > r.Map.Objects.Count)
+                idx = r.Map.Objects.Count;
 
-            RemoveMaps[i].Objects.Insert(RemoveIndices[i], Deletables[i]);
-            if (Deletables[i].RenderSceneMesh != null)
-            {
-                Deletables[i].RenderSceneMesh.AutoRegister = true;
-                Deletables[i].RenderSceneMesh.Register();
-            }
+            r.Map.Objects.Insert(idx, r.Entity);
 
-            if (RemoveParent[i] != null)
+            if (r.Entity.RenderSceneMesh != null)
             {
-                RemoveParent[i].AddChild(Deletables[i], RemoveParentIndex[i]);
+                r.Entity.RenderSceneMesh.AutoRegister = true;
+                r.Entity.RenderSceneMesh.Register();
+            }
+        }
+
+        // Restore hierarchy SECOND
+        var parentGroups = Records
+            .Where(r => r.Parent != null && r.ParentIndex >= 0)
+            .GroupBy(r => r.Parent);
+
+        foreach (var group in parentGroups)
+        {
+            foreach (var r in group.OrderBy(x => x.ParentIndex))
+            {
+                int idx = r.ParentIndex;
+                if (idx > r.Parent.Children.Count)
+                    idx = r.Parent.Children.Count;
+
+                if (r.Entity.Parent != null)
+                    r.Entity.Parent.Children.Remove(r.Entity);
+
+                r.Entity.Parent = r.Parent;
+                r.Parent.Children.Insert(idx, r.Entity);
+                r.Entity.UpdateRenderModel();
             }
         }
 
         if (SetSelection)
         {
-            universe.View.ViewportSelection.ClearSelection();
-            foreach (MsbEntity d in Deletables)
-            {
-                universe.View.ViewportSelection.AddSelection(d);
-            }
+            var sel = View.Universe.View.ViewportSelection;
+            sel.ClearSelection();
+
+            foreach (var r in Records)
+                if (r.Entity != null)
+                    sel.AddSelection(r.Entity);
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -109,5 +149,15 @@ public class DeleteMapObjectsAction : ViewportAction
     public override string GetEditMessage()
     {
         return "";
+    }
+
+    private struct DeleteRecord
+    {
+        public MapContainer Map;
+        public MsbEntity Entity;
+        public int MapIndex;
+
+        public MsbEntity Parent;
+        public int ParentIndex;
     }
 }

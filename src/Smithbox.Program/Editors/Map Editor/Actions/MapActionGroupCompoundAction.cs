@@ -44,7 +44,7 @@ public class MapActionGroupCompoundAction : ViewportAction
                 }
             }
 
-            TaskLogs.AddLog($"Applied MSB mass edit affecting {tAction.Count} map objects for {name}");
+            Smithbox.Log(this, $"Applied MSB mass edit affecting {tAction.Count} map objects for {name}");
         }
 
         if (PostExecutionAction != null)
@@ -76,7 +76,7 @@ public class MapActionGroupCompoundAction : ViewportAction
                 }
             }
 
-            TaskLogs.AddLog($"Reverted MSB mass edit affecting {tAction.Count} map objects for {name}");
+            Smithbox.Log(this, $"Reverted MSB mass edit affecting {tAction.Count} map objects for {name}");
         }
 
         if (PostExecutionAction != null)

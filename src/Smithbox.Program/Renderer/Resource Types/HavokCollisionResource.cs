@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -108,7 +109,7 @@ public class HavokCollisionResource : IResource, IDisposable
             }
             catch(Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.", LogPriority.High, e);
             }
         }
         // HKX - BB
@@ -122,7 +123,7 @@ public class HavokCollisionResource : IResource, IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.", LogPriority.High, e);
             }
         }
         // HKX - DS2 / DS1
@@ -142,7 +143,7 @@ public class HavokCollisionResource : IResource, IDisposable
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError(this, $"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.", LogPriority.High, e);
             }
         }
 
