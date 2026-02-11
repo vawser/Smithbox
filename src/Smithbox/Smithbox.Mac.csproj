@@ -48,7 +48,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <NativeReference Include="$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib" Kind="Dynamic" />
     <NativeReference Include="$(MoltenVKPath)" Condition="Exists('$(MoltenVKPath)')" Kind="Dynamic" />
     <NativeReference Include="$(OodlePath)" Condition="Exists('$(OodlePath)')" Kind="Dynamic" />
     <NativeReference Include="$(RustDllPath)" Condition="Exists('$(RustDllPath)')" Kind="Dynamic" />
