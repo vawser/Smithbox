@@ -295,6 +295,10 @@ public static class KeybindMetadata
             "Select All (Model Name)",
             ""
         ) },
+        { KeybindID.MapEditor_SelectAll_Ceremony, (
+            "Select All (Ceremony)",
+            ""
+        ) },
         { KeybindID.MapEditor_Create_Selection_Group, (
             "Create Selection Group",
             ""
@@ -612,6 +616,7 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_SelectAll_Configurable, InputCategory.MapEditor },
         { KeybindID.MapEditor_SelectAll_ObjectType, InputCategory.MapEditor },
         { KeybindID.MapEditor_SelectAll_ModelName, InputCategory.MapEditor },
+        { KeybindID.MapEditor_SelectAll_Ceremony, InputCategory.MapEditor },
         { KeybindID.MapEditor_Create_Selection_Group, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Group_0, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Group_1, InputCategory.MapEditor },

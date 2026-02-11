@@ -88,6 +88,7 @@ public enum KeybindID
     MapEditor_SelectAll_Configurable,
     MapEditor_SelectAll_ObjectType,
     MapEditor_SelectAll_ModelName,
+    MapEditor_SelectAll_Ceremony,
     MapEditor_Create_Selection_Group,
     MapEditor_Select_Group_0,
     MapEditor_Select_Group_1,
@@ -253,6 +254,7 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_SelectAll_Configurable, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_SelectAll_ObjectType, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_SelectAll_ModelName, new() { Key = Key.Unknown });
+        InputManager.Bind(KeybindID.MapEditor_SelectAll_Ceremony, new() { Key = Key.Unknown });
 
         InputManager.Bind(KeybindID.MapEditor_Create_Selection_Group, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Select_Group_0, new() { Key = Key.Number0, Alt = true });
