@@ -66,7 +66,11 @@ public static class InputManager
 
         if (File.Exists(KeybindPath))
         {
-            Load(KeybindPath);
+            try
+            {
+                Load(KeybindPath);
+            }
+            catch (Exception) { }
         }
 
         Save();
