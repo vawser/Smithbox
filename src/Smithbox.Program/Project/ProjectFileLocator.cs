@@ -187,27 +187,34 @@ public class ProjectFileLocator : IDisposable
             var relativePath = "/" + Path.GetRelativePath(projectPath, filePath).Replace('\\', '/');
             var relativeFolder = Path.GetDirectoryName(relativePath).Replace('\\', '/');
 
+            var add = false;
+
             // Skip any new base dir files
             if (relativeFolder == "/")
                 continue;
 
-            // If project relative path already exists in vanilla directory, ignore it as we don't need to include it
-            if (existingPaths.Contains(relativePath))
+            if (CFG.Current.Project_Scan_Directory_Strict_Mode)
+            {
+                // If project relative path already exists in vanilla directory, ignore it as we don't need to include it
+                if (existingPaths.Contains(relativePath))
                 continue;
 
-            var add = false;
-
-            // Add if it is a file in a new aeg/aet folder
-            if (relativeFolder.Contains("/aeg") || relativeFolder.Contains("/aet"))
-                add = true;
-
-            // Add if it is a new file in any of the vanilla directories
-            foreach (var entry in existingFolders)
-            {
-                if(entry == relativeFolder)
-                {
+                // Add if it is a file in a new map/aeg/aet folder
+                if (relativeFolder.Contains("/map") || relativeFolder.Contains("/aeg") || relativeFolder.Contains("/aet"))
                     add = true;
+
+                // Add if it is a new file in any of the vanilla directories
+                foreach (var entry in existingFolders)
+                {
+                    if(entry == relativeFolder)
+                    {
+                        add = true;
+                    }
                 }
+            }
+            else
+            {
+                add = true;
             }
 
             if (add)

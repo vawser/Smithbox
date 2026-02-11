@@ -82,6 +82,7 @@ public class CFG
 
     public bool Project_Enable_Project_Metadata = false;
     public bool Project_Scan_Directory_For_Additions = true;
+    public bool Project_Scan_Directory_Strict_Mode = false;
 
     // Options
     public string Project_Alias_Export_Delimiter = ";";

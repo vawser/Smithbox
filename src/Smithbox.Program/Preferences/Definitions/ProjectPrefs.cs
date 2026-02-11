@@ -159,6 +159,24 @@ public class ProjectPrefs
             }
         };
     }
+    public static PreferenceItem Project_Scan_Directory_Loose_Mode()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 6,
+            Category = PreferenceCategory.Project,
+            Spacer = true,
+
+            Section = SectionCategory.General,
+
+            Title = "Enable Strict Project Directory Scan",
+            Description = "If enabled, the additional validation will be performed before adding a file to the project's file list.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Scan_Directory_Strict_Mode);
+            }
+        };
+    }
 
 
     // TODO: enable once the Complete type has been implemented.
