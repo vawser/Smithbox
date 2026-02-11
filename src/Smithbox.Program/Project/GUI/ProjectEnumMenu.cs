@@ -1,8 +1,10 @@
-﻿using Hexa.NET.ImGui;
+﻿using Google.Protobuf.WellKnownTypes;
+using Hexa.NET.ImGui;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Text.Json;
+using static SoulsFormats.MQB;
 
 namespace StudioCore.Application;
 
@@ -159,18 +161,26 @@ public class ProjectEnumMenu
         }
 
         var filter = OptionEntryFilter.ToLowerInvariant();
+
+        var filteredList = new List<ProjectEnumOption>();
+
+        foreach (var entry in options)
+        {
+            if (!string.IsNullOrWhiteSpace(filter) &&
+                !entry.Name.ToLowerInvariant().Contains(filter))
+                continue;
+
+            filteredList.Add(entry);
+        }
+
         var clipper = new ImGuiListClipper();
-        clipper.Begin(options.Count);
+        clipper.Begin(filteredList.Count);
 
         while (clipper.Step())
         {
             for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
             {
-                var option = options[i];
-
-                if (!string.IsNullOrWhiteSpace(filter) &&
-                    !option.Name.ToLowerInvariant().Contains(filter))
-                    continue;
+                var option = filteredList[i];
 
                 bool selected = option == CurrentOption;
 

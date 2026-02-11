@@ -205,7 +205,7 @@ public class ProjectAliasMenu
             "##aliasFilter",
             "Filter by ID, name, or tag...",
             ref AliasEntryFilter,
-            128
+            255
         );
 
         ImGui.Separator();
@@ -232,16 +232,24 @@ public class ProjectAliasMenu
             return;
         }
 
+        var filteredList = new List<AliasEntry>();
+
+        foreach(var entry in source)
+        {
+            if (!PassesFilter(entry))
+                continue;
+
+            filteredList.Add(entry);
+        }
+
         var clipper = new ImGuiListClipper();
-        clipper.Begin(source.Count);
+        clipper.Begin(filteredList.Count);
 
         while (clipper.Step())
         {
             for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
             {
-                var entry = source[i];
-                if (!PassesFilter(entry))
-                    continue;
+                var entry = filteredList[i];
 
                 bool selected = entry == CurrentAliasEntry;
                 if (ImGui.Selectable($"{entry.ID}  —  {entry.Name}", selected))
@@ -292,11 +300,21 @@ public class ProjectAliasMenu
         if (string.IsNullOrWhiteSpace(AliasEntryFilter))
             return true;
 
-        var f = AliasEntryFilter.ToLowerInvariant();
+        if (entry == null)
+            return true;
 
-        return entry.ID.ToLowerInvariant().Contains(f)
-            || entry.Name.ToLowerInvariant().Contains(f)
-            || entry.Tags.Any(t => t.ToLowerInvariant().Contains(f));
+        var f = AliasEntryFilter.ToLower();
+
+        if (entry.ID.ToLower().Contains(f))
+            return true;
+
+        if (entry.Name.ToLower().Contains(f))
+            return true;
+
+        if (entry.Tags.Any(t => t.ToLower().Contains(f)))
+            return true;
+
+        return false;
     }
 
     #endregion
