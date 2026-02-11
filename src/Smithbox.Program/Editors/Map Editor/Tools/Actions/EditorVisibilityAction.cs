@@ -223,6 +223,8 @@ public class EditorVisibilityAction
                 }
             }
         }
+
+        View.DelayPicking();
     }
     public void ApplyEditorVisibilityChangeByTag()
     {

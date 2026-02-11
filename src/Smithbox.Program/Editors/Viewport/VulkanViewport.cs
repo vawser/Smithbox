@@ -559,4 +559,9 @@ public class VulkanViewport : IViewport
         }
 
     }
+
+    public void DelayPicking()
+    {
+        ClickSelection.TriggerCooldown();
+    }
 }

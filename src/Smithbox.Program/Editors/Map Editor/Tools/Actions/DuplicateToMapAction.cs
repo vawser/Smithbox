@@ -178,5 +178,7 @@ public class DuplicateToMapAction
         var action = new CloneMapObjectsAction(View, selection, true, targetMap, targetBtl);
 
         View.ViewportActionManager.ExecuteAction(action);
+
+        View.DelayPicking();
     }
 }

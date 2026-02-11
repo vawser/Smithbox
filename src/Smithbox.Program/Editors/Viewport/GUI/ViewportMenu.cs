@@ -7,6 +7,7 @@ using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
+using Veldrid;
 
 namespace StudioCore.Editors.Viewport;
 
@@ -51,6 +52,7 @@ public class ViewportMenu
             if (ImGui.MenuItem("Controls"))
             {
                 CFG.Current.Viewport_DisplayControls = !CFG.Current.Viewport_DisplayControls;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayControls);
             UIHelper.Tooltip($"Toggle the display of the Control instructions in the top-left corner.");
@@ -58,6 +60,7 @@ public class ViewportMenu
             if (ImGui.MenuItem("Profiling"))
             {
                 CFG.Current.Viewport_Display_Profiling = !CFG.Current.Viewport_Display_Profiling;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display_Profiling);
             UIHelper.Tooltip($"Toggle the display of the Profiling information in the top-left corner.");
@@ -67,6 +70,7 @@ public class ViewportMenu
                 if (ImGui.MenuItem("Position Increment"))
                 {
                     CFG.Current.Viewport_DisplayPositionIncrement = !CFG.Current.Viewport_DisplayPositionIncrement;
+                    Parent.DelayPicking();
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayPositionIncrement);
                 UIHelper.Tooltip($"Toggle the display of the current Position Increment in the top-left corner.");
@@ -74,6 +78,7 @@ public class ViewportMenu
                 if (ImGui.MenuItem("Rotation Increment"))
                 {
                     CFG.Current.Viewport_DisplayRotationIncrement = !CFG.Current.Viewport_DisplayRotationIncrement;
+                    Parent.DelayPicking();
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayRotationIncrement);
                 UIHelper.Tooltip($"Toggle the display of the current Rotation Increment in the top-left corner.");
@@ -81,6 +86,7 @@ public class ViewportMenu
                 if (ImGui.MenuItem("Quick View Tooltip"))
                 {
                     CFG.Current.QuickView_DisplayTooltip = !CFG.Current.QuickView_DisplayTooltip;
+                    Parent.DelayPicking();
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.QuickView_DisplayTooltip);
                 UIHelper.Tooltip($"Toggle the display of the Quick View tooltip on hover.");
@@ -88,6 +94,7 @@ public class ViewportMenu
                 if (ImGui.MenuItem("Placement Orb"))
                 {
                     CFG.Current.DisplayPlacementOrb = !CFG.Current.DisplayPlacementOrb;
+                    Parent.DelayPicking();
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.DisplayPlacementOrb);
                 UIHelper.Tooltip($"Toggle the display of the placement orb within the viewport.");
@@ -398,6 +405,7 @@ public class ViewportMenu
                     if (ImGui.MenuItem("Default"))
                     {
                         Parent.SetEnvMap(0);
+                        Parent.DelayPicking();
                     }
 
                     ImGui.EndMenu();
@@ -427,7 +435,7 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu("Gizmos"))
         {
-            GizmoState.OnMenu();
+            GizmoState.OnMenu(Parent);
 
             ImGui.EndMenu();
         }
@@ -440,6 +448,7 @@ public class ViewportMenu
             if (ImGui.MenuItem("Enable Box Selection"))
             {
                 CFG.Current.Viewport_Enable_Box_Selection = !CFG.Current.Viewport_Enable_Box_Selection;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection);
             UIHelper.Tooltip($"Toggle the usage of box selection.\nHold Ctrl, Alt and left click to make a box selection.");
@@ -449,6 +458,7 @@ public class ViewportMenu
             if (ImGui.MenuItem("Map Pieces"))
             {
                 CFG.Current.Viewport_Enable_Box_Selection_MapPiece = !CFG.Current.Viewport_Enable_Box_Selection_MapPiece;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_MapPiece);
 
@@ -461,36 +471,42 @@ public class ViewportMenu
             if (ImGui.MenuItem(name))
             {
                 CFG.Current.Viewport_Enable_Box_Selection_Asset = !CFG.Current.Viewport_Enable_Box_Selection_Asset;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Asset);
 
             if (ImGui.MenuItem("Enemy"))
             {
                 CFG.Current.Viewport_Enable_Box_Selection_Enemy = !CFG.Current.Viewport_Enable_Box_Selection_Enemy;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Enemy);
 
             if (ImGui.MenuItem("Player"))
             {
                 CFG.Current.Viewport_Enable_Box_Selection_Player = !CFG.Current.Viewport_Enable_Box_Selection_Player;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Player);
 
             if (ImGui.MenuItem("Collision"))
             {
                 CFG.Current.Viewport_Enable_Box_Selection_Collision = !CFG.Current.Viewport_Enable_Box_Selection_Collision;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Collision);
 
             if (ImGui.MenuItem("Light"))
             {
                 CFG.Current.Viewport_Enable_Box_Selection_Light = !CFG.Current.Viewport_Enable_Box_Selection_Light;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Light);
 
             if (ImGui.MenuItem("Region"))
             {
                 CFG.Current.Viewport_Enable_Box_Selection_Region = !CFG.Current.Viewport_Enable_Box_Selection_Region;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Region);
 
@@ -506,18 +522,21 @@ public class ViewportMenu
             if (ImGui.MenuItem("Enable rendering", CFG.Current.Viewport_Enable_Rendering))
             {
                 CFG.Current.Viewport_Enable_Rendering = !CFG.Current.Viewport_Enable_Rendering;
+                Parent.DelayPicking();
             }
             UIHelper.Tooltip($"Whether to render objects in the viewport.");
 
             if (ImGui.MenuItem("Enable texturing", CFG.Current.Viewport_Enable_Texturing))
             {
                 CFG.Current.Viewport_Enable_Texturing = !CFG.Current.Viewport_Enable_Texturing;
+                Parent.DelayPicking();
             }
             UIHelper.Tooltip($"Whether to render textures in the viewport.");
 
             if (ImGui.MenuItem("Enable culling", CFG.Current.Viewport_Enable_Culling))
             {
                 CFG.Current.Viewport_Enable_Culling = !CFG.Current.Viewport_Enable_Culling;
+                Parent.DelayPicking();
             }
             UIHelper.Tooltip($"Whether to cull objects in the viewport outside of the camera frustum.");
 
@@ -526,6 +545,7 @@ public class ViewportMenu
                 if (ImGui.MenuItem("Enable model masks", CFG.Current.Viewport_Enable_Model_Masks))
                 {
                     CFG.Current.Viewport_Enable_Model_Masks = !CFG.Current.Viewport_Enable_Model_Masks;
+                    Parent.DelayPicking();
                 }
                 UIHelper.Tooltip($"Whether to attempt to hide model masks based on entity NpcParam flags.");
 
@@ -594,6 +614,7 @@ public class ViewportMenu
             if (ImGui.MenuItem("Map Pieces"))
             {
                 CFG.Current.MapEditor_ModelLoad_MapPieces = !CFG.Current.MapEditor_ModelLoad_MapPieces;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
 
@@ -610,6 +631,7 @@ public class ViewportMenu
             if (ImGui.MenuItem(name))
             {
                 CFG.Current.MapEditor_ModelLoad_Objects = !CFG.Current.MapEditor_ModelLoad_Objects;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
 
@@ -617,18 +639,21 @@ public class ViewportMenu
             if (ImGui.MenuItem("Characters"))
             {
                 CFG.Current.MapEditor_ModelLoad_Characters = !CFG.Current.MapEditor_ModelLoad_Characters;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Characters);
 
             if (ImGui.MenuItem("Collisions"))
             {
                 CFG.Current.MapEditor_ModelLoad_Collisions = !CFG.Current.MapEditor_ModelLoad_Collisions;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Collisions);
 
             if (ImGui.MenuItem("Navmeshes"))
             {
                 CFG.Current.MapEditor_ModelLoad_Navmeshes = !CFG.Current.MapEditor_ModelLoad_Navmeshes;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Navmeshes);
 
@@ -645,6 +670,7 @@ public class ViewportMenu
             if (ImGui.MenuItem("Map Pieces"))
             {
                 CFG.Current.MapEditor_TextureLoad_MapPieces = !CFG.Current.MapEditor_TextureLoad_MapPieces;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_MapPieces);
 
@@ -661,18 +687,21 @@ public class ViewportMenu
             if (ImGui.MenuItem(name))
             {
                 CFG.Current.MapEditor_TextureLoad_Objects = !CFG.Current.MapEditor_TextureLoad_Objects;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Objects);
 
             if (ImGui.MenuItem("Characters"))
             {
                 CFG.Current.MapEditor_TextureLoad_Characters = !CFG.Current.MapEditor_TextureLoad_Characters;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Characters);
 
             if (ImGui.MenuItem("Miscellaneous"))
             {
                 CFG.Current.MapEditor_TextureLoad_Misc = !CFG.Current.MapEditor_TextureLoad_Misc;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Misc);
 
@@ -688,6 +717,7 @@ public class ViewportMenu
             if (ImGui.MenuItem("Map Pieces"))
             {
                 CFG.Current.ModelEditor_ModelLoad_MapPieces = !CFG.Current.ModelEditor_ModelLoad_MapPieces;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
 
@@ -704,18 +734,21 @@ public class ViewportMenu
             if (ImGui.MenuItem(name))
             {
                 CFG.Current.ModelEditor_ModelLoad_Objects = !CFG.Current.ModelEditor_ModelLoad_Objects;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
 
             if (ImGui.MenuItem("Characters"))
             {
                 CFG.Current.ModelEditor_ModelLoad_Characters = !CFG.Current.ModelEditor_ModelLoad_Characters;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Characters);
 
             if (ImGui.MenuItem("Parts"))
             {
                 CFG.Current.ModelEditor_ModelLoad_Parts = !CFG.Current.ModelEditor_ModelLoad_Parts;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Parts);
 
@@ -743,6 +776,7 @@ public class ViewportMenu
             if (ImGui.MenuItem("Map Pieces"))
             {
                 CFG.Current.ModelEditor_TextureLoad_MapPieces = !CFG.Current.ModelEditor_TextureLoad_MapPieces;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_MapPieces);
 
@@ -759,24 +793,28 @@ public class ViewportMenu
             if (ImGui.MenuItem(name))
             {
                 CFG.Current.ModelEditor_TextureLoad_Objects = !CFG.Current.ModelEditor_TextureLoad_Objects;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Objects);
 
             if (ImGui.MenuItem("Characters"))
             {
                 CFG.Current.ModelEditor_TextureLoad_Characters = !CFG.Current.ModelEditor_TextureLoad_Characters;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Characters);
 
             if (ImGui.MenuItem("Parts"))
             {
                 CFG.Current.ModelEditor_TextureLoad_Parts = !CFG.Current.ModelEditor_TextureLoad_Parts;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Parts);
 
             if (ImGui.MenuItem("Miscellaneous"))
             {
                 CFG.Current.ModelEditor_TextureLoad_Misc = !CFG.Current.ModelEditor_TextureLoad_Misc;
+                Parent.DelayPicking();
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Misc);
 

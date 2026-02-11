@@ -95,6 +95,11 @@ public class MapShortcuts
             activeView.GotoAction.OnShortcut();
             activeView.FrameAction.OnShortcut();
             activeView.SelectAllAction.OnShortcut();
+
+            if(InputManager.IsPressed(KeybindID.MapEditor_Deselect_All))
+            {
+                activeView.ViewportSelection.ClearSelection();
+            }
         }
 
         activeView.SelectionOutlineAction.OnShortcut();

@@ -431,6 +431,10 @@ public static class KeybindMetadata
             "Select Referenced Collision",
             "Selects the collisions referenced by the currently selected part(s)."
         ) },
+        { KeybindID.MapEditor_Deselect_All, (
+            "Deselect All",
+            ""
+        ) },
 
         // Model Editor
 
@@ -650,6 +654,7 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_Select_Display_Group_Highlights, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Collision_References, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Referenced_Collision, InputCategory.MapEditor },
+        { KeybindID.MapEditor_Deselect_All, InputCategory.MapEditor },
 
         // Model Editor
 

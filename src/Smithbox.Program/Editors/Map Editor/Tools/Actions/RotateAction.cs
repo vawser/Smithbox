@@ -323,6 +323,8 @@ public class RotateAction
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        View.DelayPicking();
     }
     public void ArbitraryRotation_Selection(Vector3 axis, bool pivot)
     {

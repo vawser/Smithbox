@@ -122,6 +122,7 @@ public enum KeybindID
     MapEditor_Select_Display_Group_Highlights,
     MapEditor_Select_Collision_References,
     MapEditor_Select_Referenced_Collision,
+    MapEditor_Deselect_All,
 
     // Model Editor
 
@@ -293,6 +294,8 @@ public static class DefaultKeyBindings
 
         InputManager.Bind(KeybindID.MapEditor_Select_Collision_References, new() { Key = Key.U, Ctrl = true });
         InputManager.Bind(KeybindID.MapEditor_Select_Referenced_Collision, new() { Key = Key.U, Alt = true });
+
+        InputManager.Bind(KeybindID.MapEditor_Deselect_All, new() { Key = Key.Escape });
 
         // Model Editor
 

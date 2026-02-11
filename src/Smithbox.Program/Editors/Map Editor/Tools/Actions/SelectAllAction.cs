@@ -177,13 +177,7 @@ public class SelectAllAction
             }
         }
 
-        // Delay picking since the menu can be over the viewport,
-        // so a user might click the menu action, and then the click registers in the viewport,
-        // wiping the select all selection.
-        if(View.ViewportHandler.ActiveViewport.Viewport is VulkanViewport vulkanViewport)
-        {
-            vulkanViewport.ClickSelection.TriggerCooldown();
-        }
+        View.DelayPicking();
     }
 
     public void SelectAllByModelName()
@@ -239,13 +233,7 @@ public class SelectAllAction
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
 
-        // Delay picking since the menu can be over the viewport,
-        // so a user might click the menu action, and then the click registers in the viewport,
-        // wiping the select all selection.
-        if (View.ViewportHandler.ActiveViewport.Viewport is VulkanViewport vulkanViewport)
-        {
-            vulkanViewport.ClickSelection.TriggerCooldown();
-        }
+        View.DelayPicking();
     }
 
     public void SelectAllByMapObjectType()
@@ -288,13 +276,7 @@ public class SelectAllAction
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
 
-        // Delay picking since the menu can be over the viewport,
-        // so a user might click the menu action, and then the click registers in the viewport,
-        // wiping the select all selection.
-        if (View.ViewportHandler.ActiveViewport.Viewport is VulkanViewport vulkanViewport)
-        {
-            vulkanViewport.ClickSelection.TriggerCooldown();
-        }
+        View.DelayPicking();
     }
 
     public void SelectAllByMapObjectCeremony()
@@ -342,13 +324,7 @@ public class SelectAllAction
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
 
-        // Delay picking since the menu can be over the viewport,
-        // so a user might click the menu action, and then the click registers in the viewport,
-        // wiping the select all selection.
-        if (View.ViewportHandler.ActiveViewport.Viewport is VulkanViewport vulkanViewport)
-        {
-            vulkanViewport.ClickSelection.TriggerCooldown();
-        }
+        View.DelayPicking();
     }
 
     private void HelpSection()

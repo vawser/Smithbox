@@ -113,6 +113,8 @@ public class SelectCollisionRefAction
         {
             PlatformUtils.Instance.MessageBox("No collision selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        View.DelayPicking();
     }
 
     public void SelectReferencedCollision()
@@ -145,6 +147,8 @@ public class SelectCollisionRefAction
         {
             PlatformUtils.Instance.MessageBox("No parts selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        View.DelayPicking();
     }
 }
 

@@ -159,5 +159,7 @@ public class PullToCameraAction
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        View.DelayPicking();
     }
 }

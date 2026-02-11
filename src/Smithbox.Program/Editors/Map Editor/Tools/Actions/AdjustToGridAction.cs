@@ -328,6 +328,8 @@ public class AdjustToGridAction
                 CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyRotation_Y,
                 CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyRotation_Z);
         }
+
+        View.DelayPicking();
     }
 
     public void ApplyGridTransform(ViewportGridRootAxis curRootAxis,
