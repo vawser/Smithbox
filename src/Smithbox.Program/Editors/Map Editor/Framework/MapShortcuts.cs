@@ -33,6 +33,9 @@ public class MapShortcuts
             ImGui.IsAnyItemActive())
             return;
 
+        if (activeView.ViewportHandler.ActiveViewport.Viewport.ViewportCamera.RightMousePressed)
+            return;
+
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
             CFG.Current.Interface_MapEditor_ToolWindow = !CFG.Current.Interface_MapEditor_ToolWindow;
