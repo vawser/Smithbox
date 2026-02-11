@@ -16,6 +16,7 @@ public class MapEditorUtils
         var ents = GetAllEntities(projectEntry);
 
         var mapEditor = projectEntry.Handler.MapEditor;
+        var activeView = mapEditor.ViewHandler.ActiveView;
 
         foreach (var ent in ents)
         {
@@ -24,6 +25,8 @@ public class MapEditorUtils
                 entity.UpdateEntityModel();
             }
         }
+
+        activeView.Universe.ScheduleTextureRefresh();
     }
 
     /// <summary>

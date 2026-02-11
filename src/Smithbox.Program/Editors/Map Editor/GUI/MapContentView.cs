@@ -164,6 +164,14 @@ public class MapContentView
             }
         }
         UIHelper.Tooltip("Force all map objects within this map to be hidden.");
+
+        // Refresh Textures
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.Refresh}", DPI.IconButtonSize))
+        {
+            MapEditorUtils.UpdateAllEntityModels(Smithbox.Orchestrator.SelectedProject);
+        }
+        UIHelper.Tooltip("Update all map object meshes and textures.");
     }
 
     /// <summary>

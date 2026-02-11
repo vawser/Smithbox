@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
@@ -175,6 +176,14 @@ public class SelectAllAction
                 }
             }
         }
+
+        // Delay picking since the menu can be over the viewport,
+        // so a user might click the menu action, and then the click registers in the viewport,
+        // wiping the select all selection.
+        if(View.ViewportHandler.ActiveViewport.Viewport is VulkanViewport vulkanViewport)
+        {
+            vulkanViewport.ClickSelection.TriggerCooldown();
+        }
     }
 
     public void SelectAllByModelName()
@@ -229,6 +238,14 @@ public class SelectAllAction
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        // Delay picking since the menu can be over the viewport,
+        // so a user might click the menu action, and then the click registers in the viewport,
+        // wiping the select all selection.
+        if (View.ViewportHandler.ActiveViewport.Viewport is VulkanViewport vulkanViewport)
+        {
+            vulkanViewport.ClickSelection.TriggerCooldown();
+        }
     }
 
     public void SelectAllByMapObjectType()
@@ -269,6 +286,14 @@ public class SelectAllAction
         else
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+        }
+
+        // Delay picking since the menu can be over the viewport,
+        // so a user might click the menu action, and then the click registers in the viewport,
+        // wiping the select all selection.
+        if (View.ViewportHandler.ActiveViewport.Viewport is VulkanViewport vulkanViewport)
+        {
+            vulkanViewport.ClickSelection.TriggerCooldown();
         }
     }
 
@@ -315,6 +340,14 @@ public class SelectAllAction
         else
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+        }
+
+        // Delay picking since the menu can be over the viewport,
+        // so a user might click the menu action, and then the click registers in the viewport,
+        // wiping the select all selection.
+        if (View.ViewportHandler.ActiveViewport.Viewport is VulkanViewport vulkanViewport)
+        {
+            vulkanViewport.ClickSelection.TriggerCooldown();
         }
     }
 

@@ -512,8 +512,6 @@ public class ViewportMenu
             if (ImGui.MenuItem("Enable texturing", CFG.Current.Viewport_Enable_Texturing))
             {
                 CFG.Current.Viewport_Enable_Texturing = !CFG.Current.Viewport_Enable_Texturing;
-
-                MapEditorUtils.UpdateAllEntityModels(Smithbox.Orchestrator.SelectedProject);
             }
             UIHelper.Tooltip($"Whether to render textures in the viewport.");
 

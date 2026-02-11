@@ -398,11 +398,6 @@ public class MsbEntity : Entity
                         {
                             OnSelected();
                         }
-
-                        if (universe.HasProcessedMapLoad)
-                        {
-                            universe.ScheduleTextureRefresh();
-                        }
                     }
                 }
             }
@@ -431,11 +426,6 @@ public class MsbEntity : Entity
             if (universe.View.ViewportSelection.IsSelected(this))
             {
                 OnSelected();
-            }
-
-            if (universe.HasProcessedMapLoad)
-            {
-                universe.ScheduleTextureRefresh();
             }
         }
 
