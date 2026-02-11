@@ -89,6 +89,20 @@ public class CloneMapObjectsAction : ViewportAction
                     ? targetMapContainer.Objects.IndexOf(Clonables[i]) + 1
                     : targetMapContainer.Objects.Count;
 
+                if(CFG.Current.Toolbar_Duplicate_Place_at_List_End)
+                {
+                    var curEnt = Clonables[i];
+                    var type = curEnt.WrappedObject.GetType();
+
+                    var categoryList = targetMapContainer.Objects.Where(e => e.WrappedObject.GetType() == type).ToList();
+
+                    var insertEnt = categoryList.Last();
+
+                    mapInsertIndex = TargetMap == null
+                    ? targetMapContainer.Objects.IndexOf(insertEnt) + 1
+                    : targetMapContainer.Objects.Count;
+                }
+
                 // Determine parent
                 Entity targetParent = null;
                 int parentInsertIndex = -1;

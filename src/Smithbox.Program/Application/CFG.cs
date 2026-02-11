@@ -234,6 +234,7 @@ public class CFG
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
     public bool Toolbar_Duplicate_Increment_PartNames = false;
     public bool Toolbar_Duplicate_Increment_InstanceID = true;
+    public bool Toolbar_Duplicate_Place_at_List_End = false;
 
     public bool Toolbar_Duplicate_Clear_Entity_ID = false;
     public bool Toolbar_Duplicate_Clear_Entity_Group_IDs = false;
