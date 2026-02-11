@@ -52,7 +52,7 @@ public class ClickSelection
         if (InCooldown)
             return;
 
-        if (InputManager.IsMouseReleased(MouseButton.Left))
+        if (InputManager.IsMouseReleased(MousebindID.Viewport_Picking_Action))
         {
             Parent.ViewPipeline.CreateAsyncPickingRequest();
         }

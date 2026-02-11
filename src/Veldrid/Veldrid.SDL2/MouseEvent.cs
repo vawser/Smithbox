@@ -65,6 +65,8 @@
         //
         // Summary:
         //     Indicates the last available mouse button.
-        LastButton = 12
+        LastButton = 12,
+
+        None = 99,
     }
 }

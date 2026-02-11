@@ -189,7 +189,7 @@ public class MapViewportView
         if (!FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
             return;
 
-        if(InputManager.IsMousePressed(MouseButton.Button1))
+        if(InputManager.IsMousePressed(MousebindID.MapEditor_Display_Viewport_Context_Menu))
         {
             var mousePos = InputManager.MousePosition;
             ImGui.SetNextWindowPos(mousePos, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));

@@ -35,10 +35,33 @@ public static class InputManager
         }
     }
 
+    public class MouseBinding
+    {
+        public MouseButton Key;
+        public bool Ctrl;
+        public bool Shift;
+        public bool Alt;
+
+        public MouseBinding Clone()
+        {
+            return new MouseBinding
+            {
+                Key = Key,
+                Ctrl = Ctrl,
+                Shift = Shift,
+                Alt = Alt
+            };
+        }
+    }
+
     public static readonly KeybindStore _bindings = new();
     public static readonly KeybindStore _defaultBindings = new();
 
+    public static readonly MousebindStore _mouseBindings = new();
+    public static readonly MousebindStore _defaultMouseBindings = new();
+
     private static string KeybindPath = "";
+    private static string MousebindPath = "";
 
     public static Vector2 MousePosition => _mouseCurrent.Position;
     public static Vector2 MouseDelta => _mouseCurrent.Delta;
@@ -51,11 +74,16 @@ public static class InputManager
     private static KeyboardSnapshot _previous = new();
 
     private static readonly Dictionary<Key, float> _keyHoldTime = new();
+    private static readonly Dictionary<MouseButton, float> _mouseButtonHoldTime = new();
 
     private static double _delta;
 
     public static InputSnapshot InputSnapshot;
+
     public static KeyboardSnapshot Current => _current;
+    public static MouseSnapshot MouseCurrent => _mouseCurrent;
+    public static IReadOnlyDictionary<KeybindID, List<KeyBinding>> Bindings => _bindings.Entries;
+    public static IReadOnlyDictionary<MousebindID, List<MouseBinding>> MouseBindings => _mouseBindings.Entries;
 
     public static void Init()
     {
@@ -68,12 +96,26 @@ public static class InputManager
         {
             try
             {
-                Load(KeybindPath);
+                LoadKeybinds(KeybindPath);
             }
             catch (Exception) { }
         }
 
-        Save();
+        MousebindPath = Path.Combine(folder, "Mousebinds.json");
+
+        DefaultMouseBindings.CreateDefaultBindings();
+
+        if (File.Exists(MousebindPath))
+        {
+            try
+            {
+                LoadMousebinds(MousebindPath);
+            }
+            catch (Exception) { }
+        }
+
+        SaveKeybinds();
+        SaveMousebinds();
     }
 
     public static void Update(Sdl2Window window, InputSnapshot snapshot, double delta)
@@ -214,6 +256,73 @@ public static class InputManager
     public static bool IsMouseReleased(MouseButton button)
         => !_mouseCurrent.IsDown(button) && _mousePrevious.IsDown(button);
 
+
+    public static bool IsMouseDown(MousebindID action)
+    {
+        if (_mouseBindings.Entries.ContainsKey(action))
+        {
+            return _mouseBindings.Entries[action].Any(IsMouseBindingDown);
+        }
+
+        return false;
+    }
+
+    public static bool IsMousePressed(MousebindID action)
+    {
+        if (_mouseBindings.Entries.ContainsKey(action))
+        {
+            return _mouseBindings.Entries[action].Any(b =>
+                 IsMouseBindingDown(b) &&
+                 !_mousePrevious.IsDown(b.Key));
+        }
+
+        return false;
+    }
+
+    public static bool IsMousePressedOrRepeated(
+    MousebindID action,
+    float initialDelay = 0.35f,
+    float repeatRate = 0.075f)
+    {
+        if (!_mouseBindings.Entries.TryGetValue(action, out var bindings))
+            return false;
+
+        foreach (var b in bindings)
+        {
+            if (!IsMouseBindingDown(b))
+                continue;
+
+            // Initial press
+            if (!_mousePrevious.IsDown(b.Key))
+                return true;
+
+            // Held repeat
+            if (_mouseButtonHoldTime.TryGetValue(b.Key, out float t))
+            {
+                if (t > initialDelay)
+                {
+                    float repeatTime = t - initialDelay;
+                    return (repeatTime % repeatRate) < _delta;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public static bool IsMouseReleased(MousebindID action)
+    {
+        if (_mouseBindings.Entries.ContainsKey(action))
+        {
+            return _mouseBindings.Entries[action].Any(b =>
+            !_mouseCurrent.IsDown(b.Key) &&
+            _mousePrevious.IsDown(b.Key));
+        }
+
+        return false;
+    }
+
+
     // ---------------- Bindings ----------------
 
     public static void Bind(KeybindID action, KeyBinding binding)
@@ -229,11 +338,22 @@ public static class InputManager
         _defaultBindings.Entries[action].Add(binding.Clone());
     }
 
-    public static IReadOnlyDictionary<KeybindID, List<KeyBinding>> Bindings => _bindings.Entries;
+    public static void BindMouseKey(MousebindID action, MouseBinding binding)
+    {
+        if (!_mouseBindings.Entries.TryGetValue(action, out var list))
+            _mouseBindings.Entries[action] = list = new();
+
+        list.Add(binding);
+
+        if (!_defaultMouseBindings.Entries.TryGetValue(action, out var defaultList))
+            _defaultMouseBindings.Entries[action] = defaultList = new();
+
+        _defaultMouseBindings.Entries[action].Add(binding.Clone());
+    }
 
     // ---------------- Serialization ----------------
 
-    public static void Save()
+    public static void SaveKeybinds()
     {
         var filestring = JsonSerializer.Serialize(_bindings, ProjectJsonSerializerContext.Default.KeybindStore);
 
@@ -246,8 +366,21 @@ public static class InputManager
 
         File.WriteAllText(KeybindPath, filestring);
     }
+    public static void SaveMousebinds()
+    {
+        var filestring = JsonSerializer.Serialize(_mouseBindings, ProjectJsonSerializerContext.Default.MousebindStore);
 
-    public static void Load(string path)
+        var dir = Path.GetDirectoryName(MousebindPath);
+
+        if (!Directory.Exists(dir))
+        {
+            Directory.CreateDirectory(dir);
+        }
+
+        File.WriteAllText(MousebindPath, filestring);
+    }
+
+    public static void LoadKeybinds(string path)
     {
         if (!File.Exists(path))
             return;
@@ -260,6 +393,23 @@ public static class InputManager
             foreach (var kv in data.Entries)
             {
                 _bindings.Entries[kv.Key] = kv.Value;
+            }
+        }
+    }
+
+    public static void LoadMousebinds(string path)
+    {
+        if (!File.Exists(path))
+            return;
+
+        var json = File.ReadAllText(path);
+        var data = JsonSerializer.Deserialize(json, ProjectJsonSerializerContext.Default.MousebindStore);
+
+        if (data != null)
+        {
+            foreach (var kv in data.Entries)
+            {
+                _mouseBindings.Entries[kv.Key] = kv.Value;
             }
         }
     }
@@ -310,6 +460,39 @@ public static class InputManager
         return true;
     }
 
+
+    private static bool IsMouseBindingDown(MouseBinding b)
+    {
+        if (b.Key == MouseButton.None)
+            return false;
+
+        if (!_mouseCurrent.IsDown(b.Key))
+            return false;
+
+        if (b.Ctrl && !CtrlDown())
+            return false;
+
+        if (b.Shift && !ShiftDown())
+            return false;
+
+        if (b.Alt && !AltDown())
+            return false;
+
+
+        return true;
+    }
+
+    private static bool IsMouseBindingDown_IgnoreModifiers(MouseBinding b)
+    {
+        if (b.Key == MouseButton.None)
+            return false;
+
+        if (!_mouseCurrent.IsDown(b.Key))
+            return false;
+
+        return true;
+    }
+
     private static bool CtrlDown()
         => _current.IsKeyDown(Key.LControl) || _current.IsKeyDown(Key.RControl);
 
@@ -323,6 +506,17 @@ public static class InputManager
     public static string GetHint(KeybindID action)
     {
         var curBind = _bindings.Entries[action].FirstOrDefault();
+
+        string s = "";
+        if (curBind.Ctrl) s += "Ctrl+";
+        if (curBind.Shift) s += "Shift+";
+        if (curBind.Alt) s += "Alt+";
+        s += curBind.Key.ToString();
+        return s;
+    }
+    public static string GetMouseHint(MousebindID action)
+    {
+        var curBind = _mouseBindings.Entries[action].FirstOrDefault();
 
         string s = "";
         if (curBind.Ctrl) s += "Ctrl+";
@@ -428,4 +622,8 @@ public sealed class KeyboardSnapshot
 public class KeybindStore
 {
     public Dictionary<KeybindID, List<KeyBinding>> Entries { get; set; } = new();
+}
+public class MousebindStore
+{
+    public Dictionary<MousebindID, List<MouseBinding>> Entries { get; set; } = new();
 }

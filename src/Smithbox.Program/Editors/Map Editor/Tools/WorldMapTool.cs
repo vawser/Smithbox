@@ -257,14 +257,14 @@ public class WorldMapTool : IResourceEventListener
                                   currentMousePos.Y < windowPos.Y + windowSize.Y;
 
         // Start drag on left click in window
-        if (ImGui.IsWindowHovered() && ImGui.IsMouseClicked(ImGuiMouseButton.Left))
+        if (ImGui.IsWindowHovered() && InputManager.IsMousePressed(MousebindID.MapEditor_World_Map_Drag_Start))
         {
             _isDraggingMap = true;
             _lastMousePos = currentMousePos;
         }
 
         // Stop drag on release
-        if (ImGui.IsMouseReleased(ImGuiMouseButton.Left))
+        if (InputManager.IsMouseReleased(MousebindID.MapEditor_World_Map_Drag_End))
         {
             _isDraggingMap = false;
         }
@@ -423,7 +423,7 @@ public class WorldMapTool : IResourceEventListener
         HandleZoom();
 
         // Select Maps under Point
-        if (InputManager.IsMousePressed(MouseButton.Right))
+        if (InputManager.IsMousePressed(MousebindID.MapEditor_Select_Map_In_World_Map))
         {
             if (MapCurseRelativePositionInWindow.X > 0 && MapCurseRelativePositionInWindow.X < windowWidth && MapCurseRelativePositionInWindow.Y > 0 && MapCurseRelativePositionInWindow.Y < windowHeight)
             {

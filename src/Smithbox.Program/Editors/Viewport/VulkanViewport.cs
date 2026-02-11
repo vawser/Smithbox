@@ -242,12 +242,12 @@ public class VulkanViewport : IViewport
             ResizeViewport(Device, newViewportSize);
 
             // Inputs
-            if (InputManager.IsMouseDown(MouseButton.Right) && MouseInViewport())
+            if (InputManager.IsMouseDown(MousebindID.Viewport_Enable_Viewport_Movement) && MouseInViewport())
             {
                 ImGui.SetWindowFocus();
                 IsViewportSelected = true;
             }
-            else if (!InputManager.IsMouseDown(MouseButton.Right))
+            else if (!InputManager.IsMouseDown(MousebindID.Viewport_Enable_Viewport_Movement))
             {
                 IsViewportSelected = false;
             }

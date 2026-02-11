@@ -188,7 +188,7 @@ public class Smithbox
     {
         CFG.Save();
         UI.Save();
-        InputManager.Save();
+        InputManager.SaveKeybinds();
     }
 
     /// <summary>
@@ -198,7 +198,7 @@ public class Smithbox
     {
         CFG.Save();
         UI.Save();
-        InputManager.Save();
+        InputManager.SaveKeybinds();
     }
 
     private unsafe void SetupImGui()

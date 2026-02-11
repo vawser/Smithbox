@@ -3,6 +3,8 @@
 #---------------------
 - Test the MacOS/Linux PR, review it
 
+- Add File Mover utility to the File Browser: lets you move files from binders into other binders, i.e. from map-specific AI into common AI binder.
+
 - Add field reordering via drag (requires storing the ordering in .smithbox)
 
 - Fix gizmo usage in Orthographic and Oblique view modes
