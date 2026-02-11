@@ -227,6 +227,16 @@ public class MapEditorView
         ViewportSelection.ClearGotoTarget();
     }
 
+    public VulkanViewport GetCurrentViewport()
+    {
+        if (ViewportHandler.ActiveViewport.Viewport is VulkanViewport vulkanViewport)
+        {
+            return vulkanViewport;
+        }
+
+        return null;
+    }
+
     public void DelayPicking()
     {
         // Delay picking since the menu can be over the viewport,

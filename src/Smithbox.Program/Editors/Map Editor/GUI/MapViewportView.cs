@@ -1,6 +1,9 @@
-﻿using StudioCore.Application;
+﻿using Hexa.NET.ImGui;
+using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
+using StudioCore.Keybinds;
+using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -63,6 +66,8 @@ public class MapViewportView
                 nullViewport.Display();
             }
         }
+
+        ViewportContextMenu();
     }
 
     public void Update(float deltatime)
@@ -179,4 +184,74 @@ public class MapViewportView
         return Matrix4x4.Identity;
     }
 
+    public void ViewportContextMenu()
+    {
+        if (!FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
+            return;
+
+        if(InputManager.IsMousePressed(MouseButton.Button1))
+        {
+            var mousePos = InputManager.MousePosition;
+            ImGui.SetNextWindowPos(mousePos, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
+
+            ImGui.OpenPopup("Viewport Context Menu");
+        }
+
+        var curSelection = View.ViewportSelection.GetSelection();
+
+        if (curSelection.Count > 0)
+        {
+            if (ImGui.BeginPopup("Viewport Context Menu"))
+            {
+                Entity targetedEnt = (Entity)curSelection.First();
+
+                View.DuplicateAction.OnContext();
+                View.DeleteAction.OnContext();
+                View.DuplicateToMapAction.OnContext();
+                View.RotateAction.OnContext();
+
+                if (targetedEnt != null)
+                {
+                    View.ScrambleAction.OnContext(targetedEnt);
+                    View.ReplicateAction.OnContext(targetedEnt);
+                    View.RenderTypeAction.OnContext(targetedEnt);
+
+                    ImGui.Separator();
+
+                    View.FrameAction.OnContext(targetedEnt);
+                    View.PullToCameraAction.OnContext(targetedEnt);
+                }
+
+                ImGui.Separator();
+
+                View.EditorVisibilityAction.OnContext();
+                View.GameVisibilityAction.OnContext();
+
+                ImGui.Separator();
+
+                View.SelectionGroupTool.OnContext();
+
+                if (targetedEnt != null)
+                {
+                    ImGui.Separator();
+
+                    View.SelectAllAction.OnContext(targetedEnt);
+                    View.SelectCollisionRefAction.OnContext(targetedEnt);
+                }
+
+                ImGui.Separator();
+
+                View.AdjustToGridAction.OnContext();
+
+                if (targetedEnt != null)
+                {
+                    ImGui.Separator();
+
+                    View.EntityInfoAction.OnContext(targetedEnt);
+                }
+
+                ImGui.EndPopup();
+            }
+        }
+    }
 }
