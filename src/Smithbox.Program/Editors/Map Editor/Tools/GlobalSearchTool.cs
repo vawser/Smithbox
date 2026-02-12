@@ -32,6 +32,7 @@ public class GlobalSearchTool : IMapQueryEngine
 
     public bool _targetProjectFiles = false;
     public bool _looseStringMatch = false;
+    public bool _ignoreDummyParts = false;
 
     public bool QueryComplete = false;
     public bool MayRunQuery = true;
@@ -74,6 +75,7 @@ public class GlobalSearchTool : IMapQueryEngine
 
             IsOpen = true;
             DisplayInput();
+
             DisplayResults();
         }
         else
@@ -156,6 +158,9 @@ public class GlobalSearchTool : IMapQueryEngine
             ImGui.Checkbox("Target Project Files", ref _targetProjectFiles);
             UIHelper.Tooltip("Uses the project map files instead of game root.");
 
+            ImGui.Checkbox("Ignore Dummy Map Objects", ref _ignoreDummyParts);
+            UIHelper.Tooltip("Excludes DummyObject and DummyEnemy entries from the search.");
+
             UIHelper.WrappedText("");
 
             if (!MayRunQuery)
@@ -206,15 +211,6 @@ public class GlobalSearchTool : IMapQueryEngine
 
             if (QueryComplete)
             {
-                DisplayResultList();
-            }
-            else if (!MayRunQuery)
-            {
-                UIHelper.WrappedText($"Search query is not yet complete...");
-            }
-
-            if (QueryComplete)
-            {
                 if (ImGui.Button("Copy to Clipboard", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     CopyResultsToClipboard();
@@ -248,6 +244,19 @@ public class GlobalSearchTool : IMapQueryEngine
                 ImGui.Checkbox("Property Value", ref CFG.Current.GlobalMapSearch_CopyResults_IncludePropertyValue);
                 UIHelper.Tooltip("Include the property value in the clipboard text.");
             }
+
+            ImGui.BeginChild("ResultsSection");
+
+            if (QueryComplete)
+            {
+                DisplayResultList();
+            }
+            else if (!MayRunQuery)
+            {
+                UIHelper.WrappedText($"Search query is not yet complete...");
+            }
+            ImGui.EndChild();
+
         }
     }
 
@@ -336,11 +345,20 @@ public class GlobalSearchTool : IMapQueryEngine
         // Property List
         foreach (var entry in list)
         {
+            if (_ignoreDummyParts)
+            {
+                if(IsDummyPart(entry))
+                {
+                    continue;
+                }
+            }
+
             var properties = entry.GetType().GetProperties();
 
             var entityName = "";
 
             var msbEntity = (IMsbEntry)entry;
+
             if (msbEntity != null)
             {
                 entityName = msbEntity.Name;
@@ -348,6 +366,37 @@ public class GlobalSearchTool : IMapQueryEngine
 
             CheckProperties(entry, properties, mapName, entityName);
         }
+    }
+
+    private bool IsDummyPart<T>(T obj)
+    {
+        if(obj.GetType() == typeof(MSB1.Part.DummyObject) ||
+           obj.GetType() == typeof(MSB3.Part.DummyObject) ||
+           obj.GetType() == typeof(MSBB.Part.DummyObject) ||
+           obj.GetType() == typeof(MSBD.Part.DummyObject) ||
+           obj.GetType() == typeof(MSBE.Part.DummyAsset) ||
+           obj.GetType() == typeof(MSBS.Part.DummyObject) ||
+           obj.GetType() == typeof(MSB_AC6.Part.DummyAsset) ||
+           obj.GetType() == typeof(MSB_NR.Part.DummyAsset) ||
+           obj.GetType() == typeof(MSB1.Part.DummyObject))
+        {
+            return true;
+        }
+
+        if (obj.GetType() == typeof(MSB1.Part.DummyEnemy) ||
+           obj.GetType() == typeof(MSB3.Part.DummyEnemy) ||
+           obj.GetType() == typeof(MSBB.Part.DummyEnemy) ||
+           obj.GetType() == typeof(MSBD.Part.DummyEnemy) ||
+           obj.GetType() == typeof(MSBE.Part.DummyEnemy) ||
+           obj.GetType() == typeof(MSBS.Part.DummyEnemy) ||
+           obj.GetType() == typeof(MSB_AC6.Part.DummyEnemy) ||
+           obj.GetType() == typeof(MSB_NR.Part.DummyEnemy) ||
+           obj.GetType() == typeof(MSB1.Part.DummyEnemy))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public void CheckProperties<T>(T obj, PropertyInfo[] properties, string mapName, string entityName)
