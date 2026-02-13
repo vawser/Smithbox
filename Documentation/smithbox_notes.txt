@@ -1,50 +1,65 @@
 #---------------------
 # BUGS
 #---------------------
-- Map Editor: fix ER NVA so saves are BP correct (currently the Write side is quite off)
-- Map Editor: DS3 navmeshes position seems off in some maps (Undead Settlement)
+- Map Editor: 
+    - fix ER NVA so saves are BP correct (currently the Write side is quite off)
+    - DS3 navmeshes position seems off in some maps (Undead Settlement)
 
-- Model Editor: Make the mesh entries use the sub-meshes properly
-- Model Editor: Fix property editing for the sub-classes (FaceSet, Texture, etc)
-- Model Editor: dummy duplicate doesn't stick
-- Model Editor: bone position cannot be changed (resets itself on gizmo move)
-- Model Editor: DS2 chrs loading badly, parts + map pieces failed to find
+- Model Editor: 
+    - Make the mesh entries use the sub-meshes properly
+    - Fix property editing for the sub-classes (FaceSet, Texture, etc)
+    - dummy duplicate doesn't stick
+    - bone position cannot be changed (resets itself on gizmo move)
+    - DS2 chrs loading badly, parts + map pieces failed to find
 
-- Param Editor: adjust the difference checker to account for row index
+- Param Editor: 
+    - adjust the difference checker to account for row index
 
 #---------------------
 # FEATURES
 #---------------------
-- Viewport add ability to change viewport background color
-
-- Map Editor add Object Mass Edit that allows for addition/deletion of map objects programmatically
-- Map Editor implement Edge support for SDT
+- Viewport 
+    - add ability to change viewport background color
 
 - Map Editor:
-  - Get gizmos to work in Orthographic/Oblique view mode
-  - Implement the auto-BTAB handling actions
-  - Add map piece link in BTAB properties 
-  
-- Model Editor Add simple JSON export/import for elements of FLVER
+    - add Object Mass Edit that allows for addition/deletion of map objects programmatically
+    - implement Edge support for SDT
+    - Get gizmos to work in Orthographic/Oblique view mode
+    - Implement the auto-BTAB handling actions
+    - Add map piece link in BTAB properties 
+    - Add progress modal to the prefab import/export
+    - Make the prefab import much quicker (so we can support whole map imports)
 
-- Param Editor Table Group column should have difference highlighting if any of the internal rows are highlighted as different
- 
-- Text Editor: Implement FMG Descriptor support (to replace enums) 
+- Model Editor 
+    - Add simple JSON export/import for elements of FLVER
 
-- Gparam Editor: DS2 support for flt files
-- Gparam Editor: Issue with creating Bloom field entry in Gparam Editor, likely related to 【 characters in Gs Presents【Bloom】 Enable
+- Param Editor: 
+    - Table Group column should have difference highlighting if any of the internal rows are highlighted as different
+    - Add field reordering via drag (requires storing the ordering in .smithbox)
 
-- Texture Editor add automated mass export
-- Texture Editor add individual icon export based on subtexture
-- Texture Editor adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
+- Text Editor:
+    - Implement FMG Descriptor support (to replace enums) 
+
+- Gparam Editor: 
+    - DS2 support for flt files
+    - Issue with creating Bloom field entry in Gparam Editor, likely related to 【 characters in Gs Presents【Bloom】 Enable
+
+- Texture Editor 
+    - add automated mass export
+    - add individual icon export based on subtexture
+    - adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
  (i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
  
-- Material Editor: add power search to file list 
- (i.e. param: g_BlendMode = 6 should filter the list down to all files that contain a parameter called g_BlendMode set to 6)
- (i.e. texture: Path ~ fire should filter the list down to all files that contain a texture with the Path string that contains the string 'fire')
-- Material Editor: add list add/remove actions for the Param/Texture lists in a MTD
-
-- Material Editor: implement changes needed for the MATBIN properties
+- Material Editor: 
+    - add power search to file list 
+        (i.e. param: g_BlendMode = 6 should filter the list down to all files that contain a parameter called g_BlendMode set to 6)
+        (i.e. texture: Path ~ fire should filter the list down to all files that contain a texture with the Path string that contains the string 'fire')
+    - add list add/remove actions for the Param/Texture lists in a MTD
+    - implement changes needed for the MATBIN properties
+    
+- File Browser:
+    - Add File Mover utility to the File Browser: lets you move files from binders into other binders, i.e. from map-specific AI into common AI binder.
+    
 - ER: World Map Editor
  - Specific editor for the world map tile textures, should present them similarly to the Map Editor world map feature, but constructs the map from the actual tiles + includes the layering stuff
  - Would then enable an editor for MapTexInfo, which controls weather

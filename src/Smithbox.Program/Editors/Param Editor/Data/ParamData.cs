@@ -189,19 +189,6 @@ public class ParamData : IDisposable
             Smithbox.LogError(this, $"[Param Editor] Failed to fully setup Vanilla Bank.");
         }
 
-        if(!Project.Descriptor.ImportedParamRowNames)
-        {
-            var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (dialog is DialogResult.OK)
-            {
-                RowNameHelper.ImportRowNames(Project, PrimaryBank, ParamRowNameImportType.Community);
-            }
-
-            Project.Descriptor.ImportedParamRowNames = true;
-
-            Smithbox.Orchestrator.SaveProject(Project);
-        }
-
         switch(Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:

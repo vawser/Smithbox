@@ -1,13 +1,7 @@
 #---------------------
 # TODO 
 #---------------------
-- Test the MacOS/Linux PR, review it
 
-- Add File Mover utility to the File Browser: lets you move files from binders into other binders, i.e. from map-specific AI into common AI binder.
+- Add basic HKX editor for DS3
 
-- Add field reordering via drag (requires storing the ordering in .smithbox)
-
-- Fix gizmo usage in Orthographic and Oblique view modes
-
-- Add progress modal to the prefab import/export
-- Make the prefab import much quicker (so we can support whole map imports)
+- Move the row name import prompt outside of the param bank process since it can cause a desync issue if the user waits too long to press an option.
