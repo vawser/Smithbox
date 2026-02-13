@@ -1,14 +1,10 @@
-﻿using DotNext.Collections.Generic;
-using Microsoft.Extensions.Logging;
-using StudioCore.Editors.Common;
-using StudioCore.Utilities;
-using System;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StudioCore.Application;
@@ -283,388 +279,467 @@ public class ProjectFileLocator : IDisposable
     #endregion
 
     #region Dictionaries
+    private MultiIndex BuildMultiIndex()
+    {
+        var allEntries = Project.Locator.FileDictionary.Entries;
+        var count = allEntries.Count;
+
+        // Pre-allocate arrays with exact size
+        var allArray = new FileDictionaryEntry[count];
+        var nonSdList = new List<FileDictionaryEntry>(count);
+        var mapList = new List<FileDictionaryEntry>(count / 10); // Estimate ~10% are map files
+
+        var byExtension = new Dictionary<string, List<FileDictionaryEntry>>(50); // ~50 unique extensions
+        var byFolderStart = new Dictionary<string, List<FileDictionaryEntry>>(20); // ~20 unique folder starts
+        var extAndFolder = new Dictionary<string, Dictionary<string, List<FileDictionaryEntry>>>(50);
+
+        var lockObj = new object();
+        int index = 0;
+
+        Parallel.ForEach(allEntries, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, entry =>
+        {
+            int localIndex;
+            lock (lockObj)
+            {
+                localIndex = index++;
+            }
+
+            allArray[localIndex] = entry;
+
+            // Build indexes in thread-local storage first
+            var isNonSd = entry.Archive != "sd";
+            var isMap = entry.Folder.AsSpan().StartsWith("/map");
+            var extension = entry.Extension;
+            var folderStart = GetFolderStart(entry.Folder);
+
+            // Collect to thread-safe structures
+            if (isNonSd)
+            {
+                lock (nonSdList) { nonSdList.Add(entry); }
+            }
+
+            if (isMap)
+            {
+                lock (mapList) { mapList.Add(entry); }
+            }
+
+            // Build extension index
+            lock (byExtension)
+            {
+                if (!byExtension.TryGetValue(extension, out var extList))
+                {
+                    extList = new List<FileDictionaryEntry>();
+                    byExtension[extension] = extList;
+                }
+                extList.Add(entry);
+            }
+
+            // Build folder start index
+            lock (byFolderStart)
+            {
+                if (!byFolderStart.TryGetValue(folderStart, out var folderList))
+                {
+                    folderList = new List<FileDictionaryEntry>();
+                    byFolderStart[folderStart] = folderList;
+                }
+                folderList.Add(entry);
+            }
+
+            // Build combined index for ultra-fast double-key lookups
+            if (isNonSd)
+            {
+                lock (extAndFolder)
+                {
+                    if (!extAndFolder.TryGetValue(extension, out var folderDict))
+                    {
+                        folderDict = new Dictionary<string, List<FileDictionaryEntry>>();
+                        extAndFolder[extension] = folderDict;
+                    }
+
+                    if (!folderDict.TryGetValue(folderStart, out var entries))
+                    {
+                        entries = new List<FileDictionaryEntry>();
+                        folderDict[folderStart] = entries;
+                    }
+
+                    entries.Add(entry);
+                }
+            }
+        });
+
+        return new MultiIndex
+        {
+            AllArray = allArray,
+            NonSdArray = nonSdList.ToArray(),
+            MapArray = mapList.ToArray(),
+            ByExtension = byExtension,
+            ByFolderStart = byFolderStart,
+            ExtensionAndFolder = extAndFolder,
+            MapIds = new HashSet<string>(mapList.Select(m => m.Filename))
+        };
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static string GetFolderStart(string folder)
+    {
+        var span = folder.AsSpan();
+        var slashIndex = span.IndexOf("/", StringComparison.CurrentCultureIgnoreCase);
+        return slashIndex > 0 ? folder.Substring(0, slashIndex) : folder;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static List<FileDictionaryEntry> UltraFastFilter(
+        FileDictionaryEntry[] entries,
+        string folderPrefix = null,
+        string extension = null,
+        bool excludeAutoroute = false,
+        bool excludeSd = false)
+    {
+        var result = new List<FileDictionaryEntry>(entries.Length / 10);
+
+        var folderSpan = folderPrefix.AsSpan();
+        var hasFolder = folderPrefix != null;
+
+        for (int i = 0; i < entries.Length; i++)
+        {
+            ref readonly var entry = ref entries[i];
+
+            if (hasFolder && !entry.Folder.AsSpan().StartsWith(folderSpan))
+                continue;
+
+            if (extension != null && entry.Extension != extension)
+                continue;
+
+            if (excludeAutoroute && entry.Folder.Contains("autoroute"))
+                continue;
+
+            if (excludeSd && entry.Archive.Contains("sd"))
+                continue;
+
+            result.Add(entry);
+        }
+
+        return result;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static List<FileDictionaryEntry> FastLookup(
+        MultiIndex index,
+        string extension,
+        string folderStart = null)
+    {
+        if (folderStart != null &&
+            index.ExtensionAndFolder.TryGetValue(extension, out var folderDict) &&
+            folderDict.TryGetValue(folderStart, out var entries))
+        {
+            return new List<FileDictionaryEntry>(entries); // Return copy
+        }
+
+        if (index.ByExtension.TryGetValue(extension, out var extEntries))
+        {
+            if (folderStart != null)
+            {
+                // Filter by folder
+                var result = new List<FileDictionaryEntry>(extEntries.Count / 4);
+                foreach (var entry in extEntries)
+                {
+                    if (entry.Folder.StartsWith(folderStart))
+                        result.Add(entry);
+                }
+                return result;
+            }
+            return new List<FileDictionaryEntry>(extEntries);
+        }
+
+        return new List<FileDictionaryEntry>();
+    }
+
     public void CompileDictionaries()
     {
-        CompileMapDictionaries();
-        CompileModelDictionaries();
-        CompileTextDictionaries();
-        CompileGparamDictionaries();
-        CompileMaterialDictionaries();
-        CompileTextureDictionaries();
+        var index = BuildMultiIndex();
+
+        var tasks = new[]
+        {
+            Task.Run(() => CompileMapDictionaries(index)),
+            Task.Run(() => CompileModelDictionaries(index)),
+            Task.Run(() => CompileTextDictionaries(index)),
+            Task.Run(() => CompileGparamDictionaries(index)),
+            Task.Run(() => CompileMaterialDictionaries(index)),
+            Task.Run(() => CompileTextureDictionaries(index))
+        };
+
+        Task.WaitAll(tasks);
     }
 
-    public void CompileMapDictionaries()
+    public void CompileMapDictionaries(MultiIndex index)
     {
-        // MSB
-        MapFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map") && !e.Folder.Contains("autoroute"))
-            .Where(e => e.Extension == "msb")
-            .ToList();
+        var mapArray = index.MapArray;
 
-        // BTL
-        LightFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "btl")
-            .ToList();
-
-        DS2_LightFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "gibhd")
-            .ToList();
-
-        // NVA
-        NavmeshFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "nva")
-            .ToList();
-
-        // Collision
-        CollisionFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "hkxbhd")
-            .ToList();
-
-        // AutoInvade
-        AutoInvadeFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/other"))
-            .Where(e => e.Extension == "aipbnd")
-            .ToList();
-
-        // Light Atlases
-        LightAtlasFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "btab")
-            .ToList();
-
-        // Light Probes
-        LightProbeFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "btpb")
-            .ToList();
+        // Parallel processing of independent filters
+        Parallel.Invoke(
+            () => MapFiles.Entries = UltraFastFilter(mapArray, extension: "msb", excludeAutoroute: true),
+            () => LightFiles.Entries = FastLookup(index, "btl", "/map"),
+            () => DS2_LightFiles.Entries = FastLookup(index, "gibhd", "/map"),
+            () => NavmeshFiles.Entries = FastLookup(index, "nva", "/map"),
+            () => CollisionFiles.Entries = FastLookup(index, "hkxbhd", "/map"),
+            () => LightAtlasFiles.Entries = FastLookup(index, "btab", "/map"),
+            () => LightProbeFiles.Entries = FastLookup(index, "btpb", "/map"),
+            () => AutoInvadeFiles.Entries = FastLookup(index, "aipbnd", "/other")
+        );
     }
 
-    public void CompileModelDictionaries()
+    public void CompileModelDictionaries(MultiIndex index)
     {
-        // Maps (for the map pieces)
-        MapFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map") && !e.Folder.Contains("autoroute"))
-            .Where(e => e.Extension == "msb")
-            .Where(e => !e.Archive.Contains("sd"))
-            .ToList();
+        var projectType = Project.Descriptor.ProjectType;
 
-        // Characters
-        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        var mapTask = Task.Run(() =>
         {
-            ChrFiles.Entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith("/model/chr"))
-                    .Where(e => e.Extension == "bnd")
-                    .ToList();
-        }
-        else
-        {
-            ChrFiles.Entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Extension == "chrbnd")
-                    .Where(e => !e.Archive.Contains("sd"))
-                    .ToList();
-        }
+            MapFiles.Entries = UltraFastFilter(
+                index.AllArray,
+                folderPrefix: "/map",
+                extension: "msb",
+                excludeAutoroute: true,
+                excludeSd: true);
+        });
 
-        // Assets / Objects
-        if (Project.Descriptor.ProjectType is ProjectType.DS1)
+        var chrTask = Task.Run(() =>
         {
-            AssetFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/obj"))
-                .Where(e => e.Extension == "objbnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            AssetFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/model/obj"))
-                .Where(e => e.Extension == "bnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
-        {
-            AssetFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/obj"))
-                .Where(e => e.Extension == "objbnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-        {
-            AssetFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/asset"))
-                .Where(e => e.Extension == "geombnd")
-                .Where(e => !e.Archive.Contains("sd"))
-                .ToList();
-        }
-
-        // Parts
-        if (Project.Descriptor.ProjectType is ProjectType.DS1)
-        {
-            PartFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/parts"))
-                .Where(e => e.Extension == "partsbnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            PartFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/model/parts"))
-                .Where(e => e.Extension == "bnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
-        {
-            PartFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/parts"))
-                .Where(e => e.Extension == "partsbnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-        {
-            PartFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/parts"))
-                .Where(e => e.Extension == "partsbnd")
-                .Where(e => !e.Archive.Contains("sd"))
-                .ToList();
-        }
-
-        // Collisions
-        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            CollisionFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/model/map"))
-                .Where(e => e.Extension == "hkxbhd")
-                .ToList();
-        }
-
-        foreach (var map in MapFiles.Entries)
-        {
-            var mapid = map.Filename;
-            var entries = new List<FileDictionaryEntry>();
-
-            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DES)
+            if (projectType is ProjectType.DS2S or ProjectType.DS2)
             {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "hkx")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.DS1R)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "hkxbhd")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "hkxbhd")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid.Substring(0, 3)}/{mapid}"))
-                    .Where(e => e.Extension == "hkxbhd")
-                    .Where(e => !e.Archive.Contains("sd"))
-                    .ToList();
-            }
-
-            foreach (var entry in entries)
-            {
-                CollisionFiles.Entries.Add(entry);
-            }
-        }
-
-        // Map Parts
-        MapPieceFiles.Entries = new();
-
-        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            MapPieceFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/model/map"))
-                .Where(e => e.Extension == "mapbhd")
-                .ToList();
-        }
-
-        foreach (var map in MapFiles.Entries)
-        {
-            var mapid = map.Filename;
-            var entries = new List<FileDictionaryEntry>();
-
-            if (Project.Descriptor.ProjectType is ProjectType.DS1)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "flver")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.DS1R)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "flver")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.BB or ProjectType.DES)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}/"))
-                    .Where(e => e.Extension == "flver")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid.Substring(0, 3)}/{mapid}"))
-                    .Where(e => e.Extension == "mapbnd")
-                    .Where(e => !e.Archive.Contains("sd"))
-                    .ToList();
+                ChrFiles.Entries = FastLookup(index, "bnd", "/model");
+                ChrFiles.Entries = ChrFiles.Entries.Where(e => e.Folder.StartsWith("/model/chr")).ToList();
             }
             else
             {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "mapbnd")
-                    .ToList();
+                ChrFiles.Entries = FastLookup(index, "chrbnd");
+                ChrFiles.Entries = ChrFiles.Entries.Where(e => !e.Archive.Contains("sd")).ToList();
             }
+        });
+
+        var assetTask = Task.Run(() => AssetFiles.Entries = GetAssetFilesOptimized(index, projectType));
+        var partTask = Task.Run(() => PartFiles.Entries = GetPartFilesOptimized(index, projectType));
+
+        Task.WaitAll(mapTask, chrTask, assetTask, partTask);
+
+        CompileCollisionFilesUltraFast(index, projectType);
+        CompileMapPieceFilesUltraFast(index, projectType);
+    }
+
+    private List<FileDictionaryEntry> GetAssetFilesOptimized(MultiIndex index, ProjectType projectType)
+    {
+        return projectType switch
+        {
+            ProjectType.DS1 => FastLookup(index, "objbnd", "/obj"),
+            ProjectType.DS2S or ProjectType.DS2 => FastLookup(index, "bnd", "/model").Where(e => e.Folder.StartsWith("/model/obj")).ToList(),
+            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => FastLookup(index, "objbnd", "/obj"),
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => FastLookup(index, "geombnd", "/asset").Where(e => !e.Archive.Contains("sd")).ToList(),
+            _ => new List<FileDictionaryEntry>()
+        };
+    }
+
+    private List<FileDictionaryEntry> GetPartFilesOptimized(MultiIndex index, ProjectType projectType)
+    {
+        return projectType switch
+        {
+            ProjectType.DS1 => FastLookup(index, "partsbnd", "/parts"),
+            ProjectType.DS2S or ProjectType.DS2 => FastLookup(index, "bnd", "/model").Where(e => e.Folder.StartsWith("/model/parts")).ToList(),
+            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => FastLookup(index, "partsbnd", "/parts"),
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => FastLookup(index, "partsbnd", "/parts").Where(e => !e.Archive.Contains("sd")).ToList(),
+            _ => new List<FileDictionaryEntry>()
+        };
+    }
+
+    private void CompileCollisionFilesUltraFast(MultiIndex index, ProjectType projectType)
+    {
+        var collisions = new ConcurrentBag<FileDictionaryEntry>();
+
+        if (projectType is ProjectType.DS2S or ProjectType.DS2)
+        {
+            var ds2Collisions = FastLookup(index, "hkxbhd", "/model");
+            foreach (var entry in ds2Collisions.Where(e => e.Folder.StartsWith("/model/map")))
+            {
+                collisions.Add(entry);
+            }
+        }
+
+        // Parallel map processing
+        var mapEntries = MapFiles.Entries;
+
+        Parallel.ForEach(mapEntries, map =>
+        {
+            var mapid = map.Filename;
+            var entries = GetCollisionEntriesForMapOptimized(index, mapid, projectType);
 
             foreach (var entry in entries)
             {
-                MapPieceFiles.Entries.Add(entry);
+                collisions.Add(entry);
             }
-        }
+        });
+
+        CollisionFiles.Entries = collisions.ToList();
     }
 
-    public void CompileTextDictionaries()
+    private List<FileDictionaryEntry> GetCollisionEntriesForMapOptimized(
+        MultiIndex index,
+        string mapid,
+        ProjectType projectType)
     {
-        // MSGBND
-        var msgbndDictionary = new FileDictionary();
-        msgbndDictionary.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/msg"))
-            .Where(e => e.Extension == "msgbnd")
-            .ToList();
+        return projectType switch
+        {
+            ProjectType.DS1 or ProjectType.DES =>
+                FastLookup(index, "hkx", "/map").Where(e => e.Folder.StartsWith($"/map/{mapid}")).ToList(),
 
+            ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT =>
+                FastLookup(index, "hkxbhd", "/map").Where(e => e.Folder.StartsWith($"/map/{mapid}")).ToList(),
+
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR =>
+                FastLookup(index, "hkxbhd", "/map")
+                    .Where(e => e.Folder.StartsWith($"/map/{mapid.Substring(0, 3)}/{mapid}") && !e.Archive.Contains("sd"))
+                    .ToList(),
+
+            _ => new List<FileDictionaryEntry>()
+        };
+    }
+
+    private void CompileMapPieceFilesUltraFast(MultiIndex index, ProjectType projectType)
+    {
+        var mapPieces = new ConcurrentBag<FileDictionaryEntry>();
+
+        if (projectType is ProjectType.DS2S or ProjectType.DS2)
+        {
+            var ds2Pieces = FastLookup(index, "mapbhd", "/model");
+            foreach (var entry in ds2Pieces.Where(e => e.Folder.StartsWith("/model/map")))
+            {
+                mapPieces.Add(entry);
+            }
+        }
+
+        var mapEntries = MapFiles.Entries;
+
+        Parallel.ForEach(mapEntries, map =>
+        {
+            var mapid = map.Filename;
+            var entries = GetMapPieceEntriesForMapOptimized(index, mapid, projectType);
+
+            foreach (var entry in entries)
+            {
+                mapPieces.Add(entry);
+            }
+        });
+
+        MapPieceFiles.Entries = mapPieces.ToList();
+    }
+
+    private List<FileDictionaryEntry> GetMapPieceEntriesForMapOptimized(
+        MultiIndex index,
+        string mapid,
+        ProjectType projectType)
+    {
+        return projectType switch
+        {
+            ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DES =>
+                FastLookup(index, "flver", "/map").Where(e => e.Folder.StartsWith($"/map/{mapid}")).ToList(),
+
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR =>
+                FastLookup(index, "mapbnd", "/map")
+                    .Where(e => e.Folder.StartsWith($"/map/{mapid.Substring(0, 3)}/{mapid}") && !e.Archive.Contains("sd"))
+                    .ToList(),
+
+            _ =>
+                FastLookup(index, "mapbnd", "/map").Where(e => e.Folder.StartsWith($"/map/{mapid}")).ToList()
+        };
+    }
+
+    public void CompileTextDictionaries(MultiIndex index)
+    {
+        var msgbndEntries = FastLookup(index, "msgbnd", "/msg");
 
         if (Project.Descriptor.ProjectType == ProjectType.ER)
         {
-            msgbndDictionary.Entries = msgbndDictionary.Entries.OrderBy(e => e.Folder).ThenBy(e => e.Filename.Contains("dlc02")).ThenBy(e => e.Filename.Contains("dlc01")).ThenBy(e => e.Filename).ToList();
+            msgbndEntries = msgbndEntries
+                .OrderBy(e => e.Folder)
+                .ThenBy(e => e.Filename.Contains("dlc02"))
+                .ThenBy(e => e.Filename.Contains("dlc01"))
+                .ThenBy(e => e.Filename)
+                .ToList();
         }
 
-        // FMG
-        var fmgDictionary = new FileDictionary();
-        fmgDictionary.Entries = new List<FileDictionaryEntry>();
+        var msgbndDictionary = new FileDictionary { Entries = msgbndEntries };
+        var fmgDictionary = new FileDictionary { Entries = new List<FileDictionaryEntry>() };
 
         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            fmgDictionary.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Archive != "sd")
-                .Where(e => e.Folder.StartsWith("/menu/text"))
-                .Where(e => e.Extension == "fmg").ToList();
+            fmgDictionary.Entries = FastLookup(index, "fmg", "/menu");
         }
 
         TextFiles = ProjectUtils.MergeFileDictionaries(msgbndDictionary, fmgDictionary);
     }
 
-    public void CompileGparamDictionaries()
+    public void CompileGparamDictionaries(MultiIndex index)
     {
-        GparamFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/param/drawparam"))
-            .Where(e => e.Extension == "gparam")
-            .ToList();
+        GparamFiles.Entries = FastLookup(index, "gparam", "/param");
     }
 
-    public void CompileMaterialDictionaries()
+    public void CompileMaterialDictionaries(MultiIndex index)
     {
-        MTD_Files.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/mtd"))
-            .Where(e => e.Extension == "mtdbnd")
-            .ToList();
+        var projectType = Project.Descriptor.ProjectType;
 
-        // DS2 has it as a single .bnd file
-        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (projectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            MTD_Files.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/material"))
-            .Where(e => e.Filename == "allmaterialbnd")
-            .ToList();
+            var materialEntries = FastLookup(index, "bnd", "/material");
+            MTD_Files.Entries = materialEntries.Where(e => e.Filename == "allmaterialbnd").ToList();
+        }
+        else
+        {
+            MTD_Files.Entries = FastLookup(index, "mtdbnd", "/mtd");
         }
 
-        MATBIN_Files.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/material"))
-            .Where(e => e.Extension == "matbinbnd")
-            .ToList();
-
+        MATBIN_Files.Entries = FastLookup(index, "matbinbnd", "/material");
     }
 
-    public void CompileTextureDictionaries()
+    public void CompileTextureDictionaries(MultiIndex index)
     {
-        var secondaryDicts = new List<FileDictionary>();
+        var projectType = Project.Descriptor.ProjectType;
 
-        // TPF
         var baseDict = new FileDictionary();
-        baseDict.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "tpf")
-            .ToList();
-
-        // Object Textures
         var objDict = new FileDictionary();
-        objDict.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "objbnd")
-            .ToList();
-
-        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            objDict.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Archive != "sd")
-                .Where(e => e.Extension == "bnd" && e.Folder == "/model/obj")
-                .ToList();
-        }
-
-        secondaryDicts.Add(objDict);
-
-        // Chr Textures
         var chrDict = new FileDictionary();
-        chrDict.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "texbnd")
-            .ToList();
-
-        secondaryDicts.Add(chrDict);
-
-        // Part Textures
         var partDict = new FileDictionary();
-        partDict.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "partsbnd")
-            .ToList();
+        var commonPartDict = new FileDictionary();
+        var sfxDict = new FileDictionary();
 
-        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        Parallel.Invoke(
+            () => baseDict.Entries = FastLookup(index, "tpf"),
+            () =>
+            {
+                if (projectType is ProjectType.DS2S or ProjectType.DS2)
+                    objDict.Entries = FastLookup(index, "bnd", "/model").Where(e => e.Folder == "/model/obj").ToList();
+                else
+                    objDict.Entries = FastLookup(index, "objbnd");
+            },
+            () => chrDict.Entries = FastLookup(index, "texbnd"),
+            () =>
+            {
+                if (projectType is ProjectType.DS2S or ProjectType.DS2)
+                {
+                    commonPartDict.Entries = FastLookup(index, "commonbnd");
+                    partDict.Entries = FastLookup(index, "bnd", "/model").Where(e => e.Folder.Contains("/model/parts")).ToList();
+                }
+                else
+                {
+                    partDict.Entries = FastLookup(index, "partsbnd");
+                }
+            },
+            () => sfxDict.Entries = FastLookup(index, "ffxbnd"),
+            () => TexturePackedFiles.Entries = FastLookup(index, "tpfbhd"),
+            () => ShoeboxFiles.Entries = FastLookup(index, "sblytbnd")
+        );
+
+        var secondaryDicts = new List<FileDictionary> { objDict, chrDict, sfxDict };
+
+        if (projectType is ProjectType.DS2S or ProjectType.DS2)
         {
-            var commonPartDict = new FileDictionary();
-            commonPartDict.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Archive != "sd")
-                .Where(e => e.Extension == "commonbnd")
-                .ToList();
-
             secondaryDicts.Add(commonPartDict);
-
-            partDict.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Archive != "sd")
-                .Where(e => e.Extension == "bnd" && e.Folder.Contains("/model/parts"))
-                .ToList();
-
             secondaryDicts.Add(partDict);
         }
         else
@@ -672,27 +747,7 @@ public class ProjectFileLocator : IDisposable
             secondaryDicts.Add(partDict);
         }
 
-        // SFX Textures
-        var sfxDict = new FileDictionary();
-        sfxDict.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "ffxbnd")
-            .ToList();
-
-        secondaryDicts.Add(sfxDict);
-
-        // Merge all unique entries from the secondary dicts into the base dict to form the final dictionary
         TextureFiles = ProjectUtils.MergeFileDictionaries(baseDict, secondaryDicts);
-
-        TexturePackedFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "tpfbhd")
-            .ToList();
-
-        ShoeboxFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "sblytbnd")
-            .ToList();
     }
     #endregion
 
@@ -724,4 +779,18 @@ public class ProjectFileLocator : IDisposable
 
     }
     #endregion
+}
+
+public class MultiIndex
+{
+    public Dictionary<string, Dictionary<string, List<FileDictionaryEntry>>> ExtensionAndFolder { get; set; }
+
+    public Dictionary<string, List<FileDictionaryEntry>> ByExtension { get; set; }
+    public Dictionary<string, List<FileDictionaryEntry>> ByFolderStart { get; set; }
+
+    public FileDictionaryEntry[] NonSdArray { get; set; }
+    public FileDictionaryEntry[] MapArray { get; set; }
+    public FileDictionaryEntry[] AllArray { get; set; }
+
+    public HashSet<string> MapIds { get; set; }
 }
