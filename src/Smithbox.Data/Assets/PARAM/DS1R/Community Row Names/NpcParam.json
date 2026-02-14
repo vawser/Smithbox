@@ -4,13 +4,13 @@
     {
       "ID": 0,
       "Entries": [
-        "Do not erase-can't erase"
+        "Do not erase"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Atarisawari data (copy and paste recommended)-Unobtrusive data (copy and paste recommended)"
+        "Atarisawari (Unobtrusive?) Data (Recommended Source For Copy & Paste)"
       ]
     },
     {
@@ -34,175 +34,175 @@
     {
       "ID": 21,
       "Entries": [
-        "For fire damage test"
+        "For Fire Damage Test"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "DS2 for easy logic test"
+        "DeS2 - Easy Logic Test"
       ]
     },
     {
       "ID": 500,
       "Entries": [
-        "DS2 Proto @ Knight who loves ladder"
+        "DeS2 Proto - Knight Who Loves Ladder"
       ]
     },
     {
       "ID": 501,
       "Entries": [
-        "DS2 Proto: A Big Prisoner Helping a Friend"
+        "DeS2 Proto - Big Jailor Who Helps His Friends"
       ]
     },
     {
       "ID": 502,
       "Entries": [
-        "Skeleton test to talk"
+        "Skeleton Talk Test"
       ]
     },
     {
       "ID": 503,
       "Entries": [
-        "Skeleton for coffin throwing (large)"
+        "For Coffin Throwing - Skeleton (Large)"
       ]
     },
     {
       "ID": 510,
       "Entries": [
-        "DS2 Test @ Knight Assumed"
+        "DeS2 Test - Knight Assumed(?)"
       ]
     },
     {
       "ID": 511,
       "Entries": [
-        "Skeleton_Sword Parry"
+        "Skeleton - Sword Parry"
       ]
     },
     {
       "ID": 514,
       "Entries": [
-        "Wyvern Bird Control"
+        "Wyvern - Bird Control"
       ]
     },
     {
       "ID": 520,
       "Entries": [
-        "DS2Test for upstream"
+        "DeS2Test - Upstream"
       ]
     },
     {
       "ID": 521,
       "Entries": [
-        "DS2Test Friend for Kawakami"
+        "DeS2Test - Upstream Friend"
       ]
     },
     {
       "ID": 522,
       "Entries": [
-        "DS2Test Kawakami 2"
+        "DeS2Test - Upstream 2"
       ]
     },
     {
       "ID": 540,
       "Entries": [
-        "For automatic patrol (running)-For automatic patrol (running)"
+        "DeS2 Test - For Watanabe(?)"
       ]
     },
     {
       "ID": 541,
       "Entries": [
-        "Automatic patrol (walking)-For automatic patrol (walking)"
+        "DeS2 Test - For Watanabe spare(??)"
       ]
     },
     {
       "ID": 550,
       "Entries": [
-        "DS2 test wandering for automatic test (Watanabe management)"
+        "DeS2 Test - Wandering For Automatic Test (Managed by Watanabe?)"
       ]
     },
     {
       "ID": 551,
       "Entries": [
-        "DS2 test wandering reserve for automatic test (Watanabe management)"
+        "DeS2 Test - Wandering For Automatic Test (Managed by Watanabe spare?)"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "DS2 Return Test Knight_Sword"
+        "DeS2 - Return Home Test: Knight (Sword)"
       ]
     },
     {
       "ID": 1003,
       "Entries": [
-        "DS2 {4 end} NPC closing the gate"
+        "DeS2 (End of April?) - Gate Closing NPC"
       ]
     },
     {
       "ID": 6000,
       "Entries": [
-        "Knight Solaire"
+        "Solaire of Astora - Undead Burg"
       ]
     },
     {
       "ID": 6001,
       "Entries": [
-        "Knight Solaire"
+        "[UNUSED] Solaire of Astora - Undead Parish"
       ]
     },
     {
       "ID": 6002,
       "Entries": [
-        "Knight Solaire"
+        "Solaire of Astora - Anor Londo"
       ]
     },
     {
       "ID": 6003,
       "Entries": [
-        "Knight Solaire"
+        "Solaire of Astora - Demon Ruins"
       ]
     },
     {
       "ID": 6004,
       "Entries": [
-        "Knight Solaire"
+        "Solaire of Astora (Hostile) - Demon Ruins"
       ]
     },
     {
       "ID": 6010,
       "Entries": [
-        "Lady of the Darkling"
+        "Darkmoon Knightess"
       ]
     },
     {
       "ID": 6020,
       "Entries": [
-        "Oscar, Knight of Astora"
+        "Oscar of Astora"
       ]
     },
     {
       "ID": 6021,
       "Entries": [
-        "Oscar, Knight of Astora"
+        "Oscar of Astora (Hostile)"
       ]
     },
     {
       "ID": 6030,
       "Entries": [
-        "Big Hat Logan"
+        "Big Hat Logan - Sen's Fortress/Firelink Shrine"
       ]
     },
     {
       "ID": 6031,
       "Entries": [
-        "Big Hat Logan"
+        "Big Hat Logan - Duke's Archives"
       ]
     },
     {
       "ID": 6032,
       "Entries": [
-        "Big Hat Logan"
+        "Big Hat Logan (Hollow) - Duke's Archives"
       ]
     },
     {
@@ -214,13 +214,13 @@
     {
       "ID": 6041,
       "Entries": [
-        "Griggs of Vinheim"
+        "Griggs of Vinheim (Hollow)"
       ]
     },
     {
       "ID": 6050,
       "Entries": [
-        "Dusk of Oolacile"
+        "Dusk of Oolacile - Darkroot Basin"
       ]
     },
     {
@@ -268,13 +268,13 @@
     {
       "ID": 6130,
       "Entries": [
-        "Griggs of Vinheim - Undead Burg"
+        "Laurentius of the Great Swamp"
       ]
     },
     {
       "ID": 6131,
       "Entries": [
-        "Griggs of Vinheim (Hollow) - Blighttown"
+        "Laurentius of the Great Swamp (Hollow)"
       ]
     },
     {
@@ -286,13 +286,13 @@
     {
       "ID": 6180,
       "Entries": [
-        "Ingward"
+        "Ingward, Guardian of the Seal"
       ]
     },
     {
       "ID": 6220,
       "Entries": [
-        "Blacksmith Rickert"
+        "Rickert of Vinheim"
       ]
     },
     {
@@ -316,61 +316,61 @@
     {
       "ID": 6271,
       "Entries": [
-        "Crestfallen Warrior (Hollow) - The Depths"
+        "Crestfallen Warrior (Hollow)"
       ]
     },
     {
       "ID": 6280,
       "Entries": [
-        "Siegmeyer of Catarina"
+        "Siegmeyer of Catarina - Sen's Fortress/Ash Lake"
       ]
     },
     {
       "ID": 6281,
       "Entries": [
-        "Siegmeyer of Catarina"
+        "Siegmeyer of Catarina - Anor Londo"
       ]
     },
     {
       "ID": 6282,
       "Entries": [
-        "Siegmeyer of Catarina"
+        "Siegmeyer of Catarina - Firelink Shrine"
       ]
     },
     {
       "ID": 6283,
       "Entries": [
-        "Siegmeyer of Catarina"
+        "Siegmeyer of Catarina - Blighttown"
       ]
     },
     {
       "ID": 6284,
       "Entries": [
-        "Siegmeyer of Catarina"
+        "Siegmeyer of Catarina - Lost Izalith"
       ]
     },
     {
       "ID": 6290,
       "Entries": [
-        "Sieglinde of Catarina"
+        "Sieglinde of Catarina - Duke's Archives/Firelink Shrine"
       ]
     },
     {
       "ID": 6291,
       "Entries": [
-        "Sieglinde of Catarina - Great Hollow"
+        "Sieglinde of Catarina - Ash Lake"
       ]
     },
     {
       "ID": 6300,
       "Entries": [
-        "Knight Lautrec"
+        "Knight Lautrec of Carim"
       ]
     },
     {
       "ID": 6301,
       "Entries": [
-        "Knight Lautrec"
+        "Knight Lautrec of Carim (Invaded)"
       ]
     },
     {
@@ -382,25 +382,25 @@
     {
       "ID": 6311,
       "Entries": [
-        "Shiva of the East (Invaded)"
+        "[UNUSED] Shiva of the East (Invaded)"
       ]
     },
     {
       "ID": 6320,
       "Entries": [
-        "Patches"
+        "Trusty Patches - The Catacombs"
       ]
     },
     {
       "ID": 6321,
       "Entries": [
-        "Patches"
+        "Trusty Patches - Tomb of the Giants/Firelink Shrine"
       ]
     },
     {
       "ID": 6350,
       "Entries": [
-        "絵師エレーアミス"
+        "[UNUSED] Painter Ariamis"
       ]
     },
     {
@@ -412,19 +412,19 @@
     {
       "ID": 6390,
       "Entries": [
-        "Black Knight Tarkus"
+        "[UNUSED] Black Iron Tarkus"
       ]
     },
     {
       "ID": 6400,
       "Entries": [
-        "ベルカ騎士"
+        "[UNUSED] Velka Knight"
       ]
     },
     {
       "ID": 6410,
       "Entries": [
-        "魔女マロース"
+        "[UNUSED] Witch Beatrice"
       ]
     },
     {
@@ -436,121 +436,121 @@
     {
       "ID": 6421,
       "Entries": [
-        "Shiva's Bodyguard (Invaded)"
+        "[UNUSED] Shiva's Bodyguard (Invaded)"
       ]
     },
     {
       "ID": 6490,
       "Entries": [
-        "Lautrec Bodyguard 1"
+        "Lautrec's Companion 1"
       ]
     },
     {
       "ID": 6500,
       "Entries": [
-        "Lautrec Bodyguard 2"
+        "Lautrec's Companion 2"
       ]
     },
     {
       "ID": 6510,
       "Entries": [
-        "Iron Tarkus"
+        "Black Iron Tarkus (Summon) - Sen's Fortress"
       ]
     },
     {
       "ID": 6511,
       "Entries": [
-        "Iron Tarkus"
+        "[UNUSED] Black Iron Tarkus (Hostile) - Lost Izalith"
       ]
     },
     {
       "ID": 6520,
       "Entries": [
-        "Witch Beatrice"
+        "Witch Beatrice (Summon) - Darkroot Garden"
       ]
     },
     {
       "ID": 6521,
       "Entries": [
-        "Witch Beatrice"
+        "Witch Beatrice (Summon) - New Londo Ruins"
       ]
     },
     {
       "ID": 6530,
       "Entries": [
-        "Maneater Mildred"
+        "Maneater Mildred (Summon)"
       ]
     },
     {
       "ID": 6531,
       "Entries": [
-        "Maneater Mildred"
+        "Maneater Mildred (Invader)"
       ]
     },
     {
       "ID": 6540,
       "Entries": [
-        "Knight Solaire"
+        "Solaire of Astora (Summon) - Undead Parish"
       ]
     },
     {
       "ID": 6541,
       "Entries": [
-        "Knight Solaire"
+        "Solaire of Astora (Summon) - The Depths"
       ]
     },
     {
       "ID": 6542,
       "Entries": [
-        "Knight Solaire"
+        "Solaire of Astora (Summon) - Anor Londo"
       ]
     },
     {
       "ID": 6543,
       "Entries": [
-        "Knight Solaire"
+        "Solaire of Astora (Summon) - Demon Ruins"
       ]
     },
     {
       "ID": 6544,
       "Entries": [
-        "Knight Solaire"
+        "Solaire of Astora (Summon) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 6550,
       "Entries": [
-        "Paladin Leeroy"
+        "Paladin Leeroy (Summon)"
       ]
     },
     {
       "ID": 6551,
       "Entries": [
-        "Paladin Leeroy"
+        "Paladin Leeroy (Invader)"
       ]
     },
     {
       "ID": 6560,
       "Entries": [
-        "Knight Kirk"
+        "Kirk, Knight of Thorns (Invader) - The Depths"
       ]
     },
     {
       "ID": 6561,
       "Entries": [
-        "Knight Kirk"
+        "Kirk, Knight of Thorns (Invader) - Demon Ruins"
       ]
     },
     {
       "ID": 6562,
       "Entries": [
-        "Knight Kirk"
+        "Kirk, Knight of Thorns (Invader) - Lost Izalith"
       ]
     },
     {
       "ID": 6570,
       "Entries": [
-        "King Jeremiah"
+        "Xanthous King Jeremiah (Invader)"
       ]
     },
     {
@@ -562,25 +562,25 @@
     {
       "ID": 6590,
       "Entries": [
-        "Knight Lautrec"
+        "Knight Lautrec of Carim - Undead Parish (Summon)"
       ]
     },
     {
       "ID": 6591,
       "Entries": [
-        "Knight Lautrec"
+        "Knight Lautrec of Carim - The Depths (Summon)"
       ]
     },
     {
       "ID": 6600,
       "Entries": [
-        "Prince Ricard"
+        "Undead Prince Ricard"
       ]
     },
     {
       "ID": 6610,
       "Entries": [
-        "Crystal Knight"
+        "Hollow Crystal Knight"
       ]
     },
     {
@@ -592,19 +592,19 @@
     {
       "ID": 6640,
       "Entries": [
-        "Dark Moon Sword (Heavy Knight)"
+        "Darkmoon Soldier (Sword)"
       ]
     },
     {
       "ID": 6650,
       "Entries": [
-        "Dark Moon Sword (Light Knight)"
+        "Darkmoon Soldier (Greatsword)"
       ]
     },
     {
       "ID": 6700,
       "Entries": [
-        "Dusk of Oolacile"
+        "Dusk of Oolacile - Chasm of the Abyss"
       ]
     },
     {
@@ -616,157 +616,157 @@
     {
       "ID": 6801,
       "Entries": [
-        "Forest Hunter - Bandit"
+        "Forest Hunter A - Bandit"
       ]
     },
     {
       "ID": 6802,
       "Entries": [
-        "Forest Hunter - Knight"
+        "Forest Hunter B - Warrior"
       ]
     },
     {
       "ID": 6803,
       "Entries": [
-        "Forest Hunter - Hunter"
+        "Forest Hunter C - Hunter"
       ]
     },
     {
       "ID": 6804,
       "Entries": [
-        "Forest Hunter - Cleric"
+        "Forest Hunter D - Sorcerer"
       ]
     },
     {
       "ID": 6805,
       "Entries": [
-        "Forest Hunter - Sorcerer"
+        "Forest Hunter E - Cleric"
       ]
     },
     {
       "ID": 6806,
       "Entries": [
-        "Forest Hunter - Thief"
+        "Forest Hunter F - Thief"
       ]
     },
     {
       "ID": 6810,
       "Entries": [
-        "Tutorial Prisoner 1"
+        "[UNUSED] Tutorial Prisoner 1"
       ]
     },
     {
       "ID": 6811,
       "Entries": [
-        "Tutorial Prisoner 2"
+        "[UNUSED] Tutorial Prisoner 2"
       ]
     },
     {
       "ID": 7100,
       "Entries": [
-        "Castle 2_Vagrant NPC_Warrior"
+        "[UNUSED] Vagrant NPC - The Depths - Warrior"
       ]
     },
     {
       "ID": 7110,
       "Entries": [
-        "Castle 1 ・ First half_Vagrant NPC_Voyeur"
+        "[UNUSED] Vagrant NPC - Undead Burg - Thief"
       ]
     },
     {
       "ID": 7111,
       "Entries": [
-        "Castle 1st & 2nd half_Vagrant NPC_Voyeur"
+        "[UNUSED] Vagrant NPC - Undead Parish - Thief"
       ]
     },
     {
       "ID": 7120,
       "Entries": [
-        "Painting world_Vagrant NPC_Wanderer"
+        "[UNUSED] Vagrant NPC - Painted World - Wanderer"
       ]
     },
     {
       "ID": 7130,
       "Entries": [
-        "Moriwaba, first half_Vagrant NPC_Hunter"
+        "[UNUSED] Vagrant NPC - Darkroot Garden (1st half) - Hunter"
       ]
     },
     {
       "ID": 7131,
       "Entries": [
-        "Moriwaba, latter half_Vagrant NPC_Hunter"
+        "[UNUSED] Vagrant NPC - Darkroot Garden (2nd half) - Hunter"
       ]
     },
     {
       "ID": 7140,
       "Entries": [
-        "Cemetery 1_Vagrant NPC_Cleric"
+        "[UNUSED] Vagrant NPC - The Catacombs - Cleric"
       ]
     },
     {
       "ID": 7150,
       "Entries": [
-        "Cemetery 2_Vagrant NPC_Cleric"
+        "[UNUSED] Vagrant NPC - Tomb of the Giants - Cleric"
       ]
     },
     {
       "ID": 7160,
       "Entries": [
-        "Underground Lake_Vagrant NPC_Dragon Newt"
+        "[UNUSED] Vagrant NPC - Ash Lake - Dragon Newt"
       ]
     },
     {
       "ID": 7170,
       "Entries": [
-        "Kagemachi_Vagrant NPC_Wanderer"
+        "[UNUSED] Vagrant NPC - Blighttown - Wanderer"
       ]
     },
     {
       "ID": 7180,
       "Entries": [
-        "Closed city, first half_Vagrant NPC_Sorcerer"
+        "[UNUSED] Vagrant NPC - Demon Ruins/Lost Izalith - Pyromancer"
       ]
     },
     {
       "ID": 7190,
       "Entries": [
-        "Royal Castle 1_Vagrant NPC_Warrior"
+        "[UNUSED] Vagrant NPC - Sen's Fortress - Warrior"
       ]
     },
     {
       "ID": 7200,
       "Entries": [
-        "Royal Castle 2_Vagrant NPC_Knight"
+        "[UNUSED] Vagrant NPC - Anor Londo - Knight"
       ]
     },
     {
       "ID": 7210,
       "Entries": [
-        "Abyss_Vagrant NPC_Bandit"
+        "[UNUSED] Vagrant NPC - New Londo Ruins - Bandit"
       ]
     },
     {
       "ID": 7220,
       "Entries": [
-        "Crystal Tower_Vagrant NPC_Sorcerer"
+        "[UNUSED] Vagrant NPC - Duke's Archives/Crystal Cave - Sorcerer"
       ]
     },
     {
       "ID": 7230,
       "Entries": [
-        "Great tomb_Vagrant NPC_Not possessed"
+        "[UNUSED] Vagrant NPC - Kiln of the First Flame - Deprived"
       ]
     },
     {
       "ID": 7240,
       "Entries": [
-        "Tutorial_Vagrant NPC_What You Don't Have"
+        "[UNUSED] Vagrant NPC - Undead Asylum - Deprived"
       ]
     },
     {
       "ID": 10100,
       "Entries": [
-        "NPC Conversation Test 1 (garbled NPC in pot)"
+        "NPC Conversation Test 1 (NPC Disguised as Jar)"
       ]
     },
     {
@@ -784,85 +784,85 @@
     {
       "ID": 120000,
       "Entries": [
-        "Rat"
+        "Large Undead Rat"
       ]
     },
     {
       "ID": 120100,
       "Entries": [
-        "Small Rat"
+        "Small Undead Rat - Firelink Shrine"
       ]
     },
     {
       "ID": 120101,
       "Entries": [
-        "Small Rat"
+        "Small Undead Rat - Undead Burg"
       ]
     },
     {
       "ID": 120102,
       "Entries": [
-        "Small Rat"
+        "Small Undead Rat - The Depths"
       ]
     },
     {
       "ID": 120103,
       "Entries": [
-        "Small Rat"
+        "Small Undead Rat - Painted World"
       ]
     },
     {
       "ID": 120104,
       "Entries": [
-        "Small Rat"
+        "Small Undead Rat (Black Phantom) - The Depths"
       ]
     },
     {
       "ID": 120200,
       "Entries": [
-        "Giant Rat"
+        "Giant Undead Rat"
       ]
     },
     {
       "ID": 120300,
       "Entries": [
-        "Plague Rat"
+        "Undead Snow Rat"
       ]
     },
     {
       "ID": 206000,
       "Entries": [
-        "Infested Ghoul"
+        "Infested Ghoul (Sword)"
       ]
     },
     {
       "ID": 206001,
       "Entries": [
-        "Infested Ghoul"
+        "Infested Ghoul (Spear)"
       ]
     },
     {
       "ID": 206002,
       "Entries": [
-        "Infested Ghoul"
+        "Infested Ghoul (Corpse)"
       ]
     },
     {
       "ID": 206003,
       "Entries": [
-        "Infested Ghoul"
+        "Infested Ghoul (Sword - Black Phantom)"
       ]
     },
     {
       "ID": 206004,
       "Entries": [
-        "Infested Ghoul"
+        "Infested Ghoul (Spear - Black Phantom)"
       ]
     },
     {
       "ID": 206005,
       "Entries": [
-        "Infested Ghoul"
+        "Infested Ghoul (Corpse - Black Phantom)"
       ]
     },
     {
@@ -874,7 +874,7 @@
     {
       "ID": 223100,
       "Entries": [
-        "Firesage Demon"
+        "Demon Firesage"
       ]
     },
     {
@@ -892,13 +892,13 @@
     {
       "ID": 224001,
       "Entries": [
-        "Capra Demon"
+        "Lesser Capra Demon"
       ]
     },
     {
       "ID": 224002,
       "Entries": [
-        "Capra Demon"
+        "Lesser Capra Demon (Black Phantom)"
       ]
     },
     {
@@ -910,13 +910,13 @@
     {
       "ID": 225002,
       "Entries": [
-        "Taurus Demon"
+        "Lesser Taurus Demon"
       ]
     },
     {
       "ID": 225003,
       "Entries": [
-        "Taurus Demon"
+        "[UNUSED] Lesser Taurus Demon (7 Heroes??)"
       ]
     },
     {
@@ -928,79 +928,79 @@
     {
       "ID": 226001,
       "Entries": [
-        "Batwing Demon"
+        "[UNUSED] Batwing Demon - Darkroot Garden"
       ]
     },
     {
       "ID": 227000,
       "Entries": [
-        "Mushroom Parent"
+        "Mushroom-Man Parent - Darkroot Garden"
       ]
     },
     {
       "ID": 227001,
       "Entries": [
-        "Mushroom Parent"
+        "Mushroom-Man Parent - Great Hollow"
       ]
     },
     {
       "ID": 227002,
       "Entries": [
-        "Mushroom Parent"
+        "Mushroom-Man Parent (Black Phantom) - Darkroot Garden"
       ]
     },
     {
       "ID": 228000,
       "Entries": [
-        "Mushroom Child"
+        "Mushroom-Man Child - Darkroot Garden"
       ]
     },
     {
       "ID": 228001,
       "Entries": [
-        "Mushroom Child"
+        "Mushroom-Man Child - Great Hollow"
       ]
     },
     {
       "ID": 228002,
       "Entries": [
-        "Mushroom Child"
+        "Mushroom-Man Child - Darkroot Garden"
       ]
     },
     {
       "ID": 230000,
       "Entries": [
-        "Prowling Demon"
+        "Titanite Demon - The Catacombs"
       ]
     },
     {
       "ID": 230001,
       "Entries": [
-        "Prowling Demon"
+        "Titanite Demon - Undead Parish"
       ]
     },
     {
       "ID": 230002,
       "Entries": [
-        "Prowling Demon"
+        "Titanite Demon - Sen's Fortress"
       ]
     },
     {
       "ID": 230003,
       "Entries": [
-        "Prowling Demon"
+        "Titanite Demon - Sen's Fortress 2"
       ]
     },
     {
       "ID": 230004,
       "Entries": [
-        "Prowling Demon"
+        "Titanite Demon - Anor Londo"
       ]
     },
     {
       "ID": 230005,
       "Entries": [
-        "Prowling Demon"
+        "Titanite Demon - Demon Ruins"
       ]
     },
     {
@@ -1024,43 +1024,43 @@
     {
       "ID": 233001,
       "Entries": [
-        "Demonic Foliage"
+        "Demonic Foliage (Darkroot Garden 2nd half)"
       ]
     },
     {
       "ID": 236000,
       "Entries": [
-        "Smough"
+        "Executioner Smough"
       ]
     },
     {
       "ID": 236001,
       "Entries": [
-        "Smough"
+        "Executioner Smough (Lightning)"
       ]
     },
     {
       "ID": 237000,
       "Entries": [
-        "Channeler"
+        "Channeler - Undead Parish"
       ]
     },
     {
       "ID": 237001,
       "Entries": [
-        "Channeler"
+        "Channeler - Duke's Archives"
       ]
     },
     {
       "ID": 237002,
       "Entries": [
-        "Channeler"
+        "Channeler - The Depths"
       ]
     },
     {
       "ID": 237003,
       "Entries": [
-        "Channeler"
+        "Channeler (Black Phantom) - Duke's Archives"
       ]
     },
     {
@@ -1072,13 +1072,13 @@
     {
       "ID": 238001,
       "Entries": [
-        "Stone Knight"
+        "[UNUSED] Stone Knight - Royal Garden"
       ]
     },
     {
       "ID": 238002,
       "Entries": [
-        "Stone Knight"
+        "Stone Knight (Black Phantom)"
       ]
     },
     {
@@ -1090,7 +1090,7 @@
     {
       "ID": 239003,
       "Entries": [
-        "Darkwraith"
+        "Darkwraith (Black Phantom)"
       ]
     },
     {
@@ -1102,427 +1102,427 @@
     {
       "ID": 241000,
       "Entries": [
-        "Silver Knight"
+        "Silver Knight (Sword)"
       ]
     },
     {
       "ID": 241003,
       "Entries": [
-        "Silver Knight"
+        "Silver Knight (Spear)"
       ]
     },
     {
       "ID": 241004,
       "Entries": [
-        "Silver Knight"
+        "Silver Knight (Greatbow)"
       ]
     },
     {
       "ID": 241005,
       "Entries": [
-        "Silver Knight"
+        "Silver Knight (Sword - Black Phantom)"
       ]
     },
     {
       "ID": 241006,
       "Entries": [
-        "Silver Knight"
+        "Silver Knight (Spear - Black Phantom)"
       ]
     },
     {
       "ID": 243000,
       "Entries": [
-        "Demonic Statue"
+        "Demonic Statue - Demon Ruins"
       ]
     },
     {
       "ID": 243001,
       "Entries": [
-        "Demonic Statue"
+        "Demonic Statue - Lost Izalith"
       ]
     },
     {
       "ID": 250000,
       "Entries": [
-        "Hollow"
+        "Hollow (Sword) - Undead Burg"
       ]
     },
     {
       "ID": 250001,
       "Entries": [
-        "Hollow"
+        "Hollow (Torch) - Undead Burg"
       ]
     },
     {
       "ID": 250010,
       "Entries": [
-        "Hollow"
+        "Hollow (Sword) - Painted World"
       ]
     },
     {
       "ID": 250011,
       "Entries": [
-        "Hollow"
+        "Hollow (Torch) - Painted World"
       ]
     },
     {
       "ID": 250012,
       "Entries": [
-        "Hollow"
+        "Hollow (Bow) - Painted World"
       ]
     },
     {
       "ID": 250020,
       "Entries": [
-        "Hollow"
+        "Hollow (Unarmed) - Undead Asylum"
       ]
     },
     {
       "ID": 250021,
       "Entries": [
-        "Hollow"
+        "Hollow (Bow) - Undead Asylum"
       ]
     },
     {
       "ID": 250022,
       "Entries": [
-        "Hollow"
+        "Hollow (Sword) - Undead Asylum"
       ]
     },
     {
       "ID": 250023,
       "Entries": [
-        "Hollow"
+        "Hollow (Torch) - Undead Asylum (Revisit)"
       ]
     },
     {
       "ID": 250024,
       "Entries": [
-        "Hollow"
+        "Hollow (Bow) - Undead Asylum (Revisit)"
       ]
     },
     {
       "ID": 250025,
       "Entries": [
-        "Hollow"
+        "Hollow (Sword) - Undead Asylum (Revisit)"
       ]
     },
     {
       "ID": 250030,
       "Entries": [
-        "Hollow"
+        "Hollow (Sword) - The Depths"
       ]
     },
     {
       "ID": 250031,
       "Entries": [
-        "Hollow"
+        "Hollow (Torch) - The Depths"
       ]
     },
     {
       "ID": 250032,
       "Entries": [
-        "Hollow"
+        "Hollow (Sword - Black Phantom) - The Depths"
       ]
     },
     {
       "ID": 250033,
       "Entries": [
-        "Hollow"
+        "Hollow (Torch - Black Phantom) - The Depths"
       ]
     },
     {
       "ID": 250040,
       "Entries": [
-        "Hollow"
+        "Hollow (Unarmed) - New Londo Ruins"
       ]
     },
     {
       "ID": 250050,
       "Entries": [
-        "Hollow"
+        "Hollow (Sword) - Undead Parish"
       ]
     },
     {
       "ID": 250051,
       "Entries": [
-        "Hollow"
+        "Hollow (Torch) - Undead Parish"
       ]
     },
     {
       "ID": 250052,
       "Entries": [
-        "Hollow"
+        "Hollow (Bow) - Undead Parish"
       ]
     },
     {
       "ID": 250053,
       "Entries": [
-        "Hollow"
+        "Hollow (Black Phantom) - Undead Parish"
       ]
     },
     {
       "ID": 251000,
       "Entries": [
-        "Undead Merchant"
+        "Undead Merchant (Female)"
       ]
     },
     {
       "ID": 251001,
       "Entries": [
-        "Undead Merchant"
+        "Undead Merchant (Male)"
       ]
     },
     {
       "ID": 252000,
       "Entries": [
-        "Undead Assassin"
+        "Hollow Thief"
       ]
     },
     {
       "ID": 252001,
       "Entries": [
-        "Undead Assassin"
+        "Hollow Thief (Black Phantom)"
       ]
     },
     {
       "ID": 253002,
       "Entries": [
-        "Blowdart Hollow"
+        "Hollow Blowdart Sniper"
       ]
     },
     {
       "ID": 254000,
       "Entries": [
-        "Hollow Warrior"
+        "Hollow Warrior (Sword) - Firelink Shrine"
       ]
     },
     {
       "ID": 254001,
       "Entries": [
-        "Hollow Warrior"
+        "Hollow Warrior (Axe) - Firelink Shrine"
       ]
     },
     {
       "ID": 254002,
       "Entries": [
-        "Hollow Warrior"
+        "Hollow Warrior (Firebomb) - Firelink Shrine"
       ]
     },
     {
       "ID": 254010,
       "Entries": [
-        "Hollow Warrior"
+        "Hollow Warrior (Sword) - Undead Burg"
       ]
     },
     {
       "ID": 254011,
       "Entries": [
-        "Hollow Warrior"
+        "Hollow Warrior (Axe) - Undead Burg"
       ]
     },
     {
       "ID": 254012,
       "Entries": [
-        "Hollow Warrior"
+        "Hollow Warrior (Firebomb) - Undead Burg"
       ]
     },
     {
       "ID": 254013,
       "Entries": [
-        "Hollow Warrior"
+        "Hollow Warrior (Sword - Black Phantom) - Undead Burg"
       ]
     },
     {
       "ID": 254014,
       "Entries": [
-        "Hollow Warrior"
+        "Hollow Warrior (Axe - Black Phantom) - Undead Burg"
       ]
     },
     {
       "ID": 255000,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Spear) - Undead Burg"
       ]
     },
     {
       "ID": 255001,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Sword) - Undead Burg"
       ]
     },
     {
       "ID": 255002,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Crossbow) - Undead Burg"
       ]
     },
     {
       "ID": 255010,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Sword) - Firelink Shrine"
       ]
     },
     {
       "ID": 255030,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Sword) - Undead Asylum"
       ]
     },
     {
       "ID": 255031,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Sword) - Undead Asylum (Revisit)"
       ]
     },
     {
       "ID": 255032,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Spear) - Undead Asylum (Revisit)"
       ]
     },
     {
       "ID": 255040,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Spear) - Undead Parish"
       ]
     },
     {
       "ID": 255041,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Sword) - Undead Parish"
       ]
     },
     {
       "ID": 255042,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Crossbow) - Undead Parish"
       ]
     },
     {
       "ID": 255043,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Spear - Black Phantom) - Undead Parish"
       ]
     },
     {
       "ID": 255044,
       "Entries": [
-        "Hollow Soldier"
+        "Hollow Soldier (Sword - Black Phantom) - Undead Parish"
       ]
     },
     {
       "ID": 256000,
       "Entries": [
-        "Balder Knight"
+        "Balder Knight (Sword) - Undead Parish"
       ]
     },
     {
       "ID": 256001,
       "Entries": [
-        "Balder Knight"
+        "[UNUSED] Balder Knight (Crossbow) - Undead Parish"
       ]
     },
     {
       "ID": 256002,
       "Entries": [
-        "Balder Knight"
+        "Balder Knight (Rapier) - Undead Parish"
       ]
     },
     {
       "ID": 256003,
       "Entries": [
-        "Balder Knight"
+        "Balder Knight (Sword - Black Phantom) - Undead Parish"
       ]
     },
     {
       "ID": 256004,
       "Entries": [
-        "Balder Knight"
+        "Balder Knight (Rapier - Black Phantom) - Undead Parish"
       ]
     },
     {
       "ID": 256010,
       "Entries": [
-        "Balder Knight"
+        "Balder Knight (Sword) - Sen's Fortress"
       ]
     },
     {
       "ID": 256011,
       "Entries": [
-        "Balder Knight"
+        "Balder Knight (Crossbow) - Sen's Fortress"
       ]
     },
     {
       "ID": 256012,
       "Entries": [
-        "Balder Knight"
+        "Balder Knight (Rapier) - Sen's Fortress"
       ]
     },
     {
       "ID": 256013,
       "Entries": [
-        "Balder Knight"
+        "Balder Knight (Sword - Black Phantom) - Sen's Fortress"
       ]
     },
     {
       "ID": 256014,
       "Entries": [
-        "Balder Knight"
+        "Balder Knight (Rapier - Black Phantom) - Sen's Fortress"
       ]
     },
     {
       "ID": 257000,
       "Entries": [
-        "Heavy Knight"
+        "[UNUSED] Berenike Knight (Greatsword) - Undead Parish"
       ]
     },
     {
       "ID": 257001,
       "Entries": [
-        "Heavy Knight"
+        "Berenike Knight (Mace) - Undead Parish"
       ]
     },
     {
       "ID": 257002,
       "Entries": [
-        "Heavy Knight"
+        "Berenike Knight (Greatsword - Black Phantom) - Undead Parish"
       ]
     },
     {
       "ID": 257010,
       "Entries": [
-        "Heavy Knight"
+        "[UNUSED] Berenike Knight (Greatsword) - Sen's Fortress"
       ]
     },
     {
       "ID": 257011,
       "Entries": [
-        "Heavy Knight"
+        "Berenike Knight (Mace) - Sen's Fortress"
       ]
     },
     {
       "ID": 257012,
       "Entries": [
-        "Heavy Knight"
+        "[UNUSED] Berenike Knight (Greatsword - Black Phantom) - Sen's Fortress"
       ]
     },
     {
       "ID": 257020,
       "Entries": [
-        "Heavy Knight"
+        "Berenike Knight (Greatsword) - Painted World"
       ]
     },
     {
       "ID": 257021,
       "Entries": [
-        "Heavy Knight"
+        "[UNUSED] Berenike Knight (Mace) - Painted World"
       ]
     },
     {
       "ID": 257022,
       "Entries": [
-        "Heavy Knight"
+        "[UNUSED] Berenike Knight (Greatsword - Black Phantom) - Painted World"
       ]
     },
     {
@@ -1534,121 +1534,121 @@
     {
       "ID": 265000,
       "Entries": [
-        "Necromancer"
+        "Hollow Necromancer"
       ]
     },
     {
       "ID": 266000,
       "Entries": [
-        "Butcher"
+        "Hollow Maneater Butcher"
       ]
     },
     {
       "ID": 266001,
       "Entries": [
-        "Butcher"
+        "Hollow Maneater Butcher (Black Phantom)"
       ]
     },
     {
       "ID": 267000,
       "Entries": [
-        "Ghost (Male)"
+        "Cursed Ghost (Male)"
       ]
     },
     {
       "ID": 268000,
       "Entries": [
-        "Ghost (Female)"
+        "Cursed Ghost (Female)"
       ]
     },
     {
       "ID": 269000,
       "Entries": [
-        "Serpent Soldier"
+        "Man-Serpent Soldier - Sen's Fortress"
       ]
     },
     {
       "ID": 269001,
       "Entries": [
-        "Serpent Soldier"
+        "Man-Serpent Soldier (Jailer) - Duke's Archives"
       ]
     },
     {
       "ID": 269002,
       "Entries": [
-        "Serpent Soldier"
+        "Man-Serpent Soldier - Duke's Archives"
       ]
     },
     {
       "ID": 269003,
       "Entries": [
-        "Serpent Soldier"
+        "Man-Serpent Soldier (Strong) - Sen's Fortress"
       ]
     },
     {
       "ID": 269004,
       "Entries": [
-        "Serpent Soldier"
+        "Man-Serpent Soldier (Black Phantom) - Sen's Fortress"
       ]
     },
     {
       "ID": 270000,
       "Entries": [
-        "Serpent Mage"
+        "Man-Serpent Sorcerer - Sen's Fortress"
       ]
     },
     {
       "ID": 270001,
       "Entries": [
-        "Serpent Mage"
+        "Man-Serpent Sorcerer - Duke's Archives"
       ]
     },
     {
       "ID": 270002,
       "Entries": [
-        "Serpent Mage"
+        "Man-Serpent Sorcerer (Black Phantom) - Sen's Fortress"
       ]
     },
     {
       "ID": 271000,
       "Entries": [
-        "Crystal Golem"
+        "Crystal Golem - Duke's Archives"
       ]
     },
     {
       "ID": 271001,
       "Entries": [
-        "Crystal Golem"
+        "Crystal Golem - Darkroot Basin"
       ]
     },
     {
       "ID": 271002,
       "Entries": [
-        "Crystal Golem"
+        "Crystal Golem (Black Phantom) - Duke's Archives"
       ]
     },
     {
       "ID": 271100,
       "Entries": [
-        "Crystal Golem (Gold)"
+        "Crystal Golem (Gold) - Darkroot Basin"
       ]
     },
     {
       "ID": 271101,
       "Entries": [
-        "Crystal Golem (Gold)"
+        "Crystal Golem (Gold) - Duke's Archives"
       ]
     },
     {
       "ID": 273000,
       "Entries": [
-        "Priscilla"
+        "Crossbreed Priscilla"
       ]
     },
     {
       "ID": 273100,
       "Entries": [
-        "Priscilla's Tail"
+        "Crossbreed Priscilla's Tail"
       ]
     },
     {
@@ -1660,139 +1660,139 @@
     {
       "ID": 278000,
       "Entries": [
-        "Mimic"
+        "Mimic - Sen's Fortress"
       ]
     },
     {
       "ID": 278010,
       "Entries": [
-        "Mimic"
+        "Mimic - Anor Londo 1"
       ]
     },
     {
       "ID": 278011,
       "Entries": [
-        "Mimic"
+        "Mimic - Anor Londo 2"
       ]
     },
     {
       "ID": 278012,
       "Entries": [
-        "Mimic"
+        "Mimic - Anor Londo 3"
       ]
     },
     {
       "ID": 278013,
       "Entries": [
-        "Mimic"
+        "Mimic - Anor Londo 4"
       ]
     },
     {
       "ID": 278020,
       "Entries": [
-        "Mimic"
+        "Mimic - Duke's Archives 1"
       ]
     },
     {
       "ID": 278021,
       "Entries": [
-        "Mimic"
+        "Mimic - Duke's Archives 2"
       ]
     },
     {
       "ID": 278030,
       "Entries": [
-        "Mimic"
+        "Mimic - Royal Garden 1"
       ]
     },
     {
       "ID": 278031,
       "Entries": [
-        "Mimic"
+        "Mimic - Royal Garden 2"
       ]
     },
     {
       "ID": 279000,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Sword) - Undead Burg"
       ]
     },
     {
       "ID": 279001,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Greatsword) - Undead Parish"
       ]
     },
     {
       "ID": 279010,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Halberd) - Darkroot Basin"
       ]
     },
     {
       "ID": 279020,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Greataxe) - The Catacombs"
       ]
     },
     {
       "ID": 279030,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Halberd) - Tomb of the Giants"
       ]
     },
     {
       "ID": 279050,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Sword) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 279051,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Greatsword) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 279052,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Greataxe) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 279053,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Halberd) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 279060,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Sword - Black Phantom) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 279061,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Greatsword - Black Phantom) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 279062,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Greataxe - Black Phantom) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 279063,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Halberd - Black Phantom) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 279070,
       "Entries": [
-        "Black Knight"
+        "Black Knight (Sword) - Undead Asylum"
       ]
     },
     {
@@ -1804,91 +1804,91 @@
     {
       "ID": 280000,
       "Entries": [
-        "Crystal Hollow"
+        "Hollow Crystallized Soldier (Sword)"
       ]
     },
     {
       "ID": 280001,
       "Entries": [
-        "Crystal Hollow"
+        "Hollow Crystallized Soldier (Bow)"
       ]
     },
     {
       "ID": 281000,
       "Entries": [
-        "Infested Barbarian (Club)"
+        "Hollow Infested Barbarian (Club)"
       ]
     },
     {
       "ID": 281001,
       "Entries": [
-        "Infested Barbarian (Club)"
+        "Hollow Infested Barbarian (Club - Black Phantom)"
       ]
     },
     {
       "ID": 281100,
       "Entries": [
-        "Infested Barbarian (Boulder)"
+        "Hollow Infested Barbarian (Boulder)"
       ]
     },
     {
       "ID": 281101,
       "Entries": [
-        "Infested Barbarian (Boulder)"
+        "Hollow Infested Barbarian (Boulder - Black Phantom)"
       ]
     },
     {
       "ID": 283010,
       "Entries": [
-        "Hollow Phalanx"
+        "Phalanx"
       ]
     },
     {
       "ID": 284000,
       "Entries": [
-        "Engorged Hollow"
+        "Engorged Hollow (Torch)"
       ]
     },
     {
       "ID": 284001,
       "Entries": [
-        "Engorged Hollow"
+        "Engorged Hollow (Unarmed)"
       ]
     },
     {
       "ID": 284002,
       "Entries": [
-        "Engorged Hollow"
+        "Engorged Hollow (Unarmed - Special Drop)"
       ]
     },
     {
       "ID": 284003,
       "Entries": [
-        "Engorged Hollow"
+        "Engorged Hollow (Torch - Black Phantom)"
       ]
     },
     {
       "ID": 284004,
       "Entries": [
-        "Engorged Hollow"
+        "Engorged Hollow (Unarmed - Black Phantom)"
       ]
     },
     {
       "ID": 286000,
       "Entries": [
-        "Giant"
+        "Slave Giant"
       ]
     },
     {
       "ID": 286001,
       "Entries": [
-        "Giant"
+        "Giant Blacksmith"
       ]
     },
     {
       "ID": 286002,
       "Entries": [
-        "Giant"
+        "Slave Giant (Black Phantom)"
       ]
     },
     {
@@ -1900,193 +1900,193 @@
     {
       "ID": 287001,
       "Entries": [
-        "Royal Sentinel"
+        "Royal Sentinel (Black Phantom)"
       ]
     },
     {
       "ID": 287010,
       "Entries": [
-        "Royal Sentinel"
+        "Giant Sentinel"
       ]
     },
     {
       "ID": 287011,
       "Entries": [
-        "Royal Sentinel"
+        "Giant Sentinel (Black Phantom)"
       ]
     },
     {
       "ID": 290000,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Sword) - Firelink Shrine"
       ]
     },
     {
       "ID": 290001,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Bow) - Firelink Shrine"
       ]
     },
     {
       "ID": 290002,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Falchion) - Firelink Shrine"
       ]
     },
     {
       "ID": 290010,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Sword) - The Catacombs"
       ]
     },
     {
       "ID": 290011,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Bow) - The Catacombs"
       ]
     },
     {
       "ID": 290012,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Falchion) - The Catacombs"
       ]
     },
     {
       "ID": 290013,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Sword - Black Phantom) - The Catacombs"
       ]
     },
     {
       "ID": 290014,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Falchion - Black Phantom) - The Catacombs"
       ]
     },
     {
       "ID": 290020,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Sword - Immortal) - The Catacombs"
       ]
     },
     {
       "ID": 290021,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Bow - Immortal) - The Catacombs"
       ]
     },
     {
       "ID": 290022,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Falchion - Immortal) - The Catacombs"
       ]
     },
     {
       "ID": 290030,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Sword - Immortal) - Tomb of the Giants"
       ]
     },
     {
       "ID": 290031,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Bow - Immortal) - Tomb of the Giants"
       ]
     },
     {
       "ID": 290032,
       "Entries": [
-        "Skeleton"
+        "Skeleton (Falchion - Immortal) - Tomb of the Giants"
       ]
     },
     {
       "ID": 291000,
       "Entries": [
-        "Giant Skeleton"
+        "Giant Skeleton (Greatsword) - Firelink Shrine"
       ]
     },
     {
       "ID": 291001,
       "Entries": [
-        "Giant Skeleton"
+        "Giant Skeleton (Greatbow) - The Catacombs"
       ]
     },
     {
       "ID": 291002,
       "Entries": [
-        "Giant Skeleton"
+        "Giant Skeleton (Greatsword) - The Catacombs"
       ]
     },
     {
       "ID": 291010,
       "Entries": [
-        "Giant Skeleton"
+        "Giant Skeleton (Greatbow) - Tomb of the Giants"
       ]
     },
     {
       "ID": 291011,
       "Entries": [
-        "Giant Skeleton"
+        "Giant Skeleton (Greatsword) - Tomb of the Giants"
       ]
     },
     {
       "ID": 291012,
       "Entries": [
-        "Giant Skeleton"
+        "Giant Skeleton (Greatsword - Immortal) - Tomb of the Giants"
       ]
     },
     {
       "ID": 291013,
       "Entries": [
-        "Giant Skeleton"
+        "Giant Skeleton (Greatbow - Strong) - Tomb of the Giants"
       ]
     },
     {
       "ID": 291014,
       "Entries": [
-        "Giant Skeleton"
+        "Giant Skeleton (Greatsword - Strong) - Tomb of the Giants"
       ]
     },
     {
       "ID": 291015,
       "Entries": [
-        "Giant Skeleton"
+        "Giant Skeleton (Greatsword - Black Phantom) - Tomb of the Giants"
       ]
     },
     {
       "ID": 292000,
       "Entries": [
-        "Vamos"
+        "Vamos the Blacksmith"
       ]
     },
     {
       "ID": 292002,
       "Entries": [
-        "Vamos"
+        "Vamos the Blacksmith (Cutscene)"
       ]
     },
     {
       "ID": 293000,
       "Entries": [
-        "Bonewheel Skeleton"
+        "Bonewheel Skeleton - The Catacombs"
       ]
     },
     {
       "ID": 293001,
       "Entries": [
-        "Bonewheel Skeleton"
+        "Bonewheel Skeleton - Painted World"
       ]
     },
     {
       "ID": 293002,
       "Entries": [
-        "Bonewheel Skeleton"
+        "Bonewheel Skeleton (Black Phantom) - Painted World"
       ]
     },
     {
       "ID": 293003,
       "Entries": [
-        "Bonewheel Skeleton"
+        "Bonewheel Skeleton (Black Phantom) - The Catacombs"
       ]
     },
     {
@@ -2098,13 +2098,13 @@
     {
       "ID": 295000,
       "Entries": [
-        "Skeleton Beast"
+        "Skeletal Beast"
       ]
     },
     {
       "ID": 295001,
       "Entries": [
-        "Skeleton Beast"
+        "Skeletal Beast (Black Phantom)"
       ]
     },
     {
@@ -2116,7 +2116,7 @@
     {
       "ID": 309000,
       "Entries": [
-        "Mosquito"
+        "Giant Mosquito"
       ]
     },
     {
@@ -2134,13 +2134,13 @@
     {
       "ID": 321001,
       "Entries": [
-        "Egg Carrier"
+        "Eingyi"
       ]
     },
     {
       "ID": 322000,
       "Entries": [
-        "Chaos Bug"
+        "Vile Maggot"
       ]
     },
     {
@@ -2152,7 +2152,7 @@
     {
       "ID": 323001,
       "Entries": [
-        "Moonlight Butterfly"
+        "Crystal Butterfly"
       ]
     },
     {
@@ -2164,79 +2164,79 @@
     {
       "ID": 324001,
       "Entries": [
-        "Chaos Eater"
+        "Chaos Eater (Black Phantom)"
       ]
     },
     {
       "ID": 325000,
       "Entries": [
-        "Maneater Clam"
+        "Man-Eater Shell - Duke's Archives"
       ]
     },
     {
       "ID": 325001,
       "Entries": [
-        "Maneater Clam"
+        "Man-Eater Shell - Ash Lake"
       ]
     },
     {
       "ID": 327000,
       "Entries": [
-        "Basilisk"
+        "Basilisk - The Depths"
       ]
     },
     {
       "ID": 327001,
       "Entries": [
-        "Basilisk"
+        "Basilisk - Great Hollow/Ash Lake"
       ]
     },
     {
       "ID": 330000,
       "Entries": [
-        "Crystal Lizard"
+        "Crystal Lizard - Great Hollow"
       ]
     },
     {
       "ID": 330010,
       "Entries": [
-        "Crystal Lizard"
+        "Crystal Lizard - Duke's Archives/Crystal Cave"
       ]
     },
     {
       "ID": 330020,
       "Entries": [
-        "Crystal Lizard"
+        "Crystal Lizard - Lost Izalith"
       ]
     },
     {
       "ID": 330030,
       "Entries": [
-        "Crystal Lizard"
+        "Crystal Lizard - The Catacombs"
       ]
     },
     {
       "ID": 330040,
       "Entries": [
-        "Crystal Lizard"
+        "Crystal Lizard - Darkroot Garden"
       ]
     },
     {
       "ID": 330050,
       "Entries": [
-        "Crystal Lizard"
+        "Crystal Lizard - Tomb of the Giants"
       ]
     },
     {
       "ID": 330060,
       "Entries": [
-        "Crystal Lizard"
+        "Crystal Lizard - Undead Burg"
       ]
     },
     {
       "ID": 330070,
       "Entries": [
-        "Crystal Lizard"
+        "Crystal Lizard - Royal Wood"
       ]
     },
     {
@@ -2248,13 +2248,13 @@
     {
       "ID": 332001,
       "Entries": [
-        "Pinwheel"
+        "Pinwheel (Fake)"
       ]
     },
     {
       "ID": 332002,
       "Entries": [
-        "Pinwheel"
+        "Pinwheel Servant"
       ]
     },
     {
@@ -2266,55 +2266,55 @@
     {
       "ID": 333001,
       "Entries": [
-        "Pisaca"
+        "Pisaca (Passive - Soothing Sunlight)"
       ]
     },
     {
       "ID": 333002,
       "Entries": [
-        "Pisaca"
+        "Pisaca (Passive - Bountiful Sunlight)"
       ]
     },
     {
       "ID": 333003,
       "Entries": [
-        "Pisaca"
+        "Pisaca (Black Phantom)"
       ]
     },
     {
       "ID": 334000,
       "Entries": [
-        "Undead Attack Dog"
+        "Undead Attack Dog - Lower Undead Burg"
       ]
     },
     {
       "ID": 334001,
       "Entries": [
-        "Undead Attack Dog"
+        "Undead Attack Dog - The Depths"
       ]
     },
     {
       "ID": 334002,
       "Entries": [
-        "Undead Attack Dog"
+        "Undead Attack Dog (Treasure Guardian - Strong) - The Depths"
       ]
     },
     {
       "ID": 334003,
       "Entries": [
-        "Undead Attack Dog"
+        "Undead Attack Dog (Capra Demon) - Lower Undead Burg"
       ]
     },
     {
       "ID": 334100,
       "Entries": [
-        "Flaming Attack Dog"
+        "Chaos Attack Dog"
       ]
     },
     {
       "ID": 335000,
       "Entries": [
-        "Walking Tree"
+        "Possessed Tree"
       ]
     },
     {
@@ -2326,85 +2326,85 @@
     {
       "ID": 338000,
       "Entries": [
-        "Leech"
+        "Giant Leech"
       ]
     },
     {
       "ID": 339000,
       "Entries": [
-        "Burrower"
+        "[UNUSED] Burrowing Rockworm (Lost Izalith Shortcut)"
       ]
     },
     {
       "ID": 339001,
       "Entries": [
-        "Burrower"
+        "Burrowing Rockworm (Ground)"
       ]
     },
     {
       "ID": 339002,
       "Entries": [
-        "Burrower"
+        "Burrowing Rockworm (Wall)"
       ]
     },
     {
       "ID": 339003,
       "Entries": [
-        "Burrower"
+        "Burrowing Rockworm (Ceiling)"
       ]
     },
     {
       "ID": 340000,
       "Entries": [
-        "Cragspider"
+        "Chaos Crag-Spider"
       ]
     },
     {
       "ID": 341000,
       "Entries": [
-        "Frog-Ray"
+        "Frog-Ray - Darkroot Garden (1st half)"
       ]
     },
     {
       "ID": 341001,
       "Entries": [
-        "Frog-Ray"
+        "Frog-Ray - Darkroot Garden (2nd half)"
       ]
     },
     {
       "ID": 342000,
       "Entries": [
-        "Undead Dragon"
+        "Undead Dragon - Painted World"
       ]
     },
     {
       "ID": 342001,
       "Entries": [
-        "Undead Dragon"
+        "[UNUSED] Undead Dragon"
       ]
     },
     {
       "ID": 342002,
       "Entries": [
-        "Undead Dragon"
+        "Undead Dragon - Valley of Drakes"
       ]
     },
     {
       "ID": 342100,
       "Entries": [
-        "Undead Dragon - Legs"
+        "Undead Dragon (Lower Half) - Painted World"
       ]
     },
     {
       "ID": 342101,
       "Entries": [
-        "Undead Dragon - Legs"
+        "Undead Dragon (Lower Half) - Lost Izalith"
       ]
     },
     {
       "ID": 342200,
       "Entries": [
-        "Undead Dragon - Wings"
+        "Undead Dragon (Upper Half)"
       ]
     },
     {
@@ -2434,13 +2434,13 @@
     {
       "ID": 346000,
       "Entries": [
-        "Armored Tusk"
+        "Fang Boar"
       ]
     },
     {
       "ID": 346100,
       "Entries": [
-        "Armored Tusk - Reinforced"
+        "Fang Boar (Fully-Armored)"
       ]
     },
     {
@@ -2458,7 +2458,7 @@
     {
       "ID": 347101,
       "Entries": [
-        "Sanctuary Guardian"
+        "Lesser Sanctuary Guardian"
       ]
     },
     {
@@ -2470,373 +2470,373 @@
     {
       "ID": 348000,
       "Entries": [
-        "Chaos Bug"
+        "Sunlight Maggot"
       ]
     },
     {
       "ID": 348001,
       "Entries": [
-        "Chaos Bug"
+        "Sunlight Maggot (Special)"
       ]
     },
     {
       "ID": 349000,
       "Entries": [
-        "Vagrant (Passive)"
+        "[UNUSED] Vagrant (Good) - Undead Asylum"
       ]
     },
     {
       "ID": 349001,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Undead Burg"
       ]
     },
     {
       "ID": 349002,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Lower Undead Burg/Parish"
       ]
     },
     {
       "ID": 349003,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - The Depths"
       ]
     },
     {
       "ID": 349004,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Darkroot Garden/Basin"
       ]
     },
     {
       "ID": 349005,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - The Catacombs"
       ]
     },
     {
       "ID": 349006,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Undead Asylum/New Londo Ruins"
       ]
     },
     {
       "ID": 349007,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Blighttown"
       ]
     },
     {
       "ID": 349008,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Sen's Fortress"
       ]
     },
     {
       "ID": 349009,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Anor Londo"
       ]
     },
     {
       "ID": 349010,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Darkroot Garden (2nd half)"
       ]
     },
     {
       "ID": 349011,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Tomb of the Giants"
       ]
     },
     {
       "ID": 349012,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Demon Ruins/Lost Izalith"
       ]
     },
     {
       "ID": 349013,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Painted World/Duke's Archives/DLC"
       ]
     },
     {
       "ID": 349014,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 349050,
       "Entries": [
-        "Vagrant (Passive)"
+        "[UNUSED] Vagrant (Good - Black Phantom) - Undead Asylum"
       ]
     },
     {
       "ID": 349051,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Undead Burg"
       ]
     },
     {
       "ID": 349052,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Lower Undead Burg/Parish"
       ]
     },
     {
       "ID": 349053,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - The Depths"
       ]
     },
     {
       "ID": 349054,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Darkroot Garden/Basin"
       ]
     },
     {
       "ID": 349055,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - The Catacombs"
       ]
     },
     {
       "ID": 349056,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Undead Asylum/New Londo Ruins"
       ]
     },
     {
       "ID": 349057,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Blighttown"
       ]
     },
     {
       "ID": 349058,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Sen's Fortress"
       ]
     },
     {
       "ID": 349059,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Anor Londo"
       ]
     },
     {
       "ID": 349060,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Darkroot Garden (2nd half)"
       ]
     },
     {
       "ID": 349061,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Tomb of the Giants"
       ]
     },
     {
       "ID": 349062,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Demon Ruins/Lost Izalith"
       ]
     },
     {
       "ID": 349063,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Painted World/Duke's Archives/DLC"
       ]
     },
     {
       "ID": 349064,
       "Entries": [
-        "Vagrant (Passive)"
+        "Vagrant (Good - Black Phantom) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 349100,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "[UNUSED] Vagrant (Evil) - Undead Asylum"
       ]
     },
     {
       "ID": 349101,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Undead Burg"
       ]
     },
     {
       "ID": 349102,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Lower Undead Burg/Parish"
       ]
     },
     {
       "ID": 349103,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - The Depths"
       ]
     },
     {
       "ID": 349104,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Darkroot Garden/Basin"
       ]
     },
     {
       "ID": 349105,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - The Catacombs"
       ]
     },
     {
       "ID": 349106,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Undead Asylum/New Londo Ruins"
       ]
     },
     {
       "ID": 349107,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Blighttown"
       ]
     },
     {
       "ID": 349108,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Sen's Fortress"
       ]
     },
     {
       "ID": 349109,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Anor Londo"
       ]
     },
     {
       "ID": 349110,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Darkroot Garden (2nd half)"
       ]
     },
     {
       "ID": 349111,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Tomb of the Giants"
       ]
     },
     {
       "ID": 349112,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Demon Ruins/Lost Izalith"
       ]
     },
     {
       "ID": 349113,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Painted World/Duke's Archives/DLC"
       ]
     },
     {
       "ID": 349114,
       "Entries": [
-        "Vagrant (Aggressive) - 1"
+        "Vagrant (Evil) - Kiln of the First Flame"
       ]
     },
     {
       "ID": 349200,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "[UNUSED] Vagrant (Evil - Black Phantom) - Undead Asylum"
       ]
     },
     {
       "ID": 349201,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Undead Burg"
       ]
     },
     {
       "ID": 349202,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Lower Undead Burg/Parish"
       ]
     },
     {
       "ID": 349203,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - The Depths"
       ]
     },
     {
       "ID": 349204,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Darkroot Garden/Basin"
       ]
     },
     {
       "ID": 349205,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - The Catacombs"
       ]
     },
     {
       "ID": 349206,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Undead Asylum/New Londo Ruins"
       ]
     },
     {
       "ID": 349207,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Blighttown"
       ]
     },
     {
       "ID": 349208,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Sen's Fortress"
       ]
     },
     {
       "ID": 349209,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Anor Londo"
       ]
     },
     {
       "ID": 349210,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Darkroot Garden (2nd half)"
       ]
     },
     {
       "ID": 349211,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Tomb of the Giants"
       ]
     },
     {
       "ID": 349212,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Demon Ruins/Lost Izalith"
       ]
     },
     {
       "ID": 349213,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Painted World/Duke's Archives/DLC"
       ]
     },
     {
       "ID": 349214,
       "Entries": [
-        "Vagrant (Aggressive) - 2"
+        "Vagrant (Evil - Black Phantom) - Kiln of the First Flame"
       ]
     },
     {
@@ -2848,13 +2848,13 @@
     {
       "ID": 350100,
       "Entries": [
-        "Wisp"
+        "Wisp - New Londo Ruins"
       ]
     },
     {
       "ID": 350101,
       "Entries": [
-        "Wisp"
+        "Wisp - The Catacombs"
       ]
     },
     {
@@ -2866,43 +2866,43 @@
     {
       "ID": 352000,
       "Entries": [
-        "Drake"
+        "[UNUSED] Drake (Flying)"
       ]
     },
     {
       "ID": 352002,
       "Entries": [
-        "Drake"
+        "Drake (Ground)"
       ]
     },
     {
       "ID": 352005,
       "Entries": [
-        "Drake"
+        "[UNUSED] Drake (Flying)"
       ]
     },
     {
       "ID": 353000,
       "Entries": [
-        "Hydra"
+        "Hydra - Ash Lake"
       ]
     },
     {
       "ID": 353001,
       "Entries": [
-        "Hydra"
+        "Hydra - Darkroot Basin"
       ]
     },
     {
       "ID": 353100,
       "Entries": [
-        "Hydra's Head"
+        "Hydra's Head - Ash Lake"
       ]
     },
     {
       "ID": 353101,
       "Entries": [
-        "Hydra's Head"
+        "Hydra's Head - Darkroot Basin"
       ]
     },
     {
@@ -2914,7 +2914,7 @@
     {
       "ID": 409010,
       "Entries": [
-        "Marvellous Chester"
+        "Marvellous Chester (Invader)"
       ]
     },
     {
@@ -2938,133 +2938,133 @@
     {
       "ID": 412001,
       "Entries": [
-        "Stone Guardian"
+        "Stone Guardian (Black Phantom)"
       ]
     },
     {
       "ID": 413000,
       "Entries": [
-        "Scarecrow"
+        "Scarecrow Gardener (Pitchfork)"
       ]
     },
     {
       "ID": 413001,
       "Entries": [
-        "Scarecrow"
+        "Scarecrow Gardener (Pitchfork - Cast Off?)"
       ]
     },
     {
       "ID": 413002,
       "Entries": [
-        "Scarecrow"
+        "Scarecrow Gardener (Pitchfork - Shirtless)"
       ]
     },
     {
       "ID": 413003,
       "Entries": [
-        "Scarecrow"
+        "Scarecrow Gardener (Pitchfork - Pant-less)"
       ]
     },
     {
       "ID": 413004,
       "Entries": [
-        "Scarecrow"
+        "Scarecrow Gardener (Pitchfork - Black Phantom)"
       ]
     },
     {
       "ID": 413010,
       "Entries": [
-        "Scarecrow"
+        "Scarecrow Gardener (Shears)"
       ]
     },
     {
       "ID": 413011,
       "Entries": [
-        "Scarecrow"
+        "Scarecrow Gardener (Shears - Cast Off?)"
       ]
     },
     {
       "ID": 413012,
       "Entries": [
-        "Scarecrow"
+        "Scarecrow Gardener (Shears - Shirtless)"
       ]
     },
     {
       "ID": 413013,
       "Entries": [
-        "Scarecrow"
+        "Scarecrow Gardener (Shears - Pant-less)"
       ]
     },
     {
       "ID": 413014,
       "Entries": [
-        "Scarecrow"
+        "Scarecrow Gardener (Shears - Black Phantom)"
       ]
     },
     {
       "ID": 414000,
       "Entries": [
-        "Elizabeth"
+        "Elizabeth, Keeper of the Sanctuary"
       ]
     },
     {
       "ID": 415000,
       "Entries": [
-        "Bloathead"
+        "Oolacile Resident (Melee)"
       ]
     },
     {
       "ID": 415001,
       "Entries": [
-        "Bloathead"
+        "Oolacile Resident (Melee - Black Phantom)"
       ]
     },
     {
       "ID": 415020,
       "Entries": [
-        "Bloathead"
+        "Oolacile Resident (Melee - Lit Eyes)"
       ]
     },
     {
       "ID": 416000,
       "Entries": [
-        "Bloathead Sorcerer"
+        "Oolacile Resident (Sorceress)"
       ]
     },
     {
       "ID": 416001,
       "Entries": [
-        "Bloathead Sorcerer"
+        "Oolacile Resident (Sorceress - Black Phantom)"
       ]
     },
     {
       "ID": 416010,
       "Entries": [
-        "Bloathead Sorcerer"
+        "Oolacile Resident (Sorceress - Ultra-Defensive - For Event)"
       ]
     },
     {
       "ID": 416020,
       "Entries": [
-        "Bloathead Sorcerer"
+        "Oolacile Resident (Sorceress - Lit Eyes)"
       ]
     },
     {
       "ID": 417000,
       "Entries": [
-        "Humanity Phantom (Large)"
+        "Humanity (Large)"
       ]
     },
     {
       "ID": 417100,
       "Entries": [
-        "Humanity Phantom (Medium)"
+        "Humanity (Medium)"
       ]
     },
     {
       "ID": 417200,
       "Entries": [
-        "Humanity Phantom (Small)"
+        "Humanity (Small)"
       ]
     },
     {
@@ -3076,13 +3076,13 @@
     {
       "ID": 418001,
       "Entries": [
-        "Chained Prisoner"
+        "Chained Prisoner (Black Phantom)"
       ]
     },
     {
       "ID": 419000,
       "Entries": [
-        "Undead Attack Dog (DLC)"
+        "Scaled Attack Dog"
       ]
     },
     {
@@ -3094,19 +3094,19 @@
     {
       "ID": 451000,
       "Entries": [
-        "Kalameet"
+        "Black Dragon Kalameet"
       ]
     },
     {
       "ID": 451001,
       "Entries": [
-        "Kalameet"
+        "Black Dragon Kalameet (Grounded)"
       ]
     },
     {
       "ID": 451100,
       "Entries": [
-        "Kalameet's Tail"
+        "Black Dragon Kalameet's Tail"
       ]
     },
     {
@@ -3118,13 +3118,13 @@
     {
       "ID": 452010,
       "Entries": [
-        "Great Grey Wolf Sif (DLC)"
+        "Great Grey Wolf Sif (DLC - Summon)"
       ]
     },
     {
       "ID": 453100,
       "Entries": [
-        "Alvina (DLC)"
+        "Alvina of the Darkroot Wood (DLC)"
       ]
     },
     {
@@ -3166,7 +3166,7 @@
     {
       "ID": 523100,
       "Entries": [
-        "Bed Of Chaos (Moving)"
+        "[UNUSED] Bed Of Chaos (Moving)"
       ]
     },
     {
@@ -3196,13 +3196,13 @@
     {
       "ID": 527000,
       "Entries": [
-        "Dragonslayer Ornstein"
+        "Dragon Slayer Ornstein"
       ]
     },
     {
       "ID": 527100,
       "Entries": [
-        "Dragonslayer Ornstein (Giant)"
+        "Dragon Slayer Ornstein (Giant)"
       ]
     },
     {
@@ -3214,31 +3214,31 @@
     {
       "ID": 529000,
       "Entries": [
-        "Seath the Scaleless"
+        "Seath the Scaleless - Crystal Cave"
       ]
     },
     {
       "ID": 529001,
       "Entries": [
-        "Seath the Scaleless"
+        "Seath the Scaleless - Duke's Archives"
       ]
     },
     {
       "ID": 529100,
       "Entries": [
-        "Seath's Tail"
+        "Seath the Scaleless's Tail"
       ]
     },
     {
       "ID": 531000,
       "Entries": [
-        "Gwynevere"
+        "Gwynevere, Princess of Sunlight"
       ]
     },
     {
       "ID": 532000,
       "Entries": [
-        "Gwyndolin"
+        "Dark Sun Gwyndolin"
       ]
     },
     {
@@ -3262,31 +3262,31 @@
     {
       "ID": 535000,
       "Entries": [
-        "Gargoyle"
+        "Bell Gargoyle"
       ]
     },
     {
       "ID": 535001,
       "Entries": [
-        "Gargoyle"
+        "Bell Gargoyle (2nd)"
       ]
     },
     {
       "ID": 535100,
       "Entries": [
-        "Gargoyle [Anor Londo]"
+        "Lightning Gargoyle"
       ]
     },
     {
       "ID": 535200,
       "Entries": [
-        "Gargoyle's Tail"
+        "Bell Gargoyle's Tail"
       ]
     },
     {
       "ID": 535300,
       "Entries": [
-        "Gargoyle's Tail [Anor Londo]"
+        "Lightning Gargoyle's Tail"
       ]
     },
     {
@@ -3304,7 +3304,7 @@
     {
       "ID": 536100,
       "Entries": [
-        "Alvina"
+        "Alvina of the Darkroot Wood"
       ]
     },
     {
@@ -3316,25 +3316,25 @@
     {
       "ID": 539000,
       "Entries": [
-        "Four Kings"
+        "Four Kings (Total HP)"
       ]
     },
     {
       "ID": 539001,
       "Entries": [
-        "Four Kings"
+        "Four Kings (Individual)"
       ]
     },
     {
       "ID": 540000,
       "Entries": [
-        "Bed of Chaos Arm"
+        "Bed of Chaos (Arm)"
       ]
     },
     {
       "ID": 540100,
       "Entries": [
-        "Bed of Chaos Worm"
+        "Bed of Chaos (Worm)"
       ]
     }
   ]

@@ -10,13 +10,13 @@
     {
       "ID": 1,
       "Entries": [
-        "Cobblestone"
+        "Stone (Outdoor)"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Stone"
+        "Stone (Indoor)"
       ]
     },
     {
@@ -34,7 +34,7 @@
     {
       "ID": 5,
       "Entries": [
-        "Grassland"
+        "Grass"
       ]
     },
     {
@@ -46,61 +46,61 @@
     {
       "ID": 7,
       "Entries": [
-        "Gaps"
+        "Snow"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        "Trees"
+        "Ice/Crystal"
       ]
     },
     {
       "ID": 9,
       "Entries": [
-        "Swamp"
+        "Metal"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Nest"
+        "Sand"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Iron"
+        "Bone"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        "Flesh"
+        "Ash"
       ]
     },
     {
       "ID": 14,
       "Entries": [
-        "Bone"
+        "Rotten Wood"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "Ash"
+        "Big Tree"
       ]
     },
     {
       "ID": 17,
       "Entries": [
-        "Roof Tiles"
+        "Snow (no footprints)"
       ]
     },
     {
       "ID": 19,
       "Entries": [
-        "Bell"
+        "Water (Slide)"
       ]
     },
     {
@@ -112,37 +112,37 @@
     {
       "ID": 21,
       "Entries": [
-        "Water (ankle level)"
+        "Water (Ankle Level)"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "Water (knee)"
+        "Mucus"
       ]
     },
     {
       "ID": 23,
       "Entries": [
-        "Poison Swamp (Blighttown) (shallow)"
+        "Poison Swamp"
       ]
     },
     {
       "ID": 24,
       "Entries": [
-        "Poison Swamp (deep)"
+        "Mud"
       ]
     },
     {
       "ID": 25,
       "Entries": [
-        "Poison Swamp (knee)"
+        "Coal Tar"
       ]
     },
     {
       "ID": 26,
       "Entries": [
-        "Poison Swamp (about puddle)"
+        "Chimera Swamp"
       ]
     },
     {
@@ -160,19 +160,19 @@
     {
       "ID": 29,
       "Entries": [
-        "Without -- なし"
+        "Empty (No visuals)"
       ]
     },
     {
       "ID": 34,
       "Entries": [
-        "木材"
+        "Wood2"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "ドボンSFX用"
+        "For Splash SFX"
       ]
     }
   ]

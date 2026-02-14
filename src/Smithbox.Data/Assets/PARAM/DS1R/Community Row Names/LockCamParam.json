@@ -10,13 +10,13 @@
     {
       "ID": 1,
       "Entries": [
-        "Summon Magic for range designation"
+        "Summoning Magic Range (summon as in player summon or as in cast magic?)"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Short"
+        "Close"
       ]
     },
     {
@@ -28,86 +28,85 @@
     {
       "ID": 103,
       "Entries": [
-        "Distant"
+        "Far"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Centipede Demon"
+        "[UNUSED] Centipede Demon"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Undead Dragon"
+        "Painted World - Undead Dragon"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Dark"
+        "Dark (Common)"
       ]
     },
     {
       "ID": 111,
       "Entries": [
-        "Dark - Close"
+        "Dark (Close)"
       ]
     },
     {
       "ID": 112,
       "Entries": [
-        "Dark - Medium"
+        "Dark (Medium)"
       ]
     },
     {
       "ID": 113,
       "Entries": [
-        "Dark - Distant"
+        "Dark (Far)"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Dark",
-        "Dark"
+        "Dark (Prototype Map)"
       ]
     },
     {
       "ID": 210,
       "Entries": [
-        "Manus"
+        "[DLC] Manus, Father of the Abyss"
       ]
     },
     {
       "ID": 211,
       "Entries": [
-        "[DLC] Camera for al-Tri-race"
+        "[DLC] Knight Artorias"
       ]
     },
     {
       "ID": 212,
       "Entries": [
-        "Kalameet"
+        "[DLC] Black Dragon Kalameet"
       ]
     },
     {
       "ID": 213,
       "Entries": [
-        "Chained Prisonmer"
+        "[UNUSED, DLC] Chained Prisoner"
       ]
     },
     {
       "ID": 214,
       "Entries": [
-        "[DLC] Camera for Go warfare"
+        "[DLC] Hawkeye Gough"
       ]
     },
     {
       "ID": 220,
       "Entries": [
-        "Arena"
+        "[DLC] Battle of Stoicism Arena"
       ]
     },
     {
@@ -119,109 +118,109 @@
     {
       "ID": 1010,
       "Entries": [
-        "Gargoyle"
+        "Bell Gargoyle"
       ]
     },
     {
       "ID": 1100,
       "Entries": [
-        "Suspension Bridge"
+        "[UNUSED] 1st Map - Suspension Bridge"
       ]
     },
     {
       "ID": 1101,
       "Entries": [
-        "1st Map - Distant"
+        "[UNUSED] 1st Map - Distant"
       ]
     },
     {
       "ID": 1102,
       "Entries": [
-        "1st Map - Boss Room"
+        "[UNUSED] 1st Map - Boss Room"
       ]
     },
     {
       "ID": 1103,
       "Entries": [
-        "1st Map - Boss Room (old)"
+        "[UNUSED] 1st Map - Boss Room (old)"
       ]
     },
     {
       "ID": 1210,
       "Entries": [
-        "Sanctuary Guardian"
+        "[DLC] Sanctuary Guardian"
       ]
     },
     {
       "ID": 1300,
       "Entries": [
-        "Grave - Close"
+        "[UNUSED] The Catacombs/Tomb of the Giants(?) (Close)"
       ]
     },
     {
       "ID": 1301,
       "Entries": [
-        "Grave - Distant"
+        "[UNUSED] The Catacombs/Tomb of the Giants(?) (Far)"
       ]
     },
     {
       "ID": 1410,
       "Entries": [
-        "[Dedicated to the abolition of the visor]"
+        "Bed of Chaos"
       ]
     },
     {
       "ID": 1510,
       "Entries": [
-        "Gargoyle"
+        "Lightning Gargoyle"
       ]
     },
     {
       "ID": 1511,
       "Entries": [
-        "Gargoyle - Dark"
+        "Lightning Gargoyle (Dark Anor Londo)"
       ]
     },
     {
       "ID": 1700,
       "Entries": [
-        "[Sheath Combat Camera]"
+        "Seath the Scaleless"
       ]
     },
     {
       "ID": 10000,
       "Entries": [
-        "Camera - Short"
+        "Camera (Close)"
       ]
     },
     {
       "ID": 10001,
       "Entries": [
-        "Camera - Medium"
+        "Camera (Medium)"
       ]
     },
     {
       "ID": 10002,
       "Entries": [
-        "Camera - Distant"
+        "Camera (Far)"
       ]
     },
     {
       "ID": 10003,
       "Entries": [
-        "Camera - Dark"
+        "Camera (Dark)"
       ]
     },
     {
       "ID": 10004,
       "Entries": [
-        "Camera - Dark"
+        "Camera (Dark - Prototype Map)"
       ]
     },
     {
       "ID": 10005,
       "Entries": [
-        "Camera - Wide"
+        "Camera (A bit Wider(?) - Prototype Map)"
       ]
     }
   ]
