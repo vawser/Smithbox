@@ -494,6 +494,17 @@ public class ProjectCreationMenu
                 ImGui.Text("File Browser");
                 UIHelper.Tooltip("If true, the File Browser and associated data will be initialized for this project.");
 
+                ImGui.TableSetColumnIndex(4);
+
+                DPI.ApplyInputWidth();
+                ImGui.Checkbox("##projectEnableAnimBrowser", ref Descriptor.EnableAnimEditor);
+
+                ImGui.TableSetColumnIndex(5);
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Animation Browser");
+                UIHelper.Tooltip("If true, the Animation Browser and associated data will be initialized for this project.");
+
                 ImGui.EndTable();
             }
         }

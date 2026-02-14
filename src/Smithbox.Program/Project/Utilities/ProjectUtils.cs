@@ -508,6 +508,10 @@ public class ProjectUtils
     {
         return true;
     }
+    public static bool SupportsAnimEditor(ProjectType curType)
+    {
+        return true;
+    }
 
     public static List<string> GetBackupFiles(string rootDirectory)
     {

@@ -44,6 +44,9 @@ public class ProjectEntry
 
         if (Handler.ModelEditorStub != null)
             Handler.ModelEditorStub.Draw(device, cl);
+
+        if (Handler.AnimEditorStub != null)
+            Handler.AnimEditorStub.Draw(device, cl);
     }
 
     public unsafe void Update(float dt)
@@ -195,6 +198,15 @@ public class ProjectEntry
         catch (Exception e)
         {
             Smithbox.LogError(this, "Failed to setup file locator", e);
+        }
+
+        try
+        {
+            await Locator.Sort(reportProgress, silent);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, "Failed to sort file locator", e);
         }
 
         IsLoadingData = true;

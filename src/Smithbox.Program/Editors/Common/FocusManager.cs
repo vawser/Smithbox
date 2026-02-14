@@ -120,6 +120,16 @@ public static class FocusManager
 
         return false;
     }
+
+    public static bool IsInAnimEditor()
+    {
+        if (Focus is EditorFocusContext.AnimEditor_None
+            or EditorFocusContext.AnimEditor_Tools
+            or EditorFocusContext.AnimEditor_Viewport)
+            return true;
+
+        return false;
+    }
 }
 
 public enum EditorFocusContext
@@ -172,5 +182,9 @@ public enum EditorFocusContext
     TextureViewer_FileList,
     TextureViewer_Viewer,
     TextureViewer_Properties,
-    TextureViewer_Tools
+    TextureViewer_Tools,
+
+    AnimEditor_None,
+    AnimEditor_Viewport,
+    AnimEditor_Tools,
 }

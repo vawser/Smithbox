@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Application;
+using StudioCore.Editors.AnimEditor;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
@@ -39,6 +40,10 @@ public class VulkanViewport : IViewport
     public ModelGrid ModelPrimaryGrid;
     public ModelGrid ModelSecondaryGrid;
     public ModelGrid ModelTertiaryGrid;
+
+    public AnimGrid AnimPrimaryGrid;
+    public AnimGrid AnimSecondaryGrid;
+    public AnimGrid AnimTertiaryGrid;
 
     public RenderScene RenderScene;
     public ViewportSelection ViewportSelection;
@@ -140,6 +145,13 @@ public class VulkanViewport : IViewport
             ActionManager = modelUniverse.View.ViewportActionManager;
         }
 
+        if (owner is AnimUniverse animUniverse)
+        {
+            RenderScene = animUniverse.View.RenderScene;
+            ViewportSelection = animUniverse.View.ViewportSelection;
+            ActionManager = animUniverse.View.ViewportActionManager;
+        }
+
         if (RenderScene != null && Device != null)
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
@@ -204,6 +216,26 @@ public class VulkanViewport : IViewport
                     CFG.Current.ModelEditor_TertiaryGrid_Color);
             }
 
+            if (owner is AnimUniverse)
+            {
+                Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
+
+                AnimPrimaryGrid = new AnimGrid(owner, RenderScene.OpaqueRenderables,
+                    CFG.Current.AnimEditor_PrimaryGrid_Size,
+                    CFG.Current.AnimEditor_PrimaryGrid_SectionSize,
+                    CFG.Current.AnimEditor_PrimaryGrid_Color);
+
+                AnimSecondaryGrid = new AnimGrid(owner, RenderScene.OpaqueRenderables,
+                    CFG.Current.AnimEditor_SecondaryGrid_Size,
+                    CFG.Current.AnimEditor_SecondaryGrid_SectionSize,
+                    CFG.Current.AnimEditor_SecondaryGrid_Color);
+
+                AnimTertiaryGrid = new AnimGrid(owner, RenderScene.OpaqueRenderables,
+                    CFG.Current.AnimEditor_TertiaryGrid_Size,
+                    CFG.Current.AnimEditor_TertiaryGrid_SectionSize,
+                    CFG.Current.AnimEditor_TertiaryGrid_Color);
+            }
+
             ClickSelection = new(this);
             BoxSelection = new(this);
 
@@ -231,6 +263,7 @@ public class VulkanViewport : IViewport
 
             HandleMapEditorFocus();
             HandleModelEditorFocus();
+            HandleAnimEditorFocus();
 
             ViewportMenu.Draw();
             ViewportOverlay.Draw();
@@ -344,6 +377,17 @@ public class VulkanViewport : IViewport
             {
                 FocusManager.SetFocus(EditorFocusContext.ModelEditor_Viewport);
                 modelUniverse.View.Editor.ViewHandler.ActiveView = modelUniverse.View;
+            }
+        }
+    }
+    public void HandleAnimEditorFocus()
+    {
+        if (Owner is AnimUniverse animUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.AnimEditor_Viewport);
+                animUniverse.View.Editor.ViewHandler.ActiveView = animUniverse.View;
             }
         }
     }
@@ -558,6 +602,50 @@ public class VulkanViewport : IViewport
                 ref CFG.Current.ModelEditor_RegenerateTertiaryGrid);
         }
 
+        if (Owner is AnimUniverse animUniverse)
+        {
+            AnimPrimaryGrid.Update(
+                CFG.Current.AnimEditor_DisplayPrimaryGrid,
+                ray,
+                CFG.Current.AnimEditor_PrimaryGrid_Size,
+                CFG.Current.AnimEditor_PrimaryGrid_SectionSize,
+                CFG.Current.AnimEditor_PrimaryGrid_Color,
+                CFG.Current.AnimEditor_PrimaryGrid_Position_X,
+                CFG.Current.AnimEditor_PrimaryGrid_Position_Y,
+                CFG.Current.AnimEditor_PrimaryGrid_Position_Z,
+                CFG.Current.AnimEditor_PrimaryGrid_Rotation_X,
+                CFG.Current.AnimEditor_PrimaryGrid_Rotation_Y,
+                CFG.Current.AnimEditor_PrimaryGrid_Rotation_Z,
+                ref CFG.Current.AnimEditor_RegeneratePrimaryGrid);
+
+            AnimSecondaryGrid.Update(
+                CFG.Current.AnimEditor_DisplaySecondaryGrid,
+                ray,
+                CFG.Current.AnimEditor_SecondaryGrid_Size,
+                CFG.Current.AnimEditor_SecondaryGrid_SectionSize,
+                CFG.Current.AnimEditor_SecondaryGrid_Color,
+                CFG.Current.AnimEditor_SecondaryGrid_Position_X,
+                CFG.Current.AnimEditor_SecondaryGrid_Position_Y,
+                CFG.Current.AnimEditor_SecondaryGrid_Position_Z,
+                CFG.Current.AnimEditor_SecondaryGrid_Rotation_X,
+                CFG.Current.AnimEditor_SecondaryGrid_Rotation_Y,
+                CFG.Current.AnimEditor_SecondaryGrid_Rotation_Z,
+                ref CFG.Current.AnimEditor_RegenerateSecondaryGrid);
+
+            AnimTertiaryGrid.Update(
+                CFG.Current.AnimEditor_DisplayTertiaryGrid,
+                ray,
+                CFG.Current.AnimEditor_TertiaryGrid_Size,
+                CFG.Current.AnimEditor_TertiaryGrid_SectionSize,
+                CFG.Current.AnimEditor_TertiaryGrid_Color,
+                CFG.Current.AnimEditor_TertiaryGrid_Position_X,
+                CFG.Current.AnimEditor_TertiaryGrid_Position_Y,
+                CFG.Current.AnimEditor_TertiaryGrid_Position_Z,
+                CFG.Current.AnimEditor_TertiaryGrid_Rotation_X,
+                CFG.Current.AnimEditor_TertiaryGrid_Rotation_Y,
+                CFG.Current.AnimEditor_TertiaryGrid_Rotation_Z,
+                ref CFG.Current.AnimEditor_RegenerateTertiaryGrid);
+        }
     }
 
     public void DelayPicking()

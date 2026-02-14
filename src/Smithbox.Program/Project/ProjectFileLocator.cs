@@ -39,6 +39,8 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary TexturePackedFiles = new();
     public FileDictionary ShoeboxFiles = new();
 
+    public FileDictionary TimeActFiles = new();
+    public FileDictionary BehaviorFiles = new();
 
     public ProjectFileLocator(ProjectEntry project)
     {
@@ -155,6 +157,39 @@ public class ProjectFileLocator : IDisposable
         }
 
         CompileDictionaries();
+
+        return;
+    }
+
+    public async Task Sort(Action<ProjectLoadProgress> reportProgress, bool silent = false)
+    {
+        await Task.Yield();
+
+        MapFiles.Entries.Sort();
+        MapPieceFiles.Entries.Sort();
+        ChrFiles.Entries.Sort();
+        AssetFiles.Entries.Sort();
+        PartFiles.Entries.Sort();
+        CollisionFiles.Entries.Sort();
+        LightFiles.Entries.Sort();
+        DS2_LightFiles.Entries.Sort();
+        NavmeshFiles.Entries.Sort();
+        AutoInvadeFiles.Entries.Sort();
+        LightAtlasFiles.Entries.Sort();
+        LightProbeFiles.Entries.Sort();
+
+        GparamFiles.Entries.Sort();
+        TextFiles.Entries.Sort();
+
+        MTD_Files.Entries.Sort();
+        MATBIN_Files.Entries.Sort();
+
+        TextureFiles.Entries.Sort();
+        TexturePackedFiles.Entries.Sort();
+        ShoeboxFiles.Entries.Sort();
+
+        TimeActFiles.Entries.Sort();
+        BehaviorFiles.Entries.Sort();
 
         return;
     }
@@ -423,7 +458,8 @@ public class ProjectFileLocator : IDisposable
             Task.Run(() => CompileTextDictionaries(index)),
             Task.Run(() => CompileGparamDictionaries(index)),
             Task.Run(() => CompileMaterialDictionaries(index)),
-            Task.Run(() => CompileTextureDictionaries(index))
+            Task.Run(() => CompileTextureDictionaries(index)),
+            Task.Run(() => CompileAnimDictionaries(index))
         };
 
         Task.WaitAll(tasks);
@@ -772,6 +808,15 @@ public class ProjectFileLocator : IDisposable
         }
 
         TextureFiles = ProjectUtils.MergeFileDictionaries(baseDict, secondaryDicts);
+    }
+    private void CompileAnimDictionaries(MultiIndex index)
+    {
+        var anims = new ConcurrentBag<FileDictionaryEntry>();
+
+        Parallel.Invoke(
+            () => TimeActFiles.Entries = GetEntriesByExtension(index, "anibnd"),
+            () => BehaviorFiles.Entries = GetEntriesByExtension(index, "behbnd")
+        );
     }
     #endregion
 

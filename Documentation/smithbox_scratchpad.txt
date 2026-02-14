@@ -3,5 +3,3 @@
 #---------------------
 
 - Add basic HKX editor for DS3
-
-- Move the row name import prompt outside of the param bank process since it can cause a desync issue if the user waits too long to press an option.

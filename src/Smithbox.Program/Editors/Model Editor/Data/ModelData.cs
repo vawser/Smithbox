@@ -28,8 +28,6 @@ public class ModelData : IDisposable
     {
         await Task.Yield();
 
-        SetupFileDictionaries();
-
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
 
         // FLVER Information
@@ -57,9 +55,6 @@ public class ModelData : IDisposable
         return primaryBankTaskResult;
     }
 
-    public void SetupFileDictionaries()
-    {
-    }
 
     /// <summary>
     /// Setup the FLVER information for this project

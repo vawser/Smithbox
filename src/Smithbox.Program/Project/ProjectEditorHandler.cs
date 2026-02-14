@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using StudioCore.Editors.AnimEditor;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.FileBrowser;
 using StudioCore.Editors.GparamEditor;
@@ -65,6 +66,12 @@ public class ProjectEditorHandler : IDisposable
     public TextureViewerScreen TextureViewer;
     public TextureViewerStub TextureViewerStub;
 
+    // Animation Editor
+    public AnimData AnimData;
+    public AnimEditorScreen AnimEditor;
+    public AnimEditorStub AnimEditorStub;
+
+
     // Data tasks
     private Task<bool> _projectDataTask;
     private Task<bool> _mapDataTask;
@@ -74,6 +81,7 @@ public class ProjectEditorHandler : IDisposable
     private Task<bool> _gparamDataTask;
     private Task<bool> _materialDataTask;
     private Task<bool> _textureDataTask;
+    private Task<bool> _animDataTask;
 
     public ProjectEditorHandler(ProjectEntry project)
     {
@@ -90,6 +98,7 @@ public class ProjectEditorHandler : IDisposable
         MaterialEditorStub = new(Project);
         TextureViewerStub = new(Project);
         FileBrowserStub = new(Project);
+        AnimEditorStub = new(Project);
     }
 
     public async Task<bool> InitializeData(ProjectInitType initType, bool silent)
@@ -160,6 +169,15 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_gparamDataTask);
         }
 
+        // Animation
+        if (Project.Descriptor.EnableAnimEditor &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            AnimData = new(Project);
+            _animDataTask = AnimData.Setup();
+            tasks.Add(_animDataTask);
+        }
+
         bool[] results = await Task.WhenAll(tasks);
 
         if (!silent)
@@ -209,6 +227,11 @@ public class ProjectEditorHandler : IDisposable
             Smithbox.Log(this, _textureDataTask.Result
                 ? "[Texture Viewer] Setup texture bank."
                 : "[Texture Viewer] Failed to setup texture bank.");
+
+        if (_animDataTask != null)
+            Smithbox.Log(this, _animDataTask.Result
+                ? "[Animation Editor] Setup animation bank."
+                : "[Animation Editor] Failed to setup animation bank.");
     }
 
     public void InitializeEditors(ProjectInitType initType)
@@ -263,6 +286,12 @@ public class ProjectEditorHandler : IDisposable
         {
             TextureViewer = new TextureViewerScreen(Project);
             firstEditor ??= TextureViewer;
+        }
+
+        if (AnimData != null)
+        {
+            AnimEditor = new AnimEditorScreen(Project);
+            firstEditor ??= AnimEditor;
         }
 
         FocusedEditor = firstEditor;
