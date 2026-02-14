@@ -338,7 +338,7 @@ public class ParamDeltaPatcher
         {
             var storageDir = ProjectUtils.GetParamDeltaFolder();
 
-            Process.Start("explorer.exe", storageDir);
+            StudioCore.Common.FileExplorer.Start(storageDir);
         }
     }
 

@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AssemblyName>Smithbox</AssemblyName>
-    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <TargetFramework>net9.0-macos</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
     <Version>2.1.2</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -13,23 +13,47 @@
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+    <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
+    <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
     <RootNamespace>StudioCore</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
+  <!-- Required for XCode 16+ builds -->
+  <ItemGroup>
+    <_CustomLinkFlags Include="-ld64;-undefined;dynamic_lookup" Visible="false" />
+  </ItemGroup>
+  <PropertyGroup>
+    <ValidateXcodeVersion>false</ValidateXcodeVersion>
+    <_UseClassicLinker>true</_UseClassicLinker>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <VULKAN_SDK Condition="'$(VULKAN_SDK)' == ''">/path/to/VulkanSDK/Version</VULKAN_SDK>
+    <MoltenVKPath>$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib</MoltenVKPath>
+    <OodlePath>/path/to/oodle.dylib</OodlePath>
+    <RustDllPath>../Andre/Andre.Formats/libbhd5_decrypt_rust.dylib</RustDllPath>
+    <ZstdPath>/path/to/libzstd.dylib</ZstdPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <NativeReference Include="$(MoltenVKPath)" Condition="Exists('$(MoltenVKPath)')" Kind="Dynamic" />
+    <NativeReference Include="$(OodlePath)" Condition="Exists('$(OodlePath)')" Kind="Dynamic" />
+    <NativeReference Include="$(RustDllPath)" Condition="Exists('$(RustDllPath)')" Kind="Dynamic" />
+    <NativeReference Include="$(ZstdPath)" Condition="Exists('$(ZstdPath)')" Kind="Dynamic" />
+    <BundleResource Include="AppIcon.icns" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Smithbox.Program\Smithbox.Program.csproj" />
@@ -39,7 +63,7 @@
   <ItemGroup>
     <Props Include="&lt;Project&gt;" Visible="false"/>
     <Props Include="  &lt;PropertyGroup&gt;" Visible="false"/>
-    <Props Include="    &lt;DefineConstants&gt;%24(DefineConstants)%3BWINDOWS&lt;/DefineConstants&gt;" Visible="false"/>
+    <Props Include="    &lt;DefineConstants&gt;%24(DefineConstants)%3BMACOS&lt;/DefineConstants&gt;" Visible="false"/>
     <Props Include="  &lt;/PropertyGroup&gt;" Visible="false"/>
     <Props Include="&lt;/Project&gt;" Visible="false"/>
   </ItemGroup>
@@ -51,12 +75,4 @@
           Overwrite="true"
           Encoding="UTF-8" />
   </Target>
-
-  <Target Name="CopyDataProjectOutput" AfterTargets="Build">
-  <ItemGroup>
-    <DataProjectFiles Include="..\Smithbox.Data\bin\$(Configuration)\$(TargetFramework)\**\*" />
-  </ItemGroup>
-
-  <Copy SourceFiles="@(DataProjectFiles)" DestinationFolder="$(OutputPath)%(RecursiveDir)" SkipUnchangedFiles="true" />
-</Target>
 </Project>

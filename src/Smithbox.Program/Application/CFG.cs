@@ -94,7 +94,11 @@ public class CFG
     ///------------------------------------------------------------
     /// Interface
     ///------------------------------------------------------------
+#if MACOS
+    public float Interface_UI_Scale = 0.5f;
+#else
     public float Interface_UI_Scale = 1.0f;
+#endif
     public bool Interface_Scale_by_DPI = true;
     public float Interface_Font_Size = 14.0f;
     public bool Interface_Allow_Window_Movement = true;

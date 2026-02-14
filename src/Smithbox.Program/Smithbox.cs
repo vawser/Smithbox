@@ -16,6 +16,7 @@ using System.Globalization;
 using System.IO;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using System.Text;
 using Veldrid;
 using Veldrid.Sdl2;
 using Thread = System.Threading.Thread;
@@ -212,6 +213,10 @@ public class Smithbox
         io.ConfigViewportsNoAutoMerge = false;
         io.ConfigViewportsNoTaskBarIcon = false;
 
+        byte[] iniFilename = Encoding.UTF8.GetBytes(Path.Combine(StudioCore.Common.FileLocations.CurImgui, "imgui.ini") + '\0');
+        GCHandle handle = GCHandle.Alloc(iniFilename, GCHandleType.Pinned);
+        io.Handle->IniFilename = (byte*)handle.AddrOfPinnedObject();
+
         // setup ImGui style
         var style = ImGui.GetStyle();
         style.TabBorderSize = 0;
@@ -235,17 +240,17 @@ public class Smithbox
             NonEnglishFontRelPath = CFG.Current.Interface_Non_English_Font_Path;
         }
 
-        var englishFontPath = Path.Combine(AppContext.BaseDirectory, EnglishFontRelPath);
+        var englishFontPath = Path.Combine(StudioCore.Common.FileLocations.Resources, EnglishFontRelPath);
         var englishFontData = File.ReadAllBytes(englishFontPath);
         var englishFontPtr = ImGui.MemAlloc((uint)englishFontData.Length);
         Marshal.Copy(englishFontData, 0, (nint)englishFontPtr, englishFontData.Length);
 
-        var nonEnglishFontPath = Path.Combine(AppContext.BaseDirectory, NonEnglishFontRelPath);
+        var nonEnglishFontPath = Path.Combine(StudioCore.Common.FileLocations.Resources, NonEnglishFontRelPath);
         var nonEnglishFontData = File.ReadAllBytes(nonEnglishFontPath);
         var nonEnglishFontPtr = ImGui.MemAlloc((uint)nonEnglishFontData.Length);
         Marshal.Copy(nonEnglishFontData, 0, (nint)nonEnglishFontPtr, nonEnglishFontData.Length);
 
-        var iconFontPath = Path.Combine(AppContext.BaseDirectory, IconFontRelPath);
+        var iconFontPath = Path.Combine(StudioCore.Common.FileLocations.Resources, IconFontRelPath);
         var iconFontData = File.ReadAllBytes(iconFontPath);
         var iconFontPtr = ImGui.MemAlloc((uint)iconFontData.Length);
         Marshal.Copy(iconFontData, 0, (nint)iconFontPtr, iconFontData.Length);
