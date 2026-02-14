@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace StudioCore.Application;
@@ -193,7 +194,7 @@ public class ProjectFileLocator : IDisposable
             {
                 // If project relative path already exists in vanilla directory, ignore it as we don't need to include it
                 if (existingPaths.Contains(relativePath))
-                continue;
+                    continue;
 
                 // Add if it is a file in a new map/aeg/aet folder
                 if (relativeFolder.Contains("/map") || relativeFolder.Contains("/aeg") || relativeFolder.Contains("/aet"))
@@ -202,7 +203,7 @@ public class ProjectFileLocator : IDisposable
                 // Add if it is a new file in any of the vanilla directories
                 foreach (var entry in existingFolders)
                 {
-                    if(entry == relativeFolder)
+                    if (entry == relativeFolder)
                     {
                         add = true;
                     }
@@ -286,84 +287,44 @@ public class ProjectFileLocator : IDisposable
 
         // Pre-allocate arrays with exact size
         var allArray = new FileDictionaryEntry[count];
-        var nonSdList = new List<FileDictionaryEntry>(count);
-        var mapList = new List<FileDictionaryEntry>(count / 10); // Estimate ~10% are map files
+        var nonSdList = new ConcurrentBag<FileDictionaryEntry>();
+        var mapList = new ConcurrentBag<FileDictionaryEntry>();
 
-        var byExtension = new Dictionary<string, List<FileDictionaryEntry>>(50); // ~50 unique extensions
-        var byFolderStart = new Dictionary<string, List<FileDictionaryEntry>>(20); // ~20 unique folder starts
-        var extAndFolder = new Dictionary<string, Dictionary<string, List<FileDictionaryEntry>>>(50);
+        var byExtension = new ConcurrentDictionary<string, ConcurrentBag<FileDictionaryEntry>>(Environment.ProcessorCount, 50);
+        var byFolderStart = new ConcurrentDictionary<string, ConcurrentBag<FileDictionaryEntry>>(Environment.ProcessorCount, 20);
+        var extAndFolder = new ConcurrentDictionary<string, ConcurrentDictionary<string, ConcurrentBag<FileDictionaryEntry>>>(Environment.ProcessorCount, 50);
 
-        var lockObj = new object();
-        int index = 0;
+        int index = -1;
 
         Parallel.ForEach(allEntries, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, entry =>
         {
-            int localIndex;
-            lock (lockObj)
-            {
-                localIndex = index++;
-            }
+            int localIndex = Interlocked.Increment(ref index);
 
             allArray[localIndex] = entry;
 
             // Build indexes in thread-local storage first
             var isNonSd = entry.Archive != "sd";
-            var isMap = entry.Folder.AsSpan().StartsWith("/map");
+            var isMap = entry.Folder.StartsWith("/map");
             var extension = entry.Extension;
             var folderStart = GetFolderStart(entry.Folder);
 
-            // Collect to thread-safe structures
             if (isNonSd)
             {
-                lock (nonSdList) { nonSdList.Add(entry); }
+                nonSdList.Add(entry);
             }
 
             if (isMap)
             {
-                lock (mapList) { mapList.Add(entry); }
+                mapList.Add(entry);
             }
 
-            // Build extension index
-            lock (byExtension)
-            {
-                if (!byExtension.TryGetValue(extension, out var extList))
-                {
-                    extList = new List<FileDictionaryEntry>();
-                    byExtension[extension] = extList;
-                }
-                extList.Add(entry);
-            }
+            byExtension.GetOrAdd(extension, _ => new ConcurrentBag<FileDictionaryEntry>()).Add(entry);
+            byFolderStart.GetOrAdd(folderStart, _ => new ConcurrentBag<FileDictionaryEntry>()).Add(entry);
 
-            // Build folder start index
-            lock (byFolderStart)
-            {
-                if (!byFolderStart.TryGetValue(folderStart, out var folderList))
-                {
-                    folderList = new List<FileDictionaryEntry>();
-                    byFolderStart[folderStart] = folderList;
-                }
-                folderList.Add(entry);
-            }
-
-            // Build combined index for ultra-fast double-key lookups
             if (isNonSd)
             {
-                lock (extAndFolder)
-                {
-                    if (!extAndFolder.TryGetValue(extension, out var folderDict))
-                    {
-                        folderDict = new Dictionary<string, List<FileDictionaryEntry>>();
-                        extAndFolder[extension] = folderDict;
-                    }
-
-                    if (!folderDict.TryGetValue(folderStart, out var entries))
-                    {
-                        entries = new List<FileDictionaryEntry>();
-                        folderDict[folderStart] = entries;
-                    }
-
-                    entries.Add(entry);
-                }
+                var folderDict = extAndFolder.GetOrAdd(extension, _ => new ConcurrentDictionary<string, ConcurrentBag<FileDictionaryEntry>>());
+                folderDict.GetOrAdd(folderStart, _ => new ConcurrentBag<FileDictionaryEntry>()).Add(entry);
             }
         });
 
@@ -372,9 +333,11 @@ public class ProjectFileLocator : IDisposable
             AllArray = allArray,
             NonSdArray = nonSdList.ToArray(),
             MapArray = mapList.ToArray(),
-            ByExtension = byExtension,
-            ByFolderStart = byFolderStart,
-            ExtensionAndFolder = extAndFolder,
+            ByExtension = byExtension.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.ToList()),
+            ByFolderStart = byFolderStart.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.ToList()),
+            ExtensionAndFolder = extAndFolder.ToDictionary(
+                kvp => kvp.Key,
+                kvp => kvp.Value.ToDictionary(inner => inner.Key, inner => inner.Value.ToList())),
             MapIds = new HashSet<string>(mapList.Select(m => m.Filename))
         };
     }
@@ -382,13 +345,12 @@ public class ProjectFileLocator : IDisposable
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static string GetFolderStart(string folder)
     {
-        var span = folder.AsSpan();
-        var slashIndex = span.IndexOf("/", StringComparison.CurrentCultureIgnoreCase);
+        var slashIndex = folder.IndexOf('/');
         return slashIndex > 0 ? folder.Substring(0, slashIndex) : folder;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static List<FileDictionaryEntry> UltraFastFilter(
+    private static List<FileDictionaryEntry> FilterEntries(
         FileDictionaryEntry[] entries,
         string folderPrefix = null,
         string extension = null,
@@ -397,14 +359,11 @@ public class ProjectFileLocator : IDisposable
     {
         var result = new List<FileDictionaryEntry>(entries.Length / 10);
 
-        var folderSpan = folderPrefix.AsSpan();
-        var hasFolder = folderPrefix != null;
-
         for (int i = 0; i < entries.Length; i++)
         {
             ref readonly var entry = ref entries[i];
 
-            if (hasFolder && !entry.Folder.AsSpan().StartsWith(folderSpan))
+            if (folderPrefix != null && !entry.Folder.StartsWith(folderPrefix))
                 continue;
 
             if (extension != null && entry.Extension != extension)
@@ -423,7 +382,7 @@ public class ProjectFileLocator : IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static List<FileDictionaryEntry> FastLookup(
+    private static List<FileDictionaryEntry> GetEntriesByExtension(
         MultiIndex index,
         string extension,
         string folderStart = null)
@@ -432,14 +391,13 @@ public class ProjectFileLocator : IDisposable
             index.ExtensionAndFolder.TryGetValue(extension, out var folderDict) &&
             folderDict.TryGetValue(folderStart, out var entries))
         {
-            return new List<FileDictionaryEntry>(entries); // Return copy
+            return new List<FileDictionaryEntry>(entries);
         }
 
         if (index.ByExtension.TryGetValue(extension, out var extEntries))
         {
             if (folderStart != null)
             {
-                // Filter by folder
                 var result = new List<FileDictionaryEntry>(extEntries.Count / 4);
                 foreach (var entry in extEntries)
                 {
@@ -475,16 +433,15 @@ public class ProjectFileLocator : IDisposable
     {
         var mapArray = index.MapArray;
 
-        // Parallel processing of independent filters
         Parallel.Invoke(
-            () => MapFiles.Entries = UltraFastFilter(mapArray, extension: "msb", excludeAutoroute: true),
-            () => LightFiles.Entries = FastLookup(index, "btl", "/map"),
-            () => DS2_LightFiles.Entries = FastLookup(index, "gibhd", "/map"),
-            () => NavmeshFiles.Entries = FastLookup(index, "nva", "/map"),
-            () => CollisionFiles.Entries = FastLookup(index, "hkxbhd", "/map"),
-            () => LightAtlasFiles.Entries = FastLookup(index, "btab", "/map"),
-            () => LightProbeFiles.Entries = FastLookup(index, "btpb", "/map"),
-            () => AutoInvadeFiles.Entries = FastLookup(index, "aipbnd", "/other")
+            () => MapFiles.Entries = FilterEntries(mapArray, extension: "msb", excludeAutoroute: true),
+            () => LightFiles.Entries = GetEntriesByExtension(index, "btl", "/map"),
+            () => DS2_LightFiles.Entries = GetEntriesByExtension(index, "gibhd", "/map"),
+            () => NavmeshFiles.Entries = GetEntriesByExtension(index, "nva", "/map"),
+            () => CollisionFiles.Entries = GetEntriesByExtension(index, "hkxbhd", "/map"),
+            () => LightAtlasFiles.Entries = GetEntriesByExtension(index, "btab", "/map"),
+            () => LightProbeFiles.Entries = GetEntriesByExtension(index, "btpb", "/map"),
+            () => AutoInvadeFiles.Entries = GetEntriesByExtension(index, "aipbnd", "/other")
         );
     }
 
@@ -494,7 +451,7 @@ public class ProjectFileLocator : IDisposable
 
         var mapTask = Task.Run(() =>
         {
-            MapFiles.Entries = UltraFastFilter(
+            MapFiles.Entries = FilterEntries(
                 index.AllArray,
                 folderPrefix: "/map",
                 extension: "msb",
@@ -506,69 +463,105 @@ public class ProjectFileLocator : IDisposable
         {
             if (projectType is ProjectType.DS2S or ProjectType.DS2)
             {
-                ChrFiles.Entries = FastLookup(index, "bnd", "/model");
-                ChrFiles.Entries = ChrFiles.Entries.Where(e => e.Folder.StartsWith("/model/chr")).ToList();
+                ChrFiles.Entries = GetEntriesByExtension(index, "bnd", "/model");
+                var filtered = new List<FileDictionaryEntry>(ChrFiles.Entries.Count / 2);
+                foreach (var entry in ChrFiles.Entries)
+                {
+                    if (entry.Folder.StartsWith("/model/chr"))
+                        filtered.Add(entry);
+                }
+                ChrFiles.Entries = filtered;
             }
             else
             {
-                ChrFiles.Entries = FastLookup(index, "chrbnd");
-                ChrFiles.Entries = ChrFiles.Entries.Where(e => !e.Archive.Contains("sd")).ToList();
+                ChrFiles.Entries = GetEntriesByExtension(index, "chrbnd");
+                var filtered = new List<FileDictionaryEntry>(ChrFiles.Entries.Count);
+                foreach (var entry in ChrFiles.Entries)
+                {
+                    if (!entry.Archive.Contains("sd"))
+                        filtered.Add(entry);
+                }
+                ChrFiles.Entries = filtered;
             }
         });
 
-        var assetTask = Task.Run(() => AssetFiles.Entries = GetAssetFilesOptimized(index, projectType));
-        var partTask = Task.Run(() => PartFiles.Entries = GetPartFilesOptimized(index, projectType));
+        var assetTask = Task.Run(() => AssetFiles.Entries = GetAssetFiles(index, projectType));
+        var partTask = Task.Run(() => PartFiles.Entries = GetPartFiles(index, projectType));
 
         Task.WaitAll(mapTask, chrTask, assetTask, partTask);
 
-        CompileCollisionFilesUltraFast(index, projectType);
-        CompileMapPieceFilesUltraFast(index, projectType);
+        CompileCollisionFiles(index, projectType);
+        CompileMapPieceFiles(index, projectType);
     }
 
-    private List<FileDictionaryEntry> GetAssetFilesOptimized(MultiIndex index, ProjectType projectType)
+    private List<FileDictionaryEntry> GetAssetFiles(MultiIndex index, ProjectType projectType)
     {
         return projectType switch
         {
-            ProjectType.DS1 => FastLookup(index, "objbnd", "/obj"),
-            ProjectType.DS2S or ProjectType.DS2 => FastLookup(index, "bnd", "/model").Where(e => e.Folder.StartsWith("/model/obj")).ToList(),
-            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => FastLookup(index, "objbnd", "/obj"),
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => FastLookup(index, "geombnd", "/asset").Where(e => !e.Archive.Contains("sd")).ToList(),
+            ProjectType.DS1 => GetEntriesByExtension(index, "objbnd", "/obj"),
+            ProjectType.DS2S or ProjectType.DS2 => FilterByFolderPrefix(GetEntriesByExtension(index, "bnd", "/model"), "/model/obj"),
+            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => GetEntriesByExtension(index, "objbnd", "/obj"),
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => FilterExcludeArchive(GetEntriesByExtension(index, "geombnd", "/asset"), "sd"),
             _ => new List<FileDictionaryEntry>()
         };
     }
 
-    private List<FileDictionaryEntry> GetPartFilesOptimized(MultiIndex index, ProjectType projectType)
+    private List<FileDictionaryEntry> GetPartFiles(MultiIndex index, ProjectType projectType)
     {
         return projectType switch
         {
-            ProjectType.DS1 => FastLookup(index, "partsbnd", "/parts"),
-            ProjectType.DS2S or ProjectType.DS2 => FastLookup(index, "bnd", "/model").Where(e => e.Folder.StartsWith("/model/parts")).ToList(),
-            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => FastLookup(index, "partsbnd", "/parts"),
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => FastLookup(index, "partsbnd", "/parts").Where(e => !e.Archive.Contains("sd")).ToList(),
+            ProjectType.DS1 => GetEntriesByExtension(index, "partsbnd", "/parts"),
+            ProjectType.DS2S or ProjectType.DS2 => FilterByFolderPrefix(GetEntriesByExtension(index, "bnd", "/model"), "/model/parts"),
+            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => GetEntriesByExtension(index, "partsbnd", "/parts"),
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => FilterExcludeArchive(GetEntriesByExtension(index, "partsbnd", "/parts"), "sd"),
             _ => new List<FileDictionaryEntry>()
         };
     }
 
-    private void CompileCollisionFilesUltraFast(MultiIndex index, ProjectType projectType)
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static List<FileDictionaryEntry> FilterByFolderPrefix(List<FileDictionaryEntry> entries, string prefix)
+    {
+        var result = new List<FileDictionaryEntry>(entries.Count / 2);
+        foreach (var entry in entries)
+        {
+            if (entry.Folder.StartsWith(prefix))
+                result.Add(entry);
+        }
+        return result;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static List<FileDictionaryEntry> FilterExcludeArchive(List<FileDictionaryEntry> entries, string exclude)
+    {
+        var result = new List<FileDictionaryEntry>(entries.Count);
+        foreach (var entry in entries)
+        {
+            if (!entry.Archive.Contains(exclude))
+                result.Add(entry);
+        }
+        return result;
+    }
+
+    private void CompileCollisionFiles(MultiIndex index, ProjectType projectType)
     {
         var collisions = new ConcurrentBag<FileDictionaryEntry>();
 
         if (projectType is ProjectType.DS2S or ProjectType.DS2)
         {
-            var ds2Collisions = FastLookup(index, "hkxbhd", "/model");
-            foreach (var entry in ds2Collisions.Where(e => e.Folder.StartsWith("/model/map")))
+            var ds2Collisions = GetEntriesByExtension(index, "hkxbhd", "/model");
+            foreach (var entry in ds2Collisions)
             {
-                collisions.Add(entry);
+                if (entry.Folder.StartsWith("/model/map"))
+                    collisions.Add(entry);
             }
         }
 
-        // Parallel map processing
         var mapEntries = MapFiles.Entries;
 
         Parallel.ForEach(mapEntries, map =>
         {
             var mapid = map.Filename;
-            var entries = GetCollisionEntriesForMapOptimized(index, mapid, projectType);
+            var entries = GetCollisionEntriesForMap(index, mapid, projectType);
 
             foreach (var entry in entries)
             {
@@ -579,7 +572,7 @@ public class ProjectFileLocator : IDisposable
         CollisionFiles.Entries = collisions.ToList();
     }
 
-    private List<FileDictionaryEntry> GetCollisionEntriesForMapOptimized(
+    private List<FileDictionaryEntry> GetCollisionEntriesForMap(
         MultiIndex index,
         string mapid,
         ProjectType projectType)
@@ -587,30 +580,45 @@ public class ProjectFileLocator : IDisposable
         return projectType switch
         {
             ProjectType.DS1 or ProjectType.DES =>
-                FastLookup(index, "hkx", "/map").Where(e => e.Folder.StartsWith($"/map/{mapid}")).ToList(),
+                FilterByFolderPrefix(GetEntriesByExtension(index, "hkx", "/map"), $"/map/{mapid}"),
 
             ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT =>
-                FastLookup(index, "hkxbhd", "/map").Where(e => e.Folder.StartsWith($"/map/{mapid}")).ToList(),
+                FilterByFolderPrefix(GetEntriesByExtension(index, "hkxbhd", "/map"), $"/map/{mapid}"),
 
             ProjectType.ER or ProjectType.AC6 or ProjectType.NR =>
-                FastLookup(index, "hkxbhd", "/map")
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid.Substring(0, 3)}/{mapid}") && !e.Archive.Contains("sd"))
-                    .ToList(),
+                FilterByFolderPrefixAndExcludeArchive(
+                    GetEntriesByExtension(index, "hkxbhd", "/map"),
+                    $"/map/{mapid.Substring(0, 3)}/{mapid}",
+                    "sd"),
 
             _ => new List<FileDictionaryEntry>()
         };
     }
 
-    private void CompileMapPieceFilesUltraFast(MultiIndex index, ProjectType projectType)
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static List<FileDictionaryEntry> FilterByFolderPrefixAndExcludeArchive(
+        List<FileDictionaryEntry> entries, string prefix, string excludeArchive)
+    {
+        var result = new List<FileDictionaryEntry>(entries.Count / 4);
+        foreach (var entry in entries)
+        {
+            if (entry.Folder.StartsWith(prefix) && !entry.Archive.Contains(excludeArchive))
+                result.Add(entry);
+        }
+        return result;
+    }
+
+    private void CompileMapPieceFiles(MultiIndex index, ProjectType projectType)
     {
         var mapPieces = new ConcurrentBag<FileDictionaryEntry>();
 
         if (projectType is ProjectType.DS2S or ProjectType.DS2)
         {
-            var ds2Pieces = FastLookup(index, "mapbhd", "/model");
-            foreach (var entry in ds2Pieces.Where(e => e.Folder.StartsWith("/model/map")))
+            var ds2Pieces = GetEntriesByExtension(index, "mapbhd", "/model");
+            foreach (var entry in ds2Pieces)
             {
-                mapPieces.Add(entry);
+                if (entry.Folder.StartsWith("/model/map"))
+                    mapPieces.Add(entry);
             }
         }
 
@@ -619,7 +627,7 @@ public class ProjectFileLocator : IDisposable
         Parallel.ForEach(mapEntries, map =>
         {
             var mapid = map.Filename;
-            var entries = GetMapPieceEntriesForMapOptimized(index, mapid, projectType);
+            var entries = GetMapPieceEntriesForMap(index, mapid, projectType);
 
             foreach (var entry in entries)
             {
@@ -630,7 +638,7 @@ public class ProjectFileLocator : IDisposable
         MapPieceFiles.Entries = mapPieces.ToList();
     }
 
-    private List<FileDictionaryEntry> GetMapPieceEntriesForMapOptimized(
+    private List<FileDictionaryEntry> GetMapPieceEntriesForMap(
         MultiIndex index,
         string mapid,
         ProjectType projectType)
@@ -638,21 +646,22 @@ public class ProjectFileLocator : IDisposable
         return projectType switch
         {
             ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DES =>
-                FastLookup(index, "flver", "/map").Where(e => e.Folder.StartsWith($"/map/{mapid}")).ToList(),
+                FilterByFolderPrefix(GetEntriesByExtension(index, "flver", "/map"), $"/map/{mapid}"),
 
             ProjectType.ER or ProjectType.AC6 or ProjectType.NR =>
-                FastLookup(index, "mapbnd", "/map")
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid.Substring(0, 3)}/{mapid}") && !e.Archive.Contains("sd"))
-                    .ToList(),
+                FilterByFolderPrefixAndExcludeArchive(
+                    GetEntriesByExtension(index, "mapbnd", "/map"),
+                    $"/map/{mapid.Substring(0, 3)}/{mapid}",
+                    "sd"),
 
             _ =>
-                FastLookup(index, "mapbnd", "/map").Where(e => e.Folder.StartsWith($"/map/{mapid}")).ToList()
+                FilterByFolderPrefix(GetEntriesByExtension(index, "mapbnd", "/map"), $"/map/{mapid}")
         };
     }
 
     public void CompileTextDictionaries(MultiIndex index)
     {
-        var msgbndEntries = FastLookup(index, "msgbnd", "/msg");
+        var msgbndEntries = GetEntriesByExtension(index, "msgbnd", "/msg");
 
         if (Project.Descriptor.ProjectType == ProjectType.ER)
         {
@@ -669,7 +678,7 @@ public class ProjectFileLocator : IDisposable
 
         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            fmgDictionary.Entries = FastLookup(index, "fmg", "/menu");
+            fmgDictionary.Entries = GetEntriesByExtension(index, "fmg", "/menu");
         }
 
         TextFiles = ProjectUtils.MergeFileDictionaries(msgbndDictionary, fmgDictionary);
@@ -677,7 +686,7 @@ public class ProjectFileLocator : IDisposable
 
     public void CompileGparamDictionaries(MultiIndex index)
     {
-        GparamFiles.Entries = FastLookup(index, "gparam", "/param");
+        GparamFiles.Entries = GetEntriesByExtension(index, "gparam", "/param");
     }
 
     public void CompileMaterialDictionaries(MultiIndex index)
@@ -686,15 +695,21 @@ public class ProjectFileLocator : IDisposable
 
         if (projectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var materialEntries = FastLookup(index, "bnd", "/material");
-            MTD_Files.Entries = materialEntries.Where(e => e.Filename == "allmaterialbnd").ToList();
+            var materialEntries = GetEntriesByExtension(index, "bnd", "/material");
+            var filtered = new List<FileDictionaryEntry>(1);
+            foreach (var entry in materialEntries)
+            {
+                if (entry.Filename == "allmaterialbnd")
+                    filtered.Add(entry);
+            }
+            MTD_Files.Entries = filtered;
         }
         else
         {
-            MTD_Files.Entries = FastLookup(index, "mtdbnd", "/mtd");
+            MTD_Files.Entries = GetEntriesByExtension(index, "mtdbnd", "/mtd");
         }
 
-        MATBIN_Files.Entries = FastLookup(index, "matbinbnd", "/material");
+        MATBIN_Files.Entries = GetEntriesByExtension(index, "matbinbnd", "/material");
     }
 
     public void CompileTextureDictionaries(MultiIndex index)
@@ -709,30 +724,39 @@ public class ProjectFileLocator : IDisposable
         var sfxDict = new FileDictionary();
 
         Parallel.Invoke(
-            () => baseDict.Entries = FastLookup(index, "tpf"),
-            () =>
-            {
-                if (projectType is ProjectType.DS2S or ProjectType.DS2)
-                    objDict.Entries = FastLookup(index, "bnd", "/model").Where(e => e.Folder == "/model/obj").ToList();
-                else
-                    objDict.Entries = FastLookup(index, "objbnd");
-            },
-            () => chrDict.Entries = FastLookup(index, "texbnd"),
+            () => baseDict.Entries = GetEntriesByExtension(index, "tpf"),
             () =>
             {
                 if (projectType is ProjectType.DS2S or ProjectType.DS2)
                 {
-                    commonPartDict.Entries = FastLookup(index, "commonbnd");
-                    partDict.Entries = FastLookup(index, "bnd", "/model").Where(e => e.Folder.Contains("/model/parts")).ToList();
+                    var entries = GetEntriesByExtension(index, "bnd", "/model");
+                    var filtered = new List<FileDictionaryEntry>(entries.Count / 4);
+                    foreach (var entry in entries)
+                    {
+                        if (entry.Folder == "/model/obj")
+                            filtered.Add(entry);
+                    }
+                    objDict.Entries = filtered;
+                }
+                else
+                    objDict.Entries = GetEntriesByExtension(index, "objbnd");
+            },
+            () => chrDict.Entries = GetEntriesByExtension(index, "texbnd"),
+            () =>
+            {
+                if (projectType is ProjectType.DS2S or ProjectType.DS2)
+                {
+                    commonPartDict.Entries = GetEntriesByExtension(index, "commonbnd");
+                    partDict.Entries = FilterByFolderPrefix(GetEntriesByExtension(index, "bnd", "/model"), "/model/parts");
                 }
                 else
                 {
-                    partDict.Entries = FastLookup(index, "partsbnd");
+                    partDict.Entries = GetEntriesByExtension(index, "partsbnd");
                 }
             },
-            () => sfxDict.Entries = FastLookup(index, "ffxbnd"),
-            () => TexturePackedFiles.Entries = FastLookup(index, "tpfbhd"),
-            () => ShoeboxFiles.Entries = FastLookup(index, "sblytbnd")
+            () => sfxDict.Entries = GetEntriesByExtension(index, "ffxbnd"),
+            () => TexturePackedFiles.Entries = GetEntriesByExtension(index, "tpfbhd"),
+            () => ShoeboxFiles.Entries = GetEntriesByExtension(index, "sblytbnd")
         );
 
         var secondaryDicts = new List<FileDictionary> { objDict, chrDict, sfxDict };
