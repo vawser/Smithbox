@@ -206,15 +206,6 @@ public class ProjectEntry
             Smithbox.LogError(this, "Failed to setup file locator", e);
         }
 
-        try
-        {
-            await Locator.Sort(reportProgress, silent);
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError(this, "Failed to sort file locator", e);
-        }
-
         IsLoadingData = true;
 
         if (!silent)
