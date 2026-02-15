@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Tracy;
 using Veldrid.Utilities;
 
 namespace StudioCore.Renderer;
@@ -78,7 +79,7 @@ public class RenderScene
     }
 
     public void SendGPUPickingRequest(
-        SceneRenderer.RenderQueue queue, 
+        SceneRenderer.RenderQueue queue,
         SceneRenderer.RenderQueue overlayQueue)
     {
         queue.RequestPicking();
@@ -88,25 +89,25 @@ public class RenderScene
     public void Render(SceneRenderer.RenderQueue queue, SceneRenderer.RenderQueue overlayQueue, BoundingFrustum frustum,
         SceneRenderPipeline pipeline)
     {
-        Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneNC(1, "Cull", 0xFF00FF00);
+        Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneNC(1, "Cull", 0xFF00FF00);
         OpaqueRenderables.CullRenderables(frustum);
         OpaqueRenderables.ProcessSceneVisibility(DrawFilter, DisplayGroup);
-        Tracy.TracyCZoneEnd(ctx);
+        Profiler.TracyCZoneEnd(ctx);
 
-        ctx = Tracy.TracyCZoneN(1, "Submit");
+        ctx = Profiler.TracyCZoneN(1, "Submit");
         OpaqueRenderables.SubmitRenderables(queue);
-        Tracy.TracyCZoneEnd(ctx);
+        Profiler.TracyCZoneEnd(ctx);
 
         queue.SetDrawParameters(OpaqueRenderables.cDrawParameters,
             queue.PickingEnabled ? OpaqueRenderables.cSelectionPipelines : OpaqueRenderables.cPipelines);
 
-        ctx = Tracy.TracyCZoneN(1, "Overlays");
+        ctx = Profiler.TracyCZoneN(1, "Overlays");
         OverlayRenderables.CullRenderables(frustum);
         OverlayRenderables.ProcessSceneVisibility(DrawFilter, DisplayGroup);
         OverlayRenderables.SubmitRenderables(overlayQueue);
         overlayQueue.SetDrawParameters(OverlayRenderables.cDrawParameters,
             overlayQueue.PickingEnabled ? OverlayRenderables.cSelectionPipelines : OverlayRenderables.cPipelines);
-        Tracy.TracyCZoneEnd(ctx);
+        Profiler.TracyCZoneEnd(ctx);
 
     }
 }
