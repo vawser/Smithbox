@@ -192,7 +192,11 @@ public class ModelContainer : ObjectContainer
         Objects.Add(skeletonSet);
         RootObject.AddChild(skeletonSet);
 
-        Entity.BuildReferenceMaps(Objects);
+        foreach (Entity m in Objects)
+        {
+            m.BuildReferenceMap();
+        }
+
         // Add references after all others
         RootObject.BuildReferenceMap();
     }
@@ -233,15 +237,15 @@ public class ModelContainer : ObjectContainer
         {
             resource = ModelLocator.GetChrModel(Project, modelName, modelName);
         }
-        else if (modelName.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) ||
+        else if (modelName.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || 
             (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
         {
             resource = ModelLocator.GetObjModel(Project, modelName, modelName);
         }
-        else if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
-            modelName.StartsWith("lg") || modelName.StartsWith("LG") ||
-            modelName.StartsWith("bd") || modelName.StartsWith("BD") ||
-            modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
+        else if (modelName.StartsWith("am") || modelName.StartsWith("AM") || 
+            modelName.StartsWith("lg") || modelName.StartsWith("LG") || 
+            modelName.StartsWith("bd") || modelName.StartsWith("BD") || 
+            modelName.StartsWith("hd") || modelName.StartsWith("HD") || 
             modelName.StartsWith("wp") || modelName.StartsWith("WP"))
         {
             resource = ModelLocator.GetPartsModel(View.Project, modelName, modelName);
@@ -350,3 +354,4 @@ public class ModelContainer : ObjectContainer
         }
     }
 }
+
