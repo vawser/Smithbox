@@ -14,6 +14,7 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Xml.Serialization;
+using Tracy;
 using PropertiesChangedAction = StudioCore.Editors.MapEditor.PropertiesChangedAction;
 
 namespace StudioCore.Editors.Common;
@@ -703,10 +704,22 @@ public class Entity : ISelectable, IDisposable
     {
         if (entities == null) return;
 
-        var groups = entities.Where(e => e != null).GroupBy(e => e.Container);
-        foreach (var g in groups)
+        // Group entities by container
+        var containerGroups = new Dictionary<ObjectContainer, List<Entity>>();
+        foreach (var entity in entities)
         {
-            var list = g.ToList();
+            if (entity == null) continue;
+            if (!containerGroups.TryGetValue(entity.Container, out var list))
+            {
+                list = new List<Entity>();
+                containerGroups[entity.Container] = list;
+            }
+            list.Add(entity);
+        }
+
+        foreach (var kvp in containerGroups)
+        {
+            var list = kvp.Value;
             if (list.Count == 0) continue;
 
             // Clear existing forward/back references
@@ -717,9 +730,18 @@ public class Entity : ISelectable, IDisposable
             }
 
             // Build name -> entity lookup
-            var nameLookup = list
-                .Where(e => !string.IsNullOrEmpty(e.Name))
-                .ToDictionary(e => e.Name, e => e, StringComparer.Ordinal);
+            var nameLookup = new Dictionary<string, List<Entity>>(StringComparer.Ordinal);
+            foreach (var entity in list)
+            {
+                if (string.IsNullOrEmpty(entity.Name)) continue;
+
+                if (!nameLookup.TryGetValue(entity.Name, out var entityList))
+                {
+                    entityList = new List<Entity>();
+                    nameLookup[entity.Name] = entityList;
+                }
+                entityList.Add(entity);
+            }
 
             // Resolve references for each entity
             foreach (var e in list)
@@ -732,16 +754,31 @@ public class Entity : ISelectable, IDisposable
                 foreach (var rname in refNames)
                 {
                     if (string.IsNullOrEmpty(rname)) continue;
-                    if (!nameLookup.TryGetValue(rname, out var tgt) || tgt == e) continue;
-                    if (!localRefs.TryGetValue(rname, out var lst)) { lst = new List<Entity>(); localRefs[rname] = lst; }
-                    lst.Add(tgt);
-                    tgt.ReferencingObjects ??= new HashSet<Entity>();
-                    tgt.ReferencingObjects.Add(e);
+                    if (!nameLookup.TryGetValue(rname, out var targets)) continue;
+
+                    foreach (var tgt in targets)
+                    {
+                        if (tgt == e) continue;
+                        if (!localRefs.TryGetValue(rname, out var lst))
+                        {
+                            lst = new List<Entity>();
+                            localRefs[rname] = lst;
+                        }
+                        lst.Add(tgt);
+                        if (tgt.ReferencingObjects == null)
+                            tgt.ReferencingObjects = new HashSet<Entity>();
+                        tgt.ReferencingObjects.Add(e);
+                    }
                 }
 
                 foreach (var kv in localRefs)
                 {
-                    e.References[kv.Key] = kv.Value.Cast<object>().ToArray();
+                    var refArray = new object[kv.Value.Count];
+                    for (int m = 0; m < kv.Value.Count; m++)
+                    {
+                        refArray[m] = kv.Value[m];
+                    }
+                    e.References[kv.Key] = refArray;
                 }
             }
         }
