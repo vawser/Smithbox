@@ -5,6 +5,7 @@ using StudioCore.Renderer;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tracy;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -53,6 +54,7 @@ public class MapResourceHandler
 
     public void SetupHumanEnemySubstitute()
     {
+        using var __subScope = Profiler.TracyZoneAuto();
         if (CFG.Current.MapEditor_ModelLoad_Characters)
         {
             var chrId = CFG.Current.MapEditor_Character_Substitution_ID;
@@ -170,7 +172,7 @@ public class MapResourceHandler
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
-    
+
                 // BND
                 textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, model.Name, true);
 
@@ -429,7 +431,7 @@ public class MapResourceHandler
             task = job.Complete();
             tasks.Add(task);
         }
-        
+
         // Connect Collisions
         if (CFG.Current.MapEditor_ModelLoad_Collisions)
         {

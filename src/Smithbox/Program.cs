@@ -1,11 +1,13 @@
 ﻿using StudioCore;
 using StudioCore.Renderer;
+
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using Tracy;
 
 namespace SmithboxApp;
 
@@ -23,6 +25,7 @@ public static class Program
     [STAThread]
     static void Main(string[] args)
     {
+        Profiler.Startup();
         #if DEBUG
         IsDebug = true;
         #endif

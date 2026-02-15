@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using Tracy;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -36,6 +37,7 @@ public class HavokCollisionBank
 
     public void OnLoadMap(string mapId)
     {
+        using var __scope = Profiler.TracyZoneAuto();
         if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
 
@@ -67,6 +69,7 @@ public class HavokCollisionBank
 
     private void LoadMapCollision(string mapId, string type)
     {
+        using var __scope = Profiler.TracyZoneAuto();
         byte[] CompendiumBytes = null;
 
         var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");

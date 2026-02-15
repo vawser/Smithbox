@@ -123,6 +123,7 @@
     <ProjectReference Include="..\Veldrid\Veldrid.StartupUtilities\Veldrid.StartupUtilities.csproj" />
     <ProjectReference Include="..\Veldrid\Veldrid.Utilities\Veldrid.Utilities.csproj" />
     <ProjectReference Include="..\Veldrid\Veldrid\Veldrid.csproj" />
+    <ProjectReference Include="..\Tracy\Tracy.csproj" />
   </ItemGroup>
 
   <ItemGroup>

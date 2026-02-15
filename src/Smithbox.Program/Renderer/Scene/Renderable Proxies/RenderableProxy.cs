@@ -2,6 +2,7 @@
 using StudioCore.Editors.Common;
 using System;
 using System.Numerics;
+using Tracy;
 using Veldrid;
 using Veldrid.Utilities;
 
@@ -52,9 +53,9 @@ public abstract class RenderableProxy : SceneRenderer.IRendererUpdatable, IDispo
     {
         SceneRenderer.AddLowPriorityBackgroundUploadTask((gd, cl) =>
         {
-            Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, @"Renderable construction");
+            Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"Renderable construction");
             ConstructRenderables(gd, cl, null);
-            Tracy.TracyCZoneEnd(ctx);
+            Profiler.TracyCZoneEnd(ctx);
         });
     }
 
@@ -62,9 +63,9 @@ public abstract class RenderableProxy : SceneRenderer.IRendererUpdatable, IDispo
     {
         SceneRenderer.AddLowPriorityBackgroundUploadTask((gd, cl) =>
         {
-            Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, @"Renderable update");
+            Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"Renderable update");
             UpdateRenderables(gd, cl, null);
-            Tracy.TracyCZoneEnd(ctx);
+            Profiler.TracyCZoneEnd(ctx);
         });
     }
 

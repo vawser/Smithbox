@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -47,6 +47,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andre.SoapstoneLib", "src\Andre\SoapstoneLib\SoapstoneLib\Andre.SoapstoneLib.csproj", "{A75D395E-6097-BBD1-A21E-96B3297BD78B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veldrid.MetalBindings", "src\Veldrid\Veldrid.MetalBindings\Veldrid.MetalBindings.csproj", "{77EB2AA9-02E6-4356-9A86-956A946CBBBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracy", "src\Tracy\Tracy.csproj", "{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -804,6 +806,38 @@ Global
 		{77EB2AA9-02E6-4356-9A86-956A946CBBBF}.Release-win|Any CPU.Build.0 = Release|Any CPU
 		{77EB2AA9-02E6-4356-9A86-956A946CBBBF}.Release-win|x64.ActiveCfg = Release|Any CPU
 		{77EB2AA9-02E6-4356-9A86-956A946CBBBF}.Release-win|x64.Build.0 = Release|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug|x64.ActiveCfg = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug|x64.Build.0 = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-linux|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-linux|Any CPU.Build.0 = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-linux|x64.ActiveCfg = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-linux|x64.Build.0 = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-osx|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-osx|Any CPU.Build.0 = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-osx|x64.ActiveCfg = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-osx|x64.Build.0 = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-win|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-win|Any CPU.Build.0 = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-win|x64.ActiveCfg = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug-win|x64.Build.0 = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release|x64.ActiveCfg = Release|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release|x64.Build.0 = Release|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-linux|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-linux|Any CPU.Build.0 = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-linux|x64.ActiveCfg = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-linux|x64.Build.0 = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-osx|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-osx|Any CPU.Build.0 = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-osx|x64.ActiveCfg = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-osx|x64.Build.0 = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-win|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-win|Any CPU.Build.0 = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-win|x64.ActiveCfg = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release-win|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

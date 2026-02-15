@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Tracy;
 using static SoulsFormats.NVA;
 
 namespace StudioCore.Editors.MapEditor;
@@ -42,6 +43,7 @@ public class HavokNavmeshBank
 
     public void OnLoadMap(string mapId)
     {
+        using var __scope = Profiler.TracyZoneAuto();
         if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             LoadNavmeshModels(mapId);
