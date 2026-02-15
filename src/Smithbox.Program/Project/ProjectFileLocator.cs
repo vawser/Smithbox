@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace StudioCore.Application;
@@ -161,39 +159,6 @@ public class ProjectFileLocator : IDisposable
         return;
     }
 
-    public async Task Sort(Action<ProjectLoadProgress> reportProgress, bool silent = false)
-    {
-        await Task.Yield();
-
-        MapFiles.Entries.Sort();
-        MapPieceFiles.Entries.Sort();
-        ChrFiles.Entries.Sort();
-        AssetFiles.Entries.Sort();
-        PartFiles.Entries.Sort();
-        CollisionFiles.Entries.Sort();
-        LightFiles.Entries.Sort();
-        DS2_LightFiles.Entries.Sort();
-        NavmeshFiles.Entries.Sort();
-        AutoInvadeFiles.Entries.Sort();
-        LightAtlasFiles.Entries.Sort();
-        LightProbeFiles.Entries.Sort();
-
-        GparamFiles.Entries.Sort();
-        TextFiles.Entries.Sort();
-
-        MTD_Files.Entries.Sort();
-        MATBIN_Files.Entries.Sort();
-
-        TextureFiles.Entries.Sort();
-        TexturePackedFiles.Entries.Sort();
-        ShoeboxFiles.Entries.Sort();
-
-        TimeActFiles.Entries.Sort();
-        BehaviorFiles.Entries.Sort();
-
-        return;
-    }
-
     private FileDictionary BuildProjectFileDictionary(string projectPath, FileDictionary existingDict, ProjectType type)
     {
         var projectFileDictionary = new FileDictionary { Entries = new() };
@@ -315,508 +280,264 @@ public class ProjectFileLocator : IDisposable
     #endregion
 
     #region Dictionaries
-    private MultiIndex BuildMultiIndex()
-    {
-        var allEntries = Project.Locator.FileDictionary.Entries;
-        var count = allEntries.Count;
-
-        // Pre-allocate arrays with exact size
-        var allArray = new FileDictionaryEntry[count];
-        var nonSdList = new ConcurrentBag<FileDictionaryEntry>();
-        var mapList = new ConcurrentBag<FileDictionaryEntry>();
-
-        var byExtension = new ConcurrentDictionary<string, ConcurrentBag<FileDictionaryEntry>>(Environment.ProcessorCount, 50);
-        var byFolderStart = new ConcurrentDictionary<string, ConcurrentBag<FileDictionaryEntry>>(Environment.ProcessorCount, 20);
-        var extAndFolder = new ConcurrentDictionary<string, ConcurrentDictionary<string, ConcurrentBag<FileDictionaryEntry>>>(Environment.ProcessorCount, 50);
-
-        int index = -1;
-
-        Parallel.ForEach(allEntries, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, entry =>
-        {
-            int localIndex = Interlocked.Increment(ref index);
-
-            allArray[localIndex] = entry;
-
-            // Build indexes in thread-local storage first
-            var isNonSd = entry.Archive != "sd";
-            var isMap = entry.Folder.StartsWith("/map");
-            var extension = entry.Extension;
-            var folderStart = GetFolderStart(entry.Folder);
-
-            if (isNonSd)
-            {
-                nonSdList.Add(entry);
-            }
-
-            if (isMap)
-            {
-                mapList.Add(entry);
-            }
-
-            byExtension.GetOrAdd(extension, _ => new ConcurrentBag<FileDictionaryEntry>()).Add(entry);
-            byFolderStart.GetOrAdd(folderStart, _ => new ConcurrentBag<FileDictionaryEntry>()).Add(entry);
-
-            if (isNonSd)
-            {
-                var folderDict = extAndFolder.GetOrAdd(extension, _ => new ConcurrentDictionary<string, ConcurrentBag<FileDictionaryEntry>>());
-                folderDict.GetOrAdd(folderStart, _ => new ConcurrentBag<FileDictionaryEntry>()).Add(entry);
-            }
-        });
-
-        return new MultiIndex
-        {
-            AllArray = allArray,
-            NonSdArray = nonSdList.ToArray(),
-            MapArray = mapList.ToArray(),
-            ByExtension = byExtension.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.ToList()),
-            ByFolderStart = byFolderStart.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.ToList()),
-            ExtensionAndFolder = extAndFolder.ToDictionary(
-                kvp => kvp.Key,
-                kvp => kvp.Value.ToDictionary(inner => inner.Key, inner => inner.Value.ToList())),
-            MapIds = new HashSet<string>(mapList.Select(m => m.Filename))
-        };
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static string GetFolderStart(string folder)
-    {
-        var slashIndex = folder.IndexOf('/');
-        return slashIndex > 0 ? folder.Substring(0, slashIndex) : folder;
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static List<FileDictionaryEntry> FilterEntries(
-        FileDictionaryEntry[] entries,
-        string folderPrefix = null,
-        string extension = null,
-        bool excludeAutoroute = false,
-        bool excludeSd = false)
-    {
-        var result = new List<FileDictionaryEntry>(entries.Length / 10);
-
-        for (int i = 0; i < entries.Length; i++)
-        {
-            ref readonly var entry = ref entries[i];
-
-            if (folderPrefix != null && !entry.Folder.StartsWith(folderPrefix))
-                continue;
-
-            if (extension != null && entry.Extension != extension)
-                continue;
-
-            if (excludeAutoroute && entry.Folder.Contains("autoroute"))
-                continue;
-
-            if (excludeSd && entry.Archive.Contains("sd"))
-                continue;
-
-            result.Add(entry);
-        }
-
-        return result;
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static List<FileDictionaryEntry> GetEntriesByExtension(
-        MultiIndex index,
-        string extension,
-        string folderStart = null)
-    {
-        if (folderStart != null &&
-            index.ExtensionAndFolder.TryGetValue(extension, out var folderDict) &&
-            folderDict.TryGetValue(folderStart, out var entries))
-        {
-            return new List<FileDictionaryEntry>(entries);
-        }
-
-        if (index.ByExtension.TryGetValue(extension, out var extEntries))
-        {
-            if (folderStart != null)
-            {
-                var result = new List<FileDictionaryEntry>(extEntries.Count / 4);
-                foreach (var entry in extEntries)
-                {
-                    if (entry.Folder.StartsWith(folderStart))
-                        result.Add(entry);
-                }
-                return result;
-            }
-            return new List<FileDictionaryEntry>(extEntries);
-        }
-
-        return new List<FileDictionaryEntry>();
-    }
-
     public void CompileDictionaries()
     {
-        var index = BuildMultiIndex();
-
-        var tasks = new[]
-        {
-            Task.Run(() => CompileMapDictionaries(index)),
-            Task.Run(() => CompileModelDictionaries(index)),
-            Task.Run(() => CompileTextDictionaries(index)),
-            Task.Run(() => CompileGparamDictionaries(index)),
-            Task.Run(() => CompileMaterialDictionaries(index)),
-            Task.Run(() => CompileTextureDictionaries(index)),
-            Task.Run(() => CompileAnimDictionaries(index))
-        };
-
-        Task.WaitAll(tasks);
-    }
-
-    public void CompileMapDictionaries(MultiIndex index)
-    {
-        var mapArray = index.MapArray;
-
-        Parallel.Invoke(
-            () => MapFiles.Entries = FilterEntries(mapArray, extension: "msb", excludeAutoroute: true),
-            () => LightFiles.Entries = GetEntriesByExtension(index, "btl", "/map"),
-            () => DS2_LightFiles.Entries = GetEntriesByExtension(index, "gibhd", "/map"),
-            () => NavmeshFiles.Entries = GetEntriesByExtension(index, "nva", "/map"),
-            () => CollisionFiles.Entries = GetEntriesByExtension(index, "hkxbhd", "/map"),
-            () => LightAtlasFiles.Entries = GetEntriesByExtension(index, "btab", "/map"),
-            () => LightProbeFiles.Entries = GetEntriesByExtension(index, "btpb", "/map"),
-            () => AutoInvadeFiles.Entries = GetEntriesByExtension(index, "aipbnd", "/other")
-        );
-    }
-
-    public void CompileModelDictionaries(MultiIndex index)
-    {
+        var allEntries = FileDictionary.Entries;
         var projectType = Project.Descriptor.ProjectType;
 
-        var mapTask = Task.Run(() =>
+        // Initialize all lists
+        var mapFiles = new List<FileDictionaryEntry>();
+        var chrFiles = new List<FileDictionaryEntry>();
+        var assetFiles = new List<FileDictionaryEntry>();
+        var partFiles = new List<FileDictionaryEntry>();
+        var collisionFiles = new List<FileDictionaryEntry>();
+        var mapPieceFiles = new List<FileDictionaryEntry>();
+        var lightFiles = new List<FileDictionaryEntry>();
+        var ds2LightFiles = new List<FileDictionaryEntry>();
+        var navmeshFiles = new List<FileDictionaryEntry>();
+        var autoInvadeFiles = new List<FileDictionaryEntry>();
+        var lightAtlasFiles = new List<FileDictionaryEntry>();
+        var lightProbeFiles = new List<FileDictionaryEntry>();
+        var gparamFiles = new List<FileDictionaryEntry>();
+        var textFiles = new List<FileDictionaryEntry>();
+        var mtdFiles = new List<FileDictionaryEntry>();
+        var matbinFiles = new List<FileDictionaryEntry>();
+        var textureFiles = new List<FileDictionaryEntry>();
+        var texturePackedFiles = new List<FileDictionaryEntry>();
+        var shoeboxFiles = new List<FileDictionaryEntry>();
+        var timeActFiles = new List<FileDictionaryEntry>();
+        var behaviorFiles = new List<FileDictionaryEntry>();
+
+        // Single pass - check each entry once
+        foreach (var entry in allEntries)
         {
-            MapFiles.Entries = FilterEntries(
-                index.AllArray,
-                folderPrefix: "/map",
-                extension: "msb",
-                excludeAutoroute: true,
-                excludeSd: true);
-        });
+            var ext = entry.Extension;
+            var folder = entry.Folder;
+            var archive = entry.Archive;
+            var isMap = folder.StartsWith("/map");
+            var isSd = archive.Contains("sd");
 
-        var chrTask = Task.Run(() =>
-        {
-            if (projectType is ProjectType.DS2S or ProjectType.DS2)
-            {
-                ChrFiles.Entries = GetEntriesByExtension(index, "bnd", "/model");
-                var filtered = new List<FileDictionaryEntry>(ChrFiles.Entries.Count / 2);
-                foreach (var entry in ChrFiles.Entries)
-                {
-                    if (entry.Folder.StartsWith("/model/chr"))
-                        filtered.Add(entry);
-                }
-                ChrFiles.Entries = filtered;
-            }
-            else
-            {
-                ChrFiles.Entries = GetEntriesByExtension(index, "chrbnd");
-                var filtered = new List<FileDictionaryEntry>(ChrFiles.Entries.Count);
-                foreach (var entry in ChrFiles.Entries)
-                {
-                    if (!entry.Archive.Contains("sd"))
-                        filtered.Add(entry);
-                }
-                ChrFiles.Entries = filtered;
-            }
-        });
+            // Map files
+            if (ShouldAddToMapFiles(entry, isMap, isSd))
+                mapFiles.Add(entry);
 
-        var assetTask = Task.Run(() => AssetFiles.Entries = GetAssetFiles(index, projectType));
-        var partTask = Task.Run(() => PartFiles.Entries = GetPartFiles(index, projectType));
+            // Character files
+            if (ShouldAddToChrFiles(entry, projectType, isSd))
+                chrFiles.Add(entry);
 
-        Task.WaitAll(mapTask, chrTask, assetTask, partTask);
+            // Asset files
+            if (ShouldAddToAssetFiles(entry, projectType, isSd))
+                assetFiles.Add(entry);
 
-        CompileCollisionFiles(index, projectType);
-        CompileMapPieceFiles(index, projectType);
-    }
+            // Part files
+            if (ShouldAddToPartFiles(entry, projectType, isSd))
+                partFiles.Add(entry);
 
-    private List<FileDictionaryEntry> GetAssetFiles(MultiIndex index, ProjectType projectType)
-    {
-        return projectType switch
-        {
-            ProjectType.DS1 => GetEntriesByExtension(index, "objbnd", "/obj"),
-            ProjectType.DS2S or ProjectType.DS2 => FilterByFolderPrefix(GetEntriesByExtension(index, "bnd", "/model"), "/model/obj"),
-            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => GetEntriesByExtension(index, "objbnd", "/obj"),
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => FilterExcludeArchive(GetEntriesByExtension(index, "geombnd", "/asset"), "sd"),
-            _ => new List<FileDictionaryEntry>()
-        };
-    }
+            // Collision files
+            if (ShouldAddToCollisionFiles(entry, projectType, isMap, isSd))
+                collisionFiles.Add(entry);
 
-    private List<FileDictionaryEntry> GetPartFiles(MultiIndex index, ProjectType projectType)
-    {
-        return projectType switch
-        {
-            ProjectType.DS1 => GetEntriesByExtension(index, "partsbnd", "/parts"),
-            ProjectType.DS2S or ProjectType.DS2 => FilterByFolderPrefix(GetEntriesByExtension(index, "bnd", "/model"), "/model/parts"),
-            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => GetEntriesByExtension(index, "partsbnd", "/parts"),
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => FilterExcludeArchive(GetEntriesByExtension(index, "partsbnd", "/parts"), "sd"),
-            _ => new List<FileDictionaryEntry>()
-        };
-    }
+            // Map piece files
+            if (ShouldAddToMapPieceFiles(entry, projectType, isMap, isSd))
+                mapPieceFiles.Add(entry);
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static List<FileDictionaryEntry> FilterByFolderPrefix(List<FileDictionaryEntry> entries, string prefix)
-    {
-        var result = new List<FileDictionaryEntry>(entries.Count / 2);
-        foreach (var entry in entries)
-        {
-            if (entry.Folder.StartsWith(prefix))
-                result.Add(entry);
-        }
-        return result;
-    }
+            // Light files
+            if (isMap && ext == "btl")
+                lightFiles.Add(entry);
+            if (isMap && ext == "gibhd")
+                ds2LightFiles.Add(entry);
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static List<FileDictionaryEntry> FilterExcludeArchive(List<FileDictionaryEntry> entries, string exclude)
-    {
-        var result = new List<FileDictionaryEntry>(entries.Count);
-        foreach (var entry in entries)
-        {
-            if (!entry.Archive.Contains(exclude))
-                result.Add(entry);
-        }
-        return result;
-    }
+            // Navmesh
+            if (isMap && ext == "nva")
+                navmeshFiles.Add(entry);
 
-    private void CompileCollisionFiles(MultiIndex index, ProjectType projectType)
-    {
-        var collisions = new ConcurrentBag<FileDictionaryEntry>();
+            // Auto invade
+            if (folder.StartsWith("/other") && ext == "aipbnd")
+                autoInvadeFiles.Add(entry);
 
-        if (projectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            var ds2Collisions = GetEntriesByExtension(index, "hkxbhd", "/model");
-            foreach (var entry in ds2Collisions)
-            {
-                if (entry.Folder.StartsWith("/model/map"))
-                    collisions.Add(entry);
-            }
-        }
+            // Light atlas/probe
+            if (isMap && ext == "btab")
+                lightAtlasFiles.Add(entry);
+            if (isMap && ext == "btpb")
+                lightProbeFiles.Add(entry);
 
-        var mapEntries = MapFiles.Entries;
+            // Gparam
+            if (folder.StartsWith("/param") && ext == "gparam")
+                gparamFiles.Add(entry);
 
-        Parallel.ForEach(mapEntries, map =>
-        {
-            var mapid = map.Filename;
-            var entries = GetCollisionEntriesForMap(index, mapid, projectType);
+            // Text files
+            if (folder.StartsWith("/msg") && ext == "msgbnd")
+                textFiles.Add(entry);
+            if (projectType is ProjectType.DS2 or ProjectType.DS2S && folder.StartsWith("/menu") && ext == "fmg")
+                textFiles.Add(entry);
 
-            foreach (var entry in entries)
-            {
-                collisions.Add(entry);
-            }
-        });
+            // Materials
+            if (ShouldAddToMtdFiles(entry, projectType))
+                mtdFiles.Add(entry);
 
-        CollisionFiles.Entries = collisions.ToList();
-    }
+            if (folder.StartsWith("/material") && ext == "matbinbnd")
+                matbinFiles.Add(entry);
 
-    private List<FileDictionaryEntry> GetCollisionEntriesForMap(
-        MultiIndex index,
-        string mapid,
-        ProjectType projectType)
-    {
-        return projectType switch
-        {
-            ProjectType.DS1 or ProjectType.DES =>
-                FilterByFolderPrefix(GetEntriesByExtension(index, "hkx", "/map"), $"/map/{mapid}"),
+            // Textures
+            if (ShouldAddToTextureFiles(entry, projectType))
+                textureFiles.Add(entry);
 
-            ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT =>
-                FilterByFolderPrefix(GetEntriesByExtension(index, "hkxbhd", "/map"), $"/map/{mapid}"),
+            if (ext == "tpfbhd")
+                texturePackedFiles.Add(entry);
+            if (ext == "sblytbnd")
+                shoeboxFiles.Add(entry);
 
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR =>
-                FilterByFolderPrefixAndExcludeArchive(
-                    GetEntriesByExtension(index, "hkxbhd", "/map"),
-                    $"/map/{mapid.Substring(0, 3)}/{mapid}",
-                    "sd"),
-
-            _ => new List<FileDictionaryEntry>()
-        };
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static List<FileDictionaryEntry> FilterByFolderPrefixAndExcludeArchive(
-        List<FileDictionaryEntry> entries, string prefix, string excludeArchive)
-    {
-        var result = new List<FileDictionaryEntry>(entries.Count / 4);
-        foreach (var entry in entries)
-        {
-            if (entry.Folder.StartsWith(prefix) && !entry.Archive.Contains(excludeArchive))
-                result.Add(entry);
-        }
-        return result;
-    }
-
-    private void CompileMapPieceFiles(MultiIndex index, ProjectType projectType)
-    {
-        var mapPieces = new ConcurrentBag<FileDictionaryEntry>();
-
-        if (projectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            var ds2Pieces = GetEntriesByExtension(index, "mapbhd", "/model");
-            foreach (var entry in ds2Pieces)
-            {
-                if (entry.Folder.StartsWith("/model/map"))
-                    mapPieces.Add(entry);
-            }
+            // Animation
+            if (ext == "anibnd")
+                timeActFiles.Add(entry);
+            if (ext == "behbnd")
+                behaviorFiles.Add(entry);
         }
 
-        var mapEntries = MapFiles.Entries;
+        // Assign to public properties
+        MapFiles.Entries = mapFiles;
+        ChrFiles.Entries = chrFiles;
+        AssetFiles.Entries = assetFiles;
+        PartFiles.Entries = partFiles;
+        CollisionFiles.Entries = collisionFiles;
+        MapPieceFiles.Entries = mapPieceFiles;
+        LightFiles.Entries = lightFiles;
+        DS2_LightFiles.Entries = ds2LightFiles;
+        NavmeshFiles.Entries = navmeshFiles;
+        AutoInvadeFiles.Entries = autoInvadeFiles;
+        LightAtlasFiles.Entries = lightAtlasFiles;
+        LightProbeFiles.Entries = lightProbeFiles;
+        GparamFiles.Entries = gparamFiles;
+        MTD_Files.Entries = mtdFiles;
+        MATBIN_Files.Entries = matbinFiles;
+        TextureFiles.Entries = textureFiles;
+        TexturePackedFiles.Entries = texturePackedFiles;
+        ShoeboxFiles.Entries = shoeboxFiles;
+        TimeActFiles.Entries = timeActFiles;
+        BehaviorFiles.Entries = behaviorFiles;
 
-        Parallel.ForEach(mapEntries, map =>
+        // Special handling for text files
+        if (projectType == ProjectType.ER && textFiles.Count > 0)
         {
-            var mapid = map.Filename;
-            var entries = GetMapPieceEntriesForMap(index, mapid, projectType);
-
-            foreach (var entry in entries)
-            {
-                mapPieces.Add(entry);
-            }
-        });
-
-        MapPieceFiles.Entries = mapPieces.ToList();
-    }
-
-    private List<FileDictionaryEntry> GetMapPieceEntriesForMap(
-        MultiIndex index,
-        string mapid,
-        ProjectType projectType)
-    {
-        return projectType switch
-        {
-            ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DES =>
-                FilterByFolderPrefix(GetEntriesByExtension(index, "flver", "/map"), $"/map/{mapid}"),
-
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR =>
-                FilterByFolderPrefixAndExcludeArchive(
-                    GetEntriesByExtension(index, "mapbnd", "/map"),
-                    $"/map/{mapid.Substring(0, 3)}/{mapid}",
-                    "sd"),
-
-            _ =>
-                FilterByFolderPrefix(GetEntriesByExtension(index, "mapbnd", "/map"), $"/map/{mapid}")
-        };
-    }
-
-    public void CompileTextDictionaries(MultiIndex index)
-    {
-        var msgbndEntries = GetEntriesByExtension(index, "msgbnd", "/msg");
-
-        if (Project.Descriptor.ProjectType == ProjectType.ER)
-        {
-            msgbndEntries = msgbndEntries
+            TextFiles.Entries = textFiles
                 .OrderBy(e => e.Folder)
                 .ThenBy(e => e.Filename.Contains("dlc02"))
                 .ThenBy(e => e.Filename.Contains("dlc01"))
                 .ThenBy(e => e.Filename)
                 .ToList();
         }
-
-        var msgbndDictionary = new FileDictionary { Entries = msgbndEntries };
-        var fmgDictionary = new FileDictionary { Entries = new List<FileDictionaryEntry>() };
-
-        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            fmgDictionary.Entries = GetEntriesByExtension(index, "fmg", "/menu");
-        }
-
-        TextFiles = ProjectUtils.MergeFileDictionaries(msgbndDictionary, fmgDictionary);
-    }
-
-    public void CompileGparamDictionaries(MultiIndex index)
-    {
-        GparamFiles.Entries = GetEntriesByExtension(index, "gparam", "/param");
-    }
-
-    public void CompileMaterialDictionaries(MultiIndex index)
-    {
-        var projectType = Project.Descriptor.ProjectType;
-
-        if (projectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            var materialEntries = GetEntriesByExtension(index, "bnd", "/material");
-            var filtered = new List<FileDictionaryEntry>(1);
-            foreach (var entry in materialEntries)
-            {
-                if (entry.Filename == "allmaterialbnd")
-                    filtered.Add(entry);
-            }
-            MTD_Files.Entries = filtered;
-        }
         else
         {
-            MTD_Files.Entries = GetEntriesByExtension(index, "mtdbnd", "/mtd");
+            TextFiles.Entries = textFiles;
         }
-
-        MATBIN_Files.Entries = GetEntriesByExtension(index, "matbinbnd", "/material");
     }
 
-    public void CompileTextureDictionaries(MultiIndex index)
+    // Helper methods to check if entries should be added to specific categories
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToMapFiles(FileDictionaryEntry entry, bool isMap, bool isSd)
     {
-        var projectType = Project.Descriptor.ProjectType;
+        return isMap && entry.Extension == "msb" && !entry.Folder.Contains("autoroute") && !isSd;
+    }
 
-        var baseDict = new FileDictionary();
-        var objDict = new FileDictionary();
-        var chrDict = new FileDictionary();
-        var partDict = new FileDictionary();
-        var commonPartDict = new FileDictionary();
-        var sfxDict = new FileDictionary();
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToChrFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
+    {
+        if (projectType is ProjectType.DS2S or ProjectType.DS2)
+            return entry.Extension == "bnd" && entry.Folder.StartsWith("/model/chr");
 
-        Parallel.Invoke(
-            () => baseDict.Entries = GetEntriesByExtension(index, "tpf"),
-            () =>
-            {
-                if (projectType is ProjectType.DS2S or ProjectType.DS2)
-                {
-                    var entries = GetEntriesByExtension(index, "bnd", "/model");
-                    var filtered = new List<FileDictionaryEntry>(entries.Count / 4);
-                    foreach (var entry in entries)
-                    {
-                        if (entry.Folder == "/model/obj")
-                            filtered.Add(entry);
-                    }
-                    objDict.Entries = filtered;
-                }
-                else
-                    objDict.Entries = GetEntriesByExtension(index, "objbnd");
-            },
-            () => chrDict.Entries = GetEntriesByExtension(index, "texbnd"),
-            () =>
-            {
-                if (projectType is ProjectType.DS2S or ProjectType.DS2)
-                {
-                    commonPartDict.Entries = GetEntriesByExtension(index, "commonbnd");
-                    partDict.Entries = FilterByFolderPrefix(GetEntriesByExtension(index, "bnd", "/model"), "/model/parts");
-                }
-                else
-                {
-                    partDict.Entries = GetEntriesByExtension(index, "partsbnd");
-                }
-            },
-            () => sfxDict.Entries = GetEntriesByExtension(index, "ffxbnd"),
-            () => TexturePackedFiles.Entries = GetEntriesByExtension(index, "tpfbhd"),
-            () => ShoeboxFiles.Entries = GetEntriesByExtension(index, "sblytbnd")
-        );
+        return entry.Extension == "chrbnd" && !isSd;
+    }
 
-        var secondaryDicts = new List<FileDictionary> { objDict, chrDict, sfxDict };
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToAssetFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
+    {
+        return projectType switch
+        {
+            ProjectType.DS1 => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
+            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/obj"),
+            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => entry.Extension == "geombnd" && entry.Folder.StartsWith("/asset") && !isSd,
+            _ => false
+        };
+    }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToPartFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
+    {
+        return projectType switch
+        {
+            ProjectType.DS1 => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
+            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/parts"),
+            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts") && !isSd,
+            _ => false
+        };
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToCollisionFiles(FileDictionaryEntry entry, ProjectType projectType, bool isMap, bool isSd)
+    {
+        return projectType switch
+        {
+            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "hkxbhd" && entry.Folder.StartsWith("/model/map"),
+            ProjectType.DS1 or ProjectType.DES => isMap && entry.Extension == "hkx",
+            ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => isMap && entry.Extension == "hkxbhd",
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => isMap && entry.Extension == "hkxbhd" && !isSd,
+            _ => false
+        };
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToMapPieceFiles(FileDictionaryEntry entry, ProjectType projectType, bool isMap, bool isSd)
+    {
+        return projectType switch
+        {
+            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "mapbhd" && entry.Folder.StartsWith("/model/map"),
+            ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DES => isMap && entry.Extension == "flver",
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => isMap && entry.Extension == "mapbnd" && !isSd,
+            _ => isMap && entry.Extension == "mapbnd"
+        };
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToMtdFiles(FileDictionaryEntry entry, ProjectType projectType)
+    {
+        if (projectType is ProjectType.DS2 or ProjectType.DS2S)
+            return entry.Extension == "bnd" && entry.Folder.StartsWith("/material") && entry.Filename == "allmaterialbnd";
+
+        return entry.Extension == "mtdbnd" && entry.Folder.StartsWith("/mtd");
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToTextureFiles(FileDictionaryEntry entry, ProjectType projectType)
+    {
+        var ext = entry.Extension;
+        var folder = entry.Folder;
+
+        // Standalone texture files
+        if (ext == "tpf")
+            return true;
+
+        // Texture container files
+        if (ext is "texbnd" or "ffxbnd" or "commonbnd")
+            return true;
+
+        // Model bundles that contain textures
+        if (ext == "objbnd")
+            return true;
+
+        if (ext == "partsbnd")
+            return true;
+
+        // DS2/DS2S special cases - bnd files in specific folders
         if (projectType is ProjectType.DS2S or ProjectType.DS2)
         {
-            secondaryDicts.Add(commonPartDict);
-            secondaryDicts.Add(partDict);
-        }
-        else
-        {
-            secondaryDicts.Add(partDict);
+            if (ext == "bnd" && (folder == "/model/obj" || folder.Contains("/model/parts")))
+                return true;
         }
 
-        TextureFiles = ProjectUtils.MergeFileDictionaries(baseDict, secondaryDicts);
-    }
-    private void CompileAnimDictionaries(MultiIndex index)
-    {
-        var anims = new ConcurrentBag<FileDictionaryEntry>();
-
-        Parallel.Invoke(
-            () => TimeActFiles.Entries = GetEntriesByExtension(index, "anibnd"),
-            () => BehaviorFiles.Entries = GetEntriesByExtension(index, "behbnd")
-        );
+        return false;
     }
     #endregion
 
@@ -845,21 +566,6 @@ public class ProjectFileLocator : IDisposable
         TextureFiles = null;
         TexturePackedFiles = null;
         ShoeboxFiles = null;
-
     }
     #endregion
-}
-
-public class MultiIndex
-{
-    public Dictionary<string, Dictionary<string, List<FileDictionaryEntry>>> ExtensionAndFolder { get; set; }
-
-    public Dictionary<string, List<FileDictionaryEntry>> ByExtension { get; set; }
-    public Dictionary<string, List<FileDictionaryEntry>> ByFolderStart { get; set; }
-
-    public FileDictionaryEntry[] NonSdArray { get; set; }
-    public FileDictionaryEntry[] MapArray { get; set; }
-    public FileDictionaryEntry[] AllArray { get; set; }
-
-    public HashSet<string> MapIds { get; set; }
 }
