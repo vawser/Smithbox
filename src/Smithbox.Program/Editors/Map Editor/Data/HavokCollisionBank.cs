@@ -122,18 +122,19 @@ public class HavokCollisionBank
                         try
                         {
                             fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
-                        }
-                        catch (InvalidDataException)
-                        {
-                            if (xmlSerializer == null)
-                                xmlSerializer = new HavokXmlSerializer();
-                            memoryStream.Position = 0;
-                            fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
-                        }
 
-                        if (!HavokContainers.ContainsKey(name))
+                            if (!HavokContainers.ContainsKey(name))
+                            {
+                                HavokContainers.Add(name, fileHkx);
+                            }
+                        }
+                        catch (InvalidDataException ex)
                         {
-                            HavokContainers.Add(name, fileHkx);
+                            Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to read havok file: {name}", LogPriority.High, ex);
+                            //if (xmlSerializer == null)
+                            //    xmlSerializer = new HavokXmlSerializer();
+                            //memoryStream.Position = 0;
+                            //fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
                         }
                     }
                 }
