@@ -216,12 +216,7 @@ public class MapContainer : ObjectContainer
             }
         }
 
-        foreach (Entity m in Objects)
-        {
-            m.BuildReferenceMap();
-        }
-
-        // Add map-level references after all others
+        Entity.BuildReferenceMaps(Objects);
         RootObject.BuildReferenceMap();
     }
 

@@ -8,6 +8,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -238,7 +239,7 @@ public class Entity : ISelectable, IDisposable
         GC.SuppressFinalize(this);
     }
 
-    public bool IsSelected {  get; set; }
+    public bool IsSelected { get; set; }
 
     /// <summary>
     /// Function executed upon the selection of this entity.
@@ -657,85 +658,110 @@ public class Entity : ISelectable, IDisposable
         return null;
     }
 
+    // cache for types -> properties that are [MSBReference]
+    private static readonly ConcurrentDictionary<Type, PropertyInfo[]> s_refPropsCache = new();
+
+    public string[] CollectReferenceNames()
+    {
+        if (WrappedObject == null) return Array.Empty<string>();
+        var type = WrappedObject.GetType();
+        var refProps = s_refPropsCache.GetOrAdd(type, t =>
+            t.GetProperties(BindingFlags.Instance | BindingFlags.Public)
+             .Where(p => p.GetCustomAttribute<MSBReference>() != null)
+             .ToArray());
+
+        if (refProps.Length == 0) return Array.Empty<string>();
+
+        var list = new List<string>();
+        foreach (var p in refProps)
+        {
+            var val = p.GetValue(WrappedObject);
+            if (val == null) continue;
+
+            if (val is string s)
+            {
+                if (!string.IsNullOrEmpty(s)) list.Add(s);
+            }
+            else if (val is IEnumerable<string> se)
+            {
+                foreach (var ss in se) if (!string.IsNullOrEmpty(ss)) list.Add(ss);
+            }
+            else if (val is string[] arr)
+            {
+                foreach (var ss in arr) if (!string.IsNullOrEmpty(ss)) list.Add(ss);
+            }
+        }
+
+        return list.Count == 0 ? Array.Empty<string>() : list.ToArray();
+    }
+
+    /// <summary>
+    /// Build reference maps for a set of entities in a single pass.
+    /// Groups by Container and resolves names with one name->Entity lookup per container.
+    /// </summary>
+    public static void BuildReferenceMaps(IEnumerable<Entity> entities)
+    {
+        if (entities == null) return;
+
+        var groups = entities.Where(e => e != null).GroupBy(e => e.Container);
+        foreach (var g in groups)
+        {
+            var list = g.ToList();
+            if (list.Count == 0) continue;
+
+            // Clear existing forward/back references
+            foreach (var e in list)
+            {
+                e.References.Clear();
+                e.ReferencingObjects = null;
+            }
+
+            // Build name -> entity lookup
+            var nameLookup = list
+                .Where(e => !string.IsNullOrEmpty(e.Name))
+                .ToDictionary(e => e.Name, e => e, StringComparer.Ordinal);
+
+            // Resolve references for each entity
+            foreach (var e in list)
+            {
+                if (e.WrappedObject == null) continue;
+                var refNames = e.CollectReferenceNames();
+                if (refNames == null || refNames.Length == 0) continue;
+
+                var localRefs = new Dictionary<string, List<Entity>>(StringComparer.Ordinal);
+                foreach (var rname in refNames)
+                {
+                    if (string.IsNullOrEmpty(rname)) continue;
+                    if (!nameLookup.TryGetValue(rname, out var tgt) || tgt == e) continue;
+                    if (!localRefs.TryGetValue(rname, out var lst)) { lst = new List<Entity>(); localRefs[rname] = lst; }
+                    lst.Add(tgt);
+                    tgt.ReferencingObjects ??= new HashSet<Entity>();
+                    tgt.ReferencingObjects.Add(e);
+                }
+
+                foreach (var kv in localRefs)
+                {
+                    e.References[kv.Key] = kv.Value.Cast<object>().ToArray();
+                }
+            }
+        }
+    }
+
     /// <summary>
     /// Build the reference map for this entity.
     /// </summary>
     public virtual void BuildReferenceMap()
     {
-        foreach (var array in References.Values)
+        if (WrappedObject == null || WrappedObject is Param.Row || WrappedObject is MergedParamRow)
+            return;
+
+        if (Container != null)
         {
-            foreach (var obj in array)
-            {
-                if (obj is Entity ent)
-                {
-                    ent.ReferencingObjects = null;
-                }
-            }
+            BuildReferenceMaps(Container.Objects);
         }
-        References.Clear();
-
-        if (WrappedObject != null)
+        else
         {
-            // Is not a param, e.g. DS2 enemy
-            if (!(WrappedObject is Param.Row) && !(WrappedObject is MergedParamRow))
-            {
-                // Get the entity type, e.g. Part
-                Type type = WrappedObject.GetType();
-
-                // Get the propeties for this type
-                PropertyInfo[] props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
-
-                // Iterate through each property
-                foreach (PropertyInfo p in props)
-                {
-                    var valid = false;
-
-                    // [MSBReference] attribute in the MSB formats
-                    var att = p.GetCustomAttribute<MSBReference>();
-
-                    if (att != null)
-                        valid = true;
-
-                    // If this property has the [MSBReference] attribute
-                    if (valid)
-                    {
-                        string[] array;
-                        var value = p.GetValue(WrappedObject);
-                        if (p.PropertyType.IsArray)
-                        {
-                            array = (string[])value;
-                        }
-                        else if (value is IEnumerable<string> list)
-                        {
-                            array = list.ToArray();
-                        }
-                        else
-                        {
-                            array = [(string)value];
-                        }
-
-                        foreach (string sref in array)
-                        {
-                            // Name is not null or empty.
-                            if (sref != null && sref != "")
-                            {
-                                // Get the entity that has this name.
-                                Entity obj = Container.GetObjectByName(sref);
-                                if (obj != null && obj != this)
-                                {
-                                    // Add the entity to the reference map
-                                    if (!References.ContainsKey(sref))
-                                    {
-                                        References.Add(sref, new[] { obj });
-                                    }
-                                    // Invalidate the referenced object's referencing objects
-                                    obj.ReferencingObjects = null;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            BuildReferenceMaps(new[] { this });
         }
     }
 
@@ -780,6 +806,7 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public void InvalidateReferencingObjectsCache()
     {
+        References.Clear();
         ReferencingObjects = null;
     }
 
@@ -1212,7 +1239,7 @@ public class Entity : ISelectable, IDisposable
                     return;
                 }
 
-                if(Owner is MapUniverse)
+                if (Owner is MapUniverse)
                 {
                     var universe = (MapUniverse)Owner;
 
@@ -1221,7 +1248,7 @@ public class Entity : ISelectable, IDisposable
                         if (collisionNameValue != "")
                         {
                             // CollisionName referenced doesn't exist
-                            Smithbox.Log(this, 
+                            Smithbox.Log(this,
                                 $"{Container?.Name}: {Name} references to CollisionName {collisionNameValue} which doesn't exist",
                                 LogLevel.Warning);
                         }
@@ -1300,6 +1327,7 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     protected virtual void Dispose(bool disposing)
     {
+        InvalidateReferencingObjectsCache();
         if (!disposedValue)
         {
             if (disposing)
