@@ -11,7 +11,8 @@ public class AnimData : IDisposable
 {
     public ProjectEntry Project;
 
-    public BehaviorBank PrimaryBehaviorBank;
+    public BehaviorBank BehaviorBank;
+
     public AnimData(ProjectEntry project)
     {
         Project = project;
@@ -21,10 +22,10 @@ public class AnimData : IDisposable
     {
         await Task.Yield();
 
-        PrimaryBehaviorBank = new("Primary", Project, Project.VFS.FS);
+        BehaviorBank = new("Primary", Project, Project.VFS.FS);
 
         // Primary Bank
-        Task<bool> primaryBankTask = PrimaryBehaviorBank.Setup();
+        Task<bool> primaryBankTask = BehaviorBank.Setup();
         bool primaryBankTaskResult = await primaryBankTask;
 
         if (!primaryBankTaskResult)
@@ -38,9 +39,9 @@ public class AnimData : IDisposable
     #region Dispose
     public void Dispose()
     {
-        PrimaryBehaviorBank?.Dispose();
+        BehaviorBank?.Dispose();
 
-        PrimaryBehaviorBank = null;
+        BehaviorBank = null;
     }
     #endregion
 }

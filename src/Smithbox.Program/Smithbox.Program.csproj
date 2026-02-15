@@ -126,11 +126,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Editors\Animation Editor\Actions\Behavior\" />
+    <Folder Include="Editors\Animation Editor\Actions\TAE\" />
+    <Folder Include="Editors\Animation Editor\Data\TAE\" />
     <Folder Include="Editors\Animation Editor\Enums\" />
-    <Folder Include="Editors\Animation Editor\Actions\" />
-    <Folder Include="Editors\Animation Editor\GUI\Behavior\" />
-    <Folder Include="Editors\Animation Editor\GUI\TAE\" />
-    <Folder Include="Editors\Animation Editor\Tools\" />
+    <Folder Include="Editors\Animation Editor\Framework\TAE\" />
+    <Folder Include="Editors\Animation Editor\Tools\Behavior\" />
+    <Folder Include="Editors\Animation Editor\Tools\TAE\" />
     <Folder Include="Editors\File Browser\Actions\" />
     <Folder Include="Editors\File Browser\Data\" />
     <Folder Include="Editors\File Browser\Utils\" />

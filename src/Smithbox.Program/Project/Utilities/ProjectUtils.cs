@@ -510,7 +510,10 @@ public class ProjectUtils
     }
     public static bool SupportsAnimEditor(ProjectType curType)
     {
-        return true;
+        if (curType is ProjectType.DS3)
+            return true;
+
+        return false;
     }
 
     public static List<string> GetBackupFiles(string rootDirectory)

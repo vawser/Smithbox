@@ -165,11 +165,29 @@ public class InterfacePrefs
             }
         };
     }
-    public static PreferenceItem Interface_Allow_Window_Movement()
+    public static PreferenceItem Interface_Alias_Wordwrap_Animation_Editor()
     {
         return new PreferenceItem
         {
             OrderID = 6,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+
+            Section = SectionCategory.General,
+
+            Title = "Enable Alias Word-wrap (Animation Editor)",
+            Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Animation Editor only.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_Animation_Editor);
+            }
+        };
+    }
+    public static PreferenceItem Interface_Allow_Window_Movement()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 7,
             Category = PreferenceCategory.Interface,
             Spacer = true,
 
@@ -187,7 +205,7 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
-            OrderID = 7,
+            OrderID = 8,
             Category = PreferenceCategory.Interface,
             Spacer = true,
             InlineName = false,
@@ -207,7 +225,7 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
-            OrderID = 7,
+            OrderID = 9,
             Category = PreferenceCategory.Interface,
             Spacer = true,
             InlineName = false,

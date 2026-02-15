@@ -102,6 +102,7 @@ public class CFG
     public bool Interface_Alias_Wordwrap_General = true;
     public bool Interface_Alias_Wordwrap_Map_Editor = true;
     public bool Interface_Alias_Wordwrap_Model_Editor = true;
+    public bool Interface_Alias_Wordwrap_Animation_Editor = true;
 
     public bool Interface_Include_Chinese_Symbols = false;
     public bool Interface_Include_Cyrillic_Symbols = false;

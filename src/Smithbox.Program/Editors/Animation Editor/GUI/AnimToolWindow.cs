@@ -35,6 +35,16 @@ public class AnimToolWindow
 
                 ImGui.EndMenuBar();
             }
+
+            if(activeView.IsBehaviorView())
+            {
+
+            }
+
+            if (activeView.IsTimeActView())
+            {
+
+            }
         }
 
         ImGui.End();
@@ -42,8 +52,22 @@ public class AnimToolWindow
 
     public void ViewMenu()
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
         if (ImGui.BeginMenu("View"))
         {
+            if (activeView.IsBehaviorView())
+            {
+
+            }
+
+            if (activeView.IsTimeActView())
+            {
+
+            }
 
             ImGui.EndMenu();
         }

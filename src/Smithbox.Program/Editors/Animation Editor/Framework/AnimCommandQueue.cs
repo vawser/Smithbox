@@ -27,10 +27,21 @@ public class AnimCommandQueue
         if (activeView == null)
             return;
 
+
         if (commands == null)
             return;
 
         if (commands.Length <= 0)
             return;
+
+        if (activeView.IsBehaviorView())
+        {
+
+        }
+
+        if (activeView.IsTimeActView())
+        {
+
+        }
     }
 }

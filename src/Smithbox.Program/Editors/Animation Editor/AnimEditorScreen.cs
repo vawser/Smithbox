@@ -276,15 +276,29 @@ public class AnimEditorScreen : EditorScreen
         if (activeView == null)
             return;
 
-        // TODO
-        //if (!autoSave && CFG.Current.AnimEditor_ManualSave_IncludeTAE ||
-        //autoSave && CFG.Current.AnimEditor_AutomaticSave_IncludeTAE)
-        //{
-        //    if (activeView.Selection.SelectedModelWrapper != null)
-        //    {
-        //        activeView.Selection.SelectedModelWrapper.Save();
-        //    }
-        //}
+        if (activeView.IsBehaviorView())
+        {
+            var behaviorView = activeView.GetBehaviorView();
+
+            if (!autoSave && CFG.Current.AnimEditor_ManualSave_IncludeBEH ||
+            autoSave && CFG.Current.AnimEditor_AutomaticSave_IncludeBEH)
+            {
+                if (behaviorView.Selection.SelectedFile != null)
+                {
+                    behaviorView.Selection.SelectedFile.Save();
+                }
+            }
+        }
+
+        if (activeView.IsTimeActView())
+        {
+            if (!autoSave && CFG.Current.AnimEditor_ManualSave_IncludeTAE ||
+            autoSave && CFG.Current.AnimEditor_AutomaticSave_IncludeTAE)
+            {
+
+            }
+        }
+
 
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();

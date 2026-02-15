@@ -185,6 +185,9 @@ public enum EditorFocusContext
     TextureViewer_Tools,
 
     AnimEditor_None,
+    AnimEditor_BehaviorList,
+    AnimEditor_BehaviorWorkboard,
+    AnimEditor_BehaviorProperties,
     AnimEditor_Viewport,
     AnimEditor_Tools,
 }

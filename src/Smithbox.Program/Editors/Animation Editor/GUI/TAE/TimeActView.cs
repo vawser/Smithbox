@@ -1,6 +1,5 @@
 ﻿using StudioCore.Application;
-using StudioCore.Editors.Common;
-using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.AnimEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +8,18 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.AnimEditor;
 
-public class AnimContainer : ObjectContainer
+public class TimeActView : IAnimView
 {
     public AnimEditorView View;
     public ProjectEntry Project;
 
-    public AnimContainer(AnimEditorView view, ProjectEntry project, string modelName)
+    public TimeActView(AnimEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
-        Name = modelName;
     }
+    public void Display()
+    {
 
-    // TODO: implement if we get to the viewport relevant stuff
+    }
 }

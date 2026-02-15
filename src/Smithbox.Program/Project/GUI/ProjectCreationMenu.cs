@@ -406,104 +406,161 @@ public class ProjectCreationMenu
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableMapEditor", ref Descriptor.EnableMapEditor);
+                if (ProjectUtils.SupportsMapEditor(Descriptor.ProjectType))
+                {
+                    DPI.ApplyInputWidth();
+                    ImGui.Checkbox("##projectEnableMapEditor", ref Descriptor.EnableMapEditor);
+                }
 
                 ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Map Editor");
-                UIHelper.Tooltip("If true, the Map Editor and associated data will be initialized for this project.");
+                if (ProjectUtils.SupportsMapEditor(Descriptor.ProjectType))
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Map Editor");
+                    UIHelper.Tooltip("If true, the Map Editor and associated data will be initialized for this project.");
+                }
 
                 ImGui.TableSetColumnIndex(2);
 
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableModelEditor", ref Descriptor.EnableModelEditor);
+                if (ProjectUtils.SupportsModelEditor(Descriptor.ProjectType))
+                {
+                    DPI.ApplyInputWidth();
+                    ImGui.Checkbox("##projectEnableModelEditor", ref Descriptor.EnableModelEditor);
+                }
+
                 ImGui.TableSetColumnIndex(3);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Model Editor");
-                UIHelper.Tooltip("If true, the Model Editor and associated data will be initialized for this project.");
+                if (ProjectUtils.SupportsModelEditor(Descriptor.ProjectType))
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Model Editor");
+                    UIHelper.Tooltip("If true, the Model Editor and associated data will be initialized for this project.");
+                }
 
                 ImGui.TableSetColumnIndex(4);
 
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableTextEditor", ref Descriptor.EnableTextEditor);
+                if (ProjectUtils.SupportsTextEditor(Descriptor.ProjectType))
+                {
+                    DPI.ApplyInputWidth();
+                    ImGui.Checkbox("##projectEnableTextEditor", ref Descriptor.EnableTextEditor);
+                }
 
                 ImGui.TableSetColumnIndex(5);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Text Editor");
-                UIHelper.Tooltip("If true, the Text Editor and associated data will be initialized for this project.");
+                if (ProjectUtils.SupportsTextEditor(Descriptor.ProjectType))
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Text Editor");
+                    UIHelper.Tooltip("If true, the Text Editor and associated data will be initialized for this project.");
+                }
 
 
                 // Section 2
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableParamEditor", ref Descriptor.EnableParamEditor);
+                if (ProjectUtils.SupportsParamEditor(Descriptor.ProjectType))
+                {
+                    DPI.ApplyInputWidth();
+                    ImGui.Checkbox("##projectEnableParamEditor", ref Descriptor.EnableParamEditor);
+                }
 
                 ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Param Editor");
-                UIHelper.Tooltip("If true, the Param Editor and associated data will be initialized for this project.");
+                if (ProjectUtils.SupportsParamEditor(Descriptor.ProjectType))
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Param Editor");
+                    UIHelper.Tooltip("If true, the Param Editor and associated data will be initialized for this project.");
+                }
 
                 ImGui.TableSetColumnIndex(2);
 
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableGparamEditor", ref Descriptor.EnableGparamEditor);
+                if (ProjectUtils.SupportsGraphicsParamEditor(Descriptor.ProjectType))
+                {
+                    DPI.ApplyInputWidth();
+                    ImGui.Checkbox("##projectEnableGparamEditor", ref Descriptor.EnableGparamEditor);
+                }
+
                 ImGui.TableSetColumnIndex(3);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Graphics Param Editor");
-                UIHelper.Tooltip("If true, the Graphics Param Editor and associated data will be initialized for this project.");
+                if (ProjectUtils.SupportsGraphicsParamEditor(Descriptor.ProjectType))
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Graphics Param Editor");
+                    UIHelper.Tooltip("If true, the Graphics Param Editor and associated data will be initialized for this project.");
+                }
 
                 ImGui.TableSetColumnIndex(4);
 
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableMaterialEditor", ref Descriptor.EnableMaterialEditor);
+                if (ProjectUtils.SupportsMaterialEditor(Descriptor.ProjectType))
+                {
+                    DPI.ApplyInputWidth();
+                    ImGui.Checkbox("##projectEnableMaterialEditor", ref Descriptor.EnableMaterialEditor);
+                }
+
                 ImGui.TableSetColumnIndex(5);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Material Editor");
-                UIHelper.Tooltip("If true, the Material Editor and associated data will be initialized for this project.");
+                if (ProjectUtils.SupportsMaterialEditor(Descriptor.ProjectType))
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Material Editor");
+                    UIHelper.Tooltip("If true, the Material Editor and associated data will be initialized for this project.");
+                }
 
                 // Section 3
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableTextureViewer", ref Descriptor.EnableTextureViewer);
+                if (ProjectUtils.SupportsTextureViewer(Descriptor.ProjectType))
+                {
+                    DPI.ApplyInputWidth();
+                    ImGui.Checkbox("##projectEnableTextureViewer", ref Descriptor.EnableTextureViewer);
+                }
 
                 ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Texture Viewer");
-                UIHelper.Tooltip("If true, the Texture Viewer and associated data will be initialized for this project.");
+                if (ProjectUtils.SupportsTextureViewer(Descriptor.ProjectType))
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Texture Viewer");
+                    UIHelper.Tooltip("If true, the Texture Viewer and associated data will be initialized for this project.");
+                }
 
                 ImGui.TableSetColumnIndex(2);
 
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableFileBrowser", ref Descriptor.EnableFileBrowser);
+                if (ProjectUtils.SupportsFileBrowser(Descriptor.ProjectType))
+                {
+                    DPI.ApplyInputWidth();
+                    ImGui.Checkbox("##projectEnableFileBrowser", ref Descriptor.EnableFileBrowser);
+                }
 
                 ImGui.TableSetColumnIndex(3);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("File Browser");
-                UIHelper.Tooltip("If true, the File Browser and associated data will be initialized for this project.");
+                if (ProjectUtils.SupportsFileBrowser(Descriptor.ProjectType))
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("File Browser");
+                    UIHelper.Tooltip("If true, the File Browser and associated data will be initialized for this project.");
+                }
 
                 ImGui.TableSetColumnIndex(4);
 
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableAnimBrowser", ref Descriptor.EnableAnimEditor);
+                if (ProjectUtils.SupportsAnimEditor(Descriptor.ProjectType))
+                {
+                    DPI.ApplyInputWidth();
+                    ImGui.Checkbox("##projectEnableAnimBrowser", ref Descriptor.EnableAnimEditor);
+                }
 
                 ImGui.TableSetColumnIndex(5);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Animation Browser");
-                UIHelper.Tooltip("If true, the Animation Browser and associated data will be initialized for this project.");
+                if (ProjectUtils.SupportsAnimEditor(Descriptor.ProjectType))
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Animation Browser");
+                    UIHelper.Tooltip("If true, the Animation Browser and associated data will be initialized for this project.");
+                }
 
                 ImGui.EndTable();
             }

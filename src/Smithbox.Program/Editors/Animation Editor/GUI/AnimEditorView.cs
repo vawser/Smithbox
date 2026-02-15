@@ -1,14 +1,7 @@
-﻿using Hexa.NET.ImGui;
-using StudioCore.Application;
+﻿using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
 
@@ -35,6 +28,8 @@ public class AnimEditorView
 
     public AnimViewportWindow ViewportWindow;
 
+    public IAnimView AssignedView;
+
     public AnimEditorView(AnimEditorScreen editor, ProjectEntry project, int imguiId, AnimViewType type)
     {
         Editor = editor;
@@ -50,27 +45,72 @@ public class AnimEditorView
 
         Universe = new AnimUniverse(this, project);
         ViewportWindow = new(this, project);
-    }
 
-    public void Display(bool doFocus, bool isActiveView)
-    {
-        if(EditorType is AnimViewType.TAE)
+        if (EditorType is AnimViewType.TAE)
         {
-            DisplayTimeActView(doFocus, isActiveView);
+            AssignedView = new TimeActView(this, Project);
         }
 
         if (EditorType is AnimViewType.BEH)
         {
-            DisplayBehaviorView(doFocus, isActiveView);
+            AssignedView = new BehaviorView(this, Project);
         }
     }
 
-    public void DisplayTimeActView(bool doFocus, bool isActiveView)
+    public bool IsBehaviorView()
     {
-        // TODO: after behavior editor
+        if (AssignedView is BehaviorView)
+        {
+            return true;
+        }
+
+        return false;
     }
 
-    public void DisplayBehaviorView(bool doFocus, bool isActiveView)
+    public bool IsTimeActView()
     {
+        if (AssignedView is TimeActView)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public BehaviorView GetBehaviorView()
+    {
+        if(AssignedView is BehaviorView)
+        {
+            return (BehaviorView)AssignedView;
+        }
+
+        return null;
+    }
+
+    public TimeActView GetTimeActView()
+    {
+        if (AssignedView is TimeActView)
+        {
+            return (TimeActView)AssignedView;
+        }
+
+        return null;
+    }
+
+    public void Display(bool doFocus, bool isActiveView)
+    {
+        if (AssignedView is BehaviorView)
+        {
+            var view = GetBehaviorView();
+
+            view.Display();
+        }
+
+        if (AssignedView is TimeActView)
+        {
+            var view = GetTimeActView();
+
+            view.Display();
+        }
     }
 }

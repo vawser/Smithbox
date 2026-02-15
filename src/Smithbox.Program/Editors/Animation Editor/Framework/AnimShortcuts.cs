@@ -76,5 +76,15 @@ public class AnimShortcuts
         }
 
         GizmoState.OnShortcut();
+
+        if (activeView.IsBehaviorView())
+        {
+
+        }
+
+        if (activeView.IsTimeActView())
+        {
+
+        }
     }
 }
