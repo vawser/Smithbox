@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using HKX2;
 using StudioCore.Application;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Veldrid;
 
 namespace StudioCore.Editors.AnimEditor;
 
@@ -70,11 +72,26 @@ public class BehaviorContents_HKX2
                 {
                     var anim = CachedClipGenerators[i];
 
-                    var selected = Selection.SelectedClipGenerator == anim;
+                    var selected = Selection.SelectedClipGenerators.Contains(anim);
 
                     if (ImGui.Selectable($"{anim.m_name}##entry{i}", selected))
                     {
-                        Selection.SelectedClipGenerator = anim;
+                        if (InputManager.HasCtrlDown())
+                        {
+                            if (!Selection.SelectedClipGenerators.Contains(anim))
+                            {
+                                Selection.SelectedClipGenerators.Add(anim);
+                            }
+                            else
+                            {
+                                Selection.SelectedClipGenerators.Remove(anim);
+                            }
+                        }
+                        else
+                        {
+                            Selection.SelectedClipGenerators.Clear();
+                            Selection.SelectedClipGenerators.Add(anim);
+                        }
                     }
                 }
                 ImGui.EndChild();
@@ -89,7 +106,7 @@ public class BehaviorContents_HKX2
 
     public class BehaviorContentsSelection()
     {
-        public hkbClipGenerator SelectedClipGenerator = null;
+        public List<hkbClipGenerator> SelectedClipGenerators = new();
     }
 }
 

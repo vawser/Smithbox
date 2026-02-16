@@ -20,10 +20,6 @@ public class BehaviorView : IAnimView
     public BehaviorContents_HKX2 Contents_HKX2;
     public BehaviorContents_HKX3 Contents_HKX3;
 
-    public BehaviorClipGen_HKX1 ClipGen_HKX1;
-    public BehaviorClipGen_HKX2 ClipGen_HKX2;
-    public BehaviorClipGen_HKX3 ClipGen_HKX3;
-
     public BehaviorProperties Properties;
 
     public BehaviorView(AnimEditorView view, ProjectEntry project)
@@ -37,10 +33,6 @@ public class BehaviorView : IAnimView
         Contents_HKX1 = new(this, project);
         Contents_HKX2 = new(this, project);
         Contents_HKX3 = new(this, project);
-
-        ClipGen_HKX1 = new(this, project);
-        ClipGen_HKX2 = new(this, project);
-        ClipGen_HKX3 = new(this, project);
 
         Properties = new(this, project);
     }
@@ -77,42 +69,17 @@ public class BehaviorView : IAnimView
                 View.Editor.ViewHandler.ActiveView = View;
             }
 
-            ImGui.BeginTabBar("workboardTabs");
-
-            if(ImGui.BeginTabItem("Contents"))
+            if (BehaviorUtils.SupportsHKX1(Project))
             {
-                if (BehaviorUtils.SupportsHKX1(Project))
-                {
-                    Contents_HKX1.Display();
-                }
-                if (BehaviorUtils.SupportsHKX2(Project))
-                {
-                    Contents_HKX2.Display();
-                }
-                if (BehaviorUtils.SupportsHKX3(Project))
-                {
-                    Contents_HKX3.Display();
-                }
-
-                ImGui.EndTabItem();
+                Contents_HKX1.Display();
             }
-
-            if (ImGui.BeginTabItem("Clip Generator"))
+            if (BehaviorUtils.SupportsHKX2(Project))
             {
-                if (BehaviorUtils.SupportsHKX1(Project))
-                {
-                    ClipGen_HKX1.Display();
-                }
-                if (BehaviorUtils.SupportsHKX2(Project))
-                {
-                    ClipGen_HKX2.Display();
-                }
-                if (BehaviorUtils.SupportsHKX3(Project))
-                {
-                    ClipGen_HKX3.Display();
-                }
-
-                ImGui.EndTabItem();
+                Contents_HKX2.Display();
+            }
+            if (BehaviorUtils.SupportsHKX3(Project))
+            {
+                Contents_HKX3.Display();
             }
 
             ImGui.EndTabBar();
@@ -143,17 +110,14 @@ public class BehaviorView : IAnimView
         if (BehaviorUtils.SupportsHKX1(Project))
         {
             Contents_HKX1.Invalidate();
-            ClipGen_HKX1.Invalidate();
         }
         if (BehaviorUtils.SupportsHKX2(Project))
         {
             Contents_HKX2.Invalidate();
-            ClipGen_HKX2.Invalidate();
         }
         if (BehaviorUtils.SupportsHKX3(Project))
         {
             Contents_HKX3.Invalidate();
-            ClipGen_HKX3.Invalidate();
         }
     }
 }

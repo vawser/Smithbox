@@ -35,9 +35,9 @@ public class BehaviorProperties
 
             if (View.Contents_HKX2.TargetObjectType is ChosenObjectType.hkbClipGenerator)
             {
-                if (View.Contents_HKX2.Selection.SelectedClipGenerator != null)
+                if (View.Contents_HKX2.Selection.SelectedClipGenerators.Count > 0)
                 {
-
+                    var firstClip = View.Contents_HKX2.Selection.SelectedClipGenerators.First();
                 }
             }
         }
