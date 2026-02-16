@@ -13,7 +13,9 @@ public class BehaviorView : IAnimView
 
     public BehaviorContainerList ContainerList;
     public BehaviorFileList FileList;
-
+    
+    // Split like this for ease of coding, since the 3 HKX libs use similar terminology
+    // So supporting all in one file means prepending everything.
     public BehaviorContents_HKX1 Contents_HKX1;
     public BehaviorContents_HKX2 Contents_HKX2;
     public BehaviorContents_HKX3 Contents_HKX3;
@@ -22,9 +24,7 @@ public class BehaviorView : IAnimView
     public BehaviorClipGen_HKX2 ClipGen_HKX2;
     public BehaviorClipGen_HKX3 ClipGen_HKX3;
 
-    public BehaviorProperties_HKX1 Properties_HKX1;
-    public BehaviorProperties_HKX2 Properties_HKX2;
-    public BehaviorProperties_HKX3 Properties_HKX3;
+    public BehaviorProperties Properties;
 
     public BehaviorView(AnimEditorView view, ProjectEntry project)
     {
@@ -42,9 +42,7 @@ public class BehaviorView : IAnimView
         ClipGen_HKX2 = new(this, project);
         ClipGen_HKX3 = new(this, project);
 
-        Properties_HKX1 = new(this, project);
-        Properties_HKX2 = new(this, project);
-        Properties_HKX3 = new(this, project);
+        Properties = new(this, project);
     }
 
     public void Display()
@@ -79,7 +77,7 @@ public class BehaviorView : IAnimView
                 View.Editor.ViewHandler.ActiveView = View;
             }
 
-            ImGui.BeginTabBar("workboardTabs"); ;
+            ImGui.BeginTabBar("workboardTabs");
 
             if(ImGui.BeginTabItem("Contents"))
             {
@@ -122,7 +120,7 @@ public class BehaviorView : IAnimView
 
         ImGui.End();
 
-        // List
+        // Properties
         if (ImGui.Begin($@"Properties##BehaviorPropertiesWindow{View.ViewIndex}", UIHelper.GetMainWindowFlags()))
         {
             float width = ImGui.GetContentRegionAvail().X;
@@ -134,19 +132,7 @@ public class BehaviorView : IAnimView
                 View.Editor.ViewHandler.ActiveView = View;
             }
 
-            if (BehaviorUtils.SupportsHKX1(Project))
-            {
-                Properties_HKX1.Display();
-            }
-            if (BehaviorUtils.SupportsHKX2(Project))
-            {
-                Properties_HKX2.Display();
-            }
-            if (BehaviorUtils.SupportsHKX3(Project))
-            {
-                Properties_HKX3.Display();
-            }
-
+            Properties.Display();
         }
 
         ImGui.End();

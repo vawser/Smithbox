@@ -86,7 +86,6 @@ public class HavokCollisionBank
             var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
             HavokBinarySerializer serializer = new HavokBinarySerializer();
-            HavokXmlSerializer xmlSerializer = null;
 
             // Get compendium
             foreach (var file in packedBinder.Files)

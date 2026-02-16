@@ -126,6 +126,7 @@ public class CFG
     ///------------------------------------------------------------
     // Preferences
     public bool MapEditor_IgnoreSaveExceptions = false;
+    public bool MapEditor_SkipHavokLoad = false;
 
     public bool MapEditor_Map_List_Display_Map_Aliases = true;
     public bool MapEditor_Map_List_Enable_Load_on_Double_Click = false;

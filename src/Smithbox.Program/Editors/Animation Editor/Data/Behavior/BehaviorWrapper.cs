@@ -81,7 +81,10 @@ public class BehaviorWrapper
                                     {
                                         Havok.HKX3_Object = (HKLib.hk2018.hkRootLevelContainer)serializer.Read(memoryStream);
                                     }
-                                    catch (Exception ex) { }
+                                    catch (Exception ex)
+                                    {
+                                        Smithbox.LogError(this, $"[Animation Editor] Failed to read {Parent.Path} during behavior load.", ex);
+                                    }
                                 }
                             }
                         }

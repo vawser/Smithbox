@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using SoulsFormats.Util;
 using StudioCore.Application;
 using StudioCore.Utilities;
@@ -20,6 +21,7 @@ public class KeybindsMenu
     private int _mouseListeningIndex;
 
     public bool IsDisplayed = false;
+    private bool _wasDisplayedLastFrame;
     private bool InitialLayout = false;
 
     private string _search = "";
@@ -46,6 +48,7 @@ public class KeybindsMenu
                     if(ImGui.MenuItem("Save"))
                     {
                         InputManager.SaveKeybinds();
+                        InputManager.SaveMousebinds();
                         Smithbox.Log(this, "Shortcuts saved.");
                     }
 
@@ -102,6 +105,14 @@ public class KeybindsMenu
                 ImGui.End();
             }
         }
+        if (!IsDisplayed && _wasDisplayedLastFrame)
+        {
+            InputManager.SaveKeybinds();
+            InputManager.SaveMousebinds();
+            Smithbox.Log(this, "Shortcuts saved.");
+        }
+
+        _wasDisplayedLastFrame = IsDisplayed;
     }
 
     private bool IsModifier(Key key)
