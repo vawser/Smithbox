@@ -154,10 +154,10 @@ public class ParamToolMenu
                     ParamUpgrader.Display();
                 }
 
-                //if (CFG.Current.ParamEditor_Show_Tool_Param_Merger)
-                //{
-                //    ParamMerger.Display();
-                //}
+                if (CFG.Current.ParamEditor_Show_Tool_Param_Merger)
+                {
+                    ParamMerger.Display();
+                }
 
                 if (CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher)
                 {
