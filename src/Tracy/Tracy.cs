@@ -31,18 +31,16 @@ public unsafe class Profiler
 
     public static void Startup()
     {
-        if (EnableTracy)
-        {
-            ___tracy_startup_profiler();
-        }
+        if (!EnableTracy) return;
+
+        ___tracy_startup_profiler();
     }
 
     public static void Shutdown()
     {
-        if (EnableTracy)
-        {
-            ___tracy_shutdown_profiler();
-        }
+        if (!EnableTracy) return;
+
+        ___tracy_shutdown_profiler();
     }
 
     [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
@@ -198,10 +196,9 @@ public unsafe class Profiler
 
     public static void TracyCZoneEnd(___tracy_c_zone_context ctx)
     {
-        if (EnableTracy)
-        {
-            ___tracy_emit_zone_end(ctx);
-        }
+        if (!EnableTracy) return;
+
+        ___tracy_emit_zone_end(ctx);
     }
 
     [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
@@ -226,12 +223,16 @@ public unsafe class Profiler
 
     public static void TracyFiberEnter(string name)
     {
+        if (!EnableTracy) return;
+
         var p = GetOrCreateFiberNamePtr(name);
         try { ___tracy_fiber_enter(p); } catch { }
     }
 
     public static void TracyFiberLeave()
     {
+        if (!EnableTracy) return;
+
         try { ___tracy_fiber_leave(); } catch { }
     }
 
@@ -246,34 +247,30 @@ public unsafe class Profiler
 
     public static void TracyCFrameMark()
     {
-        if (EnableTracy)
-        {
-            ___tracy_emit_frame_mark(null);
-        }
+        if (!EnableTracy) return;
+
+        ___tracy_emit_frame_mark(null);
     }
 
     public static void TracyCFrameMarkNamed(string name)
     {
-        if (EnableTracy)
-        {
-            ___tracy_emit_frame_mark(name);
-        }
+        if (!EnableTracy) return;
+
+        ___tracy_emit_frame_mark(name);
     }
 
     public static void TracyCFrameMarkStart(string name)
     {
-        if (EnableTracy)
-        {
-            ___tracy_emit_frame_mark_start(name);
-        }
+        if (!EnableTracy) return;
+
+        ___tracy_emit_frame_mark_start(name);
     }
 
     public static void TracyCFrameMarkEnd(string name)
     {
-        if (EnableTracy)
-        {
-            ___tracy_emit_frame_mark_end(name);
-        }
+        if (!EnableTracy) return;
+
+        ___tracy_emit_frame_mark_end(name);
     }
 
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
