@@ -510,8 +510,8 @@ public class ProjectUtils
     }
     public static bool SupportsAnimEditor(ProjectType curType)
     {
-        if (curType is ProjectType.DS3)
-            return true;
+        //if (curType is ProjectType.DS3)
+        //    return true;
 
         return false;
     }
