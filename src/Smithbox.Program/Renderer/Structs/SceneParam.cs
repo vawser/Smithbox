@@ -20,5 +20,6 @@ public unsafe struct SceneParam
     public float SimpleFlver_Brightness;
     public float SimpleFlver_Saturation;
     public Vector4 SelectionColor;
+    public Vector4 OutlineColor;
     public fixed uint padding[2];
 }

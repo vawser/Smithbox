@@ -998,6 +998,8 @@ public class CFG
     public float Viewport_Untextured_Model_Brightness = 1.0f;
     public float Viewport_Untextured_Model_Saturation = 0.5f;
 
+    public bool Viewport_Enable_Selection_Outline = false;
+    public Vector3 Viewport_Selection_Outline_Color = new(1.0f, 0.5f, 0.0f);
     public Vector3 Viewport_Selection_Tint_Color = new(1.0f, 0.5f, 0.0f);
     public Vector3 Viewport_Untextured_Selection_Tint_Color = new(0.85f, 0.0f, 1.0f);
     public float Viewport_Selection_Tint_Strength = 1.0f;

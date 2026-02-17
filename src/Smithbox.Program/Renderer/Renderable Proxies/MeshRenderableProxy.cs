@@ -1,4 +1,6 @@
 ﻿#nullable enable
+using CsvHelper;
+using HKX2;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System;
@@ -115,10 +117,14 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             if (_renderable != -1)
             {
                 _renderablesSet.cVisible[_renderable]._visible = value;
-                //if (!_meshProvider.SelectedRenderBaseMesh && _renderOutline)
-                //{
-                //    _renderablesSet.cVisible[_renderable]._visible = false;
-                //}
+
+                if (CFG.Current.Viewport_Enable_Selection_Outline)
+                {
+                    if (!_meshProvider.SelectedRenderBaseMesh && _renderOutline)
+                    {
+                        _renderablesSet.cVisible[_renderable]._visible = false;
+                    }
+                }
             }
 
             foreach (MeshRenderableProxy sm in _submeshes)
@@ -595,13 +601,37 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         // Visible
         _renderablesSet.cVisible[_renderable]._visible = _visible;
 
-        //if (!_meshProvider.SelectedRenderBaseMesh && _renderOutline)
-        //{
-        //    _renderablesSet.cVisible[_renderable]._visible = false;
-        //}
-
         _renderablesSet.cSceneVis[_renderable]._renderFilter = _drawfilter;
         _renderablesSet.cSceneVis[_renderable]._drawGroup = _drawgroups;
+
+        if (_renderOutline && CFG.Current.Viewport_Enable_Selection_Outline)
+        {
+            pipelineDescription.RasterizerState = new RasterizerStateDescription(
+                _meshProvider.SelectedUseBackface
+                    ? _meshProvider.CullMode == VkCullModeFlags.Front ? VkCullModeFlags.Back : VkCullModeFlags.Front
+                    : _meshProvider.CullMode,
+                _meshProvider.FillMode,
+                _meshProvider.FrontFace,
+                true,
+                false);
+
+            Tuple<Shader, Shader> s = StaticResourceCache.GetShaders(gd, gd.ResourceFactory, "SimpleFlver_Outline").ToTuple();
+            _shaders = new[] { s.Item1, s.Item2 };
+            pipelineDescription.ShaderSet = new ShaderSetDescription(
+                mainVertexLayouts,
+                _shaders, _meshProvider.SpecializationConstants);
+            _selectedPipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
+
+            _selectionOutlineRenderable = _renderablesSet.CreateMesh(ref bounds, ref meshcomp);
+            _renderablesSet.cRenderKeys[_selectionOutlineRenderable] = GetRenderKey(0.0f);
+
+            // Pipelines
+            _renderablesSet.cPipelines[_selectionOutlineRenderable] = _selectedPipeline;
+            _renderablesSet.cSelectionPipelines[_selectionOutlineRenderable] = _selectedPipeline;
+
+            // Selectable
+            _renderablesSet.cSelectables[_selectionOutlineRenderable] = _selectable;
+        }
     }
 
     public override unsafe void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)
@@ -740,4 +770,5 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         return renderable;
     }
+
 }
