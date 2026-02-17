@@ -4,5 +4,4 @@
 
 - Viewport 
     - Add ability to change viewport background color
-    - Improve the untextured shader (the white pass is a bit overbearing in some maps, selection tint isn't as obvious)
     - Perhaps restore selection outline as option (mainly for untextured)
