@@ -4,4 +4,3 @@
 
 - Viewport 
     - Add ability to change viewport background color
-    - Perhaps restore selection outline as option (mainly for untextured)
