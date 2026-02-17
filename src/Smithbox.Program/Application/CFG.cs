@@ -505,7 +505,7 @@ public class CFG
 
     public bool ParamEditor_Row_Name_Strip_DES = false;
     public bool ParamEditor_Row_Name_Strip_DS1 = false;
-    public bool ParamEditor_Row_Name_Strip_DS2 = false;
+    public bool ParamEditor_Row_Name_Strip_DS2 = true;
     public bool ParamEditor_Row_Name_Strip_BB = false;
     public bool ParamEditor_Row_Name_Strip_DS3 = false;
     public bool ParamEditor_Row_Name_Strip_SDT = false;
@@ -515,7 +515,7 @@ public class CFG
 
     public bool ParamEditor_Stripped_Row_Name_Load_DES = false;
     public bool ParamEditor_Stripped_Row_Name_Load_DS1 = false;
-    public bool ParamEditor_Stripped_Row_Name_Load_DS2 = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_DS2 = true;
     public bool ParamEditor_Stripped_Row_Name_Load_BB = false;
     public bool ParamEditor_Stripped_Row_Name_Load_DS3 = false;
     public bool ParamEditor_Stripped_Row_Name_Load_SDT = false;
