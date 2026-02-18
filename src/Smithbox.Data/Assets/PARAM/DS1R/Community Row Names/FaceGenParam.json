@@ -106,25 +106,25 @@
     {
       "ID": 30,
       "Entries": [
-        "4th Edition Warrior_Male"
+        "April 2011 Version Warrior_Male"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "Knights_Male"
+        "April 2011 Version Knight_Male"
       ]
     },
     {
       "ID": 32,
       "Entries": [
-        "4th Edition Wizard _ Woman"
+        "April 2011 Version Sorcerer_Female"
       ]
     },
     {
       "ID": 33,
       "Entries": [
-        "4th Edition Sorcerer_Male"
+        "April 2011 Version Pyromancer_Male"
       ]
     },
     {
@@ -274,7 +274,7 @@
     {
       "ID": 123,
       "Entries": [
-        "default face test_24"
+        "Default face test_24"
       ]
     },
     {
@@ -298,7 +298,7 @@
     {
       "ID": 127,
       "Entries": [
-        "Default Face Test_28"
+        "Default face test_28"
       ]
     },
     {
@@ -328,7 +328,7 @@
     {
       "ID": 132,
       "Entries": [
-        "Default Face Test_33"
+        "Default face test_33"
       ]
     },
     {
@@ -352,7 +352,7 @@
     {
       "ID": 136,
       "Entries": [
-        "Default Face Test_37"
+        "Default face test_37"
       ]
     },
     {
@@ -370,7 +370,7 @@
     {
       "ID": 139,
       "Entries": [
-        "Default Face Test_40"
+        "Default face test_40"
       ]
     },
     {
@@ -382,19 +382,19 @@
     {
       "ID": 141,
       "Entries": [
-        "Default Face Test_42"
+        "Default face test_42"
       ]
     },
     {
       "ID": 142,
       "Entries": [
-        "Default Face Test_43"
+        "Default face test_43"
       ]
     },
     {
       "ID": 143,
       "Entries": [
-        "Default Face Test_44"
+        "Default face test_44"
       ]
     },
     {
@@ -406,31 +406,31 @@
     {
       "ID": 145,
       "Entries": [
-        "Default Face Test_46"
+        "Default face test_46"
       ]
     },
     {
       "ID": 146,
       "Entries": [
-        "Default Face Test_47"
+        "Default face test_47"
       ]
     },
     {
       "ID": 147,
       "Entries": [
-        "Default Face Test_48"
+        "Default face test_48"
       ]
     },
     {
       "ID": 148,
       "Entries": [
-        "Default Face Test_49"
+        "Default face test_49"
       ]
     },
     {
       "ID": 149,
       "Entries": [
-        "Default Face Test_50"
+        "Default face test_50"
       ]
     },
     {
@@ -442,439 +442,439 @@
     {
       "ID": 1000,
       "Entries": [
-        "Common Face"
+        "[Male] Commoner"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        "Wuhe River Farmer's Face"
+        "[Male] Delta Farmer"
       ]
     },
     {
       "ID": 1002,
       "Entries": [
-        "Noble Face of Astra"
+        "[Male] Astora Noble"
       ]
     },
     {
       "ID": 1003,
       "Entries": [
-        "Ryu Gakuin Student Face"
+        "[Male] Dragon Scholar"
       ]
     },
     {
       "ID": 1004,
       "Entries": [
-        "Solrondo Saint Face"
+        "[Male] Thorolund Cleric"
       ]
     },
     {
       "ID": 1005,
       "Entries": [
-        "Catalina's cheerful face"
+        "[Male] Jubilant Catarina"
       ]
     },
     {
       "ID": 1006,
       "Entries": [
-        "Kalim's dismal face"
+        "[Male] Dubious Carim"
       ]
     },
     {
       "ID": 1007,
       "Entries": [
-        "Zena's old face"
+        "[Male] Classic Zena"
       ]
     },
     {
       "ID": 1008,
       "Entries": [
-        "Onuma"
+        "[Male] Eerie Great Swamp"
       ]
     },
     {
       "ID": 1009,
       "Entries": [
-        "Eastern alien face"
+        "[Male] Far East Traveler"
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        "commoner face"
+        "[Female] Commoner"
       ]
     },
     {
       "ID": 2001,
       "Entries": [
-        "Five finger river farmer's face"
+        "[Female] Delta Farmer"
       ]
     },
     {
       "ID": 2002,
       "Entries": [
-        "Astra noble face"
+        "[Female] Astora Noble"
       ]
     },
     {
       "ID": 2003,
       "Entries": [
-        "Ryu Gakuin Student Face"
+        "[Female] Dragon Scholar"
       ]
     },
     {
       "ID": 2004,
       "Entries": [
-        "Sollond's Saint Face"
+        "[Female] Thorolund Cleric"
       ]
     },
     {
       "ID": 2005,
       "Entries": [
-        "Cheerful face of Catalina"
+        "[Female] Jubilant Catarina"
       ]
     },
     {
       "ID": 2006,
       "Entries": [
-        "Kalim's gloomy face"
+        "[Female] Dubious Carim"
       ]
     },
     {
       "ID": 2007,
       "Entries": [
-        "Zena's old face"
+        "[Female] Classic Zena"
       ]
     },
     {
       "ID": 2008,
       "Entries": [
-        "Anomaly of Onuma"
+        "[Female] Eerie Great Swamp"
       ]
     },
     {
       "ID": 2009,
       "Entries": [
-        "Eastern strange face"
+        "[Female] Far East Traveler"
       ]
     },
     {
       "ID": 6000,
       "Entries": [
-        "Sun Knight"
+        "Solaire of Astora"
       ]
     },
     {
       "ID": 6001,
       "Entries": [
-        "Knight of the Sun (Solar Bug Ver.)"
+        "Solaire of Astora (Sunlight Maggot Ver.)"
       ]
     },
     {
       "ID": 6002,
       "Entries": [
-        "Knight of the Sun (dead)"
+        "[UNUSED] Solaire of Astora (Hollow)"
       ]
     },
     {
       "ID": 6010,
       "Entries": [
-        "Dark Moon Knight"
+        "Darkmoon Knightess"
       ]
     },
     {
       "ID": 6020,
       "Entries": [
-        "Knight Ostra"
+        "Oscar of Astora"
       ]
     },
     {
       "ID": 6021,
       "Entries": [
-        "Knight Ostra, hostile"
+        "Oscar of Astora (Hostile)"
       ]
     },
     {
       "ID": 6030,
       "Entries": [
-        "\"Big Hat\" Logan"
+        "Big Hat Logan"
       ]
     },
     {
       "ID": 6031,
       "Entries": [
-        "\"Big hat\" Logan (dead)"
+        "[UNUSED] Big Hat Logan (Hollow)"
       ]
     },
     {
       "ID": 6040,
       "Entries": [
-        "Logan Disciple"
+        "Griggs of Vinheim"
       ]
     },
     {
       "ID": 6041,
       "Entries": [
-        "Logan's apprentice (deceased)"
+        "Griggs of Vinheim (Hollow)"
       ]
     },
     {
       "ID": 6050,
       "Entries": [
-        "Princess of the Exiled"
+        "Dusk of Oolacile"
       ]
     },
     {
       "ID": 6060,
       "Entries": [
-        "Gray Saint"
+        "[UNUSED] Gray Saint"
       ]
     },
     {
       "ID": 6070,
       "Entries": [
-        "White Saint"
+        "Rhea of Thorolund"
       ]
     },
     {
       "ID": 6071,
       "Entries": [
-        "White saint (dead)"
+        "Rhea of Thorolund (Hollow)"
       ]
     },
     {
       "ID": 6080,
       "Entries": [
-        "Saint Knight A"
+        "Petrus of Thorolund"
       ]
     },
     {
       "ID": 6090,
       "Entries": [
-        "Saint Knight B"
+        "Vince of Thorolund"
       ]
     },
     {
       "ID": 6091,
       "Entries": [
-        "Saint Knight B (dead)"
+        "Vince of Thorolund (Hollow)"
       ]
     },
     {
       "ID": 6100,
       "Entries": [
-        "Saint Knight C"
+        "Nico of Thorolund"
       ]
     },
     {
       "ID": 6101,
       "Entries": [
-        "Saint Knight C (dead)"
+        "Nico of Thorolund (Hollow)"
       ]
     },
     {
       "ID": 6130,
       "Entries": [
-        "Vase Sorcerer"
+        "Laurentius of the Great Swamp"
       ]
     },
     {
       "ID": 6131,
       "Entries": [
-        "Vase Sorcerer (dead)"
+        "Laurentius of the Great Swamp (Hollow)"
       ]
     },
     {
       "ID": 6170,
       "Entries": [
-        "Wandering chaos"
+        "Quelana of Izalith"
       ]
     },
     {
       "ID": 6180,
       "Entries": [
-        "Healer"
+        "Ingward"
       ]
     },
     {
       "ID": 6220,
       "Entries": [
-        "Blacksmith Rickert"
+        "Rickert of Vinheim"
       ]
     },
     {
       "ID": 6250,
       "Entries": [
-        "A Broken Merchant"
+        "Crestfallen Merchant"
       ]
     },
     {
       "ID": 6260,
       "Entries": [
-        "trickster"
+        "Domhnall of Zena"
       ]
     },
     {
       "ID": 6270,
       "Entries": [
-        "A Broken Warrior"
+        "Crestfallen Warrior"
       ]
     },
     {
       "ID": 6271,
       "Entries": [
-        "Broken warrior (dead)"
+        "Crestfallen Warrior (Hollow)"
       ]
     },
     {
       "ID": 6280,
       "Entries": [
-        "Onion Knight"
+        "Siegmeyer of Catarina"
       ]
     },
     {
       "ID": 6290,
       "Entries": [
-        "Onion Knight's Daughter"
+        "Sieglinde of Catarina"
       ]
     },
     {
       "ID": 6300,
       "Entries": [
-        "Hugged Knight Lautrek"
+        "Knight Lautrec of Carim"
       ]
     },
     {
       "ID": 6310,
       "Entries": [
-        "Field Takeshi"
+        "Shiva of the East"
       ]
     },
     {
       "ID": 6320,
       "Entries": [
-        "Cemetery Coward Patch"
+        "Trusty Patches"
       ]
     },
     {
       "ID": 6370,
       "Entries": [
-        "Dragon Priest"
+        "Oswald of Carim"
       ]
     },
     {
       "ID": 6390,
       "Entries": [
-        "Black Knight Tarcus"
+        "Black Iron Tarkus"
       ]
     },
     {
       "ID": 6400,
       "Entries": [
-        "Belka Knight"
+        "[UNUSED] Velka Knight"
       ]
     },
     {
       "ID": 6410,
       "Entries": [
-        "Witch Mallows"
+        "Witch Beatrice"
       ]
     },
     {
       "ID": 6420,
       "Entries": [
-        "Ninja"
+        "Shiva's Bodyguard"
       ]
     },
     {
       "ID": 6490,
       "Entries": [
-        "Lautrek companion 1"
+        "Lautrec's Companion 1"
       ]
     },
     {
       "ID": 6500,
       "Entries": [
-        "Lautrek companion 2"
+        "Lautrec's Companion 2"
       ]
     },
     {
       "ID": 6530,
       "Entries": [
-        "Numa Woman (NPC Multi)"
+        "Maneater Mildred"
       ]
     },
     {
       "ID": 6550,
       "Entries": [
-        "Temple Knight (NPC Multi)"
+        "Paladin Leeroy"
       ]
     },
     {
       "ID": 6560,
       "Entries": [
-        "Barb Knight (NPC Multi)"
+        "Kirk, Knight of Thorns"
       ]
     },
     {
       "ID": 6570,
       "Entries": [
-        "Yellow clothing (NPC multi)"
+        "Xanthous King Jeremiah"
       ]
     },
     {
       "ID": 6580,
       "Entries": [
-        "Castle tower NPC (Havel)"
+        "Havel the Rock"
       ]
     },
     {
       "ID": 6600,
       "Entries": [
-        "Royal Castle 1 Tower NPC (Ricard)"
+        "Undead Prince Ricard"
       ]
     },
     {
       "ID": 6610,
       "Entries": [
-        "Crystal Knight"
+        "Hollow Crystal Knight"
       ]
     },
     {
       "ID": 6801,
       "Entries": [
-        "Bandit A Gatekeeper"
+        "Forest Hunter - Bandit"
       ]
     },
     {
       "ID": 6802,
       "Entries": [
-        "Bandit B Warrior"
+        "Forest Hunter - Knight"
       ]
     },
     {
       "ID": 6803,
       "Entries": [
-        "Bandit C Bow Master"
+        "Forest Hunter - Hunter"
       ]
     },
     {
       "ID": 6804,
       "Entries": [
-        "Bandit D Magic (Attack)"
+        "Forest Hunter - Cleric"
       ]
     },
     {
       "ID": 6805,
       "Entries": [
-        "Bandit E Magic (Recovery)"
+        "Forest Hunter - Sorcerer"
       ]
     },
     {
       "ID": 6806,
       "Entries": [
-        "Bandit F Stealth"
+        "Forest Hunter - Thief"
       ]
     }
   ]
