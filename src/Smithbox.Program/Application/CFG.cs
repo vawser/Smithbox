@@ -995,6 +995,8 @@ public class CFG
     public Vector3 Viewport_Gizmo_Z_Base_Color = new(0.219f, 0.564f, 0.929f);
     public Vector3 Viewport_Gizmo_Z_Highlight_Color = new(0.407f, 0.690f, 1.0f);
 
+    public Vector3 Viewport_Background_Color = new(0.1f, 0.1f, 0.1f);
+
     public float Viewport_Untextured_Model_Brightness = 1.0f;
     public float Viewport_Untextured_Model_Saturation = 0.5f;
 
@@ -1016,8 +1018,6 @@ public class CFG
     public bool Viewport_Enable_Box_Selection_Collision = true;
     public bool Viewport_Enable_Box_Selection_Light = true;
     public bool Viewport_Enable_Box_Selection_Region = true;
-
-    public Vector3 Viewport_Background_Color = new(1.0f, 0.5f, 0.0f);
 
     // Map Editor: Primary Grid
     public bool MapEditor_DisplayPrimaryGrid = false;

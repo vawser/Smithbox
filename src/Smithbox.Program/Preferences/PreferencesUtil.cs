@@ -44,11 +44,20 @@ public static class PreferencesUtil
     public static void ResetViewportSelectionCFG()
     {
         CFG.Current.Viewport_Enable_Selection_Tint = CFG.Default.Viewport_Enable_Selection_Tint;
+        CFG.Current.Viewport_Enable_Selection_Outline = CFG.Default.Viewport_Enable_Selection_Outline;
         CFG.Current.Viewport_Enable_Box_Selection = CFG.Default.Viewport_Enable_Box_Selection;
+        CFG.Current.Viewport_Frame_Distance = CFG.Default.Viewport_Frame_Distance;
+        CFG.Current.Viewport_Frame_Offset = CFG.Default.Viewport_Frame_Offset;
     }
 
     public static void ResetViewportColoringCFG()
     {;
+        CFG.Current.Viewport_Background_Color = CFG.Default.Viewport_Background_Color;
+        CFG.Current.Viewport_Selection_Outline_Color = CFG.Default.Viewport_Selection_Outline_Color;
+        CFG.Current.Viewport_Selection_Tint_Color = CFG.Default.Viewport_Selection_Tint_Color;
+        CFG.Current.Viewport_Untextured_Selection_Tint_Color = CFG.Default.Viewport_Untextured_Selection_Tint_Color;
+        CFG.Current.Viewport_Selection_Tint_Strength = CFG.Default.Viewport_Selection_Tint_Strength;
+
         CFG.Current.GFX_Renderable_Default_Wireframe_Alpha = CFG.Default.GFX_Renderable_Default_Wireframe_Alpha;
 
         CFG.Current.Viewport_Collision_Color = CFG.Default.Viewport_Collision_Color;
