@@ -1,5 +1,0 @@
-<Project>
-<PropertyGroup>
-<DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
-</PropertyGroup>
-</Project>

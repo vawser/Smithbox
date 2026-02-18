@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk" InitialTargets="Init">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -36,20 +36,16 @@
     <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Props Include="&lt;Project&gt;" Visible="false"/>
-    <Props Include="  &lt;PropertyGroup&gt;" Visible="false"/>
-    <Props Include="    &lt;DefineConstants&gt;%24(DefineConstants)%3BLINUX&lt;/DefineConstants&gt;" Visible="false"/>
-    <Props Include="  &lt;/PropertyGroup&gt;" Visible="false"/>
-    <Props Include="&lt;/Project&gt;" Visible="false"/>
-  </ItemGroup>
-
-  <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences">
-      <WriteLinesToFile
-          File="../Platform.Build.props"
-          Lines="@(Props)"
-          Overwrite="true"
-          Encoding="UTF-8" />
+  <Target Name="Init" Condition="!Exists('../Platform.Build.props')" />
+  <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences" AfterTargets="Init">
+      <ItemGroup>
+        <Props Include="&lt;Project&gt;" Visible="false" />
+        <Props Include="  &lt;PropertyGroup&gt;" Visible="false" />
+        <Props Include="    &lt;DefineConstants&gt;%24(DefineConstants)%3BLINUX&lt;/DefineConstants&gt;" Visible="false" />
+        <Props Include="  &lt;/PropertyGroup&gt;" Visible="false" />
+        <Props Include="&lt;/Project&gt;" Visible="false" />
+      </ItemGroup>
+      <WriteLinesToFile File="../Platform.Build.props" Lines="@(Props)" Overwrite="true" Encoding="UTF-8" />
   </Target>
 
   <Target Name="CopyDataProjectOutput" AfterTargets="Build">

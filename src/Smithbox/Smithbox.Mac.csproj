@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk" InitialTargets="Init">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -13,21 +13,23 @@
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
-    <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
+    <Platforms>AnyCPU;x64</Platforms>
+    <RuntimeIdentifier Condition="'$(Platform)'=='AnyCPU'">osx-arm64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(Platform)'=='x64'">osx-x64</RuntimeIdentifier>
     <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
     <RootNamespace>StudioCore</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>$(Platform)</PlatformTarget>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>$(Platform)</PlatformTarget>
   </PropertyGroup>
 
   <!-- Required for XCode 16+ builds -->
@@ -44,14 +46,16 @@
     <MoltenVKPath>$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib</MoltenVKPath>
     <OodlePath>/path/to/oodle.dylib</OodlePath>
     <RustDllPath>../Andre/Andre.Formats/libbhd5_decrypt_rust.dylib</RustDllPath>
+    <TracyPath>../Tracy/libTracyClient.dylib</TracyPath>
     <ZstdPath>/path/to/libzstd.dylib</ZstdPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <NativeReference Include="$(MoltenVKPath)" Condition="Exists('$(MoltenVKPath)')" Kind="Dynamic" />
-    <NativeReference Include="$(OodlePath)" Condition="Exists('$(OodlePath)')" Kind="Dynamic" />
-    <NativeReference Include="$(RustDllPath)" Condition="Exists('$(RustDllPath)')" Kind="Dynamic" />
-    <NativeReference Include="$(ZstdPath)" Condition="Exists('$(ZstdPath)')" Kind="Dynamic" />
+    <NativeReference Include="$(MoltenVKPath)" Kind="Dynamic" Condition="Exists('$(MoltenVKPath)')" />
+    <NativeReference Include="$(OodlePath)" Kind="Dynamic" Condition="Exists('$(OodlePath)')" />
+    <NativeReference Include="$(RustDllPath)" Kind="Dynamic" Condition="Exists('$(RustDllPath)')" />
+    <NativeReference Include="$(TracyPath)" Kind="Dynamic" />
+    <NativeReference Include="$(ZstdPath)" Kind="Dynamic" Condition="Exists('$(ZstdPath)')" />
     <BundleResource Include="AppIcon.icns" />
   </ItemGroup>
 
@@ -60,19 +64,15 @@
     <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Props Include="&lt;Project&gt;" Visible="false"/>
-    <Props Include="  &lt;PropertyGroup&gt;" Visible="false"/>
-    <Props Include="    &lt;DefineConstants&gt;%24(DefineConstants)%3BMACOS&lt;/DefineConstants&gt;" Visible="false"/>
-    <Props Include="  &lt;/PropertyGroup&gt;" Visible="false"/>
-    <Props Include="&lt;/Project&gt;" Visible="false"/>
-  </ItemGroup>
-
-  <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences">
-      <WriteLinesToFile
-          File="../Platform.Build.props"
-          Lines="@(Props)"
-          Overwrite="true"
-          Encoding="UTF-8" />
+  <Target Name="Init" Condition="!Exists('../Platform.Build.props')" />
+  <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences" AfterTargets="Init">
+      <ItemGroup>
+        <Props Include="&lt;Project&gt;" Visible="false" />
+        <Props Include="  &lt;PropertyGroup&gt;" Visible="false" />
+        <Props Include="    &lt;DefineConstants&gt;%24(DefineConstants)%3BMACOS&lt;/DefineConstants&gt;" Visible="false" />
+        <Props Include="  &lt;/PropertyGroup&gt;" Visible="false" />
+        <Props Include="&lt;/Project&gt;" Visible="false" />
+      </ItemGroup>
+      <WriteLinesToFile File="../Platform.Build.props" Lines="@(Props)" Overwrite="true" Encoding="UTF-8" />
   </Target>
 </Project>

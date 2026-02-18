@@ -1,5 +1,5 @@
-﻿<Project>
-    <Import Project="Platform.Build.props" />
+<Project>
+    <Import Project="Platform.Build.props" Condition="Exists('$(MSBuildThisFileDirectory)Platform.Build.props')" />
     <ItemGroup Condition="'$(MSBuildProjectName)' != 'Smithbox.Program'">
         <Compile Include="$(MSBuildThisFileDirectory)Common/FileLocations.cs" Visible="false" />
         <Compile Include="$(MSBuildThisFileDirectory)Common/FileExplorer.cs" Visible="false" />
