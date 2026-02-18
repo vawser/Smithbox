@@ -49,7 +49,9 @@ namespace Andre.IO.VFS
                         fileHeaders.Add((p, h));
                         if (this.files.ContainsKey(p))
                         {
+#if DEBUG
                             AndreLogging.For(this).LogWarning("Duplicate file for name \"{}\"!", p);
+#endif
                             continue;
                         }
                         string[] sp = p.Trim('/').Split('/');

@@ -14,6 +14,33 @@ public class MapEditorPrefs
     {
         return typeof(MapEditorPrefs);
     }
+    #region Map List
+    public static PreferenceItem MapEditor_SkipHavokLoad()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.MapEditor,
+            Spacer = true,
+            DisplayRestrictions =
+            {
+                ProjectType.ER,
+                ProjectType.NR
+            },
+
+            Section = SectionCategory.MapEditor_General,
+
+            Title = "Skip Havok Collision / Navmesh Loading",
+            Description = "If enabled, the havok collisions and navmeshes will not be loaded.",
+
+            Draw = () =>
+            {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_SkipHavokLoad);
+            }
+        };
+    }
+
+    #endregion
 
     #region Map List
     public static PreferenceItem MapEditor_Map_List_Enable_Load_on_Double_Click()

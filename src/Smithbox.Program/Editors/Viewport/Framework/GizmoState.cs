@@ -15,11 +15,12 @@ public static class GizmoState
     public static GizmosSpace Space = GizmosSpace.Local;
     public static GizmosOrigin Origin = GizmosOrigin.World;
 
-    public static void OnMenu()
+    public static void OnMenu(VulkanViewport viewport)
     {
         if (ImGui.MenuItem("Display"))
         {
             CFG.Current.Viewport_Render_Gizmos = !CFG.Current.Viewport_Render_Gizmos;
+            viewport.DelayPicking();
         }
         UIHelper.ShowActiveStatus(CFG.Current.Viewport_Render_Gizmos);
         UIHelper.Tooltip("Toggle the display of gizmos.");
@@ -43,18 +44,21 @@ public static class GizmoState
             if (ImGui.MenuItem("Translate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Translation_Mode)))
             {
                 Mode = GizmosMode.Translate;
+                viewport.DelayPicking();
             }
             UIHelper.Tooltip($"Set the gizmo to Translation mode.");
 
             if (ImGui.MenuItem("Rotate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Rotation_Mode)))
             {
                 Mode = GizmosMode.Rotate;
+                viewport.DelayPicking();
             }
             UIHelper.Tooltip($"Set the gizmo to Rotation mode.");
 
             if (ImGui.MenuItem("Scale", InputManager.GetHint(KeybindID.Cycle_Gizmo_Scale_Mode)))
             {
                 Mode = GizmosMode.Scale;
+                viewport.DelayPicking();
             }
             UIHelper.Tooltip($"Set the gizmo to Scale mode.");
 
@@ -66,12 +70,14 @@ public static class GizmoState
             if (ImGui.MenuItem("Local", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
             {
                 Space = GizmosSpace.Local;
+                viewport.DelayPicking();
             }
             UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
 
             if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
             {
                 Space = GizmosSpace.World;
+                viewport.DelayPicking();
             }
             UIHelper.Tooltip($"Place the gizmo origin based on the selection's world position.");
 
@@ -83,12 +89,14 @@ public static class GizmoState
             if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
             {
                 Origin = GizmosOrigin.World;
+                viewport.DelayPicking();
             }
             UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
 
             if (ImGui.MenuItem("Bounding Box", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
             {
                 Origin = GizmosOrigin.BoundingBox;
+                viewport.DelayPicking();
             }
             UIHelper.Tooltip($"Orient the gizmo origin based on the bounding box.");
 

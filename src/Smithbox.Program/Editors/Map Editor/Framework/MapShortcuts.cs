@@ -33,6 +33,9 @@ public class MapShortcuts
             ImGui.IsAnyItemActive())
             return;
 
+        if (activeView.ViewportHandler.ActiveViewport.Viewport.ViewportCamera.RightMousePressed)
+            return;
+
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
             CFG.Current.Interface_MapEditor_ToolWindow = !CFG.Current.Interface_MapEditor_ToolWindow;
@@ -73,7 +76,7 @@ public class MapShortcuts
         }
 
         // Actions
-        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport) || FocusManager.IsFocus(EditorFocusContext.MapEditor_FileList))
         {
             activeView.CreateAction.OnShortcut();
             activeView.DuplicateAction.OnShortcut();
@@ -89,12 +92,17 @@ public class MapShortcuts
             activeView.EditorVisibilityAction.OnShortcut();
             activeView.AdjustToGridAction.OnShortcut();
             activeView.SelectCollisionRefAction.OnShortcut();
+            activeView.GotoAction.OnShortcut();
+            activeView.FrameAction.OnShortcut();
+            activeView.SelectAllAction.OnShortcut();
+
+            if(InputManager.IsPressed(KeybindID.MapEditor_Deselect_All))
+            {
+                activeView.ViewportSelection.ClearSelection();
+            }
         }
 
-        activeView.GotoAction.OnShortcut();
-        activeView.FrameAction.OnShortcut();
         activeView.SelectionOutlineAction.OnShortcut();
-        activeView.SelectAllAction.OnShortcut();
         activeView.EntityInfoAction.OnShortcut();
 
         // Tools

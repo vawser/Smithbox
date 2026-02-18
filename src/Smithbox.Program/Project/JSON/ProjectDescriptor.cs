@@ -30,6 +30,7 @@ public class ProjectDescriptor
     public bool EnableMaterialEditor = false;
     public bool EnableTextureViewer = false;
     public bool EnableFileBrowser = false;
+    public bool EnableAnimEditor = false;
 
     public List<string> PinnedParams { get; set; } = new();
     public Dictionary<string, List<int>> PinnedRows { get; set; } = new();
@@ -56,6 +57,7 @@ public class ProjectDescriptor
         EnableTextureViewer = newDescriptor.EnableTextureViewer;
         EnableMaterialEditor = newDescriptor.EnableMaterialEditor;
         EnableFileBrowser = newDescriptor.EnableFileBrowser;
+        EnableAnimEditor = newDescriptor.EnableAnimEditor;
         EnableExternalMaterialData = newDescriptor.EnableExternalMaterialData;
 
         FolderTag = newDescriptor.FolderTag;
@@ -80,6 +82,7 @@ public class ProjectDescriptor
         EnableTextureViewer = true;
         EnableMaterialEditor = true;
         EnableFileBrowser = true;
+        EnableAnimEditor = true;
 
         EnableExternalMaterialData = true;
 
@@ -104,6 +107,7 @@ public class ProjectDescriptor
         EnableTextureViewer = true;
         EnableMaterialEditor = true;
         EnableFileBrowser = true;
+        EnableAnimEditor = true;
 
         EnableExternalMaterialData = true;
 

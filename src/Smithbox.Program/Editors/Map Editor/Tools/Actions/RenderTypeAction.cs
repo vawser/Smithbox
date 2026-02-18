@@ -97,5 +97,7 @@ public class RenderTypeAction
         }
 
         View.ViewportSelection.ResetSelection();
+
+        View.DelayPicking();
     }
 }

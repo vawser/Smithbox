@@ -215,8 +215,8 @@
       <Increment>0.1</Increment>
       <SortID>24</SortID>
     </Field>
-    <Field Def="f32 HeightDensity = 100">
-      <Description>HeightDensity</Description>
+    <Field Def="f32 HeightDensity2 = 100">
+      <Description>HeightDensity2</Description>
       <DisplayFormat />
       <EditFlags>None</EditFlags>
       <Minimum>0.1</Minimum>
@@ -224,8 +224,8 @@
       <Increment>0.1</Increment>
       <SortID>25</SortID>
     </Field>
-    <Field Def="s8 IsUpper = 1">
-      <Description>IsUpper</Description>
+    <Field Def="s8 IsUpper2 = 1">
+      <Description>IsUpper2</Description>
       <DisplayFormat />
       <EditFlags>None</EditFlags>
       <Minimum>0</Minimum>
@@ -245,8 +245,8 @@
       <Maximum>1</Maximum>
       <SortID>27</SortID>
     </Field>
-    <Field Def="f32 Contrast">
-      <Description>Contrast</Description>
+    <Field Def="f32 Contrast2">
+      <Description>Contrast2</Description>
       <DisplayFormat />
       <EditFlags>None</EditFlags>
       <Minimum>0</Minimum>

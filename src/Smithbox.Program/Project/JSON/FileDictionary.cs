@@ -10,7 +10,7 @@ public class FileDictionary
 {
     public List<FileDictionaryEntry> Entries { get; set; } = new();
 }
-public class FileDictionaryEntry
+public class FileDictionaryEntry : IComparable
 {
     /// <summary>
     /// The archive this entry belongs to.
@@ -36,4 +36,10 @@ public class FileDictionaryEntry
     /// The extension for this entry (ignoring .dcx)
     /// </summary>
     public string Extension { get; set; }
+
+    public int CompareTo(object obj)
+    {
+        var compare = (FileDictionaryEntry)obj;
+        return Filename.CompareTo(compare.Filename);
+    }
 }

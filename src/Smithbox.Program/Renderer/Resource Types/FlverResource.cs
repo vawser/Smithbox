@@ -14,6 +14,7 @@ using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Tracy;
 using Veldrid;
 using Veldrid.Utilities;
 using static SoulsFormats.FLVER;
@@ -271,7 +272,7 @@ public class FlverResource : IResource, IDisposable
 
                             // Hack to allow some differing paths between sampler and source to work correctly in ER
                             // Namely for these aspects of the paths:
-                            // Mb<x> where <x> is a number, but differs between sampler and source 
+                            // Mb<x> where <x> is a number, but differs between sampler and source
                             // <x>Mask where <x> is a number, but differs between sampler and source
                             if (t.Type.Contains("__") && type.Contains("__"))
                             {
@@ -2407,12 +2408,12 @@ public class FlverResource : IResource, IDisposable
 
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
             {
-                Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, @"Material upload");
+                Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"Material upload");
                 if (MaterialBuffer != null)
                 {
                     MaterialBuffer.FillBuffer(d, cl, ref MaterialData);
                 }
-                Tracy.TracyCZoneEnd(ctx);
+                Profiler.TracyCZoneEnd(ctx);
             });
         }
 

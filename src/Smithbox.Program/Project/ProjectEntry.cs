@@ -44,6 +44,9 @@ public class ProjectEntry
 
         if (Handler.ModelEditorStub != null)
             Handler.ModelEditorStub.Draw(device, cl);
+
+        if (Handler.AnimEditorStub != null)
+            Handler.AnimEditorStub.Draw(device, cl);
     }
 
     public unsafe void Update(float dt)
@@ -74,6 +77,9 @@ public class ProjectEntry
         if (Handler.FileBrowserStub != null)
             Handler.FileBrowserStub.Display(dt, commands);
 
+        if (Handler.AnimEditorStub != null)
+            Handler.AnimEditorStub.Display(dt, commands);
+
         // Auto-Save
         AutomaticSaveInterval = (int)CFG.Current.Project_Automatic_Save_Interval;
 
@@ -97,6 +103,9 @@ public class ProjectEntry
 
         if (Handler.ModelEditorStub != null)
             Handler.ModelEditorStub.EditorResized(window, device);
+
+        if (Handler.AnimEditorStub != null)
+            Handler.AnimEditorStub.EditorResized(window, device);
     }
 
     public async Task<bool> Init(Action<ProjectLoadProgress> reportProgress, bool silent = false, ProjectInitType initType = ProjectInitType.ProjectDefined)

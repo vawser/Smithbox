@@ -72,6 +72,7 @@ public class SceneRenderPipeline
         SceneParams.SimpleFlver_Brightness = 1.0f;
         SceneParams.SimpleFlver_Saturation = 0.5f;
         SceneParams.SelectionColor = new Vector4(1.0f, 0.5f, 0.0f, 1.0f);
+        SceneParams.OutlineColor = new Vector4(1.0f, 0.5f, 0.0f, 1.0f);
 
         device.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
 
@@ -142,6 +143,12 @@ public class SceneRenderPipeline
             CFG.Current.Viewport_Selection_Tint_Strength);
         }
 
+        var outlineColor = new Vector4(
+            CFG.Current.Viewport_Selection_Outline_Color.X,
+            CFG.Current.Viewport_Selection_Outline_Color.Y,
+            CFG.Current.Viewport_Selection_Outline_Color.Z,
+            1.0f);
+
         Eye = eye;
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
@@ -155,6 +162,7 @@ public class SceneRenderPipeline
             SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Untextured_Model_Brightness;
             SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Untextured_Model_Saturation;
             SceneParams.SelectionColor = selectionColor;
+            SceneParams.OutlineColor = outlineColor;
 
             cl.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
         });

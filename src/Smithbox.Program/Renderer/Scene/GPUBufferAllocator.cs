@@ -3,6 +3,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
+using Tracy;
 using Veldrid;
 using Vortice.Vulkan;
 
@@ -695,7 +696,7 @@ public class VertexIndexBufferAllocator
                 AllocStatus = Status.Uploading;
                 SceneRenderer.AddBackgroundUploadTask((d, cl) =>
                 {
-                    Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1,
+                    Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1,
                         $@"Buffer flush {BufferIndex}, v: {_stagingVertsSize}, i: {_stagingIndicesSize}");
                     _bufferSizeVert = _stagingVertsSize;
                     _bufferSizeIndex = _stagingIndicesSize;
@@ -720,27 +721,27 @@ public class VertexIndexBufferAllocator
                         VkAccessFlags2.VertexAttributeRead,
                         d =>
                         {
-                            Tracy.___tracy_c_zone_context ctx2 =
-                                Tracy.TracyCZoneN(1, $@"Buffer {BufferIndex} V transfer done");
+                            Profiler.___tracy_c_zone_context ctx2 =
+                                Profiler.TracyCZoneN(1, $@"Buffer {BufferIndex} V transfer done");
                             _stagingBufferVerts.Dispose();
                             _stagingBufferVerts = null;
-                            Tracy.TracyCZoneEnd(ctx2);
+                            Profiler.TracyCZoneEnd(ctx2);
                         });
                     SceneRenderer.AddAsyncTransfer(_backingIndexBuffer,
                         _stagingBufferIndices,
                         VkAccessFlags2.IndexRead,
                         d =>
                         {
-                            Tracy.___tracy_c_zone_context ctx2 =
-                                Tracy.TracyCZoneN(1, $@"Buffer {BufferIndex} I transfer done");
+                            Profiler.___tracy_c_zone_context ctx2 =
+                                Profiler.TracyCZoneN(1, $@"Buffer {BufferIndex} I transfer done");
                             _stagingVertsSize = 0;
                             _stagingIndicesSize = 0;
                             AllocStatus = Status.Resident;
                             _stagingBufferIndices.Dispose();
                             _stagingBufferIndices = null;
-                            Tracy.TracyCZoneEnd(ctx2);
+                            Profiler.TracyCZoneEnd(ctx2);
                         });
-                    Tracy.TracyCZoneEnd(ctx);
+                    Profiler.TracyCZoneEnd(ctx);
                 });
                 Interlocked.CompareExchange(ref _flushLock, 0, 1);
             }
@@ -806,7 +807,7 @@ public class VertexIndexBufferAllocator
                     return;
                 }
 
-                Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, @"FillVBuffer");
+                Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"FillVBuffer");
                 if (_buffer.AllocStatus == VertexIndexBuffer.Status.Staging)
                 {
                     cl.UpdateBuffer(_buffer._stagingBufferVerts, VAllocationStart, vdata);
@@ -822,7 +823,7 @@ public class VertexIndexBufferAllocator
                 }
 
                 SetVFilled();
-                Tracy.TracyCZoneEnd(ctx);
+                Profiler.TracyCZoneEnd(ctx);
             });
         }
 
@@ -835,7 +836,7 @@ public class VertexIndexBufferAllocator
                     return;
                 }
 
-                Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, @"FillIBuffer");
+                Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"FillIBuffer");
                 if (_buffer.AllocStatus == VertexIndexBuffer.Status.Staging)
                 {
                     cl.UpdateBuffer(_buffer._stagingBufferIndices, IAllocationStart, idata);
@@ -851,7 +852,7 @@ public class VertexIndexBufferAllocator
                 }
 
                 SetIFilled();
-                Tracy.TracyCZoneEnd(ctx);
+                Profiler.TracyCZoneEnd(ctx);
             });
         }
 

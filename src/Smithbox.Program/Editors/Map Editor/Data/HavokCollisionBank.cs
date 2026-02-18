@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using Tracy;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -36,6 +37,7 @@ public class HavokCollisionBank
 
     public void OnLoadMap(string mapId)
     {
+        using var __scope = Profiler.TracyZoneAuto();
         if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
 
@@ -67,6 +69,7 @@ public class HavokCollisionBank
 
     private void LoadMapCollision(string mapId, string type)
     {
+        using var __scope = Profiler.TracyZoneAuto();
         byte[] CompendiumBytes = null;
 
         var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
@@ -83,7 +86,6 @@ public class HavokCollisionBank
             var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
             HavokBinarySerializer serializer = new HavokBinarySerializer();
-            HavokXmlSerializer xmlSerializer = null;
 
             // Get compendium
             foreach (var file in packedBinder.Files)
@@ -122,18 +124,19 @@ public class HavokCollisionBank
                         try
                         {
                             fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
-                        }
-                        catch (InvalidDataException)
-                        {
-                            if (xmlSerializer == null)
-                                xmlSerializer = new HavokXmlSerializer();
-                            memoryStream.Position = 0;
-                            fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
-                        }
 
-                        if (!HavokContainers.ContainsKey(name))
+                            if (!HavokContainers.ContainsKey(name))
+                            {
+                                HavokContainers.Add(name, fileHkx);
+                            }
+                        }
+                        catch (InvalidDataException ex)
                         {
-                            HavokContainers.Add(name, fileHkx);
+                            Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to read havok file: {name}", LogPriority.High, ex);
+                            //if (xmlSerializer == null)
+                            //    xmlSerializer = new HavokXmlSerializer();
+                            //memoryStream.Position = 0;
+                            //fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
                         }
                     }
                 }

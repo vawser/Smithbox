@@ -240,7 +240,7 @@ public class ViewportPrefs
     #endregion
 
     #region Selection
-    public static PreferenceItem Viewport_Enable_Selection_Outline()
+    public static PreferenceItem Viewport_Enable_Selection_Tint()
     {
         return new PreferenceItem
         {
@@ -260,11 +260,32 @@ public class ViewportPrefs
         };
     }
 
-    public static PreferenceItem Viewport_Enable_Box_Selection()
+    public static PreferenceItem Viewport_Enable_Selection_Outline()
     {
         return new PreferenceItem
         {
             OrderID = 1,
+            Category = PreferenceCategory.Viewport,
+            Spacer = true,
+
+            Section = SectionCategory.Selection,
+
+            Title = "Enable Selection Outline",
+            Description = "If enabled, a selection outline will display alongside the selection tint on selected viewport objects.\nNote: the outline is error-prone when hundreds (or more) of viewport objects are selected.",
+
+            Draw = () =>
+            {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Outline);
+            }
+        };
+    }
+
+
+    public static PreferenceItem Viewport_Enable_Box_Selection()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
@@ -365,6 +386,8 @@ public class ViewportPrefs
 
                 //DPI.ApplyInputWidth();
                 //ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
+                DPI.ApplyInputWidth();
+                ImGui.ColorEdit3("Selection Outline Color", ref CFG.Current.Viewport_Selection_Outline_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Selection Tint Color (Textured)", ref CFG.Current.Viewport_Selection_Tint_Color);

@@ -22,6 +22,7 @@ struct sceneParams
 	float emissiveMapMult;
 	float sceneBrightness;
     
+	float whiteTint;
     vec4 SimpleFlverSelectColor;
 };
 
@@ -87,20 +88,5 @@ void main()
 		UpdatePickingBuffer(coord, uint64_t(fsin_entityid), gl_FragCoord.z);
 	}
 
-    float whiteTint = 0.6;
-
-    // Stage 1 — white tint
-    vec3 base = mix(color.rgb, vec3(1.0), whiteTint);
-
-    // Stage 2 — color tint WITHOUT flattening detail
-    vec3 selectColor = sceneparam.SimpleFlverSelectColor.rgb;
-    float strength = sceneparam.SimpleFlverSelectColor.a;
-
-    // Target = white tinted by selection color (not multiplied by base)
-    vec3 coloredWhite = mix(vec3(1.0), selectColor, 0.7);
-
-    // Blend base toward colored white
-    vec3 finalColor = base + selectColor * strength * 0.25;
-
-    fsout_color = vec4(finalColor, color.a);
+    fsout_color = mix(color, sceneparam.SimpleFlverSelectColor, 0.5);
 }

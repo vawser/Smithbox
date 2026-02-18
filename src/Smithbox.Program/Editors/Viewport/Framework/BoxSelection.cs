@@ -40,14 +40,15 @@ public class BoxSelection
         {
             Vector2 mousePos = InputManager.MousePosition;
 
-            if (InputManager.IsMouseDown(MouseButton.Left) && InputManager.HasAltDown() && Parent.MouseInViewport() && !_isDragging)
+            if (InputManager.IsMouseDown(MousebindID.MapEditor_Box_Drag_Start) && 
+                Parent.MouseInViewport() && !_isDragging)
             {
                 _isDragging = true;
                 _mouseDragStarted = false;
                 _dragStart = mousePos;
                 _dragEnd = mousePos;
             }
-            else if (InputManager.IsMouseDown(MouseButton.Left) && InputManager.HasAltDown() && _isDragging)
+            else if (InputManager.IsMouseDown(MousebindID.MapEditor_Box_Drag_Start) && _isDragging)
             {
                 _dragEnd = mousePos;
 
@@ -57,7 +58,7 @@ public class BoxSelection
                     _mouseDragStarted = true;
                 }
             }
-            else if (_isDragging && InputManager.IsMouseReleased(MouseButton.Left))
+            else if (_isDragging && InputManager.IsMouseReleased(MousebindID.MapEditor_Box_Drag_End))
             {
                 if (_mouseDragStarted)
                 {

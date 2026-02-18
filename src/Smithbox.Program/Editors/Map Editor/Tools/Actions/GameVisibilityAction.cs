@@ -184,6 +184,8 @@ public class GameVisibilityAction
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        View.DelayPicking();
     }
     public void ChangeMapObjectType(string[] sourceTypes, string[] targetTypes)
     {

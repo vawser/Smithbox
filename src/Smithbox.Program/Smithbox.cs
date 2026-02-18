@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using Octokit;
 using SoapstoneLib;
@@ -16,7 +16,7 @@ using System.Globalization;
 using System.IO;
 using System.Numerics;
 using System.Runtime.InteropServices;
-using System.Text;
+using Tracy;
 using Veldrid;
 using Veldrid.Sdl2;
 using Thread = System.Threading.Thread;
@@ -95,7 +95,7 @@ public class Smithbox
 
         // Set this so even if the user changes the CFG, the program won't suddenly switch its usage until a restart.
         CurrentBackend = CFG.Current.System_RenderingBackend;
-        
+
         //set up logging
         if (LogsProvider is null)
         {
@@ -111,22 +111,22 @@ public class Smithbox
             SoulsFormats.Util.Logging.LoggerFactory = SbLoggerFactory;
             Andre.Core.AndreLogging.LoggerFactory = SbLoggerFactory;
         }
-        
+
         ActionLogger = new(
-            "Action", 
+            "Action",
             evt => evt.Level is not (LogLevel.Warning or LogLevel.Error),
             //fade time is calculated to be the configured fade time in frames, but we need ms.
             () => (enabled: CFG.Current.Logger_Enable_Action_Log, fadeTime: (int)(CFG.Current.Logger_Action_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
         );
         WarningLogger = new(
-            "Warning",   
+            "Warning",
             evt => evt.Level is LogLevel.Warning or LogLevel.Error,
             () => (enabled: CFG.Current.Logger_Enable_Warning_Log, fadeTime: (int)(CFG.Current.Logger_Warning_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
         );
         HighPriorityLogSubscription = TaskLogs.Subscribe(
             evt => evt.Priority == LogPriority.High
         );
-    
+
         _context.Initialize();
         _context.Window.Title = _programTitle;
 
@@ -187,9 +187,10 @@ public class Smithbox
 
     public void SaveConfiguration()
     {
+        using var __tracy = Profiler.TracyZoneAuto();
         CFG.Save();
         UI.Save();
-        InputManager.Save();
+        InputManager.SaveKeybinds();
     }
 
     /// <summary>
@@ -199,7 +200,9 @@ public class Smithbox
     {
         CFG.Save();
         UI.Save();
-        InputManager.Save();
+        InputManager.SaveKeybinds();
+        // Shutdown Tracy profiler if running
+        Profiler.Shutdown();
     }
 
     private unsafe void SetupImGui()
@@ -213,7 +216,7 @@ public class Smithbox
         io.ConfigViewportsNoAutoMerge = false;
         io.ConfigViewportsNoTaskBarIcon = false;
 
-        byte[] iniFilename = Encoding.UTF8.GetBytes(Path.Combine(StudioCore.Common.FileLocations.CurImgui, "imgui.ini") + '\0');
+        byte[] iniFilename = System.Text.Encoding.UTF8.GetBytes(Path.Combine(StudioCore.Common.FileLocations.CurImgui, "imgui.ini") + '\0');
         GCHandle handle = GCHandle.Alloc(iniFilename, GCHandleType.Pinned);
         io.Handle->IniFilename = (byte*)handle.AddrOfPinnedObject();
 
@@ -304,7 +307,7 @@ public class Smithbox
         // TODO: fix this so it works
         // Icon Font
         cfg.MergeMode = true;
-        cfg.GlyphMinAdvanceX = 7.0f; 
+        cfg.GlyphMinAdvanceX = 7.0f;
         cfg.OversampleH = 3;
         cfg.OversampleV = 3;
 
@@ -349,7 +352,7 @@ public class Smithbox
 
             TaskManager.RunPassiveTask(task);
         }
-        
+
         long previousFrameTicks = 0;
         Stopwatch sw = new();
         sw.Start();
@@ -385,7 +388,7 @@ public class Smithbox
             snapshot = _context.Window.PumpEvents();
 
             InputManager.Update(_context.Window, snapshot, deltaSeconds);
-            
+
             Update((float)deltaSeconds);
 
             if (!_context.Window.Exists)
@@ -397,6 +400,7 @@ public class Smithbox
             }
 
             _context.Draw(Orchestrator);
+            Profiler.TracyCFrameMark();
         }
 
         Orchestrator.Exit();
@@ -416,9 +420,9 @@ public class Smithbox
     /// </summary>
     public void CrashShutdown()
     {
-        Tracy.Shutdown();
         ResourceManager.Shutdown();
         _context.Dispose();
+        Profiler.Shutdown();
     }
 
     /// <summary>
@@ -426,6 +430,7 @@ public class Smithbox
     /// </summary>
     public void AttemptSaveOnCrash()
     {
+        using var __tracy = Profiler.TracyZoneAuto();
         if (!_initialLoadComplete)
         {
             // Program crashed on initial load, clear recent project to let the user launch the program next time without issue.
@@ -516,7 +521,7 @@ public class Smithbox
         ImGui.PopStyleColor(1);
 
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
-        
+
         // Drain logs and draw log windows
         ActionLogger.DrainMessages();
         WarningLogger.DrainMessages();
@@ -529,7 +534,7 @@ public class Smithbox
             if (evt.Priority == LogPriority.High && CFG.Current.Logger_Enable_Log_Popups)
             {
                 var popupMessage = evt.Message;
-                if (evt.Exception != null) 
+                if (evt.Exception != null)
                     popupMessage += $"\n\nException Details:\n{evt.Exception}";
                 PlatformUtils.Instance.MessageBox(popupMessage, evt.Level.ToString(), MessageBoxButtons.OK);
             }
@@ -692,7 +697,7 @@ public class Smithbox
         catch (Exception) { }
     }
 
-    #nullable enable
+#nullable enable
     /// <summary>
     /// Gets the logger for the specified type T
     /// </summary>
@@ -702,12 +707,12 @@ public class Smithbox
     {
         return SbLoggerFactory.CreateLogger<T>();
     }
-    
+
     public static ILogger Logger(Type type)
     {
         return SbLoggerFactory.CreateLogger(type);
     }
-    
+
     public static void Log<T>(string message, LogLevel logLevel, LogPriority logPriority, Exception? exception = null, params object?[] args)
     {
         Logger<T>().LogWithPriority(logLevel, message, logPriority, exception, args);
@@ -731,62 +736,62 @@ public class Smithbox
     {
         Log<T>(message, logLevel, exception, args);
     }
-    
+
     public static void Log(Type type, string message, LogLevel logLevel = LogLevel.Information, Exception? exception = null, params object?[] args)
     {
         Logger(type).Log(logLevel, exception, message, args);
     }
-    
+
     public static void LogError<T>(string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
     {
         Logger<T>().LogWithPriority(LogLevel.Error, message, logPriority, exception, args);
     }
-    
+
     public static void LogError<T>(T _, string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
     {
         LogError<T>(message, logPriority, exception, args);
     }
-    
+
     public static void LogError(Type type, string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
     {
         Logger(type).LogWithPriority(LogLevel.Error, message, logPriority, exception, args);
     }
-    
+
     public static void LogError<T>(string message, Exception? exception = null, params object?[] args)
     {
         Logger<T>().Log(LogLevel.Error, exception, message, args);
     }
-    
+
     public static void LogError<T>(T _, string message, Exception? exception = null, params object?[] args)
     {
         LogError<T>(message, exception, args);
     }
-    
+
     public static void LogError(Type type, string message, Exception? exception = null, params object?[] args)
     {
         Logger(type).Log(LogLevel.Error, exception, message, args);
     }
-    
+
     public static void LogWarning<T>(string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
     {
         Logger<T>().LogWithPriority(LogLevel.Warning, message, logPriority, exception, args);
     }
-    
+
     public static void LogWarning<T>(T _, string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
     {
         LogWarning<T>(message, logPriority, exception, args);
     }
-    
+
     public static void LogWarning(Type type, string message, LogPriority logPriority, Exception? exception = null, params object?[] args)
     {
         Logger(type).LogWithPriority(LogLevel.Warning, message, logPriority, exception, args);
     }
-    
+
     public static void LogWarning<T>(string message, Exception? exception = null, params object?[] args)
     {
         Logger<T>().Log(LogLevel.Warning, exception, message, args);
     }
-    
+
     public static void LogWarning<T>(T _, string message, Exception? exception = null, params object?[] args)
     {
         LogWarning<T>(message, exception, args);
@@ -798,4 +803,3 @@ public class Smithbox
     }
 
 }
-

@@ -365,7 +365,10 @@ CMakeSettings.json
 
 Dump
 Media
+
 .DS_Store
+src/Platform.Build.props
 
 Documentation/BB
-src/Directory.Build.props
+src/Smithbox.Data/Assets/Shaders/build_shader.bat
+src/Smithbox.Data/Assets/Shaders/FlverShader/build_shader.bat

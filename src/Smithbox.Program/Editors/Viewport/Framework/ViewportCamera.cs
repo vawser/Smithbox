@@ -52,9 +52,9 @@ public class ViewportCamera
     private bool CurrentMouseClickInWindow;
 
     private Vector2 MousePos = Vector2.Zero;
-    private bool RightMousePressed;
-    private bool LeftMousePressed;
-    private bool MiddleMousePressed;
+    public bool RightMousePressed;
+    public bool LeftMousePressed;
+    public bool MiddleMousePressed;
 
     private Vector2 MousePressPos;
     private Vector2 PanMousePressPos;

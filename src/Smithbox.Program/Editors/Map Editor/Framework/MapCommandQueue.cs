@@ -64,30 +64,33 @@ public class MapCommandQueue
     {
         ISelectable target = null;
 
-        var mapid = commands[1];
-        if (commands.Length > 2)
+        if (commands.Length > 1)
         {
-            if (curView.Selection.GetMapContainerFromMapID(mapid) is MapContainer m)
+            var mapid = commands[1];
+            if (commands.Length > 2)
             {
-                var name = commands[2];
-                if (commands.Length > 3 && Enum.TryParse(commands[3], out MsbEntityType entityType))
+                if (curView.Selection.GetMapContainerFromMapID(mapid) is MapContainer m)
                 {
-                    target = m.GetObjectsByName(name)
-                        .Where(ent => ent is MsbEntity me && me.Type == entityType)
-                        .FirstOrDefault();
-                }
-                else
-                {
-                    target = m.GetObjectByName(name);
+                    var name = commands[2];
+                    if (commands.Length > 3 && Enum.TryParse(commands[3], out MsbEntityType entityType))
+                    {
+                        target = m.GetObjectsByName(name)
+                            .Where(ent => ent is MsbEntity me && me.Type == entityType)
+                            .FirstOrDefault();
+                    }
+                    else
+                    {
+                        target = m.GetObjectByName(name);
+                    }
                 }
             }
-        }
-        else
-        {
-            target = new ObjectContainerReference(mapid).GetSelectionTarget(curView.Universe);
-        }
+            else
+            {
+                target = new ObjectContainerReference(mapid).GetSelectionTarget(curView.Universe);
+            }
 
-        ApplyTargetSelection(curView, target);
+            ApplyTargetSelection(curView, target);
+        }
     }
 
     public void HandlePropSearchCommand(MapEditorView curView, string[] commands)

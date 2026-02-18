@@ -130,6 +130,8 @@ public class FrameAction
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        View.DelayPicking();
     }
 
     public void ApplyViewportFrameWithBox(BoundingBox box)

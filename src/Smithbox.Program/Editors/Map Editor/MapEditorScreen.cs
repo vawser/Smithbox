@@ -367,6 +367,7 @@ public class MapEditorScreen : EditorScreen
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
 
                     CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
+                    activeView.DelayPicking();
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_2.Name))
@@ -374,6 +375,7 @@ public class MapEditorScreen : EditorScreen
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
 
                     CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
+                    activeView.DelayPicking();
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_3.Name))
@@ -381,6 +383,7 @@ public class MapEditorScreen : EditorScreen
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
 
                     CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
+                    activeView.DelayPicking();
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_4.Name))
@@ -388,6 +391,7 @@ public class MapEditorScreen : EditorScreen
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
 
                     CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
+                    activeView.DelayPicking();
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_5.Name))
@@ -395,6 +399,7 @@ public class MapEditorScreen : EditorScreen
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
 
                     CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
+                    activeView.DelayPicking();
                 }
 
                 if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_6.Name))
@@ -402,6 +407,7 @@ public class MapEditorScreen : EditorScreen
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
 
                     CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
+                    activeView.DelayPicking();
                 }
 
                 ImGui.EndMenu();
@@ -431,12 +437,14 @@ public class MapEditorScreen : EditorScreen
                     if (ImGui.MenuItem("Display"))
                     {
                         activeView.PatrolDrawManager.Generate();
+                        activeView.DelayPicking();
                     }
                     UIHelper.Tooltip("Display the connections between patrol route nodes.");
 
                     if (ImGui.MenuItem("Clear"))
                     {
                         activeView.PatrolDrawManager.Clear();
+                        activeView.DelayPicking();
                     }
                     UIHelper.Tooltip("Clear the display of connections between patrol route nodes.");
                 }
@@ -464,6 +472,7 @@ public class MapEditorScreen : EditorScreen
             CFG.Current.CurrentHavokCollisionType = HavokCollisionType.Low;
 
             activeView.HavokCollisionBank.RefreshCollision();
+            activeView.DelayPicking();
         }
         UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.");
         UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.Low);
@@ -474,6 +483,7 @@ public class MapEditorScreen : EditorScreen
             CFG.Current.CurrentHavokCollisionType = HavokCollisionType.High;
 
             activeView.HavokCollisionBank.RefreshCollision();
+            activeView.DelayPicking();
         }
         UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.");
         UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
@@ -486,6 +496,7 @@ public class MapEditorScreen : EditorScreen
                 CFG.Current.CurrentHavokCollisionType = HavokCollisionType.FallProtection;
 
                 activeView.HavokCollisionBank.RefreshCollision();
+                activeView.DelayPicking();
             }
             UIHelper.Tooltip("Visible collision will use the fall-protection mesh.\nUsed for enemy fall protection.");
             UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.FallProtection);

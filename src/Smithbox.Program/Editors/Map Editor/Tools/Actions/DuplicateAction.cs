@@ -119,6 +119,9 @@ public class DuplicateAction
             UIHelper.Tooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
         }
 
+        ImGui.Checkbox("Place at List End", ref CFG.Current.Toolbar_Duplicate_Place_at_List_End);
+        UIHelper.Tooltip("When enabled, a duplicated map object is placed at the end of its category list, rather than after its source map object.");
+
         UIHelper.WrappedText("");
 
         if (ImGui.Button("Duplicate Selection", DPI.WholeWidthButton(windowWidth, 24)))
@@ -141,5 +144,7 @@ public class DuplicateAction
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        View.DelayPicking();
     }
 }

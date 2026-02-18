@@ -272,6 +272,8 @@ public class CreateAction
                 AddNewEntity(CreateEventSelectedType, MsbEntityType.Event, map);
             }
         }
+
+        View.DelayPicking();
     }
 
     private void AddNewEntity(Type typ, MsbEntityType etype, MapContainer map, Entity parent = null)

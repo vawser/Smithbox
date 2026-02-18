@@ -1,14 +1,9 @@
-﻿using DotNext.Collections.Generic;
-using Microsoft.Extensions.Logging;
-using StudioCore.Editors.Common;
-using StudioCore.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StudioCore.Application;
@@ -42,6 +37,8 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary TexturePackedFiles = new();
     public FileDictionary ShoeboxFiles = new();
 
+    public FileDictionary TimeActFiles = new();
+    public FileDictionary BehaviorFiles = new();
 
     public ProjectFileLocator(ProjectEntry project)
     {
@@ -187,27 +184,34 @@ public class ProjectFileLocator : IDisposable
             var relativePath = "/" + Path.GetRelativePath(projectPath, filePath).Replace('\\', '/');
             var relativeFolder = Path.GetDirectoryName(relativePath).Replace('\\', '/');
 
+            var add = false;
+
             // Skip any new base dir files
             if (relativeFolder == "/")
                 continue;
 
-            // If project relative path already exists in vanilla directory, ignore it as we don't need to include it
-            if (existingPaths.Contains(relativePath))
-                continue;
-
-            var add = false;
-
-            // Add if it is a file in a new aeg/aet folder
-            if (relativeFolder.Contains("/aeg") || relativeFolder.Contains("/aet"))
-                add = true;
-
-            // Add if it is a new file in any of the vanilla directories
-            foreach (var entry in existingFolders)
+            if (CFG.Current.Project_Scan_Directory_Strict_Mode)
             {
-                if(entry == relativeFolder)
-                {
+                // If project relative path already exists in vanilla directory, ignore it as we don't need to include it
+                if (existingPaths.Contains(relativePath))
+                    continue;
+
+                // Add if it is a file in a new map/aeg/aet folder
+                if (relativeFolder.Contains("/map") || relativeFolder.Contains("/aeg") || relativeFolder.Contains("/aet"))
                     add = true;
+
+                // Add if it is a new file in any of the vanilla directories
+                foreach (var entry in existingFolders)
+                {
+                    if (entry == relativeFolder)
+                    {
+                        add = true;
+                    }
                 }
+            }
+            else
+            {
+                add = true;
             }
 
             if (add)
@@ -278,414 +282,262 @@ public class ProjectFileLocator : IDisposable
     #region Dictionaries
     public void CompileDictionaries()
     {
-        CompileMapDictionaries();
-        CompileModelDictionaries();
-        CompileTextDictionaries();
-        CompileGparamDictionaries();
-        CompileMaterialDictionaries();
-        CompileTextureDictionaries();
-    }
+        var allEntries = FileDictionary.Entries;
+        var projectType = Project.Descriptor.ProjectType;
 
-    public void CompileMapDictionaries()
-    {
-        // MSB
-        MapFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map") && !e.Folder.Contains("autoroute"))
-            .Where(e => e.Extension == "msb")
-            .ToList();
+        // Initialize all lists
+        var mapFiles = new List<FileDictionaryEntry>();
+        var chrFiles = new List<FileDictionaryEntry>();
+        var assetFiles = new List<FileDictionaryEntry>();
+        var partFiles = new List<FileDictionaryEntry>();
+        var collisionFiles = new List<FileDictionaryEntry>();
+        var mapPieceFiles = new List<FileDictionaryEntry>();
+        var lightFiles = new List<FileDictionaryEntry>();
+        var ds2LightFiles = new List<FileDictionaryEntry>();
+        var navmeshFiles = new List<FileDictionaryEntry>();
+        var autoInvadeFiles = new List<FileDictionaryEntry>();
+        var lightAtlasFiles = new List<FileDictionaryEntry>();
+        var lightProbeFiles = new List<FileDictionaryEntry>();
+        var gparamFiles = new List<FileDictionaryEntry>();
+        var textFiles = new List<FileDictionaryEntry>();
+        var mtdFiles = new List<FileDictionaryEntry>();
+        var matbinFiles = new List<FileDictionaryEntry>();
+        var textureFiles = new List<FileDictionaryEntry>();
+        var texturePackedFiles = new List<FileDictionaryEntry>();
+        var shoeboxFiles = new List<FileDictionaryEntry>();
+        var timeActFiles = new List<FileDictionaryEntry>();
+        var behaviorFiles = new List<FileDictionaryEntry>();
 
-        // BTL
-        LightFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "btl")
-            .ToList();
-
-        DS2_LightFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "gibhd")
-            .ToList();
-
-        // NVA
-        NavmeshFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "nva")
-            .ToList();
-
-        // Collision
-        CollisionFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "hkxbhd")
-            .ToList();
-
-        // AutoInvade
-        AutoInvadeFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/other"))
-            .Where(e => e.Extension == "aipbnd")
-            .ToList();
-
-        // Light Atlases
-        LightAtlasFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "btab")
-            .ToList();
-
-        // Light Probes
-        LightProbeFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
-            .Where(e => e.Extension == "btpb")
-            .ToList();
-    }
-
-    public void CompileModelDictionaries()
-    {
-        // Maps (for the map pieces)
-        MapFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map") && !e.Folder.Contains("autoroute"))
-            .Where(e => e.Extension == "msb")
-            .Where(e => !e.Archive.Contains("sd"))
-            .ToList();
-
-        // Characters
-        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        // Single pass - check each entry once
+        foreach (var entry in allEntries)
         {
-            ChrFiles.Entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith("/model/chr"))
-                    .Where(e => e.Extension == "bnd")
-                    .ToList();
+            var ext = entry.Extension;
+            var folder = entry.Folder;
+            var archive = entry.Archive;
+            var isMap = folder.StartsWith("/map");
+            var isSd = archive.Contains("sd");
+
+            // Map files
+            if (ShouldAddToMapFiles(entry, isMap, isSd))
+                mapFiles.Add(entry);
+
+            // Character files
+            if (ShouldAddToChrFiles(entry, projectType, isSd))
+                chrFiles.Add(entry);
+
+            // Asset files
+            if (ShouldAddToAssetFiles(entry, projectType, isSd))
+                assetFiles.Add(entry);
+
+            // Part files
+            if (ShouldAddToPartFiles(entry, projectType, isSd))
+                partFiles.Add(entry);
+
+            // Collision files
+            if (ShouldAddToCollisionFiles(entry, projectType, isMap, isSd))
+                collisionFiles.Add(entry);
+
+            // Map piece files
+            if (ShouldAddToMapPieceFiles(entry, projectType, isMap, isSd))
+                mapPieceFiles.Add(entry);
+
+            // Light files
+            if (isMap && ext == "btl")
+                lightFiles.Add(entry);
+            if (isMap && ext == "gibhd")
+                ds2LightFiles.Add(entry);
+
+            // Navmesh
+            if (isMap && ext == "nva")
+                navmeshFiles.Add(entry);
+
+            // Auto invade
+            if (folder.StartsWith("/other") && ext == "aipbnd")
+                autoInvadeFiles.Add(entry);
+
+            // Light atlas/probe
+            if (isMap && ext == "btab")
+                lightAtlasFiles.Add(entry);
+            if (isMap && ext == "btpb")
+                lightProbeFiles.Add(entry);
+
+            // Gparam
+            if (folder.StartsWith("/param") && ext == "gparam")
+                gparamFiles.Add(entry);
+
+            // Text files
+            if (folder.StartsWith("/msg") && ext == "msgbnd")
+                textFiles.Add(entry);
+            if (projectType is ProjectType.DS2 or ProjectType.DS2S && folder.StartsWith("/menu") && ext == "fmg")
+                textFiles.Add(entry);
+
+            // Materials
+            if (ShouldAddToMtdFiles(entry, projectType))
+                mtdFiles.Add(entry);
+
+            if (folder.StartsWith("/material") && ext == "matbinbnd")
+                matbinFiles.Add(entry);
+
+            // Textures
+            if (ShouldAddToTextureFiles(entry, projectType))
+                textureFiles.Add(entry);
+
+            if (ext == "tpfbhd")
+                texturePackedFiles.Add(entry);
+            if (ext == "sblytbnd")
+                shoeboxFiles.Add(entry);
+
+            // Animation
+            if (ext == "anibnd")
+                timeActFiles.Add(entry);
+            if (ext == "behbnd")
+                behaviorFiles.Add(entry);
+        }
+
+        // Assign to public properties
+        MapFiles.Entries = mapFiles;
+        ChrFiles.Entries = chrFiles;
+        AssetFiles.Entries = assetFiles;
+        PartFiles.Entries = partFiles;
+        CollisionFiles.Entries = collisionFiles;
+        MapPieceFiles.Entries = mapPieceFiles;
+        LightFiles.Entries = lightFiles;
+        DS2_LightFiles.Entries = ds2LightFiles;
+        NavmeshFiles.Entries = navmeshFiles;
+        AutoInvadeFiles.Entries = autoInvadeFiles;
+        LightAtlasFiles.Entries = lightAtlasFiles;
+        LightProbeFiles.Entries = lightProbeFiles;
+        GparamFiles.Entries = gparamFiles;
+        MTD_Files.Entries = mtdFiles;
+        MATBIN_Files.Entries = matbinFiles;
+        TextureFiles.Entries = textureFiles;
+        TexturePackedFiles.Entries = texturePackedFiles;
+        ShoeboxFiles.Entries = shoeboxFiles;
+        TimeActFiles.Entries = timeActFiles;
+        BehaviorFiles.Entries = behaviorFiles;
+
+        // Special handling for text files
+        if (projectType == ProjectType.ER && textFiles.Count > 0)
+        {
+            TextFiles.Entries = textFiles
+                .OrderBy(e => e.Folder)
+                .ThenBy(e => e.Filename.Contains("dlc02"))
+                .ThenBy(e => e.Filename.Contains("dlc01"))
+                .ThenBy(e => e.Filename)
+                .ToList();
         }
         else
         {
-            ChrFiles.Entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Extension == "chrbnd")
-                    .Where(e => !e.Archive.Contains("sd"))
-                    .ToList();
-        }
-
-        // Assets / Objects
-        if (Project.Descriptor.ProjectType is ProjectType.DS1)
-        {
-            AssetFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/obj"))
-                .Where(e => e.Extension == "objbnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            AssetFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/model/obj"))
-                .Where(e => e.Extension == "bnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
-        {
-            AssetFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/obj"))
-                .Where(e => e.Extension == "objbnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-        {
-            AssetFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/asset"))
-                .Where(e => e.Extension == "geombnd")
-                .Where(e => !e.Archive.Contains("sd"))
-                .ToList();
-        }
-
-        // Parts
-        if (Project.Descriptor.ProjectType is ProjectType.DS1)
-        {
-            PartFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/parts"))
-                .Where(e => e.Extension == "partsbnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            PartFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/model/parts"))
-                .Where(e => e.Extension == "bnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
-        {
-            PartFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/parts"))
-                .Where(e => e.Extension == "partsbnd")
-                .ToList();
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-        {
-            PartFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/parts"))
-                .Where(e => e.Extension == "partsbnd")
-                .Where(e => !e.Archive.Contains("sd"))
-                .ToList();
-        }
-
-        // Collisions
-        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            CollisionFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/model/map"))
-                .Where(e => e.Extension == "hkxbhd")
-                .ToList();
-        }
-
-        foreach (var map in MapFiles.Entries)
-        {
-            var mapid = map.Filename;
-            var entries = new List<FileDictionaryEntry>();
-
-            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DES)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "hkx")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.DS1R)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "hkxbhd")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "hkxbhd")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid.Substring(0, 3)}/{mapid}"))
-                    .Where(e => e.Extension == "hkxbhd")
-                    .Where(e => !e.Archive.Contains("sd"))
-                    .ToList();
-            }
-
-            foreach (var entry in entries)
-            {
-                CollisionFiles.Entries.Add(entry);
-            }
-        }
-
-        // Map Parts
-        MapPieceFiles.Entries = new();
-
-        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            MapPieceFiles.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Folder.StartsWith($"/model/map"))
-                .Where(e => e.Extension == "mapbhd")
-                .ToList();
-        }
-
-        foreach (var map in MapFiles.Entries)
-        {
-            var mapid = map.Filename;
-            var entries = new List<FileDictionaryEntry>();
-
-            if (Project.Descriptor.ProjectType is ProjectType.DS1)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "flver")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.DS1R)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "flver")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.BB or ProjectType.DES)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}/"))
-                    .Where(e => e.Extension == "flver")
-                    .ToList();
-            }
-            else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid.Substring(0, 3)}/{mapid}"))
-                    .Where(e => e.Extension == "mapbnd")
-                    .Where(e => !e.Archive.Contains("sd"))
-                    .ToList();
-            }
-            else
-            {
-                entries = Project.Locator.FileDictionary.Entries
-                    .Where(e => e.Folder.StartsWith($"/map/{mapid}"))
-                    .Where(e => e.Extension == "mapbnd")
-                    .ToList();
-            }
-
-            foreach (var entry in entries)
-            {
-                MapPieceFiles.Entries.Add(entry);
-            }
+            TextFiles.Entries = textFiles;
         }
     }
 
-    public void CompileTextDictionaries()
+    // Helper methods to check if entries should be added to specific categories
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToMapFiles(FileDictionaryEntry entry, bool isMap, bool isSd)
     {
-        // MSGBND
-        var msgbndDictionary = new FileDictionary();
-        msgbndDictionary.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/msg"))
-            .Where(e => e.Extension == "msgbnd")
-            .ToList();
-
-
-        if (Project.Descriptor.ProjectType == ProjectType.ER)
-        {
-            msgbndDictionary.Entries = msgbndDictionary.Entries.OrderBy(e => e.Folder).ThenBy(e => e.Filename.Contains("dlc02")).ThenBy(e => e.Filename.Contains("dlc01")).ThenBy(e => e.Filename).ToList();
-        }
-
-        // FMG
-        var fmgDictionary = new FileDictionary();
-        fmgDictionary.Entries = new List<FileDictionaryEntry>();
-
-        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            fmgDictionary.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Archive != "sd")
-                .Where(e => e.Folder.StartsWith("/menu/text"))
-                .Where(e => e.Extension == "fmg").ToList();
-        }
-
-        TextFiles = ProjectUtils.MergeFileDictionaries(msgbndDictionary, fmgDictionary);
+        return isMap && entry.Extension == "msb" && !entry.Folder.Contains("autoroute") && !isSd;
     }
 
-    public void CompileGparamDictionaries()
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToChrFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
     {
-        GparamFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/param/drawparam"))
-            .Where(e => e.Extension == "gparam")
-            .ToList();
+        if (projectType is ProjectType.DS2S or ProjectType.DS2)
+            return entry.Extension == "bnd" && entry.Folder.StartsWith("/model/chr");
+
+        return entry.Extension == "chrbnd" && !isSd;
     }
 
-    public void CompileMaterialDictionaries()
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToAssetFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
     {
-        MTD_Files.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/mtd"))
-            .Where(e => e.Extension == "mtdbnd")
-            .ToList();
-
-        // DS2 has it as a single .bnd file
-        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        return projectType switch
         {
-            MTD_Files.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/material"))
-            .Where(e => e.Filename == "allmaterialbnd")
-            .ToList();
-        }
-
-        MATBIN_Files.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/material"))
-            .Where(e => e.Extension == "matbinbnd")
-            .ToList();
-
+            ProjectType.DS1 => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
+            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/obj"),
+            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => entry.Extension == "geombnd" && entry.Folder.StartsWith("/asset") && !isSd,
+            _ => false
+        };
     }
 
-    public void CompileTextureDictionaries()
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToPartFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
     {
-        var secondaryDicts = new List<FileDictionary>();
-
-        // TPF
-        var baseDict = new FileDictionary();
-        baseDict.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "tpf")
-            .ToList();
-
-        // Object Textures
-        var objDict = new FileDictionary();
-        objDict.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "objbnd")
-            .ToList();
-
-        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        return projectType switch
         {
-            objDict.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Archive != "sd")
-                .Where(e => e.Extension == "bnd" && e.Folder == "/model/obj")
-                .ToList();
+            ProjectType.DS1 => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
+            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/parts"),
+            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts") && !isSd,
+            _ => false
+        };
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToCollisionFiles(FileDictionaryEntry entry, ProjectType projectType, bool isMap, bool isSd)
+    {
+        return projectType switch
+        {
+            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "hkxbhd" && entry.Folder.StartsWith("/model/map"),
+            ProjectType.DS1 or ProjectType.DES => isMap && entry.Extension == "hkx",
+            ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => isMap && entry.Extension == "hkxbhd",
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => isMap && entry.Extension == "hkxbhd" && !isSd,
+            _ => false
+        };
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToMapPieceFiles(FileDictionaryEntry entry, ProjectType projectType, bool isMap, bool isSd)
+    {
+        return projectType switch
+        {
+            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "mapbhd" && entry.Folder.StartsWith("/model/map"),
+            ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DES => isMap && entry.Extension == "flver",
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => isMap && entry.Extension == "mapbnd" && !isSd,
+            _ => isMap && entry.Extension == "mapbnd"
+        };
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToMtdFiles(FileDictionaryEntry entry, ProjectType projectType)
+    {
+        if (projectType is ProjectType.DS2 or ProjectType.DS2S)
+            return entry.Extension == "bnd" && entry.Folder.StartsWith("/material") && entry.Filename == "allmaterialbnd";
+
+        return entry.Extension == "mtdbnd" && entry.Folder.StartsWith("/mtd");
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToTextureFiles(FileDictionaryEntry entry, ProjectType projectType)
+    {
+        var ext = entry.Extension;
+        var folder = entry.Folder;
+
+        // Standalone texture files
+        if (ext == "tpf")
+            return true;
+
+        // Texture container files
+        if (ext is "texbnd" or "ffxbnd" or "commonbnd")
+            return true;
+
+        // Model bundles that contain textures
+        if (ext == "objbnd")
+            return true;
+
+        if (ext == "partsbnd")
+            return true;
+
+        // DS2/DS2S special cases - bnd files in specific folders
+        if (projectType is ProjectType.DS2S or ProjectType.DS2)
+        {
+            if (ext == "bnd" && (folder == "/model/obj" || folder.Contains("/model/parts")))
+                return true;
         }
 
-        secondaryDicts.Add(objDict);
-
-        // Chr Textures
-        var chrDict = new FileDictionary();
-        chrDict.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "texbnd")
-            .ToList();
-
-        secondaryDicts.Add(chrDict);
-
-        // Part Textures
-        var partDict = new FileDictionary();
-        partDict.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "partsbnd")
-            .ToList();
-
-        if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            var commonPartDict = new FileDictionary();
-            commonPartDict.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Archive != "sd")
-                .Where(e => e.Extension == "commonbnd")
-                .ToList();
-
-            secondaryDicts.Add(commonPartDict);
-
-            partDict.Entries = Project.Locator.FileDictionary.Entries
-                .Where(e => e.Archive != "sd")
-                .Where(e => e.Extension == "bnd" && e.Folder.Contains("/model/parts"))
-                .ToList();
-
-            secondaryDicts.Add(partDict);
-        }
-        else
-        {
-            secondaryDicts.Add(partDict);
-        }
-
-        // SFX Textures
-        var sfxDict = new FileDictionary();
-        sfxDict.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "ffxbnd")
-            .ToList();
-
-        secondaryDicts.Add(sfxDict);
-
-        // Merge all unique entries from the secondary dicts into the base dict to form the final dictionary
-        TextureFiles = ProjectUtils.MergeFileDictionaries(baseDict, secondaryDicts);
-
-        TexturePackedFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "tpfbhd")
-            .ToList();
-
-        ShoeboxFiles.Entries = Project.Locator.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "sblytbnd")
-            .ToList();
+        return false;
     }
     #endregion
 
@@ -714,7 +566,6 @@ public class ProjectFileLocator : IDisposable
         TextureFiles = null;
         TexturePackedFiles = null;
         ShoeboxFiles = null;
-
     }
     #endregion
 }

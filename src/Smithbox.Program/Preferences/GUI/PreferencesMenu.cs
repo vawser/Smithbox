@@ -15,6 +15,8 @@ namespace StudioCore.Preferences;
 public class PreferencesMenu
 {
     public bool IsDisplayed = false;
+    private bool _wasDisplayedLastFrame;
+
     private bool InitialLayout = false;
 
     private List<PreferenceItem> SystemPrefList = new();
@@ -226,6 +228,14 @@ public class PreferencesMenu
                 ImGui.End();
             }
         }
+
+        if (!IsDisplayed && _wasDisplayedLastFrame)
+        {
+            CFG.Save();
+            Smithbox.Log(this, "Preferences saved.", LogLevel.Information);
+        }
+
+        _wasDisplayedLastFrame = IsDisplayed;
     }
 
     private string searchFilter = "";

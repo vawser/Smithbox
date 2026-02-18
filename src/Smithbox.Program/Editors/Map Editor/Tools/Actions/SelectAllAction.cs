@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
@@ -175,6 +176,8 @@ public class SelectAllAction
                 }
             }
         }
+
+        View.DelayPicking();
     }
 
     public void SelectAllByModelName()
@@ -229,6 +232,8 @@ public class SelectAllAction
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        View.DelayPicking();
     }
 
     public void SelectAllByMapObjectType()
@@ -270,6 +275,8 @@ public class SelectAllAction
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        View.DelayPicking();
     }
 
     public void SelectAllByMapObjectCeremony()
@@ -316,6 +323,8 @@ public class SelectAllAction
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
+
+        View.DelayPicking();
     }
 
     private void HelpSection()

@@ -21,6 +21,7 @@ public class BasicFilters
         if (ImGui.MenuItem("Map Pieces"))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
+            View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.MapPiece);
         UIHelper.ShowActiveStatus(ticked);
@@ -35,6 +36,7 @@ public class BasicFilters
         if (ImGui.MenuItem(name))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Object);
+            View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Object);
         UIHelper.ShowActiveStatus(ticked);
@@ -44,6 +46,7 @@ public class BasicFilters
         if (ImGui.MenuItem("Characters"))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Character);
+            View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Character);
         UIHelper.ShowActiveStatus(ticked);
@@ -53,6 +56,7 @@ public class BasicFilters
         if (ImGui.MenuItem("Regions"))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Region);
+            View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Region);
         UIHelper.ShowActiveStatus(ticked);
@@ -62,6 +66,7 @@ public class BasicFilters
         if (ImGui.MenuItem("Lights"))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Light);
+            View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Light);
         UIHelper.ShowActiveStatus(ticked);
@@ -71,6 +76,7 @@ public class BasicFilters
         if (ImGui.MenuItem("Collisions"))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Collision);
+            View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
         UIHelper.ShowActiveStatus(ticked);
@@ -80,6 +86,7 @@ public class BasicFilters
         if (ImGui.MenuItem("Connect Collisions"))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.ConnectCollision);
+            View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.ConnectCollision);
         UIHelper.ShowActiveStatus(ticked);
@@ -90,6 +97,7 @@ public class BasicFilters
         if (ImGui.MenuItem("Navmeshes"))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
+            View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Navmesh);
         UIHelper.ShowActiveStatus(ticked);
@@ -99,6 +107,7 @@ public class BasicFilters
         if (ImGui.MenuItem("Speed Trees"))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.SpeedTree);
+            View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.SpeedTree);
         UIHelper.ShowActiveStatus(ticked);
@@ -110,6 +119,7 @@ public class BasicFilters
             if (ImGui.MenuItem("Invasion Points"))
             {
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
+                View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
             UIHelper.ShowActiveStatus(ticked);
@@ -122,6 +132,7 @@ public class BasicFilters
             if (ImGui.MenuItem("Light Probes"))
             {
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.LightProbe);
+                View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.LightProbe);
             UIHelper.ShowActiveStatus(ticked);

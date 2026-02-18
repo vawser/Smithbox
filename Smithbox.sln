@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -51,6 +51,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Linux", "src\Smithbox\Smithbox.Linux.csproj", "{2112107B-0BA9-4367-BA40-3DC687C5F456}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Mac", "src\Smithbox\Smithbox.Mac.csproj", "{48004B40-5161-4DA3-81E7-0C1755A5558F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracy", "src\Tracy\Tracy.csproj", "{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -260,6 +262,14 @@ Global
 		{48004B40-5161-4DA3-81E7-0C1755A5558F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{48004B40-5161-4DA3-81E7-0C1755A5558F}.Release|x64.ActiveCfg = Release|Any CPU
 		{48004B40-5161-4DA3-81E7-0C1755A5558F}.Release|x64.Build.0 = Release|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug|x64.ActiveCfg = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Debug|x64.Build.0 = Debug|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release|x64.ActiveCfg = Release|x64
+		{C1B942D4-F5B9-4A2E-9C8A-D5B582065899}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

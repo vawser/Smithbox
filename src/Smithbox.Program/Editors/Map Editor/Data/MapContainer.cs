@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Xml.Serialization;
+using Tracy;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -122,29 +123,37 @@ public class MapContainer : ObjectContainer
 
     public void LoadMSB(IMsb msb)
     {
+        using var __loadMSBZone = Profiler.TracyZoneAuto("LoadMSB");
         foreach (IMsbModel m in msb.Models.GetEntries())
         {
+            using var __modelScope = Profiler.TracyZoneAuto();
             LoadedModels.Add(m.Name, m);
+            __modelScope.Dispose();
         }
 
         foreach (IMsbPart p in msb.Parts.GetEntries())
         {
+            using var __partScope = Profiler.TracyZoneAuto();
             var n = new MsbEntity(View.Universe, this, p, MsbEntityType.Part);
             Parts.Add(n);
             Objects.Add(n);
             RootObject.AddChild(n);
+            __partScope.Dispose();
         }
 
         foreach (IMsbRegion p in msb.Regions.GetEntries())
         {
+            using var __regionScope = Profiler.TracyZoneAuto();
             var n = new MsbEntity(View.Universe, this, p, MsbEntityType.Region);
             Regions.Add(n);
             Objects.Add(n);
             RootObject.AddChild(n);
+            __regionScope.Dispose();
         }
 
         foreach (IMsbEvent p in msb.Events.GetEntries())
         {
+            using var __eventScope = Profiler.TracyZoneAuto();
             var n = new MsbEntity(View.Universe, this, p, MsbEntityType.Event);
             Events.Add(n);
 
@@ -178,6 +187,7 @@ public class MapContainer : ObjectContainer
 
             Objects.Add(n);
             RootObject.AddChild(n);
+            __eventScope.Dispose();
         }
 
         // Part Poses
@@ -206,12 +216,7 @@ public class MapContainer : ObjectContainer
             }
         }
 
-        foreach (Entity m in Objects)
-        {
-            m.BuildReferenceMap();
-        }
-
-        // Add map-level references after all others
+        Entity.BuildReferenceMaps(Objects);
         RootObject.BuildReferenceMap();
     }
 
@@ -231,6 +236,7 @@ public class MapContainer : ObjectContainer
 
     public void LoadAIP(string mapName, AIP aip)
     {
+        using var __scope = Profiler.TracyZoneAuto();
         var autoInvadeParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
 
         MapOffsetNode.AddChild(autoInvadeParent);

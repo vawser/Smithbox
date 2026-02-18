@@ -32,6 +32,8 @@ public class ParamEditorScreen : EditorScreen
     public ParamPasteMenu PasteMenu;
     public ParamToolMenu ToolMenu;
 
+    private bool ImportRowNamesPrompted = false;
+
     public ParamEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -52,6 +54,12 @@ public class ParamEditorScreen : EditorScreen
     public void OnGUI(string[] commands)
     {
         var scale = DPI.UIScale();
+
+        if (!ImportRowNamesPrompted)
+        {
+            ImportRowNamesPrompted = true;
+            ImportRowNamesPrompt();
+        }
 
         Shortcuts.Shortcuts();
 
@@ -117,6 +125,26 @@ public class ParamEditorScreen : EditorScreen
             ImGui.PopStyleVar();
         }
     }
+
+    #region Row Name Import
+    private void ImportRowNamesPrompt()
+    {
+        if (!Project.Descriptor.ImportedParamRowNames)
+        {
+            var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (dialog is DialogResult.OK)
+            {
+                RowNameHelper.ImportRowNames(Project, Project.Handler.ParamData.PrimaryBank, ParamRowNameImportType.Community);
+            }
+
+            Project.Descriptor.ImportedParamRowNames = true;
+
+            Smithbox.Orchestrator.SaveProject(Project);
+        }
+
+    }
+
+    #endregion
 
     #region Menubar
     public void FileMenu()

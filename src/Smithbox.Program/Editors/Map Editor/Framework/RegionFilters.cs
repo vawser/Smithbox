@@ -235,6 +235,8 @@ public class RegionFilters
                     }
                 }
             }
+
+            View.DelayPicking();
         }
         UIHelper.Tooltip("Toggle the visibility of regions of all types to invisible.");
 
@@ -254,6 +256,8 @@ public class RegionFilters
                     }
                 }
             }
+
+            View.DelayPicking();
         }
         UIHelper.Tooltip("Toggle the visibility of regions of all types to visible.");
 
@@ -298,6 +302,8 @@ public class RegionFilters
                         }
                     }
                 }
+
+                View.DelayPicking();
             }
             UIHelper.Tooltip($"Toggle the visibility of regions of the {name} type.");
             UIHelper.ShowActiveStatus(RegionVisibilityTruth[truthIndex]);

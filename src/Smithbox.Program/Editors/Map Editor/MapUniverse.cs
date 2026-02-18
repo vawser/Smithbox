@@ -3,10 +3,8 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.Viewport;
 using StudioCore.Logger;
 using StudioCore.Renderer;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +14,7 @@ using System.Runtime.ExceptionServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Tracy;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -54,7 +53,7 @@ public class MapUniverse : IUniverse
         return View.ViewportHandler.ActiveViewport.RenderScene;
     }
 
-    public bool LoadMap(string mapid, bool selectOnLoad = false, bool fastLoad = false)
+    public bool LoadMap(string mapid, bool selectOnLoad = false, bool ignoreHavokLoad = false)
     {
         if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
@@ -71,48 +70,27 @@ public class MapUniverse : IUniverse
 
         View.ViewportSelection.ClearSelection();
 
-        LoadMapAsync(mapid, selectOnLoad, fastLoad);
+        // Load collisions before async map loading
+        Profiler.TracyFiberEnter("loadMapCollision");
 
-        return true;
-    }
-
-    public void UnloadMap(string mapID, bool clearFromList = false)
-    {
-        View.ViewportSelection.ClearSelection();
-        View.ViewportActionManager.Clear();
-
-        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
+        if (!ignoreHavokLoad)
         {
-            var curMapID = entry.Key.Filename;
-
-            if (curMapID == mapID)
+            if (!CFG.Current.MapEditor_SkipHavokLoad)
             {
-                var wrapper = entry.Value;
+                using var __havokZone = Profiler.TracyZoneAuto("HavokZone");
 
-                ResourceManager.ClearUnusedResources();
-                View.ModelInsightTool.ClearEntry(wrapper.MapContainer);
+                View.HavokCollisionBank.OnLoadMap(mapid);
+                View.HavokNavmeshBank.OnLoadMap(mapid);
 
-                View.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
-
-                View.HavokCollisionBank.OnUnloadMap(curMapID);
-                View.HavokNavmeshBank.OnUnloadMap(curMapID);
-
-                if (View.Selection.SelectedMapContainer == wrapper.MapContainer)
-                {
-                    View.Selection.SelectedMapID = "";
-                    View.Selection.SelectedMapContainer = null;
-                }
-
-                wrapper.MapContainer.LoadState = MapContentLoadState.Unloaded;
-                wrapper.MapContainer.Unload();
-                wrapper.MapContainer.Clear();
-                wrapper.MapContainer = null;
+                __havokZone.Dispose();
             }
         }
 
-        GC.Collect();
-        GC.WaitForPendingFinalizers();
-        GC.Collect();
+        Profiler.TracyFiberLeave();
+
+        LoadMapAsync(mapid, selectOnLoad);
+
+        return true;
     }
 
     public string ModelDataMapID { get; set; }
@@ -120,9 +98,11 @@ public class MapUniverse : IUniverse
     /// <summary>
     /// Load a map asynchronously based on the passed map ID
     /// </summary>
-    public async void LoadMapAsync(string mapid, bool selectOnLoad = false, bool fastLoad = false)
+    public async void LoadMapAsync(string mapid, bool selectOnLoad = false)
     {
         View.Editor.LoadingModal.AllowDisplay = true;
+        Profiler.TracyFiberEnter("loadMapAsync");
+        using var __loadMapZone = Profiler.TracyZoneAuto();
 
         var fileEntry = View.Selection.GetFileEntryFromMapID(mapid);
         var existingMap = View.Selection.GetMapContainerFromMapID(mapid);
@@ -132,12 +112,6 @@ public class MapUniverse : IUniverse
             Smithbox.Log(this, $"Map \"{mapid}\" is already loaded",
                 LogLevel.Information, LogPriority.Normal);
             return;
-        }
-
-        if (!fastLoad)
-        {
-            View.HavokCollisionBank.OnLoadMap(mapid);
-            View.HavokNavmeshBank.OnLoadMap(mapid);
         }
 
         try
@@ -152,8 +126,10 @@ public class MapUniverse : IUniverse
             View.DisplayGroupTool.SetupDrawgroupCount();
 
             MapResourceHandler resourceHandler = new MapResourceHandler(View, mapid);
-
+            Profiler.TracyFiberLeave();
             await resourceHandler.ReadMap(mapid);
+            Profiler.TracyFiberEnter("loadMapAsync");
+
 
             if (resourceHandler.Msb != null)
             {
@@ -162,18 +138,28 @@ public class MapUniverse : IUniverse
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
                     resourceHandler.SetupHumanEnemySubstitute();
+                    using var __resScope = Profiler.TracyZoneAuto();
                     resourceHandler.SetupModelLoadLists();
+                    __resScope.Dispose();
+                    using var __texScope = Profiler.TracyZoneAuto();
                     resourceHandler.SetupTexturelLoadLists();
+                    __texScope.Dispose();
+                    using var __maskScope = Profiler.TracyZoneAuto();
                     resourceHandler.SetupModelMasks(newMap);
+                    __maskScope.Dispose();
                 }
 
+                using var __lightScope = Profiler.TracyZoneAuto();
                 LoadLights(newMap);
 
                 View.AutoInvadeBank.LoadAIP(newMap);
                 View.LightAtlasBank.LoadBTAB(newMap);
                 View.LightProbeBank.LoadBTPB(newMap);
 
+                __lightScope.Dispose();
+                using var __navScope = Profiler.TracyZoneAuto();
                 View.HavokNavmeshBank.LoadHavokNVA(newMap, resourceHandler);
+                __navScope.Dispose();
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
@@ -222,15 +208,24 @@ public class MapUniverse : IUniverse
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
                     Tasks = resourceHandler.LoadTextures(Tasks, newMap);
+
+                    Profiler.TracyFiberLeave();
                     await Task.WhenAll(Tasks);
+                    Profiler.TracyFiberEnter("loadMapAsync");
+
                     Tasks = resourceHandler.LoadModels(Tasks, newMap);
+
+                    Profiler.TracyFiberLeave();
                     await Task.WhenAll(Tasks);
+                    Profiler.TracyFiberEnter("loadMapAsync");
 
                     ScheduleTextureRefresh();
                 }
 
                 // After everything loads, do some additional checks:
+                Profiler.TracyFiberLeave();
                 await Task.WhenAll(Tasks);
+                Profiler.TracyFiberEnter("loadMapAsync");
                 HasProcessedMapLoad = true;
 
                 if (CFG.Current.Viewport_Enable_Rendering)
@@ -276,8 +271,52 @@ public class MapUniverse : IUniverse
                 LoadMapExceptions = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e);
 #endif
         }
+        finally
+        {
+            __loadMapZone.Dispose();
+            Profiler.TracyFiberLeave();
+        }
 
         View.Editor.LoadingModal.AllowDisplay = false;
+    }
+
+    public void UnloadMap(string mapID, bool clearFromList = false)
+    {
+        View.ViewportSelection.ClearSelection();
+        View.ViewportActionManager.Clear();
+
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
+        {
+            var curMapID = entry.Key.Filename;
+
+            if (curMapID == mapID)
+            {
+                var wrapper = entry.Value;
+
+                ResourceManager.ClearUnusedResources();
+                View.ModelInsightTool.ClearEntry(wrapper.MapContainer);
+
+                View.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
+
+                View.HavokCollisionBank.OnUnloadMap(curMapID);
+                View.HavokNavmeshBank.OnUnloadMap(curMapID);
+
+                if (View.Selection.SelectedMapContainer == wrapper.MapContainer)
+                {
+                    View.Selection.SelectedMapID = "";
+                    View.Selection.SelectedMapContainer = null;
+                }
+
+                wrapper.MapContainer.LoadState = MapContentLoadState.Unloaded;
+                wrapper.MapContainer.Unload();
+                wrapper.MapContainer.Clear();
+                wrapper.MapContainer = null;
+            }
+        }
+
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+        GC.Collect();
     }
 
     public void LoadLights(MapContainer map)
@@ -504,7 +543,7 @@ public class MapUniverse : IUniverse
 
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public void LoadDS2Generators(string mapid, MapContainer map)
     {
@@ -1001,7 +1040,7 @@ public class MapUniverse : IUniverse
 
         if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             fileEntries = View.Project.Locator.DS2_LightFiles.Entries;
-                
+
         foreach (var entry in fileEntries)
         {
             if (!entry.Filename.Contains(map.Name))

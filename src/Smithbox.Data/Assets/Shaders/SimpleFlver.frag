@@ -21,6 +21,8 @@ struct sceneParams
 	float indirectLightMult;
 	float emissiveMapMult;
 	float sceneBrightness;
+    
+	float whiteTint;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -84,7 +86,6 @@ void main()
 		ivec2 coord = ivec2(gl_FragCoord.xy - vec2(0.49, 0.49));
 		UpdatePickingBuffer(coord, uint64_t(fsin_entityid), gl_FragCoord.z);
 	}
-
-    float whiteTint = 0.6;
-    fsout_color = mix(color, vec4(1.0), whiteTint);
+    
+	fsout_color = color;
 }

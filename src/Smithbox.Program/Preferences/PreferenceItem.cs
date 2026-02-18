@@ -98,26 +98,29 @@ public enum SectionCategory
     FilterPresets = 404,
 
     // Map Editor
+    [Display(Name = "General")]
+    MapEditor_General = 500,
+
     [Display(Name = "Map List")]
-    MapEditor_Map_List = 500,
+    MapEditor_Map_List = 501,
 
     [Display(Name = "Map Contents")]
-    MapEditor_Map_Contents = 501,
+    MapEditor_Map_Contents = 502,
 
     [Display(Name = "Map Object Properties")]
-    MapEditor_Map_Object_Properties = 502,
+    MapEditor_Map_Object_Properties = 503,
 
     [Display(Name = "Additional Property Information")]
-    MapEditor_Additional_Property_Information = 503,
+    MapEditor_Additional_Property_Information = 504,
 
     [Display(Name = "Character Substitution")]
-    MapEditor_Character_Substitution = 504,
+    MapEditor_Character_Substitution = 505,
 
     [Display(Name = "Model Selector")]
-    MapEditor_Model_Selector = 505,
+    MapEditor_Model_Selector = 506,
 
     [Display(Name = "Selection Groups")]
-    MapEditor_Selection_Groups = 506,
+    MapEditor_Selection_Groups = 507,
 
     // Model Editor
     [Display(Name = "Properties")]
