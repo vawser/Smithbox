@@ -23,10 +23,10 @@ public unsafe class Profiler
         Environment.GetEnvironmentVariable("SMITHBOX_PROFILER") != "0";
 #endif
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_startup_profiler();
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_shutdown_profiler();
 
     public static void Startup()
@@ -43,41 +43,41 @@ public unsafe class Profiler
         ___tracy_shutdown_profiler();
     }
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern ___tracy_c_zone_context ___tracy_emit_zone_begin(___tracy_source_location_data* srcloc,
         int active);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern ___tracy_c_zone_context ___tracy_emit_zone_begin_callstack(
         ___tracy_source_location_data* srcloc, int depth, int active);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern ___tracy_c_zone_context ___tracy_emit_zone_begin_alloc(ulong srcloc, int active);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern ___tracy_c_zone_context ___tracy_emit_zone_begin_alloc_callstack(ulong srcloc, int depth,
         int active);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_emit_zone_end(___tracy_c_zone_context ctx);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_emit_zone_text(___tracy_c_zone_context ctx, string txt, ulong size);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_emit_zone_name(___tracy_c_zone_context ctx, string txt, ulong size);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_emit_zone_color(___tracy_c_zone_context ctx, uint color);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_emit_zone_value(___tracy_c_zone_context ctx, ulong value);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern ulong ___tracy_alloc_srcloc(uint line, string source, ulong sourceSz, string function,
         ulong functionSz);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern ulong ___tracy_alloc_srcloc_name(uint line, string source, ulong sourceSz,
         string function, ulong functionSz, string name, ulong nameSz);
 
@@ -201,10 +201,10 @@ public unsafe class Profiler
         ___tracy_emit_zone_end(ctx);
     }
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_fiber_enter(IntPtr namePtr);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_fiber_leave();
 
     private static readonly ConcurrentDictionary<string, IntPtr> s_fiberNamePtrs = new();
@@ -236,13 +236,13 @@ public unsafe class Profiler
         try { ___tracy_fiber_leave(); } catch { }
     }
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_emit_frame_mark(string? name);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_emit_frame_mark_start(string name);
 
-    [DllImport("TracyClient.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ___tracy_emit_frame_mark_end(string name);
 
     public static void TracyCFrameMark()

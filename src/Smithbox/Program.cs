@@ -87,8 +87,12 @@ public static class Program
         return log;
     }
 
-
+#if MACOS
+    private static readonly string CrashLogPath = Path.GetFullPath(Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "../Logs/Smithbox/Crash Logs"));
+#else
     private static readonly string CrashLogPath = Path.Join(Directory.GetCurrentDirectory(), "Crash Logs");
+#endif
     static void ExportCrashLog(List<string> exceptionInfo)
     {
         var time = $"{DateTime.Now:yyyy-M-dd--HH-mm-ss}";

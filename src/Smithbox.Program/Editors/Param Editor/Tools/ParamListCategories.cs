@@ -261,7 +261,7 @@ public class ParamListCategories
 
     public void RestoreDefault()
     {
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
         if (File.Exists(sourceFile))
