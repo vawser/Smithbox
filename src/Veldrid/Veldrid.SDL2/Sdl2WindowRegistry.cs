@@ -44,6 +44,9 @@ namespace Veldrid.Sdl2
             {
                 case EventType.Quit:
                 case EventType.AppTerminating:
+                    foreach (var w in _eventsByWindowID.Values)
+                        w.AddEvent(ev);
+                    return;
                 case EventType.Windowevent:
                     windowID = ev.Window.WindowID;
                     handled = true;
