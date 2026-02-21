@@ -14,7 +14,7 @@ public abstract class MountedSoulsFile<TFormat> : SoulsFile<TFormat>, IDisposabl
     /// <summary>
     /// Loads file data while be given a memory owner object to keep the mapped memory alive
     /// </summary>
-    protected virtual void Read(BinaryReaderEx br, IMappedMemoryOwner owner)
+    protected virtual void Read(BinaryReaderEx br, IMappedMemory owner)
     {
         throw new NotImplementedException("Read is not implemented for this format.");
     }

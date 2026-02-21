@@ -370,7 +370,7 @@ namespace SoulsFormats
                 return bytes;
             }
 
-            public IMappedMemoryOwner GetFile(MemoryMappedFile file)
+            public IMappedMemory GetFile(MemoryMappedFile file)
             {
                 return file.CreateMemoryAccessor(FileOffset, PaddedFileSize, MemoryMappedFileAccess.Read);
             }
