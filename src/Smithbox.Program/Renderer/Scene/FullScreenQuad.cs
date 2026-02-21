@@ -35,7 +35,7 @@ public class FullScreenQuad
                 VmaMemoryUsage.Auto,
                 0));
 
-        var color = CFG.Current.Viewport_Background_Color;
+        var color = CFG.Current.Viewport_Bg_Color;
 
         QuadParams = new QuadParam
         {
@@ -116,7 +116,7 @@ public class FullScreenQuad
 
     public void Render(GraphicsDevice gd, CommandList cl)
     {
-        var color = CFG.Current.Viewport_Background_Color;
+        var color = CFG.Current.Viewport_Bg_Color;
 
         UpdateQuadParams(gd, new Vector4(color.X, color.Y, color.Z, 1.0f));
 

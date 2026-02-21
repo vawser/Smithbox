@@ -385,7 +385,7 @@ public class ViewportPrefs
                 UIHelper.SimpleHeader("General", "");
 
                 DPI.ApplyInputWidth();
-                ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
+                ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Bg_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3("Selection Outline Color", ref CFG.Current.Viewport_Selection_Outline_Color);

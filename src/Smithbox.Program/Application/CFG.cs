@@ -888,8 +888,6 @@ public class CFG
     public Vector3 Viewport_Frame_Offset = new Vector3();
     public float Viewport_Frame_Distance = 1f;
 
-    public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
-
     public bool Viewport_Render_Gizmos = true;
     public float Viewport_Gizmo_Size_Distance_Scale = 0.04f;
 
@@ -995,7 +993,7 @@ public class CFG
     public Vector3 Viewport_Gizmo_Z_Base_Color = new(0.219f, 0.564f, 0.929f);
     public Vector3 Viewport_Gizmo_Z_Highlight_Color = new(0.407f, 0.690f, 1.0f);
 
-    public Vector3 Viewport_Background_Color = new(0.1f, 0.1f, 0.1f);
+    public Vector3 Viewport_Bg_Color = new(0.1f, 0.1f, 0.1f);
 
     public float Viewport_Untextured_Model_Brightness = 1.0f;
     public float Viewport_Untextured_Model_Saturation = 0.5f;

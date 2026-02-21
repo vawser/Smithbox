@@ -52,7 +52,7 @@ public static class PreferencesUtil
 
     public static void ResetViewportColoringCFG()
     {;
-        CFG.Current.Viewport_Background_Color = CFG.Default.Viewport_Background_Color;
+        CFG.Current.Viewport_Bg_Color = CFG.Default.Viewport_Bg_Color;
         CFG.Current.Viewport_Selection_Outline_Color = CFG.Default.Viewport_Selection_Outline_Color;
         CFG.Current.Viewport_Selection_Tint_Color = CFG.Default.Viewport_Selection_Tint_Color;
         CFG.Current.Viewport_Untextured_Selection_Tint_Color = CFG.Default.Viewport_Untextured_Selection_Tint_Color;
