@@ -82,7 +82,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AssimpNet" Version="4.1.0" />
     <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.4.0" />
     <PackageReference Include="CsvHelper" Version="33.1.0" />
     <PackageReference Include="DirectXTexNet" Version="1.0.7" />

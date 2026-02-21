@@ -4,3 +4,7 @@
 
 - Material Editor:
  - Add MATBIN support back
+ 
+- Gparam Editor:
+ - Add support for load/save for gparambnd files, which BB uses
+ - Add support for flt files
