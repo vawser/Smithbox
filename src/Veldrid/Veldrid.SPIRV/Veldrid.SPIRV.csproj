@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,7 +46,7 @@
 
       <_ExistingAssets Include="@(_NativeAssetName)" Condition="Exists('$(NativeAssetsPath)/%(Identity)')" />
 
-      <Content Include="@(_ExistingAssets-&gt;'$(NativeAssetsPath)/%(Identity)')" CopyToOutputDirectory="IfDifferent" PackagePath="%(PackagePath)" Pack="true" />
+      <Content Include="@(_ExistingAssets->'$(NativeAssetsPath)/%(Identity)')" CopyToOutputDirectory="IfDifferent" PackagePath="%(PackagePath)" Pack="true" />
     </ItemGroup>
   </Target>
 
