@@ -17,8 +17,8 @@
 
   <ItemGroup>
     <Protobuf Include="..\Proto\*.proto" />
-    <PackageReference Include="Grpc.AspNetCore" Version="2.63.0" />
-    <PackageReference Include="Grpc.Net.Client" Version="2.63.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.76.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.76.0" />
   </ItemGroup>
 
 </Project>
