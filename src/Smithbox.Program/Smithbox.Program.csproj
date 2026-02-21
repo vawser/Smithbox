@@ -96,7 +96,7 @@
     <PackageReference Include="Silk.NET.SDL" Version="2.22.0" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />
     <PackageReference Include="System.Drawing.Common" Version="8.0.6" />
-    <PackageReference Include="System.Text.Json" Version="10.0.2" />
+    <PackageReference Include="System.Text.Json" Version="10.0.3" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="10.0.2" />
     <PackageReference Include="Veldrid.ImageSharp" Version="4.9.0" />
     <PackageReference Include="Vortice.Vulkan" Version="1.8.12" />
