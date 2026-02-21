@@ -89,7 +89,6 @@
     <PackageReference Include="DotNext.IO" Version="4.15.0" />
     <PackageReference Include="Hexa.NET.DirectXTex" Version="2.0.4" />
     <PackageReference Include="NativeFileDialogSharp" Version="0.6.0-alpha" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Octokit" Version="14.0.0" />
     <PackageReference Include="Pfim" Version="0.11.4" />
     <PackageReference Include="ProcessMemoryUtilities.Net" Version="1.3.4" />

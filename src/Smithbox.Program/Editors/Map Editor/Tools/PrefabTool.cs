@@ -1,13 +1,11 @@
 using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Text.Json;
 
 namespace StudioCore.Editors.MapEditor;
 public class PrefabTool
@@ -387,25 +385,28 @@ public class PrefabTool
 
         if (!Directory.Exists(prefabDir))
         {
-            try { 
-                Directory.CreateDirectory(prefabDir); 
-            } 
+            try
+            {
+                Directory.CreateDirectory(prefabDir);
+            }
             catch { }
         }
 
-        if(Directory.Exists(prefabDir))
+        if (Directory.Exists(prefabDir))
         {
             string[] files = Directory.GetFiles(prefabDir, "*.json", SearchOption.AllDirectories);
             foreach (var file in files)
             {
-                var settings = new JsonSerializerSettings
+                var options = new JsonSerializerOptions
                 {
+                    IncludeFields = true,
                     Converters = { new PrefabAttributesConverter(View) }
                 };
 
-                var prefab = JsonConvert.DeserializeObject<PrefabAttributes>(File.ReadAllText(file), settings);
+                var prefab = JsonSerializer.Deserialize<PrefabAttributes>(File.ReadAllText(file), options);
 
-                Prefabs.Add(prefab.PrefabName, prefab);
+                if (prefab != null)
+                    Prefabs.Add(prefab.PrefabName, prefab);
             }
         }
     }

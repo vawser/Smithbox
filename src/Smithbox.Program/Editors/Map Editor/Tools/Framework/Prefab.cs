@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
@@ -12,16 +9,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace StudioCore.Editors.MapEditor;
 
 public class PrefabAttributes
 {
-    public string PrefabName = "";
-    public string PrefixSeparator = "[]";
-    public ProjectType Type;
+    public string PrefabName { get; set; } = "";
+    public string PrefixSeparator { get; set; } = "[]";
+    public ProjectType Type { get; set; }
 
     public List<string> TagList { get; set; }
+
+    [JsonConstructor]
+    public PrefabAttributes() { }
 
     public PrefabAttributes(MapEditorView view)
     {
@@ -31,6 +33,8 @@ public class PrefabAttributes
 
 public abstract class Prefab : PrefabAttributes
 {
+    protected Prefab() : base() { }
+
     protected Prefab(MapEditorView view) : base(view)
     {
     }
@@ -69,19 +73,16 @@ public abstract class Prefab : PrefabAttributes
         var parent = targetMap.RootObject;
         List<MsbEntity> ents = GenerateMapEntities(targetMap);
 
-        if(CFG.Current.Prefab_PlaceAtPlacementOrb)
+        if (CFG.Current.Prefab_PlaceAtPlacementOrb)
         {
             var placementOrigin = view.ViewportWindow.GetPlacementPosition();
 
-            // Get average position to determine new centre
             Vector3 currentCenter = Vector3.Zero;
             foreach (var entity in ents)
             {
-                // Ignore Events as they don't have position
                 if (EntityHelper.IsPart(entity) || EntityHelper.IsRegion(entity))
                 {
                     var position = entity.GetPropertyValue<Vector3>("Position");
-
                     currentCenter += position;
                 }
             }
@@ -126,13 +127,13 @@ internal class Prefab<T> : Prefab
 {
     private MapEditorView View;
 
-    /// <summary>
-    /// Bytes of the MSB that stores prefab data.
-    /// </summary>
     public byte[] AssetContainerBytes { get; set; }
 
     [JsonIgnore]
     public T pseudoMap;
+
+    [JsonConstructor]
+    public Prefab() : base() { }
 
     public Prefab(MapEditorView view) : base(view)
     {
@@ -174,19 +175,11 @@ internal class Prefab<T> : Prefab
 
     public override List<MsbEntity> GenerateMapEntities(MapContainer targetMap)
     {
-        // Notes for grouped prefabs/scene tree support:
-        // * Problem: to retain this information in MSB upon saving/loading, something will need to be saved somewhere. Maybe a meta file?
-        // * Make a map entity of the prefab
-        // * Add that to ents list
-        // * Make the asset objects children of that
-        // * Modify scenetree to handle AssetPrefabs.
-
         IEnumerable<MsbEntity> Entities<Category>(IMsbParam<Category> category, MsbEntityType type, Func<Category, Category> copy)
             where Category : IMsbEntry
         {
             foreach (var part in category.GetEntries())
             {
-                // Using the untyped constructor so that the model is not set
                 var entity = new MsbEntity(View.Universe, targetMap, copy(part)) { Type = type };
                 yield return entity;
             }
@@ -204,14 +197,14 @@ internal class Prefab<T> : Prefab
     /// <summary>
     /// Exports AssetPrefab to json file.
     /// </summary>
-    /// <returns>True if successful, false otherwise.</returns>
     public bool Write(string path)
     {
         try
         {
             AssetContainerBytes = pseudoMap.Write();
 
-            string json = JsonConvert.SerializeObject(this, Formatting.Indented);
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string json = JsonSerializer.Serialize(this, options);
             File.WriteAllText(path, json);
             return true;
         }
@@ -228,28 +221,37 @@ internal class Prefab<T> : Prefab
     /// <summary>
     /// Imports AssetPrefab info from json file.
     /// </summary>
-    /// <returns>Asset Prefab if successful, null otherwise.</returns>
     public override bool ImportJson(string path)
     {
         try
         {
-            var settings = new JsonSerializerSettings();
-            JsonConvert.PopulateObject(File.ReadAllText(path), this, settings);
+            var options = new JsonSerializerOptions
+            {
+                IncludeFields = true,
+                Converters = { new PrefabAttributesConverter(View) }
+            };
+
+            var loaded = JsonSerializer.Deserialize<Prefab<T>>(File.ReadAllText(path), options);
+
+            if (loaded != null)
+            {
+                PrefabName = loaded.PrefabName;
+                PrefixSeparator = loaded.PrefixSeparator;
+                Type = loaded.Type;
+                TagList = loaded.TagList;
+                AssetContainerBytes = loaded.AssetContainerBytes;
+            }
 
             pseudoMap = SoulsFile<T>.Read(AssetContainerBytes);
             return true;
         }
         catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox(
-                $"Unable to import Prefab due to the following error:" +
-                $"\n\n{e.Message}"
-                , "Asset prefab import error"
-                , MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Smithbox.LogError<Prefab>("Unable to import Prefab due to the following error:", e);
+
             return false;
         }
     }
-
 
     /// <summary>
     /// Export
@@ -259,7 +261,7 @@ internal class Prefab<T> : Prefab
         Load(_selection.GetFilteredSelection<MsbEntity>());
         if (!PrefabUtils.GetMapMsbEntries(pseudoMap).Any())
         {
-            PlatformUtils.Instance.MessageBox("Export failed, nothing in selection could be exported.", "Prefab Error", MessageBoxButtons.OK);
+            Smithbox.LogError<Prefab>("Export failed, nothing in selection could be exported.");
             return;
         }
         PrefabName = name;
@@ -277,16 +279,30 @@ public class PrefabAttributesConverter : JsonConverter<PrefabAttributes>
         _view = view;
     }
 
-    public override PrefabAttributes ReadJson(JsonReader reader, Type objectType, PrefabAttributes existingValue, bool hasExistingValue, JsonSerializer serializer)
+    public override PrefabAttributes Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        var jo = JObject.Load(reader);
         var prefab = new PrefabAttributes(_view);
-        serializer.Populate(jo.CreateReader(), prefab);
+
+        using var doc = JsonDocument.ParseValue(ref reader);
+        var root = doc.RootElement;
+
+        if (root.TryGetProperty("PrefabName", out var prefabName))
+            prefab.PrefabName = prefabName.GetString() ?? "";
+
+        if (root.TryGetProperty("PrefixSeparator", out var prefixSeparator))
+            prefab.PrefixSeparator = prefixSeparator.GetString() ?? "[]";
+
+        if (root.TryGetProperty("Type", out var type))
+            prefab.Type = JsonSerializer.Deserialize<ProjectType>(type.GetRawText(), options);
+
+        if (root.TryGetProperty("TagList", out var tagList))
+            prefab.TagList = JsonSerializer.Deserialize<List<string>>(tagList.GetRawText(), options);
+
         return prefab;
     }
 
-    public override void WriteJson(JsonWriter writer, PrefabAttributes value, JsonSerializer serializer)
+    public override void Write(Utf8JsonWriter writer, PrefabAttributes value, JsonSerializerOptions options)
     {
-        JObject.FromObject(value).WriteTo(writer);
+        JsonSerializer.Serialize(writer, value, options);
     }
 }
