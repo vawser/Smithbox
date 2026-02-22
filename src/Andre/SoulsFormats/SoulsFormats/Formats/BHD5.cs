@@ -361,7 +361,7 @@ namespace SoulsFormats
             public byte[] ReadFileThreaded(FileStream bdtStream)
             {
                 byte[] bytes = new byte[PaddedFileSize];
-                using (var h = bdtStream.AcquireWriteLock())
+                lock (bdtStream)
                 {
                     bdtStream.Position = FileOffset;
                     bdtStream.ReadExactly(bytes, 0, PaddedFileSize);
@@ -370,7 +370,7 @@ namespace SoulsFormats
                 return bytes;
             }
 
-            public IMappedMemoryOwner GetFile(MemoryMappedFile file)
+            public IMappedMemory GetFile(MemoryMappedFile file)
             {
                 return file.CreateMemoryAccessor(FileOffset, PaddedFileSize, MemoryMappedFileAccess.Read);
             }

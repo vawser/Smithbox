@@ -10,6 +10,9 @@ public static class PrefabUtils
 {
     public static IEnumerable<IMsbEntry> GetMapMsbEntries(IMsb map)
     {
+        if(map == null)
+            return Enumerable.Empty<IMsbEntry>();
+
         return new IEnumerable<IMsbEntry>[] {
                 map.Parts.GetEntries(),
                 map.Events.GetEntries(),

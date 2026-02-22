@@ -1,5 +1,6 @@
 ﻿using DotNext.Threading;
 using System;
+using System.Threading;
 
 namespace StudioCore.Renderer;
 
@@ -26,7 +27,7 @@ public class RefCount<T>(T value) : IDisposable
     /// <returns></returns>
     public virtual RefCount<T> Ref()
     {
-        Refs.IncrementAndGet();
+        Interlocked.Increment(ref Refs);
         return this;
     }
 
@@ -42,7 +43,7 @@ public class RefCount<T>(T value) : IDisposable
     /// </summary>
     public virtual void Dispose()
     {
-        var r = Refs.DecrementAndGet();
+        var r = Interlocked.Decrement(ref Refs);
         if (r == 0)
         {
             isValid = false;
@@ -64,7 +65,7 @@ public class RefCount<T>(T value) : IDisposable
         }
         else
         {
-            var r = Refs.DecrementAndGet();
+            var r = Interlocked.Decrement(ref Refs);
             if (r == 0)
             {
                 isValid = false;

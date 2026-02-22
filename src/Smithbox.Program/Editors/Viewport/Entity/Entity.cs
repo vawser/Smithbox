@@ -154,13 +154,16 @@ public class Entity : ISelectable, IDisposable
                 return CachedName;
             }
 
-            if (WrappedObject.GetType().GetProperty("Name") != null)
+            if (WrappedObject != null)
             {
-                CachedName = (string)WrappedObject.GetType().GetProperty("Name").GetValue(WrappedObject, null);
-            }
-            else
-            {
-                CachedName = "null";
+                if (WrappedObject.GetType().GetProperty("Name") != null)
+                {
+                    CachedName = (string)WrappedObject.GetType().GetProperty("Name").GetValue(WrappedObject, null);
+                }
+                else
+                {
+                    CachedName = "null";
+                }
             }
 
             return CachedName;

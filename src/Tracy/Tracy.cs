@@ -41,6 +41,7 @@ public unsafe class Profiler
         if (!EnableTracy) return;
 
         ___tracy_shutdown_profiler();
+        EnableTracy = false;
     }
 
     [DllImport("TracyClient", CallingConvention = CallingConvention.Cdecl)]

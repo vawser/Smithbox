@@ -41,7 +41,7 @@ namespace SoulsFormats
         protected BinaryReaderEx DataBR;
 
         protected MemoryMappedFile _mappedFile;
-        protected IMappedMemoryOwner _mappedAccessor;
+        protected IMappedMemory _mappedAccessor;
 
         /// <summary>
         /// Reads file data according to the header at the given index in Files.

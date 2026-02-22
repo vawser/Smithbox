@@ -248,7 +248,7 @@ public class MapModelInsightView
 
                             var rawFileName = Path.GetFileName(file.Name);
                             var writePath = Path.Combine(writeDir, rawFileName);
-                            File.WriteAllBytes(writePath, virtFile.GetData().ToArray());
+                            File.WriteAllBytes(writePath, fileData.ToArray());
                             successful = true;
 
                             break;
@@ -266,7 +266,7 @@ public class MapModelInsightView
 
                             var rawFileName = Path.GetFileName(file.Name);
                             var writePath = Path.Combine(writeDir, rawFileName);
-                            File.WriteAllBytes(writePath, virtFile.GetData().ToArray());
+                            File.WriteAllBytes(writePath, fileData.ToArray());
                             successful = true;
 
                             break;

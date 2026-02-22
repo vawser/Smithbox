@@ -1,13 +1,14 @@
-﻿using System;
+﻿using CommunityToolkit.HighPerformance;
+using DotNext.Buffers;
+using System;
 using System.Buffers.Binary;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using System.Text;
-using DotNext.Buffers;
-using CommunityToolkit.HighPerformance;
 
 namespace SoulsFormats
 {
@@ -58,8 +59,8 @@ namespace SoulsFormats
         
         public unsafe T Read<T>() where T : unmanaged
         {
-            var reader = new SpanReader<byte>(_memory.Span[(int)Position..]);
-            var ret = reader.Read<T>();
+            var span = _memory.Span[(int)Position..];
+            var ret = MemoryMarshal.Read<T>(span);
             Position += sizeof(T);
             return ret;
         }

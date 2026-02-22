@@ -106,7 +106,7 @@ public class MapModelInsightEntry
     public string MapID { get; set; }
     public MapContainer Container { get; set; }
 
-    public List<MapFlverInsightEntry> Models { get; set; } = new();
+    public System.Collections.Concurrent.ConcurrentBag<MapFlverInsightEntry> Models { get; set; } = new();
 
     public MapModelInsightEntry(string mapID, MapContainer container)
     {
