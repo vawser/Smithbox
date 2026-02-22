@@ -51,7 +51,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <NativeReference Include="$(MoltenVKPath)" Kind="Dynamic" Condition="Exists('$(MoltenVKPath)')" />
+    <NativeReference Include="$(MoltenVKPath)" Kind="Dynamic" />
     <NativeReference Include="$(OodlePath)" Kind="Dynamic" Condition="Exists('$(OodlePath)')" />
     <NativeReference Include="$(RustDllPath)" Kind="Dynamic" Condition="Exists('$(RustDllPath)')" />
     <NativeReference Include="$(TracyPath)" Kind="Dynamic" />

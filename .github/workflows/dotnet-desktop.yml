@@ -6,9 +6,9 @@ on:
       - main
   pull_request:
 jobs:
-  build:
+  build-windows:
     runs-on: windows-latest
-    name: "Build"
+    name: "Build Windows"
     env:
       NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
     steps:
@@ -40,10 +40,131 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release -o deploy
+        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release -o deploy/windows
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
           name: "Smithbox-SHA${{ github.sha }}"
-          path: "${{ runner.workspace }}/Smithbox/deploy"
+          path: "${{ runner.workspace }}/Smithbox/deploy/windows"
+  build-linux:
+    runs-on: windows-latest
+    name: "Build Linux"
+    env:
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: false
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "9.0.x"
+          cache: false
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v5.0.1
+        with:
+          path: ${{ env.NUGET_PACKAGES }}
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            nuget-${{ runner.os }}-
+
+      - name: Remove extraneous platforms
+        run: |
+          dotnet sln remove '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj'
+          dotnet sln remove '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.Mac.csproj'
+
+      - name: Restore
+        run: dotnet restore /p:Configuration=Release
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Publish
+        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.Linux.csproj' --configuration Release -o deploy/linux
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: "Smithbox.Linux-SHA${{ github.sha }}"
+          path: "${{ runner.workspace }}/Smithbox/deploy/linux"
+  build-mac:
+    runs-on: macos-latest
+    name: "Build macOS"
+    env:
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: false
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "9.0.x"
+          cache: false
+
+      - name: Setup XCode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: 26.2
+
+      - name: Install macos workload
+        run: dotnet workload install macos
+
+      - name: Cache Rust artifacts
+        uses: actions/cache@v5.0.1
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        
+      - name: Build native lib
+        run: cargo build --lib --release --manifest-path='${{ runner.workspace }}/Smithbox/src/Andre/Andre.Formats/native/bhd5-decrypt-rust/Cargo.toml'
+
+      - name: Install Vulkan SDK
+        uses: humbletim/install-vulkan-sdk@0ef43dbc8af56d77bcb1e8b1ebbbaa8718ead524
+        with:
+          version: 1.4.341.0
+          cache: true
+          
+      - name: Create dummy lib
+        run: |
+          cat > dummy.s << 'EOF'
+          .section __TEXT,__marker,regular,no_dead_strip
+          .asciz "DUMMY_FILE"
+          EOF
+          clang -c dummy.s -arch arm64 -arch x86_64 -o dummy.o
+          clang -dynamiclib -o '${{ runner.workspace }}/liboo2coremac64.2.9.dylib' -arch arm64 -arch x86_64 dummy.o -install_name @executable_path/liboo2coremac64.2.9.dylib
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v5.0.1
+        with:
+          path: ${{ env.NUGET_PACKAGES }}
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            nuget-${{ runner.os }}-
+
+      - name: Remove extraneous platforms
+        run: |
+          dotnet sln remove '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj'
+          dotnet sln remove '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.Linux.csproj'
+
+      - name: Restore
+        run: dotnet restore "/p:Configuration=Release;OodlePath=${{ runner.workspace }}/liboo2coremac64.2.9.dylib"
+
+      - name: Build and Publish
+        run: |
+          chmod +x '${{ runner.workspace }}/Smithbox/src/Smithbox/Scripts/preinstall'
+          chmod +x '${{ runner.workspace }}/Smithbox/src/Smithbox/Scripts/postinstall'
+          dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.Mac.csproj' --configuration Release -o deploy/macos "/p:OodlePath=${{ runner.workspace }}/liboo2coremac64.2.9.dylib;MoltenVKPath=$VULKAN_SDK/lib/libMoltenVK.dylib;CreatePackage=true"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: "Smithbox.Mac-SHA${{ github.sha }}"
+          path: "${{ runner.workspace }}/Smithbox/deploy/macos"
