@@ -47,7 +47,6 @@
     <OodlePath>/path/to/oodle.dylib</OodlePath>
     <RustDllPath>../Andre/Andre.Formats/libbhd5_decrypt_rust.dylib</RustDllPath>
     <TracyPath>../Tracy/libTracyClient.dylib</TracyPath>
-    <ZstdPath>/path/to/libzstd.dylib</ZstdPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -55,7 +54,6 @@
     <NativeReference Include="$(OodlePath)" Kind="Dynamic" Condition="Exists('$(OodlePath)')" />
     <NativeReference Include="$(RustDllPath)" Kind="Dynamic" Condition="Exists('$(RustDllPath)')" />
     <NativeReference Include="$(TracyPath)" Kind="Dynamic" />
-    <NativeReference Include="$(ZstdPath)" Kind="Dynamic" Condition="Exists('$(ZstdPath)')" />
     <BundleResource Include="AppIcon.icns" />
   </ItemGroup>
 
