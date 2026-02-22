@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <AssemblyName>Smithbox</AssemblyName>
+    <ApplicationId>com.vawser.Smithbox</ApplicationId>
     <TargetFramework>net9.0-macos</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
     <Version>2.1.3</Version>
@@ -14,7 +15,7 @@
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
     <Platforms>AnyCPU;x64</Platforms>
-    <RuntimeIdentifier Condition="'$(Platform)'=='AnyCPU'">osx-arm64</RuntimeIdentifier>
+    <RuntimeIdentifiers Condition="'$(Platform)'=='AnyCPU'">osx-arm64;osx-x64</RuntimeIdentifiers>
     <RuntimeIdentifier Condition="'$(Platform)'=='x64'">osx-x64</RuntimeIdentifier>
     <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
     <RootNamespace>StudioCore</RootNamespace>
@@ -43,8 +44,8 @@
 
   <PropertyGroup>
     <VULKAN_SDK Condition="'$(VULKAN_SDK)' == ''">/path/to/VulkanSDK/Version</VULKAN_SDK>
-    <MoltenVKPath>$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib</MoltenVKPath>
-    <OodlePath>/path/to/oodle.dylib</OodlePath>
+    <MoltenVKPath Condition="'$(MoltenVKPath)' == ''">$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib</MoltenVKPath>
+    <OodlePath Condition="'$(OodlePath)' == ''">/path/to/oodle.dylib</OodlePath>
     <RustDllPath>../Andre/Andre.Formats/libbhd5_decrypt_rust.dylib</RustDllPath>
     <TracyPath>../Tracy/libTracyClient.dylib</TracyPath>
   </PropertyGroup>
@@ -64,13 +65,42 @@
 
   <Target Name="Init" Condition="!Exists('../Platform.Build.props')" />
   <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences" AfterTargets="Init">
-      <ItemGroup>
-        <Props Include="&lt;Project&gt;" Visible="false" />
-        <Props Include="  &lt;PropertyGroup&gt;" Visible="false" />
-        <Props Include="    &lt;DefineConstants&gt;%24(DefineConstants)%3BMACOS&lt;/DefineConstants&gt;" Visible="false" />
-        <Props Include="  &lt;/PropertyGroup&gt;" Visible="false" />
-        <Props Include="&lt;/Project&gt;" Visible="false" />
-      </ItemGroup>
-      <WriteLinesToFile File="../Platform.Build.props" Lines="@(Props)" Overwrite="true" Encoding="UTF-8" />
+      <PropertyGroup>
+        <PlatformProps>
+&lt;Project&gt;
+  &lt;PropertyGroup&gt;
+    &lt;DefineConstants&gt;%24(DefineConstants)%3BMACOS&lt;/DefineConstants&gt;
+  &lt;/PropertyGroup&gt;
+&lt;/Project&gt;
+        </PlatformProps>
+      </PropertyGroup>
+      <WriteLinesToFile File="../Platform.Build.props" Lines="$(PlatformProps)" Overwrite="true" />
+  </Target>
+
+  <Target Name="FixPackage" Condition="'$(CreatePackage)' == 'true'" AfterTargets="Publish">
+      <Exec Command="pkgutil --expand $(PublishDir)/$(AssemblyName)-$(Version).pkg $(PublishDir)/$(AssemblyName)" />
+      <PropertyGroup>
+        <DistributionSed>
+s/&lt;%5C/title&gt;/&amp;%5C
+    &lt;domains enable_anywhere="true" enable_currentUserHome="true" enable_localSystem="true"%5C/&gt;/
+s/ customLocation="%5C/Applications"&gt;/&gt;/
+        </DistributionSed>
+        <PackageInfoSed>
+s/&lt;%5C/pkg-info&gt;/%5C
+    &lt;scripts&gt;%5C
+        &lt;preinstall file=".%5C/preinstall"%5C/&gt;%5C
+        &lt;postinstall file=".%5C/postinstall"%5C/&gt;%5C
+    &lt;%5C/scripts&gt;%5C
+&amp;/
+        </PackageInfoSed>
+      </PropertyGroup>
+      <WriteLinesToFile File="$(PublishDir)/distribution.sed" Lines="$(DistributionSed)" Overwrite="true" />
+      <WriteLinesToFile File="$(PublishDir)/packageinfo.sed" Lines="$(PackageInfoSed)" Overwrite="true" />
+      <Exec Command="sed -i '' -f $(PublishDir)/distribution.sed $(PublishDir)/$(AssemblyName)/Distribution" />
+      <Exec Command="sed -i '' -f $(PublishDir)/packageinfo.sed $(PublishDir)/$(AssemblyName)/$(ApplicationId).pkg/PackageInfo" />
+      <Exec Command="cp -a $(MSBuildProjectDirectory)/Scripts $(PublishDir)/$(AssemblyName)/$(ApplicationId).pkg/" />
+      <Exec Command="pkgutil --flatten $(PublishDir)/$(AssemblyName) $(PublishDir)/$(AssemblyName)-$(Version).pkg" />
+      <Delete Files="$(PublishDir)/distribution.sed;$(PublishDir)/packageinfo.sed" />
+      <RemoveDir Directories="$(PublishDir)/$(AssemblyName)" />
   </Target>
 </Project>

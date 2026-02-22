@@ -1,0 +1,30 @@
+#!/bin/sh
+
+if [ -d "$INSTALLER_TEMP" ] && [ -n "$(ls $INSTALLER_TEMP)" ]; then
+  set -- "$INSTALLER_TEMP"/*.dylib
+  if [ -e $1 ]; then
+    cp -f $1 "$DSTROOT/Smithbox.app/Contents/MonoBundle/$(basename -- $1)"
+  fi
+fi
+
+if ! command -v codesign_allocate &> /dev/null; then
+  cont=$(
+  osascript <<'EOF'
+display alert "Missing codesign_allocate" ¬
+  message "Xcode command line tools are required to codesign the app. Without it, you will need to override Gatekeeper. This is not recommended." ¬
+  as critical buttons {"Cancel", "Continue"} default button "Cancel"
+  return button returned of the result
+EOF
+  )
+  if [ "$cont" = "Cancel" ]; then
+    mv "$DSTROOT/Smithbox.app" $HOME/.Trash
+    exit 1
+  fi
+  exit 0
+fi
+
+codesign --force -s - "$DSTROOT/Smithbox.app/Contents/MonoBundle/libMoltenVK.dylib"
+codesign --force -s - "$DSTROOT/Smithbox.app/Contents/MonoBundle/libSDL2-2.0.dylib"
+codesign --force -s - "$DSTROOT/Smithbox.app/"
+
+exit 0
