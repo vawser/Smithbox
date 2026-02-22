@@ -5,10 +5,10 @@
     <AssemblyName>Smithbox</AssemblyName>
     <TargetFramework>net9.0</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
-    <Version>2.1.2</Version>
+    <Version>2.1.3</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <PackageVersion>2.1.0</PackageVersion>
-    <AssemblyVersion>2.1.2</AssemblyVersion>
+    <AssemblyVersion>2.1.3</AssemblyVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
