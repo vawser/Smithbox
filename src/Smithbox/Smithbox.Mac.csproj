@@ -17,6 +17,7 @@
     <Platforms>AnyCPU;x64</Platforms>
     <RuntimeIdentifiers Condition="'$(Platform)'=='AnyCPU'">osx-arm64;osx-x64</RuntimeIdentifiers>
     <RuntimeIdentifier Condition="'$(Platform)'=='x64'">osx-x64</RuntimeIdentifier>
+    <SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
     <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
     <RootNamespace>StudioCore</RootNamespace>
   </PropertyGroup>
@@ -40,6 +41,7 @@
   <PropertyGroup>
     <ValidateXcodeVersion>false</ValidateXcodeVersion>
     <_UseClassicLinker>true</_UseClassicLinker>
+    <ProductDefinition>ProductDefinition.plist</ProductDefinition>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -81,8 +83,7 @@
       <Exec Command="pkgutil --expand $(PublishDir)/$(AssemblyName)-$(Version).pkg $(PublishDir)/$(AssemblyName)" />
       <PropertyGroup>
         <DistributionSed>
-s/&lt;%5C/title&gt;/&amp;%5C
-    &lt;domains enable_anywhere="true" enable_currentUserHome="true" enable_localSystem="true"%5C/&gt;/
+s/%5C(&lt;os-version min="[0-9.][0-9.]*"%5C).*%5C/&gt;/%5C1%5C/&gt;/g
 s/ customLocation="%5C/Applications"&gt;/&gt;/
         </DistributionSed>
         <PackageInfoSed>
