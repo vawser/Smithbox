@@ -77,6 +77,7 @@ public static class UIHelper
 
         if (!File.Exists(curImgui) && File.Exists(defaultImgui))
         {
+            Directory.CreateDirectory(StudioCore.Common.FileLocations.CurImgui);
             var bytes = File.ReadAllBytes(defaultImgui);
             File.WriteAllBytes(curImgui, bytes);
         }
