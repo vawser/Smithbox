@@ -1,0 +1,18 @@
+Help
+Ajuda
+Projects
+Projetos
+Preferences
+Preferências
+Shortcuts
+Atalhos
+Update
+Atualizar
+Go to Wiki
+Abrir o Wiki
+Go to Github Repository
+Abrir o repositório Github
+Action
+Ação
+Warning
+Aviso

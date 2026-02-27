@@ -1,0 +1,18 @@
+Help
+도움말
+Projects
+프로젝트
+Preferences
+환경 설정
+Shortcuts
+바로 가기
+Update
+업데이트
+Go to Wiki
+위키 열기
+Go to Github Repository
+Github 저장소 열기
+Action
+동작
+Warning
+경고

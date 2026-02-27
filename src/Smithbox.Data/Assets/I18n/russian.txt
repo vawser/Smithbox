@@ -1,0 +1,18 @@
+Help
+Справка
+Projects
+Проекты
+Preferences
+Настройки
+Shortcuts
+Горячие клавиши
+Update
+Обновить
+Go to Wiki
+Открыть Wiki
+Go to Github Repository
+Открыть репозиторий Github
+Action
+Действие
+Warning
+Предупреждение

@@ -1,0 +1,18 @@
+Help
+مساعدة
+Projects
+المشاريع
+Preferences
+التفضيلات
+Shortcuts
+الاختصارات
+Update
+تحديث
+Go to Wiki
+فتح الويكي
+Go to Github Repository
+فتح مستودع Github
+Action
+إجراء
+Warning
+تحذير

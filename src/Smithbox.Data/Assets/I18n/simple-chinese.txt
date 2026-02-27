@@ -1,0 +1,18 @@
+Help
+帮助
+Projects
+项目
+Preferences
+首选项
+Shortcuts
+快捷键
+Update
+更新
+Go to Wiki
+打开 Wiki
+Go to Github Repository
+打开 Github 仓库
+Action
+操作
+Warning
+警告

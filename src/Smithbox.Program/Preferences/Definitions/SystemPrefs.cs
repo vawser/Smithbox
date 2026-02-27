@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
@@ -103,6 +103,50 @@ public class SystemPrefs
                             CFG.Current.System_RenderingBackend = (RenderingBackend)entry;
                         }
                     }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
+
+    public static PreferenceItem System_Language()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 4,
+            Category = PreferenceCategory.System,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.General,
+
+            Title = "Language",
+            Description = "Select UI language. Some text may still be English if not translated.",
+
+            Draw = () =>
+            {
+                DPI.ApplyInputWidth();
+
+                var options = LocalizationManager.Instance.GetAvailableLanguages();
+
+                var current = options.FirstOrDefault(o => o.Key == CFG.Current.System_Language);
+                var currentLabel = string.IsNullOrEmpty(current.Label) ? "Default Language" : current.Label;
+
+                if (ImGui.BeginCombo("##inputValue", currentLabel))
+                {
+                    foreach (var option in options)
+                    {
+                        var langKey = option.Key;
+                        var label = option.Label;
+
+                        bool selected = string.Equals(CFG.Current.System_Language, langKey, StringComparison.OrdinalIgnoreCase);
+                        if (ImGui.Selectable(label, selected))
+                        {
+                            CFG.Current.System_Language = langKey;
+                            LocalizationManager.Instance.SetLanguage(langKey);
+                        }
+                    }
+
                     ImGui.EndCombo();
                 }
             }

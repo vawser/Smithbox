@@ -558,7 +558,7 @@ public class Smithbox
             }
 
             // Help
-            if (ImGui.BeginMenu("Help"))
+            if (ImGui.BeginMenu(LocalizationManager.Instance.Get("Help")))
             {
                 ImGui.Text("Developed by Vawser.");
                 ImGui.Text($"Smithbox Version: {_version}");
@@ -701,11 +701,23 @@ public class Smithbox
     /// <returns></returns>
     public static ILogger Logger<T>()
     {
+        if (SbLoggerFactory is null)
+        {
+            // Logger factory not initialized yet (early startup / config load failure).
+            // Fall back to a no-op logger to avoid null reference exceptions.
+            return LoggerFactory.Create(_ => { }).CreateLogger<T>();
+        }
+
         return SbLoggerFactory.CreateLogger<T>();
     }
 
     public static ILogger Logger(Type type)
     {
+        if (SbLoggerFactory is null)
+        {
+            return LoggerFactory.Create(_ => { }).CreateLogger(type);
+        }
+
         return SbLoggerFactory.CreateLogger(type);
     }
 

@@ -1,0 +1,18 @@
+Help
+Hilfe
+Projects
+Projekte
+Preferences
+Einstellungen
+Shortcuts
+Tastenkürzel
+Update
+Aktualisieren
+Go to Wiki
+Wiki öffnen
+Go to Github Repository
+Github-Repository öffnen
+Action
+Aktion
+Warning
+Warnung

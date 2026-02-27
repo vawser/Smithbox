@@ -1,0 +1,18 @@
+Help
+說明
+Projects
+專案
+Preferences
+偏好設定
+Shortcuts
+快速鍵
+Update
+更新
+Go to Wiki
+開啟 Wiki
+Go to Github Repository
+開啟 Github 儲存庫
+Action
+動作
+Warning
+警告

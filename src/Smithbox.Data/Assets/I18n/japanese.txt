@@ -1,0 +1,18 @@
+Help
+ヘルプ
+Projects
+プロジェクト
+Preferences
+設定
+Shortcuts
+ショートカット
+Update
+アップデート
+Go to Wiki
+Wiki を開く
+Go to Github Repository
+Github リポジトリを開く
+Action
+アクション
+Warning
+警告

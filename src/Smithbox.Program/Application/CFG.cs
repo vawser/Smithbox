@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
@@ -56,6 +56,9 @@ public class CFG
 
     public bool Developer_Enable_Tools = false;
     public string Developer_Smithbox_Build_Folder = "";
+
+    // Language key (e.g. "english", "simple-chinese"), matching files in Assets/I18n
+    public string System_Language = LocalizationManager.DefaultLanguageKey;
 
     #endregion
 
@@ -1238,7 +1241,15 @@ public class CFG
             }
             catch (Exception e)
             {
-                Smithbox.Log<CFG>("[Smithbox] Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
+                // Avoid accessing an uninitialized LoggerFactory during early startup
+                if (Smithbox.SbLoggerFactory is not null)
+                {
+                    Smithbox.Log<CFG>("[Smithbox] Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
+                }
+                else
+                {
+                    Console.WriteLine($"[Smithbox] Configuration failed to load, default configuration has been restored. {e}");
+                }
 
                 Current = new CFG();
                 Save();
