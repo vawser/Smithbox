@@ -1,0 +1,419 @@
+{
+  "Name": "HitEffectSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None -- なし"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "spark -- 火花"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "General purpose smoke -- 汎用煙"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Sand smoke -- 砂煙"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "soil -- 土"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Ash smoke -- 灰煙"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "dust -- 埃"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "A piece of wood -- 木片"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Stone fragment -- 石片"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Bone fragment -- 骨片"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Crystal pieces -- 結晶片"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Fragment -- 草片"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "leaf -- 葉"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Deciduous leaves -- 落葉"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "God grave net piece -- 神墓ネット片"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Water splash -- 水飛沫"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Mud splash -- 泥飛沫"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Poison swamp splash -- 毒沼飛沫"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "oil -- 油"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Blood (living) _ front -- 血(生者)_正面"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Underwater meat -- 水中\u3000肉"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Physical bullet general purpose -- 物理弾丸汎用"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Body fluid -- 体液"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Drool -- よだれ"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Maggot -- 蛆"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "wax -- 蝋"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Insect body fluid -- 虫体液"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Meat under armor_front -- 鎧の下の肉_正面"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Poisonous meat -- 毒肉"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "White meat -- 白肉"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Carrion pieces -- 腐肉片"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Ash demon -- 灰デーモン"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Spirit -- 霊"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Grief (effective) _front -- 怨霊（有効）_正面"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Grief (invalid) _front -- 怨霊（無効）_正面"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "flame -- 炎"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Thunder -- 雷"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "cloud -- 雲"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "poison -- 毒"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Snow map -- 雪\u3000マップ"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Sparks and flames -- 火の粉と炎"
+      ]
+    },
+    {
+      "ID": 440,
+      "Entries": [
+        "Corrosion hit (gas) -- 蝕ヒット(気体)"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "Corrosion hit (liquid) -- 蝕ヒット(液体)"
+      ]
+    },
+    {
+      "ID": 460,
+      "Entries": [
+        "Energy (strong) -- エネルギー(強)"
+      ]
+    },
+    {
+      "ID": 470,
+      "Entries": [
+        "Rock (Fat Demon) -- 岩(デブデーモン)"
+      ]
+    },
+    {
+      "ID": 480,
+      "Entries": [
+        "Autumn leaves -- 紅葉"
+      ]
+    },
+    {
+      "ID": 490,
+      "Entries": [
+        "Straw (soft) -- 藁(柔)"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Straw (hard) -- 藁(硬)"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Reserve -- 予備"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Jasuga sparks -- ジャスガ\u3000火花"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Jasuga shock wave -- ジャスガ\u3000衝撃波"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Reserve -- 予備"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Phantom (valid) -- 幻影（有効）"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "Phantom (invalid) -- 幻影（無効）"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "Jasuga shock wave (directivity) -- ジャスガ\u3000衝撃波（指向性）"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Sat Para Para -- 土パラパラ"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "Snow -- 雪パラパラ"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Pebble para para -- 小石パラパラ"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Guard shock wave (directivity) -- ガード\u3000衝撃波（指向性）"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "ice -- 氷"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Water splash no ripples -- 水飛沫 波紋ナシ"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Water splash ripple pear grass -- 水飛沫 波紋ナシ\u3000草"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "Iron fan -- 鉄扇"
+      ]
+    },
+    {
+      "ID": 680,
+      "Entries": [
+        "Soil (underwater) -- 土(水中)"
+      ]
+    },
+    {
+      "ID": 690,
+      "Entries": [
+        "Stone (underwater) -- 石(水中)"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Tree (underwater) -- 木(水中)"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Non-resisting NPC -- 無抵抗NPC"
+      ]
+    }
+  ]
+}

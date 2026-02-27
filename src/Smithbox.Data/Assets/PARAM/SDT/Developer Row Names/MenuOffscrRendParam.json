@@ -1,0 +1,71 @@
+{
+  "Name": "MenuOffscrRendParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For character make-up preview &lt;whole body&gt; -- キャラメイクプレビュー用＜全身＞"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For character makeup preview &lt;face&gt; -- キャラメイクプレビュー用＜顔＞"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "For status menu &lt;whole body&gt; -- ステータスメニュー用＜全身＞"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "For ranking menu &lt;whole body&gt; -- ランキングメニュー用＜全身＞"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For character makeup grid &lt;face&gt; -- キャラメイクグリッド用＜顔＞"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "For kick menu &lt;face&gt; -- キックメニュー用＜顔＞"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "For status menu &lt;face&gt; -- ステータスメニュー用＜顔＞"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "For ranking menu &lt;face&gt; -- ランキングメニュー用＜顔＞"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "For summon sign &lt;face&gt; -- 召喚サイン用＜顔＞"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "For game end confirmation menu &lt;face&gt; -- ゲーム終了確認メニュー用＜顔＞"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For profile selection &lt;face&gt; -- プロファイル選択用＜顔＞"
+      ]
+    }
+  ]
+}

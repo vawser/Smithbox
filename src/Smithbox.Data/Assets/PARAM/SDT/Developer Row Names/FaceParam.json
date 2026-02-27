@@ -1,0 +1,4583 @@
+{
+  "Name": "FaceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Character make test -- キャラメイクテスト"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "20: NT version A (Knight of Wandering) -- 20：NT版 A\u3000（放浪の騎士）"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "21: NT version B (Northern Warrior) -- 21：NT版 B\u3000（北の戦士）"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "22: NT version C (Wizard) -- 22：NT版 C\u3000（魔法使い）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "23: NT version D (Knight of the Temple) -- 23：NT版 D\u3000（神殿騎士）"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "New Game Preset Face_Man 0 -- NewGameプリセット顔_男0"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "New Game Preset Face_Man 1 -- NewGameプリセット顔_男1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "New Game Preset Face_Man 2 -- NewGameプリセット顔_男2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "New Game Preset Face_Man 3 -- NewGameプリセット顔_男3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "New Game Preset Face_Man 4 -- NewGameプリセット顔_男4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "New Game Preset Face_Man 5 -- NewGameプリセット顔_男5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "New Game Preset Face_Man 6 -- NewGameプリセット顔_男6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "New Game Preset Face_Man 7 -- NewGameプリセット顔_男7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "New Game Preset Face_Man 8 -- NewGameプリセット顔_男8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "New Game Preset Face_Man 9 -- NewGameプリセット顔_男9"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "NewGame preset face_woman 0 -- NewGameプリセット顔_女0"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "New Game Preset Face_Woman 1 -- NewGameプリセット顔_女1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "New Game Preset Face_Woman 2 -- NewGameプリセット顔_女2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "New Game Preset Face_Woman 3 -- NewGameプリセット顔_女3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "New Game Preset Face_Woman 4 -- NewGameプリセット顔_女4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "New Game Preset Face_Woman 5 -- NewGameプリセット顔_女5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "New Game Preset Face_Woman 6 -- NewGameプリセット顔_女6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "New Game Preset Face_Woman 7 -- NewGameプリセット顔_女7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "New Game Preset Face_Woman 8 -- NewGameプリセット顔_女8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "New Game Preset Face_Woman 9 -- NewGameプリセット顔_女9"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "For base body 0 (unisex) -- ベースボディ用0（男女共用）"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "For base body 1 (unisex) -- ベースボディ用1（男女共用）"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "For base body 2 (unisex) -- ベースボディ用2（男女共用）"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "For base body 3 (unisex) -- ベースボディ用3（男女共用）"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "For base body 4 (unisex) -- ベースボディ用4（男女共用）"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "5 for base body (unisex) -- ベースボディ用5（男女共用）"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "6 for base body (unisex) -- ベースボディ用6（男女共用）"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "7 for base body (unisex) -- ベースボディ用7（男女共用）"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "8 for base body (unisex) -- ベースボディ用8（男女共用）"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "For base body 9 (unisex) -- ベースボディ用9（男女共用）"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Character Makeup Top Menu Male -- キャラメイクトップメニュー男性"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Character Makeup Top Menu Female -- キャラメイクトップメニュー女性"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Temporary storage frame 1 -- 一時保存枠1"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "Temporary storage frame 2 -- 一時保存枠2"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "Temporary storage frame 3 -- 一時保存枠3"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "Temporary storage frame 4 -- 一時保存枠4"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "Temporary storage frame 5 -- 一時保存枠5"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "Temporary storage frame 6 -- 一時保存枠6"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "Temporary storage frame 7 -- 一時保存枠7"
+      ]
+    },
+    {
+      "ID": 8007,
+      "Entries": [
+        "Temporary storage frame 8 -- 一時保存枠8"
+      ]
+    },
+    {
+      "ID": 8008,
+      "Entries": [
+        "Temporary storage frame 9 -- 一時保存枠9"
+      ]
+    },
+    {
+      "ID": 8009,
+      "Entries": [
+        "Temporary storage frame 10 -- 一時保存枠10"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Temporary storage frame 11 -- 一時保存枠11"
+      ]
+    },
+    {
+      "ID": 8011,
+      "Entries": [
+        "Temporary storage frame 12 -- 一時保存枠12"
+      ]
+    },
+    {
+      "ID": 8012,
+      "Entries": [
+        "Temporary storage frame 13 -- 一時保存枠13"
+      ]
+    },
+    {
+      "ID": 8013,
+      "Entries": [
+        "Temporary storage frame 14 -- 一時保存枠14"
+      ]
+    },
+    {
+      "ID": 8014,
+      "Entries": [
+        "Temporary storage frame 15 -- 一時保存枠15"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "Temporary storage frame 16 -- 一時保存枠16"
+      ]
+    },
+    {
+      "ID": 8016,
+      "Entries": [
+        "Temporary storage frame 17 -- 一時保存枠17"
+      ]
+    },
+    {
+      "ID": 8017,
+      "Entries": [
+        "Temporary storage frame 18 -- 一時保存枠18"
+      ]
+    },
+    {
+      "ID": 8018,
+      "Entries": [
+        "Temporary storage frame 19 -- 一時保存枠19"
+      ]
+    },
+    {
+      "ID": 8019,
+      "Entries": [
+        "Temporary storage frame 20 -- 一時保存枠20"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Temporary storage frame 21 -- 一時保存枠21"
+      ]
+    },
+    {
+      "ID": 8021,
+      "Entries": [
+        "Temporary storage frame 22 -- 一時保存枠22"
+      ]
+    },
+    {
+      "ID": 8022,
+      "Entries": [
+        "Temporary storage frame 23 -- 一時保存枠23"
+      ]
+    },
+    {
+      "ID": 8023,
+      "Entries": [
+        "Temporary storage frame 24 -- 一時保存枠24"
+      ]
+    },
+    {
+      "ID": 8024,
+      "Entries": [
+        "Temporary storage frame 25 -- 一時保存枠25"
+      ]
+    },
+    {
+      "ID": 8025,
+      "Entries": [
+        "Temporary storage frame 26 -- 一時保存枠26"
+      ]
+    },
+    {
+      "ID": 8026,
+      "Entries": [
+        "Temporary storage frame 27 -- 一時保存枠27"
+      ]
+    },
+    {
+      "ID": 8027,
+      "Entries": [
+        "Temporary storage frame 28 -- 一時保存枠28"
+      ]
+    },
+    {
+      "ID": 8028,
+      "Entries": [
+        "Temporary storage frame 29 -- 一時保存枠29"
+      ]
+    },
+    {
+      "ID": 8029,
+      "Entries": [
+        "Temporary storage frame 30 -- 一時保存枠30"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "Temporary storage frame 31 -- 一時保存枠31"
+      ]
+    },
+    {
+      "ID": 8031,
+      "Entries": [
+        "Temporary storage frame 32 -- 一時保存枠32"
+      ]
+    },
+    {
+      "ID": 8032,
+      "Entries": [
+        "Temporary storage frame 33 -- 一時保存枠33"
+      ]
+    },
+    {
+      "ID": 8033,
+      "Entries": [
+        "Temporary storage frame 34 -- 一時保存枠34"
+      ]
+    },
+    {
+      "ID": 8034,
+      "Entries": [
+        "Temporary storage frame 35 -- 一時保存枠35"
+      ]
+    },
+    {
+      "ID": 8035,
+      "Entries": [
+        "Temporary storage frame 36 -- 一時保存枠36"
+      ]
+    },
+    {
+      "ID": 8036,
+      "Entries": [
+        "Temporary storage frame 37 -- 一時保存枠37"
+      ]
+    },
+    {
+      "ID": 8037,
+      "Entries": [
+        "Temporary storage frame 38 -- 一時保存枠38"
+      ]
+    },
+    {
+      "ID": 8038,
+      "Entries": [
+        "Temporary storage frame 39 -- 一時保存枠39"
+      ]
+    },
+    {
+      "ID": 8039,
+      "Entries": [
+        "Temporary storage frame 40 -- 一時保存枠40"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "Temporary storage frame 41 -- 一時保存枠41"
+      ]
+    },
+    {
+      "ID": 8041,
+      "Entries": [
+        "Temporary storage frame 42 -- 一時保存枠42"
+      ]
+    },
+    {
+      "ID": 8042,
+      "Entries": [
+        "Temporary storage frame 43 -- 一時保存枠43"
+      ]
+    },
+    {
+      "ID": 8043,
+      "Entries": [
+        "Temporary storage frame 44 -- 一時保存枠44"
+      ]
+    },
+    {
+      "ID": 8044,
+      "Entries": [
+        "Temporary storage frame 45 -- 一時保存枠45"
+      ]
+    },
+    {
+      "ID": 8045,
+      "Entries": [
+        "Temporary storage frame 46 -- 一時保存枠46"
+      ]
+    },
+    {
+      "ID": 8046,
+      "Entries": [
+        "Temporary storage frame 47 -- 一時保存枠47"
+      ]
+    },
+    {
+      "ID": 8047,
+      "Entries": [
+        "Temporary storage frame 48 -- 一時保存枠48"
+      ]
+    },
+    {
+      "ID": 8048,
+      "Entries": [
+        "Temporary storage frame 49 -- 一時保存枠49"
+      ]
+    },
+    {
+      "ID": 8049,
+      "Entries": [
+        "Temporary storage frame 50 -- 一時保存枠50"
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "Temporary storage frame 51 -- 一時保存枠51"
+      ]
+    },
+    {
+      "ID": 8051,
+      "Entries": [
+        "Temporary storage frame 52 -- 一時保存枠52"
+      ]
+    },
+    {
+      "ID": 8052,
+      "Entries": [
+        "Temporary storage frame 53 -- 一時保存枠53"
+      ]
+    },
+    {
+      "ID": 8053,
+      "Entries": [
+        "Temporary storage frame 54 -- 一時保存枠54"
+      ]
+    },
+    {
+      "ID": 8054,
+      "Entries": [
+        "Temporary storage frame 55 -- 一時保存枠55"
+      ]
+    },
+    {
+      "ID": 8055,
+      "Entries": [
+        "Temporary storage frame 56 -- 一時保存枠56"
+      ]
+    },
+    {
+      "ID": 8056,
+      "Entries": [
+        "Temporary storage frame 57 -- 一時保存枠57"
+      ]
+    },
+    {
+      "ID": 8057,
+      "Entries": [
+        "Temporary storage frame 58 -- 一時保存枠58"
+      ]
+    },
+    {
+      "ID": 8058,
+      "Entries": [
+        "Temporary storage frame 59 -- 一時保存枠59"
+      ]
+    },
+    {
+      "ID": 8059,
+      "Entries": [
+        "Temporary storage frame 60 -- 一時保存枠60"
+      ]
+    },
+    {
+      "ID": 8060,
+      "Entries": [
+        "Temporary storage frame 61 -- 一時保存枠61"
+      ]
+    },
+    {
+      "ID": 8061,
+      "Entries": [
+        "Temporary storage frame 62 -- 一時保存枠62"
+      ]
+    },
+    {
+      "ID": 8062,
+      "Entries": [
+        "Temporary storage frame 63 -- 一時保存枠63"
+      ]
+    },
+    {
+      "ID": 8063,
+      "Entries": [
+        "Temporary storage frame 64 -- 一時保存枠64"
+      ]
+    },
+    {
+      "ID": 8064,
+      "Entries": [
+        "Temporary storage frame 65 -- 一時保存枠65"
+      ]
+    },
+    {
+      "ID": 8065,
+      "Entries": [
+        "Temporary storage frame 66 -- 一時保存枠66"
+      ]
+    },
+    {
+      "ID": 8066,
+      "Entries": [
+        "Temporary storage frame 67 -- 一時保存枠67"
+      ]
+    },
+    {
+      "ID": 8067,
+      "Entries": [
+        "Temporary storage frame 68 -- 一時保存枠68"
+      ]
+    },
+    {
+      "ID": 8068,
+      "Entries": [
+        "Temporary storage frame 69 -- 一時保存枠69"
+      ]
+    },
+    {
+      "ID": 8069,
+      "Entries": [
+        "Temporary storage frame 70 -- 一時保存枠70"
+      ]
+    },
+    {
+      "ID": 8070,
+      "Entries": [
+        "Temporary storage frame 71 -- 一時保存枠71"
+      ]
+    },
+    {
+      "ID": 8071,
+      "Entries": [
+        "Temporary storage frame 72 -- 一時保存枠72"
+      ]
+    },
+    {
+      "ID": 8072,
+      "Entries": [
+        "Temporary storage frame 73 -- 一時保存枠73"
+      ]
+    },
+    {
+      "ID": 8073,
+      "Entries": [
+        "Temporary storage frame 74 -- 一時保存枠74"
+      ]
+    },
+    {
+      "ID": 8074,
+      "Entries": [
+        "Temporary storage frame 75 -- 一時保存枠75"
+      ]
+    },
+    {
+      "ID": 8075,
+      "Entries": [
+        "Temporary storage frame 76 -- 一時保存枠76"
+      ]
+    },
+    {
+      "ID": 8076,
+      "Entries": [
+        "Temporary storage frame 77 -- 一時保存枠77"
+      ]
+    },
+    {
+      "ID": 8077,
+      "Entries": [
+        "Temporary storage frame 78 -- 一時保存枠78"
+      ]
+    },
+    {
+      "ID": 8078,
+      "Entries": [
+        "Temporary storage frame 79 -- 一時保存枠79"
+      ]
+    },
+    {
+      "ID": 8079,
+      "Entries": [
+        "Temporary storage frame 80 -- 一時保存枠80"
+      ]
+    },
+    {
+      "ID": 8080,
+      "Entries": [
+        "Temporary storage frame 81 -- 一時保存枠81"
+      ]
+    },
+    {
+      "ID": 8081,
+      "Entries": [
+        "Temporary storage frame 82 -- 一時保存枠82"
+      ]
+    },
+    {
+      "ID": 8082,
+      "Entries": [
+        "Temporary storage frame 83 -- 一時保存枠83"
+      ]
+    },
+    {
+      "ID": 8083,
+      "Entries": [
+        "Temporary storage frame 84 -- 一時保存枠84"
+      ]
+    },
+    {
+      "ID": 8084,
+      "Entries": [
+        "Temporary storage frame 85 -- 一時保存枠85"
+      ]
+    },
+    {
+      "ID": 8085,
+      "Entries": [
+        "Temporary storage frame 86 -- 一時保存枠86"
+      ]
+    },
+    {
+      "ID": 8086,
+      "Entries": [
+        "Temporary storage frame 87 -- 一時保存枠87"
+      ]
+    },
+    {
+      "ID": 8087,
+      "Entries": [
+        "Temporary storage frame 88 -- 一時保存枠88"
+      ]
+    },
+    {
+      "ID": 8088,
+      "Entries": [
+        "Temporary storage frame 89 -- 一時保存枠89"
+      ]
+    },
+    {
+      "ID": 8089,
+      "Entries": [
+        "Temporary storage frame 90 -- 一時保存枠90"
+      ]
+    },
+    {
+      "ID": 8090,
+      "Entries": [
+        "Temporary storage frame 91 -- 一時保存枠91"
+      ]
+    },
+    {
+      "ID": 8091,
+      "Entries": [
+        "Temporary storage frame 92 -- 一時保存枠92"
+      ]
+    },
+    {
+      "ID": 8092,
+      "Entries": [
+        "Temporary storage frame 93 -- 一時保存枠93"
+      ]
+    },
+    {
+      "ID": 8093,
+      "Entries": [
+        "Temporary storage frame 94 -- 一時保存枠94"
+      ]
+    },
+    {
+      "ID": 8094,
+      "Entries": [
+        "Temporary storage frame 95 -- 一時保存枠95"
+      ]
+    },
+    {
+      "ID": 8095,
+      "Entries": [
+        "Temporary storage frame 96 -- 一時保存枠96"
+      ]
+    },
+    {
+      "ID": 8096,
+      "Entries": [
+        "Temporary storage frame 97 -- 一時保存枠97"
+      ]
+    },
+    {
+      "ID": 8097,
+      "Entries": [
+        "Temporary storage frame 98 -- 一時保存枠98"
+      ]
+    },
+    {
+      "ID": 8098,
+      "Entries": [
+        "Temporary storage frame 99 -- 一時保存枠99"
+      ]
+    },
+    {
+      "ID": 8099,
+      "Entries": [
+        "Temporary storage frame 100 -- 一時保存枠100"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Temporary storage frame 101 -- 一時保存枠101"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "Temporary storage frame 102 -- 一時保存枠102"
+      ]
+    },
+    {
+      "ID": 8102,
+      "Entries": [
+        "Temporary storage frame 103 -- 一時保存枠103"
+      ]
+    },
+    {
+      "ID": 8103,
+      "Entries": [
+        "Temporary storage frame 104 -- 一時保存枠104"
+      ]
+    },
+    {
+      "ID": 8104,
+      "Entries": [
+        "Temporary storage frame 105 -- 一時保存枠105"
+      ]
+    },
+    {
+      "ID": 8105,
+      "Entries": [
+        "Temporary storage frame 106 -- 一時保存枠106"
+      ]
+    },
+    {
+      "ID": 8106,
+      "Entries": [
+        "Temporary storage frame 107 -- 一時保存枠107"
+      ]
+    },
+    {
+      "ID": 8107,
+      "Entries": [
+        "Temporary storage frame 108 -- 一時保存枠108"
+      ]
+    },
+    {
+      "ID": 8108,
+      "Entries": [
+        "Temporary storage frame 109 -- 一時保存枠109"
+      ]
+    },
+    {
+      "ID": 8109,
+      "Entries": [
+        "Temporary storage frame 110 -- 一時保存枠110"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "Temporary storage frame 111 -- 一時保存枠111"
+      ]
+    },
+    {
+      "ID": 8111,
+      "Entries": [
+        "Temporary storage frame 112 -- 一時保存枠112"
+      ]
+    },
+    {
+      "ID": 8112,
+      "Entries": [
+        "Temporary storage frame 113 -- 一時保存枠113"
+      ]
+    },
+    {
+      "ID": 8113,
+      "Entries": [
+        "Temporary storage frame 114 -- 一時保存枠114"
+      ]
+    },
+    {
+      "ID": 8114,
+      "Entries": [
+        "Temporary storage frame 115 -- 一時保存枠115"
+      ]
+    },
+    {
+      "ID": 8115,
+      "Entries": [
+        "Temporary storage frame 116 -- 一時保存枠116"
+      ]
+    },
+    {
+      "ID": 8116,
+      "Entries": [
+        "Temporary storage frame 117 -- 一時保存枠117"
+      ]
+    },
+    {
+      "ID": 8117,
+      "Entries": [
+        "Temporary storage frame 118 -- 一時保存枠118"
+      ]
+    },
+    {
+      "ID": 8118,
+      "Entries": [
+        "Temporary storage frame 119 -- 一時保存枠119"
+      ]
+    },
+    {
+      "ID": 8119,
+      "Entries": [
+        "Temporary storage frame 120 -- 一時保存枠120"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "Temporary storage frame 121 -- 一時保存枠121"
+      ]
+    },
+    {
+      "ID": 8121,
+      "Entries": [
+        "Temporary storage frame 122 -- 一時保存枠122"
+      ]
+    },
+    {
+      "ID": 8122,
+      "Entries": [
+        "Temporary storage frame 123 -- 一時保存枠123"
+      ]
+    },
+    {
+      "ID": 8123,
+      "Entries": [
+        "Temporary storage frame 124 -- 一時保存枠124"
+      ]
+    },
+    {
+      "ID": 8124,
+      "Entries": [
+        "Temporary storage frame 125 -- 一時保存枠125"
+      ]
+    },
+    {
+      "ID": 8125,
+      "Entries": [
+        "Temporary storage frame 126 -- 一時保存枠126"
+      ]
+    },
+    {
+      "ID": 8126,
+      "Entries": [
+        "Temporary storage frame 127 -- 一時保存枠127"
+      ]
+    },
+    {
+      "ID": 8127,
+      "Entries": [
+        "Temporary storage frame 128 -- 一時保存枠128"
+      ]
+    },
+    {
+      "ID": 8128,
+      "Entries": [
+        "Temporary storage frame 129 -- 一時保存枠129"
+      ]
+    },
+    {
+      "ID": 8129,
+      "Entries": [
+        "Temporary storage frame 130 -- 一時保存枠130"
+      ]
+    },
+    {
+      "ID": 8130,
+      "Entries": [
+        "Temporary storage frame 131 -- 一時保存枠131"
+      ]
+    },
+    {
+      "ID": 8131,
+      "Entries": [
+        "Temporary storage frame 132 -- 一時保存枠132"
+      ]
+    },
+    {
+      "ID": 8132,
+      "Entries": [
+        "Temporary storage frame 133 -- 一時保存枠133"
+      ]
+    },
+    {
+      "ID": 8133,
+      "Entries": [
+        "Temporary storage frame 134 -- 一時保存枠134"
+      ]
+    },
+    {
+      "ID": 8134,
+      "Entries": [
+        "Temporary storage frame 135 -- 一時保存枠135"
+      ]
+    },
+    {
+      "ID": 8135,
+      "Entries": [
+        "Temporary storage frame 136 -- 一時保存枠136"
+      ]
+    },
+    {
+      "ID": 8136,
+      "Entries": [
+        "Temporary storage frame 137 -- 一時保存枠137"
+      ]
+    },
+    {
+      "ID": 8137,
+      "Entries": [
+        "Temporary storage frame 138 -- 一時保存枠138"
+      ]
+    },
+    {
+      "ID": 8138,
+      "Entries": [
+        "Temporary storage frame 139 -- 一時保存枠139"
+      ]
+    },
+    {
+      "ID": 8139,
+      "Entries": [
+        "Temporary storage frame 140 -- 一時保存枠140"
+      ]
+    },
+    {
+      "ID": 8140,
+      "Entries": [
+        "Temporary storage frame 141 -- 一時保存枠141"
+      ]
+    },
+    {
+      "ID": 8141,
+      "Entries": [
+        "Temporary storage frame 142 -- 一時保存枠142"
+      ]
+    },
+    {
+      "ID": 8142,
+      "Entries": [
+        "Temporary storage frame 143 -- 一時保存枠143"
+      ]
+    },
+    {
+      "ID": 8143,
+      "Entries": [
+        "Temporary storage frame 144 -- 一時保存枠144"
+      ]
+    },
+    {
+      "ID": 8144,
+      "Entries": [
+        "Temporary storage frame 145 -- 一時保存枠145"
+      ]
+    },
+    {
+      "ID": 8145,
+      "Entries": [
+        "Temporary storage frame 146 -- 一時保存枠146"
+      ]
+    },
+    {
+      "ID": 8146,
+      "Entries": [
+        "Temporary storage frame 147 -- 一時保存枠147"
+      ]
+    },
+    {
+      "ID": 8147,
+      "Entries": [
+        "Temporary storage frame 148 -- 一時保存枠148"
+      ]
+    },
+    {
+      "ID": 8148,
+      "Entries": [
+        "Temporary storage frame 149 -- 一時保存枠149"
+      ]
+    },
+    {
+      "ID": 8149,
+      "Entries": [
+        "Temporary storage frame 150 -- 一時保存枠150"
+      ]
+    },
+    {
+      "ID": 8150,
+      "Entries": [
+        "Temporary storage frame 151 -- 一時保存枠151"
+      ]
+    },
+    {
+      "ID": 8151,
+      "Entries": [
+        "Temporary storage frame 152 -- 一時保存枠152"
+      ]
+    },
+    {
+      "ID": 8152,
+      "Entries": [
+        "Temporary storage frame 153 -- 一時保存枠153"
+      ]
+    },
+    {
+      "ID": 8153,
+      "Entries": [
+        "Temporary storage frame 154 -- 一時保存枠154"
+      ]
+    },
+    {
+      "ID": 8154,
+      "Entries": [
+        "Temporary storage frame 155 -- 一時保存枠155"
+      ]
+    },
+    {
+      "ID": 8155,
+      "Entries": [
+        "Temporary storage frame 156 -- 一時保存枠156"
+      ]
+    },
+    {
+      "ID": 8156,
+      "Entries": [
+        "Temporary storage frame 157 -- 一時保存枠157"
+      ]
+    },
+    {
+      "ID": 8157,
+      "Entries": [
+        "Temporary storage frame 158 -- 一時保存枠158"
+      ]
+    },
+    {
+      "ID": 8158,
+      "Entries": [
+        "Temporary storage frame 159 -- 一時保存枠159"
+      ]
+    },
+    {
+      "ID": 8159,
+      "Entries": [
+        "Temporary storage frame 160 -- 一時保存枠160"
+      ]
+    },
+    {
+      "ID": 8160,
+      "Entries": [
+        "Temporary storage frame 161 -- 一時保存枠161"
+      ]
+    },
+    {
+      "ID": 8161,
+      "Entries": [
+        "Temporary storage frame 162 -- 一時保存枠162"
+      ]
+    },
+    {
+      "ID": 8162,
+      "Entries": [
+        "Temporary storage frame 163 -- 一時保存枠163"
+      ]
+    },
+    {
+      "ID": 8163,
+      "Entries": [
+        "Temporary storage frame 164 -- 一時保存枠164"
+      ]
+    },
+    {
+      "ID": 8164,
+      "Entries": [
+        "Temporary storage frame 165 -- 一時保存枠165"
+      ]
+    },
+    {
+      "ID": 8165,
+      "Entries": [
+        "Temporary storage frame 166 -- 一時保存枠166"
+      ]
+    },
+    {
+      "ID": 8166,
+      "Entries": [
+        "Temporary storage frame 167 -- 一時保存枠167"
+      ]
+    },
+    {
+      "ID": 8167,
+      "Entries": [
+        "Temporary storage frame 168 -- 一時保存枠168"
+      ]
+    },
+    {
+      "ID": 8168,
+      "Entries": [
+        "Temporary storage frame 169 -- 一時保存枠169"
+      ]
+    },
+    {
+      "ID": 8169,
+      "Entries": [
+        "Temporary storage frame 170 -- 一時保存枠170"
+      ]
+    },
+    {
+      "ID": 8170,
+      "Entries": [
+        "Temporary storage frame 171 -- 一時保存枠171"
+      ]
+    },
+    {
+      "ID": 8171,
+      "Entries": [
+        "Temporary storage frame 172 -- 一時保存枠172"
+      ]
+    },
+    {
+      "ID": 8172,
+      "Entries": [
+        "Temporary storage frame 173 -- 一時保存枠173"
+      ]
+    },
+    {
+      "ID": 8173,
+      "Entries": [
+        "Temporary storage frame 174 -- 一時保存枠174"
+      ]
+    },
+    {
+      "ID": 8174,
+      "Entries": [
+        "Temporary storage frame 175 -- 一時保存枠175"
+      ]
+    },
+    {
+      "ID": 8175,
+      "Entries": [
+        "Temporary storage frame 176 -- 一時保存枠176"
+      ]
+    },
+    {
+      "ID": 8176,
+      "Entries": [
+        "Temporary storage frame 177 -- 一時保存枠177"
+      ]
+    },
+    {
+      "ID": 8177,
+      "Entries": [
+        "Temporary storage frame 178 -- 一時保存枠178"
+      ]
+    },
+    {
+      "ID": 8178,
+      "Entries": [
+        "Temporary storage frame 179 -- 一時保存枠179"
+      ]
+    },
+    {
+      "ID": 8179,
+      "Entries": [
+        "Temporary storage frame 180 -- 一時保存枠180"
+      ]
+    },
+    {
+      "ID": 8180,
+      "Entries": [
+        "Temporary storage frame 181 -- 一時保存枠181"
+      ]
+    },
+    {
+      "ID": 8181,
+      "Entries": [
+        "Temporary storage frame 182 -- 一時保存枠182"
+      ]
+    },
+    {
+      "ID": 8182,
+      "Entries": [
+        "Temporary storage frame 183 -- 一時保存枠183"
+      ]
+    },
+    {
+      "ID": 8183,
+      "Entries": [
+        "Temporary storage frame 184 -- 一時保存枠184"
+      ]
+    },
+    {
+      "ID": 8184,
+      "Entries": [
+        "Temporary storage frame 185 -- 一時保存枠185"
+      ]
+    },
+    {
+      "ID": 8185,
+      "Entries": [
+        "Temporary storage frame 186 -- 一時保存枠186"
+      ]
+    },
+    {
+      "ID": 8186,
+      "Entries": [
+        "Temporary storage frame 187 -- 一時保存枠187"
+      ]
+    },
+    {
+      "ID": 8187,
+      "Entries": [
+        "Temporary storage frame 188 -- 一時保存枠188"
+      ]
+    },
+    {
+      "ID": 8188,
+      "Entries": [
+        "Temporary storage frame 189 -- 一時保存枠189"
+      ]
+    },
+    {
+      "ID": 8189,
+      "Entries": [
+        "Temporary storage frame 190 -- 一時保存枠190"
+      ]
+    },
+    {
+      "ID": 8190,
+      "Entries": [
+        "Temporary storage frame 191 -- 一時保存枠191"
+      ]
+    },
+    {
+      "ID": 8191,
+      "Entries": [
+        "Temporary storage frame 192 -- 一時保存枠192"
+      ]
+    },
+    {
+      "ID": 8192,
+      "Entries": [
+        "Temporary storage frame 193 -- 一時保存枠193"
+      ]
+    },
+    {
+      "ID": 8193,
+      "Entries": [
+        "Temporary storage frame 194 -- 一時保存枠194"
+      ]
+    },
+    {
+      "ID": 8194,
+      "Entries": [
+        "Temporary storage frame 195 -- 一時保存枠195"
+      ]
+    },
+    {
+      "ID": 8195,
+      "Entries": [
+        "Temporary storage frame 196 -- 一時保存枠196"
+      ]
+    },
+    {
+      "ID": 8196,
+      "Entries": [
+        "Temporary storage frame 197 -- 一時保存枠197"
+      ]
+    },
+    {
+      "ID": 8197,
+      "Entries": [
+        "Temporary storage frame 198 -- 一時保存枠198"
+      ]
+    },
+    {
+      "ID": 8198,
+      "Entries": [
+        "Temporary storage frame 199 -- 一時保存枠199"
+      ]
+    },
+    {
+      "ID": 8199,
+      "Entries": [
+        "Temporary storage frame 200 -- 一時保存枠200"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Temporary storage frame 201 -- 一時保存枠201"
+      ]
+    },
+    {
+      "ID": 8201,
+      "Entries": [
+        "Temporary storage frame 202 -- 一時保存枠202"
+      ]
+    },
+    {
+      "ID": 8202,
+      "Entries": [
+        "Temporary storage frame 203 -- 一時保存枠203"
+      ]
+    },
+    {
+      "ID": 8203,
+      "Entries": [
+        "Temporary storage frame 204 -- 一時保存枠204"
+      ]
+    },
+    {
+      "ID": 8204,
+      "Entries": [
+        "Temporary storage frame 205 -- 一時保存枠205"
+      ]
+    },
+    {
+      "ID": 8205,
+      "Entries": [
+        "Temporary storage frame 206 -- 一時保存枠206"
+      ]
+    },
+    {
+      "ID": 8206,
+      "Entries": [
+        "Temporary storage frame 207 -- 一時保存枠207"
+      ]
+    },
+    {
+      "ID": 8207,
+      "Entries": [
+        "Temporary storage frame 208 -- 一時保存枠208"
+      ]
+    },
+    {
+      "ID": 8208,
+      "Entries": [
+        "Temporary storage frame 209 -- 一時保存枠209"
+      ]
+    },
+    {
+      "ID": 8209,
+      "Entries": [
+        "Temporary storage frame 210 -- 一時保存枠210"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "Temporary storage frame 211 -- 一時保存枠211"
+      ]
+    },
+    {
+      "ID": 8211,
+      "Entries": [
+        "Temporary storage frame 212 -- 一時保存枠212"
+      ]
+    },
+    {
+      "ID": 8212,
+      "Entries": [
+        "Temporary storage frame 213 -- 一時保存枠213"
+      ]
+    },
+    {
+      "ID": 8213,
+      "Entries": [
+        "Temporary storage frame 214 -- 一時保存枠214"
+      ]
+    },
+    {
+      "ID": 8214,
+      "Entries": [
+        "Temporary storage frame 215 -- 一時保存枠215"
+      ]
+    },
+    {
+      "ID": 8215,
+      "Entries": [
+        "Temporary storage frame 216 -- 一時保存枠216"
+      ]
+    },
+    {
+      "ID": 8216,
+      "Entries": [
+        "Temporary storage frame 217 -- 一時保存枠217"
+      ]
+    },
+    {
+      "ID": 8217,
+      "Entries": [
+        "Temporary storage frame 218 -- 一時保存枠218"
+      ]
+    },
+    {
+      "ID": 8218,
+      "Entries": [
+        "Temporary storage frame 219 -- 一時保存枠219"
+      ]
+    },
+    {
+      "ID": 8219,
+      "Entries": [
+        "Temporary storage frame 220 -- 一時保存枠220"
+      ]
+    },
+    {
+      "ID": 8220,
+      "Entries": [
+        "Temporary storage frame 221 -- 一時保存枠221"
+      ]
+    },
+    {
+      "ID": 8221,
+      "Entries": [
+        "Temporary storage frame 222 -- 一時保存枠222"
+      ]
+    },
+    {
+      "ID": 8222,
+      "Entries": [
+        "Temporary storage frame 223 -- 一時保存枠223"
+      ]
+    },
+    {
+      "ID": 8223,
+      "Entries": [
+        "Temporary storage frame 224 -- 一時保存枠224"
+      ]
+    },
+    {
+      "ID": 8224,
+      "Entries": [
+        "Temporary storage frame 225 -- 一時保存枠225"
+      ]
+    },
+    {
+      "ID": 8225,
+      "Entries": [
+        "Temporary storage frame 226 -- 一時保存枠226"
+      ]
+    },
+    {
+      "ID": 8226,
+      "Entries": [
+        "Temporary storage frame 227 -- 一時保存枠227"
+      ]
+    },
+    {
+      "ID": 8227,
+      "Entries": [
+        "Temporary storage frame 228 -- 一時保存枠228"
+      ]
+    },
+    {
+      "ID": 8228,
+      "Entries": [
+        "Temporary storage frame 229 -- 一時保存枠229"
+      ]
+    },
+    {
+      "ID": 8229,
+      "Entries": [
+        "Temporary storage frame 230 -- 一時保存枠230"
+      ]
+    },
+    {
+      "ID": 8230,
+      "Entries": [
+        "Temporary storage frame 231 -- 一時保存枠231"
+      ]
+    },
+    {
+      "ID": 8231,
+      "Entries": [
+        "Temporary storage frame 232 -- 一時保存枠232"
+      ]
+    },
+    {
+      "ID": 8232,
+      "Entries": [
+        "Temporary storage frame 233 -- 一時保存枠233"
+      ]
+    },
+    {
+      "ID": 8233,
+      "Entries": [
+        "Temporary storage frame 234 -- 一時保存枠234"
+      ]
+    },
+    {
+      "ID": 8234,
+      "Entries": [
+        "Temporary storage frame 235 -- 一時保存枠235"
+      ]
+    },
+    {
+      "ID": 8235,
+      "Entries": [
+        "Temporary storage frame 236 -- 一時保存枠236"
+      ]
+    },
+    {
+      "ID": 8236,
+      "Entries": [
+        "Temporary storage frame 237 -- 一時保存枠237"
+      ]
+    },
+    {
+      "ID": 8237,
+      "Entries": [
+        "Temporary storage frame 238 -- 一時保存枠238"
+      ]
+    },
+    {
+      "ID": 8238,
+      "Entries": [
+        "Temporary storage frame 239 -- 一時保存枠239"
+      ]
+    },
+    {
+      "ID": 8239,
+      "Entries": [
+        "Temporary storage frame 240 -- 一時保存枠240"
+      ]
+    },
+    {
+      "ID": 8240,
+      "Entries": [
+        "Temporary storage frame 241 -- 一時保存枠241"
+      ]
+    },
+    {
+      "ID": 8241,
+      "Entries": [
+        "Temporary storage frame 242 -- 一時保存枠242"
+      ]
+    },
+    {
+      "ID": 8242,
+      "Entries": [
+        "Temporary storage frame 243 -- 一時保存枠243"
+      ]
+    },
+    {
+      "ID": 8243,
+      "Entries": [
+        "Temporary storage frame 244 -- 一時保存枠244"
+      ]
+    },
+    {
+      "ID": 8244,
+      "Entries": [
+        "Temporary storage frame 245 -- 一時保存枠245"
+      ]
+    },
+    {
+      "ID": 8245,
+      "Entries": [
+        "Temporary storage frame 246 -- 一時保存枠246"
+      ]
+    },
+    {
+      "ID": 8246,
+      "Entries": [
+        "Temporary storage frame 247 -- 一時保存枠247"
+      ]
+    },
+    {
+      "ID": 8247,
+      "Entries": [
+        "Temporary storage frame 248 -- 一時保存枠248"
+      ]
+    },
+    {
+      "ID": 8248,
+      "Entries": [
+        "Temporary storage frame 249 -- 一時保存枠249"
+      ]
+    },
+    {
+      "ID": 8249,
+      "Entries": [
+        "Temporary storage frame 250 -- 一時保存枠250"
+      ]
+    },
+    {
+      "ID": 8250,
+      "Entries": [
+        "Temporary storage frame 251 -- 一時保存枠251"
+      ]
+    },
+    {
+      "ID": 8251,
+      "Entries": [
+        "Temporary storage frame 252 -- 一時保存枠252"
+      ]
+    },
+    {
+      "ID": 8252,
+      "Entries": [
+        "Temporary storage frame 253 -- 一時保存枠253"
+      ]
+    },
+    {
+      "ID": 8253,
+      "Entries": [
+        "Temporary storage frame 254 -- 一時保存枠254"
+      ]
+    },
+    {
+      "ID": 8254,
+      "Entries": [
+        "Temporary storage frame 255 -- 一時保存枠255"
+      ]
+    },
+    {
+      "ID": 8255,
+      "Entries": [
+        "Temporary storage frame 256 -- 一時保存枠256"
+      ]
+    },
+    {
+      "ID": 8256,
+      "Entries": [
+        "Temporary storage frame 257 -- 一時保存枠257"
+      ]
+    },
+    {
+      "ID": 8257,
+      "Entries": [
+        "Temporary storage frame 258 -- 一時保存枠258"
+      ]
+    },
+    {
+      "ID": 8258,
+      "Entries": [
+        "Temporary storage frame 259 -- 一時保存枠259"
+      ]
+    },
+    {
+      "ID": 8259,
+      "Entries": [
+        "Temporary storage frame 260 -- 一時保存枠260"
+      ]
+    },
+    {
+      "ID": 8260,
+      "Entries": [
+        "Temporary storage frame 261 -- 一時保存枠261"
+      ]
+    },
+    {
+      "ID": 8261,
+      "Entries": [
+        "Temporary storage frame 262 -- 一時保存枠262"
+      ]
+    },
+    {
+      "ID": 8262,
+      "Entries": [
+        "Temporary storage frame 263 -- 一時保存枠263"
+      ]
+    },
+    {
+      "ID": 8263,
+      "Entries": [
+        "Temporary storage frame 264 -- 一時保存枠264"
+      ]
+    },
+    {
+      "ID": 8264,
+      "Entries": [
+        "Temporary storage frame 265 -- 一時保存枠265"
+      ]
+    },
+    {
+      "ID": 8265,
+      "Entries": [
+        "Temporary storage frame 266 -- 一時保存枠266"
+      ]
+    },
+    {
+      "ID": 8266,
+      "Entries": [
+        "Temporary storage frame 267 -- 一時保存枠267"
+      ]
+    },
+    {
+      "ID": 8267,
+      "Entries": [
+        "Temporary storage frame 268 -- 一時保存枠268"
+      ]
+    },
+    {
+      "ID": 8268,
+      "Entries": [
+        "Temporary storage frame 269 -- 一時保存枠269"
+      ]
+    },
+    {
+      "ID": 8269,
+      "Entries": [
+        "Temporary storage frame 270 -- 一時保存枠270"
+      ]
+    },
+    {
+      "ID": 8270,
+      "Entries": [
+        "Temporary storage frame 271 -- 一時保存枠271"
+      ]
+    },
+    {
+      "ID": 8271,
+      "Entries": [
+        "Temporary storage frame 272 -- 一時保存枠272"
+      ]
+    },
+    {
+      "ID": 8272,
+      "Entries": [
+        "Temporary storage frame 273 -- 一時保存枠273"
+      ]
+    },
+    {
+      "ID": 8273,
+      "Entries": [
+        "Temporary storage frame 274 -- 一時保存枠274"
+      ]
+    },
+    {
+      "ID": 8274,
+      "Entries": [
+        "Temporary storage frame 275 -- 一時保存枠275"
+      ]
+    },
+    {
+      "ID": 8275,
+      "Entries": [
+        "Temporary storage frame 276 -- 一時保存枠276"
+      ]
+    },
+    {
+      "ID": 8276,
+      "Entries": [
+        "Temporary storage frame 277 -- 一時保存枠277"
+      ]
+    },
+    {
+      "ID": 8277,
+      "Entries": [
+        "Temporary storage frame 278 -- 一時保存枠278"
+      ]
+    },
+    {
+      "ID": 8278,
+      "Entries": [
+        "Temporary storage frame 279 -- 一時保存枠279"
+      ]
+    },
+    {
+      "ID": 8279,
+      "Entries": [
+        "Temporary storage frame 280 -- 一時保存枠280"
+      ]
+    },
+    {
+      "ID": 8280,
+      "Entries": [
+        "Temporary storage frame 281 -- 一時保存枠281"
+      ]
+    },
+    {
+      "ID": 8281,
+      "Entries": [
+        "Temporary storage frame 282 -- 一時保存枠282"
+      ]
+    },
+    {
+      "ID": 8282,
+      "Entries": [
+        "Temporary storage frame 283 -- 一時保存枠283"
+      ]
+    },
+    {
+      "ID": 8283,
+      "Entries": [
+        "Temporary storage frame 284 -- 一時保存枠284"
+      ]
+    },
+    {
+      "ID": 8284,
+      "Entries": [
+        "Temporary storage frame 285 -- 一時保存枠285"
+      ]
+    },
+    {
+      "ID": 8285,
+      "Entries": [
+        "Temporary storage frame 286 -- 一時保存枠286"
+      ]
+    },
+    {
+      "ID": 8286,
+      "Entries": [
+        "Temporary storage frame 287 -- 一時保存枠287"
+      ]
+    },
+    {
+      "ID": 8287,
+      "Entries": [
+        "Temporary storage frame 288 -- 一時保存枠288"
+      ]
+    },
+    {
+      "ID": 8288,
+      "Entries": [
+        "Temporary storage frame 289 -- 一時保存枠289"
+      ]
+    },
+    {
+      "ID": 8289,
+      "Entries": [
+        "Temporary storage frame 290 -- 一時保存枠290"
+      ]
+    },
+    {
+      "ID": 8290,
+      "Entries": [
+        "Temporary storage frame 291 -- 一時保存枠291"
+      ]
+    },
+    {
+      "ID": 8291,
+      "Entries": [
+        "Temporary storage frame 292 -- 一時保存枠292"
+      ]
+    },
+    {
+      "ID": 8292,
+      "Entries": [
+        "Temporary storage frame 293 -- 一時保存枠293"
+      ]
+    },
+    {
+      "ID": 8293,
+      "Entries": [
+        "Temporary storage frame 294 -- 一時保存枠294"
+      ]
+    },
+    {
+      "ID": 8294,
+      "Entries": [
+        "Temporary storage frame 295 -- 一時保存枠295"
+      ]
+    },
+    {
+      "ID": 8295,
+      "Entries": [
+        "Temporary storage frame 296 -- 一時保存枠296"
+      ]
+    },
+    {
+      "ID": 8296,
+      "Entries": [
+        "Temporary storage frame 297 -- 一時保存枠297"
+      ]
+    },
+    {
+      "ID": 8297,
+      "Entries": [
+        "Temporary storage frame 298 -- 一時保存枠298"
+      ]
+    },
+    {
+      "ID": 8298,
+      "Entries": [
+        "Temporary storage frame 299 -- 一時保存枠299"
+      ]
+    },
+    {
+      "ID": 8299,
+      "Entries": [
+        "Temporary storage frame 300 -- 一時保存枠300"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Temporary storage frame 1 -- 一時保存枠1"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "Temporary storage frame 2 -- 一時保存枠2"
+      ]
+    },
+    {
+      "ID": 8502,
+      "Entries": [
+        "Temporary storage frame 3 -- 一時保存枠3"
+      ]
+    },
+    {
+      "ID": 8503,
+      "Entries": [
+        "Temporary storage frame 4 -- 一時保存枠4"
+      ]
+    },
+    {
+      "ID": 8504,
+      "Entries": [
+        "Temporary storage frame 5 -- 一時保存枠5"
+      ]
+    },
+    {
+      "ID": 8505,
+      "Entries": [
+        "Temporary storage frame 6 -- 一時保存枠6"
+      ]
+    },
+    {
+      "ID": 8506,
+      "Entries": [
+        "Temporary storage frame 7 -- 一時保存枠7"
+      ]
+    },
+    {
+      "ID": 8507,
+      "Entries": [
+        "Temporary storage frame 8 -- 一時保存枠8"
+      ]
+    },
+    {
+      "ID": 8508,
+      "Entries": [
+        "Temporary storage frame 9 -- 一時保存枠9"
+      ]
+    },
+    {
+      "ID": 8509,
+      "Entries": [
+        "Temporary storage frame 10 -- 一時保存枠10"
+      ]
+    },
+    {
+      "ID": 8510,
+      "Entries": [
+        "Temporary storage frame 11 -- 一時保存枠11"
+      ]
+    },
+    {
+      "ID": 8511,
+      "Entries": [
+        "Temporary storage frame 12 -- 一時保存枠12"
+      ]
+    },
+    {
+      "ID": 8512,
+      "Entries": [
+        "Temporary storage frame 13 -- 一時保存枠13"
+      ]
+    },
+    {
+      "ID": 8513,
+      "Entries": [
+        "Temporary storage frame 14 -- 一時保存枠14"
+      ]
+    },
+    {
+      "ID": 8514,
+      "Entries": [
+        "Temporary storage frame 15 -- 一時保存枠15"
+      ]
+    },
+    {
+      "ID": 8515,
+      "Entries": [
+        "Temporary storage frame 16 -- 一時保存枠16"
+      ]
+    },
+    {
+      "ID": 8516,
+      "Entries": [
+        "Temporary storage frame 17 -- 一時保存枠17"
+      ]
+    },
+    {
+      "ID": 8517,
+      "Entries": [
+        "Temporary storage frame 18 -- 一時保存枠18"
+      ]
+    },
+    {
+      "ID": 8518,
+      "Entries": [
+        "Temporary storage frame 19 -- 一時保存枠19"
+      ]
+    },
+    {
+      "ID": 8519,
+      "Entries": [
+        "Temporary storage frame 20 -- 一時保存枠20"
+      ]
+    },
+    {
+      "ID": 8520,
+      "Entries": [
+        "Temporary storage frame 21 -- 一時保存枠21"
+      ]
+    },
+    {
+      "ID": 8521,
+      "Entries": [
+        "Temporary storage frame 22 -- 一時保存枠22"
+      ]
+    },
+    {
+      "ID": 8522,
+      "Entries": [
+        "Temporary storage frame 23 -- 一時保存枠23"
+      ]
+    },
+    {
+      "ID": 8523,
+      "Entries": [
+        "Temporary storage frame 24 -- 一時保存枠24"
+      ]
+    },
+    {
+      "ID": 8524,
+      "Entries": [
+        "Temporary storage frame 25 -- 一時保存枠25"
+      ]
+    },
+    {
+      "ID": 8525,
+      "Entries": [
+        "Temporary storage frame 26 -- 一時保存枠26"
+      ]
+    },
+    {
+      "ID": 8526,
+      "Entries": [
+        "Temporary storage frame 27 -- 一時保存枠27"
+      ]
+    },
+    {
+      "ID": 8527,
+      "Entries": [
+        "Temporary storage frame 28 -- 一時保存枠28"
+      ]
+    },
+    {
+      "ID": 8528,
+      "Entries": [
+        "Temporary storage frame 29 -- 一時保存枠29"
+      ]
+    },
+    {
+      "ID": 8529,
+      "Entries": [
+        "Temporary storage frame 30 -- 一時保存枠30"
+      ]
+    },
+    {
+      "ID": 8530,
+      "Entries": [
+        "Temporary storage frame 31 -- 一時保存枠31"
+      ]
+    },
+    {
+      "ID": 8531,
+      "Entries": [
+        "Temporary storage frame 32 -- 一時保存枠32"
+      ]
+    },
+    {
+      "ID": 8532,
+      "Entries": [
+        "Temporary storage frame 33 -- 一時保存枠33"
+      ]
+    },
+    {
+      "ID": 8533,
+      "Entries": [
+        "Temporary storage frame 34 -- 一時保存枠34"
+      ]
+    },
+    {
+      "ID": 8534,
+      "Entries": [
+        "Temporary storage frame 35 -- 一時保存枠35"
+      ]
+    },
+    {
+      "ID": 8535,
+      "Entries": [
+        "Temporary storage frame 36 -- 一時保存枠36"
+      ]
+    },
+    {
+      "ID": 8536,
+      "Entries": [
+        "Temporary storage frame 37 -- 一時保存枠37"
+      ]
+    },
+    {
+      "ID": 8537,
+      "Entries": [
+        "Temporary storage frame 38 -- 一時保存枠38"
+      ]
+    },
+    {
+      "ID": 8538,
+      "Entries": [
+        "Temporary storage frame 39 -- 一時保存枠39"
+      ]
+    },
+    {
+      "ID": 8539,
+      "Entries": [
+        "Temporary storage frame 40 -- 一時保存枠40"
+      ]
+    },
+    {
+      "ID": 8540,
+      "Entries": [
+        "Temporary storage frame 41 -- 一時保存枠41"
+      ]
+    },
+    {
+      "ID": 8541,
+      "Entries": [
+        "Temporary storage frame 42 -- 一時保存枠42"
+      ]
+    },
+    {
+      "ID": 8542,
+      "Entries": [
+        "Temporary storage frame 43 -- 一時保存枠43"
+      ]
+    },
+    {
+      "ID": 8543,
+      "Entries": [
+        "Temporary storage frame 44 -- 一時保存枠44"
+      ]
+    },
+    {
+      "ID": 8544,
+      "Entries": [
+        "Temporary storage frame 45 -- 一時保存枠45"
+      ]
+    },
+    {
+      "ID": 8545,
+      "Entries": [
+        "Temporary storage frame 46 -- 一時保存枠46"
+      ]
+    },
+    {
+      "ID": 8546,
+      "Entries": [
+        "Temporary storage frame 47 -- 一時保存枠47"
+      ]
+    },
+    {
+      "ID": 8547,
+      "Entries": [
+        "Temporary storage frame 48 -- 一時保存枠48"
+      ]
+    },
+    {
+      "ID": 8548,
+      "Entries": [
+        "Temporary storage frame 49 -- 一時保存枠49"
+      ]
+    },
+    {
+      "ID": 8549,
+      "Entries": [
+        "Temporary storage frame 50 -- 一時保存枠50"
+      ]
+    },
+    {
+      "ID": 8550,
+      "Entries": [
+        "Temporary storage frame 51 -- 一時保存枠51"
+      ]
+    },
+    {
+      "ID": 8551,
+      "Entries": [
+        "Temporary storage frame 52 -- 一時保存枠52"
+      ]
+    },
+    {
+      "ID": 8552,
+      "Entries": [
+        "Temporary storage frame 53 -- 一時保存枠53"
+      ]
+    },
+    {
+      "ID": 8553,
+      "Entries": [
+        "Temporary storage frame 54 -- 一時保存枠54"
+      ]
+    },
+    {
+      "ID": 8554,
+      "Entries": [
+        "Temporary storage frame 55 -- 一時保存枠55"
+      ]
+    },
+    {
+      "ID": 8555,
+      "Entries": [
+        "Temporary storage frame 56 -- 一時保存枠56"
+      ]
+    },
+    {
+      "ID": 8556,
+      "Entries": [
+        "Temporary storage frame 57 -- 一時保存枠57"
+      ]
+    },
+    {
+      "ID": 8557,
+      "Entries": [
+        "Temporary storage frame 58 -- 一時保存枠58"
+      ]
+    },
+    {
+      "ID": 8558,
+      "Entries": [
+        "Temporary storage frame 59 -- 一時保存枠59"
+      ]
+    },
+    {
+      "ID": 8559,
+      "Entries": [
+        "Temporary storage frame 60 -- 一時保存枠60"
+      ]
+    },
+    {
+      "ID": 8560,
+      "Entries": [
+        "Temporary storage frame 61 -- 一時保存枠61"
+      ]
+    },
+    {
+      "ID": 8561,
+      "Entries": [
+        "Temporary storage frame 62 -- 一時保存枠62"
+      ]
+    },
+    {
+      "ID": 8562,
+      "Entries": [
+        "Temporary storage frame 63 -- 一時保存枠63"
+      ]
+    },
+    {
+      "ID": 8563,
+      "Entries": [
+        "Temporary storage frame 64 -- 一時保存枠64"
+      ]
+    },
+    {
+      "ID": 8564,
+      "Entries": [
+        "Temporary storage frame 65 -- 一時保存枠65"
+      ]
+    },
+    {
+      "ID": 8565,
+      "Entries": [
+        "Temporary storage frame 66 -- 一時保存枠66"
+      ]
+    },
+    {
+      "ID": 8566,
+      "Entries": [
+        "Temporary storage frame 67 -- 一時保存枠67"
+      ]
+    },
+    {
+      "ID": 8567,
+      "Entries": [
+        "Temporary storage frame 68 -- 一時保存枠68"
+      ]
+    },
+    {
+      "ID": 8568,
+      "Entries": [
+        "Temporary storage frame 69 -- 一時保存枠69"
+      ]
+    },
+    {
+      "ID": 8569,
+      "Entries": [
+        "Temporary storage frame 70 -- 一時保存枠70"
+      ]
+    },
+    {
+      "ID": 8570,
+      "Entries": [
+        "Temporary storage frame 71 -- 一時保存枠71"
+      ]
+    },
+    {
+      "ID": 8571,
+      "Entries": [
+        "Temporary storage frame 72 -- 一時保存枠72"
+      ]
+    },
+    {
+      "ID": 8572,
+      "Entries": [
+        "Temporary storage frame 73 -- 一時保存枠73"
+      ]
+    },
+    {
+      "ID": 8573,
+      "Entries": [
+        "Temporary storage frame 74 -- 一時保存枠74"
+      ]
+    },
+    {
+      "ID": 8574,
+      "Entries": [
+        "Temporary storage frame 75 -- 一時保存枠75"
+      ]
+    },
+    {
+      "ID": 8575,
+      "Entries": [
+        "Temporary storage frame 76 -- 一時保存枠76"
+      ]
+    },
+    {
+      "ID": 8576,
+      "Entries": [
+        "Temporary storage frame 77 -- 一時保存枠77"
+      ]
+    },
+    {
+      "ID": 8577,
+      "Entries": [
+        "Temporary storage frame 78 -- 一時保存枠78"
+      ]
+    },
+    {
+      "ID": 8578,
+      "Entries": [
+        "Temporary storage frame 79 -- 一時保存枠79"
+      ]
+    },
+    {
+      "ID": 8579,
+      "Entries": [
+        "Temporary storage frame 80 -- 一時保存枠80"
+      ]
+    },
+    {
+      "ID": 8580,
+      "Entries": [
+        "Temporary storage frame 81 -- 一時保存枠81"
+      ]
+    },
+    {
+      "ID": 8581,
+      "Entries": [
+        "Temporary storage frame 82 -- 一時保存枠82"
+      ]
+    },
+    {
+      "ID": 8582,
+      "Entries": [
+        "Temporary storage frame 83 -- 一時保存枠83"
+      ]
+    },
+    {
+      "ID": 8583,
+      "Entries": [
+        "Temporary storage frame 84 -- 一時保存枠84"
+      ]
+    },
+    {
+      "ID": 8584,
+      "Entries": [
+        "Temporary storage frame 85 -- 一時保存枠85"
+      ]
+    },
+    {
+      "ID": 8585,
+      "Entries": [
+        "Temporary storage frame 86 -- 一時保存枠86"
+      ]
+    },
+    {
+      "ID": 8586,
+      "Entries": [
+        "Temporary storage frame 87 -- 一時保存枠87"
+      ]
+    },
+    {
+      "ID": 8587,
+      "Entries": [
+        "Temporary storage frame 88 -- 一時保存枠88"
+      ]
+    },
+    {
+      "ID": 8588,
+      "Entries": [
+        "Temporary storage frame 89 -- 一時保存枠89"
+      ]
+    },
+    {
+      "ID": 8589,
+      "Entries": [
+        "Temporary storage frame 90 -- 一時保存枠90"
+      ]
+    },
+    {
+      "ID": 8590,
+      "Entries": [
+        "Temporary storage frame 91 -- 一時保存枠91"
+      ]
+    },
+    {
+      "ID": 8591,
+      "Entries": [
+        "Temporary storage frame 92 -- 一時保存枠92"
+      ]
+    },
+    {
+      "ID": 8592,
+      "Entries": [
+        "Temporary storage frame 93 -- 一時保存枠93"
+      ]
+    },
+    {
+      "ID": 8593,
+      "Entries": [
+        "Temporary storage frame 94 -- 一時保存枠94"
+      ]
+    },
+    {
+      "ID": 8594,
+      "Entries": [
+        "Temporary storage frame 95 -- 一時保存枠95"
+      ]
+    },
+    {
+      "ID": 8595,
+      "Entries": [
+        "Temporary storage frame 96 -- 一時保存枠96"
+      ]
+    },
+    {
+      "ID": 8596,
+      "Entries": [
+        "Temporary storage frame 97 -- 一時保存枠97"
+      ]
+    },
+    {
+      "ID": 8597,
+      "Entries": [
+        "Temporary storage frame 98 -- 一時保存枠98"
+      ]
+    },
+    {
+      "ID": 8598,
+      "Entries": [
+        "Temporary storage frame 99 -- 一時保存枠99"
+      ]
+    },
+    {
+      "ID": 8599,
+      "Entries": [
+        "Temporary storage frame 100 -- 一時保存枠100"
+      ]
+    },
+    {
+      "ID": 8600,
+      "Entries": [
+        "Temporary storage frame 101 -- 一時保存枠101"
+      ]
+    },
+    {
+      "ID": 8601,
+      "Entries": [
+        "Temporary storage frame 102 -- 一時保存枠102"
+      ]
+    },
+    {
+      "ID": 8602,
+      "Entries": [
+        "Temporary storage frame 103 -- 一時保存枠103"
+      ]
+    },
+    {
+      "ID": 8603,
+      "Entries": [
+        "Temporary storage frame 104 -- 一時保存枠104"
+      ]
+    },
+    {
+      "ID": 8604,
+      "Entries": [
+        "Temporary storage frame 105 -- 一時保存枠105"
+      ]
+    },
+    {
+      "ID": 8605,
+      "Entries": [
+        "Temporary storage frame 106 -- 一時保存枠106"
+      ]
+    },
+    {
+      "ID": 8606,
+      "Entries": [
+        "Temporary storage frame 107 -- 一時保存枠107"
+      ]
+    },
+    {
+      "ID": 8607,
+      "Entries": [
+        "Temporary storage frame 108 -- 一時保存枠108"
+      ]
+    },
+    {
+      "ID": 8608,
+      "Entries": [
+        "Temporary storage frame 109 -- 一時保存枠109"
+      ]
+    },
+    {
+      "ID": 8609,
+      "Entries": [
+        "Temporary storage frame 110 -- 一時保存枠110"
+      ]
+    },
+    {
+      "ID": 8610,
+      "Entries": [
+        "Temporary storage frame 111 -- 一時保存枠111"
+      ]
+    },
+    {
+      "ID": 8611,
+      "Entries": [
+        "Temporary storage frame 112 -- 一時保存枠112"
+      ]
+    },
+    {
+      "ID": 8612,
+      "Entries": [
+        "Temporary storage frame 113 -- 一時保存枠113"
+      ]
+    },
+    {
+      "ID": 8613,
+      "Entries": [
+        "Temporary storage frame 114 -- 一時保存枠114"
+      ]
+    },
+    {
+      "ID": 8614,
+      "Entries": [
+        "Temporary storage frame 115 -- 一時保存枠115"
+      ]
+    },
+    {
+      "ID": 8615,
+      "Entries": [
+        "Temporary storage frame 116 -- 一時保存枠116"
+      ]
+    },
+    {
+      "ID": 8616,
+      "Entries": [
+        "Temporary storage frame 117 -- 一時保存枠117"
+      ]
+    },
+    {
+      "ID": 8617,
+      "Entries": [
+        "Temporary storage frame 118 -- 一時保存枠118"
+      ]
+    },
+    {
+      "ID": 8618,
+      "Entries": [
+        "Temporary storage frame 119 -- 一時保存枠119"
+      ]
+    },
+    {
+      "ID": 8619,
+      "Entries": [
+        "Temporary storage frame 120 -- 一時保存枠120"
+      ]
+    },
+    {
+      "ID": 8620,
+      "Entries": [
+        "Temporary storage frame 121 -- 一時保存枠121"
+      ]
+    },
+    {
+      "ID": 8621,
+      "Entries": [
+        "Temporary storage frame 122 -- 一時保存枠122"
+      ]
+    },
+    {
+      "ID": 8622,
+      "Entries": [
+        "Temporary storage frame 123 -- 一時保存枠123"
+      ]
+    },
+    {
+      "ID": 8623,
+      "Entries": [
+        "Temporary storage frame 124 -- 一時保存枠124"
+      ]
+    },
+    {
+      "ID": 8624,
+      "Entries": [
+        "Temporary storage frame 125 -- 一時保存枠125"
+      ]
+    },
+    {
+      "ID": 8625,
+      "Entries": [
+        "Temporary storage frame 126 -- 一時保存枠126"
+      ]
+    },
+    {
+      "ID": 8626,
+      "Entries": [
+        "Temporary storage frame 127 -- 一時保存枠127"
+      ]
+    },
+    {
+      "ID": 8627,
+      "Entries": [
+        "Temporary storage frame 128 -- 一時保存枠128"
+      ]
+    },
+    {
+      "ID": 8628,
+      "Entries": [
+        "Temporary storage frame 129 -- 一時保存枠129"
+      ]
+    },
+    {
+      "ID": 8629,
+      "Entries": [
+        "Temporary storage frame 130 -- 一時保存枠130"
+      ]
+    },
+    {
+      "ID": 8630,
+      "Entries": [
+        "Temporary storage frame 131 -- 一時保存枠131"
+      ]
+    },
+    {
+      "ID": 8631,
+      "Entries": [
+        "Temporary storage frame 132 -- 一時保存枠132"
+      ]
+    },
+    {
+      "ID": 8632,
+      "Entries": [
+        "Temporary storage frame 133 -- 一時保存枠133"
+      ]
+    },
+    {
+      "ID": 8633,
+      "Entries": [
+        "Temporary storage frame 134 -- 一時保存枠134"
+      ]
+    },
+    {
+      "ID": 8634,
+      "Entries": [
+        "Temporary storage frame 135 -- 一時保存枠135"
+      ]
+    },
+    {
+      "ID": 8635,
+      "Entries": [
+        "Temporary storage frame 136 -- 一時保存枠136"
+      ]
+    },
+    {
+      "ID": 8636,
+      "Entries": [
+        "Temporary storage frame 137 -- 一時保存枠137"
+      ]
+    },
+    {
+      "ID": 8637,
+      "Entries": [
+        "Temporary storage frame 138 -- 一時保存枠138"
+      ]
+    },
+    {
+      "ID": 8638,
+      "Entries": [
+        "Temporary storage frame 139 -- 一時保存枠139"
+      ]
+    },
+    {
+      "ID": 8639,
+      "Entries": [
+        "Temporary storage frame 140 -- 一時保存枠140"
+      ]
+    },
+    {
+      "ID": 8640,
+      "Entries": [
+        "Temporary storage frame 141 -- 一時保存枠141"
+      ]
+    },
+    {
+      "ID": 8641,
+      "Entries": [
+        "Temporary storage frame 142 -- 一時保存枠142"
+      ]
+    },
+    {
+      "ID": 8642,
+      "Entries": [
+        "Temporary storage frame 143 -- 一時保存枠143"
+      ]
+    },
+    {
+      "ID": 8643,
+      "Entries": [
+        "Temporary storage frame 144 -- 一時保存枠144"
+      ]
+    },
+    {
+      "ID": 8644,
+      "Entries": [
+        "Temporary storage frame 145 -- 一時保存枠145"
+      ]
+    },
+    {
+      "ID": 8645,
+      "Entries": [
+        "Temporary storage frame 146 -- 一時保存枠146"
+      ]
+    },
+    {
+      "ID": 8646,
+      "Entries": [
+        "Temporary storage frame 147 -- 一時保存枠147"
+      ]
+    },
+    {
+      "ID": 8647,
+      "Entries": [
+        "Temporary storage frame 148 -- 一時保存枠148"
+      ]
+    },
+    {
+      "ID": 8648,
+      "Entries": [
+        "Temporary storage frame 149 -- 一時保存枠149"
+      ]
+    },
+    {
+      "ID": 8649,
+      "Entries": [
+        "Temporary storage frame 150 -- 一時保存枠150"
+      ]
+    },
+    {
+      "ID": 8650,
+      "Entries": [
+        "Temporary storage frame 151 -- 一時保存枠151"
+      ]
+    },
+    {
+      "ID": 8651,
+      "Entries": [
+        "Temporary storage frame 152 -- 一時保存枠152"
+      ]
+    },
+    {
+      "ID": 8652,
+      "Entries": [
+        "Temporary storage frame 153 -- 一時保存枠153"
+      ]
+    },
+    {
+      "ID": 8653,
+      "Entries": [
+        "Temporary storage frame 154 -- 一時保存枠154"
+      ]
+    },
+    {
+      "ID": 8654,
+      "Entries": [
+        "Temporary storage frame 155 -- 一時保存枠155"
+      ]
+    },
+    {
+      "ID": 8655,
+      "Entries": [
+        "Temporary storage frame 156 -- 一時保存枠156"
+      ]
+    },
+    {
+      "ID": 8656,
+      "Entries": [
+        "Temporary storage frame 157 -- 一時保存枠157"
+      ]
+    },
+    {
+      "ID": 8657,
+      "Entries": [
+        "Temporary storage frame 158 -- 一時保存枠158"
+      ]
+    },
+    {
+      "ID": 8658,
+      "Entries": [
+        "Temporary storage frame 159 -- 一時保存枠159"
+      ]
+    },
+    {
+      "ID": 8659,
+      "Entries": [
+        "Temporary storage frame 160 -- 一時保存枠160"
+      ]
+    },
+    {
+      "ID": 8660,
+      "Entries": [
+        "Temporary storage frame 161 -- 一時保存枠161"
+      ]
+    },
+    {
+      "ID": 8661,
+      "Entries": [
+        "Temporary storage frame 162 -- 一時保存枠162"
+      ]
+    },
+    {
+      "ID": 8662,
+      "Entries": [
+        "Temporary storage frame 163 -- 一時保存枠163"
+      ]
+    },
+    {
+      "ID": 8663,
+      "Entries": [
+        "Temporary storage frame 164 -- 一時保存枠164"
+      ]
+    },
+    {
+      "ID": 8664,
+      "Entries": [
+        "Temporary storage frame 165 -- 一時保存枠165"
+      ]
+    },
+    {
+      "ID": 8665,
+      "Entries": [
+        "Temporary storage frame 166 -- 一時保存枠166"
+      ]
+    },
+    {
+      "ID": 8666,
+      "Entries": [
+        "Temporary storage frame 167 -- 一時保存枠167"
+      ]
+    },
+    {
+      "ID": 8667,
+      "Entries": [
+        "Temporary storage frame 168 -- 一時保存枠168"
+      ]
+    },
+    {
+      "ID": 8668,
+      "Entries": [
+        "Temporary storage frame 169 -- 一時保存枠169"
+      ]
+    },
+    {
+      "ID": 8669,
+      "Entries": [
+        "Temporary storage frame 170 -- 一時保存枠170"
+      ]
+    },
+    {
+      "ID": 8670,
+      "Entries": [
+        "Temporary storage frame 171 -- 一時保存枠171"
+      ]
+    },
+    {
+      "ID": 8671,
+      "Entries": [
+        "Temporary storage frame 172 -- 一時保存枠172"
+      ]
+    },
+    {
+      "ID": 8672,
+      "Entries": [
+        "Temporary storage frame 173 -- 一時保存枠173"
+      ]
+    },
+    {
+      "ID": 8673,
+      "Entries": [
+        "Temporary storage frame 174 -- 一時保存枠174"
+      ]
+    },
+    {
+      "ID": 8674,
+      "Entries": [
+        "Temporary storage frame 175 -- 一時保存枠175"
+      ]
+    },
+    {
+      "ID": 8675,
+      "Entries": [
+        "Temporary storage frame 176 -- 一時保存枠176"
+      ]
+    },
+    {
+      "ID": 8676,
+      "Entries": [
+        "Temporary storage frame 177 -- 一時保存枠177"
+      ]
+    },
+    {
+      "ID": 8677,
+      "Entries": [
+        "Temporary storage frame 178 -- 一時保存枠178"
+      ]
+    },
+    {
+      "ID": 8678,
+      "Entries": [
+        "Temporary storage frame 179 -- 一時保存枠179"
+      ]
+    },
+    {
+      "ID": 8679,
+      "Entries": [
+        "Temporary storage frame 180 -- 一時保存枠180"
+      ]
+    },
+    {
+      "ID": 8680,
+      "Entries": [
+        "Temporary storage frame 181 -- 一時保存枠181"
+      ]
+    },
+    {
+      "ID": 8681,
+      "Entries": [
+        "Temporary storage frame 182 -- 一時保存枠182"
+      ]
+    },
+    {
+      "ID": 8682,
+      "Entries": [
+        "Temporary storage frame 183 -- 一時保存枠183"
+      ]
+    },
+    {
+      "ID": 8683,
+      "Entries": [
+        "Temporary storage frame 184 -- 一時保存枠184"
+      ]
+    },
+    {
+      "ID": 8684,
+      "Entries": [
+        "Temporary storage frame 185 -- 一時保存枠185"
+      ]
+    },
+    {
+      "ID": 8685,
+      "Entries": [
+        "Temporary storage frame 186 -- 一時保存枠186"
+      ]
+    },
+    {
+      "ID": 8686,
+      "Entries": [
+        "Temporary storage frame 187 -- 一時保存枠187"
+      ]
+    },
+    {
+      "ID": 8687,
+      "Entries": [
+        "Temporary storage frame 188 -- 一時保存枠188"
+      ]
+    },
+    {
+      "ID": 8688,
+      "Entries": [
+        "Temporary storage frame 189 -- 一時保存枠189"
+      ]
+    },
+    {
+      "ID": 8689,
+      "Entries": [
+        "Temporary storage frame 190 -- 一時保存枠190"
+      ]
+    },
+    {
+      "ID": 8690,
+      "Entries": [
+        "Temporary storage frame 191 -- 一時保存枠191"
+      ]
+    },
+    {
+      "ID": 8691,
+      "Entries": [
+        "Temporary storage frame 192 -- 一時保存枠192"
+      ]
+    },
+    {
+      "ID": 8692,
+      "Entries": [
+        "Temporary storage frame 193 -- 一時保存枠193"
+      ]
+    },
+    {
+      "ID": 8693,
+      "Entries": [
+        "Temporary storage frame 194 -- 一時保存枠194"
+      ]
+    },
+    {
+      "ID": 8694,
+      "Entries": [
+        "Temporary storage frame 195 -- 一時保存枠195"
+      ]
+    },
+    {
+      "ID": 8695,
+      "Entries": [
+        "Temporary storage frame 196 -- 一時保存枠196"
+      ]
+    },
+    {
+      "ID": 8696,
+      "Entries": [
+        "Temporary storage frame 197 -- 一時保存枠197"
+      ]
+    },
+    {
+      "ID": 8697,
+      "Entries": [
+        "Temporary storage frame 198 -- 一時保存枠198"
+      ]
+    },
+    {
+      "ID": 8698,
+      "Entries": [
+        "Temporary storage frame 199 -- 一時保存枠199"
+      ]
+    },
+    {
+      "ID": 8699,
+      "Entries": [
+        "Temporary storage frame 200 -- 一時保存枠200"
+      ]
+    },
+    {
+      "ID": 8700,
+      "Entries": [
+        "Temporary storage frame 201 -- 一時保存枠201"
+      ]
+    },
+    {
+      "ID": 8701,
+      "Entries": [
+        "Temporary storage frame 202 -- 一時保存枠202"
+      ]
+    },
+    {
+      "ID": 8702,
+      "Entries": [
+        "Temporary storage frame 203 -- 一時保存枠203"
+      ]
+    },
+    {
+      "ID": 8703,
+      "Entries": [
+        "Temporary storage frame 204 -- 一時保存枠204"
+      ]
+    },
+    {
+      "ID": 8704,
+      "Entries": [
+        "Temporary storage frame 205 -- 一時保存枠205"
+      ]
+    },
+    {
+      "ID": 8705,
+      "Entries": [
+        "Temporary storage frame 206 -- 一時保存枠206"
+      ]
+    },
+    {
+      "ID": 8706,
+      "Entries": [
+        "Temporary storage frame 207 -- 一時保存枠207"
+      ]
+    },
+    {
+      "ID": 8707,
+      "Entries": [
+        "Temporary storage frame 208 -- 一時保存枠208"
+      ]
+    },
+    {
+      "ID": 8708,
+      "Entries": [
+        "Temporary storage frame 209 -- 一時保存枠209"
+      ]
+    },
+    {
+      "ID": 8709,
+      "Entries": [
+        "Temporary storage frame 210 -- 一時保存枠210"
+      ]
+    },
+    {
+      "ID": 8710,
+      "Entries": [
+        "Temporary storage frame 211 -- 一時保存枠211"
+      ]
+    },
+    {
+      "ID": 8711,
+      "Entries": [
+        "Temporary storage frame 212 -- 一時保存枠212"
+      ]
+    },
+    {
+      "ID": 8712,
+      "Entries": [
+        "Temporary storage frame 213 -- 一時保存枠213"
+      ]
+    },
+    {
+      "ID": 8713,
+      "Entries": [
+        "Temporary storage frame 214 -- 一時保存枠214"
+      ]
+    },
+    {
+      "ID": 8714,
+      "Entries": [
+        "Temporary storage frame 215 -- 一時保存枠215"
+      ]
+    },
+    {
+      "ID": 8715,
+      "Entries": [
+        "Temporary storage frame 216 -- 一時保存枠216"
+      ]
+    },
+    {
+      "ID": 8716,
+      "Entries": [
+        "Temporary storage frame 217 -- 一時保存枠217"
+      ]
+    },
+    {
+      "ID": 8717,
+      "Entries": [
+        "Temporary storage frame 218 -- 一時保存枠218"
+      ]
+    },
+    {
+      "ID": 8718,
+      "Entries": [
+        "Temporary storage frame 219 -- 一時保存枠219"
+      ]
+    },
+    {
+      "ID": 8719,
+      "Entries": [
+        "Temporary storage frame 220 -- 一時保存枠220"
+      ]
+    },
+    {
+      "ID": 8720,
+      "Entries": [
+        "Temporary storage frame 221 -- 一時保存枠221"
+      ]
+    },
+    {
+      "ID": 8721,
+      "Entries": [
+        "Temporary storage frame 222 -- 一時保存枠222"
+      ]
+    },
+    {
+      "ID": 8722,
+      "Entries": [
+        "Temporary storage frame 223 -- 一時保存枠223"
+      ]
+    },
+    {
+      "ID": 8723,
+      "Entries": [
+        "Temporary storage frame 224 -- 一時保存枠224"
+      ]
+    },
+    {
+      "ID": 8724,
+      "Entries": [
+        "Temporary storage frame 225 -- 一時保存枠225"
+      ]
+    },
+    {
+      "ID": 8725,
+      "Entries": [
+        "Temporary storage frame 226 -- 一時保存枠226"
+      ]
+    },
+    {
+      "ID": 8726,
+      "Entries": [
+        "Temporary storage frame 227 -- 一時保存枠227"
+      ]
+    },
+    {
+      "ID": 8727,
+      "Entries": [
+        "Temporary storage frame 228 -- 一時保存枠228"
+      ]
+    },
+    {
+      "ID": 8728,
+      "Entries": [
+        "Temporary storage frame 229 -- 一時保存枠229"
+      ]
+    },
+    {
+      "ID": 8729,
+      "Entries": [
+        "Temporary storage frame 230 -- 一時保存枠230"
+      ]
+    },
+    {
+      "ID": 8730,
+      "Entries": [
+        "Temporary storage frame 231 -- 一時保存枠231"
+      ]
+    },
+    {
+      "ID": 8731,
+      "Entries": [
+        "Temporary storage frame 232 -- 一時保存枠232"
+      ]
+    },
+    {
+      "ID": 8732,
+      "Entries": [
+        "Temporary storage frame 233 -- 一時保存枠233"
+      ]
+    },
+    {
+      "ID": 8733,
+      "Entries": [
+        "Temporary storage frame 234 -- 一時保存枠234"
+      ]
+    },
+    {
+      "ID": 8734,
+      "Entries": [
+        "Temporary storage frame 235 -- 一時保存枠235"
+      ]
+    },
+    {
+      "ID": 8735,
+      "Entries": [
+        "Temporary storage frame 236 -- 一時保存枠236"
+      ]
+    },
+    {
+      "ID": 8736,
+      "Entries": [
+        "Temporary storage frame 237 -- 一時保存枠237"
+      ]
+    },
+    {
+      "ID": 8737,
+      "Entries": [
+        "Temporary storage frame 238 -- 一時保存枠238"
+      ]
+    },
+    {
+      "ID": 8738,
+      "Entries": [
+        "Temporary storage frame 239 -- 一時保存枠239"
+      ]
+    },
+    {
+      "ID": 8739,
+      "Entries": [
+        "Temporary storage frame 240 -- 一時保存枠240"
+      ]
+    },
+    {
+      "ID": 8740,
+      "Entries": [
+        "Temporary storage frame 241 -- 一時保存枠241"
+      ]
+    },
+    {
+      "ID": 8741,
+      "Entries": [
+        "Temporary storage frame 242 -- 一時保存枠242"
+      ]
+    },
+    {
+      "ID": 8742,
+      "Entries": [
+        "Temporary storage frame 243 -- 一時保存枠243"
+      ]
+    },
+    {
+      "ID": 8743,
+      "Entries": [
+        "Temporary storage frame 244 -- 一時保存枠244"
+      ]
+    },
+    {
+      "ID": 8744,
+      "Entries": [
+        "Temporary storage frame 245 -- 一時保存枠245"
+      ]
+    },
+    {
+      "ID": 8745,
+      "Entries": [
+        "Temporary storage frame 246 -- 一時保存枠246"
+      ]
+    },
+    {
+      "ID": 8746,
+      "Entries": [
+        "Temporary storage frame 247 -- 一時保存枠247"
+      ]
+    },
+    {
+      "ID": 8747,
+      "Entries": [
+        "Temporary storage frame 248 -- 一時保存枠248"
+      ]
+    },
+    {
+      "ID": 8748,
+      "Entries": [
+        "Temporary storage frame 249 -- 一時保存枠249"
+      ]
+    },
+    {
+      "ID": 8749,
+      "Entries": [
+        "Temporary storage frame 250 -- 一時保存枠250"
+      ]
+    },
+    {
+      "ID": 8750,
+      "Entries": [
+        "Temporary storage frame 251 -- 一時保存枠251"
+      ]
+    },
+    {
+      "ID": 8751,
+      "Entries": [
+        "Temporary storage frame 252 -- 一時保存枠252"
+      ]
+    },
+    {
+      "ID": 8752,
+      "Entries": [
+        "Temporary storage frame 253 -- 一時保存枠253"
+      ]
+    },
+    {
+      "ID": 8753,
+      "Entries": [
+        "Temporary storage frame 254 -- 一時保存枠254"
+      ]
+    },
+    {
+      "ID": 8754,
+      "Entries": [
+        "Temporary storage frame 255 -- 一時保存枠255"
+      ]
+    },
+    {
+      "ID": 8755,
+      "Entries": [
+        "Temporary storage frame 256 -- 一時保存枠256"
+      ]
+    },
+    {
+      "ID": 8756,
+      "Entries": [
+        "Temporary storage frame 257 -- 一時保存枠257"
+      ]
+    },
+    {
+      "ID": 8757,
+      "Entries": [
+        "Temporary storage frame 258 -- 一時保存枠258"
+      ]
+    },
+    {
+      "ID": 8758,
+      "Entries": [
+        "Temporary storage frame 259 -- 一時保存枠259"
+      ]
+    },
+    {
+      "ID": 8759,
+      "Entries": [
+        "Temporary storage frame 260 -- 一時保存枠260"
+      ]
+    },
+    {
+      "ID": 8760,
+      "Entries": [
+        "Temporary storage frame 261 -- 一時保存枠261"
+      ]
+    },
+    {
+      "ID": 8761,
+      "Entries": [
+        "Temporary storage frame 262 -- 一時保存枠262"
+      ]
+    },
+    {
+      "ID": 8762,
+      "Entries": [
+        "Temporary storage frame 263 -- 一時保存枠263"
+      ]
+    },
+    {
+      "ID": 8763,
+      "Entries": [
+        "Temporary storage frame 264 -- 一時保存枠264"
+      ]
+    },
+    {
+      "ID": 8764,
+      "Entries": [
+        "Temporary storage frame 265 -- 一時保存枠265"
+      ]
+    },
+    {
+      "ID": 8765,
+      "Entries": [
+        "Temporary storage frame 266 -- 一時保存枠266"
+      ]
+    },
+    {
+      "ID": 8766,
+      "Entries": [
+        "Temporary storage frame 267 -- 一時保存枠267"
+      ]
+    },
+    {
+      "ID": 8767,
+      "Entries": [
+        "Temporary storage frame 268 -- 一時保存枠268"
+      ]
+    },
+    {
+      "ID": 8768,
+      "Entries": [
+        "Temporary storage frame 269 -- 一時保存枠269"
+      ]
+    },
+    {
+      "ID": 8769,
+      "Entries": [
+        "Temporary storage frame 270 -- 一時保存枠270"
+      ]
+    },
+    {
+      "ID": 8770,
+      "Entries": [
+        "Temporary storage frame 271 -- 一時保存枠271"
+      ]
+    },
+    {
+      "ID": 8771,
+      "Entries": [
+        "Temporary storage frame 272 -- 一時保存枠272"
+      ]
+    },
+    {
+      "ID": 8772,
+      "Entries": [
+        "Temporary storage frame 273 -- 一時保存枠273"
+      ]
+    },
+    {
+      "ID": 8773,
+      "Entries": [
+        "Temporary storage frame 274 -- 一時保存枠274"
+      ]
+    },
+    {
+      "ID": 8774,
+      "Entries": [
+        "Temporary storage frame 275 -- 一時保存枠275"
+      ]
+    },
+    {
+      "ID": 8775,
+      "Entries": [
+        "Temporary storage frame 276 -- 一時保存枠276"
+      ]
+    },
+    {
+      "ID": 8776,
+      "Entries": [
+        "Temporary storage frame 277 -- 一時保存枠277"
+      ]
+    },
+    {
+      "ID": 8777,
+      "Entries": [
+        "Temporary storage frame 278 -- 一時保存枠278"
+      ]
+    },
+    {
+      "ID": 8778,
+      "Entries": [
+        "Temporary storage frame 279 -- 一時保存枠279"
+      ]
+    },
+    {
+      "ID": 8779,
+      "Entries": [
+        "Temporary storage frame 280 -- 一時保存枠280"
+      ]
+    },
+    {
+      "ID": 8780,
+      "Entries": [
+        "Temporary storage frame 281 -- 一時保存枠281"
+      ]
+    },
+    {
+      "ID": 8781,
+      "Entries": [
+        "Temporary storage frame 282 -- 一時保存枠282"
+      ]
+    },
+    {
+      "ID": 8782,
+      "Entries": [
+        "Temporary storage frame 283 -- 一時保存枠283"
+      ]
+    },
+    {
+      "ID": 8783,
+      "Entries": [
+        "Temporary storage frame 284 -- 一時保存枠284"
+      ]
+    },
+    {
+      "ID": 8784,
+      "Entries": [
+        "Temporary storage frame 285 -- 一時保存枠285"
+      ]
+    },
+    {
+      "ID": 8785,
+      "Entries": [
+        "Temporary storage frame 286 -- 一時保存枠286"
+      ]
+    },
+    {
+      "ID": 8786,
+      "Entries": [
+        "Temporary storage frame 287 -- 一時保存枠287"
+      ]
+    },
+    {
+      "ID": 8787,
+      "Entries": [
+        "Temporary storage frame 288 -- 一時保存枠288"
+      ]
+    },
+    {
+      "ID": 8788,
+      "Entries": [
+        "Temporary storage frame 289 -- 一時保存枠289"
+      ]
+    },
+    {
+      "ID": 8789,
+      "Entries": [
+        "Temporary storage frame 290 -- 一時保存枠290"
+      ]
+    },
+    {
+      "ID": 8790,
+      "Entries": [
+        "Temporary storage frame 291 -- 一時保存枠291"
+      ]
+    },
+    {
+      "ID": 8791,
+      "Entries": [
+        "Temporary storage frame 292 -- 一時保存枠292"
+      ]
+    },
+    {
+      "ID": 8792,
+      "Entries": [
+        "Temporary storage frame 293 -- 一時保存枠293"
+      ]
+    },
+    {
+      "ID": 8793,
+      "Entries": [
+        "Temporary storage frame 294 -- 一時保存枠294"
+      ]
+    },
+    {
+      "ID": 8794,
+      "Entries": [
+        "Temporary storage frame 295 -- 一時保存枠295"
+      ]
+    },
+    {
+      "ID": 8795,
+      "Entries": [
+        "Temporary storage frame 296 -- 一時保存枠296"
+      ]
+    },
+    {
+      "ID": 8796,
+      "Entries": [
+        "Temporary storage frame 297 -- 一時保存枠297"
+      ]
+    },
+    {
+      "ID": 8797,
+      "Entries": [
+        "Temporary storage frame 298 -- 一時保存枠298"
+      ]
+    },
+    {
+      "ID": 8798,
+      "Entries": [
+        "Temporary storage frame 299 -- 一時保存枠299"
+      ]
+    },
+    {
+      "ID": 8799,
+      "Entries": [
+        "Temporary storage frame 300 -- 一時保存枠300"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Default character -- デフォルトキャラ"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Phantom (without face) -- 幻影（顔なし）"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "[Multi NPC] Veteran Warrior: Royal Castle 1 ★ White Spirit 1 -- 【マルチNPC】ベテラン戦士：王城1★白霊1"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "[Multi-NPC] Veteran Warrior Darkness: Royal Castle 1 ■ Dark Spirit 1 -- 【マルチNPC】ベテラン戦士\u3000闇落ち：王城1■闇霊1"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "[Multi NPC] Hiyokko Warrior (1st time): Royal Castle 1 ★ White Spirit 2 -- 【マルチNPC】ひよっこ戦士（一回目）：王城1★白霊2"
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        "[Multi NPC] Hiyokko Warrior (2nd time): Royal Castle 1 ★ White Spirit 3 -- 【マルチNPC】ひよっこ戦士（二回目）：王城1★白霊3"
+      ]
+    },
+    {
+      "ID": 20220,
+      "Entries": [
+        "[Multi-NPC] Hiyokko Warrior (3rd time): Royal Castle 3 ★ White Spirit 2 -- 【マルチNPC】ひよっこ戦士（三回目）：王城3★白霊2"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "[Multi-NPC] King&#39;s Guard Female Knight (1st time): King Castle 2 ★ White Spirit 1 -- 【マルチNPC】王の親衛隊\u3000女騎士（一回目）：王城2★白霊1"
+      ]
+    },
+    {
+      "ID": 20310,
+      "Entries": [
+        "[Multi-NPC] King&#39;s Guard Female Knight (2nd time): King Castle 3 ★ White Spirit 1 -- 【マルチNPC】王の親衛隊\u3000女騎士（二回目）：王城3★白霊1"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "[Multi NPC] Dragoon: Royal Castle 2 ★ White Spirit 2 -- 【マルチNPC】竜騎士：王城2★白霊2"
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "[Multi-NPC] King&#39;s Guard Male Knight: King Castle 2 ■ Dark Spirit 1 -- 【マルチNPC】王の親衛隊\u3000男騎士：王城2■闇霊1"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "[Multi-NPC] Spellcaster Poor: Town ★ White Spirit 1 -- 【マルチNPC】呪術使い\u3000貧民：街★白霊1"
+      ]
+    },
+    {
+      "ID": 20700,
+      "Entries": [
+        "[Multi-NPC] Supporter Baba: Town ★ White Spirit 2 -- 【マルチNPC】サポーターばばあ：街★白霊2"
+      ]
+    },
+    {
+      "ID": 20800,
+      "Entries": [
+        "[Multi-NPC] Clergy: Town ★ White Spirit 3 -- 【マルチNPC】聖職者：街★白霊3"
+      ]
+    },
+    {
+      "ID": 20900,
+      "Entries": [
+        "[Multi-NPC] Berserker: Town ★ White Spirit 4 -- 【マルチNPC】バーサーカー：街★白霊4"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "[Multi-NPC] Berserker: Town ■ Dark Spirit 1 -- 【マルチNPC】バーサーカー：街■闇霊1"
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        "[Multi-NPC] Sniper NPC: Sniper NPC: Ultra-distance -- 【マルチNPC】スナイパーNPC：スナイパーNPC：超距離"
+      ]
+    },
+    {
+      "ID": 21200,
+      "Entries": [
+        "[Multi NPC] Dragon Hunting Warrior: Bridge ★ White Spirit 1 -- 【マルチNPC】竜狩りの戦士：橋★白霊1"
+      ]
+    },
+    {
+      "ID": 21300,
+      "Entries": [
+        "[Multi-NPC] Warrior who collapsed in the middle of his ambition: Bridge ★ White Spirit 2 -- 【マルチNPC】志半ばで倒れた戦士：橋★白霊2"
+      ]
+    },
+    {
+      "ID": 21400,
+      "Entries": [
+        "[Multi-NPC] Healer with a blunt instrument: Forest ★ White Spirit 1_On the way -- 【マルチNPC】鈍器持ち治癒使い：森★白霊1_道中"
+      ]
+    },
+    {
+      "ID": 21410,
+      "Entries": [
+        "[Multi-NPC] Healer with a blunt instrument: Forest ★ White Spirit 2_On the way -- 【マルチNPC】鈍器持ち治癒使い：森★白霊2_道中"
+      ]
+    },
+    {
+      "ID": 21500,
+      "Entries": [
+        "[Multi-NPC] Man to hit: Mori ★ White Spirit 2_VS Elder -- 【マルチNPC】一撃にかける男：森★白霊2_VS古老"
+      ]
+    },
+    {
+      "ID": 21600,
+      "Entries": [
+        "[Multi-NPC] Meat-cutting Woman: Forest ★ White Spirit 2_VS Observer -- 【マルチNPC】肉断ち女：森★白霊2_VS監視者"
+      ]
+    },
+    {
+      "ID": 21610,
+      "Entries": [
+        "[Multi-NPC] Meat-cutting woman: Forest ■ Black spirit 1_ intrusion -- 【マルチNPC】肉断ち女：森■黒霊1_乱入"
+      ]
+    },
+    {
+      "ID": 21800,
+      "Entries": [
+        "[Multi-NPC] King&#39;s Guard Captain: King Castle 3 ■ Dark Spirit 1 -- 【マルチNPC】王の親衛隊長：王城3■闇霊1"
+      ]
+    },
+    {
+      "ID": 21900,
+      "Entries": [
+        "[Multi-NPC] Strong Warrior: Shrine ★ White Spirit 1_VS Cardinals -- 【マルチNPC】屈強な戦士：聖堂★白霊1_VS枢機卿団"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "[Multi-NPC] I love Parry: Shrine ★ White Spirit 2_On the way -- 【マルチNPC】パリィ大好き：聖堂★白霊2_道中"
+      ]
+    },
+    {
+      "ID": 22100,
+      "Entries": [
+        "[Multi-NPC] Growing Twin Swordsman (1st time): Shrine ★ White Spirit 3_On the way -- 【マルチNPC】成長する双剣使い（1回目）：聖堂★白霊3_道中"
+      ]
+    },
+    {
+      "ID": 22110,
+      "Entries": [
+        "[Multi-NPC] Growing Twin Swordsman (2nd time): Dungeon ★ White Spirit 2_On the way (bottom) -- 【マルチNPC】成長する双剣使い（2回目）：ダンジョン★白霊2_道中（下）"
+      ]
+    },
+    {
+      "ID": 22120,
+      "Entries": [
+        "[Multi-NPC] Growing Twin Swordsman (3rd time): Base ★ White Spirit 1_On the way -- 【マルチNPC】成長する双剣使い（3回目）：拠点★白霊1_道中"
+      ]
+    },
+    {
+      "ID": 22200,
+      "Entries": [
+        "[Multi-NPC] Sickle messenger: Basilica ■ Dark Spirit_Intrusion -- 【マルチNPC】煽ってくる鎌使い：聖堂■闇霊_乱入"
+      ]
+    },
+    {
+      "ID": 22300,
+      "Entries": [
+        "[Multi NPC] Attribute Enchantment Swordfighter: Anor ★ White Spirit 1 -- 【マルチNPC】属性エンチャント剣士：アノール★白霊1"
+      ]
+    },
+    {
+      "ID": 22400,
+      "Entries": [
+        "[Multi NPC] Senior Wizard: Anor ★ White Spirit 2 -- 【マルチNPC】上級魔術師：アノール★白霊2"
+      ]
+    },
+    {
+      "ID": 22500,
+      "Entries": [
+        "[Multi NPC] Bucket Head: On Anor ★ White Spirit 1 -- 【マルチNPC】バケツ頭：アノール上★白霊1"
+      ]
+    },
+    {
+      "ID": 22600,
+      "Entries": [
+        "[Multi NPC] Item Master: Anor ■ Dark Spirit 1 -- 【マルチNPC】アイテム師：アノール■闇霊1"
+      ]
+    },
+    {
+      "ID": 22700,
+      "Entries": [
+        "[Multi-NPC] Rush Lancer: Dungeon ★ White Spirit 1_On the way (above) -- 【マルチNPC】突進ランサー：ダンジョン★白霊1_道中（上）"
+      ]
+    },
+    {
+      "ID": 22800,
+      "Entries": [
+        "[Multi-NPC] I love &quot;illuminating light&quot;: Dungeon ★ White Spirit 3_On the way (bottom) -- 【マルチNPC】「照らす光」大好き：ダンジョン★白霊3_道中（下）"
+      ]
+    },
+    {
+      "ID": 22900,
+      "Entries": [
+        "[Multi NPC] Priest: Dungeon ★ White Spirit 4_VS King of the Dead -- 【マルチNPC】聖職者：ダンジョン★白霊4_VS死霊の王"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "[Multi-NPC] Rapier-using skillful swordfighter: Dungeon ★ White Spirit 5_VS Crimson Bat -- 【マルチNPC】レイピア使いの技巧派剣士：ダンジョン★白霊5_VSクリムゾンバット"
+      ]
+    },
+    {
+      "ID": 23100,
+      "Entries": [
+        "[Multi-NPC] Strong man in battle: Dungeon ★ White Spirit 6_VS Ash Demon -- 【マルチNPC】歴戦の強者：ダンジョン★白霊6_VS灰のデーモン"
+      ]
+    },
+    {
+      "ID": 23200,
+      "Entries": [
+        "[Multi-NPC] Thief in the dark: Dungeon ■ Dark spirit_intrusion -- 【マルチNPC】闇にまぎれた盗人：ダンジョン■闇霊_乱入"
+      ]
+    },
+    {
+      "ID": 23300,
+      "Entries": [
+        "[Multi-NPC] Suspicious Wanderer: Dungeon ★ White Spirit 1 -- 【マルチNPC】怪しげな放浪者：地下牢★白霊1"
+      ]
+    },
+    {
+      "ID": 23310,
+      "Entries": [
+        "[Multi-NPC] Suspicious Wanderer: Dungeon ■ Dark Spirit 4 -- 【マルチNPC】怪しげな放浪者：地下牢■闇霊4"
+      ]
+    },
+    {
+      "ID": 23400,
+      "Entries": [
+        "[Multi-NPC] Knight who was deceived and captured: Dungeon ★ White Spirit 2 -- 【マルチNPC】騙され囚われた騎士：地下牢★白霊2"
+      ]
+    },
+    {
+      "ID": 23410,
+      "Entries": [
+        "[Multi-NPC] Knight deceived and captured: Dungeon ■ Dark Spirit 3 -- 【マルチNPC】騙され囚われた騎士：地下牢■闇霊3"
+      ]
+    },
+    {
+      "ID": 23500,
+      "Entries": [
+        "[Multi-NPC] Hired Assassin: Dungeon ■ Dark Spirit 1 -- 【マルチNPC】雇われの暗殺者：地下牢■闇霊1"
+      ]
+    },
+    {
+      "ID": 23600,
+      "Entries": [
+        "[Multi-NPC] Bizarre Executioner: Dungeon ■ Dark Spirit 2 -- 【マルチNPC】猟奇的な処刑人：地下牢■闇霊2"
+      ]
+    },
+    {
+      "ID": 23700,
+      "Entries": [
+        "[Multi NPC] Gunda Equipment: Base ★ White Spirit 2_VS Evil Spirit -- 【マルチNPC】グンダ装備：拠点★白霊2_VS邪霊"
+      ]
+    },
+    {
+      "ID": 23800,
+      "Entries": [
+        "[Multi-NPC] Insufficient material: Base ★ White Spirit 3_VS Las Boss -- 【マルチNPC】ネタ不足：拠点★白霊3_VSラスボス"
+      ]
+    },
+    {
+      "ID": 24700,
+      "Entries": [
+        "[NPC] Meat-cutting knife woman -- 【NPC】肉断ち包丁女"
+      ]
+    },
+    {
+      "ID": 24800,
+      "Entries": [
+        "[NPC] Merchant B -- 【NPC】商人B"
+      ]
+    },
+    {
+      "ID": 25000,
+      "Entries": [
+        "[NPC] Kaas&#39;s messenger -- 【NPC】カアスの使者"
+      ]
+    },
+    {
+      "ID": 25100,
+      "Entries": [
+        "[NPC] King&#39;s Investigator A -- 【NPC】王の探索者A"
+      ]
+    },
+    {
+      "ID": 25101,
+      "Entries": [
+        "[NPC] King&#39;s Investigator A: Duel -- 【NPC】王の探索者A：決闘"
+      ]
+    },
+    {
+      "ID": 25200,
+      "Entries": [
+        "[NPC] King&#39;s Investigator B -- 【NPC】王の探索者B"
+      ]
+    },
+    {
+      "ID": 25300,
+      "Entries": [
+        "[NPC] King&#39;s Investigator C -- 【NPC】王の探索者C"
+      ]
+    },
+    {
+      "ID": 25305,
+      "Entries": [
+        "[NPC] Pig guy -- 【NPC】豚野郎"
+      ]
+    },
+    {
+      "ID": 25400,
+      "Entries": [
+        "[NPC] Magician -- 【NPC】魔術屋"
+      ]
+    },
+    {
+      "ID": 25500,
+      "Entries": [
+        "[NPC] Magician -- 【NPC】呪術屋"
+      ]
+    },
+    {
+      "ID": 25600,
+      "Entries": [
+        "[NPC] Magic magic shop -- 【NPC】魔法呪術屋"
+      ]
+    },
+    {
+      "ID": 25700,
+      "Entries": [
+        "[NPC] Miracle shop -- 【NPC】奇跡屋"
+      ]
+    },
+    {
+      "ID": 25701,
+      "Entries": [
+        "[NPC] Miracle Shop: Fire Guardian -- 【NPC】奇跡屋：火守女"
+      ]
+    },
+    {
+      "ID": 25800,
+      "Entries": [
+        "[NPC] Knight of the Miracle Shop -- 【NPC】奇跡屋の騎士"
+      ]
+    },
+    {
+      "ID": 25900,
+      "Entries": [
+        "[NPC] Miraculous Darkman -- 【NPC】奇跡闇術師"
+      ]
+    },
+    {
+      "ID": 26000,
+      "Entries": [
+        "[NPC] Henri: Woman -- 【NPC】アンリ:女"
+      ]
+    },
+    {
+      "ID": 26010,
+      "Entries": [
+        "[NPC] Henri: Man -- 【NPC】アンリ:男"
+      ]
+    },
+    {
+      "ID": 26100,
+      "Entries": [
+        "[NPC] Patch: Catalina equipment -- 【NPC】パッチ:カタリナ装備"
+      ]
+    },
+    {
+      "ID": 26101,
+      "Entries": [
+        "[NPC] Patch -- 【NPC】パッチ"
+      ]
+    },
+    {
+      "ID": 26200,
+      "Entries": [
+        "[NPC] Descendants of Catalina -- 【NPC】カタリナの子孫"
+      ]
+    },
+    {
+      "ID": 26300,
+      "Entries": [
+        "[NPC] Pig King -- 【NPC】豚王"
+      ]
+    },
+    {
+      "ID": 27300,
+      "Entries": [
+        "[NPC] General-purpose A (fake master) -- 【NPC】汎用A（偽達人）"
+      ]
+    },
+    {
+      "ID": 27301,
+      "Entries": [
+        "[NPC] General-purpose A (master) -- 【NPC】汎用A（真達人）"
+      ]
+    },
+    {
+      "ID": 27400,
+      "Entries": [
+        "[NPC] General-purpose B (yellow robe) -- 【NPC】汎用B（黄衣）"
+      ]
+    },
+    {
+      "ID": 27500,
+      "Entries": [
+        "[NPC] Roslick&#39;s messenger B (general purpose C) -- 【NPC】ロスリックの密使B（汎用C）"
+      ]
+    },
+    {
+      "ID": 27600,
+      "Entries": [
+        "[NPC] General-purpose D (witch doctor) -- 【NPC】汎用D（呪術師）"
+      ]
+    },
+    {
+      "ID": 27700,
+      "Entries": [
+        "[NPC] Special A (madman) -- 【NPC】特別A（狂人）"
+      ]
+    },
+    {
+      "ID": 27800,
+      "Entries": [
+        "[NPC] Special B (white shadow of Rondor) -- 【NPC】特別B（ロンドールの白い影）"
+      ]
+    },
+    {
+      "ID": 27900,
+      "Entries": [
+        "[NPC] Roslick&#39;s messenger A -- 【NPC】ロスリックの密使A"
+      ]
+    },
+    {
+      "ID": 28000,
+      "Entries": [
+        "[NPC] Roslick&#39;s messenger C -- 【NPC】ロスリックの密使C"
+      ]
+    },
+    {
+      "ID": 28100,
+      "Entries": [
+        "[NPC] Forest Connection Manager 1 -- 【NPC】森接続部番人１"
+      ]
+    },
+    {
+      "ID": 28200,
+      "Entries": [
+        "[NPC] Forest Connection Manager 2 -- 【NPC】森接続部番人２"
+      ]
+    },
+    {
+      "ID": 28300,
+      "Entries": [
+        "[NPC] Forest Shrine Church Connection 1 -- 【NPC】森聖堂教会接続部１"
+      ]
+    },
+    {
+      "ID": 28400,
+      "Entries": [
+        "[NPC] Forest Shrine Church Connection 2 -- 【NPC】森聖堂教会接続部２"
+      ]
+    },
+    {
+      "ID": 28600,
+      "Entries": [
+        "[NPC] On the roof of the dungeon ruins -- 【NPC】地下牢遺跡屋根上"
+      ]
+    },
+    {
+      "ID": 28700,
+      "Entries": [
+        "[NPC] Summon the Serpent Priest 1 -- 【NPC】蛇人司祭召喚１"
+      ]
+    },
+    {
+      "ID": 28800,
+      "Entries": [
+        "[NPC] Summon the Serpent Priest 2 -- 【NPC】蛇人司祭召喚２"
+      ]
+    },
+    {
+      "ID": 28900,
+      "Entries": [
+        "[NPC] Summon the Serpent Priest 3 -- 【NPC】蛇人司祭召喚３"
+      ]
+    },
+    {
+      "ID": 29000,
+      "Entries": [
+        "[NPC] Anor Guardian 1 -- 【NPC】アノール守護1"
+      ]
+    },
+    {
+      "ID": 29100,
+      "Entries": [
+        "[NPC] Anor Guardian 2 -- 【NPC】アノール守護2"
+      ]
+    },
+    {
+      "ID": 29200,
+      "Entries": [
+        "[NPC] Tarkus -- 【NPC】タルカス"
+      ]
+    },
+    {
+      "ID": 29300,
+      "Entries": [
+        "[NPC] Clayton -- 【NPC】クレイトン"
+      ]
+    },
+    {
+      "ID": 29400,
+      "Entries": [
+        "[NPC] Aruba -- 【NPC】アルバ"
+      ]
+    },
+    {
+      "ID": 29500,
+      "Entries": [
+        "[NPC] Kirk -- 【NPC】カーク"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "[Ritual NPC White Spirit] Game start -- 【儀式NPC白霊】ゲーム開始"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "[Ritual NPC White Spirit] Royal Castle 1 -- 【儀式NPC白霊】王城１"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "[Ritual NPC White Spirit] Tower Town -- 【儀式NPC白霊】塔の街"
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "[Ritual NPC White Spirit] Forest 1 (first half) -- 【儀式NPC白霊】森１（前半）"
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        "[Ritual NPC White Spirit] Basilica Church -- 【儀式NPC白霊】聖堂教会"
+      ]
+    },
+    {
+      "ID": 30050,
+      "Entries": [
+        "[Ritual NPC White Spirit] Forest 2 (second half) -- 【儀式NPC白霊】森２（後半）"
+      ]
+    },
+    {
+      "ID": 30060,
+      "Entries": [
+        "[Ritual NPC White Spirit] Dungeon -- 【儀式NPC白霊】ダンジョン"
+      ]
+    },
+    {
+      "ID": 30070,
+      "Entries": [
+        "[Ritual NPC White Spirit] Dungeon Underground Lake (Sub) -- 【儀式NPC白霊】ダンジョン地底湖（サブ）"
+      ]
+    },
+    {
+      "ID": 30080,
+      "Entries": [
+        "[Ritual NPC White Spirit] Anor -- 【儀式NPC白霊】アノール"
+      ]
+    },
+    {
+      "ID": 30090,
+      "Entries": [
+        "[Ritual NPC White Spirit] Dungeon -- 【儀式NPC白霊】地下牢"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "[Ritual NPC White Spirit] On Anor (Sub) -- 【儀式NPC白霊】アノール上（サブ）"
+      ]
+    },
+    {
+      "ID": 30110,
+      "Entries": [
+        "[Ritual NPC White Spirit] Royal Castle 2 -- 【儀式NPC白霊】王城２"
+      ]
+    },
+    {
+      "ID": 30120,
+      "Entries": [
+        "[Ritual NPC White Spirit] Royal Castle 3 -- 【儀式NPC白霊】王城３"
+      ]
+    },
+    {
+      "ID": 30130,
+      "Entries": [
+        "[Ritual NPC White Spirit] Bridge (Sub) -- 【儀式NPC白霊】橋（サブ）"
+      ]
+    },
+    {
+      "ID": 30140,
+      "Entries": [
+        "[Ritual NPC White Spirit] Base -- 【儀式NPC白霊】拠点"
+      ]
+    },
+    {
+      "ID": 30150,
+      "Entries": [
+        "[Ritual NPC White Spirit] Game end -- 【儀式NPC白霊】ゲーム終了"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Game Start -- 【儀式NPC白霊：プレイ領域２】ゲーム開始"
+      ]
+    },
+    {
+      "ID": 31010,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Royal Castle 1 -- 【儀式NPC白霊：プレイ領域２】王城１"
+      ]
+    },
+    {
+      "ID": 31020,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Tower Town -- 【儀式NPC白霊：プレイ領域２】塔の街"
+      ]
+    },
+    {
+      "ID": 31030,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Forest 1 (first half) -- 【儀式NPC白霊：プレイ領域２】森１（前半）"
+      ]
+    },
+    {
+      "ID": 31040,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Shrine Church -- 【儀式NPC白霊：プレイ領域２】聖堂教会"
+      ]
+    },
+    {
+      "ID": 31050,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Forest 2 (second half) -- 【儀式NPC白霊：プレイ領域２】森２（後半）"
+      ]
+    },
+    {
+      "ID": 31060,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Dungeon -- 【儀式NPC白霊：プレイ領域２】ダンジョン"
+      ]
+    },
+    {
+      "ID": 31070,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Dungeon Underground Lake (Sub) -- 【儀式NPC白霊：プレイ領域２】ダンジョン地底湖（サブ）"
+      ]
+    },
+    {
+      "ID": 31080,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Anor -- 【儀式NPC白霊：プレイ領域２】アノール"
+      ]
+    },
+    {
+      "ID": 31090,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Dungeon -- 【儀式NPC白霊：プレイ領域２】地下牢"
+      ]
+    },
+    {
+      "ID": 31100,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] On Anor (Sub) -- 【儀式NPC白霊：プレイ領域２】アノール上（サブ）"
+      ]
+    },
+    {
+      "ID": 31110,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Royal Castle 2 -- 【儀式NPC白霊：プレイ領域２】王城２"
+      ]
+    },
+    {
+      "ID": 31120,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Royal Castle 3 -- 【儀式NPC白霊：プレイ領域２】王城３"
+      ]
+    },
+    {
+      "ID": 31130,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Bridge (Sub) -- 【儀式NPC白霊：プレイ領域２】橋（サブ）"
+      ]
+    },
+    {
+      "ID": 31140,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Base -- 【儀式NPC白霊：プレイ領域２】拠点"
+      ]
+    },
+    {
+      "ID": 31150,
+      "Entries": [
+        "[Ritual NPC White Spirit: Play Area 2] Game End -- 【儀式NPC白霊：プレイ領域２】ゲーム終了"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "Name": "NetworkAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (no deletion) -- デフォルト（削除禁止）"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Royal Castle of Eclipse 1 -- 蝕の王城1"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Royal Castle of Eclipse 2 -- 蝕の王城2"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Tower city -- 塔の街"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Flying Dragon Bridge -- 飛竜の橋"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Poison Swamp Forest -- 毒沼の森"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "Royal Castle of Eclipse 3 -- 蝕の王城3"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Basilica church -- 聖堂教会"
+      ]
+    },
+    {
+      "ID": 370000,
+      "Entries": [
+        "Anor Ruins First Half -- アノール遺跡 前半"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "The second half of the Anor ruins -- アノール遺跡 後半"
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        "Dungeon -- ダンジョン"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "Dungeon -- 地下牢"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Hub -- 拠点"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Las boss -- ラスボス"
+      ]
+    },
+    {
+      "ID": 981000,
+      "Entries": [
+        "Multiplayer test map -- マルチプレイテストマップ"
+      ]
+    },
+    {
+      "ID": 991000,
+      "Entries": [
+        "Old multiplayer test map -- 旧マルチプレイテストマップ"
+      ]
+    }
+  ]
+}

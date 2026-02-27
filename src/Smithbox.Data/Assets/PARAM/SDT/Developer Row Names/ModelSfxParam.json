@@ -1,0 +1,1212 @@
+{
+  "Name": "ModelSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "for test -- テスト用"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Message tombstone (before lighting) -- メッセージ墓石（点灯前）"
+      ]
+    },
+    {
+      "ID": 80010,
+      "Entries": [
+        "Message tombstone (after lighting) -- メッセージ墓石（点灯後）"
+      ]
+    },
+    {
+      "ID": 1510000,
+      "Entries": [
+        "Lantern (old) -- ランタン(古)"
+      ]
+    },
+    {
+      "ID": 1230000,
+      "Entries": [
+        "Royal Castle Candlestick (Low) -- 王城燭台（低）",
+        "Royal Castle Candlestick (Low) -- 王城燭台（低）"
+      ]
+    },
+    {
+      "ID": 1240000,
+      "Entries": [
+        "Candle ver00 -- 蝋燭ver00"
+      ]
+    },
+    {
+      "ID": 1240001,
+      "Entries": [
+        "Candle ver01 -- 蝋燭ver01"
+      ]
+    },
+    {
+      "ID": 1240002,
+      "Entries": [
+        "Candle ver02 -- 蝋燭ver02"
+      ]
+    },
+    {
+      "ID": 1240010,
+      "Entries": [
+        "Blue Flame Varie 1 -- 青炎バリエ1"
+      ]
+    },
+    {
+      "ID": 1240011,
+      "Entries": [
+        "Blue Flame Varie 2 -- 青炎バリエ2"
+      ]
+    },
+    {
+      "ID": 1240012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2120000,
+      "Entries": [
+        "Stone statue candle lighting -- 石像ロウソク点灯"
+      ]
+    },
+    {
+      "ID": 4660000,
+      "Entries": [
+        "General-purpose wall lighting (torch) -- 汎用壁照明（松明）"
+      ]
+    },
+    {
+      "ID": 4661000,
+      "Entries": [
+        "General-purpose ceiling lighting (torch) -- 汎用天井照明(松明)"
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        "Shop incense burner -- ショップの香炉"
+      ]
+    },
+    {
+      "ID": 6500000,
+      "Entries": [
+        "Shop incense burner (with snow) -- ショップの香炉（雪付き）"
+      ]
+    },
+    {
+      "ID": 1400000,
+      "Entries": [
+        "White door_small -- 白扉_小"
+      ]
+    },
+    {
+      "ID": 1401000,
+      "Entries": [
+        "White door_middle -- 白扉_中"
+      ]
+    },
+    {
+      "ID": 1402000,
+      "Entries": [
+        "White door_large -- 白扉_大"
+      ]
+    },
+    {
+      "ID": 106000000,
+      "Entries": [
+        "High lighthouse -- 高燈台"
+      ]
+    },
+    {
+      "ID": 106010000,
+      "Entries": [
+        "High cup lighthouse -- 高杯燈台"
+      ]
+    },
+    {
+      "ID": 106050000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 106060000,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 106070000,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 106100000,
+      "Entries": [
+        "Stone lantern 1 -- 石灯篭1"
+      ]
+    },
+    {
+      "ID": 106110000,
+      "Entries": [
+        "Stone lantern 2 -- 石灯篭2"
+      ]
+    },
+    {
+      "ID": 106150000,
+      "Entries": [
+        "Bonfire -- たき火"
+      ]
+    },
+    {
+      "ID": 107010000,
+      "Entries": [
+        "Shachi wire point -- 鯱ワイヤーポイント"
+      ]
+    },
+    {
+      "ID": 114910000,
+      "Entries": [
+        "Censer of sacred treasure -- 神器の香炉"
+      ]
+    },
+    {
+      "ID": 114940000,
+      "Entries": [
+        "Mitsu-gusoku -- 三具足"
+      ]
+    },
+    {
+      "ID": 115410000,
+      "Entries": [
+        "Takebashi (short) -- 竹橋（短）"
+      ]
+    },
+    {
+      "ID": 115420000,
+      "Entries": [
+        "Takebashi (middle) -- 竹橋（中）"
+      ]
+    },
+    {
+      "ID": 115430000,
+      "Entries": [
+        "Takebashi (Chief) -- 竹橋（長）"
+      ]
+    },
+    {
+      "ID": 115800000,
+      "Entries": [
+        "Burning straw bundle (large) -- 燃える藁束（大）"
+      ]
+    },
+    {
+      "ID": 115810000,
+      "Entries": [
+        "Burning straw bundle (middle) -- 燃える藁束（中）"
+      ]
+    },
+    {
+      "ID": 115820000,
+      "Entries": [
+        "Burning straw bundle (small) -- 燃える藁束（小）"
+      ]
+    },
+    {
+      "ID": 115840000,
+      "Entries": [
+        "Burning wood (burnt corpse) -- 燃える木材（焼死体）"
+      ]
+    },
+    {
+      "ID": 115840001,
+      "Entries": [
+        "Burning wood (holes in the roof) -- 燃える木材（屋根の穴）"
+      ]
+    },
+    {
+      "ID": 115840002,
+      "Entries": [
+        "Burning wood (window) -- 燃える木材（窓）"
+      ]
+    },
+    {
+      "ID": 115840003,
+      "Entries": [
+        "Point light source only (with LOD) -- 点光源のみ（LODあり）"
+      ]
+    },
+    {
+      "ID": 115840004,
+      "Entries": [
+        "Point light source only (no LOD) -- 点光源のみ（LODなし）"
+      ]
+    },
+    {
+      "ID": 115890000,
+      "Entries": [
+        "Burning corpse -- 燃える死体"
+      ]
+    },
+    {
+      "ID": 115980000,
+      "Entries": [
+        "Roof guidance OBJ (hanging) -- 屋根上誘導OBJ（ぶら下げ）"
+      ]
+    },
+    {
+      "ID": 115981000,
+      "Entries": [
+        "Roof guidance OBJ (direct placement) -- 屋根上誘導OBJ（直置き）"
+      ]
+    },
+    {
+      "ID": 115990000,
+      "Entries": [
+        "Poster -- 張り紙"
+      ]
+    },
+    {
+      "ID": 116000000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 116010000,
+      "Entries": [
+        "Hanging bonfire -- 吊り篝火"
+      ]
+    },
+    {
+      "ID": 116060000,
+      "Entries": [
+        "Smoke signal -- 狼煙"
+      ]
+    },
+    {
+      "ID": 116070000,
+      "Entries": [
+        "Smoke signal (Damipoli only) -- 狼煙(ダミポリのみ)"
+      ]
+    },
+    {
+      "ID": 116100000,
+      "Entries": [
+        "Torch plate (with stand) -- 燈明皿（台あり）"
+      ]
+    },
+    {
+      "ID": 116100001,
+      "Entries": [
+        "Torch plate (with stand) (light source range narrow) -- 燈明皿（台あり）（光源範囲狭）"
+      ]
+    },
+    {
+      "ID": 116100002,
+      "Entries": [
+        "Torch plate (with stand) (wide light source range) -- 燈明皿（台あり）（光源範囲広）"
+      ]
+    },
+    {
+      "ID": 116101000,
+      "Entries": [
+        "Torch plate (with stand) (for prince only) -- 燈明皿（台あり）(皇子専用)"
+      ]
+    },
+    {
+      "ID": 116110000,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 116110001,
+      "Entries": [
+        "Candlestick (narrow light source range) -- 燭台(光源範囲狭い)"
+      ]
+    },
+    {
+      "ID": 116110002,
+      "Entries": [
+        "Candlestick (wide light source range) -- 燭台(光源範囲広い)"
+      ]
+    },
+    {
+      "ID": 116120000,
+      "Entries": [
+        "Torch plate (single item) -- 燈明皿（単品）"
+      ]
+    },
+    {
+      "ID": 116120001,
+      "Entries": [
+        "Torch plate (wide light source range) -- 燈明皿(光源範囲広い)"
+      ]
+    },
+    {
+      "ID": 116120002,
+      "Entries": [
+        "Torch plate (light and moth) -- 燈明皿（灯と蛾）"
+      ]
+    },
+    {
+      "ID": 116130000,
+      "Entries": [
+        "Torch plate (dark) -- 燈明皿（暗い）"
+      ]
+    },
+    {
+      "ID": 116130001,
+      "Entries": [
+        "Torch plate (no point light source) -- 燈明皿（点光源無し）"
+      ]
+    },
+    {
+      "ID": 116140000,
+      "Entries": [
+        "High lighthouse -- 高燈台"
+      ]
+    },
+    {
+      "ID": 116140001,
+      "Entries": [
+        "High lighthouse (wide light source range) -- 高燈台(光源範囲広い)"
+      ]
+    },
+    {
+      "ID": 116140002,
+      "Entries": [
+        "High lighthouse (lights and moths) -- 高燈台（灯と蛾）"
+      ]
+    },
+    {
+      "ID": 116140003,
+      "Entries": [
+        "High lighthouse (wide light source range) (lights and moths) -- 高燈台(光源範囲広い)（灯と蛾）"
+      ]
+    },
+    {
+      "ID": 116210000,
+      "Entries": [
+        "Shrine -- 祠"
+      ]
+    },
+    {
+      "ID": 116710000,
+      "Entries": [
+        "Shrine (without snow) -- 祠(雪なし)"
+      ]
+    },
+    {
+      "ID": 116600000,
+      "Entries": [
+        "Fishing lantern -- 釣り灯篭"
+      ]
+    },
+    {
+      "ID": 116600001,
+      "Entries": [
+        "Fishing lantern (narrow light source range) -- 釣り灯篭(光源範囲狭い)"
+      ]
+    },
+    {
+      "ID": 116600002,
+      "Entries": [
+        "Fishing lantern (for indoor use) -- 釣り灯篭(室内用)"
+      ]
+    },
+    {
+      "ID": 116601000,
+      "Entries": [
+        "Fishing lantern (for indoor use) (with cloth) -- 釣り灯篭(室内用)(クロスあり)"
+      ]
+    },
+    {
+      "ID": 116602000,
+      "Entries": [
+        "Fishing lantern (for indoor use) (with cross _ short) -- 釣り灯篭(室内用)(クロスあり_短)"
+      ]
+    },
+    {
+      "ID": 118210000,
+      "Entries": [
+        "PC grave -- PCの墓"
+      ]
+    },
+    {
+      "ID": 126000000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 126010000,
+      "Entries": [
+        "Hanging bonfire -- 吊り篝火"
+      ]
+    },
+    {
+      "ID": 126100000,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 126110000,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 126300000,
+      "Entries": [
+        "Fishing lantern -- 釣り灯篭"
+      ]
+    },
+    {
+      "ID": 126900000,
+      "Entries": [
+        "Burning skeleton dummy -- 燃える骸のダミー"
+      ]
+    },
+    {
+      "ID": 136000000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 136010000,
+      "Entries": [
+        "Suspended bonfire (dynamic shadow ON) -- 吊り篝火(動的影ON)"
+      ]
+    },
+    {
+      "ID": 136100000,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 136200000,
+      "Entries": [
+        "Stone lantern 1 -- 石灯篭1"
+      ]
+    },
+    {
+      "ID": 136250000,
+      "Entries": [
+        "Stone lantern (shrine) -- 石灯篭(祠)"
+      ]
+    },
+    {
+      "ID": 136455000,
+      "Entries": [
+        "Incense stick (thin) -- 線香（細）"
+      ]
+    },
+    {
+      "ID": 136465000,
+      "Entries": [
+        "Incense stick (thick) -- 線香（太）"
+      ]
+    },
+    {
+      "ID": 154120000,
+      "Entries": [
+        "Censer of Araji Temple -- 荒れ寺の香炉"
+      ]
+    },
+    {
+      "ID": 155030000,
+      "Entries": [
+        "Upside-down hanging corpse of a monk -- 僧侶の逆さ吊り死体"
+      ]
+    },
+    {
+      "ID": 156100000,
+      "Entries": [
+        "Torch plate [without light source] -- 灯明皿【光源なし】"
+      ]
+    },
+    {
+      "ID": 156110000,
+      "Entries": [
+        "Torch plate stand -- 灯明皿立て"
+      ]
+    },
+    {
+      "ID": 156111000,
+      "Entries": [
+        "Torch plate stand -- 灯明皿立て"
+      ]
+    },
+    {
+      "ID": 156150000,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 156160000,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 156170000,
+      "Entries": [
+        "Fishing lantern -- 釣燈籠"
+      ]
+    },
+    {
+      "ID": 156200000,
+      "Entries": [
+        "Torch -- 松明"
+      ]
+    },
+    {
+      "ID": 156300000,
+      "Entries": [
+        "Lantern [without light source] -- 灯篭【光源なし】"
+      ]
+    },
+    {
+      "ID": 156310000,
+      "Entries": [
+        "General-purpose light source -- 汎用光源"
+      ]
+    },
+    {
+      "ID": 156320000,
+      "Entries": [
+        "General-purpose light source -- 汎用光源"
+      ]
+    },
+    {
+      "ID": 156350000,
+      "Entries": [
+        "Shrine_with red cloth -- 祠_赤い布付き"
+      ]
+    },
+    {
+      "ID": 156400000,
+      "Entries": [
+        "Gomadan -- 護摩壇"
+      ]
+    },
+    {
+      "ID": 156500000,
+      "Entries": [
+        "Firefly basket -- 蛍籠"
+      ]
+    },
+    {
+      "ID": 176000000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 176010000,
+      "Entries": [
+        "Hanging bonfire -- 吊り篝火"
+      ]
+    },
+    {
+      "ID": 176050000,
+      "Entries": [
+        "Bonfire with pot -- 鍋付焚火"
+      ]
+    },
+    {
+      "ID": 176100000,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 176120000,
+      "Entries": [
+        "Torch plate (single item) -- 燈明皿（単品）"
+      ]
+    },
+    {
+      "ID": 176125000,
+      "Entries": [
+        "Torch plate (summary for rock cave) -- 燈明皿（岩窟用まとめ）"
+      ]
+    },
+    {
+      "ID": 176210000,
+      "Entries": [
+        "Shrine -- 祠"
+      ]
+    },
+    {
+      "ID": 177800000,
+      "Entries": [
+        "Sacred lotus -- 神器蓮"
+      ]
+    },
+    {
+      "ID": 177900000,
+      "Entries": [
+        "Sacred liver -- 神器肝"
+      ]
+    },
+    {
+      "ID": 204110000,
+      "Entries": [
+        "Censer -- 香炉"
+      ]
+    },
+    {
+      "ID": 204120000,
+      "Entries": [
+        "Gomadou incense burner (middle) -- 護摩堂の香炉(中)"
+      ]
+    },
+    {
+      "ID": 205550000,
+      "Entries": [
+        "Temple map: Fishing lantern (short) -- 寺マップ：釣燈籠(短)"
+      ]
+    },
+    {
+      "ID": 206000000,
+      "Entries": [
+        "Stone lantern -- 石灯籠"
+      ]
+    },
+    {
+      "ID": 206010000,
+      "Entries": [
+        "High cup lighthouse -- 高杯灯台"
+      ]
+    },
+    {
+      "ID": 206020000,
+      "Entries": [
+        "High lighthouse -- 高灯台"
+      ]
+    },
+    {
+      "ID": 206030000,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 206040000,
+      "Entries": [
+        "Candlestick [without light source] -- 連燭台【光源なし】"
+      ]
+    },
+    {
+      "ID": 206050000,
+      "Entries": [
+        "Desktop candlestick -- 卓上燭台"
+      ]
+    },
+    {
+      "ID": 206051000,
+      "Entries": [
+        "Desktop candlestick (small) -- 卓上燭台(小)"
+      ]
+    },
+    {
+      "ID": 206052000,
+      "Entries": [
+        "Desktop candlestick (small) _ for children only -- 卓上燭台(小)_稚児専用"
+      ]
+    },
+    {
+      "ID": 206060000,
+      "Entries": [
+        "Candlestick for the main hall -- 本堂用燭台"
+      ]
+    },
+    {
+      "ID": 206070000,
+      "Entries": [
+        "Hidden main hall_candle stand (large) -- 隠し本堂_燭台(大)"
+      ]
+    },
+    {
+      "ID": 206071000,
+      "Entries": [
+        "Hidden main hall_candlestick set [without light source] -- 隠し本堂_燭台セット【光源なし】"
+      ]
+    },
+    {
+      "ID": 206080000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 206100000,
+      "Entries": [
+        "Temple map: Fishing lantern -- 寺マップ：釣燈籠"
+      ]
+    },
+    {
+      "ID": 206110000,
+      "Entries": [
+        "Temple map: Fishing lantern -- 寺マップ：釣燈籠"
+      ]
+    },
+    {
+      "ID": 206150000,
+      "Entries": [
+        "Handheld candlestick -- 手持ち燭台"
+      ]
+    },
+    {
+      "ID": 206160000,
+      "Entries": [
+        "Hidden main hall_handheld candlestick -- 隠し本堂_手持ち燭台"
+      ]
+    },
+    {
+      "ID": 206300000,
+      "Entries": [
+        "Mark object [without light source] -- 目印オブジェ【光源なし】"
+      ]
+    },
+    {
+      "ID": 256000000,
+      "Entries": [
+        "Stone lantern 1 -- 石灯篭1"
+      ]
+    },
+    {
+      "ID": 256010000,
+      "Entries": [
+        "Stone lantern 2 -- 石灯篭2"
+      ]
+    },
+    {
+      "ID": 256100000,
+      "Entries": [
+        "High lighthouse -- 高灯台"
+      ]
+    },
+    {
+      "ID": 256100001,
+      "Entries": [
+        "High lighthouse (water surface effect) -- 高灯台(水面用エフェクト)"
+      ]
+    },
+    {
+      "ID": 256110000,
+      "Entries": [
+        "High cup lighthouse -- 高杯灯台"
+      ]
+    },
+    {
+      "ID": 256110001,
+      "Entries": [
+        "High Cup Lighthouse (Water Surface Effect) -- 高杯灯台(水面用エフェクト)"
+      ]
+    },
+    {
+      "ID": 256120000,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 256020000,
+      "Entries": [
+        "Hanging lantern -- 吊り灯篭"
+      ]
+    },
+    {
+      "ID": 256020001,
+      "Entries": [
+        "Hanging lantern -- 吊り灯篭"
+      ]
+    },
+    {
+      "ID": 256030000,
+      "Entries": [
+        "Hanging incense burner -- 吊り香炉"
+      ]
+    },
+    {
+      "ID": 302525000,
+      "Entries": [
+        "Hanging lantern 1 -- 吊るし灯篭1"
+      ]
+    },
+    {
+      "ID": 302526000,
+      "Entries": [
+        "Firewood flame -- 薪の炎"
+      ]
+    },
+    {
+      "ID": 302564000,
+      "Entries": [
+        "Burnt corpse -- 燃えた死体"
+      ]
+    },
+    {
+      "ID": 302565000,
+      "Entries": [
+        "Statue candle holder -- 彫像蝋燭持ち"
+      ]
+    },
+    {
+      "ID": 302518000,
+      "Entries": [
+        "Royal castle candle -- 王城蝋燭"
+      ]
+    },
+    {
+      "ID": 304857000,
+      "Entries": [
+        "Royal Castle Candlestick (High) -- 王城燭台（高）"
+      ]
+    },
+    {
+      "ID": 304858000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304863000,
+      "Entries": [
+        "Royal Castle 2 Torch -- 王城2\u3000トーチ"
+      ]
+    },
+    {
+      "ID": 315100000,
+      "Entries": [
+        "Bonfire tree -- 焚火のツリー"
+      ]
+    },
+    {
+      "ID": 316500000,
+      "Entries": [
+        "Hanging lantern 1 -- 吊るし灯篭1"
+      ]
+    },
+    {
+      "ID": 316500001,
+      "Entries": [
+        "Hanging lantern 1 -- 吊るし灯篭1"
+      ]
+    },
+    {
+      "ID": 319010000,
+      "Entries": [
+        "lanthanum -- ランタン"
+      ]
+    },
+    {
+      "ID": 319012000,
+      "Entries": [
+        "Hanging torch -- 吊るしトーチ"
+      ]
+    },
+    {
+      "ID": 319006000,
+      "Entries": [
+        "Candle (with plate) -- 蝋燭(皿付き)"
+      ]
+    },
+    {
+      "ID": 319006001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9004010,
+      "Entries": [
+        "Concept version sun -- コンセプト版太陽"
+      ]
+    },
+    {
+      "ID": 324014000,
+      "Entries": [
+        "Censer m32 -- 香炉ｍ32"
+      ]
+    },
+    {
+      "ID": 330010000,
+      "Entries": [
+        "Forest lantern -- 森ランタン"
+      ]
+    },
+    {
+      "ID": 330009000,
+      "Entries": [
+        "Forest skeleton candle -- 森骸骨蝋燭"
+      ]
+    },
+    {
+      "ID": 331390000,
+      "Entries": [
+        "Forest Boss Room Skeleton Candle 01 -- 森\u3000ボス部屋骸骨蝋燭01"
+      ]
+    },
+    {
+      "ID": 331391000,
+      "Entries": [
+        "Forest Boss Room Skeleton Candle 02 -- 森\u3000ボス部屋骸骨蝋燭02"
+      ]
+    },
+    {
+      "ID": 331392000,
+      "Entries": [
+        "Forest Boss Room Skeleton Candle 03 -- 森\u3000ボス部屋骸骨蝋燭03"
+      ]
+    },
+    {
+      "ID": 344857000,
+      "Entries": [
+        "Royal castle a few candlesticks (high) -- 王城2,3燭台（高）"
+      ]
+    },
+    {
+      "ID": 344859000,
+      "Entries": [
+        "Royal castle a few candlesticks (low) -- 王城2,3燭台（低）"
+      ]
+    },
+    {
+      "ID": 344863000,
+      "Entries": [
+        "Royal Castle 2,3 Torch -- 王城2,3\u3000トーチ"
+      ]
+    },
+    {
+      "ID": 350000000,
+      "Entries": [
+        "Basilica church chandelier -- 聖堂教会シャンデリア"
+      ]
+    },
+    {
+      "ID": 350013000,
+      "Entries": [
+        "Basilica Church Candlestick Bver00 -- 聖堂教会燭台Bver00"
+      ]
+    },
+    {
+      "ID": 350013001,
+      "Entries": [
+        "Basilica Church Candlestick B ver01 -- 聖堂教会燭台Bver01"
+      ]
+    },
+    {
+      "ID": 350015000,
+      "Entries": [
+        "Basilica Church Boss Room Candle -- 聖堂教会\u3000ボス部屋蝋燭"
+      ]
+    },
+    {
+      "ID": 350010000,
+      "Entries": [
+        "Basilica Church Candlestick A -- 聖堂教会燭台Ａ"
+      ]
+    },
+    {
+      "ID": 352000000,
+      "Entries": [
+        "Basilica Church_Indoor torch -- 聖堂教会_室内松明"
+      ]
+    },
+    {
+      "ID": 364517000,
+      "Entries": [
+        "God Tomb Lantern 1 -- 神墓ランタン1"
+      ]
+    },
+    {
+      "ID": 364512000,
+      "Entries": [
+        "God Tomb Lantern 2 -- 神墓ランタン2"
+      ]
+    },
+    {
+      "ID": 372010000,
+      "Entries": [
+        "Anor Lantern A -- アノールランタンA"
+      ]
+    },
+    {
+      "ID": 381004000,
+      "Entries": [
+        "Candle ver00 -- 蝋燭ver00"
+      ]
+    },
+    {
+      "ID": 381009000,
+      "Entries": [
+        "Hanging lantern -- 吊るし灯篭"
+      ]
+    },
+    {
+      "ID": 381008000,
+      "Entries": [
+        "Wall lantern -- 壁灯篭"
+      ]
+    },
+    {
+      "ID": 391000000,
+      "Entries": [
+        "Candle 1 -- 蝋燭1"
+      ]
+    },
+    {
+      "ID": 391100000,
+      "Entries": [
+        "Censer 1 -- 香炉1"
+      ]
+    },
+    {
+      "ID": 392300000,
+      "Entries": [
+        "Shaking incense burner 1 -- 揺れる香炉1"
+      ]
+    },
+    {
+      "ID": 392310000,
+      "Entries": [
+        "Shaking incense burner 2 -- 揺れる香炉2"
+      ]
+    },
+    {
+      "ID": 398000000,
+      "Entries": [
+        "Corpse Mountain 1 -- 死体の山1"
+      ]
+    },
+    {
+      "ID": 399100000,
+      "Entries": [
+        "Wall-mounted torch 1 -- 壁掛け松明1"
+      ]
+    },
+    {
+      "ID": 399100001,
+      "Entries": [
+        "Wall-mounted torch 1 -- 壁掛け松明1"
+      ]
+    },
+    {
+      "ID": 399999000,
+      "Entries": [
+        "Candle test -- 蝋燭テスト"
+      ]
+    },
+    {
+      "ID": 962140000,
+      "Entries": [
+        "Hanging lighting -- 吊るし照明"
+      ]
+    },
+    {
+      "ID": 966100000,
+      "Entries": [
+        "Torch plate (with stand) -- 燈明皿（台あり）"
+      ]
+    },
+    {
+      "ID": 966100001,
+      "Entries": [
+        "Torch plate (with stand) (light source range narrow) -- 燈明皿（台あり）（光源範囲狭）"
+      ]
+    },
+    {
+      "ID": 966110000,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 966110001,
+      "Entries": [
+        "Candlestick (narrow light source range) -- 燭台(光源範囲狭い)"
+      ]
+    },
+    {
+      "ID": 966120000,
+      "Entries": [
+        "Torch plate (single item) -- 燈明皿（単品）"
+      ]
+    },
+    {
+      "ID": 966130000,
+      "Entries": [
+        "Torch plate (dark) -- 燈明皿（暗い）"
+      ]
+    },
+    {
+      "ID": 966210000,
+      "Entries": [
+        "Shrine -- 祠"
+      ]
+    },
+    {
+      "ID": 969007000,
+      "Entries": [
+        "Torch 1 -- 松明1"
+      ]
+    },
+    {
+      "ID": 966000000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 966060000,
+      "Entries": [
+        "Signal -- のろし"
+      ]
+    },
+    {
+      "ID": 934630000,
+      "Entries": [
+        "Bonfire candlestick normal fire -- 篝火燭台ノーマル火"
+      ]
+    },
+    {
+      "ID": 1030000,
+      "Entries": [
+        "[Ritual] Princess substitute OBJ -- 【儀式】皇女代替OBJ"
+      ]
+    },
+    {
+      "ID": 962120000,
+      "Entries": [
+        "Stone statue candle lighting (6 digit version) -- 石像ロウソク点灯(6桁版)"
+      ]
+    },
+    {
+      "ID": 969004010,
+      "Entries": [
+        "Concept version sun (6 digit version) -- コンセプト版太陽(6桁版)"
+      ]
+    },
+    {
+      "ID": 950100000,
+      "Entries": [
+        "Resident SFX test -- 常駐SFXテスト"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1145 @@
+{
+  "Name": "MenuPropertySpecParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "---- -- ----"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Common to items] Name -- 【アイテム共通】 名前"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Common to items] Description -- 【アイテム共通】 説明"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Common to all items] -- 【アイテム共通】 うんちく"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[Common to items] Weight -- 【アイテム共通】 重量"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Common to items] Number of possessions -- 【アイテム共通】 所持数"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[Common to items] Number of possessions_maximum value -- 【アイテム共通】 所持数_最大値"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "[Common to items] Number of warehouses -- 【アイテム共通】 倉庫所持数"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "[Common to items] Number of warehouse possessions_maximum value -- 【アイテム共通】 倉庫所持数_最大値"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "[Common to all items] Required soul -- 【アイテム共通】 必要ソウル"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "[Common to all items] Obtained soul -- 【アイテム共通】 獲得ソウル"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "[Tool] Consumption type when using -- 【道具】 使用時消費タイプ"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "[Tool] Ability correction Muscle strength -- 【道具】 能力補正 筋力"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "[Tool] Ability correction skill -- 【道具】 能力補正 技量"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "[Tool] Ability correction physics -- 【道具】 能力補正 理力"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "[Tool] Ability correction Faith -- 【道具】 能力補正 信仰"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "[Weapon] Weapon type -- 【武器】 武器種別"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "[Weapon] Attack attribute -- 【武器】 攻撃属性"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "[Weapon] Maneuver name -- 【武器】 戦技名"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "[Weapon] Attack power: Physical -- 【武器】 攻撃力：物理"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "[Weapon] Attack power: Magic -- 【武器】 攻撃力：魔法"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "[Weapon] Attack power: Flame -- 【武器】 攻撃力：炎"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "[Weapon] Attack power: Lightning -- 【武器】 攻撃力：雷"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "[Weapon] Attack power: Darkness -- 【武器】 攻撃力：闇"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "[Weapon] Additional attack power: Physical -- 【武器】付加攻撃力：物理"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "[Weapon] Additional attack power: Magic -- 【武器】 付加攻撃力：魔法"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "[Weapon] Additional attack power: Flame -- 【武器】 付加攻撃力：炎"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "[Weapon] Additional attack power: Lightning -- 【武器】 付加攻撃力：雷"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "[Weapon] Additional attack power: Darkness -- 【武器】 付加攻撃力：闇"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "[Weapon] Range -- 【武器】 射程距離"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "[Weapon] Magic power correction -- 【武器】 魔法威力修正"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "[Weapon] Deadly -- 【武器】 致命"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "[Weapon] Special effect: Poison -- 【武器】 特殊効果：毒"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "[Weapon] Special effect: Bleeding -- 【武器】 特殊効果：出血"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "[Weapon] Special effect: Holy -- 【武器】 特殊効果：神聖"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "[Weapon] Special effects: Evil -- 【武器】 特殊効果：邪教"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "[Weapon] Special effect: Cold air -- 【武器】 特殊効果：冷気"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "[Weapon] Damage cut rate: Physical -- 【武器】 ダメージカット率：物理"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "[Weapon] Damage cut rate: Magic -- 【武器】 ダメージカット率：魔法"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "[Weapon] Damage cut rate: Flame -- 【武器】 ダメージカット率：炎"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "[Weapon] Damage cut rate: Lightning -- 【武器】 ダメージカット率：雷"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "[Weapon] Damage cut rate: Darkness -- 【武器】 ダメージカット率：闇"
+      ]
+    },
+    {
+      "ID": 345,
+      "Entries": [
+        "[Weapon] Additional damage cut rate: Physical -- 【武器】 付加ダメージカット率：物理"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "[Weapon] Additional damage cut rate: Magic -- 【武器】 付加ダメージカット率：魔法"
+      ]
+    },
+    {
+      "ID": 347,
+      "Entries": [
+        "[Weapon] Additional damage cut rate: Flame -- 【武器】 付加ダメージカット率：炎"
+      ]
+    },
+    {
+      "ID": 348,
+      "Entries": [
+        "[Weapon] Additional damage cut rate: Lightning -- 【武器】 付加ダメージカット率：雷"
+      ]
+    },
+    {
+      "ID": 349,
+      "Entries": [
+        "[Weapon] Additional damage cut rate: Darkness -- 【武器】 付加ダメージカット率：闇"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "[Weapon] Receiving ability -- 【武器】 受け能力"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "[Weapon] Additional receiving ability -- 【武器】 付加受け能力"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "[Weapon] Required ability value: Strength -- 【武器】 必要能力値：筋力"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "[Weapon] Required ability value: Skill -- 【武器】 必要能力値：技量"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "[Weapon] Required ability value: Reason -- 【武器】 必要能力値：理力"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "[Weapon] Required ability value: Faith -- 【武器】 必要能力値：信仰"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "[Weapon] Ability release status value: Strength -- 【武器】 能力解放ステータス値：筋力"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "[Weapon] Ability release status value: Skill -- 【武器】 能力解放ステータス値：技量"
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        "[Weapon] Ability release status value: Reason -- 【武器】 能力解放ステータス値：理力"
+      ]
+    },
+    {
+      "ID": 368,
+      "Entries": [
+        "[Weapon] Ability release status value: Faith -- 【武器】 能力解放ステータス値：信仰"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "[Weapon] Ability correction: Strength -- 【武器】 能力補正：筋力"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "[Weapon] Ability correction: Skill -- 【武器】 能力補正：技量"
+      ]
+    },
+    {
+      "ID": 372,
+      "Entries": [
+        "[Weapon] Ability correction: Reason -- 【武器】 能力補正：理力"
+      ]
+    },
+    {
+      "ID": 373,
+      "Entries": [
+        "[Weapon] Ability correction: Faith -- 【武器】 能力補正：信仰"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "[Weapon] Durability current value -- 【武器】 耐久度 現在値"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "[Weapon] Maximum durability -- 【武器】 耐久度 最大値"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "[Weapon] Consumed Arts Points: L1 -- 【武器】 消費アーツポイント：L1"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "[Weapon] MP consumed for combat maneuvers: L2 -- 【武器】 戦技消費MP：L2"
+      ]
+    },
+    {
+      "ID": 392,
+      "Entries": [
+        "[Weapon] MP consumed for combat maneuvers: R1 -- 【武器】 戦技消費MP：R1"
+      ]
+    },
+    {
+      "ID": 393,
+      "Entries": [
+        "[Weapon] MP consumption for combat maneuvers: R2 -- 【武器】 戦技消費MP：R2"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "[Armor] Defense: Physical -- 【防具】 防御力：物理"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "[Armor] Defense: Physical vs. Strike -- 【防具】 防御力：物理 対打撃"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "[Armor] Defense: Physical vs. Slash -- 【防具】 防御力：物理 対斬撃"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "[Armor] Defensive power: Physical anti-piercing -- 【防具】 防御力：物理 対刺突"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "[Armor] Defense: Magic -- 【防具】 防御力：魔法"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "[Armor] Defensive power: Flame -- 【防具】 防御力：炎"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "[Armor] Defensive power: Lightning -- 【防具】 防御力：雷"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "[Armor] Toughness -- 【防具】 強靭度"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "[Armor] Resistance: Poison -- 【防具】 耐性：毒"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "[Armor] Resistance: Bleeding -- 【防具】 耐性：出血"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "[Armor] Resistance: Curse -- 【防具】 耐性：呪い"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "[Armor] Resistance: Cold air -- 【防具】 耐性：冷気"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "[Armor] New toughness -- 【防具】 新強靭度"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "[Armor] Current durability -- 【防具】 耐久度 現在値"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "[Armor] Maximum durability -- 【防具】 耐久度 最大値"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "[Armor] Damage cut: Physical -- 【防具】 ダメージカット：物理"
+      ]
+    },
+    {
+      "ID": 431,
+      "Entries": [
+        "[Armor] Damage cut: Physical vs. hit -- 【防具】 ダメージカット：物理 対打撃"
+      ]
+    },
+    {
+      "ID": 432,
+      "Entries": [
+        "[Armor] Damage cut: Physical anti-slash -- 【防具】 ダメージカット：物理 対斬撃"
+      ]
+    },
+    {
+      "ID": 433,
+      "Entries": [
+        "[Armor] Damage cut: Physical anti-piercing -- 【防具】 ダメージカット：物理 対刺突"
+      ]
+    },
+    {
+      "ID": 434,
+      "Entries": [
+        "[Armor] Damage cut: Magic -- 【防具】 ダメージカット：魔法"
+      ]
+    },
+    {
+      "ID": 435,
+      "Entries": [
+        "[Armor] Damage cut: Flame -- 【防具】 ダメージカット：炎"
+      ]
+    },
+    {
+      "ID": 436,
+      "Entries": [
+        "[Armor] Damage cut: Lightning -- 【防具】 ダメージカット：雷"
+      ]
+    },
+    {
+      "ID": 437,
+      "Entries": [
+        "[Armor] Damage cut: Darkness -- 【防具】 ダメージカット：闇"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[Spell] Spell type -- 【スペル】 スペル種別"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "[Spell] Attack attribute -- 【スペル】 攻撃属性"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "[Spell] Number of slots used -- 【スペル】 使用スロット数"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "[Spell] Number of uses -- 【スペル】 使用回数"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "[Spell] Required ability value Reason -- 【スペル】 必要能力値 理力"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "[Spell] Required ability value Faith -- 【スペル】 必要能力値 信仰"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "[Spell] MP consumption -- 【スペル】 消費MP"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "[Arrow] Weapon type -- 【矢】 武器種別"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "[Arrow] Attack attribute -- 【矢】 攻撃属性"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "[Arrow] Attack power: Physical -- 【矢】 攻撃力：物理"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "[Arrow] Attack power: Magic -- 【矢】 攻撃力：魔法"
+      ]
+    },
+    {
+      "ID": 612,
+      "Entries": [
+        "[Arrow] Attack power: Flame -- 【矢】 攻撃力：炎"
+      ]
+    },
+    {
+      "ID": 613,
+      "Entries": [
+        "[Arrow] Attack power: Lightning -- 【矢】 攻撃力：雷"
+      ]
+    },
+    {
+      "ID": 614,
+      "Entries": [
+        "[Arrow] Deadly -- 【矢】 致命"
+      ]
+    },
+    {
+      "ID": 615,
+      "Entries": [
+        "[Arrow] Attack power: Darkness -- 【矢】 攻撃力：闇"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "[Arrow] Special effect: Poison -- 【矢】 特殊効果：毒"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "[Arrow] Special effect: Bleeding -- 【矢】 特殊効果：出血"
+      ]
+    },
+    {
+      "ID": 622,
+      "Entries": [
+        "[Arrow] Special effect: Holy -- 【矢】 特殊効果：神聖"
+      ]
+    },
+    {
+      "ID": 623,
+      "Entries": [
+        "[Arrow] Special effect: Evil -- 【矢】 特殊効果：邪教"
+      ]
+    },
+    {
+      "ID": 624,
+      "Entries": [
+        "[Arrow] Special effect: Cold air -- 【矢】 特殊効果：冷気"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[PC basics] Name -- 【PC基本】 名前"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "[PC basics] Gender -- 【PC基本】 性別"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "[PC basics] Features -- 【PC基本】 素性"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "[PC basics] Gifts -- 【PC基本】 贈り物"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "[PC basics] Body shape -- 【PC基本】 体型"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "[PC basics] Face -- 【PC基本】 顔"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "[PC basics] Hairstyle -- 【PC基本】 髪型"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "[PC basics] Hair and eye color -- 【PC基本】 髪と瞳の色"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "[PC basics] Level -- 【PC基本】 レベル"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "[PC basics] Possession soul -- 【PC基本】 所持ソウル"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "[PC basics] Required soul -- 【PC基本】 必要ソウル"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "[PC basics] Pledge -- 【PC基本】 誓約"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "[PC basics] Age group -- 【PC基本】 年齢層"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "[PC basics] Degree of death -- 【PC基本】 亡者度"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "[PC primary] vitality -- 【PC１次】 生命力"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "[PC primary] Endurance -- 【PC１次】 持久力"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "[PC primary] Memory -- 【PC１次】 記憶力"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "[PC primary] Muscle strength -- 【PC１次】 筋力"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "[PC primary] Skill -- 【PC１次】 技量"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "[PC primary] Physical fitness -- 【PC１次】 体力"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "[PC primary] Reason -- 【PC１次】 理力"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "[PC primary] Faith -- 【PC１次】 信仰"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "[PC primary] Human nature -- 【PC１次】 人間性"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "[PC primary] Luck -- 【PC１次】 運"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "[PC secondary] HP current value -- 【PC２次】 HP 現在値"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "[PC secondary] HP maximum value -- 【PC２次】 HP 最大値"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "[PC secondary] MP current value -- 【PC２次】 MP 現在値"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "[PC secondary] MP maximum value -- 【PC２次】 MP 最大値"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "[PC secondary] Stamina -- 【PC２次】 スタミナ"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        "[PC secondary] Equipment weight current value -- 【PC２次】 装備重量 現在値"
+      ]
+    },
+    {
+      "ID": 10206,
+      "Entries": [
+        "[PC secondary] Maximum equipment weight -- 【PC２次】 装備重量 最大値"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "[PC secondary] Right weapon 1 Attack power -- 【PC２次】 右武器１\u3000攻撃力"
+      ]
+    },
+    {
+      "ID": 10208,
+      "Entries": [
+        "[PC secondary] Right weapon 2 Attack power -- 【PC２次】 右武器２\u3000攻撃力"
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        "[PC secondary] Right weapon 3 Attack power -- 【PC２次】 右武器３\u3000攻撃力"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "[PC secondary] Left weapon 1 Attack power -- 【PC２次】 左武器１\u3000攻撃力"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "[PC secondary] Left weapon 2 Attack power -- 【PC２次】 左武器２\u3000攻撃力"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "[PC secondary] Left weapon 3 Attack power -- 【PC２次】 左武器３\u3000攻撃力"
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "[PC secondary] Defense: Physical -- 【PC２次】 防御力：物理"
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "[PC secondary] Defensive power: Physical vs. hit -- 【PC２次】 防御力：物理 対打撃"
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        "[PC secondary] Defense: Physical vs. slashing -- 【PC２次】 防御力：物理 対斬撃"
+      ]
+    },
+    {
+      "ID": 10216,
+      "Entries": [
+        "[PC secondary] Defensive power: Physical anti-piercing -- 【PC２次】 防御力：物理 対刺突"
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        "[PC secondary] Defense: Magic -- 【PC２次】 防御力：魔法"
+      ]
+    },
+    {
+      "ID": 10218,
+      "Entries": [
+        "[PC secondary] Defensive power: Flame -- 【PC２次】 防御力：炎"
+      ]
+    },
+    {
+      "ID": 10219,
+      "Entries": [
+        "[PC secondary] Defense: Lightning -- 【PC２次】 防御力：雷"
+      ]
+    },
+    {
+      "ID": 10220,
+      "Entries": [
+        "[PC secondary] Resistance: Poison -- 【PC２次】 耐性：毒"
+      ]
+    },
+    {
+      "ID": 10221,
+      "Entries": [
+        "[PC secondary] Resistance: Bleeding -- 【PC２次】 耐性：出血"
+      ]
+    },
+    {
+      "ID": 10222,
+      "Entries": [
+        "[PC secondary] Resistance: Curse -- 【PC２次】 耐性：呪い"
+      ]
+    },
+    {
+      "ID": 10223,
+      "Entries": [
+        "[PC secondary] Toughness -- 【PC２次】 強靭度"
+      ]
+    },
+    {
+      "ID": 10224,
+      "Entries": [
+        "[PC secondary] Number of storage slots -- 【PC２次】 記憶スロット数"
+      ]
+    },
+    {
+      "ID": 10225,
+      "Entries": [
+        "[PC secondary] Item discovery power -- 【PC２次】 アイテム発見力"
+      ]
+    },
+    {
+      "ID": 10226,
+      "Entries": [
+        "[PC secondary] Load ratio -- 【PC２次】 荷重割合"
+      ]
+    },
+    {
+      "ID": 10227,
+      "Entries": [
+        "[PC secondary] New toughness -- 【PC２次】 新強靭度"
+      ]
+    },
+    {
+      "ID": 10242,
+      "Entries": [
+        "[PC secondary] Armor damage cut: Physical -- 【PC２次】 防具ダメージカット：物理"
+      ]
+    },
+    {
+      "ID": 10243,
+      "Entries": [
+        "[PC secondary] Armor damage cut: magic -- 【PC２次】 防具ダメージカット：魔法"
+      ]
+    },
+    {
+      "ID": 10244,
+      "Entries": [
+        "[PC secondary] Armor damage cut: Flame -- 【PC２次】 防具ダメージカット：炎"
+      ]
+    },
+    {
+      "ID": 10245,
+      "Entries": [
+        "[PC secondary] Armor damage cut: lightning -- 【PC２次】 防具ダメージカット：雷"
+      ]
+    },
+    {
+      "ID": 10258,
+      "Entries": [
+        "[PC secondary] Defense: Darkness -- 【PC２次】 防御力：闇"
+      ]
+    },
+    {
+      "ID": 10259,
+      "Entries": [
+        "[PC secondary] Armor damage cut: Physical vs. hit -- 【PC２次】 防具ダメージカット：物理 対打撃"
+      ]
+    },
+    {
+      "ID": 10260,
+      "Entries": [
+        "[PC secondary] Armor damage cut: Physical anti-slash -- 【PC２次】 防具ダメージカット：物理 対斬撃"
+      ]
+    },
+    {
+      "ID": 10261,
+      "Entries": [
+        "[PC secondary] Armor damage cut: Physical anti-piercing -- 【PC２次】 防具ダメージカット：物理 対刺突"
+      ]
+    },
+    {
+      "ID": 10262,
+      "Entries": [
+        "[PC secondary] Armor damage cut: darkness -- 【PC２次】 防具ダメージカット：闇"
+      ]
+    },
+    {
+      "ID": 10263,
+      "Entries": [
+        "[PC secondary] Resistance: Cold air -- 【PC２次】 耐性：冷気"
+      ]
+    },
+    {
+      "ID": 10264,
+      "Entries": [
+        "[PC secondary] Armor resistance: Bleeding -- 【PC２次】 防具耐性：出血"
+      ]
+    },
+    {
+      "ID": 10265,
+      "Entries": [
+        "[PC secondary] Armor resistance: Poison -- 【PC２次】 防具耐性：毒"
+      ]
+    },
+    {
+      "ID": 10266,
+      "Entries": [
+        "[PC secondary] Armor resistance: cold air -- 【PC２次】 防具耐性：冷気"
+      ]
+    },
+    {
+      "ID": 10267,
+      "Entries": [
+        "[PC secondary] Armor resistance: Curse -- 【PC２次】 防具耐性：呪い"
+      ]
+    },
+    {
+      "ID": 10270,
+      "Entries": [
+        "[PC secondary] Arts point: Current muscle strength -- 【PC２次】 アーツポイント：筋力 現在値"
+      ]
+    },
+    {
+      "ID": 10271,
+      "Entries": [
+        "[PC secondary] Arts point: current skill value -- 【PC２次】 アーツポイント：技量 現在値"
+      ]
+    },
+    {
+      "ID": 10272,
+      "Entries": [
+        "[PC secondary] Arts point: Magic current value -- 【PC２次】 アーツポイント：魔法 現在値"
+      ]
+    },
+    {
+      "ID": 10273,
+      "Entries": [
+        "[PC secondary] Arts point: Miracle current value -- 【PC２次】 アーツポイント：奇跡 現在値"
+      ]
+    },
+    {
+      "ID": 10280,
+      "Entries": [
+        "[PC secondary] Arts point: Maximum muscle strength -- 【PC２次】 アーツポイント：筋力 最大値"
+      ]
+    },
+    {
+      "ID": 10281,
+      "Entries": [
+        "[PC secondary] Arts point: Maximum skill value -- 【PC２次】 アーツポイント：技量 最大値"
+      ]
+    },
+    {
+      "ID": 10282,
+      "Entries": [
+        "[PC secondary] Arts point: Magic maximum value -- 【PC２次】 アーツポイント：魔法 最大値"
+      ]
+    },
+    {
+      "ID": 10283,
+      "Entries": [
+        "[PC secondary] Arts point: Miracle maximum value -- 【PC２次】 アーツポイント：奇跡 最大値"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "[Sort] [Weapon] Attack power: Total -- 【ソート】【武器】 攻撃力：合計"
+      ]
+    },
+    {
+      "ID": 20301,
+      "Entries": [
+        "[Sort] [Weapon] Damage cut rate: Total -- 【ソート】【武器】 ダメージカット率：合計"
+      ]
+    },
+    {
+      "ID": 20302,
+      "Entries": [
+        "[Sort] [Weapon] By effect -- 【ソート】【武器】 効果別"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "[Sort] [Armor] Damage cut: Total -- 【ソート】【防具】 ダメージカット：合計"
+      ]
+    },
+    {
+      "ID": 20401,
+      "Entries": [
+        "[Sort] [Armor] Resistance: Total -- 【ソート】【防具】 耐性：合計"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "[Sort] [Arrow] Attack power: Total -- 【ソート】【矢】 攻撃力：合計"
+      ]
+    }
+  ]
+}

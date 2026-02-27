@@ -1,0 +1,203 @@
+{
+  "Name": "RoleParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Surviving player -- 生存プレイヤ"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "White ghost -- 白ゴースト"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Black ghost -- 黒ゴースト"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Wandering -- 徘徊"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Wandering NPC -- 徘徊NPC"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Normal enemy -- 通常敵"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Animal enemy -- 動物敵"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Boss enemy -- ボス敵"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Gray ghost -- グレイゴースト"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "NPC -- NPC"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Replay -- リプレイ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "display -- 表示"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "invader -- 侵入者"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "For the arena -- 闘技場用"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Maximum number -- 最大数"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "White Ghost (Red Scare White Pledge) -- 白ゴースト（赤狩り白誓約）"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Black Ghost (Red Scare White Pledge) -- 黒ゴースト（赤狩り白誓約）"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "White ghost (sun pledge) -- 白ゴースト（太陽誓約）"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Black Ghost (Sun Pledge) -- 黒ゴースト（太陽誓約）"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "White Ghost (Berserker Pledge) -- 白ゴースト（バーサーカー誓約）"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Black Ghost (Berserker Pledge) -- 黒ゴースト（バーサーカー誓約）"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "White Ghost (Sinner Hero Pledge) -- 白ゴースト（罪人英雄誓約）"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Black Ghost (Sinner Hero Pledge) -- 黒ゴースト（罪人英雄誓約）"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "White Ghost (Rosaria Pledge) -- 白ゴースト（ロザリア誓約）"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Black Ghost (Rosaria Pledge) -- 黒ゴースト（ロザリア誓約）"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "White Ghost (Map Guardian Pledge (Bridge)) -- 白ゴースト（マップ守護者誓約(橋)）"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "Black Ghost (Map Guardian Pledge (Bridge)) -- 黒ゴースト（マップ守護者誓約(橋)）"
+      ]
+    },
+    {
+      "ID": 70001,
+      "Entries": [
+        "White Ghost (Map Guardian Pledge (Anor)) -- 白ゴースト（マップ守護者誓約(アノール)）"
+      ]
+    },
+    {
+      "ID": 70002,
+      "Entries": [
+        "Black Ghost (Map Guardian Pledge (Anor)) -- 黒ゴースト（マップ守護者誓約(アノール)）"
+      ]
+    },
+    {
+      "ID": 80001,
+      "Entries": [
+        "Blue religion 1 -- 青教1"
+      ]
+    },
+    {
+      "ID": 80002,
+      "Entries": [
+        "Blue religion 2 -- 青教2"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "White Ghost (Red Scare 2 Pledge) -- 白ゴースト（赤狩り2誓約）"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "Black Ghost (Red Scare 2 Pledge) -- 黒ゴースト（赤狩り2誓約）"
+      ]
+    }
+  ]
+}

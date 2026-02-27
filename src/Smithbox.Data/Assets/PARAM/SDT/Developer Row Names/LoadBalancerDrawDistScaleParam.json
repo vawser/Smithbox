@@ -1,0 +1,413 @@
+{
+  "Name": "LoadBalancerDrawDistScaleParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "[LOD Distance Scale] Map / Obj Small -- [LOD距離スケール] Map/Obj 小"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[LOD Distance Scale] Map / Obj Medium -- [LOD距離スケール] Map/Obj 中"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[LOD Distance Scale] Map / Obj Large -- [LOD距離スケール] Map/Obj 大"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[LOD Distance Scale] Map / Obj Oversized -- [LOD距離スケール] Map/Obj 特大"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[LOD Distance Scale] Chr Small -- [LOD距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[LOD Distance Scale] Chr Medium -- [LOD距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[LOD Distance Scale] Chr Large -- [LOD距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[LOD Distance Scale] Chr Oversized -- [LOD距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[LOD Distance Scale] Local Player -- [LOD距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[LOD Distance Scale] Remote Player -- [LOD距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[LOD Distance Scale] Phantom -- [LOD距離スケール] 幻影"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "[LOD distance scale] Map m30 series -- [LOD距離スケール] Map m30系"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "[LOD distance scale] m37_for Anor_trees, etc. -- [LOD距離スケール] m37_アノール用_樹木など"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "[LOD distance scale] m37_ stairs -- [LOD距離スケール] m37_階段"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "[LOD Distance Scale] m37_ Streetlight -- [LOD距離スケール] m37_街灯"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "[LOD distance scale] m37_ railing etc. -- [LOD距離スケール] m37_手すりなど"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map / Obj Small -- [テクスチャLOD距離スケール] Map/Obj 小"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map / Obj Medium -- [テクスチャLOD距離スケール] Map/Obj 中"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map / Obj Large -- [テクスチャLOD距離スケール] Map/Obj 大"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map / Obj Oversized -- [テクスチャLOD距離スケール] Map/Obj 特大"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Small -- [テクスチャLOD距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Medium -- [テクスチャLOD距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Large -- [テクスチャLOD距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Oversized -- [テクスチャLOD距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Texture LOD Distance Scale] Local player -- [テクスチャLOD距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[Texture LOD Distance Scale] Remote Player -- [テクスチャLOD距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "[Texture LOD Distance Scale] Phantom -- [テクスチャLOD距離スケール] 幻影"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "[Texture LOD distance scale] Map m30 series -- [テクスチャLOD距離スケール]  Map m30系"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "[Texture LOD scale] m37_for Anor_trees, etc. -- [テクスチャLODスケール] m37_アノール用_樹木など"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "[Texture LOD scale] m37_ stairs -- [テクスチャLODスケール] m37_階段"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "[Texture LOD scale] m37_ Street light -- [テクスチャLODスケール] m37_街灯"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "[Texture LOD scale] m37_ Railing etc. -- [テクスチャLODスケール] m37_手すりなど"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "[Drawing distance scale] Chr small -- [描画距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "[Drawing distance scale] Chr Medium -- [描画距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "[Drawing distance scale] Chr large -- [描画距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "[Drawing distance scale] Chr oversized -- [描画距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "[Drawing distance scale] Local player -- [描画距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "[Drawing distance scale] Remote player -- [描画距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "[Drawing distance scale] Phantom -- [描画距離スケール] 幻影"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "[Drawing distance scale] Map m30 series -- [描画距離スケール]  Map m30系"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "[Drawing distance scale] m37_for Anor_trees, etc. -- [描画距離スケール] m37_アノール用_樹木など"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "[Drawing distance scale] m37_stairs -- [描画距離スケール] m37_階段"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "[Drawing distance scale] m37_ Street light -- [描画距離スケール] m37_街灯"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "[Drawing distance scale] m37_Handrail, etc. -- [描画距離スケール] m37_手すりなど"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "[Shadow drawing distance scale] Chr small -- [影描画距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "[Shadow drawing distance scale] Chr Medium -- [影描画距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "[Shadow drawing distance scale] Chr large -- [影描画距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "[Shadow drawing distance scale] Chr oversized -- [影描画距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "[Shadow drawing distance scale] Local player -- [影描画距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "[Shadow drawing distance scale] Remote player -- [影描画距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "[Shadow drawing distance scale] Phantom -- [影描画距離スケール] 幻影"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "[Shadow drawing distance scale] Map m30 series -- [影描画距離スケール]  Map m30系"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "[Shadow drawing distance scale] m37_for Anor_trees, etc. -- [影描画距離スケール] m37_アノール用_樹木など"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "[Shadow drawing distance scale] m37_stairs -- [影描画距離スケール] m37_階段"
+      ]
+    },
+    {
+      "ID": 353,
+      "Entries": [
+        "[Shadow drawing distance scale] m37_ Street light -- [影描画距離スケール] m37_街灯"
+      ]
+    },
+    {
+      "ID": 354,
+      "Entries": [
+        "[Shadow drawing distance scale] m37_Handrail, etc. -- [影描画距離スケール] m37_手すりなど"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "[Motion blur effective distance scale] Chr small -- [モーションブラー有効距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "[Motion blur effective distance scale] Chr Medium -- [モーションブラー有効距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "[Motion blur effective distance scale] Chr large -- [モーションブラー有効距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "[Motion blur effective distance scale] Chr oversized -- [モーションブラー有効距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "[Motion blur effective distance scale] Local player -- [モーションブラー有効距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "[Motion blur effective distance scale] Remote player -- [モーションブラー有効距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "[Motion blur effective distance scale] Phantom -- [モーションブラー有効距離スケール] 幻影"
+      ]
+    },
+    {
+      "ID": 426,
+      "Entries": [
+        "[Motion blur effective distance scale] Map m30 series -- [モーションブラー有効距離スケール]  Map m30系"
+      ]
+    },
+    {
+      "ID": 451,
+      "Entries": [
+        "[Motion blur effective distance scale] m37_for Anor_trees, etc. -- [モーションブラー有効距離スケール] m37_アノール用_樹木など"
+      ]
+    },
+    {
+      "ID": 452,
+      "Entries": [
+        "[Motion blur effective distance scale] m37_ stairs -- [モーションブラー有効距離スケール] m37_階段"
+      ]
+    },
+    {
+      "ID": 453,
+      "Entries": [
+        "[Motion blur effective distance scale] m37_ Street light -- [モーションブラー有効距離スケール] m37_街灯"
+      ]
+    },
+    {
+      "ID": 454,
+      "Entries": [
+        "[Motion blur effective distance scale] m37_Handrail, etc. -- [モーションブラー有効距離スケール] m37_手すりなど"
+      ]
+    }
+  ]
+}
