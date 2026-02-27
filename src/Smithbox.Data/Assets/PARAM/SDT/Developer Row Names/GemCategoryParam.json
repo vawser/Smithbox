@@ -1,0 +1,35 @@
+{
+  "Name": "GemCategoryParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Nothing happens -- なにもおこらない"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Attack system -- 攻撃系"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Recovery system -- 回復系"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Status system -- ステータス系"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

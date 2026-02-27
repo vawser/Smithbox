@@ -1,0 +1,2147 @@
+{
+  "Name": "EquipParamGoods",
+  "Entries": [
+    {
+      "ID": 60,
+      "Entries": [
+        "ID monitoring item 1 -- ID監視用アイテム1"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "ID monitoring item 2 -- ID監視用アイテム2"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "ID monitoring item 3 -- ID監視用アイテム3"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "ID monitoring item 4 -- ID監視用アイテム4"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "ID monitoring item 5 -- ID監視用アイテム5"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "ID monitoring item 6 -- ID監視用アイテム6"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "ID monitoring item 7 -- ID監視用アイテム7"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "ID monitoring item 8 -- ID監視用アイテム8"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "ID monitoring item 9 -- ID監視用アイテム9"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "ID monitoring item 10 -- ID監視用アイテム10"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "[FDP] Avatar Ritual 1 A-1 -- 【FDP】アバター儀式1 A-1"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "[FDP] Avatar Ritual 2 B-1 -- 【FDP】アバター儀式2 B-1"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "[FDP] Avatar Ritual 3 C-1 -- 【FDP】アバター儀式3 C-1"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "[FDP] Avatar Ritual 4 A-2 -- 【FDP】アバター儀式4 A-2"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "[FDP] Avatar Ritual 5 B-2 -- 【FDP】アバター儀式5 B-2"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "[FDP] Avatar Ritual 6 C-2 -- 【FDP】アバター儀式6 C-2"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "[FDP] Avatar Ritual 7 A-3 -- 【FDP】アバター儀式7 A-3"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "[FDP] Avatar Ritual 8 B-3 -- 【FDP】アバター儀式8 B-3"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "[FDP] Avatar Ritual 9 C-3 -- 【FDP】アバター儀式9 C-3"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "[FDP] Battle Royale -- 【FDP】バトルロイヤル"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "[FDP] Connect with other worlds -- 【FDP】他世界と接続"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "[FDP] Dragon egg -- 【FDP】竜の卵"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "[FDP] Corrosion ritual -- 【FDP】蝕儀式"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "[FDP] Invasion ritual -- 【FDP】侵入儀式"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Dummy for playing PC animation when creating blood characters -- 血文字作成時のPCアニメ再生用ダミー"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Dummy for playing PC animation when calling blood character illusion -- 血文字幻影呼び出し時のPCアニメ再生用ダミー"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Remaining machine -- 残機"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Temporary resource item A (replenishment white charge) -- 一時リソースアイテムA（補充白形代）"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Resurrection right -- 復活権"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Fragment of resurrection right -- 復活権の欠片"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Temporary resurrection right -- テンポラリ復活権"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Skill points -- スキルポイント"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Resurrection technique -- 復活の術"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Blood Smoke -- 忍殺忍術_血煙"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Puppet -- 忍殺忍術_傀儡"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Encha -- 忍殺忍術_エンチャ"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Right hand sword -- 右手刀"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "Left hand prosthesis -- 左手義手"
+      ]
+    },
+    {
+      "ID": 2390,
+      "Entries": [
+        "Night eyes -- 夜目"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Immortal sword -- 不死斬りの刀"
+      ]
+    },
+    {
+      "ID": 2420,
+      "Entries": [
+        "Infinite breathing -- 無限呼吸"
+      ]
+    },
+    {
+      "ID": 2450,
+      "Entries": [
+        "Basic action lifted _ anti-aircraft shinobi killing -- 基本アクション解禁_対空忍殺"
+      ]
+    },
+    {
+      "ID": 2460,
+      "Entries": [
+        "Lifting of the ban on school techniques_Sword Holy Iai -- 流派技解禁_剣聖居合い"
+      ]
+    },
+    {
+      "ID": 2461,
+      "Entries": [
+        "Lifting of the ban on school techniques_Hachiman Flying Rush -- 流派技解禁_八艘飛びラッシュ"
+      ]
+    },
+    {
+      "ID": 2462,
+      "Entries": [
+        "Lifting the ban on school techniques_flame Iai -- 流派技解禁_火炎居合い"
+      ]
+    },
+    {
+      "ID": 2470,
+      "Entries": [
+        "Strengthening _ Drug effect UP (C) -- 能力強化_薬の効果UP（C）"
+      ]
+    },
+    {
+      "ID": 2471,
+      "Entries": [
+        "Strengthening _ Drug effect UP (D) -- 能力強化_薬の効果UP（D）"
+      ]
+    },
+    {
+      "ID": 2472,
+      "Entries": [
+        "Strengthening _ Drug effect UP (E) -- 能力強化_薬の効果UP（E）"
+      ]
+    },
+    {
+      "ID": 2475,
+      "Entries": [
+        "Capacity enhancement_Upper limit of possession of form (E) -- 能力強化_形代所持上限UP（E）"
+      ]
+    },
+    {
+      "ID": 2480,
+      "Entries": [
+        "Ability enhancement_HP recovery at the time of shinobi (B) -- 能力強化_忍殺時HP回復（B）"
+      ]
+    },
+    {
+      "ID": 2481,
+      "Entries": [
+        "Strengthening _ Core recovery at the time of shinobi (B) -- 能力強化_忍殺時体幹回復（B）"
+      ]
+    },
+    {
+      "ID": 2490,
+      "Entries": [
+        "Lifting the ban on school techniques_Vertical ascending rotation slash -- 流派技解禁_垂直上昇回転斬り"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Sacred treasure A_ flower -- 神器A_花"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "Sacred Treasure B_ Calculus -- 神器B_結石"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "Sacred treasure C_ Kaoki -- 神器C_香木"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "Sacred treasure D_ fragrant tree (raw tree) -- 神器D_香木（生木）"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "Lifting of the ban on prosthetic hand ninja -- 義手忍具強化解禁"
+      ]
+    },
+    {
+      "ID": 2920,
+      "Entries": [
+        "School tree lifted_Shinobi style -- 流派ツリー解禁_忍び流"
+      ]
+    },
+    {
+      "ID": 2921,
+      "Entries": [
+        "School tree lifted _ prosthetic hand style -- 流派ツリー解禁_義手流"
+      ]
+    },
+    {
+      "ID": 2922,
+      "Entries": [
+        "School tree lifted _ Ashina style -- 流派ツリー解禁_葦名流"
+      ]
+    },
+    {
+      "ID": 2923,
+      "Entries": [
+        "School tree lifted _ temple style -- 流派ツリー解禁_寺院流"
+      ]
+    },
+    {
+      "ID": 2924,
+      "Entries": [
+        "School tree lifted _ compound style -- 流派ツリー解禁_複合流"
+      ]
+    },
+    {
+      "ID": 2930,
+      "Entries": [
+        "Dragon cough treatment lifted -- 竜咳治療解禁"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Replenishment] Est_Yes -- 【補充】エスト_有"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[Replenishment] Est_None -- 【補充】エスト_無"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[Consumption] Elixir -- 【消費】エリクサー"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "[Consumption] Weird young water thrombus (fascinated samurai) -- 【消費】変若水血栓（魅了された侍）"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "[Consumption] Weird young water thrombus (scale shop fry) -- 【消費】変若水血栓（うろこショップ稚魚）"
+      ]
+    },
+    {
+      "ID": 3052,
+      "Entries": [
+        "[Consumption] Weird young water thrombus (kidnapped younger man) -- 【消費】変若水血栓（さらわれ下男）"
+      ]
+    },
+    {
+      "ID": 3053,
+      "Entries": [
+        "[Consumption] Weird water thrombus (Immortal experiment doctor) -- 【消費】変若水血栓（不死実験の医僧）"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "[Consumption] Ohagi -- 【消費】おはぎ"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "[Consumption] Ohagi (extraordinary) -- 【消費】おはぎ（惜別）"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "[Consumption] Persimmon -- 【消費】柿"
+      ]
+    },
+    {
+      "ID": 3071,
+      "Entries": [
+        "[Consumption] Persimmon (younger man) -- 【消費】柿（下男）"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "[Consumption] Chigo rice -- 【消費】稚児米"
+      ]
+    },
+    {
+      "ID": 3081,
+      "Entries": [
+        "[Consumption] Chigo rice (Sasameyuki) -- 【消費】稚児米（細雪）"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "[Consumption] Recovery from fire + Strengthening resistance -- 【消費】炎上回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 3211,
+      "Entries": [
+        "[Consumption] Recovery from fire + Strengthening resistance (Tokugawa) -- 【消費】炎上回復 + 耐性強化（徳川）"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "[Consumption] Recovery from madness + Strengthening resistance -- 【消費】発狂回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "[Consumption] Self-illness poison -- 【消費】自病毒"
+      ]
+    },
+    {
+      "ID": 3290,
+      "Entries": [
+        "[Consumption] Suicide -- 【消費】自殺"
+      ]
+    },
+    {
+      "ID": 3291,
+      "Entries": [
+        "[Infinity] Suicide -- 【無限】自殺"
+      ]
+    },
+    {
+      "ID": 3292,
+      "Entries": [
+        "[Consumption] Suicide_Betrayal Nightjars -- 【消費】自殺_裏切り夜鷹衆"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "[Replenishment] Disease prevention_Yes -- 【補充】病毒予防_有"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "[Replenishment] Disease prevention_None -- 【補充】病毒予防_無"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "[Replenishment] Flame prevention_Yes -- 【補充】炎上予防_有"
+      ]
+    },
+    {
+      "ID": 3311,
+      "Entries": [
+        "[Replenishment] Flame prevention_No -- 【補充】炎上予防_無"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "[Replenishment] Madness prevention_Yes -- 【補充】発狂予防_有"
+      ]
+    },
+    {
+      "ID": 3321,
+      "Entries": [
+        "[Replenishment] Madness prevention_No -- 【補充】発狂予防_無"
+      ]
+    },
+    {
+      "ID": 3350,
+      "Entries": [
+        "[Infinite / Shape cost consumption] Attack strengthening -- 【無限/形代消費】攻撃強化"
+      ]
+    },
+    {
+      "ID": 3360,
+      "Entries": [
+        "[Infinite / Shape cost consumption] Attack enhancement_with disadvantages -- 【無限/形代消費】攻撃強化_デメリット付き"
+      ]
+    },
+    {
+      "ID": 3370,
+      "Entries": [
+        "[Infinite / Shape cost consumption] Strengthen defense -- 【無限/形代消費】防御強化"
+      ]
+    },
+    {
+      "ID": 3380,
+      "Entries": [
+        "[Infinite / Shape cost consumption] Strengthening the core -- 【無限/形代消費】体幹強化"
+      ]
+    },
+    {
+      "ID": 3390,
+      "Entries": [
+        "[Infinite / Shape cost consumption] Stealth enhancement -- 【無限/形代消費】ステルス強化"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "[Consumption] Attack enhancement -- 【消費】攻撃強化"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "[Consumption] Attack enhancement_with disadvantages -- 【消費】攻撃強化_デメリット付き"
+      ]
+    },
+    {
+      "ID": 3420,
+      "Entries": [
+        "[Consumption] Strengthening defense -- 【消費】防御強化"
+      ]
+    },
+    {
+      "ID": 3430,
+      "Entries": [
+        "[Consumption] Strengthening the core -- 【消費】体幹強化"
+      ]
+    },
+    {
+      "ID": 3440,
+      "Entries": [
+        "[Consumption] Stealth enhancement -- 【消費】ステルス強化"
+      ]
+    },
+    {
+      "ID": 3450,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[Consumption] Ceramic piece -- 【消費】陶片"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "[Consumption] Grip ash -- 【消費】握り灰"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "[Consumption] Aburatsubo -- 【消費】油壷"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 3580,
+      "Entries": [
+        "[Replenishment] Five-color rice_Yes -- 【補充】五色米_有"
+      ]
+    },
+    {
+      "ID": 3581,
+      "Entries": [
+        "[Replenishment] Five-color rice _ None -- 【補充】五色米_無"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "[Consumption] Increased amount of money obtained -- 【消費】お金入手量UP"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "[Consumption] Increased amount of revival rights obtained -- 【消費】復活権入手量UP"
+      ]
+    },
+    {
+      "ID": 3620,
+      "Entries": [
+        "[Consumption] Item drop rate UP -- 【消費】アイテムドロップ率UP"
+      ]
+    },
+    {
+      "ID": 3630,
+      "Entries": [
+        "[Consumption] Increased drop rate -- 【消費】形代ドロップ率UP"
+      ]
+    },
+    {
+      "ID": 3640,
+      "Entries": [
+        "[Consumption] White water balloon -- 【消費】白らっぱ水風船"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 3704,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 3708,
+      "Entries": [
+        "[Consumption] Gold nugget_Large -- 【消費】金塊_大"
+      ]
+    },
+    {
+      "ID": 3720,
+      "Entries": [
+        "[Consumption] Resurrection right mass -- 【消費】復活権塊"
+      ]
+    },
+    {
+      "ID": 3721,
+      "Entries": [
+        "[Consumption] Resurrection right mass (female player) -- 【消費】復活権塊（女奏者）"
+      ]
+    },
+    {
+      "ID": 3730,
+      "Entries": [
+        "[Consumption] Bell Demon_Day -- 【消費】鐘鬼_昼"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "[Replenishment] Form conversion_Yes -- 【補充】形代変換_有"
+      ]
+    },
+    {
+      "ID": 3801,
+      "Entries": [
+        "[Replenishment] Form conversion_No -- 【補充】形代変換_無"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "[Infinity] Telescope -- 【無限】遠眼鏡"
+      ]
+    },
+    {
+      "ID": 3980,
+      "Entries": [
+        "[Infinity] Buddha statue of return -- 【無限】帰還の仏像"
+      ]
+    },
+    {
+      "ID": 3990,
+      "Entries": [
+        "[Infinity] Redo bell -- 【無限】やりなおし鈴"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "HP / Trunk UP Fragment -- HP/体幹UPの欠片"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "HP / trunk UP vessel 1 -- HP/体幹UPの器1"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "HP / trunk UP vessel 2 -- HP/体幹UPの器2"
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        "HP / trunk UP vessel 3 -- HP/体幹UPの器3"
+      ]
+    },
+    {
+      "ID": 4103,
+      "Entries": [
+        "HP / trunk UP vessel 4 -- HP/体幹UPの器4"
+      ]
+    },
+    {
+      "ID": 4104,
+      "Entries": [
+        "HP / trunk UP vessel 5 -- HP/体幹UPの器5"
+      ]
+    },
+    {
+      "ID": 4105,
+      "Entries": [
+        "HP / trunk UP vessel 6 -- HP/体幹UPの器6"
+      ]
+    },
+    {
+      "ID": 4106,
+      "Entries": [
+        "HP / trunk UP vessel 7 -- HP/体幹UPの器7"
+      ]
+    },
+    {
+      "ID": 4107,
+      "Entries": [
+        "HP / trunk UP vessel 8 -- HP/体幹UPの器8"
+      ]
+    },
+    {
+      "ID": 4108,
+      "Entries": [
+        "HP / trunk UP vessel 9 -- HP/体幹UPの器9"
+      ]
+    },
+    {
+      "ID": 4109,
+      "Entries": [
+        "HP / trunk UP vessel 10 -- HP/体幹UPの器10"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Gourd possession upper limit UP -- ひょうたん所持上限UP"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Attack base UP -- 攻撃ベースUP"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Boss Soul_Cavalry Warrior -- ボスソウル_騎馬武者"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "Boss Soul_Butterfly -- ボスソウル_お蝶"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "Boss Soul_Rival 2nd -- ボスソウル_ライバル2回目"
+      ]
+    },
+    {
+      "ID": 5203,
+      "Entries": [
+        "Boss Soul_Chigo Monkey -- ボスソウル_稚児猿"
+      ]
+    },
+    {
+      "ID": 5204,
+      "Entries": [
+        "Boss Soul_Yasha Ape -- ボスソウル_夜叉猿"
+      ]
+    },
+    {
+      "ID": 5205,
+      "Entries": [
+        "Boss Soul_Burning Monk (Phantom) -- ボスソウル_破戒僧（幻影）"
+      ]
+    },
+    {
+      "ID": 5206,
+      "Entries": [
+        "Boss Soul_Ninja Army Chief -- ボスソウル_忍軍の長"
+      ]
+    },
+    {
+      "ID": 5207,
+      "Entries": [
+        "Boss Soul_Ninja Army Chief (True) -- ボスソウル_忍軍の長（真）"
+      ]
+    },
+    {
+      "ID": 5208,
+      "Entries": [
+        "Boss Soul_Burning Monk -- ボスソウル_破戒僧"
+      ]
+    },
+    {
+      "ID": 5209,
+      "Entries": [
+        "Boss Soul_Mermaid Dragon -- ボスソウル_人魚竜"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Boss Soul_Demon Buddhist Master -- ボスソウル_鬼仏師"
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        "Boss Soul_Revived Kensei -- ボスソウル_蘇った剣聖"
+      ]
+    },
+    {
+      "ID": 5212,
+      "Entries": [
+        "Boss Soul_Sword of the Bed -- ボスソウル_病床の剣聖"
+      ]
+    },
+    {
+      "ID": 5213,
+      "Entries": [
+        "Boss Soul_Yasha Ape 2nd round -- ボスソウル_夜叉猿2戦目"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "Boss Soul_EX Genichiro -- ボスソウル_EX弦一郎"
+      ]
+    },
+    {
+      "ID": 5221,
+      "Entries": [
+        "Boss Soul_EX Father-in-law -- ボスソウル_EX義父"
+      ]
+    },
+    {
+      "ID": 5222,
+      "Entries": [
+        "Boss Soul_EX One Heart -- ボスソウル_EX一心"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "Boss Soul (Used) _ Cavalry Warrior -- ボスソウル（使用済み）_騎馬武者"
+      ]
+    },
+    {
+      "ID": 5301,
+      "Entries": [
+        "Boss Soul (Used) _ Butterfly -- ボスソウル（使用済み）_お蝶"
+      ]
+    },
+    {
+      "ID": 5302,
+      "Entries": [
+        "Boss Soul (Used) _ Second Rival -- ボスソウル（使用済み）_ライバル2回目"
+      ]
+    },
+    {
+      "ID": 5303,
+      "Entries": [
+        "Boss Soul (Used) _ Chigo Monkey -- ボスソウル（使用済み）_稚児猿"
+      ]
+    },
+    {
+      "ID": 5304,
+      "Entries": [
+        "Boss Soul (Used) _ Yasha Ape -- ボスソウル（使用済み）_夜叉猿"
+      ]
+    },
+    {
+      "ID": 5305,
+      "Entries": [
+        "Boss Soul (Used) _ Haunting Monk (Phantom) -- ボスソウル（使用済み）_破戒僧（幻影）"
+      ]
+    },
+    {
+      "ID": 5306,
+      "Entries": [
+        "Boss Soul (Used) _ Chief of Ninja Army -- ボスソウル（使用済み）_忍軍の長"
+      ]
+    },
+    {
+      "ID": 5307,
+      "Entries": [
+        "Boss Soul (Used) _ Chief of Ninja Army (True) -- ボスソウル（使用済み）_忍軍の長（真）"
+      ]
+    },
+    {
+      "ID": 5308,
+      "Entries": [
+        "Boss Soul (Used) _Burning Monk -- ボスソウル（使用済み）_破戒僧"
+      ]
+    },
+    {
+      "ID": 5309,
+      "Entries": [
+        "Boss Soul (Used) _ Mermaid Dragon -- ボスソウル（使用済み）_人魚竜"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "Boss Soul (Used) _ Demon Buddhist Master -- ボスソウル（使用済み）_鬼仏師"
+      ]
+    },
+    {
+      "ID": 5311,
+      "Entries": [
+        "Boss Soul (Used) _ Revived Kensei -- ボスソウル（使用済み）_蘇った剣聖"
+      ]
+    },
+    {
+      "ID": 5312,
+      "Entries": [
+        "Boss Soul (Used) _ Kensei on the sickbed -- ボスソウル（使用済み）_病床の剣聖"
+      ]
+    },
+    {
+      "ID": 5313,
+      "Entries": [
+        "Boss Soul (Used) _ Yasha Ape 2nd Round -- ボスソウル（使用済み）_夜叉猿2戦目"
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        "Boss Soul (Used) _EX Genichiro -- ボスソウル（使用済み）_EX弦一郎"
+      ]
+    },
+    {
+      "ID": 5321,
+      "Entries": [
+        "Boss Soul (Used) _EX Father-in-law -- ボスソウル（使用済み）_EX義父"
+      ]
+    },
+    {
+      "ID": 5322,
+      "Entries": [
+        "Boss Soul (Used) _EX One Heart -- ボスソウル（使用済み）_EX一心"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "Boss Soul_For displaying the number of possessions -- ボスソウル_所持数表示用"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "Mask Fragment A -- お面の破片A"
+      ]
+    },
+    {
+      "ID": 5501,
+      "Entries": [
+        "Mask Fragment B -- お面の破片B"
+      ]
+    },
+    {
+      "ID": 5502,
+      "Entries": [
+        "Mask Fragment C -- お面の破片C"
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        "Mask finished product -- お面完成品"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "Dragon cough treatment -- 竜咳治療"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "General-purpose material: Steel 2 (Large piece) -- 汎用素材：鋼鉄2（大欠片）"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "General-purpose material: Steel 3 (lump) -- 汎用素材：鋼鉄3（塊）"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "General-purpose material: Chemistry 2 (Large piece) -- 汎用素材：化学2（大欠片）"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "General-purpose material: Chemistry 3 (lump) -- 汎用素材：化学3（塊）"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "General-purpose material: Magic 2 (Large Fragment) -- 汎用素材：呪術2（大欠片）"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "General-purpose material: Magic 3 (lump) -- 汎用素材：呪術3（塊）"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "General-purpose material: Steel Chemical Spell 4 (master) -- 汎用素材：鋼鉄化学呪術4（原盤）"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Mermaid dragon tears -- 人魚竜の涙"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "Amulet -- お守り"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "Sakura drop -- 桜雫"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Prince&#39;s bell -- 皇子の鈴"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "Father-in-law&#39;s bell -- 義父の鈴"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Inro of irises -- 花菖蒲の印籠"
+      ]
+    },
+    {
+      "ID": 9052,
+      "Entries": [
+        "Red eyeball -- 赤い目玉"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "tally -- 割符"
+      ]
+    },
+    {
+      "ID": 9061,
+      "Entries": [
+        "Anayama tally -- 穴山割符"
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "Kyoto water -- 京の水"
+      ]
+    },
+    {
+      "ID": 9071,
+      "Entries": [
+        "Lord&#39;s beard -- 主の髭"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "Red-white windmill -- 赤白い風車"
+      ]
+    },
+    {
+      "ID": 9081,
+      "Entries": [
+        "Pure white windmill -- 真白い風車"
+      ]
+    },
+    {
+      "ID": 9090,
+      "Entries": [
+        "Chigo rice (for Kuro) -- 稚児米（九郎の分）"
+      ]
+    },
+    {
+      "ID": 9091,
+      "Entries": [
+        "Ice tears -- 氷涙"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Sake (sake) -- 酒（日本酒）"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Sake (Doburoku) -- 酒（どぶろく）"
+      ]
+    },
+    {
+      "ID": 9102,
+      "Entries": [
+        "Sake (monkey liquor) -- 酒（猿酒）"
+      ]
+    },
+    {
+      "ID": 9103,
+      "Entries": [
+        "Sake (Ryusen) -- 酒（竜泉）"
+      ]
+    },
+    {
+      "ID": 9104,
+      "Entries": [
+        "Sake (Emma&#39;s sake) -- 酒（エマの日本酒）"
+      ]
+    },
+    {
+      "ID": 9105,
+      "Entries": [
+        "Sake (Kensei no Doburoku) -- 酒（剣聖のどぶろく）"
+      ]
+    },
+    {
+      "ID": 9180,
+      "Entries": [
+        "Nishikigoi bait -- 錦鯉の餌"
+      ]
+    },
+    {
+      "ID": 9181,
+      "Entries": [
+        "Nishikigoi food_poison A -- 錦鯉の餌_毒A"
+      ]
+    },
+    {
+      "ID": 9182,
+      "Entries": [
+        "Nishikigoi food_poison B -- 錦鯉の餌_毒B"
+      ]
+    },
+    {
+      "ID": 9192,
+      "Entries": [
+        "Snake organ_A -- 蛇の臓器_A"
+      ]
+    },
+    {
+      "ID": 9193,
+      "Entries": [
+        "Snake organ_B -- 蛇の臓器_B"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Book_ Whereabouts of illusion cancellation -- 書物_幻術解除の所在"
+      ]
+    },
+    {
+      "ID": 9205,
+      "Entries": [
+        "Book_Immortal Experiment Doctor&#39;s Note -- 書物_不死実験医僧の手記"
+      ]
+    },
+    {
+      "ID": 9206,
+      "Entries": [
+        "Book_Rat writing -- 書物_鼠相書き"
+      ]
+    },
+    {
+      "ID": 9207,
+      "Entries": [
+        "Books_Order Writing_A -- 書物_注文書き_A"
+      ]
+    },
+    {
+      "ID": 9208,
+      "Entries": [
+        "Books_Order Writing_B -- 書物_注文書き_B"
+      ]
+    },
+    {
+      "ID": 9209,
+      "Entries": [
+        "Books_About the ritual of swaying -- 書物_揺籃の儀について"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "Book_Book of the Dragon Seed (above) -- 書物_竜胤断ちの書（上）"
+      ]
+    },
+    {
+      "ID": 9211,
+      "Entries": [
+        "Book_Book of the Dragon Seed (below) -- 書物_竜胤断ちの書（下）"
+      ]
+    },
+    {
+      "ID": 9212,
+      "Entries": [
+        "Books_About incense flowers -- 書物_香の花について"
+      ]
+    },
+    {
+      "ID": 9213,
+      "Entries": [
+        "Books_About stones -- 書物_結石について"
+      ]
+    },
+    {
+      "ID": 9214,
+      "Entries": [
+        "Book_length memoir of Kosho -- 書物_丈の小姓の手記"
+      ]
+    },
+    {
+      "ID": 9215,
+      "Entries": [
+        "From the book_Senmine Shonin&#39;s scripture_Monk -- 書物_仙峯上人の経典_僧正から"
+      ]
+    },
+    {
+      "ID": 9216,
+      "Entries": [
+        "Books_Return -- 書物_人返りについて"
+      ]
+    },
+    {
+      "ID": 9217,
+      "Entries": [
+        "Book_ Whereabouts of ignition -- 書物_発火の所在"
+      ]
+    },
+    {
+      "ID": 9218,
+      "Entries": [
+        "Books_Nightjars Smoke Signal Tips -- 書物_夜鷹衆狼煙のヒント"
+      ]
+    },
+    {
+      "ID": 9219,
+      "Entries": [
+        "Book_Kensei&#39;s letter -- 書物_剣聖の置手紙"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "Books_About stones (hero) -- 書物_結石について（主人公）"
+      ]
+    },
+    {
+      "ID": 9221,
+      "Entries": [
+        "Books_Kodachi Material Tips_Before purchasing from Araji shop clerk -- 書物_小太刀素材ヒント_荒れ寺ショップ店員から購入前"
+      ]
+    },
+    {
+      "ID": 9222,
+      "Entries": [
+        "Books_Kodachi Material Tips_After purchasing from Araji shop clerk -- 書物_小太刀素材ヒント_荒れ寺ショップ店員から購入後"
+      ]
+    },
+    {
+      "ID": 9223,
+      "Entries": [
+        "Books_Finger Whistle Reinforcement Material Tips_Before Purchase from Arajera Shop Clerk -- 書物_指笛強化素材ヒント_荒れ寺ショップ店員から購入前"
+      ]
+    },
+    {
+      "ID": 9224,
+      "Entries": [
+        "Books_Finger Whistle Reinforcement Material Tips_After purchasing from Araji Shop Clerk -- 書物_指笛強化素材ヒント_荒れ寺ショップ店員から購入後"
+      ]
+    },
+    {
+      "ID": 9225,
+      "Entries": [
+        "Books_Transformation Material Tips_Before Purchasing from Araji Shop Clerk -- 書物_変わり身素材ヒント_荒れ寺ショップ店員から購入前"
+      ]
+    },
+    {
+      "ID": 9226,
+      "Entries": [
+        "Books_Transformation Material Tips_After Purchasing from Araji Shop Clerk -- 書物_変わり身素材ヒント_荒れ寺ショップ店員から購入後"
+      ]
+    },
+    {
+      "ID": 9227,
+      "Entries": [
+        "Book_Black Immortal Sword Document -- 書物_黒の不死斬りの文書"
+      ]
+    },
+    {
+      "ID": 9228,
+      "Entries": [
+        "From the book_Senmine Shonin&#39;s scripture_Map layout -- 書物_仙峯上人の経典_マップ配置から"
+      ]
+    },
+    {
+      "ID": 9402,
+      "Entries": [
+        "Key_key of the station -- 鍵_詰所の鍵"
+      ]
+    },
+    {
+      "ID": 9403,
+      "Entries": [
+        "Key_Key of the Great Buddha Hall -- 鍵_大仏殿の鍵"
+      ]
+    },
+    {
+      "ID": 9404,
+      "Entries": [
+        "Key_loophole key -- 鍵_抜け穴の鍵"
+      ]
+    },
+    {
+      "ID": 9405,
+      "Entries": [
+        "Key_valley key -- 鍵_渓谷の鍵"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "Illness of collapse_Busshi -- 決壊の病_仏師"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "Illness of collapse_Sale bandit -- 決壊の病_物売り野盗"
+      ]
+    },
+    {
+      "ID": 9502,
+      "Entries": [
+        "Illness of collapse_white -- 決壊の病_白らっぱ"
+      ]
+    },
+    {
+      "ID": 9503,
+      "Entries": [
+        "Breaking illness _ kidnapped younger man -- 決壊の病_さらわれた下男"
+      ]
+    },
+    {
+      "ID": 9504,
+      "Entries": [
+        "Illness of collapse_fascinated samurai -- 決壊の病_魅了された侍"
+      ]
+    },
+    {
+      "ID": 9505,
+      "Entries": [
+        "Collapse Disease_Immortality Experiment Doctor -- 決壊の病_不死実験の医僧"
+      ]
+    },
+    {
+      "ID": 9510,
+      "Entries": [
+        "Illness of collapse_Son of Suzu -- 決壊の病_鈴婆の息子"
+      ]
+    },
+    {
+      "ID": 9511,
+      "Entries": [
+        "Illness of collapse_decent villagers -- 決壊の病_まともな村人"
+      ]
+    },
+    {
+      "ID": 9515,
+      "Entries": [
+        "Illness of collapse_Suzu -- 決壊の病_鈴婆"
+      ]
+    },
+    {
+      "ID": 9516,
+      "Entries": [
+        "Illness of collapse_Yao Hioka -- 決壊の病_八尾比丘尼"
+      ]
+    },
+    {
+      "ID": 9520,
+      "Entries": [
+        "Illness of collapse_Crow&#39;s bed grave fishing -- 決壊の病_鴉の寝床の墓漁り"
+      ]
+    },
+    {
+      "ID": 9521,
+      "Entries": [
+        "Illness of collapse_grave fishing near the battlefield -- 決壊の病_戦場近くの墓漁り"
+      ]
+    },
+    {
+      "ID": 9522,
+      "Entries": [
+        "Illness of collapse_grave fishing in front of abandoned prison -- 決壊の病_捨て牢前の墓漁り"
+      ]
+    },
+    {
+      "ID": 9523,
+      "Entries": [
+        "Collapse disease_Snake burrow grave fishing -- 決壊の病_蛇の巣穴の墓漁り"
+      ]
+    },
+    {
+      "ID": 9524,
+      "Entries": [
+        "Illness of collapse_Shugendo grave fishing -- 決壊の病_修験道の墓漁り"
+      ]
+    },
+    {
+      "ID": 9525,
+      "Entries": [
+        "Illness of collapse_grave fishing on the cliff road -- 決壊の病_崖道の墓漁り"
+      ]
+    },
+    {
+      "ID": 9526,
+      "Entries": [
+        "Illness of collapse_Araji shop clerk -- 決壊の病_荒れ寺ショップ店員"
+      ]
+    },
+    {
+      "ID": 9560,
+      "Entries": [
+        "Breakdown disease_Blood of dragon cough patient -- 決壊の病_竜咳患者の血"
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_shuriken -- 義手忍具作成_手裏剣"
+      ]
+    },
+    {
+      "ID": 9701,
+      "Entries": [
+        "Strengthening prosthetic hand ninja _ Shuriken _ Butterfly kunai -- 義手忍具強化_手裏剣_お蝶クナイ"
+      ]
+    },
+    {
+      "ID": 9710,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹"
+      ]
+    },
+    {
+      "ID": 9720,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_fire -- 義手忍具作成_発火"
+      ]
+    },
+    {
+      "ID": 9721,
+      "Entries": [
+        "Prosthesis Ninja Strengthening_Ignition_Flamethrower -- 義手忍具強化_発火_火炎放射"
+      ]
+    },
+    {
+      "ID": 9730,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_prepared ax -- 義手忍具作成_仕込み斧"
+      ]
+    },
+    {
+      "ID": 9740,
+      "Entries": [
+        "Prosthetic hand ninja tool creation _ transformation -- 義手忍具作成_変わり身"
+      ]
+    },
+    {
+      "ID": 9750,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_prepared Kodachi -- 義手忍具作成_仕込み小太刀"
+      ]
+    },
+    {
+      "ID": 9760,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_iron fan -- 義手忍具作成_鉄扇"
+      ]
+    },
+    {
+      "ID": 9770,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_enemy turning -- 義手忍具作成_敵回し"
+      ]
+    },
+    {
+      "ID": 9780,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_prepared spear -- 義手忍具作成_仕込み槍"
+      ]
+    },
+    {
+      "ID": 9790,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_finger whistle -- 義手忍具作成_指笛"
+      ]
+    },
+    {
+      "ID": 9791,
+      "Entries": [
+        "Prosthesis Ninja Strengthening_Finger Whistle_Minor -- 義手忍具強化_指笛_短調"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "Costume_Shura -- コスチューム_修羅"
+      ]
+    },
+    {
+      "ID": 9810,
+      "Entries": [
+        "Costume_Ashina Ninja -- コスチューム_葦名忍者"
+      ]
+    },
+    {
+      "ID": 9820,
+      "Entries": [
+        "Costume_tengu -- コスチューム_天狗"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Scales -- うろこ"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Boss rematch mode _c5080_ Demon Penalty Department -- ボス再戦モード_c5080_鬼刑部"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Boss rematch mode _c5090_ butterfly -- ボス再戦モード_c5090_お蝶"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "Boss rematch mode _c7100_ Genichiro -- ボス再戦モード_c7100_弦一郎"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "Boss rematch mode _c1260_ folding screen monkey -- ボス再戦モード_c1260_屏風の猿"
+      ]
+    },
+    {
+      "ID": 11040,
+      "Entries": [
+        "Boss rematch mode _c5100_ lion monkey -- ボス再戦モード_c5100_獅子猿"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "Boss rematch mode _c5100_ Neckless lion monkey + bride -- ボス再戦モード_c5100_首無し獅子猿+嫁"
+      ]
+    },
+    {
+      "ID": 11060,
+      "Entries": [
+        "Boss Rematch Mode_c5000_Burning Monk (Phantom) -- ボス再戦モード_c5000_破戒僧（幻影）"
+      ]
+    },
+    {
+      "ID": 11070,
+      "Entries": [
+        "Boss Rematch Mode_c5000_Burning Monk -- ボス再戦モード_c5000_破戒僧"
+      ]
+    },
+    {
+      "ID": 11080,
+      "Entries": [
+        "Boss Rematch Mode_c5060_Shinobi Owl -- ボス再戦モード_c5060_大忍び\u3000梟"
+      ]
+    },
+    {
+      "ID": 11090,
+      "Entries": [
+        "Boss rematch mode _c5060_ father-in-law -- ボス再戦モード_c5060_義父"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Boss rematch mode_c5200_mermaid dragon -- ボス再戦モード_c5200_人魚竜"
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "Boss rematch mode_c7400_ Emma -- ボス再戦モード_c7400_エマ"
+      ]
+    },
+    {
+      "ID": 11120,
+      "Entries": [
+        "Boss rematch mode _c5410_ sickbed -- ボス再戦モード_c5410_病床一心"
+      ]
+    },
+    {
+      "ID": 11130,
+      "Entries": [
+        "Boss Rematch Mode_c5400_Sword Seiichishin -- ボス再戦モード_c5400_剣聖一心"
+      ]
+    },
+    {
+      "ID": 11140,
+      "Entries": [
+        "Boss rematch mode_c7010_Grief demon -- ボス再戦モード_c7010_怨嗟の鬼"
+      ]
+    },
+    {
+      "ID": 11150,
+      "Entries": [
+        "Boss rematch mode _c7100_ Genichiro, back -- ボス再戦モード_c7100_弦一郎・裏"
+      ]
+    },
+    {
+      "ID": 11160,
+      "Entries": [
+        "Boss rematch mode_c5060_Father-in-law, back -- ボス再戦モード_c5060_義父・裏"
+      ]
+    },
+    {
+      "ID": 11170,
+      "Entries": [
+        "Boss rematch mode_c5400_Ichishin / Ura -- ボス再戦モード_c5400_一心・裏"
+      ]
+    },
+    {
+      "ID": 11180,
+      "Entries": [
+        "Boss Rematch Mode _c7101_ Immortal Slasher Genichiro -- ボス再戦モード_c7101_不死斬り弦一郎"
+      ]
+    },
+    {
+      "ID": 11500,
+      "Entries": [
+        "Boss rematch mode_concealment -- ボス再戦モード_秘匿"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Boss rematch mode_c7100_Genichiro / back_ban lifted -- ボス再戦モード_c7100_弦一郎・裏_解禁"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Boss rematch mode_c5060_father / back_ban lifted -- ボス再戦モード_c5060_義父・裏_解禁"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Boss rematch mode_c5400_Isshin / Ura_Unveiled -- ボス再戦モード_c5400_一心・裏_解禁"
+      ]
+    },
+    {
+      "ID": 12500,
+      "Entries": [
+        "Boss Rematch Mode_Tutorial Check_Item Reset -- ボス再戦モード_チュートリアルチェック_アイテムリセット"
+      ]
+    },
+    {
+      "ID": 12600,
+      "Entries": [
+        "Boss Rematch Mode_Reward Check_EX Genichiro -- ボス再戦モード_報酬チェック_EX弦一郎"
+      ]
+    },
+    {
+      "ID": 12610,
+      "Entries": [
+        "Boss rematch mode_reward check_EX father-in-law -- ボス再戦モード_報酬チェック_EX義父"
+      ]
+    },
+    {
+      "ID": 12620,
+      "Entries": [
+        "Boss Rematch Mode_Reward Check_EX One Heart -- ボス再戦モード_報酬チェック_EX一心"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "Debugging Skills Lifted: New Game -- デバッグ用スキル解禁：ニューゲーム"
+      ]
+    },
+    {
+      "ID": 910010,
+      "Entries": [
+        "Debugging skills lifted: Castle -- デバッグ用スキル解禁：城下"
+      ]
+    },
+    {
+      "ID": 910020,
+      "Entries": [
+        "Debugging skills lifted: Samurai residence -- デバッグ用スキル解禁：武家屋敷"
+      ]
+    },
+    {
+      "ID": 910030,
+      "Entries": [
+        "Debugging skills lifted: Honjo -- デバッグ用スキル解禁：本城"
+      ]
+    },
+    {
+      "ID": 910040,
+      "Entries": [
+        "Debugging skills lifted: Hidden prison -- デバッグ用スキル解禁：隠し牢"
+      ]
+    },
+    {
+      "ID": 910050,
+      "Entries": [
+        "Debugging skills lifted: Dungeon -- デバッグ用スキル解禁：地下牢"
+      ]
+    },
+    {
+      "ID": 910060,
+      "Entries": [
+        "Debugging skills lifted: Temple -- デバッグ用スキル解禁：寺"
+      ]
+    },
+    {
+      "ID": 910070,
+      "Entries": [
+        "Debugging skills lifted: Valley -- デバッグ用スキル解禁：渓谷"
+      ]
+    },
+    {
+      "ID": 910080,
+      "Entries": [
+        "Debugging skills lifted: Lower valley -- デバッグ用スキル解禁：渓谷下層"
+      ]
+    },
+    {
+      "ID": 910090,
+      "Entries": [
+        "Debugging Skills Lifted: Sick Village -- デバッグ用スキル解禁：病み村"
+      ]
+    },
+    {
+      "ID": 910100,
+      "Entries": [
+        "Debugging skill lifted: Honjo_Ninja army invasion -- デバッグ用スキル解禁：本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 910110,
+      "Entries": [
+        "Debugging skill lifted: Submerged city -- デバッグ用スキル解禁：水没都"
+      ]
+    },
+    {
+      "ID": 910120,
+      "Entries": [
+        "Debugging skills lifted: Honjo_Tokugawa invasion -- デバッグ用スキル解禁：本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 910130,
+      "Entries": [
+        "Debugging skill lifted: Hidden prison _ When Tokugawa attacks -- デバッグ用スキル解禁：隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 910140,
+      "Entries": [
+        "Debugging skills lifted: Castle_Tokugawa invasion -- デバッグ用スキル解禁：城下_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 910150,
+      "Entries": [
+        "Debugging skills lifted: Game clear -- デバッグ用スキル解禁：ゲームクリア"
+      ]
+    },
+    {
+      "ID": 920000,
+      "Entries": [
+        "Debugging skills lifted: New game for checking enemies -- デバッグ用スキル解禁：敵チェック用ニューゲーム"
+      ]
+    },
+    {
+      "ID": 920010,
+      "Entries": [
+        "Debugging skill lifted: Castle for checking enemies -- デバッグ用スキル解禁：敵チェック用城下"
+      ]
+    },
+    {
+      "ID": 920020,
+      "Entries": [
+        "Debugging skills lifted: Samurai residence for checking enemies -- デバッグ用スキル解禁：敵チェック用武家屋敷"
+      ]
+    },
+    {
+      "ID": 920030,
+      "Entries": [
+        "Debugging skill lifted: Honjo for checking enemies -- デバッグ用スキル解禁：敵チェック用本城"
+      ]
+    },
+    {
+      "ID": 920040,
+      "Entries": [
+        "Debugging skill lifted: Hidden prison for checking enemies -- デバッグ用スキル解禁：敵チェック用隠し牢"
+      ]
+    },
+    {
+      "ID": 920050,
+      "Entries": [
+        "Debugging skills lifted: Enemy check dungeon -- デバッグ用スキル解禁：敵チェック用地下牢"
+      ]
+    },
+    {
+      "ID": 920060,
+      "Entries": [
+        "Debugging skill lifted: Enemy check temple -- デバッグ用スキル解禁：敵チェック用寺"
+      ]
+    },
+    {
+      "ID": 920070,
+      "Entries": [
+        "Debugging skills lifted: Enemy check valley -- デバッグ用スキル解禁：敵チェック用渓谷"
+      ]
+    },
+    {
+      "ID": 920080,
+      "Entries": [
+        "Debugging skill lifted: Lower layer of valley for checking enemies -- デバッグ用スキル解禁：敵チェック用渓谷下層"
+      ]
+    },
+    {
+      "ID": 920090,
+      "Entries": [
+        "Debugging skill lifted: Enemy check sick village -- デバッグ用スキル解禁：敵チェック用病み村"
+      ]
+    },
+    {
+      "ID": 920100,
+      "Entries": [
+        "Debugging skill lifted: Enemy check Honjo_Ninja army invasion -- デバッグ用スキル解禁：敵チェック用本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 920110,
+      "Entries": [
+        "Debugging skill lifted: Submerged city for checking enemies -- デバッグ用スキル解禁：敵チェック用水没都"
+      ]
+    },
+    {
+      "ID": 920120,
+      "Entries": [
+        "Debugging skill lifted: Enemy check Honjo_When Tokugawa attacks -- デバッグ用スキル解禁：敵チェック用本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 920130,
+      "Entries": [
+        "Debugging skill lifted: Hidden prison for checking enemies_When Tokugawa attacks -- デバッグ用スキル解禁：敵チェック用隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 920140,
+      "Entries": [
+        "Debugging skill lifted: Enemy check castle _ Tokugawa invasion -- デバッグ用スキル解禁：敵チェック用城下_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 920150,
+      "Entries": [
+        "Debugging skill lifted: Clear enemy check game -- デバッグ用スキル解禁：敵チェック用ゲームクリア"
+      ]
+    },
+    {
+      "ID": 930000,
+      "Entries": [
+        "Debugging skill voucher: New game for checking enemies -- デバッグ用スキル引換券：敵チェック用ニューゲーム"
+      ]
+    },
+    {
+      "ID": 930010,
+      "Entries": [
+        "Debugging skill voucher: Castle for checking enemies -- デバッグ用スキル引換券：敵チェック用城下"
+      ]
+    },
+    {
+      "ID": 930020,
+      "Entries": [
+        "Debugging skill voucher: Samurai residence for checking enemies -- デバッグ用スキル引換券：敵チェック用武家屋敷"
+      ]
+    },
+    {
+      "ID": 930030,
+      "Entries": [
+        "Debugging skill voucher: Honjo for checking enemies -- デバッグ用スキル引換券：敵チェック用本城"
+      ]
+    },
+    {
+      "ID": 930040,
+      "Entries": [
+        "Debugging skill voucher: Hidden prison for checking enemies -- デバッグ用スキル引換券：敵チェック用隠し牢"
+      ]
+    },
+    {
+      "ID": 930050,
+      "Entries": [
+        "Debugging skill voucher: Enemy check dungeon -- デバッグ用スキル引換券：敵チェック用地下牢"
+      ]
+    },
+    {
+      "ID": 930060,
+      "Entries": [
+        "Debugging skill voucher: Enemy check temple -- デバッグ用スキル引換券：敵チェック用寺"
+      ]
+    },
+    {
+      "ID": 930070,
+      "Entries": [
+        "Debugging skill voucher: Enemy check valley -- デバッグ用スキル引換券：敵チェック用渓谷"
+      ]
+    },
+    {
+      "ID": 930080,
+      "Entries": [
+        "Debugging skill voucher: Lower layer of valley for checking enemies -- デバッグ用スキル引換券：敵チェック用渓谷下層"
+      ]
+    },
+    {
+      "ID": 930090,
+      "Entries": [
+        "Debugging skill voucher: Enemy check sick village -- デバッグ用スキル引換券：敵チェック用病み村"
+      ]
+    },
+    {
+      "ID": 930100,
+      "Entries": [
+        "Debugging skill voucher: Honjo for enemy check_When the Ninja army invades -- デバッグ用スキル引換券：敵チェック用本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 930110,
+      "Entries": [
+        "Debugging skill voucher: Submerged city for checking enemies -- デバッグ用スキル引換券：敵チェック用水没都"
+      ]
+    },
+    {
+      "ID": 930120,
+      "Entries": [
+        "Debugging skill voucher: Honjo for enemy check_When Tokugawa attacks -- デバッグ用スキル引換券：敵チェック用本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 930130,
+      "Entries": [
+        "Debugging skill voucher: Hidden prison for checking enemies_When Tokugawa attacks -- デバッグ用スキル引換券：敵チェック用隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 930140,
+      "Entries": [
+        "Debugging skill voucher: Castle for checking enemies_When Tokugawa attacks -- デバッグ用スキル引換券：敵チェック用城下_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 930150,
+      "Entries": [
+        "Debugging skill voucher: Clear enemy check game -- デバッグ用スキル引換券：敵チェック用ゲームクリア"
+      ]
+    },
+    {
+      "ID": 999996,
+      "Entries": [
+        "Debugging skill lifted: No derivative attacks -- デバッグ用スキル解禁：派生攻撃なし"
+      ]
+    },
+    {
+      "ID": 999997,
+      "Entries": [
+        "Debugging skills lifted: Everything except immortal slashing / acquisition of form charges -- デバッグ用スキル解禁：不死斬り/形代取得以外全て"
+      ]
+    },
+    {
+      "ID": 999998,
+      "Entries": [
+        "Debugging Skills Lifted: Everything except Immortal Slash -- デバッグ用スキル解禁：不死斬り以外全て"
+      ]
+    },
+    {
+      "ID": 999999,
+      "Entries": [
+        "Debugging skills lifted: All -- デバッグ用スキル解禁：全て"
+      ]
+    }
+  ]
+}

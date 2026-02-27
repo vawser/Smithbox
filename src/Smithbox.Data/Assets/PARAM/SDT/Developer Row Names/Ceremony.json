@@ -1,0 +1,371 @@
+{
+  "Name": "Ceremony",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "For automatic patrol: normal -- 自動巡回用:通常"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "For automatic patrol: Ritual A -- 自動巡回用:儀式A"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "For automatic patrol: Ritual B -- 自動巡回用:儀式B"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "For automatic patrol: Ritual C -- 自動巡回用:儀式C"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "For automatic patrol: Ritual D -- 自動巡回用:儀式D"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "For automatic patrol: Ritual E -- 自動巡回用:儀式E"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Castle: Default -- 城下：デフォルト"
+      ]
+    },
+    {
+      "ID": 11000020,
+      "Entries": [
+        "Castle: Invasion of Tokugawa -- 城下：徳川襲来"
+      ]
+    },
+    {
+      "ID": 11010000,
+      "Entries": [
+        "Honjo: Default -- 本城：デフォルト"
+      ]
+    },
+    {
+      "ID": 11010010,
+      "Entries": [
+        "Honjo: Arashi -- 本城：嵐"
+      ]
+    },
+    {
+      "ID": 11010020,
+      "Entries": [
+        "Honjo: Invasion of Tokugawa -- 本城：徳川襲来"
+      ]
+    },
+    {
+      "ID": 11020000,
+      "Entries": [
+        "Hidden Prison: Default -- 隠し牢：デフォルト"
+      ]
+    },
+    {
+      "ID": 11020020,
+      "Entries": [
+        "Hidden prison: Tokugawa invasion -- 隠し牢：徳川襲来"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "Sick Village: Default -- 病み村：デフォルト"
+      ]
+    },
+    {
+      "ID": 15000010,
+      "Entries": [
+        "Sick Village: During illusion -- 病み村：幻術中"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "Submerged City: Default -- 水没都：デフォルト"
+      ]
+    },
+    {
+      "ID": 25000010,
+      "Entries": [
+        "Submerged city: dense fog -- 水没都：濃霧"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Eclipse Royal Castle_1: Default -- 蝕の王城_1：デフォルト"
+      ]
+    },
+    {
+      "ID": 30000010,
+      "Entries": [
+        "The Royal Castle of Eclipse_1: The World of Eclipse -- 蝕の王城_1：蝕世界"
+      ]
+    },
+    {
+      "ID": 30001000,
+      "Entries": [
+        "Eclipse King _1: Product version -- 蝕の王城_1：製品版"
+      ]
+    },
+    {
+      "ID": 30001010,
+      "Entries": [
+        "Royal Castle of Eclipse_1: NT -- 蝕の王城_1：NT"
+      ]
+    },
+    {
+      "ID": 30001011,
+      "Entries": [
+        "Eclipse Royal Castle_1: TGS -- 蝕の王城_1：TGS"
+      ]
+    },
+    {
+      "ID": 30001012,
+      "Entries": [
+        "Eclipse King _1: E3 Light Test -- 蝕の王城_1：E3ライトテスト"
+      ]
+    },
+    {
+      "ID": 30001015,
+      "Entries": [
+        "Eclipse royal castle_1: royal castle 2 distant view test -- 蝕の王城_1：王城2遠景テスト"
+      ]
+    },
+    {
+      "ID": 30001020,
+      "Entries": [
+        "Eclipse King _1: Gparam Or test -- 蝕の王城_1：GparamOrテスト"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Eclipse Royal Castle_2: Default -- 蝕の王城_2：デフォルト"
+      ]
+    },
+    {
+      "ID": 30010010,
+      "Entries": [
+        "The Royal Castle of Eclipse_2: The World of Eclipse -- 蝕の王城_2：蝕世界"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Evil Eye City: Default -- 邪眼の街：デフォルト"
+      ]
+    },
+    {
+      "ID": 31000010,
+      "Entries": [
+        "Evil Eye City: The World of Corrosion -- 邪眼の街：蝕世界"
+      ]
+    },
+    {
+      "ID": 31000020,
+      "Entries": [
+        "City of Evil Eyes: Default (Oujou 1) -- 邪眼の街：デフォルト(王城1)"
+      ]
+    },
+    {
+      "ID": 31000030,
+      "Entries": [
+        "Evil Eye City: The World of Evil Eye (Oujou 1) -- 邪眼の街：蝕世界(王城1)"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "City of Evil Eyes: Pseudo NPC Multi 1 -- 邪眼の街：疑似NPCマルチ1"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "Flying Dragon Bridge: Default (fine weather) -- 飛竜の橋：デフォルト（晴天）"
+      ]
+    },
+    {
+      "ID": 32000010,
+      "Entries": [
+        "Hiryu no Hashi: Boss Room Appears -- 飛竜の橋：ボス部屋出現"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Poison Swamp Forest: Default -- 毒沼の森：デフォルト"
+      ]
+    },
+    {
+      "ID": 33000010,
+      "Entries": [
+        "Poison Swamp Forest: Corrosion World -- 毒沼の森：蝕世界"
+      ]
+    },
+    {
+      "ID": 34010000,
+      "Entries": [
+        "Eclipse Royal Castle_3: Default -- 蝕の王城_3：デフォルト"
+      ]
+    },
+    {
+      "ID": 34010010,
+      "Entries": [
+        "The Royal Castle of Eclipse_3: The World of Eclipse -- 蝕の王城_3：蝕世界"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Basilica Church: Default -- 聖堂教会：デフォルト"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "Basilica Church: Eating World -- 聖堂教会：蝕世界"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "Anor: Default -- アノール：デフォルト"
+      ]
+    },
+    {
+      "ID": 37000010,
+      "Entries": [
+        "Anor: The World of Erosion -- アノール：蝕世界"
+      ]
+    },
+    {
+      "ID": 37001000,
+      "Entries": [
+        "Anor: Pseudo NPC Multi 1 -- アノール：疑似NPCマルチ1"
+      ]
+    },
+    {
+      "ID": 37001100,
+      "Entries": [
+        "Anor: Pseudo NPC Multi 2 -- アノール：疑似NPCマルチ2"
+      ]
+    },
+    {
+      "ID": 37001200,
+      "Entries": [
+        "Anor: Pseudo NPC Multi 3-1 -- アノール：疑似NPCマルチ3-1"
+      ]
+    },
+    {
+      "ID": 37001201,
+      "Entries": [
+        "Anor: Pseudo NPC Multi 3-2 -- アノール：疑似NPCマルチ3-2"
+      ]
+    },
+    {
+      "ID": 38000000,
+      "Entries": [
+        "Abandoned city: Default (dedicated) -- 廃都：デフォルト（専用）"
+      ]
+    },
+    {
+      "ID": 39000000,
+      "Entries": [
+        "Dungeon: Default -- 地下牢：デフォルト"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Location: Default -- 拠点：デフォルト"
+      ]
+    },
+    {
+      "ID": 40000010,
+      "Entries": [
+        "Base: Corrosion World -- 拠点：蝕世界"
+      ]
+    },
+    {
+      "ID": 40000020,
+      "Entries": [
+        "Base: Las Boss -- 拠点：ラスボス"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "Last map: default -- ラストマップ：デフォルト"
+      ]
+    },
+    {
+      "ID": 91080000,
+      "Entries": [
+        "Ritual Layer Test Map: Noon -- 儀式レイヤーテストMap：昼"
+      ]
+    },
+    {
+      "ID": 91080010,
+      "Entries": [
+        "Ritual layer test Map: gloomy cloudy -- 儀式レイヤーテストMap：陰鬱な曇り"
+      ]
+    },
+    {
+      "ID": 91080020,
+      "Entries": [
+        "Ritual Layer Test Map: Evening / Evening Darkness -- 儀式レイヤーテストMap：夕方/宵闇"
+      ]
+    },
+    {
+      "ID": 91080030,
+      "Entries": [
+        "Ritual Layer Test Map: Moonlit Night -- 儀式レイヤーテストMap：月夜"
+      ]
+    },
+    {
+      "ID": 91080040,
+      "Entries": [
+        "Ritual Layer Test Map: Map Specific -- 儀式レイヤーテストMap：マップ固有"
+      ]
+    },
+    {
+      "ID": 91080050,
+      "Entries": [
+        "Ritual Layer Test Map: Map Specific -- 儀式レイヤーテストMap：マップ固有"
+      ]
+    },
+    {
+      "ID": 91080800,
+      "Entries": [
+        "Ritual Layer Test Map: Reload Test -- 儀式レイヤーテストMap：リロードテスト"
+      ]
+    },
+    {
+      "ID": 99090000,
+      "Entries": [
+        "Event test: Default -- イベントテスト：デフォ"
+      ]
+    },
+    {
+      "ID": 99090010,
+      "Entries": [
+        "Event test: Pseudo multi -- イベントテスト：疑似マルチ"
+      ]
+    }
+  ]
+}

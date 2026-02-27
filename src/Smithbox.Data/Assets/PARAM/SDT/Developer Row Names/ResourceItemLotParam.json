@@ -1,0 +1,1571 @@
+{
+  "Name": "ResourceItemLotParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "for test -- テスト用"
+      ]
+    },
+    {
+      "ID": 1980,
+      "Entries": [
+        "Form fee acquisition &amp; acquisition rate UP test -- 形代入手 & 入手率UPテスト"
+      ]
+    },
+    {
+      "ID": 1985,
+      "Entries": [
+        "Resurrection right acquisition &amp; acquisition amount UP test 1 -- 復活権入手 & 入手量UPテスト1"
+      ]
+    },
+    {
+      "ID": 1986,
+      "Entries": [
+        "Resurrection right acquisition &amp; acquisition amount UP test 2 -- 復活権入手 & 入手量UPテスト2"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Samurai residence_100% white charge_00 -- 武家屋敷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "Samurai residence_100% white charge_01 -- 武家屋敷_白形代100%_01"
+      ]
+    },
+    {
+      "ID": 1000020,
+      "Entries": [
+        "Samurai residence_100% white charge_02 -- 武家屋敷_白形代100%_02"
+      ]
+    },
+    {
+      "ID": 1000030,
+      "Entries": [
+        "Samurai residence_100% white charge_03 -- 武家屋敷_白形代100%_03"
+      ]
+    },
+    {
+      "ID": 1000040,
+      "Entries": [
+        "Samurai residence_100% white charge_04 -- 武家屋敷_白形代100%_04"
+      ]
+    },
+    {
+      "ID": 1000050,
+      "Entries": [
+        "Samurai residence_100% white charge_05 -- 武家屋敷_白形代100%_05"
+      ]
+    },
+    {
+      "ID": 1000060,
+      "Entries": [
+        "Samurai residence_100% white charge_06 -- 武家屋敷_白形代100%_06"
+      ]
+    },
+    {
+      "ID": 1000070,
+      "Entries": [
+        "Samurai residence_100% white charge_07 -- 武家屋敷_白形代100%_07"
+      ]
+    },
+    {
+      "ID": 1000080,
+      "Entries": [
+        "Samurai residence_100% white charge_08 -- 武家屋敷_白形代100%_08"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Castle_white _100% _00 -- 城下_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1100010,
+      "Entries": [
+        "Castle_white _100% _01 -- 城下_白形代100%_0１"
+      ]
+    },
+    {
+      "ID": 1100020,
+      "Entries": [
+        "Castle_white _100% _02 -- 城下_白形代100%_02"
+      ]
+    },
+    {
+      "ID": 1100030,
+      "Entries": [
+        "Castle_white _100% _03 -- 城下_白形代100%_03"
+      ]
+    },
+    {
+      "ID": 1100040,
+      "Entries": [
+        "Castle_white _100% _04 -- 城下_白形代100%_04"
+      ]
+    },
+    {
+      "ID": 1100050,
+      "Entries": [
+        "Castle_white _100% _05 -- 城下_白形代100%_05"
+      ]
+    },
+    {
+      "ID": 1100060,
+      "Entries": [
+        "Castle_white _100% _06 -- 城下_白形代100%_06"
+      ]
+    },
+    {
+      "ID": 1100070,
+      "Entries": [
+        "Castle_white _100% _07 -- 城下_白形代100%_07"
+      ]
+    },
+    {
+      "ID": 1100080,
+      "Entries": [
+        "Castle_white _100% _08 -- 城下_白形代100%_08"
+      ]
+    },
+    {
+      "ID": 1100090,
+      "Entries": [
+        "Castle_white _100% _09 -- 城下_白形代100%_09"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "Castle_white _100% _10 -- 城下_白形代100%_10"
+      ]
+    },
+    {
+      "ID": 1100900,
+      "Entries": [
+        "Castle_white _100% _03 -- 城下_白形代100%_03"
+      ]
+    },
+    {
+      "ID": 1100910,
+      "Entries": [
+        "Castle_white _100% _03 -- 城下_白形代100%_03"
+      ]
+    },
+    {
+      "ID": 1110000,
+      "Entries": [
+        "Honjo_Shirokatayo 100%_00 -- 本城_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1110010,
+      "Entries": [
+        "Honjo_Shirokatayo 100% _01 -- 本城_白形代100%_01"
+      ]
+    },
+    {
+      "ID": 1110020,
+      "Entries": [
+        "Honjo_Shirokatayo 100% _02 -- 本城_白形代100%_02"
+      ]
+    },
+    {
+      "ID": 1110030,
+      "Entries": [
+        "Honjo_Shirokatayo 100% _03 -- 本城_白形代100%_03"
+      ]
+    },
+    {
+      "ID": 1110040,
+      "Entries": [
+        "Honjo_Shirokatayo 100% _04 -- 本城_白形代100%_04"
+      ]
+    },
+    {
+      "ID": 1110050,
+      "Entries": [
+        "Honjo_Shirokatayo 100% _05 -- 本城_白形代100%_05"
+      ]
+    },
+    {
+      "ID": 1110051,
+      "Entries": [
+        "Honjo_Shirokatayo 100% _06 -- 本城_白形代100%_06"
+      ]
+    },
+    {
+      "ID": 1110052,
+      "Entries": [
+        "Honjo_Shirokatayo 100% _07 -- 本城_白形代100%_07"
+      ]
+    },
+    {
+      "ID": 1110053,
+      "Entries": [
+        "Honjo_Shirokatayo 100% _08 -- 本城_白形代100%_08"
+      ]
+    },
+    {
+      "ID": 1120000,
+      "Entries": [
+        "Hidden prison_white charge 100% _00 -- 隠し牢_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1120010,
+      "Entries": [
+        "Hidden prison_white charge 100% _01 -- 隠し牢_白形代100%_01"
+      ]
+    },
+    {
+      "ID": 1120020,
+      "Entries": [
+        "Hidden prison_white charge 100% _02 -- 隠し牢_白形代100%_02"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Dungeon_White 100% _00 -- 地下牢_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1300010,
+      "Entries": [
+        "Dungeon_White 100% _01 -- 地下牢_白形代100%_01"
+      ]
+    },
+    {
+      "ID": 1300020,
+      "Entries": [
+        "Dungeon_White 100% _02 -- 地下牢_白形代100%_02"
+      ]
+    },
+    {
+      "ID": 1300030,
+      "Entries": [
+        "Dungeon_White 100% _03 -- 地下牢_白形代100%_03"
+      ]
+    },
+    {
+      "ID": 1300040,
+      "Entries": [
+        "Dungeon_White 100% _04 -- 地下牢_白形代100%_04"
+      ]
+    },
+    {
+      "ID": 1300050,
+      "Entries": [
+        "Dungeon_White 100% _05 -- 地下牢_白形代100%_05"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500010,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500020,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500030,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500040,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500050,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500060,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500070,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500080,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500090,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500100,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500110,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500120,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1500130,
+      "Entries": [
+        "Illness Village_White 100% _00 -- 病み村_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700010,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700020,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700030,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700040,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700050,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700060,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700070,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700080,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700090,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700100,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700110,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700120,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700130,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700140,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700150,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700160,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700170,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700180,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700190,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700200,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700210,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700220,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 1700230,
+      "Entries": [
+        "Valley_white charge 100% _00 -- 渓谷_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000010,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000020,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000030,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000040,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000050,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000060,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000070,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000080,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000090,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000100,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000110,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000120,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000130,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000140,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000150,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000160,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000170,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000180,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000190,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000200,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000210,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000220,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000230,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000240,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000250,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000260,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000270,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000280,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000290,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000300,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2000310,
+      "Entries": [
+        "Temple_white _100% _00 -- 寺_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500000,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500010,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500020,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500030,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500040,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500050,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500060,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500070,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500080,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500090,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500100,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500110,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500120,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500130,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 2500140,
+      "Entries": [
+        "Submerged city_white charge 100% _00 -- 水没都_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 9620000,
+      "Entries": [
+        "1st Playable_White charge 100% _00 -- 1stPlayable_白形代100%_00"
+      ]
+    },
+    {
+      "ID": 9620010,
+      "Entries": [
+        "1st Playable_White charge 100% _01 -- 1stPlayable_白形代100%_01"
+      ]
+    },
+    {
+      "ID": 9620020,
+      "Entries": [
+        "1st Playable_White charge 100% _02 -- 1stPlayable_白形代100%_02"
+      ]
+    },
+    {
+      "ID": 9620030,
+      "Entries": [
+        "1st Playable_White charge 100% _03 -- 1stPlayable_白形代100%_03"
+      ]
+    },
+    {
+      "ID": 9620040,
+      "Entries": [
+        "1st Playable_White charge 100% _04 -- 1stPlayable_白形代100%_04"
+      ]
+    },
+    {
+      "ID": 9620050,
+      "Entries": [
+        "1st Playable_White charge 100% _05 -- 1stPlayable_白形代100%_05"
+      ]
+    },
+    {
+      "ID": 9620060,
+      "Entries": [
+        "1st Playable_White charge 100% _06 -- 1stPlayable_白形代100%_06"
+      ]
+    },
+    {
+      "ID": 9620070,
+      "Entries": [
+        "1st Playable_White charge 100% _07 -- 1stPlayable_白形代100%_07"
+      ]
+    },
+    {
+      "ID": 9620080,
+      "Entries": [
+        "1st Playable_White charge 100% _08 -- 1stPlayable_白形代100%_08"
+      ]
+    },
+    {
+      "ID": 9620090,
+      "Entries": [
+        "1st Playable_White charge 100% _09 -- 1stPlayable_白形代100%_09"
+      ]
+    },
+    {
+      "ID": 9620100,
+      "Entries": [
+        "1st Playable_White charge 100% _10 -- 1stPlayable_白形代100%_10"
+      ]
+    },
+    {
+      "ID": 9620110,
+      "Entries": [
+        "1st Playable_White charge 100% _11 -- 1stPlayable_白形代100%_11"
+      ]
+    },
+    {
+      "ID": 9620120,
+      "Entries": [
+        "1st Playable_White charge 100% _12 -- 1stPlayable_白形代100%_12"
+      ]
+    },
+    {
+      "ID": 9620130,
+      "Entries": [
+        "1st Playable_White charge 100% _13 -- 1stPlayable_白形代100%_13"
+      ]
+    },
+    {
+      "ID": 9620140,
+      "Entries": [
+        "1st Playable_White charge 100% _14 -- 1stPlayable_白形代100%_14"
+      ]
+    },
+    {
+      "ID": 9620150,
+      "Entries": [
+        "1st Playable_White charge 100% _15 -- 1stPlayable_白形代100%_15"
+      ]
+    },
+    {
+      "ID": 9620160,
+      "Entries": [
+        "1st Playable_White charge 100% _16 -- 1stPlayable_白形代100%_16"
+      ]
+    },
+    {
+      "ID": 9620170,
+      "Entries": [
+        "1st Playable_White charge 100% _17 -- 1stPlayable_白形代100%_17"
+      ]
+    },
+    {
+      "ID": 9620180,
+      "Entries": [
+        "1st Playable_White charge 100% _18 -- 1stPlayable_白形代100%_18"
+      ]
+    },
+    {
+      "ID": 9620190,
+      "Entries": [
+        "1st Playable_White charge 100% _19 -- 1stPlayable_白形代100%_19"
+      ]
+    },
+    {
+      "ID": 9620200,
+      "Entries": [
+        "1st Playable_White charge 100% _20 -- 1stPlayable_白形代100%_20"
+      ]
+    },
+    {
+      "ID": 9620210,
+      "Entries": [
+        "1st Playable_White charge 100% _21 -- 1stPlayable_白形代100%_21"
+      ]
+    },
+    {
+      "ID": 9620220,
+      "Entries": [
+        "1st Playable_White charge 100% _22 -- 1stPlayable_白形代100%_22"
+      ]
+    },
+    {
+      "ID": 9620230,
+      "Entries": [
+        "1st Playable_White charge 100% _23 -- 1stPlayable_白形代100%_23"
+      ]
+    },
+    {
+      "ID": 9620240,
+      "Entries": [
+        "1st Playable_White charge 100% _24 -- 1stPlayable_白形代100%_24"
+      ]
+    },
+    {
+      "ID": 9620250,
+      "Entries": [
+        "1st Playable_White charge 100% _25 -- 1stPlayable_白形代100%_25"
+      ]
+    },
+    {
+      "ID": 9620260,
+      "Entries": [
+        "1st Playable_White charge 100% _26 -- 1stPlayable_白形代100%_26"
+      ]
+    },
+    {
+      "ID": 9620270,
+      "Entries": [
+        "1st Playable_White charge 100% _27 -- 1stPlayable_白形代100%_27"
+      ]
+    },
+    {
+      "ID": 9620280,
+      "Entries": [
+        "1st Playable_White charge 100% _28 -- 1stPlayable_白形代100%_28"
+      ]
+    },
+    {
+      "ID": 9620900,
+      "Entries": [
+        "1st Playable_White charge 100% _Infinite -- 1stPlayable_白形代100%_無限"
+      ]
+    },
+    {
+      "ID": 9623000,
+      "Entries": [
+        "1st Playable_Red color 100% _00 -- 1stPlayable_赤形代100%_00"
+      ]
+    },
+    {
+      "ID": 9623010,
+      "Entries": [
+        "1st Playable_ Red form 100% _01 -- 1stPlayable_赤形代100%_01"
+      ]
+    },
+    {
+      "ID": 9623020,
+      "Entries": [
+        "1st Playable_ Red form 100% _02 -- 1stPlayable_赤形代100%_02"
+      ]
+    },
+    {
+      "ID": 9623030,
+      "Entries": [
+        "1st Playable_ Red form 100% _03 -- 1stPlayable_赤形代100%_03"
+      ]
+    },
+    {
+      "ID": 9623040,
+      "Entries": [
+        "1st Playable_ Red form 100% _04 -- 1stPlayable_赤形代100%_04"
+      ]
+    },
+    {
+      "ID": 9623050,
+      "Entries": [
+        "1st Playable_ Red form 100% _05 -- 1stPlayable_赤形代100%_05"
+      ]
+    },
+    {
+      "ID": 9623900,
+      "Entries": [
+        "1st Playable_Red shape 100% _Infinite -- 1stPlayable_赤形代100%_無限"
+      ]
+    },
+    {
+      "ID": 9626000,
+      "Entries": [
+        "1st Playable_Blue fee 100% _00 -- 1stPlayable_青形代100%_00"
+      ]
+    },
+    {
+      "ID": 9626010,
+      "Entries": [
+        "1st Playable_Blue size 100% _01 -- 1stPlayable_青形代100%_01"
+      ]
+    },
+    {
+      "ID": 9626020,
+      "Entries": [
+        "1st Playable_Blue size 100% _02 -- 1stPlayable_青形代100%_02"
+      ]
+    },
+    {
+      "ID": 9626030,
+      "Entries": [
+        "1st Playable_Blue size 100% _03 -- 1stPlayable_青形代100%_03"
+      ]
+    },
+    {
+      "ID": 9626040,
+      "Entries": [
+        "1st Playable_Blue size 100% _04 -- 1stPlayable_青形代100%_04"
+      ]
+    },
+    {
+      "ID": 9626050,
+      "Entries": [
+        "1st Playable_Blue size 100% _05 -- 1stPlayable_青形代100%_05"
+      ]
+    },
+    {
+      "ID": 9626060,
+      "Entries": [
+        "1st Playable_Blue size 100% _06 -- 1stPlayable_青形代100%_06"
+      ]
+    },
+    {
+      "ID": 9626070,
+      "Entries": [
+        "1st Playable_Blue size 100% _07 -- 1stPlayable_青形代100%_07"
+      ]
+    },
+    {
+      "ID": 9626080,
+      "Entries": [
+        "1st Playable_Blue size 100% _08 -- 1stPlayable_青形代100%_08"
+      ]
+    },
+    {
+      "ID": 9626090,
+      "Entries": [
+        "1st Playable_Blue size 100% _09 -- 1stPlayable_青形代100%_09"
+      ]
+    },
+    {
+      "ID": 9626100,
+      "Entries": [
+        "1st Playable_Blue size 100% _10 -- 1stPlayable_青形代100%_10"
+      ]
+    },
+    {
+      "ID": 9626110,
+      "Entries": [
+        "1st Playable_Blue size 100% _11 -- 1stPlayable_青形代100%_11"
+      ]
+    },
+    {
+      "ID": 9626120,
+      "Entries": [
+        "1st Playable_Blue size 100% _12 -- 1stPlayable_青形代100%_12"
+      ]
+    },
+    {
+      "ID": 9626130,
+      "Entries": [
+        "1st Playable_Blue size 100% _13 -- 1stPlayable_青形代100%_13"
+      ]
+    },
+    {
+      "ID": 9626140,
+      "Entries": [
+        "1st Playable_Blue size 100% _14 -- 1stPlayable_青形代100%_14"
+      ]
+    },
+    {
+      "ID": 9626150,
+      "Entries": [
+        "1st Playable_Blue size 100% _15 -- 1stPlayable_青形代100%_15"
+      ]
+    },
+    {
+      "ID": 9626160,
+      "Entries": [
+        "1st Playable_Blue size 100% _16 -- 1stPlayable_青形代100%_16"
+      ]
+    },
+    {
+      "ID": 9626900,
+      "Entries": [
+        "1st Playable_Blue size 100% _Infinite -- 1stPlayable_青形代100%_無限"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Swashbuckler fish -- 剣戟雑魚"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "Swashbuckler [Strong] -- 剣戟雑魚【強】"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "Swashbuckler [weak] -- 剣戟雑魚【弱】"
+      ]
+    },
+    {
+      "ID": 10000090,
+      "Entries": [
+        "Swashbuckler _GC -- 剣戟雑魚_GC"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "Swashbuckler -- 剣戟強敵"
+      ]
+    },
+    {
+      "ID": 10000190,
+      "Entries": [
+        "Swashbuckler _GC -- 剣戟強敵_GC"
+      ]
+    },
+    {
+      "ID": 10000200,
+      "Entries": [
+        "Long-distance small fish -- 遠距離雑魚"
+      ]
+    },
+    {
+      "ID": 10000290,
+      "Entries": [
+        "Long-distance small fish_GC -- 遠距離雑魚_GC"
+      ]
+    },
+    {
+      "ID": 10000300,
+      "Entries": [
+        "Long-range strong enemy -- 遠距離強敵"
+      ]
+    },
+    {
+      "ID": 10000400,
+      "Entries": [
+        "animal -- 動物"
+      ]
+    },
+    {
+      "ID": 10000410,
+      "Entries": [
+        "Animal [strong] -- 動物【強】"
+      ]
+    },
+    {
+      "ID": 10000500,
+      "Entries": [
+        "Alert enemy -- アラート敵"
+      ]
+    },
+    {
+      "ID": 10000590,
+      "Entries": [
+        "Alert enemy_GC -- アラート敵_GC"
+      ]
+    },
+    {
+      "ID": 10000600,
+      "Entries": [
+        "Gimmick enemy -- ギミック敵"
+      ]
+    },
+    {
+      "ID": 10000800,
+      "Entries": [
+        "Bonus for slaughter of enemies with 1 or more slaughter -- 1忍殺以上の敵の忍殺時ボーナス"
+      ]
+    },
+    {
+      "ID": 10000900,
+      "Entries": [
+        "Medium boss -- 中ボス"
+      ]
+    },
+    {
+      "ID": 10005000,
+      "Entries": [
+        "Swashbuckler fish -- 剣戟雑魚"
+      ]
+    },
+    {
+      "ID": 10005001,
+      "Entries": [
+        "Swashbuckler fish -- 剣戟雑魚"
+      ]
+    },
+    {
+      "ID": 10005010,
+      "Entries": [
+        "Swashbuckler [Strong] -- 剣戟雑魚【強】"
+      ]
+    },
+    {
+      "ID": 10005011,
+      "Entries": [
+        "Swashbuckler [Strong] -- 剣戟雑魚【強】"
+      ]
+    },
+    {
+      "ID": 10005020,
+      "Entries": [
+        "Swashbuckler [weak] -- 剣戟雑魚【弱】"
+      ]
+    },
+    {
+      "ID": 10005021,
+      "Entries": [
+        "Swashbuckler [weak] -- 剣戟雑魚【弱】"
+      ]
+    },
+    {
+      "ID": 10005100,
+      "Entries": [
+        "Swashbuckler -- 剣戟強敵"
+      ]
+    },
+    {
+      "ID": 10005101,
+      "Entries": [
+        "Swashbuckler -- 剣戟強敵"
+      ]
+    },
+    {
+      "ID": 10005200,
+      "Entries": [
+        "Long-distance small fish -- 遠距離雑魚"
+      ]
+    },
+    {
+      "ID": 10005201,
+      "Entries": [
+        "Long-distance small fish -- 遠距離雑魚"
+      ]
+    },
+    {
+      "ID": 10005300,
+      "Entries": [
+        "Long-range strong enemy -- 遠距離強敵"
+      ]
+    },
+    {
+      "ID": 10005301,
+      "Entries": [
+        "Long-range strong enemy -- 遠距離強敵"
+      ]
+    },
+    {
+      "ID": 10005400,
+      "Entries": [
+        "animal -- 動物"
+      ]
+    },
+    {
+      "ID": 10005401,
+      "Entries": [
+        "animal -- 動物"
+      ]
+    },
+    {
+      "ID": 10005410,
+      "Entries": [
+        "Animal [strong] -- 動物【強】"
+      ]
+    },
+    {
+      "ID": 10005411,
+      "Entries": [
+        "Animal [strong] -- 動物【強】"
+      ]
+    },
+    {
+      "ID": 10005500,
+      "Entries": [
+        "Alert enemy -- アラート敵"
+      ]
+    },
+    {
+      "ID": 10005501,
+      "Entries": [
+        "Alert enemy -- アラート敵"
+      ]
+    },
+    {
+      "ID": 10005600,
+      "Entries": [
+        "Gimmick enemy -- ギミック敵"
+      ]
+    },
+    {
+      "ID": 10005601,
+      "Entries": [
+        "Gimmick enemy -- ギミック敵"
+      ]
+    },
+    {
+      "ID": 10005800,
+      "Entries": [
+        "Bonus for slaughter of enemies with 1 or more slaughter -- 1忍殺以上の敵の忍殺時ボーナス"
+      ]
+    },
+    {
+      "ID": 10005801,
+      "Entries": [
+        "Bonus for slaughter of enemies with 1 or more slaughter -- 1忍殺以上の敵の忍殺時ボーナス"
+      ]
+    },
+    {
+      "ID": 10005900,
+      "Entries": [
+        "Medium boss -- 中ボス"
+      ]
+    },
+    {
+      "ID": 10005901,
+      "Entries": [
+        "Medium boss -- 中ボス"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "c1020_ General Samurai -- c1020_侍大将"
+      ]
+    },
+    {
+      "ID": 10200010,
+      "Entries": [
+        "c1020_Samurai General_Jinhaori -- c1020_侍大将_陣羽織あり"
+      ]
+    },
+    {
+      "ID": 10205000,
+      "Entries": [
+        "c1020_ General Samurai -- c1020_侍大将"
+      ]
+    },
+    {
+      "ID": 10205010,
+      "Entries": [
+        "c1020_Samurai General_Jinhaori -- c1020_侍大将_陣羽織あり"
+      ]
+    },
+    {
+      "ID": 10400000,
+      "Entries": [
+        "c1040_ Centipede size -- c1040_ムカデ大"
+      ]
+    },
+    {
+      "ID": 10405000,
+      "Entries": [
+        "c1040_ Centipede size -- c1040_ムカデ大"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "c1070_ Shura Samurai -- c1070_修羅侍"
+      ]
+    },
+    {
+      "ID": 10705000,
+      "Entries": [
+        "c1070_ Shura Samurai -- c1070_修羅侍"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "c1080_ Seven-sided warrior -- c1080_七面武者"
+      ]
+    },
+    {
+      "ID": 10805000,
+      "Entries": [
+        "c1080_ Seven-sided warrior -- c1080_七面武者"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "c1130_ Nanban armor -- c1130_南蛮甲冑"
+      ]
+    },
+    {
+      "ID": 11305000,
+      "Entries": [
+        "c1130_ Nanban armor -- c1130_南蛮甲冑"
+      ]
+    },
+    {
+      "ID": 13500000,
+      "Entries": [
+        "c1350_ neckless -- c1350_首なし"
+      ]
+    },
+    {
+      "ID": 13505000,
+      "Entries": [
+        "c1350_ neckless -- c1350_首なし"
+      ]
+    },
+    {
+      "ID": 13700000,
+      "Entries": [
+        "c1370_ fire cow -- c1370_火牛"
+      ]
+    },
+    {
+      "ID": 13705000,
+      "Entries": [
+        "c1370_ fire cow -- c1370_火牛"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "c5020_ Caucasian slave -- c5020_白人奴隷"
+      ]
+    },
+    {
+      "ID": 50205000,
+      "Entries": [
+        "c5020_ Caucasian slave -- c5020_白人奴隷"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "c7000_ female player -- c7000_女奏者"
+      ]
+    },
+    {
+      "ID": 70005000,
+      "Entries": [
+        "c7000_ female player -- c7000_女奏者"
+      ]
+    },
+    {
+      "ID": 999999100,
+      "Entries": [
+        "[For mounting test] 100% red shape -- 【実装テスト用】赤形代100%"
+      ]
+    },
+    {
+      "ID": 999999110,
+      "Entries": [
+        "[For mounting test] 50% red shape -- 【実装テスト用】赤形代50%"
+      ]
+    },
+    {
+      "ID": 999999120,
+      "Entries": [
+        "[For mounting test] Red form 20% -- 【実装テスト用】赤形代20%"
+      ]
+    },
+    {
+      "ID": 999999130,
+      "Entries": [
+        "[For mounting test] Red or blue -- 【実装テスト用】赤形代or青形代"
+      ]
+    },
+    {
+      "ID": 999999140,
+      "Entries": [
+        "[For mounting test] 0 to 7 white shapes -- 【実装テスト用】白形代0～7個"
+      ]
+    },
+    {
+      "ID": 999999150,
+      "Entries": [
+        "[For mounting test] 1/3 of the blue shape -- 【実装テスト用】青形代1/3個"
+      ]
+    },
+    {
+      "ID": 999999151,
+      "Entries": [
+        "[For mounting test] 2/3 blue shape -- 【実装テスト用】青形代2/3個"
+      ]
+    },
+    {
+      "ID": 999999152,
+      "Entries": [
+        "[For mounting test] 3/3 blue-shaped charges -- 【実装テスト用】青形代3/3個"
+      ]
+    },
+    {
+      "ID": 999999160,
+      "Entries": [
+        "[For mounting test] 1/3 of red, blue and white -- 【実装テスト用】赤青白形代1/3個"
+      ]
+    },
+    {
+      "ID": 999999161,
+      "Entries": [
+        "[For mounting test] Red, blue, white, 2/3 pieces -- 【実装テスト用】赤青白形代2/3個"
+      ]
+    },
+    {
+      "ID": 999999162,
+      "Entries": [
+        "[For mounting test] Red, blue, white, 3/3 pieces -- 【実装テスト用】赤青白形代3/3個"
+      ]
+    },
+    {
+      "ID": 999999170,
+      "Entries": [
+        "[For mounting test] 1/3 random red, blue and white -- 【実装テスト用】赤青白形代ランダム1/3個"
+      ]
+    },
+    {
+      "ID": 999999171,
+      "Entries": [
+        "[For mounting test] Red Blue White Random 2/3 pieces -- 【実装テスト用】赤青白形代ランダム2/3個"
+      ]
+    },
+    {
+      "ID": 999999172,
+      "Entries": [
+        "[For mounting test] Red, blue, white, random 3/3 pieces -- 【実装テスト用】赤青白形代ランダム3/3個"
+      ]
+    },
+    {
+      "ID": 999999180,
+      "Entries": [
+        "[For implementation test] White form _ Acquired flag ID 9170 -- 【実装テスト用】白形代_取得済みフラグID9170"
+      ]
+    },
+    {
+      "ID": 999999190,
+      "Entries": [
+        "[For mounting test] 99 white shapes -- 【実装テスト用】白形代99個"
+      ]
+    },
+    {
+      "ID": 999999200,
+      "Entries": [
+        "[For mounting test] Off -- 【実装テスト用】はずれ"
+      ]
+    }
+  ]
+}

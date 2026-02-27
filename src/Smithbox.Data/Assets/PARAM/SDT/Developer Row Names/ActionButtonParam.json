@@ -1,0 +1,1835 @@
+{
+  "Name": "ActionButtonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test 0 -- テスト0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test 1 -- テスト1"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Regain lost life -- 失ったライフを取り戻す"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Take a life -- ライフをとる"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Read the tombstone -- 墓碑を読む"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Read the letter (summon) -- 手紙を読む（召喚）"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Read the letter (summon a red sign) -- 手紙を読む（赤サイン召喚）"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Check your letter (summon) -- 自分の手紙を確認する（召喚）"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Read letter (blood letter) _ Used in NTCSTADIA version -- 手紙を読む（血文字）_NTCSTADIA版で使用"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Check your letter (blood letters) _ Used in NTCSTADIA version -- 自分の手紙を確認する（血文字）_NTCSTADIA版で使用"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Pick up an item -- アイテムを拾う"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Pick up items (for water surface) -- アイテムを拾う(水面用)"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Scour the corpse -- 死体をあさる"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Purse _360 ° -- 巾着をあさる_360°"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "Purse _180 ° -- 巾着をあさる_180°"
+      ]
+    },
+    {
+      "ID": 4202,
+      "Entries": [
+        "Purse _100 ° -- 巾着をあさる_100°"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Underwater purse _360 ° -- 水中巾着をあさる_360°"
+      ]
+    },
+    {
+      "ID": 4211,
+      "Entries": [
+        "Underwater purse _180 ° -- 水中巾着をあさる_180°"
+      ]
+    },
+    {
+      "ID": 4215,
+      "Entries": [
+        "Underwater purse _360 ° _for shallow water_used in sick village -- 水中巾着をあさる_360°_浅瀬用_病み村で使用"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "Squeeze a purse in a high place _360 ° -- 高い所の巾着をあさる_360°"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Take the treasure -- 宝物をとる"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "OK -- OK"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Climb the ladder -- はしごをのぼる"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Ladder -- はしごをおりる"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Stick -- 張り付く"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Hanging -- ぶら下がる"
+      ]
+    },
+    {
+      "ID": 5031,
+      "Entries": [
+        "Hanging -- ぶら下がる"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Grab the clouds -- 雲をつかむ"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Ritual: grab -- 儀式：つかむ"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Ritual -- 儀式"
+      ]
+    },
+    {
+      "ID": 5111,
+      "Entries": [
+        "Ritual: Level up -- 儀式：レベルアップ"
+      ]
+    },
+    {
+      "ID": 5112,
+      "Entries": [
+        "Ritual: Reassign status -- 儀式：ステータス振りなおし"
+      ]
+    },
+    {
+      "ID": 5113,
+      "Entries": [
+        "Ritual: Reset the deceased -- 儀式：亡者度リセット"
+      ]
+    },
+    {
+      "ID": 5114,
+      "Entries": [
+        "Ritual: Atonement -- 儀式：贖罪"
+      ]
+    },
+    {
+      "ID": 5115,
+      "Entries": [
+        "Ritual: Summon NPC White Spirit -- 儀式：NPC白霊召喚"
+      ]
+    },
+    {
+      "ID": 5116,
+      "Entries": [
+        "Ritual: Bomb -- 儀式：ボム"
+      ]
+    },
+    {
+      "ID": 5117,
+      "Entries": [
+        "Ritual: No invasion -- 儀式：侵入禁止"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "talk -- 話しかける"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Conversation skip -- 会話スキップ"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Talk _ Exploration Shop -- 話しかける_探索ショップ"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Light a bonfire -- 篝火を灯す"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Rest on a bonfire -- 篝火で休息する"
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        "Talk _ For Buddhist sitting posture -- 話しかける_仏師座り姿勢用"
+      ]
+    },
+    {
+      "ID": 6910,
+      "Entries": [
+        "Talk to the Chief of the Ninja Army_Samurai Residence -- 話しかける_忍軍の長_武家屋敷"
+      ]
+    },
+    {
+      "ID": 6920,
+      "Entries": [
+        "Talk _ Fallen Warrior _ Combat Tutorial For Characters -- 話しかける_落ち武者_戦闘チュートリアルキャラ用"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Open the door_general purpose -- 扉を開ける_汎用"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "Open the door_General-purpose 101 standard -- 扉を開ける_汎用 101基準"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "Close the door_general purpose -- 扉を閉める_汎用"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Open the door_general purpose (guest invalid) -- 扉を開ける_汎用（ゲスト無効）"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Open the treasure chest -- 宝箱を開ける"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Open the treasure chest -- 宝箱を開ける"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Open the underwater treasure chest -- 水中宝箱を開ける"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Open the door_lift -- 扉を開ける_持ち上げ"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Activate the gimmick -- 仕掛けを起動する"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "Activate the lever -- レバーを起動"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "Activate the lever Ojo 1 Vertical lever -- レバーを起動 王城1縦レバー"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Enter the wall of light (test) -- 光の壁に入る（テスト）"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "Enter the wall of light (test 2) -- 光の壁に入る（テスト2）"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "Pull out the sword from Gunda&#39;s grave marker -- グンダの墓標から剣を抜く"
+      ]
+    },
+    {
+      "ID": 8901,
+      "Entries": [
+        "Pull out the sword from Gunda&#39;s grave marker 2 -- グンダの墓標から剣を抜く2"
+      ]
+    },
+    {
+      "ID": 8910,
+      "Entries": [
+        "Simple bonfire message -- 簡易篝火のメッセージ"
+      ]
+    },
+    {
+      "ID": 8920,
+      "Entries": [
+        "Open the door_back side -- 扉を開ける_裏側"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "For events -- イベント用"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Event FDP Playable Version_Kneeling on Evil Spirits -- イベント用 FDPプレイアブル版_邪霊に跪く"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "Event FDP Playable Version_Seal the Evil Spirit -- イベント用 FDPプレイアブル版_邪霊を封印"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Warp from the event base -- イベント用 拠点からのワープ"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Warp from the event base to the last boss -- イベント用 拠点からラスボスへのワープ"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Examine (for kicking off the shrine) -- 調べる（聖堂蹴落とし用）"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "m37_Anor Rotating Bridge_Lever (right side) -- m37_アノール回転橋_レバー（右側）"
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        "m37_Anor Rotating Bridge_Lever (left side) -- m37_アノール回転橋_レバー（左側）"
+      ]
+    },
+    {
+      "ID": 9320,
+      "Entries": [
+        "m38 Abandoned city varistor rotary lever (right side) -- m38 廃都 バリスタ 回転レバー（右側）"
+      ]
+    },
+    {
+      "ID": 9321,
+      "Entries": [
+        "m38 Abandoned city varistor rotary lever (left side) -- m38 廃都 バリスタ 回転レバー（左側）"
+      ]
+    },
+    {
+      "ID": 9400,
+      "Entries": [
+        "Messenger tombstone (not ignited) -- メッセンジャー墓石（未点火）"
+      ]
+    },
+    {
+      "ID": 9401,
+      "Entries": [
+        "Messenger tombstone (ignited) * Text difference -- メッセンジャー墓石（点火済）※テキスト違い"
+      ]
+    },
+    {
+      "ID": 9410,
+      "Entries": [
+        "Messenger tombstone (not ignited) -- メッセンジャー墓石（未点火）"
+      ]
+    },
+    {
+      "ID": 9411,
+      "Entries": [
+        "Messenger tombstone (ignited) * Text difference -- メッセンジャー墓石（点火済）※テキスト違い"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "Enter the litter -- 輿に入る"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "Get out of the litter -- 輿から出る"
+      ]
+    },
+    {
+      "ID": 9600,
+      "Entries": [
+        "Open the general-purpose door_170 -- 汎用扉を開ける_170"
+      ]
+    },
+    {
+      "ID": 9601,
+      "Entries": [
+        "Open the general-purpose door _ ??? Infinite corridor -- 汎用扉を開ける_???\u3000無限回廊"
+      ]
+    },
+    {
+      "ID": 9610,
+      "Entries": [
+        "Open the general-purpose door_171 -- 汎用扉を開ける_171"
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        "Steep ladder / stairs_climb -- 急な梯子/階段_登る"
+      ]
+    },
+    {
+      "ID": 9701,
+      "Entries": [
+        "Steep ladder / stairs _ get off -- 急な梯子/階段_降りる"
+      ]
+    },
+    {
+      "ID": 9710,
+      "Entries": [
+        "Donden floor (folded back) _ goes up -- どんでん床(折り返し)_上がる"
+      ]
+    },
+    {
+      "ID": 9711,
+      "Entries": [
+        "Donden floor (folded back) _ go down -- どんでん床(折り返し)_下る"
+      ]
+    },
+    {
+      "ID": 9715,
+      "Entries": [
+        "Donden floor (go straight) _ go up -- どんでん床(直進)_上がる"
+      ]
+    },
+    {
+      "ID": 9716,
+      "Entries": [
+        "Donden floor (go straight) _ go down -- どんでん床(直進)_下る"
+      ]
+    },
+    {
+      "ID": 9720,
+      "Entries": [
+        "Nishikigoi _ feeding -- 錦鯉_餌やり"
+      ]
+    },
+    {
+      "ID": 9730,
+      "Entries": [
+        "Receive the prince _ sword -- 皇子_刀を受け取る"
+      ]
+    },
+    {
+      "ID": 9740,
+      "Entries": [
+        "Money box _ check -- 賽銭箱_調べる"
+      ]
+    },
+    {
+      "ID": 9750,
+      "Entries": [
+        "Cutscene test -- カットシーンテスト"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "NPC Tutorial_Fog Wall -- NPCチュートリアル_霧壁"
+      ]
+    },
+    {
+      "ID": 9810,
+      "Entries": [
+        "Illness Village_The innermost portable shrine -- 病み村_最奥の神輿"
+      ]
+    },
+    {
+      "ID": 9811,
+      "Entries": [
+        "Sick village _ innermost portable shrine _ after destruction -- 病み村_最奥の神輿_破壊後"
+      ]
+    },
+    {
+      "ID": 9820,
+      "Entries": [
+        "Submerged city_pillar of light -- 水没都_光の柱"
+      ]
+    },
+    {
+      "ID": 9821,
+      "Entries": [
+        "Submerged City_Immortal Priestess -- 水没都_不死の巫女"
+      ]
+    },
+    {
+      "ID": 9850,
+      "Entries": [
+        "To Prince_ED -- 皇子_EDへ"
+      ]
+    },
+    {
+      "ID": 9860,
+      "Entries": [
+        "Examine the incense -- 香を調べる"
+      ]
+    },
+    {
+      "ID": 9861,
+      "Entries": [
+        "Burn incense -- 香を焚く"
+      ]
+    },
+    {
+      "ID": 962000,
+      "Entries": [
+        "Eavesdropping_parachute -- 盗み聞き_落下傘"
+      ]
+    },
+    {
+      "ID": 962010,
+      "Entries": [
+        "Eavesdropping_white slave -- 盗み聞き_白人奴隷"
+      ]
+    },
+    {
+      "ID": 962020,
+      "Entries": [
+        "Eavesdropping_destination -- 盗み聞き_目的地"
+      ]
+    },
+    {
+      "ID": 962030,
+      "Entries": [
+        "Eavesdropping_Exploration Shop -- 盗み聞き_探索ショップ"
+      ]
+    },
+    {
+      "ID": 962040,
+      "Entries": [
+        "Eavesdropping_flame suggestion -- 盗み聞き_火炎の示唆"
+      ]
+    },
+    {
+      "ID": 962050,
+      "Entries": [
+        "Eavesdropping_Hidden prison (corresponding to the end of 11) -- 盗み聞き_隠し牢(11末対応)"
+      ]
+    },
+    {
+      "ID": 1000200,
+      "Entries": [
+        "Door of the temple_prepared ax -- お堂の扉_仕込み斧"
+      ]
+    },
+    {
+      "ID": 1000670,
+      "Entries": [
+        "Boss room hidden tatami -- ボス部屋隠し畳"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Honjo_window -- 本城_窓"
+      ]
+    },
+    {
+      "ID": 1100010,
+      "Entries": [
+        "Medical Holy Daughter_Receive Night Eyes -- 医聖の娘_夜目を受け取る"
+      ]
+    },
+    {
+      "ID": 1100020,
+      "Entries": [
+        "Buddha statue at Araji Temple_Butterfly -- 荒れ寺の仏像_お蝶編"
+      ]
+    },
+    {
+      "ID": 1100021,
+      "Entries": [
+        "Buddha statue at Araji Temple_The truth -- 荒れ寺の仏像_真相編"
+      ]
+    },
+    {
+      "ID": 1100022,
+      "Entries": [
+        "Buddha statue at Araji Temple_Examine -- 荒れ寺の仏像_調べる"
+      ]
+    },
+    {
+      "ID": 1100030,
+      "Entries": [
+        "Mido poster -- 御堂の張り紙"
+      ]
+    },
+    {
+      "ID": 1100031,
+      "Entries": [
+        "Ninja loophole -- 忍びの抜け穴"
+      ]
+    },
+    {
+      "ID": 1100040,
+      "Entries": [
+        "Wrathful Demon Buddha -- 憤怒の鬼仏"
+      ]
+    },
+    {
+      "ID": 1100050,
+      "Entries": [
+        "Battlefield ruins closed -- 戦場跡の閉扉"
+      ]
+    },
+    {
+      "ID": 1100060,
+      "Entries": [
+        "Lightning scroll hanging scroll -- 雷返しの掛け軸"
+      ]
+    },
+    {
+      "ID": 1100070,
+      "Entries": [
+        "Castle_Small castle tower_Skill grandfather&#39;s bookkeeping -- 城下_小天守_スキル爺の書置き"
+      ]
+    },
+    {
+      "ID": 1100080,
+      "Entries": [
+        "Guide to Honjo_Meditation Room_Library -- 本城_瞑想部屋_書庫への誘導"
+      ]
+    },
+    {
+      "ID": 1100090,
+      "Entries": [
+        "Sick Village_Dwelling Stone Altar -- 病み村_お宿り石の祭壇"
+      ]
+    },
+    {
+      "ID": 1110000,
+      "Entries": [
+        "About material_flower -- 素材について_花"
+      ]
+    },
+    {
+      "ID": 1110010,
+      "Entries": [
+        "About material_calculus -- 素材について_結石"
+      ]
+    },
+    {
+      "ID": 1110020,
+      "Entries": [
+        "About the material_Koki -- 素材について_香木"
+      ]
+    },
+    {
+      "ID": 1120000,
+      "Entries": [
+        "Loopway door -- 抜け道の扉"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Stone monument in front of the seven-sided warrior -- 七面武者前の石碑"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Pick up items_calculus -- アイテムを拾う_結石"
+      ]
+    },
+    {
+      "ID": 1778000,
+      "Entries": [
+        "Pick up items_Valley sacred treasure -- アイテムを拾う_渓谷の神器"
+      ]
+    },
+    {
+      "ID": 1779000,
+      "Entries": [
+        "Pick up an item_Snake Organ B -- アイテムを拾う_蛇の臓器Ｂ"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Pick up items_temple -- アイテムを拾う_寺"
+      ]
+    },
+    {
+      "ID": 2000651,
+      "Entries": [
+        "Temple_elevator_lever -- 寺＿エレベーター＿レバー"
+      ]
+    },
+    {
+      "ID": 2000652,
+      "Entries": [
+        "Temple_elevator_lever -- 寺＿エレベーター＿レバー"
+      ]
+    },
+    {
+      "ID": 2000680,
+      "Entries": [
+        "Warp in the infinite corridor -- 無限回廊にワープ"
+      ]
+    },
+    {
+      "ID": 2000681,
+      "Entries": [
+        "After defeating the Chigo Monkey_Rewarp to the Infinite Corridor -- 稚児猿撃破後_無限回廊に再ワープ"
+      ]
+    },
+    {
+      "ID": 2000682,
+      "Entries": [
+        "Infinite Corridor_Hint Text -- 無限回廊_ヒントテキスト"
+      ]
+    },
+    {
+      "ID": 2000683,
+      "Entries": [
+        "After defeating the baby monkey_Warp to the hidden main hall -- 稚児猿撃破後_隠し本堂へワープ"
+      ]
+    },
+    {
+      "ID": 2000690,
+      "Entries": [
+        "Temple _ poke the bell -- 寺_鐘を突く"
+      ]
+    },
+    {
+      "ID": 2000691,
+      "Entries": [
+        "Temple_Poke the bell_Infinite corridor -- 寺_鐘を突く_無限回廊"
+      ]
+    },
+    {
+      "ID": 2000692,
+      "Entries": [
+        "Temple_demon bell inscription -- 寺_鬼の鐘の銘文"
+      ]
+    },
+    {
+      "ID": 2000700,
+      "Entries": [
+        "Get an immortal treasure sword from a temple _ chigo -- 寺_稚児に不死切りの宝刀をもらう"
+      ]
+    },
+    {
+      "ID": 2000710,
+      "Entries": [
+        "Temple_fly a kite -- 寺_凧を揚げる"
+      ]
+    },
+    {
+      "ID": 2000711,
+      "Entries": [
+        "Temple_Kite -- 寺_凧を下す"
+      ]
+    },
+    {
+      "ID": 2000720,
+      "Entries": [
+        "Temple_Vomiting Immediate Buddha -- 寺_ゲロ吐き即身仏"
+      ]
+    },
+    {
+      "ID": 3000250,
+      "Entries": [
+        "For treasure corpses broken from jars -- 壺から壊した宝死体用"
+      ]
+    },
+    {
+      "ID": 3001800,
+      "Entries": [
+        "Enter the wall of light (Oujou 1 Full Armor Beast) -- 光の壁に入る（王城１\u3000フルアーマー獣）"
+      ]
+    },
+    {
+      "ID": 3001830,
+      "Entries": [
+        "Enter the wall of light (Oujou 1 Dragon Angel) -- 光の壁に入る（王城１\u3000竜の御使い）"
+      ]
+    },
+    {
+      "ID": 3001890,
+      "Entries": [
+        "Enter the wall of light (Oujou 1 E3 version tracker) -- 光の壁に入る（王城１\u3000E3版追跡者）"
+      ]
+    },
+    {
+      "ID": 3011800,
+      "Entries": [
+        "Enter the wall of light (Royal Castle 2 Dragon Guardian Knight) -- 光の壁に入る（王城２\u3000竜の守護騎士）"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Have the younger man ombre -- 下男にオンブしてもらう"
+      ]
+    },
+    {
+      "ID": 3101800,
+      "Entries": [
+        "Enter the wall of light (city) -- 光の壁に入る（街）"
+      ]
+    },
+    {
+      "ID": 3201800,
+      "Entries": [
+        "Enter the wall of light (bridge_flying dragon&#39;s nest) -- 光の壁に入る（橋_飛竜の巣）"
+      ]
+    },
+    {
+      "ID": 3201850,
+      "Entries": [
+        "Enter the wall of light (on the bridge_bridge) -- 光の壁に入る（橋_橋の上）"
+      ]
+    },
+    {
+      "ID": 3301800,
+      "Entries": [
+        "Enter the wall of light (Poison Swamp Forest) -- 光の壁に入る（毒沼の森）"
+      ]
+    },
+    {
+      "ID": 3301850,
+      "Entries": [
+        "Enter the wall of light (Poison Swamp Forest Crystal Elder) -- 光の壁に入る（毒沼の森\u3000結晶の古老）"
+      ]
+    },
+    {
+      "ID": 3411830,
+      "Entries": [
+        "Enter the wall of light (Oujou 2 Dark Twin Prince) -- 光の壁に入る（王城２\u3000闇の双皇子）"
+      ]
+    },
+    {
+      "ID": 3411860,
+      "Entries": [
+        "Enter the wall of light (Oujou 2 Dark Twin Prince Perfect) -- 光の壁に入る（王城２\u3000闇の双皇子\u3000完全体）"
+      ]
+    },
+    {
+      "ID": 3501800,
+      "Entries": [
+        "Enter the wall of light (Church of the Basilica_Cardinals) -- 光の壁に入る（聖堂教会_枢機卿団）"
+      ]
+    },
+    {
+      "ID": 3501850,
+      "Entries": [
+        "Enter the wall of light (Church of the Basilica_Rosalia) -- 光の壁に入る（聖堂教会_ロザリア）"
+      ]
+    },
+    {
+      "ID": 3601800,
+      "Entries": [
+        "Enter the wall of light (God tomb_Dragon angel) -- 光の壁に入る（神墓_竜の御使い）"
+      ]
+    },
+    {
+      "ID": 3701800,
+      "Entries": [
+        "Enter the wall of light (Anor_Sullivan) -- 光の壁に入る（アノール_サリヴァ―ン）"
+      ]
+    },
+    {
+      "ID": 3701850,
+      "Entries": [
+        "Enter the Wall of Light (Anor Landmark Church) -- 光の壁に入る（アノール_ランドマーク教会）"
+      ]
+    },
+    {
+      "ID": 3801800,
+      "Entries": [
+        "Enter the wall of light (Abandoned City_Halek) -- 光の壁に入る（廃都_ハレック）"
+      ]
+    },
+    {
+      "ID": 3801830,
+      "Entries": [
+        "Enter the wall of light (abandoned city_sandworm) -- 光の壁に入る（廃都_サンドワーム）"
+      ]
+    },
+    {
+      "ID": 3801860,
+      "Entries": [
+        "Enter the wall of light (Abandoned City_Ash Demon) -- 光の壁に入る（廃都_灰のデーモン）"
+      ]
+    },
+    {
+      "ID": 3901800,
+      "Entries": [
+        "Enter the wall of light (dungeon) -- 光の壁に入る（地下牢）"
+      ]
+    },
+    {
+      "ID": 4001800,
+      "Entries": [
+        "Enter the wall of light (base) -- 光の壁に入る（拠点）"
+      ]
+    },
+    {
+      "ID": 4001830,
+      "Entries": [
+        "Enter the wall of light (base) -- 光の壁に入る（拠点）"
+      ]
+    },
+    {
+      "ID": 4001860,
+      "Entries": [
+        "Enter the wall of light (base_last boss) -- 光の壁に入る（拠点_ラスボス）"
+      ]
+    },
+    {
+      "ID": 7001000,
+      "Entries": [
+        "Buddhist priest -- 仏師"
+      ]
+    },
+    {
+      "ID": 7001005,
+      "Entries": [
+        "Buddhist _ eavesdropping _ returning -- 仏師_盗み聞き_人返り中"
+      ]
+    },
+    {
+      "ID": 7001006,
+      "Entries": [
+        "Buddhist _ eavesdropping _ after obtaining the source cherry blossoms -- 仏師_盗み聞き_源の桜入手後"
+      ]
+    },
+    {
+      "ID": 7001007,
+      "Entries": [
+        "Buddhist priest _ eavesdropping _ flame of grudge -- 仏師_盗み聞き_怨嗟の炎"
+      ]
+    },
+    {
+      "ID": 7001008,
+      "Entries": [
+        "Buddhist priest _ eavesdropping _ during home visit -- 仏師_盗み聞き_往診中"
+      ]
+    },
+    {
+      "ID": 7001020,
+      "Entries": [
+        "Buddhist _ after disappearing -- 仏師_いなくなった後"
+      ]
+    },
+    {
+      "ID": 7001100,
+      "Entries": [
+        "Prince -- 皇子"
+      ]
+    },
+    {
+      "ID": 7001150,
+      "Entries": [
+        "Prince _ eavesdropping _ sleeping -- 皇子_盗み聞き_寝ている"
+      ]
+    },
+    {
+      "ID": 7001151,
+      "Entries": [
+        "Prince _ eavesdropping _ reading a book -- 皇子_盗み聞き_本を読んでいる"
+      ]
+    },
+    {
+      "ID": 7001152,
+      "Entries": [
+        "After making the prince _ eavesdropping _ ohagi -- 皇子_盗み聞き_おはぎを作った後"
+      ]
+    },
+    {
+      "ID": 7001160,
+      "Entries": [
+        "Prince _ eavesdropping _ capture stage _ first -- 皇子_盗み聞き_攻略段階_最初"
+      ]
+    },
+    {
+      "ID": 7001161,
+      "Entries": [
+        "Prince _ eavesdropping _ capture stage _ after the long defeat of the Ninja army -- 皇子_盗み聞き_攻略段階_忍軍の長撃破後"
+      ]
+    },
+    {
+      "ID": 7001162,
+      "Entries": [
+        "Prince _ eavesdropping _ capture stage _ after reaching the submerged city -- 皇子_盗み聞き_攻略段階_水没都到達後"
+      ]
+    },
+    {
+      "ID": 7001170,
+      "Entries": [
+        "Prince_Phantom Conversation ① -- 皇子_幻影会話①"
+      ]
+    },
+    {
+      "ID": 7001171,
+      "Entries": [
+        "Prince_Phantom Conversation ② -- 皇子_幻影会話②"
+      ]
+    },
+    {
+      "ID": 7001172,
+      "Entries": [
+        "Prince_Phantom Conversation ③ -- 皇子_幻影会話③"
+      ]
+    },
+    {
+      "ID": 7001173,
+      "Entries": [
+        "Prince_Phantom Conversation ④ -- 皇子_幻影会話④"
+      ]
+    },
+    {
+      "ID": 7001174,
+      "Entries": [
+        "Prince_Phantom Conversation ⑤ -- 皇子_幻影会話⑤"
+      ]
+    },
+    {
+      "ID": 7001200,
+      "Entries": [
+        "Ninja Army Chief_Modern -- 忍軍の長_現代"
+      ]
+    },
+    {
+      "ID": 7001201,
+      "Entries": [
+        "Ninja Army Chief_Past_Past -- 忍軍の長_過去_過去編"
+      ]
+    },
+    {
+      "ID": 7001202,
+      "Entries": [
+        "Ninja Army Chief_Past_Truth Edition -- 忍軍の長_過去_真相編"
+      ]
+    },
+    {
+      "ID": 7001203,
+      "Entries": [
+        "Ninja Chief _ Past _ Past _ Corpse -- 忍軍の長_過去_過去編_死体"
+      ]
+    },
+    {
+      "ID": 7001204,
+      "Entries": [
+        "Ninja Army Chief_Past_Truth Edition_Inaccessible Dummy -- 忍軍の長_過去_真相編_アクセス不可用ダミー"
+      ]
+    },
+    {
+      "ID": 7001300,
+      "Entries": [
+        "Combat tutorial -- 戦闘チュートリアル"
+      ]
+    },
+    {
+      "ID": 7001400,
+      "Entries": [
+        "White Rappa_Honjo -- 白らっぱ_本城"
+      ]
+    },
+    {
+      "ID": 7001401,
+      "Entries": [
+        "White Rappa_Temple -- 白らっぱ_寺"
+      ]
+    },
+    {
+      "ID": 7001500,
+      "Entries": [
+        "Female player -- 女奏者"
+      ]
+    },
+    {
+      "ID": 7001600,
+      "Entries": [
+        "Suzubaa_Modern -- 鈴ばばあ_現代"
+      ]
+    },
+    {
+      "ID": 7001601,
+      "Entries": [
+        "Suzubaa_past -- 鈴ばばあ_過去"
+      ]
+    },
+    {
+      "ID": 7001700,
+      "Entries": [
+        "Selling bandits_modern -- 物売り野盗_現代"
+      ]
+    },
+    {
+      "ID": 7001701,
+      "Entries": [
+        "Selling bandits_past -- 物売り野盗_過去"
+      ]
+    },
+    {
+      "ID": 7001702,
+      "Entries": [
+        "At the time of death after the invasion of Tokugawa -- 物売り野盗_現代_徳川襲来後死亡時"
+      ]
+    },
+    {
+      "ID": 7001800,
+      "Entries": [
+        "Suzuba&#39;s son_modern -- 鈴ばばあの息子_現代"
+      ]
+    },
+    {
+      "ID": 7001801,
+      "Entries": [
+        "Suzuba&#39;s son _ past -- 鈴ばばあの息子_過去"
+      ]
+    },
+    {
+      "ID": 7001900,
+      "Entries": [
+        "Stable Resident A -- 馬小屋の住人A"
+      ]
+    },
+    {
+      "ID": 7001901,
+      "Entries": [
+        "Stable Resident B -- 馬小屋の住人B"
+      ]
+    },
+    {
+      "ID": 7001902,
+      "Entries": [
+        "Stable Resident C -- 馬小屋の住人C"
+      ]
+    },
+    {
+      "ID": 7002000,
+      "Entries": [
+        "Female servant -- 奉公人の女"
+      ]
+    },
+    {
+      "ID": 7002100,
+      "Entries": [
+        "Retired swordsman -- 隠居剣客"
+      ]
+    },
+    {
+      "ID": 7002200,
+      "Entries": [
+        "Chigo -- 稚児"
+      ]
+    },
+    {
+      "ID": 7002201,
+      "Entries": [
+        "Chigo_Telepathy -- 稚児_念話"
+      ]
+    },
+    {
+      "ID": 7002202,
+      "Entries": [
+        "Chigo_Infinite Corridor -- 稚児_無限回廊"
+      ]
+    },
+    {
+      "ID": 7002203,
+      "Entries": [
+        "Chigo_ Eavesdropping through the wall -- 稚児_壁越し盗み聞き"
+      ]
+    },
+    {
+      "ID": 7002204,
+      "Entries": [
+        "Chigo_worshiping the altar -- 稚児_祭壇を拝んでいる"
+      ]
+    },
+    {
+      "ID": 7002300,
+      "Entries": [
+        "Daughter of Isei_Honjo -- 医聖の娘_本城"
+      ]
+    },
+    {
+      "ID": 7002301,
+      "Entries": [
+        "Daughter of Isei_Castle -- 医聖の娘_城下"
+      ]
+    },
+    {
+      "ID": 7002302,
+      "Entries": [
+        "Daughter of Isei_Honjo_When Tokugawa invades -- 医聖の娘_本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 7002400,
+      "Entries": [
+        "Kensei -- 剣聖"
+      ]
+    },
+    {
+      "ID": 7002401,
+      "Entries": [
+        "Kensei (skill grandfather) _ castle tower -- 剣聖(スキル爺)_城下小天守"
+      ]
+    },
+    {
+      "ID": 7002410,
+      "Entries": [
+        "Kensei_Eavesdropping_After Immortal Slash -- 剣聖_盗み聞き_不死斬り後"
+      ]
+    },
+    {
+      "ID": 7002411,
+      "Entries": [
+        "Kensei_Eavesdropping_After the worsening of the condition -- 剣聖_盗み聞き_病状悪化後"
+      ]
+    },
+    {
+      "ID": 7002412,
+      "Entries": [
+        "Kensei_Note -- 剣聖_書き置き"
+      ]
+    },
+    {
+      "ID": 7002500,
+      "Entries": [
+        "Caucasian innsmouth -- 白人インスマウス"
+      ]
+    },
+    {
+      "ID": 7002600,
+      "Entries": [
+        "The kidnapped young man_temple -- さらわれ下男_寺"
+      ]
+    },
+    {
+      "ID": 7002610,
+      "Entries": [
+        "The kidnapped young man _ castle -- さらわれ下男_城下"
+      ]
+    },
+    {
+      "ID": 7002620,
+      "Entries": [
+        "The kidnapped young man_dungeon -- さらわれ下男_地下牢"
+      ]
+    },
+    {
+      "ID": 7002700,
+      "Entries": [
+        "A decent villager -- まともな村人"
+      ]
+    },
+    {
+      "ID": 7002800,
+      "Entries": [
+        "Sick village priest -- 病み村神主"
+      ]
+    },
+    {
+      "ID": 7002801,
+      "Entries": [
+        "Sick village priest _ eavesdropping _ early -- 病み村神主_盗み聞き_初期"
+      ]
+    },
+    {
+      "ID": 7002802,
+      "Entries": [
+        "Sick village priest _ eavesdropping _ Kyo no Mizuwa -- 病み村神主_盗み聞き_京の水渡した"
+      ]
+    },
+    {
+      "ID": 7002900,
+      "Entries": [
+        "Yaohioka Nun_Honjo -- 八百比丘尼_本城"
+      ]
+    },
+    {
+      "ID": 7002901,
+      "Entries": [
+        "Yayobioka Nun_Temple -- 八百比丘尼_寺"
+      ]
+    },
+    {
+      "ID": 7002902,
+      "Entries": [
+        "Yayobioka Nun_Valley -- 八百比丘尼_渓谷"
+      ]
+    },
+    {
+      "ID": 7002903,
+      "Entries": [
+        "Yaohioka Ninji Temple (Hidden main hall front door) -- 八百比丘尼_寺（隠し本堂前扉）"
+      ]
+    },
+    {
+      "ID": 7002904,
+      "Entries": [
+        "Yaohioka Nun_Dungeon -- 八百比丘尼_地下牢"
+      ]
+    },
+    {
+      "ID": 7003000,
+      "Entries": [
+        "Fascinated Samurai_Hidden Prison -- 魅了された侍_隠し牢"
+      ]
+    },
+    {
+      "ID": 7003001,
+      "Entries": [
+        "Fascinated Samurai_Hidden Prison_Special Waiting -- 魅了された侍_隠し牢_特殊待機中"
+      ]
+    },
+    {
+      "ID": 7003002,
+      "Entries": [
+        "Fascinated Samurai_Hidden Prison_When Tokugawa Invades -- 魅了された侍_隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 7003003,
+      "Entries": [
+        "Fascinated Samurai_Hidden Prison_Special Waiting_When Tokugawa Invades -- 魅了された侍_隠し牢_特殊待機中_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 7003004,
+      "Entries": [
+        "Fascinated Samurai_Dragon Cough_When Tokugawa Invades -- 魅了された侍_竜咳_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 7003010,
+      "Entries": [
+        "Fascinated Samurai_Dungeon -- 魅了された侍_地下牢"
+      ]
+    },
+    {
+      "ID": 7003011,
+      "Entries": [
+        "Fascinated Samurai_Dungeon_Special Waiting -- 魅了された侍_地下牢_特殊待機中"
+      ]
+    },
+    {
+      "ID": 7003020,
+      "Entries": [
+        "Fascinated Samurai_Dungeon (Crucifixion) -- 魅了された侍_地下牢（磔）"
+      ]
+    },
+    {
+      "ID": 7003030,
+      "Entries": [
+        "Fascinated Samurai_Sick Village Entrance -- 魅了された侍_病み村入り口"
+      ]
+    },
+    {
+      "ID": 7003031,
+      "Entries": [
+        "Fascinated Samurai_Sick Village Entrance_Special Waiting -- 魅了された侍_病み村入り口_特殊待機中"
+      ]
+    },
+    {
+      "ID": 7003040,
+      "Entries": [
+        "Fascinated Samurai_In front of the Sick Village Square -- 魅了された侍_病み村広場前"
+      ]
+    },
+    {
+      "ID": 7003050,
+      "Entries": [
+        "Fascinated Samurai_Dragon Cough -- 魅了された侍_竜咳"
+      ]
+    },
+    {
+      "ID": 7003100,
+      "Entries": [
+        "Immortal Experiment Doctor -- 不死実験の医僧"
+      ]
+    },
+    {
+      "ID": 7003101,
+      "Entries": [
+        "Immortal Experiment Doctor_Experiment 1 Eavesdropping -- 不死実験の医僧_実験1中盗み聞き"
+      ]
+    },
+    {
+      "ID": 7003102,
+      "Entries": [
+        "Immortal Experiment Doctor_Experiment 2 Eavesdropping -- 不死実験の医僧_実験2中盗み聞き"
+      ]
+    },
+    {
+      "ID": 7003200,
+      "Entries": [
+        "Sokushinbutsu -- 即身仏"
+      ]
+    },
+    {
+      "ID": 7003600,
+      "Entries": [
+        "Scale shop_samurai residence_pot -- 鱗ショップ_武家屋敷_壷"
+      ]
+    },
+    {
+      "ID": 7003601,
+      "Entries": [
+        "Scale shop_Samurai residence_Carp -- 鱗ショップ_武家屋敷_鯉"
+      ]
+    },
+    {
+      "ID": 7003650,
+      "Entries": [
+        "Scale shop_submerged city_pot -- 鱗ショップ_水没都_壷"
+      ]
+    },
+    {
+      "ID": 7003651,
+      "Entries": [
+        "Scale shop_submerged city_carp -- 鱗ショップ_水没都_鯉"
+      ]
+    },
+    {
+      "ID": 7003700,
+      "Entries": [
+        "Female servant 2 eavesdropping -- 奉公人の女2盗み聞き"
+      ]
+    },
+    {
+      "ID": 7003800,
+      "Entries": [
+        "Submerged Handmaiden Aunt_Sister -- 水没侍女おば_妹"
+      ]
+    },
+    {
+      "ID": 7003900,
+      "Entries": [
+        "Submerged Handmaiden Aunt_Sister_In front of the cave -- 水没侍女おば_姉_洞窟前"
+      ]
+    },
+    {
+      "ID": 7003901,
+      "Entries": [
+        "Submerged Handmaiden Aunt_Sister_Dairi -- 水没侍女おば_姉_内裏"
+      ]
+    },
+    {
+      "ID": 7004000,
+      "Entries": [
+        "Auntie, a maid who talks about Shura -- 修羅語りの侍女おば"
+      ]
+    },
+    {
+      "ID": 7004700,
+      "Entries": [
+        "Araji Shop Clerk_Honjo -- 荒れ寺ショップ店員_本城"
+      ]
+    },
+    {
+      "ID": 7004701,
+      "Entries": [
+        "Araji Shop Clerk_Castle -- 荒れ寺ショップ店員_城下"
+      ]
+    },
+    {
+      "ID": 7004800,
+      "Entries": [
+        "Captive Temple Small Fish_Infinite Corridor -- 囚われ寺雑魚_無限回廊"
+      ]
+    },
+    {
+      "ID": 7004900,
+      "Entries": [
+        "Secret life lonely people -- 密命の孤影衆"
+      ]
+    },
+    {
+      "ID": 7007000,
+      "Entries": [
+        "Voice of the end _ Samurai residence _ Nightjars 00 -- 末期の声_武家屋敷_夜鷹衆00"
+      ]
+    },
+    {
+      "ID": 7007001,
+      "Entries": [
+        "Voice of the end _ Samurai residence _ Nightjars 00_ After death -- 末期の声_武家屋敷_夜鷹衆00_死亡後"
+      ]
+    },
+    {
+      "ID": 7007010,
+      "Entries": [
+        "Terminal voice_Samurai residence_Swordsman 00 -- 末期の声_武家屋敷_剣客00"
+      ]
+    },
+    {
+      "ID": 7007020,
+      "Entries": [
+        "Voice of the end _ valley _ Kikasa Rappa -- 末期の声_渓谷_木笠らっぱ"
+      ]
+    },
+    {
+      "ID": 7007030,
+      "Entries": [
+        "Voice of the end _ Sick village _ Kiri no Mori priest -- 末期の声_病み村_霧の森の住職"
+      ]
+    },
+    {
+      "ID": 7007040,
+      "Entries": [
+        "Voice of the end _ castle _ fallen warrior at the bridge -- 末期の声_城下_橋にいる落ち武者"
+      ]
+    },
+    {
+      "ID": 7007050,
+      "Entries": [
+        "Voice of the terminal _ Honjo _ Guidance to kite -- 末期の声_本城_凧への誘導"
+      ]
+    },
+    {
+      "ID": 7007060,
+      "Entries": [
+        "Voice of the end _ valley _ headless Yasha Ape&#39;s omen -- 末期の声_渓谷_首なし夜叉猿の予兆"
+      ]
+    },
+    {
+      "ID": 7007070,
+      "Entries": [
+        "Voice of the terminal _ Honjo _ Ninja army invasion _ Ninja army invasion scent -- 末期の声_本城_忍軍襲来_忍軍襲来の匂わせ"
+      ]
+    },
+    {
+      "ID": 7007080,
+      "Entries": [
+        "Voice of the end _ Honjo _ Ninja army invasion _ Guidance to the meditation room -- 末期の声_本城_忍軍襲来_瞑想部屋への誘導"
+      ]
+    },
+    {
+      "ID": 7007090,
+      "Entries": [
+        "Voice of the end _ Castle _ Invasion of Tokugawa _ Smell of Buddhist demon -- 末期の声_城下_徳川襲来_仏師鬼の匂わせ"
+      ]
+    },
+    {
+      "ID": 7007100,
+      "Entries": [
+        "Voice of the end _ Honjo _ Tokugawa invasion _ Guided conversation across the bridge -- 末期の声_本城_徳川襲来_橋を渡る誘導会話"
+      ]
+    },
+    {
+      "ID": 7007110,
+      "Entries": [
+        "Voice of the end _ Honjo _ Ninja army invasion _ Someone&#39;s invasion suggestion -- 末期の声_本城_忍軍襲来_何者かの侵入示唆"
+      ]
+    },
+    {
+      "ID": 7007999,
+      "Entries": [
+        "Old servant -- 奉公人の老人"
+      ]
+    },
+    {
+      "ID": 7008000,
+      "Entries": [
+        "Shop clerk -- ショップ店員"
+      ]
+    },
+    {
+      "ID": 7008010,
+      "Entries": [
+        "Shop clerk_Castle_In front of the small castle tower -- ショップ店員_城下_小天守前"
+      ]
+    },
+    {
+      "ID": 7009000,
+      "Entries": [
+        "About Samurai Residence_Eavesdropping_Bandits_Do -- 武家屋敷_盗み聞き_野盗_堂について"
+      ]
+    },
+    {
+      "ID": 7009002,
+      "Entries": [
+        "Samurai residence _ eavesdropping _ bandit _ guidance to the standing area -- 武家屋敷_盗み聞き_野盗_立てこもりエリアへの誘導"
+      ]
+    },
+    {
+      "ID": 7009004,
+      "Entries": [
+        "Samurai residence _ eavesdropping _ bandit _ guidance to a well -- 武家屋敷_盗み聞き_野盗_井戸への誘導"
+      ]
+    },
+    {
+      "ID": 7009006,
+      "Entries": [
+        "Samurai residence _ eavesdropping _ burning lonely people _ back information -- 武家屋敷_盗み聞き_焼打ちの孤影衆_裏情報"
+      ]
+    },
+    {
+      "ID": 7009050,
+      "Entries": [
+        "Castle _ Eavesdropping _ Fallen Warrior _ Akaoni&#39;s Weakness -- 城下_盗み聞き_落ち武者_赤鬼の弱点"
+      ]
+    },
+    {
+      "ID": 7009052,
+      "Entries": [
+        "Castle _ eavesdropping _ fallen warrior _ guidance to horse-riding warrior -- 城下_盗み聞き_落ち武者_騎馬武者への誘導"
+      ]
+    },
+    {
+      "ID": 7009054,
+      "Entries": [
+        "Castle _ eavesdropping _ fallen warrior _ introduction of horse-riding warrior -- 城下_盗み聞き_落ち武者_騎馬武者の紹介"
+      ]
+    },
+    {
+      "ID": 7009056,
+      "Entries": [
+        "Castle _ eavesdropping _ fallen warrior _ guidance to horse-riding warrior -- 城下_盗み聞き_落ち武者_騎馬武者への誘導"
+      ]
+    },
+    {
+      "ID": 7009058,
+      "Entries": [
+        "Castle_Eavesdropping_Falling Warrior_Cavalry Weaknesses -- 城下_盗み聞き_落ち武者_騎馬の弱点"
+      ]
+    },
+    {
+      "ID": 7009100,
+      "Entries": [
+        "About Honjo_Eavesdropping_Ochimusha_Hidden Prison Station -- 本城_盗み聞き_落ち武者_隠し牢の詰め所について"
+      ]
+    },
+    {
+      "ID": 7009102,
+      "Entries": [
+        "Honjo_Eavesdropping_Samurai General_Not enough salt_Anayama event -- 本城_盗み聞き_侍大将_塩が足りない_穴山イベント"
+      ]
+    },
+    {
+      "ID": 7009104,
+      "Entries": [
+        "Honjo_Eavesdropping_Trumpet_Guide to White Trumpet -- 本城_盗み聞き_ラッパ_白ラッパへの誘導"
+      ]
+    },
+    {
+      "ID": 7009106,
+      "Entries": [
+        "Honjo _ Eavesdropping _ Fallen Warrior _ Guidance to Loophole _ During Tutorial -- 本城_盗み聞き_落ち武者_抜け穴への誘導_チュートリアル時"
+      ]
+    },
+    {
+      "ID": 7009108,
+      "Entries": [
+        "About Honjo_Eavesdropping_Ochimusha_Fire Cow -- 本城_盗み聞き_落ち武者_火牛について"
+      ]
+    },
+    {
+      "ID": 7009110,
+      "Entries": [
+        "Honjo _ Eavesdropping _ Fallen Warrior _ Smell of Ninja Army Invasion -- 本城_盗み聞き_落ち武者_忍軍襲来の匂わせ"
+      ]
+    },
+    {
+      "ID": 7009112,
+      "Entries": [
+        "Honjo_Eavesdropping_Sneak-thief _Speaking to fellow corpses -- 本城_盗み聞き_仇討ちの孤影衆_仲間の死体に語りかけ"
+      ]
+    },
+    {
+      "ID": 7009114,
+      "Entries": [
+        "Honjo _ Eavesdropping _ Spear Monk Soldier of Money Account _ When Ninja Army Invades -- 本城_盗み聞き_銭勘定の槍僧兵_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 7009116,
+      "Entries": [
+        "Honjo_Eavesdropping_Tokugawa Rappa_Tokugawa Demonstration -- 本城_盗み聞き_徳川らっぱ_徳川の陽動"
+      ]
+    },
+    {
+      "ID": 7009118,
+      "Entries": [
+        "Honjo_Eavesdropping_Swordsman_Swordsman&#39;s death -- 本城_盗み聞き_剣客_剣聖の死を惜しむ"
+      ]
+    },
+    {
+      "ID": 7009120,
+      "Entries": [
+        "Honjo _ Eavesdropping _ Spear Monk Soldier of Money Account _ When Tokugawa Invades -- 本城_盗み聞き_銭勘定の槍僧兵_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 7009150,
+      "Entries": [
+        "Hidden prison _ eavesdropping _ fallen warrior _ prince -- 隠し牢_盗み聞き_落ち武者_皇子の様子"
+      ]
+    },
+    {
+      "ID": 7009152,
+      "Entries": [
+        "Hidden prison _ eavesdropping _ fallen warrior _ entrance to Tsukimi turret -- 隠し牢_盗み聞き_落ち武者_月見櫓への入り口"
+      ]
+    },
+    {
+      "ID": 7009154,
+      "Entries": [
+        "Hidden prison _ eavesdropping _ general samurai _ guidance to rivals -- 隠し牢_盗み聞き_侍大将_ライバルへの誘導"
+      ]
+    },
+    {
+      "ID": 7009156,
+      "Entries": [
+        "Hidden prison _ Eavesdropping _ Secret life lonely people _ Well sneak thief -- 隠し牢_盗み聞き_密命の孤影衆_井戸の密偵"
+      ]
+    },
+    {
+      "ID": 7009158,
+      "Entries": [
+        "Hidden prison _ eavesdropping _ fallen warrior _ rumors of lonely people -- 隠し牢_盗み聞き_落ち武者_孤影衆の噂"
+      ]
+    },
+    {
+      "ID": 9990800,
+      "Entries": [
+        "Enter the wall of light (test) -- 光の壁に入る（テスト）"
+      ]
+    },
+    {
+      "ID": 9990810,
+      "Entries": [
+        "Eavesdropping_test -- 盗み聞き_テスト"
+      ]
+    },
+    {
+      "ID": 9990811,
+      "Entries": [
+        "For eavesdropping_test_offset -- 盗み聞き_テスト_オフセット用"
+      ]
+    }
+  ]
+}

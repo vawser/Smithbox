@@ -1,0 +1,71 @@
+{
+  "Name": "BulletCreateLimitParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[PC magic] Activity of the dead -- 【PC魔法】死者の活性"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[PC magic] Warmth fire -- 【PC魔法】ぬくもりの火"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[PC magic] Miasma of death -- 【PC魔法】死の瘴気"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[PC magic] Poison fog -- 【PC魔法】毒の霧"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[PC magic] Poisonous fog -- 【PC魔法】猛毒の霧"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[PC magic] Acid mist -- 【PC魔法】酸の霧"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[PC Arts] Zombie Crow Wand_Poison Fog -- 【PCアーツ】ゾンビ鴉の杖_毒の霧"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[PC magic] Nozomi -- 【PC魔法】望郷"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Falling Soul: Bullet for generation -- 降り注ぐソウル：発生用弾丸"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Falling soul (slot 2: for target bullets): bullets for generation -- 降り注ぐソウル（スロット２：狙う弾用）：発生用弾丸"
+      ]
+    }
+  ]
+}

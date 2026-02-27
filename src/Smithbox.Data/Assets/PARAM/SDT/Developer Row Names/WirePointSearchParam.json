@@ -1,0 +1,125 @@
+{
+  "Name": "WirePointSearchParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default -- デフォルト"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "(Test) Depends on falling or player action -- （テスト）落下とかプレイヤーアクションに依存"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "(Test) Designated by map or event -- （テスト）マップやイベントで指定"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "Samurai residence_Expanded recognition range -- 武家屋敷_認識範囲だけ拡大"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Hidden prison _ Turn off the off-screen display inside the well -- 隠し牢_井戸内で画面外表示を切る"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "Hidden prison_loophole Maebori -- 隠し牢_抜け穴前堀"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Castle_Cavalry Warrior Boss Map -- 城下_騎馬武者ボスマップ"
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "Castle_Busshi Demon_Battlefield Ruins -- 城下_仏師鬼_戦場跡"
+      ]
+    },
+    {
+      "ID": 11500,
+      "Entries": [
+        "Honjo_wire to the valley side -- 本城_渓谷側へのワイヤー"
+      ]
+    },
+    {
+      "ID": 11510,
+      "Entries": [
+        "Wire to Honjo_Tokugawa_Kite -- 本城_徳川_凧へのワイヤー"
+      ]
+    },
+    {
+      "ID": 11520,
+      "Entries": [
+        "Wire to Honjo_Ninja _Uchibori Takebashi -- 本城_忍軍_内堀竹橋へのワイヤー"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Dungeon_Immortal Execution Table -- 地下牢_不死の処刑台"
+      ]
+    },
+    {
+      "ID": 17000,
+      "Entries": [
+        "Valley_Yasha Monkey_Bodhisattva Lake -- 渓谷_夜叉猿_菩薩湖"
+      ]
+    },
+    {
+      "ID": 17010,
+      "Entries": [
+        "Valley_wide valley dive -- 渓谷_広い谷ダイブ"
+      ]
+    },
+    {
+      "ID": 17020,
+      "Entries": [
+        "Valley_Snake Persimmon Room -- 渓谷_蛇柿部屋"
+      ]
+    },
+    {
+      "ID": 19920,
+      "Entries": [
+        "Temple design map _ valley crossing -- 寺設計マップ_谷渡り"
+      ]
+    },
+    {
+      "ID": 19921,
+      "Entries": [
+        "Temple design map_infinite corridor -- 寺設計マップ_無限回廊"
+      ]
+    },
+    {
+      "ID": 25000,
+      "Entries": [
+        "Submerged City_Sea of Clouds_Mermaid Dragon Battle_Short Distance (Near Tentacles) -- 水没都_雲海_人魚竜戦_近距離(触手付近)"
+      ]
+    },
+    {
+      "ID": 25010,
+      "Entries": [
+        "Submerged City_Sea of Clouds_Mermaid Dragon Battle_Long Distance -- 水没都_雲海_人魚竜戦_遠距離"
+      ]
+    },
+    {
+      "ID": 25020,
+      "Entries": [
+        "Submerged city_sea of clouds_old dragon -- 水没都_雲海_翁竜"
+      ]
+    }
+  ]
+}

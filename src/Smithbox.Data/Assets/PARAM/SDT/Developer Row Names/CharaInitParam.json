@@ -1,0 +1,1223 @@
+{
+  "Name": "CharaInitParam",
+  "Entries": [
+    {
+      "ID": 9000,
+      "Entries": [
+        "9000: Default_blood smoke -- 9000：デフォルト_血煙"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "9001: Default_puppet -- 9001：デフォルト_傀儡"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "9002: Default_Encha -- 9002：デフォルト_エンチャ"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "9010: Default_All actions unbanned -- 9010：デフォルト_全アクション未解禁"
+      ]
+    },
+    {
+      "ID": 9497,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 9498,
+      "Entries": [
+        "↓ For in-house debugging -- ↓社内デバッグ用"
+      ]
+    },
+    {
+      "ID": 9499,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 9600,
+      "Entries": [
+        "9600: Default equipment_Blood smoke / Puppet -- 9600：デフォルト装備_血煙/傀儡"
+      ]
+    },
+    {
+      "ID": 9602,
+      "Entries": [
+        "9602: No killing _ for ninja killing check (trunk attack power MAX &amp; Jasuga confirmed playing ninja killing) -- 9602：無殺_忍殺チェック用（体幹攻撃力MAX & ジャスガ確定弾き忍殺）"
+      ]
+    },
+    {
+      "ID": 9603,
+      "Entries": [
+        "9603: Deadly _ for shinobi check (core attack power MAX &amp; Jasuga confirmed shinobi) -- 9603：必殺_忍殺チェック用（体幹攻撃力MAX & ジャスガ確定弾き忍殺）"
+      ]
+    },
+    {
+      "ID": 9605,
+      "Entries": [
+        "9605: Always dying -- 9605：常に瀕死"
+      ]
+    },
+    {
+      "ID": 9606,
+      "Entries": [
+        "9606: Always Jasuga -- 9606：常にジャスガ"
+      ]
+    },
+    {
+      "ID": 9609,
+      "Entries": [
+        "9609: Sub-weapon automatic equipment check -- 9609：サブウェポン自動装備チェック"
+      ]
+    },
+    {
+      "ID": 9610,
+      "Entries": [
+        "9610: Underwater cross confirmation equipment -- 9610：水中クロス確認装備"
+      ]
+    },
+    {
+      "ID": 9620,
+      "Entries": [
+        "9620: Default equipment _MPMAX_ For confirmation of resurrection technique -- 9620：デフォルト装備_MPMAX_復活の術確認用"
+      ]
+    },
+    {
+      "ID": 9640,
+      "Entries": [
+        "9640: AI sound confirmation -- 9640：AI音確認"
+      ]
+    },
+    {
+      "ID": 9650,
+      "Entries": [
+        "9650: Enchantment system confirmation A -- 9650：エンチャント系確認A"
+      ]
+    },
+    {
+      "ID": 9651,
+      "Entries": [
+        "9651: Enchantment system confirmation B -- 9651：エンチャント系確認B"
+      ]
+    },
+    {
+      "ID": 9660,
+      "Entries": [
+        "9660: Always bare hands -- 9660：常に素手"
+      ]
+    },
+    {
+      "ID": 9997,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 9998,
+      "Entries": [
+        "↓ For checking the progress of the game -- ↓ゲーム進行チェック用"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "10000: New game -- 10000：ニューゲーム"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "10010: Castle -- 10010：城下"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "10020: Samurai residence -- 10020：武家屋敷"
+      ]
+    },
+    {
+      "ID": 10025,
+      "Entries": [
+        "10025: After the samurai residence head family-first half of the main castle -- 10025：武家屋敷本家以降～本城前半"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "10030: Honjo -- 10030：本城"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "10040: Hidden prison -- 10040：隠し牢"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "10050: Dungeon -- 10050：地下牢"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "10060: Temple -- 10060：寺"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "10070: Valley -- 10070：渓谷"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "10080: Lower valley -- 10080：渓谷下層"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "10090: Sick village -- 10090：病み村"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "10100: Honjo_Ninja army invasion -- 10100：本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "10110: Samurai residence truth edition -- 10110：武家屋敷真相編"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "10120: Submerged city_no hidden sacred treasure -- 10120：水没都_隠し神器なし"
+      ]
+    },
+    {
+      "ID": 10121,
+      "Entries": [
+        "10121: Submerged city_with hidden sacred treasure -- 10121：水没都_隠し神器あり"
+      ]
+    },
+    {
+      "ID": 10130,
+      "Entries": [
+        "10130: When Honjo_Tokugawa invades -- 10130：本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 10140,
+      "Entries": [
+        "10140: Hidden prison _ At the time of the Tokugawa invasion -- 10140：隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 10141,
+      "Entries": [
+        "10141: Hidden prison_When Tokugawa attacks_Mermaid dragon tears (God) -- 10141：隠し牢_徳川襲来時_人魚竜の涙（神）"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "10150: Castle_At the time of the Tokugawa invasion -- 10150：城下_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "10160: Game clear -- 10160：ゲームクリア"
+      ]
+    },
+    {
+      "ID": 10170,
+      "Entries": [
+        "10170: Midfield_Morning -- 10170：中盤_朝"
+      ]
+    },
+    {
+      "ID": 10171,
+      "Entries": [
+        "10171: Mid-day_noon -- 10171：中盤_昼"
+      ]
+    },
+    {
+      "ID": 10172,
+      "Entries": [
+        "10172: Midfield_Evening -- 10172：中盤_夕"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "11000: Enemy Check_New Game -- 11000：敵チェック_ニューゲーム"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "11010: Enemy check_Castle -- 11010：敵チェック_城下"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "11020: Enemy check_Samurai residence -- 11020：敵チェック_武家屋敷"
+      ]
+    },
+    {
+      "ID": 11025,
+      "Entries": [
+        "11025: Enemy check_Samurai residence Honke and later-first half of Honjo -- 11025：敵チェック_武家屋敷本家以降～本城前半"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "11030: Enemy check_Honjo -- 11030：敵チェック_本城"
+      ]
+    },
+    {
+      "ID": 11040,
+      "Entries": [
+        "11040: Enemy Check_Hidden Prison -- 11040：敵チェック_隠し牢"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "11050: Enemy Check_Dungeon -- 11050：敵チェック_地下牢"
+      ]
+    },
+    {
+      "ID": 11060,
+      "Entries": [
+        "11060: Enemy check_temple -- 11060：敵チェック_寺"
+      ]
+    },
+    {
+      "ID": 11070,
+      "Entries": [
+        "11070: Enemy Check_Valley -- 11070：敵チェック_渓谷"
+      ]
+    },
+    {
+      "ID": 11080,
+      "Entries": [
+        "11080: Enemy check_Valley lower layer -- 11080：敵チェック_渓谷下層"
+      ]
+    },
+    {
+      "ID": 11090,
+      "Entries": [
+        "11090: Enemy Check_Sick Village -- 11090：敵チェック_病み村"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "11100: Enemy check_Honjo_Ninja army invasion -- 11100：敵チェック_本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "11110: Enemy check_Samurai residence truth edition -- 11110：敵チェック_武家屋敷真相編"
+      ]
+    },
+    {
+      "ID": 11120,
+      "Entries": [
+        "11120: Enemy check_Submerged city_No hidden sacred treasure -- 11120：敵チェック_水没都_隠し神器なし"
+      ]
+    },
+    {
+      "ID": 11121,
+      "Entries": [
+        "11121: Enemy check_Submerged city_Hidden sacred treasure -- 11121：敵チェック_水没都_隠し神器あり"
+      ]
+    },
+    {
+      "ID": 11130,
+      "Entries": [
+        "11130: Enemy check_Honjo_Tokugawa invasion -- 11130：敵チェック_本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 11140,
+      "Entries": [
+        "11140: Enemy check_Hidden prison_When Tokugawa invades -- 11140：敵チェック_隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 11141,
+      "Entries": [
+        "11141: Enemy check_Hidden prison_When Tokugawa attacks_Mermaid dragon tears (God) -- 11141：敵チェック_隠し牢_徳川襲来時_人魚竜の涙（神）"
+      ]
+    },
+    {
+      "ID": 11150,
+      "Entries": [
+        "11150: Enemy check_Castle_Tokugawa invasion -- 11150：敵チェック_城下_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 11160,
+      "Entries": [
+        "11160: Enemy check_Game clear -- 11160：敵チェック_ゲームクリア"
+      ]
+    },
+    {
+      "ID": 11161,
+      "Entries": [
+        "11161: Enemy check-early lap _2 (castle) -- 11161：敵チェック_2周目序盤（城下）"
+      ]
+    },
+    {
+      "ID": 11162,
+      "Entries": [
+        "11162: Enemy check-Middle of the second lap (valley) -- 11162：敵チェック_2周目中盤（渓谷）"
+      ]
+    },
+    {
+      "ID": 11163,
+      "Entries": [
+        "11163: Enemy check-The end of the second lap (hidden prison_Tokugawa invasion) -- 11163：敵チェック_2周目終盤（隠し牢_徳川襲来）"
+      ]
+    },
+    {
+      "ID": 11164,
+      "Entries": [
+        "11164: Enemy check _ 3rd lap early (castle) -- 11164：敵チェック_3周目序盤（城下）"
+      ]
+    },
+    {
+      "ID": 11165,
+      "Entries": [
+        "11165: Enemy check_Middle of the 3rd lap (valley) -- 11165：敵チェック_3周目中盤（渓谷）"
+      ]
+    },
+    {
+      "ID": 11166,
+      "Entries": [
+        "11166: Enemy check_late 3rd lap (hidden prison_Tokugawa invasion) -- 11166：敵チェック_3周目終盤（隠し牢_徳川襲来）"
+      ]
+    },
+    {
+      "ID": 11167,
+      "Entries": [
+        "11167: Enemy check_early 4th lap (castle) -- 11167：敵チェック_4周目序盤（城下）"
+      ]
+    },
+    {
+      "ID": 11168,
+      "Entries": [
+        "11168: Enemy check_Mid 4th lap (valley) -- 11168：敵チェック_4周目中盤（渓谷）"
+      ]
+    },
+    {
+      "ID": 11169,
+      "Entries": [
+        "11169: Enemy check_late 4th lap (hidden prison_Tokugawa invasion) -- 11169：敵チェック_4周目終盤（隠し牢_徳川襲来）"
+      ]
+    },
+    {
+      "ID": 11170,
+      "Entries": [
+        "11170: Enemy check_early 5th lap (castle) -- 11170：敵チェック_5周目序盤（城下）"
+      ]
+    },
+    {
+      "ID": 11171,
+      "Entries": [
+        "11171: Enemy check_Middle of lap 5 (valley) -- 11171：敵チェック_5周目中盤（渓谷）"
+      ]
+    },
+    {
+      "ID": 11172,
+      "Entries": [
+        "11172: Enemy check_late 5th lap (hidden prison_Tokugawa invasion) -- 11172：敵チェック_5周目終盤（隠し牢_徳川襲来）"
+      ]
+    },
+    {
+      "ID": 11173,
+      "Entries": [
+        "11173: Enemy check_early on lap 6 (castle) -- 11173：敵チェック_6周目序盤（城下）"
+      ]
+    },
+    {
+      "ID": 11174,
+      "Entries": [
+        "11174: Enemy check_Mid 6th lap (valley) -- 11174：敵チェック_6周目中盤（渓谷）"
+      ]
+    },
+    {
+      "ID": 11175,
+      "Entries": [
+        "11175: Enemy check_6th lap counter stop -- 11175：敵チェック_6周目カンスト"
+      ]
+    },
+    {
+      "ID": 14997,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 14998,
+      "Entries": [
+        "↓ For cutscene / PV shooting -- ↓カットシーン/PV撮影用"
+      ]
+    },
+    {
+      "ID": 14999,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "15000: Left hand defect -- 15000：左手欠損"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "15010: The hero who became a Buddhist priest -- 15010：仏師になった主人公"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "15020: barefoot -- 15020：裸足"
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "15030: Headless hero -- 15030：首なし主人公"
+      ]
+    },
+    {
+      "ID": 15040,
+      "Entries": [
+        "15040: Left hand prosthesis_high resolution -- 15040：左手義手_高解像度"
+      ]
+    },
+    {
+      "ID": 16997,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 16998,
+      "Entries": [
+        "↓ For checking prosthetic hand ninja (left hand weapon) -- ↓義手忍具（左手武器）チェック用"
+      ]
+    },
+    {
+      "ID": 16999,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 17000,
+      "Entries": [
+        "17000: Shuriken LV1 / 2 / 3-A -- 17000：手裏剣LV1/2/3-A"
+      ]
+    },
+    {
+      "ID": 17001,
+      "Entries": [
+        "17001: Shuriken LV3-B / 3-C / 4 -- 17001：手裏剣LV3-B/3-C/4"
+      ]
+    },
+    {
+      "ID": 17002,
+      "Entries": [
+        "17002: Shuriken LV3-C_ Money Throw LV0 -- 17002：手裏剣LV3-C_銭投げLV0"
+      ]
+    },
+    {
+      "ID": 17003,
+      "Entries": [
+        "17003: Shuriken LV3-C_ Money Throw LV1 -- 17003：手裏剣LV3-C_銭投げLV1"
+      ]
+    },
+    {
+      "ID": 17004,
+      "Entries": [
+        "17004: Shuriken LV3-C_ Money Throw LV2 -- 17004：手裏剣LV3-C_銭投げLV2"
+      ]
+    },
+    {
+      "ID": 17005,
+      "Entries": [
+        "17005: Shuriken LV3-C_ Money Throw LV3 -- 17005：手裏剣LV3-C_銭投げLV3"
+      ]
+    },
+    {
+      "ID": 17100,
+      "Entries": [
+        "17100: Firecracker LV1 / 2 / 3-A -- 17100：爆竹LV1/2/3-A"
+      ]
+    },
+    {
+      "ID": 17101,
+      "Entries": [
+        "17101: Firecracker LV3-B -- 17101：爆竹LV3-B"
+      ]
+    },
+    {
+      "ID": 17200,
+      "Entries": [
+        "17200: Ignition LV1 / 2/3 -- 17200：発火LV1/2/3"
+      ]
+    },
+    {
+      "ID": 17201,
+      "Entries": [
+        "17201: Ignition LV4 -- 17201：発火LV4"
+      ]
+    },
+    {
+      "ID": 17300,
+      "Entries": [
+        "17300: Ax LV1 / 2/3 -- 17300：斧LV1/2/3"
+      ]
+    },
+    {
+      "ID": 17301,
+      "Entries": [
+        "17301: Ax LV4 -- 17301：斧LV4"
+      ]
+    },
+    {
+      "ID": 17400,
+      "Entries": [
+        "17400: Kodachi LV1 / 2 / 3-A -- 17400：小太刀LV1/2/3-A"
+      ]
+    },
+    {
+      "ID": 17401,
+      "Entries": [
+        "17401: Kodachi LV3-B -- 17401：小太刀LV3-B"
+      ]
+    },
+    {
+      "ID": 17500,
+      "Entries": [
+        "17500: Spear LV1 / 2-A / 3-A -- 17500：槍LV1/2-A/3-A"
+      ]
+    },
+    {
+      "ID": 17501,
+      "Entries": [
+        "17501: Spear LV2-B / 3-B -- 17501：槍LV2-B/3-B"
+      ]
+    },
+    {
+      "ID": 17600,
+      "Entries": [
+        "17600: Transformation LV1 / 2/3 -- 17600：変わり身LV1/2/3"
+      ]
+    },
+    {
+      "ID": 17700,
+      "Entries": [
+        "17700: Iron fan LV1 / 2 / 3-A -- 17700：鉄扇LV1/2/3-A"
+      ]
+    },
+    {
+      "ID": 17701,
+      "Entries": [
+        "17701: Iron fan LV3-B -- 17701：鉄扇LV3-B"
+      ]
+    },
+    {
+      "ID": 17800,
+      "Entries": [
+        "17800: Enemy turning LV1 / 2/3 -- 17800：敵回しLV1/2/3"
+      ]
+    },
+    {
+      "ID": 17900,
+      "Entries": [
+        "17900: Finger whistle LV1 / 2/3 -- 17900：指笛LV1/2/3"
+      ]
+    },
+    {
+      "ID": 18000,
+      "Entries": [
+        "18000: Shuriken / Firecracker / Ignition -- 18000：手裏剣/爆竹/発火"
+      ]
+    },
+    {
+      "ID": 18100,
+      "Entries": [
+        "18100: Ax / Kodachi / Ignition -- 18100：斧/小太刀/発火"
+      ]
+    },
+    {
+      "ID": 18200,
+      "Entries": [
+        "18200: Spear / Transformation / Ignition -- 18200：槍/変わり身/発火"
+      ]
+    },
+    {
+      "ID": 18300,
+      "Entries": [
+        "18300: Iron fan / enemy turning / firing -- 18300：鉄扇/敵回し/発火"
+      ]
+    },
+    {
+      "ID": 18400,
+      "Entries": [
+        "18400: Finger whistle / ignition / spear -- 18400：指笛/発火/槍（なぎ払い）"
+      ]
+    },
+    {
+      "ID": 18500,
+      "Entries": [
+        "18500: Additive Weapon Anime Test: Prepared Ax / Prepared Spear -- 18500：加算武器アニメテスト：仕込み斧・仕込み槍"
+      ]
+    },
+    {
+      "ID": 18600,
+      "Entries": [
+        "18600: No derivative attack_Shuriken / Firecracker / Ignition -- 18600：派生攻撃なし_手裏剣/爆竹/発火"
+      ]
+    },
+    {
+      "ID": 18601,
+      "Entries": [
+        "18601: No derivative attack_ax / kodachi / transformation -- 18601：派生攻撃なし_斧/小太刀/変わり身"
+      ]
+    },
+    {
+      "ID": 18602,
+      "Entries": [
+        "18602: No derivative attack_Iron fan / Enemy turn / Finger whistle -- 18602：派生攻撃なし_鉄扇/敵回し/指笛"
+      ]
+    },
+    {
+      "ID": 18603,
+      "Entries": [
+        "18603: No derivative attack_Spear A / Spear B -- 18603：派生攻撃なし_槍A/槍B"
+      ]
+    },
+    {
+      "ID": 19997,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 19998,
+      "Entries": [
+        "↓ For skill check -- ↓スキルチェック用"
+      ]
+    },
+    {
+      "ID": 19999,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "20000: Skill unbanned: No skill points -- 20000：スキル未解禁：スキルポイントなし"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "20001: Skill unbanned: 5 skill points -- 20001：スキル未解禁：スキルポイント5個"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "20002: Skills unbanned: Skill points MAX -- 20002：スキル未解禁：スキルポイントMAX"
+      ]
+    },
+    {
+      "ID": 29997,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 29998,
+      "Entries": [
+        "↓ For item check -- ↓アイテムチェック用"
+      ]
+    },
+    {
+      "ID": 29999,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "30000: HP system A (est / regen / elixir) -- 30000：HP系A（エスト/リジェネ/エリクサー）"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "30001: HP system B (Ohagi / Ohagi (Sorry) / Persimmon / Lower man&#39;s persimmon) -- 30001：HP系B（おはぎ/おはぎ（惜別）/柿/下男の柿）"
+      ]
+    },
+    {
+      "ID": 30003,
+      "Entries": [
+        "30003: HP system C (children&#39;s rice / light snow&#39;s children&#39;s rice) + five-colored rice -- 30003：HP系C（稚児米/細雪の稚児米） + 五色米"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "30010: Abnormal condition system (virus release / flame release / madness release / electric shock delay / self-disease poison) -- 30010：状態異常系（病毒解除/炎上解除/発狂解除/感電遅延/自病毒）"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "30020: Abnormal condition system (poison prevention / flame prevention / madness prevention / suicide / infinite suicide) -- 30020：状態異常系（病毒予防/炎上予防/発狂予防/自殺/無限の自殺）"
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "30030: Strengthening system A (attack / attack with demerit / defense / trunk / stealth / anti-spirit) -- 30030：強化系A（攻撃/デメリット付き攻撃/防御/体幹/ステルス/対霊）"
+      ]
+    },
+    {
+      "ID": 30031,
+      "Entries": [
+        "30031: Reinforcement system B (infinite use form consumption Ver. + Weird young water thrombus) -- 30031：強化系B（無限使用形代消費Ver. + 変若水血栓）"
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        "30040: Attack system (stone / sand / oil / illusion release) -- 30040：攻撃系（石/砂/油/幻術解除）"
+      ]
+    },
+    {
+      "ID": 30050,
+      "Entries": [
+        "30050: Amulet system (money acquisition amount UP / resurrection right acquisition amount UP / item drop rate UP / shape fee drop rate UP / white paper balloon) -- 30050：お守り系（お金入手量UP/復活権入手量UP/アイテムドロップ率UP/形代ドロップ率UP/白らっぱ紙風船）"
+      ]
+    },
+    {
+      "ID": 30060,
+      "Entries": [
+        "30060: Resource acquisition system (small gold nugget / medium gold nugget / large gold nugget / resurrection right bullion / female player resurrection right bullion) -- 30060：リソース入手系（金塊小/金塊中/金塊大/復活権塊/女奏者の復活権塊）"
+      ]
+    },
+    {
+      "ID": 30070,
+      "Entries": [
+        "30070: Form conversion system (form conversion) -- 30070：形代変換系（形代変換）"
+      ]
+    },
+    {
+      "ID": 30080,
+      "Entries": [
+        "30080: Others (Telescope / Redo bell / Buddha image of return / Release of flame (Tokugawa)) -- 30080：その他（遠眼鏡/やりなおし鈴/帰還の仏像/炎上解除（徳川））"
+      ]
+    },
+    {
+      "ID": 30090,
+      "Entries": [
+        "30090: Other (bell demon / dragon cough treatment) -- 30090：その他（鐘鬼/竜咳治療）"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "30100: VP appearance item 1 -- 30100：VP登場アイテム1"
+      ]
+    },
+    {
+      "ID": 30101,
+      "Entries": [
+        "30101: VP appearance item 2 -- 30101：VP登場アイテム2"
+      ]
+    },
+    {
+      "ID": 39997,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 39998,
+      "Entries": [
+        "↓ For checking the deadly sword -- ↓必殺剣確認用"
+      ]
+    },
+    {
+      "ID": 39999,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "40000: School technique: None -- 40000：流派技：なし"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "40001: School technique: Rotating slash -- 40001：流派技：回転斬り"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "40002: School technique: Jumping and slashing -- 40002：流派技：飛びかかり斬り"
+      ]
+    },
+    {
+      "ID": 40003,
+      "Entries": [
+        "40003: School technique: Jump slash + 1_ slash retreat added -- 40003：流派技：飛びかかり斬り+1_斬り退がり追加"
+      ]
+    },
+    {
+      "ID": 40004,
+      "Entries": [
+        "40004: School technique: Face-to-face -- 40004：流派技：面打ち"
+      ]
+    },
+    {
+      "ID": 40005,
+      "Entries": [
+        "40005: School technique: Face-up + 102 4th step added -- 40005：流派技：面打ち+1_2段目追加"
+      ]
+    },
+    {
+      "ID": 40006,
+      "Entries": [
+        "40006: School technique: Kensei Iai -- 40006：流派技：剣聖居合"
+      ]
+    },
+    {
+      "ID": 40007,
+      "Entries": [
+        "40007: School technique: Iai -- 40007：流派技：居合"
+      ]
+    },
+    {
+      "ID": 40009,
+      "Entries": [
+        "40009: School technique: Invisible Iai continuous attack -- 40009：流派技：見えない居合連撃"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "40010: School technique: Eight-flying rush -- 40010：流派技：八艘飛びラッシュ"
+      ]
+    },
+    {
+      "ID": 40011,
+      "Entries": [
+        "40011: School technique: Eight-flying rush + 1_ increase in the number of stages -- 40011：流派技：八艘飛びラッシュ+1_段数増加"
+      ]
+    },
+    {
+      "ID": 40012,
+      "Entries": [
+        "40012: School technique: Immortal slash -- 40012：流派技：不死斬り"
+      ]
+    },
+    {
+      "ID": 40013,
+      "Entries": [
+        "40013: School technique: Immortal slash + 1_ Reservoir added -- 40013：流派技：不死斬り+1_溜め追加"
+      ]
+    },
+    {
+      "ID": 40014,
+      "Entries": [
+        "40014: School technique: Kick rush -- 40014：流派技：蹴りラッシュ"
+      ]
+    },
+    {
+      "ID": 40015,
+      "Entries": [
+        "40015: School technique: Kick rush + 1_ increase in number of steps -- 40015：流派技：蹴りラッシュ+1_段数増加"
+      ]
+    },
+    {
+      "ID": 40016,
+      "Entries": [
+        "40016: School technique: Fist attack -- 40016：流派技：拳撃"
+      ]
+    },
+    {
+      "ID": 40017,
+      "Entries": [
+        "40017: School technique: Fist attack + 1_ Yasushi Tetsuyama added -- 40017：流派技：拳撃+1_鉄山靠追加"
+      ]
+    },
+    {
+      "ID": 40018,
+      "Entries": [
+        "40018: School technique: Shinobi stab -- 40018：流派技：忍刺し"
+      ]
+    },
+    {
+      "ID": 40019,
+      "Entries": [
+        "40019: School technique: Shinobi stab + 1_Descent rotation slash added -- 40019：流派技：忍刺し+1_降下回転斬り追加"
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "40020: School technique: New technique -- 40020：流派技：新技"
+      ]
+    },
+    {
+      "ID": 40021,
+      "Entries": [
+        "40021: School Technique: New Technique_Flame / Spirit / Blood Encha -- 40021：流派技：新技_炎/霊/血エンチャ"
+      ]
+    },
+    {
+      "ID": 40022,
+      "Entries": [
+        "40022: School technique: New technique_Orange style / Gold style / Blood enchantment -- 40022：流派技：新技_橙風/金風/血エンチャ"
+      ]
+    },
+    {
+      "ID": 89997,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 89998,
+      "Entries": [
+        "↓ For other checks -- ↓その他チェック用"
+      ]
+    },
+    {
+      "ID": 89999,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "90000: Anime test: Damage_levels 1-7 -- 90000：アニメテスト：ダメージ_レベル1～7"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "90001: Anime test: Damage_levels 8-11 + Break -- 90001：アニメテスト：ダメージ_レベル8～11 + 崩し"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "90002: Anime test: Damage_Burning -- 90002：アニメテスト：ダメージ_炎上"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "90010: Item / Resource Item Acquisition Test -- 90010：アイテム/リソースアイテム入手テスト"
+      ]
+    },
+    {
+      "ID": 90997,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 90998,
+      "Entries": [
+        "↓ For costume confirmation -- ↓コスチューム確認用"
+      ]
+    },
+    {
+      "ID": 90999,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 91000,
+      "Entries": [
+        "91000: Costume_Shura_No Immortal Slash -- 91000：コスチューム_修羅_不死斬りなし"
+      ]
+    },
+    {
+      "ID": 91001,
+      "Entries": [
+        "91001: Costume_Shura_Immortal Slash -- 91001：コスチューム_修羅_不死斬りあり"
+      ]
+    },
+    {
+      "ID": 91002,
+      "Entries": [
+        "91002: Costume_Shura_Hair confirmation (with immortal slash) -- 91002：コスチューム_修羅_髪確認（不死斬りあり）"
+      ]
+    },
+    {
+      "ID": 91010,
+      "Entries": [
+        "91010: Costume_Ashiname_No Immortal Slash -- 91010：コスチューム_葦名_不死斬りなし"
+      ]
+    },
+    {
+      "ID": 91011,
+      "Entries": [
+        "91011: Costume_Ashiname_Immortal slash -- 91011：コスチューム_葦名_不死斬りあり"
+      ]
+    },
+    {
+      "ID": 91020,
+      "Entries": [
+        "91020: Costume_Tengu_No Immortal Slash -- 91020：コスチューム_天狗_不死斬りなし"
+      ]
+    },
+    {
+      "ID": 91021,
+      "Entries": [
+        "91021: Costume_Tengu_Immortal Slash -- 91021：コスチューム_天狗_不死斬りあり"
+      ]
+    },
+    {
+      "ID": 91997,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 91998,
+      "Entries": [
+        "↓ Stadia version -- ↓Stadia版"
+      ]
+    },
+    {
+      "ID": 91999,
+      "Entries": [
+        "☆************************************************ ☆ -- ☆************************************************☆"
+      ]
+    },
+    {
+      "ID": 92000,
+      "Entries": [
+        "92000: Stadia_α_ShuraEndingBuild -- 92000：Stadia_α_ShuraEndingBuild"
+      ]
+    },
+    {
+      "ID": 92001,
+      "Entries": [
+        "92001: Stadia_β_Inner Genichiro -- 92001：Stadia_β_Inner Genichiro"
+      ]
+    },
+    {
+      "ID": 92002,
+      "Entries": [
+        "92002: Stadia_β_Inner Father -- 92002：Stadia_β_Inner Father"
+      ]
+    },
+    {
+      "ID": 92010,
+      "Entries": [
+        "92010: All routes -- 92010：全ルート"
+      ]
+    },
+    {
+      "ID": 199997,
+      "Entries": [
+        "☆ ********************************************** ☆ -- ☆ **********************************************☆"
+      ]
+    },
+    {
+      "ID": 199998,
+      "Entries": [
+        "↓ E3 -- ↓E3"
+      ]
+    },
+    {
+      "ID": 199999,
+      "Entries": [
+        "☆ ********************************************** ☆ -- ☆ **********************************************☆"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "200000: E3_Presentation_Shuriken / Ignition / Ax -- 200000：E3_プレゼン_手裏剣/発火/斧"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "200001: E3_Firecracker / Kodachi / Iron fan -- 200001：E3_爆竹/小太刀/鉄扇"
+      ]
+    },
+    {
+      "ID": 200002,
+      "Entries": [
+        "200002: E3_Transformation / Enemy Turn / Spear -- 200002：E3_変わり身/敵回し/槍"
+      ]
+    },
+    {
+      "ID": 200003,
+      "Entries": [
+        "200003: E3_finger whistle -- 200003：E3_指笛"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "200010: E3_Trial_Shuriken / Fire / Ax + Immortal Slash -- 200010：E3_試遊_手裏剣/発火/斧 + 不死斬り"
+      ]
+    }
+  ]
+}

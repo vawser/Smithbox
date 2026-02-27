@@ -1,0 +1,473 @@
+{
+  "Name": "CalcCorrectGraph",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "0: None -- 0:なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "1: Hard stone -- 1:硬石"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "2: Sharp stone -- 2:鋭石"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "3: Minagi stone -- 3:みなぎ石"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "4: Nibi stone -- 4:にび石"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "5: Blade stone -- 5:刃石"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "6: Spider thread steel wire -- 6:蜘蛛糸鋼線"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "7: Mercury stone -- 7:水銀石"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "8: Dragon stone -- 8:竜石"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "9: Sucking stone -- 9:吸いつき石"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10: Pith stone -- 10:髄石"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "11: Moonlight stone -- 11:月光石"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "12: Moonlight stone -- 12:月影石"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "13: Faint stone -- 13:微光石"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "14: Magic shield stone -- 14:魔法盾石"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "15: Ore Spirit DS -- 15:鉱石の精霊DS"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "16: DS -- 16:ＤＳ"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "The lower the equipment weight, the higher the attack power -- 装備重量が低いほど攻撃力アップ"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "The heavier the equipment weight, the higher the attack power -- 装備重量が重いほど攻撃力アップ"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "(Old) Maximum HP -- （旧）最大HP"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Maximum MP -- 最大MP"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Defense (soul level) -- 防御力（ソウルレベル）"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Disease resistance (former poison: soul level dependent) -- 病毒耐性（旧毒：ソウルレベル依存）"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Madness resistance (former plague: soul level dependent) -- 発狂耐性（旧疫病：ソウルレベル依存）"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Flame resistance (former bleeding: soul level dependent) -- 炎上耐性（旧出血：ソウルレベル依存）"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Aging resistance (old curse: soul level dependent) -- 老化耐性（旧呪い：ソウルレベル依存）"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Electric shock resistance (former: cold air (depending on soul level) -- 感電耐性（旧：冷気（ソウルレベル依存）"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Poison resistance (physical strength) -- 毒耐性（体力）"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Epidemic resistance (physical strength) -- 疫病耐性（体力）"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Bleeding resistance (endurance) -- 出血耐性（持久力）"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Curse resistance (luck) -- 呪い耐性（運）"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Cold resistance (life force) -- 冷気耐性（生命力）"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Physical defense (muscle strength) -- 物理防御力（筋力）"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Physical defense (physical strength) -- 物理防御力（体力）"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Magic defense (faith) -- 魔法防御力（信仰）"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Flame defense (muscle strength) -- 炎防御力（筋力）"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Lightning defense (endurance) -- 雷防御力（持久力）"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Dark defense (faith) -- 闇防御力（信仰）"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Drop rate (luck) -- ドロップ率（運）"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Maximum number of recovery spots replenished -- 回復スポットの最大補充数"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Shield status correction Physical cut rate -- 盾ステータス補正 物理カット率"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Shield status correction Attribute cut rate -- 盾ステータス補正 属性カット率"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Shield Status Correction Resistance Cut Rate -- 盾ステータス補正 耐性カット率"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Shield status correction Stamina cut rate -- 盾ステータス補正 スタミナカット率"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Maximum arts point (muscle strength) -- アーツポイント最大値（筋力）"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Maximum arts point (skill) -- アーツポイント最大値（技量）"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Maximum arts point (magic) -- アーツポイント最大値（魔法）"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Maximum arts point (miracle) -- アーツポイント最大値（奇跡）"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Growth consumption soul -- 成長消費ソウル"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Fall damage basic value -- 落下ダメージ基本値"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Fall damage weight ratio correction -- 落下ダメージ重量割合補正"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Fall damage vitality correction -- 落下ダメージ生命力補正"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Fall damage skill correction -- 落下ダメージ技量補正"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Level sync: HP -- レベルシンク：HP"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Level sync: MP -- レベルシンク：MP"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Level Sync: Stamina -- レベルシンク：スタミナ"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Level Sync: Defense -- レベルシンク：防御力"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Level sync: Resistance value -- レベルシンク：耐性値"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Level Sync: Weapon: Straight Sword -- レベルシンク：武器：直剣"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Level Sync: Weapon: Dagger -- レベルシンク：武器：短剣"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Level Sync: Weapon: Oversized Sword -- レベルシンク：武器：特大剣"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Level Sync: Weapon: Bow -- レベルシンク：武器：弓"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Level Sync: Weapon: Large Bow -- レベルシンク：武器：大弓"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Level Sync: Weapon: Crossbow -- レベルシンク：武器：クロスボウ"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Level Sync: Weapon: Wand -- レベルシンク：武器：杖"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Level Sync: Weapon: Talisman and Bell -- レベルシンク：武器：タリスマンと鈴"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "Level Sync: Weapon: Fire of Magic -- レベルシンク：武器：呪術の火"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Level Sync: Item: Throw Knife -- レベルシンク：アイテム：投げナイフ"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Level Sync: Item: Throw Bin -- レベルシンク：アイテム：投げビン"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Maximum HP -- 最大HP"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Maximum stamina -- 最大スタミナ"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Kick stamina attack power multiplier -- 蹴りスタミナ攻撃力倍率"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Attack contact parry (closeout) stamina attack power multiplier -- 攻撃接触パリィ（見切り）スタミナ攻撃力倍率"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Stamina recovery speed -- スタミナ回復速度"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Required skill experience value -- 必要スキル経験値"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Remaining machine protection price -- 残機プロテクトの値段"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Dragon cough incidence [%] -- 竜咳発生率[%]"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Money / Skill Experience Lost Rate [%] -- お金/スキル経験値ロスト発生率[%]"
+      ]
+    }
+  ]
+}

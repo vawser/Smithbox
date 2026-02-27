@@ -1,0 +1,857 @@
+{
+  "Name": "CameraParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Normal -- 通常"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Normal_Looking up slope -- 通常_見上げ見下ろし斜面"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Normal _ litter -- 通常_輿"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Normal_Samurai residence Boss front stairs only -- 通常_武家屋敷ボス前階段専用"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Crouching -- しゃがみ"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Crouching_underfloor -- しゃがみ_床下"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Crouching_Looking up on the slope -- しゃがみ_見上げ見下ろし斜面"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Crouching_Samurai Residence Boss Front Stairs Only -- しゃがみ_武家屋敷ボス前階段専用"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "With wall -- 壁張り付き"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Peeping _ left -- 覗き込み_左"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Peeping _ right -- 覗き込み_右"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Hanging -- ぶら下がり"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Hanging_Hidden Prison Bridge_Eavesdropping -- ぶら下がり_隠し牢の橋_盗み聞き"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Waiting for resurrection -- 復活待機"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "knock back -- ノックバック"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Wire landing -- ワイヤー着地"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Wire landing_up -- ワイヤー着地_上り"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "air -- 空中"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Aerial_wire injection -- 空中_ワイヤー射出"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Air_wire movement -- 空中_ワイヤー移動"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "Air_wire movement_up -- 空中_ワイヤー移動_上り"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Aerial_just before wire landing -- 空中_ワイヤー着地直前"
+      ]
+    },
+    {
+      "ID": 1803,
+      "Entries": [
+        "Aerial_just before wire landing_up -- 空中_ワイヤー着地直前_上り"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "On the water -- 水上"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Water_acceleration -- 水上_加速"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Water_wire injection -- 水上_ワイヤー射出"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Underwater -- 水中"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Underwater_acceleration -- 水中_加速"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Underwater_rise -- 水中_上昇"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Underwater_acceleration of climb -- 水中_上昇加速"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Underwater_descent -- 水中_下降"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Underwater_descent acceleration -- 水中_下降加速"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Throwing -- 投げ中"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Water → Underwater -- 水上→水中"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Underwater → on the water -- 水中→水上"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Caucasian slave_thrown -- 白人奴隷_投げられ"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Caucasian slave_thrown_fall -- 白人奴隷_投げられ_落下"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Yasha Ape_HU Front_Camera for heavy attack -- 夜叉猿_HU前_強攻撃用カメラ"
+      ]
+    },
+    {
+      "ID": 5101,
+      "Entries": [
+        "Yasha Ape _ After HU_ Close Quarters Battle Camera -- 夜叉猿_HU後_近接戦闘用カメラ"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Prince test camera -- 皇子テストカメラ"
+      ]
+    },
+    {
+      "ID": 9998,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "m96_20: Giant straw doll area camera -- m96_20：巨大藁人形エリアカメラ"
+      ]
+    },
+    {
+      "ID": 59210,
+      "Entries": [
+        "Temple_overlooking allowed -- 寺_見下ろし許容"
+      ]
+    },
+    {
+      "ID": 5080000,
+      "Entries": [
+        "Cavalry Warrior_Normal -- 騎馬武者_通常"
+      ]
+    },
+    {
+      "ID": 5080001,
+      "Entries": [
+        "Cavalry Warrior_Normal_Crouching -- 騎馬武者_通常_しゃがみ"
+      ]
+    },
+    {
+      "ID": 5080007,
+      "Entries": [
+        "Cavalry Warrior_Normal_Resurrection Waiting -- 騎馬武者_通常_復活待機"
+      ]
+    },
+    {
+      "ID": 5090100,
+      "Entries": [
+        "Butterfly_Attack that moves sharply from side to side -- お蝶_左右に鋭く動く攻撃"
+      ]
+    },
+    {
+      "ID": 5090101,
+      "Entries": [
+        "Butterflies_Attack that moves sharply from side to side_Crouching -- お蝶_左右に鋭く動く攻撃_しゃがみ"
+      ]
+    },
+    {
+      "ID": 5090107,
+      "Entries": [
+        "Butterfly _ Attack that moves sharply from side to side _ Waiting for resurrection -- お蝶_左右に鋭く動く攻撃_復活待機"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "Yasha Ape_Normal -- 夜叉猿_通常"
+      ]
+    },
+    {
+      "ID": 5100001,
+      "Entries": [
+        "Yasha Ape_Crouching -- 夜叉猿_しゃがみ"
+      ]
+    },
+    {
+      "ID": 5100007,
+      "Entries": [
+        "Yasha Ape_Resurrection Waiting -- 夜叉猿_復活待機"
+      ]
+    },
+    {
+      "ID": 5200000,
+      "Entries": [
+        "Mermaid Dragon_Normal -- 人魚竜_通常"
+      ]
+    },
+    {
+      "ID": 5200001,
+      "Entries": [
+        "Mermaid Dragon_Crouching -- 人魚竜_しゃがみ"
+      ]
+    },
+    {
+      "ID": 5200007,
+      "Entries": [
+        "Mermaid Dragon_Resurrection Waiting -- 人魚竜_復活待機"
+      ]
+    },
+    {
+      "ID": 5200009,
+      "Entries": [
+        "Mermaid Dragon_Wire Landing -- 人魚竜_ワイヤー着地"
+      ]
+    },
+    {
+      "ID": 5200010,
+      "Entries": [
+        "Mermaid Dragon_Aerial -- 人魚竜_空中"
+      ]
+    },
+    {
+      "ID": 5200016,
+      "Entries": [
+        "Mermaid Dragon_Aerial_Wire Injection -- 人魚竜_空中_ワイヤー射出"
+      ]
+    },
+    {
+      "ID": 5200017,
+      "Entries": [
+        "Mermaid Dragon_Aerial_Wire Movement -- 人魚竜_空中_ワイヤー移動"
+      ]
+    },
+    {
+      "ID": 5200018,
+      "Entries": [
+        "Mermaid Dragon_Aerial_Immediately before wire landing -- 人魚竜_空中_ワイヤー着地直前"
+      ]
+    },
+    {
+      "ID": 5200110,
+      "Entries": [
+        "Mermaid Dragon_Storm Jump Near the Top_Aerial -- 人魚竜_ストームジャンプ頂点付近_空中"
+      ]
+    },
+    {
+      "ID": 5200120,
+      "Entries": [
+        "Mermaid Dragon_Thunderback is being blown away -- 人魚竜_雷返し吹き飛ばし中"
+      ]
+    },
+    {
+      "ID": 5300000,
+      "Entries": [
+        "Okiryu_normal -- 翁竜_通常"
+      ]
+    },
+    {
+      "ID": 5300001,
+      "Entries": [
+        "Okiryu_Crouching -- 翁竜_しゃがみ"
+      ]
+    },
+    {
+      "ID": 5300007,
+      "Entries": [
+        "Okiryu_Resurrection Waiting -- 翁竜_復活待機"
+      ]
+    },
+    {
+      "ID": 5300100,
+      "Entries": [
+        "Okiryu_Tentacles are appearing_Normal -- 翁竜_触手登場中_通常"
+      ]
+    },
+    {
+      "ID": 5300101,
+      "Entries": [
+        "Okiryu_Tentacles are appearing_Crouching -- 翁竜_触手登場中_しゃがみ"
+      ]
+    },
+    {
+      "ID": 5300107,
+      "Entries": [
+        "Okiryu_Tentacles are appearing_Waiting for resurrection -- 翁竜_触手登場中_復活待機"
+      ]
+    },
+    {
+      "ID": 7020000,
+      "Entries": [
+        "Demon Buddhist Master_Normal -- 鬼仏師_通常"
+      ]
+    },
+    {
+      "ID": 7020001,
+      "Entries": [
+        "Demon Buddhist Master Crouching -- 鬼仏師_しゃがみ"
+      ]
+    },
+    {
+      "ID": 7020007,
+      "Entries": [
+        "Demon Buddhist Master_Waiting for Resurrection -- 鬼仏師_復活待機"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "STADIA_normal -- STADIA_通常"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "STADIA_Normal_Looking up on the slope -- STADIA_通常_見上げ見下ろし斜面"
+      ]
+    },
+    {
+      "ID": 10000022,
+      "Entries": [
+        "STADIA_normal_litter -- STADIA_通常_輿"
+      ]
+    },
+    {
+      "ID": 10000031,
+      "Entries": [
+        "STADIA_Normal_Samurai residence Boss front stairs only -- STADIA_通常_武家屋敷ボス前階段専用"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "STADIA_ crouching -- STADIA_しゃがみ"
+      ]
+    },
+    {
+      "ID": 10000104,
+      "Entries": [
+        "STADIA_Crouching_Underfloor -- STADIA_しゃがみ_床下"
+      ]
+    },
+    {
+      "ID": 10000120,
+      "Entries": [
+        "STADIA_Crouching_Looking up slope -- STADIA_しゃがみ_見上げ見下ろし斜面"
+      ]
+    },
+    {
+      "ID": 10000131,
+      "Entries": [
+        "STADIA_Crouching_Samurai residence Boss front stairs only -- STADIA_しゃがみ_武家屋敷ボス前階段専用"
+      ]
+    },
+    {
+      "ID": 10000200,
+      "Entries": [
+        "STADIA_ with wall -- STADIA_壁張り付き"
+      ]
+    },
+    {
+      "ID": 10000300,
+      "Entries": [
+        "STADIA_Peeping_Left -- STADIA_覗き込み_左"
+      ]
+    },
+    {
+      "ID": 10000400,
+      "Entries": [
+        "STADIA_Peeping_Right -- STADIA_覗き込み_右"
+      ]
+    },
+    {
+      "ID": 10000500,
+      "Entries": [
+        "STADIA_ hanging -- STADIA_ぶら下がり"
+      ]
+    },
+    {
+      "ID": 10000521,
+      "Entries": [
+        "STADIA_hanging_hidden prison bridge_eavesdropping -- STADIA_ぶら下がり_隠し牢の橋_盗み聞き"
+      ]
+    },
+    {
+      "ID": 10000700,
+      "Entries": [
+        "STADIA_waiting for resurrection -- STADIA_復活待機"
+      ]
+    },
+    {
+      "ID": 10000800,
+      "Entries": [
+        "STADIA_ knockback -- STADIA_ノックバック"
+      ]
+    },
+    {
+      "ID": 10000900,
+      "Entries": [
+        "STADIA_ wire landing -- STADIA_ワイヤー着地"
+      ]
+    },
+    {
+      "ID": 10000903,
+      "Entries": [
+        "STADIA_wire landing_up -- STADIA_ワイヤー着地_上り"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "STADIA_ in the air -- STADIA_空中"
+      ]
+    },
+    {
+      "ID": 10001600,
+      "Entries": [
+        "STADIA_Aerial_Wire injection -- STADIA_空中_ワイヤー射出"
+      ]
+    },
+    {
+      "ID": 10001700,
+      "Entries": [
+        "STADIA_air_wire movement -- STADIA_空中_ワイヤー移動"
+      ]
+    },
+    {
+      "ID": 10001703,
+      "Entries": [
+        "STADIA_Aerial_Wire movement_Up -- STADIA_空中_ワイヤー移動_上り"
+      ]
+    },
+    {
+      "ID": 10001800,
+      "Entries": [
+        "STADIA_Aerial_Immediately before wire landing -- STADIA_空中_ワイヤー着地直前"
+      ]
+    },
+    {
+      "ID": 10001803,
+      "Entries": [
+        "STADIA_Aerial_Immediately before wire landing_Up -- STADIA_空中_ワイヤー着地直前_上り"
+      ]
+    },
+    {
+      "ID": 10002000,
+      "Entries": [
+        "STADIA_water -- STADIA_水上"
+      ]
+    },
+    {
+      "ID": 10002100,
+      "Entries": [
+        "STADIA_water_acceleration -- STADIA_水上_加速"
+      ]
+    },
+    {
+      "ID": 10002600,
+      "Entries": [
+        "STADIA_water_wire injection -- STADIA_水上_ワイヤー射出"
+      ]
+    },
+    {
+      "ID": 10003000,
+      "Entries": [
+        "STADIA_underwater -- STADIA_水中"
+      ]
+    },
+    {
+      "ID": 10003100,
+      "Entries": [
+        "STADIA_underwater_acceleration -- STADIA_水中_加速"
+      ]
+    },
+    {
+      "ID": 10003200,
+      "Entries": [
+        "STADIA_underwater_rise -- STADIA_水中_上昇"
+      ]
+    },
+    {
+      "ID": 10003300,
+      "Entries": [
+        "STADIA_Underwater_Accelerating climb -- STADIA_水中_上昇加速"
+      ]
+    },
+    {
+      "ID": 10003400,
+      "Entries": [
+        "STADIA_underwater_descent -- STADIA_水中_下降"
+      ]
+    },
+    {
+      "ID": 10003500,
+      "Entries": [
+        "STADIA_Underwater_Descent acceleration -- STADIA_水中_下降加速"
+      ]
+    },
+    {
+      "ID": 10004000,
+      "Entries": [
+        "STADIA_ throwing -- STADIA_投げ中"
+      ]
+    },
+    {
+      "ID": 10004300,
+      "Entries": [
+        "STADIA_water → underwater -- STADIA_水上→水中"
+      ]
+    },
+    {
+      "ID": 10004400,
+      "Entries": [
+        "STADIA_ Underwater → Water -- STADIA_水中→水上"
+      ]
+    },
+    {
+      "ID": 10005000,
+      "Entries": [
+        "STADIA_white slave_thrown -- STADIA_白人奴隷_投げられ"
+      ]
+    },
+    {
+      "ID": 10005001,
+      "Entries": [
+        "STADIA_white slave_thrown_fall -- STADIA_白人奴隷_投げられ_落下"
+      ]
+    },
+    {
+      "ID": 10005100,
+      "Entries": [
+        "STADIA_Yasha Ape_HU front_Camera for heavy attack -- STADIA_夜叉猿_HU前_強攻撃用カメラ"
+      ]
+    },
+    {
+      "ID": 10005101,
+      "Entries": [
+        "STADIA_Yasha Ape_After HU_Close Quarters Battle Camera -- STADIA_夜叉猿_HU後_近接戦闘用カメラ"
+      ]
+    },
+    {
+      "ID": 10007200,
+      "Entries": [
+        "STADIA_Prince test camera -- STADIA_皇子テストカメラ"
+      ]
+    },
+    {
+      "ID": 10009998,
+      "Entries": [
+        "STADIA_ test -- STADIA_テスト"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "STADIA_m96_20: Giant straw doll area camera -- STADIA_m96_20：巨大藁人形エリアカメラ"
+      ]
+    },
+    {
+      "ID": 10059210,
+      "Entries": [
+        "STADIA_Temple_Overlooking allowed -- STADIA_寺_見下ろし許容"
+      ]
+    },
+    {
+      "ID": 15080000,
+      "Entries": [
+        "STADIA_Cavalry Warrior_Normal -- STADIA_騎馬武者_通常"
+      ]
+    },
+    {
+      "ID": 15080001,
+      "Entries": [
+        "STADIA_Cavalry Warrior_Normal_Crouching -- STADIA_騎馬武者_通常_しゃがみ"
+      ]
+    },
+    {
+      "ID": 15080007,
+      "Entries": [
+        "STADIA_Cavalry Warrior_Normal_Resurrection Waiting -- STADIA_騎馬武者_通常_復活待機"
+      ]
+    },
+    {
+      "ID": 15090100,
+      "Entries": [
+        "STADIA_Butterfly_Attack that moves sharply from side to side -- STADIA_お蝶_左右に鋭く動く攻撃"
+      ]
+    },
+    {
+      "ID": 15090101,
+      "Entries": [
+        "STADIA_Butterfly_Attack that moves sharply from side to side_Crouching -- STADIA_お蝶_左右に鋭く動く攻撃_しゃがみ"
+      ]
+    },
+    {
+      "ID": 15090107,
+      "Entries": [
+        "STADIA_Butterfly_Attack that moves sharply from side to side_Waiting for resurrection -- STADIA_お蝶_左右に鋭く動く攻撃_復活待機"
+      ]
+    },
+    {
+      "ID": 15100000,
+      "Entries": [
+        "STADIA_Yasha Ape_Normal -- STADIA_夜叉猿_通常"
+      ]
+    },
+    {
+      "ID": 15100001,
+      "Entries": [
+        "STADIA_Yasha Ape_Crouching -- STADIA_夜叉猿_しゃがみ"
+      ]
+    },
+    {
+      "ID": 15100007,
+      "Entries": [
+        "STADIA_Yasha Ape_Resurrection Waiting -- STADIA_夜叉猿_復活待機"
+      ]
+    },
+    {
+      "ID": 15200000,
+      "Entries": [
+        "STADIA_Mermaid Dragon_Normal -- STADIA_人魚竜_通常"
+      ]
+    },
+    {
+      "ID": 15200001,
+      "Entries": [
+        "STADIA_Mermaid Dragon_Crouching -- STADIA_人魚竜_しゃがみ"
+      ]
+    },
+    {
+      "ID": 15200007,
+      "Entries": [
+        "STADIA_Mermaid Dragon_Resurrection Waiting -- STADIA_人魚竜_復活待機"
+      ]
+    },
+    {
+      "ID": 15200009,
+      "Entries": [
+        "STADIA_Mermaid Dragon_Wire Landing -- STADIA_人魚竜_ワイヤー着地"
+      ]
+    },
+    {
+      "ID": 15200010,
+      "Entries": [
+        "STADIA_Mermaid Dragon_Aerial -- STADIA_人魚竜_空中"
+      ]
+    },
+    {
+      "ID": 15200016,
+      "Entries": [
+        "STADIA_Mermaid Dragon_Aerial_Wire Injection -- STADIA_人魚竜_空中_ワイヤー射出"
+      ]
+    },
+    {
+      "ID": 15200017,
+      "Entries": [
+        "STADIA_Mermaid Dragon_Aerial_Wire Movement -- STADIA_人魚竜_空中_ワイヤー移動"
+      ]
+    },
+    {
+      "ID": 15200018,
+      "Entries": [
+        "STADIA_Mermaid Dragon_Aerial_Immediately before wire landing -- STADIA_人魚竜_空中_ワイヤー着地直前"
+      ]
+    },
+    {
+      "ID": 15200110,
+      "Entries": [
+        "STADIA_Mermaid Dragon_Storm Jump Near the apex_Aerial -- STADIA_人魚竜_ストームジャンプ頂点付近_空中"
+      ]
+    },
+    {
+      "ID": 15200120,
+      "Entries": [
+        "STADIA_Mermaid Dragon_Thunderback blown away -- STADIA_人魚竜_雷返し吹き飛ばし中"
+      ]
+    },
+    {
+      "ID": 15300000,
+      "Entries": [
+        "STADIA_Okinayu_Normal -- STADIA_翁竜_通常"
+      ]
+    },
+    {
+      "ID": 15300001,
+      "Entries": [
+        "STADIA_Okinayu_Crouching -- STADIA_翁竜_しゃがみ"
+      ]
+    },
+    {
+      "ID": 15300007,
+      "Entries": [
+        "STADIA_Okinayu_Resurrection Waiting -- STADIA_翁竜_復活待機"
+      ]
+    },
+    {
+      "ID": 15300100,
+      "Entries": [
+        "STADIA_Okinayu_Tentacles appearing_Normal -- STADIA_翁竜_触手登場中_通常"
+      ]
+    },
+    {
+      "ID": 15300101,
+      "Entries": [
+        "STADIA_Okinayu_Tentacles appearing_Crouching -- STADIA_翁竜_触手登場中_しゃがみ"
+      ]
+    },
+    {
+      "ID": 15300107,
+      "Entries": [
+        "STADIA_Okinayu_Tentacles appearing_Resurrection waiting -- STADIA_翁竜_触手登場中_復活待機"
+      ]
+    },
+    {
+      "ID": 17020000,
+      "Entries": [
+        "STADIA_Oni Buddhist Master_Normal -- STADIA_鬼仏師_通常"
+      ]
+    },
+    {
+      "ID": 17020001,
+      "Entries": [
+        "STADIA_Demon Buddhist Master_Crouching -- STADIA_鬼仏師_しゃがみ"
+      ]
+    },
+    {
+      "ID": 17020007,
+      "Entries": [
+        "STADIA_Oni Buddhist Master_Resurrection Waiting -- STADIA_鬼仏師_復活待機"
+      ]
+    }
+  ]
+}

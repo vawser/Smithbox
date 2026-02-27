@@ -4,97 +4,97 @@
     {
       "ID": 0,
       "Entries": [
-        "Don&#39;t erase -- 消すべからず"
+        "Do not change"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Dummy1 -- Dummy1"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Dummy2 -- Dummy2"
+        "Does not open from this side."
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "Dummy3 -- Dummy3"
+        "Pray"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Stick -- 張りつく"
+        "Hug Wall"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Leave -- 離れる"
+        "Stop hugging wall"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Hanging -- ぶら下がる"
+        "Ledge Hang"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Climb -- よじ登る"
+        "Climb"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "get off -- 降りる"
+        "Drop down"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        "dive -- 潜る"
+        "Dive"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "acceleration -- 加速"
+        "Underwater Dash"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "Rise -- 上昇"
+        "Swim Up"
       ]
     },
     {
       "ID": 42,
       "Entries": [
-        "Descent -- 下降"
+        "Swim Down"
       ]
     },
     {
       "ID": 43,
       "Entries": [
-        "Ascend -- 浮上"
+        "Swim Up"
       ]
     },
     {
       "ID": 90,
       "Entries": [
-        "Resurrection -- 復活する"
+        "Resurrect"
       ]
     },
     {
       "ID": 91,
       "Entries": [
-        "die -- 死ぬ"
+        "Die"
       ]
     }
   ]

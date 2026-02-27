@@ -1,0 +1,245 @@
+{
+  "Name": "CoolTimeParam",
+  "Entries": [
+    {
+      "ID": 101,
+      "Entries": [
+        "Intrusion level 1 -- 乱入 レベル1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Intrusion level 2 -- 乱入 レベル2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Intrusion level 3 -- 乱入 レベル3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Intrusion level 4 -- 乱入 レベル4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Intrusion level 5 -- 乱入 レベル5"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Intrusion level 6 -- 乱入 レベル6"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Intrusion level 7 -- 乱入 レベル7"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Intrusion level 8 -- 乱入 レベル8"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Intrusion level 9 -- 乱入 レベル9"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Intrusion level 10 -- 乱入 レベル10"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Map Guardian (Forest) Level 1 -- マップ守護（森） レベル1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Map Guardian (Forest) Level 2 -- マップ守護（森） レベル2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Map Guardian (Forest) Level 3 -- マップ守護（森） レベル3"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Map Guardian (Forest) Level 4 -- マップ守護（森） レベル4"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Map Guardian (Forest) Level 5 -- マップ守護（森） レベル5"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Map Guardian (Forest) Level 6 -- マップ守護（森） レベル6"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Map Guardian (Forest) Level 7 -- マップ守護（森） レベル7"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Map Guardian (Forest) Level 8 -- マップ守護（森） レベル8"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Map Guardian (Forest) Level 9 -- マップ守護（森） レベル9"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Map Guardian (Forest) Level 10 -- マップ守護（森） レベル10"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Map Guardian (Anor) Level 1 -- マップ守護（アノール） レベル1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Map Guardian (Anor) Level 2 -- マップ守護（アノール） レベル2"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Map Guardian (Anor) Level 3 -- マップ守護（アノール） レベル3"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Map Guardian (Anor) Level 4 -- マップ守護（アノール） レベル4"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Map Guardian (Anor) Level 5 -- マップ守護（アノール） レベル5"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Map Guardian (Anor) Level 6 -- マップ守護（アノール） レベル6"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Map Guardian (Anor) Level 7 -- マップ守護（アノール） レベル7"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Map Guardian (Anor) Level 8 -- マップ守護（アノール） レベル8"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Map Guardian (Anor) Level 9 -- マップ守護（アノール） レベル9"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Map Guardian (Anor) Level 10 -- マップ守護（アノール） レベル10"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Red hunting level 1 -- 赤狩り レベル1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Red hunting level 2 -- 赤狩り レベル2"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Red hunting level 3 -- 赤狩り レベル3"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Red hunting level 4 -- 赤狩り レベル4"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Red hunting level 5 -- 赤狩り レベル5"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Red hunting level 6 -- 赤狩り レベル6"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Red hunting level 7 -- 赤狩り レベル7"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Red hunting level 8 -- 赤狩り レベル8"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Red hunting level 9 -- 赤狩り レベル9"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Red hunting level 10 -- 赤狩り レベル10"
+      ]
+    }
+  ]
+}

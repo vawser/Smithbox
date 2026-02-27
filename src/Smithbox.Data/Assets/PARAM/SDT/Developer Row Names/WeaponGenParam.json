@@ -1,0 +1,35 @@
+{
+  "Name": "WeaponGenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "I&#39;m afraid -- ふしくれたえだ"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "[For prototype] Torch -- 【プロト用】松明"
+      ]
+    },
+    {
+      "ID": 91000,
+      "Entries": [
+        "[For prototype] Orb -- 【プロト用】オーブ"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Long sword -- ロングソード"
+      ]
+    },
+    {
+      "ID": 1450000,
+      "Entries": [
+        "shield -- 盾"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "Name": "GrassLodRangeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Global settings -- 全体設定"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Grass_Large -- 草_大"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Grass_small -- 草_小"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Game grass -- ゲーム草"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Nezasa -- ネザサ"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Miscanthus (specify angle) -- ススキ（角度指定）"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "General purpose test -- 汎用テスト"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Castle -- 城下"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Honjo -- 本城"
+      ]
+    }
+  ]
+}

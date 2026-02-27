@@ -1,0 +1,281 @@
+{
+  "Name": "FootSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "stone -- 石"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Stone (dusty) -- 石(埃多い)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "soil -- 土"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "wood -- 木材"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Grassland -- 草地"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "magma -- マグマ"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Tree -- 樹木"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Straw (soft) -- 藁（柔）"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Straw (hard) -- 藁（硬）"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "flesh and blood -- 血肉"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "sand -- 砂"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Roof tile -- 屋根瓦"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "cloth -- 布"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Fallen leaves -- 落ち葉"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "bell -- 鐘"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (about a puddle) -- 水（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (about ankle) -- 水（足首程度）"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (below the knee) -- 水（膝下）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poison swamp (shallow) -- 毒沼（浅い）"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Poison swamp (deep) -- 毒沼（深い）"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Poison swamp (below the knee) -- 毒沼（膝下）"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Poison swamp (about a puddle) -- 毒沼（水溜まり程度）"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "mud -- 泥"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "carpet -- 絨毯"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "snow -- 雪"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Bushes -- 茂み"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Wood_indoor -- 木材_屋内"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Autumn leaves -- 紅葉"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "ice -- 氷"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Running water_step -- 流水_歩"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Running water_swimming -- 流水_泳"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Grass (water) _ step -- 草（水）_歩"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Grass (water) _ swimming -- 草（水）_泳"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Very poisonous swamp (waist and above) -- 猛毒沼（腰以上）"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "cloud -- 雲"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Basilica Church Water Poison -- 聖堂教会水面 毒"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Anor Boss Room Poison -- アノールボス部屋 毒"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Soil (underwater) -- 土（水中）"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Stone (underwater) -- 石（水中）"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Tree (underwater) -- 木（水中）"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "cloud -- 雲"
+      ]
+    }
+  ]
+}

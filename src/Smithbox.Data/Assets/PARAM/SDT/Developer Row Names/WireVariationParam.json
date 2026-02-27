@@ -1,0 +1,275 @@
+{
+  "Name": "WireVariationParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Ride _ no limit -- 乗れる_制限なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Ride _ vertical and horizontal restrictions -- 乗れる_縦横制限"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Ride _ vertical limit -- 乗れる_縦制限"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Ride _ horizontal limit -- 乗れる_横制限"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Ride _ vertical and horizontal restrictions _ extension 10 -- 乗れる_縦横制限_延長10"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "I can&#39;t ride _ no limit -- 乗れない_制限なし"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "I can&#39;t ride _ vertical and horizontal restrictions -- 乗れない_縦横制限"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "I can&#39;t ride _ vertical limit -- 乗れない_縦制限"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "I can&#39;t ride _ horizontal limit -- 乗れない_横制限"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "I can&#39;t ride _ Castle Snake Valley -- 乗れない_城下蛇谷"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Kite_temple ← → valley -- 凧_寺←→渓谷"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Kite_Honjo_Honmaru ← → Honjo_Outer -- 凧_本城_本丸←→本城_外郭"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Tentacle scaffolding_mermaid dragon battle -- 触手足場_人魚竜戦"
+      ]
+    },
+    {
+      "ID": 10700,
+      "Entries": [
+        "c1070_ Shura Samurai 0 -- c1070_修羅侍0"
+      ]
+    },
+    {
+      "ID": 10701,
+      "Entries": [
+        "c1070_ Shura Samurai 1 -- c1070_修羅侍1"
+      ]
+    },
+    {
+      "ID": 10702,
+      "Entries": [
+        "c1070_ Shura Samurai 2 -- c1070_修羅侍2"
+      ]
+    },
+    {
+      "ID": 10800,
+      "Entries": [
+        "c1080_ Seven-sided warrior 0 -- c1080_七面武者0"
+      ]
+    },
+    {
+      "ID": 10801,
+      "Entries": [
+        "c1080_ Seven-sided warrior 1 -- c1080_七面武者1"
+      ]
+    },
+    {
+      "ID": 10802,
+      "Entries": [
+        "c1080_ Seven-sided warrior 2 -- c1080_七面武者2"
+      ]
+    },
+    {
+      "ID": 11800,
+      "Entries": [
+        "c1180_ younger man -- c1180_下男"
+      ]
+    },
+    {
+      "ID": 13700,
+      "Entries": [
+        "c1370 Fire cow only 0 -- c1370火牛専用0"
+      ]
+    },
+    {
+      "ID": 13701,
+      "Entries": [
+        "c1370 Fire cow only 1 -- c1370火牛専用1"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "c5020 Red demon only 0 -- c5020赤鬼専用0"
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        "c5020 Red Demon Only 1 -- c5020赤鬼専用1"
+      ]
+    },
+    {
+      "ID": 50202,
+      "Entries": [
+        "c5020 Red Demon Only 2 -- c5020赤鬼専用2"
+      ]
+    },
+    {
+      "ID": 50600,
+      "Entries": [
+        "c5060_ Ninja Army Chief 0 -- c5060_忍軍の長0"
+      ]
+    },
+    {
+      "ID": 50601,
+      "Entries": [
+        "c5060_ Ninja Army Chief 1 -- c5060_忍軍の長1"
+      ]
+    },
+    {
+      "ID": 50602,
+      "Entries": [
+        "c5060_ Ninja Army Chief 2 -- c5060_忍軍の長2"
+      ]
+    },
+    {
+      "ID": 50800,
+      "Entries": [
+        "c5080 Horse-riding warrior only 0 -- c5080騎馬武者専用0"
+      ]
+    },
+    {
+      "ID": 50801,
+      "Entries": [
+        "c5080 Horse-riding warrior only 1 -- c5080騎馬武者専用1"
+      ]
+    },
+    {
+      "ID": 50802,
+      "Entries": [
+        "c5080 Horse-riding warrior only 2 -- c5080騎馬武者専用2"
+      ]
+    },
+    {
+      "ID": 50803,
+      "Entries": [
+        "c5080 Horse-riding warrior only 3 -- c5080騎馬武者専用3"
+      ]
+    },
+    {
+      "ID": 50804,
+      "Entries": [
+        "c5080 Horse-riding warrior only 4 -- c5080騎馬武者専用4"
+      ]
+    },
+    {
+      "ID": 51000,
+      "Entries": [
+        "c5100 For Yasha Ape only -- c5100夜叉猿専用"
+      ]
+    },
+    {
+      "ID": 52000,
+      "Entries": [
+        "c5200 Mermaid dragon only 0 -- c5200人魚竜専用0"
+      ]
+    },
+    {
+      "ID": 52001,
+      "Entries": [
+        "c5200 Mermaid Dragon Only 1 -- c5200人魚竜専用1"
+      ]
+    },
+    {
+      "ID": 52005,
+      "Entries": [
+        "c5200 Mermaid Dragon Only 5 -- c5200人魚竜専用5"
+      ]
+    },
+    {
+      "ID": 52006,
+      "Entries": [
+        "c5200 Mermaid Dragon Only 6 -- c5200人魚竜専用6"
+      ]
+    },
+    {
+      "ID": 53100,
+      "Entries": [
+        "c5310 tentacles -- c5310触手"
+      ]
+    },
+    {
+      "ID": 53200,
+      "Entries": [
+        "c5320 Okiryu (Large) Exclusive 0 -- c5320翁竜（大）専用0"
+      ]
+    },
+    {
+      "ID": 53201,
+      "Entries": [
+        "c5320 Okiryu (Large) Exclusive 1 -- c5320翁竜（大）専用1"
+      ]
+    },
+    {
+      "ID": 53202,
+      "Entries": [
+        "c5320 Okiryu (Large) Exclusive 2 -- c5320翁竜（大）専用2"
+      ]
+    },
+    {
+      "ID": 70200,
+      "Entries": [
+        "c7020 Buddhist demon only 0 -- c7020仏師鬼専用0"
+      ]
+    },
+    {
+      "ID": 70201,
+      "Entries": [
+        "c7020 Buddhist demon only 1 -- c7020仏師鬼専用1"
+      ]
+    },
+    {
+      "ID": 70210,
+      "Entries": [
+        "c7021 Demon Buddha only -- c7021鬼仏専用"
+      ]
+    }
+  ]
+}
