@@ -4,391 +4,391 @@
     {
       "ID": 0,
       "Entries": [
-        "Lightweight -- 軽量"
+        "Lightweight"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Lightweight + -- 軽量＋"
+        "Lightweight+"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "Medium Amount -- 中量"
+        "Medium Weight"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "Medium Amount + -- 中量＋"
+        "Medium Weight+"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Weight -- 重量"
+        "Heavyweight"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "Over weight -- 重量オーバー"
+        "Encumbered"
       ]
     },
     {
       "ID": 16,
       "Entries": [
-        "Super light -- 超軽量"
+        "Super Lightweight (Dark Wood Grain Ring)"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Mimicry _ Light Weight -- 擬態_軽量"
+        "Mimicry - Lightweight"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Mimicry _ lightweight + -- 擬態_軽量＋"
+        "Mimicry - Lightweight+"
       ]
     },
     {
       "ID": 25,
       "Entries": [
-        "Mimicry _ Medium Volume -- 擬態_中量"
+        "Mimicry - Medium Weight"
       ]
     },
     {
       "ID": 26,
       "Entries": [
-        "Mimicry _ Medium Amount + -- 擬態_中量＋"
+        "Mimicry - Medium Weight+"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        "Mimicry weight -- 擬態_重量"
+        "Mimicry - Heavyweight"
       ]
     },
     {
       "ID": 35,
       "Entries": [
-        "Mimicry _ over Weight -- 擬態_重量オーバー"
+        "Mimicry - Encumbered"
       ]
     },
     {
       "ID": 36,
       "Entries": [
-        "Mimicry _ ultra-light -- 擬態_超軽量"
+        "Mimicry - Super Lightweight (Dark Wood Grain Ring)"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "Underwater (deep) _ Lightweight -- 水中（深）_軽量"
+        "Water (deep) - Lightweight"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "Underwater (deep) _ Lightweight + -- 水中（深）_軽量＋"
+        "Water (deep) - Lightweight+"
       ]
     },
     {
       "ID": 45,
       "Entries": [
-        "Underwater (deep) _ Medium volume -- 水中（深）_中量"
+        "Water (deep) - Medium Weight"
       ]
     },
     {
       "ID": 46,
       "Entries": [
-        "Underwater (deep) _ Medium Volume + -- 水中（深）_中量＋"
+        "Water (deep) - Medium Weight+"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Underwater (deep) _ Weight -- 水中（深）_重量"
+        "Water (deep) - Heavyweight"
       ]
     },
     {
       "ID": 55,
       "Entries": [
-        "Underwater (deep) _ Over weight -- 水中（深）_重量オーバー"
+        "Water (deep) - Encumbered"
       ]
     },
     {
       "ID": 56,
       "Entries": [
-        "Underwater (deep) _ Ultra-Light -- 水中（深）_超軽量"
+        "Water (deep) - Super Lightweight (Dark Wood Grain Ring)"
       ]
     },
     {
       "ID": 60,
       "Entries": [
-        "【 SP 】 Guard Vigilance _ Lightweight -- 【SP】ガード警戒_軽量"
+        "Iron Flesh - Lightweight"
       ]
     },
     {
       "ID": 61,
       "Entries": [
-        "【 SP 】 Guard Vigilance _ lightweight + -- 【SP】ガード警戒_軽量＋"
+        "Iron Flesh - Lightweight+"
       ]
     },
     {
       "ID": 65,
       "Entries": [
-        "【 SP 】 Guard Vigilance _ medium volume -- 【SP】ガード警戒_中量"
+        "Iron Flesh - Medium Weight"
       ]
     },
     {
       "ID": 66,
       "Entries": [
-        "【 SP 】 Guard Vigilance _ Medium Amount + -- 【SP】ガード警戒_中量＋"
+        "Iron Flesh - Medium Weight+"
       ]
     },
     {
       "ID": 70,
       "Entries": [
-        "【 SP 】 Guard Vigilance _ Weight -- 【SP】ガード警戒_重量"
+        "Iron Flesh - Heavyweight"
       ]
     },
     {
       "ID": 75,
       "Entries": [
-        "[SP] Guard vigilance _ over weight -- 【SP】ガード警戒_重量オーバー"
+        "Iron Flesh - Encumbered"
       ]
     },
     {
       "ID": 76,
       "Entries": [
-        "[SP] Guard Vigilance _ ultra-light -- 【SP】ガード警戒_超軽量"
-      ]
-    },
-    {
-      "ID": 1001,
-      "Entries": [
-        "プレイヤー重量"
-      ]
-    },
-    {
-      "ID": 1002,
-      "Entries": [
-        "プレイヤー重量過多"
-      ]
-    },
-    {
-      "ID": 1003,
-      "Entries": [
-        "プレイヤー瀕死"
-      ]
-    },
-    {
-      "ID": 1004,
-      "Entries": [
-        "プレイヤー血沼（重量過多）"
-      ]
-    },
-    {
-      "ID": 1005,
-      "Entries": [
-        "プレイヤー毒沼（移動速度低下）"
-      ]
-    },
-    {
-      "ID": 1006,
-      "Entries": [
-        "プレイヤー超重量移動"
-      ]
-    },
-    {
-      "ID": 1010,
-      "Entries": [
-        "プレイヤー通常_擬態"
-      ]
-    },
-    {
-      "ID": 1011,
-      "Entries": [
-        "プレイヤー重量_擬態"
-      ]
-    },
-    {
-      "ID": 1012,
-      "Entries": [
-        "プレイヤー重量過多_擬態"
-      ]
-    },
-    {
-      "ID": 1013,
-      "Entries": [
-        "プレイヤー超重量移動_擬態"
-      ]
-    },
-    {
-      "ID": 1020,
-      "Entries": [
-        "プレイヤー通常_水中（深）"
-      ]
-    },
-    {
-      "ID": 1021,
-      "Entries": [
-        "プレイヤー重量_水中（深）"
-      ]
-    },
-    {
-      "ID": 1022,
-      "Entries": [
-        "プレイヤー重量過多_水中（深）"
-      ]
-    },
-    {
-      "ID": 1023,
-      "Entries": [
-        "プレイヤー超重量移動_水中（深）"
+        "Iron Flesh - Super Lightweight (Dark Wood Grain Ring)"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Enemy Base Combat -- 敵基本\u3000戦闘時"
+        "DeS Base Enemy Combat"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Bird Standard -- 鳥標準"
+        "DeS Bird Standard"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Guard -- ガード"
+        "DeS Guard"
       ]
     },
     {
       "ID": 103,
       "Entries": [
-        "Dog -- 犬"
+        "DeS Dog"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Dragon Demon -- ドラゴンデーモン"
+        "DeS Dragon God"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Enemy base non-combat time -- 敵基本\u3000非戦闘時"
+        "DeS Base Enemy Non-combat Time"
       ]
     },
     {
       "ID": 106,
       "Entries": [
-        "Scale miners during combat -- ウロコ鉱夫\u3000戦闘時"
+        "DeS Scale Miner Combat"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "Scales Miners Non-combat (bag) -- ウロコ鉱夫\u3000非戦闘時（袋）"
+        "DeS Scale Miner Non-combat (Bag)"
       ]
     },
     {
       "ID": 108,
       "Entries": [
-        "Scales Miners Non-combat (pick) -- ウロコ鉱夫\u3000非戦闘時（ピックル）"
+        "DeS Scale Miner Non-combat (Pickaxe)"
       ]
     },
     {
       "ID": 109,
       "Entries": [
-        "Big Spider Peeping -- 大蜘蛛\u3000のぞき込み"
+        "DeS Armor Spider Peeking (??)"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Gargoyletest -- ガーゴイルテスト"
+        "DeS Gargoyle Test"
       ]
     },
     {
       "ID": 111,
       "Entries": [
-        "Dragon Demon (mine) -- ドラゴンデーモン（坑道）"
+        "DeS Dragon God (Stonefang Tunnel)"
       ]
     },
     {
       "ID": 112,
       "Entries": [
-        "For the beast of the Storm -- 嵐の獣用"
+        "DeS Storm King"
       ]
     },
     {
       "ID": 113,
       "Entries": [
-        "Storm Beast (CUB) Bichibichi wait -- 嵐の獣（子エイ）ビチビチ待機"
+        "DeS Storm King (Child) Bichibichi Wait"
       ]
     },
     {
       "ID": 114,
       "Entries": [
-        "Scales Miners Non-combat (bare hands) -- ウロコ鉱夫\u3000非戦闘時（素手）"
+        "DeS Scale Miner Non-combat (Bare Hand)"
       ]
     },
     {
       "ID": 115,
       "Entries": [
-        "Octopus head when fighting -- タコ頭 \u3000戦闘時"
+        "DeS Mind Flayer Combat"
       ]
     },
     {
       "ID": 116,
       "Entries": [
-        "Gargoyle aerial (for 3050) -- ガーゴイル空中（3050用）"
+        "DeS Gargoyle Air (for 3050)"
       ]
     },
     {
       "ID": 117,
       "Entries": [
-        "Gargoyle Ground (for 3050) -- ガーゴイル地上（3050用）"
+        "DeS Gargoyle Ground (for 3050)"
       ]
     },
     {
       "ID": 118,
       "Entries": [
-        "Shadow woman _ for disappearing -- 影女＿消える用"
+        "DeS Shadowlurker (Female)? (For Disappearing)"
       ]
     },
     {
       "ID": 119,
       "Entries": [
-        "Blood mites only -- 血ダニ専用"
+        "DeS For Blood Mites (Giant Tick?)"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "Paris AIM -- パリィ狙い"
+        "Paris (Pharis?) Aim"
       ]
     },
     {
       "ID": 121,
       "Entries": [
-        "[DLC] Enemy Basic combat (running/swirling anime without version) -- 【DLC】敵基本\u3000戦闘時（走行／旋回アニメなしバージョン）"
+        "[DLC] Base Enemy Combat (No Running/Turning Animation)"
       ]
     },
     {
       "ID": 900,
       "Entries": [
-        "Four-legged type for PG -- PG用4足タイプ"
+        "Quadruped for PG"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[UNUSED] DeS Player - Heavyweight"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[UNUSED] DeS Player - Encumbered"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[UNUSED] DeS Player - Dying?"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[UNUSED] DeS Player - Blood Swamp, Encumbered"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "[UNUSED] DeS Player - Poison Swamp, Movespeed decrease"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "[UNUSED] Player - Super Lightweight"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[UNUSED] Player - Standard (Mimicry)"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[UNUSED] Player - Heavyweight (Mimicry)"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "[UNUSED] Player - Encumbered (Mimicry)"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "[UNUSED] Player - Super Lightweight (Mimicry)"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[UNUSED] Player - Standard (Deep Water)"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "[UNUSED] Player - Heavyweight (Deep Water)"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "[UNUSED] Player - Encumbered (Deep Water)"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "[UNUSED] Player - Super Lightweight (Deep Water)"
       ]
     }
   ]
