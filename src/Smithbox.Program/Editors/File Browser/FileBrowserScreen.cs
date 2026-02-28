@@ -74,12 +74,12 @@ public class FileBrowserScreen : EditorScreen
         {
             if (ImGui.MenuItem($"View Game Directory"))
             {
-                Process.Start("explorer.exe", Project.Descriptor.DataPath);
+                StudioCore.Common.FileExplorer.Start(Project.Descriptor.DataPath);
             }
 
             if (ImGui.MenuItem($"View Project Directory"))
             {
-                Process.Start("explorer.exe", Project.Descriptor.ProjectPath);
+                StudioCore.Common.FileExplorer.Start(Project.Descriptor.ProjectPath);
             }
 
             ImGui.EndMenu();

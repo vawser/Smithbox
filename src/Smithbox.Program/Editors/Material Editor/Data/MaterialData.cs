@@ -83,7 +83,7 @@ public class MaterialData : IDisposable
         MaterialDisplayConfiguration = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MATERIAL", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "MATERIAL", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Display Configuration.json");
 
         var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "MATERIAL", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));

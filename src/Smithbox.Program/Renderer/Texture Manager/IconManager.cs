@@ -60,7 +60,7 @@ public class IconManager
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
         // Instead of icon config, we search the layout folder directly
-        var layouts = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType), "Icon Layouts");
+        var layouts = Path.Combine(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType), "Icon Layouts");
 
         var key = $"icon_{context.ID}_{columnIndex}_{fieldName}_{fieldValue}";
 

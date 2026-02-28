@@ -70,7 +70,7 @@ public class ProjectData : IDisposable
 
         HashSet<string> sourceDirectories =
         [
-            Path.Join(AppContext.BaseDirectory, "Assets", "Aliases", 
+            Path.Join(StudioCore.Common.FileLocations.Assets, "Aliases", 
             ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType)),
             Path.Join(Project.Descriptor.ProjectPath,".smithbox","Assets","Aliases")
         ];
@@ -123,7 +123,7 @@ public class ProjectData : IDisposable
         ProjectEnums = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
 
         var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Project");

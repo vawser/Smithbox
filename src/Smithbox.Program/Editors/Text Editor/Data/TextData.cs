@@ -104,7 +104,7 @@ public class TextData : IDisposable
 
         await Task.Yield();
 
-        var folder = @$"{AppContext.BaseDirectory}/Assets/FMG/{ProjectUtils.GetGameDirectory(Project)}";
+        var folder = @$"{StudioCore.Common.FileLocations.Assets}/FMG/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, jsonName);
 
         if (File.Exists(file))
