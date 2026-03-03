@@ -251,7 +251,14 @@ public class FmgImporter
                 {
                     using (var stream = File.OpenRead(path))
                     {
-                        wrapper = JsonSerializer.Deserialize(stream, StoredContainerWrapperSerializationContext.Default.StoredFmgContainer);
+                        try
+                        {
+                            wrapper = JsonSerializer.Deserialize(stream, StoredContainerWrapperSerializationContext.Default.StoredFmgContainer);
+                        }
+                        catch
+                        {
+                            continue;
+                        }
                     }
                 }
 
