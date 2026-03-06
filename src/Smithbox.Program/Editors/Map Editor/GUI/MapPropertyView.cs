@@ -1472,6 +1472,19 @@ public class MapPropertyView
                     isChanged = true;
                 }
             }
+            else if (typ.GetEnumUnderlyingType() == typeof(sbyte))
+            {
+                for (var i = 0; i < enumVals.Length; i++)
+                {
+                    intVals[i] = (sbyte)enumVals.GetValue(i);
+                }
+
+                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+            }
             else if (typ.GetEnumUnderlyingType() == typeof(int))
             {
                 for (var i = 0; i < enumVals.Length; i++)
