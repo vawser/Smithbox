@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
-  <Self />
+  <Field>
+    <groundCostScale AltName="Ground Node Cost Multiplier" Wiki="Multiplier to apply to grounded pathfinding." />
+	<airCostScale AltName="Air Node Cost Multiplier" Wiki="Multiplier to apply to airborne pathfinding." />
+	<reserved4 padding="" />
+  </Field>
+  <Self Wiki="Defines how much it costs an enemy to pathfind in the air or the ground. Higher cost means less likely pathfinding." />
 </PARAMMETA>

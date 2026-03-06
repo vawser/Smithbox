@@ -15,8 +15,9 @@
   </Enums>
   <Field>
     <pad1 Padding=""/>
-    <tokenGradeType AltName="Grade" Enum="PARTS_TOKEN_GRADE_TYPE" />
-    <tokenUsageType AltName="Usage Type" Enum="PARTS_TOKEN_USAGE_TYPE" />
+	<point AltName="Loghunt Points" Wiki="Points awarded to your mercenary rank (loghunt)" />
+    <grade AltName="Grade" Wiki="Menu display category." Enum="PARTS_TOKEN_GRADE_TYPE" />
+    <usage AltName="Acquisition Type" Wiki="Acquisition type of the part." Enum="PARTS_TOKEN_USAGE_TYPE" />
     <pad2 Padding=""/>
     <pad3 Padding=""/>
     <pad4 Padding=""/>

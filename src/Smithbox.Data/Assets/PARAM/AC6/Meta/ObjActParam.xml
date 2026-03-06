@@ -21,6 +21,7 @@
     <pad1 AltName="" Padding=""/>
     <actionButtonParamId AltName="Action Button Param ID" Wiki="Action button parameter ID" Refs="ActionButtonParam" />
     <enableTreasureDelaySec AltName="Treasure Enable Delay" Wiki="The number of seconds from the execution of the object action to the activation of the treasure. A setting exclusively for the object type treasure box of the object act." />
+    <pad2 AltName="" Padding=""/>
   </Field>
   <Self Wiki="Determines the configuration of ObjAct instances."/>
 </PARAMMETA>

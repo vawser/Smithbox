@@ -1,5 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
-  <Self />
+  <Field>
+    <moveMaxSpeedKMPH_H AltName="Maximum Horizontal Speed" Wiki="In km/h" />
+	<moveAccelMPSS_H AltName="Horizontal Acceleration" Wiki="m/s^2" />
+	<moveMaxSpeedKMPH_V AltName="Maximum Vertical Speed" Wiki="In km/h" />
+	<moveAccelMPSS_V AltName="Vertical Acceleration" Wiki="m/s^2" />
+	<flyHorizontalBrakeMPSS AltName="Horizontal Flight Braking Speed" Wiki="Braking when exceeding the maximum airborne horizontal speed, in m/s^2" />
+	<flyVerticalBrakeMPSS AltName="Vertical Flight Braking Speed" Wiki="Braking when exceeding the maximum airborne vertical speed, in m/s^2" />
+	<realVelocityFeedBackRate AltName="Actual Movement Reflection %" Wiki="The smaller this value, the greater the sense of weight." />
+	<landDeadBrakeMPSS AltName="Ground Brake At Death" Wiki="m/s^2" />
+	<flyDeadBrakeMPSS AltName="Air Brake At Death" Wiki="m/s^2" />
+	<damageBrake_BeginBrakeMPSS AltName="Damage Brake: Start" Wiki="m/s^2" />
+	<damageBrake_PeakBrakeMPSS AltName="Damage Brake: End" Wiki="m/s^2" />
+	<damageBrake_BeginToPeakTimeSec AltName="Damage Brake: Duration" Wiki="Time from damage brake start to end, in seconds." />
+	<damageBrake_TimerResetDelayTime AltName="Damage Brake: Reset Delay" Wiki="Time from when knockback speed reaches 0 until the damage brake timer resets." />
+	<minAnimMoveAccelMPSS AltName="Minimum Move Acceleration" Wiki="Minimum garaunteed acceleration during movement animation, in m/s^2" />
+	<SlowBrakeAnimKMPH AltName="Slow-Speed Brake Threshold" Wiki="Switches to slow-speed braking when the horizontal speed is below this value." />
+	<blowDeadBrake_BeginBrakeMPSS AltName="Blow Dead Brake: Start" Wiki="m/s^2" />
+	<blowDeadBrake_PeakBrakeMPSS AltName="Blow Dead Brake: End" Wiki="m/s^2" />
+	<blowDeadBrake_BeginToPeakTimeSec AltName="Blow Dead Brake: Duration" Wiki="Time from blow dead brake start to end, in seconds." />
+	<blowDeadBrake_TimerResetDelayTime AltName="Blow Dead Brake: Reset Delay" Wiki="Time from when knockback speed reaches 0 until the blow dead brake timer resets." />
+	<pad_end Padding="" />
+  </Field>
+  <Self Wiki="Defines enemy flight parameters." />
 </PARAMMETA>

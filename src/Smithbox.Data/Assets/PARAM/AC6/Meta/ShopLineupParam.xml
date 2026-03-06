@@ -13,6 +13,14 @@
     <Enum Name="SHOP_LINEUP_COSTTYPE" type="u8">
         <Option Value="0" Name="COAM" />
     </Enum>
+	<Enum Name="SHOP_LINEUP_TYPE" type="u8">
+        <Option Value="0" Name="Standard" />
+		<Option Value="1" Name="Enhancement Shop" />
+		<Option Value="2" Name="Magic Shop" />
+		<Option Value="3" Name="Miracle Shop" />
+		<Option Value="4" Name="Information Shop" />
+		<Option Value="5" Name="SAN Value Shop" />
+    </Enum>
   </Enums>
   <Field>
     <equipId AltName="Reference ID" Wiki="ID of the equipment for sale" Refs="EquipParamGoods(equipType=3),EquipParamProtector(equipType=1),EquipParamWeapon(equipType=0),EquipParamAccessory(equipType=2),EquipParamBooster(equipType=4),EquipParamFcs(equipType=5),EquipParamGenerator(equipType=6)" />
@@ -21,6 +29,9 @@
     <eventFlag_forStock AltName="Quantity - Event Flag ID" Wiki="Event flag value that holds the number" FlagAlias="" />
     <eventFlag_forRelease AltName="Visibility - Event Flag ID" Wiki="Sales ban event flag" FlagAlias="" />
     <sellQuantity AltName="Amount to Sell" Wiki="Number of units sold" />
+	<shopType AltName="Shop Type" Wiki="Type of shop." Enum="SHOP_LINEUP_TYPE" />
+	<value_SAN AltName="Selling Prince {SAN)" Wiki="SAN value of this item." />
+	
     <equipType AltName="Equipment Type" Wiki="Types of equipment for sale" Enum="SHOP_LINEUP_EQUIPTYPE" />
     <costType AltName="Currency Type" Wiki="Price type. Applies only when overwriting the selling price" Enum="SHOP_LINEUP_COSTTYPE" />
     <setNum AltName="Amount on Purchase" Wiki="Number of sets sold. Number of pieces you can get with one purchase (default: 1)" />
@@ -29,5 +40,5 @@
     <pad3 Padding="" />
     <pad1 Padding="" />
   </Field>
-  <Self />
+  <Self Wiki="Defines some shop-related settings for purchasable itels. Made largely obsolete by EquipmentLineupParam." />
 </PARAMMETA>

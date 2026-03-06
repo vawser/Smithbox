@@ -17,5 +17,5 @@
     <pair4_Weight AltName="Weighting Value [4]" Wiki="" />
     
   </Field>
-  <Self />
+  <Self Wiki="Defines how likely different parts are to break." />
 </PARAMMETA>

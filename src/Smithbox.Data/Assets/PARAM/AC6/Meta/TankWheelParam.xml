@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
-  <Self />
+  <Field>
+    <AttachPos_X AltName="Attachment Position (X)" Wiki="X-axis wheel attachment position, in meters" />
+	<AttachPos_Y AltName="Attachment Position (Y)" Wiki="Y-axis wheel attachment position, in meters" />
+	<AttachPos_Z AltName="Attachment Position (Z)" Wiki="Z-axis wheel attachment position, in meters" />
+	<radius AltName="Wheel Radius" Wiki="Radius of the wheel, in meters" />
+	<suspensionLength AltName="Suspension Length" Wiki="Length of the suspension, in meters" />
+	<splingFactor AltName="Spring Strength" Wiki="Strength of the spring(s)" />
+	<compressPow AltName="Rebound Strength" Wiki="Strength at which the spring attempts to return to its original length when compressed" />
+	<relaxPow AltName="Retraction Strength" Wiki="Strength at which the spring attempts to return to its original length when stretched" />
+	<pad7 padding="" />
+  </Field>
+  <Self Wiki="Defines parameters relaed to tank wheels." />
 </PARAMMETA>

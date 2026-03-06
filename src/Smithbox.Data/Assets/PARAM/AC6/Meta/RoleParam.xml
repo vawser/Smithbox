@@ -60,6 +60,8 @@
     <signPhantomId AltName="Ghost Phantom ID" Wiki="Multiplayer pledge ghost body sign phantom ID designation for illusion" />
     <nonPlayerSummonStartAnimId AltName="NPC Summon Start - Animation ID" Wiki="Anime ID to play when a player other than the player is summoned and the game starts" />
     <pad2 AltName="" Padding=""/>
+	<pad3 AltName="" Padding=""/>
+	<teamTypeByGiantNut AltName="Team Type (Giant Seed)" Wiki="Team type to switch to during Giant Seed use." Enum="TEAM_TYPE" />
   </Field>
-  <Self />
+  <Self Wiki="Defines some fields relating to phantoms and spirits. Unused in AC6." />
 </PARAMMETA>
