@@ -30,6 +30,8 @@ public class TexInternalFileList
 
         if (Parent.Selection.SelectedBinder != null)
         {
+            int index = 0;
+
             foreach (var entry in Parent.Selection.SelectedBinder.Files)
             {
                 var file = entry.Key;
@@ -50,6 +52,7 @@ public class TexInternalFileList
                     {
                         Parent.Selection.SelectTpfFile(entry.Key, entry.Value);
                         Parent.Editor.ViewHandler.ActiveView = Parent;
+                        Parent.Selection.AutoSelectTexture = true;
                     }
 
                     // Arrow Selection
@@ -57,6 +60,7 @@ public class TexInternalFileList
                     {
                         Parent.Selection.SelectTpf = false;
                         Parent.Selection.SelectTpfFile(entry.Key, entry.Value);
+                        Parent.Selection.AutoSelectTexture = true;
                     }
 
                     if (ImGui.IsItemFocused())
@@ -66,7 +70,17 @@ public class TexInternalFileList
                             Parent.Selection.SelectTpf = true;
                         }
                     }
+
+                    if (index == 0 && Parent.Selection.AutoSelectTpf)
+                    {
+                        Parent.Selection.AutoSelectTpf = false;
+                        Parent.Selection.SelectTpfFile(entry.Key, entry.Value);
+                        Parent.Editor.ViewHandler.ActiveView = Parent;
+                        Parent.Selection.AutoSelectTexture = true;
+                    }
                 }
+
+                index++;
             }
         }
 

@@ -32,6 +32,9 @@ public class TexViewSelection
     public bool SelectTpf = false;
     public bool SelectTexture = false;
 
+    public bool AutoSelectTpf = false;
+    public bool AutoSelectTexture = false;
+
     // Texture Viewport
     public Vector2 TextureViewWindowPosition = new Vector2(0, 0);
     public Vector2 TextureViewScrollPosition = new Vector2(0, 0);
