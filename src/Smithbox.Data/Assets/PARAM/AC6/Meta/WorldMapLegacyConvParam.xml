@@ -19,5 +19,5 @@
     <pad3 AltName="" Padding=""/>
     <pad4 AltName="" Padding=""/>
   </Field>
-  <Self />
+  <Self Wiki="Defines connection points for different maps. Unused in AC6." />
 </PARAMMETA>

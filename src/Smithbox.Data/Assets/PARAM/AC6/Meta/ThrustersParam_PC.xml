@@ -720,5 +720,5 @@
     <hovertTankGroundWaterShallow_Scale AltName="Hover Tank Ground [Shallow Water]: SFX Scale" Wiki="SFX scale value" />
     
   </Field>
-  <Self />
+  <Self Wiki="Defines where certain particles should appear under various circumstances. For ACs."  />
 </PARAMMETA>
