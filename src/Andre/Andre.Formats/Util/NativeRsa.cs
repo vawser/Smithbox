@@ -14,7 +14,7 @@ namespace Andre.Formats.Util
     /// </summary>
     internal partial class NativeRsa
     {
-        private const string Dll = "bhd5_decrypt_rust.dll";
+        private const string Dll = "bhd5_decrypt_rust";
 
         private enum Bhderr : int
         {

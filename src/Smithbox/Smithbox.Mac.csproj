@@ -1,0 +1,107 @@
+<Project Sdk="Microsoft.NET.Sdk" InitialTargets="Init">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Smithbox</AssemblyName>
+    <ApplicationId>com.vawser.Smithbox</ApplicationId>
+    <TargetFramework>net9.0-macos</TargetFramework>
+    <Authors>Katalash, Vawser</Authors>
+    <Version>2.1.3</Version>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <PackageVersion>2.1.0</PackageVersion>
+    <AssemblyVersion>2.1.3</AssemblyVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <LangVersion>12</LangVersion>
+    <IsPackable>false</IsPackable>
+    <SelfContained>true</SelfContained>
+    <Platforms>AnyCPU;x64</Platforms>
+    <RuntimeIdentifiers Condition="'$(Platform)'=='AnyCPU'">osx-arm64;osx-x64</RuntimeIdentifiers>
+    <RuntimeIdentifier Condition="'$(Platform)'=='x64'">osx-x64</RuntimeIdentifier>
+    <SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
+    <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
+    <RootNamespace>StudioCore</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>$(Platform)</PlatformTarget>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>$(Platform)</PlatformTarget>
+  </PropertyGroup>
+
+  <!-- Required for XCode 16+ builds -->
+  <ItemGroup>
+    <_CustomLinkFlags Include="-ld64;-undefined;dynamic_lookup" Visible="false" />
+  </ItemGroup>
+  <PropertyGroup>
+    <ValidateXcodeVersion>false</ValidateXcodeVersion>
+    <_UseClassicLinker>true</_UseClassicLinker>
+    <ProductDefinition>ProductDefinition.plist</ProductDefinition>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <VULKAN_SDK Condition="'$(VULKAN_SDK)' == ''">/path/to/VulkanSDK/Version</VULKAN_SDK>
+    <MoltenVKPath Condition="'$(MoltenVKPath)' == ''">$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib</MoltenVKPath>
+    <OodlePath Condition="'$(OodlePath)' == ''">/path/to/oodle.dylib</OodlePath>
+    <RustDllPath>../Andre/Andre.Formats/libbhd5_decrypt_rust.dylib</RustDllPath>
+    <TracyPath>../Tracy/libTracyClient.dylib</TracyPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <NativeReference Include="$(MoltenVKPath)" Kind="Dynamic" />
+    <NativeReference Include="$(OodlePath)" Kind="Dynamic" Condition="Exists('$(OodlePath)')" />
+    <NativeReference Include="$(RustDllPath)" Kind="Dynamic" Condition="Exists('$(RustDllPath)')" />
+    <NativeReference Include="$(TracyPath)" Kind="Dynamic" />
+    <BundleResource Include="AppIcon.icns" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Smithbox.Program\Smithbox.Program.csproj" />
+    <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
+  </ItemGroup>
+
+  <Target Name="Init" Condition="!Exists('../Platform.Build.props')" />
+  <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences" AfterTargets="Init">
+      <PropertyGroup>
+        <PlatformProps>
+&lt;Project&gt;
+  &lt;PropertyGroup&gt;
+    &lt;DefineConstants&gt;%24(DefineConstants)%3BMACOS&lt;/DefineConstants&gt;
+  &lt;/PropertyGroup&gt;
+&lt;/Project&gt;
+        </PlatformProps>
+      </PropertyGroup>
+      <WriteLinesToFile File="../Platform.Build.props" Lines="$(PlatformProps)" Overwrite="true" />
+  </Target>
+
+  <Target Name="FixPackage" Condition="'$(CreatePackage)' == 'true'" AfterTargets="Publish">
+      <Exec Command="pkgutil --expand $(PublishDir)/$(AssemblyName)-$(Version).pkg $(PublishDir)/$(AssemblyName)" />
+      <PropertyGroup>
+        <DistributionSed>
+s/%5C(&lt;os-version min="[0-9.][0-9.]*"%5C).*%5C/&gt;/%5C1%5C/&gt;/g
+s/ customLocation="%5C/Applications"&gt;/&gt;/
+        </DistributionSed>
+        <PackageInfoSed>
+s/&lt;%5C/pkg-info&gt;/%5C
+    &lt;scripts&gt;%5C
+        &lt;preinstall file=".%5C/preinstall"%5C/&gt;%5C
+        &lt;postinstall file=".%5C/postinstall"%5C/&gt;%5C
+    &lt;%5C/scripts&gt;%5C
+&amp;/
+        </PackageInfoSed>
+      </PropertyGroup>
+      <WriteLinesToFile File="$(PublishDir)/distribution.sed" Lines="$(DistributionSed)" Overwrite="true" />
+      <WriteLinesToFile File="$(PublishDir)/packageinfo.sed" Lines="$(PackageInfoSed)" Overwrite="true" />
+      <Exec Command="sed -i '' -f $(PublishDir)/distribution.sed $(PublishDir)/$(AssemblyName)/Distribution" />
+      <Exec Command="sed -i '' -f $(PublishDir)/packageinfo.sed $(PublishDir)/$(AssemblyName)/$(ApplicationId).pkg/PackageInfo" />
+      <Exec Command="cp -a $(MSBuildProjectDirectory)/Scripts $(PublishDir)/$(AssemblyName)/$(ApplicationId).pkg/" />
+      <Exec Command="pkgutil --flatten $(PublishDir)/$(AssemblyName) $(PublishDir)/$(AssemblyName)-$(Version).pkg" />
+      <Delete Files="$(PublishDir)/distribution.sed;$(PublishDir)/packageinfo.sed" />
+      <RemoveDir Directories="$(PublishDir)/$(AssemblyName)" />
+  </Target>
+</Project>

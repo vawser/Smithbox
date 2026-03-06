@@ -147,8 +147,8 @@ public class MapData : IDisposable
         await Task.Yield();
 
 
-        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project), "Community Map Object Names");
-
+        var srcDir = Path.Combine(StudioCore.Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(Project), "Community Map Object Names");
+        
         var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Community Map Object Names");
 
         if (Directory.Exists(projDir))
@@ -301,7 +301,7 @@ public class MapData : IDisposable
         // Information
         var gameDir = ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType);
 
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", gameDir);
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "MSB", gameDir);
 
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
@@ -419,7 +419,7 @@ public class MapData : IDisposable
         // Information
         var gameDir = ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType);
 
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", gameDir);
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "MSB", gameDir);
 
         var sourceFile = Path.Combine(sourceFolder, "SpawnStates.json");
 
