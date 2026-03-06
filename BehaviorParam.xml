@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Row0Dummy="" 
+  Wiki="Determines the behavior parameters used when triggering projectiles and attacks." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <variationId 
+    AltName="Behavior Variation ID" 
+    Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." 
+    VRef="BehaviorVariation" />
+    
+    <behaviorJudgeId 
+    AltName="Behavior Judgement ID" 
+    Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TAE." />
+    
+    <ezStateBehaviorType_old
+    AltName="ID Calculation Rule"
+    Wiki="" />
+    
+    <refType 
+    AltName="Reference ID Type" 
+    Wiki="Which param type to reference for attack behavior." 
+    Enum="BEHAVIOR_REF_TYPE" />
+    
+    <consumeSA
+    AltName="Action Cost: Poise"
+    Wiki="Set the amount of Poise consumed during action" />
+    
+    <refId 
+    AltName="Reference ID" 
+    Wiki="ID of param to use for attack behavior. Param used determined by refType" 
+    Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),Bullet_Npc(refType=1),SpEffectParam(refType=2)" 
+    DeepCopyTarget="Behavior" />
+    
+    <sfxVariationId
+    AltName="Particle Variation ID"
+    Wiki="Offset applied to the particle ID invoked in the TAE event" />
+    
+    <stamina
+    AltName="Action Cost: Stamina"
+    Wiki="Set the amount of stamina consumed during action" />
+    
+    <energy
+    AltName="Action Cost: Energy"
+    Wiki="Set the amount of energy consumed during action" />
+    
+    <mp
+    AltName="Action Cost: MP"
+    Wiki="Set the amount of MP consumed during action" 
+    Obsolete="" />
+    
+    <category
+    AltName="SpEffect Category"
+     Wiki="The SpEffect category this behavior belongs to" 
+    Enum="BEHAVIOR_CATEGORY" />
+    
+    <heroPoint
+    AltName="Action Cost: Humanity"
+    Wiki="Set the amount of humanity consumed during action" 
+    Obsolete="" />
+    
+    <pad1
+    AltName=""
+    Padding="" />
+    
+    <shootDmyPolyId
+    AltName="Firing: Dummy Polygon Range Start ID"
+    Wiki="The starting ID in a range of Dummy Polygons used for shooting." />
+    
+    <shootEndDmyPolyId
+    AltName="Firing: Dummy Polygon Range End ID"
+    Wiki="The ending ID in a range of Dummy Polygons used for shooting." />
+    
+    <shootAngle
+    AltName="Firing: Firing Angle"
+    Wiki="Specifies how far forward the projectile should be fired. In degrees." />
+    
+    <shootAngleInterval
+    AltName="Firing: Firing Angle Interval (Y-Axis)"
+    Wiki="When firing multiple projectiles, specify the interval at which to fire. (Y axis). In degrees." />
+    
+    <shootAngleXZ
+    AltName="Firing: Firing Elevation Angle (X-Axis)"
+    Wiki="Additional elevation angle from horizontal. In degrees." />
+    
+    <bUseNumShootBullet
+    AltName="Consume Multiple Bullets when Firing Simultaneously"
+    Wiki="Consumes bullets for several times when fired simultaneously"
+    IsBool="" />
+    
+    <isSequenceShootWhenSameTimeShoot
+    AltName="Fire Sequentially even when Firing Simultaneously"
+    Wiki="When firing sequentially using multiple dummy polys, are bullets fired at the same time considered to be fired sequentially?"
+    IsBool="" />
+    
+    <isShootAngOffsetDisable
+    AltName="Apply Offset only to Guided Targets"
+    Wiki="When OFF, offset is also applied to the shooting angle; when ON, offset is disabled."
+    IsBool="" />
+    
+    <pad2
+    AltName=""
+    Padding="" />
+    
+    <pad3
+    AltName=""
+    Padding="" />
+    
+    <shootAngleXInterval
+    AltName="Firing: Launch Elevation Angle Interval (X-Axis)"
+    Wiki="When firing multiple projectiles, specify the interval at which to fire.(X-axis). In degrees." />
+    
+    <shootAngleZ
+    AltName="Firing: Firing Angle Rotation (Z-Axis)"
+    Wiki="Specifies how many times to rotate in the Z-axis direction when launching a projectile. In degrees." />
+    
+    <shootAngleZInterval
+    AltName="Firing: Firing Angle Rotation Interval (Z-Axis)"
+    Wiki="When firing multiple projectiles, specify the interval at which to fire (Z-axis). In degrees." />
+    
+    <bulletRollAngleZ
+    AltName="Firing: Firing Roll Angle (Z-Axis)"
+    Wiki="Additional angle in drilling direction (Z axis). In degrees." />
+    
+    <bulletRollAngleZInterbal
+    AltName="Firing: Firing Roll Angle Interval (Z-Axis)"
+    Wiki="When firing multiple projectiles, specify the interval at which to fire (Z-axis). In degrees." />
+    
+    <bulletRollAngleZRandom
+    AltName="Firing: Firing Roll Angle - Random Max (Z-Axis)"
+    Wiki="Upper limit of firing torsion angle random number (0 to 360)" />
+    
+    <shootTargetXOffset
+    AltName="Firing: Target Offset (X-Axis)"
+    Wiki="Left and right offset of impact position. Shifts the target position left and right during firing and homing. In metres." />
+    
+    <targetYOffsetRange
+    AltName="Firing: Target Offset (Y-Axis)"
+    Wiki="Vertical offset of impact position. Shifts the target position up and down during firing and homing. In metres." />
+    
+    <shootTargetZOffset
+    AltName="Firing: Target Offset (Z-Axis)"
+    Wiki="Front and rear offset of impact position. Shifts the target position forward and backward during firing and homing." />
+    
+    <numShoot
+    AltName="Number of Shots"
+    Wiki="Number of bullets produced per cartridge (emitter). Does not affect ammo consumption" />
+    
+    <numContinueShoot
+    AltName="Number of Consecutive Shots"
+    Wiki="Number of times to fire continuously. The total number of bullets fired is the number of simultaneous shots x the number of consecutive shots." />
+    
+    <cupsleRotationDeg
+    AltName="Horizontal Capsule: Initial Roll Angle"
+    Wiki="Rotation angle of horizontal capsule. In degrees." />
+    
+    <shootInterval
+    AltName="Firing: Consecutive Shoot Interval"
+    Wiki="Number of seconds between shots when firing continuously" />
+    
+    <reloadTimeSecond
+    AltName="Reload Time"
+    Wiki="Interval between one shot and the next shot" />
+    
+    <targetZOffsetRange
+    AltName="Curved Firing: Target Offset Range (Z-Axis)"
+    Wiki="Forward and backward offset of the impact position for curved shots. Shifts the target position toward the front or back during firing and homing. In metres." />
+    
+    <targetXOffsetRange
+    AltName="Curved Firing: Target Offset Range (X-Axis)"
+    Wiki="Left and right offset of the impact position for curved shots. Shifts the target position toward the front or back during firing and homing. In metres." />
+    
+    <bTargetAutoOffset
+    AltName="Is Target Position Automatically Offset"
+    Wiki="Should you use automatic target position offset?"
+    IsBool="" />
+    
+    <pad4
+    AltName=""
+    Padding="" />
+    
+    <targetAutoOffsetBaseDmyPolyId
+    AltName="Target Position Automatic Offset: Dummy Polygon ID"
+    Wiki="Reference dummy poly ID used in target position automatic offset" />
+    
+    <pa_DrainVal
+    AltName="Action Cost: Pulse Armor"
+    Wiki="Set the amount of pulse armor consumed during action" />
+    
+    <pad5
+    AltName=""
+    Padding="" />
+    
+    <pa_OverwriteDelayTimeSec
+    AltName="Pulse Armor: Recovery Delay Time Override" 
+    Wiki="Amount to override Pulse Armor recovery time (-1 means no override)" />
+    
+    <consumeBulletNum
+    AltName="Action Cost: Ammunition"
+    Wiki="Number of ammunition consumed when an attack occurs" />
+    
+    <recoilBlurAddVal
+    AltName="Attack Recoil: Blur Accumulation "
+    Wiki="Attack recoil blur accumulation amount" />
+    
+    <lockTimeSec
+    AltName="Missle Lock: Lock Time"
+    Wiki="Time to secondary lock. In seconds." />
+    
+    <maxMissileLockNum
+    AltName="Missile Lock: Max Count"
+    Wiki="Maximum number of missile locks" />
+    
+    <shootEnableLockNum
+    AltName="Missle Lock: Firable Count" 
+    Wiki="If the lock count number is less than the specified value, firing will not be possible." />
+    
+    <pad6
+    AltName=""
+    Padding="" />
+    
+    <HdPadRumble_Atk_Id
+    AltName="HD Vibration on Hit"
+    Wiki="Vibration ID for haptic feedback" />
+    
+    <HdPadRumble_Hit_Id
+    AltName="HD Vibration on Impact"
+    Wiki="Impact vibration ID for haptic feedback" />
+    
+    <HdPadRumble_Priority
+    AltName="HD Vibration Priority"
+    Wiki="Playback priority for haptic feedback (0 is low priority, 10 is high priority)" />
+    
+    <pad7
+    AltName=""
+    Padding="" />
+    
+    <shotgunParamId
+    AltName="Shot Control: ID"
+    Wiki="Shot Control parameter to use."
+    Refs="BulletShotgunParam_PC,BulletShotgunParam_NPC" />
+    
+    <shotgunBaseDist
+    AltName="Shot Control: Base Distance"
+    Wiki="Diffusion reference distance" />
+    
+    <heat_AddValue
+    AltName="Heat: Build-up (by Point)"
+    Wiki="Heat value accumulated with each bullet" />
+    
+    <targetShotgunParamId
+    AltName="Target Position Shot Control: ID"
+    Wiki="Offset calculation for target position"
+    Refs="BulletShotgunParam_PC,BulletShotgunParam_NPC" />
+    
+    <chargeDelayTimeSec
+    AltName="Charge Attack: Start Delay"
+    Wiki="Delay time until charging starts after referring to action parameters. In seconds." />
+    
+    <continueShootConsumeBulletMaxTimeSec
+    AltName="Consecutive Firing: Ammunition Consumption Max Time"
+    Wiki="Maximum time of bullets consumed by continuous consumption. In seconds." />
+    
+    <continueShootAddHeatMaxTimeSec
+    AltName="Consecutive Firing: Heat Accumulation Max Time"
+    Wiki="Maximum amount of heat accumulated through continuous consumption. In seconds." />
+    
+    <continueShootAddHeatMaxValue
+    AltName="Consecutive Firing: Heat Accumulation Max"
+    Wiki="Maximum amount of heat accumulated through continuous consumption" />
+    
+    <lockCountUpTimeSec
+    AltName="Lock Count: Add Time"
+    Wiki="Missile lock count up time (lock time from 2nd lock). In seconds." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="Attack" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_STYLE" type="u8">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Charge" />
+      <Option Value="2" Name="2H Normal" />
+      <Option Value="3" Name="2H Charge" />
+      <Option Value="4" Name="Weak" />
+      <Option Value="5" Name="Guard" />
+      <Option Value="6" Name="Parry" />
+      <Option Value="7" Name="Close Range" />
+      <Option Value="8" Name="Long Range" />
+      <Option Value="9" Name="2H Close Range" />
+      <Option Value="10" Name="2H Long Range" />
+      <Option Value="11" Name="After Parry" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Blow" />
+        <Option Value="2" Name="Thrust" />
+        <Option Value="3" Name="Explosion" />
+        <Option Value="4" Name="Bullet" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Normal Attack" />
+      <Option Value="2" Name="Left-hand Attack" />
+      <Option Value="3" Name="Magic" />
+      <Option Value="4" Name="Miracle" />
+      <Option Value="5" Name="Body" />
+      <Option Value="6" Name="Enemy Attack 1" />
+      <Option Value="7" Name="Enemy Attack 2" />
+      <Option Value="8" Name="Enemy Attack 3" />
+      <Option Value="9" Name="Kick" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

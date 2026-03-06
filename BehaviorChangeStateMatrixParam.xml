@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines behavior change upon entering various states." />
+  
+  <Field>
+    <state00
+    AltName="State: Above Ground"
+    Wiki=""
+    IsBool="" />
+    
+    <state01
+    AltName="State: Dash"
+    Wiki=""
+    IsBool="" />
+    
+    <state02
+    AltName="State: Crouch"
+    Wiki=""
+    IsBool="" />
+    
+    <state03
+    AltName="State: Cover"
+    Wiki=""
+    IsBool="" />
+    
+    <state04
+    AltName="State: Fall"
+    Wiki=""
+    IsBool="" />
+    
+    <state05
+    AltName="State: Aerial Dash"
+    Wiki=""
+    IsBool="" />
+    
+    <state06
+    AltName="State: Quick Boost"
+    Wiki=""
+    IsBool="" />
+    
+    <state07
+    AltName="State: Slope Slip"
+    Wiki=""
+    IsBool="" />
+    
+    <state08
+    AltName="State: While Riding"
+    Wiki=""
+    IsBool="" />
+    
+    <state09
+    AltName="State: Floating"
+    Wiki=""
+    IsBool="" />
+    
+    <state10
+    AltName="State: Cover Lifted"
+    Wiki=""
+    IsBool="" />
+    
+    <state11
+    AltName="State: Tank Hovering"
+    Wiki=""
+    IsBool="" />
+    
+    <state12
+    AltName="State: Tank Fall"
+    Wiki=""
+    IsBool="" />
+    
+    <state13
+    AltName="State: VOB"
+    Wiki=""
+    IsBool="" />
+    
+    <state14
+    AltName="State: Death whilst Grounded"
+    Wiki=""
+    IsBool="" />
+    
+    <state15
+    AltName="State: Death whilst Aerial"
+    Wiki=""
+    IsBool="" />
+    
+    <state16
+    AltName="State: 16"
+    Wiki=""
+    IsBool="" />
+    
+    <state17
+    AltName="State: 17"
+    Wiki=""
+    IsBool="" />
+    
+    <state18
+    AltName="State: 18"
+    Wiki=""
+    IsBool="" />
+    
+    <state19
+    AltName="State: 19"
+    Wiki=""
+    IsBool="" />
+    
+    <TransitionActionAiType
+    AltName="Transition AI Behavior Type"
+    Wiki=""
+    Enum="ACTION_AI_TYPE_ENUM" />
+    
+    <dummy0
+    AltName=""
+    Padding="" />
+    
+    <dummy1
+    AltName=""
+    Padding="" />
+    
+    <NoticeStateID
+    AltName="AI Notification Transition ID"
+    Wiki="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="ACTION_AI_TYPE_ENUM" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="10" Name="Jump" />
+        <Option Value="11" Name="Land" />
+        <Option Value="12" Name="Quick Boost" />
+        <Option Value="13" Name="Brake" />
+        <Option Value="14" Name="Fall" />
+        <Option Value="15" Name="Hover" />
+        <Option Value="20" Name="Assault Boost: Start" />
+        <Option Value="21" Name="Assault Boost: End" />
+        <Option Value="22" Name="Assault Boost" />
+        <Option Value="23" Name="Assault Boost: Kick" />
+        <Option Value="30" Name="Stagger: Small" />
+        <Option Value="31" Name="Stagger: Big" />
+        <Option Value="32" Name="Stagger: Explosion" />
+        <Option Value="33" Name="Guard Break" />
+        <Option Value="40" Name="Guard: Start" />
+        <Option Value="41" Name="Guard: End" />
+        <Option Value="50" Name="Melee: First Attack" />
+        <Option Value="51" Name="Melee: Combo Attack" />
+        <Option Value="60" Name="Prepare to Start Shooting" />
+        <Option Value="61" Name="Start Shooting" />
+        <Option Value="62" Name="Stop Shooting: Stage 1" />
+        <Option Value="63" Name="Stop Shooting: Stage 2" />
+        <Option Value="70" Name="Repair Kit" />
+        <Option Value="240" Name="AI Enemy Judgment: is target jumping" />
+        <Option Value="241" Name="AI Enemy Judgment: is target on special standby" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

@@ -1,0 +1,1063 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the particles that are supplied to various foot-related properties." />
+  
+  <Field>
+    <sfxId_00 
+	AltName="Particle ID: 0"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_01 
+	AltName="Particle ID: 1"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_02 
+	AltName="Particle ID: 2"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_03 
+	AltName="Particle ID: 3"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_04 
+	AltName="Particle ID: 4"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_05 
+	AltName="Particle ID: 5"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_06 
+	AltName="Particle ID: 6"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_07 
+	AltName="Particle ID: 7"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_08 
+	AltName="Particle ID: 8"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_09 
+	AltName="Particle ID: 9"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_10 
+	AltName="Particle ID: 10"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_11 
+	AltName="Particle ID: 11"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_12 
+	AltName="Particle ID: 12"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_13 
+	AltName="Particle ID: 13"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_14 
+	AltName="Particle ID: 14"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_15 
+	AltName="Particle ID: 15"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_16 
+	AltName="Particle ID: 16"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_17 
+	AltName="Particle ID: 17"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_18 
+	AltName="Particle ID: 18"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_19 
+	AltName="Particle ID: 19"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_20 
+	AltName="Particle ID: 20"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_21 
+	AltName="Particle ID: 21"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_22 
+	AltName="Particle ID: 22"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_23 
+	AltName="Particle ID: 23"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_24 
+	AltName="Particle ID: 24"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_25 
+	AltName="Particle ID: 25"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_26 
+	AltName="Particle ID: 26"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_27 
+	AltName="Particle ID: 27"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_28 
+	AltName="Particle ID: 28"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_29 
+	AltName="Particle ID: 29"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_30 
+	AltName="Particle ID: 30"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_31 
+	AltName="Particle ID: 31"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_32 
+	AltName="Particle ID: 32"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_33 
+	AltName="Particle ID: 33"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_34 
+	AltName="Particle ID: 34"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_35 
+	AltName="Particle ID: 35"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_36 
+	AltName="Particle ID: 36"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_37 
+	AltName="Particle ID: 37"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_38 
+	AltName="Particle ID: 38"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_39 
+	AltName="Particle ID: 39"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_40 
+	AltName="Particle ID: 40"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_41 
+	AltName="Particle ID: 41"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_42 
+	AltName="Particle ID: 42"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_43 
+	AltName="Particle ID: 43"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_44 
+	AltName="Particle ID: 44"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_45 
+	AltName="Particle ID: 45"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_46 
+	AltName="Particle ID: 46"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_47 
+	AltName="Particle ID: 47"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_48 
+	AltName="Particle ID: 48"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_49 
+	AltName="Particle ID: 49"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_50 
+	AltName="Particle ID: 50"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_51 
+	AltName="Particle ID: 51"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_52 
+	AltName="Particle ID: 52"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_53 
+	AltName="Particle ID: 53"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_54 
+	AltName="Particle ID: 54"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_55 
+	AltName="Particle ID: 55"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_56 
+	AltName="Particle ID: 56"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_57 
+	AltName="Particle ID: 57"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_58 
+	AltName="Particle ID: 58"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_59 
+	AltName="Particle ID: 59"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_60 
+	AltName="Particle ID: 60"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_61 
+	AltName="Particle ID: 61"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_62 
+	AltName="Particle ID: 62"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_63 
+	AltName="Particle ID: 63"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_64 
+	AltName="Particle ID: 64"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_65 
+	AltName="Particle ID: 65"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_66 
+	AltName="Particle ID: 66"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_67 
+	AltName="Particle ID: 67"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_68 
+	AltName="Particle ID: 68"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_69 
+	AltName="Particle ID: 69"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_70 
+	AltName="Particle ID: 70"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_71 
+	AltName="Particle ID: 71"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_72 
+	AltName="Particle ID: 72"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_73 
+	AltName="Particle ID: 73"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_74 
+	AltName="Particle ID: 74"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_75 
+	AltName="Particle ID: 75"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_76 
+	AltName="Particle ID: 76"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_77 
+	AltName="Particle ID: 77"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_78 
+	AltName="Particle ID: 78"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_79 
+	AltName="Particle ID: 79"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_80 
+	AltName="Particle ID: 80"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_81 
+	AltName="Particle ID: 81"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_82 
+	AltName="Particle ID: 82"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_83 
+	AltName="Particle ID: 83"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_84 
+	AltName="Particle ID: 84"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_85 
+	AltName="Particle ID: 85"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_86 
+	AltName="Particle ID: 86"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_87 
+	AltName="Particle ID: 87"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_88 
+	AltName="Particle ID: 88"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_89 
+	AltName="Particle ID: 89"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_90 
+	AltName="Particle ID: 90"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_91 
+	AltName="Particle ID: 91"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_92 
+	AltName="Particle ID: 92"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_93 
+	AltName="Particle ID: 93"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_94 
+	AltName="Particle ID: 94"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_95 
+	AltName="Particle ID: 95"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_96 
+	AltName="Particle ID: 96"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_97 
+	AltName="Particle ID: 97"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_98 
+	AltName="Particle ID: 98"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_99 
+	AltName="Particle ID: 99"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_100 
+	AltName="Particle ID: 100"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_101 
+	AltName="Particle ID: 101"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_102 
+	AltName="Particle ID: 102"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_103 
+	AltName="Particle ID: 103"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_104 
+	AltName="Particle ID: 104"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_105 
+	AltName="Particle ID: 105"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_106 
+	AltName="Particle ID: 106"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_107 
+	AltName="Particle ID: 107"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_108 
+	AltName="Particle ID: 108"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_109 
+	AltName="Particle ID: 109"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_110 
+	AltName="Particle ID: 110"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_111 
+	AltName="Particle ID: 111"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_112 
+	AltName="Particle ID: 112"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_113 
+	AltName="Particle ID: 113"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_114 
+	AltName="Particle ID: 114"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_115 
+	AltName="Particle ID: 115"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_116 
+	AltName="Particle ID: 116"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_117 
+	AltName="Particle ID: 117"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_118 
+	AltName="Particle ID: 118"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_119 
+	AltName="Particle ID: 119"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_120 
+	AltName="Particle ID: 120"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_121 
+	AltName="Particle ID: 121"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_122 
+	AltName="Particle ID: 122"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_123 
+	AltName="Particle ID: 123"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_124 
+	AltName="Particle ID: 124"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_125 
+	AltName="Particle ID: 125"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_126 
+	AltName="Particle ID: 126"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_127 
+	AltName="Particle ID: 127"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_128 
+	AltName="Particle ID: 128"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_129 
+	AltName="Particle ID: 129"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_130 
+	AltName="Particle ID: 130"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_131 
+	AltName="Particle ID: 131"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_132 
+	AltName="Particle ID: 132"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_133 
+	AltName="Particle ID: 133"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_134 
+	AltName="Particle ID: 134"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_135 
+	AltName="Particle ID: 135"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_136 
+	AltName="Particle ID: 136"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_137 
+	AltName="Particle ID: 137"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_138 
+	AltName="Particle ID: 138"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_139 
+	AltName="Particle ID: 139"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_140 
+	AltName="Particle ID: 140"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_141 
+	AltName="Particle ID: 141"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_142 
+	AltName="Particle ID: 142"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_143 
+	AltName="Particle ID: 143"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_144 
+	AltName="Particle ID: 144"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_145 
+	AltName="Particle ID: 145"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_146 
+	AltName="Particle ID: 146"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_147 
+	AltName="Particle ID: 147"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_148 
+	AltName="Particle ID: 148"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_149 
+	AltName="Particle ID: 149"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_150 
+	AltName="Particle ID: 150"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_151 
+	AltName="Particle ID: 151"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_152 
+	AltName="Particle ID: 152"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_153 
+	AltName="Particle ID: 153"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_154 
+	AltName="Particle ID: 154"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_155 
+	AltName="Particle ID: 155"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_156 
+	AltName="Particle ID: 156"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_157 
+	AltName="Particle ID: 157"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_158 
+	AltName="Particle ID: 158"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_159 
+	AltName="Particle ID: 159"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_160 
+	AltName="Particle ID: 160"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_161 
+	AltName="Particle ID: 161"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_162 
+	AltName="Particle ID: 162"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_163 
+	AltName="Particle ID: 163"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_164 
+	AltName="Particle ID: 164"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_165 
+	AltName="Particle ID: 165"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_166 
+	AltName="Particle ID: 166"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_167 
+	AltName="Particle ID: 167"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_168 
+	AltName="Particle ID: 168"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_169 
+	AltName="Particle ID: 169"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_170 
+	AltName="Particle ID: 170"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_171 
+	AltName="Particle ID: 171"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_172 
+	AltName="Particle ID: 172"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_173 
+	AltName="Particle ID: 173"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_174 
+	AltName="Particle ID: 174"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_175 
+	AltName="Particle ID: 175"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_176 
+	AltName="Particle ID: 176"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_177 
+	AltName="Particle ID: 177"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_178 
+	AltName="Particle ID: 178"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_179 
+	AltName="Particle ID: 179"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_180 
+	AltName="Particle ID: 180"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_181 
+	AltName="Particle ID: 181"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_182 
+	AltName="Particle ID: 182"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_183 
+	AltName="Particle ID: 183"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_184 
+	AltName="Particle ID: 184"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_185 
+	AltName="Particle ID: 185"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_186 
+	AltName="Particle ID: 186"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_187 
+	AltName="Particle ID: 187"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_188 
+	AltName="Particle ID: 188"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_189 
+	AltName="Particle ID: 189"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_190 
+	AltName="Particle ID: 190"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_191 
+	AltName="Particle ID: 191"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_192 
+	AltName="Particle ID: 192"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_193 
+	AltName="Particle ID: 193"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_194 
+	AltName="Particle ID: 194"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_195 
+	AltName="Particle ID: 195"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_196 
+	AltName="Particle ID: 196"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_197 
+	AltName="Particle ID: 197"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_198 
+	AltName="Particle ID: 198"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_199 
+	AltName="Particle ID: 199"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_200 
+	AltName="Particle ID: 200"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_201 
+	AltName="Particle ID: 201"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_202 
+	AltName="Particle ID: 202"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_203 
+	AltName="Particle ID: 203"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_204
+	AltName="Particle ID: 204"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_205
+	AltName="Particle ID: 205"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_206
+	AltName="Particle ID: 206"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_207
+	AltName="Particle ID: 207"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_208
+	AltName="Particle ID: 208"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_209
+	AltName="Particle ID: 209"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+    <sfxId_210 
+	AltName="Particle ID: 210"
+	Wiki="Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect" 
+	ParticleAlias="" />
+
+  </Field>
+</PARAMMETA>

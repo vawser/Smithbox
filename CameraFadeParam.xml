@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines parameters for camera fading."/>
+  
+  <Field>
+    <NearMinDist 
+    AltName="Near: Minimum Distance" 
+    Wiki="The near minimum fade distance, e.g. the distance at which α = 0. In metres." />
+    
+    <NearMaxDist 
+    AltName="Near: Maximum Distance" 
+    Wiki="The near maximum fade distance, e.g. where α = MiddleAlpha. In metres." />
+    
+    <FarMinDist 
+    AltName="Far: Minimum Distance" 
+    Wiki="The far minimum fade distance, e.g. where α = MiddleAlpha. In metres." />
+    
+    <FarMaxDist 
+    AltName="Far: Maximum Distance" 
+    Wiki="The far maximum fade distance, e.g. the distance at which α = 1. In metres." />
+    
+    <MiddleAlpha 
+    AltName="Intermediate Alpha Value" 
+    Wiki="The intermediate alpha value between near and far." />
+    
+    <dummy
+    AltName=""
+    Padding="" />
+  </Field>
+  <Self />
+</PARAMMETA>

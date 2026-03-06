@@ -1,0 +1,2233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the hitbox and damage parameters for attacks." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <hit0_Radius 
+    AltName="Hit 0: Radius" 
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
+    
+    <hit1_Radius 
+    AltName="Hit 1: Radius" 
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
+    
+    <hit2_Radius 
+    AltName="Hit 2: Radius" 
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
+    
+    <hit3_Radius 
+    AltName="Hit 3: Radius" 
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
+    
+    <knockbackMPS 
+    AltName="Knockback Distance" 
+    Wiki="Determines the distance the victim is knocked back by. In metres per second." />
+    
+    <hitStopTime 
+    AltName="Hit Stop Time" 
+    Wiki="The duration that the victim's animations are paused for when hit. In seconds." />
+    
+    <spEffectId0 
+    AltName="SpEffect ID: 0" 
+    Wiki="SpEffect ID applied to victim by this attack." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectId1 
+    AltName="SpEffect ID: 1" 
+    Wiki="SpEffect ID applied to victim by this attack." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectId2 
+    AltName="SpEffect ID: 2" 
+    Wiki="SpEffect ID applied to victim by this attack." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectId3 
+    AltName="SpEffect ID: 3" 
+    Wiki="SpEffect ID applied to victim by this attack." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectId4 
+    AltName="SpEffect ID: 4" 
+    Wiki="SpEffect ID applied to victim by this attack." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <hit0_DmyPoly1 
+    AltName="Hit 0: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
+    
+    <hit1_DmyPoly1 
+    AltName="Hit 1: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
+    
+    <hit2_DmyPoly1 
+    AltName="Hit 2: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
+    
+    <hit3_DmyPoly1 
+    AltName="Hit 3: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
+    
+    <hit0_DmyPoly2 
+    AltName="Hit 0: Secondary Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
+    
+    <hit1_DmyPoly2 
+    AltName="Hit 1: Secondary Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
+    
+    <hit2_DmyPoly2 
+    AltName="Hit 2: Secondary Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
+    
+    <hit3_DmyPoly2 
+    AltName="Hit 3: Secondary Dummy Poly ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
+    
+    <blowingCorrection 
+    AltName="Attack Correction: Blow-off" 
+    Wiki="The multiplier to apply to the base blow-off value." />
+    
+    <atkPhysCorrection 
+    AltName="Attack Correction: Kinetic" 
+    Wiki="The multiplier to apply to the base Kinetic attack value." />
+    
+    <atkMagCorrection 
+    AltName="Attack Correction: Energy" 
+    Wiki="The multiplier to apply to the base Energy attack value." />
+    
+    <atkFireCorrection 
+    AltName="Attack Correction: Explosive" 
+    Wiki="The multiplier to apply to the base Explosive attack value." />
+    
+    <atkThunCorrection 
+    AltName="Attack Correction: Coral" 
+    Wiki="The multiplier to apply to the base Coral attack value." />
+    
+    <atkStamCorrection 
+    AltName="Attack Correction: Stamina" 
+    Wiki="The multiplier to apply to the base stamina attack value." />
+    
+    <guardAtkRateCorrection 
+    AltName="Attack Correction: Guard Attack" 
+    Wiki="The multiplier to apply to the base guard attack value. Compared against the guard defense value to determine if the attack will bounce." />
+    
+    <guardBreakCorrection 
+    AltName="Attack Correction: Guard Defense" 
+    Wiki="Player only. The multiplier to the base guard defense value. Compared against the guard attack value to determine if the attack will bounce." />
+    
+    <atkThrowEscapeCorrection 
+    AltName="Attack Correction: Throw Attack" 
+    Wiki="The multiplier to apply to the base throw attack value." />
+    
+    <atkSuperArmorCorrection
+    AltName="Attack Correction: Poise"
+    Wiki="Player only. The multiplier to apply to the base poise attack value." />
+    
+    <atkPhys 
+    AltName="Damage: Kinetic" 
+    Wiki="The base Kinetic attack value. Used primarily for NPC attacks." />
+    
+    <atkMag 
+    AltName="Damage: Energy" 
+    Wiki="The base Energy attack value. Used primarily for NPC attacks." />
+    
+    <atkFire 
+    AltName="Damage: Explosive" 
+    Wiki="The base Explosive attack value. Used primarily for NPC attacks." />
+    
+    <atkThun 
+    AltName="Damage: Coral" 
+    Wiki="The base Coral attack value. Used primarily for NPC attacks." />
+    
+    <atkStam 
+    AltName="Damage: Stamina" 
+    Wiki="The base stamina attack value." />
+    
+    <guardAtkRate 
+    AltName="Damage: Guard Attack" 
+    Wiki="The base guard attack value. Compared against the guard defense value to determine if the attack will bounce." />
+    
+    <guardBreakRate 
+    AltName="Damage: Guard Defense" 
+    Wiki="The base guard defense value. Compared against the guard attack value to determine if the attack will bounce." />
+    
+    <atkSuperArmor 
+    AltName="Damage: Poise" 
+    Wiki="The base poise attack value." />
+    
+    <atkThrowEscape 
+    AltName="Damage: Throw Attack" 
+    Wiki="The base throw attack value." />
+    
+    <atkObj 
+    AltName="Damage: Object Destruction" 
+    Wiki="The base object destruction value. Applied to the object's HP." />
+    
+    <guardStaminaCutRate 
+    AltName="Guard Absorption Correction: Stamina" 
+    Wiki="The multiplier to apply to the reduction of stamina damage when guarding. Positive values increase guard stability, negative values decrease it." />
+    
+    <guardRate 
+    AltName="Guard Absorption" 
+    Wiki="The multiplier to apply to the guard absorption value from the weapon. 0, 1x / 100, 2x / -100, guard multiplier = (guard multiplier / 100) to increase / decrease the parameter to 0. + 1)" />
+    
+    <throwTypeId 
+    AltName="Throw Type ID" 
+    Wiki="The throw type ID to use with this attack against the victim." />
+    
+    <hit0_hitType 
+    AltName="Hit 0: Hit Type"
+    Wiki="The hit collision type for this hit slot." 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit1_hitType 
+    AltName="Hit 1: Hit Type" 
+    Wiki="The hit collision type for this hit slot." 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit2_hitType 
+    AltName="Hit 2: Hit Type" 
+    Wiki="The hit collision type for this hit slot." 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit3_hitType 
+    AltName="Hit 3: Hit Type" 
+    Wiki="The hit collision type for this hit slot." 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hti0_Priority 
+    AltName="Hit 0: Priority" 
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti1_Priority 
+    AltName="Hit 1: Priority" 
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti2_Priority 
+    AltName="Hit 2: Priority" 
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti3_Priority 
+    AltName="Hit 3: Priority" 
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <dmgLevel 
+    AltName="Damage Level: Hostile" 
+    Wiki="The damage animation to apply to the victim of this attack." 
+    Enum="ATKPARAM_REP_DMGTYPE_UINT" />
+    
+    <mapHitType 
+    AltName="Map Hit Type" 
+    Wiki="Which map do you see around the attack? The set" 
+    Enum="ATK_PARAM_MAP_HIT" />
+    
+    <guardCutCancelRate 
+    AltName="Guard Absorption Invalidation" 
+    Wiki="Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become " />
+    
+    <atkAttribute 
+    AltName="Live Bullet Attribute" 
+    Wiki="Live bullet attribute to set for attack" 
+    Enum="ATKPARAM_ATKATTR_TYPE" />
+    
+    <spAttribute 
+    AltName="Special Attribute" 
+    Wiki="Special attributes to set for attacks" 
+    Enum="ATKPARAM_SPATTR_TYPE" />
+    
+    <atkType 
+    AltName="Attack Presentation Type" 
+    Wiki="Specify particles and sounds at the time of attack (1 set by attribute, material, size)" 
+    Enum="BEHAVIOR_ATK_TYPE" />
+    
+    <atkMaterial 
+    AltName="Attack Presentation: Material" 
+    Wiki="Specify particles and sounds at the time of attack (1 set by attribute, material, size)" 
+    Enum="WEP_MATERIAL_ATK" />
+    
+    <atkSize 
+    AltName="Attack Presentation: Size"
+    Wiki="Specify particles and sounds at the time of attack (Although it is reserved, it is used, so be sure to set it blank or small)"
+    Enum="BEHAVIOR_ATK_SIZE" />
+    
+    <defSeMaterial1 
+    AltName="Defense Presentation: Sound" 
+    Wiki="The sounds to use when guarding against this attack." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <hitSourceType 
+    AltName="Hit Source Type" 
+    Wiki="The source of the dummy Polygon ID to use for this attack."
+    Enum="ATK_PARAM_HIT_SOURCE" />
+    
+    <throwFlag 
+    AltName="Throw Type" 
+    Wiki="Flag used for throwing information" 
+    Enum="ATK_PATAM_THROWFLAG_TYPE" />
+    
+    <disableGuard 
+    AltName="Ignore Guard" 
+    Wiki="If ON, then this attack ignores the victim's guard and applies the damage animation automatically." 
+    IsBool="" />
+    
+    <disableStaminaAttack 
+    AltName="Disable Guard Drain" 
+    Wiki="If ON, then this attack will not reduce the victim's stamina as a result of them guarding the attack." 
+    IsBool="" />
+    
+    <disableHitSpEffect 
+    AltName="Disable Hit SpEffect" 
+    Wiki="If ON, then this attack will not apply on-hit SpEffects to the victim." 
+    IsBool="" />
+    
+    <IgnoreNotifyMissSwingForAI 
+    AltName="Disable Missed Attack Notification" 
+    Wiki="If ON, then the enemy AI is not given notification of a missed attack." 
+    IsBool="" />
+    
+    <repeatHitSfx 
+    AltName="Repeat Hit Particles" 
+    Wiki="If ON, does the on-hit SFX for this attack repeat forever upon collision." 
+    IsBool="" />
+    
+    <isArrowAtk 
+    AltName="Enable Part Destruction" 
+    Wiki="If ON, then this attack will count as damage to a destructable enemy part." 
+    IsBool="" />
+    
+    <isGhostAtk 
+    AltName="Enable Ghost Destruction" 
+    Wiki="If ON, then this attack will count as damage to a ghost enemy." 
+    IsBool="" />
+    
+    <isDisableNoDamage 
+    AltName="Ignore Invulnerability Frames" 
+    Wiki="If ON, then invulnerability frames (such as roll frames) are ignored by this attack. Complete invulnerability is NOT ignored however." 
+    IsBool="" />
+    
+    <atkPow_forSfx 
+    AltName="Attack Particle Strength" 
+    Wiki="Attack strength [SFX]" 
+    Enum="ATKPARAM_SFX_ATK_POW" />
+    
+    <atkDir_forSfx 
+    AltName="Attack Particle Direction" 
+    Wiki="Attack direction [SFX]" 
+    Enum="ATKPARAM_SFX_ATK_DIR" />
+    
+    <hideHitFe
+    AltName="Is HUD Hit Display Ignored"
+    Wiki="When hit, HUD will not display Hit or Guard, so only special effects will be applied."
+    IsBool="" />
+    
+    <isDisableDmgLvReplaceAddLv
+    AltName="Disable Addition Replacement during Continuous Damage"
+    Wiki="Do you want to disable the function that replaces the damage with additional damage when receiving continuous damage?"
+    IsBool="" />
+    
+    <isDamageReactionCancelInertia
+    AltName="Is Inertia removed by Damage Reaction"
+    Wiki="Can you eliminate inertia with damage reactions?"
+    IsBool="" />
+    
+    <isCheckDoorPenetration 
+    AltName="Perform Occlusion Checks" 
+    Wiki="Whether to perform occlusion checks. If it is ○, it will be determined whether it is possible to attack the target through the shield." 
+    IsBool="" />
+    
+    <atkBehaviorId 
+    AltName="Special Stagger Type" 
+    Wiki="Behavior identification value: Causes a specific enemy to have a special reaction when hit by a specific attack." 
+    Enum="ATKPARAM_BEHAVIOR_ID" />
+    
+    <atkPow_forSe 
+    AltName="Attack Sound Strength" 
+    Wiki="Attack strength [SE]" 
+    Enum="ATKPARAM_SE_ATK_POW" />
+    
+    <rigidImpulse
+    AltName="Rigid Body Impulse"
+    Wiki="Impulse applied to the rigid body hit by the attack" />
+    
+    <decalId1 
+    AltName="Decal ID [1]" 
+    Wiki="Decal ID 1 (directly specified)" 
+    Refs="DecalParam" />
+    
+    <decalId2 
+    AltName="Decal ID [2]" 
+    Wiki="Decal ID 2 (directly specified)" 
+    Refs="DecalParam" />
+    
+    <AppearAiSoundId 
+    AltName="Invoked AI Sound upon Attack" 
+    Wiki="ID of AI sound generated when an attack occurs" 
+    Refs="AiSoundParam" />
+    
+    <HitAiSoundId 
+    AltName="Invoked AI Sound upon Hit" 
+    Wiki="ID of AI sound generated at the time of hit" 
+    Refs="AiSoundParam" />
+    
+    <HitRumbleId 
+    AltName="Vibration on Hit" 
+    Wiki="Vibration ID on hit (-1 disabled). This is the vibration ID when none of the following three apply." />
+    
+    <HitRumbleIdByNormal 
+    AltName="Vibration on Hit: Dummy Polygon Tip" 
+    Wiki="Hit vibration ID when hitting the tip of the dummy polygon (-1 disabled)" />
+    
+    <HitRumbleIdByMiddle 
+    AltName="Vibration on Hit: Dummy Polygon Center" 
+    Wiki="Hit vibration ID when hitting the center of the dummy polygon (-1 disabled)" />
+    
+    <HitRumbleIdByRoot 
+    AltName="Vibration on Hit: Dummy Polygon Root" 
+    Wiki="Hit vibration ID when hitting the root of the dummy polygon (-1 disabled)" />
+    
+    <traceSfxId0 
+    AltName=" [0] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" />
+    
+    <traceDmyIdHead0 
+    AltName="[0] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" />
+    
+    <traceDmyIdTail0 
+    AltName="[0] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" />
+    
+    <traceSfxId1 
+    AltName=" [1] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" />
+    
+    <traceDmyIdHead1 
+    AltName="[1] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" />
+    
+    <traceDmyIdTail0 
+    AltName="[1] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" />
+    
+    <traceSfxId2 
+    AltName=" [2] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" />
+    
+    <traceDmyIdHead0 
+    AltName="[2] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" />
+    
+    <traceDmyIdTail0 
+    AltName="[2] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" />
+    
+    <traceSfxId3
+    AltName=" [3] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" />
+    
+    <traceDmyIdHead3
+    AltName="[3] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" />
+    
+    <traceDmyIdTail3 
+    AltName="[3] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" />
+    
+    <traceSfxId4 
+    AltName=" [4] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" />
+    
+    <traceDmyIdHead4
+    AltName="[4] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" />
+    
+    <traceDmyIdTail4
+    AltName="[4] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" />
+    
+    <traceSfxId5 
+    AltName=" [5] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" />
+    
+    <traceDmyIdHead5
+    AltName="[5] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" />
+    
+    <traceDmyIdTail5
+    AltName="[5] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" />
+    
+    <traceSfxId6 
+    AltName=" [6] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" />
+    
+    <traceDmyIdHead6
+    AltName="[6] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" />
+    
+    <traceDmyIdTail6
+    AltName="[6] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" />
+    
+    <traceSfxId7 
+    AltName=" [7] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" />
+    
+    <traceDmyIdHead7 
+    AltName="[7] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" />
+    
+    <traceDmyIdTail7
+    AltName="[7] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" />
+    
+    <hit4_Radius 
+    AltName="Hit 4: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit5_Radius 
+    AltName="Hit 5: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit6_Radius 
+    AltName="Hit 6: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit7_Radius 
+    AltName="Hit 7: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit8_Radius 
+    AltName="Hit 8: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit9_Radius 
+    AltName="Hit 9: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit10_Radius 
+    AltName="Hit 10: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit11_Radius 
+    AltName="Hit 11: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit12_Radius 
+    AltName="Hit 12: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit13_Radius 
+    AltName="Hit 13: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit14_Radius 
+    AltName="Hit 14: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit15_Radius 
+    AltName="Hit 15: Radius" 
+    Wiki="Sphere, capsule radius" />
+    
+    <hit4_DmyPoly1 
+    AltName="Hit 4: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit4_DmyPoly2 
+    AltName="Hit 4: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit5_DmyPoly1 
+    AltName="Hit 5: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit5_DmyPoly2 
+    AltName="Hit 5: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit6_DmyPoly1 
+    AltName="Hit 6: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit6_DmyPoly2 
+    AltName="Hit 6: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit7_DmyPoly1 
+    AltName="Hit 7: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit7_DmyPoly2 
+    AltName="Hit 7: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit8_DmyPoly1 
+    AltName="Hit 8: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit8_DmyPoly2 
+    AltName="Hit 8: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit9_DmyPoly1 
+    AltName="Hit 9: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit9_DmyPoly2 
+    AltName="Hit 9: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit10_DmyPoly1 
+    AltName="Hit 10: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit10_DmyPoly2 
+    AltName="Hit 10: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit11_DmyPoly1 
+    AltName="Hit 11: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit11_DmyPoly2 
+    AltName="Hit 11: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit12_DmyPoly1 
+    AltName="Hit 12: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit12_DmyPoly2 
+    AltName="Hit 12: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit13_DmyPoly1 
+    AltName="Hit 13: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit13_DmyPoly2 
+    AltName="Hit 13: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit14_DmyPoly1 
+    AltName="Hit 14: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit14_DmyPoly2 
+    AltName="Hit 14: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit15_DmyPoly1 
+    AltName="Hit 15: Initial Dummy Polygon" 
+    Wiki="Dummy Polygon in sphere, capsule position" />
+    
+    <hit15_DmyPoly2 
+    AltName="Hit 15: Secondary Dummy Polygon" 
+    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    
+    <hit4_hitType 
+    AltName="Hit 4: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit5_hitType 
+    AltName="Hit 5: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit6_hitType 
+    AltName="Hit 6: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit7_hitType 
+    AltName="Hit 7: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit8_hitType 
+    AltName="Hit 8: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit9_hitType 
+    AltName="Hit 9: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit10_hitType 
+    AltName="Hit 10: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit11_hitType 
+    AltName="Hit 11: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit12_hitType 
+    AltName="Hit 12: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit13_hitType 
+    AltName="Hit 13: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit14_hitType 
+    AltName="Hit 14: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit15_hitType 
+    AltName="Hit 15: Hit Type" 
+    Wiki="Hit part" 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hti4_Priority 
+    AltName="Hit 4: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti5_Priority 
+    AltName="Hit 5: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti6_Priority 
+    AltName="Hit 6: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti7_Priority 
+    AltName="Hit 7: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti8_Priority 
+    AltName="Hit 8: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti9_Priority 
+    AltName="Hit 9: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti10_Priority 
+    AltName="Hit 10: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti11_Priority 
+    AltName="Hit 11: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti12_Priority 
+    AltName="Hit 12: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti13_Priority 
+    AltName="Hit 13: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti14_Priority 
+    AltName="Hit 14: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti15_Priority 
+    AltName="Hit 15: Priority" 
+    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <defSfxMaterial1 
+    AltName="Defence Presentation: Particles" 
+    Wiki="The particles used when guarding." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <defSeMaterial2 
+    AltName="Defence Presentation: Sound (Disabled)" 
+    Wiki="The sound used when guarding." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <defSfxMaterial2 
+    AltName="Defence Presentation: Particles (Disabled)" 
+    Wiki="The particles used when guarding." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <bEnableSaBreak
+    AltName="Is Poise Breakable"
+    Wiki="Is it possible to break poise?"
+    IsBool="" />
+    
+    <assetBreakActionType
+    AltName="Asset Destruction: TAE Action Type"
+    Wiki="TAE action type played when an asset is destroyed by this attack"
+    Enum="ATKPARAM_ASSET_BREAK_ACTION_TYPE" />
+    
+    <cameraRumbleID
+    AltName="Camera Vibration on Hit"
+    Wiki="ID of camera vibration upon hit" 
+    Refs="CameraRumbleParam" />
+    
+    <cameraRumbleDefenseID
+    AltName="Camera Vibration on Guarded Hit"
+    Wiki="ID of camera vibration upon guarded hit" 
+    Refs="CameraRumbleParam" />
+    
+    <dmgHitRecordLifeTime 
+    AltName="Damage Hit Interval" 
+    Wiki="The interval at which damage is taken. It only hits once at 0.0f or less." />
+    
+    <knockbackAtkSpdScaleMinSpeedKmh 
+    AltName="Knockback: Attacker Speed Correction - Minimum Speed"
+    Wiki="Minimum speed to determine the magnification that increases the speed of the person attacking with knockback. In kilometres per hour." />
+    
+    <knockbackAtkSpdScaleMaxSpeedKmh 
+    AltName="Knockback: Attacker Speed Correction - Maximum Speed"
+    Wiki="Maximum speed to determine the magnification that increases the speed of the person attacking with knockback. In kilometres per hour." />
+    
+    <knockbackAtkSpdScaleMinScale 
+    AltName="Knockback: Attacker Speed Correction - Minimum Speed Multiplier"
+    Wiki="Multiplier to increase the speed of the person attacking with knockback (this multiplier when the speed is below the minimum speed)" />
+    
+    <knockbackAtkSpdScaleMaxScale 
+    AltName="Knockback: Attacker Speed Correction - Maximum Speed Multiplier"
+    Wiki="Multiplier to increase the speed of the person attacking with knockback (this multiplier when the speed is below the maximum speed)" />
+    
+    <shooterKnockbackMPS 
+    AltName="Knockback: Recoil when Shooting"
+    Wiki="Recoil (knockback) speed received when shooting. In metres per second." />
+    
+    <behaviorOnHitOppose
+    AltName="Behavior on Hit: Hostile"
+    Wiki="Behavior on enemy hit."
+    Enum="ATKPARAM_BEHAVIOR_ON_HIT_TYPE" />
+    
+    <behaviorOnHitFriendly
+    AltName="Behavior on Hit: Friendly"
+    Wiki="Behavior on friendly hit."
+    Enum="ATKPARAM_BEHAVIOR_ON_HIT_TYPE" />
+    
+    <behaviorOnHitSelf
+    AltName="Behavior on Hit: Self"
+    Wiki="Behavior on self hit."
+    Enum="ATKPARAM_BEHAVIOR_ON_HIT_TYPE" />
+    
+    <deadAnimType
+    AltName="Death Animation Type"
+    Wiki="Determines the opponent's animation when the opponent dies from this attack."
+    Enum="ATKPARAM_DEAD_ANIM_TYPE" />
+    
+    <cameraRumbleMapID
+    AltName="Camera Vibration ID on Map Collision"
+    Wiki="ID of camera vibration when hitting the map" 
+    Refs="CameraRumbleParam" />
+    
+    <cameraRumbleMapEnableDistance
+    AltName="Map Collision Camera Vibration Distance"
+    Wiki="Distance at which camera vibration is effective when hitting the map. In metres." />
+    
+    <shooterKnockbackDirType
+    AltName="Recoil Direction Type"
+    Wiki="Direction that serves as a basis for calculating recoil knockback"
+    Enum="ATKPARAM_SHOOTER_KNOCKBACK_DIR_TYPE" />
+    
+    <dmgLevel_Friendly 
+    AltName="Damage Level: Friendly"
+    Wiki="Damage level when hit by an ally including yourself" 
+    Enum="ATKPARAM_REP_DMGTYPE_UINT"/>
+    
+    <atkDarkCorrection 
+    AltName="Attack Correction: Dark" 
+    Wiki="Player only. Multiplier to the base Dark attack power" />
+    
+    <grabFlag
+    AltName="Grab Type"
+    Wiki="Flag used for grab information"
+    Enum="ATK_PATAM_GRABFLAG_TYPE" />
+    
+    <grabEnableDmgLevel
+    AltName="Damage Level: Start Grab"
+    Wiki="You can grab it if it is above this damage level."
+    Enum="ATKPARAM_REP_DMGTYPE_UINT" />
+    
+    <grabAttachDirType
+    AltName="Grab Attachment Correction"
+    Wiki="Attach correction method when grabbing"
+    Enum="ATKPARAM_GRAB_ATTACH_DIR_TYPE" />
+    
+    <guardJudgeType 
+    AltName="Guard Judgment Type"
+    Wiki="Attack position type used when determining guard/barrier"
+    Enum="ATKPARAM_GUARD_JUDGE_TYPE" />
+    
+    <hit0_Length
+    AltName="Hit 0: Initial Length"
+    Wiki="Starting length of the hit capsule, in metres." />
+    
+    <hit0_MaxLength
+    AltName="Hit 0: Max Length"
+    Wiki="Maxmimum length of the hit capsule, in metres." />
+    
+    <hit0_LengthExpandTime
+    AltName="Hit 0: Length Expansion Time"
+    Wiki="Stretch the length in the direction of secondary dummy poly for this amount of time. In seconds." />
+    
+    <hit0_MaxRadius
+    AltName="Hit 0: Max Radius"
+    Wiki="Maxmimum radius of the hit capsule, in metres." />
+    
+    <hit0_ThicknessExpandTime
+    AltName="Hit 0: Radius Expansion Time"
+    Wiki="The thickness of the area increases linearly from the radius to the maximum radius over this time." />
+    
+    <hit0_KeepInitTime
+    AltName="Hit 0: Expansion Delay"
+    Wiki="Change the shape of the area after this amount of time has passed. In seconds." />
+    
+    <hit0_SfxId
+    AltName="Hit 0: Particle ID"
+    Wiki="The SFX ID used by this hit capsule." 
+    ParticleAlias="" />
+    
+    <hit0_SfxDeleteType
+    AltName="Hit 0: Particle Delete Type"
+    Wiki="The deletion type for the SFX used by this hit capsule." 
+    Enum="BULLET_SFX_DELETE_TYPE" />
+    
+    <hit0_hitCreateType
+    AltName="Hit 0: Generation Type"
+    Wiki="The creation type used by this hit capsule." 
+    Enum="ATKPARAM_HIT_CREATE_TYPE" />
+    
+    <isHitFpsBarrier
+    AltName="Can Hit FPS Barrier"
+    Wiki="Will it hit the FPS barrier?"
+    IsBool="" />
+    
+    <isHit0_ExpandPenetrateChr
+    AltName="Hit 0: Can Penetrate Character"
+    Wiki="Will it penetrate the character when expanding or contracting?"
+    IsBool="" />
+    
+    <isHit0_ExpandPenetrateMap
+    AltName="Hit 0: Can Penetrate Map"
+    Wiki="Will it pass through map hits when expanding or contracting?"
+    IsBool="" />
+    
+    <isHit0_ExpandSfxHitPos
+    AltName="Hit 0: Place Particle on Hit Location"
+    Wiki="Should the SFX during expansion and contraction be based on the hit location?"
+    IsBool="" />
+    
+    <isUseknockbackBladeAddDmg
+    AltName="Use Additional Knockback Power for Blade"
+    Wiki="Should the additional damage knockback power for the blade be used" 
+    IsBool="" />
+    
+    <isHitSfxPosCorrection
+    AltName="Correct Hit Particle Position of Melee Weapon"
+    Wiki="Should the hit SFX generation position be corrected to the position between the lock dummy polys?" 
+    IsBool="" />
+    
+    <isUseHitSfxHitVel
+    AltName="Correct Hit Particle Direction to Bullet Direction"
+    Wiki="Should the hit SFX be issued according to the direction of bullet flight?" 
+    IsBool="" />
+    
+    <isAtkTotalWeightCorrectionRate_forPc
+    AltName="Is Attack Power based on Total Weight (Player Only)"
+    Wiki="If 1, refer to the correction calculation graph parameter 'Total weight correction coefficient: attack power multiplier'" 
+    IsBool="" />
+    
+    <isChrAttachGeomSkip
+    AltName="Ignore Hit on Attached Assets"
+    Wiki="As a performance measure, do you want to avoid hitting assets attached to characters when expanding or contracting?" 
+    IsBool="" />
+    
+    <isInsFirstHitCheckOnly
+    AltName="Ignore Hit after First Hit"
+    Wiki="To improve performance, avoid checking multiple hits on the same character or asset, and be careful as the SFX generation position may shift (multiple hits are excluded after they hit, but this is excluded before they hit)" 
+    IsBool="" />
+    
+    <isFSDP
+    AltName="Use FSDP"
+    Wiki="Use FSDP (clog occurs when packet loss occurs instead of guaranteeing delivery)" 
+    IsBool="" />
+    
+    <isDisableSpEffectNoDead
+    AltName="Is Immortality Ignored"
+    Wiki="Ignore immortality special effects such as emergency PA" 
+    IsBool="" />
+    
+    <isMultiHitDisableMap
+    AltName="Ignore Multi-Hits on Map Collision"
+    Wiki="Exclude the map with multiple hits?" 
+    IsBool="" />
+    
+    <isAssaultBoostBonusAttack
+    AltName="Is Assault Boost Bonus Attack"
+    Wiki="" 
+    IsBool="" />
+    
+    <isDefMaterialIgnore
+    AltName="Ignore Defense Particles on Impact"
+    Wiki="Do you want to disable the SFX defense material change on the impact side?" 
+    IsBool="" />
+    
+    <isDisableBulletGeneration
+    AltName="Disable Bullet Generation"
+    Wiki="Should multi-hit information be shared while ignoring generations when the attack ID is the same?" 
+    IsBool="" />
+    
+    <combatIncreasePoint
+    AltName="AI Detection: Engagement Level Increase"
+    Wiki="The amount of engagement level that increases each time you are hit. Linked to AI detection" />
+    
+    <knockbackStartPointType
+    AltName="Knockback Start Direction Type"
+    Wiki="Knockback direction determination type" 
+    Enum="ATKPARAM_KNOCKBACK_STARTPOINT_TYPE" />
+    
+    <shootSeCategory
+    AltName="Firing Sound Category"
+    Wiki="ID for identifying SE to be played by association with attack material and attack strength"
+    Enum="ATKPARAM_SHOOT_SE_CATEGORY" />
+    
+    <id_forSe
+    AltName="Sound ID"
+    Wiki="Identification ID for determining the SE to play" 
+    SoundAlias="" />
+    
+    <se_reflectLv
+    AltName="Sound Reverb Level"
+    Wiki="The level of reverb for the sound"
+    Enum="SOUND_REFLECT_LEVEL" />
+    
+    <HitHDRumbleSlotIdx
+    AltName="HD Vibration Slot Index"
+    Wiki="HD pad vibration playback slot (0-3)" />
+    
+    <dmgCalcSide
+    AltName="Damage Judgment Type"
+    Wiki="Damage Judgment Side: Which side decides the hit judgment of the attack?"
+    Enum="DMG_CALC_SIDE_TYPE" />
+    
+    <pad4
+    AltName=""
+    Padding="" />
+    
+    <shooterKnockbackMoveTimeSec
+    AltName="Recoil Knockback: Acceleration Time"
+    Wiki="The time it takes to start slowing down due to the recoil (knockback) you receive when shooting. In seconds." />
+    
+    <shooterKnockbackBrakeTimeSec
+    AltName="Recoil Knockback: Deceleration Time"
+    Wiki="The time from when you start decelerating due to the recoil (knockback) you receive when shooting until you stop. In seconds." />
+    
+    <shooterKnockbackDecayRate
+    AltName="Recoil Knockback: Deceleration Decay Curve"
+    Wiki="Deceleration speed curve coefficient due to the recoil (knockback) received when shooting (the larger the value, the stronger the brake will be at the end)" />
+    
+    <shooterFlyKnockbackMPS
+    AltName="Aerial Recoil Knockback: Force"
+    Wiki="Recoil (knockback) speed received when shooting. In metres per second." />
+    
+    <shooterFlyKnockbackMoveTimeSec
+    AltName="Aerial Recoil Knockback: Acceleration Time"
+    Wiki="The time it takes to start slowing down due to the recoil (knockback) you receive when shooting. In seconds." />
+    
+    <shooterFlyKnockbackBrakeTimeSec
+    AltName="Aerial Recoil Knockback: Deceleration Time"
+    Wiki="The time from when you start decelerating due to the recoil (knockback) you receive when shooting until you stop. In seconds." />
+    
+    <shooterFlyKnockbackDecayRate
+    AltName="Aerial Recoil Knockback: Deceleration Decay Curve"
+    Wiki="Deceleration speed curve coefficient due to the recoil (knockback) received when shooting (the larger the value, the stronger the brake will be at the end)" />
+    
+    <statusAilmentAtkPowerCorrectRate
+    AltName="Attack Correction: Status Abnormality"
+    Wiki="Multiplying the special effect's status abnormality attack power." />
+    
+    <statusAilmentAtkPowerCorrectRate_byPoint
+    AltName="Attack Correction: Status Abnormality (by Point)"
+    Wiki="A multiplier correction will be applied to the special effect 'Do you apply the abnormal status attack power multiplier correction?'" />
+    
+    <spEffectAtkPowerCorrectRate_byPoint
+    AltName="Attack Correction: SpEffect Attack Power (by Point)"
+    Wiki="A multiplier correction is applied to the attack power [point] of the special effect." />
+    
+    <spEffectAtkPowerCorrectRate_byRate
+    AltName="Attack Correction: SpEffect Attack Power (by Rate)"
+    Wiki="Multiplier correction is applied to the attack power multiplier of special effects." />
+    
+    <spEffectAtkPowerCorrectRate_byDmg
+    AltName="Attack Correction: SpEffect Attack Power (by Damage)"
+    Wiki="Attacker side of special effects: Performs multiplier correction for damage multiplier." />
+    
+    <atkPa
+    AltName="Damage: Pulse Armor Interference"
+    Wiki="The base Pulse Armor attack power." />
+    
+    <impactPower
+    AltName="Damage: Impact"
+    Wiki="The base Impact attack power." />
+    
+    <damageLevelConvId
+    AltName="Damage Level Conversion ID: Hostile"
+    Wiki="ID of damage level conversion parameter" 
+    Refs="DamageLevelConvParam" />
+    
+    <damageLevelConvId_Friend
+    AltName="Damage Level Conversion ID: Friendly"
+    Wiki="ID of damage level conversion parameter" 
+    Refs="DamageLevelConvParam" />
+    
+    <bodyTrunkAttakcPower
+    AltName="Damage: Core"
+    Wiki="Damage applied to the core." />
+    
+    <bBodyTrunkBreakEnable
+    AltName="Is Core Break Possible"
+    Wiki="Can you do a core break?" 
+    IsBool="" />
+    
+    <addDamageAnimType
+    AltName="Additive Damage Animation Type"
+    Wiki="Additive damage animation type that the opponent regenerates" 
+    Enum="ATKPARAM_ADD_DAMAGE_ANIM_TYPE" />
+    
+    <addEndPermanentStunValue
+    AltName="Add End Permanent Stun Value (by Point)"
+    Wiki="" />
+    
+    <paPenetrationPower
+    AltName="Damage: Pulse Armor Penetration"
+    Wiki="Weapon para/NPC para: Used in conjunction with PA output to calculate PA cut rate." />
+    
+    <hit0_Fan_Radius
+    AltName="Hit 0: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit1_Fan_Radius
+    AltName="Hit 1: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit2_Fan_Radius
+    AltName="Hit 2: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit3_Fan_Radius
+    AltName="Hit 3: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit4_Fan_Radius
+    AltName="Hit 4: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit5_Fan_Radius
+    AltName="Hit 5: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit6_Fan_Radius
+    AltName="Hit 6: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit7_Fan_Radius
+    AltName="Hit 7: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit8_Fan_Radius
+    AltName="Hit 8: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit9_Fan_Radius
+    AltName="Hit 9: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit10_Fan_Radius
+    AltName="Hit 10: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit11_Fan_Radius
+    AltName="Hit 11: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit12_Fan_Radius
+    AltName="Hit 12: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit13_Fan_Radius
+    AltName="Hit 13: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit14_Fan_Radius
+    AltName="Hit 14: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit15_Fan_Radius
+    AltName="Hit 15: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit0_Fan_RotY
+    AltName="Hit 0: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit1_Fan_RotY
+    AltName="Hit 1: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit2_Fan_RotY
+    AltName="Hit 2: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit3_Fan_RotY
+    AltName="Hit 3: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit4_Fan_RotY
+    AltName="Hit 4: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit5_Fan_RotY
+    AltName="Hit 5: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit6_Fan_RotY
+    AltName="Hit 6: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit7_Fan_RotY
+    AltName="Hit 7: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit8_Fan_RotY
+    AltName="Hit 8: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit9_Fan_RotY
+    AltName="Hit 9: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit10_Fan_RotY
+    AltName="Hit 10: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit11_Fan_RotY
+    AltName="Hit 11: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit12_Fan_RotY
+    AltName="Hit 12: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit13_Fan_RotY
+    AltName="Hit 13: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit14_Fan_RotY
+    AltName="Hit 14: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit15_Fan_RotY
+    AltName="Hit 15: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit0_Fan_RotZ
+    AltName="Hit 0: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit1_Fan_RotZ
+    AltName="Hit 1: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit2_Fan_RotZ
+    AltName="Hit 2: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit3_Fan_RotZ
+    AltName="Hit 3: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit4_Fan_RotZ
+    AltName="Hit 4: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit5_Fan_RotZ
+    AltName="Hit 5: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit6_Fan_RotZ
+    AltName="Hit 6: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit7_Fan_RotZ
+    AltName="Hit 7: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit8_Fan_RotZ
+    AltName="Hit 8: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit9_Fan_RotZ
+    AltName="Hit 9: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit10_Fan_RotZ
+    AltName="Hit 10: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit11_Fan_RotZ
+    AltName="Hit 11: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit12_Fan_RotZ
+    AltName="Hit 12: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit13_Fan_RotZ
+    AltName="Hit 13: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit14_Fan_RotZ
+    AltName="Hit 14: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit15_Fan_RotZ
+    AltName="Hit 15: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit0_Fan_UpOffset
+    AltName="Hit 0: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit1_Fan_UpOffset
+    AltName="Hit 1: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit2_Fan_UpOffset
+    AltName="Hit 2: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit3_Fan_UpOffset
+    AltName="Hit 3: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit4_Fan_UpOffset
+    AltName="Hit 4: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit5_Fan_UpOffset
+    AltName="Hit 5: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit6_Fan_UpOffset
+    AltName="Hit 6: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit7_Fan_UpOffset
+    AltName="Hit 7: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit8_Fan_UpOffset
+    AltName="Hit 8: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit9_Fan_UpOffset
+    AltName="Hit 9: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit10_Fan_UpOffset
+    AltName="Hit 10: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit11_Fan_UpOffset
+    AltName="Hit 11: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit12_Fan_UpOffset
+    AltName="Hit 12: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit13_Fan_UpOffset
+    AltName="Hit 13: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit14_Fan_UpOffset
+    AltName="Hit 14: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit15_Fan_UpOffset
+    AltName="Hit 15: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit0_Fan_DownOffset
+    AltName="Hit 0: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit1_Fan_DownOffset
+    AltName="Hit 1: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit2_Fan_DownOffset
+    AltName="Hit 2: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit3_Fan_DownOffset
+    AltName="Hit 3: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit4_Fan_DownOffset
+    AltName="Hit 4: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit5_Fan_DownOffset
+    AltName="Hit 5: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit6_Fan_DownOffset
+    AltName="Hit 6: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit7_Fan_DownOffset
+    AltName="Hit 7: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit8_Fan_DownOffset
+    AltName="Hit 8: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit9_Fan_DownOffset
+    AltName="Hit 9: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit10_Fan_DownOffset
+    AltName="Hit 10: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit11_Fan_DownOffset
+    AltName="Hit 11: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit12_Fan_DownOffset
+    AltName="Hit 12: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit13_Fan_DownOffset
+    AltName="Hit 13: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit14_Fan_DownOffset
+    AltName="Hit 14: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit15_Fan_DownOffset
+    AltName="Hit 15: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit0_Fan_InternalAngle
+    AltName="Hit 0: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit1_Fan_InternalAngle
+    AltName="Hit 1: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit2_Fan_InternalAngle
+    AltName="Hit 2: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit3_Fan_InternalAngle
+    AltName="Hit 3: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit4_Fan_InternalAngle
+    AltName="Hit 4: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit5_Fan_InternalAngle
+    AltName="Hit 5: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit6_Fan_InternalAngle
+    AltName="Hit 6: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit7_Fan_InternalAngle
+    AltName="Hit 7: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit8_Fan_InternalAngle
+    AltName="Hit 8: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit9_Fan_InternalAngle
+    AltName="Hit 9: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit10_Fan_InternalAngle
+    AltName="Hit 10: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit11_Fan_InternalAngle
+    AltName="Hit 11: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit12_Fan_InternalAngle
+    AltName="Hit 12: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit13_Fan_InternalAngle
+    AltName="Hit 13: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit14_Fan_InternalAngle
+    AltName="Hit 14: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit15_Fan_InternalAngle
+    AltName="Hit 15: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <brokenPartsBlowAwayAngleVertical
+    AltName="Part Destruction: Vertical Blow-off Angle"
+    Wiki="The reference direction changes depending on the setting of 'Blow-off direction correction type at the time of damage', and the horizontal direction is 0." />
+    
+    <brokenPartsBlowAwayAngleHorizontal
+    AltName="Part Destruction: Horizontal Blow-off Angle"
+    Wiki="The reference direction changes depending on the setting of 'Blow-off direction correction type at the time of damage'" />
+    
+    <brokenPartsBlowAwayForce
+    AltName="Part Destruction: Blow-off Force"
+    Wiki="In kilograms x metres per second" />
+    
+    <brokenPartsRotationAxisAngleVertical
+    AltName="Part Destruction: Vertical Axis Tilt"
+    Wiki="Regarding the tilt of the rotation axis, always calculate it based on the master direction of the target (Y direction in world space) without making any corrections based on the position of the bullet, and the Y direction is 0. In degrees." />
+    
+    <brokenPartsRotationAxisAngleHorizontal
+    AltName="Part Destruction: Horizontal Axis Tilt"
+    Wiki="Regarding the tilt of the rotation axis, always calculate it based on the master direction of the victim (Y direction in world space), without making any corrections based on the position of the victim." />
+    
+    <brokenPartsRotationForce
+    AltName="Part Destruction: Rotation Force"
+    Wiki="In kilograms x degrees per second" />
+    
+    <partsBreakLotteryId
+    AltName="Part Destruction: Damage Lot ID"
+    Wiki="The damage lot to roll upon part destruction." 
+    Refs="PartsBreakLotteryParam" />
+    
+    <brokenPartsBlowAwayDirectionCompensationType
+    AltName="Part Destruction: Blow-off Correction Type"
+    Wiki="Correction type applied to the blow-off direction." 
+    Enum="ATK_PARAM_BROKEN_PARTS_BLOW_AWAY_DIRECTION_COMPENSATION_TYPE" />
+    
+    <damageAnimAtkDir
+    AltName="Damage Animation Attack Direction"
+    Wiki="Values ​​referenced when playing damage animation"
+    Enum="ATKPARAM_DAMAGE_ANIM_ATK_DIR" />
+    
+    <atkObjDamage_Hp
+    AltName="Damage: Object HP"
+    Wiki="Damage to asset HP" />
+    
+    <knockbackDirType
+    AltName="Knockback Direction Correction Type"
+    Wiki="" 
+    Enum="ATKPARAM_KNOCKBACK_DIR_TYPE" />
+    
+    <knockbackDirAngAxisX
+    AltName="Knockback X-Axis Angle"
+    Wiki="Correction angle used in knockback direction correction type. In degrees." />
+    
+    <knockbackDirAngAxisY
+    AltName="Knockback Y-Axis Angle"
+    Wiki="Correction angle used in knockback direction correction type. In degrees." />
+    
+    <brokenPartsKnockbackRate
+    AltName="Part Destruction: Knockback Correction"
+    Wiki="Applied speed multiplier due to knockback when damaged parts are blown away." />
+    
+    <pad10
+    AltName=""
+    Padding="" />
+    
+    <multiHit_MaxCountBehavior
+    AltName="Multi-Hit: Max Count Behavior"
+    Wiki="Behavior when the number of multi-hit hits is at the upper limit" 
+    Enum="ATKPARAM_MULTI_HIT_MAX_BEH_TYPE" />
+    
+    <multiHit_MaxCount
+    AltName="Multi-Hit: Max Count"
+    Wiki="Upper limit of number of multi-hits" />
+    
+    <multiHit_ShareId
+    AltName="Multi-Hit: Shared Hit ID"
+    Wiki="Shared ID for multi-stage hit count" />
+    
+    <multiHit_ResetTimeSec
+    AltName="Multi-Hit: Count Reset Time"
+    Wiki="Time to reset multi-hit count. In seconds." />
+    
+    <hitSfx_RotAngDegZ
+    AltName="Hit Particle: Z-Axis Rotation"
+    Wiki="Hit SFX Z-axis rotation angle" />
+    
+    <hitSfx_RandRotAngDegZ
+    AltName="Hit Particle: Max Random Z-Axis Rotation"
+    Wiki="Hit SFX Z-axis rotation angle, max random degree offset" />
+    
+    <staggerCriticalRate_Phys
+    AltName="Direct Hit Correction: Kinetic"
+    Wiki="Direct Hit multiplier for Kinetic damage." />
+    
+    <staggerCriticalRate_Mag
+    AltName="Direct Hit Correction: Energy"
+    Wiki="Direct Hit multiplier for Energy damage." />
+    
+    <staggerCriticalRate_Fire
+    AltName="Direct Hit Correction: Explosive"
+    Wiki="Direct Hit multiplier for Explosive damage." />
+    
+    <staggerCriticalRate_Thun
+    AltName="Direct Hit Correction: Coral"
+    Wiki="Direct Hit multiplier for Coral damage." />
+    
+    <staggerCriticalRate_Dark
+    AltName="Direct Hit Correction: Dark"
+    Wiki="Direct Hit multiplier for Dark damage." />
+    
+    <spEffectAddCondParts_0
+    AltName="SpEffect Grant Condition [0]"
+    Wiki="Adds a special effect when hitting the specified area" 
+    Enum="NPC_SP_EFFECT_ADD_COND_PARTS_TYPE" />
+    
+    <isAdfPartsGroupNoHit
+    AltName="Ignore Hits to Parts tagged with TAE Disable Damage event"
+    Wiki="When ○, ignores hits to the specified part with the TAE flag 'Disable damage by specifying part (for ADF)'" 
+    IsBool="" />
+    
+    <isMultiHitArmorHit_DisableHitStop
+    AltName="Disable Hit Stop for Multi-Hit Armor Hits"
+    Wiki="Do you want to prevent hit stop when armor hits?" 
+    IsBool="" />
+    
+    <unk353_2
+    AltName="Unknown 353_2"
+    Wiki="" />
+    
+    <pad_11
+    AltName=""
+    Padding="" />
+    
+    <decalBaseId1
+    AltName="Decal ID [1]"
+    Wiki="Decal identifier 1 (5 digits)" 
+    Refs="DecalParam" />
+    
+    <decalBaseId2
+    AltName="Decal ID [2]"
+    Wiki="Decal identifier 2 (5 digits)" 
+    Refs="DecalParam" />
+    
+    <sfxId_Critical
+    AltName="Critical Hit: Particle ID"
+    Wiki="SFXID on critical hit. -1 does not occur." />
+    
+    <sfxId_CriticalSfxLevel
+    AltName="Critical Hit: Particle Strength"
+    Wiki="SFX strength on critical hit. does not occur without" 
+    Enum="ATKPARAM_CRITICAL_SFX_LEVEL_TYPE" />
+    
+    <HitRumblePriority
+    AltName="Hit Vibration Priority"
+    Wiki="The higher the priority value during vibration playback, the higher the priority." />
+    
+    <pad_12
+    AltName=""
+    Padding="" />
+    
+    <hit0_Fan_RotX
+    AltName="Hit 0: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit1_Fan_RotX
+    AltName="Hit 1: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit2_Fan_RotX
+    AltName="Hit 2: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit3_Fan_RotX
+    AltName="Hit 3: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit4_Fan_RotX
+    AltName="Hit 4: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit5_Fan_RotX
+    AltName="Hit 5: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit6_Fan_RotX
+    AltName="Hit 6: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit7_Fan_RotX
+    AltName="Hit 7: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit8_Fan_RotX
+    AltName="Hit 8: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit9_Fan_RotX
+    AltName="Hit 9: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit10_Fan_RotX
+    AltName="Hit 10: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit11_Fan_RotX
+    AltName="Hit 11: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit12_Fan_RotX
+    AltName="Hit 12: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit13_Fan_RotX
+    AltName="Hit 13: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit14_Fan_RotX
+    AltName="Hit 14: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit15_Fan_RotX
+    AltName="Hit 15: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit0_MeleeKnockbackDmyPoly
+    AltName="Hit 0: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit1_MeleeKnockbackDmyPoly
+    AltName="Hit 1: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit2_MeleeKnockbackDmyPoly
+    AltName="Hit 2: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit3_MeleeKnockbackDmyPoly
+    AltName="Hit 3: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit4_MeleeKnockbackDmyPoly
+    AltName="Hit 4: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit5_MeleeKnockbackDmyPoly
+    AltName="Hit 5: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit6_MeleeKnockbackDmyPoly
+    AltName="Hit 6: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit7_MeleeKnockbackDmyPoly
+    AltName="Hit 7: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit8_MeleeKnockbackDmyPoly
+    AltName="Hit 8: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit9_MeleeKnockbackDmyPoly
+    AltName="Hit 9: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit10_MeleeKnockbackDmyPoly
+    AltName="Hit 10: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit11_MeleeKnockbackDmyPoly
+    AltName="Hit 11: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit12_MeleeKnockbackDmyPoly
+    AltName="Hit 12: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit13_MeleeKnockbackDmyPoly
+    AltName="Hit 13: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit14_MeleeKnockbackDmyPoly
+    AltName="Hit 14: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit15_MeleeKnockbackDmyPoly
+    AltName="Hit 15: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <HitHDRumbleId 
+    AltName="HD Vibration on Hit" 
+    Wiki="Vibration ID on hit (-1 disabled). This is the vibration ID when none of the following three apply." />
+    
+    <HitHDRumbleIdByNormal 
+    AltName="HD Vibration on Hit: Dummy Polygon Tip" 
+    Wiki="Hit vibration ID when hitting the tip of the dummy polygon (-1 disabled)" />
+    
+    <HitHDRumbleIdByMiddle 
+    AltName="HD Vibration on Hit: Dummy Polygon Center" 
+    Wiki="Hit vibration ID when hitting the center of the dummy polygon (-1 disabled)" />
+    
+    <HitHDRumbleIdByRoot 
+    AltName="HD Vibration on Hit: Dummy Polygon Root" 
+    Wiki="Hit vibration ID when hitting the root of the dummy polygon (-1 disabled)" />
+    
+    <padHDRumbleID
+    AltName="HD Vibration on Hit: Pad"
+    Wiki="ID of pad HD vibration when hitting player" />
+    
+    <padHDRumbleID
+    AltName="HD Pad Vibration on Hit"
+    Wiki="ID of pad HD vibration when hitting player" />
+    
+    <padHDRumbleDefenseID
+    AltName="HD Pad Vibration on Guarded Hit"
+    Wiki="ID of pad HD vibration upon guarded hit" />
+    
+    <soundRestrictionSec
+    AltName="Playback Time Limit for Firing Sound"
+    Wiki="Regeneration thinning time of various SEs due to attacks. In seconds." />
+    
+    <soundLandingRestrictionSec
+    AltName="Playback Time Limit for Impact Sound"
+    Wiki="Regeneration thinning time of various SEs due to impact. In seconds." />
+    
+    <soundFlyRestrictionSec
+    AltName="Playback Time Limit for Hovering Sound"
+    Wiki="Regeneration thinning time of various SEs due to impact. In seconds." />
+    
+    <damageReactionDisableGravityTimeSec
+    AltName="Damage Reacion: Gravity Disable Time"
+    Wiki="Time to erase gravity with damage reaction" />
+    
+    <PulseSpAtkBonusImpact_Guard
+    AltName="Pulse Special Attack: Bonus Impact on Guard"
+    Wiki="Pulse special attack bonus impact power" />
+    
+    <PulseSpAtkBonusImpact_JustGuard
+    AltName="Pulse Special Attack: Bonus Impact on Just Guard"
+    Wiki="Pulse special attack bonus impact power" />
+    
+    <PulseSpAtkImpactCutDown_Guard
+    AltName="Pulse Special Attack: Impact Absorption on Guard"
+    Wiki="Pulse special attack impact value cut rate nullification amount" />
+    
+    <PulseSpAtkImpactCutDown_JustGuard
+    AltName="Pulse Special Attack: Impact Absorption on Just Guard"
+    Wiki="Pulse special attack impact value cut rate nullification amount" />
+    
+    <residualImpactPower
+    AltName="Damage: Accumulative Impact when Unguarded"
+    Wiki="Residual impact force when not guarded" />
+    
+    <hit0_sfxmodelId
+    AltName="Hit 0: Particle Model ID"
+    Wiki="SFX model parameter ID for bending laser" />
+    
+    <knockbackBladeAddDmgMPS
+    AltName="Knockback: Additional Power for Blade"
+    Wiki="Additional damage knockback power for blade (speed). In metres per second." />
+    
+    <playerToEneHitCamRumbleId
+    AltName="Player to Enemy Hit Camera Vibration ID"
+    Wiki="The pad vibration ID (-1 disabled) becomes the dynamic ID when the player's attack hits the enemy." 
+    Refs="CameraRumbleParam" />
+    
+    <criticalHitSfxRestrictionSec
+    AltName="Direct Hit: Surpressed Particle Time"
+    Wiki="Critical hit SFX continuous occurrence suppression time. In seconds." />
+    
+    <multiHitArmorHit_OneHitCount
+    AltName="Multi-Hit: Grouped Number on Armor Hit"
+    Wiki="How many times should the armor hit for multi-stage hit count +1?" />
+    
+    <pad_13
+    AltName=""
+    Padding="" />
+    
+    <multiHitArmorHit_DamageRate
+    AltName="Multi-Hit: Damage Correction on Armor Hit"
+    Wiki="Damage multiplier on armor hit" />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="ATKPARAM_HIT_CREATE_TYPE" type="u8">
+      <Option Value="0" Name="Connect between DummyPolys" />
+      <Option Value="1" Name="Extend same direction as DummyPoly 1" />
+      <Option Value="2" Name="Fan" />
+    </Enum>
+    <Enum Name="ATKPARAM_SHOOT_SE_CATEGORY" type="s8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Handgun" />
+      <Option Value="2" Name="Rifle" />
+      <Option Value="3" Name="Cannon" />
+      <Option Value="4" Name="Machinegun" />
+      <Option Value="5" Name="AssaultRifle" />
+      <Option Value="6" Name="Gatling" />
+      <Option Value="7" Name="Shotgun" />
+      <Option Value="8" Name="SniperRifle" />
+      <Option Value="9" Name="HandGrenade" />
+      <Option Value="10" Name="bazooka" />
+      <Option Value="11" Name="GrenadeCannon" />
+      <Option Value="12" Name="BombS" />
+      <Option Value="13" Name="BombM" />
+      <Option Value="14" Name="BombL" />
+      <Option Value="15" Name="Missile" />
+      <Option Value="16" Name="Rocket" />
+      <Option Value="17" Name="PulseHandgun" />
+      <Option Value="18" Name="PulseRifle" />
+      <Option Value="19" Name="PulseCannon" />
+      <Option Value="20" Name="PulseMachinegun" />
+      <Option Value="21" Name="PulseShotgun" />
+      <Option Value="22" Name="PulseBombS" />
+      <Option Value="23" Name="PulseBombM" />
+      <Option Value="24" Name="PulseBombL" />
+      <Option Value="25" Name="LaserRifle" />
+      <Option Value="26" Name="HighLaserRifle" />
+      <Option Value="27" Name="LaserSniperRifle" />
+      <Option Value="28" Name="LaserMachinegun" />
+      <Option Value="29" Name="PlasmaRifle" />
+      <Option Value="30" Name="PlasmaCannon" />
+      <Option Value="31" Name="PlasmaBombS" />
+      <Option Value="32" Name="PlasmaBombM" />
+      <Option Value="33" Name="PlasmaBombL" />
+      <Option Value="34" Name="Melee" />
+      <Option Value="100" Name="SpWeapon" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_ATK" type="u8">
+      <Option Value="0" Name="Standard" />
+      <Option Value="1" Name="Kinetic" />
+      <Option Value="2" Name="Energy" />
+      <Option Value="3" Name="Explosive" />
+      <Option Value="4" Name="Ice" />
+      <Option Value="5" Name="Green" />
+      <Option Value="6" Name="None" />
+      <Option Value="7" Name="Dmy1" />
+      <Option Value="8" Name="Dmy2" />
+      <Option Value="9" Name="Dmy3" />
+      <Option Value="10" Name="Dmy4" />
+      <Option Value="11" Name="Coral" />
+      <Option Value="12" Name="Assault Armor" />
+      <Option Value="20" Name="Pulse" />
+      <Option Value="21" Name="Laser" />
+      <Option Value="22" Name="Plasma" />
+      <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="ATK_PATAM_THROWFLAG_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Throw transition" />
+        <Option Value="2" Name="Throw" />
+        <Option Value="3" Name="Throw transition (with dmgLevel)" />
+    </Enum>
+    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
+        <Option Value="0" Name="Do not overwrite" />
+        <Option Value="1" Name="None" />
+        <Option Value="2" Name="Flame" />
+        <Option Value="3" Name="Magic" />
+        <Option Value="4" Name="Poison" />
+        <Option Value="5" Name="Egg" />
+        <Option Value="6" Name="Electric Shock" />
+        <Option Value="7" Name="Petrification" />
+        <Option Value="8" Name="Crystallization" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="ATKPARAM_SFX_ATK_POW" type="s8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Medium" />
+        <Option Value="2" Name="Large" />
+        <Option Value="3" Name="Extra Large" />
+        <Option Value="4" Name="Very Large" />
+    </Enum>
+    <Enum Name="ATKPARAM_SFX_ATK_DIR" type="s8">
+        <Option Value="0" Name="Front" />
+        <Option Value="1" Name="Top" />
+        <Option Value="2" Name="Bottom" />
+        <Option Value="3" Name="Left" />
+        <Option Value="4" Name="Right" />
+    </Enum>
+    <Enum Name="ATKPARAM_SE_ATK_POW" type="s8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Large" />
+        <Option Value="2" Name="Extra Large" />
+    </Enum>
+    <Enum Name="ATKPARAM_REP_DMGTYPE" type="s8">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="No Stagger" />
+        <Option Value="2" Name="Unavailable" />
+        <Option Value="3" Name="Addition" />
+        <Option Value="4" Name="Hit Stop" />
+        <Option Value="5" Name="Small Stagger" />
+        <Option Value="6" Name="Unavailable" />
+        <Option Value="7" Name="Large Stagger" />
+        <Option Value="8" Name="Unavailable" />
+        <Option Value="9" Name="Unavailable" />
+        <Option Value="10" Name="Blown Away" />
+        <Option Value="11" Name="Unavailable" />
+        <Option Value="12" Name="Unavailable" />
+    </Enum>
+    <Enum Name="ATKPARAM_ADD_DAMAGE_ANIM_TYPE" type="u8">
+        <Option Value="0" Name="Step Addition" />
+        <Option Value="1" Name="100% Addition" />
+        <Option Value="2" Name="Great Addition" />
+    </Enum>
+    <Enum Name="ATKPARAM_MULTI_HIT_MAX_BEH_TYPE" type="u8">
+        <Option Value="0" Name="No Hit" />
+        <Option Value="1" Name="Hit: Ignore Damage" />
+    </Enum>
+    <Enum Name="ATK_PARAM_MAP_HIT" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Precision" />
+        <Option Value="2" Name="Not on the map" />
+        <Option Value="3" Name="Map, not an asset" />
+    </Enum>
+    <Enum Name="ATKPARAM_KNOCKBACK_STARTPOINT_TYPE" type="u8">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="Impact position" />
+        <Option Value="2" Name="Character who attacked" />
+        <Option Value="3" Name="Attack source" />
+    </Enum>
+    <Enum Name="ATKPARAM_KNOCKBACK_DIR_TYPE" type="u8">
+        <Option Value="0" Name="No correction" />
+        <Option Value="1" Name="Corrected by angle of attacker and victim" />
+        <Option Value="2" Name="Corrected by the angle of the attacker and victim in the horizontal direction only" />
+    </Enum>
+    <Enum Name="ATK_PARAM_HIT_TYPE" type="u8">
+        <Option Value="0" Name="Normal (tip)" />
+        <Option Value="1" Name="Middle" />
+        <Option Value="2" Name="Root" />
+        <Option Value="3" Name="Map Collision Detection" />
+    </Enum>
+    <Enum Name="ATK_PARAM_HIT_SOURCE" type="u8">
+        <Option Value="0" Name="Weapon" />
+        <Option Value="1" Name="Body" />
+        <Option Value="2" Name="Part 0" />
+        <Option Value="3" Name="Part 1" />
+        <Option Value="4" Name="Part 2" />
+        <Option Value="5" Name="Part 3" />
+        <Option Value="6" Name="Part 4" />
+        <Option Value="7" Name="Part 5" />
+        <Option Value="8" Name="Part 6" />
+        <Option Value="9" Name="Part 7" />
+        <Option Value="10" Name="Part 8" />
+        <Option Value="11" Name="Part 9" />
+        <Option Value="12" Name="Part 10" />
+        <Option Value="13" Name="Part 11" />
+        <Option Value="14" Name="Part 12" />
+        <Option Value="15" Name="Part 13" />
+        <Option Value="16" Name="Part 14" />
+        <Option Value="17" Name="Part 15" />
+        <Option Value="18" Name="Part 16" />
+        <Option Value="19" Name="Part 17" />
+        <Option Value="20" Name="Part 18" />
+        <Option Value="21" Name="Part 19" />
+        <Option Value="22" Name="Part 20" />
+        <Option Value="23" Name="Part 21" />
+        <Option Value="24" Name="Part 22" />
+        <Option Value="25" Name="Part 23" />
+        <Option Value="26" Name="Part 24" />
+        <Option Value="27" Name="Part 25" />
+        <Option Value="28" Name="Part 26" />
+        <Option Value="29" Name="Part 27" />
+        <Option Value="30" Name="Part 28" />
+        <Option Value="31" Name="Part 29" />
+        <Option Value="32" Name="Part 30" />
+        <Option Value="33" Name="Part 31" />
+    </Enum>
+    <Enum Name="ATKPARAM_ASSET_BREAK_ACTION_TYPE" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Explosion" />
+        <Option Value="2" Name="Combustion" />
+        <Option Value="3" Name="Laser" />
+        <Option Value="4" Name="Ice Worm" />
+    </Enum>
+    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Crush" />
+        <Option Value="2" Name="Pierce" />
+        <Option Value="3" Name="Push" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Blow" />
+        <Option Value="2" Name="Thrust" />
+        <Option Value="3" Name="Explosion" />
+        <Option Value="4" Name="Bullet" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_SIZE" type="u8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Large" />
+    </Enum>
+    <Enum Name="ATKPARAM_BEHAVIOR_ID" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Continuous Attack" />
+        <Option Value="2" Name="Super huge blowout" />
+        <Option Value="3" Name="Delayed damage reaction" />
+        <Option Value="4" Name="Damage only FE" />
+        <Option Value="5" Name="[For AC only] Small stagger guarantee" />
+        <Option Value="10" Name="Start Grab" />
+        <Option Value="11" Name="Finish Grab" />
+        <Option Value="20" Name="[AC] Start Grab" />
+        <Option Value="21" Name="[AC] Midst Grab" />
+        <Option Value="22" Name="[AC] Finish Grab" />
+    </Enum>
+    <Enum Name="ATKPARAM_BEHAVIOR_ON_HIT_TYPE" type="u8">
+        <Option Value="0" Name="Hit" />
+        <Option Value="1" Name="No Hit" />
+        <Option Value="2" Name="Hit: Ignore Damage" />
+    </Enum>
+    <Enum Name="ATK_PARAM_BROKEN_PARTS_BLOW_AWAY_DIRECTION_COMPENSATION_TYPE" type="u8">
+        <Option Value="0" Name="No correction" />
+        <Option Value="1" Name="Corrected by angle of attacker and victim" />
+        <Option Value="2" Name="Corrected by the angle of the attacker and victim in the horizontal direction only" />
+    </Enum>
+    <Enum Name="ATKPARAM_CRITICAL_SFX_LEVEL_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Small" />
+        <Option Value="2" Name="Medium" />
+        <Option Value="3" Name="Large" />
+    </Enum>
+    <Enum Name="ATKPARAM_DAMAGE_ANIM_ATK_DIR" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Back" />
+        <Option Value="2" Name="Front" />
+        <Option Value="3" Name="Top" />
+        <Option Value="4" Name="Bottom" />
+        <Option Value="5" Name="Left" />
+        <Option Value="6" Name="Right" />
+    </Enum>
+    <Enum Name="ATKPARAM_DEAD_ANIM_TYPE" type="u8">
+        <Option Value="0" Name="Normal death" />
+        <Option Value="10" Name="Penetration death" />
+        <Option Value="20" Name="Explosion death" />
+        <Option Value="30" Name="Shattered death" />
+        <Option Value="40" Name="Blade Death (Yokonagi)" />
+        <Option Value="45" Name="Blade Death (Vertical Slash)" />
+        <Option Value="50" Name="Rolling death" />
+    </Enum>
+    <Enum Name="ATKPARAM_GRAB_ATTACH_DIR_TYPE" type="u8">
+        <Option Value="0" Name="Always match the dummy poly" />
+        <Option Value="1" Name="Correct before and after" />
+        <Option Value="2" Name="Correct forward/backward/left/right" />
+    </Enum>
+    <Enum Name="ATKPARAM_GUARD_JUDGE_TYPE" type="u8">
+        <Option Value="1" Name="Character who attacked" />
+        <Option Value="2" Name="Center of attack judgment" />
+        <Option Value="3" Name="Bullet movement direction" />
+        <Option Value="4" Name="Omnidirectional guard possible" />
+    </Enum>
+    <Enum Name="ATK_PATAM_GRABFLAG_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Grab Start" />
+        <Option Value="2" Name="Grab Finish" />
+    </Enum>
+    <Enum Name="ATKPARAM_SHOOTER_KNOCKBACK_DIR_TYPE" type="u8">
+        <Option Value="0" Name="Bullet Direction" />
+        <Option Value="1" Name="Muzzle Direction" />
+    </Enum>
+    <Enum Name="BULLET_SFX_DELETE_TYPE" type="s8">
+        <Option Value="0" Name="Emitter Stop" />
+        <Option Value="1" Name="Delete" />
+    </Enum>
+    <Enum Name="SOUND_REFLECT_LEVEL" type="s8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Level 1" />
+        <Option Value="2" Name="Level 2" />
+        <Option Value="-1" Name="Default" />
+    </Enum>
+    <Enum Name="DMG_CALC_SIDE_TYPE" type="u8">
+        <Option Value="0" Name="Giver" />
+        <Option Value="1" Name="Receiver" />
+    </Enum>
+    <Enum Name="NPC_SP_EFFECT_ADD_COND_PARTS_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Ice Worm Head" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="100" Name="Shield: Kinetic" />
+        <Option Value="101" Name="Shield: Strong Kinetic" />
+        <Option Value="102" Name="Shield: Energy" />
+        <Option Value="103" Name="Body: Kinetic" />
+        <Option Value="104" Name="Body: Strong Kinetic" />
+        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="106" Name="Body: Cloth" />
+        <Option Value="107" Name="Shield: Plamsa" />
+        <Option Value="108" Name="Pulse Armor: Large Energy - White Hit Ripple" />
+        <Option Value="109" Name="Generator: Normal" />
+        <Option Value="110" Name="Generator: Coral" />
+        <Option Value="111" Name="Pulse Armor: Extra-Large Enemy - Coral Hit Ripple" />
+        <Option Value="112" Name="Shield: Coral" />
+        <Option Value="254" Name="Reserve 3" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="100" Name="Shield: Kinetic" />
+        <Option Value="101" Name="Shield: Strong Kinetic" />
+        <Option Value="102" Name="Shield: Energy" />
+        <Option Value="103" Name="Body: Kinetic" />
+        <Option Value="104" Name="Body: Strong Kinetic" />
+        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="106" Name="Shield: Energy - Initial Guard" />
+        <Option Value="107" Name="Shield: Coral - Initial; Guard" />
+        <Option Value="108" Name="Pulse Armor: Large Energy - White Hit Ripple" />
+        <Option Value="109" Name="Generator: Normal" />
+        <Option Value="110" Name="Generator: Coral" />
+        <Option Value="111" Name="Pulse Armor: Extra-Large Enemy - Coral Hit Ripple" />
+        <Option Value="112" Name="Shield: Coral" />
+        <Option Value="254" Name="Reserve 3" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

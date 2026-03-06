@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the material costs for various transactions." />
+  
+  <Field>
+    <materialId01
+    AltName="Material ID: 1"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamBooster(materialCate01=6),EquipParamFcs(materialCate01=7),EquipParamGenerator(materialCate01=5),EquipParamProtector(materialCate01=1),EquipParamWeapon(materialCate01=0),EquipParamGoods(materialCate01=4),EquipParamAccessory(materialCate01=2)" 
+    />
+    
+    <materialId02
+    AltName="Material ID: 2"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamBooster(materialId02=6),EquipParamFcs(materialId02=7),EquipParamGenerator(materialId02=5),EquipParamProtector(materialId02=1),EquipParamWeapon(materialId02=0),EquipParamGoods(materialId02=4),EquipParamAccessory(materialId02=2)" 
+    />
+    
+    <materialId03
+    AltName="Material ID: 3"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamBooster(materialId03=6),EquipParamFcs(materialId03=7),EquipParamGenerator(materialId03=5),EquipParamProtector(materialId03=1),EquipParamWeapon(materialId03=0),EquipParamGoods(materialId03=4),EquipParamAccessory(materialId03=2)" 
+    />
+    
+    <materialId04
+    AltName="Material ID: 4"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamBooster(materialId04=6),EquipParamFcs(materialId04=7),EquipParamGenerator(materialId04=5),EquipParamProtector(materialId04=1),EquipParamWeapon(materialId04=0),EquipParamGoods(materialId04=4),EquipParamAccessory(materialId04=2)" 
+    />
+    
+    <materialId05
+    AltName="Material ID: 5"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamBooster(materialId05=6),EquipParamFcs(materialId05=7),EquipParamGenerator(materialId05=5),EquipParamProtector(materialId05=1),EquipParamWeapon(materialId05=0),EquipParamGoods(materialId05=4),EquipParamAccessory(materialId05=2)" 
+    />
+    
+    <materialId06
+    AltName="Material ID: 6"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamBooster(materialId06=6),EquipParamFcs(materialId06=7),EquipParamGenerator(materialId06=5),EquipParamProtector(materialId06=1),EquipParamWeapon(materialId06=0),EquipParamGoods(materialId06=4),EquipParamAccessory(materialId06=2)" 
+    />
+    
+    <pad_id
+    AltName=""
+    Padding="" />
+    
+    <itemNum01
+    AltName="Material Count: 1"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum02
+    AltName="Material Count: 2"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum03
+    AltName="Material Count: 3"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum04
+    AltName="Material Count: 4"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum05
+    AltName="Material Count: 5"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum06
+    AltName="Material Count: 6"
+    Wiki="The number of the required item needed." />
+    
+    <pad_num
+    AltName=""
+    Padding="" />
+    
+    <materialCate01
+    AltName="Material Category: 1"
+    Wiki="The category the required item belongs to." 
+    Enum="GAITEM_CATEGORY" />
+    
+    <materialCate02
+    AltName="Material Category: 2"
+    Wiki="The category the required item belongs to." 
+    Enum="GAITEM_CATEGORY" />
+    
+    <materialCate03
+    AltName="Material Category: 3"
+    Wiki="The category the required item belongs to." 
+    Enum="GAITEM_CATEGORY" />
+    
+    <materialCate04
+    AltName="Material Category: 4"
+    Wiki="The category the required item belongs to." 
+    Enum="GAITEM_CATEGORY" />
+    
+    <materialCate05
+    AltName="Material Category: 5"
+    Wiki="The category the required item belongs to." 
+    Enum="GAITEM_CATEGORY" />
+    
+    <materialCate06
+    AltName="Material Category: 6"
+    Wiki="The category the required item belongs to." 
+    Enum="GAITEM_CATEGORY" />
+    
+    <pad_cate
+    AltName=""
+    Padding="" />
+    
+    <isDisableDispNum01
+    AltName="Display Material Count: 1"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum02
+    AltName="Display Material Count: 2"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum03
+    AltName="Display Material Count: 3"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum04
+    AltName="Display Material Count: 4"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum05
+    AltName="Display Material Count: 5"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum06
+    AltName="Display Material Count: 6"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <pad
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="GAITEM_CATEGORY" type="u8">
+        <Option Value="0" Name="Weapon" />
+        <Option Value="1" Name="Equipment" />
+        <Option Value="2" Name="Accessory" />
+        <Option Value="4" Name="Tool" />
+        <Option Value="5" Name="Generator" />
+        <Option Value="6" Name="Booster" />
+        <Option Value="7" Name="FCS" />
+        <Option Value="8" Name="Magic Stone" />
+        <Option Value="15" Name="None" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

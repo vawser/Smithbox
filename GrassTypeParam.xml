@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Dynamic instanced assets, combined with a flat or billboard texture. Used to generate scattered grass or other such arrangements without the need for manual placement." />
+  
+  <Field>
+    <lod0ClusterType 
+    AltName="LOD 0: Cluster Type" 
+    Wiki="The LOD0 cluster type this grass asset belongs to." 
+    Enum="GRASS_CLUSTER_TYPE_ENUM" />
+    
+    <lod1ClusterType 
+    AltName="LOD 1: Cluster Type" 
+    Wiki="The LOD1 cluster type this grass asset belongs to." 
+    Enum="GRASS_CLUSTER_TYPE_ENUM" />
+    
+    <lod2ClusterType 
+    AltName="LOD 2: Cluster Type" 
+    Wiki="The LOD2 cluster type this grass asset belongs to." 
+    Enum="GRASS_CLUSTER_TYPE_ENUM" />
+    
+    <pad1 
+    AltName="" 
+    Padding="" />
+    
+    <baseDensity 
+    AltName="Base Density" 
+    Wiki="The base density value for the grass clumping." />
+    
+    <modelName 
+    AltName="Model Name" 
+    Wiki="The grass model to define the parameters for." />
+    
+    <flatTextureName 
+    AltName="Flat Texture Name" 
+    Wiki="The flat texture ID to use for this grass asset." />
+    
+    <billboardTextureName 
+    AltName="Billboard Texture Name" 
+    Wiki="The billboard texture ID to use for this grass asset." />
+    
+    <normalInfluence 
+    AltName="Effect of Tilt %" 
+    Wiki="The percentage of tilt that is applied to the grass asset based on its normal map." />
+    
+    <inclinationMax 
+    AltName="Maximum Tilt Angle" 
+    Wiki="The maximum percentage of tilt that can be applied to the grass. In degrees." />
+    
+    <inclinationJitter 
+    AltName="Tilt Angle Jitter" 
+    Wiki="The amount of jitter to apply to the tilt angle for this grass asset. In degrees." />
+    
+    <scaleBaseMin 
+    AltName="Width Scale: Minimum" 
+    Wiki="The minimum width scale to apply to the grass asset." />
+    
+    <scaleBaseMax 
+    AltName="Width Scale: Maximum" 
+    Wiki="The maximum width scale to apply to the grass asset." />
+    
+    <scaleHeightMin 
+    AltName="Height Scale: Minimum" 
+    Wiki="The minimum height scale to apply to the grass asset." />
+    
+    <scaleHeightMax 
+    AltName="Height Scale: Maximum" 
+    Wiki="The maximum height scale to apply to the grass asset." />
+    
+    <colorShade1_r 
+    AltName="1: Multiplication Color: R" 
+    Wiki="The red element of this color for multiplication color 1." />
+    
+    <colorShade1_g 
+    AltName="1: Multiplication Color: G" 
+    Wiki="The green element of this color for multiplication color 1." />
+    
+    <colorShade1_b 
+    AltName="1: Multiplication Color: B" 
+    Wiki="The blue element of this color for multiplication color 1." />
+    
+    <colorShade2_r 
+    AltName="2: Multiplication Color: R" 
+    Wiki="The red element of this color for multiplication color 2." />
+    
+    <colorShade2_g 
+    AltName="2: Multiplication Color: G" 
+    Wiki="The green element of this color for multiplication color 2." />
+    
+    <colorShade2_b 
+    AltName="2: Multiplication Color: B" 
+    Wiki="The blue element of this color for multiplication color 2." />
+    
+    <flatSplitType 
+    AltName="Flat Texture: Plane Separation" 
+    Wiki="The plane separation type to use for this grass asset's flat texture." 
+    Enum="GRASS_FLAT_SPLIT_TYPE_ENUM" />
+    
+    <flatBladeCount 
+    AltName="Flat Texture: Number of Planes" 
+    Wiki="The number of planes to use for this grass asset's flat texture." />
+    
+    <flatSlant 
+    AltName="Flat Texture: Plane Angle" 
+    Wiki="The angle of this grass asset's flat texture from the asset's position." />
+    
+    <flatRadius 
+    AltName="Flat Texture: Plane Distance" 
+    Wiki="The distance of this gtass asset's flat texture from the asset's position." />
+    
+    <castShadow 
+    AltName="Cast Shadow" 
+    Wiki="Whether this grass asset will cast a shadow." 
+    Enum="GRASS_SHADOW_TYPE_ENUM" />
+    
+    <windAmplitude 
+    AltName="Wind Amplitude" 
+    Wiki="The amplitude to apply to any wind force that affects this grass asset." />
+    
+    <useDmyPolyDir
+    AltName="Use Dummy Polygon Direction"
+    Wiki="Adjust the angle of the plane to the dummy polygon's direction."
+    IsBool="" />
+    
+    <windCycle 
+    AltName="Wind Speed"
+    Wiki="The speed to apply to any wind force that affects this grass asset." />
+    
+    <orientationAngle 
+    AltName="Orientation Direction" 
+    Wiki="Determines the orientation direction for this grass asset. -1 for random orientation." />
+    
+    <orientationRange 
+    AltName="Orientation Range of Direction" 
+    Wiki="Determines the range for the orientation direction parameter." />
+    
+    <simpleModelName 
+    AltName="Simple Model Name" 
+    Wiki="The model ID to use the simple representation of this grass asset." />
+    
+    <lodRangeId
+    AltName="Grass LOD Range ID"
+    Wiki="The grass LOD range parameter to use for this grass asset." 
+    Refs="GrassLodRangeParam" />
+    
+    <pad3
+    AltName=""
+    Padding="" />
+    
+    <sfxId
+    AltName="Particle ID"
+    Wiki="The SFX ID to apply to this grass asset when generated." 
+    ParticleAlias="" />
+    
+    <pad
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="GRASS_CLUSTER_TYPE_ENUM" type="s8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Model" />
+        <Option Value="2" Name="Billboard" />
+        <Option Value="3" Name="Flat tuft" />
+        <Option Value="4" Name="Simple Model" />
+    </Enum>
+    <Enum Name="GRASS_FLAT_SPLIT_TYPE_ENUM" type="u8">
+        <Option Value="0" Name="Half" />
+        <Option Value="1" Name="Full" />
+    </Enum>
+    <Enum Name="GRASS_SHADOW_TYPE_ENUM" type="u8">
+        <Option Value="0" Name="On" />
+        <Option Value="1" Name="Off" />
+    </Enum>
+  </Enums>
+  
+  <ColorEdit>
+    <ColorEditor Name="Color Shade 1" Fields="colorShade1_r,colorShade1_g,colorShade1_b" PlacedField="colorShade1_b" />
+    <ColorEditor Name="Color Shade 2" Fields="colorShade2_r,colorShade2_g,colorShade2_b" PlacedField="colorShade2_b" />
+  </ColorEdit>
+  
+</PARAMMETA>

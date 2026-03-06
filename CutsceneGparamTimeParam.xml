@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines GPARAM timezone parameters during a cutscene." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <DstTimezone_Morning 
+    AltName="Timezone: Morning" 
+    Wiki="Morning (Refer to the cutscene time conversion setting sheet for the conversion time)" 
+    num="CUTSCENE_TIMEZONE_TYPE" />
+    
+    <DstTimezone_Noon 
+    AltName="Timezone: Noon" 
+    Wiki="Day A (Refer to the cutscene time conversion setting sheet for the conversion time)" 
+    Enum="CUTSCENE_TIMEZONE_TYPE" />
+    
+    <DstTimezone_AfterNoon 
+    AltName="Timezone: Afternoon" 
+    Wiki="Noon-B (Refer to the cutscene time conversion setting sheet for the conversion time)" 
+    Enum="CUTSCENE_TIMEZONE_TYPE" />
+    
+    <DstTimezone_Evening 
+    AltName="Timezone: Evening" 
+    Wiki="Evening (Refer to the cutscene time conversion setting sheet for the conversion time)" 
+    Enum="CUTSCENE_TIMEZONE_TYPE" />
+    
+    <DstTimezone_Night 
+    AltName="Timezone: Night" 
+    Wiki="Night (Refer to the cutscene time conversion setting sheet for the conversion time)" 
+    Enum="CUTSCENE_TIMEZONE_TYPE" />
+    
+    <DstTimezone_DeepNightA 
+    AltName="Timezone: Midnight A" 
+    Wiki="Midnight A (Refer to the cutscene time conversion setting sheet for the conversion time)" 
+    Enum="CUTSCENE_TIMEZONE_TYPE" />
+    
+    <DstTimezone_DeepNightB 
+    AltName="Timezone: Midnight B" 
+    Wiki="Midnight B (Refer to the cutscene time conversion setting sheet for the conversion time)" 
+    Enum="CUTSCENE_TIMEZONE_TYPE" />
+    
+    <reserved
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="CUTSCENE_TIMEZONE_TYPE" type="u8">
+        <Option Value="0" Name="Morning" />
+        <Option Value="1" Name="Noon" />
+        <Option Value="2" Name="Afternoon" />
+        <Option Value="3" Name="Evening" />
+        <Option Value="4" Name="Night" />
+        <Option Value="5" Name="Midnight A" />
+        <Option Value="6" Name="Midnight B" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

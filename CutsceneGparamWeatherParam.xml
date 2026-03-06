@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines GPARAM weather parameters during a cutscene." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <DstWeather_Sunny 
+    AltName="Weather: Sunny" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_ClearSky 
+    AltName="Weather: Clear Sky" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_WeakCloudy 
+    AltName="Weather: Light Cloud" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_Cloud 
+    AltName="Weather: Cloud" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_Rain 
+    AltName="Weather: Rain" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_HeavyRain 
+    AltName="Weather: Heavy Rain" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_Storm 
+    AltName="Weather: Storm" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_StormForBattle 
+    AltName="Weather: Storm for Battle" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_Snow 
+    AltName="Weather: Snow" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_HeavySnow 
+    AltName="Weather: Heavy Snow" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_Fog 
+    AltName="Weather: Fog" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_HeavyFog 
+    AltName="Weather: Heavy Fog" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_SandStorm 
+    AltName="Weather: Sandstorm" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <DstWeather_HeavyFogRain 
+    AltName="Weather: Heavy Fog and Rain" 
+    Wiki="Affects this specific weather state." 
+    Enum="WEATHER_TYPE" />
+    
+    <reserved
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="WEATHER_TYPE" type="u8">
+        <Option Value="-2" Name="All Weather" />
+        <Option Value="-1" Name="Disabled" />
+        <Option Value="0" Name="Sunny" />
+        <Option Value="1" Name="Rain" />
+        <Option Value="2" Name="Storm (Weak)" />
+        <Option Value="3" Name="Storm (Strong)" />
+        <Option Value="4" Name="Heavy Rain" />
+        <Option Value="5" Name="Mixed Rain" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

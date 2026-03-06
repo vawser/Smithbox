@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <point_0
+    AltName="Company A: Points"
+    Wiki="This company's additional contribution value." />
+    
+    <point_1
+    AltName="Company B: Points"
+    Wiki="This company's additional contribution value." />
+    
+    <point_2
+    AltName="Company C: Points"
+    Wiki="This company's additional contribution value." />
+    
+    <point_3
+    AltName="Company D: Points"
+    Wiki="This company's additional contribution value." />
+    
+    <point_4
+    AltName="Company E: Points"
+    Wiki="This company's additional contribution value." />
+    
+    <reserved
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

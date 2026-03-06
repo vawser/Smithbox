@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each texture filter quality level." />
+  
+  <Field>
+    <filter 
+    AltName="Texture Filter" 
+    Wiki="The texture filter level to use for this level." 
+    Enum="GRAPHICS_CONFIG_GX_TEXTURE_FILTER" />
+    
+    <pad1 
+    AltName="" 
+    Padding="" />
+    
+    <maxAnisoLevel 
+    AltName="Maximum Anisotropic Level" 
+    Wiki="The maximum anisotropic level to use for texture filter quality." />
+  </Field>
+  <Enums>
+    <Enum Name="GRAPHICS_CONFIG_GX_TEXTURE_FILTER" type="u8">
+        <Option Value="0" Name="Point" />
+        <Option Value="1" Name="Bilinear" />
+        <Option Value="2" Name="Trilinear" />
+        <Option Value="3" Name="Anisotropic" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

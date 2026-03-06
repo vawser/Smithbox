@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each depth of field quality level." />
+  
+  <Field>
+    <enabled 
+    AltName="Enable Depth-of-Field"
+    Wiki="If ON, depth of field is enabled." 
+    IsBool="" />
+    
+    <pad1 
+    AltName="" 
+    Padding="" />
+    
+    <forceHiResoBlur 
+    AltName="Force High Resolution Blur" 
+    Wiki="Changes the HiResolutionBlur setting (-1 is forced off, 0 is default, 1 is forced on)" 
+    />
+    
+    <maxBlurLevel 
+    AltName="Maximum Blur Level" 
+    Wiki="Changes the maximum blur level. (2 is maximum, 1 is lower level by one, 0 is reduced accuracy" />
+    
+  </Field>
+</PARAMMETA>

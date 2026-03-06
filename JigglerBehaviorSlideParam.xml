@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the movement behavior of a jiggle bone."/>
+  
+  <Field>
+    <minAccelMPSS
+    AltName="Minimum Acceleration for Movement"
+    Wiki="The minimum acceleration to start the movement of the bone. In metres per second ^ 2." />
+    
+    <maxAccelMPSS
+    AltName="Acceleration for Maximum Movement"
+    Wiki="The acceleration at which the movement force reaches it maximum value. In metres per second ^ 2." />
+    
+    <minSpeedKMH
+    AltName="Minimum Velocity for Movement"
+    Wiki="The minimum velocity to start the movement of the bone. In kilometres per hour." />
+    
+    <maxSpeedKMH
+    AltName="Velocity for Maximum Movement"
+    Wiki="The velocity at which the movement force reaches it maximum value. In kilometres per hour." />
+    
+    <moveAccelScaleX
+    AltName="Movement Acceleration: X-Axis"
+    Wiki="The coefficient for moving along the X-axis with regards to velocity and acceleration." />
+    
+    <moveAccelScaleY
+    AltName="Movement Acceleration: Y-Axis"
+    Wiki="The coefficient for moving along the Y-axis with regards to velocity and acceleration." />
+    
+    <moveAccelScaleZ
+    AltName="Movement Acceleration: Z-Axis"
+    Wiki="The coefficient for moving along the Z-axis with regards to velocity and acceleration." />
+    
+    <moveDecayValueX
+    AltName="Movement Decay: X-Axis"
+    Wiki="The coefficient that dampens the movement velocity on the X-axis." />
+    
+    <moveDecayValueY
+    AltName="Movement Decay: Y-Axis"
+    Wiki="The coefficient that dampens the movement velocity on the Y-axis." />
+    
+    <moveDecayValueZ
+    AltName="Movement Decay: Y-Axis"
+    Wiki="The coefficient that dampens the movement velocity on the Y-axis." />
+    
+    <limitMinAngReflecRateX
+    AltName="Reflection Rate at Minimum Position: X-Axis"
+    Wiki="The reflection rate when the X-axis position reaches it's minimum position." />
+    
+    <limitMaxAngReflecRateX
+    AltName="Reflection Rate at Maximum Position: X-Axis"
+    Wiki="The reflection rate when the X-axis position reaches it's maximum position." />
+    
+    <limitMinAngReflecRateY
+    AltName="Reflection Rate at Minimum Position: Y-Axis"
+    Wiki="The reflection rate when the Y-axis position reaches it's minimum position." />
+    
+    <limitMaxAngReflecRateY
+    AltName="Reflection Rate at Maximum Position: Y-Axis"
+    Wiki="The reflection rate when the Y-axis position reaches it's maximum position." />
+    
+    <limitMinAngReflecRateZ
+    AltName="Reflection Rate at Minimum Position: Z-Axis"
+    Wiki="The reflection rate when the Z-axis position reaches it's minimum position." />
+    
+    <limitMaxAngReflecRateZ
+    AltName="Reflection Rate at Maximum Position: Z-Axis"
+    Wiki="The reflection rate when the Z-axis position reaches it's maximum position." />
+    
+    <reserved3
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

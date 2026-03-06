@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the hit effect particles." />
+  
+  <Field>
+    <Slash_S
+    AltName="Slash: Small - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Slash_M
+    AltName="Slash: Medium - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Slash_L
+    AltName="Slash: Large - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Slash_LL
+    AltName="Slash: Giant - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Slash_LLL
+    AltName="Slash: Enormous - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Thrust_S
+    AltName="Thrust: Small - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" 
+    Separator="" />
+    
+    <Thrust_M
+    AltName="Thrust: Medium - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Thrust_L
+    AltName="Thrust: Large - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Thrust_LL
+    AltName="Thrust: Giant - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Thrust_LLL
+    AltName="Thrust: Enormous - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Blow_S
+    AltName="Strike: Small - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" 
+    Separator="" />
+    
+    <Blow_M
+    AltName="Strike: Medium - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Blow_L
+    AltName="Strike: Large - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Blow_LL
+    AltName="Strike: Giant - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Blow_LLL
+    AltName="Strike: Enormous - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Blast_S
+    AltName="Blast: Small - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" 
+    Separator="" />
+    
+    <Blast_M
+    AltName="Blast: Medium - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Blast_L
+    AltName="Blast: Large - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Blast_LL
+    AltName="Blast: Giant - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Blast_LLL
+    AltName="Blast: Enormous - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Bullet_S
+    AltName="Bullet: Small - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" 
+    Separator="" />
+    
+    <Bullet_M
+    AltName="Bullet: Medium - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Bullet_L
+    AltName="Bullet: Large - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Bullet_LL
+    AltName="Bullet: Giant - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Bullet_LLL
+    AltName="Bullet: Enormous - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <bFollow_Slash_S
+    AltName="Slash: Small - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" 
+    Separator="" />
+    
+    <bFollow_Slash_M
+    AltName="Slash: Medium - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Slash_L
+    AltName="Slash: Large - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Slash_LL
+    AltName="Slash: Giant - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Slash_LLL
+    AltName="Slash: Enormous - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Thrust_S
+    AltName="Thrust: Small - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Thrust_M
+    AltName="Thrust: Medium - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Thrust_L
+    AltName="Thrust: Large - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Thrust_LL
+    AltName="Thrust: Giant - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Thrust_LLL
+    AltName="Thrust: Enormous - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Blow_S
+    AltName="Strike: Small - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Blow_M
+    AltName="Strike: Medium - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Blow_L
+    AltName="Strike: Large - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Blow_LL
+    AltName="Strike: Giant - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Blow_LLL
+    AltName="Strike: Enormous - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Blast_S
+    AltName="Blast: Small - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Blast_M
+    AltName="Blast: Medium - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Blast_L
+    AltName="Blast: Large - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Blast_LL
+    AltName="Blast: Giant - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Blast_LLL
+    AltName="Blast: Enormous - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Bullet_S
+    AltName="Bullet: Small - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Bullet_M
+    AltName="Bullet: Medium - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Bullet_L
+    AltName="Bullet: Large - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Bullet_LL
+    AltName="Bullet: Giant - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <bFollow_Bullet_LLL
+    AltName="Bullet: Enormous - Follow Impact Position"
+    Wiki="If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead." 
+    IsBool="" />
+    
+    <reserved01
+    AltName=""
+    Padding="" />
+    
+    <Critical_Small
+    AltName="Critical: Small - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" 
+    Separator="" />
+    
+    <Critical_Middle
+    AltName="Critical: Medium - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <Critical_Large
+    AltName="Critical: Large - Particle ID"
+    Wiki="The SFX ID to use for this slot." 
+    ParticleAlias="" />
+    
+    <reserved02
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

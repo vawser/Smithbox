@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines to Havok parameters to use for foot inverse kinematics (IK) setup." />
+  
+  <Field>
+    <kneeAxisType
+    AltName="Knee Axis Type"
+    Wiki="The axial direction of the knee to use."
+    Enum="IK_KNEE_AXIS_TYPE" />
+    
+    <useFootLocking
+    AltName="Use Foot Locking"
+    Wiki="If ON, feet and ankles will be locked."
+    IsBool="" />
+    
+    <useFootEndRay
+    AltName="Use Foot Ray-cast"
+    Wiki="If ON, a ray-cast from the toe is used."
+    IsBool="" />
+    
+    <heightOffsetUpDir
+    AltName="Apply Height Offset Upwards Only"
+    Wiki="If ON, height offset is only applied in the vertical direction."
+    IsBool="" />
+    
+    <padflag
+    AltName=""
+    Padding="" />
+    
+    <pad1
+    AltName=""
+    Padding="" />
+    
+    <originalGroundHeightMS
+    AltName="Height from Origin to Ground"
+    Wiki="In metres." />
+    
+    <minAnkleHeightMS
+    AltName="Minimum Ankle Height"
+    Wiki="The minimum height at which the ankle can be raised. In metres." />
+    
+    <maxAnkleHeightMS
+    AltName="Maximum Ankle Height"
+    Wiki="The maximum height at which the ankle can be raised. In metres." />
+    
+    <cosineMaxKneeAngle
+    AltName="Maximum Bend Angle" 
+    Wiki="Maximum angle at which the knee can be bent (cosine value). In degrees." />
+    
+    <cosineMinKneeAngle
+    AltName="Minimum Bend Angle" 
+    Wiki="Minimum angle at which the knee can be bent (cosine value). In degrees." />
+    
+    <footPlantedAnkleHeightMS 
+    AltName="Lowest Ankle Height" 
+    Wiki="If the ankle is lower than this height, assume they are together. In centimetres." />
+    
+    <footRaisedAnkleHeightMS 
+    AltName="Highest Ankle Height" 
+    Wiki="If the ankle is higher than this height, assume they are apart. In centimetres." />
+    
+    <raycastDistanceUp 
+    AltName="Ankle Raycast: Upward Distance" 
+    Wiki="The distance above the ankle at which the raycast occurs. In centimetres." />
+    
+    <raycastDistanceDown 
+    AltName="Ankle Raycast: Downward Distance" 
+    Wiki="The distance below the ankle at which the raycast occurs. In centimetres." />
+    
+    <footEndLS_X 
+    AltName="Toe Position: X" 
+    Wiki="The x-coordinate of the toe." />
+    
+    <footEndLS_Y 
+    AltName="Toe Position: Y" 
+    Wiki="The y-coordinate of the toe." />
+    
+    <footEndLS_Z 
+    AltName="Toe Position: Z" 
+    Wiki="The z-coordinate of the toe." />
+    
+    <maxFootPitchRadians
+    AltName="Maximum Ankle Pitch"
+    Wiki="The maximum pitch (up/down) angle for the ankle. In radians." />
+    
+    <minFootPitchRadians
+    AltName="Minimum Ankle Pitch"
+    Wiki="The minimum pitch (up/down) angle for the ankle. In radians." />
+    
+    <maxFootRollRadians
+    AltName="Maximum Ankle Roll"
+    Wiki="The maximum roll (left/right) angle for the ankle. In radians." />
+    
+    <minFootRollRadians
+    AltName="Minimum Ankle Roll"
+    Wiki="The minimum roll (left/right) angle for the ankle. In radians." />
+    
+    <heightOffsetLimit
+    AltName="IK Error Height Correction Limit"
+    Wiki="The clamp value (+/-) for IK error height correction." />
+    
+    <heightOffsetOnGain
+    AltName="Gain if Height Correction is Enabled"
+    Wiki="The amount of gain to apply if height correction is on to reach target height." />
+    
+    <heightOffsetOffGain
+    AltName="Gain if Height Correction is Disabled"
+    Wiki="The amount of gain to apply if height correction is off to reach original height." />
+    
+    <forwardUndulationRate
+    AltName="Slope: Forward Lean Ratio"
+    Wiki="Specifies the amount of front/back lean against the slope when the slope is tilted." />
+    
+    <sideUndulationRate
+    AltName="Slope: Side Lean Ratio"
+    Wiki="Specifies the amount of right/left lean against the slope when the slope is tilted." />
+    
+    <forwardUndulationRateSlide
+    AltName="Slope: Forward Lean Ratio during Slide"
+    Wiki="Specifies the amount of front/back lean against the slope when the slope is tilted, during a slide." />
+    
+    <sideUndulationRateSlide
+    AltName="Slope: Side Lean Ratio during Slide"
+    Wiki="Specifies the amount of right/left lean against the slope when the slope is tilted, during a slide." />
+    
+    <undulationGain
+    AltName="Slope: Gain"
+    Wiki="The gain value used for tilting the slope when the slope is tilted." />
+    
+    <undulationGainSlide
+    AltName="Slope: Gain during Slide"
+    Wiki="The gain value used for tilting the slope when the slope is tilted, during a slide." />
+    
+    <undulationGainDefaultToSlide
+    AltName="Slope: Gain Correction from Normal to Slide"
+    Wiki="Interpolated gain value when the slope enters a slide from normal." />
+    
+    <undulationGainSlideToDefault
+    AltName="Slope: Gain Correction from Slide to Normal"
+    Wiki="Interpolated gain value when the slope returns to normal after a slide." />
+    
+    <lockedDisableMinAngle
+    AltName="Minimum Knee Unlock Angle"
+    Wiki="The minimum knee angle to unlock foot/ankle when locked. In degrees." />
+    
+    <lockedDisableMaxAngle
+    AltName="Maximum Knee Unlock Angle"
+    Wiki="The maximum knee angle to unlock foot/ankle when locked. In degrees." />
+    
+    <lockedDisableDirAngle
+    AltName="Knee Unlock Direction Angle"
+    Wiki="The angle of the cone to unlock foot/ankle when locked. In degrees." />
+    
+    <nextLockFactorThreshold
+    AltName="Relock Threshold after Unlock"
+    Wiki="The threshold of the coefficient after the foot/ankle is unlocked at which it can be relocked." />
+    
+    <pad3
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="IK_KNEE_AXIS_TYPE" type="u8">
+        <Option Value="0" Name="+ X" />
+        <Option Value="1" Name="+ Y" />
+        <Option Value="2" Name="+ Z" />
+        <Option Value="3" Name="- X" />
+        <Option Value="4" Name="- Y" />
+        <Option Value="5" Name="- Z" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

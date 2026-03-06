@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of goods."  />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <refId_default 
+    AltName="Reference ID: 1" 
+    Wiki="ID used for the item." 
+    Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    
+    <sfxVariationId 
+    AltName="Particle Variation ID" 
+    Wiki="Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)" />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight. In kilograms." />
+    
+    <basicPrice 
+    AltName="Base Value" 
+    Wiki="Base price" />
+    
+    <sellValue 
+    AltName="Sell Value" 
+    Wiki="Selling price" />
+    
+    <behaviorId 
+    AltName="Behavior ID" 
+    Wiki="Behavior action ID applied when item is used." />
+    
+    <replaceItemId 
+    AltName="Replacement Item ID" 
+    Wiki="Item ID to add when item is consumed." 
+    Refs="EquipParamGoods" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="Determines ordering in menu." />
+    
+    <qwcId 
+    AltName="QWC ID" 
+    Wiki="" 
+    Obsolete="" />
+    
+    <yesNoDialogMessageId
+    AltName="Message Text ID"
+    Wiki="Message ID used when displaying the YesNo dialog." />
+    
+    <maxNum
+    AltName="Max Held Count"
+    Wiki="The maximum number of this item held." />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="Icon ID used for this item." />
+    
+    <modelId 
+    AltName="Model ID" 
+    Wiki="Model ID used for this item." />
+    
+    <shopLv 
+    AltName="Shop Level" 
+    Wiki="Level that can be sold at the store" />
+    
+    <compTrophySedId 
+    AltName="Achievement ID" 
+    Wiki="The achievement ID this part is associated with, if any." />
+    
+    <trophySeqId 
+    AltName="Sequential Achievement ID" 
+    Wiki="The sequential achievement ID this part is associated with, if any." />
+    
+    <legacy_maxNum 
+    AltName="Legacy: Max Held Count" 
+    Wiki="The maximum number of this item held." 
+    Obsolete="" />
+    
+    <consumeHeroPoint 
+    AltName="Humanity Consumption" 
+    Wiki="The amount of humanity consumption on use." 
+    Obsolete="" />
+    
+    <overDexterity 
+    AltName="Dexterity over Start Value" 
+    Wiki="Skill over start value"
+    Obsolete="" />
+    
+    <goodsType 
+    AltName="Goods Type" 
+    Wiki="The type of item."
+    Enum="GOODS_TYPE" />
+    
+    <refCategory 
+    AltName="Reference Type" 
+    Wiki=" ID category [Attack, Projectile, Special]" 
+    Enum="BEHAVIOR_REF_TYPE" />
+    
+    <spEffectCategory 
+    AltName="Behavior Category" 
+    Wiki="There are effects whose parameters change depending on skills, magic, items, etc. (enchantment weapons, etc.), so set the effect for each action so that it can correspond to an effect such as 'powering up only weapon attacks'. Set 'None' for items that do not require settings, such as ballistas." 
+    Enum="BEHAVIOR_CATEGORY" />
+    
+    <goodsCategory
+    AltName="Item Category"
+    Wiki="Category for this item."
+    Enum="GOODS_CATEGORY" />
+    
+    <goodsUseAnim 
+    AltName="Item Use Animation" 
+    Wiki="Set the animation to play when using the item." 
+    Enum="GOODS_USE_ANIM" />
+    
+    <opmeMenuType 
+    AltName="Interaction Menu Type"
+    Wiki="Menu type that opens when using an item." 
+    Enum="GOODS_OPEN_MENU" />
+    
+    <useLimitCategory 
+    AltName="Use Limit Category" 
+    Wiki="Limit usage based on applied SpEffect." 
+    Enum="SP_EFFECT_USELIMIT_CATEGORY" />
+    
+    <replaceCategory 
+    AltName="Replace Category" 
+    Wiki="Condition category to add to call ID" 
+    Enum="REPLACE_CATEGORY" />
+    
+    <vowType0
+    AltName="Pledge Type: 0"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType1
+    AltName="Pledge Type: 1"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType2
+    AltName="Pledge Type: 2"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType3
+    AltName="Pledge Type: 3"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType4
+    AltName="Pledge Type: 4"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType5
+    AltName="Pledge Type: 5"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType6
+    AltName="Pledge Type: 6"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType7
+    AltName="Pledge Type: 7"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType8
+    AltName="Pledge Type: 8"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType9
+    AltName="Pledge Type: 9"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType10
+    AltName="Pledge Type: 10"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType11
+    AltName="Pledge Type: 11"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType12
+    AltName="Pledge Type: 12"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType13
+    AltName="Pledge Type: 13"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType14
+    AltName="Pledge Type: 14"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType15
+    AltName="Pledge Type: 15"
+    Wiki="" 
+    IsBool="" />
+    
+    <enable_live 
+    AltName="Enable as Host Player" 
+    Wiki="If ON, this item is usable if the user is a host player." 
+    IsBool="" />
+    
+    <enable_gray 
+    AltName="Enable as Gray Phantom" 
+    Wiki="If ON, this item is usable if the user is a gray phantom player." 
+    IsBool="" />
+    
+    <enable_white 
+    AltName="Enable as White Phantom"
+    Wiki="If ON, this item is usable if the user is a white phantom player." 
+    IsBool="" />
+    
+    <enable_black 
+    AltName="Enable as Black Phantom" 
+    Wiki="If ON, this item is usable if the user is a black phantom player." 
+    IsBool="" />
+    
+    <enable_multi 
+    AltName="Enable in Multiplayer" 
+    Wiki="If ON, this item is usable in a multiplayer session." 
+    IsBool="" />
+    
+    <disable_offline 
+    AltName="Enable only in Multiplayer" 
+    Wiki="If ON, this item is only usable if in a multiplayer session." 
+    IsBool="" />
+    
+    <isEquip 
+    AltName="Is Equippable" 
+    Wiki="If ON, this item can be equipped."
+    IsBool="" />
+    
+    <isConsume 
+    AltName="Is Consumed" 
+    Wiki="If ON, this item can be consumed. This will remove one instance of the item upon consumption."
+    IsBool="" />
+    
+    <isAutoEquip 
+    AltName="Is Automatically Equipped" 
+    Wiki="If ON, this item is automaticlly equipped when picked up."
+    IsBool="" />
+    
+    <isEstablishment 
+    AltName="Is Guidance Item" 
+    Wiki="If ON, this item is a stationary item." 
+    IsBool="" />
+    
+    <isOnlyOne 
+    AltName="Is Unique Item" 
+    Wiki="If ON, this item is an unique item."
+    IsBool="" />
+    
+    <isDiscard 
+    AltName="Can Discard" 
+    Wiki="If ON, this item can be discarded."
+    IsBool="" />
+    
+    <isDeposit 
+    AltName="Can Deposit" 
+    Wiki="If ON, this item can be deposited into the repository."
+    IsBool="" />
+    
+    <isDisableHand 
+    AltName="Disable if Right Hand is Empty" 
+    Wiki="If ON, this item cannot be used when the right-handed weapon is empty." 
+    IsBool="" />
+    
+    <IsTravelItem 
+    AltName="Is Travel Item" 
+    Wiki="If ON, this item is considered a 'travel' item."
+    IsBool="" />
+    
+    <isSuppleItem 
+    AltName="Is Replenishable Item" 
+    Wiki="If ON, this item is automatically replenished." 
+    IsBool="" />
+    
+    <isFullSuppleItem 
+    AltName="Is Restocked Item" 
+    Wiki="If ON, this item is automatically restocked." 
+    IsBool="" />
+    
+    <isEnhance 
+    AltName="Is Enhancement Source" 
+    Wiki="If ON, this item is used to apply an 'enhancement' to equipment or self." 
+    IsBool="" />
+    
+    <isFixItem 
+    AltName="Is Repairable Item" 
+    Wiki="IF ON, this item can be repaired." 
+    IsBool="" />
+    
+    <disableMultiDropShare 
+    AltName="Is Drop Disabled in Multiplayer" 
+    Wiki="If ON, this item cannot be dropped in a multiplayer session." 
+    IsBool="" />
+    
+    <disableUseAtColiseum 
+    AltName="Is Disabled in PvP Arena" 
+    Wiki="If ON, this item cannot be used when in the PvP arena." 
+    IsBool="" />
+    
+    <disableUseAtOutOfColiseum 
+    AltName="Is Enabled only in PvP Arena" 
+    Wiki="If ON, this item can only be used in the PvP arena." 
+    IsBool="" />
+    
+    <isEnableFastUseItem 
+    AltName="Is Early Cancel Enabled" 
+    Wiki="If ON, this item's usage can be cancelled early." 
+    IsBool="" />
+    
+    <isApplySpecialEffect 
+    AltName="Are SpEffect Modifiers Applied" 
+    Wiki="If ON, SpEffect modifiers are applied." 
+    IsBool="" />
+    
+    <syncNumVaryId 
+    AltName="Synchronized Item ID" 
+    Wiki="If the item count is changed, items with the same ID will be changed at the same time. 0 means no item is synchronzied." />
+    
+    <refId_1 
+    AltName="Reference ID: 2" 
+    Wiki="ID used for the item." 
+    Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    
+    <refVirtualWepId 
+    AltName="Weapon ID" 
+    Wiki="Weapon ID to use to populate weapon parameters for offensive items." 
+    Refs="EquipParamWeapon" />
+    
+    <vagrantItemLotId
+    AltName="Vagrant Item Lot ID" 
+    Wiki="-1 No vagrant 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <vagrantBonusEneDropItemLotId 
+    AltName="Vagrant Enemy Item Lot ID" 
+    Wiki="-1 No drop 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <vagrantItemEneDropItemLotId 
+    AltName="Vagrant Bonus Item Lot ID" 
+    Wiki="-1 No drop 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <castSfxId 
+    AltName="Particle ID: Cast" 
+    Wiki="SFX ID triggered when the item is casted." 
+    ParticleAlias="" />
+    
+    <fireSfxId 
+    AltName="Particle ID: Fire" 
+    Wiki="SFX ID triggered when the item is fired." 
+    ParticleAlias="" />
+    
+    <effectSfxId 
+    AltName="Particle ID: Effect" 
+    Wiki="SFX ID triggered after the item is fired." 
+    ParticleAlias="" />
+    
+    <isMedalEnmblemCondition
+    AltName="Obtain Medal Emblem"
+    Wiki="Is it a condition to obtain the medal emblem?" 
+    IsBool="" />
+    
+    <isBonfireWarpItem 
+    AltName="Is Bonfire Warp Item" 
+    Wiki="If ON, item usage is blocked if warp prohibition is active." 
+    IsBool="" />
+    
+    <enable_Ladder 
+    AltName="Is Usable on Ladder" 
+    Wiki="If ON, the item can be used whilst on a ladder." 
+    IsBool="" />
+    
+    <isUseMultiPlayPreparation 
+    AltName="Usable before Multiplayer Session" 
+    Wiki="Whether items can be used between session probability and initial synchronization" 
+    IsBool="" />
+    
+    <canMultiUse 
+    AltName="Can Use Multiple" 
+    Wiki="If ON, multiple instances can be used simultaneously." 
+    IsBool="" />
+    
+    <isUseRefId1ForEnchant
+    AltName="Use Reference ID 2 when Duel-Wielding"
+    Wiki="If ON, apply the reference ID 2 parameter if duel-wielding a weapon."
+    IsBool="" />
+    
+    <isWarpProhibited 
+    AltName="Is Affected by Warp Prohibition" 
+    Wiki="If ON, then warp prohibition will disable this item." 
+    IsBool="" />
+    
+    <isUseMultiPenaltyOnly 
+    AltName="Is Usable when Multiplayer Penalty is Active" 
+    Wiki="If ON, then this item is usable when a multiplayer penalty has been applied. Otherwise, it is not usable." 
+    IsBool="" />
+    
+    <suppleType 
+    AltName="Replenishment Type" 
+    Wiki="The type of replenishment to apply when replenishing this item." 
+    Enum="GOODS_SUPPLE_TYPE" />
+    
+    <autoReplenishType 
+    AltName="Automatic Replenishment Type" 
+    Wiki="The type of automatic replenishment available, and whether it is enabled or disabled by default." 
+    Enum="AUTO_REPLENISH_TYPE" />
+    
+    <isDrop 
+    AltName="Can be Dropped" 
+    Wiki="If ON, this item can be dropped." 
+    IsBool="" />
+    
+    <isPlaySeLocalPlayerOnly
+    AltName="Is Local Player Sound Playback Only"
+    Wiki="Is the sound playback when used only played for the using player."
+    IsBool="" />
+    
+    <pad0
+    AltName=""
+    Padding="" />
+    
+    <maxRepositoryNum 
+    AltName="Max Repository Count" 
+    Wiki="The maximum number of this item that can be stored in the repository system." />
+    
+    <reserve
+    AltName=""
+    Padding="" />
+    
+    <equipPanelIconID
+    AltName="HUD Icon ID"
+    Wiki="The icon ID for the the weapon panel GUI." 
+    Enum="FE_EQUIPPANEL_ICON_ID" />
+    
+    <saleValue
+    AltName="Sale Value"
+    Wiki="Price the item is on sale for." />
+    
+    <reuseTimeSec
+    AltName="Re-use Time"
+    Wiki="The usage cooldown. In seconds." />
+    
+    <beginSeId
+    AltName="Sound ID: On Use"
+    Wiki="The sound ID to play when the item is used." />
+    
+    <reserve2
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="Behavior / None" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Normal Attack" />
+        <Option Value="2" Name="Left-hand Attack" />
+        <Option Value="3" Name="Magic" />
+        <Option Value="4" Name="Miracle" />
+        <Option Value="5" Name="Body" />
+        <Option Value="6" Name="Enemy Attack 1" />
+        <Option Value="7" Name="Enemy Attack 2" />
+        <Option Value="8" Name="Enemy Attack 3" />
+        <Option Value="9" Name="Kick" />
+    </Enum>
+    <Enum Name="VOW_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="5" Name="Type 5" />
+        <Option Value="6" Name="Type 6" />
+        <Option Value="7" Name="Type 7" />
+        <Option Value="8" Name="Type 8" />
+        <Option Value="9" Name="Type 9" />
+        <Option Value="10" Name="Type 10" />
+        <Option Value="11" Name="Type 11" />
+        <Option Value="12" Name="Type 12" />
+        <Option Value="13" Name="Type 13" />
+        <Option Value="14" Name="Type 14" />
+        <Option Value="15" Name="Type 15" />
+        <Option Value="16" Name="Type 16" />
+    </Enum>
+    <Enum Name="GOODS_CATEGORY" type="u8">
+        <Option Value="0" Name="Recovery" />
+    </Enum>
+    <Enum Name="GOODS_TYPE" type="u8">
+        <Option Value="0" Name="Consumable" />
+        <Option Value="1" Name="Event" />
+        <Option Value="2" Name="Material" />
+        <Option Value="3" Name="Soul" />
+        <Option Value="4" Name="Vagrant" />
+        <Option Value="5" Name="Scroll" />
+        <Option Value="6" Name="Ritual" />
+        <Option Value="7" Name="Archive" />
+        <Option Value="8" Name="Image" />
+        <Option Value="9" Name="COAM" />
+    </Enum>
+    <Enum Name="GOODS_USE_ANIM" type="u8">
+        <Option Value="0" Name="Recovery" />
+        <Option Value="1" Name="Weapon Enhancement" />
+        <Option Value="2" Name="Throwing Knife" />
+        <Option Value="3" Name="Throwing Bottle" />
+        <Option Value="4" Name="Telescope" />
+        <Option Value="5" Name="Repair" />
+        <Option Value="6" Name="Pledge" />
+        <Option Value="7" Name="Install" />
+        <Option Value="8" Name="Message" />
+        <Option Value="9" Name="Soul" />
+        <Option Value="10" Name="Drink" />
+        <Option Value="11" Name="Dragon Transformation (Head)" />
+        <Option Value="12" Name="Dragon Transformation (Body)" />
+        <Option Value="13" Name="Pledge (Secondary)" />
+        <Option Value="14" Name="Dark Force" />
+        <Option Value="15" Name="Amethyst" />
+        <Option Value="16" Name="Quick Enhancement" />
+        <Option Value="17" Name="Quick Throwing Knife" />
+        <Option Value="18" Name="Quick Throwing Bottle" />
+        <Option Value="19" Name="Drink (MP)" />
+        <Option Value="20" Name="Backwards Throwing Bottle" />
+        <Option Value="21" Name="Drink (Alcohol)" />
+        <Option Value="22" Name="Reserve 1" />
+        <Option Value="23" Name="Reserve 2" />
+        <Option Value="24" Name="Reserve 3" />
+        <Option Value="25" Name="Reserve 4" />
+        <Option Value="26" Name="Reserve 5" />
+        <Option Value="254" Name="Block Drink" />
+        <Option Value="255" Name="Block Animation" />
+    </Enum>
+    <Enum Name="GOODS_OPEN_MENU" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Yes/No" />
+        <Option Value="2" Name="Kick Other Players" />
+        <Option Value="3" Name="Leave Session" />
+        <Option Value="4" Name="White Phantom Summon" />
+        <Option Value="5" Name="Message" />
+        <Option Value="6" Name="Message List" />
+        <Option Value="7" Name="Bounty Ranking" />
+        <Option Value="8" Name="Izalith Ranking" />
+        <Option Value="9" Name="Ok/Cancel" />
+        <Option Value="10" Name="Invasion" />
+        <Option Value="11" Name="Selectable Warp" />
+        <Option Value="12" Name="Darkling" />
+    </Enum>
+    <Enum Name="SP_EFFECT_USELIMIT_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Weapon Change: Right" />
+        <Option Value="13" Name="Weapon Change: Left" />
+        <Option Value="2" Name="Body Change" />
+        <Option Value="3" Name="Head Change" />
+        <Option Value="4" Name="Head Change: Special" />
+        <Option Value="5" Name="Move" />
+        <Option Value="6" Name="Damage" />
+        <Option Value="7" Name="Status Abnormality 1" />
+        <Option Value="8" Name="Status Abnormality 2" />
+        <Option Value="9" Name="Status Abnormality 3" />
+        <Option Value="10" Name="Status Abnormality 4" />
+        <Option Value="11" Name="Body and Head Change" />
+        <Option Value="12" Name="Body and Head Change: Special" />
+        <Option Value="13" Name="Body and Head Change: Special" />
+    </Enum>
+    <Enum Name="REPLACE_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Coop Value Change" />
+        <Option Value="2" Name="Resonance Value" />
+        <Option Value="3" Name="Blue Covenant Value" />
+        <Option Value="4" Name="Black Covenant Value" />
+        <Option Value="5" Name="Dragon Covenant Value" />
+    </Enum>
+    <Enum Name="GOODS_SUPPLE_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Fill to HP Flask Limit" />
+        <Option Value="2" Name="Fill to MP Flask Limit" />
+        <Option Value="3" Name="Fill to Inventory Limit" />
+    </Enum>
+    <Enum Name="AUTO_REPLENISH_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Allow Automatic Replenishment: Default to Disabled" />
+        <Option Value="2" Name="Allow Automatic Replenishment: Default to Enabled" />
+    </Enum>
+    <Enum Name="FE_EQUIPPANEL_ICON_ID" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Handgun" />
+        <Option Value="2" Name="Shotgun" />
+        <Option Value="3" Name="Rifle" />
+        <Option Value="4" Name="Bazooka" />
+        <Option Value="5" Name="Sniper Rifle" />
+        <Option Value="6" Name="Hand Missile" />
+        <Option Value="7" Name="Melee Weapon" />
+        <Option Value="8" Name="Shield" />
+        <Option Value="9" Name="Missile" />
+        <Option Value="10" Name="Cannon" />
+        <Option Value="11" Name="Grenade" />
+        <Option Value="12" Name="Smoke Grenade" />
+        <Option Value="13" Name="Flare" />
+        <Option Value="14" Name="Other" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

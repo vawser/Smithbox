@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the handling of garage cutscenes." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+     
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding=""/>
+    
+    <defualtSortieCutSceneID
+    AltName="Default Starting Cutscene"
+    Wiki="The default cutscene to play when starting a mission." 
+    CutsceneAlias="" />
+    
+    <defaultReturnCutSceneID
+    AltName="Default Ending Cutscene"
+    Wiki="The default cutscene to play when ending a mission." 
+    CutsceneAlias="" />
+    
+    <defualtReturnOmitCutSceneID
+    AltName="Default Failure Cutscene"
+    Wiki="The default cutscene to play when failing a mission." 
+    CutsceneAlias="" />
+    
+    <sortieCutSceneID1
+    AltName="Starting Cutscene Variant: 1"
+    Wiki="A variant of the starting cutscene." 
+    CutsceneAlias="" />
+    
+    <sortieCutSceneID2
+    AltName="Starting Cutscene Variant: 2"
+    Wiki="A variant of the starting cutscene." 
+    CutsceneAlias="" />
+    
+    <sortieCutSceneID3
+    AltName="Starting Cutscene Variant: 3"
+    Wiki="A variant of the starting cutscene." 
+    CutsceneAlias="" />
+    
+    <sortieCutSceneID4
+    AltName="Starting Cutscene Variant: 4"
+    Wiki="A variant of the starting cutscene." 
+    CutsceneAlias="" />
+    
+    <sortieCutSceneID5
+    AltName="Starting Cutscene Variant: 5"
+    Wiki="A variant of the starting cutscene." 
+    CutsceneAlias="" />
+    
+    <sortieCutSceneID6
+    AltName="Starting Cutscene Variant: 6"
+    Wiki="A variant of the starting cutscene." 
+    CutsceneAlias="" />
+    
+    <sortieCutSceneID7
+    AltName="Starting Cutscene Variant: 7"
+    Wiki="A variant of the starting cutscene." 
+    CutsceneAlias="" />
+    
+    <sortieCutSceneID8
+    AltName="Starting Cutscene Variant: 8"
+    Wiki="A variant of the starting cutscene." 
+    CutsceneAlias="" />
+    
+    <returnCutSceneID1
+    AltName="Ending Cutscene Variant: 1"
+    Wiki="A variant of the ending cutscene." 
+    CutsceneAlias="" />
+    
+    <returnCutSceneID2
+    AltName="Ending Cutscene Variant: 2"
+    Wiki="A variant of the ending cutscene." 
+    CutsceneAlias="" />
+    
+    <returnCutSceneID3
+    AltName="Ending Cutscene Variant: 3"
+    Wiki="A variant of the ending cutscene." 
+    CutsceneAlias="" />
+    
+    <returnCutSceneID4
+    AltName="Ending Cutscene Variant: 4"
+    Wiki="A variant of the ending cutscene." 
+    CutsceneAlias="" />
+    
+    <returnCutSceneID5
+    AltName="Ending Cutscene Variant: 5"
+    Wiki="A variant of the ending cutscene." 
+    CutsceneAlias="" />
+    
+    <returnCutSceneID6
+    AltName="Ending Cutscene Variant: 6"
+    Wiki="A variant of the ending cutscene." 
+    CutsceneAlias="" />
+    
+    <returnCutSceneID7
+    AltName="Ending Cutscene Variant: 7"
+    Wiki="A variant of the ending cutscene." 
+    CutsceneAlias="" />
+    
+    <returnCutSceneID8
+    AltName="Ending Cutscene Variant: 8"
+    Wiki="A variant of the ending cutscene." 
+    CutsceneAlias="" />
+    
+  </Field>
+</PARAMMETA>

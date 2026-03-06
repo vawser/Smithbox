@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines bonfire parameters. Obsolete."/>
+  
+  <Field>
+    <eventflagId
+    AltName="Event Flag ID"
+    Wiki="Release condition event flag ID" 
+    FlagAlias="" />
+    
+    <bonfireEntityId
+    AltName="Bonfire Entity ID"
+    Wiki="The entity ID of the Bonfire character" />
+    
+    <msgId
+    AltName="Display Message ID"
+    Wiki="Display message ID" />
+    
+    <menuTextId
+    AltName="Warp Menu: Description ID"
+    Wiki="Warp menu description text ID" />
+    
+    <menuImageId
+    AltName="Warp Menu: Image ID"
+    Wiki="Warp menu thumbnail image ID" />
+    
+    <menuPageNo
+    AltName="Warp Menu: Page Number"
+    Wiki="Warp menu page number" />
+    
+    <isHome
+    AltName="Is Home Bonfire"
+    Wiki="Is considered the 'home' bonfire" 
+    IsBool="" />
+    
+    <blockCultId
+    AltName="Ritual ID"
+    Wiki="Last 4 digits of ritual ID. If the value is other than -1, change the ritual ID of the map block you were riding at the time of warp (formerly CeremonyId)." />
+    
+    <pad1
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

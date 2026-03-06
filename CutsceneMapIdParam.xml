@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines playback parameters for a cutscene." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <PlayMapId
+    AltName="Playback Map ID"
+    Wiki="A 8-digit map ID. This is the map number used as a reference in the cutscene. If you do not specify the correct map number, the playback position will be shifted." />
+    
+    <RequireMapId0
+    AltName="Display Requirement: Map ID [1]"
+    Wiki="A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank." />
+    
+    <RequireMapId1
+    AltName="Display Requirement: Map ID [2]"
+    Wiki="A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank." />
+    
+    <RequireMapId2
+    AltName="Display Requirement: Map ID [3]"
+    Wiki="A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank." />
+    
+    <RequireMapId3
+    AltName="Display Requirement: Map ID [4]"
+    Wiki="A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank." />
+    
+    <RequireMapId4
+    AltName="Display Requirement: Map ID [5]"
+    Wiki="A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank." />
+    
+    <RequireMapId5
+    AltName="Display Requirement: Map ID [6]"
+    Wiki="A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank." />
+    
+    <RequireMapId6
+    AltName="Display Requirement: Map ID [7]"
+    Wiki="A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank." />
+    
+    <CutsceneId
+    AltName="Cutscene ID"
+    Wiki="Specific a 8 digit cutscene ID." 
+    CutsceneAlias="" />
+    
+    <isRetryPlayCancel
+    AltName="Play on Retrigger"
+    Wiki="Sets the cutscene to replay on when re-triggered."
+    Enum="CUTSCENE_RETRY_SKIP_TYPE" />
+    
+    <SkipPlayerBehaviorState
+    AltName="Player State after Cutscene Skip"
+    Wiki="Set when you want to specify the state of the player after skipping a cutscene."
+    Enum="CUTSCENE_SKIP_BEHAVIOR_STATE_TYPE" />
+    
+    <PlayerBehaviorState
+    AltName="Player State after Cutscene Play"
+    Wiki="Set when you want to specify the state of the player after playing the cutscene."
+    Enum="CUTSCENE_SKIP_BEHAVIOR_STATE_TYPE" />
+    
+    <ToCutsceneFadeoutWhite
+    AltName="Is White Fade"
+    Wiki="Should the fade-in at the beginning of the cutscene be white instead of black?"
+    IsBool="" />
+    
+    <isSkipMapLoadWait
+    AltName="Wait for Map Load after Skip"
+    Wiki="Do you want to display the NowLoading screen and wait for loading when skipping? Mainly settings for catapult cutscenes." 
+    IsBool="" />
+    
+    <isEventContinue
+    AltName="Is Played Continuously in Event"
+    Wiki="HUD is displayed momentarily during continuous regeneration, so this is a flag to avoid it."
+    IsBool="" />
+    
+    <isSkipResetToneMap
+    AltName="Reset Auto-Exposure on Skip"
+    Wiki="Resets the tone map gparam settings after a skip."
+    IsBool="" />
+    
+    <isIngameDecalClearRemoDecalVisible
+    AltName="Hide In-game Decals"
+    Wiki="Hides in-game decals, cutscene decals are still displayed."
+    IsBool="" />
+    
+    <reserve
+    AltName=""
+    Padding="" />
+    
+    <ToCutsceneFadeoutTime
+    AltName="Cutscene Fade-in Time"
+    Wiki="Fade time at the start of cutscene (-1 = system default time). In seconds." />
+    
+    <ToIngameFadeinTime
+    AltName="Cutscene Fade-out Time"
+    Wiki="Fade time at the end of cutscene (-1 = system default time). In seconds." />
+    
+  </Field>
+  <Enums>
+    <Enum Name="CUTSCENE_RETRY_SKIP_TYPE" type="u8">
+        <Option Value="0" Name="Play" />
+        <Option Value="1" Name="Do not Play" />
+    </Enum>
+    <Enum Name="CUTSCENE_SKIP_BEHAVIOR_STATE_TYPE" type="s8">
+        <Option Value="-1" Name="Inherit the state before Playback" />
+        <Option Value="0" Name="Thud Landing" />
+        <Option Value="1" Name="Wait" />
+        <Option Value="2" Name="Assault Boost" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each particle quality level." />
+  
+  <Field>
+    <softParticleEnabled 
+    AltName="Enable Particles" 
+    Wiki="If ON, soft particles are enabled." 
+    IsBool="" />
+    
+    <glowEnabled 
+    AltName="Enable Particle Glow" 
+    Wiki="If ON, particles may glow." 
+    IsBool="" />
+    
+    <distortionEnable 
+    AltName="Enable Particle Distortion" 
+    Wiki="If ON, particles may distort the screenspace." 
+    IsBool="" />
+    
+    <cs_upScaleEnabledType 
+    AltName="Enable Bilateral Upscaling" 
+    Wiki="Determines the bilateral upscaling settings for particles." 
+    Enum="GRAPHICS_CONFIG_CS_GCONFIG_ENABLED_TYPE" />
+    
+    <fNumOnceEmitsScale 
+    AltName="Number of Emits in Particle Instance" 
+    Wiki="Determines the maximum number of emits within one instance of a particle." />
+    
+    <fEmitSpanScale 
+    AltName="Particle Emit Interval" 
+    Wiki="Determines the particle emitter interval." />
+    
+    <fLodDistance1Scale 
+    AltName="LOD Distance Scale: 1" 
+    Wiki="The first LOD distance scale for particles." />
+    
+    <fLodDistance2Scale 
+    AltName="LOD Distance Scale: 2" 
+    Wiki="The second LOD distance scale for particles." />
+    
+    <fLodDistance3Scale 
+    AltName="LOD Distance Scale: 3" 
+    Wiki="The third LOD distance scale for particles." />
+    
+    <fLodDistance4Scale 
+    AltName="LOD Distance Scale: 4" 
+    Wiki="The fourth LOD distance scale for particles." />
+    
+    <fScaleRenderDistanceScale 
+    AltName="Particle Render Distance Scale" 
+    Wiki="The magnification to the distance registered in the reduction buffer for particles." />
+    
+    <pad1 
+    AltName="" 
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="GRAPHICS_CONFIG_CS_GCONFIG_ENABLED_TYPE" type="u8">
+        <Option Value="0" Name="Keep GParam Settings" />
+        <Option Value="1" Name="Force Disable" />
+        <Option Value="2" Name="Force Enable" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

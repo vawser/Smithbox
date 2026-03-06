@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the timezone conversion parameters for a cutscene." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <SrcTimezoneStart 
+    AltName="Current Time for Conversion" 
+    Wiki="Start time of the time zone to be converted to cutscene time. In hours." />
+    
+    <DstCutscenTime 
+    AltName="Cutscene Time after Conversion" 
+    Wiki="Enter the time used during cutscene playback. In hours." />
+  </Field>
+</PARAMMETA>

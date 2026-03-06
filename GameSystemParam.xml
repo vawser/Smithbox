@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines various parameters related to game systems and the player." />
+  
+  <Field>
+    <BaseToughnessRecoverTime 
+    AltName="Toughness Recovery Time" 
+    Wiki="The base recovery rate of toughness. In seconds." />
+    
+    <ChrEventTrun_byLeft90 
+    AltName="Rotation Animation ID: Left 90°" 
+    Wiki="The animation ID to use for the specified character rotation." />
+    
+    <ChrEventTrun_byRight90 
+    AltName="Rotation Animation ID: Right 90°" 
+    Wiki="The animation ID to use for the specified character rotation." />
+    
+    <ChrEventTrun_byLeft180 
+    AltName="Rotation Animation ID: Left 180°" 
+    Wiki="The animation ID to use for the specified character rotation." />
+    
+    <ChrEventTrun_byRight180 
+    AltName="Rotation Animation ID: Right 180°" 
+    Wiki="The animation ID to use for the specified character rotation." />
+    
+    <ChrEventTrun_90TurnStartAngle 
+    AltName="Rotation Animation Start Angle: 90°" 
+    Wiki="The starting angle for the specified character rotation when it is applied. If the event starts at an angle smaller than this angle, a system turn will occur." />
+    
+    <ChrEventTrun_180TurnStartAngle 
+    AltName="Rotation Animation Start Angle: 180°" 
+    Wiki="The starting angle for the specified character rotation when it is applied. If the event starts at an angle smaller than this angle, a system turn will occur." />
+    
+    <DeptDeceasedItemId
+    AltName="Debt Item ID"
+    Wiki="The item ID of the item that determines debt level. If less than 0, the debt will not be treasted as an invalid value." />
+    
+    <FlickDamageCutRateSuccessGurad 
+    AltName="Damage Absorption upon Successful Guard Repel" 
+    Wiki="The damage absorption multiplier to use when a guard action successfully repels a weapon." />
+    
+    <NpcTalkAnimBeginDiffAngle 
+    AltName="NPC Conversation Animation: Start Angle" 
+    Wiki="The difference angle between the NPC and the player at which a NPC conversation animation will start to occur." />
+    
+    <NpcTalkAnimEndDiffAngle 
+    AltName="NPC Conversation Animation: End Angle" 
+    Wiki="The difference angle between the NPC and the player at which a NPC conversation animation will stop occuring." />
+    
+    <CultDeadSpEffectId_Optional
+    AltName="Ritual Corpse: SpEffect ID - Turn"
+    Wiki="The SpEffect ID to turn an enemy corpse into a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_LevelUp
+    AltName="Ritual Corpse: SpEffect ID - Level-up"
+    Wiki="The SpEffect ID given when using the level-up menu at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_StatusReroll
+    AltName="Ritual Corpse: SpEffect ID - Attribute Reallocation"
+    Wiki="The SpEffect ID given when using the attribute reallocation menu at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_DeadLevelReset
+    AltName="Ritual Corpse: SpEffect ID - Hollowing Reset"
+    Wiki="The SpEffect ID given when using the hollowing reset menu at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_Atonement
+    AltName="Ritual Corpse: SpEffect ID - Atonement"
+    Wiki="The SpEffect ID given when using the sin atonement menu at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_NpcWhiteGhost
+    AltName="Ritual Corpse: SpEffect ID - Spirit Summon"
+    Wiki="The SpEffect ID given when using the spirit summon menu at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_Bomb
+    AltName="Ritual Corpse: SpEffect ID - Bomb"
+    Wiki="The SpEffect ID given when using the bomb action at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_NoInvasion
+    AltName="Ritual Corpse: SpEffect ID - Block Invasion"
+    Wiki="The SpEffect ID given when using the block invasion action at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_LevelUp
+    AltName="Ritual Sword: SpEffect ID - Level-up"
+    Wiki="The SpEffect ID for the level-up menu with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_StatusReroll
+    AltName="Ritual Sword: SpEffect ID - Attribute Reallocation"
+    Wiki="The SpEffect ID for the attribute reallocation menu with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_DeadLevelReset
+    AltName="Ritual Sword: SpEffect ID - Hollowing Reset"
+    Wiki="The SpEffect ID for the hollowing reset menu with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_Atonement
+    AltName="Ritual Sword: SpEffect ID - Atonement"
+    Wiki="The SpEffect ID for the sin atonement menu with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_NpcWhiteGhost
+    AltName="Ritual Sword: SpEffect ID - Spirit Summon"
+    Wiki="The SpEffect ID for the spirit summon menu with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_Bomb
+    AltName="Ritual Sword: SpEffect ID - Bomb"
+    Wiki="The SpEffect ID for the bomb action with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_NoInvasion
+    AltName="Ritual Sword: SpEffect ID - Block Invasion"
+    Wiki="The SpEffect ID for the block invasion action with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <ImpossibleCultDialogId_LevelUp
+    AltName="Ritual Action: Dialog ID - Level-up"
+    Wiki="The dialogue ID to use when using the level-up action with a ritual implement." />
+    
+    <ImpossibleCultDialogId_StatusReroll
+    AltName="Ritual Action: Dialog ID - Attribute Reallocation"
+    Wiki="The dialogue ID to use when using the attribute reallocation action with a ritual implement." />
+    
+    <ImpossibleCultDialogId_DeadLevelReset
+    AltName="Ritual Action: Dialog ID - Hollowing Reset"
+    Wiki="The dialogue ID to use when using the hollowing reset action with a ritual implement." />
+    
+    <ImpossibleCultDialogId_Atonement
+    AltName="Ritual Action: Dialog ID - Atonement"
+    Wiki="The dialogue ID to use when using the atonement action with a ritual implement." />
+    
+    <ImpossibleCultDialogId_NpcWhiteGhost_MaxChr
+    AltName="Ritual Action: Dialog ID - Spirit Summon (No Slots)"
+    Wiki="The dialogue ID to use when using the spirit summon action with a ritual implement, with no available summon slots." />
+    
+    <ImpossibleCultDialogId_NpcWhiteGhost_AreaOut
+    AltName="Ritual Action: Dialog ID - Spirit Summon (Outside Area)"
+    Wiki="The dialogue ID to use when using the spirit summon action with a ritual implement, when outside of the summoning area." />
+    
+    <ImpossibleCultDialogId_NpcWhiteGhost_AreaClear
+    AltName="Ritual Action: Dialog ID - Spirit Summon (Area Clear)"
+    Wiki="The dialogue ID to use when using the spirit summon action with a ritual implement, when an area is cleared." />
+    
+    <ImpossibleCultDialogId_Bomb
+    AltName="Ritual Action: Dialog ID - Bomb"
+    Wiki="The dialogue ID to use when using the bomb action with a ritual implement." />
+    
+    <ImpossibleCultDialogId_NoInvasion
+    AltName="Ritual Action: Dialog ID - Block Invasion"
+    Wiki="The dialogue ID to use when using the block invasion action with a ritual implement." />
+    
+    <AcquittalTargetNpcEventFlagId
+    AltName="Acquittal: Flag ID"
+    Wiki="The event flag ID to hold whether a NPC has forgotten a player's sin." 
+    FlagAlias="" />
+    
+    <ActiveCultAtonementEventFlagId
+    AltName="Atonement: Flag ID"
+    Wiki="The event flag ID to hold whether the player has performed the atonement ritual." 
+    FlagAlias="" />
+    
+    <RecoverBelowMaxHpCompletionNoticeSpEffectId
+    AltName="Notification SpEffect ID: Recovery when HP is below Max"
+    Wiki="The notification SpEffect ID to use when the 'Recovery when HP is below maximum' SpEffect is completed."
+    Refs="SpEffectParam" />
+    
+    <EstusFlaskRecovery_AbsorptionProductionSfxId_byHp
+    AltName="HP Flask Gain: Particle ID"
+    Wiki="The absorption SFX ID to use when a HP flask is gained." 
+    ParticleAlias="" />
+    
+    <EstusFlaskRecovery_AbsorptionProductionSfxId_byMp
+    AltName="MP Flask Gain: Particle ID"
+    Wiki="The absorption SFX ID to use when a MP flask is gained." 
+    ParticleAlias="" />
+    
+    <RespawnSpecialEffectActiveCheckerSpEffectId
+    AltName="Notification SpEffect ID: Resurrection Activation"
+    Wiki="The notification SpEffect ID to use when the 'Resurrection' SpEffect is completed. Mainly used for multiplayer sync."
+    Refs="SpEffectParam" />
+    
+    <DefeatHostilityGhostOfSoulCorrectRate_byHost
+    AltName="Host - Soul Absorption %: Intruder"
+    Wiki="The soul absorption multiplier to use when defeating an intruder as the host." />
+    
+    <DefeatHostilityGhostOfSoulCorrectRate_byTeamGhost
+    AltName="Client - Soul Absorption %: Intruder"
+    Wiki="The soul absorption multiplier to use when defeating an intruder as a client." />
+    
+    <DefeatMultiModeEnemyOfSoulCorrectRate_byHost
+    AltName="Host - Soul Absorption %: Enemy"
+    Wiki="The soul absorption multiplier to use when defeating an enemy as the host in a multiplayer session." />
+    
+    <DefeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost
+    AltName="Client - Soul Absorption %: Enemy"
+    Wiki="The soul absorption multiplier to use when defeating an enemy as a client in a multiplayer session." />
+    
+    <DefeatMultiModeBossOfSoulCorrectRate_byHost
+    AltName="Host - Soul Absorption %: Boss"
+    Wiki="The soul absorption multiplier to use when defeating a boss as the host in a multiplayer session." />
+    
+    <DefeatMultiModeBossOfSoulCorrectRate_byTeamGhost
+    AltName="Client - Soul Absorption %: Boss"
+    Wiki="The soul absorption multiplier to use when defeating a boss as a client in a multiplayer session." />
+    
+    <EnemyHpGaugeScreenOffset_byUp
+    AltName="Enemy HP Gauge: Screen Offset"
+    Wiki="The offset value in pixels for screen adjustments if the enemy HP gauge covers the entire screen (FullHD standard)." />
+    
+    <pad_01
+    AltName=""
+    Padding="" />
+    
+    <EnemyDetectionSpEffect_ShootBulletDummypolyId
+    AltName="Enemy Detection: Bullet Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the emitted bullet from the enemy detection SpEffect." />
+    
+    <EnemyDetectionSpEffect_MaxDetectionNum
+    AltName="Enemy Detection: Maximum Detection Count"
+    Wiki="The maximum number of enemies that can be detected at once by the enemy detection SpEffect." />
+    
+    <EnemyDetectionSpEffect_MaxDetectionLength
+    AltName="Enemy Detection: Maximum Detection Distance"
+    Wiki="The maximum distance at which enemies can be detected at once by the enemy detection SpEffect." />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopHost
+    AltName="Enemy Detection: Bullet ID - Co-operator Sign (Default)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopSign_None
+    AltName="Enemy Detection: Bullet ID - Co-operator Sign (Unaligned)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopSign_Umbasa
+    AltName="Enemy Detection: Bullet ID - Co-operator Sign (Sun Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopSign_Berserker
+    AltName="Enemy Detection: Bullet ID - Co-operator Sign (Berserker Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopSign_Sinners
+    AltName="Enemy Detection: Bullet ID - Co-operator Sign (Sinner Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopRing_RedHunter
+    AltName="Enemy Detection: Bullet ID - Co-operator Ring (Intruder Hunter Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeOrb_None
+    AltName="Enemy Detection: Bullet ID - Intruder Orb (Unaligned)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeOrb_Umbasa
+    AltName="Enemy Detection: Bullet ID - Intruder Orb (Sun Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeOrb_Berserker
+    AltName="Enemy Detection: Bullet ID - Intruder Orb (Berserker Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeOrb_Sinners
+    AltName="Enemy Detection: Bullet ID - Intruder Orb (Sinner Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeSign_None
+    AltName="Enemy Detection: Bullet ID - Intruder Sign (Unaligned)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeSign_Umbasa
+    AltName="Enemy Detection: Bullet ID - Intruder Sign (Sun Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeSign_Berserker
+    AltName="Enemy Detection: Bullet ID - Intruder Sign (Berserker Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeSign_Sinners
+    AltName="Enemy Detection: Bullet ID - Intruder Sign (Sinner Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeRing_Sinners
+    AltName="Enemy Detection: Bullet ID - Intruder Ring (Sinner Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfBoss
+    AltName="Enemy Detection: Bullet ID - Intruder Ring (Boss: Forest Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfMap
+    AltName="Enemy Detection: Bullet ID - Intruder Ring (Map: Forest Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <ActivityOfDeadSpEffect_BulletId
+    AltName="Dead Again SpEffect: Bullet ID"
+    Wiki="The bullet ID to use for the Dead Again SpEffect."
+    Refs="Bullet" />
+    
+    <ActivityOfDeadSpEffect_ShootBulletDummypolyId
+    AltName="Dead Again SpEffect: Bullet Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the emitted bullet from the Dead Again SpEffect."
+    Refs="Bullet" />
+    
+    <ActivityOfDeadSpEffect_DeadFadeOutTime
+    AltName="Dead Again SpEffect: Fade Out Time"
+    Wiki="The fade out time for dead enemies affected by the Dead Again SpEffect." />
+    
+    <IgnorNetStateSyncTime_ForThrow
+    AltName="Network: Transition Ignore Time at Throw Start"
+    Wiki="The time to ignore transitions at throw start due to network information." />
+    
+    <NetPenaltyPointLanDisconnect
+    AltName="Network: Multiplayer Penalty - LAN Disconnection"
+    Wiki="The penalty points to apply for a client after LAN disconnection." />
+    
+    <NetPenaltyPointProfileSignout
+    AltName="Network: Multiplayer Penalty - Profile Sign Out"
+    Wiki="The penalty points to apply for a client after profile sign out." />
+    
+    <NetPenaltyPointReboot
+    AltName="Network: Multiplayer Penalty - Reboot"
+    Wiki="The penalty points to apply for a client after reboot." />
+    
+    <NetPnaltyPointSuspend
+    AltName="Network: Multiplayer Penalty - Suspend"
+    Wiki="The penalty points to apply for a client after suspend." />
+    
+    <NetPenaltyForgiveItemLimitTime
+    AltName="Network: Multiplayer Penalty - Item Forgiveness Time"
+    Wiki="The item forgiveness duration after incurring a multiplayer penalty." />
+    
+    <NetPenaltyPointThreshold
+    AltName="Network: Multiplayer Penality - Judgement Threshold"
+    Wiki="The threshold at which a multiplayer penalty is incurred." />
+    
+    <UncontrolledMoveThresholdTime
+    AltName="Network: No Action Kick Duration"
+    Wiki="The duration after which no actions have occured the player will be kicked from the multiplayer session. In seconds." />
+    
+    <EnemyDetectionSpEffect_BulletId_byNpcEnemy
+    AltName="Enemy Detection: Bullet ID - NPC Enemy"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <ActivityOfDeadTargetSearchSpEffect_OnHitSpEffect
+    AltName="Dead Again SpEffect: Active Target Search"
+    Wiki="The SpEffect ID applied during the active target search effect of Dead Again."
+    Refs="SpEffectParam" />
+    
+    <ActivityOfDeadTargetSearchSpEffect_MaxLength
+    AltName="Dead Again SpEffect: Active Target Search Distance"
+    Wiki="The maximum distance for the active target search effect of Dead Again." />
+    
+    <NetFpsCheck_fpsThreshold
+    AltName="Network: Low FPS Threshold"
+    Wiki="The low FPS threshold at which a player is kicked from a multiplayer session." />
+    
+    <NetFpsCheck_lowfpsTImeThreshold
+    AltName="Network: Low FPS Duration"
+    Wiki="The duration at which the low FPS threshold is met, after which a player will be kicked from a multiplayer session." />
+    
+    <SoloBreakInMaxPoint
+    AltName="Maximum Points for Single Intruder"
+    Wiki="The maximum points for solo intruder entry. If this value is exceeded, the host is invaded by a solo player." />
+    
+    <NpcTalkTimeOutThreshold
+    AltName="NPC Conversation: Voice Timeout"
+    Wiki="The timeout duration for voice playback during NPC conversations. If this timeout is reached, the next talk message occurs." />
+    
+    <SendPlayLogIntervalTime
+    AltName="Play Log Interval"
+    Wiki="The interval at which the play logging is sent to the server." />
+    
+    <Item370_MaxSfxNum
+    AltName="Prism Stone: Maximum Particle Count"
+    Wiki="The maximum number of SFX that can originate from the Prism Stone item." />
+    
+    <pad_02
+    AltName=""
+    Padding="" />
+    
+    <SummonDataCoopMatchingLevelUpperAbs
+    AltName="Multiplayer: Matching Correction - Absolute Level"
+    Wiki="The matching correction factor applied during multiplier, based on the specified factor." />
+    
+    <SummonDataCoopMatchingLevelUpperRel
+    AltName="Multiplayer: Matching Correction - Relative Level"
+    Wiki="The matching correction factor applied during multiplier, based on the specified factor." />
+    
+    <SummonDataCoopMatchingWepLevelMul
+    AltName="Multiplayer: Matching Correction - Weapon Reinforcement"
+    Wiki="The matching correction factor applied during multiplier, based on the specified factor." />
+    
+    <PickUpBerserkerSignSpEffectBulletId
+    AltName="Berserker Sign SpEffect: Bullet ID"
+    Wiki="The bullet ID to use when generating the SpEffect bullet at the sign position."
+    Refs="Bullet" />
+    
+    <SucceedBerserkerSelfKillingEffectId
+    AltName="Berserker Player Kill: SpEffect ID"
+    Wiki="The SpEffect to apply when the berserker kills the host by themselves." 
+    Refs="SpEffectParam" />
+    
+    <MachingLevelWhiteSignUpperRel
+    AltName="Level Sync: Relative Soul Level Coefficient (Friendly Phantom)"
+    Wiki="The soul level coefficient to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingLevelWhiteSignUpperAbs
+    AltName="Level Sync: Absolute Soul Level Coefficient (Friendly Phantom)"
+    Wiki="The soul level coefficient to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingLevelRedSignUpperRel
+    AltName="Level Sync: Relative Soul Level Coefficient (Hostile Phantom)"
+    Wiki="The soul level coefficient to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingLevelRedSignUpperAbs
+    AltName="Level Sync: Absolute Soul Level Coefficient (Hostile Phantom)"
+    Wiki="The soul level coefficient to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_0
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [0] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_1
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [1] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_2
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [2] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_3
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [3] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_4
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [4] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_5
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [5] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_6
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [6] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_7
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [7] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_8
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [8] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_9
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [9] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_10
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [10] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_0
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [0] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_1
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [1] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_2
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [2] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_3
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [3] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_4
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [4] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_5
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [5] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_6
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [6] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_7
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [7] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_8
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [8] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_9
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [9] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_10
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [10] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <pad_03
+    AltName=""
+    Padding="" />
+    
+    <SendGlobalEventLogIntervalTime
+    AltName="Global Event Log Send Interval"
+    Wiki="The interval at which to send the global event log to the server." />
+    
+    <AddSoloBreakInPoint_White
+    AltName="Intruder Entry Point: Addition Value (White Phantom)"
+    Wiki="The addition value to apply for intruder entry for intruders of this type into the host's world." />
+    
+    <AddSoloBreakInPoint_Black
+    AltName="Intruder Entry Point: Addition Value (Red Phantom)"
+    Wiki="The addition value to apply for intruder entry for intruders of this type into the host's world." />
+    
+    <AddSoloBreakInPoint_ForceJoin
+    AltName="Intruder Entry Point: Addition Value (Intruder)"
+    Wiki="The addition value to apply for intruder entry for intruders of this type into the host's world." />
+    
+    <AddSoloBreakInPoint_VisitorGuardian
+    AltName="Intruder Entry Point: Addition Value (Visitor: Map Guardian)"
+    Wiki="The addition value to apply for intruder entry for intruders of this type into the host's world." />
+    
+    <AddSoloBreakInPoint_VisitorRedHunter
+    AltName="Intruder Entry Point: Addition Value (Visitor: Red Hunter)"
+    Wiki="The addition value to apply for intruder entry for intruders of this type into the host's world." />
+    
+    <CorpseRedrawingDistance
+    AltName="Corpse Redraw Distance"
+    Wiki="The distance at which a corpse will be marked to not be redrawn, even if it comes within draw distance again. In metres." />
+    
+    <RedHunter_HostBossAreaGetSoulRate
+    AltName="Red Hunter: Soul Multiplier after Boss Entered"
+    Wiki="The soul absorption multiplier applied to the Red Hunter when the host enters a boss arena through the fog gate. This multiplier is applied to the soul value of the Red Hunter next level difference." />
+    
+    <StealthSystemSightCutRate_SightHide_NotStealthMode
+    AltName="Stealth System: Player in Grass - Enemy Sight Reduction %"
+    Wiki="The enemy visibility reduction rate to apply when the player is in grass but does not have SpEffect 150." />
+    
+    <StealthSystemSightCutRate_NotSightHide_StealthMode
+    AltName="Stealth System: Player not in Grass - Enemy Sight Reduction %"
+    Wiki="The enemy visibility reduction rate to apply when the player is not in grass and has SpEffect 150." />
+    
+    <StealthSystemSightCutRate_SightHide_StealthMode
+    AltName="Stealth System: Player in Grass - Enemy Sight Reduction %"
+    Wiki="The enemy visibility reduction rate to apply when the player is in grass and has SpEffect 150." />
+    
+    <pad_04
+    AltName=""
+    Padding="" />
+    
+    <Damage_ImpactLifeTimeSec
+    AltName="Impact Damage Duration"
+    Wiki="The duration of impact damage when it occurs. In seconds." />
+    
+    <HitStopAddDamageAnimScale
+    AltName="Animation Playback Speed Ratio during Hit Stop"
+    Wiki="The animation playback speed % during hit stop additive damage." />
+    
+    <HitStopAddDamageAnimTimeF
+    AltName="Animation Playback Speed Change Time during Hit Shop"
+    Wiki="The animation playback speed change time during hit stop additive damage (in frames, or 1/30 seconds)" />
+    
+    <HardHitStopTimeRatePercent
+    AltName="Animation Playback Speed Ratio on Hard Hit"
+    Wiki="The animation playback speed ratio upon a hard hit (0 means complete stop)." />
+    
+    <CoverCheckRayDist
+    AltName="Cover Judgement Raycast Distance"
+    Wiki="The raycast distance used for the wall check when determining which direction to face when covering." />
+    
+    <pad_05
+    AltName=""
+    Padding="" />
+    
+    <DamageLevel_LevelUpCount
+    AltName="Stagger Count before Collapse"
+    Wiki="The number of staggers allowed before collapsing." />
+    
+    <pad_06
+    AltName=""
+    Padding="" />
+    
+    <DamageLevel_LevelUpCountResetTimeSec
+    AltName="Stagger Count Reset Duration"
+    Wiki="The duration to reset the stagger count. In seconds." />
+    
+    <GrabAttachIntpFrame
+    AltName="Grab Interpolation Frame"
+    Wiki="The frame at which a target is grabbed when an entity is attempting a grab." />
+    
+    <DeadEffectMaxTime
+    AltName="Death Effect Maximum Duration"
+    Wiki="The maximum duration for the death effect. In seconds." />
+    
+    <WallBackrash_CeilingAngleDeg
+    AltName="Wall Bounce: Ceiling Judgement Angle"
+    Wiki="During a wall bounce, the angle at which the surface will be judged as a ceiling. In degrees." />
+    
+    <WallBackrash_WallHitLimitAngleDeg
+    AltName="Wall Bounce: Character Front"
+    Wiki="During a wall bounce, the angle that is considered the 'front' of the character. In degrees." />
+    
+    <WallBackrash_FloorAngleDeg
+    AltName="Wall Bounce: Floor Judgement Angle"
+    Wiki="During a wall bounce, the angle at which the surface will be judged as a floor. In degrees." />
+    
+    <outRangeThresholdMaxDist
+    AltName="Ricochet: Maximum Threshold Correction Distance"
+    Wiki="The maximum threshold correction distance when determining ricochet. In metres." />
+    
+    <outRangeDamageDecayPercent
+    AltName="Ricochet: Damage Attenuation %"
+    Wiki="The damage attenuation multiplier to apply during a ricochet." />
+    
+    <pad_08
+    AltName=""
+    Padding="" />
+    
+    <NerveLoad_EffectLevel1_Threshold
+    AltName="1: ACS Overload - Screen Effect Threshold"
+    Wiki="The threshold at which to increase the visual screen effect for ACS overload." />
+    
+    <NerveLoad_EffectLevel1_AddRate
+    AltName="1: ACS Overload - Screen Effect Strength"
+    Wiki="The addition value to apply when this specific screen effect threshold is reached." />
+    
+    <NerveLoad_EffectLevel1_Time
+    AltName="1: ACS Overload - Screen Effect Decay"
+    Wiki="The decay rate for the addition value after this specific screen effect threshold is reached." />
+    
+    <NerveLoad_EffectLevel2_Threshold
+    AltName="2: ACS Overload - Screen Effect Threshold"
+    Wiki="The threshold at which to increase the visual screen effect for ACS overload." />
+    
+    <NerveLoad_EffectLevel2_AddRate
+    AltName="2: ACS Overload - Screen Effect Strength"
+    Wiki="The addition value to apply when this specific screen effect threshold is reached." />
+    
+    <NerveLoad_EffectLevel2_Time
+    AltName="2: ACS Overload - Screen Effect Decay"
+    Wiki="The decay rate for the addition value after this specific screen effect threshold is reached." />
+    
+    <NerveLoad_EffectLevel3_Threshold
+    AltName="3: ACS Overload - Screen Effect Threshold"
+    Wiki="The threshold at which to increase the visual screen effect for ACS overload." />
+    
+    <NerveLoad_EffectLevel3_AddRate
+    AltName="3: ACS Overload - Screen Effect Strength"
+    Wiki="The addition value to apply when this specific screen effect threshold is reached." />
+    
+    <NerveLoad_EffectLevel3_Time
+    AltName="3: ACS Overload - Screen Effect Decay"
+    Wiki="The decay rate for the addition value after this specific screen effect threshold is reached." />
+    
+    <NerveLoad_GParamChangeTime
+    AltName="ACS Overload: GParam Change Time"
+    Wiki="The time until the screen effect changes after the ACS overload effect is applied. In seconds." />
+    
+    <NerveLoad_InverseCompRate
+    AltName="ACS Overload: Display Strength"
+    Wiki="The final display strength of the effect whilst under ACS overload effect." />
+    
+    <NerveLoad_InverseCompTime
+    AltName="ACS Overload: Display Duration"
+    Wiki="The final display duration of the effect whilst under ACS overload effect." />
+    
+    <NerveLoad_NoiseUpdateRate
+    AltName="ACS Overload: Noise Update %"
+    Wiki="The noise reduction multiplier after the ACS overload effect occurs." />
+    
+    <NerveLoad_MenuRequestRate
+    AltName="ACS Overload: Menu Display Strength %"
+    Wiki="The effect addition multiplier when applied from the menu." />
+    
+    <NerveLoad_MenuSubRate
+    AltName="ACS Overload: Menu Display Duration"
+    Wiki="The effect duration when applied from the menu. In seconds." />
+    
+    <NerveLoad_FadeOutWaitTime
+    AltName="ACS Overload: Fade Out Delay"
+    Wiki="The delay until the fade-out for the ACS overload particles. In seconds." />
+    
+    <NerveLoad_FadeOutTime
+    AltName="ACS Overload: Fade Out Duration"
+    Wiki="The duration of the fade-out for the ACS overload particles. In seconds." />
+    
+    <pad_09
+    AltName=""
+    Padding="" />
+    
+    <blowWallHit_DamageSpeedKMH
+    AltName="Wall Collision: Allowable Speed"
+    Wiki="The allowable speed at which to apply blow-off wall collision. In kilometres per hour." />
+    
+    <blowWallHit_DamageAngDegH
+    AltName="Wall Collision: Allowable Horizontal Angle Difference"
+    Wiki="The allowable horizontal angle difference at which to apply blow-off wall collision. In degrees." />
+    
+    <blowWallHit_DamageAngDegV
+    AltName="Wall Collision: Allowable Vertical Angle Difference"
+    Wiki="The allowable vertical angle difference at which to apply blow-off wall collision. In degrees." />
+    
+    <blowWallHit_BehaviorId_Player
+    AltName="Wall Collision: Behavior ID (for Player)"
+    Wiki="The behavior ID to apply upon a wall collision (for the player)." 
+    Refs="BehaviorParam" />
+    
+    <blowWallHit_BehaviorId_Player
+    AltName="Wall Collision: Behavior ID (for Player)"
+    Wiki="The behavior ID to apply upon a wall collision (for the player)." 
+    Refs="BehaviorParam" />
+    
+    <blowWallHit_BehaviorId_Enemy
+    AltName="Wall Collision: Behavior ID (for Enemy)"
+    Wiki="The behavior ID to apply upon a wall collision (for an enemy)." 
+    Refs="BehaviorParam" />
+    
+    <DeadFadeOutTimeSec
+    AltName="Fade Out Duration after Death"
+    Wiki="The fade out duration for characters after death. In seconds." />
+    
+    <HackingContinueRadius
+    AltName="Hacking: Allowable Radius"
+    Wiki="The radius in which hacking can continue after starting. In metres." />
+    
+    <HackingContinueHeight
+    AltName="Hacking: Allowable Height"
+    Wiki="The height in which hacking can continue after starting. In metres." />
+    
+    <HackingContinueBottom
+    AltName="Hacking: Lower Height Offset"
+    Wiki="The height offset to apply to the allowable height from the bottom. In metres." />
+    
+    <pad_10
+    AltName=""
+    Padding="" />
+    
+    <PhotModeMoveDist
+    AltName="Photo Mode: Allowable Distance"
+    Wiki="The distance from the player entity that the camera is allowed to move to whilst in Photo Mode. In metres." />
+    
+    <PhotModeCamHitRadius
+    AltName="Photo Mode: Camera Radius"
+    Wiki="The radius of the camera hitbox whilst in Photo Mode. In metres." />
+    
+    <HDRumble_Small_Id
+    AltName="Vibration ID on Part Switch (Small)"
+    Wiki="The vibration ID for rumble when switching small parts." />
+    
+    <HDRumble_Large_Id
+    AltName="Vibration ID on Part Switch (Large)"
+    Wiki="The vibration ID for rumble when switching large parts." />
+    
+    <Cartridge_Size
+    AltName="Cartridge: Capsule Radius"
+    Wiki="The radius of each capsule used for the cartridge case. In metres." />
+    
+    <Cartridge_Length
+    AltName="Cartridge: Capsule Length"
+    Wiki="The length of each capsule used for the cartridge case. In metres (Must be larger than radius)." />
+    
+    <Cartridge_Friction
+    AltName="Cartridge: Friction Coefficient"
+    Wiki="The coefficient used for the cartridge friction. Higher values means it is easier to stop." />
+    
+    <Cartridge_Restitution
+    AltName="Cartridge: Bounce Coefficient"
+    Wiki="The coefficient used for the cartridge bounciness. Higher values means it will bounce more." />
+    
+    <Cartridge_EnableDist
+    AltName="Cartridge: Effective Distance"
+    Wiki="The maximum effective distance of the cartridge (from the player). In metres." />
+    
+    <Cartridge_IsChrRagdollHit
+    AltName="Cartridge: Hit Ragdolls"
+    Wiki="If ON, the cartridges will hit character ragdolls."
+    IsBool="" />
+    
+    <pad_11
+    AltName=""
+    Padding="" />
+    
+    <Cartridge_DecelerateBeginTime
+    AltName="Cartridge: Deceleration Delay"
+    Wiki="The delay before the horizontal deceleration of the cartridge. In seconds." />
+    
+    <Cartridge_DecelerateTime
+    AltName="Cartridge: Deceleration Duration"
+    Wiki="The duration from the start of the deceleration until it reaches the maximum deceleration rate. In seconds." />
+    
+    <Cartridge_DecelerateRate
+    AltName="Cartridge: Maximum Deceleration %"
+    Wiki="The maximum horizontal deceleration of the cartridge." />
+    
+    <Net_MapHitSfxOmitteDist
+    AltName="Arena: Map Impact - Particle Cull Distance"
+    Wiki="In an arena match, this determines the cull distance for SFX that impact the map." />
+    
+    <Net_MyTeamHitSfxOmitteCpuExecRate
+    AltName="Arena: Friendly Impact - Particle Processing Time"
+    Wiki="In an arena match, this determines if a SFX that impact a friendly character is culled. Based on the processing time for the particle." />
+    
+    <HavokGabageCollectionIntervalTime
+    AltName="Havok: Garbage Collection Interval"
+    Wiki="The garbage collection interval for Havok's memeroy fragmentation system. In seconds." />
+    
+    <PhotModeMoveScale
+    AltName="Photo Mode: Camera Movement Scale"
+    Wiki="The scale for input with regards to camera movement whilst in Photo Mode." />
+    
+    <PhotModeTurnScale
+    AltName="Photo Mode: Camera Rotation Scale"
+    Wiki="The scale for input with regards to camera rotation whilst in Photo Mode." />
+    
+    <PhotModeMoveIpo
+    AltName="Photo Mode: Camera Movement Interpolation %"
+    Wiki="The interpolation rate for input with regards to camera movement whilst in Photo Mode." />
+    
+    <PhotModeTurnIop
+    AltName="Photo Mode: Camera Rotation Interpolation %"
+    Wiki="The interpolation rate for input with regards to camera rotation whilst in Photo Mode." />
+    
+    <PhotModeCamSpeedMin
+    AltName="Photo Mode: Camera Movement - Minimum Speed"
+    Wiki="The minimum camera movement speed when changed by options whilst in Photo Mode." />
+    
+    <PhotModeCamSpeedMax
+    AltName="Photo Mode: Camera Movement - Maximum Speed"
+    Wiki="The maximum camera movement speed when changed by options whilst in Photo Mode." />
+    
+    <OsTuning_ResetCost
+    AltName="OS Tuning: Reset Cost"
+    Wiki="The reset cost for OS improvements (per level)." />
+    
+    <reserved_for_menu
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

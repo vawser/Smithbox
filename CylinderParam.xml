@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines parameters related to joint capsules."/>
+  
+  <Field>
+    <strCtrlBoneName 
+    AltName="Control Bone Name" 
+    Wiki="Bone name to apply (valid only when the setting method is skeleton)" />
+    
+    <dmyPolyId
+    AltName="Target Dummy Polygon ID"
+    Wiki="Dummy poly ID to apply (valid only when the setting method is Dummy Polygon)" />
+    
+    <pad0
+    AltName=""
+    Padding="" />
+    
+    <axisZ
+    AltName="Inverse Kinematics: Target (Z-Axis)"
+    Wiki="Axis pointing towards the target (so that it does not overlap with other axes)" 
+    Enum="IK_KNEE_AXIS_TYPE" />
+    
+    <axisY
+    AltName="Inverse Kinematics: Target (Y-Axis)"
+    Wiki="Axis treated as left/right rotation (so that it does not overlap with other axes)"
+    Enum="IK_KNEE_AXIS_TYPE" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="IK_KNEE_AXIS_TYPE" type="u8">
+        <Option Value="0" Name="+ X" />
+        <Option Value="1" Name="+ Y" />
+        <Option Value="2" Name="+ Z" />
+        <Option Value="3" Name="- X" />
+        <Option Value="4" Name="- Y" />
+        <Option Value="5" Name="- Z" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

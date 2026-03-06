@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the handling for hand inverse kinematics." />
+  
+  <Field>
+    <inInterpolateTime 
+    AltName="Start Interpolation Time" 
+    Wiki="The start interpolation time for hand IK. In seconds." />
+    
+    <outInterpolateTime 
+    AltName="End Interpolation Time" 
+    Wiki="The end interpolation time for hand IK. In seconds." />
+    
+    <normalPosOffset_offsetX 
+    AltName="Position Offset: X" 
+    Wiki="The position offset to apply on the x-axis during hand IK." />
+    
+    <normalPosOffset_offsetY 
+    AltName="Position Offset: Y" 
+    Wiki="The position offset to apply on the y-axis during hand IK." />
+    
+    <normalPosOffset_offsetZ 
+    AltName="Position Offset: Z" 
+    Wiki="The position offset to apply on the z-axis during hand IK." />
+    
+    <normalRotOffset_offsetX 
+    AltName="Rotation Offset: X" 
+    Wiki="The rotation offset to apply on the x-axis during hand IK." />
+    
+    <normalRotOffset_offsetY 
+    AltName="Rotation Offset: Y" 
+    Wiki="The rotation offset to apply on the y-axis during hand IK." />
+    
+    <normalRotOffset_offsetZ 
+    AltName="Rotation Offset: Z" 
+    Wiki="The rotation offset to apply on the z-axis during hand IK." />
+    
+    <reserved 
+    AltName=""
+    Padding=""/>
+    
+  </Field>
+</PARAMMETA>

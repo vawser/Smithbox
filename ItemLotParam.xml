@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the contents of treasures and other item rewards." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+     
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding=""/>
+    
+    <lotItemId01 
+    AltName="1: Item ID" 
+    Wiki="The ID of the item awarded by this slot." 
+    Refs="EquipParamAccessory(lotItemCategory01=2),EquipParamBooster(lotItemCategory01=6),EquipParamGoods(lotItemCategory01=4),EquipParamProtector(lotItemCategory01=1),EquipParamWeapon(lotItemCategory01=0),EquipParamFcs(lotItemCategory01=7),EquipParamGenerator(lotItemCategory01=5)" 
+    Separator="" />
+    
+    <lotItemId02 
+    AltName="2: Item ID" 
+    Wiki="The ID of the item awarded by this slot." 
+    Refs="EquipParamAccessory(lotItemCategory02=2),EquipParamBooster(lotItemCategory02=6),EquipParamGoods(lotItemCategory02=4),EquipParamProtector(lotItemCategory02=1),EquipParamWeapon(lotItemCategory02=0),EquipParamFcs(lotItemCategory02=7),EquipParamGenerator(lotItemCategory02=5)" />
+    
+    <lotItemId03 
+    AltName="3: Item ID" 
+    Wiki="The ID of the item awarded by this slot." 
+    Refs="EquipParamAccessory(lotItemCategory03=2),EquipParamBooster(lotItemCategory03=6),EquipParamGoods(lotItemCategory03=4),EquipParamProtector(lotItemCategory03=1),EquipParamWeapon(lotItemCategory03=0),EquipParamFcs(lotItemCategory03=7),EquipParamGenerator(lotItemCategory03=5)" />
+    
+    <lotItemId04 
+    AltName="4: Item ID" 
+    Wiki="The ID of the item awarded by this slot." 
+    Refs="EquipParamAccessory(lotItemCategory04=2),EquipParamBooster(lotItemCategory04=6),EquipParamGoods(lotItemCategory04=4),EquipParamProtector(lotItemCategory04=1),EquipParamWeapon(lotItemCategory04=0),EquipParamFcs(lotItemCategory04=7),EquipParamGenerator(lotItemCategory04=5)" />
+    
+    <lotItemId05 
+    AltName="5: Item ID" 
+    Wiki="The ID of the item awarded by this slot." 
+    Refs="EquipParamAccessory(lotItemCategory05=2),EquipParamBooster(lotItemCategory05=6),EquipParamGoods(lotItemCategory05=4),EquipParamProtector(lotItemCategory05=1),EquipParamWeapon(lotItemCategory05=0),EquipParamFcs(lotItemCategory05=7),EquipParamGenerator(lotItemCategory05=5)" />
+    
+    <lotItemId06 
+    AltName="6: Item ID" 
+    Wiki="The ID of the item awarded by this slot." 
+    Refs="EquipParamAccessory(lotItemCategory06=2),EquipParamBooster(lotItemCategory06=6),EquipParamGoods(lotItemCategory06=4),EquipParamProtector(lotItemCategory06=1),EquipParamWeapon(lotItemCategory06=0),EquipParamFcs(lotItemCategory06=7),EquipParamGenerator(lotItemCategory06=5)" />
+    
+    <lotItemId07 
+    AltName="7: Item ID" 
+    Wiki="The ID of the item awarded by this slot." 
+    Refs="EquipParamAccessory(lotItemCategory07=2),EquipParamBooster(lotItemCategory07=6),EquipParamGoods(lotItemCategory07=4),EquipParamProtector(lotItemCategory07=1),EquipParamWeapon(lotItemCategory07=0),EquipParamFcs(lotItemCategory07=7),EquipParamGenerator(lotItemCategory07=5)" />
+    
+    <lotItemId08 
+    AltName="8: Item ID" 
+    Wiki="The ID of the item awarded by this slot." 
+    Refs="EquipParamAccessory(lotItemCategory08=2),EquipParamBooster(lotItemCategory08=6),EquipParamGoods(lotItemCategory08=4),EquipParamProtector(lotItemCategory08=1),EquipParamWeapon(lotItemCategory08=0),EquipParamFcs(lotItemCategory08=7),EquipParamGenerator(lotItemCategory08=5)" />
+    
+    <lotItemCategory01 
+    AltName="1: Item Category" 
+    Wiki="The item category the awarded item belongs to." 
+    Enum="ITEMLOT_ITEMCATEGORY" 
+    Separator="" />
+    
+    <lotItemCategory02 
+    AltName="2: Item Category" 
+    Wiki="The item category the awarded item belongs to." 
+    Enum="ITEMLOT_ITEMCATEGORY" />
+    
+    <lotItemCategory03 
+    AltName="3: Item Category" 
+    Wiki="The item category the awarded item belongs to." 
+    Enum="ITEMLOT_ITEMCATEGORY" />
+    
+    <lotItemCategory04 
+    AltName="4: Item Category" 
+    Wiki="The item category the awarded item belongs to." 
+    Enum="ITEMLOT_ITEMCATEGORY" />
+    
+    <lotItemCategory05 
+    AltName="5: Item Category" 
+    Wiki="The item category the awarded item belongs to." 
+    Enum="ITEMLOT_ITEMCATEGORY" />
+    
+    <lotItemCategory06 
+    AltName="6: Item Category" 
+    Wiki="The item category the awarded item belongs to." 
+    Enum="ITEMLOT_ITEMCATEGORY" />
+    
+    <lotItemCategory07 
+    AltName="7: Item Category" 
+    Wiki="The item category the awarded item belongs to." 
+    Enum="ITEMLOT_ITEMCATEGORY" />
+    
+    <lotItemCategory08 
+    AltName="8: Item Category" 
+    Wiki="The item category the awarded item belongs to." 
+    Enum="ITEMLOT_ITEMCATEGORY" />
+    
+    <lotItemBasePoint01
+    AltName="1: Weight"
+    Wiki="The weighting for the awarded item in this slot." 
+    Separator="" />
+    
+    <lotItemBasePoint02
+    AltName="2: Weight"
+    Wiki="The weighting for the awarded item in this slot." />
+    
+    <lotItemBasePoint03
+    AltName="3: Weight"
+    Wiki="The weighting for the awarded item in this slot." />
+    
+    <lotItemBasePoint04
+    AltName="4: Weight"
+    Wiki="The weighting for the awarded item in this slot." />
+    
+    <lotItemBasePoint05
+    AltName="5: Weight"
+    Wiki="The weighting for the awarded item in this slot." />
+    
+    <lotItemBasePoint06
+    AltName="6: Weight"
+    Wiki="The weighting for the awarded item in this slot." />
+    
+    <lotItemBasePoint07
+    AltName="7: Weight"
+    Wiki="The weighting for the awarded item in this slot." />
+    
+    <lotItemBasePoint08
+    AltName="8: Weight"
+    Wiki="The weighting for the awarded item in this slot." />
+    
+    <cumulateLotPoint01
+    AltName="1: Accumulation Weight"
+    Wiki="The maximum weighting for the awarded item in this slot after a failed roll." 
+    Separator="" />
+    
+    <cumulateLotPoint02
+    AltName="2: Accumulation Weight"
+    Wiki="The maximum weighting for the awarded item in this slot after a failed roll." />
+    
+    <cumulateLotPoint03
+    AltName="3: Accumulation Weight"
+    Wiki="The maximum weighting for the awarded item in this slot after a failed roll." />
+    
+    <cumulateLotPoint04
+    AltName="4: Accumulation Weight"
+    Wiki="The maximum weighting for the awarded item in this slot after a failed roll." />
+    
+    <cumulateLotPoint05
+    AltName="5: Accumulation Weight"
+    Wiki="The maximum weighting for the awarded item in this slot after a failed roll." />
+    
+    <cumulateLotPoint06
+    AltName="6: Accumulation Weight"
+    Wiki="The maximum weighting for the awarded item in this slot after a failed roll." />
+    
+    <cumulateLotPoint07
+    AltName="7: Accumulation Weight"
+    Wiki="The maximum weighting for the awarded item in this slot after a failed roll." />
+    
+    <cumulateLotPoint08
+    AltName="8: Accumulation Weight"
+    Wiki="The maximum weighting for the awarded item in this slot after a failed roll." />
+    
+    <getItemFlagId01
+    AltName="1: Item Flag"
+    Wiki="The event flag set to ON after acquiring the item in this slot." 
+    FlagAlias=""
+    Separator="" />
+    
+    <getItemFlagId02
+    AltName="2: Item Flag"
+    Wiki="The event flag set to ON after acquiring the item in this slot." 
+    FlagAlias="" />
+    
+    <getItemFlagId03
+    AltName="3: Item Flag"
+    Wiki="The event flag set to ON after acquiring the item in this slot." 
+    FlagAlias="" />
+    
+    <getItemFlagId04
+    AltName="4: Item Flag"
+    Wiki="The event flag set to ON after acquiring the item in this slot." 
+    FlagAlias="" />
+    
+    <getItemFlagId05
+    AltName="5: Item Flag"
+    Wiki="The event flag set to ON after acquiring the item in this slot." 
+    FlagAlias="" />
+    
+    <getItemFlagId06
+    AltName="6: Item Flag"
+    Wiki="The event flag set to ON after acquiring the item in this slot." 
+    FlagAlias="" />
+    
+    <getItemFlagId07
+    AltName="7: Item Flag"
+    Wiki="The event flag set to ON after acquiring the item in this slot." 
+    FlagAlias="" />
+    
+    <getItemFlagId08
+    AltName="8: Item Flag"
+    Wiki="The event flag set to ON after acquiring the item in this slot." 
+    FlagAlias="" />
+    
+    <getItemFlagId
+    AltName="Award Item Flag"
+    Wiki="The event flag set to ON after acquiring anything within this itemlot." 
+    FlagAlias=""
+    Separator="" />
+    
+    <cumulateNumFlagId
+    AltName="Cumulative Award Item Flag"
+    Wiki="Holds the number of drawings for cumulative lots. The base event flag specified here + cumulateNumMax are used to save the number of drawings." 
+    FlagAlias=""/>
+    
+    <cumulateNumMax
+    AltName="Cumulative Max Draw Count"
+    Wiki="The maximum number of lottery draws for cumulative lots." />
+    
+    <lotItem_Rarity
+    AltName="Rarity"
+    Wiki="Determines the SFX used to display the rarity of the treasure lot." />
+    
+    <bDirectInventory
+    AltName="Is Direct to Inventory"
+    Wiki="If ON, then the item awarded via this lot is placed directly within the inventory, without the need for player confirmation."
+    IsBool="" />
+    
+    <PAD0_0
+    AltName=""
+    Padding="" />
+    
+    <PAD0_1
+    AltName=""
+    Padding="" />
+    
+    <lotItemNum01
+    AltName="1: Item Amount"
+    Wiki="The amount of the specified item given if the item in this slot is rolled." 
+    Separator="" />
+    
+    <lotItemNum02
+    AltName="2: Item Amount"
+    Wiki="The amount of the specified item given if the item in this slot is rolled." />
+    
+    <lotItemNum03
+    AltName="3: Item Amount"
+    Wiki="The amount of the specified item given if the item in this slot is rolled." />
+    
+    <lotItemNum04
+    AltName="4: Item Amount"
+    Wiki="The amount of the specified item given if the item in this slot is rolled." />
+    
+    <lotItemNum05
+    AltName="5: Item Amount"
+    Wiki="The amount of the specified item given if the item in this slot is rolled." />
+    
+    <lotItemNum06
+    AltName="6: Item Amount"
+    Wiki="The amount of the specified item given if the item in this slot is rolled." />
+    
+    <lotItemNum07
+    AltName="7: Item Amount"
+    Wiki="The amount of the specified item given if the item in this slot is rolled." />
+    
+    <lotItemNum08
+    AltName="8: Item Amount"
+    Wiki="The amount of the specified item given if the item in this slot is rolled." />
+    
+    <enableLuck01
+    AltName="1: Apply Luck Modifier"
+    Wiki="Apply the luck modifier for this slot. Linked to the Item Discovery stat." 
+    IsBool="" 
+    Separator="" />
+    
+    <enableLuck02
+    AltName="2: Apply Luck Modifier"
+    Wiki="Apply the luck modifier for this slot. Linked to the Item Discovery stat." 
+    IsBool="" />
+    
+    <enableLuck03
+    AltName="3: Apply Luck Modifier"
+    Wiki="Apply the luck modifier for this slot. Linked to the Item Discovery stat." 
+    IsBool="" />
+    
+    <enableLuck04
+    AltName="4: Apply Luck Modifier"
+    Wiki="Apply the luck modifier for this slot. Linked to the Item Discovery stat." 
+    IsBool="" />
+    
+    <enableLuck05
+    AltName="5: Apply Luck Modifier"
+    Wiki="Apply the luck modifier for this slot. Linked to the Item Discovery stat." 
+    IsBool="" />
+    
+    <enableLuck06
+    AltName="6: Apply Luck Modifier"
+    Wiki="Apply the luck modifier for this slot. Linked to the Item Discovery stat." 
+    IsBool="" />
+    
+    <enableLuck07
+    AltName="7: Apply Luck Modifier"
+    Wiki="Apply the luck modifier for this slot. Linked to the Item Discovery stat." 
+    IsBool="" />
+    
+    <enableLuck08
+    AltName="8: Apply Luck Modifier"
+    Wiki="Apply the luck modifier for this slot. Linked to the Item Discovery stat." 
+    IsBool="" />
+    
+    <cumulateReset01
+    AltName="1: Reset Cumulative Count"
+    Wiki="If this slot is rolled, reset the cumulative count." 
+    IsBool=""
+    Separator="" />
+    
+    <cumulateReset02
+    AltName="2: Reset Cumulative Count"
+    Wiki="If this slot is rolled, reset the cumulative count." 
+    IsBool="" />
+    
+    <cumulateReset03
+    AltName="3: Reset Cumulative Count"
+    Wiki="If this slot is rolled, reset the cumulative count." 
+    IsBool="" />
+    
+    <cumulateReset04
+    AltName="4: Reset Cumulative Count"
+    Wiki="If this slot is rolled, reset the cumulative count." 
+    IsBool="" />
+    
+    <cumulateReset05
+    AltName="5: Reset Cumulative Count"
+    Wiki="If this slot is rolled, reset the cumulative count." 
+    IsBool="" />
+    
+    <cumulateReset06
+    AltName="6: Reset Cumulative Count"
+    Wiki="If this slot is rolled, reset the cumulative count." 
+    IsBool="" />
+    
+    <cumulateReset07
+    AltName="7: Reset Cumulative Count"
+    Wiki="If this slot is rolled, reset the cumulative count." 
+    IsBool="" />
+    
+    <cumulateReset08
+    AltName="8: Reset Cumulative Count"
+    Wiki="If this slot is rolled, reset the cumulative count." 
+    IsBool="" />
+    
+    <GameClearOffset
+    AltName="Journey Offset"
+    Wiki="Apply this offset to the row ID: journey count * X. This ID is the new itemlot used." 
+    Enum="ITEMLOT_ROUND_COUNT" 
+    Separator="" />
+    
+    <PAD1
+    AltName=""
+    Padding="" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="ITEMLOT_ITEMCATEGORY" type="x32">
+      <Option Value="0" Name="Weapon" />
+      <Option Value="1" Name="Equipment" />
+      <Option Value="2" Name="Accessory" />
+      <Option Value="3" Name="TODO" />
+      <Option Value="4" Name="Goods" />
+      <Option Value="5" Name="Generator" />
+      <Option Value="6" Name="Booster" />
+      <Option Value="7" Name="FCS" />
+    </Enum>
+    
+    <Enum Name="ITEMLOT_ROUND_COUNT" type="x32">
+      <Option Value="-1" Name="None" />
+      <Option Value="2" Name="2nd Journey" />
+      <Option Value="3" Name="3rd Journey" />
+      <Option Value="4" Name="4th Journey" />
+      <Option Value="5" Name="5th Journey" />
+      <Option Value="6" Name="6th Journey" />
+      <Option Value="7" Name="7th Journey" />
+    </Enum>
+  </Enums>
+  
+</PARAMMETA>

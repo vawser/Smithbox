@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the attachment points for joints." />
+  
+  <Field>
+    <ObjName0
+    AltName="Joint Name [0]"
+    Wiki="Joint name from which to attach" />
+    
+    <ObjName1
+    AltName="Joint Name [1]"
+    Wiki="Joint name from which to attach" />
+    
+    <ObjName2
+    AltName="Joint Name [2]"
+    Wiki="Joint name from which to attach" />
+    
+    <ObjName3
+    AltName="Joint Name [3]"
+    Wiki="Joint name from which to attach" />
+    
+    <ObjName4
+    AltName="Joint Name [4]"
+    Wiki="Joint name from which to attach" />
+    
+    <ObjName5
+    AltName="Joint Name [5]"
+    Wiki="Joint name from which to attach" />
+    
+    <ObjName6
+    AltName="Joint Name [6]"
+    Wiki="Joint name from which to attach" />
+    
+    <ObjName7
+    AltName="Joint Name [7]"
+    Wiki="Joint name from which to attach" />
+    
+    <attachDmyId0
+    AltName="Attachment Dummy Polygon ID [0]"
+    Wiki="Dummy poly ID to be attached to" />
+    
+    <attachDmyId1
+    AltName="Attachment Dummy Polygon ID [1]"
+    Wiki="Dummy poly ID to be attached to" />
+    
+    <attachDmyId2
+    AltName="Attachment Dummy Polygon ID [2]"
+    Wiki="Dummy poly ID to be attached to" />
+    
+    <attachDmyId3
+    AltName="Attachment Dummy Polygon ID [3]"
+    Wiki="Dummy poly ID to be attached to" />
+    
+    <attachDmyId4
+    AltName="Attachment Dummy Polygon ID [4]"
+    Wiki="Dummy poly ID to be attached to" />
+    
+    <attachDmyId5
+    AltName="Attachment Dummy Polygon ID [5]"
+    Wiki="Dummy poly ID to be attached to" />
+    
+    <attachDmyId6
+    AltName="Attachment Dummy Polygon ID [6]"
+    Wiki="Dummy poly ID to be attached to" />
+    
+    <attachDmyId7
+    AltName="Attachment Dummy Polygon ID [7]"
+    Wiki="Dummy poly ID to be attached to" />
+    
+  </Field>
+</PARAMMETA>
