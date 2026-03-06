@@ -370,9 +370,9 @@ public class MaterialPropertyInput
             else
             {
                 // SoulsFormats does not define if alpha should be exposed. Expose alpha by default.
-                Smithbox.Log(this, 
-                    $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default",
-                    LogLevel.Warning, LogPriority.Low);
+                //Smithbox.Log(this, 
+                //    $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default",
+                //    LogLevel.Warning, LogPriority.Low);
 
                 var color = (Color)oldval;
                 Vector4 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
