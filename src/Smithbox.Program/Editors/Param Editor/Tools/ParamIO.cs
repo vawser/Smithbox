@@ -77,7 +77,7 @@ public class ParamIO
     }
 
     public static (string, CompoundAction) ApplyCSV(ProjectEntry project, ParamBank bank, string csvString, string param,
-        bool appendOnly, bool replaceParams, char separator)
+        bool appendOnly, bool mayReplaceRow, char separator)
     {
         Param p = bank.Params[param];
         if (p == null)
@@ -114,7 +114,7 @@ public class ParamIO
                 var id = int.Parse(csvs[0]);
                 var name = csvs[1];
                 Param.Row row = p[id];
-                if (row == null || replaceParams)
+                if (row == null || mayReplaceRow)
                 {
                     row = new Param.Row(id, name, p);
                     addedParams.Add(row);
@@ -161,7 +161,7 @@ public class ParamIO
             addedCount = addedParams.Count;
             if (addedCount != 0)
             {
-                actions.Add(new AddParamsAction(project.Handler.ParamEditor, p, "legacystring", addedParams, appendOnly, replaceParams));
+                actions.Add(new AddParamsAction(project.Handler.ParamEditor, p, "legacystring", addedParams, appendOnly, mayReplaceRow));
             }
 
             return ($@"{changeCount} cells affected, {addedCount} rows added", new CompoundAction(actions));

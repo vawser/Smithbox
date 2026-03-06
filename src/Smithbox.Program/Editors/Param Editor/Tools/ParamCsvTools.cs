@@ -24,11 +24,37 @@ public static class ParamCsvTools
     private static ParamUpgradeRowGetType RowType = ParamUpgradeRowGetType.AllRows;
     private static string SpecificFieldName = "";
 
+    public static void SettingMenu(ParamEditorView curView)
+    {
+        UIHelper.SimpleHeader("Import", "");
+
+        ImGui.Checkbox("Append Only", ref CFG.Current.Param_CSV_Append_Only);
+        UIHelper.Tooltip("If enabled, rows may only be appended during an CSV import.");
+
+        ImGui.Checkbox("Allow Overwrite", ref CFG.Current.Param_CSV_Replace_Row);
+        UIHelper.Tooltip("If enabled, rows may be overwritten during an CSV import if the imported row ID matches an existing row ID.");
+
+        UIHelper.SimpleHeader("Export", "");
+
+        var displayDelimiter = CFG.Current.Param_Export_Delimiter;
+        if (displayDelimiter == "\t")
+        {
+            displayDelimiter = "\\t";
+        }
+
+        if (ImGui.InputText("Delimiter", ref displayDelimiter, 2))
+        {
+            if (displayDelimiter == "\\t")
+                displayDelimiter = "\t";
+
+            CFG.Current.Param_Export_Delimiter = displayDelimiter;
+        }
+        UIHelper.Tooltip("The CSV delimiter to use during export.");
+    }
+
     public static void ExportMenu(ParamEditorView curView)
     {
         var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
-
-        DelimiterInputText();
 
         if (ImGui.BeginMenu("All rows"))
         {
@@ -343,8 +369,6 @@ public static class ParamCsvTools
         var primaryBank = curView.Editor.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
-        DelimiterInputText();
-
         if (ImGui.MenuItem("All fields"))
         {
             EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
@@ -428,8 +452,8 @@ public static class ParamCsvTools
             primaryBank,
             csvString,
             curView.Selection.GetActiveParam(),
-            false,
-            false,
+            CFG.Current.Param_CSV_Append_Only,
+            CFG.Current.Param_CSV_Replace_Row,
             delimiter[0]);
 
         if (action != null)
@@ -472,23 +496,6 @@ public static class ParamCsvTools
         else
         {
             Smithbox.LogError(typeof(ParamCsvTools), $"Failed to import CSV: {result}");
-        }
-    }
-
-    private static void DelimiterInputText()
-    {
-        var displayDelimiter = CFG.Current.Param_Export_Delimiter;
-        if (displayDelimiter == "\t")
-        {
-            displayDelimiter = "\\t";
-        }
-
-        if (ImGui.InputText("Delimiter", ref displayDelimiter, 2))
-        {
-            if (displayDelimiter == "\\t")
-                displayDelimiter = "\t";
-
-            CFG.Current.Param_Export_Delimiter = displayDelimiter;
         }
     }
 

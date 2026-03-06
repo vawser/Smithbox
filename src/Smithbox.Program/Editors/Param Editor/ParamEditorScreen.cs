@@ -325,6 +325,13 @@ public class ParamEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
+            if (ImGui.BeginMenu("CSV Settings", activeParamExists))
+            {
+                ParamCsvTools.SettingMenu(ViewHandler.ActiveView);
+
+                ImGui.EndMenu();
+            }
+
             ImGui.EndMenu();
         }
     }
