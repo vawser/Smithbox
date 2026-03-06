@@ -4,61 +4,77 @@
   Wiki="" />
   
   <Field>
-    <UnkT00
-    AltName="Unknown: 0x0"
+    <DataID
+    AltName="Data ID"
     Wiki="" />
     
-    <UnkT04
-    AltName="Unknown: 0x4"
+    <TypeID
+    AltName="Type ID"
     Wiki="" />
     
-    <UnkT08
-    AltName="Unknown: 0x8"
+    <Dummy00
+    AltName="Dummy 00"
+    Wiki="" 
+    ArrayProperty="" />
+    
+    <Angle_0
+    AltName="Angle: 0"
     Wiki="" />
     
-    <ColorT0C
-    AltName="Color: 0x0C"
+    <DiffuseColor_0
+    AltName="Diffuse Color: 0"
     Wiki="" />
     
-    <ColorT10
-    AltName="Color: 0x10"
+    <SpecularColor_0
+    AltName="Specular Color: 0"
     Wiki="" />
     
-    <UnkT1C
-    AltName="Unknown: 0x1C"
+    <Dummy0
+    AltName="Dummy 0"
+    Wiki="" 
+    ArrayProperty="" />
+    
+    <Angle_1
+    AltName="Angle: 1"
     Wiki="" />
     
-    <UnkT20
-    AltName="Unknown: 0x20"
+    <DiffuseColor_1
+    AltName="Diffuse Color: 1"
     Wiki="" />
     
-    <ColorT24
-    AltName="Color: 0x24"
+    <SpecularColor_1
+    AltName="Specular Color: 1"
     Wiki="" />
     
-    <ColorT28
-    AltName="Color: 0x28"
+    <Dummy1
+    AltName="Dummy 1"
+    Wiki="" 
+    ArrayProperty="" />
+    
+    <SphereColor_0
+    AltName="Sphere Color: 0"
     Wiki="" />
     
-    <ColorT34
-    AltName="Color: 0x34"
+    <SphereColor_1
+    AltName="Sphere Color: 1"
     Wiki="" />
     
-    <ColorT38
-    AltName="Color: 0x8"
+    <AmbientReflectionColor
+    AltName="Ambient Reflection Color"
     Wiki="" />
     
-    <ColorT3C
-    AltName="Color: 0x3C"
+    <AmbientReflectionStrength
+    AltName="Ambient Reflection Strength"
     Wiki="" />
     
-    <UnkT40
-    AltName="Unknown: 0x40"
+    <TrackCameraDirection
+    AltName="Track Camera Direction"
     Wiki="" />
     
-    <UnkT44
-    AltName="Unknown: 0x44"
-    Wiki="" />
+    <Dummy03
+    AltName="Dummy 03"
+    Wiki="" 
+    ArrayProperty="" />
     
   </Field>
   

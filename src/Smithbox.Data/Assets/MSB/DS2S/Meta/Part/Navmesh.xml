@@ -4,20 +4,19 @@
   Wiki="" />
   
   <Field>
-    <UnkT00
-    AltName="Unknown: 0x0"
+    <NavmeshGroup0
+    AltName="Navmesh Group 0" />
+    
+    <NavmeshGroup1
+    AltName="Navmesh Group 1"
     Wiki="" />
     
-    <UnkT04
-    AltName="Unknown: 0x4"
+    <NavmeshGroup2
+    AltName="Navmesh Group 2"
     Wiki="" />
     
-    <UnkT08
-    AltName="Unknown: 0x8"
-    Wiki="" />
-    
-    <UnkT0C
-    AltName="Unknown: 0x0C"
+    <NavmeshGroup3
+    AltName="Navmesh Group 3"
     Wiki="" />
   </Field>
   

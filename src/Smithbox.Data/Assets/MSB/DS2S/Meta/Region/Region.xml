@@ -4,16 +4,16 @@
   Wiki="" />
   
   <Field>
-    <Unk08
-    AltName="Unknown: 0x8"
+    <Number
+    AltName="Number"
     Wiki="" />
     
     <Shape
-    AltName="Region Shape"
+    AltName="Shape"
     Wiki="Describes the space encompassed by the region." />
     
-    <Unk0E
-    AltName="Unknown: 0x0E"
+    <UniqueID
+    AltName="Unique ID"
     Wiki="" />
     
     <Position
@@ -25,6 +25,27 @@
     AltName="Rotation"
     Wiki="Rotation of the map object, in degrees."
     RotationProperty="" />
+    
+    <Layer1
+    AltName="Layer 1"
+    Wiki="" />
+    
+    <Layer2
+    AltName="Layer 2"
+    Wiki="" />
+    
+    <Layer3
+    AltName="Layer 3"
+    Wiki="" />
+    
+    <Layer4
+    AltName="Layer 4"
+    Wiki="" />
+    
+    <ExportEnable
+    AltName="Export Enable"
+    Wiki="" 
+    IsBool="" />
     
   </Field>
   

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
   Wiki="" />
@@ -12,10 +12,9 @@
     <CollisionIndex
     IndexProperty="" />
     
-    <MapID
-    AltName="Map ID"
-    Wiki=""
-    ArrayProperty="" />
+    <Offset
+    AltName="Offset"
+    Wiki="" />
   </Field>
   
   <Enums>

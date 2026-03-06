@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Bcpg.Sig;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -18,6 +19,32 @@ namespace SoulsFormats
             Wind = 13,
             EnvLight = 14,
             Fog = 15,
+        }
+
+        public enum LightType : sbyte
+        {
+            Omni = 0,
+            Spot = 1,
+        }
+
+        public enum SoundType : int
+        {
+            Environmental = 0,
+            BGM = 1,
+        }
+
+        public enum WindType : sbyte
+        {
+            Omni = 0,
+            Target = 1,
+        }
+
+        public enum WindTargetType : sbyte
+        {
+            All = 0,
+            ClothOnly = 1,
+            SfxOnly = 2,
+            ModelOnly = 3,
         }
 
         /// <summary>
@@ -160,14 +187,8 @@ namespace SoulsFormats
             private protected abstract RegionType Type { get; }
             private protected abstract bool HasTypeData { get; }
 
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public short Unk08 { get; set; }
+            public short Number { get; set; }
 
-            /// <summary>
-            /// Describes the space encompassed by the region.
-            /// </summary>
             public MSB.Shape Shape
             {
                 get => _shape;
@@ -180,20 +201,16 @@ namespace SoulsFormats
             }
             private MSB.Shape _shape;
 
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public short Unk0E { get; set; }
-
-            /// <summary>
-            /// Location of the region.
-            /// </summary>
+            public short UniqueID { get; set; }
             public Vector3 Position { get; set; }
-
-            /// <summary>
-            /// Rotation of the region, in degrees.
-            /// </summary>
             public Vector3 Rotation { get; set; }
+
+            public sbyte Layer1 { get; set; }
+            public sbyte Layer2 { get; set; }
+            public sbyte Layer3 { get; set; }
+            public sbyte Layer4 { get; set; }
+
+            public sbyte ExportEnable { get; set; }
 
             private protected Region(string name)
             {
@@ -216,17 +233,37 @@ namespace SoulsFormats
             {
                 long start = br.Position;
                 long nameOffset = br.ReadVarint();
-                Unk08 = br.ReadInt16();
+                Number = br.ReadInt16();
                 br.AssertByte((byte)Type);
                 MSB.ShapeType shapeType = (MSB.ShapeType)br.ReadByte();
                 br.ReadInt16(); // ID
-                Unk0E = br.ReadInt16();
+
+                UniqueID = br.ReadInt16();
                 Position = br.ReadVector3();
                 Rotation = br.ReadVector3();
-                long unkOffsetA = br.ReadVarint();
-                long unkOffsetB = br.ReadVarint();
-                br.AssertInt32(-1);
-                br.AssertPattern(0x24, 0x00);
+
+                long parentListOffset = br.ReadVarint();
+                long childListOffset = br.ReadVarint();
+
+                Layer1 = br.ReadSByte();
+                Layer2 = br.ReadSByte();
+                Layer3 = br.ReadSByte();
+                Layer4 = br.ReadSByte();
+
+                // 16
+                br.AssertPattern(0x10, 0x00);
+
+                // byte
+                ExportEnable = br.ReadSByte();
+                br.ReadSByte();
+                br.ReadSByte();
+                br.ReadSByte();
+
+                // 16
+                br.AssertPattern(0x10, 0x00);
+
+                //br.AssertPattern(0x24, 0x00); // 36
+
                 long shapeDataOffset = br.ReadVarint();
                 long typeDataOffset = br.ReadVarint();
                 br.AssertInt64(0);
@@ -244,12 +281,16 @@ namespace SoulsFormats
                 {
                     if (nameOffset == 0)
                         throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
-                    if (unkOffsetA == 0)
-                        throw new InvalidDataException($"{nameof(unkOffsetA)} must not be 0 in type {GetType()}.");
-                    if (unkOffsetB == 0)
-                        throw new InvalidDataException($"{nameof(unkOffsetB)} must not be 0 in type {GetType()}.");
+
+                    if (parentListOffset == 0)
+                        throw new InvalidDataException($"{nameof(parentListOffset)} must not be 0 in type {GetType()}.");
+
+                    if (childListOffset == 0)
+                        throw new InvalidDataException($"{nameof(childListOffset)} must not be 0 in type {GetType()}.");
+
                     if (Shape.HasShapeData ^ shapeDataOffset != 0)
                         throw new InvalidDataException($"Unexpected {nameof(shapeDataOffset)} 0x{shapeDataOffset:X} in type {GetType()}.");
+
                     if (HasTypeData ^ typeDataOffset != 0)
                         throw new InvalidDataException($"Unexpected {nameof(typeDataOffset)} 0x{typeDataOffset:X} in type {GetType()}.");
                 }
@@ -257,10 +298,10 @@ namespace SoulsFormats
                 br.Position = start + nameOffset;
                 Name = br.ReadUTF16();
 
-                br.Position = start + unkOffsetA;
+                br.Position = start + parentListOffset;
                 br.AssertInt32(0);
 
-                br.Position = start + unkOffsetB;
+                br.Position = start + childListOffset;
                 br.AssertInt32(0);
 
                 if (Shape.HasShapeData)
@@ -283,17 +324,35 @@ namespace SoulsFormats
             {
                 long start = bw.Position;
                 bw.ReserveVarint("NameOffset");
-                bw.WriteInt16(Unk08);
+
+                bw.WriteInt16(Number);
                 bw.WriteByte((byte)Type);
                 bw.WriteByte((byte)Shape.Type);
                 bw.WriteInt16((short)id);
-                bw.WriteInt16(Unk0E);
+                bw.WriteInt16(UniqueID);
+
                 bw.WriteVector3(Position);
                 bw.WriteVector3(Rotation);
-                bw.ReserveVarint("UnkOffsetA");
-                bw.ReserveVarint("UnkOffsetB");
-                bw.WriteInt32(-1);
-                bw.WritePattern(0x24, 0x00);
+
+                bw.ReserveVarint("ParentListOffset");
+                bw.ReserveVarint("ChildListOffset");
+
+                bw.WriteSByte(Layer1);
+                bw.WriteSByte(Layer2);
+                bw.WriteSByte(Layer3);
+                bw.WriteSByte(Layer4);
+
+                bw.WritePattern(0x10, 0x00);
+
+                bw.WriteSByte(ExportEnable);
+                bw.WriteSByte(0);
+                bw.WriteSByte(0);
+                bw.WriteSByte(0);
+
+                bw.WritePattern(0x10, 0x00);
+
+                //bw.WritePattern(0x24, 0x00);
+
                 bw.ReserveVarint("ShapeDataOffset");
                 bw.ReserveVarint("TypeDataOffset");
                 bw.WriteInt64(0);
@@ -309,10 +368,10 @@ namespace SoulsFormats
                 bw.WriteUTF16(Name, true);
                 bw.Pad(4);
 
-                bw.FillVarint("UnkOffsetA", bw.Position - start);
+                bw.FillVarint("ParentListOffset", bw.Position - start);
                 bw.WriteInt32(0);
 
-                bw.FillVarint("UnkOffsetB", bw.Position - start);
+                bw.FillVarint("ChildListOffset", bw.Position - start);
                 bw.WriteInt32(0);
                 bw.Pad(bw.VarintSize);
 
@@ -372,39 +431,33 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.Light;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT00 { get; set; }
+                public LightType LightType { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Color ColorT04 { get; set; }
+                public byte Sharpness { get; set; }
+                public sbyte EnableShadow { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Color ColorT08 { get; set; }
+                public Color DiffuseColor { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT0C { get; set; }
+                public Color SpecularColor { get; set; }
 
-                /// <summary>
-                /// Creates a Light with default values.
-                /// </summary>
+                public float ShadowIntensity { get; set; }
+
                 public Light() : base($"{nameof(Region)}: {nameof(Light)}") { }
 
                 internal Light(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
-                    ColorT04 = br.ReadRGBA();
-                    ColorT08 = br.ReadRGBA();
-                    UnkT0C = br.ReadSingle();
+                    LightType = br.ReadEnum8<LightType>();
+                    Sharpness = br.ReadByte();
+                    EnableShadow = br.ReadSByte();
+
+                    br.ReadSByte();
+
+                    DiffuseColor = br.ReadRGBA();
+                    SpecularColor = br.ReadRGBA();
+                    ShadowIntensity = br.ReadSingle();
+
                     br.AssertPattern(0x10, 0x00);
                     if (br.VarintLong)
                         br.AssertInt32(0);
@@ -412,10 +465,15 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
-                    bw.WriteRGBA(ColorT04);
-                    bw.WriteRGBA(ColorT08);
-                    bw.WriteSingle(UnkT0C);
+                    bw.WriteSByte((sbyte)LightType);
+                    bw.WriteByte(Sharpness);
+                    bw.WriteSByte(EnableShadow);
+                    bw.WriteSByte(0);
+
+                    bw.WriteRGBA(DiffuseColor);
+                    bw.WriteRGBA(SpecularColor);
+                    bw.WriteSingle(ShadowIntensity);
+
                     bw.WritePattern(0x10, 0x00);
                     if (bw.VarintLong)
                         bw.WriteInt32(0);
@@ -446,20 +504,11 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.Sound;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// Unknown; possibly sound type.
-                /// </summary>
-                public int UnkT00 { get; set; }
+                public SoundType SoundType { get; set; }
 
-                /// <summary>
-                /// ID of the sound to play.
-                /// </summary>
-                public int SoundID { get; set; }
+                public uint SoundID { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT08 { get; set; }
+                public uint EventSoundID { get; set; }
 
                 /// <summary>
                 /// Creates a Sound with default values.
@@ -470,17 +519,19 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
-                    SoundID = br.ReadInt32();
-                    UnkT08 = br.ReadInt32();
+                    SoundType = br.ReadEnum32<SoundType>();
+                    SoundID = br.ReadUInt32();
+                    EventSoundID = br.ReadUInt32();
+
                     br.AssertPattern(0x14, 0x00);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
-                    bw.WriteInt32(SoundID);
-                    bw.WriteInt32(UnkT08);
+                    bw.WriteInt32((int)SoundType);
+                    bw.WriteUInt32(SoundID);
+                    bw.WriteUInt32(EventSoundID);
+
                     bw.WritePattern(0x14, 0x00);
                 }
             }
@@ -493,15 +544,9 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.SFX;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// The effect to play at this region.
-                /// </summary>
-                public int EffectID { get; set; }
+                public uint SfxID { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT04 { get; set; }
+                public uint EventSfxID { get; set; }
 
                 /// <summary>
                 /// Creates an SFX with default values.
@@ -512,15 +557,16 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    EffectID = br.ReadInt32();
-                    UnkT04 = br.ReadInt32();
+                    SfxID = br.ReadUInt32();
+                    EventSfxID = br.ReadUInt32();
+
                     br.AssertPattern(0x18, 0x00);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(EffectID);
-                    bw.WriteInt32(UnkT04);
+                    bw.WriteUInt32(SfxID);
+                    bw.WriteUInt32(EventSfxID);
                     bw.WritePattern(0x18, 0x00);
                 }
             }
@@ -533,69 +579,55 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.Wind;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT00 { get; set; }
+                public WindType WindType { get; set; }
+                public WindTargetType WindTargetType { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT04 { get; set; }
+                public float Priority { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT08 { get; set; }
+                public float MinimumSpeed { get; set; }
+                public float MaximumSpeed { get; set; }
+                public float Frequency { get; set; }
+                public float GainStartDistance { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT0C { get; set; }
+                private int Unk00 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT10 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT14 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT18 { get; set; }
-
-                /// <summary>
-                /// Creates a Wind with default values.
-                /// </summary>
                 public Wind() : base($"{nameof(Region)}: {nameof(Wind)}") { }
 
                 internal Wind(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
-                    UnkT04 = br.ReadSingle();
-                    UnkT08 = br.ReadSingle();
-                    UnkT0C = br.ReadSingle();
-                    UnkT10 = br.ReadSingle();
-                    UnkT14 = br.ReadSingle();
-                    UnkT18 = br.ReadSingle();
+                    WindType = br.ReadEnum8<WindType>();
+                    WindTargetType = br.ReadEnum8<WindTargetType>();
+
+                    br.ReadSByte();
+                    br.ReadSByte();
+
+                    Priority = br.ReadSingle();
+                    MinimumSpeed = br.ReadSingle();
+                    MaximumSpeed = br.ReadSingle();
+                    Frequency = br.ReadSingle();
+                    GainStartDistance = br.ReadSingle();
+
+                    Unk00 = br.ReadInt32();
                     br.AssertInt32(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
-                    bw.WriteSingle(UnkT04);
-                    bw.WriteSingle(UnkT08);
-                    bw.WriteSingle(UnkT0C);
-                    bw.WriteSingle(UnkT10);
-                    bw.WriteSingle(UnkT14);
-                    bw.WriteSingle(UnkT18);
+                    bw.WriteSByte((sbyte)WindType);
+                    bw.WriteSByte((sbyte)WindTargetType);
+
+                    bw.WriteSByte(0);
+                    bw.WriteSByte(0);
+
+                    bw.WriteSingle(Priority);
+                    bw.WriteSingle(MinimumSpeed);
+                    bw.WriteSingle(MaximumSpeed);
+                    bw.WriteSingle(Frequency);
+                    bw.WriteSingle(GainStartDistance);
+
+                    bw.WriteInt32(Unk00);
                     bw.WriteInt32(0);
                 }
             }

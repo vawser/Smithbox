@@ -4,8 +4,8 @@
   Wiki="" />
   
   <Field>
-    <UnkT00
-    AltName="Unknown: 0x0"
+    <SoundType
+    AltName="Sound Type"
     Wiki="" />
     
     <SoundID
@@ -13,9 +13,10 @@
     Wiki="The ID of the sound to play."
     SoundAlias="" />
     
-    <UnkT08
-    AltName="Unknown 0x8"
-    Wiki="" />
+    <EventSoundID
+    AltName="Event Sound ID"
+    Wiki="" 
+    SoundAlias="" />
   </Field>
     
   <Enums>

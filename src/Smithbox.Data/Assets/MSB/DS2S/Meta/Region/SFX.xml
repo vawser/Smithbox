@@ -4,14 +4,15 @@
   Wiki="" />
   
   <Field>
-    <EffectID
-    AltName="Particle ID"
+    <SfxID
+    AltName="SFX ID"
     Wiki="The ID of the SFX particle to play."
     ParticleAlias="" />
     
-    <UnkT04
-    AltName="Event ID"
-    Wiki="" />
+    <EventSfxID
+    AltName="Event SFX ID"
+    Wiki="The ID of the SFX particle to play."
+    ParticleAlias="" />
   </Field>
     
   <Enums>

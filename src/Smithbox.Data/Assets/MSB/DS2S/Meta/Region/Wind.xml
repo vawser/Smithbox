@@ -4,32 +4,32 @@
   Wiki="" />
   
   <Field>
-    <UnkT00
-    AltName="Unknown: 0x0"
+    <WindType
+    AltName="Wind Type"
     Wiki="" />
     
-    <UnkT04
-    AltName="Unknown: 0x4"
+    <WindTargetType
+    AltName="Target Type"
     Wiki="" />
     
-    <UnkT08
-    AltName="Unknown: 0x8"
+    <Priority
+    AltName="Priority"
     Wiki="" />
     
-    <UnkT0C
-    AltName="Unknown: 0x0C"
+    <MinimumSpeed
+    AltName="Minimum Speed"
     Wiki="" />
     
-    <UnkT10
-    AltName="Unknown: 0x10"
+    <MaximumSpeed
+    AltName="Maximum Speed"
     Wiki="" />
     
-    <UnkT14
-    AltName="Unknown: 0x14"
+    <Frequency
+    AltName="Frequency"
     Wiki="" />
     
-    <UnkT18
-    AltName="Unknown: 0x18"
+    <GainStartDistance
+    AltName="Gain Start Distance"
     Wiki="" />
   </Field>
   <Enums>
