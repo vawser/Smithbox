@@ -250,6 +250,11 @@
     <metallicScale
     AltName="Metallic Scale"
     Wiki="Metallic scale (1.0 equal size)" />
+	
+	<randVaria_metallic
+	AltName="Metallic Variations"
+	Wiki="Number of random variations of metallic texture (including 0, 2 is 2 textures)"
+	/>
     
     <siniScale 
     AltName="Shininess Scale" 

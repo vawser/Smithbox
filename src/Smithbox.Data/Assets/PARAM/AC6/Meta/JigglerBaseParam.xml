@@ -130,6 +130,10 @@
     AltName="[Follow Root] Spine Position Offset: Z"
     Wiki="Used if Follow Root Bone is ON. The follow position offset on the Z-axis for the spine when movement of the root bone occurs." />
     
+	<pad
+	AltName=""
+	Padding="" />
+	
     <reserved4
     AltName=""
     Padding="" />
