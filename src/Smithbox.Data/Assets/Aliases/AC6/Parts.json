@@ -1065,107 +1065,1543 @@
   },
   {
     "ID": "wp_e_0000",
-    "Name": "Generic Handgun",
+    "Name": "BAWS MT Handgun",
     "Tags": [
-      "part"
+      "part",
+      "baws",
+      "baws-mt",
+      "handgun"
     ]
   },
   {
     "ID": "wp_e_0010",
-    "Name": "Generic Rifle",
+    "Name": "BAWS MT Rifle",
     "Tags": [
-      "part"
+      "part",
+      "baws",
+      "baws-mt",
+      "rifle"
     ]
   },
   {
     "ID": "wp_e_0020",
-    "Name": "Generic SMG",
+    "Name": "BAWS MT SMG",
     "Tags": [
-      "part"
+      "part",
+      "baws",
+      "baws-mt",
+      "smg"
     ]
   },
   {
     "ID": "wp_e_0021",
-    "Name": "Generic SMG Variant",
+    "Name": "BATS Tetrapod SMG",
     "Tags": [
-      "part"
+      "part",
+      "baws",
+      "baws-tetrapod",
+      "smg"
     ]
   },
   {
     "ID": "wp_e_0030",
-    "Name": "Generic Shotgun",
+    "Name": "BAWS MT Shotgun",
     "Tags": [
-      "part"
+      "part",
+      "baws",
+      "baws-mt",
+      "shotgun"
     ]
   },
   {
     "ID": "wp_e_0031",
-    "Name": "Generic Shotgun Variant",
+    "Name": "BAWS Tetrapod Shotgun",
     "Tags": [
-      "part"
+      "part",
+      "baws",
+      "baws-tetrapod",
+      "shotgun"
     ]
   },
   {
     "ID": "wp_e_0040",
-    "Name": "Generic Launcher",
+    "Name": "BAWS MT Bazooka",
     "Tags": [
-      "part"
+      "part",
+      "baws",
+      "baws-mt",
+      "bazooka"
     ]
   },
   {
     "ID": "wp_e_0050",
-    "Name": "Generic Unidentified",
+    "Name": "BAWS MT Bomb Launcher",
     "Tags": [
-      "part"
+      "part",
+      "baws",
+      "baws-mt",
+      "unique"
     ]
   },
   {
     "ID": "wp_e_0051",
-    "Name": "Generic Unidentified Variant",
+    "Name": "BAWS Tetrapod Bomb Launcher",
     "Tags": [
-      "part"
+      "part",
+      "baws",
+      "baws-tetrapod",
+      "unique"
     ]
   },
   {
     "ID": "wp_e_0060",
-    "Name": "Generic Twin SMG",
+    "Name": "BAWS MT Twin SMG",
     "Tags": [
-      "part"
+      "part",
+      "baws",
+      "baws-mt",
+      "smg",
+      "paired"
     ]
   },
   {
     "ID": "wp_e_0100",
-    "Name": "Generic Twin Gatling Guns",
+    "Name": "EKDROMOI Twin Tommy Guns",
     "Tags": [
-      "part"
+      "part",
+      "pca",
+      "ekdromoi",
+      "smg",
+      "paired"
     ]
   },
   {
     "ID": "wp_e_0101",
-    "Name": "Generic Twin BR55",
+    "Name": "EKDROMOI Twin BR55",
     "Tags": [
-      "part"
+      "part",
+      "pca",
+      "ekdromoi",
+      "smg",
+      "paired",
+      "unused"
     ]
   },
   {
     "ID": "wp_e_0110",
-    "Name": "Generic Lasergun",
+    "Name": "EKDROMOI Plasma Gun",
     "Tags": [
-      "part"
+      "part",
+      "pca",
+      "ekdromoi",
+      "rifle"
     ]
   },
   {
     "ID": "wp_e_0120",
-    "Name": "Generic Gatling Gun",
+    "Name": "EKDROMOI Tommy Gun",
     "Tags": [
-      "part"
+      "part",
+      "pca",
+      "ekdromoi",
+      "smg"
     ]
   },
   {
     "ID": "wp_e_0150",
-    "Name": "Generic Assault Rifle",
+    "Name": "LC Side Rifle",
     "Tags": [
-      "part"
+      "part",
+      "pca",
+      "lc",
+      "rifle"
+    ]
+  },
+  {
+    "ID": "wp_e_0151",
+    "Name": "LC Assault Rifle",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "rifle"
+    ]
+  },
+  {
+    "ID": "wp_e_0170",
+    "Name": "LC Sniper Rifle",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "rifle"
+    ]
+  },
+  {
+    "ID": "wp_e_0190",
+    "Name": "LC Shotgun Cannon",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "shotgun"
+    ]
+  },
+  {
+    "ID": "wp_e_0200",
+    "Name": "LC Grenade Launcher",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "grenade"
+    ]
+  },
+  {
+    "ID": "wp_e_0250",
+    "Name": "HC Laser Rifle",
+    "Tags": [
+      "part",
+      "pca",
+      "hc",
+      "rifle"
+    ]
+  },
+  {
+    "ID": "wp_e_0260",
+    "Name": "HC Plasma Rifle",
+    "Tags": [
+      "part",
+      "pca",
+      "hc",
+      "rifle"
+    ]
+  },
+  {
+    "ID": "wp_e_0270",
+    "Name": "HC Twin Heavy Gatlings",
+    "Tags": [
+      "part",
+      "pca",
+      "hc",
+      "minigun",
+      "paired"
+    ]
+  },
+  {
+    "ID": "wp_e_0310",
+    "Name": "PCA MT SMG",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-mt",
+      "smg"
+    ]
+  },
+  {
+    "ID": "wp_e_0320",
+    "Name": "PCA MT Bomb Launcher",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-mt",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_0330",
+    "Name": "PCA MT Sniper Rifle",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-mt",
+      "rifle"
+    ]
+  },
+  {
+    "ID": "wp_e_0340",
+    "Name": "PCA MT Flamethrower",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-mt",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_0350",
+    "Name": "PCA MT Laser Handgun",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-mt",
+      "handgun"
+    ]
+  },
+  {
+    "ID": "wp_e_0400",
+    "Name": "PCA Drone Laser Rifle",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "rifle"
+    ]
+  },
+  {
+    "ID": "wp_e_0420",
+    "Name": "PCA Drone Sniper Cannon",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_0500",
+    "Name": "PCA Drone Twin Cannons",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_0501",
+    "Name": "PCA Drone Cannon",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_0520",
+    "Name": "PCA Drone SMG",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "smg"
+    ]
+  },
+  {
+    "ID": "wp_e_2000",
+    "Name": "Helicopter Drone Turret",
+    "Tags": [
+      "part",
+      "baws",
+      "helicopter-drone",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_2020",
+    "Name": "Helicopter Drone Heavy Turret",
+    "Tags": [
+      "part",
+      "baws",
+      "helicopter-drone",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_2030",
+    "Name": "Helicopter Drone Mine",
+    "Tags": [
+      "part",
+      "baws",
+      "helicopter-drone",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_2040",
+    "Name": "Helicopter Drone Spotlight",
+    "Tags": [
+      "part",
+      "baws",
+      "helicopter-drone",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_2100",
+    "Name": "Generic Walker Turret",
+    "Tags": [
+      "part",
+      "baws",
+      "walker",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_2110",
+    "Name": "Generic Walker Laser Turret",
+    "Tags": [
+      "part",
+      "baws",
+      "walker",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_2120",
+    "Name": "Generic Walker Missile Racks",
+    "Tags": [
+      "part",
+      "baws",
+      "walker",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_2130",
+    "Name": "Generic Walker Bazooka Racks",
+    "Tags": [
+      "part",
+      "baws",
+      "walker",
+      "bazooka"
+    ]
+  },
+  {
+    "ID": "wp_e_2140",
+    "Name": "Generic Walker Cannon",
+    "Tags": [
+      "part",
+      "baws",
+      "walker",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_2150",
+    "Name": "Generic Walker Twin Rifles",
+    "Tags": [
+      "part",
+      "baws",
+      "walker",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_2300",
+    "Name": "Ghost MT Laser Gun",
+    "Tags": [
+      "part",
+      "rri",
+      "allmind",
+      "ghost",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_2310",
+    "Name": "Ghost MT Plasma Gun",
+    "Tags": [
+      "part",
+      "rri",
+      "allmind",
+      "ghost",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_2350",
+    "Name": "LC Missile Launcher",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_2360",
+    "Name": "LC Vertical Missile Launcher",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_2370",
+    "Name": "LC Sniper Antenna Array",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_2380",
+    "Name": "LC Flare Dispensers",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_2400",
+    "Name": "Repair Drone Laser Gun",
+    "Tags": [
+      "part",
+      "pca",
+      "repairer",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_2410",
+    "Name": "Repair Drone Bomb Launcher",
+    "Tags": [
+      "part",
+      "pca",
+      "repairer",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_2420",
+    "Name": "Repair Drone Cannon",
+    "Tags": [
+      "part",
+      "pca",
+      "repairer",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_2430",
+    "Name": "Repair Drone Shock Emitter",
+    "Tags": [
+      "part",
+      "pca",
+      "repairer",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_2500",
+    "Name": "HC Missile Launchers",
+    "Tags": [
+      "part",
+      "pca",
+      "hc",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_2501",
+    "Name": "HC Plasma Missile Launchers",
+    "Tags": [
+      "part",
+      "pca",
+      "hc",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_2510",
+    "Name": "HC Pulse Oscillators",
+    "Tags": [
+      "part",
+      "pca",
+      "hc",
+      "pulse"
+    ]
+  },
+  {
+    "ID": "wp_e_3000",
+    "Name": "BAWS MT Grenade Cannon",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-mt",
+      "grenade"
+    ]
+  },
+  {
+    "ID": "wp_e_3020",
+    "Name": "BAWS MT Missile Launcher",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-mt",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3030",
+    "Name": "BAWS MT Camera/Lights",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-mt",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3040",
+    "Name": "Xylem Drone Plasma Turret",
+    "Tags": [
+      "part",
+      "rri",
+      "xylem-drone",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3060",
+    "Name": "JUGGERNAUT Main Cannon (Left)",
+    "Tags": [
+      "part",
+      "baws",
+      "juggernaut",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3061",
+    "Name": "JUGGERNAUT Main Cannon (Right)",
+    "Tags": [
+      "part",
+      "baws",
+      "juggernaut",
+      "turret",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_3062",
+    "Name": "JUGGERNAUT Antenna Array",
+    "Tags": [
+      "part",
+      "baws",
+      "juggernaut",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3065",
+    "Name": "JUGGERNAUT Turret (Right)",
+    "Tags": [
+      "part",
+      "baws",
+      "juggernaut",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3066",
+    "Name": "JUGGERNAUT Turret (Left)",
+    "Tags": [
+      "part",
+      "baws",
+      "juggernaut",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3070",
+    "Name": "JUGGERNAUT Vertical Missile Launchers",
+    "Tags": [
+      "part",
+      "baws",
+      "juggernaut",
+      "missiles",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_3075",
+    "Name": "JUGGERNAUT Thruster Set",
+    "Tags": [
+      "part",
+      "baws",
+      "juggernaut",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3080",
+    "Name": "JUGGERNAUT Mine Dispenser",
+    "Tags": [
+      "part",
+      "baws",
+      "juggernaut",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3100",
+    "Name": "BAWS Tetrapon Twin Miniguns",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-tetrapod",
+      "minigun",
+      "paired"
+    ]
+  },
+  {
+    "ID": "wp_e_3102",
+    "Name": "BAWS Tetrapod Laser Blade",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-tetrapod",
+      "melee"
+    ]
+  },
+  {
+    "ID": "wp_e_3160",
+    "Name": "BAWS Tetrapod Grenade Cannon",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-tetrapod",
+      "grenade"
+    ]
+  },
+  {
+    "ID": "wp_e_3161",
+    "Name": "BAWS Tetrapod Sniper Cannon",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-tetrapod",
+      "bazooka"
+    ]
+  },
+  {
+    "ID": "wp_e_3162",
+    "Name": "BAWS Tetrapod Triple Bazooka Cannon",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-tetrapod",
+      "bazooka"
+    ]
+  },
+  {
+    "ID": "wp_e_3163",
+    "Name": "BAWS Tetrapod Nonuple Bazooka Cannon",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-tetrapod",
+      "bazooka"
+    ]
+  },
+  {
+    "ID": "wp_e_3200",
+    "Name": "CATAPHRACT Gatling Cannon",
+    "Tags": [
+      "part",
+      "pca",
+      "cataphract",
+      "minigun",
+      "bazooka"
+    ]
+  },
+  {
+    "ID": "wp_e_3201",
+    "Name": "CATAPHRACT Gatling Cannon",
+    "Tags": [
+      "part",
+      "pca",
+      "cataphract",
+      "minigun",
+      "bazooka"
+    ]
+  },
+  {
+    "ID": "wp_e_3205",
+    "Name": "CATAPHRACT Twin Miniguns",
+    "Tags": [
+      "part",
+      "pca",
+      "cataphract",
+      "minigun"
+    ]
+  },
+  {
+    "ID": "wp_e_3210",
+    "Name": "CATAPHRACT Bazooka",
+    "Tags": [
+      "part",
+      "pca",
+      "cataphract",
+      "bazooka",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_3211",
+    "Name": "CATAPHRACT Bazooka",
+    "Tags": [
+      "part",
+      "pca",
+      "cataphract",
+      "bazooka",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_3220",
+    "Name": "CATAPHRACT Missile Array",
+    "Tags": [
+      "part",
+      "pca",
+      "cataphract",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3230",
+    "Name": "CATAPHRACT Linear Cannon",
+    "Tags": [
+      "part",
+      "pca",
+      "cataphract",
+      "turret",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_3231",
+    "Name": "CATAPHRACT Dispersal Laser Cannon",
+    "Tags": [
+      "part",
+      "pca",
+      "cataphract",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3233",
+    "Name": "CATAPHRACT Vertical Missile Array",
+    "Tags": [
+      "part",
+      "pca",
+      "cataphract",
+      "missiles",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_3240",
+    "Name": "Helicopter Turret",
+    "Tags": [
+      "part",
+      "baws",
+      "helicopter",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3241",
+    "Name": "Helicopter Laser Turret",
+    "Tags": [
+      "part",
+      "baws",
+      "helicopter",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3245",
+    "Name": "Helicopter Rocket Racks",
+    "Tags": [
+      "part",
+      "baws",
+      "helicopter",
+      "bazooka"
+    ]
+  },
+  {
+    "ID": "wp_e_3246",
+    "Name": "Helicopter Missile Racks",
+    "Tags": [
+      "part",
+      "baws",
+      "helicopter",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3250",
+    "Name": "Generic Tank Machine Gun",
+    "Tags": [
+      "part",
+      "baws",
+      "tank",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3255",
+    "Name": "Generic Tank Cannon",
+    "Tags": [
+      "part",
+      "baws",
+      "tank",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3265",
+    "Name": "Generic Tank Missile Array",
+    "Tags": [
+      "part",
+      "baws",
+      "tank",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3300",
+    "Name": "PCA HC Helicopter Miniguns",
+    "Tags": [
+      "part",
+      "pca",
+      "hc-helicopter",
+      "minigun",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3310",
+    "Name": "PCA HC Helicopter Missile Launcher (Left)",
+    "Tags": [
+      "part",
+      "pca",
+      "hc-helicopter",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3311",
+    "Name": "PCA HC Helicopter Missile Launcher (Right)",
+    "Tags": [
+      "part",
+      "pca",
+      "hc-helicopter",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3320",
+    "Name": "PCA HC Helicopter Missile Rack (Left)",
+    "Tags": [
+      "part",
+      "pca",
+      "hc-helicopter",
+      "missiles",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_3321",
+    "Name": "PCA HC Helicopter Missile Rack (Right)",
+    "Tags": [
+      "part",
+      "pca",
+      "hc-helicopter",
+      "missiles",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_3330",
+    "Name": "PCA HC Helicopter Gatling Gun",
+    "Tags": [
+      "part",
+      "pca",
+      "hc-helicopter",
+      "minigun"
+    ]
+  },
+  {
+    "ID": "wp_e_3340",
+    "Name": "PCA HC Helicopter Grenade Cannons",
+    "Tags": [
+      "part",
+      "pca",
+      "hc-helicopter",
+      "grenade"
+    ]
+  },
+  {
+    "ID": "wp_e_3350",
+    "Name": "EKDROMOI Missile Racks",
+    "Tags": [
+      "part",
+      "pca",
+      "ekdromoi",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3351",
+    "Name": "EKDROMOI Missile Launchers",
+    "Tags": [
+      "part",
+      "pca",
+      "ekdromoi",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3360",
+    "Name": "EKDROMOI Thruster Set",
+    "Tags": [
+      "part",
+      "pca",
+      "ekdromoi",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3370",
+    "Name": "SEA SPIDER Cannon",
+    "Tags": [
+      "part",
+      "rri",
+      "sea-spider",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_3400",
+    "Name": "WEEVIL Grenade Cannon",
+    "Tags": [
+      "part",
+      "rri",
+      "weevil",
+      "grenade"
+    ]
+  },
+  {
+    "ID": "wp_e_3401",
+    "Name": "WEEVIL Bazooka",
+    "Tags": [
+      "part",
+      "rri",
+      "weevil",
+      "bazooka"
+    ]
+  },
+  {
+    "ID": "wp_e_3410",
+    "Name": "WEEVIL Missile Launcher",
+    "Tags": [
+      "part",
+      "rri",
+      "weevil",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3411",
+    "Name": "WEEVIL Missile Launcher",
+    "Tags": [
+      "part",
+      "rri",
+      "weevil",
+      "missiles",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_3420",
+    "Name": "WEEVIL Kinetic Gun",
+    "Tags": [
+      "part",
+      "rri",
+      "weevil",
+      "rifle"
+    ]
+  },
+  {
+    "ID": "wp_e_3450",
+    "Name": "PCA MT Missile Launchers",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-mt",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3460",
+    "Name": "PCA MT Grenade Launchers",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-mt",
+      "grenade"
+    ]
+  },
+  {
+    "ID": "wp_e_3510",
+    "Name": "RaD TOYBOX Unidentified",
+    "Tags": [
+      "part",
+      "rad",
+      "toybox",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3520",
+    "Name": "RaD TOYBOX Shield Projector",
+    "Tags": [
+      "part",
+      "rad",
+      "toybox",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3720",
+    "Name": "PCA Drone Bazookas",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3740",
+    "Name": "PCA Drone Bazooka/Rifle",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3741",
+    "Name": "PCA Drone Rifles",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3760",
+    "Name": "PCA Drone Vertical Plasma Missile Launcher",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3800",
+    "Name": "RaD MT Unidentified",
+    "Tags": [
+      "part",
+      "rad",
+      "rad-mt",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_3840",
+    "Name": "RaD MT Large Missile Launcher",
+    "Tags": [
+      "part",
+      "rad",
+      "rad-mt",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_3860",
+    "Name": "RaD MT Missile Launcher",
+    "Tags": [
+      "part",
+      "rad",
+      "rad-mt",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_4000",
+    "Name": "ENFORCER Missile Rack",
+    "Tags": [
+      "part",
+      "pca",
+      "enforcer",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_4100",
+    "Name": "LC Heavy Weapons Array",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_4110",
+    "Name": "LC Split Missile Launchers",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_4150",
+    "Name": "Small Quadcopter Laser Turret",
+    "Tags": [
+      "part",
+      "baws",
+      "quadcopter",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_4160",
+    "Name": "Small Quadcopter Missile Dispenser",
+    "Tags": [
+      "part",
+      "baws",
+      "quadcopter",
+      "missiles",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_4170",
+    "Name": "Small Quadcopter Pulse Turret",
+    "Tags": [
+      "part",
+      "baws",
+      "quadcopter",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_4180",
+    "Name": "Small Quadcopter Pulse Shield Projector",
+    "Tags": [
+      "part",
+      "baws",
+      "quadcopter",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_5000",
+    "Name": "ENFORCER Laser Cannon",
+    "Tags": [
+      "part",
+      "pca",
+      "enforcer",
+      "rifle",
+      "melee"
+    ]
+  },
+  {
+    "ID": "wp_e_5200",
+    "Name": "EKDROMOI Laser Lance",
+    "Tags": [
+      "part",
+      "pca",
+      "ekdromoi",
+      "melee"
+    ]
+  },
+  {
+    "ID": "wp_e_5250",
+    "Name": "Ghost MT Plasma Whip",
+    "Tags": [
+      "part",
+      "rri",
+      "allmind",
+      "ghost",
+      "melee"
+    ]
+  },
+  {
+    "ID": "wp_e_5300",
+    "Name": "Repair Drone Repairing Tool",
+    "Tags": [
+      "part",
+      "pca",
+      "repairer",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_5350",
+    "Name": "HC Laser Blade",
+    "Tags": [
+      "part",
+      "pca",
+      "hc",
+      "melee"
+    ]
+  },
+  {
+    "ID": "wp_e_5400",
+    "Name": "PCA MT Flame Blade",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-mt",
+      "melee"
+    ]
+  },
+  {
+    "ID": "wp_e_5450",
+    "Name": "PCA Drone MT Pulse Blade",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "melee"
+    ]
+  },
+  {
+    "ID": "wp_e_5500",
+    "Name": "RaD MT Buzzsaw",
+    "Tags": [
+      "part",
+      "rad",
+      "rad-mt",
+      "melee"
+    ]
+  },
+  {
+    "ID": "wp_e_5551",
+    "Name": "ALLMIND Unidentified",
+    "Tags": [
+      "part",
+      "allmind",
+      "sol-644",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_5552",
+    "Name": "ALLMIND Claws",
+    "Tags": [
+      "part",
+      "allmind",
+      "sol-644",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_5553",
+    "Name": "ALLMIND SOL 644 Head",
+    "Tags": [
+      "part",
+      "allmind",
+      "sol-644",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_6000",
+    "Name": "BAWS MT Shield",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-mt",
+      "shield"
+    ]
+  },
+  {
+    "ID": "wp_e_6020",
+    "Name": "Xylem MT Twin Guns",
+    "Tags": [
+      "part",
+      "rri",
+      "xylem-drone",
+      "turret"
+    ]
+  },
+  {
+    "ID": "wp_e_6030",
+    "Name": "Xylem MT Laser Blade Projectors",
+    "Tags": [
+      "part",
+      "rri",
+      "xylem-drone",
+      "turret",
+      "melee"
+    ]
+  },
+  {
+    "ID": "wp_e_6050",
+    "Name": "BAWS Tetrapod Shield",
+    "Tags": [
+      "part",
+      "baws",
+      "baws-tetrapod",
+      "shield"
+    ]
+  },
+  {
+    "ID": "wp_e_6060",
+    "Name": "LC Shield",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "shield"
+    ]
+  },
+  {
+    "ID": "wp_e_6070",
+    "Name": "Xylem MT Unidentified",
+    "Tags": [
+      "part",
+      "rri",
+      "xylem-drone",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_6100",
+    "Name": "HC Pulse Shield",
+    "Tags": [
+      "part",
+      "pca",
+      "hc",
+      "shield"
+    ]
+  },
+  {
+    "ID": "wp_e_6110",
+    "Name": "Hc Pulse Lance/Shield",
+    "Tags": [
+      "part",
+      "pca",
+      "hc",
+      "shield",
+      "melee"
+    ]
+  },
+  {
+    "ID": "wp_e_6150",
+    "Name": "PCA Drone Pulse Shield",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "shield"
+    ]
+  },
+  {
+    "ID": "wp_e_6160",
+    "Name": "ENFORCER Pulse Gun",
+    "Tags": [
+      "part",
+      "pca",
+      "enforcer",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_6180",
+    "Name": "LC High-Mobility Wings",
+    "Tags": [
+      "part",
+      "pca",
+      "lc",
+      "unique"
+    ]
+  },
+  {
+    "ID": "wp_e_6190",
+    "Name": "RaD MT Shield",
+    "Tags": [
+      "part",
+      "rad",
+      "rad-mt",
+      "shield"
+    ]
+  },
+  {
+    "ID": "wp_e_6200",
+    "Name": "PCA Drone Plasma Missile Racks",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_6210",
+    "Name": "PCA Drone Plasma Missile Launcher",
+    "Tags": [
+      "part",
+      "pca",
+      "pca-drone",
+      "missiles"
+    ]
+  },
+  {
+    "ID": "wp_e_9700",
+    "Name": "Unused c8111 Thrusters",
+    "Tags": [
+      "part",
+      "unique",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_9920",
+    "Name": "Unused Shield",
+    "Tags": [
+      "part",
+      "shield",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_9930",
+    "Name": "Unused Unknown",
+    "Tags": [
+      "part",
+      "unique",
+      "unused"
+    ]
+  },
+  {
+    "ID": "wp_e_9960",
+    "Name": "Unused Resource Excavation Ship Tools",
+    "Tags": [
+      "part",
+      "unique",
+      "unused"
     ]
   },
   {
