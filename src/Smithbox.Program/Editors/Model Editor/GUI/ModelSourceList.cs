@@ -397,7 +397,7 @@ public class ModelSourceList
                 Smithbox.Orchestrator.AliasMenu.SaveIndividual(ProjectAliasType.MapPieces);
             }
 
-            Smithbox.Log(this, "[Smithbox] Updated aliases.");
+            Smithbox.Log(this, "[Model Editor] Updated aliases.");
         }
     }
 }

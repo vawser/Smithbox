@@ -651,7 +651,7 @@ public class ProjectOrchestrator : IDisposable
 
                     if (curProjectDescriptor == null)
                     {
-                        Smithbox.LogError(this, $"[Smithbox] Failed to load project: {entry}");
+                        Smithbox.LogError(this, $"[Project] Failed to load project: {entry}");
                     }
                     else
                     {
@@ -663,7 +663,7 @@ public class ProjectOrchestrator : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to load project: {entry}", e);
+                    Smithbox.LogError(this, $"[Project] Failed to load project: {entry}", e);
                 }
             }
         }
@@ -886,7 +886,7 @@ public class ProjectOrchestrator : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to parse existing project.json: {e}",
+                    Smithbox.LogError(this, $"[Project] Failed to parse existing project.json: {e}",
                         LogPriority.High, e);
                 }
             }

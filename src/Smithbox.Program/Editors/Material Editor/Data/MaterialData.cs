@@ -108,12 +108,12 @@ public class MaterialData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Material Display Configuration: {targetFile}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Material Editor] Failed to deserialize the Material Display Configuration: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the Material Display Configuration: {targetFile}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[Material Editor] Failed to read the Material Display Configuration: {targetFile}", LogPriority.High, e);
             }
         }
 

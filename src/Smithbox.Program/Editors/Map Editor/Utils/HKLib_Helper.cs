@@ -77,7 +77,7 @@ public static class HKLib_Helper
                         }
                         catch (Exception e)
                         {
-                            Smithbox.Log(typeof(HKLib_Helper), $"[Smithbox] Failed to load HKLIB.",
+                            Smithbox.Log(typeof(HKLib_Helper), $"Failed to load HKLIB.",
                                 LogLevel.Error, LogPriority.High, e);
                         }
                     }
@@ -122,7 +122,7 @@ public static class HKLib_Helper
                         }
                         catch (Exception e)
                         {
-                            Smithbox.Log(typeof(HKLib_Helper), $"[Smithbox] Failed to load HKLIB.",
+                            Smithbox.Log(typeof(HKLib_Helper), $"Failed to load HKLIB.",
                                 LogLevel.Error, LogPriority.High, e);
                         }
                     }

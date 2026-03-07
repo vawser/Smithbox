@@ -157,12 +157,12 @@ public class GparamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the GPARAM enums: {targetFile}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Graphics Param Editor] Failed to deserialize the GPARAM enums: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the GPARAM enums: {targetFile}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read the GPARAM enums: {targetFile}", LogPriority.High, e);
             }
         }
 

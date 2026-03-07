@@ -121,7 +121,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
                         }
                     }
                     break;
@@ -139,7 +139,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
                         }
                     }
                     break;
@@ -157,7 +157,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
                         }
                     }
                     break;
@@ -174,7 +174,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
                         }
                     }
                     break;
@@ -191,7 +191,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
                         }
                     }
                     break;
@@ -208,7 +208,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
                         }
                     }
                     break;
@@ -225,7 +225,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
                         }
                     }
                     break;
@@ -242,7 +242,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
                         }
                     }
                     break;
@@ -259,7 +259,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
                         }
                     }
                     break;

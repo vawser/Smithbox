@@ -1242,7 +1242,7 @@ public class CFG
             }
             catch (Exception e)
             {
-                Smithbox.Log<CFG>("[Smithbox] Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.Log<CFG>("Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
 
                 Current = new CFG();
                 Save();

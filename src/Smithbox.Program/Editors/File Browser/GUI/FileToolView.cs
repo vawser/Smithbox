@@ -209,7 +209,7 @@ public class FileToolView
                         }
                         catch(Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to delete folder: {absFolder}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[File Browser] Failed to delete folder: {absFolder}", LogPriority.High, e);
                         }
                     }
                 }
@@ -317,7 +317,7 @@ public class FileToolView
                 }
                 else
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to write file: {entry.Path}", LogPriority.High);
+                    Smithbox.LogError(this, $"[File Browser] Failed to write file: {entry.Path}", LogPriority.High);
 
                     lock (FailedUnpackEntries)
                     {
@@ -337,7 +337,7 @@ public class FileToolView
         }
         catch (OperationCanceledException)
         {
-            Smithbox.Log(this, "[Smithbox] Unpacking was cancelled.", LogLevel.Warning);
+            Smithbox.Log(this, "[File Browser] Unpacking was cancelled.", LogLevel.Warning);
         }
 
         IsUnpacking = false;
@@ -388,7 +388,7 @@ public class FileToolView
         }
         catch (OperationCanceledException)
         {
-            Smithbox.Log(this, "[Smithbox] Deleting was cancelled.", LogLevel.Warning);
+            Smithbox.Log(this, "[File Browser] Deleting was cancelled.", LogLevel.Warning);
         }
 
         IsDeleting = false;
@@ -445,12 +445,12 @@ public class FileToolView
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the file dictionary: {filepath}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[File Browser] Failed to deserialize the file dictionary: {filepath}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the file dictionary: {filepath}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[File Browser] Failed to read the file dictionary: {filepath}", LogPriority.High, e);
             }
         }
 

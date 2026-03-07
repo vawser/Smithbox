@@ -113,21 +113,21 @@ public class ProjectEntry
         // Sanity checks
         if(Descriptor.ProjectType is ProjectType.Undefined)
         {
-            Smithbox.LogError(this, $"[Smithbox] Project initialization failed. Project Type is undefined.");
+            Smithbox.LogError(this, $"[Project] Project initialization failed. Project Type is undefined.");
 
             return false;
         }
 
         if(!Directory.Exists(Descriptor.ProjectPath))
         {
-            Smithbox.LogError(this, $"[Smithbox] Project initialization failed. Project path does not exist: {Descriptor.ProjectPath}");
+            Smithbox.LogError(this, $"[Project] Project initialization failed. Project path does not exist: {Descriptor.ProjectPath}");
 
             return false;
         }
 
         if (!Directory.Exists(Descriptor.DataPath))
         {
-            Smithbox.LogError(this, $"[Smithbox] Project initialization failed. Data path does not exist: {Descriptor.DataPath}");
+            Smithbox.LogError(this, $"[Project] Project initialization failed. Data path does not exist: {Descriptor.DataPath}");
 
             return false;
         }
@@ -275,7 +275,7 @@ public class ProjectEntry
         {
             try
             {
-                Smithbox.Log(this, $"[Smithbox] Auto-save triggered.");
+                Smithbox.Log(this, $"[Project] Auto-save triggered.");
 
                 if (CFG.Current.Project_Automatic_Save_Include_Map_Editor)
                 {
@@ -324,7 +324,7 @@ public class ProjectEntry
             }
             catch (Exception ex)
             {
-                Smithbox.LogError(this, $"[Smithbox] Auto-save failed.", ex);
+                Smithbox.LogError(this, $"[Project] Auto-save failed.", ex);
             }
         }
     }

@@ -131,7 +131,7 @@ public class ProjectUtils
 
         if (!Directory.Exists(sourcePath))
         {
-            Smithbox.Log(typeof(FileDictionary), $"[Smithbox] Source path not found: {sourcePath}", LogLevel.Error, LogPriority.High);
+            Smithbox.Log(typeof(FileDictionary), $"[Project] Source path not found: {sourcePath}", LogLevel.Error, LogPriority.High);
             return fileDict;
         }
 
@@ -441,7 +441,7 @@ public class ProjectUtils
         }
         catch (Exception e)
         {
-            Smithbox.Log<ProjectUtils>($"[Smithbox] Failed to save: {Path.GetFileName(assetPath)} - {e}");
+            Smithbox.Log<ProjectUtils>($"[Project] Failed to save: {Path.GetFileName(assetPath)} - {e}");
         }
     }
 

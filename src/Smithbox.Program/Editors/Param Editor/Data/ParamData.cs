@@ -793,12 +793,12 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Param Reload offsets: {targetFile}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize the Param Reload offsets: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the Param Reload offsets: {targetFile}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to read the Param Reload offsets: {targetFile}", LogPriority.High, e);
             }
         }
 
@@ -841,12 +841,12 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Param Categories: {targetFile}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize the Param Categories: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the Param Categories: {targetFile}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to read the Param Categories: {targetFile}", LogPriority.High, e);
             }
         }
 
@@ -885,12 +885,12 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Commutative Param Groups: {targetFile}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize the Commutative Param Groups: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the Commutative Param Groups: {targetFile}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to read the Commutative Param Groups: {targetFile}", LogPriority.High, e);
             }
         }
 
