@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters that control the default items within the inventory for starting classes." Row0Dummy="" />
+  <Self Wiki="Defines parameters that control the default items within the inventory for starting classes."  />
   <Field>
     <item_1 AltName="[1] Item ID" Refs="ItemParam" />
     <item_2 AltName="[2] Item ID" Refs="ItemParam" />

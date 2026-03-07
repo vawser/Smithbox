@@ -16,7 +16,7 @@
 		<Option Value="4" Name="Guidance" />
 	</Enum>
   </Enums>
-  <Self Wiki="Defines parameters relating to spells." Row0Dummy="" AlternativeOrder="right_bullet_id,right_damage_id,left_bullet_id,left_damage_id,-,
+  <Self Wiki="Defines parameters relating to spells."  AlternativeOrder="right_bullet_id,right_damage_id,left_bullet_id,left_damage_id,-,
   spell_class,spell_function,spell_soul_consume_id,-,
   int_requirement,fth_requirement,-,
   startup_speed,cast_speed,-,

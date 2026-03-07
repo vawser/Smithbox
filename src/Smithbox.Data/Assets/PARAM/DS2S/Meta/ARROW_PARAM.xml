@@ -1,42 +1,162 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters for ammunition, covering arrows, greatarrows and bolts."  />
+  <Field>
+    <sfxId
+    AltName="Display SFX for Aim"
+    Wiki="The arrow SFX to display when aiming this arrow."
+    ParticleAlias="" />
+  
+    <lightBulletId0
+    AltName="Slot 0: Light Bullet"
+    Wiki="The bullet to trigger on light attack for slot 0."
+    Refs="BulletParam" />
+  
+    <heavyBulletId0
+    AltName="Slot 0: Heavy Bullet"
+    Wiki="The bullet to trigger on heavy attack for slot 0."
+    Refs="BulletParam" />
+  
+    <lightDamageId0
+    AltName="Slot 0: Light Bullet Damage"
+    Wiki="The damage profile to use for light bullet in slot 0."
+    Refs="PlayerDamageParam" />
+  
+    <heavyDamageId0
+    AltName="Slot 0: Heavy Bullet Damage"
+    Wiki="The damage profile to use for heavy bullet in slot 0."
+    Refs="PlayerDamageParam" />
+  
+    <lightBulletId1
+    AltName="Slot 1: Light Bullet"
+    Wiki="The bullet to trigger on light attack for slot 1."
+    Refs="BulletParam" />
+  
+    <heavyBulletId1
+    AltName="Slot 1: Heavy Bullet"
+    Wiki="The bullet to trigger on heavy attack for slot 1."
+    Refs="BulletParam" />
+  
+    <lightDamageId1
+    AltName="Slot 1: Light Bullet Damage"
+    Wiki="The damage profile to use for light bullet in slot 1."
+    Refs="PlayerDamageParam" />
+  
+    <heavyDamageId1
+    AltName="Slot 1: Heavy Bullet Damage"
+    Wiki="The damage profile to use for heavy bullet in slot 1."
+    Refs="PlayerDamageParam" />
+    
+    <lightBulletId2
+    AltName="Slot 2: Light Bullet"
+    Wiki="The bullet to trigger on light attack for slot 2."
+    Refs="BulletParam" />
+  
+    <heavyBulletId2
+    AltName="Slot 2: Heavy Bullet"
+    Wiki="The bullet to trigger on heavy attack for slot 2."
+    Refs="BulletParam" />
+  
+    <lightDamageId2
+    AltName="Slot 2: Light Bullet Damage"
+    Wiki="The damage profile to use for light bullet in slot 2."
+    Refs="PlayerDamageParam" />
+  
+    <heavyDamageId2
+    AltName="Slot 2: Heavy Bullet Damage"
+    Wiki="The damage profile to use for heavy bullet in slot 2."
+    Refs="PlayerDamageParam" />
+    
+    <lightBulletId3
+    AltName="Slot 3: Light Bullet"
+    Wiki="The bullet to trigger on light attack for slot 3."
+    Refs="BulletParam" />
+  
+    <heavyBulletId3
+    AltName="Slot 3: Heavy Bullet"
+    Wiki="The bullet to trigger on heavy attack for slot 3."
+    Refs="BulletParam" />
+  
+    <lightDamageId3
+    AltName="Slot 3: Light Bullet Damage"
+    Wiki="The damage profile to use for light bullet in slot 3."
+    Refs="PlayerDamageParam" />
+  
+    <heavyDamageId3
+    AltName="Slot 3: Heavy Bullet Damage"
+    Wiki="The damage profile to use for heavy bullet in slot 3."
+    Refs="PlayerDamageParam" />
+    
+    <modelIdInQuiver
+    AltName="Quiver Model ID"
+    Wiki="The model ID of the arrow within the quiver." />
+    
+    <menuPhysicalAttack
+    AltName="Menu: Physical Attack"
+    Wiki="The physical attack to display for this arrow in the menu. Display only." />
+    
+    <menuMagicAttack
+    AltName="Menu: Magic Attack"
+    Wiki="The magic attack to display for this arrow in the menu. Display only." />
+    
+    <menuThunderAttack
+    AltName="Menu: Lightning Attack"
+    Wiki="The lightning attack to display for this arrow in the menu. Display only." />
+    
+    <menuFireAttack
+    AltName="Menu: Fire Attack"
+    Wiki="The fire attack to display for this arrow in the menu. Display only." />
+    
+    <menuDarkAttack
+    AltName="Menu: Dark Attack"
+    Wiki="The dark attack to display for this arrow in the menu. Display only." />
+    
+    <menuPoisonAttack
+    AltName="Menu: Poison Attack"
+    Wiki="The poison attack to display for this arrow in the menu. Display only." />
+    
+    <menuBleedAttack
+    AltName="Menu: Bleed Attack"
+    Wiki="The bleed attack to display for this arrow in the menu. Display only." />
+    
+    <menuWeaponBreakAttack
+    AltName="Menu: Durability Attack"
+    Wiki="The durability attack to display for this arrow in the menu. Display only." />
+    
+    <arrowType
+    AltName="Arrow Type"
+    Wiki="The type of arrow this is." 
+    Enum="ARROW_TYPE" />
+    
+    <menuAttackCategory1
+    AltName="Menu: Attack Attribute 1"
+    Wiki="The first attack attribute for this arrow." 
+    Enum="WEAPON_ATTACK_CATEGORY" />
+    
+    <menuAttackCategory2
+    AltName="Menu: Attack Attribute 2"
+    Wiki="The second attack attribute for this arrow." 
+    Enum="WEAPON_ATTACK_CATEGORY" />
+    
+    <padding
+    Padding="" />
+  </Field>
   <Enums>
-    <Enum Name="AmmoType">
+    <Enum Name="ARROW_TYPE">
+      <Option Value="0" Name="Null" />
       <Option Value="1" Name="Arrow" />
-      <Option Value="2" Name="Greatarrow" />
+      <Option Value="2" Name="Great Arrow" />
       <Option Value="4" Name="Bolt" />
     </Enum>
+    <Enum Name="WEAPON_ATTACK_CATEGORY">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Strike" />
+      <Option Value="2" Name="Slash" />
+      <Option Value="3" Name="Pierce" />
+      <Option Value="4" Name="Parry" />
+      <Option Value="5" Name="Spell Parry" />
+      <Option Value="6" Name="Spell" />
+      <Option Value="7" Name="Shooting" />
+    </Enum>
   </Enums>
-  <Self Wiki="Defines parameters for ammunition, covering arrows, greatarrows and bolts." Row0Dummy="" />
-  <Field>
-    <sort_id AltName="Sort ID" />
-    <damage_id_0 AltName="Damage ID [0]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_1 AltName="Damage ID [1]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_2 AltName="Damage ID [2]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_3 AltName="Damage ID [3]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_4 AltName="Damage ID [4]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_5 AltName="Damage ID [5]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_6 AltName="Damage ID [6]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_7 AltName="Damage ID [7]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_8 AltName="Damage ID [8]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_9 AltName="Damage ID [9]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_10 AltName="Damage ID [10]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_11 AltName="Damage ID [11]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_12 AltName="Damage ID [12]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_13 AltName="Damage ID [13]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_14 AltName="Damage ID [14]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_id_15 AltName="Damage ID [15]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <damage_dead_motion_id AltName="Damage Dead Motion ID"/>
-    <damage_physical AltName="Damage: Physical" />
-    <damage_magic AltName="Damage: Magic" />
-    <damage_lightning AltName="Damage: Lightning" />
-    <damage_fire AltName="Damage: Fire" />
-    <damage_dark AltName="Damage: Dark" />
-    <damage_poison AltName="Damage: Poison" />
-    <apply_poison AltName="Inflict Poison" IsBool="" />
-    <damage_bleed AltName="Damage: Bleed" />
-    <apply_bleed AltName="Inflict Bleed" IsBool="" />
-    <ammo_type AltName="Ammunition Type" Enum="AmmoType"/>
-    <damage_durability AltName="Damage: Durability" />
-  </Field>
 </PARAMMETA>

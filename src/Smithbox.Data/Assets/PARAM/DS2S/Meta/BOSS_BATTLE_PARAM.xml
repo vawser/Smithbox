@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters for boss battles." Row0Dummy="" />
+  <Self Wiki="Defines parameters for boss battles."  />
   <Field>
     <souls AltName="Souls"/>
     <itemlot_id AltName="Itemlot ID" Refs="ItemLotParam2_Other"/>

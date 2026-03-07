@@ -55,7 +55,7 @@
       <Option Value="254" Name="Player" />
     </Enum>
   </Enums>
-  <Self Wiki="Defines shared parameters related to all items." Row0Dummy="" AlternativeOrder="icon_id,sort_id,base_price,sell_price,max_held_count,animation_speed,-,
+  <Self Wiki="Defines shared parameters related to all items."  AlternativeOrder="icon_id,sort_id,base_price,sell_price,max_held_count,animation_speed,-,
   item_type_id,item_usage_id,item_category_type,item_additional_type,ng_behavior_type,-,
   speffect_context,speffect_id,item_sp_effect_type,item_speffect_application_type,-,
   sfx_on_use_1,sfx_on_use_2,sfx_on_use_3,-,

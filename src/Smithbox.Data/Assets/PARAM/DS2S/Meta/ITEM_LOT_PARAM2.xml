@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to item lots." Row0Dummy="" AlternativeOrder="item_lot_0,amount_lot_0,chance_lot_0,infinite_lot_0,reinforcement_lot_0,infusion_lot_0,-,
+  <Self Wiki="Defines parameters related to item lots."  AlternativeOrder="item_lot_0,amount_lot_0,chance_lot_0,infinite_lot_0,reinforcement_lot_0,infusion_lot_0,-,
   item_lot_1,amount_lot_1,chance_lot_1,infinite_lot_1,reinforcement_lot_1,infusion_lot_1,-,
   item_lot_2,amount_lot_2,chance_lot_2,infinite_lot_2,reinforcement_lot_2,infusion_lot_2,-,
   item_lot_3,amount_lot_3,chance_lot_3,infinite_lot_3,reinforcement_lot_3,infusion_lot_3,-,

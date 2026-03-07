@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the damage growth of characters across each journey." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to the damage growth of characters across each journey."  />
   <Field>
     <ng0_damage_mult AltName="NG+0 - Damage %"/>
     <ng0_stamina_damage_mult AltName="NG+0 - Stamina Damage %"/>

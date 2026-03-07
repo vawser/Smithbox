@@ -24,7 +24,7 @@
       <Option Value="2" Name="Guard Break" />
     </Enum>
   </Enums>
-  <Self Wiki="Defines parameters related to damage." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to damage."  />
   <Field>
     <damage_ctrl_id AltName="Damage Control ID" Refs="DamageCtrlParam"/>
     <damage_id_followup AltName="Damage ID - Follow-up" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the souls held by characters across each journey." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to the souls held by characters across each journey."  />
   <Field>
     <souls_percent_ng0 AltName="NG+0 - Soul Absorption %"/>
     <souls_percent_ng1 AltName="NG+1 - Soul Absorption %"/>

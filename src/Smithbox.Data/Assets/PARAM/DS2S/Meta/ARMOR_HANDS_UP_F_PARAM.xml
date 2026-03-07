@@ -1,6 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines hand position used for weapon hold position." Row0Dummy="" />
+  <Self Wiki="Defines arm position used for weapon hold position." />
   <Field>
+    <weightLevel01
+    AltName="Side Lift %: 1"
+    Wiki="The percentage (out of 100) to lift the arms." />
+    
+    <weightLevel02
+    AltName="Side Lift %: 2"
+    Wiki="The percentage (out of 100) to lift the arms." />
+    
+    <weightLevel03
+    AltName="Side Lift %: 3"
+    Wiki="The percentage (out of 100) to lift the arms." />
+    
+    <weightLevel04
+    AltName="Side Lift %: 4"
+    Wiki="The percentage (out of 100) to lift the arms." />
+    
+    <weightLevel05
+    AltName="Side Lift %: 5"
+    Wiki="The percentage (out of 100) to lift the arms." />
+    
+    <weightLevel06
+    AltName="Side Lift %: 6"
+    Wiki="The percentage (out of 100) to lift the arms." />
+    
+    <weightLevel07
+    AltName="Side Lift %: 7"
+    Wiki="The percentage (out of 100) to lift the arms." />
+    
+    <weightLevel08
+    AltName="Side Lift %: 8"
+    Wiki="The percentage (out of 100) to lift the arms." />
+    
+    <weightLevel09
+    AltName="Side Lift %: 9"
+    Wiki="The percentage (out of 100) to lift the arms." />
+    
+    <weightLevel10
+    AltName="Side Lift %: 10"
+    Wiki="The percentage (out of 100) to lift the arms." />
+    
+    <dummy
+    Padding="" />
+    
   </Field>
 </PARAMMETA>

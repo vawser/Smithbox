@@ -6,11 +6,16 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="s8 Unk00" />
-    <Field Def="s8 Unk01" />
-    <Field Def="s8 Unk02" />
-    <Field Def="s8 Unk03" />
-    <Field Def="s32 Unk04" />
-    <Field Def="s32 Unk08" />
+    <Field Def="u8 weightLevel01" />
+    <Field Def="u8 weightLevel02" />
+    <Field Def="u8 weightLevel03" />
+    <Field Def="u8 weightLevel04" />
+    <Field Def="u8 weightLevel05" />
+    <Field Def="u8 weightLevel06" />
+    <Field Def="u8 weightLevel07" />
+    <Field Def="u8 weightLevel08" />
+    <Field Def="u8 weightLevel09" />
+    <Field Def="u8 weightLevel10" />
+    <Field Def="dummy8 dummy[2]" />
   </Fields>
 </PARAMDEF>

@@ -10,7 +10,7 @@
 		<Option Value="5" Name="Unknown" />
 	</Enum>
   </Enums>
-  <Self Wiki="Defines parameters relating to the player and humanoid characters." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating to the player and humanoid characters."  />
   <Field>
     <chr_size AltName="Chr Size"/>
     <stamina_exhaustion_time AltName="Empty Stamina State Duration"/>

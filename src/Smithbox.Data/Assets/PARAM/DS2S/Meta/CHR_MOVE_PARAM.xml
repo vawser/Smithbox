@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters used for player and humanoid character movement." Row0Dummy="" />
+  <Self Wiki="Defines parameters used for player and humanoid character movement."  />
   <Field>
     <walk_acceleration AltName="Walk Acceleration"/>
     <auto_walk_speed AltName="Auto-Walk Speed Trigger"/>

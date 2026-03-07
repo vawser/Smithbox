@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to ground materials." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to ground materials."  />
   <Field>
     <material_param_id AltName="Material Param ID" Refs="MaterialParam"/>
     <move_speed_mult AltName="Move Speed %"/>

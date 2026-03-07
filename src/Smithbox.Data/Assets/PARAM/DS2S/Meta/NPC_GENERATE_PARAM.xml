@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the generation of NPCs." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to the generation of NPCs."  />
   <Field>
     <right_weapon_id_1 AltName="[1] Right Weapon ID" Refs="WeaponParam" />
     <right_weapon_id_2 AltName="[2] Right Weapon ID" Refs="WeaponParam" />

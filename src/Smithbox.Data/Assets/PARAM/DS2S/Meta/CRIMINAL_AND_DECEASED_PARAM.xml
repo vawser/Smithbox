@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to hollowing and being a sinner." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to hollowing and being a sinner."  />
   <Field>
     <sinner_sin_points AltName="Sin Points - Sinner"/>
     <wretch_sin_points AltName="Sin Points - Wretch"/>

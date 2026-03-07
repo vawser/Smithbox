@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to player statistics in the menu. Note this does not affect the acutal stats for each level, only the display values." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to player statistics in the menu. Note this does not affect the acutal stats for each level, only the display values."  />
   <Field>
     <stat_hp AltName="HP"/>
     <stat_stamina AltName="Stamina"/>

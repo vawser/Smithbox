@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters for multiplayer phantoms." Row0Dummy="" />
+  <Self Wiki="Defines parameters for multiplayer phantoms."  />
   <Field>
     <chr_phantom_param_id AltName="Phantom Color ID" Refs="ChrPhantomParam"/>
     <chr_full_body_sfx_id_0 AltName="Full Body SFX ID - 0" Refs="ChrFullBodySfxParam"/>

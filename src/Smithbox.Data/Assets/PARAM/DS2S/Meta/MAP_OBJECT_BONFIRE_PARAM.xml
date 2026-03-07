@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to bonfire map objects." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to bonfire map objects."  />
   <Field>
     <area_id AltName="Area ID" Refs="AreaParam" />
     <icon_id AltName="Icon ID" IconConfig="Bonfire Area" />

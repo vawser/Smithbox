@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters relating to weapon stamina consumption." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating to weapon stamina consumption."  />
   <Field>
     <right_1h_light_1 AltName="Right - 1H Light #1" />
     <right_1h_light_2 AltName="Right - 1H Light #2" />

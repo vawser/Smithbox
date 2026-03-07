@@ -135,7 +135,7 @@
       <Option Value="240" Name="Work Hook" />
     </Enum>
   </Enums>
-  <Self Wiki="Defines parameters relating to weapon type and position." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating to weapon type and position."  />
   <Field>
     <is_cast_sorceries AltName="Cast Sorceries" IsBool="" />
     <is_cast_miracles AltName="Cast Miracles" IsBool="" />

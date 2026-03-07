@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to damage." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to damage."  />
   <Field>
     <physical_attack_rating_mult_pve AltName="PVE Attack Rating %: Physical"/>
     <player_damage_mult_coc AltName="Player Damage % - Company of Champions"/>

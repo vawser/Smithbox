@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to Laddersmith Gilligan's 'Set up Ladder' menu option." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to Laddersmith Gilligan's 'Set up Ladder' menu option."  />
   <Field>
    <ladder_unlock_index AltName="Ladder Unlock Index" />
    <soul_cost AltName="Soul Cost" />

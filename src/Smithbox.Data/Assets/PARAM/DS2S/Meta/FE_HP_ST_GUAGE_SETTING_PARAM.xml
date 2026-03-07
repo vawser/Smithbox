@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the player HP interface." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to the player HP interface."  />
   <Field>
     <damage_threshold_major_damage_player AltName="Major Damage Threshold: Player"/>
     <damage_threshold_major_damage_enemy AltName="Major Damage Threshold: Enemy"/>

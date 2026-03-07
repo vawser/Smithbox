@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to NPC requirements." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to NPC requirements."  />
   <Field>   
     <deathstone_spawn_delay AltName="Tombstone Spawn Delay Time"/>
     <npc_death_flag AltName="Death Event Flag ID"/>

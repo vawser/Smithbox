@@ -12,7 +12,7 @@
 		<Option Value="7" Name="Projectile" />
 	</Enum>
   </Enums>
-  <Self Wiki="Defines parameters relating to weapons." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating to weapons."  />
   <Field>
     <weapon_model_id AltName="Weapon Model ID" />
     <weapon_reinforce_id AltName="Weapon Reinforce ID" Refs="WeaponReinforceParam" />

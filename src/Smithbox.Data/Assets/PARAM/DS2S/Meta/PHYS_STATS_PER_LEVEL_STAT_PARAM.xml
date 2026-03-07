@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the player stats gained per level." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to the player stats gained per level."  />
   <Field>
     <soul_level AltName="soul Level" />
     <attunement_slots AltName="Attunement Slots" />

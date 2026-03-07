@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters relating to the attachment point that fires projectiles." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating to the attachment point that fires projectiles."  />
   <Field>
     <dummy_poly_id_1 AltName="Dummy Poly ID [1]"/>
     <dummy_poly_id_2 AltName="Dummy Poly ID [2]"/>

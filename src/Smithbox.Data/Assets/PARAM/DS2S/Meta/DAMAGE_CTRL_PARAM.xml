@@ -38,7 +38,7 @@
       <Option Value="3" Name="Non-physical" />
     </Enum>
   </Enums>
-  <Self Wiki="Defines parameters related to attacks." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to attacks."  />
   <Field>
     <damage_type AltName="Damage Type" Enum="DamageTypeCategory" />
     <stagger_mode AltName="Stagger Mode" Enum="StaggerModeCategory" />

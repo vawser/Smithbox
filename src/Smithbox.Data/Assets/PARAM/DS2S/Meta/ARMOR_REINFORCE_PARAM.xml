@@ -1,33 +1,127 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters for armor reinforcement." Row0Dummy="" />
+  <Self Wiki="Defines parameters for armor reinforcement." />
   <Field>
-    <defence_slash AltName="Defence: Slash" />
-    <defence_thrust AltName="Defence: Thrust" />
-    <defence_strike AltName="Defence: Strike" />
-    <defence_standard AltName="Defence: Standard" />
-    <absorption_magic AltName="Absorption: Magic" />
-    <absorption_lightning AltName="Absorption: Lightning" />
-    <absorption_fire AltName="Absorption: Fire" />
-    <absorption_dark AltName="Absorption: Dark" />
-    <absorption_poison AltName="Resist: Poison" />
-    <absorption_bleed AltName="Resist: Bleed" />
-    <absorption_petrify AltName="Resist: Petrify" />
-    <absorption_curse AltName="Resist: Curse" />
-    <max_defence_slash AltName="Max Defence: Slash" />
-    <max_defence_thrust AltName="Max Defence: Thrust" />
-    <max_defence_strike AltName="Max Defence: Strike" />
-    <max_defence_standard AltName="Max Defence: Standard" />
-    <max_absorption_magic AltName="Max Absorption: Magic" />
-    <max_absorption_lightning AltName="Max Absorption: Lightning" />
-    <max_absorption_fire AltName="Max Absorption: Fire" />
-    <max_absorption_dark AltName="Max Absorption: Dark" />
-    <max_absorption_poison AltName="Max Resist: Poison" />
-    <max_absorption_bleed AltName="Max Resist: Bleed" />
-    <max_absorption_petrify AltName="Max Resist: Petrify" />
-    <max_absorption_curse AltName="Max Resist: Curse" />
-    <max_reinforcement_level AltName="Max Reinforcement Level" />
-    <reinforce_material AltName="Reinforcement Material" />
-    <reinforce_cost_id AltName="Reinforcement Cost ID" Refs="ReinforceCostParam" />
+    <minSlash
+    AltName="Minimum Value: Slash"
+    Wiki="The minimum value for slash defence." />
+  
+    <minThrust
+    AltName="Minimum Value: Thrust"
+    Wiki="The minimum value for thrust defence." />
+    
+    <minStrike
+    AltName="Minimum Value: Strike"
+    Wiki="The minimum value for strike defence." />
+    
+    <minPhysical
+    AltName="Minimum Value: Physical"
+    Wiki="The minimum value for physical defence." />
+    
+    <minMagic
+    AltName="Minimum Value: Magic"
+    Wiki="The minimum value for magic defence." />
+    
+    <minThunder
+    AltName="Minimum Value: Lightning"
+    Wiki="The minimum value for lightning defence." />
+    
+    <minFire
+    AltName="Minimum Value: Fire"
+    Wiki="The minimum value for fire defence." />
+    
+    <minDark
+    AltName="Minimum Value: Dark"
+    Wiki="The minimum value for dark defence." />
+    
+    <minPoison
+    AltName="Minimum Value: Poison"
+    Wiki="The minimum value for poison defence." />
+    
+    <minBleeding
+    AltName="Minimum Value: Bleed"
+    Wiki="The minimum value for bleed defence." />
+    
+    <minPetrifaction
+    AltName="Minimum Value: Petrification"
+    Wiki="The minimum value for petrification defence." />
+    
+    <minCurse
+    AltName="Minimum Value: Curse"
+    Wiki="The minimum value for curse defence." />
+    
+    <maxSlash
+    AltName="Maximum Value: Slash"
+    Wiki="The maximum value for slash defence." />
+  
+    <maxThrust
+    AltName="Maximum Value: Thrust"
+    Wiki="The maximum value for thrust defence." />
+    
+    <maxStrike
+    AltName="Maximum Value: Strike"
+    Wiki="The maximum value for strike defence." />
+    
+    <maxPhysical
+    AltName="Maximum Value: Physical"
+    Wiki="The maximum value for physical defence." />
+    
+    <maxMagic
+    AltName="Maximum Value: Magic"
+    Wiki="The maximum value for magic defence." />
+    
+    <maxThunder
+    AltName="Maximum Value: Lightning"
+    Wiki="The maximum value for lightning defence." />
+    
+    <maxFire
+    AltName="Maximum Value: Fire"
+    Wiki="The maximum value for fire defence." />
+    
+    <maxDark
+    AltName="Maximum Value: Dark"
+    Wiki="The maximum value for dark defence." />
+    
+    <maxPoison
+    AltName="Maximum Value: Poison"
+    Wiki="The maximum value for poison defence." />
+    
+    <maxBleeding
+    AltName="Maximum Value: Bleed"
+    Wiki="The maximum value for bleed defence." />
+    
+    <maxPetrifaction
+    AltName="Maximum Value: Petrification"
+    Wiki="The maximum value for petrification defence." />
+    
+    <maxCurse
+    AltName="Maximum Value: Curse"
+    Wiki="The maximum value for curse defence." />
+    
+    <maxLevel 
+    AltName="Maximum Reinforcement Level"
+    Wiki="The maximum value for reinforcement level." />
+    
+    <dummy
+    Padding="" />
+    
+    <menuResistanceScale
+    AltName="Menu: Resistance Scale"
+    Wiki="The defence power correction scale to use within the menu. Display only." />
+    
+    <attrSpec
+    AltName="Attribute Enhancement"
+    Wiki="The infusion parameters avaliable."
+    Refs="CustomAttrSpecParam" />
+    
+    <attrCost
+    AltName="Attribute Enhancement Cost"
+    Wiki="The infusion parameter costs."
+    Refs="CustomAttrCostParam" />
+    
+    <reinforceCost 
+    AltName="Reinforcement Level Cost" 
+    Wiki="The reinforcement cost parameters to use." 
+    Refs="ReinforceCostParam" />
   </Field>
 </PARAMMETA>

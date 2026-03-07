@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters relating to the camera during boss fights." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating to the camera during boss fights."  />
   <Field>
     <camera_horizontal_fov AltName="Camera Horizontal FOV"/>
     <camera_width_offset AltName="Camera Width Offset"/>

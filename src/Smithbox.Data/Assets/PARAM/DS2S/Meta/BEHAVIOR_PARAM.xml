@@ -1,266 +1,1171 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to enemy behavior."  />
+  <Field>
+    <action0DamageId00
+    AltName="Action 0: Damage ID 0"
+    Wiki="The damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action0DamageId01
+    AltName="Action 0: Damage ID 1"
+    Wiki="The damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action0DamageId02
+    AltName="Action 0: Damage ID 2"
+    Wiki="The damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action0GrabDamageId00
+    AltName="Action 0: Grab Damage ID 0"
+    Wiki="The grab damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action0GrabDamageId01
+    AltName="Action 0: Grab Damage ID 1"
+    Wiki="The grab damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action0GrabDamageId02
+    AltName="Action 0: Grab Damage ID 2"
+    Wiki="The grab damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action0AttackWalkMoveAttack
+    AltName="Action 0: Walk Attack ID"
+    Wiki="The walk attack move this behavior uses." 
+    Refs="EnemyAttackMoveParam" />
+    
+    <action0AttackInvincible
+    AltName="Action 0: Uninterruptible Type"
+    Wiki="The uninterruptible type for this behavior." 
+    Enum="NON_INTERRUPTIBLE_TYPE" />
+    
+    <action0HandType
+    AltName="Action 0: Attacker"
+    Wiki="If enabled, is attacker behavior." 
+    IsBool="" />
+    
+    <action0IsSpell
+    AltName="Action 0: Spell"
+    Wiki="If enabled, is spell behavior." 
+    IsBool="" />
+    
+    <action0BladeCtrlType
+    AltName="Action 0: Melee Control Type"
+    Wiki="The melee control type for this behavior." 
+    Enum="BLADE_CTRL_TYPE" />
+    
+    <action0BulletId00
+    AltName="Action 0: Bullet ID 0"
+    Wiki="The bullet parameters to use for slot 0." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action0BulletId01
+    AltName="Action 0: Bullet ID 1"
+    Wiki="The bullet parameters to use for slot 1." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action0BulletId02
+    AltName="Action 0: Bullet ID 2"
+    Wiki="The bullet parameters to use for slot 2." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action0ShotStanceTime
+    AltName="Action 0: Shooting Ready Time"
+    Wiki="The duration for shooting to be ready for this behavior." />
+    
+    <action0AttackRange
+    AltName="Action 0: Walk Attack Range"
+    Wiki="The attack range for the walk attack." />
+    
+    <fAction0AttackBackSwingSpeed
+    AltName="Action 0: Attack Start Speed %"
+    Wiki="The attack start (backswing) speed multipler for this behavior." />
+    
+    <fAction0AttackFollowSwingSpeed
+    AltName="Action 0: Attack End Speed %"
+    Wiki="The attack end (recovery) speed multipler for this behavior." />
+    
+    <fAction0AttackEstimateFutureTime
+    AltName="Action 0: Position Prediction Time"
+    Wiki="The duration for position prediction for this behavior." />
+    
+    <fAction0AttackAngle
+    AltName="Action 0: Angle Correction"
+    Wiki="The angle correction (in degrees) for this behavior." />
+    
+    <fAction0AttackRotateHigh
+    AltName="Action 0: Turn Interpolation Start Distance"
+    Wiki="The turn interpolation start distance (in metres) for this behavior." />
+    
+    <fAction0AttackRotateLow
+    AltName="Action 0: Turn Interpolation End Distance"
+    Wiki="The turn interpolation end distance (in metres) for this behavior." />
+    
+    <action0ChantSfx
+    AltName="Action 0: Shoot SFX ID"
+    Wiki="The shoot SFX parameters to use for this behavior." 
+    Refs="EnemyShotSfxParam" />
+    
+    <action0ReloadTimeMin
+    AltName="Action 0: Minimum Reload Time"
+    Wiki="The minimum time to wait before repeating this behavior." />
+    
+    <action0ReloadTimeMax
+    AltName="Action 0: Maximum Reload Time"
+    Wiki="The maximum time to wait before repeating this behavior." />
+    
+    <action1DamageId00
+    AltName="Action 1: Damage ID 0"
+    Wiki="The damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action1DamageId01
+    AltName="Action 1: Damage ID 1"
+    Wiki="The damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action1DamageId02
+    AltName="Action 1: Damage ID 2"
+    Wiki="The damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action1GrabDamageId00
+    AltName="Action 1: Grab Damage ID 0"
+    Wiki="The grab damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action1GrabDamageId01
+    AltName="Action 1: Grab Damage ID 1"
+    Wiki="The grab damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action1GrabDamageId02
+    AltName="Action 1: Grab Damage ID 2"
+    Wiki="The grab damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action1AttackWalkMoveAttack
+    AltName="Action 1: Walk Attack ID"
+    Wiki="The walk attack move this behavior uses." 
+    Refs="EnemyAttackMoveParam" />
+    
+    <action1AttackInvincible
+    AltName="Action 1: Uninterruptible Type"
+    Wiki="The uninterruptible type for this behavior." 
+    Enum="NON_INTERRUPTIBLE_TYPE" />
+    
+    <action1HandType
+    AltName="Action 1: Attacker"
+    Wiki="If enabled, is attacker behavior." 
+    IsBool="" />
+    
+    <action1IsSpell
+    AltName="Action 1: Spell"
+    Wiki="If enabled, is spell behavior." 
+    IsBool="" />
+    
+    <action1BladeCtrlType
+    AltName="Action 1: Melee Control Type"
+    Wiki="The melee control type for this behavior." 
+    Enum="BLADE_CTRL_TYPE" />
+    
+    <action1BulletId00
+    AltName="Action 1: Bullet ID 0"
+    Wiki="The bullet parameters to use for slot 0." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action1BulletId01
+    AltName="Action 1: Bullet ID 1"
+    Wiki="The bullet parameters to use for slot 1." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action1BulletId02
+    AltName="Action 1: Bullet ID 2"
+    Wiki="The bullet parameters to use for slot 2." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action1ShotStanceTime
+    AltName="Action 1: Shooting Ready Time"
+    Wiki="The duration for shooting to be ready for this behavior." />
+    
+    <action1AttackRange
+    AltName="Action 1: Walk Attack Range"
+    Wiki="The attack range for the walk attack." />
+    
+    <fAction1AttackBackSwingSpeed
+    AltName="Action 1: Attack Start Speed %"
+    Wiki="The attack start (backswing) speed multipler for this behavior." />
+    
+    <fAction1AttackFollowSwingSpeed
+    AltName="Action 1: Attack End Speed %"
+    Wiki="The attack end (recovery) speed multipler for this behavior." />
+    
+    <fAction1AttackEstimateFutureTime
+    AltName="Action 1: Position Prediction Time"
+    Wiki="The duration for position prediction for this behavior." />
+    
+    <fAction1AttackAngle
+    AltName="Action 1: Angle Correction"
+    Wiki="The angle correction (in degrees) for this behavior." />
+    
+    <fAction1AttackRotateHigh
+    AltName="Action 1: Turn Interpolation Start Distance"
+    Wiki="The turn interpolation start distance (in metres) for this behavior." />
+    
+    <fAction1AttackRotateLow
+    AltName="Action 1: Turn Interpolation End Distance"
+    Wiki="The turn interpolation end distance (in metres) for this behavior." />
+    
+    <action1ChantSfx
+    AltName="Action 1: Shoot SFX ID"
+    Wiki="The shoot SFX parameters to use for this behavior." 
+    Refs="EnemyShotSfxParam" />
+    
+    <action1ReloadTimeMin
+    AltName="Action 1: Minimum Reload Time"
+    Wiki="The minimum time to wait before repeating this behavior." />
+    
+    <action1ReloadTimeMax
+    AltName="Action 1: Maximum Reload Time"
+    Wiki="The maximum time to wait before repeating this behavior." />
+    
+    <action2DamageId00
+    AltName="Action 2: Damage ID 0"
+    Wiki="The damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action2DamageId01
+    AltName="Action 2: Damage ID 1"
+    Wiki="The damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action2DamageId02
+    AltName="Action 2: Damage ID 2"
+    Wiki="The damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action2GrabDamageId00
+    AltName="Action 2: Grab Damage ID 0"
+    Wiki="The grab damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action2GrabDamageId01
+    AltName="Action 2: Grab Damage ID 1"
+    Wiki="The grab damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action2GrabDamageId02
+    AltName="Action 2: Grab Damage ID 2"
+    Wiki="The grab damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action2AttackWalkMoveAttack
+    AltName="Action 2: Walk Attack ID"
+    Wiki="The walk attack move this behavior uses." 
+    Refs="EnemyAttackMoveParam" />
+    
+    <action2AttackInvincible
+    AltName="Action 2: Uninterruptible Type"
+    Wiki="The uninterruptible type for this behavior." 
+    Enum="NON_INTERRUPTIBLE_TYPE" />
+    
+    <action2HandType
+    AltName="Action 2: Attacker"
+    Wiki="If enabled, is attacker behavior." 
+    IsBool="" />
+    
+    <action2IsSpell
+    AltName="Action 2: Spell"
+    Wiki="If enabled, is spell behavior." 
+    IsBool="" />
+    
+    <action2BladeCtrlType
+    AltName="Action 2: Melee Control Type"
+    Wiki="The melee control type for this behavior." 
+    Enum="BLADE_CTRL_TYPE" />
+    
+    <action2BulletId00
+    AltName="Action 2: Bullet ID 0"
+    Wiki="The bullet parameters to use for slot 0." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action2BulletId01
+    AltName="Action 2: Bullet ID 1"
+    Wiki="The bullet parameters to use for slot 1." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action2BulletId02
+    AltName="Action 2: Bullet ID 2"
+    Wiki="The bullet parameters to use for slot 2." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action2ShotStanceTime
+    AltName="Action 2: Shooting Ready Time"
+    Wiki="The duration for shooting to be ready for this behavior." />
+    
+    <action2AttackRange
+    AltName="Action 2: Walk Attack Range"
+    Wiki="The attack range for the walk attack." />
+    
+    <fAction2AttackBackSwingSpeed
+    AltName="Action 2: Attack Start Speed %"
+    Wiki="The attack start (backswing) speed multipler for this behavior." />
+    
+    <fAction2AttackFollowSwingSpeed
+    AltName="Action 2: Attack End Speed %"
+    Wiki="The attack end (recovery) speed multipler for this behavior." />
+    
+    <fAction2AttackEstimateFutureTime
+    AltName="Action 2: Position Prediction Time"
+    Wiki="The duration for position prediction for this behavior." />
+    
+    <fAction2AttackAngle
+    AltName="Action 2: Angle Correction"
+    Wiki="The angle correction (in degrees) for this behavior." />
+    
+    <fAction2AttackRotateHigh
+    AltName="Action 2: Turn Interpolation Start Distance"
+    Wiki="The turn interpolation start distance (in metres) for this behavior." />
+    
+    <fAction2AttackRotateLow
+    AltName="Action 2: Turn Interpolation End Distance"
+    Wiki="The turn interpolation end distance (in metres) for this behavior." />
+    
+    <action2ChantSfx
+    AltName="Action 2: Shoot SFX ID"
+    Wiki="The shoot SFX parameters to use for this behavior." 
+    Refs="EnemyShotSfxParam" />
+    
+    <action2ReloadTimeMin
+    AltName="Action 2: Minimum Reload Time"
+    Wiki="The minimum time to wait before repeating this behavior." />
+    
+    <action2ReloadTimeMax
+    AltName="Action 2: Maximum Reload Time"
+    Wiki="The maximum time to wait before repeating this behavior." />
+    
+    <action3DamageId00
+    AltName="Action 3: Damage ID 0"
+    Wiki="The damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action3DamageId01
+    AltName="Action 3: Damage ID 1"
+    Wiki="The damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action3DamageId02
+    AltName="Action 3: Damage ID 2"
+    Wiki="The damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action3GrabDamageId00
+    AltName="Action 3: Grab Damage ID 0"
+    Wiki="The grab damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action3GrabDamageId01
+    AltName="Action 3: Grab Damage ID 1"
+    Wiki="The grab damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action3GrabDamageId02
+    AltName="Action 3: Grab Damage ID 2"
+    Wiki="The grab damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action3AttackWalkMoveAttack
+    AltName="Action 3: Walk Attack ID"
+    Wiki="The walk attack move this behavior uses." 
+    Refs="EnemyAttackMoveParam" />
+    
+    <action3AttackInvincible
+    AltName="Action 3: Uninterruptible Type"
+    Wiki="The uninterruptible type for this behavior." 
+    Enum="NON_INTERRUPTIBLE_TYPE" />
+    
+    <action3HandType
+    AltName="Action 3: Attacker"
+    Wiki="If enabled, is attacker behavior." 
+    IsBool="" />
+    
+    <action3IsSpell
+    AltName="Action 3: Spell"
+    Wiki="If enabled, is spell behavior." 
+    IsBool="" />
+    
+    <action3BladeCtrlType
+    AltName="Action 3: Melee Control Type"
+    Wiki="The melee control type for this behavior." 
+    Enum="BLADE_CTRL_TYPE" />
+    
+    <action3BulletId00
+    AltName="Action 3: Bullet ID 0"
+    Wiki="The bullet parameters to use for slot 0." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action3BulletId01
+    AltName="Action 3: Bullet ID 1"
+    Wiki="The bullet parameters to use for slot 1." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action3BulletId02
+    AltName="Action 3: Bullet ID 2"
+    Wiki="The bullet parameters to use for slot 2." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action3ShotStanceTime
+    AltName="Action 3: Shooting Ready Time"
+    Wiki="The duration for shooting to be ready for this behavior." />
+    
+    <action3AttackRange
+    AltName="Action 3: Walk Attack Range"
+    Wiki="The attack range for the walk attack." />
+    
+    <fAction3AttackBackSwingSpeed
+    AltName="Action 3: Attack Start Speed %"
+    Wiki="The attack start (backswing) speed multipler for this behavior." />
+    
+    <fAction3AttackFollowSwingSpeed
+    AltName="Action 3: Attack End Speed %"
+    Wiki="The attack end (recovery) speed multipler for this behavior." />
+    
+    <fAction3AttackEstimateFutureTime
+    AltName="Action 3: Position Prediction Time"
+    Wiki="The duration for position prediction for this behavior." />
+    
+    <fAction3AttackAngle
+    AltName="Action 3: Angle Correction"
+    Wiki="The angle correction (in degrees) for this behavior." />
+    
+    <fAction3AttackRotateHigh
+    AltName="Action 3: Turn Interpolation Start Distance"
+    Wiki="The turn interpolation start distance (in metres) for this behavior." />
+    
+    <fAction3AttackRotateLow
+    AltName="Action 3: Turn Interpolation End Distance"
+    Wiki="The turn interpolation end distance (in metres) for this behavior." />
+    
+    <action3ChantSfx
+    AltName="Action 3: Shoot SFX ID"
+    Wiki="The shoot SFX parameters to use for this behavior." 
+    Refs="EnemyShotSfxParam" />
+    
+    <action3ReloadTimeMin
+    AltName="Action 3: Minimum Reload Time"
+    Wiki="The minimum time to wait before repeating this behavior." />
+    
+    <action3ReloadTimeMax
+    AltName="Action 3: Maximum Reload Time"
+    Wiki="The maximum time to wait before repeating this behavior." />
+    
+    <action4DamageId00
+    AltName="Action 4: Damage ID 0"
+    Wiki="The damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action4DamageId01
+    AltName="Action 4: Damage ID 1"
+    Wiki="The damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action4DamageId02
+    AltName="Action 4: Damage ID 2"
+    Wiki="The damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action4GrabDamageId00
+    AltName="Action 4: Grab Damage ID 0"
+    Wiki="The grab damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action4GrabDamageId01
+    AltName="Action 4: Grab Damage ID 1"
+    Wiki="The grab damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action4GrabDamageId02
+    AltName="Action 4: Grab Damage ID 2"
+    Wiki="The grab damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action4AttackWalkMoveAttack
+    AltName="Action 4: Walk Attack ID"
+    Wiki="The walk attack move this behavior uses." 
+    Refs="EnemyAttackMoveParam" />
+    
+    <action4AttackInvincible
+    AltName="Action 4: Uninterruptible Type"
+    Wiki="The uninterruptible type for this behavior." 
+    Enum="NON_INTERRUPTIBLE_TYPE" />
+    
+    <action4HandType
+    AltName="Action 4: Attacker"
+    Wiki="If enabled, is attacker behavior." 
+    IsBool="" />
+    
+    <action4IsSpell
+    AltName="Action 4: Spell"
+    Wiki="If enabled, is spell behavior." 
+    IsBool="" />
+    
+    <action4BladeCtrlType
+    AltName="Action 4: Melee Control Type"
+    Wiki="The melee control type for this behavior." 
+    Enum="BLADE_CTRL_TYPE" />
+    
+    <action4BulletId00
+    AltName="Action 4: Bullet ID 0"
+    Wiki="The bullet parameters to use for slot 0." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action4BulletId01
+    AltName="Action 4: Bullet ID 1"
+    Wiki="The bullet parameters to use for slot 1." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action4BulletId02
+    AltName="Action 4: Bullet ID 2"
+    Wiki="The bullet parameters to use for slot 2." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action4ShotStanceTime
+    AltName="Action 4: Shooting Ready Time"
+    Wiki="The duration for shooting to be ready for this behavior." />
+    
+    <action4AttackRange
+    AltName="Action 4: Walk Attack Range"
+    Wiki="The attack range for the walk attack." />
+    
+    <fAction4AttackBackSwingSpeed
+    AltName="Action 4: Attack Start Speed %"
+    Wiki="The attack start (backswing) speed multipler for this behavior." />
+    
+    <fAction4AttackFollowSwingSpeed
+    AltName="Action 4: Attack End Speed %"
+    Wiki="The attack end (recovery) speed multipler for this behavior." />
+    
+    <fAction4AttackEstimateFutureTime
+    AltName="Action 4: Position Prediction Time"
+    Wiki="The duration for position prediction for this behavior." />
+    
+    <fAction4AttackAngle
+    AltName="Action 4: Angle Correction"
+    Wiki="The angle correction (in degrees) for this behavior." />
+    
+    <fAction4AttackRotateHigh
+    AltName="Action 4: Turn Interpolation Start Distance"
+    Wiki="The turn interpolation start distance (in metres) for this behavior." />
+    
+    <fAction4AttackRotateLow
+    AltName="Action 4: Turn Interpolation End Distance"
+    Wiki="The turn interpolation end distance (in metres) for this behavior." />
+    
+    <action4ChantSfx
+    AltName="Action 4: Shoot SFX ID"
+    Wiki="The shoot SFX parameters to use for this behavior." 
+    Refs="EnemyShotSfxParam" />
+    
+    <action4ReloadTimeMin
+    AltName="Action 4: Minimum Reload Time"
+    Wiki="The minimum time to wait before repeating this behavior." />
+    
+    <action4ReloadTimeMax
+    AltName="Action 4: Maximum Reload Time"
+    Wiki="The maximum time to wait before repeating this behavior." />
+    
+    <action5DamageId00
+    AltName="Action 5: Damage ID 0"
+    Wiki="The damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action5DamageId01
+    AltName="Action 5: Damage ID 1"
+    Wiki="The damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action5DamageId02
+    AltName="Action 5: Damage ID 2"
+    Wiki="The damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action5GrabDamageId00
+    AltName="Action 5: Grab Damage ID 0"
+    Wiki="The grab damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action5GrabDamageId01
+    AltName="Action 5: Grab Damage ID 1"
+    Wiki="The grab damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action5GrabDamageId02
+    AltName="Action 5: Grab Damage ID 2"
+    Wiki="The grab damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action5AttackWalkMoveAttack
+    AltName="Action 5: Walk Attack ID"
+    Wiki="The walk attack move this behavior uses." 
+    Refs="EnemyAttackMoveParam" />
+    
+    <action5AttackInvincible
+    AltName="Action 5: Uninterruptible Type"
+    Wiki="The uninterruptible type for this behavior." 
+    Enum="NON_INTERRUPTIBLE_TYPE" />
+    
+    <action5HandType
+    AltName="Action 5: Attacker"
+    Wiki="If enabled, is attacker behavior." 
+    IsBool="" />
+    
+    <action5IsSpell
+    AltName="Action 5: Spell"
+    Wiki="If enabled, is spell behavior." 
+    IsBool="" />
+    
+    <action5BladeCtrlType
+    AltName="Action 5: Melee Control Type"
+    Wiki="The melee control type for this behavior." 
+    Enum="BLADE_CTRL_TYPE" />
+    
+    <action5BulletId00
+    AltName="Action 5: Bullet ID 0"
+    Wiki="The bullet parameters to use for slot 0." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action5BulletId01
+    AltName="Action 5: Bullet ID 1"
+    Wiki="The bullet parameters to use for slot 1." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action5BulletId02
+    AltName="Action 5: Bullet ID 2"
+    Wiki="The bullet parameters to use for slot 2." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action5ShotStanceTime
+    AltName="Action 5: Shooting Ready Time"
+    Wiki="The duration for shooting to be ready for this behavior." />
+    
+    <action5AttackRange
+    AltName="Action 5: Walk Attack Range"
+    Wiki="The attack range for the walk attack." />
+    
+    <fAction5AttackBackSwingSpeed
+    AltName="Action 5: Attack Start Speed %"
+    Wiki="The attack start (backswing) speed multipler for this behavior." />
+    
+    <fAction5AttackFollowSwingSpeed
+    AltName="Action 5: Attack End Speed %"
+    Wiki="The attack end (recovery) speed multipler for this behavior." />
+    
+    <fAction5AttackEstimateFutureTime
+    AltName="Action 5: Position Prediction Time"
+    Wiki="The duration for position prediction for this behavior." />
+    
+    <fAction5AttackAngle
+    AltName="Action 5: Angle Correction"
+    Wiki="The angle correction (in degrees) for this behavior." />
+    
+    <fAction5AttackRotateHigh
+    AltName="Action 5: Turn Interpolation Start Distance"
+    Wiki="The turn interpolation start distance (in metres) for this behavior." />
+    
+    <fAction5AttackRotateLow
+    AltName="Action 5: Turn Interpolation End Distance"
+    Wiki="The turn interpolation end distance (in metres) for this behavior." />
+    
+    <action5ChantSfx
+    AltName="Action 5: Shoot SFX ID"
+    Wiki="The shoot SFX parameters to use for this behavior." 
+    Refs="EnemyShotSfxParam" />
+    
+    <action5ReloadTimeMin
+    AltName="Action 5: Minimum Reload Time"
+    Wiki="The minimum time to wait before repeating this behavior." />
+    
+    <action5ReloadTimeMax
+    AltName="Action 5: Maximum Reload Time"
+    Wiki="The maximum time to wait before repeating this behavior." />
+    
+    <action6DamageId00
+    AltName="Action 6: Damage ID 0"
+    Wiki="The damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action6DamageId01
+    AltName="Action 6: Damage ID 1"
+    Wiki="The damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action6DamageId02
+    AltName="Action 6: Damage ID 2"
+    Wiki="The damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action6GrabDamageId00
+    AltName="Action 6: Grab Damage ID 0"
+    Wiki="The grab damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action6GrabDamageId01
+    AltName="Action 6: Grab Damage ID 1"
+    Wiki="The grab damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action6GrabDamageId02
+    AltName="Action 6: Grab Damage ID 2"
+    Wiki="The grab damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action6AttackWalkMoveAttack
+    AltName="Action 6: Walk Attack ID"
+    Wiki="The walk attack move this behavior uses." 
+    Refs="EnemyAttackMoveParam" />
+    
+    <action6AttackInvincible
+    AltName="Action 6: Uninterruptible Type"
+    Wiki="The uninterruptible type for this behavior." 
+    Enum="NON_INTERRUPTIBLE_TYPE" />
+    
+    <action6HandType
+    AltName="Action 6: Attacker"
+    Wiki="If enabled, is attacker behavior." 
+    IsBool="" />
+    
+    <action6IsSpell
+    AltName="Action 6: Spell"
+    Wiki="If enabled, is spell behavior." 
+    IsBool="" />
+    
+    <action6BladeCtrlType
+    AltName="Action 6: Melee Control Type"
+    Wiki="The melee control type for this behavior." 
+    Enum="BLADE_CTRL_TYPE" />
+    
+    <action6BulletId00
+    AltName="Action 6: Bullet ID 0"
+    Wiki="The bullet parameters to use for slot 0." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action6BulletId01
+    AltName="Action 6: Bullet ID 1"
+    Wiki="The bullet parameters to use for slot 1." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action6BulletId02
+    AltName="Action 6: Bullet ID 2"
+    Wiki="The bullet parameters to use for slot 2." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action6ShotStanceTime
+    AltName="Action 6: Shooting Ready Time"
+    Wiki="The duration for shooting to be ready for this behavior." />
+    
+    <action6AttackRange
+    AltName="Action 6: Walk Attack Range"
+    Wiki="The attack range for the walk attack." />
+    
+    <fAction6AttackBackSwingSpeed
+    AltName="Action 6: Attack Start Speed %"
+    Wiki="The attack start (backswing) speed multipler for this behavior." />
+    
+    <fAction6AttackFollowSwingSpeed
+    AltName="Action 6: Attack End Speed %"
+    Wiki="The attack end (recovery) speed multipler for this behavior." />
+    
+    <fAction6AttackEstimateFutureTime
+    AltName="Action 6: Position Prediction Time"
+    Wiki="The duration for position prediction for this behavior." />
+    
+    <fAction6AttackAngle
+    AltName="Action 6: Angle Correction"
+    Wiki="The angle correction (in degrees) for this behavior." />
+    
+    <fAction6AttackRotateHigh
+    AltName="Action 6: Turn Interpolation Start Distance"
+    Wiki="The turn interpolation start distance (in metres) for this behavior." />
+    
+    <fAction6AttackRotateLow
+    AltName="Action 6: Turn Interpolation End Distance"
+    Wiki="The turn interpolation end distance (in metres) for this behavior." />
+    
+    <action6ChantSfx
+    AltName="Action 6: Shoot SFX ID"
+    Wiki="The shoot SFX parameters to use for this behavior." 
+    Refs="EnemyShotSfxParam" />
+    
+    <action6ReloadTimeMin
+    AltName="Action 6: Minimum Reload Time"
+    Wiki="The minimum time to wait before repeating this behavior." />
+    
+    <action6ReloadTimeMax
+    AltName="Action 6: Maximum Reload Time"
+    Wiki="The maximum time to wait before repeating this behavior." />
+    
+    <action7DamageId00
+    AltName="Action 7: Damage ID 0"
+    Wiki="The damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action7DamageId01
+    AltName="Action 7: Damage ID 1"
+    Wiki="The damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action7DamageId02
+    AltName="Action 7: Damage ID 2"
+    Wiki="The damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action7GrabDamageId00
+    AltName="Action 7: Grab Damage ID 0"
+    Wiki="The grab damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action7GrabDamageId01
+    AltName="Action 7: Grab Damage ID 1"
+    Wiki="The grab damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action7GrabDamageId02
+    AltName="Action 7: Grab Damage ID 2"
+    Wiki="The grab damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action7AttackWalkMoveAttack
+    AltName="Action 7: Walk Attack ID"
+    Wiki="The walk attack move this behavior uses." 
+    Refs="EnemyAttackMoveParam" />
+    
+    <action7AttackInvincible
+    AltName="Action 7: Uninterruptible Type"
+    Wiki="The uninterruptible type for this behavior." 
+    Enum="NON_INTERRUPTIBLE_TYPE" />
+    
+    <action7HandType
+    AltName="Action 7: Attacker"
+    Wiki="If enabled, is attacker behavior." 
+    IsBool="" />
+    
+    <action7IsSpell
+    AltName="Action 7: Spell"
+    Wiki="If enabled, is spell behavior." 
+    IsBool="" />
+    
+    <action7BladeCtrlType
+    AltName="Action 7: Melee Control Type"
+    Wiki="The melee control type for this behavior." 
+    Enum="BLADE_CTRL_TYPE" />
+    
+    <action7BulletId00
+    AltName="Action 7: Bullet ID 0"
+    Wiki="The bullet parameters to use for slot 0." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action7BulletId01
+    AltName="Action 7: Bullet ID 1"
+    Wiki="The bullet parameters to use for slot 1." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action7BulletId02
+    AltName="Action 7: Bullet ID 2"
+    Wiki="The bullet parameters to use for slot 2." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action7ShotStanceTime
+    AltName="Action 7: Shooting Ready Time"
+    Wiki="The duration for shooting to be ready for this behavior." />
+    
+    <action7AttackRange
+    AltName="Action 7: Walk Attack Range"
+    Wiki="The attack range for the walk attack." />
+    
+    <fAction7AttackBackSwingSpeed
+    AltName="Action 7: Attack Start Speed %"
+    Wiki="The attack start (backswing) speed multipler for this behavior." />
+    
+    <fAction7AttackFollowSwingSpeed
+    AltName="Action 7: Attack End Speed %"
+    Wiki="The attack end (recovery) speed multipler for this behavior." />
+    
+    <fAction7AttackEstimateFutureTime
+    AltName="Action 7: Position Prediction Time"
+    Wiki="The duration for position prediction for this behavior." />
+    
+    <fAction7AttackAngle
+    AltName="Action 7: Angle Correction"
+    Wiki="The angle correction (in degrees) for this behavior." />
+    
+    <fAction7AttackRotateHigh
+    AltName="Action 7: Turn Interpolation Start Distance"
+    Wiki="The turn interpolation start distance (in metres) for this behavior." />
+    
+    <fAction7AttackRotateLow
+    AltName="Action 7: Turn Interpolation End Distance"
+    Wiki="The turn interpolation end distance (in metres) for this behavior." />
+    
+    <action7ChantSfx
+    AltName="Action 7: Shoot SFX ID"
+    Wiki="The shoot SFX parameters to use for this behavior." 
+    Refs="EnemyShotSfxParam" />
+    
+    <action7ReloadTimeMin
+    AltName="Action 7: Minimum Reload Time"
+    Wiki="The minimum time to wait before repeating this behavior." />
+    
+    <action7ReloadTimeMax
+    AltName="Action 7: Maximum Reload Time"
+    Wiki="The maximum time to wait before repeating this behavior." />
+    
+    <action8DamageId00
+    AltName="Action 8: Damage ID 0"
+    Wiki="The damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action8DamageId01
+    AltName="Action 8: Damage ID 1"
+    Wiki="The damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action8DamageId02
+    AltName="Action 8: Damage ID 2"
+    Wiki="The damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action8GrabDamageId00
+    AltName="Action 8: Grab Damage ID 0"
+    Wiki="The grab damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action8GrabDamageId01
+    AltName="Action 8: Grab Damage ID 1"
+    Wiki="The grab damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action8GrabDamageId02
+    AltName="Action 8: Grab Damage ID 2"
+    Wiki="The grab damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action8AttackWalkMoveAttack
+    AltName="Action 8: Walk Attack ID"
+    Wiki="The walk attack move this behavior uses." 
+    Refs="EnemyAttackMoveParam" />
+    
+    <action8AttackInvincible
+    AltName="Action 8: Uninterruptible Type"
+    Wiki="The uninterruptible type for this behavior." 
+    Enum="NON_INTERRUPTIBLE_TYPE" />
+    
+    <action8HandType
+    AltName="Action 8: Attacker"
+    Wiki="If enabled, is attacker behavior." 
+    IsBool="" />
+    
+    <action8IsSpell
+    AltName="Action 8: Spell"
+    Wiki="If enabled, is spell behavior." 
+    IsBool="" />
+    
+    <action8BladeCtrlType
+    AltName="Action 8: Melee Control Type"
+    Wiki="The melee control type for this behavior." 
+    Enum="BLADE_CTRL_TYPE" />
+    
+    <action8BulletId00
+    AltName="Action 8: Bullet ID 0"
+    Wiki="The bullet parameters to use for slot 0." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action8BulletId01
+    AltName="Action 8: Bullet ID 1"
+    Wiki="The bullet parameters to use for slot 1." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action8BulletId02
+    AltName="Action 8: Bullet ID 2"
+    Wiki="The bullet parameters to use for slot 2." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action8ShotStanceTime
+    AltName="Action 8: Shooting Ready Time"
+    Wiki="The duration for shooting to be ready for this behavior." />
+    
+    <action8AttackRange
+    AltName="Action 8: Walk Attack Range"
+    Wiki="The attack range for the walk attack." />
+    
+    <fAction8AttackBackSwingSpeed
+    AltName="Action 8: Attack Start Speed %"
+    Wiki="The attack start (backswing) speed multipler for this behavior." />
+    
+    <fAction8AttackFollowSwingSpeed
+    AltName="Action 8: Attack End Speed %"
+    Wiki="The attack end (recovery) speed multipler for this behavior." />
+    
+    <fAction8AttackEstimateFutureTime
+    AltName="Action 8: Position Prediction Time"
+    Wiki="The duration for position prediction for this behavior." />
+    
+    <fAction8AttackAngle
+    AltName="Action 8: Angle Correction"
+    Wiki="The angle correction (in degrees) for this behavior." />
+    
+    <fAction8AttackRotateHigh
+    AltName="Action 8: Turn Interpolation Start Distance"
+    Wiki="The turn interpolation start distance (in metres) for this behavior." />
+    
+    <fAction8AttackRotateLow
+    AltName="Action 8: Turn Interpolation End Distance"
+    Wiki="The turn interpolation end distance (in metres) for this behavior." />
+    
+    <action8ChantSfx
+    AltName="Action 8: Shoot SFX ID"
+    Wiki="The shoot SFX parameters to use for this behavior." 
+    Refs="EnemyShotSfxParam" />
+    
+    <action8ReloadTimeMin
+    AltName="Action 8: Minimum Reload Time"
+    Wiki="The minimum time to wait before repeating this behavior." />
+    
+    <action8ReloadTimeMax
+    AltName="Action 8: Maximum Reload Time"
+    Wiki="The maximum time to wait before repeating this behavior." />
+    
+    <action9DamageId00
+    AltName="Action 9: Damage ID 0"
+    Wiki="The damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action9DamageId01
+    AltName="Action 9: Damage ID 1"
+    Wiki="The damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+  
+    <action9DamageId02
+    AltName="Action 9: Damage ID 2"
+    Wiki="The damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action9GrabDamageId00
+    AltName="Action 9: Grab Damage ID 0"
+    Wiki="The grab damage parameters to use for slot 0." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action9GrabDamageId01
+    AltName="Action 9: Grab Damage ID 1"
+    Wiki="The grab damage parameters to use for slot 1." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action9GrabDamageId02
+    AltName="Action 9: Grab Damage ID 2"
+    Wiki="The grab damage parameters to use for slot 2." 
+    Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam" />
+    
+    <action9AttackWalkMoveAttack
+    AltName="Action 9: Walk Attack ID"
+    Wiki="The walk attack move this behavior uses." 
+    Refs="EnemyAttackMoveParam" />
+    
+    <action9AttackInvincible
+    AltName="Action 9: Uninterruptible Type"
+    Wiki="The uninterruptible type for this behavior." 
+    Enum="NON_INTERRUPTIBLE_TYPE" />
+    
+    <action9HandType
+    AltName="Action 9: Attacker"
+    Wiki="If enabled, is attacker behavior." 
+    IsBool="" />
+    
+    <action9IsSpell
+    AltName="Action 9: Spell"
+    Wiki="If enabled, is spell behavior." 
+    IsBool="" />
+    
+    <action9BladeCtrlType
+    AltName="Action 9: Melee Control Type"
+    Wiki="The melee control type for this behavior." 
+    Enum="BLADE_CTRL_TYPE" />
+    
+    <action9BulletId00
+    AltName="Action 9: Bullet ID 0"
+    Wiki="The bullet parameters to use for slot 0." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action9BulletId01
+    AltName="Action 9: Bullet ID 1"
+    Wiki="The bullet parameters to use for slot 1." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action9BulletId02
+    AltName="Action 9: Bullet ID 2"
+    Wiki="The bullet parameters to use for slot 2." 
+    Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam" />
+    
+    <action9ShotStanceTime
+    AltName="Action 9: Shooting Ready Time"
+    Wiki="The duration for shooting to be ready for this behavior." />
+    
+    <action9AttackRange
+    AltName="Action 9: Walk Attack Range"
+    Wiki="The attack range for the walk attack." />
+    
+    <fAction9AttackBackSwingSpeed
+    AltName="Action 9: Attack Start Speed %"
+    Wiki="The attack start (backswing) speed multipler for this behavior." />
+    
+    <fAction9AttackFollowSwingSpeed
+    AltName="Action 9: Attack End Speed %"
+    Wiki="The attack end (recovery) speed multipler for this behavior." />
+    
+    <fAction9AttackEstimateFutureTime
+    AltName="Action 9: Position Prediction Time"
+    Wiki="The duration for position prediction for this behavior." />
+    
+    <fAction9AttackAngle
+    AltName="Action 9: Angle Correction"
+    Wiki="The angle correction (in degrees) for this behavior." />
+    
+    <fAction9AttackRotateHigh
+    AltName="Action 9: Turn Interpolation Start Distance"
+    Wiki="The turn interpolation start distance (in metres) for this behavior." />
+    
+    <fAction9AttackRotateLow
+    AltName="Action 9: Turn Interpolation End Distance"
+    Wiki="The turn interpolation end distance (in metres) for this behavior." />
+    
+    <action9ChantSfx
+    AltName="Action 9: Shoot SFX ID"
+    Wiki="The shoot SFX parameters to use for this behavior." 
+    Refs="EnemyShotSfxParam" />
+    
+    <action9ReloadTimeMin
+    AltName="Action 9: Minimum Reload Time"
+    Wiki="The minimum time to wait before repeating this behavior." />
+    
+    <action9ReloadTimeMax
+    AltName="Action 9: Maximum Reload Time"
+    Wiki="The maximum time to wait before repeating this behavior." />
+  </Field>
   <Enums>
-	<Enum Name="DamageActionFlag" type="u8">
-		<Option Value="0" Name="Normal" />
-		<Option Value="1" Name="SuperArmor" />
-		<Option Value="2" Name="UltraArmor" />
+	<Enum Name="NON_INTERRUPTIBLE_TYPE">
+		<Option Value="0" Name="Invalid" />
+		<Option Value="1" Name="Super Armor" />
+		<Option Value="2" Name="Ultra Armor" />
 		<Option Value="3" Name="Invincible" />
-		<Option Value="4" Name="Unknown" />
-		<Option Value="5" Name="Unknown" />
+		<Option Value="4" Name="Damage Immunity" />
+	</Enum>
+	<Enum Name="BLADE_CTRL_TYPE">
+		<Option Value="0" Name="Spot Attack" />
+		<Option Value="1" Name="Walking Attack" />
+		<Option Value="2" Name="Walking Shooting" />
+		<Option Value="3" Name="Spot Shooting" />
+		<Option Value="4" Name="Invalid" />
 	</Enum>
   </Enums>  
-  <Self Wiki="Defines parameters related to enemy behavior." Row0Dummy="" />
-  <Field>
-    <group_1_enemy_damage_id_0 AltName="[1] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_1_enemy_damage_id_1 AltName="[1] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_1_enemy_damage_id_2 AltName="[1] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_1_enemy_damage_id_3 AltName="[1] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_1_enemy_damage_id_4 AltName="[1] Enemy Damage ID 4" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_1_enemy_damage_id_5 AltName="[1] Enemy Damage ID 5" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_1_enemy_attackmove_id AltName="[1] Enemy Attack Move ID" Refs="EnemyAttackMoveParam" />
-    <group_1_damage_action_flag AltName="[1] Damage Action Flag" Enum="DamageActionFlag"/>
-    <group_1_unk02 AltName="[1] Unk02"/>
-    <group_1_unk03 AltName="[1] Unk03"/>
-    <group_1_unk04 AltName="[1] Unk04"/>
-    <group_1_enemy_bullet_id_0 AltName="[1] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_1_enemy_bullet_id_1 AltName="[1] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_1_enemy_bullet_id_2 AltName="[1] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_1_unk07 AltName="[1] Unk07"/>
-    <group_1_unk08 AltName="[1] Unk08"/>
-    <group_1_attack_speed AltName="[1] Attack Speed" Wiki="Affects both the windup and start portions of the animation"/>
-    <group_1_recovery_speed AltName="[1] Recovery Speed" Wiki="Affects both the recovery and end portions of the animation"/>
-    <group_1_unk09 AltName="[1] Unk09"/>
-    <group_1_unk10 AltName="[1] Unk10"/>
-    <group_1_unk11 AltName="[1] Unk11"/>
-    <group_1_unk12 AltName="[1] Unk12"/>
-    <group_1_unk13 AltName="[1] Unk13"/>
-    <group_1_atk_cooldown_min AltName="[1] Attack Cooldown Min" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_1_atk_cooldown_max AltName="[1] Attack Cooldown Max" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_2_enemy_damage_id_0 AltName="[2] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_2_enemy_damage_id_1 AltName="[2] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_2_enemy_damage_id_2 AltName="[2] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_2_enemy_damage_id_3 AltName="[2] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_2_enemy_damage_id_4 AltName="[2] Enemy Damage ID 4" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_2_enemy_damage_id_5 AltName="[2] Enemy Damage ID 5" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_2_enemy_attackmove_id AltName="[2] Enemy Attack Move ID" Refs="EnemyAttackMoveParam" />
-    <group_2_damage_action_flag AltName="[2] Damage Action Flag" Enum="DamageActionFlag"/>
-    <group_2_unk02 AltName="[2] Unk02"/>
-    <group_2_unk03 AltName="[2] Unk03"/>
-    <group_2_unk04 AltName="[2] Unk04"/>
-    <group_2_enemy_bullet_id_0 AltName="[2] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_2_enemy_bullet_id_1 AltName="[2] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_2_enemy_bullet_id_2 AltName="[2] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_2_unk07 AltName="[2] Unk07"/>
-    <group_2_unk08 AltName="[2] Unk08"/>
-    <group_2_attack_speed AltName="[2] Attack Speed" Wiki="Affects both the windup and start portions of the animation"/>
-    <group_2_recovery_speed AltName="[2] Recovery Speed" Wiki="Affects both the recovery and end portions of the animation"/>
-    <group_2_unk09 AltName="[2] Unk09"/>
-    <group_2_unk10 AltName="[2] Unk10"/>
-    <group_2_unk11 AltName="[2] Unk11"/>
-    <group_2_unk12 AltName="[2] Unk12"/>
-    <group_2_unk13 AltName="[2] Unk13"/>
-    <group_2_atk_cooldown_min AltName="[2] Attack Cooldown Min" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_2_atk_cooldown_max AltName="[2] Attack Cooldown Max" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_3_enemy_damage_id_0 AltName="[3] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_3_enemy_damage_id_1 AltName="[3] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_3_enemy_damage_id_2 AltName="[3] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_3_enemy_damage_id_3 AltName="[3] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_3_enemy_damage_id_4 AltName="[3] Enemy Damage ID 4" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_3_enemy_damage_id_5 AltName="[3] Enemy Damage ID 5" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_3_enemy_attackmove_id AltName="[3] Enemy Attack Move ID" Refs="EnemyAttackMoveParam" />
-    <group_3_damage_action_flag AltName="[3] Damage Action Flag" Enum="DamageActionFlag"/>
-    <group_3_unk02 AltName="[3] Unk02"/>
-    <group_3_unk03 AltName="[3] Unk03"/>
-    <group_3_unk04 AltName="[3] Unk04"/>
-    <group_3_enemy_bullet_id_0 AltName="[3] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_3_enemy_bullet_id_1 AltName="[3] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_3_enemy_bullet_id_2 AltName="[3] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_3_unk07 AltName="[3] Unk07"/>
-    <group_3_unk08 AltName="[3] Unk08"/>
-    <group_3_attack_speed AltName="[3] Attack Speed" Wiki="Affects both the windup and start portions of the animation"/>
-    <group_3_recovery_speed AltName="[3] Recovery Speed" Wiki="Affects both the recovery and end portions of the animation"/>
-    <group_3_unk09 AltName="[3] Unk09"/>
-    <group_3_unk10 AltName="[3] Unk10"/>
-    <group_3_unk11 AltName="[3] Unk11"/>
-    <group_3_unk12 AltName="[3] Unk12"/>
-    <group_3_unk13 AltName="[3] Unk13"/>
-    <group_3_atk_cooldown_min AltName="[3] Attack Cooldown Min" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_3_atk_cooldown_max AltName="[3] Attack Cooldown Max" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_4_enemy_damage_id_0 AltName="[4] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_4_enemy_damage_id_1 AltName="[4] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_4_enemy_damage_id_2 AltName="[4] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_4_enemy_damage_id_3 AltName="[4] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_4_enemy_damage_id_4 AltName="[4] Enemy Damage ID 4" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_4_enemy_damage_id_5 AltName="[4] Enemy Damage ID 5" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_4_enemy_attackmove_id AltName="[4] Enemy Attack Move ID" Refs="EnemyAttackMoveParam" />
-    <group_4_damage_action_flag AltName="[4] Damage Action Flag" Enum="DamageActionFlag"/>
-    <group_4_unk02 AltName="[4] Unk02"/>
-    <group_4_unk03 AltName="[4] Unk03"/>
-    <group_4_unk04 AltName="[4] Unk04"/>
-    <group_4_enemy_bullet_id_0 AltName="[4] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_4_enemy_bullet_id_1 AltName="[4] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_4_enemy_bullet_id_2 AltName="[4] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_4_unk07 AltName="[4] Unk07"/>
-    <group_4_unk08 AltName="[4] Unk08"/>
-    <group_4_attack_speed AltName="[4] Attack Speed" Wiki="Affects both the windup and start portions of the animation"/>
-    <group_4_recovery_speed AltName="[4] Recovery Speed" Wiki="Affects both the recovery and end portions of the animation"/>
-    <group_4_unk09 AltName="[4] Unk09"/>
-    <group_4_unk10 AltName="[4] Unk10"/>
-    <group_4_unk11 AltName="[4] Unk11"/>
-    <group_4_unk12 AltName="[4] Unk12"/>
-    <group_4_unk13 AltName="[4] Unk13"/>
-    <group_4_atk_cooldown_min AltName="[4] Attack Cooldown Min" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_4_atk_cooldown_max AltName="[4] Attack Cooldown Max" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_5_enemy_damage_id_0 AltName="[5] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_5_enemy_damage_id_1 AltName="[5] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_5_enemy_damage_id_2 AltName="[5] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_5_enemy_damage_id_3 AltName="[5] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_5_enemy_damage_id_4 AltName="[5] Enemy Damage ID 4" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_5_enemy_damage_id_5 AltName="[5] Enemy Damage ID 5" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_5_enemy_attackmove_id AltName="[5] Enemy Attack Move ID" Refs="EnemyAttackMoveParam" />
-    <group_5_damage_action_flag AltName="[5] Damage Action Flag" Enum="DamageActionFlag"/>
-    <group_5_unk02 AltName="[5] Unk02"/>
-    <group_5_unk03 AltName="[5] Unk03"/>
-    <group_5_unk04 AltName="[5] Unk04"/>
-    <group_5_enemy_bullet_id_0 AltName="[5] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_5_enemy_bullet_id_1 AltName="[5] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_5_enemy_bullet_id_2 AltName="[5] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_5_unk07 AltName="[5] Unk07"/>
-    <group_5_unk08 AltName="[5] Unk08"/>
-    <group_5_attack_speed AltName="[5] Attack Speed" Wiki="Affects both the windup and start portions of the animation"/>
-    <group_5_recovery_speed AltName="[5] Recovery Speed" Wiki="Affects both the recovery and end portions of the animation"/>
-    <group_5_unk09 AltName="[5] Unk09"/>
-    <group_5_unk10 AltName="[5] Unk10"/>
-    <group_5_unk11 AltName="[5] Unk11"/>
-    <group_5_unk12 AltName="[5] Unk12"/>
-    <group_5_unk13 AltName="[5] Unk13"/>
-    <group_5_atk_cooldown_min AltName="[5] Attack Cooldown Min" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_5_atk_cooldown_max AltName="[5] Attack Cooldown Max" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_6_enemy_damage_id_0 AltName="[6] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_6_enemy_damage_id_1 AltName="[6] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_6_enemy_damage_id_2 AltName="[6] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_6_enemy_damage_id_3 AltName="[6] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_6_enemy_damage_id_4 AltName="[6] Enemy Damage ID 4" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_6_enemy_damage_id_5 AltName="[6] Enemy Damage ID 5" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_6_enemy_attackmove_id AltName="[6] Enemy Attack Move ID" Refs="EnemyAttackMoveParam" />
-    <group_6_damage_action_flag AltName="[6] Damage Action Flag" Enum="DamageActionFlag"/>
-    <group_6_unk02 AltName="[6] Unk02"/>
-    <group_6_unk03 AltName="[6] Unk03"/>
-    <group_6_unk04 AltName="[6] Unk04"/>
-    <group_6_enemy_bullet_id_0 AltName="[6] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_6_enemy_bullet_id_1 AltName="[6] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_6_enemy_bullet_id_2 AltName="[6] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_6_unk07 AltName="[6] Unk07"/>
-    <group_6_unk08 AltName="[6] Unk08"/>
-    <group_6_attack_speed AltName="[6] Attack Speed" Wiki="Affects both the windup and start portions of the animation"/>
-    <group_6_recovery_speed AltName="[6] Recovery Speed" Wiki="Affects both the recovery and end portions of the animation"/>
-    <group_6_unk09 AltName="[6] Unk09"/>
-    <group_6_unk10 AltName="[6] Unk10"/>
-    <group_6_unk11 AltName="[6] Unk11"/>
-    <group_6_unk12 AltName="[6] Unk12"/>
-    <group_6_unk13 AltName="[6] Unk13"/>
-    <group_6_atk_cooldown_min AltName="[6] Attack Cooldown Min" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_6_atk_cooldown_max AltName="[6] Attack Cooldown Max" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_7_enemy_damage_id_0 AltName="[7] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_7_enemy_damage_id_1 AltName="[7] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_7_enemy_damage_id_2 AltName="[7] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_7_enemy_damage_id_3 AltName="[7] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_7_enemy_damage_id_4 AltName="[7] Enemy Damage ID 4" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_7_enemy_damage_id_5 AltName="[7] Enemy Damage ID 5" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_7_enemy_attackmove_id AltName="[7] Enemy Attack Move ID" Refs="EnemyAttackMoveParam" />
-    <group_7_damage_action_flag AltName="[7] Damage Action Flag" Enum="DamageActionFlag"/>
-    <group_7_unk02 AltName="[7] Unk02"/>
-    <group_7_unk03 AltName="[7] Unk03"/>
-    <group_7_unk04 AltName="[7] Unk04"/>
-    <group_7_enemy_bullet_id_0 AltName="[7] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_7_enemy_bullet_id_1 AltName="[7] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_7_enemy_bullet_id_2 AltName="[7] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_7_unk07 AltName="[7] Unk07"/>
-    <group_7_unk08 AltName="[7] Unk08"/>
-    <group_7_attack_speed AltName="[7] Attack Speed" Wiki="Affects both the windup and start portions of the animation"/>
-    <group_7_recovery_speed AltName="[7] Recovery Speed" Wiki="Affects both the recovery and end portions of the animation"/>
-    <group_7_unk09 AltName="[7] Unk09"/>
-    <group_7_unk10 AltName="[7] Unk10"/>
-    <group_7_unk11 AltName="[7] Unk11"/>
-    <group_7_unk12 AltName="[7] Unk12"/>
-    <group_7_unk13 AltName="[7] Unk13"/>
-    <group_7_atk_cooldown_min AltName="[7] Attack Cooldown Min" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_7_atk_cooldown_max AltName="[7] Attack Cooldown Max" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_8_enemy_damage_id_0 AltName="[8] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_8_enemy_damage_id_1 AltName="[8] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_8_enemy_damage_id_2 AltName="[8] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_8_enemy_damage_id_3 AltName="[8] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_8_enemy_damage_id_4 AltName="[8] Enemy Damage ID 4" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_8_enemy_damage_id_5 AltName="[8] Enemy Damage ID 5" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_8_enemy_attackmove_id AltName="[8] Enemy Attack Move ID" Refs="EnemyAttackMoveParam" />
-    <group_8_damage_action_flag AltName="[8] Damage Action Flag" Enum="DamageActionFlag"/>
-    <group_8_unk02 AltName="[8] Unk02"/>
-    <group_8_unk03 AltName="[8] Unk03"/>
-    <group_8_unk04 AltName="[8] Unk04"/>
-    <group_8_enemy_bullet_id_0 AltName="[8] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_8_enemy_bullet_id_1 AltName="[8] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_8_enemy_bullet_id_2 AltName="[8] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_8_unk07 AltName="[8] Unk07"/>
-    <group_8_unk08 AltName="[8] Unk08"/>
-    <group_8_attack_speed AltName="[8] Attack Speed" Wiki="Affects both the windup and start portions of the animation"/>
-    <group_8_recovery_speed AltName="[8] Recovery Speed" Wiki="Affects both the recovery and end portions of the animation"/>
-    <group_8_unk09 AltName="[8] Unk09"/>
-    <group_8_unk10 AltName="[8] Unk10"/>
-    <group_8_unk11 AltName="[8] Unk11"/>
-    <group_8_unk12 AltName="[8] Unk12"/>
-    <group_8_unk13 AltName="[8] Unk13"/>
-    <group_8_atk_cooldown_min AltName="[8] Attack Cooldown Min" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_8_atk_cooldown_max AltName="[8] Attack Cooldown Max" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_9_enemy_damage_id_0 AltName="[9] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_9_enemy_damage_id_1 AltName="[9] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_9_enemy_damage_id_2 AltName="[9] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_9_enemy_damage_id_3 AltName="[9] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_9_enemy_damage_id_4 AltName="[9] Enemy Damage ID 4" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_9_enemy_damage_id_5 AltName="[9] Enemy Damage ID 5" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_9_enemy_attackmove_id AltName="[9] Enemy Attack Move ID" Refs="EnemyAttackMoveParam" />
-    <group_9_damage_action_flag AltName="[9] Damage Action Flag" Enum="DamageActionFlag"/>
-    <group_9_unk02 AltName="[9] Unk02"/>
-    <group_9_unk03 AltName="[9] Unk03"/>
-    <group_9_unk04 AltName="[9] Unk04"/>
-    <group_9_enemy_bullet_id_0 AltName="[9] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_9_enemy_bullet_id_1 AltName="[9] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_9_enemy_bullet_id_2 AltName="[9] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_9_unk07 AltName="[9] Unk07"/>
-    <group_9_unk08 AltName="[9] Unk08"/>
-    <group_9_attack_speed AltName="[9] Attack Speed" Wiki="Affects both the windup and start portions of the animation"/>
-    <group_9_recovery_speed AltName="[9] Recovery Speed" Wiki="Affects both the recovery and end portions of the animation"/>
-    <group_9_unk09 AltName="[9] Unk09"/>
-    <group_9_unk10 AltName="[9] Unk10"/>
-    <group_9_unk11 AltName="[9] Unk11"/>
-    <group_9_unk12 AltName="[9] Unk12"/>
-    <group_9_unk13 AltName="[9] Unk13"/>
-    <group_9_atk_cooldown_min AltName="[9] Attack Cooldown Min" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_9_atk_cooldown_max AltName="[9] Attack Cooldown Max" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_10_enemy_damage_id_0 AltName="[10] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_10_enemy_damage_id_1 AltName="[10] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_10_enemy_damage_id_2 AltName="[10] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_10_enemy_damage_id_3 AltName="[10] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_10_enemy_damage_id_4 AltName="[10] Enemy Damage ID 4" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_10_enemy_damage_id_5 AltName="[10] Enemy Damage ID 5" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_10_enemy_attackmove_id AltName="[10] Enemy Attack Move ID" Refs="EnemyAttackMoveParam" />
-    <group_10_damage_action_flag AltName="[10] Damage Action Flag" Enum="DamageActionFlag"/>
-    <group_10_unk02 AltName="[10] Unk02"/>
-    <group_10_unk03 AltName="[10] Unk03"/>
-    <group_10_unk04 AltName="[10] Unk04"/>
-    <group_10_enemy_bullet_id_0 AltName="[10] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_10_enemy_bullet_id_1 AltName="[10] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_10_enemy_bullet_id_2 AltName="[10] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_10_unk07 AltName="[10] Unk07"/>
-    <group_10_unk08 AltName="[10] Unk08"/>
-    <group_10_attack_speed AltName="[10] Attack Speed" Wiki="Affects both the windup and start portions of the animation"/>
-    <group_10_recovery_speed AltName="[10] Recovery Speed" Wiki="Affects both the recovery and end portions of the animation"/>
-    <group_10_unk09 AltName="[10] Unk09"/>
-    <group_10_unk10 AltName="[10] Unk10"/>
-    <group_10_unk11 AltName="[10] Unk11"/>
-    <group_10_unk12 AltName="[10] Unk12"/>
-    <group_10_unk13 AltName="[10] Unk13"/>
-    <group_10_atk_cooldown_min AltName="[10] Attack Cooldown Min" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-    <group_10_atk_cooldown_max AltName="[10] Attack Cooldown Max" Wiki="Some attacks require an NPC to wait before repeating them. Time to wait will be a random value between min and max"/>
-  </Field>
 </PARAMMETA>

@@ -6,34 +6,35 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="f32 defence_slash" />
-    <Field Def="f32 defence_thrust" />
-    <Field Def="f32 defence_strike" />
-    <Field Def="f32 defence_standard" />
-    <Field Def="f32 absorption_magic" />
-    <Field Def="f32 absorption_lightning" />
-    <Field Def="f32 absorption_fire" />
-    <Field Def="f32 absorption_dark" />
-    <Field Def="f32 absorption_poison" />
-    <Field Def="f32 absorption_bleed" />
-    <Field Def="f32 absorption_petrify" />
-    <Field Def="f32 absorption_curse" />
-    <Field Def="f32 max_defence_slash" />
-    <Field Def="f32 max_defence_thrust" />
-    <Field Def="f32 max_defence_strike" />
-    <Field Def="f32 max_defence_standard" />
-    <Field Def="f32 max_absorption_magic" />
-    <Field Def="f32 max_absorption_lightning" />
-    <Field Def="f32 max_absorption_fire" />
-    <Field Def="f32 max_absorption_dark" />
-    <Field Def="f32 max_absorption_poison" />
-    <Field Def="f32 max_absorption_bleed" />
-    <Field Def="f32 max_absorption_petrify" />
-    <Field Def="f32 max_absorption_curse" />
-    <Field Def="u32 max_reinforcement_level" />
-    <Field Def="f32 Unk64" />
-    <Field Def="u32 reinforce_material" />
-    <Field Def="s32 Unk6C" />
-    <Field Def="u32 reinforce_cost_id" />
+    <Field Def="f32 minSlash" />
+    <Field Def="f32 minThrust" />
+    <Field Def="f32 minStrike" />
+    <Field Def="f32 minPhysical" />
+    <Field Def="f32 minMagic" />
+    <Field Def="f32 minThunder" />
+    <Field Def="f32 minFire" />
+    <Field Def="f32 minDark" />
+    <Field Def="f32 minPoison" />
+    <Field Def="f32 minBleeding" />
+    <Field Def="f32 minPetrifaction" />
+    <Field Def="f32 minCurse" />
+    <Field Def="f32 maxSlash" />
+    <Field Def="f32 maxThrust" />
+    <Field Def="f32 maxStrike" />
+    <Field Def="f32 maxPhysical" />
+    <Field Def="f32 maxMagic" />
+    <Field Def="f32 maxThunder" />
+    <Field Def="f32 maxFire" />
+    <Field Def="f32 maxDark" />
+    <Field Def="f32 maxPoison" />
+    <Field Def="f32 maxBleeding" />
+    <Field Def="f32 maxPetrifaction" />
+    <Field Def="f32 maxCurse" />
+    <Field Def="u8 maxLevel" />
+    <Field Def="dummy8 dummy[3]" />
+    <Field Def="f32 menuResistanceScale" />
+    <Field Def="u32 attrSpec" />
+    <Field Def="u32 attrCost" />
+    <Field Def="u32 reinforceCost" />
   </Fields>
 </PARAMDEF>

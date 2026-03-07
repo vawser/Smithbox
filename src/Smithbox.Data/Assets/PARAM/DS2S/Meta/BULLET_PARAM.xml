@@ -14,7 +14,7 @@
 		<Option Value="5" Name="Forward - Child" />
 	</Enum>
   </Enums>
-  <Self Wiki="Defines parameters relating to projectiles." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating to projectiles."  />
   <Field>
     <sfx_id AltName="SFX ID" Wiki="The SFX ID of this particular bullet. Sometimes unlisted here and sometimes provided by the EMEVD."/>
     <spawn_location AltName="Spawn Location" Wiki="Where the bullet will spawn in relation to the parent." Enum="SpawnLocation"/>

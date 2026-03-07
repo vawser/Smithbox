@@ -6,42 +6,41 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="s32 lock_on_1" />
-    <Field Def="s32 lock_on_2" />
-    <Field Def="s32 lock_on_3" />
-    <Field Def="s16 Unk01" />
-    <Field Def="s16 Unk02" />
-    <Field Def="s32 area_flag_id" />
-    <Field Def="s32 map_id" />
-    <Field Def="s16 Unk03" />
-    <Field Def="s16 Unk04" />
-    <Field Def="s16 Unk05" />
-    
-    <Field Def="f32 Unk06" />
-    
-    <Field Def="u8 Unk07" />
-    <Field Def="u8 Unk08" />
-    
-    <Field Def="f32 Unk09" />
-    
-    <Field Def="f32 Unk10" />
-    
-    <Field Def="s32 mimicry_map_object_1" />
-    <Field Def="s32 mimicry_map_object_2" />
-    <Field Def="s32 mimicry_map_object_3" />
-    <Field Def="s32 mimicry_map_object_4" />
-    <Field Def="s32 mimicry_map_object_5" />
-    
-    <Field Def="f32 Unk17" />
-    <Field Def="f32 Unk18" />
-    <Field Def="f32 Unk19" />
-    <Field Def="f32 Unk20" />
-    <Field Def="f32 Unk21" />
-    <Field Def="f32 Unk22" />
-    <Field Def="f32 Unk23" />
-    <Field Def="f32 Unk24" />
-    <Field Def="f32 Unk25" />
-    <Field Def="f32 Unk26" />
+    <Field Def="u8 intrudeEnable" />
+    <Field Def="dummy8 aReserved[3]" />
+    <Field Def="s32 lockOnId" />
+    <Field Def="s32 lockOnIdDark" />
+    <Field Def="s32 lockOnIdTorch" />
+    <Field Def="u8 isPriorityLockOnIdTorch" />
+    <Field Def="u8 isAbyss" />
+    <Field Def="u8 waterMaterial" />
+    <Field Def="dummy8 aReserved1[1]" />
+    <Field Def="s32 cameraId" />
+    <Field Def="s32 playerLightSfxId" />
+    <Field Def="f32 logicSoundDistance" />
+    <Field Def="f32 staminaCostScaleDash" />
+    <Field Def="u32 fallWaterSfxId" />
+    <Field Def="u8 chameleonEnableRare" />
+    <Field Def="u8 chameleonWeight1" />
+    <Field Def="u8 chameleonWeight2" />
+    <Field Def="u8 chameleonWeight3" />
+    <Field Def="u8 chameleonWeight4" />
+    <Field Def="u8 chameleonWeight5" />
+    <Field Def="dummy8 aReserved2[2]" />
+    <Field Def="s32 chameleonId1" />
+    <Field Def="s32 chameleonId2" />
+    <Field Def="s32 chameleonId3" />
+    <Field Def="s32 chameleonId4" />
+    <Field Def="s32 chameleonId5" />
+    <Field Def="f32 chameleonAngle1" />
+    <Field Def="f32 chameleonAngle2" />
+    <Field Def="f32 chameleonAngle3" />
+    <Field Def="f32 chameleonAngle4" />
+    <Field Def="f32 chameleonAngle5" />
+    <Field Def="f32 chameleonHeight1" />
+    <Field Def="f32 chameleonHeight2" />
+    <Field Def="f32 chameleonHeight3" />
+    <Field Def="f32 chameleonHeight4" />
+    <Field Def="f32 chameleonHeight5" />
   </Fields>
 </PARAMDEF>

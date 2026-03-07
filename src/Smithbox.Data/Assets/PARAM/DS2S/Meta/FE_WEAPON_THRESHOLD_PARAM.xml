@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the weapon statistics interface." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to the weapon statistics interface."  />
   <Field>
     <scaling_display_S AltName="Scaling Display: S"/>
     <scaling_display_A AltName="Scaling Display: A"/>

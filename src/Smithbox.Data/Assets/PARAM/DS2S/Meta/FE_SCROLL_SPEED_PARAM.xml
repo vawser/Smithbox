@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the scroll duration during credits." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to the scroll duration during credits."  />
   <Field>
     <scroll_duration AltName="Duration"/>
   </Field>

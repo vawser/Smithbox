@@ -19,7 +19,7 @@
 		<Option Value="17" Name="Binocular - Precision Shoot" />
 	</Enum>
   </Enums>
-  <Self Wiki="Defines parameters relating to weapon animations." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating to weapon animations."  />
   <Field>
     <animation_id AltName="Animation ID" />
     <attack_type AltName="Attack Type" Enum="AttackType" />

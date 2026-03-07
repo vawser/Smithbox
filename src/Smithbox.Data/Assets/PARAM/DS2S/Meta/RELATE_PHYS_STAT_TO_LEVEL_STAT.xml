@@ -15,7 +15,7 @@
 		<Option Value="11" Name="Unused" />
 	</Enum>
   </Enums>
-  <Self Wiki="Defines parameters relating statistics to level." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating statistics to level."  />
   <Field>
     <attunement_slots AltName="Attunement Slots" Enum="LevelUpStat" />
     <cast_tier AltName="Cast Tier" Enum="LevelUpStat" />

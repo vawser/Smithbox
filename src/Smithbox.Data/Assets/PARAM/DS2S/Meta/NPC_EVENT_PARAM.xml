@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related NPC events and conversations." Row0Dummy="" />
+  <Self Wiki="Defines parameters related NPC events and conversations."  />
   <Field>
     <shopLineupStartRow AltName="Shop Lineup - Start Row ID" Refs="ShopLineupParam" />
     <shopLineupEndRow AltName="Shop Lineup - End Row ID" Refs="ShopLineupParam" />

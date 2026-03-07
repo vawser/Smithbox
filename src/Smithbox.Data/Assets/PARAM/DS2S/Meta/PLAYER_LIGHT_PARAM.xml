@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters that control the local player light." Row0Dummy="" />
+  <Self Wiki="Defines parameters that control the local player light."  />
   <Field>
     <offset_x AltName="Offset: X" />
     <offset_y AltName="Offset: Y" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to infusion cost." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to infusion cost." />
   <Field>
     <infusion_1_cost AltName="Infusion 1 - Cost"/>
     <infusion_2_cost AltName="Infusion 2 - Cost"/>

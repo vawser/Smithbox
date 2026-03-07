@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the player." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to the player."  />
   <Field>
     <roll_input_wait_time AltName="Rolling Input Wait Time" />
     <sprint_stamina_drain_time AltName="Latent Sprint Stamina Drain Duration" />

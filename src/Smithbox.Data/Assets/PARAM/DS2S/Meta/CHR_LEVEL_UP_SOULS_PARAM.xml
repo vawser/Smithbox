@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters that control the cost of leveling up." Row0Dummy="" />
+  <Self Wiki="Defines parameters that control the cost of leveling up."  />
   <Field>
     <soul_level AltName="Soul Level"/>
     <soul_level_cost AltName="Soul Level Cost"/>

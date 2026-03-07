@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to object actions." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to object actions."  />
   <Field>
     <obj_act_id AltName="Object Act ID"/>
     <activation_radius AltName="Activation Radius"/>

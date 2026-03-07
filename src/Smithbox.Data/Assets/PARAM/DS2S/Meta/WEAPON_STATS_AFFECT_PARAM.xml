@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters relating to weapon statistics per reinforcement level." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating to weapon statistics per reinforcement level."  />
   <Field>
     <base_damage_mult AltName="Base Damage %" />
     <level_0_physical_scaling_str AltName="+0 - Physical Scaling: STR" />

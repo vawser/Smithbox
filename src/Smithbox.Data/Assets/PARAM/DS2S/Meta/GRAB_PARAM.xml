@@ -11,7 +11,7 @@
 		<Option Value="1" Name="Angle" />
 	</Enum>
   </Enums>
-  <Self Wiki="Defines parameters related to grabs." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to grabs."  />
   <Field>
    <attacker_dummy_poly_id AltName="Attacker Dummy Poly ID" />
    <attacker_orientation AltName="Attacker Orientation" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the SFX used for footsteps in water." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to the SFX used for footsteps in water."  />
   <Field>
     <foot_sfx_0 AltName="Footstep SFX [0]"/>
     <foot_sfx_1 AltName="Footstep SFX [1]"/>

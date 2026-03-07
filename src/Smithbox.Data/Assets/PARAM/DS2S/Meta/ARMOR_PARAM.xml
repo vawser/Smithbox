@@ -1,35 +1,199 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters relating to equippable armor." />
+  <Field>
+    <armorId 
+    AltName="Armor ID" 
+    Wiki="The ID for this armor set. Do not forget this when creating custom armor." />
+    
+    <armorType
+    AltName="Armor Type"
+    Wiki="The type of armor this is." 
+    Enum="ARMOR_TYPE" />
+    
+    <armorCategory 
+    AltName="Armor Category"
+    Wiki="The category this armor belongs to."
+    Enum="EQUIP_CATEGORY" />
+    
+    <dummy0
+    Padding="" />
+    
+    <modelId 
+    AltName="Armor Model ID" 
+    Wiki="The model to use for this armor." />
+    
+    <modelGender 
+    AltName="Armor Model Gender" 
+    Wiki="The gender to use for this armor model." 
+    Enum="EQUIP_MODEL_GENDER" />
+    
+    <dummy1
+    Padding="" />
+    
+    <clothCollidableId
+    AltName="Cloth Collidable ID"
+    Wiki="The cloth collidable parameters to use for this armor." />
+    
+    <interfereId 
+    AltName="Armor Interference Data ID" 
+    Wiki="The parameters for armor interference for this armor."
+    Refs="EquipInterfereParam" />
+    
+    <iconId
+    AltName="Icon ID"
+    Wiki="The icon ID to use for this armor." />
+    
+    <armorReinforceId 
+    AltName="Armor Reinforce ID" 
+    Wiki="The reinforcement parameters to use for this armor."
+    Refs="ArmorReinforceParam" />
+    
+    <defenseStatAffectScale 
+    AltName="Defence Scaling: Status Effect" 
+    Wiki="The status effect multiplier applied to defence power." />
+    
+    <defenseSlashScale 
+    AltName="Defence Scaling: Slash" 
+    Wiki="The slash multiplier applied to defence power." />
+    
+    <defenseThrustScale 
+    AltName="Defence Scaling: Thrust" 
+    Wiki="The slash multiplier applied to defence power." />
+    
+    <defenseStrikeScale 
+    AltName="Defence Scaling: Strike" 
+    Wiki="The slash multiplier applied to defence power." />
+    
+    <prerequisiteStrength 
+    AltName="Requirement: STR" 
+    Wiki="The strength requirement to wield this armor." />
+    
+    <prerequisiteDexterity 
+    AltName="Requirement: DEX" 
+    Wiki="The dexterity requirement to wield this armor." />
+    
+    <prerequisiteIntelligence 
+    AltName="Requirement: INT" 
+    Wiki="The intelligence requirement to wield this armor." />
+    
+    <prerequisiteFaith 
+    AltName="Requirement: FTH" 
+    Wiki="The faith requirement to wield this armor." />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="The weight of this armor." />
+    
+    <durability 
+    AltName="Durability" 
+    Wiki="The durability of this armor" />
+    
+    <repairCost 
+    AltName="Repair Cost" 
+    Wiki="The repair cost (in souls) for this armor." />
+    
+    <poise 
+    AltName="Poise" 
+    Wiki="The poise value for this armor." />
+    
+    <handsUpWeight 
+    AltName="Arm Position: Side Opening %" 
+    Wiki="The side opening percentage of the arms when this armor is equipped." />
+    
+    <handsUpFLevel
+    AltName="Arm Position: Armpit Raise"
+    Wiki="The arm pit level of the arms when this armor is equipped." />
+    
+    <itemDropWeight 
+    AltName="Item Discovery Correction %" 
+    Wiki="The correction percentage to apply to Item Discovery when this armor is equipped." />
+    
+    <material
+    AltName="Hit Material"
+    Wiki="The hit material to use when this armor is equipped."
+    Enum="MATERIAL_TYPE_ENUM" />
+    
+    <brokenSfxId
+    AltName="Broken SFX ID"
+    Wiki="The SFX ID to use when this armor is broken"
+    ParticleAlias="" />
+    
+    <brokenSoundType
+    AltName="Broken Sound Type"
+    Wiki="The sound type to use when this armor is broken."
+    Enum="EQUIP_BREAK_SOUND_MATERIAL_TYPE" />
+  </Field>
+  
   <Enums>
-    <Enum Name="Slot">
-      <Option Value="255" Name="Debug" />
+    <Enum Name="EQUIP_CATEGORY">
+      <Option Value="0" Name="Facial Parts" />
       <Option Value="1" Name="Head" />
-      <Option Value="2" Name="Body" />
+      <Option Value="2" Name="Chest" />
       <Option Value="3" Name="Arms" />
-      <Option Value="4" Name="Legs" />
+      <Option Value="4" Name="Feet" />
+      <Option Value="5" Name="Accessory" />
+      <Option Value="6" Name="Other" />
+      <Option Value="7" Name="Number of Types" />
+      <Option Value="-1" Name="Illegal Equipment Type" />
+    </Enum>
+    <Enum Name="ARMOR_TYPE">
+      <Option Value="0" Name="Naked" />
+      <Option Value="1" Name="Cloth" />
+      <Option Value="2" Name="Leather" />
+      <Option Value="3" Name="Iron" />
+      <Option Value="4" Name="Barrel" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_GENDER">
+      <Option Value="0" Name="Shared" />
+      <Option Value="1" Name="Mixed" />
+      <Option Value="2" Name="Gender" />
+    </Enum>
+    <Enum Name="MATERIAL_TYPE_ENUM">
+      <Option Value="0" Name="No Setting" />
+      <Option Value="1" Name="None" />
+      <Option Value="2" Name="Iron" />
+      <Option Value="3" Name="Heavy Iron" />
+      <Option Value="4" Name="Wood" />
+      <Option Value="5" Name="Water" />
+      <Option Value="6" Name="Swamp" />
+      <Option Value="7" Name="Wood" />
+      <Option Value="8" Name="Living Flesh" />
+      <Option Value="9" Name="Dead Flesh" />
+      <Option Value="10" Name="Insect" />
+      <Option Value="11" Name="Giant" />
+      <Option Value="12" Name="Bone" />
+      <Option Value="13" Name="Copper" />
+      <Option Value="14" Name="Energy" />
+      <Option Value="15" Name="Fire" />
+      <Option Value="16" Name="Lightning" />
+      <Option Value="17" Name="Dark" />
+      <Option Value="18" Name="Magic" />
+      <Option Value="19" Name="Stone" />
+      <Option Value="20" Name="Earth" />
+      <Option Value="21" Name="Carpet" />
+      <Option Value="22" Name="Grass" />
+      <Option Value="23" Name="Gravel" />
+      <Option Value="24" Name="Cloth" />
+      <Option Value="25" Name="Sand" />
+      <Option Value="26" Name="Ash" />
+      <Option Value="27" Name="Poison Swamp" />
+      <Option Value="28" Name="Oil" />
+      <Option Value="29" Name="Tar" />
+      <Option Value="30" Name="Lava" />
+      <Option Value="31" Name="Spider Silk" />
+      <Option Value="32" Name="Sulfur Crystal" />
+      <Option Value="33" Name="Soul" />
+      <Option Value="34" Name="Beautiful Voice Frog" />
+      <Option Value="35" Name="Material Count" />
+    </Enum>
+    <Enum Name="EQUIP_BREAK_SOUND_MATERIAL_TYPE">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Iron" />
+      <Option Value="2" Name="Wood" />
+      <Option Value="3" Name="Cloth" />
+      <Option Value="4" Name="Soul" />
     </Enum>
   </Enums>
-  <Self Wiki="Defines parameters relating to equippable armor." Row0Dummy="" />
-  <Field>
-    <armor_set_id AltName="Armor ID" Wiki="The ID for this armor set. Do not forget this when creating custom armor." />
-    <slot_category AltName="Slot Category" Enum="Slot" />
-    <model_id AltName="Model ID" />
-    <has_gendered_armor AltName="Has Gendered Armor" IsBool="" />
-    <equip_interfere_id AltName="Equip Interfere ID" Refs="EquipInterfereParam" />
-    <armor_reinforce_id AltName="Armor Reinforce ID" Refs="ArmorReinforceParam" />
-    <physical_defence_scaling AltName="Scaling: Physical Defence" />
-    <strength_requirement AltName="Requirement: STR" />
-    <dexterity_requirement AltName="Requirement: DEX" />
-    <intelligence_requirement AltName="Requirement: INT" />
-    <faith_requirement AltName="Requirement: FTH" />
-    <weight AltName="Weight" />
-    <durability AltName="Durability" />
-    <repair_cost AltName="Repair Cost" />
-    <poise AltName="Poise" />
-    <control_parameters_blend_weight_1h AltName="Blend Weight - 1H - Hands Up" />
-    <control_parameters_blend_weight_2h AltName="Blend Weight - 2H - Hands Up" />
-    <item_discovery AltName="Additional Item Discovery" />
-    <Unk15 AltName="Damage Effect SE or Material" Refs="DamageEffectMaterialParam,DamageEffectSeParam"/>
-    <Unk17 AltName="Damage Effect SFX" Refs="DamageEffectSfxParam" />
-  </Field>
+  
 </PARAMMETA>

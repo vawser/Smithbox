@@ -2,6 +2,12 @@
 # TODO 
 #---------------------
 
+- Map Editor
+ - Fix DS2 BTL load (currently doesn't load them into the bank)
+ 
+- Param Editor
+ - Fix the FMG ref finder (the finder is inconsistent)
+
 - Material Editor:
  - Add MATBIN support back
  

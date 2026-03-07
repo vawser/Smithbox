@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters relating to NPC shops and boss soul exchanges." Row0Dummy="" />
+  <Self Wiki="Defines parameters relating to NPC shops and boss soul exchanges."  />
   <Field>
     <item_id AltName="Item ID" Refs="ItemParam" Wiki="The item to offer." />
     <enable_flag AltName="Enable Flag" Wiki="The item is visible when this flag is ON." />

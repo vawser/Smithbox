@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to infusion availability." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to infusion availability." />
   <Field>
 	  <allowed_infusion_basic AltName="Allowed Infusion: Basic" IsBool=""/>
 	  <allowed_infusion_fire AltName="Allowed Infusion: Fire" IsBool=""/>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the lock-on camera." Row0Dummy="" />
+  <Self Wiki="Defines parameters related to the lock-on camera."  />
   <Field>   
     <max_distance_auto_release AltName="Max Distance Auto Release"/>
     <max_distance_initiate AltName="Max Distance Initiate"/>

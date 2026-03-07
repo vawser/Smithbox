@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters that control the effect equip load has on various mechanics." Row0Dummy="" />
+  <Self Wiki="Defines parameters that control the effect equip load has on various mechanics."  />
   <Field>
     <load_percent_breakpoint_1 AltName="Load % Breakpoint 1"/>
     <load_percent_breakpoint_2 AltName="Load % Breakpoint 2"/>
