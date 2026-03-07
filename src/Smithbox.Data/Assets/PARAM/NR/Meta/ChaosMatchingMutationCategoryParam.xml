@@ -4,7 +4,35 @@
   Wiki="" />
   
   <Field>
-    
+    <depth1Count
+	AltName="Depth 1 Count"
+	Wiki="Number of mutations in this category for depth 1." />
+	
+	<depth2Count
+	AltName="Depth 2 Count"
+	Wiki="Number of mutations in this category for depth 2." />
+	
+	<depth3Count
+	AltName="Depth 3 Count"
+	Wiki="Number of mutations in this category for depth 3." />
+	
+	<depth4Count
+	AltName="Depth 4 Count"
+	Wiki="Number of mutations in this category for depth 4." />
+	
+	<depth5Count
+	AltName="Depth 5 Count"
+	Wiki="Number of mutations in this category for depth 5." />
+	
+	<categoryId
+	AltName="Category ID"
+	Wiki="Used with ChaosMatchingMutationEnemyTableParam, for determining which mutation category to use."
+	ProjectEnum="MUTATION_CATEGORY" />
+	
+	<modifierMapId
+	AltName="Modifier ID"
+	Wiki="Modifier to apply to."
+	ProjectEnum="PATTERN_MODIFIER" />
   </Field>
   
   <Enums>

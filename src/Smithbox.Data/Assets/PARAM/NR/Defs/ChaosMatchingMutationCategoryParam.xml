@@ -7,14 +7,14 @@
   <FormatVersion>0</FormatVersion>
   <!-- FirstVersion="10200000" -->
   <Fields>
-    <Field Def="u16 unk_00a"/>
-    <Field Def="u16 unk_00b"/>
-    <Field Def="u16 unk_01a"/>
-    <Field Def="u16 unk_01b"/>
-    <Field Def="u16 unk_02a"/>
+    <Field Def="u16 depth1Count"/>
+    <Field Def="u16 depth2Count"/>
+    <Field Def="u16 depth3Count"/>
+    <Field Def="u16 depth4Count"/>
+    <Field Def="u16 depth5Count"/>
     <Field Def="u8 unk_02c"/>
-    <Field Def="u8 unk_02d"/>
-    <Field Def="s32 unk_03"/>
+    <Field Def="u8 categoryId"/>
+    <Field Def="s32 modifierMapId"/>
     
     <Field Def="dummy8 endPadding[4]"/>
   </Fields>
