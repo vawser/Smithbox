@@ -261,7 +261,13 @@ namespace StudioCore.Logger.GUI
             var times = count == 1 ? "" : $" [x{count}]";
             var scopeName = logEvent.Category;
             var formatted =
+                $"[{logEvent.Time:HH:mm:ss}]{times} {msg}";
+
+            if(CFG.Current.Logger_Enable_Scope_Logging)
+            {
+                formatted =
                 $"[{logEvent.Time:HH:mm:ss}]{times} [{scopeName}] {msg}";
+            }
 
             return new(logEvent, formatted, count);
         }

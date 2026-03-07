@@ -53,6 +53,7 @@ public class CFG
     public int Logger_Warning_Fade_Time = 1500;
     public bool Logger_Enable_Color_Fade = true;
     public bool Logger_Enable_Log_Popups = true;
+    public bool Logger_Enable_Scope_Logging = false;
 
     public bool Developer_Enable_Tools = false;
     public string Developer_Smithbox_Build_Folder = "";
