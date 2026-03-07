@@ -70,6 +70,7 @@
     <judgeRangeBasePosDmyId2 AltName="Defender - Throwing Range Judgment - Dummy Poly ID" Wiki="Damipoli that the thrower considers to be his position when calculating the throw range. If -1, the capsule origin" />
     <adsrobModelPosInterpolationTime AltName="Absorb Model Position Interpolation Time" Wiki="After the capsule is adsorbed on Damipoli, the time it takes for the character model to interpolate and move to the position according to the throwing animation data (when 0 is set, the model position is not interpolated and playback starts immediately after adsorption with the positional relationship according to the animation data. Will be)" />
     <throwFollowingEndEasingTime AltName="Throw Following End Easing Time" Wiki="Model position interpolation time at the end of tracking" />
+	<defAnimIdOffset AltName="Animation Offset" Wiki="ID offset of the receiving animation" />
     <UnkInt0x6C Padding=""/>
     <UnkInt0x70 Padding=""/>
     <UnkInt0x74 Padding=""/>
@@ -78,6 +79,9 @@
     <UnkInt0x80 Padding=""/>
     <padding1 Padding=""/>
     <padding2 Padding=""/>
+	<isIgnoreMaphitAdjustThrow AltName="Disable Map Hit" Wiki="Whether to disable map hits while adjusting throw position" />
+	<atkSorbDmyId_old AltName="[OLD] Attacker - Absorb Dummy ID" Wiki="Obsolete." />
+	<defSorbDmyId_old AltName="[OLD] Defender - Absorb Dummy ID" Wiki="Obsolete." />
   </Field>
-  <Self />
+  <Self Wiki="Defines some settings for grabbing and throwing entities and objects." />
 </PARAMMETA>

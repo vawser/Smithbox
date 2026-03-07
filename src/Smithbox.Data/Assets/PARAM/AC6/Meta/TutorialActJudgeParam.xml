@@ -51,5 +51,5 @@
     
     <ExtActionType AltName="Extended Behavior Type" Wiki="" Enum="TUTORIAL_EXT_ACTJUDGE_TYPE" />
   </Field>
-  <Self />
+  <Self Wiki="Judgement for whether tutorial inputs happen." />
 </PARAMMETA>

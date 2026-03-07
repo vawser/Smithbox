@@ -1,27 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <defRate_Kinetic AltName="Defence %: Kinetic" Wiki="Physical defense correction value" />
-    <defRate_Energy AltName="Defence %: Energy" Wiki="Magic defense correction value" />
-    <defRate_Explosive AltName="Defence %: Explosive" Wiki="Fire defense correction value" />
-    <defRate_Coral AltName="Defence %: Coral" Wiki="Electric shock defense correction value" />
-    <defRate_Slash AltName="Defence %: Slash" Wiki="Slash defense correction value" />
-    <defRate_Strike AltName="Defence %: Strike" Wiki="Impact defense correction value" />
-    <defRate_Thrust AltName="Defence %: Thrust" Wiki="Correction value of piercing defense power" />
-    <resistRate_AcsAnomaly AltName="Status Resist %: ACS Anomaly" Wiki="Poison resistance correction value" />
-    <resistRate_ElecDischarge AltName="Status Resist %: Electric Discharge" Wiki="Epidemic resistance correction value" />
-    <resistRate_Plasma AltName="Status Resist %: Plasma" Wiki="Bleeding resistance correction value" />
-    <resistRate_ElecDischargeType2 AltName="Status Resist %: Electric Discharge (Type 2)" Wiki="Curse resistance correction value" />
+    <physicsDefRate AltName="Defence %: Kinetic" Wiki="Kinetic defense correction value" />
+    <magicDefRate AltName="Defence %: Energy" Wiki="Energy defense correction value" />
+    <fireDefRate AltName="Defence %: Explosive" Wiki="Explosion defense correction value" />
+    <thunderDefRate AltName="Defence %: Coral" Wiki="Coral shock defense correction value" />
+    <slashDefRate AltName="Defence %: Slash" Wiki="Slash defense correction value" />
+    <blowDefRate AltName="Defence %: Strike" Wiki="Impact defense correction value" />
+    <thrustDefRate AltName="Defence %: Thrust" Wiki="Pierce defense correction value" />
+    <resistBurnRate AltName="Status Resist %: ACS Anomaly" Wiki="ACS Anomaly resistance correction value" />
+    <resistStunRate AltName="Status Resist %: Electric Discharge" Wiki="Electric Discharge resistance correction value" />
+    <resistHighPlasmaRate AltName="Status Resist %: Plasma" Wiki="High Plasma resistance correction value" />
+    <resistCurseRate AltName="Status Resist %: Electric Discharge (Type 2)" Wiki="Electric Discharge (Type 2) resistance correction value" />
     <residentSpEffectId1 AltName="Passive SpEffect ID [1] Offset" Wiki="Addition correction value for resident special effect ID1" />
     <residentSpEffectId2 AltName="Passive SpEffect ID [2] Offset" Wiki="Addition correction value for resident special effect ID2" />
     <residentSpEffectId3 AltName="Passive SpEffect ID [3] Offset" Wiki="Addition correction value for resident special effect ID3" />
     <materialSetId AltName="Reinforcement Material Set ID" Wiki="Addition correction value of material parameter ID" />
-    <defRate_Unknown AltName="Absorption %: Unknown" Wiki="Dark defense correction value" />
-    <resistRate_Uranium AltName="Status Resist %: Uranium" Wiki="Cold resistance correction value" />
-    <float_UnkC AltName="Unknown %: Unknown" />
+    <darkDefRate AltName="Absorption %: Dark" Wiki="Dark defense correction value" />
+    <resistDepletedUraniumToxicRate AltName="Status Resist %: Uranium" Wiki="Uranium resistance correction value" />
+    <ApRate AltName="AP %: Armor Points" Wiki="Multiplies part AP. 1.000 = 100%" />
     
-    <UnkInt0x00 Padding="" />
-    <UnkInt0x40 Padding="" />
+    <pad Padding="" />
   </Field>
   <Self ConsecutiveIDs="" Wiki="Defines upgrades of Armor. Unused in AC6." />
 </PARAMMETA>

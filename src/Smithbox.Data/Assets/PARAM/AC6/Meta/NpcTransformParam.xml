@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
-  <Self />
+  <Field>
+    <lockDmyPoly0 AltName="Lock-on Dummy Poly 220" Wiki="Is the lock-on dummy poly 220 available?" IsBool="" />
+	<lockDmyPoly1 AltName="Lock-on Dummy Poly 221" Wiki="Is the lock-on dummy poly 221 available?" IsBool="" />
+	<lockDmyPoly2 AltName="Lock-on Dummy Poly 222" Wiki="Is the lock-on dummy poly 222 available?" IsBool="" />
+	<lockDmyPoly3 AltName="Lock-on Dummy Poly 223" Wiki="Is the lock-on dummy poly 223 available?" IsBool="" />
+	<lockDmyPoly4 AltName="Lock-on Dummy Poly 224" Wiki="Is the lock-on dummy poly 224 available?" IsBool="" />
+	<lockDmyPoly5 AltName="Lock-on Dummy Poly 225" Wiki="Is the lock-on dummy poly 225 available?" IsBool="" />
+	<lockDmyPoly6 AltName="Lock-on Dummy Poly 226" Wiki="Is the lock-on dummy poly 226 available?" IsBool="" />
+	<lockDmyPoly7 AltName="Lock-on Dummy Poly 227" Wiki="Is the lock-on dummy poly 227 available?" IsBool="" />
+	<pad Padding="" />
+  </Field>
+  <Self wiki="Defines whether certain lock-on points are enabled for larger enemies with multiple lock-on points." />
 </PARAMMETA>

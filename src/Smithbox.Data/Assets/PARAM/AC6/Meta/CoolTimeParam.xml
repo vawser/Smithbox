@@ -8,7 +8,7 @@
     AltName="Limitation Time: 0 Co-op Clients" 
     Wiki="Time limit [sec] (number of cooperating spirits 0)" />
     
-    <coop0_observeTime_0 
+    <coop0_observeTime_
     AltName="Observation Time: 0 Co-op Clients" 
     Wiki="Monitoring time [sec] (number of cooperating spirits 0)" />
     

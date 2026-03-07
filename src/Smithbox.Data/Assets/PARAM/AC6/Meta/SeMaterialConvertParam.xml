@@ -38,8 +38,8 @@
   <Field>
     <seMaterialId AltName="SE Material ID" Wiki="Conversion from SFX material ID (3 digits) to SE material ID (2 digits)" Enum="MATERIAL_SE_TYPE" />
     <pad1 Padding="" />
-    <materialName AltName="Material Name" />
-    <endPadding Padding=""/>
+    <seMaterialNameStr AltName="SE material name string" Wiki="Half-width string (maximum 16 characters) for calling SEs in Wwise" />
+    <tailPad Padding=""/>
   </Field>
-  <Self />
+  <Self Wiki="Defines what sounds will play depending on environment materials." />
 </PARAMMETA>

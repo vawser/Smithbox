@@ -47,5 +47,5 @@
     <edgePower AltName="Edge Width" Wiki="Edge width" />
     <glowScale AltName="Glow Strength" Wiki="Glow strength" />
   </Field>
-  <Self />
+  <Self Wiki="Settings for phantom and spirit appearances. Unused in AC6." />
 </PARAMMETA>

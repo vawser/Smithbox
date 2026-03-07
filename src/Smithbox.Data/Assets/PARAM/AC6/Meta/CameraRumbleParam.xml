@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <rumbleId AltName="Rumble ID" Wiki="ID of the rumble type to use." />
+	<hdPadRumbleId AltName="HD Pad Rumble ID" Wiki="ID of the rumble type to use for HD Pads." />
+	<beginDist AltName="Attenuation Start Distance" Wiki="In meters." />
+	<endDist AltName="Attenuation End Distance" Wiki="In meters." />
+	<fovApplyType AltName="FoV Type" Wiki="Field of View application method." Enum="CAMERA_RUMBLE_PARAM_FOV_TYPE" />
+	<priority AltName="Priority" Wiki="Higher values correlate to higher priority." />
+	<targetType AltName="Vibration Target (PC)" Wiki="Only valid when called from a PC TAE. Setting this to ''PC Only'' disabled distance attenuation-related parameters." />
+	<isUpdateDist AltName="Attenuation Update Distance" Wiki="Distance at which attenuation is reflected in real time." />
+	<isUpdateLand AltName="Ground Magnification" Wiki="Magnification to apply to the rumble when on land." />
+	<hdPadSlotIdx AltName="HD Rumble Playback Slot Index" Wiki="0-3" />
+	<lifeTimeSec AltName="Lifespan" Wiki="Rumble lifespan, in seconds." />
+	<stopRate AltName="Dampening Rate [%]" Wiki="Rumble dampening rate, in %." />
+	<stopBeginDist AltName="Dampening Start Distance" Wiki="Distance at which dampening begins." />
+	<stopEndDist AltName="Dampening End Distance" Wiki="Distance at which dampening ends." />
+	<timeChangeRate AltName="Time Change Rate [%]" Wiki="Vibration end magnification." />
+	<changeTime AltName="Change Time" Wiki="In seconds." />
+	<airRateSelf AltName="Air Rate (Self)" Wiki="Rumble magnification while in the air." />
+	<landRateSelf AltName="Ground Rate (Self)" Wiki="Rumble magnification while on the ground." />
+	<airRateAnother AltName="Air Rate (NPC)" Wiki="Rumble magnification for airborne NPCs." />
+	<landRateAnother AltName="Ground Rate (NPC)" Wiki="Rumble magnification for NPCs on the ground." />
+	<pad03 Padding="" />
+	<pad_end Padding="" />
+  </Field>
+  <Self Wiki="Defines certain gamepad vibration settings." />
+</PARAMMETA>

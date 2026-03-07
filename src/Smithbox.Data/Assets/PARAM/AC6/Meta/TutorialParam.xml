@@ -46,14 +46,20 @@
     </Enum>
   </Enums>
   <Field>
-    <menuResourceType AltName="Menu Resource Type" Enum="TUTORIAL_MENU_RESOURCE_TYPE" />
-    
-    <menuResourceId AltName="Menu Resource ID" Wiki="ID of the resource to use." MovieAlias="menuResourceType=105" />
-    
-    <tutorialActJudgeId1 AltName="Tutorial Act Judge ID [1]" Refs="TutorialActJudgeParam" />
-    <tutorialActJudgeId2 AltName="Tutorial Act Judge ID [2]" Refs="TutorialActJudgeParam" />
-    <tutorialActJudgeId3 AltName="Tutorial Act Judge ID [3]" Refs="TutorialActJudgeParam" />
-    <tutorialActJudgeId4 AltName="Tutorial Act Judge ID [4]" Refs="TutorialActJudgeParam" />
+    <MenuResourceType AltName="Menu Resource Type" Enum="TUTORIAL_MENU_RESOURCE_TYPE" />
+	<reserve0 Padding="" />
+    <ImageID AltName="Menu Resource ID" Wiki="ID of the resource to use." MovieAlias="menuResourceType=105" />
+	<reserve1 Padding="" />
+	<reserve_2 Padding="" />
+	<OpenSE AltName="Open SE ID" Wiki="SE to play when the tutorial opens" />
+	<CloseSE AltName="Close SE ID" Wiki="SE to play when the tutorial closes" />
+	<RepeatType AltName="Repeat Type" Wiki="Determines whether or not the tutorial can replay" Enum="TUTORIAL_REPEAT_TYPE" />
+    <enableMultiResponseKeyguide AltName="Multi-Response" Wiki="Whether to allow multiple simultaneous response displays" IsBool="" />
+	<UnlockEventFlagID AltName="Display Event Flag" Wiki="Event flag ID for display permission. Will not be displayed until the specified event flag is set (0: Always allowed)" />
+	<Keyguide0_ActJudgeParamID AltName="Tutorial Act Judge ID [1]" Refs="TutorialActJudgeParam" />
+    <Keyguide1_ActJudgeParamID AltName="Tutorial Act Judge ID [2]" Refs="TutorialActJudgeParam" />
+    <Keyguide2_ActJudgeParamID AltName="Tutorial Act Judge ID [3]" Refs="TutorialActJudgeParam" />
+    <Keyguide3_ActJudgeParamID AltName="Tutorial Act Judge ID [4]" Refs="TutorialActJudgeParam" />
   </Field>
-  <Self />
+  <Self Wiki="Defines all pop-up tutorials." />
 </PARAMMETA>

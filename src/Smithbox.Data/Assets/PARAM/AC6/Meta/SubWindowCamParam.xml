@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
-  <Self />
+  <Field>
+    <camFov AltName="Field of View" Wiki="In degrees" />
+	<camTargetDmyPolyId AltName="Camera Target Dummy Poly" Wiki="Dummy poly ID that the camera locks onto" />
+	<camTargetDist AltName="Camera Distance From Target" Wiki="Camera distance from the locked point of interest" />
+	<camRotationType AltName="Camera Angle Setting Method" Wiki="Camera angle setting method (0 = fixed)" />
+	<reserve Padding="" />
+	<Target_RotationX AltName="X-Axis Target Rotation" Wiki="X-axis rotation angle relative to the character's front view, in degrees" />
+	<Target_RotationY AltName="Y-Axis Target Rotation" Wiki="Y-axis rotation angle relative to the character's front view, in degrees" />
+	<Target_RotationZ AltName="Z-Axis Target Rotation" Wiki="Z-axis rotation angle relative to the character's front view, in degrees" />
+	<reserve100 Padding="" />
+  </Field>
+  <Self Wiki="Camera parameters for sub-windows." />
 </PARAMMETA>

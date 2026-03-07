@@ -18,5 +18,5 @@
     <shininess AltName="Shininess" Wiki="Shininess." />
     <reserve_4 AltName="" Padding=""/>
   </Field>
-  <Self />
+  <Self Wiki="Wetness-related fields." />
 </PARAMMETA>

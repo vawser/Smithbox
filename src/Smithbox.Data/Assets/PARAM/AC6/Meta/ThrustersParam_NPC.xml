@@ -355,5 +355,5 @@
     <brakeRight_Scale AltName="Brake Right: SFX Scale" Wiki="SFX scale value" />
     
   </Field>
-  <Self />
+  <Self Wiki="Defines where certain particles should appear under various circumstances. For NPCs." />
 </PARAMMETA>

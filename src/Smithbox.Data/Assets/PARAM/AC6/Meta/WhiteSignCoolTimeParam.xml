@@ -6,5 +6,5 @@
     <limitationTime_Guardian AltName="Limitation Time - Guardian" Wiki="Time limit [sec] (Map guardian, dry fingerless)" />
     <limitationTime_GuardianDriedFinger AltName="Limitation Time - Guardian (Dried Finger)" Wiki="Time limit [sec] (Map guardian / dry finger)" />
   </Field>
-  <Self />
+  <Self Wiki="Defines the cooldown times for summon signs. Unused in AC6." />
 </PARAMMETA>

@@ -134,6 +134,20 @@
         <Option Value="8310" Name="XYLEM SHIELD" />
         <Option Value="8320" Name="XYLEM LOCKOUT PROGRESS" />
     </Enum>
+	<Enum Name="TALK_MENU_SE_TYPE" type="s16">
+	    <Option Value="1500" Name="Com Sound On 1" />
+		<Option Value="1501" Name="Com Sound On 2" />
+		<Option Value="1600" Name="Com Sound Off 1" />
+		<Option Value="1601" Name="Com Sound Off 2" />
+	</Enum>
+	<Enum Name="TALK_MENU_EFFECT_TYPE" type="s32">
+	    <Option Value="-1" Name="Automatic" />
+		<Option Value="0" Name="None" />
+		<Option Value="500" Name="Normal Communication" />
+		<Option Value="501" Name="Communication Interception" />
+		<Option Value="502" Name="Encrypted Comms (with logo)" />
+		<Option Value="503" Name="Encrypted Comms (without logo)" />
+	</Enum>
   </Enums>
   
   <Field>
@@ -148,15 +162,16 @@
     <returnPos AltName="Return Position" Wiki="Relative position of returning conversation-> Conversation" />
     <reactionId AltName="Reaction ID" Wiki="Conversation specification when returning-> Conversation" />
     <eventId AltName="Event ID" Wiki="Event ID-> Event" />
+	<delayTime AltName="Start Delay Time" Wiki="Delay before dialogue begins. In seconds." />
+	<beginSE AltName="Start SE" Wiki="SE to play when subtitles end (-1: Automatic, 0: None, 1 or more: Any ID)" Enum="TALK_MENU_SE_TYPE" />
+	<endSE AltName="End SE" Wiki="SE to play when subtitles start (-1: Automatic, 0: None, 1 or more: Any ID)" Enum="TALK_MENU_SE_TYPE" />
     
     <UnkShort0x2C Padding="" />
     <UnkShort0x2E Padding="" />
     
     <!-- This uses an enum instead of a FMG ref since the ID refers to a range, the actual name isn't actually present at the specific passed ID -->
-    <characterNameTextId AltName="Character Name Text ID" Wiki="Name that appears with subtitles when character is talking. ID refers to base ID of the 10 ID range used for each character." Enum="CHARACTER_NAMES" />
-    
-    <timeout AltName="Voice Playback Timeout" Wiki="Voice playback timeout period. In case of -1, time-out processing is performed in NPC conversation voice playback timeout time of Common_Game system parameter." />
-    <talkAnimationId AltName="Talk Animation ID" Wiki="Speaker: Animation ID during conversation" />
+    <talkerID AltName="Character Name Text ID" Wiki="Name that appears with subtitles when character is talking. ID refers to base ID of the 10 ID range used for each character." Enum="CHARACTER_NAMES" />
+    <menuEffect AltName="Menu Effect" Wiki="UI Effect" Enum="TALK_MENU_EFFECT_TYPE" />
   </Field>
-  <Self />
+  <Self Wiki="Defines dialogue parameters for voices." />
 </PARAMMETA>
