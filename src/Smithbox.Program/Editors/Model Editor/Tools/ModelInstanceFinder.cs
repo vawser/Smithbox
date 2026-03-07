@@ -73,6 +73,9 @@ public class ModelInstanceFinder
             ImGui.Separator();
             UIHelper.WrappedText($"Instances of {_searchInput}:");
             ImGui.Separator();
+
+            ImGui.BeginChild("ModelInstanceList");
+
             foreach (var entry in Matches)
             {
                 if (ImGui.Selectable($"{entry.MapName} [{entry.Count}]"))
@@ -84,6 +87,8 @@ public class ModelInstanceFinder
                 UIHelper.DisplayAlias(aliasName);
                 UIHelper.Tooltip("The value in the [] is the number of instances with the map.");
             }
+
+            ImGui.EndChild();
         }
     }
 

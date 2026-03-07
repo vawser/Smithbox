@@ -1472,6 +1472,19 @@ public class MapPropertyView
                     isChanged = true;
                 }
             }
+            else if (typ.GetEnumUnderlyingType() == typeof(sbyte))
+            {
+                for (var i = 0; i < enumVals.Length; i++)
+                {
+                    intVals[i] = (sbyte)enumVals.GetValue(i);
+                }
+
+                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+            }
             else if (typ.GetEnumUnderlyingType() == typeof(int))
             {
                 for (var i = 0; i < enumVals.Length; i++)
@@ -1539,9 +1552,9 @@ public class MapPropertyView
             else
             {
                 // SoulsFormats does not define if alpha should be exposed. Expose alpha by default.
-                Smithbox.Log(this, 
-                    $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default",
-                    LogLevel.Warning, LogPriority.Low);
+                //Smithbox.Log(this, 
+                //    $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default",
+                //    LogLevel.Warning, LogPriority.Low);
 
                 var color = (Color)oldval;
                 Vector4 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);

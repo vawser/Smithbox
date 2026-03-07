@@ -32,37 +32,26 @@
     Wiki="Controls when the map object is visible." 
     ArrayProperty="" />
     
-    <Unk44
-    AltName="Unknown: 0x44"
-    Wiki="" />
-    
-    <Unk48
-    AltName="Unknown: 0x48"
-    Wiki="" />
-    
-    <Unk4C
-    AltName="Unknown: 0x4C"
-    Wiki="" />
-    
-    <Unk50
-    AltName="Unknown: 0x50"
-    Wiki="" />
+    <NvmGroups
+    AltName="Navmesh Group"
+    Wiki="Controls which navmesh group the map object is visible in." 
+    ArrayProperty="" />
     
     <DispGroups
     AltName="Display Group"
     Wiki="Controls when the map object is visible." 
     ArrayProperty="" />
     
-    <Unk64
-    AltName="Unknown: 0x64"
+    <LightID
+    AltName="Light ID"
     Wiki="" />
     
-    <Unk6C
-    AltName="Unknown: 0x6C"
+    <FogID
+    AltName="Fog ID"
     Wiki="" />
     
-    <Unk6E
-    AltName="Unknown: 0x6E"
+    <DisableFog
+    AltName="Disable Fog"
     Wiki="" />
   </Field>
   

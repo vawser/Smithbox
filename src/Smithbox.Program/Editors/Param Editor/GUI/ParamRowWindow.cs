@@ -140,10 +140,14 @@ public class ParamRowWindow
                     _focusRows = false;
                 }
 
-                List<Param.Row> rows = CacheBank.GetCached(Editor, (ParentView.ViewIndex, activeParam),
-                    () => ParentView.MassEdit.RSE.Search((Editor.Project.Handler.ParamData.PrimaryBank, para),
+                var curSearchTerm = ParentView.Selection.GetCurrentRowSearchString();
 
-                ParentView.Selection.GetCurrentRowSearchString(), true, true));
+                List<Param.Row> rows = CacheBank.GetCached(
+                    Editor, (ParentView.ViewIndex, activeParam),
+                    () => ParentView.MassEdit.RSE.Search(
+                        (Editor.Project.Handler.ParamData.PrimaryBank, para),
+                       curSearchTerm, true, true)
+                    );
 
                 var enableGrouping = false;
 

@@ -45,7 +45,7 @@ namespace SoulsFormats
             /// <summary>
             /// Sets the background color when no models are in the way. Should only be one per map.
             /// </summary>
-            public List<Event.BGColor> BGColors { get; set; }
+            public List<Event.MapColor> BGColors { get; set; }
 
             /// <summary>
             /// Sets the origin of the map; already factored into MSB positions, but affects BTL. Should only be one per map.
@@ -70,7 +70,7 @@ namespace SoulsFormats
                 Lights = new List<Event.Light>();
                 Shadows = new List<Event.Shadow>();
                 Fogs = new List<Event.Fog>();
-                BGColors = new List<Event.BGColor>();
+                BGColors = new List<Event.MapColor>();
                 MapOffsets = new List<Event.MapOffset>();
                 Warps = new List<Event.Warp>();
                 CheapModes = new List<Event.CheapMode>();
@@ -86,7 +86,7 @@ namespace SoulsFormats
                     case Event.Light e: Lights.Add(e); break;
                     case Event.Shadow e: Shadows.Add(e); break;
                     case Event.Fog e: Fogs.Add(e); break;
-                    case Event.BGColor e: BGColors.Add(e); break;
+                    case Event.MapColor e: BGColors.Add(e); break;
                     case Event.MapOffset e: MapOffsets.Add(e); break;
                     case Event.Warp e: Warps.Add(e); break;
                     case Event.CheapMode e: CheapModes.Add(e); break;
@@ -124,7 +124,7 @@ namespace SoulsFormats
                         return Fogs.EchoAdd(new Event.Fog(br));
 
                     case EventType.BGColor:
-                        return BGColors.EchoAdd(new Event.BGColor(br));
+                        return BGColors.EchoAdd(new Event.MapColor(br));
 
                     case EventType.MapOffset:
                         return MapOffsets.EchoAdd(new Event.MapOffset(br));
@@ -233,268 +233,171 @@ namespace SoulsFormats
                 return $"[ID {EventID}] {Type} \"{Name}\"";
             }
 
-            /// <summary>
-            /// Unknown if this does anything.
-            /// </summary>
             public class Light : Event
             {
                 private protected override EventType Type => EventType.Light;
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT00 { get; set; }
+                public sbyte DataID { get; set; }
+                public sbyte TypeID { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT04 { get; set; }
+                private byte[] Dummy00 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT08 { get; set; }
+                public Vector2 Angle_0 { get; set; }
+                public Color DiffuseColor_0 { get; set; }
+                public Color SpecularColor_0 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Color ColorT0C { get; set; }
+                private uint[] Dummy0 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Color ColorT10 { get; set; }
+                public Vector2 Angle_1 { get; set; }
+                public Color DiffuseColor_1 { get; set; }
+                public Color SpecularColor_1 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT1C { get; set; }
+                private uint[] Dummy1 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT20 { get; set; }
+                public Color SphereColor_0 { get; set; }
+                public Color SphereColor_1 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Color ColorT24 { get; set; }
+                public Color AmbientReflectionColor { get; set; }
+                public float AmbientReflectionStrength { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Color ColorT28 { get; set; }
+                public sbyte TrackCameraDirection { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Color ColorT34 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Color ColorT38 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Color ColorT3C { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT40 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT44 { get; set; }
-
-                /// <summary>
-                /// Creates a Light with default values.
-                /// </summary>
                 public Light() : base($"{nameof(Event)}: {nameof(Light)}") { }
 
                 internal Light(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadByte();
-                    br.AssertByte(0);
-                    br.AssertInt16(-1);
-                    UnkT04 = br.ReadSingle();
-                    UnkT08 = br.ReadSingle();
-                    ColorT0C = br.ReadRGBA();
-                    ColorT10 = br.ReadRGBA();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    UnkT1C = br.ReadSingle();
-                    UnkT20 = br.ReadSingle();
-                    ColorT24 = br.ReadRGBA();
-                    ColorT28 = br.ReadRGBA();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    ColorT34 = br.ReadRGBA();
-                    ColorT38 = br.ReadRGBA();
-                    ColorT3C = br.ReadRGBA();
-                    UnkT40 = br.ReadSingle();
-                    UnkT44 = br.ReadByte();
+                    DataID = br.ReadSByte();
+                    TypeID = br.ReadSByte();
+
+                    Dummy00 = br.ReadBytes(2);
+
+                    Angle_0 = br.ReadVector2();
+                    DiffuseColor_0 = br.ReadRGBA();
+                    SpecularColor_0 = br.ReadRGBA();
+
+                    Dummy0 = br.ReadUInt32s(2);
+
+                    Angle_1 = br.ReadVector2();
+                    DiffuseColor_1 = br.ReadRGBA();
+                    SpecularColor_1 = br.ReadRGBA();
+
+                    Dummy1 = br.ReadUInt32s(2);
+
+                    SphereColor_0 = br.ReadRGBA();
+                    SphereColor_1 = br.ReadRGBA();
+
+                    AmbientReflectionColor = br.ReadRGBA();
+                    AmbientReflectionStrength = br.ReadSingle();
+
+                    TrackCameraDirection = br.ReadSByte();
+
                     br.AssertPattern(0x3B, 0x00);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte(UnkT00);
-                    bw.WriteByte(0);
-                    bw.WriteInt16(-1);
-                    bw.WriteSingle(UnkT04);
-                    bw.WriteSingle(UnkT08);
-                    bw.WriteRGBA(ColorT0C);
-                    bw.WriteRGBA(ColorT10);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteSingle(UnkT1C);
-                    bw.WriteSingle(UnkT20);
-                    bw.WriteRGBA(ColorT24);
-                    bw.WriteRGBA(ColorT28);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteRGBA(ColorT34);
-                    bw.WriteRGBA(ColorT38);
-                    bw.WriteRGBA(ColorT3C);
-                    bw.WriteSingle(UnkT40);
-                    bw.WriteByte(UnkT44);
+                    bw.WriteSByte(DataID);
+                    bw.WriteSByte(TypeID);
+
+                    bw.WriteBytes(Dummy00);
+
+                    bw.WriteVector2(Angle_0);
+                    bw.WriteRGBA(DiffuseColor_0);
+                    bw.WriteRGBA(SpecularColor_0);
+
+                    bw.WriteUInt32s(Dummy0);
+
+                    bw.WriteVector2(Angle_1);
+                    bw.WriteRGBA(DiffuseColor_1);
+                    bw.WriteRGBA(SpecularColor_1);
+
+                    bw.WriteUInt32s(Dummy1);
+
+                    bw.WriteRGBA(SphereColor_0);
+                    bw.WriteRGBA(SphereColor_1);
+
+                    bw.WriteRGBA(AmbientReflectionColor);
+                    bw.WriteSingle(AmbientReflectionStrength);
+
+                    bw.WriteSByte(TrackCameraDirection);
+
                     bw.WritePattern(0x3B, 0x00);
                 }
             }
 
-            /// <summary>
-            /// Unknown if this does anything.
-            /// </summary>
             public class Shadow : Event
             {
                 private protected override EventType Type => EventType.Shadow;
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT04 { get; set; }
+                public byte LightID { get; set; }
+                public float FadeStart { get; set; }
+                public float FadeDistance { get; set; }
+                public float DepthOffset { get; set; }
+                public float ParsedDepthOffset { get; set; }
+                public float CalibrateFarRate { get; set; }
+                public float GradientFactor { get; set; }
+                public float VolumeDepth { get; set; }
+                public Color Color { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT08 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT0C { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT14 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT18 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT20 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Color ColorT24 { get; set; }
-
-                /// <summary>
-                /// Creates a Shadow with default values.
-                /// </summary>
                 public Shadow() : base($"{nameof(Event)}: {nameof(Shadow)}") { }
 
                 internal Shadow(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
+                    LightID = br.ReadByte();
+                    br.AssertByte(0);
+                    br.AssertByte(0);
+                    br.AssertByte(0);
+                    FadeStart = br.ReadSingle();
+                    FadeDistance = br.ReadSingle();
+                    DepthOffset = br.ReadSingle();
+                    ParsedDepthOffset = br.ReadSingle();
+                    CalibrateFarRate = br.ReadSingle();
+                    GradientFactor = br.ReadSingle();
+
                     br.AssertInt32(0);
-                    UnkT04 = br.ReadSingle();
-                    UnkT08 = br.ReadSingle();
-                    UnkT0C = br.ReadSingle();
-                    br.AssertInt32(0);
-                    UnkT14 = br.ReadSingle();
-                    UnkT18 = br.ReadSingle();
-                    br.AssertInt32(0);
-                    UnkT20 = br.ReadSingle();
-                    ColorT24 = br.ReadRGBA();
+
+                    VolumeDepth = br.ReadSingle();
+                    Color = br.ReadRGBA();
                     br.AssertPattern(0x18, 0x00);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(0);
-                    bw.WriteSingle(UnkT04);
-                    bw.WriteSingle(UnkT08);
-                    bw.WriteSingle(UnkT0C);
+                    bw.WriteSingle(FadeStart);
+                    bw.WriteSingle(FadeDistance);
+                    bw.WriteSingle(DepthOffset);
                     bw.WriteInt32(0);
-                    bw.WriteSingle(UnkT14);
-                    bw.WriteSingle(UnkT18);
+                    bw.WriteSingle(CalibrateFarRate);
+                    bw.WriteSingle(GradientFactor);
                     bw.WriteInt32(0);
-                    bw.WriteSingle(UnkT20);
-                    bw.WriteRGBA(ColorT24);
+                    bw.WriteSingle(VolumeDepth);
+                    bw.WriteRGBA(Color);
                     bw.WritePattern(0x18, 0x00);
                 }
             }
 
-            /// <summary>
-            /// Unknown if this does anything.
-            /// </summary>
             public class Fog : Event
             {
                 private protected override EventType Type => EventType.Fog;
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT00 { get; set; }
+                public byte DataID { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
                 [SupportsAlpha(true)]
-                public Color ColorT04 { get; set; }
+                public Color Color { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT08 { get; set; }
+                public float Distance { get; set; }
+                public float HeightBase { get; set; }
+                public float HeightDensity { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT0C { get; set; }
+                public sbyte IsUpper { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT10 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT14 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT15 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT16 { get; set; }
+                public byte Alpha { get; set; }
+                public byte Contrast { get; set; }
 
                 /// <summary>
                 /// Creates a Fog with default values.
@@ -505,33 +408,36 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadByte();
+                    DataID = br.ReadByte();
+
                     br.AssertByte(0);
                     br.AssertByte(0);
                     br.AssertByte(0);
-                    ColorT04 = br.ReadRGBA();
-                    UnkT08 = br.ReadSingle();
-                    UnkT0C = br.ReadSingle();
-                    UnkT10 = br.ReadSingle();
-                    UnkT14 = br.ReadByte();
-                    UnkT15 = br.ReadByte();
-                    UnkT16 = br.ReadByte();
+
+                    Color = br.ReadRGBA();
+                    Distance = br.ReadSingle();
+                    HeightBase = br.ReadSingle();
+                    HeightDensity = br.ReadSingle();
+                    IsUpper = br.ReadSByte();
+                    Alpha = br.ReadByte();
+                    Contrast = br.ReadByte();
+
                     br.AssertPattern(0x11, 0x00);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte(UnkT00);
+                    bw.WriteByte(DataID);
                     bw.WriteByte(0);
                     bw.WriteByte(0);
                     bw.WriteByte(0);
-                    bw.WriteRGBA(ColorT04);
-                    bw.WriteSingle(UnkT08);
-                    bw.WriteSingle(UnkT0C);
-                    bw.WriteSingle(UnkT10);
-                    bw.WriteByte(UnkT14);
-                    bw.WriteByte(UnkT15);
-                    bw.WriteByte(UnkT16);
+                    bw.WriteRGBA(Color);
+                    bw.WriteSingle(Distance);
+                    bw.WriteSingle(HeightBase);
+                    bw.WriteSingle(HeightDensity);
+                    bw.WriteSByte(IsUpper);
+                    bw.WriteByte(Alpha);
+                    bw.WriteByte(Contrast);
                     bw.WritePattern(0x11, 0x00);
                 }
             }
@@ -539,21 +445,15 @@ namespace SoulsFormats
             /// <summary>
             /// Sets the background color of the map when no models are in the way.
             /// </summary>
-            public class BGColor : Event
+            public class MapColor : Event
             {
                 private protected override EventType Type => EventType.BGColor;
 
-                /// <summary>
-                /// The background color.
-                /// </summary>
                 public Color Color { get; set; }
 
-                /// <summary>
-                /// Creates a BGColor with default values.
-                /// </summary>
-                public BGColor() : base($"{nameof(Event)}: {nameof(BGColor)}") { }
+                public MapColor() : base($"{nameof(Event)}: {nameof(MapColor)}") { }
 
-                internal BGColor(BinaryReaderEx br) : base(br) { }
+                internal MapColor(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -575,14 +475,8 @@ namespace SoulsFormats
             {
                 private protected override EventType Type => EventType.MapOffset;
 
-                /// <summary>
-                /// The origin of the map.
-                /// </summary>
                 public Vector3 Translation { get; set; }
 
-                /// <summary>
-                /// Creates a MapOffset with default values.
-                /// </summary>
                 public MapOffset() : base($"{nameof(Event)}: {nameof(MapOffset)}") { }
 
                 internal MapOffset(BinaryReaderEx br) : base(br) { }

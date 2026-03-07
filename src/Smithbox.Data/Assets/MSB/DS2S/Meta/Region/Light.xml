@@ -4,20 +4,29 @@
   Wiki="" />
   
   <Field>
-    <UnkT00
-    AltName="Unknown: 0x0"
+    <LightType
+    AltName="Light Type"
     Wiki="" />
     
-    <ColorT04
-    AltName="Color: 0x4"
+    <Sharpness
+    AltName="Sharpness"
     Wiki="" />
     
-    <ColorT08
-    AltName="Color: 0x8"
+    <EnableShadow
+    AltName="Enable Shadow"
+    Wiki="" 
+    IsBool="" />
+    
+    <DiffuseColor
+    AltName="Diffuse Color"
     Wiki="" />
     
-    <UnkT0C
-    AltName="Unknown: 0x0C"
+    <SpecularColor
+    AltName="Specular Color"
+    Wiki="" />
+    
+    <ShadowIntensity
+    AltName="Shadow Intensity"
     Wiki="" />
   </Field>
   

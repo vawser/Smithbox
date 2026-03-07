@@ -4,82 +4,88 @@
   Wiki="" />
   
   <Field>
-    <UnkT00
-    AltName="Unknown: 0x0"
+    <NvmGroup0
+    AltName="Navmesh Group 0"
     Wiki="" />
     
-    <UnkT04
-    AltName="Unknown: 0x4"
+    <NvmGroup1
+    AltName="Navmesh Group 1"
     Wiki="" />
     
-    <UnkT08
-    AltName="Unknown: 0x8"
+    <NvmGroup2
+    AltName="Navmesh Group 2"
     Wiki="" />
     
-    <UnkT0C
-    AltName="Unknown: 0x0C"
+    <NvmGroup3
+    AltName="Navmesh Group 3"
     Wiki="" />
     
-    <SoundSpaceType
-    AltName="Sound Space Type"
-    Wiki="Modifies sounds while the player is touching this collision." 
-    Enum="SOUND_SPACE_TYPE" />
+    <SoundSpaceReverbType
+    AltName="Sound Space Reverb Type"
+    Wiki="The reverb type to use when on this collision." />
     
-    <UnkT11
-    AltName="Unknown: 0x11"
+    <SoundSpaceDelayType
+    AltName="Sound Space Delay Type"
+    Wiki="The delay type to use when on this collision." />
+    
+    <MemoryBlockID
+    AltName="Memory Block ID"
     Wiki="" />
     
-    <UnkT12
-    AltName="Unknown: 0x12"
-    Wiki="" />
-    
-    <FilterParamID
-    AltName="Filter Param ID"
-    Wiki="Refers to ID of fltparam to determine visual effects." />
+    <FilterID
+    AltName="Filter ID"
+    Wiki="The fltparam ID to apply whne ont his collision." />
     
     <HitFilterID
     AltName="Hit Filter ID"
-    Wiki="Determines how collision behaviors with other entities." 
-    Enum="HIT_FILTER_TYPE" />
+    Wiki="The hit filter to apply for this collision." />
     
-    <UnkT15
-    AltName="Unknown: 0x15"
-    Wiki="" />
+    <AmbientSfxAttachType
+    AltName="Ambient SFX Attach Type"
+    Wiki="The ambient SFX attachment type within this collision." />
     
-    <UnkT17
-    AltName="Unknown: 0x17"
-    Wiki="" />
+    <DisableInvasion
+    AltName="Disable Invasion"
+    Wiki="Whether to disable invasions when on this collision." />
     
-    <CameraSfxID
-    AltName="Camera Particle ID"
-    Wiki=""
+    <AmbientSfxID
+    AltName="Ambient SFX ID"
+    Wiki="The ambient SFX ID for this collision."
     ParticleAlias="" />
     
-    <PlayerLightParamID
+    <PlayerLightSfxID
     AltName="Player Light ID"
-    Wiki="The player light param to use when this collision is stepped on." 
+    Wiki="The player light SFX ID for this collision." 
     ParamRef="PlayerLight" />
     
     <PlayAreaID
     AltName="Play Area ID"
-    Wiki="The play area parameters to use when this collision is stepped on." 
+    Wiki="The play area ID for this collision." 
     ParamRef="PlayAreaParam" />
     
-    <UnkT26
-    AltName="Unknown: 0x26"
+    <GameBrightness0
+    AltName="Game Brightness: 0"
     Wiki="" />
     
-    <UnkT27
-    AltName="Unknown: 0x27"
+    <GameBrightness1
+    AltName="Game Brightness: 1"
+    Wiki="" />
+    
+    <EnemyWallMemoryBlockID_A
+    AltName="Enemy Wall: Memory Block ID - A"
+    Wiki="" />
+    
+    <EnemyWallMemoryBlockID_B
+    AltName="Enemy Wall: Memory Block ID - B"
     Wiki="" />
     
     <MapNameID
     AltName="Map Name ID"
     Wiki="The ID of tpf in menu\tex\icon\mapname to use for area name banner.\n\nID is also interpreted for mapname FMG for load game menu text (ID example: 102510 = FMG 10250001)." />
     
-    <UnkT2C
-    AltName="Unknown: 0x2C"
-    Wiki="" />
+    <DelayMapNameDisplay
+    AltName="Delay Map Name Display"
+    Wiki="Whether to delay the display of the map name when this collision is entered." />
     
     <CubeEnvID
     AltName="Environmental Cube Map ID"
