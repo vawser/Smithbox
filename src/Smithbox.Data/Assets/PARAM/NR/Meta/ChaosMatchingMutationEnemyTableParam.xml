@@ -4,7 +4,48 @@
   Wiki="" />
   
   <Field>
-    
+	<categoryId
+	AltName="Category ID"
+	Wiki="Used with ChaosMatchingMutationCategoryParam, for determining which mutation category to use."
+	ProjectEnum="MUTATION_CATEGORY" />
+	
+	<mutationCount
+	AltName="Mutation Count"
+	Wiki="Number of enemies to mutate." />
+	
+    <isTeamMutation
+	AltName="Is Team Mutation"
+	Wiki="Used for groups, mutates all members with incremented mutation ID."
+	IsBool="" />
+	
+	<mutationId
+	AltName="Mutation ID"
+	Wiki="ID of enemy/team to mutate, set in MSB, can be checked in emevd." />
+	
+	<smallBaseId
+	AltName="Small Base Map ID"
+	Wiki="Related base map."
+	Refs="SmallBaseMapVariationParam" />
+	
+	<variation
+	AltName="Variation ID"
+	Wiki="Variation to mutate." />
+	
+	<randomAppearId
+	AltName="Random Appear ID"
+	Refs="RandomAppearParam" />
+	
+	<modifierMapId1
+	AltName="Modifier ID 1"
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+	<modifierMapId2
+	AltName="Modifier ID 2"
+	ProjectEnum="PATTERN_MODIFIER" />
+	
+	<modifierMapId3
+	AltName="Modifier ID 3"
+	ProjectEnum="PATTERN_MODIFIER" />
   </Field>
   
   <Enums>
