@@ -51,7 +51,11 @@ public class MapData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup the Primary Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Editor] Setup the Primary Bank.");
         }
 
         // Vanilla Bank
@@ -60,7 +64,11 @@ public class MapData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to fully setup Vanilla Bank.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup the Vanilla Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Editor] Setup the Vanilla Bank.");
         }
 
         // META
@@ -71,7 +79,11 @@ public class MapData : IDisposable
 
         if (!metaTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup MSB Meta.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup the MSB meta.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Editor] Setup the MSB meta.");
         }
 
         // MSB Information
@@ -80,7 +92,11 @@ public class MapData : IDisposable
 
         if (!msbInfoResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup MSB information.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup MSB annotations.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Editor] Setup the MSB annotations.");
         }
 
         // Map Object Names
@@ -89,7 +105,11 @@ public class MapData : IDisposable
 
         if (!mapObjNamesTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup Map Object Name lists.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup the Map Object Name lists.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Editor] Setup the the Map Object Name lists.");
         }
 
         // Map Object Selections
@@ -98,7 +118,11 @@ public class MapData : IDisposable
 
         if (!mapObjSelectionTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup Map Object Selections.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup the Map Object Selection lists.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Editor] Setup the the Map Object Selection lists.");
         }
 
         // Spawn States (per project) -- DS2 specific
@@ -107,7 +131,11 @@ public class MapData : IDisposable
 
         if (!mapSpawnStatesResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup Spawn States information.");
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup the Spawn States annotations.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Editor] Setup the the Spawn States annotations.");
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;

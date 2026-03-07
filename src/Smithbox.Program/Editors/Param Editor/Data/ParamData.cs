@@ -58,117 +58,117 @@ public class ParamData : IDisposable
         Task<bool> paramDefTask = SetupParamDefs();
         bool paramDefTaskResult = await paramDefTask;
 
-        if (paramDefTaskResult)
+        if (!paramDefTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup PARAM definitions.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM definitions.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup PARAM definitions.");
+            Smithbox.Log(this, $"[Param Editor] Setup the PARAM definitions.");
         }
 
         // Param Meta
         Task<bool> paramMetaTask = SetupParamMeta();
         bool paramMetaTaskResult = await paramMetaTask;
 
-        if (paramMetaTaskResult)
+        if (!paramMetaTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup PARAM meta.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM meta.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup PARAM meta.");
+            Smithbox.Log(this, $"[Param Editor] Setup the PARAM meta.");
         }
 
         // Graph Legends
         Task<bool> graphLegendsTask = SetupGraphLegends();
         bool graphLegendsTaskResult = await graphLegendsTask;
 
-        if (graphLegendsTaskResult)
+        if (!graphLegendsTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup graph legends.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Graph annotations.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup graph legends.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Graph annotations.");
         }
 
         // Icon Configurations
         Task<bool> iconConfigTask = SetupIconConfigurations();
         bool iconConfigTaskResult = await iconConfigTask;
 
-        if (iconConfigTaskResult)
+        if (!iconConfigTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup icon configurations.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Icon Configuration data.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup icon configurations.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Icon Configuration data.");
         }
 
         // Table Param List
         Task<bool> tableParamTask = SetupTableParamList();
         bool tableParamTaskResult = await tableParamTask;
 
-        if (tableParamTaskResult)
+        if (!tableParamTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup table param list.");
+            //Smithbox.LogError(this, $"[Param Editor] Failed to setup table param list.");
         }
         else
         {
-            //Smithbox.LogError(this, $"[Param Editor] Failed to setup table param list.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Table Param list.");
         }
 
         // Table Group Names
         Task<bool> tableGroupNameTask = SetupTableGroupNames();
         bool tableGroupNameTaskResult = await tableGroupNameTask;
 
-        if (tableGroupNameTaskResult)
+        if (!tableGroupNameTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup table group name bank.");
+            // Smithbox.LogError(this, $"[Param Editor] Failed to setup table group name bank.");
         }
         else
         {
-            // Smithbox.LogError(this, $"[Param Editor] Failed to setup table group name bank.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Table Group Name data.");
         }
 
         // Game Offsets (per project)
         Task<bool> gameOffsetTask = SetupParamMemoryOffsets();
         bool gameOffsetResult = await gameOffsetTask;
 
-        if (gameOffsetResult)
+        if (!gameOffsetResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup Param Memory Offsets.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Param Memory Offset data.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup Param Memory Offsets.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Param Memory Offset data.");
         }
 
         // Param Categories (per project)
         Task<bool> paramCategoryTask = SetupParamCategories();
         bool paramCategoryResult = await paramCategoryTask;
 
-        if (paramCategoryResult)
+        if (!paramCategoryResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup Param Categories.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Param Categories data.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup Param Categories.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Param Categories data.");
         }
 
         // Commutative Param Groups (per project)
         Task<bool> commutativeParamGroupTask = SetupCommutativeParamGroups();
         bool commutativeParamGroupResult = await commutativeParamGroupTask;
 
-        if (commutativeParamGroupResult)
+        if (!commutativeParamGroupResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup Commutative Param Groups.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Commutative Param Groups data.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup Commutative Param Groups.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Commutative Param Groups data.");
         }
 
         // Primary Bank
@@ -177,7 +177,11 @@ public class ParamData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Primary Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the Primary Bank.");
         }
 
         // Vanilla Bank
@@ -186,10 +190,14 @@ public class ParamData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to fully setup Vanilla Bank.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup Vanilla Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the Vanilla Bank.");
         }
 
-        switch(Project.Descriptor.ProjectType)
+        switch (Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DES)
@@ -715,9 +723,9 @@ public class ParamData : IDisposable
         // Refresh diff cache
         TaskManager.LiveTask task = new(
             "paramEditor_refreshDifferenceCache",
-            "Param Editor",
-            "difference cache between param banks has been refreshed.",
-            "difference cache refresh has failed.",
+            "[Param Editor]",
+            "Difference cache between param banks has been refreshed.",
+            "Difference cache refresh has failed.",
             TaskManager.RequeueType.Repeat,
             true,
             LogPriority.Low,

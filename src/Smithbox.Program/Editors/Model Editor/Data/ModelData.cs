@@ -34,13 +34,13 @@ public class ModelData : IDisposable
         Task<bool> flverInfoTask = SetupFlverInfo();
         bool flverInfoResult = await flverInfoTask;
 
-        if (flverInfoResult)
+        if (!flverInfoResult)
         {
-            Smithbox.Log(this, $"[Model Editor] Setup FLVER information.");
+            Smithbox.LogError(this, $"[Model Editor] Failed to setup the FLVER annotations.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Model Editor] Failed to setup FLVER information.");
+            Smithbox.Log(this, $"[Model Editor] Setup the FLVER annotations.");
         }
 
         // Primary Bank
@@ -49,7 +49,11 @@ public class ModelData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Model Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Model Editor] Failed to setup the Primary Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Model Editor] Setup the Primary Bank.");
         }
 
         return primaryBankTaskResult;
@@ -93,12 +97,12 @@ public class ModelData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Model Editor] Failed to deserialize the FLVER information", e);
+                    Smithbox.LogError(this, $"[Model Editor] Failed to deserialize the FLVER annotations", e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Model Editor] Failed to read the FLVER information: {targetFile}", e);
+                Smithbox.LogError(this, $"[Model Editor] Failed to read the FLVER annotations: {targetFile}", e);
             }
         }
 

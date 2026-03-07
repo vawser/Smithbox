@@ -189,9 +189,9 @@ public class ProjectEditorHandler : IDisposable
     public void LogDataResults()
     {
         if (_projectDataTask?.Result == true)
-            Smithbox.Log(this, "Setup Project Data.");
+            Smithbox.Log(this, "[Project] Setup Project Data.");
         else
-            Smithbox.LogError(this, "Failed to setup Project Data.");
+            Smithbox.LogError(this, "[Project] Failed to setup Project Data.");
 
         if (_mapDataTask != null)
             Smithbox.Log(this, _mapDataTask.Result
