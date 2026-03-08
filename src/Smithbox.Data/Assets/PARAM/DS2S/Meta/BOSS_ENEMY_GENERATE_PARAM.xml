@@ -1,8 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters used for boss moves that trigger enemy generators."  />
-  <Field>   
-    <generator_id_0 AltName="Generator ID [0]"/>
-    <generator_id_1 AltName="Generator ID [1]"/>
+  <Field>
+    <generatorBeginId
+    AltName="Generator Start ID"
+    Wiki="The first generator to invoke." />
+    
+    <generatorEndId
+    AltName="Generator End ID"
+    Wiki="The last generator to invoke." />
+    
+    <dummyPolyBeginId
+    AltName="Dummy Polygon Start ID"
+    Wiki="The dummy polygon on which the generated enemy is spawned." />
+    
+    <dummyPolyEndId
+    AltName="Dummy Polygon End ID"
+    Wiki="The dummy polygon on which the generated enemy is spawned." />
+    
+    <isCopyPlayerProtector
+    AltName="Inherit Player Armor"
+    Wiki="If enabled, the player armor is inherited by the generated enemy." />
+    
+    <isAnotherWorld
+    AltName="Is Extradimensional"
+    Wiki="If enabled, the generated enemy is from another world (mirror break?)" />
+    
+    <dummy
+    Padding="" />
   </Field>
 </PARAMMETA>

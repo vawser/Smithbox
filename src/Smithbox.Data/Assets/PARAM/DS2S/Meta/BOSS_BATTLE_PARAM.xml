@@ -2,21 +2,128 @@
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters for boss battles."  />
   <Field>
-    <souls AltName="Souls"/>
-    <itemlot_id AltName="Itemlot ID" Refs="ItemLotParam2_Other"/>
-    <enemy_common_id AltName="Enemy Common ID" Refs="EnemyCommonParam" />
-    <boss_destruction_flag AltName="Boss Destruction Event Flag"/>
-    <map_clear_global_event_flag AltName="Map Clear Global Event Flag" Wiki="Used for enabling shop items and for triggering map events."/>
-    <camera_follow_iD AltName="Camera Follow ID" Refs="CameraExFollowParam"/>
-    <lockon_id AltName="Lock-on ID" Refs="LockOnParam"/>
-    <has_named_boss_entity_0 AltName="Has Named Boss Entity [0]" IsBool=""/>
-    <has_named_boss_entity_1 AltName="Has Named Boss Entity [1]" IsBool=""/>
-    <has_named_boss_entity_2 AltName="Has Named Boss Entity [2]" IsBool=""/>
-    <is_primal_bonfire AltName="Unlocks Primal Bonfire" IsBool=""/>
-    <name_text_id_0 AltName="Boss Entity Name Text ID [0]"/>
-    <name_text_id_1 AltName="Boss Entity Name Text ID [1]"/>
-    <name_text_id_2 AltName="Boss Entity Name Text ID [2]"/>
-    <map_obj_bonfire_id AltName="Map Object Bonfire ID" Refs="MapObjectBonfireParam" IconConfig="Bonfire List"/> 
-    <boss_soul_bullet_id AltName="Boss Soul Bullet ID" Refs="SystemBulletParam"/> 
+    <soulValue
+    AltName="Souls"
+    Wiki="The souls given upon this boss's defeat." />
+  
+    <soulBulletId
+    AltName="Soul Bullet ID"
+    Wiki="The bullet triggers upon this boss's defeat."
+    Refs="SystemBulletParam" />
+  
+    <itemLotId
+    AltName="Item Lot ID"
+    Wiki="The item lot given upon this boss's defeat." 
+    Refs="ItemLotParam2_Other"/>
+  
+    <itemLotIdMultiPlay
+    AltName="Item Lot ID: Multiplayer"
+    Wiki="The item lot given upon this boss's defeat when in multiplayer." 
+    Refs="ItemLotParam2_Other"/>
+    
+    <killedEventId
+    AltName="Defeated Event Flag ID"
+    Wiki="The event flag set upon this boss's defeat every time." 
+    FlagAlias="" />
+    
+    <onceKilledEventId
+    AltName="First Defeat Event Flag ID"
+    Wiki="The event flag set upon this boss's defeat for the first time. Never unset." 
+    FlagAlias="" />
+    
+    <bonfireEventValueId
+    AltName="Bonfire Event Value ID"
+    Wiki="The event value associated with the bonfire linked to this boss." 
+    ProjectEnum="EVENT_VALUE_global" />
+    
+    <cameraParamId 
+    AltName="Camera ID" 
+    Wiki="The camera parameters to use when facing this boss." 
+    Refs="CameraExFollowParam"/>
+    
+    <lockParamId 
+    AltName="Lock-On ID" 
+    Wiki="The lock-on parameters to use when facing this boss."
+    Refs="LockOnParam"/>
+    
+    <hpDispType1
+    AltName="HP Display Type: 1"
+    Wiki="The HP display type for slot 1." 
+    Enum="BOSS_BATTLE_HP_DISP_TYPE" />
+    
+    <hpDispType2
+    AltName="HP Display Type: 2"
+    Wiki="The HP display type for slot 2." 
+    Enum="BOSS_BATTLE_HP_DISP_TYPE" />
+    
+    <hpDispType3
+    AltName="HP Display Type: 3"
+    Wiki="The HP display type for slot 3." 
+    Enum="BOSS_BATTLE_HP_DISP_TYPE" />
+    
+    <killFeType
+    AltName="Kill Effect Type"
+    Wiki="The kill effect that occurs on the boss defeat." 
+    Enum="BOSS_BATTLE_KILL_FE_TYPE" />
+    
+    <genEventGroupId1
+    AltName="Generator Event Group ID: 1"
+    Wiki="The generator event group for slot 1." />
+    
+    <genEventGroupId2
+    AltName="Generator Event Group ID: 2"
+    Wiki="The generator event group for slot 2." />
+    
+    <genEventGroupId3
+    AltName="Generator Event Group ID: 3"
+    Wiki="The generator event group for slot 3." />
+    
+    <roundSoulDropCategory
+    AltName="Soul Drop Category"
+    Wiki="The soul drop category for this boss."
+    Refs="ChrRoundDropSoulParam" />
+    
+    <bossNameTextId1
+    AltName="Boss Name Text: 1"
+    Wiki="The boss name text for slot 1." 
+    FmgRef="charaname" />
+    
+    <bossNameTextId2
+    AltName="Boss Name Text: 2"
+    Wiki="The boss name text for slot 2." 
+    FmgRef="charaname" />
+    
+    <bossNameTextId3
+    AltName="Boss Name Text: 3"
+    Wiki="The boss name text for slot 3." 
+    FmgRef="charaname" />
+    
+    <feDispWaitTime
+    AltName="Kill Effect Delay Time"
+    Wiki="The duration before the kill effect occurs upon boss defeat." />
+    
+    <bonfireId
+    AltName="Bonfire ID"
+    Wiki="The bonfire parameters associated with this boss."
+    Refs="MapObjectBonfireParam" 
+    IconConfig="Bonfire List" />
+    
+    <aReserved3
+    Padding="" />
+    
+    <decLimitTime
+    AltName="Multiplayer Time Limit Reduction"
+    Wiki="The amount of time limit reduction that occurs in multiplayer upon boss defeat." />
   </Field>
+  <Enums>
+    <Enum Name="BOSS_BATTLE_HP_DISP_TYPE">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Total HP" />
+      <Option Value="2" Name="Remaining HP" />
+    </Enum>
+    <Enum Name="BOSS_BATTLE_KILL_FE_TYPE">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Primal" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

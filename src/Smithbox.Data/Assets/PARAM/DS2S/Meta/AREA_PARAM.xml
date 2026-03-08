@@ -78,23 +78,23 @@
     
     <chameleonWeight1
     AltName="Chameleon Object Weight: 1"
-    Wiki="The chance weight for the chaneleon object to use slot 1." />
+    Wiki="The chance weight for the chameleon object to use slot 1." />
     
     <chameleonWeight2
     AltName="Chameleon Object Weight: 2"
-    Wiki="The chance weight for the chaneleon object to use slot 2." />
+    Wiki="The chance weight for the chameleon object to use slot 2." />
     
     <chameleonWeight3
     AltName="Chameleon Object Weight: 3"
-    Wiki="The chance weight for the chaneleon object to use slot 3." />
+    Wiki="The chance weight for the chameleon object to use slot 3." />
     
     <chameleonWeight4
     AltName="Chameleon Object Weight: 4"
-    Wiki="The chance weight for the chaneleon object to use slot 4." />
+    Wiki="The chance weight for the chameleon object to use slot 4." />
     
     <chameleonWeight5
     AltName="Chameleon Object Weight: 5"
-    Wiki="The chance weight for the chaneleon object to use slot 5." />
+    Wiki="The chance weight for the chameleon object to use slot 5." />
     
     <aReserved2
     Padding="" />
