@@ -1137,8 +1137,8 @@ public class ParamEditorPrefs
 
             Section = SectionCategory.ParamEditor_Field_List,
 
-            Title = "Enable Field Grouping",
-            Description = "If enabled, fields will be displayed in collapsible groups (if applicable).",
+            Title = "Enable Field Layouts",
+            Description = "If enabled, fields will be arranged based on field layout data (if applicable).",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts);
@@ -1156,8 +1156,8 @@ public class ParamEditorPrefs
 
             Section = SectionCategory.ParamEditor_Field_List,
 
-            Title = "Field Group Mode",
-            Description = "Determines how the field groups are displayed.",
+            Title = "Field Layout Mode",
+            Description = "Determines how the field layouts are displayed.",
 
             Draw = () => {
                 DPI.ApplyInputWidth();

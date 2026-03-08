@@ -12,5 +12,7 @@ public enum FieldLayoutMode
     [Display(Name = "Collapsible Header")]
     Collapsible,
     [Display(Name = "Simple Header")]
-    Simple
+    Header,
+    [Display(Name = "Separator")]
+    Separator
 }

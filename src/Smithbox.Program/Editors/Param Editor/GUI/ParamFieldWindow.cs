@@ -615,7 +615,7 @@ public class ParamFieldWindow
                     ImGui.EndTable();
                 }
             }
-            else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Simple)
+            else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Header)
             {
                 UIHelper.SimpleHeader($"{group.Title}", "");
 
@@ -629,6 +629,21 @@ public class ParamFieldWindow
 
                     ImGui.EndTable();
                 }
+            }
+            else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Separator)
+            {
+                if (BeginGroupTable($"ParamFieldsG_{activeParam}_{group.Title}", columnCount))
+                {
+                    int idx = 0;
+                    foreach (var field in groupFields)
+                    {
+                        RenderField(meta, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                    }
+
+                    ImGui.EndTable();
+                }
+
+                ImGui.Separator();
             }
         }
 
@@ -737,31 +752,15 @@ public class ParamFieldWindow
 
         if (miscFieldOrder.Count > 0)
         {
-            if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Collapsible)
+            if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
             {
-                if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
+                int idx = 0;
+                foreach (var field in miscFieldOrder)
                 {
-                    int idx = 0;
-                    foreach (var field in miscFieldOrder)
-                    {
-                        RenderField(meta, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
-                    }
-
-                    ImGui.EndTable();
+                    RenderField(meta, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
                 }
-            }
-            else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Simple)
-            {
-                if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
-                {
-                    int idx = 0;
-                    foreach (var field in miscFieldOrder)
-                    {
-                        RenderField(meta, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
-                    }
 
-                    ImGui.EndTable();
-                }
+                ImGui.EndTable();
             }
         }
     }
