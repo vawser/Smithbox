@@ -112,7 +112,7 @@
     <material
     AltName="Hit Material"
     Wiki="The hit material to use when this armor is equipped."
-    Enum="MATERIAL_TYPE_ENUM" />
+    ProjectEnum="MATERIAL_TYPE_ENUM" />
     
     <brokenSfxId
     AltName="Broken SFX ID"
@@ -148,44 +148,6 @@
       <Option Value="0" Name="Shared" />
       <Option Value="1" Name="Mixed" />
       <Option Value="2" Name="Gender" />
-    </Enum>
-    <Enum Name="MATERIAL_TYPE_ENUM">
-      <Option Value="0" Name="No Setting" />
-      <Option Value="1" Name="None" />
-      <Option Value="2" Name="Iron" />
-      <Option Value="3" Name="Heavy Iron" />
-      <Option Value="4" Name="Wood" />
-      <Option Value="5" Name="Water" />
-      <Option Value="6" Name="Swamp" />
-      <Option Value="7" Name="Wood" />
-      <Option Value="8" Name="Living Flesh" />
-      <Option Value="9" Name="Dead Flesh" />
-      <Option Value="10" Name="Insect" />
-      <Option Value="11" Name="Giant" />
-      <Option Value="12" Name="Bone" />
-      <Option Value="13" Name="Copper" />
-      <Option Value="14" Name="Energy" />
-      <Option Value="15" Name="Fire" />
-      <Option Value="16" Name="Lightning" />
-      <Option Value="17" Name="Dark" />
-      <Option Value="18" Name="Magic" />
-      <Option Value="19" Name="Stone" />
-      <Option Value="20" Name="Earth" />
-      <Option Value="21" Name="Carpet" />
-      <Option Value="22" Name="Grass" />
-      <Option Value="23" Name="Gravel" />
-      <Option Value="24" Name="Cloth" />
-      <Option Value="25" Name="Sand" />
-      <Option Value="26" Name="Ash" />
-      <Option Value="27" Name="Poison Swamp" />
-      <Option Value="28" Name="Oil" />
-      <Option Value="29" Name="Tar" />
-      <Option Value="30" Name="Lava" />
-      <Option Value="31" Name="Spider Silk" />
-      <Option Value="32" Name="Sulfur Crystal" />
-      <Option Value="33" Name="Soul" />
-      <Option Value="34" Name="Beautiful Voice Frog" />
-      <Option Value="35" Name="Material Count" />
     </Enum>
     <Enum Name="EQUIP_BREAK_SOUND_MATERIAL_TYPE">
       <Option Value="0" Name="None" />

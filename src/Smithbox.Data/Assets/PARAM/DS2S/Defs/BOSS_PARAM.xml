@@ -6,25 +6,37 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="u8 Unk00a" />
-    <Field Def="u8 Unk00b" />
-    <Field Def="u8 Unk00c" />
-    <Field Def="u8 Unk00d" />
-    <Field Def="s32 Unk04" />
-    <Field Def="s32 Unk08" />
-    <Field Def="s32 map_object_instance_param_id_1" />
-    <Field Def="s32 Unk10" />
-    <Field Def="s32 Unk14" />
-    <Field Def="s32 Unk18" />
-    <Field Def="s32 map_object_instance_param_id_2" />
-    <Field Def="s32 Unk20" />
-    <Field Def="s32 Unk24" />
-    <Field Def="s32 Unk28" />
-    <Field Def="s32 Unk2C" />
-    <Field Def="s32 Unk30" />
-    <Field Def="s32 Unk34" />
-    <Field Def="s32 Unk38" />
-    <Field Def="s32 Unk3C" />
-    <Field Def="s32 Unk40" />
+    <Field Def="u8 type" />
+    <Field Def="u8 isPartialPhysics" />
+    <Field Def="dummy8 dummy[2]" />
+        
+    <Field Def="s32 part1Hp" />
+    <Field Def="u8 part1BeakAnimId" />
+    <Field Def="u8 part1BreakObjDummyPolyId" />
+    <Field Def="dummy8 dummy1[2]" />
+    <Field Def="u32 part1BreakObjId" />
+    <Field Def="u32 part1EventFlag" />
+    
+    <Field Def="s32 part2Hp" />
+    <Field Def="u8 part2BreakAnimId" />
+    <Field Def="u8 part2BreakObjDummyPolyId" />
+    <Field Def="dummy8 dummy2[2]" />
+    <Field Def="u32 part2BreakObjId" />
+    <Field Def="u32 part2EventFlag" />
+    
+    <Field Def="s32 part3Hp" />
+    <Field Def="u8 part3BreakAnimId" />
+    <Field Def="u8 part3BreakObjDummyPolyId" />
+    <Field Def="dummy8 dummy3[2]" />
+    <Field Def="u32 part3BreakObjId" />
+    <Field Def="u32 part3EventFlag" />
+    
+    
+    <Field Def="s32 part4Hp" />
+    <Field Def="u8 part4BreakAnimId" />
+    <Field Def="u8 part4BreakObjDummyPolyId" />
+    <Field Def="dummy8 dummy4[2]" />
+    <Field Def="u32 part4BreakObjId" />
+    <Field Def="u32 part4EventFlag" />
   </Fields>
 </PARAMDEF>

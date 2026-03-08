@@ -905,6 +905,226 @@
           "Description": ""
         }
       ]
+    },
+    {
+      "DisplayName": "MATERIAL_TYPE_ENUM",
+      "Name": "MATERIAL_TYPE_ENUM",
+      "Description": "",
+      "Options": [
+        {
+          "ID": "0",
+          "Name": "No Setting",
+          "Description": ""
+        },
+        {
+          "ID": "1",
+          "Name": "None",
+          "Description": ""
+        },
+        {
+          "ID": "2",
+          "Name": "Iron",
+          "Description": ""
+        },
+        {
+          "ID": "3",
+          "Name": "Heavy Iron",
+          "Description": ""
+        },
+        {
+          "ID": "4",
+          "Name": "Wood",
+          "Description": ""
+        },
+        {
+          "ID": "5",
+          "Name": "Water",
+          "Description": ""
+        },
+        {
+          "ID": "6",
+          "Name": "Swamp",
+          "Description": ""
+        },
+        {
+          "ID": "7",
+          "Name": "Wood",
+          "Description": ""
+        },
+        {
+          "ID": "8",
+          "Name": "Living Flesh",
+          "Description": ""
+        },
+        {
+          "ID": "9",
+          "Name": "Dead Flesh",
+          "Description": ""
+        },
+        {
+          "ID": "10",
+          "Name": "Insect",
+          "Description": ""
+        },
+        {
+          "ID": "11",
+          "Name": "Giant",
+          "Description": ""
+        },
+        {
+          "ID": "12",
+          "Name": "Bone",
+          "Description": ""
+        },
+        {
+          "ID": "13",
+          "Name": "Copper",
+          "Description": ""
+        },
+        {
+          "ID": "14",
+          "Name": "Energy",
+          "Description": ""
+        },
+        {
+          "ID": "15",
+          "Name": "Fire",
+          "Description": ""
+        },
+        {
+          "ID": "16",
+          "Name": "Lightning",
+          "Description": ""
+        },
+        {
+          "ID": "17",
+          "Name": "Dark",
+          "Description": ""
+        },
+        {
+          "ID": "18",
+          "Name": "Magic",
+          "Description": ""
+        },
+        {
+          "ID": "19",
+          "Name": "Stone",
+          "Description": ""
+        },
+        {
+          "ID": "20",
+          "Name": "Earth",
+          "Description": ""
+        },
+        {
+          "ID": "21",
+          "Name": "Carpet",
+          "Description": ""
+        },
+        {
+          "ID": "22",
+          "Name": "Grass",
+          "Description": ""
+        },
+        {
+          "ID": "23",
+          "Name": "Gravel",
+          "Description": ""
+        },
+        {
+          "ID": "24",
+          "Name": "Cloth",
+          "Description": ""
+        },
+        {
+          "ID": "25",
+          "Name": "Sand",
+          "Description": ""
+        },
+        {
+          "ID": "26",
+          "Name": "Ash",
+          "Description": ""
+        },
+        {
+          "ID": "27",
+          "Name": "Poison Swamp",
+          "Description": ""
+        },
+        {
+          "ID": "28",
+          "Name": "Oil",
+          "Description": ""
+        },
+        {
+          "ID": "29",
+          "Name": "Tar",
+          "Description": ""
+        },
+        {
+          "ID": "30",
+          "Name": "Lava",
+          "Description": ""
+        },
+        {
+          "ID": "31",
+          "Name": "Spider Silk",
+          "Description": ""
+        },
+        {
+          "ID": "32",
+          "Name": "Sulfur Crystal",
+          "Description": ""
+        },
+        {
+          "ID": "33",
+          "Name": "Soul",
+          "Description": ""
+        },
+        {
+          "ID": "34",
+          "Name": "Beautiful Voice Frog",
+          "Description": ""
+        },
+        {
+          "ID": "35",
+          "Name": "Material Count",
+          "Description": ""
+        }
+      ]
+    },
+    
+    {
+      "DisplayName": "BOSS_PARTS_TYPE",
+      "Name": "BOSS_PARTS_TYPE",
+      "Description": "",
+      "Options": [
+        {
+          "ID": "0",
+          "Name": "Body",
+          "Description": ""
+        },
+        {
+          "ID": "1",
+          "Name": "Part 1",
+          "Description": ""
+        },
+        {
+          "ID": "2",
+          "Name": "Part 2",
+          "Description": ""
+        },
+        {
+          "ID": "3",
+          "Name": "Part 3",
+          "Description": ""
+        },
+        {
+          "ID": "4",
+          "Name": "Part 4",
+          "Description": ""
+        }
+      ]
     }
   ]
 }

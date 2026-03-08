@@ -6,8 +6,10 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="s32 body_hit_sfx" />
-    <Field Def="s32 Unk08" />
+    <Field Def="u8 hpCategory" />
+    <Field Def="s8 damageAnimId" />
+    <Field Def="dummy8 reserved[2]" />
+    <Field Def="s32 material" />
+    <Field Def="s32 deffence" />
   </Fields>
 </PARAMDEF>

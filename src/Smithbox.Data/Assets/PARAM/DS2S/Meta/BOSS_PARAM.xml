@@ -1,8 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to bosses."  />
+  <Self Wiki="Defines parameters related to parts on bosses."  />
   <Field>
-    <map_object_instance_param_id_1 AltName="Map Object Instance ID [1]" Refs="mapobjectinstanceparam_m10_02_00_00,mapobjectinstanceparam_m10_04_00_00,mapobjectinstanceparam_m10_10_00_00,mapobjectinstanceparam_m10_14_00_00,mapobjectinstanceparam_m10_15_00_00,mapobjectinstanceparam_m10_16_00_00,mapobjectinstanceparam_m10_17_00_00,mapobjectinstanceparam_m10_18_00_00,mapobjectinstanceparam_m10_19_00_00,mapobjectinstanceparam_m10_23_00_00,mapobjectinstanceparam_m10_25_00_00,mapobjectinstanceparam_m10_27_00_00,mapobjectinstanceparam_m10_29_00_00,mapobjectinstanceparam_m10_30_00_00,mapobjectinstanceparam_m10_31_00_00,mapobjectinstanceparam_m10_32_00_00,mapobjectinstanceparam_m10_33_00_00,mapobjectinstanceparam_m10_34_00_00,mapobjectinstanceparam_m20_10_00_00,mapobjectinstanceparam_m20_11_00_00,mapobjectinstanceparam_m20_21_00_00,mapobjectinstanceparam_m20_24_00_00,mapobjectinstanceparam_m20_26_00_00,mapobjectinstanceparam_m40_03_00_00,mapobjectinstanceparam_m50_35_00_00,mapobjectinstanceparam_m50_36_00_00,mapobjectinstanceparam_m50_37_00_00,mapobjectinstanceparam_m50_38_00_00"/>
-    <map_object_instance_param_id_2 AltName="Map Object Instance ID [2]" Refs="mapobjectinstanceparam_m10_02_00_00,mapobjectinstanceparam_m10_04_00_00,mapobjectinstanceparam_m10_10_00_00,mapobjectinstanceparam_m10_14_00_00,mapobjectinstanceparam_m10_15_00_00,mapobjectinstanceparam_m10_16_00_00,mapobjectinstanceparam_m10_17_00_00,mapobjectinstanceparam_m10_18_00_00,mapobjectinstanceparam_m10_19_00_00,mapobjectinstanceparam_m10_23_00_00,mapobjectinstanceparam_m10_25_00_00,mapobjectinstanceparam_m10_27_00_00,mapobjectinstanceparam_m10_29_00_00,mapobjectinstanceparam_m10_30_00_00,mapobjectinstanceparam_m10_31_00_00,mapobjectinstanceparam_m10_32_00_00,mapobjectinstanceparam_m10_33_00_00,mapobjectinstanceparam_m10_34_00_00,mapobjectinstanceparam_m20_10_00_00,mapobjectinstanceparam_m20_11_00_00,mapobjectinstanceparam_m20_21_00_00,mapobjectinstanceparam_m20_24_00_00,mapobjectinstanceparam_m20_26_00_00,mapobjectinstanceparam_m40_03_00_00,mapobjectinstanceparam_m50_35_00_00,mapobjectinstanceparam_m50_36_00_00,mapobjectinstanceparam_m50_37_00_00,mapobjectinstanceparam_m50_38_00_00"/>
+    <type
+    AltName="Parts Type"
+    Wiki="The target parts type." 
+    ProjectEnum="BOSS_PARTS_TYPE" />"
+    
+    <isPartialPhysics
+    AltName="Is Ragdoll Part Enabled"
+    Wiki="If enabled, ragdoll part is enabled."
+    IsBool="" />
+    
+    <dummy
+    Padding="" />
+    
+    <part1Hp
+    AltName="Part 1: HP"
+    Wiki="The HP value of the part in slot 1." />
+    
+    <part1BeakAnimId
+    AltName="Part 1: Broken Animation ID"
+    Wiki="The animation to play when the part in slot 1 is broken." />
+    
+    <part1BreakObjDummyPolyId
+    AltName="Part 1: Broken Dummy Polygon ID"
+    Wiki="The dummy polygon to to play the animation from when the part in slot 1 is broken." />
+    
+    <dummy1
+    Padding="" />
+    
+    <part1BreakObjId
+    AltName="Part 1: Broken Object ID"
+    Wiki="The object ID given when the part in slot 1 is broken." 
+    GroupReference="mapobjectinstanceparam" />
+    
+    <part1EventFlag
+    AltName="Part 1: Broken Event Flag ID"
+    Wiki="The event flag ID set when the part in slot 1 is broken." 
+    FlagAlias="" />
+    
+    <part2Hp
+    AltName="Part 2: HP"
+    Wiki="The HP value of the part in slot 2." />
+    
+    <part2BreakAnimId
+    AltName="Part 2: Broken Animation ID"
+    Wiki="The animation to play when the part in slot 2 is broken." />
+    
+    <part2BreakObjDummyPolyId
+    AltName="Part 2: Broken Dummy Polygon ID"
+    Wiki="The dummy polygon to to play the animation from when the part in slot 2 is broken." />
+    
+    <dummy2
+    Padding="" />
+    
+    <part2BreakObjId
+    AltName="Part 2: Broken Object ID"
+    Wiki="The object ID given when the part in slot 2 is broken." 
+    GroupReference="mapobjectinstanceparam" />
+    
+    <part2EventFlag
+    AltName="Part 2: Broken Event Flag ID"
+    Wiki="The event flag ID set when the part in slot 2 is broken." 
+    FlagAlias="" />
+    
+    <part3Hp
+    AltName="Part 3: HP"
+    Wiki="The HP value of the part in slot 3." />
+    
+    <part3BreakAnimId
+    AltName="Part 3: Broken Animation ID"
+    Wiki="The animation to play when the part in slot 3 is broken." />
+    
+    <part3BreakObjDummyPolyId
+    AltName="Part 3: Broken Dummy Polygon ID"
+    Wiki="The dummy polygon to to play the animation from when the part in slot 3 is broken." />
+    
+    <dummy3
+    Padding="" />
+    
+    <part3BreakObjId
+    AltName="Part 3: Broken Object ID"
+    Wiki="The object ID given when the part in slot 3 is broken." 
+    GroupReference="mapobjectinstanceparam" />
+    
+    <part3EventFlag
+    AltName="Part 3: Broken Event Flag ID"
+    Wiki="The event flag ID set when the part in slot 3 is broken." 
+    FlagAlias="" />
+    
+    <part4Hp
+    AltName="Part 4: HP"
+    Wiki="The HP value of the part in slot 4." />
+    
+    <part4BreakAnimId
+    AltName="Part 4: Broken Animation ID"
+    Wiki="The animation to play when the part in slot 4 is broken." />
+    
+    <part4BreakObjDummyPolyId
+    AltName="Part 4: Broken Dummy Polygon ID"
+    Wiki="The dummy polygon to to play the animation from when the part in slot 4 is broken." />
+    
+    <dummy4
+    Padding="" />
+    
+    <part4BreakObjId
+    AltName="Part 4: Broken Object ID"
+    Wiki="The object ID given when the part in slot 4 is broken." 
+    GroupReference="mapobjectinstanceparam" />
+    
+    <part4EventFlag
+    AltName="Part 4: Broken Event Flag ID"
+    Wiki="The event flag ID set when the part in slot 4 is broken." 
+    FlagAlias="" />
+    
   </Field>
 </PARAMMETA>
