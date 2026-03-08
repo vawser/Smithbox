@@ -1,0 +1,32 @@
+{
+  "Name": "AreaParam",
+  "UngroupedAtBottom": false,
+  "Groups": [
+    {
+      "Title": "Chameleon",
+      "Fields": [
+        "chameleonEnableRare",
+        "chameleonWeight1",
+        "chameleonWeight2",
+        "chameleonWeight3",
+        "chameleonWeight4",
+        "chameleonWeight5",
+        "chameleonId1",
+        "chameleonId2",
+        "chameleonId3",
+        "chameleonId4",
+        "chameleonId5",
+        "chameleonAngle1",
+        "chameleonAngle2",
+        "chameleonAngle3",
+        "chameleonAngle4",
+        "chameleonAngle5",
+        "chameleonHeight1",
+        "chameleonHeight2",
+        "chameleonHeight3",
+        "chameleonHeight4",
+        "chameleonHeight5"
+      ]
+    }
+  ]
+}

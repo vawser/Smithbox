@@ -2036,6 +2036,11 @@ public class ParamBank : IDisposable
             return null;
         }
 
+        if (_params == null)
+        {
+            return null;
+        }
+
         Dictionary<string, HashSet<int>> newCache = new();
         foreach (var param in _params.Keys)
         {

@@ -107,7 +107,7 @@
     AltName="Menu: Fire Attack"
     Wiki="The fire attack to display for this arrow in the menu. Display only." />
     
-    <menuDarkAttack
+    <menudarkAttack
     AltName="Menu: Dark Attack"
     Wiki="The dark attack to display for this arrow in the menu. Display only." />
     

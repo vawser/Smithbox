@@ -29,6 +29,18 @@ public static class EditorTableUtils
 
         return v;
     }
+
+    public static bool ImGuiTableStdColumnsNoScroll(string id, int cols)
+    {
+        return ImGui.BeginTable(id, cols,
+            ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchSame);
+    }
+
+    public static bool ImGuiTableGroupedColumns(string id, int cols)
+    {
+        return ImGui.BeginTable(id, cols, ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchSame);
+    }
+
     public static bool ImguiTableSeparator()
     {
         var lastCol = false;

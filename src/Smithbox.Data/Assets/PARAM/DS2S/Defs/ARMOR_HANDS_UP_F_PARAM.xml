@@ -6,16 +6,69 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="u8 weightLevel01" />
-    <Field Def="u8 weightLevel02" />
-    <Field Def="u8 weightLevel03" />
-    <Field Def="u8 weightLevel04" />
-    <Field Def="u8 weightLevel05" />
-    <Field Def="u8 weightLevel06" />
-    <Field Def="u8 weightLevel07" />
-    <Field Def="u8 weightLevel08" />
-    <Field Def="u8 weightLevel09" />
-    <Field Def="u8 weightLevel10" />
-    <Field Def="dummy8 dummy[2]" />
-  </Fields>
+        <Field Def="u8 weightLevel01">
+            <DisplayName>脇上げ量1[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 weightLevel02">
+            <DisplayName>脇上げ量2[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 weightLevel03">
+            <DisplayName>脇上げ量3[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 weightLevel04">
+            <DisplayName>脇上げ量4[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 weightLevel05">
+            <DisplayName>脇上げ量5[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 weightLevel06">
+            <DisplayName>脇上げ量6[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 weightLevel07">
+            <DisplayName>脇上げ量7[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 weightLevel08">
+            <DisplayName>脇上げ量8[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 weightLevel09">
+            <DisplayName>脇上げ量9[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u8 weightLevel10">
+            <DisplayName>脇上げ量10[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[2]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>12</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

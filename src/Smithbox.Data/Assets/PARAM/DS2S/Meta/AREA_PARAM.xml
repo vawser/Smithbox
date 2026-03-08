@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self 
-  Wiki="Defines parameters related to map area, such as mimicry objects and lock-on values." />
+  Wiki="Defines parameters related to map area, such as mimicry objects and lock-on values." 
+  FieldLayout="AreaParam" />
 
   <DisplayNames>
     <NameEntry 
@@ -48,6 +49,9 @@
     Wiki="The hit material to use on water contact within this area." 
     Refs="GroundMaterialParam" />
   
+    <aReserved1
+    Padding="" />
+    
     <cameraId 
     AltName="Camera ID"
     Wiki="The camera parameters to use by default for this area." 

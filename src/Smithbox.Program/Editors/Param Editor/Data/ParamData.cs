@@ -39,6 +39,7 @@ public class ParamData : IDisposable
     public ParamCommutativeResource CommutativeParamGroups;
 
     public GroupReferences GroupReferences;
+    public FieldLayouts FieldLayouts;
 
     public ParamData(ProjectEntry project)
     {
@@ -169,20 +170,30 @@ public class ParamData : IDisposable
             Smithbox.Log(this, $"[Param Editor] Setup the Commutative Param Groups data.");
         }
 
-        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            // Commutative Param Groups (per project)
-            Task<bool> groupRefTask = SetupGroupReferences();
-            bool groupRefTaskResult = await groupRefTask;
+        // Group References
+        Task<bool> groupRefTask = SetupGroupReferences();
+        bool groupRefTaskResult = await groupRefTask;
 
-            if (!groupRefTaskResult)
-            {
-                Smithbox.LogError(this, $"[Param Editor] Failed to setup the Group Reference data.");
-            }
-            else
-            {
-                Smithbox.Log(this, $"[Param Editor] Setup the Group Reference data.");
-            }
+        if (!groupRefTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Group Reference data.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the Group Reference data.");
+        }
+
+        // Field Layouts
+        Task<bool> fieldLayoutsTask = SetupFieldLayouts();
+        bool fieldLayoutsTaskResult = await fieldLayoutsTask;
+
+        if (!fieldLayoutsTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Field Layout data.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the Field Layout data.");
         }
 
 
@@ -964,6 +975,61 @@ public class ParamData : IDisposable
         return true;
     }
 
+    public async Task<bool> SetupFieldLayouts()
+    {
+        await Task.Yield();
+
+        FieldLayouts = new();
+
+        // Build project-local first, so it takes precedence over the base versions
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Layouts");
+
+        if (Path.Exists(projectFolder))
+        {
+            foreach (var entry in Directory.EnumerateFiles(projectFolder))
+            {
+                var file = File.ReadAllText(entry);
+                try
+                {
+                    var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.FieldLayout);
+
+                    if (!FieldLayouts.Entries.Any(e => e.Name == layout.Name))
+                    {
+                        FieldLayouts.Entries.Add(layout);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize field layout: {file}", LogPriority.High, e);
+                }
+            }
+        }
+
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Layouts");
+
+        if (Path.Exists(sourceFolder))
+        {
+            foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+            {
+                var file = File.ReadAllText(entry);
+                try
+                {
+                    var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.FieldLayout);
+
+                    if (!FieldLayouts.Entries.Any(e => e.Name == layout.Name))
+                    {
+                        FieldLayouts.Entries.Add(layout);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize field layout: {file}", LogPriority.High, e);
+                }
+            }
+        }
+
+        return true;
+    }
     #region Dispose
     public void Dispose()
     {

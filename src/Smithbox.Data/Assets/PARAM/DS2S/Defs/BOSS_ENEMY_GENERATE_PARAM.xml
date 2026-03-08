@@ -6,12 +6,53 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="u32 generatorBeginId" />
-    <Field Def="u32 generatorEndId" />
-    <Field Def="u16 dummyPolyBeginId" />
-    <Field Def="u16 dummyPolyEndId" />
-    <Field Def="u8 isCopyPlayerProtector" />
-    <Field Def="u8 isAnotherWorld" />
-    <Field Def="dummy8 dummy[2]" />
-  </Fields>
+        <Field Def="u32 generatorBeginId">
+            <DisplayName>ジェネレータ開始ＩＤ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u32 generatorEndId">
+            <DisplayName>ジェネレータ終了ＩＤ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u16 dummyPolyBeginId">
+            <DisplayName>ダミポリ開始ＩＤ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u16 dummyPolyEndId">
+            <DisplayName>ダミポリ停止ＩＤ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 isCopyPlayerProtector">
+            <DisplayName>プレイヤー防具を引き継ぐ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 isAnotherWorld">
+            <DisplayName>異次元空間生成</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[2]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>101</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

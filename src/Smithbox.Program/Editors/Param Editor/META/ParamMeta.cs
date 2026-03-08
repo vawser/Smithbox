@@ -85,6 +85,8 @@ public class ParamMeta
     /// </summary>
     public SoulCostDefinition SoulCostDef { get; set; }
 
+    public string FieldLayout { get; set; }
+
     public ParamMeta(ParamData parent)
     {
         DataParent = parent;
@@ -208,6 +210,12 @@ public class ParamMeta
                 if (SCD != null)
                 {
                     SoulCostDef = new SoulCostDefinition(this, SCD.InnerText);
+                }
+
+                XmlAttribute tFieldLayout = self.Attributes["FieldLayout"];
+                if (tFieldLayout != null)
+                {
+                    FieldLayout = tFieldLayout.InnerText;
                 }
             }
 

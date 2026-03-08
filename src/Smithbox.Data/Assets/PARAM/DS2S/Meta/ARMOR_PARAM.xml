@@ -93,7 +93,7 @@
     AltName="Repair Cost" 
     Wiki="The repair cost (in souls) for this armor." />
     
-    <poise 
+    <strong 
     AltName="Poise" 
     Wiki="The poise value for this armor." />
     

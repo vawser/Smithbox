@@ -1,10 +1,227 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters relating to the attachment point that fires projectiles."  />
+  <Self 
+  Wiki="Defines parameters relating to the attachment point that fires projectiles." 
+  FieldLayout="BulletAttachParam" />
+  
   <Field>
-    <dummy_poly_id_1 AltName="Dummy Poly ID [1]"/>
-    <dummy_poly_id_2 AltName="Dummy Poly ID [2]"/>
-    <dummy_poly_id_3 AltName="Dummy Poly ID [3]"/>
-    <dummy_poly_id_4 AltName="Dummy Poly ID [4]"/>
+    <part1DummyPolyId
+    AltName="Part 1: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for this part." />
+
+    <dummy
+    Padding="" />
+
+    <part1OffsetPosX
+    AltName="Part 1: Position Offset - X"
+    Wiki="The position offset on the x-axis to use for this part." />
+
+    <part1OffsetPosY
+    AltName="Part 1: Position Offset - Y"
+    Wiki="The position offset on the y-axis to use for this part." />
+
+    <part1OffsetPosZ
+    AltName="Part 1: Position Offset - Z"
+    Wiki="The position offset on the z-axis to use for this part." />
+
+    <part1OffsetAccuracyPosX
+    AltName="Part 1: Position Offset Accuracy: X"
+    Wiki="The accuracy of the position offset on the x-axis for this part." />
+
+    <part1OffsetAccuracyPosY
+    AltName="Part 1: Position Offset Accuracy: Y"
+    Wiki="The accuracy of the position offset on the y-axis for this part." />
+
+    <part1OffsetAccuracyPosZ
+    AltName="Part 1: Position Offset Accuracy: Z"
+    Wiki="The accuracy of the position offset on the z-axis for this part." />
+
+    <part1OffsetRotX
+    AltName="Part 1: Rotation Offset - X"
+    Wiki="The rotation offset on the x-axis to use for this part." />
+
+    <part1OffsetRotY
+    AltName="Part 1: Rotation Offset - Y"
+    Wiki="The rotation offset on the y-axis to use for this part." />
+
+    <part1OffsetRotZ
+    AltName="Part 1: Rotation Offset - Z"
+    Wiki="The rotation offset on the z-axis to use for this part." />
+
+    <part1OffsetAccuracyRotX
+    AltName="Part 1: Rotation Offset Accuracy: X"
+    Wiki="The accuracy of the rotation offset on the x-axis for this part." />
+
+    <part1OffsetAccuracyRotY
+    AltName="Part 1: Rotation Offset Accuracy: Y"
+    Wiki="The accuracy of the rotation offset on the y-axis for this part." />
+
+    <part1OffsetAccuracyRotZ
+    AltName="Part 1: Rotation Offset Accuracy: Z"
+    Wiki="The accuracy of the rotation offset on the z-axis for this part." />
+
+    <part2DummyPolyId
+    AltName="Part 2: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for this part." />
+
+    <dummy1
+    Padding="" />
+
+    <part2OffsetPosX
+    AltName="Part 2: Position Offset - X"
+    Wiki="The position offset on the x-axis to use for this part." />
+
+    <part2OffsetPosY
+    AltName="Part 2: Position Offset - Y"
+    Wiki="The position offset on the y-axis to use for this part." />
+
+    <part2OffsetPosZ
+    AltName="Part 2: Position Offset - Z"
+    Wiki="The position offset on the z-axis to use for this part." />
+
+    <part2OffsetAccuracyPosX
+    AltName="Part 2: Position Offset Accuracy: X"
+    Wiki="The accuracy of the position offset on the x-axis for this part." />
+
+    <part2OffsetAccuracyPosY
+    AltName="Part 2: Position Offset Accuracy: Y"
+    Wiki="The accuracy of the position offset on the y-axis for this part." />
+
+    <part2OffsetAccuracyPosZ
+    AltName="Part 2: Position Offset Accuracy: Z"
+    Wiki="The accuracy of the position offset on the z-axis for this part." />
+
+    <part2OffsetRotX
+    AltName="Part 2: Rotation Offset - X"
+    Wiki="The rotation offset on the x-axis to use for this part." />
+
+    <part2OffsetRotY
+    AltName="Part 2: Rotation Offset - Y"
+    Wiki="The rotation offset on the y-axis to use for this part." />
+
+    <part2OffsetRotZ
+    AltName="Part 2: Rotation Offset - Z"
+    Wiki="The rotation offset on the z-axis to use for this part." />
+
+    <part2OffsetAccuracyRotX
+    AltName="Part 2: Rotation Offset Accuracy: X"
+    Wiki="The accuracy of the rotation offset on the x-axis for this part." />
+
+    <part2OffsetAccuracyRotY
+    AltName="Part 2: Rotation Offset Accuracy: Y"
+    Wiki="The accuracy of the rotation offset on the y-axis for this part." />
+
+    <part2OffsetAccuracyRotZ
+    AltName="Part 2: Rotation Offset Accuracy: Z"
+    Wiki="The accuracy of the rotation offset on the z-axis for this part." />
+
+    <part3DummyPolyId
+    AltName="Part 3: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for this part." />
+
+    <dummy2
+    Padding="" />
+
+    <part3OffsetPosX
+    AltName="Part 3: Position Offset - X"
+    Wiki="The position offset on the x-axis to use for this part." />
+
+    <part3OffsetPosY
+    AltName="Part 3: Position Offset - Y"
+    Wiki="The position offset on the y-axis to use for this part." />
+
+    <part3OffsetPosZ
+    AltName="Part 3: Position Offset - Z"
+    Wiki="The position offset on the z-axis to use for this part." />
+
+    <part3OffsetAccuracyPosX
+    AltName="Part 3: Position Offset Accuracy: X"
+    Wiki="The accuracy of the position offset on the x-axis for this part." />
+
+    <part3OffsetAccuracyPosY
+    AltName="Part 3: Position Offset Accuracy: Y"
+    Wiki="The accuracy of the position offset on the y-axis for this part." />
+
+    <part3OffsetAccuracyPosZ
+    AltName="Part 3: Position Offset Accuracy: Z"
+    Wiki="The accuracy of the position offset on the z-axis for this part." />
+
+    <part3OffsetRotX
+    AltName="Part 3: Rotation Offset - X"
+    Wiki="The rotation offset on the x-axis to use for this part." />
+
+    <part3OffsetRotY
+    AltName="Part 3: Rotation Offset - Y"
+    Wiki="The rotation offset on the y-axis to use for this part." />
+
+    <part3OffsetRotZ
+    AltName="Part 3: Rotation Offset - Z"
+    Wiki="The rotation offset on the z-axis to use for this part." />
+
+    <part3OffsetAccuracyRotX
+    AltName="Part 3: Rotation Offset Accuracy: X"
+    Wiki="The accuracy of the rotation offset on the x-axis for this part." />
+
+    <part3OffsetAccuracyRotY
+    AltName="Part 3: Rotation Offset Accuracy: Y"
+    Wiki="The accuracy of the rotation offset on the y-axis for this part." />
+
+    <part3OffsetAccuracyRotZ
+    AltName="Part 3: Rotation Offset Accuracy: Z"
+    Wiki="The accuracy of the rotation offset on the z-axis for this part." />
+    <part4DummyPolyId
+    AltName="Part 4: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for this part." />
+
+    <dummy3
+    Padding="" />
+
+    <part4OffsetPosX
+    AltName="Part 4: Position Offset - X"
+    Wiki="The position offset on the x-axis to use for this part." />
+
+    <part4OffsetPosY
+    AltName="Part 4: Position Offset - Y"
+    Wiki="The position offset on the y-axis to use for this part." />
+
+    <part4OffsetPosZ
+    AltName="Part 4: Position Offset - Z"
+    Wiki="The position offset on the z-axis to use for this part." />
+
+    <part4OffsetAccuracyPosX
+    AltName="Part 4: Position Offset Accuracy: X"
+    Wiki="The accuracy of the position offset on the x-axis for this part." />
+
+    <part4OffsetAccuracyPosY
+    AltName="Part 4: Position Offset Accuracy: Y"
+    Wiki="The accuracy of the position offset on the y-axis for this part." />
+
+    <part4OffsetAccuracyPosZ
+    AltName="Part 4: Position Offset Accuracy: Z"
+    Wiki="The accuracy of the position offset on the z-axis for this part." />
+
+    <part4OffsetRotX
+    AltName="Part 4: Rotation Offset - X"
+    Wiki="The rotation offset on the x-axis to use for this part." />
+
+    <part4OffsetRotY
+    AltName="Part 4: Rotation Offset - Y"
+    Wiki="The rotation offset on the y-axis to use for this part." />
+
+    <part4OffsetRotZ
+    AltName="Part 4: Rotation Offset - Z"
+    Wiki="The rotation offset on the z-axis to use for this part." />
+
+    <part4OffsetAccuracyRotX
+    AltName="Part 4: Rotation Offset Accuracy: X"
+    Wiki="The accuracy of the rotation offset on the x-axis for this part." />
+
+    <part4OffsetAccuracyRotY
+    AltName="Part 4: Rotation Offset Accuracy: Y"
+    Wiki="The accuracy of the rotation offset on the y-axis for this part." />
+
+    <part4OffsetAccuracyRotZ
+    AltName="Part 4: Rotation Offset Accuracy: Z"
+    Wiki="The accuracy of the rotation offset on the z-axis for this part." />
   </Field>
 </PARAMMETA>

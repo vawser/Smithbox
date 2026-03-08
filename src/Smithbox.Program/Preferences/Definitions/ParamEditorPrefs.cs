@@ -1126,6 +1126,57 @@ public class ParamEditorPrefs
             }
         };
     }
+
+    public static PreferenceItem ParamEditor_Field_List_Enable_Field_Grouping()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 17,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Enable Field Grouping",
+            Description = "If enabled, fields will be displayed in collapsible groups (if applicable).",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Enable_Field_Group_Type()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 18,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Field Group Mode",
+            Description = "Determines how the field groups are displayed.",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type.GetDisplayName()))
+                {
+                    foreach (var entry in Enum.GetValues(typeof(FieldLayoutMode)))
+                    {
+                        var type = (FieldLayoutMode)entry;
+
+                        if (ImGui.Selectable(type.GetDisplayName()))
+                        {
+                            CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type = (FieldLayoutMode)entry;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
     #endregion
 
     #region Field Input
