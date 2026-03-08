@@ -33,7 +33,16 @@ public class ParamFieldDecorators
         ParentView = curView;
     }
 
-    public void HandleLabels(FieldMetaContext metaContext, Param.Row row)
+    public void HandleCache(FieldMetaContext metaContext, Param.Row row, object oldval)
+    {
+        // Group reference
+        if (metaContext.DisplayGroupReference)
+        {
+            GroupReferenceHelper.BuildCache(ParentView, metaContext.GroupReference, row, oldval);
+        }
+    }
+
+    public void HandleLabels(FieldMetaContext metaContext, Param.Row row, object oldval)
     {
         if (metaContext.HasAnyDisplayedElements())
         {
@@ -43,6 +52,12 @@ public class ParamFieldDecorators
             if (metaContext.DisplayParamReference)
             {
                 ParamReferenceHelper.Label(ParentView, metaContext.ParamReferences, row);
+            }
+
+            // Group reference
+            if (metaContext.DisplayGroupReference)
+            {
+                GroupReferenceHelper.Label(ParentView, metaContext.GroupReference, row, oldval);
             }
 
             // FMG reference label
@@ -151,6 +166,12 @@ public class ParamFieldDecorators
             if (metaContext.DisplayParamReference)
             {
                 ParamReferenceHelper.Hint(ParentView, metaContext.ParamReferences, row, oldval);
+            }
+
+            // Group reference
+            if (metaContext.DisplayGroupReference)
+            {
+                GroupReferenceHelper.Hint(ParentView, metaContext.GroupReference, row, oldval);
             }
 
             // FMG reference
@@ -270,6 +291,11 @@ public class ParamFieldDecorators
             ParamReferenceHelper.Click(ParentView, oldval, row, metaContext.ParamReferences);
         }
 
+        if (metaContext.DisplayGroupReference)
+        {
+            GroupReferenceHelper.Click(ParentView, oldval, row, metaContext.GroupReference);
+        }
+
         if (metaContext.DisplayTextReferences)
         {
             TextReferenceHelper.Click(ParentView, oldval, row, metaContext.TextReferences, metaContext.FmgRefRoleOverride);
@@ -285,6 +311,11 @@ public class ParamFieldDecorators
             if (metaContext.DisplayParamReference)
             {
                 result |= ParamReferenceHelper.ContextMenu(ParentView, metaContext.ParamReferences, row, oldval, ref newval, Editor.ActionManager);
+            }
+
+            if (metaContext.DisplayGroupReference)
+            {
+                result |= GroupReferenceHelper.ContextMenu(ParentView, metaContext.GroupReference, row, oldval, ref newval, Editor.ActionManager);
             }
 
             if (metaContext.DisplayTextReference)
@@ -404,6 +435,7 @@ public class FieldMetaContext
     public bool DisplayMapTextReference = false;
     public bool DisplayVirtualReference = false;
     public bool DisplayTextureReference = false;
+    public bool DisplayGroupReference = false;
 
     public bool DisplayEnum = false;
     public bool DisplayParticleEnum = false;
@@ -415,6 +447,8 @@ public class FieldMetaContext
     public bool DisplayProjectEnum = false;
 
     public bool DisplayTileReference = false;
+
+    public string GroupReference = "";
 
     public FieldMetaContext(ParamEditorView curView, ParamMeta meta, ParamFieldMeta fieldMeta, string activeParam, string internalName)
     {
@@ -480,6 +514,9 @@ public class FieldMetaContext
             DisplayTileReference = fieldMeta.TileRef != null;
 
             FmgRefRoleOverride = fieldMeta?.FmgRefRoleOverride;
+
+            GroupReference = fieldMeta?.GroupReference;
+            DisplayGroupReference = GroupReference != null;
         }
     }
 
@@ -532,6 +569,9 @@ public class FieldMetaContext
         if (DisplayTileReference)
             display = true;
 
+        if (DisplayGroupReference)
+            display = true;
+
         return display;
     }
 
@@ -555,6 +595,9 @@ public class FieldMetaContext
             display = true;
 
         if (DisplayTextureReference)
+            display = true;
+
+        if (DisplayGroupReference)
             display = true;
 
         return display;
@@ -2336,6 +2379,148 @@ public static class FieldColorPicker
         }
 
         return new Vector3(rVal, gVal, bVal);
+    }
+}
+#endregion
+
+
+#region Group Reference Helper
+public static class GroupReferenceHelper
+{
+    private static List<GroupReferenceState> refCache = new();
+
+    public static void BuildCache(ParamEditorView curView, string groupRef, Param.Row context, dynamic oldval)
+    {
+        var groupRefData = curView.Project.Handler.ParamData.GroupReferences;
+        var targetData = groupRefData.Entries.FirstOrDefault(e => e.Name == groupRef);
+
+        if (targetData == null)
+            return;
+
+        refCache = ParamReferenceResolver.ResolveGroupReferences(curView, targetData, context, oldval);
+    }
+
+    public static void Label(ParamEditorView curView, string groupRef, Param.Row context, dynamic oldval)
+    {
+        if (!CFG.Current.ParamEditor_Field_List_Display_References)
+            return;
+
+        if (groupRef == null || groupRef == "" || refCache.Count == 0)
+        {
+            return;
+        }
+
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+
+        ImGui.BeginGroup();
+        foreach (var entry in refCache)
+        {
+            if (CFG.Current.ParamEditor_Field_List_GroupReference_DisplayCommunityName)
+            {
+                ImGui.TextUnformatted($"  <{entry.DisplayName}>");
+            }
+            else
+            {
+                ImGui.TextUnformatted($"  <{entry.Param}>");
+            }
+        }
+        ImGui.EndGroup();
+
+        ImGui.PopStyleVar(1);
+    }
+
+    public static void Hint(ParamEditorView curView, string groupRef, Param.Row context, dynamic oldval)
+    {
+        if (!CFG.Current.ParamEditor_Field_List_Display_References)
+            return;
+
+        if (groupRef == null || groupRef == "" || refCache.Count == 0)
+        {
+            return;
+        }
+
+        foreach (var entry in refCache)
+        {
+            if (entry.Row.ID == oldval)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+                ImGui.TextUnformatted(entry.Hint);
+                ImGui.PopStyleColor();
+            }
+        }
+    }
+
+    public static bool ContextMenu(ParamEditorView curView, string groupRef, Param.Row context,
+        dynamic oldval, ref object newval, ActionManager executor)
+    {
+        if (curView.GetPrimaryBank().Params == null)
+        {
+            return false;
+        }
+
+        int index = 0;
+
+        foreach (var entry in refCache)
+        {
+            if (entry.Row.ID == oldval)
+            {
+                if (ImGui.Selectable($@"Go to {entry.Hint}##GoToElement{index}"))
+                {
+                    EditorCommandQueue.AddCommand($@"param/select/-1/{entry.Param}/{entry.Row.ID}");
+                }
+
+                if (ImGui.Selectable($@"Go to {entry.Hint} in new view##GoToElementInView{index}"))
+                {
+                    EditorCommandQueue.AddCommand($@"param/select/new/{entry.Param}/{entry.Row.ID}");
+                }
+
+                if (!string.IsNullOrWhiteSpace(entry.Row.Name) &&
+                    (InputManager.HasCtrlDown() || string.IsNullOrWhiteSpace(context.Name)) &&
+                    ImGui.Selectable($@"Inherit referenced row's name ({entry.Row.Name})##InheritName{index}"))
+                {
+                    executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"), context,
+                        entry.Row.Name));
+                }
+                else if ((InputManager.HasCtrlDown() || string.IsNullOrWhiteSpace(entry.Row.Name)) &&
+                         !string.IsNullOrWhiteSpace(context.Name) &&
+                         ImGui.Selectable($@"Proliferate name to referenced row ({entry.Param})##ProliferateName{index}"))
+                {
+                    executor.ExecuteAction(new PropertiesChangedAction(entry.Row.GetType().GetProperty("Name"), entry.Row, context.Name));
+                }
+
+                index++;
+            }
+        }
+
+        return false;
+    }
+
+    public static bool Click(ParamEditorView curView, dynamic oldval, Param.Row context, string groupRef)
+    {
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Left) && InputManager.HasCtrlDown())
+        {
+            foreach (var entry in refCache)
+            {
+                if (entry.Row.ID == oldval)
+                {
+                    if (entry.Row != null)
+                    {
+                        if (InputManager.HasShiftDown())
+                        {
+                            EditorCommandQueue.AddCommand(
+                                $@"param/select/new/{entry.Param}/{entry.Row.ID}");
+                        }
+                        else
+                        {
+                            EditorCommandQueue.AddCommand(
+                                $@"param/select/-1/{entry.Param}/{entry.Row.ID}");
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 }
 #endregion

@@ -182,4 +182,92 @@ public static class ParamReferenceResolver
 
         return currentPath;
     }
+
+    public static List<GroupReferenceState> ResolveGroupReferences(ParamEditorView curView, GroupRefList refList, Param.Row context, dynamic oldval)
+    {
+        List<GroupReferenceState> rows = new();
+
+        if (curView.GetPrimaryBank().Params == null)
+        {
+            return rows;
+        }
+
+        if (refList == null)
+            return rows;
+
+        var originalValue = -1;
+        var success = int.TryParse($"{oldval}", out originalValue);
+
+        if (!success)
+            return rows;
+
+        foreach (var entry in refList.Instances)
+        {
+            var rt = entry.Param;
+            var hint = "";
+            if (curView.GetPrimaryBank().Params.ContainsKey(rt))
+            {
+                var altval = originalValue;
+
+                Param param = curView.GetPrimaryBank().Params[rt];
+                var meta = curView.GetParamData().GetParamMeta(curView.GetPrimaryBank().Params[rt].AppliedParamdef);
+                if (meta != null && meta.Row0Dummy && altval == 0)
+                {
+                    continue;
+                }
+
+                Param.Row r = param[altval];
+                if (r == null && altval > 0 && meta != null)
+                {
+                    if (meta.FixedOffset != 0)
+                    {
+                        altval = originalValue + meta.FixedOffset;
+                        hint += meta.FixedOffset > 0 ? "+" + meta.FixedOffset : meta.FixedOffset.ToString();
+                    }
+
+                    if (meta.OffsetSize > 0)
+                    {
+                        altval = altval - (altval % meta.OffsetSize);
+                        hint += "+" + (originalValue % meta.OffsetSize);
+                    }
+
+                    r = curView.GetPrimaryBank().Params[rt][altval];
+                }
+
+                if (r == null)
+                {
+                    continue;
+                }
+
+                if (string.IsNullOrWhiteSpace(r.Name))
+                {
+                    var state = new GroupReferenceState();
+                    state.Param = entry.Param;
+                    state.Row = r;
+                    state.Hint = "Unnamed Row" + hint;
+                    state.DisplayName = entry.DisplayName;
+                    rows.Add(state);
+                }
+                else
+                {
+                    var state = new GroupReferenceState();
+                    state.Param = entry.Param;
+                    state.Row = r;
+                    state.Hint = r.Name + hint;
+                    state.DisplayName = entry.DisplayName;
+                    rows.Add(state);
+                }
+            }
+        }
+
+        return rows;
+    }
+}
+
+public class GroupReferenceState
+{
+    public string Param { get; set; }
+    public Param.Row Row { get; set; }
+    public string Hint { get; set; }
+    public string DisplayName { get; set; }
 }

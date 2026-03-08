@@ -559,6 +559,7 @@ public class CFG
     public bool ParamEditor_Field_List_Display_Icon_Preview = true;
     public float ParamEditor_Field_List_Icon_Preview_Scale = 1.0f;
     public bool ParamEditor_Field_List_Display_Modified_Field_Bg = true;
+    public bool ParamEditor_Field_List_GroupReference_DisplayCommunityName = true;
 
     public ParamTooltipMode ParamEditor_Field_List_Tooltip_Mode = ParamTooltipMode.OnFieldName;
 

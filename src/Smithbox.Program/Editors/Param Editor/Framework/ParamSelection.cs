@@ -206,6 +206,13 @@ public class ParamSelection
         }
     }
 
+    public bool IsDirty()
+    {
+        ParamSelectionState s = _paramStates[_activeParam];
+
+        return s.selectionCacheDirty;
+    }
+
     public void SetCompareRow(Param.Row row)
     {
         if (_activeParam != null)

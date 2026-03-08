@@ -1108,6 +1108,24 @@ public class ParamEditorPrefs
             }
         };
     }
+    public static PreferenceItem ParamEditor_Field_List_GroupReference_DisplayCommunityName()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 16,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Group Reference Community Names",
+            Description = "If enabled, group references will use community name labels.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_GroupReference_DisplayCommunityName);
+            }
+        };
+    }
     #endregion
 
     #region Field Input

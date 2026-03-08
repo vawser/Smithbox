@@ -10,82 +10,82 @@
     <lightBulletId0
     AltName="Slot 0: Light Bullet"
     Wiki="The bullet to trigger on light attack for slot 0."
-    Refs="BulletParam" />
+    GroupReference="bulletparam" />
   
     <heavyBulletId0
     AltName="Slot 0: Heavy Bullet"
     Wiki="The bullet to trigger on heavy attack for slot 0."
-    Refs="BulletParam" />
+    GroupReference="bulletparam" />
   
     <lightDamageId0
     AltName="Slot 0: Light Bullet Damage"
     Wiki="The damage profile to use for light bullet in slot 0."
-    Refs="PlayerDamageParam" />
+    GroupReference="damageparam" />
   
     <heavyDamageId0
     AltName="Slot 0: Heavy Bullet Damage"
     Wiki="The damage profile to use for heavy bullet in slot 0."
-    Refs="PlayerDamageParam" />
+    GroupReference="damageparam" />
   
     <lightBulletId1
     AltName="Slot 1: Light Bullet"
     Wiki="The bullet to trigger on light attack for slot 1."
-    Refs="BulletParam" />
+    GroupReference="bulletparam" />
   
     <heavyBulletId1
     AltName="Slot 1: Heavy Bullet"
     Wiki="The bullet to trigger on heavy attack for slot 1."
-    Refs="BulletParam" />
+    GroupReference="bulletparam" />
   
     <lightDamageId1
     AltName="Slot 1: Light Bullet Damage"
     Wiki="The damage profile to use for light bullet in slot 1."
-    Refs="PlayerDamageParam" />
+    GroupReference="damageparam" />
   
     <heavyDamageId1
     AltName="Slot 1: Heavy Bullet Damage"
     Wiki="The damage profile to use for heavy bullet in slot 1."
-    Refs="PlayerDamageParam" />
+    GroupReference="damageparam" />
     
     <lightBulletId2
     AltName="Slot 2: Light Bullet"
     Wiki="The bullet to trigger on light attack for slot 2."
-    Refs="BulletParam" />
+    GroupReference="bulletparam" />
   
     <heavyBulletId2
     AltName="Slot 2: Heavy Bullet"
     Wiki="The bullet to trigger on heavy attack for slot 2."
-    Refs="BulletParam" />
+    GroupReference="bulletparam" />
   
     <lightDamageId2
     AltName="Slot 2: Light Bullet Damage"
     Wiki="The damage profile to use for light bullet in slot 2."
-    Refs="PlayerDamageParam" />
+    GroupReference="damageparam" />
   
     <heavyDamageId2
     AltName="Slot 2: Heavy Bullet Damage"
     Wiki="The damage profile to use for heavy bullet in slot 2."
-    Refs="PlayerDamageParam" />
+    GroupReference="damageparam" />
     
     <lightBulletId3
     AltName="Slot 3: Light Bullet"
     Wiki="The bullet to trigger on light attack for slot 3."
-    Refs="BulletParam" />
+    GroupReference="bulletparam" />
   
     <heavyBulletId3
     AltName="Slot 3: Heavy Bullet"
     Wiki="The bullet to trigger on heavy attack for slot 3."
-    Refs="BulletParam" />
+    GroupReference="bulletparam" />
   
     <lightDamageId3
     AltName="Slot 3: Light Bullet Damage"
     Wiki="The damage profile to use for light bullet in slot 3."
-    Refs="PlayerDamageParam" />
+    GroupReference="damageparam" />
   
     <heavyDamageId3
     AltName="Slot 3: Heavy Bullet Damage"
     Wiki="The damage profile to use for heavy bullet in slot 3."
-    Refs="PlayerDamageParam" />
+    GroupReference="damageparam" />
     
     <modelIdInQuiver
     AltName="Quiver Model ID"

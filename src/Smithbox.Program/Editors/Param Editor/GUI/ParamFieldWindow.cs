@@ -570,8 +570,11 @@ public class ParamFieldWindow
             // Name column
             PropertyRowName(fieldOffset, ref internalName, cellMeta);
 
+            // Cache
+            ParentView.FieldDecorators.HandleCache(metaContext, row, oldval);
+
             // Labels
-            ParentView.FieldDecorators.HandleLabels(metaContext, row);
+            ParentView.FieldDecorators.HandleLabels(metaContext, row, oldval);
         }
 
         //------------------------------

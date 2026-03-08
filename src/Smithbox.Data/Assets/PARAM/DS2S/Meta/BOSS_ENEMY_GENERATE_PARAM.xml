@@ -4,11 +4,13 @@
   <Field>
     <generatorBeginId
     AltName="Generator Start ID"
-    Wiki="The first generator to invoke." />
+    Wiki="The first generator to invoke." 
+    GroupReference="generatorparam" />
     
     <generatorEndId
     AltName="Generator End ID"
-    Wiki="The last generator to invoke." />
+    Wiki="The last generator to invoke." 
+    GroupReference="generatorparam" />
     
     <dummyPolyBeginId
     AltName="Dummy Polygon Start ID"
@@ -20,11 +22,13 @@
     
     <isCopyPlayerProtector
     AltName="Inherit Player Armor"
-    Wiki="If enabled, the player armor is inherited by the generated enemy." />
+    Wiki="If enabled, the player armor is inherited by the generated enemy." 
+    IsBool="" />
     
     <isAnotherWorld
     AltName="Is Extradimensional"
-    Wiki="If enabled, the generated enemy is from another world (mirror break?)" />
+    Wiki="If enabled, the generated enemy is from another world (mirror break?)" 
+    IsBool="" />
     
     <dummy
     Padding="" />

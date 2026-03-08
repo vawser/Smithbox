@@ -1,18 +1,14 @@
-﻿using Microsoft.Extensions.Logging;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.FileBrowser;
 using StudioCore.Logger;
 using StudioCore.Renderer;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-using static StudioCore.Editors.ParamEditor.ParamBank;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -41,6 +37,8 @@ public class ParamData : IDisposable
     public GameOffsetResource ParamMemoryOffsets;
     public ParamCategoryResource ParamCategories;
     public ParamCommutativeResource CommutativeParamGroups;
+
+    public GroupReferences GroupReferences;
 
     public ParamData(ProjectEntry project)
     {
@@ -170,6 +168,23 @@ public class ParamData : IDisposable
         {
             Smithbox.Log(this, $"[Param Editor] Setup the Commutative Param Groups data.");
         }
+
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            // Commutative Param Groups (per project)
+            Task<bool> groupRefTask = SetupGroupReferences();
+            bool groupRefTaskResult = await groupRefTask;
+
+            if (!groupRefTaskResult)
+            {
+                Smithbox.LogError(this, $"[Param Editor] Failed to setup the Group Reference data.");
+            }
+            else
+            {
+                Smithbox.Log(this, $"[Param Editor] Setup the Group Reference data.");
+            }
+        }
+
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Load();
@@ -899,6 +914,50 @@ public class ParamData : IDisposable
             catch (Exception e)
             {
                 Smithbox.LogError(this, $"[Param Editor] Failed to read the Commutative Param Groups: {targetFile}", LogPriority.High, e);
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupGroupReferences()
+    {
+        await Task.Yield();
+
+        GroupReferences = new();
+
+        // Information
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
+        var sourceFile = Path.Combine(sourceFolder, "Group Reference List.json");
+
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
+        var projectFile = Path.Combine(projectFolder, "Group Reference List.json");
+
+        var targetFile = sourceFile;
+
+        if (File.Exists(projectFile))
+        {
+            targetFile = projectFile;
+        }
+
+        if (File.Exists(targetFile))
+        {
+            try
+            {
+                var filestring = await File.ReadAllTextAsync(targetFile);
+
+                try
+                {
+                    GroupReferences = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.GroupReferences);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize the Group References: {targetFile}", LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, $"[Param Editor] Failed to read the Group References: {targetFile}", LogPriority.High, e);
             }
         }
 
