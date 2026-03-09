@@ -1245,8 +1245,40 @@
           "Description": ""
         },
         {
-          "ID": "3",
+          "ID": "4",
           "Name": "Quadratic Interpolation 2",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "DisplayName": "NON_INTERRUPTIBLE_TYPE",
+      "Name": "NON_INTERRUPTIBLE_TYPE",
+      "Description": "",
+      "Options": [
+        {
+          "ID": "0",
+          "Name": "Invalid",
+          "Description": ""
+        },
+        {
+          "ID": "1",
+          "Name": "Super Armor",
+          "Description": ""
+        },
+        {
+          "ID": "2",
+          "Name": "Ultra Armor",
+          "Description": ""
+        },
+        {
+          "ID": "3",
+          "Name": "Invincible",
+          "Description": ""
+        },
+        {
+          "ID": "4",
+          "Name": "Damage Immunity",
           "Description": ""
         }
       ]

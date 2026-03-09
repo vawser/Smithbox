@@ -6,125 +6,1349 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="u8 ModelMask0_Index0_Red" />
-    <Field Def="u8 ModelMask0_Index1_Red" />
-    <Field Def="u8 ModelMask0_Index2_Red" />
-    <Field Def="u8 ModelMask0_Index3_Red" />
-    <Field Def="u8 ModelMask0_Index0_Green" />
-    <Field Def="u8 ModelMask0_Index1_Green" />
-    <Field Def="u8 ModelMask0_Index2_Green" />
-    <Field Def="u8 ModelMask0_Index3_Green" />
-    <Field Def="u8 ModelMask0_Index0_Blue" />
-    <Field Def="u8 ModelMask0_Index1_Blue" />
-    <Field Def="u8 ModelMask0_Index2_Blue" />
-    <Field Def="u8 ModelMask0_Index3_Blue" />
-    <Field Def="u8 ModelMask1_Index0_Red" />
-    <Field Def="u8 ModelMask1_Index1_Red" />
-    <Field Def="u8 ModelMask1_Index2_Red" />
-    <Field Def="u8 ModelMask1_Index3_Red" />
-    <Field Def="u8 ModelMask1_Index0_Green" />
-    <Field Def="u8 ModelMask1_Index1_Green" />
-    <Field Def="u8 ModelMask1_Index2_Green" />
-    <Field Def="u8 ModelMask1_Index3_Green" />
-    <Field Def="u8 ModelMask1_Index0_Blue" />
-    <Field Def="u8 ModelMask1_Index1_Blue" />
-    <Field Def="u8 ModelMask1_Index2_Blue" />
-    <Field Def="u8 ModelMask1_Index3_Blue" />
-    <Field Def="u8 ModelMask2_Index0_Red" />
-    <Field Def="u8 ModelMask2_Index1_Red" />
-    <Field Def="u8 ModelMask2_Index2_Red" />
-    <Field Def="u8 ModelMask2_Index3_Red" />
-    <Field Def="u8 ModelMask2_Index0_Green" />
-    <Field Def="u8 ModelMask2_Index1_Green" />
-    <Field Def="u8 ModelMask2_Index2_Green" />
-    <Field Def="u8 ModelMask2_Index3_Green" />
-    <Field Def="u8 ModelMask2_Index0_Blue" />
-    <Field Def="u8 ModelMask2_Index1_Blue" />
-    <Field Def="u8 ModelMask2_Index2_Blue" />
-    <Field Def="u8 ModelMask2_Index3_Blue" />
-    <Field Def="u8 ModelMask3_Index0_Red" />
-    <Field Def="u8 ModelMask3_Index1_Red" />
-    <Field Def="u8 ModelMask3_Index2_Red" />
-    <Field Def="u8 ModelMask3_Index3_Red" />
-    <Field Def="u8 ModelMask3_Index0_Green" />
-    <Field Def="u8 ModelMask3_Index1_Green" />
-    <Field Def="u8 ModelMask3_Index2_Green" />
-    <Field Def="u8 ModelMask3_Index3_Green" />
-    <Field Def="u8 ModelMask3_Index0_Blue" />
-    <Field Def="u8 ModelMask3_Index1_Blue" />
-    <Field Def="u8 ModelMask3_Index2_Blue" />
-    <Field Def="u8 ModelMask3_Index3_Blue" />
-    <Field Def="u8 ModelMask4_Index0_Red" />
-    <Field Def="u8 ModelMask4_Index1_Red" />
-    <Field Def="u8 ModelMask4_Index2_Red" />
-    <Field Def="u8 ModelMask4_Index3_Red" />
-    <Field Def="u8 ModelMask4_Index0_Green" />
-    <Field Def="u8 ModelMask4_Index1_Green" />
-    <Field Def="u8 ModelMask4_Index2_Green" />
-    <Field Def="u8 ModelMask4_Index3_Green" />
-    <Field Def="u8 ModelMask4_Index0_Blue" />
-    <Field Def="u8 ModelMask4_Index1_Blue" />
-    <Field Def="u8 ModelMask4_Index2_Blue" />
-    <Field Def="u8 ModelMask4_Index3_Blue" />
-    <Field Def="u8 ModelMask5_Index0_Red" />
-    <Field Def="u8 ModelMask5_Index1_Red" />
-    <Field Def="u8 ModelMask5_Index2_Red" />
-    <Field Def="u8 ModelMask5_Index3_Red" />
-    <Field Def="u8 ModelMask5_Index0_Green" />
-    <Field Def="u8 ModelMask5_Index1_Green" />
-    <Field Def="u8 ModelMask5_Index2_Green" />
-    <Field Def="u8 ModelMask5_Index3_Green" />
-    <Field Def="u8 ModelMask5_Index0_Blue" />
-    <Field Def="u8 ModelMask5_Index1_Blue" />
-    <Field Def="u8 ModelMask5_Index2_Blue" />
-    <Field Def="u8 ModelMask5_Index3_Blue" />
-    <Field Def="u8 ModelMask6_Index0_Red" />
-    <Field Def="u8 ModelMask6_Index1_Red" />
-    <Field Def="u8 ModelMask6_Index2_Red" />
-    <Field Def="u8 ModelMask6_Index3_Red" />
-    <Field Def="u8 ModelMask6_Index0_Green" />
-    <Field Def="u8 ModelMask6_Index1_Green" />
-    <Field Def="u8 ModelMask6_Index2_Green" />
-    <Field Def="u8 ModelMask6_Index3_Green" />
-    <Field Def="u8 ModelMask6_Index0_Blue" />
-    <Field Def="u8 ModelMask6_Index1_Blue" />
-    <Field Def="u8 ModelMask6_Index2_Blue" />
-    <Field Def="u8 ModelMask6_Index3_Blue" />
-    <Field Def="u8 ModelMask7_Index0_Red" />
-    <Field Def="u8 ModelMask7_Index1_Red" />
-    <Field Def="u8 ModelMask7_Index2_Red" />
-    <Field Def="u8 ModelMask7_Index3_Red" />
-    <Field Def="u8 ModelMask7_Index0_Green" />
-    <Field Def="u8 ModelMask7_Index1_Green" />
-    <Field Def="u8 ModelMask7_Index2_Green" />
-    <Field Def="u8 ModelMask7_Index3_Green" />
-    <Field Def="u8 ModelMask7_Index0_Blue" />
-    <Field Def="u8 ModelMask7_Index1_Blue" />
-    <Field Def="u8 ModelMask7_Index2_Blue" />
-    <Field Def="u8 ModelMask7_Index3_Blue" />
-    <Field Def="s32 Unk60" />
-    <Field Def="s32 Unk64" />
-    <Field Def="s32 Unk68" />
-    <Field Def="s32 Unk6C" />
-    <Field Def="s32 Unk70" />
-    <Field Def="s32 Unk74" />
-    <Field Def="s32 Unk78" />
-    <Field Def="s32 Unk7C" />
-    <Field Def="s32 Unk80" />
-    <Field Def="s32 Unk84" />
-    <Field Def="s32 Unk88" />
-    <Field Def="s32 Unk8C" />
-    <Field Def="s32 Unk90" />
-    <Field Def="s32 Unk94" />
-    <Field Def="s32 Unk98" />
-    <Field Def="s32 Unk9C" />
-    <Field Def="s32 UnkA0" />
-    <Field Def="s32 UnkA4" />
-    <Field Def="s32 UnkA8" />
-    <Field Def="s32 UnkAC" />
-    <Field Def="s32 UnkB0" />
-    <Field Def="s32 UnkB4" />
-    <Field Def="s32 UnkB8" />
-    <Field Def="s32 UnkBC" />
-  </Fields>
+        <Field Def="u8 pattern0PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1010</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1020</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1030</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1040</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1011</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1021</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1031</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1041</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1012</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1022</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1032</SortID>
+        </Field>
+        <Field Def="u8 pattern0PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1042</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2010</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2020</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2030</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2040</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2011</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2021</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2031</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2041</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2012</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2022</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2032</SortID>
+        </Field>
+        <Field Def="u8 pattern1PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2042</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3010</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3020</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3030</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3040</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3011</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3021</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3031</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3041</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3012</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3022</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3032</SortID>
+        </Field>
+        <Field Def="u8 pattern2PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3042</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4010</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4020</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4030</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4040</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4011</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4021</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4031</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4041</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4012</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4022</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4032</SortID>
+        </Field>
+        <Field Def="u8 pattern3PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4042</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5010</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5020</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5030</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5040</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5011</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5021</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5031</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5041</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5012</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5022</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5032</SortID>
+        </Field>
+        <Field Def="u8 pattern4PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5042</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6010</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6020</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6030</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6040</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6011</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6021</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6031</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6041</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6012</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6022</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6032</SortID>
+        </Field>
+        <Field Def="u8 pattern5PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6042</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7010</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7020</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7030</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7040</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7011</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7021</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7031</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7041</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7012</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7022</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7032</SortID>
+        </Field>
+        <Field Def="u8 pattern6PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7042</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8010</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8020</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8030</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8040</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8011</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8021</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8031</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8041</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8012</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8022</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8032</SortID>
+        </Field>
+        <Field Def="u8 pattern7PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8042</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9010</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9020</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9030</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9040</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9011</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9021</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9031</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9041</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9012</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9022</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9032</SortID>
+        </Field>
+        <Field Def="u8 pattern8PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9042</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10010</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10020</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10030</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10040</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10011</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10021</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10031</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10041</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10012</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10022</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10032</SortID>
+        </Field>
+        <Field Def="u8 pattern9PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10042</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11010</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11020</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11030</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11040</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11011</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11021</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11031</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11041</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11012</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11022</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11032</SortID>
+        </Field>
+        <Field Def="u8 pattern10PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11042</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12010</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12020</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12030</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12040</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12011</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12021</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12031</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12041</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12012</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12022</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12032</SortID>
+        </Field>
+        <Field Def="u8 pattern11PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12042</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13010</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13020</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13030</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13040</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13011</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13021</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13031</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13041</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13012</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13022</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13032</SortID>
+        </Field>
+        <Field Def="u8 pattern12PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13042</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14010</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14020</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14030</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14040</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14011</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14021</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14031</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14041</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14012</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14022</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14032</SortID>
+        </Field>
+        <Field Def="u8 pattern13PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14042</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15010</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15020</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15030</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15040</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15011</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15021</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15031</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15041</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15012</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15022</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15032</SortID>
+        </Field>
+        <Field Def="u8 pattern14PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15042</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsR0 = 255">
+            <DisplayName>パーツ0_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16010</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsR1 = 255">
+            <DisplayName>パーツ1_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16020</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsR2 = 255">
+            <DisplayName>パーツ2_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16030</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsR3 = 255">
+            <DisplayName>パーツ3_色R</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16040</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsG0 = 255">
+            <DisplayName>パーツ0_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16011</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsG1 = 255">
+            <DisplayName>パーツ1_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16021</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsG2 = 255">
+            <DisplayName>パーツ2_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16031</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsG3 = 255">
+            <DisplayName>パーツ3_色G</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16041</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsB0 = 255">
+            <DisplayName>パーツ0_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16012</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsB1 = 255">
+            <DisplayName>パーツ1_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16022</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsB2 = 255">
+            <DisplayName>パーツ2_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16032</SortID>
+        </Field>
+        <Field Def="u8 pattern15PartsB3 = 255">
+            <DisplayName>パーツ3_色B</DisplayName>
+            <DisplayFormat>$d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16042</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

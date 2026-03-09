@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to enemy behavior."  />
+  <Self Wiki="Defines parameters related to enemy behavior."  
+  FieldLayout="BehaviorParam" />
+  
   <Field>
     <action0DamageId00
     AltName="Action 0: Damage ID 0"
@@ -40,7 +42,7 @@
     <action0AttackInvincible
     AltName="Action 0: Uninterruptible Type"
     Wiki="The uninterruptible type for this behavior." 
-    Enum="NON_INTERRUPTIBLE_TYPE" />
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
     
     <action0HandType
     AltName="Action 0: Attacker"
@@ -155,7 +157,7 @@
     <action1AttackInvincible
     AltName="Action 1: Uninterruptible Type"
     Wiki="The uninterruptible type for this behavior." 
-    Enum="NON_INTERRUPTIBLE_TYPE" />
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
     
     <action1HandType
     AltName="Action 1: Attacker"
@@ -270,7 +272,7 @@
     <action2AttackInvincible
     AltName="Action 2: Uninterruptible Type"
     Wiki="The uninterruptible type for this behavior." 
-    Enum="NON_INTERRUPTIBLE_TYPE" />
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
     
     <action2HandType
     AltName="Action 2: Attacker"
@@ -385,7 +387,7 @@
     <action3AttackInvincible
     AltName="Action 3: Uninterruptible Type"
     Wiki="The uninterruptible type for this behavior." 
-    Enum="NON_INTERRUPTIBLE_TYPE" />
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
     
     <action3HandType
     AltName="Action 3: Attacker"
@@ -500,7 +502,7 @@
     <action4AttackInvincible
     AltName="Action 4: Uninterruptible Type"
     Wiki="The uninterruptible type for this behavior." 
-    Enum="NON_INTERRUPTIBLE_TYPE" />
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
     
     <action4HandType
     AltName="Action 4: Attacker"
@@ -615,7 +617,7 @@
     <action5AttackInvincible
     AltName="Action 5: Uninterruptible Type"
     Wiki="The uninterruptible type for this behavior." 
-    Enum="NON_INTERRUPTIBLE_TYPE" />
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
     
     <action5HandType
     AltName="Action 5: Attacker"
@@ -730,7 +732,7 @@
     <action6AttackInvincible
     AltName="Action 6: Uninterruptible Type"
     Wiki="The uninterruptible type for this behavior." 
-    Enum="NON_INTERRUPTIBLE_TYPE" />
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
     
     <action6HandType
     AltName="Action 6: Attacker"
@@ -845,7 +847,7 @@
     <action7AttackInvincible
     AltName="Action 7: Uninterruptible Type"
     Wiki="The uninterruptible type for this behavior." 
-    Enum="NON_INTERRUPTIBLE_TYPE" />
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
     
     <action7HandType
     AltName="Action 7: Attacker"
@@ -960,7 +962,7 @@
     <action8AttackInvincible
     AltName="Action 8: Uninterruptible Type"
     Wiki="The uninterruptible type for this behavior." 
-    Enum="NON_INTERRUPTIBLE_TYPE" />
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
     
     <action8HandType
     AltName="Action 8: Attacker"
@@ -1075,7 +1077,7 @@
     <action9AttackInvincible
     AltName="Action 9: Uninterruptible Type"
     Wiki="The uninterruptible type for this behavior." 
-    Enum="NON_INTERRUPTIBLE_TYPE" />
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
     
     <action9HandType
     AltName="Action 9: Attacker"
@@ -1153,13 +1155,6 @@
     Wiki="The maximum time to wait before repeating this behavior." />
   </Field>
   <Enums>
-	<Enum Name="NON_INTERRUPTIBLE_TYPE">
-		<Option Value="0" Name="Invalid" />
-		<Option Value="1" Name="Super Armor" />
-		<Option Value="2" Name="Ultra Armor" />
-		<Option Value="3" Name="Invincible" />
-		<Option Value="4" Name="Damage Immunity" />
-	</Enum>
 	<Enum Name="BLADE_CTRL_TYPE">
 		<Option Value="0" Name="Spot Attack" />
 		<Option Value="1" Name="Walking Attack" />

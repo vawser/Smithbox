@@ -85,7 +85,7 @@ public class ParamMeta
     /// </summary>
     public SoulCostDefinition SoulCostDef { get; set; }
 
-    public string FieldLayout { get; set; }
+    public string FieldLayout { get; set; } = "";
 
     public ParamMeta(ParamData parent)
     {

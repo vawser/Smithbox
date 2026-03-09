@@ -88,7 +88,7 @@ public class ParamFieldWindow
         bool useGroups = false;
 
         useGroups = CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts
-                         && Project.Handler.ParamData.FieldLayouts.Entries.Any(e => e.Name == activeParam);
+                         && Project.Handler.ParamData.FieldLayouts.Entries.Any(e => e.Name == meta.FieldLayout);
 
         if (useGroups)
         {
@@ -391,6 +391,20 @@ public class ParamFieldWindow
 
             UIHelper.Tooltip($"Toggle the display of the auxiliary columns.\nCurrent Mode: {auxColumnMode}");
 
+            // Toggle Field Layouts
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Cubes}"))
+            {
+                CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts = !CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts;
+            }
+
+            var fieldLayoutsState = "Ignore Field Layouts";
+            if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts)
+                fieldLayoutsState = "Use Field Layouts";
+
+            UIHelper.Tooltip($"Toggle the usage of field layouts.\nCurrent Mode: {fieldLayoutsState}");
+
             // Toggle Field Offset Column
             ImGui.SameLine();
 
@@ -539,10 +553,10 @@ public class ParamFieldWindow
         }
 
         bool useLayout = CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts
-                         && Project.Handler.ParamData.FieldLayouts.Entries.Any(e => e.Name == activeParam);
+                         && Project.Handler.ParamData.FieldLayouts.Entries.Any(e => e.Name == meta.FieldLayout);
 
         var groupsDef = useLayout
-            ? Project.Handler.ParamData.FieldLayouts.Entries.FirstOrDefault(e => e.Name == activeParam)
+            ? Project.Handler.ParamData.FieldLayouts.Entries.FirstOrDefault(e => e.Name == meta.FieldLayout)
             : null;
 
         // Flat Mode
