@@ -20,16 +20,16 @@
     Wiki="The field of view (in degrees)." />
 
     <axisOffsetX
-    AltName="Position Offset: X-Axis"
-    Wiki="The position offset on the x-axis (in metres)." />
+    AltName="Axis Offset: X-Axis"
+    Wiki="The axis offset on the x-axis (in metres)." />
 
     <axisOffsetY
-    AltName="Position Offset: Y-Axis"
-    Wiki="The position offset on the y-axis (in metres)." />
+    AltName="Axis Offset: Y-Axis"
+    Wiki="The axis offset on the y-axis (in metres)." />
 
     <axisOffsetZ
-    AltName="Position Offset: Z-Axis"
-    Wiki="The position offset on the z-axis (in metres)." />
+    AltName="Axis Offset: Z-Axis"
+    Wiki="The axis offset on the z-axis (in metres)." />
 
     <rayWidth
     AltName="Ray Width"
@@ -44,7 +44,7 @@
     Wiki="The additional turning radius of the camera (in metres)." />
 
     <fulcrumRate
-    AltName="Fulcrum Position"
+    AltName="Fulcrum %"
     Wiki="0 is the target, 1 is the reference point." />
 
     <rotationX
@@ -66,12 +66,12 @@
     <startTransType
     AltName="Interpolation Type: Transition Start"
     Wiki="The interpolation type at the start of switching." 
-    Enum="CAMERA_INTERPOLATE_TYPE" />
+    ProjectEnum="CAMERA_INTERPOLATE_TYPE" />
 
     <endTransType
     AltName="Interpolation Type: Transition End"
     Wiki="The interpolation type at the end of switching." 
-    Enum="CAMERA_INTERPOLATE_TYPE" />
+    ProjectEnum="CAMERA_INTERPOLATE_TYPE" />
 
     <enableYReverse
     AltName="Allow Horizontal Flip"
@@ -97,13 +97,4 @@
     Padding="" />
 
   </Field>
-  <Enums>
-    <Enum Name="CAMERA_INTERPOLATE_TYPE">
-      <Option Value="0" Name="No Interpolation" />
-      <Option Value="1" Name="Instant Switching" />
-      <Option Value="2" Name="Linear Interpolation" />
-      <Option Value="3" Name="Quadratic Interpolation 1" />
-      <Option Value="4" Name="Quadratic Interpolation 2" />
-    </Enum>
-  </Enums>
 </PARAMMETA>

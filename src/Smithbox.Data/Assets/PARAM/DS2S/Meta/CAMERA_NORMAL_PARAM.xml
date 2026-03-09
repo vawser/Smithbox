@@ -2,5 +2,103 @@
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters relating to the camera."  />
   <Field>
+    <cameraType
+    AltName="Camera Behavior Type"
+    Wiki="The behavior to use for this camera." 
+    ProjectEnum="CAMERA_TYPE" />
+
+    <cameraBasePosType
+    AltName="Camera Reference Point Type"
+    Wiki="The reference point to use for this camera." 
+    ProjectEnum="CAMERA_BASE_POS_TYPE" />
+
+    <reserved
+    Padding="" />
+
+    <fovY
+    AltName="Horizontal Field of View"
+    Wiki="The field of view (in degrees)." />
+
+    <fulcrumOffsetX
+    AltName="Fulcrum Offset: X-Axis"
+    Wiki="The fulcrum offset on the x-axis (in metres)." />
+
+    <fulcrumOffsetY
+    AltName="Fulcrum Offset: Y-Axis"
+    Wiki="The fulcrum offset on the y-axis (in metres)." />
+
+    <fulcrumOffsetZ
+    AltName="Fulcrum Offset: Z-Axis"
+    Wiki="The fulcrum offset on the z-axis (in metres)." />
+
+    <fulcrumMoveRate
+    AltName="Fulcrum Tracking %"
+    Wiki="The fulcrum tracking strength." />
+
+    <lookAtOffsetX
+    AltName="Focus Offset: X-Axis"
+    Wiki="The look-at focus offset on the x-axis (in metres)." />
+
+    <lookAtOffsetY
+    AltName="Focus Offset: Y-Axis"
+    Wiki="The look-at focus offset on the y-axis (in metres)." />
+
+    <lookAtOffsetZ
+    AltName="Focus Offset: Z-Axis"
+    Wiki="The look-at focus offset on the z-axis (in metres)." />
+
+    <lookAtMoveRate
+    AltName="Focus Tracking %"
+    Wiki="The focus tracking strength." />
+
+    <positionOffsetX
+    AltName="Position Offset: X-Axis"
+    Wiki="The position offset on the x-axis (in metres)." />
+
+    <positionOffsetY
+    AltName="Position Offset: Y-Axis"
+    Wiki="The position offset on the y-axis (in metres)." />
+
+    <positionOffsetZ
+    AltName="Position Offset: Z-Axis"
+    Wiki="The position offset on the z-axis (in metres)." />
+
+    <positionMoveRate
+    AltName="Position Tracking %"
+    Wiki="The position tracking strength." />
+
+    <panSpeedMax
+    AltName="Pan Speed Maximum"
+    Wiki="The maximum speed for panning (in radians per second)." />
+
+    <panSpeedAccel
+    AltName="Pan Acceleration"
+    Wiki="The acceleration applied to panning (in radians per second)." />
+
+    <panSpeedBrake
+    AltName="Pan Brake Speed"
+    Wiki="The brake speed applied to panning (in radians per second)." />
+
+    <tiltSpeedMax
+    AltName="Tilt Speed Maximum"
+    Wiki="The maximum speed for tilting (in radians per second)." />
+
+    <tiltSpeedAccel
+    AltName="Tilt Acceleration"
+    Wiki="The acceleration applied to tilting (in radians per second)." />
+
+    <tiltSpeedBrake
+    AltName="Tilt Brake Speed"
+    Wiki="The brake speed applied to tilting (in radians per second)." />
+
+    <tiltUpLimit
+    AltName="Upwards Tilt Limit"
+    Wiki="The upwards tilt angle limit (in degrees)." />
+
+    <tiltDownLimit
+    AltName="Downwards Tilt Limit"
+    Wiki="The downwards tilt angle limit (in degrees)." />
+
+
   </Field>
 </PARAMMETA>

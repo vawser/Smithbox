@@ -2,5 +2,17 @@
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters relating to the camera area."  />
   <Field>
+    <cameraType
+    AltName="Camera Behavior Type"
+    Wiki="The behavior to use for this camera." 
+    ProjectEnum="CAMERA_TYPE" />
+
+    <cameraBasePosType
+    AltName="Camera Reference Point Type"
+    Wiki="The reference point to use for this camera." 
+    ProjectEnum="CAMERA_BASE_POS_TYPE" />
+
+    <reserved
+    Padding="" />
   </Field>
 </PARAMMETA>

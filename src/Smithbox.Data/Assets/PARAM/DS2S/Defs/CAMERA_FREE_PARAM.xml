@@ -6,8 +6,26 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 Unk08" />
-  </Fields>
+        <Field Def="angle32 fovY = 43">
+            <DisplayName>画角(deg)</DisplayName>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>160</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 nearClip = 0.1">
+            <DisplayName>ニアクリップ距離(m)</DisplayName>
+            <Minimum>9.9999997e-05</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 farClip = 5,000">
+            <DisplayName>ファークリップ距離(m)</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>10000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

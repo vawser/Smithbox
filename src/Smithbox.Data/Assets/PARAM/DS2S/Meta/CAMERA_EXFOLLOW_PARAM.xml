@@ -57,266 +57,269 @@
 
     <transChaseRate
     AltName="Character: X-Axis Position Tracking %"
-    Wiki="The camera position tracking rate on the x-axis (for character)." />
+    Wiki="The camera position tracking rate on the x-axis for character." />
 
     <transChaseRateEscapeWall
     AltName="Character: X-Axis Position Tracking % (Wall Avoidance)"
-    Wiki="The camera position tracking rate on the x-axis (for character)." />
+    Wiki="The camera position tracking rate on the x-axis for charactert." />
 
     <targetTransChaseRate
     AltName="Target: X-Axis Position Tracking %"
-    Wiki="The camera position tracking rate on the x-axis (for target)." />
+    Wiki="The camera position tracking rate on the x-axis for a target." />
 
     <targetRotXChaseRate
     AltName="Target: X-Axis Rotation Tracking %"
-    Wiki="The camera rotation tracking rate on the x-axis (for target)." />
+    Wiki="The camera rotation tracking rate on the x-axis for a target." />
 
     <targetChaseRateXZForNormal
     AltName="Target: Normalized XZ-Axis Tracking %"
-    Wiki="The camera tracking rate on normalized x/z-axis (for target)." />
+    Wiki="The camera tracking rate on normalized x/z-axis for a target." />
 
     <targetChaseRateXZForEscapeWall
     AltName="Target: Normalized XZ-Axis Tracking % (Wall Avoidance)"
-    Wiki="The camera tracking rate on normalized x/z-axis (for target)." />
+    Wiki="The camera tracking rate on normalized x/z-axis for a target." />
 
     <targetChaseRateY
     AltName="Target: Y-Axis Position Tracking %"
-    Wiki="The camera position tracking rate on the y-axis (for target)." />
+    Wiki="The camera position tracking rate on the y-axis for a target." />
 
     <targetChaseRateMinAng
     AltName="Target: Y-Axis - Minimum Angle"
-    Wiki="The minimum angle (in degrees) when tracking on the y-axis (for target)." />
+    Wiki="The minimum angle (in degrees) when tracking on the y-axis for a target." />
 
     <targetChaseRateMaxAng
     AltName="Target: Y-Axis - Maximum Angle"
-    Wiki="The maximum angle (in degrees) when tracking on the y-axis (for target)." />
+    Wiki="The maximum angle (in degrees) when tracking on the y-axis for a target." />
 
     <targetChaseDistRate
     AltName="Target: Distance Tracking %"
-    Wiki="The camera distance tracking rate (for target)." />
+    Wiki="The camera distance tracking rate for a target." />
 
     <targetChaseRateAtLockXZ
     AltName="Locked Target: XZ-Axis Tracking %"
-    Wiki="The camera tracking rate on x/z-axis (for locked target)." />
+    Wiki="The camera tracking rate on x/z-axis for a locked target.." />
 
     <targetChaseRateAtLockY
     AltName="Locked Target: Y-Axis Tracking %"
-    Wiki="The camera tracking rate on y-axis (for locked target)." />
+    Wiki="The camera tracking rate on y-axis for a locked target.." />
 
     <targetChaseRateMinAngAtLock
-    AltName=""
-    Wiki="" />
+    AltName="Locked Target: Minimum Tracking Angle"
+    Wiki="The minimum tracking angle (in degrees), for a locked target." />
 
     <targetChaseRateMaxAngAtLock
-    AltName=""
-    Wiki="" />
+    AltName="Locked Target: Maximum Tracking Angle"
+    Wiki="The maximum tracking angle (in degrees), for a locked target." />
 
     <transChaseByCtrlEndWaitTime
-    AltName=""
-    Wiki="" />
+    AltName="Position Tracking Wait Time"
+    Wiki="The position tracking wait duration (in seconds) after operation completion." />
 
     <transChaseByCtrlEndReleaseTime
-    AltName=""
-    Wiki="" />
+    AltName="Position Tracking Release Time"
+    Wiki="The position tracking release duration (in seconds) after operation completion." />
 
     <rotCtrlEndWaitTime
-    AltName=""
-    Wiki="" />
+    AltName="Rotation Tracking Wait Time"
+    Wiki="The rotation tracking wait duration (in seconds) after operation completion." />
 
     <rotCtrlEndReleaseTime
-    AltName=""
-    Wiki="" />
+    AltName="Rotation Tracking Release Time"
+    Wiki="The rotation tracking release duration (in seconds) after operation completion." />
 
     <rotHiSpeedRateIncTime
-    AltName=""
-    Wiki="" />
+    AltName="High Speed Rotation Increase Time"
+    Wiki="The increase time (in seconds) for high speed rotation rate." />
 
     <rotRangeMinX
-    AltName=""
-    Wiki="" />
+    AltName="Rotation: X-Axis - Minimum Angle"
+    Wiki="The minimum value (in degrees) of the x-axis rotation." />
 
     <rotRangeMaxX
-    AltName=""
-    Wiki="" />
+    AltName="Rotation: X-Axis - Maximum Angle"
+    Wiki="The maximum value (in degrees) of the x-axis rotation." />
 
     <rotRangeMinXAtLock
-    AltName=""
-    Wiki="" />
+    AltName="Lock-on Rotation: X-Axis - Minimum Angle"
+    Wiki="The minimum value (in degrees) of the x-axis rotation when locked-on." />
 
     <rotRangeMaxXAtLock
-    AltName=""
-    Wiki="" />
+    AltName="Lock-on Rotation: X-Axis - Maximum Angle"
+    Wiki="The maximum value (in degrees) of the x-axis rotation when locked-on." />
 
     <rotRangeLerpBeginHeight
-    AltName=""
-    Wiki="" />
+    AltName="Lock-on Rotation: X-Axis - Interpolation Start Height"
+    Wiki="The interpolation lerp start height (in metres) during lock-on x-axis rotation." />
 
     <rotRangeLerpEndHeight
-    AltName=""
-    Wiki="" />
+    AltName="Lock-on Rotation: X-Axis - Interpolation End Height"
+    Wiki="The interpolation lerp end height (in metres) during lock-on x-axis rotation." />
 
     <rotSpeedX_Min
-    AltName=""
-    Wiki="" />
+    AltName="Rotation: X-Axis - Minimum Speed"
+    Wiki="The minimum speed (in degrees per second) for the x-axis rotation." />
 
     <rotSpeedX_Max
-    AltName=""
-    Wiki="" />
+    AltName="Rotation: X-Axis - Maximum Speed"
+    Wiki="The maximum speed (in degrees per second) for the x-axis rotation." />
 
     <rotSpeedY_Min
-    AltName=""
-    Wiki="" />
+    AltName="Rotation: Y-Axis - Minimum Speed"
+    Wiki="The minimum speed (in degrees per second) for the y-axis rotation." />
 
     <rotSpeedY_Max
-    AltName=""
-    Wiki="" />
+    AltName="Rotation: Y-Axis - Maximum Speed"
+    Wiki="The maximum speed (in degrees per second) for the y-axis rotation." />
 
     <rotHiSpeedX_Min
-    AltName=""
-    Wiki="" />
+    AltName="High Speed Rotation: X-Axis - Minimum Speed"
+    Wiki="The minimum speed (in degrees per second) for the high speed x-axis rotation." />
 
     <rotHiSpeedX_Max
-    AltName=""
-    Wiki="" />
+    AltName="High Speed Rotation: X-Axis - Maximum Speed"
+    Wiki="The maximum speed (in degrees per second) for the high speed x-axis rotation." />
 
     <rotHiSpeedY_Min
-    AltName=""
-    Wiki="" />
+    AltName="High Speed Rotation: Y-Axis - Minimum Speed"
+    Wiki="The minimum speed (in degrees per second) for the high speed y-axis rotation." />
 
     <rotHiSpeedY_Max
-    AltName=""
-    Wiki="" />
+    AltName="High Speed Rotation: Y-Axis - Maximum Speed"
+    Wiki="The maximum speed (in degrees per second) for the high speed y-axis rotation." />
 
     <directPitchAng
-    AltName=""
-    Wiki="" />
+    AltName="Direct Pitch Angle"
+    Wiki="The direct pitching angle of the camera (in degrees)." />
 
     <directPitchRate
-    AltName=""
-    Wiki="" />
+    AltName="Direct Pitch %"
+    Wiki="The direct pitching rate of the camera." />
 
     <lockRotChaseRate
-    AltName=""
-    Wiki="" />
+    AltName="Lock-on Rotation: Tracking %"
+    Wiki="The lock-on rotation tracking rate for the camera." />
 
     <lockRotChasePlayAng
-    AltName=""
-    Wiki="" />
+    AltName="Lock-on Rotation: Tracking Play Angle"
+    Wiki="The lock-on rotation tracking play angle (in degrees) for the camera." />
 
     <lockRotXShiftRatio
-    AltName=""
-    Wiki="" />
+    AltName="Lock-on Rotation: X-Axis Shift %"
+    Wiki="The shift rate of the lock-on rotation for the camera." />
 
     <forceFrontLockTime
-    AltName=""
-    Wiki="" />
+    AltName="Forced Forward Lock Time"
+    Wiki="The duration (in seconds) of the forced forward lock for the camera." />
 
     <updateTargetRotXByLock
-    AltName=""
-    Wiki="" />
+    AltName="Update Target X-Axis Rotation on Lock"
+    Wiki="If enabled, the target x-axis rotation is updated upon camera lock." 
+    IsBool="" />
 
     <updateTargetRotXByFrontLock
-    AltName=""
-    Wiki="" />
+    AltName="Update Target X-Axis Rotation on Forward Lock"
+    Wiki="If enabled, the target x-axis rotation is updated upon camera forward lock." 
+    IsBool="" />
 
     <enableLockCamAdjust
-    AltName=""
-    Wiki="" />
+    AltName="Enable Lock Camera Adjustments"
+    Wiki="If enabled, lock adjustments are applied to the camera" 
+    IsBool="" />
 
     <reserved1
     Padding="" />
 
     <lockCamAdjustRotX_Max
-    AltName=""
-    Wiki="" />
+    AltName="Lock Camera: X-Axis Rotation - Maximum"
+    Wiki="The maximum value (in degrees) of x-axis rotation applied via lock camera adjustments." />
 
     <lockCamAdjustRotY_Max
-    AltName=""
-    Wiki="" />
+    AltName="Lock Camera: Y-Axis Rotation - Maximum"
+    Wiki="The maximum value (in degrees) of y-axis rotation applied via lock camera adjustments." />
 
     <lockCamAdjustRotChaseRate
-    AltName=""
-    Wiki="" />
+    AltName="Lock Camera: Rotation Tracking %"
+    Wiki="The rotation trackin rate of the lock camera adjustments." />
 
     <escapeWallRotAddY
-    AltName=""
-    Wiki="" />
+    AltName="Wall Avoidance: Y-Axis Rotation - Addition"
+    Wiki="The y-axis rotation (in degrees per second) added during wall avoidance for this camera." />
 
     <escapeWallRotMaxY
-    AltName=""
-    Wiki="" />
+    AltName="Wall Avoidance: Y-Axis Rotation - Maximum"
+    Wiki="The y-axis rotation (in degrees per second) maximum used during wall avoidance for this camera." />
 
     <escapeWallRotDampRatio
-    AltName=""
-    Wiki="" />
+    AltName="Wall Avoidance: Rotation Decay %"
+    Wiki="The rotation decay rate of rotation adjustments during wall avoidance." />
 
     <escapeWallWingAngY
-    AltName=""
-    Wiki="" />
+    AltName="Wall Avoidance: Wing Angle"
+    Wiki="The wing angle (in degrees) used during wall avoidance." />
 
     <escapeWallWingLen
-    AltName=""
-    Wiki="" />
+    AltName="Wall Avoidance: Wing Length"
+    Wiki="The wing length (in metres) used during wall avoidance." />
 
     <escapeWallWingRadius
-    AltName=""
-    Wiki="" />
+    AltName="Wall Avoidance: Wing Radius"
+    Wiki="The wing radius (in metres) used during wall avoidance." />
 
     <escapeWallWingSeparate
-    AltName=""
-    Wiki="" />
+    AltName="Wall Avoidance: Wing Spacing"
+    Wiki="The wing spacing (in metres) used during wall avoidance." />
 
     <resetMinTime
-    AltName=""
-    Wiki="" />
+    AltName="Minimum Reset Time"
+    Wiki="The minimum duration (in seconds) for camera reset." />
 
     <resetMaxTime
-    AltName=""
-    Wiki="" />
+    AltName="Maximum Reset Time"
+    Wiki="The maximum duration (in seconds) for camera reset." />
 
     <resetSpeedChangeRate
-    AltName=""
-    Wiki="" />
+    AltName="Reset Speed Change %"
+    Wiki="The camera reset speed change rate for this camera." />
 
     <parameterApplyTime
-    AltName=""
-    Wiki="" />
+    AltName="Parameter Application Time"
+    Wiki="The duration (in seconds) for parameter application for this camera." />
 
     <transChaseRateLock
-    AltName=""
-    Wiki="" />
+    AltName="Locked Character: Position Tracking %"
+    Wiki="The position tracking rate used by the camera when a character is locked-on." />
 
     <targetChaseDistRateLock
-    AltName=""
-    Wiki="" />
+    AltName="Locked Target: Position Tracking %"
+    Wiki="The position tracking rate used by the camera when a target is locked-on." />
 
     <lockRotChaseRateMaxTime
-    AltName=""
-    Wiki="" />
+    AltName="Lock-on Rotation: Tracking % Application Time"
+    Wiki="The tracking rate application time (in seconds) during lock-on rotation." />
 
     <useRotationBrake
-    AltName=""
-    Wiki="" />
+    AltName="Enable Rotation Brake"
+    Wiki="If enabled, rotation brake may be used." />
 
     <useRotationBrakeReverseAdjust
-    AltName=""
-    Wiki="" />
+    AltName="Enable Reverse Brake Correction"
+    Wiki="If enabled, reverse brake correction may be used." />
 
     <rotaitionBrakeTimeNormalSpeedX
-    AltName=""
-    Wiki="" />
+    AltName="Rotation Brake: X-Axis Rotation Brake Time"
+    Wiki="The braking time (in seconds) for brake action on the x-axis." />
 
     <rotationBrakeAddTimelHighSpeedX
-    AltName=""
-    Wiki="" />
+    AltName="Rotation Brake: High Speed X-Axis Rotation Brake Time"
+    Wiki="The braking time (in seconds) for brake action on the high speed x-axis." />
 
     <rotaitionBrakeTimeNormalSpeedY
-    AltName=""
-    Wiki="" />
+    AltName="Rotation Brake: Y-Axis Rotation Brake Time"
+    Wiki="The braking time (in seconds) for brake action on the y-axis." />
 
     <rotationBrakeAddTimelHighSpeedY
-    AltName=""
-    Wiki="" />
+    AltName="Rotation Brake: High Speed Y-Axis Rotation Brake Time"
+    Wiki="The braking time (in seconds) for brake action on the high speed y-axis." />
 
 
   </Field>

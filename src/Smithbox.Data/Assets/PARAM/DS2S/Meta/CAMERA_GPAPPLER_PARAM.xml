@@ -1,6 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters relating to the camera during grab states."  />
-  <Field>
+  <Field>   
+    <cameraType
+    AltName="Camera Behavior Type"
+    Wiki="The behavior to use for this camera." 
+    ProjectEnum="CAMERA_TYPE" />
+
+    <cameraBasePosType
+    AltName="Camera Reference Point Type"
+    Wiki="The reference point to use for this camera." 
+    ProjectEnum="CAMERA_BASE_POS_TYPE" />
+
+    <copyStartDirection
+    AltName="Match Initial Orientation to Original"
+    Wiki="If enabled, this camera matches its orientation to the original source camera." 
+    IsBool="" />
+
+    <startTransType
+    AltName="Interpolation Type: Transition Start"
+    Wiki="The interpolation type at the start of switching." 
+    ProjectEnum="CAMERA_INTERPOLATE_TYPE" />
+
+    <endTransType
+    AltName="Interpolation Type: Transition End"
+    Wiki="The interpolation type at the end of switching." 
+    ProjectEnum="CAMERA_INTERPOLATE_TYPE" />
+
+    <inCameraStartTransType
+    AltName="Interpolation Type: Camera Start"
+    Wiki="The interpolation type for camera start." 
+    ProjectEnum="CAMERA_INTERPOLATE_TYPE" />
+
+    <inCameraEndTransType
+    AltName="Interpolation Type: Camera End"
+    Wiki="The interpolation type for camera end." 
+    ProjectEnum="CAMERA_INTERPOLATE_TYPE" />
+
+    <rayCollidesExecType
+    AltName="Ray Hit Processing Type"
+    Wiki="The ray hit processing type, used for camera collisions." 
+    Enum="CAMERA_COLLIDES_EXEC_TYPE" />
+
+    <sphereCollidesExecType
+    AltName="Sphere Hit Processing Type"
+    Wiki="The sphere hit processing type, used for camera collisions." 
+    Enum="CAMERA_COLLIDES_EXEC_TYPE" />
+
+    <selectType
+    AltName="Selection Type"
+    Wiki="The branching decision type when multiple exist." 
+    Enum="CAMERA_GRAPPLER_SELECT_TYPE" />
+
+    <reserved
+    Padding="" />
+
+    <startTransTime
+    AltName="Interpolation Time: Transition Start"
+    Wiki="The interpolation time (in seconds) at the start of switching." />
+
+    <endTransTime
+    AltName="Interpolation Time: Transition End"
+    Wiki="The interpolation time (in seconds) at the end of switching." />
+
+    <inCameraStartTransTime
+    AltName="Interpolation Time: Camera Start"
+    Wiki="The interpolation time (in seconds) at camera start." />
+
+    <inCameraEndTransTime
+    AltName="Interpolation Time: Camera End"
+    Wiki="The interpolation time (in seconds) at camera end." />
+
+    <rayWidth
+    AltName="Ray Width"
+    Wiki="The thickness of the camera ray." />
+
+    <sphereSize
+    AltName="Sphere Width"
+    Wiki="The thickness of the camera sphere." />
+
   </Field>
+  
+  <Enums>
+    <Enum Name="CAMERA_COLLIDES_EXEC_TYPE">
+      <Option Value="0" Name="Do nothing" />
+      <Option Value="1" Name="Turn off Camera" />
+      <Option Value="2" Name="Stop moving" />
+      <Option Value="3" Name="Move to a safe location" />
+    </Enum>
+    <Enum Name="CAMERA_GRAPPLER_SELECT_TYPE">
+      <Option Value="0" Name="x Shaped Branch" />
+      <Option Value="1" Name="+ Shaped Branch" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

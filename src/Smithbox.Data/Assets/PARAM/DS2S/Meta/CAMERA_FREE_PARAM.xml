@@ -2,5 +2,17 @@
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters relating to the camera."  />
   <Field>
+    <fovY
+    AltName="Horizontal Field of View"
+    Wiki="The field of view (in degrees)." />
+
+    <nearClip
+    AltName="Near Clip Distance"
+    Wiki="The near clip distance for this camera (in metres)." />
+
+    <farClip
+    AltName="Far Clip Distance"
+    Wiki="The far clip distance for this camera (in metres)." />
+
   </Field>
 </PARAMMETA>

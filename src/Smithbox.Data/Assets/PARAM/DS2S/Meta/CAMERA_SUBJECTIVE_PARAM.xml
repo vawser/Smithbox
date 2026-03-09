@@ -2,7 +2,128 @@
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters relating to the camera when precision aiming."  />
   <Field>
-    <camera_fov AltName="Camera FOV"/>
-    <camera_vertical_offset AltName="Camera Vertical Offset"/>
+    <cameraType
+    AltName="Camera Behavior Type"
+    Wiki="The behavior to use for this camera." 
+    ProjectEnum="CAMERA_TYPE" />
+
+    <cameraBasePosType
+    AltName="Camera Reference Point Type"
+    Wiki="The reference point to use for this camera." 
+    ProjectEnum="CAMERA_BASE_POS_TYPE" />
+
+    <reserved
+    Padding="" />
+
+    <fovY
+    AltName="Horizontal Field of View"
+    Wiki="The field of view (in degrees)." />
+
+    <lookAtOffsetX
+    AltName="Focus Offset: X-Axis"
+    Wiki="The look-at focus offset on the x-axis (in metres)." />
+
+    <lookAtOffsetY
+    AltName="Focus Offset: Y-Axis"
+    Wiki="The look-at focus offset on the y-axis (in metres)." />
+
+    <lookAtOffsetZ
+    AltName="Focus Offset: Z-Axis"
+    Wiki="The look-at focus offset on the z-axis (in metres)." />
+
+    <positionOffsetX
+    AltName="Position Offset: X-Axis"
+    Wiki="The position offset on the x-axis (in metres)." />
+
+    <positionOffsetY
+    AltName="Position Offset: Y-Axis"
+    Wiki="The position offset on the y-axis (in metres)." />
+
+    <positionOffsetZ
+    AltName="Position Offset: Z-Axis"
+    Wiki="The position offset on the z-axis (in metres)." />
+
+    <panSpeedLimitMin
+    AltName="Pan Speed Limit: Minimum"
+    Wiki="The minimum speed limit for panning (in radians per second)." />
+
+    <panSpeedLimitMax
+    AltName="Pan Speed Limit: Maximum"
+    Wiki="The maximum speed limit for panning (in radians per second)." />
+
+    <panSpeedAccelMin
+    AltName="Pan Acceleration: Minimum"
+    Wiki="The minimum acceleration for panning (in radians per second)." />
+
+    <panSpeedAccelMax
+    AltName="Pan Acceleration: Maximum"
+    Wiki="The maximum acceleration for panning (in radians per second)." />
+
+    <panSpeedBrakeMin
+    AltName="Pan Brake Speed: Minimum"
+    Wiki="The minimum brake speed for panning (in radians per second)." />
+
+    <panSpeedBrakeMax
+    AltName="Pan Brake Speed: Maximum"
+    Wiki="The maximum brake speed for panning (in radians per second)." />
+
+    <tiltSpeedLimitMin
+    AltName="Tilt Speed Limit: Minimum"
+    Wiki="The minimum speed limit for tilting (in radians per second)." />
+
+    <tiltSpeedLimitMax
+    AltName="Tilt Speed Limit: Maximum"
+    Wiki="The maximum speed limit for tilting (in radians per second)." />
+
+    <tiltSpeedAccelMin
+    AltName="Tilt Acceleration: Minimum"
+    Wiki="The minimum acceleration for tilting (in radians per second)." />
+
+    <tiltSpeedAccelMax
+    AltName="Tilt Acceleration: Maximum"
+    Wiki="The maximum acceleration for tilting (in radians per second)." />
+
+    <tiltSpeedBrakeMin
+    AltName="Tilt Brake Speed: Minimum"
+    Wiki="The minimum brake speed for tilting (in radians per second)." />
+
+    <tiltSpeedBrakeMax
+    AltName="Tilt Brake Speed: Maximum"
+    Wiki="The maximum brake speed for tilting (in radians per second)." />
+
+    <tiltUpLimit
+    AltName="Upwards Tilt Limit"
+    Wiki="The upwards tilt angle limit (in degrees)." />
+
+    <tiltDownLimit
+    AltName="Downwards Tilt Limit"
+    Wiki="The downwards tilt angle limit (in degrees)." />
+
+    <startTransType
+    AltName="Interpolation Type: Transition Start"
+    Wiki="The interpolation type at the start of switching." 
+    ProjectEnum="CAMERA_INTERPOLATE_TYPE" />
+
+    <endTransType
+    AltName="Interpolation Type: Transition End"
+    Wiki="The interpolation type at the end of switching." 
+    ProjectEnum="CAMERA_INTERPOLATE_TYPE" />
+
+    <reserved1
+    Padding="" />
+
+    <startTransTime
+    AltName="Interpolation Time: Transition Start"
+    Wiki="The interpolation time (in seconds) at the start of switching." />
+
+    <endTransTime
+    AltName="Interpolation Time: Transition End"
+    Wiki="The interpolation time (in seconds) at the end of switching." />
+
+    <lensSimuParamId
+    AltName="Lens Simultation ID"
+    Wiki="The lens simulation parameters to use for this camera." />
+
+
   </Field>
 </PARAMMETA>

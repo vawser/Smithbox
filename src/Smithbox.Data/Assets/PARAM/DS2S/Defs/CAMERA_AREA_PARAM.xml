@@ -6,7 +6,26 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="s32 Unk00" />
+    <Field Def="u8 cameraType = 9">
+        <DisplayName>カメラ挙動タイプ</DisplayName>
+        <Enum>CAMERA_TYPE</Enum>
+        <EditFlags>Lock</EditFlags>
+        <Minimum>9</Minimum>
+        <Maximum>9</Maximum>
+        <SortID>0</SortID>
+    </Field>
+    <Field Def="u8 cameraBasePosType">
+        <DisplayName>カメラ基準点タイプ</DisplayName>
+        <Enum>CAMERA_BASE_POS_TYPE</Enum>
+        <Increment>1</Increment>
+        <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[2]">
+        <DisplayName>ダミー</DisplayName>
+        <Maximum>180</Maximum>
+        <Increment>0.1</Increment>
+        <SortID>43</SortID>
+    </Field>
     <Field Def="f32 Unk04" />
     <Field Def="f32 Unk08" />
     <Field Def="f32 Unk0C" />

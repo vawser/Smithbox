@@ -1218,6 +1218,38 @@
           "Description": ""
         }
       ]
+    },
+    {
+      "DisplayName": "CAMERA_INTERPOLATE_TYPE",
+      "Name": "CAMERA_INTERPOLATE_TYPE",
+      "Description": "",
+      "Options": [
+        {
+          "ID": "0",
+          "Name": "No Interpolation",
+          "Description": ""
+        },
+        {
+          "ID": "1",
+          "Name": "Instant Switching",
+          "Description": ""
+        },
+        {
+          "ID": "2",
+          "Name": "Linear Interpolation",
+          "Description": ""
+        },
+        {
+          "ID": "3",
+          "Name": "Quadratic Interpolation 1",
+          "Description": ""
+        },
+        {
+          "ID": "3",
+          "Name": "Quadratic Interpolation 2",
+          "Description": ""
+        }
+      ]
     }
   ]
 }

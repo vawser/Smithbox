@@ -2,5 +2,22 @@
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters relating to the elasticity of the camera."  />
   <Field>
+    <cameraType
+    AltName="Camera Behavior Type"
+    Wiki="The behavior to use for this camera." 
+    ProjectEnum="CAMERA_TYPE" />
+
+    <cameraBasePosType
+    AltName="Camera Reference Point Type"
+    Wiki="The reference point to use for this camera." 
+    ProjectEnum="CAMERA_BASE_POS_TYPE" />
+
+    <reserved
+    Padding="" />
+    
+    <fovY
+    AltName="Horizontal Field of View"
+    Wiki="The field of view (in degrees)." />
+    
   </Field>
 </PARAMMETA>

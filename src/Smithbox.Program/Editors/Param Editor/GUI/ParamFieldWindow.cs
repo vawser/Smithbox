@@ -519,8 +519,7 @@ public class ParamFieldWindow
         ref int imguiId, string activeParam, List<string> pinnedFields, int columnCount)
     {
 
-        List<string> fieldOrder = meta is { AlternateOrder: not null }
-                                  && CFG.Current.ParamEditor_Field_List_Allow_Rearrangement
+        List<string> fieldOrder = meta is { AlternateOrder: not null } && CFG.Current.ParamEditor_Field_List_Allow_Rearrangement
             ? [.. meta.AlternateOrder]
             : [];
 

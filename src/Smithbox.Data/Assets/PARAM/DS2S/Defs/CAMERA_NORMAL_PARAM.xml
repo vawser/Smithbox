@@ -6,27 +6,161 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 Unk08" />
-    <Field Def="f32 Unk0C" />
-    <Field Def="f32 Unk10" />
-    <Field Def="f32 Unk14" />
-    <Field Def="f32 Unk18" />
-    <Field Def="f32 Unk1C" />
-    <Field Def="f32 Unk20" />
-    <Field Def="f32 Unk24" />
-    <Field Def="f32 Unk28" />
-    <Field Def="f32 Unk2C" />
-    <Field Def="f32 Unk30" />
-    <Field Def="f32 Unk34" />
-    <Field Def="f32 Unk38" />
-    <Field Def="f32 Unk3C" />
-    <Field Def="f32 Unk40" />
-    <Field Def="f32 Unk44" />
-    <Field Def="f32 Unk48" />
-    <Field Def="f32 Unk4C" />
-    <Field Def="f32 Unk50" />
-    <Field Def="f32 Unk54" />
-  </Fields>
+        <Field Def="u8 cameraType = 8">
+            <DisplayName>カメラ挙動タイプ</DisplayName>
+            <Enum>CAMERA_TYPE</Enum>
+            <EditFlags>Lock</EditFlags>
+            <Minimum>8</Minimum>
+            <Maximum>8</Maximum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 cameraBasePosType">
+            <DisplayName>カメラ基準点タイプ</DisplayName>
+            <Enum>CAMERA_BASE_POS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="dummy8 reserved[2]">
+            <DisplayName>ダミー</DisplayName>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="angle32 fovY = 43">
+            <DisplayName>画角(deg)</DisplayName>
+            <Minimum>20</Minimum>
+            <Maximum>120</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 fulcrumOffsetX">
+            <DisplayName>支点(X軸) オフセット(m)</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 fulcrumOffsetY">
+            <DisplayName>支点(Y軸) オフセット(m)</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 fulcrumOffsetZ">
+            <DisplayName>支点(Z軸) オフセット(m)</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 fulcrumMoveRate = 60">
+            <DisplayName>支点追尾強さ</DisplayName>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 lookAtOffsetX">
+            <DisplayName>焦点(X軸) オフセット(m)</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 lookAtOffsetY = 0.5">
+            <DisplayName>焦点(Y軸) オフセット(m)</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 lookAtOffsetZ = 3">
+            <DisplayName>焦点(Z軸) オフセット(m)</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 lookAtMoveRate = 10">
+            <DisplayName>焦点追尾強さ</DisplayName>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 positionOffsetX">
+            <DisplayName>位置(X軸) オフセット(m)</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 positionOffsetY = 1.5">
+            <DisplayName>位置(Y軸) オフセット(m)</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="f32 positionOffsetZ = -4">
+            <DisplayName>位置(Z軸) オフセット(m)</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="f32 positionMoveRate = 10">
+            <DisplayName>位置追尾強さ</DisplayName>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="f32 panSpeedMax = 5">
+            <DisplayName>左右旋回最大速度(rad/s)</DisplayName>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="f32 panSpeedAccel = 5.5">
+            <DisplayName>左右旋回加速度(rad/s)</DisplayName>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="f32 panSpeedBrake = 4.5">
+            <DisplayName>左右旋回ブレーキ(rad/s)</DisplayName>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="f32 tiltSpeedMax = 4.5">
+            <DisplayName>上下旋回最大速度(rad/s)</DisplayName>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="f32 tiltSpeedAccel = 3">
+            <DisplayName>上下旋回加速度(rad/s)</DisplayName>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="f32 tiltSpeedBrake = 4">
+            <DisplayName>上下旋回ブレーキ(rad/s)</DisplayName>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="angle32 tiltUpLimit = 15">
+            <DisplayName>上限界角度(deg)</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="angle32 tiltDownLimit = 60">
+            <DisplayName>下限界角度(deg)</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>23</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>
