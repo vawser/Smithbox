@@ -9,7 +9,7 @@
     <soulBulletId
     AltName="Soul Bullet ID"
     Wiki="The bullet triggers upon this boss's defeat."
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
   
     <itemLotId
     AltName="Item Lot ID"

@@ -1,0 +1,17 @@
+{
+  "DisplayName": "The Nexus / Below the Nexus",
+  "Params": [
+    "m01_DofBank",
+    "m01_EnvLightTexBank",
+    "m01_FogBank",
+    "m01_LensFlareBank",
+    "m01_LensFlareExBank",
+    "m01_LightBank",
+    "m01_LightScatteringBank",
+    "m01_PointLightBank",
+    "m01_ShadowBank",
+    "m01_ToneCorrectBank",
+    "m01_ToneMapBank",
+    "s01_LightBank"
+  ]
+}

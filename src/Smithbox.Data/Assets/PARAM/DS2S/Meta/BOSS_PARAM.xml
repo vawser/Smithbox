@@ -33,7 +33,7 @@
     <part1BreakObjId
     AltName="Part 1: Broken Object ID"
     Wiki="The object ID given when the part in slot 1 is broken." 
-    GroupReference="mapobjectinstanceparam" />
+    RefGroup="mapobjectinstanceparam" />
     
     <part1EventFlag
     AltName="Part 1: Broken Event Flag ID"
@@ -58,7 +58,7 @@
     <part2BreakObjId
     AltName="Part 2: Broken Object ID"
     Wiki="The object ID given when the part in slot 2 is broken." 
-    GroupReference="mapobjectinstanceparam" />
+    RefGroup="mapobjectinstanceparam" />
     
     <part2EventFlag
     AltName="Part 2: Broken Event Flag ID"
@@ -83,7 +83,7 @@
     <part3BreakObjId
     AltName="Part 3: Broken Object ID"
     Wiki="The object ID given when the part in slot 3 is broken." 
-    GroupReference="mapobjectinstanceparam" />
+    RefGroup="mapobjectinstanceparam" />
     
     <part3EventFlag
     AltName="Part 3: Broken Event Flag ID"
@@ -108,7 +108,7 @@
     <part4BreakObjId
     AltName="Part 4: Broken Object ID"
     Wiki="The object ID given when the part in slot 4 is broken." 
-    GroupReference="mapobjectinstanceparam" />
+    RefGroup="mapobjectinstanceparam" />
     
     <part4EventFlag
     AltName="Part 4: Broken Event Flag ID"

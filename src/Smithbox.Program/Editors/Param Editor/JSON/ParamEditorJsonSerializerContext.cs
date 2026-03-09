@@ -28,16 +28,16 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(TableParams))]
 
 // Param Memory Offsets
-[JsonSerializable(typeof(GameOffsetResource))]
-[JsonSerializable(typeof(GameOffsetReference))]
+[JsonSerializable(typeof(ParamReloaderOffsets))]
+[JsonSerializable(typeof(ParamReloaderOffsetEntry))]
 
 // Param Categories
-[JsonSerializable(typeof(ParamCategoryResource))]
+[JsonSerializable(typeof(ParamCategories))]
 [JsonSerializable(typeof(ParamCategoryEntry))]
 
 // Commutative Param Groups
-[JsonSerializable(typeof(ParamCommutativeResource))]
-[JsonSerializable(typeof(ParamCommutativeEntry))]
+[JsonSerializable(typeof(ParamCommutativityGroups))]
+[JsonSerializable(typeof(ParamCommutativityEntry))]
 
 // Param Type Info
 [JsonSerializable(typeof(ParamTypeInfo))]
@@ -56,8 +56,8 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(UpgraderMassEditEntry))]
 
 // Graph Legends
-[JsonSerializable(typeof(GraphLegends))]
-[JsonSerializable(typeof(GraphLegendEntry))]
+[JsonSerializable(typeof(GraphAnnotations))]
+[JsonSerializable(typeof(GraphAnnotationEntry))]
 
 // Delta Patch
 [JsonSerializable(typeof(ParamDeltaPatch))]
@@ -66,9 +66,9 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(FieldDelta))]
 
 // Group References
-[JsonSerializable(typeof(GroupReferences))]
-[JsonSerializable(typeof(GroupRefList))]
-[JsonSerializable(typeof(GroupRefEntry))]
+[JsonSerializable(typeof(FieldReferenceGroups))]
+[JsonSerializable(typeof(FieldReferenceGroup))]
+[JsonSerializable(typeof(FieldReferenceSet))]
 
 // Field Groups
 [JsonSerializable(typeof(FieldLayouts))]

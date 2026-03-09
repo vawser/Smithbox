@@ -183,7 +183,7 @@ public static class ParamReferenceResolver
         return currentPath;
     }
 
-    public static List<GroupReferenceState> ResolveGroupReferences(ParamEditorView curView, GroupRefList refList, Param.Row context, dynamic oldval)
+    public static List<GroupReferenceState> ResolveGroupReferences(ParamEditorView curView, FieldReferenceGroup refList, Param.Row context, dynamic oldval)
     {
         List<GroupReferenceState> rows = new();
 

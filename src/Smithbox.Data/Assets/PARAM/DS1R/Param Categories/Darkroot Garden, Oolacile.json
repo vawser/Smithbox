@@ -1,0 +1,17 @@
+{
+  "DisplayName": "Darkroot Garden / Oolacile",
+  "Params": [
+    "m12_DofBank",
+    "m12_EnvLightTexBank",
+    "m12_FogBank",
+    "m12_LensFlareBank",
+    "m12_LensFlareExBank",
+    "m12_LightBank",
+    "m12_LightScatteringBank",
+    "m12_PointLightBank",
+    "m12_ShadowBank",
+    "m12_ToneCorrectBank",
+    "m12_ToneMapBank",
+    "s12_LightBank"
+  ]
+}

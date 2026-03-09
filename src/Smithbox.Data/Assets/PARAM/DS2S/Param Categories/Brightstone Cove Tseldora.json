@@ -1,0 +1,20 @@
+{
+  "DisplayName": "Brightstone Cove Tseldora",
+  "Params": [
+    "demopointlight_scn101410",
+    "demopointlight_scn101420",
+    "demospotlight_scn101410",
+    "demospotlight_scn101420",
+    "eventlocation_m10_14_00_00",
+    "eventparam_m10_14_00_00",
+    "generatorlocation_m10_14_00_00",
+    "generatorparam_m10_14_00_00",
+    "generatorregistparam_m10_14_00_00",
+    "hitgroupparam_m10_14_00_00",
+    "intrudepointparam_m10_14_00_00",
+    "mapobjectinstanceparam_m10_14_00_00",
+    "maptargetdirparam_m10_14_00_00",
+    "npctalkparam_m10_14_00_00",
+    "treasureboxparam_m10_14_00_00"
+  ]
+}

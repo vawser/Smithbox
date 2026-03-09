@@ -1,0 +1,18 @@
+{
+  "DisplayName": "Gutter & Black Gulch",
+  "Params": [
+    "demopointlight_scn102510",
+    "demospotlight_scn102510",
+    "eventlocation_m10_25_00_00",
+    "eventparam_m10_25_00_00",
+    "generatorlocation_m10_25_00_00",
+    "generatorparam_m10_25_00_00",
+    "generatorregistparam_m10_25_00_00",
+    "hitgroupparam_m10_25_00_00",
+    "intrudepointparam_m10_25_00_00",
+    "mapobjectinstanceparam_m10_25_00_00",
+    "maptargetdirparam_m10_25_00_00",
+    "npctalkparam_m10_25_00_00",
+    "treasureboxparam_m10_25_00_00"
+  ]
+}

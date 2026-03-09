@@ -39,10 +39,10 @@ public class ParamReloader
 
         if (CFG.Current.ParamReloader_Use_Latest_Offset)
         {
-            if (paramData.ParamMemoryOffsets != null &&
-                paramData.ParamMemoryOffsets.list != null)
+            if (paramData.ParamReloaderOffsets != null &&
+                paramData.ParamReloaderOffsets.Groups != null)
             {
-                var entries = paramData.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
+                var entries = paramData.ParamReloaderOffsets.Groups.Select(entry => entry.exeVersion).ToArray();
 
                 CFG.Current.ParamReloader_Current_Offsets = entries.Count() - 1;
             }

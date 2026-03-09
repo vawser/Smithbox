@@ -1,0 +1,8 @@
+{
+  "Name": "CharacterCreator",
+  "File": "01_common",
+  "InternalFiles": [
+    "SB_Chara_01"
+  ],
+  "SubTexturePrefix": "MENU_ItemIcon_"
+}

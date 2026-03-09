@@ -157,6 +157,9 @@ public enum SectionCategory
     [Display(Name = "Param Reloader")]
     ParamEditor_Param_Reloader = 709,
 
+    [Display(Name = "Metadata")]
+    ParamEditor_Metadata = 710,
+
     // Text Editor
     [Display(Name = "Container List")]
     TextEditor_Container_List = 800,

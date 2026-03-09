@@ -1,0 +1,20 @@
+{
+  "Name": "Item",
+  "File": "01_common",
+  "InternalFiles": [
+    "SB_Icon_00",
+    "SB_Icon_01",
+    "SB_Icon_02",
+    "SB_Icon_02_A",
+    "SB_Icon_02_B",
+    "SB_Icon_03",
+    "SB_Icon_03_A",
+    "SB_Icon_04",
+    "SB_Icon_05",
+    "SB_Icon_06",
+    "SB_Icon_07_dlc",
+    "SB_Icon_07_dlc_A",
+    "SB_Icon_08_dlc"
+  ],
+  "SubTexturePrefix": "MENU_ItemIcon_"
+}

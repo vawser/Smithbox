@@ -1,0 +1,30 @@
+{
+  "DisplayName": "Things Betwixt",
+  "Params": [
+    "demopointlight_scn100200",
+    "demopointlight_scn100210",
+    "demopointlight_scn100211",
+    "demopointlight_scn100220",
+    "demopointlight_scn100221",
+    "demopointlight_scn100230",
+    "demopointlight_scn100231",
+    "demospotlight_scn100200",
+    "demospotlight_scn100210",
+    "demospotlight_scn100211",
+    "demospotlight_scn100220",
+    "demospotlight_scn100221",
+    "demospotlight_scn100230",
+    "demospotlight_scn100231",
+    "eventlocation_m10_02_00_00",
+    "eventparam_m10_02_00_00",
+    "generatorlocation_m10_02_00_00",
+    "generatorparam_m10_02_00_00",
+    "generatorregistparam_m10_02_00_00",
+    "hitgroupparam_m10_02_00_00",
+    "intrudepointparam_m10_02_00_00",
+    "mapobjectinstanceparam_m10_02_00_00",
+    "maptargetdirparam_m10_02_00_00",
+    "npctalkparam_m10_02_00_00",
+    "treasureboxparam_m10_02_00_00"
+  ]
+}

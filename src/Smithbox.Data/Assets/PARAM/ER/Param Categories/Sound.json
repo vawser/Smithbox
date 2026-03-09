@@ -1,0 +1,28 @@
+{
+  "DisplayName": "Sound",
+  "Params": [
+    "WwiseValueToStrParam_BgmBossChrIdConv",
+    "WwiseValueToStrParam_EnvPlaceType",
+    "WwiseValueToStrParam_Switch_AttackStrength",
+    "WwiseValueToStrParam_Switch_AttackType",
+    "WwiseValueToStrParam_Switch_DamageAmount",
+    "WwiseValueToStrParam_Switch_DeffensiveMaterial",
+    "WwiseValueToStrParam_Switch_GrassHitType",
+    "WwiseValueToStrParam_Switch_HitStop",
+    "WwiseValueToStrParam_Switch_OffensiveMaterial",
+    "WwiseValueToStrParam_Switch_PlayerEquipmentBottoms",
+    "WwiseValueToStrParam_Switch_PlayerEquipmentTops",
+    "WwiseValueToStrParam_Switch_PlayerShoes",
+    "WwiseValueToStrParam_Switch_PlayerVoiceType",
+    "SoundAssetSoundObjEnableDistParam",
+    "SoundAutoEnvSoundGroupParam",
+    "SoundAutoReverbEvaluationDistParam",
+    "SoundAutoReverbSelectParam",
+    "SoundChrPhysicsSeParam",
+    "SoundCommonIngameParam",
+    "SoundCommonSystemParam",
+    "SoundCutsceneParam",
+    "AutoCreateEnvSoundParam",
+    "AiSoundParam"
+  ]
+}

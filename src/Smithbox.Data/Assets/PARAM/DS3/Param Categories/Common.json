@@ -1,0 +1,33 @@
+{
+  "DisplayName": "Common",
+  "ForceTop": true,
+  "Params": [
+    "AtkParam_Npc",
+    "AtkParam_Pc",
+    "AttackElementCorrectParam",
+    "BehaviorParam",
+    "BehaviorParam_PC",
+    "BonfireWarpParam",
+    "Bullet",
+    "BulletCreateLimitParam",
+    "CharaInitParam",
+    "CalcCorrectGraph",
+    "EquipMtrlSetParam",
+    "EquipParamAccessory",
+    "EquipParamGoods",
+    "EquipParamProtector",
+    "EquipParamWeapon",
+    "GameAreaParam",
+    "ItemLotParam",
+    "LockCamParam",
+    "Magic",
+    "NpcParam",
+    "NpcThinkParam",
+    "ReinforceParamProtector",
+    "ReinforceParamWeapon",
+    "ShopLineupParam",
+    "SpEffectParam",
+    "SpEffectVfxParam",
+    "SwordArtsParam"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "DisplayName": "Unused",
+  "Params": [
+    "GemCategoryParam",
+    "GemDropDopingParam",
+    "GemDropModifyParam",
+    "GemeffectParam",
+    "GemGenParam",
+    "ProtectorGenParam",
+    "WeaponGenParam"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "DisplayName": "Anor Londo",
+  "Params": [
+    "m15_1_DofBank",
+    "m15_1_EnvLightTexBank",
+    "m15_1_FogBank",
+    "m15_1_LensFlareBank",
+    "m15_1_LensFlareExBank",
+    "m15_1_LightBank",
+    "m15_1_LightScatteringBank",
+    "m15_1_PointLightBank",
+    "m15_1_ShadowBank",
+    "m15_1_ToneCorrectBank",
+    "m15_1_ToneMapBank",
+    "s15_1_LightBank"
+  ]
+}

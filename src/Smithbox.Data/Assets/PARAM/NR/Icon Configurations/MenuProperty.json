@@ -1,0 +1,8 @@
+{
+  "Name": "MenuProperty",
+  "File": "01_common_h",
+  "InternalFiles": [
+    "SB_PropertyIcon_0"
+  ],
+  "SubTexturePrefix": "MENU_PropertyIcon_"
+}

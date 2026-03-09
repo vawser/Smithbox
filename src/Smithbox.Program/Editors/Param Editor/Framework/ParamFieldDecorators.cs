@@ -36,9 +36,9 @@ public class ParamFieldDecorators
     public void HandleCache(FieldMetaContext metaContext, Param.Row row, object oldval)
     {
         // Group reference
-        if (metaContext.DisplayGroupReference)
+        if (metaContext.DisplayFieldReferenceGroup)
         {
-            GroupReferenceHelper.BuildCache(ParentView, metaContext.GroupReference, row, oldval);
+            GroupReferenceHelper.BuildCache(ParentView, metaContext.FieldReferenceGroup, row, oldval);
         }
     }
 
@@ -54,10 +54,10 @@ public class ParamFieldDecorators
                 ParamReferenceHelper.Label(ParentView, metaContext.ParamReferences, row);
             }
 
-            // Group reference
-            if (metaContext.DisplayGroupReference)
+            // Field reference group label
+            if (metaContext.DisplayFieldReferenceGroup)
             {
-                GroupReferenceHelper.Label(ParentView, metaContext.GroupReference, row, oldval);
+                GroupReferenceHelper.Label(ParentView, metaContext.FieldReferenceGroup, row, oldval);
             }
 
             // FMG reference label
@@ -169,9 +169,9 @@ public class ParamFieldDecorators
             }
 
             // Group reference
-            if (metaContext.DisplayGroupReference)
+            if (metaContext.DisplayFieldReferenceGroup)
             {
-                GroupReferenceHelper.Hint(ParentView, metaContext.GroupReference, row, oldval);
+                GroupReferenceHelper.Hint(ParentView, metaContext.FieldReferenceGroup, row, oldval);
             }
 
             // FMG reference
@@ -291,9 +291,9 @@ public class ParamFieldDecorators
             ParamReferenceHelper.Click(ParentView, oldval, row, metaContext.ParamReferences);
         }
 
-        if (metaContext.DisplayGroupReference)
+        if (metaContext.DisplayFieldReferenceGroup)
         {
-            GroupReferenceHelper.Click(ParentView, oldval, row, metaContext.GroupReference);
+            GroupReferenceHelper.Click(ParentView, oldval, row, metaContext.FieldReferenceGroup);
         }
 
         if (metaContext.DisplayTextReferences)
@@ -313,9 +313,9 @@ public class ParamFieldDecorators
                 result |= ParamReferenceHelper.ContextMenu(ParentView, metaContext.ParamReferences, row, oldval, ref newval, Editor.ActionManager);
             }
 
-            if (metaContext.DisplayGroupReference)
+            if (metaContext.DisplayFieldReferenceGroup)
             {
-                result |= GroupReferenceHelper.ContextMenu(ParentView, metaContext.GroupReference, row, oldval, ref newval, Editor.ActionManager);
+                result |= GroupReferenceHelper.ContextMenu(ParentView, metaContext.FieldReferenceGroup, row, oldval, ref newval, Editor.ActionManager);
             }
 
             if (metaContext.DisplayTextReference)
@@ -435,7 +435,7 @@ public class FieldMetaContext
     public bool DisplayMapTextReference = false;
     public bool DisplayVirtualReference = false;
     public bool DisplayTextureReference = false;
-    public bool DisplayGroupReference = false;
+    public bool DisplayFieldReferenceGroup = false;
 
     public bool DisplayEnum = false;
     public bool DisplayParticleEnum = false;
@@ -448,7 +448,7 @@ public class FieldMetaContext
 
     public bool DisplayTileReference = false;
 
-    public string GroupReference = "";
+    public string FieldReferenceGroup = "";
 
     public FieldMetaContext(ParamEditorView curView, ParamMeta meta, ParamFieldMeta fieldMeta, string activeParam, string internalName)
     {
@@ -515,8 +515,8 @@ public class FieldMetaContext
 
             FmgRefRoleOverride = fieldMeta?.FmgRefRoleOverride;
 
-            GroupReference = fieldMeta?.GroupReference;
-            DisplayGroupReference = GroupReference != null;
+            FieldReferenceGroup = fieldMeta?.RefGroup;
+            DisplayFieldReferenceGroup = FieldReferenceGroup != null;
         }
     }
 
@@ -569,7 +569,7 @@ public class FieldMetaContext
         if (DisplayTileReference)
             display = true;
 
-        if (DisplayGroupReference)
+        if (DisplayFieldReferenceGroup)
             display = true;
 
         return display;
@@ -597,7 +597,7 @@ public class FieldMetaContext
         if (DisplayTextureReference)
             display = true;
 
-        if (DisplayGroupReference)
+        if (DisplayFieldReferenceGroup)
             display = true;
 
         return display;
@@ -1942,9 +1942,9 @@ public static class CalcCorrectGraphHelper
             var xAxisTitle = "";
             var yAxisTitle = "";
 
-            if (curView.GetParamData().GraphLegends != null && curView.GetParamData().GraphLegends.Entries != null)
+            if (curView.GetParamData().GraphAnnotations != null && curView.GetParamData().GraphAnnotations.Groups != null)
             {
-                var entry = curView.GetParamData().GraphLegends.Entries
+                var entry = curView.GetParamData().GraphAnnotations.Groups
                     .FirstOrDefault(e => e.RowID == $"{row.ID}");
                 if (entry != null)
                 {
@@ -2383,15 +2383,14 @@ public static class FieldColorPicker
 }
 #endregion
 
-
-#region Group Reference Helper
+#region Field Reference Group Helper
 public static class GroupReferenceHelper
 {
     private static List<GroupReferenceState> refCache = new();
 
     public static void BuildCache(ParamEditorView curView, string groupRef, Param.Row context, dynamic oldval)
     {
-        var groupRefData = curView.Project.Handler.ParamData.GroupReferences;
+        var groupRefData = curView.Project.Handler.ParamData.FieldReferenceGroups;
         var targetData = groupRefData.Entries.FirstOrDefault(e => e.Name == groupRef);
 
         if (targetData == null)

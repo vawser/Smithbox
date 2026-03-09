@@ -261,32 +261,27 @@ public class ParamListCategories
 
     public void RestoreDefault()
     {
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
 
-        if (File.Exists(sourceFile))
+        if (Directory.Exists(projectFolder))
         {
-            try
+            foreach (var file in Directory.EnumerateFiles(projectFolder))
             {
-                var filestring = File.ReadAllText(sourceFile);
-
-                try
-                {
-                    Editor.Project.Handler.ParamData.ParamCategories = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCategoryResource);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, "Failed to deserialize param categories", e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, "Failed to read param categories", e);
+                File.Delete(file);
             }
         }
-        else
+
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
+
+        if (Directory.Exists(sourceFolder))
         {
-            Smithbox.LogError(this, "Failed to find default param categories for game");
+            foreach (var file in Directory.EnumerateFiles(projectFolder))
+            {
+                var filename = Path.GetFileName(file);
+                var projPath = Path.Combine(projectFolder, filename);
+
+                File.Copy(file, projPath);
+            }
         }
     }
 
@@ -302,7 +297,7 @@ public class ParamListCategories
 
         try
         {
-            string jsonString = JsonSerializer.Serialize(Project.Handler.ParamData.ParamCategories, typeof(ParamCategoryResource), ParamEditorJsonSerializerContext.Default);
+            string jsonString = JsonSerializer.Serialize(Project.Handler.ParamData.ParamCategories, typeof(ParamCategories), ParamEditorJsonSerializerContext.Default);
             var fs = new FileStream(modResourcePath, System.IO.FileMode.Create);
             var data = Encoding.ASCII.GetBytes(jsonString);
             fs.Write(data, 0, data.Length);

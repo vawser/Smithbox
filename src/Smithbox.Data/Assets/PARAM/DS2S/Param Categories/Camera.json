@@ -1,0 +1,19 @@
+{
+  "DisplayName": "Camera",
+  "Params": [
+    "CameraActionParam",
+    "CameraAreaParam",
+    "CameraBattleParam",
+    "CameraControlParam",
+    "CameraElasticParam",
+    "CameraEventParam",
+    "CameraExFollowImpactParam",
+    "CameraExFollowParam",
+    "CameraFreeParam",
+    "CameraGrapperParam",
+    "CameraMenuParam",
+    "CameraNoiseParam",
+    "CameraNormalParam",
+    "CameraSubjectiveParam"
+  ]
+}

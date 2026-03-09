@@ -315,32 +315,32 @@
     <childeBulletId
     AltName="Child Bullet ID: 1"
     Wiki="The bullet ID of a child bullet from this bullet." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
 
     <childeDamageId
     AltName="Child Damage ID: 1"
     Wiki="The damage ID of a child bullet from this bullet." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
 
     <childeBulletId02
     AltName="Child Bullet ID: 2"
     Wiki="The bullet ID of a child bullet from this bullet." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
 
     <childeDamageId02
     AltName="Child Damage ID: 2"
     Wiki="The damage ID of a child bullet from this bullet." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
 
     <childeBulletId03
     AltName="Child Bullet ID: 3"
     Wiki="The bullet ID of a child bullet from this bullet." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
 
     <childeDamageId03
     AltName="Child Damage ID: 3"
     Wiki="The damage ID of a child bullet from this bullet." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
 
     <isChildeExplosion
     AltName="Children Generate Impacts"

@@ -1,0 +1,17 @@
+{
+  "DisplayName": "Northern Limit",
+  "Params": [
+    "m07_DofBank",
+    "m07_EnvLightTexBank",
+    "m07_FogBank",
+    "m07_LensFlareBank",
+    "m07_LensFlareExBank",
+    "m07_LightBank",
+    "m07_LightScatteringBank",
+    "m07_PointLightBank",
+    "m07_ShadowBank",
+    "m07_ToneCorrectBank",
+    "m07_ToneMapBank",
+    "s07_LightBank"
+  ]
+}

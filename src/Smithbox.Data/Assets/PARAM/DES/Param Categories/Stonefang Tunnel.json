@@ -1,0 +1,17 @@
+{
+  "DisplayName": "Stonefang Tunnel",
+  "Params": [
+    "m06_DofBank",
+    "m06_EnvLightTexBank",
+    "m06_FogBank",
+    "m06_LensFlareBank",
+    "m06_LensFlareExBank",
+    "m06_LightBank",
+    "m06_LightScatteringBank",
+    "m06_PointLightBank",
+    "m06_ShadowBank",
+    "m06_ToneCorrectBank",
+    "m06_ToneMapBank",
+    "s06_LightBank"
+  ]
+}

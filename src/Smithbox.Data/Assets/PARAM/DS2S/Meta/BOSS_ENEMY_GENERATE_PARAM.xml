@@ -5,12 +5,12 @@
     <generatorBeginId
     AltName="Generator Start ID"
     Wiki="The first generator to invoke." 
-    GroupReference="generatorparam" />
+    RefGroup="generatorparam" />
     
     <generatorEndId
     AltName="Generator End ID"
     Wiki="The last generator to invoke." 
-    GroupReference="generatorparam" />
+    RefGroup="generatorparam" />
     
     <dummyPolyBeginId
     AltName="Dummy Polygon Start ID"

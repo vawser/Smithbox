@@ -1,0 +1,17 @@
+{
+  "DisplayName": "Kiln of the First Flame / Northern Undead Asylum",
+  "Params": [
+    "m18_DofBank",
+    "m18_EnvLightTexBank",
+    "m18_FogBank",
+    "m18_LensFlareBank",
+    "m18_LensFlareExBank",
+    "m18_LightBank",
+    "m18_LightScatteringBank",
+    "m18_PointLightBank",
+    "m18_ShadowBank",
+    "m18_ToneCorrectBank",
+    "m18_ToneMapBank",
+    "s18_LightBank"
+  ]
+}

@@ -156,7 +156,7 @@ public class IconManager
 
         var key = $"icon_{context.ID}_{columnIndex}_{fieldName}_{fieldValue}";
 
-        var iconEntry = curProject.Handler.ParamData.IconConfigurations.Configurations.Where(
+        var iconEntry = curProject.Handler.ParamData.IconConfigurations.Groups.Where(
             e => e.Name == iconConfig.TargetConfiguration).FirstOrDefault();
 
         if (iconEntry == null)
@@ -273,7 +273,7 @@ public class IconManager
         if (curProject.Handler.ParamData == null)
             return false;
 
-        if (curProject.Handler.ParamData.IconConfigurations.Configurations == null)
+        if (curProject.Handler.ParamData.IconConfigurations.Groups == null)
             return false;
 
         return true;

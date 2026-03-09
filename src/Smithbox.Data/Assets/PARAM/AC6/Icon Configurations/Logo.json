@@ -1,0 +1,8 @@
+{
+  "Name": "Logo",
+  "File": "01_common",
+  "InternalFiles": [
+    "SB_MakerLogo"
+  ],
+  "SubTexturePrefix": "MakerLogo_"
+}

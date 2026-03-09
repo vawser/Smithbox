@@ -17,9 +17,9 @@ public class GameOffsetsEntry
 
     internal GameOffsetsEntry(ProjectEntry project)
     {
-        var data = project.Handler.ParamData.ParamMemoryOffsets.list[CFG.Current.ParamReloader_Current_Offsets];
+        var data = project.Handler.ParamData.ParamReloaderOffsets.Groups[CFG.Current.ParamReloader_Current_Offsets];
 
-        exeName = project.Handler.ParamData.ParamMemoryOffsets.exeName;
+        exeName = data.exeName;
         Is64Bit = type != ProjectType.DS1;
         type = project.Descriptor.ProjectType;
 

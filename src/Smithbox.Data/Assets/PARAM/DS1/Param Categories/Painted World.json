@@ -1,0 +1,17 @@
+{
+  "DisplayName": "Painted World",
+  "Params": [
+    "m11_DofBank",
+    "m11_EnvLightTexBank",
+    "m11_FogBank",
+    "m11_LensFlareBank",
+    "m11_LensFlareExBank",
+    "m11_LightBank",
+    "m11_LightScatteringBank",
+    "m11_PointLightBank",
+    "m11_ShadowBank",
+    "m11_ToneCorrectBank",
+    "m11_ToneMapBank",
+    "s11_LightBank"
+  ]
+}

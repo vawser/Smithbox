@@ -1,0 +1,17 @@
+{
+  "Name": "damageparam",
+  "Instances": [
+    {
+      "DisplayName": "Player Damage",
+      "Param": "PlayerDamageParam"
+    },
+    {
+      "DisplayName": "Enemy Damage",
+      "Param": "EnemyDamageParam"
+    },
+    {
+      "DisplayName": "System Damage",
+      "Param": "SystemDamageParam"
+    }
+  ]
+}

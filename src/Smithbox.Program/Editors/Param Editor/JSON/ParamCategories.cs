@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public class ParamCategoryResource
+public class ParamCategories
 {
-    public List<ParamCategoryEntry> Categories { get; set; }
+    public List<ParamCategoryEntry> Categories { get; set; } = new();
 }
 
 public class ParamCategoryEntry

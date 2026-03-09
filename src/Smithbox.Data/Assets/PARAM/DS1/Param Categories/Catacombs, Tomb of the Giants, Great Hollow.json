@@ -1,0 +1,17 @@
+{
+  "DisplayName": "Catacombs / Tomb of the Giants / Great Hollow",
+  "Params": [
+    "m13_DofBank",
+    "m13_EnvLightTexBank",
+    "m13_FogBank",
+    "m13_LensFlareBank",
+    "m13_LensFlareExBank",
+    "m13_LightBank",
+    "m13_LightScatteringBank",
+    "m13_PointLightBank",
+    "m13_ShadowBank",
+    "m13_ToneCorrectBank",
+    "m13_ToneMapBank",
+    "s13_LightBank"
+  ]
+}

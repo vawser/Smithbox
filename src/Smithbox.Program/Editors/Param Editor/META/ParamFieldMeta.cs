@@ -243,10 +243,10 @@ public class ParamFieldMeta
             ShowCharacterEnumList = true;
         }
 
-        XmlAttribute tGroupReference = fieldMeta.Attributes["GroupReference"];
-        if (tGroupReference != null)
+        XmlAttribute tRefGroup = fieldMeta.Attributes["RefGroup"];
+        if (tRefGroup != null)
         {
-            GroupReference = tGroupReference.InnerText;
+            RefGroup = tRefGroup.InnerText;
         }
     }
 
@@ -370,6 +370,6 @@ public class ParamFieldMeta
     public List<ExtRef> ExtRefs { get; set; }
     public bool ShowCharacterEnumList { get; set; }
 
-    public string GroupReference { get; set; }
+    public string RefGroup { get; set; }
 
 }

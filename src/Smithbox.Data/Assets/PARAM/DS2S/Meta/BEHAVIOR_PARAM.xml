@@ -7,32 +7,32 @@
     <action0DamageId00
     AltName="Action 0: Damage ID 0"
     Wiki="The damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action0DamageId01
     AltName="Action 0: Damage ID 1"
     Wiki="The damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action0DamageId02
     AltName="Action 0: Damage ID 2"
     Wiki="The damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action0GrabDamageId00
     AltName="Action 0: Grab Damage ID 0"
     Wiki="The grab damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action0GrabDamageId01
     AltName="Action 0: Grab Damage ID 1"
     Wiki="The grab damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action0GrabDamageId02
     AltName="Action 0: Grab Damage ID 2"
     Wiki="The grab damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action0AttackWalkMoveAttack
     AltName="Action 0: Walk Attack ID"
@@ -62,17 +62,17 @@
     <action0BulletId00
     AltName="Action 0: Bullet ID 0"
     Wiki="The bullet parameters to use for slot 0." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action0BulletId01
     AltName="Action 0: Bullet ID 1"
     Wiki="The bullet parameters to use for slot 1." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action0BulletId02
     AltName="Action 0: Bullet ID 2"
     Wiki="The bullet parameters to use for slot 2." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action0ShotStanceTime
     AltName="Action 0: Shooting Ready Time"
@@ -122,32 +122,32 @@
     <action1DamageId00
     AltName="Action 1: Damage ID 0"
     Wiki="The damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action1DamageId01
     AltName="Action 1: Damage ID 1"
     Wiki="The damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action1DamageId02
     AltName="Action 1: Damage ID 2"
     Wiki="The damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action1GrabDamageId00
     AltName="Action 1: Grab Damage ID 0"
     Wiki="The grab damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action1GrabDamageId01
     AltName="Action 1: Grab Damage ID 1"
     Wiki="The grab damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action1GrabDamageId02
     AltName="Action 1: Grab Damage ID 2"
     Wiki="The grab damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action1AttackWalkMoveAttack
     AltName="Action 1: Walk Attack ID"
@@ -177,17 +177,17 @@
     <action1BulletId00
     AltName="Action 1: Bullet ID 0"
     Wiki="The bullet parameters to use for slot 0." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action1BulletId01
     AltName="Action 1: Bullet ID 1"
     Wiki="The bullet parameters to use for slot 1." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action1BulletId02
     AltName="Action 1: Bullet ID 2"
     Wiki="The bullet parameters to use for slot 2." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action1ShotStanceTime
     AltName="Action 1: Shooting Ready Time"
@@ -237,32 +237,32 @@
     <action2DamageId00
     AltName="Action 2: Damage ID 0"
     Wiki="The damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action2DamageId01
     AltName="Action 2: Damage ID 1"
     Wiki="The damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action2DamageId02
     AltName="Action 2: Damage ID 2"
     Wiki="The damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action2GrabDamageId00
     AltName="Action 2: Grab Damage ID 0"
     Wiki="The grab damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action2GrabDamageId01
     AltName="Action 2: Grab Damage ID 1"
     Wiki="The grab damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action2GrabDamageId02
     AltName="Action 2: Grab Damage ID 2"
     Wiki="The grab damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action2AttackWalkMoveAttack
     AltName="Action 2: Walk Attack ID"
@@ -292,17 +292,17 @@
     <action2BulletId00
     AltName="Action 2: Bullet ID 0"
     Wiki="The bullet parameters to use for slot 0." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action2BulletId01
     AltName="Action 2: Bullet ID 1"
     Wiki="The bullet parameters to use for slot 1." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action2BulletId02
     AltName="Action 2: Bullet ID 2"
     Wiki="The bullet parameters to use for slot 2." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action2ShotStanceTime
     AltName="Action 2: Shooting Ready Time"
@@ -352,32 +352,32 @@
     <action3DamageId00
     AltName="Action 3: Damage ID 0"
     Wiki="The damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action3DamageId01
     AltName="Action 3: Damage ID 1"
     Wiki="The damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action3DamageId02
     AltName="Action 3: Damage ID 2"
     Wiki="The damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action3GrabDamageId00
     AltName="Action 3: Grab Damage ID 0"
     Wiki="The grab damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action3GrabDamageId01
     AltName="Action 3: Grab Damage ID 1"
     Wiki="The grab damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action3GrabDamageId02
     AltName="Action 3: Grab Damage ID 2"
     Wiki="The grab damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action3AttackWalkMoveAttack
     AltName="Action 3: Walk Attack ID"
@@ -407,17 +407,17 @@
     <action3BulletId00
     AltName="Action 3: Bullet ID 0"
     Wiki="The bullet parameters to use for slot 0." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action3BulletId01
     AltName="Action 3: Bullet ID 1"
     Wiki="The bullet parameters to use for slot 1." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action3BulletId02
     AltName="Action 3: Bullet ID 2"
     Wiki="The bullet parameters to use for slot 2." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action3ShotStanceTime
     AltName="Action 3: Shooting Ready Time"
@@ -467,32 +467,32 @@
     <action4DamageId00
     AltName="Action 4: Damage ID 0"
     Wiki="The damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action4DamageId01
     AltName="Action 4: Damage ID 1"
     Wiki="The damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action4DamageId02
     AltName="Action 4: Damage ID 2"
     Wiki="The damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action4GrabDamageId00
     AltName="Action 4: Grab Damage ID 0"
     Wiki="The grab damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action4GrabDamageId01
     AltName="Action 4: Grab Damage ID 1"
     Wiki="The grab damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action4GrabDamageId02
     AltName="Action 4: Grab Damage ID 2"
     Wiki="The grab damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action4AttackWalkMoveAttack
     AltName="Action 4: Walk Attack ID"
@@ -522,17 +522,17 @@
     <action4BulletId00
     AltName="Action 4: Bullet ID 0"
     Wiki="The bullet parameters to use for slot 0." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action4BulletId01
     AltName="Action 4: Bullet ID 1"
     Wiki="The bullet parameters to use for slot 1." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action4BulletId02
     AltName="Action 4: Bullet ID 2"
     Wiki="The bullet parameters to use for slot 2." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action4ShotStanceTime
     AltName="Action 4: Shooting Ready Time"
@@ -582,32 +582,32 @@
     <action5DamageId00
     AltName="Action 5: Damage ID 0"
     Wiki="The damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action5DamageId01
     AltName="Action 5: Damage ID 1"
     Wiki="The damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action5DamageId02
     AltName="Action 5: Damage ID 2"
     Wiki="The damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action5GrabDamageId00
     AltName="Action 5: Grab Damage ID 0"
     Wiki="The grab damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action5GrabDamageId01
     AltName="Action 5: Grab Damage ID 1"
     Wiki="The grab damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action5GrabDamageId02
     AltName="Action 5: Grab Damage ID 2"
     Wiki="The grab damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action5AttackWalkMoveAttack
     AltName="Action 5: Walk Attack ID"
@@ -637,17 +637,17 @@
     <action5BulletId00
     AltName="Action 5: Bullet ID 0"
     Wiki="The bullet parameters to use for slot 0." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action5BulletId01
     AltName="Action 5: Bullet ID 1"
     Wiki="The bullet parameters to use for slot 1." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action5BulletId02
     AltName="Action 5: Bullet ID 2"
     Wiki="The bullet parameters to use for slot 2." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action5ShotStanceTime
     AltName="Action 5: Shooting Ready Time"
@@ -697,32 +697,32 @@
     <action6DamageId00
     AltName="Action 6: Damage ID 0"
     Wiki="The damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action6DamageId01
     AltName="Action 6: Damage ID 1"
     Wiki="The damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action6DamageId02
     AltName="Action 6: Damage ID 2"
     Wiki="The damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action6GrabDamageId00
     AltName="Action 6: Grab Damage ID 0"
     Wiki="The grab damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action6GrabDamageId01
     AltName="Action 6: Grab Damage ID 1"
     Wiki="The grab damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action6GrabDamageId02
     AltName="Action 6: Grab Damage ID 2"
     Wiki="The grab damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action6AttackWalkMoveAttack
     AltName="Action 6: Walk Attack ID"
@@ -752,17 +752,17 @@
     <action6BulletId00
     AltName="Action 6: Bullet ID 0"
     Wiki="The bullet parameters to use for slot 0." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action6BulletId01
     AltName="Action 6: Bullet ID 1"
     Wiki="The bullet parameters to use for slot 1." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action6BulletId02
     AltName="Action 6: Bullet ID 2"
     Wiki="The bullet parameters to use for slot 2." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action6ShotStanceTime
     AltName="Action 6: Shooting Ready Time"
@@ -812,32 +812,32 @@
     <action7DamageId00
     AltName="Action 7: Damage ID 0"
     Wiki="The damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action7DamageId01
     AltName="Action 7: Damage ID 1"
     Wiki="The damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action7DamageId02
     AltName="Action 7: Damage ID 2"
     Wiki="The damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action7GrabDamageId00
     AltName="Action 7: Grab Damage ID 0"
     Wiki="The grab damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action7GrabDamageId01
     AltName="Action 7: Grab Damage ID 1"
     Wiki="The grab damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action7GrabDamageId02
     AltName="Action 7: Grab Damage ID 2"
     Wiki="The grab damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action7AttackWalkMoveAttack
     AltName="Action 7: Walk Attack ID"
@@ -867,17 +867,17 @@
     <action7BulletId00
     AltName="Action 7: Bullet ID 0"
     Wiki="The bullet parameters to use for slot 0." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action7BulletId01
     AltName="Action 7: Bullet ID 1"
     Wiki="The bullet parameters to use for slot 1." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action7BulletId02
     AltName="Action 7: Bullet ID 2"
     Wiki="The bullet parameters to use for slot 2." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action7ShotStanceTime
     AltName="Action 7: Shooting Ready Time"
@@ -927,32 +927,32 @@
     <action8DamageId00
     AltName="Action 8: Damage ID 0"
     Wiki="The damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action8DamageId01
     AltName="Action 8: Damage ID 1"
     Wiki="The damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action8DamageId02
     AltName="Action 8: Damage ID 2"
     Wiki="The damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action8GrabDamageId00
     AltName="Action 8: Grab Damage ID 0"
     Wiki="The grab damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action8GrabDamageId01
     AltName="Action 8: Grab Damage ID 1"
     Wiki="The grab damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action8GrabDamageId02
     AltName="Action 8: Grab Damage ID 2"
     Wiki="The grab damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action8AttackWalkMoveAttack
     AltName="Action 8: Walk Attack ID"
@@ -982,17 +982,17 @@
     <action8BulletId00
     AltName="Action 8: Bullet ID 0"
     Wiki="The bullet parameters to use for slot 0." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action8BulletId01
     AltName="Action 8: Bullet ID 1"
     Wiki="The bullet parameters to use for slot 1." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action8BulletId02
     AltName="Action 8: Bullet ID 2"
     Wiki="The bullet parameters to use for slot 2." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action8ShotStanceTime
     AltName="Action 8: Shooting Ready Time"
@@ -1042,32 +1042,32 @@
     <action9DamageId00
     AltName="Action 9: Damage ID 0"
     Wiki="The damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action9DamageId01
     AltName="Action 9: Damage ID 1"
     Wiki="The damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
   
     <action9DamageId02
     AltName="Action 9: Damage ID 2"
     Wiki="The damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action9GrabDamageId00
     AltName="Action 9: Grab Damage ID 0"
     Wiki="The grab damage parameters to use for slot 0." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action9GrabDamageId01
     AltName="Action 9: Grab Damage ID 1"
     Wiki="The grab damage parameters to use for slot 1." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action9GrabDamageId02
     AltName="Action 9: Grab Damage ID 2"
     Wiki="The grab damage parameters to use for slot 2." 
-    GroupReference="damageparam" />
+    RefGroup="damageparam" />
     
     <action9AttackWalkMoveAttack
     AltName="Action 9: Walk Attack ID"
@@ -1097,17 +1097,17 @@
     <action9BulletId00
     AltName="Action 9: Bullet ID 0"
     Wiki="The bullet parameters to use for slot 0." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action9BulletId01
     AltName="Action 9: Bullet ID 1"
     Wiki="The bullet parameters to use for slot 1." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action9BulletId02
     AltName="Action 9: Bullet ID 2"
     Wiki="The bullet parameters to use for slot 2." 
-    GroupReference="bulletparam" />
+    RefGroup="bulletparam" />
     
     <action9ShotStanceTime
     AltName="Action 9: Shooting Ready Time"

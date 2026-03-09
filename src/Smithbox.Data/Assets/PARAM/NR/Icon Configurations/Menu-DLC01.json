@@ -1,0 +1,8 @@
+{
+  "Name": "Menu-DLC01",
+  "File": "21_common_dlc01_h",
+  "InternalFiles": [
+    "SB_MenuIcon_DLC01_0"
+  ],
+  "SubTexturePrefix": "MENU_MenuIcon_"
+}

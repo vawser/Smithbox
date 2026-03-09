@@ -146,10 +146,10 @@ public static class ParamRowDuplicate
 
         Param param = curView.GetPrimaryBank().Params[paramName];
 
-        if (curView.GetParamData().CommutativeParamGroups.Groups == null)
+        if (curView.GetParamData().ParamCommutativityGroups.Groups == null)
             return false;
 
-        if (curView.GetParamData().CommutativeParamGroups.Groups
+        if (curView.GetParamData().ParamCommutativityGroups.Groups
             .Where(e => e.Params.Contains(paramName)).Any())
         {
             isValid = true;
@@ -167,10 +167,10 @@ public static class ParamRowDuplicate
 
         Param param = curView.GetPrimaryBank().Params[curParamKey];
 
-        if (curView.GetParamData().CommutativeParamGroups.Groups
+        if (curView.GetParamData().ParamCommutativityGroups.Groups
             .Where(e => e.Params.Contains(curParamKey)).Any())
         {
-            var targetGroup = curView.GetParamData().CommutativeParamGroups.Groups
+            var targetGroup = curView.GetParamData().ParamCommutativityGroups.Groups
                 .Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
 
             if (targetGroup == null)

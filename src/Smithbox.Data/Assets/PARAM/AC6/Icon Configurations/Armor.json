@@ -1,0 +1,8 @@
+{
+  "Name": "Armor",
+  "File": "01_common",
+  "InternalFiles": [
+    "SB_PartsThumbnails"
+  ],
+  "SubTexturePrefix": "AC6-Armor"
+}

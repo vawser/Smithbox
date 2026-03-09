@@ -1,0 +1,28 @@
+{
+  "DisplayName": "Forest of Fallen Giants",
+  "Params": [
+    "demopointlight_scn101010",
+    "demopointlight_scn101020",
+    "demopointlight_scn101050",
+    "demopointlight_scn101060",
+    "demopointlight_scn101070",
+    "demospotlight_scn101010",
+    "demospotlight_scn101020",
+    "demospotlight_scn101050",
+    "demospotlight_scn101060",
+    "demospotlight_scn101070",
+    "demospotlight_scn101098",
+    "demospotlight_scn101099",
+    "eventlocation_m10_10_00_00",
+    "eventparam_m10_10_00_00",
+    "generatorlocation_m10_10_00_00",
+    "generatorparam_m10_10_00_00",
+    "generatorregistparam_m10_10_00_00",
+    "hitgroupparam_m10_10_00_00",
+    "intrudepointparam_m10_10_00_00",
+    "mapobjectinstanceparam_m10_10_00_00",
+    "maptargetdirparam_m10_10_00_00",
+    "npctalkparam_m10_10_00_00",
+    "treasureboxparam_m10_10_00_00"
+  ]
+}

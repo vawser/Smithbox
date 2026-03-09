@@ -1,0 +1,17 @@
+{
+  "DisplayName": "Tutorial",
+  "Params": [
+    "m08_DofBank",
+    "m08_EnvLightTexBank",
+    "m08_FogBank",
+    "m08_LensFlareBank",
+    "m08_LensFlareExBank",
+    "m08_LightBank",
+    "m08_LightScatteringBank",
+    "m08_PointLightBank",
+    "m08_ShadowBank",
+    "m08_ToneCorrectBank",
+    "m08_ToneMapBank",
+    "s08_LightBank"
+  ]
+}

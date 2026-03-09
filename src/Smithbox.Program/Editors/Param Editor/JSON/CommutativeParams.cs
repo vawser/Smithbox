@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public class ParamCommutativeResource
+public class ParamCommutativityGroups
 {
-    public List<ParamCommutativeEntry> Groups { get; set; }
+    public List<ParamCommutativityEntry> Groups { get; set; } = new();
 }
 
-public class ParamCommutativeEntry
+public class ParamCommutativityEntry
 {
     public string Name { get; set; }
     public List<string> Params { get; set; }

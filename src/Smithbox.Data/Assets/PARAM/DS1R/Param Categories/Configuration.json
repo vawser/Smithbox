@@ -1,0 +1,19 @@
+{
+  "DisplayName": "Configuration",
+  "Params": [
+    "default_DofBank",
+    "default_EnvLightTexBank",
+    "default_FogBank",
+    "default_LensFlareBank",
+    "default_LensFlareExBank",
+    "default_LightBank",
+    "default_LightScatteringBank",
+    "default_PointLightBank",
+    "default_ShadowBank",
+    "default_ToneCorrectBank",
+    "default_ToneMapBank",
+    "default_LodBank",
+    "default_AIStandardInfoBank",
+    "default_EnemyBehaviorBank"
+  ]
+}

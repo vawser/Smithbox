@@ -1,0 +1,11 @@
+{
+  "DisplayName": "Hero",
+  "Params": [
+    "HeroParam",
+    "HeroMenuCameraParam",
+    "HeroMenuParam",
+    "HeroOperationExplanationParam",
+    "HeroStatusParam",
+    "PersonalScenarioParam"
+  ]
+}

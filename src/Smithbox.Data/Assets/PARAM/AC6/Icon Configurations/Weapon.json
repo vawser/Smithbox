@@ -1,0 +1,8 @@
+{
+  "Name": "Weapon",
+  "File": "01_common",
+  "InternalFiles": [
+    "SB_PartsThumbnails"
+  ],
+  "SubTexturePrefix": "AC6-Weapon"
+}

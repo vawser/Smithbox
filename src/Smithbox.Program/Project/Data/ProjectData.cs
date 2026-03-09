@@ -131,7 +131,7 @@ public class ProjectData : IDisposable
 
         var targetFile = sourceFile;
 
-        if (CFG.Current.Project_Enable_Project_Metadata)
+        if (CFG.Current.Project_Enable_Param_Enum_Override)
         {
             if (File.Exists(projectFile))
             {
