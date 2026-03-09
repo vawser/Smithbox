@@ -6,13 +6,72 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="f32 Unk01" />
-    <Field Def="f32 Unk02" />
-    <Field Def="f32 Unk03" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 Unk05" />
-    <Field Def="f32 Unk06" />
-    <Field Def="f32 Unk07" />
-  </Fields>
+        <Field Def="u8 cameraType = 1">
+            <DisplayName>カメラ挙動タイプ</DisplayName>
+            <Enum>CAMERA_TYPE</Enum>
+            <Minimum>1</Minimum>
+            <Maximum>2</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 cameraBasePosType">
+            <DisplayName>カメラ基準点タイプ</DisplayName>
+            <Enum>CAMERA_BASE_POS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="dummy8 reserved[2]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fovY = 55">
+            <DisplayName>画角(deg)</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 lookAtOffsetX">
+            <DisplayName>焦点(X軸) オフセット(m)</DisplayName>
+            <Minimum>-1000</Minimum>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 lookAtOffsetY = -1.5">
+            <DisplayName>焦点(Y軸) オフセット(m)</DisplayName>
+            <Minimum>-1000</Minimum>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 lookAtOffsetZ = 7.5">
+            <DisplayName>焦点(Z軸) オフセット(m)</DisplayName>
+            <Minimum>-1000</Minimum>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 positionOffsetX">
+            <DisplayName>位置(X軸) オフセット(m)</DisplayName>
+            <Minimum>-1000</Minimum>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 positionOffsetY = 1.3">
+            <DisplayName>位置(Y軸) オフセット(m)</DisplayName>
+            <Minimum>-1000</Minimum>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 positionOffsetZ = -2">
+            <DisplayName>位置(Z軸) オフセット(m)</DisplayName>
+            <Minimum>-1000</Minimum>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>9</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

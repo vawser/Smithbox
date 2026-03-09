@@ -1093,7 +1093,6 @@
         }
       ]
     },
-    
     {
       "DisplayName": "BOSS_PARTS_TYPE",
       "Name": "BOSS_PARTS_TYPE",
@@ -1122,6 +1121,100 @@
         {
           "ID": "4",
           "Name": "Part 4",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "DisplayName": "CAMERA_TYPE",
+      "Name": "CAMERA_TYPE",
+      "Description": "",
+      "Options": [
+        {
+          "ID": "0",
+          "Name": "Rubber Camera",
+          "Description": ""
+        },
+        {
+          "ID": "1",
+          "Name": "Action Camera",
+          "Description": ""
+        },
+        {
+          "ID": "2",
+          "Name": "Initial Camera",
+          "Description": ""
+        },
+        {
+          "ID": "3",
+          "Name": "Tracking Camera",
+          "Description": ""
+        },
+        {
+          "ID": "4",
+          "Name": "Combat Camera",
+          "Description": ""
+        },
+        {
+          "ID": "5",
+          "Name": "Free Range Camera",
+          "Description": ""
+        },
+        {
+          "ID": "6",
+          "Name": "First Person Camera",
+          "Description": ""
+        },
+        {
+          "ID": "7",
+          "Name": "Dark Souls Camera",
+          "Description": ""
+        },
+        {
+          "ID": "8",
+          "Name": "Normal Camera",
+          "Description": ""
+        },
+        {
+          "ID": "9",
+          "Name": "Menu Camera",
+          "Description": ""
+        },
+        {
+          "ID": "10",
+          "Name": "Throw Camera",
+          "Description": ""
+        },
+        {
+          "ID": "11",
+          "Name": "Event Camera",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "DisplayName": "CAMERA_BASE_POS_TYPE",
+      "Name": "CAMERA_BASE_POS_TYPE",
+      "Description": "",
+      "Options": [
+        {
+          "ID": "0",
+          "Name": "Master Position",
+          "Description": ""
+        },
+        {
+          "ID": "1",
+          "Name": "Character Center",
+          "Description": ""
+        },
+        {
+          "ID": "2",
+          "Name": "Character Head",
+          "Description": ""
+        },
+        {
+          "ID": "3",
+          "Name": "Origin",
           "Description": ""
         }
       ]

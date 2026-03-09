@@ -2,17 +2,322 @@
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters relating to the camera during boss fights."  />
   <Field>
-    <camera_horizontal_fov AltName="Camera Horizontal FOV"/>
-    <camera_width_offset AltName="Camera Width Offset"/>
-    <camera_vertical_distance AltName="Camera Vertical Distance"/>
-    <camera_length_offset AltName="Camera Length Offset"/>
-    <camera_horizontal_distance AltName="Camera Horizontal Distance"/>
-    <no_input_rotation_speed AltName="No Input: Rotation Speed"/>
-    <follow_speed_factor AltName="Follow Speed Factor"/>
-    <vertical_change_rate AltName="Vertical Change Rate"/>
-    <vertical_pan_slowdown_start_time AltName="Vertical Pan: Slowdown Start Time"/>
-    <vertical_pan_slowdown_end_time AltName="Vertical Pan: Slowdown End Time"/>
-    <horizontal_pan_slowdown_start_time AltName="Horizontal Pan: Slowdown Start Time"/>
-    <horizontal_pan_slowdown_end_time AltName="Horizontal Pan: Slowdown End Time"/>
+    <cameraType
+    AltName="Camera Behavior Type"
+    Wiki="The behavior to use for this camera." 
+    ProjectEnum="CAMERA_TYPE" />
+
+    <cameraBasePosType
+    AltName="Camera Reference Point Type"
+    Wiki="The reference point to use for this camera." 
+    ProjectEnum="CAMERA_BASE_POS_TYPE" />
+
+    <reserved0
+    Padding="" />
+
+    <fovY
+    AltName="Horizontal Field of View"
+    Wiki="The field of view (in degrees)." />
+
+    <hitCollision
+    AltName="Collision Size"
+    Wiki="The collision size of the camera." />
+
+    <targetOffsetX
+    AltName="Reference Point Offset: X-Axis"
+    Wiki="The reference point position offset on the x-axis (in metres)." />
+
+    <targetOffsetY
+    AltName="Reference Point Offset: Y-Axis"
+    Wiki="The reference point position offset on the y-axis (in metres)." />
+
+    <targetOffsetZ
+    AltName="Reference Point Offset: Z-Axis"
+    Wiki="The reference point position offset on the z-axis (in metres)." />
+
+    <distance
+    AltName="Reference Point Distance"
+    Wiki="The distance the camera is pushed back from the reference point (in metres)." />
+
+    <lrMoveDistanceMax
+    AltName="Horizontal Movement: Maximum Distance"
+    Wiki="The maximum distance (in metres) of the horizontal movement distance ratio for the camera." />
+
+    <lrMoveRateMin
+    AltName="Horizontal Movement: Minimum Distance %"
+    Wiki="The minimum distance rate for the horizontal movement distance ratio used by the camera." />
+
+    <lrMoveRateMax
+    AltName="Horizontal Movement: Maximum Distance %"
+    Wiki="The maximum distance rate for the horizontal movement distance ratio used by the camera." />
+
+    <fulcrumDistRate
+    AltName="Fulcrum Distance %"
+    Wiki="The support distance ratio." />
+
+    <transChaseRate
+    AltName="Character: X-Axis Position Tracking %"
+    Wiki="The camera position tracking rate on the x-axis (for character)." />
+
+    <transChaseRateEscapeWall
+    AltName="Character: X-Axis Position Tracking % (Wall Avoidance)"
+    Wiki="The camera position tracking rate on the x-axis (for character)." />
+
+    <targetTransChaseRate
+    AltName="Target: X-Axis Position Tracking %"
+    Wiki="The camera position tracking rate on the x-axis (for target)." />
+
+    <targetRotXChaseRate
+    AltName="Target: X-Axis Rotation Tracking %"
+    Wiki="The camera rotation tracking rate on the x-axis (for target)." />
+
+    <targetChaseRateXZForNormal
+    AltName="Target: Normalized XZ-Axis Tracking %"
+    Wiki="The camera tracking rate on normalized x/z-axis (for target)." />
+
+    <targetChaseRateXZForEscapeWall
+    AltName="Target: Normalized XZ-Axis Tracking % (Wall Avoidance)"
+    Wiki="The camera tracking rate on normalized x/z-axis (for target)." />
+
+    <targetChaseRateY
+    AltName="Target: Y-Axis Position Tracking %"
+    Wiki="The camera position tracking rate on the y-axis (for target)." />
+
+    <targetChaseRateMinAng
+    AltName="Target: Y-Axis - Minimum Angle"
+    Wiki="The minimum angle (in degrees) when tracking on the y-axis (for target)." />
+
+    <targetChaseRateMaxAng
+    AltName="Target: Y-Axis - Maximum Angle"
+    Wiki="The maximum angle (in degrees) when tracking on the y-axis (for target)." />
+
+    <targetChaseDistRate
+    AltName="Target: Distance Tracking %"
+    Wiki="The camera distance tracking rate (for target)." />
+
+    <targetChaseRateAtLockXZ
+    AltName="Locked Target: XZ-Axis Tracking %"
+    Wiki="The camera tracking rate on x/z-axis (for locked target)." />
+
+    <targetChaseRateAtLockY
+    AltName="Locked Target: Y-Axis Tracking %"
+    Wiki="The camera tracking rate on y-axis (for locked target)." />
+
+    <targetChaseRateMinAngAtLock
+    AltName=""
+    Wiki="" />
+
+    <targetChaseRateMaxAngAtLock
+    AltName=""
+    Wiki="" />
+
+    <transChaseByCtrlEndWaitTime
+    AltName=""
+    Wiki="" />
+
+    <transChaseByCtrlEndReleaseTime
+    AltName=""
+    Wiki="" />
+
+    <rotCtrlEndWaitTime
+    AltName=""
+    Wiki="" />
+
+    <rotCtrlEndReleaseTime
+    AltName=""
+    Wiki="" />
+
+    <rotHiSpeedRateIncTime
+    AltName=""
+    Wiki="" />
+
+    <rotRangeMinX
+    AltName=""
+    Wiki="" />
+
+    <rotRangeMaxX
+    AltName=""
+    Wiki="" />
+
+    <rotRangeMinXAtLock
+    AltName=""
+    Wiki="" />
+
+    <rotRangeMaxXAtLock
+    AltName=""
+    Wiki="" />
+
+    <rotRangeLerpBeginHeight
+    AltName=""
+    Wiki="" />
+
+    <rotRangeLerpEndHeight
+    AltName=""
+    Wiki="" />
+
+    <rotSpeedX_Min
+    AltName=""
+    Wiki="" />
+
+    <rotSpeedX_Max
+    AltName=""
+    Wiki="" />
+
+    <rotSpeedY_Min
+    AltName=""
+    Wiki="" />
+
+    <rotSpeedY_Max
+    AltName=""
+    Wiki="" />
+
+    <rotHiSpeedX_Min
+    AltName=""
+    Wiki="" />
+
+    <rotHiSpeedX_Max
+    AltName=""
+    Wiki="" />
+
+    <rotHiSpeedY_Min
+    AltName=""
+    Wiki="" />
+
+    <rotHiSpeedY_Max
+    AltName=""
+    Wiki="" />
+
+    <directPitchAng
+    AltName=""
+    Wiki="" />
+
+    <directPitchRate
+    AltName=""
+    Wiki="" />
+
+    <lockRotChaseRate
+    AltName=""
+    Wiki="" />
+
+    <lockRotChasePlayAng
+    AltName=""
+    Wiki="" />
+
+    <lockRotXShiftRatio
+    AltName=""
+    Wiki="" />
+
+    <forceFrontLockTime
+    AltName=""
+    Wiki="" />
+
+    <updateTargetRotXByLock
+    AltName=""
+    Wiki="" />
+
+    <updateTargetRotXByFrontLock
+    AltName=""
+    Wiki="" />
+
+    <enableLockCamAdjust
+    AltName=""
+    Wiki="" />
+
+    <reserved1
+    Padding="" />
+
+    <lockCamAdjustRotX_Max
+    AltName=""
+    Wiki="" />
+
+    <lockCamAdjustRotY_Max
+    AltName=""
+    Wiki="" />
+
+    <lockCamAdjustRotChaseRate
+    AltName=""
+    Wiki="" />
+
+    <escapeWallRotAddY
+    AltName=""
+    Wiki="" />
+
+    <escapeWallRotMaxY
+    AltName=""
+    Wiki="" />
+
+    <escapeWallRotDampRatio
+    AltName=""
+    Wiki="" />
+
+    <escapeWallWingAngY
+    AltName=""
+    Wiki="" />
+
+    <escapeWallWingLen
+    AltName=""
+    Wiki="" />
+
+    <escapeWallWingRadius
+    AltName=""
+    Wiki="" />
+
+    <escapeWallWingSeparate
+    AltName=""
+    Wiki="" />
+
+    <resetMinTime
+    AltName=""
+    Wiki="" />
+
+    <resetMaxTime
+    AltName=""
+    Wiki="" />
+
+    <resetSpeedChangeRate
+    AltName=""
+    Wiki="" />
+
+    <parameterApplyTime
+    AltName=""
+    Wiki="" />
+
+    <transChaseRateLock
+    AltName=""
+    Wiki="" />
+
+    <targetChaseDistRateLock
+    AltName=""
+    Wiki="" />
+
+    <lockRotChaseRateMaxTime
+    AltName=""
+    Wiki="" />
+
+    <useRotationBrake
+    AltName=""
+    Wiki="" />
+
+    <useRotationBrakeReverseAdjust
+    AltName=""
+    Wiki="" />
+
+    <rotaitionBrakeTimeNormalSpeedX
+    AltName=""
+    Wiki="" />
+
+    <rotationBrakeAddTimelHighSpeedX
+    AltName=""
+    Wiki="" />
+
+    <rotaitionBrakeTimeNormalSpeedY
+    AltName=""
+    Wiki="" />
+
+    <rotationBrakeAddTimelHighSpeedY
+    AltName=""
+    Wiki="" />
+
+
   </Field>
 </PARAMMETA>

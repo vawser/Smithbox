@@ -2,5 +2,108 @@
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters relating to the camera used in event menus."  />
   <Field>
+    <cameraType
+    AltName="Camera Behavior Type"
+    Wiki="The behavior to use for this camera." 
+    ProjectEnum="CAMERA_TYPE" />
+
+    <cameraBasePosType
+    AltName="Camera Reference Point Type"
+    Wiki="The reference point to use for this camera." 
+    ProjectEnum="CAMERA_BASE_POS_TYPE" />
+
+    <reserved
+    Padding="" />
+
+    <fovY
+    AltName="Horizontal Field of View"
+    Wiki="The field of view (in degrees)." />
+
+    <axisOffsetX
+    AltName="Position Offset: X-Axis"
+    Wiki="The position offset on the x-axis (in metres)." />
+
+    <axisOffsetY
+    AltName="Position Offset: Y-Axis"
+    Wiki="The position offset on the y-axis (in metres)." />
+
+    <axisOffsetZ
+    AltName="Position Offset: Z-Axis"
+    Wiki="The position offset on the z-axis (in metres)." />
+
+    <rayWidth
+    AltName="Ray Width"
+    Wiki="The thickness of the camera ray." />
+
+    <hitCollision
+    AltName="Collision Size"
+    Wiki="The collision size of the camera." />
+
+    <positionOffsetZ
+    AltName="Additional Turn Radius"
+    Wiki="The additional turning radius of the camera (in metres)." />
+
+    <fulcrumRate
+    AltName="Fulcrum Position"
+    Wiki="0 is the target, 1 is the reference point." />
+
+    <rotationX
+    AltName="Rotation: X-Axis"
+    Wiki="The rotation of the camera on the x-axis (in degrees)." />
+
+    <rotationY
+    AltName="Rotation: Y-Axis"
+    Wiki="The rotation of the camera on the y-axis (in degrees)." />
+
+    <startTransTime
+    AltName="Interpolation Time: Transition Start"
+    Wiki="The interpolation time (in seconds) at the start of switching." />
+
+    <endTransTime
+    AltName="Interpolation Time: Transition End"
+    Wiki="The interpolation time (in seconds) at the end of switching." />
+
+    <startTransType
+    AltName="Interpolation Type: Transition Start"
+    Wiki="The interpolation type at the start of switching." 
+    Enum="CAMERA_INTERPOLATE_TYPE" />
+
+    <endTransType
+    AltName="Interpolation Type: Transition End"
+    Wiki="The interpolation type at the end of switching." 
+    Enum="CAMERA_INTERPOLATE_TYPE" />
+
+    <enableYReverse
+    AltName="Allow Horizontal Flip"
+    Wiki="If enabled, allow horizontal flipping." 
+    IsBool="" />
+
+    <enableZReverse
+    AltName="Allow Front-to-back Flip"
+    Wiki="If enabled, allow front-to-back flipping." 
+    IsBool="" />
+
+    <keepXAngle
+    AltName="Maintain Tilt"
+    Wiki="If enabled, the camera will maintain its tilt." 
+    IsBool="" />
+
+    <addXAngleAxis
+    AltName="Add X-Axis Tilt"
+    Wiki="If enabled, applies x-axis tilt to the camera." 
+    IsBool="" />
+
+    <reserved1
+    Padding="" />
+
   </Field>
+  <Enums>
+    <Enum Name="CAMERA_INTERPOLATE_TYPE">
+      <Option Value="0" Name="No Interpolation" />
+      <Option Value="1" Name="Instant Switching" />
+      <Option Value="2" Name="Linear Interpolation" />
+      <Option Value="3" Name="Quadratic Interpolation 1" />
+      <Option Value="4" Name="Quadratic Interpolation 2" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

@@ -6,109 +6,639 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="s32 sfx_id" />
-    <Field Def="u8 spawn_location" />
-    <Field Def="u8 spawn_direction" />
-    <Field Def="u8 online_visibility" />
-    <Field Def="u8 spawn_flag_1" />
-    <Field Def="f32 relative_z_coord" />
-    <Field Def="f32 relative_y_coord" />
-    <Field Def="f32 relative_x_coord" />
-    <Field Def="f32 relative_vertical_angle" />
-    <Field Def="f32 relative_horizontal_angle" />
-    <Field Def="f32 lockon_vertical_angle" />
-    <Field Def="f32 lockon_horizontal_angle" />
-    <Field Def="f32 vertical_angle_randomizer" />
-    <Field Def="f32 horizontal_angle_randomizer" />
-    <Field Def="u8 Unk00" />
-    <Field Def="u8 Unk01" />
-    <Field Def="u8 shoot_once_count" />
-    <Field Def="u8 shoot_sequential_count" />
-    <Field Def="f32 shoot_once_relative_vertical_angle" />
-    <Field Def="f32 shoot_once_relative_horizontal_angle" />
-    <Field Def="f32 shoot_sequential_interval" />
-    <Field Def="f32 shoot_sequential_relative_vertical_angle" />
-    <Field Def="f32 shoot_sequential_relative_horizontal_angle" />
-    <Field Def="u8 Unk04" />
-    <Field Def="u8 Unk05" />
-    <Field Def="u8 Unk06" />
-    <Field Def="u8 Unk07" />
-    <Field Def="f32 max_life" />
-    <Field Def="f32 initial_horizontal_velocity" />
-    <Field Def="f32 horizontal_acceleration_start_delay" />
-    <Field Def="f32 horizontal_target_velocity" />
-    <Field Def="f32 horizontal_max_velocity" />
-    <Field Def="f32 initial_vertical_velocity" />
-    <Field Def="f32 vertical_acceleration_start_delay" />
-    <Field Def="f32 vertical_target_velocity" />
-    <Field Def="f32 vertical_max_velocity" />
-    <Field Def="f32 initial_tan_vertical_velocity" />
-    <Field Def="f32 tan_vertical_acceleration_start_delay" />
-    <Field Def="f32 tan_vertical_target_velocity" />
-    <Field Def="f32 tan_vertical_max_velocity" />
-    <Field Def="f32 initial_tan_horizontal_velocity" />
-    <Field Def="f32 tan_horizontal_acceleration_start_delay" />
-    <Field Def="f32 tan_horizontal_target_velocity" />
-    <Field Def="f32 tan_horizontal_max_velocity" />
-    <Field Def="f32 Unk08" />
-    <Field Def="f32 max_angle_change" />
-    <Field Def="f32 max_tracking_angle_change" />
-    <Field Def="f32 max_tracking_time" />
-    <Field Def="f32 Unk09" />
-    <Field Def="f32 Unk10" />
-    <Field Def="f32 Unk11" />
-    <Field Def="f32 Unk12" />
-    <Field Def="f32 Unk13" />
-    <Field Def="u8 hit_character" />
-    <Field Def="u8 hit_wall" />
-    <Field Def="u8 hit_floor" />
-    <Field Def="u8 hit_water" />
-    <Field Def="s32 shoot_sfx_id" />
-    <Field Def="u8 Unk14" />
-    <Field Def="u8 Unk15" />
-    <Field Def="u8 Unk16" />
-    <Field Def="u8 Unk17" />
-    <Field Def="s32 hit_sfx_id" />
-    <Field Def="s32 expire_sfx_id" />
-    <Field Def="f32 sfx_duration_on_expiration" />
-    <Field Def="f32 Unk18" />
-    <Field Def="s32 bullet_attach_param_id" />
-    <Field Def="s32 Unk19" />
-    <Field Def="s32 child_bullet_1_bullet_id" />
-    <Field Def="s32 child_bullet_1_damage_id" />
-    <Field Def="s32 child_bullet_2_bullet_id" />
-    <Field Def="s32 child_bullet_2_damage_id" />
-    <Field Def="s32 child_bullet_3_bullet_id" />
-    <Field Def="s32 child_bullet_3_damage_id" />
-    <Field Def="u8 spawn_child_bullet_on_hit" />
-    <Field Def="u8 spawn_child_bullet_on_expire" />
-    <Field Def="u8 spawn_child_bullet_on_unknown" />
-    <Field Def="u8 spawn_child_bullet_on_alive" />
-    <Field Def="s32 Unk20" />
-    <Field Def="s32 Unk21" />
-    <Field Def="s32 Unk22" />
-    <Field Def="s32 Unk23" />
-    <Field Def="u8 Unk24" />
-    <Field Def="u8 Unk25" />
-    <Field Def="u8 Unk26" />
-    <Field Def="u8 Unk27" />
-    <Field Def="u8 Unk28" />
-    <Field Def="u8 Unk29" />
-    <Field Def="u8 Unk30" />
-    <Field Def="u8 Unk31" />
-    <Field Def="f32 Unk32" />
-    <Field Def="f32 Unk33" />
-    <Field Def="f32 Unk34" />
-    <Field Def="s32 Unk35" />
-    <Field Def="s32 Unk36" />
-    <Field Def="f32 Unk37" />
-    <Field Def="f32 Unk38" />
-    <Field Def="f32 Unk39" />
-    <Field Def="f32 child_bullet_spawn_delay" />
-    <Field Def="f32 Unk40" />
-    <Field Def="s32 Unk41" />
-    <Field Def="s32 Unk42" />
-    <Field Def="s32 Unk43" />
-    <Field Def="s32 Unk44" />
-  </Fields>
+        <Field Def="u32 bulletSfxId">
+            <DisplayName>バレットSFXID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 emitEntityType">
+            <DisplayName>生成基準</DisplayName>
+            <Enum>BULLET_EMIT_ENTITY_TYPE</Enum>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 emitteType">
+            <DisplayName>発生源タイプ</DisplayName>
+            <Enum>BULLET_POS_TYPE</Enum>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 netSync">
+            <DisplayName>通信同期タイプ</DisplayName>
+            <Enum>BULLET_NET_SYNC_TYPE</Enum>
+            <SortID>6000</SortID>
+        </Field>
+        <Field Def="u8 enableAutoHoming">
+            <DisplayName>オートホーミング許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="f32 shootOffsetY">
+            <DisplayName>発生位置オフセットＹ</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="f32 shootOffsetX">
+            <DisplayName>発生位置オフセットＸ</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="f32 shootOffsetZ">
+            <DisplayName>発生位置オフセットＺ</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="angle32 shootAngle">
+            <DisplayName>Ｙ方向への加算角度</DisplayName>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="angle32 shootAngleXZ">
+            <DisplayName>ＸＺ方向への加算角度</DisplayName>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="angle32 upDownCorrectAngle">
+            <DisplayName>補正角度（上下）</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="angle32 rightleftCorrectAngle">
+            <DisplayName>補正角度（左右）</DisplayName>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="angle32 upDownAccuracy">
+            <DisplayName>方向精度(上下)</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="angle32 rightLeftAccuracy">
+            <DisplayName>方向精度(左右)</DisplayName>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 upDownEstimateFuture">
+            <DisplayName>位置予測する（上下）</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 rightLeftEstimateFuture">
+            <DisplayName>位置予測する（左右）</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 simultaneouslyNum">
+            <DisplayName>同時発射数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="s8 automaticShootNum">
+            <DisplayName>連続発射数</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>127</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="angle32 simultaneouslyAngleY">
+            <DisplayName>同時発射間隔Ｙ角度</DisplayName>
+            <Minimum>-90</Minimum>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="angle32 simultaneouslyAngleXZ">
+            <DisplayName>同時発射間隔ＸＺ角度</DisplayName>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="f32 automaticInterval">
+            <DisplayName>連続発射間隔[sec]</DisplayName>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="angle32 automaticAngleY">
+            <DisplayName>連続発射間隔Ｙ角度</DisplayName>
+            <Minimum>-90</Minimum>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="angle32 automaticAngleXZ">
+            <DisplayName>連続発射間隔ＸＺ角度</DisplayName>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 simultaneouslyLoopMax">
+            <DisplayName>同時発射ダミポリＩＤループ設定</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 automaticLoopMax">
+            <DisplayName>連続発射ダミポリＩＤループ設定</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 enableSimultaneouslyMuzzleFlash">
+            <DisplayName>同時発射マズルフラッシュ許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 enableAutomaticMuzzleFlash">
+            <DisplayName>連続発射マズルフラッシュ許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="f32 bulletLife">
+            <DisplayName>バレット寿命</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1800</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 initialVelocity">
+            <DisplayName>初速</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 acceleStartTime">
+            <DisplayName>加速度開始時間</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 acceleration">
+            <DisplayName>加速度</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 maxSpeed">
+            <DisplayName>最高速度</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 weight">
+            <DisplayName>重量[kg]</DisplayName>
+            <Maximum>100000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 downStartTime">
+            <DisplayName>落下開始時間</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 gravityValue">
+            <DisplayName>落下重力倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 externalForce">
+            <DisplayName>外力[m/s]</DisplayName>
+            <Maximum>100000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 updownRotateSpeed">
+            <DisplayName>上下旋回初速度</DisplayName>
+            <Minimum>-9999</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 updownRotateStartTime">
+            <DisplayName>上下旋回開始時間</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 updownRotateAccel">
+            <DisplayName>上下旋回加速度</DisplayName>
+            <Minimum>-9999</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 updownRotateMaxAngle">
+            <DisplayName>上下旋回最高角度</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 leftrightRotateSpeed">
+            <DisplayName>左右旋回初速度</DisplayName>
+            <Minimum>-9999</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 leftrightRotateStartTime">
+            <DisplayName>左右旋回開始時間</DisplayName>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 leftrightRotateAccel">
+            <DisplayName>左右旋回加速度</DisplayName>
+            <Minimum>-9999</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 leftrightRotateMaxAngle">
+            <DisplayName>左右旋回最高角度</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 homingUDType">
+            <DisplayName>追尾方向上下設定</DisplayName>
+            <Enum>BULLET_UD_HOMING_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 homingLRType">
+            <DisplayName>追尾方向左右設定</DisplayName>
+            <Enum>BULLET_LR_HOMING_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="dummy8 pad1[2]">
+            <DisplayName>パディング</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>7001</SortID>
+        </Field>
+        <Field Def="f32 homingStopDistance">
+            <DisplayName>追尾停止距離</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 homingStopAngle = 180">
+            <DisplayName>追尾停止角度</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 homingAngle = 180">
+            <DisplayName>追尾角度</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 homingOffDisableTime">
+            <DisplayName>追尾OFF禁止時間</DisplayName>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 homingStartTime">
+            <DisplayName>追尾開始時間</DisplayName>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 quickCorrectTime">
+            <DisplayName>補正開始時間</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 quickCorrectUDAngle">
+            <DisplayName>補正上下角度範囲</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 quickCorrectLRAngle">
+            <DisplayName>補正左右角度範囲</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 penetration">
+            <DisplayName>キャラ貫通設定</DisplayName>
+            <Enum>BULLET_PENETRATION_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 penetrationMap">
+            <DisplayName>マップ貫通設定</DisplayName>
+            <Enum>BULLET_PENETRATION_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 penetrationObj">
+            <DisplayName>OBJ貫通設定</DisplayName>
+            <Enum>BULLET_PENETRATION_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 penetrationWater">
+            <DisplayName>水貫通設定</DisplayName>
+            <Enum>BULLET_PENETRATION_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 muzzleFlashSfxId">
+            <DisplayName>マズルフラッシュSFXID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 isSfxEraseRoot">
+            <DisplayName>SFX即削除する</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 isDefenderHitNetSync">
+            <DisplayName>防御側ヒット判定にする</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>6000</SortID>
+        </Field>
+        <Field Def="u8 explosionOffsetUpDown">
+            <DisplayName>着弾位置補正（上下）</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 explosionOffsetRightLeft">
+            <DisplayName>着弾位置補正（左右）</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 explosionSfxId">
+            <DisplayName>着弾SFXID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 attachSfxId">
+            <DisplayName>刺さるSFXID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 attachLife">
+            <DisplayName>刺さる時間[sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 attachOffset">
+            <DisplayName>刺さる深さ[m]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 attachParam">
+            <DisplayName>刺さる生成設定</DisplayName>
+            <Enum>BULLET_ATTACH_PARAM_ENUM</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 isAttachDisableBulletDir">
+            <DisplayName>刺さる時に方向を引き継がない</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 explosionForceUp">
+            <DisplayName>着弾を上向に固定</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 isDeleteEqualBulletId">
+            <DisplayName>同一IDのバレットを削除する</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>7000</SortID>
+        </Field>
+        <Field Def="dummy8 pad4[1]">
+            <DisplayName>パディング</DisplayName>
+            <SortID>7002</SortID>
+        </Field>
+        <Field Def="u32 childeBulletId">
+            <DisplayName>子バレットID１</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 childeDamageId">
+            <DisplayName>子バレットダメージID１</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 childeBulletId02">
+            <DisplayName>子バレットID２</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 childeDamageId02">
+            <DisplayName>子バレットダメージID２</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 childeBulletId03">
+            <DisplayName>子バレットID３</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 childeDamageId03">
+            <DisplayName>子バレットダメージID３</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 isChildeExplosion">
+            <DisplayName>子バレット着弾生成</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 isChildeLife">
+            <DisplayName>子バレット寿命生成</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 isChildeArea">
+            <DisplayName>子バレット範囲侵入生成</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 isChildeContinue">
+            <DisplayName>子バレット一定間隔生成</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 childeAreaRange">
+            <DisplayName>判定距離</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 childeAreaUDAngle">
+            <DisplayName>判定角度（上下）</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="angle32 childeAreaLRAngle">
+            <DisplayName>判定角度（左右）</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 childeDelay">
+            <DisplayName>遅延時間</DisplayName>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 decalId">
+            <DisplayName>デカール貼り付けID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 isSpellParry">
+            <DisplayName>スペルパリィ可能</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>2000</SortID>
+        </Field>
+        <Field Def="u8 isSpellParryNoDamageThrough">
+            <DisplayName>スペルパリィ発生　ダメージ維持</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>2000</SortID>
+        </Field>
+        <Field Def="u8 onDamageType">
+            <DisplayName>叩き落し</DisplayName>
+            <Enum>BULLET_ON_DAMAGE_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>3000</SortID>
+        </Field>
+        <Field Def="u8 hitbackType">
+            <DisplayName>弾かれ可能</DisplayName>
+            <Enum>BULLET_HIT_BACK_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>3000</SortID>
+        </Field>
+        <Field Def="angle32 spellParryAngleX">
+            <DisplayName>スペルパリィ発生　弾かれ角度Ｘ</DisplayName>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2000</SortID>
+        </Field>
+        <Field Def="angle32 spellParryAngleY">
+            <DisplayName>スペルパリィ発生　弾かれ角度Ｙ</DisplayName>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2000</SortID>
+        </Field>
+        <Field Def="angle32 spellParryAngleZ">
+            <DisplayName>スペルパリィ発生　弾かれ角度Ｚ</DisplayName>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2000</SortID>
+        </Field>
+        <Field Def="u32 hitbackSfxId">
+            <DisplayName>弾かれSFXID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3000</SortID>
+        </Field>
+        <Field Def="angle32 parryAngleAccuracyX">
+            <DisplayName>弾かれ角度Ｘ　精度</DisplayName>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3000</SortID>
+        </Field>
+        <Field Def="angle32 parryAngleAccuracyY">
+            <DisplayName>弾かれ角度Ｙ　精度</DisplayName>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3000</SortID>
+        </Field>
+        <Field Def="angle32 parryAngleAccuracyZ">
+            <DisplayName>弾かれ角度Ｚ　精度</DisplayName>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3000</SortID>
+        </Field>
+        <Field Def="f32 parryAccelSpeed">
+            <DisplayName>弾かれ時　加算速度</DisplayName>
+            <Minimum>-9999</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3000</SortID>
+        </Field>
+        <Field Def="f32 childeInterval">
+            <DisplayName>発射間隔</DisplayName>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 homingStopTargetDistance">
+            <DisplayName>追尾停止する対ターゲット距離[m]</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4000</SortID>
+        </Field>
+        <Field Def="dummy8 pad5[16]">
+            <DisplayName>予約</DisplayName>
+            <SortID>7003</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

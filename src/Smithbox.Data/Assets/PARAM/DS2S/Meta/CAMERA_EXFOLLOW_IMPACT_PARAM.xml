@@ -2,5 +2,37 @@
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters relating to the camera during backstabs, ripostes and guard breaks."  />
   <Field>
+    <startTime
+    AltName="Start Time"
+    Wiki="The duration (in seconds) before this camera is applied." />
+
+    <frequencyTime
+    AltName="Shake Time"
+    Wiki="The duration (in seconds) of the shake period after starting." />
+
+    <endTime
+    AltName="End Time"
+    Wiki="The duration (in seconds) after which this camera ends." />
+
+    <fovY
+    AltName="Field of View %"
+    Wiki="The field of view multiplier, after adjustment. 100 is no change." />
+
+    <distance
+    AltName="Distance %"
+    Wiki="The distance multiplier, after adjustment. 100 is no change." />
+
+    <frequencyNum
+    AltName="Shake Count"
+    Wiki="The number of shakes during the shake period." />
+
+    <frequencyFovY
+    AltName="Field of View %: During Shake"
+    Wiki="The field of view multiplier, after adjustment during a shake. 100 is no change." />
+
+    <frequencyDistance
+    AltName="Distance %: During Shake"
+    Wiki="The distance multiplier, after adjustment during a shake. 100 is no change." />
+
   </Field>
 </PARAMMETA>

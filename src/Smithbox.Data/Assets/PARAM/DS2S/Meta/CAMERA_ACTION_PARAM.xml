@@ -2,5 +2,47 @@
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters related to the action of the camera."  />
   <Field>
+    <cameraType
+    AltName="Camera Behavior Type"
+    Wiki="The behavior to use for this camera." 
+    ProjectEnum="CAMERA_TYPE" />
+
+    <cameraBasePosType
+    AltName="Camera Reference Point Type"
+    Wiki="The reference point to use for this camera." 
+    ProjectEnum="CAMERA_BASE_POS_TYPE" />
+
+    <reserved
+    Padding="" />
+
+    <fovY
+    AltName="Horizontal Field of View"
+    Wiki="The field of view (in degrees)." />
+
+    <lookAtOffsetX
+    AltName="Focus Offset: X-Axis"
+    Wiki="The look-at focus offset on the x-axis (in metres)." />
+
+    <lookAtOffsetY
+    AltName="Focus Offset: Y-Axis"
+    Wiki="The look-at focus offset on the y-axis (in metres)." />
+
+    <lookAtOffsetZ
+    AltName="Focus Offset: Z-Axis"
+    Wiki="The look-at focus offset on the z-axis (in metres)." />
+
+    <positionOffsetX
+    AltName="Position Offset: X-Axis"
+    Wiki="The position offset on the x-axis (in metres)." />
+
+    <positionOffsetY
+    AltName="Position Offset: Y-Axis"
+    Wiki="The position offset on the y-axis (in metres)." />
+
+    <positionOffsetZ
+    AltName="Position Offset: Z-Axis"
+    Wiki="The position offset on the z-axis (in metres)." />
+
+
   </Field>
 </PARAMMETA>
