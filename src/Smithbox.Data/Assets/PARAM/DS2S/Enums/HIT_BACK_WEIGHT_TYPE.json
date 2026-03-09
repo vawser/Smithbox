@@ -1,0 +1,32 @@
+{
+  "DisplayName": "HIT_BACK_WEIGHT_TYPE",
+  "Name": "HIT_BACK_WEIGHT_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Extremely small",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Small",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Normal",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Large",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Extra large",
+      "Description": ""
+    }
+  ]
+}

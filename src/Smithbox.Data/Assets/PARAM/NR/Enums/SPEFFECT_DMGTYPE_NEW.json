@@ -1,0 +1,72 @@
+{
+  "DisplayName": "Damage Level Replacement",
+  "Name": "SPEFFECT_DMGTYPE_NEW",
+  "Description": "These are categories used to determine the type of stagger the player or enemy takes. (SpEffect version)",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Default",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "No Stagger [0: NONE]",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Minimum Stagger [8: MINIMUM]",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Short Stagger [1: SMALL]",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Medium Stagger [2: MEDIUM]",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Long Stagger [3: LARGE]",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Launch Back [7: SMALL_BLOW]",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Big Launch Back [4: EXLARGE]",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Pancake [6: FLING]",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Air Juggle [9: UPPER]",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Push [5: PUSH]",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Huge Launch Back [10: EX_BLAST]",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Flailing Arms [11: BREATH]",
+      "Description": ""
+    }
+  ]
+}

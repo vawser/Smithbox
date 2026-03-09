@@ -1,0 +1,27 @@
+{
+  "DisplayName": "GUARD_RELEASE_SPEED_CATEGORY",
+  "Name": "GUARD_RELEASE_SPEED_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "10",
+      "Name": "速",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "中",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "遅",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Extremely slow",
+      "Description": ""
+    }
+  ]
+}

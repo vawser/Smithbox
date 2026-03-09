@@ -1,0 +1,47 @@
+{
+  "DisplayName": "OBJ_UPPER_DURABILITY_TYPE_ENUM",
+  "Name": "OBJ_UPPER_DURABILITY_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Extremely small",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "小",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "中",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "大",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Extra large",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Super extra large",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Super super extra large",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Indestructible",
+      "Description": ""
+    }
+  ]
+}

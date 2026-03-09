@@ -1,0 +1,172 @@
+{
+  "DisplayName": "GENERATOR_EVAL_ENUM",
+  "Name": "GENERATOR_EVAL_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Unconditionally established",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "A player invades the event point [event point ID]",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Player escapes from event point [event point ID]",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "The distance to the player is [distance] m or more",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "The distance to the player is within [distance] m",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "The number of permanently stationed enemies on the map is within [specified number]",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "[Specified ID] event flag is ON",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "The event flag of [specified ID] is OFF",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "More than [specified seconds] have passed since the generated character died.",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "An enemy generation trap has been activated.",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Host invades event point [event point ID]",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Host escapes from event point [event point ID]",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Event [Event ID] has ended",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Player is not wet with [wetness parameter ID]",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "The player is wet with [wetness parameter ID]",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Not during a boss fight",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "During a boss fight",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "A hostile spirit (against the host) invades [Event Point ID]",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Hostile spirit (against the host) leaves to [event point ID]",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Friendly spirits (against the host) invade [event point ID]",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Ally spirits (toward the host) leave at [Event Point ID]",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Total number of laps is more than [comparison number of laps]",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Total number of laps is less than [Comparison number of laps]",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Total number of laps is equal to [number of comparison laps]",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "The number of game laps is more than [Comparison number of laps]",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "The number of game laps is less than or equal to [Comparison number of laps]",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Number of game laps is equal to [Comparison number of laps]",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Number of laps around the bonfire is greater than [Comparison number of laps]",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Number of laps around the bonfire is less than or equal to [Comparison number of laps]",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Number of bonfire laps is equal to [comparison number of laps]",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "The distance to all players is [distance] m or more",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "The distance to all players is within [distance] m",
+      "Description": ""
+    }
+  ]
+}

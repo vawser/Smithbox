@@ -1,0 +1,192 @@
+{
+  "DisplayName": "LOCK_ON_CAMERA_OFFSET_TYPE_ENUM",
+  "Name": "LOCK_ON_CAMERA_OFFSET_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "10010",
+      "Name": "Extremely small",
+      "Description": ""
+    },
+    {
+      "ID": "10020",
+      "Name": "Small size",
+      "Description": ""
+    },
+    {
+      "ID": "10030",
+      "Name": "Medium size",
+      "Description": ""
+    },
+    {
+      "ID": "10040",
+      "Name": "Large",
+      "Description": ""
+    },
+    {
+      "ID": "10050",
+      "Name": "Extra large",
+      "Description": ""
+    },
+    {
+      "ID": "10060",
+      "Name": "Extra large",
+      "Description": ""
+    },
+    {
+      "ID": "10070",
+      "Name": "Special special large size",
+      "Description": ""
+    },
+    {
+      "ID": "21540",
+      "Name": "Exclusive - Skeleton Aristocrat",
+      "Description": ""
+    },
+    {
+      "ID": "22120",
+      "Name": "Dedicated-Wyvern",
+      "Description": ""
+    },
+    {
+      "ID": "22235",
+      "Name": "Exclusive-Giant Rat",
+      "Description": ""
+    },
+    {
+      "ID": "23033",
+      "Name": "Dedicated - Double-sided Warrior: Snake Head",
+      "Description": ""
+    },
+    {
+      "ID": "23050",
+      "Name": "Exclusive - Demon Knight",
+      "Description": ""
+    },
+    {
+      "ID": "23096",
+      "Name": "Exclusive-New Titan Senior Soldier (Deceased)",
+      "Description": ""
+    },
+    {
+      "ID": "23097",
+      "Name": "Exclusive - New Titan Advanced Soldier (Living)",
+      "Description": ""
+    },
+    {
+      "ID": "23180",
+      "Name": "Dedicated - Vagrant",
+      "Description": ""
+    },
+    {
+      "ID": "23240",
+      "Name": "Dedicated-Gargoyle",
+      "Description": ""
+    },
+    {
+      "ID": "23250",
+      "Name": "Exclusive - Warrior in the Mirror",
+      "Description": ""
+    },
+    {
+      "ID": "23260",
+      "Name": "Dedicated - Butcher",
+      "Description": ""
+    },
+    {
+      "ID": "23320",
+      "Name": "Exclusive-Queen's Knight A",
+      "Description": ""
+    },
+    {
+      "ID": "23330",
+      "Name": "Exclusive-Queen's Knight B",
+      "Description": ""
+    },
+    {
+      "ID": "23340",
+      "Name": "Exclusive-Queen's Knight C",
+      "Description": ""
+    },
+    {
+      "ID": "25000",
+      "Name": "Exclusive - Jabba the Hutt",
+      "Description": ""
+    },
+    {
+      "ID": "25010",
+      "Name": "Exclusive-Naga",
+      "Description": ""
+    },
+    {
+      "ID": "25030",
+      "Name": "Exclusive-Man Scorpion♀",
+      "Description": ""
+    },
+    {
+      "ID": "25040",
+      "Name": "Exclusive-Mirror Knight",
+      "Description": ""
+    },
+    {
+      "ID": "25061",
+      "Name": "Exclusive - Agaduran's Stand",
+      "Description": ""
+    },
+    {
+      "ID": "25146",
+      "Name": "Dedicated - Old King",
+      "Description": ""
+    },
+    {
+      "ID": "26000",
+      "Name": "Exclusive-Ancient Dragon",
+      "Description": ""
+    },
+    {
+      "ID": "26020",
+      "Name": "Exclusive-Beautiful Frog",
+      "Description": ""
+    },
+    {
+      "ID": "26030",
+      "Name": "Exclusive-Spider Queen",
+      "Description": ""
+    },
+    {
+      "ID": "26031",
+      "Name": "Exclusive-Spider Queen (Cliff)",
+      "Description": ""
+    },
+    {
+      "ID": "26070",
+      "Name": "Dedicated - Molten Demon",
+      "Description": ""
+    },
+    {
+      "ID": "26110",
+      "Name": "Dedicated - Heavy Cavalry",
+      "Description": ""
+    },
+    {
+      "ID": "26191",
+      "Name": "Dedicated - Silver Chariot",
+      "Description": ""
+    },
+    {
+      "ID": "26250",
+      "Name": "Dedicated - Ornstein",
+      "Description": ""
+    },
+    {
+      "ID": "26260",
+      "Name": "Exclusive - Forgotten Sinners",
+      "Description": ""
+    },
+    {
+      "ID": "26270",
+      "Name": "Exclusive-Queen's armor form",
+      "Description": ""
+    }
+  ]
+}

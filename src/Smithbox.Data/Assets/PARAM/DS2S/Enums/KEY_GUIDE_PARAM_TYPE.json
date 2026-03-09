@@ -1,0 +1,767 @@
+{
+  "DisplayName": "KEY_GUIDE_PARAM_TYPE",
+  "Name": "KEY_GUIDE_PARAM_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "[General purpose] Ladder climbing",
+      "Description": ""
+    },
+    {
+      "ID": "101",
+      "Name": "[General purpose] Ladder descent",
+      "Description": ""
+    },
+    {
+      "ID": "102",
+      "Name": "[General purpose] Ladder kick",
+      "Description": ""
+    },
+    {
+      "ID": "200",
+      "Name": "[General Purpose] Rope",
+      "Description": ""
+    },
+    {
+      "ID": "300",
+      "Name": "[General purpose] Open one door",
+      "Description": ""
+    },
+    {
+      "ID": "301",
+      "Name": "[General purpose] Close one door",
+      "Description": ""
+    },
+    {
+      "ID": "310",
+      "Name": "[General purpose] Open both doors",
+      "Description": ""
+    },
+    {
+      "ID": "311",
+      "Name": "[General Purpose] Close both doors",
+      "Description": ""
+    },
+    {
+      "ID": "400",
+      "Name": "[General purpose] White door S",
+      "Description": ""
+    },
+    {
+      "ID": "401",
+      "Name": "[General purpose] White door M",
+      "Description": ""
+    },
+    {
+      "ID": "402",
+      "Name": "[General purpose] White door L",
+      "Description": ""
+    },
+    {
+      "ID": "410",
+      "Name": "[General purpose] Reverse white door S",
+      "Description": ""
+    },
+    {
+      "ID": "411",
+      "Name": "[General purpose] Reverse white door M",
+      "Description": ""
+    },
+    {
+      "ID": "412",
+      "Name": "[General purpose] Reverse white door L",
+      "Description": ""
+    },
+    {
+      "ID": "500",
+      "Name": "[General Purpose] Rescue",
+      "Description": ""
+    },
+    {
+      "ID": "600",
+      "Name": "[General purpose] NPC conversation",
+      "Description": ""
+    },
+    {
+      "ID": "610",
+      "Name": "[General purpose] NPC grave",
+      "Description": ""
+    },
+    {
+      "ID": "620",
+      "Name": "[General Purpose] Touch",
+      "Description": ""
+    },
+    {
+      "ID": "630",
+      "Name": "[General purpose] Magic circle",
+      "Description": ""
+    },
+    {
+      "ID": "700",
+      "Name": "[General Purpose] Treasure Chest",
+      "Description": ""
+    },
+    {
+      "ID": "750",
+      "Name": "[General Purpose] Mimic",
+      "Description": ""
+    },
+    {
+      "ID": "800",
+      "Name": "[General Purpose] Barista",
+      "Description": ""
+    },
+    {
+      "ID": "900",
+      "Name": "[General purpose] Bonfire light",
+      "Description": ""
+    },
+    {
+      "ID": "901",
+      "Name": "[General purpose] Bonfire menu",
+      "Description": ""
+    },
+    {
+      "ID": "1000",
+      "Name": "[General Purpose] Pull the lever",
+      "Description": ""
+    },
+    {
+      "ID": "1001",
+      "Name": "[General Purpose] Continue to pull the lever",
+      "Description": ""
+    },
+    {
+      "ID": "1010",
+      "Name": "[General purpose] Lever (wall hole, hanging strap)",
+      "Description": ""
+    },
+    {
+      "ID": "1020",
+      "Name": "[General Purpose] Valve",
+      "Description": ""
+    },
+    {
+      "ID": "1100",
+      "Name": "[General Purpose] Torch",
+      "Description": ""
+    },
+    {
+      "ID": "1101",
+      "Name": "[General Purpose] Torch (by the wall)",
+      "Description": ""
+    },
+    {
+      "ID": "1110",
+      "Name": "[General Purpose] Light a fire with a torch (sphere)",
+      "Description": ""
+    },
+    {
+      "ID": "1111",
+      "Name": "[General Purpose] Light a fire with a torch (near the wall)",
+      "Description": ""
+    },
+    {
+      "ID": "1200",
+      "Name": "[General purpose] Standing board",
+      "Description": ""
+    },
+    {
+      "ID": "1300",
+      "Name": "[General Purpose] Boss Weakness",
+      "Description": ""
+    },
+    {
+      "ID": "1400",
+      "Name": "[General purpose] Insect key",
+      "Description": ""
+    },
+    {
+      "ID": "1410",
+      "Name": "[General purpose] Insect key (floor)",
+      "Description": ""
+    },
+    {
+      "ID": "1500",
+      "Name": "[General purpose] Key guide without display",
+      "Description": ""
+    },
+    {
+      "ID": "1510",
+      "Name": "[General purpose] Key guide without display (both sides)",
+      "Description": ""
+    },
+    {
+      "ID": "1600",
+      "Name": "[General purpose] Petrification stop",
+      "Description": ""
+    },
+    {
+      "ID": "1700",
+      "Name": "[General purpose] For terminal bonfire warp",
+      "Description": ""
+    },
+    {
+      "ID": "10020400",
+      "Name": "Gap Cave_Tutorial starts soon",
+      "Description": ""
+    },
+    {
+      "ID": "10020401",
+      "Name": "Gap Cave_Kira Kira Musume Mae",
+      "Description": ""
+    },
+    {
+      "ID": "10020402",
+      "Name": "Gap Cave_In front of a fallen tree",
+      "Description": ""
+    },
+    {
+      "ID": "10020403",
+      "Name": "Gap Cave_Tutorial 2nd",
+      "Description": ""
+    },
+    {
+      "ID": "10020404",
+      "Name": "Gap Cave_To the left in front of the tutorial goal",
+      "Description": ""
+    },
+    {
+      "ID": "10020405",
+      "Name": "Gap Cave_Tutorial Goal Upper passage on the right before the stairs",
+      "Description": ""
+    },
+    {
+      "ID": "10020410",
+      "Name": "Gap Cave_Tutorial starts immediately_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10020411",
+      "Name": "Gap Cave_Glitter Girl Front_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10020412",
+      "Name": "Gap cave_In front of fallen tree_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10020413",
+      "Name": "Gap Cave_Tutorial 2nd_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10020414",
+      "Name": "Gap Cave_Left hand in front of tutorial goal_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10020415",
+      "Name": "Gap Cave_Upper passage on the right before the tutorial goal stairs_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10029010",
+      "Name": "Lithograph",
+      "Description": ""
+    },
+    {
+      "ID": "10029020",
+      "Name": "Gap Cave_Knock down the standing board",
+      "Description": ""
+    },
+    {
+      "ID": "10029030",
+      "Name": "Gap Cave_Enter the tank",
+      "Description": ""
+    },
+    {
+      "ID": "10049010",
+      "Name": "Madura_For revolving door gimmick",
+      "Description": ""
+    },
+    {
+      "ID": "10049020",
+      "Name": "Madura_Stone monument of the strong",
+      "Description": ""
+    },
+    {
+      "ID": "10049030",
+      "Name": "Madura_NPC cat conversation key guide",
+      "Description": ""
+    },
+    {
+      "ID": "10049040",
+      "Name": "Madura_Obelisk key guide",
+      "Description": ""
+    },
+    {
+      "ID": "10100400",
+      "Name": "Decayed Giant Forest_Boss New Titan Advanced Soldier (Entrance)",
+      "Description": ""
+    },
+    {
+      "ID": "10100401",
+      "Name": "Fallen Giant Forest_Boss Bay Grand (Entrance)",
+      "Description": ""
+    },
+    {
+      "ID": "10100402",
+      "Name": "Decayed Giant's Forest_Torch Room ~ Submerged Square",
+      "Description": ""
+    },
+    {
+      "ID": "10100403",
+      "Name": "Forest of Fallen Giants_Amphitheater",
+      "Description": ""
+    },
+    {
+      "ID": "10100404",
+      "Name": "Decayed Giant Forest_Giant Sword ~ ​​Elevator",
+      "Description": ""
+    },
+    {
+      "ID": "10100412",
+      "Name": "Decayed Giant's Forest_Torch Room ~ Submerged Plaza_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10100413",
+      "Name": "Forest of Decayed Giants_Amphitheater_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10100414",
+      "Name": "Decayed Giant Forest_Giant Sword~Elevator_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10109000",
+      "Name": "Decayed Giant Forest_Bird's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "10109010",
+      "Name": "Decayed Giant Forest_For Giant Tree Warp",
+      "Description": ""
+    },
+    {
+      "ID": "10109020",
+      "Name": "Decayed Giant Forest_Giant Tree (Practical use of wood)",
+      "Description": ""
+    },
+    {
+      "ID": "10140400",
+      "Name": "Luminous Stone Town Geldra_Church Boss (Entrance)",
+      "Description": ""
+    },
+    {
+      "ID": "10140401",
+      "Name": "Shinseki Town Geldra_Spider's Web Zone Lower Boss (Entrance)",
+      "Description": ""
+    },
+    {
+      "ID": "10149010",
+      "Name": "Shining Stone Town Geldra_Ancient Dragon's Memory Intrusion",
+      "Description": ""
+    },
+    {
+      "ID": "10149020",
+      "Name": "Geldra Town Geldra_For obtaining red soul",
+      "Description": ""
+    },
+    {
+      "ID": "10150400",
+      "Name": "Anne Deal's House_In front of the boss",
+      "Description": ""
+    },
+    {
+      "ID": "10159000",
+      "Name": "Anne Deal's Hall_Removal of petrification",
+      "Description": ""
+    },
+    {
+      "ID": "10159010",
+      "Name": "Hall of An Deal_Ogre Destruction Wall Door Key Guide",
+      "Description": ""
+    },
+    {
+      "ID": "10160400",
+      "Name": "Prison of Oblivion_Boss Forgotten Sinner",
+      "Description": ""
+    },
+    {
+      "ID": "10160401",
+      "Name": "Prison of Oblivion_Boss Gargoyle",
+      "Description": ""
+    },
+    {
+      "ID": "10160402",
+      "Name": "Prison of Oblivion_Boss Warrior in the Mirror",
+      "Description": ""
+    },
+    {
+      "ID": "10160403",
+      "Name": "Prison of Oblivion_Apartment Tower Entrance",
+      "Description": ""
+    },
+    {
+      "ID": "10160413",
+      "Name": "Prison of Oblivion_Apartment Tower Entrance_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10169000",
+      "Name": "Prison of Oblivion_No display key guide (both sides)",
+      "Description": ""
+    },
+    {
+      "ID": "10170400",
+      "Name": "Tamari no Tani_Boss Jabba the Hutt",
+      "Description": ""
+    },
+    {
+      "ID": "10170401",
+      "Name": "Valley of Water_Bosnaga",
+      "Description": ""
+    },
+    {
+      "ID": "10170412",
+      "Name": "Tamari no Tani_In front of the bonfire in the atrium_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10174002",
+      "Name": "Tamari no Tani_In front of the bonfire in the atrium",
+      "Description": ""
+    },
+    {
+      "ID": "10179000",
+      "Name": "Ignite the windmill shaft",
+      "Description": ""
+    },
+    {
+      "ID": "10179010",
+      "Name": "Tamari no Tani_Altar of the Sun",
+      "Description": ""
+    },
+    {
+      "ID": "10180400",
+      "Name": "Hidden Port_Boss double-sided warrior",
+      "Description": ""
+    },
+    {
+      "ID": "10189000",
+      "Name": "Hidden port_compass",
+      "Description": ""
+    },
+    {
+      "ID": "10190400",
+      "Name": "Melted Iron Fortress_Boss Demon Knight",
+      "Description": ""
+    },
+    {
+      "ID": "10190401",
+      "Name": "Molten Iron Castle_Boss Molten Iron Demon",
+      "Description": ""
+    },
+    {
+      "ID": "10190402",
+      "Name": "Melted Iron Fortress_Beyond the lift",
+      "Description": ""
+    },
+    {
+      "ID": "10190403",
+      "Name": "Molten Iron Fortress_Covenant Entrance",
+      "Description": ""
+    },
+    {
+      "ID": "10190404",
+      "Name": "Melted Iron Fortress_Covenant Exit",
+      "Description": ""
+    },
+    {
+      "ID": "10190412",
+      "Name": "Melted Iron Castle_Ahead of the lift_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10230400",
+      "Name": "Hunting Forest_Boss White Door (Entrance)_Silver Chariot",
+      "Description": ""
+    },
+    {
+      "ID": "10230410",
+      "Name": "Hunting Forest_Boss White Door (Entrance)_Skeleton Nobleman",
+      "Description": ""
+    },
+    {
+      "ID": "10231020",
+      "Name": "Hunting forest_Shortcut fallen tree",
+      "Description": ""
+    },
+    {
+      "ID": "10239000",
+      "Name": "Hunting Forest_Stone Statue of Pledge_Matching begins",
+      "Description": ""
+    },
+    {
+      "ID": "10239001",
+      "Name": "Hunting Forest_Stone Statue of Pledge_Matching Cancellation",
+      "Description": ""
+    },
+    {
+      "ID": "10250400",
+      "Name": "Scum Bottom_Boss Butcher",
+      "Description": ""
+    },
+    {
+      "ID": "10250401",
+      "Name": "Scum bottom_ladder room",
+      "Description": ""
+    },
+    {
+      "ID": "10250402",
+      "Name": "Scum bottom_In front of the lower coal tar area",
+      "Description": ""
+    },
+    {
+      "ID": "10250411",
+      "Name": "Scum bottom_Ladder room_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10250412",
+      "Name": "Scum bottom_lower coal tar area front_reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10270400",
+      "Name": "Guardian Dragon's Nest_Boss Ancient Dragon",
+      "Description": ""
+    },
+    {
+      "ID": "10279000",
+      "Name": "Guardian Dragon's Nest_Ancient Dragon_For conversation",
+      "Description": ""
+    },
+    {
+      "ID": "10310400",
+      "Name": "Heide Great Fire Tower_Boss Heavy Cavalry",
+      "Description": ""
+    },
+    {
+      "ID": "10310401",
+      "Name": "Heide Tower of Fire_Ornstein",
+      "Description": ""
+    },
+    {
+      "ID": "10319000",
+      "Name": "Heide Great Fire Tower_Pledge Stone Statue_Matching starts",
+      "Description": ""
+    },
+    {
+      "ID": "10319001",
+      "Name": "Heide Great Fire Tower_Pledge Stone Statue_Matching Cancellation",
+      "Description": ""
+    },
+    {
+      "ID": "10319010",
+      "Name": "Heide Great Fire Tower_Pull the lever",
+      "Description": ""
+    },
+    {
+      "ID": "10320400",
+      "Name": "Hollow Shadow Forest_Bossman Scorpion",
+      "Description": ""
+    },
+    {
+      "ID": "10320401",
+      "Name": "Hollow Shadow Forest_Drangraig connection",
+      "Description": ""
+    },
+    {
+      "ID": "10320411",
+      "Name": "Hollow Shadow Forest_Drangraig Connection_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10329000",
+      "Name": "Hollow Shadow Forest_Gate Statue",
+      "Description": ""
+    },
+    {
+      "ID": "10329010",
+      "Name": "Hollow Shadow Forest_NPC: Manscorpion",
+      "Description": ""
+    },
+    {
+      "ID": "10330400",
+      "Name": "Pharos Doorway_Boss dog and mouse",
+      "Description": ""
+    },
+    {
+      "ID": "10330401",
+      "Name": "Pharos Doorway_Mouse Covenant White Door",
+      "Description": ""
+    },
+    {
+      "ID": "10330411",
+      "Name": "Pharos Doorway_Mouse Covenant White Door_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "10340400",
+      "Name": "Saint’s Tomb_Boss Giant Rat",
+      "Description": ""
+    },
+    {
+      "ID": "10340401",
+      "Name": "Saints Tomb_Pledge Goal",
+      "Description": ""
+    },
+    {
+      "ID": "10340411",
+      "Name": "聖人墓所_誓約ゴール_逆",
+      "Description": ""
+    },
+    {
+      "ID": "10349000",
+      "Name": "Saint Cemetery_NPC: Mouse King",
+      "Description": ""
+    },
+    {
+      "ID": "20100400",
+      "Name": "Giant's Memories_New Boss/Advanced Giant Soldier",
+      "Description": ""
+    },
+    {
+      "ID": "20109000",
+      "Name": "Giant's Memory_Titan Corpse Warp",
+      "Description": ""
+    },
+    {
+      "ID": "20110400",
+      "Name": "Amana altar boss beautiful voice frog",
+      "Description": ""
+    },
+    {
+      "ID": "20110401",
+      "Name": "Amana Altar_Cave beyond Girl 1's house",
+      "Description": ""
+    },
+    {
+      "ID": "20110402",
+      "Name": "Amana Altar_Cave beyond Girl 2's house",
+      "Description": ""
+    },
+    {
+      "ID": "20110411",
+      "Name": "Amana Altar_Cave beyond girl 1's house_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "20110412",
+      "Name": "Amana Altar_Cave beyond Girl 2's house_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "20119000",
+      "Name": "Fairyside past_altar offering",
+      "Description": ""
+    },
+    {
+      "ID": "20119100",
+      "Name": "Amana Altar_Altar of the Living Prayer Points",
+      "Description": ""
+    },
+    {
+      "ID": "20119200",
+      "Name": "Banshee ascension",
+      "Description": ""
+    },
+    {
+      "ID": "20210400",
+      "Name": "In front of Ojo Doran Gray Glass Boss",
+      "Description": ""
+    },
+    {
+      "ID": "20210401",
+      "Name": "Ojo Drangraig Boss Mirror Knight",
+      "Description": ""
+    },
+    {
+      "ID": "20210402",
+      "Name": "Royal Castle Drangleig Boss Heavy Cavalry",
+      "Description": ""
+    },
+    {
+      "ID": "20219000",
+      "Name": "Royal Castle Drangraig_NPC Queen",
+      "Description": ""
+    },
+    {
+      "ID": "20219010",
+      "Name": "Castle Drangraig_Keyman",
+      "Description": ""
+    },
+    {
+      "ID": "20240400",
+      "Name": "Immortal Temple Boss Queen's Knight B",
+      "Description": ""
+    },
+    {
+      "ID": "20240401",
+      "Name": "Immortal Temple_In front of the grave area",
+      "Description": ""
+    },
+    {
+      "ID": "20240402",
+      "Name": "Immortal Mausoleum Boss King",
+      "Description": ""
+    },
+    {
+      "ID": "20240411",
+      "Name": "Immortal Temple_In front of the grave area_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "20269000",
+      "Name": "Ancient Dragon's Memory_Return Point",
+      "Description": ""
+    },
+    {
+      "ID": "20620900",
+      "Name": "E3 Fortress of Resistance_Bonfire Warp",
+      "Description": ""
+    },
+    {
+      "ID": "20620910",
+      "Name": "E3 Fortress of Resistance_Light the bonfire",
+      "Description": ""
+    },
+    {
+      "ID": "20630400",
+      "Name": "E3 Iwamine Castle_Boss white door (entrance)",
+      "Description": ""
+    },
+    {
+      "ID": "20630410",
+      "Name": "E3 Iwamine Castle_Boss white door (entrance)_Reverse",
+      "Description": ""
+    },
+    {
+      "ID": "40039000",
+      "Name": "Lighthouse for vows",
+      "Description": ""
+    }
+  ]
+}

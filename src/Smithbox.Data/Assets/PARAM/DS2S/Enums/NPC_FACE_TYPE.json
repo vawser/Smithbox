@@ -1,0 +1,22 @@
+{
+  "DisplayName": "NPC_FACE_TYPE",
+  "Name": "NPC_FACE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Fixed face",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Player face",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Dullahan face",
+      "Description": ""
+    }
+  ]
+}

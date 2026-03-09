@@ -1,0 +1,27 @@
+{
+  "DisplayName": "LOGIC_USEABLE_DODGE_TYPE",
+  "Name": "LOGIC_USEABLE_DODGE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Step",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Rolling",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Both",
+      "Description": ""
+    }
+  ]
+}

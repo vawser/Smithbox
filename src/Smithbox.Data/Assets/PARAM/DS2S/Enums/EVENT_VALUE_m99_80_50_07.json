@@ -1,0 +1,12 @@
+{
+  "DisplayName": "EVENT_VALUE_m99_80_50_07",
+  "Name": "EVENT_VALUE_m99_80_50_07",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "10",
+      "Name": "Royal soldiers/lower-rank soldiers killed",
+      "Description": ""
+    }
+  ]
+}

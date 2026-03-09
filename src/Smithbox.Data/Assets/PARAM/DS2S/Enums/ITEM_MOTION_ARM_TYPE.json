@@ -1,0 +1,27 @@
+{
+  "DisplayName": "ITEM_MOTION_ARM_TYPE",
+  "Name": "ITEM_MOTION_ARM_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Right hand",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Left hand",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Both hands",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "None",
+      "Description": ""
+    }
+  ]
+}

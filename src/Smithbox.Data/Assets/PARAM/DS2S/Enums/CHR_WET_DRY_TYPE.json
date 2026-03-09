@@ -1,0 +1,22 @@
+{
+  "DisplayName": "CHR_WET_DRY_TYPE",
+  "Name": "CHR_WET_DRY_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Normal",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Head gets dry easily",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Feet become dry easily",
+      "Description": ""
+    }
+  ]
+}

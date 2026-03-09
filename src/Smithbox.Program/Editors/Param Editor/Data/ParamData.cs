@@ -34,6 +34,7 @@ public class ParamData : IDisposable
     public ParamReloaderOffsets ParamReloaderOffsets;
 
     // User-overridable meta data
+    public ProjectEnumResource Enums;
     public ParamCategories ParamCategories;
     public ParamCommutativityGroups ParamCommutativityGroups;
     public FieldReferenceGroups FieldReferenceGroups;
@@ -82,7 +83,20 @@ public class ParamData : IDisposable
             Smithbox.Log(this, $"[Param Editor] Setup the PARAM meta.");
         }
 
-        // Graph Legends
+        // Param Enums
+        Task<bool> paramEnumsTask = SetupParamEnums();
+        bool paramEnumsTaskResult = await paramEnumsTask;
+
+        if (!paramEnumsTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM enums.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the PARAM enums.");
+        }
+
+        // Graph Annotations
         Task<bool> graphLegendsTask = SetupGraphAnnotations();
         bool graphLegendsTaskResult = await graphLegendsTask;
 
@@ -173,7 +187,7 @@ public class ParamData : IDisposable
             Smithbox.Log(this, $"[Param Editor] Setup the Commutative Param Groups data.");
         }
 
-        // Group References
+        // Field Reference Groups
         Task<bool> groupRefTask = SetupFieldReferenceGroups();
         bool groupRefTaskResult = await groupRefTask;
 
@@ -508,6 +522,68 @@ public class ParamData : IDisposable
             catch (Exception e)
             {
                 Smithbox.LogError(this, $"[Param Editor] Failed to deseralize {fName} as PARAMMETA", e);
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupParamEnums()
+    {
+        await Task.Yield();
+
+        Enums = new();
+
+        if (CFG.Current.Project_Enable_Param_Enum_Addition)
+        {
+            // Build project-local first, so it takes precedence over the base versions
+            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Enums");
+
+            if (Path.Exists(projectFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(projectFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ProjectJsonSerializerContext.Default.ProjectEnumEntry);
+
+                        if (!Enums.List.Any(e => e.Name == layout.Name))
+                        {
+                            Enums.List.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param enum entry: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        if (!CFG.Current.Project_Enable_Param_Enum_Override)
+        {
+            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Enums");
+
+            if (Path.Exists(sourceFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ProjectJsonSerializerContext.Default.ProjectEnumEntry);
+
+                        if (!Enums.List.Any(e => e.Name == layout.Name))
+                        {
+                            Enums.List.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param enum entry: {file}", LogPriority.High, e);
+                    }
+                }
             }
         }
 

@@ -1,0 +1,412 @@
+{
+  "DisplayName": "GENERATOR_PARAM_M99_80_71_05_TYPE",
+  "Name": "GENERATOR_PARAM_M99_80_71_05_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Map starting point",
+      "Description": ""
+    },
+    {
+      "ID": "1000",
+      "Name": "1 Demon Armor (Dead): Mass-produced type",
+      "Description": ""
+    },
+    {
+      "ID": "1100",
+      "Name": "2 Demon Armor (Dead): Mass-produced type",
+      "Description": ""
+    },
+    {
+      "ID": "1200",
+      "Name": "3 Demon Armor (Dead): Mass-produced type",
+      "Description": ""
+    },
+    {
+      "ID": "1300",
+      "Name": "4 Demon Armor (Dead): Mass-produced type",
+      "Description": ""
+    },
+    {
+      "ID": "1400",
+      "Name": "5 Demon Armor (Dead): Mass-produced type",
+      "Description": ""
+    },
+    {
+      "ID": "1500",
+      "Name": "6 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "1600",
+      "Name": "7 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "1700",
+      "Name": "8 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "1800",
+      "Name": "9 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "1900",
+      "Name": "10 Demon Armor (Dead): Mass-produced type",
+      "Description": ""
+    },
+    {
+      "ID": "2000",
+      "Name": "11 Demon Armor (Dead): Mass-produced type",
+      "Description": ""
+    },
+    {
+      "ID": "2100",
+      "Name": "12 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "2200",
+      "Name": "13 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "2300",
+      "Name": "14 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "2400",
+      "Name": "15 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "2500",
+      "Name": "16 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "2600",
+      "Name": "17 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "2700",
+      "Name": "18 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "2800",
+      "Name": "19 Demon Armor (Dead): Mass production type",
+      "Description": ""
+    },
+    {
+      "ID": "2900",
+      "Name": "20 Demon Armor (Dead): Mass-produced type",
+      "Description": ""
+    },
+    {
+      "ID": "5000",
+      "Name": "1 goblin",
+      "Description": ""
+    },
+    {
+      "ID": "5100",
+      "Name": "2 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "5200",
+      "Name": "3 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "5300",
+      "Name": "4 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "5400",
+      "Name": "5 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "5500",
+      "Name": "6 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "5600",
+      "Name": "7 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "5700",
+      "Name": "8 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "5800",
+      "Name": "9 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "5900",
+      "Name": "10 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "6000",
+      "Name": "11 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "6100",
+      "Name": "12 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "6200",
+      "Name": "13 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "6300",
+      "Name": "14 goblin",
+      "Description": ""
+    },
+    {
+      "ID": "6400",
+      "Name": "15 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "6500",
+      "Name": "16 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "6600",
+      "Name": "17 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "6700",
+      "Name": "18 goblin",
+      "Description": ""
+    },
+    {
+      "ID": "6800",
+      "Name": "19 goblin",
+      "Description": ""
+    },
+    {
+      "ID": "6900",
+      "Name": "20 goblins",
+      "Description": ""
+    },
+    {
+      "ID": "10000",
+      "Name": "1 auger",
+      "Description": ""
+    },
+    {
+      "ID": "10100",
+      "Name": "2 augers",
+      "Description": ""
+    },
+    {
+      "ID": "10200",
+      "Name": "3 auger",
+      "Description": ""
+    },
+    {
+      "ID": "10300",
+      "Name": "4 auger",
+      "Description": ""
+    },
+    {
+      "ID": "10400",
+      "Name": "5 auger",
+      "Description": ""
+    },
+    {
+      "ID": "10500",
+      "Name": "6 auger",
+      "Description": ""
+    },
+    {
+      "ID": "10600",
+      "Name": "7 auger",
+      "Description": ""
+    },
+    {
+      "ID": "10700",
+      "Name": "8 auger",
+      "Description": ""
+    },
+    {
+      "ID": "10800",
+      "Name": "9 auger",
+      "Description": ""
+    },
+    {
+      "ID": "10900",
+      "Name": "10 augers",
+      "Description": ""
+    },
+    {
+      "ID": "11000",
+      "Name": "11 auger",
+      "Description": ""
+    },
+    {
+      "ID": "11100",
+      "Name": "12 auger",
+      "Description": ""
+    },
+    {
+      "ID": "11200",
+      "Name": "13 auger",
+      "Description": ""
+    },
+    {
+      "ID": "11300",
+      "Name": "14 auger",
+      "Description": ""
+    },
+    {
+      "ID": "11400",
+      "Name": "15 auger",
+      "Description": ""
+    },
+    {
+      "ID": "11500",
+      "Name": "16 auger",
+      "Description": ""
+    },
+    {
+      "ID": "11600",
+      "Name": "17 auger",
+      "Description": ""
+    },
+    {
+      "ID": "11700",
+      "Name": "18 auger",
+      "Description": ""
+    },
+    {
+      "ID": "11800",
+      "Name": "19 auger",
+      "Description": ""
+    },
+    {
+      "ID": "11900",
+      "Name": "20 augers",
+      "Description": ""
+    },
+    {
+      "ID": "15000",
+      "Name": "1 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "15100",
+      "Name": "2 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "15200",
+      "Name": "3 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "15300",
+      "Name": "4 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "15400",
+      "Name": "5 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "15500",
+      "Name": "6 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "15600",
+      "Name": "7 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "15700",
+      "Name": "8 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "15800",
+      "Name": "9 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "15900",
+      "Name": "10 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "16000",
+      "Name": "11 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "16100",
+      "Name": "12 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "16200",
+      "Name": "13 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "16300",
+      "Name": "14 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "16400",
+      "Name": "15 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "16500",
+      "Name": "16 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "16600",
+      "Name": "17 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "16700",
+      "Name": "18 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "16800",
+      "Name": "19 Dullahan (Dead J)",
+      "Description": ""
+    },
+    {
+      "ID": "16900",
+      "Name": "20 Dullahan (Dead J)",
+      "Description": ""
+    }
+  ]
+}

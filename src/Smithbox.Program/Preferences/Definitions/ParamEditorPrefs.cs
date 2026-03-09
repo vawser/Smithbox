@@ -1632,11 +1632,30 @@ public class ParamEditorPrefs
         };
     }
 
-    public static PreferenceItem Project_Enable_Param_Enum_Override()
+    public static PreferenceItem Project_Enable_Param_Enum_Addition()
     {
         return new PreferenceItem
         {
             OrderID = 2,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Enum Addition",
+            Description = "If enabled, the Param Editor will add param enums from your project's .smithbox folder alongside the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Param_Enum_Addition);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Param_Enum_Override()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 

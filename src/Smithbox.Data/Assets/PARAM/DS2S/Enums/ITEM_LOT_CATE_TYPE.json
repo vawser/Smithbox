@@ -1,0 +1,17 @@
+{
+  "DisplayName": "ITEM_LOT_CATE_TYPE",
+  "Name": "ITEM_LOT_CATE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Character",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Object",
+      "Description": ""
+    }
+  ]
+}

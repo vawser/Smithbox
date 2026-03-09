@@ -1,0 +1,27 @@
+{
+  "DisplayName": "CAMERA_COLLIDES_EXEC_TYPE",
+  "Name": "CAMERA_COLLIDES_EXEC_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Do nothing",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Camera end",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Movement stop",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Move to a safe location",
+      "Description": ""
+    }
+  ]
+}

@@ -13,27 +13,27 @@
     <disableRagdollParts
     AltName="Invalid Ragdoll Parts when Broken"
     Wiki="Which ragdoll parts to invalidate when broken." 
-    Enum="BOSS_RAGDOLL_PARTS_TYPE" />
+    ProjectEnum="BOSS_RAGDOLL_PARTS_TYPE" />
     
     <disableHitParts1
     AltName="Invalid Hit Part when Broken: 1"
     Wiki="Which hit part to invalidate when broken for slot 1." 
-    Enum="BOSS_HIT_PARTS_TYPE" />
+    ProjectEnum="BOSS_HIT_PARTS_TYPE" />
     
     <disableHitParts2
     AltName="Invalid Hit Part when Broken: 2"
     Wiki="Which hit part to invalidate when broken for slot 2." 
-    Enum="BOSS_HIT_PARTS_TYPE" />
+    ProjectEnum="BOSS_HIT_PARTS_TYPE" />
     
     <disableHitParts3
     AltName="Invalid Hit Part when Broken: 3"
     Wiki="Which hit part to invalidate when broken for slot 3." 
-    Enum="BOSS_HIT_PARTS_TYPE" />
+    ProjectEnum="BOSS_HIT_PARTS_TYPE" />
     
     <disableHitParts4
     AltName="Invalid Hit Part when Broken: 4"
     Wiki="Which hit part to invalidate when broken for slot 4." 
-    Enum="BOSS_HIT_PARTS_TYPE" />
+    ProjectEnum="BOSS_HIT_PARTS_TYPE" />
     
     <disableResidentSfxNo
     AltName="SFX Group ID to Disable when Broken"
@@ -168,40 +168,4 @@
     <dummy
     Padding="" />
   </Field>
-  <Enums>
-    <Enum Name="BOSS_RAGDOLL_PARTS_TYPE">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Part 1" />
-      <Option Value="2" Name="Part 2" />
-      <Option Value="3" Name="Part 3" />
-      <Option Value="4" Name="Part 4" />
-      <Option Value="5" Name="Part 5" />
-      <Option Value="6" Name="Part 6" />
-      <Option Value="7" Name="Part 7" />
-      <Option Value="8" Name="Part 8" />
-    </Enum>
-    <Enum Name="BOSS_HIT_PARTS_TYPE">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Part 1" />
-      <Option Value="2" Name="Part 2" />
-      <Option Value="3" Name="Part 3" />
-      <Option Value="4" Name="Part 4" />
-      <Option Value="5" Name="Part 5" />
-      <Option Value="6" Name="Part 6" />
-      <Option Value="7" Name="Part 7" />
-      <Option Value="8" Name="Part 8" />
-      <Option Value="9" Name="Part 9" />
-      <Option Value="10" Name="Part 10" />
-      <Option Value="11" Name="Part 11" />
-      <Option Value="12" Name="Part 12" />
-      <Option Value="13" Name="Part 13" />
-      <Option Value="14" Name="Part 14" />
-      <Option Value="15" Name="Part 15" />
-      <Option Value="16" Name="Part 16" />
-      <Option Value="17" Name="Part 17" />
-      <Option Value="18" Name="Part 18" />
-      <Option Value="19" Name="Part 19" />
-      <Option Value="20" Name="Part 20" />
-    </Enum>
-  </Enums>
 </PARAMMETA>

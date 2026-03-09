@@ -1,0 +1,147 @@
+{
+  "DisplayName": "EVENT_VALUE_event_trophy",
+  "Name": "EVENT_VALUE_event_trophy",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Lost memories",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "King's ring",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Ancient dragon",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Defeating the last giant",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Sinner's light",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Molten iron light",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Valley lights",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Pyroxene light",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Mirror knight",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Defeat of Vanclad",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "A glorious promise",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Oath of protection",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Blood Pledge",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Oath of the weak",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Mouse's oath",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Bell oath",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Old oath",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Oath of the strong",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Covenant of deep darkness",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Completion of a strange map",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Abandoned people",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Moonlight sword",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "Guardian of the fort",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Akertila",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "Skilled craftsman",
+      "Description": ""
+    },
+    {
+      "ID": "35",
+      "Name": "Miser",
+      "Description": ""
+    },
+    {
+      "ID": "36",
+      "Name": "Thinking neck",
+      "Description": ""
+    }
+  ]
+}

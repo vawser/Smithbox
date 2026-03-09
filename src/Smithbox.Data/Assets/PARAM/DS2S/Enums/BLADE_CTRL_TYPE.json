@@ -1,0 +1,32 @@
+{
+  "DisplayName": "BLADE_CTRL_TYPE",
+  "Name": "BLADE_CTRL_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Spot Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Walking Attack",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Walking Shooting",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Spot Shooting",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Invalid",
+      "Description": ""
+    }
+  ]
+}

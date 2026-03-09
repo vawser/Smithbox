@@ -1,0 +1,117 @@
+{
+  "DisplayName": "LOGIC_group_flag_id",
+  "Name": "LOGIC_group_flag_id",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "Flag 0",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Flag 1",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Flag 2",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Flag 3",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Flag 4",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Flag 5",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Flag 6",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Flag 7",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Flag 8",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Flag 9",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Flag 10",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Flag 11",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Flag 12",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Flag 13",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Flag 14",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Flag 15",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Flag 16",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Flag 17",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Flag 18",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Flag 19",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Flag 20",
+      "Description": ""
+    }
+  ]
+}

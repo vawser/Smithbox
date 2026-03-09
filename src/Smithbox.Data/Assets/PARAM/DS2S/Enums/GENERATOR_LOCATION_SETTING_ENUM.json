@@ -1,0 +1,27 @@
+{
+  "DisplayName": "GENERATOR_LOCATION_SETTING_ENUM",
+  "Name": "GENERATOR_LOCATION_SETTING_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Above ground",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Air",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Ceiling",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "OBJ master position",
+      "Description": ""
+    }
+  ]
+}

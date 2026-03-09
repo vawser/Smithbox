@@ -1,0 +1,282 @@
+{
+  "DisplayName": "Attack Category",
+  "Name": "ATK_SUB_CATEGORY",
+  "Description": "These are categories used by SpEffects to filter when they are applied.",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Full Moon Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Carian Sword Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Glintblade Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Stonedigger Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Crystalian Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Comet Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Star Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Magma Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Thorn Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Death Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Gravity Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Night Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Cold Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Comet Azur",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Stars of Ruin",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Godslayer Incantation",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Giantsflame Incantation",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Dragon Cult Incantation",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Bestial Incantation",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Golden Order Incantation",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Dragon Communion Incantation",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Frenzied Flame Incantation",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Noble Presence",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Aspect of the Crucible Incantation",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Charged Heavy Attack",
+      "Description": ""
+    },
+    {
+      "ID": "101",
+      "Name": "Horseback Attack",
+      "Description": ""
+    },
+    {
+      "ID": "102",
+      "Name": "Jump Attack",
+      "Description": ""
+    },
+    {
+      "ID": "103",
+      "Name": "Guard Counter Attack",
+      "Description": ""
+    },
+    {
+      "ID": "104",
+      "Name": "Final Chain Attack",
+      "Description": ""
+    },
+    {
+      "ID": "105",
+      "Name": "Ranged Weapon Attack",
+      "Description": ""
+    },
+    {
+      "ID": "106",
+      "Name": "Roar Attack",
+      "Description": ""
+    },
+    {
+      "ID": "107",
+      "Name": "Breath Attack",
+      "Description": ""
+    },
+    {
+      "ID": "108",
+      "Name": "Thrown Pot Item Attack",
+      "Description": ""
+    },
+    {
+      "ID": "109",
+      "Name": "Perfume Item Attack",
+      "Description": ""
+    },
+    {
+      "ID": "110",
+      "Name": "Charged Spell Attack",
+      "Description": ""
+    },
+    {
+      "ID": "111",
+      "Name": "Charged Skill Attack",
+      "Description": ""
+    },
+    {
+      "ID": "112",
+      "Name": "Skill Attack",
+      "Description": ""
+    },
+    {
+      "ID": "113",
+      "Name": "Radahn's Spear",
+      "Description": ""
+    },
+    {
+      "ID": "114",
+      "Name": "Ancestral Infant's Head",
+      "Description": ""
+    },
+    {
+      "ID": "116",
+      "Name": "Wraith Roar",
+      "Description": ""
+    },
+    {
+      "ID": "117",
+      "Name": "Wraith Attack",
+      "Description": ""
+    },
+    {
+      "ID": "118",
+      "Name": "Golden Arrow",
+      "Description": ""
+    },
+    {
+      "ID": "119",
+      "Name": "Initial Standard Attack",
+      "Description": ""
+    },
+    {
+      "ID": "120",
+      "Name": "Throwing Knife Item Attack",
+      "Description": ""
+    },
+    {
+      "ID": "121",
+      "Name": "Throwing Stone Item Attack",
+      "Description": ""
+    },
+    {
+      "ID": "122",
+      "Name": "Character Skill",
+      "Description": ""
+    },
+    {
+      "ID": "123",
+      "Name": "Ultimate Art",
+      "Description": ""
+    },
+    {
+      "ID": "124",
+      "Name": "Two-handed Attack",
+      "Description": ""
+    },
+    {
+      "ID": "125",
+      "Name": "Dual Wield Attack",
+      "Description": ""
+    },
+    {
+      "ID": "126",
+      "Name": "No-Damage Sudden Death",
+      "Description": ""
+    },
+    {
+      "ID": "127",
+      "Name": "Dash Attack",
+      "Description": ""
+    },
+    {
+      "ID": "128",
+      "Name": "Rolling Attack",
+      "Description": ""
+    },
+    {
+      "ID": "129",
+      "Name": "Backstep Attack",
+      "Description": ""
+    },
+    {
+      "ID": "130",
+      "Name": "Melee Weapon Attack",
+      "Description": ""
+    }
+  ]
+}

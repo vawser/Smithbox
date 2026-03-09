@@ -1,0 +1,32 @@
+{
+  "DisplayName": "NON_INTERRUPTIBLE_TYPE",
+  "Name": "NON_INTERRUPTIBLE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Super armor",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Hyper armor",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Invincible",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Damage nullified",
+      "Description": ""
+    }
+  ]
+}

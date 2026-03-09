@@ -1,0 +1,82 @@
+{
+  "DisplayName": "EVENT_FLAG_GLOBAL_LOGIC",
+  "Name": "EVENT_FLAG_GLOBAL_LOGIC",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "300001",
+      "Name": "Logic1",
+      "Description": ""
+    },
+    {
+      "ID": "300002",
+      "Name": "Logic2",
+      "Description": ""
+    },
+    {
+      "ID": "300003",
+      "Name": "Logic3",
+      "Description": ""
+    },
+    {
+      "ID": "300004",
+      "Name": "Logic4",
+      "Description": ""
+    },
+    {
+      "ID": "300005",
+      "Name": "Logic5",
+      "Description": ""
+    },
+    {
+      "ID": "300100",
+      "Name": "Fortress of Resistance_Past_Return the behavior of senior giant soldiers to normal after the door is destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "300101",
+      "Name": "Fortress of Resistance_Past_Kingdom Soldiers_Lower soldiers become hostile",
+      "Description": ""
+    },
+    {
+      "ID": "300102",
+      "Name": "Fortress of Resistance_Past_Executed an attack to destroy the gate of a trapped senior giant soldier",
+      "Description": ""
+    },
+    {
+      "ID": "300103",
+      "Name": "Fortress of Resistance_Past_A senior Titan soldier throws away the soldier he is holding",
+      "Description": ""
+    },
+    {
+      "ID": "300104",
+      "Name": "Fortress of Resistance_Past_Continuous Falling of Giant Soldiers Event Executed Judgment",
+      "Description": ""
+    },
+    {
+      "ID": "300105",
+      "Name": "Fortress of Resistance_Past_Low-class Titan soldiers carry out a wall-destroying attack",
+      "Description": ""
+    },
+    {
+      "ID": "300107",
+      "Name": "Citadel of Resistance_Past_Rumbling preparation soldiers release preparations",
+      "Description": ""
+    },
+    {
+      "ID": "300108",
+      "Name": "Fortress of Resistance_Past_Rumbling preparation soldiers set trap",
+      "Description": ""
+    },
+    {
+      "ID": "300109",
+      "Name": "Citadel of Resistance_Past_Rolling has already been rolled",
+      "Description": ""
+    }
+  ]
+}

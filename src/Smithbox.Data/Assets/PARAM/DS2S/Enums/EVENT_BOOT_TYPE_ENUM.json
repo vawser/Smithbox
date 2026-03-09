@@ -1,0 +1,27 @@
+{
+  "DisplayName": "EVENT_BOOT_TYPE_ENUM",
+  "Name": "EVENT_BOOT_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "When loading the map",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Normal time",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "External launch",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "The spark of rebirth",
+      "Description": ""
+    }
+  ]
+}

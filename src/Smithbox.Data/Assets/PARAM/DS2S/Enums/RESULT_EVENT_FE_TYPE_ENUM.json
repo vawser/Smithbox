@@ -1,0 +1,62 @@
+{
+  "DisplayName": "RESULT_EVENT_FE_TYPE_ENUM",
+  "Name": "RESULT_EVENT_FE_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Death",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Multi-defeat (finish by yourself)",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Multi achievement (general purpose)",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Multi achievement (target destruction)",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Multi achievement (cooperation completed)",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Defeat the boss",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Duel draw",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Winning the duel",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Lost duel",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "FE type termination",
+      "Description": ""
+    }
+  ]
+}

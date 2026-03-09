@@ -1,0 +1,22 @@
+{
+  "DisplayName": "BULLET_ON_DAMAGE_TYPE",
+  "Name": "BULLET_ON_DAMAGE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Landing",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Knockdown",
+      "Description": ""
+    }
+  ]
+}

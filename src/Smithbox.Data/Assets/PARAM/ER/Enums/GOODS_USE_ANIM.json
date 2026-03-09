@@ -1,0 +1,267 @@
+{
+  "DisplayName": "GOODS_USE_ANIM",
+  "Name": "GOODS_USE_ANIM",
+  "Description": "These are TAE motion types used to determine item use animations.",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Consume Item",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Weapon Grease",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Throw Kukri",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Throw Pot #1",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Telescope",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Soap",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Memory of Grace",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Drop Item",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Finger",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Crush Rune",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Flask of Crimson Tears",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Quick Weapon Grease",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Throw Dart",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Flask of Cerulean Tears",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Throw Pot Backwards",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Consume Flesh",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Lantern",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Flask of Wondrous Physick",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Prattling Pate",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "Spectral Steed Whistle",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "Spirit Summon",
+      "Description": ""
+    },
+    {
+      "ID": "36",
+      "Name": "Finger Remedy",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "Finger Severer",
+      "Description": ""
+    },
+    {
+      "ID": "38",
+      "Name": "Taunter's Tongue",
+      "Description": ""
+    },
+    {
+      "ID": "39",
+      "Name": "Lucent Baldachin's Blessing",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Copher Ring",
+      "Description": ""
+    },
+    {
+      "ID": "41",
+      "Name": "Effigy",
+      "Description": ""
+    },
+    {
+      "ID": "42",
+      "Name": "Throw Pot #2",
+      "Description": ""
+    },
+    {
+      "ID": "43",
+      "Name": "Miquella's Needle",
+      "Description": ""
+    },
+    {
+      "ID": "44",
+      "Name": "Baldachin's Blessing",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Shield Grease",
+      "Description": ""
+    },
+    {
+      "ID": "51",
+      "Name": "Wraith Calling Bell",
+      "Description": ""
+    },
+    {
+      "ID": "52",
+      "Name": "Mimic's Veil",
+      "Description": ""
+    },
+    {
+      "ID": "54",
+      "Name": "Scriptstone",
+      "Description": ""
+    },
+    {
+      "ID": "55",
+      "Name": "Ancestral Infant's Head",
+      "Description": ""
+    },
+    {
+      "ID": "56",
+      "Name": "Raisin",
+      "Description": ""
+    },
+    {
+      "ID": "57",
+      "Name": "Glintstone Scrap",
+      "Description": ""
+    },
+    {
+      "ID": "58",
+      "Name": "Gravity Stone Chunk",
+      "Description": ""
+    },
+    {
+      "ID": "59",
+      "Name": "Gravity Stone Fan",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Miranda's Prayer",
+      "Description": ""
+    },
+    {
+      "ID": "61",
+      "Name": "Bewitching Branch",
+      "Description": ""
+    },
+    {
+      "ID": "62",
+      "Name": "Blasphemous Claw",
+      "Description": ""
+    },
+    {
+      "ID": "63",
+      "Name": "Omen Bairn",
+      "Description": ""
+    },
+    {
+      "ID": "64",
+      "Name": "Shackle",
+      "Description": ""
+    },
+    {
+      "ID": "65",
+      "Name": "Rune Arc",
+      "Description": ""
+    },
+    {
+      "ID": "66",
+      "Name": "Soft Cotton",
+      "Description": ""
+    },
+    {
+      "ID": "67",
+      "Name": "Hefty Pot",
+      "Description": ""
+    },
+    {
+      "ID": "90",
+      "Name": "Spark Aromatic",
+      "Description": ""
+    },
+    {
+      "ID": "91",
+      "Name": "Uplifting Aromatic",
+      "Description": ""
+    },
+    {
+      "ID": "92",
+      "Name": "Phnatom Great Rune",
+      "Description": ""
+    },
+    {
+      "ID": "93",
+      "Name": "Bloodboil Aromatic",
+      "Description": ""
+    },
+    {
+      "ID": "94",
+      "Name": "Spraymist",
+      "Description": ""
+    }
+  ]
+}

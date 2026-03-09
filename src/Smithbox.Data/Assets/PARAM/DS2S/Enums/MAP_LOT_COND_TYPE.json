@@ -1,0 +1,12 @@
+{
+  "DisplayName": "MAP_LOT_COND_TYPE",
+  "Name": "MAP_LOT_COND_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Always",
+      "Description": ""
+    }
+  ]
+}

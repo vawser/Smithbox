@@ -1,0 +1,22 @@
+{
+  "DisplayName": "BULLET_UD_HOMING_TYPE",
+  "Name": "BULLET_UD_HOMING_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Top and bottom",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Top only",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Bottom only",
+      "Description": ""
+    }
+  ]
+}

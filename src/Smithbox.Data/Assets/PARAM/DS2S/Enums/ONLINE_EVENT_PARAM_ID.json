@@ -1,0 +1,12 @@
+{
+  "DisplayName": "ONLINE_EVENT_PARAM_ID",
+  "Name": "ONLINE_EVENT_PARAM_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Management event",
+      "Description": ""
+    }
+  ]
+}

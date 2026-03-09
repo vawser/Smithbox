@@ -1,0 +1,22 @@
+{
+  "DisplayName": "CHR_TAKE_WATER_TYPE",
+  "Name": "CHR_TAKE_WATER_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Small",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Medium",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Large",
+      "Description": ""
+    }
+  ]
+}

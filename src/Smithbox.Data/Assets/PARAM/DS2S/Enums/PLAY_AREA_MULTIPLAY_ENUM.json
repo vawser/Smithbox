@@ -1,0 +1,37 @@
+{
+  "DisplayName": "PLAY_AREA_MULTIPLAY_ENUM",
+  "Name": "PLAY_AREA_MULTIPLAY_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Normal area",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Abyssal Pilgrimage Area",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Bell Keeper Area",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Mouse King area",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Mirror knight battle area",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Duel area",
+      "Description": ""
+    }
+  ]
+}

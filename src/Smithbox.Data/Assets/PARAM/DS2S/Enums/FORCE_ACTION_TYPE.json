@@ -1,0 +1,12 @@
+{
+  "DisplayName": "FORCE_ACTION_TYPE",
+  "Name": "FORCE_ACTION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Dummy",
+      "Description": ""
+    }
+  ]
+}

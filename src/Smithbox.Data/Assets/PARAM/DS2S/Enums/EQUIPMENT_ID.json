@@ -1,0 +1,257 @@
+{
+  "DisplayName": "EQUIPMENT_ID",
+  "Name": "EQUIPMENT_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Prohibited from use",
+      "Description": ""
+    },
+    {
+      "ID": "1000",
+      "Name": "Elementary body",
+      "Description": ""
+    },
+    {
+      "ID": "1010",
+      "Name": "Lightweight warrior",
+      "Description": ""
+    },
+    {
+      "ID": "1020",
+      "Name": "Thief",
+      "Description": ""
+    },
+    {
+      "ID": "1030",
+      "Name": "Wanderer",
+      "Description": ""
+    },
+    {
+      "ID": "1040",
+      "Name": "Hunter",
+      "Description": ""
+    },
+    {
+      "ID": "1050",
+      "Name": "Soldier",
+      "Description": ""
+    },
+    {
+      "ID": "1060",
+      "Name": "Magic soldier",
+      "Description": ""
+    },
+    {
+      "ID": "1080",
+      "Name": "Bandit",
+      "Description": ""
+    },
+    {
+      "ID": "1090",
+      "Name": "Have-nots",
+      "Description": ""
+    },
+    {
+      "ID": "1100",
+      "Name": "Traveler's clothes",
+      "Description": ""
+    },
+    {
+      "ID": "1110",
+      "Name": "Viking",
+      "Description": ""
+    },
+    {
+      "ID": "1120",
+      "Name": "Magician",
+      "Description": ""
+    },
+    {
+      "ID": "1130",
+      "Name": "Clergyman",
+      "Description": ""
+    },
+    {
+      "ID": "1140",
+      "Name": "Item master",
+      "Description": ""
+    },
+    {
+      "ID": "1150",
+      "Name": "Hunter",
+      "Description": ""
+    },
+    {
+      "ID": "1160",
+      "Name": "Heavy warrior",
+      "Description": ""
+    },
+    {
+      "ID": "1170",
+      "Name": "Berserker",
+      "Description": ""
+    },
+    {
+      "ID": "1180",
+      "Name": "Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "1190",
+      "Name": "Fighter",
+      "Description": ""
+    },
+    {
+      "ID": "1200",
+      "Name": "Assassin",
+      "Description": ""
+    },
+    {
+      "ID": "1210",
+      "Name": "Clown",
+      "Description": ""
+    },
+    {
+      "ID": "1220",
+      "Name": "Explorer",
+      "Description": ""
+    },
+    {
+      "ID": "1230",
+      "Name": "Astrologer",
+      "Description": ""
+    },
+    {
+      "ID": "1240",
+      "Name": "Magic swordsman",
+      "Description": ""
+    },
+    {
+      "ID": "1250",
+      "Name": "Knight",
+      "Description": ""
+    },
+    {
+      "ID": "1260",
+      "Name": "Sorcerer",
+      "Description": ""
+    },
+    {
+      "ID": "1270",
+      "Name": "Black magician",
+      "Description": ""
+    },
+    {
+      "ID": "1280",
+      "Name": "Priest",
+      "Description": ""
+    },
+    {
+      "ID": "1290",
+      "Name": "Kensei",
+      "Description": ""
+    },
+    {
+      "ID": "1300",
+      "Name": "Shaman",
+      "Description": ""
+    },
+    {
+      "ID": "1310",
+      "Name": "Mage",
+      "Description": ""
+    },
+    {
+      "ID": "1320",
+      "Name": "Commander",
+      "Description": ""
+    },
+    {
+      "ID": "1330",
+      "Name": "Ancient dragon armor",
+      "Description": ""
+    },
+    {
+      "ID": "9900",
+      "Name": "Test: specular only 1/4",
+      "Description": ""
+    },
+    {
+      "ID": "9901",
+      "Name": "Test: diffuse only 1/4",
+      "Description": ""
+    },
+    {
+      "ID": "9902",
+      "Name": "Test: DS 1/16 N 1/4",
+      "Description": ""
+    },
+    {
+      "ID": "9903",
+      "Name": "Test: DN 1/4 S 1/16",
+      "Description": ""
+    },
+    {
+      "ID": "9904",
+      "Name": "Test: Onion",
+      "Description": ""
+    },
+    {
+      "ID": "9905",
+      "Name": "Test: Four Horsemen C",
+      "Description": ""
+    },
+    {
+      "ID": "9906",
+      "Name": "Test: Magician",
+      "Description": ""
+    },
+    {
+      "ID": "9907",
+      "Name": "Test: Princess",
+      "Description": ""
+    },
+    {
+      "ID": "9908",
+      "Name": "Test: Chainmail",
+      "Description": ""
+    },
+    {
+      "ID": "9909",
+      "Name": "Test: Iron Golem",
+      "Description": ""
+    },
+    {
+      "ID": "9910",
+      "Name": "Test: Witch",
+      "Description": ""
+    },
+    {
+      "ID": "9911",
+      "Name": "Test: Assassin",
+      "Description": ""
+    },
+    {
+      "ID": "9912",
+      "Name": "Test: Saint",
+      "Description": ""
+    },
+    {
+      "ID": "9913",
+      "Name": "Test: 3 people haori",
+      "Description": ""
+    },
+    {
+      "ID": "9914",
+      "Name": "Test: King of Firewood",
+      "Description": ""
+    },
+    {
+      "ID": "9915",
+      "Name": "Test: Crown of the Shadow Sun",
+      "Description": ""
+    }
+  ]
+}

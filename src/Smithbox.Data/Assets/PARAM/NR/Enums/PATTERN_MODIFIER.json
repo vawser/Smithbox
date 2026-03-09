@@ -1,0 +1,482 @@
+{
+  "DisplayName": "Modifier",
+  "Name": "PATTERN_MODIFIER",
+  "Description": "Used for determining variations and events in expeditions",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Map - Limveld",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Map - Mountaintop",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Map - The Crater",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Map - Rotted Woods",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Map - Great Hollow",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Map - Shrouded City",
+      "Description": ""
+    },
+    {
+      "ID": "120",
+      "Name": "Event - Extra Night Boss",
+      "Description": ""
+    },
+    {
+      "ID": "140",
+      "Name": "Event - Frenzy Tower",
+      "Description": ""
+    },
+    {
+      "ID": "180",
+      "Name": "Event - Night Horde",
+      "Description": ""
+    },
+    {
+      "ID": "200",
+      "Name": "Event - Meteorite",
+      "Description": ""
+    },
+    {
+      "ID": "210",
+      "Name": "Event - Walking Mausoleum",
+      "Description": ""
+    },
+    {
+      "ID": "230",
+      "Name": "Event - Ruined Sorcerer's Rise",
+      "Description": ""
+    },
+    {
+      "ID": "400",
+      "Name": "Boss - Fell Omen (Morgott)",
+      "Description": ""
+    },
+    {
+      "ID": "401",
+      "Name": "Boss - Red Wolf",
+      "Description": ""
+    },
+    {
+      "ID": "402",
+      "Name": "Boss - Tree Sentinel (and Royal Cavalrymen)",
+      "Description": ""
+    },
+    {
+      "ID": "403",
+      "Name": "Boss - Draconic Tree Sentinel (and Royal Cavalrymen)",
+      "Description": ""
+    },
+    {
+      "ID": "404",
+      "Name": "Boss - Royal Carian Knight (Loretta)",
+      "Description": ""
+    },
+    {
+      "ID": "405",
+      "Name": "Boss - Leonine Misbegotten",
+      "Description": ""
+    },
+    {
+      "ID": "406",
+      "Name": "Boss - Royal Revenant",
+      "Description": ""
+    },
+    {
+      "ID": "407",
+      "Name": "Boss - Elder Lion",
+      "Description": ""
+    },
+    {
+      "ID": "408",
+      "Name": "Boss - Flying Dragon",
+      "Description": ""
+    },
+    {
+      "ID": "412",
+      "Name": "Boss - Wormface",
+      "Description": ""
+    },
+    {
+      "ID": "413",
+      "Name": "Boss - Ulcerated Tree Spirit",
+      "Description": ""
+    },
+    {
+      "ID": "414",
+      "Name": "Boss - Ancestor Spirit",
+      "Description": ""
+    },
+    {
+      "ID": "415",
+      "Name": "Boss - Grafted Scion",
+      "Description": ""
+    },
+    {
+      "ID": "416",
+      "Name": "Boss - Valiant Gargoyle/Black Blade Kindred",
+      "Description": ""
+    },
+    {
+      "ID": "417",
+      "Name": "Boss - Erdtree Avatar",
+      "Description": ""
+    },
+    {
+      "ID": "418",
+      "Name": "Boss - Magma Wyrm/Great Wyrm",
+      "Description": ""
+    },
+    {
+      "ID": "419",
+      "Name": "Boss - Ancient Hero of Zamor",
+      "Description": ""
+    },
+    {
+      "ID": "424",
+      "Name": "Event - Scale-bearing Merchant (Libra)",
+      "Description": ""
+    },
+    {
+      "ID": "427",
+      "Name": "Boss - Gaping Dragon",
+      "Description": ""
+    },
+    {
+      "ID": "428",
+      "Name": "Boss - Centipede Demon",
+      "Description": ""
+    },
+    {
+      "ID": "429",
+      "Name": "Boss - The Duke's Dear Freja",
+      "Description": ""
+    },
+    {
+      "ID": "430",
+      "Name": "Boss - Smelter Demon",
+      "Description": ""
+    },
+    {
+      "ID": "431",
+      "Name": "Boss - Nameless King",
+      "Description": ""
+    },
+    {
+      "ID": "432",
+      "Name": "Boss - Dancer of the Boreal Valley",
+      "Description": ""
+    },
+    {
+      "ID": "433",
+      "Name": "Boss - Godskin Apostle",
+      "Description": ""
+    },
+    {
+      "ID": "434",
+      "Name": "Boss - Godskin Duo",
+      "Description": ""
+    },
+    {
+      "ID": "435",
+      "Name": "Boss - Full-Grown Fallingstar Beast",
+      "Description": ""
+    },
+    {
+      "ID": "436",
+      "Name": "Boss - Grafted Monarch (Godrick)",
+      "Description": ""
+    },
+    {
+      "ID": "437",
+      "Name": "Boss - Tibia Mariner and Those Who Live in Death",
+      "Description": ""
+    },
+    {
+      "ID": "438",
+      "Name": "Boss - Black Knife Assassin",
+      "Description": ""
+    },
+    {
+      "ID": "439",
+      "Name": "Boss - Bell Bearing Hunter",
+      "Description": ""
+    },
+    {
+      "ID": "440",
+      "Name": "Boss - Night's Cavalry (Duo)",
+      "Description": ""
+    },
+    {
+      "ID": "441",
+      "Name": "Boss - Miranda Blossom",
+      "Description": ""
+    },
+    {
+      "ID": "442",
+      "Name": "Boss - Golden Hippopotamus",
+      "Description": ""
+    },
+    {
+      "ID": "443",
+      "Name": "Boss - Death Rite Bird",
+      "Description": ""
+    },
+    {
+      "ID": "444",
+      "Name": "Boss - Demi-Human Queen (and Demi-Human Swordmaster)",
+      "Description": ""
+    },
+    {
+      "ID": "445",
+      "Name": "Boss - Ancient Dragon",
+      "Description": ""
+    },
+    {
+      "ID": "446",
+      "Name": "Boss - Nox Dragonkin Soldier",
+      "Description": ""
+    },
+    {
+      "ID": "447",
+      "Name": "Boss - Crucible Knight and Golden Hippopotamus",
+      "Description": ""
+    },
+    {
+      "ID": "448",
+      "Name": "Boss - Battlefield Commander (O'Neil)",
+      "Description": ""
+    },
+    {
+      "ID": "449",
+      "Name": "Boss - Outland Commander (Niall)",
+      "Description": ""
+    },
+    {
+      "ID": "600",
+      "Name": "Raid - Gladius",
+      "Description": ""
+    },
+    {
+      "ID": "601",
+      "Name": "Raid - Gnoster",
+      "Description": ""
+    },
+    {
+      "ID": "602",
+      "Name": "Raid - Libra",
+      "Description": ""
+    },
+    {
+      "ID": "603",
+      "Name": "Raid - Maris",
+      "Description": ""
+    },
+    {
+      "ID": "604",
+      "Name": "Raid - Morgott",
+      "Description": ""
+    },
+    {
+      "ID": "700",
+      "Name": "Start - Area 1",
+      "Description": ""
+    },
+    {
+      "ID": "701",
+      "Name": "Start - Area 2",
+      "Description": ""
+    },
+    {
+      "ID": "702",
+      "Name": "Start - Area 3",
+      "Description": ""
+    },
+    {
+      "ID": "703",
+      "Name": "Start - Area 4",
+      "Description": ""
+    },
+    {
+      "ID": "704",
+      "Name": "Start - Area 5",
+      "Description": ""
+    },
+    {
+      "ID": "705",
+      "Name": "Start - Area 6",
+      "Description": ""
+    },
+    {
+      "ID": "706",
+      "Name": "Start - Area 7",
+      "Description": ""
+    },
+    {
+      "ID": "707",
+      "Name": "Start - Area 8",
+      "Description": ""
+    },
+    {
+      "ID": "708",
+      "Name": "Start - Area 9",
+      "Description": ""
+    },
+    {
+      "ID": "800",
+      "Name": "Event - Occurs Day 1",
+      "Description": ""
+    },
+    {
+      "ID": "801",
+      "Name": "Event - Occurs Day 2",
+      "Description": ""
+    },
+    {
+      "ID": "10000",
+      "Name": "Raid - Caligo",
+      "Description": ""
+    },
+    {
+      "ID": "10001",
+      "Name": "Raid - Harmonia",
+      "Description": ""
+    },
+    {
+      "ID": "11000",
+      "Name": "Boss - Curseblade and Divine Beast Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "11001",
+      "Name": "Boss - Great Red Bear",
+      "Description": ""
+    },
+    {
+      "ID": "11002",
+      "Name": "Boss - Death Knights",
+      "Description": ""
+    },
+    {
+      "ID": "11003",
+      "Name": "Boss - Demon in Pain and Demon from Below",
+      "Description": ""
+    },
+    {
+      "ID": "11004",
+      "Name": "Boss - Lord of Blood (Mohg)",
+      "Description": ""
+    },
+    {
+      "ID": "11005",
+      "Name": "Boss - Divine Beast Dancing Lion",
+      "Description": ""
+    },
+    {
+      "ID": "11006",
+      "Name": "Boss - Knight Artorias",
+      "Description": ""
+    },
+    {
+      "ID": "11007",
+      "Name": "Boss - Demon Prince",
+      "Description": ""
+    },
+    {
+      "ID": "13000",
+      "Name": "Great Hollow Start - West Kaiden Ruins",
+      "Description": ""
+    },
+    {
+      "ID": "13001",
+      "Name": "Great Hollow Start - South Cuckoo Camp",
+      "Description": ""
+    },
+    {
+      "ID": "13002",
+      "Name": "Great Hollow Start - North Waterfall",
+      "Description": ""
+    },
+    {
+      "ID": "14000",
+      "Name": "Marsh A - Scholar Remembrance",
+      "Description": ""
+    },
+    {
+      "ID": "15001",
+      "Name": "Eastern Fort Main - Rot",
+      "Description": ""
+    },
+    {
+      "ID": "15002",
+      "Name": "Eastern Fort Main - Holy",
+      "Description": ""
+    },
+    {
+      "ID": "15003",
+      "Name": "Eastern Fort Interior - Banished Knights",
+      "Description": ""
+    },
+    {
+      "ID": "15004",
+      "Name": "Eastern Fort Interior - Curseblades",
+      "Description": ""
+    },
+    {
+      "ID": "15005",
+      "Name": "Eastern Fort Interior - Omen",
+      "Description": ""
+    },
+    {
+      "ID": "15100",
+      "Name": "Western Fort Main - Fire",
+      "Description": ""
+    },
+    {
+      "ID": "15101",
+      "Name": "Western Fort Main - Magic",
+      "Description": ""
+    },
+    {
+      "ID": "15102",
+      "Name": "Western Fort Under - Omenkillers",
+      "Description": ""
+    },
+    {
+      "ID": "15103",
+      "Name": "Western Fort Under - Bloodhound Knights",
+      "Description": ""
+    },
+    {
+      "ID": "15104",
+      "Name": "Western Fort Library - Sorcerers",
+      "Description": ""
+    },
+    {
+      "ID": "15105",
+      "Name": "Western Fort Library - Carians",
+      "Description": ""
+    }
+  ]
+}

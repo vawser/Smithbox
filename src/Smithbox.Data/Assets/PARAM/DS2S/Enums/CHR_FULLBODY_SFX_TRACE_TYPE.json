@@ -1,0 +1,17 @@
+{
+  "DisplayName": "CHR_FULLBODY_SFX_TRACE_TYPE",
+  "Name": "CHR_FULLBODY_SFX_TRACE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Do",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Horizontal",
+      "Description": ""
+    }
+  ]
+}

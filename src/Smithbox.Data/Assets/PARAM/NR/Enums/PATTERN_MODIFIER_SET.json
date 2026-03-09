@@ -1,0 +1,132 @@
+{
+  "DisplayName": "Modifier Set",
+  "Name": "PATTERN_MODIFIER_SET",
+  "Description": "Not quite sure, seems to group certain modifiers, or possibly sets a modifier.",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "160",
+      "Name": "Start Location (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "190",
+      "Name": "Start Location",
+      "Description": ""
+    },
+    {
+      "ID": "505",
+      "Name": "Event - Extra Night Boss (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "510",
+      "Name": "Raid - Caligo (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "520",
+      "Name": "Raid - Gladius (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "530",
+      "Name": "Event - Frenzy Tower (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "540",
+      "Name": "Raid - Maris (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "550",
+      "Name": "Raid - Gnoster (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "560",
+      "Name": "Raid - Libra (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "800",
+      "Name": "Buried Treasure Map",
+      "Description": ""
+    },
+    {
+      "ID": "3000",
+      "Name": "Event - Extra Night Boss",
+      "Description": ""
+    },
+    {
+      "ID": "3010",
+      "Name": "Event - Meteorite",
+      "Description": ""
+    },
+    {
+      "ID": "3020",
+      "Name": "Event - Walking Mausoleum",
+      "Description": ""
+    },
+    {
+      "ID": "3030",
+      "Name": "Event - Night Horde",
+      "Description": ""
+    },
+    {
+      "ID": "3040",
+      "Name": "Raid - Morgott",
+      "Description": ""
+    },
+    {
+      "ID": "3050",
+      "Name": "Raid - Maris",
+      "Description": ""
+    },
+    {
+      "ID": "3060",
+      "Name": "Raid - Gnoster",
+      "Description": ""
+    },
+    {
+      "ID": "3070",
+      "Name": "Raid - Libra",
+      "Description": ""
+    },
+    {
+      "ID": "3080",
+      "Name": "Event - Frenzy Tower",
+      "Description": ""
+    },
+    {
+      "ID": "3090",
+      "Name": "Event - Ruined Sorcerer's Rise",
+      "Description": ""
+    },
+    {
+      "ID": "3110",
+      "Name": "Raid - Caligo",
+      "Description": ""
+    },
+    {
+      "ID": "3120",
+      "Name": "Raid - Gladius",
+      "Description": ""
+    },
+    {
+      "ID": "3130",
+      "Name": "Raid - Harmonia",
+      "Description": ""
+    },
+    {
+      "ID": "3600",
+      "Name": "Buried Treasure Map (Great Hollow)/Unk Base Game",
+      "Description": ""
+    }
+  ]
+}

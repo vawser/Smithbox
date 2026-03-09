@@ -1,0 +1,287 @@
+{
+  "DisplayName": "WEAPON_ID",
+  "Name": "WEAPON_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Prohibited from use",
+      "Description": ""
+    },
+    {
+      "ID": "1000",
+      "Name": "Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "1010",
+      "Name": "Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "1100",
+      "Name": "Parrying dagger",
+      "Description": ""
+    },
+    {
+      "ID": "1200",
+      "Name": "Broken straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "1210",
+      "Name": "Short sword",
+      "Description": ""
+    },
+    {
+      "ID": "1220",
+      "Name": "Long sword",
+      "Description": ""
+    },
+    {
+      "ID": "1230",
+      "Name": "Broadsword",
+      "Description": ""
+    },
+    {
+      "ID": "1400",
+      "Name": "Estoc",
+      "Description": ""
+    },
+    {
+      "ID": "1410",
+      "Name": "Mail breaker",
+      "Description": ""
+    },
+    {
+      "ID": "1500",
+      "Name": "Rapier",
+      "Description": ""
+    },
+    {
+      "ID": "1600",
+      "Name": "Falchion",
+      "Description": ""
+    },
+    {
+      "ID": "1610",
+      "Name": "Shortel",
+      "Description": ""
+    },
+    {
+      "ID": "1650",
+      "Name": "Scimitar",
+      "Description": ""
+    },
+    {
+      "ID": "1700",
+      "Name": "Uchikatana",
+      "Description": ""
+    },
+    {
+      "ID": "1710",
+      "Name": "Clothesline",
+      "Description": ""
+    },
+    {
+      "ID": "1720",
+      "Name": "Demon sword",
+      "Description": ""
+    },
+    {
+      "ID": "1800",
+      "Name": "Bastard sword",
+      "Description": ""
+    },
+    {
+      "ID": "1810",
+      "Name": "Flamberge",
+      "Description": ""
+    },
+    {
+      "ID": "1820",
+      "Name": "Claymore",
+      "Description": ""
+    },
+    {
+      "ID": "2000",
+      "Name": "Hand ax",
+      "Description": ""
+    },
+    {
+      "ID": "2010",
+      "Name": "Battle ax",
+      "Description": ""
+    },
+    {
+      "ID": "2200",
+      "Name": "Crescent ax",
+      "Description": ""
+    },
+    {
+      "ID": "2210",
+      "Name": "Great ax",
+      "Description": ""
+    },
+    {
+      "ID": "2400",
+      "Name": "Club",
+      "Description": ""
+    },
+    {
+      "ID": "2410",
+      "Name": "Mace",
+      "Description": ""
+    },
+    {
+      "ID": "2420",
+      "Name": "Morning star",
+      "Description": ""
+    },
+    {
+      "ID": "2430",
+      "Name": "Reinforcement club",
+      "Description": ""
+    },
+    {
+      "ID": "2440",
+      "Name": "Blacksmith's hammer",
+      "Description": ""
+    },
+    {
+      "ID": "2600",
+      "Name": "Large club",
+      "Description": ""
+    },
+    {
+      "ID": "2610",
+      "Name": "Pickaxe",
+      "Description": ""
+    },
+    {
+      "ID": "2620",
+      "Name": "Great club",
+      "Description": ""
+    },
+    {
+      "ID": "2800",
+      "Name": "Short spear",
+      "Description": ""
+    },
+    {
+      "ID": "2810",
+      "Name": "Long spear",
+      "Description": ""
+    },
+    {
+      "ID": "2820",
+      "Name": "Pike",
+      "Description": ""
+    },
+    {
+      "ID": "2830",
+      "Name": "Partisan",
+      "Description": ""
+    },
+    {
+      "ID": "3000",
+      "Name": "Long sickle",
+      "Description": ""
+    },
+    {
+      "ID": "3200",
+      "Name": "Lucerne",
+      "Description": ""
+    },
+    {
+      "ID": "3210",
+      "Name": "Size",
+      "Description": ""
+    },
+    {
+      "ID": "3220",
+      "Name": "Halberd",
+      "Description": ""
+    },
+    {
+      "ID": "3400",
+      "Name": "Bare fist",
+      "Description": ""
+    },
+    {
+      "ID": "3410",
+      "Name": "Claw",
+      "Description": ""
+    },
+    {
+      "ID": "3500",
+      "Name": "Cestus",
+      "Description": ""
+    },
+    {
+      "ID": "3600",
+      "Name": "Whip",
+      "Description": ""
+    },
+    {
+      "ID": "3610",
+      "Name": "Ibaramuchi",
+      "Description": ""
+    },
+    {
+      "ID": "3800",
+      "Name": "Magician's wand",
+      "Description": ""
+    },
+    {
+      "ID": "4200",
+      "Name": "Short bow",
+      "Description": ""
+    },
+    {
+      "ID": "4210",
+      "Name": "Longbow",
+      "Description": ""
+    },
+    {
+      "ID": "4220",
+      "Name": "Composite bow",
+      "Description": ""
+    },
+    {
+      "ID": "4600",
+      "Name": "Light crossbow",
+      "Description": ""
+    },
+    {
+      "ID": "4610",
+      "Name": "Heavy crossbow",
+      "Description": ""
+    },
+    {
+      "ID": "4800",
+      "Name": "Item shot bow",
+      "Description": ""
+    },
+    {
+      "ID": "4900",
+      "Name": "Javelin shot",
+      "Description": ""
+    },
+    {
+      "ID": "9900",
+      "Name": "Test: Dragon King's Great Ax",
+      "Description": ""
+    },
+    {
+      "ID": "9901",
+      "Name": "Test: Sumowhammer",
+      "Description": ""
+    },
+    {
+      "ID": "9902",
+      "Name": "Test: Staff of Izalith",
+      "Description": ""
+    }
+  ]
+}

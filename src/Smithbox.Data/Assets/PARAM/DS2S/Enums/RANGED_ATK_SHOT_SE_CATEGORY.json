@@ -1,0 +1,42 @@
+{
+  "DisplayName": "RANGED_ATK_SHOT_SE_CATEGORY",
+  "Name": "RANGED_ATK_SHOT_SE_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "弓",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Large bow",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Magic",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Miracle",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Magic",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Dark arts",
+      "Description": ""
+    }
+  ]
+}

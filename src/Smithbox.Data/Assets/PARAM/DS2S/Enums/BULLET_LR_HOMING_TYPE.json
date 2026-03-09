@@ -1,0 +1,22 @@
+{
+  "DisplayName": "BULLET_LR_HOMING_TYPE",
+  "Name": "BULLET_LR_HOMING_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Left and right",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Left only",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Right only",
+      "Description": ""
+    }
+  ]
+}

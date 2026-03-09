@@ -1,0 +1,207 @@
+{
+  "DisplayName": "DAMAGE_CTRL_TYPE",
+  "Name": "DAMAGE_CTRL_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Sword small",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Tochu",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Control type 3",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Control type 4",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Control type 5",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Control type 6",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Control type 7",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Control type 8",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Control type 9",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Control type 10",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Control type 11",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Control type 12",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Control type 13",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Control type 14",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Control type 15",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Control type 16",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Control type 17",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Control type 18",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Control type 19",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Control type 20",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Control type 21",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Control type 22",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Control type 23",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Control type 24",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Control type 25",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Control type 26",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Control type 27",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Control type 28",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Control type 29",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Control type 30",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Control type 31",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "Control type 32",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Control type 33",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "Control type 34",
+      "Description": ""
+    },
+    {
+      "ID": "35",
+      "Name": "Control type 35",
+      "Description": ""
+    },
+    {
+      "ID": "36",
+      "Name": "Control type 36",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "Control type 37",
+      "Description": ""
+    },
+    {
+      "ID": "38",
+      "Name": "Control type 38",
+      "Description": ""
+    },
+    {
+      "ID": "39",
+      "Name": "Control type 39",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Small blow",
+      "Description": ""
+    }
+  ]
+}

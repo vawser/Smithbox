@@ -1,0 +1,27 @@
+{
+  "DisplayName": "NPC_EVENT_CHANGE_VALUE_TYPE",
+  "Name": "NPC_EVENT_CHANGE_VALUE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Shop",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Barter",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Repair or strengthen",
+      "Description": ""
+    }
+  ]
+}

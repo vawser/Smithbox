@@ -1,0 +1,32 @@
+{
+  "DisplayName": "ARMOR_TYPE",
+  "Name": "ARMOR_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Naked",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Cloth",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Leather",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Iron",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Barrel",
+      "Description": ""
+    }
+  ]
+}

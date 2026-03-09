@@ -1,0 +1,37 @@
+{
+  "DisplayName": "ENEMY_WEAPON_TYPE",
+  "Name": "ENEMY_WEAPON_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Initial equipment equipment set 1",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Initial equipment equipment set 2",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Initial equipment equipment set 3",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Initial equipment equipment set 4",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Initial equipment equipment set 5",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Initial equipment equipment set 6",
+      "Description": ""
+    }
+  ]
+}

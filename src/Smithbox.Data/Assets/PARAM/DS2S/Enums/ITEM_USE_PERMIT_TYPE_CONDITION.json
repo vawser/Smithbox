@@ -1,0 +1,22 @@
+{
+  "DisplayName": "ITEM_USE_PERMIT_TYPE_CONDITION",
+  "Name": "ITEM_USE_PERMIT_TYPE_CONDITION",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Living person",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Deceased",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Living & dead",
+      "Description": ""
+    }
+  ]
+}

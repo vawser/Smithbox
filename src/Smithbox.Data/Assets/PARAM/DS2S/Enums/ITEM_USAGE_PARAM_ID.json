@@ -1,0 +1,252 @@
+{
+  "DisplayName": "ITEM_USAGE_PARAM_ID",
+  "Name": "ITEM_USAGE_PARAM_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Dummy (prohibited to use)",
+      "Description": ""
+    },
+    {
+      "ID": "1000",
+      "Name": "Weapon - General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "1010",
+      "Name": "Weapon - Keyman's Key",
+      "Description": ""
+    },
+    {
+      "ID": "1100",
+      "Name": "Armor - General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "1110",
+      "Name": "Armor - No movement",
+      "Description": ""
+    },
+    {
+      "ID": "1200",
+      "Name": "Rings - general purpose",
+      "Description": ""
+    },
+    {
+      "ID": "1300",
+      "Name": "Ring-Event",
+      "Description": ""
+    },
+    {
+      "ID": "1400",
+      "Name": "Spell",
+      "Description": ""
+    },
+    {
+      "ID": "1500",
+      "Name": "Est bottle",
+      "Description": ""
+    },
+    {
+      "ID": "1600",
+      "Name": "Consumables - Ladder Permit",
+      "Description": ""
+    },
+    {
+      "ID": "1610",
+      "Name": "Consumables - Ladder permission (prohibited when entering)",
+      "Description": ""
+    },
+    {
+      "ID": "1620",
+      "Name": "Consumables - Garbage",
+      "Description": ""
+    },
+    {
+      "ID": "1700",
+      "Name": "Consumables - No ladders allowed",
+      "Description": ""
+    },
+    {
+      "ID": "1750",
+      "Name": "Consumables - ammunition",
+      "Description": ""
+    },
+    {
+      "ID": "1800",
+      "Name": "Consumables - Return system",
+      "Description": ""
+    },
+    {
+      "ID": "1900",
+      "Name": "Consumables-Seoul",
+      "Description": ""
+    },
+    {
+      "ID": "2000",
+      "Name": "Consumables - Boss Soul",
+      "Description": ""
+    },
+    {
+      "ID": "2100",
+      "Name": "Consumables - Pledge Level Items",
+      "Description": ""
+    },
+    {
+      "ID": "2110",
+      "Name": "Consumables - Online (select)",
+      "Description": ""
+    },
+    {
+      "ID": "2120",
+      "Name": "Consumables - Intrusion Items",
+      "Description": ""
+    },
+    {
+      "ID": "2130",
+      "Name": "Consumables - proof of goodwill",
+      "Description": ""
+    },
+    {
+      "ID": "2135",
+      "Name": "Consumables - Proof of Hatred",
+      "Description": ""
+    },
+    {
+      "ID": "2140",
+      "Name": "Consumables - Human Statue",
+      "Description": ""
+    },
+    {
+      "ID": "2150",
+      "Name": "Consumables - Flintstone",
+      "Description": ""
+    },
+    {
+      "ID": "2200",
+      "Name": "Tools - Dark Ring",
+      "Description": ""
+    },
+    {
+      "ID": "2210",
+      "Name": "Tools - Estentia Feather",
+      "Description": ""
+    },
+    {
+      "ID": "2220",
+      "Name": "Tools - Not available",
+      "Description": ""
+    },
+    {
+      "ID": "2230",
+      "Name": "Tools - For events only",
+      "Description": ""
+    },
+    {
+      "ID": "2240",
+      "Name": "Tools - For event only (cannot be discarded)",
+      "Description": ""
+    },
+    {
+      "ID": "2300",
+      "Name": "Tools - Dried fingers",
+      "Description": ""
+    },
+    {
+      "ID": "2400",
+      "Name": "Tools - human face stone",
+      "Description": ""
+    },
+    {
+      "ID": "2410",
+      "Name": "Tools - Sign stone",
+      "Description": ""
+    },
+    {
+      "ID": "2420",
+      "Name": "Tools - Dragon Stone",
+      "Description": ""
+    },
+    {
+      "ID": "2500",
+      "Name": "Tools - Gestures",
+      "Description": ""
+    },
+    {
+      "ID": "2550",
+      "Name": "Tools - Line theory",
+      "Description": ""
+    },
+    {
+      "ID": "2600",
+      "Name": "Tools-Sign",
+      "Description": ""
+    },
+    {
+      "ID": "2601",
+      "Name": "Tools - Online Host",
+      "Description": ""
+    },
+    {
+      "ID": "2602",
+      "Name": "Tools - Online Guest",
+      "Description": ""
+    },
+    {
+      "ID": "2610",
+      "Name": "Tools - Online (Multiple choice)",
+      "Description": ""
+    },
+    {
+      "ID": "2620",
+      "Name": "Tools - Giant's Nut Seed",
+      "Description": ""
+    },
+    {
+      "ID": "2630",
+      "Name": "Tools - bones of science",
+      "Description": ""
+    },
+    {
+      "ID": "2635",
+      "Name": "Tools-list",
+      "Description": ""
+    },
+    {
+      "ID": "2640",
+      "Name": "Tools - Fossil egg",
+      "Description": ""
+    },
+    {
+      "ID": "2645",
+      "Name": "Tools - Hanging stone",
+      "Description": ""
+    },
+    {
+      "ID": "2650",
+      "Name": "Tools - Prize exchange",
+      "Description": ""
+    },
+    {
+      "ID": "2700",
+      "Name": "Valuables",
+      "Description": ""
+    },
+    {
+      "ID": "2701",
+      "Name": "Valuables (to be consumed)",
+      "Description": ""
+    },
+    {
+      "ID": "2702",
+      "Name": "Valuables (miracle person)",
+      "Description": ""
+    },
+    {
+      "ID": "2703",
+      "Name": "Valuables (spell-required status reduction items)",
+      "Description": ""
+    }
+  ]
+}

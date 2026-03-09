@@ -1,0 +1,267 @@
+{
+  "DisplayName": "Pattern ID",
+  "Name": "PATTERN_ID",
+  "Description": "Seed that determines exact placement of bases/bosses and occurance of events",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Gladius - Limveld 1",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Gladius - Limveld 2",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Gladius - Limveld 3",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Gladius - Limveld 4",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Gladius - Limveld 5",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Gladius - Limveld 6",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Gladius - Limveld 7",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Gladius - Limveld 8",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Gladius - Limveld 9",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Gladius - Limveld 10",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Gladius - Limveld 11",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Gladius - Limveld 12",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Gladius - Limveld 13",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Gladius - Limveld 14",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Gladius - Limveld 15",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Gladius - Limveld 16",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Gladius - Limveld 17",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Gladius - Limveld 18",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Gladius - Limveld 19",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Gladius - Limveld 20",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Gladius - Mountaintop 1",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Gladius - Mountaintop 2",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Gladius - Mountaintop 3",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Gladius - Mountaintop 4",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Gladius - Mountaintop 5",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Gladius - The Crater 1",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Gladius - The Crater 2",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Gladius - The Crater 3",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Gladius - The Crater 4",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Gladius - The Crater 5",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Gladius - Rotted Woods 1",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Gladius - Rotted Woods 2",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "Gladius - Rotted Woods 3",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Gladius - Rotted Woods 4",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "Gladius - Rotted Woods 5",
+      "Description": ""
+    },
+    {
+      "ID": "35",
+      "Name": "Gladius - Shrouded City 1",
+      "Description": ""
+    },
+    {
+      "ID": "36",
+      "Name": "Gladius - Shrouded City 2",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "Gladius - Shrouded City 3",
+      "Description": ""
+    },
+    {
+      "ID": "38",
+      "Name": "Gladius - Shrouded City 4",
+      "Description": ""
+    },
+    {
+      "ID": "39",
+      "Name": "Gladius - Shrouded City 5",
+      "Description": ""
+    },
+    {
+      "ID": "319",
+      "Name": "Heolstor - Shrouded City 5",
+      "Description": ""
+    },
+    {
+      "ID": "1000",
+      "Name": "Gladius - Limveld DLC 1",
+      "Description": ""
+    },
+    {
+      "ID": "1001",
+      "Name": "Gladius - Limveld DLC 2",
+      "Description": ""
+    },
+    {
+      "ID": "1002",
+      "Name": "Gladius - Limveld DLC 3",
+      "Description": ""
+    },
+    {
+      "ID": "1003",
+      "Name": "Gladius - Limveld DLC 4",
+      "Description": ""
+    },
+    {
+      "ID": "1004",
+      "Name": "Gladius - Limveld DLC 5",
+      "Description": ""
+    },
+    {
+      "ID": "1005",
+      "Name": "Gladius - Great Hollow 1",
+      "Description": ""
+    },
+    {
+      "ID": "1006",
+      "Name": "Gladius - Great Hollow 2",
+      "Description": ""
+    },
+    {
+      "ID": "1007",
+      "Name": "Gladius - Great Hollow 3",
+      "Description": ""
+    },
+    {
+      "ID": "1008",
+      "Name": "Gladius - Great Hollow 4",
+      "Description": ""
+    },
+    {
+      "ID": "1009",
+      "Name": "Gladius - Great Hollow 5",
+      "Description": ""
+    },
+    {
+      "ID": "1199",
+      "Name": "Straghess - Shrouded City 5",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "DisplayName": "NPC_DECEASED_TYPE",
+  "Name": "NPC_DECEASED_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Flesh and blood",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Deceased",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Amazing dead",
+      "Description": ""
+    }
+  ]
+}

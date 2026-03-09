@@ -1,0 +1,17 @@
+{
+  "DisplayName": "SPELL_SOUL_CONSUME_TYPE",
+  "Name": "SPELL_SOUL_CONSUME_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Number",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Percentage",
+      "Description": ""
+    }
+  ]
+}

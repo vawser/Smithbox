@@ -1,0 +1,22 @@
+{
+  "DisplayName": "DAMAGE_KICKBACK_CTRL_TYPE",
+  "Name": "DAMAGE_KICKBACK_CTRL_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Normal direction",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Trajectory direction",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Manual configuration",
+      "Description": ""
+    }
+  ]
+}

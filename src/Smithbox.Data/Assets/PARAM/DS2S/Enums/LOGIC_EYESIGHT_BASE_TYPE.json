@@ -1,0 +1,22 @@
+{
+  "DisplayName": "LOGIC_EYESIGHT_BASE_TYPE",
+  "Name": "LOGIC_EYESIGHT_BASE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Light/dark",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Dark/light",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Common",
+      "Description": ""
+    }
+  ]
+}

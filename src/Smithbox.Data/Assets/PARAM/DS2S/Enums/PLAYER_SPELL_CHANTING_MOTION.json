@@ -1,0 +1,87 @@
+{
+  "DisplayName": "PLAYER_SPELL_CHANTING_MOTION",
+  "Name": "PLAYER_SPELL_CHANTING_MOTION",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "38110010",
+      "Name": "Cane_Chanting_Standing_In front of chest",
+      "Description": ""
+    },
+    {
+      "ID": "38110610",
+      "Name": "Cane_Chanting_Standing_Hold it up",
+      "Description": ""
+    },
+    {
+      "ID": "38111010",
+      "Name": "Fist_Chanting_Pushing forward_Standing",
+      "Description": ""
+    },
+    {
+      "ID": "38111110",
+      "Name": "Magical Fire_Chanting_Standing_Lighting the fire in the palm",
+      "Description": ""
+    },
+    {
+      "ID": "38111510",
+      "Name": "Magical Fire_Chanting_Standing_Raise your arms and light the fire",
+      "Description": ""
+    },
+    {
+      "ID": "38111610",
+      "Name": "Magical Fire_Chanting_Standing_Standing in front",
+      "Description": ""
+    },
+    {
+      "ID": "38111810",
+      "Name": "Magical Fire_Chanting_Standing_Raise your right arm",
+      "Description": ""
+    },
+    {
+      "ID": "38130010",
+      "Name": "Cane_Chanting_Standing_In front of chest_Both hands",
+      "Description": ""
+    },
+    {
+      "ID": "38150010",
+      "Name": "Cane_Chanting_Standing_In front of chest_Two swords",
+      "Description": ""
+    },
+    {
+      "ID": "39110010",
+      "Name": "Bell_Chanting_Standing_In front of chest",
+      "Description": ""
+    },
+    {
+      "ID": "39110110",
+      "Name": "Bell_Chanting_Bending_In front of chest",
+      "Description": ""
+    },
+    {
+      "ID": "39110710",
+      "Name": "Bell_Chant_Stand_Raise your right arm",
+      "Description": ""
+    },
+    {
+      "ID": "39110810",
+      "Name": "Bell_Chanting_Standing_Cross in front of chest",
+      "Description": ""
+    },
+    {
+      "ID": "39110910",
+      "Name": "Bell_Chanting_Standing_Circle in front of chest",
+      "Description": ""
+    },
+    {
+      "ID": "39130010",
+      "Name": "Bell_Chanting_Standing_In front of chest_Both hands",
+      "Description": ""
+    },
+    {
+      "ID": "39150010",
+      "Name": "Bell_Chanting_Standing_In front of chest_Two swords",
+      "Description": ""
+    }
+  ]
+}

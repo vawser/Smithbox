@@ -1,0 +1,17 @@
+{
+  "DisplayName": "WEAPON_PHYS_PWR_STAT",
+  "Name": "WEAPON_PHYS_PWR_STAT",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Muscle strength",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Skill",
+      "Description": ""
+    }
+  ]
+}

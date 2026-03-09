@@ -1,0 +1,27 @@
+{
+  "DisplayName": "CHR_FULLBODY_SFX_DIR_TYPE",
+  "Name": "CHR_FULLBODY_SFX_DIR_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Feet → head",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Overhead → feet",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Front → Back",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Back → Front",
+      "Description": ""
+    }
+  ]
+}

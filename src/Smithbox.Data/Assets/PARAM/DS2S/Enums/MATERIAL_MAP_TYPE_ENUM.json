@@ -1,0 +1,102 @@
+{
+  "DisplayName": "MATERIAL_MAP_TYPE_ENUM",
+  "Name": "MATERIAL_MAP_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "石",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "土",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Carpet",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Wood",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "草",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Gravel",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "鉄",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "砂",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "骨",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "灰",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Water: puddle level",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Water: ankle level",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "沼",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Poisonous swamp",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "油",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Coal tar",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Lava",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Spider thread",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Sulfur crystals",
+      "Description": ""
+    }
+  ]
+}

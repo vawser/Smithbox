@@ -1,0 +1,32 @@
+{
+  "DisplayName": "CAMERA_INTERPOLATE_TYPE",
+  "Name": "CAMERA_INTERPOLATE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "No interpolation",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Instant switching",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Linear interpolation",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Quadratic interpolation",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Quadratic curve interpolation 2",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "DisplayName": "CHR_POINT_WIND_PARAM_ENUM",
+  "Name": "CHR_POINT_WIND_PARAM_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1010",
+      "Name": "Tiny-small",
+      "Description": ""
+    },
+    {
+      "ID": "1020",
+      "Name": "Very small-medium",
+      "Description": ""
+    },
+    {
+      "ID": "1030",
+      "Name": "Very small-large",
+      "Description": ""
+    },
+    {
+      "ID": "2010",
+      "Name": "Small-small",
+      "Description": ""
+    },
+    {
+      "ID": "2020",
+      "Name": "Small-middle school",
+      "Description": ""
+    },
+    {
+      "ID": "2030",
+      "Name": "Small-large",
+      "Description": ""
+    },
+    {
+      "ID": "3010",
+      "Name": "Medium-small",
+      "Description": ""
+    },
+    {
+      "ID": "3020",
+      "Name": "Medium-medium",
+      "Description": ""
+    },
+    {
+      "ID": "3030",
+      "Name": "Medium-large",
+      "Description": ""
+    },
+    {
+      "ID": "4010",
+      "Name": "Large-small",
+      "Description": ""
+    },
+    {
+      "ID": "4020",
+      "Name": "Large-medium",
+      "Description": ""
+    },
+    {
+      "ID": "4030",
+      "Name": "Large-large",
+      "Description": ""
+    },
+    {
+      "ID": "5010",
+      "Name": "Extra large-small",
+      "Description": ""
+    },
+    {
+      "ID": "5020",
+      "Name": "Extra large-medium",
+      "Description": ""
+    },
+    {
+      "ID": "5030",
+      "Name": "Extra large-large",
+      "Description": ""
+    },
+    {
+      "ID": "6010",
+      "Name": "Extra large-small",
+      "Description": ""
+    },
+    {
+      "ID": "6020",
+      "Name": "Extra large-medium",
+      "Description": ""
+    },
+    {
+      "ID": "6030",
+      "Name": "Extra large-large",
+      "Description": ""
+    },
+    {
+      "ID": "7010",
+      "Name": "Extra Extra Large-Small",
+      "Description": ""
+    },
+    {
+      "ID": "7020",
+      "Name": "Extra Extra Large - Medium",
+      "Description": ""
+    },
+    {
+      "ID": "7030",
+      "Name": "Extra Extra Large-Large",
+      "Description": ""
+    }
+  ]
+}

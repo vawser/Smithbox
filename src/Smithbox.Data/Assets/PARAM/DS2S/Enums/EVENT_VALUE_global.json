@@ -1,0 +1,562 @@
+{
+  "DisplayName": "EVENT_VALUE_global",
+  "Name": "EVENT_VALUE_global",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Number of intrusions when acquiring nuts",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "For obtaining nuts_Current number of intrusions",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Beautiful voice frog defeat count",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Number of times the spider queen was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Molten iron demon defeat count",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Number of times Silver Chariot was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Number of times skeleton nobles were defeated",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Number of times defeated by Jabba the Hutt",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Naga defeat count",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Man Scorpion ♀ Defeat count",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Mirror Knight defeat count",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Heavy cavalry: Number of defeats for soldiers only",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Number of times Ornstein was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Double-faced Warrior: Number of snake head defeats",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Number of times the warrior in the mirror was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Forgotten sinners defeated",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Number of times Demon Knight was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Dog and Mouse: Color ② Number of defeats",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Butcher defeat count",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Number of times the giant rat was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Vagrant: Number of defeats with luggage",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Vagrant: Number of defeats without luggage",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Wyvern defeat count",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Number of times the new giant advanced soldier (deceased) was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "New Titan Advanced Soldier (living) number of defeats",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Number of times the queen's armor form was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "Number of times the Queen's Knight A was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "35",
+      "Name": "Number of times Queen's Knight B was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "36",
+      "Name": "Number of times Queen's Knight C was defeated",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "Number of times the ancient dragon was defeated Number of times defeated",
+      "Description": ""
+    },
+    {
+      "ID": "38",
+      "Name": "Number of defeats of King Vanclad",
+      "Description": ""
+    },
+    {
+      "ID": "39",
+      "Name": "Agaduran's stand defeat count",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Heavy cavalry: Number of times only 2 soldiers were defeated",
+      "Description": ""
+    },
+    {
+      "ID": "41",
+      "Name": "Dark Priest: Number of defeats",
+      "Description": ""
+    },
+    {
+      "ID": "42",
+      "Name": "Gargoyle: Number of defeats",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "[Grave appearance] Dullahan",
+      "Description": ""
+    },
+    {
+      "ID": "101",
+      "Name": "[Grave Appearance] Grave Keeper",
+      "Description": ""
+    },
+    {
+      "ID": "102",
+      "Name": "[Grave Appearance] Dragon Shrine Maiden",
+      "Description": ""
+    },
+    {
+      "ID": "103",
+      "Name": "[Grave Appearance] Queen",
+      "Description": ""
+    },
+    {
+      "ID": "104",
+      "Name": "[Grave appearance] Ladder shop",
+      "Description": ""
+    },
+    {
+      "ID": "105",
+      "Name": "[Grave Appearance] Retired Firekeeper 1",
+      "Description": ""
+    },
+    {
+      "ID": "106",
+      "Name": "[Grave Appearance] Retired Firekeeper 2",
+      "Description": ""
+    },
+    {
+      "ID": "107",
+      "Name": "[Grave Appearance] Retired Firekeeper 3",
+      "Description": ""
+    },
+    {
+      "ID": "108",
+      "Name": "[Grave Appearance] Spirit of the Prime Minister",
+      "Description": ""
+    },
+    {
+      "ID": "109",
+      "Name": "[Grave Appearance] Firekeeper Housekeeper",
+      "Description": ""
+    },
+    {
+      "ID": "110",
+      "Name": "[Grave Appearance] Kingdom Captain",
+      "Description": ""
+    },
+    {
+      "ID": "111",
+      "Name": "[Grave Appearance] Pilgrim of the Abyss",
+      "Description": ""
+    },
+    {
+      "ID": "112",
+      "Name": "[Grave Appearance] Dwarf",
+      "Description": ""
+    },
+    {
+      "ID": "113",
+      "Name": "[Grave Appearance] Broken Blue Sect Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "114",
+      "Name": "[Grave Appearance] Wandering Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "115",
+      "Name": "[Grave Appearance] Moonlight Old Man",
+      "Description": ""
+    },
+    {
+      "ID": "116",
+      "Name": "[Grave Appearance] Patch",
+      "Description": ""
+    },
+    {
+      "ID": "117",
+      "Name": "[Grave appearance] Map drawing",
+      "Description": ""
+    },
+    {
+      "ID": "118",
+      "Name": "[Grave Appearance] Female Knight",
+      "Description": ""
+    },
+    {
+      "ID": "119",
+      "Name": "[Grave Appearance] Bell Keeper",
+      "Description": ""
+    },
+    {
+      "ID": "120",
+      "Name": "[Grave appearance] Yorozu hag",
+      "Description": ""
+    },
+    {
+      "ID": "121",
+      "Name": "[Grave Appearance] Bard Girl 1",
+      "Description": ""
+    },
+    {
+      "ID": "122",
+      "Name": "[Grave Appearance] Bard Girl 2",
+      "Description": ""
+    },
+    {
+      "ID": "123",
+      "Name": "[Grave appearance] Prisoner girl",
+      "Description": ""
+    },
+    {
+      "ID": "124",
+      "Name": "[Grave appearance] Armor shop",
+      "Description": ""
+    },
+    {
+      "ID": "125",
+      "Name": "[Grave appearance] Material shop",
+      "Description": ""
+    },
+    {
+      "ID": "126",
+      "Name": "[Grave Appearance] Sorcerer",
+      "Description": ""
+    },
+    {
+      "ID": "127",
+      "Name": "[Grave appearance] Blacksmith",
+      "Description": ""
+    },
+    {
+      "ID": "128",
+      "Name": "[Grave Appearance] EX Blacksmith",
+      "Description": ""
+    },
+    {
+      "ID": "129",
+      "Name": "[Grave Appearance] Magician",
+      "Description": ""
+    },
+    {
+      "ID": "130",
+      "Name": "[Grave appearance] Spellmania",
+      "Description": ""
+    },
+    {
+      "ID": "131",
+      "Name": "[Grave Appearance] Miracle Man",
+      "Description": ""
+    },
+    {
+      "ID": "132",
+      "Name": "[Grave Appearance] Dark Magician",
+      "Description": ""
+    },
+    {
+      "ID": "133",
+      "Name": "[Grave appearance] Sealed person",
+      "Description": ""
+    },
+    {
+      "ID": "134",
+      "Name": "[Grave appearance] Curious item shop",
+      "Description": ""
+    },
+    {
+      "ID": "135",
+      "Name": "[Grave Appearance] Top Weapon Shop",
+      "Description": ""
+    },
+    {
+      "ID": "136",
+      "Name": "[Grave Appearance] Cat",
+      "Description": ""
+    },
+    {
+      "ID": "137",
+      "Name": "[Grave Appearance] Black Phantom Shop",
+      "Description": ""
+    },
+    {
+      "ID": "138",
+      "Name": "[Grave Appearance] Chaplain of Absolution",
+      "Description": ""
+    },
+    {
+      "ID": "139",
+      "Name": "[Grave Appearance] Guardian Knight",
+      "Description": ""
+    },
+    {
+      "ID": "140",
+      "Name": "[Grave Appearance] Sparkly Girl",
+      "Description": ""
+    },
+    {
+      "ID": "141",
+      "Name": "[Grave Appearance] Mouse King",
+      "Description": ""
+    },
+    {
+      "ID": "142",
+      "Name": "[Grave Appearance] Man Scorpion Man",
+      "Description": ""
+    },
+    {
+      "ID": "143",
+      "Name": "[Grave Appearance] Three Sisters 1",
+      "Description": ""
+    },
+    {
+      "ID": "144",
+      "Name": "[Grave Appearance] Three Sisters 2",
+      "Description": ""
+    },
+    {
+      "ID": "145",
+      "Name": "[Grave Appearance] Three Sisters 3",
+      "Description": ""
+    },
+    {
+      "ID": "200",
+      "Name": "NPC: Dwarf: Shop purchase total",
+      "Description": ""
+    },
+    {
+      "ID": "201",
+      "Name": "NPC: Map writer: Bonfire lighting count",
+      "Description": ""
+    },
+    {
+      "ID": "202",
+      "Name": "NPC: Armor shop: Number of pieces placed",
+      "Description": ""
+    },
+    {
+      "ID": "203",
+      "Name": "NPC: Armor shop: Condition level",
+      "Description": ""
+    },
+    {
+      "ID": "204",
+      "Name": "NPC: Female Knight: White Phantom Summon Achievement Count",
+      "Description": ""
+    },
+    {
+      "ID": "205",
+      "Name": "NPC: Moonlight Old Man: White Phantom Summon Achievement Count",
+      "Description": ""
+    },
+    {
+      "ID": "206",
+      "Name": "NPC: Patch: Number of white phantom summons achieved",
+      "Description": ""
+    },
+    {
+      "ID": "207",
+      "Name": "NPC: Map writer: Number of skeletons defeated",
+      "Description": ""
+    },
+    {
+      "ID": "210",
+      "Name": "Pledge: Rank: Warrior of the Sun",
+      "Description": ""
+    },
+    {
+      "ID": "211",
+      "Name": "Pledge: Rank: Guardian Knight",
+      "Description": ""
+    },
+    {
+      "ID": "212",
+      "Name": "Pledge: Rank: Blood Spirit",
+      "Description": ""
+    },
+    {
+      "ID": "213",
+      "Name": "Pledge: Rank: Seikyo",
+      "Description": ""
+    },
+    {
+      "ID": "214",
+      "Name": "Pledge: Rank: Mouse King",
+      "Description": ""
+    },
+    {
+      "ID": "215",
+      "Name": "Pledge: Rank: Bell Keeper",
+      "Description": ""
+    },
+    {
+      "ID": "216",
+      "Name": "Pledge: Rank: Path to Ancient Dragon",
+      "Description": ""
+    },
+    {
+      "ID": "217",
+      "Name": "Pledge: Rank: Strong",
+      "Description": ""
+    },
+    {
+      "ID": "218",
+      "Name": "Pledge: Rank: Abyssal Pilgrimage",
+      "Description": ""
+    },
+    {
+      "ID": "220",
+      "Name": "NPC: Yorozu Hagba: Shop purchase total",
+      "Description": ""
+    },
+    {
+      "ID": "221",
+      "Name": "NPC: Material shop: Shop purchase total",
+      "Description": ""
+    },
+    {
+      "ID": "222",
+      "Name": "NPC: Curious item shop: Shop purchase total",
+      "Description": ""
+    },
+    {
+      "ID": "223",
+      "Name": "NPC: Spellmania: Number of barter exchanges",
+      "Description": ""
+    },
+    {
+      "ID": "224",
+      "Name": "NPC: Top weapon shop: Number of barter exchanges",
+      "Description": ""
+    },
+    {
+      "ID": "225",
+      "Name": "NPC: Blacksmith: Enhancement & Attribute Amount",
+      "Description": ""
+    },
+    {
+      "ID": "226",
+      "Name": "NPC: EX Blacksmith: Enhancement & Attribute Amount",
+      "Description": ""
+    },
+    {
+      "ID": "227",
+      "Name": "NPC: Armor shop: Shop purchase total",
+      "Description": ""
+    },
+    {
+      "ID": "240",
+      "Name": "NPC: Sorcerer: Helmet equipment",
+      "Description": ""
+    },
+    {
+      "ID": "241",
+      "Name": "NPC: Sorcerer: Armor equipment",
+      "Description": ""
+    },
+    {
+      "ID": "242",
+      "Name": "NPC: Sorcerer: Gauntlet equipment",
+      "Description": ""
+    },
+    {
+      "ID": "243",
+      "Name": "NPC: Sorcerer: Equipment",
+      "Description": ""
+    }
+  ]
+}

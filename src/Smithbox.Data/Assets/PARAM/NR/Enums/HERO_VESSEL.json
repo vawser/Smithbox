@@ -1,0 +1,67 @@
+{
+  "DisplayName": "Vessel's Hero",
+  "Name": "HERO_VESSEL",
+  "Description": "IDs for the relic vessels and the heros they go to.",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Wylder",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Guardian",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Ironeye",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Duchess",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Raider",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Revenant",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Recluse",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Executor",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Scholar",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Undertaker",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "All",
+      "Description": ""
+    }
+  ]
+}

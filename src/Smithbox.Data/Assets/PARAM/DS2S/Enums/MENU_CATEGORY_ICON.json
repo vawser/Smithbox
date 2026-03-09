@@ -1,0 +1,187 @@
+{
+  "DisplayName": "MENU_CATEGORY_ICON",
+  "Name": "MENU_CATEGORY_ICON",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "70",
+      "Name": "Stabbing sword",
+      "Description": ""
+    },
+    {
+      "ID": "80",
+      "Name": "斧",
+      "Description": ""
+    },
+    {
+      "ID": "90",
+      "Name": "槌",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "槍",
+      "Description": ""
+    },
+    {
+      "ID": "110",
+      "Name": "拳",
+      "Description": ""
+    },
+    {
+      "ID": "120",
+      "Name": "鞭",
+      "Description": ""
+    },
+    {
+      "ID": "130",
+      "Name": "Shooting",
+      "Description": ""
+    },
+    {
+      "ID": "140",
+      "Name": "Catalyst",
+      "Description": ""
+    },
+    {
+      "ID": "150",
+      "Name": "盾",
+      "Description": ""
+    },
+    {
+      "ID": "400",
+      "Name": "兜",
+      "Description": ""
+    },
+    {
+      "ID": "410",
+      "Name": "鎧",
+      "Description": ""
+    },
+    {
+      "ID": "420",
+      "Name": "Kote",
+      "Description": ""
+    },
+    {
+      "ID": "430",
+      "Name": "Armor",
+      "Description": ""
+    },
+    {
+      "ID": "500",
+      "Name": "Ring",
+      "Description": ""
+    },
+    {
+      "ID": "600",
+      "Name": "Arrows & bolts",
+      "Description": ""
+    },
+    {
+      "ID": "610",
+      "Name": "[Use prohibited/required to output] Arrow",
+      "Description": ""
+    },
+    {
+      "ID": "620",
+      "Name": "[Use prohibited/output required] Bolt",
+      "Description": ""
+    },
+    {
+      "ID": "700",
+      "Name": "Active",
+      "Description": ""
+    },
+    {
+      "ID": "710",
+      "Name": "Passive",
+      "Description": ""
+    },
+    {
+      "ID": "720",
+      "Name": "Sauce",
+      "Description": ""
+    },
+    {
+      "ID": "800",
+      "Name": "Spell",
+      "Description": ""
+    },
+    {
+      "ID": "900",
+      "Name": "Gesture",
+      "Description": ""
+    },
+    {
+      "ID": "1000",
+      "Name": "Shop weapons",
+      "Description": ""
+    },
+    {
+      "ID": "1400",
+      "Name": "Shop armor",
+      "Description": ""
+    },
+    {
+      "ID": "1500",
+      "Name": "Shop rings",
+      "Description": ""
+    },
+    {
+      "ID": "1600",
+      "Name": "Shop arrow",
+      "Description": ""
+    },
+    {
+      "ID": "1700",
+      "Name": "Shop items",
+      "Description": ""
+    },
+    {
+      "ID": "1800",
+      "Name": "Shop spell",
+      "Description": ""
+    },
+    {
+      "ID": "2000",
+      "Name": "Warehouse",
+      "Description": ""
+    }
+  ]
+}

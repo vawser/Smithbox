@@ -1,0 +1,242 @@
+{
+  "DisplayName": "Team Type",
+  "Name": "TEAM_TYPE",
+  "Description": "Character's team type, used to determine allies and enemies.",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "No Change",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Player",
+      "Description": "Player team"
+    },
+    {
+      "ID": "2",
+      "Name": "White Ghost",
+      "Description": "Allied to player"
+    },
+    {
+      "ID": "3",
+      "Name": "Black Ghost",
+      "Description": "Hostile to Player"
+    },
+    {
+      "ID": "4",
+      "Name": "Grey Ghost",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Wandering Ghost",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Enemy",
+      "Description": "Standard enemy team"
+    },
+    {
+      "ID": "7",
+      "Name": "Boss",
+      "Description": "Player hostile, can damage its allies"
+    },
+    {
+      "ID": "8",
+      "Name": "Ally",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Hostile Ally",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Decoy",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Decoy-like",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Battle Ally",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Invader",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Neutral",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Charmed",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Invader",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Watchdogs of Farron",
+      "Description": "Legacy invader team"
+    },
+    {
+      "ID": "18",
+      "Name": "Aldrich Faithful",
+      "Description": "Legacy invader team"
+    },
+    {
+      "ID": "19",
+      "Name": "Invader - Giant Seed",
+      "Description": "Legacy multiplayer team"
+    },
+    {
+      "ID": "20",
+      "Name": "Comatose Sleep",
+      "Description": "Allows player to be attacked by allies and enemies"
+    },
+    {
+      "ID": "21",
+      "Name": "Watchdogs of Farron - Giant Seed",
+      "Description": "Legacy multiplayer team"
+    },
+    {
+      "ID": "22",
+      "Name": "Aldrich Faithful - Giant Seed",
+      "Description": "Legacy multiplayer team"
+    },
+    {
+      "ID": "23",
+      "Name": "Enemy",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Enemy 2",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Strong Enemy",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Friendly NPC",
+      "Description": "Typical NPC team"
+    },
+    {
+      "ID": "27",
+      "Name": "Hostile NPC",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Co-op NPC",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Indiscriminate",
+      "Description": "Hostile to everything"
+    },
+    {
+      "ID": "30",
+      "Name": "Object",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Co-op Mad Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "Invader Mad Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Arch Enemy Team",
+      "Description": "Player hostile, can damage regular enemies"
+    },
+    {
+      "ID": "34",
+      "Name": "Unknown Enemy",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Unknown Enemy",
+      "Description": ""
+    },
+    {
+      "ID": "47",
+      "Name": "Spirit Summon",
+      "Description": ""
+    },
+    {
+      "ID": "48",
+      "Name": "Unknown Enemy Team",
+      "Description": ""
+    },
+    {
+      "ID": "49",
+      "Name": "Unknown Boss",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Unknown Enemy Team",
+      "Description": ""
+    },
+    {
+      "ID": "51",
+      "Name": "Enemy 2 Boss",
+      "Description": ""
+    },
+    {
+      "ID": "52",
+      "Name": "Unknown Enemy",
+      "Description": ""
+    },
+    {
+      "ID": "53",
+      "Name": "Unknown Enemy 2 Team",
+      "Description": ""
+    },
+    {
+      "ID": "56",
+      "Name": "Unknown Enemy",
+      "Description": ""
+    },
+    {
+      "ID": "77",
+      "Name": "Near Death",
+      "Description": ""
+    },
+    {
+      "ID": "80",
+      "Name": "Balancer Raid",
+      "Description": ""
+    }
+  ]
+}

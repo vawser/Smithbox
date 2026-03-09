@@ -1,0 +1,52 @@
+{
+  "DisplayName": "CHR_EDIT_FACE_PARAM_CATEGORY",
+  "Name": "CHR_EDIT_FACE_PARAM_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Whole face",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Face shape",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Eyebrows",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Eye",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Nose",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Mouth",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Chin",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Beard",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "None",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "DisplayName": "RANGE_WEAPON_CATEGORY",
+  "Name": "RANGE_WEAPON_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "弓",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Large bow",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Crossbow",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Item shot bow",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Javelin",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Spell",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Binoculars",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "DisplayName": "BULLET_HIT_BACK_TYPE",
+  "Name": "BULLET_HIT_BACK_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Disabled",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Enabled",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Water Surface",
+      "Description": ""
+    }
+  ]
+}

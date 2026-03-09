@@ -1,0 +1,27 @@
+{
+  "DisplayName": "KEY_GUIDE_SHAPE_TYPE",
+  "Name": "KEY_GUIDE_SHAPE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Sphere",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Cylinder",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Capsule",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Box",
+      "Description": ""
+    }
+  ]
+}

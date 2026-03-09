@@ -1,0 +1,92 @@
+{
+  "DisplayName": "SP_EFFECT_TARGET_REGION",
+  "Name": "SP_EFFECT_TARGET_REGION",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Others",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Abnormal status - poison",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Auxiliary-Jihad",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Equipment - feet",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Equipment - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Equipment - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Equipment-Head",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Abnormal status - deadly poison",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Equipment - Ring",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Equipment - left weapon",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Equipment - right weapon",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Both legs",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Abnormal status - wet",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Status Abnormality - Spell Seal",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Character",
+      "Description": ""
+    },
+    {
+      "ID": "127",
+      "Name": "Automatic hand selection for both hands",
+      "Description": ""
+    },
+    {
+      "ID": "254",
+      "Name": "Not set",
+      "Description": ""
+    }
+  ]
+}

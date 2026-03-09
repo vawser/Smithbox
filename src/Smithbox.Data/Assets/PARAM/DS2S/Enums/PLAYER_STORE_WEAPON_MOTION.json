@@ -1,0 +1,27 @@
+{
+  "DisplayName": "PLAYER_STORE_WEAPON_MOTION",
+  "Name": "PLAYER_STORE_WEAPON_MOTION",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Hang on the shoulder",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Put on the back",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Hang on the waist",
+      "Description": ""
+    }
+  ]
+}

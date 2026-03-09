@@ -1,0 +1,12 @@
+{
+  "DisplayName": "SOUND_SPECIAL_EQUIPMENT_TYPE",
+  "Name": "SOUND_SPECIAL_EQUIPMENT_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Cloak",
+      "Description": ""
+    }
+  ]
+}

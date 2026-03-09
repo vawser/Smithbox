@@ -1,0 +1,132 @@
+{
+  "DisplayName": "DUAL_WIELDING_PERMISSION_ID",
+  "Name": "DUAL_WIELDING_PERMISSION_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Dual wielding bare hands",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Dual wield fist",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Dual wield dagger",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Dual sword sword",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Dual-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "70",
+      "Name": "Dual wielding one-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "80",
+      "Name": "Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "90",
+      "Name": "Dual-wielding one-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Two-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "110",
+      "Name": "Two-handed two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "120",
+      "Name": "Dual-wielding two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "130",
+      "Name": "Two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "140",
+      "Name": "Dual-wielding two-handed long ax",
+      "Description": ""
+    },
+    {
+      "ID": "150",
+      "Name": "Dual wielding spear",
+      "Description": ""
+    },
+    {
+      "ID": "160",
+      "Name": "Dual wield assault spear",
+      "Description": ""
+    },
+    {
+      "ID": "170",
+      "Name": "Dual wielding whip",
+      "Description": ""
+    },
+    {
+      "ID": "180",
+      "Name": "Dual wielding one-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "190",
+      "Name": "Dual-wielding rapid-fire one-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "200",
+      "Name": "Dual wielding one-handed cane",
+      "Description": ""
+    },
+    {
+      "ID": "210",
+      "Name": "Dual wielding one-handed bell",
+      "Description": ""
+    },
+    {
+      "ID": "220",
+      "Name": "Dual sword right shield",
+      "Description": ""
+    },
+    {
+      "ID": "230",
+      "Name": "Dual sword left shield",
+      "Description": ""
+    },
+    {
+      "ID": "240",
+      "Name": "Dual wielding claws",
+      "Description": ""
+    }
+  ]
+}

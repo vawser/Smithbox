@@ -1,0 +1,2577 @@
+{
+  "DisplayName": "REINFORCE_COST_PARAM_ENUM",
+  "Name": "REINFORCE_COST_PARAM_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None: No reinforcement",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Function test",
+      "Description": ""
+    },
+    {
+      "ID": "100100",
+      "Name": "Bottom: fist",
+      "Description": ""
+    },
+    {
+      "ID": "100200",
+      "Name": "Bottom: Claw",
+      "Description": ""
+    },
+    {
+      "ID": "100300",
+      "Name": "Bottom: Whip",
+      "Description": ""
+    },
+    {
+      "ID": "100400",
+      "Name": "Bottom: Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "100500",
+      "Name": "Bottom: Sashiken",
+      "Description": ""
+    },
+    {
+      "ID": "100600",
+      "Name": "Bottom: Spear",
+      "Description": ""
+    },
+    {
+      "ID": "100700",
+      "Name": "Bottom: Assault Spear",
+      "Description": ""
+    },
+    {
+      "ID": "100800",
+      "Name": "Lowest rank: double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "100900",
+      "Name": "Bottom: Curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "101000",
+      "Name": "Lowest rank: Straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "101100",
+      "Name": "Bottom: Sword",
+      "Description": ""
+    },
+    {
+      "ID": "101200",
+      "Name": "Bottom: Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "101300",
+      "Name": "Bottom: Two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "101350",
+      "Name": "Bottom: Two-handed Omagariken",
+      "Description": ""
+    },
+    {
+      "ID": "101400",
+      "Name": "Bottom: One-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "101500",
+      "Name": "Bottom: Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "101600",
+      "Name": "Bottom: One-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "101700",
+      "Name": "Lowest level: two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "101800",
+      "Name": "Bottom: two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "101900",
+      "Name": "Bottom: Two-handed long axe",
+      "Description": ""
+    },
+    {
+      "ID": "102000",
+      "Name": "Lowest: Two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "102100",
+      "Name": "Bottom: Two-handed longbow",
+      "Description": ""
+    },
+    {
+      "ID": "102200",
+      "Name": "Bottom: One-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "102300",
+      "Name": "Bottom: Cane",
+      "Description": ""
+    },
+    {
+      "ID": "102400",
+      "Name": "Bottom: Bell",
+      "Description": ""
+    },
+    {
+      "ID": "102500",
+      "Name": "Bottom: Fire of magic",
+      "Description": ""
+    },
+    {
+      "ID": "102600",
+      "Name": "Bottom: Small shield",
+      "Description": ""
+    },
+    {
+      "ID": "102700",
+      "Name": "Lowest rank: Medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "102800",
+      "Name": "Bottom: Great Shield",
+      "Description": ""
+    },
+    {
+      "ID": "200100",
+      "Name": "Lower: fist",
+      "Description": ""
+    },
+    {
+      "ID": "200200",
+      "Name": "Lower: Claw",
+      "Description": ""
+    },
+    {
+      "ID": "200300",
+      "Name": "Lower: Whip",
+      "Description": ""
+    },
+    {
+      "ID": "200400",
+      "Name": "Lower: Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "200500",
+      "Name": "Lower level: Sashiken",
+      "Description": ""
+    },
+    {
+      "ID": "200600",
+      "Name": "Lower: Spear",
+      "Description": ""
+    },
+    {
+      "ID": "200700",
+      "Name": "Lower level: Assault spear",
+      "Description": ""
+    },
+    {
+      "ID": "200800",
+      "Name": "Lower: Double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "200900",
+      "Name": "Lower: curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "201000",
+      "Name": "Lower: Straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "201100",
+      "Name": "Lower: sword",
+      "Description": ""
+    },
+    {
+      "ID": "201200",
+      "Name": "Lower: Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "201300",
+      "Name": "Lower: Two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "201350",
+      "Name": "Lower level: Two-handed Omagariken",
+      "Description": ""
+    },
+    {
+      "ID": "201400",
+      "Name": "Lower: One-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "201500",
+      "Name": "Lower: Two-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "201600",
+      "Name": "Lower level: one-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "201700",
+      "Name": "Lower: two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "201800",
+      "Name": "Lower: two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "201900",
+      "Name": "Lower: Two-handed long ax",
+      "Description": ""
+    },
+    {
+      "ID": "202000",
+      "Name": "Lower level: two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "202100",
+      "Name": "Lower: Two-handed longbow",
+      "Description": ""
+    },
+    {
+      "ID": "202200",
+      "Name": "Lower: One-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "202300",
+      "Name": "Lower: Cane",
+      "Description": ""
+    },
+    {
+      "ID": "202400",
+      "Name": "Lower: Bell",
+      "Description": ""
+    },
+    {
+      "ID": "202500",
+      "Name": "Lower level: Fire of magic",
+      "Description": ""
+    },
+    {
+      "ID": "202600",
+      "Name": "Lower: small shield",
+      "Description": ""
+    },
+    {
+      "ID": "202700",
+      "Name": "Lower: Medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "202800",
+      "Name": "Lower: Large shield",
+      "Description": ""
+    },
+    {
+      "ID": "300100",
+      "Name": "Medium: fist",
+      "Description": ""
+    },
+    {
+      "ID": "300200",
+      "Name": "Medium: Nail",
+      "Description": ""
+    },
+    {
+      "ID": "300300",
+      "Name": "Medium: Whip",
+      "Description": ""
+    },
+    {
+      "ID": "300400",
+      "Name": "Medium: Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "300500",
+      "Name": "Medium: Sword",
+      "Description": ""
+    },
+    {
+      "ID": "300600",
+      "Name": "Middle: Spear",
+      "Description": ""
+    },
+    {
+      "ID": "300700",
+      "Name": "Medium: Assault Spear",
+      "Description": ""
+    },
+    {
+      "ID": "300800",
+      "Name": "Medium: Double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "300900",
+      "Name": "Medium: Curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "301000",
+      "Name": "Medium: Straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "301100",
+      "Name": "Medium: sword",
+      "Description": ""
+    },
+    {
+      "ID": "301200",
+      "Name": "Medium: Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "301300",
+      "Name": "Medium: Two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "301350",
+      "Name": "Medium: Two-handed Omagariken",
+      "Description": ""
+    },
+    {
+      "ID": "301400",
+      "Name": "Medium: One-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "301500",
+      "Name": "Medium: Two-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "301600",
+      "Name": "Medium: One-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "301700",
+      "Name": "Medium: Two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "301800",
+      "Name": "Medium: two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "301900",
+      "Name": "Medium: Two-handed long ax",
+      "Description": ""
+    },
+    {
+      "ID": "302000",
+      "Name": "Medium: Two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "302100",
+      "Name": "Medium: Two-handed longbow",
+      "Description": ""
+    },
+    {
+      "ID": "302200",
+      "Name": "Medium: One-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "302300",
+      "Name": "Medium: Cane",
+      "Description": ""
+    },
+    {
+      "ID": "302400",
+      "Name": "Medium: Bell",
+      "Description": ""
+    },
+    {
+      "ID": "302500",
+      "Name": "Medium: Fire of magic",
+      "Description": ""
+    },
+    {
+      "ID": "302600",
+      "Name": "Medium: small shield",
+      "Description": ""
+    },
+    {
+      "ID": "302700",
+      "Name": "Medium: medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "302800",
+      "Name": "Medium: Large shield",
+      "Description": ""
+    },
+    {
+      "ID": "400100",
+      "Name": "Top: Fist",
+      "Description": ""
+    },
+    {
+      "ID": "400200",
+      "Name": "Top: Nail",
+      "Description": ""
+    },
+    {
+      "ID": "400300",
+      "Name": "Top: Whip",
+      "Description": ""
+    },
+    {
+      "ID": "400400",
+      "Name": "Top: Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "400500",
+      "Name": "Top: Sashiken",
+      "Description": ""
+    },
+    {
+      "ID": "400600",
+      "Name": "Top: Spear",
+      "Description": ""
+    },
+    {
+      "ID": "400700",
+      "Name": "Top: Assault Spear",
+      "Description": ""
+    },
+    {
+      "ID": "400800",
+      "Name": "Top: Double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "400900",
+      "Name": "Top: Curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "401000",
+      "Name": "Top: Straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "401100",
+      "Name": "Top: sword",
+      "Description": ""
+    },
+    {
+      "ID": "401200",
+      "Name": "Top: Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "401300",
+      "Name": "Top: Two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "401350",
+      "Name": "Top: Two-handed Omagariken",
+      "Description": ""
+    },
+    {
+      "ID": "401400",
+      "Name": "High rank: One-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "401500",
+      "Name": "High rank: two-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "401600",
+      "Name": "Top: One-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "401700",
+      "Name": "Top: Two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "401800",
+      "Name": "High rank: two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "401900",
+      "Name": "Top: Two-handed long ax",
+      "Description": ""
+    },
+    {
+      "ID": "402000",
+      "Name": "High rank: two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "402100",
+      "Name": "Top: Two-handed longbow",
+      "Description": ""
+    },
+    {
+      "ID": "402200",
+      "Name": "Top: One-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "402300",
+      "Name": "Top: Cane",
+      "Description": ""
+    },
+    {
+      "ID": "402400",
+      "Name": "Top: Bell",
+      "Description": ""
+    },
+    {
+      "ID": "402500",
+      "Name": "Top: Fire of magic",
+      "Description": ""
+    },
+    {
+      "ID": "402600",
+      "Name": "Top: Small shield",
+      "Description": ""
+    },
+    {
+      "ID": "402700",
+      "Name": "High rank: Medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "402800",
+      "Name": "High rank: large shield",
+      "Description": ""
+    },
+    {
+      "ID": "500100",
+      "Name": "Top: fist",
+      "Description": ""
+    },
+    {
+      "ID": "500200",
+      "Name": "Top: Claw",
+      "Description": ""
+    },
+    {
+      "ID": "500300",
+      "Name": "Top level: whip",
+      "Description": ""
+    },
+    {
+      "ID": "500400",
+      "Name": "Top: Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "500500",
+      "Name": "Top level: Sashiken",
+      "Description": ""
+    },
+    {
+      "ID": "500600",
+      "Name": "Top: Spear",
+      "Description": ""
+    },
+    {
+      "ID": "500700",
+      "Name": "Top level: Assault spear",
+      "Description": ""
+    },
+    {
+      "ID": "500800",
+      "Name": "Top level: double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "500900",
+      "Name": "Top level: curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "501000",
+      "Name": "Top level: Straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "501100",
+      "Name": "Top level: sword",
+      "Description": ""
+    },
+    {
+      "ID": "501200",
+      "Name": "Top level: two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "501300",
+      "Name": "Top level: two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "501350",
+      "Name": "Top level: Two-handed Omagariken",
+      "Description": ""
+    },
+    {
+      "ID": "501400",
+      "Name": "Top level: One-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "501500",
+      "Name": "Top level: two-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "501600",
+      "Name": "Top level: one-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "501700",
+      "Name": "Top level: two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "501800",
+      "Name": "Top level: two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "501900",
+      "Name": "Top level: two-handed long ax",
+      "Description": ""
+    },
+    {
+      "ID": "502000",
+      "Name": "Top level: two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "502100",
+      "Name": "Top level: Two-handed longbow",
+      "Description": ""
+    },
+    {
+      "ID": "502200",
+      "Name": "Top: One-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "502300",
+      "Name": "Top level: cane",
+      "Description": ""
+    },
+    {
+      "ID": "502400",
+      "Name": "Top: Bell",
+      "Description": ""
+    },
+    {
+      "ID": "502500",
+      "Name": "Top level: Magic fire",
+      "Description": ""
+    },
+    {
+      "ID": "502600",
+      "Name": "Top level: small shield",
+      "Description": ""
+    },
+    {
+      "ID": "502700",
+      "Name": "Top level: Medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "502800",
+      "Name": "Top level: large shield",
+      "Description": ""
+    },
+    {
+      "ID": "2008000",
+      "Name": "None: Tiny: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "2008001",
+      "Name": "None: Very small: Armor - body",
+      "Description": ""
+    },
+    {
+      "ID": "2008002",
+      "Name": "None: Tiny: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "2008003",
+      "Name": "None: Tiny: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "2108000",
+      "Name": "Lowest: Tiny: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "2108001",
+      "Name": "Lowest: Extremely Small: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "2108002",
+      "Name": "Lowest: Tiny: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "2108003",
+      "Name": "Lowest: Tiny: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "2208004",
+      "Name": "Lower: Tiny: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "2208005",
+      "Name": "Lower: Minimal: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "2208006",
+      "Name": "Lower: Minimal: Armor-Arms",
+      "Description": ""
+    },
+    {
+      "ID": "2208007",
+      "Name": "Lower: Tiny: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "2308008",
+      "Name": "Medium: Very Small: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "2308009",
+      "Name": "Medium: Very Small: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "2308010",
+      "Name": "Medium: Very Small: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "2308011",
+      "Name": "Medium: Very Small: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "2408012",
+      "Name": "Top: Minimal: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "2408013",
+      "Name": "Top: Minimal: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "2408014",
+      "Name": "Top: Minimal: Armor - Arms",
+      "Description": ""
+    },
+    {
+      "ID": "2408015",
+      "Name": "Top: Minimal: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "2508016",
+      "Name": "Top: Tiny: Armor - Head",
+      "Description": ""
+    },
+    {
+      "ID": "2508017",
+      "Name": "Top: Tiny: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "2508018",
+      "Name": "Top: Tiny: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "2508019",
+      "Name": "Top: Tiny: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "3008000",
+      "Name": "None: Small: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "3008001",
+      "Name": "None: Small: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "3008002",
+      "Name": "None: Small: Armor-Arm",
+      "Description": ""
+    },
+    {
+      "ID": "3008003",
+      "Name": "None: Small: Armor-Legs",
+      "Description": ""
+    },
+    {
+      "ID": "3108000",
+      "Name": "Bottom: Small: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "3108001",
+      "Name": "Bottom: Small: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "3108002",
+      "Name": "Bottom: Small: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "3108003",
+      "Name": "Bottom: Small: Armor - Legs",
+      "Description": ""
+    },
+    {
+      "ID": "3208004",
+      "Name": "Lower: Small: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "3208005",
+      "Name": "Lower: Small: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "3208006",
+      "Name": "Lower: Small: Armor-Arms",
+      "Description": ""
+    },
+    {
+      "ID": "3208007",
+      "Name": "Lower: Small: Armor-Legs",
+      "Description": ""
+    },
+    {
+      "ID": "3308008",
+      "Name": "Medium: Small: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "3308009",
+      "Name": "Medium: Small: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "3308010",
+      "Name": "Medium: Small: Armor-Arm",
+      "Description": ""
+    },
+    {
+      "ID": "3308011",
+      "Name": "Medium: Small: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "3408012",
+      "Name": "Upper: Small: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "3408013",
+      "Name": "Upper: Small: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "3408014",
+      "Name": "Upper: Small: Armor-Arms",
+      "Description": ""
+    },
+    {
+      "ID": "3408015",
+      "Name": "Upper: Small: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "3508016",
+      "Name": "Top: Small: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "3508017",
+      "Name": "Top: Small: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "3508018",
+      "Name": "Top: Small: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "3508019",
+      "Name": "Top: Small: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "4008000",
+      "Name": "None: Medium: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "4008001",
+      "Name": "None: Medium: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "4008002",
+      "Name": "None: Medium: Armor-Arms",
+      "Description": ""
+    },
+    {
+      "ID": "4008003",
+      "Name": "None: Medium: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "4108000",
+      "Name": "Lowest: Middle: Armor - Head",
+      "Description": ""
+    },
+    {
+      "ID": "4108001",
+      "Name": "Lowest: Middle: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "4108002",
+      "Name": "Lowest: Middle: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "4108003",
+      "Name": "Lowest: Middle: Armor - Legs",
+      "Description": ""
+    },
+    {
+      "ID": "4208004",
+      "Name": "Lower: Middle: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "4208005",
+      "Name": "Lower: Middle: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "4208006",
+      "Name": "Lower: Middle: Armor - Arms",
+      "Description": ""
+    },
+    {
+      "ID": "4208007",
+      "Name": "Lower: Middle: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "4308008",
+      "Name": "Medium: Medium: Armor - Head",
+      "Description": ""
+    },
+    {
+      "ID": "4308009",
+      "Name": "Medium: Medium: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "4308010",
+      "Name": "Medium: Medium: Armor - Arms",
+      "Description": ""
+    },
+    {
+      "ID": "4308011",
+      "Name": "Medium: Medium: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "4408012",
+      "Name": "Top: Middle: Armor - Head",
+      "Description": ""
+    },
+    {
+      "ID": "4408013",
+      "Name": "Top: Middle: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "4408014",
+      "Name": "Top: Middle: Armor - Arms",
+      "Description": ""
+    },
+    {
+      "ID": "4408015",
+      "Name": "Top: Middle: Armor - Legs",
+      "Description": ""
+    },
+    {
+      "ID": "4508016",
+      "Name": "Top: Medium: Armor - Head",
+      "Description": ""
+    },
+    {
+      "ID": "4508017",
+      "Name": "Top: Middle: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "4508018",
+      "Name": "Top: Middle: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "4508019",
+      "Name": "Top: Middle: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "5008000",
+      "Name": "None: Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "5008001",
+      "Name": "None: Large: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "5008002",
+      "Name": "None: Large: Armor-Arm",
+      "Description": ""
+    },
+    {
+      "ID": "5008003",
+      "Name": "None: Large: Armor-Legs",
+      "Description": ""
+    },
+    {
+      "ID": "5108000",
+      "Name": "Bottom: Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "5108001",
+      "Name": "Lowest: Large: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "5108002",
+      "Name": "Lowest: Large: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "5108003",
+      "Name": "Bottom: Large: Armor - Legs",
+      "Description": ""
+    },
+    {
+      "ID": "5208004",
+      "Name": "Lower: Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "5208005",
+      "Name": "Lower: Large: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "5208006",
+      "Name": "Lower: Large: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "5208007",
+      "Name": "Lower: Large: Armor-Legs",
+      "Description": ""
+    },
+    {
+      "ID": "5308008",
+      "Name": "Medium: Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "5308009",
+      "Name": "Medium: Large: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "5308010",
+      "Name": "Medium: Large: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "5308011",
+      "Name": "Medium: Large: Armor - Legs",
+      "Description": ""
+    },
+    {
+      "ID": "5408012",
+      "Name": "Top: Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "5408013",
+      "Name": "Top: Large: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "5408014",
+      "Name": "Top: Large: Armor - Arms",
+      "Description": ""
+    },
+    {
+      "ID": "5408015",
+      "Name": "Top: Large: Armor - Legs",
+      "Description": ""
+    },
+    {
+      "ID": "5508016",
+      "Name": "Top: Large: Armor - Head",
+      "Description": ""
+    },
+    {
+      "ID": "5508017",
+      "Name": "Top: Large: Armor - Body",
+      "Description": ""
+    },
+    {
+      "ID": "5508018",
+      "Name": "Top: Large: Armor - Arm",
+      "Description": ""
+    },
+    {
+      "ID": "5508019",
+      "Name": "Top: Large: Armor - Legs",
+      "Description": ""
+    },
+    {
+      "ID": "6008000",
+      "Name": "None: Extra Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "6008001",
+      "Name": "None: Extra Large: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "6008002",
+      "Name": "None: Extra Large: Armor-Arm",
+      "Description": ""
+    },
+    {
+      "ID": "6008003",
+      "Name": "None: Extra Large: Armor-Legs",
+      "Description": ""
+    },
+    {
+      "ID": "6108000",
+      "Name": "Bottom: Extra Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "6108001",
+      "Name": "Bottom: Extra Large: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "6108002",
+      "Name": "Bottom: Extra Large: Armor-Arm",
+      "Description": ""
+    },
+    {
+      "ID": "6108003",
+      "Name": "Bottom: Extra Large: Armor-Legs",
+      "Description": ""
+    },
+    {
+      "ID": "6208004",
+      "Name": "Lower: Extra Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "6208005",
+      "Name": "Lower: Extra Large: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "6208006",
+      "Name": "Lower: Extra Large: Armor-Arm",
+      "Description": ""
+    },
+    {
+      "ID": "6208007",
+      "Name": "Lower: Extra Large: Armor-Legs",
+      "Description": ""
+    },
+    {
+      "ID": "6308008",
+      "Name": "Medium: Extra Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "6308009",
+      "Name": "Medium: Extra Large: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "6308010",
+      "Name": "Medium: Extra Large: Armor-Arms",
+      "Description": ""
+    },
+    {
+      "ID": "6308011",
+      "Name": "Medium: Extra Large: Armor-Legs",
+      "Description": ""
+    },
+    {
+      "ID": "6408012",
+      "Name": "Top: Extra Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "6408013",
+      "Name": "Top: Extra Large: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "6408014",
+      "Name": "Top: Extra Large: Armor-Arm",
+      "Description": ""
+    },
+    {
+      "ID": "6408015",
+      "Name": "Top: Extra Large: Armor-Legs",
+      "Description": ""
+    },
+    {
+      "ID": "6508016",
+      "Name": "Top: Extra Large: Armor-Head",
+      "Description": ""
+    },
+    {
+      "ID": "6508017",
+      "Name": "Top: Extra Large: Armor - Torso",
+      "Description": ""
+    },
+    {
+      "ID": "6508018",
+      "Name": "Top: Extra Large: Armor-Arms",
+      "Description": ""
+    },
+    {
+      "ID": "6508019",
+      "Name": "Top: Extra Large: Armor - Feet",
+      "Description": ""
+    },
+    {
+      "ID": "10000000",
+      "Name": "Kingdom tactician's dagger",
+      "Description": ""
+    },
+    {
+      "ID": "10000100",
+      "Name": "Phantom Mage's one-handed sword catalyst (magic power)",
+      "Description": ""
+    },
+    {
+      "ID": "10000200",
+      "Name": "Dullahan's one-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "10000300",
+      "Name": "Spell Four Heavenly Kings (Magic) Piercing Sword",
+      "Description": ""
+    },
+    {
+      "ID": "10000400",
+      "Name": "Manscorpion♂'s piercing sword",
+      "Description": ""
+    },
+    {
+      "ID": "10000500",
+      "Name": "Dullahan's curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "10000600",
+      "Name": "Leviathan's sword",
+      "Description": ""
+    },
+    {
+      "ID": "10000700",
+      "Name": "Stalker warrior sword",
+      "Description": ""
+    },
+    {
+      "ID": "10000800",
+      "Name": "Royal Guard Captain's Two-Handed Sword",
+      "Description": ""
+    },
+    {
+      "ID": "10000900",
+      "Name": "Black knight sword",
+      "Description": ""
+    },
+    {
+      "ID": "10001000",
+      "Name": "Avenge warrior's one-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "10001100",
+      "Name": "Crescent ax",
+      "Description": ""
+    },
+    {
+      "ID": "10001200",
+      "Name": "Black knight great ax",
+      "Description": ""
+    },
+    {
+      "ID": "10001300",
+      "Name": "Blacksmith's hammer",
+      "Description": ""
+    },
+    {
+      "ID": "10001400",
+      "Name": "Dairyuga",
+      "Description": ""
+    },
+    {
+      "ID": "10001500",
+      "Name": "Hermit Crab Castle Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "10001600",
+      "Name": "Demon Sledgehammer",
+      "Description": ""
+    },
+    {
+      "ID": "10001700",
+      "Name": "Patch spear",
+      "Description": ""
+    },
+    {
+      "ID": "10001800",
+      "Name": "Wandering Knight's Assault Spear A",
+      "Description": ""
+    },
+    {
+      "ID": "10001900",
+      "Name": "Black Phantomya's two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "10002000",
+      "Name": "Leviathan's Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "10002100",
+      "Name": "Brain stem sacred tree double-handed spear mallet",
+      "Description": ""
+    },
+    {
+      "ID": "10002200",
+      "Name": "After the destruction of the brainstem sacred tree",
+      "Description": ""
+    },
+    {
+      "ID": "10002300",
+      "Name": "Saint's Attendant 1's Two-Handed Long Ax",
+      "Description": ""
+    },
+    {
+      "ID": "10002400",
+      "Name": "Black knight spear",
+      "Description": ""
+    },
+    {
+      "ID": "10002500",
+      "Name": "Castle Town Elder's Whip",
+      "Description": ""
+    },
+    {
+      "ID": "10002600",
+      "Name": "Lich's Miraculous Dark Arts Staff",
+      "Description": ""
+    },
+    {
+      "ID": "10002700",
+      "Name": "Spell Four Heavenly Kings (Magic) One-handed Staff",
+      "Description": ""
+    },
+    {
+      "ID": "10002800",
+      "Name": "Spell Four Heavenly Kings (Magic) One-handed Staff",
+      "Description": ""
+    },
+    {
+      "ID": "10002900",
+      "Name": "Dragon's Festival One-handed Bell",
+      "Description": ""
+    },
+    {
+      "ID": "10003000",
+      "Name": "Spell Four Heavenly Kings (Miracle) One-handed Bell",
+      "Description": ""
+    },
+    {
+      "ID": "10003100",
+      "Name": "Black knight great sword",
+      "Description": ""
+    },
+    {
+      "ID": "10003200",
+      "Name": "Curved double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "10003300",
+      "Name": "Kingdom tactician's small shield",
+      "Description": ""
+    },
+    {
+      "ID": "10003400",
+      "Name": "Necromancer's Shield",
+      "Description": ""
+    },
+    {
+      "ID": "10003500",
+      "Name": "Guard captain's middle shield",
+      "Description": ""
+    },
+    {
+      "ID": "10003600",
+      "Name": "Spell Four Heavenly Kings (Miracle) Medium Shield",
+      "Description": ""
+    },
+    {
+      "ID": "10003700",
+      "Name": "Medium shield of the four heavenly kings of spell (curse)",
+      "Description": ""
+    },
+    {
+      "ID": "10003800",
+      "Name": "Dullahan medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "10003900",
+      "Name": "Phantom Knight's large shield (left)",
+      "Description": ""
+    },
+    {
+      "ID": "10004000",
+      "Name": "Phantom Knight's large shield (right)",
+      "Description": ""
+    },
+    {
+      "ID": "10004100",
+      "Name": "Havel's Great Shield",
+      "Description": ""
+    },
+    {
+      "ID": "20000000",
+      "Name": "Naga dagger",
+      "Description": ""
+    },
+    {
+      "ID": "20000100",
+      "Name": "Ancient Dragon Straight Sword",
+      "Description": ""
+    },
+    {
+      "ID": "20000200",
+      "Name": "Spider Queen's Piercing Sword",
+      "Description": ""
+    },
+    {
+      "ID": "20000300",
+      "Name": "Two-sided warrior's curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "20000400",
+      "Name": "Spider Queen's Curved Sword",
+      "Description": ""
+    },
+    {
+      "ID": "20000500",
+      "Name": "Demon sword",
+      "Description": ""
+    },
+    {
+      "ID": "20000600",
+      "Name": "Mirror Knight's two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "20000700",
+      "Name": "Moonlight sword",
+      "Description": ""
+    },
+    {
+      "ID": "20000800",
+      "Name": "King Vanglad's two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "20000900",
+      "Name": "Ancient dragon two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "20001000",
+      "Name": "Queen's Knight A's Two-handed Sword",
+      "Description": ""
+    },
+    {
+      "ID": "20001100",
+      "Name": "Queen's Knight C's two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "20001200",
+      "Name": "Meat cutting knife",
+      "Description": ""
+    },
+    {
+      "ID": "20001300",
+      "Name": "Giant Guard Captain's Two-Handed Ax",
+      "Description": ""
+    },
+    {
+      "ID": "20001400",
+      "Name": "Old dragon two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "20001500",
+      "Name": "Ancient Dragon Warpick",
+      "Description": ""
+    },
+    {
+      "ID": "20001600",
+      "Name": "Two-faced warrior's thorn club",
+      "Description": ""
+    },
+    {
+      "ID": "20001700",
+      "Name": "Molten Iron Demon's Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "20001800",
+      "Name": "Queen's Knight B's Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "20001900",
+      "Name": "Salamander spear",
+      "Description": ""
+    },
+    {
+      "ID": "20002000",
+      "Name": "Gargoyle spears",
+      "Description": ""
+    },
+    {
+      "ID": "20002100",
+      "Name": "Ornstein's spear",
+      "Description": ""
+    },
+    {
+      "ID": "20002200",
+      "Name": "Silver Chariot's Assault Spear",
+      "Description": ""
+    },
+    {
+      "ID": "20002300",
+      "Name": "Jabba the Hutt's Two-Handed Scythe",
+      "Description": ""
+    },
+    {
+      "ID": "20002400",
+      "Name": "Two-handed sickle in the queen's armor form",
+      "Description": ""
+    },
+    {
+      "ID": "20002500",
+      "Name": "Heavy cavalry two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "20002600",
+      "Name": "Skeleton Nobleman's Two-Handed Ax",
+      "Description": ""
+    },
+    {
+      "ID": "20002700",
+      "Name": "Beautiful frog whip",
+      "Description": ""
+    },
+    {
+      "ID": "20002800",
+      "Name": "Queen bell",
+      "Description": ""
+    },
+    {
+      "ID": "20002900",
+      "Name": "Heavy cavalry two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "20003000",
+      "Name": "Queen's two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "20003100",
+      "Name": "Dragon hunter's bow",
+      "Description": ""
+    },
+    {
+      "ID": "20003200",
+      "Name": "Silver Chariot's one-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "20003300",
+      "Name": "Two-sided warrior's Ōmagari sword",
+      "Description": ""
+    },
+    {
+      "ID": "20003400",
+      "Name": "Double-headed wyvern's large curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "20003500",
+      "Name": "Demon Knight's Oversized Sword",
+      "Description": ""
+    },
+    {
+      "ID": "20003600",
+      "Name": "Double-headed wyvern oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "20003700",
+      "Name": "King Vanclad's oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "20003800",
+      "Name": "Vagrant (Soul) Oversized Sword",
+      "Description": ""
+    },
+    {
+      "ID": "20003900",
+      "Name": "Agaduran's oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "20004000",
+      "Name": "Forgotten Sinner's Oversized Sword",
+      "Description": ""
+    },
+    {
+      "ID": "20004100",
+      "Name": "Heavy cavalry double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "20004200",
+      "Name": "Queen's Knight C's Small Shield",
+      "Description": ""
+    },
+    {
+      "ID": "20004300",
+      "Name": "King Vanglad's Medium Shield",
+      "Description": ""
+    },
+    {
+      "ID": "20004400",
+      "Name": "Queen's Knight A Medium Shield",
+      "Description": ""
+    },
+    {
+      "ID": "20004500",
+      "Name": "Elder Dragon Shield",
+      "Description": ""
+    },
+    {
+      "ID": "20004600",
+      "Name": "Mirror Knight's Great Shield",
+      "Description": ""
+    },
+    {
+      "ID": "20004700",
+      "Name": "Heavy cavalry shield",
+      "Description": ""
+    },
+    {
+      "ID": "20004800",
+      "Name": "Vagrant's Great Shield",
+      "Description": ""
+    },
+    {
+      "ID": "30000000",
+      "Name": "1160 [Heavy Warrior] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30000100",
+      "Name": "1160 [Heavy Warrior] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30000200",
+      "Name": "1160 [Heavy Warrior] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30000300",
+      "Name": "1160 [Heavy Warrior]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30000400",
+      "Name": "1340 [Yellow coat]・Head",
+      "Description": ""
+    },
+    {
+      "ID": "30000500",
+      "Name": "1340 [Yellow coat]・Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30000600",
+      "Name": "1340 [Yellow coat]・Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30000700",
+      "Name": "1340 [Yellow coat]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30000800",
+      "Name": "1350 [Priest of Absolution]・Head",
+      "Description": ""
+    },
+    {
+      "ID": "30000900",
+      "Name": "1350 [Priest of Absolution] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30001000",
+      "Name": "1350 [Priest of Absolution] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30001100",
+      "Name": "1350 [Priest of Absolution]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30001200",
+      "Name": "1360 [Transparent Armor] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30001300",
+      "Name": "1360 [Transparent Armor] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30001400",
+      "Name": "1360 [Transparent Armor] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30001500",
+      "Name": "1360 [Transparent Armor]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30001600",
+      "Name": "1361 [Transparent Armor: Opaque] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30001700",
+      "Name": "1361 [Transparent Armor: Opaque] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30001800",
+      "Name": "1361 [Transparent Armor: Opaque] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30001900",
+      "Name": "1361 [Transparent Armor: Opaque]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30002000",
+      "Name": "1370 [Painting Guardian] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30002100",
+      "Name": "1370 [Painting Guardian] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30002200",
+      "Name": "1370 [Painting Guardian] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30002300",
+      "Name": "1370 [Painting Guardian]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30002400",
+      "Name": "1430 [Sniper Head]・Head",
+      "Description": ""
+    },
+    {
+      "ID": "30002500",
+      "Name": "1430 [Sniper Head]・Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30002600",
+      "Name": "1430 [Sniper Head]・Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30002700",
+      "Name": "1430 [Sniper Head]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30002800",
+      "Name": "1440 [Lucky Gauntlet] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30002900",
+      "Name": "1440 [Lucky Gauntlet] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30003000",
+      "Name": "1440 [Lucky Gauntlet] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30003100",
+      "Name": "1440 [Lucky Gauntlet]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30003200",
+      "Name": "1450 [barrel]・Head",
+      "Description": ""
+    },
+    {
+      "ID": "30003300",
+      "Name": "1450 [barrel]・chest",
+      "Description": ""
+    },
+    {
+      "ID": "30003400",
+      "Name": "1450 [barrel] arm",
+      "Description": ""
+    },
+    {
+      "ID": "30003500",
+      "Name": "1450 [barrel]・foot",
+      "Description": ""
+    },
+    {
+      "ID": "30003600",
+      "Name": "1460 [Cat boots]・Head",
+      "Description": ""
+    },
+    {
+      "ID": "30003700",
+      "Name": "1460 [Cat boots]・Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30003800",
+      "Name": "1460 [Cat boots]・Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30003900",
+      "Name": "1460 [Cat boots]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30004000",
+      "Name": "1470 [Butterfly Armor] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30004100",
+      "Name": "1470 [Butterfly Armor] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30004200",
+      "Name": "1470 [Butterfly Armor] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30004300",
+      "Name": "1470 [Butterfly Armor]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30004400",
+      "Name": "1480 [Katalina Warrior] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30004500",
+      "Name": "1480 [Katalina Warrior] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30004600",
+      "Name": "1480 [Catalina Warrior] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30004700",
+      "Name": "1480 [Katalina Warrior]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30004800",
+      "Name": "1500 [Witch]・Head",
+      "Description": ""
+    },
+    {
+      "ID": "30004900",
+      "Name": "1500 [Witch]・Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30005000",
+      "Name": "1500 [Witch]・Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30005100",
+      "Name": "1500 [Witch]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30005200",
+      "Name": "1501 [Witch - Different head 1] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30005300",
+      "Name": "1501 [Witch - Different Head 1]・Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30005400",
+      "Name": "1501 [Witch - Different Head 1] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30005500",
+      "Name": "1501 [Witch-Different Head 1]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30005600",
+      "Name": "1502 [Witch - Different Head 2] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30005700",
+      "Name": "1502 [Witch - Different Head 2]・Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30005800",
+      "Name": "1502 [Witch - Different Head 2] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30005900",
+      "Name": "1502 [Witch - Different Head 2]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30006000",
+      "Name": "2360 [Dark Wraith] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30006100",
+      "Name": "2360 [Dark Wraith] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30006200",
+      "Name": "2360 [Dark Wraith] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30006300",
+      "Name": "2360 [Dark Wraith]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30006400",
+      "Name": "2540 [Skeleton Noble] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30006500",
+      "Name": "2540 [Skeleton Noble] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30006600",
+      "Name": "2540 [Skeleton Noble] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30006700",
+      "Name": "2540 [Skeleton Noble]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30006800",
+      "Name": "3040 [Banshee (Dead): Color ①] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30006900",
+      "Name": "3040 [Banshee (Dead): Color ①]・Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30007000",
+      "Name": "3040 [Banshee (Dead): Color ①] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30007100",
+      "Name": "3040 [Banshee (Dead): Color ①]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30007200",
+      "Name": "3050 [Demon Knight] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30007300",
+      "Name": "3050 [Demon Knight] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30007400",
+      "Name": "3050 [Demon Knight] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30007500",
+      "Name": "3050 [Demon Knight]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30007600",
+      "Name": "3070 [Dullahan (dead)] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30007700",
+      "Name": "3070 [Dullahan (Dead)] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30007800",
+      "Name": "3070 [Dullahan (dead)] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30007900",
+      "Name": "3070 [Dullahan (Dead)]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30008000",
+      "Name": "3250 [Warrior in the Mirror] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30008100",
+      "Name": "3250 [Warrior in the Mirror] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30008200",
+      "Name": "3250 [Warrior in the Mirror] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30008300",
+      "Name": "3250 [Warrior in the Mirror]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30008400",
+      "Name": "3320 [Queen's Knight A] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30008500",
+      "Name": "3320 [Queen's Knight A] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30008600",
+      "Name": "3320 [Queen's Knight A] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30008700",
+      "Name": "3320 [Queen's Knight A]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30008800",
+      "Name": "3330 [Queen's Knight B] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30008900",
+      "Name": "3330 [Queen's Knight B] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30009000",
+      "Name": "3330 [Queen's Knight B] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30009100",
+      "Name": "3330 [Queen's Knight B]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30009200",
+      "Name": "3340 [Queen's Knight C] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30009300",
+      "Name": "3340 [Queen's Knight C] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30009400",
+      "Name": "3340 [Queen's Knight C] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30009500",
+      "Name": "3340 [Queen's Knight C]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30009600",
+      "Name": "5040 [Mirror Knight] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30009700",
+      "Name": "5040 [Mirror Knight] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30009800",
+      "Name": "5040 [Mirror Knight] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30009900",
+      "Name": "5040 [Mirror Knight]・Feet",
+      "Description": ""
+    },
+    {
+      "ID": "30010000",
+      "Name": "5060 [Agaduran] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30010100",
+      "Name": "5060 [Agaduran]・Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30010200",
+      "Name": "5060 [Agaduran] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30010300",
+      "Name": "5060 [Agaduran]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30010400",
+      "Name": "5090 [Dark Bishop] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30010500",
+      "Name": "5090 [Dark Bishop] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30010600",
+      "Name": "5090 [Dark Bishop] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30010700",
+      "Name": "5090 [Dark Bishop] Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30010800",
+      "Name": "5130 [King Vangrat (past)] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30010900",
+      "Name": "5130 [King Vangrat (Past)] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30011000",
+      "Name": "5130 [King Vangrat (past)] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30011100",
+      "Name": "5130 [King Vangrat (past)] Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30011200",
+      "Name": "6100 [Heavy Cavalry/Heavy Knight (Living)] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30011300",
+      "Name": "6100 [Heavy Cavalry/Heavy Knight (Living)] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30011400",
+      "Name": "6100 [Heavy cavalry/heavy knight (living)] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30011500",
+      "Name": "6100 [Heavy cavalry soldier/heavy knight (living)]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30011600",
+      "Name": "6180 [Silver Chariot] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30011700",
+      "Name": "6180 [Silver Chariot] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30011800",
+      "Name": "6180 [Silver Chariot] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30011900",
+      "Name": "6180 [Silver Chariot]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30012000",
+      "Name": "6260 [Forgotten Sinner] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30012100",
+      "Name": "6260 [Forgotten Sinner] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30012200",
+      "Name": "6260 [Forgotten Sinner] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30012300",
+      "Name": "6260 [Forgotten Sinner] Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30012400",
+      "Name": "7210 [Kingdom Tactician (Past)] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30012500",
+      "Name": "7210 [Kingdom Tactician (Past)] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30012600",
+      "Name": "7210 [Kingdom Tactician (Past)] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30012700",
+      "Name": "7210 [Kingdom Tactician (Past)]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30012800",
+      "Name": "7240 [Captain of the Guard] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30012900",
+      "Name": "7240 [Captain of the Guard] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30013000",
+      "Name": "7240 [Captain of the Guard] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30013100",
+      "Name": "7240 [Captain of the Guard]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30013200",
+      "Name": "7550 [Stalker Warrior] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30013300",
+      "Name": "7550 [Stalker Warrior] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30013400",
+      "Name": "7550 [Stalker Warrior] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30013500",
+      "Name": "7550 [Stalker Warrior] Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30013600",
+      "Name": "7680 [Spell Four Heavenly Kings (Magic)] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30013700",
+      "Name": "7680 [Spell Four Heavenly Kings (Magic)] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30013800",
+      "Name": "7680 [Spell Four Heavenly Kings (Magic)] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30013900",
+      "Name": "7680 [Spell Four Heavenly Kings (Magic)] Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30014000",
+      "Name": "7690 [Spell Four Heavenly Kings (Miracle)] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30014100",
+      "Name": "7690 [Spell Four Heavenly Kings (Miracle)] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30014200",
+      "Name": "7690 [Spell Four Heavenly Kings (Miracle)] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30014300",
+      "Name": "7690 [Spell Four Heavenly Kings (Miracle)]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30014400",
+      "Name": "7700 [Spell Four Heavenly Kings (Magic)] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30014500",
+      "Name": "7700 [Spell Four Heavenly Kings (Magic)] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30014600",
+      "Name": "7700 [Spell Four Heavenly Kings (Magic)] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30014700",
+      "Name": "7700 [Spell Four Heavenly Kings (Magic)]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "30014800",
+      "Name": "7710 [Spell Four Heavenly Kings (Dark Arts)] Head",
+      "Description": ""
+    },
+    {
+      "ID": "30014900",
+      "Name": "7710 [Spell Four Heavenly Kings (Dark Arts)] Chest",
+      "Description": ""
+    },
+    {
+      "ID": "30015000",
+      "Name": "7710 [Spell Four Heavenly Kings (Dark Arts)] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "30015100",
+      "Name": "7710 [Spell Four Heavenly Kings (Dark Art)]・Foot",
+      "Description": ""
+    },
+    {
+      "ID": "40000000",
+      "Name": "1330 [Ancient Dragon Armor] Head",
+      "Description": ""
+    },
+    {
+      "ID": "40000100",
+      "Name": "1330 [Armor of the Ancient Dragon]・Chest",
+      "Description": ""
+    },
+    {
+      "ID": "40000200",
+      "Name": "1330 [Armor of the Ancient Dragon] Arm",
+      "Description": ""
+    },
+    {
+      "ID": "40000300",
+      "Name": "1330 [Ancient Dragon Armor]・Feet",
+      "Description": ""
+    }
+  ]
+}

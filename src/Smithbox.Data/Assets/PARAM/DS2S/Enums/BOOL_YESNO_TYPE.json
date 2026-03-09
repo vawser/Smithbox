@@ -1,0 +1,17 @@
+{
+  "DisplayName": "BOOL_YESNO_TYPE",
+  "Name": "BOOL_YESNO_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "No",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Yes",
+      "Description": ""
+    }
+  ]
+}

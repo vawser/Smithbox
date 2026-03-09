@@ -1,0 +1,27 @@
+{
+  "DisplayName": "EVENT_VALUE_m10_25_00_00",
+  "Name": "EVENT_VALUE_m10_25_00_00",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Enemies whose number of appearances changes: Number of appearances",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Enemies whose number of appearances changes: death count",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Pledge: Rank Comparison: Pilgrim of the Abyss",
+      "Description": ""
+    }
+  ]
+}

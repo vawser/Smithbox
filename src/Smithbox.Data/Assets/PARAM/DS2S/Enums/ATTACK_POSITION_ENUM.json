@@ -1,0 +1,22 @@
+{
+  "DisplayName": "ATTACK_POSITION_ENUM",
+  "Name": "ATTACK_POSITION_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Upper row",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Middle row",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Lower tier",
+      "Description": ""
+    }
+  ]
+}

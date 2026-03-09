@@ -1,0 +1,32 @@
+{
+  "DisplayName": "BULLET_CTRL_TYPE",
+  "Name": "BULLET_CTRL_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Damipori",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Follow the person",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Foot tracking",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Homing target",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Wall crawling",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "DisplayName": "BULLET_NET_HIT_TYPE",
+  "Name": "BULLET_NET_HIT_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Attacker",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Defender",
+      "Description": ""
+    }
+  ]
+}

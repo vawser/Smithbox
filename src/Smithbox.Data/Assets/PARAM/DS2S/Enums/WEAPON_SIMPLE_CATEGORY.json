@@ -1,0 +1,27 @@
+{
+  "DisplayName": "WEAPON_SIMPLE_CATEGORY",
+  "Name": "WEAPON_SIMPLE_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Weapon",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Bow",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Crossbow",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Shield",
+      "Description": ""
+    }
+  ]
+}

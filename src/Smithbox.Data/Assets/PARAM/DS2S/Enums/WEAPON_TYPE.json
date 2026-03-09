@@ -1,0 +1,167 @@
+{
+  "DisplayName": "WEAPON_TYPE",
+  "Name": "WEAPON_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Bare hands",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "爪",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "拳",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Stabbing sword",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "鞭",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "槍",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Assault spear",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "刀",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Two-handed oversized curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "One-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Two-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "One handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Two-handed long ax",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "杖",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "鈴",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Two-handed longbow",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "One handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Small shield",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Large shield",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Torch",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Binoculars",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Fire of sorcery",
+      "Description": ""
+    }
+  ]
+}

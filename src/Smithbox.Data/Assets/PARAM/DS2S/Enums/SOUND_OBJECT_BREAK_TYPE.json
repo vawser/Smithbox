@@ -1,0 +1,72 @@
+{
+  "DisplayName": "SOUND_OBJECT_BREAK_TYPE",
+  "Name": "SOUND_OBJECT_BREAK_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "See my id",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Tree (small)",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Wood (middle)",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Tree (large)",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Stone (small)",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Stone (medium)",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Stone (large)",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Pottery (small)",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Pottery (medium)",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Pottery (large)",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Iron (small)",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Iron (medium)",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Iron (large)",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "DisplayName": "ITEM_MOTION_TYPE",
+  "Name": "ITEM_MOTION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Scatter",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Drink",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Throw",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Crush",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "DisplayName": "GENERATOR_POS_TYPE",
+  "Name": "GENERATOR_POS_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Above ground",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Air",
+      "Description": ""
+    }
+  ]
+}

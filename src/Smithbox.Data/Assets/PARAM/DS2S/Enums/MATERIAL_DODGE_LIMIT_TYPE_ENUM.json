@@ -1,0 +1,27 @@
+{
+  "DisplayName": "MATERIAL_DODGE_LIMIT_TYPE_ENUM",
+  "Name": "MATERIAL_DODGE_LIMIT_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Mild",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Severe",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Prohibited",
+      "Description": ""
+    }
+  ]
+}

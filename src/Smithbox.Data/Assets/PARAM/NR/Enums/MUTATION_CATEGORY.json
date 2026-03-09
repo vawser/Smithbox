@@ -1,0 +1,97 @@
+{
+  "DisplayName": "Mutation Category",
+  "Name": "MUTATION_CATEGORY",
+  "Description": "Used for determining Deep of Night mutation/variant categories",
+  "Options": [
+    {
+      "ID": "100",
+      "Name": "Standard Enemy A",
+      "Description": ""
+    },
+    {
+      "ID": "101",
+      "Name": "Standard Enemy B",
+      "Description": ""
+    },
+    {
+      "ID": "103",
+      "Name": "Standard Enemy C",
+      "Description": ""
+    },
+    {
+      "ID": "104",
+      "Name": "Standard Enemy D",
+      "Description": ""
+    },
+    {
+      "ID": "105",
+      "Name": "Standard Enemy (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "110",
+      "Name": "Base Boss",
+      "Description": ""
+    },
+    {
+      "ID": "120",
+      "Name": "Field Boss",
+      "Description": ""
+    },
+    {
+      "ID": "130",
+      "Name": "Castle Elite",
+      "Description": ""
+    },
+    {
+      "ID": "131",
+      "Name": "Castle Enemy",
+      "Description": ""
+    },
+    {
+      "ID": "135",
+      "Name": "Eastern Fort Boss/Elite (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "136",
+      "Name": "Western Fort Boss/Elite (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "137",
+      "Name": "Eastern Fort Enemy (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "138",
+      "Name": "Western Fort Enemy (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "140",
+      "Name": "Scarab",
+      "Description": ""
+    },
+    {
+      "ID": "141",
+      "Name": "Scarab (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "150",
+      "Name": "Mine Elite",
+      "Description": ""
+    },
+    {
+      "ID": "151",
+      "Name": "Mine Elite (Great Hollow)",
+      "Description": ""
+    },
+    {
+      "ID": "160",
+      "Name": "Evergaol Boss",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "DisplayName": "ITEM_ENCHANT_TYPE",
+  "Name": "ITEM_ENCHANT_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Not possible",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Pine resin only",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Spell enchantment only",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Pine resin and spell enchantment",
+      "Description": ""
+    }
+  ]
+}

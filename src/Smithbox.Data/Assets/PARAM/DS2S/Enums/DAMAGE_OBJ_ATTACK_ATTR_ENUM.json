@@ -1,0 +1,67 @@
+{
+  "DisplayName": "DAMAGE_OBJ_ATTACK_ATTR_ENUM",
+  "Name": "DAMAGE_OBJ_ATTACK_ATTR_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Dummy (prohibited to use)",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "No destruction",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Gust of wind",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Throwing grab",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Piercing - Cannot destroy urn",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Piercing",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Slash",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Blow",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Explosion",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Giant",
+      "Description": ""
+    },
+    {
+      "ID": "150",
+      "Name": "Extra large explosion",
+      "Description": ""
+    },
+    {
+      "ID": "200",
+      "Name": "Indestructible",
+      "Description": ""
+    }
+  ]
+}

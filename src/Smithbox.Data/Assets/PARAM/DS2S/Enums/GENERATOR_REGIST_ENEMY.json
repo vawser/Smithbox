@@ -1,0 +1,22 @@
+{
+  "DisplayName": "GENERATOR_REGIST_ENEMY",
+  "Name": "GENERATOR_REGIST_ENEMY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "Player",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Test enemy",
+      "Description": ""
+    }
+  ]
+}

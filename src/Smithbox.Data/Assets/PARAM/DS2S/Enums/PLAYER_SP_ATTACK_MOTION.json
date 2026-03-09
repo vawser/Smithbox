@@ -1,0 +1,172 @@
+{
+  "DisplayName": "PLAYER_SP_ATTACK_MOTION",
+  "Name": "PLAYER_SP_ATTACK_MOTION",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "20010280",
+      "Name": "Fist_One-handed throw and grab (medium)",
+      "Description": ""
+    },
+    {
+      "ID": "20010282",
+      "Name": "Fist_One-handed throw and grab (large)",
+      "Description": ""
+    },
+    {
+      "ID": "20010300",
+      "Name": "Fist_One-handed backstab",
+      "Description": ""
+    },
+    {
+      "ID": "20010310",
+      "Name": "Fist_One-handed parry break stab",
+      "Description": ""
+    },
+    {
+      "ID": "20010320",
+      "Name": "Fist_One-handed guard break stab",
+      "Description": ""
+    },
+    {
+      "ID": "21010300",
+      "Name": "Dagger_One-handed backstab",
+      "Description": ""
+    },
+    {
+      "ID": "21010310",
+      "Name": "Dagger_One-handed parry break stab",
+      "Description": ""
+    },
+    {
+      "ID": "21010320",
+      "Name": "Dagger_One-handed guard break stab",
+      "Description": ""
+    },
+    {
+      "ID": "25010300",
+      "Name": "Spear_One-handed backstab",
+      "Description": ""
+    },
+    {
+      "ID": "25010310",
+      "Name": "Spear_One-handed parry break stab",
+      "Description": ""
+    },
+    {
+      "ID": "25010320",
+      "Name": "Spear_One-handed guard break stab",
+      "Description": ""
+    },
+    {
+      "ID": "25010330",
+      "Name": "Spear_One-handed fall stab_Giant junior soldier",
+      "Description": ""
+    },
+    {
+      "ID": "25010331",
+      "Name": "Spear_One-handed fall stab_Wyvern",
+      "Description": ""
+    },
+    {
+      "ID": "25010332",
+      "Name": "Spear_One-handed fall stab_Titan senior soldier (giant)",
+      "Description": ""
+    },
+    {
+      "ID": "25010334",
+      "Name": "Spear_One-handed fall stab_Elephant",
+      "Description": ""
+    },
+    {
+      "ID": "25010335",
+      "Name": "Spear_One-handed fall stab_Salamander",
+      "Description": ""
+    },
+    {
+      "ID": "25010336",
+      "Name": "Spear_One-handed Fall Stab_New Titan Advanced Soldier (Living)",
+      "Description": ""
+    },
+    {
+      "ID": "29010300",
+      "Name": "Straight sword_one-handed backstab",
+      "Description": ""
+    },
+    {
+      "ID": "29010310",
+      "Name": "Straight sword_one-handed parry break stab",
+      "Description": ""
+    },
+    {
+      "ID": "29010320",
+      "Name": "Straight sword_one-handed guard break stab",
+      "Description": ""
+    },
+    {
+      "ID": "29010330",
+      "Name": "Straight sword_one-handed fall stab_giant junior soldier",
+      "Description": ""
+    },
+    {
+      "ID": "29010331",
+      "Name": "Straight sword_one-handed fall stab_wyvern",
+      "Description": ""
+    },
+    {
+      "ID": "29010332",
+      "Name": "Straight sword_one-handed fall stab_giant senior soldier (giant)",
+      "Description": ""
+    },
+    {
+      "ID": "29010334",
+      "Name": "Straight sword_one-handed fall stab_elephant",
+      "Description": ""
+    },
+    {
+      "ID": "29010335",
+      "Name": "Straight sword_One-handed fall stab_Salamander",
+      "Description": ""
+    },
+    {
+      "ID": "29010336",
+      "Name": "Straight sword_One-handed fall stab_New giant senior soldier (living)",
+      "Description": ""
+    },
+    {
+      "ID": "32010280",
+      "Name": "Two-handed oversized sword_one-handed throw and grab (medium)",
+      "Description": ""
+    },
+    {
+      "ID": "32010300",
+      "Name": "Two-handed oversized sword_one-handed backstab",
+      "Description": ""
+    },
+    {
+      "ID": "32010310",
+      "Name": "Two-handed oversized sword_one-handed parry break stab",
+      "Description": ""
+    },
+    {
+      "ID": "32010320",
+      "Name": "Two-handed oversized sword_one-handed guard break stub",
+      "Description": ""
+    },
+    {
+      "ID": "36010300",
+      "Name": "Two-handed ax_one-handed backstab",
+      "Description": ""
+    },
+    {
+      "ID": "36010310",
+      "Name": "Two-handed ax_one-handed parry break stab",
+      "Description": ""
+    },
+    {
+      "ID": "36010320",
+      "Name": "Two-handed ax_one-handed guard break stab",
+      "Description": ""
+    }
+  ]
+}

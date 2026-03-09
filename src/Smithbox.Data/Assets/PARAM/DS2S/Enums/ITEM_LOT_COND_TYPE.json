@@ -1,0 +1,17 @@
+{
+  "DisplayName": "ITEM_LOT_COND_TYPE",
+  "Name": "ITEM_LOT_COND_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Host & client",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Host only",
+      "Description": ""
+    }
+  ]
+}

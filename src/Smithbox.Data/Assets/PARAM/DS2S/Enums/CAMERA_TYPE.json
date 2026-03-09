@@ -1,0 +1,67 @@
+{
+  "DisplayName": "CAMERA_TYPE",
+  "Name": "CAMERA_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Rubber strap camera",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Action camera",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Initial placement camera",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Mobile tracking camera",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Combat camera",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Camera with free range",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Subjective camera",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Dark soul camera",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Normal camera",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Menu camera",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Throwing camera",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Event camera",
+      "Description": ""
+    }
+  ]
+}

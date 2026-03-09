@@ -1,0 +1,22 @@
+{
+  "DisplayName": "GRAB_ATTACH_TYPE",
+  "Name": "GRAB_ATTACH_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Thrower",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "The side that was thrown",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "None",
+      "Description": ""
+    }
+  ]
+}

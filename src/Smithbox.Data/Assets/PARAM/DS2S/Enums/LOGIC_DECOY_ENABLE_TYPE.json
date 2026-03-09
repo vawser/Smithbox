@@ -1,0 +1,17 @@
+{
+  "DisplayName": "LOGIC_DECOY_ENABLE_TYPE",
+  "Name": "LOGIC_DECOY_ENABLE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Valid",
+      "Description": ""
+    }
+  ]
+}

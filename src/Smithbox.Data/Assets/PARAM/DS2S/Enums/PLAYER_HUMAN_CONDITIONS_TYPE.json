@@ -1,0 +1,22 @@
+{
+  "DisplayName": "PLAYER_HUMAN_CONDITIONS_TYPE",
+  "Name": "PLAYER_HUMAN_CONDITIONS_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Living person",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Deceased",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Amazing dead",
+      "Description": ""
+    }
+  ]
+}

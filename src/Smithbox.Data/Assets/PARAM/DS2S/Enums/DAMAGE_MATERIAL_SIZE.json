@@ -1,0 +1,32 @@
+{
+  "DisplayName": "DAMAGE_MATERIAL_SIZE",
+  "Name": "DAMAGE_MATERIAL_SIZE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Small",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Medium",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Large",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Extra large",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Extra extra large",
+      "Description": ""
+    }
+  ]
+}

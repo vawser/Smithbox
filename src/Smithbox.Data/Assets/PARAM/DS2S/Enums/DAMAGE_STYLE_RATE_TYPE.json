@@ -1,0 +1,22 @@
+{
+  "DisplayName": "DAMAGE_STYLE_RATE_TYPE",
+  "Name": "DAMAGE_STYLE_RATE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "One hand",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Both hands",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Dual wielding",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,467 @@
+{
+  "DisplayName": "CHR_EDIT_FACE_PARAM_TYPE",
+  "Name": "CHR_EDIT_FACE_PARAM_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Age",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Sex",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Shape exaggeration",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Color exaggeration",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Eyebrow, nose and chin proportions",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Ratio near forehead",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Face width",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Roundness of face",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Face parts balance",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Face parts tilt up and down",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Face parts balance left and right",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Skin color flushing pallor",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Color Skin tone Dark Light",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Color Skin color Orange-blue",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Color Skin color Purple yellow",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Color Skin color Red-green",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Color Nose Bridge Pale Red",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Color cheek color light red",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Depth between eyebrows",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Location between eyebrows",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Height between eyebrows",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Irregularities on the bridge and upper part of the nose",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Width between eyebrows",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Eyebrow height",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Inner edge of eyebrow",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Outer edge of eyebrow",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Color eyebrow red",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Color Eyebrow color blue",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Color eyebrow green",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Eye position",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "Eye size",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Tilt of the eyes",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "Eye distance",
+      "Description": ""
+    },
+    {
+      "ID": "35",
+      "Name": "Color Eye color red",
+      "Description": ""
+    },
+    {
+      "ID": "36",
+      "Name": "Color Eye color Blue",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "Color Eye color Green",
+      "Description": ""
+    },
+    {
+      "ID": "38",
+      "Name": "Color Eye socket color Birthmark Bright",
+      "Description": ""
+    },
+    {
+      "ID": "39",
+      "Name": "Color Eye socket color Dark Light",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Color Eyelid Light Dark",
+      "Description": ""
+    },
+    {
+      "ID": "41",
+      "Name": "Color eyelid blue red",
+      "Description": ""
+    },
+    {
+      "ID": "42",
+      "Name": "Color eyeliner light dark",
+      "Description": ""
+    },
+    {
+      "ID": "43",
+      "Name": "Color eyeshadow light dark",
+      "Description": ""
+    },
+    {
+      "ID": "44",
+      "Name": "Depth of nose",
+      "Description": ""
+    },
+    {
+      "ID": "45",
+      "Name": "Length of nose bridge",
+      "Description": ""
+    },
+    {
+      "ID": "46",
+      "Name": "Nose length",
+      "Description": ""
+    },
+    {
+      "ID": "48",
+      "Name": "Uneven nose",
+      "Description": ""
+    },
+    {
+      "ID": "49",
+      "Name": "Nose height",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Upper and lower nostrils",
+      "Description": ""
+    },
+    {
+      "ID": "51",
+      "Name": "Slope of the nose",
+      "Description": ""
+    },
+    {
+      "ID": "52",
+      "Name": "Size of nose",
+      "Description": ""
+    },
+    {
+      "ID": "53",
+      "Name": "Width of nostril",
+      "Description": ""
+    },
+    {
+      "ID": "54",
+      "Name": "Nostril size",
+      "Description": ""
+    },
+    {
+      "ID": "55",
+      "Name": "Cheekbone height",
+      "Description": ""
+    },
+    {
+      "ID": "56",
+      "Name": "Cheekbone depth",
+      "Description": ""
+    },
+    {
+      "ID": "57",
+      "Name": "Cheekbone width",
+      "Description": ""
+    },
+    {
+      "ID": "58",
+      "Name": "Uneven cheeks",
+      "Description": ""
+    },
+    {
+      "ID": "59",
+      "Name": "頬",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Cheek wrinkle line",
+      "Description": ""
+    },
+    {
+      "ID": "62",
+      "Name": "Expression of mouth, happiness/sadness",
+      "Description": ""
+    },
+    {
+      "ID": "63",
+      "Name": "Swelling of lips",
+      "Description": ""
+    },
+    {
+      "ID": "64",
+      "Name": "Lip size",
+      "Description": ""
+    },
+    {
+      "ID": "66",
+      "Name": "Lip thickness",
+      "Description": ""
+    },
+    {
+      "ID": "67",
+      "Name": "Unevenness of the mouth",
+      "Description": ""
+    },
+    {
+      "ID": "68",
+      "Name": "Mouth",
+      "Description": ""
+    },
+    {
+      "ID": "69",
+      "Name": "Lip shape",
+      "Description": ""
+    },
+    {
+      "ID": "70",
+      "Name": "Mouth position",
+      "Description": ""
+    },
+    {
+      "ID": "71",
+      "Name": "Mouth width",
+      "Description": ""
+    },
+    {
+      "ID": "72",
+      "Name": "Distance from mouth to chin",
+      "Description": ""
+    },
+    {
+      "ID": "73",
+      "Name": "Color Lip color Flush Pale",
+      "Description": ""
+    },
+    {
+      "ID": "74",
+      "Name": "Color lipstick black red white blue",
+      "Description": ""
+    },
+    {
+      "ID": "75",
+      "Name": "Color lipstick black blue white red",
+      "Description": ""
+    },
+    {
+      "ID": "76",
+      "Name": "Front and back of jaw",
+      "Description": ""
+    },
+    {
+      "ID": "77",
+      "Name": "Vertical length of chin_",
+      "Description": ""
+    },
+    {
+      "ID": "78",
+      "Name": "Jaw protrusion_",
+      "Description": ""
+    },
+    {
+      "ID": "79",
+      "Name": "Chin depth",
+      "Description": ""
+    },
+    {
+      "ID": "80",
+      "Name": "Jaw size",
+      "Description": ""
+    },
+    {
+      "ID": "81",
+      "Name": "Chin height",
+      "Description": ""
+    },
+    {
+      "ID": "82",
+      "Name": "Jaw width",
+      "Description": ""
+    },
+    {
+      "ID": "83",
+      "Name": "Chin protrusion",
+      "Description": ""
+    },
+    {
+      "ID": "84",
+      "Name": "Jaw width",
+      "Description": ""
+    },
+    {
+      "ID": "85",
+      "Name": "Submandibular",
+      "Description": ""
+    },
+    {
+      "ID": "86",
+      "Name": "Jaw line",
+      "Description": ""
+    },
+    {
+      "ID": "87",
+      "Name": "Color beard color red",
+      "Description": ""
+    },
+    {
+      "ID": "88",
+      "Name": "Color Beard green",
+      "Description": ""
+    },
+    {
+      "ID": "89",
+      "Name": "Color Beard color Blue",
+      "Description": ""
+    },
+    {
+      "ID": "90",
+      "Name": "Color hair color red",
+      "Description": ""
+    },
+    {
+      "ID": "91",
+      "Name": "Color hair color green",
+      "Description": ""
+    },
+    {
+      "ID": "92",
+      "Name": "Color hair color blue",
+      "Description": ""
+    },
+    {
+      "ID": "93",
+      "Name": "Color tattoo color red",
+      "Description": ""
+    },
+    {
+      "ID": "94",
+      "Name": "Color tattoo color green",
+      "Description": ""
+    },
+    {
+      "ID": "95",
+      "Name": "Color tattoo color blue",
+      "Description": ""
+    },
+    {
+      "ID": "96",
+      "Name": "Color Tattoo color α",
+      "Description": ""
+    }
+  ]
+}

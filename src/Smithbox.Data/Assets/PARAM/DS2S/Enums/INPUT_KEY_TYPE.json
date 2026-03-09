@@ -1,0 +1,482 @@
+{
+  "DisplayName": "INPUT_KEY_TYPE",
+  "Name": "INPUT_KEY_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Left mouse button",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Right mouse button",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Middle mouse button",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Mouse wheel up",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Mouse wheel down",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Double left mouse button",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Mouse right button double",
+      "Description": ""
+    },
+    {
+      "ID": "54",
+      "Name": "Esc",
+      "Description": ""
+    },
+    {
+      "ID": "55",
+      "Name": "1",
+      "Description": ""
+    },
+    {
+      "ID": "56",
+      "Name": "2",
+      "Description": ""
+    },
+    {
+      "ID": "57",
+      "Name": "3",
+      "Description": ""
+    },
+    {
+      "ID": "58",
+      "Name": "4",
+      "Description": ""
+    },
+    {
+      "ID": "59",
+      "Name": "5",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "6",
+      "Description": ""
+    },
+    {
+      "ID": "61",
+      "Name": "7",
+      "Description": ""
+    },
+    {
+      "ID": "62",
+      "Name": "8",
+      "Description": ""
+    },
+    {
+      "ID": "63",
+      "Name": "9",
+      "Description": ""
+    },
+    {
+      "ID": "64",
+      "Name": "0",
+      "Description": ""
+    },
+    {
+      "ID": "65",
+      "Name": "-",
+      "Description": ""
+    },
+    {
+      "ID": "67",
+      "Name": "Back Space",
+      "Description": ""
+    },
+    {
+      "ID": "68",
+      "Name": "Tab",
+      "Description": ""
+    },
+    {
+      "ID": "69",
+      "Name": "Q",
+      "Description": ""
+    },
+    {
+      "ID": "70",
+      "Name": "W",
+      "Description": ""
+    },
+    {
+      "ID": "71",
+      "Name": "E",
+      "Description": ""
+    },
+    {
+      "ID": "72",
+      "Name": "R",
+      "Description": ""
+    },
+    {
+      "ID": "73",
+      "Name": "T",
+      "Description": ""
+    },
+    {
+      "ID": "74",
+      "Name": "Y",
+      "Description": ""
+    },
+    {
+      "ID": "75",
+      "Name": "U",
+      "Description": ""
+    },
+    {
+      "ID": "76",
+      "Name": "I",
+      "Description": ""
+    },
+    {
+      "ID": "77",
+      "Name": "O",
+      "Description": ""
+    },
+    {
+      "ID": "78",
+      "Name": "P",
+      "Description": ""
+    },
+    {
+      "ID": "79",
+      "Name": "[",
+      "Description": ""
+    },
+    {
+      "ID": "80",
+      "Name": "]",
+      "Description": ""
+    },
+    {
+      "ID": "81",
+      "Name": "Enter",
+      "Description": ""
+    },
+    {
+      "ID": "82",
+      "Name": "Left Ctrl",
+      "Description": ""
+    },
+    {
+      "ID": "83",
+      "Name": "A",
+      "Description": ""
+    },
+    {
+      "ID": "84",
+      "Name": "S",
+      "Description": ""
+    },
+    {
+      "ID": "85",
+      "Name": "D",
+      "Description": ""
+    },
+    {
+      "ID": "86",
+      "Name": "F",
+      "Description": ""
+    },
+    {
+      "ID": "87",
+      "Name": "G",
+      "Description": ""
+    },
+    {
+      "ID": "88",
+      "Name": "H",
+      "Description": ""
+    },
+    {
+      "ID": "89",
+      "Name": "J",
+      "Description": ""
+    },
+    {
+      "ID": "90",
+      "Name": "K",
+      "Description": ""
+    },
+    {
+      "ID": "91",
+      "Name": "L",
+      "Description": ""
+    },
+    {
+      "ID": "92",
+      "Name": ";",
+      "Description": ""
+    },
+    {
+      "ID": "93",
+      "Name": "`",
+      "Description": ""
+    },
+    {
+      "ID": "94",
+      "Name": "^",
+      "Description": ""
+    },
+    {
+      "ID": "95",
+      "Name": "Left Shift",
+      "Description": ""
+    },
+    {
+      "ID": "96",
+      "Name": "\\(backslash)",
+      "Description": ""
+    },
+    {
+      "ID": "97",
+      "Name": "Z",
+      "Description": ""
+    },
+    {
+      "ID": "98",
+      "Name": "X",
+      "Description": ""
+    },
+    {
+      "ID": "99",
+      "Name": "C",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "V",
+      "Description": ""
+    },
+    {
+      "ID": "101",
+      "Name": "B",
+      "Description": ""
+    },
+    {
+      "ID": "102",
+      "Name": "N",
+      "Description": ""
+    },
+    {
+      "ID": "103",
+      "Name": "M",
+      "Description": ""
+    },
+    {
+      "ID": "104",
+      "Name": ",(comma)",
+      "Description": ""
+    },
+    {
+      "ID": "105",
+      "Name": ".(period)",
+      "Description": ""
+    },
+    {
+      "ID": "106",
+      "Name": "/",
+      "Description": ""
+    },
+    {
+      "ID": "107",
+      "Name": "Right Shift",
+      "Description": ""
+    },
+    {
+      "ID": "108",
+      "Name": "*",
+      "Description": ""
+    },
+    {
+      "ID": "109",
+      "Name": "Left Alt",
+      "Description": ""
+    },
+    {
+      "ID": "110",
+      "Name": "Space",
+      "Description": ""
+    },
+    {
+      "ID": "112",
+      "Name": "F1",
+      "Description": ""
+    },
+    {
+      "ID": "113",
+      "Name": "F2",
+      "Description": ""
+    },
+    {
+      "ID": "114",
+      "Name": "F3",
+      "Description": ""
+    },
+    {
+      "ID": "115",
+      "Name": "F4",
+      "Description": ""
+    },
+    {
+      "ID": "116",
+      "Name": "F5",
+      "Description": ""
+    },
+    {
+      "ID": "117",
+      "Name": "F6",
+      "Description": ""
+    },
+    {
+      "ID": "118",
+      "Name": "F7",
+      "Description": ""
+    },
+    {
+      "ID": "119",
+      "Name": "F8",
+      "Description": ""
+    },
+    {
+      "ID": "120",
+      "Name": "F9",
+      "Description": ""
+    },
+    {
+      "ID": "121",
+      "Name": "F10",
+      "Description": ""
+    },
+    {
+      "ID": "124",
+      "Name": "Numeric keypad 7",
+      "Description": ""
+    },
+    {
+      "ID": "125",
+      "Name": "Numeric keypad 8",
+      "Description": ""
+    },
+    {
+      "ID": "126",
+      "Name": "Numeric keypad 9",
+      "Description": ""
+    },
+    {
+      "ID": "127",
+      "Name": "Numeric keypad - (minus)",
+      "Description": ""
+    },
+    {
+      "ID": "128",
+      "Name": "Numeric keypad 4",
+      "Description": ""
+    },
+    {
+      "ID": "129",
+      "Name": "Numeric keypad 5",
+      "Description": ""
+    },
+    {
+      "ID": "130",
+      "Name": "Numeric keypad 6",
+      "Description": ""
+    },
+    {
+      "ID": "131",
+      "Name": "Numeric keypad + (plus)",
+      "Description": ""
+    },
+    {
+      "ID": "132",
+      "Name": "Numeric keypad 1",
+      "Description": ""
+    },
+    {
+      "ID": "133",
+      "Name": "Numeric keypad 2",
+      "Description": ""
+    },
+    {
+      "ID": "134",
+      "Name": "Numeric keypad 3",
+      "Description": ""
+    },
+    {
+      "ID": "135",
+      "Name": "Numeric keypad 0",
+      "Description": ""
+    },
+    {
+      "ID": "136",
+      "Name": "Numeric keypad . (dot)",
+      "Description": ""
+    },
+    {
+      "ID": "138",
+      "Name": "F11",
+      "Description": ""
+    },
+    {
+      "ID": "139",
+      "Name": "F12",
+      "Description": ""
+    },
+    {
+      "ID": "147",
+      "Name": "￥.",
+      "Description": ""
+    },
+    {
+      "ID": "169",
+      "Name": "Numeric keypad / (main rush)",
+      "Description": ""
+    },
+    {
+      "ID": "171",
+      "Name": "Right Alt",
+      "Description": ""
+    },
+    {
+      "ID": "174",
+      "Name": "↑",
+      "Description": ""
+    },
+    {
+      "ID": "176",
+      "Name": "←",
+      "Description": ""
+    },
+    {
+      "ID": "177",
+      "Name": "→",
+      "Description": ""
+    },
+    {
+      "ID": "179",
+      "Name": "↓",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,6432 @@
+{
+  "DisplayName": "WEAPON_STATS_AFFECT_PARAM_ID",
+  "Name": "WEAPON_STATS_AFFECT_PARAM_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Reservation data (prohibited from use)",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "For production",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Function test 1",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Function test 2",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Function test 3",
+      "Description": ""
+    },
+    {
+      "ID": "1000000",
+      "Name": "[Unenhanced] No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "1000001",
+      "Name": "[Magic] No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "1000002",
+      "Name": "[Lightning] No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "1000003",
+      "Name": "[Fire] No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "1000004",
+      "Name": "[Darkness] No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "1000005",
+      "Name": "[Poison] No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "1000006",
+      "Name": "[Bleeding] No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "1000007",
+      "Name": "[Crude] No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "1000008",
+      "Name": "[Magic] No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "1000009",
+      "Name": "[Abyss] No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "1001000",
+      "Name": "[Unreinforced] Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1001001",
+      "Name": "[Magic] Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1001002",
+      "Name": "[Thunder] Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1001003",
+      "Name": "[Fire] Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1001004",
+      "Name": "[Darkness] Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1001005",
+      "Name": "[Poison] Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1001006",
+      "Name": "[Bleeding] Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1001007",
+      "Name": "[Crude] Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1001008",
+      "Name": "[Magic] Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1001009",
+      "Name": "[Abyss] Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1001010",
+      "Name": "[Unenhanced] Strength A Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1001011",
+      "Name": "[Magic] Strength A Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1001012",
+      "Name": "[Thunder] Strength A Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1001013",
+      "Name": "[Fire] Strength A Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1001014",
+      "Name": "[Darkness] Strength A Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1001015",
+      "Name": "[Poison] Strength A Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1001016",
+      "Name": "[Bleeding] Strength A Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1001017",
+      "Name": "[Crude] Strength A Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1001018",
+      "Name": "[Magic] Strength A Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1001019",
+      "Name": "[Abyss] Strength A Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1001020",
+      "Name": "[Unenhanced] Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1001021",
+      "Name": "[Magic] Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1001022",
+      "Name": "[Thunder] Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1001023",
+      "Name": "[Fire] Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1001024",
+      "Name": "[Darkness] Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1001025",
+      "Name": "[Poison] Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1001026",
+      "Name": "[Bleeding] Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1001027",
+      "Name": "[Crude] Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1001028",
+      "Name": "[Magic] Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1001029",
+      "Name": "[Abyss] Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1002000",
+      "Name": "[Unenhanced] Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1002001",
+      "Name": "[Magic] Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1002002",
+      "Name": "[Thunder] Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1002003",
+      "Name": "[Fire] Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1002004",
+      "Name": "[Darkness] Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1002005",
+      "Name": "[Poison] Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1002006",
+      "Name": "[Bleeding] Muscle B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1002007",
+      "Name": "[Crude] Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1002008",
+      "Name": "[Magic] Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1002009",
+      "Name": "[Abyss] Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1002010",
+      "Name": "[Unreinforced] Strength B Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1002011",
+      "Name": "[Magic] Strength B Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1002012",
+      "Name": "[Thunder] Strength B Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1002013",
+      "Name": "[Fire] Strength B Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1002014",
+      "Name": "[Darkness] Strength B Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1002015",
+      "Name": "[Poison] Strength B Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1002016",
+      "Name": "[Bleeding] Muscle B Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1002017",
+      "Name": "[Crude] Strength B Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1002018",
+      "Name": "[Magic] Strength B Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1002019",
+      "Name": "[Abyss] Strength B Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1002020",
+      "Name": "[Unreinforced] Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1002021",
+      "Name": "[Magic] Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1002022",
+      "Name": "[Thunder] Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1002023",
+      "Name": "[Fire] Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1002024",
+      "Name": "[Darkness] Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1002025",
+      "Name": "[Poison] Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1002026",
+      "Name": "[Bleeding] Muscle B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1002027",
+      "Name": "[Crude] Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1002028",
+      "Name": "[Magic] Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1002029",
+      "Name": "[Abyss] Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1002030",
+      "Name": "[Unenhanced] Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1002031",
+      "Name": "[Magic] Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1002032",
+      "Name": "[Thunder] Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1002033",
+      "Name": "[Fire] Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1002034",
+      "Name": "[Darkness] Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1002035",
+      "Name": "[Poison] Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1002036",
+      "Name": "[Bleeding] Muscle B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1002037",
+      "Name": "[Crude] Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1002038",
+      "Name": "[Magic] Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1002039",
+      "Name": "[Abyss] Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1002040",
+      "Name": "[Unenhanced] Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1002041",
+      "Name": "[Magic] Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1002042",
+      "Name": "[Thunder] Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1002043",
+      "Name": "[Fire] Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1002044",
+      "Name": "[Darkness] Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1002045",
+      "Name": "[Poison] Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1002046",
+      "Name": "[Bleeding] Muscle B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1002047",
+      "Name": "[Crude] Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1002048",
+      "Name": "[Magic] Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1002049",
+      "Name": "[Abyss] Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003000",
+      "Name": "[Unreinforced] Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1003001",
+      "Name": "[Magic] Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1003002",
+      "Name": "[Thunder] Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1003003",
+      "Name": "[Fire] Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1003004",
+      "Name": "[Darkness] Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1003005",
+      "Name": "[Poison] Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1003006",
+      "Name": "[Bleeding] Muscle C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1003007",
+      "Name": "[Crude] Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1003008",
+      "Name": "[Magic] Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1003009",
+      "Name": "[Abyss] Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1003010",
+      "Name": "[Unreinforced] Strength C’ Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1003011",
+      "Name": "[Magic] Strength C’ Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1003012",
+      "Name": "[Thunder] Strength C’ Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1003013",
+      "Name": "[Fire] Strength C’ Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1003014",
+      "Name": "[Darkness] Strength C’ Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1003015",
+      "Name": "[Poison] Strength C’ Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1003016",
+      "Name": "[Bleeding] Strength C’ Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1003017",
+      "Name": "[Crude] Strength C’ Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1003018",
+      "Name": "[Magic] Strength C’ Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1003019",
+      "Name": "[Abyss] Strength C’ Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1003020",
+      "Name": "[Unreinforced] Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1003021",
+      "Name": "[Magic] Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1003022",
+      "Name": "[Thunder] Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1003023",
+      "Name": "[Fire] Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1003024",
+      "Name": "[Darkness] Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1003025",
+      "Name": "[Poison] Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1003026",
+      "Name": "[Bleeding] Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1003027",
+      "Name": "[Crude] Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1003028",
+      "Name": "[Magic] Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1003029",
+      "Name": "[Abyss] Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1003030",
+      "Name": "[Unreinforced] Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1003031",
+      "Name": "[Magic] Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1003032",
+      "Name": "[Thunder] Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1003033",
+      "Name": "[Fire] Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1003034",
+      "Name": "[Darkness] Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1003035",
+      "Name": "[Poison] Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1003036",
+      "Name": "[Bleeding] Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1003037",
+      "Name": "[Crude] Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1003038",
+      "Name": "[Magic] Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1003039",
+      "Name": "[Abyss] Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1003050",
+      "Name": "[Unreinforced] Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1003051",
+      "Name": "[Magic] Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1003052",
+      "Name": "[Thunder] Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1003053",
+      "Name": "[Fire] Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1003054",
+      "Name": "[Darkness] Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1003055",
+      "Name": "[Poison] Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1003056",
+      "Name": "[Bleeding] Muscle C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1003057",
+      "Name": "[Crude] Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1003058",
+      "Name": "[Magic] Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1003059",
+      "Name": "[Abyss] Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1003090",
+      "Name": "[Unreinforced] Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1003091",
+      "Name": "[Magic] Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1003092",
+      "Name": "[Thunder] Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1003093",
+      "Name": "[Fire] Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1003094",
+      "Name": "[Darkness] Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1003095",
+      "Name": "[Poison] Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1003096",
+      "Name": "[Bleeding] Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1003097",
+      "Name": "[Crude] Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1003098",
+      "Name": "[Magic] Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1003099",
+      "Name": "[Abyss] Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1003100",
+      "Name": "[Unreinforced] Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003101",
+      "Name": "[Magic] Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003102",
+      "Name": "[Thunder] Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003103",
+      "Name": "[Fire] Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003104",
+      "Name": "[Darkness] Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003105",
+      "Name": "[Poison] Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003106",
+      "Name": "[Bleeding] Muscle C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003107",
+      "Name": "[Crude] Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003108",
+      "Name": "[Magic] Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003109",
+      "Name": "[Abyss] Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1003110",
+      "Name": "[Unenhanced] Spear of Ornstein: Strength E Skill B Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003111",
+      "Name": "[First class: Magic] Spear of Ornstein: Strength E Skill B Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003112",
+      "Name": "[First class: Lightning] Spear of Ornstein: Strength E Skill B Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003113",
+      "Name": "[First class: Fire] Spear of Ornstein: Strength E Skill B Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003114",
+      "Name": "[First class: Darkness] Spear of Ornstein: Strength E Skill B Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003115",
+      "Name": "[First class: Poison] Spear of Ornstein: Strength E Skill B Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003116",
+      "Name": "[First class: Bleeding] Spear of Ornstein: Strength E Skill B Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003117",
+      "Name": "[First class: Crude] Spear of Ornstein: Strength E, Skill B, Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003118",
+      "Name": "[First class: Magic] Spear of Ornstein: Strength E Skill B Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003119",
+      "Name": "[First affiliation: Abyss] Spear of Ornstein: Strength E Skill B Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003120",
+      "Name": "[Unenhanced] Queen's Knight A: Strength C Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003121",
+      "Name": "[First class: Magic] Queen's Knight A: Strength C Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003122",
+      "Name": "[First class: Thunder] Queen's Knight A: Strength C Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003123",
+      "Name": "[First class: Fire] Queen's Knight A: Strength C Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003124",
+      "Name": "[First affiliation: Darkness] Queen's Knight A: Strength C Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003125",
+      "Name": "[First class: Poison] Queen's Knight A: Strength C Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003126",
+      "Name": "[First class: Bleeding] Queen's Knight A: Strength C Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003127",
+      "Name": "[First class: Crude] Queen's Knight A: Strength C Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003128",
+      "Name": "[First class: Magic] Queen's Knight A: Strength C Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003129",
+      "Name": "[First affiliation: Abyss] Queen's Knight A: Strength C Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1003130",
+      "Name": "[Unreinforced] Crescent Ax: Strength C, Skill C, Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1003131",
+      "Name": "[First class: Magic] Crescent Ax: Strength C Skill C Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1003132",
+      "Name": "[First class: Thunder] Crescent Ax: Strength C, Skill C, Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1003133",
+      "Name": "[First class: Fire] Crescent Ax: Strength C, Skill C, Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1003134",
+      "Name": "[First class: Darkness] Crescent Ax: Strength C Skill C Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1003135",
+      "Name": "[First class: Poison] Crescent Ax: Strength C Skill C Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1003136",
+      "Name": "[First class: Bleeding] Crescent Ax: Strength C, Skill C, Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1003137",
+      "Name": "[First class: Crude] Crescent Ax: Strength C, Skill C, Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1003138",
+      "Name": "[First class: Magic] Crescent Ax: Strength C Skill C Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1003139",
+      "Name": "[First affiliation: Abyss] Crescent Ax: Strength C, Skill C, Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1003140",
+      "Name": "[Unenhanced] Queen's Knight B's Hammer: Strength C Skill - Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003141",
+      "Name": "[First class: Magic] Queen's Knight B's two-handed hammer: Strength C Skill - Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003142",
+      "Name": "[First class: Thunder] Queen's Knight B's two-handed hammer: Strength C Skill - Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003143",
+      "Name": "[First class: Fire] Queen's Knight B's two-handed hammer: Strength C Skill - Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003144",
+      "Name": "[First affiliation: Darkness] Queen's Knight B's two-handed hammer: Strength C Skill - Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003145",
+      "Name": "[First class: Poison] Queen's Knight B's two-handed hammer: Strength C Skill - Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003146",
+      "Name": "[First class: Bleeding] Queen's Knight B's two-handed hammer: Strength C Skill - Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003147",
+      "Name": "[First class: Crude] Queen's Knight B's two-handed hammer: Strength C Skill - Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003148",
+      "Name": "[First class: Magic] Queen's Knight B's two-handed hammer: Strength C Skill - Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003149",
+      "Name": "[First affiliation: Abyss] Queen's Knight B's two-handed hammer: Strength C Skill - Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003150",
+      "Name": "[Unenhanced] Immortal Advanced Soldier's Spear: Strength C Skill C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003151",
+      "Name": "[First class: Magic] Immortal Advanced Soldier's Spear: Strength C Skill C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003152",
+      "Name": "[First class: Lightning] Immortal Advanced Soldier's Spear: Strength C, Skill C, Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003153",
+      "Name": "[First class: Fire] Immortal Advanced Soldier's Spear: Strength C Skill C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003154",
+      "Name": "[First affiliation: Darkness] Immortal Advanced Soldier's Spear: Strength C Skill C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003155",
+      "Name": "[First class: Poison] Immortal Advanced Soldier's Spear: Strength C Skill C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003156",
+      "Name": "[First class: Bleeding] Immortal Advanced Soldier's Spear: Strength C Skill C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003157",
+      "Name": "[First class: Crude] Immortal Advanced Soldier's Spear: Strength C, Skill C, Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003158",
+      "Name": "[First class: Magic] Immortal Advanced Soldier's Spear: Strength C Skill C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003159",
+      "Name": "[First affiliation: Abyss] Immortal Advanced Soldier's Spear: Strength C Skill C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003160",
+      "Name": "[Unenhanced] Strength C Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003161",
+      "Name": "[Magic] Strength C Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003162",
+      "Name": "[Thunder] Strength C Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003163",
+      "Name": "[Fire] Strength C Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003164",
+      "Name": "[Darkness] Strength C Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003165",
+      "Name": "[Poison] Strength C Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003166",
+      "Name": "[Bleeding] Strength C Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003167",
+      "Name": "[Crude] Strength C Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003168",
+      "Name": "[Magic] Strength C Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1003169",
+      "Name": "[Abyss] Strength C Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1004000",
+      "Name": "[Unenhanced] Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1004001",
+      "Name": "[Magic] Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1004002",
+      "Name": "[Thunder] Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1004003",
+      "Name": "[Fire] Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1004004",
+      "Name": "[Darkness] Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1004005",
+      "Name": "[Poison] Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1004006",
+      "Name": "[Bleeding] Muscle D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1004007",
+      "Name": "[Crude] Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1004008",
+      "Name": "[Magic] Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1004009",
+      "Name": "[Abyss] Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1004010",
+      "Name": "[Unenhanced] Strength D Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1004011",
+      "Name": "[Magic] Strength D Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1004012",
+      "Name": "[Thunder] Strength D Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1004013",
+      "Name": "[Fire] Strength D Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1004014",
+      "Name": "[Darkness] Strength D Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1004015",
+      "Name": "[Poison] Strength D Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1004016",
+      "Name": "[Bleeding] Muscle D Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1004017",
+      "Name": "[Crude] Strength D Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1004018",
+      "Name": "[Magic] Strength D Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1004019",
+      "Name": "[Abyss] Strength D Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1004020",
+      "Name": "[Unenhanced] Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1004021",
+      "Name": "[Magic] Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1004022",
+      "Name": "[Thunder] Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1004023",
+      "Name": "[Fire] Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1004024",
+      "Name": "[Darkness] Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1004025",
+      "Name": "[Poison] Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1004026",
+      "Name": "[Bleeding] Muscle D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1004027",
+      "Name": "[Crude] Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1004028",
+      "Name": "[Magic] Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1004029",
+      "Name": "[Abyss] Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1004030",
+      "Name": "[Unenhanced] Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1004031",
+      "Name": "[Magic] Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1004032",
+      "Name": "[Thunder] Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1004033",
+      "Name": "[Fire] Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1004034",
+      "Name": "[Darkness] Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1004035",
+      "Name": "[Poison] Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1004036",
+      "Name": "[Bleeding] Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1004037",
+      "Name": "[Crude] Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1004038",
+      "Name": "[Magic] Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1004039",
+      "Name": "[Abyss] Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1004040",
+      "Name": "[Unenhanced] Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1004041",
+      "Name": "[Magic] Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1004042",
+      "Name": "[Thunder] Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1004043",
+      "Name": "[Fire] Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1004044",
+      "Name": "[Darkness] Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1004045",
+      "Name": "[Poison] Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1004046",
+      "Name": "[Bleeding] Muscle D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1004047",
+      "Name": "[Crude] Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1004048",
+      "Name": "[Magic] Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1004049",
+      "Name": "[Abyss] Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1004050",
+      "Name": "[Unenhanced] Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1004051",
+      "Name": "[Magic] Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1004052",
+      "Name": "[Thunder] Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1004053",
+      "Name": "[Fire] Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1004054",
+      "Name": "[Darkness] Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1004055",
+      "Name": "[Poison] Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1004056",
+      "Name": "[Bleeding] Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1004057",
+      "Name": "[Crude] Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1004058",
+      "Name": "[Magic] Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1004059",
+      "Name": "[Abyss] Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1004060",
+      "Name": "[Unenhanced] Phantom Priest's Hammer: Strength D, Skill C, Lightning E, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1004061",
+      "Name": "[First class: Magic] Phantom Priest's Hammer: Strength D, Skill C, Lightning E, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1004062",
+      "Name": "[First class: Lightning] Phantom Priest's hammer: Strength D, Skill C, Lightning E, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1004063",
+      "Name": "[First class: Fire] Phantom Priest's hammer: Strength D, Skill C, Lightning E, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1004064",
+      "Name": "[First class: Darkness] Phantom Priest's hammer: Strength D, Skill C, Lightning E, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1004065",
+      "Name": "[First class: Poison] Phantom Priest's hammer: Strength D, Skill C, Lightning E, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1004066",
+      "Name": "[First class: Bleeding] Phantom Priest's hammer: Strength D, Skill C, Lightning E, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1004067",
+      "Name": "[First class: Crude] Phantom Priest's Hammer: Strength D, Skill C, Lightning E, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1004068",
+      "Name": "[First class: Magic] Phantom Priest's hammer: Strength D, Skill C, Lightning E, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1004069",
+      "Name": "[First affiliation: Abyss] Phantom Priest's hammer: Strength D, Skill C, Lightning E, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1004070",
+      "Name": "[Unenhanced] Demon Knight's oversized sword: Strength D, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1004071",
+      "Name": "[First class: Magic] Demon Knight's oversized sword: Strength D, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1004072",
+      "Name": "[First class: Lightning] Demon Knight's oversized sword: Strength D, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1004073",
+      "Name": "[First class: Fire] Demon Knight's oversized sword: Strength D, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1004074",
+      "Name": "[First class: Darkness] Demon Knight's oversized sword: Strength D, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1004075",
+      "Name": "[First class: Poison] Demon Knight's oversized sword: Strength D, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1004076",
+      "Name": "[First class: Bleeding] Demon Knight's oversized sword: Strength D, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1004077",
+      "Name": "[First class: Crude] Demon Knight's oversized sword: Strength D, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1004078",
+      "Name": "[First class: Magic] Demon Knight's oversized sword: Strength D, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1004079",
+      "Name": "[First affiliation: Abyss] Demon Knight's oversized sword: Strength D, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1004080",
+      "Name": "[Unenhanced] Agaduran's oversized sword: Strength D, Skill D, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1004081",
+      "Name": "[Agaduran's oversized sword: Magic] Agaduran's oversized sword: Strength D Skill D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1004082",
+      "Name": "[Agaduran's oversized sword: Lightning] Agaduran's oversized sword: Strength D Skill D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1004083",
+      "Name": "[Agaduran's oversized sword: Fire] Agaduran's oversized sword: Strength D Skill D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1004084",
+      "Name": "[Agaduran's oversized sword: Darkness] Agaduran's oversized sword: Strength D Skill D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1004085",
+      "Name": "[Agaduran's oversized sword: Poison] Agaduran's oversized sword: Strength D Skill D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1004086",
+      "Name": "[Agaduran's oversized sword: Bleeding] Agaduran's oversized sword: Strength D Skill D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1004087",
+      "Name": "[Agaduran's oversized sword: Crude] Agaduran's oversized sword: Strength D Skill D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1004088",
+      "Name": "[Agaduran's oversized sword: Magic] Agaduran's oversized sword: Strength D Skill D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1004089",
+      "Name": "[Agaduran's oversized sword: Abyss] Agaduran's oversized sword: Strength D Skill D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1004090",
+      "Name": "[Unreinforced] Shield: Strength D Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004091",
+      "Name": "[First Class B: Magic] Shield: Strength D Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004092",
+      "Name": "[Initial B: Thunder] Shield: Strength D Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004093",
+      "Name": "[Initial B: Fire] Shield: Strength D Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004094",
+      "Name": "[Initial B: Darkness] Shield: Strength D Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004095",
+      "Name": "[First class B: Poison] Shield: Strength D Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004096",
+      "Name": "[First attribute B: Bleeding] Shield: Strength D Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004097",
+      "Name": "[First Class B: Crude] Shield: Strength D Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004098",
+      "Name": "[Initial attribute B: Magic] Shield: Strength D Skill - Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004099",
+      "Name": "[First Class B: Abyss] Shield: Strength D Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004100",
+      "Name": "[Unreinforced] Queen's Knight A's medium shield: Strength D, Skill D, Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004101",
+      "Name": "[Initial D: Magic] Queen's Knight A's Medium Shield: Strength D, Skill D, Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004102",
+      "Name": "[Initial D: Thunder] Queen's Knight A's Medium Shield: Strength D, Skill D, Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004103",
+      "Name": "[Initial D: Fire] Queen's Knight A's Medium Shield: Strength D, Skill D, Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004104",
+      "Name": "[Initial D: Darkness] Queen's Knight A's Medium Shield: Strength D, Skill D, Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004105",
+      "Name": "[Initial D: Poison] Queen's Knight A's Medium Shield: Strength D, Skill D, Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004106",
+      "Name": "[First Class D: Bleeding] Queen's Knight A's Medium Shield: Strength D, Skill D, Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004107",
+      "Name": "[Initial D: Crude] Queen's Knight A's Medium Shield: Strength D, Skill D, Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004108",
+      "Name": "[Initial D: Magic] Queen's Knight A's Medium Shield: Strength D, Skill D, Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004109",
+      "Name": "[First Class D: Abyss] Queen's Knight A's Medium Shield: Strength D, Skill D, Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1004110",
+      "Name": "[Unenhanced] Strength D Skill- Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1004111",
+      "Name": "[Magic] Strength D Skill- Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1004112",
+      "Name": "[Thunder] Strength D Skill- Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1004113",
+      "Name": "[Fire] Strength D Skill- Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1004114",
+      "Name": "[Darkness] Strength D Skill- Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1004115",
+      "Name": "[Poison] Strength D Skill- Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1004116",
+      "Name": "[Bleeding] Strength D Skill- Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1004117",
+      "Name": "[Crude] Strength D Skill- Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1004118",
+      "Name": "[Magic] Strength D Skill- Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1004119",
+      "Name": "[Abyss] Strength D Skill- Reason E",
+      "Description": ""
+    },
+    {
+      "ID": "1005000",
+      "Name": "[Unenhanced] Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1005001",
+      "Name": "[Magic] Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1005002",
+      "Name": "[Thunder] Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1005003",
+      "Name": "[Fire] Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1005004",
+      "Name": "[Darkness] Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1005005",
+      "Name": "[Poison] Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1005006",
+      "Name": "[Bleeding] Muscle E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1005007",
+      "Name": "[Crude] Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1005008",
+      "Name": "[Magic] Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1005009",
+      "Name": "[Abyss] Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1005010",
+      "Name": "[Unenhanced] Strength E Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1005011",
+      "Name": "[Magic] Strength E Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1005012",
+      "Name": "[Thunder] Strength E Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1005013",
+      "Name": "[Fire] Strength E Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1005014",
+      "Name": "[Darkness] Strength E Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1005015",
+      "Name": "[Poison] Strength E Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1005016",
+      "Name": "[Bleeding] Strength E Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1005017",
+      "Name": "[Crude] Strength E Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1005018",
+      "Name": "[Magic] Strength E Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1005019",
+      "Name": "[Abyss] Strength E Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1005020",
+      "Name": "[Unenhanced] Strength E Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1005021",
+      "Name": "[Magic] Strength E Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1005022",
+      "Name": "[Thunder] Strength E Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1005023",
+      "Name": "[Fire] Strength E Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1005024",
+      "Name": "[Darkness] Strength E Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1005025",
+      "Name": "[Poison] Strength E Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1005026",
+      "Name": "[Bleeding] Muscle E Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1005027",
+      "Name": "[Crude] Strength E Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1005028",
+      "Name": "[Magic] Strength E Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1005029",
+      "Name": "[Abyss] Strength E Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1005030",
+      "Name": "[Unenhanced] Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1005031",
+      "Name": "[Magic] Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1005032",
+      "Name": "[Thunder] Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1005033",
+      "Name": "[Fire] Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1005034",
+      "Name": "[Darkness] Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1005035",
+      "Name": "[Poison] Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1005036",
+      "Name": "[Bleeding] Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1005037",
+      "Name": "[Crude] Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1005038",
+      "Name": "[Magic] Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1005039",
+      "Name": "[Abyss] Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1005040",
+      "Name": "[Unenhanced] Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1005041",
+      "Name": "[Magic] Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1005042",
+      "Name": "[Thunder] Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1005043",
+      "Name": "[Fire] Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1005044",
+      "Name": "[Darkness] Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1005045",
+      "Name": "[Poison] Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1005046",
+      "Name": "[Bleeding] Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1005047",
+      "Name": "[Crude] Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1005048",
+      "Name": "[Magic] Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1005049",
+      "Name": "[Abyss] Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1005050",
+      "Name": "[Unenhanced] Strength E Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1005051",
+      "Name": "[Magic] Strength E Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1005052",
+      "Name": "[Thunder] Strength E Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1005053",
+      "Name": "[Fire] Strength E Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1005054",
+      "Name": "[Darkness] Strength E Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1005055",
+      "Name": "[Poison] Strength E Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1005056",
+      "Name": "[Bleeding] Strength E Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1005057",
+      "Name": "[Crude] Strength E Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1005058",
+      "Name": "[Magic] Strength E Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1005059",
+      "Name": "[Abyss] Strength E Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1005060",
+      "Name": "[Unenhanced] Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1005061",
+      "Name": "[Magic] Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1005062",
+      "Name": "[Thunder] Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1005063",
+      "Name": "[Fire] Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1005064",
+      "Name": "[Darkness] Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1005065",
+      "Name": "[Poison] Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1005066",
+      "Name": "[Bleeding] Muscle E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1005067",
+      "Name": "[Crude] Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1005068",
+      "Name": "[Magic] Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1005069",
+      "Name": "[Abyss] Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1005070",
+      "Name": "[Unenhanced] Phantom Mage's one-handed sword: Strength E, Skill D, Magic C, Fire D",
+      "Description": ""
+    },
+    {
+      "ID": "1005071",
+      "Name": "[Phantom Mage's one-handed sword: Magic] Phantom Mage's one-handed sword: Strength E, Skill D, Magic C, Fire D",
+      "Description": ""
+    },
+    {
+      "ID": "1005072",
+      "Name": "[Phantom Mage's one-handed sword: Lightning] Phantom Mage's one-handed sword: Strength E, Skill D, Magic C, Fire D",
+      "Description": ""
+    },
+    {
+      "ID": "1005073",
+      "Name": "[Phantom Mage's one-handed sword: Flame] Phantom Mage's one-handed sword: Strength E Skill D Magic C Flame D",
+      "Description": ""
+    },
+    {
+      "ID": "1005074",
+      "Name": "[Phantom Mage's one-handed sword: Dark] Phantom Mage's one-handed sword: Strength E, Skill D, Magic C, Fire D",
+      "Description": ""
+    },
+    {
+      "ID": "1005075",
+      "Name": "[Phantom Mage's one-handed sword: Poison] Phantom Mage's one-handed sword: Strength E, Skill D, Magic C, Fire D",
+      "Description": ""
+    },
+    {
+      "ID": "1005076",
+      "Name": "[Phantom Mage's one-handed sword: Bleeding] Phantom Mage's one-handed sword: Strength E, Skill D, Magic C, Fire D",
+      "Description": ""
+    },
+    {
+      "ID": "1005077",
+      "Name": "[Phantom Mage's one-handed sword: Crude] Phantom Mage's one-handed sword: Strength E, Skill D, Magic C, Fire D",
+      "Description": ""
+    },
+    {
+      "ID": "1005078",
+      "Name": "[Phantom Mage's one-handed sword: Magic] Phantom Mage's one-handed sword: Strength E Skill D Magic C Fire D",
+      "Description": ""
+    },
+    {
+      "ID": "1005079",
+      "Name": "[Phantom Mage's one-handed sword: Abyss] Phantom Mage's one-handed sword: Strength E, Skill D, Magic C, Fire D",
+      "Description": ""
+    },
+    {
+      "ID": "1005080",
+      "Name": "[Unreinforced] Queen's Knight C: Strength E, Skill D, Magic B",
+      "Description": ""
+    },
+    {
+      "ID": "1005081",
+      "Name": "[Queen's Knight C: Magic] Queen's Knight C: Strength E Skill D Magic B",
+      "Description": ""
+    },
+    {
+      "ID": "1005082",
+      "Name": "[Queen's Knight C: Lightning] Queen's Knight C: Strength E Skill D Magic B",
+      "Description": ""
+    },
+    {
+      "ID": "1005083",
+      "Name": "[Queen's Knight C: Fire] Queen's Knight C: Strength E Skill D Magic B",
+      "Description": ""
+    },
+    {
+      "ID": "1005084",
+      "Name": "[Queen's Knight C: Dark] Queen's Knight C: Strength E Skill D Magic B",
+      "Description": ""
+    },
+    {
+      "ID": "1005085",
+      "Name": "[Queen's Knight C: Poison] Queen's Knight C: Strength E Skill D Magic B",
+      "Description": ""
+    },
+    {
+      "ID": "1005086",
+      "Name": "[Queen's Knight C: Bleeding] Queen's Knight C: Strength E, Skill D, Magic B",
+      "Description": ""
+    },
+    {
+      "ID": "1005087",
+      "Name": "[Queen's Knight C: Crude] Queen's Knight C: Strength E, Skill D, Magic B",
+      "Description": ""
+    },
+    {
+      "ID": "1005088",
+      "Name": "[Queen's Knight C: Magic] Queen's Knight C: Strength E Skill D Magic B",
+      "Description": ""
+    },
+    {
+      "ID": "1005089",
+      "Name": "[Queen's Knight C: Abyss] Queen's Knight C: Strength E, Skill D, Magic B",
+      "Description": ""
+    },
+    {
+      "ID": "1005090",
+      "Name": "[Unreinforced] Necromancer's Small Shield: Strength E, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1005091",
+      "Name": "[Initial Class C: Magic] Necromancer's Small Shield: Strength E Skill D Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1005092",
+      "Name": "[First class C: Lightning] Necromancer's small shield: Strength E Skill D Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1005093",
+      "Name": "[First class C: Fire] Necromancer's small shield: Strength E Skill D Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1005094",
+      "Name": "[Initial C: Darkness] Necromancer's Small Shield: Strength E, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1005095",
+      "Name": "[Initial C: Poison] Necromancer's Small Shield: Strength E Skill D Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1005096",
+      "Name": "[First class C: Bleeding] Necromancer's small shield: Strength E Skill D Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1005097",
+      "Name": "[Initial C: Crude] Necromancer's Small Shield: Strength E, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1005098",
+      "Name": "[Initial C: Magic] Necromancer's Small Shield: Strength E, Skill D, Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1005099",
+      "Name": "[First class C: Abyss] Necromancer's small shield: Strength E Skill D Fire C",
+      "Description": ""
+    },
+    {
+      "ID": "1005100",
+      "Name": "[Unreinforced] Golden Wing Medium Shield: Strength E Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1005101",
+      "Name": "[Gold Winged Medium Shield: Magic] Golden Winged Medium Shield: Strength E Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1005102",
+      "Name": "[Gold-winged medium shield: Lightning] Golden-winged medium shield: Strength E Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1005103",
+      "Name": "[Gold-winged medium shield: Fire] Golden-winged medium shield: Strength E Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1005104",
+      "Name": "[Gold-winged medium shield: Darkness] Golden-winged medium shield: Strength E Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1005105",
+      "Name": "[Medium Shield of Golden Wings: Poison] Medium Shield of Golden Wings: Strength E Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1005106",
+      "Name": "[Gold-winged medium shield: Bleeding] Golden-winged medium shield: Strength E Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1005107",
+      "Name": "[Medium Shield of Golden Wings: Crude] Medium Shield of Golden Wings: Strength E Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1005108",
+      "Name": "[Medium Shield of Golden Wings: Magic] Medium Shield of Golden Wings: Strength E Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1005109",
+      "Name": "[Gold Winged Medium Shield: Abyss] Golden Winged Medium Shield: Strength E Skill- Reason C",
+      "Description": ""
+    },
+    {
+      "ID": "1005110",
+      "Name": "[Unenhanced] Spell Four Heavenly Kings (Miracle) Medium Shield: Strength E Skill - Thunder C",
+      "Description": ""
+    },
+    {
+      "ID": "1005111",
+      "Name": "[Initial attribute D: Magic] Spell Four Heavenly Kings (Miracle) Medium Shield: Strength E Skill - Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1005112",
+      "Name": "[First attribute D: Thunder] Spell Four Heavenly Kings (Miracle) Medium Shield: Strength E Skill - Thunder C",
+      "Description": ""
+    },
+    {
+      "ID": "1005113",
+      "Name": "[First attribute D: Fire] Spell Four Heavenly Kings (Miracle) Medium Shield: Strength E Skill - Thunder C",
+      "Description": ""
+    },
+    {
+      "ID": "1005114",
+      "Name": "[Initial attribute D: Darkness] Spell Four Heavenly Kings (Miracle) Medium Shield: Strength E Skill - Thunder C",
+      "Description": ""
+    },
+    {
+      "ID": "1005115",
+      "Name": "[Initial attribute D: Poison] Spell Four Heavenly Kings (Miracle) Medium Shield: Strength E Skill - Thunder C",
+      "Description": ""
+    },
+    {
+      "ID": "1005116",
+      "Name": "[First attribute D: Bleeding] Spell Four Heavenly Kings (Miracle) Medium Shield: Strength E Skill - Thunder C",
+      "Description": ""
+    },
+    {
+      "ID": "1005117",
+      "Name": "[Initial D: Crude] Spell Four Heavenly Kings (Miracle) Medium Shield: Strength E Skill - Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1005118",
+      "Name": "[Initial attribute D: Magic power] Spell Four Heavenly Kings (Miracle) Medium Shield: Strength E Skill - Thunder C",
+      "Description": ""
+    },
+    {
+      "ID": "1005119",
+      "Name": "[First attribute D: Abyss] Medium shield of Spell Four Heavenly Kings (Miracle): Strength E Skill - Thunder C",
+      "Description": ""
+    },
+    {
+      "ID": "1006000",
+      "Name": "[Unreinforced] Strength - Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1006001",
+      "Name": "[Magic] Strength - Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1006002",
+      "Name": "[Thunder] Strength - Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1006003",
+      "Name": "[Fire] Strength - Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1006004",
+      "Name": "[Dark] Strength - Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1006005",
+      "Name": "[Poison] Strength - Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1006006",
+      "Name": "[Bleeding] Strength - Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1006007",
+      "Name": "[Crude] Strength - Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1006008",
+      "Name": "[Magic] Strength - Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1006009",
+      "Name": "[Abyss] Strength - Skill S",
+      "Description": ""
+    },
+    {
+      "ID": "1006010",
+      "Name": "[Unenhanced] Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1006011",
+      "Name": "[Magic] Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1006012",
+      "Name": "[Thunder] Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1006013",
+      "Name": "[Fire] Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1006014",
+      "Name": "[Darkness] Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1006015",
+      "Name": "[Poison] Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1006016",
+      "Name": "[Bleeding] Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1006017",
+      "Name": "[Crude] Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1006018",
+      "Name": "[Magic] Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1006019",
+      "Name": "[Abyss] Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1006020",
+      "Name": "[Unenhanced] Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1006021",
+      "Name": "[Magic] Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1006022",
+      "Name": "[Thunder] Strength- Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1006023",
+      "Name": "[Fire] Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1006024",
+      "Name": "[Darkness] Strength- Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1006025",
+      "Name": "[Poison] Strength- Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1006026",
+      "Name": "[Bleeding] Strength- Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1006027",
+      "Name": "[Crude] Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1006028",
+      "Name": "[Magic] Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1006029",
+      "Name": "[Abyss] Strength- Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1006030",
+      "Name": "[Unreinforced] Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1006031",
+      "Name": "[Magic] Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1006032",
+      "Name": "[Thunder] Strength- Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1006033",
+      "Name": "[Fire] Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1006034",
+      "Name": "[Darkness] Strength- Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1006035",
+      "Name": "[Poison] Strength- Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1006036",
+      "Name": "[Bleeding] Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1006037",
+      "Name": "[Crude] Strength- Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1006038",
+      "Name": "[Magic] Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1006039",
+      "Name": "[Abyss] Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1006040",
+      "Name": "[Unreinforced] Initial attribute: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1006041",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1006042",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1006043",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1006044",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1006045",
+      "Name": "[Initial Attribute B: Poison] Initial Attribute: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1006046",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1006047",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1006048",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1006049",
+      "Name": "[Initial Attribute B: Abyss] Initial Attribute: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1006050",
+      "Name": "[Unenhanced] Strength - Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1006051",
+      "Name": "[Magic] Strength - Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1006052",
+      "Name": "[Thunder] Strength- Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1006053",
+      "Name": "[Fire] Strength- Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1006054",
+      "Name": "[Darkness] Strength- Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1006055",
+      "Name": "[Poison] Strength- Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1006056",
+      "Name": "[Bleeding] Strength- Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1006057",
+      "Name": "[Crude] Strength - Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1006058",
+      "Name": "[Magic] Strength - Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1006059",
+      "Name": "[Abyss] Strength- Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1006060",
+      "Name": "[Unenhanced] Spell Four Heavenly Kings (Curse) Piercing Sword: Strength - Skill B Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1006061",
+      "Name": "[First Flame: Magic] Spell Four Heavenly Kings (Magic) Piercing Sword: Strength - Skill B Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1006062",
+      "Name": "[Initial Flame: Lightning] Spell Four Heavenly Kings (Magic) Piercing Sword: Strength - Skill B Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1006063",
+      "Name": "[Initial attribute flame: Fire] Spell Four Heavenly Kings (Magic) Piercing Sword: Strength Skill B Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1006064",
+      "Name": "[Initial Flame: Darkness] Spell Four Heavenly Kings (Magic) Piercing Sword: Strength - Skill B Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1006065",
+      "Name": "[Initial Flame: Poison] Spell Four Heavenly Kings (Magic) Piercing Sword: Strength - Skill B Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1006066",
+      "Name": "[Initial Flame: Bleeding] Spell Four Heavenly Kings (Magic) Piercing Sword: Strength - Skill B Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1006067",
+      "Name": "[Initial Flame: Crude] Spell Four Heavenly Kings (Magic) Piercing Sword: Strength - Skill B Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1006068",
+      "Name": "[Initial Flame: Magic] Spell Four Heavenly Kings (Magic) Piercing Sword: Strength - Skill B Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1006069",
+      "Name": "[First Attribute Flame: Abyss] Spell Four Heavenly Kings (Magic) Piercing Sword: Strength - Skill B Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1006070",
+      "Name": "[Unenhanced] Skeleton noble's two-handed long ax: Strength - Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1006071",
+      "Name": "[Skeleton noble's two-handed long spear: Magic] Skeleton noble's two-handed long ax: Strength - Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1006072",
+      "Name": "[Skeleton noble's two-handed long spear: Lightning] Skeleton noble's two-handed long ax: Strength - Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1006073",
+      "Name": "[Skeleton nobleman's two-handed spear: Flame] Skeleton nobleman's two-handed axe: Strength - Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1006074",
+      "Name": "[Skeleton noble's two-handed long spear: Dark] Skeleton noble's two-handed long ax: Strength - Skill B Dark C",
+      "Description": ""
+    },
+    {
+      "ID": "1006075",
+      "Name": "[Skeleton noble's two-handed long spear: Poison] Skeleton noble's two-handed long ax: Strength - Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1006076",
+      "Name": "[Skeleton noble's two-handed long spear: Bleeding] Skeleton noble's two-handed long ax: Strength - Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1006077",
+      "Name": "[Skeleton nobleman's two-handed spear: Crude] Skeleton nobleman's two-handed axe: Strength - Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1006078",
+      "Name": "[Skeleton noble's two-handed long spear: Magic] Skeleton noble's two-handed long ax: Strength - Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1006079",
+      "Name": "[Skeleton noble's two-handed long spear: Abyss] Skeleton noble's two-handed long ax: Strength - Skill B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1006080",
+      "Name": "[Unenhanced] Dark Priest's Small Shield: Strength - Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1006081",
+      "Name": "[Initial Class C: Magic] Dark Priest's Small Shield: Strength - Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1006082",
+      "Name": "[Initial C: Lightning] Dark Priest's Small Shield: Strength - Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1006083",
+      "Name": "[Initial C: Fire] Dark Priest's Small Shield: Strength - Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1006084",
+      "Name": "[Initial C: Darkness] Dark Priest's Small Shield: Strength - Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1006085",
+      "Name": "[Initial C: Poison] Dark Priest's Small Shield: Strength - Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1006086",
+      "Name": "[First Class C: Bleeding] Dark Priest's Small Shield: Strength - Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1006087",
+      "Name": "[Initial C: Crude] Dark Priest's Small Shield: Strength - Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1006088",
+      "Name": "[Initial Class C: Magic] Dark Priest's Small Shield: Strength - Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1006089",
+      "Name": "[First Class C: Abyss] Dark Priest's Small Shield: Strength - Skill D Lightning C",
+      "Description": ""
+    },
+    {
+      "ID": "1007000",
+      "Name": "[Unenhanced] Catalyst: Reason S Dark-",
+      "Description": ""
+    },
+    {
+      "ID": "1007001",
+      "Name": "[Catalyst: Magic] Catalyst: Reason S Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1007002",
+      "Name": "[Catalyst: Lightning] Catalyst: Riki S Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1007003",
+      "Name": "[Catalyst: Flame] Catalyst: Riki S Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1007004",
+      "Name": "[Catalyst: Darkness] Catalyst: Riki S Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1007005",
+      "Name": "[Poison] Catalyst: Reason S Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1007006",
+      "Name": "[Bleeding] Catalyst: Riki S Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1007007",
+      "Name": "[Crude] Catalyst: Riki S Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1007008",
+      "Name": "[Magic] Catalyst: Riki S Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1007009",
+      "Name": "[Abyss] Catalyst: Riki S Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1007010",
+      "Name": "[Unreinforced] Catalyst: Reason S Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1007011",
+      "Name": "[Catalyst: Magic] Catalyst: Reason S Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1007012",
+      "Name": "[Catalyst: Lightning] Catalyst: Reason S Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1007013",
+      "Name": "[Catalyst: Fire] Catalyst: Reason S Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1007014",
+      "Name": "[Catalyst: Darkness] Catalyst: Reason S Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1007015",
+      "Name": "[Poison] Catalyst: Reason S Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1007016",
+      "Name": "[Bleeding] Catalyst: Reason S Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1007017",
+      "Name": "[Crude] Catalyst: Reason S Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1007018",
+      "Name": "[Magic] Catalyst: Reason S Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1007019",
+      "Name": "[Abyss] Catalyst: Reason S Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008000",
+      "Name": "[Unreinforced] Catalyst: Reason A, Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008001",
+      "Name": "[Catalyst: Magic] Catalyst: Reason A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008002",
+      "Name": "[Catalyst: Lightning] Catalyst: Reason A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008003",
+      "Name": "[Catalyst: Fire] Catalyst: Reason A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008004",
+      "Name": "[Catalyst: Darkness] Catalyst: Reason A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008005",
+      "Name": "[Poison] Catalyst: Reason A, Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008006",
+      "Name": "[Bleeding] Catalyst: Reason A, Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008007",
+      "Name": "[Crude] Catalyst: Reason A, Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008008",
+      "Name": "[Magic] Catalyst: Reason A, Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008009",
+      "Name": "[Abyss] Catalyst: Reason A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1008010",
+      "Name": "[Unreinforced] Catalyst: Reason A, Lightning C, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1008011",
+      "Name": "[Catalyst: Magic] Catalyst: Reason A, Lightning C, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1008012",
+      "Name": "[Catalyst: Lightning] Catalyst: Reason A, Lightning C, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1008013",
+      "Name": "[Catalyst: Fire] Catalyst: Reason A, Lightning C, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1008014",
+      "Name": "[Catalyst: Darkness] Catalyst: Reason A, Lightning C, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1008015",
+      "Name": "[Poison] Catalyst: Reason A, Lightning C, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1008016",
+      "Name": "[Bleeding] Catalyst: Reason A, Lightning C, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1008017",
+      "Name": "[Crude] Catalyst: Reason A, Lightning C, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1008018",
+      "Name": "[Magic] Catalyst: Reason A, Lightning C, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1008019",
+      "Name": "[Abyss] Catalyst: Reason A, Lightning C, Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1008020",
+      "Name": "[Unreinforced] Moonlight Sword: Reason A Dark-",
+      "Description": ""
+    },
+    {
+      "ID": "1008021",
+      "Name": "[Moonlight: Magic] Moonlight Sword: Reason A Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1008022",
+      "Name": "[Moonlight: Lightning] Moonlight Sword: Reason A Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1008023",
+      "Name": "[Moonlight: Flame] Moonlight Sword: Reason A Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1008024",
+      "Name": "[Moonlight: Darkness] Moonlight Sword: Reason A Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1008025",
+      "Name": "[Moonlight: Poison] Moonlight Sword: Reason A Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1008026",
+      "Name": "[Moonlight: Bleeding] Moonlight Sword: Reason A Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1008027",
+      "Name": "[Moonlight: Crude] Moonlight Sword: Reason A Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1008028",
+      "Name": "[Moonlight: Magic] Moonlight Sword: Reason A Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1008029",
+      "Name": "[Moonlight: Abyss] Moonlight Sword: Reason A Darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "1009000",
+      "Name": "[Unreinforced] Catalyst: Reason B Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1009001",
+      "Name": "[Catalyst: Magic] Catalyst: Reason B Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1009002",
+      "Name": "[Catalyst: Lightning] Catalyst: Reason B Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1009003",
+      "Name": "[Catalyst: Fire] Catalyst: Reason B Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1009004",
+      "Name": "[Catalyst: Darkness] Catalyst: Reason B Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1009005",
+      "Name": "[Poison] Catalyst: Reason B Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1009006",
+      "Name": "[Bleeding] Catalyst: Reason B Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1009007",
+      "Name": "[Crude] Catalyst: Reason B Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1009008",
+      "Name": "[Magic] Catalyst: Reason B Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1009009",
+      "Name": "[Abyss] Catalyst: Reason B Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1009010",
+      "Name": "[Unreinforced] Catalyst: Reason B Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1009011",
+      "Name": "[Catalyst: Magic] Catalyst: Reason B Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1009012",
+      "Name": "[Catalyst: Lightning] Catalyst: Reason B Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1009013",
+      "Name": "[Catalyst: Fire] Catalyst: Reason B Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1009014",
+      "Name": "[Catalyst: Darkness] Catalyst: Reason B Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1009015",
+      "Name": "[Poison] Catalyst: Reason B Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1009016",
+      "Name": "[Bleeding] Catalyst: Reason B Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1009017",
+      "Name": "[Crude] Catalyst: Reason B Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1009018",
+      "Name": "[Magic] Catalyst: Reason B Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1009019",
+      "Name": "[Abyss] Catalyst: Reason B Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1009020",
+      "Name": "[Unreinforced] Catalyst: Reason B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1009021",
+      "Name": "[Catalyst: Magic] Catalyst: Reason B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1009022",
+      "Name": "[Catalyst: Lightning] Catalyst: Reason B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1009023",
+      "Name": "[Catalyst: Fire] Catalyst: Reason B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1009024",
+      "Name": "[Catalyst: Darkness] Catalyst: Reason B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1009025",
+      "Name": "[Poison] Catalyst: Reason B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1009026",
+      "Name": "[Bleeding] Catalyst: Reason B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1009027",
+      "Name": "[Crude] Catalyst: Reason B, Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1009028",
+      "Name": "[Magic] Catalyst: Reason B, Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1009029",
+      "Name": "[Abyss] Catalyst: Reason B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010000",
+      "Name": "[Unreinforced] Catalyst: Reason C Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010001",
+      "Name": "[Catalyst: Magic] Catalyst: Reason C Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010002",
+      "Name": "[Catalyst: Lightning] Catalyst: Reason C Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010003",
+      "Name": "[Catalyst: Fire] Catalyst: Reason C Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010004",
+      "Name": "[Catalyst: Darkness] Catalyst: Reason C Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010005",
+      "Name": "[Poison] Catalyst: Reason C Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010006",
+      "Name": "[Bleeding] Catalyst: Reason C Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010007",
+      "Name": "[Crude] Catalyst: Reason C Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010008",
+      "Name": "[Magic] Catalyst: Reason C Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010009",
+      "Name": "[Abyss] Catalyst: Reason C Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1010010",
+      "Name": "[Unreinforced] Catalyst: Reason C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1010011",
+      "Name": "[Catalyst: Magic] Catalyst: Reason C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1010012",
+      "Name": "[Catalyst: Lightning] Catalyst: Reason C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1010013",
+      "Name": "[Catalyst: Fire] Catalyst: Reason C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1010014",
+      "Name": "[Catalyst: Darkness] Catalyst: Reason C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1010015",
+      "Name": "[Poison] Catalyst: Reason C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1010016",
+      "Name": "[Bleeding] Catalyst: Reason C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1010017",
+      "Name": "[Crude] Catalyst: Reason C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1010018",
+      "Name": "[Magic] Catalyst: Reason C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1010019",
+      "Name": "[Abyss] Catalyst: Reason C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1011000",
+      "Name": "[Unreinforced] Catalyst: Reason D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1011001",
+      "Name": "[Catalyst: Magic] Catalyst: Reason D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1011002",
+      "Name": "[Catalyst: Lightning] Catalyst: Reason D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1011003",
+      "Name": "[Catalyst: Fire] Catalyst: Reason D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1011004",
+      "Name": "[Catalyst: Darkness] Catalyst: Reason D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1011005",
+      "Name": "[Poison] Catalyst: Reason D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1011006",
+      "Name": "[Bleeding] Catalyst: Reason D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1011007",
+      "Name": "[Crude] Catalyst: Reason D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1011008",
+      "Name": "[Magic] Catalyst: Reason D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1011009",
+      "Name": "[Abyss] Catalyst: Reason D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1012000",
+      "Name": "[Unreinforced] Catalyst: Lightning S Dark B",
+      "Description": ""
+    },
+    {
+      "ID": "1012001",
+      "Name": "[Catalyst: Magic] Catalyst: Lightning S Dark B",
+      "Description": ""
+    },
+    {
+      "ID": "1012002",
+      "Name": "[Catalyst: Lightning] Catalyst: Lightning S Dark B",
+      "Description": ""
+    },
+    {
+      "ID": "1012003",
+      "Name": "[Catalyst: Flame] Catalyst: Lightning S Dark B",
+      "Description": ""
+    },
+    {
+      "ID": "1012004",
+      "Name": "[Catalyst: Darkness] Catalyst: Lightning S Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1012005",
+      "Name": "[Poison] Catalyst: Lightning S Dark B",
+      "Description": ""
+    },
+    {
+      "ID": "1012006",
+      "Name": "[Bleeding] Catalyst: Lightning S Dark B",
+      "Description": ""
+    },
+    {
+      "ID": "1012007",
+      "Name": "[Crude] Catalyst: Lightning S Dark B",
+      "Description": ""
+    },
+    {
+      "ID": "1012008",
+      "Name": "[Magic] Catalyst: Lightning S Dark B",
+      "Description": ""
+    },
+    {
+      "ID": "1012009",
+      "Name": "[Abyss] Catalyst: Lightning S Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1013000",
+      "Name": "[Unreinforced] Queen's Bell: Thunder A Dark S",
+      "Description": ""
+    },
+    {
+      "ID": "1013001",
+      "Name": "[Catalyst: Magic] Queen's Bell: Lightning A Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1013002",
+      "Name": "[Catalyst: Lightning] Queen's Bell: Lightning A Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1013003",
+      "Name": "[Catalyst: Fire] Queen's Bell: Lightning A Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1013004",
+      "Name": "[Catalyst: Darkness] Queen's Bell: Lightning A Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1013005",
+      "Name": "[Poison] Queen's Bell: Lightning A, Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1013006",
+      "Name": "[Bleeding] Queen's Bell: Lightning A Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1013007",
+      "Name": "[Crude] Queen's Bell: Lightning A Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1013008",
+      "Name": "[Magic] Queen's Bell: Lightning A, Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1013009",
+      "Name": "[Abyss] Queen's Bell: Lightning A Darkness S",
+      "Description": ""
+    },
+    {
+      "ID": "1013010",
+      "Name": "[Unreinforced] Catalyst: Lightning A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1013011",
+      "Name": "[Catalyst: Magic] Catalyst: Lightning A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1013012",
+      "Name": "[Catalyst: Lightning] Catalyst: Lightning A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1013013",
+      "Name": "[Catalyst: Flame] Catalyst: Lightning A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1013014",
+      "Name": "[Catalyst: Darkness] Catalyst: Lightning A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1013015",
+      "Name": "[Poison] Catalyst: Lightning A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1013016",
+      "Name": "[Bleeding] Catalyst: Lightning A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1013017",
+      "Name": "[Crude] Catalyst: Lightning A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1013018",
+      "Name": "[Magic] Catalyst: Lightning A, Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1013019",
+      "Name": "[Abyss] Catalyst: Lightning A Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1013020",
+      "Name": "[Unreinforced] Catalyst: Lightning A Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1013021",
+      "Name": "[Catalyst: Magic] Catalyst: Lightning A Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1013022",
+      "Name": "[Catalyst: Lightning] Catalyst: Lightning A Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1013023",
+      "Name": "[Catalyst: Flame] Catalyst: Lightning A Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1013024",
+      "Name": "[Catalyst: Darkness] Catalyst: Lightning A Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1013025",
+      "Name": "[Poison] Catalyst: Lightning A Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1013026",
+      "Name": "[Bleeding] Catalyst: Lightning A Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1013027",
+      "Name": "[Crude] Catalyst: Lightning A Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1013028",
+      "Name": "[Magic] Catalyst: Lightning A, Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1013029",
+      "Name": "[Abyss] Catalyst: Lightning A Darkness D",
+      "Description": ""
+    },
+    {
+      "ID": "1014000",
+      "Name": "[Unreinforced] Catalyst: Lightning B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1014001",
+      "Name": "[Catalyst: Magic] Catalyst: Lightning B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1014002",
+      "Name": "[Catalyst: Lightning] Catalyst: Lightning B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1014003",
+      "Name": "[Catalyst: Flame] Catalyst: Lightning B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1014004",
+      "Name": "[Catalyst: Darkness] Catalyst: Lightning B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1014005",
+      "Name": "[Poison] Catalyst: Lightning B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1014006",
+      "Name": "[Bleeding] Catalyst: Lightning B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1014007",
+      "Name": "[Crude] Catalyst: Lightning B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1014008",
+      "Name": "[Magic] Catalyst: Lightning B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1014009",
+      "Name": "[Abyss] Catalyst: Lightning B Darkness B",
+      "Description": ""
+    },
+    {
+      "ID": "1014010",
+      "Name": "[Unreinforced] Catalyst: Lightning B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1014011",
+      "Name": "[Catalyst: Magic] Catalyst: Lightning B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1014012",
+      "Name": "[Catalyst: Lightning] Catalyst: Lightning B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1014013",
+      "Name": "[Catalyst: Flame] Catalyst: Lightning B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1014014",
+      "Name": "[Catalyst: Darkness] Catalyst: Lightning B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1014015",
+      "Name": "[Poison] Catalyst: Lightning B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1014016",
+      "Name": "[Bleeding] Catalyst: Lightning B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1014017",
+      "Name": "[Crude] Catalyst: Lightning B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1014018",
+      "Name": "[Magic] Catalyst: Lightning B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1014019",
+      "Name": "[Abyss] Catalyst: Lightning B Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1014020",
+      "Name": "[Unreinforced] Catalyst: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014021",
+      "Name": "[Catalyst: Magic] Catalyst: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014022",
+      "Name": "[Catalyst: Lightning] Catalyst: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014023",
+      "Name": "[Catalyst: Flame] Catalyst: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014024",
+      "Name": "[Catalyst: Darkness] Catalyst: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014025",
+      "Name": "[Poison] Catalyst: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014026",
+      "Name": "[Bleeding] Catalyst: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014027",
+      "Name": "[Crude] Catalyst: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014028",
+      "Name": "[Magic] Catalyst: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014029",
+      "Name": "[Abyss] Catalyst: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014030",
+      "Name": "[Unreinforced] Cleric's medium shield B: Lightning B Dark E",
+      "Description": ""
+    },
+    {
+      "ID": "1014031",
+      "Name": "[First Class D: Magic] Cleric's Medium Shield B: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014032",
+      "Name": "[First Class D: Lightning] Cleric's Medium Shield B: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014033",
+      "Name": "[First class D: Fire] Cleric's medium shield B: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014034",
+      "Name": "[First class D: Darkness] Cleric's medium shield B: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014035",
+      "Name": "[First class D: Poison] Cleric's medium shield B: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014036",
+      "Name": "[First Class D: Bleeding] Cleric's Medium Shield B: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014037",
+      "Name": "[First Class D: Crude] Cleric's Medium Shield B: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014038",
+      "Name": "[First class D: Magic power] Cleric's medium shield B: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1014039",
+      "Name": "[First Class D: Abyss] Cleric's Medium Shield B: Lightning B Darkness E",
+      "Description": ""
+    },
+    {
+      "ID": "1015000",
+      "Name": "[Unreinforced] Catalyst: Lightning C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1015001",
+      "Name": "[Catalyst: Magic] Catalyst: Lightning C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1015002",
+      "Name": "[Catalyst: Lightning] Catalyst: Lightning C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1015003",
+      "Name": "[Catalyst: Flame] Catalyst: Lightning C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1015004",
+      "Name": "[Catalyst: Darkness] Catalyst: Lightning C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1015005",
+      "Name": "[Poison] Catalyst: Lightning C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1015006",
+      "Name": "[Bleeding] Catalyst: Lightning C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1015007",
+      "Name": "[Crude] Catalyst: Lightning C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1015008",
+      "Name": "[Magic] Catalyst: Lightning C, Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1015009",
+      "Name": "[Abyss] Catalyst: Lightning C Darkness C",
+      "Description": ""
+    },
+    {
+      "ID": "1016000",
+      "Name": "[Unreinforced] Catalyst: Lightning D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1016001",
+      "Name": "[Catalyst: Magic] Catalyst: Lightning D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1016002",
+      "Name": "[Catalyst: Lightning] Catalyst: Lightning D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1016003",
+      "Name": "[Catalyst: Flame] Catalyst: Lightning D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1016004",
+      "Name": "[Catalyst: Darkness] Catalyst: Lightning D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1016005",
+      "Name": "[Poison] Catalyst: Lightning D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1016006",
+      "Name": "[Bleeding] Catalyst: Lightning D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1016007",
+      "Name": "[Crude] Catalyst: Lightning D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1016008",
+      "Name": "[Magic] Catalyst: Lightning D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1016009",
+      "Name": "[Abyss] Catalyst: Lightning D Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1017000",
+      "Name": "[Unreinforced] Catalyst: Lightning- Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1017001",
+      "Name": "[Catalyst: Magic] Catalyst: Lightning- Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1017002",
+      "Name": "[Catalyst: Lightning] Catalyst: Lightning- Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1017003",
+      "Name": "[Catalyst: Flame] Catalyst: Lightning- Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1017004",
+      "Name": "[Catalyst: Darkness] Catalyst: Lightning- Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1017005",
+      "Name": "[Poison] Catalyst: Lightning- Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1017006",
+      "Name": "[Bleeding] Catalyst: Lightning- Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1017007",
+      "Name": "[Crude] Catalyst: Lightning- Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1017008",
+      "Name": "[Magic] Catalyst: Lightning - Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1017009",
+      "Name": "[Abyss] Catalyst: Lightning- Darkness A",
+      "Description": ""
+    },
+    {
+      "ID": "1018000",
+      "Name": "[Unreinforced] Catalyst: Flame S",
+      "Description": ""
+    },
+    {
+      "ID": "1018001",
+      "Name": "[Catalyst: Magic] Catalyst: Flame S",
+      "Description": ""
+    },
+    {
+      "ID": "1018002",
+      "Name": "[Catalyst: Lightning] Catalyst: Flame S",
+      "Description": ""
+    },
+    {
+      "ID": "1018003",
+      "Name": "[Catalyst: Flame] Catalyst: Flame S",
+      "Description": ""
+    },
+    {
+      "ID": "1018004",
+      "Name": "[Catalyst: Darkness] Catalyst: Flame S",
+      "Description": ""
+    },
+    {
+      "ID": "1018005",
+      "Name": "[Poison] Catalyst: Flame S",
+      "Description": ""
+    },
+    {
+      "ID": "1018006",
+      "Name": "[Bleeding] Catalyst: Flame S",
+      "Description": ""
+    },
+    {
+      "ID": "1018007",
+      "Name": "[Crude] Catalyst: Flame S",
+      "Description": ""
+    },
+    {
+      "ID": "1018008",
+      "Name": "[Magic] Catalyst: Flame S",
+      "Description": ""
+    },
+    {
+      "ID": "1018009",
+      "Name": "[Abyss] Catalyst: Flame S",
+      "Description": ""
+    },
+    {
+      "ID": "1019000",
+      "Name": "[Unreinforced] Catalyst: Flame A",
+      "Description": ""
+    },
+    {
+      "ID": "1019001",
+      "Name": "[Catalyst: Magic] Catalyst: Flame A",
+      "Description": ""
+    },
+    {
+      "ID": "1019002",
+      "Name": "[Catalyst: Lightning] Catalyst: Flame A",
+      "Description": ""
+    },
+    {
+      "ID": "1019003",
+      "Name": "[Catalyst: Flame] Catalyst: Flame A",
+      "Description": ""
+    },
+    {
+      "ID": "1019004",
+      "Name": "[Catalyst: Darkness] Catalyst: Flame A",
+      "Description": ""
+    },
+    {
+      "ID": "1019005",
+      "Name": "[Poison] Catalyst: Flame A",
+      "Description": ""
+    },
+    {
+      "ID": "1019006",
+      "Name": "[Bleeding] Catalyst: Flame A",
+      "Description": ""
+    },
+    {
+      "ID": "1019007",
+      "Name": "[Crude] Catalyst: Flame A",
+      "Description": ""
+    },
+    {
+      "ID": "1019008",
+      "Name": "[Magic] Catalyst: Flame A",
+      "Description": ""
+    },
+    {
+      "ID": "1019009",
+      "Name": "[Abyss] Catalyst: Flame A",
+      "Description": ""
+    },
+    {
+      "ID": "1020000",
+      "Name": "[Unreinforced] Spell Four Heavenly Kings (Magic) Medium Shield: Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1020001",
+      "Name": "[First Class C: Magic] Spell Four Heavenly Kings (Magic) Medium Shield: Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1020002",
+      "Name": "[First Class C: Thunder] Medium Shield of Spell Four Heavenly Kings (Sorcery): Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1020003",
+      "Name": "[First Class C: Fire] Medium Shield of Spell Four Heavenly Kings (Sorcery): Fire B",
+      "Description": ""
+    },
+    {
+      "ID": "1020004",
+      "Name": "[First Class C: Darkness] Medium Shield of Spell Four Heavenly Kings (Magic): Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1020005",
+      "Name": "[First Class C: Poison] Medium Shield of Spell Four Heavenly Kings (Sorcery): Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1020006",
+      "Name": "[First Class C: Bleeding] Medium Shield of Spell Four Heavenly Kings (Sorcery): Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1020007",
+      "Name": "[Initial C: Crude] Spell Four Heavenly Kings (Sorcery) Medium Shield: Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1020008",
+      "Name": "[First Class C: Magic] Medium Shield of Spell Four Heavenly Kings (Sorcery): Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1020009",
+      "Name": "[First Class C: Abyss] Medium Shield of Spell Four Heavenly Kings (Magic): Flame B",
+      "Description": ""
+    },
+    {
+      "ID": "1101000",
+      "Name": "[Unenhanced] Extra Large: Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1101001",
+      "Name": "[Magic] Extra Large: Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1101002",
+      "Name": "[Thunder] Extra Large: Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1101003",
+      "Name": "[Flame] Extra Large: Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1101004",
+      "Name": "[Darkness] Extra Large: Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1101005",
+      "Name": "[Poison] Extra Large: Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1101006",
+      "Name": "[Bleeding] Extra Large: Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1101007",
+      "Name": "[Crude] Extra Large: Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1101008",
+      "Name": "[Magic Power] Extra Large: Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1101009",
+      "Name": "[Abyss] Extra Large: Strength A Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1101020",
+      "Name": "[Unenhanced] Extra large: Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1101021",
+      "Name": "[Magic] Extra large: Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1101022",
+      "Name": "[Thunder] Extra large: Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1101023",
+      "Name": "[Flame] Extra large: Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1101024",
+      "Name": "[Darkness] Extra large: Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1101025",
+      "Name": "[Poison] Extra large: Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1101026",
+      "Name": "[Bleeding] Extra large: Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1101027",
+      "Name": "[Crude] Extra Large: Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1101028",
+      "Name": "[Magic] Extra large: Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1101029",
+      "Name": "[Abyss] Extra Large: Strength A Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1102000",
+      "Name": "[Unenhanced] Extra Large: Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1102001",
+      "Name": "[Magic] Extra Large: Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1102002",
+      "Name": "[Thunder] Extra Large: Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1102003",
+      "Name": "[Flame] Extra Large: Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1102004",
+      "Name": "[Darkness] Extra Large: Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1102005",
+      "Name": "[Poison] Extra Large: Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1102006",
+      "Name": "[Bleeding] Extra Large: Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1102007",
+      "Name": "[Crude] Extra Large: Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1102008",
+      "Name": "[Magic Power] Extra Large: Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1102009",
+      "Name": "[Abyss] Extra Large: Strength B Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1102020",
+      "Name": "[Unenhanced] Extra large: Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1102021",
+      "Name": "[Magic] Extra large: Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1102022",
+      "Name": "[Thunder] Extra large: Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1102023",
+      "Name": "[Fire] Extra Large: Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1102024",
+      "Name": "[Darkness] Extra Large: Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1102025",
+      "Name": "[Poison] Extra large: Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1102026",
+      "Name": "[Bleeding] Extra large: Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1102027",
+      "Name": "[Crude] Extra Large: Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1102028",
+      "Name": "[Magic power] Extra large: Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1102029",
+      "Name": "[Abyss] Extra Large: Strength B Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1102040",
+      "Name": "[Unenhanced] Extra large: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1102041",
+      "Name": "[Magic] Extra large: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1102042",
+      "Name": "[Thunder] Extra large: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1102043",
+      "Name": "[Flame] Extra large: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1102044",
+      "Name": "[Darkness] Extra large: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1102045",
+      "Name": "[Poison] Extra large: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1102046",
+      "Name": "[Bleeding] Extra large: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1102047",
+      "Name": "[Crude] Extra Large: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1102048",
+      "Name": "[Magic power] Extra large: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1102049",
+      "Name": "[Abyss] Extra Large: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1103000",
+      "Name": "[Unenhanced] Extra Large: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1103001",
+      "Name": "[Magic] Extra Large: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1103002",
+      "Name": "[Thunder] Extra Large: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1103003",
+      "Name": "[Flame] Extra Large: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1103004",
+      "Name": "[Darkness] Extra Large: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1103005",
+      "Name": "[Poison] Extra Large: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1103006",
+      "Name": "[Bleeding] Extra Large: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1103007",
+      "Name": "[Crude] Extra Large: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1103008",
+      "Name": "[Magic Power] Extra Large: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1103009",
+      "Name": "[Abyss] Extra Large: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1103030",
+      "Name": "[Unreinforced] Sword: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1103031",
+      "Name": "[Magic] Sword: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1103032",
+      "Name": "[Thunder] Sword: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1103033",
+      "Name": "[Fire] Sword: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1103034",
+      "Name": "[Dark] Sword: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1103035",
+      "Name": "[Poison] Sword: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1103036",
+      "Name": "[Bleeding] Sword: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1103037",
+      "Name": "[Crude] Sword: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1103038",
+      "Name": "[Magic] Sword: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1103039",
+      "Name": "[Abyss] Sword: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1103050",
+      "Name": "[Unreinforced] Sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1103051",
+      "Name": "[Magic] Sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1103052",
+      "Name": "[Thunder] Stinging sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1103053",
+      "Name": "[Fire] Sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1103054",
+      "Name": "[Dark] Sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1103055",
+      "Name": "[Poison] Stinging sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1103056",
+      "Name": "[Bleeding] Stinging sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1103057",
+      "Name": "[Crude] Sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1103058",
+      "Name": "[Magic] Sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1103059",
+      "Name": "[Abyss] Sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1103090",
+      "Name": "[Unenhanced] Extra large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1103091",
+      "Name": "[Magic] Extra large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1103092",
+      "Name": "[Thunder] Extra large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1103093",
+      "Name": "[Flame] Extra large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1103094",
+      "Name": "[Darkness] Extra large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1103095",
+      "Name": "[Poison] Extra large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1103096",
+      "Name": "[Bleeding] Extra large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1103097",
+      "Name": "[Crude] Extra Large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1103098",
+      "Name": "[Magic power] Extra large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1103099",
+      "Name": "[Abyss] Extra Large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1103100",
+      "Name": "[Unenhanced] Extra large: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1103101",
+      "Name": "[Magic] Extra large: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1103102",
+      "Name": "[Thunder] Extra large: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1103103",
+      "Name": "[Flame] Extra large: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1103104",
+      "Name": "[Darkness] Extra large: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1103105",
+      "Name": "[Poison] Extra large: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1103106",
+      "Name": "[Bleeding] Extra large: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1103107",
+      "Name": "[Crude] Extra Large: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1103108",
+      "Name": "[Magic] Extra large: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1103109",
+      "Name": "[Abyss] Extra Large: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1104000",
+      "Name": "[Unenhanced] Extra large: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1104001",
+      "Name": "[Magic] Extra Large: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1104002",
+      "Name": "[Thunder] Extra Large: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1104003",
+      "Name": "[Flame] Extra Large: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1104004",
+      "Name": "[Darkness] Extra Large: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1104005",
+      "Name": "[Poison] Extra Large: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1104006",
+      "Name": "[Bleeding] Extra Large: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1104007",
+      "Name": "[Crude] Extra Large: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1104008",
+      "Name": "[Magic Power] Extra Large: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1104009",
+      "Name": "[Abyss] Extra Large: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "1104020",
+      "Name": "[Unreinforced] Sword: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1104021",
+      "Name": "[Magic] Sword: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1104022",
+      "Name": "[Thunder] Sword: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1104023",
+      "Name": "[Fire] Sword: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1104024",
+      "Name": "[Dark] Sword: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1104025",
+      "Name": "[Poison] Sword: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1104026",
+      "Name": "[Bleeding] Sword: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1104027",
+      "Name": "[Crude] Sword: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1104028",
+      "Name": "[Magic] Sword: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1104029",
+      "Name": "[Abyss] Sword: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1104030",
+      "Name": "[Unenhanced] Extra large: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1104031",
+      "Name": "[Magic] Extra large: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1104032",
+      "Name": "[Thunder] Extra large: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1104033",
+      "Name": "[Flame] Extra large: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1104034",
+      "Name": "[Darkness] Extra Large: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1104035",
+      "Name": "[Poison] Extra large: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1104036",
+      "Name": "[Bleeding] Extra large: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1104037",
+      "Name": "[Crude] Extra Large: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1104038",
+      "Name": "[Magic] Extra large: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1104039",
+      "Name": "[Abyss] Extra Large: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1104050",
+      "Name": "[Unenhanced] Extra large: Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1104051",
+      "Name": "[Magic] Extra large: Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1104052",
+      "Name": "[Thunder] Extra large: Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1104053",
+      "Name": "[Flame] Extra large: Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1104054",
+      "Name": "[Darkness] Extra large: Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1104055",
+      "Name": "[Poison] Extra large: Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1104056",
+      "Name": "[Bleeding] Extra large: Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1104057",
+      "Name": "[Crude] Extra Large: Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1104058",
+      "Name": "[Magic power] Extra large: Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1104059",
+      "Name": "[Abyss] Extra Large: Strength D Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "1105030",
+      "Name": "[Unreinforced] Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1105031",
+      "Name": "[Magic] Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1105032",
+      "Name": "[Thunder] Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1105033",
+      "Name": "[Fire] Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1105034",
+      "Name": "[Dark] Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1105035",
+      "Name": "[Poison] Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1105036",
+      "Name": "[Bleeding] Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1105037",
+      "Name": "[Crude] Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1105038",
+      "Name": "[Magic] Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1105039",
+      "Name": "[Abyss] Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106010",
+      "Name": "[Unreinforced] Sword: Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1106011",
+      "Name": "[Magic] Sword: Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1106012",
+      "Name": "[Thunder] Sword: Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1106013",
+      "Name": "[Fire] Sword: Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1106014",
+      "Name": "[Dark] Sword: Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1106015",
+      "Name": "[Poison] Sword: Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1106016",
+      "Name": "[Bleeding] Sword: Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1106017",
+      "Name": "[Crude] Sword: Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1106018",
+      "Name": "[Magic] Sword: Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1106019",
+      "Name": "[Abyss] Sword: Strength - Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "1106020",
+      "Name": "[Unreinforced] Sword: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106021",
+      "Name": "[Magic] Sword: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106022",
+      "Name": "[Thunder] Sword: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106023",
+      "Name": "[Fire] Sword: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106024",
+      "Name": "[Dark] Sword: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106025",
+      "Name": "[Poison] Sword: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106026",
+      "Name": "[Bleeding] Sword: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106027",
+      "Name": "[Crude] Sword: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106028",
+      "Name": "[Magic] Sword: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106029",
+      "Name": "[Abyss] Sword: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "1106030",
+      "Name": "[Unreinforced] Sword: Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1106031",
+      "Name": "[Magic] Sword: Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1106032",
+      "Name": "[Thunder] Sword: Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1106033",
+      "Name": "[Fire] Sword: Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1106034",
+      "Name": "[Dark] Sword: Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1106035",
+      "Name": "[Poison] Sword: Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1106036",
+      "Name": "[Bleeding] Sword: Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1106037",
+      "Name": "[Crude] Sword: Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1106038",
+      "Name": "[Magic] Sword: Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1106039",
+      "Name": "[Abyss] Sword: Strength - Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1203050",
+      "Name": "[Unenhanced] Extra large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1203051",
+      "Name": "[Magic] Extra large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1203052",
+      "Name": "[Thunder] Extra large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1203053",
+      "Name": "[Flame] Extra large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1203054",
+      "Name": "[Dark] Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1203055",
+      "Name": "[Poison] Extra large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1203056",
+      "Name": "[Bleeding] Extra large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1203057",
+      "Name": "[Crude] Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1203058",
+      "Name": "[Magic] Extra large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1203059",
+      "Name": "[Abyss] Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "1204040",
+      "Name": "[Unenhanced] Extra large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1204041",
+      "Name": "[Magic] Extra large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1204042",
+      "Name": "[Thunder] Extra large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1204043",
+      "Name": "[Fire] Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1204044",
+      "Name": "[Darkness] Extra large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1204045",
+      "Name": "[Poison] Extra large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1204046",
+      "Name": "[Bleeding] Extra large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1204047",
+      "Name": "[Crude] Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1204048",
+      "Name": "[Magic power] Extra large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "1204049",
+      "Name": "[Abyss] Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2000000",
+      "Name": "[Unenhanced] Initial attribute: No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "2000001",
+      "Name": "[Initial attribute C: Magic] Initial attribute: No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "2000002",
+      "Name": "[Initial attribute C: Lightning] Initial attribute: No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "2000003",
+      "Name": "[Initial attribute C: Fire] Initial attribute: No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "2000004",
+      "Name": "[Initial attribute C: Darkness] Initial attribute: No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "2000005",
+      "Name": "[Initial attribute C: Poison] Initial attribute: No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "2000006",
+      "Name": "[Initial attribute C: Bleeding] Initial attribute: No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "2000007",
+      "Name": "[Initial attribute C: Crude] Initial attribute: No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "2000008",
+      "Name": "[Initial attribute C: Magic power] Initial attribute: No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "2000009",
+      "Name": "[Initial attribute C: Abyss] Initial attribute: No status effect",
+      "Description": ""
+    },
+    {
+      "ID": "2002030",
+      "Name": "[Unreinforced] Initial attributes: Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2002031",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2002032",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2002033",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2002034",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2002035",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2002036",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2002037",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2002038",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2002039",
+      "Name": "[Initial Attribute B: Abyss] Initial Attribute: Strength B Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2002040",
+      "Name": "[Unreinforced] Initial attributes: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2002041",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2002042",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2002043",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2002044",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2002045",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2002046",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2002047",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2002048",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2002049",
+      "Name": "[Initial Attribute B: Abyss] Initial Attribute: Strength B Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2003000",
+      "Name": "[Unreinforced] Initial attribute: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2003001",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2003002",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2003003",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2003004",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2003005",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2003006",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2003007",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2003008",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2003009",
+      "Name": "[Initial Attribute B: Abyss] Initial Attribute: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2003020",
+      "Name": "[Unreinforced] Initial attributes: Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "2003021",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "2003022",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "2003023",
+      "Name": "[Initial attribute B: Fire] Initial attribute: Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "2003024",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "2003025",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "2003026",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "2003027",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "2003028",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "2003029",
+      "Name": "[Initial Attribute B: Abyss] Initial Attribute: Strength C Skill A",
+      "Description": ""
+    },
+    {
+      "ID": "2003030",
+      "Name": "[Unreinforced] Initial attributes: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2003031",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2003032",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2003033",
+      "Name": "[Initial attribute B: Fire] Initial attribute: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2003034",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2003035",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2003036",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2003037",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2003038",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2003039",
+      "Name": "[Initial Attribute B: Abyss] Initial Attribute: Strength C Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2003050",
+      "Name": "[Unreinforced] Initial attributes: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2003051",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2003052",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2003053",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2003054",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2003055",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2003056",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2003057",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2003058",
+      "Name": "[Initial Attribute B: Magic Power] Initial Attribute: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2003059",
+      "Name": "[First Attribute B: Abyss] Initial Attribute: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2003090",
+      "Name": "[Unenhanced] Kingdom Warrior's Two-handed Sword: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2003091",
+      "Name": "[First Bleeding: Magic] Kingdom Warrior's Two-Handed Sword: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2003092",
+      "Name": "[First blood loss: Thunder] Kingdom warrior's two-handed sword: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2003093",
+      "Name": "[Initial bleeding: Fire] Kingdom warrior's two-handed sword: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2003094",
+      "Name": "[Initial bleeding: Darkness] Kingdom warrior's two-handed sword: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2003095",
+      "Name": "[Initial bleeding: Poison] Kingdom warrior's two-handed sword: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2003096",
+      "Name": "[Initial bleeding: Bleeding] Kingdom warrior's two-handed sword: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2003097",
+      "Name": "[Initial Bleeding: Crude] Kingdom Warrior's Two-Handed Sword: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2003098",
+      "Name": "[First blood loss: Magic] Kingdom warrior's two-handed sword: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2003099",
+      "Name": "[First Bleeding: Abyss] Kingdom Warrior's Two-Handed Sword: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2003100",
+      "Name": "[Unreinforced] Initial attributes: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2003101",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2003102",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2003103",
+      "Name": "[Initial attribute B: Fire] Initial attribute: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2003104",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2003105",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2003106",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2003107",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2003108",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2003109",
+      "Name": "[Initial Attribute B: Abyss] Initial Attribute: Strength C Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2004000",
+      "Name": "[Unreinforced] Initial attribute: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2004001",
+      "Name": "[First attribute bleeding: Magic] Initial attribute: Strength D Skill -",
+      "Description": ""
+    },
+    {
+      "ID": "2004002",
+      "Name": "[First Attribute Bleeding: Thunder] Initial Attribute: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2004003",
+      "Name": "[Initial bleeding: Fire] Initial attribute: Strength D Skill -",
+      "Description": ""
+    },
+    {
+      "ID": "2004004",
+      "Name": "[Initial attribute bleeding: Darkness] Initial attribute: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2004005",
+      "Name": "[Initial bleeding: Poison] Initial attribute: Strength D Skill -",
+      "Description": ""
+    },
+    {
+      "ID": "2004006",
+      "Name": "[Initial bleeding: Bleeding] Initial attribute: Strength D Skill -",
+      "Description": ""
+    },
+    {
+      "ID": "2004007",
+      "Name": "[Initial bleeding: Crude] Initial attribute: Strength D Skill -",
+      "Description": ""
+    },
+    {
+      "ID": "2004008",
+      "Name": "[Initial attribute bleeding: Magic power] Initial attribute: Strength D Skill -",
+      "Description": ""
+    },
+    {
+      "ID": "2004009",
+      "Name": "[First Attribute Bleeding: Abyss] Initial Attribute: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2004020",
+      "Name": "[Unreinforced] Initial attributes: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2004021",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2004022",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2004023",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2004024",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2004025",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2004026",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2004027",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2004028",
+      "Name": "[Initial Attribute B: Magic Power] Initial Attribute: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2004029",
+      "Name": "[Initial Attribute B: Abyss] Initial Attribute: Strength D Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2004030",
+      "Name": "[Unreinforced] Spear of the Wandering Knight: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2004031",
+      "Name": "[First Class B: Magic] Spear of the Wandering Knight: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2004032",
+      "Name": "[First Class B: Lightning] Spear of the Wandering Knight: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2004033",
+      "Name": "[First Class B: Fire] Spear of the Wandering Knight: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2004034",
+      "Name": "[First Class B: Darkness] Spear of the Wandering Knight: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2004035",
+      "Name": "[First Class B: Poison] Spear of the Wandering Knight: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2004036",
+      "Name": "[First Class B: Bleeding] Spear of the Wandering Knight: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2004037",
+      "Name": "[First Class B: Crude] Spear of the Wandering Knight: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2004038",
+      "Name": "[First Class B: Magic Power] Spear of the Wandering Knight: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2004039",
+      "Name": "[First Class B: Abyss] Spear of the Wandering Knight: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005000",
+      "Name": "[Unreinforced] Initial attribute: Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2005001",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2005002",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2005003",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2005004",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2005005",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2005006",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2005007",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2005008",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2005009",
+      "Name": "[First Attribute B: Abyss] Initial Attribute: Strength E Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2005030",
+      "Name": "[Unreinforced] Initial attributes: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2005031",
+      "Name": "[Initial attribute C: Magic] Initial attribute: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2005032",
+      "Name": "[Initial attribute C: Lightning] Initial attribute: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2005033",
+      "Name": "[Initial attribute C: Fire] Initial attribute: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2005034",
+      "Name": "[Initial attribute C: Darkness] Initial attribute: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2005035",
+      "Name": "[Initial attribute C: Poison] Initial attribute: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2005036",
+      "Name": "[Initial attribute C: Bleeding] Initial attribute: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2005037",
+      "Name": "[Initial attribute C: Crude] Initial attribute: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2005038",
+      "Name": "[Initial attribute C: Magic] Initial attribute: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2005039",
+      "Name": "[Initial attribute C: Abyss] Initial attribute: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2005040",
+      "Name": "[Unreinforced] Initial attributes: Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005041",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005042",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005043",
+      "Name": "[Initial attribute B: Fire] Initial attribute: Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005044",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005045",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005046",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005047",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005048",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005049",
+      "Name": "[Initial Attribute B: Abyss] Initial Attribute: Strength E Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2005060",
+      "Name": "[Unenhanced] Initial attributes: Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2005061",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2005062",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2005063",
+      "Name": "[Initial attribute B: Fire] Initial attribute: Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2005064",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2005065",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2005066",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2005067",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2005068",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2005069",
+      "Name": "[First Attribute B: Abyss] Initial Attribute: Strength E Skill E",
+      "Description": ""
+    },
+    {
+      "ID": "2006020",
+      "Name": "[Unenhanced] Initial attribute: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2006021",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2006022",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2006023",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2006024",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2006025",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2006026",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2006027",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2006028",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2006029",
+      "Name": "[Initial Attribute B: Abyss] Initial Attribute: Strength - Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2006040",
+      "Name": "[Unenhanced] Phantom Mage's Small Shield: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2006041",
+      "Name": "[First Class C: Magic] Phantom Mage's Small Shield: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2006042",
+      "Name": "[First Class C: Lightning] Phantom Mage's Small Shield: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2006043",
+      "Name": "[First Class C: Fire] Phantom Mage's Small Shield: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2006044",
+      "Name": "[First Class C: Darkness] Phantom Mage's Small Shield: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2006045",
+      "Name": "[First Class C: Poison] Phantom Mage's Small Shield: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2006046",
+      "Name": "[First Class C: Bleeding] Phantom Mage's Small Shield: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2006047",
+      "Name": "[First Class C: Crude] Phantom Mage's Small Shield: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2006048",
+      "Name": "[First Class C: Magic] Phantom Mage's Small Shield: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2006049",
+      "Name": "[First Class C: Abyss] Phantom Mage's Small Shield: Sword: Strength - Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2103050",
+      "Name": "[Unreinforced] Immortal one-handed ax: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2103051",
+      "Name": "[Immortal's one-handed ax: Magic] Immortal's one-handed ax: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2103052",
+      "Name": "[Immortal's one-handed ax: Lightning] Immortal's one-handed ax: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2103053",
+      "Name": "[Immortal's one-handed ax: Flame] Immortal's one-handed ax: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2103054",
+      "Name": "[Immortal's one-handed ax: Dark] Immortal's one-handed ax: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2103055",
+      "Name": "[Immortal's one-handed ax: Poison] Immortal's one-handed ax: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2103056",
+      "Name": "[Immortal's one-handed ax: Bleeding] Immortal's one-handed ax: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2103057",
+      "Name": "[Immortal one-handed ax: Crude] Immortal one-handed ax: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2103058",
+      "Name": "[Immortal's one-handed ax: Magic] Immortal's one-handed ax: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2103059",
+      "Name": "[Immortal's one-handed ax: Abyss] Immortal's one-handed ax: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2103090",
+      "Name": "[Unenhanced] Initial attributes: Extra large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2103091",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Extra Large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2103092",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Extra Large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2103093",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Extra Large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2103094",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Extra Large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2103095",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Extra large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2103096",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Extra Large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2103097",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Extra Large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2103098",
+      "Name": "[Initial Attribute B: Magic Power] Initial Attribute: Extra Large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2103099",
+      "Name": "[First Attribute B: Abyss] Initial Attribute: Extra Large: Strength C Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2104000",
+      "Name": "[Unreinforced] Bound Small Shield: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2104001",
+      "Name": "[First Class C: Magic] Bound Small Shield: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2104002",
+      "Name": "[First Class C: Lightning] Bound Small Shield: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2104003",
+      "Name": "[First Class C: Fire] Bound Small Shield: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2104004",
+      "Name": "[First Class C: Darkness] Bound Small Shield: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2104005",
+      "Name": "[First Class C: Poison] Bound Small Shield: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2104006",
+      "Name": "[First Class C: Bleeding] Bound Small Shield: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2104007",
+      "Name": "[First Class C: Crude] Bound Small Shield: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2104008",
+      "Name": "[First Class C: Magic] Bound Small Shield: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2104009",
+      "Name": "[First Class C: Abyss] Bound Small Shield: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "2105030",
+      "Name": "[Unreinforced] Initial attribute: Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2105031",
+      "Name": "[Initial attribute C: Magic] Initial attribute: Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2105032",
+      "Name": "[Initial Attribute C: Lightning] Initial Attribute: Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2105033",
+      "Name": "[Initial attribute C: Fire] Initial attribute: Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2105034",
+      "Name": "[Initial Attribute C: Darkness] Initial Attribute: Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2105035",
+      "Name": "[Initial attribute C: Poison] Initial attribute: Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2105036",
+      "Name": "[Initial Attribute C: Bleeding] Initial Attribute: Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2105037",
+      "Name": "[Initial Attribute C: Crude] Initial Attribute: Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2105038",
+      "Name": "[Initial Attribute C: Magic] Initial Attribute: Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2105039",
+      "Name": "[Initial Attribute C: Abyss] Initial Attribute: Sword: Strength E Skill B",
+      "Description": ""
+    },
+    {
+      "ID": "2203050",
+      "Name": "[Unenhanced] Initial attribute: Extra large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2203051",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2203052",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2203053",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2203054",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2203055",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Extra large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2203056",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2203057",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2203058",
+      "Name": "[Initial Attribute B: Magic Power] Initial Attribute: Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2203059",
+      "Name": "[First Attribute B: Abyss] Initial Attribute: Extra Large: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "2204040",
+      "Name": "[Unenhanced] Initial attributes: Extra large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2204041",
+      "Name": "[Initial Attribute B: Magic] Initial Attribute: Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2204042",
+      "Name": "[Initial Attribute B: Lightning] Initial Attribute: Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2204043",
+      "Name": "[Initial Attribute B: Fire] Initial Attribute: Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2204044",
+      "Name": "[Initial Attribute B: Darkness] Initial Attribute: Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2204045",
+      "Name": "[Initial attribute B: Poison] Initial attribute: Extra large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2204046",
+      "Name": "[Initial Attribute B: Bleeding] Initial Attribute: Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2204047",
+      "Name": "[Initial Attribute B: Crude] Initial Attribute: Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2204048",
+      "Name": "[Initial Attribute B: Magic Power] Initial Attribute: Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "2204049",
+      "Name": "[First Attribute B: Abyss] Initial Attribute: Extra Large: Strength D Skill D",
+      "Description": ""
+    },
+    {
+      "ID": "3003000",
+      "Name": "[Unreinforced] Firebird Small Shield: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3003001",
+      "Name": "[Initial Class C: Magic] Firebird Small Shield: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3003002",
+      "Name": "[First Class C: Lightning] Firebird Small Shield: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3003003",
+      "Name": "[First Class C: Fire] Firebird Small Shield: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3003004",
+      "Name": "[First Class C: Darkness] Firebird Small Shield: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3003005",
+      "Name": "[Initial C: Poison] Firebird Small Shield: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3003006",
+      "Name": "[First Class C: Bleeding] Firebird Small Shield: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3003007",
+      "Name": "[First Gen C: Crude] Firebird Small Shield: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3003008",
+      "Name": "[Initial Class C: Magic Power] Firebird Small Shield: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3003009",
+      "Name": "[First Class C: Abyss] Firebird Small Shield: Strength C Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3003050",
+      "Name": "[Unenhanced] Mirror Knight's two-handed sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3003051",
+      "Name": "[Mirror Knight: Magic] Mirror Knight's two-handed sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3003052",
+      "Name": "[Mirror Knight: Lightning] Mirror Knight's two-handed sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3003053",
+      "Name": "[Mirror Knight: Fire] Mirror Knight's two-handed sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3003054",
+      "Name": "[Mirror Knight: Darkness] Mirror Knight's two-handed sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3003055",
+      "Name": "[Mirror Knight: Poison] Mirror Knight's two-handed sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3003056",
+      "Name": "[Mirror Knight: Bleeding] Mirror Knight's two-handed sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3003057",
+      "Name": "[Mirror Knight: Crude] Mirror Knight's two-handed sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3003058",
+      "Name": "[Mirror Knight: Magic] Mirror Knight's two-handed sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3003059",
+      "Name": "[Mirror Knight: Abyss] Mirror Knight's two-handed sword: Strength C Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3004000",
+      "Name": "[Unenhanced] Demon's Great Shield B: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3004001",
+      "Name": "[Initial Class B: Magic] Demon's Great Shield B: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3004002",
+      "Name": "[First Class B: Lightning] Demon's Great Shield B: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3004003",
+      "Name": "[First Class B: Fire] Demon's Great Shield B: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3004004",
+      "Name": "[First Class B: Darkness] Demon's Great Shield B: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3004005",
+      "Name": "[First Class B: Poison] Demon's Great Shield B: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3004006",
+      "Name": "[First Class B: Bleeding] Demon's Great Shield B: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3004007",
+      "Name": "[First Class B: Crude] Demon Great Shield B: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3004008",
+      "Name": "[First Class B: Magic] Demon's Great Shield B: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3004009",
+      "Name": "[First Class B: Abyss] Demon's Great Shield B: Strength D Skill-",
+      "Description": ""
+    },
+    {
+      "ID": "3004030",
+      "Name": "[Unreinforced] Double-edged sword of heavy cavalry: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3004031",
+      "Name": "[Heavy cavalry double-edged sword: Magic] Heavy cavalry double-edged sword: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3004032",
+      "Name": "[Heavy cavalry double-edged sword: Lightning] Heavy cavalry double-edged sword: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3004033",
+      "Name": "[Heavy cavalry double-edged sword: Flame] Heavy cavalry double-edged sword: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3004034",
+      "Name": "[Double-edged sword of heavy cavalry: Dark] Double-edged sword of heavy cavalry: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3004035",
+      "Name": "[Heavy cavalry double-edged sword: Poison] Heavy cavalry double-edged sword: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3004036",
+      "Name": "[Heavy cavalry double-edged sword: Bleeding] Heavy cavalry double-edged sword: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3004037",
+      "Name": "[Heavy cavalry double-edged sword: Crude] Heavy cavalry double-edged sword: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3004038",
+      "Name": "[Double-edged sword of heavy cavalry: Magic] Double-edged sword of heavy cavalry: Strength D Skill C",
+      "Description": ""
+    },
+    {
+      "ID": "3004039",
+      "Name": "[Double-edged sword of heavy cavalry: Abyss] Double-edged sword of heavy cavalry: Strength D Skill C",
+      "Description": ""
+    }
+  ]
+}

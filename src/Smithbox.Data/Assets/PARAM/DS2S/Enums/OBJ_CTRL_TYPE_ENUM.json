@@ -1,0 +1,187 @@
+{
+  "DisplayName": "OBJ_CTRL_TYPE_ENUM",
+  "Name": "OBJ_CTRL_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Wooden treasure box",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Single door",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Both doors",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Ladder",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Rope",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "White door",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Bonfire",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Torch",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Elevator",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Anime hit trap",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Constraint",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Death count display",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Display number of bosses defeated",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Broken ladder",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Floor lever: return automatically",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Floor lever: does not return",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Floor lever: Continue thinning while inputting buttons",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Vertical lever: return automatically",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Vertical lever: does not return",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Hidden door ① (Insect key SFX)",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Hidden door ② (button press)",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Lowering ladder",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Character transport object",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Iron treasure box",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Burnable treasure chest",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Insect key (wall)",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Insect key (floor)",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "Wall hole lever",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Lightweight objects",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "Mimicry object",
+      "Description": ""
+    },
+    {
+      "ID": "35",
+      "Name": "Petrified statue",
+      "Description": ""
+    },
+    {
+      "ID": "36",
+      "Name": "Item distribution treasure chest",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "Rolling flame barrel",
+      "Description": ""
+    },
+    {
+      "ID": "38",
+      "Name": "Destroy a wall with a rolling barrel of fire",
+      "Description": ""
+    },
+    {
+      "ID": "39",
+      "Name": "Wall torch",
+      "Description": ""
+    }
+  ]
+}

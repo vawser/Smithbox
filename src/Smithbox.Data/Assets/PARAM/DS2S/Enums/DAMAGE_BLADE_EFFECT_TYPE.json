@@ -1,0 +1,52 @@
+{
+  "DisplayName": "DAMAGE_BLADE_EFFECT_TYPE",
+  "Name": "DAMAGE_BLADE_EFFECT_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Top⇒Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Top left ⇒ Bottom right",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Top right⇒Bottom left",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Left ⇒ right",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Right ⇒ Left",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Lower left ⇒ Upper right",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Bottom right ⇒ Top left",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Bottom ⇒ Top",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Thrust",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "DisplayName": "INPUT_4DIR_ENUM",
+  "Name": "INPUT_4DIR_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "2",
+      "Name": "<123>Back",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "<741>Left",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "<963> Right",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "＜789＞before",
+      "Description": ""
+    }
+  ]
+}

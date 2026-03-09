@@ -1,0 +1,12 @@
+{
+  "DisplayName": "SPELL_TRIGGER_ANIM_TYPE",
+  "Name": "SPELL_TRIGGER_ANIM_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Dummy",
+      "Description": ""
+    }
+  ]
+}

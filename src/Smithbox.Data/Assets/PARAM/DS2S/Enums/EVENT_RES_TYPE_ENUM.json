@@ -1,0 +1,17 @@
+{
+  "DisplayName": "EVENT_RES_TYPE_ENUM",
+  "Name": "EVENT_RES_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "MAP",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "NPC",
+      "Description": ""
+    }
+  ]
+}

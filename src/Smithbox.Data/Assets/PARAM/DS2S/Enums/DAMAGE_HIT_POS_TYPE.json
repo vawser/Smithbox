@@ -1,0 +1,22 @@
+{
+  "DisplayName": "DAMAGE_HIT_POS_TYPE",
+  "Name": "DAMAGE_HIT_POS_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Top",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Hit position",
+      "Description": ""
+    }
+  ]
+}

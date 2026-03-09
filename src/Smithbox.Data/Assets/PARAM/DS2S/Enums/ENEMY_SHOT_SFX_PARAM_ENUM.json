@@ -1,0 +1,52 @@
+{
+  "DisplayName": "ENEMY_SHOT_SFX_PARAM_ENUM",
+  "Name": "ENEMY_SHOT_SFX_PARAM_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "General-purpose bow: from Damipoly ID2",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Demon armor bow",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "General-purpose bow for lower-class soldiers (deceased)",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Fire arrow for lower rank soldiers (deceased)",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Est bottle",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "General-purpose bow: from Damipoly ID200",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "General-purpose bow: for Rogue Skeleton (from Damipoly ID201)",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "General-purpose bow: from Damipoly ID203",
+      "Description": ""
+    }
+  ]
+}

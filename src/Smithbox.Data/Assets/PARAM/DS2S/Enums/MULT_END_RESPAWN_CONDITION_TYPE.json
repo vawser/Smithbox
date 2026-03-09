@@ -1,0 +1,17 @@
+{
+  "DisplayName": "MULT_END_RESPAWN_CONDITION_TYPE",
+  "Name": "MULT_END_RESPAWN_CONDITION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Original state",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Refresh",
+      "Description": ""
+    }
+  ]
+}

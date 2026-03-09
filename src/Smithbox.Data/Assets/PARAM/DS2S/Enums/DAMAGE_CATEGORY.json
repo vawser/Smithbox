@@ -1,0 +1,57 @@
+{
+  "DisplayName": "DAMAGE_CATEGORY",
+  "Name": "DAMAGE_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "No motion",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Minimal damage",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Small knockback damage",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Medium knockback damage",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Large knockback damage",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Extra atmospheric damage",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Blowout damage",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Launch damage",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Breath damage",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Down damage",
+      "Description": ""
+    }
+  ]
+}

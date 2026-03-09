@@ -1,0 +1,27 @@
+{
+  "DisplayName": "CAMERA_BASE_POS_TYPE",
+  "Name": "CAMERA_BASE_POS_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Master position",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Center of character",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Character head",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Origin",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "DisplayName": "CHR_ITEM_DROP_TYPE",
+  "Name": "CHR_ITEM_DROP_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Dummy",
+      "Description": ""
+    }
+  ]
+}

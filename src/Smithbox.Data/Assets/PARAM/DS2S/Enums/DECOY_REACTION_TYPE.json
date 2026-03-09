@@ -1,0 +1,22 @@
+{
+  "DisplayName": "DECOY_REACTION_TYPE",
+  "Name": "DECOY_REACTION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Always",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Only during attack",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Ignore",
+      "Description": ""
+    }
+  ]
+}

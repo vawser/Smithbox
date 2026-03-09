@@ -1,0 +1,42 @@
+{
+  "DisplayName": "CHR_PARTS_CATEGORY_TYPE",
+  "Name": "CHR_PARTS_CATEGORY_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Head",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Body",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Left arm",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Right arm",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Left foot",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Right foot",
+      "Description": ""
+    }
+  ]
+}

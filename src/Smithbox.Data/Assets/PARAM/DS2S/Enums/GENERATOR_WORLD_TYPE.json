@@ -1,0 +1,22 @@
+{
+  "DisplayName": "GENERATOR_WORLD_TYPE",
+  "Name": "GENERATOR_WORLD_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "All",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Normal world only",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Soul black world only",
+      "Description": ""
+    }
+  ]
+}

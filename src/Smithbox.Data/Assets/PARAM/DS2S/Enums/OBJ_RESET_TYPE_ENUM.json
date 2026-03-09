@@ -1,0 +1,27 @@
+{
+  "DisplayName": "OBJ_RESET_TYPE_ENUM",
+  "Name": "OBJ_RESET_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "From using a bonfire",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "From map refresh",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "From using the pilot fire",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "From the game round",
+      "Description": ""
+    }
+  ]
+}

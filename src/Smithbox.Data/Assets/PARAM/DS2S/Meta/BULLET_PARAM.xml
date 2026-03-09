@@ -10,17 +10,17 @@
     <emitEntityType
     AltName="Generation Type"
     Wiki="The generation type used for this bullet." 
-    Enum="BULLET_EMIT_ENTITY_TYPE" />
+    ProjectEnum="BULLET_EMIT_ENTITY_TYPE" />
 
     <emitteType
     AltName="Source Type"
     Wiki="The source type used for this bullet." 
-    Enum="BULLET_POS_TYPE" />
+    ProjectEnum="BULLET_POS_TYPE" />
 
     <netSync
     AltName="Multiplayer Sync Type"
     Wiki="The sync type used for this bullet in multiplayer." 
-    Enum="BULLET_NET_SYNC_TYPE" />
+    ProjectEnum="BULLET_NET_SYNC_TYPE" />
 
     <enableAutoHoming
     AltName="Enable Auto-Homing"
@@ -188,12 +188,12 @@
     <homingUDType
     AltName="Vertical Homing Type"
     Wiki="The homing type to use for vertical tracking." 
-    Enum="BULLET_UD_HOMING_TYPE" />
+    ProjectEnum="BULLET_UD_HOMING_TYPE" />
 
     <homingLRType
     AltName="Horizontal Homing Type"
     Wiki="The homing type to use for horizontal tracking." 
-    Enum="BULLET_LR_HOMING_TYPE" />
+    ProjectEnum="BULLET_LR_HOMING_TYPE" />
 
     <pad1
     Padding="" />
@@ -233,22 +233,22 @@
     <penetration
     AltName="Penetration Type: Character"
     Wiki="The penetration type to use against characters for this bullet." 
-    Enum="BULLET_PENETRATION_TYPE" />
+    ProjectEnum="BULLET_PENETRATION_TYPE" />
 
     <penetrationMap
     AltName="Penetration Type: Map"
     Wiki="The penetration type to use against map pieces for this bullet." 
-    Enum="BULLET_PENETRATION_TYPE" />
+    ProjectEnum="BULLET_PENETRATION_TYPE" />
 
     <penetrationObj
     AltName="Penetration Type: Object"
     Wiki="The penetration type to use against objects for this bullet." 
-    Enum="BULLET_PENETRATION_TYPE" />
+    ProjectEnum="BULLET_PENETRATION_TYPE" />
 
     <penetrationWater
     AltName="Penetration Type: Water"
     Wiki="The penetration type to use against water for this bullet." 
-    Enum="BULLET_PENETRATION_TYPE" />
+    ProjectEnum="BULLET_PENETRATION_TYPE" />
 
     <muzzleFlashSfxId
     AltName="Muzzle Flash SFX ID"
@@ -393,12 +393,12 @@
     <onDamageType
     AltName="Contact Damage Type"
     Wiki="The damage type applied when this bullet touches a surface." 
-    Enum="BULLET_ON_DAMAGE_TYPE" />
+    ProjectEnum="BULLET_ON_DAMAGE_TYPE" />
 
     <hitbackType
     AltName="Repulsion Type"
     Wiki="The hit back type applied when this bullet is repulsed." 
-    Enum="BULLET_HIT_BACK_TYPE" />
+    ProjectEnum="BULLET_HIT_BACK_TYPE" />
 
     <spellParryAngleX
     AltName="Spell Parry: X-Axis Repulsion Angle"
@@ -444,49 +444,4 @@
     Padding="" />
     
   </Field>
-  <Enums>
-  	<Enum Name="BULLET_EMIT_ENTITY_TYPE">
-		<Option Value="0" Name="User" />
-		<Option Value="1" Name="Target" />
-		<Option Value="2" Name="Parent Bullet" />
-	</Enum>
-  	<Enum Name="BULLET_POS_TYPE">
-		<Option Value="0" Name="User" />
-		<Option Value="1" Name="Target" />
-		<Option Value="2" Name="Parent Bullet" />
-	</Enum>
-  	<Enum Name="BULLET_NET_SYNC_TYPE">
-		<Option Value="0" Name="No synchronization" />
-		<Option Value="1" Name="Emitter synchronization" />
-		<Option Value="2" Name="Bullet synchronization" />
-		<Option Value="3" Name="Coordinate emitter synchronization" />
-		<Option Value="4" Name="Placed bullet synchronization" />
-	</Enum>
-  	<Enum Name="BULLET_UD_HOMING_TYPE">
-		<Option Value="0" Name="Top and Bottom" />
-		<Option Value="1" Name="Top Only" />
-		<Option Value="2" Name="Bottom Only" />
-	</Enum>
-  	<Enum Name="BULLET_LR_HOMING_TYPE">
-		<Option Value="0" Name="Left and Right" />
-		<Option Value="1" Name="Left Only" />
-		<Option Value="2" Name="Right Only" />
-	</Enum>
-  	<Enum Name="BULLET_PENETRATION_TYPE">
-		<Option Value="0" Name="Disabled" />
-		<Option Value="1" Name="Enabled" />
-		<Option Value="2" Name="Non-Contact" />
-		<Option Value="3" Name="Sliding" />
-	</Enum>
-  	<Enum Name="BULLET_ON_DAMAGE_TYPE">
-		<Option Value="0" Name="None" />
-		<Option Value="1" Name="Impact" />
-		<Option Value="2" Name="Knockdown" />
-	</Enum>
-  	<Enum Name="BULLET_HIT_BACK_TYPE">
-		<Option Value="0" Name="Disabled" />
-		<Option Value="1" Name="Enabled" />
-		<Option Value="2" Name="Water Surface" />
-	</Enum>
-  </Enums>
 </PARAMMETA>

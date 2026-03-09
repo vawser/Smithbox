@@ -1,0 +1,32 @@
+{
+  "DisplayName": "EVENT_VALUE_m99_97_00_00",
+  "Name": "EVENT_VALUE_m99_97_00_00",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "12",
+      "Name": "Event ① Progress variable",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Hoge",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Test2",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Aadd",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Test",
+      "Description": ""
+    }
+  ]
+}

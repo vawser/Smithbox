@@ -1,0 +1,102 @@
+{
+  "DisplayName": "DAMAGE_DAMAGE_MOTION_TYPE",
+  "Name": "DAMAGE_DAMAGE_MOTION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "No motion",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Minimal damage",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Small knockback",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Big knockback",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Extra damage",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Blow away",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Launch",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Breath",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Fall down",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Parry break",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Guard break",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Fainting",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Bleeding",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Grab",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Head shot",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Small and medium damage from falling",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Heavy damage while falling",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Jump ground collision",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Jump mid-air collision",
+      "Description": ""
+    }
+  ]
+}

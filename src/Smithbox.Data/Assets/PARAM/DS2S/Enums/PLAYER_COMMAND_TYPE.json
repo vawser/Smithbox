@@ -1,0 +1,27 @@
+{
+  "DisplayName": "PLAYER_COMMAND_TYPE",
+  "Name": "PLAYER_COMMAND_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Stick tilt",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Stick player",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Stick rotation",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Push down the sticks at the same time",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "DisplayName": "PLAYER_EQUIP_ATTRIBUTE_TYPE",
+  "Name": "PLAYER_EQUIP_ATTRIBUTE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Flame",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Magic",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Lightning",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Darkness",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Poison",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Bleeding",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Crude",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Magic power",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Abyss",
+      "Description": ""
+    }
+  ]
+}

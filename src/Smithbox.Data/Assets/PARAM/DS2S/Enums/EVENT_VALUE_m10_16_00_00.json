@@ -1,0 +1,17 @@
+{
+  "DisplayName": "EVENT_VALUE_m10_16_00_00",
+  "Name": "EVENT_VALUE_m10_16_00_00",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Number of jailers defeated",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Pledge: Bell Keeper: Current pledge rank",
+      "Description": ""
+    }
+  ]
+}

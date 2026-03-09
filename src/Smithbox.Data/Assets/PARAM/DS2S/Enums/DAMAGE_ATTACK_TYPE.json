@@ -1,0 +1,32 @@
+{
+  "DisplayName": "DAMAGE_ATTACK_TYPE",
+  "Name": "DAMAGE_ATTACK_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "Slash",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Piercing",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Blow",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Bullet",
+      "Description": ""
+    }
+  ]
+}

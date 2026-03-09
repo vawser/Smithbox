@@ -1,0 +1,32 @@
+{
+  "DisplayName": "RESULT_EVENT_MSG_TYPE_ENUM",
+  "Name": "RESULT_EVENT_MSG_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "No message",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Text only",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Display dead character name",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Show hostname",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Message type termination",
+      "Description": ""
+    }
+  ]
+}

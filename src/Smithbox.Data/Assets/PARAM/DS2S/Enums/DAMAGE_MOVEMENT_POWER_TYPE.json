@@ -1,0 +1,37 @@
+{
+  "DisplayName": "DAMAGE_MOVEMENT_POWER_TYPE",
+  "Name": "DAMAGE_MOVEMENT_POWER_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "無",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Extremely small",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "小",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "中",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "大",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Extra large",
+      "Description": ""
+    }
+  ]
+}

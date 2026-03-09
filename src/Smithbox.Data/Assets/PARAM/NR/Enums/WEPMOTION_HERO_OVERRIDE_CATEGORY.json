@@ -1,0 +1,72 @@
+{
+  "DisplayName": "Hero Moveset ID",
+  "Name": "WEPMOTION_HERO_OVERRIDE_CATEGORY",
+  "Description": "These are TAE motion types used to determine weapon override animations for specfic heros.",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "270",
+      "Name": "Wylder - Greatsword",
+      "Description": ""
+    },
+    {
+      "ID": "271",
+      "Name": "Guardian - Halberd",
+      "Description": ""
+    },
+    {
+      "ID": "272",
+      "Name": "Ironeye - Bow",
+      "Description": ""
+    },
+    {
+      "ID": "273",
+      "Name": "Duchess - Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "274",
+      "Name": "Raider - Greataxe / Great Hammer / Colossal Weapon",
+      "Description": ""
+    },
+    {
+      "ID": "275",
+      "Name": "Revenant - Cursed Claws",
+      "Description": ""
+    },
+    {
+      "ID": "276",
+      "Name": "Recluse - Staff / Seal",
+      "Description": ""
+    },
+    {
+      "ID": "277",
+      "Name": "Executor - Katana",
+      "Description": ""
+    },
+    {
+      "ID": "278",
+      "Name": "Executor - Cursed Sword (Suncatcher)",
+      "Description": ""
+    },
+    {
+      "ID": "279",
+      "Name": "Scholar - Thrusting Sword",
+      "Description": ""
+    },
+    {
+      "ID": "280",
+      "Name": "Undertaker - Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "281",
+      "Name": "Scholar - Frozen Needle",
+      "Description": ""
+    }
+  ]
+}

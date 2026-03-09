@@ -49,22 +49,22 @@
     <hpDispType1
     AltName="HP Display Type: 1"
     Wiki="The HP display type for slot 1." 
-    Enum="BOSS_BATTLE_HP_DISP_TYPE" />
+    ProjectEnum="BOSS_BATTLE_HP_DISP_TYPE" />
     
     <hpDispType2
     AltName="HP Display Type: 2"
     Wiki="The HP display type for slot 2." 
-    Enum="BOSS_BATTLE_HP_DISP_TYPE" />
+    ProjectEnum="BOSS_BATTLE_HP_DISP_TYPE" />
     
     <hpDispType3
     AltName="HP Display Type: 3"
     Wiki="The HP display type for slot 3." 
-    Enum="BOSS_BATTLE_HP_DISP_TYPE" />
+    ProjectEnum="BOSS_BATTLE_HP_DISP_TYPE" />
     
     <killFeType
     AltName="Kill Effect Type"
     Wiki="The kill effect that occurs on the boss defeat." 
-    Enum="BOSS_BATTLE_KILL_FE_TYPE" />
+    ProjectEnum="BOSS_BATTLE_KILL_FE_TYPE" />
     
     <genEventGroupId1
     AltName="Generator Event Group ID: 1"
@@ -115,15 +115,4 @@
     AltName="Multiplayer Time Limit Reduction"
     Wiki="The amount of time limit reduction that occurs in multiplayer upon boss defeat." />
   </Field>
-  <Enums>
-    <Enum Name="BOSS_BATTLE_HP_DISP_TYPE">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Total HP" />
-      <Option Value="2" Name="Remaining HP" />
-    </Enum>
-    <Enum Name="BOSS_BATTLE_KILL_FE_TYPE">
-      <Option Value="0" Name="Normal" />
-      <Option Value="1" Name="Primal" />
-    </Enum>
-  </Enums>
 </PARAMMETA>

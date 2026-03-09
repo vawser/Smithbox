@@ -1,0 +1,22 @@
+{
+  "DisplayName": "GIMMIC_ROTATION_TYPE",
+  "Name": "GIMMIC_ROTATION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Dami poly same direction",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Dummy poly reverse direction",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Dummy poly relative position direction",
+      "Description": ""
+    }
+  ]
+}

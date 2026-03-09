@@ -1,0 +1,32 @@
+{
+  "DisplayName": "DAMAGE_CHARACTER_TYPE",
+  "Name": "DAMAGE_CHARACTER_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Spirit body",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Raw/cloth",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Slightly hard",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Very hard",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Giant/Demon",
+      "Description": ""
+    }
+  ]
+}

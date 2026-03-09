@@ -1,0 +1,22 @@
+{
+  "DisplayName": "CHR_WET_PARAM_ID",
+  "Name": "CHR_WET_PARAM_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Water wet",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Poison wet",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Oily",
+      "Description": ""
+    }
+  ]
+}

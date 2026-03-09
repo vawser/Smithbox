@@ -1,0 +1,17 @@
+{
+  "DisplayName": "BOOL_TRUEFALSE_TYPE",
+  "Name": "BOOL_TRUEFALSE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "FALSE",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "TRUE",
+      "Description": ""
+    }
+  ]
+}

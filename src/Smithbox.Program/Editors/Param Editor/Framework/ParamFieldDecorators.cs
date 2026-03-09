@@ -370,7 +370,7 @@ public class ParamFieldDecorators
 
             if (metaContext.DisplayProjectEnum && metaContext.FieldMeta.ProjectEnumType != null)
             {
-                var optionList = ParentView.Project.Handler.ProjectData.ProjectEnums.List.Where(e => e.Name == metaContext.FieldMeta.ProjectEnumType).FirstOrDefault();
+                var optionList = ParentView.Project.Handler.ParamData.Enums.List.Where(e => e.Name == metaContext.FieldMeta.ProjectEnumType).FirstOrDefault();
 
                 if (optionList != null)
                 {
@@ -789,7 +789,7 @@ public static class ProjectEnumHelper
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
 
-        var enumEntry = curView.Project.Handler.ProjectData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+        var enumEntry = curView.Project.Handler.ParamData.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
         if (enumEntry != null)
         {
@@ -809,7 +809,7 @@ public static class ProjectEnumHelper
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
 
-        var enumEntry = curView.Project.Handler.ProjectData.ProjectEnums.List
+        var enumEntry = curView.Project.Handler.ParamData.Enums.List
             .Where(e => e.Name == enumType).FirstOrDefault();
 
         if (enumEntry != null)

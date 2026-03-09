@@ -1,0 +1,47 @@
+{
+  "DisplayName": "EQUIP_CLOTH_CTRL_TYPE",
+  "Name": "EQUIP_CLOTH_CTRL_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Do nothing",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Loincloth OFF",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Miniskirt OFF",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Long OFF",
+      "Description": ""
+    },
+    {
+      "ID": "64",
+      "Name": "No cross",
+      "Description": ""
+    },
+    {
+      "ID": "65",
+      "Name": "Loincloth",
+      "Description": ""
+    },
+    {
+      "ID": "66",
+      "Name": "Miniskirt",
+      "Description": ""
+    },
+    {
+      "ID": "67",
+      "Name": "Long",
+      "Description": ""
+    }
+  ]
+}

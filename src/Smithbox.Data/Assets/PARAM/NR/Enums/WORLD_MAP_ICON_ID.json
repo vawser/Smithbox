@@ -1,0 +1,342 @@
+{
+  "DisplayName": "WORLD_MAP_ICON_ID",
+  "Name": "WORLD_MAP_ICON_ID",
+  "Description": "These are IDs for the world map icons.",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Grace",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Blocked Grace",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Collapsed Church",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Catacombs Entrance",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Pillar Ruins",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Wooden Shack",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Distant Village",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Collapsed Tower",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Evergaol",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Gatehouse",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Bridge of Sacrifice",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Cave",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Tunnel",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "River Well",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Hero's Grave",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Mage's Rise",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Fort",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Windmill",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Cathedral of Manus Celes",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Grand Lift",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Encampment",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Divine Tower",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Colosseum",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Castle Morne",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Caria Manor",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Shaded Castle",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Redmane Castle",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Castle Sol",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Minor Erdtree",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "Academy Gate Town",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Sellia Town of Sorcery",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "Ordina Liturgical Town",
+      "Description": ""
+    },
+    {
+      "ID": "35",
+      "Name": "Frenzied Village",
+      "Description": ""
+    },
+    {
+      "ID": "36",
+      "Name": "Windmill Village",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "Ailing Village",
+      "Description": ""
+    },
+    {
+      "ID": "38",
+      "Name": "Jarburg",
+      "Description": ""
+    },
+    {
+      "ID": "39",
+      "Name": "Village of the Albinaurics",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Hermit Village",
+      "Description": ""
+    },
+    {
+      "ID": "45",
+      "Name": "Mohgwyn Dynasty Mausoleum",
+      "Description": ""
+    },
+    {
+      "ID": "46",
+      "Name": "Eternal City",
+      "Description": ""
+    },
+    {
+      "ID": "47",
+      "Name": "Hallowed Grounds",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Stormveil Castle",
+      "Description": ""
+    },
+    {
+      "ID": "51",
+      "Name": "Academy of Raya Lucaria",
+      "Description": ""
+    },
+    {
+      "ID": "52",
+      "Name": "The Four Belfries",
+      "Description": ""
+    },
+    {
+      "ID": "53",
+      "Name": "Ruin-Strewn Precipice",
+      "Description": ""
+    },
+    {
+      "ID": "54",
+      "Name": "Bestial Sanctum",
+      "Description": ""
+    },
+    {
+      "ID": "55",
+      "Name": "Miquella's Haligtree",
+      "Description": ""
+    },
+    {
+      "ID": "56",
+      "Name": "Elphael, Brace of the Haligtree",
+      "Description": ""
+    },
+    {
+      "ID": "57",
+      "Name": "Forge of the Giants",
+      "Description": ""
+    },
+    {
+      "ID": "58",
+      "Name": "Volcano Manor",
+      "Description": ""
+    },
+    {
+      "ID": "59",
+      "Name": "Crumbling Farum Azula",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Leyndell, Royal Capital",
+      "Description": ""
+    },
+    {
+      "ID": "61",
+      "Name": "Subterranean Shunning-Grounds",
+      "Description": ""
+    },
+    {
+      "ID": "62",
+      "Name": "Leyndell, Ashen Capital",
+      "Description": ""
+    },
+    {
+      "ID": "65",
+      "Name": "Chapel of Anticipation",
+      "Description": ""
+    },
+    {
+      "ID": "66",
+      "Name": "Carian Study Hall",
+      "Description": ""
+    },
+    {
+      "ID": "70",
+      "Name": "White Circle with Figure Within",
+      "Description": ""
+    },
+    {
+      "ID": "80",
+      "Name": "NPC Marker",
+      "Description": ""
+    },
+    {
+      "ID": "83",
+      "Name": "Grace Guidance",
+      "Description": ""
+    },
+    {
+      "ID": "84",
+      "Name": "Starlight Guidance",
+      "Description": ""
+    },
+    {
+      "ID": "85",
+      "Name": "Catacomb Guidance",
+      "Description": ""
+    },
+    {
+      "ID": "86",
+      "Name": "NPC Marker (White Fog behind)",
+      "Description": ""
+    },
+    {
+      "ID": "87",
+      "Name": "Red Invasion Marker",
+      "Description": ""
+    },
+    {
+      "ID": "88",
+      "Name": "Red Invasion Marker (faded)",
+      "Description": ""
+    },
+    {
+      "ID": "89",
+      "Name": "Catacomb",
+      "Description": ""
+    },
+    {
+      "ID": "90",
+      "Name": "Catacomb",
+      "Description": ""
+    }
+  ]
+}

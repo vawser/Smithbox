@@ -1,0 +1,32 @@
+{
+  "DisplayName": "BOSS_PARTS_TYPE",
+  "Name": "BOSS_PARTS_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Main body",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Part 1",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Part 2",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Part 3",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Part 4",
+      "Description": ""
+    }
+  ]
+}

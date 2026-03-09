@@ -1,0 +1,37 @@
+{
+  "DisplayName": "EQUIP_CULLING_GROUP_SET_TARGET",
+  "Name": "EQUIP_CULLING_GROUP_SET_TARGET",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "All parts",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Torso only",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Helmet only",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Arm only",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Legs only",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Face (hair) only",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "DisplayName": "NPC_TALK_WINDOW_TYPE_ENUM",
+  "Name": "NPC_TALK_WINDOW_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Normal",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Voice only",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Do not close manually",
+      "Description": ""
+    }
+  ]
+}

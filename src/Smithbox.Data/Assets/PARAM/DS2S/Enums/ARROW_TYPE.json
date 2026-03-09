@@ -1,0 +1,27 @@
+{
+  "DisplayName": "ARROW_TYPE",
+  "Name": "ARROW_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Arrow",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Great Arrow",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Bolt",
+      "Description": ""
+    }
+  ]
+}

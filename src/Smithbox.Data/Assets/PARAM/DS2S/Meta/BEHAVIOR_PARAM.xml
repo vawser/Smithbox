@@ -57,7 +57,7 @@
     <action0BladeCtrlType
     AltName="Action 0: Melee Control Type"
     Wiki="The melee control type for this behavior." 
-    Enum="BLADE_CTRL_TYPE" />
+    ProjectEnum="BLADE_CTRL_TYPE" />
     
     <action0BulletId00
     AltName="Action 0: Bullet ID 0"
@@ -172,7 +172,7 @@
     <action1BladeCtrlType
     AltName="Action 1: Melee Control Type"
     Wiki="The melee control type for this behavior." 
-    Enum="BLADE_CTRL_TYPE" />
+    ProjectEnum="BLADE_CTRL_TYPE" />
     
     <action1BulletId00
     AltName="Action 1: Bullet ID 0"
@@ -287,7 +287,7 @@
     <action2BladeCtrlType
     AltName="Action 2: Melee Control Type"
     Wiki="The melee control type for this behavior." 
-    Enum="BLADE_CTRL_TYPE" />
+    ProjectEnum="BLADE_CTRL_TYPE" />
     
     <action2BulletId00
     AltName="Action 2: Bullet ID 0"
@@ -402,7 +402,7 @@
     <action3BladeCtrlType
     AltName="Action 3: Melee Control Type"
     Wiki="The melee control type for this behavior." 
-    Enum="BLADE_CTRL_TYPE" />
+    ProjectEnum="BLADE_CTRL_TYPE" />
     
     <action3BulletId00
     AltName="Action 3: Bullet ID 0"
@@ -517,7 +517,7 @@
     <action4BladeCtrlType
     AltName="Action 4: Melee Control Type"
     Wiki="The melee control type for this behavior." 
-    Enum="BLADE_CTRL_TYPE" />
+    ProjectEnum="BLADE_CTRL_TYPE" />
     
     <action4BulletId00
     AltName="Action 4: Bullet ID 0"
@@ -632,7 +632,7 @@
     <action5BladeCtrlType
     AltName="Action 5: Melee Control Type"
     Wiki="The melee control type for this behavior." 
-    Enum="BLADE_CTRL_TYPE" />
+    ProjectEnum="BLADE_CTRL_TYPE" />
     
     <action5BulletId00
     AltName="Action 5: Bullet ID 0"
@@ -747,7 +747,7 @@
     <action6BladeCtrlType
     AltName="Action 6: Melee Control Type"
     Wiki="The melee control type for this behavior." 
-    Enum="BLADE_CTRL_TYPE" />
+    ProjectEnum="BLADE_CTRL_TYPE" />
     
     <action6BulletId00
     AltName="Action 6: Bullet ID 0"
@@ -862,7 +862,7 @@
     <action7BladeCtrlType
     AltName="Action 7: Melee Control Type"
     Wiki="The melee control type for this behavior." 
-    Enum="BLADE_CTRL_TYPE" />
+    ProjectEnum="BLADE_CTRL_TYPE" />
     
     <action7BulletId00
     AltName="Action 7: Bullet ID 0"
@@ -977,7 +977,7 @@
     <action8BladeCtrlType
     AltName="Action 8: Melee Control Type"
     Wiki="The melee control type for this behavior." 
-    Enum="BLADE_CTRL_TYPE" />
+    ProjectEnum="BLADE_CTRL_TYPE" />
     
     <action8BulletId00
     AltName="Action 8: Bullet ID 0"
@@ -1092,7 +1092,7 @@
     <action9BladeCtrlType
     AltName="Action 9: Melee Control Type"
     Wiki="The melee control type for this behavior." 
-    Enum="BLADE_CTRL_TYPE" />
+    ProjectEnum="BLADE_CTRL_TYPE" />
     
     <action9BulletId00
     AltName="Action 9: Bullet ID 0"
@@ -1154,13 +1154,4 @@
     AltName="Action 9: Maximum Reload Time"
     Wiki="The maximum time to wait before repeating this behavior." />
   </Field>
-  <Enums>
-	<Enum Name="BLADE_CTRL_TYPE">
-		<Option Value="0" Name="Spot Attack" />
-		<Option Value="1" Name="Walking Attack" />
-		<Option Value="2" Name="Walking Shooting" />
-		<Option Value="3" Name="Spot Shooting" />
-		<Option Value="4" Name="Invalid" />
-	</Enum>
-  </Enums>  
 </PARAMMETA>

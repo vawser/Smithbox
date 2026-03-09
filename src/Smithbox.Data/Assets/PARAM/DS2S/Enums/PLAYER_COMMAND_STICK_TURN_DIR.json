@@ -1,0 +1,17 @@
+{
+  "DisplayName": "PLAYER_COMMAND_STICK_TURN_DIR",
+  "Name": "PLAYER_COMMAND_STICK_TURN_DIR",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Rotate right",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Left rotation",
+      "Description": ""
+    }
+  ]
+}

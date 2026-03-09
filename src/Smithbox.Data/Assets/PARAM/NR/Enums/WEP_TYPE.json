@@ -1,0 +1,262 @@
+{
+  "DisplayName": "Weapon Type",
+  "Name": "WEP_TYPE",
+  "Description": "Types of weapons that generally share animations.",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "Any",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Straight Sword",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Greatsword",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Colossal Sword",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Curved Sword",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Curved Greatsword",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Katana",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Twinblade",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Thrusting Sword",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Heavy Thrusting Sword",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Axe",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Greataxe",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Great Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Flail",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Spear",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Great Spear",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Halberd",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Reaper",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Fist (Unarmed)",
+      "Description": ""
+    },
+    {
+      "ID": "35",
+      "Name": "Fist",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "Claw",
+      "Description": ""
+    },
+    {
+      "ID": "39",
+      "Name": "Whip",
+      "Description": ""
+    },
+    {
+      "ID": "41",
+      "Name": "Colossal Weapon",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Light Bow",
+      "Description": ""
+    },
+    {
+      "ID": "51",
+      "Name": "Bow",
+      "Description": ""
+    },
+    {
+      "ID": "53",
+      "Name": "Greatbow",
+      "Description": ""
+    },
+    {
+      "ID": "55",
+      "Name": "Crossbow",
+      "Description": ""
+    },
+    {
+      "ID": "56",
+      "Name": "Ballista",
+      "Description": ""
+    },
+    {
+      "ID": "57",
+      "Name": "Glintstone Staff",
+      "Description": ""
+    },
+    {
+      "ID": "61",
+      "Name": "Sacred Seal",
+      "Description": ""
+    },
+    {
+      "ID": "65",
+      "Name": "Small Shield",
+      "Description": ""
+    },
+    {
+      "ID": "67",
+      "Name": "Medium Shield",
+      "Description": ""
+    },
+    {
+      "ID": "69",
+      "Name": "Greatshield",
+      "Description": ""
+    },
+    {
+      "ID": "81",
+      "Name": "Arrow",
+      "Description": ""
+    },
+    {
+      "ID": "83",
+      "Name": "Greatarrow",
+      "Description": ""
+    },
+    {
+      "ID": "85",
+      "Name": "Bolt",
+      "Description": ""
+    },
+    {
+      "ID": "86",
+      "Name": "Greatbolt",
+      "Description": ""
+    },
+    {
+      "ID": "87",
+      "Name": "Torch",
+      "Description": ""
+    },
+    {
+      "ID": "1100",
+      "Name": "Wylder - Greatsword",
+      "Description": ""
+    },
+    {
+      "ID": "1200",
+      "Name": "Guardian - Halberd",
+      "Description": ""
+    },
+    {
+      "ID": "1300",
+      "Name": "Ironeye - Bow",
+      "Description": ""
+    },
+    {
+      "ID": "1400",
+      "Name": "Duchess - Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "1500",
+      "Name": "Raider - Greataxe / Great Hammer / Colossal Weapon",
+      "Description": ""
+    },
+    {
+      "ID": "1600",
+      "Name": "Revenant - Sacred Seal",
+      "Description": ""
+    },
+    {
+      "ID": "1700",
+      "Name": "Recluse - Glintstone Staff",
+      "Description": ""
+    },
+    {
+      "ID": "1800",
+      "Name": "Executor - Katana",
+      "Description": ""
+    },
+    {
+      "ID": "1900",
+      "Name": "Scholar - Thrusting Sword",
+      "Description": ""
+    },
+    {
+      "ID": "2000",
+      "Name": "Undertaker - Hammer",
+      "Description": ""
+    }
+  ]
+}

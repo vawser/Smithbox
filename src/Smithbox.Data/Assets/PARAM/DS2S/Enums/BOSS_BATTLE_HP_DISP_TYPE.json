@@ -1,0 +1,22 @@
+{
+  "DisplayName": "BOSS_BATTLE_HP_DISP_TYPE",
+  "Name": "BOSS_BATTLE_HP_DISP_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Total HP",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Remaining HP",
+      "Description": ""
+    }
+  ]
+}

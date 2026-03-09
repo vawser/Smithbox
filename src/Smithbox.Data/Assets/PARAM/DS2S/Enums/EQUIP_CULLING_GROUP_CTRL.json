@@ -1,0 +1,27 @@
+{
+  "DisplayName": "EQUIP_CULLING_GROUP_CTRL",
+  "Name": "EQUIP_CULLING_GROUP_CTRL",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "━",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "OFF",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "ON",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Number of culling types",
+      "Description": ""
+    }
+  ]
+}

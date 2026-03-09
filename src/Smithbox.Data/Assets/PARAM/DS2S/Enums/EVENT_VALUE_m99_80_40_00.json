@@ -1,0 +1,12 @@
+{
+  "DisplayName": "EVENT_VALUE_m99_80_40_00",
+  "Name": "EVENT_VALUE_m99_80_40_00",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Test",
+      "Description": ""
+    }
+  ]
+}

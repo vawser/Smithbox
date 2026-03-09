@@ -1,0 +1,27 @@
+{
+  "DisplayName": "GENERATOR_REGIST_OBJECT",
+  "Name": "GENERATOR_REGIST_OBJECT",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Player",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Skeleton Soldier (Logic 9997)",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Skeleton Soldier (Logic 9996)",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Skeleton Soldier (Logic 9995)",
+      "Description": ""
+    }
+  ]
+}

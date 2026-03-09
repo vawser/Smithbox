@@ -1,0 +1,22 @@
+{
+  "DisplayName": "EQUIP_MODEL_GENDER",
+  "Name": "EQUIP_MODEL_GENDER",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Shared",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Mixed",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Gender",
+      "Description": ""
+    }
+  ]
+}

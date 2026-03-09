@@ -1,0 +1,17 @@
+{
+  "DisplayName": "DOOR_TYPE_ENUM",
+  "Name": "DOOR_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Single door",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Both doors",
+      "Description": ""
+    }
+  ]
+}

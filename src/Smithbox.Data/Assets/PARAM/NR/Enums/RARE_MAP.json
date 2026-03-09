@@ -1,0 +1,37 @@
+{
+  "DisplayName": "Map",
+  "Name": "RARE_MAP",
+  "Description": "ID for the different variants of Limveld",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Limveld",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Mountaintop",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "The Crater",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Rotted Woods",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Great Hollow",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Shrouded City",
+      "Description": ""
+    }
+  ]
+}

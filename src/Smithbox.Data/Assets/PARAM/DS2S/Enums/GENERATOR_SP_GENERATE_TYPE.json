@@ -1,0 +1,42 @@
+{
+  "DisplayName": "GENERATOR_SP_GENERATE_TYPE",
+  "Name": "GENERATOR_SP_GENERATE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "White spirit",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Black spirit",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Small white spirit",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Network player memory usage",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Dress-up NPC: Sorcerer",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Mouse",
+      "Description": ""
+    }
+  ]
+}

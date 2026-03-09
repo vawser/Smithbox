@@ -1,0 +1,32 @@
+{
+  "DisplayName": "ITEM_USED_DIALOG_CHECK_TYPE",
+  "Name": "ITEM_USED_DIALOG_CHECK_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Not set",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "No place to check",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Run on host",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Run as guest",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Execute during duel",
+      "Description": ""
+    }
+  ]
+}

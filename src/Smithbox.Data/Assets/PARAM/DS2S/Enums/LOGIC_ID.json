@@ -1,0 +1,2607 @@
+{
+  "DisplayName": "LOGIC_ID",
+  "Name": "LOGIC_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Prohibited from use",
+      "Description": ""
+    },
+    {
+      "ID": "9500",
+      "Name": "009500 For avoidance test",
+      "Description": ""
+    },
+    {
+      "ID": "9501",
+      "Name": "009501 For lock movement confirmation",
+      "Description": ""
+    },
+    {
+      "ID": "9502",
+      "Name": "009502 For moving area test",
+      "Description": ""
+    },
+    {
+      "ID": "9503",
+      "Name": "009503 For varistor testing",
+      "Description": ""
+    },
+    {
+      "ID": "9504",
+      "Name": "009504 I am for ○○Chinese test",
+      "Description": ""
+    },
+    {
+      "ID": "9505",
+      "Name": "009505 For throwing test",
+      "Description": ""
+    },
+    {
+      "ID": "9506",
+      "Name": "009506 For target state acquisition test",
+      "Description": ""
+    },
+    {
+      "ID": "9507",
+      "Name": "009507 For startup state exit test",
+      "Description": ""
+    },
+    {
+      "ID": "9508",
+      "Name": "009508 For testing the use of dummy objects",
+      "Description": ""
+    },
+    {
+      "ID": "9509",
+      "Name": "009509 For sound reaction test",
+      "Description": ""
+    },
+    {
+      "ID": "9510",
+      "Name": "009510 For Barrett reaction test",
+      "Description": ""
+    },
+    {
+      "ID": "9511",
+      "Name": "009511 For click movement test",
+      "Description": ""
+    },
+    {
+      "ID": "9512",
+      "Name": "009512 For group testing",
+      "Description": ""
+    },
+    {
+      "ID": "9513",
+      "Name": "009513 For parallel movement test",
+      "Description": ""
+    },
+    {
+      "ID": "9514",
+      "Name": "009514 For last sighting test",
+      "Description": ""
+    },
+    {
+      "ID": "9515",
+      "Name": "009515 For general purpose object testing",
+      "Description": ""
+    },
+    {
+      "ID": "9516",
+      "Name": "009516 For item testing",
+      "Description": ""
+    },
+    {
+      "ID": "9517",
+      "Name": "009517 For upper multiple startup test",
+      "Description": ""
+    },
+    {
+      "ID": "9518",
+      "Name": "009518 For movement speed test",
+      "Description": ""
+    },
+    {
+      "ID": "9519",
+      "Name": "009519 For parry test",
+      "Description": ""
+    },
+    {
+      "ID": "9520",
+      "Name": "009520 For attack turning test",
+      "Description": ""
+    },
+    {
+      "ID": "9521",
+      "Name": "009521 For combo cancellation test",
+      "Description": ""
+    },
+    {
+      "ID": "9522",
+      "Name": "009522 For network confirmation",
+      "Description": ""
+    },
+    {
+      "ID": "9523",
+      "Name": "009523 For checking movement parameters",
+      "Description": ""
+    },
+    {
+      "ID": "9524",
+      "Name": "009524 Brake test",
+      "Description": ""
+    },
+    {
+      "ID": "9525",
+      "Name": "009525 Navi mesh test",
+      "Description": ""
+    },
+    {
+      "ID": "9526",
+      "Name": "009526 Enemy search target test",
+      "Description": ""
+    },
+    {
+      "ID": "9527",
+      "Name": "009527 Part damage test",
+      "Description": ""
+    },
+    {
+      "ID": "9528",
+      "Name": "009528 White Spirit NPC Test",
+      "Description": ""
+    },
+    {
+      "ID": "9550",
+      "Name": "009550 For planning: Lock movement (normal)",
+      "Description": ""
+    },
+    {
+      "ID": "9551",
+      "Name": "009551 For planning: Lock movement (large size)",
+      "Description": ""
+    },
+    {
+      "ID": "9552",
+      "Name": "009552 For planning: Attack cancellation",
+      "Description": ""
+    },
+    {
+      "ID": "9553",
+      "Name": "009553 For planning: avoidance cancellation",
+      "Description": ""
+    },
+    {
+      "ID": "9554",
+      "Name": "009554 For planning: Cancellation of movement",
+      "Description": ""
+    },
+    {
+      "ID": "9555",
+      "Name": "009555 For planning: Damage stiffness adjustment",
+      "Description": ""
+    },
+    {
+      "ID": "9556",
+      "Name": "009556 For planning: Step cancellation",
+      "Description": ""
+    },
+    {
+      "ID": "9580",
+      "Name": "009580 Miyanami test 0",
+      "Description": ""
+    },
+    {
+      "ID": "9581",
+      "Name": "009581 Miyanami test 1",
+      "Description": ""
+    },
+    {
+      "ID": "9582",
+      "Name": "009582 Miyanami test 2",
+      "Description": ""
+    },
+    {
+      "ID": "9583",
+      "Name": "009583 Miyanami test 3",
+      "Description": ""
+    },
+    {
+      "ID": "9584",
+      "Name": "009584 Miyanami test 4",
+      "Description": ""
+    },
+    {
+      "ID": "9585",
+      "Name": "009585 Miyanami test 5",
+      "Description": ""
+    },
+    {
+      "ID": "9586",
+      "Name": "009586 Miyanami test 6",
+      "Description": ""
+    },
+    {
+      "ID": "9587",
+      "Name": "009587 Miyanami test 7",
+      "Description": ""
+    },
+    {
+      "ID": "9588",
+      "Name": "009588 Miyanami test 8",
+      "Description": ""
+    },
+    {
+      "ID": "9589",
+      "Name": "009589 Miyanami test 9",
+      "Description": ""
+    },
+    {
+      "ID": "9590",
+      "Name": "009590 Watanabe (Kyo) Test 0",
+      "Description": ""
+    },
+    {
+      "ID": "9591",
+      "Name": "009591 Watanabe (Kyo) Test 1",
+      "Description": ""
+    },
+    {
+      "ID": "9592",
+      "Name": "009592 Watanabe (Kyo) Test 2",
+      "Description": ""
+    },
+    {
+      "ID": "9593",
+      "Name": "009593 Watanabe (Kyo) Test 3",
+      "Description": ""
+    },
+    {
+      "ID": "9594",
+      "Name": "009594 Watanabe (Kyo) Test 4",
+      "Description": ""
+    },
+    {
+      "ID": "9595",
+      "Name": "009595 Watanabe (Kyo) Test 5",
+      "Description": ""
+    },
+    {
+      "ID": "9596",
+      "Name": "009596 Watanabe (Kyo) Test 6",
+      "Description": ""
+    },
+    {
+      "ID": "9597",
+      "Name": "009597 Watanabe (Kyo) Test 7",
+      "Description": ""
+    },
+    {
+      "ID": "9598",
+      "Name": "009598 Watanabe (Kyo) Test 8",
+      "Description": ""
+    },
+    {
+      "ID": "9599",
+      "Name": "009599 Watanabe (Kyo) Test 9",
+      "Description": ""
+    },
+    {
+      "ID": "9900",
+      "Name": "009900 Upper rank: Giant lower class soldier_Shibu",
+      "Description": ""
+    },
+    {
+      "ID": "9901",
+      "Name": "009901 Upper rank: Giant Lower rank soldier: Rocketman_Shibu",
+      "Description": ""
+    },
+    {
+      "ID": "9902",
+      "Name": "009902 Upper rank: Giant Lower class soldier: Destroy the wall",
+      "Description": ""
+    },
+    {
+      "ID": "9909",
+      "Name": "009909 Constant damage test",
+      "Description": ""
+    },
+    {
+      "ID": "9911",
+      "Name": "009911 Uchikawa test",
+      "Description": ""
+    },
+    {
+      "ID": "9912",
+      "Name": "009912 Long distance (magic) test",
+      "Description": ""
+    },
+    {
+      "ID": "9913",
+      "Name": "009913 Fukuda test",
+      "Description": ""
+    },
+    {
+      "ID": "9914",
+      "Name": "009914 Upper: Upper test_Kurita",
+      "Description": ""
+    },
+    {
+      "ID": "9915",
+      "Name": "009915 Lower level: Lower level test_Kurita",
+      "Description": ""
+    },
+    {
+      "ID": "9916",
+      "Name": "009916 Top boss test",
+      "Description": ""
+    },
+    {
+      "ID": "9917",
+      "Name": "009917 Lower boss test",
+      "Description": ""
+    },
+    {
+      "ID": "9918",
+      "Name": "009918 Hashimoto test",
+      "Description": ""
+    },
+    {
+      "ID": "9919",
+      "Name": "009919 Wakasa test",
+      "Description": ""
+    },
+    {
+      "ID": "9920",
+      "Name": "009920 Top: Slave beast test (torch escape)",
+      "Description": ""
+    },
+    {
+      "ID": "9921",
+      "Name": "009921 Lower level: Slave beast test (torch escape)",
+      "Description": ""
+    },
+    {
+      "ID": "9922",
+      "Name": "009922 Kurita test",
+      "Description": ""
+    },
+    {
+      "ID": "9923",
+      "Name": "009923 Equipment switching",
+      "Description": ""
+    },
+    {
+      "ID": "9924",
+      "Name": "009924 Damipoly Test",
+      "Description": ""
+    },
+    {
+      "ID": "9925",
+      "Name": "009925 Fujita test",
+      "Description": ""
+    },
+    {
+      "ID": "9926",
+      "Name": "009926 Itagaki test",
+      "Description": ""
+    },
+    {
+      "ID": "9927",
+      "Name": "009927 Resident SFX test",
+      "Description": ""
+    },
+    {
+      "ID": "9931",
+      "Name": "009931 Navigation mesh movement (OBJ operation)",
+      "Description": ""
+    },
+    {
+      "ID": "9935",
+      "Name": "009935 Jump attack test",
+      "Description": ""
+    },
+    {
+      "ID": "9936",
+      "Name": "009936 Top: General purpose test",
+      "Description": ""
+    },
+    {
+      "ID": "9938",
+      "Name": "009938 Possession item judgment test",
+      "Description": ""
+    },
+    {
+      "ID": "9940",
+      "Name": "009940 People recognition test: enemy side",
+      "Description": ""
+    },
+    {
+      "ID": "9941",
+      "Name": "009941 Number of people recognition test: Ally side",
+      "Description": ""
+    },
+    {
+      "ID": "9942",
+      "Name": "009942 Player faction individual identification test",
+      "Description": ""
+    },
+    {
+      "ID": "9945",
+      "Name": "009945 Upper: For temporary enemies",
+      "Description": ""
+    },
+    {
+      "ID": "9946",
+      "Name": "009946 Lower level: For temporary enemies",
+      "Description": ""
+    },
+    {
+      "ID": "9947",
+      "Name": "009947 Top: Multiplayer test",
+      "Description": ""
+    },
+    {
+      "ID": "9948",
+      "Name": "009948 Lower: Multiplayer test",
+      "Description": ""
+    },
+    {
+      "ID": "9949",
+      "Name": "009949 Upper: Enemy group settings",
+      "Description": ""
+    },
+    {
+      "ID": "9950",
+      "Name": "009950 Lower: Enemy group settings",
+      "Description": ""
+    },
+    {
+      "ID": "9951",
+      "Name": "009951 Lock-on impossible test",
+      "Description": ""
+    },
+    {
+      "ID": "9952",
+      "Name": "009952 Upper: For NPC test",
+      "Description": ""
+    },
+    {
+      "ID": "9953",
+      "Name": "009953 Lower: For NPC test",
+      "Description": ""
+    },
+    {
+      "ID": "9954",
+      "Name": "009954 Damage test",
+      "Description": ""
+    },
+    {
+      "ID": "9955",
+      "Name": "009955 Navigation mesh to clicked point",
+      "Description": ""
+    },
+    {
+      "ID": "9956",
+      "Name": "009956 Navimesh movement of Navigraph test route",
+      "Description": ""
+    },
+    {
+      "ID": "9958",
+      "Name": "009958 Lower level: Sound reaction navigation mesh: Test",
+      "Description": ""
+    },
+    {
+      "ID": "9959",
+      "Name": "009959 Top: Movement navigation_goal angle acquisition test",
+      "Description": ""
+    },
+    {
+      "ID": "9960",
+      "Name": "009960 Lower level: Movement navigation_goal angle acquisition test",
+      "Description": ""
+    },
+    {
+      "ID": "9961",
+      "Name": "009961 Upper level: For checking movement parameters",
+      "Description": ""
+    },
+    {
+      "ID": "9962",
+      "Name": "009962 Lower: For checking movement parameters",
+      "Description": ""
+    },
+    {
+      "ID": "9963",
+      "Name": "009963 Top: Fairy Hotori Temporary Logic",
+      "Description": ""
+    },
+    {
+      "ID": "9964",
+      "Name": "009964 Lower level: Fairy Hotori Temporary Logic",
+      "Description": ""
+    },
+    {
+      "ID": "9965",
+      "Name": "009965 Upper: For enemy gallery",
+      "Description": ""
+    },
+    {
+      "ID": "9966",
+      "Name": "009966 Lower: For enemy gallery",
+      "Description": ""
+    },
+    {
+      "ID": "9967",
+      "Name": "009967 Kataoka test",
+      "Description": ""
+    },
+    {
+      "ID": "9968",
+      "Name": "009968 Fujishima test",
+      "Description": ""
+    },
+    {
+      "ID": "9969",
+      "Name": "009969 Yamazaki test",
+      "Description": ""
+    },
+    {
+      "ID": "9972",
+      "Name": "009972 Logic for upper level improvement",
+      "Description": ""
+    },
+    {
+      "ID": "9973",
+      "Name": "009973 Top: Tobita Test: Titan Guard Captain",
+      "Description": ""
+    },
+    {
+      "ID": "9974",
+      "Name": "009974 Lower level: Tobita Test: Titan Guard Captain",
+      "Description": ""
+    },
+    {
+      "ID": "9975",
+      "Name": "009975 Upper: For eight volumes test",
+      "Description": ""
+    },
+    {
+      "ID": "9976",
+      "Name": "009976 Lower: For eight volumes test",
+      "Description": ""
+    },
+    {
+      "ID": "9977",
+      "Name": "009977 Upper: For Tobita test",
+      "Description": ""
+    },
+    {
+      "ID": "9978",
+      "Name": "009978 Lower: For Tobita test",
+      "Description": ""
+    },
+    {
+      "ID": "9979",
+      "Name": "009979 Upper level: Yoshida test: Debug",
+      "Description": ""
+    },
+    {
+      "ID": "9980",
+      "Name": "009980 Upper rank: For Yoshida: Giant lower class soldier",
+      "Description": ""
+    },
+    {
+      "ID": "9981",
+      "Name": "009981 Lower level: For Yoshida: Giant lower class soldier",
+      "Description": ""
+    },
+    {
+      "ID": "9982",
+      "Name": "009982 Upper: For Yoshida test",
+      "Description": ""
+    },
+    {
+      "ID": "9983",
+      "Name": "009983 Lower: For Yoshida test",
+      "Description": ""
+    },
+    {
+      "ID": "9984",
+      "Name": "009984 For Yabuki",
+      "Description": ""
+    },
+    {
+      "ID": "9985",
+      "Name": "009985 For checking logic operation",
+      "Description": ""
+    },
+    {
+      "ID": "9986",
+      "Name": "009986 Navimesh test_Shibu",
+      "Description": ""
+    },
+    {
+      "ID": "9987",
+      "Name": "009987 Titan Junior Soldier Test_Shibu",
+      "Description": ""
+    },
+    {
+      "ID": "9988",
+      "Name": "009988 Giant Guard Captain Test_Shibu",
+      "Description": ""
+    },
+    {
+      "ID": "9989",
+      "Name": "009989 BOSS test_Shibu",
+      "Description": ""
+    },
+    {
+      "ID": "9990",
+      "Name": "009990 Shibuya-san test use",
+      "Description": ""
+    },
+    {
+      "ID": "9991",
+      "Name": "009991 For attack test",
+      "Description": ""
+    },
+    {
+      "ID": "9992",
+      "Name": "009992 For 50M range tracking test",
+      "Description": ""
+    },
+    {
+      "ID": "9993",
+      "Name": "009993 For path route test",
+      "Description": ""
+    },
+    {
+      "ID": "9994",
+      "Name": "009994 For dead soldier test",
+      "Description": ""
+    },
+    {
+      "ID": "9995",
+      "Name": "009995 Route search test 1",
+      "Description": ""
+    },
+    {
+      "ID": "9996",
+      "Name": "009996 Route search test 2",
+      "Description": ""
+    },
+    {
+      "ID": "9997",
+      "Name": "009997 Route search test 3",
+      "Description": ""
+    },
+    {
+      "ID": "9998",
+      "Name": "009998 Large tree test 1",
+      "Description": ""
+    },
+    {
+      "ID": "9999",
+      "Name": "009999 Large tree test 2",
+      "Description": ""
+    },
+    {
+      "ID": "100000",
+      "Name": "100000 Lower: Goblin (living)",
+      "Description": ""
+    },
+    {
+      "ID": "100010",
+      "Name": "100010 Top: Goblin (living): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "101000",
+      "Name": "101000 Lower: Kobold (living)",
+      "Description": ""
+    },
+    {
+      "ID": "101010",
+      "Name": "101010 Upper level: Kobold (living): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "102000",
+      "Name": "102000 Lower level: Kingdom soldier (deceased)",
+      "Description": ""
+    },
+    {
+      "ID": "102010",
+      "Name": "102010 Upper level: Kingdom soldier (deceased): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "102020",
+      "Name": "102020 High rank: Kingdom soldier (dead): General purpose (for FC)",
+      "Description": ""
+    },
+    {
+      "ID": "102053",
+      "Name": "102053 Top: Kingdom soldier (dead): Corpse mimicry",
+      "Description": ""
+    },
+    {
+      "ID": "102100",
+      "Name": "102100 Lower level: Kingdom soldier (living)",
+      "Description": ""
+    },
+    {
+      "ID": "102110",
+      "Name": "102110 Upper level: Kingdom soldier (living): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "102120",
+      "Name": "102120 Top: Kingdom Soldier (Living): Marathon",
+      "Description": ""
+    },
+    {
+      "ID": "102121",
+      "Name": "102121 Top: Kingdom Soldier (Living): Marathon 2",
+      "Description": ""
+    },
+    {
+      "ID": "102131",
+      "Name": "102131 High rank: Kingdom soldier (living): Ballista",
+      "Description": ""
+    },
+    {
+      "ID": "102132",
+      "Name": "102132 High rank: Kingdom soldier (living): Ballista",
+      "Description": ""
+    },
+    {
+      "ID": "102141",
+      "Name": "102141 Top: Kingdom soldier (living): Molotov cocktail",
+      "Description": ""
+    },
+    {
+      "ID": "103000",
+      "Name": "103000 Lower: Lower rank soldier (deceased)",
+      "Description": ""
+    },
+    {
+      "ID": "103010",
+      "Name": "103010 Upper rank: Lower rank soldier (deceased): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "103100",
+      "Name": "103100 Lower level: Junior soldier (living)",
+      "Description": ""
+    },
+    {
+      "ID": "103110",
+      "Name": "103110_Upper: Junior soldier (living)",
+      "Description": ""
+    },
+    {
+      "ID": "105000",
+      "Name": "105000 Lower level: Fairy shrine maiden (dead)",
+      "Description": ""
+    },
+    {
+      "ID": "105010",
+      "Name": "105010 Top: Fairy Priestess (Dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "105020",
+      "Name": "105020 Top: Fairy Priestess (Dead): Bonfire Trap",
+      "Description": ""
+    },
+    {
+      "ID": "105030",
+      "Name": "105030 Top: Fairy Priestess (Dead): Ambush",
+      "Description": ""
+    },
+    {
+      "ID": "106000",
+      "Name": "106000 Lower level: Dark Priest (dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "106010",
+      "Name": "106010 Top: Dark Priest (Dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "107000",
+      "Name": "107000 Lower level: Parasite spider (parasitic): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "107010",
+      "Name": "107010 Top: Parasite spider (parasitic): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "108000",
+      "Name": "108000 Lower level: Rogue (dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "108010",
+      "Name": "108010 Top: Rogue (Dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "108020",
+      "Name": "108020 Upper level: Rogue (dead): General purpose (for FC)",
+      "Description": ""
+    },
+    {
+      "ID": "113000",
+      "Name": "113000 Lower level: Sailor (dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "113010",
+      "Name": "113010 Upper level: Sailor (dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "113020",
+      "Name": "113020 Upper level: Sailor (dead): General purpose (for FC)",
+      "Description": ""
+    },
+    {
+      "ID": "115000",
+      "Name": "115000 Lower level: Dead_Traveler's clothes: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "115010",
+      "Name": "115010 Top: Dead_Traveler's clothes: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "117000",
+      "Name": "117000 Lower: Statue: Bone",
+      "Description": ""
+    },
+    {
+      "ID": "117010",
+      "Name": "117010 Upper level: Statue: Pawn: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "118000",
+      "Name": "118000 Lower: Dark Wizard (Dead)",
+      "Description": ""
+    },
+    {
+      "ID": "118010",
+      "Name": "118010 Top: Dark Wizard: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "119000",
+      "Name": "119000 Lower: Lion Black Mage (Living)",
+      "Description": ""
+    },
+    {
+      "ID": "119010",
+      "Name": "119010 Top: Lion Black Mage (Living): General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "121000",
+      "Name": "121000 Lower level: Giant lower class soldier",
+      "Description": ""
+    },
+    {
+      "ID": "121010",
+      "Name": "121010 Upper rank: Giant Lower rank soldier: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "122000",
+      "Name": "122000 Lower: Bernice's Knight: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "123000",
+      "Name": "123000 Lower level: Strange shadow (living)",
+      "Description": ""
+    },
+    {
+      "ID": "123010",
+      "Name": "123010 Upper level: Strange shadow (living): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "124000",
+      "Name": "124000 Lower level: Assassin (living): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "124010",
+      "Name": "124010 Top: Assassin (living): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "125000",
+      "Name": "125000 Lower level: Undead citizen: Normal",
+      "Description": ""
+    },
+    {
+      "ID": "125001",
+      "Name": "125001 Subordinate: Undead Citizen: Poison",
+      "Description": ""
+    },
+    {
+      "ID": "125002",
+      "Name": "125002 Lower level: Undead citizen: Petrified",
+      "Description": ""
+    },
+    {
+      "ID": "125003",
+      "Name": "125003 Subordinate: Undead Citizen: Acid",
+      "Description": ""
+    },
+    {
+      "ID": "125004",
+      "Name": "125004 Subordinate: Undead Citizen: Explosion",
+      "Description": ""
+    },
+    {
+      "ID": "125010",
+      "Name": "125010 Top: Undead Citizen",
+      "Description": ""
+    },
+    {
+      "ID": "127000",
+      "Name": "127000 Lower level: Dead worker (dead)",
+      "Description": ""
+    },
+    {
+      "ID": "127010",
+      "Name": "127010 Upper level: Dead worker (dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "127090",
+      "Name": "127090_Top: Dead Workers (Dead): For Jabba the Hutt Battle",
+      "Description": ""
+    },
+    {
+      "ID": "127091",
+      "Name": "127091_Top: Dead Worker (Dead): Geldra_For Zakovos battle",
+      "Description": ""
+    },
+    {
+      "ID": "129000",
+      "Name": "129000 Lower level: Forest guard",
+      "Description": ""
+    },
+    {
+      "ID": "129010",
+      "Name": "129010 Top: Forest Keeper: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "131000",
+      "Name": "131000 Lower level: Cleric (dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "131010",
+      "Name": "131010 Upper level: Cleric (dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "132000",
+      "Name": "132000 Lower: Skeleton: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "132010",
+      "Name": "132010 Upper: Skeleton: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "132100",
+      "Name": "132100 Upper: Skeleton: For boss",
+      "Description": ""
+    },
+    {
+      "ID": "133000",
+      "Name": "133000 Lower: Wheel skeleton",
+      "Description": ""
+    },
+    {
+      "ID": "133010",
+      "Name": "133010_Top: Wheel skeleton: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "133100",
+      "Name": "133100_Upper: Wheel skeleton: For boss",
+      "Description": ""
+    },
+    {
+      "ID": "134000",
+      "Name": "134000 Lower: Dwarf (dead)",
+      "Description": ""
+    },
+    {
+      "ID": "134010",
+      "Name": "134010_Top: Dwarf: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "135000",
+      "Name": "135000 Lower level: Heavy dwarf (dead)",
+      "Description": ""
+    },
+    {
+      "ID": "135010",
+      "Name": "135010_Top: Heavy Dwarf: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "137000",
+      "Name": "137000 Lower: Necromancer (Immortal)",
+      "Description": ""
+    },
+    {
+      "ID": "137010",
+      "Name": "137010 Top: Necromancer (Immortal)",
+      "Description": ""
+    },
+    {
+      "ID": "138000",
+      "Name": "138000 Lower level: Torturer",
+      "Description": ""
+    },
+    {
+      "ID": "138010",
+      "Name": "138010 Top: Torturer: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "139000",
+      "Name": "139000 Lower level: Artificial immortal (immortal)",
+      "Description": ""
+    },
+    {
+      "ID": "139010",
+      "Name": "139010_Top: Artificial immortal (immortal): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "140000",
+      "Name": "140000 Lower level: Raven of Belka",
+      "Description": ""
+    },
+    {
+      "ID": "140010",
+      "Name": "140010_Top: Berkan Raven: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "141000",
+      "Name": "141000 Lower level: Enhanced immortal: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "141010",
+      "Name": "141010 Upper level: Enhanced immortal: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "146000",
+      "Name": "146000 Lower level: Dead_Wealthy people's clothes: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "146010",
+      "Name": "146010 Top: Dead_Wealthy people's clothes: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "147000",
+      "Name": "147000 Lower level: Dead_Sick person's clothes: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "147010",
+      "Name": "147010 Top: Dead_Sick people's clothes: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "147090",
+      "Name": "147090_Top: Dead_Sick Man's Clothes: Geldra_For Zakovos Battle",
+      "Description": ""
+    },
+    {
+      "ID": "148000",
+      "Name": "148000 Lower level: Dead_Farmer's clothes: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "148010",
+      "Name": "148010_Top: Dead: Peasant's Clothes: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "149000",
+      "Name": "149000 Lower level: Dead_Steelworks worker: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "149010",
+      "Name": "149010_Top: Deceased: Steelworks worker: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "150000",
+      "Name": "150000 Lower: Statue: Knight",
+      "Description": ""
+    },
+    {
+      "ID": "150010",
+      "Name": "150010_Top: Statue: Knight: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "151000",
+      "Name": "151000 Lower level: Kingdom heavy soldier (deceased)",
+      "Description": ""
+    },
+    {
+      "ID": "151010",
+      "Name": "151010 Upper level: Kingdom heavy soldier (deceased): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "152000",
+      "Name": "152000 Lower: Royal Soldier Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "152010",
+      "Name": "152010 Top: Royal Soldier Warrior: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "153000",
+      "Name": "153000 Lower: Kingdom Guard",
+      "Description": ""
+    },
+    {
+      "ID": "153010",
+      "Name": "153010 Top: Kingdom Guard",
+      "Description": ""
+    },
+    {
+      "ID": "154000",
+      "Name": "154000 Lower: Skeleton Noble",
+      "Description": ""
+    },
+    {
+      "ID": "154010",
+      "Name": "154010 Top: Skeleton Noble",
+      "Description": ""
+    },
+    {
+      "ID": "155000",
+      "Name": "155000 Lower level: Lizard people",
+      "Description": ""
+    },
+    {
+      "ID": "155010",
+      "Name": "155010 Top: Lizard person: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "155030",
+      "Name": "155030 Top: Lizard person: Sound reaction",
+      "Description": ""
+    },
+    {
+      "ID": "156000",
+      "Name": "156000 Lower: Helmet Skeleton",
+      "Description": ""
+    },
+    {
+      "ID": "156010",
+      "Name": "156010 Upper level: Helmet skeleton: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "157000",
+      "Name": "157000 Lower: Armor Skeleton",
+      "Description": ""
+    },
+    {
+      "ID": "157010",
+      "Name": "157010 Top: Armor Skeleton: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "157100",
+      "Name": "157100 Upper level: Armor skeleton: For bosses",
+      "Description": ""
+    },
+    {
+      "ID": "201000",
+      "Name": "201000 Lower level: Slave beast (with molten iron pot)",
+      "Description": ""
+    },
+    {
+      "ID": "201010",
+      "Name": "201010 Top: Slave beast (with molten iron pot): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "201100",
+      "Name": "201100 Lower level: Slave beast/pig",
+      "Description": ""
+    },
+    {
+      "ID": "201110",
+      "Name": "201110 Top: Slave beast/pig: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "202000",
+      "Name": "202000 Lower level: Slave beast (no molten iron pot): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "202010",
+      "Name": "202010 Top: Slave beast (no molten iron pot): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "203000",
+      "Name": "203000 Lower level: Parasite spider: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "203010",
+      "Name": "203010 Top: Parasite Spider: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "204000",
+      "Name": "204000 Lower: Great Moss: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "204010",
+      "Name": "204010 Top: Great Moss: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "205000",
+      "Name": "205000 Lower level: Poison hornworm: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "205010",
+      "Name": "205010 Top: Poison hornworm: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "206000",
+      "Name": "206000 Lower level: Needle maggot",
+      "Description": ""
+    },
+    {
+      "ID": "206010",
+      "Name": "206010 Top: Needle maggot",
+      "Description": ""
+    },
+    {
+      "ID": "209000",
+      "Name": "209000 Lower level: Hunting dog",
+      "Description": ""
+    },
+    {
+      "ID": "209010",
+      "Name": "209010_Top: Hunting dog: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "210000",
+      "Name": "210000 Lower: Basilisk",
+      "Description": ""
+    },
+    {
+      "ID": "210010",
+      "Name": "210010 Upper level: Basilisk: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "210020",
+      "Name": "210020 Top: Basilisk: No eyeball",
+      "Description": ""
+    },
+    {
+      "ID": "212000",
+      "Name": "212000 Lower: Wyvern",
+      "Description": ""
+    },
+    {
+      "ID": "212010",
+      "Name": "212010_Top: Wyvern: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "212020",
+      "Name": "212020_Top: Wyvern: For regular warfare",
+      "Description": ""
+    },
+    {
+      "ID": "213000",
+      "Name": "213000 Lower level: Stone guardian",
+      "Description": ""
+    },
+    {
+      "ID": "213010",
+      "Name": "213010 Upper level: Stone guardian: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "213100",
+      "Name": "213100 Lower: Stone Guardian: Explosion",
+      "Description": ""
+    },
+    {
+      "ID": "213110",
+      "Name": "213110 Upper level: Stone guardian: Explosion: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "214000",
+      "Name": "214000 Lower level: Fanged beast",
+      "Description": ""
+    },
+    {
+      "ID": "214010",
+      "Name": "214010_Top: Fanged beast: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "216000",
+      "Name": "216000_lower: door possession",
+      "Description": ""
+    },
+    {
+      "ID": "216010",
+      "Name": "216010_Top: Door possession: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "217000",
+      "Name": "217000 Lower level: Hidden in the darkness",
+      "Description": ""
+    },
+    {
+      "ID": "217010",
+      "Name": "217010_Top: Hidden in the Dark: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "218000",
+      "Name": "218000 Lower: Humanity (Large)",
+      "Description": ""
+    },
+    {
+      "ID": "218100",
+      "Name": "218100 Lower level: Humanity (medium)",
+      "Description": ""
+    },
+    {
+      "ID": "218200",
+      "Name": "218200 Lower level: Humanity (small)",
+      "Description": ""
+    },
+    {
+      "ID": "219000",
+      "Name": "219000 Lower: Vagrant Hawk",
+      "Description": ""
+    },
+    {
+      "ID": "219010",
+      "Name": "219010 Top: Vagrant Hawk",
+      "Description": ""
+    },
+    {
+      "ID": "220000",
+      "Name": "220000 Lower level: Giant poisonous hornworm: Acid",
+      "Description": ""
+    },
+    {
+      "ID": "220010",
+      "Name": "220010_Top: Giant poisonous hornworm: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "222000",
+      "Name": "222000 Lower: Giant Basilisk",
+      "Description": ""
+    },
+    {
+      "ID": "222010",
+      "Name": "222010_Top: Giant Basilisk: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "223000",
+      "Name": "223000 Lower level: Corpse scavenging rat",
+      "Description": ""
+    },
+    {
+      "ID": "223010",
+      "Name": "223010 Top: Corpse scavenging rat: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "224000",
+      "Name": "224000 Lower: Coal tar",
+      "Description": ""
+    },
+    {
+      "ID": "224010",
+      "Name": "224010 Upper: Coal tar: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "225000",
+      "Name": "225000 Lower level: Light insect",
+      "Description": ""
+    },
+    {
+      "ID": "225090",
+      "Name": "225090 Top: Light insect: Test",
+      "Description": ""
+    },
+    {
+      "ID": "226000",
+      "Name": "226000 Lower: dog rat",
+      "Description": ""
+    },
+    {
+      "ID": "226010",
+      "Name": "226010 Top: Dog and Rat: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "226020",
+      "Name": "226020 Top: Dog and Rat: For Boss",
+      "Description": ""
+    },
+    {
+      "ID": "226030",
+      "Name": "226030 Top: Dog and Rat: For the boss's entourage",
+      "Description": ""
+    },
+    {
+      "ID": "226500",
+      "Name": "226500 Lower: Mouse King",
+      "Description": ""
+    },
+    {
+      "ID": "227000",
+      "Name": "227000 Lower: Wild dog",
+      "Description": ""
+    },
+    {
+      "ID": "227010",
+      "Name": "227010 Top: Wild dog: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "300000",
+      "Name": "300000 Lower: Auger: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "300010",
+      "Name": "300010 Upper: Auger: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "300030",
+      "Name": "300030 Upper level: Ogre (living): Auditory response",
+      "Description": ""
+    },
+    {
+      "ID": "300080",
+      "Name": "300080 Top: Ogre (Living): Dragon Research Institute Event",
+      "Description": ""
+    },
+    {
+      "ID": "301000",
+      "Name": "301000 Lower: Wandering Knight",
+      "Description": ""
+    },
+    {
+      "ID": "301010",
+      "Name": "301010 Top: Wandering Knight: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "302000",
+      "Name": "302000 Lower level: Prisoner (dead)",
+      "Description": ""
+    },
+    {
+      "ID": "302010",
+      "Name": "302010 Top: Prisoner (dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "303300",
+      "Name": "303300 Lower level: Double-sided warrior: Snake head",
+      "Description": ""
+    },
+    {
+      "ID": "303310",
+      "Name": "303310 Top: Double-sided warrior: Snake head",
+      "Description": ""
+    },
+    {
+      "ID": "303320",
+      "Name": "303320 Top: Double-sided Warrior: Snake Head: Regular War",
+      "Description": ""
+    },
+    {
+      "ID": "304000",
+      "Name": "304000 Lower: Banshee (Dead)",
+      "Description": ""
+    },
+    {
+      "ID": "304010",
+      "Name": "304010 Top: Banshee (dead)",
+      "Description": ""
+    },
+    {
+      "ID": "305000",
+      "Name": "305000 Lower: Demon Knight",
+      "Description": ""
+    },
+    {
+      "ID": "305010",
+      "Name": "305010_Top: Demon Knight",
+      "Description": ""
+    },
+    {
+      "ID": "306000",
+      "Name": "306000 Lower level: Demon armor (dead)",
+      "Description": ""
+    },
+    {
+      "ID": "306010",
+      "Name": "306010 Top: Demon Armor (Dead): General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "307000",
+      "Name": "307000 Lower: Dullahan (Dead)",
+      "Description": ""
+    },
+    {
+      "ID": "307010",
+      "Name": "307010_Top: Dullahan (Dead)",
+      "Description": ""
+    },
+    {
+      "ID": "307100",
+      "Name": "307100 Lower level: Dullahan (living)",
+      "Description": ""
+    },
+    {
+      "ID": "307110",
+      "Name": "307110_Top: Dullahan (living)",
+      "Description": ""
+    },
+    {
+      "ID": "308000",
+      "Name": "308000 Lower: Lion Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "308010",
+      "Name": "308010_Top: Lion Warrior: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "309000",
+      "Name": "309000 Lower level: Titan senior soldier",
+      "Description": ""
+    },
+    {
+      "ID": "309010",
+      "Name": "309010 High rank: Giant senior soldier: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "309600",
+      "Name": "309610 Lower: New Titan Senior Soldier (Deceased)",
+      "Description": ""
+    },
+    {
+      "ID": "309610",
+      "Name": "309610 High rank: New giant senior soldier (deceased)",
+      "Description": ""
+    },
+    {
+      "ID": "309700",
+      "Name": "309700 Lower: New Titan Senior Soldier (Living)",
+      "Description": ""
+    },
+    {
+      "ID": "309710",
+      "Name": "309710 High rank: New Titan senior soldier (living)",
+      "Description": ""
+    },
+    {
+      "ID": "311000",
+      "Name": "311000 Lower level: Cavalry soldier: Mounted soldier (living)",
+      "Description": ""
+    },
+    {
+      "ID": "311010",
+      "Name": "311010 Upper rank: Cavalry soldier: Mounted soldier (living): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "312000",
+      "Name": "312000 Lower: Immortal Senior Soldier (Immortal)",
+      "Description": ""
+    },
+    {
+      "ID": "312010",
+      "Name": "312010_Upper: Immortal Advanced Soldier (Immortal): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "313000",
+      "Name": "313000 Lower: Falconer Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "313010",
+      "Name": "313010 Top: Falconer Warrior: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "314000",
+      "Name": "314000 Lower level: Elephant (dead)",
+      "Description": ""
+    },
+    {
+      "ID": "314010",
+      "Name": "314010 Upper: Elephant (dead): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "315000",
+      "Name": "315000 Lower level: Elephant (living)",
+      "Description": ""
+    },
+    {
+      "ID": "315010",
+      "Name": "315010 Upper: Elephant (living): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "316000",
+      "Name": "316000 Lower level: Captured mage (living)",
+      "Description": ""
+    },
+    {
+      "ID": "316010",
+      "Name": "316010_Top: Captured Mage (Living): General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "317000",
+      "Name": "317000 Lower: Dragon Professor",
+      "Description": ""
+    },
+    {
+      "ID": "317010",
+      "Name": "317010 Top: Dragon Professor: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "318000",
+      "Name": "318000 Lower: Vagrant (Seoul)",
+      "Description": ""
+    },
+    {
+      "ID": "318010",
+      "Name": "318010_Top: Vagrant (Soul): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "319000",
+      "Name": "319000 Lower level: Demon armor (mass production type)",
+      "Description": ""
+    },
+    {
+      "ID": "319010",
+      "Name": "319010 Upper rank: Demon armor (mass production type): General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "321000",
+      "Name": "321000 Lower: ν-mimic",
+      "Description": ""
+    },
+    {
+      "ID": "321010",
+      "Name": "321010_Top: ν Mimic: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "324000",
+      "Name": "324000 Lower: Gargoyle",
+      "Description": ""
+    },
+    {
+      "ID": "324010",
+      "Name": "324010_Top: Gargoyle: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "325000",
+      "Name": "325000 Lower: Warrior in the Mirror",
+      "Description": ""
+    },
+    {
+      "ID": "325010",
+      "Name": "325010_Top: Warrior in the Mirror: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "325020",
+      "Name": "325020_Top: Warrior in the Mirror: For regular warfare",
+      "Description": ""
+    },
+    {
+      "ID": "326000",
+      "Name": "326000 Lower: Butcher",
+      "Description": ""
+    },
+    {
+      "ID": "326010",
+      "Name": "326010 Top: Butcher",
+      "Description": ""
+    },
+    {
+      "ID": "330000",
+      "Name": "330000 Lower: Ancient Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "330010",
+      "Name": "330010 Subordinate: Ancient Warrior: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "331000",
+      "Name": "331000 Lower level: Demon heavy soldier",
+      "Description": ""
+    },
+    {
+      "ID": "331010",
+      "Name": "331010 Top: Demon Heavy Soldier: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "332000",
+      "Name": "332000 Lower: Queen's Knight A",
+      "Description": ""
+    },
+    {
+      "ID": "332010",
+      "Name": "332010 Top: Queen's Knight A",
+      "Description": ""
+    },
+    {
+      "ID": "333000",
+      "Name": "333000 Lower: Queen's Knight B",
+      "Description": ""
+    },
+    {
+      "ID": "333010",
+      "Name": "333010 Top: Queen's Knight B",
+      "Description": ""
+    },
+    {
+      "ID": "334000",
+      "Name": "334000 Lower: Queen's Knight C",
+      "Description": ""
+    },
+    {
+      "ID": "334010",
+      "Name": "334010 Top: Queen's Knight C",
+      "Description": ""
+    },
+    {
+      "ID": "335000",
+      "Name": "335000 Lower: Raw Knight",
+      "Description": ""
+    },
+    {
+      "ID": "336000",
+      "Name": "336000 Lower: Knight of Death",
+      "Description": ""
+    },
+    {
+      "ID": "337000",
+      "Name": "337000 Lower: Amazing dead",
+      "Description": ""
+    },
+    {
+      "ID": "501000",
+      "Name": "501000_lower: Naga",
+      "Description": ""
+    },
+    {
+      "ID": "501010",
+      "Name": "501010_Top: Naga",
+      "Description": ""
+    },
+    {
+      "ID": "502000",
+      "Name": "502000 Lower level: Man Scorpion (male)",
+      "Description": ""
+    },
+    {
+      "ID": "502010",
+      "Name": "502010 Top: Man Scorpion (Male)",
+      "Description": ""
+    },
+    {
+      "ID": "503000",
+      "Name": "503000 Lower: Man Scorpion♀",
+      "Description": ""
+    },
+    {
+      "ID": "503010",
+      "Name": "503010 Top: Man Scorpion♀",
+      "Description": ""
+    },
+    {
+      "ID": "504000",
+      "Name": "504000 Lower: Mirror Knight",
+      "Description": ""
+    },
+    {
+      "ID": "504010",
+      "Name": "504010 Top: Mirror Knight",
+      "Description": ""
+    },
+    {
+      "ID": "506000",
+      "Name": "506000 Lower: Grave Keeper",
+      "Description": ""
+    },
+    {
+      "ID": "506010",
+      "Name": "506010 Top: Grave Keeper",
+      "Description": ""
+    },
+    {
+      "ID": "506100",
+      "Name": "506100 Lower: Grave Keeper's Stand",
+      "Description": ""
+    },
+    {
+      "ID": "506110",
+      "Name": "506110 Top: Grave Keeper's Stand",
+      "Description": ""
+    },
+    {
+      "ID": "506200",
+      "Name": "506200 Lower: Wormhole",
+      "Description": ""
+    },
+    {
+      "ID": "506210",
+      "Name": "506210 Top: Wormhole",
+      "Description": ""
+    },
+    {
+      "ID": "507000",
+      "Name": "507000 Lower: Rich",
+      "Description": ""
+    },
+    {
+      "ID": "507010",
+      "Name": "507010 Top: Rich",
+      "Description": ""
+    },
+    {
+      "ID": "508000",
+      "Name": "508000 Lower: Wraith",
+      "Description": ""
+    },
+    {
+      "ID": "508010",
+      "Name": "508010 Top: Wraith",
+      "Description": ""
+    },
+    {
+      "ID": "509000",
+      "Name": "509000 Lower: Dark Bishop",
+      "Description": ""
+    },
+    {
+      "ID": "509010",
+      "Name": "509010 Top: Dark Bishop",
+      "Description": ""
+    },
+    {
+      "ID": "511000",
+      "Name": "511000 Lower level: Phantom Knight (spiritual body)",
+      "Description": ""
+    },
+    {
+      "ID": "511010",
+      "Name": "511010 Top: Phantom Knight (Spiritual Body)",
+      "Description": ""
+    },
+    {
+      "ID": "512000",
+      "Name": "512000 Lower level: Phantom Mage (spiritual body)",
+      "Description": ""
+    },
+    {
+      "ID": "512010",
+      "Name": "512010 Top: Phantom Mage (Spiritual)",
+      "Description": ""
+    },
+    {
+      "ID": "514000",
+      "Name": "514000 Lower: Old King",
+      "Description": ""
+    },
+    {
+      "ID": "514010",
+      "Name": "514010 Top: Old King",
+      "Description": ""
+    },
+    {
+      "ID": "600000",
+      "Name": "600000 Lower: Ancient Dragon",
+      "Description": ""
+    },
+    {
+      "ID": "600010",
+      "Name": "600010 Top: Ancient Dragon",
+      "Description": ""
+    },
+    {
+      "ID": "601000",
+      "Name": "601000 Lower: Salamander",
+      "Description": ""
+    },
+    {
+      "ID": "601010",
+      "Name": "601010 Top: Salamander",
+      "Description": ""
+    },
+    {
+      "ID": "602000",
+      "Name": "602000 Lower level: Beautiful voice frog",
+      "Description": ""
+    },
+    {
+      "ID": "602010",
+      "Name": "602010 Top: Beautiful voice frog",
+      "Description": ""
+    },
+    {
+      "ID": "603000",
+      "Name": "603000 Lower: Spider Queen",
+      "Description": ""
+    },
+    {
+      "ID": "603010",
+      "Name": "603010 Top: Spider Queen: Boss Room",
+      "Description": ""
+    },
+    {
+      "ID": "603020",
+      "Name": "603020 Top: Spider Queen: First Encounter Event",
+      "Description": ""
+    },
+    {
+      "ID": "607000",
+      "Name": "607000_lower: Molten Iron Demon",
+      "Description": ""
+    },
+    {
+      "ID": "607010",
+      "Name": "607010_Top: Molten Iron Demon",
+      "Description": ""
+    },
+    {
+      "ID": "611000",
+      "Name": "611000 Lower level: Heavy cavalry: Walking",
+      "Description": ""
+    },
+    {
+      "ID": "611010",
+      "Name": "611010 High level: Heavy cavalry: Walking",
+      "Description": ""
+    },
+    {
+      "ID": "619100",
+      "Name": "619100_Lower: Silver Chariot",
+      "Description": ""
+    },
+    {
+      "ID": "619110",
+      "Name": "619110_Top: Silver Chariot",
+      "Description": ""
+    },
+    {
+      "ID": "625000",
+      "Name": "625000_lower: Ornstein",
+      "Description": ""
+    },
+    {
+      "ID": "625010",
+      "Name": "625010_Top: Ornstein",
+      "Description": ""
+    },
+    {
+      "ID": "626000",
+      "Name": "626000_Lower: Forgotten Sinner",
+      "Description": ""
+    },
+    {
+      "ID": "626010",
+      "Name": "626010_Top: Forgotten Sinner",
+      "Description": ""
+    },
+    {
+      "ID": "627000",
+      "Name": "627000_lower: Queen's armor form",
+      "Description": ""
+    },
+    {
+      "ID": "627010",
+      "Name": "627010_Top: Queen's armor form",
+      "Description": ""
+    },
+    {
+      "ID": "628000",
+      "Name": "628000 Lower: Giant Rat",
+      "Description": ""
+    },
+    {
+      "ID": "628010",
+      "Name": "628010 Top: Giant Rat",
+      "Description": ""
+    },
+    {
+      "ID": "690000",
+      "Name": "690000 Upper: NPC general purpose",
+      "Description": ""
+    },
+    {
+      "ID": "700000",
+      "Name": "700000 Lower: Shrine Maiden",
+      "Description": ""
+    },
+    {
+      "ID": "700010",
+      "Name": "700010 Top: Shrine Maiden",
+      "Description": ""
+    },
+    {
+      "ID": "701000",
+      "Name": "701000 Lower level: Shrine maiden (child)",
+      "Description": ""
+    },
+    {
+      "ID": "701010",
+      "Name": "701010 Top: Shrine Maiden (Child)",
+      "Description": ""
+    },
+    {
+      "ID": "702000",
+      "Name": "702000 Lower level: Queen (corpse)",
+      "Description": ""
+    },
+    {
+      "ID": "702010",
+      "Name": "702010 Top: Queen (corpse)",
+      "Description": ""
+    },
+    {
+      "ID": "703000",
+      "Name": "703000 Lower level: Queen",
+      "Description": ""
+    },
+    {
+      "ID": "703010",
+      "Name": "703010 Top: Queen",
+      "Description": ""
+    },
+    {
+      "ID": "704000",
+      "Name": "704000 Lower level: Ladder shop",
+      "Description": ""
+    },
+    {
+      "ID": "704010",
+      "Name": "704010 Top: Ladder shop",
+      "Description": ""
+    },
+    {
+      "ID": "705000",
+      "Name": "705000 Lower level: Retired fire protection woman 1",
+      "Description": ""
+    },
+    {
+      "ID": "705010",
+      "Name": "705010 Top: Retired fire protection woman 1",
+      "Description": ""
+    },
+    {
+      "ID": "705100",
+      "Name": "705100 Lower level: Retired fire protection woman 2",
+      "Description": ""
+    },
+    {
+      "ID": "705110",
+      "Name": "705110 Top: Retired fire protection woman 2",
+      "Description": ""
+    },
+    {
+      "ID": "705300",
+      "Name": "705300 Lower level: Retired fire protection woman 3",
+      "Description": ""
+    },
+    {
+      "ID": "705310",
+      "Name": "705310 Top: Retired fire protection woman 3",
+      "Description": ""
+    },
+    {
+      "ID": "721100",
+      "Name": "721100 Lower level: Spirit of the Prime Minister",
+      "Description": ""
+    },
+    {
+      "ID": "721110",
+      "Name": "721110 Top: Spirit of the Prime Minister",
+      "Description": ""
+    },
+    {
+      "ID": "723000",
+      "Name": "723000 Lower level: Fire protection woman housekeeper",
+      "Description": ""
+    },
+    {
+      "ID": "723010",
+      "Name": "723010 Top: Fire protection woman housekeeper",
+      "Description": ""
+    },
+    {
+      "ID": "724000",
+      "Name": "724000 Lower level: Kingdom captain",
+      "Description": ""
+    },
+    {
+      "ID": "724010",
+      "Name": "724010 High rank: Kingdom Captain",
+      "Description": ""
+    },
+    {
+      "ID": "724020",
+      "Name": "724020 Top: Kingdom Captain: White Spirit",
+      "Description": ""
+    },
+    {
+      "ID": "725000",
+      "Name": "725000 Lower: Pilgrim of the Abyss",
+      "Description": ""
+    },
+    {
+      "ID": "725010",
+      "Name": "725010 Top: Pilgrim of the Abyss",
+      "Description": ""
+    },
+    {
+      "ID": "726000",
+      "Name": "726000 Lower: Dwarf",
+      "Description": ""
+    },
+    {
+      "ID": "726010",
+      "Name": "726010 Upper: Dwarf",
+      "Description": ""
+    },
+    {
+      "ID": "729000",
+      "Name": "729000 Lower level: Loyal dog",
+      "Description": ""
+    },
+    {
+      "ID": "729010",
+      "Name": "729010 Top: Loyal dog",
+      "Description": ""
+    },
+    {
+      "ID": "730000",
+      "Name": "730000 Lower level: Mirror Knight's servant",
+      "Description": ""
+    },
+    {
+      "ID": "730010",
+      "Name": "730010 Top: Mirror Knight's Servant",
+      "Description": ""
+    },
+    {
+      "ID": "730020",
+      "Name": "730020 Top: Mirror Knight's Servant (Hunting Forest)",
+      "Description": ""
+    },
+    {
+      "ID": "730030",
+      "Name": "730030 Top: Mirror Knight's servant (Andir's mansion)",
+      "Description": ""
+    },
+    {
+      "ID": "741000",
+      "Name": "741000 Lower: Broken Blue Sect Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "741010",
+      "Name": "741010 Top: Broken Blue Sect Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "742000",
+      "Name": "742000 Lower: Wandering Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "742010",
+      "Name": "742010 Top: Wandering Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "743000",
+      "Name": "743000 Lower level: Gekkoji",
+      "Description": ""
+    },
+    {
+      "ID": "743010",
+      "Name": "743010 Top: Gekkoji",
+      "Description": ""
+    },
+    {
+      "ID": "744000",
+      "Name": "744000 Lower: Patch",
+      "Description": ""
+    },
+    {
+      "ID": "744010",
+      "Name": "744010 Top: Patch",
+      "Description": ""
+    },
+    {
+      "ID": "751000",
+      "Name": "751000 Lower: Map drawing",
+      "Description": ""
+    },
+    {
+      "ID": "751010",
+      "Name": "751010 Top: Map drawing",
+      "Description": ""
+    },
+    {
+      "ID": "752000",
+      "Name": "752000 Lower level: Female knight",
+      "Description": ""
+    },
+    {
+      "ID": "752010",
+      "Name": "752010 Top: Female Knight",
+      "Description": ""
+    },
+    {
+      "ID": "753000",
+      "Name": "753000 Lower level: Bell Keeper",
+      "Description": ""
+    },
+    {
+      "ID": "753010",
+      "Name": "753010 Top: Bell Keeper",
+      "Description": ""
+    },
+    {
+      "ID": "754000",
+      "Name": "754000 Lower level: Yorozu hag",
+      "Description": ""
+    },
+    {
+      "ID": "754010",
+      "Name": "754010 Top: Yorozu old hag",
+      "Description": ""
+    },
+    {
+      "ID": "760000",
+      "Name": "760000 Lower: Bard Girl 1",
+      "Description": ""
+    },
+    {
+      "ID": "760010",
+      "Name": "760010 Top: Bard Girl 1",
+      "Description": ""
+    },
+    {
+      "ID": "760100",
+      "Name": "760100 Lower: Bard Girl 2",
+      "Description": ""
+    },
+    {
+      "ID": "760110",
+      "Name": "760110 Top: Bard Girl 2",
+      "Description": ""
+    },
+    {
+      "ID": "760200",
+      "Name": "760200 Lower level: Prisoner girl",
+      "Description": ""
+    },
+    {
+      "ID": "760210",
+      "Name": "760210 Top: Prisoner Girl",
+      "Description": ""
+    },
+    {
+      "ID": "761000",
+      "Name": "761000 Lower level: Armor shop",
+      "Description": ""
+    },
+    {
+      "ID": "761010",
+      "Name": "761010 Top: Armor shop",
+      "Description": ""
+    },
+    {
+      "ID": "762000",
+      "Name": "762000 Lower level: Material shop",
+      "Description": ""
+    },
+    {
+      "ID": "762010",
+      "Name": "762010 Top: Material shop",
+      "Description": ""
+    },
+    {
+      "ID": "763000",
+      "Name": "763000 Lower level: Magic shop",
+      "Description": ""
+    },
+    {
+      "ID": "763010",
+      "Name": "763010 Top: Magic shop",
+      "Description": ""
+    },
+    {
+      "ID": "764000",
+      "Name": "764000 Lower level: Blacksmith",
+      "Description": ""
+    },
+    {
+      "ID": "764010",
+      "Name": "764010 Top: Blacksmith",
+      "Description": ""
+    },
+    {
+      "ID": "764300",
+      "Name": "764300 Lower level: EX blacksmith",
+      "Description": ""
+    },
+    {
+      "ID": "764310",
+      "Name": "764310 Top: EX blacksmith",
+      "Description": ""
+    },
+    {
+      "ID": "766000",
+      "Name": "766000 Lower level: Magician",
+      "Description": ""
+    },
+    {
+      "ID": "766010",
+      "Name": "766010 Top: Magician",
+      "Description": ""
+    },
+    {
+      "ID": "768000",
+      "Name": "768000 Lower level: Spellmania",
+      "Description": ""
+    },
+    {
+      "ID": "768010",
+      "Name": "768010 Top: Spellmania",
+      "Description": ""
+    },
+    {
+      "ID": "769000",
+      "Name": "769000 Lower: Miracle Man",
+      "Description": ""
+    },
+    {
+      "ID": "769010",
+      "Name": "769010 Top: Miracle Man",
+      "Description": ""
+    },
+    {
+      "ID": "770000",
+      "Name": "770000 Lower level: Dark magician",
+      "Description": ""
+    },
+    {
+      "ID": "770010",
+      "Name": "770010 Top: Dark Magician",
+      "Description": ""
+    },
+    {
+      "ID": "771000",
+      "Name": "771000 Lower level: Sealed person",
+      "Description": ""
+    },
+    {
+      "ID": "771010",
+      "Name": "771010 Top: Contained person",
+      "Description": ""
+    },
+    {
+      "ID": "772000",
+      "Name": "772000 Lower level: Curious item shop",
+      "Description": ""
+    },
+    {
+      "ID": "772010",
+      "Name": "772010 Top: Curious item shop",
+      "Description": ""
+    },
+    {
+      "ID": "776000",
+      "Name": "776000 Lower: Upper weapon shop (when working)",
+      "Description": ""
+    },
+    {
+      "ID": "776010",
+      "Name": "776010 Top: Top weapon shop (when working)",
+      "Description": ""
+    },
+    {
+      "ID": "777000",
+      "Name": "777000 Lower: Cat",
+      "Description": ""
+    },
+    {
+      "ID": "777010",
+      "Name": "777010 Top: Cat",
+      "Description": ""
+    },
+    {
+      "ID": "783000",
+      "Name": "783000 Lower level: Black Phantom shop",
+      "Description": ""
+    },
+    {
+      "ID": "783010",
+      "Name": "783010 Top: Black Phantom Shop",
+      "Description": ""
+    },
+    {
+      "ID": "784000",
+      "Name": "784000 Lower level: Chaplain of Absolution",
+      "Description": ""
+    },
+    {
+      "ID": "784010",
+      "Name": "784010 Top: Chaplain of Absolution",
+      "Description": ""
+    },
+    {
+      "ID": "785000",
+      "Name": "785000 Lower: Guardian Knight",
+      "Description": ""
+    },
+    {
+      "ID": "785010",
+      "Name": "785010 Top: Guardian Knight",
+      "Description": ""
+    },
+    {
+      "ID": "786000",
+      "Name": "786000 Lower level: Sparkling girl",
+      "Description": ""
+    },
+    {
+      "ID": "786010",
+      "Name": "786010 Top: Kirakira Musume",
+      "Description": ""
+    },
+    {
+      "ID": "810000",
+      "Name": "810000 Lower level: White spirit general purpose",
+      "Description": ""
+    },
+    {
+      "ID": "810010",
+      "Name": "810010 Top: White Spirit General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "820000",
+      "Name": "820000 Lower level: Dark spirit general purpose",
+      "Description": ""
+    },
+    {
+      "ID": "820010",
+      "Name": "820010 Top: Dark spirit general purpose",
+      "Description": ""
+    },
+    {
+      "ID": "832000",
+      "Name": "832000 Lower level: Abyssal spirit",
+      "Description": ""
+    },
+    {
+      "ID": "836000",
+      "Name": "836000 Lower level: Samurai Sorcerer",
+      "Description": ""
+    },
+    {
+      "ID": "836400",
+      "Name": "836400 Lower level: Light and heavy warrior",
+      "Description": ""
+    },
+    {
+      "ID": "837100",
+      "Name": "837100 Lower: Tutorial",
+      "Description": ""
+    },
+    {
+      "ID": "837110",
+      "Name": "837110 Top: Tutorial (short field of view)",
+      "Description": ""
+    },
+    {
+      "ID": "837120",
+      "Name": "837120 Top: Tutorial (long field of view)",
+      "Description": ""
+    },
+    {
+      "ID": "838000",
+      "Name": "838000 Lower level: Phantom enemy",
+      "Description": ""
+    },
+    {
+      "ID": "900010",
+      "Name": "900010 Top: Sniper general purpose",
+      "Description": ""
+    }
+  ]
+}

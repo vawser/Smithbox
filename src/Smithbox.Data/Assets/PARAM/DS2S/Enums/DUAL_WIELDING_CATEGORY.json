@@ -1,0 +1,17 @@
+{
+  "DisplayName": "DUAL_WIELDING_CATEGORY",
+  "Name": "DUAL_WIELDING_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Dual wielding permission",
+      "Description": ""
+    }
+  ]
+}

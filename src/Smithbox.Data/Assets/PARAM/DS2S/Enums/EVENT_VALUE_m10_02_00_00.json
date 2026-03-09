@@ -1,0 +1,17 @@
+{
+  "DisplayName": "EVENT_VALUE_m10_02_00_00",
+  "Name": "EVENT_VALUE_m10_02_00_00",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Kirakira Musume: Behavior settings",
+      "Description": ""
+    }
+  ]
+}

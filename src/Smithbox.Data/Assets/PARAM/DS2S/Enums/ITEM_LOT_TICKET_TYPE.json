@@ -1,0 +1,37 @@
+{
+  "DisplayName": "ITEM_LOT_TICKET_TYPE",
+  "Name": "ITEM_LOT_TICKET_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Cheap",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Normal",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "High",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Rare",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "S rare",
+      "Description": ""
+    }
+  ]
+}

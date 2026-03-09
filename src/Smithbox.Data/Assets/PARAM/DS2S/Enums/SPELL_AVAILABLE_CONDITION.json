@@ -1,0 +1,32 @@
+{
+  "DisplayName": "SPELL_AVAILABLE_CONDITION",
+  "Name": "SPELL_AVAILABLE_CONDITION",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "No conditions",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Catalyst reverse arm “weapon” equipment",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Equipped with Catalyst Reverse Arm “Shield”",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Not during multiplayer",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Other than client time",
+      "Description": ""
+    }
+  ]
+}

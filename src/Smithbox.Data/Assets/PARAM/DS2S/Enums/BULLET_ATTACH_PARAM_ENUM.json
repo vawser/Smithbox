@@ -1,0 +1,37 @@
+{
+  "DisplayName": "BULLET_ATTACH_PARAM_ENUM",
+  "Name": "BULLET_ATTACH_PARAM_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1000",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "2000",
+      "Name": "矢",
+      "Description": ""
+    },
+    {
+      "ID": "3000",
+      "Name": "Oya",
+      "Description": ""
+    },
+    {
+      "ID": "4000",
+      "Name": "Bolt",
+      "Description": ""
+    },
+    {
+      "ID": "5000",
+      "Name": "Throwing ax",
+      "Description": ""
+    },
+    {
+      "ID": "6000",
+      "Name": "Disc shield",
+      "Description": ""
+    }
+  ]
+}

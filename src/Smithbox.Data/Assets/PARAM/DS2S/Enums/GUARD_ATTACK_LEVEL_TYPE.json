@@ -1,0 +1,42 @@
+{
+  "DisplayName": "GUARD_ATTACK_LEVEL_TYPE",
+  "Name": "GUARD_ATTACK_LEVEL_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Extremely small",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "小",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "中",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "大",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Extra large",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Extra large",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Special",
+      "Description": ""
+    }
+  ]
+}

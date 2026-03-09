@@ -1,0 +1,632 @@
+{
+  "DisplayName": "EVENT_VALUE_item",
+  "Name": "EVENT_VALUE_item",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1870000",
+      "Name": "1870000: Blue Great Sword (NPC: Father of the Avenge Warrior: Two-handed Sword (Moonlight))",
+      "Description": ""
+    },
+    {
+      "ID": "1871000",
+      "Name": "1871000:★Name not set (Moonlight sword (genuine))",
+      "Description": ""
+    },
+    {
+      "ID": "1980000",
+      "Name": "1980000:★Name not set (keyman's key)",
+      "Description": ""
+    },
+    {
+      "ID": "3900000",
+      "Name": "3900000: 0 (NPC: Spell Four Heavenly Kings (Magic): One-handed Staff)",
+      "Description": ""
+    },
+    {
+      "ID": "27510100",
+      "Name": "27510100: Kale's helmet ([Brother looking for his sister]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "40510000",
+      "Name": "40510000: Transcendental Illusion Ring (King's Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40530000",
+      "Name": "40530000: Thorn Ring",
+      "Description": ""
+    },
+    {
+      "ID": "40530001",
+      "Name": "40530001: Thorn Ring +1",
+      "Description": ""
+    },
+    {
+      "ID": "40530002",
+      "Name": "40530002: Thorn Ring +2",
+      "Description": ""
+    },
+    {
+      "ID": "40610000",
+      "Name": "40610000: Whisper ring",
+      "Description": ""
+    },
+    {
+      "ID": "50600000",
+      "Name": "50600000: Soldier's Key (Royal Soldier's Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50610000",
+      "Name": "50610000: King's Corridor Key (Royal Castle Corridor Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50640000",
+      "Name": "50640000: Weapon smith box (weapon smith box)",
+      "Description": ""
+    },
+    {
+      "ID": "50650000",
+      "Name": "50650000: Armor blacksmith box (armor blacksmith box)",
+      "Description": ""
+    },
+    {
+      "ID": "50800000",
+      "Name": "50800000: Prison key (prison key)",
+      "Description": ""
+    },
+    {
+      "ID": "50810000",
+      "Name": "50810000: Melted Iron Key (Fire Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50820000",
+      "Name": "50820000: Abandoned Key (Key of Death)",
+      "Description": ""
+    },
+    {
+      "ID": "50830000",
+      "Name": "50830000: Pyroxene Street Key (White Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50840000",
+      "Name": "50840000: Old key (● key)",
+      "Description": ""
+    },
+    {
+      "ID": "50850000",
+      "Name": "50850000: Fang Key (Beast Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50860000",
+      "Name": "50860000: House key (Mr. A's house key)",
+      "Description": ""
+    },
+    {
+      "ID": "50870000",
+      "Name": "50870000: Reni Guts key (key to Mr. B's house)",
+      "Description": ""
+    },
+    {
+      "ID": "50880000",
+      "Name": "50880000: Tsurusube stone (smooth stone)",
+      "Description": ""
+    },
+    {
+      "ID": "50885000",
+      "Name": "50885000: Small hanging stone (small hanging stone)",
+      "Description": ""
+    },
+    {
+      "ID": "50890000",
+      "Name": "50890000: Ring Hall Keystone (Lever)",
+      "Description": ""
+    },
+    {
+      "ID": "50900000",
+      "Name": "50900000: Giant's Resonance (Giant's Hole)",
+      "Description": ""
+    },
+    {
+      "ID": "50910000",
+      "Name": "50910000: Core of Ash Mist (Dragon Chaos)",
+      "Description": ""
+    },
+    {
+      "ID": "50920000",
+      "Name": "50920000: Soul of the Titans (Soul of the Titans)",
+      "Description": ""
+    },
+    {
+      "ID": "50930000",
+      "Name": "50930000: Jeldora's hiding place key (Patch's house key)",
+      "Description": ""
+    },
+    {
+      "ID": "50940000",
+      "Name": "50940000: Conqueror's stone tablet (list of strong men)",
+      "Description": ""
+    },
+    {
+      "ID": "50950000",
+      "Name": "50950000: Ladder ornament (ladder ornament)",
+      "Description": ""
+    },
+    {
+      "ID": "50960000",
+      "Name": "50960000: Soul vessel (status reroll item)",
+      "Description": ""
+    },
+    {
+      "ID": "50970000",
+      "Name": "50970000: Immortal Stone Prison Key (Immortal Cell Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50980000",
+      "Name": "50980000: Item that enters the giant's memory",
+      "Description": ""
+    },
+    {
+      "ID": "50990000",
+      "Name": "50990000: Dull pilot fire (fire given to EX blacksmith)",
+      "Description": ""
+    },
+    {
+      "ID": "51000000",
+      "Name": "51000000: Crushed Eye Orb (miracle item)",
+      "Description": ""
+    },
+    {
+      "ID": "51010000",
+      "Name": "51010000: Fool's Spice (Spell Status Reduction Reason)",
+      "Description": ""
+    },
+    {
+      "ID": "51020000",
+      "Name": "51020000: Spice of the unbeliever (spell status reduction faith)",
+      "Description": ""
+    },
+    {
+      "ID": "51030000",
+      "Name": "51030000: An Deal's Key (An Deal's Key)",
+      "Description": ""
+    },
+    {
+      "ID": "60151000",
+      "Name": "60151000: Human statue (human statue)",
+      "Description": ""
+    },
+    {
+      "ID": "60155000",
+      "Name": "60155000: Est bottle (Est bottle)",
+      "Description": ""
+    },
+    {
+      "ID": "60355000",
+      "Name": "60355000: Estintia Feather (Estintia Feather)",
+      "Description": ""
+    },
+    {
+      "ID": "60405000",
+      "Name": "60405000: Ryuzu Stone (Ryuzu Stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60406000",
+      "Name": "60406000: Dragon body stone (Dragon body stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60511000",
+      "Name": "60511000: Egg Fossil (Egg Fossil)",
+      "Description": ""
+    },
+    {
+      "ID": "60525000",
+      "Name": "60525000: Est Fragment (Small Est Bottle Fragment)",
+      "Description": ""
+    },
+    {
+      "ID": "60526000",
+      "Name": "60526000: Bone meal of the noble (dragon fat powder)",
+      "Description": ""
+    },
+    {
+      "ID": "60527000",
+      "Name": "60527000: Ascetic's spark (lifespan regeneration)",
+      "Description": ""
+    },
+    {
+      "ID": "60536000",
+      "Name": "60536000: Pharos Stone (Magic Stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60537000",
+      "Name": "60537000: Nostalgic fragrant wood (item to remove petrification)",
+      "Description": ""
+    },
+    {
+      "ID": "60538000",
+      "Name": "60538000: Seed of Fire (Seed of Magic)",
+      "Description": ""
+    },
+    {
+      "ID": "62000000",
+      "Name": "62000000: Dry finger (Dry finger)",
+      "Description": ""
+    },
+    {
+      "ID": "62010000",
+      "Name": "62010000: Peaceful and safe",
+      "Description": ""
+    },
+    {
+      "ID": "62020000",
+      "Name": "62020000: Ri no Bone (Line Ri)",
+      "Description": ""
+    },
+    {
+      "ID": "62030000",
+      "Name": "62030000: White sign wax stone (white sign wax stone)",
+      "Description": ""
+    },
+    {
+      "ID": "62040000",
+      "Name": "62040000: Small white sign wax stone (small white sign wax stone)",
+      "Description": ""
+    },
+    {
+      "ID": "62045000",
+      "Name": "62045000: Red sign wax stone (red sign wax stone)",
+      "Description": ""
+    },
+    {
+      "ID": "62050000",
+      "Name": "62050000: Cracked Blue Eye Orb (Cracked Blue Eye Orb)",
+      "Description": ""
+    },
+    {
+      "ID": "62060000",
+      "Name": "62060000: Cracked Red Eye Orb (Cracked Red Eye Orb)",
+      "Description": ""
+    },
+    {
+      "ID": "62070000",
+      "Name": "62070000: Ancient dragon's eyes (old dragon's eyes)",
+      "Description": ""
+    },
+    {
+      "ID": "62100000",
+      "Name": "62100000: Proof of faith (proof of goodwill)",
+      "Description": ""
+    },
+    {
+      "ID": "62110000",
+      "Name": "62110000: Proof of hatred (Proof of malice)",
+      "Description": ""
+    },
+    {
+      "ID": "62120000",
+      "Name": "62120000: Sun Medal (Sun Medal)",
+      "Description": ""
+    },
+    {
+      "ID": "62130000",
+      "Name": "62130000: Dragon scales (Dragon scales)",
+      "Description": ""
+    },
+    {
+      "ID": "62140000",
+      "Name": "62140000: Mouse's tail (mouse's tail)",
+      "Description": ""
+    },
+    {
+      "ID": "62150000",
+      "Name": "62150000: Chikaraishi (Chikaraishi)",
+      "Description": ""
+    },
+    {
+      "ID": "62160000",
+      "Name": "62160000: Black Crystal of Farewell (Black Crystal of Farewell)",
+      "Description": ""
+    },
+    {
+      "ID": "62170000",
+      "Name": "62170000: Giant's Nut Seed (Giant's Nut Seed)",
+      "Description": ""
+    },
+    {
+      "ID": "62190000",
+      "Name": "62190000: Fossil egg (dragon egg)",
+      "Description": ""
+    },
+    {
+      "ID": "63000000",
+      "Name": "63000000: Gesture \"pointing\" (book of \"pointing\")",
+      "Description": ""
+    },
+    {
+      "ID": "63001000",
+      "Name": "63001000: Gesture \"Come on\" (Book of \"Come on\")",
+      "Description": ""
+    },
+    {
+      "ID": "63002000",
+      "Name": "63002000: Gesture \"Polite One Bow\" (Book of \"Polite One Bow\")",
+      "Description": ""
+    },
+    {
+      "ID": "63003000",
+      "Name": "63003000: Gesture \"Ichirei\" (Book of \"Ichirei\")",
+      "Description": ""
+    },
+    {
+      "ID": "63004000",
+      "Name": "63004000: Gesture \"Welcome\" (Book of \"Welcome\")",
+      "Description": ""
+    },
+    {
+      "ID": "63005000",
+      "Name": "63005000: Gesture \"Opening Ceremony\" (Book of \"Opening Ceremony\")",
+      "Description": ""
+    },
+    {
+      "ID": "63006000",
+      "Name": "63006000: Gesture \"Wave your hand\" (Book of \"Wave your hand\")",
+      "Description": ""
+    },
+    {
+      "ID": "63007000",
+      "Name": "63007000: Gesture \"Guts Pose\" (Book of \"Guts Pose\")",
+      "Description": ""
+    },
+    {
+      "ID": "63008000",
+      "Name": "63008000: Gesture \"Joy\" (Book of \"Joy\")",
+      "Description": ""
+    },
+    {
+      "ID": "63009000",
+      "Name": "63009000: Gesture \"Battle Cry\" (Book of \"Battle Cry\")",
+      "Description": ""
+    },
+    {
+      "ID": "63010000",
+      "Name": "63010000: Gesture \"Shoulder Warming\" (Book of \"Shoulder Warming\")",
+      "Description": ""
+    },
+    {
+      "ID": "63011000",
+      "Name": "63011000: Gesture \"Eieio\" (Book of \"Eieio\")",
+      "Description": ""
+    },
+    {
+      "ID": "63012000",
+      "Name": "63012000: Gesture \"Understanding\" (Book of \"Understanding\")",
+      "Description": ""
+    },
+    {
+      "ID": "63013000",
+      "Name": "63013000: Gesture \"Negation\" (Book of \"Negation\")",
+      "Description": ""
+    },
+    {
+      "ID": "63014000",
+      "Name": "63014000: Gesture \"Leave it to me\" (Book of \"Leave it to me\")",
+      "Description": ""
+    },
+    {
+      "ID": "63015000",
+      "Name": "63015000: Gesture \"Begging for Life\" (Book of \"Begging for Life\")",
+      "Description": ""
+    },
+    {
+      "ID": "63016000",
+      "Name": "63016000: Gesture \"Dogeza\" (Book of \"Dogeza\")",
+      "Description": ""
+    },
+    {
+      "ID": "63017000",
+      "Name": "63017000: Gesture \"Kekiziri\" (Book of \"Kekiziri\")",
+      "Description": ""
+    },
+    {
+      "ID": "63018000",
+      "Name": "63018000: Gesture \"Provocation\" (Book of \"Provocation\")",
+      "Description": ""
+    },
+    {
+      "ID": "63019000",
+      "Name": "63019000: Gesture \"Make fun of\" (Book of \"Make fun of\")",
+      "Description": ""
+    },
+    {
+      "ID": "63021000",
+      "Name": "63021000: Gesture \"Praise the Sun\" (Book of \"Praise the Sun\")",
+      "Description": ""
+    },
+    {
+      "ID": "64000000",
+      "Name": "64000000: Soul of the Curse (Soul of Vagrant)",
+      "Description": ""
+    },
+    {
+      "ID": "64010000",
+      "Name": "64010000: Soul of the last giant (Soul of the dead giant king)",
+      "Description": ""
+    },
+    {
+      "ID": "64020000",
+      "Name": "64020000: Dragoon Soul (Heavy Cavalry Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64030000",
+      "Name": "64030000: Old Dragon Slayer Soul (Soul of Ornstein)",
+      "Description": ""
+    },
+    {
+      "ID": "64040000",
+      "Name": "64040000: Soul of the Four-Armed Guardian (Double-faced Warrior: Snake-headed Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64050000",
+      "Name": "64050000: Soul of the Hollow Guard (Soul of the Warrior in the Mirror)",
+      "Description": ""
+    },
+    {
+      "ID": "64060000",
+      "Name": "64060000: Soul of the Forgotten Sinner (Soul of the Forgotten Sinner)",
+      "Description": ""
+    },
+    {
+      "ID": "64070000",
+      "Name": "64070000: Executioner's Chariot Soul (Silver Chariot Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64080000",
+      "Name": "64080000: Skeleton King's Soul (Skeleton Noble Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64090000",
+      "Name": "64090000: Soul of Devouring Demon (Soul of Jabba the Hutt)",
+      "Description": ""
+    },
+    {
+      "ID": "64100000",
+      "Name": "64100000: Poison Queen Mida's Soul (Naga's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64110000",
+      "Name": "64110000: Molten Demon Soul (Demon Knight Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64120000",
+      "Name": "64120000: Soul of Molten Earth Incarnation (Soul of Molten Iron Demon)",
+      "Description": ""
+    },
+    {
+      "ID": "64130000",
+      "Name": "64130000: Soul of the Mouse King's spearheads (Dog Mouse: Soul of color ②)",
+      "Description": ""
+    },
+    {
+      "ID": "64140000",
+      "Name": "64140000: \"Rotten\" Lingrus' Soul (Butcher's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64150000",
+      "Name": "64150000: Soul of Najika the Scorpion (Soul of Man Scorpion♀)",
+      "Description": ""
+    },
+    {
+      "ID": "64160000",
+      "Name": "64160000: Soul of the Rat King's Trial (Giant Rat Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64170000",
+      "Name": "64170000: Soul of the Crawling Insect Guardian (Soul of the Spider Queen)",
+      "Description": ""
+    },
+    {
+      "ID": "64180000",
+      "Name": "64180000: Mirror Knight's Soul (Mirror Knight's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64190000",
+      "Name": "64190000: Singing Demon Soul (Singing Frog Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64200000",
+      "Name": "64200000: Verstad's Soul (Queen's Knight B's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64210000",
+      "Name": "64210000: King's Soul (Old King's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64220000",
+      "Name": "64220000: Guardian Dragon Soul (Wyvern Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64230000",
+      "Name": "64230000: Ancient Dragon Soul (Ancient Dragon Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64240000",
+      "Name": "64240000: Soul of the Giant King (Soul of the Giant King Living)",
+      "Description": ""
+    },
+    {
+      "ID": "64250000",
+      "Name": "64250000: Soul of Dunashandra (soul of queen's armor form)",
+      "Description": ""
+    },
+    {
+      "ID": "64260000",
+      "Name": "64260000: Soul of the Guardian of the Throne (Soul of Queen's Knight A)",
+      "Description": ""
+    },
+    {
+      "ID": "64270000",
+      "Name": "64270000: Soul of the Throne Watcher (Soul of Queen's Knight C)",
+      "Description": ""
+    },
+    {
+      "ID": "64280000",
+      "Name": "64280000: Soul of Darkness (Soul of Agaduran's Stand)",
+      "Description": ""
+    },
+    {
+      "ID": "64290000",
+      "Name": "64290000:★Name not set (Gargoyle Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64300000",
+      "Name": "64300000: Old Witch's Soul (Izalith's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64310000",
+      "Name": "64310000: Old King's Soul (Gwyn's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64320000",
+      "Name": "64320000: Soul of the Old Dead (Soul of Nito)",
+      "Description": ""
+    },
+    {
+      "ID": "64330000",
+      "Name": "64330000: Old White Dragon Soul (Sheath Soul)",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "DisplayName": "GRAB_ROTATION_TYPE",
+  "Name": "GRAB_ROTATION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Back",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Front",
+      "Description": ""
+    }
+  ]
+}

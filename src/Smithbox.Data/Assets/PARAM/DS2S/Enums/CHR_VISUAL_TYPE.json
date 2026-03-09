@@ -1,0 +1,202 @@
+{
+  "DisplayName": "CHR_VISUAL_TYPE",
+  "Name": "CHR_VISUAL_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Normal",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Kojiro Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "White phantom",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Blue phantom 0",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Blue phantom 1",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Blue phantom 2",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Kogane Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Gold phantom",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Red phantom 0",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Red phantom 1",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Red phantom 2",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Black phantom",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Dragon Spirit Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Abyss phantom",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Servant phantom",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Normal Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Bonfire Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Grave spirit phantom",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Illusion phantom",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Blue phantom 3",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Red phantom 3",
+      "Description": ""
+    },
+    {
+      "ID": "101",
+      "Name": "Kojiro Phantom-Remaining time-Medium",
+      "Description": ""
+    },
+    {
+      "ID": "102",
+      "Name": "White Phantom - Remaining time - Medium",
+      "Description": ""
+    },
+    {
+      "ID": "103",
+      "Name": "Kogane Phantom - Remaining time - Medium",
+      "Description": ""
+    },
+    {
+      "ID": "104",
+      "Name": "Gold Phantom - Remaining time - Medium",
+      "Description": ""
+    },
+    {
+      "ID": "105",
+      "Name": "Red Phantom 0-Remaining time-Medium",
+      "Description": ""
+    },
+    {
+      "ID": "106",
+      "Name": "Red Phantom 1-Remaining time-Medium",
+      "Description": ""
+    },
+    {
+      "ID": "107",
+      "Name": "Red Phantom 2-Remaining time-Medium",
+      "Description": ""
+    },
+    {
+      "ID": "108",
+      "Name": "Red Phantom 3-Remaining time-Medium",
+      "Description": ""
+    },
+    {
+      "ID": "109",
+      "Name": "Black Phantom-Remaining Time-Medium",
+      "Description": ""
+    },
+    {
+      "ID": "201",
+      "Name": "Kojiro Phantom-Remaining time-Small",
+      "Description": ""
+    },
+    {
+      "ID": "202",
+      "Name": "White Phantom-Remaining time-Small",
+      "Description": ""
+    },
+    {
+      "ID": "203",
+      "Name": "Kogane Phantom-Remaining time-Small",
+      "Description": ""
+    },
+    {
+      "ID": "204",
+      "Name": "Gold Phantom-Remaining time-Small",
+      "Description": ""
+    },
+    {
+      "ID": "205",
+      "Name": "Red Phantom 0-Remaining time-Small",
+      "Description": ""
+    },
+    {
+      "ID": "206",
+      "Name": "Red Phantom 1-Remaining time-Small",
+      "Description": ""
+    },
+    {
+      "ID": "207",
+      "Name": "Red Phantom 2-Remaining time-Small",
+      "Description": ""
+    },
+    {
+      "ID": "208",
+      "Name": "Red Phantom 3-Remaining time-Small",
+      "Description": ""
+    },
+    {
+      "ID": "209",
+      "Name": "Black Phantom-Remaining time-Small",
+      "Description": ""
+    }
+  ]
+}

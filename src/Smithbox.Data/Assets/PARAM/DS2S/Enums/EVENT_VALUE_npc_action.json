@@ -1,0 +1,117 @@
+{
+  "DisplayName": "EVENT_VALUE_npc_action",
+  "Name": "EVENT_VALUE_npc_action",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "Action 0",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Action 1",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Action 2",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Action 3",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Action 4",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Action 5",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Action 6",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Action 7",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Action 8",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Action 9",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Action 10",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Action 11",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Action 12",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Action 13",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Action 14",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Action 15",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Action 16",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Action 17",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Action 18",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Action 19",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Action 20",
+      "Description": ""
+    }
+  ]
+}

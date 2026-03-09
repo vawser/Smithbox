@@ -1,0 +1,27 @@
+{
+  "DisplayName": "CHR_EMISSIVE_TYPE",
+  "Name": "CHR_EMISSIVE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "0, most effective",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "No. 0 valid",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Most effective",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "None",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "DisplayName": "GENERATOR_AIRETURN_TYPE",
+  "Name": "GENERATOR_AIRETURN_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Walk back",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Dash back",
+      "Description": ""
+    }
+  ]
+}

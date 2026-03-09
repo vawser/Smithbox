@@ -1,0 +1,32 @@
+{
+  "DisplayName": "LOGIC_ACTION_PRIORITY_TYPE",
+  "Name": "LOGIC_ACTION_PRIORITY_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Attack",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Move",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Defense",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Avoidance",
+      "Description": ""
+    }
+  ]
+}

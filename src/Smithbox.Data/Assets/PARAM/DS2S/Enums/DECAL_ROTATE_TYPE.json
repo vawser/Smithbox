@@ -1,0 +1,17 @@
+{
+  "DisplayName": "DECAL_ROTATE_TYPE",
+  "Name": "DECAL_ROTATE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Do not",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Random rotation while maintaining the upward direction",
+      "Description": ""
+    }
+  ]
+}

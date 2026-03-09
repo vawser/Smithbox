@@ -1,0 +1,62 @@
+{
+  "DisplayName": "VOW_TYPES",
+  "Name": "VOW_TYPES",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "No pledge",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Warrior of the sun",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Guardian knight",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Dark spirit of blood",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Blue cult",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "King of rats",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Bell keeper",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Path to the ancient dragon",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Strong one",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Pilgrimage to the abyss",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Number of elements (not used)",
+      "Description": ""
+    }
+  ]
+}

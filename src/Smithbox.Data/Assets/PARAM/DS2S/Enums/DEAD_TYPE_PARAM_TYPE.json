@@ -1,0 +1,12 @@
+{
+  "DisplayName": "DEAD_TYPE_PARAM_TYPE",
+  "Name": "DEAD_TYPE_PARAM_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Test data",
+      "Description": ""
+    }
+  ]
+}

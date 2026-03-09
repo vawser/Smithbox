@@ -1,0 +1,27 @@
+{
+  "DisplayName": "DAMAGE_ATTACK_TYPE_RATE_TYPE",
+  "Name": "DAMAGE_ATTACK_TYPE_RATE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "弱",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "強",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Jump",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Falling",
+      "Description": ""
+    }
+  ]
+}

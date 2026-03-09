@@ -1,0 +1,32 @@
+{
+  "DisplayName": "SP_EFFECT_DUPLICATION",
+  "Name": "SP_EFFECT_DUPLICATION",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Not set",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Duplicate permission",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Overwrite",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Rejected",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Overwrite if time is too long",
+      "Description": ""
+    }
+  ]
+}

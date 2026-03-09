@@ -1,0 +1,67 @@
+{
+  "DisplayName": "DAMAGE_MATERIAL",
+  "Name": "DAMAGE_MATERIAL",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Meat",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Leather",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Tree",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Stone",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Copper",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Iron",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Bone",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Energy",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Flame",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Lightning",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Darkness",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Magic power",
+      "Description": ""
+    }
+  ]
+}

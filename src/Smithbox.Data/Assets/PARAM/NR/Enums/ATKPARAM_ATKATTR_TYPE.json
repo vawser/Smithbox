@@ -1,0 +1,42 @@
+{
+  "DisplayName": "AtkAttribute Type",
+  "Name": "ATKPARAM_ATKATTR_TYPE",
+  "Description": "Determines the physical attack \"element\" of an attack.",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Slash",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Strike",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Pierce",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Standard",
+      "Description": ""
+    },
+    {
+      "ID": "252",
+      "Name": "EquipParamWeapon atkAttribute2 reference",
+      "Description": ""
+    },
+    {
+      "ID": "253",
+      "Name": "EquipParamWeapon atkAttribute reference",
+      "Description": ""
+    },
+    {
+      "ID": "254",
+      "Name": "None",
+      "Description": ""
+    }
+  ]
+}

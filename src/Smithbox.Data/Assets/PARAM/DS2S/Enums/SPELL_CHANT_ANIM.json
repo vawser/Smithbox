@@ -1,0 +1,12 @@
+{
+  "DisplayName": "SPELL_CHANT_ANIM",
+  "Name": "SPELL_CHANT_ANIM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Dummy",
+      "Description": ""
+    }
+  ]
+}

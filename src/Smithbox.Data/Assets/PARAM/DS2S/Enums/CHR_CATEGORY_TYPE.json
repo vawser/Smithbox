@@ -1,0 +1,37 @@
+{
+  "DisplayName": "CHR_CATEGORY_TYPE",
+  "Name": "CHR_CATEGORY_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Player",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Enemy",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Middle boss",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Boss",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "NPC",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Vagrant",
+      "Description": ""
+    }
+  ]
+}

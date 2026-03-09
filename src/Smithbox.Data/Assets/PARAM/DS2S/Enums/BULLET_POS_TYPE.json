@@ -1,0 +1,42 @@
+{
+  "DisplayName": "BULLET_POS_TYPE",
+  "Name": "BULLET_POS_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Line of Sight Direction",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Dummy Polygon Attach",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Parent Bullet",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Camera Standard",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Parent Bullet Impact Position",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Parent Direction",
+      "Description": ""
+    }
+  ]
+}

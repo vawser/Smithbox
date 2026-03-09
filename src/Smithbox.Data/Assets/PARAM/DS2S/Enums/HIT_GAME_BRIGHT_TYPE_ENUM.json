@@ -1,0 +1,17 @@
+{
+  "DisplayName": "HIT_GAME_BRIGHT_TYPE_ENUM",
+  "Name": "HIT_GAME_BRIGHT_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Bright",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Dark",
+      "Description": ""
+    }
+  ]
+}

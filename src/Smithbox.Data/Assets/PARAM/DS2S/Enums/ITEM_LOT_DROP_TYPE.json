@@ -1,0 +1,27 @@
+{
+  "DisplayName": "ITEM_LOT_DROP_TYPE",
+  "Name": "ITEM_LOT_DROP_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Normal",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Confirmed acquisition",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Gacha",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Confirmed",
+      "Description": ""
+    }
+  ]
+}

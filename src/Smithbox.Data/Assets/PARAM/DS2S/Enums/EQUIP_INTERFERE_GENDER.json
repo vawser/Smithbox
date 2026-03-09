@@ -1,0 +1,22 @@
+{
+  "DisplayName": "EQUIP_INTERFERE_GENDER",
+  "Name": "EQUIP_INTERFERE_GENDER",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Do not",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Use men's version",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Number of settings",
+      "Description": ""
+    }
+  ]
+}

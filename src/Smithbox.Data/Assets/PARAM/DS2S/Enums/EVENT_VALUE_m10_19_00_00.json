@@ -1,0 +1,17 @@
+{
+  "DisplayName": "EVENT_VALUE_m10_19_00_00",
+  "Name": "EVENT_VALUE_m10_19_00_00",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "60",
+      "Name": "Pledge: Bell Keeper: Current pledge rank",
+      "Description": ""
+    },
+    {
+      "ID": "61",
+      "Name": "Pledge: Path to the Ancient Dragon: Current pledge rank",
+      "Description": ""
+    }
+  ]
+}

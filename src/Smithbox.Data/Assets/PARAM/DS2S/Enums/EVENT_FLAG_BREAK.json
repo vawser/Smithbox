@@ -1,0 +1,17 @@
+{
+  "DisplayName": "EVENT_FLAG_BREAK",
+  "Name": "EVENT_FLAG_BREAK",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "99040001",
+      "Name": "Destroyed petrified BOSS Salamander《ID:99040001》",
+      "Description": ""
+    }
+  ]
+}

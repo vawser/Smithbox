@@ -1,0 +1,22 @@
+{
+  "DisplayName": "WALK_MOTION_USAGE",
+  "Name": "WALK_MOTION_USAGE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Stand-by",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Foot reverse standby",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Move",
+      "Description": ""
+    }
+  ]
+}

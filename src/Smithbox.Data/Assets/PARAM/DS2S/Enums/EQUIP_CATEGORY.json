@@ -1,0 +1,52 @@
+{
+  "DisplayName": "EQUIP_CATEGORY",
+  "Name": "EQUIP_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "Illegal Equipment Type",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "Facial Parts",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Head",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Chest",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Arms",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Feet",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Accessory",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Other",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Number of Types",
+      "Description": ""
+    }
+  ]
+}

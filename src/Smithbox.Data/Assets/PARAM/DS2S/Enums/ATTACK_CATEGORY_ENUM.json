@@ -1,0 +1,47 @@
+{
+  "DisplayName": "ATTACK_CATEGORY_ENUM",
+  "Name": "ATTACK_CATEGORY_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Extremely fast",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "速",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Quick extension",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "普",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Funobe",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "遅",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Delay",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Slowest",
+      "Description": ""
+    }
+  ]
+}

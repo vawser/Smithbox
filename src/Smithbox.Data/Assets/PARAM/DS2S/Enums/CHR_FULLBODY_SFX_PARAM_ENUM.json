@@ -1,0 +1,257 @@
+{
+  "DisplayName": "CHR_FULLBODY_SFX_PARAM_ENUM",
+  "Name": "CHR_FULLBODY_SFX_PARAM_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "When enemy dies",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Rain map - small size",
+      "Description": ""
+    },
+    {
+      "ID": "110",
+      "Name": "Rain map - large size",
+      "Description": ""
+    },
+    {
+      "ID": "101000",
+      "Name": "Enemy appears",
+      "Description": ""
+    },
+    {
+      "ID": "101370",
+      "Name": "Necromancer super armor",
+      "Description": ""
+    },
+    {
+      "ID": "102000",
+      "Name": "Soul Black appears",
+      "Description": ""
+    },
+    {
+      "ID": "103000",
+      "Name": "Spell Four Heavenly Kings (Magic) Remove Petrification",
+      "Description": ""
+    },
+    {
+      "ID": "104000",
+      "Name": "Red spirit level 0 aura",
+      "Description": ""
+    },
+    {
+      "ID": "104010",
+      "Name": "Red spirit level 1 aura",
+      "Description": ""
+    },
+    {
+      "ID": "104020",
+      "Name": "Red spirit level 2 aura",
+      "Description": ""
+    },
+    {
+      "ID": "104030",
+      "Name": "Red spirit level 3 aura",
+      "Description": ""
+    },
+    {
+      "ID": "105000",
+      "Name": "Blue spirit level 0 aura",
+      "Description": ""
+    },
+    {
+      "ID": "105010",
+      "Name": "Blue spirit level 1 aura",
+      "Description": ""
+    },
+    {
+      "ID": "105020",
+      "Name": "Blue spirit level 2 aura",
+      "Description": ""
+    },
+    {
+      "ID": "105030",
+      "Name": "Blue spirit level 3 aura",
+      "Description": ""
+    },
+    {
+      "ID": "106010",
+      "Name": "Aura for ghosts",
+      "Description": ""
+    },
+    {
+      "ID": "111000",
+      "Name": "Enemy death (large)",
+      "Description": ""
+    },
+    {
+      "ID": "112000",
+      "Name": "Soul black death",
+      "Description": ""
+    },
+    {
+      "ID": "112010",
+      "Name": "Soul Black Death: Non-humanoid",
+      "Description": ""
+    },
+    {
+      "ID": "113000",
+      "Name": "NPC death",
+      "Description": ""
+    },
+    {
+      "ID": "114000",
+      "Name": "Door possession death",
+      "Description": ""
+    },
+    {
+      "ID": "115000",
+      "Name": "Enemy death (small)",
+      "Description": ""
+    },
+    {
+      "ID": "116000",
+      "Name": "Enemy death (treated as a mid-boss)",
+      "Description": ""
+    },
+    {
+      "ID": "180000",
+      "Name": "Small size enemy petrification aura",
+      "Description": ""
+    },
+    {
+      "ID": "201000",
+      "Name": "Mirror Knight's Servant - Appearance",
+      "Description": ""
+    },
+    {
+      "ID": "203000",
+      "Name": "Generated from skeleton nobles",
+      "Description": ""
+    },
+    {
+      "ID": "210000",
+      "Name": "Boss general death humanoid",
+      "Description": ""
+    },
+    {
+      "ID": "210010",
+      "Name": "Boss general death non-humanoid",
+      "Description": ""
+    },
+    {
+      "ID": "210020",
+      "Name": "Ancient dragon death non-humanoid",
+      "Description": ""
+    },
+    {
+      "ID": "211000",
+      "Name": "Mirror Knight's Servant - Death",
+      "Description": ""
+    },
+    {
+      "ID": "212000",
+      "Name": "Mirror knight death",
+      "Description": ""
+    },
+    {
+      "ID": "213000",
+      "Name": "Skeleton Noble Death Explosion",
+      "Description": ""
+    },
+    {
+      "ID": "213010",
+      "Name": "Skeleton aristocrat floating",
+      "Description": ""
+    },
+    {
+      "ID": "214000",
+      "Name": "Silver chariot death",
+      "Description": ""
+    },
+    {
+      "ID": "310010",
+      "Name": "Death-Normal",
+      "Description": ""
+    },
+    {
+      "ID": "310020",
+      "Name": "Death - White Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "310030",
+      "Name": "Death - Blue Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "310040",
+      "Name": "Death - Gold Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "310050",
+      "Name": "Death - Red Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "310060",
+      "Name": "Death - Black Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "310070",
+      "Name": "Death-Dragon Spirit Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "310080",
+      "Name": "Death - Abyssal Phantom",
+      "Description": ""
+    },
+    {
+      "ID": "400010",
+      "Name": "Abnormal status death - petrification",
+      "Description": ""
+    },
+    {
+      "ID": "500010",
+      "Name": "Dragonstone: Occurrence",
+      "Description": ""
+    },
+    {
+      "ID": "500020",
+      "Name": "Dragon head stone: unlocked",
+      "Description": ""
+    },
+    {
+      "ID": "500110",
+      "Name": "Dragon Body Stone: Occurrence",
+      "Description": ""
+    },
+    {
+      "ID": "500120",
+      "Name": "Dragon body stone: unlocked",
+      "Description": ""
+    },
+    {
+      "ID": "501010",
+      "Name": "Spell: Magic defense",
+      "Description": ""
+    },
+    {
+      "ID": "501020",
+      "Name": "Spell: Great magic defense",
+      "Description": ""
+    }
+  ]
+}

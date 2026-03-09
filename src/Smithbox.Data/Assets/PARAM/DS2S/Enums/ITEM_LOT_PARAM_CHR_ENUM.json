@@ -1,0 +1,2667 @@
+{
+  "DisplayName": "ITEM_LOT_PARAM_CHR_ENUM",
+  "Name": "ITEM_LOT_PARAM_CHR_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Dummy (prohibited to use)_Item lottery (character)",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "No Drop - Ghost",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "No Drop - Cutscene",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "No Drop - Boss",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Drop - none",
+      "Description": ""
+    },
+    {
+      "ID": "1020000",
+      "Name": "Old Woman - Old Woman's House",
+      "Description": ""
+    },
+    {
+      "ID": "1020100",
+      "Name": "Player NPC - Tutorial Stage",
+      "Description": ""
+    },
+    {
+      "ID": "1020200",
+      "Name": "Ogre - Sandy Beach",
+      "Description": ""
+    },
+    {
+      "ID": "1040000",
+      "Name": "Skeleton-A's house basement",
+      "Description": ""
+    },
+    {
+      "ID": "1040100",
+      "Name": "Pig-A's house",
+      "Description": ""
+    },
+    {
+      "ID": "1040200",
+      "Name": "Miracle Worker - Black Spirit: No drop",
+      "Description": ""
+    },
+    {
+      "ID": "1100000",
+      "Name": "Salamander-Boss Treasure Room",
+      "Description": ""
+    },
+    {
+      "ID": "1100100",
+      "Name": "Kingdom Soldier (Dead) - Spear: Knock and move deep",
+      "Description": ""
+    },
+    {
+      "ID": "1100200",
+      "Name": "Wandering Knight (Dead) - One-handed Sword: Forest of the Decayed Giant",
+      "Description": ""
+    },
+    {
+      "ID": "1100201",
+      "Name": "Wandering Knight (Dead) - One-handed Sword: Forest of the Decayed Giant: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "1100500",
+      "Name": "Vagrant - Zako: Giant's Forest",
+      "Description": ""
+    },
+    {
+      "ID": "1101000",
+      "Name": "Ishimori-gen5000",
+      "Description": ""
+    },
+    {
+      "ID": "1105000",
+      "Name": "Lower-class soldier (deceased): Shizukuishi and throwing knife - bare hands",
+      "Description": ""
+    },
+    {
+      "ID": "1105100",
+      "Name": "Lower-class soldier (deceased): Shizukuishi and throwing knife - dagger",
+      "Description": ""
+    },
+    {
+      "ID": "1105200",
+      "Name": "Lower-class soldier (deceased): Shizukuishi and throwing knife - one-handed sword: small shield",
+      "Description": ""
+    },
+    {
+      "ID": "1105300",
+      "Name": "Lower-class soldier (deceased): Shizukuishi and throwing knife - one-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "1105400",
+      "Name": "Lower-class soldier (deceased): Shizukuishi and throwing knife - two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "1140000",
+      "Name": "Boss battle Zako - no drop",
+      "Description": ""
+    },
+    {
+      "ID": "1140100",
+      "Name": "Parent pig-tent square",
+      "Description": ""
+    },
+    {
+      "ID": "1140200",
+      "Name": "Pig-Tent Square",
+      "Description": ""
+    },
+    {
+      "ID": "1140300",
+      "Name": "Wealthy people's clothes♂-key and fragrant wood drop",
+      "Description": ""
+    },
+    {
+      "ID": "1140400",
+      "Name": "Farmer's clothes ♂-Torch: Head part 1",
+      "Description": ""
+    },
+    {
+      "ID": "1140500",
+      "Name": "Farmer's clothes ♂-Torch: Head part 2",
+      "Description": ""
+    },
+    {
+      "ID": "1141000",
+      "Name": "Ishimori-gen1240",
+      "Description": ""
+    },
+    {
+      "ID": "1141100",
+      "Name": "Ishimori-gen1360",
+      "Description": ""
+    },
+    {
+      "ID": "1141200",
+      "Name": "Ishimori (explosion)-gen1361",
+      "Description": ""
+    },
+    {
+      "ID": "1150000",
+      "Name": "Petrified Auger-gen2500",
+      "Description": ""
+    },
+    {
+      "ID": "1151000",
+      "Name": "Ishimori (explosion)-gen1700",
+      "Description": ""
+    },
+    {
+      "ID": "1153000",
+      "Name": "Ν-mimic-gen1850",
+      "Description": ""
+    },
+    {
+      "ID": "1160000",
+      "Name": "Caged Undead Citizens Pulled Out of the Well - Wandering Series Drop",
+      "Description": ""
+    },
+    {
+      "ID": "1164000",
+      "Name": "[Oblivion: Normal] Zako Bell Keeper - Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "1164100",
+      "Name": "[Oblivion: Normal] Dark Spirit Bell Keeper - Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "1171000",
+      "Name": "Ishimori-gen2403",
+      "Description": ""
+    },
+    {
+      "ID": "1173000",
+      "Name": "Ν-mimic-gen3304",
+      "Description": ""
+    },
+    {
+      "ID": "1181000",
+      "Name": "Ishimori-gen4850",
+      "Description": ""
+    },
+    {
+      "ID": "1190000",
+      "Name": "Demon Armor (Deceased)_Captain-Recovery Fountain",
+      "Description": ""
+    },
+    {
+      "ID": "1190001",
+      "Name": "Demon Armor (Dead)_Captain-2nd lap: Bow drop",
+      "Description": ""
+    },
+    {
+      "ID": "1190500",
+      "Name": "Vagrant-Zako: Melted Iron Castle",
+      "Description": ""
+    },
+    {
+      "ID": "1191000",
+      "Name": "Ishimori-gen4039",
+      "Description": ""
+    },
+    {
+      "ID": "1193000",
+      "Name": "Ν-mimic-gen4035",
+      "Description": ""
+    },
+    {
+      "ID": "1194100",
+      "Name": "Zako Bell Keeper - Melted Iron Castle",
+      "Description": ""
+    },
+    {
+      "ID": "1230000",
+      "Name": "Wandering Knight (Dead) - Spear C: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "1230001",
+      "Name": "Wandering Knight (Dead) - Spear C: Hunting Forest: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "1231000",
+      "Name": "Ishimori-gen4112",
+      "Description": ""
+    },
+    {
+      "ID": "1250000",
+      "Name": "Non-poisonous hornworm - Antidote drop",
+      "Description": ""
+    },
+    {
+      "ID": "1270000",
+      "Name": "Wyvern - Dragon's Den",
+      "Description": ""
+    },
+    {
+      "ID": "1271000",
+      "Name": "Ishimori-gen1200",
+      "Description": ""
+    },
+    {
+      "ID": "1271100",
+      "Name": "Ishimori-gen1300",
+      "Description": ""
+    },
+    {
+      "ID": "1271200",
+      "Name": "Ishimori-gen1400",
+      "Description": ""
+    },
+    {
+      "ID": "1271300",
+      "Name": "Ishimori-gen1401",
+      "Description": ""
+    },
+    {
+      "ID": "1271400",
+      "Name": "Stonemori-gen1402",
+      "Description": ""
+    },
+    {
+      "ID": "1271500",
+      "Name": "Ishimori-gen1403",
+      "Description": ""
+    },
+    {
+      "ID": "1271600",
+      "Name": "Ishimori-gen1404",
+      "Description": ""
+    },
+    {
+      "ID": "1271700",
+      "Name": "Ishimori-gen1500",
+      "Description": ""
+    },
+    {
+      "ID": "1271800",
+      "Name": "Ishimori-gen1501",
+      "Description": ""
+    },
+    {
+      "ID": "1271900",
+      "Name": "Ishimori-gen1600",
+      "Description": ""
+    },
+    {
+      "ID": "1272000",
+      "Name": "Ishimori-gen1601",
+      "Description": ""
+    },
+    {
+      "ID": "1273000",
+      "Name": "Ν-mimic-gen5000",
+      "Description": ""
+    },
+    {
+      "ID": "1273001",
+      "Name": "Ν-mimic-gen5000: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "1310000",
+      "Name": "Ancient Warrior - Two-Handed Sword & Medium Shield_Heide",
+      "Description": ""
+    },
+    {
+      "ID": "1310100",
+      "Name": "Ancient Warrior-Oversized Sword_Heide",
+      "Description": ""
+    },
+    {
+      "ID": "1310200",
+      "Name": "Ancient Warrior - Ax Spear & Great Shield_Heide",
+      "Description": ""
+    },
+    {
+      "ID": "1310300",
+      "Name": "Ancient Warrior - Two-Handed Long Ax_Heide",
+      "Description": ""
+    },
+    {
+      "ID": "1310400",
+      "Name": "Ancient Warrior-Hammer_Heide",
+      "Description": ""
+    },
+    {
+      "ID": "1310500",
+      "Name": "Ancient Warrior (Blue Spirit) - Bone Meal Drop",
+      "Description": ""
+    },
+    {
+      "ID": "1320000",
+      "Name": "Petrified Lion Warrior-gen2041",
+      "Description": ""
+    },
+    {
+      "ID": "1320500",
+      "Name": "Double-sided warrior - Zako",
+      "Description": ""
+    },
+    {
+      "ID": "1321000",
+      "Name": "Stone Guardian - Forest of Hollow Shadows",
+      "Description": ""
+    },
+    {
+      "ID": "1331000",
+      "Name": "Ishimori-gen1400: Pharos",
+      "Description": ""
+    },
+    {
+      "ID": "1333000",
+      "Name": "Ν-mimic-gen1100",
+      "Description": ""
+    },
+    {
+      "ID": "1341000",
+      "Name": "Ishimori-gen1910",
+      "Description": ""
+    },
+    {
+      "ID": "2110000",
+      "Name": "Necromancer (Immortal) - Staff",
+      "Description": ""
+    },
+    {
+      "ID": "2210501",
+      "Name": "[Royal Castle: Normal] Vagrant-Zako: Ring Drop",
+      "Description": ""
+    },
+    {
+      "ID": "2210601",
+      "Name": "[Royal Castle: Normal] Vagrant-Zako: Wedge Stone Drop",
+      "Description": ""
+    },
+    {
+      "ID": "2210602",
+      "Name": "[Royal Castle: Normal] Vagrant-Zako: Wedge Stone Drop: After 3rd week",
+      "Description": ""
+    },
+    {
+      "ID": "2210700",
+      "Name": "[Royal Castle: Normal] Warrior in the Mirror - Zako",
+      "Description": ""
+    },
+    {
+      "ID": "2211000",
+      "Name": "[Ojo: Normal] Ishimori-gen1098",
+      "Description": ""
+    },
+    {
+      "ID": "2240000",
+      "Name": "NPC Black Witch - Hat and Veil",
+      "Description": ""
+    },
+    {
+      "ID": "2240001",
+      "Name": "NPC Black Witch - Hat and Veil: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "4030000",
+      "Name": "NPC - Entire map",
+      "Description": ""
+    },
+    {
+      "ID": "4030001",
+      "Name": "NPC-2nd lap_Entire map",
+      "Description": ""
+    },
+    {
+      "ID": "4030002",
+      "Name": "NPC-3rd lap_Entire map",
+      "Description": ""
+    },
+    {
+      "ID": "4030003",
+      "Name": "NPC-4th lap_Entire map",
+      "Description": ""
+    },
+    {
+      "ID": "4030004",
+      "Name": "NPC-5th lap_Entire map",
+      "Description": ""
+    },
+    {
+      "ID": "4030005",
+      "Name": "NPC-6th lap_Entire map",
+      "Description": ""
+    },
+    {
+      "ID": "4030006",
+      "Name": "NPC-7th lap_Entire map",
+      "Description": ""
+    },
+    {
+      "ID": "4030007",
+      "Name": "NPC-8th lap_Entire map",
+      "Description": ""
+    },
+    {
+      "ID": "5000000",
+      "Name": "Guest player drop-1",
+      "Description": ""
+    },
+    {
+      "ID": "5001000",
+      "Name": "Guest player drop-2",
+      "Description": ""
+    },
+    {
+      "ID": "5002000",
+      "Name": "Guest player drop-3",
+      "Description": ""
+    },
+    {
+      "ID": "5003000",
+      "Name": "Guest player drop-4",
+      "Description": ""
+    },
+    {
+      "ID": "5004000",
+      "Name": "Guest player drop-5",
+      "Description": ""
+    },
+    {
+      "ID": "5005000",
+      "Name": "Guest player drop-6",
+      "Description": ""
+    },
+    {
+      "ID": "5006000",
+      "Name": "Guest player drop-7",
+      "Description": ""
+    },
+    {
+      "ID": "5007000",
+      "Name": "Guest player drop-8",
+      "Description": ""
+    },
+    {
+      "ID": "5008000",
+      "Name": "Guest player drop-9",
+      "Description": ""
+    },
+    {
+      "ID": "5009000",
+      "Name": "Guest player drop-10",
+      "Description": ""
+    },
+    {
+      "ID": "6000000",
+      "Name": "Strong Drop - Entire map",
+      "Description": ""
+    },
+    {
+      "ID": "10000000",
+      "Name": "Goblin (Living) - Bare Hands: Hollow Shadow Forest",
+      "Description": ""
+    },
+    {
+      "ID": "10000100",
+      "Name": "Goblin (Living) - Bare Hands: Gap Cave",
+      "Description": ""
+    },
+    {
+      "ID": "10001000",
+      "Name": "Goblin (living) - Sword",
+      "Description": ""
+    },
+    {
+      "ID": "10002000",
+      "Name": "Goblin (living) - Sling",
+      "Description": ""
+    },
+    {
+      "ID": "10100000",
+      "Name": "Kobold - Cave of the Gap",
+      "Description": ""
+    },
+    {
+      "ID": "10100100",
+      "Name": "Kobold - Hall of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "10200000",
+      "Name": "Kingdom Soldier (Deceased) - Spear: Medium Shield",
+      "Description": ""
+    },
+    {
+      "ID": "10201000",
+      "Name": "Kingdom Soldier (Deceased) - Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "10202000",
+      "Name": "Kingdom Soldier (Deceased) - Two-handed long ax",
+      "Description": ""
+    },
+    {
+      "ID": "10203000",
+      "Name": "Kingdom Soldier (Deceased) - Piercing Sword: Medium Shield",
+      "Description": ""
+    },
+    {
+      "ID": "10204000",
+      "Name": "Kingdom Soldier (Deceased) - Bow",
+      "Description": ""
+    },
+    {
+      "ID": "10205000",
+      "Name": "Kingdom Soldier (Deceased) - Bare Hands",
+      "Description": ""
+    },
+    {
+      "ID": "10210000",
+      "Name": "Kingdom Soldier (Living) - Spear: Medium Shield",
+      "Description": ""
+    },
+    {
+      "ID": "10211000",
+      "Name": "Kingdom Soldier (living) - Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "10213000",
+      "Name": "Kingdom Soldier (Living) - Dying",
+      "Description": ""
+    },
+    {
+      "ID": "10214000",
+      "Name": "Kingdom Soldier (Living) - Bow",
+      "Description": ""
+    },
+    {
+      "ID": "10300000",
+      "Name": "Junior Soldier (Deceased) - Bare Hands: Forest of Fallen Giants",
+      "Description": ""
+    },
+    {
+      "ID": "10300100",
+      "Name": "Junior Soldier (Dead) - Bare Hands: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "10301000",
+      "Name": "Junior Soldier (Deceased) - Dagger: Forest of Fallen Giants",
+      "Description": ""
+    },
+    {
+      "ID": "10301100",
+      "Name": "Junior Soldier (Deceased) - Dagger: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "10302000",
+      "Name": "Lower-class soldier (dead) - one-handed sword: small shield: rotten giant forest",
+      "Description": ""
+    },
+    {
+      "ID": "10302100",
+      "Name": "Lower-class soldier (deceased) - One-handed sword: Small shield: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "10302200",
+      "Name": "Lower-class soldier (deceased) - One-handed sword: Small shield: Hidden port",
+      "Description": ""
+    },
+    {
+      "ID": "10303000",
+      "Name": "Junior Soldier (Deceased) - One-Handed Ax: Fallen Giant Forest",
+      "Description": ""
+    },
+    {
+      "ID": "10303100",
+      "Name": "Lower-class soldier (deceased) - One-handed ax: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "10303200",
+      "Name": "Junior Soldier (Deceased) - One-handed Ax: Hidden Port",
+      "Description": ""
+    },
+    {
+      "ID": "10304000",
+      "Name": "Junior Soldier (Deceased) - Two-handed Bow: Fallen Giant Forest",
+      "Description": ""
+    },
+    {
+      "ID": "10304100",
+      "Name": "Lower-class soldier (deceased) - Two-handed bow: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "10305000",
+      "Name": "Lower-class soldier (deceased) - two-handed bow (fire arrow): Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "10305100",
+      "Name": "Lower-class soldier (deceased) - Two-handed bow (fire arrow): Hidden port",
+      "Description": ""
+    },
+    {
+      "ID": "10310000",
+      "Name": "Junior Soldier (Living) - Dagger: Hidden Port",
+      "Description": ""
+    },
+    {
+      "ID": "10310100",
+      "Name": "Junior Soldier (Living) - Dagger: Giant's Memory",
+      "Description": ""
+    },
+    {
+      "ID": "10311000",
+      "Name": "Junior Soldier (Living) - One-handed Sword: Hidden Port",
+      "Description": ""
+    },
+    {
+      "ID": "10311100",
+      "Name": "Junior Soldier (Living) - One-handed Sword: Giant's Memory",
+      "Description": ""
+    },
+    {
+      "ID": "10312000",
+      "Name": "Junior Soldier (Living) - One-handed Ax: Hidden Port",
+      "Description": ""
+    },
+    {
+      "ID": "10312100",
+      "Name": "Junior Soldier (Living) - One-handed Ax: Giant's Memory",
+      "Description": ""
+    },
+    {
+      "ID": "10313000",
+      "Name": "Junior Soldier (Living) - Bow: Hidden Port",
+      "Description": ""
+    },
+    {
+      "ID": "10313100",
+      "Name": "Junior Soldier (Living) - Bow: Giant's Memory",
+      "Description": ""
+    },
+    {
+      "ID": "10500000",
+      "Name": "Fairy Priestess - Bare Hands",
+      "Description": ""
+    },
+    {
+      "ID": "10501000",
+      "Name": "Fairy Priestess - Cane",
+      "Description": ""
+    },
+    {
+      "ID": "10600000",
+      "Name": "Dark Priest (Deceased)-Color ①_No mask",
+      "Description": ""
+    },
+    {
+      "ID": "10620000",
+      "Name": "Dark Priest (Deceased)-Color ③_Head c",
+      "Description": ""
+    },
+    {
+      "ID": "10700000",
+      "Name": "Parasite spider (parasitic) -",
+      "Description": ""
+    },
+    {
+      "ID": "10800000",
+      "Name": "Rogue (Dead) - Dagger x2",
+      "Description": ""
+    },
+    {
+      "ID": "10801000",
+      "Name": "Rogue (Dead) - One-handed mallet x 2",
+      "Description": ""
+    },
+    {
+      "ID": "10802000",
+      "Name": "Rogue (Dead) - Two-handed bow x2",
+      "Description": ""
+    },
+    {
+      "ID": "11300000",
+      "Name": "Sailor (Deceased) - One-handed sword: Small shield",
+      "Description": ""
+    },
+    {
+      "ID": "11301000",
+      "Name": "Sailor (Dead) - Curved Sword x2",
+      "Description": ""
+    },
+    {
+      "ID": "11302000",
+      "Name": "Sailor (Deceased) - Two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "11500000",
+      "Name": "Traveler's clothes ♂ - Bare hands: Madura",
+      "Description": ""
+    },
+    {
+      "ID": "11500100",
+      "Name": "Traveler's Clothes♂-Bare Hands: Gap Cave",
+      "Description": ""
+    },
+    {
+      "ID": "11501000",
+      "Name": "Traveler's clothes♂-dagger",
+      "Description": ""
+    },
+    {
+      "ID": "11700000",
+      "Name": "Statue_Pawn-Spear: Shield",
+      "Description": ""
+    },
+    {
+      "ID": "11800000",
+      "Name": "Dark Wizard (Dead) - Color ①: Head A",
+      "Description": ""
+    },
+    {
+      "ID": "11800100",
+      "Name": "Dark Wizard (Dead) - Color ①: Head A: Immortal Hall",
+      "Description": ""
+    },
+    {
+      "ID": "11820000",
+      "Name": "Dark Wizard (Dead) - Color ③: Head B",
+      "Description": ""
+    },
+    {
+      "ID": "11900000",
+      "Name": "Lion Black Mage (Living) -",
+      "Description": ""
+    },
+    {
+      "ID": "12100000",
+      "Name": "Giant Junior Soldier (Titan) - Bare Hands",
+      "Description": ""
+    },
+    {
+      "ID": "12101000",
+      "Name": "Giant Junior Soldier (Titan) - Two-handed club",
+      "Description": ""
+    },
+    {
+      "ID": "12102000",
+      "Name": "Giant Junior Soldier Poison (Titan) - Bare Hands",
+      "Description": ""
+    },
+    {
+      "ID": "12103000",
+      "Name": "Giant Junior Soldier Fire (Titan) - Bare Hands",
+      "Description": ""
+    },
+    {
+      "ID": "12300000",
+      "Name": "Strange Shadow (Living) - Mask A: Two Swords Claws",
+      "Description": ""
+    },
+    {
+      "ID": "12300001",
+      "Name": "Strange Shadow (Living) - Mask A: 2 Swords Claws: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "12301000",
+      "Name": "Strange Shadow (Living) - Mask A: Dagger: Piercing Sword",
+      "Description": ""
+    },
+    {
+      "ID": "12302000",
+      "Name": "Strange Shadow (Living) - Mask B: Two Swords Claws",
+      "Description": ""
+    },
+    {
+      "ID": "12303000",
+      "Name": "Strange Shadow (Living) - Mask B: Dagger: Piercing Sword",
+      "Description": ""
+    },
+    {
+      "ID": "12400000",
+      "Name": "Assassin (living) - Mask A: Two sword claws",
+      "Description": ""
+    },
+    {
+      "ID": "12401000",
+      "Name": "Assassin (living) - Mask A: Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "12402000",
+      "Name": "Assassin (Living) - Mask A: Curved Sword",
+      "Description": ""
+    },
+    {
+      "ID": "12403000",
+      "Name": "Assassin (living) - Mask A: Bow",
+      "Description": ""
+    },
+    {
+      "ID": "12500000",
+      "Name": "Undead Citizen - Explosion: Tomb of Saints",
+      "Description": ""
+    },
+    {
+      "ID": "12500100",
+      "Name": "Undead Citizen - Explosion: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "12500200",
+      "Name": "Undead Citizen - Explosion: Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "12501000",
+      "Name": "Undead Citizen - Poison",
+      "Description": ""
+    },
+    {
+      "ID": "12502000",
+      "Name": "Undead citizen - acid",
+      "Description": ""
+    },
+    {
+      "ID": "12503000",
+      "Name": "Undead Citizen - Petrified",
+      "Description": ""
+    },
+    {
+      "ID": "12504000",
+      "Name": "Undead Citizen - Normal: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "12504100",
+      "Name": "Undead Citizen-Normal: Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "12505000",
+      "Name": "Undead Citizen - Trap After Boss",
+      "Description": ""
+    },
+    {
+      "ID": "12700000",
+      "Name": "Dead Workers (Deceased) - Bare Hands: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "12700100",
+      "Name": "Dead Workers (Deceased) - Bare Hands: Immortal Mausoleum",
+      "Description": ""
+    },
+    {
+      "ID": "12700200",
+      "Name": "Dead Worker (Dead) - Bare Hands: Geldra",
+      "Description": ""
+    },
+    {
+      "ID": "12700300",
+      "Name": "Dead Workers (Deceased) - Bare Hands: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "12700400",
+      "Name": "Dead Workers (Deceased) - Bare Hands: Saint's Tomb",
+      "Description": ""
+    },
+    {
+      "ID": "12700500",
+      "Name": "Dead Workers (Deceased) - Bare Hands: Old Dark Pit",
+      "Description": ""
+    },
+    {
+      "ID": "12701000",
+      "Name": "Dead Worker (Dead) - Torch: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "12701100",
+      "Name": "Dead Workers (Deceased) - Torches: Immortal Mausoleum",
+      "Description": ""
+    },
+    {
+      "ID": "12702000",
+      "Name": "Dead Worker (Deceased) - Broken Straight Sword",
+      "Description": ""
+    },
+    {
+      "ID": "12900000",
+      "Name": "Forest guard-cane",
+      "Description": ""
+    },
+    {
+      "ID": "12901000",
+      "Name": "Forest Keeper-Bell",
+      "Description": ""
+    },
+    {
+      "ID": "13100000",
+      "Name": "Cleric-Warhammer",
+      "Description": ""
+    },
+    {
+      "ID": "13101000",
+      "Name": "Cleric-Bell",
+      "Description": ""
+    },
+    {
+      "ID": "13102000",
+      "Name": "Cleric-Wand",
+      "Description": ""
+    },
+    {
+      "ID": "13200000",
+      "Name": "Skeleton-2 sword style: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "13200100",
+      "Name": "Skeleton - Dual Wield: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "13201000",
+      "Name": "スケルトン-片手曲剣",
+      "Description": ""
+    },
+    {
+      "ID": "13202000",
+      "Name": "Skeleton - One-handed stab",
+      "Description": ""
+    },
+    {
+      "ID": "13203000",
+      "Name": "Skeleton-bow",
+      "Description": ""
+    },
+    {
+      "ID": "13300000",
+      "Name": "Wheel skeleton - bare hands",
+      "Description": ""
+    },
+    {
+      "ID": "13301000",
+      "Name": "Wheel Skeleton - Curved Sword",
+      "Description": ""
+    },
+    {
+      "ID": "13302000",
+      "Name": "Wheel Skeleton-Omagariken",
+      "Description": ""
+    },
+    {
+      "ID": "13400000",
+      "Name": "Dwarf-",
+      "Description": ""
+    },
+    {
+      "ID": "13500000",
+      "Name": "Heavy Dwarf - Two handed ax x 2: Head A",
+      "Description": ""
+    },
+    {
+      "ID": "13501000",
+      "Name": "Heavy Dwarf - Two-handed Hammer: Head A",
+      "Description": ""
+    },
+    {
+      "ID": "13502000",
+      "Name": "Heavy Dwarf-Bow: Head A",
+      "Description": ""
+    },
+    {
+      "ID": "13503000",
+      "Name": "Heavy Dwarf - Two handed ax x 2: Head B",
+      "Description": ""
+    },
+    {
+      "ID": "13504000",
+      "Name": "Heavy Dwarf - Two-handed Hammer: Head B",
+      "Description": ""
+    },
+    {
+      "ID": "13505000",
+      "Name": "Heavy Dwarf-Bow: Head B",
+      "Description": ""
+    },
+    {
+      "ID": "13701000",
+      "Name": "Necromancer (Immortal) - Shield: Staff",
+      "Description": ""
+    },
+    {
+      "ID": "13800000",
+      "Name": "Torturer - torture device",
+      "Description": ""
+    },
+    {
+      "ID": "13801000",
+      "Name": "Torturer - Whip",
+      "Description": ""
+    },
+    {
+      "ID": "13900000",
+      "Name": "Artificial Immortal - Sickle: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "13900100",
+      "Name": "Artificial Immortal - Sickle: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "13901000",
+      "Name": "Artificial immortal - bare hands",
+      "Description": ""
+    },
+    {
+      "ID": "14100000",
+      "Name": "Enhanced Immortal - Hall of Anne Deal",
+      "Description": ""
+    },
+    {
+      "ID": "14100100",
+      "Name": "Enhanced Immortal - Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "14600000",
+      "Name": "Wealthy people's clothes♂-dagger",
+      "Description": ""
+    },
+    {
+      "ID": "14601000",
+      "Name": "Wealthy people's clothes♂-piercing sword",
+      "Description": ""
+    },
+    {
+      "ID": "14602000",
+      "Name": "Wealthy people's clothes♂-dagger & torch",
+      "Description": ""
+    },
+    {
+      "ID": "14700000",
+      "Name": "Sick man's clothes♂-",
+      "Description": ""
+    },
+    {
+      "ID": "14800000",
+      "Name": "Farmer's clothes♂-Two-handed hammer: Head part 1",
+      "Description": ""
+    },
+    {
+      "ID": "14801000",
+      "Name": "Farmer's clothes ♂-Two-handed hammer: Head part 2",
+      "Description": ""
+    },
+    {
+      "ID": "14802000",
+      "Name": "Farmer's clothes ♂ - Two-handed sickle: Head part 1",
+      "Description": ""
+    },
+    {
+      "ID": "14803000",
+      "Name": "Farmer's clothes ♂ - Two-handed sickle: Head part 2",
+      "Description": ""
+    },
+    {
+      "ID": "14900000",
+      "Name": "Steelworks worker_without apron-",
+      "Description": ""
+    },
+    {
+      "ID": "15000000",
+      "Name": "Statue_Night-",
+      "Description": ""
+    },
+    {
+      "ID": "15100000",
+      "Name": "Royal Heavy Warrior-Color ①: Two-handed War Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "15120000",
+      "Name": "Royal Heavy Warrior - Color ③: Two-handed Warhammer: Forest of Rotting Giants",
+      "Description": ""
+    },
+    {
+      "ID": "15120100",
+      "Name": "Kingdom Soldier Heavy Warrior - Color ③: Two-handed War Hammer: Geldra",
+      "Description": ""
+    },
+    {
+      "ID": "15121000",
+      "Name": "Royal Heavy Warrior - Color ③: One-handed club",
+      "Description": ""
+    },
+    {
+      "ID": "15200000",
+      "Name": "Royal Soldier Warrior-Two-Handed Sword: Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "15200100",
+      "Name": "Royal Warrior - Two-handed Sword: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "15200101",
+      "Name": "Royal Soldier Warrior - Two-Handed Sword: Prison of Oblivion: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "15201000",
+      "Name": "Royal Soldier Warrior-Crossbow: Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "15201100",
+      "Name": "Royal Warrior-Crossbow: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "15201101",
+      "Name": "Royal Soldier Warrior-Crossbow: Prison of Oblivion: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "15300000",
+      "Name": "Royal Guard Guard - Ax Spear: Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "15300100",
+      "Name": "Royal Guard Guard - Ax Spear: Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "15300200",
+      "Name": "Royal Guard Guard - Ax Spear: Amana",
+      "Description": ""
+    },
+    {
+      "ID": "15300300",
+      "Name": "Royal Guard Guard - Ax Spear: Immortal Shrine",
+      "Description": ""
+    },
+    {
+      "ID": "15301000",
+      "Name": "Royal Guard Guard - Extra Large Sword: Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "15301100",
+      "Name": "Royal Guard Guard - Extra Large Sword: Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "15301200",
+      "Name": "Royal Guard Guard - Extra Large Sword: Amana",
+      "Description": ""
+    },
+    {
+      "ID": "15301300",
+      "Name": "Royal Guard Guard - Extra Large Sword: Immortal Temple",
+      "Description": ""
+    },
+    {
+      "ID": "15400000",
+      "Name": "Skeleton aristocrat-",
+      "Description": ""
+    },
+    {
+      "ID": "15500000",
+      "Name": "Lizard person-",
+      "Description": ""
+    },
+    {
+      "ID": "15700000",
+      "Name": "Armor Skeleton - Dual Sword Style: Death Penalty",
+      "Description": ""
+    },
+    {
+      "ID": "15701000",
+      "Name": "Armor Skeleton - One-handed Curved Sword: Death Place",
+      "Description": ""
+    },
+    {
+      "ID": "15702000",
+      "Name": "Armor Skeleton - One-handed Pierce: Death Place",
+      "Description": ""
+    },
+    {
+      "ID": "15703000",
+      "Name": "Armor Skeleton-Bow: Death Row",
+      "Description": ""
+    },
+    {
+      "ID": "20300000",
+      "Name": "Parasite Spider-",
+      "Description": ""
+    },
+    {
+      "ID": "20300001",
+      "Name": "Parasite Spider-2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "20400000",
+      "Name": "Great Moss-",
+      "Description": ""
+    },
+    {
+      "ID": "20500000",
+      "Name": "Poison hornworm - Poison: Valley of pools",
+      "Description": ""
+    },
+    {
+      "ID": "20500100",
+      "Name": "Poison Hornworm - Poison: Kudzubottom",
+      "Description": ""
+    },
+    {
+      "ID": "20510000",
+      "Name": "Poison hornworm-acid: Geldra",
+      "Description": ""
+    },
+    {
+      "ID": "20510100",
+      "Name": "Poison Hornworm - Acid: House of Anne Deal",
+      "Description": ""
+    },
+    {
+      "ID": "20510200",
+      "Name": "Poison Hornworm - Acid: Amana",
+      "Description": ""
+    },
+    {
+      "ID": "20600000",
+      "Name": "Needle maggot-",
+      "Description": ""
+    },
+    {
+      "ID": "20900000",
+      "Name": "Hunting Dog - Color ①: House of Anne Deal",
+      "Description": ""
+    },
+    {
+      "ID": "20900100",
+      "Name": "Hunting Dog - Color ①: Hollow Shadow Forest",
+      "Description": ""
+    },
+    {
+      "ID": "20900200",
+      "Name": "Hunting dog-color ①: Scum bottom",
+      "Description": ""
+    },
+    {
+      "ID": "21000000",
+      "Name": "Basilisk-Color ①: Hollow Shadow Forest",
+      "Description": ""
+    },
+    {
+      "ID": "21000100",
+      "Name": "Basilisk-Color ①: Scum bottom",
+      "Description": ""
+    },
+    {
+      "ID": "21000200",
+      "Name": "Basilisk-Color ①: Hall of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "21000300",
+      "Name": "Basilisk-Color ①: Saint’s Tomb",
+      "Description": ""
+    },
+    {
+      "ID": "21000400",
+      "Name": "Basilisk-Color ①: Eyeball crushed",
+      "Description": ""
+    },
+    {
+      "ID": "21200000",
+      "Name": "Wyvern-",
+      "Description": ""
+    },
+    {
+      "ID": "21300000",
+      "Name": "Ishimori-",
+      "Description": ""
+    },
+    {
+      "ID": "21400000",
+      "Name": "Fanged beast-",
+      "Description": ""
+    },
+    {
+      "ID": "21600000",
+      "Name": "Door possession-",
+      "Description": ""
+    },
+    {
+      "ID": "21700000",
+      "Name": "Hidden in the darkness-",
+      "Description": ""
+    },
+    {
+      "ID": "22000000",
+      "Name": "Giant poisonous hornworm-acid: Valley of pools",
+      "Description": ""
+    },
+    {
+      "ID": "22000100",
+      "Name": "Giant Poisonous Hornworm - Acid: Anne Deal's House",
+      "Description": ""
+    },
+    {
+      "ID": "22000200",
+      "Name": "Giant poisonous hornworm-acid: Amana",
+      "Description": ""
+    },
+    {
+      "ID": "22200000",
+      "Name": "Giant Basilisk-Color ②: Hall of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "22200100",
+      "Name": "Giant Basilisk - Color ②: Hollow Shadow Forest",
+      "Description": ""
+    },
+    {
+      "ID": "22300000",
+      "Name": "Corpse Scavenging Rat-Color ①",
+      "Description": ""
+    },
+    {
+      "ID": "22400000",
+      "Name": "Coal tar-",
+      "Description": ""
+    },
+    {
+      "ID": "22600000",
+      "Name": "Dog rat-",
+      "Description": ""
+    },
+    {
+      "ID": "22610000",
+      "Name": "Dog Mouse-Color ②",
+      "Description": ""
+    },
+    {
+      "ID": "22620000",
+      "Name": "King of Mouse-",
+      "Description": ""
+    },
+    {
+      "ID": "22700000",
+      "Name": "Wild Dog - Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "22700100",
+      "Name": "Wild dog-hidden port",
+      "Description": ""
+    },
+    {
+      "ID": "30000000",
+      "Name": "Ogre (living) - Color ①: Gap Cave",
+      "Description": ""
+    },
+    {
+      "ID": "30000100",
+      "Name": "Ogre (living) - Color ①: Amana",
+      "Description": ""
+    },
+    {
+      "ID": "30000200",
+      "Name": "Ogre (living) - Color ①: Hall of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "30100000",
+      "Name": "Wandering Knight (Dead) - One-handed Sword",
+      "Description": ""
+    },
+    {
+      "ID": "30100001",
+      "Name": "Wandering Knight (Dead) - One-handed sword: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "30101000",
+      "Name": "Wandering Knight (Dead) - Spear A",
+      "Description": ""
+    },
+    {
+      "ID": "30101001",
+      "Name": "Wandering Knight (Dead) - Spear A: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "30102000",
+      "Name": "Wandering Knight (Dead)-Spear B",
+      "Description": ""
+    },
+    {
+      "ID": "30102001",
+      "Name": "Wandering Knight (Dead) - Spear B: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "30103000",
+      "Name": "Wandering Knight (Dead)-Spear C",
+      "Description": ""
+    },
+    {
+      "ID": "30103001",
+      "Name": "Wandering Knight (Dead) - Spear C: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "30200000",
+      "Name": "Prisoner (dead) -",
+      "Description": ""
+    },
+    {
+      "ID": "30330000",
+      "Name": "Double-sided warrior - snake head",
+      "Description": ""
+    },
+    {
+      "ID": "30400000",
+      "Name": "Banshee (Dead)_Monster-",
+      "Description": ""
+    },
+    {
+      "ID": "30401000",
+      "Name": "Banshee (Dead)_Beauty-",
+      "Description": ""
+    },
+    {
+      "ID": "30500000",
+      "Name": "Demon Knight (Dead) -",
+      "Description": ""
+    },
+    {
+      "ID": "30600000",
+      "Name": "Demon Armor (Dead)_Captain-Sword",
+      "Description": ""
+    },
+    {
+      "ID": "30601000",
+      "Name": "Demon Armor (Dead)_Captain-Bow: Molten Iron Castle",
+      "Description": ""
+    },
+    {
+      "ID": "30601100",
+      "Name": "Demon Armor (Dead)_Captain-Bow: Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "30700000",
+      "Name": "Dullahan (dead) -",
+      "Description": ""
+    },
+    {
+      "ID": "30710000",
+      "Name": "Dullahan (living) -",
+      "Description": ""
+    },
+    {
+      "ID": "30711000",
+      "Name": "Dullahan (living) - head only",
+      "Description": ""
+    },
+    {
+      "ID": "30800000",
+      "Name": "Lion warrior-",
+      "Description": ""
+    },
+    {
+      "ID": "30810000",
+      "Name": "Lion Warrior ②-",
+      "Description": ""
+    },
+    {
+      "ID": "30900000",
+      "Name": "Titan Senior Soldier (Titan) - Giant's Memories",
+      "Description": ""
+    },
+    {
+      "ID": "30900100",
+      "Name": "Giant Senior Soldier (Titan) - Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "30960000",
+      "Name": "New Titan Senior Soldier (Deceased) -",
+      "Description": ""
+    },
+    {
+      "ID": "30970000",
+      "Name": "New Titan Senior Soldier (Living) -",
+      "Description": ""
+    },
+    {
+      "ID": "31100000",
+      "Name": "Cavalry - Mounted Soldier",
+      "Description": ""
+    },
+    {
+      "ID": "31200000",
+      "Name": "Immortal Senior Soldier (Immortal) - Sickle: Robe",
+      "Description": ""
+    },
+    {
+      "ID": "31201000",
+      "Name": "Immortal Advanced Soldier (Immortal) - Spear: Robe: Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "31201100",
+      "Name": "Immortal Advanced Soldier (Immortal) - Spear: Robe: Valley of the Pool",
+      "Description": ""
+    },
+    {
+      "ID": "31202000",
+      "Name": "Immortal Advanced Soldier (Immortal) - Sickle: Armor: Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "31202100",
+      "Name": "Immortal Senior Soldier (Immortal) - Sickle: Armor: Immortal Temple",
+      "Description": ""
+    },
+    {
+      "ID": "31203000",
+      "Name": "Immortal Advanced Soldier (Immortal) - Spear: Armor: Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "31203100",
+      "Name": "Immortal Advanced Soldier (Immortal) - Spear: Armor: Valley of the Pool",
+      "Description": ""
+    },
+    {
+      "ID": "31203200",
+      "Name": "Immortal Senior Soldier (Immortal) - Spear: Armor: Immortal Mausoleum",
+      "Description": ""
+    },
+    {
+      "ID": "31204000",
+      "Name": "Immortal Senior Soldier (Immortal) - Sickle: Naked",
+      "Description": ""
+    },
+    {
+      "ID": "31205000",
+      "Name": "Immortal Senior Soldier (Immortal) - Spear: Naked",
+      "Description": ""
+    },
+    {
+      "ID": "31300000",
+      "Name": "Falconer Warrior - Straight Sword & Shield: No Falcon",
+      "Description": ""
+    },
+    {
+      "ID": "31301000",
+      "Name": "Falconer Warrior - Sword & Shield: No Falcon",
+      "Description": ""
+    },
+    {
+      "ID": "31302000",
+      "Name": "Falconer Warrior - Sword & Falcon",
+      "Description": ""
+    },
+    {
+      "ID": "31303000",
+      "Name": "Falconer Warrior - Bow: No falcon",
+      "Description": ""
+    },
+    {
+      "ID": "31400000",
+      "Name": "Elephant (dead) -",
+      "Description": ""
+    },
+    {
+      "ID": "31500000",
+      "Name": "Elephant (living) -",
+      "Description": ""
+    },
+    {
+      "ID": "31600000",
+      "Name": "Captured Magician (Living) -",
+      "Description": ""
+    },
+    {
+      "ID": "31700000",
+      "Name": "Professor Dragon-",
+      "Description": ""
+    },
+    {
+      "ID": "31800000",
+      "Name": "Vagrant - no luggage",
+      "Description": ""
+    },
+    {
+      "ID": "31801000",
+      "Name": "Vagrant - with luggage",
+      "Description": ""
+    },
+    {
+      "ID": "31900000",
+      "Name": "Demon armor (dead)_mass production type-sword",
+      "Description": ""
+    },
+    {
+      "ID": "31901000",
+      "Name": "Demon Armor (Dead)_Mass Production Type-Bow",
+      "Description": ""
+    },
+    {
+      "ID": "32100000",
+      "Name": "Ν-Mimic_Wooden-",
+      "Description": ""
+    },
+    {
+      "ID": "32101000",
+      "Name": "Ν-Mimic_Iron-",
+      "Description": ""
+    },
+    {
+      "ID": "32400000",
+      "Name": "Gargoyle-",
+      "Description": ""
+    },
+    {
+      "ID": "32500000",
+      "Name": "Warrior in the mirror-",
+      "Description": ""
+    },
+    {
+      "ID": "32600000",
+      "Name": "Butcher-",
+      "Description": ""
+    },
+    {
+      "ID": "32700000",
+      "Name": "Bone dragon-",
+      "Description": ""
+    },
+    {
+      "ID": "33000000",
+      "Name": "Ancient Warrior - Two-Handed Sword & Medium Shield",
+      "Description": ""
+    },
+    {
+      "ID": "33001000",
+      "Name": "Ancient Warrior - Oversized Sword",
+      "Description": ""
+    },
+    {
+      "ID": "33002000",
+      "Name": "Ancient Warrior - Ax Spear & Great Shield",
+      "Description": ""
+    },
+    {
+      "ID": "33003000",
+      "Name": "Ancient Warrior - Two-handed Long Ax",
+      "Description": ""
+    },
+    {
+      "ID": "33004000",
+      "Name": "Ancient Warrior - Two-Handed Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "33100000",
+      "Name": "Demon Heavy Soldier - Two-handed sword & medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "33101000",
+      "Name": "Demon Heavy Soldier - Extra Large Sword",
+      "Description": ""
+    },
+    {
+      "ID": "33102000",
+      "Name": "Demon heavy soldier - two-handed long axe",
+      "Description": ""
+    },
+    {
+      "ID": "33103000",
+      "Name": "Demon Heavy Soldier - Two-Handed Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "33104000",
+      "Name": "Demon Heavy Soldier - One-handed Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "33200000",
+      "Name": "Queen's Knight A-",
+      "Description": ""
+    },
+    {
+      "ID": "33300000",
+      "Name": "Queen's Knight B-",
+      "Description": ""
+    },
+    {
+      "ID": "33400000",
+      "Name": "Queen's Knight C-",
+      "Description": ""
+    },
+    {
+      "ID": "33700000",
+      "Name": "Amazing Dead - Bare Hands: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "33700100",
+      "Name": "Amazing Dead - Bare Hands: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "33700200",
+      "Name": "Amazing Dead - Bare Hands: Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "33700300",
+      "Name": "Amazing Dead - Bare Hands: Saint's Cemetery",
+      "Description": ""
+    },
+    {
+      "ID": "33700400",
+      "Name": "Amazing Dead - Bare Hands: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "33700500",
+      "Name": "Amazing Dead - Bare Hands: Heide Great Fire Tower",
+      "Description": ""
+    },
+    {
+      "ID": "33700600",
+      "Name": "Amazing Dead - Bare Hands: Amana",
+      "Description": ""
+    },
+    {
+      "ID": "33701000",
+      "Name": "Amazing Ghost-Torch: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "33701100",
+      "Name": "Amazing Ghost-Torch: Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "33702000",
+      "Name": "Amazing Ghost-Sword: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "33702100",
+      "Name": "Amazing Dead-Sword: Kuzuso",
+      "Description": ""
+    },
+    {
+      "ID": "33702200",
+      "Name": "Amazing Dead-Sword: Saint's Tomb",
+      "Description": ""
+    },
+    {
+      "ID": "33702300",
+      "Name": "Amazing Dead-Sword: Amana",
+      "Description": ""
+    },
+    {
+      "ID": "50000000",
+      "Name": "Jabba the Hut-",
+      "Description": ""
+    },
+    {
+      "ID": "50100000",
+      "Name": "Naga-",
+      "Description": ""
+    },
+    {
+      "ID": "50200000",
+      "Name": "Man Scorpion♂-",
+      "Description": ""
+    },
+    {
+      "ID": "50300000",
+      "Name": "Man Scorpion♀-",
+      "Description": ""
+    },
+    {
+      "ID": "50400000",
+      "Name": "Mirror night-",
+      "Description": ""
+    },
+    {
+      "ID": "50610000",
+      "Name": "Agaduran's Stand-",
+      "Description": ""
+    },
+    {
+      "ID": "50620000",
+      "Name": "Wormhole-",
+      "Description": ""
+    },
+    {
+      "ID": "50650000",
+      "Name": "Tombkeeper-",
+      "Description": ""
+    },
+    {
+      "ID": "50700000",
+      "Name": "Rich-",
+      "Description": ""
+    },
+    {
+      "ID": "50800000",
+      "Name": "Wraith-",
+      "Description": ""
+    },
+    {
+      "ID": "50900000",
+      "Name": "Dark Bishop-",
+      "Description": ""
+    },
+    {
+      "ID": "51100000",
+      "Name": "Phantom Knight (Spiritual Body) -",
+      "Description": ""
+    },
+    {
+      "ID": "51200000",
+      "Name": "Phantom Mage (Spiritual Body) -",
+      "Description": ""
+    },
+    {
+      "ID": "51460000",
+      "Name": "Old king-",
+      "Description": ""
+    },
+    {
+      "ID": "60000000",
+      "Name": "Ancient dragon-",
+      "Description": ""
+    },
+    {
+      "ID": "60100000",
+      "Name": "Salamander-",
+      "Description": ""
+    },
+    {
+      "ID": "60200000",
+      "Name": "Beautiful voice frog-",
+      "Description": ""
+    },
+    {
+      "ID": "60300000",
+      "Name": "Spider Queen-",
+      "Description": ""
+    },
+    {
+      "ID": "60310000",
+      "Name": "Spider Queen (Cliff) -",
+      "Description": ""
+    },
+    {
+      "ID": "60700000",
+      "Name": "Molten Iron Demon-",
+      "Description": ""
+    },
+    {
+      "ID": "60800000",
+      "Name": "Decay insects - outer shell",
+      "Description": ""
+    },
+    {
+      "ID": "61100000",
+      "Name": "Heavy cavalry-",
+      "Description": ""
+    },
+    {
+      "ID": "61911000",
+      "Name": "Silver Chariot-",
+      "Description": ""
+    },
+    {
+      "ID": "62500000",
+      "Name": "Ornstein-",
+      "Description": ""
+    },
+    {
+      "ID": "62600000",
+      "Name": "Forgotten sinner-",
+      "Description": ""
+    },
+    {
+      "ID": "62700000",
+      "Name": "Queen's armor form-",
+      "Description": ""
+    },
+    {
+      "ID": "62800000",
+      "Name": "Giant rat-",
+      "Description": ""
+    },
+    {
+      "ID": "70050000",
+      "Name": "Dragon Shrine Maiden_In-game use-",
+      "Description": ""
+    },
+    {
+      "ID": "70150000",
+      "Name": "Dragon Shrine Maiden (Children) _For in-game use-",
+      "Description": ""
+    },
+    {
+      "ID": "70360000",
+      "Name": "New Queen-",
+      "Description": ""
+    },
+    {
+      "ID": "70450000",
+      "Name": "Ladder shop_In-game use-",
+      "Description": ""
+    },
+    {
+      "ID": "70550000",
+      "Name": "Retired fire protection woman 1_In-game use-",
+      "Description": ""
+    },
+    {
+      "ID": "70560000",
+      "Name": "Retired fire protection woman 2_for in-game use-",
+      "Description": ""
+    },
+    {
+      "ID": "70580000",
+      "Name": "Retired fire protection woman 3_for in-game use-",
+      "Description": ""
+    },
+    {
+      "ID": "72110000",
+      "Name": "Spirit of the Prime Minister",
+      "Description": ""
+    },
+    {
+      "ID": "72300000",
+      "Name": "Housekeeper-",
+      "Description": ""
+    },
+    {
+      "ID": "72400000",
+      "Name": "Kingdom Captain-",
+      "Description": ""
+    },
+    {
+      "ID": "72500000",
+      "Name": "Pilgrim of the Abyss-",
+      "Description": ""
+    },
+    {
+      "ID": "72600000",
+      "Name": "Dwarf Governance -",
+      "Description": ""
+    },
+    {
+      "ID": "73000000",
+      "Name": "Mirror Knight's Servant 1_Extra Large Sword-",
+      "Description": ""
+    },
+    {
+      "ID": "73101000",
+      "Name": "Mirror Knight's servant 2_Two-handed long ax-",
+      "Description": ""
+    },
+    {
+      "ID": "73200000",
+      "Name": "Sorcerer's Sinner 1-",
+      "Description": ""
+    },
+    {
+      "ID": "73300000",
+      "Name": "Sorcerer's Sinner 2-",
+      "Description": ""
+    },
+    {
+      "ID": "74100000",
+      "Name": "Broken-hearted Blue Sect Warrior-",
+      "Description": ""
+    },
+    {
+      "ID": "74200000",
+      "Name": "Wandering Warrior - One-handed Ax",
+      "Description": ""
+    },
+    {
+      "ID": "74201000",
+      "Name": "Wandering Warrior - Great Sword",
+      "Description": ""
+    },
+    {
+      "ID": "74300000",
+      "Name": "Moonlight old man-",
+      "Description": ""
+    },
+    {
+      "ID": "74400000",
+      "Name": "Patch-",
+      "Description": ""
+    },
+    {
+      "ID": "75100000",
+      "Name": "Map drawing-",
+      "Description": ""
+    },
+    {
+      "ID": "75200000",
+      "Name": "Female Knight Akertira",
+      "Description": ""
+    },
+    {
+      "ID": "75300000",
+      "Name": "Bell Keeper-",
+      "Description": ""
+    },
+    {
+      "ID": "75400000",
+      "Name": "Yorozu hag-",
+      "Description": ""
+    },
+    {
+      "ID": "75500000",
+      "Name": "Stalker warrior-",
+      "Description": ""
+    },
+    {
+      "ID": "76000000",
+      "Name": "Bard Girl 1 -",
+      "Description": ""
+    },
+    {
+      "ID": "76010000",
+      "Name": "Bard Girl 2-",
+      "Description": ""
+    },
+    {
+      "ID": "76020000",
+      "Name": "Prisoner girl-",
+      "Description": ""
+    },
+    {
+      "ID": "76100000",
+      "Name": "Armor shop-",
+      "Description": ""
+    },
+    {
+      "ID": "76200000",
+      "Name": "Material shop-",
+      "Description": ""
+    },
+    {
+      "ID": "76300000",
+      "Name": "Jujutsuya-",
+      "Description": ""
+    },
+    {
+      "ID": "76400000",
+      "Name": "Blacksmith - Hammer & Fire Scissors",
+      "Description": ""
+    },
+    {
+      "ID": "76401000",
+      "Name": "Blacksmith - Otsuchi",
+      "Description": ""
+    },
+    {
+      "ID": "76430000",
+      "Name": "EX blacksmith-",
+      "Description": ""
+    },
+    {
+      "ID": "76600000",
+      "Name": "Magician-",
+      "Description": ""
+    },
+    {
+      "ID": "76800000",
+      "Name": "Spellmania-",
+      "Description": ""
+    },
+    {
+      "ID": "76900000",
+      "Name": "Miracle Man Leash",
+      "Description": ""
+    },
+    {
+      "ID": "77000000",
+      "Name": "Dark Magician-Cane",
+      "Description": ""
+    },
+    {
+      "ID": "77001000",
+      "Name": "Dark Magician-Sashiken",
+      "Description": ""
+    },
+    {
+      "ID": "77100000",
+      "Name": "Sealed person-",
+      "Description": ""
+    },
+    {
+      "ID": "77200000",
+      "Name": "Curious item shop-",
+      "Description": ""
+    },
+    {
+      "ID": "77600000",
+      "Name": "Top weapon shop: Bird Goal-",
+      "Description": ""
+    },
+    {
+      "ID": "77700000",
+      "Name": "Cat-",
+      "Description": ""
+    },
+    {
+      "ID": "78300000",
+      "Name": "Black Phantomya-",
+      "Description": ""
+    },
+    {
+      "ID": "78400000",
+      "Name": "Chaplain of Indulgence-",
+      "Description": ""
+    },
+    {
+      "ID": "78500000",
+      "Name": "Guardian Knight - Two-handed long ax & medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "78501000",
+      "Name": "Guardian Knight - Two-handed long ax & bell",
+      "Description": ""
+    },
+    {
+      "ID": "78600000",
+      "Name": "Kirakira Musume-",
+      "Description": ""
+    },
+    {
+      "ID": "81000000",
+      "Name": "Multiplayer NPC: Swordsman (male) - Red Spirit: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "81000100",
+      "Name": "Multiplayer NPC: Swordsman (male) - White Spirit: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "81000200",
+      "Name": "Multiplayer NPC: Swordsman (male) - Bell Keeper Area",
+      "Description": ""
+    },
+    {
+      "ID": "81000300",
+      "Name": "Multiplayer NPC: Swordsman (male) - White Spirit: Heide Great Fire Tower",
+      "Description": ""
+    },
+    {
+      "ID": "81000400",
+      "Name": "Multiplayer NPC: Swordsman (male) - White Spirit: Altar of Amana",
+      "Description": ""
+    },
+    {
+      "ID": "81100000",
+      "Name": "Multiplayer NPC: Archer (male) - White Spirit: Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "81200000",
+      "Name": "Multiplayer NPC: Sage (Female) - White Spirit: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "81200100",
+      "Name": "Multiplayer NPC: Sage (Female) - White Spirit: Geldra, Shinseki Town",
+      "Description": ""
+    },
+    {
+      "ID": "81300000",
+      "Name": "Multiplayer NPC: Lancer (Female) - Altar of Amana",
+      "Description": ""
+    },
+    {
+      "ID": "81400000",
+      "Name": "Multiplayer NPC: Meat Cut (Female) - White Spirit: Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "81400800",
+      "Name": "Multiplayer NPC: Meat Cut (Female) - Black Spirit: Ojo Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "81400900",
+      "Name": "Multiplayer NPC: Meat Cut (Female) - Black Spirit: Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "82000000",
+      "Name": "Multiplayer NPC: Spearman (male) - Dark Spirit: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "82000100",
+      "Name": "Multiplayer NPC: Spearman (male) - Dark Spirit: Geldra, Shinseki Town",
+      "Description": ""
+    },
+    {
+      "ID": "82000200",
+      "Name": "Multiplayer NPC: Spearman (male) - Dark Spirit: Hollow Shadow Forest",
+      "Description": ""
+    },
+    {
+      "ID": "82100000",
+      "Name": "Multiplayer NPC: Grim Reaper (Female) - Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "82100100",
+      "Name": "Multiplayer NPC: Grim Reaper (Female) - Dark Spirit: Mansion of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "82200000",
+      "Name": "Multiplayer NPC: Mage (male) - Dark Spirit: Doorway of Pharos",
+      "Description": ""
+    },
+    {
+      "ID": "82200100",
+      "Name": "Multiplayer NPC: Mage (male) - Ash Spirit: Saint's Tomb",
+      "Description": ""
+    },
+    {
+      "ID": "82200200",
+      "Name": "Multiplayer NPC: Mage (male) - Dark Spirit: Immortal Temple",
+      "Description": ""
+    },
+    {
+      "ID": "82200300",
+      "Name": "Multiplayer NPC: Mage (male) - Dark Spirit: Altar of Amana",
+      "Description": ""
+    },
+    {
+      "ID": "82300000",
+      "Name": "Multiplayer NPC: Ancient Dragon Swordsman (Male) - Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "82400000",
+      "Name": "Multiplayer NPC: Female Swordsman's Brother",
+      "Description": ""
+    },
+    {
+      "ID": "82400001",
+      "Name": "Multiplayer NPC: Female Swordsman's Brother - 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "83100000",
+      "Name": "Saint’s Tomb: Abandoned Saint-",
+      "Description": ""
+    },
+    {
+      "ID": "83110000",
+      "Name": "Saint’s Tomb: Saint’s Knight-",
+      "Description": ""
+    },
+    {
+      "ID": "83200000",
+      "Name": "Old Dark Hole: Abyssal Spirit 1: Sniper-",
+      "Description": ""
+    },
+    {
+      "ID": "83210000",
+      "Name": "Old Dark Hole: Abyssal Spirit 2: Axman-",
+      "Description": ""
+    },
+    {
+      "ID": "83220000",
+      "Name": "Old Dark Hole: Abyssal Spirit 3: Huang Yifu-",
+      "Description": ""
+    },
+    {
+      "ID": "83230000",
+      "Name": "Old Dark Hole: Abyssal Spirit 4: Yellow Robe Wife-",
+      "Description": ""
+    },
+    {
+      "ID": "83240000",
+      "Name": "Old Dark Hole: Abyssal Spirit 5: Traveler-",
+      "Description": ""
+    },
+    {
+      "ID": "83250000",
+      "Name": "Old Dark Hole: Abyssal Spirit 6: Knight-",
+      "Description": ""
+    },
+    {
+      "ID": "83260000",
+      "Name": "Old Dark Hole: Abyssal Spirit 7: Heavy Warrior-",
+      "Description": ""
+    },
+    {
+      "ID": "83270000",
+      "Name": "Old Dark Hole: Abyssal Spirit 8: Queen-",
+      "Description": ""
+    },
+    {
+      "ID": "83300000",
+      "Name": "Amana Shrine: Cannibal Banchou-",
+      "Description": ""
+    },
+    {
+      "ID": "83400000",
+      "Name": "Prison of Oblivion: Sorcerer-",
+      "Description": ""
+    },
+    {
+      "ID": "83410000",
+      "Name": "Prison of Oblivion: Dark Knight-",
+      "Description": ""
+    },
+    {
+      "ID": "83500000",
+      "Name": "Ceremonial site: Dragon Knight - Dual Wielding",
+      "Description": ""
+    },
+    {
+      "ID": "83505000",
+      "Name": "Ceremony place: Painting guardian (male) -",
+      "Description": ""
+    },
+    {
+      "ID": "83510000",
+      "Name": "Ceremonial place: Dragon Knight - Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "83520000",
+      "Name": "Ceremonial place: Dragon Knight - One-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "83600000",
+      "Name": "Molten Castle: Samurai Sorcerer-",
+      "Description": ""
+    },
+    {
+      "ID": "83600001",
+      "Name": "Molten Castle: Samurai Sorcerer - 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "83610000",
+      "Name": "Melted Iron Castle: Bell Keeper 1:-",
+      "Description": ""
+    },
+    {
+      "ID": "83620000",
+      "Name": "Melted Iron Castle: Bell Keeper 2:-",
+      "Description": ""
+    },
+    {
+      "ID": "83630000",
+      "Name": "Melted Iron Castle: Bell Keeper 3:-",
+      "Description": ""
+    },
+    {
+      "ID": "83640000",
+      "Name": "Melted Iron Fortress: Light Heavy Soldier-",
+      "Description": ""
+    },
+    {
+      "ID": "83700000",
+      "Name": "Gap Cave: 2nd round hunting-",
+      "Description": ""
+    },
+    {
+      "ID": "83700001",
+      "Name": "Gap Cave: 2nd round hunting - 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "83710000",
+      "Name": "Gap Cave: Proximity-",
+      "Description": ""
+    },
+    {
+      "ID": "83720000",
+      "Name": "Gap Cave: Shooting-",
+      "Description": ""
+    },
+    {
+      "ID": "83730000",
+      "Name": "Gap Cave: To be determined.",
+      "Description": ""
+    },
+    {
+      "ID": "83800000",
+      "Name": "Hollow Shadow Forest: Phantom Enemy 1-",
+      "Description": ""
+    },
+    {
+      "ID": "83810000",
+      "Name": "Hollow Shadow Forest: Phantom Enemy 2-",
+      "Description": ""
+    },
+    {
+      "ID": "84000000",
+      "Name": "Dummy NPC for Conqueror's Pledge-",
+      "Description": ""
+    },
+    {
+      "ID": "84100000",
+      "Name": "Dummy NPC for the Pledge of the Sun-",
+      "Description": ""
+    },
+    {
+      "ID": "84200000",
+      "Name": "Forest of the Decayed Giant: In front of the King's Door - 2nd lap Red Spirit 1",
+      "Description": ""
+    },
+    {
+      "ID": "84300000",
+      "Name": "Forest of the Fallen Giant: In front of the King's Door - 2nd lap Red Spirit 2",
+      "Description": ""
+    },
+    {
+      "ID": "84400000",
+      "Name": "Forest of the Decayed Giant: Fissure Plaza - 2nd lap Red Spirit 3",
+      "Description": ""
+    },
+    {
+      "ID": "84400001",
+      "Name": "Fallen Giant's Forest: Fissure Plaza - 2nd round Red Ghost 3: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "84500000",
+      "Name": "Fallen Giant Forest - 2nd round dark spirit",
+      "Description": ""
+    },
+    {
+      "ID": "84600000",
+      "Name": "Luminous Stone Town Geldra-Dark Spirit",
+      "Description": ""
+    },
+    {
+      "ID": "84700000",
+      "Name": "Heide Great Fire Tower - 2nd round Dark Spirit 1",
+      "Description": ""
+    },
+    {
+      "ID": "84710000",
+      "Name": "Heide Great Fire Tower - 2nd round Dark Spirit 2",
+      "Description": ""
+    },
+    {
+      "ID": "84800000",
+      "Name": "Immortal Temple - 2nd round Dark Spirit 1",
+      "Description": ""
+    },
+    {
+      "ID": "84810000",
+      "Name": "Immortal Temple-Dark Spirit 2 (Ghost)",
+      "Description": ""
+    },
+    {
+      "ID": "84900000",
+      "Name": "Royal Castle Drangraig-Dark Spirit 1 (Ghost)",
+      "Description": ""
+    },
+    {
+      "ID": "84900001",
+      "Name": "Royal Castle Drangraig-Dark Spirit 1 (Ghost): 2nd lap",
+      "Description": ""
+    },
+    {
+      "ID": "84910000",
+      "Name": "Castle Drangraig-Dark Spirit 2",
+      "Description": ""
+    },
+    {
+      "ID": "84920000",
+      "Name": "Castle Drangraig-Dark Spirit 3",
+      "Description": ""
+    },
+    {
+      "ID": "85000000",
+      "Name": "Anne Deal's Hall - 2nd round Dark Spirit",
+      "Description": ""
+    },
+    {
+      "ID": "85000001",
+      "Name": "Hall of Anne Deal - 2nd round Dark spirit: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "85100000",
+      "Name": "Valley of reservoir-dark spirit",
+      "Description": ""
+    },
+    {
+      "ID": "85200000",
+      "Name": "Hunting Forest - Red Spirit Level 3",
+      "Description": ""
+    },
+    {
+      "ID": "85300000",
+      "Name": "Castle Drangraig - Dual Wield Avelyn",
+      "Description": ""
+    },
+    {
+      "ID": "85310000",
+      "Name": "Ojo Drangraig-Leroy",
+      "Description": ""
+    },
+    {
+      "ID": "85320000",
+      "Name": "Royal Castle Drangraig - 2nd round Dark Spirit 1",
+      "Description": ""
+    },
+    {
+      "ID": "85330000",
+      "Name": "Royal Castle Drangraig - 2nd round Dark Spirit 2",
+      "Description": ""
+    },
+    {
+      "ID": "85340000",
+      "Name": "Royal Castle Drangraig - 2nd round Dark Spirit 3",
+      "Description": ""
+    },
+    {
+      "ID": "85340001",
+      "Name": "Royal Castle Drangraig - 2nd round Dark Spirit 3: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "85350000",
+      "Name": "Royal Castle Drangraig - Dark Spirit Key Keeper",
+      "Description": ""
+    },
+    {
+      "ID": "85400000",
+      "Name": "Hidden Port - Dark Spirit (Darth Maul)",
+      "Description": ""
+    },
+    {
+      "ID": "85400001",
+      "Name": "Hidden Port - Dark Spirit (Darth Maul): 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "99900000",
+      "Name": "Test-based",
+      "Description": ""
+    },
+    {
+      "ID": "99990000",
+      "Name": "Ito test 1",
+      "Description": ""
+    },
+    {
+      "ID": "99990001",
+      "Name": "Ito test 2",
+      "Description": ""
+    }
+  ]
+}

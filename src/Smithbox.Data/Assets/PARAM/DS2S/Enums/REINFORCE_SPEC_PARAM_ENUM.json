@@ -1,0 +1,37 @@
+{
+  "DisplayName": "REINFORCE_SPEC_PARAM_ENUM",
+  "Name": "REINFORCE_SPEC_PARAM_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Enhanced specification test",
+      "Description": ""
+    },
+    {
+      "ID": "100100",
+      "Name": "Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "100200",
+      "Name": "Straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "100300",
+      "Name": "Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "100400",
+      "Name": "Two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "100500",
+      "Name": "Test moonlight sword",
+      "Description": ""
+    }
+  ]
+}

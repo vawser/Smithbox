@@ -1,0 +1,172 @@
+{
+  "DisplayName": "DAMAGE_WIND_CATE_ID",
+  "Name": "DAMAGE_WIND_CATE_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "3100000",
+      "Name": "Immunity-Medium-Attack-General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "11100000",
+      "Name": "General-purpose-Minimum-Attack-General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "12100000",
+      "Name": "General-purpose-Small-Attack-General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "13100000",
+      "Name": "General-purpose-Medium-Attack-General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "14100000",
+      "Name": "General-purpose-Large-Attack-General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "15100000",
+      "Name": "General Purpose-Extra Large-Attack-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "16100000",
+      "Name": "General Purpose-Extra Large-Attack-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "21100000",
+      "Name": "PC-Tiny-Attack-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "22100000",
+      "Name": "PC-Small-Attack-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "23100000",
+      "Name": "PC-Medium-Attack-General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "24100000",
+      "Name": "PC-Large-Attack-General",
+      "Description": ""
+    },
+    {
+      "ID": "25100000",
+      "Name": "PC-Extra Large-Attack-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "26100000",
+      "Name": "PC-Extra Large-Attack-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "31100000",
+      "Name": "Enemy - Minimal - Attack - General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "31200000",
+      "Name": "Energy - Extremely small - Ground vibration - General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "32100000",
+      "Name": "Enemy - Small - Attack - General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "32200000",
+      "Name": "Energy - Small - Ground vibration - General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "33100000",
+      "Name": "Enemy-Medium-Attack-General",
+      "Description": ""
+    },
+    {
+      "ID": "33200000",
+      "Name": "Energy-Medium-Ground Vibration-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "34100000",
+      "Name": "Enemy-Large-Attack-General",
+      "Description": ""
+    },
+    {
+      "ID": "34200000",
+      "Name": "Energy-Large-Ground Vibration-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "35100000",
+      "Name": "Enemy - Extra Large - Attack - General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "35200000",
+      "Name": "Enemy - Extra Large - Ground Vibration - General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "36100000",
+      "Name": "Enemy - Extra Large - Attack - General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "36200000",
+      "Name": "Enemy - Extra Large - Ground Vibration - General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "41100000",
+      "Name": "Object - Minimal - Attack - General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "42100000",
+      "Name": "Object-Small-Attack-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "43100000",
+      "Name": "Object-Medium-Attack-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "44100000",
+      "Name": "Object-Large-Attack-General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "45100000",
+      "Name": "Object - Extra Large - Attack - General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "46100000",
+      "Name": "Object - Extra Large - Attack - General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "90000000",
+      "Name": "Test",
+      "Description": ""
+    }
+  ]
+}

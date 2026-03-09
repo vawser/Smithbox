@@ -1,0 +1,472 @@
+{
+  "DisplayName": "LOGIC_general_flag_value",
+  "Name": "LOGIC_general_flag_value",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "(1) For BOSS attack count_1",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "(7)□Event notification flag ON",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "(3) Boss battle mode",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "(4) Return: Tracking",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "(1) For BOSS attack count_2",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "(4) Return: wait and see",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "(7) ■Event notification flag OFF",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "(4) Return: Unable to return home",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "(1) For BOSS attack count_3",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "(1) For BOSS attack count_4",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "(4) With startup state",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "(4) Return: Gate movement",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "(1) For BOSS attack count_5",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "(1) For BOSS attack count_6",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "(1) For BOSS attack count_7",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "(1) For BOSS attack count_8",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "(1) For BOSS attack count_9",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "(0) Target behavior: Visual recognition",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "(3) Special attack mode",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "(1) For BOSS attack count_10",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "(4) Successful navigation search",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "(0) Target behavior: Lower stop",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "(2) Normal time",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "(0) Target behavior: Invisibility",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "(2) Fixed artillery battery",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "(0) Generator return",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "(2) First contact made",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "(0) Targetless behavior",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "(2) Battle mode",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "(0) Initial response start",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "(0) Initial response completed",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "(0) Target behavior: Disappearance",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "(0) Target behavior: Sound response",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "(0) Unused",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "(3) Possible to change perspective",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "(0) Target action: Preparation for return",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "(4) Navigation search failure",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "(1) 1 for lower state map",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "(3) Attack waiting mode",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "(5) Long distance equipment 1",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "(3) Sound reaction: Search mode",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "(1) 2 for lower state map",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "(5) Long distance equipment 2",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "(1) 3 for lower state map",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "(3) Sound response: ignore mode",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "(5) Long distance equipment 3",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "(3) Sound response: startup mode",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "(1) 4 for lower state map",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "(5) Long range equipment 4",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "(1) 5 for lower state map",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "(3) Startup state attack release mode",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "(5) Long distance equipment 5",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "(1) 6 for lower state map",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "(3) Flag or visibility activation mode",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "(5) Long-distance equipment 6",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "(1) 7 for lower state map",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "(3) Group startup off mode",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "(1) 8 for lower state map",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "(3) Waiting for attack or sound reaction: startup mode",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "(1) 9 for lower state map",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "(3) Immediate startup mode",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "(1) 10 for lower state maps",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "Value 1",
+      "Description": ""
+    },
+    {
+      "ID": "38",
+      "Name": "Value 2",
+      "Description": ""
+    },
+    {
+      "ID": "39",
+      "Name": "Value 3",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Value 4",
+      "Description": ""
+    },
+    {
+      "ID": "41",
+      "Name": "Value 5",
+      "Description": ""
+    },
+    {
+      "ID": "42",
+      "Name": "Value 6",
+      "Description": ""
+    },
+    {
+      "ID": "43",
+      "Name": "Value 7",
+      "Description": ""
+    },
+    {
+      "ID": "44",
+      "Name": "Value 8",
+      "Description": ""
+    },
+    {
+      "ID": "45",
+      "Name": "Value 9",
+      "Description": ""
+    },
+    {
+      "ID": "46",
+      "Name": "Value 10",
+      "Description": ""
+    },
+    {
+      "ID": "47",
+      "Name": "Value 11",
+      "Description": ""
+    },
+    {
+      "ID": "48",
+      "Name": "Value 12",
+      "Description": ""
+    },
+    {
+      "ID": "49",
+      "Name": "Value 13",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Value 14",
+      "Description": ""
+    },
+    {
+      "ID": "51",
+      "Name": "Value 15",
+      "Description": ""
+    },
+    {
+      "ID": "52",
+      "Name": "Value 16",
+      "Description": ""
+    },
+    {
+      "ID": "53",
+      "Name": "Value 17",
+      "Description": ""
+    },
+    {
+      "ID": "54",
+      "Name": "Value 18",
+      "Description": ""
+    },
+    {
+      "ID": "55",
+      "Name": "Value 19",
+      "Description": ""
+    },
+    {
+      "ID": "56",
+      "Name": "Value 20",
+      "Description": ""
+    },
+    {
+      "ID": "57",
+      "Name": "Value 21",
+      "Description": ""
+    },
+    {
+      "ID": "58",
+      "Name": "Value 22",
+      "Description": ""
+    },
+    {
+      "ID": "59",
+      "Name": "Value 23",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Value 24",
+      "Description": ""
+    },
+    {
+      "ID": "61",
+      "Name": "Value 25",
+      "Description": ""
+    },
+    {
+      "ID": "62",
+      "Name": "Value 26",
+      "Description": ""
+    },
+    {
+      "ID": "63",
+      "Name": "Value 27",
+      "Description": ""
+    },
+    {
+      "ID": "64",
+      "Name": "Value 28",
+      "Description": ""
+    },
+    {
+      "ID": "65",
+      "Name": "Value 29",
+      "Description": ""
+    },
+    {
+      "ID": "66",
+      "Name": "Value 30",
+      "Description": ""
+    }
+  ]
+}

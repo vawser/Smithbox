@@ -1,0 +1,17 @@
+{
+  "DisplayName": "PLAYER_COMMAND_STICK_SIDE",
+  "Name": "PLAYER_COMMAND_STICK_SIDE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Left stick",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Right stick",
+      "Description": ""
+    }
+  ]
+}

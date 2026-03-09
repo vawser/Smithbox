@@ -1,0 +1,37 @@
+{
+  "DisplayName": "SHIELD_TYPE",
+  "Name": "SHIELD_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Small shield",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Small shield (spell)",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Medium shield (spell)",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Large shield",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Great shield (spell)",
+      "Description": ""
+    }
+  ]
+}

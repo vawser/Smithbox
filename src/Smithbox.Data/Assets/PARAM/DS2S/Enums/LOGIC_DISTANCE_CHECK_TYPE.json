@@ -1,0 +1,32 @@
+{
+  "DisplayName": "LOGIC_DISTANCE_CHECK_TYPE",
+  "Name": "LOGIC_DISTANCE_CHECK_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Rough",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Normal",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Accurate",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Random",
+      "Description": ""
+    }
+  ]
+}

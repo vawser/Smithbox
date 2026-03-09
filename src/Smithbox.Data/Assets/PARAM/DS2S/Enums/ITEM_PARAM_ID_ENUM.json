@@ -1,0 +1,5387 @@
+{
+  "DisplayName": "ITEM_PARAM_ID_ENUM",
+  "Name": "ITEM_PARAM_ID_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "10",
+      "Name": "Dummy (prohibited to use)",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Function test",
+      "Description": ""
+    },
+    {
+      "ID": "1000000",
+      "Name": "1000000: Dagger (Dagger)",
+      "Description": ""
+    },
+    {
+      "ID": "1010000",
+      "Name": "1010000: Thief's Dagger (Thief's Dagger)",
+      "Description": ""
+    },
+    {
+      "ID": "1040000",
+      "Name": "1040000: Mida's twisted blade (DS: Naga: Dagger)",
+      "Description": ""
+    },
+    {
+      "ID": "1050000",
+      "Name": "1050000: Shadow Dagger (Unusual Shadow: Dagger)",
+      "Description": ""
+    },
+    {
+      "ID": "1060000",
+      "Name": "1060000: Thief's Dagger (Rogue: Double-edged Dagger A)",
+      "Description": ""
+    },
+    {
+      "ID": "1070000",
+      "Name": "1070000: Broken Thief Straight Sword (Rogue: Double-edged Dagger B)",
+      "Description": ""
+    },
+    {
+      "ID": "1100000",
+      "Name": "1100000: Paring Dagger (Paring Dagger)",
+      "Description": ""
+    },
+    {
+      "ID": "1110000",
+      "Name": "1110000: Puppet knife (Assassin: single-edged dagger)",
+      "Description": ""
+    },
+    {
+      "ID": "1130000",
+      "Name": "1130000: King's Dagger (NPC: Kingdom Tactician: Dagger)",
+      "Description": ""
+    },
+    {
+      "ID": "1200000",
+      "Name": "1200000: Broken straight sword (broken straight sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1210000",
+      "Name": "1210000: Short Sword (Short Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1220000",
+      "Name": "1220000: Long Sword (Long Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1230000",
+      "Name": "1230000: Broadsword (Broadsword)",
+      "Description": ""
+    },
+    {
+      "ID": "1240000",
+      "Name": "1240000: Lower-class soldier's straight sword (lower-class soldier: one-handed sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1270000",
+      "Name": "1270000: Barbarian Straight Sword (Sailor: One-handed Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1280000",
+      "Name": "1280000: Blue Flame (Phantom Mage: One-handed sword catalyst (magic power))",
+      "Description": ""
+    },
+    {
+      "ID": "1320000",
+      "Name": "1320000: Heide Knight's Straight Sword (Wandering Knight: One-handed Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1330000",
+      "Name": "1330000: Rust straight sword (Dullahan: one-handed sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1350000",
+      "Name": "1350000: Black dragon straight sword (old dragon straight sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1360000",
+      "Name": "1360000: Sun's Straight Sword (Sun's Straight Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1370000",
+      "Name": "1370000: Guard's Straight Sword (Demon Heavy Soldier's Straight Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1400000",
+      "Name": "1400000: Estock (Estock)",
+      "Description": ""
+    },
+    {
+      "ID": "1410000",
+      "Name": "1410000: Armor piercing (Armor piercing)",
+      "Description": ""
+    },
+    {
+      "ID": "1420000",
+      "Name": "1420000: Chaos stabbing sword (NPC: Spell Four Heavenly Kings (Sorcery): Piercing Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1430000",
+      "Name": "1430000: Spider Needle (DS: Spider Queen: Piercing Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1440000",
+      "Name": "1440000: Espada Lopera (NPC: Kingdom Strategy: Piercing Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1500000",
+      "Name": "1500000: Rapier (Rapier)",
+      "Description": ""
+    },
+    {
+      "ID": "1520000",
+      "Name": "1520000: Black Needle of the Great Scorpion (DS: Manscorpion ♂: Piercing Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1530000",
+      "Name": "1530000: Ricard's stabbing sword (Ricard's stabbing sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1600000",
+      "Name": "1600000: Falchion (Falchion)",
+      "Description": ""
+    },
+    {
+      "ID": "1610000",
+      "Name": "1610000: Shortel (Shotel)",
+      "Description": ""
+    },
+    {
+      "ID": "1620000",
+      "Name": "1620000: Distorted straight sword (two-sided warrior: curved sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1640000",
+      "Name": "1640000: Puppet Curved Sword (Assassin: Curved Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1650000",
+      "Name": "1650000: Scimitar (Scimitar)",
+      "Description": ""
+    },
+    {
+      "ID": "1660000",
+      "Name": "1660000: Red Rust Curved Sword (Dullahan: Curved Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1670000",
+      "Name": "1670000: Spider fang (DS: Spider Queen: Curved Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1680000",
+      "Name": "1680000: Mil's Curved Sword (Slave Trader's Curved Sword (Large))",
+      "Description": ""
+    },
+    {
+      "ID": "1690000",
+      "Name": "1690000: Guardian's Curved Sword (Painted Guardian's Curved Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1700000",
+      "Name": "1700000: Uchigatana (Uchigatana)",
+      "Description": ""
+    },
+    {
+      "ID": "1710000",
+      "Name": "1710000: Clothesline (clothesline)",
+      "Description": ""
+    },
+    {
+      "ID": "1720000",
+      "Name": "1720000: Old Chaos Blade (Chaos Blade)",
+      "Description": ""
+    },
+    {
+      "ID": "1730000",
+      "Name": "1730000: Black Iron Sword (Demon Armor: Mass Production Type: Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1740000",
+      "Name": "1740000: Hitokiri (DS: Leviathan: Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1760000",
+      "Name": "1760000: Darkness (DS: Agaduran: Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1770000",
+      "Name": "1770000: Berserker Sword (NPC: Stalker Warrior: Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1800000",
+      "Name": "1800000: Bastard Sword (Bastard Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1810000",
+      "Name": "1810000: Flamberge (Flamberger)",
+      "Description": ""
+    },
+    {
+      "ID": "1820000",
+      "Name": "1820000: Claymore (Claymore)",
+      "Description": ""
+    },
+    {
+      "ID": "1850000",
+      "Name": "1850000: Guardian Sword (NPC: Guard Captain: Two-handed sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1860000",
+      "Name": "1860000: Thorn Greatsword (Mirror Knight: Two-handed sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1870000",
+      "Name": "1870000: Blue Great Sword (NPC: Father of the Avenge Warrior: Two-handed Sword (Moonlight))",
+      "Description": ""
+    },
+    {
+      "ID": "1871000",
+      "Name": "1871000: Moonlight Great Sword (Moonlight Sword (Genuine))",
+      "Description": ""
+    },
+    {
+      "ID": "1880000",
+      "Name": "1880000: Giant Elephant Great Sword (Elephant: Two-handed Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1900000",
+      "Name": "1900000: Ruler Sword (King Vanclad: Two-handed sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1910000",
+      "Name": "1910000: Orthodox Knights' Great Sword (NPC: Sea Solar: Two-handed sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1911000",
+      "Name": "1911000: Old great sword of the Orthodox Knights (NPC: Sea Solar: Two-handed sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1920000",
+      "Name": "1920000: Black dragon great sword (old dragon two-handed sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1930000",
+      "Name": "1930000: Black Knight's Great Sword (Black Knight's Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1940000",
+      "Name": "1940000: Kingdom swordsman's great sword (kingdom soldier's two-handed sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1950000",
+      "Name": "1950000: Ancient Knight's Greatsword (Ancient Warrior's Two-Handed Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "1960000",
+      "Name": "1960000: Guardian's Great Sword (Queen's Knight Sword A)",
+      "Description": ""
+    },
+    {
+      "ID": "1970000",
+      "Name": "1970000: Watcher's Great Sword (Queen's Knight's Sword C)",
+      "Description": ""
+    },
+    {
+      "ID": "1980000",
+      "Name": "1980000: Fengjin's key (keyman's key)",
+      "Description": ""
+    },
+    {
+      "ID": "2000000",
+      "Name": "2000000: Hand Ax (Hand Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2010000",
+      "Name": "2010000: Battle Ax (Battle Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2020000",
+      "Name": "2020000: Bandit's Ax (Bandit: One-handed Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2030000",
+      "Name": "2030000: Low-class soldier's ax (low-class soldier: one-handed ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2070000",
+      "Name": "2070000: Gelm Ax (Heavy Dwarf: One-handed Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2080000",
+      "Name": "2080000: Dragon Severing Crescent Ax (NPC: Vengeful Warrior: One-handed Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2090000",
+      "Name": "2090000: Meat cutting knife (Meat cutting knife)",
+      "Description": ""
+    },
+    {
+      "ID": "2100000",
+      "Name": "2100000: Black and silver sickle (immortal advanced soldier: one-handed ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2200000",
+      "Name": "2200000: Crescent Ax (Crescent Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2210000",
+      "Name": "2210000: Great Ax (Great Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2220000",
+      "Name": "2220000: Bandit's Great Ax (Bandit: Two-handed Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2240000",
+      "Name": "2240000: Lion's Great Ax (Lion Warrior: Two-handed Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2250000",
+      "Name": "2250000: Giant Stone Ax (DS: Giant Guard Captain: Two-handed Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2260000",
+      "Name": "2260000: Gelm's Great Ax (Heavy Dwarf: Two-handed Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2290000",
+      "Name": "2290000: Black dragon great ax (old dragon two-handed ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2300000",
+      "Name": "2300000: Black Knight's Great Ax (Black Knight's Great Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2310000",
+      "Name": "2310000: Guard's Great Ax (Demon heavy soldier's two-handed ax)",
+      "Description": ""
+    },
+    {
+      "ID": "2400000",
+      "Name": "2400000: Club (Club)",
+      "Description": ""
+    },
+    {
+      "ID": "2410000",
+      "Name": "2410000: Mace (Mace)",
+      "Description": ""
+    },
+    {
+      "ID": "2420000",
+      "Name": "2420000: Morning Star (Morning Star)",
+      "Description": ""
+    },
+    {
+      "ID": "2430000",
+      "Name": "2430000: Strengthening Club (Strengthening Club)",
+      "Description": ""
+    },
+    {
+      "ID": "2440000",
+      "Name": "2440000: Master Craftsman's Hammer (Blacksmith's Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2470000",
+      "Name": "2470000: Mace of the Insolent (Phantom Priest: One-handed Warhammer Catalyst (Miracle))",
+      "Description": ""
+    },
+    {
+      "ID": "2500000",
+      "Name": "2500000: Housekeeper's Ladle (NPC: Housekeeper: Ladle)",
+      "Description": ""
+    },
+    {
+      "ID": "2520000",
+      "Name": "2520000: Blacksmith's Hammer (NPC: Blacksmith: Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2530000",
+      "Name": "2530000: Black Dragon Warpick (Old Dragon Warpick)",
+      "Description": ""
+    },
+    {
+      "ID": "2540000",
+      "Name": "2540000: Hammer of An Deal (Dragon Professor: One-handed Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2560000",
+      "Name": "2560000: Thorn club (double-faced warrior's spike club)",
+      "Description": ""
+    },
+    {
+      "ID": "2600000",
+      "Name": "2600000: Large Club (Large Club)",
+      "Description": ""
+    },
+    {
+      "ID": "2610000",
+      "Name": "2610000: Pickaxe (pickaxe)",
+      "Description": ""
+    },
+    {
+      "ID": "2620000",
+      "Name": "2620000: Great Club (Great Club)",
+      "Description": ""
+    },
+    {
+      "ID": "2630000",
+      "Name": "2630000: Gelm's Hammer (Heavy Dwarf: Two-handed Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2660000",
+      "Name": "2660000: Iron Old King's War Hammer (DS: Molten Iron Demon: Two-handed Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2670000",
+      "Name": "2670000: Deformed skull (reinforced immortal: two-handed hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2680000",
+      "Name": "2680000: Dairyuga (Great Ryuga)",
+      "Description": ""
+    },
+    {
+      "ID": "2690000",
+      "Name": "2690000: Giant soldier's sledgehammer (giant junior soldier: two-handed club)",
+      "Description": ""
+    },
+    {
+      "ID": "2700000",
+      "Name": "2700000: Strange shell (DS: Hermit Crab Castle: Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2710000",
+      "Name": "2710000: Demon's Hammer (Demon's Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2720000",
+      "Name": "2720000: Furyuuin Mace (Cleric's two-handed warhammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2730000",
+      "Name": "2730000: Ancient Knight's Hammer (Ancient Warrior's Two-Handed Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2740000",
+      "Name": "2740000: Guard's Hammer (Demon Heavy Soldier's Two-Handed Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2750000",
+      "Name": "2750000: Holy Bell's Great Hammer (Queen's Knight B's Two-Handed Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "2800000",
+      "Name": "2800000: Spear (Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "2810000",
+      "Name": "2810000: Winged Spear (Winged Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "2820000",
+      "Name": "2820000: Pike (Pike)",
+      "Description": ""
+    },
+    {
+      "ID": "2830000",
+      "Name": "2830000: Partisan (Partisan)",
+      "Description": ""
+    },
+    {
+      "ID": "2840000",
+      "Name": "2840000: Stone Spear (Statue: Pawn: Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "2850000",
+      "Name": "2850000: Fire-breathing spear (DS: Salamander: Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "2860000",
+      "Name": "2860000: Black and Silver Spear (Immortal Advanced Soldier: Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "2870000",
+      "Name": "2870000: Heide's Spear (Wandering Knight: Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "2880000",
+      "Name": "2880000: Pate's Spear (NPC: Patch: Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "2890000",
+      "Name": "2890000: Evangelist's Trident (Evangelist's Trident)",
+      "Description": ""
+    },
+    {
+      "ID": "2895000",
+      "Name": "2895000: Gargoyle's Forked Spear (Gargoyle's Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "2896000",
+      "Name": "2896000: Dragon Slayer Spear (Ornstein Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "2900000",
+      "Name": "2900000: Heide's Lance (Wandering Knight: Assault Spear (lower))",
+      "Description": ""
+    },
+    {
+      "ID": "2920000",
+      "Name": "2920000: Heide's Gray Trance (Wandering Knight: Assault Spear (Top))",
+      "Description": ""
+    },
+    {
+      "ID": "2930000",
+      "Name": "2930000: Grand Lance (Advanced Knight's Assault Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "2940000",
+      "Name": "2940000: Chariot Lance (DS: Silver Chariot: Assault Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "3000000",
+      "Name": "3000000: Scythe (scythe)",
+      "Description": ""
+    },
+    {
+      "ID": "3010000",
+      "Name": "3010000: Big machete sickle (Jailkeeper: two-handed sickle)",
+      "Description": ""
+    },
+    {
+      "ID": "3020000",
+      "Name": "3020000: Engetsu Kama (artificial immortal: two-handed sickle)",
+      "Description": ""
+    },
+    {
+      "ID": "3040000",
+      "Name": "3040000: Crescent sickle (Blue Phantom shop's crescent sickle)",
+      "Description": ""
+    },
+    {
+      "ID": "3050000",
+      "Name": "3050000: Droma Sickle (NPC: Black Phantom Shop: Two-handed Sickle)",
+      "Description": ""
+    },
+    {
+      "ID": "3060000",
+      "Name": "3060000: Bone size (DS: Jabba the Hutt: Two-handed sickle)",
+      "Description": ""
+    },
+    {
+      "ID": "3070000",
+      "Name": "3070000: Sickle of Craving (Two-handed sickle in the queen's armor form)",
+      "Description": ""
+    },
+    {
+      "ID": "3200000",
+      "Name": "3200000: Luzern (Luzern)",
+      "Description": ""
+    },
+    {
+      "ID": "3210000",
+      "Name": "3210000: Size (Size)",
+      "Description": ""
+    },
+    {
+      "ID": "3220000",
+      "Name": "3220000: Halberd (Halberd)",
+      "Description": ""
+    },
+    {
+      "ID": "3240000",
+      "Name": "3240000: Spiral Spear (DS: Leviathan: Two-handed long ax)",
+      "Description": ""
+    },
+    {
+      "ID": "3250000",
+      "Name": "3250000: Santi's Spear (DS: Brain Stem Sacred Tree: Two-handed Spear Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "3251000",
+      "Name": "3251000: Santi's Spear (DS: after the destruction of the brainstem sacred tree)",
+      "Description": ""
+    },
+    {
+      "ID": "3270000",
+      "Name": "3270000: Giant Elephant Ax Spear (Elephant: Long Spear Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "3280000",
+      "Name": "3280000: Blue Knight's Ax and Spear (NPC: Saint's Attendant 1: Two-handed Long Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "3290000",
+      "Name": "3290000: Dragoon ax spear (DS: Heavy cavalry: Heavy knight: Two-handed long ax)",
+      "Description": ""
+    },
+    {
+      "ID": "3300000",
+      "Name": "3300000: Black Knight's Ax and Spear (Black Knight's Ax and Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "3310000",
+      "Name": "3310000: Zain's Ax Spear (Kingdom Guard's Two-Handed Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "3320000",
+      "Name": "3320000: Shouting Ax Spear (Skeleton Nobleman's Two-Handed Ax)",
+      "Description": ""
+    },
+    {
+      "ID": "3330000",
+      "Name": "3330000: Ancient knight's long ax (ancient warrior's two-handed long ax)",
+      "Description": ""
+    },
+    {
+      "ID": "3340000",
+      "Name": "3340000: Ancient knight's ax and spear (ancient warrior's two-handed ax and spear)",
+      "Description": ""
+    },
+    {
+      "ID": "3350000",
+      "Name": "3350000: Guard's Warhammer (demon heavy soldier warrior's two-handed ax spear)",
+      "Description": ""
+    },
+    {
+      "ID": "3400000",
+      "Name": "3400000:★Name not set (fist)",
+      "Description": ""
+    },
+    {
+      "ID": "3401000",
+      "Name": "3401000:★Name not set (Fist (in ladder))",
+      "Description": ""
+    },
+    {
+      "ID": "3410000",
+      "Name": "3410000: Claw (claw)",
+      "Description": ""
+    },
+    {
+      "ID": "3420000",
+      "Name": "3420000: Deformed claw (DS: Hermit Crab Castle: Claw)",
+      "Description": ""
+    },
+    {
+      "ID": "3430000",
+      "Name": "3430000: Puppet's Claw (Assassin: Claw (Left))",
+      "Description": ""
+    },
+    {
+      "ID": "3440000",
+      "Name": "3440000: Work hook (NPC: Bag shop: Claw)",
+      "Description": ""
+    },
+    {
+      "ID": "3500000",
+      "Name": "3500000: Cestus (Cestus)",
+      "Description": ""
+    },
+    {
+      "ID": "3600000",
+      "Name": "3600000: Whip (Whip)",
+      "Description": ""
+    },
+    {
+      "ID": "3610000",
+      "Name": "3610000: Ibaramuchi (Ibaramuchi)",
+      "Description": ""
+    },
+    {
+      "ID": "3620000",
+      "Name": "3620000: Bloody whip (torturer: whip)",
+      "Description": ""
+    },
+    {
+      "ID": "3630000",
+      "Name": "3630000: Spotted Whip (DS: Beautiful Voice Frog: Whip)",
+      "Description": ""
+    },
+    {
+      "ID": "3660000",
+      "Name": "3660000: Old Whip (NPC: Castle Town Elder: Whip)",
+      "Description": ""
+    },
+    {
+      "ID": "3800000",
+      "Name": "3800000: Magician's staff (Magician's staff)",
+      "Description": ""
+    },
+    {
+      "ID": "3810000",
+      "Name": "3810000: Cane of Amana (Fairy Shrine Maiden: One-handed cane)",
+      "Description": ""
+    },
+    {
+      "ID": "3820000",
+      "Name": "3820000: Branch of a fairy tree (guardian of the forest: one-handed staff)",
+      "Description": ""
+    },
+    {
+      "ID": "3830000",
+      "Name": "3830000: Lizard Staff (Dark Wizard: One-handed staff (medium))",
+      "Description": ""
+    },
+    {
+      "ID": "3850000",
+      "Name": "3850000: Cane of Oranford (DS: Rich: One-handed cane catalyst (miraculous dark arts))",
+      "Description": ""
+    },
+    {
+      "ID": "3860000",
+      "Name": "3860000: Furyuin Staff (Cleric: One-handed Staff)",
+      "Description": ""
+    },
+    {
+      "ID": "3870000",
+      "Name": "3870000: Flying Rat Staff (Dark Wizard: One-handed Staff (Higher))",
+      "Description": ""
+    },
+    {
+      "ID": "3880000",
+      "Name": "3880000: Bone Staff (NPC: Bookstore: One-handed Staff)",
+      "Description": ""
+    },
+    {
+      "ID": "3890000",
+      "Name": "3890000: Staff of Wisdom (NPC: Spell Four Heavenly Kings (Magic): One-handed Staff)",
+      "Description": ""
+    },
+    {
+      "ID": "3900000",
+      "Name": "3900000: Nightfall Staff (NPC: Spell Four Heavenly Kings (Magic): One-handed Staff)",
+      "Description": ""
+    },
+    {
+      "ID": "4010000",
+      "Name": "4010000: Holy bell of the priesthood (Dark Priest: One-handed bell (lower))",
+      "Description": ""
+    },
+    {
+      "ID": "4020000",
+      "Name": "4020000: Yoki Suzugusa (Forest Guardian: One-handed Bell)",
+      "Description": ""
+    },
+    {
+      "ID": "4030000",
+      "Name": "4030000: Priest's holy bell (Dark Priest: One-handed bell (medium))",
+      "Description": ""
+    },
+    {
+      "ID": "4040000",
+      "Name": "4040000: Dragon's Sacred Bell (NPC: Dragon Shrine: One-handed Bell)",
+      "Description": ""
+    },
+    {
+      "ID": "4050000",
+      "Name": "4050000: Bell of Craving (DS: Queen: One-handed Bell)",
+      "Description": ""
+    },
+    {
+      "ID": "4060000",
+      "Name": "4060000: Holy bell of Koryuin (Cleric: One-handed bell)",
+      "Description": ""
+    },
+    {
+      "ID": "4080000",
+      "Name": "4080000: Idol Sacred Bell (NPC: Spell Four Heavenly Kings (Miracle): One-handed Bell)",
+      "Description": ""
+    },
+    {
+      "ID": "4090000",
+      "Name": "4090000: Kuato's Bell (NPC: Blue Phantom Shop: One-handed Bell)",
+      "Description": ""
+    },
+    {
+      "ID": "4100000",
+      "Name": "4100000: Guardian Sacred Bell (NPC: Saint's Attendant 1: One-handed Bell)",
+      "Description": ""
+    },
+    {
+      "ID": "4110000",
+      "Name": "4110000: Circle Holy Bell (Dark Priest: One-handed Bell (Circular))",
+      "Description": ""
+    },
+    {
+      "ID": "4150000",
+      "Name": "4150000: Witch Kuroe (Dark Bishop: One-handed full catalyst)",
+      "Description": ""
+    },
+    {
+      "ID": "4200000",
+      "Name": "4200000: Short Bow (Short Bow)",
+      "Description": ""
+    },
+    {
+      "ID": "4210000",
+      "Name": "4210000: Longbow (Longbow)",
+      "Description": ""
+    },
+    {
+      "ID": "4220000",
+      "Name": "4220000: Composite Bow (Composite Bow)",
+      "Description": ""
+    },
+    {
+      "ID": "4230000",
+      "Name": "4230000: Tide Bow (Sailor: Two-handed Bow)",
+      "Description": ""
+    },
+    {
+      "ID": "4240000",
+      "Name": "4240000: Dragoon Bow (Heavy Cavalry Two-Handed Bow)",
+      "Description": ""
+    },
+    {
+      "ID": "4270000",
+      "Name": "4270000: Bellkeeper's Bow (NPC: Sancho: Two-handed Bow)",
+      "Description": ""
+    },
+    {
+      "ID": "4280000",
+      "Name": "4280000: Bow of Craving (DS: Queen: Two-handed bow)",
+      "Description": ""
+    },
+    {
+      "ID": "4290000",
+      "Name": "4290000: Hunter's Black Bow (Faris's Black Bow)",
+      "Description": ""
+    },
+    {
+      "ID": "4400000",
+      "Name": "4400000: Aaron's Greatbow (Demon Armor: Greatbow)",
+      "Description": ""
+    },
+    {
+      "ID": "4420000",
+      "Name": "4420000: Dragon hunter's bow (Dragon hunter's bow)",
+      "Description": ""
+    },
+    {
+      "ID": "4600000",
+      "Name": "4600000: Light Crossbow (Light Crossbow)",
+      "Description": ""
+    },
+    {
+      "ID": "4610000",
+      "Name": "4610000: Heavy Crossbow (Heavy Crossbow)",
+      "Description": ""
+    },
+    {
+      "ID": "4630000",
+      "Name": "4630000: Shield Cross (Silver Chariot: One-handed Bow)",
+      "Description": ""
+    },
+    {
+      "ID": "4660000",
+      "Name": "4660000: Avelin (New Avelin)",
+      "Description": ""
+    },
+    {
+      "ID": "5000000",
+      "Name": "5000000: Murakumo (Murakumo)",
+      "Description": ""
+    },
+    {
+      "ID": "5010000",
+      "Name": "5010000: Bow-stretched sword (double-sided warrior: Omagariken)",
+      "Description": ""
+    },
+    {
+      "ID": "5040000",
+      "Name": "5040000: Dragon curved sword (DS: Double-headed wyvern: Omagariken)",
+      "Description": ""
+    },
+    {
+      "ID": "5200000",
+      "Name": "5200000: Zweihänder (Zweihänder)",
+      "Description": ""
+    },
+    {
+      "ID": "5210000",
+      "Name": "5210000: Great Sword (Great Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5220000",
+      "Name": "5220000: Molten Iron Sword (Demon Knight: Extra Large Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5230000",
+      "Name": "5230000: Pterodactyl Greatsword (DS: Two-Headed Wyvern: Extra Large Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5240000",
+      "Name": "5240000: King's Great Sword (DS: King Vanclad (after transformation): Extra Large Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5270000",
+      "Name": "5270000: Cursed Greatsword (Vagrant: Extra Large Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5275000",
+      "Name": "5275000: Guard's Great Sword (Demon Heavy Soldier's Extra Large Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5280000",
+      "Name": "5280000: Black Sword of the Immortal Temple (Agaduran: Extra Large Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5285000",
+      "Name": "5285000: Ancient knight's oversized sword (ancient warrior's oversized sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5290000",
+      "Name": "5290000: Black Knight's Extra Large Sword (Black Knight's Great Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5295000",
+      "Name": "5295000: Sinner's Sword (Forgotten Sinner's Oversized Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5310000",
+      "Name": "5310000: Stone double-edged sword (Statue Knight: Double-edged sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5330000",
+      "Name": "5330000: Dragoon double-edged sword (heavy cavalry: heavy knight: double-edged sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5340000",
+      "Name": "5340000: Twin blade (traditional double-edged sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5350000",
+      "Name": "5350000: Red iron double-edged sword (iron lump double-edged sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5360000",
+      "Name": "5360000: Curved double-edged sword (curved double-edged sword)",
+      "Description": ""
+    },
+    {
+      "ID": "5400000",
+      "Name": "5400000: Fire of magic (Fire of magic)",
+      "Description": ""
+    },
+    {
+      "ID": "5410000",
+      "Name": "5410000: Dark Jujutsu Fire (Jujutsu Fire/Revised)",
+      "Description": ""
+    },
+    {
+      "ID": "5500000",
+      "Name": "5500000: Black Flame Stone Dagger (Dagger: First time bonus)",
+      "Description": ""
+    },
+    {
+      "ID": "5510000",
+      "Name": "5510000: Yellow Crystal Long Sword (Long Sword: First Time Bonus)",
+      "Description": ""
+    },
+    {
+      "ID": "5520000",
+      "Name": "5520000: Tied Hand Ax (Hand Ax: First time bonus)",
+      "Description": ""
+    },
+    {
+      "ID": "5530000",
+      "Name": "5530000: Dwarf Mace (Mace: First time bonus)",
+      "Description": ""
+    },
+    {
+      "ID": "5540000",
+      "Name": "5540000: Togain's staff (cane: first time bonus)",
+      "Description": ""
+    },
+    {
+      "ID": "6100000",
+      "Name": "6100000: Telescope (telescope)",
+      "Description": ""
+    },
+    {
+      "ID": "11000000",
+      "Name": "11000000: Buckler (Buckler)",
+      "Description": ""
+    },
+    {
+      "ID": "11005000",
+      "Name": "11005000: Banholt's Small Shield (NPC: Avenge Warrior's Father: Small Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11010000",
+      "Name": "11010000: Small Leather Shield (Small Leather Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11020000",
+      "Name": "11020000: Iron round shield (round shield: small shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11030000",
+      "Name": "11030000: Low-class soldier's small shield (low-class soldier: small shield (old))",
+      "Description": ""
+    },
+    {
+      "ID": "11040000",
+      "Name": "11040000: Target Shield (Target Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11050000",
+      "Name": "11050000: Golden Eagle Small Shield (Falcon Warrior: Small Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11070000",
+      "Name": "11070000: Puppet Small Shield (Assassin: Small Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11080000",
+      "Name": "11080000: Doranshield (NPC: Kingdom Tactician: Small Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11091000",
+      "Name": "11091000: Crimson round shield (red and white round shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11110000",
+      "Name": "11110000: Holy Circle Shield (Dark Priest: Small Shield (A))",
+      "Description": ""
+    },
+    {
+      "ID": "11120000",
+      "Name": "11120000: Priest's Small Shield (Dark Priest: Small Shield (B))",
+      "Description": ""
+    },
+    {
+      "ID": "11130000",
+      "Name": "11130000: Magic Shield (Phantom Mage: Small Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11140000",
+      "Name": "11140000: Cursed Bone Shield (Necromancer: Small Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11160000",
+      "Name": "11160000: Barbarian Shield (Sailor: Small Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11185000",
+      "Name": "11185000: Watcher's small shield (Queen's knight C's small shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11200000",
+      "Name": "11200000: Large Leather Shield (Large Leather Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11210000",
+      "Name": "11210000: Blue wooden shield (wooden shield: medium shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11220000",
+      "Name": "11220000: Silver Eagle Kite Shield (Kite Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11230000",
+      "Name": "11230000: Guardian Shield (NPC: Guard Captain: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11240000",
+      "Name": "11240000: Lion Shield (Lion Warrior: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11250000",
+      "Name": "11250000: Furyuin Shield (Cleric: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11260000",
+      "Name": "11260000: King's Shield (King Vanclad: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11270000",
+      "Name": "11270000: Orthodox Knights Shield (NPC: Sea Solar: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11280000",
+      "Name": "11280000: Ancient Knight's Shield (Ancient Warrior's Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11300000",
+      "Name": "11300000: Sacred Tree Shield (Emblem Shield: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11310000",
+      "Name": "11310000: Golden Wing Shield (Dragon Crest Shield: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11330000",
+      "Name": "11330000: Shield of the Insolent (Phantom Priest: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11350000",
+      "Name": "11350000: Black and Silver Shield (Immortal Advanced Soldier: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11360000",
+      "Name": "11360000: Stone Round Shield (Statue Knight: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11370000",
+      "Name": "11370000: Holy Tree Shield (NPC: Spell Four Heavenly Kings (Miracle): Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11380000",
+      "Name": "11380000: Moonlight Butterfly Shield (Butterfly Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11390000",
+      "Name": "11390000: Sleeping Dragon Shield (Cleric Medium Shield B)",
+      "Description": ""
+    },
+    {
+      "ID": "11395000",
+      "Name": "11395000: Chaos Shield (NPC: Spell Four Heavenly Kings (Magic) Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11400000",
+      "Name": "11400000: Wood Shield (Wood Shield: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11420000",
+      "Name": "11420000: Shield of the Dead Kingdom Soldier (Kingdom Soldier: Medium Shield (Old))",
+      "Description": ""
+    },
+    {
+      "ID": "11430000",
+      "Name": "11430000: Kingdom Kite Shield (Twin Serpent Kite Shield: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11450000",
+      "Name": "11450000: Red Rust Shield (Dullahan: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11470000",
+      "Name": "11470000: Bellkeeper's Shield (NPC: Sancho: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11475000",
+      "Name": "11475000: Guardian's Shield (Medium Shield of Queen's Knight A)",
+      "Description": ""
+    },
+    {
+      "ID": "11480000",
+      "Name": "11480000: Black Dragon Shield (Old Dragon Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11485000",
+      "Name": "11485000: Guard's Shield (Demon Heavy Soldier: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11490000",
+      "Name": "11490000: Slave Beast Shield (Slave Beast Molten Iron: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11495000",
+      "Name": "11495000: Bone Shield (Dragon Professor: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11500000",
+      "Name": "11500000: Ssangyong Great Shield (Great Eagle Shield: Great Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11510000",
+      "Name": "11510000: Tower Shield (Tower Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11530000",
+      "Name": "11530000: Oma's large shield (Phantom Knight: Large shield (left))",
+      "Description": ""
+    },
+    {
+      "ID": "11540000",
+      "Name": "11540000: Reve's Great Shield (Phantom Knight: Great Shield (Right))",
+      "Description": ""
+    },
+    {
+      "ID": "11550000",
+      "Name": "11550000: King's Mirror (Mirror Knight's Great Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11560000",
+      "Name": "11560000: Dragoon large shield (heavy cavalry: heavy knight: large shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11570000",
+      "Name": "11570000: Giant Elephant Great Shield (Elephant: Great Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11590000",
+      "Name": "11590000: Havel's Great Shield (Havel's Great Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11600000",
+      "Name": "11600000: Gelm's large shield (heavy dwarf: large shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11610000",
+      "Name": "11610000: Great Shield of the Curse (Vagrant: Great Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11620000",
+      "Name": "11620000: Pate's Shield (NPC: Patch: Great Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11630000",
+      "Name": "11630000: Ancient Knight's Great Shield (Ancient Warrior's Great Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11640000",
+      "Name": "11640000: Guard's Great Shield (Demon Heavy Soldier's Great Shield A)",
+      "Description": ""
+    },
+    {
+      "ID": "11650000",
+      "Name": "11650000: Great Shield of Honor (Demon Heavy Soldier Great Shield B)",
+      "Description": ""
+    },
+    {
+      "ID": "11700000",
+      "Name": "11700000: Firebird Small Shield (Contest Shield 1: Small Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11710000",
+      "Name": "11710000: Small Shield of the Sun (Contest Shield 2: Small Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11720000",
+      "Name": "11720000: Guard Dragon Shield (Contest Shield 3: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11730000",
+      "Name": "11730000: Large Kite Shield (Contest Shield 4: Medium Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11740000",
+      "Name": "11740000: Great Shield of Rebellion (Contest Shield 5: Great Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11750000",
+      "Name": "11750000: Evil Eye Large Shield (Contest Shield 6: Large Shield)",
+      "Description": ""
+    },
+    {
+      "ID": "11800000",
+      "Name": "11800000: Black flame stone round shield (first bonus shield 1)",
+      "Description": ""
+    },
+    {
+      "ID": "11810000",
+      "Name": "11810000: Yellow crystal shield (first bonus shield 2)",
+      "Description": ""
+    },
+    {
+      "ID": "11820000",
+      "Name": "11820000: Bound Wood Shield (first time bonus shield 3)",
+      "Description": ""
+    },
+    {
+      "ID": "11830000",
+      "Name": "11830000: Dwarf wooden shield (first bonus shield 4)",
+      "Description": ""
+    },
+    {
+      "ID": "11840000",
+      "Name": "11840000: Gaito's Leather Shield (first time bonus shield 5)",
+      "Description": ""
+    },
+    {
+      "ID": "21001100",
+      "Name": "21001100:★Name not set ([Body]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21001101",
+      "Name": "21001101:★Name not set ([Body]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21001102",
+      "Name": "21001102:★Name not set ([Body]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21001103",
+      "Name": "21001103:★Name not set ([Body]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "21010100",
+      "Name": "21010100: Pate's Helmet ([Light Warrior]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21010101",
+      "Name": "21010101: Pate's Armor ([Light Warrior]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21010102",
+      "Name": "21010102: Pate's glove ([light warrior] arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21010103",
+      "Name": "21010103: Pate's pants ([Lightweight Warrior]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21020100",
+      "Name": "21020100: Thief Mask ([Thief]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21020101",
+      "Name": "21020101: Black leather armor ([Thief]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21020102",
+      "Name": "21020102: Black leather gloves ([Thief]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21020103",
+      "Name": "21020103: Black leather boots ([Thief]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21030100",
+      "Name": "21030100: Wanderer's Hood ([Wanderer]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21030101",
+      "Name": "21030101: Wanderer's coat ([Wanderer]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21030102",
+      "Name": "21030102: Wandering Manchette ([Wanderer]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21030103",
+      "Name": "21030103: Wanderer's Boots ([Wanderer]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "21040100",
+      "Name": "21040100: Hunter's hat ([Hunter]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21040101",
+      "Name": "21040101: Leather armor ([Hunter]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21040102",
+      "Name": "21040102: Leather gloves ([Hunter]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21040103",
+      "Name": "21040103: Leather boots ([Hunter]/feet)",
+      "Description": ""
+    },
+    {
+      "ID": "21050100",
+      "Name": "21050100: Knight's helmet ([Soldier]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21050101",
+      "Name": "21050101: Knight's armor ([Soldier]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21050102",
+      "Name": "21050102: Knight's Gauntlet ([Soldier]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21050103",
+      "Name": "21050103: Knight's instep ([Soldier]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "21060100",
+      "Name": "21060100: Senior Knight Helmet ([Magic Soldier]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21060101",
+      "Name": "21060101: Advanced knight armor ([Magic soldier]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21060102",
+      "Name": "21060102: Senior Knight's Gauntlet ([Magic Soldier]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21060103",
+      "Name": "21060103: Senior knight's foot armor ([Magic soldier]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "21070100",
+      "Name": "21070100: Rags hood ([Magician]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21070101",
+      "Name": "21070101: Tattered robe ([Mage]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21070102",
+      "Name": "21070102: Tattered Cloth Manchette ([Magician]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21070103",
+      "Name": "21070103: Thick boots ([Magician]/feet)",
+      "Description": ""
+    },
+    {
+      "ID": "21080100",
+      "Name": "21080100: Bandit's hood ([Bandit]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21080101",
+      "Name": "21080101: Bandit armor ([Bandit]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21080102",
+      "Name": "21080102: Bandit's Gauntlets ([Bandit]/Arms)",
+      "Description": ""
+    },
+    {
+      "ID": "21080103",
+      "Name": "21080103: Bandit pants ([Bandit]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21100100",
+      "Name": "21100100: Foreign hood ([Traveler's clothes]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21100101",
+      "Name": "21100101: Foreign jacket ([Traveler's clothes]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21100102",
+      "Name": "21100102: Foreign manchette ([traveler's clothes]/arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21100103",
+      "Name": "21100103: Foreign pants ([Traveler's clothes]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21140100",
+      "Name": "21140100: Traveling Merchant Hat ([Item Master]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21140101",
+      "Name": "21140101: Traveling Merchant's Coat ([Item Master]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21140102",
+      "Name": "21140102: Traveling Merchant's Glove ([Item Master]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21140103",
+      "Name": "21140103: Traveling Merchant's Boots ([Item Master]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "21160100",
+      "Name": "21160100: Havel's Helmet ([Heavy Warrior]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21160101",
+      "Name": "21160101: Havel's Armor ([Heavy Warrior]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21160102",
+      "Name": "21160102: Havel's Gauntlet ([Heavy Warrior]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21160103",
+      "Name": "21160103: Havel's instep ([heavy warrior]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "21210100",
+      "Name": "21210100: Illusionist's hat ([Clown]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21210101",
+      "Name": "21210101: Illusionist's coat ([Clown]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21210102",
+      "Name": "21210102: Illusionist's gloves ([Clown]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21210103",
+      "Name": "21210103: Illusionist's tights ([Clown]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21230100",
+      "Name": "21230100: Moon hat ([astrologer]/head)",
+      "Description": ""
+    },
+    {
+      "ID": "21230101",
+      "Name": "21230101: Horoscope jacket ([astrologer]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21230102",
+      "Name": "21230102: Horoscope gauntlet ([astrologer]/arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21230103",
+      "Name": "21230103: Horoscope loincloth ([astrologer]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21320100",
+      "Name": "21320100: Farnam Helm ([Commander]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21320101",
+      "Name": "21320101: Farnam's Armor ([Commander]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21320102",
+      "Name": "21320102: Farnam's Gauntlet ([Commander]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21320103",
+      "Name": "21320103: Farnham's boots ([Commander]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "21330100",
+      "Name": "21330100: Black Dragon Helmet ([Ancient Dragon Armor]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21330101",
+      "Name": "21330101: Black Dragon Armor ([Ancient Dragon Armor]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21330102",
+      "Name": "21330102: Black Dragon Gauntlet ([Ancient Dragon Armor]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21330103",
+      "Name": "21330103: Black Dragon Foot Armor ([Ancient Dragon Armor]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "21340100",
+      "Name": "21340100: Crown of Yellow Coat ([Yellow Coat]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21340101",
+      "Name": "21340101: Yellow jacket ([yellow coat]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21340102",
+      "Name": "21340102: Long gloves of yellow coat ([yellow coat]/arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21340103",
+      "Name": "21340103: Yellow coat loincloth ([Yellow coat]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21350100",
+      "Name": "21350100: Mask of Sin ([NPC Priest of Absolution]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21350101",
+      "Name": "21350101: Long Robe of Sin ([NPC Priest of Absolution]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21350102",
+      "Name": "21350102: Manchette of Sin ([NPC Priest of Absolution]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21350103",
+      "Name": "21350103: Tights of Sin ([NPC Priest of Absolution]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "21360100",
+      "Name": "21360100: Oulus Helmet ([Transparent Armor]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21360101",
+      "Name": "21360101: Oulus armor ([transparent armor]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21360102",
+      "Name": "21360102: Oulus Gauntlet ([Transparent Armor]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21360103",
+      "Name": "21360103: Oulus's instep ([transparent armor]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "21361100",
+      "Name": "21361100: Oulus Helmet ([Transparent Armor_Opaque]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21361101",
+      "Name": "21361101: Oulus armor ([Transparent armor_opaque]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21361102",
+      "Name": "21361102: Oulus Gauntlet ([Transparent Armor_Opaque]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21361103",
+      "Name": "21361103: Oulus foot armor ([Transparent armor_opaque]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "21370100",
+      "Name": "21370100: Guardian's hood ([Painting Guardian]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21370101",
+      "Name": "21370101: Guardian's long robe ([Painting Guardian]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21370102",
+      "Name": "21370102: Guardian's long gloves ([Painting Guardian]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21370103",
+      "Name": "21370103: Guardian's loincloth ([Painting guardian]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21390100",
+      "Name": "21390100: Lightly soiled hood ([lightly soiled]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21390101",
+      "Name": "21390101: Lightly soiled jacket ([lightly soiled]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21390102",
+      "Name": "21390102: Lightly soiled gloves ([lightly soiled]/arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21390103",
+      "Name": "21390103: Blood-soaked skirt ([light dirt]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21430100",
+      "Name": "21430100: Dolgo's hat ([Sniper head]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21440102",
+      "Name": "21440102: Engraved Gauntlet ([Lucky Gauntlet]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21460103",
+      "Name": "21460103: Flying cat boots ([cat boots]/feet)",
+      "Description": ""
+    },
+    {
+      "ID": "21470100",
+      "Name": "21470100: Moonlight Butterfly Hat ([Butterfly Armor]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21470101",
+      "Name": "21470101: Moonlight butterfly wings ([Butterfly armor]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21470102",
+      "Name": "21470102: Moonlight Butterfly Arm Punch ([Butterfly Armor]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21470103",
+      "Name": "21470103: Moonlight butterfly loincloth ([Butterfly armor]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21480100",
+      "Name": "21480100: Katarina Helm ([Catalina Warrior]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21480101",
+      "Name": "21480101: Catalina Armor ([Catalina Warrior]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21480102",
+      "Name": "21480102: Catalina Gauntlet ([Catalina Warrior] Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21480103",
+      "Name": "21480103: Catalina leggings ([Catalina Warrior]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21490100",
+      "Name": "21490100: Alba's Helmet ([Wandering Knight]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21490101",
+      "Name": "21490101: Alba's Armor ([Wandering Knight]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21490102",
+      "Name": "21490102: Alba's Gauntlet ([Wandering Knight] Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21490103",
+      "Name": "21490103: Alba's instep ([Wandering Knight]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "21500100",
+      "Name": "21500100: Black Witch's Veil ([Witch]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21500101",
+      "Name": "21500101: Black Witch's Jacket ([Witch]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "21500102",
+      "Name": "21500102: Black Witch's Gauntlet ([Witch]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "21500103",
+      "Name": "21500103: Black Witch Pants ([Witch]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "21501100",
+      "Name": "21501100: Black Witch's Hat ([Witch-Hat]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "21502100",
+      "Name": "21502100: Black Witch Mask ([Witch-Mask]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22020100",
+      "Name": "22020100: Helmet of the Dead Kingdom Soldier ([Kingdom Soldier (Dead)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22020101",
+      "Name": "22020101: Armor of the dead kingdom soldier ([Kingdom soldier (deceased)]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22020102",
+      "Name": "22020102: Dead Kingdom Soldier's Gauntlet ([Kingdom Soldier (Dead)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22020103",
+      "Name": "22020103: Foot armor of dead kingdom soldier ([Kingdom soldier (deceased)]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "22021100",
+      "Name": "22021100: Kingdom Soldier Helmet ([Kingdom Soldier (Living)] Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22021101",
+      "Name": "22021101: Kingdom soldier armor ([Kingdom soldier (living)]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22021102",
+      "Name": "22021102: Kingdom soldier's gauntlet ([Kingdom soldier (living)] arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22021103",
+      "Name": "22021103: Kingdom soldier's foot armor ([Kingdom soldier (living)]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "22030100",
+      "Name": "22030100: Helmet of a deceased lower-class soldier ([lower-class soldier (deceased)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22030101",
+      "Name": "22030101: Armor of the deceased lower-class soldier ([lower-class soldier (deceased)]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22030102",
+      "Name": "22030102: Gloves of the dead lower-class soldier ([lower-class soldier (deceased)]/arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22030103",
+      "Name": "22030103: Boots of the deceased lower-class soldier ([lower-class soldier (deceased)], feet)",
+      "Description": ""
+    },
+    {
+      "ID": "22031100",
+      "Name": "22031100: Lower-class soldier's helmet ([lower-class soldier (living)], head)",
+      "Description": ""
+    },
+    {
+      "ID": "22031101",
+      "Name": "22031101: Lower-class soldier's armor ([lower-class soldier (living)]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22031102",
+      "Name": "22031102: Lower-class soldier's glove ([lower-class soldier (living)]/arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22031103",
+      "Name": "22031103: Lower-class soldier's boots ([lower-class soldier (living)], feet)",
+      "Description": ""
+    },
+    {
+      "ID": "22060100",
+      "Name": "22060100: Priest's White Crown ([Dark Priest: Color ①]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22060101",
+      "Name": "22060101: Priest's white vestment ([Dark Priest: Color ①]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22060102",
+      "Name": "22060102: Priest's white gloves ([Dark Priest: Color ①]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22060103",
+      "Name": "22060103: Priest's white loincloth ([Dark Priest: Color 1]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "22062100",
+      "Name": "22062100: Priest's Crown ([Dark Priest: Color ③: Head B]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22062101",
+      "Name": "22062101: Priest's vestment ([Dark Priest: Color ③: Head B]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22062102",
+      "Name": "22062102: Priest's gloves ([Dark Priest: Color ③: Head B]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22062103",
+      "Name": "22062103: Priest's loincloth ([Dark Priest: Color ③: Head B]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "22080100",
+      "Name": "22080100: Robber's Hood ([Rogue]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22080101",
+      "Name": "22080101: Thief Armor ([Rogue]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22080102",
+      "Name": "22080102: Thief's Gauntlet ([Rogue]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22080103",
+      "Name": "22080103: Thief's armor ([Rogue]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "22110100",
+      "Name": "22110100: Bandit's Thorn Helmet ([Bandit]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22110101",
+      "Name": "22110101: Bandit Armor ([Bandit]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22110102",
+      "Name": "22110102: Bandit's Gauntlet ([Bandit]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22110103",
+      "Name": "22110103: Bandit's boots ([Bandit]/feet)",
+      "Description": ""
+    },
+    {
+      "ID": "22130100",
+      "Name": "22130100: Barbarian Helmet ([Sailor]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22130101",
+      "Name": "22130101: Barbarian armor ([Sailor]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22130102",
+      "Name": "22130102: Barbarian Gauntlet ([Sailor]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22130103",
+      "Name": "22130103: Barbarian foot armor ([Sailor]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "22180100",
+      "Name": "22180100: Dead Magician's Black Hood ([Dark Wizard (Decedent): Color ①]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22180101",
+      "Name": "22180101: Dead Magician's Black Robe ([Dark Wizard (Decedent): Color ①]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22182100",
+      "Name": "22182100: Dead Magician's White Hood ([Dark Wizard (Decedent): Color ③]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22182101",
+      "Name": "22182101: White robe of the deceased magician ([Dark wizard (deceased): color ③]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22190101",
+      "Name": "22190101: Lion Mage Robe ([Lion Black Mage]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22190102",
+      "Name": "22190102: Lion Magician's Bracelet ([Lion Black Mage] Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22190103",
+      "Name": "22190103: Lion magician's loincloth ([Lion black mage]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "22220100",
+      "Name": "22220100: Steel Helmet ([Bernice's Knight] Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22220101",
+      "Name": "22220101: Steel armor ([Bernice's Knight]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22220102",
+      "Name": "22220102: Steel Gauntlet ([Bernice's Knight] Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22220103",
+      "Name": "22220103: Steel foot armor ([Bernice's knight] foot)",
+      "Description": ""
+    },
+    {
+      "ID": "22230100",
+      "Name": "22230100: Shadow Mask ([Unusual Shadow]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22230101",
+      "Name": "22230101: Shadow coat ([Unusual Shadow]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22230102",
+      "Name": "22230102: Shadow gauntlet ([Unusual Shadow]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22230103",
+      "Name": "22230103: Shadow lower garment ([Unusual Shadow]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "22240100",
+      "Name": "22240100: Puppet Mask ([Assassin]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22240101",
+      "Name": "22240101: Puppet armor ([Assassin]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22240102",
+      "Name": "22240102: Puppet gloves ([Assassin]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22240103",
+      "Name": "22240103: Puppet boots ([Assassin]/feet)",
+      "Description": ""
+    },
+    {
+      "ID": "22270100",
+      "Name": "22270100: Prisoner's Hood ([Immortal Worker]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22270101",
+      "Name": "22270101: Prisoner's Clothes ([Immortal Worker]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22270102",
+      "Name": "22270102: Prisoner's Gauntlet ([Immortal Worker] Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22270103",
+      "Name": "22270103: Prisoner's loincloth ([Immortal worker]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "22271100",
+      "Name": "22271100: Prisoner's hood ([Immortal Worker ②]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22271101",
+      "Name": "22271101: Prisoner's Clothes ([Immortal Worker ②]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22310100",
+      "Name": "22310100: Koryuin Helmet ([Cleric (Dead)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22310101",
+      "Name": "22310101: Koryuin's long robe ([Cleric (dead)]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22310102",
+      "Name": "22310102: Furyuuin Glove ([Cleric (Dead)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22310103",
+      "Name": "22310103: Koryuin's boots ([Cleric (dead)]/feet)",
+      "Description": ""
+    },
+    {
+      "ID": "22340100",
+      "Name": "22340100: Gelm Helm ([Dwarf (Dead)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22340101",
+      "Name": "22340101: Gelm's Armor ([Dwarf (Dead)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22340102",
+      "Name": "22340102: Gelm's gloves ([Dwarf (dead)]/arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22340103",
+      "Name": "22340103: Gelm's shoes ([Dwarf (dead)]/feet)",
+      "Description": ""
+    },
+    {
+      "ID": "22350100",
+      "Name": "22350100: Gelm Warrior Helmet ([Heavy Dwarf (Dead)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22350101",
+      "Name": "22350101: Gelm Warrior Armor ([Heavy Dwarf (Dead)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22350102",
+      "Name": "22350102: Gelm Warrior's Gloves ([Heavy Dwarf (Dead)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22350103",
+      "Name": "22350103: Gelm Warrior Shoes ([Heavy Dwarf (Dead)]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "22351100",
+      "Name": "22351100: Gelm Warrior's Helmet ([Heavy Dwarf (Dead): Head B: Helmet)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22360100",
+      "Name": "22360100: Mask of Darkness ([Dark Wraith]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22360101",
+      "Name": "22360101: Dark Armor ([Dark Wraith]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22360102",
+      "Name": "22360102: Dark Gauntlet ([Dark Wraith]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22360103",
+      "Name": "22360103: Dark Legs ([Dark Wraith]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "22370100",
+      "Name": "22370100: Magician's Mask ([Necromancer (Immortal)] Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22460100",
+      "Name": "22460100: Geldra's hat ([Decedent: Wealthy class clothes ♂]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22460101",
+      "Name": "22460101: Geldra's long robe ([Decedent: Wealthy class clothes ♂]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22460102",
+      "Name": "22460102: Geldra's manchette ([Decedent: Clothes of the wealthy ♂]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22460103",
+      "Name": "22460103: Geldra's pants ([Decedent: Wealthy class clothes ♂]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "22480100",
+      "Name": "22480100: Farmer's hood ([Decedent: Farmer's clothes ♂]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22480101",
+      "Name": "22480101: Farmer's jacket ([Decedent: Farmer's clothes ♂]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22480102",
+      "Name": "22480102: Farmer's long gloves ([Decedent: Farmer's clothes ♂]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22480103",
+      "Name": "22480103: Farmer's pants ([Decedent: Farmer's clothes ♂]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "22510100",
+      "Name": "22510100: Heavy Iron Soldier Helmet ([Kingdom Heavy Soldier (Deceased): Color ①]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22510101",
+      "Name": "22510101: Heavy Iron Soldier Armor ([Kingdom Heavy Soldier (Deceased): Color ①]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22510102",
+      "Name": "22510102: Heavy Iron Soldier Gauntlet ([Kingdom Heavy Soldier (Dead): Color ①]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22510103",
+      "Name": "22510103: Heavy iron soldier's foot armor ([Kingdom heavy soldier (deceased): color ①], foot)",
+      "Description": ""
+    },
+    {
+      "ID": "22512100",
+      "Name": "22512100: Old heavy iron soldier helmet ([Kingdom heavy soldier (deceased): color ③] / head)",
+      "Description": ""
+    },
+    {
+      "ID": "22512101",
+      "Name": "22512101: Old heavy iron soldier armor ([Kingdom heavy soldier (deceased): color ③]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22512102",
+      "Name": "22512102: Old heavy iron soldier's gauntlet ([Kingdom heavy soldier (deceased): color ③], arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22512103",
+      "Name": "22512103: Old heavy iron soldier's foot armor ([Kingdom heavy soldier (deceased): color ③], foot)",
+      "Description": ""
+    },
+    {
+      "ID": "22520100",
+      "Name": "22520100: Kingdom swordsman's helmet ([Kingdom soldier warrior]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22520101",
+      "Name": "22520101: Kingdom swordsman's armor ([Kingdom soldier warrior]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22520102",
+      "Name": "22520102: Kingdom swordsman's gauntlet ([Kingdom soldier warrior] arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22520103",
+      "Name": "22520103: Kingdom swordsman's foot armor ([Kingdom soldier warrior]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "22530100",
+      "Name": "22530100: Zain's Helmet ([Kingdom Guard]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22530101",
+      "Name": "22530101: Zain's Armor ([Kingdom Guard]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22530102",
+      "Name": "22530102: Zain's Gauntlet ([Kingdom Guard] Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22530103",
+      "Name": "22530103: Zain's instep ([Kingdom Guard]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "22540100",
+      "Name": "22540100: Bone King's Crown ([Skeleton Noble]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "22540101",
+      "Name": "22540101: Bone King's Robe ([Skeleton Noble]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "22540102",
+      "Name": "22540102: Bone King's Gauntlet ([Skeleton Noble]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "22540103",
+      "Name": "22540103: Bone King's Loincloth ([Skeleton Noble]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "23010100",
+      "Name": "23010100: Heide's Knight's Great Helm ([Wandering Knight (Dead): Head A]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23010101",
+      "Name": "23010101: Heide's Knight Chainmail ([Wandering Knight (Dead): Head A]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23010102",
+      "Name": "23010102: Heide's Knight Gauntlet ([Wandering Knight (Dead): Head A]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23010103",
+      "Name": "23010103: Heide's Knight's Legace ([Wandering Knight (Dead): Head A]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "23011100",
+      "Name": "23011100: Heide's Knight Iron Mask ([Wandering Knight (Dead): Head B]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23040101",
+      "Name": "23040101: Singer's dress ([Banshee (dead): color ①]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23050100",
+      "Name": "23050100: Molten Iron Demon Helmet ([Demon Knight]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23050101",
+      "Name": "23050101: Molten iron demon armor ([Demon Knight]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23050102",
+      "Name": "23050102: Molten iron demon gauntlet ([Demon Knight] arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23050103",
+      "Name": "23050103: Molten iron demon's instep ([Demon Knight]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "23060100",
+      "Name": "23060100: Helm of Knight Commander Aaron ([Demon Armor: Captain]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23060101",
+      "Name": "23060101: Knight Commander Aaron's armor ([Demon armor: Captain]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23061100",
+      "Name": "23061100: Aaron Knight Helmet ([Demon Armor: Mass Production Type]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23061101",
+      "Name": "23061101: Aaron Knight Armor ([Demon Armor: Mass Production Type]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23061102",
+      "Name": "23061102: Aaron Knight's Gauntlets ([Demon Armor: Mass Production Type]/Arms)",
+      "Description": ""
+    },
+    {
+      "ID": "23061103",
+      "Name": "23061103: Aaron Knight's Legs ([Demon Armor: Mass Production Type]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "23070100",
+      "Name": "23070100: Vangal Helmet ([Dullahan (Dead)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23070101",
+      "Name": "23070101: Vangar Armor ([Dullahan (dead)]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23070102",
+      "Name": "23070102: Vangar's Gauntlet ([Dullahan (Dead)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23070103",
+      "Name": "23070103: Vangar's instep ([Dullahan (dead)]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "23080101",
+      "Name": "23080101: Lion Warrior's Cloak ([Lion Warrior]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23080102",
+      "Name": "23080102: Lion Warrior Bracelet ([Lion Warrior] Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23080103",
+      "Name": "23080103: Lion Warrior's loincloth ([Lion Warrior]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "23081100",
+      "Name": "23081100: Lion Warrior Helmet ([Lion Warrior: Color ②]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23081101",
+      "Name": "23081101: Lion Warrior's red cloak ([Lion Warrior: Color ②]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23120100",
+      "Name": "23120100: Grave Keeper's Mask ([Immortal Senior Soldier (Immortal)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23120101",
+      "Name": "23120101: Tombkeeper's coat ([Immortal senior soldier (Immortal)]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23120102",
+      "Name": "23120102: Grave Keeper's Bracelet ([Immortal Advanced Soldier (Immortal)] Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23120103",
+      "Name": "23120103: Grave Keeper's Loincloth ([Immortal Senior Soldier (Immortal)]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "23130100",
+      "Name": "23130100: Great hawk helmet ([Falconer Warrior]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23130101",
+      "Name": "23130101: Great Hawk Armor ([Falconer Warrior]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23130102",
+      "Name": "23130102: Great Hawk's Glove ([Falcon Warrior]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23130103",
+      "Name": "23130103: Big hawk boots ([Falcon warrior]/feet)",
+      "Description": ""
+    },
+    {
+      "ID": "23140100",
+      "Name": "23140100: Rusty giant elephant helmet ([Elephant (dead)] head)",
+      "Description": ""
+    },
+    {
+      "ID": "23140101",
+      "Name": "23140101: Rusted Giant Elephant Armor ([Elephant (Dead)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23140102",
+      "Name": "23140102: Rusted giant elephant gauntlet ([Elephant (dead)] arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23140103",
+      "Name": "23140103: Rusty giant elephant foot instep ([Elephant person (deceased)] foot)",
+      "Description": ""
+    },
+    {
+      "ID": "23150100",
+      "Name": "23150100: Giant Elephant Helmet ([Elephant (Living)] Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23150101",
+      "Name": "23150101: Giant Elephant Armor ([Elephant (Living)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23150102",
+      "Name": "23150102: Giant elephant gauntlet ([elephant person (living)] arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23150103",
+      "Name": "23150103: Giant elephant's instep ([Elephant person (living)]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "23160100",
+      "Name": "23160100: Sand Magician's Hood ([Captive Mage]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23160101",
+      "Name": "23160101: Sand Magician's Jacket ([Captive Mage]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23160102",
+      "Name": "23160102: Sand Magician's Gloves ([Captive Mage]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23160103",
+      "Name": "23160103: Sand Magician's Skirt ([Captive Mage]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "23170100",
+      "Name": "23170100: Dragon Student Mask ([Dragon Professor] Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23170101",
+      "Name": "23170101: Dragon student long robe ([Dragon professor]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23170102",
+      "Name": "23170102: Dragon Student's Gloves ([Dragon Professor] Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23170103",
+      "Name": "23170103: Dragon Student Boots ([Dragon Professor]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "23171100",
+      "Name": "23171100: Dragon Professor Hood ([Dragon Professor Wrong Head]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23250100",
+      "Name": "23250100: Hollow Helmet ([Warrior in the Mirror]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23250101",
+      "Name": "23250101: Hollow Armor ([Warrior in the Mirror]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23250102",
+      "Name": "23250102: Hollow Gauntlet ([Warrior in the Mirror]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23250103",
+      "Name": "23250103: Hollow Legace ([Warrior in the Mirror]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "23300100",
+      "Name": "23300100: Ancient Knight Helmet ([Ancient Warrior]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23300101",
+      "Name": "23300101: Ancient Knight Armor ([Ancient Warrior]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23300102",
+      "Name": "23300102: Ancient Knight's Gauntlet ([Ancient Warrior]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23300103",
+      "Name": "23300103: Ancient Knight's Foot Armor ([Ancient Warrior]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "23310100",
+      "Name": "23310100: Guard helmet ([Demon heavy soldier] head)",
+      "Description": ""
+    },
+    {
+      "ID": "23310101",
+      "Name": "23310101: Guard armor ([Demon heavy soldier]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23310102",
+      "Name": "23310102: Guard's Gauntlet ([Demon Heavy Soldier]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23310103",
+      "Name": "23310103: Guard foot armor ([Demon heavy soldier] foot)",
+      "Description": ""
+    },
+    {
+      "ID": "23320100",
+      "Name": "23320100: Throne Guardian Helmet ([Queen's Knight A]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23320101",
+      "Name": "23320101: Throne Guardian Armor ([Queen's Knight A]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23320102",
+      "Name": "23320102: Throne Guardian's Gauntlet ([Queen's Knight A]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23320103",
+      "Name": "23320103: Throne Guardian's Foot Armor ([Queen's Knight A]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "23330100",
+      "Name": "23330100: Velstad Helmet ([Queen's Knight B]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23330101",
+      "Name": "23330101: Velstad armor ([Queen's Knight B]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23330102",
+      "Name": "23330102: Velstad's Gauntlet ([Queen's Knight B]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23330103",
+      "Name": "23330103: Velstad's instep ([Queen's Knight B]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "23340100",
+      "Name": "23340100: Throne Watcher's Helmet ([Queen's Knight C]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "23340101",
+      "Name": "23340101: Throne Watcher Armor ([Queen's Knight C]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "23340102",
+      "Name": "23340102: Throne Watcher's Gauntlet ([Queen's Knight C]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "23340103",
+      "Name": "23340103: Throne Watcher's Foot Armor ([Queen's Knight C]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "25040100",
+      "Name": "25040100: Mirror Warrior Mask ([Mirror Knight]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "25040101",
+      "Name": "25040101: Mirror Warrior Armor ([Mirror Knight]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "25040102",
+      "Name": "25040102: Mirror Warrior's Gauntlet ([Mirror Knight]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "25040103",
+      "Name": "25040103: Mirror warrior's instep ([Mirror Knight]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "25060101",
+      "Name": "25060101: Agaduran's black robe ([Agaduran]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "25060102",
+      "Name": "25060102: Agaduran's bracelet ([Agaduran]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "25060103",
+      "Name": "25060103: Agaduran's lower clothing ([Agaduran], feet)",
+      "Description": ""
+    },
+    {
+      "ID": "25090100",
+      "Name": "25090100: Redia's black hood ([Dark Bishop]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "25090101",
+      "Name": "25090101: Lady's black robe ([Dark Bishop]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "25100100",
+      "Name": "25100100: Helm of the Insolent One ([Phantom Priest (Spiritual Body)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "25100101",
+      "Name": "25100101: Armor of the Insolent One ([Phantom Priest (Spiritual Body)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "25100102",
+      "Name": "25100102: Glove of the Insolent One ([Phantom Priest (Spiritual Body)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "25100103",
+      "Name": "25100103: Boots of the Insolent One ([Phantom Priest (Spiritual Body)]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "25110100",
+      "Name": "25110100: Helm of the Arrogant ([Phantom Knight (Spiritual Body)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "25110101",
+      "Name": "25110101: Armor of the Arrogant ([Phantom Knight (spiritual body)]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "25110102",
+      "Name": "25110102: Gauntlet of the Arrogant ([Phantom Knight (Spiritual Body)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "25110103",
+      "Name": "25110103: Instep of the Arrogant ([Phantom Knight (Spiritual Body)]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "25120100",
+      "Name": "25120100: Redia's White Hood ([Phantom Mage (Spiritual Body)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "25120101",
+      "Name": "25120101: Redia's White Robe ([Phantom Mage (Spiritual Body)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "25120102",
+      "Name": "25120102: Redia's Gauntlet ([Phantom Mage (Spiritual Body)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "25130100",
+      "Name": "25130100: King's Crown ([King Vangrat (past)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "25130101",
+      "Name": "25130101: King's Armor ([King Vangrat (past)]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "25130102",
+      "Name": "25130102: King's Gauntlet ([King Vangrat (Past)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "25130103",
+      "Name": "25130103: King's foot armor ([King Vangrat (past)]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "26100100",
+      "Name": "26100100: Dragoon Helmet ([Heavy Cavalry: Heavy Knight (Living)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "26100101",
+      "Name": "26100101: Dragoon Armor ([Heavy Cavalry: Heavy Knight (Living)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "26100102",
+      "Name": "26100102: Dragoon Gauntlet ([Heavy Cavalry: Heavy Knight (Living)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "26100103",
+      "Name": "26100103: Dragoon Legace ([Heavy Cavalry: Heavy Knight (Living)]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "26180100",
+      "Name": "26180100: Executioner's black helmet ([Silver Chariot]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "26180101",
+      "Name": "26180101: Executioner's black armor ([Silver Chariot]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "26180102",
+      "Name": "26180102: Executioner's black gauntlet ([Silver Chariot]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "26180103",
+      "Name": "26180103: Executioner's black instep ([Silver Chariot]/foot)",
+      "Description": ""
+    },
+    {
+      "ID": "26260100",
+      "Name": "26260100: Sinner's Mask ([Forgotten Sinner]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "26260101",
+      "Name": "26260101: Sinner's Restraint Armor ([Forgotten Sinner]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "26260102",
+      "Name": "26260102: Sinner's Shackles ([Forgotten Sinner]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "26260103",
+      "Name": "26260103: Sinner's underwear ([Forgotten Sinner]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "27210101",
+      "Name": "27210101: Lind's Armor ([Kingdom Tactician (Past)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27210102",
+      "Name": "27210102: Lind's Gauntlet ([Kingdom Tactician (Past)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27210103",
+      "Name": "27210103: Lind's shoes ([Kingdom Tactician (Past)]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "27240100",
+      "Name": "27240100: Guardian Helm ([Captain of the Guard]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27240101",
+      "Name": "27240101: Guardian Mail ([Captain of the Guard] / Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27240102",
+      "Name": "27240102: Guardian Gauntlet ([Captain of the Guard]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27240103",
+      "Name": "27240103: Guardian Leggings ([Captain of the Guard]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "27420100",
+      "Name": "27420100: Clayton's Iron Mask ([Avenging Warrior]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27420101",
+      "Name": "27420101: Clayton's Chainmail ([Avenging Warrior]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27420102",
+      "Name": "27420102: Clayton's Chain Gloves ([Avenging Warrior]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27420103",
+      "Name": "27420103: Clayton's Chain Leggings ([Avenging Warrior]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "27430100",
+      "Name": "27430100: Banholt's Night Helm ([Father of the Vengeful Warrior]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27430101",
+      "Name": "27430101: Banholt's Armor ([Father of the Vengeful Warrior]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27430102",
+      "Name": "27430102: Banholt's gloves ([Father of the Vengeful Warrior]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27430103",
+      "Name": "27430103: Vanholt's boots ([Father of the Vengeful Warrior]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "27440100",
+      "Name": "27440100: Iron Helm ([Patch (Modern)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27440101",
+      "Name": "27440101: Hard Leather Armor ([Patch (Modern)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27440102",
+      "Name": "27440102: Hard leather gauntlet ([Patch (Modern)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27440103",
+      "Name": "27440103: Hard leather boots ([Patch (Modern)]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "27510100",
+      "Name": "27510100: Kale's helmet ([Brother looking for his sister]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27510101",
+      "Name": "27510101: Cale's leather armor ([Brother looking for his sister]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27510103",
+      "Name": "27510103: Cale's shoes ([Brother looking for his sister]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "27520100",
+      "Name": "27520100: Lucatiel's mask ([Sea Solar]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27520101",
+      "Name": "27520101: Lucatiel's vest ([Sea Solar]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27520102",
+      "Name": "27520102: Lucatiel's glove ([Sea Solar]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27520103",
+      "Name": "27520103: Lucatiel's pants ([Sea Solar]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "27530100",
+      "Name": "27530100: Bellkeeper's Met ([Sancho]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27530101",
+      "Name": "27530101: Bellkeeper's body wrap ([Sancho]/chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27530102",
+      "Name": "27530102: Bell Keeper's Bracelet ([Sancho]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27530103",
+      "Name": "27530103: Bellkeeper's pants ([Sancho]/legs)",
+      "Description": ""
+    },
+    {
+      "ID": "27550100",
+      "Name": "27550100: Berserker Mask ([Stalker Warrior]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27550101",
+      "Name": "27550101: Berserker Armor ([Stalker Warrior]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27550102",
+      "Name": "27550102: Berserker's Gauntlets ([Stalker Warrior]/Arms)",
+      "Description": ""
+    },
+    {
+      "ID": "27550103",
+      "Name": "27550103: Berserker's Legs ([Stalker Warrior]/Legs)",
+      "Description": ""
+    },
+    {
+      "ID": "27680100",
+      "Name": "27680100: Black Hood ([Spell Four Heavenly Kings (Magic)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27680101",
+      "Name": "27680101: Black long robe ([Spell Four Heavenly Kings (Magic)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27680102",
+      "Name": "27680102: Black gloves ([Spell Four Heavenly Kings (Magic)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27680103",
+      "Name": "27680103: Black Boots ([Spell Four Heavenly Kings (Magic)]/Feet)",
+      "Description": ""
+    },
+    {
+      "ID": "27690100",
+      "Name": "27690100: Saint's Hood ([Spell Four Heavenly Kings (Miracle)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27690101",
+      "Name": "27690101: Saint's coat ([Spell Four Heavenly Kings (Miracle)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27690102",
+      "Name": "27690102: Saint's long gloves ([Spell Four Heavenly Kings (Miracle)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27690103",
+      "Name": "27690103: Saint's Apron ([Spell Four Heavenly Kings (Miracle)]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "27700100",
+      "Name": "27700100: Hood of Dark Arts ([Spell Four Heavenly Kings (Sorcery)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27700101",
+      "Name": "27700101: Robe of Dark Arts ([Spell Four Heavenly Kings (Sorcery)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27700102",
+      "Name": "27700102: Glove of Dark Arts ([Spell Four Heavenly Kings (Sorcery)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27700103",
+      "Name": "27700103: Boots of Dark Arts ([Spell Four Heavenly Kings (Sorcery)]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "27710100",
+      "Name": "27710100: Hood of Chaos ([Spell Four Heavenly Kings (Dark Arts)]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27710101",
+      "Name": "27710101: Robe of Chaos ([Spell Four Heavenly Kings (Dark Arts)]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27710102",
+      "Name": "27710102: Glove of Chaos ([Spell Four Heavenly Kings (Dark Arts)]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27710103",
+      "Name": "27710103: Boots of Chaos ([Spell Four Heavenly Kings (Dark Arts)]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "27830100",
+      "Name": "27830100: Doroma's Hood ([Black Phantom Shop]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27830101",
+      "Name": "27830101: Droma's Robe ([Black Phantom Shop]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27950100",
+      "Name": "27950100: Garraindork Helmet ([Saint's Attendant]/Head)",
+      "Description": ""
+    },
+    {
+      "ID": "27950101",
+      "Name": "27950101: Garraindork Armor ([Saint's Attendant]/Chest)",
+      "Description": ""
+    },
+    {
+      "ID": "27950102",
+      "Name": "27950102: Garraindork's Gauntlet ([Saint's Attendant]/Arm)",
+      "Description": ""
+    },
+    {
+      "ID": "27950103",
+      "Name": "27950103: Garaindork's instep ([Saint's Attendant]/Foot)",
+      "Description": ""
+    },
+    {
+      "ID": "31010000",
+      "Name": "31010000: Soul Arrow (Magic: Soul Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "31020000",
+      "Name": "31020000: Strong Soul Arrow (Magic: Strong Soul Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "31030000",
+      "Name": "31030000: Soul's Taiya (Magic: Soul's Taiya)",
+      "Description": ""
+    },
+    {
+      "ID": "31040000",
+      "Name": "31040000: Strong soul arrow (Magic: Strong soul arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "31050000",
+      "Name": "31050000: Tracking Soul Arrow (Magic: Guiding Soul Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "31060000",
+      "Name": "31060000: Tracking soul arrow (Magic: Guiding soul arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "31070000",
+      "Name": "31070000: Tracking mass of soul (Magic: Tracking mass of soul)",
+      "Description": ""
+    },
+    {
+      "ID": "31080000",
+      "Name": "31080000: Tracking soul crystal mass (Magic: Tracking soul crystal mass)",
+      "Description": ""
+    },
+    {
+      "ID": "31090000",
+      "Name": "31090000: Soul Spear (Magic: Soul Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "31100000",
+      "Name": "31100000: Soul Crystal Spear (Magic: Soul Crystal Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "31110000",
+      "Name": "31110000: Impact (Magic: Fallen Bullet)",
+      "Description": ""
+    },
+    {
+      "ID": "31120000",
+      "Name": "31120000: Disturbing Soul Spear (Magic: Continuous Magic Bullet)",
+      "Description": ""
+    },
+    {
+      "ID": "31130000",
+      "Name": "31130000: Raining Soul (Magic: Exploding Magic Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "31140000",
+      "Name": "31140000: Great Sword of Soul (Magic: Extra Large Sword of Magical Power)",
+      "Description": ""
+    },
+    {
+      "ID": "31150000",
+      "Name": "31150000: Swirling Soul Mass (Magic: Swirling Magic Sphere)",
+      "Description": ""
+    },
+    {
+      "ID": "31160000",
+      "Name": "31160000: Soul Flash (Magic: Magic Flash)",
+      "Description": ""
+    },
+    {
+      "ID": "31170000",
+      "Name": "31170000: Torrent of Soul (Magic: Torrent of Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "31180000",
+      "Name": "31180000: Magic Weapon (Magic: Magic Weapon)",
+      "Description": ""
+    },
+    {
+      "ID": "31190000",
+      "Name": "31190000: Strong magic weapon (Magic: Strong magic weapon)",
+      "Description": ""
+    },
+    {
+      "ID": "31200000",
+      "Name": "31200000: Crystal magic weapon (Magic: Crystal magic weapon)",
+      "Description": ""
+    },
+    {
+      "ID": "31210000",
+      "Name": "31210000: Strong magic shield (Magic: Strong magic shield)",
+      "Description": ""
+    },
+    {
+      "ID": "31220000",
+      "Name": "31220000: Nostalgia (Magic: Familiar's Prank)",
+      "Description": ""
+    },
+    {
+      "ID": "31230000",
+      "Name": "31230000: No sound (Magic: No sound)",
+      "Description": ""
+    },
+    {
+      "ID": "31240000",
+      "Name": "31240000: Fall control (Magic: Fall control)",
+      "Description": ""
+    },
+    {
+      "ID": "31250000",
+      "Name": "31250000: Invisible weapon (Magic: Invisible weapon)",
+      "Description": ""
+    },
+    {
+      "ID": "31260000",
+      "Name": "31260000: Repair (Magic: Repair)",
+      "Description": ""
+    },
+    {
+      "ID": "31270000",
+      "Name": "31270000: Illuminating light (Magic: Illuminating light)",
+      "Description": ""
+    },
+    {
+      "ID": "31280000",
+      "Name": "31280000: Mimicry (Magic: Mimicry)",
+      "Description": ""
+    },
+    {
+      "ID": "31290000",
+      "Name": "31290000: Magic release (Magic: Magic release)",
+      "Description": ""
+    },
+    {
+      "ID": "32010000",
+      "Name": "32010000: Recovery (Miracle: Recovery)",
+      "Description": ""
+    },
+    {
+      "ID": "32020000",
+      "Name": "32020000: Medium recovery (Miracle: Medium recovery)",
+      "Description": ""
+    },
+    {
+      "ID": "32030000",
+      "Name": "32030000: Limited Great Recovery (Miracle: Limited Great Recovery)",
+      "Description": ""
+    },
+    {
+      "ID": "32040000",
+      "Name": "32040000: Great Recovery (Miracle: Great Recovery)",
+      "Description": ""
+    },
+    {
+      "ID": "32050000",
+      "Name": "32050000: Healing of sunlight (Miracle: Healing of sunlight)",
+      "Description": ""
+    },
+    {
+      "ID": "32060000",
+      "Name": "32060000: Life springs (Miracle: Life springs)",
+      "Description": ""
+    },
+    {
+      "ID": "32070000",
+      "Name": "32070000: Overflowing life (miracle: automatic medium recovery)",
+      "Description": ""
+    },
+    {
+      "ID": "32080000",
+      "Name": "32080000: Blessing of the sun's light (Miracle: Blessing of the sun's light)",
+      "Description": ""
+    },
+    {
+      "ID": "32090000",
+      "Name": "32090000: Prayer for healing (miracle: poison recovery)",
+      "Description": ""
+    },
+    {
+      "ID": "32100000",
+      "Name": "32100000: Force (Miracle: Force)",
+      "Description": ""
+    },
+    {
+      "ID": "32110000",
+      "Name": "32110000: God's Wrath (Miracle: God's Wrath)",
+      "Description": ""
+    },
+    {
+      "ID": "32120000",
+      "Name": "32120000: Force released (Miracle: Force released)",
+      "Description": ""
+    },
+    {
+      "ID": "32130000",
+      "Name": "32130000: Heavenly Thunder (Miracle: Electric Discharge)",
+      "Description": ""
+    },
+    {
+      "ID": "32140000",
+      "Name": "32140000: Thunder Spear (Miracle: Thunder Spear)",
+      "Description": ""
+    },
+    {
+      "ID": "32150000",
+      "Name": "32150000: Great Spear of Thunder (Miracle: Great Spear of Thunder)",
+      "Description": ""
+    },
+    {
+      "ID": "32160000",
+      "Name": "32160000: Spear of sunlight (Miracle: Spear of sunlight)",
+      "Description": ""
+    },
+    {
+      "ID": "32170000",
+      "Name": "32170000: Requiem (Miracle: Immortal Disappearance)",
+      "Description": ""
+    },
+    {
+      "ID": "32180000",
+      "Name": "32180000: Shining lightning ball (Miracle: Source of lightning)",
+      "Description": ""
+    },
+    {
+      "ID": "32190000",
+      "Name": "32190000: Magical Protection (Miracle: Magical Protection)",
+      "Description": ""
+    },
+    {
+      "ID": "32200000",
+      "Name": "32200000: Great Magic Protection (Miracle: Great Magic Protection)",
+      "Description": ""
+    },
+    {
+      "ID": "32210000",
+      "Name": "32210000: On the way home (Miracle: On the way home)",
+      "Description": ""
+    },
+    {
+      "ID": "32220000",
+      "Name": "32220000: Words of guidance (miracle: seeking advice)",
+      "Description": ""
+    },
+    {
+      "ID": "32230000",
+      "Name": "32230000: Firm oath (Miracle: Jihad)",
+      "Description": ""
+    },
+    {
+      "ID": "32240000",
+      "Name": "32240000: Detecting hostility (Miracle: Detecting dark spirits)",
+      "Description": ""
+    },
+    {
+      "ID": "32250000",
+      "Name": "32250000: Great resistance (miracle: increased resistance)",
+      "Description": ""
+    },
+    {
+      "ID": "32260000",
+      "Name": "32260000: Sword of Sunlight (Miracle: Sword of Sunlight)",
+      "Description": ""
+    },
+    {
+      "ID": "33010000",
+      "Name": "33010000: Fireball (Magic: Fireball)",
+      "Description": ""
+    },
+    {
+      "ID": "33020000",
+      "Name": "33020000: Fireball (Magic: Fireball)",
+      "Description": ""
+    },
+    {
+      "ID": "33030000",
+      "Name": "33030000: Large fireball (Magic: Large fireball)",
+      "Description": ""
+    },
+    {
+      "ID": "33040000",
+      "Name": "33040000: Great Chaos Fireball (Magic: Great Chaos Fireball)",
+      "Description": ""
+    },
+    {
+      "ID": "33050000",
+      "Name": "33050000: Flame Storm (Curse: Flame Storm)",
+      "Description": ""
+    },
+    {
+      "ID": "33060000",
+      "Name": "33060000: Great Storm of Flames (Magic: Great Storm of Flames)",
+      "Description": ""
+    },
+    {
+      "ID": "33070000",
+      "Name": "33070000: Storm of Chaos (Spell: Storm of Chaos)",
+      "Description": ""
+    },
+    {
+      "ID": "33080000",
+      "Name": "33080000: Ignition (Magic: Ignition)",
+      "Description": ""
+    },
+    {
+      "ID": "33090000",
+      "Name": "33090000: Large ignition (Magic: Large ignition)",
+      "Description": ""
+    },
+    {
+      "ID": "33100000",
+      "Name": "33100000: Mowing down flame (Curse: Mowing down flame)",
+      "Description": ""
+    },
+    {
+      "ID": "33110000",
+      "Name": "33110000: Poisonous Mist (Curse: Poisonous Mist)",
+      "Description": ""
+    },
+    {
+      "ID": "33120000",
+      "Name": "33120000: Poisonous mist (Curse: Poisonous mist)",
+      "Description": ""
+    },
+    {
+      "ID": "33130000",
+      "Name": "33130000: Acid jet (Curse: Acid jet)",
+      "Description": ""
+    },
+    {
+      "ID": "33140000",
+      "Name": "33140000: Floating fireball (Curse: Floating fireball)",
+      "Description": ""
+    },
+    {
+      "ID": "33150000",
+      "Name": "33150000: Flame Hammer (Magic: Flame Hammer)",
+      "Description": ""
+    },
+    {
+      "ID": "33160000",
+      "Name": "33160000: Sealed Sun (Magic: Chaos Sun)",
+      "Description": ""
+    },
+    {
+      "ID": "33170000",
+      "Name": "33170000: Flame Weapon (Magic: Flame Weapon)",
+      "Description": ""
+    },
+    {
+      "ID": "33180000",
+      "Name": "33180000: Severe sweating (Magic: Severe sweating)",
+      "Description": ""
+    },
+    {
+      "ID": "33190000",
+      "Name": "33190000: Iron body (Curse: Iron body)",
+      "Description": ""
+    },
+    {
+      "ID": "33200000",
+      "Name": "33200000: Warmth Fire (Magic: Recovery Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "33210000",
+      "Name": "33210000: Fire that scorches the body (curse: self-immolation)",
+      "Description": ""
+    },
+    {
+      "ID": "34010000",
+      "Name": "34010000: Dark Ball (Dark Arts-Magic: Dark Ball)",
+      "Description": ""
+    },
+    {
+      "ID": "34020000",
+      "Name": "34020000: Dark Splash (Dark Arts-Magic: Dark Splash)",
+      "Description": ""
+    },
+    {
+      "ID": "34030000",
+      "Name": "34030000: Mist of Darkness (Dark Arts-Magic: Mist of Darkness)",
+      "Description": ""
+    },
+    {
+      "ID": "34040000",
+      "Name": "34040000: Those who pursue (dark arts-magic: those who pursue)",
+      "Description": ""
+    },
+    {
+      "ID": "34050000",
+      "Name": "34050000: Activation of the dead (dark arts-magic: area corpse explosion)",
+      "Description": ""
+    },
+    {
+      "ID": "34060000",
+      "Name": "34060000: Dark Weapon (Dark Arts-Magic: Dark Weapon)",
+      "Description": ""
+    },
+    {
+      "ID": "34070000",
+      "Name": "34070000: Whisper of disappointment (Dark magic: Whisper of darkness)",
+      "Description": ""
+    },
+    {
+      "ID": "34080000",
+      "Name": "34080000: Reaction (Dark Arts-Magic: Empty Space)",
+      "Description": ""
+    },
+    {
+      "ID": "34090000",
+      "Name": "34090000: Distorted Barrier (Dark Arts-Magic:)",
+      "Description": ""
+    },
+    {
+      "ID": "34100000",
+      "Name": "34100000: Intense dullness (dark art-magic: darkness)",
+      "Description": ""
+    },
+    {
+      "ID": "35010000",
+      "Name": "35010000: Remnants of Life (Dark Arts - Weird: Earthbound Spirit Summoning)",
+      "Description": ""
+    },
+    {
+      "ID": "35020000",
+      "Name": "35020000: Dark Storm (Dark Art - Weird: Self-centered Typhoon)",
+      "Description": ""
+    },
+    {
+      "ID": "35030000",
+      "Name": "35030000: Soul Resonance (Dark Art - Weird: Soul Ball)",
+      "Description": ""
+    },
+    {
+      "ID": "35040000",
+      "Name": "35040000: Soul's Great Resonance (Dark Art - Weird: Soul Great Ball)",
+      "Description": ""
+    },
+    {
+      "ID": "35050000",
+      "Name": "35050000: Climax (Dark Art - Weird: Soul Super Ball)",
+      "Description": ""
+    },
+    {
+      "ID": "35060000",
+      "Name": "35060000: Resonating Body (Dark Art - Weird: Soul Body)",
+      "Description": ""
+    },
+    {
+      "ID": "35070000",
+      "Name": "35070000: Resonant Weapon (Dark Arts - Weird: Soul Sword)",
+      "Description": ""
+    },
+    {
+      "ID": "35080000",
+      "Name": "35080000: Small ejaculate light (Dark Art - Weird: Soul Hole)",
+      "Description": ""
+    },
+    {
+      "ID": "35090000",
+      "Name": "35090000: Deep Silence (Dark Art - Weird: Multi-target spell sealing)",
+      "Description": ""
+    },
+    {
+      "ID": "40010000",
+      "Name": "40010000: Ring of Life (Ring of Life)",
+      "Description": ""
+    },
+    {
+      "ID": "40010001",
+      "Name": "40010001: Ring of Life +1 (Ring of Life +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40010002",
+      "Name": "40010002: Ring of Life +2 (Ring of Life +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40020000",
+      "Name": "40020000: Green flower ring (green flower ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40020001",
+      "Name": "40020001: Green flower ring +1 (Green flower ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40020002",
+      "Name": "40020002: Green flower ring +2 (Green flower ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40030000",
+      "Name": "40030000: King's Warrior Ring (Heavy Warrior Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40030001",
+      "Name": "40030001: King's Warrior Ring +1 (Heavy Warrior Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40030002",
+      "Name": "40030002: King's Warrior Ring +2 (Heavy Warrior Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40040000",
+      "Name": "40040000: First Dragon's Ring (Dragon's Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40040001",
+      "Name": "40040001: Second dragon ring (dragon ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40040002",
+      "Name": "40040002: Third dragon ring (dragon ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40050000",
+      "Name": "40050000: Iron Ring of Protection (Ring of Iron Protection)",
+      "Description": ""
+    },
+    {
+      "ID": "40050001",
+      "Name": "40050001: Iron Ring of Protection +1 (Ring of Iron Protection +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40050002",
+      "Name": "40050002: Iron Ring of Protection +2 (Ring of Iron Protection +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40060000",
+      "Name": "40060000: Magic crystal ring (magic crystal ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40060001",
+      "Name": "40060001: Magic Crystal Ring +1 (Magic Crystal Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40060002",
+      "Name": "40060002: Magic Crystal Ring +2 (Magic Crystal Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40070000",
+      "Name": "40070000: Flame Crystal Ring (Flame Crystal Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40070001",
+      "Name": "40070001: Flame Crystal Ring +1 (Flame Stone Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40070002",
+      "Name": "40070002: Flame Crystal Ring +2 (Flame Crystal Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40080000",
+      "Name": "40080000: Thunderstone Ring (Thunderstone Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40080001",
+      "Name": "40080001: Thunderstone Ring +1 (Thunderstone Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40080002",
+      "Name": "40080002: Thunderstone Ring +2 (Thunderstone Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40090000",
+      "Name": "40090000: Dark Crystal Ring (Dark Crystal Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40090001",
+      "Name": "40090001: Dark Crystal Ring +1 (Dark Crystal Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40090002",
+      "Name": "40090002: Dark Crystal Ring +2 (Dark Crystal Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40100000",
+      "Name": "40100000: Poison Bite Ring (Poison Bite Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40110000",
+      "Name": "40110000: Bloodbite Ring (Bloodbite Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40120000",
+      "Name": "40120000: Finger of destruction (finger of destruction)",
+      "Description": ""
+    },
+    {
+      "ID": "40120001",
+      "Name": "40120001: Finger of destruction +1 (Finger of destruction +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40120002",
+      "Name": "40120002: Finger of destruction +2 (Finger of destruction +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40130000",
+      "Name": "40130000: Cursed Biting Ring (Cursed Biting Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40135000",
+      "Name": "40135000: Ash fingernail (petrification resistance)",
+      "Description": ""
+    },
+    {
+      "ID": "40140000",
+      "Name": "40140000: All exorcism rings (all exorcism rings)",
+      "Description": ""
+    },
+    {
+      "ID": "40150000",
+      "Name": "40150000: Resistance Ring (Resistance Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40160000",
+      "Name": "40160000: Blade Ring (King's Sword Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40160001",
+      "Name": "40160001: Blade Ring +1 (King's Sword Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40160002",
+      "Name": "40160002: Blade Ring +2 (King's Sword Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40210000",
+      "Name": "40210000: Ring of Wisdom (Strayed's Ring of Wisdom)",
+      "Description": ""
+    },
+    {
+      "ID": "40220000",
+      "Name": "40220000: Prayer Ring (Rones Prayer Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40230000",
+      "Name": "40230000: Stone ring (ring that sharpens strength)",
+      "Description": ""
+    },
+    {
+      "ID": "40260000",
+      "Name": "40260000: Red tear stone ring (red tear stone ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40280000",
+      "Name": "40280000: Blue tear stone ring (blue tear stone ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40290000",
+      "Name": "40290000: Giant's Ring (Giant's Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40290001",
+      "Name": "40290001: Giant's Ring +1 (Giant's Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40290002",
+      "Name": "40290002: Giant's Ring +2 (Giant's Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40295000",
+      "Name": "40295000: Old Lion Ring (Lion Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40300000",
+      "Name": "40300000: Ring of Soul Protection (Ring of Soul Protection)",
+      "Description": ""
+    },
+    {
+      "ID": "40310000",
+      "Name": "40310000: Ring of Life Protection (Ring of Life Protection)",
+      "Description": ""
+    },
+    {
+      "ID": "40320000",
+      "Name": "40320000: Standing Dragon Seal Ring (Standing Dragon Seal Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40320001",
+      "Name": "40320001: Standing Dragonmark Ring +1 (Standing Dragonmark Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40320002",
+      "Name": "40320002: Standing Dragonmark Ring +2 (Standing Dragonmark Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40330000",
+      "Name": "40330000: Clear blue stone ring (speed ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40330001",
+      "Name": "40330001: Clear blue stone ring +1 (Rapid ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40330002",
+      "Name": "40330002: Clear blue stone ring +2 (Rapid ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40340000",
+      "Name": "40340000: North Shrine Festival Finger Crown (North Shrine Festival Finger Crown)",
+      "Description": ""
+    },
+    {
+      "ID": "40340001",
+      "Name": "40340001: North Shrine Finger Crown +1 (North Shrine Finger Crown +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40340002",
+      "Name": "40340002: North Shrine Finger Crown +2 (North Shrine Finger Crown +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40350000",
+      "Name": "40350000: Southern Shrine Festival Finger Crown (South Shrine Festival Finger Crown)",
+      "Description": ""
+    },
+    {
+      "ID": "40350001",
+      "Name": "40350001: Southern shrine finger crown +1 (southern shrine finger crown +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40350002",
+      "Name": "40350002: Southern Shrine Finger Crown +2 (South Shrine Finger Crown +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40360000",
+      "Name": "40360000: Greedy Gold Snake Ring (Greedy Gold Snake Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40360001",
+      "Name": "40360001: Greedy Golden Snake Ring +1 (Greedy Golden Snake Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40360002",
+      "Name": "40360002: Greedy Golden Snake Ring +2 (Greedy Golden Snake Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40370000",
+      "Name": "40370000: Greedy Silver Snake Ring (Greedy Silver Snake Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40370001",
+      "Name": "40370001: Greedy Silver Snake Ring +1 (Greedy Silver Snake Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40370002",
+      "Name": "40370002: Greedy Silver Snake Ring +2 (Greedy Silver Snake Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40390000",
+      "Name": "40390000: Evil Eye Ring (Evil Eye Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40390001",
+      "Name": "40390001: Evil Eye Ring +1 (Evil Eye Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40390002",
+      "Name": "40390002: Evil Eye Ring +2 (Evil Eye Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40400000",
+      "Name": "40400000: Ring of Rebirth (Ring of Rebirth)",
+      "Description": ""
+    },
+    {
+      "ID": "40410000",
+      "Name": "40410000: Linking ring (linking ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40420000",
+      "Name": "40420000: Silver cat ring (Silver cat ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40430000",
+      "Name": "40430000: Red Eye Ring (Evil Eye Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40440000",
+      "Name": "40440000: Goda's guardian ring (back spirit ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40450000",
+      "Name": "40450000: Ring engraved with name (keyword ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40460000",
+      "Name": "40460000: Quietly Sleeping Dragonmark Ring (Quietly Sleeping Dragonmark Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40470000",
+      "Name": "40470000: Hawk Ring (Hawk Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40480000",
+      "Name": "40480000: Old Sun Ring (effect and effect activation)",
+      "Description": ""
+    },
+    {
+      "ID": "40500000",
+      "Name": "40500000: Conqueror's Illusion Ring (Reward Ring: No Death)",
+      "Description": ""
+    },
+    {
+      "ID": "40510000",
+      "Name": "40510000: King's Ring (King's Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40520000",
+      "Name": "40520000: Ring of the dead (does not become a dead person)",
+      "Description": ""
+    },
+    {
+      "ID": "40530000",
+      "Name": "40530000: Thorn Ring (Thorn Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40530001",
+      "Name": "40530001: Thorn Ring +1 (Thorn Ring +1)",
+      "Description": ""
+    },
+    {
+      "ID": "40530002",
+      "Name": "40530002: Thorn Ring +2 (Thorn Ring +2)",
+      "Description": ""
+    },
+    {
+      "ID": "40540000",
+      "Name": "40540000: Soft string (dry finger ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40550000",
+      "Name": "40550000: White Ring (White Spirit Ring (tentative))",
+      "Description": ""
+    },
+    {
+      "ID": "40610000",
+      "Name": "40610000: Whispering Ring (Whispering Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "40620000",
+      "Name": "40620000: Illusion ring of the transcendent (reward ring: bonfire not used)",
+      "Description": ""
+    },
+    {
+      "ID": "40700000",
+      "Name": "40700000: Mouse seal (covenant ring \"Mouse King\")",
+      "Description": ""
+    },
+    {
+      "ID": "40710000",
+      "Name": "40710000: Bell Keeper's Seal (Pledge Ring \"Bell Keeper\")",
+      "Description": ""
+    },
+    {
+      "ID": "40720000",
+      "Name": "40720000: Seal of protection (covenant ring \"Seal of protection\")",
+      "Description": ""
+    },
+    {
+      "ID": "40730000",
+      "Name": "40730000: Blood Seal (Pledge Ring “Blood Dark Seal”)",
+      "Description": ""
+    },
+    {
+      "ID": "40740000",
+      "Name": "40740000: Blue Seal (Pledge Ring \"Aokyo\")",
+      "Description": ""
+    },
+    {
+      "ID": "40750000",
+      "Name": "40750000: Seal of the Abyss (Pledge Ring \"Pilgrim of the Abyss\")",
+      "Description": ""
+    },
+    {
+      "ID": "40760000",
+      "Name": "40760000: Conqueror's seal (covenant ring \"Strong\")",
+      "Description": ""
+    },
+    {
+      "ID": "40770000",
+      "Name": "40770000: Seal of the Sun (Pledge Ring \"Warrior of the Sun\")",
+      "Description": ""
+    },
+    {
+      "ID": "40780000",
+      "Name": "40780000: Seal of the Ancient Dragon (Pledge Ring \"Path to the Ancient Dragon\")",
+      "Description": ""
+    },
+    {
+      "ID": "50600000",
+      "Name": "50600000: Soldier's Key (Royal Soldier's Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50610000",
+      "Name": "50610000: King's Corridor Key (Royal Castle Corridor Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50800000",
+      "Name": "50800000: Prison key (prison key)",
+      "Description": ""
+    },
+    {
+      "ID": "50810000",
+      "Name": "50810000: Melted Iron Key (Fire Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50820000",
+      "Name": "50820000: Abandoned Key (Key of Death)",
+      "Description": ""
+    },
+    {
+      "ID": "50830000",
+      "Name": "50830000: Pyroxene Street Key (White Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50840000",
+      "Name": "50840000: Old key (● key)",
+      "Description": ""
+    },
+    {
+      "ID": "50850000",
+      "Name": "50850000: Fang Key (Beast Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50860000",
+      "Name": "50860000: House key (Mr. A's house key)",
+      "Description": ""
+    },
+    {
+      "ID": "50870000",
+      "Name": "50870000: Reni Guts key (key to Mr. B's house)",
+      "Description": ""
+    },
+    {
+      "ID": "50880000",
+      "Name": "50880000: Tsurusube stone (smooth stone)",
+      "Description": ""
+    },
+    {
+      "ID": "50885000",
+      "Name": "50885000: Small hanging stone (small hanging stone)",
+      "Description": ""
+    },
+    {
+      "ID": "50890000",
+      "Name": "50890000: Ring Hall Keystone (Lever)",
+      "Description": ""
+    },
+    {
+      "ID": "50900000",
+      "Name": "50900000: Giant's Resonance (Giant's Hole)",
+      "Description": ""
+    },
+    {
+      "ID": "50910000",
+      "Name": "50910000: Core of Ash Mist (Dragon Chaos)",
+      "Description": ""
+    },
+    {
+      "ID": "50920000",
+      "Name": "50920000: Soul of the Titans (Soul of the Titans)",
+      "Description": ""
+    },
+    {
+      "ID": "50930000",
+      "Name": "50930000: Jeldora's hiding place key (Patch's house key)",
+      "Description": ""
+    },
+    {
+      "ID": "50940000",
+      "Name": "50940000: Conqueror's stone tablet (list of strong men)",
+      "Description": ""
+    },
+    {
+      "ID": "50950000",
+      "Name": "50950000: Ladder ornament (ladder ornament)",
+      "Description": ""
+    },
+    {
+      "ID": "50960000",
+      "Name": "50960000: Soul vessel (status reroll item)",
+      "Description": ""
+    },
+    {
+      "ID": "50970000",
+      "Name": "50970000: Immortal Stone Prison Key (Immortal Cell Key)",
+      "Description": ""
+    },
+    {
+      "ID": "50990000",
+      "Name": "50990000: Dull pilot fire (fire given to EX blacksmith)",
+      "Description": ""
+    },
+    {
+      "ID": "51000000",
+      "Name": "51000000: Crushed Eye Orb (miracle item)",
+      "Description": ""
+    },
+    {
+      "ID": "51010000",
+      "Name": "51010000: Fool's Spice (Spell Status Reduction Reason)",
+      "Description": ""
+    },
+    {
+      "ID": "51020000",
+      "Name": "51020000: Spice of the unbeliever (spell status reduction faith)",
+      "Description": ""
+    },
+    {
+      "ID": "51030000",
+      "Name": "51030000: An Deal's Key (An Deal's Key)",
+      "Description": ""
+    },
+    {
+      "ID": "60010000",
+      "Name": "60010000: Shizukuishi (Healing Shizukuishi)",
+      "Description": ""
+    },
+    {
+      "ID": "60020000",
+      "Name": "60020000: Shining stone (shining healing stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60030000",
+      "Name": "60030000: Old shining stone (old healing stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60035000",
+      "Name": "60035000: Elizabeth's secret medicine (Elizabeth's secret medicine)",
+      "Description": ""
+    },
+    {
+      "ID": "60040000",
+      "Name": "60040000: Twilight grass (twilight grass)",
+      "Description": ""
+    },
+    {
+      "ID": "60050000",
+      "Name": "60050000: Akatsuki Dark Grass (Akatsuki Dark Grass)",
+      "Description": ""
+    },
+    {
+      "ID": "60060000",
+      "Name": "60060000: Withered twilight grass (twilight grass)",
+      "Description": ""
+    },
+    {
+      "ID": "60070000",
+      "Name": "60070000: Poisonous moss ball (poisonous purple moss ball)",
+      "Description": ""
+    },
+    {
+      "ID": "60090000",
+      "Name": "60090000: Sanctuary amulet (healing amulet)",
+      "Description": ""
+    },
+    {
+      "ID": "60100000",
+      "Name": "60100000: Dragon Power Amulet (Dragon Healing Amulet)",
+      "Description": ""
+    },
+    {
+      "ID": "60105000",
+      "Name": "60105000: Goddess' blessing (Goddess' blessing)",
+      "Description": ""
+    },
+    {
+      "ID": "60110000",
+      "Name": "60110000: Crimson water (vermilion holy water)",
+      "Description": ""
+    },
+    {
+      "ID": "60120000",
+      "Name": "60120000: Crimson water (shining vermilion holy water)",
+      "Description": ""
+    },
+    {
+      "ID": "60151000",
+      "Name": "60151000: Human statue (human statue)",
+      "Description": ""
+    },
+    {
+      "ID": "60155000",
+      "Name": "60155000: Est bottle (Est bottle)",
+      "Description": ""
+    },
+    {
+      "ID": "60155010",
+      "Name": "60155010:★Name not set (esto bottle for NPC)",
+      "Description": ""
+    },
+    {
+      "ID": "60160000",
+      "Name": "60160000: Small blue fruit (Blue Snake Strawberry)",
+      "Description": ""
+    },
+    {
+      "ID": "60170000",
+      "Name": "60170000: Small yellow fruit (yellow snake strawberry)",
+      "Description": ""
+    },
+    {
+      "ID": "60180000",
+      "Name": "60180000: Small orange fruit (orange snake strawberry)",
+      "Description": ""
+    },
+    {
+      "ID": "60190000",
+      "Name": "60190000: Dark insect pill (deep lake insect pill)",
+      "Description": ""
+    },
+    {
+      "ID": "60200000",
+      "Name": "60200000: Common fruit (speckled grapes)",
+      "Description": ""
+    },
+    {
+      "ID": "60210000",
+      "Name": "60210000: Red Hiru Pill (Red Hiru Pill)",
+      "Description": ""
+    },
+    {
+      "ID": "60230000",
+      "Name": "60230000: Three-eyed snake pill (Three-eyed snake pill)",
+      "Description": ""
+    },
+    {
+      "ID": "60240000",
+      "Name": "60240000: Fragrant mucus (white pine resin)",
+      "Description": ""
+    },
+    {
+      "ID": "60250000",
+      "Name": "60250000: Golden pine resin (Golden pine resin)",
+      "Description": ""
+    },
+    {
+      "ID": "60260000",
+      "Name": "60260000: Charcoal pine resin (charcoal pine resin)",
+      "Description": ""
+    },
+    {
+      "ID": "60270000",
+      "Name": "60270000: Dark pine resin (black pine resin)",
+      "Description": ""
+    },
+    {
+      "ID": "60280000",
+      "Name": "60280000: Rotten pine resin (rotten pine resin)",
+      "Description": ""
+    },
+    {
+      "ID": "60290000",
+      "Name": "60290000: Bleeding blood (dragon yellow water)",
+      "Description": ""
+    },
+    {
+      "ID": "60310000",
+      "Name": "60310000: Green flower grass (Green flower grass)",
+      "Description": ""
+    },
+    {
+      "ID": "60320000",
+      "Name": "60320000: Rusty coin (old coin)",
+      "Description": ""
+    },
+    {
+      "ID": "60350000",
+      "Name": "60350000: Bone Fragment of Return (Bone Fragment of Return)",
+      "Description": ""
+    },
+    {
+      "ID": "60355000",
+      "Name": "60355000: Old bird feather (Estintia feather)",
+      "Description": ""
+    },
+    {
+      "ID": "60360000",
+      "Name": "60360000: Dark Ring (Dark Ring)",
+      "Description": ""
+    },
+    {
+      "ID": "60370000",
+      "Name": "60370000: Silver Talisman (Silver Talisman)",
+      "Description": ""
+    },
+    {
+      "ID": "60405000",
+      "Name": "60405000: Ryuzu Stone (Ryuzu Stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60405010",
+      "Name": "60405010: Ryuzu Stone (Ryuzu Stone (Brace))",
+      "Description": ""
+    },
+    {
+      "ID": "60406000",
+      "Name": "60406000: Dragon body stone (Dragon body stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60406010",
+      "Name": "60406010: Dragon body stone (Dragon body stone (roar))",
+      "Description": ""
+    },
+    {
+      "ID": "60410000",
+      "Name": "60410000: Repair Light Powder (Repair Light Powder)",
+      "Description": ""
+    },
+    {
+      "ID": "60420000",
+      "Name": "60420000: Torch (torch)",
+      "Description": ""
+    },
+    {
+      "ID": "60430000",
+      "Name": "60430000: Fire Butterfly (Ignition Stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60450000",
+      "Name": "60450000: Seven-colored stone (seven-colored stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60470000",
+      "Name": "60470000: Human face \"Hello\" (Human face \"Hello\")",
+      "Description": ""
+    },
+    {
+      "ID": "60480000",
+      "Name": "60480000: Human face \"Thank you\" (Human face \"Thank you\")",
+      "Description": ""
+    },
+    {
+      "ID": "60490000",
+      "Name": "60490000: Human face \"I'm sorry\" (Human face \"I'm sorry\")",
+      "Description": ""
+    },
+    {
+      "ID": "60500000",
+      "Name": "60500000: Human face “Like!” (Human face “Like!”)",
+      "Description": ""
+    },
+    {
+      "ID": "60510000",
+      "Name": "60510000: Garbage (garbage)",
+      "Description": ""
+    },
+    {
+      "ID": "60511000",
+      "Name": "60511000: Fossil of something (fossil egg)",
+      "Description": ""
+    },
+    {
+      "ID": "60525000",
+      "Name": "60525000: Est Fragment (Small Est Bottle Fragment)",
+      "Description": ""
+    },
+    {
+      "ID": "60526000",
+      "Name": "60526000: Bone meal of the noble (dragon fat powder)",
+      "Description": ""
+    },
+    {
+      "ID": "60527000",
+      "Name": "60527000: Bonfire seeker (lifespan regeneration)",
+      "Description": ""
+    },
+    {
+      "ID": "60530000",
+      "Name": "60530000: Inviting Skeleton (Inviting Skeleton)",
+      "Description": ""
+    },
+    {
+      "ID": "60531000",
+      "Name": "60531000: Lloyd's amulet (Lloyd's amulet)",
+      "Description": ""
+    },
+    {
+      "ID": "60536000",
+      "Name": "60536000: Pharos Stone (Magic Stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60537000",
+      "Name": "60537000: Nostalgic fragrant wood (item to remove petrification)",
+      "Description": ""
+    },
+    {
+      "ID": "60538000",
+      "Name": "60538000: Seed of Fire (Seed of Magic)",
+      "Description": ""
+    },
+    {
+      "ID": "60540000",
+      "Name": "60540000: Throwing knife (throwing knife)",
+      "Description": ""
+    },
+    {
+      "ID": "60550000",
+      "Name": "60550000: Magic pot (Magic pot)",
+      "Description": ""
+    },
+    {
+      "ID": "60560000",
+      "Name": "60560000: Lightning pot (Electric pot)",
+      "Description": ""
+    },
+    {
+      "ID": "60570000",
+      "Name": "60570000: Flame pot (flame pot)",
+      "Description": ""
+    },
+    {
+      "ID": "60575000",
+      "Name": "60575000: Black flame pot (large flame bottle)",
+      "Description": ""
+    },
+    {
+      "ID": "60580000",
+      "Name": "60580000: Jet black pot (black flame pot)",
+      "Description": ""
+    },
+    {
+      "ID": "60590000",
+      "Name": "60590000: Poison Throwing Knife (Poison Throwing Knife)",
+      "Description": ""
+    },
+    {
+      "ID": "60595000",
+      "Name": "60595000: Dung dumpling (poison ball large)",
+      "Description": ""
+    },
+    {
+      "ID": "60600000",
+      "Name": "60600000: Bleeding knife (sharp knife)",
+      "Description": ""
+    },
+    {
+      "ID": "60610000",
+      "Name": "60610000: Strong acid bottle (red liquid bottle)",
+      "Description": ""
+    },
+    {
+      "ID": "60620000",
+      "Name": "60620000: Holy water bottle (holy water bottle)",
+      "Description": ""
+    },
+    {
+      "ID": "60625000",
+      "Name": "60625000: Vanishing soul (immortal soul 0)",
+      "Description": ""
+    },
+    {
+      "ID": "60630000",
+      "Name": "60630000: Immortal soul that does not know its origin (Immortal soul that does not know its origin)",
+      "Description": ""
+    },
+    {
+      "ID": "60640000",
+      "Name": "60640000: A large soul of unknown immortality (soul of a nameless warrior)",
+      "Description": ""
+    },
+    {
+      "ID": "60650000",
+      "Name": "60650000: Nameless Warrior's Soul (Nameless Warrior's Big Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "60660000",
+      "Name": "60660000: Big soul of a nameless warrior (soul of a famous knight)",
+      "Description": ""
+    },
+    {
+      "ID": "60670000",
+      "Name": "60670000: Soul of a Famous Knight (Big Soul of a Famous Knight)",
+      "Description": ""
+    },
+    {
+      "ID": "60680000",
+      "Name": "60680000: Big soul of a famous knight (soul of a brave hero)",
+      "Description": ""
+    },
+    {
+      "ID": "60690000",
+      "Name": "60690000: Brave Hero's Soul (Brave Hero's Big Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "60700000",
+      "Name": "60700000: Big soul of a brave hero (legendary warrior soul)",
+      "Description": ""
+    },
+    {
+      "ID": "60710000",
+      "Name": "60710000: Hero's soul (legendary warrior's big soul)",
+      "Description": ""
+    },
+    {
+      "ID": "60720000",
+      "Name": "60720000: Great Hero's Soul (Great Hero's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "60760000",
+      "Name": "60760000: Wooden arrow (wooden arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "60770000",
+      "Name": "60770000: Iron Arrow (Iron Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "60780000",
+      "Name": "60780000: Magic arrow (magic arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "60790000",
+      "Name": "60790000: Thunder Arrow (Golden Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "60800000",
+      "Name": "60800000: Fire Arrow (Fire Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "60810000",
+      "Name": "60810000: Dark Arrow (Dark Flame Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "60820000",
+      "Name": "60820000: Poison arrow (poison arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "60830000",
+      "Name": "60830000: Ripper Arrow (Ripper Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "60850000",
+      "Name": "60850000: Iron Oya (Iron Oya)",
+      "Description": ""
+    },
+    {
+      "ID": "60870000",
+      "Name": "60870000: Lightning Oya (Golden Oya)",
+      "Description": ""
+    },
+    {
+      "ID": "60880000",
+      "Name": "60880000: Fire Oya (Fire Oya)",
+      "Description": ""
+    },
+    {
+      "ID": "60900000",
+      "Name": "60900000: Oya of Destruction (Oya of Destruction)",
+      "Description": ""
+    },
+    {
+      "ID": "60910000",
+      "Name": "60910000: Wood Bolt (Wood Bolt)",
+      "Description": ""
+    },
+    {
+      "ID": "60920000",
+      "Name": "60920000: Heavy Bolt (Heavy Bolt)",
+      "Description": ""
+    },
+    {
+      "ID": "60930000",
+      "Name": "60930000: Magic Bolt (Magic Bolt)",
+      "Description": ""
+    },
+    {
+      "ID": "60940000",
+      "Name": "60940000: Lightning Bolt (Lightning Bolt)",
+      "Description": ""
+    },
+    {
+      "ID": "60950000",
+      "Name": "60950000: Flame Bolt (Flame Bolt)",
+      "Description": ""
+    },
+    {
+      "ID": "60960000",
+      "Name": "60960000: Darkness Bolt (Darkness Bolt)",
+      "Description": ""
+    },
+    {
+      "ID": "60970000",
+      "Name": "60970000: Fragment of wedge stone (Fragment of wedge stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60975000",
+      "Name": "60975000: Large piece of wedge stone (large piece of wedge stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60980000",
+      "Name": "60980000: Lump of wedge stone (Lump of wedge stone)",
+      "Description": ""
+    },
+    {
+      "ID": "60990000",
+      "Name": "60990000: Master of wedge stone (master of wedge stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61000000",
+      "Name": "61000000: Shining wedge stone (pure black steel stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61030000",
+      "Name": "61030000: Dragon bone fossil (old dragon fossil)",
+      "Description": ""
+    },
+    {
+      "ID": "61060000",
+      "Name": "61060000: Blue Light Stone (Starlight Stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61070000",
+      "Name": "61070000: Lightning Stone (Moonlight Stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61080000",
+      "Name": "61080000: Fire Dragon Stone (Fire Dragon Stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61090000",
+      "Name": "61090000: Dark Night Stone (Dark Moon Stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61100000",
+      "Name": "61100000: Poison lump stone (poison lump stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61110000",
+      "Name": "61110000: Blood clot stone (blood clot stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61130000",
+      "Name": "61130000: Rough stone (rough stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61140000",
+      "Name": "61140000: Magic stone (magic stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61150000",
+      "Name": "61150000: Ancient stone of ignorance (abyss stone)",
+      "Description": ""
+    },
+    {
+      "ID": "61160000",
+      "Name": "61160000: White stone (stone that returns to normal)",
+      "Description": ""
+    },
+    {
+      "ID": "62000000",
+      "Name": "62000000: Dry finger (Dry finger)",
+      "Description": ""
+    },
+    {
+      "ID": "62020000",
+      "Name": "62020000: Ri no Bone (Line Ri)",
+      "Description": ""
+    },
+    {
+      "ID": "62030000",
+      "Name": "62030000: White sign wax stone (white sign wax stone)",
+      "Description": ""
+    },
+    {
+      "ID": "62040000",
+      "Name": "62040000: Small white sign wax stone (small white sign wax stone)",
+      "Description": ""
+    },
+    {
+      "ID": "62045000",
+      "Name": "62045000: Red sign wax stone (red sign wax stone)",
+      "Description": ""
+    },
+    {
+      "ID": "62050000",
+      "Name": "62050000: Cracked Blue Eye Orb (Cracked Blue Eye Orb)",
+      "Description": ""
+    },
+    {
+      "ID": "62060000",
+      "Name": "62060000: Cracked Red Eye Orb (Cracked Red Eye Orb)",
+      "Description": ""
+    },
+    {
+      "ID": "62070000",
+      "Name": "62070000: Ancient dragon's eyes (old dragon's eyes)",
+      "Description": ""
+    },
+    {
+      "ID": "62100000",
+      "Name": "62100000: Proof of faith (proof of goodwill)",
+      "Description": ""
+    },
+    {
+      "ID": "62110000",
+      "Name": "62110000: Proof of hatred (Proof of malice)",
+      "Description": ""
+    },
+    {
+      "ID": "62120000",
+      "Name": "62120000: Sun Medal (Sun Medal)",
+      "Description": ""
+    },
+    {
+      "ID": "62130000",
+      "Name": "62130000: Dragon scales (Dragon scales)",
+      "Description": ""
+    },
+    {
+      "ID": "62140000",
+      "Name": "62140000: Mouse's tail (mouse's tail)",
+      "Description": ""
+    },
+    {
+      "ID": "62150000",
+      "Name": "62150000: Chikaraishi (Chikaraishi)",
+      "Description": ""
+    },
+    {
+      "ID": "62160000",
+      "Name": "62160000: Black Crystal of Farewell (Black Crystal of Farewell)",
+      "Description": ""
+    },
+    {
+      "ID": "62170000",
+      "Name": "62170000: Giant's Nut Seed (Giant's Nut Seed)",
+      "Description": ""
+    },
+    {
+      "ID": "62190000",
+      "Name": "62190000: Fossil egg (dragon egg)",
+      "Description": ""
+    },
+    {
+      "ID": "63000000",
+      "Name": "63000000: Gesture \"pointing\" (book of \"pointing\")",
+      "Description": ""
+    },
+    {
+      "ID": "63001000",
+      "Name": "63001000: Gesture \"Come\" (Book of \"Come over\")",
+      "Description": ""
+    },
+    {
+      "ID": "63003000",
+      "Name": "63003000: Gesture \"Ichirei\" (Book of \"Ichirei\")",
+      "Description": ""
+    },
+    {
+      "ID": "63004000",
+      "Name": "63004000: Gesture \"Welcome\" (Book of \"Welcome\")",
+      "Description": ""
+    },
+    {
+      "ID": "63005000",
+      "Name": "63005000: Gesture \"Opening Ceremony\" (Book of \"Opening Ceremony\")",
+      "Description": ""
+    },
+    {
+      "ID": "63006000",
+      "Name": "63006000: Gesture \"Wave your hand\" (Book of \"Wave your hand\")",
+      "Description": ""
+    },
+    {
+      "ID": "63007000",
+      "Name": "63007000: Gesture \"Okay, I did it!\" (Book of \"Guts Pose\")",
+      "Description": ""
+    },
+    {
+      "ID": "63008000",
+      "Name": "63008000: Gesture \"Joy\" (Book of \"Joy\")",
+      "Description": ""
+    },
+    {
+      "ID": "63009000",
+      "Name": "63009000: Gesture \"Battle Cry\" (Book of \"Battle Cry\")",
+      "Description": ""
+    },
+    {
+      "ID": "63010000",
+      "Name": "63010000: Gesture \"Shoulder Warming\" (Book of \"Shoulder Warming\")",
+      "Description": ""
+    },
+    {
+      "ID": "63011000",
+      "Name": "63011000: Gesture \"Eieio\" (Book of \"Eieio\")",
+      "Description": ""
+    },
+    {
+      "ID": "63012000",
+      "Name": "63012000: Gesture \"Understanding\" (Book of \"Understanding\")",
+      "Description": ""
+    },
+    {
+      "ID": "63013000",
+      "Name": "63013000: Gesture \"Negation\" (Book of \"Negation\")",
+      "Description": ""
+    },
+    {
+      "ID": "63014000",
+      "Name": "63014000: Gesture \"It's me!\" (Book of \"Leave it to me\")",
+      "Description": ""
+    },
+    {
+      "ID": "63015000",
+      "Name": "63015000: Gesture \"Begging for Life\" (Book of \"Begging for Life\")",
+      "Description": ""
+    },
+    {
+      "ID": "63016000",
+      "Name": "63016000: Gesture \"Dogeza\" (Book of \"Dogeza\")",
+      "Description": ""
+    },
+    {
+      "ID": "63017000",
+      "Name": "63017000: Gesture \"Kekiziri\" (Book of \"Kekiziri\")",
+      "Description": ""
+    },
+    {
+      "ID": "63018000",
+      "Name": "63018000: Gesture \"Fist Pose\" (Book of \"Provocation\")",
+      "Description": ""
+    },
+    {
+      "ID": "63019000",
+      "Name": "63019000: Gesture \"Make fun of\" (Book of \"Make fun of\")",
+      "Description": ""
+    },
+    {
+      "ID": "63021000",
+      "Name": "63021000: Gesture \"Praise the Sun\" (Book of \"Praise the Sun\")",
+      "Description": ""
+    },
+    {
+      "ID": "64000000",
+      "Name": "64000000: Soul of the Curse (Soul of Vagrant)",
+      "Description": ""
+    },
+    {
+      "ID": "64010000",
+      "Name": "64010000: Soul of the last giant (Soul of the dead giant king)",
+      "Description": ""
+    },
+    {
+      "ID": "64020000",
+      "Name": "64020000: Dragoon Soul (Heavy Cavalry Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64030000",
+      "Name": "64030000: Old Dragon Slayer Soul (Soul of Ornstein)",
+      "Description": ""
+    },
+    {
+      "ID": "64040000",
+      "Name": "64040000: Executioner's Soul (Double-faced Warrior: Snake-headed Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64050000",
+      "Name": "64050000: Soul of the Hollow Guard (Soul of the Warrior in the Mirror)",
+      "Description": ""
+    },
+    {
+      "ID": "64060000",
+      "Name": "64060000: Soul of the Forgotten Sinner (Soul of the Forgotten Sinner)",
+      "Description": ""
+    },
+    {
+      "ID": "64070000",
+      "Name": "64070000: Executioner's Chariot Soul (Silver Chariot Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64080000",
+      "Name": "64080000: Skeleton King's Soul (Skeleton Noble Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64090000",
+      "Name": "64090000: Soul of Devouring Demon (Soul of Jabba the Hutt)",
+      "Description": ""
+    },
+    {
+      "ID": "64100000",
+      "Name": "64100000: Poison Queen Mida's Soul (Naga's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64110000",
+      "Name": "64110000: Molten Demon Soul (Demon Knight Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64120000",
+      "Name": "64120000: Soul of the Old Iron King (Soul of Molten Iron Demon)",
+      "Description": ""
+    },
+    {
+      "ID": "64130000",
+      "Name": "64130000: Soul of the Mouse King's vanguard (Dog Mouse: Soul of color ②)",
+      "Description": ""
+    },
+    {
+      "ID": "64140000",
+      "Name": "64140000: Rotten Soul (Butcher's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64150000",
+      "Name": "64150000: Soul of Najika the Scorpion (Soul of Man Scorpion♀)",
+      "Description": ""
+    },
+    {
+      "ID": "64160000",
+      "Name": "64160000: Soul of the Rat King's Trial (Giant Rat Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64170000",
+      "Name": "64170000: Public Freidia's Soul (Spider Queen's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64180000",
+      "Name": "64180000: Mirror Knight's Soul (Mirror Knight's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64190000",
+      "Name": "64190000: Singing Demon Soul (Singing Frog Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64200000",
+      "Name": "64200000: Verstad's Soul (Queen's Knight B's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64210000",
+      "Name": "64210000: King's Soul (Old King's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64220000",
+      "Name": "64220000: Guardian Dragon Soul (Wyvern Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64230000",
+      "Name": "64230000: Ancient Dragon Soul (Ancient Dragon Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64240000",
+      "Name": "64240000: Soul of the Giant King (Soul of the Giant King Living)",
+      "Description": ""
+    },
+    {
+      "ID": "64250000",
+      "Name": "64250000: Soul of Dunashandra (soul of queen's armor form)",
+      "Description": ""
+    },
+    {
+      "ID": "64260000",
+      "Name": "64260000: Soul of the Guardian of the Throne (Soul of Queen's Knight A)",
+      "Description": ""
+    },
+    {
+      "ID": "64270000",
+      "Name": "64270000: Soul of the Throne Watcher (Soul of Queen's Knight C)",
+      "Description": ""
+    },
+    {
+      "ID": "64280000",
+      "Name": "64280000: Soul of Darkness (Soul of Agaduran's Stand)",
+      "Description": ""
+    },
+    {
+      "ID": "64290000",
+      "Name": "64290000: Bellkeeper Gargoyle Soul (Gargoyle Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64300000",
+      "Name": "64300000: Old Witch's Soul (Izalith's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64310000",
+      "Name": "64310000: Old King's Soul (Gwyn's Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "64320000",
+      "Name": "64320000: Soul of the Old Dead (Soul of Nito)",
+      "Description": ""
+    },
+    {
+      "ID": "64330000",
+      "Name": "64330000: Old White Dragon Soul (Sheath Soul)",
+      "Description": ""
+    },
+    {
+      "ID": "900008182",
+      "Name": "Weapon color check",
+      "Description": ""
+    },
+    {
+      "ID": "900008183",
+      "Name": "Impact check",
+      "Description": ""
+    }
+  ]
+}

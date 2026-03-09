@@ -1,0 +1,32 @@
+{
+  "DisplayName": "SPELL_CATEGORY",
+  "Name": "SPELL_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Magic",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Miracle",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Magic",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Dark magic",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Dark miracle",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "DisplayName": "WEAPON_ATTACK_SE_CATEGORY",
+  "Name": "WEAPON_ATTACK_SE_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Sword type",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Extra large sword type",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Dagger type",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Fist type",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Ax type",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Hammer type",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Spear type",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Whip system",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Bow type",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Crossbow type",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Cane type",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Bell type",
+      "Description": ""
+    }
+  ]
+}

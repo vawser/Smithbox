@@ -1,0 +1,37 @@
+{
+  "DisplayName": "CHR_WET_ASPECT_PARAM_ID",
+  "Name": "CHR_WET_ASPECT_PARAM_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "水",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Poison wet",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Oily",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Steel",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "鏡",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Petrification",
+      "Description": ""
+    }
+  ]
+}

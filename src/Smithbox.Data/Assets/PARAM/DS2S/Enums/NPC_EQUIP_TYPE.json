@@ -1,0 +1,17 @@
+{
+  "DisplayName": "NPC_EQUIP_TYPE",
+  "Name": "NPC_EQUIP_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Specification of each equipment",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Integral molding",
+      "Description": ""
+    }
+  ]
+}

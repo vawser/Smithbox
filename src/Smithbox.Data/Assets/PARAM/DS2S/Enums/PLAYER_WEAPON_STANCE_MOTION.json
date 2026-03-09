@@ -1,0 +1,172 @@
+{
+  "DisplayName": "PLAYER_WEAPON_STANCE_MOTION",
+  "Name": "PLAYER_WEAPON_STANCE_MOTION",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "204110",
+      "Name": "Fist_one hand_stance",
+      "Description": ""
+    },
+    {
+      "ID": "204111",
+      "Name": "Fist_One hand_Stance_Torch",
+      "Description": ""
+    },
+    {
+      "ID": "204113",
+      "Name": "Fist_One hand_Position_Binoculars",
+      "Description": ""
+    },
+    {
+      "ID": "204310",
+      "Name": "Fist_both hands_position",
+      "Description": ""
+    },
+    {
+      "ID": "204610",
+      "Name": "Fist_Dual wielding both hands_Position",
+      "Description": ""
+    },
+    {
+      "ID": "214110",
+      "Name": "Dagger_one hand_position",
+      "Description": ""
+    },
+    {
+      "ID": "214310",
+      "Name": "Dagger_both hands_ready",
+      "Description": ""
+    },
+    {
+      "ID": "214610",
+      "Name": "Dagger_Two-handed two-handed stance",
+      "Description": ""
+    },
+    {
+      "ID": "244110",
+      "Name": "Double-edged sword_one-handed_position",
+      "Description": ""
+    },
+    {
+      "ID": "244310",
+      "Name": "Double-edged sword_both hands_stance",
+      "Description": ""
+    },
+    {
+      "ID": "254110",
+      "Name": "Spear_one hand_stance",
+      "Description": ""
+    },
+    {
+      "ID": "254310",
+      "Name": "Spear_both hands_stance",
+      "Description": ""
+    },
+    {
+      "ID": "254610",
+      "Name": "Spear_Dual wielding both hands_Standing",
+      "Description": ""
+    },
+    {
+      "ID": "294310",
+      "Name": "Straight sword_both hands_stance",
+      "Description": ""
+    },
+    {
+      "ID": "364110",
+      "Name": "Two handed ax _one handed_ stance",
+      "Description": ""
+    },
+    {
+      "ID": "364111",
+      "Name": "Two-handed ax_one hand_stance_thick weapon",
+      "Description": ""
+    },
+    {
+      "ID": "364210",
+      "Name": "Two-handed ax_two-handed one-handed_position",
+      "Description": ""
+    },
+    {
+      "ID": "364310",
+      "Name": "Two-handed ax_both hands_stance",
+      "Description": ""
+    },
+    {
+      "ID": "364311",
+      "Name": "Two-handed ax_two-handed_stance_thick weapon",
+      "Description": ""
+    },
+    {
+      "ID": "364610",
+      "Name": "Two-handed ax_two-handed two-handed_stance",
+      "Description": ""
+    },
+    {
+      "ID": "364611",
+      "Name": "Two-handed ax_Two-handed two-handed_Stance_Thick weapon",
+      "Description": ""
+    },
+    {
+      "ID": "404110",
+      "Name": "Two-handed bow_one-handed_position",
+      "Description": ""
+    },
+    {
+      "ID": "404310",
+      "Name": "Two-handed bow_both hands_stance",
+      "Description": ""
+    },
+    {
+      "ID": "414110",
+      "Name": "Two-handed longbow _one hand_ stance",
+      "Description": ""
+    },
+    {
+      "ID": "414310",
+      "Name": "Two-handed longbow_both hands_stance",
+      "Description": ""
+    },
+    {
+      "ID": "424110",
+      "Name": "One-handed bow_one-handed_stance",
+      "Description": ""
+    },
+    {
+      "ID": "424310",
+      "Name": "One-handed bow_both hands_stance",
+      "Description": ""
+    },
+    {
+      "ID": "424610",
+      "Name": "One-handed bow_two-handed two-handed stance",
+      "Description": ""
+    },
+    {
+      "ID": "444310",
+      "Name": "Small shield_both hands_stance",
+      "Description": ""
+    },
+    {
+      "ID": "454110",
+      "Name": "Medium shield_one hand_stance",
+      "Description": ""
+    },
+    {
+      "ID": "454310",
+      "Name": "Medium shield_both hands_stance",
+      "Description": ""
+    },
+    {
+      "ID": "464310",
+      "Name": "Large shield_both hands_stance",
+      "Description": ""
+    },
+    {
+      "ID": "464610",
+      "Name": "Large shield_two-handed_stance",
+      "Description": ""
+    }
+  ]
+}

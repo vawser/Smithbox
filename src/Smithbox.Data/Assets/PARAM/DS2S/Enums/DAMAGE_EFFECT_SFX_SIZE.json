@@ -1,0 +1,37 @@
+{
+  "DisplayName": "DAMAGE_EFFECT_SFX_SIZE",
+  "Name": "DAMAGE_EFFECT_SFX_SIZE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "-",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Small",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Medium",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Large",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Extra large",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Extra extra large",
+      "Description": ""
+    }
+  ]
+}

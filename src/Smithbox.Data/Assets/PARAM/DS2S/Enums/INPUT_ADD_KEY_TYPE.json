@@ -1,0 +1,27 @@
+{
+  "DisplayName": "INPUT_ADD_KEY_TYPE",
+  "Name": "INPUT_ADD_KEY_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": " ",
+      "Description": ""
+    },
+    {
+      "ID": "82",
+      "Name": "+ Ctrl",
+      "Description": ""
+    },
+    {
+      "ID": "95",
+      "Name": "+ Shift",
+      "Description": ""
+    },
+    {
+      "ID": "109",
+      "Name": "+ Alt",
+      "Description": ""
+    }
+  ]
+}

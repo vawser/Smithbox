@@ -1,0 +1,112 @@
+{
+  "DisplayName": "PLAYER_ITEM_USE_MOTION",
+  "Name": "PLAYER_ITEM_USE_MOTION",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "10",
+      "Name": "Take out (one hand)",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Take out (both hands)",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Sprinkle powder on body",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Eating: Ladder allowed",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Drinking: Ladder allowed",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Crush the soul: Ladder possible",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Paint on weapon",
+      "Description": ""
+    },
+    {
+      "ID": "80",
+      "Name": "Prayer",
+      "Description": ""
+    },
+    {
+      "ID": "90",
+      "Name": "Absorb a big soul",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Throw (light)",
+      "Description": ""
+    },
+    {
+      "ID": "110",
+      "Name": "Throw (weight)",
+      "Description": ""
+    },
+    {
+      "ID": "150",
+      "Name": "Draw a sign",
+      "Description": ""
+    },
+    {
+      "ID": "170",
+      "Name": "Failure: ladder possible",
+      "Description": ""
+    },
+    {
+      "ID": "180",
+      "Name": "Put",
+      "Description": ""
+    },
+    {
+      "ID": "190",
+      "Name": "Press against chest: Ladder possible",
+      "Description": ""
+    },
+    {
+      "ID": "200",
+      "Name": "Drink est",
+      "Description": ""
+    },
+    {
+      "ID": "210",
+      "Name": "Prayer (loop)",
+      "Description": ""
+    },
+    {
+      "ID": "220",
+      "Name": "Light a torch",
+      "Description": ""
+    },
+    {
+      "ID": "230",
+      "Name": "Dragon transformation",
+      "Description": ""
+    },
+    {
+      "ID": "240",
+      "Name": "Dragon breath",
+      "Description": ""
+    },
+    {
+      "ID": "250",
+      "Name": "Dragon roar",
+      "Description": ""
+    }
+  ]
+}

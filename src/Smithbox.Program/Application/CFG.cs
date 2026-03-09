@@ -90,10 +90,10 @@ public class CFG
 
     // Metadata
     public bool Project_Enable_Param_Meta_Override = false;
-    public bool Project_Enable_Param_Meta_Addition = false;
+    public bool Project_Enable_Param_Meta_Addition = true;
 
     public bool Project_Enable_Param_Enum_Override = false;
-    public bool Project_Enable_Param_Enum_Addition = false;
+    public bool Project_Enable_Param_Enum_Addition = true;
 
     public bool Project_Enable_Param_Category_Override = false;
     public bool Project_Enable_Param_Category_Addition = true;

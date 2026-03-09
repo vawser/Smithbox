@@ -1,0 +1,97 @@
+{
+  "DisplayName": "WEAPON_ACTION_CONTROL_TYPES",
+  "Name": "WEAPON_ACTION_CONTROL_TYPES",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Melee attack [on the spot]",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Melee attack [pursuit turn]",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Melee attack [direction change]",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Melee attack [Shield ready]",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Melee attack [Shield stance possible & turning homing]",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Melee attack [Turning & tracking not possible]",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Melee attack [Jump]",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Shooting attack [two-handed bow]",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Shooting attack [two-handed longbow]",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Shooting attack [one-handed crossbow]",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Shooting attack [dual wield two-handed crossbow]",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Spell",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Guard",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Parry",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Two-handed",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Precision shooting",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Binoculars",
+      "Description": ""
+    }
+  ]
+}

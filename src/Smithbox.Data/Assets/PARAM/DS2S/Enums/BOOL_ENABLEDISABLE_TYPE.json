@@ -1,0 +1,17 @@
+{
+  "DisplayName": "BOOL_ENABLEDISABLE_TYPE",
+  "Name": "BOOL_ENABLEDISABLE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Disable",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Enable",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "DisplayName": "EVENT_FLAG_ITEM",
+  "Name": "EVENT_FLAG_ITEM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "63030100",
+      "Name": "[Treasure Corpse] Barely visible from the E3 starting point《ID:63030100》",
+      "Description": ""
+    }
+  ]
+}

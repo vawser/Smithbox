@@ -1,0 +1,47 @@
+{
+  "DisplayName": "EVENT_VALUE_m10_04_00_00",
+  "Name": "EVENT_VALUE_m10_04_00_00",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "57",
+      "Name": "Miracle Worker: Revolving Door Behavior Setting",
+      "Description": ""
+    },
+    {
+      "ID": "58",
+      "Name": "Seikyo: Immigrant count",
+      "Description": ""
+    },
+    {
+      "ID": "59",
+      "Name": "Pledge: Seikyo: Current pledge rank",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Current number of bonfires lit",
+      "Description": ""
+    },
+    {
+      "ID": "61",
+      "Name": "Pledge: Strong: Current pledge rank",
+      "Description": ""
+    },
+    {
+      "ID": "62",
+      "Name": "Armor shop: Armor placement: Quantity setting",
+      "Description": ""
+    },
+    {
+      "ID": "63",
+      "Name": "Armor shop: Armor placement: Counter",
+      "Description": ""
+    }
+  ]
+}

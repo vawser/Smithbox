@@ -1,0 +1,182 @@
+{
+  "DisplayName": "DAMAGE_EFFECT_MATERIAL",
+  "Name": "DAMAGE_EFFECT_MATERIAL",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "(No setting)",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Iron",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Heavy iron",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Tree",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Water",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Swamp",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Wood",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Flesh of the living",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Corpse meat",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Insect",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Giant",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Bone",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Copper",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Energy",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Flame",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Lightning",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Darkness",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Magic power",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Stone",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Soil",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Carpet",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Grass",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Gravel",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Cloth",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Sand",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Ash",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Poisonous swamp",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Oil",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Coal tar",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Lava",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Spider thread",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "Sulfur crystals",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Soul",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "Frog",
+      "Description": ""
+    }
+  ]
+}

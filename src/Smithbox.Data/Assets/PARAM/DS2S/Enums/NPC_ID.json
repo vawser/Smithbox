@@ -1,0 +1,1027 @@
+{
+  "DisplayName": "NPC_ID",
+  "Name": "NPC_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Prohibited from use",
+      "Description": ""
+    },
+    {
+      "ID": "700500",
+      "Name": "C700500:Dragon Shrine Maiden_In-game use: Madura",
+      "Description": ""
+    },
+    {
+      "ID": "700501",
+      "Name": "C700501: Dragon Shrine Maiden_In-game use: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "700502",
+      "Name": "C700502:Dragon Shrine Maiden_In-game: Ojo Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "700503",
+      "Name": "C700503: Dragon Shrine Maiden_In-game: Immortal Shrine",
+      "Description": ""
+    },
+    {
+      "ID": "700504",
+      "Name": "C700504:Dragon Shrine Maiden_In-game: Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "701500",
+      "Name": "C701500:Dragon Shrine Maiden (Child)_In-game use: Hall of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "703600",
+      "Name": "C703600: New Queen: Castle Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "704500",
+      "Name": "C704500: Ladder shop_In-game use: Tamari no Tani (also used for Madura)",
+      "Description": ""
+    },
+    {
+      "ID": "704501",
+      "Name": "C704501: Ladder shop_In-game use: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "704510",
+      "Name": "C704510:Ladder shop_For cutscene: Valley of the pool",
+      "Description": ""
+    },
+    {
+      "ID": "705000",
+      "Name": "C705000: Retired Firekeeper 1_For cutscenes: Gap Cave",
+      "Description": ""
+    },
+    {
+      "ID": "705100",
+      "Name": "C705100: Retired Firekeeper 2_For cutscenes: Gap Cave",
+      "Description": ""
+    },
+    {
+      "ID": "705300",
+      "Name": "C705300: Retired Firekeeper 4_For cutscenes: Gap Cave",
+      "Description": ""
+    },
+    {
+      "ID": "705500",
+      "Name": "C705500: Retired Firekeeper 1_In-game use: Gap Cave",
+      "Description": ""
+    },
+    {
+      "ID": "705501",
+      "Name": "C705501: Retired Firekeeper 1_In-game use: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "705600",
+      "Name": "C705600: Retired Firekeeper 2_In-game use: Gap Cave",
+      "Description": ""
+    },
+    {
+      "ID": "705601",
+      "Name": "C705601: Retired Firekeeper 2_In-game use: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "705800",
+      "Name": "C705800: Retired Firekeeper 3_In-game use: Gap Cave",
+      "Description": ""
+    },
+    {
+      "ID": "705801",
+      "Name": "C705801: Retired Firekeeper 3_In-game use: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "721100",
+      "Name": "C721100: Spirit of the Prime Minister: Royal Castle Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "723000",
+      "Name": "C723000: Housekeeper: Gap Hole",
+      "Description": ""
+    },
+    {
+      "ID": "723001",
+      "Name": "C723001: Housekeeper: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "723010",
+      "Name": "C723010:Housekeeper_For cutscene: Gap cave",
+      "Description": ""
+    },
+    {
+      "ID": "724000",
+      "Name": "C724000:Kingdom Captain: Giant's Memory",
+      "Description": ""
+    },
+    {
+      "ID": "724001",
+      "Name": "C724001: Kingdom Captain: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "724002",
+      "Name": "C724002:Kingdom Captain: White Spirit: Giant's Memory",
+      "Description": ""
+    },
+    {
+      "ID": "725000",
+      "Name": "C725000: Pilgrim of the Abyss: Forest of Hollow Shadows",
+      "Description": ""
+    },
+    {
+      "ID": "725001",
+      "Name": "C725001: Pilgrim of the Abyss: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "725002",
+      "Name": "C725002: Pilgrim of the Abyss: Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "725003",
+      "Name": "C725003: Pilgrim of the Abyss: Royal Castle Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "726000",
+      "Name": "C726000:Dwarf Governance: Gap Cave",
+      "Description": ""
+    },
+    {
+      "ID": "726001",
+      "Name": "C726001:Dwarf Governance: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "726002",
+      "Name": "C726002:Dwarf Governance: Valley of the Pool",
+      "Description": ""
+    },
+    {
+      "ID": "726003",
+      "Name": "C726003:Dwarf Governance: Hidden Port",
+      "Description": ""
+    },
+    {
+      "ID": "726004",
+      "Name": "C726004:Dwarf Governance: Doorway of Pharos",
+      "Description": ""
+    },
+    {
+      "ID": "726005",
+      "Name": "C726005:Dwarf Governance: Scum bottom",
+      "Description": ""
+    },
+    {
+      "ID": "726006",
+      "Name": "C726006:Dwarf Gabalan: Altar of Amana",
+      "Description": ""
+    },
+    {
+      "ID": "730000",
+      "Name": "C730000:Mirror Knight servant 1_Extra large sword: Mirror Knight battle",
+      "Description": ""
+    },
+    {
+      "ID": "730001",
+      "Name": "C730001:Mirror Knight's Servant 1_Oversized Sword: Hall of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "731010",
+      "Name": "C731010: Mirror Knight's servant 2_Two-handed long ax: Mirror Knight battle",
+      "Description": ""
+    },
+    {
+      "ID": "731011",
+      "Name": "C731011: Mirror Knight's servant 2_Two-handed long ax: Hall of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "732000",
+      "Name": "C732000: Sorcerer's Sinner 1: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "733000",
+      "Name": "C733000: Sorcerer's Sinner 2: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "741000",
+      "Name": "C741000: Broken Blue Sect Warrior: Madura",
+      "Description": ""
+    },
+    {
+      "ID": "741001",
+      "Name": "C741001: Broken Blue Sect Warrior: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "742000",
+      "Name": "C742000:Wandering Warrior One-Handed Ax: Shining Stone Town Geldra",
+      "Description": ""
+    },
+    {
+      "ID": "742001",
+      "Name": "C742001: Wandering Warrior: Ghost: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "742002",
+      "Name": "C742002: Wandering Warrior One-handed Ax: Hollow Shadow Forest",
+      "Description": ""
+    },
+    {
+      "ID": "742003",
+      "Name": "C742003: Wandering Warrior One-handed Ax: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "743000",
+      "Name": "C743000:Moonlight Old Man: Fallen Giant Forest",
+      "Description": ""
+    },
+    {
+      "ID": "743001",
+      "Name": "C743001:Moonlight Old Man: Ghost: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "743002",
+      "Name": "C743002:Moonlight Old Man: Hollow Shadow Forest",
+      "Description": ""
+    },
+    {
+      "ID": "743003",
+      "Name": "C743003:Moonlight Old Man: Royal Castle Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "743004",
+      "Name": "C743004:Moonlight Old Man: Giant's Memory",
+      "Description": ""
+    },
+    {
+      "ID": "743006",
+      "Name": "C743006: Moonlight Old Man: White Spirit: For Mirror Knight",
+      "Description": ""
+    },
+    {
+      "ID": "743007",
+      "Name": "C743007: Moonlight Old Man: White Spirit: For final boss",
+      "Description": ""
+    },
+    {
+      "ID": "743008",
+      "Name": "C743008:Moonlight Old Man: White Spirit: Giant's Memory",
+      "Description": ""
+    },
+    {
+      "ID": "743009",
+      "Name": "C743009:Moonlight Old Man: White Spirit: Shining Stone Town Geldra",
+      "Description": ""
+    },
+    {
+      "ID": "744000",
+      "Name": "C744000: Patch: Forest of Fallen Giants",
+      "Description": ""
+    },
+    {
+      "ID": "744001",
+      "Name": "C744001: Patch: Ghost: General",
+      "Description": ""
+    },
+    {
+      "ID": "744002",
+      "Name": "C744002: Patch: Geldra",
+      "Description": ""
+    },
+    {
+      "ID": "744003",
+      "Name": "C744003: Patch: Valley of Dams",
+      "Description": ""
+    },
+    {
+      "ID": "744009",
+      "Name": "C744009: Patch: White Spirit: Forest of Fallen Giants",
+      "Description": ""
+    },
+    {
+      "ID": "751000",
+      "Name": "C751000: Map drawing: Forest of the Decayed Giant (also used for Madura)",
+      "Description": ""
+    },
+    {
+      "ID": "751001",
+      "Name": "C751001: Cartographer: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "752000",
+      "Name": "C752000:Female Knight Akertira: Hall of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "752001",
+      "Name": "C752001:Female Knight Arkertilla: Ghost: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "752002",
+      "Name": "C752002:Female Knight Akertira: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "752003",
+      "Name": "C752003:Female Knight Akertira: Valley of the Pool",
+      "Description": ""
+    },
+    {
+      "ID": "752004",
+      "Name": "C752004:Female Knight Akertira: Hidden Port",
+      "Description": ""
+    },
+    {
+      "ID": "752005",
+      "Name": "C752005:Female Knight Arkertilla: Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "752006",
+      "Name": "C752006:Female Knight Arkertilla: White Spirit: Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "752007",
+      "Name": "C752007:Female Knight Akertilla: White Spirit: Melted Iron Castle",
+      "Description": ""
+    },
+    {
+      "ID": "752008",
+      "Name": "C752008:Female Knight Arkertilla: White Spirit: Hidden Port",
+      "Description": ""
+    },
+    {
+      "ID": "752009",
+      "Name": "C752009:Female Knight Akertilla: White Spirit: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "753000",
+      "Name": "C753000: Bell Keeper: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "753001",
+      "Name": "C753001: Bell Keeper: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "753002",
+      "Name": "C753002: Bell Keeper: Melted Iron Castle",
+      "Description": ""
+    },
+    {
+      "ID": "753003",
+      "Name": "C753003: Bell Keeper: Zako: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "753004",
+      "Name": "C753004: Bell Keeper: Zako: Molten Iron Castle",
+      "Description": ""
+    },
+    {
+      "ID": "753008",
+      "Name": "C753008: Bell Keeper: Dark Spirit: Molten Iron Castle",
+      "Description": ""
+    },
+    {
+      "ID": "753009",
+      "Name": "C753009: Bell Keeper: Dark Spirit: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "754000",
+      "Name": "C754000: Yorozu Hag: Forest of the Decayed Giant (also used as Madura)",
+      "Description": ""
+    },
+    {
+      "ID": "754001",
+      "Name": "C754001:Various old hag: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "760000",
+      "Name": "C760000: Bard Girl 1: Altar of Amana",
+      "Description": ""
+    },
+    {
+      "ID": "760001",
+      "Name": "C760001: Bard Girl 1: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "760100",
+      "Name": "C760100: Bard Girl 2: Altar of Amana",
+      "Description": ""
+    },
+    {
+      "ID": "760101",
+      "Name": "C760101: Bard Girl 2: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "760200",
+      "Name": "C760200: Prisoner Girl: Castle Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "760201",
+      "Name": "C760201: Prisoner Girl: Ghost: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "761000",
+      "Name": "C761000: Armor shop: Madura",
+      "Description": ""
+    },
+    {
+      "ID": "761001",
+      "Name": "C761001: Armor shop: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "762000",
+      "Name": "C762000:Material shop: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "762001",
+      "Name": "C762001: Material shop: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "762002",
+      "Name": "C762002:Material store: Madura",
+      "Description": ""
+    },
+    {
+      "ID": "763000",
+      "Name": "C763000: Jujutsuya: Hollow Shadow Forest (also used as Madura)",
+      "Description": ""
+    },
+    {
+      "ID": "763001",
+      "Name": "C763001: Sorcerer: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "764000",
+      "Name": "C764000:Blacksmith: Hammer & Fire Scissors: Madura",
+      "Description": ""
+    },
+    {
+      "ID": "764001",
+      "Name": "C764001:Blacksmith: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "764300",
+      "Name": "C764300:EX Blacksmith: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "764309",
+      "Name": "C764309:EX Blacksmith: Ghost: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "766000",
+      "Name": "C766000: Magician: Hidden Port (also used as Madura)",
+      "Description": ""
+    },
+    {
+      "ID": "766001",
+      "Name": "C766001: Magician: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "768000",
+      "Name": "C768000: Spellmania: Prison of Oblivion",
+      "Description": ""
+    },
+    {
+      "ID": "768001",
+      "Name": "C768001: Spellmania: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "769000",
+      "Name": "C769000: Miracle Man Leash: Heide Great Fire Tower (also used for Madura)",
+      "Description": ""
+    },
+    {
+      "ID": "769001",
+      "Name": "C769001: Miracle Man Leash: Ghost: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "770000",
+      "Name": "C770000: Dark Magician: Staff: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "770001",
+      "Name": "C770001: Dark Magician: Ghost: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "771000",
+      "Name": "C771000:The Contained: Hall of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "771001",
+      "Name": "C771001: Contained person: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "771004",
+      "Name": "C771004: Sealed Person: Dark Spirit: Royal Castle Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "771005",
+      "Name": "C771005: Sealed person: Dark spirit: Scum bottom",
+      "Description": ""
+    },
+    {
+      "ID": "771006",
+      "Name": "C771006: Sealed Person: Dark Spirit: Hollow Shadow Forest",
+      "Description": ""
+    },
+    {
+      "ID": "771007",
+      "Name": "C771007: Contained Person: Dark Spirit: Mansion of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "771009",
+      "Name": "C771009: Contained Person: Dark Spirit: Luminous Stone City Geldra",
+      "Description": ""
+    },
+    {
+      "ID": "771010",
+      "Name": "C771010: Sealed Person: Dark Spirit: Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "772000",
+      "Name": "C772000:Curious item shop: Melted Iron Castle",
+      "Description": ""
+    },
+    {
+      "ID": "772001",
+      "Name": "C772001: Curiosities shop: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "776000",
+      "Name": "C776000:Top Weapon Shop: Bird Goal: Shinsekigai Geldra",
+      "Description": ""
+    },
+    {
+      "ID": "776001",
+      "Name": "C776001: Top Weapon Shop: Bird Goal: Ghost: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "776002",
+      "Name": "C776002:Top Weapon Shop: Birdgoal: Hollow Shadow Forest",
+      "Description": ""
+    },
+    {
+      "ID": "777000",
+      "Name": "C777000:Cat: Madura",
+      "Description": ""
+    },
+    {
+      "ID": "783000",
+      "Name": "C783000:Black Phantom Shop: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "783001",
+      "Name": "C783001: Black Phantom Shop: Ghost: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "784000",
+      "Name": "C784000: Chaplain of Indulgence: Geldra, Shinsekigai",
+      "Description": ""
+    },
+    {
+      "ID": "784001",
+      "Name": "C784001: Chaplain of Absolution: Ghost: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "785000",
+      "Name": "C785000: Guardian Knight: Two-handed long ax & medium shield: Heide Great Fire Tower",
+      "Description": ""
+    },
+    {
+      "ID": "785001",
+      "Name": "C785001: Guardian Knight: Ghost: General Purpose",
+      "Description": ""
+    },
+    {
+      "ID": "786000",
+      "Name": "C786000: Kirakira Musume: General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "805000",
+      "Name": "C805000: Cutscene player",
+      "Description": ""
+    },
+    {
+      "ID": "810000",
+      "Name": "C810000: Multiplayer NPC: Swordsman (male): Red Phantom: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "810001",
+      "Name": "C810001: Multi NPC: Swordsman (male): White Spirit: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "810002",
+      "Name": "C810002: Multiplayer NPC: Swordsman (male): Bellkeeper area",
+      "Description": ""
+    },
+    {
+      "ID": "810003",
+      "Name": "C810003: Multi NPC: Swordsman (male): White Spirit: Heide Great Fire Tower",
+      "Description": ""
+    },
+    {
+      "ID": "811000",
+      "Name": "C811000: Multiplayer NPC: Archer (male): White Spirit: Scum bottom",
+      "Description": ""
+    },
+    {
+      "ID": "812000",
+      "Name": "C812000: Multiplayer NPC: Sage (female): White Spirit: Forgotten Prison",
+      "Description": ""
+    },
+    {
+      "ID": "812001",
+      "Name": "C812001:Multi NPC: Sage (female): White Spirit: Shining Stone Town Geldra",
+      "Description": ""
+    },
+    {
+      "ID": "813000",
+      "Name": "C813000: Multiplayer NPC: Lancer (female): White Spirit: Altar of Amana",
+      "Description": ""
+    },
+    {
+      "ID": "814000",
+      "Name": "C814000: Multiplayer NPC: Flesh Cut (Female): White Spirit: Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "814008",
+      "Name": "C814008:Multi NPC: Flesh Cut (Female): Dark Spirit: Royal Castle Drangraig",
+      "Description": ""
+    },
+    {
+      "ID": "814009",
+      "Name": "C814009:Multi NPC: Flesh Cut (Female): Dark Spirit: Scum Bottom",
+      "Description": ""
+    },
+    {
+      "ID": "820000",
+      "Name": "C820000: Multiplayer NPC: Spearman (male): Dark Spirit: Forgotten Prison",
+      "Description": ""
+    },
+    {
+      "ID": "821000",
+      "Name": "C821000: Multiplayer NPC: Grim Reaper (female): Dark Spirit: Hunting Forest",
+      "Description": ""
+    },
+    {
+      "ID": "821001",
+      "Name": "C821001: Multiplayer NPC: Grim Reaper (female): Dark Spirit: Mansion of An Deal",
+      "Description": ""
+    },
+    {
+      "ID": "822000",
+      "Name": "C822000: Multiplayer NPC: Mage (male): Dark Spirit: Doorway of Pharos",
+      "Description": ""
+    },
+    {
+      "ID": "822001",
+      "Name": "C822001:Multi NPC: Mage (male): Ash Spirit: Saint Tomb",
+      "Description": ""
+    },
+    {
+      "ID": "822002",
+      "Name": "C822002:Multi NPC: Mage (male): Dark Spirit: Immortal Shrine",
+      "Description": ""
+    },
+    {
+      "ID": "822003",
+      "Name": "C822003: Multiplayer NPC: Mage (male): Dark Spirit: Altar of Amana",
+      "Description": ""
+    },
+    {
+      "ID": "823000",
+      "Name": "C823000: Multiplayer NPC: Ancient Dragon Swordsman (Male): Dark Spirit: Guardian Dragon's Nest",
+      "Description": ""
+    },
+    {
+      "ID": "824000",
+      "Name": "C824000: Multiplayer NPC: Female swordsman's brother: Dark spirit: Andir",
+      "Description": ""
+    },
+    {
+      "ID": "831000",
+      "Name": "C831000:Saint's Tomb: Abandoned Saint",
+      "Description": ""
+    },
+    {
+      "ID": "831100",
+      "Name": "C831100:Saint's Tomb: Saint's Knight",
+      "Description": ""
+    },
+    {
+      "ID": "832000",
+      "Name": "C832000: Old Dark Pit: Abyssal Spirit 1: Sniper",
+      "Description": ""
+    },
+    {
+      "ID": "832100",
+      "Name": "C832100: Old Dark Pit: Abyssal Spirit 2: Axman",
+      "Description": ""
+    },
+    {
+      "ID": "832200",
+      "Name": "C832200: Old Dark Hole: Abyssal Spirit 3: Huang Yifu",
+      "Description": ""
+    },
+    {
+      "ID": "832300",
+      "Name": "C832300: Old Dark Hole: Abyssal Spirit 4: Yellow Robe Wife",
+      "Description": ""
+    },
+    {
+      "ID": "832400",
+      "Name": "C832400: Old Dark Hole: Abyssal Spirit 5: Traveler",
+      "Description": ""
+    },
+    {
+      "ID": "832500",
+      "Name": "C832500: Old Dark Hole: Abyssal Spirit 6: Knight",
+      "Description": ""
+    },
+    {
+      "ID": "832600",
+      "Name": "C832600: Old Dark Hole: Abyssal Spirit 7: Heavy Warrior",
+      "Description": ""
+    },
+    {
+      "ID": "832700",
+      "Name": "C832700: Old Dark Hole: Abyssal Spirit 8: Queen",
+      "Description": ""
+    },
+    {
+      "ID": "833000",
+      "Name": "C833000: Amana Altar: Cannibal Chief",
+      "Description": ""
+    },
+    {
+      "ID": "835000",
+      "Name": "C835000: Shrine: Dragon Knight: Dual Wield",
+      "Description": ""
+    },
+    {
+      "ID": "835001",
+      "Name": "C835001: Anne Deal's House: Painting Keeper (Female)",
+      "Description": ""
+    },
+    {
+      "ID": "835100",
+      "Name": "C835100: Shrine: Dragon Knight: One-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "835200",
+      "Name": "C835200: Shrine: Dragon Knight: Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "836000",
+      "Name": "C836000: Melted Iron Fortress: Samurai Sorcerer: 2nd round",
+      "Description": ""
+    },
+    {
+      "ID": "836100",
+      "Name": "C836100: Melted Iron Fortress: Bell Keeper 1: Extra Large Sword & Large Shield",
+      "Description": ""
+    },
+    {
+      "ID": "836200",
+      "Name": "C836200: Melted Iron Fortress: Bell Keeper 2: Crossbow & Crossbow",
+      "Description": ""
+    },
+    {
+      "ID": "836300",
+      "Name": "C836300: Melted Iron Fortress: Bell Keeper 3: Staff & Spear",
+      "Description": ""
+    },
+    {
+      "ID": "836400",
+      "Name": "C836400: Melted Iron Fortress: Light Heavy Soldier",
+      "Description": ""
+    },
+    {
+      "ID": "837000",
+      "Name": "C837000:Gap Cave: 2nd round hunting",
+      "Description": ""
+    },
+    {
+      "ID": "837100",
+      "Name": "C837100:Gap Cave: Proximity",
+      "Description": ""
+    },
+    {
+      "ID": "837200",
+      "Name": "C837200:Gap Cave: Shooting",
+      "Description": ""
+    },
+    {
+      "ID": "838000",
+      "Name": "C838000:Hollow Shadow Forest: Phantom Enemy 1",
+      "Description": ""
+    },
+    {
+      "ID": "838100",
+      "Name": "C838100:Hollow Shadow Forest: Phantom Enemy 2",
+      "Description": ""
+    },
+    {
+      "ID": "840000",
+      "Name": "C840000: Dummy NPC for Conqueror's Pledge",
+      "Description": ""
+    },
+    {
+      "ID": "841000",
+      "Name": "C841000: Dummy NPC for solar pledge",
+      "Description": ""
+    },
+    {
+      "ID": "842000",
+      "Name": "C842000:Rotten Giant's Forest: In front of the King's Door: 2nd lap Red Spirit 1",
+      "Description": ""
+    },
+    {
+      "ID": "843000",
+      "Name": "C843000:Rotten Giant's Forest: In front of the King's Door: 2nd lap Red Spirit 2",
+      "Description": ""
+    },
+    {
+      "ID": "844000",
+      "Name": "C844000:Rotten Giant's Forest: Fissure Square: 2nd lap Red Spirit 3",
+      "Description": ""
+    },
+    {
+      "ID": "845000",
+      "Name": "C845000:Rotten Giant Forest: 2nd round dark spirit",
+      "Description": ""
+    },
+    {
+      "ID": "846000",
+      "Name": "C846000: Shining Stone City Geldra: Dark Spirit",
+      "Description": ""
+    },
+    {
+      "ID": "847000",
+      "Name": "C847000: Heide Great Fire Tower: 2nd round Dark Spirit 1",
+      "Description": ""
+    },
+    {
+      "ID": "847100",
+      "Name": "C847100:Heide Great Fire Tower: 2nd round Dark Spirit 2",
+      "Description": ""
+    },
+    {
+      "ID": "848000",
+      "Name": "C848000: Immortal Temple: 2nd round dark spirit 1",
+      "Description": ""
+    },
+    {
+      "ID": "848100",
+      "Name": "C848100: Immortal Temple: Dark Spirit 2 (Ghost)",
+      "Description": ""
+    },
+    {
+      "ID": "849000",
+      "Name": "C849000: Castle Drangraig: Dark Spirit 1 (Ghost)",
+      "Description": ""
+    },
+    {
+      "ID": "849001",
+      "Name": "C849001: Immortal Temple: Dark Spirit 1 (Ghost)",
+      "Description": ""
+    },
+    {
+      "ID": "849100",
+      "Name": "C849100: Clown: Hakurei: Tamari no Tani",
+      "Description": ""
+    },
+    {
+      "ID": "849200",
+      "Name": "C849200:Saint's Tomb: Dark Spirit 3 (Transparent Armor)",
+      "Description": ""
+    },
+    {
+      "ID": "850000",
+      "Name": "C850000: Hall of An Deal: 2nd round dark spirit",
+      "Description": ""
+    },
+    {
+      "ID": "851000",
+      "Name": "C851000:Tani no Tani: Dark Spirit",
+      "Description": ""
+    },
+    {
+      "ID": "852000",
+      "Name": "C852000: Hunting Forest: Red Spirit Level 3",
+      "Description": ""
+    },
+    {
+      "ID": "853000",
+      "Name": "C853000: Pharos Doorway: Dual Wielding Avelin: Dark Spirit",
+      "Description": ""
+    },
+    {
+      "ID": "853100",
+      "Name": "C853100: Shining Stone City Geldra: Leroy: White Spirit",
+      "Description": ""
+    },
+    {
+      "ID": "853200",
+      "Name": "C853200: Royal Castle Drangraig: 2nd lap Dark Spirit 1",
+      "Description": ""
+    },
+    {
+      "ID": "853300",
+      "Name": "C853300: Royal Castle Drangraig: 2nd lap Dark Spirit 2",
+      "Description": ""
+    },
+    {
+      "ID": "853400",
+      "Name": "C853400: Royal Castle Drangraig: 2nd lap Dark Spirit 3",
+      "Description": ""
+    },
+    {
+      "ID": "853500",
+      "Name": "C853500: Royal Castle Drangraig: Dark Spirit Key Keeper",
+      "Description": ""
+    },
+    {
+      "ID": "854000",
+      "Name": "C854000: Hidden Port: Dark Spirit (Darth Maul)",
+      "Description": ""
+    },
+    {
+      "ID": "855000",
+      "Name": "C855000: Geldra-: Talking Treasure Chest",
+      "Description": ""
+    },
+    {
+      "ID": "890000",
+      "Name": "C890000: For player control test",
+      "Description": ""
+    }
+  ]
+}

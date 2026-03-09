@@ -1,0 +1,22 @@
+{
+  "DisplayName": "MOVEMENT_ACTION_SUPPORT_TYPE",
+  "Name": "MOVEMENT_ACTION_SUPPORT_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Ground/Air",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Ground only",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Air only",
+      "Description": ""
+    }
+  ]
+}

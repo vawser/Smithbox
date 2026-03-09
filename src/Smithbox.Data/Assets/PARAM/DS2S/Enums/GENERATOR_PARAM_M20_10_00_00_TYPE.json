@@ -1,0 +1,257 @@
+{
+  "DisplayName": "GENERATOR_PARAM_M20_10_00_00_TYPE",
+  "Name": "GENERATOR_PARAM_M20_10_00_00_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "30",
+      "Name": "[Kingdom Captain] NPC memory 1",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "[Kingdom Captain] NPC Memory 3",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "[Kingdom Captain] NPC (Ghost)",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "[Moonlight Old Man] NPC",
+      "Description": ""
+    },
+    {
+      "ID": "61",
+      "Name": "[Moonlight Old Man] NPC (ghost)",
+      "Description": ""
+    },
+    {
+      "ID": "800",
+      "Name": "[BOSS] New Titan Senior Soldier (Deceased)",
+      "Description": ""
+    },
+    {
+      "ID": "1000",
+      "Name": "Kingdom soldier (living): Battle in the tunnel 1",
+      "Description": ""
+    },
+    {
+      "ID": "1001",
+      "Name": "Kingdom soldier (living): Battle in the tunnel 2",
+      "Description": ""
+    },
+    {
+      "ID": "1100",
+      "Name": "Titan senior soldier (giant): Dual sword style_Piazza 1 at the end of the tunnel",
+      "Description": ""
+    },
+    {
+      "ID": "1110",
+      "Name": "Kingdom soldier (living): Plaza 2 at the end of the tunnel",
+      "Description": ""
+    },
+    {
+      "ID": "1111",
+      "Name": "Kingdom soldier (living): Square at the end of the tunnel 3",
+      "Description": ""
+    },
+    {
+      "ID": "1200",
+      "Name": "Giant Junior Soldier (Titan): Bare Hands_Beyond the Arc de Triomphe 1",
+      "Description": ""
+    },
+    {
+      "ID": "1210",
+      "Name": "Kingdom Soldier (living): Beyond the Arc de Triomphe 2",
+      "Description": ""
+    },
+    {
+      "ID": "1211",
+      "Name": "Kingdom Soldier (living): Beyond the Arc de Triomphe 3",
+      "Description": ""
+    },
+    {
+      "ID": "1220",
+      "Name": "Kingdom soldier (living): Bow: Confronting the fireball giant on the roof 1",
+      "Description": ""
+    },
+    {
+      "ID": "1221",
+      "Name": "Kingdom soldier (living): Bow: Confronting the fireball giant on the roof 2",
+      "Description": ""
+    },
+    {
+      "ID": "1330",
+      "Name": "Titan Junior Soldier Fire (Titan): Bare Hands: Attacks from the rooftop",
+      "Description": ""
+    },
+    {
+      "ID": "1400",
+      "Name": "Titan senior soldier (giant): Dual sword style: Jump attack",
+      "Description": ""
+    },
+    {
+      "ID": "1410",
+      "Name": "Kingdom soldier (living): Spear: Medium shield: Role crushed by jump 1",
+      "Description": ""
+    },
+    {
+      "ID": "1420",
+      "Name": "Kingdom soldier (living): two-handed sword: bow: role crushed by jump 2",
+      "Description": ""
+    },
+    {
+      "ID": "1500",
+      "Name": "Giant Junior Soldier (Titan): Bare-handed: Thrusts out of the building's blind spot.",
+      "Description": ""
+    },
+    {
+      "ID": "1600",
+      "Name": "Giant Junior Soldier (Titan): Two-handed club: Guard in front of the goal",
+      "Description": ""
+    },
+    {
+      "ID": "2000",
+      "Name": "Giant Junior Soldier (Titan): Bare Hands_Chandelier Passage 1",
+      "Description": ""
+    },
+    {
+      "ID": "2010",
+      "Name": "Kingdom soldier (living): Two-handed sword: Bow_Chandelier passage 2",
+      "Description": ""
+    },
+    {
+      "ID": "2011",
+      "Name": "Kingdom soldier (living): Two-handed sword: Bow_Chandelier passage 3",
+      "Description": ""
+    },
+    {
+      "ID": "2100",
+      "Name": "Kingdom soldier (living): Spear: Medium shield_In front of the chandelier passage stairs",
+      "Description": ""
+    },
+    {
+      "ID": "2200",
+      "Name": "Kingdom soldier (living): In front of sub route rubble_wounded soldier 1",
+      "Description": ""
+    },
+    {
+      "ID": "2201",
+      "Name": "Kingdom soldier (living): In front of sub route rubble_wounded soldier 2",
+      "Description": ""
+    },
+    {
+      "ID": "2202",
+      "Name": "Kingdom soldier (living): In front of sub route rubble_injured soldier 3",
+      "Description": ""
+    },
+    {
+      "ID": "2230",
+      "Name": "Kingdom soldier (living): In front of sub route rubble_Ballista",
+      "Description": ""
+    },
+    {
+      "ID": "2300",
+      "Name": "Kingdom soldier (living): Bow_on top of the wooden scaffolding in the plaza 1",
+      "Description": ""
+    },
+    {
+      "ID": "2301",
+      "Name": "Kingdom soldier (living): Bow_2 on the wooden scaffolding in the plaza",
+      "Description": ""
+    },
+    {
+      "ID": "2320",
+      "Name": "Kingdom soldier (living): Two-handed sword_Molotov cocktail 1 from above the gate",
+      "Description": ""
+    },
+    {
+      "ID": "2321",
+      "Name": "Kingdom soldier (living): Two-handed sword_Molotov cocktail 2 from above the gate",
+      "Description": ""
+    },
+    {
+      "ID": "2400",
+      "Name": "Titan senior soldier (giant): Dual sword style_Piazza in front of the arch",
+      "Description": ""
+    },
+    {
+      "ID": "2410",
+      "Name": "Kingdom soldier (living): Blocker in the square in front of the arch 1",
+      "Description": ""
+    },
+    {
+      "ID": "2411",
+      "Name": "Kingdom soldier (living): Blocker in the square in front of the arch 2",
+      "Description": ""
+    },
+    {
+      "ID": "2430",
+      "Name": "Kingdom soldier (living): Guard the square ladder in front of the arch.",
+      "Description": ""
+    },
+    {
+      "ID": "2510",
+      "Name": "Kingdom soldier (living): To the left of the ballista behind the arch.",
+      "Description": ""
+    },
+    {
+      "ID": "2511",
+      "Name": "Kingdom soldier (living): To the right of the ballista behind the arch.",
+      "Description": ""
+    },
+    {
+      "ID": "2600",
+      "Name": "Kingdom soldier (living): To the left of the ballista next to the castle wall crane",
+      "Description": ""
+    },
+    {
+      "ID": "2610",
+      "Name": "Kingdom soldier (living): Right of the ballista next to the castle wall crane",
+      "Description": ""
+    },
+    {
+      "ID": "2900",
+      "Name": "Titan senior soldier (giant): Dual swords: Sniped by ballista role 1",
+      "Description": ""
+    },
+    {
+      "ID": "2910",
+      "Name": "Giant junior soldier Fire (giant): Bare hands: Sniped by ballista role 2",
+      "Description": ""
+    },
+    {
+      "ID": "3000",
+      "Name": "Titan Senior Soldier (Titan): Dual Sword Style_Frontline 1",
+      "Description": ""
+    },
+    {
+      "ID": "3010",
+      "Name": "Kingdom soldier (living): Two-handed sword: Bow_Frontline 2",
+      "Description": ""
+    },
+    {
+      "ID": "3011",
+      "Name": "Kingdom soldier (living): Two-handed sword: Bow_Frontline 3",
+      "Description": ""
+    },
+    {
+      "ID": "3012",
+      "Name": "Kingdom Soldier (Living): Spear_Frontline 4",
+      "Description": ""
+    },
+    {
+      "ID": "3013",
+      "Name": "Kingdom soldier (living): Spear_Frontline 5",
+      "Description": ""
+    },
+    {
+      "ID": "9990",
+      "Name": "[Event Test] Giant Soldier Appears from a Broken Wall",
+      "Description": ""
+    }
+  ]
+}

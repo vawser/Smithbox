@@ -1,0 +1,17 @@
+{
+  "DisplayName": "SOUND_FOOT_TYPE",
+  "Name": "SOUND_FOOT_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Player",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Specified ID",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "DisplayName": "DAMAGE_TYPE",
+  "Name": "DAMAGE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Sword small",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Tochu",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Sword size",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Sword launch",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Sword blow (straight line)",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Sword blow (rotation)",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Sword cut through (rotation)",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Small blow",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Batting",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Big blow",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Striking launch",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Blow away (straight line)",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Blow away (rotation)",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Blow through (rotation)",
+      "Description": ""
+    }
+  ]
+}

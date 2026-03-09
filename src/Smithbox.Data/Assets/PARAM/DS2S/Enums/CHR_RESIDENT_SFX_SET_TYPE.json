@@ -1,0 +1,17 @@
+{
+  "DisplayName": "CHR_RESIDENT_SFX_SET_TYPE",
+  "Name": "CHR_RESIDENT_SFX_SET_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Permanently resident",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "External",
+      "Description": ""
+    }
+  ]
+}

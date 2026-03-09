@@ -126,37 +126,19 @@
     <arrowType
     AltName="Arrow Type"
     Wiki="The type of arrow this is." 
-    Enum="ARROW_TYPE" />
+    ProjectEnum="ARROW_TYPE" />
     
     <menuAttackCategory1
     AltName="Menu: Attack Attribute 1"
     Wiki="The first attack attribute for this arrow." 
-    Enum="WEAPON_ATTACK_CATEGORY" />
+    ProjectEnum="WEAPON_ATTACK_CATEGORY" />
     
     <menuAttackCategory2
     AltName="Menu: Attack Attribute 2"
     Wiki="The second attack attribute for this arrow." 
-    Enum="WEAPON_ATTACK_CATEGORY" />
+    ProjectEnum="WEAPON_ATTACK_CATEGORY" />
     
     <padding
     Padding="" />
   </Field>
-  <Enums>
-    <Enum Name="ARROW_TYPE">
-      <Option Value="0" Name="Null" />
-      <Option Value="1" Name="Arrow" />
-      <Option Value="2" Name="Great Arrow" />
-      <Option Value="4" Name="Bolt" />
-    </Enum>
-    <Enum Name="WEAPON_ATTACK_CATEGORY">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Strike" />
-      <Option Value="2" Name="Slash" />
-      <Option Value="3" Name="Pierce" />
-      <Option Value="4" Name="Parry" />
-      <Option Value="5" Name="Spell Parry" />
-      <Option Value="6" Name="Spell" />
-      <Option Value="7" Name="Shooting" />
-    </Enum>
-  </Enums>
 </PARAMMETA>

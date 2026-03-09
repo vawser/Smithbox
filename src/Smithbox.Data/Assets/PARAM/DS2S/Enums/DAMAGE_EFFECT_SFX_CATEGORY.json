@@ -1,0 +1,112 @@
+{
+  "DisplayName": "DAMAGE_EFFECT_SFX_CATEGORY",
+  "Name": "DAMAGE_EFFECT_SFX_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "General purpose smoke",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Black smoke",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Spark",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "炎",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Up in flames",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Lightning",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Soul",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "血",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Body fluid",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "糸",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Piece of wood",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Bone fragment",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Piece of grass",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Crystal pieces",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Gravel",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Water splash",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Viscous droplets",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Lava splash",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Magic shock",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Dark shock",
+      "Description": ""
+    }
+  ]
+}

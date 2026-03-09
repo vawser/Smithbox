@@ -1,0 +1,67 @@
+{
+  "DisplayName": "DAMAGE_DEAD_MOTION_TYPE",
+  "Name": "DAMAGE_DEAD_MOTION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Death by blow",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Slash death",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Stabbing death",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Ragdoll death",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Magical death",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Lightning death",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Death by flames",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Death in darkness",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Breath death",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Turn undead death",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Death by poison",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Slammed to death",
+      "Description": ""
+    }
+  ]
+}

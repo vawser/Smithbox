@@ -1,0 +1,32 @@
+{
+  "DisplayName": "CHR_PHANTOM_BLEND_TYPE",
+  "Name": "CHR_PHANTOM_BLEND_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Normal",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Translucent",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Multiplication",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Addition",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Subtraction",
+      "Description": ""
+    }
+  ]
+}

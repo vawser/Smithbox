@@ -1,0 +1,17 @@
+{
+  "DisplayName": "FALL_STAB_TYPES",
+  "Name": "FALL_STAB_TYPES",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Cut",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Thrust",
+      "Description": ""
+    }
+  ]
+}

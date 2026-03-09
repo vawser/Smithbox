@@ -1,0 +1,22 @@
+{
+  "DisplayName": "DECAL_FLIP_TYPE",
+  "Name": "DECAL_FLIP_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Do not",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Do",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Random",
+      "Description": ""
+    }
+  ]
+}

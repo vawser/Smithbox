@@ -1,0 +1,27 @@
+{
+  "DisplayName": "ITEM_LOT_TARGET_TYPE",
+  "Name": "ITEM_LOT_TARGET_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "All",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Occupation",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Non-destructive/destructive",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Pledge",
+      "Description": ""
+    }
+  ]
+}

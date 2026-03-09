@@ -40,17 +40,17 @@
     <rayCollidesExecType
     AltName="Ray Hit Processing Type"
     Wiki="The ray hit processing type, used for camera collisions." 
-    Enum="CAMERA_COLLIDES_EXEC_TYPE" />
+    ProjectEnum="CAMERA_COLLIDES_EXEC_TYPE" />
 
     <sphereCollidesExecType
     AltName="Sphere Hit Processing Type"
     Wiki="The sphere hit processing type, used for camera collisions." 
-    Enum="CAMERA_COLLIDES_EXEC_TYPE" />
+    ProjectEnum="CAMERA_COLLIDES_EXEC_TYPE" />
 
     <selectType
     AltName="Selection Type"
     Wiki="The branching decision type when multiple exist." 
-    Enum="CAMERA_GRAPPLER_SELECT_TYPE" />
+    ProjectEnum="CAMERA_GRAPPLER_SELECT_TYPE" />
 
     <reserved
     Padding="" />
@@ -80,17 +80,4 @@
     Wiki="The thickness of the camera sphere." />
 
   </Field>
-  
-  <Enums>
-    <Enum Name="CAMERA_COLLIDES_EXEC_TYPE">
-      <Option Value="0" Name="Do nothing" />
-      <Option Value="1" Name="Turn off Camera" />
-      <Option Value="2" Name="Stop moving" />
-      <Option Value="3" Name="Move to a safe location" />
-    </Enum>
-    <Enum Name="CAMERA_GRAPPLER_SELECT_TYPE">
-      <Option Value="0" Name="x Shaped Branch" />
-      <Option Value="1" Name="+ Shaped Branch" />
-    </Enum>
-  </Enums>
 </PARAMMETA>

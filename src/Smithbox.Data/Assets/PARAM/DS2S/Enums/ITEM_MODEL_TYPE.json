@@ -1,0 +1,32 @@
+{
+  "DisplayName": "ITEM_MODEL_TYPE",
+  "Name": "ITEM_MODEL_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "General purpose",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Weapon",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Armor",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Ring",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Material",
+      "Description": ""
+    }
+  ]
+}

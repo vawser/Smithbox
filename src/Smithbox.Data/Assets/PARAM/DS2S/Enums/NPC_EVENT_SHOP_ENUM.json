@@ -1,0 +1,72 @@
+{
+  "DisplayName": "NPC_EVENT_SHOP_ENUM",
+  "Name": "NPC_EVENT_SHOP_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "Level up",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Bag shop",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Book store",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Weapon blacksmith",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Armor shop",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Yorozuya/Tools shop/Coffin shop",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Speller",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Armor blacksmith",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Material shop",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Phantom shop",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Top weapon shop",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Priest of indulgences",
+      "Description": ""
+    }
+  ]
+}

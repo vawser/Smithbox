@@ -1,8 +1,10 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Hexa.NET.ImGui;
+using Octokit;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using static SoulsFormats.MQB;
 
@@ -88,7 +90,7 @@ public class ProjectEnumMenu
         ImGui.Text("Enums");
         ImGui.Separator();
 
-        foreach (var entry in Orchestrator.SelectedProject.Handler.ProjectData.ProjectEnums.List)
+        foreach (var entry in Orchestrator.SelectedProject.Handler.ParamData.Enums.List)
         {
             bool selected = entry == CurrentEnum;
 
@@ -337,21 +339,28 @@ public class ProjectEnumMenu
 
     public void Save()
     {
-        var projectFolder = Path.Join(
-            Orchestrator.SelectedProject.Descriptor.ProjectPath,
-            ".smithbox",
-            "Project");
+        var projectFolder = Path.Join(Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Orchestrator.SelectedProject.Descriptor.ProjectType), "Enums");
 
-        var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
-
-        var json = JsonSerializer.Serialize(
-            Orchestrator.SelectedProject.Handler.ProjectData.ProjectEnums,
-            ProjectJsonSerializerContext.Default.ProjectEnumResource);
+        var enums = Orchestrator.SelectedProject.Handler.ParamData.Enums;
 
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
 
-        File.WriteAllText(projectFile, json);
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+
+        foreach (var entry in enums.List)
+        {
+            var filePath = Path.Combine(projectFolder, $"{entry.Name}.json");
+
+            var json = JsonSerializer.Serialize(entry, typeof(ProjectEnumEntry), options);
+
+            File.WriteAllText(filePath, json);
+        }
     }
 
     #endregion

@@ -1,0 +1,32 @@
+{
+  "DisplayName": "WALK_ATTACK_TYPE",
+  "Name": "WALK_ATTACK_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Walking attack 1",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Walking attack 2",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Walking attack 3",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Walking attack 4",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Walking attack 5",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "DisplayName": "GENERAL_LOCATION_EVENT_ENUM",
+  "Name": "GENERAL_LOCATION_EVENT_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "No setting",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Black spirit invasion",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Logic",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Event trigger",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Bullet firing",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Navigation point",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Vagrant",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Navigation mesh change",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Not lockable",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Generator operating conditions",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Event judgment",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Logic intrusion prohibited",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Resident event blood letter",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Event blood letter",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Wind generator",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Slippery floor",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Gas",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Damage",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Bright area",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "No blood writing allowed",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Blood text hidden",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Petrified statue",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Advice blood letters",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Backread safety between map connections",
+      "Description": ""
+    }
+  ]
+}

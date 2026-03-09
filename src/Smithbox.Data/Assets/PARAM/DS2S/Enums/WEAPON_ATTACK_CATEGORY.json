@@ -1,0 +1,47 @@
+{
+  "DisplayName": "WEAPON_ATTACK_CATEGORY",
+  "Name": "WEAPON_ATTACK_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Strike",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Slash",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Pierce",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Parry",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Spell Parry",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Spell",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Shooting",
+      "Description": ""
+    }
+  ]
+}

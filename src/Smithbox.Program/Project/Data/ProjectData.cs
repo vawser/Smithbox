@@ -16,9 +16,7 @@ public class ProjectData : IDisposable
 {
     public ProjectEntry Project;
 
-
     public AliasStore Aliases;
-    public ProjectEnumResource ProjectEnums;
 
     public ProjectData(ProjectEntry project)
     {
@@ -40,19 +38,6 @@ public class ProjectData : IDisposable
         else
         {
             Smithbox.Log(this, $"[Project] Failed to setup aliases for '{Project.Descriptor.ProjectName}'", LogLevel.Information);
-        }
-
-        // Project Enums (per project)
-        Task<bool> projectParamEnumTask = SetupProjectEnums();
-        bool projectParamEnumResult = await projectParamEnumTask;
-
-        if (projectParamEnumResult)
-        {
-            Smithbox.Log(this, $"[Project] Setup Project Param Enums for '{Project.Descriptor.ProjectName}'", LogLevel.Information);
-        }
-        else
-        {
-            Smithbox.Log(this, $"[Project] Failed to setup Project Param Enums for '{Project.Descriptor.ProjectName}'", LogLevel.Information);
         }
 
         return true;
@@ -112,62 +97,10 @@ public class ProjectData : IDisposable
         return true;
     }
 
-    /// <summary>
-    /// Setup the project-specific PARAM enums for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupProjectEnums()
-    {
-        await Task.Yield();
-
-        ProjectEnums = new();
-
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
-
-        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Project");
-        var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
-
-        var targetFile = sourceFile;
-
-        if (CFG.Current.Project_Enable_Param_Enum_Override)
-        {
-            if (File.Exists(projectFile))
-            {
-                targetFile = projectFile;
-            }
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
-                try
-                {
-                    ProjectEnums = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.ProjectEnumResource);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[Project] Failed to deserialize the Project Enums: {targetFile}", LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[Project] Failed to read the Project Enums: {targetFile}", LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-
     #region Dispose
     public void Dispose()
     {
         Aliases = null;
-        ProjectEnums = null;
     }
     #endregion
 }

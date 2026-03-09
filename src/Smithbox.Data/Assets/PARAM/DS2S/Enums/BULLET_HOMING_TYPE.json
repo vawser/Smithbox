@@ -1,0 +1,22 @@
+{
+  "DisplayName": "BULLET_HOMING_TYPE",
+  "Name": "BULLET_HOMING_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Invalid",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Master position",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Predicted position",
+      "Description": ""
+    }
+  ]
+}

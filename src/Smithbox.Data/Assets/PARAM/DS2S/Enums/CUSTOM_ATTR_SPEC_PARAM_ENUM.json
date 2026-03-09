@@ -1,0 +1,477 @@
+{
+  "DisplayName": "CUSTOM_ATTR_SPEC_PARAM_ENUM",
+  "Name": "CUSTOM_ATTR_SPEC_PARAM_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Normal: Do not change attributes",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Can pine resin be used?",
+      "Description": ""
+    },
+    {
+      "ID": "100000",
+      "Name": "Full derivative permission",
+      "Description": ""
+    },
+    {
+      "ID": "100100",
+      "Name": "Normal: fist",
+      "Description": ""
+    },
+    {
+      "ID": "100200",
+      "Name": "Normal: nails",
+      "Description": ""
+    },
+    {
+      "ID": "100300",
+      "Name": "Normal: Whip",
+      "Description": ""
+    },
+    {
+      "ID": "100400",
+      "Name": "Normal: dagger",
+      "Description": ""
+    },
+    {
+      "ID": "100500",
+      "Name": "Normal: Sashiken",
+      "Description": ""
+    },
+    {
+      "ID": "100600",
+      "Name": "Normal: Spear",
+      "Description": ""
+    },
+    {
+      "ID": "100700",
+      "Name": "Normal: assault spear",
+      "Description": ""
+    },
+    {
+      "ID": "100800",
+      "Name": "Normal: double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "100900",
+      "Name": "Normal: curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "101000",
+      "Name": "Normal: straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "101100",
+      "Name": "Normal: sword",
+      "Description": ""
+    },
+    {
+      "ID": "101200",
+      "Name": "Normal: two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "101300",
+      "Name": "Normal: Two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "101400",
+      "Name": "Normal: Two-handed Omagariken",
+      "Description": ""
+    },
+    {
+      "ID": "101500",
+      "Name": "Normal: One-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "101600",
+      "Name": "Normal: two-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "101700",
+      "Name": "Normal: one-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "101800",
+      "Name": "Normal: two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "101900",
+      "Name": "Normal: two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "102000",
+      "Name": "Normal: two-handed long ax",
+      "Description": ""
+    },
+    {
+      "ID": "102100",
+      "Name": "Normal: two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "102200",
+      "Name": "Normal: Two-handed longbow",
+      "Description": ""
+    },
+    {
+      "ID": "102300",
+      "Name": "Normal: One-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "102400",
+      "Name": "Normal: cane",
+      "Description": ""
+    },
+    {
+      "ID": "102500",
+      "Name": "Normal: Bell",
+      "Description": ""
+    },
+    {
+      "ID": "102600",
+      "Name": "Normal: Magical Fire",
+      "Description": ""
+    },
+    {
+      "ID": "102700",
+      "Name": "Normal: small shield",
+      "Description": ""
+    },
+    {
+      "ID": "102800",
+      "Name": "Normal: Medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "102900",
+      "Name": "Normal: large shield",
+      "Description": ""
+    },
+    {
+      "ID": "105000",
+      "Name": "Normal: armor",
+      "Description": ""
+    },
+    {
+      "ID": "110100",
+      "Name": "Dragon Weapon: Fist",
+      "Description": ""
+    },
+    {
+      "ID": "110200",
+      "Name": "Dragon Weapon: Claw",
+      "Description": ""
+    },
+    {
+      "ID": "110300",
+      "Name": "Dragon Weapon: Whip",
+      "Description": ""
+    },
+    {
+      "ID": "110400",
+      "Name": "Dragon Weapon: Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "110500",
+      "Name": "Dragon Weapon: Sword",
+      "Description": ""
+    },
+    {
+      "ID": "110600",
+      "Name": "Dragon Weapon: Spear",
+      "Description": ""
+    },
+    {
+      "ID": "110700",
+      "Name": "Dragon Weapon: Assault Spear",
+      "Description": ""
+    },
+    {
+      "ID": "110800",
+      "Name": "Dragon Weapon: Double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "110900",
+      "Name": "Dragon Weapon: Curved Sword",
+      "Description": ""
+    },
+    {
+      "ID": "111000",
+      "Name": "Dragon Weapon: Straight Sword",
+      "Description": ""
+    },
+    {
+      "ID": "111100",
+      "Name": "Dragon Weapon: Sword",
+      "Description": ""
+    },
+    {
+      "ID": "111200",
+      "Name": "Dragon Weapon: Two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "111300",
+      "Name": "Dragon Weapon: Two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "111400",
+      "Name": "Dragon Weapon: Two-handed Omagariken",
+      "Description": ""
+    },
+    {
+      "ID": "111500",
+      "Name": "Dragon Weapon: One-handed Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "111600",
+      "Name": "Dragon Weapon: Two-handed Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "111700",
+      "Name": "Dragon Weapon: One-handed Ax",
+      "Description": ""
+    },
+    {
+      "ID": "111800",
+      "Name": "Dragon Weapon: Two-handed Ax",
+      "Description": ""
+    },
+    {
+      "ID": "111900",
+      "Name": "Dragon Weapon: Two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "112000",
+      "Name": "Dragon Weapon: Two-handed long axe",
+      "Description": ""
+    },
+    {
+      "ID": "112100",
+      "Name": "Dragon Weapon: Two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "112200",
+      "Name": "Dragon Weapon: Two-handed longbow",
+      "Description": ""
+    },
+    {
+      "ID": "112300",
+      "Name": "Dragon Weapon: One-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "112400",
+      "Name": "Dragon Weapon: Staff",
+      "Description": ""
+    },
+    {
+      "ID": "112500",
+      "Name": "Dragon Weapon: Bell",
+      "Description": ""
+    },
+    {
+      "ID": "112600",
+      "Name": "Dragon Weapon: Magical Fire",
+      "Description": ""
+    },
+    {
+      "ID": "112700",
+      "Name": "Dragon Weapon: Small Shield",
+      "Description": ""
+    },
+    {
+      "ID": "112800",
+      "Name": "Dragon Weapon: Medium Shield",
+      "Description": ""
+    },
+    {
+      "ID": "112900",
+      "Name": "Dragon Weapon: Great Shield",
+      "Description": ""
+    },
+    {
+      "ID": "115000",
+      "Name": "Dragon Weapon: Armor",
+      "Description": ""
+    },
+    {
+      "ID": "120100",
+      "Name": "Mitsuishi: Fist",
+      "Description": ""
+    },
+    {
+      "ID": "120200",
+      "Name": "Mitsuishi: Claw",
+      "Description": ""
+    },
+    {
+      "ID": "120300",
+      "Name": "Mitsuishi: Whip",
+      "Description": ""
+    },
+    {
+      "ID": "120400",
+      "Name": "Light stone: dagger",
+      "Description": ""
+    },
+    {
+      "ID": "120500",
+      "Name": "Lightstone: Sword",
+      "Description": ""
+    },
+    {
+      "ID": "120600",
+      "Name": "Lightstone: Spear",
+      "Description": ""
+    },
+    {
+      "ID": "120700",
+      "Name": "Light Stone: Assault Spear",
+      "Description": ""
+    },
+    {
+      "ID": "120800",
+      "Name": "Light stone: double-edged sword",
+      "Description": ""
+    },
+    {
+      "ID": "120900",
+      "Name": "Light stone: curved sword",
+      "Description": ""
+    },
+    {
+      "ID": "121000",
+      "Name": "Mitsui: Straight sword",
+      "Description": ""
+    },
+    {
+      "ID": "121100",
+      "Name": "Mitsuishi: Sword",
+      "Description": ""
+    },
+    {
+      "ID": "121200",
+      "Name": "Light stone: two-handed sword",
+      "Description": ""
+    },
+    {
+      "ID": "121300",
+      "Name": "Lightstone: two-handed oversized sword",
+      "Description": ""
+    },
+    {
+      "ID": "121400",
+      "Name": "Mitsuishi: Two-handed Omagariken",
+      "Description": ""
+    },
+    {
+      "ID": "121500",
+      "Name": "Mitsuishi: One-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "121600",
+      "Name": "Mitsuishi: Two-handed hammer",
+      "Description": ""
+    },
+    {
+      "ID": "121700",
+      "Name": "Light stone: one-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "121800",
+      "Name": "Light stone: two-handed ax",
+      "Description": ""
+    },
+    {
+      "ID": "121900",
+      "Name": "Mitsuishi: Two-handed sickle",
+      "Description": ""
+    },
+    {
+      "ID": "122000",
+      "Name": "Lightstone: Two-handed long axe",
+      "Description": ""
+    },
+    {
+      "ID": "122100",
+      "Name": "Light stone: two-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "122200",
+      "Name": "Mitsuishi: Two-handed longbow",
+      "Description": ""
+    },
+    {
+      "ID": "122300",
+      "Name": "Lightstone: One-handed bow",
+      "Description": ""
+    },
+    {
+      "ID": "122400",
+      "Name": "Light stone: cane",
+      "Description": ""
+    },
+    {
+      "ID": "122500",
+      "Name": "Mitsuishi: Bell",
+      "Description": ""
+    },
+    {
+      "ID": "122600",
+      "Name": "Light Stone: Fire of Magic",
+      "Description": ""
+    },
+    {
+      "ID": "122700",
+      "Name": "Light stone: small shield",
+      "Description": ""
+    },
+    {
+      "ID": "122800",
+      "Name": "Light stone: medium shield",
+      "Description": ""
+    },
+    {
+      "ID": "122900",
+      "Name": "Light stone: large shield",
+      "Description": ""
+    },
+    {
+      "ID": "125000",
+      "Name": "Lightstone: Armor",
+      "Description": ""
+    },
+    {
+      "ID": "200100",
+      "Name": "Normal reinforcement only",
+      "Description": ""
+    }
+  ]
+}

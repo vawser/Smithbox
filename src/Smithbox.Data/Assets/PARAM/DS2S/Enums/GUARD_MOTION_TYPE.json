@@ -1,0 +1,32 @@
+{
+  "DisplayName": "GUARD_MOTION_TYPE",
+  "Name": "GUARD_MOTION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Extremely small",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Small retreat",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Great retreat",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Play",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Shield stance",
+      "Description": ""
+    }
+  ]
+}

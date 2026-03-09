@@ -1,0 +1,22 @@
+{
+  "DisplayName": "ITEM_LOT_WEIGHT_PARAM_ID",
+  "Name": "ITEM_LOT_WEIGHT_PARAM_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "0",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Evenly",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Must be first",
+      "Description": ""
+    }
+  ]
+}

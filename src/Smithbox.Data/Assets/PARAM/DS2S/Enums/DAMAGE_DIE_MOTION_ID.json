@@ -1,0 +1,97 @@
+{
+  "DisplayName": "DAMAGE_DIE_MOTION_ID",
+  "Name": "DAMAGE_DIE_MOTION_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "10",
+      "Name": "Normal death",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Overkill",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Breath death",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Turn undead death",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Death by poison",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Death on landing",
+      "Description": ""
+    },
+    {
+      "ID": "70",
+      "Name": "Headshot death",
+      "Description": ""
+    },
+    {
+      "ID": "80",
+      "Name": "Ladder death",
+      "Description": ""
+    },
+    {
+      "ID": "90",
+      "Name": "Died while falling",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Died while down",
+      "Description": ""
+    },
+    {
+      "ID": "110",
+      "Name": "Death by curse",
+      "Description": ""
+    },
+    {
+      "ID": "120",
+      "Name": "Ragdoll death",
+      "Description": ""
+    },
+    {
+      "ID": "130",
+      "Name": "Death by throwing",
+      "Description": ""
+    },
+    {
+      "ID": "140",
+      "Name": "Death area death",
+      "Description": ""
+    },
+    {
+      "ID": "150",
+      "Name": "Dying of death",
+      "Description": ""
+    },
+    {
+      "ID": "160",
+      "Name": "Death due to low altitude fall",
+      "Description": ""
+    },
+    {
+      "ID": "170",
+      "Name": "Headshot death (hard hit)",
+      "Description": ""
+    },
+    {
+      "ID": "180",
+      "Name": "Slammed to death",
+      "Description": ""
+    }
+  ]
+}

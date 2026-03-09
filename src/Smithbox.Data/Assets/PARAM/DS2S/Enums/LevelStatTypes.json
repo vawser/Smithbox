@@ -1,0 +1,67 @@
+{
+  "DisplayName": "LevelStatTypes",
+  "Name": "LevelStatTypes",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Vigor",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Endurance",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Vitality",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Memory",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Strength",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Skill",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Intelligence",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Faith",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Resistance",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Agility",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Luck",
+      "Description": ""
+    }
+  ]
+}

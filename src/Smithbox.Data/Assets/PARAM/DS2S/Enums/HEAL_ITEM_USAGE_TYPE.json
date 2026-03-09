@@ -1,0 +1,22 @@
+{
+  "DisplayName": "HEAL_ITEM_USAGE_TYPE",
+  "Name": "HEAL_ITEM_USAGE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Permitted",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Prohibited",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Prohibited if invaded",
+      "Description": ""
+    }
+  ]
+}

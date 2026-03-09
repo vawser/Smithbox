@@ -1,0 +1,32 @@
+{
+  "DisplayName": "ATTACK_RANGE_ENUM",
+  "Name": "ATTACK_RANGE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Super close range",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Short distance",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Medium distance",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Long distance",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Super long distance",
+      "Description": ""
+    }
+  ]
+}

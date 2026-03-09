@@ -1,0 +1,177 @@
+{
+  "DisplayName": "Moveset ID",
+  "Name": "WEPMOTION_CATEGORY",
+  "Description": "These are TAE motion types used to determine weapon base animations.",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Dagger",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Torch",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Claw",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Straight Sword",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Twinblade",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Greatsword",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Colossal Sword",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Thrusting Sword",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Curved Sword",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Katana",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Axe",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Colossal Weapon",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "Greataxe",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "Flail",
+      "Description": ""
+    },
+    {
+      "ID": "35",
+      "Name": "Great Hammer",
+      "Description": ""
+    },
+    {
+      "ID": "36",
+      "Name": "Spear",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "Great Spear",
+      "Description": ""
+    },
+    {
+      "ID": "38",
+      "Name": "Halberd",
+      "Description": ""
+    },
+    {
+      "ID": "39",
+      "Name": "Heavy Thrusting Sword",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Curved Greatsword",
+      "Description": ""
+    },
+    {
+      "ID": "41",
+      "Name": "Catalyst",
+      "Description": ""
+    },
+    {
+      "ID": "42",
+      "Name": "Fist",
+      "Description": ""
+    },
+    {
+      "ID": "43",
+      "Name": "Whip",
+      "Description": ""
+    },
+    {
+      "ID": "44",
+      "Name": "Bow",
+      "Description": ""
+    },
+    {
+      "ID": "45",
+      "Name": "Greatbow",
+      "Description": ""
+    },
+    {
+      "ID": "46",
+      "Name": "Crossbow",
+      "Description": ""
+    },
+    {
+      "ID": "47",
+      "Name": "Greatshield",
+      "Description": ""
+    },
+    {
+      "ID": "48",
+      "Name": "Small Shield",
+      "Description": ""
+    },
+    {
+      "ID": "49",
+      "Name": "Medium Shield",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Reaper",
+      "Description": ""
+    },
+    {
+      "ID": "51",
+      "Name": "Light Bow",
+      "Description": ""
+    },
+    {
+      "ID": "52",
+      "Name": "Ballista",
+      "Description": ""
+    }
+  ]
+}

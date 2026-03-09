@@ -1,0 +1,57 @@
+{
+  "DisplayName": "EQUIP_ELEMENT_TYPE",
+  "Name": "EQUIP_ELEMENT_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Physics",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Magic power",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "雷",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "炎",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "闇",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "毒",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Bleeding",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Weapon destruction",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Petrification",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "呪",
+      "Description": ""
+    }
+  ]
+}

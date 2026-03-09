@@ -1,0 +1,52 @@
+{
+  "DisplayName": "EVENT_VALUE_global_timer",
+  "Name": "EVENT_VALUE_global_timer",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "Giant's Memory_Time limit",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Ancient dragon's memory_time limit",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "2",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "3",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "4",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "5",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "6",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "7",
+      "Description": ""
+    }
+  ]
+}

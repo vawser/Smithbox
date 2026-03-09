@@ -1,0 +1,47 @@
+{
+  "DisplayName": "INPUT_8DIR_ENUM",
+  "Name": "INPUT_8DIR_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "<1>Left rear",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "<2> Back",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "<3>Right rear",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "<4>Left",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "<6> Right",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "<7> Front left",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "＜8＞before",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "<9> Right front",
+      "Description": ""
+    }
+  ]
+}

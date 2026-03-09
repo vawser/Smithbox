@@ -1,0 +1,42 @@
+{
+  "DisplayName": "OBJ_LABBEL_ENUM",
+  "Name": "OBJ_LABBEL_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Door",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Ladder",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Rope",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Lever",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Ballista",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Broken ladder",
+      "Description": ""
+    }
+  ]
+}

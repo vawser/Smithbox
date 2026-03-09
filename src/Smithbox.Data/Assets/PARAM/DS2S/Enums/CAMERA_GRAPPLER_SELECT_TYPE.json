@@ -1,0 +1,17 @@
+{
+  "DisplayName": "CAMERA_GRAPPLER_SELECT_TYPE",
+  "Name": "CAMERA_GRAPPLER_SELECT_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "x Shaped Branch",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "+ Shaped Branch",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "DisplayName": "PLAYER_COMMAND_STICK_VIEW",
+  "Name": "PLAYER_COMMAND_STICK_VIEW",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Camera standards",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Player standards",
+      "Description": ""
+    }
+  ]
+}

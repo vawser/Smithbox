@@ -1,0 +1,32 @@
+{
+  "DisplayName": "Rarity",
+  "Name": "RARITY",
+  "Description": "Rarity for various forms of equipment, primarily used for the color.",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Common / White",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Uncommon / Blue",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Rare / Purple",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Legendary / Gold",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Unique / Red",
+      "Description": ""
+    }
+  ]
+}

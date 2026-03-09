@@ -1,0 +1,22 @@
+{
+  "DisplayName": "CHR_RESIDENT_SFX_END_TYPE",
+  "Name": "CHR_RESIDENT_SFX_END_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Delete character",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Death",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "HP percentage",
+      "Description": ""
+    }
+  ]
+}

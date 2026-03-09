@@ -1,0 +1,47 @@
+{
+  "DisplayName": "LOGIC_PROBABILITY_TABLE_TYPE",
+  "Name": "LOGIC_PROBABILITY_TABLE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Extremely low",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Low",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Medium",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "High",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Extremely high",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Other 1",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Disabled",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Absolute",
+      "Description": ""
+    }
+  ]
+}

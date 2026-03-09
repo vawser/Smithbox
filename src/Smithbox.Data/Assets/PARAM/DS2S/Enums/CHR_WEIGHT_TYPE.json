@@ -1,0 +1,47 @@
+{
+  "DisplayName": "CHR_WEIGHT_TYPE",
+  "Name": "CHR_WEIGHT_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Extremely small",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Small",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Medium",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Large",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Extra large",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Super extra large",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Super super extra large",
+      "Description": ""
+    }
+  ]
+}

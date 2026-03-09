@@ -1,0 +1,52 @@
+{
+  "DisplayName": "BOSS_RAGDOLL_PARTS_TYPE",
+  "Name": "BOSS_RAGDOLL_PARTS_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Part 1",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Part 2",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Part 3",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Part 4",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Part 5",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Part 6",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Part 7",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Part 8",
+      "Description": ""
+    }
+  ]
+}

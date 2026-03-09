@@ -1,0 +1,17 @@
+{
+  "DisplayName": "NPC_GENDER_TYPE",
+  "Name": "NPC_GENDER_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Male",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Woman",
+      "Description": ""
+    }
+  ]
+}

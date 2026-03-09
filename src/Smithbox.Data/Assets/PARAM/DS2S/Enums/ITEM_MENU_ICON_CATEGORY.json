@@ -1,0 +1,67 @@
+{
+  "DisplayName": "ITEM_MENU_ICON_CATEGORY",
+  "Name": "ITEM_MENU_ICON_CATEGORY",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "-1",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "0",
+      "Name": "Weapons (WP)",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Shield (SD)",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Helmet (HD)",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Armor (BD)",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Kote (AM)",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Gusoku (LG)",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Arrow (AS)",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Ring",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Item",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Spell (MA)",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Gesture (GE)",
+      "Description": ""
+    }
+  ]
+}

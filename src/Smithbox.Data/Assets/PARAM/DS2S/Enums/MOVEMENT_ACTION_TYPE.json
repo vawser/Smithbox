@@ -1,0 +1,22 @@
+{
+  "DisplayName": "MOVEMENT_ACTION_TYPE",
+  "Name": "MOVEMENT_ACTION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Wall action",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Climbing steps",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Jump",
+      "Description": ""
+    }
+  ]
+}

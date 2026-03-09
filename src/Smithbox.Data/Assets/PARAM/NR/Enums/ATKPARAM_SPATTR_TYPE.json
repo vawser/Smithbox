@@ -1,0 +1,97 @@
+{
+  "DisplayName": "SpAttribute Type",
+  "Name": "ATKPARAM_SPATTR_TYPE",
+  "Description": "Determines the non-physical attack \"element\" of an attack.",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Magic",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Fire",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Lightning",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Holy",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Poison",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Scarlet Rot",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Blood Loss",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Frostbite",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Sleep",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Madness",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Death Blight",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Dragonwound (Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Blackflame (Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Bloodflame (Arrow)",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Holy (Greatarrow)",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Magic (Bolt)",
+      "Description": ""
+    },
+    {
+      "ID": "254",
+      "Name": "None",
+      "Description": ""
+    }
+  ]
+}

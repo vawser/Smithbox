@@ -1,0 +1,17 @@
+{
+  "DisplayName": "SPELL_CHANT_SFX_ATTACH_TYPE",
+  "Name": "SPELL_CHANT_SFX_ATTACH_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Weapon",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Character body",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "DisplayName": "DAMAGE_DIE_HIT_MOTION_ID",
+  "Name": "DAMAGE_DIE_HIT_MOTION_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Normal",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Piercing",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Attribute",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Blow away",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Launch",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Fall down",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "DisplayName": "DAMAGE_ATTRIBUTE",
+  "Name": "DAMAGE_ATTRIBUTE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Physics",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Magic power",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Lightning",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Flame",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Darkness",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Special",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Poison",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Bleeding",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Weapon destruction",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Curse",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Combustion",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Highly poisonous",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Petrification",
+      "Description": ""
+    }
+  ]
+}

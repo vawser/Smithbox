@@ -1,0 +1,42 @@
+{
+  "DisplayName": "WEAPON_STAMINA_COST_PARAM_ID",
+  "Name": "WEAPON_STAMINA_COST_PARAM_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Invalid data (unused)",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Basic set",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Two handed set",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "2HIT generation set",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Bow and arrow set",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Special strong attack set",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Ricard's sword",
+      "Description": ""
+    }
+  ]
+}

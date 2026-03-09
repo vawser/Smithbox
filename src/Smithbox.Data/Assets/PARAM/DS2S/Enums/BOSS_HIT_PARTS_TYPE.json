@@ -1,0 +1,112 @@
+{
+  "DisplayName": "BOSS_HIT_PARTS_TYPE",
+  "Name": "BOSS_HIT_PARTS_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Part 1",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Part 2",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Part 3",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Part 4",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Part 5",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Part 6",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Part 7",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Part 8",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Part 9",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Part 10",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Part 11",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Part 12",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "Part 13",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Part 14",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Part 15",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Part 16",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Part 17",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Part 18",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Part 19",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Part 20",
+      "Description": ""
+    }
+  ]
+}

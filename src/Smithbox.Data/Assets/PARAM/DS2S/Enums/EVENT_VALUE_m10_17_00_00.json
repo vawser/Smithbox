@@ -1,0 +1,12 @@
+{
+  "DisplayName": "EVENT_VALUE_m10_17_00_00",
+  "Name": "EVENT_VALUE_m10_17_00_00",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "60",
+      "Name": "Pledge: Warrior of the Sun: Current pledge rank",
+      "Description": ""
+    }
+  ]
+}

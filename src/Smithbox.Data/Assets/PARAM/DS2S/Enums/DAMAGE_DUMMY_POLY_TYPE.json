@@ -1,0 +1,17 @@
+{
+  "DisplayName": "DAMAGE_DUMMY_POLY_TYPE",
+  "Name": "DAMAGE_DUMMY_POLY_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Character",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Weapon",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,1632 @@
+{
+  "DisplayName": "OBJ_TYPE_ENUM",
+  "Name": "OBJ_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Template",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Other tests",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Wooden treasure chest test",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Metal treasure chest test",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Wall prefab test",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "No block test",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Tiny block test",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Small block test",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Medium block test",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Large block test",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Extra large block test",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "∞Block test",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Wooden barrel test",
+      "Description": ""
+    },
+    {
+      "ID": "13",
+      "Name": "[Fortress of Resistance] Colossus Head Test",
+      "Description": ""
+    },
+    {
+      "ID": "14",
+      "Name": "Wooden box test",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "[Fortress of Resistance] Tackle Destruction Great Door Test",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Wooden chair test",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Prefab test test",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "[Fortress of Resistance] Destroyed Bridge Test",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "A test that breaks if you touch it",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "[Fortress of Resistance] Wooden scaffolding test",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "[Fortress of Resistance] Stone Pillar Test",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Hanging trinket test",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Unbreakable accessories (general purpose) test",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Non-moving wooden barrel test",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "[Fortress of Resistance] Broken Ballista Test",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Boss statue test test",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "[Test] Figurine GD test",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "[Test] [GGD compatible] Breaks with one attack",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "[Test] [E3 compatible] Dragon Research Institute: Giant Attribute",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "[Test] [E3 compatible] Breaks with one attack: Roll",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "[Test] [E3 compatible] Breaks with one attack: Figurine",
+      "Description": ""
+    },
+    {
+      "ID": "32",
+      "Name": "[Test] [GGD compatible] Breaks with one attack: On paper",
+      "Description": ""
+    },
+    {
+      "ID": "33",
+      "Name": "[Tentative] Default value for \"destructible\" objects",
+      "Description": ""
+    },
+    {
+      "ID": "34",
+      "Name": "[Test] [E3 compatible] Statue Knight Neck",
+      "Description": ""
+    },
+    {
+      "ID": "35",
+      "Name": "[Test] [E3 compatible] Statue Knight neck (temporary Mr. Shimizu)",
+      "Description": ""
+    },
+    {
+      "ID": "36",
+      "Name": "[Test] [E3 compatible] Statue Knight Stone Statue",
+      "Description": ""
+    },
+    {
+      "ID": "37",
+      "Name": "[Test] Cart (hard)",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Bonfire_Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "101",
+      "Name": "[Not used] Bonfire_Destructible",
+      "Description": ""
+    },
+    {
+      "ID": "110",
+      "Name": "White door_indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "120",
+      "Name": "Wooden treasure chest_destructible",
+      "Description": ""
+    },
+    {
+      "ID": "121",
+      "Name": "Iron treasure chest_indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "122",
+      "Name": "[Not used] Wooden treasure chest_Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "123",
+      "Name": "Flaming treasure chest Destructible",
+      "Description": ""
+    },
+    {
+      "ID": "130",
+      "Name": "Treasure Corpse_Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "131",
+      "Name": "Corpse_Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "140",
+      "Name": "Item_Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "150",
+      "Name": "[Not used] Iron ladder_Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "160",
+      "Name": "Rope_indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "170",
+      "Name": "Lever, valve, strap_indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "180",
+      "Name": "[Unusable] Wall lever_Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "190",
+      "Name": "Switch_indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "195",
+      "Name": "Ladder_Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "200",
+      "Name": "Single door_destructible",
+      "Description": ""
+    },
+    {
+      "ID": "210",
+      "Name": "Single door_indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "211",
+      "Name": "Single door_indestructible HP setting available",
+      "Description": ""
+    },
+    {
+      "ID": "220",
+      "Name": "[Not used] Iron single door_Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "225",
+      "Name": "[Not used] Stone single door_Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "230",
+      "Name": "Both doors_indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "231",
+      "Name": "Both doors_destructible",
+      "Description": ""
+    },
+    {
+      "ID": "235",
+      "Name": "[Not used] Stone double doors_Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "240",
+      "Name": "[Not used] Double iron doors_Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "250",
+      "Name": "[Not used] Wooden standing board_Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "260",
+      "Name": "Lighthouse_Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "270",
+      "Name": "[Not used] Boss statue",
+      "Description": ""
+    },
+    {
+      "ID": "280",
+      "Name": "[Not used] Barista barrel",
+      "Description": ""
+    },
+    {
+      "ID": "290",
+      "Name": "[Not used] Hanging lantern",
+      "Description": ""
+    },
+    {
+      "ID": "300",
+      "Name": "[Memory of the Titan] Head of the Colossus",
+      "Description": ""
+    },
+    {
+      "ID": "310",
+      "Name": "[Not used] [Fortress of Resistance] Broken Ballista",
+      "Description": ""
+    },
+    {
+      "ID": "320",
+      "Name": "[Not used] [Fortress of Resistance] Bridge destroyed by fireballs",
+      "Description": ""
+    },
+    {
+      "ID": "330",
+      "Name": "[Not used] [Fortress of Resistance] Barricade",
+      "Description": ""
+    },
+    {
+      "ID": "340",
+      "Name": "[Not used] [Fairy's Bank] Tree branch wall",
+      "Description": ""
+    },
+    {
+      "ID": "350",
+      "Name": "[Not used] [Fortress of Resistance] Boss room stone floor",
+      "Description": ""
+    },
+    {
+      "ID": "360",
+      "Name": "[Andile] Ogre Destruction Wall",
+      "Description": ""
+    },
+    {
+      "ID": "365",
+      "Name": "[Andile] Ogre Destruction Double Door",
+      "Description": ""
+    },
+    {
+      "ID": "370",
+      "Name": "[General Purpose] Walls that can be broken by flame barrels",
+      "Description": ""
+    },
+    {
+      "ID": "371",
+      "Name": "[General purpose] Lazy pot (normal)",
+      "Description": ""
+    },
+    {
+      "ID": "372",
+      "Name": "[General purpose] Flame barrel (moving object)",
+      "Description": ""
+    },
+    {
+      "ID": "373",
+      "Name": "[General purpose] Flame barrel (immovable)",
+      "Description": ""
+    },
+    {
+      "ID": "374",
+      "Name": "[General purpose] Lazy pot (hollow fall only)",
+      "Description": ""
+    },
+    {
+      "ID": "380",
+      "Name": "[Not used] Hidden door (destructible)",
+      "Description": ""
+    },
+    {
+      "ID": "381",
+      "Name": "[Not used] Hidden door (cannot be destroyed)",
+      "Description": ""
+    },
+    {
+      "ID": "390",
+      "Name": "[Prisoner's Prison] OBJ that changes from static to dynamic",
+      "Description": ""
+    },
+    {
+      "ID": "400",
+      "Name": "[Not used] Decoy",
+      "Description": ""
+    },
+    {
+      "ID": "410",
+      "Name": "[Hunting Forest] Chariots event_horse carriage",
+      "Description": ""
+    },
+    {
+      "ID": "420",
+      "Name": "[Not used] Lazy pot",
+      "Description": ""
+    },
+    {
+      "ID": "430",
+      "Name": "[Not used] [Damari Valley] Boss battle jar",
+      "Description": ""
+    },
+    {
+      "ID": "440",
+      "Name": "[Not used] [Heide's Great Fire Tower] Pillar that can only be destroyed by the boss",
+      "Description": ""
+    },
+    {
+      "ID": "450",
+      "Name": "[Not used] [Hollow Shadow Forest] Human Face Tree",
+      "Description": ""
+    },
+    {
+      "ID": "460",
+      "Name": "[Memory of the Giant] Boss destroys the tower",
+      "Description": ""
+    },
+    {
+      "ID": "470",
+      "Name": "[Not used] [Madura] Well event punching stone",
+      "Description": ""
+    },
+    {
+      "ID": "480",
+      "Name": "[Memory of the Giant] Ladder destroyed by the boss",
+      "Description": ""
+    },
+    {
+      "ID": "490",
+      "Name": "[Prison of Oblivion] Iron bars in the boss room",
+      "Description": ""
+    },
+    {
+      "ID": "491",
+      "Name": "[Forgotten Prison] Barrel shelf",
+      "Description": ""
+    },
+    {
+      "ID": "500",
+      "Name": "[Ojo Doran] Statue Knight's Head",
+      "Description": ""
+    },
+    {
+      "ID": "501",
+      "Name": "[Ojo Doran] Pitfall",
+      "Description": ""
+    },
+    {
+      "ID": "510",
+      "Name": "[Gerald] Well roof",
+      "Description": ""
+    },
+    {
+      "ID": "511",
+      "Name": "[Gerald] Lower desk",
+      "Description": ""
+    },
+    {
+      "ID": "520",
+      "Name": "[Hollow Forest] Icicle Stone",
+      "Description": ""
+    },
+    {
+      "ID": "521",
+      "Name": "[Not used] [Hollow Forest] Dead tree (small tree) in the boss room",
+      "Description": ""
+    },
+    {
+      "ID": "530",
+      "Name": "[Tamaru Valley] Jar in Jabba the Hutt's room",
+      "Description": ""
+    },
+    {
+      "ID": "540",
+      "Name": "[Volcano Steel Works] Broken Bridge",
+      "Description": ""
+    },
+    {
+      "ID": "550",
+      "Name": "[Kudzu bottom] Jizo stone OBJ",
+      "Description": ""
+    },
+    {
+      "ID": "560",
+      "Name": "[Guardian Dragon's Nest] Wyvern Egg",
+      "Description": ""
+    },
+    {
+      "ID": "900",
+      "Name": "Boss part destruction: Extremely small weight: Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "901",
+      "Name": "Boss part destruction: Small weight: Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "902",
+      "Name": "Boss part destruction: Heavy: Unbreakable",
+      "Description": ""
+    },
+    {
+      "ID": "903",
+      "Name": "Boss part destruction: Heavy: Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "904",
+      "Name": "Boss part destruction: Extra large weight: Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "905",
+      "Name": "Boss part destruction: Extra large weight: Cannot be destroyed",
+      "Description": ""
+    },
+    {
+      "ID": "1000",
+      "Name": "[Not used] General purpose - Barrel - None - Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1001",
+      "Name": "General Purpose - Barrel - Minimal - Durability Minimal",
+      "Description": ""
+    },
+    {
+      "ID": "1002",
+      "Name": "General-purpose - Barrel - Small - Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1003",
+      "Name": "General-purpose - Barrel - Medium - Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1004",
+      "Name": "General-purpose - Barrel - Large - Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1005",
+      "Name": "General Purpose - Barrel - Extra Large - Minimum Durability",
+      "Description": ""
+    },
+    {
+      "ID": "1006",
+      "Name": "General Purpose - Barrel - Extra Large - Minimum Durability",
+      "Description": ""
+    },
+    {
+      "ID": "1007",
+      "Name": "[Not used] General purpose - Barrel - ∞ - Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1050",
+      "Name": "[Not used] General purpose - No box - Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1051",
+      "Name": "General-purpose-box-extremely small-durability extremely small",
+      "Description": ""
+    },
+    {
+      "ID": "1052",
+      "Name": "General purpose - box - small - minimal durability",
+      "Description": ""
+    },
+    {
+      "ID": "1053",
+      "Name": "General-purpose-Box-Medium-Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1054",
+      "Name": "General purpose-box-large-durability minimal",
+      "Description": ""
+    },
+    {
+      "ID": "1055",
+      "Name": "General Purpose-Box-Extra Large-Minimum Durability",
+      "Description": ""
+    },
+    {
+      "ID": "1056",
+      "Name": "General Purpose - Box - Extra Large - Extremely Durable",
+      "Description": ""
+    },
+    {
+      "ID": "1057",
+      "Name": "[Not used] General purpose-Box-∞-Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1100",
+      "Name": "[Not used] General purpose - Chaise lounge - None - Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1101",
+      "Name": "[Not used] General purpose - Chaise longue - Extra small - Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1102",
+      "Name": "[Not used] General purpose - chaise longue - small - wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1103",
+      "Name": "[Not used] General purpose - Chaise longue - Medium - Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1104",
+      "Name": "[Not used] General purpose - Chaise longue - Large - Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1105",
+      "Name": "[Not used] General purpose - Chaise longue - Extra large - Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1106",
+      "Name": "[Not used] General purpose - Chaise longue - Extra large - Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1107",
+      "Name": "[Not used] General purpose - Chaise longue - ∞ - Wooden",
+      "Description": ""
+    },
+    {
+      "ID": "1150",
+      "Name": "General-purpose - Contact destruction - Figurine - Destructible",
+      "Description": ""
+    },
+    {
+      "ID": "1151",
+      "Name": "General purpose-contact destruction-floor-destructible",
+      "Description": ""
+    },
+    {
+      "ID": "1200",
+      "Name": "[Not used] General purpose - No weight - Minimum durability - Anything",
+      "Description": ""
+    },
+    {
+      "ID": "1201",
+      "Name": "[Not used] General purpose - No weight - Minimum durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1202",
+      "Name": "[Not used] General purpose - No weight - Minimum durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1203",
+      "Name": "[Not used] General purpose - No weight - Small durability - Anything",
+      "Description": ""
+    },
+    {
+      "ID": "1204",
+      "Name": "[Not used] General purpose - No weight - Small durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1205",
+      "Name": "[Not used] General purpose - No weight - Small durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1206",
+      "Name": "[Not used] General purpose - No weight - Durable - Anything",
+      "Description": ""
+    },
+    {
+      "ID": "1207",
+      "Name": "[Not used] General purpose - Weightless - Durable - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1208",
+      "Name": "[Not used] General purpose - Weightless - Durable - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1209",
+      "Name": "[Not used] General-purpose - Weightless - Durable - Anything",
+      "Description": ""
+    },
+    {
+      "ID": "1210",
+      "Name": "[Not used] General purpose - Weightless - Durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1211",
+      "Name": "[Not used] General purpose - Weightless - Durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1212",
+      "Name": "[Not used] General purpose - Weightless - Durable extra large - Anything",
+      "Description": ""
+    },
+    {
+      "ID": "1213",
+      "Name": "[Not used] General purpose - Weightless - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1214",
+      "Name": "[Not used] General purpose - Weightless - Extra large durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1215",
+      "Name": "[Not used] General purpose - Weightless - Durable extra large - Anything",
+      "Description": ""
+    },
+    {
+      "ID": "1216",
+      "Name": "[Not used] General purpose - Weightless - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1217",
+      "Name": "[Not used] General purpose - Weightless - Extra large durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1250",
+      "Name": "General-purpose - Extremely small weight - Extremely durable - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1251",
+      "Name": "General-purpose - Extremely small weight - Extremely durable - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1252",
+      "Name": "General-purpose - Extremely small weight - Extremely durable - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1253",
+      "Name": "General-purpose - Very small weight - Small durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1254",
+      "Name": "General-purpose - Very small weight - Small durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1255",
+      "Name": "General-purpose - Very small weight - Small durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1256",
+      "Name": "General-purpose - Very small weight - Medium durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1257",
+      "Name": "General purpose - Very small weight - Medium durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1258",
+      "Name": "General-purpose - Very small weight - Medium durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1259",
+      "Name": "General-purpose - Very small weight - High durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1260",
+      "Name": "General-purpose - Very small weight - High durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1261",
+      "Name": "General-purpose - Very small weight - High durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1262",
+      "Name": "General-purpose - Extremely small weight - Extra large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1263",
+      "Name": "General-purpose - Extremely small weight - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1264",
+      "Name": "General-purpose - Extremely small weight - Extra large durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1265",
+      "Name": "General-purpose - Extremely small weight - Extra large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1266",
+      "Name": "General-purpose - Extremely small weight - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1267",
+      "Name": "General-purpose - Extremely small weight - Extra large durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1300",
+      "Name": "General-purpose - Small weight - Minimal durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1301",
+      "Name": "General-purpose - Small weight - Minimal durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1302",
+      "Name": "General-purpose - Small weight - Minimum durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1303",
+      "Name": "General-purpose - Small weight - Small durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1304",
+      "Name": "General-purpose - Small weight - Small durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1305",
+      "Name": "General-purpose - Small weight - Small durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1306",
+      "Name": "General-purpose - Light weight - Medium durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1307",
+      "Name": "General-purpose - Light weight - Medium durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1308",
+      "Name": "General-purpose - Light weight - Medium durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1309",
+      "Name": "General Purpose-Low Weight-Large Durability-Bow and Arrow Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1310",
+      "Name": "General-purpose - Small weight - High durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1311",
+      "Name": "General-purpose - Small weight - High durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1312",
+      "Name": "General-purpose - Small weight - Extra large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1313",
+      "Name": "General-purpose - Small weight - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1314",
+      "Name": "General Purpose - Small Weight - Extra Large Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1315",
+      "Name": "General-purpose - Light weight - Extra large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1316",
+      "Name": "General Purpose - Small Weight - Extra Large Durability - Normal Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1317",
+      "Name": "General Purpose - Small Weight - Extra Large Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1350",
+      "Name": "General-purpose - Medium weight - Minimum durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1351",
+      "Name": "General-purpose - Medium weight - Minimum durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1352",
+      "Name": "General-purpose - Medium weight - Minimum durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1353",
+      "Name": "General purpose - Medium weight - Small durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1354",
+      "Name": "General purpose - Medium weight - Small durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1355",
+      "Name": "General purpose - Medium weight - Small durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1356",
+      "Name": "General-purpose-heavy-medium-durable-bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1357",
+      "Name": "General-purpose - Heavy - Medium - Durable - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1358",
+      "Name": "General Purpose - Medium Heavy - Medium Durable - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1359",
+      "Name": "General purpose - Medium weight - High durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1360",
+      "Name": "General purpose - Medium weight - High durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1361",
+      "Name": "General purpose - Medium weight - High durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1362",
+      "Name": "General purpose - Medium weight - Extra large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1363",
+      "Name": "General purpose - Medium weight - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1364",
+      "Name": "General purpose - Medium weight - Extra large durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1365",
+      "Name": "General purpose - Medium weight - Extra large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1366",
+      "Name": "General purpose - Medium weight - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1367",
+      "Name": "General purpose - Medium weight - Extra large durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1400",
+      "Name": "General purpose - large weight - minimal durability - bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1401",
+      "Name": "General-purpose - Large weight - Minimum durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1402",
+      "Name": "General purpose - large weight - minimal durability - special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1403",
+      "Name": "General purpose - large weight - small durability - bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1404",
+      "Name": "General purpose - large weight - small durability - normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1405",
+      "Name": "General Purpose - Large Weight - Small Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1406",
+      "Name": "General purpose - Heavy weight - Medium durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1407",
+      "Name": "General Purpose - Heavy Weight - Medium Durability - Normal Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1408",
+      "Name": "General Purpose - Heavy Weight - Medium Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1409",
+      "Name": "General purpose - Heavy weight - Durable - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1410",
+      "Name": "General purpose - Heavy weight - Durable - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1411",
+      "Name": "General Purpose - Heavy Weight - Large Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1412",
+      "Name": "General-purpose - Heavy weight - Extra large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1413",
+      "Name": "General-purpose - Heavy weight - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1414",
+      "Name": "General Purpose - Heavy Weight - Extra Large Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1415",
+      "Name": "General-purpose - Heavy weight - Extra large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1416",
+      "Name": "General-purpose - Heavy weight - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1417",
+      "Name": "General Purpose - Heavy Weight - Extra Large Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1450",
+      "Name": "General Purpose - Extra Large Weight - Extra Small Durability - Bow and Arrow Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1451",
+      "Name": "General-purpose - Extra large weight - Extremely small durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1452",
+      "Name": "General Purpose - Extra Large Weight - Extra Small Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1453",
+      "Name": "General purpose - Extra large weight - Small durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1454",
+      "Name": "General purpose - Extra large weight - Small durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1455",
+      "Name": "General purpose - Extra large weight - Small durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1456",
+      "Name": "General-purpose - Heavy weight - Medium durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1457",
+      "Name": "General-purpose - Heavy weight - Medium durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1458",
+      "Name": "General-purpose - Heavy weight - Medium durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1459",
+      "Name": "General-purpose - Extra heavy weight - Large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1460",
+      "Name": "General purpose - Extra heavy weight - Large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1461",
+      "Name": "General purpose - Extra heavy weight - Large durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1462",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Bow and Arrow Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1463",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Normal Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1464",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1465",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Bow and Arrow Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1466",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Normal Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1467",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1500",
+      "Name": "General-purpose - Super heavy weight - Super small durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1501",
+      "Name": "General Purpose - Extra Large Weight - Extremely Small Durability - Normal Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1502",
+      "Name": "General Purpose - Extra Large Weight - Extra Small Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1503",
+      "Name": "General-purpose - Extra large weight - Small durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1504",
+      "Name": "General-purpose - Extra large weight - Small durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1505",
+      "Name": "General Purpose - Extra Large Weight - Small Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1506",
+      "Name": "General-purpose - Super heavy weight - Medium durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1507",
+      "Name": "General Purpose - Extra Large Weight - Medium Durability - Normal Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1508",
+      "Name": "General Purpose - Extra Large Weight - Medium Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1509",
+      "Name": "General-purpose - Super heavy weight - Large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1510",
+      "Name": "General-purpose - Super heavy weight - Large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1511",
+      "Name": "General Purpose - Extra Large Weight - Large Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1512",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Bow and Arrow Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1513",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Normal Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1514",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1515",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Bow and Arrow Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1516",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Normal Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1517",
+      "Name": "General Purpose - Extra Large Weight - Extra Large Durability - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1550",
+      "Name": "[Scheduled to be deleted] General purpose-Weight ∞-Minimum durability-Anything",
+      "Description": ""
+    },
+    {
+      "ID": "1551",
+      "Name": "[Scheduled to be deleted] General Purpose-Weight ∞-Minimum Durability-Normal Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1552",
+      "Name": "[Scheduled to be deleted] General purpose-Weight ∞-Minimum durability-Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1553",
+      "Name": "[Scheduled to be deleted] General purpose - Weight ∞ - Durability small - Anything",
+      "Description": ""
+    },
+    {
+      "ID": "1554",
+      "Name": "[Scheduled to be deleted] General purpose - Weight ∞ - Durability small - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1555",
+      "Name": "[Scheduled to be deleted] General purpose - Weight ∞ - Durability small - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1556",
+      "Name": "[Scheduled to be deleted] General Purpose-Weight ∞-Durable-Anything",
+      "Description": ""
+    },
+    {
+      "ID": "1557",
+      "Name": "[Scheduled to be deleted] General-purpose - Weight ∞ - Durable - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1558",
+      "Name": "[Scheduled to be deleted] General Purpose-Weight ∞-Durable-Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1559",
+      "Name": "General-purpose - Weight ∞ - Mass extremely small - Destroy only giants",
+      "Description": ""
+    },
+    {
+      "ID": "1560",
+      "Name": "General-purpose - Weight ∞ - Mass small - Destroy only giants",
+      "Description": ""
+    },
+    {
+      "ID": "1561",
+      "Name": "General-purpose - Weight ∞ - Mass Medium - Destroy only giants",
+      "Description": ""
+    },
+    {
+      "ID": "1562",
+      "Name": "General-purpose weight ∞ - Large mass (pillars) - Destroy only giants",
+      "Description": ""
+    },
+    {
+      "ID": "1563",
+      "Name": "General purpose - Weight ∞ - Mass extra large - Destroy only giants",
+      "Description": ""
+    },
+    {
+      "ID": "1564",
+      "Name": "General-purpose - Weight ∞ - Mass Extra Large - Destroyed only by giants",
+      "Description": ""
+    },
+    {
+      "ID": "1600",
+      "Name": "[Not used] General purpose - Weightless - Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "1601",
+      "Name": "[Not used] General purpose - Extremely small weight - Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "1602",
+      "Name": "[Not used] General purpose - small weight - non-destructible",
+      "Description": ""
+    },
+    {
+      "ID": "1603",
+      "Name": "[Not used] General purpose - Medium weight - Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "1604",
+      "Name": "[Not used] General purpose - Heavy weight - Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "1605",
+      "Name": "[Not used] General purpose - Extra large weight - Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "1606",
+      "Name": "[Not used] General purpose - Extra large weight - Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "1607",
+      "Name": "General Purpose - Weight ∞ - Indestructible",
+      "Description": ""
+    },
+    {
+      "ID": "1608",
+      "Name": "General-purpose - Weight ∞ - Indestructible - HP setting available",
+      "Description": ""
+    },
+    {
+      "ID": "1650",
+      "Name": "General-purpose - Weight ∞ - Minimum durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1651",
+      "Name": "General-purpose - Weight ∞ - Minimum durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1652",
+      "Name": "General purpose - Weight ∞ - Minimum durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1653",
+      "Name": "General purpose - Weight ∞ - Durability small - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1654",
+      "Name": "General purpose - Weight ∞ - Durability small - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1655",
+      "Name": "General Purpose - Weight ∞ - Durability Small - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1656",
+      "Name": "General-purpose - Weight ∞ - Durable - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1657",
+      "Name": "General-purpose - Weight ∞ - Durable - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1658",
+      "Name": "General-purpose - Weight ∞ - Durable - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1659",
+      "Name": "General purpose - Weight ∞ - Durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1660",
+      "Name": "General Purpose-Weight ∞-Large Durability-Normal Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1661",
+      "Name": "General purpose - Weight ∞ - Durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1662",
+      "Name": "General Purpose - Weight ∞ - Extra Large Durability - Bow and Arrow Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1663",
+      "Name": "General-purpose - Weight ∞ - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1664",
+      "Name": "General Purpose - Weight ∞ - Durability Extra Large - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1665",
+      "Name": "General-purpose - Weight ∞ - Extra large durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1666",
+      "Name": "General-purpose - Weight ∞ - Extra large durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1667",
+      "Name": "General Purpose - Weight ∞ - Durability Extra Large - Special Attack",
+      "Description": ""
+    },
+    {
+      "ID": "1700",
+      "Name": "General-purpose - Weight ∞ - Evasion - Minimum durability - Bow and arrow attack",
+      "Description": ""
+    },
+    {
+      "ID": "1701",
+      "Name": "General purpose - Weight ∞ - Evasion - Minimum durability - Normal attack",
+      "Description": ""
+    },
+    {
+      "ID": "1702",
+      "Name": "General-purpose - Weight ∞ - Evasion - Minimum durability - Special attack",
+      "Description": ""
+    },
+    {
+      "ID": "1800",
+      "Name": "General-purpose - Stone-based OBJ - Minimum weight - Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1801",
+      "Name": "General-purpose - stone-based OBJ - small weight - minimal durability",
+      "Description": ""
+    },
+    {
+      "ID": "1802",
+      "Name": "General-purpose - Stone-based OBJ - Medium weight - Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1803",
+      "Name": "General-purpose - Stone-based OBJ - Large weight - Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1804",
+      "Name": "General-purpose - Stone OBJ - Extra large weight - Ultra small durability",
+      "Description": ""
+    },
+    {
+      "ID": "1805",
+      "Name": "General-purpose - Stone-based OBJ - Extra large weight - Ultra small durability",
+      "Description": ""
+    },
+    {
+      "ID": "1806",
+      "Name": "General-purpose - Stone-based OBJ - Weight ∞ - Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1810",
+      "Name": "General Purpose-Stone OBJ-Weight ∞-Durable Extra Large",
+      "Description": ""
+    },
+    {
+      "ID": "1900",
+      "Name": "General-purpose - Pot type OBJ - Avoidance - Minimum weight - Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1901",
+      "Name": "General purpose - pot type OBJ - avoidance - small weight - minimal durability",
+      "Description": ""
+    },
+    {
+      "ID": "1902",
+      "Name": "General purpose - pot type OBJ - avoidance - medium weight - minimal durability",
+      "Description": ""
+    },
+    {
+      "ID": "1903",
+      "Name": "General purpose - Pot type OBJ - Avoidance - Large weight - Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1904",
+      "Name": "General purpose - Pot type OBJ - Avoidance - Extra large weight - Minimal durability",
+      "Description": ""
+    },
+    {
+      "ID": "1905",
+      "Name": "General-purpose - Pot type OBJ - Avoidance - Extra large weight - Extremely small durability",
+      "Description": ""
+    },
+    {
+      "ID": "1906",
+      "Name": "General-purpose - Pot type OBJ - Avoidance - Weight ∞ - Minimum durability",
+      "Description": ""
+    },
+    {
+      "ID": "1910",
+      "Name": "General Purpose-Potter OBJ-Avoidance-Weight ∞-Durability Extra Large",
+      "Description": ""
+    },
+    {
+      "ID": "1920",
+      "Name": "General purpose - Pot type OBJ - Avoidance - Weight ∞ - Durability minimal - Breaks under load",
+      "Description": ""
+    }
+  ]
+}

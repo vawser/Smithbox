@@ -1,0 +1,22 @@
+{
+  "DisplayName": "MULT_END_RESPAWN_POS_TYPE",
+  "Name": "MULT_END_RESPAWN_POS_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Original position",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "The last bonfire",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Same place",
+      "Description": ""
+    }
+  ]
+}

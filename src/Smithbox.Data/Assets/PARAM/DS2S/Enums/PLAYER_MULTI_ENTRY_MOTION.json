@@ -1,0 +1,27 @@
+{
+  "DisplayName": "PLAYER_MULTI_ENTRY_MOTION",
+  "Name": "PLAYER_MULTI_ENTRY_MOTION",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Crouching",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Standing",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Sun praise",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Mirror night",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "DisplayName": "DAMAGE_OBJ_BREAK_TYPE",
+  "Name": "DAMAGE_OBJ_BREAK_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Valid",
+      "Description": ""
+    }
+  ]
+}

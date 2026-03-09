@@ -1,0 +1,212 @@
+{
+  "DisplayName": "ITEM_TYPE_PARAM_ID",
+  "Name": "ITEM_TYPE_PARAM_ID",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Prohibited from use",
+      "Description": ""
+    },
+    {
+      "ID": "10",
+      "Name": "Weapon",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "盾",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Armor",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "Armor - No movement",
+      "Description": ""
+    },
+    {
+      "ID": "40",
+      "Name": "Ring",
+      "Description": ""
+    },
+    {
+      "ID": "50",
+      "Name": "Spell",
+      "Description": ""
+    },
+    {
+      "ID": "60",
+      "Name": "Quiver",
+      "Description": ""
+    },
+    {
+      "ID": "100",
+      "Name": "Recovery",
+      "Description": ""
+    },
+    {
+      "ID": "200",
+      "Name": "Prayer",
+      "Description": ""
+    },
+    {
+      "ID": "250",
+      "Name": "Prayer (loop)",
+      "Description": ""
+    },
+    {
+      "ID": "260",
+      "Name": "Dark ring",
+      "Description": ""
+    },
+    {
+      "ID": "270",
+      "Name": "Black Crystal of Farewell",
+      "Description": ""
+    },
+    {
+      "ID": "300",
+      "Name": "Eat",
+      "Description": ""
+    },
+    {
+      "ID": "400",
+      "Name": "Drink",
+      "Description": ""
+    },
+    {
+      "ID": "420",
+      "Name": "Drink (stop)",
+      "Description": ""
+    },
+    {
+      "ID": "450",
+      "Name": "Est bottle",
+      "Description": ""
+    },
+    {
+      "ID": "500",
+      "Name": "Humanity",
+      "Description": ""
+    },
+    {
+      "ID": "510",
+      "Name": "Hanging stone",
+      "Description": ""
+    },
+    {
+      "ID": "550",
+      "Name": "Soul",
+      "Description": ""
+    },
+    {
+      "ID": "560",
+      "Name": "Transformation",
+      "Description": ""
+    },
+    {
+      "ID": "570",
+      "Name": "Dragon's breath",
+      "Description": ""
+    },
+    {
+      "ID": "580",
+      "Name": "Dragon's roar",
+      "Description": ""
+    },
+    {
+      "ID": "600",
+      "Name": "Paint",
+      "Description": ""
+    },
+    {
+      "ID": "700",
+      "Name": "Scatter",
+      "Description": ""
+    },
+    {
+      "ID": "800",
+      "Name": "Put",
+      "Description": ""
+    },
+    {
+      "ID": "850",
+      "Name": "Write a signature",
+      "Description": ""
+    },
+    {
+      "ID": "900",
+      "Name": "Throw (light)",
+      "Description": ""
+    },
+    {
+      "ID": "1000",
+      "Name": "Throw (heavy)",
+      "Description": ""
+    },
+    {
+      "ID": "1100",
+      "Name": "矢",
+      "Description": ""
+    },
+    {
+      "ID": "1130",
+      "Name": "Oya",
+      "Description": ""
+    },
+    {
+      "ID": "1160",
+      "Name": "Bolt",
+      "Description": ""
+    },
+    {
+      "ID": "1200",
+      "Name": "Ore",
+      "Description": ""
+    },
+    {
+      "ID": "1300",
+      "Name": "Torch",
+      "Description": ""
+    },
+    {
+      "ID": "1350",
+      "Name": "Flintstone",
+      "Description": ""
+    },
+    {
+      "ID": "1400",
+      "Name": "Prize exchange",
+      "Description": ""
+    },
+    {
+      "ID": "1500",
+      "Name": "Give to someone",
+      "Description": ""
+    },
+    {
+      "ID": "1600",
+      "Name": "Strong list",
+      "Description": ""
+    },
+    {
+      "ID": "1700",
+      "Name": "Theory of lines",
+      "Description": ""
+    },
+    {
+      "ID": "3000",
+      "Name": "Gesture",
+      "Description": ""
+    },
+    {
+      "ID": "9000",
+      "Name": "Valuables",
+      "Description": ""
+    }
+  ]
+}

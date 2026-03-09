@@ -1,0 +1,32 @@
+{
+  "DisplayName": "DAMAGE_SFX_TRACE_DP_COLOR_ENUM",
+  "Name": "DAMAGE_SFX_TRACE_DP_COLOR_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Stabbing test",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Two-handed sword test",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Spear test",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Two-handed long ax test",
+      "Description": ""
+    }
+  ]
+}

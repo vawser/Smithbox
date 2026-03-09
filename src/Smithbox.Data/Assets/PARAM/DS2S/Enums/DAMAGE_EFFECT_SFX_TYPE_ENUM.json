@@ -1,0 +1,152 @@
+{
+  "DisplayName": "DAMAGE_EFFECT_SFX_TYPE_ENUM",
+  "Name": "DAMAGE_EFFECT_SFX_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "General purpose smoke",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Spark",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Flame",
+      "Description": ""
+    },
+    {
+      "ID": "6",
+      "Name": "Lightning",
+      "Description": ""
+    },
+    {
+      "ID": "7",
+      "Name": "Soul",
+      "Description": ""
+    },
+    {
+      "ID": "8",
+      "Name": "Blood",
+      "Description": ""
+    },
+    {
+      "ID": "9",
+      "Name": "Body fluid",
+      "Description": ""
+    },
+    {
+      "ID": "11",
+      "Name": "Piece of wood",
+      "Description": ""
+    },
+    {
+      "ID": "12",
+      "Name": "Bone fragment",
+      "Description": ""
+    },
+    {
+      "ID": "15",
+      "Name": "Gravel",
+      "Description": ""
+    },
+    {
+      "ID": "16",
+      "Name": "Water splash",
+      "Description": ""
+    },
+    {
+      "ID": "17",
+      "Name": "Viscous droplets",
+      "Description": ""
+    },
+    {
+      "ID": "18",
+      "Name": "Lava splash",
+      "Description": ""
+    },
+    {
+      "ID": "19",
+      "Name": "Magic shock",
+      "Description": ""
+    },
+    {
+      "ID": "20",
+      "Name": "Dark shock",
+      "Description": ""
+    },
+    {
+      "ID": "21",
+      "Name": "Boss petrification",
+      "Description": ""
+    },
+    {
+      "ID": "22",
+      "Name": "Stone water",
+      "Description": ""
+    },
+    {
+      "ID": "23",
+      "Name": "Stone energy",
+      "Description": ""
+    },
+    {
+      "ID": "24",
+      "Name": "Ghost behind",
+      "Description": ""
+    },
+    {
+      "ID": "25",
+      "Name": "Poisonous swamp",
+      "Description": ""
+    },
+    {
+      "ID": "26",
+      "Name": "Oil",
+      "Description": ""
+    },
+    {
+      "ID": "27",
+      "Name": "Acid",
+      "Description": ""
+    },
+    {
+      "ID": "28",
+      "Name": "Mud",
+      "Description": ""
+    },
+    {
+      "ID": "29",
+      "Name": "Soil",
+      "Description": ""
+    },
+    {
+      "ID": "30",
+      "Name": "Sand",
+      "Description": ""
+    },
+    {
+      "ID": "31",
+      "Name": "General purpose smoke (living meat)",
+      "Description": ""
+    },
+    {
+      "ID": "1008",
+      "Name": "Blood: green",
+      "Description": ""
+    },
+    {
+      "ID": "2008",
+      "Name": "Blood: none",
+      "Description": ""
+    }
+  ]
+}

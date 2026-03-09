@@ -1,0 +1,17 @@
+{
+  "DisplayName": "BOOL_CIRCLECROSS_TYPE",
+  "Name": "BOOL_CIRCLECROSS_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "×",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "○",
+      "Description": ""
+    }
+  ]
+}

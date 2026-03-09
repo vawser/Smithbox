@@ -1,0 +1,22 @@
+{
+  "DisplayName": "COMBO_ROUTE_TYPE",
+  "Name": "COMBO_ROUTE_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Root",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Derivation 1",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Derivation 2",
+      "Description": ""
+    }
+  ]
+}

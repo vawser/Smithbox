@@ -1,0 +1,27 @@
+{
+  "DisplayName": "DAMAGE_SP_EFFECT_TARGET",
+  "Name": "DAMAGE_SP_EFFECT_TARGET",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "The one who was eaten",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "The one who gave",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Both",
+      "Description": ""
+    }
+  ]
+}

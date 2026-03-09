@@ -1,0 +1,22 @@
+{
+  "DisplayName": "CHR_GROUP_TYPE",
+  "Name": "CHR_GROUP_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Player army",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Enemy army",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Neutral",
+      "Description": ""
+    }
+  ]
+}

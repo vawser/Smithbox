@@ -1,0 +1,12 @@
+{
+  "DisplayName": "EVENT_VALUE_m10_34_00_00",
+  "Name": "EVENT_VALUE_m10_34_00_00",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "10",
+      "Name": "Boss battle_death count",
+      "Description": ""
+    }
+  ]
+}

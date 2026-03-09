@@ -1,0 +1,22 @@
+{
+  "DisplayName": "RESULT_EVENT_PENALTY_TYPE_ENUM",
+  "Name": "RESULT_EVENT_PENALTY_TYPE_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Pledged contribution-1",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Penalty type termination",
+      "Description": ""
+    }
+  ]
+}

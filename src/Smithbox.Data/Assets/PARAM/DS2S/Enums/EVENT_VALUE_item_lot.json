@@ -1,0 +1,687 @@
+{
+  "DisplayName": "EVENT_VALUE_item_lot",
+  "Name": "EVENT_VALUE_item_lot",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "100000",
+      "Name": "Item lottery test",
+      "Description": ""
+    },
+    {
+      "ID": "1307000",
+      "Name": "Dullahan - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1307100",
+      "Name": "Dullahan (headless) -?",
+      "Description": ""
+    },
+    {
+      "ID": "1502000",
+      "Name": "Man Scorpion (Male) - Defeat - Petrification release item",
+      "Description": ""
+    },
+    {
+      "ID": "1502010",
+      "Name": "Man Scorpion (male) - Equipment transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1506000",
+      "Name": "Grave Keeper - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1514000",
+      "Name": "The old king-?",
+      "Description": ""
+    },
+    {
+      "ID": "1700000",
+      "Name": "Shrine Maiden - First Conversation - Est Bottle",
+      "Description": ""
+    },
+    {
+      "ID": "1701000",
+      "Name": "Shrine Maiden (Child) - Conversation - Feather of Estintia",
+      "Description": ""
+    },
+    {
+      "ID": "1702000",
+      "Name": "Queen-?",
+      "Description": ""
+    },
+    {
+      "ID": "1704000",
+      "Name": "Ladder shop - equipment transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1705000",
+      "Name": "Retired fire guard 1-Equipment transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1705100",
+      "Name": "Retired fire protection woman 2-?",
+      "Description": ""
+    },
+    {
+      "ID": "1705300",
+      "Name": "Retired fire guard 3-?",
+      "Description": ""
+    },
+    {
+      "ID": "1721000",
+      "Name": "Spirit of the Prime Minister - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1723000",
+      "Name": "Firekeeper's Housekeeper-Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1724000",
+      "Name": "Kingdom Captain - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1725000",
+      "Name": "Pilgrim of the Abyss - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1726000",
+      "Name": "Dwarf - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1729000",
+      "Name": "Loyal dog-?",
+      "Description": ""
+    },
+    {
+      "ID": "1741000",
+      "Name": "Broken Blue Sect Warrior-Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1741010",
+      "Name": "Broken Blue Sect Warrior-NPC Migration MAX-Soul Vessel",
+      "Description": ""
+    },
+    {
+      "ID": "1742000",
+      "Name": "Warrior of Vengeance - Thank You for Helping - Patch's House Key",
+      "Description": ""
+    },
+    {
+      "ID": "1742010",
+      "Name": "Avenge Warrior - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1743000",
+      "Name": "Moonlight Old Man - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1744000",
+      "Name": "Patch - Thank you for your help - Patch's house key",
+      "Description": ""
+    },
+    {
+      "ID": "1744010",
+      "Name": "Patch - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1744020",
+      "Name": "Patch - Giant's Forest Conversation - White Sign Wax Stone",
+      "Description": ""
+    },
+    {
+      "ID": "1751000",
+      "Name": "Map Drawing - Giant's Forest Conversation - A House Key",
+      "Description": ""
+    },
+    {
+      "ID": "1751010",
+      "Name": "Map drawing: equipment transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1752000",
+      "Name": "Female Knight - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1752010",
+      "Name": "Female Knight - 2nd Encounter - Human Statue",
+      "Description": ""
+    },
+    {
+      "ID": "1752020",
+      "Name": "Female Knight - 3rd Encounter - Iron Ring of Protection +1",
+      "Description": ""
+    },
+    {
+      "ID": "1753000",
+      "Name": "Bell Keeper - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1753010",
+      "Name": "Bellkeeper-?",
+      "Description": ""
+    },
+    {
+      "ID": "1753020",
+      "Name": "Bell Keeper - Pledge Ring",
+      "Description": ""
+    },
+    {
+      "ID": "1754000",
+      "Name": "Yorozu Hag - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1756000",
+      "Name": "Mouse King - Pledge Ring",
+      "Description": ""
+    },
+    {
+      "ID": "1757000",
+      "Name": "Three Sisters A-Event 1",
+      "Description": ""
+    },
+    {
+      "ID": "1758000",
+      "Name": "Three Sisters B-Event 1",
+      "Description": ""
+    },
+    {
+      "ID": "1759000",
+      "Name": "Three Sisters C-Event 1",
+      "Description": ""
+    },
+    {
+      "ID": "1760000",
+      "Name": "Bard Girl 1-Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1760010",
+      "Name": "Bard Girl 1-Conversation-Tsursube Elementary School",
+      "Description": ""
+    },
+    {
+      "ID": "1760020",
+      "Name": "Bard Girl 1 - Rescue of the Prisoner Girl - Goddess' Blessing",
+      "Description": ""
+    },
+    {
+      "ID": "1760100",
+      "Name": "Bard Girl 2-Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1760110",
+      "Name": "Bard Girl 2 - Conversation - Hanging Stone",
+      "Description": ""
+    },
+    {
+      "ID": "1760120",
+      "Name": "Bard's Girl 2 - Rescue of a Prisoner Girl - Sparks of Magic",
+      "Description": ""
+    },
+    {
+      "ID": "1760200",
+      "Name": "Prisoner Girl-Conversation-Tsursube Elementary School",
+      "Description": ""
+    },
+    {
+      "ID": "1761000",
+      "Name": "Armor shop - equipment transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1762000",
+      "Name": "Material shop - equipment transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1763000",
+      "Name": "Sorcerer - Thank You for Rescue - Reduction of Reason",
+      "Description": ""
+    },
+    {
+      "ID": "1764000",
+      "Name": "Blacksmith - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1764300",
+      "Name": "EX blacksmith - equipment transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1766000",
+      "Name": "Magician-Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1768000",
+      "Name": "Spellmania-Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1769000",
+      "Name": "Miracle Worker - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1770000",
+      "Name": "Dark Magician-Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1771000",
+      "Name": "Sealed Person - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1771010",
+      "Name": "Sealed Person - 1st Person (Ladder Shop) - All Exorcism Rings",
+      "Description": ""
+    },
+    {
+      "ID": "1771020",
+      "Name": "Sealed person - 2nd person (map writer) - Withdrawal logic",
+      "Description": ""
+    },
+    {
+      "ID": "1771030",
+      "Name": "Sealed Person - Third Person (Spellmania) - Sun of Chaos",
+      "Description": ""
+    },
+    {
+      "ID": "1771040",
+      "Name": "Sealed Person - 4th Person (Priestess) - Magic Release",
+      "Description": ""
+    },
+    {
+      "ID": "1772000",
+      "Name": "Curious item shop - equipment transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1776000",
+      "Name": "Top weapon shop-?",
+      "Description": ""
+    },
+    {
+      "ID": "1777000",
+      "Name": "Cat-?",
+      "Description": ""
+    },
+    {
+      "ID": "1783040",
+      "Name": "Black Phantom Shop - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1784000",
+      "Name": "Chaplain of Indulgence - Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1785040",
+      "Name": "Guardian Knight-Equipment Transfer",
+      "Description": ""
+    },
+    {
+      "ID": "1786000",
+      "Name": "Sparkling girl-?",
+      "Description": ""
+    },
+    {
+      "ID": "1787000",
+      "Name": "Ancient Dragon-Conversation-Dragon Chaos",
+      "Description": ""
+    },
+    {
+      "ID": "2001000",
+      "Name": "Pledge - Seikyo - First pledge - Pledge ring",
+      "Description": ""
+    },
+    {
+      "ID": "2001011",
+      "Name": "Pledge - Blue Sect - Level 1 Reward -?",
+      "Description": ""
+    },
+    {
+      "ID": "2001012",
+      "Name": "Pledge - Blue Sect - Level 2 Reward -?",
+      "Description": ""
+    },
+    {
+      "ID": "2001013",
+      "Name": "Pledge - Blue Sect - Level 3 Reward -?",
+      "Description": ""
+    },
+    {
+      "ID": "2002000",
+      "Name": "Pledge - Blue Guardian - First Pledge - Pledge Ring",
+      "Description": ""
+    },
+    {
+      "ID": "2002011",
+      "Name": "Covenant-Blue Guardian-Level 1 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2002012",
+      "Name": "Covenant-Blue Guardian-Level 2 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2002013",
+      "Name": "Covenant-Blue Guardian-Level 3 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2003000",
+      "Name": "Pledge - Dark Spirit of Blood - First Pledge - Pledge Ring",
+      "Description": ""
+    },
+    {
+      "ID": "2003011",
+      "Name": "Covenant-Blood Spirit-Level 1 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2003012",
+      "Name": "Covenant-Blood Spirit-Level 2 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2003013",
+      "Name": "Covenant-Blood Spirit-Level 3 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2004000",
+      "Name": "Pledge - Bell Keeper - First Pledge - Pledge Ring",
+      "Description": ""
+    },
+    {
+      "ID": "2004011",
+      "Name": "Pledge - Bell Keeper - Level 1 Reward -?",
+      "Description": ""
+    },
+    {
+      "ID": "2004012",
+      "Name": "Pledge - Bell Keeper - Level 2 Reward -?",
+      "Description": ""
+    },
+    {
+      "ID": "2004013",
+      "Name": "Pledge - Bell Keeper - Level 3 Reward -?",
+      "Description": ""
+    },
+    {
+      "ID": "2005000",
+      "Name": "Pledge - Mouse - First pledge - Pledge ring",
+      "Description": ""
+    },
+    {
+      "ID": "2005011",
+      "Name": "Pledge-Mouse-Level 1 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2005012",
+      "Name": "Pledge-Mouse-Level 2 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2005013",
+      "Name": "Pledge-Mouse-Level 3 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2006000",
+      "Name": "Pledge - Abyss - First Pledge - Pledge Ring",
+      "Description": ""
+    },
+    {
+      "ID": "2006011",
+      "Name": "Covenant-Abyss-Level 1 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2006012",
+      "Name": "Covenant-Abyss-Level 2 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2006013",
+      "Name": "Covenant-Abyss-Level 3 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2007000",
+      "Name": "Pledge - Sun - First Pledge - Pledge Ring",
+      "Description": ""
+    },
+    {
+      "ID": "2007011",
+      "Name": "Pledge-Sun-Level 1 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2007012",
+      "Name": "Covenant-Sun-Level 2 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2007013",
+      "Name": "Covenant-Sun-Level 3 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2008000",
+      "Name": "Pledge - Ancient Dragon - First Pledge - Pledge Ring",
+      "Description": ""
+    },
+    {
+      "ID": "2008011",
+      "Name": "Pledge-Ancient Dragon-Level 1 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2008012",
+      "Name": "Pledge - Ancient Dragon - Level 2 Reward -?",
+      "Description": ""
+    },
+    {
+      "ID": "2008013",
+      "Name": "Pledge-Ancient Dragon-Level 3 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2009000",
+      "Name": "Pledge-Strong Persons-First Pledge-List of Strong Persons",
+      "Description": ""
+    },
+    {
+      "ID": "2009011",
+      "Name": "Covenant-Strong Person-Level 1 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2009012",
+      "Name": "Covenant-Strong Person-Level 2 Reward-?",
+      "Description": ""
+    },
+    {
+      "ID": "2009013",
+      "Name": "Pledge - Strongman - Level 3 Reward - Pledge Ring",
+      "Description": ""
+    },
+    {
+      "ID": "3001000",
+      "Name": "\"Pointing\" book",
+      "Description": ""
+    },
+    {
+      "ID": "3002000",
+      "Name": "\"Come on\" book",
+      "Description": ""
+    },
+    {
+      "ID": "3003000",
+      "Name": "A book of ``a polite bow''",
+      "Description": ""
+    },
+    {
+      "ID": "3004000",
+      "Name": "``One Bow'' Book",
+      "Description": ""
+    },
+    {
+      "ID": "3005000",
+      "Name": "\"Welcome\" letter",
+      "Description": ""
+    },
+    {
+      "ID": "3006000",
+      "Name": "Book of \"Opening Ceremony\"",
+      "Description": ""
+    },
+    {
+      "ID": "3007000",
+      "Name": "\"Wave your hand\" book",
+      "Description": ""
+    },
+    {
+      "ID": "3008000",
+      "Name": "Book of “Guts Pose”",
+      "Description": ""
+    },
+    {
+      "ID": "3009000",
+      "Name": "Book of “Joy”",
+      "Description": ""
+    },
+    {
+      "ID": "3010000",
+      "Name": "Book of “Battle Cry”",
+      "Description": ""
+    },
+    {
+      "ID": "3011000",
+      "Name": "Book of “Getting used to your shoulders”",
+      "Description": ""
+    },
+    {
+      "ID": "3012000",
+      "Name": "Book of \"Ei Ei O\"",
+      "Description": ""
+    },
+    {
+      "ID": "3013000",
+      "Name": "Letter of “understanding”",
+      "Description": ""
+    },
+    {
+      "ID": "3014000",
+      "Name": "Book of “Negation”",
+      "Description": ""
+    },
+    {
+      "ID": "3015000",
+      "Name": "\"Leave it to me\" book",
+      "Description": ""
+    },
+    {
+      "ID": "3016000",
+      "Name": "Book of “Begging for Life”",
+      "Description": ""
+    },
+    {
+      "ID": "3017000",
+      "Name": "Book of “Dogeza”",
+      "Description": ""
+    },
+    {
+      "ID": "3018000",
+      "Name": "Book of “Beheading”",
+      "Description": ""
+    },
+    {
+      "ID": "3019000",
+      "Name": "Book of \"Provocation\"",
+      "Description": ""
+    },
+    {
+      "ID": "3020000",
+      "Name": "Book of \"Make fun of\"",
+      "Description": ""
+    },
+    {
+      "ID": "3021000",
+      "Name": "Book of “Sun Praise”",
+      "Description": ""
+    },
+    {
+      "ID": "60001000",
+      "Name": "[Kudzu Bottom] Dropped by the last giant soldier",
+      "Description": ""
+    },
+    {
+      "ID": "60002000",
+      "Name": "[Rotten Giant Forest] Giant Fruit",
+      "Description": ""
+    },
+    {
+      "ID": "60003000",
+      "Name": "[Guardian Dragon's Nest] Dragon Egg Fossil",
+      "Description": ""
+    },
+    {
+      "ID": "60004000",
+      "Name": "[Memory of the Titan] Access the corpse of the giant",
+      "Description": ""
+    },
+    {
+      "ID": "60005000",
+      "Name": "[Memory of the Ancient Dragon] Access the corpse of the Ancient Dragon",
+      "Description": ""
+    },
+    {
+      "ID": "60006000",
+      "Name": "[NPC Event] Reward for defeating the Miracle Man",
+      "Description": ""
+    },
+    {
+      "ID": "60008000",
+      "Name": "For defeating Vagrant on the way",
+      "Description": ""
+    },
+    {
+      "ID": "60009000",
+      "Name": "For defeating petrified lion warriors",
+      "Description": ""
+    }
+  ]
+}

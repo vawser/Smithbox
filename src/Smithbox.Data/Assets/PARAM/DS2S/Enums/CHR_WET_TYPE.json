@@ -1,0 +1,22 @@
+{
+  "DisplayName": "CHR_WET_TYPE",
+  "Name": "CHR_WET_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "1",
+      "Name": "Water wet",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Poison wet",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Oily",
+      "Description": ""
+    }
+  ]
+}

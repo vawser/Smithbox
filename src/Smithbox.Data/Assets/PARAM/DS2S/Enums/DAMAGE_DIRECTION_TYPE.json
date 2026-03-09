@@ -1,0 +1,27 @@
+{
+  "DisplayName": "DAMAGE_DIRECTION_TYPE",
+  "Name": "DAMAGE_DIRECTION_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Relative position",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Relative position to the bullet",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Direction specification",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Direction of travel",
+      "Description": ""
+    }
+  ]
+}

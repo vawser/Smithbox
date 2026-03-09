@@ -1,0 +1,22 @@
+{
+  "DisplayName": "OBJ_RESIDENT_SFX_POINT_ENUM",
+  "Name": "OBJ_RESIDENT_SFX_POINT_ENUM",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Master",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Center",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Damipoly specification",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "DisplayName": "ITEM_COMPLETE_TROPHY_TYPE",
+  "Name": "ITEM_COMPLETE_TROPHY_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "None",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Gesture",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Magic",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Miracle",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Magic",
+      "Description": ""
+    },
+    {
+      "ID": "5",
+      "Name": "Dark arts",
+      "Description": ""
+    }
+  ]
+}

@@ -9,12 +9,12 @@
     <armorType
     AltName="Armor Type"
     Wiki="The type of armor this is." 
-    Enum="ARMOR_TYPE" />
+    ProjectEnum="ARMOR_TYPE" />
     
     <armorCategory 
     AltName="Armor Category"
     Wiki="The category this armor belongs to."
-    Enum="EQUIP_CATEGORY" />
+    ProjectEnum="EQUIP_CATEGORY" />
     
     <dummy0
     Padding="" />
@@ -26,7 +26,7 @@
     <modelGender 
     AltName="Armor Model Gender" 
     Wiki="The gender to use for this armor model." 
-    Enum="EQUIP_MODEL_GENDER" />
+    ProjectEnum="EQUIP_MODEL_GENDER" />
     
     <dummy1
     Padding="" />
@@ -122,40 +122,7 @@
     <brokenSoundType
     AltName="Broken Sound Type"
     Wiki="The sound type to use when this armor is broken."
-    Enum="EQUIP_BREAK_SOUND_MATERIAL_TYPE" />
+    ProjectEnum="EQUIP_BREAK_SOUND_MATERIAL_TYPE" />
   </Field>
-  
-  <Enums>
-    <Enum Name="EQUIP_CATEGORY">
-      <Option Value="0" Name="Facial Parts" />
-      <Option Value="1" Name="Head" />
-      <Option Value="2" Name="Chest" />
-      <Option Value="3" Name="Arms" />
-      <Option Value="4" Name="Feet" />
-      <Option Value="5" Name="Accessory" />
-      <Option Value="6" Name="Other" />
-      <Option Value="7" Name="Number of Types" />
-      <Option Value="-1" Name="Illegal Equipment Type" />
-    </Enum>
-    <Enum Name="ARMOR_TYPE">
-      <Option Value="0" Name="Naked" />
-      <Option Value="1" Name="Cloth" />
-      <Option Value="2" Name="Leather" />
-      <Option Value="3" Name="Iron" />
-      <Option Value="4" Name="Barrel" />
-    </Enum>
-    <Enum Name="EQUIP_MODEL_GENDER">
-      <Option Value="0" Name="Shared" />
-      <Option Value="1" Name="Mixed" />
-      <Option Value="2" Name="Gender" />
-    </Enum>
-    <Enum Name="EQUIP_BREAK_SOUND_MATERIAL_TYPE">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Iron" />
-      <Option Value="2" Name="Wood" />
-      <Option Value="3" Name="Cloth" />
-      <Option Value="4" Name="Soul" />
-    </Enum>
-  </Enums>
   
 </PARAMMETA>

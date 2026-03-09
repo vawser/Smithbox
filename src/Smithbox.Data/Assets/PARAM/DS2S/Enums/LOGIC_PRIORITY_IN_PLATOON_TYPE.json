@@ -1,0 +1,32 @@
+{
+  "DisplayName": "LOGIC_PRIORITY_IN_PLATOON_TYPE",
+  "Name": "LOGIC_PRIORITY_IN_PLATOON_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Middle boss",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "High level weakling",
+      "Description": ""
+    },
+    {
+      "ID": "2",
+      "Name": "Medium level weakling",
+      "Description": ""
+    },
+    {
+      "ID": "3",
+      "Name": "Low level weakling",
+      "Description": ""
+    },
+    {
+      "ID": "4",
+      "Name": "Ignore",
+      "Description": ""
+    }
+  ]
+}

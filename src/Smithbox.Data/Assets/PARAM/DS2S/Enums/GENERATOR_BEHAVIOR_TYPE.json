@@ -1,0 +1,17 @@
+{
+  "DisplayName": "GENERATOR_BEHAVIOR_TYPE",
+  "Name": "GENERATOR_BEHAVIOR_TYPE",
+  "Description": "",
+  "Options": [
+    {
+      "ID": "0",
+      "Name": "Fixed",
+      "Description": ""
+    },
+    {
+      "ID": "1",
+      "Name": "Rush",
+      "Description": ""
+    }
+  ]
+}
