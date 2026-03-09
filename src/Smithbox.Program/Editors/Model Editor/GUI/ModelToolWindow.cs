@@ -29,7 +29,7 @@ public class ModelToolWindow
         if (activeView == null)
             return;
 
-        if (ImGui.Begin("Tool Window##modelEditorTools", UIHelper.GetMainWindowFlags()))
+        if (ImGui.Begin("Tool Window##modelEditorTools", UIHelper.GetMainWindowFlags() & ~(ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)))
         {
             FocusManager.SetFocus(EditorFocusContext.ModelEditor_Tools);
 
