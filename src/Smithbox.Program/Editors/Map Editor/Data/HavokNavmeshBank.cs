@@ -176,9 +176,6 @@ public class HavokNavmeshBank
         if (!CanUse())
             return;
 
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
-            return;
-
         foreach (var entry in Project.Locator.NavmeshFiles.Entries)
         {
             if (entry.Filename != map.Name)
@@ -205,7 +202,6 @@ public class HavokNavmeshBank
                         WriteSection9(map, nva);
                         WriteSection10(map, nva);
                         WriteSection11(map, nva);
-                        WriteSection12(map, nva);
                         WriteSection13(map, nva);
                     }
 
@@ -226,26 +222,26 @@ public class HavokNavmeshBank
 
     public void WriteNavmeshInfo(MapContainer map, NVA nva)
     {
-        var version = nva.NavmeshInfoEntries.Version;
+        var version = nva.Navmeshes.Version;
 
-        var newSection = new NavmeshInfoSection((int)version);
+        var newSection = new NavmeshSection((int)version);
 
         foreach (var curEnt in map.NavmeshParent.Children)
         {
-            if (curEnt.WrappedObject.GetType() == typeof(NavmeshInfo))
+            if (curEnt.WrappedObject.GetType() == typeof(Navmesh))
             {
-                var navmesh = (NavmeshInfo)curEnt.WrappedObject;
+                var navmesh = (Navmesh)curEnt.WrappedObject;
 
                 newSection.Add(navmesh);
             }
         }
 
-        nva.NavmeshInfoEntries = newSection;
+        nva.Navmeshes = newSection;
     }
 
     public void WriteFaceData(MapContainer map, NVA nva)
     {
-        var version = nva.FaceDataEntries.Version;
+        var version = nva.FaceDatas.Version;
 
         var newSection = new FaceDataSection();
 
@@ -259,12 +255,12 @@ public class HavokNavmeshBank
             }
         }
 
-        nva.FaceDataEntries = newSection;
+        nva.FaceDatas = newSection;
     }
 
     public void WriteNodeBank(MapContainer map, NVA nva)
     {
-        var version = nva.NodeBankEntries.Version;
+        var version = nva.NodeBanks.Version;
 
         var newSection = new NodeBankSection();
 
@@ -278,12 +274,12 @@ public class HavokNavmeshBank
             }
         }
 
-        nva.NodeBankEntries = newSection;
+        nva.NodeBanks = newSection;
     }
 
     public void WriteSection3(MapContainer map, NVA nva)
     {
-        var version = nva.Section3Entries.Version;
+        var version = nva.Entries3.Version;
 
         var newSection = new Section3();
 
@@ -297,12 +293,12 @@ public class HavokNavmeshBank
             }
         }
 
-        nva.Section3Entries = newSection;
+        nva.Entries3 = newSection;
     }
 
     public void WriteConnectors(MapContainer map, NVA nva)
     {
-        var version = nva.ConnectorEntries.Version;
+        var version = nva.Connectors.Version;
 
         var newSection = new ConnectorSection();
 
@@ -316,12 +312,12 @@ public class HavokNavmeshBank
             }
         }
 
-        nva.ConnectorEntries = newSection;
+        nva.Connectors = newSection;
     }
 
     public void WriteLevelConnectors(MapContainer map, NVA nva)
     {
-        var version = nva.LevelConnectorEntries.Version;
+        var version = nva.LevelConnectors.Version;
 
         var newSection = new LevelConnectorSection();
 
@@ -335,12 +331,12 @@ public class HavokNavmeshBank
             }
         }
 
-        nva.LevelConnectorEntries = newSection;
+        nva.LevelConnectors = newSection;
     }
 
     public void WriteSection9(MapContainer map, NVA nva)
     {
-        var version = nva.Section9Entries.Version;
+        var version = nva.Entries9.Version;
 
         var newSection = new Section9();
 
@@ -354,12 +350,12 @@ public class HavokNavmeshBank
             }
         }
 
-        nva.Section9Entries = newSection;
+        nva.Entries9 = newSection;
     }
 
     public void WriteSection10(MapContainer map, NVA nva)
     {
-        var version = nva.Section10Entries.Version;
+        var version = nva.Entries10.Version;
 
         var newSection = new Section10();
 
@@ -373,12 +369,12 @@ public class HavokNavmeshBank
             }
         }
 
-        nva.Section10Entries = newSection;
+        nva.Entries10 = newSection;
     }
 
     public void WriteSection11(MapContainer map, NVA nva)
     {
-        var version = nva.Section11Entries.Version;
+        var version = nva.Entries11.Version;
 
         var newSection = new Section11();
 
@@ -392,31 +388,12 @@ public class HavokNavmeshBank
             }
         }
 
-        nva.Section11Entries = newSection;
-    }
-
-    public void WriteSection12(MapContainer map, NVA nva)
-    {
-        var version = nva.Section12Entries.Version;
-
-        var newSection = new Section12();
-
-        foreach (var curEnt in map.NavmeshParent.Children)
-        {
-            if (curEnt.WrappedObject.GetType() == typeof(Entry12))
-            {
-                var navmesh = (Entry12)curEnt.WrappedObject;
-
-                newSection.Add(navmesh);
-            }
-        }
-
-        nva.Section12Entries = newSection;
+        nva.Entries11 = newSection;
     }
 
     public void WriteSection13(MapContainer map, NVA nva)
     {
-        var version = nva.Section13Entries.Version;
+        var version = nva.Entries13.Version;
 
         var newSection = new Section13();
 
@@ -430,6 +407,6 @@ public class HavokNavmeshBank
             }
         }
 
-        nva.Section13Entries = newSection;
+        nva.Entries13 = newSection;
     }
 }

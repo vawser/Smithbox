@@ -3,8 +3,7 @@
 #---------------------
 
 - Map Editor
- - Fix DS2 BTL load (currently doesn't load them into the bank)
- - Check DS2 map params support the full param meta within the Map Editor (if not, implement)
+ - Add DS2 BTAB and BTPB support
  
 - Param Editor
  - Fix the FMG ref finder (the finder is inconsistent)
@@ -14,6 +13,6 @@
  
 - Gparam Editor:
  - Add support for load/save for gparambnd files, which BB uses
- - Add support for flt files
+ - Add support for DS2 flt files
  
  

@@ -24,24 +24,23 @@ local int VARINT_LONG = ReadShort(4) == 2;
 typedef struct {
     char magic[4]; Assert(magic == "NVG2");
     short version; Assert(version == 1 || version == 2);
-    short unk06; Assert(unk06 == 0);
+    short unk06 <hidden=true>; Assert(unk06 == 0);
     int meshCount;
-    int count0C;
-    int count10;
-    int count14;
-    int count18;
-    int unk1C; // Low 3 bytes always FF
-    Varint offset20 <format=hex>;
-    Varint offset28 <format=hex>;
-    Varint offset30 <format=hex>;
-    Varint offset38 <format=hex>;
-    Varint meshOffsets[meshCount] <optimize=true>;
+    int numStructA;
+    int numStructB;
+    int numStructC;
+    int numStructD;
+    int flags <format=binary>;
+    Varint pStructA <format=hex>;
+    Varint pStructB <format=hex>;
+    Varint pStructC <format=hex>;
+    Varint pStructD <format=hex>;
+    Varint pMeshes[meshCount] <optimize=true>;
 } Header <bgcolor=cLtRed>;
-
 
 typedef struct {
     Vector3 unk00;
-    float unk0C;
+    int id <format=hex>;
     int unk10;
     short unk14;
     short unk16;
@@ -51,158 +50,202 @@ typedef struct {
     short unk1E;
     short unk20;
     short unk22;
-} StructA <bgcolor=cLtGreen>;
+} StructA <bgcolor=cLtGreen, read=ReadStructA>;
 
+string ReadStructA(StructA& a) {
+    string str;
+    SPrintf(str, "(%.3f, %.3f, %.3f), %X\n", a.unk00.x, a.unk00.y, a.unk00.z, a.id);
+    return str;
+}
 
 typedef struct {
-    int unk00;
+    int unk00 <format=hex>;
     int unk04;
-    int unk08;
+    int flags <format=binary>;
 } StructB <bgcolor=cAqua>;
-
 
 typedef struct {
     short unk00;
     short unk02;
 } StructC <bgcolor=cLtBlue>;
 
-
 typedef struct {
     short unk00;
 } StructD <bgcolor=cYellow>;
-
 
 typedef struct {
     short v1;
     short v2;
     short v3;
-    short unk06; // Index of E4, but sometimes short.MinValue + n
-    short unk08;
-    short unk0A;
-} Face;
+    short n1; // Index of E4, but sometimes short.MinValue + n
+    short n2;
+    short n3;
+} Face <read=ReadFace>;
+
+string ReadFace( Face &face )
+{
+    local string c_res;
+
+    SPrintf(c_res, "(%d, %d, %d) (%d, %d, %d)\n", face.v1, face.v2, face.v3, face.n1, face.n2, face.n3);
+
+    return c_res;
+}
 
 typedef struct {
-    short unk00;
-    short unk02;
-    short unk04;
-    short unk06;
-    short unk08;
-    short unk0A;
-    short unk0C;
-    short unk0E;
-} StructE4;
+    short vtx0;
+    short vtx1;
+} Edge <read=ReadEdge>;
 
-struct StructE5;
-typedef struct (quad rootOffset, quad dataOffset) {
-    float unk00;
-    short leftIndex;
-    short rightIndex;
-    short dataCount;
-    short dataIndex;
-    
-    local quad pos <hidden=true> = FTell();
-    if (leftIndex != -1) {
-        FSeek(rootOffset + leftIndex * 0xC);
-        StructE5 left(rootOffset, dataOffset);
-    }
-    if (rightIndex != -1) {
-        FSeek(rootOffset + rightIndex * 0xC);
-        StructE5 right(rootOffset, dataOffset);
-    }
-    if (dataCount > 0) {
-        FSeek(dataOffset + dataIndex * 2);
-        ushort data[dataCount];
-    }
-    FSeek(pos);
-} StructE5 <read=ReadStructE5>;
-
-string ReadStructE5(StructE5& e5) {
+string ReadEdge(Edge& edge) {
     string str;
-    SPrintf(str, "%7.3f %3i %3i %3i %3i",
-        e5.unk00, e5.leftIndex, e5.rightIndex, e5.dataCount, e5.dataIndex);
+    SPrintf(str, "(%d, %d)", edge.vtx0, edge.vtx1);
     return str;
 }
 
 typedef struct {
-    int unk00; // Low 2 bytes always FF
-    int thisLength <format=hex>;
-    int unk08;
-    if (header.version == 2) {
-        int unk0C <hidden=true>; Assert(unk0C == 0);
+    short nextCInfo0;
+    short nextCInfo1;
+} Connectivity <read=ReadConnectivity>;
+
+string ReadConnectivity(Connectivity& cn) {
+    string str;
+    SPrintf(str, "%d, %d", cn.nextCInfo0, cn.nextCInfo1);
+    return str;
+}
+
+typedef struct {
+    Edge edge0;
+    Edge nextEdge;
+    Connectivity connectivity;
+    short iVarC;
+    short iVarE;
+} EdgeConnectivity <read=ReadEdgeConnectivity>;
+
+string ReadEdgeConnectivity(EdgeConnectivity& edgeData) {
+    string str;
+    SPrintf(str, "Edge: %s | Neighbors: %s", ReadEdge(edgeData.edge0), ReadConnectivity(edgeData.connectivity));
+    return str;
+}
+
+struct BSPTree;
+typedef struct (quad pRoot, quad pData) {
+    float position;
+    short backIndex;
+    short frontIndex;
+    short numFaces;
+    short facesIndex;
+    
+    local quad pos <hidden=true> = FTell();
+    if (backIndex != -1) {
+        FSeek(pRoot + backIndex * 0xC);
+        BSPTree left(pRoot, pData);
     }
+    if (frontIndex != -1) {
+        FSeek(pRoot + frontIndex * 0xC);
+        BSPTree right(pRoot, pData);
+    }
+    if (numFaces > 0) {
+        FSeek(pData + facesIndex * 2);
+        ushort faces[numFaces];
+    }
+    FSeek(pos);
+} BSPTree <read=ReadBSPTree>;
+
+string ReadBSPTree(BSPTree& tree) {
+    string str;
+    SPrintf(str, "%7.3f | (%i, %i) | %i",
+        tree.position, tree.backIndex, tree.frontIndex, tree.numFaces);
+    return str;
+}
+
+typedef struct {
+    int priority : 3;
+    int category : 3;
+} FaceFlags <read=ReadFaceFlags>;
+
+string ReadFaceFlags(FaceFlags& faceFlags) {
+    string str;
+    SPrintf(str, "%d, %d", faceFlags.priority, faceFlags.category);
+    return str;
+}
+
+typedef struct {
+    int unk00 <format=binary>; // Low 2 bytes always FF
+    int meshSize <format=hex>;
+    quad mapEntityStorage <format=hex>;
     Vector3 boundingBoxMin;
     Vector3 boundingBoxMax;
-    int vertexCount;
-    short faceCount;
-    short count30;
+    int numVertices;
+    short numFaces;
+    short numEdgeDatas;
     short unk30;
     short unk32;
     byte unk34; Assert(unk34 == 1);
-    byte unk35; Assert(unk35 == 0);
-    byte unk36; Assert(unk36 == 0);
-    byte unk37; Assert(unk37 == 0);
+    byte unk35 <hidden=true>; Assert(unk35 == 0);
+    byte unk36 <hidden=true>; Assert(unk36 == 0);
+    byte unk37 <hidden=true>; Assert(unk37 == 0);
     if (header.version == 2) {
         int unk38 <hidden=true>; Assert(unk38 == 0);
         int unk3C <hidden=true>; Assert(unk3C == 0);
     }
-    Varint verticesOffset <format=hex>;
-    Varint offset48 <format=hex>;
-    Varint facesOffset <format=hex>;
-    Varint offset58 <format=hex>;
-    Varint offset60 <format=hex>;
-    Varint offset68 <format=hex>;
+    Varint pVertices <format=hex>;
+    Varint pFaceFlags <format=hex>;
+    Varint pFaces <format=hex>;
+    Varint pEdgeConnectivity <format=hex>;
+    Varint pBspTree <format=hex>;
+    Varint pBspFaceList <format=hex>;
     
-    FSeek(verticesOffset.val);
-    Vector3 vertices[vertexCount] <bgcolor=cBlack>;
+    FSeek(pVertices.val);
+    Vector3 vertices[numVertices] <bgcolor=cBlack>;
     // Pad to 8
     
-    FSeek(offset48.val);
-    int unkSection2[faceCount] <bgcolor=cWhite>; // Always just 7s?
+    FSeek(pFaceFlags.val);
+    FaceFlags faceFlags[numFaces] <bgcolor=cWhite, format=binary>;
     // Pad to 8
     
-    FSeek(facesOffset.val);
-    Face faces[faceCount] <bgcolor=cBlack>;
+    FSeek(pFaces.val);
+    Face faces[numFaces] <bgcolor=cBlack>;
     // Pad to 8
     
-    FSeek(offset58.val);
-    StructE4 unkSection4[count30] <bgcolor=cWhite>;
+    FSeek(pEdgeConnectivity.val);
+    EdgeConnectivity edgeConnectivity[numEdgeDatas] <bgcolor=cWhite>;
     // Pad to 8
     
-    FSeek(offset60.val);
-    StructE5 rootStructE5(offset60.val, offset68.val) <bgcolor=cBlack>;
+    FSeek(pBspTree.val);
+    BSPTree bspTree(pBspTree.val, pBspFaceList.val) <bgcolor=cBlack>;
     // Pad to 8
     
-    // FSeek(offset68.val);
-    // Data for E5
+    //FSeek(pBspFaceList.val);
+    //Data for E5
     // Pad to 8
 } Mesh <bgcolor=cLtPurple>;
 
 //------------------------------------------------
 
 Header header;
-if (header.count0C > 0) {
-    FSeek(header.offset20.val);
-    StructA structAs[header.count0C];
+if (header.numStructA > 0) {
+    FSeek(header.pStructA.val);
+    StructA structA[header.numStructA];
 }
-if (header.count10 > 0) {
-    FSeek(header.offset28.val);
-    StructB structBs[header.count10];
+if (header.numStructB > 0) {
+    FSeek(header.pStructB.val);
+    StructB structB[header.numStructB];
 }
-if (header.count14 > 0) {
-    FSeek(header.offset30.val);
-    StructC structCs[header.count14];
+if (header.numStructC > 0) {
+    FSeek(header.pStructC.val);
+    StructC structC[header.numStructC];
 }
-if (header.count18 > 0) {
-    FSeek(header.offset38.val);
-    StructD structDs[header.count18];
+if (header.numStructD > 0) {
+    FSeek(header.pStructD.val);
+    StructD structD[header.numStructD];
 }
 
 // Just so 010 doesn't complain about struct ending before it started on DX9 files
-FSeek(header.meshOffsets[0].val);
+FSeek(header.pMeshes[0].val);
 struct {
     local int i <hidden=true>;
     for (i = 0; i < header.meshCount; i++) {
-        FSeek(header.meshOffsets[i].val);
+        FSeek(header.pMeshes[i].val);
         Mesh meshes;
     }
 } meshes;

@@ -297,7 +297,7 @@ public class MapContainer : ObjectContainer
         MapOffsetNode.AddChild(nvaParent);
 
         // Navmesh Info
-        foreach (var curNavmesh in nva.NavmeshInfoEntries)
+        foreach (var curNavmesh in nva.Navmeshes)
         {
             var newEntity = new MsbEntity(View.Universe, this, curNavmesh, MsbEntityType.Navmesh);
 
@@ -321,7 +321,7 @@ public class MapContainer : ObjectContainer
         }
 
         // Face Data
-        foreach (var curEntry in nva.FaceDataEntries)
+        foreach (var curEntry in nva.FaceDatas)
         {
             var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
@@ -332,7 +332,7 @@ public class MapContainer : ObjectContainer
         }
 
         // Node Bank Data
-        foreach (var curEntry in nva.NodeBankEntries)
+        foreach (var curEntry in nva.NodeBanks)
         {
             var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
@@ -342,19 +342,8 @@ public class MapContainer : ObjectContainer
             nvaParent.AddChild(newEntity);
         }
 
-        // Section 3 - Always empty
-        //foreach (var curEntry in nva.Section3Entries)
-        //{
-        //    var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
-
-        //    newEntity.SupportsName = false;
-
-        //    Objects.Add(newEntity);
-        //    nvaParent.AddChild(newEntity);
-        //}
-
         // Connectors
-        foreach (var curEntry in nva.ConnectorEntries)
+        foreach (var curEntry in nva.Connectors)
         {
             var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
@@ -365,7 +354,7 @@ public class MapContainer : ObjectContainer
         }
 
         // Level Connectors
-        foreach (var curEntry in nva.LevelConnectorEntries)
+        foreach (var curEntry in nva.LevelConnectors)
         {
             var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
@@ -384,19 +373,8 @@ public class MapContainer : ObjectContainer
 
         if (nva.Version == NVA.NVAVersion.EldenRing)
         {
-            // Section 9 - Always empty
-            //foreach (var curEntry in nva.Section9Entries)
-            //{
-            //    var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
-
-            //    newEntity.SupportsName = false;
-
-            //    Objects.Add(newEntity);
-            //    nvaParent.AddChild(newEntity);
-            //}
-
             // Section 10
-            foreach (var curEntry in nva.Section10Entries)
+            foreach (var curEntry in nva.Entries10)
             {
                 var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
@@ -407,18 +385,7 @@ public class MapContainer : ObjectContainer
             }
 
             // Section 11
-            foreach (var curEntry in nva.Section11Entries)
-            {
-                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-                newEntity.SupportsName = false;
-
-                Objects.Add(newEntity);
-                nvaParent.AddChild(newEntity);
-            }
-
-            // Section 12
-            foreach (var curEntry in nva.Section12Entries)
+            foreach (var curEntry in nva.Entries11)
             {
                 var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
@@ -429,7 +396,7 @@ public class MapContainer : ObjectContainer
             }
 
             // Section 13
-            foreach (var curEntry in nva.Section13Entries)
+            foreach (var curEntry in nva.Entries13)
             {
                 var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
