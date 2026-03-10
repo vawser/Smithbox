@@ -316,6 +316,7 @@ public class ProjectFileLocator : IDisposable
             var archive = entry.Archive;
             var isMap = folder.StartsWith("/map");
             var isSd = archive.Contains("sd");
+            var isDs2Map = folder.StartsWith("/model/map");
 
             // Map files
             if (ShouldAddToMapFiles(entry, isMap, isSd))
@@ -344,7 +345,7 @@ public class ProjectFileLocator : IDisposable
             // Light files
             if (isMap && ext == "btl")
                 lightFiles.Add(entry);
-            if (isMap && ext == "gibhd")
+            if (isDs2Map && ext == "gibhd")
                 ds2LightFiles.Add(entry);
 
             // Navmesh

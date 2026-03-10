@@ -325,7 +325,9 @@ public class MapUniverse : IUniverse
         {
             foreach (var entry in View.Project.Locator.DS2_LightFiles.Entries)
             {
-                if (entry.Filename.Contains(map.Name))
+                var worldBlock = map.Name.Substring(1);
+
+                if (entry.Filename.Contains(worldBlock))
                 {
                     BTL btl = LoadBTL(entry);
                     if (btl != null)
@@ -1043,11 +1045,13 @@ public class MapUniverse : IUniverse
 
         foreach (var entry in fileEntries)
         {
-            if (!entry.Filename.Contains(map.Name))
-                continue;
-
-            if (View.Project.Descriptor.ProjectType == ProjectType.DS2S || View.Project.Descriptor.ProjectType == ProjectType.DS2)
+            if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             {
+                var worldBlock = map.Name.Substring(1);
+
+                if (!entry.Filename.Contains(worldBlock))
+                    continue;
+
                 var bhdPath = entry.Path;
                 var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
 
@@ -1087,6 +1091,9 @@ public class MapUniverse : IUniverse
             }
             else
             {
+                if (!entry.Filename.Contains(map.Name))
+                    continue;
+
                 var btlFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(entry.Path);
 
                 var btl = BTL.Read(btlFile);
