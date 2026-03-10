@@ -1,0 +1,14 @@
+{
+  "id": "725",
+  "name": "Darkdiver Grandahl",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

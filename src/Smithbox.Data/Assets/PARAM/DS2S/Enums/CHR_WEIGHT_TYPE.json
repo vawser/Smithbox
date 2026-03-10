@@ -10,7 +10,7 @@
     },
     {
       "ID": "1",
-      "Name": "Extremely small",
+      "Name": "Very small",
       "Description": ""
     },
     {
@@ -30,17 +30,17 @@
     },
     {
       "ID": "5",
-      "Name": "Extra large",
+      "Name": "Very Large",
       "Description": ""
     },
     {
       "ID": "6",
-      "Name": "Super extra large",
+      "Name": "Extremely Large",
       "Description": ""
     },
     {
       "ID": "7",
-      "Name": "Super super extra large",
+      "Name": "Immensely Large",
       "Description": ""
     }
   ]

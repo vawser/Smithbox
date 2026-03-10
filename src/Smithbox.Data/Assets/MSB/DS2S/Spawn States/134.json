@@ -1,0 +1,26 @@
+{
+  "id": "134",
+  "name": "Gyrm (Flail)",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Crouching"
+    },
+    {
+      "value": "3",
+      "name": "Sitting (Anvil in Hand)"
+    },
+    {
+      "value": "4",
+      "name": "Sitting (Anvil by Side)"
+    }
+  ]
+}

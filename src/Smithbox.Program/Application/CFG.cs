@@ -88,30 +88,30 @@ public class CFG
     public string Project_Alias_Export_Delimiter = ";";
     public bool Project_Alias_Editor_Export_Ignore_Empty = false;
 
-    // Metadata
-    public bool Project_Enable_Param_Meta_Override = false;
-    public bool Project_Enable_Param_Meta_Addition = true;
+    // Metadata (Param Editor)
+    public bool Param_Editor_Enable_Param_Meta_Override = false;
+    public bool Param_Editor_Enable_Param_Meta_Addition = true;
 
-    public bool Project_Enable_Param_Enum_Override = false;
-    public bool Project_Enable_Param_Enum_Addition = true;
+    public bool Param_Editor_Enable_Param_Enum_Override = false;
+    public bool Param_Editor_Enable_Param_Enum_Addition = true;
 
-    public bool Project_Enable_Param_Category_Override = false;
-    public bool Project_Enable_Param_Category_Addition = true;
+    public bool Param_Editor_Enable_Param_Category_Override = false;
+    public bool Param_Editor_Enable_Param_Category_Addition = true;
 
-    public bool Project_Enable_Param_Commutativity_Group_Override = false;
-    public bool Project_Enable_Param_Commutativity_Group_Addition = true;
+    public bool Param_Editor_Enable_Param_Commutativity_Group_Override = false;
+    public bool Param_Editor_Enable_Param_Commutativity_Group_Addition = true;
 
-    public bool Project_Enable_Field_Reference_Group_Override = false;
-    public bool Project_Enable_Field_Reference_Group_Addition = true;
+    public bool Param_Editor_Enable_Param_Field_Reference_Group_Override = false;
+    public bool Param_Editor_Enable_Param_Field_Reference_Group_Addition = true;
 
-    public bool Project_Enable_Field_Layout_Override = false;
-    public bool Project_Enable_Field_Layout_Addition = true;
+    public bool Param_Editor_Enable_Param_Field_Layout_Override = false;
+    public bool Param_Editor_Enable_Field_Layout_Addition = true;
 
-    public bool Project_Enable_Icon_Configuration_Override = false;
-    public bool Project_Enable_Icon_Configuration_Addition = true;
+    public bool Param_Editor_Enable_Icon_Configuration_Override = false;
+    public bool Param_Editor_Enable_Icon_Configuration_Addition = true;
 
-    public bool Project_Enable_Graph_Annotation_Override = false;
-    public bool Project_Enable_Graph_Annotation_Addition = true;
+    public bool Param_Editor_Enable_Graph_Annotation_Override = false;
+    public bool Param_Editor_Enable_Graph_Annotation_Addition = true;
     #endregion
 
     #region Interface

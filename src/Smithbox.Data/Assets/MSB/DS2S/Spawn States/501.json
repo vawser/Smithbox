@@ -1,0 +1,14 @@
+{
+  "id": "501",
+  "name": "Mytha, the Baneful Queen",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

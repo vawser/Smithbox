@@ -1,0 +1,14 @@
+{
+  "id": "333",
+  "name": "Velstadt, the Royal Aegis",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

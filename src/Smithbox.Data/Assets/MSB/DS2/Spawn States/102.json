@@ -1,0 +1,54 @@
+{
+  "id": "102",
+  "name": "Royal Soldier (Human)",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Sleeping"
+    },
+    {
+      "value": "3",
+      "name": "Prone"
+    },
+    {
+      "value": "4",
+      "name": "Sitting"
+    },
+    {
+      "value": "5",
+      "name": "Hands on Wall"
+    },
+    {
+      "value": "6",
+      "name": "Wall Sit"
+    },
+    {
+      "value": "7",
+      "name": "Hold Back"
+    },
+    {
+      "value": "8",
+      "name": "Hands on Wall"
+    },
+    {
+      "value": "9",
+      "name": "Hands on Wall (Head Forward)"
+    },
+    {
+      "value": "15",
+      "name": "Lying Down (bugged)"
+    },
+    {
+      "value": "17",
+      "name": "Climbing Ladder"
+    }
+  ]
+}

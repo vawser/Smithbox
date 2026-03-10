@@ -5,27 +5,27 @@
   "Options": [
     {
       "ID": "1",
-      "Name": "Spirit body",
+      "Name": "Spirit Body",
       "Description": ""
     },
     {
       "ID": "2",
-      "Name": "Raw/cloth",
+      "Name": "Raw / Cloth",
       "Description": ""
     },
     {
       "ID": "3",
-      "Name": "Slightly hard",
+      "Name": "Slightly Hard",
       "Description": ""
     },
     {
       "ID": "4",
-      "Name": "Very hard",
+      "Name": "Very Hard",
       "Description": ""
     },
     {
       "ID": "5",
-      "Name": "Giant/Demon",
+      "Name": "Giant / Demon",
       "Description": ""
     }
   ]

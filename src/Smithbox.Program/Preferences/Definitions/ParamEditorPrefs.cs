@@ -1620,7 +1620,7 @@ public class ParamEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Param_Meta_Override))
+                if (ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Meta_Override))
                 {
                     if (curProject != null)
                     {
@@ -1646,7 +1646,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will add param enums from your project's .smithbox folder alongside the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Param_Enum_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Enum_Addition);
             }
         };
     }
@@ -1665,7 +1665,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will use the Param Enums local to your project's .smithbox folder, instead of the base version.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Param_Enum_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Enum_Override);
             }
         };
     }
@@ -1684,7 +1684,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will add param categories from your project's .smithbox folder alongside the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Param_Category_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Category_Addition);
             }
         };
     }
@@ -1703,7 +1703,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will only use param categories from your project's .smithbox folder, and ignore the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Param_Category_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Category_Override);
             }
         };
     }
@@ -1722,7 +1722,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will add param commutativity groups from your project's .smithbox folder alongside the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Param_Commutativity_Group_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Addition);
             }
         };
     }
@@ -1741,7 +1741,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will only use param commutativity groups from your project's .smithbox folder, and ignore the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Param_Commutativity_Group_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Override);
             }
         };
     }
@@ -1760,7 +1760,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will add param field reference groups from your project's .smithbox folder alongside the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Field_Reference_Group_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Addition);
             }
         };
     }
@@ -1779,7 +1779,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will only use param field reference groups from your project's .smithbox folder, and ignore the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Field_Reference_Group_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Override);
             }
         };
     }
@@ -1798,7 +1798,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will add param field layouts from your project's .smithbox folder alongside the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Field_Layout_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Field_Layout_Addition);
             }
         };
     }
@@ -1817,7 +1817,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will only use param field layouts from your project's .smithbox folder, and ignore the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Field_Layout_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Field_Layout_Override);
             }
         };
     }
@@ -1836,7 +1836,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will add param icon configurations from your project's .smithbox folder alongside the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Icon_Configuration_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Icon_Configuration_Addition);
             }
         };
     }
@@ -1855,7 +1855,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will only use param icon configurations from your project's .smithbox folder, and ignore the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Icon_Configuration_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Icon_Configuration_Override);
             }
         };
     }
@@ -1874,7 +1874,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will add param graph annotations from your project's .smithbox folder alongside the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Graph_Annotation_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Graph_Annotation_Addition);
             }
         };
     }
@@ -1893,7 +1893,7 @@ public class ParamEditorPrefs
             Description = "If enabled, the Param Editor will only use param graph annotations from your project's .smithbox folder, and ignore the base versions.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Graph_Annotation_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Graph_Annotation_Override);
             }
         };
     }

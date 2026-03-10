@@ -1,0 +1,14 @@
+{
+  "id": "319",
+  "name": "Alonne Knight",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "835",
+  "name": "Dragon Knight",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Emote -> Idle (Taunt)"
+    },
+    {
+      "value": "3",
+      "name": "Emote -> Idle"
+    },
+    {
+      "value": "4",
+      "name": "Emote -> Idle (Praise the Sun)"
+    },
+    {
+      "value": "5",
+      "name": "Flash -> Idle"
+    },
+    {
+      "value": "6",
+      "name": "Mantle -> Idle"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "625",
+  "name": "Old Dragonslayer",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

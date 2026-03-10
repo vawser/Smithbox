@@ -1081,7 +1081,6 @@ public class MapPropertyView
 
         if (CFG.Current.MapEditor_Properties_Display_Behavior_Information)
         {
-            PropInfo_MapObjectType.Display(View, firstEnt);
             PropInfo_Region_Connection.Display(View, firstEnt);
             PropInfo_Part_ConnectCollision.Display(View, firstEnt);
         }

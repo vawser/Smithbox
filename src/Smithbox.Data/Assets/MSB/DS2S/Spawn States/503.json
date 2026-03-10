@@ -1,0 +1,14 @@
+{
+  "id": "503",
+  "name": "Scorpioness Najka",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "665",
+  "name": "Sanctum Guardian",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

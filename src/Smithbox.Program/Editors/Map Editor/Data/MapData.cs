@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Editors.FileBrowser;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -24,14 +26,18 @@ public class MapData : IDisposable
     public MapBank VanillaBank;
     public Dictionary<string, MapBank> AuxBanks = new();
 
+    // User-overridable meta data
     public MsbMeta Meta;
-    public EntitySelectionGroupList MapObjectSelections;
 
+    // User meta data
+    public EntitySelectionGroupList MapObjectSelections;
     public Dictionary<string, MapObjectNameMapEntry> MapObjectNameLists = new();
-    public FormatResource MsbInformation;
-    public FormatEnum MsbEnums;
-    public FormatMask MsbMasks;
-    public SpawnStateResource MapSpawnStates;
+
+    // ER-specific
+    public AssetMasks AssetMasks;
+
+    // DS2-specific
+    public SpawnStates SpawnStates;
 
     public MapData(ProjectEntry project)
     {
@@ -86,19 +92,6 @@ public class MapData : IDisposable
             Smithbox.Log(this, $"[Map Editor] Setup the MSB meta.");
         }
 
-        // MSB Information
-        Task<bool> msbInfoTask = SetupMsbInfo();
-        bool msbInfoResult = await msbInfoTask;
-
-        if (!msbInfoResult)
-        {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup MSB annotations.");
-        }
-        else
-        {
-            Smithbox.Log(this, $"[Map Editor] Setup the MSB annotations.");
-        }
-
         // Map Object Names
         Task<bool> mapObjNamesTask = SetupMapObjectNames();
         bool mapObjNamesTaskResult = await mapObjNamesTask;
@@ -125,11 +118,24 @@ public class MapData : IDisposable
             Smithbox.Log(this, $"[Map Editor] Setup the the Map Object Selection lists.");
         }
 
-        // Spawn States (per project) -- DS2 specific
-        Task<bool> mapSpawnStatesTask = SetupMapSpawnStates();
-        bool mapSpawnStatesResult = await mapSpawnStatesTask;
+        // Asset Masks
+        Task<bool> assetMaskTask = SetupAssetMasks();
+        bool assetMaskTaskResult = await assetMaskTask;
 
-        if (!mapSpawnStatesResult)
+        if (!assetMaskTaskResult)
+        {
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup MSB asset masks.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Editor] Setup the MSB asset masks.");
+        }
+
+        // Spawn States
+        Task<bool> spawnStatesTask = SetupSpawnStates();
+        bool spawnStatesTaskResult = await spawnStatesTask;
+
+        if (!spawnStatesTaskResult)
         {
             Smithbox.LogError(this, $"[Map Editor] Failed to setup the Spawn States annotations.");
         }
@@ -173,7 +179,6 @@ public class MapData : IDisposable
     public async Task<bool> SetupMapObjectNames()
     {
         await Task.Yield();
-
 
         var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project), "Community Map Object Names");
 
@@ -314,172 +319,112 @@ public class MapData : IDisposable
         }
     }
 
-    /// <summary>
-    /// Setup the MSB information for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupMsbInfo()
+    public async Task<bool> SetupSpawnStates()
     {
         await Task.Yield();
 
-        MsbInformation = new();
-        MsbEnums = new();
-        MsbMasks = new();
+        SpawnStates = new();
 
-        // Information
-        var gameDir = ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType);
+        // Build project-local first, so it takes precedence over the base versions
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Spawn States");
 
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", gameDir);
-
-        var sourceFile = Path.Combine(sourceFolder, "Core.json");
-
-        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "MSB", gameDir);
-
-        var projectFile = Path.Combine(projectFolder, "Core.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
+        if (Path.Exists(projectFolder))
         {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
+            foreach (var entry in Directory.EnumerateFiles(projectFolder))
             {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
+                var file = File.ReadAllText(entry);
                 try
                 {
-                    MsbInformation = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatResource);
+                    var layout = JsonSerializer.Deserialize(file, MapEditorJsonSerializerContext.Default.SpawnStateEntry);
+
+                    if (!SpawnStates.List.Any(e => e.id == layout.id))
+                    {
+                        SpawnStates.List.Add(layout);
+                    }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the MSB information: {targetFile}", e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize spawn state entry: {file}", LogPriority.High, e);
                 }
             }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[Map Editor] Failed to read the MSB information: {targetFile}", e);
-            }
         }
 
-        // Enums
-        sourceFile = Path.Combine(sourceFolder, "Enums.json");
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Spawn States");
 
-        projectFile = Path.Combine(projectFolder, "Enums.json");
-
-        targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
+        if (Path.Exists(sourceFolder))
         {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
+            foreach (var entry in Directory.EnumerateFiles(sourceFolder))
             {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
+                var file = File.ReadAllText(entry);
                 try
                 {
-                    MsbEnums = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatEnum);
+                    var layout = JsonSerializer.Deserialize(file, MapEditorJsonSerializerContext.Default.SpawnStateEntry);
+
+                    if (!SpawnStates.List.Any(e => e.id == layout.id))
+                    {
+                        SpawnStates.List.Add(layout);
+                    }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the MSB enums: {targetFile}", e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize spawn state entry: {file}", LogPriority.High, e);
                 }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[Map Editor] Failed to read the MSB enums: {targetFile}", e);
-            }
-        }
-
-        // Masks
-        sourceFile = Path.Combine(sourceFolder, "Masks.json");
-
-        projectFile = Path.Combine(projectFolder, "Masks.json");
-
-        targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
-                try
-                {
-                    MsbMasks = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatMask);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the MSB masks: {targetFile}", e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[Map Editor] Failed to read the MSB masks: {targetFile}", e);
             }
         }
 
         return true;
     }
 
-    /// <summary>
-    /// Setup the map spawn states for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupMapSpawnStates()
+    public async Task<bool> SetupAssetMasks()
     {
         await Task.Yield();
 
-        MapSpawnStates = new();
+        AssetMasks = new();
 
-        // Information
-        var gameDir = ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType);
+        // Build project-local first, so it takes precedence over the base versions
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Asset Masks");
 
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", gameDir);
-
-        var sourceFile = Path.Combine(sourceFolder, "SpawnStates.json");
-
-        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "MSB", gameDir);
-
-        var projectFile = Path.Combine(projectFolder, "SpawnStates.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
+        if (Path.Exists(projectFolder))
         {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
+            foreach (var entry in Directory.EnumerateFiles(projectFolder))
             {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
+                var file = File.ReadAllText(entry);
                 try
                 {
-                    MapSpawnStates = JsonSerializer.Deserialize(filestring, MapEditorJsonSerializerContext.Default.SpawnStateResource);
+                    var layout = JsonSerializer.Deserialize(file, MapEditorJsonSerializerContext.Default.AssetMaskEntry);
+
+                    if (!AssetMasks.List.Any(e => e.model == layout.model))
+                    {
+                        AssetMasks.List.Add(layout);
+                    }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the Map Spawn States: {targetFile}", e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize asset mask entry: {file}", LogPriority.High, e);
                 }
             }
-            catch (Exception e)
+        }
+
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Asset Masks");
+
+        if (Path.Exists(sourceFolder))
+        {
+            foreach (var entry in Directory.EnumerateFiles(sourceFolder))
             {
-                Smithbox.LogError(this, $"[Map Editor] Failed to read the Map Spawn States: {targetFile}", e);
+                var file = File.ReadAllText(entry);
+                try
+                {
+                    var layout = JsonSerializer.Deserialize(file, MapEditorJsonSerializerContext.Default.AssetMaskEntry);
+
+                    if (!AssetMasks.List.Any(e => e.model == layout.model))
+                    {
+                        AssetMasks.List.Add(layout);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize asset mask entry: {file}", LogPriority.High, e);
+                }
             }
         }
 
@@ -502,14 +447,14 @@ public class MapData : IDisposable
         PrimaryBank = null;
         VanillaBank = null;
         AuxBanks = null;
-        MapObjectNameLists = null;
 
         Meta = null;
+
         MapObjectSelections = null;
-        MsbInformation = null;
-        MsbEnums = null;
-        MsbMasks = null;
-        MapSpawnStates = null;
+        MapObjectNameLists = null;
+
+        AssetMasks = null;
+        SpawnStates = null;
     }
     #endregion
 }

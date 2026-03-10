@@ -1,0 +1,14 @@
+{
+  "id": "316",
+  "name": "Desert Sorceress",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

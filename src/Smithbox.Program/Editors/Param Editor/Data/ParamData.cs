@@ -478,26 +478,9 @@ public class ParamData : IDisposable
 
         var projectMetaDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
-        if (CFG.Current.Project_Enable_Param_Meta_Override)
+        if (CFG.Current.Param_Editor_Enable_Param_Meta_Override)
         {
-            // Create the project meta copy if it doesn't already exist
-            if (!Directory.Exists(projectMetaDir))
-            {
-                Directory.CreateDirectory(projectMetaDir);
-                var files = Directory.GetFileSystemEntries(rootMetaDir);
-
-                foreach (var f in files)
-                {
-                    var name = Path.GetFileName(f);
-                    var tPath = Path.Combine(rootMetaDir, name);
-                    var pPath = Path.Combine(projectMetaDir, name);
-
-                    if (File.Exists(tPath) && !File.Exists(pPath))
-                    {
-                        File.Copy(tPath, pPath);
-                    }
-                }
-            }
+            CreateProjectParamMeta();
         }
 
         foreach ((var f, PARAMDEF pdef) in ParamDefsByFilename)
@@ -508,7 +491,7 @@ public class ParamData : IDisposable
 
             try
             {
-                if(CFG.Current.Project_Enable_Param_Meta_Override)
+                if(CFG.Current.Param_Editor_Enable_Param_Meta_Override)
                 {
                     meta.XmlDeserialize(Path.Join(projectMetaDir, fName), pdef);
                 }
@@ -534,7 +517,7 @@ public class ParamData : IDisposable
 
         Enums = new();
 
-        if (CFG.Current.Project_Enable_Param_Enum_Addition)
+        if (CFG.Current.Param_Editor_Enable_Param_Enum_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Enums");
@@ -561,7 +544,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Project_Enable_Param_Enum_Override)
+        if (!CFG.Current.Param_Editor_Enable_Param_Enum_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Enums");
 
@@ -597,7 +580,7 @@ public class ParamData : IDisposable
 
         GraphAnnotations = new();
 
-        if (CFG.Current.Project_Enable_Graph_Annotation_Addition)
+        if (CFG.Current.Param_Editor_Enable_Graph_Annotation_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Graph Annotations");
@@ -619,7 +602,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Project_Enable_Graph_Annotation_Override)
+        if (!CFG.Current.Param_Editor_Enable_Graph_Annotation_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Graph Annotations");
 
@@ -649,7 +632,7 @@ public class ParamData : IDisposable
 
         IconConfigurations = new();
 
-        if (CFG.Current.Project_Enable_Icon_Configuration_Addition)
+        if (CFG.Current.Param_Editor_Enable_Icon_Configuration_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Icon Configurations");
@@ -676,7 +659,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Project_Enable_Icon_Configuration_Override)
+        if (!CFG.Current.Param_Editor_Enable_Icon_Configuration_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Icon Configurations");
 
@@ -743,7 +726,7 @@ public class ParamData : IDisposable
 
         ParamCategories = new();
 
-        if (CFG.Current.Project_Enable_Param_Category_Addition)
+        if (CFG.Current.Param_Editor_Enable_Param_Category_Addition)
         {
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
 
@@ -769,7 +752,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Project_Enable_Param_Category_Override)
+        if (!CFG.Current.Param_Editor_Enable_Param_Category_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
 
@@ -804,7 +787,7 @@ public class ParamData : IDisposable
 
         ParamCommutativityGroups = new();
 
-        if (CFG.Current.Project_Enable_Param_Commutativity_Group_Addition)
+        if (CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Commutativity Groups");
@@ -831,7 +814,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Project_Enable_Param_Commutativity_Group_Override)
+        if (!CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Commutativity Groups");
 
@@ -866,7 +849,7 @@ public class ParamData : IDisposable
 
         FieldReferenceGroups = new();
 
-        if (CFG.Current.Project_Enable_Field_Reference_Group_Addition)
+        if (CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Reference Groups");
@@ -893,7 +876,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Project_Enable_Field_Reference_Group_Override)
+        if (!CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Reference Groups");
 
@@ -928,7 +911,7 @@ public class ParamData : IDisposable
 
         FieldLayouts = new();
 
-        if (CFG.Current.Project_Enable_Field_Layout_Addition)
+        if (CFG.Current.Param_Editor_Enable_Field_Layout_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Layouts");
@@ -955,7 +938,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Project_Enable_Field_Layout_Override)
+        if (!CFG.Current.Param_Editor_Enable_Param_Field_Layout_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Layouts");
 
@@ -1137,9 +1120,8 @@ public class ParamData : IDisposable
 
 
     #region Project Metadata Creation
-    public void CreateProjectMetadata()
+    public void CreateProjectParamMeta()
     {
-        // META
         var metaDir = ParamLocator.GetParammetaDir(Project);
         var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
         var projectDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", metaDir);
@@ -1160,10 +1142,6 @@ public class ParamData : IDisposable
                 }
             }
         }
-
-        CopyMetadataFile("Shared Param Enums.json");
-        CopyMetadataFile("Graph Legends.json");
-        CopyMetadataFile("Icon Configurations.json");
     }
 
     public void CopyMetadataFile(string name)

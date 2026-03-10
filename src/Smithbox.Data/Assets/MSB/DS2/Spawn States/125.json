@@ -1,0 +1,30 @@
+{
+  "id": "125",
+  "name": "Rupturing Hollow",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Stumble"
+    },
+    {
+      "value": "3",
+      "name": "Kneeling"
+    },
+    {
+      "value": "4",
+      "name": "Sitting"
+    },
+    {
+      "value": "5",
+      "name": "Idle"
+    }
+  ]
+}

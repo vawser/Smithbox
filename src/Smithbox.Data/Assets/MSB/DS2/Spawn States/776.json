@@ -1,0 +1,14 @@
+{
+  "id": "776",
+  "name": "Ornifex",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "307",
+  "name": "Head of Vengarl",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

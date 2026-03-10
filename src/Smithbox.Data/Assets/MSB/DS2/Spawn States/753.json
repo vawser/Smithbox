@@ -1,0 +1,14 @@
+{
+  "id": "753",
+  "name": "Bell Keeper",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

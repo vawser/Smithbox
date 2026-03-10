@@ -1,0 +1,14 @@
+{
+  "id": "139",
+  "name": "Artificial Undead ",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

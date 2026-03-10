@@ -1,0 +1,22 @@
+{
+  "id": "210",
+  "name": "Basilisk",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Ground Pop"
+    },
+    {
+      "value": "3",
+      "name": "Ground Pop"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "683",
+  "name": "Imperfect Beast",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

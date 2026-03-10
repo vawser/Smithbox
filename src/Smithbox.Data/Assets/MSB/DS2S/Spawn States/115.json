@@ -1,0 +1,38 @@
+{
+  "id": "115",
+  "name": "Imported Hollow (Dagger/Unarmed)",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Kneeling Prayer"
+    },
+    {
+      "value": "3",
+      "name": "Sitting"
+    },
+    {
+      "value": "4",
+      "name": "Prone"
+    },
+    {
+      "value": "5",
+      "name": "Hanging on Ledge"
+    },
+    {
+      "value": "6",
+      "name": "Stoneform (auto dissolve when near)"
+    },
+    {
+      "value": "15",
+      "name": "Lying Down (Display only)"
+    }
+  ]
+}

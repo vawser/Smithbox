@@ -589,7 +589,7 @@ public static class MapEditorDecorations
         bool display = false;
         string enumName = "";
         var matchId = $"{rowID}";
-        List<SpawnStatePair> options = null;
+        List<SpawnStateContents> options = null;
 
         if (meta != null && meta.ShowSpawnStateList)
         {
@@ -597,7 +597,7 @@ public static class MapEditorDecorations
             {
                 matchId = $"{rowID}".Substring(0, 3);
 
-                var states = view.Project.Handler.MapData.MapSpawnStates.list;
+                var states = view.Project.Handler.MapData.SpawnStates.List;
                 var matchedState = states.Where(e => e.id == matchId).FirstOrDefault();
                 if (matchedState != null)
                 {
@@ -664,7 +664,7 @@ public static class MapEditorDecorations
         PropertyInfo propinfo,
         object val,
         ref object newVal,
-        List<SpawnStatePair> options)
+        List<SpawnStateContents> options)
     {
         ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
@@ -713,10 +713,10 @@ public static class MapEditorDecorations
 
         if (ent.WrappedObject is MSBE.Part.Asset assetEnt)
         {
-            FormatMaskEntry targetEntry = null;
+            AssetMaskEntry targetEntry = null;
 
             // Get the entry for the current model
-            foreach (var entry in view.Project.Handler.MapData.MsbMasks.list)
+            foreach (var entry in view.Project.Handler.MapData.AssetMasks.List)
             {
                 if (assetEnt.ModelName == entry.model)
                 {

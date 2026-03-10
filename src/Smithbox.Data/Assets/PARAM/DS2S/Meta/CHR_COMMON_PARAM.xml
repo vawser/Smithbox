@@ -1,68 +1,1019 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-	<Enum Name="DamageActionState" type="u8">
-		<Option Value="0" Name="Normal" />
-		<Option Value="1" Name="SuperArmor" />
-		<Option Value="2" Name="UltraArmor" />
-		<Option Value="3" Name="Invincible" />
-		<Option Value="4" Name="Unknown" />
-		<Option Value="5" Name="Unknown" />
-	</Enum>
-  </Enums>
   <Self Wiki="Defines parameters relating to the player and humanoid characters."  />
+  
   <Field>
-    <chr_size AltName="Chr Size"/>
-    <stamina_exhaustion_time AltName="Empty Stamina State Duration"/>
-    <stamina_consumption_sprint AltName="Stamina Consumption %: Sprint"/>
-    <stamina_consumption_sprint_lockon AltName="Stamina Consumption %: Sprint (Lock-on)"/>
-    <stamina_consumption_sprint_ladder AltName="Stamina Consumption %: Ladder Quick Climb"/>
-    <stamina_consumption_base_action AltName="Stamina Consumption %: Base Action" Wiki="Value is times 10 in-game"/>
-    <stamina_consumption_backstep AltName="Stamina Consumption %: Backstep"/>
-    <stamina_consumption_roll AltName="Stamina Consumption %: Roll"/>
-    <stamina_consumption_jump AltName="Stamina Consumption %: Jump"/>
-    <stamina_consumption_sequential_roll AltName="Stamina Consumption %: Chained Roll"/>
-    <stamina_consumption_queued_roll AltName="Stamina Consumption %: Queued Roll"/>
-    <damage_action_state AltName="Damage Action State" Enum="DamageActionState" />
-    <low_hp_state_threshold_max AltName="Low HP Threshold: Max"/>
-    <low_hp_state_threshold_min AltName="Low HP Threshold: Min"/>
-    <hit_capsule_height AltName="Hit Capsule Height"/>
-    <hit_capsule_radius AltName="Hit Capsule Radius"/>
-    <block_angle AltName="Blocking Angle" Wiki="On the XY axis"/>
-    <parry_angle AltName="Parrying Angle" Wiki="On the XY axis"/>
-    <movement_speed_limit AltName="Movement Speed Limit" Wiki="Maximum speed a character can move in meters per second"/>
-    <lockon_camera_offset_id AltName="Lock-on Camera Offset ID" Refs="LockOnCameraOffsetParam"/>
-    <backstab_hitbox_angle_xy AltName="Backstab Hitbox Angle: XY"/>
-    <backstab_hitbox_angle_z AltName="Backstab Hitbox Angle: Z"/>
-    <backstab_hitbox_height AltName="Backstab Hitbox Height"/>
-    <backstab_hitbox_radius AltName="Backstab Hitbox Radius"/>
-    <riposte_hitbox_angle_xy AltName="Riposte Hitbox Angle: XY"/>
-    <riposte_hitbox_angle_z AltName="Riposte Hitbox Angle: Z"/>
-    <riposte_hitbox_height AltName="Riposte Hitbox Height"/>
-    <riposte_hitbox_radius AltName="Riposte Hitbox Radius"/>
-    <guardbreak_hitbox_angle_xy AltName="Guard Break Hitbox Angle: XY"/>
-    <guardbreak_hitbox_angle_z AltName="Guard Break Hitbox Angle: Z"/>
-    <guardbreak_hitbox_height AltName="Guard Break Hitbox Height"/>
-    <guardbreak_hitbox_radius AltName="Guard Break Hitbox Radius"/>
-    <unknown_rotate_speed AltName="Unknown Rotate Speed"/>
-    <poise_break_rotate_speed AltName="Poise Break Rotate Speed"/>
-    <stance_break_anim_speed AltName="Stance Break Animation Speed"/>
-    <stance_break_anim_wait_speed AltName="Stance Break Animation Wait Speed"/>
-    <Unk116 AltName="Related to Boss Status"/>
-    <headshot_damage_mult AltName="Headshot Damage Adjustment"/>
-    <crit_damage_mult AltName="Critical Damage Adjustment"/>
-    <absorption_slash AltName="Absorption: Slash"/>
-    <absorption_thrust AltName="Absorption: Thrust"/>
-    <absorption_strike AltName="Absorption: Strike"/>
-    <equip_weapon_id AltName="Equip Weapon ID" Refs="EnemyEquipWeaponParam"/>
-    <critical_absorption_slash AltName="Critical Absorption: Slash"/>
-    <critical_absorption_thrust AltName="Critical Absorption: Thrust"/>
-    <critical_absorption_strike AltName="Critical Absorption: Strike"/>
-    <critical_absorption_standard AltName="Critical Absorption: Standard"/>
-    <bullet_absorption_physical AltName="Bullet Absorption: Physical"/>
-    <bullet_absorption_magic AltName="Bullet Absorption: Magic"/>
-    <bullet_absorption_lightning AltName="Bullet Absorption: Lightning"/>
-    <bullet_absorption_fire AltName="Bullet Absorption: Fire"/>
-    <bullet_absorption_dark AltName="Bullet Absorption: Dark"/>
+    <heightType
+    AltName="Height Type"
+    Wiki="The character height type." 
+    ProjectEnum="CHR_HEIGHT_TYPE" />
+
+    <weightType
+    AltName="Weight Type"
+    Wiki="The character height type." 
+    ProjectEnum="CHR_WEIGHT_TYPE" />
+
+    <loadWeightRateMin
+    AltName="Medium Armor Weight Ratio: Minimum"
+    Wiki="The minimum weight ratio for worn equipment to be considered 'medium armor'." />
+
+    <loadWeightRateMax
+    AltName="Medium Armor Weight Ratio: Maximum"
+    Wiki="The maximum weight ratio for worn equipment to be considered 'medium armor'." />
+
+    <tireKeepTime
+    AltName="Fatigue Duration"
+    Wiki="The duration after stamina has been exhausted before it will start to recover." />
+
+    <staminaCostDash
+    AltName="Stamina Consumption: Dash"
+    Wiki="The base stamina consumption cost when dashing." />
+
+    <staminaCostLockOnDash
+    AltName="Stamina Consumption: Dash (Locked-on)"
+    Wiki="The base stamina consumption cost when dashing and locked-on to a target." />
+
+    <staminaCostLadder
+    AltName="Stamina Consumption: Ladder Dash"
+    Wiki="The base stamina consumption cost when dashing up a ladder." />
+
+    <staminaCostRope
+    AltName="Stamina Consumption: Rope Slide"
+    Wiki="The base stamina consumption cost when sliding down a rope." />
+
+    <staminaCostEvasionBase
+    AltName="Stamina Consumption: Evasion"
+    Wiki="The base stamina consumption cost when doing an evasive action." />
+
+    <staminaCostStep
+    AltName="Stamina Consumption: Backstep"
+    Wiki="The base stamina consumption cost when doing a backstep." />
+
+    <staminaCostRolling
+    AltName="Stamina Consumption: Roll"
+    Wiki="The base stamina consumption cost when doing a roll." />
+
+    <staminaCostDashJump
+    AltName="Stamina Consumption: Dashing Jump"
+    Wiki="The base stamina consumption cost when doing a dashing jump." />
+
+    <staminaCostStandJump
+    AltName="Stamina Consumption: Standing Jump"
+    Wiki="The base stamina consumption cost when doing a standing jump." />
+
+    <staminaCostRateEvasion
+    AltName="Stamina Consumption %: Evasion"
+    Wiki="The stamina consumption rate when doing an evasive action." />
+
+    <staminaCostRateAttack
+    AltName="Stamina Consumption %: Attack"
+    Wiki="The stamina consumption rate when doing an attack action." />
+
+    <moveDemeritPercentMin
+    AltName="Stamina Decrease: Movement Disadvantage - Minimum"
+    Wiki="The minimum rate of movement disadvantage duing stamina decreases." />
+
+    <moveDemeritPercentMax
+    AltName="Stamina Decrease: Movement Disadvantage - Maximum"
+    Wiki="The maximum rate of movement disadvantage duing stamina decreases." />
+
+    <equipDemeritPercentMin
+    AltName="Stamina Decrease: Equipment Disadvantage - Minimum"
+    Wiki="The minimum rate of equipment disadvantage duing stamina decreases." />
+
+    <equipDemeritPercentMax
+    AltName="Stamina Decrease: Equipment Disadvantage - Maximum"
+    Wiki="The maximum rate of equipment disadvantage duing stamina decreases." />
+
+    <attackDemeritPercentMin
+    AltName="Stamina Decrease: Attack Disadvantage - Minimum"
+    Wiki="The minimum rate of attack disadvantage duing stamina decreases." />
+
+    <attackDemeritPercentMax
+    AltName="Stamina Decrease: Attack Disadvantage - Maximum"
+    Wiki="The maximum rate of attack disadvantage duing stamina decreases." />
+
+    <attackExtraLackOfStatsRate
+    AltName="Insufficient Stamina: Attack Status Insufficiency %"
+    Wiki="The insufficiency rate of attack status when insufficient stamina is present for an attack cost." />
+
+    <rollingExtraLackOfStatsRate
+    AltName="Insufficient Stamina: Rolling Status Insufficiency %"
+    Wiki="When insufficiency rate of rolling status when insufficient stamina is present for a roll cost." />
+
+    <attackKeepEmptyStaminaTime
+    AltName="Exhausted Stamina: Duration from Attack"
+    Wiki="If an attack exhausts all stamina, this is the duration (in seconds) that the stamina bar is kept empty." />
+
+    <emptyStaminaAttackExtraLackOfStatsRate
+    AltName="Exhausted Stamina: Attack Status Insufficiency %"
+    Wiki="When insufficiency rate of attack status when stamina is exhausted due to an attack cost." />
+
+    <shotReserveSpeed
+    AltName="Exhausted Stamina: Attack Preparation Regeneration %"
+    Wiki="The attack preparation regeneration rate when stamina is exhausted due to an attack cost." />
+
+    <attackWaitSpeed
+    AltName="Exhausted Stamina: Attack Standby Regeneration %"
+    Wiki="The attack standby regeneration rate when stamina is exhausted due to an attack cost." />
+
+    <armorType
+    AltName="Armor Type"
+    Wiki="The armor type of the character." 
+    ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
+
+    <damageWeaponType
+    AltName="Damage Weapon Type"
+    Wiki="The damage weapon type of the character." 
+    ProjectEnum="DAMAGE_CHARACTER_TYPE" />
+
+    <deadRagdollFitGround
+    AltName="Ragdoll Follows Ground on Death"
+    Wiki="If enabled, the character's ragdoll will follow the ground upon death." 
+    IsBool="" />
+
+    <dummy0
+    Padding="" />
+
+    <deadTimerA
+    AltName="Death Timer: Elapsed Time A"
+    Wiki="The elapsed time for the death timer (a)." />
+
+    <dyingHpMax
+    AltName="Low HP Threshold: Maximum"
+    Wiki="The maximum value considered in the low HP theshold." />
+
+    <dyingHpMin
+    AltName="Low HP Threshold: Minimum"
+    Wiki="The minimum value considered in the low HP theshold." />
+
+    <dyingMoveBlendMaxRate
+    AltName="Dying Movement Blend %"
+    Wiki="The movement blend rate when dying." />
+
+    <ctrlType
+    AltName="Control Type"
+    Wiki="The control type of the character." 
+    ProjectEnum="CHR_CTRL_TYPE" />
+
+    <collisionType
+    AltName="Movement Collision Type"
+    Wiki="The movement collision type of the character." 
+    ProjectEnum="CHR_COLLISION_TYPE" />
+
+    <fHitHeight
+    AltName="Movement Collision Height"
+    Wiki="The height (in metres) of the collision capsule during movement." />
+
+    <fHitRadius
+    AltName="Movement Collision Radius"
+    Wiki="The radius (in metres) of the collision capsule during movement." />
+
+    <fChrHeight
+    AltName="Collision Height"
+    Wiki="The height (in metres) of the collision capsule for the character." />
+
+    <fGuardAngleY
+    AltName="Guard Cone Angle: Vertical"
+    Wiki="The angle (in degrees) of the guard cone on the vertical axis." />
+
+    <fGuardAngleX
+    AltName="Guard Cone Angle: Horizontal"
+    Wiki="The angle (in degrees) of the guard cone on the horizontal axis." />
+
+    <fMaxLinearVelocity
+    AltName="Maximum Speed"
+    Wiki="The maximum linear velocity (in metres per second) this character can move at." />
+
+    <loadGravityRateBaseMin
+    AltName="Weight Calculation: Minimum"
+    Wiki="The minimum weight (in kilograms) used in the gravity rate calculation." />
+
+    <loadGravityRateBaseMax
+    AltName="Weight Calculation: Maximum"
+    Wiki="The maximum weight (in kilograms) used in the gravity rate calculation." />
+
+    <gravityFactorMin
+    AltName="Gravity Acceleration %: Minimum"
+    Wiki="The minimum value for gravity acceleration." />
+
+    <gravityFactorMax
+    AltName="Gravity Acceleration %: Maximum"
+    Wiki="The maximum value for gravity acceleration." />
+
+    <gravitySpeedMax
+    AltName="Gravity Speed: Maximum"
+    Wiki="The maximum speed gravity can reach when applied to a character." />
+
+    <flyCtrlValue
+    AltName="Flight Braking %"
+    Wiki="The braking rate of the character when moving with flight." />
+
+    <lockPointType
+    AltName="Lock Point Type"
+    Wiki="The lock point type of the character." />
+
+    <lockDummy
+    Padding="" />
+
+    <lockCameraCategory
+    AltName="Lock Camera: Category"
+    Wiki="The correction category used for the lock-on camera for a character." 
+    Refs="LockOnCameraOffsetParam" />
+
+    <lockDisableRadius
+    AltName="Lock Camera: Disable Radius"
+    Wiki="The radius (in metres) within which the lock camera is disabled." />
+
+    <lockDisableHeight
+    AltName="Lock Camera: Disable Height"
+    Wiki="The height (in metres) within which the lock camera is disabled." />
+
+    <guardKnockBackRateSuperSmall
+    AltName="Guard Knockback Reduction %: Very Small"
+    Wiki="The guard knockback reduction rate applied when the attacker is considered 'Very Small'." />
+
+    <guardKnockBackRateSmall
+    AltName="Guard Knockback Reduction %: Small"
+    Wiki="The guard knockback reduction rate applied when the attacker is considered 'Small'." />
+
+    <guardKnockBackRateMedium
+    AltName="Guard Knockback Reduction %: Medium"
+    Wiki="The guard knockback reduction rate applied when the attacker is considered 'Medium'." />
+
+    <guardKnockBackRateLarge
+    AltName="Guard Knockback Reduction %: Large"
+    Wiki="The guard knockback reduction rate applied when the attacker is considered 'Large'." />
+
+    <guardKnockBackRateSuperLarge
+    AltName="Guard Knockback Reduction %: Very Large"
+    Wiki="The guard knockback reduction rate applied when the attacker is considered 'Very Large'." />
+
+    <guardKnockBackRateUltraLarge
+    AltName="Guard Knockback Reduction %: Immensely Large"
+    Wiki="The guard knockback reduction rate applied when the attacker is considered 'Immensely Large'." />
+
+    <guardKnockBackRateFlip
+    AltName="Guard Knockback Reduction %: Deflection"
+    Wiki="The guard knockback reduction rate applied during a deflection." />
+
+    <guardRotationRate
+    AltName="Guard Rotation %"
+    Wiki="The rotation rate when guarding." />
+
+    <headShotEnable
+    AltName="Can Head Shot"
+    Wiki="If enabled, a character can be head shot." 
+    IsBool="" />
+
+    <guardBreakEnable
+    AltName="Can Guard Break"
+    Wiki="If enabled, a character can be guard broken." 
+    IsBool="" />
+
+    <backStabEnable
+    AltName="Can Backstab"
+    Wiki="If enabled, a character can be backstabbed." 
+    IsBool="" />
+
+    <parryBreakStabEnable
+    AltName="Can Riposte after Parry"
+    Wiki="If enabled, a character can be riposted after a parry break." 
+    IsBool="" />
+
+    <parryBreakDefenselessTime
+    AltName="Riposte Vulnerability Time"
+    Wiki="The riposte vulnerability duration (in seconds) after a parry break." />
+
+    <parryBreakShorteningTime
+    AltName="Riposte Input Time Reduction"
+    Wiki="The input time reduction (in seconds) after a parry break." />
+
+    <guardBreakStabEnable
+    AltName="Can Riposte after Guard Break"
+    Wiki="If enabled, a character can be riposted after a guard break." 
+    IsBool="" />
+
+    <pad0
+    Padding="" />
+
+    <downAttackLength
+    AltName="Down Follow-up Attack: Allowable Distance"
+    Wiki="The allowable distance (in metres) for a down follow-up attack." />
+
+    <backStabSideAngle
+    AltName="Backstab Cone Angle: Horizontal"
+    Wiki="The horizontal cone angle (in degrees) between the attacker and victim that a backstab can occur in." />
+
+    <backStabUpSideAngle
+    AltName="Backstab Cone Angle: Vertical"
+    Wiki="The vertical cone angle (in degrees) between the attacker and victim that a backstab can occur in." />
+
+    <backStabHeight
+    AltName="Backstab Height Difference"
+    Wiki="The allowable height difference (in metres) between the attacker and victim for a backstab to occur." />
+
+    <backStabLength
+    AltName="Backstab Distance"
+    Wiki="The allowable distance (in metres) between the attacker and victim for a backstab to occur." />
+
+    <parryBreakStabSideAngle
+    AltName=""
+    Wiki="" />
+
+    <parryBreakStabUpSideAngle
+    AltName=""
+    Wiki="" />
+
+    <parryBreakStabHeight
+    AltName=""
+    Wiki="" />
+
+    <parryStabLength
+    AltName=""
+    Wiki="" />
+
+    <guardBreakStabSideAngle
+    AltName=""
+    Wiki="" />
+
+    <guardBreakStabUpSideAngle
+    AltName=""
+    Wiki="" />
+
+    <guardBreakStabHeight
+    AltName=""
+    Wiki="" />
+
+    <guardBreakStabLength
+    AltName=""
+    Wiki="" />
+
+    <lowerEnable
+    AltName=""
+    Wiki="" />
+
+    <pad1
+    Padding="" />
+
+    <lowerDmgBendingValue
+    AltName=""
+    Wiki="" />
+
+    <lowerDmgBendingStartTime
+    AltName=""
+    Wiki="" />
+
+    <lowerDmgBendingEndTime
+    AltName=""
+    Wiki="" />
+
+    <lowerDmgMoveDecelerationRate
+    AltName=""
+    Wiki="" />
+
+    <lowerDmgRotateDecelerationRate
+    AltName=""
+    Wiki="" />
+
+    <ragdollMassFactor
+    AltName=""
+    Wiki="" />
+
+    <ragdollFrictionFactor
+    AltName=""
+    Wiki="" />
+
+    <ragdollRestitutionFactor
+    AltName=""
+    Wiki="" />
+
+    <ragdollMaxLinearVelocityFactor
+    AltName=""
+    Wiki="" />
+
+    <ragdollMaxAngularVelocityFactor
+    AltName=""
+    Wiki="" />
+
+    <ragdollGravityFactorMin
+    AltName=""
+    Wiki="" />
+
+    <ragdollGravityFactorMax
+    AltName=""
+    Wiki="" />
+
+    <jumpAttackSideAngle
+    AltName=""
+    Wiki="" />
+
+    <damageRotationSpeed
+    AltName=""
+    Wiki="" />
+
+    <damageMoveDistRate
+    AltName=""
+    Wiki="" />
+
+    <heavyDamageKnockBackDist
+    AltName=""
+    Wiki="" />
+
+    <heavyDamageStiff
+    AltName=""
+    Wiki="" />
+
+    <heavyDamageDefenselessTime
+    AltName=""
+    Wiki="" />
+
+    <bleedingDamageStiff
+    AltName=""
+    Wiki="" />
+
+    <heavyDamageShorteningTime
+    AltName=""
+    Wiki="" />
+
+    <guardBreakDamageDefenselessTime
+    AltName=""
+    Wiki="" />
+
+    <guardBreakDamageShorteningTime
+    AltName=""
+    Wiki="" />
+
+    <blowDecelerationTimeFirst
+    AltName=""
+    Wiki="" />
+
+    <blowDecelerationTimeSecond
+    AltName=""
+    Wiki="" />
+
+    <blowDecelerationFirst
+    AltName=""
+    Wiki="" />
+
+    <blowDecelerationSecond
+    AltName=""
+    Wiki="" />
+
+    <attackPushBackRate
+    AltName=""
+    Wiki="" />
+
+    <parryRotationSpeed
+    AltName=""
+    Wiki="" />
+
+    <BreathDamageEnable
+    AltName=""
+    Wiki="" />
+
+    <dummy1
+    Padding="" />
+
+    <hitLowerBodyHeight
+    AltName=""
+    Wiki="" />
+
+    <hitFrontAngle
+    AltName=""
+    Wiki="" />
+
+    <attackMoveSpeed
+    AltName=""
+    Wiki="" />
+
+    <attackRotationSpeed
+    AltName=""
+    Wiki="" />
+
+    <attackRange
+    AltName=""
+    Wiki="" />
+
+    <fLookAtRotationLeftMax
+    AltName=""
+    Wiki="" />
+
+    <fLookAtRotationRightMax
+    AltName=""
+    Wiki="" />
+
+    <fLookAtRotationUpperMax
+    AltName=""
+    Wiki="" />
+
+    <fLookAtRotationLownerMax
+    AltName=""
+    Wiki="" />
+
+    <fLookAtVisibilitySideMax
+    AltName=""
+    Wiki="" />
+
+    <fLookAtVisibilityUpperMax
+    AltName=""
+    Wiki="" />
+
+    <fLookAtRotationSideSpeedMax
+    AltName=""
+    Wiki="" />
+
+    <fLookAtRotationUpperSpeedMax
+    AltName=""
+    Wiki="" />
+
+    <isLookAtDummyPolyBasePos
+    AltName=""
+    Wiki="" />
+
+    <lookAtDummy
+    Padding="" />
+
+    <fShootingLookAtRotationLeftMax
+    AltName=""
+    Wiki="" />
+
+    <fShootingLookAtRotationRightMax
+    AltName=""
+    Wiki="" />
+
+    <fShootingLookAtRotationUpperMax
+    AltName=""
+    Wiki="" />
+
+    <fShootingLookAtRotationLownerMax
+    AltName=""
+    Wiki="" />
+
+    <fShootingLookAtVisibilitySideMax
+    AltName=""
+    Wiki="" />
+
+    <fShootingLookAtVisibilityUpperMax
+    AltName=""
+    Wiki="" />
+
+    <fShootingLookAtRotationSideSpeedMax
+    AltName=""
+    Wiki="" />
+
+    <fShootingLookAtRotationUpperSpeedMax
+    AltName=""
+    Wiki="" />
+
+    <shootingIsLookAtDummyPolyBasePos
+    AltName=""
+    Wiki="" />
+
+    <shootingLookAtDummy
+    Padding="" />
+
+    <footDummyPoly001
+    AltName=""
+    Wiki="" />
+
+    <footDummyPoly002
+    AltName=""
+    Wiki="" />
+
+    <footDummyPoly003
+    AltName=""
+    Wiki="" />
+
+    <footDummyPoly004
+    AltName=""
+    Wiki="" />
+
+    <footDummyPoly005
+    AltName=""
+    Wiki="" />
+
+    <footDummyPoly006
+    AltName=""
+    Wiki="" />
+
+    <footDummyPoly007
+    AltName=""
+    Wiki="" />
+
+    <footDummyPoly008
+    AltName=""
+    Wiki="" />
+
+    <footEffectOffset
+    AltName=""
+    Wiki="" />
+
+    <footEffectOffsetMoveRate
+    AltName=""
+    Wiki="" />
+
+    <footRayMargin
+    AltName=""
+    Wiki="" />
+
+    <footRayMinLength
+    AltName=""
+    Wiki="" />
+
+    <footRayMaxLength
+    AltName=""
+    Wiki="" />
+
+    <footRayMaxDownHillLength
+    AltName=""
+    Wiki="" />
+
+    <footRayUpDownMargin
+    AltName=""
+    Wiki="" />
+
+    <footRunSpeedRate
+    AltName=""
+    Wiki="" />
+
+    <footSoundLevelSuperSmall
+    AltName=""
+    Wiki="" />
+
+    <footSoundLevelSmall
+    AltName=""
+    Wiki="" />
+
+    <footSoundLevelNormal
+    AltName=""
+    Wiki="" />
+
+    <footSoundLevelLarge
+    AltName=""
+    Wiki="" />
+
+    <footSoundLevelSuperLarge
+    AltName=""
+    Wiki="" />
+
+    <footSoundDummy
+    Padding="" />
+
+    <single1HandNormal
+    AltName=""
+    Wiki="" />
+
+    <single1HandStrong
+    AltName=""
+    Wiki="" />
+
+    <single2HandedNormal
+    AltName=""
+    Wiki="" />
+
+    <single2HandedStrong
+    AltName=""
+    Wiki="" />
+
+    <dual1HandNormal
+    AltName=""
+    Wiki="" />
+
+    <dual1HandStrong
+    AltName=""
+    Wiki="" />
+
+    <dual2HandedNormal
+    AltName=""
+    Wiki="" />
+
+    <dual2HandedStrong
+    AltName=""
+    Wiki="" />
+
+    <bladePartsDamage
+    AltName=""
+    Wiki="" />
+
+    <partsDummy
+    Padding="" />
+
+    <damageAdjustPartsRateSuperSmall
+    AltName=""
+    Wiki="" />
+
+    <damageAdjustPartsRateSmall
+    AltName=""
+    Wiki="" />
+
+    <damageAdjustPartsRateNormal
+    AltName=""
+    Wiki="" />
+
+    <damageAdjustPartsRateLarge
+    AltName=""
+    Wiki="" />
+
+    <damageAdjustPartsRateSuperLarge
+    AltName=""
+    Wiki="" />
+
+    <grabAttackDamageRate
+    AltName=""
+    Wiki="" />
+
+    <receiveSlashDamageRate
+    AltName=""
+    Wiki="" />
+
+    <receiveThrustDamageRate
+    AltName=""
+    Wiki="" />
+
+    <receiveStrikeDamageRate
+    AltName=""
+    Wiki="" />
+
+    <fallStrikeFallDist
+    AltName=""
+    Wiki="" />
+
+    <jumpFallStrikeHeight
+    AltName=""
+    Wiki="" />
+
+    <isSlopeAdjust
+    AltName=""
+    Wiki="" />
+
+    <slopeAdjustDummy
+    Padding="" />
+
+    <slopeAdjustPitchMax
+    AltName=""
+    Wiki="" />
+
+    <slopeAdjustRollMax
+    AltName=""
+    Wiki="" />
+
+    <slopeAdjustPitchSpeed
+    AltName=""
+    Wiki="" />
+
+    <slopeAdjustRollSpeed
+    AltName=""
+    Wiki="" />
+
+    <fallStabSlashAnim
+    AltName=""
+    Wiki="" />
+
+    <fallStabStabAnim
+    AltName=""
+    Wiki="" />
+
+    <fallStabGrabParamId
+    AltName=""
+    Wiki="" />
+
+    <fallStabDummyPolyId
+    AltName=""
+    Wiki="" />
+
+    <fallStabDummyPolyReverse
+    AltName=""
+    Wiki="" />
+
+    <fallStabDummy
+    Padding="" />
+
+    <fallStabDistance
+    AltName=""
+    Wiki="" />
+
+    <fallStabAngle
+    AltName=""
+    Wiki="" />
+
+    <poisonRecoverTimeMin
+    AltName=""
+    Wiki="" />
+
+    <poisonRecoverTimeMax
+    AltName=""
+    Wiki="" />
+
+    <burningRecoverTimeMin
+    AltName=""
+    Wiki="" />
+
+    <burningRecoverTimeMax
+    AltName=""
+    Wiki="" />
+
+    <bleedingRecoverTimeMin
+    AltName=""
+    Wiki="" />
+
+    <bleedingRecoverTimeMax
+    AltName=""
+    Wiki="" />
+
+    <curseRecoverTimeMin
+    AltName=""
+    Wiki="" />
+
+    <curseRecoverTimeMax
+    AltName=""
+    Wiki="" />
+
+    <weaponBreakRecoverTimeMin
+    AltName=""
+    Wiki="" />
+
+    <weaponBreakRecoverTimeMax
+    AltName=""
+    Wiki="" />
+
+    <petrifiedRecoverTimeMin
+    AltName=""
+    Wiki="" />
+
+    <petrifiedRecoverTimeMax
+    AltName=""
+    Wiki="" />
+
+    <poisonWetEffectTimeMin
+    AltName=""
+    Wiki="" />
+
+    <poisonWetEffectTimeMax
+    AltName=""
+    Wiki="" />
+
+    <oilWetEffectTimeMin
+    AltName=""
+    Wiki="" />
+
+    <oilWetEffectTimeMax
+    AltName=""
+    Wiki="" />
+
+    <WatierWetEffectTimeMin
+    AltName=""
+    Wiki="" />
+
+    <WatierWetEffectTimeMax
+    AltName=""
+    Wiki="" />
+
+    <itemAnimSpeedRateMin
+    AltName=""
+    Wiki="" />
+
+    <itemAnimSpeedRateMax
+    AltName=""
+    Wiki="" />
+
+    <downStiffRate
+    AltName=""
+    Wiki="" />
+
+    <downShorteningTime
+    AltName=""
+    Wiki="" />
+
+    <damageUpperRotationAngleY
+    AltName=""
+    Wiki="" />
+
+    <damageUpperRotationAngleX
+    AltName=""
+    Wiki="" />
+
+    <damageUpperRotationAngleZ
+    AltName=""
+    Wiki="" />
+
+    <damageUpperRotationAngleCenter
+    AltName=""
+    Wiki="" />
+
+    <environmentSfxRain
+    AltName=""
+    Wiki="" />
+
+    <environmentSfxWaterFall
+    AltName=""
+    Wiki="" />
+
+    <moveWindParamSmall
+    AltName=""
+    Wiki="" />
+
+    <moveWindParamMedium
+    AltName=""
+    Wiki="" />
+
+    <moveWindParamLarge
+    AltName=""
+    Wiki="" />
+
+    <atkAutoHomingDistance
+    AltName=""
+    Wiki="" />
+
+    <atkAutoHomingSdAngle
+    AltName=""
+    Wiki="" />
+
+    <atkAutoHomingUdAngle
+    AltName=""
+    Wiki="" />
+
+    <shotAutoHomingDistance
+    AltName=""
+    Wiki="" />
+
+    <shotAutoHomingSdAngle
+    AltName=""
+    Wiki="" />
+
+    <shotAutoHomingUdAngle
+    AltName=""
+    Wiki="" />
+
+    <footEffectSize
+    AltName=""
+    Wiki="" />
+
+    <grabDamageRateSlash
+    AltName=""
+    Wiki="" />
+
+    <grabDamageRateBlow
+    AltName=""
+    Wiki="" />
+
+    <grabDamageRateStab
+    AltName=""
+    Wiki="" />
+
+    <grabDamageRateBullet
+    AltName=""
+    Wiki="" />
+
+    <disallowDamageDecrementDist
+    AltName=""
+    Wiki="" />
+
+    <lockInvisibleReleaseTime
+    AltName=""
+    Wiki="" />
+
+    <fHitOffsetX
+    AltName=""
+    Wiki="" />
+
+    <fHitOffsetZ
+    AltName=""
+    Wiki="" />
+
+    <takeWaterHeightLow
+    AltName=""
+    Wiki="" />
+
+    <takeWaterHeightMiddle
+    AltName=""
+    Wiki="" />
+
+    <takeWaterType
+    AltName=""
+    Wiki="" />
+
+    <takeWaterDummy
+    Padding="" />
+
+    <bulletDamageRatePhysical
+    AltName=""
+    Wiki="" />
+
+    <bulletDamageRateMagic
+    AltName=""
+    Wiki="" />
+
+    <bulletDamageRateMiracle
+    AltName=""
+    Wiki="" />
+
+    <bulletDamageRatePyromancy
+    AltName=""
+    Wiki="" />
+
+    <bulletDamageRateDark
+    AltName=""
+    Wiki="" />
   </Field>
 </PARAMMETA>

@@ -1,0 +1,14 @@
+{
+  "id": "814",
+  "name": "Melinda the Butcher",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

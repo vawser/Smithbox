@@ -1,0 +1,14 @@
+{
+  "id": "875",
+  "name": "Steel-willed Lorrie",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

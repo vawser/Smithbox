@@ -1,0 +1,18 @@
+{
+  "id": "117",
+  "name": "Stone Soldier",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Stoneform"
+    }
+  ]
+}

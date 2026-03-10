@@ -5,7 +5,7 @@
   "Options": [
     {
       "ID": "0",
-      "Name": "Extremely small",
+      "Name": "Very Small",
       "Description": ""
     },
     {
@@ -25,7 +25,7 @@
     },
     {
       "ID": "4",
-      "Name": "Extra large",
+      "Name": "Very Large",
       "Description": ""
     }
   ]
