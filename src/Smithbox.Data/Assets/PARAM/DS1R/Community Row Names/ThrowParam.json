@@ -40,7 +40,7 @@
     {
       "ID": 12280,
       "Entries": [
-        "Backstab - PC -> Mushroom Child"
+        "Backstab - PC -> Mushroom-Man Child"
       ]
     },
     {
@@ -76,13 +76,13 @@
     {
       "ID": 12520,
       "Entries": [
-        "Backstab - PC -> Undead Assassin"
+        "Backstab - PC -> Hollow Thief"
       ]
     },
     {
       "ID": 12530,
       "Entries": [
-        "Backstab - PC -> Blowdart Hollow"
+        "Backstab - PC -> Hollow Blowdart Sniper"
       ]
     },
     {
@@ -112,25 +112,25 @@
     {
       "ID": 12650,
       "Entries": [
-        "Backstab - PC -> Necromancer"
+        "Backstab - PC -> Hollow Necromancer"
       ]
     },
     {
       "ID": 12660,
       "Entries": [
-        "Backstab - PC -> Butcher"
+        "Backstab - PC -> Hollow Maneater Butcher"
       ]
     },
     {
       "ID": 12690,
       "Entries": [
-        "Backstab - PC -> Serpent Soldier"
+        "Backstab - PC -> Man-Serpent Soldier"
       ]
     },
     {
       "ID": 12700,
       "Entries": [
-        "Backstab - PC -> Serpent Mage"
+        "Backstab - PC -> Man-Serpent Sorcerer"
       ]
     },
     {
@@ -142,49 +142,49 @@
     {
       "ID": 12792,
       "Entries": [
-        "Backstab - PC ->"
+        "Backstab - PC -> Black Knight (Sword)"
       ]
     },
     {
       "ID": 12793,
       "Entries": [
-        "Backstab - PC ->"
+        "Backstab - PC -> Black Knight (Greatsword)"
       ]
     },
     {
       "ID": 12794,
       "Entries": [
-        "Backstab - PC ->"
+        "Backstab - PC -> Black Knight (Axe)"
       ]
     },
     {
       "ID": 12795,
       "Entries": [
-        "Backstab - PC ->"
+        "Backstab - PC -> Black Knight (Halberd)"
       ]
     },
     {
       "ID": 12800,
       "Entries": [
-        "Backstab - PC -> Crystal Hollow"
+        "Backstab - PC -> Hollow Crystal Soldier"
       ]
     },
     {
       "ID": 12810,
       "Entries": [
-        "Backstab - PC -> Infested Barbarian (Club)"
+        "Backstab - PC -> Hollow Infested Barbarian (Club)"
       ]
     },
     {
       "ID": 12811,
       "Entries": [
-        "Backstab - PC -> Infested Barbarian (Boulder)"
+        "Backstab - PC -> Hollow Infested Barbarian (Boulder)"
       ]
     },
     {
       "ID": 12820,
       "Entries": [
-        "Backstab - PC ->"
+        "[UNUSED] Backstab - PC -> Hollow (Crag Worshipper)"
       ]
     },
     {
@@ -202,7 +202,7 @@
     {
       "ID": 12920,
       "Entries": [
-        "Backstab - PC -> Vamos"
+        "Backstab - PC -> Vamos the Blacksmith"
       ]
     },
     {
@@ -214,7 +214,7 @@
     {
       "ID": 13460,
       "Entries": [
-        "Backstab - PC -> Armored Tusk"
+        "Backstab - PC -> Fang Boar"
       ]
     },
     {
@@ -226,19 +226,19 @@
     {
       "ID": 14130,
       "Entries": [
-        "Backstab - PC -> Scarecrow"
+        "Backstab - PC -> Scarecrow Gardener"
       ]
     },
     {
       "ID": 14150,
       "Entries": [
-        "Backstab - PC -> Bloathead"
+        "Backstab - PC -> Oolacile Resident (Melee)"
       ]
     },
     {
       "ID": 14160,
       "Entries": [
-        "Backstab - PC -> Bloathead Sorcerer"
+        "Backstab - PC -> Oolacile Resident (Sorceress)"
       ]
     },
     {
@@ -280,13 +280,13 @@
     {
       "ID": 22520,
       "Entries": [
-        "Parry - PC -> Undead Assassin"
+        "Parry - PC -> Hollow Thief"
       ]
     },
     {
       "ID": 22530,
       "Entries": [
-        "Parry - PC -> Blowdart Hollow"
+        "Parry - PC -> Hollow Blowdart Sniper"
       ]
     },
     {
@@ -316,19 +316,19 @@
     {
       "ID": 22660,
       "Entries": [
-        "Parry - PC -> Butcher"
+        "Parry - PC -> Hollow Maneater Butcher"
       ]
     },
     {
       "ID": 22690,
       "Entries": [
-        "Parry - PC -> Serpent Soldier"
+        "Parry - PC -> Man-Serpent Soldier"
       ]
     },
     {
       "ID": 22700,
       "Entries": [
-        "Parry - PC -> Serpent Mage"
+        "Parry - PC -> Man-Serpent Sorcerer"
       ]
     },
     {
@@ -340,43 +340,43 @@
     {
       "ID": 22792,
       "Entries": [
-        "Parry - PC ->"
+        "Parry - PC -> Black Knight (Sword)"
       ]
     },
     {
       "ID": 22793,
       "Entries": [
-        "Parry - PC ->"
+        "Parry - PC -> Black Knight (Greatsword)"
       ]
     },
     {
       "ID": 22794,
       "Entries": [
-        "Parry - PC ->"
+        "Parry - PC -> Black Knight (Axe)"
       ]
     },
     {
       "ID": 22795,
       "Entries": [
-        "Parry - PC ->"
+        "Parry - PC -> Black Knight (Halberd)"
       ]
     },
     {
       "ID": 22800,
       "Entries": [
-        "Parry - PC -> Crystal Hollow"
+        "Parry - PC -> Hollow Crystal Soldier"
       ]
     },
     {
       "ID": 22810,
       "Entries": [
-        "Parry - PC -> Infested Barbarian (Club)"
+        "Parry - PC -> Hollow Infested Barbarian (Club)"
       ]
     },
     {
       "ID": 22820,
       "Entries": [
-        "Parry - PC -> Infested Barbarian (Boulder)"
+        "Parry - PC -> Hollow Infested Barbarian (Boulder)"
       ]
     },
     {
@@ -394,25 +394,25 @@
     {
       "ID": 22920,
       "Entries": [
-        "Parry - PC -> Vamos"
+        "Parry - PC -> Vamos the Blacksmith"
       ]
     },
     {
       "ID": 24130,
       "Entries": [
-        "Parry - PC -> Scarecrow"
+        "Parry - PC -> Scarecrow Gardener"
       ]
     },
     {
       "ID": 24150,
       "Entries": [
-        "Parry - PC -> Bloathead"
+        "Parry - PC -> Oolacile Resident (Melee)"
       ]
     },
     {
       "ID": 24160,
       "Entries": [
-        "Parry - PC -> Bloathead Sorcerer"
+        "Parry - PC -> Oolacile Resident (Sorceress)"
       ]
     },
     {
@@ -424,13 +424,13 @@
     {
       "ID": 31202,
       "Entries": [
-        "Fall - PC -> Giant Rat"
+        "Fall - PC -> Giant Undead Rat"
       ]
     },
     {
       "ID": 32231,
       "Entries": [
-        "Fall - PC -> Firesage Demon"
+        "Fall - PC -> Demon Firesage"
       ]
     },
     {
@@ -448,13 +448,13 @@
     {
       "ID": 33460,
       "Entries": [
-        "Fall - PC -> Armored Tusk"
+        "Fall - PC -> Fang Boar"
       ]
     },
     {
       "ID": 33461,
       "Entries": [
-        "Fall - PC -> Armored Tusk - Reinforced"
+        "Fall - PC -> Fang Boar (Fully-Armored)"
       ]
     },
     {
@@ -484,427 +484,427 @@
     {
       "ID": 112060,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Infested Ghoul [Hornet Ring]"
       ]
     },
     {
       "ID": 112280,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Mushroom-Man Child [Hornet Ring]"
       ]
     },
     {
       "ID": 112390,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Darkwraith [Hornet Ring]"
       ]
     },
     {
       "ID": 112400,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Painting Guardian [Hornet Ring]"
       ]
     },
     {
       "ID": 112410,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Silver Knight [Hornet Ring]"
       ]
     },
     {
       "ID": 112500,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Hollow [Hornet Ring]"
       ]
     },
     {
       "ID": 112510,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Undead Merchant [Hornet Ring]"
       ]
     },
     {
       "ID": 112520,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Hollow Thief [Hornet Ring]"
       ]
     },
     {
       "ID": 112530,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Hollow Blowdart Sniper [Hornet Ring]"
       ]
     },
     {
       "ID": 112540,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Hollow Warrior [Hornet Ring]"
       ]
     },
     {
       "ID": 112550,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Hollow Soldier [Hornet Ring]"
       ]
     },
     {
       "ID": 112560,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Balder Knight [Hornet Ring]"
       ]
     },
     {
       "ID": 112640,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Andre of Astora [Hornet Ring]"
       ]
     },
     {
       "ID": 112650,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Hollow Necromancer [Hornet Ring]"
       ]
     },
     {
       "ID": 112660,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Hollow Maneater Butcher [Hornet Ring]"
       ]
     },
     {
       "ID": 112690,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Man-Serpent Soldier [Hornet Ring]"
       ]
     },
     {
       "ID": 112700,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Man-Serpent Sorcerer [Hornet Ring]"
       ]
     },
     {
       "ID": 112790,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Black Knight [Hornet Ring]"
       ]
     },
     {
       "ID": 112792,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Black Knight (Sword) [Hornet Ring]"
       ]
     },
     {
       "ID": 112793,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Black Knight (Greatsword) [Hornet Ring]"
       ]
     },
     {
       "ID": 112794,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Black Knight (Axe) [Hornet Ring]"
       ]
     },
     {
       "ID": 112795,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Black Knight (Halberd) [Hornet Ring]"
       ]
     },
     {
       "ID": 112800,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Hollow Crystal Soldier [Hornet Ring]"
       ]
     },
     {
       "ID": 112810,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Hollow Infested Barbarian (Club) [Hornet Ring]"
       ]
     },
     {
       "ID": 112811,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Hollow Infested Barbarian (Boulder) [Hornet Ring]"
       ]
     },
     {
       "ID": 112820,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "[UNUSED] Backstab - PC -> Hollow (Crag Worshipper) [Hornet Ring]"
       ]
     },
     {
       "ID": 112840,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Engorged Hollow [Hornet Ring]"
       ]
     },
     {
       "ID": 112900,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Skeleton [Hornet Ring]"
       ]
     },
     {
       "ID": 112920,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Vamos the Blacksmith [Hornet Ring]"
       ]
     },
     {
       "ID": 113300,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Pisaca [Hornet Ring]"
       ]
     },
     {
       "ID": 113460,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Fang Boar [Hornet Ring]"
       ]
     },
     {
       "ID": 114090,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Marvellous Chester [Hornet Ring]"
       ]
     },
     {
       "ID": 114130,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Scarecrow Gardener [Hornet Ring]"
       ]
     },
     {
       "ID": 114150,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Oolacile Resident (Melee) [Hornet Ring]"
       ]
     },
     {
       "ID": 114160,
       "Entries": [
-        "Backstab - PC ->  [Hornet Ring]"
+        "Backstab - PC -> Oolacile Resident (Sorceress) [Hornet Ring]"
       ]
     },
     {
       "ID": 122060,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Infested Ghoul [Hornet Ring]"
       ]
     },
     {
       "ID": 122390,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Darkwraith [Hornet Ring]"
       ]
     },
     {
       "ID": 122400,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Painting Guardian [Hornet Ring]"
       ]
     },
     {
       "ID": 122410,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Silver Knight [Hornet Ring]"
       ]
     },
     {
       "ID": 122500,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Hollow [Hornet Ring]"
       ]
     },
     {
       "ID": 122510,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Undead Merchant [Hornet Ring]"
       ]
     },
     {
       "ID": 122520,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Hollow Thief [Hornet Ring]"
       ]
     },
     {
       "ID": 122530,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Hollow Blowdart Sniper [Hornet Ring]"
       ]
     },
     {
       "ID": 122540,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Hollow Warrior [Hornet Ring]"
       ]
     },
     {
       "ID": 122550,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Hollow Soldier [Hornet Ring]"
       ]
     },
     {
       "ID": 122560,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Balder Knight [Hornet Ring]"
       ]
     },
     {
       "ID": 122640,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Andre of Astora [Hornet Ring]"
       ]
     },
     {
       "ID": 122660,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Hollow Maneater Butcher [Hornet Ring]"
       ]
     },
     {
       "ID": 122690,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Man-Serpent Soldier [Hornet Ring]"
       ]
     },
     {
       "ID": 122700,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Man-Serpent Sorcerer [Hornet Ring]"
       ]
     },
     {
       "ID": 122790,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Black Knight [Hornet Ring]"
       ]
     },
     {
       "ID": 122792,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Black Knight (Sword) [Hornet Ring]"
       ]
     },
     {
       "ID": 122793,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Black Knight (Greatsword) [Hornet Ring]"
       ]
     },
     {
       "ID": 122794,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Black Knight (Axe) [Hornet Ring]"
       ]
     },
     {
       "ID": 122795,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Black Knight (Halberd) [Hornet Ring]"
       ]
     },
     {
       "ID": 122800,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Hollow Crystal Soldier [Hornet Ring]"
       ]
     },
     {
       "ID": 122810,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Hollow Infested Barbarian (Club) [Hornet Ring]"
       ]
     },
     {
       "ID": 122820,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Hollow Infested Barbarian (Boulder) [Hornet Ring]"
       ]
     },
     {
       "ID": 122840,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Engorged Hollow [Hornet Ring]"
       ]
     },
     {
       "ID": 122900,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Skeleton [Hornet Ring]"
       ]
     },
     {
       "ID": 122920,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Vamos the Blacksmith [Hornet Ring]"
       ]
     },
     {
       "ID": 124130,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Scarecrow Gardener [Hornet Ring]"
       ]
     },
     {
       "ID": 124150,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Oolacile Resident (Melee) [Hornet Ring]"
       ]
     },
     {
       "ID": 124160,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Oolacile Resident (Sorceress) [Hornet Ring]"
       ]
     },
     {
       "ID": 125370,
       "Entries": [
-        "Parry - PC ->  [Hornet Ring]"
+        "Parry - PC -> Gwyn, Lord of Cinder [Hornet Ring]"
       ]
     },
     {
       "ID": 131202,
       "Entries": [
-        "Fall - PC ->  [Hornet Ring]"
+        "Fall - PC -> Giant Undead Rat [Hornet Ring]"
       ]
     },
     {
       "ID": 132231,
       "Entries": [
-        "Fall - PC ->  [Hornet Ring]"
+        "Fall - PC -> Demon Firesage [Hornet Ring]"
       ]
     },
     {
       "ID": 132232,
       "Entries": [
-        "Fall - PC ->  [Hornet Ring]"
+        "Fall - PC -> Asylum Demon [Hornet Ring]"
       ]
     },
     {
       "ID": 132250,
       "Entries": [
-        "Fall - PC ->  [Hornet Ring]"
+        "Fall - PC -> Taurus Demon [Hornet Ring]"
       ]
     },
     {
       "ID": 133460,
       "Entries": [
-        "Fall - PC ->  [Hornet Ring]"
+        "Fall - PC -> Fang Boar [Hornet Ring]"
       ]
     },
     {
       "ID": 133461,
       "Entries": [
-        "Fall - PC ->  [Hornet Ring]"
+        "Fall - PC -> Fang Boar (Fully-Armored) [Hornet Ring]"
       ]
     },
     {
@@ -916,13 +916,13 @@
     {
       "ID": 229000,
       "Entries": [
-        "Throw - X -> PC"
+        "Throw - Chained Prisoner (Proto) -> PC"
       ]
     },
     {
       "ID": 230000,
       "Entries": [
-        "Throw - Prowling Demon -> PC"
+        "Throw - Titanite Demon -> PC"
       ]
     },
     {
@@ -982,13 +982,13 @@
     {
       "ID": 252000,
       "Entries": [
-        "Backstab - Undead Assassin -> PC"
+        "Backstab - Hollow Thief -> PC"
       ]
     },
     {
       "ID": 252001,
       "Entries": [
-        "Parry - Undead Assassin -> PC"
+        "Parry - Hollow Thief -> PC"
       ]
     },
     {
@@ -1006,25 +1006,25 @@
     {
       "ID": 266000,
       "Entries": [
-        "Throw - Butcher -> PC"
+        "Throw - Hollow Maneater Butcher -> PC"
       ]
     },
     {
       "ID": 267000,
       "Entries": [
-        "Throw - Ghost (Male)   -> PC"
+        "Throw - Cursed Ghost (Male)   -> PC"
       ]
     },
     {
       "ID": 268000,
       "Entries": [
-        "Throw - Ghost (Female) -> PC"
+        "Throw - Cursed Ghost (Female) -> PC"
       ]
     },
     {
       "ID": 270000,
       "Entries": [
-        "Throw - Serpent Mage -> PC"
+        "Throw - Man-Serpent Sorcerer -> PC"
       ]
     },
     {
@@ -1048,7 +1048,7 @@
     {
       "ID": 320000,
       "Entries": [
-        "Throw - Slime -> PC [1]"
+        "Throw - Slime -> PC"
       ]
     },
     {
@@ -1072,7 +1072,7 @@
     {
       "ID": 325000,
       "Entries": [
-        "Throw - Maneater Clam -> PC"
+        "Throw - Man-Eater Shell -> PC"
       ]
     },
     {
@@ -1090,25 +1090,25 @@
     {
       "ID": 339000,
       "Entries": [
-        "Throw - Burrower -> PC"
+        "Throw - Burrowing Rockworm -> PC"
       ]
     },
     {
       "ID": 339001,
       "Entries": [
-        "Throw - Burrower -> PC"
+        "Throw - Burrowing Rockworm -> PC"
       ]
     },
     {
       "ID": 339002,
       "Entries": [
-        "Throw - Burrower -> PC"
+        "Throw - Burrowing Rockworm -> PC"
       ]
     },
     {
       "ID": 451000,
       "Entries": [
-        "Throw - Kalameet -> PC"
+        "Throw - Black Dragon Kalameet -> PC"
       ]
     },
     {
@@ -1138,13 +1138,13 @@
     {
       "ID": 527000,
       "Entries": [
-        "Throw - Dragonslayer Ornstein -> PC"
+        "Throw - Dragon Slayer Ornstein -> PC"
       ]
     },
     {
       "ID": 527100,
       "Entries": [
-        "Throw - Dragonslayer Ornstein (Giant) -> PC"
+        "Throw - Dragon Slayer Ornstein (Giant) -> PC"
       ]
     },
     {
