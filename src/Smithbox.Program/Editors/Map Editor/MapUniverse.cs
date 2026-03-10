@@ -380,7 +380,7 @@ public class MapUniverse : IUniverse
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Map Editor] Failed to load BTL file.", LogPriority.High, e);
+                Smithbox.LogError(this, $"[Map Editor] Failed to load GI file.", LogPriority.High, e);
             }
         }
         else

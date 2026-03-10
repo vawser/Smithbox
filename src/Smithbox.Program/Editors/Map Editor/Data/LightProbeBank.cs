@@ -5,6 +5,7 @@ using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using static SoulsFormats.NVA;
 
 
 namespace StudioCore.Editors.MapEditor;
@@ -26,7 +27,7 @@ public class LightProbeBank
 
     public bool CanUse()
     {
-        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.DS2 or ProjectType.DS2S)
             return true;
 
         return false;
@@ -37,21 +38,52 @@ public class LightProbeBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.Locator.LightProbeFiles.Entries)
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var fileData = Project.VFS.FS.ReadFile(entry.Path);
-
-            if (fileData != null)
+            foreach (var entry in Project.Locator.LightProbeFiles.Entries)
             {
+                var bhdPath = entry.Path;
+                var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
+
                 try
                 {
-                    var btpbData = BTPB.Read(fileData.Value);
+                    var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
+                    var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
 
-                    Files.Add(entry.Filename, btpbData);
+                    using var bdt = BXF4.Read(bhdFile, bdtFile);
+                    BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("pointcloud.btpb.dcx"));
+
+                    if (file != null)
+                    {
+                        var btpbData = BTPB.Read(file.Bytes);
+
+                        Files.Add(entry.Filename, btpbData);
+                    }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as BTPB", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to load GI file.", LogPriority.High, e);
+                }
+            }
+        }
+        else
+        {
+            foreach (var entry in Project.Locator.LightProbeFiles.Entries)
+            {
+                var fileData = Project.VFS.FS.ReadFile(entry.Path);
+
+                if (fileData != null)
+                {
+                    try
+                    {
+                        var btpbData = BTPB.Read(fileData.Value);
+
+                        Files.Add(entry.Filename, btpbData);
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as BTPB", LogPriority.High, e);
+                    }
                 }
             }
         }
@@ -64,14 +96,31 @@ public class LightProbeBank
 
         foreach (var entry in Files)
         {
-            // File will be: m30_00_00_00_0001, so we match loosely
-            if (entry.Key.Contains(map.Name))
+            if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                var btpb = entry.Value;
+                var worldBlock = map.Name.Substring(1);
 
-                if (btpb != null)
+                if (entry.Key.Contains(worldBlock))
                 {
-                    map.LoadBTPB(entry.Key, btpb);
+                    var btpb = entry.Value;
+
+                    if (btpb != null)
+                    {
+                        map.LoadBTPB(entry.Key, btpb);
+                    }
+                }
+            }
+            else
+            {
+                // File will be: m30_00_00_00_0001, so we match loosely
+                if (entry.Key.Contains(map.Name))
+                {
+                    var btpb = entry.Value;
+
+                    if (btpb != null)
+                    {
+                        map.LoadBTPB(entry.Key, btpb);
+                    }
                 }
             }
         }
@@ -82,54 +131,125 @@ public class LightProbeBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.Locator.LightProbeFiles.Entries)
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            // File will be: m30_00_00_00_0001, so we match loosely
-            if (!entry.Filename.Contains(map.Name))
-                continue;
-
-            var fileData = Project.VFS.FS.ReadFile(entry.Path);
-
-            if (fileData != null)
+            foreach (var entry in Project.Locator.LightProbeFiles.Entries)
             {
-                var applyEdit = false;
+                var worldBlock = map.Name.Substring(1);
+
+                if (!entry.Filename.Contains(worldBlock))
+                    continue;
+
+                var bhdPath = entry.Path;
+                var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
 
                 try
                 {
-                    foreach (var parent in map.LightProbeParents)
+                    var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
+                    var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
+
+                    using var bdt = BXF4.Read(bhdFile, bdtFile);
+                    BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("pointcloud.btpb.dcx"));
+
+                    if (file != null)
                     {
-                        // Match the root object name to the filename
-                        if (parent.WrappedObject.ToString() == entry.Filename)
+                        var applyEdit = false;
+
+                        foreach (var parent in map.LightProbeParents)
                         {
-                            var btpbData = BTPB.Read(fileData.Value);
-
-                            // Clear groups and then re-fill from the map container hierarchy
-                            btpbData.Groups.Clear();
-
-                            foreach (var btpbEntry in parent.Children)
+                            // Match the root object name to the filename
+                            if (parent.WrappedObject.ToString() == entry.Filename)
                             {
-                                var group = (BTPB.Group)btpbEntry.WrappedObject;
+                                var btpbData = BTPB.Read(file.Bytes);
 
-                                btpbData.Groups.Add(group);
+                                // Clear groups and then re-fill from the map container hierarchy
+                                btpbData.Groups.Clear();
+
+                                foreach (var btpbEntry in parent.Children)
+                                {
+                                    var group = (BTPB.Group)btpbEntry.WrappedObject;
+
+                                    btpbData.Groups.Add(group);
+                                }
+
+                                var fileOutput = btpbData.Write();
+
+                                if (!BytePerfectHelper.Md5Equal(file.Bytes.Span, fileOutput))
+                                {
+                                    applyEdit = true;
+                                }
+
+                                if (applyEdit)
+                                {
+                                    file.Bytes = fileOutput;
+                                }
                             }
+                        }
 
-                            var fileOutput = btpbData.Write();
-
-                            if (!BytePerfectHelper.Md5Equal(fileData.Value.Span, fileOutput))
-                            {
-                                applyEdit = true;
-                            }
-
-                            if (applyEdit)
-                            {
-                                Project.VFS.ProjectFS.WriteFile(entry.Path, fileOutput);
-                            }
+                        if (applyEdit)
+                        {
+                            Project.VFS.ProjectFS.WriteFile(bhdPath, bhdFile.ToArray());
+                            Project.VFS.ProjectFS.WriteFile(bdtPath, bdtFile.ToArray());
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as BTPB", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to load GI file.", LogPriority.High, e);
+                }
+            }
+        }
+        else
+        {
+            foreach (var entry in Project.Locator.LightProbeFiles.Entries)
+            {
+                // File will be: m30_00_00_00_0001, so we match loosely
+                if (!entry.Filename.Contains(map.Name))
+                    continue;
+
+                var fileData = Project.VFS.FS.ReadFile(entry.Path);
+
+                if (fileData != null)
+                {
+                    var applyEdit = false;
+
+                    try
+                    {
+                        foreach (var parent in map.LightProbeParents)
+                        {
+                            // Match the root object name to the filename
+                            if (parent.WrappedObject.ToString() == entry.Filename)
+                            {
+                                var btpbData = BTPB.Read(fileData.Value);
+
+                                // Clear groups and then re-fill from the map container hierarchy
+                                btpbData.Groups.Clear();
+
+                                foreach (var btpbEntry in parent.Children)
+                                {
+                                    var group = (BTPB.Group)btpbEntry.WrappedObject;
+
+                                    btpbData.Groups.Add(group);
+                                }
+
+                                var fileOutput = btpbData.Write();
+
+                                if (!BytePerfectHelper.Md5Equal(fileData.Value.Span, fileOutput))
+                                {
+                                    applyEdit = true;
+                                }
+
+                                if (applyEdit)
+                                {
+                                    Project.VFS.ProjectFS.WriteFile(entry.Path, fileOutput);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as BTPB", LogPriority.High, e);
+                    }
                 }
             }
         }

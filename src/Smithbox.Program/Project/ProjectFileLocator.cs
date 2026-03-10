@@ -345,8 +345,6 @@ public class ProjectFileLocator : IDisposable
             // Light files
             if (isMap && ext == "btl")
                 lightFiles.Add(entry);
-            if (isDs2Map && ext == "gibhd")
-                ds2LightFiles.Add(entry);
 
             // Navmesh
             if (isMap && ext == "nva")
@@ -361,6 +359,14 @@ public class ProjectFileLocator : IDisposable
                 lightAtlasFiles.Add(entry);
             if (isMap && ext == "btpb")
                 lightProbeFiles.Add(entry);
+
+            // DS2 Light/Light Atlas/Light Probe
+            if (isDs2Map && ext == "gibhd")
+            {
+                ds2LightFiles.Add(entry);
+                lightAtlasFiles.Add(entry);
+                lightProbeFiles.Add(entry);
+            }
 
             // Gparam
             if (folder.StartsWith("/param") && ext == "gparam")

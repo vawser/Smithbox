@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using HKLib.hk2018.hke;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Logger;
 using StudioCore.Utilities;
@@ -7,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks.Dataflow;
+using static SoulsFormats.NVA;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -27,7 +30,7 @@ public class LightAtlasBank
 
     public bool CanUse()
     {
-        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.DS2 or ProjectType.DS2S)
             return true;
 
         return false;
@@ -38,21 +41,52 @@ public class LightAtlasBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var fileData = Project.VFS.FS.ReadFile(entry.Path);
-
-            if (fileData != null)
+            foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
             {
+                var bhdPath = entry.Path;
+                var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
+
                 try
                 {
-                    var btabData = BTAB.Read(fileData.Value);
+                    var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
+                    var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
 
-                    Files.Add(entry.Filename, btabData);
+                    using var bdt = BXF4.Read(bhdFile, bdtFile);
+                    BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("atlasinfo.btab.dcx"));
+
+                    if (file != null)
+                    {
+                        var btabData = BTAB.Read(file.Bytes);
+
+                        Files.Add(entry.Filename, btabData);
+                    }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as BTAB", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to load GI file.", LogPriority.High, e);
+                }
+            }
+        }
+        else
+        {
+            foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
+            {
+                var fileData = Project.VFS.FS.ReadFile(entry.Path);
+
+                if (fileData != null)
+                {
+                    try
+                    {
+                        var btabData = BTAB.Read(fileData.Value);
+
+                        Files.Add(entry.Filename, btabData);
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as BTAB", LogPriority.High, e);
+                    }
                 }
             }
         }
@@ -65,14 +99,31 @@ public class LightAtlasBank
 
         foreach (var entry in Files)
         {
-            // File will be: m30_00_00_00_0001, so we match loosely
-            if (entry.Key.Contains(map.Name))
+            if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                var btab = entry.Value;
+                var worldBlock = map.Name.Substring(1);
 
-                if (btab != null)
+                if (entry.Key.Contains(worldBlock))
                 {
-                    map.LoadBTAB(entry.Key, btab);
+                    var btab = entry.Value;
+
+                    if (btab != null)
+                    {
+                        map.LoadBTAB(entry.Key, btab);
+                    }
+                }
+            }
+            else
+            {
+                // File will be: m30_00_00_00_0001, so we match loosely
+                if (entry.Key.Contains(map.Name))
+                {
+                    var btab = entry.Value;
+
+                    if (btab != null)
+                    {
+                        map.LoadBTAB(entry.Key, btab);
+                    }
                 }
             }
         }
@@ -83,52 +134,121 @@ public class LightAtlasBank
         if (!CanUse())
             return;
 
-        foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            // File will be: m30_00_00_00_0001, so we match loosely
-            if (!entry.Filename.Contains(map.Name))
-                continue;
-
-            var fileData = Project.VFS.FS.ReadFile(entry.Path);
-
-            if (fileData != null)
+            foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
             {
-                var applyEdit = false;
+                var worldBlock = map.Name.Substring(1);
+
+                if (!entry.Filename.Contains(worldBlock))
+                    continue;
+
+                var bhdPath = entry.Path;
+                var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
 
                 try
                 {
-                    foreach(var parent in map.LightAtlasParents)
+                    var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
+                    var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
+
+                    using var bdt = BXF4.Read(bhdFile, bdtFile);
+                    BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("atlasinfo.btab.dcx"));
+
+                    if (file != null)
                     {
-                        if (parent.WrappedObject.ToString() == entry.Filename)
+                        var applyEdit = false;
+
+                        foreach (var parent in map.LightAtlasParents)
                         {
-                            var btabData = BTAB.Read(fileData.Value);
-
-                            btabData.Entries.Clear();
-
-                            foreach (var btabEntry in parent.Children)
+                            if (parent.WrappedObject.ToString() == entry.Filename)
                             {
-                                var curEntry = (BTAB.Entry)btabEntry.WrappedObject;
+                                var btabData = BTAB.Read(file.Bytes);
 
-                                btabData.Entries.Add(curEntry);
+                                btabData.Entries.Clear();
+
+                                foreach (var btabEntry in parent.Children)
+                                {
+                                    var curEntry = (BTAB.Entry)btabEntry.WrappedObject;
+
+                                    btabData.Entries.Add(curEntry);
+                                }
+
+                                var fileOutput = btabData.Write();
+
+                                if (!BytePerfectHelper.Md5Equal(file.Bytes.Span, fileOutput))
+                                {
+                                    applyEdit = true;
+                                }
+
+                                if (applyEdit)
+                                {
+                                    file.Bytes = fileOutput;
+                                }
                             }
+                        }
 
-                            var fileOutput = btabData.Write();
-
-                            if (!BytePerfectHelper.Md5Equal(fileData.Value.Span, fileOutput))
-                            {
-                                applyEdit = true;
-                            }
-
-                            if (applyEdit)
-                            {
-                                Project.VFS.ProjectFS.WriteFile(entry.Path, fileOutput);
-                            }
+                        if (applyEdit)
+                        {
+                            Project.VFS.ProjectFS.WriteFile(bhdPath, bhdFile.ToArray());
+                            Project.VFS.ProjectFS.WriteFile(bdtPath, bdtFile.ToArray());
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as BTAB", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Map Editor] Failed to load GI file.", LogPriority.High, e);
+                }
+            }
+        }
+        else
+        {
+            foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
+            {
+                // File will be: m30_00_00_00_0001, so we match loosely
+                if (!entry.Filename.Contains(map.Name))
+                    continue;
+
+                var fileData = Project.VFS.FS.ReadFile(entry.Path);
+
+                if (fileData != null)
+                {
+                    var applyEdit = false;
+
+                    try
+                    {
+                        foreach (var parent in map.LightAtlasParents)
+                        {
+                            if (parent.WrappedObject.ToString() == entry.Filename)
+                            {
+                                var btabData = BTAB.Read(fileData.Value);
+
+                                btabData.Entries.Clear();
+
+                                foreach (var btabEntry in parent.Children)
+                                {
+                                    var curEntry = (BTAB.Entry)btabEntry.WrappedObject;
+
+                                    btabData.Entries.Add(curEntry);
+                                }
+
+                                var fileOutput = btabData.Write();
+
+                                if (!BytePerfectHelper.Md5Equal(fileData.Value.Span, fileOutput))
+                                {
+                                    applyEdit = true;
+                                }
+
+                                if (applyEdit)
+                                {
+                                    Project.VFS.ProjectFS.WriteFile(entry.Path, fileOutput);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as BTAB", LogPriority.High, e);
+                    }
                 }
             }
         }

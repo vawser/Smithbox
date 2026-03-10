@@ -76,9 +76,10 @@ public class MsbMeta
             }
             else if (typeSegments.Length > 1)
             {
-                var rootType = typeSegments[1];
+                var rootType = typeSegments[0];
+                var specificType = typeSegments[1];
 
-                var key = $"{rootType}_{rootType}";
+                var key = $"{rootType}_{specificType}";
 
                 if (_MsbMetas.ContainsKey(key))
                     return _MsbMetas[key];

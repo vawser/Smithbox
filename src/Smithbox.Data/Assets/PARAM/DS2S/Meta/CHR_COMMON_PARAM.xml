@@ -318,63 +318,64 @@
     Wiki="The allowable distance (in metres) between the attacker and victim for a backstab to occur." />
 
     <parryBreakStabSideAngle
-    AltName=""
-    Wiki="" />
+    AltName="Parry Riposte Cone Angle: Horizontal"
+    Wiki="The horizontal cone angle (in degrees) between the attacker and victim that a parry riposte can occur in." />
 
     <parryBreakStabUpSideAngle
-    AltName=""
-    Wiki="" />
+    AltName="Parry Riposte Cone Angle: Vertical"
+    Wiki="The vertical cone angle (in degrees) between the attacker and victim that a parry riposte can occur in." />
 
     <parryBreakStabHeight
-    AltName=""
-    Wiki="" />
+    AltName="Parry Riposte Height Difference"
+    Wiki="The allowable height difference (in metres) between the attacker and victim for a parry riposte to occur." />
 
     <parryStabLength
-    AltName=""
-    Wiki="" />
+    AltName="Parry Riposte Distance"
+    Wiki="The allowable distance (in metres) between the attacker and victim for a parry riposte to occur." />
 
     <guardBreakStabSideAngle
-    AltName=""
-    Wiki="" />
+    AltName="Guard Riposte Cone Angle: Horizontal"
+    Wiki="The horizontal cone angle (in degrees) between the attacker and victim that a guard break riposte can occur in." />
 
     <guardBreakStabUpSideAngle
-    AltName=""
-    Wiki="" />
+    AltName="Guard Riposte Cone Angle: Vertical"
+    Wiki="The vertical cone angle (in degrees) between the attacker and victim that a guard break riposte can occur in." />
 
     <guardBreakStabHeight
-    AltName=""
-    Wiki="" />
+    AltName="Guard Riposte Height Difference"
+    Wiki="The allowable height difference (in metres) between the attacker and victim for a guard break riposte to occur." />
 
     <guardBreakStabLength
-    AltName=""
-    Wiki="" />
+    AltName="Guard Riposte Distance"
+    Wiki="The allowable distance (in metres) between the attacker and victim for a guard break riposte to occur." />
 
     <lowerEnable
-    AltName=""
-    Wiki="" />
+    AltName="Enable Lower Body Damage"
+    Wiki="If enabled, lower body damage can occur." 
+    IsBool="" />
 
     <pad1
     Padding="" />
 
     <lowerDmgBendingValue
-    AltName=""
-    Wiki="" />
+    AltName="Lower Body Damage: Crouch Amount %"
+    Wiki="The amount of crouching that occurs when lower body damage occurs." />
 
     <lowerDmgBendingStartTime
-    AltName=""
-    Wiki="" />
+    AltName="Lower Body Damage: Crouch Time"
+    Wiki="The duration (in seconds) of the crouching that occurs when lower body damage occurs." />
 
     <lowerDmgBendingEndTime
-    AltName=""
-    Wiki="" />
+    AltName="Lower Body Damage: Crouch Recovery Time"
+    Wiki="The duration (in seconds) of the crouch recovery that occurs when lower body damage occurs." />
 
     <lowerDmgMoveDecelerationRate
-    AltName=""
-    Wiki="" />
+    AltName="Lower Body Damage: Movement Reduction %"
+    Wiki="The amount of movement speed reduction that occurs when lower body damage occurs." />
 
     <lowerDmgRotateDecelerationRate
-    AltName=""
-    Wiki="" />
+    AltName="Lower Body Damage: Rotation Reduction %"
+    Wiki="The amount of rotation speed reduction that occurs when lower body damage occurs." />
 
     <ragdollMassFactor
     AltName=""
