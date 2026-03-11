@@ -16,6 +16,7 @@
     "CameraMenuParam",
     "CameraNoiseParam",
     "CameraNormalParam",
-    "CameraSubjectiveParam"
+    "CameraSubjectiveParam",
+    "CameraGrapplerParam"
   ]
 }

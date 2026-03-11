@@ -88,8 +88,11 @@ public class ParamFieldWindow
 
         bool useGroups = false;
 
-        useGroups = CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts
-                         && Project.Handler.ParamData.FieldLayouts.Entries.Any(e => e.Name == meta.FieldLayout);
+        if (meta != null)
+        {
+            useGroups = CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts
+                             && Project.Handler.ParamData.FieldLayouts.Entries.Any(e => e.Name == meta.FieldLayout);
+        }
 
         if (useGroups)
         {
